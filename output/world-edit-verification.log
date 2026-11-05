@@ -1,0 +1,42 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS install prepared multi-object world in real app shell
+PASS all hierarchy instances appear with no default selection
+PASS world tree reflects actual map/group parenting
+PASS selection copies each map/actor mesh once without collecting child rigs twice
+PASS routed click selects the correct shared-asset actor without moving camera
+PASS pose auto-key and history target stable actor ID, preserving shared-asset peer
+PASS Undo after selecting another actor restores original target without changing selection
+UNSELECTED_SET_GREEN_PIXELS 0
+PASS selection color filtering never outlines an unrelated map
+PASS Redo restores original actor and world snapshot reflects replaced data
+PASS invalid stored bone edit preserves target and peers
+PASS map root gets same direct transform controls as models
+PASS map XYZ edit auto-keys complete map and child while other set stays still
+PASS map edit Undo remains attached to map ID after selecting group
+PASS hidden-parent actor remains selected as editor-only ghost without modifying its visibility
+PASS parent-hidden world stays black in final render despite selected ghost
+PASS bone remains poseable under hidden parent and edit auto-keys
+PASS selection switch finishes active drag on its original object in one Undo command
+PASS world-axis root drag respects rotated and scaled map/group ancestry
+PASS all multi-object pose/root/flag edits leave explicit camera keys unchanged
+PASS real HAS Save includes every instance and stable-ID edits
+PASS real linked HAS Save inventories all shared world assets
+PASS directory Save also preserves all edited instances
+PASS quiet recovery checkpoint preserves whole edited world
+PASS normal schema4 Open stays gated without changing live world until import/New transitions are connected
+PASS real app exports edited multi-object world and independent drawing with matching frame24
+PASS export restores active world controls and selection
+PASS all64 independent instance colors resolve to correct objects from actual GPU picking
+PASS GPU selection binds active native rig in combined world: pose-smoke/miku-project
+PASS native arm auto-keys and deforms without changing peer: pose-smoke/miku-project
+PASS native Undo targets original ID after selection switch and preserves source: pose-smoke/miku-project
+PASS GPU selection binds active native rig in combined world: source-smoke/source-project
+PASS native arm auto-keys and deforms without changing peer: source-smoke/source-project
+PASS native Undo targets original ID after selection switch and preserves source: source-smoke/source-project
+PASS GPU selection binds active native rig in combined world: sfm-smoke/project
+PASS native arm auto-keys and deforms without changing peer: sfm-smoke/project
+PASS native Undo targets original ID after selection switch and preserves source: sfm-smoke/project
+PASS HAS Save preserves all three native rigs, metadata and per-object edit keys
+WORLD_EDIT_SMOKE {"checks":37,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-edit/run_860761","linked_project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-edit/run_860761/linked-edited.has","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-edit/run_860761/render_1793325241_2663225_0/movie.mp4","native_project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-edit/run_860761/native-edited.has","native_projects":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"palette_picks":64,"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-edit/run_860761/edited.has","unselected_green_pixels":0}

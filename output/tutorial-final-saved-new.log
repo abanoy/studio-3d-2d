@@ -1,0 +1,24 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS normal startup is an empty world without placeholder geometry or selected actor
+PASS startup is Simple free-camera workspace with nothing selected
+PASS new project has one stationary initial shot and clean empty history
+PASS new project is unsaved with independent empty layers and no audio
+PASS white perspective grid is visible in editor but final empty world is black
+PASS grid is a bounded horizontal 3D reference plane
+PASS capture restores editor guide after hiding it from final output
+PASS free-camera gesture releases normally without changing shot keys
+PASS drawing over empty world stays independent of empty 3D document
+PASS New protects unsaved edits with a real confirmation
+PASS cancelling New preserves original document
+PASS empty world and editable drawing save in existing packed HAS
+PASS packed empty world reopens with no fabricated source asset
+PASS packed reopen retains exact black background and independent drawing pixels
+PASS empty-world drawing exports MP4 without editor grid and matches preview
+PASS render preserves manually saved HAS bytes
+PASS confirmed New clears prior content/save identity/history and opens clean world
+PASS original sample room remains an explicit unsaved example
+PASS older project without new background setting retains its original rendered background
+PASS invalid optional background setting rejects open before replacing live document
+NEW_SCENE_SMOKE {"checks":20,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/new-scene/run_1178400","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/new-scene/run_1178400/render_1793431977_3427677_0/movie.mp4"}

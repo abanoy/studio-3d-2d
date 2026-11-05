@@ -1,0 +1,57 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS new Simple project defaults to300ms visibility fades
+PASS actual Simple toggle records visibility while retaining independent body controls in one Undo
+PASS visibility persists independently of the unchanged base flag
+PASS an unset later frame100 retains the previous OFF key
+PASS repeating the same current key does not create another Undo command
+PASS version3 validates and legacy records retain static behavior
+PASS older model versions cannot silently carry visibility animation
+PASS duplicate visibility addresses fail validation
+PASS 300milliseconds samples on the rational frame clock without rounding to frames
+PASS fade duration follows project frame rate
+PASS fractional FPS denominator is included in visibility timing
+PASS a visibility reversal starts from current opacity without jumping
+PASS repeated same-state keys do not restart an active fade
+PASS Undo restores the whole pre-visibility legacy record
+PASS Redo restores exact visibility and motion ownership
+PASS overlong motion move remains rejected with visibility keys
+PASS later animation piece and intervening gap cannot re-enable hidden state
+PASS hidden selection leaves animated visibility untouched
+PASS actual OpenGL fade pixels lie between visible and hidden renders
+PASS opaque endpoint restores source material references
+PASS opaque material fade starts from effective alpha1 without altering authored material
+PASS material override reference restores exactly after a fade
+PASS Simple Options exposes the project-wide fade setting
+PASS zero milliseconds gives an instantaneous visibility cut
+PASS Undo restores the global fade setting
+PASS Redo restores the cut setting
+PASS explicit later visibility key reintroduces the object
+PASS removing an absent current-frame key is a no-op
+PASS removing a key restores the preceding persistent state
+PASS visibility-key removal is undoable
+PASS fade fixture imports independent audio
+PASS visibility project saves as packed HAS
+PASS invalid project fade is rejected before writing any save files
+PASS packed HAS reopens independent body controls, visibility, global fade and drawing
+PASS linked HAS preserves visibility keys and project fade
+PASS actual recovery checkpoint restores visibility project
+PASS packed reopen retains persistent hidden state between pieces
+PASS packed reopen retains the later fade-in
+PASS visibility project exports MP4 successfully
+PASS exported fade frame matches the same reopened preview exactly
+PASS visibility and material fades preserve the original model bytes
+PASS parent fade propagates once to independently owned child meshes
+PASS hidden parent remains authoritative over child visibility
+PASS native imported materials visibly fade: pose-smoke/miku-project
+PASS native fade preserves provenance and source: pose-smoke/miku-project
+PASS native imported materials visibly fade: source-smoke/source-project
+PASS native fade preserves provenance and source: source-smoke/source-project
+PASS native imported materials visibly fade: sfm-smoke/project
+PASS native fade preserves provenance and source: sfm-smoke/project
+PASS old single-slot project opens without a first-presence field
+PASS legacy model visibility edit promotes safely with explicit introduction0
+PASS legacy visibility Undo restores the exact old record contract
+PASS legacy packed HAS retains newly authored visibility keys
+VISIBILITY_SMOKE {"checks":53,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/visibility/run_871225","full_energy":71823668.0,"movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/visibility/run_871225/render_1793520718_5468819_0/movie.mp4","native_samples":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"partial_energy":32809237.0,"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/visibility/run_871225/visibility.has"}

@@ -1,0 +1,40 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS authored real map, rig and empty group assets
+PASS standard asset actually decodes: map.glb
+PASS standard asset actually decodes: actor.glb
+PASS standard asset actually decodes: group.glb
+PASS pose fixture uses actual imported bone identity rather than a guessed path
+PASS five independent map/model/group records share one model contract
+PASS portable world uses only canonical managed asset references
+PASS schema4 saves complete multi-object snapshot with editable cel/audio
+PASS schema4 has one canonical object list and no ambiguous old slots
+PASS shared geometry is stored once for five instances
+PASS world IDs, hierarchy, root transforms and pose keys round-trip losslessly
+PASS first presence and unknown native metadata remain independent per object
+PASS independent drawing and saved master frame remain intact
+PASS audio remains on same master timeline in schema4
+PASS project normalizer preserves existing multi-object data instead of treating it as an empty legacy scene
+PASS invalid world rejected before replacing valid snapshot: duplicate
+PASS invalid world rejected before replacing valid snapshot: cycle
+PASS invalid world rejected before replacing valid snapshot: missing
+PASS invalid world rejected before replacing valid snapshot: fractional
+PASS invalid world rejected before replacing valid snapshot: scale
+PASS changed shared managed asset is rejected for all instances
+PASS unsafe world asset path rejects before file lookup
+PASS corrupt current world graph never replaces prior good manifest backup
+PASS empty schema4 writer has no fabricated asset requirement
+PASS schema4 also reads a genuinely empty 3D-only project
+PASS empty schema4 project reads with zero objects and optional drawing layer
+PASS schema1 remains readable and normalizes into world data
+PASS schema2 remains readable and normalizes into world data
+PASS schema3 remains readable and normalizes into world data
+PASS legacy unusual IDs normalize without losing their original value or mutating source data
+PASS legacy scene/model ID collision normalizes to distinct instances
+PASS actual MMD/GMod/SFM native poses/metadata coexist in one persisted world
+PASS normal Open installs every schema4 object with no default selection
+PASS world persistence preserves authored source bytes: map.glb
+PASS world persistence preserves authored source bytes: actor.glb
+PASS world persistence preserves authored source bytes: group.glb
+WORLD_DOCUMENT_SMOKE {"checks":36,"empty_snapshot":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/empty","failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341","native_projects":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"native_snapshot":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/native-snapshot","originals":{"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/inputs/actor.glb":"62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/inputs/group.glb":"51c3a87aa7d0688e7d99108266420383a0a964e0e69e5b8b94ceaba36ed87fdd","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/inputs/map.glb":"713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad"},"references":{"assets/51c3a87aa7d0688e7d99108266420383a0a964e0e69e5b8b94ceaba36ed87fdd.glb":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/inputs/group.glb","assets/5dcff3b9d393f0a5ad0df98e8f9cd7f69f614b76d896bbd90c13cc596ac33b3e.wav":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/fixtures/voice — тест.wav","assets/62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac.glb":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/inputs/actor.glb","assets/713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad.glb":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/inputs/map.glb"},"snapshot":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-document/run_874341/snapshot"}

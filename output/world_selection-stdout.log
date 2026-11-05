@@ -1,0 +1,46 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS empty world hierarchy opens without a selection
+PASS imported shared model appears in hierarchy with skinned selection copies
+PASS viewport click selects model and enters posing without moving camera
+PASS short selection click does not capture mouse or alter shot keys
+PASS selected model has an actual green editor outline
+SELECTION_FINAL_DIFFERENCE channels=3 mean=0.00002423321759
+PASS selection is excluded from final frames within existing bounded GPU edge tolerance
+PASS holding Alt reveals full joint structure
+PASS releasing Alt hides full skeleton while selected handles remain
+PASS Ctrl+LMB takes free-camera priority over selected pose handle
+PASS free-camera release creates no accidental pose edit
+PASS selection mask follows actual skin deformation and normal auto-keying
+PASS pose undo restores exact skinned selection mask
+PASS right-click on entity opens actual object context menu
+PASS hidden selected model retains green ghost selection
+PASS hidden ghost remains editor-only and model stays absent in final frame
+PASS hidden selected model remains poseable without enabling visibility
+PASS tree selects hidden model without changing visibility
+PASS context Reset pose records imported neutral pose through manual auto-key path
+PASS right-click empty space deselects and returns to free camera
+PASS right drag remains POV navigation after movement threshold
+PASS right-drag release opens no context menu
+PASS focus loss clears pending click and skeleton reveal
+PASS Escape invalidates in-flight GPU selection before it can select an object
+PASS selection operations never alter original GLB bytes
+PASS original meshes keep their own material and render layers
+PASS selected hidden model ghost remains available through occluding map geometry
+PASS native project opens in same world: pose-smoke/miku-project
+PASS reopened native project starts with no world selection and free camera: pose-smoke/miku-project
+PASS GPU picking selects actual native skinned model: pose-smoke/miku-project
+PASS selection mask deforms with native arm: pose-smoke/miku-project
+PASS native project opens in same world: source-smoke/source-project
+PASS reopened native project starts with no world selection and free camera: source-smoke/source-project
+PASS GPU picking selects actual native skinned model: source-smoke/source-project
+PASS selection mask deforms with native arm: source-smoke/source-project
+PASS native project opens in same world: sfm-smoke/project
+PASS reopened native project starts with no world selection and free camera: sfm-smoke/project
+PASS GPU picking selects actual native skinned model: sfm-smoke/project
+PASS selection mask deforms with native arm: sfm-smoke/project
+PASS New removes stale hierarchy, selection meshes and highlighted state
+PASS environment root can be found and selected in same world hierarchy
+PASS selected environment outline also remains absent from export
+WORLD_SELECTION_SMOKE {"checks":41,"failures":0,"final_changed_channels":3,"final_mean_delta":0.0000242332175925926,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-selection/run_456853","native_projects":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"]}

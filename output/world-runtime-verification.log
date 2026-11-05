@@ -1,0 +1,47 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS authored two-set world assets
+PASS legacy environment remains usable before world installation
+PASS one invalid rig leaves the complete installed legacy scene intact
+PASS atomic install of two maps, two actors and group
+PASS world replaces legacy slots with one assets notification
+PASS already attached prepared world cannot be installed twice
+PASS all stable IDs and parent links exist in the actual 3D tree
+PASS bone inventories exclude independently parented child rigs
+PASS shared asset creates independent live rig and pose instances
+PASS second actor is absent immediately before first presence
+PASS presence, root movement, two independent arm poses and camera sample on same frame
+PASS map-local actor transforms evaluate through both map roots
+PASS group translation moves child model and skinned bone together
+PASS parent rotation and scale transform both complete sets without merging their rigs
+PASS editing one instance never changes the other instance sharing its GLB
+PASS each loaded map/actor contributes actual visible pixels: actor-0
+PASS each loaded map/actor contributes actual visible pixels: actor-1
+PASS each loaded map/actor contributes actual visible pixels: map-0
+PASS each loaded map/actor contributes actual visible pixels: map-1
+PASS hidden parent suppresses its actor without changing sibling or child visibility data
+PASS reference-only instance excluded from final but restored for editing after capture
+PASS independent RGBA drawing overlays combined world without editing source geometry
+PASS all runtime instances save through schema4 storage
+PASS saved world reopens atomically with all instances
+PASS combined preview survives full GLB rebuild within existing GPU edge tolerance
+PASS bad parent graph preserves all live instances and their edits
+PASS changed world asset rejects before replacing current world
+PASS legacy single-slot calls cannot partially overwrite an installed world
+PASS actual camera/two-map/two-actor/drawing MP4 uses same frame24 evaluation
+PASS MMD, GMod and SFM actual rigs coexist in same runtime
+PASS native rig visible independently in combined world: native-2
+PASS native bone deforms independently beside other ecosystems: native-2
+PASS native rig visible independently in combined world: native-1
+PASS native bone deforms independently beside other ecosystems: native-1
+PASS native rig visible independently in combined world: native-0
+PASS native bone deforms independently beside other ecosystems: native-0
+PASS atomic empty-world replacement releases previous hierarchy
+PASS original asset unchanged: map.glb
+PASS original asset unchanged: rig.glb
+PASS original asset unchanged: group.glb
+PASS original asset unchanged: 82206a87bc34c8a46fe85f7f36dddb961aaf22360ad0fcddef41b8b50308b097.glb
+PASS original asset unchanged: d2c9ca021a8df6acaf0406b3f26850e63aac90d2a57eb454120bde58e54c0459.glb
+PASS original asset unchanged: bfe3723f8fda70f674add1ae39928909a34311577f8d99689bc3072fe2c601bd.glb
+WORLD_RUNTIME_SMOKE {"checks":43,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-runtime/run_791154","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-runtime/run_791154/render/movie.mp4","native_projects":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"originals":{"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/pose-smoke/miku-project/assets/82206a87bc34c8a46fe85f7f36dddb961aaf22360ad0fcddef41b8b50308b097.glb":"82206a87bc34c8a46fe85f7f36dddb961aaf22360ad0fcddef41b8b50308b097","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/sfm-smoke/project/assets/bfe3723f8fda70f674add1ae39928909a34311577f8d99689bc3072fe2c601bd.glb":"bfe3723f8fda70f674add1ae39928909a34311577f8d99689bc3072fe2c601bd","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/source-smoke/source-project/assets/d2c9ca021a8df6acaf0406b3f26850e63aac90d2a57eb454120bde58e54c0459.glb":"d2c9ca021a8df6acaf0406b3f26850e63aac90d2a57eb454120bde58e54c0459","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-runtime/run_791154/inputs/group.glb":"51c3a87aa7d0688e7d99108266420383a0a964e0e69e5b8b94ceaba36ed87fdd","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-runtime/run_791154/inputs/map.glb":"fdac4375bf88d80ca05ad5b24332b7e0ff45bdea9491f98bc3e79d4d8af59547","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-runtime/run_791154/inputs/rig.glb":"62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac"},"rebuild_changed_channels":0,"rebuild_mean_error":0.0,"snapshot":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-runtime/run_791154/snapshot"}

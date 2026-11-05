@@ -1,0 +1,90 @@
+PASS unit: 0.341s
+PASS spikes: 4.223s
+PASS editor: 5.124s
+PASS export_failures: 1.06s
+PASS audio_editor: 5.481s
+PASS audio_dummy: 1.616s
+PASS ui: 1.909s
+PASS recovery_write: 1.774s
+PASS recovery: 1.713s
+PASS pose: 9.879s
+{
+  "unit": {
+    "exit": 0,
+    "seconds": 0.341
+  },
+  "spikes": {
+    "exit": 0,
+    "seconds": 4.223
+  },
+  "editor": {
+    "exit": 0,
+    "seconds": 5.124
+  },
+  "export_failures": {
+    "exit": 0,
+    "seconds": 1.06
+  },
+  "audio_editor": {
+    "exit": 0,
+    "seconds": 5.481
+  },
+  "audio_dummy": {
+    "exit": 0,
+    "seconds": 1.616
+  },
+  "ui": {
+    "exit": 0,
+    "seconds": 1.909
+  },
+  "recovery_write": {
+    "exit": 0,
+    "seconds": 1.774
+  },
+  "recovery": {
+    "exit": 0,
+    "seconds": 1.713
+  },
+  "pose": {
+    "exit": 0,
+    "seconds": 9.879
+  },
+  "silent_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "tone_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "editor_audio_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_0": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_1": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "pose_checks": 44,
+  "actual_mmd_tested": true,
+  "tone_onset_seconds": 1.0,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "representative_png_sha256": {
+    "frame_000001.png": "d895f61f3feb20a69a0c3fa164390d57adb586da526e6b348fcc0ec075eb403d",
+    "frame_000025.png": "b38facabaa27f27ca6666e082b02f02d3959d079323d3fc66616ce9d1655db7d",
+    "frame_000048.png": "272d24b23ed59f7fd76d81184e76bbb9f76d442a4beb98b5f059cd0b871cc7cf"
+  }
+}

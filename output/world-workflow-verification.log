@@ -1,0 +1,31 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS normal startup creates a genuinely empty multi-object world
+PASS normal Add scene appends first map
+PASS adding same map again creates independent instance instead of replacing it
+PASS map root moves independently through normal pose controls
+PASS normal Add model appends beside both maps
+PASS second model preserves first actor's independent pose keys and both maps
+PASS Undo Add removes only added instance and preserves current valid selection
+PASS Redo Add restores its own instance without overwriting first pose
+PASS normal structural Remove preserves independent models
+PASS Undo Remove restores complete map instance
+PASS adding, moving and removing objects never writes camera keys
+PASS normal multi-object world accepts independent WAV audio
+PASS ordinary packed HAS Save commits multi-map multi-actor project
+PASS ordinary HAS Open restores every object and saved frame with nothing selected
+PASS normal Open retains independent actor animation
+PACKED_WORLD_DIFFERENCE {"channels":15,"locations":[[708,369,0,195,119],[708,369,1,170,140],[708,369,2,140,153],[713,471,0,195,119],[713,471,1,170,140],[713,471,2,140,153],[777,500,0,65,195],[777,500,1,75,170],[777,500,2,89,140],[814,502,0,65,195],[814,502,1,75,170],[814,502,2,89,140],[652,511,0,65,119],[652,511,1,75,140],[652,511,2,89,153]],"mean":0.000117308063271605}
+PACKED_WORLD_STATE {"data_exact":true,"transforms_exact":true}
+PASS packed Open retains exact data/transforms and frame within existing GLB rebuild edge bounds
+PASS normal New safely replaces a populated world and clears audio/save identity/history
+PASS failed normal map import keeps whole world intact
+PASS ordinary recovery restores all objects as unsaved copy
+RECOVERED_WORLD_DIFFERENCE 24 mean=0.00017336998457
+PASS recovery rebuild preserves world image within established GLB reimport edge tolerance
+PASS ordinary recovered world exports full camera/pose/RGBA movie matching its exact preview
+PASS legacy directory project opens with its original renderer defaults
+PASS normal import into legacy project promotes existing map and appends new model
+PASS ordinary workflows preserve original source bytes
+WORLD_WORKFLOW_SMOKE {"checks":24,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-workflow/run_891297","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-workflow/run_891297/render_1793507200_4160817_0/movie.mp4","project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/world-workflow/run_891297/world.has"}

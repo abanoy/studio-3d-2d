@@ -1,0 +1,39 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS default workspace has World left, Properties right, Timeline below
+PASS actual included rig imports into shared world
+PASS actual canvas coordinates still paint an independent visible Ink cel
+PASS middle click cycles Rotate/Move without deselecting the model
+PASS repeated middle click cycles back
+PASS tool cycling changes no pose/key/shot/view or Undo history
+PASS middle drag still pans in Pose and does not cycle tools
+PASS middle drag still dollies in Scene mode
+PASS middle click from Scene reveals the pose tool without moving the camera
+PASS Draw keeps its own middle-button navigation
+PASS Escape/focus cancellation cannot create a late tool switch
+PASS Layers is a resizable non-blocking editing panel
+PASS actual main-window button remains clickable while Layers stays open
+PASS open modeless Layers follows a selection changed in the main inspector
+PASS selected field text is dark against pale blue in the child panel
+PASS native/embedded child windows and multiline selection inherit readable text colors
+PASS Project options permits main-window interaction too
+PASS actual decision confirmation still blocks conflicting shortcuts
+PASS installed content browser no longer disables the main window
+PASS main toolbar still responds with installed browser open
+PASS content-location settings also permit main-window interaction
+PASS tutorial browsing remains non-blocking; starting a lesson still has its separate discard check
+PASS recovery history browsing permits main-window interaction without restoring anything
+PASS real workspace splitters resize the live view and panels
+PASS docking swaps panels instead of losing an occupied panel
+PASS dragging a panel heading docks it at the chosen occupied region
+PASS floating Properties is a movable, non-blocking tool window
+PASS floating gadget can resize and reposition
+PASS closing a floating panel docks it back rather than removing controls
+PASS layout operations preserve exact live canvas, timeline and inspector nodes
+PASS layout moves leave scene, authored keys, view and Undo history unchanged
+PASS layout operations preserve exact final 3D/2D output pixels
+PASS Reset workspace restores familiar Simple layout
+PASS saved docking preferences reload without a project-format change
+PASS default resizable layout remains accessible in logical and physical bounds at1200x760
+WORKSPACE_CONTROLS {"checks":35,"failures":0}

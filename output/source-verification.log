@@ -1,0 +1,36 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS native file browser starts in the installed Workshop 4000 directory
+PASS Source folder choices save outside project data
+PASS installed game and Workshop paths survive preference reload
+PASS actual Add model picker browses installed Workshop content by default
+PASS native Add model opens the real archive member chooser
+PASS Source setup offers a nested folder picker for custom game libraries
+PASS scrollable Source setup keeps Prepare and Cancel inside the app window
+PASS GMA inventory lists nine models without extracting or running Lua
+PASS preparation runs asynchronously and preserves existing environment
+PASS editor processes frames while Blender converts and standard actor installs
+PASS actual MDL skeleton retains 77 bones in the shared model system
+PASS Source native parameters use the existing model metadata contract
+PASS native ValveBiped arm can be selected
+PASS native Source arm rotation visibly deforms imported skin
+PASS Source pose undo restores exact rendered pixels
+PASS managed save/reopen restores Source rig keys and native parameters
+PASS Source saved pose and independent cel reproduce identical pixels
+PASS actual Source pose animation exports MP4 with exact frame-24 pixels
+PASS original supplied GMA remains byte-identical
+PASS Add scene routes raw BSP through the real preparation dialog
+PASS BSP conversion appends standard map, preserves actor and enters Scene mode
+PASS installed original BSP remains byte-identical
+PASS map offers a usable native player-start view without rewriting camera keys
+PASS map capture repeats deterministically before saving
+PASS actual converted map renders textured geometry rather than a blank viewport
+PASS converted map managed project reopens
+PASS map camera transforms survive managed save/reopen
+PASS saved map and independent cel reopen within bounded GPU edge tolerance
+PASS actual Source map camera and independent cel export MP4 with exact frame-24 pixels
+PASS cancelled Source preparation preserves current project
+PASS cancellation waits until its own Blender worker terminates
+PASS missing GMod blocks native import before staging or Blender without replacing the scene
+SOURCE_SMOKE {"checks":32,"failures":0,"map_bundle":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793332154-42-16320042","map_movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/source-smoke/render_1793332176_38068905_0/movie.mp4","model_bundle":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\compatibility\\source-1793332139-907-1807372","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/source-smoke/render_1793332149_11732357_0/movie.mp4"}
