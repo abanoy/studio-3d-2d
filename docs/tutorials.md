@@ -49,7 +49,7 @@ Session folders retain shared content-addressed cels within each fixed checkpoin
 there is no cross-session deduplication, retention policy or concurrent writer lock.
 
 This is a runnable beginner route and initial focused chapters, **not complete
-tutorial coverage**. Still needed: focused advanced constraints/rigging/physics sections, more topic/subsection entry points,
+tutorial coverage**. Still needed: focused advanced rig-authoring/physics sections, more topic/subsection entry points,
 progressive demonstrations and beginner usability feedback. Physics here teaches
 live/unrecorded motion and freeze; full capture is an advanced lesson still to add.
 Tutorial Skip remains OPEN. The new course has identity `first-movie-v1` and eleven
@@ -158,3 +158,24 @@ requires an explicitly provisioned `--isolated-display :99`. Fresh cloud checks:
 26 writer +6 cold reader, rendered hold/linear/ease comparison, ordinary HAS save,
 exact preview/MP4 input and H2641920×1080/24fps/48frames. These procedural llvmpipe
 checks do not establish Windows/GPU/physical-device or artist acceptance.
+
+
+## Rig posing and foot constraints
+
+**Advanced · Rig posing and foot constraints** uses the existing included figure's
+bone tree and skinned mesh. Five exercises select the figure in Pose mode, key an
+arm pose, plant both feet for0–24 inclusive, lower the root at12 while retaining
+world foot targets, then release12–24 while keeping earlier pins. The teacher
+checks saved ranges, root key and actual foot positions. A toggle or open window
+alone does not count. Unreachable motion refuses safely.
+
+This chapter teaches existing rig posing and constraints. It does not author a
+new skeleton or weights. **Hold feet while posing** is a temporary authoring
+helper; **Planted feet…** saves persistent playback ranges. Previous restores the
+whole constrained scene, and Continue/Fresh retains independent practices. Native
+rigs still need their own import/binding fidelity checks.
+
+Run `python tests/verify_tutorials.py --chapter constraints`, with an explicit
+private `--isolated-display :99` on Linux. Fresh procedural llvmpipe checks:
+24 writer +5 cold reader, real Plant/Release and pose controls, Undo/Redo, exact
+Previous pixels, ordinary HAS and H2641080p24/48frames movie input agreement.

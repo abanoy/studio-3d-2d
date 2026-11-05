@@ -2,7 +2,7 @@ extends RefCounted
 const Storage=preload("res://src/storage.gd")
 const Recovery=preload("res://src/recovery.gd")
 const Timeline=preload("res://src/timeline.gd")
-const COURSES:={"first-movie-v1":11,"basic-pose":3,"advanced-camera":3,"advanced-lighting-v1":4,"advanced-interpolation-v1":5}
+const COURSES:={"first-movie-v1":11,"basic-pose":3,"advanced-camera":3,"advanced-lighting-v1":4,"advanced-interpolation-v1":5,"advanced-constraints-v1":5}
 var root: String
 var error:=""
 var restored_observations:={}

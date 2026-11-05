@@ -7,7 +7,8 @@ const IK=preload("res://src/limb_ik.gd")
 const First=preload("res://src/first_movie_lesson.gd")
 const Light=preload("res://src/lighting_lesson.gd")
 const Curves=preload("res://src/interpolation_lesson.gd")
-const COURSES={Curves.ID:Curves.DEFINITION,Light.ID:Light.DEFINITION,First.ID:First.DEFINITION,"basic-pose":{"title":"Basic · Pose and draw","steps":["Click Practice figure in World.","At frame 24, raise and key its left hand above the shoulder.","At frame 24, draw a visible mark on Ink."],"hints":["Use the left World tree, or click the figure in the viewport.","Keep Physics off. Hold Alt, choose Left upper arm, and rotate upward at frame 24. Pose edits key automatically.","Choose Draw and the Ink layer. Add a cel if needed, then paint a mark." ]},"advanced-camera":{"title":"Advanced · Camera shots","steps":["Turn on Advanced in the blue top bar.","At frame 24, change your camera view and save a camera key.","Change FOV by at least 8 degrees, then replace the frame 24 camera key."],"hints":["Advanced reveals controls without changing the scene.","Choose Scene / camera. Ctrl + left-drag with WASD moves the view. Save camera key records it.","Use Editor camera FOV, then Save camera key and confirm replacement. An unrecorded view does not count."]}}
+const Pins=preload("res://src/constraints_lesson.gd")
+const COURSES={Pins.ID:Pins.DEFINITION,Curves.ID:Curves.DEFINITION,Light.ID:Light.DEFINITION,First.ID:First.DEFINITION,"basic-pose":{"title":"Basic · Pose and draw","steps":["Click Practice figure in World.","At frame 24, raise and key its left hand above the shoulder.","At frame 24, draw a visible mark on Ink."],"hints":["Use the left World tree, or click the figure in the viewport.","Keep Physics off. Hold Alt, choose Left upper arm, and rotate upward at frame 24. Pose edits key automatically.","Choose Draw and the Ink layer. Add a cel if needed, then paint a mark." ]},"advanced-camera":{"title":"Advanced · Camera shots","steps":["Turn on Advanced in the blue top bar.","At frame 24, change your camera view and save a camera key.","Change FOV by at least 8 degrees, then replace the frame 24 camera key."],"hints":["Advanced reveals controls without changing the scene.","Choose Scene / camera. Ctrl + left-drag with WASD moves the view. Save camera key records it.","Use Editor camera FOV, then Save camera key and confirm replacement. An unrecorded view does not count."]}}
 var app
 var store=Store.new()
 var assets_root:="res://examples/tutorials"
@@ -189,8 +190,8 @@ func update_highlight() -> void:
 	marker.hide()
 	if not hint_visible or done or app.home.visible or app.has_dialog(app):return
 	var target: Control
-	if course in [Light.ID,Curves.ID]:
-		target=Light.highlight(self) if course==Light.ID else Curves.highlight(self)
+	if course in [Light.ID,Curves.ID,Pins.ID]:
+		target=Light.highlight(self) if course==Light.ID else Curves.highlight(self) if course==Curves.ID else Pins.highlight(self)
 		if target and target.is_visible_in_tree():marker.global_position=target.global_position-Vector2(2,2);marker.size=target.size+Vector2(4,4);marker.show()
 		return
 	var arm_hint: bool=(course==First.ID and step==5) or (course=="basic-pose" and step==1)
@@ -233,6 +234,7 @@ func satisfied() -> bool:
 	if course==First.ID:return First.satisfied(self)
 	if course==Light.ID:return Light.satisfied(self)
 	if course==Curves.ID:return Curves.satisfied(self)
+	if course==Pins.ID:return Pins.satisfied(self)
 	if course=="advanced-camera":
 		if step==0:return app.advanced_mode
 		var key:=key_at(24)

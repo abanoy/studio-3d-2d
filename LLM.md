@@ -196,3 +196,24 @@ focused chapters, progressive demonstrations and broader completion remain.
 
 Existing pose/draw and camera tutorial regression also passes52writer +5cold
 reader with an actual48-frame MP4 after this chapter addition.
+
+
+## 2026-11-05 UTC — rig posing and foot constraints practice
+
+New advanced-constraints-v1 has5 observed tasks on the unchanged included HAS:
+select the rig in Pose/Advanced, auto-key an arm pose, plant both feet through24,
+auto-key a small root move at12 while verifying actual world foot targets, and
+release12–24 while retaining0–11. Hints target real tree/range/numeric controls.
+This teaches existing rig posing and persistent playback constraints, not new
+skeleton/weight authoring. Temporary Hold feet while posing is explicitly distinct.
+Unreachable moves remain safely refused by the existing solver.
+
+Fresh private Linux llvmpipe writer24/coldreader5 pass: real controls, actual
+skin deformation, inclusive range, source preservation, shared checkpoint
+Continue/Fresh/Previous, full pixel restoration, release Undo/Redo and ordinary
+packed HAS. Actual H2641080p24/48frames MP4 uses exact released pose input. Logs
+/workspace/has-handoff-audit/constraints-lesson.log; copied verification JSON in
+constraints-evidence. Existing course IDs/lengths and project formats unchanged.
+Software/procedural scope; native rig fidelity and hardware/artist acceptance
+remain. Physics recording curriculum, advanced rig authoring/demonstrations,
+richer compositing and other requirements still need work.

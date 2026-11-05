@@ -693,3 +693,6 @@ Projects containing sequences require the new schema6 reader.
 Home → Tutorials now includes **Advanced · Interpolation and cuts**, an editable
 five-task comparison of camera hold, linear and ease with actual saved keys and
 recorded-shot evaluation. See [interactive practice](docs/tutorials.md).
+
+**Advanced · Rig posing and foot constraints** adds real arm keys, saved planted
+foot ranges, constrained root movement and partial release to the tutorial catalog.
