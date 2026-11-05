@@ -673,3 +673,7 @@ files stay unchanged; Add is one Undo. The full clip must fit the current frame
 and cel budgets. Audio is imported separately. See [video import](docs/video_import.md)
 for bounds, compatibility and tests, and [cloud requirement reconciliation](docs/requirements_cloud_2026-11-05.md)
 for remaining features and acceptance gates.
+
+Linux automatic crash recovery now identifies process instances safely and restores
+newest valid or older checkpoints through normal startup. See [Linux recovery](docs/linux_recovery.md)
+for the portable tests, exact ownership protocol and remaining acceptance limits.

@@ -66,7 +66,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | 9.2 explicit recording | Simulation does not continuously author keys | Fresh full record/export regression |
 | 9.3 World/Local | Distinct world/local recording paths present | All addendum scenarioD assertions |
 | 9.4 capture data | Bounded tracks and recordings present | Long capture/compression policy remains suggested |
-| 10.1 rendering | Unshaded editing, lighting editor and environment controls present | Native materials and real GPU quality |
+| 10.1 rendering | Unshaded editing, lighting mode controls present | Native materials and real GPU quality |
 | 10.2 photorealism | High-end renderer remains preference/OPEN | No ray-tracing promise or compulsory engine rewrite |
 | 11.1 packed HAS | Fresh video/body-pose packed save/cold reopen pass | Broader native full-scene gate |
 | 11.2 linked assets | Fresh video/body-pose linked save/cold reopen pass | Native relinking/fault matrix |
@@ -79,7 +79,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | 12.4 Continue/Fresh | Separate saved practice sessions and optional personal Save present | Forced-crash lesson-context recovery and retention |
 | 13.1 autosave | Bounded background recovery workers present | Measured long-session behavior |
 | 13.2 history | Journal/checkpoint references, shared cel storage and validation present | Measured long-project caching |
-| 13.3 recovery | Fresh explicit recovery restoration passes | Linux automatic discovery currently returns unknown liveness for foreign owners; full newest-valid crash gate not certified |
+| 13.3 recovery | Fresh explicit recovery restoration passes | Linux identity47 / journal33 / normal-startup147 checks now pass; broader native/hardware crash gate remains |
 | 14.1 complete scene | Shared 3D/ink/audio, imported Krita/video and particle/VFX paths | Editable nested sequences and richer compositing |
 | 14.2 final output | Default MP41080p24, project rate/duration and PNG options present; fresh movie verified | Device/audio sync and fault coverage |
 | 15 invariants | Existing interactions/source safety/limits retained; no optional AI dependency | Continuous regression and hardware acceptance |
@@ -100,24 +100,26 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | CORE-06 | Full Space/arrows/focus routed regression not rerun |
 | CORE-07 | Packed, linked and recovery pixels/state pass; fresh-process readers pass |
 | CORE-08 | Actual decoded H.2641080p24,48frames,2seconds and exact shared-compositor render input |
-| AUDIO-01 | Recovered audio code/tests present; frame24 transient not freshly decoded |
+| AUDIO-01 | Actual recovered AAC export decodes frame24 onset at1.0000417seconds; physical-device gate remains |
 | AUDIO-02 | No-audio real movie succeeds |
 | REF-01 | Actual procedural pose-library writer35 + reader6 pass |
 | REF-02 | Reference-only state present; full recovered-source gate not rerun |
 | SEQ-01 | Unimplemented editable nested sequence update gate |
 | KEY-01 | Actual green removal, original immutability, transparent/half-alpha unit checks, spill filter; app19 + reader7 |
-| SAFE-01 | Full Python discovery272run/271pass/1skip, origin corpus51, raster packet17 pass; full interruption/fault matrix remains |
+| SAFE-01 | Full Python discovery280run/279pass/1skip, origin corpus51, raster packet17, recovery identity47/journal33/startup147 pass; full interruption/fault matrix remains |
 | PERF-01 | Physical tablet/owner machine unavailable; no latency/comfort claim |
 | Addendum A | Procedural subset works; five-minute novice observation absent |
 | Addendum B | Owner-approved native model/map fixtures and Windows environment needed |
 | Addendum C | Domain/clip code present; fresh full presence/cut/visibility routed run remains |
 | Addendum D | Physics present; full native World/Local recording gate not freshly run |
 | Addendum E | Tutorial code/assets present; full fresh Previous/Continue/Fresh course run remains |
-| Addendum F | Explicit restore passes; automatic Linux ownership discovery and full crash gate remain |
+| Addendum F | Actual Linux automatic newest/older startup restoration passes15cases/147checks; native/GPU/physical gates remain |
 
-Next engineering priorities are automatic Linux recovery discovery, editable nested
+Next engineering priorities are editable nested
 sequence data/runtime/audio/cache integration, remaining tutorial chapters, then
 broader native fidelity and long-project measurement. Keep units, headless tests,
 isolated software rendering, native Windows GPU/device checks and subjective artist
 acceptance distinct. New video behavior and exact reproduction are documented in
 [video_import.md](video_import.md). Do not report the application fully complete.
+
+Linux recovery was completed after the initial video checkpoint; see [linux_recovery.md](linux_recovery.md). Earlier checkpoint counts remain historical scoped results.

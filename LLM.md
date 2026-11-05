@@ -60,3 +60,29 @@ choice and owner-approved native fixture/Windows environment paths. No such
 decision or fixtures have arrived yet. The active continuation goal authorizes
 committing and pushing the development repository; no deployment, binary/native
 asset distribution or external messaging is authorized.
+
+
+## 2026-11-05 UTC — safe Linux ownership and automatic startup recovery
+
+Implemented Linux read-only recovery probing with boot UUID + exact process start
+ticks, bounded stat parsing and conservative unknown/permission handling. Missing
+records require a positive exited-process existence query; kill(pid,0) sends no
+signal. Linux uses process_liveness_2 / linux_start sidecar metadata; Windows v1
+created_100ns and native query/guard remain. No project/journal schema change.
+
+Preserved and made existing ownership/startup wrappers portable. Linux graphical
+tests require an explicit isolated dummy display; no shared-desktop fallback.
+Actual writer PID is captured/joined after SIGKILL; no graceful teardown hooks ran.
+Fresh: Python280run/279pass/1MMD-reader skip, probe8, ownership47, journal33,
+normal startup15cases/147assertions pass. Camera/rig/ink/audio, newest/older fallback,
+manual HAS byte preservation, live/unknown/reused/current ownership and explicit
+Save pass. Recovered H2641080p24/48frames/2sec + AAC decodes frame24 onset at
+1.0000417sec. Procedural models only; native_models=0, llvmpipe/dummy audio, no
+Windows/private-desktop/device/artist claim. See docs/linux_recovery.md and copied
+logs/JSON under /workspace/has-handoff-audit/linux-recovery-*. Tracked historical
+output files were restored after copying fresh proof outside the checkout.
+
+Source recovery/video commits through41b45b6 were pushed non-forcibly to main.
+Requirement matrix updated; full application is not complete. Remaining nested
+editable sequences/audio/cache, advanced curriculum, native/full-body fidelity,
+long-project measurement and owner acceptance are still distinct work.

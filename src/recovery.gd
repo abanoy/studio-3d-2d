@@ -11,8 +11,18 @@ static func valid_creation(value) -> bool:
 		if not character in "0123456789":return false
 	return value.length()<20 or value<="18446744073709551615"
 
+static func valid_linux_start(value) -> bool:
+	if not value is String:return false
+	var parts: PackedStringArray=value.split(":")
+	if parts.size()!=2 or parts[0].length()!=36 or not valid_creation(parts[1]):return false
+	for i in 36:
+		if i in [8,13,18,23]:
+			if parts[0][i]!="-":return false
+		elif not parts[0][i] in "0123456789abcdef":return false
+	return true
+
 static func probe_processes(pids: Array) -> Dictionary:
-	var states:={};var created:={}
+	var states:={};var created:={};var linux_start:={}
 	var args:=PackedStringArray([ProjectSettings.globalize_path("res://tools/recovery_processes.py")])
 	for pid in pids:
 		if not Storage.integer(pid,1,2147483647):continue
@@ -20,18 +30,19 @@ static func probe_processes(pids: Array) -> Dictionary:
 		if states.has(key):continue
 		states[key]="unknown"
 		if args.size()<=1024:args.append(key)
-	if args.size()==1:return {"owners":states,"created_100ns":created}
+	if args.size()==1:return {"owners":states,"created_100ns":created,"linux_start":linux_start}
 	var python:=OS.get_environment("HYBRID_PYTHON");var output: Array=[]
 	var code:=OS.execute(python if not python.is_empty() else "python",args,output,false,false)
 	if code==0 and not output.is_empty():
 		var parser:=JSON.new()
 		if parser.parse(str(output[0]))==OK and parser.data is Dictionary:
 			var data: Dictionary=parser.data
-			if data.get("format")=="studio_process_liveness_1" and data.get("owners") is Dictionary:
+			if data.get("format") in ["studio_process_liveness_1","studio_process_liveness_2"] and data.get("owners") is Dictionary:
 				for pid in states:
 					if data.owners.get(pid) in ["alive","exited"]:states[pid]=data.owners[pid]
 					if data.get("created_100ns") is Dictionary and valid_creation(data.created_100ns.get(pid)):created[pid]=data.created_100ns[pid]
-	return {"owners":states,"created_100ns":created}
+					if data.get("format")=="studio_process_liveness_2" and data.get("linux_start") is Dictionary and valid_linux_start(data.linux_start.get(pid)):linux_start[pid]=data.linux_start[pid]
+	return {"owners":states,"created_100ns":created,"linux_start":linux_start}
 
 static func owner_record() -> Dictionary:
 	var pid:=OS.get_process_id()
@@ -39,6 +50,7 @@ static func owner_record() -> Dictionary:
 		own_record_cache={"pid":pid}
 		var info:=probe_processes([pid]);var key:=str(pid)
 		if info.owners.get(key)=="alive" and valid_creation(info.created_100ns.get(key)):own_record_cache["created_100ns"]=info.created_100ns[key]
+		if info.owners.get(key)=="alive" and valid_linux_start(info.linux_start.get(key)):own_record_cache["linux_start"]=info.linux_start[key]
 	return own_record_cache.duplicate()
 
 static func process_info(pids: Array) -> Dictionary:
@@ -49,6 +61,7 @@ static func process_info(pids: Array) -> Dictionary:
 	if OS.get_process_id() in pids:
 		var own:=owner_record()
 		if valid_creation(own.get("created_100ns")):info.created_100ns[mine]=own.created_100ns
+		if valid_linux_start(own.get("linux_start")):info.linux_start[mine]=own.linux_start
 	return info
 
 static func process_status(pids: Array) -> Dictionary:
@@ -62,9 +75,16 @@ static func owner_available(owner: Dictionary,info: Dictionary,include_current :
 		discovery_warning="Some recovery sessions have invalid owner records and were left untouched. Use Open saved backup to inspect them.";return false
 	if owner.has("created_100ns") and not valid_creation(owner.created_100ns):
 		discovery_warning="Some recovery sessions have invalid owner identities and were left untouched. Use Open saved backup to inspect them.";return false
+	if owner.has("linux_start") and (not valid_linux_start(owner.linux_start) or owner.has("created_100ns")):
+		discovery_warning="Some recovery sessions have invalid owner identities and were left untouched. Use Open saved backup to inspect them.";return false
 	var pid:=str(int(owner.pid));var state: String=info.get("owners",{}).get(pid,"unknown")
 	if state=="exited":return true
 	if state=="alive":
+		if owner.has("linux_start"):
+			var current=info.get("linux_start",{}).get(pid)
+			if not valid_linux_start(current):
+				discovery_warning="Some recovery owners could not be identified and were left untouched. Use Open saved backup to inspect them.";return false
+			if current!=owner.linux_start:return true
 		if owner.has("created_100ns"):
 			var current=info.get("created_100ns",{}).get(pid)
 			if not valid_creation(current):
