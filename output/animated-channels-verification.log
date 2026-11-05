@@ -1,0 +1,51 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS old neutral hold keys remain inspectable without empty disclosure rows
+PASS new manual edits identify only the bone actually changed
+PASS expanded index contains authored root, arm and visibility without unused center bone
+PASS channel label uses the English estimate while retaining native identity
+PASS shared pose control keys and independent visibility addresses stay distinct
+PASS Simple starts with one collapsed row per object
+PASS routed disclosure click expands only animated channels
+PASS expanding rows changes no animation, history or temporary view
+PASS following object rows map below expanded channels without changing domain order
+PASS clicking a following row still selects the correct peer object
+PASS channel key click selects the actual bone and frame through a filtered inspector
+PASS channel inspection highlights its row without moving an animation block
+PASS part/key inspection preserves shot, model data and Undo history
+PASS bone-tree selection highlights the matching expanded channel
+PASS channel context retains timeline import and disables destructive whole-piece operations
+PASS visibility channel selects for inspection without changing state or frame
+PASS export-locked timeline cannot change expansion or selection
+PASS older snapshots infer meaningful part rows without inventing unused joints
+PASS duplicate channel hints are rejected
+PASS unknown channel bindings fail without replacing the live pose
+PASS editing another part at the same frame retains prior authored channel identity
+PASS Undo restores channel annotations together with the actual transform
+PASS split and moved pieces update source-time channel key addresses
+PASS motion retiming leaves the independent visibility channel at its original time
+PASS existing stable-ID Undo restores motion and channel hints after structural editing
+PASS collapse restores ordinary object layout and preserves both objects
+PASS channel fixture retains independent audio
+PASS New clears old expanded row addresses before the next draw
+PASS packed HAS retains native channel hints while expansion remains editor-only
+PASS packed HAS preserves all object transforms, poses, visibility and provenance with channel hints
+PASS recovery preserves channel annotations and existing motion/visibility
+CHANNEL_RECOVERY_PIXELS {"channels":3,"close":true,"mean":0.0000242332175925926}
+PASS recovery GLB rebuild retains the frame within the existing bounded GPU edge tolerance
+PASS MP4 samples existing motion/camera/cels identically after channel inspection
+PASS native channel retains arm binding: pose-smoke/miku-project
+PASS native arm channel expands without hundreds of inactive bones: pose-smoke/miku-project
+PASS native row selection preserves binding, provenance and original bytes: pose-smoke/miku-project
+PASS many explicitly keyed native parts scroll inside a bounded timeline with pinned ruler
+PASS routed click selects the last scrolled native channel by its original binding
+PASS Undo invalidates expanded channel cache and removes obsolete rows
+PASS native channel retains arm binding: source-smoke/source-project
+PASS native arm channel expands without hundreds of inactive bones: source-smoke/source-project
+PASS native row selection preserves binding, provenance and original bytes: source-smoke/source-project
+PASS native channel retains arm binding: sfm-smoke/project
+PASS native arm channel expands without hundreds of inactive bones: sfm-smoke/project
+PASS native row selection preserves binding, provenance and original bytes: sfm-smoke/project
+PASS channel UI never rewrites the authored source asset
+ANIMATED_CHANNELS {"checks":46,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/animated-channels/run_779053","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/animated-channels/run_779053/render_1793338245_3040281_0/movie.mp4","native_samples":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/animated-channels/run_779053/channels.has","recovery_pixels":{"channels":3,"close":true,"mean":0.0000242332175925926}}

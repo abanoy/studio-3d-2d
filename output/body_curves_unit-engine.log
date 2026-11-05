@@ -1,0 +1,37 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS legacy snapshots extract into a valid independent body contract
+PASS legacy body and root evaluation remain exact at every half-frame
+PASS new bone gets an independent control
+PASS new bone preserves original snapshot values and all eased peer samples
+PASS untouched limb keeps its original1.5625 eased value
+PASS new bone interpolates from the prior base and holds after its last key
+PASS each body part exposes only its own authored frames
+PASS same-frame interpolation choices do not alter another bone
+PASS removing a new body-part key leaves peers exact
+PASS removing a legacy bone key does not remove its root snapshot
+PASS re-keying a removed legacy control restores the original curve
+PASS independent tracks split into owned source slices
+PASS split preserves every body channel at every half-frame
+PASS moving a split carries every channel's original relative motion
+PASS body gaps connect recorded endpoints rather than freezing
+PASS a new body-part block after a take leaves existing curves exact
+PASS earlier block for another part preserves the first part's introduction
+PASS nonfinite part values reject
+PASS duplicate or unsorted control addresses reject
+PASS native bone identities validate without renaming
+PASS out-of-project frames and unknown interpolation refuse
+PASS all edits leave the original source record untouched
+PASS malformed source records refuse before extraction
+PASS phantom legacy-key suppression addresses reject
+PASS root and bone identities cannot collide
+PASS editing a returned static sample cannot mutate retained base curves
+PASS model5 expression-only pieces never become body anchors during extraction
+PASS historical coupled body motion is preserved rather than silently repaired
+RECORDED_BODY_CURVES {"channels":20,"comparison_average_usec":2686.0206185567,"model":"Miku_Hatsune.pmd"}
+PASS actual native physics take preserves every effective body channel at every half-frame: Miku_Hatsune.pmd
+RECORDED_BODY_CURVES {"channels":22,"comparison_average_usec":3034.20618556701,"model":"reimu_hakurei_bikini_ragdoll.mdl"}
+PASS actual native physics take preserves every effective body channel at every half-frame: reimu_hakurei_bikini_ragdoll.mdl
+RECORDED_BODY_CURVES {"channels":22,"comparison_average_usec":3259.45360824742,"model":"scout.mdl"}
+PASS actual native physics take preserves every effective body channel at every half-frame: scout.mdl
+BODY_CURVES_UNIT {"checks":31,"failures":0}

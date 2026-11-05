@@ -1,0 +1,35 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS version2 owns source curves explicitly and validates
+PASS promotion preserves the input record and unknown provenance
+PASS promotion preserves every root/bone sample including eased/linear segments
+PASS split uses half-open pieces and source-time addresses
+PASS splitting inside a curve preserves every original frame exactly
+PASS split rejects boundary/outside requests without mutating source
+PASS moving the right piece retains its original parametric motion
+PASS gap connects the surrounding endpoint states instead of freezing or hiding
+PASS after the final piece the complete last state holds
+PASS overlapping/out-of-project moves fail without changing the original
+PASS deliberately held source interpolation remains held across a gap
+PASS removing first piece updates introduction to the remaining piece
+PASS pasting a copied piece preserves its own source-time curve
+PASS paste cannot overwrite another piece
+PASS editing a split piece cannot change its independently owned sibling
+PASS new key is stored in the edited piece while source input stays unchanged
+PASS manual earlier key introduces authored motion without changing the fixed piece
+PASS earlier authored motion preserves every later fixed source sample
+PASS manual key before a clipped interior cannot alter the original slice's interpolation
+PASS new authored take grows both directions while preserving existing motion and fixed neighbors
+PASS cutting last piece retains an empty, valid object record
+PASS manual edit can introduce an object whose animation pieces were removed
+PASS split preserves an explicit late-introduction offset
+PASS loader rejects overlapping serialized pieces
+PASS loader rejects duplicate piece identities
+PASS loader rejects invalid source ranges
+PASS version2 rejects ambiguous unowned legacy keys
+PASS piece ownership cannot be disguised as a legacy record
+PASS loader bounds total independently owned source keys
+PASS loader bounds the number of animation pieces
+PASS version2 requires an explicit introduction address even outside a world wrapper
+PASS standalone version2 application also honors first presence
+ANIMATION_CLIPS_UNIT {"checks":32,"failures":0}

@@ -1,0 +1,62 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS original far-scene and small reference fixtures created
+PASS far scene loads through the standard world contract
+PASS nearby pose reference loads independently
+PASS Simple mode keeps projection tuning hidden
+PASS Advanced exposes editable view-distance controls in camera mode
+PASS view-distance edit stays temporary without keys, history or dirty changes
+PASS invalid near/far UI combination refuses without changing the view
+PASS explicit Save camera key records the actual projection range
+PASS visibility distances follow the shot's existing interpolation
+PASS hold and exact camera-key boundaries retain their projection range
+PASS old keys retain the established cold-start clipping defaults
+PASS partially extended and old camera keys share the same explicit defaults
+PASS authored long-distance shot shows actual geometry 5000 units away
+PASS near clipping affects 3D while independent screen-space drawing survives
+PASS Frame model changes only the temporary view, including its own far distance
+PASS framing a small model no longer removes distant geometry from the same shot
+PASS MP4 export restores position, FOV and both editor clipping distances exactly
+PASS MP4 source frame matches the authored shot and independent cyan cel exactly
+PASS cancelled rendering restores the complete temporary view too
+PASS returning to Simple hides tuning without changing projection
+PASS world selection preserves the complete temporary camera view
+PASS project settings preserve temporary projection distances
+PASS project-setting Undo preserves temporary projection distances
+PASS camera-key Undo restores the old range with its original shot
+PASS camera-key Redo restores the changed range
+PASS normal HAS reopen restores projection from keys, independent of the previous document: packed
+PASS portable shot and drawing render identically after HAS reopen: packed
+PASS normal HAS reopen restores projection from keys, independent of the previous document: linked
+PASS portable shot and drawing render identically after HAS reopen: linked
+PASS ordinary directory save retains camera range
+PASS bad camera range refuses before overwriting a good save: nan
+PASS bad camera range refuses before overwriting a good save: inf
+PASS bad camera range refuses before overwriting a good save: -1
+PASS bad camera range refuses before overwriting a good save: far
+PASS bad camera range refuses before overwriting a good save: true
+PASS bad camera range refuses before overwriting a good save: <null>
+PASS bad camera range refuses before overwriting a good save: 2000000000000.0
+PASS invalid range on Open preserves the complete live project
+PASS actual recovery restores saved camera range and full keys
+PASS recovered projection, world and independent drawing render identically
+PASS actual old-format HAS opens with established defaults without mutating its keys
+PASS legacy cold-open output retains its original visibility-distance limit
+PASS interactive import respects the captured near plane without changing the view or shot
+PASS model placed beyond a custom near plane produces actual visible pixels
+PASS a model too large for the current clip interval refuses with the complete world and view intact
+PASS interactive import also fits inside a short far distance without widening it
+PASS native reference imports into the same shot: MMD
+PASS native framing preserves distant shot, bone IDs and provenance: MMD
+PASS native reference imports into the same shot: GMod
+PASS native framing preserves distant shot, bone IDs and provenance: GMod
+PASS native reference imports into the same shot: SFM
+PASS native framing preserves distant shot, bone IDs and provenance: SFM
+PASS native reference imports into the same shot: VRM1.0
+PASS native framing preserves distant shot, bone IDs and provenance: VRM1.0
+PASS native reference imports into the same shot: VRM0.x
+PASS native framing preserves distant shot, bone IDs and provenance: VRM0.x
+PASS combined native packed HAS retains projection and all original model data
+PASS projection work never changes source model files
+CAMERA_RANGE {"checks":58,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\camera-range\\1793418963649777700","green_pixels":139876,"movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\camera-range\\1793418963649777700/render_1793418966_2666715_0/movie.mp4","native_models":5}

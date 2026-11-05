@@ -1,0 +1,66 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS authored independent skin branches export a real test GLB
+PASS native left/right identities resolve: Authored
+PASS normal editor accepts the baseline eased pose fixture: Authored
+PASS independent controls bind to the existing standard rig: Authored
+PASS rendered root and untouched native arm remain exact: Authored
+PASS independent opposite arm visibly deforms actual GPU skin: Authored
+AUTHORED_COLORS {"after":{"blue":11900,"orange":14528},"before":{"blue":11900,"orange":14588}}
+PASS both skin branches remain positively visible after independent motion
+PASS authored opposite branch can be isolated for pixel comparison
+ISOLATED_COLORS {"after":{"blue":11900,"orange":0},"before":{"blue":11900,"orange":0},"mesh":"/root/Studio/@Node@2/@SubViewport@3/@Node3D@4/StudioWorld/BodyCurveFixture/Skeleton3D/RightMesh"}
+PASS positively visible untouched skin remains pixel-exact when the opposite branch changes
+PASS experimental internal contract survives JSON with exact sampled motion: Authored
+PASS experiment preserves native metadata, identities and original geometry: Authored
+PASS ordinary pose samples install for diagnostic portability: Authored
+PASS diagnostic HAS preserves sampled key payloads and exact pre-save ordinary evaluation: Authored
+PASS authored diagnostic HAS preserves exact rendered body-motion pixels
+PASS diagnostic motion exports with independent drawing and exact preview pixels
+PASS native left/right identities resolve: MMD
+PASS normal editor accepts the baseline eased pose fixture: MMD
+PASS independent controls bind to the existing standard rig: MMD
+PASS rendered root and untouched native arm remain exact: MMD
+PASS independent opposite arm visibly deforms actual GPU skin: MMD
+PASS experimental internal contract survives JSON with exact sampled motion: MMD
+PASS experiment preserves native metadata, identities and original geometry: MMD
+PASS ordinary pose samples install for diagnostic portability: MMD
+PASS diagnostic HAS preserves sampled key payloads and exact pre-save ordinary evaluation: MMD
+PASS native left/right identities resolve: GMod
+PASS normal editor accepts the baseline eased pose fixture: GMod
+PASS independent controls bind to the existing standard rig: GMod
+PASS rendered root and untouched native arm remain exact: GMod
+PASS independent opposite arm visibly deforms actual GPU skin: GMod
+PASS experimental internal contract survives JSON with exact sampled motion: GMod
+PASS experiment preserves native metadata, identities and original geometry: GMod
+PASS ordinary pose samples install for diagnostic portability: GMod
+PASS diagnostic HAS preserves sampled key payloads and exact pre-save ordinary evaluation: GMod
+PASS native left/right identities resolve: SFM
+PASS normal editor accepts the baseline eased pose fixture: SFM
+PASS independent controls bind to the existing standard rig: SFM
+PASS rendered root and untouched native arm remain exact: SFM
+PASS independent opposite arm visibly deforms actual GPU skin: SFM
+PASS experimental internal contract survives JSON with exact sampled motion: SFM
+PASS experiment preserves native metadata, identities and original geometry: SFM
+PASS ordinary pose samples install for diagnostic portability: SFM
+PASS diagnostic HAS preserves sampled key payloads and exact pre-save ordinary evaluation: SFM
+PASS native left/right identities resolve: VRM1
+PASS normal editor accepts the baseline eased pose fixture: VRM1
+PASS independent controls bind to the existing standard rig: VRM1
+PASS rendered root and untouched native arm remain exact: VRM1
+PASS independent opposite arm visibly deforms actual GPU skin: VRM1
+PASS experimental internal contract survives JSON with exact sampled motion: VRM1
+PASS experiment preserves native metadata, identities and original geometry: VRM1
+PASS ordinary pose samples install for diagnostic portability: VRM1
+PASS diagnostic HAS preserves sampled key payloads and exact pre-save ordinary evaluation: VRM1
+PASS native left/right identities resolve: VRM0
+PASS normal editor accepts the baseline eased pose fixture: VRM0
+PASS independent controls bind to the existing standard rig: VRM0
+PASS rendered root and untouched native arm remain exact: VRM0
+PASS independent opposite arm visibly deforms actual GPU skin: VRM0
+PASS experimental internal contract survives JSON with exact sampled motion: VRM0
+PASS experiment preserves native metadata, identities and original geometry: VRM0
+PASS ordinary pose samples install for diagnostic portability: VRM0
+PASS diagnostic HAS preserves sampled key payloads and exact pre-save ordinary evaluation: VRM0
+BODY_CURVES {"checks":60,"failures":0,"metrics":{"Authored":{"contract":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/Authored-body-curves.json","left":"Skeleton3D::left","ordinary_conversion_component_difference":0.000000119209289550781,"right":"Skeleton3D::right","sampled_project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/Authored-sampled.has","source_sha256":"35561aeacec90c4dbec5cf8a2a1af13b91586e325602bc467319648fd89fa80b","warm_sample_usec":81.36},"GMod":{"contract":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/GMod-body-curves.json","left":"reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_L_UpperArm","ordinary_conversion_component_difference":0.000000119209289550781,"right":"reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_R_UpperArm","sampled_project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/GMod-sampled.has","source_sha256":"d2c9ca021a8df6acaf0406b3f26850e63aac90d2a57eb454120bde58e54c0459","warm_sample_usec":72.5},"MMD":{"contract":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/MMD-body-curves.json","left":"Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::左腕","ordinary_conversion_component_difference":0.000000119209289550781,"right":"Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::右腕","sampled_project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/MMD-sampled.has","source_sha256":"82206a87bc34c8a46fe85f7f36dddb961aaf22360ad0fcddef41b8b50308b097","warm_sample_usec":77.98},"SFM":{"contract":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/SFM-body-curves.json","left":"scout_ARM/Skeleton3D::bip_upperArm_L","ordinary_conversion_component_difference":0.000000119209289550781,"right":"scout_ARM/Skeleton3D::bip_upperArm_R","sampled_project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/SFM-sampled.has","source_sha256":"bfe3723f8fda70f674add1ae39928909a34311577f8d99689bc3072fe2c601bd","warm_sample_usec":66.5},"VRM0":{"contract":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/VRM0-body-curves.json","left":"HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperArm","ordinary_conversion_component_difference":0.000000119209289550781,"right":"HASAvatarRoot0/Skeleton3D::J_Bip_R_UpperArm","sampled_project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/VRM0-sampled.has","source_sha256":"3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56","warm_sample_usec":66.1},"VRM1":{"contract":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/VRM1-body-curves.json","left":"HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperArm","ordinary_conversion_component_difference":0.000000119209289550781,"right":"HASAvatarRoot0/Skeleton3D::J_Bip_R_UpperArm","sampled_project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/VRM1-sampled.has","source_sha256":"a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062","warm_sample_usec":67.68}},"movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\body-curves\\1793401996906168600/render_1793402004_5697155_0/movie.mp4","normal_editor_integration":false}

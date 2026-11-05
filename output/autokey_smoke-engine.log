@@ -1,0 +1,33 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS Simple defaults to auto-key without creating import keys
+PASS manual bone edit automatically keys frame0 with smooth easing
+PASS manual edit at frame4 adds exact current-frame key
+PASS auto-keyed poses interpolate at master frame2
+PASS one Undo removes the edit and newly inserted key together
+PASS editing existing frame updates one key without a replacement prompt
+PASS Undo restores previous value of an overwritten automatic key
+PASS applying unchanged values does not create a key
+PASS live gizmo motions remain a draft until gesture completes
+PASS gizmo release creates one key and one undo command
+PASS cancelled gizmo restores pose and leaves no key
+PASS root translation and uniform scale auto-key through same contract
+PASS selection, frame changes and flags do not key poses, cameras or paint
+PASS Advanced Auto-key off preserves explicit draft workflow
+PASS explicit Record remains usable with Auto-key off
+PASS manual Reset selected creates an undoable automatic key
+PASS small authored move far from origin updates automatic key
+PASS automatic keys round-trip through existing packed HAS without migration
+PASS auto-keyed animation and independent cel export with identical frame4 pixels
+PASS export creates no keys and original model bytes stay unchanged
+PASS native prepared fixture opens for auto-key: pose-smoke/miku-project
+PASS native arm edit auto-keys and visibly deforms shared rig: pose-smoke/miku-project
+PASS native auto-key Undo restores full data and source remains unchanged: pose-smoke/miku-project
+PASS native prepared fixture opens for auto-key: source-smoke/source-project
+PASS native arm edit auto-keys and visibly deforms shared rig: source-smoke/source-project
+PASS native auto-key Undo restores full data and source remains unchanged: source-smoke/source-project
+PASS native prepared fixture opens for auto-key: sfm-smoke/project
+PASS native arm edit auto-keys and visibly deforms shared rig: sfm-smoke/project
+PASS native auto-key Undo restores full data and source remains unchanged: sfm-smoke/project
+AUTOKEY_SMOKE {"checks":29,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/autokey/run_639883","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/autokey/run_639883/render_1793385528_2150500_0/movie.mp4","native_projects":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"]}

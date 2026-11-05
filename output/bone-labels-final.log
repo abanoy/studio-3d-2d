@@ -1,0 +1,20 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS dictionary estimates common left/right humanoid parts
+PASS numbered finger segments preserve source numbering
+PASS known twist and full-width IK conventions retain their meaning
+PASS common center/root/body controls have conservative estimates
+PASS unknown labels stay native instead of inventing translations
+PASS search matches English or native names without unrelated matches
+PASS repeated parts retain numbers and existing English stays unchanged
+PASS native bone name and binding identity remain Japanese
+PASS tree shows a marked English estimate with original name/ID in tooltip
+PASS English search finds the original rig without editing it
+PASS native search resolves the same original bone
+PASS English-labelled control visibly poses and keys the original Japanese binding
+PASS packed HAS reopens native Japanese bindings and reapplies UI estimates
+PASS dictionary labels never rewrite source model bytes
+PASS actual Miku PMD tree displays its common arm estimate
+PASS actual Miku supports English search with identical native data
+BONE_LABELS {"checks":16,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/bone-labels/run_711287","native_tested":true}

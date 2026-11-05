@@ -1,0 +1,27 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS authored body edit promotes to valid model6
+PASS model6 preserves untouched limb and root easing at every half-frame
+PASS model6 samples the new independent limb
+PASS source snapshots stay intact while public authored frames include sparse controls
+PASS native model6 data validates and samples after JSON reopen
+PASS selected-part removal preserves peer animation
+PASS expression-only model6 blocks leave body motion unchanged
+PASS invalid body controls refuse before evaluation
+PASS old model versions cannot silently accept independent body fields
+PASS explicit Record retains the rest-pose interpolation of subsequently animated parts
+PASS shared recorded rest exposes real per-part authored frame0
+PASS earlier manual key corrects introduction without a phantom later return to rest
+PASS a new authored take grows within one source block rather than keeping empty import placeholders
+PASS selected-part deletion in an older project upgrades only that operation and preserves root motion
+PASS growing another part never moves the root's own interpolation endpoint
+PASS compiled per-part ranges exactly match source evaluation at every half-frame
+PASS explicit source split retains mixed-part motion throughout both ranges
+PASS backward block growth preserves another part's original source addresses and introduction
+PASS combined independent controls retain the existing project key budget
+PASS full-precision project encoding retains very small authored rotation values exactly
+PASS full-precision reopen retains independent tiny-rotation samples at every half-frame
+PASS normal compiled model6 retains every native recorded part at97half-frames: Miku_Hatsune.pmd
+PASS normal compiled model6 retains every native recorded part at97half-frames: reimu_hakurei_bikini_ragdoll.mdl
+PASS normal compiled model6 retains every native recorded part at97half-frames: scout.mdl
+BODY_ANIMATION_UNIT {"checks":24,"failures":0}

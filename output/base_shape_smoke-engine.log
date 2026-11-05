@@ -1,0 +1,58 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS base setup stays out of the default Simple workspace
+PASS Advanced shows actual named imported shape channels
+PASS Apply changes one base amount with one Undo
+PASS base setup preserves pose/camera keys and stores a versioned adjustment
+PASS base amount visibly deforms the model
+PASS Simple/Advanced switching preserves adjusted pixels and Undo
+PASS untouched amount does not create a false edit
+PASS Undo restores exact original default pixels
+PASS Redo restores exact adjusted pixels
+PASS shape search selects the original numeric channel without renaming it
+PASS editing a second shape keeps the first adjustment
+PASS turning imported defaults off retains explicit adjustments
+PASS reset removes only the selected adjustment and inherits neutral base
+PASS Undo restores the adjustment and imported base choice
+PASS reset all restores declared defaults rather than deleting source morphs
+PASS reset all is one reversible model edit
+PASS collision/framing vertices agree with actual adjusted GPU geometry
+PASS base shape remains consistent across project time: 0
+PASS base shape remains consistent across project time: 24
+PASS base shape remains consistent across project time: 47
+PASS invalid adjustment refuses without changing the model or Undo
+PASS invalid adjustment refuses without changing the model or Undo
+PASS invalid adjustment refuses without changing the model or Undo
+PASS invalid adjustment refuses without changing the model or Undo
+PASS invalid adjustment refuses without changing the model or Undo
+PASS invalid adjustment refuses without changing the model or Undo
+PASS failed adjustments leave active GPU and geometry caches intact
+PASS normal loose-part review receives edited base amounts
+PASS weighted helper revision retains explicit base adjustments and original channels
+PASS base adjustments and independent drawing survive packed HAS
+PASS base adjustments and independent drawing survive linked HAS
+PASS adjusted base exports with exact reopened preview pixels
+PASS valid adjusted geometry prepares before the late-failure probe
+PASS late second-part geometry failure preserves the previously applied shape
+PASS valid adjustment still works after a failed preparation
+PASS Undo after a failed preparation restores the correct earlier geometry
+PASS native model exposes real shape channels: MMD
+PASS native fixture has a nonzero positional shape for actual deformation: MMD
+PASS native amount changes actual GPU geometry without changing bone identities: MMD
+PASS native shape, full imported metadata and stable bindings survive packed HAS: MMD
+PASS native model exposes real shape channels: GMod
+PASS native fixture has a nonzero positional shape for actual deformation: GMod
+PASS native amount changes actual GPU geometry without changing bone identities: GMod
+PASS native shape, full imported metadata and stable bindings survive packed HAS: GMod
+PASS native model exposes real shape channels: SFM
+PASS native fixture has a nonzero positional shape for actual deformation: SFM
+PASS native amount changes actual GPU geometry without changing bone identities: SFM
+PASS all520 actual Scout channels remain selectable
+PASS native large-list search selects original channel519
+PASS editing native channel519 preserves the earlier adjustment
+PASS native shape, full imported metadata and stable bindings survive packed HAS: SFM
+PASS native channel519 adjustment survives packed HAS
+PASS visible Advanced shape controls leave a usable viewport at1200pixels
+PASS base Apply action is reachable within the scrolling inspector
+BASE_SHAPES {"checks":54,"failures":0,"gpu_geometry_error":0.0000000596046447753906,"movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\base-shapes\\1793406766027782300/render_1793406772_5660117_0/movie.mp4","native":{"GMod":{"apply_usec":91848,"channels":52,"deformation":0.00396997248753905,"target":0},"MMD":{"apply_usec":97573,"channels":15,"deformation":0.0104687800630927,"target":4},"SFM":{"apply_usec":2324356,"channels":520,"deformation":0.00110812031198293,"target":0}}}

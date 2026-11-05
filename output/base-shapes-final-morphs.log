@@ -1,0 +1,56 @@
+test_component_ids_survive_shapes_moving_separate_regions_together (__main__.MorphReview.test_component_ids_survive_shapes_moving_separate_regions_together) ... ok
+test_existing_review_stays_neutral (__main__.MorphReview.test_existing_review_stays_neutral) ... ok
+test_invalid_weights_and_budget_refuse_before_output (__main__.MorphReview.test_invalid_weights_and_budget_refuse_before_output) ... ok
+test_large_retained_target_list_with_one_active_high_index (__main__.MorphReview.test_large_retained_target_list_with_one_active_high_index) ... ok
+test_multiple_signed_targets_are_deltas_before_skinning (__main__.MorphReview.test_multiple_signed_targets_are_deltas_before_skinning) ... ok
+test_node_overrides_mesh_defaults_and_snapshot_overrides_both (__main__.MorphReview.test_node_overrides_mesh_defaults_and_snapshot_overrides_both) ... ok
+test_preview_and_derived_controls_use_shape_without_baking_source (__main__.MorphReview.test_preview_and_derived_controls_use_shape_without_baking_source) ... ok
+test_sparse_corruption_and_target_mismatch_refuse (__main__.MorphReview.test_sparse_corruption_and_target_mismatch_refuse) ... ok
+test_sparse_zero_base_and_dense_replacement (__main__.MorphReview.test_sparse_zero_base_and_dense_replacement) ... ok
+test_worker_uses_same_snapshot_for_inspect_preview_and_build (__main__.MorphReview.test_worker_uses_same_snapshot_for_inspect_preview_and_build) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.817s
+
+OK
+{
+  "checks": 32,
+  "failures": 0,
+  "metrics": {
+    "many-targets": {
+      "deformation": 85467,
+      "gpu_geometry_error": 1.34110450744629e-07,
+      "reimport": {
+        "changed": 12,
+        "mean": 0.000141179591049383
+      }
+    },
+    "node-defaults": {
+      "deformation": 78048,
+      "gpu_geometry_error": 1.69244657399759e-07,
+      "reimport": {
+        "changed": 9,
+        "mean": 0.000118634259259259
+      }
+    },
+    "signed-snapshot": {
+      "deformation": 58500,
+      "gpu_geometry_error": 6.51659632922019e-08,
+      "reimport": {
+        "changed": 3,
+        "mean": 2.26658950617284e-05
+      }
+    },
+    "sparse": {
+      "deformation": 44289,
+      "gpu_geometry_error": 1.20137002568299e-07,
+      "reimport": {
+        "changed": 10,
+        "mean": 6.77565586419753e-05
+      }
+    }
+  },
+  "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\helper-morphs\\1793396685893247700",
+  "receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\helper_morphs_render_d97c91b5321d469396a71e704a3787da.json",
+  "product_integration": false
+}

@@ -1,0 +1,55 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS clip fixture contains actual independent WAV audio
+PASS actual timeline context menu splits the independent model into owned source pieces
+PASS split owns source curves explicitly in one Undo step
+PASS split retains rendered cut-frame within the existing GPU edge tolerance
+PASS all original pose and root samples survive splitting through an eased segment
+PASS piece drag previews independently without changing document
+PASS outside release moves only the right piece with its original bone motion
+PASS gap remains visible and interprets connecting motion
+PASS split/move leaves shot keys, WAV, drawing and other map unchanged
+PASS Undo restores only the moved piece's old timing
+PASS Redo restores the independently moved piece
+PASS Shift-drag moves all pieces/presence together while retaining source-time keys
+PASS Undo whole-object clip retiming restores every piece
+PASS Cut stores the selected piece and moves introduction to the remaining first piece
+PASS lone later block is absent before introduction and appears at its first frame
+PASS Paste restores an editable left piece with its source-time motion
+PASS Copy/Paste duplicates a motion piece into free timeline space
+PASS manual auto-key edits its owning piece without changing the copied sibling
+PASS Undo restores an edit inside a split source curve
+PASS overlap rejection preserves the complete document and Undo history
+PASS clipboard cannot paste incompatible bone motion onto another source asset
+PASS normal HAS reopen retains both record versions and independent piece ownership
+PACKED_CLIP_DIAGNOSTIC {"data_exact":true,"media_exact":true,"pixels":{"channels":27,"close":true,"mean":0.00014744888117284},"transforms_exact":true}
+PASS reopened multi-piece animation retains exact data/transforms/media within existing GLB rebuild edge bounds
+PASS linked HAS also preserves all piece curves and timing
+PASS actual recovery checkpoint reopens the editable clip world
+PASS separate recovery GLB rebuild stays within existing bounded edge tolerance
+PASS MP4 uses retimed piece evaluation with independent cel/audio
+PASS explicit hidden state remains authoritative through an interpreted motion gap
+PASS deleting all pieces keeps an editable selected object absent from the rendered world
+PASS manual auto-key reintroduces an object after its last piece was removed
+PASS fresh authored piece grows for later manual poses without making a new block per key
+PASS Undo restores deleted pieces and their independent motion after a new manual edit
+PASS piece editing/recovery/render preserves source GLB and manual packed HAS
+PASS native clip rig retains its actual arm identity: pose-smoke/miku-project
+PASS native skin/source curve survives split and independent move: pose-smoke/miku-project
+PASS native manual bone edit belongs only to its selected-time piece: pose-smoke/miku-project
+PASS native piece Undo/provenance/source bytes remain intact: pose-smoke/miku-project
+PASS native clip rig retains its actual arm identity: source-smoke/source-project
+PASS native skin/source curve survives split and independent move: source-smoke/source-project
+PASS native manual bone edit belongs only to its selected-time piece: source-smoke/source-project
+PASS native piece Undo/provenance/source bytes remain intact: source-smoke/source-project
+PASS native clip rig retains its actual arm identity: sfm-smoke/project
+PASS native skin/source curve survives split and independent move: sfm-smoke/project
+PASS native manual bone edit belongs only to its selected-time piece: sfm-smoke/project
+PASS native piece Undo/provenance/source bytes remain intact: sfm-smoke/project
+PASS normal packed HAS reopens combined MMD/GMod/SFM piece ownership and native metadata
+PASS normal HAS reopen retains authored-range growth without changing its earlier motion
+PASS explicit earlier manual key corrects introduction even before an unsplit object's import frame
+PASS cross-project clipboard cannot silently reinterpret motion at a different FPS
+PASS same-rate compatible clipboard remains available after a rejected paste
+ANIMATION_CLIPS_SMOKE {"checks":50,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/animation-clips/run_1200950","linked_project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/animation-clips/run_1200950/clips-linked.has","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/animation-clips/run_1200950/render_1793419051_7978911_0/movie.mp4","native_project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/animation-clips/run_1200950/native-pieces.has","native_samples":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"packed_pixels":{"channels":27,"close":true,"mean":0.00014744888117284},"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/animation-clips/run_1200950/clips.has","recovery_pixels":{"channels":30,"close":true,"mean":0.000181086033950617},"split_pixels":{"channels":3,"close":true,"mean":0.0000186873070987654}}

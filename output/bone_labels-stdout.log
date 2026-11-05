@@ -1,0 +1,29 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS dictionary estimates common left/right humanoid parts
+PASS numbered finger segments preserve source numbering
+PASS known twist and full-width IK conventions retain their meaning
+PASS common center/root/body controls have conservative estimates
+PASS unknown parts stay neutral in Simple and reveal their exact name in Advanced
+PASS search matches English or native names without unrelated matches
+PASS repeated parts retain numbers and known English conventions use body names
+PASS Simple generalizes hands, feet, pelvis and mouth
+PASS Source and SFM exact aliases share the standard vocabulary
+PASS declared VRM humanoid roles label opaque internal names
+PASS role labels tolerate opaque native metadata and use explicit node mapping
+PASS native bone name and binding identity remain Japanese
+PASS Simple tree and tooltip use body names without internal names or IDs
+PASS English search finds the original rig without editing it
+PASS native search resolves the same original bone
+PASS English-labelled control visibly poses and keys the original Japanese binding
+PASS Advanced reveals exact internal names and IDs while retaining selected bone and filter
+PASS expanded timeline reveals internal names in Advanced too
+PASS returning to Simple refreshes tree and cached timeline labels immediately
+PASS mode switches preserve pose keys, selection, frame, camera and Undo
+PASS label presentation changes leave final render pixels identical
+PASS packed HAS reopens native Japanese bindings and reapplies Simple labels
+PASS dictionary labels never rewrite source model bytes
+PASS actual Miku PMD tree displays its common body-part name
+PASS actual Miku supports English search with identical native data
+BONE_LABELS {"checks":25,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/bone-labels/run_624612","native_tested":true}

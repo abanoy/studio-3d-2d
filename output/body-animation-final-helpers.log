@@ -1,0 +1,108 @@
+test_assessment_uses_topology_and_weights_without_source_edits (__main__.Helpers.test_assessment_uses_topology_and_weights_without_source_edits) ... ok
+test_derived_json_budget_refuses_before_creating_an_unreadable_asset (__main__.Helpers.test_derived_json_budget_refuses_before_creating_an_unreadable_asset) ... ok
+test_deterministic_output_and_correctable_points (__main__.Helpers.test_deterministic_output_and_correctable_points) ... ok
+test_existing_springs_and_output_preserve_previous_assets (__main__.Helpers.test_existing_springs_and_output_preserve_previous_assets) ... ok
+test_external_and_accessor_corruption_refuse_before_writes (__main__.Helpers.test_external_and_accessor_corruption_refuse_before_writes) ... ok
+test_full_eight_influences_refuse_without_pruning_or_writing (__main__.Helpers.test_full_eight_influences_refuse_without_pruning_or_writing) ... ok
+test_generated_bind_range_matches_the_reader_contract (__main__.Helpers.test_generated_bind_range_matches_the_reader_contract) ... ok
+test_invalid_patch_refuses_without_creating_outputs (__main__.Helpers.test_invalid_patch_refuses_without_creating_outputs) ... ok
+test_native_index_bindings_and_embedded_animation_remain_intact (__main__.Helpers.test_native_index_bindings_and_embedded_animation_remain_intact) ... ok
+test_native_v0_v1_coexist_without_shadowing_or_rewriting (__main__.Helpers.test_native_v0_v1_coexist_without_shadowing_or_rewriting) ... ok
+test_older_generated_vrmc_metadata_remains_augmentable (__main__.Helpers.test_older_generated_vrmc_metadata_remains_augmentable) ... ok
+test_partly_rigged_component_can_review_a_disjoint_unrigged_patch (__main__.Helpers.test_partly_rigged_component_can_review_a_disjoint_unrigged_patch) ... ok
+test_patch_pins_cut_boundary_and_preserves_surrounding_skin (__main__.Helpers.test_patch_pins_cut_boundary_and_preserves_surrounding_skin) ... ok
+test_preview_is_bounded_and_matches_exact_selected_skin_coordinates (__main__.Helpers.test_preview_is_bounded_and_matches_exact_selected_skin_coordinates) ... ok
+test_quantized_and_eight_weight_layouts (__main__.Helpers.test_quantized_and_eight_weight_layouts) ... ok
+test_real_weights_bind_matrices_and_unrelated_attributes_preserved (__main__.Helpers.test_real_weights_bind_matrices_and_unrelated_attributes_preserved) ... ok
+test_refuses_unreviewed_stale_or_degenerate_plan_without_output (__main__.Helpers.test_refuses_unreviewed_stale_or_degenerate_plan_without_output) ... ok
+test_second_region_preserves_first_chain_weights_and_refuses_overlap (__main__.Helpers.test_second_region_preserves_first_chain_weights_and_refuses_overlap) ... ok
+test_tiny_long_shape_is_not_suggested_from_aspect_alone (__main__.Helpers.test_tiny_long_shape_is_not_suggested_from_aspect_alone) ... ok
+test_transfer_can_add_an_eight_weight_set_without_pruning_other_joints (__main__.Helpers.test_transfer_can_add_an_eight_weight_set_without_pruning_other_joints) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.697s
+
+OK
+{
+  "bind_difference": {
+    "changed": 12,
+    "mean": 0.000158179012345679
+  },
+  "checks": 39,
+  "failures": 0,
+  "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793406622300522800",
+  "movie": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793406622300522800/render_1793406631_8884873_0/movie.mp4",
+  "sway_radians": 0.290376305580139,
+  "audio_onset_seconds": 1.0000416666666667,
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "nb_read_frames": "48",
+    "r_frame_rate": "24/1",
+    "duration": "2.000000"
+  },
+  "source_sha256": "4d4ddc8b1414d149d44d881c60270113eb70ea3bec0995c6b817c002f1b20316",
+  "native": {
+    "checks": 14,
+    "failures": 0,
+    "metrics": {
+      "gmod": {
+        "bind_difference": {
+          "changed": 165,
+          "mean": 9.5606674382716e-05
+        },
+        "deformation": {
+          "changed": 2334,
+          "mean": 0.0352101417824074
+        },
+        "original_bones": 77
+      },
+      "mmd": {
+        "bind_difference": {
+          "changed": 30,
+          "mean": 4.46084104938272e-06
+        },
+        "deformation": {
+          "changed": 511,
+          "mean": 0.0058446662808642
+        },
+        "original_bones": 126
+      }
+    },
+    "assessment_counts": {
+      "mmd": {
+        "regions": 89,
+        "suggested": 2,
+        "skipped": 0,
+        "truncated": false
+      },
+      "gmod": {
+        "regions": 163,
+        "suggested": 2,
+        "skipped": 0,
+        "truncated": false
+      },
+      "sfm": {
+        "regions": 32,
+        "suggested": 0,
+        "skipped": 0,
+        "truncated": false
+      }
+    }
+  },
+  "multi": {
+    "checks": 59,
+    "failures": 0,
+    "movies": [
+      "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793406622300522800/render_1793406654_6159331_0/movie.mp4"
+    ]
+  },
+  "patch": {
+    "checks": 35,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793406622300522800",
+    "movie": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793406622300522800/render_1793406680_11273295_0/movie.mp4",
+    "audio_onset_seconds": 1.0000416666666667
+  }
+}

@@ -1,0 +1,23 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS VRM1.0 container loads through standard GLB/model path
+PASS VRM1.0 retains poseable skeleton
+PASS VRM1.0 native left upper arm resolves
+PASS VRM1.0 arm edit deforms skin and auto-keys
+PASS VRM1.0 pose Undo restores exact pixels
+PASS VRM1.0 retains native morph geometry (no expression UI claim)
+PASS VRM1.0 original bytes unchanged
+PASS VRM0.x container loads through standard GLB/model path
+PASS VRM0.x retains poseable skeleton
+PASS VRM0.x native left upper arm resolves
+PASS VRM0.x arm edit deforms skin and auto-keys
+PASS VRM0.x pose Undo restores exact pixels
+PASS VRM0.x retains native morph geometry (no expression UI claim)
+PASS VRM0.x original bytes unchanged
+PASS both VRM versions coexist as independent standard instances
+PASS VRM geometry/poses and independent drawing save as packed HAS
+PASS normal HAS reopen restores both VRM instances without selection
+PASS VRM packed reopen matches exact preview pixels
+PASS VRM camera/pose/RGBA MP4 frame matches reopened preview
+AVATAR_SAMPLES {"checks":19,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/avatar-samples/run_790538","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/avatar-samples/run_790538/render_1793327568_10909565_0/movie.mp4","project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/avatar-samples/run_790538/avatars.has","scope":"VRM GLB geometry/FK/morph preservation test; native importer and VRM behavior pending"}
