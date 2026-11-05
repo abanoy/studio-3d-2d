@@ -86,3 +86,34 @@ Source recovery/video commits through41b45b6 were pushed non-forcibly to main.
 Requirement matrix updated; full application is not complete. Remaining nested
 editable sequences/audio/cache, advanced curriculum, native/full-body fidelity,
 long-project measurement and owner acceptance are still distinct work.
+
+
+## 2026-11-05 UTC — lighting and export tutorial chapter
+
+Home → Tutorials now includes **Advanced · Lighting and export**. Start fresh
+opens the existing included editable room/figure practice. Four tasks cover
+Advanced, Unshaded base colors, Studio light versus imported-scene Lit, and an
+actual successful MP4. Hints highlight the real lighting menu/export control.
+PNG-only output or a failed export does not award the movie task. Saving the
+practice project remains optional. Previous restores prior lighting and export
+observation; Continue/Fresh retains independent sessions and unsaved-copy identity.
+
+New course identity `advanced-lighting-v1` has4steps. All existing course IDs,
+lengths, asset hashes and lesson progress1/observation contracts stay unchanged.
+The export action row now remains visible for chapters with an export button
+without another action. No app project format, lighting implementation, native
+material editing, compulsory Save or tutorial Skip policy is changed.
+
+Fresh isolated llvmpipe app checks: new chapter19 + cold reader5; unchanged
+basic pose/draw + camera chapter52 + cold reader5. Both actual H2641080p24 movies
+have48frames/two seconds. New lesson preview/export input bytes match exactly,
+failed encoder preserves progress, Previous requires a new export, and original
+practice geometry/audio/HAS hashes remain exact. Windows private-desktop checks
+remain in the portable wrapper but were not run here. Logs/copied verification
+JSON are in /workspace/has-handoff-audit/lighting-lesson and tutorial-regression*.
+
+Reproduce with `python tests/verify_tutorials.py --chapter lighting`; on Linux
+provide an already provisioned private dummy display using `--isolated-display :99`.
+Default chapter preserves the existing pose/camera regression. This adds focused
+coverage; advanced interpolation/constraints/rigging/physics chapters, richer
+demonstrations and artist feedback remain. Full application is still incomplete.

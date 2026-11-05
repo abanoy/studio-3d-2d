@@ -5,7 +5,8 @@ const Drawing=preload("res://src/drawing.gd")
 const Timeline=preload("res://src/timeline.gd")
 const IK=preload("res://src/limb_ik.gd")
 const First=preload("res://src/first_movie_lesson.gd")
-const COURSES={First.ID:First.DEFINITION,"basic-pose":{"title":"Basic · Pose and draw","steps":["Click Practice figure in World.","At frame 24, raise and key its left hand above the shoulder.","At frame 24, draw a visible mark on Ink."],"hints":["Use the left World tree, or click the figure in the viewport.","Keep Physics off. Hold Alt, choose Left upper arm, and rotate upward at frame 24. Pose edits key automatically.","Choose Draw and the Ink layer. Add a cel if needed, then paint a mark." ]},"advanced-camera":{"title":"Advanced · Camera shots","steps":["Turn on Advanced in the blue top bar.","At frame 24, change your camera view and save a camera key.","Change FOV by at least 8 degrees, then replace the frame 24 camera key."],"hints":["Advanced reveals controls without changing the scene.","Choose Scene / camera. Ctrl + left-drag with WASD moves the view. Save camera key records it.","Use Editor camera FOV, then Save camera key and confirm replacement. An unrecorded view does not count."]}}
+const Light=preload("res://src/lighting_lesson.gd")
+const COURSES={Light.ID:Light.DEFINITION,First.ID:First.DEFINITION,"basic-pose":{"title":"Basic · Pose and draw","steps":["Click Practice figure in World.","At frame 24, raise and key its left hand above the shoulder.","At frame 24, draw a visible mark on Ink."],"hints":["Use the left World tree, or click the figure in the viewport.","Keep Physics off. Hold Alt, choose Left upper arm, and rotate upward at frame 24. Pose edits key automatically.","Choose Draw and the Ink layer. Add a cel if needed, then paint a mark." ]},"advanced-camera":{"title":"Advanced · Camera shots","steps":["Turn on Advanced in the blue top bar.","At frame 24, change your camera view and save a camera key.","Change FOV by at least 8 degrees, then replace the frame 24 camera key."],"hints":["Advanced reveals controls without changing the scene.","Choose Scene / camera. Ctrl + left-drag with WASD moves the view. Save camera key records it.","Use Editor camera FOV, then Save camera key and confirm replacement. An unrecorded view does not count."]}}
 var app
 var store=Store.new()
 var assets_root:="res://examples/tutorials"
@@ -51,7 +52,7 @@ func _ready() -> void:
 	previous_button=app.button(row,"Previous",previous);hint_button=app.button(row,"Hint",show_hint);app.button(row,"Leave lesson",func():leave(true))
 	panel.hide();app.has_project.operation_finished.connect(opened)
 	app.movie_export_finished.connect(func(_folder,success):
-		if active and course==First.ID and step==10:observed["export_done"]=success)
+		if active and ((course==First.ID and step==10) or (course==Light.ID and step==3)):observed["export_done"]=success)
 	marker=Panel.new();marker.name="LessonHintHighlight";marker.mouse_filter=Control.MOUSE_FILTER_IGNORE;marker.z_index=40;app.add_child(marker)
 	var border:=StyleBoxFlat.new();border.bg_color=Color(1,.85,.2,.07);border.border_color=Color("ffd454");border.set_border_width_all(3);border.set_corner_radius_all(7);marker.add_theme_stylebox_override("panel",border);marker.hide()
 
@@ -135,7 +136,7 @@ func refresh() -> void:
 	instruction.text="Your practice scene stays editable. Save it if you want to keep it." if done else COURSES[course].steps[step]
 	instruction.tooltip_text=instruction.text
 	previous_button.disabled=step==0;hint_button.disabled=done;hint_button.text="Hint"
-	action_button.text=First.action_label(step) if course==First.ID and not done else "";action_row.visible=not action_button.text.is_empty();export_button.visible=course==First.ID and step==10 and not done
+	action_button.text=First.action_label(step) if course==First.ID and not done else "";action_row.visible=not action_button.text.is_empty();export_button.visible=((course==First.ID and step==10) or (course==Light.ID and step==3)) and not done
 	set_collapsed(collapsed)
 	hint_visible=false;marker.hide()
 
@@ -144,7 +145,7 @@ func show_hint() -> void:
 	instruction.text=COURSES[course].hints[step];instruction.tooltip_text=instruction.text;hint_button.text="Hint shown";hint_due=false;hint_visible=true;set_collapsed(false);update_highlight()
 
 func set_collapsed(value: bool) -> void:
-	collapsed=value;collapse_button.text="+" if collapsed else "−";instruction.visible=not collapsed;action_row.visible=not collapsed and not action_button.text.is_empty();title.tooltip_text=instruction.text
+	collapsed=value;collapse_button.text="+" if collapsed else "−";instruction.visible=not collapsed;action_row.visible=not collapsed and (not action_button.text.is_empty() or export_button.visible);title.tooltip_text=instruction.text
 	panel.size.y=0
 	align_cue.visible=not collapsed and not First.cue_alignment(self).is_empty()
 
@@ -187,6 +188,10 @@ func update_highlight() -> void:
 	marker.hide()
 	if not hint_visible or done or app.home.visible or app.has_dialog(app):return
 	var target: Control
+	if course==Light.ID:
+		target=Light.highlight(self)
+		if target and target.is_visible_in_tree():marker.global_position=target.global_position-Vector2(2,2);marker.size=target.size+Vector2(4,4);marker.show()
+		return
 	var arm_hint: bool=(course==First.ID and step==5) or (course=="basic-pose" and step==1)
 	if arm_hint:
 		var rig=First.object(self,"model") if course==First.ID else app.renderer.world_runtime.instance(Assets.FIGURE_ID) if app.renderer.world_runtime else null
@@ -225,6 +230,7 @@ func bone(rig,name: String) -> String:
 
 func satisfied() -> bool:
 	if course==First.ID:return First.satisfied(self)
+	if course==Light.ID:return Light.satisfied(self)
 	if course=="advanced-camera":
 		if step==0:return app.advanced_mode
 		var key:=key_at(24)

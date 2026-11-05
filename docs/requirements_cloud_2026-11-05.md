@@ -73,7 +73,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | 11.3 independent assets | Native data is retained in HAS; no independent model/map package | Owner packaging/extension choice explicitly OPEN; question pending |
 | 11.4 settings | Existing project/personal settings preserved | Import prompt policy remains tentative |
 | 11.5 save safety | Atomic writes, validation and backups present; Python tests pass | Interrupted/disk-full/platform gate |
-| 12.1 courses | First-movie, basic pose/draw and advanced camera chapters; original dummy HAS assets present | Advanced topic/subsection coverage incomplete |
+| 12.1 courses | First-movie, basic pose/draw, advanced camera and new versioned lighting/export chapters; original dummy HAS assets present | Advanced topic/subsection coverage incomplete |
 | 12.2 teacher | State grading, quiet15s hint, highlights and auto progress present | Richer demonstrations and artist feedback |
 | 12.3 Previous | Full checkpoints and observations present | Skip remains OPEN |
 | 12.4 Continue/Fresh | Separate saved practice sessions and optional personal Save present | Forced-crash lesson-context recovery and retention |
@@ -112,7 +112,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | Addendum B | Owner-approved native model/map fixtures and Windows environment needed |
 | Addendum C | Domain/clip code present; fresh full presence/cut/visibility routed run remains |
 | Addendum D | Physics present; full native World/Local recording gate not freshly run |
-| Addendum E | Tutorial code/assets present; full fresh Previous/Continue/Fresh course run remains |
+| Addendum E | Existing pose/camera52+5 and new lighting/export19+5 checks pass; broader advanced curriculum and artist gate remain |
 | Addendum F | Actual Linux automatic newest/older startup restoration passes15cases/147checks; native/GPU/physical gates remain |
 
 Next engineering priorities are editable nested

@@ -677,3 +677,7 @@ for remaining features and acceptance gates.
 Linux automatic crash recovery now identifies process instances safely and restores
 newest valid or older checkpoints through normal startup. See [Linux recovery](docs/linux_recovery.md)
 for the portable tests, exact ownership protocol and remaining acceptance limits.
+
+Home -> Tutorials also offers **Advanced - Lighting and export**, with real
+lighting controls, a successful MP4 task, hints, checkpointed Previous and
+Continue/Start fresh. See [tutorials](docs/tutorials.md).
