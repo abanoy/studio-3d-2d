@@ -1,0 +1,247 @@
+{
+	"baseline_engine": "4.6-stable (official)",
+	"baseline_source_sha256": "8672e3cd30e3d4fb6a1d582ea052e9701abd3825cf032c418d193d6ccc52d9ba",
+	"cases": [
+		{
+			"duration": 24,
+			"fps": [
+				24,
+				1
+			],
+			"mode": "disjoint",
+			"signature": {
+				"clip_peaks_sha256": "ec19502b7a7da175d8d9142f3c79102f62dcb8917738b532a5bd2cde25352961",
+				"clipped_samples": 0,
+				"pcm_sha256": "390b34bcbb23fa99dcbcad63411fd3f7168976227f84b89557b32225d1a73876",
+				"peaks_sha256": "24c5058d147360beaba324f9a23e84ea06f7fb86b00e0f19746dd77580f972cc",
+				"samples": 48000
+			}
+		},
+		{
+			"duration": 24,
+			"fps": [
+				24,
+				1
+			],
+			"mode": "overlap",
+			"signature": {
+				"clip_peaks_sha256": "661989748addfcfd6bc7ac7fa2ab7ebc189a8be84c2c91b08a7bedeaf7b0a1ca",
+				"clipped_samples": 1915,
+				"pcm_sha256": "8f067cca257c7b5b8c614b15fe6830734718b3d014adf3c501c47019179f710c",
+				"peaks_sha256": "75d3b3242f04f5ef2720a5b21d6ecf88c0295d95bd5a942445c37dc2588535e6",
+				"samples": 48000
+			}
+		},
+		{
+			"duration": 24,
+			"fps": [
+				24,
+				1
+			],
+			"mode": "muted",
+			"signature": {
+				"clip_peaks_sha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+				"clipped_samples": 0,
+				"pcm_sha256": "ea0787f65f73b0013d03b359490e3125211b28ad5c1502ffb1544c0ded4192f5",
+				"peaks_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+				"samples": 48000
+			}
+		},
+		{
+			"duration": 24,
+			"fps": [
+				24,
+				1
+			],
+			"mode": "fades",
+			"signature": {
+				"clip_peaks_sha256": "842c0b082116a237479e35474ca62518c026029740433915ce6c9b3b390e89d2",
+				"clipped_samples": 0,
+				"pcm_sha256": "3b1fc8c05d17dc3bed6f66035729dc45302d8050163edc91e2c291e70e63a3e2",
+				"peaks_sha256": "ef1880295a67f4ff523df3c62b8ffcddba1a43b7dcb85c255858a8e25883bda1",
+				"samples": 48000
+			}
+		},
+		{
+			"duration": 1440,
+			"fps": [
+				24,
+				1
+			],
+			"mode": "disjoint",
+			"signature": {
+				"clip_peaks_sha256": "f7ae9948990c4d1587fdb0e8cca5312bf1dca017c1786a73298712e09ddf4d51",
+				"clipped_samples": 0,
+				"pcm_sha256": "c8b86d834a76a35d388e3ff6e8782360f65a9b9e3118026482adac23f15b782f",
+				"peaks_sha256": "330277bcffadcb6e9e97f82f5dee31e029974c3ca02ff244a47bef0965673bc8",
+				"samples": 2880000
+			}
+		},
+		{
+			"duration": 1440,
+			"fps": [
+				24,
+				1
+			],
+			"mode": "overlap",
+			"signature": {
+				"clip_peaks_sha256": "ac097f776c88d55a439df020ff30a6f385aae4652347ddfc7f38d2a79e274588",
+				"clipped_samples": 1915,
+				"pcm_sha256": "40d276a4e77cc1b56422f4e9d274ccae62e807e8ef6feb2dc075a82d6a9be630",
+				"peaks_sha256": "266bbf7b1da213e32e77faca8a4efbf9d25a87b276f6c222b62dd5e374773311",
+				"samples": 2880000
+			}
+		},
+		{
+			"duration": 1440,
+			"fps": [
+				24,
+				1
+			],
+			"mode": "muted",
+			"signature": {
+				"clip_peaks_sha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+				"clipped_samples": 0,
+				"pcm_sha256": "0fd8b21957b9fc18deecd6df16553d585c3c90b448a2521981c6cee407e89f0d",
+				"peaks_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+				"samples": 2880000
+			}
+		},
+		{
+			"duration": 1440,
+			"fps": [
+				24,
+				1
+			],
+			"mode": "fades",
+			"signature": {
+				"clip_peaks_sha256": "c418137217fb971c61b8ed5397d889bf9f448f0a362d011c40bce38645d982f4",
+				"clipped_samples": 0,
+				"pcm_sha256": "b15c9e8a0caaeaf2842f38477ac93a3dfe21536abc6588b46c6ccf09767e2763",
+				"peaks_sha256": "4804067d41b9a4cf4e53c274431a79db609be6e9b230863d8e4d5b52a4744e90",
+				"samples": 2880000
+			}
+		},
+		{
+			"duration": 24,
+			"fps": [
+				30000,
+				1001
+			],
+			"mode": "disjoint",
+			"signature": {
+				"clip_peaks_sha256": "f1c3a8c15bfd5c68474536f14cc1a661c19292e5db24237fb191c8fce14e45bd",
+				"clipped_samples": 0,
+				"pcm_sha256": "80a420d9cde49e6e6dc5199c3bcd4d3cfc3e1c0bb034e9cbd6876db087f710e9",
+				"peaks_sha256": "2f32856b261965bbfff8d9aaa711705a17a9764ff61bc240c2cf139449233137",
+				"samples": 38438
+			}
+		},
+		{
+			"duration": 24,
+			"fps": [
+				30000,
+				1001
+			],
+			"mode": "overlap",
+			"signature": {
+				"clip_peaks_sha256": "82e8c2f0b12a8d0ec01c7956a68459369624c2d2813838e64397ef3831df1a1e",
+				"clipped_samples": 1915,
+				"pcm_sha256": "74c27cd261d3fce096623027784d9c2d14915266c7e48a6a7280d69362702fd3",
+				"peaks_sha256": "e1038e09e17b9c56eb347d6b260966010e5524968bd24354cc9e4f63ebf9740d",
+				"samples": 38438
+			}
+		},
+		{
+			"duration": 24,
+			"fps": [
+				30000,
+				1001
+			],
+			"mode": "muted",
+			"signature": {
+				"clip_peaks_sha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+				"clipped_samples": 0,
+				"pcm_sha256": "f7e151a6e404bbae6b965f7336a44e269cc13a1052610418f1acbac5d4b6411c",
+				"peaks_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+				"samples": 38438
+			}
+		},
+		{
+			"duration": 24,
+			"fps": [
+				30000,
+				1001
+			],
+			"mode": "fades",
+			"signature": {
+				"clip_peaks_sha256": "b457b9f6377c77652939677a02ec72d9112d8ebb735b56d3817214ca6e57e6bf",
+				"clipped_samples": 0,
+				"pcm_sha256": "8678ea859fe959425a544775f772f034a18783526eea30b6ac82c1c5d8c648e6",
+				"peaks_sha256": "c712c9d68f2d97b596ca81a115fca3583e1ecb797caff4f9d87a43d7bf2f1255",
+				"samples": 38438
+			}
+		},
+		{
+			"duration": 1440,
+			"fps": [
+				30000,
+				1001
+			],
+			"mode": "disjoint",
+			"signature": {
+				"clip_peaks_sha256": "f7ae9948990c4d1587fdb0e8cca5312bf1dca017c1786a73298712e09ddf4d51",
+				"clipped_samples": 0,
+				"pcm_sha256": "d5fdb7ba645d03e9b9bb48d7a9c0eabca20abe1fe4e6f3aeef6dff1c8249a5c7",
+				"peaks_sha256": "330277bcffadcb6e9e97f82f5dee31e029974c3ca02ff244a47bef0965673bc8",
+				"samples": 2306304
+			}
+		},
+		{
+			"duration": 1440,
+			"fps": [
+				30000,
+				1001
+			],
+			"mode": "overlap",
+			"signature": {
+				"clip_peaks_sha256": "7a100ce382f8f1f25556da1a9c454a56e2e63183228b202feb1d586c921d04c9",
+				"clipped_samples": 1915,
+				"pcm_sha256": "0da224edeb6a4b0d79a8d5ea0ce273896abaaa085cd349e53a061a13f259d51c",
+				"peaks_sha256": "3f6068311d93b74b2f583dbb5d3d00f9389e894633643b3d01f8743c47f0e7b3",
+				"samples": 2306304
+			}
+		},
+		{
+			"duration": 1440,
+			"fps": [
+				30000,
+				1001
+			],
+			"mode": "muted",
+			"signature": {
+				"clip_peaks_sha256": "e80232b4d18d0bb7e794be263ba937626f383f9917d4b8a737ba893a8f752293",
+				"clipped_samples": 0,
+				"pcm_sha256": "1f35d0b77e2b8d0b83de6c7953902ae1551c5fb8bc97d3460a62e4321cdb2f66",
+				"peaks_sha256": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+				"samples": 2306304
+			}
+		},
+		{
+			"duration": 1440,
+			"fps": [
+				30000,
+				1001
+			],
+			"mode": "fades",
+			"signature": {
+				"clip_peaks_sha256": "c418137217fb971c61b8ed5397d889bf9f448f0a362d011c40bce38645d982f4",
+				"clipped_samples": 0,
+				"pcm_sha256": "7c9676d772613b6bf40e5e6b9883f59cc518f3e847035bf10a6b681224c76d51",
+				"peaks_sha256": "4804067d41b9a4cf4e53c274431a79db609be6e9b230863d8e4d5b52a4744e90",
+				"samples": 2306304
+			}
+		}
+	],
+	"format": "studio_audio_sparse_golden_1"
+}

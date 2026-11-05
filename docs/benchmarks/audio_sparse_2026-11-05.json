@@ -1,0 +1,66 @@
+{
+  "format": "studio_sparse_audio_benchmark_1",
+  "fixture": "Three mono48kHz 0.2sec sine cues at frame0, middle and one second before end;24fps; internal mixer only",
+  "before": {
+    "engine": "4.6-stable (official)",
+    "rows": [
+      {
+        "clipped_samples": 0,
+        "duration_frames": 240,
+        "elapsed_ms": 270.558,
+        "error": "",
+        "pcm_bytes": 1920000,
+        "pcm_sha256": "be06a84c73ac12cfcae346b7bea6d6792ea16e5a078e27588fe1d5d4b8b96bce",
+        "peak_static_bytes": 33470370,
+        "peaks_sha256": "499e86caf8503cff911eb560d2ce27cb6613cde055ada9421e0e6c7a88e7ddbe",
+        "seconds": 10.0
+      },
+      {
+        "clipped_samples": 0,
+        "duration_frames": 1440,
+        "elapsed_ms": 1289.086,
+        "error": "",
+        "pcm_bytes": 11520000,
+        "pcm_sha256": "7311b445b3fa8a417af07daf734340ddaa88b92183926587d74113df752b33ef",
+        "peak_static_bytes": 94918210,
+        "peaks_sha256": "98f04fbb3e5c2691bb1452cf962f5ad2d42dc9fb869c6ba32e6088899c4a327d",
+        "seconds": 60.0
+      }
+    ],
+    "source_sha256": "8672e3cd30e3d4fb6a1d582ea052e9701abd3825cf032c418d193d6ccc52d9ba"
+  },
+  "after": {
+    "engine": "4.6-stable (official)",
+    "rows": [
+      {
+        "clipped_samples": 0,
+        "duration_frames": 240,
+        "elapsed_ms": 84.927,
+        "error": "",
+        "pcm_bytes": 1920000,
+        "pcm_sha256": "be06a84c73ac12cfcae346b7bea6d6792ea16e5a078e27588fe1d5d4b8b96bce",
+        "peak_static_bytes": 33475220,
+        "peaks_sha256": "499e86caf8503cff911eb560d2ce27cb6613cde055ada9421e0e6c7a88e7ddbe",
+        "seconds": 10.0
+      },
+      {
+        "clipped_samples": 0,
+        "duration_frames": 1440,
+        "elapsed_ms": 121.949,
+        "error": "",
+        "pcm_bytes": 11520000,
+        "pcm_sha256": "7311b445b3fa8a417af07daf734340ddaa88b92183926587d74113df752b33ef",
+        "peak_static_bytes": 94923064,
+        "peaks_sha256": "98f04fbb3e5c2691bb1452cf962f5ad2d42dc9fb869c6ba32e6088899c4a327d",
+        "seconds": 60.0
+      }
+    ],
+    "source_sha256": "fa0f5fa233afe9a8efee9b02b91cfad5b3014eb447e9fec0a525f39cb082b26d"
+  },
+  "speedups": [
+    3.185771309477551,
+    10.570697586696078
+  ],
+  "project_duration_limit_changed": false,
+  "memory_strategy_changed": false
+}

@@ -121,6 +121,7 @@ static func mix_document(audio: Dictionary, video: Dictionary) -> Dictionary:
 	# cancelling contribution. Preview, saved mix and encoder use these same bytes.
 	var sum := PackedFloat64Array(); sum.resize(count * 2); sum.fill(0)
 	var per_clip := []
+	var active: Array[Vector2i]=[]
 	for clip in rows:
 		var peaks := PackedFloat32Array(); peaks.resize(256); peaks.fill(0)
 		if not clip.muted:
@@ -129,27 +130,40 @@ static func mix_document(audio: Dictionary, video: Dictionary) -> Dictionary:
 			var gain := db_to_linear(clip.gain_db)
 			var ending:=source_end(clip)
 			var fades:=fade_counts(clip)
+			var written_end:=start
 			for index in range(start,count):
 				var at: float = float(index-start)*source.rate/RATE + clip.source_in_sample
 				var before := floori(at)
 				if before >= ending: break
+				written_end=index+1
 				for channel in range(2):
 					var value := lerpf(source_value(source,before,channel),source_value(source,mini(before+1,ending-1),channel),at-before)*gain*fade_gain(index-start,fades)
 					sum[index*2+channel] += value
 					var bucket := mini(255,index*256/count)
 					peaks[bucket] = maxf(peaks[bucket],minf(1,absf(value/32768.0)))
+			if written_end>start:active.append(Vector2i(start,written_end))
 		per_clip.append(peaks)
-	var pcm := PackedByteArray(); pcm.resize(count*4)
+	var pcm := PackedByteArray(); pcm.resize(count*4);pcm.fill(0)
 	var peaks := PackedFloat32Array(); peaks.resize(256); peaks.fill(0)
 	var clipped := 0
-	for index in range(count):
-		for channel in range(2):
-			var value := roundi(sum[index*2+channel])
-			if value < -32768 or value > 32767: clipped += 1
-			value = clampi(value,-32768,32767)
-			pcm.encode_s16(index*4+channel*2,value)
-			var bucket := mini(255,index*256/count)
-			peaks[bucket] = maxf(peaks[bucket],absf(value/32768.0))
+	# Silence already contains exact zero PCM. Quantize the union of actually
+	# contributed sample spans, preserving sum-before-clamp and clipping counts.
+	# Derive ends from the existing resampler loop, not a rounded time estimate.
+	active.sort_custom(func(a: Vector2i,b: Vector2i):return a.x<b.x)
+	var merged: Array[Vector2i]=[]
+	for span in active:
+		if merged.is_empty() or span.x>merged[-1].y:merged.append(span)
+		else:
+			var previous: Vector2i=merged[-1];previous.y=maxi(previous.y,span.y);merged[-1]=previous
+	for span in merged:
+		for index in range(span.x,span.y):
+			for channel in range(2):
+				var value := roundi(sum[index*2+channel])
+				if value < -32768 or value > 32767: clipped += 1
+				value = clampi(value,-32768,32767)
+				pcm.encode_s16(index*4+channel*2,value)
+				var bucket := mini(255,index*256/count)
+				peaks[bucket] = maxf(peaks[bucket],absf(value/32768.0))
 	var stream := AudioStreamWAV.new(); stream.format=AudioStreamWAV.FORMAT_16_BITS
 	stream.mix_rate=RATE; stream.stereo=true; stream.data=pcm
 	return {"stream":stream,"pcm":pcm,"peaks":peaks,"samples":count,"clip_peaks":per_clip,"clipped_samples":clipped}

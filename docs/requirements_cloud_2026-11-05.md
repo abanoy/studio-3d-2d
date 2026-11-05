@@ -151,3 +151,7 @@ available without changing the saved format.
 Reference viewed-region/size/offset alignment now passes20app checks with exact
 source preservation and movie exclusion; color13 and the complete kept-reference
 recovery/lesson suites also pass. See [guide alignment](reference_alignment.md).
+
+Sparse multi-sound quantization now matches a16-case frozen full-PCM/peaks oracle
+and passes real fade editing/cold storage/AAC checks. See [measured scope](sparse_audio.md).
+This reduces CPU work across silent gaps; duration/dense-project memory limits remain.

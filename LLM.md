@@ -668,3 +668,52 @@ startup log restored after preserving fresh evidence outside the checkout.
 
 Continue independent specification work; existing OPEN/native-owner resource
 questions do not block available local engineering.
+
+
+## 2026-11-05 UTC — measured sparse multi-sound quantization
+
+Continuous work moved from reference alignment9427972 to the remaining long-
+project boundary. Mapped actual240-frame checks, audio60second limit, sparse
+241-control bounds and bounded drawing/sequence resources before changing any
+project limits. First measurement: three short cues across60seconds took about
+1.26seconds and95MBtracked static memory despite mostly silent output.
+
+Optimized Audio.mix_document final quantization across the union of intervals
+actually visited by the existing resampler. Ends come from that loop, not rounded
+frame/source-time guesses. Explicitly zero PCM first; merge overlaps/adjacent
+ranges so clipping counts are counted once. Preserve sum-before-clamp, per-source
+resampling, end trims, fades, gain, channel conversion, rational sample starts and
+all output fields. Full float/PCM allocation and64MiBsource/60second bounds remain;
+no project-duration increase or general memory/dense-audio claim.
+
+Recorded immutable16-case dense oracle from actual Git source8672e3cd30e3d4fb6a1d
+582ea052e9701abd3825cf032c418d193d6ccc52d9ba (SHA256; before this optimization).
+Full PCM/global and per-clip waveform SHA256, sample count and clipping count match
+for24fps and30000/1001,24/1440internal frames, disjoint/overlap/muted/trim+fade cases.
+Final standalone comparison has exact same PCM/peak digests:10sec270.558→84.927ms
+(3.19x);60sec1289.086→121.949ms(10.57x). Tracked peak memory is essentially unchanged.
+Raw machine-readable data in docs/benchmarks/audio_sparse_2026-11-05.json, usage and
+scope in docs/sparse_audio.md. It is a headless internal-mixer benchmark, not yet
+support for a60second project through the existing240frame reader/UI.
+
+Fresh private Linux :100 audio-sparse-accepted:17oracle checks,17multi-audio,
+9nested-audio pass; existing real fade editor writer+4cold packed/linked/recovery/
+lesson scenarios pass. Exact PCM, metadata and preview/movie input pixels persist;
+manual HAS and original WAV bytes remain unchanged. H2641080p24/48frames/2seconds+
+AAC passes; decoded voice fade-in/full/fade-out/after plus independent peer levels
+stay within established thresholds. Final source/test hashes frozen throughout.
+No new dependencies, schema/audio envelope changes or native assets involved.
+
+Two harness issues were corrected without relaxing production output checks.
+Historical trim-unit invocation needs a genuine previous-reader source file that
+is unavailable here; stopped only its verified stalled test processes and do not
+count that compatibility gate as rerun. The new corpus covers current trim/fade
+math and existing supported multi/nested units run. A helper named hash resolved
+to Godot's built-in32bit hash instead of the intended method; renamed digest_bytes,
+regenerated from the actual frozen dense Git source and verified64character SHA256
+strings. Recording mode was removed from the committed oracle verifier. Corrected
+full accepted run and benchmark retain complete cryptographic comparisons. Earlier
+failed/misconfigured logs remain under /workspace/has-handoff-audit for diagnosis.
+
+Continue actual longer-project timing/metadata/tool support with measured bounds;
+owner-dependent native/physical/artist gates and OPEN details remain pending.

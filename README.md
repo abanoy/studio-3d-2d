@@ -743,3 +743,8 @@ color intact; the PNG and project history stay unchanged until you draw.
 [Reference guide alignment](docs/reference_alignment.md) fits a viewed sheet region
 over Draw, with size and output-pixel offsets. It follows canvas zoom/pan and keeps
 the full PNG intact; movie frames continue to exclude the guide.
+
+[Sparse sound mixing](docs/sparse_audio.md) now skips quantization across silent
+timeline gaps while retaining exact PCM, fades, peaks and clipping counts. The
+measured60-second internal case improved1289ms to122ms; project length and memory
+bounds remain unchanged pending the separate longer-project work.
