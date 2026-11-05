@@ -1,0 +1,17 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS new process discovers deduplicated committed history and current checkpoint after writer exits
+PASS recovery choices are visible in real app window
+PASS restore is an unsaved copy at the checkpoint frame
+PASS restart recovery preserves exact editable paint and camera keys
+PASS restart recovery preserves managed audio and timing/gain
+PASS restoring does not touch original manual project
+PASS changed cached raster is rejected by pixel checksum
+PASS manifest-write failure preserves last committed recovery
+PASS corrupt current manifest retains the immutable latest and explicit older checkpoint
+PASS previous checkpoint restores successfully
+PASS failed recovery preserves the open project
+PASS manual save of restored copy resolves its pending recovery notice
+PASS dismissal hides matching checkpoint without deleting its files
+RECOVERY_SMOKE {"checkpoint_ms":79.589,"checks":13,"failures":0}

@@ -1,0 +1,32 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+AUDIO_DRAW mode=0 layer=1 tool=0 color=(0.9569, 0.8745, 0.7412, 1.0) exporting=false
+PASS held character drawing remains independent above animated room
+PASS import real PCM16 WAV at 44.1 kHz
+PASS apply frame offset and gain
+PASS full-length 48kHz stereo project mix
+PASS mix is silent before clip starts
+PASS 44.1→48kHz resampling and -6dB gain
+PASS timeline waveform follows project-time silence
+PASS trim stored in exact source sample units
+PASS audio settings undo restores source trim
+PASS mute produces silent preview/export mix
+PASS mute undo restores audible mix
+PASS unsupported WAV keeps current clip
+PASS AudioStreamPlayer emits real mixed samples when seeking to frame 24
+CLOCK frame=27 sampled=1.1332 current=1.1789 position=1.1840 latency=0.0100 driver=WASAPI playing=true
+PASS preview follows selected audio/fallback clock
+PASS preview continues following the live clock across later rendered frames
+PASS audio driver chooses hardware clock or explicit silent fallback
+PASS pause stops audio and holds exact frame
+PASS seek to frame 0 previews silence before offset
+PASS schema2 manifest loads independently
+PASS schema2 reopen restores audio after clearing live state
+PASS save/reopen retains exact mix and original audio bytes
+PASS remove clip restores silent workflow
+PASS remove audio undo restores full clip
+PASS editor exports MP4 with deterministic mixed WAV
+MIGRATION ok audio_empty=true
+PASS schema1 projects migrate as silent projects
+AUDIO_EDITOR {"audio_driver":"WASAPI","checks":25,"export":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/audio-editor/render_1793492552_2720626_0","failures":0}

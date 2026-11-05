@@ -1,0 +1,45 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS model picker dispatches generic preparation: rig-linked.fbx
+PASS generic preparation dialog fits current studio window
+PASS generic import installs actor without requiring GMod or changing environment/shot: rig-linked.fbx
+PASS native rig and embedded/resolved texture survive: rig-linked.fbx
+PASS conversion excludes editor-only bone display geometry: rig-linked.fbx
+PASS default scale and imported up-axis retain two-unit height: rig-linked.fbx
+PASS native Tip bone is selectable: rig-linked.fbx
+PASS shared pose controls visibly deform imported skin: rig-linked.fbx
+PASS pose undo restores exact pixels: rig-linked.fbx
+PASS model picker dispatches generic preparation: rig.gltf
+PASS generic import installs actor without requiring GMod or changing environment/shot: rig.gltf
+PASS native rig and embedded/resolved texture survive: rig.gltf
+PASS conversion excludes editor-only bone display geometry: rig.gltf
+PASS default scale and imported up-axis retain two-unit height: rig.gltf
+PASS native Tip bone is selectable: rig.gltf
+PASS shared pose controls visibly deform imported skin: rig.gltf
+PASS pose undo restores exact pixels: rig.gltf
+PASS model picker dispatches generic preparation: embedded-only/rig.fbx
+PASS generic import installs actor without requiring GMod or changing environment/shot: embedded-only/rig.fbx
+PASS native rig and embedded/resolved texture survive: embedded-only/rig.fbx
+PASS conversion excludes editor-only bone display geometry: embedded-only/rig.fbx
+PASS default scale and imported up-axis retain two-unit height: embedded-only/rig.fbx
+PASS native Tip bone is selectable: embedded-only/rig.fbx
+PASS shared pose controls visibly deform imported skin: embedded-only/rig.fbx
+PASS pose undo restores exact pixels: embedded-only/rig.fbx
+PASS model picker dispatches generic preparation: embedded-gltf/rig.gltf
+PASS generic import installs actor without requiring GMod or changing environment/shot: embedded-gltf/rig.gltf
+PASS native rig and embedded/resolved texture survive: embedded-gltf/rig.gltf
+PASS conversion excludes editor-only bone display geometry: embedded-gltf/rig.gltf
+PASS default scale and imported up-axis retain two-unit height: embedded-gltf/rig.gltf
+PASS native Tip bone is selectable: embedded-gltf/rig.gltf
+PASS shared pose controls visibly deform imported skin: embedded-gltf/rig.gltf
+PASS pose undo restores exact pixels: embedded-gltf/rig.gltf
+PASS OBJ Add scene opens scale/asset-folder/up-axis dialog
+PASS OBJ/MTL environment appends beside all four independent actors
+PASS OBJ material texture loads from checked MTL path with spaces
+PASS chosen import scale changes normalized OBJ geometry to four-unit height
+PASS OBJ environment and FBX actor preserve metadata/poses through packed HAS
+PASS converted formats export camera/pose/cel MP4 with exact preview frame24
+PASS missing glTF sidecar fails before Blender/staging and keeps the live project
+PASS cancelled generic conversion preserves current project
+GENERIC_SMOKE {"bundles":{"embedded-gltf/rig.gltf":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664868-261-7783980","embedded-only/rig.fbx":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664866-244-5766168","rig-linked.fbx":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664862-059-1580818","rig.gltf":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664864-103-3624471","textured.obj":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664870-279-9801200"},"checks":41,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/generic-smoke/run_590142","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/generic-smoke/run_590142/render_1793664872_12083432_0/movie.mp4"}

@@ -1,0 +1,37 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fixture has independent scene, rig and audio assets
+PASS unsaved project Export asks for a destination without starting a render
+PASS cancelling destination leaves project and output untouched
+PASS packed HAS commits atomically and becomes current Save target
+PASS packed HAS reopens after original 3D/audio paths disappear
+HAS_REIMPORT changed=24 mean=0.00014105902778
+PASS packed project retains scene/camera/model/cel frame within existing bounded GLB reimport tolerance
+PASS packed audio retains source bytes, frame24 offset and gain
+PASS default movie export remains accessible in Simple
+PASS saved HAS navbar Export starts beside project without destination dialog
+PASS reopened HAS exports synchronized MP4 with exact frame24 preview pixels
+PASS default export never changes manually saved HAS bytes
+PASS destination override stays behind Advanced
+PASS Advanced destination picker starts beside HAS
+PASS one-off override exports elsewhere and closes picker before rendering
+PASS next default export returns beside HAS in fresh folder and preserves previous movie
+PASS missing output parent gives actionable error without recreating directories or altering project
+PASS linked HAS uses the same project with external standardized assets
+PASS missing linked assets preserve current live project and offer relinking
+PASS three matching 3D/audio assets relink through actual prompts and file pickers
+PASS linked Save remembers relocated originals and preserves prior HAS backup
+PASS cancelled HAS save leaves last complete file intact
+PASS corrupt HAS open leaves existing project and save identity intact
+PASS recovery records HAS filename rather than temporary cache folder
+PASS recovery becomes an unsaved copy instead of overwriting HAS
+PASS new/recovered Save uses actual HAS file picker
+PASS HAS backup opens as an unsaved editable copy
+PASS existing native-prepared project loads: source-smoke/source-project
+PASS native GMod/SFM/MMD data survives same HAS contract: source-smoke/source-project
+PASS existing native-prepared project loads: sfm-smoke/project
+PASS native GMod/SFM/MMD data survives same HAS contract: sfm-smoke/project
+PASS existing native-prepared project loads: pose-smoke/miku-project
+PASS native GMod/SFM/MMD data survives same HAS contract: pose-smoke/miku-project
+HAS_SMOKE {"checks":32,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/has-smoke/run_595384","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/has-smoke/run_595384/render_1793664820_2793697_0/movie.mp4","native_projects":["source-smoke/source-project","sfm-smoke/project","pose-smoke/miku-project"]}

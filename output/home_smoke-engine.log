@@ -1,0 +1,39 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS original standard rig loads for Home workflow
+PASS successful normal Save adds a real HAS to recent projects
+PASS matching committed recovery preview supplies a real recent thumbnail
+PASS second successful Save orders recent projects newest first
+PASS opening Home preserves complete current edit/view state
+PASS Home does not send play shortcuts into its covered scene
+PASS Home actions and bounded recent list fit a smaller app window
+PASS Return to scene closes Home without changing camera/frame
+PASS Escape returns to the scene
+PASS Home New protects unsaved work with normal confirmation
+PASS canceling Home New preserves the complete scene
+PASS opening a recent project also confirms unsaved replacement
+PASS canceling recent Open retains playhead and unsaved work
+PASS confirmed recent Open uses normal HAS loading and restores editable paint/frame
+PASS successful normal Open promotes the recent row without duplicates
+HOME_PICKER {"filters":["*.has ; Hybrid Animation Studio project","*.has.backup ; Previous HAS save"],"title":"Open a File"}
+PASS Home Open routes the actual project file picker
+PASS canceling the file picker keeps Home and the current scene
+PASS failed project Open stays visible with feedback and is never remembered
+PASS move only an owned test project to simulate a missing recent file
+PASS missing recent projects stay visible and cannot replace the scene
+PASS Remove changes only the recent list, preserving project bytes
+PASS restore the owned missing-file fixture
+PASS Home New opens a clean empty free-camera world
+PASS prepare a separate actual restart checkpoint without touching Home recents
+PASS recent metadata has bounded twelve-entry retention
+PASS all twelve valid projects stay in a bounded scrolling Home list
+PASS the last recent project remains reachable without growing the Home panel
+PASS last-row project opens through real HAS validation with editable paint
+PASS Windows case differences do not create duplicate records
+PASS failed preference write preserves the prior recent list
+PASS malformed recent metadata is ignored quietly
+PASS oversized recent metadata is refused before parsing
+PASS recent paths and thumbnails cannot request URLs, backups or foreign preview folders
+PASS Home actions preserve original manual project and geometry hashes
+HOME_SMOKE {"checks":34,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\home\\1793504995168726000"}

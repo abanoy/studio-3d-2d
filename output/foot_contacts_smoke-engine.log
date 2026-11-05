@@ -1,0 +1,83 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS capture both native leg bindings and world targets: original
+PASS decoded contact retains exact engine vectors/quaternions and bindings: original
+RAW_JSON_POSITION_DELTA original 0.0
+PASS continuous half-frame planted endpoints stay fixed: original
+PASS reverse-order seeks reproduce exact solved FK: original
+PASS continuous solve never authors model data or keys: original
+PASS native binding mismatch refuses before evaluation: original
+PASS late right-foot reach failure restores whole input skeleton: original
+PASS world orientation survives a body twist: original
+PASS releasing a contact clears the previous solved skeleton without history dependence: original
+PASS full-precision contact JSON retains IDs and numeric source ranges
+PASS empty range rejects
+PASS duplicate/overlapping contacts reject
+PASS nonfinite targets reject
+PASS nonunit rotations reject
+PASS shared leg joints reject
+PASS presence-before-introduction and held final contact are distinct
+PASS returned active contact cannot mutate saved source targets
+PASS source-time split retains exact continuous contact
+PASS moving split pieces apart bridges their identical declared contact
+PASS different contacts do not invent a gap pin
+PASS an explicit unplanted piece releases the contact
+PASS actual lit-independent GPU skin changes at midpoint while planted endpoints remain fixed
+PASS midpoint GPU render preserves original model and source bytes
+PASS capture both native leg bindings and world targets: pose-smoke-miku-project
+PASS decoded contact retains exact engine vectors/quaternions and bindings: pose-smoke-miku-project
+RAW_JSON_POSITION_DELTA pose-smoke-miku-project 0.0
+PASS continuous half-frame planted endpoints stay fixed: pose-smoke-miku-project
+PASS reverse-order seeks reproduce exact solved FK: pose-smoke-miku-project
+PASS continuous solve never authors model data or keys: pose-smoke-miku-project
+PASS native binding mismatch refuses before evaluation: pose-smoke-miku-project
+PASS late right-foot reach failure restores whole input skeleton: pose-smoke-miku-project
+PASS world orientation survives a body twist: pose-smoke-miku-project
+PASS releasing a contact clears the previous solved skeleton without history dependence: pose-smoke-miku-project
+PASS native binary remains unchanged: pose-smoke/miku-project
+PASS capture both native leg bindings and world targets: source-smoke-source-project
+PASS decoded contact retains exact engine vectors/quaternions and bindings: source-smoke-source-project
+RAW_JSON_POSITION_DELTA source-smoke-source-project 0.0
+PASS continuous half-frame planted endpoints stay fixed: source-smoke-source-project
+PASS reverse-order seeks reproduce exact solved FK: source-smoke-source-project
+PASS continuous solve never authors model data or keys: source-smoke-source-project
+PASS native binding mismatch refuses before evaluation: source-smoke-source-project
+PASS late right-foot reach failure restores whole input skeleton: source-smoke-source-project
+PASS world orientation survives a body twist: source-smoke-source-project
+PASS releasing a contact clears the previous solved skeleton without history dependence: source-smoke-source-project
+PASS native binary remains unchanged: source-smoke/source-project
+PASS capture both native leg bindings and world targets: sfm-smoke-project
+PASS decoded contact retains exact engine vectors/quaternions and bindings: sfm-smoke-project
+RAW_JSON_POSITION_DELTA sfm-smoke-project 0.0
+PASS continuous half-frame planted endpoints stay fixed: sfm-smoke-project
+PASS reverse-order seeks reproduce exact solved FK: sfm-smoke-project
+PASS continuous solve never authors model data or keys: sfm-smoke-project
+PASS native binding mismatch refuses before evaluation: sfm-smoke-project
+PASS late right-foot reach failure restores whole input skeleton: sfm-smoke-project
+PASS world orientation survives a body twist: sfm-smoke-project
+PASS releasing a contact clears the previous solved skeleton without history dependence: sfm-smoke-project
+PASS native binary remains unchanged: sfm-smoke/project
+PASS capture both native leg bindings and world targets: AvatarSample_A.vrm
+PASS decoded contact retains exact engine vectors/quaternions and bindings: AvatarSample_A.vrm
+RAW_JSON_POSITION_DELTA AvatarSample_A.vrm 0.0
+PASS continuous half-frame planted endpoints stay fixed: AvatarSample_A.vrm
+PASS reverse-order seeks reproduce exact solved FK: AvatarSample_A.vrm
+PASS continuous solve never authors model data or keys: AvatarSample_A.vrm
+PASS native binding mismatch refuses before evaluation: AvatarSample_A.vrm
+PASS late right-foot reach failure restores whole input skeleton: AvatarSample_A.vrm
+PASS world orientation survives a body twist: AvatarSample_A.vrm
+PASS releasing a contact clears the previous solved skeleton without history dependence: AvatarSample_A.vrm
+PASS VRM input remains unchanged: AvatarSample_A.vrm
+PASS capture both native leg bindings and world targets: AvatarSample_Avrm0.vrm
+PASS decoded contact retains exact engine vectors/quaternions and bindings: AvatarSample_Avrm0.vrm
+RAW_JSON_POSITION_DELTA AvatarSample_Avrm0.vrm 0.0
+PASS continuous half-frame planted endpoints stay fixed: AvatarSample_Avrm0.vrm
+PASS reverse-order seeks reproduce exact solved FK: AvatarSample_Avrm0.vrm
+PASS continuous solve never authors model data or keys: AvatarSample_Avrm0.vrm
+PASS native binding mismatch refuses before evaluation: AvatarSample_Avrm0.vrm
+PASS late right-foot reach failure restores whole input skeleton: AvatarSample_Avrm0.vrm
+PASS world orientation survives a body twist: AvatarSample_Avrm0.vrm
+PASS releasing a contact clears the previous solved skeleton without history dependence: AvatarSample_Avrm0.vrm
+PASS VRM input remains unchanged: AvatarSample_Avrm0.vrm
+FOOT_CONTACTS_EXPERIMENT {"checks":73,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\foot-contacts\\1793508252237889500","normal_editor_integration":false,"reports":{"AvatarSample_A.vrm":{"peak_error":0.000000263654783339007,"raw_json_position_delta":0.00000000000000000693889390390723,"samples":98,"track":{"format":"studio_foot_contacts_1","segments":[{"feet":[{"ids":["HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperLeg","HASAvatarRoot0/Skeleton3D::J_Bip_L_LowerLeg","HASAvatarRoot0/Skeleton3D::J_Bip_L_Foot"],"position":[0.0693580955266953,0.0861218869686127,-0.031350452452898],"rotation_xyzw":[0.00274048699066042,0.0,0.0,0.999996244907379]},{"ids":["HASAvatarRoot0/Skeleton3D::J_Bip_R_UpperLeg","HASAvatarRoot0/Skeleton3D::J_Bip_R_LowerLeg","HASAvatarRoot0/Skeleton3D::J_Bip_R_Foot"],"position":[-0.0693580955266953,0.0861218869686127,-0.031350452452898],"rotation_xyzw":[0.00274048699066042,0.0,0.0,0.999996244907379]}],"from":0.0,"id":"contact-AvatarSample_A.vrm","to":25.0}]}},"AvatarSample_Avrm0.vrm":{"peak_error":0.000000269897213911463,"raw_json_position_delta":0.0,"samples":98,"track":{"format":"studio_foot_contacts_1","segments":[{"feet":[{"ids":["HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperLeg","HASAvatarRoot0/Skeleton3D::J_Bip_L_LowerLeg","HASAvatarRoot0/Skeleton3D::J_Bip_L_Foot"],"position":[0.0693580955266953,0.0861218571662903,-0.0313504375517368],"rotation_xyzw":[0.0,1.0,0.0,0.0]},{"ids":["HASAvatarRoot0/Skeleton3D::J_Bip_R_UpperLeg","HASAvatarRoot0/Skeleton3D::J_Bip_R_LowerLeg","HASAvatarRoot0/Skeleton3D::J_Bip_R_Foot"],"position":[-0.0693580955266953,0.0861218571662903,-0.0313504375517368],"rotation_xyzw":[0.0,1.0,0.0,0.0]}],"from":0.0,"id":"contact-AvatarSample_Avrm0.vrm","to":25.0}]}},"original":{"peak_error":0.000000140577270713038,"raw_json_position_delta":0.0000000000000000138777878078145,"samples":98,"track":{"format":"studio_foot_contacts_1","segments":[{"feet":[{"ids":["Skeleton3D::thigh_L","Skeleton3D::shin_L","Skeleton3D::foot_L"],"position":[0.129999995231628,0.0999999642372131,0.0],"rotation_xyzw":[0.0,0.0,0.0,1.0]},{"ids":["Skeleton3D::thigh_R","Skeleton3D::shin_R","Skeleton3D::foot_R"],"position":[-0.129999995231628,0.0999999642372131,0.0],"rotation_xyzw":[0.0,0.0,0.0,1.0]}],"from":0.0,"id":"contact-original","to":25.0}]}},"pose-smoke/miku-project":{"peak_error":0.000000261342194107783,"raw_json_position_delta":0.0,"samples":98,"track":{"format":"studio_foot_contacts_1","segments":[{"feet":[{"ids":["Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::左足","Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::左ひざ","Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::左足首"],"position":[0.0700339302420616,0.107200413942337,0.00000000279396772384644],"rotation_xyzw":[0.861964762210846,0.0268276985734701,0.0268277283757925,0.505546569824219]},{"ids":["Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::右足","Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::右ひざ","Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::右足首"],"position":[-0.0700339302420616,0.107200413942337,0.00000000279396772384644],"rotation_xyzw":[0.861964762210846,-0.0268276985734701,-0.0268277283757925,0.505546569824219]}],"from":0.0,"id":"contact-pose-smoke-miku-project","to":25.0}]}},"sfm-smoke/project":{"peak_error":0.00000063553056861565,"raw_json_position_delta":0.0000000000000000138777878078145,"samples":98,"track":{"format":"studio_foot_contacts_1","segments":[{"feet":[{"ids":["scout_ARM/Skeleton3D::bip_hip_L","scout_ARM/Skeleton3D::bip_knee_L","scout_ARM/Skeleton3D::bip_foot_L"],"position":[0.131680026650429,0.0923276543617248,-0.104964703321457],"rotation_xyzw":[-0.416303604841232,0.14628167450428,0.0680575743317604,0.89479672908783]},{"ids":["scout_ARM/Skeleton3D::bip_hip_R","scout_ARM/Skeleton3D::bip_knee_R","scout_ARM/Skeleton3D::bip_foot_R"],"position":[-0.131679579615593,0.0923274755477905,-0.104965701699257],"rotation_xyzw":[0.894796967506409,-0.0680577233433723,0.146282523870468,0.416302800178528]}],"from":0.0,"id":"contact-sfm-smoke-project","to":25.0}]}},"source-smoke/source-project":{"peak_error":0.000000315355492830349,"raw_json_position_delta":0.00000000000000000693889390390723,"samples":98,"track":{"format":"studio_foot_contacts_1","segments":[{"feet":[{"ids":["reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_L_Thigh","reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_L_Calf","reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_L_Foot"],"position":[0.0483707897365093,0.0842905640602112,-0.00258337706327438],"rotation_xyzw":[0.664911270141602,-0.154900386929512,0.699993252754211,-0.209543019533157]},{"ids":["reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_R_Thigh","reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_R_Calf","reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_R_Foot"],"position":[-0.0479233898222446,0.0838744938373566,-0.00268437713384628],"rotation_xyzw":[0.689989387989044,-0.202068701386452,0.675839960575104,-0.162244483828545]}],"from":0.0,"id":"contact-source-smoke-source-project","to":25.0}]}}}}

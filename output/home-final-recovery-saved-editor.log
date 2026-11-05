@@ -1,0 +1,43 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS canvas pointer maps to full-HD pixels
+PASS stroke undo restores touched tiles
+PASS stroke redo exact RGBA
+PASS duplicate splits exposure without gaps
+PASS transparent eraser on duplicate
+PASS duplicate edit leaves source cel intact
+PASS scene navigation left click cannot paint
+PASS captured drag continues outside canvas bounds
+PASS left drag translates camera without rotating or painting
+PASS right drag adjusts POV without translation
+PASS WASD input moves temporary camera
+PASS Ctrl plus left enters free-camera mouse look instead of pan
+PASS Ctrl-left free camera supports WASD flight
+PASS Ctrl-left release clears free-camera state
+PASS middle drag dollies along view axis without rotating
+PASS left plus right drag rolls without translation
+PASS releasing one combined button keeps the other gesture active
+PASS release outside canvas ends capture and clears gesture
+PASS all camera gestures preserve canvas pan, drawings and shot keys
+PASS focus loss clears camera drag state
+PASS Escape releases any camera drag
+PASS editor camera key insertion
+PASS camera key undo
+PASS Draw middle drag pans canvas without moving camera
+PASS zoom/pan maps brush to output pixels
+PASS save managed project to Unicode/spaces path
+PASS second atomic save retains backup
+PASS reopen preserves exact editable paint
+PASS reopen restores saved timeline frame
+PASS scene hash preserved after paint and managed import
+PASS Right steps one exact frame
+PASS Space starts master timeline
+PASS Space pauses at current frame
+PASS editor PNG + MP4 export: 
+PASS preview evaluation/export identical frame-0 pixels
+PASS export restores editor frame/mode
+PASS cancel during PNG rendering restores usable editor
+PASS corrupt manifest returns readable failure
+PASS failed open preserves active project
+APP_SMOKE {"checks":39,"export":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/editor-smoke/render_1793429133_3012134_0","failures":0,"renderer":"Intel(R) Arc(TM) 140V GPU (8GB)"}

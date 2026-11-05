@@ -1,0 +1,48 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS original two-leg skin fixture created
+PASS Simple exposes opt-in hold feet, initially off
+PASS both validated leg endpoints captured
+PASS body gizmo begins an actual drag
+PASS crouch moves body while both feet stay at original world positions
+PASS one completed crouch auto-keys body and legs in one Undo
+PASS hold-feet control fits Simple workspace at 1200 pixels
+PASS Undo restores exact pre-crouch data
+PASS Redo replays saved FK without live solving
+PASS body gizmo begins an actual drag
+PASS cancelled body drag restores all leg/body keys
+PASS unreachable numeric body move rejects atomically
+PASS numeric body edit also holds both feet
+PASS numeric held move is one Undo
+PASS common pelvis ancestor can move without translating feet
+PASS body gizmo begins an actual drag
+PASS zero-distance gesture creates no draft/key/history change
+PASS unsupported bone scale keeps the whole body/leg edit unchanged
+PASS holding feet refuses live simulation without freezing it or adding keys
+PASS foot authoring preserves shot keys and temporary view
+PASS explicit negative evidence: sparse FK interpolation can still slide between held endpoints
+PASS turning hold off restores direct root movement
+PASS ordinary packed HAS restores solved keys and independent editable paint
+PASS MP4 frame matches reopened posed scene and drawing exactly
+PASS body gizmo begins an actual drag
+PASS world-space held feet work through rotated/scaled parent without editing the group
+PASS native legs recognized: pose-smoke/miku-project
+PASS native body edit holds both feet: pose-smoke/miku-project
+PASS native exact Undo, metadata and source preservation: pose-smoke/miku-project
+PASS native legs recognized: source-smoke/source-project
+PASS native body edit holds both feet: source-smoke/source-project
+PASS native exact Undo, metadata and source preservation: source-smoke/source-project
+PASS native legs recognized: sfm-smoke/project
+PASS native body edit holds both feet: sfm-smoke/project
+PASS native exact Undo, metadata and source preservation: sfm-smoke/project
+PASS native VRM worker completes: AvatarSample_A.vrm
+PASS declared humanoid feet recognized: AvatarSample_A.vrm
+PASS VRM body crouch holds both feet with original bytes intact: AvatarSample_A.vrm
+PASS VRM held pose Undo restores complete original data: AvatarSample_A.vrm
+PASS native VRM worker completes: AvatarSample_Avrm0.vrm
+PASS declared humanoid feet recognized: AvatarSample_Avrm0.vrm
+PASS VRM body crouch holds both feet with original bytes intact: AvatarSample_Avrm0.vrm
+PASS VRM held pose Undo restores complete original data: AvatarSample_Avrm0.vrm
+PASS original skin source bytes stay unchanged
+FOOT_HOLD_SMOKE {"checks":44,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\foot-hold\\1793508260660050800","midpoint_sliding":0.0403838716447353,"movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\foot-hold\\1793508260660050800/render_1793508264_3631943_0/movie.mp4","native_errors":{"pose-smoke/miku-project":0.0000000601839076352917,"sfm-smoke/project":0.000000299509622436744,"source-smoke/source-project":0.000000151276140059053},"native_projects":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"vrm_samples":["AvatarSample_A.vrm","AvatarSample_Avrm0.vrm"]}
