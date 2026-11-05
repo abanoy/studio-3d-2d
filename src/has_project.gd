@@ -29,7 +29,7 @@ func save_dialog() -> void:
 	var options := VBoxContainer.new()
 	dialog.get_vbox().add_child(options)
 	var packed := CheckButton.new(); packed.text = "Pack assets into this file (portable)"; packed.button_pressed = storage_mode == "packed"; options.add_child(packed)
-	var note := Label.new(); note.text = "Linked: smaller file; existing 3D/audio files must remain available.\nDrawings and animation edits are always included."; options.add_child(note)
+	var note := Label.new(); note.text = "Linked: smaller file; 3D/audio/reference files must remain available.\nDrawings and animation edits are always included."; options.add_child(note)
 	dialog.file_selected.connect(func(selected):
 		var choice := "packed" if packed.button_pressed else "linked"
 		dialog.hide(); dialog.queue_free(); save_file(selected, choice))
@@ -49,9 +49,11 @@ func save_file(selected: String, mode: String) -> void:
 	var base := ProjectSettings.globalize_path(cache_root)
 	var snapshot := base.path_join("work_%d" % OS.get_process_id())
 	var state: Dictionary=app.project_snapshot()
-	var error := Storage.save_project(snapshot,state.video,state.camera_keys,state.layers,str(state.get("source","")),int(state.editor.frame),state.audio,{},state.get("model",{}),true,state.world,{"sequence_editor":state.sequence_context} if not state.get("sequence_context",{}).is_empty() else {},state.palette,state.sequence_graph)
+	var error := Storage.save_project(snapshot,state.video,state.camera_keys,state.layers,str(state.get("source","")),int(state.editor.frame),state.audio,{},state.get("model",{}),true,state.world,{"sequence_editor":state.sequence_context} if not state.get("sequence_context",{}).is_empty() else {},state.palette,state.sequence_graph,null,state.get("reference_sheet",{}))
 	if not error.is_empty(): app.message(error); return
 	var references := {}
+	var sheet: Dictionary=state.get("reference_sheet",{})
+	if not sheet.is_empty():references["references/"+str(sheet.sha256)+".png"]=ProjectSettings.globalize_path(sheet.source).replace("\\","/")
 	var sources: Array=[]
 	var scenes: Array=[state]
 	for asset in state.sequence_graph.get("assets",[]):scenes.append(asset.scene)
@@ -69,7 +71,7 @@ func save_file(selected: String, mode: String) -> void:
 		var key := "assets/" + FileAccess.get_sha256(absolute) + "." + absolute.get_extension().to_lower()
 		var original: String=origins.get(absolute,absolute)
 		references[key] = original if FileAccess.get_sha256(original)==FileAccess.get_sha256(absolute) else absolute
-	start({"action":"pack", "path":selected, "storage":mode, "folder":snapshot, "references":references, "cache_root":base,"cache_roots":[ProjectSettings.globalize_path("res://output/imports"),ProjectSettings.globalize_path("res://output/audio-imports")]})
+	start({"action":"pack", "path":selected, "storage":mode, "folder":snapshot, "references":references, "cache_root":base,"cache_roots":[ProjectSettings.globalize_path("res://output/imports"),ProjectSettings.globalize_path("res://output/audio-imports"),ProjectSettings.globalize_path(app.reference_sheet.cache_root)]})
 
 func builtin(selected: String) -> bool:
 	var root:=ProjectSettings.globalize_path("res://examples/tutorials").replace("\\","/").simplify_path().to_lower()+"/"

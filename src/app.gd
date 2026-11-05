@@ -1196,6 +1196,10 @@ func push_history(command: Dictionary) -> void:
 	if sequence_editor:sequence_editor.trim_history()
 
 func apply_command(command: Dictionary, side: String) -> bool:
+	if command.type=="reference_sheet":
+		var why: String=reference_sheet.restore_state(command[side])
+		if not why.is_empty():message(why);return false
+		changed();return true
 	if command.type=="sequence_graph":
 		var why: String=sequence_editor.restore(command[side])
 		if not why.is_empty():message(why);return false
@@ -1547,7 +1551,9 @@ func confirm_action(text: String, action: Callable) -> void:
 	dialog.popup_centered()
 
 func project_snapshot() -> Dictionary:
-	return sequence_editor.project_snapshot()
+	var snapshot: Dictionary=sequence_editor.project_snapshot()
+	snapshot["reference_sheet"]=reference_sheet.document()
+	return snapshot
 
 func current_world() -> Dictionary:
 	if renderer.world_runtime:return renderer.world_state()
@@ -1669,6 +1675,7 @@ func reset_document(path: String, sample := false) -> bool:
 	var prepared: Dictionary=renderer.prepare_legacy(path) if sample else renderer.prepare_world(WorldDocument.empty(),48)
 	if prepared.has("error"):message(prepared.error);return false
 	if tutorials:tutorials.document_changing()
+	reference_sheet.install_prepared({"data":{}})
 	sequence_editor.clear()
 	stop(); finish_stroke(); pose_editor.finish_drag(); release_mouse()
 	world_selection.clear()
@@ -1721,7 +1728,7 @@ func save() -> void:
 	pose_editor.finish_drag()
 	if not has_project.path.is_empty() or project_folder.is_empty(): has_project.save_current(); return
 	var snapshot:=project_snapshot()
-	var error := Storage.save_project(project_folder,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,{},snapshot.get("model",{}),false,snapshot.world,{"sequence_editor":snapshot.sequence_context} if not snapshot.get("sequence_context",{}).is_empty() else {},snapshot.palette,snapshot.sequence_graph)
+	var error := Storage.save_project(project_folder,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,{},snapshot.get("model",{}),false,snapshot.world,{"sequence_editor":snapshot.sequence_context} if not snapshot.get("sequence_context",{}).is_empty() else {},snapshot.palette,snapshot.sequence_graph,null,snapshot.get("reference_sheet",{}))
 	if error.is_empty():
 		dirty = false
 		reset_recovery_schedule()
@@ -1750,6 +1757,11 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 		open_project_error=data.error
 		if report_error:message(open_project_error)
 		return false
+	var reference_candidate: Dictionary=reference_sheet.prepare_project(data.get("reference_sheet",{}))
+	if reference_candidate.has("error"):
+		open_project_error=reference_candidate.error
+		if report_error:message(open_project_error)
+		return false
 	var prepared: Dictionary = renderer.prepare_world(data.world,int(data.video.duration_frames)) if data.schema_version>=4 else renderer.prepare_legacy(data.source,data.model)
 	if prepared.has("error"):
 		open_project_error=prepared.error
@@ -1773,6 +1785,7 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 	world_selection.clear()
 	if data.schema_version>=4:renderer.install_world(prepared)
 	else:renderer.install_legacy(prepared)
+	reference_sheet.install_prepared(reference_candidate)
 	pose_editor.selected="@root";pose_editor.rebuild_tree()
 	source = str(data.get("source",""));last_import_id=""
 	video = data.video
@@ -2126,7 +2139,7 @@ func autosave_tick(force := false) -> void:
 	autosave_due = Time.get_ticks_msec() + int(autosave_interval.value * 60000)
 	var started := Time.get_ticks_usec()
 	var snapshot:=project_snapshot()
-	var error := Recovery.checkpoint(recovery_root,recovery_session,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,has_project.path if not has_project.path.is_empty() else project_folder,recovery_revision,snapshot.get("model",{}),snapshot.world,snapshot.palette,snapshot.sequence_graph,snapshot.get("sequence_context",{}))
+	var error := Recovery.checkpoint(recovery_root,recovery_session,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,has_project.path if not has_project.path.is_empty() else project_folder,recovery_revision,snapshot.get("model",{}),snapshot.world,snapshot.palette,snapshot.sequence_graph,snapshot.get("sequence_context",{}),snapshot.get("reference_sheet",{}))
 	last_recovery_ms = (Time.get_ticks_usec() - started) / 1000.0
 	if error.is_empty():
 		checkpoint_revision = recovery_revision

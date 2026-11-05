@@ -7,6 +7,7 @@ const Lighting=preload("res://src/lighting.gd")
 const Timeline=preload("res://src/timeline.gd")
 const Journal=preload("res://src/recovery_journal.gd")
 const Sequences=preload("res://src/sequence_graph.gd")
+const ReferenceSheet=preload("res://src/reference_sheet_data.gd")
 
 static func safe_relative(path: String) -> bool:
 	if path.is_empty() or path.is_absolute_path() or path.contains(":") or path.contains("\\"):
@@ -35,26 +36,38 @@ static func readable_manifest(path: String) -> bool:
 	if file == null or file.get_length() > 1024 * 1024: return false
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
-	if not integer(parser.data.get("schema_version"),1,6):return false
-	if parser.data.schema_version==6:
-		if not Sequences.error(parser.data.get("sequence_graph"),parser.data).is_empty():return false
-	elif parser.data.has("sequence_graph"):return false
-	elif parser.data.get("editor",{}) is Dictionary and parser.data.get("editor",{}).has("sequence_editor"):return false
-	if parser.data.get("video") is Dictionary and not Lighting.validate(parser.data.video).is_empty():return false
-	if not preload("res://src/color_palette.gd").error(parser.data.get("palette",[])).is_empty():return false
-	if parser.data.get("video") is Dictionary and parser.data.video.has("visibility_fade_ms") and not integer(parser.data.video.visibility_fade_ms,0,10000):return false
-	if not parser.data.get("camera_keys") is Array or not Timeline.range_error(parser.data.camera_keys).is_empty():return false
-	if not parser.data.get("layers") is Array or not Drawing.opacity_error(parser.data.layers).is_empty():return false
-	if not preload("res://src/drawing_origin.gd").layers_error(parser.data.layers).is_empty():return false
-	if not parser.data.get("audio",{}) is Dictionary or not AudioTrack.layout_error(parser.data.get("audio",{})).is_empty():return false
-	if parser.data.schema_version>=4:
-		var video=parser.data.get("video")
+	var data: Dictionary=parser.data
+	if data.get("schema_version")==7:
+		var unwrapped:=ReferenceSheet.unwrap(data)
+		if unwrapped.has("error"):return false
+		data=unwrapped.base
+	elif data.has("reference_sheet") or data.has("content_schema_version"):return false
+	if not integer(data.get("schema_version"),1,6):return false
+	if data.schema_version==6:
+		if not Sequences.error(data.get("sequence_graph"),data).is_empty():return false
+	elif data.has("sequence_graph"):return false
+	elif data.get("editor",{}) is Dictionary and data.get("editor",{}).has("sequence_editor"):return false
+	if data.get("video") is Dictionary and not Lighting.validate(data.video).is_empty():return false
+	if not preload("res://src/color_palette.gd").error(data.get("palette",[])).is_empty():return false
+	if data.get("video") is Dictionary and data.video.has("visibility_fade_ms") and not integer(data.video.visibility_fade_ms,0,10000):return false
+	if not data.get("camera_keys") is Array or not Timeline.range_error(data.camera_keys).is_empty():return false
+	if not data.get("layers") is Array or not Drawing.opacity_error(data.layers).is_empty():return false
+	if not preload("res://src/drawing_origin.gd").layers_error(data.layers).is_empty():return false
+	if not data.get("audio",{}) is Dictionary or not AudioTrack.layout_error(data.get("audio",{})).is_empty():return false
+	if data.schema_version>=4:
+		var video=data.get("video")
 		if not video is Dictionary or not integer(video.get("duration_frames"),1,240):return false
-		if not WorldDocument.validate(parser.data.get("world"),int(video.duration_frames),true).is_empty():return false
-		if parser.data.schema_version!=6 and (parser.data.schema_version==5)!=(parser.data.world.format==WorldDocument.EFFECT_FORMAT):return false
-	return integer(parser.data.get("schema_version"), 1, 6) and parser.data.get("layers") is Array and parser.data.get("camera_keys") is Array
+		if not WorldDocument.validate(data.get("world"),int(video.duration_frames),true).is_empty():return false
+		if data.schema_version!=6 and (data.schema_version==5)!=(data.world.format==WorldDocument.EFFECT_FORMAT):return false
+	return integer(data.get("schema_version"), 1, 6) and data.get("layers") is Array and data.get("camera_keys") is Array
 
-static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null) -> String:
+static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={}) -> String:
+	if not reference_sheet.is_empty():
+		var reference_error:=ReferenceSheet.error(reference_sheet)
+		if not reference_error.is_empty():return reference_error
+		var checked_reference:=ReferenceSheet.read_image(reference_sheet.source)
+		if checked_reference.has("error"):return checked_reference.error
+		if checked_reference.sha256!=reference_sheet.sha256:return "Reference sheet source changed. Previous save preserved."
 	if not sequence_graph.is_empty():
 		if world.is_empty():return "Editable sequences require a world project."
 		var sequence_error:=Sequences.error(sequence_graph,{"video":video,"layers":layers,"audio":audio,"world":world})
@@ -185,6 +198,12 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 			if decoded_audio_bytes>AudioTrack.MAX_PCM:return "Nested audio sources exceed64MiB. Previous save preserved."
 			saved_graph.assets.append({"id":sequence.id,"name":sequence.name,"clips":sequence.clips.duplicate(true),"scene":out.manifest})
 		manifest.schema_version=6;manifest["sequence_graph"]=saved_graph
+	if not reference_sheet.is_empty():
+		var portable_reference:=ReferenceSheet.portable(reference_sheet)
+		if DirAccess.make_dir_recursive_absolute(folder.path_join("references"))!=OK:return "Cannot create reference asset directory."
+		var reference_error:=managed_copy(reference_sheet.source,folder.path_join(portable_reference.path),reference_sheet.sha256)
+		if not reference_error.is_empty():return reference_error
+		manifest["content_schema_version"]=manifest.schema_version;manifest.schema_version=7;manifest["reference_sheet"]=portable_reference
 	# Compact JSON keeps dense recorded motion within the unchanged1MiB metadata cap.
 	# Preserve small quaternion components across repeated editable saves.
 	var serialized := JSON.stringify(manifest,"",true,true)
@@ -235,6 +254,18 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 	return decode_project(parser.data,folder)
 
 static func decode_project(data,folder: String) -> Dictionary:
+	if data is Dictionary and data.get("schema_version")==7:
+		var unwrapped:=ReferenceSheet.unwrap(data)
+		if unwrapped.has("error"):return unwrapped
+		var reference: Dictionary=unwrapped.reference
+		var loaded:=ReferenceSheet.read_image(folder.path_join(reference.path))
+		if loaded.has("error"):return loaded
+		if loaded.sha256!=reference.sha256:return {"error":"Reference sheet checksum differs. Previous project stays open."}
+		var result:=decode_project(unwrapped.base,folder)
+		if result.has("error"):return result
+		reference["source"]=folder.path_join(reference.path);reference.erase("path");result["reference_sheet"]=reference
+		return result
+	if data is Dictionary and (data.has("reference_sheet") or data.has("content_schema_version")):return {"error":"Project reference sheets require schema7."}
 	if not data is Dictionary or not integer(data.get("schema_version"),1,6):
 		return {"error":"Invalid manifest or unsupported schema. Previous project stays open."}
 	if data.schema_version==6:

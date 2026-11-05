@@ -545,3 +545,66 @@ and the retained reference-wheel-probe logs. No source asset was changed to pass
 Continue independent project-managed references, richer compositing/tutorials,
 locomotion/native fidelity and long/dense projects; owner-dependent OPEN decisions
 remain pending without stopping independent work.
+
+
+## 2026-11-05 UTC — optional project-managed reference sheets
+
+Continuous work extended63182c4's session viewer with Keep PNG in project. One
+sheet belongs to the enclosing project and is available while editing children.
+Keep/uncheck, replacement/reload and Clear use metadata-only Undo commands with
+immutable content-addressed PNG copies; Undo does not depend on the original
+path still existing. Existing session-only use remains available and does not
+mark dirty or change formats. Source bytes/alpha are preserved. Guide visibility,
+opacity and viewer framing remain editor controls; guide starts off after Open.
+Reference/history changes take the early Undo path without clearing live physics.
+
+New strict schema7 wraps content_schema_version3/4/5/6 plus one exact4-field
+studio_reference_sheet_1 portable record (format/name/SHA256/managed references
+path). Older readers reject7. Current readers reject reference fields downgraded
+to old schemas, malformed wrappers/names/paths/checksums and missing/invalid PNGs
+before installation. Decode restores the underlying runtime schema so legacy
+scene dispatch is preserved; kept content does not force a world conversion.
+Pure PNG/metadata helpers are now shared, with unchanged16MiB/4megapixel/8192side
+preflight. Reference PNG assets have their own16MiB container bound; existing
+particle texture8MiB limit is unchanged. Native model/map extension choice remains
+OPEN and is not implied by this project version.
+
+Default packed HAS embeds PNG bytes. Linked HAS externalizes managed copies to
+its checked .assets sidecar using existing source-cache policy, rather than
+linking to disposable extraction/editor caches. Manual Save, ordinary autosave,
+lesson microstates, recovery journal and active-child context carry references.
+Recovery's existing512MiB budget accounts for source PNG bytes. A reset ordering
+edge found in review is fixed: outgoing lesson saves its resume checkpoint before
+New clears the kept sheet. A focused real lesson proves New/Continue retains PNG
+identity/pixels with its original path unavailable. No force-save/approval UI or
+new dependencies were introduced.
+
+Fresh private Linux :100 llvmpipe project-reference-final:19storage,25writer,
+14coldreader,5ordinary-startup and7lesson checks pass. Writer actually SIGKILLs
+itself after an ordinary autosave; no graceful-exit hooks run. All four legacy/
+nested packed/linked files cold-open while both original PNGs and writer cache
+are unavailable. Exact reference alpha, source bytes, composite pictures and PCM
+survive. A valid container with invalid PNG refuses Open without replacing the
+current world, manual identity or sheet. Normal production startup automatically
+restores dirty unsaved root+active child/frame6 before Home. H2641080p24/48frames/
+2seconds+AAC verified; frame6 cue decodes at0.250895833seconds. Manual HAS bytes
+remain exact. Final functional file hashes stay frozen during the whole run.
+
+Session regression30+3 still passes with no kept sheet and unchanged schema3.
+Original tutorial regression52+5 passes through whole-state Previous, fresh
+Continue and movie; specific kept-sheet lesson7 also passes after reset fix.
+Full Python293run/292pass/1independent-reader dependency skip; new3container tests
+cover source-cache loss, bounds and malformed metadata preserving prior saves.
+No native Windows/GPU/tablet/artist acceptance is claimed. Pinned Godot4.6 and
+FFmpeg remain installed after the cloud runtime restart; only its verified private
+dummy display was recreated (:100), with no shared-desktop fallback. Environment
+status rechecked ready/enforced; no secrets or new network dependencies involved.
+Evidence under /workspace/has-handoff-audit: project-reference-final, project-
+reference-session-regression, project-reference-python-all.log and project-
+reference-tutorial-regression.log. Test-generated tracked logs/receipts restored
+byte-for-byte after copying fresh proof outside the worktree.
+
+Broader reference alignment/palettes, multiple views, painted/lasso drawing masks,
+progressive demonstrations, generated locomotion, native fidelity and long/dense
+projects remain independent work. Continue the continuous goal; owner-dependent
+OPEN details and physical/artist gates do not stop available engineering.

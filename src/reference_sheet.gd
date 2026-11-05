@@ -1,8 +1,9 @@
 extends Node
 # A local editor aid, never a document layer, history image or export input.
-const MAX_FILE=16*1024*1024
-const MAX_PIXELS=4*1024*1024
-const MAX_SIDE=8192
+const Data=preload("res://src/reference_sheet_data.gd")
+const MAX_FILE=Data.MAX_FILE
+const MAX_PIXELS=Data.MAX_PIXELS
+const MAX_SIDE=Data.MAX_SIDE
 var app
 var launch: Button
 var window: Window
@@ -16,27 +17,15 @@ var source_hash:=""
 var image: Image
 var texture: ImageTexture
 var generation:=0
+var cache_root:="res://output/reference-sheets"
+var cached_source:=""
+var display_name:=""
+var project_reference: Dictionary={}
+var keep: CheckButton
+var project_note: Label
 
-static func big32(bytes: PackedByteArray,offset: int) -> int:
-	return int(bytes[offset])*16777216+int(bytes[offset+1])*65536+int(bytes[offset+2])*256+int(bytes[offset+3])
-static func header_error(bytes: PackedByteArray) -> String:
-	if bytes.size()>MAX_FILE:return "Reference PNG exceeds 16 MiB."
-	if bytes.size()<33 or bytes.slice(0,8)!=PackedByteArray([137,80,78,71,13,10,26,10]) or big32(bytes,8)!=13 or bytes.slice(12,16)!=PackedByteArray([73,72,68,82]):return "Choose a readable PNG reference sheet."
-	var width:=big32(bytes,16);var height:=big32(bytes,20)
-	if width<1 or height<1 or width>MAX_SIDE or height>MAX_SIDE or width*height>MAX_PIXELS:return "Reference sheet supports up to 4 megapixels and 8192 pixels on either side."
-	return ""
-static func read_image(path: String) -> Dictionary:
-	var file:=FileAccess.open(path,FileAccess.READ)
-	if not file:return {"error":"Reference PNG is unavailable. The current sheet was kept."}
-	if file.get_length()>MAX_FILE:file.close();return {"error":"Reference PNG exceeds 16 MiB. The current sheet was kept."}
-	var bytes:=file.get_buffer(MAX_FILE+1);file.close();var why:=header_error(bytes)
-	if not why.is_empty():return {"error":why}
-	var decoded:=Image.new();var code:=decoded.load_png_from_buffer(bytes)
-	if code!=OK:return {"error":"Reference PNG could not be decoded. The current sheet was kept."}
-	if decoded.get_width()!=big32(bytes,16) or decoded.get_height()!=big32(bytes,20):return {"error":"Reference dimensions changed. The current sheet was kept."}
-	decoded.convert(Image.FORMAT_RGBA8)
-	var hash:=HashingContext.new();hash.start(HashingContext.HASH_SHA256);hash.update(bytes)
-	return {"image":decoded,"sha256":hash.finish().hex_encode()}
+static func header_error(bytes: PackedByteArray) -> String:return Data.header_error(bytes)
+static func read_image(path: String) -> Dictionary:return Data.read_image(path)
 
 func setup(parent: Control) -> void:
 	launch=app.button(parent,"Reference sheet…",open)
@@ -61,10 +50,12 @@ func build() -> void:
 	var controls:=HBoxContainer.new();box.add_child(controls)
 	overlay_toggle=CheckButton.new();overlay_toggle.text="Guide over Draw";controls.add_child(overlay_toggle)
 	opacity=app.spin(controls,"Guide opacity (%)",0,100,20)
-	app.label(box,"Keep the original PNG. Reference sheets reopen separately from saved projects.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	keep=CheckButton.new();keep.text="Keep PNG in project";box.add_child(keep);keep.toggled.connect(set_kept)
+	project_note=app.label(box,"");project_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	note=app.label(box,"");note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 func refresh_note() -> void:
-	if is_instance_valid(note):note.text="Open a PNG character sheet to begin." if image==null else "%s · %d × %d" % [source.get_file(),image.get_width(),image.get_height()]
+	sync_kept()
+	if is_instance_valid(note):note.text="Open a PNG character sheet to begin." if image==null else "%s · %d × %d" % [display_name,image.get_width(),image.get_height()]
 func choose() -> void:
 	if app.exporting:return
 	var token:=generation;var dialog:=FileDialog.new();dialog.access=FileDialog.ACCESS_FILESYSTEM;dialog.file_mode=FileDialog.FILE_MODE_OPEN_FILE;dialog.title="Open reference PNG";dialog.filters=PackedStringArray(["*.png ; PNG reference sheet"])
@@ -77,21 +68,97 @@ func choose() -> void:
 	dialog.popup_centered_ratio(.7)
 func load_sheet(path: String) -> String:
 	if app.exporting:return "Finish exporting before changing the reference sheet."
-	var loaded:=read_image(path)
-	if loaded.has("error"):
-		if is_instance_valid(note):note.text=loaded.error
-		return loaded.error
-	generation+=1;source=path;source_hash=loaded.sha256;image=loaded.image;texture=ImageTexture.create_from_image(image)
+	var loaded:=Data.read_image(path)
+	if loaded.has("error"):feedback(loaded.error);return loaded.error
+	var cached:=Data.cache_image(loaded,ProjectSettings.globalize_path(cache_root))
+	if cached.has("error"):feedback(cached.error);return cached.error
+	var before:=state();var pinned:=not project_reference.is_empty()
+	var title:=display_name if path==source and pinned else path.get_file()
+	var candidate:={"format":Data.FORMAT,"name":title,"source":cached.source,"sha256":loaded.sha256}
+	if pinned:
+		var why:=Data.error(candidate)
+		if not why.is_empty():feedback(why);return why
+	install_picture(loaded.image,path,cached.source,title,loaded.sha256)
+	if pinned:project_reference=candidate
+	refresh_note();refresh_guide();commit(before);return ""
+func feedback(message: String) -> void:
+	if is_instance_valid(note):note.text=message
+func install_picture(picture: Image,reload_source: String,cached: String,title: String,digest: String) -> void:
+	generation+=1;source=reload_source;cached_source=cached;display_name=title;source_hash=digest;image=picture;texture=ImageTexture.create_from_image(image)
 	if is_instance_valid(viewer):viewer.set_picture(texture)
+func document() -> Dictionary:return project_reference.duplicate(true)
+func state() -> Dictionary:
+	var sheet:={}
+	if image!=null:sheet={"format":Data.FORMAT,"name":display_name,"source":cached_source,"sha256":source_hash,"reload_source":source}
+	return {"document":document(),"sheet":sheet,"guide":is_instance_valid(overlay_toggle) and overlay_toggle.button_pressed,"opacity":opacity.value if is_instance_valid(opacity) else 20.}
+func commit(before: Dictionary) -> void:
+	var after:=state()
+	if before.document==after.document:return
+	app.finish_stroke();app.stop()
+	app.push_history({"type":"reference_sheet","before":before,"after":after,"bytes":2*(JSON.stringify(before).to_utf8_buffer().size()+JSON.stringify(after).to_utf8_buffer().size())})
+	app.changed()
+func set_kept(value: bool) -> void:
+	if app.exporting:sync_kept();return
+	if value and image==null:sync_kept();feedback("Open a PNG before keeping it in the project.");return
+	var before:=state()
+	if value:
+		var candidate:={"format":Data.FORMAT,"name":display_name,"source":cached_source,"sha256":source_hash}
+		var why:=Data.error(candidate)
+		if not why.is_empty():sync_kept();feedback(why);return
+		if FileAccess.get_sha256(cached_source)!=source_hash:sync_kept();feedback("The reference cache changed. Reload the original PNG before keeping it.");return
+		project_reference=candidate
+	else:project_reference={}
+	sync_kept();commit(before)
+func sync_kept() -> void:
+	if is_instance_valid(keep):keep.set_pressed_no_signal(not project_reference.is_empty())
+	if is_instance_valid(project_note):project_note.text="Included in project. Packed saves embed the PNG; linked saves keep a PNG beside the project." if not project_reference.is_empty() else "Keep the original PNG. Enable Keep PNG in project to save this sheet with the scene."
+func prepare_project(value: Dictionary) -> Dictionary:
+	if value.is_empty():return {"data":{}}
+	var why:=Data.error(value)
+	if not why.is_empty():return {"error":why}
+	var loaded:=Data.read_image(value.source)
+	if loaded.has("error"):return loaded
+	if loaded.sha256!=value.sha256:return {"error":"Reference sheet checksum differs."}
+	var cached:=Data.cache_image(loaded,ProjectSettings.globalize_path(cache_root))
+	if cached.has("error"):return cached
+	var data:=value.duplicate(true);data.source=cached.source
+	return {"data":data,"loaded":loaded,"reload_source":value.source}
+func install_prepared(prepared: Dictionary) -> void:
+	if prepared.data.is_empty():
+		if not project_reference.is_empty():clear_picture()
+		project_reference={};refresh_note();return
+	var data: Dictionary=prepared.data
+	install_picture(prepared.loaded.image,prepared.reload_source,data.source,data.name,data.sha256);project_reference=data.duplicate(true)
+	if is_instance_valid(overlay_toggle):overlay_toggle.set_pressed_no_signal(false)
+	refresh_note();refresh_guide()
+func restore_state(value: Dictionary) -> String:
+	var sheet: Dictionary=value.sheet.duplicate(true);var loaded:={};var reload_source: String=sheet.get("reload_source","");sheet.erase("reload_source")
+	if not sheet.is_empty():
+		var why:=Data.error(sheet)
+		if not why.is_empty():return why
+		loaded=Data.read_image(sheet.source)
+		if loaded.has("error"):return loaded.error
+		if loaded.sha256!=sheet.sha256:return "Reference history source changed. Existing sheet was kept."
+	if not value.document.is_empty() and value.document!=sheet:return "Invalid reference history ownership."
+	if sheet.is_empty():clear_picture()
+	else:install_picture(loaded.image,reload_source,sheet.source,sheet.name,sheet.sha256)
+	project_reference=value.document.duplicate(true)
+	if is_instance_valid(overlay_toggle):overlay_toggle.set_pressed_no_signal(value.guide)
+	if is_instance_valid(opacity):opacity.set_value_no_signal(value.opacity)
 	refresh_note();refresh_guide();return ""
+
 func reload() -> void:
 	if source.is_empty():refresh_note();return
 	load_sheet(source)
 func clear() -> void:
-	generation+=1;source="";source_hash="";image=null;texture=null
+	if app.exporting:return
+	var before:=state();clear_picture();project_reference={};refresh_note();commit(before)
+func clear_picture() -> void:
+	generation+=1;source="";cached_source="";display_name="";source_hash="";image=null;texture=null
 	if is_instance_valid(viewer):viewer.set_picture(null)
 	if is_instance_valid(overlay_toggle):overlay_toggle.set_pressed_no_signal(false)
-	guide.texture=null;guide.hide();refresh_note()
+	guide.texture=null;guide.hide()
+
 func refresh_guide() -> void:
 	if not guide:return
 	var visible: bool=texture!=null and is_instance_valid(window) and is_instance_valid(overlay_toggle) and overlay_toggle.button_pressed and app.mode.selected==0 and not app.playing and not app.exporting and not (app.home and app.home.visible)

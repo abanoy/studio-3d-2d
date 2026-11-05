@@ -21,7 +21,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | Stage0 setup | Pinned checksummed engine and Python/FFmpeg cloud baseline | Clean Windows install acceptance |
 | Stage1 3D / camera / cels / MP4 | Fresh procedural rig/body-pose and video imports, unit24, exact preview/export input, 48-frame movie | Entire core regression matrix below |
 | Stage2 drawing / audio | Pressure/opacity, palettes, rect select/transform, fills/closure/growth, onion, MP3/Ogg, multiple audio, trims/fades present | Tablet feel; fresh decoded frame24 audio onset |
-| Stage3 posing / reference | Rig-aware pose/IK, body library, Model9 root components/paths, shapes, reference-only rigs and a local PNG reference viewer/Draw guide present | Project-managed character sheets, native inherited transforms/material/bone/cloth fidelity and broader locomotion |
+| Stage3 posing / reference | Rig-aware pose/IK, body library, Model9 root components/paths, shapes, reference-only rigs and a local/kept PNG reference viewer/Draw guide present | Multiple reference views/proportion tools, native inherited transforms/material/bone/cloth fidelity and broader locomotion |
 | Stage4 imported alpha / chroma | **New:** bounded local video→editable holds; tolerance/softness/spill, original alpha and source preservation; fresh units11 + app19 + reader7 | Long/video-track workflows and artistic keying quality |
 | Stage4 sequence assets / child propagation | **New:** editable embedded shared scene assets, nested timing/looping/placement, child invalidation and recursive audio; schema6 | Bounded4assets/8clips/240frames; native and artist acceptance remain |
 | Stage4 compositing / output | Multiple drawing layers, sequence placement transform/opacity tracks, simple2D shadows, reversible sequence crop/cutout masks and transparent PNG export present | General layer tracks, painted/lasso layer masks/glow and artistic quality remain |
@@ -142,3 +142,8 @@ locomotion, terrain adaptation and path-inference details remain separate work.
 A local PNG reference viewer and translucent Draw guide now pass30app/3cold checks,
 including exact MP4/PNG exclusion and cold Open with reference sources unavailable.
 See [viewer scope](reference_sheet.md); project-managed sheets remain separate work.
+
+Optional kept reference PNGs now pass19storage/25app/14cold/5normal-startup/7lesson checks
+through schema7, source/cache loss and actual SIGKILL. See
+[project references](project_reference_sheet.md); the earlier session viewer remains
+available without changing the saved format.

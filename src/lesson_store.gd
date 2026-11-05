@@ -84,7 +84,7 @@ func save(app,course: String,session: String,step: int,done: bool,name: String,o
 	if not observations.is_empty():state["observed"]=observations.duplicate()
 	if not valid_ui(state):error="Invalid lesson view state.";return false
 	var document: Dictionary=app.project_snapshot()
-	error=Storage.save_project(directory.path_join(name),document.video,document.camera_keys,document.layers,str(document.get("source","")),int(document.editor.frame),document.audio,{},document.get("model",{}),true,document.world,{"lesson_ui":state},document.palette,document.sequence_graph)
+	error=Storage.save_project(directory.path_join(name),document.video,document.camera_keys,document.layers,str(document.get("source","")),int(document.editor.frame),document.audio,{},document.get("model",{}),true,document.world,{"lesson_ui":state},document.palette,document.sequence_graph,null,document.get("reference_sheet",{}))
 	if not error.is_empty():return false
 	var value:={"format":"studio_lesson_progress_1","course":course,"session":session,"step":step,"done":done,"current":name,"updated_at":Time.get_unix_time_from_system()}
 	return write_json(directory.path_join("progress.json"),value) and write_json(root.path_join(course+".json"),{"session":session})

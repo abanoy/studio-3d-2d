@@ -76,6 +76,16 @@ def read_json(blob):
 
 def members(manifest):
     """Only declared current playback/editing assets; never glob whole game folders."""
+    if manifest.get('schema_version')==7:
+        try:from .reference_sheet import unwrap
+        except ImportError:from reference_sheet import unwrap
+        base,why=unwrap(manifest)
+        if why:raise HasError(why)
+        assets,cels=members(base);reference=manifest['reference_sheet']
+        assets[reference['path']]={'path':reference['path'],'sha256':reference['sha256']}
+        if len(assets)+len(cels)+2>MAX_FILES:raise HasError('Too many project files')
+        return assets,cels
+    if 'reference_sheet' in manifest or 'content_schema_version' in manifest:raise HasError('Project reference sheets require schema7')
     if manifest.get('schema_version')==6:
         graph=manifest.get('sequence_graph');why=sequence_graph_error(graph,manifest)
         if why:raise HasError(why)
@@ -211,6 +221,7 @@ def check_cancel(request):
 
 
 def asset_limit(name):
+    if name.startswith("references/") and name.endswith(".png"):return 16*1024*1024
     if name.endswith('.glb'):return 128*1024*1024
     if name.startswith('assets/')and name.endswith('.json'):return MAX_META
     if name.startswith('assets/')and name.endswith('.png'):return 8*1024*1024

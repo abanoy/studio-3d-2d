@@ -24,12 +24,13 @@ before decoding, and source bytes are hashed. No scripts, network calls or extra
 software are needed. Clearing or closing the viewer invalidates pending file
 picker callbacks.
 
-This first viewer is session-only: reference sheets reopen separately from saved
-projects. The window states this explicitly. Existing `.has` formats remain
-unchanged, and a cold Open renders normally without the sheet. Project-managed
-linked/embedded sheets, saved overlay placement, multiple reference views,
-anatomical proportion tools and optional consistency suggestions remain separate
-work. This does not replace a poseable 3D reference or infer anatomy/depth.
+Sheets are session-only unless you enable **Keep PNG in project**. See
+[project-managed reference sheets](project_reference_sheet.md) for packed/linked
+saving, Undo, schema 7 and crash recovery. Without Keep, existing `.has` formats
+remain unchanged and cold Open needs no reference PNG. Saved overlay placement,
+multiple reference views, anatomical proportion tools and optional consistency
+suggestions remain separate work. This does not replace a poseable 3D reference
+or infer anatomy/depth.
 
 The portable procedural check is:
 

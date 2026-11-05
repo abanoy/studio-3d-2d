@@ -732,5 +732,6 @@ Walking generation and depth inference remain separate work.
 
 Draw also has a [character-sheet reference viewer](docs/reference_sheet.md):
 open a local PNG beside the canvas, zoom/pan it, or enable a translucent guide.
-It stays out of MP4/PNG output and document Undo. This first viewer is session-only;
-reference sheets reopen separately from saved projects.
+It stays out of MP4/PNG output. Enable [Keep PNG in project](docs/project_reference_sheet.md)
+to include one sheet in packed/linked saves and crash recovery, with Undo. Kept
+sheets use schema7; leaving Keep off preserves the existing project format.
