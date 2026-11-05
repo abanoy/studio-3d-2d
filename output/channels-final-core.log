@@ -1,0 +1,200 @@
+PASS unit: 0.426s
+PASS spikes: 4.373s
+PASS editor: 5.49s
+PASS export_failures: 1.157s
+PASS audio_editor: 5.798s
+PASS audio_dummy: 2.02s
+PASS ui: 2.924s
+PASS recovery_write: 2.2s
+PASS recovery: 1.945s
+PASS pose: 9.951s
+PASS autokey: 6.949s
+PASS new_scene: 5.179s
+PASS world_selection: 4.526s
+PASS world_document: 2.36s
+PASS world_runtime: 8.666s
+PASS world_edit: 10.92s
+PASS world_workflow: 6.607s
+PASS object_timing: 13.025s
+PASS bone_labels: 2.121s
+PASS animation_clips_unit: 0.331s
+PASS animation_clips: 14.91s
+PASS visibility: 11.562s
+PASS animated_channels: 8.625s
+{
+  "unit": {
+    "exit": 0,
+    "seconds": 0.426
+  },
+  "spikes": {
+    "exit": 0,
+    "seconds": 4.373
+  },
+  "editor": {
+    "exit": 0,
+    "seconds": 5.49
+  },
+  "export_failures": {
+    "exit": 0,
+    "seconds": 1.157
+  },
+  "audio_editor": {
+    "exit": 0,
+    "seconds": 5.798
+  },
+  "audio_dummy": {
+    "exit": 0,
+    "seconds": 2.02
+  },
+  "ui": {
+    "exit": 0,
+    "seconds": 2.924
+  },
+  "recovery_write": {
+    "exit": 0,
+    "seconds": 2.2
+  },
+  "recovery": {
+    "exit": 0,
+    "seconds": 1.945
+  },
+  "pose": {
+    "exit": 0,
+    "seconds": 9.951
+  },
+  "autokey": {
+    "exit": 0,
+    "seconds": 6.949
+  },
+  "new_scene": {
+    "exit": 0,
+    "seconds": 5.179
+  },
+  "world_selection": {
+    "exit": 0,
+    "seconds": 4.526
+  },
+  "world_document": {
+    "exit": 0,
+    "seconds": 2.36
+  },
+  "world_runtime": {
+    "exit": 0,
+    "seconds": 8.666
+  },
+  "world_edit": {
+    "exit": 0,
+    "seconds": 10.92
+  },
+  "world_workflow": {
+    "exit": 0,
+    "seconds": 6.607
+  },
+  "object_timing": {
+    "exit": 0,
+    "seconds": 13.025
+  },
+  "bone_labels": {
+    "exit": 0,
+    "seconds": 2.121
+  },
+  "animation_clips_unit": {
+    "exit": 0,
+    "seconds": 0.331
+  },
+  "animation_clips": {
+    "exit": 0,
+    "seconds": 14.91
+  },
+  "visibility": {
+    "exit": 0,
+    "seconds": 11.562
+  },
+  "animated_channels": {
+    "exit": 0,
+    "seconds": 8.625
+  },
+  "silent_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "tone_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "editor_audio_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "autokey_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "new_scene_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_runtime_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_edit_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_workflow_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "object_timing_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animation_clips_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "visibility_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animated_channels_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_0": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_1": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "pose_checks": 45,
+  "actual_mmd_tested": true,
+  "tone_onset_seconds": 1.0,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "representative_png_sha256": {
+    "frame_000001.png": "d895f61f3feb20a69a0c3fa164390d57adb586da526e6b348fcc0ec075eb403d",
+    "frame_000025.png": "b38facabaa27f27ca6666e082b02f02d3959d079323d3fc66616ce9d1655db7d",
+    "frame_000048.png": "272d24b23ed59f7fd76d81184e76bbb9f76d442a4beb98b5f059cd0b871cc7cf"
+  }
+}

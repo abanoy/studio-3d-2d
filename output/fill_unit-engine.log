@@ -1,0 +1,21 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS closed boundary fills exactly its four-connected interior
+PASS changed bounds are exact
+PASS input, outline and exterior remain byte-identical
+PASS fill replaces with exact selected alpha
+PASS separate target fills inside sampled lines without copying or changing them
+PASS identical fill is a true no-op
+PASS outside region reports canvas-edge spill
+PASS diagonal corners do not join under four-connectivity
+PASS transparent hidden RGB cannot create false boundaries
+PASS tolerance compares to the seed rather than drifting along a gradient
+PASS zero tolerance preserves exact color boundaries
+PASS outside click refused
+PASS invalid tolerance refused
+PASS wrong byte count refused before scanning
+PASS oversized canvas refused
+PASS scanline region agrees with independent BFS oracle
+PASS every selected and untouched oracle pixel agrees exactly
+PASS full-HD region uses bounded iterative traversal without recursion
+FILL_UNIT {"checks":18,"failures":0,"full_hd_ms":2470.357}

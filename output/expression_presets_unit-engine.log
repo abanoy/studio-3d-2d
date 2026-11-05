@@ -1,0 +1,38 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS native preset/custom groups remain distinct
+PASS standard preset labels keep custom identity
+PASS compound strengths resolve across exact source nodes
+PASS single expression pose clears other embedded controls
+PASS blend override attenuates native blink
+PASS binary threshold at half does not suppress blink
+PASS binary output controls override strength
+PASS any attenuation fully suppresses binary blink
+PASS block overrides active procedural controls
+PASS same procedural category does not override itself
+PASS foreign identities and nonfinite values refuse
+PASS VRM0 percentage mesh binding resolves every active instance
+PASS invalid binding refuses without partial pose
+PASS invalid binding refuses without partial pose
+PASS invalid binding refuses without partial pose
+PASS invalid binding refuses without partial pose
+PASS invalid binding refuses without partial pose
+PASS unsupported native effects refuse: materialColorBinds
+PASS unsupported native effects refuse: textureTransformBinds
+PASS duplicate target binding refuses
+PASS VRM0 material expressions refuse completely
+PASS future native versions remain unsupported
+PASS ordinary non-VRM assets keep no invented presets
+PASS native document and binding inventory remain immutable
+PASS prepared native groups feed signed weights into the same standard evaluator
+PASS prepared binding identity/range refuses: node
+PASS prepared binding identity/range refuses: index
+PASS prepared binding identity/range refuses: native_name
+PASS prepared binding identity/range refuses: weight
+PASS duplicate prepared target refuses as a whole
+PASS duplicate native group identity refuses
+PASS unsupported prepared group cannot install a partial vertex pose
+PASS unimplemented prepared semantics refuse instead of being ignored
+PASS future prepared group versions refuse
+PASS competing native group declarations refuse
+EXPRESSION_PRESETS_UNIT {"checks":35,"failures":0}

@@ -1,0 +1,9 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fresh process reopens exact portable viewport-authored scene
+PASS all97 native solved poses match in reverse order after cold reopen
+PASS fresh process preserves the independent editable cyan drawing
+PASS project has no transient target gesture or preview on cold Open
+PASS cold packed scene retains preview pixels within established mesh-edge rebuild bound
+CONTACT_VIEWPORT_READ {"changed_channels":3,"checks":5,"failures":0,"mean":0.0000622106481481482}

@@ -1,0 +1,41 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS authored exchange declares explicit format/version
+PASS fixture canvas/alpha/profile fit the current receiver profile
+PASS clock uses explicit zero-based half-open exposures and rational FPS
+PASS declared PNG byte length/hash matches: cel-a
+PASS native PNG decoder keeps RGBA8 dimensions: cel-a
+PASS decoded native RGBA hash matches producer: cel-a
+PASS explicit blank/fractional/opaque alpha survives: cel-a
+PASS declared PNG byte length/hash matches: cel-blank
+PASS native PNG decoder keeps RGBA8 dimensions: cel-blank
+PASS decoded native RGBA hash matches producer: cel-blank
+PASS explicit blank/fractional/opaque alpha survives: cel-blank
+PASS declared PNG byte length/hash matches: cel-b
+PASS native PNG decoder keeps RGBA8 dimensions: cel-b
+PASS decoded native RGBA hash matches producer: cel-b
+PASS explicit blank/fractional/opaque alpha survives: cel-b
+PASS Studio cel lookup matches explicit exposure at zero-based frame0
+PASS Studio cel lookup matches explicit exposure at zero-based frame1
+PASS Studio cel lookup matches explicit exposure at zero-based frame2
+PASS Studio cel lookup matches explicit exposure at zero-based frame3
+PASS Studio cel lookup matches explicit exposure at zero-based frame4
+PASS Studio cel lookup matches explicit exposure at zero-based frame5
+PASS Studio cel lookup matches explicit exposure at zero-based frame6
+PASS Studio cel lookup matches explicit exposure at zero-based frame7
+PASS Studio cel lookup matches explicit exposure at zero-based frame8
+PASS Studio cel lookup matches explicit exposure at zero-based frame9
+PASS Studio cel lookup matches explicit exposure at zero-based frame10
+PASS Studio cel lookup matches explicit exposure at zero-based frame11
+PASS shot boundaries are absent, not implicit holds or filename-derived frames
+PASS composite retains alpha and all visible RGB exactly: cel-a
+PASS composite agrees over known black background: cel-a
+PASS composite agrees over known white background: cel-a
+PASS composite retains alpha and all visible RGB exactly: cel-blank
+PASS composite agrees over known black background: cel-blank
+PASS composite agrees over known white background: cel-blank
+PASS composite retains alpha and all visible RGB exactly: cel-b
+PASS composite agrees over known black background: cel-b
+PASS composite agrees over known white background: cel-b
+PASS probe leaves manifest and every source PNG unchanged
+CEL_EXCHANGE_PROBE {"alphas":{"cel-a":[0,96,255],"cel-b":[0,96,255],"cel-blank":[0]},"checks":38,"composite_hashes":{"cel-a":"e69dd8600229ddc230e62241eeb0fe9afdb3021965b99e2736ea9475e547c0bd","cel-b":"d204b922308607f7876a4a6f3f6d9542722b3b0c3e89aa911b314c5b0dce693f","cel-blank":"2c1d73d7e8788dc5e923ef656fa0c04e016479e616e402338d4f6767fdbff6d7"},"differences":{"cel-a":{"alpha":0,"hidden_rgb":6142800,"partial_sample":[[35,140,220,96],[35,140,220,96]],"visible_rgb":0},"cel-b":{"alpha":0,"hidden_rgb":6142800,"partial_sample":[[35,140,220,96],[35,140,220,96]],"visible_rgb":0},"cel-blank":{"alpha":0,"hidden_rgb":6220800,"partial_sample":[],"visible_rgb":0}},"failures":0,"has_roundtrip_tested":false,"product_importer":false,"rgba_hashes":{"cel-a":"c6b66867a86c7f83e805a5f3ec98c96f99b9760d7e2e5bb9a18dfacc74830c7e","cel-b":"22d5b518c434dc13b289756a7d6e7430d481810e575309f66ae3572647f7ea7d","cel-blank":"788ae0147bdf979a6575938ca2d7d4403788588f7be2010f03776c968fd1ab49"},"source":"C:/a/Programming/cloudflare/prototypes/artist-animation-assistant/experiments/EXP-0059-local-cel-exchange-fixture/fixture/exchange.json","source_sha256":"9548de35a93dc2f23b21b05a9a6e4cd5260bb69acb29f2ba1b00333b54d001cc"}

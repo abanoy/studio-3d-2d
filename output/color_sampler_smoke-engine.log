@@ -1,0 +1,48 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS one-pixel visible drawing sampling matches native stacked alpha/opacity composition
+PASS visible source excludes hidden layers
+PASS original source reads hidden raw RGBA before layer opacity
+PASS original sampling never invents a drawing outside its exposure
+PASS Simple picker defaults to view plus drawings without allocating an idle second view
+PASS I arms the real Simple color tool while detailed sources stay Advanced
+PASS actual zoom-mapped canvas click picks the 3D pixel and returns to Pen
+PASS scratch view stops rendering after its single full-resolution sample
+PASS picking changes only drawing color, preserving native world/view/keys/history/recovery counters
+PASS typing I in a numeric field cannot arm the drawing tool
+PASS Scene navigation keeps I from becoming a drawing shortcut
+PASS Home blocks the drawing shortcut behind its cover
+PASS export blocks arming the picker
+PASS tool-menu selection arms the picker with current instructions
+PASS onion exclusion fixture has an actual visible next-drawing guide
+PASS picker includes faded paint over3D with exact existing compositor rounding and unchanged original ink
+PASS visible pink onion guides do not contaminate picked colors
+PASS visible-drawings mode picks faded RGBA without another GPU capture
+PASS original-cel mode can recover exact hidden ink RGBA before50percent layer opacity
+PASS blank drawing sampling preserves the previous color and stays ready for another point
+PASS Escape cancels the armed picker without painting
+PASS zoom and pan retain output-pixel mapping without an accidental pen mark
+PASS rapid second click wins without letting the older request cancel its render
+PASS seeking rejects a pending color from an earlier frame
+PASS camera navigation rejects the old pixel without restoring or overwriting the new view
+PASS a newer manual color cannot be overwritten by an older pending pick
+PASS New invalidates pending color results and clears the armed tool
+PASS empty-world fixture contains a real visible white grid pixel
+PASS read-only color view excludes the grid without hiding or flashing the main editor grid
+PASS Simple picker instructions fit the1200pixel workspace
+PASS the actual picked color paints a new mark with Pen after the same click has finished
+PASS painting with a picked color stays normally editable through packed HAS reopen
+PASS eyedropper helper view stays absent from actual MP4 PNG output
+PASS native model color fixture opens: pose-smoke/miku-project
+PASS actual native skin pixels and selected green outline are visible: pose-smoke/miku-project
+PASS native color excludes selection helpers while preserving rig/source/view: pose-smoke/miku-project
+PASS live native physics refuses an unstable3D pick without stopping simulation or changing the color
+PASS native model color fixture opens: source-smoke/source-project
+PASS actual native skin pixels and selected green outline are visible: source-smoke/source-project
+PASS native color excludes selection helpers while preserving rig/source/view: source-smoke/source-project
+PASS native model color fixture opens: sfm-smoke/project
+PASS actual native skin pixels and selected green outline are visible: sfm-smoke/project
+PASS native color excludes selection helpers while preserving rig/source/view: sfm-smoke/project
+PASS closing the app disposes a pending color capture without keeping its helper view alive
+COLOR_SAMPLER_SMOKE {"captures":10,"checks":44,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\color-sampler\\1793504777144883300","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\color-sampler\\1793504777144883300/render_1793504784_6888119_0/movie.mp4","native_projects":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\color-sampler\\1793504777144883300/picker.has"}

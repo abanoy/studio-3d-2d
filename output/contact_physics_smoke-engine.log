@@ -1,0 +1,53 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS contact range prepares: falling
+PASS body simulation starts without consuming authored contacts or recording keys
+PASS actual gravity has moved the live body away from its planted pose
+PASS Physics OFF freezes the actual fallen pose without a planted-foot correction or reach error
+PASS body OFF releases only the current frame and retains surrounding authored contacts
+PASS freeze and one-frame release share one Undo and create no simulation keys
+PASS freeze Undo restores the exact original contact record
+PASS freeze Redo restores the exact pose and contact release
+PASS contact slicing preserves a one-frame release and merges the recurring tail without duplicate IDs
+PASS contact range prepares: record-0
+PASS contact range prepares: record-1
+PASS Local contact-body recording begins through the normal controller
+PASS actual sampled contact-body take commits
+PASS only recorded bodies release their sampled interval; outside and Local peers retain pins in one Undo
+PASS recording Undo restores every target's exact original contacts
+PASS recording Redo restores the exact take and outside contacts
+PASS contact range prepares: record-0
+PASS contact range prepares: record-1
+PASS World contact-body recording begins through the normal controller
+PASS actual sampled contact-body take commits
+PASS only recorded bodies release their sampled interval; outside and Local peers retain pins in one Undo
+PASS recording Undo restores every target's exact original contacts
+PASS recording Redo restores the exact take and outside contacts
+PASS contact range prepares: falling
+PASS over-limit contact release refuses freeze before disposing the live solver or changing history
+PASS the actual pre-freeze world and contact release fit below the project metadata limit
+PASS dense frozen pose overflow refuses before stopping physics or changing authored state
+PASS contact range prepares: 5661514916406624232
+PASS real native VRM Hair & clothes starts with the feet still planted
+PASS the real fan drives measurable native hair motion while the body remains planted
+PASS secondary-only OFF freezes hair without releasing authored feet
+PASS hair freeze and exact contact restoration remain one Undo
+PASS secondary-only Local Record starts normally
+PASS secondary-only recorded take commits actual moving hair with planted feet
+PASS recorded secondary motion retains exact contact ownership and fractional foot stability inside and outside the take
+PASS secondary-only capture retains version2 world knee targets
+PASS secondary-only Record Undo restores the complete original record
+PASS secondary-only Record Redo restores retained pins
+PASS real native combined body/hair solver starts
+PASS combined OFF releases body-owned frame and freezes hair together
+PASS combined body/hair Record begins
+PASS combined recorded motion releases precisely the body-owned interval and keeps outside pins
+PASS combined recording Undo restores exact hair-only take and contacts
+PASS combined recording Redo restores exact body/hair interval
+PASS combined take preserves reachable authored contacts at every outside frame
+CONTACT_EXPORT 
+PASS real packed contact/physics take reopens and matches actual MP4 frames with independent paint
+PASS original native VRM bytes remain unchanged
+PASS original standardized model bytes remain unchanged
+CONTACT_PHYSICS {"checks":48,"endpoint_error":0.0000000596046447753906,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\contact-physics\\1793566778259118300","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\contact-physics\\1793566778259118300/render_1793566790_12104372_0/movie.mp4","native_tested":true}

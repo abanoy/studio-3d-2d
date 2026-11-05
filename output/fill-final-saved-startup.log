@@ -1,0 +1,456 @@
+PASS normal startup newest
+PASS normal startup broken-json
+PASS normal startup missing-asset
+PASS normal startup bad-binding
+PASS normal startup missing-audio
+PASS normal startup all-invalid
+PASS normal startup live-writer
+PASS normal startup resolved
+PASS normal startup save
+PASS normal startup live-identified-writer
+PASS normal startup reused-pid
+PASS normal startup invalid-owner-identity
+PASS normal startup helper-unavailable
+PASS normal startup current-pid-mismatch
+PASS normal startup current-pid-match
+{
+  "checks": 147,
+  "failures": 0,
+  "cases": [
+    {
+      "checks": 13,
+      "failures": 0,
+      "case": "newest",
+      "startup": {
+        "restored": true,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.json",
+            "restored": true,
+            "error": ""
+          }
+        ],
+        "cancelled": false,
+        "checkpoint": {
+          "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+          "manifest": "project.json",
+          "origin": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/manual.has",
+          "saved_at": 1793496283.947,
+          "revision": 17,
+          "frame": 24,
+          "preview": "",
+          "sha256": "cca5db155847234016dd12de88047cae3e3f6ed15858e19ebd0c3f7312bd586e",
+          "resolved": false
+        }
+      },
+      "movie": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/render_1793496291_6090413_0/movie.mp4"
+    },
+    {
+      "checks": 12,
+      "failures": 0,
+      "case": "broken-json",
+      "startup": {
+        "restored": true,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.backup.json",
+            "restored": true,
+            "error": ""
+          }
+        ],
+        "cancelled": false,
+        "checkpoint": {
+          "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+          "manifest": "project.backup.json",
+          "origin": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/manual.has",
+          "saved_at": 1793496283.242,
+          "revision": 13,
+          "frame": 12,
+          "preview": "",
+          "sha256": "48ac6b6b03b92610813b86fca1a62811de3be4ea507e48bafbdb554859429e07",
+          "resolved": false
+        }
+      },
+      "movie": ""
+    },
+    {
+      "checks": 12,
+      "failures": 0,
+      "case": "missing-asset",
+      "startup": {
+        "restored": true,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.json",
+            "restored": false,
+            "error": "Invalid managed world asset path."
+          },
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.backup.json",
+            "restored": true,
+            "error": ""
+          }
+        ],
+        "cancelled": false,
+        "checkpoint": {
+          "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+          "manifest": "project.backup.json",
+          "origin": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/manual.has",
+          "saved_at": 1793496283.242,
+          "revision": 13,
+          "frame": 12,
+          "preview": "",
+          "sha256": "48ac6b6b03b92610813b86fca1a62811de3be4ea507e48bafbdb554859429e07",
+          "resolved": false
+        }
+      },
+      "movie": ""
+    },
+    {
+      "checks": 12,
+      "failures": 0,
+      "case": "bad-binding",
+      "startup": {
+        "restored": true,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.json",
+            "restored": false,
+            "error": "Stored pose refers to a missing bone: missing::bone"
+          },
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.backup.json",
+            "restored": true,
+            "error": ""
+          }
+        ],
+        "cancelled": false,
+        "checkpoint": {
+          "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+          "manifest": "project.backup.json",
+          "origin": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/manual.has",
+          "saved_at": 1793496283.242,
+          "revision": 13,
+          "frame": 12,
+          "preview": "",
+          "sha256": "48ac6b6b03b92610813b86fca1a62811de3be4ea507e48bafbdb554859429e07",
+          "resolved": false
+        }
+      },
+      "movie": ""
+    },
+    {
+      "checks": 12,
+      "failures": 0,
+      "case": "missing-audio",
+      "startup": {
+        "restored": true,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.json",
+            "restored": false,
+            "error": "Audio asset missing or checksum changed. Open aborted."
+          },
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.backup.json",
+            "restored": true,
+            "error": ""
+          }
+        ],
+        "cancelled": false,
+        "checkpoint": {
+          "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+          "manifest": "project.backup.json",
+          "origin": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/manual.has",
+          "saved_at": 1793496283.242,
+          "revision": 13,
+          "frame": 12,
+          "preview": "",
+          "sha256": "48ac6b6b03b92610813b86fca1a62811de3be4ea507e48bafbdb554859429e07",
+          "resolved": false
+        }
+      },
+      "movie": ""
+    },
+    {
+      "checks": 7,
+      "failures": 0,
+      "case": "all-invalid",
+      "startup": {
+        "restored": false,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.json",
+            "restored": false,
+            "error": "Stored pose refers to a missing bone: missing::bone"
+          },
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.backup.json",
+            "restored": false,
+            "error": "Invalid managed world asset path."
+          }
+        ],
+        "cancelled": false
+      },
+      "movie": ""
+    },
+    {
+      "checks": 7,
+      "failures": 0,
+      "case": "live-writer",
+      "startup": {
+        "restored": false,
+        "attempts": [],
+        "cancelled": false
+      },
+      "movie": ""
+    },
+    {
+      "checks": 7,
+      "failures": 0,
+      "case": "resolved",
+      "startup": {
+        "restored": false,
+        "attempts": [],
+        "cancelled": false
+      },
+      "movie": ""
+    },
+    {
+      "checks": 13,
+      "failures": 0,
+      "case": "save",
+      "startup": {
+        "restored": true,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.json",
+            "restored": true,
+            "error": ""
+          }
+        ],
+        "cancelled": false,
+        "checkpoint": {
+          "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+          "manifest": "project.json",
+          "origin": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/manual.has",
+          "saved_at": 1793496283.947,
+          "revision": 17,
+          "frame": 24,
+          "preview": "",
+          "sha256": "cca5db155847234016dd12de88047cae3e3f6ed15858e19ebd0c3f7312bd586e",
+          "resolved": false
+        }
+      },
+      "movie": ""
+    },
+    {
+      "checks": 7,
+      "failures": 0,
+      "case": "live-identified-writer",
+      "startup": {
+        "restored": false,
+        "attempts": [],
+        "cancelled": false
+      },
+      "movie": ""
+    },
+    {
+      "checks": 12,
+      "failures": 0,
+      "case": "reused-pid",
+      "startup": {
+        "restored": true,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.json",
+            "restored": true,
+            "error": ""
+          }
+        ],
+        "cancelled": false,
+        "checkpoint": {
+          "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+          "manifest": "project.json",
+          "origin": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/manual.has",
+          "saved_at": 1793496283.947,
+          "revision": 17,
+          "frame": 24,
+          "preview": "",
+          "sha256": "cca5db155847234016dd12de88047cae3e3f6ed15858e19ebd0c3f7312bd586e",
+          "resolved": false
+        }
+      },
+      "movie": ""
+    },
+    {
+      "checks": 7,
+      "failures": 0,
+      "case": "invalid-owner-identity",
+      "startup": {
+        "restored": false,
+        "attempts": [],
+        "cancelled": false,
+        "warning": "Some recovery sessions have invalid owner identities and were left untouched. Use Open saved backup to inspect them."
+      },
+      "movie": ""
+    },
+    {
+      "checks": 7,
+      "failures": 0,
+      "case": "helper-unavailable",
+      "startup": {
+        "restored": false,
+        "attempts": [],
+        "cancelled": false,
+        "warning": "Some recovery sessions could not be checked for a live owner and were left untouched. Check the configured Python installation or use Open saved backup."
+      },
+      "movie": ""
+    },
+    {
+      "checks": 12,
+      "failures": 0,
+      "case": "current-pid-mismatch",
+      "startup": {
+        "restored": true,
+        "attempts": [
+          {
+            "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+            "manifest": "project.json",
+            "restored": true,
+            "error": ""
+          }
+        ],
+        "cancelled": false,
+        "checkpoint": {
+          "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/recovery/1793496271_3478116977362729744",
+          "manifest": "project.json",
+          "origin": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/manual.has",
+          "saved_at": 1793496283.947,
+          "revision": 17,
+          "frame": 24,
+          "preview": "",
+          "sha256": "cca5db155847234016dd12de88047cae3e3f6ed15858e19ebd0c3f7312bd586e",
+          "resolved": false
+        }
+      },
+      "movie": ""
+    },
+    {
+      "checks": 7,
+      "failures": 0,
+      "case": "current-pid-match",
+      "startup": {
+        "restored": false,
+        "attempts": [],
+        "cancelled": false
+      },
+      "movie": ""
+    }
+  ],
+  "native_models": 5,
+  "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800",
+  "movie": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-startup\\1793496269856043800/render_1793496291_6090413_0/movie.mp4",
+  "audio_onset": 1.0000416666666667,
+  "private_receipts": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\recovery_startup_writer_1c58e9528212490a9fc057b55744405a.json",
+      "expected_abrupt_exit": true,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_579a707aaf9a43bfaf0f522d2f0c0698.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_b1030b096b9a451ab7676ac880272aa7.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_0d0d412a9e0c460aae0be701057dde5b.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_945ee9f873b747aebfc59f9833f1f4b2.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_51d7f600ff0747a0a780ae3600c46fe7.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_2ff3c5ae087d4229a3ab5815ef6c8731.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_c43d371a665f453d850426306538cf8c.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_f405ea8c1b7c40bb974e78f76282a86e.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_af3ec518052d4706a841f27566177970.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_f809304472b04890995d10491487c539.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_2d80d941ef634f24917e4c515a13ebc3.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_23538b61bac14e50adc650110babc2ab.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_c9c4dd75455744b28b302910974394f9.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_eb27213cddfd47d4a622f7a83930cef6.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\studio_658f84baebc945ccbdfa9a78adfaf125.json",
+      "expected_abrupt_exit": false,
+      "exit": 0
+    }
+  ],
+  "writer_abrupt_exit_verified": true,
+  "owner_identity": {
+    "pid": 7272,
+    "synchronize_handle_retained": true,
+    "writer_exit_verified": true
+  },
+  "owner_handle_closed": true
+}

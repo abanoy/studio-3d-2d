@@ -1,0 +1,178 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS five prepared native rigs available for viewport target acceptance
+PASS actual foot button opens world axes and visible range: Miku_Hatsune.pmd
+PASS range and Done remain enclosed in the actual viewport: Miku_Hatsune.pmd
+PASS actual center press begins camera-plane target gesture: Miku_Hatsune.pmd
+PASS global canvas-mapped motion visibly solves the foot preview: Miku_Hatsune.pmd
+PASS preview never changes authored data, read-only samples or Undo: Miku_Hatsune.pmd
+PASS unreachable motion keeps last valid preview and useful feedback: Miku_Hatsune.pmd
+PASS Escape cancels only the preview with exact authored state: Miku_Hatsune.pmd
+PASS returning to the origin creates no key or history: Miku_Hatsune.pmd
+PASS release commits one correction and clears transient pose: Miku_Hatsune.pmd
+PASS drag changes only selected foot in inclusive12–18: Miku_Hatsune.pmd
+PASS drag preserves every body half-frame, peer and explicit camera: Miku_Hatsune.pmd
+PASS target Undo restores exact native contact data: Miku_Hatsune.pmd
+PASS target Redo restores exact corrected range: Miku_Hatsune.pmd
+PASS Advanced knee target uses same one-Undo drag without losing foot pins: Miku_Hatsune.pmd
+PASS knee-target Undo restores exact original pole: Miku_Hatsune.pmd
+PASS world-axis handle selects its actual constrained axis: Miku_Hatsune.pmd
+PASS axis gesture previews a reachable constrained target: Miku_Hatsune.pmd
+PASS axis Escape cancels without authoring: Miku_Hatsune.pmd
+PASS Ctrl-left retains camera navigation priority over target mode: Miku_Hatsune.pmd
+PASS right-foot selector directs the viewport target: Miku_Hatsune.pmd
+PASS second Escape exits target mode: Miku_Hatsune.pmd
+PASS switching to Draw closes idle target controls without an edit: Miku_Hatsune.pmd
+PASS Home closes target controls rather than reviving an old range on return: Miku_Hatsune.pmd
+PASS pending physics cancels only the target preview and preserves its startup ticket: Miku_Hatsune.pmd
+PASS seeking finishes one correction at its original frame and closes the old range: Miku_Hatsune.pmd
+PASS seek-boundary Undo restores exact original target: Miku_Hatsune.pmd
+PASS current-frame reachable target remains only a preview: Miku_Hatsune.pmd
+PASS future-frame reach failure refuses the entire release without partial authoring: Miku_Hatsune.pmd
+PASS actual visible preview exists before an unrelated layer edit: Miku_Hatsune.pmd
+PASS unrelated layer edit cancels only transient foot editing: Miku_Hatsune.pmd
+PASS stale-preview cancellation immediately restores the visible authored foot: Miku_Hatsune.pmd
+PASS stale target cleanup preserves a different preview owner's pose: Miku_Hatsune.pmd
+PASS replacement preview remains visibly applied after target cleanup: Miku_Hatsune.pmd
+PASS actual foot button opens world axes and visible range: reimu_hakurei_bikini_ragdoll.mdl
+PASS range and Done remain enclosed in the actual viewport: reimu_hakurei_bikini_ragdoll.mdl
+PASS actual center press begins camera-plane target gesture: reimu_hakurei_bikini_ragdoll.mdl
+PASS global canvas-mapped motion visibly solves the foot preview: reimu_hakurei_bikini_ragdoll.mdl
+PASS preview never changes authored data, read-only samples or Undo: reimu_hakurei_bikini_ragdoll.mdl
+PASS unreachable motion keeps last valid preview and useful feedback: reimu_hakurei_bikini_ragdoll.mdl
+PASS Escape cancels only the preview with exact authored state: reimu_hakurei_bikini_ragdoll.mdl
+PASS returning to the origin creates no key or history: reimu_hakurei_bikini_ragdoll.mdl
+PASS release commits one correction and clears transient pose: reimu_hakurei_bikini_ragdoll.mdl
+PASS drag changes only selected foot in inclusive12–18: reimu_hakurei_bikini_ragdoll.mdl
+PASS drag preserves every body half-frame, peer and explicit camera: reimu_hakurei_bikini_ragdoll.mdl
+PASS target Undo restores exact native contact data: reimu_hakurei_bikini_ragdoll.mdl
+PASS target Redo restores exact corrected range: reimu_hakurei_bikini_ragdoll.mdl
+PASS Advanced knee target uses same one-Undo drag without losing foot pins: reimu_hakurei_bikini_ragdoll.mdl
+PASS knee-target Undo restores exact original pole: reimu_hakurei_bikini_ragdoll.mdl
+PASS world-axis handle selects its actual constrained axis: reimu_hakurei_bikini_ragdoll.mdl
+PASS axis gesture previews a reachable constrained target: reimu_hakurei_bikini_ragdoll.mdl
+PASS axis Escape cancels without authoring: reimu_hakurei_bikini_ragdoll.mdl
+PASS Ctrl-left retains camera navigation priority over target mode: reimu_hakurei_bikini_ragdoll.mdl
+PASS right-foot selector directs the viewport target: reimu_hakurei_bikini_ragdoll.mdl
+PASS second Escape exits target mode: reimu_hakurei_bikini_ragdoll.mdl
+PASS switching to Draw closes idle target controls without an edit: reimu_hakurei_bikini_ragdoll.mdl
+PASS Home closes target controls rather than reviving an old range on return: reimu_hakurei_bikini_ragdoll.mdl
+PASS pending physics cancels only the target preview and preserves its startup ticket: reimu_hakurei_bikini_ragdoll.mdl
+PASS seeking finishes one correction at its original frame and closes the old range: reimu_hakurei_bikini_ragdoll.mdl
+PASS seek-boundary Undo restores exact original target: reimu_hakurei_bikini_ragdoll.mdl
+PASS current-frame reachable target remains only a preview: reimu_hakurei_bikini_ragdoll.mdl
+PASS future-frame reach failure refuses the entire release without partial authoring: reimu_hakurei_bikini_ragdoll.mdl
+PASS actual visible preview exists before an unrelated layer edit: reimu_hakurei_bikini_ragdoll.mdl
+PASS unrelated layer edit cancels only transient foot editing: reimu_hakurei_bikini_ragdoll.mdl
+PASS stale-preview cancellation immediately restores the visible authored foot: reimu_hakurei_bikini_ragdoll.mdl
+PASS stale target cleanup preserves a different preview owner's pose: reimu_hakurei_bikini_ragdoll.mdl
+PASS replacement preview remains visibly applied after target cleanup: reimu_hakurei_bikini_ragdoll.mdl
+PASS actual foot button opens world axes and visible range: scout.mdl
+PASS range and Done remain enclosed in the actual viewport: scout.mdl
+PASS actual center press begins camera-plane target gesture: scout.mdl
+PASS global canvas-mapped motion visibly solves the foot preview: scout.mdl
+PASS preview never changes authored data, read-only samples or Undo: scout.mdl
+PASS unreachable motion keeps last valid preview and useful feedback: scout.mdl
+PASS Escape cancels only the preview with exact authored state: scout.mdl
+PASS returning to the origin creates no key or history: scout.mdl
+PASS release commits one correction and clears transient pose: scout.mdl
+PASS drag changes only selected foot in inclusive12–18: scout.mdl
+PASS drag preserves every body half-frame, peer and explicit camera: scout.mdl
+PASS target Undo restores exact native contact data: scout.mdl
+PASS target Redo restores exact corrected range: scout.mdl
+PASS Advanced knee target uses same one-Undo drag without losing foot pins: scout.mdl
+PASS knee-target Undo restores exact original pole: scout.mdl
+PASS world-axis handle selects its actual constrained axis: scout.mdl
+PASS axis gesture previews a reachable constrained target: scout.mdl
+PASS axis Escape cancels without authoring: scout.mdl
+PASS Ctrl-left retains camera navigation priority over target mode: scout.mdl
+PASS right-foot selector directs the viewport target: scout.mdl
+PASS second Escape exits target mode: scout.mdl
+PASS switching to Draw closes idle target controls without an edit: scout.mdl
+PASS Home closes target controls rather than reviving an old range on return: scout.mdl
+PASS pending physics cancels only the target preview and preserves its startup ticket: scout.mdl
+PASS seeking finishes one correction at its original frame and closes the old range: scout.mdl
+PASS seek-boundary Undo restores exact original target: scout.mdl
+PASS current-frame reachable target remains only a preview: scout.mdl
+PASS future-frame reach failure refuses the entire release without partial authoring: scout.mdl
+PASS actual visible preview exists before an unrelated layer edit: scout.mdl
+PASS unrelated layer edit cancels only transient foot editing: scout.mdl
+PASS stale-preview cancellation immediately restores the visible authored foot: scout.mdl
+PASS stale target cleanup preserves a different preview owner's pose: scout.mdl
+PASS replacement preview remains visibly applied after target cleanup: scout.mdl
+PASS actual foot button opens world axes and visible range: AvatarSample_A.vrm
+PASS range and Done remain enclosed in the actual viewport: AvatarSample_A.vrm
+PASS actual center press begins camera-plane target gesture: AvatarSample_A.vrm
+PASS global canvas-mapped motion visibly solves the foot preview: AvatarSample_A.vrm
+PASS preview never changes authored data, read-only samples or Undo: AvatarSample_A.vrm
+PASS unreachable motion keeps last valid preview and useful feedback: AvatarSample_A.vrm
+PASS Escape cancels only the preview with exact authored state: AvatarSample_A.vrm
+PASS returning to the origin creates no key or history: AvatarSample_A.vrm
+PASS release commits one correction and clears transient pose: AvatarSample_A.vrm
+PASS drag changes only selected foot in inclusive12–18: AvatarSample_A.vrm
+PASS drag preserves every body half-frame, peer and explicit camera: AvatarSample_A.vrm
+PASS target Undo restores exact native contact data: AvatarSample_A.vrm
+PASS target Redo restores exact corrected range: AvatarSample_A.vrm
+PASS Advanced knee target uses same one-Undo drag without losing foot pins: AvatarSample_A.vrm
+PASS knee-target Undo restores exact original pole: AvatarSample_A.vrm
+PASS world-axis handle selects its actual constrained axis: AvatarSample_A.vrm
+PASS axis gesture previews a reachable constrained target: AvatarSample_A.vrm
+PASS axis Escape cancels without authoring: AvatarSample_A.vrm
+PASS Ctrl-left retains camera navigation priority over target mode: AvatarSample_A.vrm
+PASS right-foot selector directs the viewport target: AvatarSample_A.vrm
+PASS second Escape exits target mode: AvatarSample_A.vrm
+PASS switching to Draw closes idle target controls without an edit: AvatarSample_A.vrm
+PASS Home closes target controls rather than reviving an old range on return: AvatarSample_A.vrm
+PASS pending physics cancels only the target preview and preserves its startup ticket: AvatarSample_A.vrm
+PASS seeking finishes one correction at its original frame and closes the old range: AvatarSample_A.vrm
+PASS seek-boundary Undo restores exact original target: AvatarSample_A.vrm
+PASS current-frame reachable target remains only a preview: AvatarSample_A.vrm
+PASS future-frame reach failure refuses the entire release without partial authoring: AvatarSample_A.vrm
+PASS actual visible preview exists before an unrelated layer edit: AvatarSample_A.vrm
+PASS unrelated layer edit cancels only transient foot editing: AvatarSample_A.vrm
+PASS stale-preview cancellation immediately restores the visible authored foot: AvatarSample_A.vrm
+PASS stale target cleanup preserves a different preview owner's pose: AvatarSample_A.vrm
+PASS replacement preview remains visibly applied after target cleanup: AvatarSample_A.vrm
+PASS actual foot button opens world axes and visible range: AvatarSample_Avrm0.vrm
+PASS range and Done remain enclosed in the actual viewport: AvatarSample_Avrm0.vrm
+PASS actual center press begins camera-plane target gesture: AvatarSample_Avrm0.vrm
+PASS global canvas-mapped motion visibly solves the foot preview: AvatarSample_Avrm0.vrm
+PASS preview never changes authored data, read-only samples or Undo: AvatarSample_Avrm0.vrm
+PASS unreachable motion keeps last valid preview and useful feedback: AvatarSample_Avrm0.vrm
+PASS Escape cancels only the preview with exact authored state: AvatarSample_Avrm0.vrm
+PASS returning to the origin creates no key or history: AvatarSample_Avrm0.vrm
+PASS release commits one correction and clears transient pose: AvatarSample_Avrm0.vrm
+PASS drag changes only selected foot in inclusive12–18: AvatarSample_Avrm0.vrm
+PASS drag preserves every body half-frame, peer and explicit camera: AvatarSample_Avrm0.vrm
+PASS target Undo restores exact native contact data: AvatarSample_Avrm0.vrm
+PASS target Redo restores exact corrected range: AvatarSample_Avrm0.vrm
+PASS Advanced knee target uses same one-Undo drag without losing foot pins: AvatarSample_Avrm0.vrm
+PASS knee-target Undo restores exact original pole: AvatarSample_Avrm0.vrm
+PASS world-axis handle selects its actual constrained axis: AvatarSample_Avrm0.vrm
+PASS axis gesture previews a reachable constrained target: AvatarSample_Avrm0.vrm
+PASS axis Escape cancels without authoring: AvatarSample_Avrm0.vrm
+PASS Ctrl-left retains camera navigation priority over target mode: AvatarSample_Avrm0.vrm
+PASS right-foot selector directs the viewport target: AvatarSample_Avrm0.vrm
+PASS second Escape exits target mode: AvatarSample_Avrm0.vrm
+PASS switching to Draw closes idle target controls without an edit: AvatarSample_Avrm0.vrm
+PASS Home closes target controls rather than reviving an old range on return: AvatarSample_Avrm0.vrm
+PASS pending physics cancels only the target preview and preserves its startup ticket: AvatarSample_Avrm0.vrm
+PASS seeking finishes one correction at its original frame and closes the old range: AvatarSample_Avrm0.vrm
+PASS seek-boundary Undo restores exact original target: AvatarSample_Avrm0.vrm
+PASS current-frame reachable target remains only a preview: AvatarSample_Avrm0.vrm
+PASS future-frame reach failure refuses the entire release without partial authoring: AvatarSample_Avrm0.vrm
+PASS actual visible preview exists before an unrelated layer edit: AvatarSample_Avrm0.vrm
+PASS unrelated layer edit cancels only transient foot editing: AvatarSample_Avrm0.vrm
+PASS stale-preview cancellation immediately restores the visible authored foot: AvatarSample_Avrm0.vrm
+PASS stale target cleanup preserves a different preview owner's pose: AvatarSample_Avrm0.vrm
+PASS replacement preview remains visibly applied after target cleanup: AvatarSample_Avrm0.vrm
+PASS capacity fixture fits before a viewport correction
+PASS correction fixture actually exceeds the metadata cap before exercising refusal
+PASS oversized correction keeps original data and does not publish a partial preview
+PASS metadata refusal creates no Undo edit on release
+PASS Save boundary begins with an actual uncommitted target preview
+PASS normal packed Save finishes the target gesture once before taking its snapshot
+PASS viewport-corrected native model and independent paint match actual MP4 frame12 exactly
+PASS all prepared native source bytes remain unchanged
+CONTACT_VIEWPORT {"checks":174,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\contact-viewport\\1793664592768526000"}

@@ -1,0 +1,49 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS real skinned standard model coexists with drawing
+PASS routed ordinary pen draws an enclosed ink outline through canvas zoom/pan
+PASS original two-layer project remains ordinary packed HAS
+PASS Simple color layer is beneath the exact original Ink layer
+PASS layer Undo restores order and selection
+PASS older pixel Undo still targets the retained original layer image
+PASS Redo preserves earlier stroke history and layer identities
+PASS detached fill worker completes
+PASS viewport fill uses visible Ink boundaries and changes only Flats
+PASS closed fill auto-applies as one meaningful undoable action
+PASS fill edits the held drawing without inventing new frame exposures
+PASS fill preserves exact ink, native world, camera keys/view and source bytes
+PASS one Undo removes a fill-created cel completely
+PASS detached fill worker completes
+PASS repeat identical fill creates no history or changed data
+PASS detached fill worker completes
+PASS existing cel recolor stores bounded changed tiles
+PASS tile Undo restores exact prior fill bytes
+PASS spill preview is exercised in the actual narrow window
+PASS full-HD traversal leaves actual UI frames running on a real worker
+PASS edge fill previews without modifying image or history
+PASS preview composites candidate color beneath unchanged opaque Ink
+PASS preview Apply and Cancel remain visible in the inspector
+PASS Escape discards preview without changing pixels
+PASS unapplied candidate preview never enters the final-render pipeline
+PASS detached fill worker completes
+PASS explicit Apply commits edge region while preserving line art
+PASS large fill Undo is exact
+PASS detached fill worker completes
+PASS routed painting and Undo remain usable during worker and discard its stale result
+PASS hidden active layer cannot be filled
+PASS detached fill worker completes
+PASS an actual line gap triggers preview rather than an accidental canvas flood
+PASS packed HAS reopens separate editable ink and fill layers exactly
+PASS painted HAS preserves complete standard world and camera values
+PASS linked HAS retains editable filled pixels
+PASS normal recovery checkpoint reopens three-layer drawing
+PASS recovery preserves fill and original manual HAS bytes
+PASS reopened filled drawing matches full-HD movie PNG exactly
+PASS earlier two-layer HAS keeps its original look and layer identities
+PASS cancelled worker cannot consume Home's Escape action
+PASS detached fill worker completes
+PASS New while worker is live leaves no stale fill or preview
+PASS Simple fill controls keep a usable canvas at 1200 pixels
+PASS actual app teardown joins an unfinished byte-only worker
+FILL_SMOKE {"background_frames":74,"checks":45,"close_during_worker_ms":2171,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\fill\\1793504878839280000","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\fill\\1793504878839280000/render_1793504898_16500914_0/movie.mp4","new_during_worker_ms":1}

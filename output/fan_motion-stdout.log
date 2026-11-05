@@ -1,0 +1,28 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS Simple Add fan appends a standard selectable object without replacing the character
+PASS selected fan exposes simple on/off and blowing-speed controls
+PASS fan field is directional and bounded by range and width
+PASS blowing speed changes local airflow strength
+PASS rotating the ordinary fan root aims airflow in world space
+PASS Hair & clothes runs through connected Simple control while body physics stays off
+PASS fan deforms the standing model with a bounded activation transition
+PASS live hair motion creates no implicit keys and leaves original geometry/data unchanged
+PASS moving a fan with standard root authoring keeps hair simulation running
+PASS connected blowing-speed edit affects the live fan without stopping the character
+PASS wrapped simulation toolbar keeps fan controls and canvas usable at1200pixels
+PASS Hair off freezes the current pose in one Undo without recording keys
+PASS Undo restores the exact pose from before live hair simulation
+PASS Local Record captures the selected hair simulation through the normal button
+PASS secondary-only Local take reaches the full two-second range and stops cleanly
+PASS packed HAS retains fan parameters, authored fan movement and recorded secondary motion
+PASS nonfinite fan settings reject under standard model validation
+PASS normal recorded fan response exports with exact reopened preview pixels
+PASS fractional physics sampling preserves continuous authored motion between integer keys
+PASS recorded authored anchors advance at120Hz without24fps stair steps or phase drift
+PASS cancelled secondary recording restores authoring without a take or extra Undo
+PASS seeking commits the partial secondary take and stops its solver
+PASS Save during secondary capture preserves an ordinary partial take through reopen
+PASS New during asynchronous hair setup leaves no stale solver or object
+FAN_MOTION {"checks":24,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/fan-motion/run_571722","metrics":{"anchor_max_step":0.00250005722045898,"authored_step_radians":0.00276213674806058},"movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/fan-motion/run_571722/render_1793385665_5285367_0/movie.mp4"}

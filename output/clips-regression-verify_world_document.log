@@ -1,0 +1,39 @@
+......................
+----------------------------------------------------------------------
+Ran 22 tests in 0.590s
+
+OK
+
+{
+  "checks": 36,
+  "failures": 0,
+  "native_projects": [
+    "pose-smoke/miku-project",
+    "source-smoke/source-project",
+    "sfm-smoke/project"
+  ],
+  "packages": {
+    "packed": {
+      "audio": true,
+      "layers": 1,
+      "objects": 5
+    },
+    "linked": {
+      "audio": true,
+      "layers": 1,
+      "objects": 5
+    },
+    "shared_asset_relinks": 3,
+    "empty": {
+      "audio": false,
+      "layers": 0,
+      "objects": 0
+    },
+    "native": {
+      "audio": false,
+      "layers": 1,
+      "objects": 8
+    }
+  },
+  "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\world-document\\run_874341"
+}
