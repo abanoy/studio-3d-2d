@@ -175,7 +175,7 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 	if editor_extra.has("lesson_ui"):manifest.editor["lesson_ui"]=editor_extra.lesson_ui.duplicate(true)
 	if editor_extra.has("sequence_editor"):manifest.editor["sequence_editor"]=editor_extra.sequence_editor.duplicate(true)
 	if not sequence_graph.is_empty():
-		var saved_graph:={"format":Sequences.FORMAT,"clips":sequence_graph.clips.duplicate(true),"assets":[]}
+		var saved_graph:={"format":sequence_graph.format,"clips":sequence_graph.clips.duplicate(true),"assets":[]}
 		var decoded_audio_bytes:=AudioTrack.memory(audio)
 		for sequence in sequence_graph.assets:
 			var child: Dictionary=sequence.scene;var out:={}

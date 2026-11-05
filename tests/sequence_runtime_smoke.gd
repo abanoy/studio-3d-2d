@@ -8,6 +8,9 @@ func _initialize() -> void:call_deferred("run")
 func check(value: bool,label: String) -> void:
 	checks+=1;print(("PASS " if value else "FAIL ")+label)
 	if not value:failures+=1
+func collect(runtime: Node,completed: Dictionary,id: String) -> void:
+	var image: Image=await runtime.render("",0,true)
+	completed[id]=image
 func run() -> void:
 	var folder: String=OS.get_cmdline_user_args()[0];var document:=Storage.load_project(folder)
 	if document.has("error"):print(document.error);quit(1);return
@@ -45,4 +48,9 @@ func run() -> void:
 	check(first.get_pixel(0,0).a==0 and first.get_pixel(850,450).a==0,"instance translation preserves a transparent surround")
 	var looped: Image=await runtime.render("",4,true)
 	check(looped.get_data()==first.get_data(),"parent repeat maps through both independent local timelines")
-	print("SEQUENCE_RUNTIME_SMOKE ",JSON.stringify({"checks":checks,"failures":failures}));runtime.free();quit(0 if failures==0 else 1)
+	var completed:={};collect(runtime,completed,"active");collect(runtime,completed,"queued")
+	check(runtime.busy and runtime.requests==2,"render lock counts both active and queued callers before retirement")
+	runtime.shutdown()
+	while is_instance_valid(runtime):await process_frame
+	check(completed.has("active") and completed.has("queued") and completed.active==null and completed.queued==null,"retiring runtime completes every cancelled caller before freeing its node")
+	print("SEQUENCE_RUNTIME_SMOKE ",JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

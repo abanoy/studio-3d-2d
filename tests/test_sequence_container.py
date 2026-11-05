@@ -31,6 +31,19 @@ class SequenceContainerTests(unittest.TestCase):
                 self.assertEqual(json.loads((opened/'project.json').read_bytes()),manifest)
                 self.assertEqual((opened/wave_name).read_bytes(),wave.read_bytes())
 
+    def test_shadow_contract_roundtrip_and_invalid_version_preserves_prior(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,manifest,_,_=self.fixture(root)
+            manifest['sequence_graph']['format']='studio_sequences_2'
+            manifest['sequence_graph']['clips'][0]['shadow']=dict(offset=[12,8],color=[0,0,0,.5],softness=4)
+            source=Path(request['folder'])/'project.json';source.write_bytes(has.json_bytes(manifest));has.pack(request)
+            original=Path(request['path']).read_bytes()
+            result=fixtures.HasTests().unpack(root,request);self.assertTrue(result['ok'])
+            self.assertEqual(json.loads((Path(result['folder'])/'project.json').read_bytes()),manifest)
+            manifest['sequence_graph']['format']='studio_sequences_1';source.write_bytes(has.json_bytes(manifest))
+            with self.assertRaises(has.HasError):has.pack(request)
+            self.assertEqual(Path(request['path']).read_bytes(),original)
+
     def test_nested_missing_link_reports_and_preserves_current_cache(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);request,_,name,wave=self.fixture(root);request['storage']='linked';has.pack(request);wave.unlink()

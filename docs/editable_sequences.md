@@ -49,15 +49,14 @@ scene has at most4 ink layers. Archive member, path/hash and byte checks remain.
 
 PCM mixing uses48kHz stereo with exact rational placement boundaries, recursive
 gain/mute and a64MiB mixed-cache bound. Source PCM has a separate64MiB bound.
-Rendering caches one frame per asset, at most4, and uses at most8 placement
-sprites. Child pixels composite between the parent's world and ink. Transparent
+Rendering caches one frame per asset, at most4, and uses at most8 picture/shadow pairs (16 sprites). Child pixels composite between the parent's world and ink. Transparent
 viewport readbacks are converted from premultiplied alpha before CPU blending;
 placement filtering uses premultiplied textures to avoid dark translucent edges.
 Source images and original model/audio files stay unchanged. This is bounded
 short-scene reuse; it does not establish arbitrary long-project performance.
 
 This project-local sequence graph does not settle the addendum's OPEN independent
-native model/map packaging or extension choice. Freeform masks, shadow/glow,
+native model/map packaging or extension choice. Freeform masks, glow,
 standalone sequence exchange and canvas transform handles remain separate work.
 
 ## Validation
@@ -74,3 +73,7 @@ to recover child context while preserving manual HAS bytes.
 Fresh Linux checks use llvmpipe and dummy audio with original procedural assets.
 They do not establish native importer fidelity, Windows GPU/device behavior or
 artist acceptance. See the requirement reconciliation for the remaining gates.
+
+Optional [sequence drop shadows](sequence_shadows.md) now add a reversible silhouette
+effect. Enabling one explicitly promotes the graph to studio_sequences_2 while
+keeping project schema6; earlier unstyled graphs keep their original format.

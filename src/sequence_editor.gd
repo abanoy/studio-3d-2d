@@ -69,7 +69,7 @@ func project_snapshot() -> Dictionary:
 func clone_graph(value: Variant=null) -> Dictionary:
 	if value==null:value=graph
 	if value.is_empty():return {"format":Graph.FORMAT,"assets":[],"clips":[]}
-	var result:={"format":Graph.FORMAT,"assets":[],"clips":value.clips.duplicate(true)}
+	var result:={"format":value.format,"assets":[],"clips":value.clips.duplicate(true)}
 	for item in value.assets:result.assets.append({"id":item.id,"name":item.name,"clips":item.clips.duplicate(true),"scene":item.scene})
 	return result
 func proposed(scene: Dictionary,candidate: Variant=null) -> Dictionary:
@@ -150,6 +150,19 @@ func install_runtime(next: Node) -> void:
 func clear() -> void:
 	graph={};root_document={};active_owner="";navigation=[];editor_states={};selected_clip=""
 	install_runtime(null)
+func finish() -> void:
+	# Stop new preview jobs, then let every owned in-flight coroutine unwind while
+	# the tree still supplies draw/process boundaries. Freeing it mid-await leaks
+	# a GDScriptFunctionState even when its rendering nodes themselves are freed.
+	set_process(false)
+	for child in get_children():
+		if child is Runtime:child.cancelled=true
+	while true:
+		var waiting:=preview_busy
+		for child in get_children():
+			if child is Runtime and child.requests>0:waiting=true
+		if not waiting:return
+		await get_tree().process_frame
 func adopt(document: Dictionary,prepared: Node) -> void:
 	clear();graph=document.get("sequence_graph",{});root_document=document
 	install_runtime(prepared)
@@ -174,7 +187,25 @@ func restore(candidate: Dictionary) -> String:
 		graph={};install_runtime(null);app.rebuild_audio();return ""
 	return commit(clone_graph(candidate),false)
 func default_clip(id: String,start: int,duration: int) -> Dictionary:
-	return {"id":str(ResourceUID.create_id()),"asset_id":id,"start":start,"duration":duration,"source_in":0,"time_in":0,"key_in":0,"loop":false,"visible":true,"muted":false,"gain_db":0.0,"keys":[Graph.key()]}
+	var clip:={"id":str(ResourceUID.create_id()),"asset_id":id,"start":start,"duration":duration,"source_in":0,"time_in":0,"key_in":0,"loop":false,"visible":true,"muted":false,"gain_db":0.0,"keys":[Graph.key()]}
+	if graph.get("format")==Graph.SHADOW_FORMAT:clip["shadow"]={}
+	return clip
+func promote_shadows(candidate: Dictionary) -> void:
+	candidate.format=Graph.SHADOW_FORMAT
+	var owners: Array=[{"clips":candidate.clips}];owners.append_array(candidate.assets)
+	for owner in owners:
+		for clip in owner.clips:
+			if not clip.has("shadow"):clip["shadow"]={}
+func change_shadow(id: String,style: Dictionary) -> String:
+	var why:=Graph.shadow_error(style)
+	if not why.is_empty():return why
+	var current:=find_clip(id)
+	if current.is_empty():return "This sequence clip is no longer available."
+	if current.get("shadow",{})==style:return ""
+	var candidate:=clone_graph();promote_shadows(candidate)
+	for clip in owner_clips(candidate):
+		if clip.id==id:clip.shadow=style.duplicate(true);return commit(candidate)
+	return "This sequence clip is no longer available."
 func owner_clips(candidate: Dictionary) -> Array:
 	if active_owner.is_empty():return candidate.clips
 	for item in candidate.assets:
@@ -243,6 +274,8 @@ func paste_clip() -> String:
 	if clipboard.is_empty() or asset(str(clipboard.get("asset_id",""))).is_empty():return "Copy a sequence instance from this project first."
 	var clip:=clipboard.duplicate(true);clip.id=str(ResourceUID.create_id());clip.start=app.frame
 	var candidate:=clone_graph();owner_clips(candidate).append(clip)
+	if clip.has("shadow"):promote_shadows(candidate)
+	elif candidate.format==Graph.SHADOW_FORMAT:clip["shadow"]={}
 	var error:=commit(candidate)
 	if error.is_empty():selected_clip=clip.id
 	return error
@@ -473,6 +506,22 @@ func add_clip_controls(box: VBoxContainer,clip: Dictionary) -> void:
 		if not panel_valid():app.message("The scene changed. Reopen Sequences.");return
 		for field in [time,x,y,scale,rotation,opacity]:field.apply()
 		var why:=placement_key(id,{"frame":int(time.value)+int(clip.key_in),"offset":[x.value,y.value],"scale":scale.value,"rotation":rotation.value,"opacity":opacity.value/100,"interpolation":interpolation.get_item_text(interpolation.selected)})
+		if why.is_empty():close_panel();show_panel()
+		else:app.message(why))
+	var style: Dictionary=clip.get("shadow",{})
+	var shadow_enabled:=CheckButton.new();shadow_enabled.text="Drop shadow";shadow_enabled.button_pressed=not style.is_empty();box.add_child(shadow_enabled)
+	var offset: Array=style.get("offset",[12,12])
+	var shadow_x: SpinBox=app.spin(box,"Shadow horizontal offset (pixels)",-2048,2048,offset[0])
+	var shadow_y: SpinBox=app.spin(box,"Shadow vertical offset (pixels)",-2048,2048,offset[1])
+	shadow_x.step=.01;shadow_x.value=offset[0];shadow_y.step=.01;shadow_y.value=offset[1]
+	var softness: SpinBox=app.spin(box,"Shadow softness (pixels)",0,32,style.get("softness",4));softness.step=.1;softness.value=style.get("softness",4)
+	var tint:=ColorPickerButton.new();var rgba: Array=style.get("color",[0,0,0,.5]);tint.color=Color(rgba[0],rgba[1],rgba[2],rgba[3]);tint.tooltip_text="Shadow color and opacity";box.add_child(tint)
+	var shown_x:=shadow_x.value;var shown_y:=shadow_y.value;var shown_softness:=softness.value;var shown_color:=tint.color
+	app.button(box,"Apply shadow",func():
+		if not panel_valid():app.message("The scene changed. Reopen Sequences.");return
+		for field in [shadow_x,shadow_y,softness]:field.apply()
+		var color:=tint.color
+		var why:=change_shadow(id,{"offset":[shadow_x.value if shadow_x.value!=shown_x else offset[0],shadow_y.value if shadow_y.value!=shown_y else offset[1]],"color":[color.r,color.g,color.b,color.a] if color!=shown_color else rgba,"softness":softness.value if softness.value!=shown_softness else style.get("softness",4)} if shadow_enabled.button_pressed else {})
 		if why.is_empty():close_panel();show_panel()
 		else:app.message(why))
 	app.button(box,"Remove selected clip",func():

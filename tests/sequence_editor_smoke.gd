@@ -57,7 +57,7 @@ func run() -> void:
 			check(not app.audio_mix.is_empty() and app.audio_document().is_empty() and digest(app.audio_mix.pcm)==expected.audio,"cold parent reproduces exact child audio without flattening editable sound tracks")
 			var image: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 			check(Storage.image_hash(image)==expected.render,"cold nested composite matches original render")
-		print("SEQUENCE_EDITOR_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
+		print("SEQUENCE_EDITOR_READ ",JSON.stringify({"checks":checks,"failures":failures}));await app.sequence_editor.finish();app.free();quit(0 if failures==0 else 1);return
 	check(app.load_demo_room(),"parent procedural room opens")
 	var parent_keys: Array=app.keys.duplicate(true);var parent_source: String=app.source;var parent_sha:=FileAccess.get_sha256(parent_source)
 	var parent_ink:=Drawing.blank(1920,1080);parent_ink.fill_rect(Rect2i(30,30,80,80),Color.CYAN);Drawing.insert(app.layers[1],0,48,parent_ink);app.changed();app.history.clear();app.redo_history.clear();app.history_bytes=0
@@ -170,4 +170,4 @@ func run() -> void:
 		OS.kill(OS.get_process_id())
 		FileAccess.open(folder.path_join("kill-returned.txt"),FileAccess.WRITE).store_string("unexpected return")
 		quit(2);return
-	app.free();quit(0 if failures==0 else 1)
+	await app.sequence_editor.finish();app.free();quit(0 if failures==0 else 1)

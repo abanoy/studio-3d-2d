@@ -47,6 +47,14 @@ def cases():
     v=good();v['assets']=[dict(id='a'+str(i),name='Depth'+str(i),scene=scene(),clips=[clip('d'+str(i),'a'+str(i+1))] if i<3 else []) for i in range(4)];v['clips']=[clip('root','a0')];result.append((v,scene(),True))
     for value,valid in [(dict(format='studio_sequence_editor_1',asset_id='child',frame=24),True),(dict(format='studio_sequence_editor_1',asset_id='missing',frame=0),False),(dict(format='other',asset_id='child',frame=0),False),(dict(format='studio_sequence_editor_1',asset_id='child',frame=49),False),(dict(format='studio_sequence_editor_1',asset_id='child',frame=True),False),(None,False)]:
         root=scene();root['editor']={'sequence_editor':value};result.append((good(),root,valid))
+    styled=good();styled['format']=graph.SHADOW_FORMAT;styled['clips'][0]['shadow']={}
+    result.append((copy.deepcopy(styled),scene(),True))
+    styled['clips'][0]['shadow']=dict(offset=[120,-5],color=[0,0,0,.5],softness=8)
+    result.append((copy.deepcopy(styled),scene(),True))
+    for value in [None,False,dict(offset=[0],color=[0,0,0,.5],softness=4),dict(offset=[2049,0],color=[0,0,0,.5],softness=4),dict(offset=[0,0],color=[0,0,0,True],softness=4),dict(offset=[0,0],color=[0,0,0,1.1],softness=4),dict(offset=[0,0],color=[0,0,0,.5],softness=33),dict(offset=[0,0],color=[0,0,0,.5],softness=False),dict(offset=[0,0],color=[0,0,0,.5],softness=4,unknown=0)]:
+        v=copy.deepcopy(styled);v['clips'][0]['shadow']=value;result.append((v,scene(),False))
+    v=copy.deepcopy(styled);v['format']=graph.FORMAT;result.append((v,scene(),False))
+    v=copy.deepcopy(styled);del v['clips'][0]['shadow'];result.append((v,scene(),False))
     return result
 
 

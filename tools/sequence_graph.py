@@ -3,6 +3,7 @@ import math
 import re
 
 FORMAT='studio_sequences_1'
+SHADOW_FORMAT='studio_sequences_2'
 CLIP_FIELDS={'id','asset_id','start','duration','source_in','time_in','key_in','loop','visible','muted','gain_db','keys'}
 KEY_FIELDS={'frame','offset','scale','rotation','opacity','interpolation'}
 
@@ -20,7 +21,7 @@ def identity(v):
 
 
 def error(graph,root):
-    if not isinstance(graph,dict) or set(graph)!={'format','assets','clips'} or graph['format']!=FORMAT:
+    if not isinstance(graph,dict) or set(graph)!={'format','assets','clips'} or graph['format'] not in (FORMAT,SHADOW_FORMAT):
         return 'Unknown editable sequence graph'
     assets=graph['assets']
     if not isinstance(assets,list) or not 1<=len(assets)<=4:return 'Expected 1–4 editable sequence assets'
@@ -56,7 +57,11 @@ def error(graph,root):
         total+=len(clips)
         if total>8:return 'At most8 sequence clips per project'
         for clip in clips:
-            if not isinstance(clip,dict) or set(clip)!=CLIP_FIELDS or not identity(clip['id']) or clip['id'] in ids or not isinstance(clip['asset_id'],str) or clip['asset_id'] not in index:return 'Invalid sequence clip identity or missing asset'
+            expected=CLIP_FIELDS|{'shadow'} if graph['format']==SHADOW_FORMAT else CLIP_FIELDS
+            if not isinstance(clip,dict) or set(clip)!=expected or not identity(clip['id']) or clip['id'] in ids or not isinstance(clip['asset_id'],str) or clip['asset_id'] not in index:return 'Invalid sequence clip identity or missing asset'
+            if graph['format']==SHADOW_FORMAT:
+                why=shadow_error(clip['shadow'])
+                if why:return why
             ids.add(clip['id']);child=index[clip['asset_id']]['scene']['video']
             if not integer(clip['start'],0,parent['video']['duration_frames']-1) or not integer(clip['duration'],1,parent['video']['duration_frames']-clip['start']) or not integer(clip['source_in'],0,child['duration_frames']-1):return 'Sequence clip exceeds its parent/local range'
             if not integer(clip['time_in'],0,1000000) or not integer(clip['key_in'],0,1000000):return 'Invalid sequence source window'
@@ -82,6 +87,15 @@ def error(graph,root):
     for asset in assets:
         why=visit(asset['id'],[])
         if why:return why
+    return ''
+
+
+def shadow_error(value):
+    if not isinstance(value,dict):return 'Invalid sequence shadow'
+    if not value:return ''
+    if set(value)!={'offset','color','softness'} or not isinstance(value['offset'],list) or len(value['offset'])!=2 or not isinstance(value['color'],list) or len(value['color'])!=4 or not number(value['softness'],0,32):return 'Invalid sequence shadow'
+    if any(not number(n,-2048,2048) for n in value['offset']):return 'Sequence shadow offset exceeds2048pixels'
+    if any(not number(n,0,1) for n in value['color']):return 'Invalid sequence shadow color'
     return ''
 
 

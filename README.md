@@ -701,3 +701,7 @@ foot ranges, constrained root movement and partial release to the tutorial catal
 recorded playback and MP4. Cancelled or wrong-scope takes do not complete the task.
 The course catalog scrolls, and the first-movie verifier now supports private Linux
 displays while retaining the Windows private-desktop checks.
+
+Sequence instances now offer [drop shadows](docs/sequence_shadows.md) with offset,
+softness and color/opacity, shared by preview, recovery and export. Original child
+art stays editable; enabling a shadow uses the explicit studio_sequences_2 format.

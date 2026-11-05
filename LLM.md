@@ -255,3 +255,42 @@ Focused advanced lighting, camera, interpolation, rig posing/foot constraints an
 physics recording are now present. Progressive demonstrations, deeper rig authoring
 and artist feedback remain separate improvements; richer compositing, reusable
 locomotion/native fidelity and long-project work are not complete.
+
+
+## 2026-11-05 UTC — sequence silhouette shadows and render retirement
+
+Added optional per-instance2D drop shadows through the actual Sequences browser:
+offset ±2048px, color/opacity and bounded0–32px mip-filtered softness. The silhouette
+follows clip rotation/scale; offset stays in parent canvas coordinates. Alpha
+multiplies source, style and placement once; originals remain editable. UI disabled
+and unchanged-precision edits are no-ops. Copy/paste/split retain styles. The first
+enabled style explicitly promotes to studio_sequences_2 (project schema6/HAS1);
+all clips then carry a strict shadow field. Legacy graph1 stays readable/unchanged
+until opt-in, and Undo can restore it. Old readers reject graph2 rather than omit
+appearance. No implicit asset packaging decision, Gaussian/3D-shadow or glow claim.
+
+Fresh private llvmpipe shadow23writer +6coldreader pass, actual hard/soft alpha,
+source preservation, Undo/Redo, UI disable/precision no-ops, new/pasted instances,
+packed/linked HAS and recovery, unchanged manual files and H2641080p24/48frames
+with exact shared compositor input. Visually inspected the actual parent-room
+composite. Python289run/288pass/1independent-MMD-reader skip. Cross-runtime graph
+corpus87, audio9/storage8/runtime12/editor47/coldreader16/normalstartup4 all pass
+in final full sequence regression, including exact split PCM, two backgrounds,
+actual AAC onset0.2500208333sec and abrupt writer exit. Evidence shadows-final,
+shadow-sequence-final and shadow-runtime-final under /workspace/has-handoff-audit.
+Procedural originals only; no native/Windows/GPU/device/artist acceptance claim.
+
+Strict cold tests initially exposed a real render-lifetime bug: shutdown waited
+only for the active render, and could free a node before queued previews resumed.
+This leaked a suspended function and could leave preview busy forever. Runtime
+now counts active AND queued requests, cancels/drains all before node retirement;
+normal application close stops new previews and drains owned jobs. A deterministic
+active+queued retirement regression passes. Initial failed close/watchdog/debug
+logs remain outside checkout; final strict acceptance has no leaks/engine errors.
+Tests explicitly finish editor jobs before raw app-free teardown. Tracked old
+output logs restored after copying fresh proof. See docs/sequence_shadows.md.
+
+Stage4 now has editable nested scenes/audio, per-instance transform/opacity,
+video alpha/chroma and simple2D shadows, with a bounded end-to-end cloud exit.
+Masks/glow/general layer tracks, reusable locomotion/native fidelity, measured
+long-project cache behavior and owner acceptance still remain independent work.

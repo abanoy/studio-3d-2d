@@ -24,7 +24,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | Stage3 posing / reference | Rig-aware pose/IK, body library, Model9 independent root components, paths, shapes and reference-only flags present | Native inherited transforms/material/bone/cloth fidelity and broader full-body locomotion |
 | Stage4 imported alpha / chroma | **New:** bounded local video→editable holds; tolerance/softness/spill, original alpha and source preservation; fresh units11 + app19 + reader7 | Long/video-track workflows and artistic keying quality |
 | Stage4 sequence assets / child propagation | **New:** editable embedded shared scene assets, nested timing/looping/placement, child invalidation and recursive audio; schema6 | Bounded4assets/8clips/240frames; native and artist acceptance remain |
-| Stage4 compositing / output | Multiple drawing layers, opacity and transparent PNG export present | Sequence placement transform tracks now present; masks, shadows/glow and general layer tracks remain |
+| Stage4 compositing / output | Multiple drawing layers, sequence placement transform/opacity tracks, simple2D drop shadows and transparent PNG export present | General layer tracks, masks/glow and artistic quality remain |
 | Stage5 quality / optional intelligence | Fills, ghost/onion, brush controls, selection and palettes present; no required AI | Optional suggestions require review/accept/reject, provenance and measured owner need; not a completion prerequisite for optional AI |
 | §6 import / camera / assets | Original source retained; world/asset management, common/native conversion paths | Broader native fixture fidelity and lawful conversion gates |
 | §7 raster engine | Independent full-resolution Images and held exposures, unified composition | Layer/cel bounds remain; lazy long-project support cannot be inferred |
@@ -80,7 +80,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | 13.1 autosave | Bounded background recovery workers present | Measured long-session behavior |
 | 13.2 history | Journal/checkpoint references, shared cel storage and validation present | Measured long-project caching |
 | 13.3 recovery | Fresh explicit recovery restoration passes | Linux identity47 / journal33 / normal-startup147 checks now pass; broader native/hardware crash gate remains |
-| 14.1 complete scene | Shared 3D/ink/audio, imported Krita/video and particle/VFX paths | Editable nested sequences now present; richer compositing remains |
+| 14.1 complete scene | Shared 3D/ink/audio, imported Krita/video and particle/VFX paths | Editable nested sequences and2D shadows now present; broader layer masks/glow remain |
 | 14.2 final output | Default MP41080p24, project rate/duration and PNG options present; fresh movie verified | Device/audio sync and fault coverage |
 | 15 invariants | Existing interactions/source safety/limits retained; no optional AI dependency | Continuous regression and hardware acceptance |
 | 16 roadmap | Recovery→baseline→new video increment follows dependency order | Does not authorize an architectural restart |
@@ -106,7 +106,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | REF-02 | Reference-only state present; full recovered-source gate not rerun |
 | SEQ-01 | Fresh editable child update over two parent backgrounds, shared instances, nested alpha, packed/linked cold reopen, split audio and ordinary startup recovery pass; bounded procedural cloud gate |
 | KEY-01 | Actual green removal, original immutability, transparent/half-alpha unit checks, spill filter; app19 + reader7 |
-| SAFE-01 | Full Python discovery281run/280pass/1skip, origin corpus51, raster packet17, recovery identity47/journal33/startup147 pass; full interruption/fault matrix remains |
+| SAFE-01 | Full Python discovery289run/288pass/1skip, origin corpus51, raster packet17, recovery identity47/journal33/startup147 pass; full interruption/fault matrix remains |
 | PERF-01 | Physical tablet/owner machine unavailable; no latency/comfort claim |
 | Addendum A | Procedural subset works; five-minute novice observation absent |
 | Addendum B | Owner-approved native model/map fixtures and Windows environment needed |
@@ -124,3 +124,5 @@ acceptance distinct. New video behavior and exact reproduction are documented in
 Linux recovery was completed after the initial video checkpoint; see [linux_recovery.md](linux_recovery.md). Earlier checkpoint counts remain historical scoped results.
 
 Editable sequences were completed after the earlier checkpoints; see [editable sequences](editable_sequences.md) for schema6, usage, limits and the portable acceptance verifier. Native packaging remains OPEN.
+
+Simple sequence shadows now pass23writer+6cold checks with exact MP4 input; graph87/runtime12 and the complete sequence recovery suite also pass. See [sequence shadows](sequence_shadows.md).

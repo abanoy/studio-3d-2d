@@ -1,5 +1,6 @@
 extends RefCounted
 const FORMAT="studio_sequences_1"
+const SHADOW_FORMAT="studio_sequences_2"
 const CLIP_FIELDS=["id","asset_id","start","duration","source_in","time_in","key_in","loop","visible","muted","gain_db","keys"]
 const KEY_FIELDS=["frame","offset","scale","rotation","opacity","interpolation"]
 static func number(v,low: float,high: float) -> bool:
@@ -17,7 +18,7 @@ static func fields(v,required: Array) -> bool:
 		if not v.has(key):return false
 	return true
 static func error(graph,root) -> String:
-	if not fields(graph,["format","assets","clips"]) or graph.format!=FORMAT:return "Unknown editable sequence graph."
+	if not fields(graph,["format","assets","clips"]) or not graph.format in [FORMAT,SHADOW_FORMAT]:return "Unknown editable sequence graph."
 	if not graph.assets is Array or graph.assets.is_empty() or graph.assets.size()>4:return "Expected 1–4 editable sequence assets."
 	if not root is Dictionary or not root.get("video") is Dictionary:return "Missing parent sequence timing."
 	var index:={};var documents: Array=[root];var rate: Dictionary=root.video
@@ -53,7 +54,9 @@ static func error(graph,root) -> String:
 		total+=owner.clips.size()
 		if total>8:return "At most8 sequence clips per project."
 		for clip in owner.clips:
-			if not fields(clip,CLIP_FIELDS) or not identity(clip.id) or ids.has(clip.id) or not clip.asset_id is String or not index.has(clip.asset_id):return "Invalid sequence clip identity or missing asset."
+			var expected: Array=CLIP_FIELDS+["shadow"] if graph.format==SHADOW_FORMAT else CLIP_FIELDS
+			if not fields(clip,expected) or not identity(clip.id) or ids.has(clip.id) or not clip.asset_id is String or not index.has(clip.asset_id):return "Invalid sequence clip identity or missing asset."
+			if graph.format==SHADOW_FORMAT and not shadow_error(clip.shadow).is_empty():return shadow_error(clip.shadow)
 			ids[clip.id]=true
 			var child: Dictionary=index[clip.asset_id].scene.video
 			if not integer(clip.start,0,parent.video.duration_frames-1) or not integer(clip.duration,1,parent.video.duration_frames-clip.start) or not integer(clip.source_in,0,child.duration_frames-1):return "Sequence clip exceeds its parent/local range."
@@ -72,6 +75,15 @@ static func error(graph,root) -> String:
 	if root.get("editor",{}) is Dictionary and root.get("editor",{}).has("sequence_editor"):
 		var why:=context_error(root.editor.sequence_editor,graph)
 		if not why.is_empty():return why
+	return ""
+static func shadow_error(value) -> String:
+	if not value is Dictionary:return "Invalid sequence shadow."
+	if value.is_empty():return ""
+	if not fields(value,["offset","color","softness"]) or not value.offset is Array or value.offset.size()!=2 or not value.color is Array or value.color.size()!=4 or not number(value.softness,0,32):return "Invalid sequence shadow."
+	for n in value.offset:
+		if not number(n,-2048,2048):return "Sequence shadow offset exceeds2048pixels."
+	for n in value.color:
+		if not number(n,0,1):return "Invalid sequence shadow color."
 	return ""
 static func context_error(value,graph: Dictionary) -> String:
 	if not fields(value,["format","asset_id","frame"]) or value.format!="studio_sequence_editor_1" or not value.asset_id is String:return "Invalid sequence editor context."
