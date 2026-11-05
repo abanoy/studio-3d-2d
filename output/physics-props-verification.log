@@ -1,0 +1,45 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS original solid prop and skinned ragdoll fixtures export as standard GLB
+PASS Simple Physics starts an unrigged prop through the shared model path
+PASS prop uses a world-space CCD body and fitted convex mesh collision
+PASS repeated activation cannot replace or leak a live prop body
+PASS solid box falls and settles with its visible bottom on the real map floor
+PASS live visual follows the simulated body instead of the authored root
+PASS prop simulation leaves authored data and automatic keys untouched
+PASS Physics off freezes prop position in one Undo without adding motion keys
+PASS frozen prop remains still after its physical proxy is removed
+PASS Undo restores exact authored prop state before simulation
+PASS Redo restores exact frozen prop state
+PASS camera keys and source prop bytes remain unchanged
+PASS physics and Undo leave independent drawing pixels and audio timing untouched
+PASS packed HAS reopens the frozen prop as native root data with physics off
+PASS packed prop scene preserves editable RGBA drawing and independent WAV timing
+PASS frozen prop renders into MP4 using the exact reopened preview
+PASS actual viewport click grabs a rigid prop using the same control as ragdolls
+PASS cursor movement lifts a rigid prop against gravity
+PASS outside release drops the prop while live physics continues
+PASS freeze converts world physics back through a rotated uniformly scaled parent
+PASS child prop simulation never edits its parent group
+PASS unsupported scale is rejected before creating a proxy or changing the model
+PASS hidden prop activation fails visibly without leaving a checked Physics control
+PASS dense collision geometry uses a bounded fitted-box fallback
+PASS tilted flat geometry is rejected before it reaches the solid-body solver
+PASS a live parent rejects a second nested simulation without affecting the parent
+PASS animated prop freeze holds its same-frame root draft across mode switches without overwriting keys
+PASS scrub clears the temporary physics-root draft and resumes authored animation
+PASS three dynamic boxes and a skinned ragdoll simulate independently in one world
+PASS physical ragdoll contact knocks and displaces live boxes
+PASS impacted boxes still create no keys or authored edits without explicit recording
+PASS selected prop freeze leaves peer boxes and ragdoll running
+PASS timeline seek safely freezes all remaining props and ragdolls
+PASS invalid simulated prop roots cannot corrupt authored data, Undo or a saved HAS
+PASS rejected prop freeze immediately clears the Physics control
+PASS prepared community prop uses shared rigid-body physics: chair_office.mdl
+PASS prepared prop falls and settles on the map: chair_office.mdl
+PASS native prop freeze preserves metadata/source and creates no keys: chair_office.mdl
+PASS prepared community prop uses shared rigid-body physics: scene.glb
+PASS prepared prop falls and settles on the map: scene.glb
+PASS native prop freeze preserves metadata/source and creates no keys: scene.glb
+PHYSICS_PROPS {"audio":true,"checks":41,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics-props/run_786505","max_box_displacement":1.84058332443237,"movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics-props/run_786505/render_1793344297_4637842_0/movie.mp4","native_samples":["chair_office.mdl","scene.glb"],"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics-props/run_786505/props.has","ragdoll_contacts":5}

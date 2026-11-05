@@ -1,0 +1,150 @@
+PASS unit: 0.345s
+PASS spikes: 4.299s
+PASS editor: 5.405s
+PASS export_failures: 1.096s
+PASS audio_editor: 5.596s
+PASS audio_dummy: 1.751s
+PASS ui: 2.031s
+PASS recovery_write: 1.905s
+PASS recovery: 1.818s
+PASS pose: 9.367s
+PASS autokey: 7.047s
+PASS new_scene: 5.535s
+PASS world_selection: 4.81s
+PASS world_document: 2.693s
+PASS world_runtime: 9.635s
+PASS world_edit: 12.126s
+PASS world_workflow: 6.817s
+{
+  "unit": {
+    "exit": 0,
+    "seconds": 0.345
+  },
+  "spikes": {
+    "exit": 0,
+    "seconds": 4.299
+  },
+  "editor": {
+    "exit": 0,
+    "seconds": 5.405
+  },
+  "export_failures": {
+    "exit": 0,
+    "seconds": 1.096
+  },
+  "audio_editor": {
+    "exit": 0,
+    "seconds": 5.596
+  },
+  "audio_dummy": {
+    "exit": 0,
+    "seconds": 1.751
+  },
+  "ui": {
+    "exit": 0,
+    "seconds": 2.031
+  },
+  "recovery_write": {
+    "exit": 0,
+    "seconds": 1.905
+  },
+  "recovery": {
+    "exit": 0,
+    "seconds": 1.818
+  },
+  "pose": {
+    "exit": 0,
+    "seconds": 9.367
+  },
+  "autokey": {
+    "exit": 0,
+    "seconds": 7.047
+  },
+  "new_scene": {
+    "exit": 0,
+    "seconds": 5.535
+  },
+  "world_selection": {
+    "exit": 0,
+    "seconds": 4.81
+  },
+  "world_document": {
+    "exit": 0,
+    "seconds": 2.693
+  },
+  "world_runtime": {
+    "exit": 0,
+    "seconds": 9.635
+  },
+  "world_edit": {
+    "exit": 0,
+    "seconds": 12.126
+  },
+  "world_workflow": {
+    "exit": 0,
+    "seconds": 6.817
+  },
+  "silent_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "tone_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "editor_audio_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "autokey_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "new_scene_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_runtime_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_edit_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_workflow_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_0": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_1": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "pose_checks": 45,
+  "actual_mmd_tested": true,
+  "tone_onset_seconds": 1.0,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "representative_png_sha256": {
+    "frame_000001.png": "d895f61f3feb20a69a0c3fa164390d57adb586da526e6b348fcc0ec075eb403d",
+    "frame_000025.png": "b38facabaa27f27ca6666e082b02f02d3959d079323d3fc66616ce9d1655db7d",
+    "frame_000048.png": "272d24b23ed59f7fd76d81184e76bbb9f76d442a4beb98b5f059cd0b871cc7cf"
+  }
+}

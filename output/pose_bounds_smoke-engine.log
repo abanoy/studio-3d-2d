@@ -1,0 +1,38 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS immediate framing reads the current pose before a rendered-frame delay
+PASS exact skin bounds match the independent engine snapshot
+PASS named skin binds and eight weighted influences match engine geometry under transformed parents
+PASS fixture proves the old bind bound misses the model's current location
+PASS Simple Frame model contains every current posed vertex
+PASS framing changes only the temporary view, without pose/shot/history edits
+PASS hidden selected model frames without changing visibility
+PASS bounded fallback conservatively contains all posed geometry
+PASS very small models remain in front of the existing near clipping plane
+PASS empty framing refuses without moving the camera
+PASS native/morph pose fits independent baked geometry: Shaped
+PASS framing preserves native identities/data and explicit shot keys: Shaped
+PASS temporary pose framing does not change authored MP4 camera or independent cel
+PASS native/morph pose fits independent baked geometry: MMD
+PASS framing preserves native identities/data and explicit shot keys: MMD
+PASS live native body/VRM hair frames without recording or stopping: MMD
+PASS native/morph pose fits independent baked geometry: GMod
+PASS framing preserves native identities/data and explicit shot keys: GMod
+PASS live native body/VRM hair frames without recording or stopping: GMod
+PASS native/morph pose fits independent baked geometry: SFM
+PASS framing preserves native identities/data and explicit shot keys: SFM
+PASS live native body/VRM hair frames without recording or stopping: SFM
+PASS native/morph pose fits independent baked geometry: VRM1.0
+PASS framing preserves native identities/data and explicit shot keys: VRM1.0
+PASS live native body/VRM hair frames without recording or stopping: VRM1.0
+PASS native/morph pose fits independent baked geometry: VRM0.x
+PASS framing preserves native identities/data and explicit shot keys: VRM0.x
+PASS live native body/VRM hair frames without recording or stopping: VRM0.x
+PASS live falling ragdoll frames at its current location without stopping physics
+PASS live framing creates no pose, recording or camera key
+PASS live bounds use the final physical modifier pose
+PASS Physics Off clears the transient final pose and frames the frozen editable skin
+PASS disposing live physics removes its transient framing cache
+PASS reopened frozen pose frames correctly without fresh simulation
+POSE_BOUNDS {"checks":34,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\pose-bounds\\1793520729889211500","metrics":{"GMod":{"bound_error":0.0,"conservative":0,"elapsed_us":61139,"vertices":34770},"MMD":{"bound_error":0.0000181198120117188,"conservative":0,"elapsed_us":35600,"vertices":9392},"SFM":{"bound_error":0.000011444091796875,"conservative":0,"elapsed_us":631912,"vertices":9559},"Shaped":{"bound_error":0.0,"conservative":0,"elapsed_us":1374,"vertices":28},"VRM0.x":{"bound_error":0.0,"conservative":0,"elapsed_us":69116,"vertices":20459},"VRM1.0":{"bound_error":0.0,"conservative":0,"elapsed_us":59336,"vertices":20459},"movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\pose-bounds\\1793520729889211500/render_1793520732_2541703_0/movie.mp4"},"movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\pose-bounds\\1793520729889211500/render_1793520732_2541703_0/movie.mp4"}

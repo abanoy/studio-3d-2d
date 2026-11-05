@@ -1,0 +1,56 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS Physics toggle is accessible in Simple
+PASS live physics uses explicit pinned Jolt with120Hz stepping
+PASS contact penetration allowance is reduced to two millimeters in meter-scaled scenes
+PASS connected Simple toggle starts a real three-body ragdoll against imported map geometry
+PASS physical-bone properties receive separate anatomical joint types and degree ranges
+PASS live simulation never writes data, history or automatic motion keys
+PASS ragdoll falls and settles against the visible map floor
+PASS terminal hand collider fits its weighted skin instead of a tiny generic sphere
+PASS Physics off freezes the current pose in one Undo step without recording animation
+PASS disabled physics holds its actual fallen pose instead of snapping to rest
+PASS actual authored skinned geometry rests above the map floor within contact tolerance
+PASS Undo restores the exact pre-simulation authored state
+PASS Redo restores the frozen pose with physics off
+PASS physics leaves explicit camera keys and source GLB unchanged
+PASS packed HAS preserves an unanimated frozen pose without adding motion keys
+PASS independent frozen-pose reimport stays within established GPU edge tolerance
+PASS MP4 rendering uses the stored frozen pose and does not restart live simulation
+PASS every physical bone uses continuous collision detection
+PASS impulsed ragdoll travels toward the back wall without tunneling through it
+PASS actual viewport left-click grabs a simulated physical body
+PASS wheel changes the held body's target distance
+PASS dragging the cursor lifts the constrained ragdoll against gravity
+GRAB_BEND {"end_offset_degrees":22.9963830822345,"peak_change_degrees":83.6305721837273}
+PASS live dragging bends an articulated joint by more than five degrees
+PASS release outside the viewport removes the grab constraint while live physics continues
+PASS Escape drops the grab safely while simulation continues
+PASS focus loss releases the grab constraint without keying simulation
+PASS freezing an animated model preserves its sampled root and original keys
+PASS unrecorded frozen preview survives workspace and Draw switches at the same frame
+PASS scrubbing resumes the existing authored take without baking live motion
+PASS two independently selected ragdolls can simulate in the same world
+PASS Physics toggle freezes only the selected object while its peer keeps simulating
+PASS scrubbing stops the remaining simulation without filling either timeline with motion keys
+PASS out-of-range simulated pose cannot corrupt authored data, history or a saved project
+PASS a stopped/rejected simulation updates its visible Physics toggle immediately
+PASS native standardized rig starts real ragdoll physics: pose-smoke/miku-project
+PASS native body centers and collision surfaces settle above the floor with bounded contact motion: pose-smoke/miku-project
+PASS native freeze preserves skin bindings/provenance/source and makes no motion keys: pose-smoke/miku-project
+PASS native standardized rig starts real ragdoll physics: source-smoke/source-project
+PASS native body centers and collision surfaces settle above the floor with bounded contact motion: source-smoke/source-project
+PASS native freeze preserves skin bindings/provenance/source and makes no motion keys: source-smoke/source-project
+PASS native standardized rig starts real ragdoll physics: sfm-smoke/project
+PASS native body centers and collision surfaces settle above the floor with bounded contact motion: sfm-smoke/project
+PASS native freeze preserves skin bindings/provenance/source and makes no motion keys: sfm-smoke/project
+PASS ordinary VRM preparation produces a shared physics-ready rig: AvatarSample_A.vrm
+PASS VRM humanoid map supports actual ragdoll startup: AvatarSample_A.vrm
+PASS VRM falls, freezes and preserves native data without recording: AvatarSample_A.vrm
+PASS ordinary VRM preparation produces a shared physics-ready rig: AvatarSample_Avrm0.vrm
+PASS VRM humanoid map supports actual ragdoll startup: AvatarSample_Avrm0.vrm
+PASS VRM falls, freezes and preserves native data without recording: AvatarSample_Avrm0.vrm
+PASS unrigged props get an actionable fallback rather than an invalid ragdoll
+PASS unsupported skeleton scale fails without adding bodies or changing authored data
+PHYSICS_SMOKE {"checks":51,"failures":0,"floor_max":0.150458678603172,"floor_min":0.100410588085651,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics/run_1261376","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics/run_1261376/render_1793415938_6627374_0/movie.mp4","native_metrics":{"pose-smoke/miku-project":{"bodies":19,"collision_min":-0.00230182707309723,"max":0.275996118783951,"min":0.0390412099659443,"poses":126,"speed":0.0},"sfm-smoke/project":{"bodies":21,"collision_min":-0.0025167316198349,"max":0.413846880197525,"min":0.048313993960619,"poses":83,"speed":0.0231763422489166},"source-smoke/source-project":{"bodies":21,"collision_min":-0.00204401090741158,"max":0.210991516709328,"min":0.0166151467710733,"poses":77,"speed":0.0}},"native_samples":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics/run_1261376/physics.has","reimport_pixels":{"channels":0,"close":true,"mean":0.0},"skin_min":0.000410173088312149,"vrm_samples":["AvatarSample_A.vrm","AvatarSample_Avrm0.vrm"],"wall_z":-7.67960596084595}

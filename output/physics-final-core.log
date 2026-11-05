@@ -1,0 +1,220 @@
+PASS unit: 0.465s
+PASS spikes: 4.21s
+PASS editor: 5.385s
+PASS export_failures: 1.077s
+PASS audio_editor: 5.848s
+PASS audio_dummy: 1.981s
+PASS ui: 2.125s
+PASS recovery_write: 2.052s
+PASS recovery: 1.993s
+PASS pose: 9.3s
+PASS autokey: 7.017s
+PASS new_scene: 5.339s
+PASS world_selection: 5.046s
+PASS world_document: 2.704s
+PASS world_runtime: 9.086s
+PASS world_edit: 10.918s
+PASS world_workflow: 6.171s
+PASS object_timing: 12.918s
+PASS bone_labels: 2.272s
+PASS animation_clips_unit: 0.435s
+PASS animation_clips: 14.627s
+PASS visibility: 11.119s
+PASS animated_channels: 8.403s
+PASS limb_ik: 16.708s
+PASS physics: 31.634s
+{
+  "unit": {
+    "exit": 0,
+    "seconds": 0.465
+  },
+  "spikes": {
+    "exit": 0,
+    "seconds": 4.21
+  },
+  "editor": {
+    "exit": 0,
+    "seconds": 5.385
+  },
+  "export_failures": {
+    "exit": 0,
+    "seconds": 1.077
+  },
+  "audio_editor": {
+    "exit": 0,
+    "seconds": 5.848
+  },
+  "audio_dummy": {
+    "exit": 0,
+    "seconds": 1.981
+  },
+  "ui": {
+    "exit": 0,
+    "seconds": 2.125
+  },
+  "recovery_write": {
+    "exit": 0,
+    "seconds": 2.052
+  },
+  "recovery": {
+    "exit": 0,
+    "seconds": 1.993
+  },
+  "pose": {
+    "exit": 0,
+    "seconds": 9.3
+  },
+  "autokey": {
+    "exit": 0,
+    "seconds": 7.017
+  },
+  "new_scene": {
+    "exit": 0,
+    "seconds": 5.339
+  },
+  "world_selection": {
+    "exit": 0,
+    "seconds": 5.046
+  },
+  "world_document": {
+    "exit": 0,
+    "seconds": 2.704
+  },
+  "world_runtime": {
+    "exit": 0,
+    "seconds": 9.086
+  },
+  "world_edit": {
+    "exit": 0,
+    "seconds": 10.918
+  },
+  "world_workflow": {
+    "exit": 0,
+    "seconds": 6.171
+  },
+  "object_timing": {
+    "exit": 0,
+    "seconds": 12.918
+  },
+  "bone_labels": {
+    "exit": 0,
+    "seconds": 2.272
+  },
+  "animation_clips_unit": {
+    "exit": 0,
+    "seconds": 0.435
+  },
+  "animation_clips": {
+    "exit": 0,
+    "seconds": 14.627
+  },
+  "visibility": {
+    "exit": 0,
+    "seconds": 11.119
+  },
+  "animated_channels": {
+    "exit": 0,
+    "seconds": 8.403
+  },
+  "limb_ik": {
+    "exit": 0,
+    "seconds": 16.708
+  },
+  "physics": {
+    "exit": 0,
+    "seconds": 31.634
+  },
+  "silent_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "tone_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "editor_audio_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "autokey_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "new_scene_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_runtime_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_edit_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_workflow_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "object_timing_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animation_clips_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "visibility_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animated_channels_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "limb_ik_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "physics_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_0": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_1": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "pose_checks": 45,
+  "actual_mmd_tested": true,
+  "tone_onset_seconds": 1.0,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "representative_png_sha256": {
+    "frame_000001.png": "d895f61f3feb20a69a0c3fa164390d57adb586da526e6b348fcc0ec075eb403d",
+    "frame_000025.png": "b38facabaa27f27ca6666e082b02f02d3959d079323d3fc66616ce9d1655db7d",
+    "frame_000048.png": "272d24b23ed59f7fd76d81184e76bbb9f76d442a4beb98b5f059cd0b871cc7cf"
+  }
+}

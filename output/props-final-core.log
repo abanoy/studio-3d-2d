@@ -1,0 +1,230 @@
+PASS unit: 0.343s
+PASS spikes: 4.14s
+PASS editor: 5.412s
+PASS export_failures: 1.102s
+PASS audio_editor: 6.408s
+PASS audio_dummy: 2.228s
+PASS ui: 2.141s
+PASS recovery_write: 2.192s
+PASS recovery: 2.046s
+PASS pose: 11.221s
+PASS autokey: 7.528s
+PASS new_scene: 5.361s
+PASS world_selection: 4.952s
+PASS world_document: 2.606s
+PASS world_runtime: 10.646s
+PASS world_edit: 12.421s
+PASS world_workflow: 7.149s
+PASS object_timing: 14.549s
+PASS bone_labels: 2.317s
+PASS animation_clips_unit: 0.372s
+PASS animation_clips: 16.421s
+PASS visibility: 13.137s
+PASS animated_channels: 9.873s
+PASS limb_ik: 18.926s
+PASS physics: 32.107s
+PASS physics_props: 24.017s
+{
+  "unit": {
+    "exit": 0,
+    "seconds": 0.343
+  },
+  "spikes": {
+    "exit": 0,
+    "seconds": 4.14
+  },
+  "editor": {
+    "exit": 0,
+    "seconds": 5.412
+  },
+  "export_failures": {
+    "exit": 0,
+    "seconds": 1.102
+  },
+  "audio_editor": {
+    "exit": 0,
+    "seconds": 6.408
+  },
+  "audio_dummy": {
+    "exit": 0,
+    "seconds": 2.228
+  },
+  "ui": {
+    "exit": 0,
+    "seconds": 2.141
+  },
+  "recovery_write": {
+    "exit": 0,
+    "seconds": 2.192
+  },
+  "recovery": {
+    "exit": 0,
+    "seconds": 2.046
+  },
+  "pose": {
+    "exit": 0,
+    "seconds": 11.221
+  },
+  "autokey": {
+    "exit": 0,
+    "seconds": 7.528
+  },
+  "new_scene": {
+    "exit": 0,
+    "seconds": 5.361
+  },
+  "world_selection": {
+    "exit": 0,
+    "seconds": 4.952
+  },
+  "world_document": {
+    "exit": 0,
+    "seconds": 2.606
+  },
+  "world_runtime": {
+    "exit": 0,
+    "seconds": 10.646
+  },
+  "world_edit": {
+    "exit": 0,
+    "seconds": 12.421
+  },
+  "world_workflow": {
+    "exit": 0,
+    "seconds": 7.149
+  },
+  "object_timing": {
+    "exit": 0,
+    "seconds": 14.549
+  },
+  "bone_labels": {
+    "exit": 0,
+    "seconds": 2.317
+  },
+  "animation_clips_unit": {
+    "exit": 0,
+    "seconds": 0.372
+  },
+  "animation_clips": {
+    "exit": 0,
+    "seconds": 16.421
+  },
+  "visibility": {
+    "exit": 0,
+    "seconds": 13.137
+  },
+  "animated_channels": {
+    "exit": 0,
+    "seconds": 9.873
+  },
+  "limb_ik": {
+    "exit": 0,
+    "seconds": 18.926
+  },
+  "physics": {
+    "exit": 0,
+    "seconds": 32.107
+  },
+  "physics_props": {
+    "exit": 0,
+    "seconds": 24.017
+  },
+  "silent_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "tone_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "editor_audio_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "autokey_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "new_scene_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_runtime_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_edit_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_workflow_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "object_timing_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animation_clips_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "visibility_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animated_channels_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "limb_ik_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "physics_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "physics_props_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_0": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_1": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "pose_checks": 45,
+  "actual_mmd_tested": true,
+  "tone_onset_seconds": 1.0,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "representative_png_sha256": {
+    "frame_000001.png": "d895f61f3feb20a69a0c3fa164390d57adb586da526e6b348fcc0ec075eb403d",
+    "frame_000025.png": "b38facabaa27f27ca6666e082b02f02d3959d079323d3fc66616ce9d1655db7d",
+    "frame_000048.png": "272d24b23ed59f7fd76d81184e76bbb9f76d442a4beb98b5f059cd0b871cc7cf"
+  }
+}

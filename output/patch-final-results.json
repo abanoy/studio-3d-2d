@@ -1,0 +1,43 @@
+{
+  "helpers": {
+    "outer_driver_timeout_seconds": 150,
+    "command_exit": null,
+    "python_tests": 20,
+    "engine_checks": [
+      39,
+      14,
+      59,
+      35
+    ],
+    "engine_exits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "artifact_verification_exit": 0,
+    "report": "output/secondary-helpers-verification-recovered.json"
+  },
+  "private_receipts": [
+    "output\\private-desktop\\has_smoke_5ba883ac74964a16a7b2dc3f941925a6.json",
+    "output\\private-desktop\\secondary_helpers_multi_2f189540013146d686a87b857fb135e4.json",
+    "output\\private-desktop\\secondary_helpers_native_03a104b678244c2e9452869e9ce6845f.json",
+    "output\\private-desktop\\secondary_helpers_patch_f0b7300dbdd84be298949f35ca57f476.json",
+    "output\\private-desktop\\secondary_helpers_smoke_cb8aa44a63d14c93924cbdd9905b744c.json",
+    "output\\private-desktop\\studio_bb25e528a2a645ef941589244d1dfb7a.json",
+    "output\\private-desktop\\studio_f134d7fe6d834104b8aed08287de75ec.json"
+  ],
+  "has": {
+    "exit": 0,
+    "seconds": 28.377
+  },
+  "ui": {
+    "exit": 0,
+    "seconds": 3.829
+  },
+  "editor": {
+    "exit": 0,
+    "seconds": 8.903
+  },
+  "composite_timeout_interface_exit": 0
+}

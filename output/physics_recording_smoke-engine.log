@@ -1,0 +1,63 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS Record and Local/World controls are visible in Simple
+PASS recording without live physics gives useful guidance
+PASS fixed-tick sparse bone capture reconstructs the actual physical body position
+PASS connected Local Record locks capture to the selected live model
+PASS Home keeps the actual active capture workspace and Stop controls accessible
+PASS selecting another model in the tree keeps the original Local capture scope
+PASS grabbing a peer does not truncate or silently retarget Local recording
+LOCAL_RECORD_END {"error":"","frame":48,"reason":"project end","samples":49}
+PASS Local recording reaches the exact project end and stops all live proxies
+PASS complete Local take is one memory-accounted Undo command
+PASS Local take contains each project sample including the end boundary
+PASS Local capture does not key or freeze unselected impacted props into the project
+PASS Undo restores original motion without changing the peer selection
+PASS Redo restores the recorded Local piece with physics off
+PASS World records ragdoll and all three dynamic props in one atomic Undo
+PASS actual ragdoll impacts produce recorded horizontal box movement
+PASS scrubbing displays saved motion without restarting physics
+PASS arbitrary seek order evaluates the same recorded poses and roots
+PASS physics capture preserves independent drawing, WAV timing and explicit camera keys
+PASS World Undo restores every affected model together
+PASS World Redo restores every recorded model together
+PASS packed HAS reopens captured root/bone samples without live simulation
+PASS recorded motion and independent overlay export with exact reopened preview pixels
+PASS compact recorded metadata saves inside the unchanged1MiB reader bound
+PASS Record from Draw enters the 3D workspace automatically for puppeteering
+PASS an unfinished recording protects a previously saved project as unsaved work
+PASS Escape discards a partial recording without altering data or Undo
+PASS discarding an unchanged take restores the saved project's clean state
+PASS Stop keeps an early take as editable animation
+PASS focus loss releases a held body without truncating the recording
+PASS recording completes to the project end after a focus interruption
+CAPTURE_VELOCITY {"displacement":"(0.959999, -0.008074, 0.0)","end":"(0.959999, 2.94732, 0.0)","origin":"(0.0, 2.955394, 0.0)","ticks":116}
+PASS non-divisor rational frame rate uses integer tick/frame phase and includes every sample
+PASS fractional tick sampling follows actual constant-velocity physics within one fixed step
+PASS a near-capacity project can begin a bounded recording
+PASS metadata limit keeps the longest valid sampled prefix as one Undo step
+PASS bounded recording result actually saves within the unchanged metadata cap
+PASS Undo restores even a budget-limited take exactly
+PASS recording cannot overwrite authoring that changed while capturing
+PASS Undo during capture discards only the unfinished take
+PASS manual seek commits the current take before seeking
+PASS Save finishes and packages a partial recording instead of losing it
+PASS native model uses the shared physics capture adapter: Miku_Hatsune.pmd
+PASS sparse capture reconstructs every native physical body within one millimeter: Miku_Hatsune.pmd
+PASS native model uses the shared physics capture adapter: reimu_hakurei_bikini_ragdoll.mdl
+PASS sparse capture reconstructs every native physical body within one millimeter: reimu_hakurei_bikini_ragdoll.mdl
+PASS native model uses the shared physics capture adapter: scout.mdl
+PASS sparse capture reconstructs every native physical body within one millimeter: scout.mdl
+PASS all native models record a full two-second World take within the metadata budget
+PASS native recording stores physical bones without duplicating unchanged helpers or losing provenance: Miku_Hatsune.pmd
+PASS native recording stores physical bones without duplicating unchanged helpers or losing provenance: reimu_hakurei_bikini_ragdoll.mdl
+PASS native recording stores physical bones without duplicating unchanged helpers or losing provenance: scout.mdl
+PASS all native recorded poses survive packed HAS reopen together
+PASS VRM humanoid rig supports sparse fixed-tick capture: AvatarSample_A.vrm
+PASS VRM humanoid rig supports sparse fixed-tick capture: AvatarSample_Avrm0.vrm
+PASS VRM0/1 complete a full World take through the same native model representation
+PASS recording never modifies original geometry files
+PASS native capture never changes source GLBs
+PASS owned application teardown is exercised with an active unfinished recording
+PHYSICS_RECORDING {"audio":true,"checks":57,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics-recording/run_818198","horizontal_displacement":1.9643737077713,"max_sample_ms":4.611,"metadata_estimate":806854,"movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics-recording/run_818198/render_1793509350_10903442_0/movie.mp4","native_metrics":{"1839727630547273770":{"binding_error":0.00000060858064898639,"physical_bodies":21,"source_bones":83},"513447031760277080":{"binding_error":0.000000242809647943432,"physical_bodies":21,"source_bones":77},"5272406513758110190":{"binding_error":0.000000676988861414429,"physical_bodies":19,"source_bones":126}},"native_models":3,"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics-recording/run_818198/recording.has","velocity_error":0.000000557899475062129,"vrm_samples":["AvatarSample_A.vrm","AvatarSample_Avrm0.vrm"],"world_contacts":3}

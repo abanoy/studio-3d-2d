@@ -1,0 +1,68 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS rotated-box overlap agrees with actual Jolt shape query
+PASS rotated-box overlap agrees with actual Jolt shape query
+PASS rotated-box overlap agrees with actual Jolt shape query
+PASS rotated-box overlap agrees with actual Jolt shape query
+PASS round-shape overlap agrees symmetrically with Jolt: ["sphere", "sphere"]
+PASS round-shape overlap agrees symmetrically with Jolt: ["sphere", "sphere"]
+PASS round-shape overlap agrees symmetrically with Jolt: ["sphere", "capsule"]
+PASS round-shape overlap agrees symmetrically with Jolt: ["sphere", "capsule"]
+PASS round-shape overlap agrees symmetrically with Jolt: ["capsule", "capsule"]
+PASS round-shape overlap agrees symmetrically with Jolt: ["capsule", "capsule"]
+PASS round-shape overlap agrees symmetrically with Jolt: ["capsule", "box"]
+PASS round-shape overlap agrees symmetrically with Jolt: ["capsule", "box"]
+PASS authored loose-part fixture uses the same standard rig adapter
+PASS loose spring-weighted hair no longer inflates the rigid head collider
+PASS loose sleeve helpers do not become rigid upper-arm volume
+PASS known finger weights still extend the hand collision fit
+PASS spring/string names remain distinct from ring fingers and structural twists
+PASS distant-part collision stress setup actually overlaps proxy shapes
+PASS distant body parts remain collidable even when brought into overlap
+PASS original overlapping torso fixture writes a standard skinned GLB
+PASS only nearby initially overlapping proxy shapes gain exceptions: authored
+PASS contact setup preserves native data/source and never records motion implicitly: authored
+PASS only nearby initially overlapping proxy shapes gain exceptions: authored
+PASS contact setup preserves native data/source and never records motion implicitly: authored
+CONTACT_METRIC authored {"after":{"helper_strain":0.0,"pairs":3,"speed":0.0841549709439278,"strain":0.000174515269463882},"before":{"helper_strain":0.0,"pairs":3,"speed":0.0756796896457672,"strain":0.16927994787693}}
+PASS reproduced joint stretch drops below five millimeters and to less than one quarter: authored
+PASS helper bones follow normally and the improved ragdoll settles: authored
+PASS only nearby initially overlapping proxy shapes gain exceptions: pose-smoke
+PASS contact setup preserves native data/source and never records motion implicitly: pose-smoke
+PASS only nearby initially overlapping proxy shapes gain exceptions: pose-smoke
+PASS contact setup preserves native data/source and never records motion implicitly: pose-smoke
+CONTACT_METRIC pose-smoke {"after":{"helper_strain":0.000000376449150962799,"pairs":9,"speed":0.0,"strain":0.000346213608281687},"before":{"helper_strain":0.000000479033019473718,"pairs":9,"speed":0.231962442398071,"strain":0.011790138669312}}
+PASS native control rig keeps joint separation below five millimeters: pose-smoke
+PASS helper bones follow normally and the improved ragdoll settles: pose-smoke
+PASS only nearby initially overlapping proxy shapes gain exceptions: source-smoke
+PASS contact setup preserves native data/source and never records motion implicitly: source-smoke
+PASS only nearby initially overlapping proxy shapes gain exceptions: source-smoke
+PASS contact setup preserves native data/source and never records motion implicitly: source-smoke
+CONTACT_METRIC source-smoke {"after":{"helper_strain":0.000000388235349646493,"pairs":6,"speed":0.00307459034956992,"strain":0.000722500204574317},"before":{"helper_strain":0.000000464139162659194,"pairs":6,"speed":0.00696243951097131,"strain":0.0119262849912047}}
+PASS native control rig keeps joint separation below five millimeters: source-smoke
+PASS helper bones follow normally and the improved ragdoll settles: source-smoke
+PASS only nearby initially overlapping proxy shapes gain exceptions: sfm-smoke
+PASS contact setup preserves native data/source and never records motion implicitly: sfm-smoke
+PASS only nearby initially overlapping proxy shapes gain exceptions: sfm-smoke
+PASS contact setup preserves native data/source and never records motion implicitly: sfm-smoke
+CONTACT_METRIC sfm-smoke {"after":{"helper_strain":0.000000371489136341552,"pairs":10,"speed":0.0,"strain":0.0014528821920976},"before":{"helper_strain":0.000000385639538080795,"pairs":10,"speed":0.0417440757155418,"strain":0.0607592463493347}}
+PASS reproduced joint stretch drops below five millimeters and to less than one quarter: sfm-smoke
+PASS helper bones follow normally and the improved ragdoll settles: sfm-smoke
+PASS only nearby initially overlapping proxy shapes gain exceptions: AvatarSample_A
+PASS contact setup preserves native data/source and never records motion implicitly: AvatarSample_A
+PASS only nearby initially overlapping proxy shapes gain exceptions: AvatarSample_A
+PASS contact setup preserves native data/source and never records motion implicitly: AvatarSample_A
+CONTACT_METRIC AvatarSample_A {"after":{"helper_strain":0.000000493217783059663,"pairs":7,"speed":0.0,"strain":0.000487301527755335},"before":{"helper_strain":0.00000033778260899453,"pairs":7,"speed":0.700597822666168,"strain":0.0420422852039337}}
+PASS native control rig keeps joint separation below five millimeters: AvatarSample_A
+PASS helper bones follow normally and the improved ragdoll settles: AvatarSample_A
+PASS VRM source bytes remain unchanged: AvatarSample_A.vrm
+PASS only nearby initially overlapping proxy shapes gain exceptions: AvatarSample_Avrm0
+PASS contact setup preserves native data/source and never records motion implicitly: AvatarSample_Avrm0
+PASS only nearby initially overlapping proxy shapes gain exceptions: AvatarSample_Avrm0
+PASS contact setup preserves native data/source and never records motion implicitly: AvatarSample_Avrm0
+CONTACT_METRIC AvatarSample_Avrm0 {"after":{"helper_strain":0.000000389986354321081,"pairs":4,"speed":0.0098336823284626,"strain":0.000132632034365088},"before":{"helper_strain":0.000000425727449737678,"pairs":4,"speed":0.0238502286374569,"strain":0.040519442409277}}
+PASS native control rig keeps joint separation below five millimeters: AvatarSample_Avrm0
+PASS helper bones follow normally and the improved ragdoll settles: AvatarSample_Avrm0
+PASS VRM source bytes remain unchanged: AvatarSample_Avrm0.vrm
+PHYSICS_CONTACTS {"checks":58,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/physics-contacts/run_875079","metrics":{"AvatarSample_A":{"after":{"helper_strain":0.000000493217783059663,"pairs":7,"speed":0.0,"strain":0.000487301527755335},"before":{"helper_strain":0.00000033778260899453,"pairs":7,"speed":0.700597822666168,"strain":0.0420422852039337}},"AvatarSample_Avrm0":{"after":{"helper_strain":0.000000389986354321081,"pairs":4,"speed":0.0098336823284626,"strain":0.000132632034365088},"before":{"helper_strain":0.000000425727449737678,"pairs":4,"speed":0.0238502286374569,"strain":0.040519442409277}},"authored":{"after":{"helper_strain":0.0,"pairs":3,"speed":0.0841549709439278,"strain":0.000174515269463882},"before":{"helper_strain":0.0,"pairs":3,"speed":0.0756796896457672,"strain":0.16927994787693}},"pose-smoke":{"after":{"helper_strain":0.000000376449150962799,"pairs":9,"speed":0.0,"strain":0.000346213608281687},"before":{"helper_strain":0.000000479033019473718,"pairs":9,"speed":0.231962442398071,"strain":0.011790138669312}},"sfm-smoke":{"after":{"helper_strain":0.000000371489136341552,"pairs":10,"speed":0.0,"strain":0.0014528821920976},"before":{"helper_strain":0.000000385639538080795,"pairs":10,"speed":0.0417440757155418,"strain":0.0607592463493347}},"source-smoke":{"after":{"helper_strain":0.000000388235349646493,"pairs":6,"speed":0.00307459034956992,"strain":0.000722500204574317},"before":{"helper_strain":0.000000464139162659194,"pairs":6,"speed":0.00696243951097131,"strain":0.0119262849912047}}}}
