@@ -1,0 +1,18 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS autosave defers while drawing
+PASS autosave defers while navigating
+PASS autosave defers while playing
+PASS autosave defers while exporting
+PASS autosave defers while a dialog is open
+PASS automatic recovery respects disabled preference
+PASS timer path writes complete recovery without marking manual save clean
+PASS a live writer's recovery is not offered to another app
+PASS retry repairs interrupted scene, WAV and raster files before commit
+PASS unchanged recovery raster is reused by pixel hash
+PASS corrupt current JSON never replaces the previous complete backup
+PASS automatic recovery leaves manual project byte-identical
+PASS no redundant checkpoint for unchanged revision
+PASS partial manifest temp does not replace last committed checkpoint
+RECOVERY_WRITE failures=0

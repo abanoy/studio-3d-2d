@@ -1,0 +1,45 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS empty Simple startup contains no spontaneous simulation
+PASS low-level asset setup does not invent an interactive import request
+PASS normal Add model opens the real file picker
+PASS interactive compatible import starts real Physics in Simple against the map
+PASS normal aerial import starts above the floor for the gravity probe
+PASS automatically enabled ragdoll actually falls under gravity
+PASS default live motion creates no pose keys, history or camera changes
+PASS immediate Physics off freezes the fallen pose without recording
+PASS Undo/Redo of frozen pose never rearms import physics
+PASS adding a second ragdoll resumes the existing body as well as the new one
+PASS peer restart retains new selection and the inspection camera
+PASS adding an environment rebuilds collision and resumes bodies without simulating the map
+PASS starting unselected peers never steals map selection
+PASS unsupported rigs stay poseable with a reason while valid peers resume
+PASS unrigged props are not forced into automatic ragdolls
+PASS automatic activation waits for import warning dialogs
+PASS dismissal starts the queued ragdoll once
+PASS Physics off can cancel a queued start immediately
+PASS seeking cancels pending starts instead of unexpectedly simulating playback
+PASS authored secondary-only motion is active before structural import
+PASS new body import preserves a peer's secondary-only mode
+PASS automatically live import can immediately use explicit Local Record
+PASS explicit Record alone creates an editable take from default live physics
+PASS HAS reopens the authored take and exact drawing without fresh simulation
+PASS MP4 uses saved authored motion and overlay rather than new live physics
+PASS native standard rig automatically simulates without recording: MMD
+PASS native import freezes with exact provenance and no generated keys: MMD
+PASS native standard rig automatically simulates without recording: GMod
+PASS native import freezes with exact provenance and no generated keys: GMod
+PASS native standard rig automatically simulates without recording: SFM
+PASS native import freezes with exact provenance and no generated keys: SFM
+PASS native standard rig automatically simulates without recording: VRM1.0
+PASS native import freezes with exact provenance and no generated keys: VRM1.0
+PASS native body and hair are combined before another import
+PASS structural import restores native combined body/hair mode alongside its new ragdoll
+PASS native standard rig automatically simulates without recording: VRM0.x
+PASS native import freezes with exact provenance and no generated keys: VRM0.x
+PASS timeline import at its chosen frame also defaults to live ragdoll physics
+PASS Save before the next UI frame cancels its pending live start
+PASS New cancels late automatic starts and leaves an empty world
+PASS interactive simulation never modifies its original GLB
+IMPORT_PHYSICS {"checks":41,"failures":0,"fall":5.41266822814941,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\import-physics\\1793509316046869300","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\import-physics\\1793509316046869300/render_1793509323_7077930_0/movie.mp4","native_models":5}

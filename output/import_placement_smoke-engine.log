@@ -1,0 +1,25 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS model spawns near distant camera without changing the view
+PASS spawned feet rest on translated imported floor rather than world origin
+PASS whole initial model bounds fit the import camera view
+PASS placement preserves map root animation and explicit shot keys
+PASS import placement is a static root choice, not an implicit animation key
+PASS nearby candidate search avoids an existing actor
+PASS new placement does not move existing actor
+PASS Undo/Redo restores the chosen root placement exactly
+PASS all blocked candidates still import visibly with overlap explicitly recorded
+PASS overlap fallback retains visible placement
+PASS no nearby support retains visible aerial fallback and requested presence
+PASS aerial fallback remains inside camera frustum
+PASS packed HAS preserves chosen placement and fallback diagnostics
+PASS placed model exports with same presence/root as preview
+PASS placement never modifies source GLB
+PASS passive tooltip-style window cannot defer recovery
+PASS actual recovery checkpoint succeeds while passive hint is visible
+PASS interactive dialog still defers recovery
+PASS actual GMod map uses bounded geometry query and candidate count
+PASS actual GMod query returns whole-model placement inside import view
+PASS actor placed in actual GMod map contributes rendered pixels without reframing
+IMPORT_PLACEMENT {"authored_import_microseconds":29871,"checks":21,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/import-placement/run_1394607","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/import-placement/run_1394607/render_1793419004_3733875_0/movie.mp4","native_query_ms":77.543,"native_support":"mesh","project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/import-placement/run_1394607/placed.has"}

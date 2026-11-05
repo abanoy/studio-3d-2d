@@ -1,0 +1,24 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS OS screen coordinates map into the viewport using actual window/stretch transform
+PASS native window file-drop signal has an application handler
+PASS viewport drop handler opens model/map choice and pauses playback
+PASS viewport drop imports at frame0 regardless of viewed frame
+PASS multiple-file drop rejects whole request without silently losing files
+PASS drop outside viewport cannot import
+PASS unsupported drop preserves world with useful message
+PASS timeline right-click opens import menu without scrubbing or starting a drag
+PASS timeline model action opens native picker at chosen frame
+PASS timeline import preserves existing instance and records independent presence
+PASS timeline object is absent before24 and present at24
+PASS Undo timed import removes only added object
+PASS Redo restores chosen first presence
+PASS timed native import starts actual asynchronous worker
+PASS second drop cannot overwrite a pending asynchronous import request
+PASS asynchronous VRM import keeps chosen frame40 after playhead moves to5
+PASS packed HAS preserves independent import presence after fresh New/Open
+PASS actual rendered pixels change when timed actor first appears
+PASS MP4 frame evaluation honors exact presence boundary
+PASS drop/timeline import preserves original GLB bytes
+IMPORT_TIMING {"checks":20,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/import-timing/run_744358","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/import-timing/run_744358/render_1793496030_5618102_0/movie.mp4","native_tested":true,"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/import-timing/run_744358/timed.has"}

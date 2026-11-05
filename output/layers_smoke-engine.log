@@ -1,0 +1,44 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS New retains the two familiar default layers
+PASS Simple Layers opens the real dialog with topmost Ink first
+PASS opening the layer list is not an authored edit
+PASS New layer inserts a blank layer above the selected drawing
+PASS actual name field renames the layer and chooser together
+PASS rename Undo restores the same dictionary
+PASS rename Redo restores the user name
+PASS duplicate, empty, multiline and overlong names refuse without history
+PASS identical rename and out-of-range reorder add no history
+PASS Effects is a real fourth editable layer
+PASS four-layer capacity is enforced before allocation
+PASS adding a layer undoes to the previous logical selection
+PASS Redo preserves the new layer identity
+PASS top-first list selection addresses the correct underlying layer
+PASS populated removal asks once before changing the layer stack
+PASS cancelled removal keeps original drawings
+PASS confirmed removal charges retained drawing bytes to bounded history
+PASS removal Undo restores exact layer dictionary and cel Image identities
+PASS reorder Undo follows the selected layer back to its old position
+PASS older real brush Undo still reaches its drawing after structural changes
+PASS older brush Redo restores the exact original paint bytes
+PASS higher drawing composites over lower ink
+PASS Move down changes actual final GPU composition in the same order as the list
+PASS reorder Undo restores exact final rendered pixels
+PASS main visibility control is an undoable compositing edit
+PASS property Undo changes its original layer while preserving another selection
+PASS property Redo retains inactive-layer ownership
+PASS layer edits preserve world/native source, explicit camera keys and editor view
+PASS packed HAS reopens exact names, layer order, visibility, exposure IDs and raster hashes
+PASS linked HAS preserves the same editable layer stack
+PASS recovery restores all layer edits without rewriting the manual HAS
+PASS MP4 PNG matches the recovered reordered drawing stack exactly
+PASS real layer dialog fits the1200pixel workspace with accessible controls
+PASS stale-removal fixture has a real pending populated layer
+PASS New cancels old-dialog and confirmation ownership
+PASS last remaining layer cannot be removed
+PASS removing an empty layer remains undoable
+PASS Fill selects a renamed lowercase flats layer without creating a duplicate
+PASS new layer names receive an unambiguous suffix
+PASS layer edits discard an unfinished fill without changing drawing pixels
+LAYERS_SMOKE {"checks":40,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\layers\\1793664489815976200","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\layers\\1793664489815976200/render_1793664497_7249273_0/movie.mp4","project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\layers\\1793664489815976200/layers.has"}

@@ -1,0 +1,36 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS unshaded uses an instance copy and base color without added emission
+PASS native shading, emission and alpha remain unchanged
+PASS unshaded and visibility fade compose once from effective opaque alpha
+PASS switching to Lit during a fade retains the current opacity
+PASS Lit endpoint restores the exact authored material reference
+PASS shared mesh/material resources and peer instances remain authored
+PASS unshaded keeps texture identity and native cutout mode
+PASS fade endpoint restores cutouts without modifying texture pixels
+PASS surface overrides restore their exact original absence
+PASS new Simple projects default to an accessible Unshaded control
+PASS ordinary GLB import retains an actual authored light
+PASS unshaded pixels do not depend on imported light intensity
+PASS Lit without scene light is dark and does not inject the old studio lamp
+PASS lighting is one project Undo edit with no pose, camera or world-data mutation
+PASS Lit responds to a real imported light
+PASS Undo restores exact Unshaded pixels
+PASS Redo restores the saved lighting choice
+PASS old projects without a mode retain their original studio illumination
+PASS Simple and Advanced retain identical lighting state and pixels
+PASS invalid lighting modes refuse before writing project data
+PASS unshaded and independent drawing survive packed HAS
+PASS unshaded and independent drawing survive linked HAS
+PASS lit and independent drawing survive packed HAS
+PASS lit and independent drawing survive linked HAS
+PASS recovery retains project lighting as an unsaved editable copy
+PASS final MP4 uses the same lighting and independent cel as reopened preview
+PASS lighting never edits the original asset
+PASS native material view preserves rig/provenance and shows base colors: MMD
+PASS native material view preserves rig/provenance and shows base colors: GMod
+PASS native material view preserves rig/provenance and shows base colors: SFM
+PASS native material view preserves rig/provenance and shows base colors: VRM1.0
+PASS native material view preserves rig/provenance and shows base colors: VRM0.x
+LIGHTING {"checks":32,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\lighting\\1793520753605910100","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\lighting\\1793520753605910100/render_1793520761_7123936_0/movie.mp4"}

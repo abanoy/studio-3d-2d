@@ -1,0 +1,17 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS street-tested imports with the application's real runtime GLB loader
+PASS Frame 3D scene changes navigation camera without rewriting shot keys
+PASS street-tested contains renderable geometry/material surfaces
+PASS street-tested rendered full-HD frame
+PASS street-tested render is not a blank viewport
+PASS converted GLB survives managed save/reopen unchanged
+PASS miku-tested imports with the application's real runtime GLB loader
+PASS Frame 3D scene changes navigation camera without rewriting shot keys
+PASS miku-tested contains renderable geometry/material surfaces
+PASS PMD bones and vertex morph channels survive into Godot
+PASS miku-tested rendered full-HD frame
+PASS miku-tested render is not a blank viewport
+PASS converted GLB survives managed save/reopen unchanged
+LEGACY_RENDER {"miku-tested":{"bones":126,"meshes":1,"morphs":15,"surfaces":17},"street-tested":{"bones":1,"meshes":1,"morphs":0,"surfaces":103}} failures=0
