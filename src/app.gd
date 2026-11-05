@@ -72,6 +72,7 @@ var cancel_export := false
 var encoder: RefCounted
 var renderer: Node
 var canvas: Control
+var timeline_navigation: Node
 var timeline_ruler: Control
 var timeline: Control
 var mode: OptionButton
@@ -748,8 +749,9 @@ Draw returns to the animated shot.")
 	timeline_ruler=TimelineView.new();timeline_ruler.header_only=true
 	timeline_ruler.seek.connect(func(value):stop();set_frame(value))
 	timeline_ruler.import_requested.connect(func(value,actor):import_actions.pick(value,actor))
-	var ruler_holder:=Control.new();ruler_holder.custom_minimum_size.y=52
-	column.add_child(ruler_holder);ruler_holder.add_child(timeline_ruler)
+	var ruler_holder:=Control.new();ruler_holder.custom_minimum_size.y=90
+	column.add_child(ruler_holder);ruler_holder.add_child(timeline_ruler);timeline_ruler.position.y=38
+	timeline_navigation=preload("res://src/timeline_navigation.gd").new();timeline_navigation.app=self;add_child(timeline_navigation);timeline_navigation.setup(ruler_holder,timeline,timeline_ruler)
 	timeline.resized.connect(func():timeline_ruler.size=Vector2(timeline.size.x,52);timeline_ruler.queue_redraw())
 	var timeline_scroll:=ScrollContainer.new()
 	timeline_scroll.name="TimelineScroll";timeline_scroll.custom_minimum_size.y=144
@@ -828,6 +830,7 @@ func refresh_timeline() -> void:
 		for row in renderer.world_runtime.data.objects:rows.append(renderer.world_runtime.instance(row.id).data)
 	timeline.set_objects(rows,renderer.world_runtime.get_instance_id() if renderer.world_runtime else 0,renderer.active_instance_id)
 	timeline.sync_bone(pose_editor.selected)
+	if timeline_navigation:timeline_navigation.sync()
 	timeline.queue_redraw()
 
 func select_timeline_channel(id: String, channel: String, at: int) -> void:
@@ -2091,6 +2094,7 @@ func begin_recovery_session() -> void:
 	if recovery_root.is_empty(): recovery_root = ProjectSettings.globalize_path("res://output/recovery")
 	recovery_session = "%d_%s" % [Time.get_unix_time_from_system(), str(ResourceUID.create_id())]
 	if project_timing:project_timing.sync()
+	if timeline_navigation:timeline_navigation.sync()
 	checkpoint_revision = -1
 	reset_recovery_schedule()
 	refresh_recovery_schedule(false)

@@ -17,7 +17,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | §§1–2 artistic model | `app.gd`, `renderer.gd`, `drawing.gd`: shared 3D/camera plus independent RGBA cels; synchronized frame domain | End-to-end artist acceptance |
 | §3 architecture / mandatory spikes | Pinned standard Godot4.6, Python workers, installed FFmpeg, no compulsory AI; recovered spikes and shared renderer | Real Windows GPU/device verification; software tests are a separate gate |
 | §4 UI / keyboard | Simple/Advanced same document, viewport navigation, configurable shortcuts, explicit camera keys, body auto-key | Novice comfort and all routed interaction regressions |
-| §4.2 timeline | `timeline_view.gd`, clip editors: sparse blocks and independent tracks | Ripple/stretch/loop/cross-track ownership depth remains incomplete |
+| §4.2 timeline | `timeline_view.gd`, clip editors: sparse blocks, independent tracks and shared zoom/pan with fixed labels | Ripple/stretch/loop/cross-track ownership depth remains incomplete |
 | Stage0 setup | Pinned checksummed engine and Python/FFmpeg cloud baseline | Clean Windows install acceptance |
 | Stage1 3D / camera / cels / MP4 | Fresh procedural rig/body-pose and video imports, unit24, exact preview/export input, 48-frame movie | Entire core regression matrix below |
 | Stage2 drawing / audio | Pressure/opacity, palettes, rect select/transform, fills/closure/growth, onion, MP3/Ogg, multiple audio, trims/fades present | Tablet feel; fresh decoded frame24 audio onset |

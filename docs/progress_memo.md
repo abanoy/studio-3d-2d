@@ -11208,3 +11208,23 @@ and extended-reference-regression/verification.json. Corrected test-only New/
 Options initialization and linked-file unavailability assumptions are recorded in
 LLM.md; failed evidence retained. Full artist/native/Windows acceptance, arbitrary
 long/dense/lazy workloads and remaining OPEN requirements are unfinished.
+
+2026-11-05 UTC — continuous-goal timeline navigation
+
+Shared timeline zoom/pan now preserves fixed labels while synchronizing ruler,
+blocks, keys, holds and waveform positions. +/−/Fit, Ctrl-wheel anchor zoom,
+Shift-wheel and scrollbar pan; session-only state resets on New/Open/recovery/
+parent-child context. Floating/docking and scaled smaller windows retain it.
+No project format or source mutation; existing256bin waveform detail and lack of
+edge-autoscroll remain documented. See docs/timeline_navigation.md.
+
+Final private software verification42mapping+34GUI+38workspace+34animated channels
+passes, including original48frame H264 movie; three optional native fixtures are
+explicit skips. Extended-timing49+6+29+4+7+4 also passes with the clipped view,
+including SIGKILL,60second PCM and252frame H264/AAC. The final busy-state UI fix
+has its own full navigation/workspace/channel run. Open-session synchronization,
+post-seek button state and toolbar spacing fixes, plus corrected piece-identity/
+scaled-geometry test assumptions, are documented in root LLM.md. Evidence under
+/workspace/has-handoff-audit/timeline-navigation-accepted and
+/workspace/has-handoff-audit/timeline-navigation-long-regression. Continuous goal
+remains active; full acceptance and other original requirements remain unfinished.

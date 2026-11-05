@@ -365,6 +365,10 @@ See [multiple audio clips](docs/multiple_audio.md) for limits and older-app comp
 
 ## Project timing
 
+The [timeline navigation controls](docs/timeline_navigation.md) provide zoom,
+horizontal panning and Fit. Ctrl + wheel zooms around the pointer; Shift + wheel
+pans. Track labels stay fixed, and the ruler shares the same visible range.
+
 **Options → Scene length (frames)** extends a parent up to 60 seconds and 7200
 frames with Undo (1440 frames at24fps). Child scenes remain bounded to240frames.
 It keeps existing timing and refuses shortening that would discard authored

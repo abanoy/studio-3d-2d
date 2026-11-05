@@ -779,3 +779,57 @@ native art redistributed, no external-format export, deployment or web changes.
 Windows GPU/native fidelity, physical/tablet/artist acceptance, clean-PC/power-loss
 and OPEN design decisions remain open. Continuous goal remains active; longer
 parents do not complete all original MD/addendum requirements.
+
+2026-11-05 UTC — session timeline zoom and horizontal pan
+
+Continued after16daeec (confirmed pushed). Timeline has shared +/−/Fit controls,
+Ctrl-wheel pointer-anchored zoom, Shift-wheel pan, exact-frame horizontal scrollbar
+and visible-range caption. Zoom is bounded to12frames or the entire shorter scene.
+Numeric/keyboard seeking reveals an offscreen changed playhead; manual pan stays
+put until frame/navigation changes. New/Open/recovery and parent/child context
+changes reset Fit. No schema/preferences/content/history mutation. Source image,
+model/audio metadata and the master clock remain independent. New toolbar follows
+the Timeline panel through floating/docking and scaled smaller-window layouts.
+
+New timeline_navigation.gd owns shared view state. timeline_picture.gd clips the
+existing time-addressed drawing to the ruler area while fixed labels retain their
+own canvas. All geometry/hits and waveform positions use the same fractional
+window mapping; grid work stays bounded to about12ticks. Offscreen audio/model
+pieces cannot hit through labels. Sound labels select without seeking; Camera
+labels do not seek into offscreen time. Existing256bin sound overviews remain
+coarse at high zoom; no waveform resampler or edge-autoscroll claim. Fit is still
+available for whole-project moves. Source formats and project budgets unchanged.
+
+Fresh final verifier:42mapping +34real GUI +38existing workspace +34existing
+animated-channel checks pass. Channels uses its original procedural Japanese-bone
+fixture and existing actual48frame1080p24 H264 export; three optional MMD/GMod/SFM
+fixtures were absent and explicitly skipped. Final source/tests/tools/data/examples
+hashes stay frozen. GUI checks cover late adjacent-frame clicks, pointer anchor,
+precise one-frame sound move/right-edge trim and selected model-piece move with
+exact Undo, fixed-label pixel equality, actual floating wheel, New/Open/context
+resets, smaller-window screen geometry and unchanged HAS bytes after Open.
+Evidence: /workspace/has-handoff-audit/timeline-navigation-accepted/verification.json.
+The complete extended-timing verifier also passed49+6+29+4+7+4 checks with the new
+clipped timeline, including actual SIGKILL recovery, late video import, exact
+60second PCM/pixels and252frame H264/AAC (onset976001). Evidence:
+/workspace/has-handoff-audit/timeline-navigation-long-regression/verification.json.
+That full long-project run precedes the final presentation-only busy-state fix;
+final navigation/workspace/channel/movie run covers that fix separately.
+
+Meaningful caught/corrected UI bugs: Open changed recovery_session after its last
+frame refresh, so range reset now also syncs when the session begins. A focused
+release test reproduced zoom buttons remaining disabled after a seek release;
+controller now refreshes button/scrollbar availability when gesture/export busy
+state changes. Four-pixel toolbar/ruler overlap was removed by sizing the holder
+to the actual themed button height. Test-only failures: two GDScript Variant
+variables needed explicit types; model drag first asserted whole introduction,
+then first piece rather than the selected piece identity; smaller-window test
+mixed logical canvas units with physical screen pixels. These tests were corrected
+to assert the existing intended piece operation and scaled geometry, with no
+production clip-ownership changes. Failed/probe logs remain outside checkout.
+
+All GUI runs stayed on the owned private dummy Xorg:101 with llvmpipe/Dummy audio.
+No owner desktop focus, native art distribution, external export or deployment.
+Tracked historical output logs/results were preserved after copying fresh proof
+outside checkout. This remains incremental work toward the full MD/addendum;
+physical/artist/native/Windows acceptance and remaining OPEN scope stay open.

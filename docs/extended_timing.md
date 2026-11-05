@@ -49,8 +49,8 @@ This is bounded longer-shot support. It retains four layers per scene,32cels,
 241sparse camera/model controls, four sequence assets, eight sequence clips,
 shared object/effect/audio budgets,1MiB manifests and60second audio mixing.
 It does not implement lazy cel paging, arbitrary-length audio/video tracks,
-large dense scenes or a zoomable timeline. Exact frame entry and navigation remain
-available; full-fit mouse selection becomes less precise on long timelines.
+large dense scenes. [Timeline zoom and panning](timeline_navigation.md) now make
+late frame selection more precise while retaining exact frame entry/navigation.
 
 `python tests/verify_extended_timing.py --isolated-display :101` requires an
 already-provisioned private dummy display on Linux; Windows uses the existing
