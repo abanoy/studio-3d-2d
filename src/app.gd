@@ -819,6 +819,7 @@ func refresh_timeline() -> void:
 	timeline.audio_rate={"fps_num":int(video.fps_num),"fps_den":int(video.fps_den)}
 	timeline.audio_selected = selected_audio
 	timeline.clip_waveforms = audio_mix.get("clip_peaks",[])
+	timeline.clip_waveform_levels=audio_mix.get("clip_waveform_levels",[])
 	timeline.waveform = audio_mix.get("peaks", PackedFloat32Array())
 	var active: RefCounted=renderer.active_model()
 	timeline.can_paste=not clip_editor.clipboard.is_empty()

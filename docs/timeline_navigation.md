@@ -24,9 +24,9 @@ scene changes reset the range to Fit. Floating or docking the Timeline panel
 carries its navigation controls with it. Active timeline gestures and export
 prevent range changes until they finish. The render/composite path is unchanged.
 
-Sound waveforms retain their existing256bin overview. Zoom changes their mapping,
-so closely spaced waveform details remain coarse. This does not add a waveform
-resampler, source-sample editor or a mixing desk.
+Sound waveforms use [bounded cached peak levels](waveform_detail.md) at higher
+zoom, while Fit keeps the existing256bin overview. Source samples remain intact;
+there is no source-sample editor or mixing desk.
 
 `python tests/verify_timeline_navigation.py --isolated-display :101` runs mathematical
 mapping and real GUI checks on an explicitly provisioned private Linux display;

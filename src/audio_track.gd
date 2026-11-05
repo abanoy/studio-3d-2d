@@ -7,6 +7,7 @@ const FADE_FORMAT := "studio_audio_4"
 const EXTRA_FIELDS := ["source_out_sample","fade_in_ms","fade_out_ms"]
 const MAX_CLIPS := 16
 const MAX_PCM := 64 * 1024 * 1024
+const WAVEFORM_BINS:=8192
 
 static func clips(audio: Dictionary) -> Array:
 	if audio.is_empty(): return []
@@ -98,6 +99,16 @@ static func fade_gain(index: int,window: Vector3i) -> float:
 	if window.z>0:gain*=0. if window.z==1 else clampf(float(window.x-1-index)/(window.z-1),0,1)
 	return gain
 
+static func waveform_levels(coarse: PackedFloat32Array,fine: PackedFloat32Array) -> Array:
+	# Derive exact max levels once per mix. Zooming never reads source PCM.
+	if fine.is_empty():return []
+	var levels: Array=[fine];var current:=fine
+	while current.size()>512:
+		var next:=PackedFloat32Array();next.resize(current.size()/2)
+		for i in range(next.size()):next[i]=maxf(current[i*2],current[i*2+1])
+		levels.push_front(next);current=next
+	levels.push_front(coarse);return levels
+
 static func mix_document(audio: Dictionary, video: Dictionary) -> Dictionary:
 	var error := layout_error(audio)
 	if not error.is_empty(): return {"error":error}
@@ -113,17 +124,20 @@ static func mix_document(audio: Dictionary, video: Dictionary) -> Dictionary:
 		if source_end(clip)>source.frames:return {"error":"Audio end trim exceeds the source."}
 	if rows.size() <= 1:
 		var result := mix(rows[0] if not rows.is_empty() else {},video)
-		if not result.has("error"): result["clip_peaks"] = [result.peaks] if not rows.is_empty() else []
+		if not result.has("error"):
+			result["clip_peaks"] = [result.peaks] if not rows.is_empty() else []
+			result["clip_waveform_levels"] = [result.waveform_levels] if not rows.is_empty() else []
 		return result
 	var count := sample_index(video.duration_frames,video)
 	if count < 1 or count > RATE * MAX_SECONDS: return {"error":"Audio preview/export supports sequences up to60 seconds."}
 	# Sum before clipping/quantization; a loud early clip cannot destroy a later
 	# cancelling contribution. Preview, saved mix and encoder use these same bytes.
 	var sum := PackedFloat64Array(); sum.resize(count * 2); sum.fill(0)
-	var per_clip := []
+	var per_clip := [];var per_clip_levels:=[]
 	var active: Array[Vector2i]=[]
 	for clip in rows:
 		var peaks := PackedFloat32Array(); peaks.resize(256); peaks.fill(0)
+		var fine:=PackedFloat32Array();fine.resize(WAVEFORM_BINS);fine.fill(0)
 		if not clip.muted:
 			var source: Dictionary = clip.source
 			var start := sample_index(clip.start_frame,video)
@@ -136,13 +150,16 @@ static func mix_document(audio: Dictionary, video: Dictionary) -> Dictionary:
 				var before := floori(at)
 				if before >= ending: break
 				written_end=index+1
+				var fine_bucket:=mini(WAVEFORM_BINS-1,index*WAVEFORM_BINS/count)
 				for channel in range(2):
 					var value := lerpf(source_value(source,before,channel),source_value(source,mini(before+1,ending-1),channel),at-before)*gain*fade_gain(index-start,fades)
 					sum[index*2+channel] += value
 					var bucket := mini(255,index*256/count)
-					peaks[bucket] = maxf(peaks[bucket],minf(1,absf(value/32768.0)))
+					var amplitude:=minf(1,absf(value/32768.0))
+					peaks[bucket] = maxf(peaks[bucket],amplitude)
+					fine[fine_bucket]=maxf(fine[fine_bucket],amplitude)
 			if written_end>start:active.append(Vector2i(start,written_end))
-		per_clip.append(peaks)
+		per_clip.append(peaks);per_clip_levels.append(waveform_levels(peaks,fine))
 	var pcm := PackedByteArray(); pcm.resize(count*4);pcm.fill(0)
 	var peaks := PackedFloat32Array(); peaks.resize(256); peaks.fill(0)
 	var clipped := 0
@@ -166,7 +183,7 @@ static func mix_document(audio: Dictionary, video: Dictionary) -> Dictionary:
 				peaks[bucket] = maxf(peaks[bucket],absf(value/32768.0))
 	var stream := AudioStreamWAV.new(); stream.format=AudioStreamWAV.FORMAT_16_BITS
 	stream.mix_rate=RATE; stream.stereo=true; stream.data=pcm
-	return {"stream":stream,"pcm":pcm,"peaks":peaks,"samples":count,"clip_peaks":per_clip,"clipped_samples":clipped}
+	return {"stream":stream,"pcm":pcm,"peaks":peaks,"samples":count,"clip_peaks":per_clip,"clip_waveform_levels":per_clip_levels,"clipped_samples":clipped}
 
 static func read_wav(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
@@ -225,6 +242,8 @@ static func mix(clip: Dictionary, video: Dictionary) -> Dictionary:
 	var peaks := PackedFloat32Array()
 	peaks.resize(256)
 	peaks.fill(0)
+	var fine:=PackedFloat32Array()
+	if not clip.is_empty():fine.resize(WAVEFORM_BINS);fine.fill(0)
 	if not clip.is_empty() and not clip.muted:
 		var source: Dictionary = clip.source
 		var start := sample_index(clip.start_frame, video)
@@ -244,12 +263,14 @@ static func mix(clip: Dictionary, video: Dictionary) -> Dictionary:
 				peak = maxf(peak, absf(sample / 32768.0))
 			var bucket := mini(255, index * 256 / count)
 			peaks[bucket] = maxf(peaks[bucket], peak)
+			var fine_bucket:=mini(WAVEFORM_BINS-1,index*WAVEFORM_BINS/count)
+			fine[fine_bucket]=maxf(fine[fine_bucket],peak)
 	var stream := AudioStreamWAV.new()
 	stream.format = AudioStreamWAV.FORMAT_16_BITS
 	stream.mix_rate = RATE
 	stream.stereo = true
 	stream.data = pcm
-	return {"stream": stream, "pcm": pcm, "peaks": peaks, "samples": count}
+	return {"stream": stream, "pcm": pcm, "peaks": peaks, "samples": count,"waveform_levels":waveform_levels(peaks,fine)}
 
 static func make_clip(source: Dictionary) -> Dictionary:
 	return {"id": str(ResourceUID.create_id()), "source": source, "start_frame": 0, "source_in_sample": 0, "gain_db": 0.0, "muted": false}

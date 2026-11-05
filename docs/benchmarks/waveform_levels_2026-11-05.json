@@ -1,0 +1,33 @@
+{
+  "format": "studio_waveform_cache_benchmark_1",
+  "baseline_commit": "d7d42f2",
+  "engine": "4.6-stable (official)",
+  "date_utc": "2026-11-05",
+  "runs_per_version": 3,
+  "source": "Three original0.2second48kHzmono cues at start/middle/one second before end",
+  "peak_payload_bytes_per_clip": 64512,
+  "peak_payload_bytes_at16clips": 1032192,
+  "notes": "Headless Linux. Mixer generation timing only; rendering/Windows/device acceptance is separate. Static peak includes retained prior result during replacement.",
+  "rows": [
+    {
+      "seconds": 10.0,
+      "before_ms": 84.343,
+      "after_ms": 88.667,
+      "overhead_ratio": 1.0512668508352798,
+      "before_peak_static_bytes": 33476551,
+      "after_peak_static_bytes": 33679747,
+      "pcm_sha256": "be06a84c73ac12cfcae346b7bea6d6792ea16e5a078e27588fe1d5d4b8b96bce",
+      "overview_sha256": "499e86caf8503cff911eb560d2ce27cb6613cde055ada9421e0e6c7a88e7ddbe"
+    },
+    {
+      "seconds": 60.0,
+      "before_ms": 113.405,
+      "after_ms": 115.995,
+      "overhead_ratio": 1.0228384991843393,
+      "before_peak_static_bytes": 94924391,
+      "after_peak_static_bytes": 95320107,
+      "pcm_sha256": "7311b445b3fa8a417af07daf734340ddaa88b92183926587d74113df752b33ef",
+      "overview_sha256": "98f04fbb3e5c2691bb1452cf962f5ad2d42dc9fb869c6ba32e6088899c4a327d"
+    }
+  ]
+}

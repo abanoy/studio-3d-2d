@@ -11228,3 +11228,23 @@ scaled-geometry test assumptions, are documented in root LLM.md. Evidence under
 /workspace/has-handoff-audit/timeline-navigation-accepted and
 /workspace/has-handoff-audit/timeline-navigation-long-regression. Continuous goal
 remains active; full acceptance and other original requirements remain unfinished.
+
+2026-11-05 UTC — continuous-goal waveform detail
+
+Cached256–8192bin per-clip max levels now follow timeline zoom, preserving existing
+Fit overviews and frozen PCM/peak/clipping output. Parent/child scene caches stay
+independent. Zoom/pan reads no source and rebuilds no mix; muted/gain Undo restores
+exact original detail. The first bin is clipped to its sound boundary instead of
+being lost. Float cache payload is64512bytes/clip (~1MiB at16), with about7.3ms/bin
+finest60second resolution. Details/limits: docs/waveform_detail.md.
+
+Final20domain+13GUI checks pass with source WAV offline during navigation/edit
+checks; actual viewport4/4known transients. Existing audio17/17/9 plus fade/AAC/
+four cold readers and navigation42/34/38/34 plus movie also pass;3optional native
+fixture skips remain explicit. Frozen-source proof:
+/workspace/has-handoff-audit/waveform-levels-accepted/verification.json.
+Three-run baseline benchmark records bounded overhead (60sec113.405→115.995ms,
+tracked peak94.9→95.3MB; exact hashes), with initial single-pass variation retained.
+Artifact docs/benchmarks/waveform_levels_2026-11-05.json. Full accepted scope,
+failed test assumptions and the caught start-bin rendering bug are in root LLM.md.
+Continuous goal and remaining native/physical/artist acceptance stay open.

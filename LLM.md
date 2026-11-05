@@ -833,3 +833,57 @@ No owner desktop focus, native art distribution, external export or deployment.
 Tracked historical output logs/results were preserved after copying fresh proof
 outside checkout. This remains incremental work toward the full MD/addendum;
 physical/artist/native/Windows acceptance and remaining OPEN scope stay open.
+
+2026-11-05 UTC — bounded cached waveform detail
+
+Continued afterd7d42f2 (confirmed pushed). AudioTrack now derives six per-clip
+maximum-peak levels256/512/1024/2048/4096/8192 from the same mixer samples and
+forwards them through SequenceAudio. Coarse/global peaks, PCM and clipping counts
+stay bit-exact against the frozen dense-mixer corpus. No format/source/clock or
+source/mix budget changes. Peak float payload64512bytes per clip,1032192at16clips
+plus metadata; old/new caches can coexist transiently while replacing a mix.
+
+Timeline chooses a cached level from the visible range/width and traverses only
+visible bins. Fit retains256bins. Zoom/pan never reads source PCM/files or rebuilds
+the mix. Finest60second resolution is about7.3ms/bin, not sample editing. Existing
+sound moves/trims/gain/mute and their Undo retain their source semantics. A bin
+straddling a clip start is clipped to the boundary, preserving an initial
+transient that the original left-edge test discarded. See docs/waveform_detail.md.
+
+Final verifier passed20new domain/cache +13private GUI checks. Domain covers all
+six exact max reductions at24 and30000/1001 with disjoint/overlap/muted/trim/fade
+corpus cases, four known late impulses, bounded payload, fallback/level selection
+and independent parent/child cache ownership. Actual viewport shows all four
+transients; source WAV is temporarily unavailable during cache navigation and
+mute/gain edits. Mix/cache identity, PCM/peaks, history/revision isolation and Undo
+are checked exactly. Source WAV bytes remain unchanged.
+
+The same final frozen-source verifier runs existing sparse17 +multi17 +nested9
+units, actual fade-editor H264/AAC magnitude checks and packed/linked/recovery/
+lesson cold readers, then navigation42+34GUI+38workspace+34channels and its actual
+48frame movie. Three optional native channel fixtures absent/explicitly skipped.
+Evidence: /workspace/has-handoff-audit/waveform-levels-accepted/verification.json.
+No source/tests/tools/data/examples changed during that run.
+
+Three-run headless benchmark againstd7d42f2:10sec84.343→88.667ms;60sec113.405→
+115.995ms for three0.2second original cues; PCM and overview hashes exact.60sec
+tracked peak94,924,391→95,320,107bytes, including old results during replacement.
+Earlier single pass121.477→140.930ms retained; timing depends on load/machine.
+This is bounded cache-generation overhead, not a performance improvement claim.
+Artifact: docs/benchmarks/waveform_levels_2026-11-05.json; external baseline class
+waveform-previous-audio.gd and waveform-benchmark-{before,after}-{0,1,2}.log.
+
+Caught/corrected: the first coarse-cue unit expectation was one live overview bin;
+independent sample math shows two, so it now asserts exactly two old bins versus
+four distinct fine bins. A test initially used Array.max on PackedFloat32Array;
+Godot parse rejected it and a supported explicit maximum scan replaced it. The
+first actual pixel test then found3/4bars: production had discarded the start bin
+when its interval began slightly before the clip. Interval intersection/clamping
+fix now produces4/4 without widening the pixel test. Failed logs retained.
+
+All graphical runs remained on owned private Xorg:101, llvmpipe/Dummy audio. No
+owner desktop, external messages/cloud calls, native asset distribution, external
+animation export, web changes or deployment. Historical tracked output results/
+logs are restored after fresh proof is copied outside checkout. Continuous goal
+remains active; full original MD/addendum completion and artist/native/Windows
+acceptance are not established.

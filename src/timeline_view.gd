@@ -29,6 +29,7 @@ var audio_selected := 0
 var audio_fps := 24.0
 var audio_rate:={"fps_num":24,"fps_den":1}
 var clip_waveforms: Array = []
+var clip_waveform_levels: Array=[]
 var moving_audio := ""
 var audio_anchor := 0
 var audio_previous := 0
@@ -257,6 +258,16 @@ func _draw() -> void:
 	for i in range(audio_clips.size()):draw_string(ThemeDB.fallback_font,Vector2(8,audio_y()+i*30+18),"Audio" if audio_clips.size()==1 else "Audio %d" % (i+1),HORIZONTAL_ALIGNMENT_LEFT,80,14,Color("283c51"))
 	if picture:picture.queue_redraw()
 
+func visible_waveform(index: int) -> PackedFloat32Array:
+	var overview: PackedFloat32Array=clip_waveforms[index] if index<clip_waveforms.size() else PackedFloat32Array()
+	if window_span<=0 or index>=clip_waveform_levels.size():return overview
+	var target:=ceili(float(duration)/visible_span()*maxf(1,size.x-LEFT-16)/4.0)
+	var result:=overview
+	for level: PackedFloat32Array in clip_waveform_levels[index]:
+		result=level
+		if result.size()>=target:break
+	return result
+
 func draw_content(painter: Control) -> void:
 	var stride:=maxi(1,ceili(visible_span()/12.0))
 	for f in range(floori(visible_start()/stride)*stride,ceili((visible_start()+visible_span())/stride)*stride+1,stride):
@@ -320,11 +331,16 @@ func draw_content(painter: Control) -> void:
 		var rect := audio_rect(index)
 		painter.draw_rect(rect,Color("d4e9fa") if trimming_audio==clip.id else Color("c6d0d5") if clip.muted else Color("e1edd5"))
 		if index==audio_selected: painter.draw_rect(rect,Color("749c69"),false,1)
-		var peaks: PackedFloat32Array = clip_waveforms[index] if index<clip_waveforms.size() else PackedFloat32Array()
+		var peaks:=visible_waveform(index)
 		var offset := x(audio_preview)-x(clip.start_frame) if moving_audio==clip.id else 0.0
-		for i in range(peaks.size()):
-			var xx := x(float(i)/peaks.size()*duration)+offset
-			if xx<rect.position.x or xx>rect.end.x: continue
+		var delta: int=audio_preview-int(clip.start_frame) if moving_audio==clip.id else 0
+		var first:=maxi(0,floori((visible_start()-delta)/duration*peaks.size())-1)
+		var last:=mini(peaks.size(),ceili((visible_start()+visible_span()-delta)/duration*peaks.size())+1)
+		for i in range(first,last):
+			var left:=x(float(i)/peaks.size()*duration)+offset
+			var right:=x(float(i+1)/peaks.size()*duration)+offset
+			if right<=rect.position.x or left>=rect.end.x:continue
+			var xx:=clampf(left,rect.position.x,rect.end.x)
 			var amplitude := peaks[i]*11
 			painter.draw_line(Vector2(xx,y+14-amplitude),Vector2(xx,y+14+amplitude),Color("467d45"))
 		painter.draw_string(ThemeDB.fallback_font,rect.position+Vector2(4,11),clip.source.name.left(24)+(" [mute]" if clip.muted else ""),HORIZONTAL_ALIGNMENT_LEFT,maxf(1,rect.size.x-8),11,Color("315835"))

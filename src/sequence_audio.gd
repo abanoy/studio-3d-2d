@@ -66,5 +66,5 @@ static func mix_scene(owner: String,state: Dictionary) -> Dictionary:
 			var value:=clampi(raw,-32768,32767);pcm.encode_s16(sample*4+channel*2,value)
 			var bucket:=mini(255,sample*256/count);peaks[bucket]=maxf(peaks[bucket],absf(value/32768.0))
 	var stream:=AudioStreamWAV.new();stream.format=AudioStreamWAV.FORMAT_16_BITS;stream.mix_rate=Audio.RATE;stream.stereo=true;stream.data=pcm
-	var result:={"pcm":pcm,"stream":stream,"samples":count,"peaks":peaks,"clip_peaks":own.get("clip_peaks",[]),"clipped_samples":clipped}
+	var result:={"pcm":pcm,"stream":stream,"samples":count,"peaks":peaks,"clip_peaks":own.get("clip_peaks",[]),"clip_waveform_levels":own.get("clip_waveform_levels",[]),"clipped_samples":clipped}
 	state.cache[owner]=result;return result
