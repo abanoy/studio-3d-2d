@@ -35,22 +35,31 @@ static func readable_manifest(path: String) -> bool:
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
 	if parser.data.get("video") is Dictionary and not Lighting.validate(parser.data.video).is_empty():return false
+	if not preload("res://src/color_palette.gd").error(parser.data.get("palette",[])).is_empty():return false
 	if parser.data.get("video") is Dictionary and parser.data.video.has("visibility_fade_ms") and not integer(parser.data.video.visibility_fade_ms,0,10000):return false
 	if not parser.data.get("camera_keys") is Array or not Timeline.range_error(parser.data.camera_keys).is_empty():return false
 	if not parser.data.get("layers") is Array or not Drawing.opacity_error(parser.data.layers).is_empty():return false
+	if not preload("res://src/drawing_origin.gd").layers_error(parser.data.layers).is_empty():return false
 	if not parser.data.get("audio",{}) is Dictionary or not AudioTrack.layout_error(parser.data.get("audio",{})).is_empty():return false
-	if parser.data.get("schema_version")==4:
+	if parser.data.get("schema_version")==4 or parser.data.get("schema_version")==5:
 		var video=parser.data.get("video")
 		if not video is Dictionary or not integer(video.get("duration_frames"),1,240):return false
 		if not WorldDocument.validate(parser.data.get("world"),int(video.duration_frames),true).is_empty():return false
-	return integer(parser.data.get("schema_version"), 1, 4) and parser.data.get("layers") is Array and parser.data.get("camera_keys") is Array
+		if (parser.data.schema_version==5)!=(parser.data.world.format==WorldDocument.EFFECT_FORMAT):return false
+	return integer(parser.data.get("schema_version"), 1, 5) and parser.data.get("layers") is Array and parser.data.get("camera_keys") is Array
 
-static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {}) -> String:
+static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[]) -> String:
+	var palette_error:=preload("res://src/color_palette.gd").error(palette)
+	if not palette_error.is_empty():return palette_error+" Previous save preserved."
+	var rate_error:=preload("res://src/video_timing.gd").error(video.get("fps_num"),video.get("fps_den"))
+	if not rate_error.is_empty():return rate_error+" Previous save preserved."
 	var audio_layout := AudioTrack.layout_error(audio)
 	if not audio_layout.is_empty(): return audio_layout
 	if AudioTrack.memory(audio) > AudioTrack.MAX_PCM: return "Audio sources exceed64MiB. Previous save preserved."
 	var opacity_error:=Drawing.opacity_error(layers)
 	if not opacity_error.is_empty():return opacity_error+" Previous save preserved."
+	var origin_error:=preload("res://src/drawing_origin.gd").layers_error(layers)
+	if not origin_error.is_empty():return origin_error+" Previous save preserved."
 	if not editor_extra.is_empty() and (editor_extra.size()!=1 or not editor_extra.get("lesson_ui") is Dictionary or JSON.stringify(editor_extra,"",true,true).to_utf8_buffer().size()>16384):return "Invalid lesson editor snapshot. Previous save preserved."
 	var camera_error:=Timeline.range_error(keys)
 	if not camera_error.is_empty():return camera_error+" Previous save preserved."
@@ -61,13 +70,15 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		var world_error := WorldDocument.validate(world,int(video.duration_frames))
 		if not world_error.is_empty(): return world_error
 		var checked := {}
-		for row in world.objects:
+		for row in WorldDocument.assets(world):
 			if checked.has(row.source):
 				if checked[row.source]!=row.sha256: return "Conflicting world source identity."
 				continue
 			var input := FileAccess.open(row.source,FileAccess.READ)
-			if input==null or input.get_length()>128*1024*1024 or FileAccess.get_sha256(row.source)!=row.sha256: return "World asset changed, disappeared or exceeds128MiB. Previous save preserved."
+			if input==null or input.get_length()>row.limit or FileAccess.get_sha256(row.source)!=row.sha256: return "World asset changed, disappeared or exceeds its size limit. Previous save preserved."
 			checked[row.source]=row.sha256
+		var particles:=WorldDocument.Particles.collection(world)
+		if particles.has("error"):return particles.error
 	elif not FileAccess.file_exists(source):
 		return "Scene source is missing; save aborted."
 	var revision := "%d_%d" % [Time.get_unix_time_from_system() * 1000, Time.get_ticks_usec()]
@@ -85,15 +96,16 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		if not scene_error.is_empty(): return scene_error
 	else:
 		var copied := {}
-		for row in world.objects:
-			if copied.has(row.sha256): continue
-			var error := managed_copy(row.source,folder.path_join(WorldDocument.asset_path(row.sha256)),row.sha256)
+		for row in WorldDocument.assets(world):
+			if copied.has(row.path): continue
+			var error := managed_copy(row.source,folder.path_join(row.path),row.sha256)
 			if not error.is_empty(): return error
-			copied[row.sha256]=true
+			copied[row.path]=true
 	var tracks := []
 	for layer in layers:
 		var track := {"id": layer.id, "name": layer.name, "visible": layer.visible, "cels": []}
 		if layer.has("opacity"):track.opacity=layer.opacity
+		if layer.has("origin"):track.origin=layer.origin.duplicate(true)
 		for cel in layer.cels:
 			var path := cel_dir.path_join(str(cel.id) + ".png")
 			var pixels := ""
@@ -127,6 +139,8 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		var audio_error := managed_copy(clip.source.path, folder.path_join(audio_asset), clip.source.sha256)
 		if not audio_error.is_empty(): return audio_error
 		saved_clips.append({"id": clip.id, "path": audio_asset, "sha256": clip.source.sha256, "source_name": clip.source.name, "start_frame": clip.start_frame, "source_in_sample": clip.source_in_sample, "gain_db": clip.gain_db, "muted": clip.muted})
+		for field in AudioTrack.EXTRA_FIELDS:
+			if clip.has(field):saved_clips[-1][field]=clip[field]
 	var saved_audio := AudioTrack.document(saved_clips)
 	var saved_model := model.duplicate(true)
 	if world.is_empty() and not model.is_empty():
@@ -141,8 +155,10 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 	var manifest := {"schema_version": 3, "model": saved_model, "video": video, "camera_keys": keys, "layers": tracks, "audio": saved_audio, "scene": {"path": asset, "sha256": hash, "source_name": source.get_file(), "provenance": "unknown / must verify"}, "editor": {"frame": frame}}
 	if not world.is_empty():
 		manifest.schema_version=4;manifest.erase("scene");manifest.erase("model")
+		if world.format==WorldDocument.EFFECT_FORMAT:manifest.schema_version=5
 		manifest["world"]=WorldDocument.portable(world)
 	if not recovery.is_empty(): manifest.editor["recovery"] = recovery
+	if not palette.is_empty():manifest["palette"]=palette.duplicate(true)
 	if editor_extra.has("lesson_ui"):manifest.editor["lesson_ui"]=editor_extra.lesson_ui.duplicate(true)
 	# Compact JSON keeps dense recorded motion within the unchanged1MiB metadata cap.
 	# Preserve small quaternion components across repeated editable saves.
@@ -188,8 +204,10 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 	if parser.parse(file.get_as_text()) != OK:
 		return {"error": "Corrupt JSON manifest: " + parser.get_error_message()}
 	var data = parser.data
-	if not data is Dictionary or not integer(data.get("schema_version"), 1, 4):
+	if not data is Dictionary or not integer(data.get("schema_version"), 1, 5):
 		return {"error": "Invalid manifest or unsupported schema. Previous project stays open."}
+	var palette_error:=preload("res://src/color_palette.gd").error(data.get("palette",[]))
+	if not palette_error.is_empty():return {"error":palette_error}
 	var video = data.get("video")
 	if not video is Dictionary:
 		return {"error": "Missing video settings."}
@@ -198,11 +216,13 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 	if video.has("world_background") and not video.world_background in ["black","legacy_blue"]:
 		return {"error": "Invalid world background setting."}
 	if video.has("visibility_fade_ms") and not integer(video.visibility_fade_ms,0,10000):return {"error":"Visibility fade must be0–10000 milliseconds."}
-	for prop in ["width", "height", "fps_num", "fps_den", "duration_frames"]:
+	for prop in ["width", "height", "duration_frames"]:
 		if not integer(video.get(prop), 1, 1920):
 			return {"error": "Invalid video setting: " + prop}
-	if video.width != 1920 or video.height != 1080 or video.duration_frames > 240 or video.fps_num > 120 or video.fps_den > 1001:
-		return {"error": "Prototype supports 1920x1080, <=240 frames, FPS numerator <=120."}
+	if video.width != 1920 or video.height != 1080 or video.duration_frames > 240:
+		return {"error": "Prototype supports 1920x1080 and <=240 frames."}
+	var rate_error:=preload("res://src/video_timing.gd").error(video.get("fps_num"),video.get("fps_den"))
+	if not rate_error.is_empty():return {"error":rate_error}
 	var keys = data.get("camera_keys")
 	if not keys is Array or keys.is_empty() or keys.size() > 241:
 		return {"error": "Missing or excessive camera keys."}
@@ -219,19 +239,22 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 			return {"error": "Invalid camera rotation/interpolation."}
 		previous = int(key.frame)
 	var source := ""
-	if data.schema_version==4:
+	if data.schema_version==4 or data.schema_version==5:
 		if data.has("scene") or data.has("model"): return {"error":"Schema4 cannot contain obsolete scene/model slots."}
 		var world_error := WorldDocument.validate(data.get("world"),int(video.duration_frames),true)
 		if not world_error.is_empty(): return {"error":world_error}
+		if (data.schema_version==5)!=(data.world.format==WorldDocument.EFFECT_FORMAT):return {"error":"World format requires the matching project schema."}
 		var checked := {}
-		for row in data.world.objects:
+		for row in WorldDocument.assets(data.world):
 			if checked.has(row.path): continue
 			var path := folder.path_join(row.path)
 			var input := FileAccess.open(path,FileAccess.READ)
-			if input==null or input.get_length()>128*1024*1024 or FileAccess.get_sha256(path)!=row.sha256:
+			if input==null or input.get_length()>row.limit or FileAccess.get_sha256(path)!=row.sha256:
 				return {"error":"World asset missing, changed or oversized. Original project preserved."}
 			checked[row.path]=true
 		data.world=WorldDocument.resolve(data.world,folder)
+		var particles:=WorldDocument.Particles.collection(data.world)
+		if particles.has("error"):return particles
 	else:
 		var scene = data.get("scene")
 		if not scene is Dictionary or not scene.get("path") is String or not safe_relative(scene.path):
@@ -245,6 +268,8 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 	var count := 0
 	var opacity_error:=Drawing.opacity_error(layers)
 	if not opacity_error.is_empty():return {"error":opacity_error}
+	var origin_error:=preload("res://src/drawing_origin.gd").layers_error(layers)
+	if not origin_error.is_empty():return {"error":origin_error}
 	for layer in layers:
 		if not layer is Dictionary or not layer.get("name") is String or not layer.get("id") is String or not layer.get("visible") is bool or not layer.get("cels") is Array:
 			return {"error": "Invalid drawing layer."}
@@ -291,11 +316,12 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 		if clip.get("source_name") is String: decoded.name = clip.source_name.left(200)
 		if clip.source_in_sample >= decoded.frames:
 			return {"error": "Audio trim starts past end of source."}
+		if clip.get("source_out_sample",decoded.frames)>decoded.frames:return {"error":"Audio end trim exceeds the source."}
 		clip["source"] = decoded
 		if AudioTrack.sample_index(video.duration_frames, video) > AudioTrack.RATE * AudioTrack.MAX_SECONDS:
 			return {"error": "Audio projects are limited to 60 seconds for this increment."}
 	data["audio"] = audio
-	if data.schema_version==4: return data
+	if data.schema_version==4 or data.schema_version==5: return data
 	var model = data.get("model", {})
 	var model_error := Model.validate(model, video.duration_frames)
 	if not model_error.is_empty(): return {"error": model_error}

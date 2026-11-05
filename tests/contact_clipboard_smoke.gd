@@ -1,4 +1,5 @@
 extends SceneTree
+const D=preload("res://src/root_component_document.gd")
 const Model=preload("res://src/model.gd")
 const World=preload("res://src/world_document.gd")
 const Contact=preload("res://src/contact_clipboard.gd")
@@ -31,6 +32,8 @@ func endpoint_error(rig,piece: Dictionary,frame: int) -> float:
 	for foot in segment.feet:peak=maxf(peak,rig.bone_transform(foot.ids[2]).origin.distance_to(T.vector(foot.position)))
 	return peak
 func run() -> void:
+	var components: bool="--components" in OS.get_cmdline_user_args()
+	var expected_format: String=D.FORMAT if components else Model.CONTACT_FORMAT
 	folder=OS.get_cmdline_user_args()[0];DirAccess.make_dir_recursive_absolute(folder)
 	var asset:=folder.path_join("figure.glb");preload("res://src/tutorial_assets.gd").figure(asset);var sha:=FileAccess.get_sha256(asset)
 	var empty:=folder.path_join("empty.glb");preload("res://src/scene3d.gd").make_empty(empty)
@@ -46,14 +49,19 @@ func run() -> void:
 	app.set_frame(0);var track:=Ranges.Contact.Contacts.capture(rig,0,1,"original-pin")
 	var planted:=Ranges.edit(rig.data,0,25,track.segments[0],48)
 	app.renderer.world_runtime.restore_instance(source.id,planted.data);app.set_frame(0)
+	if components:
+		var separate:=D.put_component(rig.data,6,"position",[0.,-.03,0.],"ease",48)
+		separate=D.put_component(separate.data,9,"rotation_xyzw",[0.,0.,0.,1.],"linear",48)
+		separate=D.put_component(separate.data,10,"scale",1.,"hold",48)
+		check(app.renderer.world_runtime.restore_instance(source.id,separate.data).is_empty(),"independent position/turn/scale times enter ordinary clipboard fixture")
 	var sender: Dictionary=rig.data.duplicate(true);var target: Dictionary=actor(receiver.id).data.duplicate(true);var view: Dictionary=app.renderer.view_state();var shots: Array=app.keys.duplicate(true)
 	await action(source.id,0,11)
 	check(app.clip_editor.clipboard.has("contact_anchor") and rig.data==sender,"actual timeline Copy retains immutable placement context")
 	var copied: Dictionary=app.clip_editor.clipboard.piece.duplicate(true);var old_anchor: Transform3D=app.clip_editor.clipboard.contact_anchor
 	var history: int=app.history.size();await action(receiver.id,24,13)
 	rig=actor(receiver.id)
-	check(rig.data.format==Model.CONTACT_FORMAT and rig.data.animation_clips.size()==2 and app.history.size()==history+1,"actual timeline Paste promotes receiver and installs one editable contact piece")
-	if rig.data.format!=Model.CONTACT_FORMAT:app.free();quit(1);return
+	check(rig.data.format==expected_format and rig.data.animation_clips.size()==2 and app.history.size()==history+1,"actual timeline Paste promotes receiver and installs one editable contact piece")
+	if rig.data.format!=expected_format:app.free();quit(1);return
 	var pasted: Dictionary=rig.data.animation_clips[-1];var new_anchor:=Contact.anchor(rig,rig.data,24);var delta:=new_anchor*old_anchor.affine_inverse()
 	var mapped:=true
 	for i in range(2):
@@ -61,7 +69,12 @@ func run() -> void:
 		mapped=mapped and T.vector(foot.position).distance_to(delta*T.vector(old_foot.position))<.000001 and absf(T.quaternion(foot.rotation_xyzw).dot(delta.basis.orthonormalized().get_rotation_quaternion()*T.quaternion(old_foot.rotation_xyzw)))>.999999
 	check(mapped and pasted.foot_contacts.segments[0].id!=copied.foot_contacts.segments[0].id,"copy reanchors world pins and gives its independent contact a new identity")
 	var ordinary_data:=Contact.Contact.Body.promote(target,48);var ordinary_piece:=copied.duplicate(true);ordinary_piece.erase("foot_contacts")
-	ordinary_data=Model.Clips.paste(ordinary_data,ordinary_piece,24,48).data;var ordinary:=Model.new();ordinary.data=ordinary_data
+	ordinary_data=D.paste_clip(ordinary_data,ordinary_piece,app.clip_editor.clipboard.root_components,24,48).data if components else Model.Clips.paste(ordinary_data,ordinary_piece,24,48).data
+	var ordinary:=Model.new();ordinary.data=ordinary_data
+	if components:
+		var peers_exact:=true
+		for half in range(97):peers_exact=peers_exact and rig.sample_authored_transform(float(half)/2.)==ordinary.sample_authored_transform(float(half)/2.)
+		check(peers_exact and rig.data.root_components[pasted.id]==app.clip_editor.clipboard.root_components,"normal parented Paste preserves independent source curves at97 samples")
 	check(rig.sample_transform(12)==ordinary.sample_transform(12) and rig.sample_transform(24)==ordinary.sample_transform(24) and rig.data.body_base_transform==ordinary_data.body_base_transform,"contact paste preserves ordinary absolute root curves, receiving baseline and connecting gap")
 	var peak:=0.
 	for frame in range(24,49):peak=maxf(peak,endpoint_error(rig,pasted,frame))
@@ -102,7 +115,14 @@ func run() -> void:
 	var before: Dictionary=rig.data.duplicate(true);history=app.history.size();app.clip_editor.move_piece(sender.id,rig.data.animation_clips[-1].id,28,before)
 	check(app.history.size()==history+1 and rig.data.animation_clips[-1].start==28 and not Ranges.Contact.Contacts.active(rig.data.animation_clips,20).is_empty(),"normal piece movement retains source-time contacts and connecting gap")
 	app.undo();check(rig.data==before,"piece movement Undo restores contact timing exactly")
+	var old_roots:=[]
+	if components:
+		for half in range(89):old_roots.append(rig.sample_authored_transform(float(half)/2.))
 	app.retime_object(sender.id,4,rig.data.duplicate(true));check(rig.data.start_frame==4 and not Ranges.Contact.Contacts.active(rig.data.animation_clips,28).is_empty(),"whole-object retime moves contact timing with presence and body motion")
+	if components:
+		var timing_exact:=true
+		for half in range(89):timing_exact=timing_exact and rig.sample_authored_transform(4.+float(half)/2.)==old_roots[half]
+		check(timing_exact,"whole-object retime preserves89 independent root samples at shifted times")
 	app.undo()
 	var a: Dictionary=track.segments[0].duplicate(true);var b: Dictionary=JSON.parse_string(JSON.stringify(a,"",true,true));check(Ranges.Contact.Contacts.same_contact(a,b),"logical contact identity uses exact engine targets after JSON rounding")
 	var introduced:=Model.new();introduced.data=before.duplicate(true);introduced.data.start_frame=8;introduced.data.presence_offset=8;introduced.root=rig.root;introduced.base_root=rig.base_root;introduced.bones=rig.bones;introduced.order=rig.order;introduced.world_context=rig.world_context

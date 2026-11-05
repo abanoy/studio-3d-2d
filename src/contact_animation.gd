@@ -18,7 +18,9 @@ static func validate(data: Dictionary) -> String:
 static func promote(data: Dictionary,duration: int) -> Dictionary:
 	var result:=Body.promote(data,duration)
 	if result.has("error"):return result
-	if result.get("format")!=Body.Model.MOTION_FORMAT:result.format=FORMAT
+	if result.get("format")=="studio_model_9":
+		if result.component_base_format!=Body.Model.MOTION_FORMAT:result.component_base_format=FORMAT
+	elif result.get("format")!=Body.Model.MOTION_FORMAT:result.format=FORMAT
 	return result
 
 static func check_bindings(rig: RefCounted) -> String:

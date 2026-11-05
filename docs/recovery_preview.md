@@ -44,3 +44,8 @@ large-project profiling and other reliability work remain unfinished.
 Thread/resource ownership follows the pinned [Godot4.6 thread-safety guidance](https://docs.godotengine.org/en/4.6/tutorials/performance/thread_safe_apis.html)
 and [Thread lifecycle API](https://docs.godotengine.org/en/4.6/classes/class_thread.html).
 No thread-safety checks are disabled and rendering/physics thread settings are unchanged.
+
+Recover work shows the saved frame alongside the age of each recent checkpoint.
+Selecting a row loads that checkpoint's scene-and-drawing thumbnail. A missing
+thumbnail is labeled and the restore action stays available. Recovery History
+retains the additional timestamp and revision details.

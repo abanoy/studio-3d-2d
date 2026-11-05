@@ -29,6 +29,36 @@ def main():
     output = ROOT / "output"
     output.mkdir(exist_ok=True)
     results = {}
+    krita_inventory_log = run([sys.executable, 'tests/test_krita_assets.py'])
+    (output / 'krita-inventory-unit.log').write_text(krita_inventory_log, encoding='utf-8')
+    results['krita_inventory'] = {'exit': 0}
+    krita_preparation_log = run([sys.executable, 'tests/test_krita_preparation.py'])
+    (output / 'krita-preparation-unit.log').write_text(krita_preparation_log, encoding='utf-8')
+    results['krita_preparation'] = {'exit': 0}
+    origin_log = run([sys.executable, 'tests/test_drawing_origin.py'])
+    (output / 'drawing-origin-python.log').write_text(origin_log, encoding='utf-8')
+    corpus = output / 'drawing-origin-corpus.json'
+    run([sys.executable, 'tests/test_drawing_origin.py', '--corpus', str(corpus)])
+    origin_domain = run(command('tests/drawing_origin_unit.gd', True, extra=['--', str(corpus)]))
+    raster_domain = run(command('tests/raster_clip_unit.gd', True, extra=['--', str(output / ('raster-domain-' + str(time.time_ns())))]))
+    for label, log in [('drawing-origin-domain', origin_domain), ('raster-clip-domain', raster_domain)]:
+        if any(bad in log for bad in ['SCRIPT ERROR', 'FAIL ', '"failures":1']):raise RuntimeError(log)
+        (output / (label + '.log')).write_text(log, encoding='utf-8')
+    results['drawing_origin'] = {'exit': 0}
+    krita_import_log = run([sys.executable, '-u', 'tests/verify_krita_import.py'], timeout=500)
+    (output / 'krita-import-suite.log').write_text(krita_import_log, encoding='utf-8')
+    results['krita_import'] = json.loads((output / 'krita-import-verification.json').read_text(encoding='utf-8'))
+    body_pose_python = run([sys.executable, 'tests/test_pose_library.py'])
+    (output / 'body-pose-python.log').write_text(body_pose_python, encoding='utf-8')
+    body_pose_corpus = output / 'body-pose-corpus.json'
+    run([sys.executable, 'tests/test_pose_library.py', '--corpus', str(body_pose_corpus)])
+    body_pose_domain = run(command('tests/pose_library_unit.gd', True, extra=['--', str(body_pose_corpus)]))
+    if 'POSE_LIBRARY_UNIT ' not in body_pose_domain or any(x in body_pose_domain for x in ['ERROR:', 'FAIL ']):raise RuntimeError(body_pose_domain)
+    (output / 'body-pose-domain.log').write_text(body_pose_domain, encoding='utf-8')
+    for name, wrapper, report in [('body_pose_library','verify_pose_library.py','body-pose-library-verification.json'),('body_pose_native','verify_pose_library_native.py','body-pose-native-verification.json')]:
+        log = run([sys.executable, '-u', 'tests/' + wrapper], timeout=300)
+        (output / (name + '-suite.log')).write_text(log, encoding='utf-8')
+        results[name] = json.loads((output / report).read_text(encoding='utf-8'))
     fixtures = output / "fixtures"
     fixtures.mkdir(exist_ok=True)
     raw = array.array("h", (int(16000 * math.sin(2 * math.pi * 1000 * n / 44100)) for n in range(22050)))
@@ -39,6 +69,10 @@ def main():
     payload = b"WAVEfmt " + struct.pack("<IHHIIHH", 16, 3, 1, 44100, 176400, 4, 32) + b"data" + struct.pack("<I", 400) + bytes(400)
     (fixtures / "float.wav").write_bytes(b"RIFF" + struct.pack("<I", len(payload)) + payload)
     tests = [("unit", "tests/unit.gd", True, "UNIT 24 checks; failures=0"),
+             ("motion_parts", "tests/motion_parts_unit.gd", True, 'MOTION_PARTS {"checks":40,"failures":0}'),
+             ("motion_helper_edits", "tests/motion_helper_edits_unit.gd", True, 'MOTION_HELPER_EDITS_UNIT {"checks":16,"failures":0}'),
+             ("opaque_order", "tests/opaque_order_unit.gd", True, 'OPAQUE_ORDER {"checks":6,"failures":0}'),
+             ("contact_bend", "tests/contact_bend_unit.gd", True, 'CONTACT_BEND {"checks":16,"failures":0}'),
              ("spikes", "tests/spikes.gd", False, "SPIKES failures=0"),
              ("editor", None, False, '"failures":0'),
              ("export_failures", "tests/export_failures.gd", False, "EXPORT_FAILURES failures=0"),
@@ -96,6 +130,16 @@ def main():
     (output / 'workspace-controls-suite.log').write_text(workspace_log, encoding='utf-8')
     results['workspace_controls'] = json.loads((output / 'workspace-controls-verification.json').read_text(encoding='utf-8'))
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')
+
+    shortcuts_log = run([sys.executable, '-u', 'tests/verify_shortcuts.py'], timeout=500)
+    (output / 'shortcuts-suite.log').write_text(shortcuts_log, encoding='utf-8')
+    results['shortcuts'] = json.loads((output / 'shortcuts-verification.json').read_text(encoding='utf-8'))
+    print('PASS personal keyboard remapping, native capture, conflict guards, text safety and fresh preferences')
+
+    numeric_camera_log = run([sys.executable, '-u', 'tests/verify_camera_transform.py'], timeout=500)
+    (output / 'numeric-camera-suite.log').write_text(numeric_camera_log, encoding='utf-8')
+    results['numeric_camera'] = json.loads((output / 'camera-transform-verification.json').read_text(encoding='utf-8'))
+    print('PASS numeric temporary camera view, explicit keys, stale draft guards, cold HAS and exact movie')
 
     # Composite suite launches four separately bounded GPU jobs serially. Do not
     # apply a single-engine deadline to their combined runtime on a busy machine.
@@ -208,10 +252,22 @@ def main():
             assert report['reader']['failures'] == 0
         results[f'contact_{name}'] = report
         print(f'PASS contact {name}: native shared-model integration')
+        if name in ('clipboard', 'physics'):
+            component_text = run([sys.executable, '-u', f'tests/verify_contact_{name}.py', '--components'], timeout=deadline)
+            (output / f'component-contact-{name}-suite.log').write_text(component_text, encoding='utf-8')
+            results[f'component_contact_{name}'] = json.loads((output / f'component-contact-{name}-verification.json').read_text(encoding='utf-8'))
+            assert results[f'component_contact_{name}']['failures'] == 0
+
+
     multi_audio_log = run([sys.executable, '-u', 'tests/verify_multi_audio.py'], timeout=1000)
     (output / 'multi-audio-suite.log').write_text(multi_audio_log, encoding='utf-8')
     results['multi_audio'] = json.loads((output / 'multi-audio-verification.json').read_text(encoding='utf-8'))
     print('PASS independent multi-clip sound, master clock, native HAS/recovery/lesson and measured movie mix')
+    duration_log = run([sys.executable, '-u', 'tests/verify_project_duration.py'], timeout=1000)
+    (output / 'project-duration-suite.log').write_text(duration_log, encoding='utf-8')
+    results['project_duration'] = json.loads((output / 'project-duration-verification.json').read_text(encoding='utf-8'))
+    assert results['project_duration']['failures'] == 0 and len(results['project_duration']['fresh_readers']) == 4
+    print('PASS scene length, protected shortening, exact audio Undo and fresh project readers')
     motion_suites = [
         ('assist', 'tests/verify_motion_assist.py', 'motion-assist-verification.json', 90),
         ('tracks', 'tests/verify_motion_assist_tracks.py', 'motion-assist-tracks-verification.json', 90),
@@ -231,6 +287,14 @@ def main():
     (output / 'opacity-suite.log').write_text(opacity_log, encoding='utf-8')
     results['opacity'] = json.loads((output / 'opacity-verification.json').read_text(encoding='utf-8'))
     print('PASS non-destructive layer opacity, dirty-region cache, native saves/recovery and movie')
+    brush_log = run([sys.executable, '-u', 'tests/verify_brush_opacity.py'], timeout=380)
+    (output / 'brush-opacity-suite.log').write_text(brush_log, encoding='utf-8')
+    results['brush_opacity'] = json.loads((output / 'brush-opacity-verification.json').read_text(encoding='utf-8'))
+    print('PASS even translucent strokes, gentle eraser, pixel Undo, cold HAS and exact movie')
+    pressure_log = run([sys.executable, '-u', 'tests/verify_brush_pressure.py'], timeout=400)
+    (output / 'brush-pressure-suite.log').write_text(pressure_log, encoding='utf-8')
+    results['brush_pressure'] = json.loads((output / 'brush-pressure-verification.json').read_text(encoding='utf-8'))
+    print('PASS native pressure-size input, independent taper reference, cold HAS and exact movie')
     layers_log = run([sys.executable, '-u', 'tests/verify_layers.py'], timeout=200)
     (output / 'layers-suite.log').write_text(layers_log, encoding='utf-8')
     results['layers'] = json.loads((output / 'layers-verification.json').read_text(encoding='utf-8'))
@@ -243,6 +307,34 @@ def main():
     (output / 'fill-suite.log').write_text(fill_log, encoding='utf-8')
     results['fill'] = json.loads((output / 'fill-verification.json').read_text(encoding='utf-8'))
     print('PASS independent drawing fill, real background worker, spill preview, undo and portable movie')
+    gaps_log = run([sys.executable, '-u', 'tests/verify_fill_gaps.py'], timeout=500)
+    (output / 'fill-gaps-suite.log').write_text(gaps_log, encoding='utf-8')
+    results['fill_gaps'] = json.loads((output / 'fill-gaps-verification.json').read_text(encoding='utf-8'))
+    print('PASS virtual gap closing, independent morphology oracle, preview/Undo, cold HAS and exact movie')
+    expand_log = run([sys.executable, '-u', 'tests/verify_fill_expand.py'], timeout=500)
+    (output / 'fill-expand-suite.log').write_text(expand_log, encoding='utf-8')
+    results['fill_expand'] = json.loads((output / 'fill-expand-verification.json').read_text(encoding='utf-8'))
+    print('PASS previewed under-ink fill growth, independent pixel oracle, Undo, cold HAS and exact movie')
+    connections_log = run([sys.executable, '-u', 'tests/verify_fill_connections.py'], timeout=500)
+    (output / 'fill-connections-suite.log').write_text(connections_log, encoding='utf-8')
+    results['fill_connections'] = json.loads((output / 'fill-connections-verification.json').read_text(encoding='utf-8'))
+    print('PASS selectable edge/corner fill, exhaustive independent graph oracle, cold HAS and movie')
+    palette_log = run([sys.executable, '-u', 'tests/verify_palette.py'], timeout=500)
+    (output / 'palette-suite.log').write_text(palette_log, encoding='utf-8')
+    results['palette'] = json.loads((output / 'palette-verification.json').read_text(encoding='utf-8'))
+    print('PASS named project swatches, exact color reuse, Undo, cold HAS/recovery/lesson and movie')
+    drawing_history_log = run([sys.executable, '-u', 'tests/verify_drawing_history.py'], timeout=400)
+    (output / 'drawing-history-suite.log').write_text(drawing_history_log, encoding='utf-8')
+    results['drawing_history'] = json.loads((output / 'drawing-history-verification.json').read_text(encoding='utf-8'))
+    print('PASS independent drawing Undo/Redo preserves live ragdolls, overlay, cold HAS and movie')
+    selection_log = run([sys.executable, '-u', 'tests/verify_drawing_selection.py'], timeout=500)
+    (output / 'drawing-selection-suite.log').write_text(selection_log, encoding='utf-8')
+    results['drawing_selection'] = json.loads((output / 'drawing-selection-verification.json').read_text(encoding='utf-8'))
+    print('PASS independent raster selection/move/copy, live physics, guarded input, cold HAS and movie')
+    transform_log = run([sys.executable, '-u', 'tests/verify_drawing_transform.py'], timeout=600)
+    (output / 'drawing-transform-suite.log').write_text(transform_log, encoding='utf-8')
+    results['drawing_transform'] = json.loads((output / 'drawing-transform-verification.json').read_text(encoding='utf-8'))
+    print('PASS guarded drawing resize/free rotation, premultiplied reference, live physics, cold HAS and movie')
     identity_log = run([sys.executable, '-u', 'tests/verify_recovery_identity.py'], timeout=90)
     (output / 'recovery-identity-suite.log').write_text(identity_log, encoding='utf-8')
     results['recovery_identity'] = json.loads((output / 'recovery-identity-verification.json').read_text(encoding='utf-8'))

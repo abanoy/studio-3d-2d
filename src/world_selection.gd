@@ -120,6 +120,10 @@ func refresh() -> void:
 		item.set_text(0,row.name)
 		item.set_tooltip_text(0,row.name); items[kind] = item
 		collect(row.node,kind)
+	if app.renderer.world_runtime and not app.renderer.world_runtime.data.get("effects",[]).is_empty():
+		var effects_item:=tree.create_item(root_item);effects_item.set_text(0,"Effects");effects_item.set_selectable(0,false)
+		for effect in app.renderer.world_runtime.data.effects:
+			var item:=tree.create_item(effects_item);item.set_text(0,effect.name);item.set_metadata(0,"effect:"+effect.id);item.set_tooltip_text(0,"Edit placement and timing")
 	if app.renderer.world_runtime:
 		app.renderer.select_instance("");app.pose_editor.rebuild_tree();app.pose_editor.update_gizmo();app.refresh_timeline()
 	elif app.mode.selected == 2 and model: select_entity("model",false)
@@ -207,6 +211,8 @@ func _process(_delta: float) -> void:
 		if items.model.get_text(0)!=name: items.model.set_text(0,name)
 
 func select_entity(kind: String, change_workspace := true) -> void:
+	if kind.begins_with("effect:"):
+		app.particle_editor.open();app.particle_editor.select_id(kind.substr(7));return
 	if not kind.is_empty() and not items.has(kind): return
 	app.pose_editor.finish_drag()
 	var previous:=selected

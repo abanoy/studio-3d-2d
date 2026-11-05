@@ -48,13 +48,16 @@ func save_file(selected: String, mode: String) -> void:
 	app.stop(); app.finish_stroke(); app.pose_editor.finish_drag()
 	var base := ProjectSettings.globalize_path(cache_root)
 	var snapshot := base.path_join("work_%d" % OS.get_process_id())
-	var error := Storage.save_project(snapshot, app.video, app.keys, app.layers, app.source, app.frame, app.audio_document(), {}, app.renderer.model_state(), true,app.renderer.world_state())
+	var error := Storage.save_project(snapshot, app.video, app.keys, app.layers, app.source, app.frame, app.audio_document(), {}, app.renderer.model_state(), true,app.renderer.world_state(),{},app.palette)
 	if not error.is_empty(): app.message(error); return
 	var references := {}
 	var sources: Array=[]
 	for clip in app.audio_clips: sources.append(clip.source.path)
 	if app.renderer.world_runtime:
-		for row in app.renderer.world_state().objects:sources.append(row.source)
+		for row in preload("res://src/world_document.gd").assets(app.renderer.world_state()):
+			var absolute:=ProjectSettings.globalize_path(row.source).replace("\\","/")
+			var original: String=origins.get(absolute,absolute)
+			references[row.path]=original if FileAccess.get_sha256(original)==row.sha256 else absolute
 	else:sources.append_array([app.source,app.renderer.model.data.source if app.renderer.model else ""])
 	for source_file in sources:
 		if str(source_file).is_empty(): continue
@@ -62,7 +65,7 @@ func save_file(selected: String, mode: String) -> void:
 		var key := "assets/" + FileAccess.get_sha256(absolute) + "." + absolute.get_extension().to_lower()
 		var original: String=origins.get(absolute,absolute)
 		references[key] = original if FileAccess.get_sha256(original)==FileAccess.get_sha256(absolute) else absolute
-	start({"action":"pack", "path":selected, "storage":mode, "folder":snapshot, "references":references, "cache_root":base,"cache_roots":[ProjectSettings.globalize_path("res://output/imports")]})
+	start({"action":"pack", "path":selected, "storage":mode, "folder":snapshot, "references":references, "cache_root":base,"cache_roots":[ProjectSettings.globalize_path("res://output/imports"),ProjectSettings.globalize_path("res://output/audio-imports")]})
 
 func builtin(selected: String) -> bool:
 	var root:=ProjectSettings.globalize_path("res://examples/tutorials").replace("\\","/").simplify_path().to_lower()+"/"

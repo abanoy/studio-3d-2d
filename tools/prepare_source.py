@@ -11,8 +11,9 @@ import lzma
 
 from asset_audit import digest, inspect
 from source_archive import stage_archive, resource_path
-from source_paths import DEFAULT_GMOD, DEFAULT_WORKSHOP, require_gmod
-from source_content import vpk_index, vpk_read, discover, mount_paths
+from source_paths import DEFAULT_GMOD, DEFAULT_WORKSHOP
+from source_installation import installed_context
+from source_content import vpk_index, vpk_read, mount_paths
 
 PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
 ROOT = Path(__file__).resolve().parent.parent
@@ -56,7 +57,17 @@ def main():
         raise ValueError("--output is required for conversion")
     # Apply the owner's installed-game requirement before creating any output or
     # starting Blender. Read-only archive inventory remains available independently.
-    game_root = require_gmod(args.gmod)
+    settings = {}
+    if args.mount_settings:
+        if args.mount_settings.stat().st_size > 1024 * 1024: raise ValueError("Mount settings exceed 1 MiB")
+        settings = json.loads(args.mount_settings.read_text(encoding="utf-8"))
+        if not isinstance(settings, dict): raise ValueError("Invalid mount settings")
+        extra = settings.get("extra", [])
+        overrides = settings.get("overrides", {})
+        if not isinstance(extra, list) or len(extra) > 128 or not all(isinstance(p, str) for p in extra): raise ValueError("Invalid additional roots")
+        if not isinstance(overrides, dict) or len(overrides) > 4096 or not all(isinstance(p, str) and isinstance(v, bool) for p, v in overrides.items()): raise ValueError("Invalid mount overrides")
+    context = installed_context(args.gmod, args.workshop, settings.get("extra", []), source)
+    discovered = context["discovery"]
     addon = args.sourceio.resolve(strict=True)
     if not (addon / "library/utils/pylib").is_dir():
         raise ValueError("Select the documented pinned SourceIO source directory")
@@ -107,16 +118,6 @@ def main():
         mounts = [native, content_root]
     else:
         raise ValueError("Choose MDL, BSP, GMA or a legacy LZMA .bin; VMF is not supported")
-    settings = {}
-    if args.mount_settings:
-        if args.mount_settings.stat().st_size > 1024 * 1024: raise ValueError("Mount settings exceed 1 MiB")
-        settings = json.loads(args.mount_settings.read_text(encoding="utf-8"))
-        if not isinstance(settings, dict): raise ValueError("Invalid mount settings")
-        extra = settings.get("extra", [])
-        overrides = settings.get("overrides", {})
-        if not isinstance(extra, list) or len(extra) > 128 or not all(isinstance(p, str) for p in extra): raise ValueError("Invalid additional roots")
-        if not isinstance(overrides, dict) or len(overrides) > 4096 or not all(isinstance(p, str) and isinstance(v, bool) for p, v in overrides.items()): raise ValueError("Invalid mount overrides")
-    discovered = discover(game_root, args.workshop, settings.get("extra", []))
     for provider in discovered["providers"]:
         if provider["path"] in settings.get("overrides", {}): provider["enabled"] = settings["overrides"][provider["path"]] and provider["present"]
     if args.mount_plan:
@@ -130,12 +131,12 @@ def main():
     for mount in mounts:
         if not mount.is_dir() and mount.suffix.lower() not in {".vpk", ".gma"}:
             raise ValueError("Dependencies must be directories, VPK indexes or GMA archives: " + str(mount))
-    sfm_source = any(p["origin"].startswith("sfm") and (source == Path(p["path"]) or
-                     p["kind"] == "folder" and source.is_relative_to(Path(p["path"]))) for p in discovered["providers"])
+    sfm_source = context["source_profile"] == "sfm"
     request = {"source": str(asset), "original_source": str(source), "sha256": sha,
                "source_profile": "sfm" if sfm_source else "gmod",
                "sourceio": str(addon), "sourceio_revision": PIN, "output": str(output),
-               "gmod_installation": str(game_root), "workshop_root": str(args.workshop.resolve()),
+               "gmod_installation": context["gmod_installation"], "sfm_installations": context["sfm_installations"],
+               "workshop_root": str(args.workshop.resolve()),
                "source_member": args.member, "mount_discovery": discovered,
                "scale": args.scale, "mounts": list(dict.fromkeys(map(str, mounts)))}
     req = output / "conversion-request.json"

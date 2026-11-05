@@ -3,7 +3,7 @@ extends RefCounted
 const FORMAT:="studio_model_3"
 
 static func validate(data: Dictionary, duration: int) -> String:
-	if not data.get("format") in [FORMAT,"studio_model_4","studio_model_5","studio_model_6","studio_model_7","studio_model_8"]:
+	if not data.get("format") in [FORMAT,"studio_model_4","studio_model_5","studio_model_6","studio_model_7","studio_model_8","studio_model_9"]:
 		return "Visibility animation requires standard model version3." if data.has("visibility_keys") else ""
 	if not data.get("visibility_keys") is Array or data.visibility_keys.size()>241:return "Invalid visibility keys."
 	var previous:=-1

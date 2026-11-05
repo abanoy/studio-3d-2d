@@ -76,6 +76,12 @@ func run() -> void:
 		if child is AcceptDialog and child.title=="Recover work":simple=child
 	var simple_list: ItemList=app.find_child("RecoveryChoices",true,false)
 	check(simple!=null and simple_list.item_count==2,"Simple recovery offers only recent choices")
+	var simple_preview: TextureRect=app.find_child("RecoveryChoicePreview",true,false)
+	for i in range(simple_list.item_count):
+		simple_list.select(i);simple_list.item_selected.emit(i)
+		var entry: Dictionary=records[i]
+		var image:=Journal.preview(checkpoint,entry.preview)
+		check(simple_list.get_item_text(i).contains("frame %d" % (17-i)) and simple_preview.texture!=null and simple_preview.texture.get_image().get_data()==image.get_data(),"Simple recovery shows the selected checkpoint frame and its own preview")
 	simple.hide();simple.queue_free();await settled()
 	app.advanced_toggle.button_pressed=true;app.advanced_toggle.pressed.emit()
 	app.get_window().size=Vector2i(1200,760);await settled()

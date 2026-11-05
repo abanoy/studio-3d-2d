@@ -88,3 +88,26 @@ The original channels keep their curves. This shared independent-body recording
 correction also applies to Model6. See contact_animation.md and the current progress
 memo for actual tests and outstanding activation gates; no new completed-feature
 or canonical-install claim follows from this development note.
+
+## Independent movement tracks (development acceptance, 2026-11-03)
+
+The existing contact recording workflow now also tests Model9. Actual Local and
+World body capture keeps the format and exact position/rotation/scale samples
+outside the take; Local leaves the other model untouched. Physics OFF, one-frame
+contact release, atomic Undo/Redo and overflow refusals remain covered.
+
+The retained native VRM also exercises fan-driven hair-only and combined body/hair
+recording, editable knee targets, fractional foot stability, packed HAS reopening,
+independent paint and the actual MP4 frame. Component mode requires this fixture;
+it cannot silently pass with the native case skipped. Fifty component and48
+older-model checks pass, each with a private-desktop receipt and verified1080p24
+48-frame movie. Both variants also passed in the full verifier run completed on 2026-11-03. This does not certify all native rigs, long takes or cloth fidelity.
+
+During Local capture the scope control names the recorded model, even when a
+different prop is selected or grabbed. During World capture it shows the number
+of targets. Its tooltip lists the names and the frame where recording started.
+
+Before capture, Record checks the selected scope. Hover to see the Local actor
+or the World object count and starting frame. If Local has no selected simulated
+object, or the playhead is at the movie end, the disabled control explains why.
+Changing scope refreshes readiness immediately.

@@ -53,44 +53,74 @@ func rebase(candidate: Dictionary) -> void:
 			count+=piece.keys.size()+piece.get("shape_keys",[]).size()+piece.get("body_rest_keys",[]).size()
 			for part in piece.get("body_controls",{}):count+=piece.body_controls[part].size()
 			for part in piece.get("body_removed",{}):count+=piece.body_removed[part].size()
+		for tracks in candidate.values[id].get("root_components",{}).values():
+			for field in ["position","rotation_xyzw","scale"]:count+=tracks[field].size()
 		retained_keys[id]=count-samples[id].size()*sample_controls(id)
 
 func sample_controls(id: String) -> int:
-	return 2 if Model.ShapeAnimation.independent(targets[id]) and not targets[id].shape_base.is_empty() else 1
+	var count:=2 if Model.ShapeAnimation.independent(targets[id]) and not targets[id].shape_base.is_empty() else 1
+	return count+3 if targets[id].get("format")=="studio_model_9" else count
 
 func sample_cost(id: String,sample: Dictionary) -> int:
-	if sample_controls(id)==1:return bytes(sample)
-	var body:=sample.duplicate();body.erase("shapes")
-	return bytes(body)+bytes({"frame":sample.frame,"shapes":sample.shapes,"interpolation":sample.interpolation})+1
+	var cost:=bytes(sample)
+	if Model.ShapeAnimation.independent(targets[id]) and not targets[id].shape_base.is_empty():
+		var body:=sample.duplicate();body.erase("shapes")
+		cost=bytes(body)+bytes({"frame":sample.frame,"shapes":sample.shapes,"interpolation":sample.interpolation})+1
+	if targets[id].get("format")=="studio_model_9":cost+=bytes(load("res://src/root_component_curves.gd").split([{"frame":sample.frame,"value":sample.transform,"interpolation":sample.interpolation}]))
+	return cost
 
 func setup(parent: Node) -> void:
 	scope=OptionButton.new();scope.add_item("Local record");scope.add_item("World record");parent.add_child(scope)
+	scope.item_selected.connect(func(_index):sync())
 	scope.tooltip_text="Local captures only the selected live model. World captures all currently simulated models and props, including boxes they hit."
 	button=Button.new();button.text="Record";button.focus_mode=Control.FOCUS_NONE;parent.add_child(button)
-	button.tooltip_text="Record physics from this frame to the project end. Stop keeps an editable take; Escape discards it (release a grabbed body first). Existing motion inside the recorded range is replaced; Undo restores it."
 	button.pressed.connect(func():finish() if active else start())
 
 func sync() -> void:
 	if not is_instance_valid(button):return
 	var app=editor.app
 	button.text="Stop recording" if active else "Record"
-	button.disabled=app.exporting or not active and not editor.is_running()
+	var reason: String="" if active else start_reason()
+	button.disabled=app.exporting or not reason.is_empty()
+	button.tooltip_text="Stop keeps the take. Escape discards it (release a grabbed body first)." if active else reason
+	if not active and reason.is_empty():
+		if scope.selected==0:button.tooltip_text="Record %s from frame %d." % [app.renderer.active_model().data.name,app.frame]
+		else:button.tooltip_text="Record %d simulated objects from frame %d." % [editor.simulations.size(),app.frame]
+		button.tooltip_text+=" Existing motion in the recorded range is replaced. Undo restores it."
 	scope.disabled=active or app.exporting
+	scope.set_item_text(0,"Local record")
+	scope.set_item_text(1,"World record")
+	if active and not targets.is_empty():
+		var names:=PackedStringArray()
+		for id in targets:names.append(str(targets[id].name))
+		if scope.selected==0:scope.set_item_text(0,"Local · "+names[0].left(22))
+		else:scope.set_item_text(1,"World · %d objects" % names.size())
+		scope.tooltip_text="Recording from frame %d: %s" % [start_frame,", ".join(names)]
+	else:
+		scope.tooltip_text="Local captures the selected live model. World captures all currently simulated models and props."
 
 func read_state(id: String) -> Dictionary:
 	var simulation: RefCounted=editor.simulations[id]
 	return {"pose":simulation.capture_pose() if simulation.has_method("capture_pose") else simulation.pose(),"transform":simulation.root_transform(editor.app.frame,false)}
 
+func start_reason() -> String:
+	var app=editor.app
+	if not editor.is_running():return "Turn Physics on for a model or prop before recording."
+	if app.frame>=app.video.duration_frames:return "Move to a frame before the project end to record physics."
+	var actor: RefCounted=app.renderer.active_model()
+	if scope.selected==0 and (not actor or not editor.active(actor.data.id)):
+		return "Select a simulated object for Local recording, or choose World to record all simulated objects."
+	return ""
+
 func start() -> bool:
 	var app=editor.app
 	last_error="";last_end_reason="";last_bytes=0;max_sample_ms=0
 	if active or app.exporting:return false
-	if not editor.is_running():app.message("Turn Physics on for a model or prop before recording.");return false
-	if app.frame>=app.video.duration_frames:app.message("Move to a frame before the project end to record physics.");return false
+	var reason:=start_reason()
+	if not reason.is_empty():app.message(reason);return false
 	var actor: RefCounted=app.renderer.active_model()
 	var ids: Array=editor.simulations.keys()
 	if scope.selected==0:
-		if not actor or not editor.active(actor.data.id):app.message("Select a model with Physics on for Local recording.");return false
 		ids=[actor.data.id]
 	app.stop();app.finish_stroke();app.pose_editor.finish_drag()
 	if app.mode.selected==0:app.mode.select(1);app.change_mode(1)
@@ -163,16 +193,21 @@ static func replace_range(data: Dictionary, keys: Array, first: int, last: int, 
 	if Model.ShapeAnimation.has_data(data):
 		for sample in keys:
 			if not sample.has("shapes"):sample["shapes"]=Model.ShapeAnimation.sample(data,float(sample.frame))
-	var result:=Clips.promote(data);var pieces: Array=[]
+	var result:=Clips.promote(data);var pieces: Array=[];var components: Dictionary={}
 	for original in result.animation_clips:
 		var end:=int(original.start)+int(original.length)
-		if end<=first or original.start>last:pieces.append(original);continue
+		if end<=first or original.start>last:
+			pieces.append(original)
+			if data.get("root_components",{}).has(original.id):components[original.id]=data.root_components[original.id].duplicate(true)
+			continue
 		if original.start<first:
 			var left: Dictionary=original.duplicate(true);left.length=first-int(left.start);left.auto_extend=false;pieces.append(left)
 			if Model.is_body(result):left["body_untrimmed"]=false
+			if data.get("root_components",{}).has(original.id):components[left.id]=data.root_components[original.id].duplicate(true)
 		if end>last+1:
 			var right: Dictionary=original.duplicate(true);right.id=str(ResourceUID.create_id());right.start=last+1;right.source_in=int(original.source_in)+last+1-int(original.start);right.length=end-last-1;right.auto_extend=false;pieces.append(right)
 			if Model.is_body(result):right["body_untrimmed"]=false
+			if data.get("root_components",{}).has(original.id):components[right.id]=data.root_components[original.id].duplicate(true)
 	var take:=Clips.clip(result,first,last-first+1,first,keys)
 	if Model.is_body(data):
 		var body=Model.body_animation();var prior_parts: Array=body.B.known_channels(body.view(data))
@@ -213,13 +248,18 @@ static func replace_range(data: Dictionary, keys: Array, first: int, last: int, 
 			if not keys[i].shapes.is_empty():take.shape_keys.append({"frame":keys[i].frame,"shapes":keys[i].shapes.duplicate(true),"interpolation":keys[i].interpolation})
 			take.keys[i].erase("shapes")
 	pieces.append(take);pieces.sort_custom(func(a,b):return a.start<b.start);result.animation_clips=pieces
+	if data.get("format")=="studio_model_9":
+		var root_keys:=[]
+		for sample in keys:root_keys.append({"frame":sample.frame,"value":sample.transform,"interpolation":sample.interpolation})
+		components[take.id]=load("res://src/root_component_curves.gd").split(root_keys)
+		result.root_components=components
 	result.start_frame=mini(int(data.get("start_frame",0)),first)
 	result.presence_offset=maxi(0,int(result.start_frame)-int(pieces[0].start))
 	var final: Dictionary=keys[-1]
 	result.pose=final.pose.duplicate(true);result.position=final.transform.position.duplicate();result.rotation_xyzw=final.transform.rotation_xyzw.duplicate();result.scale=final.transform.scale;result.draft_frame=last
 	if Model.ShapeAnimation.has_data(data):result.shape_pose=final.shapes.duplicate(true)
 	if Model.ShapeAnimation.independent(data):result.shape_draft_frame=last
-	var error:=Model.validate(result,duration)
+	var error: String=load("res://src/root_component_document.gd").validate(result,duration) if result.get("format")=="studio_model_9" else Model.validate(result,duration)
 	return {"error":error} if not error.is_empty() else {"data":result}
 
 func build(end: int) -> Dictionary:

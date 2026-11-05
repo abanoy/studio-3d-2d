@@ -26,6 +26,8 @@ spec.loader.exec_module(module)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from asset_audit import gma_index, AssetError
 from source_archive import resource_path
+from source_texture import blender_rgba
+from source_eyes import plan as neutral_eye_plan
 
 from SourceIO.library.utils import TinyPath, FileBuffer, MemoryBuffer
 from SourceIO.library.shared.app_id import SteamAppId
@@ -231,7 +233,8 @@ if source.suffix.lower() == ".mdl":
         "skin_groups": [[m.name for m in group] for group in mdl.skin_groups] if mdl else [],
         "flex_names": list(mdl.flex_names) if mdl else [],
         "flex_controllers": [asdict(c) for c in mdl.flex_controllers if is_dataclass(c)] if mdl else [],
-        "selected_skin": 0, "selected_bodygroup_indices": {k: 0 for k in container.bodygroups}}
+        "selected_skin": 0, "selected_bodygroup_indices": {k: 0 for k in container.bodygroups},
+        "eyeballs": [asdict(eye) for part in mdl.body_parts for model in part.models for eye in model.eyeballs] if mdl else []}
 else:
     from SourceIO.blender_bindings.source1.bsp.import_bsp import import_bsp
     from SourceIO.blender_bindings.source1.bsp.entities.abstract_entity_handlers import AbstractEntityHandler
@@ -301,6 +304,7 @@ else:
 images = {}
 decoded_texture_bytes = 0
 material_report = []
+bpy.context.view_layer.update()
 used_materials = {slot.material for obj in bpy.context.scene.objects if obj.type == "MESH" for slot in obj.material_slots if slot.material}
 for material in used_materials:
     native_name = material.get("source1_material", material.get("full_path", material.name))
@@ -325,7 +329,9 @@ for material in used_materials:
             raise ValueError("VMT unavailable")
         vmt = VMT(data, TinyPath(native_name), cm)
         row["shader"] = vmt.shader
-        texture = vmt.get_string("$basetexture", "")
+        eye_plan = neutral_eye_plan(material, bpy.context.scene.objects) if vmt.shader.lower() == "eyerefract" else None
+        texture = vmt.get_string("$iris" if eye_plan else "$basetexture", "")
+        if eye_plan and not texture: raise ValueError("Native eye iris texture unavailable")
         material.use_backface_culling = not bool(vmt.get_int("$nocull", 0))
         if texture:
             texture = "materials/" + texture.removeprefix("materials/").removesuffix(".vtf") + ".vtf"
@@ -348,17 +354,23 @@ for material in used_materials:
                 if width * height > 16777216:
                     raise ValueError("Texture exceeds 16 megapixels")
                 image = bpy.data.images.new(Path(texture).stem, width=width, height=height, alpha=True)
-                image.pixels.foreach_set(pixels.ravel())
+                image.pixels.foreach_set(blender_rgba(pixels, width, height))
                 image.pack()
                 images[texture] = image
             node = material.node_tree.nodes.new("ShaderNodeTexImage")
             node.image = images[texture]
+            if eye_plan: node.extension = "EXTEND"
             material.node_tree.links.new(node.outputs["Color"], shader.inputs["Base Color"])
-            if vmt.get_int("$translucent", 0) or vmt.get_int("$alphatest", 0):
+            if not eye_plan and (vmt.get_int("$translucent", 0) or vmt.get_int("$alphatest", 0)):
                 material.node_tree.links.new(node.outputs["Alpha"], shader.inputs["Alpha"])
                 material.surface_render_method = "DITHERED"
             row["base_texture"] = texture
-        row["status"] = "PBR approximation"
+        if eye_plan:
+            for loop, uv in eye_plan['changes']: eye_plan['object'].data.uv_layers.active.data[loop].uv = uv
+            row['neutral_eye'] = eye_plan['report']
+            row['warning'] = 'Neutral eye appearance imported; gaze, dilation and refraction remain unsupported.'
+            warnings.append(native_name + ': ' + row['warning'])
+        row["status"] = "neutral iris approximation" if eye_plan else "PBR approximation"
     except Exception as error:
         row["status"] = "fallback gray"
         row["warning"] = str(error)

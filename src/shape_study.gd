@@ -104,6 +104,7 @@ func install_report(value) -> String:
 		for match_row in estimate.matches:
 			if not match_row is Dictionary or not number_index(match_row.get("seed_node"),100000) or not number_index(match_row.get("seed_target"),2048):return "Invalid study example identity."
 			var seed_key: String=str(int(match_row.seed_node))+":"+str(int(match_row.seed_target))
+			if not match_row.get("area") in Catalog.AREAS or match_row.area=="Other":return "Invalid study example area."
 			if int(match_row.seed_node)!=int(row.node) or not expected.has(seed_key) or expected[seed_key]!=match_row.get("seed_name") or not match_row.get("seed_provenance") in ["Name estimate","Manual choice","Provisional observed annotation"] or not unit_number(match_row.get("similarity")) or not unit_number(match_row.get("query_coverage")):return "Study example no longer matches the model."
 		candidate[key]=row
 	if candidate.size()!=expected.size():return "Study is missing model controls."
@@ -127,7 +128,9 @@ func refresh() -> void:
 			displayed=key;info.text="Neutral positional study: "+str(int(row.changed_vertices))+" moved vertices.\n"+("Suggested area: "+str(row.region_estimate.area)+" (tentative)." if row.region_estimate.area!="Other" else "No clear area match.")+"\n"+str(row.region_estimate.get("reason",""))+"\nNames and earlier manual choices provide the example labels. No animation changed."
 			if not row.region_estimate.matches.is_empty():
 				var example: Dictionary=row.region_estimate.matches[0]
-				info.text+="\nExample: "+str(example.seed_name).left(100)+" ("+str(example.seed_provenance)+").\nRegion coverage: "+str(roundi(float(example.query_coverage)*100))+"%. This is not a probability or an emotion preset."
+				var coverage := roundi(float(example.query_coverage)*100)
+				info.text+="\nClosest example: %s (%s).\n%s examples cover %d%% of the vertices this control moves." % [str(example.seed_name).left(100),example.seed_provenance,example.area,coverage]
+				info.text+=" This percentage measures overlap, not a probability."
 	elif not observations.is_empty():info.text="Select a control to review its neutral geometry.";displayed=""
 
 func adopt() -> void:

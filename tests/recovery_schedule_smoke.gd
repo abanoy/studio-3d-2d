@@ -84,7 +84,10 @@ func run() -> void:
 	DirAccess.make_dir_recursive_absolute(target+".tmp");app.autosave_tick();var retry: int=app.autosave_retry_due
 	check(app.autosave_actions==1 and retry>Time.get_ticks_msec() and FileAccess.get_sha256(target)==previous,"failed write retains edits and last valid checkpoint with a retry delay")
 	app.autosave_tick();check(app.autosave_retry_due==retry and FileAccess.get_sha256(target)==previous,"retry backoff prevents repeated writes every timer tick")
-	DirAccess.remove_absolute(target+".tmp");app.autosave_retry_due=0;app.autosave_tick();await settled()
+	check("Edits are pending" in app.recovery_status.text and "retry after 30 seconds" in app.status.text,"failed checkpoint explains pending edits and the idle retry")
+	DirAccess.remove_absolute(target+".tmp")
+	app.autosave_schedule.select(0);app.autosave_due=Time.get_ticks_msec()+600000
+	app.autosave_retry_due=Time.get_ticks_msec()-1;app.autosave_tick();await settled()
 	check(app.autosave_actions==0 and FileAccess.get_sha256(target)!=previous,"successful retry consumes pending edits only after commit")
 	dirty=app.dirty;history=app.history.size();app.autosave_schedule.select(0);app.autosave_schedule.item_selected.emit(0);app.autosave_interval.value=0.5
 	check(app.autosave_time_controls.visible and not app.autosave_action_controls.visible and absi(app.autosave_due-Time.get_ticks_msec()-30000)<=500 and app.dirty==dirty and app.history.size()==history,"time scheduling exposes minutes and retains project/history state")

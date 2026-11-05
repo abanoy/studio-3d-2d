@@ -74,3 +74,32 @@ progress memo for actual source versus installed-copy verification results.
 pickers/physics/pose/drawing/play/clip drags/personal Save/export, smaller-window
 guide behavior, failed encoder preflight and fresh-process Continue/Previous/
 unsaved export. It also checks all included asset/manifest hashes unchanged.
+
+When Home has no recent projects, Make your first movie opens the guided practice
+directly. After leaving an unfinished practice, the same space offers Continue your
+first movie. A finished practice can be reopened. Tutorials also provides Start
+fresh and access to saved sessions. Starting or continuing from Home uses the
+existing confirmation when replacing unsaved scene edits.
+
+An unfinished first-movie lesson also appears beside recent personal projects.
+Continue restores its practice session. If the first-movie lesson is already
+open, Return to your first movie closes Home and keeps the live scene, including
+its current personal Save path and pending edits.
+
+During Play and pause, Add practice sound places an included short tone at frame
+24 alongside the hand raise and Ink drawing. It is optional. The action creates
+one ordinary timeline audio clip and one Undo entry. Selecting it again reports
+the existing cue's frame. The sound follows normal project saving and MP4 export.
+
+After successful export, Show movie folder appears in the footer. It opens the
+folder containing the last completed MP4 when you click it. Its tooltip gives
+the movie path. A failed or cancelled export does not replace that destination.
+
+If an export stops after writing frames, Show saved frames opens that attempt's
+PNG folder. Show movie folder still points to the most recent completed MP4.
+
+If all frames and the synchronized sound mix were saved but MP4 encoding failed
+or was cancelled, Retry MP4 encodes that render again with the current encoder
+path. It writes a separately named movie and log in the same folder. This retry
+is available in the current session until another render starts. A render stopped
+before all frames are written offers Show saved frames instead.

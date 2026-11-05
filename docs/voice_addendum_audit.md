@@ -42,6 +42,28 @@ sound rows. Packed/linked/recovery/lesson and movie checks cover all clips. Audi
 editing remains partial: compressed sources, split/end trim/fades/buses/video/VFX/
 nesting and responsiveness work remain. Normal Model7/review copy/web stay separate.
 
+2026-11-04 continuation: desktop [MP3/Ogg preparation](compressed_audio.md)
+uses the same decoded PCM clips and native audio members. Hidden cancellable
+local decoding, source-layout preservation, picker placement, exact Undo and
+packed/linked PCM reopening, hardware capture and H264/AAC tone windows passed
+on original mono MP3/stereo Ogg fixtures. End trim/split/fades/buses and longer
+mix responsiveness remain unfinished. This development increment is separate
+from the normal installation and frozen web.
+
+2026-11-04 continuation: [sound fades](audio_fades.md) adds non-destructive
+per-clip fade-in/out durations in Simple, using the shared preview/export mix.
+Version4 retains fades with trims in HAS/recovery/lesson data; older readers
+refuse it. Actual unit/editor/fresh-reader/movie verification lives in the memo.
+No crossfade automation, gain curves, pan or recording is implied.
+
+2026-11-04 continuation: [sound end trimming](audio_end_trim.md) is available in
+Simple. Version3 audio preserves original samples and old-reader refusal;
+untrimmed saves keep old layouts. Dialog, waveform, exact rational endpoints,
+Undo/restore, fresh HAS/recovery/lesson and decoded AAC timing are covered by its
+dedicated verifier. A timeline right-edge handle now shares that data/precision,
+with preview-only dragging, capture/cancel and one Undo. Splits/fades and full
+artist acceptance remain.
+
 2026-11-02 continuation: [cache-free review candidate](portable_candidate.md)
 verifies ordinary Home/New, native Model7/8 Open/edit/Save and synchronized movies
 in fresh moved source copies, plus the included beginner course. Normal app/web
@@ -74,12 +96,12 @@ Current-increment verification is recorded separately below and in progress_memo
 | §2 Home / New / Tutorials / Recent thumbnails | Partial; see actual run/save status | Home follows automatic recovery, with real New/Open/Return and12 recent successful HAS saves/opens, matching managed thumbnails when available, missing-file feedback and list-only removal. Empty New/free camera remain. Tutorials opens an eleven-task beginner import-to-MP4 path and two focused chapters, using included original assets; advanced course sections remain required. See home.md and tutorials.md. |
 | §2 Black empty world, fading white 3D grid, nothing selected | Present/tested | Normal startup/New are black, grid is bounded 3D with distance/subpixel fade, no actor/selection. Grid excluded from final frames and saved GLB. |
 | §2 Bottom timeline / vertical scene hierarchy | Partial | Bottom pinned camera ruler plus scrollable per-object/cel/audio rows and functional left World tree; multiple maps/models/groups editable. |
-| §2 GMod flight, optional orbit scheme | Partial | Ctrl+LMB look plus WASD/QE, focus/Escape release; orbit/remapping missing. |
+| §2 GMod flight, optional orbit scheme | Partial | Existing fly scheme stays default; Advanced Settings optionally selects orbit/pan/dolly with Ctrl gestures while preserving Alt bones and middle-click tools. Personal preference, explicit shot keys and release guards; general remapping remains missing. See orbit_navigation.md. |
 | §3 Explorer drop at frame0 / timeline context import at chosen frame | Partial | Native window drop wired, viewport handler tested; right-click timeline/native picker and async chosen presence work. Physical Explorer drag remains unverified; single-file drops only. |
 | §3 Visible grounded spawn / bounded overlap search | Partial | UI model imports use captured view, visible surface queries,9candidate overlap search and explicit visible fallback. Actual translated floor/native GMod map tested; physical/transparent/skinned collision semantics and large-scene guarantees remain absent. |
 | §3 Multiple maps / actors / group transforms | Partial | Prepared schema4 worlds render/select/edit several maps/models/groups with independent transforms/poses/presence and stable-ID Undo. Normal append imports, empty New, atomic all-object Open/recovery and structural Add/Remove Undo work. |
 | §3 Source MDL/BSP/GMA / installed GMod/SFM library | Partial | Tested native imports, dependencies and searchable mounts; shader/lightmap/physics fidelity incomplete. SFM Workshop files absent in last local inventory. |
-| §3 MMD PMD/PMX, VMD/VPD | Partial | Direct native PMD/PMX file routing uses the installed converter and shared model controls; VMD/VPD and richer native semantics missing. |
+| §3 MMD PMD/PMX, VMD/VPD | Partial | Direct PMD/PMX, VPD and bounded VMD feed shared body/expression keys. Fresh preparations retain supported IK declarations; import bakes targets and stepped IK switches. Controller handles/numeric/reset now solve declared links into ordinary FK keys. Raw Miku/PMX, sparse posing, Undo, HAS and MP4 checks cover this subset. Continuous native constraint playback, inherited transforms, native physics and broad fidelity remain incomplete. See standard_ik.md, mmd_pose_import.md and mmd_motion_import.md. |
 | §3 FBX / OBJ / glTF / GLB | Present/tested, bounded | Binary FBX, OBJ/MTL, glTF2.0 sidecars/data URI, embedded GLB. Native clips retained externally, not mapped to timeline. |
 | §3 VRM / SMD / DMX / Blend / USD | Partial | Direct VRM0/1 geometry/rig import, humanoid metadata and facing normalization; native VRM behavior and other listed formats remain missing. |
 | §3 One standard native representation / provenance | Partial | Embedded GLB + versioned studio_model_1/2/3 + native reports shared across adapters; original native/blend conversion bundles external. |
@@ -109,7 +131,7 @@ Current-increment verification is recorded separately below and in progress_memo
 | §13 Automatic newest-valid recovery / fallback | Implemented in current source; see latest verification/save status | Normal startup tries newest candidates through complete asset/rig validation, including retained journal states, skips bad generations and restores an unsaved copy without touching manual HAS. No valid candidate keeps clean New. Explicit history remains; cache/latency refinement is incomplete. See startup_recovery.md. |
 | §14 Independent 2D / audio / VFX / chroma | Partial | Rough/Ink, optional Flats/Effects and general four-layer add/name/order/removal/visibility/opacity with Undo; holds, pen/eraser/fill with spill preview, guide-free view/drawing/original color picker, previous/next onion guides and one PCM16 WAV + AAC. Gap closing, pressure, persistent palettes, richer onion ranges, native KRA, multi-audio, VFX stack and chroma remain. See color_picker.md/drawing_layers.md/layer_opacity.md/drawing_fill.md/onion_skin.md/current progress for actual verification/save status. |
 | §14 1080p24 MP4 beside saved HAS | Present/tested in this increment | Main navbar Export writes fresh render folder beside current HAS; unsaved/recovered/legacy asks destination; Advanced one-off override. |
-| §14 Configurable resolution/rate / independent PNG export | Partial | Rational frame engine,1080p24 defaults, retained PNGs accompanying every movie; no general settings UI or PNG-only action. |
+| §14 Configurable resolution/rate / independent PNG export | Partial | Simple Options has integer/fractional FPS and 1–240 frame scene length, exact rational audio, Undo and saved timing. Frames stay fixed; shortening protects content. Advanced PNG exports complete scene or transparent drawings without FFmpeg, with timing/WAV sidecars. General resolution and longer-project support remain unfinished. See project_timing.md and png_export.md. |
 | §17 Full novice / cross-ecosystem / physics / tutorial acceptance | Not met | End-to-end limited camera/pose/cel/audio/HAS/movie works; this audit does not certify all six scenarios. |
 
 ## Decisions and bounded implementation order
@@ -522,3 +544,222 @@ MP4 are covered by 117 new checks. See height_import.md for exact evidence and
 synchronous-import limitations. This is an owner-requested supplementary feature,
 not full native fidelity or completion of map calibration/existing animated scale.
 The normal Model7 app and frozen web handoff remain unchanged.
+## 2026-11-02 continuation: actual native particle rendering experiment
+
+An opt-in adapter now resolves one installed SFM flash and one GMod Workshop glow
+through data-only PCF/VMT/VTF reads into common deterministic sprite descriptors.
+Actual textured GPU playback, reverse seeking, depth/camera/parent controls,
+independent drawing and a silent MP4 pass29 writer+27 cold checks;11 Python tests
+pass. See source_particles.md. This advances the owner's supplementary particle
+request; ordinary scene editing, browser/timeline controls, portable HAS packing,
+attachments and broader native effects remain unfinished. No new editor/Model
+format or normal app replacement, full verifier rerun, public release or deployment.
+## 2026-11-02 continuation: common particle scenes and ordinary persistence
+
+Development project schema5/world2 now carries typed canonical effect instances
+beside existing standard models. Rational project timing, linked/packed HAS,
+recovery, cold Open, independent2D/audio and ordinary MP4 export pass25 writer+4
+cold checks. Older readers explicitly refuse new required semantics; ordinary
+worlds keep schema4. See particle_scenes.md for source/native boundaries and
+verification. The first source foundation's no-persistence limitation is advanced
+by this increment. User-facing discovery/selection/editing, attachments and broader
+effect semantics remain unfinished. Normal installed Studio and frozen web stay
+unchanged. The full current verifier and separate HAS wrapper have subsequently
+completed0 with frozen functional inputs; see particle_scenes.md for exact scope.
+## 2026-11-02 continuation: installed effect choice and basic instance controls
+
+Development now discovers PCFs in Installed, lists exact named systems with
+whole-system unsupported guidance, and loads compatible native materials into
+the same canonical effect contract. Basic modeless placement/size/frame/visibility
+edits, World entries, Add/Remove/Undo and managed linked/packed storage have28
+isolated app+5 cold-reader checks. Four Python cases and real41/101-system worker
+checks cover mount choices and extra content. See particle_browser.md. The
+integrated eight-group review completed0 with seven clean private graphical
+receipts on unchanged functional inputs. This is not a new full UI-source pass; the
+earlier full backend/fill128-receipt result keeps its own scope. Normal installed
+Studio remains unchanged. Picking/gizmos, animated/attached/richer effects and all
+other original full-goal gates remain unfinished.
+
+## 2026-11-02 continuation: installed SFM host without GMod
+
+Recognized installed SFM models/maps/particles can now use SFM alone in the
+development source. GMod assets retain the installed-GMod requirement. Sixteen
+actual standalone SFM app checks cover Scout posing, cross-mod textures, map,
+independent ink/camera, managed and packed save/reopen and MP4; native particle
+hashes match and GMod Workshop input refuses before output creation. Ten affected
+regression groups also pass on frozen functional source with seven additional
+clean private graphical receipts. See sfm_standalone.md for exact scope and the
+visible pre-existing Scout material defect; texture presence and roundtrip tests
+do not prove native visual fidelity. Normal installed Studio remains unchanged.
+
+
+## 2026-11-02 continuation: Source texture orientation
+
+New Source preparations now reverse decoded VTF rows at the Blender pixel
+boundary. Actual codec/PNG controls prove the mismatch and zero-difference fix;
+new Scout/Reimu images were visually inspected. Thirteen affected groups pass
+with nine fresh private graphical receipts; an earlier isolated before/after
+comparison also passed. Old embedded GLBs/HAS keep their bytes and appearance.
+Native eye shaders and broader material semantics remain unfinished. See
+source_textures.md. Normal installed source and frozen web remain unchanged.
+
+
+## 2026-11-02 continuation: neutral Source eye appearance
+
+EyeRefract preparations now resolve the native iris and stage a validated neutral
+UV projection using the native helper, preserving positions and body UVs. Six math
+cases, five transformed Blender/binding controls and17 actual SFM app checks pass;
+GLB comparison preserves11 non-eye surfaces exactly. Eleven further affected
+review groups also pass with eight additional clean private graphical receipts.
+This is static neutral appearance, with explicit import warnings; gaze, dilation,
+refraction and broader native material fidelity remain incomplete. Existing saved
+assets, normal installed source and web preview remain unchanged. See source_eyes.md.
+
+## 2026-11-04 continuation: brush opacity
+
+Development Draw now has Simple/Advanced brush opacity with even per-stroke
+translucent ink and gentle erasing. Existing full-strength opaque raster output
+is retained. Captured tool settings and transient sparse coverage masks feed
+ordinary RGBA cel pixels, tile Undo and the shared preview/export compositor.
+See [brush opacity](brush_opacity.md) for semantics, memory bounds and actual
+verification scope. Tablet pressure, tilt, textured brushes and physical tablet
+acceptance remain unfinished; this does not complete the drawing stage.
+
+## 2026-11-04 continuation: pressure-sensitive size
+
+The newer opt-in Tablet pressure size receives native pressure packets through
+the shared zoom/pan input mapping, tapers size continuously, defers initial paint
+and cel creation, and treats zero pressure as lifted contact. Existing mouse and
+opacity behavior remains separate. Pending completion restores input accumulation.
+Independent raster reference, actual editor/save/cold Open/movie tests are in
+[pressure brush](brush_pressure.md). Physical Ink/Wintab, tilt, textured brushes
+and inverted-stylus tool selection remain open; the complete drawing stage is
+still unfinished.
+
+## 2026-11-04 continuation: gap-aware fill
+
+The newer Simple/Advanced Close gaps control uses virtual boundaries without
+editing line art. Nonzero amounts always require preview/Apply. Native worker,
+source isolation, stale settings, tile/cel Undo and the shared HAS/renderer path
+are covered in [gap-aware fill](fill_gaps.md). This is bounded square-kernel
+closing, with explicit narrow-detail/geometry limits. Under-line expansion,
+refined anti-alias filling,8connected mode and broader cleanup remain open.
+
+## 2026-11-04 continuation: project color swatches
+
+Simple Draw can keep and reuse colors; Advanced names/replaces/removes them.
+The bounded RGBA/name collection travels through ordinary project/HAS/recovery/
+lesson saves while leaving rendered pixels and the common3D contract untouched.
+Palette Undo preserves live physics. See [project swatches](project_palette.md)
+for strict validation, compatibility and actual test scope. Wider palette files,
+color management and the remaining drawing/video/native roadmap stay open.
+
+## 2026-11-04 continuation: drawing history isolation
+
+Pixel, cel/exposure and layer Undo/Redo now preserve live3D simulations instead
+of clearing them through generic world history. Overlay/timeline and layer
+controls still refresh. No schema or common-model change. Actual running-body
+identity/generation, later frames, exact drawing bytes, cold HAS and ordinary
+movie checks are described in [drawing history](drawing_history.md). Physics
+recording cancellation and world-edit history retain their previous policies.
+
+## 2026-11-04 continuation: color beneath line edges
+
+Original spec §7 border expansion now has Advanced Grow under lines0–8pixels,
+default0 and mandatory changed-result preview. It dilates only the discovered
+fill region on detached worker bytes, paints only the active layer and keeps
+the common3D/scene schema unchanged. Separate Flats beneath ink can cover the
+transparent seam at translucent edges. This is bounded square-mask growth;
+adaptive anti-alias reconstruction, configurable connectivity and richer2D/KRA/
+video remain open. See [fill growth](fill_expand.md) for clipping, nearby-detail
+risks, sampling/order rules and actual verification scope.
+
+## 2026-11-04 continuation: fill connectivity
+
+Original spec §7 configurable connectivity now has Advanced Edges only (default4)
+and Edges and corners (8). Existing seed tolerance, detached worker, spill/gap/
+growth preview, source isolation and cel/tile Undo policies remain. Connection
+changes reject stale results; no saved metadata/common-model change. See
+[fill connections](fill_connections.md) for exhaustive independent graph cases,
+actual dropdown/editor/save/movie checks and limits. Anti-alias reconstruction
+and broader2D/KRA/video, native and product gates remain open.
+
+## 2026-11-04 continuation: rectangular drawing selection
+
+Spec selection/transform work now begins with Simple/Advanced Select area[M],
+marquee then integer move or Shift-copy, live preview and one tile Undo on drop.
+Only the active held cel changes; original3D/shot/layer separation remains.
+Editor-only state has revision/frame/image identity guards and stays outside
+saves/final rendering. Whole selection clamps inside output bounds. See
+[drawing selection](drawing_selection.md) for alpha, cache, input/lifecycle,
+physics and persistence verification. Rotation/scale, lasso/masks/clipboard and
+animated2D placement remain explicitly unfinished, alongside the wider roadmap.
+
+## 2026-11-04 continuation: drawing resize and free rotation
+
+Selection's Resize/rotate adds uniform size and arbitrary angle in Simple;
+Advanced offers independent dimensions and keep-original merging. Byte-only
+worker preparation, guarded preview/Apply, premultiplied edge sampling and
+existing tile Undo preserve the common scene/3D/camera/pixel contract. Numeric
+text edits invalidate stale previews; mode presentation never resets effective
+transform parameters. See [drawing transforms](drawing_transform.md) for pixel
+grid/bounds/filter behavior, actual test scope and remaining handles/lasso/
+clipboard/keyed2D/color-management work. Wider roadmap remains unfinished.
+## 2026-11-04 continuation: personal keyboard remapping
+
+Original spec §4.1/Stage2 configurable keyboard defaults now have Settings →
+Keyboard shortcuts in Simple and Advanced. Fifteen main actions, exact Ctrl/Shift
+matching, clear/defaults, duplicate refusal, native-window capture and persisted
+personal preferences preserve the common scene data. Mouse/WASD/Alt/Escape remain
+reserved. See [keyboard shortcuts](keyboard_shortcuts.md) and the latest dated memo
+for actual checks; this is not complete device remapping or a new full-suite run.
+
+## 2026-11-04 continuation: numeric camera authoring
+
+Original spec §4.1 numeric camera transforms now have Advanced position and YXZ
+pitch/yaw/roll draft entry, Apply temporary view and Reload. Camera keys remain
+explicit; uncommitted/stale drafts cannot silently overwrite a new view or enter
+a saved shot. Existing quaternion tracks, near/far, common3D and independent paint
+are unchanged. See [numeric camera](numeric_camera.md) and the dated memo for
+actual checks and retained precision/Euler/physical-input limits.
+
+## 2026-11-04 continuation: native Krita preparation investigation
+
+Stage4/§14 groundwork now includes a bounded read-only KRA metadata backend and
+actual hidden installed-Krita export of a48frame native source, with original
+hash preserved and decoded frame/hold validation. This does not add a KRA import
+action or editable native layers to Studio. The visible source Background makes
+the tested output opaque; alpha/layer inclusion, normalization, atomic timeline
+adoption, cancellation and larger-clip resources remain. See
+[Krita preparation](krita_preparation.md) and the dated memo for measured scope.
+
+## 2026-11-04 continuation: cancellable native raster preparation
+
+A typed worker now renders explicit UUID visibility choices on a scratch KRA,
+normalizes alpha-safe full-frame RGBA8 and exact rational holds, and enforces
+memory/disk/time/cel/scene budgets without live scene mutation. Actual native
+transparent, still, nonzero-range/fractional cases and cancellation/resource-failure
+cleanup are tested. Metadata follows native animation-index precedence. This is
+still preparation, not an in-app importer or native layered editor; see
+[prepared raster clip contract](raster_clip_preparation.md) and the dated memo.
+
+## 2026-11-04 continuation: reviewed native artwork adoption
+
+Stage4/§14 now exposes desktop Draw → Import Krita artwork, native visibility
+review, cancellable hidden preparation, checkerboard/frame candidate review and
+atomic new-layer adoption with one Undo. Scene/frame/revision/source guards refuse
+stale work. Normalized editable holds and descriptive ancestry use existing HAS,
+recovery and preview/movie paths. Native layer editing/audio, long/dense clips,
+source refresh, video/chroma/nesting and arbitrary native fidelity remain open.
+See [Krita import](krita_import.md) and actual dated verification in the memo.
+
+## 2026-11-04 continuation: reusable authored body poses
+
+Original Stage3's pose-library requirement now has Simple named body poses with
+isolated thumbnails, current-frame use through normal auto-key/draft controls,
+rename/duplicate/removal and one Undo. Advanced native HAS-pose import/export is
+strictly bound to the same source/ordered rig; it does not guess retargeting.
+Optional model metadata uses existing HAS/recovery/lesson paths. Root placement,
+face, physics/contact targets and generated motion remain independent. See
+[body-pose library](body_pose_library.md) and dated verification for accepted
+generic/native scopes, budgets and unfinished full Stage3–5/artist acceptance.

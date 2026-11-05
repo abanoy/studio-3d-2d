@@ -62,7 +62,12 @@ func run() -> void:
 		check(FileAccess.file_exists(app.last_export_folder.path_join("movie.mp4")) and lesson.satisfied() and app.has_project.path.is_empty(),"successful unsaved export completes task without forcing a personal project save")
 		if not await advance(11):return
 		print("FIRST_MOVIE_RESUME "+JSON.stringify({"checks":checks,"failures":failures}));lesson.active=false;app.free();quit(0 if failures==0 else 1);return
-	check(lesson.start(First.ID,true),"beginner course opens real included empty HAS");await job()
+	app.home.open_home()
+	var practice: Button=app.home.find_child("FirstMoviePractice",true,false)
+	check(practice!=null and practice.is_visible_in_tree() and practice.text=="Make your first movie","new animator can start the first movie directly from Home")
+	if practice:practice.pressed.emit()
+	await job()
+	check(lesson.active and lesson.panel.visible and not app.home.visible and lesson.instruction.text==First.DEFINITION.steps[0],"Home opens practice with the first map instruction visible")
 	check(lesson.active and lesson.step==0 and app.renderer.world_state().objects.is_empty() and app.world_selection.selected.is_empty() and app.video.world_background=="black","beginner practice starts empty, black and unselected")
 	check(not lesson.satisfied(),"empty scene cannot satisfy map import")
 	var initial: Dictionary=Store.ui(app);var history: int=app.history.size();lesson.show_hint();await settled()
@@ -79,7 +84,21 @@ func run() -> void:
 	lesson.show_hint();await settled();check(lesson.marker.visible and lesson.marker.get_global_rect().encloses(app.physics_editor.toggle.get_global_rect()),"hint switches to the real Physics control after import")
 	app.physics_editor.toggle.button_pressed=false;await settled();check(not app.physics_editor.is_running(),"normal Physics off freezes imported practice figure")
 	if not await advance(2):return
-	var session: String=lesson.session;lesson.leave(true);check(lesson.start(First.ID,false,session) and lesson.observed.get("physics_seen",false),"Continue retains genuine physics observation with the frozen scene")
+	var session: String=lesson.session
+	var early_save:=folder.path_join("First practice in progress.has")
+	app.has_project.save_file(early_save,"packed");await job()
+	var early_hash:=FileAccess.get_sha256(early_save)
+	lesson.leave(true);app.home.open_home()
+	practice=app.home.find_child("FirstMoviePractice",true,false)
+	check(practice!=null and practice.text=="Continue your first movie","Home offers the saved first-movie practice")
+	check(not early_hash.is_empty() and app.home.find_child("RecentProject",true,false)!=null,"Home shows the personal save beside the unfinished lesson")
+	if practice:practice.pressed.emit()
+	await settled()
+	for child in app.get_children():
+		if child is ConfirmationDialog and child.visible:child.get_ok_button().pressed.emit()
+	await settled()
+	check(lesson.active and lesson.session==session and lesson.observed.get("physics_seen",false) and not app.home.visible,"Home Continue restores the same lesson, frozen scene and observed physics step")
+	check(FileAccess.get_sha256(early_save)==early_hash,"resuming the lesson preserves the separate personal project")
 	lesson.previous();await settled();check(lesson.step==1 and First.object(lesson,"model")==null and not lesson.observed.has("physics_seen"),"Previous restores map-only scene and removes later simulation evidence")
 	await import_practice("Practice figure.glb");rig=First.object(lesson,"model");for i in range(20):await physics_frame
 	lesson.next_tick=0;lesson._process(0);app.physics_editor.toggle.button_pressed=false;await settled();if not await advance(2):return
@@ -110,6 +129,12 @@ func run() -> void:
 	var press:=InputEventMouseButton.new();press.button_index=MOUSE_BUTTON_LEFT;press.pressed=true;app.canvas_input(press,Vector2(80,80));var motion:=InputEventMouseMotion.new();app.canvas_input(motion,Vector2(160,80));press.pressed=false;app.canvas_input(press,Vector2(160,80));await settled()
 	check(lesson.satisfied() and World.portable(app.renderer.world_state())==world and app.keys==shots,"actual routed drawing creates visible Ink independently of all3D data")
 	if not await advance(8):return
+	lesson.action_button.pressed.emit();await settled()
+	check(app.audio_clips.size()==1 and app.audio_clips[0].start_frame==24 and app.audio_clips[0].source.sha256==lesson.asset_digest("Practice cue.wav"),"the optional practice cue aligns with the hand and drawing at frame24")
+	lesson.action_button.pressed.emit()
+	check(app.audio_clips.size()==1,"repeated cue action keeps just one sound")
+	app.undo();check(app.audio_clips.is_empty(),"one Undo removes the timed cue")
+	app.redo();check(app.audio_clips.size()==1 and app.audio_clips[0].start_frame==24,"Redo restores the timed cue in one edit")
 	check(not lesson.satisfied(),"paused scene does not count as preview before actual playback")
 	app.set_frame(0);app.toggle_play();await settled();lesson.next_tick=0;lesson._process(0);check(lesson.observed.get("preview_seen",false) and lesson.step==8 and app.playing,"actual playback is observed while teacher leaves transport running")
 	app.toggle_play();if not await advance(9):return
@@ -122,16 +147,65 @@ func run() -> void:
 	click.button_index=MOUSE_BUTTON_LEFT;click.pressed=true;click.position=start;app.timeline._gui_input(click);var drag:=InputEventMouseMotion.new();drag.position=start+Vector2(app.timeline.x(28)-app.timeline.x(second.start),0);drag.button_mask=MOUSE_BUTTON_MASK_LEFT;app.timeline._gui_input(drag);click.pressed=false;click.position=drag.position;app.timeline._gui_input(click);await settled()
 	check(lesson.satisfied() and rig.data.animation_clips[1].start==28 and app.keys==shots and World.portable(app.renderer.world_state()).objects.size()==2,"actual timeline drag retimes source animation without moving camera or removing model")
 	if not await advance(10):return
+	check(lesson.align_cue.visible and app.audio_clip.start_frame==24,"the retimed pose offers optional sound alignment")
+	lesson.align_cue.pressed.emit()
+	check(app.audio_clip.start_frame==40 and not lesson.align_cue.visible,"alignment places the practice cue on the retimed hand raise")
+	app.undo();lesson.next_tick=0;lesson._process(0)
+	check(app.audio_clip.start_frame==24 and lesson.align_cue.visible,"Undo restores the Ink-frame timing and offers alignment again")
+	app.redo();lesson.next_tick=0;lesson._process(0)
+	check(app.audio_clip.start_frame==40 and not lesson.align_cue.visible,"Redo restores the hand-raise timing and clears the alignment offer")
 	check(not lesson.satisfied(),"preexisting or absent export cannot complete final task")
 	lesson.action_button.pressed.emit();await settled();var save:=picker();check(save!=null and save.file_mode==FileDialog.FILE_MODE_SAVE_FILE,"optional lesson Save opens normal portable HAS dialog")
 	var personal:=folder.path_join("My first movie.has");if save:save.file_selected.emit(personal)
 	await job();check(app.has_project.path==personal and not app.dirty,"actual optional personal save uses ordinary packed project worker")
+	var live_revision: int=app.recovery_revision
+	app.home.open_home();practice=app.home.find_child("FirstMoviePractice",true,false)
+	check(practice!=null and practice.text=="Return to your first movie","active lesson offers a direct return from Home")
+	if practice:practice.pressed.emit()
+	check(not app.home.visible and lesson.session==session and app.has_project.path==personal and app.recovery_revision==live_revision,"returning to the active lesson preserves the open project and editor revision")
 	var encoder_path: String=app.encoder_path.text;app.encoder_path.text=folder.path_join("missing-encoder.exe");var error: String=await app.export_movie(folder);check(not error.is_empty() and not lesson.satisfied(),"failed encoder preflight never marks export task complete");app.encoder_path.text=encoder_path
+	check(not app.movie_folder_button.visible and app.last_finished_movie.is_empty(),"failed first export offers no finished movie")
 	app.set_frame(40);var expected: Image=await app.renderer.capture(app.keys,app.layers,40,true);var personal_hash:=FileAccess.get_sha256(personal)
 	lesson.export_button.pressed.emit();while app.exporting:await process_frame
 	check(lesson.satisfied() and app.last_export_folder.get_base_dir()==folder and FileAccess.get_sha256(personal)==personal_hash,"normal Export movie uses saved project folder and records actual success without changing HAS")
+	check(app.movie_folder_button.is_visible_in_tree() and app.movie_folder_button.tooltip_text==app.last_finished_movie and FileAccess.file_exists(app.last_finished_movie),"successful export exposes the exact completed movie in Simple")
 	check(Image.load_from_file(app.last_export_folder.path_join("frame_000041.png")).get_data()==expected.get_data(),"first-movie export exactly matches animated pose/camera/Ink preview at40")
 	if not await advance(11):return
 	var movie: String=app.last_export_folder.path_join("movie.mp4");lesson.leave(true);lesson.store.write_json(folder.path_join("first-expected.json"),{"session":session,"ui":Store.ui(app),"world":World.portable(app.renderer.world_state()),"paint":Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)})
+	var movie_sha:=FileAccess.get_sha256(movie)
+	var cancel_after_frame:=func():
+		if app.exporting and FileAccess.file_exists(app.last_export_folder.path_join("frame_000001.png")):app.cancel_button.pressed.emit()
+	process_frame.connect(cancel_after_frame)
+	var interrupted: String=await app.export_movie(folder)
+	process_frame.disconnect(cancel_after_frame)
+	check("cancel" in interrupted.to_lower() and app.saved_frames_button.visible and app.saved_frames_button.tooltip_text==app.last_export_folder and FileAccess.file_exists(app.last_export_folder.path_join("frame_000001.png")),"an interrupted export exposes its own saved PNG frames")
+	check(app.movie_folder_button.visible and app.last_finished_movie==movie and FileAccess.get_sha256(movie)==movie_sha and not FileAccess.file_exists(app.last_export_folder.path_join("movie.mp4")),"the completed movie remains available separately from the cancelled render")
+	check(not app.retry_encode_button.visible,"partial frames cannot be retried as a complete movie")
+	var cancel_at_encode:=func():
+		if app.exporting and app.encoder!=null and app.encoder.process_id>0:app.cancel_button.pressed.emit()
+	process_frame.connect(cancel_at_encode)
+	var encode_error: String=await app.export_movie(folder)
+	process_frame.disconnect(cancel_at_encode)
+	check("cancel" in encode_error.to_lower() and app.retry_encode_button.visible and app.last_finished_movie==movie,"encoding interruption offers Retry and preserves the previous movie")
+	var rendered_folder: String=app.last_export_folder
+	var frame_hash:=FileAccess.get_sha256(rendered_folder.path_join("frame_000041.png"))
+	var mix_hash:=FileAccess.get_sha256(rendered_folder.path_join("mixed_audio.wav"))
+	for name in ["frame_000041.png","mixed_audio.wav"]:
+		var asset:=rendered_folder.path_join(name)
+		var held:=asset+".test-held"
+		check(DirAccess.rename_absolute(asset,held)==OK,"temporarily withhold the test render input "+name)
+		await app.retry_saved_movie()
+		check(name in app.status.text and app.retry_encode_button.visible and not app.exporting and app.encoder==null and app.last_finished_movie==movie,"missing "+name+" is identified and retry remains available")
+		check(DirAccess.rename_absolute(held,asset)==OK,"restore the test input "+name)
+	var installed_encoder: String = app.encoder_path.text
+	app.encoder_path.text = rendered_folder.path_join("unavailable-ffmpeg.exe")
+	await app.retry_saved_movie()
+	var diagnostic: String = app.status.text.get_slice("Details: ",1)
+	check("unavailable-ffmpeg.exe" in app.status.text and FileAccess.file_exists(diagnostic) and diagnostic.get_base_dir()==rendered_folder,"retry identifies the unavailable encoder and stores its diagnostic beside the frames")
+	check(app.retry_encode_button.visible and not app.retry_encode_button.disabled and not app.exporting and app.encoder==null and app.last_finished_movie==movie,"failed retry restores editor controls and preserves the finished movie")
+	app.encoder_path.text = installed_encoder
+	await app.retry_saved_movie()
+	check(not app.retry_encode_button.visible and app.last_finished_movie.get_base_dir()==rendered_folder and app.last_finished_movie.get_file()!="movie.mp4" and FileAccess.file_exists(app.last_finished_movie),"retry produces a separate MP4 in the saved render folder")
+	check(FileAccess.get_sha256(rendered_folder.path_join("frame_000041.png"))==frame_hash and FileAccess.get_sha256(rendered_folder.path_join("mixed_audio.wav"))==mix_hash and FileAccess.get_sha256(movie)==movie_sha,"retry preserves the original frames, sound mix and prior successful movie")
 	check(not Store.valid_observations({"export_done":"yes"}) and not Store.valid_observations({"other":true}) and not Store.checkpoint_name("basic-pose","step_11") and Store.checkpoint_name(First.ID,"step_11"),"versioned course counts and observation validation preserve old checkpoint contracts")
 	print("FIRST_MOVIE_SMOKE "+JSON.stringify({"checks":checks,"failures":failures,"folder":folder,"movie":movie}));app.free();quit(0 if failures==0 else 1)

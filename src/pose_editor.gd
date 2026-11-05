@@ -3,6 +3,7 @@ const BoneLabels=preload("res://src/bone_labels.gd")
 const Model = preload("res://src/model.gd")
 const Timeline = preload("res://src/timeline.gd")
 const LimbIK=preload("res://src/limb_ik.gd")
+const Joints=preload("res://src/joint_constraints.gd")
 const FootHold=preload("res://src/foot_hold.gd")
 var app
 var panel: VBoxContainer
@@ -43,10 +44,13 @@ var shape_button: Button
 var shape_window: Window
 var shape_close: Button
 var drag_chain:={}
+var drag_joints:={}
 var hold_feet: CheckButton
 var drag_feet:={}
 var contacts: Node
 var motion: Node
+var movement_path: Node
+var pose_library: Node
 
 func active_rig() -> RefCounted:
 	return app.renderer.active_model()
@@ -60,6 +64,7 @@ func setup(owner_app, parent: Node) -> void:
 	shape_button=app.button(panel,"Shapes / expressions…",open_shapes)
 	app.label(panel,"Hold Alt to reveal bones.").add_theme_font_size_override("font_size",12)
 	app.button(panel, "Record pose key", record_dialog)
+	pose_library=preload("res://src/pose_library_editor.gd").new();add_child(pose_library);pose_library.setup(self,panel)
 	auto_key = CheckButton.new()
 	auto_key.text = "Auto-key pose edits"
 	auto_key.button_pressed = true
@@ -93,7 +98,7 @@ func setup(owner_app, parent: Node) -> void:
 	panel.move_child(operation, 4)
 	panel.move_child(space, 5)
 	limb_ik=CheckButton.new();limb_ik.text="Move limbs naturally";limb_ik.button_pressed=true
-	limb_ik.tooltip_text="In Move, drag a supported hand or foot to bend its limb. Rotate remains direct posing. Turn off to move bones freely."
+	limb_ik.tooltip_text="Move a supported hand or foot to bend its limb. Imported joint controls also move their linked bones. Turn off for direct bone posing."
 	panel.add_child(limb_ik);panel.move_child(limb_ik,6)
 	limb_ik.toggled.connect(func(_value):finish_drag();refresh_values())
 	hold_feet=CheckButton.new();hold_feet.text="Hold feet while posing"
@@ -102,6 +107,7 @@ func setup(owner_app, parent: Node) -> void:
 	hold_feet.toggled.connect(func(_value):finish_drag();refresh_values())
 	contacts=preload("res://src/contact_editor.gd").new();contacts.app=app;app.add_child(contacts);contacts.setup(panel)
 	motion=preload("res://src/motion_editor.gd").new();motion.app=app;app.add_child(motion);motion.setup(panel)
+	movement_path=preload("res://src/movement_path_editor.gd").new();movement_path.app=app;app.add_child(movement_path);movement_path.setup(panel)
 	flip_bend=app.button(panel,"Reverse limb bend",reverse_limb_bend);app.advanced(flip_bend)
 	snap = CheckButton.new()
 	snap.text = "Snap (15° / 0.1 units)"
@@ -243,14 +249,17 @@ func commit(before: Dictionary, authored := false) -> void:
 		var pose: Dictionary = rig.sample_body(app.frame,true) if Model.is_contact(rig.data) else rig.sample(app.frame, true)
 		var transform: Dictionary = rig.sample_transform(app.frame, true)
 		var old_pose := previous.sample_body(app.frame,true) if Model.is_contact(before) else previous.sample(app.frame, true)
-		var different := not same_transform(transform, previous.sample_transform(app.frame, true))
+		var old_transform:=previous.sample_transform(app.frame,true)
+		var different := not same_transform(transform, old_transform)
 		var channels: Array=["@root"] if different else []
 		for id in pose.keys() + old_pose.keys():
 			if not same_transform(pose.get(id, Model.identity()), old_pose.get(id, Model.identity())):
 				different=true
 				if not id in channels:channels.append(id)
 		if different:
-			var error: String=rig.put_pose_key({"frame": app.frame, "pose": pose, "transform": transform, "authored_channels":channels,"interpolation": interpolation.get_item_text(interpolation.selected)},int(app.video.duration_frames),false,before)
+			var key:={"frame": app.frame, "pose": pose, "transform": transform, "authored_channels":channels,"interpolation": interpolation.get_item_text(interpolation.selected)}
+			if before.get("format")=="studio_model_9" and "@root" in channels:key["root_component_fields"]=load("res://src/root_component_document.gd").changed_root_fields(old_transform,transform)
+			var error: String=rig.put_pose_key(key,int(app.video.duration_frames),false,before)
 			if not error.is_empty():
 				rig.data=before.duplicate(true);apply_frame();refresh_values();app.message(error);return
 			keyed = true
@@ -270,6 +279,8 @@ func commit(before: Dictionary, authored := false) -> void:
 	apply_frame()
 	refresh_values()
 	if keyed: app.message("Pose key saved automatically at frame %d. Undo restores the edit and its key." % app.frame)
+	elif authored and before != after and not auto_key.button_pressed:
+		app.message("Pose adjusted. Use Record pose key to keep this pose on the timeline.")
 
 func same_transform(a: Dictionary, b: Dictionary) -> bool:
 	var qa := Timeline.quaternion(a.rotation_xyzw)
@@ -330,6 +341,7 @@ func make_tree_item(id: String) -> TreeItem:
 
 func refresh_values() -> void:
 	if motion:motion.sync()
+	if movement_path:movement_path.sync()
 	if app.physics_editor:app.physics_editor.sync()
 	if base_shapes:base_shapes.sync()
 	if animated_shapes:animated_shapes.sync()
@@ -393,14 +405,35 @@ func apply_numeric() -> void:
 			if operation.selected == 0: r[i] = snappedf(values[i], 15) if snap.button_pressed else values[i]
 			else: p[i] = snappedf(values[i], 0.1) if snap.button_pressed else values[i]
 	if p==Timeline.vector(old.position) and operation.selected==1:return
+	var joints_plan:=joint_plan()
+	if joints_plan.has("error"):app.message(joints_plan.error);return
+	var desired_rotation:=Quaternion.from_euler(r*PI/180)
+	if not joints_plan.is_empty() and same_transform({"position":[p.x,p.y,p.z],"rotation_xyzw":[desired_rotation.x,desired_rotation.y,desired_rotation.z,desired_rotation.w]},old):return
 	var feet:=prepare_feet()
 	if feet.has("error"):app.message(feet.error);return
 	set_delta(p, Quaternion.from_euler(r * PI / 180))
+	if not joints_plan.is_empty():
+		var solved:=Joints.solve(active_rig(),joints_plan,active_rig().data.pose)
+		if solved.has("error"):active_rig().data=before;apply_frame();refresh_values();app.message(solved.error);return
+		active_rig().data.pose=solved.pose
 	if not feet.is_empty():
 		apply_frame()
 		var error:=FootHold.solve(active_rig(),feet,apply_frame)
 		if not error.is_empty():active_rig().data=before;apply_frame();refresh_values();app.message(error);return
 	commit(before, true)
+
+func joint_plan() -> Dictionary:
+	if not limb_ik.button_pressed or selected=="@root":return {}
+	var rig=active_rig();var result:=Joints.plan(rig,selected)
+	if result.is_empty() or result.has("error"):return result
+	if Model.is_contact(rig.data):
+		var segment: Dictionary=Model.contact_animation().Contacts.active(rig.data.animation_clips,app.frame)
+		for foot in segment.get("feet",[]):
+			for chain in result.chains:
+				if chain.effector in foot.ids:return {"error":"Release planted feet before moving this joint control."}
+				for link in chain.links:
+					if link.id in foot.ids:return {"error":"Release planted feet before moving this joint control."}
+	return result
 
 func apply_scale() -> void:
 	if not active_rig() or app.exporting:return
@@ -426,7 +459,14 @@ func reset_selected() -> void:
 	if not contact_error.is_empty():app.message(contact_error);return
 	if not active_rig(): return
 	var before: Dictionary = active_rig().data.duplicate(true)
+	var joints_plan:=joint_plan()
+	if joints_plan.has("error"):app.message(joints_plan.error);return
+	if not joints_plan.is_empty() and same_transform(active_rig().sample(app.frame,true).get(selected,Model.identity()),Model.identity()):return
 	set_delta(Vector3.ZERO, Quaternion.IDENTITY)
+	if not joints_plan.is_empty():
+		var solved:=Joints.solve(active_rig(),joints_plan,active_rig().data.pose)
+		if solved.has("error"):active_rig().data=before;apply_frame();refresh_values();app.message(solved.error);return
+		active_rig().data.pose=solved.pose
 	commit(before, true)
 
 func reverse_limb_bend() -> void:
@@ -627,11 +667,14 @@ func input(event: InputEvent, point: Vector2) -> void:
 		if not hit.is_empty():
 			var contact_error:=contact_edit_error()
 			if not contact_error.is_empty():app.message(contact_error);return
+			var joints_plan:=joint_plan()
+			if joints_plan.has("error"):app.message(joints_plan.error);return
 			var before: Dictionary=active_rig().data.duplicate(true)
 			drag_feet=prepare_feet()
 			if drag_feet.has("error"):app.message(drag_feet.error);drag_feet={};return
 			dragging = true
-			drag_chain=LimbIK.chain(active_rig(),selected) if limb_ik.button_pressed and operation.selected==1 else {}
+			drag_joints=joints_plan
+			drag_chain=LimbIK.chain(active_rig(),selected) if limb_ik.button_pressed and operation.selected==1 and drag_joints.is_empty() else {}
 			drag_before = before
 			drag_start = point; drag_axis = hit.axis; drag_world = hit.world; drag_units = hit.units
 			drag_screen_axis = hit.points[-1] - hit.points[0] if operation.selected == 1 else Vector2(1, -1)
@@ -644,7 +687,7 @@ func input(event: InputEvent, point: Vector2) -> void:
 		if tree_items.has(selected): tree_items[selected].select(0); tree.scroll_to_item(tree_items[selected])
 		refresh_values()
 	if event is InputEventMouseMotion and dragging:
-		if not contacts.affected(active_rig()).is_empty() and point==drag_start:
+		if (not contacts.affected(active_rig()).is_empty() or not drag_joints.is_empty()) and point==drag_start:
 			active_rig().data=drag_before.duplicate(true);apply_frame();refresh_values();return
 		var value: Dictionary = drag_before if selected == "@root" else active_rig().sample(app.frame, true).get(selected, Model.identity())
 		# Always derive from the gesture's original state, so events do not accumulate error.
@@ -671,7 +714,9 @@ func input(event: InputEvent, point: Vector2) -> void:
 				var rig=active_rig();rig.data=drag_before.duplicate(true);begin_draft();apply_frame()
 				var solved:=LimbIK.solve(rig,drag_chain,drag_world.origin+drag_axis*amount)
 				if solved.has("error"):rig.data=drag_before.duplicate(true);app.message(solved.error)
-				else:rig.data.pose=solved.pose
+				else:
+					rig.data.pose=solved.pose
+					app.message("Target is beyond this limb's reach. Move it closer or move the model." if solved.clamped else "Release to apply the pose. Escape cancels.")
 				apply_frame();refresh_values();return
 			var delta := drag_axis * amount
 			if selected=="@root" and active_rig().root.get_parent() is Node3D:
@@ -684,8 +729,15 @@ func input(event: InputEvent, point: Vector2) -> void:
 			position += delta
 		var affects_contacts: bool=not contacts.affected(active_rig()).is_empty()
 		var last_valid: Dictionary=active_rig().data.duplicate(true) if affects_contacts else active_rig().data
-		if not drag_feet.is_empty():active_rig().data=drag_before.duplicate(true)
+		if not drag_feet.is_empty() or not drag_joints.is_empty():active_rig().data=drag_before.duplicate(true)
 		set_delta(position, rotation.normalized())
+		if not drag_joints.is_empty():
+			var solved:=Joints.solve(active_rig(),drag_joints,active_rig().data.pose)
+			if solved.has("error"):active_rig().data=drag_before.duplicate(true);apply_frame();refresh_values();app.message(solved.error);return
+			active_rig().data.pose=solved.pose
+			var limited:=false
+			for chain in solved.chains:limited=limited or float(chain.residual)>.001
+			app.message("A joint target is outside reach. Release to keep this pose, or Escape to cancel." if limited else "Joint pose preview. Release to apply; Escape cancels.")
 		apply_frame()
 		var contact_error: String=contacts.reach_error(active_rig(),app.frame,true) if affects_contacts else ""
 		if not contact_error.is_empty():
@@ -701,9 +753,12 @@ func finish_drag(cancel := false) -> void:
 	if cancel and contacts and contacts.viewport and contacts.viewport.active:contacts.viewport.stop();return
 	if not dragging: return
 	dragging = false
-	if cancel: restore_state(drag_before, false)
+	if cancel:
+		restore_state(drag_before, false)
+		app.message("Pose edit cancelled. Previous pose restored.")
 	else: commit(drag_before, true)
 	drag_chain={}
+	drag_joints={}
 	drag_feet={}
 
 func contact_live_edit_error() -> String:

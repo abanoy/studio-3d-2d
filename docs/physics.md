@@ -141,3 +141,100 @@ whole current pose and stops both. Reviewed weighted HAS helpers can supply miss
 chains; native MMD secondary rules and full physical cloth fidelity remain incomplete.
 See secondary_motion.md for
 controls, smoothing, fixed-step sampling, portability and explicit limitations.
+
+## Limb mass trial (development, 2026-11-03)
+
+An experimental distribution assigned relative weights of 1.0 / 0.70 / 0.35 to the upper arm, forearm and hand and 2.2 / 1.35 / 0.65 to the thigh, shin and foot. The total mass of each rig stayed the same. Joint limits, collision shapes and damping stayed at their existing settings.
+
+The test dropped each model for 360 physics frames and measured the largest separation between physically connected joints at the end, in millimeters. Each column is one run of the same test.
+
+| Model | Experimental | Restored |
+| --- | ---: | ---: |
+| Miku | 33.81 | 0.35 |
+| GMod Reimu | 23.97 | 0.73 |
+| SFM Scout | 1.67 | 1.45 |
+| VRM1 | 43.91 | 0.49 |
+| VRM0 | 1.12 | 0.13 |
+
+The experimental profile failed three of 58 checks. The restored profile passed all 58. We retained the existing distribution. These end-of-drop measurements do not assess transient joint separation or subjective looseness. The next investigation should identify when and where a limb becomes constrained before trying another mass distribution.
+
+## Limb travel during a six-second drop
+
+Every six physics ticks, the diagnostic measures each physical limb joint relative to its physical parent and compares that orientation to its initial orientation. The table gives the smaller and larger of the two peak angles (left and right), rounded to whole degrees. It includes twist and swing, and may miss peaks between samples. Each condition uses one drop at the same starting height with the existing masses, joint limits and floor.
+
+| Rig and condition | Shoulders | Elbows | Hips | Knees |
+| --- | ---: | ---: | ---: | ---: |
+| Scout ordinary | 127 / 139 | 38 / 39 | 46 / 63 | 124 / 126 |
+| Scout floor contact only | 110 / 133 | 84 / 101 | 105 / 106 | 136 / 138 |
+| VRM1 ordinary | 82 / 115 | 38 / 69 | 35 / 58 | 135 / 139 |
+| VRM1 floor contact only | 122 / 136 | 14 / 21 | 103 / 109 | 149 / 153 |
+| VRM0 ordinary | 58 / 68 | 38 / 40 | 38 / 40 | 146 / 146 |
+| VRM0 floor contact only | 125 / 133 | 98 / 102 | 118 / 123 | 152 / 154 |
+
+The floor-only condition is a diagnostic and is never selected in Studio. Compare corresponding native joint IDs in the JSON for per-side peaks, peak ticks and final angles. Whole-body falls can change trajectories when contacts change. A difference between these columns does not by itself identify the collider or prove that a joint limit should be loosened.
+
+VRM1 sensitivity check: two ordinary runs with unchanged mass and contact settings gave peak left/right elbow travel of 18 / 81, then 69 / 38 degrees in the same joint order. Scout was within one degree across these two runs. Inspect Scout arm contacts before considering broader rig changes.
+
+## Scout forearm contact trace
+
+Each forearm reported up to 32 physics contacts, sampled every tick of a 360-tick drop. Counts are ticks with at least one reported contact against that peer, not impact force or uninterrupted contact duration. Static scene colliders are recorded separately from named model bodies.
+
+| Condition | Left elbow peak | Right elbow peak | Left arm/spine contact ticks | Maximum final joint separation |
+| --- | ---: | ---: | ---: | ---: |
+| Ordinary | 38.2 degrees | 38.6 degrees | 21 | 2.60 mm |
+| All model self-contacts disabled | 84.1 degrees | 101.4 degrees | 0 | 6.56 mm |
+| Only left forearm / upper spine excluded | 38.8 degrees | 41.6 degrees | 0 | 0.31 mm |
+
+These are single trials. Changing contacts can change how the whole character lands. Comparable peak travel does not prove comparable animation quality. The pair exclusion and the all-model exclusion are diagnostic only; runtime collision behavior is unchanged.
+
+## Scout full arm-chain contacts
+
+One ordinary 360-tick native drop, with both upper arms, forearms and hands reporting. Rows count ticks, not contact force. First/last can span multiple separated intervals. The JSON includes those intervals and static-scene contacts.
+
+| Body | Other model body | Contact ticks | First | Last |
+| --- | --- | ---: | ---: | ---: |
+| bip_hand_L | bip_foot_L | 7 | 107 | 113 |
+| bip_hand_L | bip_hip_L | 3 | 100 | 104 |
+| bip_hand_L | bip_knee_L | 5 | 105 | 109 |
+| bip_hand_L | bip_pelvis | 83 | 278 | 360 |
+| bip_hand_R | bip_foot_R | 21 | 108 | 128 |
+| bip_hand_R | bip_hip_R | 4 | 100 | 105 |
+| bip_hand_R | bip_knee_R | 13 | 106 | 118 |
+| bip_lowerArm_L | bip_pelvis | 98 | 263 | 360 |
+| bip_lowerArm_L | bip_spine_2 | 119 | 144 | 360 |
+| bip_upperArm_L | bip_collar_R | 1 | 163 | 163 |
+| bip_upperArm_L | bip_pelvis | 13 | 101 | 113 |
+| bip_upperArm_L | bip_spine_0 | 23 | 103 | 125 |
+| bip_upperArm_L | bip_spine_1 | 122 | 2 | 124 |
+| bip_upperArm_L | bip_spine_3 | 13 | 165 | 177 |
+| bip_upperArm_R | bip_head | 159 | 193 | 360 |
+| bip_upperArm_R | bip_pelvis | 10 | 102 | 111 |
+| bip_upperArm_R | bip_spine_0 | 10 | 101 | 110 |
+
+The same physical encounter can appear in both reporting bodies. A frequently reported peer is a candidate for an isolated test, not a reason on its own to disable collisions.
+
+A first six-reporter trace ended with 9.29 mm joint separation, exceeding the existing 5 mm target. Enabling contact reporting on additional bodies can change the observed trajectory. That failing run is retained in scout-six-reporters-first.json. The established release-profile stability check continues with its original reporting setup.
+
+Matched six-body diagnostic trace_arm_chain: left/right elbow peaks [59.1, 38.1] degrees, maximum end separation 0.76 mm.
+
+Matched six-body diagnostic without_left_upper_arm_spine: left/right elbow peaks [40.5, 38.2] degrees, maximum end separation 0.53 mm.
+
+## Grab attachment at the clicked surface
+
+The physical grab uses a pin at the selected world point. Both its anchor and the
+pin now have their world-relative position before entering the physics world.
+The same point initializes screen position and ray depth for every grab entry.
+Previously the anchor entered at the scene origin and was repositioned afterward.
+
+A controlled Scout test fixes the upper arm, leaves the limb's ordinary collision
+settings in place, disables gravity on this disposable rig, settles for90 ticks and
+pins the forearm three quarters of the way toward the wrist. The ordinary pointer
+motion handler then drives a stationary hold or a 45-degree arc over45 ticks and
+holds through tick90. With the previous attachment order, the stationary case
+briefly reached141 degrees and returned to neutral. With the new order it measured
+0 degrees throughout. Opposite pulls finished at about41.3 and45.0 degrees, within
+2.2mm of the requested world points. These results address initial grab snap in
+this fixture; they do not establish the quality of unrestricted whole-body falls.
+
+Run tests/verify_scout_grab.py with the existing prepared SFM Scout fixture. The
+test also checks that grab/release leaves authored motion intact.

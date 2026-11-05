@@ -21,7 +21,7 @@ def engine_path():
                        "and set HYBRID_GODOT to its full executable path. See README.md.")
 
 
-def command(script=None, headless=False, extra=(), quiet=False):
+def command(script=None, headless=False, extra=(), quiet=False, project=None):
     engine = engine_path()
     version = subprocess.check_output([engine, "--version"], text=True,
                                      creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0).strip()
@@ -44,6 +44,13 @@ def command(script=None, headless=False, extra=(), quiet=False):
         args += ["--script", script]
     args += list(extra)
     if testing and "--" not in args: args.append("--")
+    if project is not None:
+        path = Path(project).expanduser().resolve(strict=True)
+        if not path.is_file() or path.suffix.lower() != ".has":
+            raise ValueError("Choose a .has project file.")
+        if "--" not in args:
+            args.append("--")
+        args.extend(["--open-project", str(path)])
     if testing and not headless and os.name == "nt":
         # Use the actual windowed engine, never its console wrapper: the wrapper
         # creates another process and hides the real window owner's identity.
@@ -58,8 +65,11 @@ def command(script=None, headless=False, extra=(), quiet=False):
 
 def main(quiet=False):
     parser = argparse.ArgumentParser()
+    parser.add_argument("project", nargs="?", help="Open this .has project at startup")
     parser.add_argument("--test", choices=["unit", "spikes", "editor", "legacy", "ui", "recovery", "recovery-write", "pose", "source", "source-browser"])
     options = parser.parse_args()
+    if options.test and options.project:
+        parser.error("Choose either a project or a test.")
     try:
         if options.test == "unit":
             args = command("tests/unit.gd", headless=True)
@@ -80,7 +90,7 @@ def main(quiet=False):
         elif options.test == "source-browser":
             args = command("tests/source_browser_smoke.gd")
         else:
-            args = command(quiet=quiet)
+            args = command(quiet=quiet, project=options.project)
         if options.test:
             if "--" not in args: args.append("--")
             args.append("--demo-room")
@@ -89,7 +99,7 @@ def main(quiet=False):
                 return subprocess.call(args, cwd=ROOT, stdout=log, stderr=log,
                                        creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
         return subprocess.call(args, cwd=ROOT)
-    except (RuntimeError, OSError, subprocess.CalledProcessError) as error:
+    except (RuntimeError, ValueError, OSError, subprocess.CalledProcessError) as error:
         print(error, file=sys.stderr)
         return 1
 

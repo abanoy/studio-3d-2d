@@ -15,5 +15,12 @@ def main():
     video=json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-show_streams','-show_format','-of','json',results[0]['movie']],text=True,encoding='utf-8'))
     v=next(s for s in video['streams'] if s['codec_type']=='video');assert (v['codec_name'],v['width'],v['height'],v['r_frame_rate'],v['nb_read_frames'])==('h264',1920,1080,'24/1','48') and abs(float(video['format']['duration'])-2)<.001,video
     assert originals=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'examples/tutorials').iterdir() if p.is_file()}
-    result={'results':results,'private_receipts':receipts,'originals':originals,'video':v};(ROOT/'output/first-movie-verification.json').write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps(result,indent=2))
+    import array
+    audio=next(s for s in video['streams'] if s['codec_type']=='audio')
+    assert audio['codec_name']=='aac'
+    pcm=array.array('h');pcm.frombytes(subprocess.check_output(['ffmpeg','-v','error','-i',results[0]['movie'],'-vn','-ac','1','-ar','48000','-f','s16le','-']))
+    if sys.byteorder!='little':pcm.byteswap()
+    onset=next(i for i,v in enumerate(pcm) if abs(v)>1000)
+    assert abs(onset-80000)<=240,onset
+    result={'results':results,'private_receipts':receipts,'originals':originals,'video':v,'cue_onset_sample':onset};(ROOT/'output/first-movie-verification.json').write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps(result,indent=2))
 if __name__=='__main__':main()

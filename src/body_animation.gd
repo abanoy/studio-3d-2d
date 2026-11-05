@@ -69,6 +69,7 @@ static func validate(data: Dictionary,duration: int) -> String:
 	return "Animation exceeds2048 combined body/expression controls." if count>Clips.MAX_TOTAL_KEYS else ""
 
 static func put(data: Dictionary,key: Dictionary,duration: int,prior: Dictionary) -> Dictionary:
+	if prior.get("format")=="studio_model_9":return load("res://src/root_component_document.gd").put(data,key,duration,prior)
 	var result:=promote(prior,duration)
 	if result.has("error"):return result
 	# Draft changes are separate from immutable curve baselines captured before the edit.
@@ -85,6 +86,7 @@ static func put(data: Dictionary,key: Dictionary,duration: int,prior: Dictionary
 	return changed if changed.has("error") else {"data":install(result,changed.data)}
 
 static func remove_key(data: Dictionary,frame: int,id: String,duration: int) -> Dictionary:
+	if data.get("format")=="studio_model_9":return load("res://src/root_component_document.gd").remove_part_key(data,frame,id,duration)
 	var changed:=B.remove_key(view(data),frame,id,duration)
 	if changed.has("error"):return changed
 	var result:=install(data,changed.data);var state:=B.sample(changed.data,frame)

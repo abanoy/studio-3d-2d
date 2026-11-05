@@ -57,7 +57,6 @@ func pointer(event: InputEvent, point: Vector2) -> bool:
 			var query:=PhysicsRayQueryParameters3D.create(origin,origin+camera.project_ray_normal(point)*2000,3)
 			var hit: Dictionary=app.renderer.viewport.find_world_3d().direct_space_state.intersect_ray(query)
 			if hit.is_empty() or not (hit.collider is PhysicalBone3D or hit.collider is RigidBody3D):return false
-			grab_point=point;grab_depth=origin.distance_to(hit.position)
 			return begin_grab(hit.collider,hit.position)
 		if event.button_index==MOUSE_BUTTON_RIGHT and event.pressed:release_grab();return false
 		if grabbing() and event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
@@ -70,12 +69,19 @@ func begin_grab(body: PhysicsBody3D, point: Vector3) -> bool:
 	for id in simulations:
 		if body in simulations[id].bodies.values():owner=id;break
 	if owner.is_empty():return false
+	var camera: Camera3D=app.renderer.camera
+	if camera.is_position_behind(point):return false
+	grab_point=camera.unproject_position(point)
+	grab_depth=camera.project_ray_origin(grab_point).distance_to(point)
 	release_grab();grabbed=body
 	app.world_selection.select_entity(owner,false)
 	grab_anchor=AnimatableBody3D.new();grab_anchor.name="PhysicsGrabAnchor";grab_anchor.sync_to_physics=false
 	grab_anchor.collision_layer=0;grab_anchor.collision_mask=0
-	app.renderer.world.add_child(grab_anchor);grab_anchor.global_position=point
-	grab_joint=PinJoint3D.new();app.renderer.world.add_child(grab_joint);grab_joint.global_position=point
+	var anchor_position: Vector3=app.renderer.world.to_local(point)
+	grab_anchor.position=anchor_position
+	app.renderer.world.add_child(grab_anchor)
+	grab_joint=PinJoint3D.new();grab_joint.position=anchor_position
+	app.renderer.world.add_child(grab_joint)
 	grab_joint.node_a=grab_joint.get_path_to(grab_anchor);grab_joint.node_b=grab_joint.get_path_to(body)
 	var message:=" Motion is unrecorded."
 	if recording and recording.active:message=" This body's motion is being recorded." if recording.targets.has(owner) else " This body's motion is outside the locked Local recording scope."
@@ -306,7 +312,7 @@ func queue_import_start(id: String, body: bool, hair: bool, ragdoll_only:=false)
 func process_import_starts() -> void:
 	if import_starts.is_empty() or app.exporting or app.playing or app.drawing or app.navigating or app.pose_editor.dragging:return
 	if app.source_import.pid>0 or app.has_project.pid>0 or app.has_dialog(app):return
-	if app.timeline and not app.timeline.moving_id.is_empty():return
+	if app.timeline and (not app.timeline.moving_id.is_empty() or app.timeline.audio_gesture_active()):return
 	for id in import_starts.keys():
 		var ticket: Dictionary=import_starts[id]
 		var actor: RefCounted=app.renderer.world_runtime.instance(id) if app.renderer.world_runtime else null

@@ -14,7 +14,8 @@ layers cannot be painted. The filled result changes only the active cel, includi
 its existing held frames; Copy drawing here first when a variation is wanted.
 An absent cel is created only when the fill is committed.
 
-Fill is four-connected and compares against the clicked seed, using premultiplied
+Fill defaults to four-connected; Advanced [Fill connections](fill_connections.md)
+can also join diagonal neighbors. It compares against the clicked seed, using premultiplied
 RGB and alpha distance so invisible RGB cannot create false boundaries. Advanced
 offers tolerance0–255, initially8. It replaces selected pixels with the exact
 chosen RGBA color. Identical results are no-ops. Existing cels use changed64pixel
@@ -22,11 +23,20 @@ tiles for one-step Undo; a new filled cel is also one undoable action.
 
 Small enclosed fills apply directly. A fill reaching any canvas edge or covering
 over half the canvas shows a candidate preview and **Apply fill / Cancel**. This
-is spill protection, not automatic gap closing. The preview composites all drawing
+is spill protection. The newer [Close gaps control](fill_gaps.md), default0,
+adds virtual closures with mandatory preview and leaves original ink untouched.
+The preview composites all drawing
 layers in their normal order over the unchanged3D view; it does not alter project
 pixels, save/recovery data or final rendering. Escape cancels. Ordinary painting,
 Undo, seek, New/Open, mode/tool changes, playback or export invalidate stale work.
 Pan/zoom can continue without changing the fill's raster coordinates.
+
+When the preview appears, Properties scrolls just enough to reveal its Apply and
+Cancel buttons after layout. This matters with resized/docked panels at1200px
+width. It happens once per new preview, leaves manual scrolling available and
+does not move focus or create an exclusive dialog. Closing the app disconnects a
+pending reveal callback. The actual narrow-window check verifies both complete
+button rectangles and routes pointer clicks to Cancel and Apply.
 
 One low-priority worker owns only detached RGBA byte arrays and a bounded iterative
 scanline traversal. It never accesses live Images, textures, nodes or native model
@@ -42,6 +52,13 @@ asset, rig, camera key or model/world format is modified by filling.
 
 ## Verification and remaining work
 
+The full particle-scene regression on2026-11-02 caught clipped preview buttons in
+the new workspace layout. That run is retained as failed. The correction passes
+18 unit+48 app checks, including actual pointer routing, independent pixels,
+packed/linked/recovery and MP4, at `output/fill/1793671335667726600`.
+The source was then frozen again; the replacement complete verifier and separate
+HAS wrapper subsequently terminated0. The original failed run remains separate.
+
 `python -u tests/verify_fill.py` checks exact region/bounds/alpha, independent BFS
 oracle pixels, transparent RGB, seed tolerance, invalid inputs and full-HD traversal.
 The hidden actual-app check routes zoom/pan pen and fill events, validates original
@@ -51,9 +68,11 @@ edge/gap cancel/Apply, real intervening painting, hidden-layer refusal, New/Home
 lifecycle, packed/linked/recovery, older two-layer files and MP4 preview agreement.
 See the latest progress memo for completed run counts and saved-copy status.
 
-Configurable gap closing/under-line expansion, anti-alias edge refinement,8connected
-mode, palette/eyedropper, pressure and richer layer counts remain
-required drawing work. [Layer management](drawing_layers.md) and one neighboring
+Advanced [Grow under lines](fill_expand.md) offers previewed0–8pixel expansion
+to cover beneath translucent ink; adaptive anti-alias edge refinement and
+richer layer counts remain required drawing work. [Pressure size](brush_pressure.md)
+and the existing color sampler have separate controls; physical tablet acceptance
+remains open. [Project swatches](project_palette.md), [layer management](drawing_layers.md) and one neighboring
 exposure each side as [onion guides](onion_skin.md) now have separate controls.
 Visible-stack sampling includes [layer opacity](layer_opacity.md); very faint
 boundaries may fall within the chosen tolerance. The current gap

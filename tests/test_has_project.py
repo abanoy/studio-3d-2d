@@ -13,6 +13,43 @@ import has_project as has
 
 
 class HasTests(unittest.TestCase):
+    def test_faded_audio_packed_and_linked_roundtrip(self):
+        for storage in ('packed','linked'):
+            with self.subTest(storage=storage),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);request,manifest,_,_=self.audio_fixture(root)
+                request['storage']=storage;manifest['audio']['format']='studio_audio_4'
+                manifest['audio']['clips'][0].update(fade_in_ms=100,fade_out_ms=200,source_out_sample=4800)
+                (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(manifest));has.pack(request)
+                result=self.unpack(root,request)
+                self.assertEqual(json.loads((Path(result['folder'])/'project.json').read_bytes())['audio'],manifest['audio'])
+
+    def test_invalid_fade_preserves_existing_save(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,manifest,_,_=self.audio_fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            for version,value in [('studio_audio_3',100),('studio_audio_4',0),('studio_audio_4',-1),('studio_audio_4',1.5),('studio_audio_4',float('nan')),('studio_audio_4',60001),('studio_audio_4',True)]:
+                bad=copy.deepcopy(manifest);bad['audio']['format']=version;bad['audio']['clips'][0]['fade_in_ms']=value
+                (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(bad))
+                with self.assertRaises(has.HasError):has.pack(request)
+                self.assertEqual(Path(request['path']).read_bytes(),before)
+
+    def test_trimmed_audio_version_roundtrip(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,manifest,_,_=self.audio_fixture(root)
+            manifest['audio']['format']='studio_audio_3';manifest['audio']['clips'][0]['source_out_sample']=4800
+            (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(manifest));has.pack(request)
+            result=self.unpack(root,request)
+            reopened=json.loads((Path(result['folder'])/'project.json').read_bytes())
+            self.assertEqual(reopened['audio'],manifest['audio'])
+
+    def test_invalid_trim_preserves_prior_container(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,manifest,_,_=self.audio_fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            for version,end in [('studio_audio_2',4800),('studio_audio_3',0),('studio_audio_3',-1),('studio_audio_3',float('nan')),('studio_audio_3',1.5),('studio_audio_3',60*96000+1)]:
+                bad=copy.deepcopy(manifest);bad['audio']['format']=version;bad['audio']['clips'][0]['source_out_sample']=end
+                (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(bad))
+                with self.assertRaises(has.HasError):has.pack(request)
+                self.assertEqual(Path(request['path']).read_bytes(),before)
+
     def audio_fixture(self,root):
         request,_,_=self.fixture(root);folder=Path(request['folder'])
         sound=root/'voice.wav';sound.write_bytes(b'bounded audio container fixture'*100)

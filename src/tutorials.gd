@@ -33,6 +33,7 @@ var asset_hashes:={}
 var action_row: HBoxContainer
 var action_button: Button
 var export_button: Button
+var align_cue: Button
 var marker: Panel
 var hint_visible:=false
 var collapsed:=false
@@ -44,6 +45,8 @@ func _ready() -> void:
 	panel.add_theme_stylebox_override("panel",preload("res://src/studio_theme.gd").surface("fffef1","e7f1fb","88a8c4",8));panel.mouse_filter=Control.MOUSE_FILTER_STOP
 	var box:=VBoxContainer.new();panel.add_child(box);var heading:=HBoxContainer.new();box.add_child(heading);title=app.label(heading,"");title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;collapse_button=app.button(heading,"−",func():set_collapsed(not collapsed));collapse_button.tooltip_text="Collapse / expand lesson instructions";instruction=app.label(box,"");instruction.custom_minimum_size.x=400;instruction.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;instruction.max_lines_visible=3
 	action_row=HBoxContainer.new();box.add_child(action_row);action_button=app.button(action_row,"",func():First.action(self));export_button=app.button(action_row,"Export movie",func():app.export_dialog());action_row.hide()
+	align_cue=app.button(box,"Align practice sound with hand raise",align_practice_sound)
+	align_cue.hide()
 	var row:=HBoxContainer.new();box.add_child(row)
 	previous_button=app.button(row,"Previous",previous);hint_button=app.button(row,"Hint",show_hint);app.button(row,"Leave lesson",func():leave(true))
 	panel.hide();app.has_project.operation_finished.connect(opened)
@@ -143,6 +146,14 @@ func show_hint() -> void:
 func set_collapsed(value: bool) -> void:
 	collapsed=value;collapse_button.text="+" if collapsed else "−";instruction.visible=not collapsed;action_row.visible=not collapsed and not action_button.text.is_empty();title.tooltip_text=instruction.text
 	panel.size.y=0
+	align_cue.visible=not collapsed and not First.cue_alignment(self).is_empty()
+
+func align_practice_sound() -> void:
+	var target:=First.cue_alignment(self)
+	if not target.is_empty():
+		app.retime_audio(target.clip,target.to,target.from)
+		app.message("Practice sound aligned with the hand raise at frame %d. Undo restores its earlier timing." % target.to)
+	align_cue.visible=not collapsed and not First.cue_alignment(self).is_empty()
 
 func layout_card() -> void:
 	panel.size.x=minf(460,app.canvas.size.x-20)
@@ -265,12 +276,15 @@ func _process(_delta: float) -> void:
 	if app.home.visible:last_action=Time.get_ticks_msec();marker.hide();return
 	layout_card()
 	update_highlight()
+	if app.timeline.audio_gesture_active():return
 	if course==First.ID:First.observe(self)
 	if done or Time.get_ticks_msec()<next_tick:return
 	next_tick=Time.get_ticks_msec()+200
-	if app.exporting or app.playing or app.drawing or app.navigating or app.pose_editor.dragging or app.physics_editor.is_running() or app.has_dialog(app) or not app.timeline.moving_id.is_empty():return
+	if app.exporting or app.playing or app.drawing or app.navigating or app.pose_editor.dragging or app.physics_editor.is_running() or app.has_dialog(app) or not app.timeline.moving_id.is_empty() or app.timeline.audio_gesture_active():return
 	var signature:="%d:%d:%s:%s" % [app.recovery_revision,app.frame,app.world_selection.selected,str(app.advanced_mode)]
-	if signature!=last_signature:last_signature=signature;last_action=Time.get_ticks_msec();hint_button.text="Hint";hint_due=false
+	if signature!=last_signature:
+		last_signature=signature;last_action=Time.get_ticks_msec();hint_button.text="Hint";hint_due=false
+		align_cue.visible=not collapsed and not First.cue_alignment(self).is_empty()
 	if satisfied():
 		step+=1;done=step==int(Store.COURSES[course])
 		if not checkpoint("step_%02d" % step):step-=1;done=false;return

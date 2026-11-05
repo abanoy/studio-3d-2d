@@ -50,11 +50,19 @@ static func validate(track) -> String:
 static func capture(rig: RefCounted, from: int, to: int, id: String) -> Dictionary:
 	var captured:=Hold.capture(rig,"@root")
 	if captured.has("error"):return captured
+	var landmarks:=[]
+	for foot in captured.feet:
+		var points:=[]
+		for bone_id in foot.limb.ids:points.append(rig.bone_transform(bone_id).origin)
+		landmarks.append(points)
+	var hints:=preload("res://src/contact_bend.gd").hints(landmarks)
 	var feet:=[]
 	for foot in captured.feet:
 		var p: Vector3=foot.position;var q: Quaternion=foot.rotation
 		feet.append({"ids":foot.limb.ids.duplicate(),"position":[p.x,p.y,p.z],"rotation_xyzw":[q.x,q.y,q.z,q.w]})
-	var track:={"format":FORMAT,"segments":[{"id":id,"from":from,"to":to,"feet":feet}]}
+	for i in range(hints.size()):
+		if hints[i] is Vector3:feet[i]["pole"]=[hints[i].x,hints[i].y,hints[i].z]
+	var track:=track([{"id":id,"from":from,"to":to,"feet":feet}])
 	var error:=validate(track)
 	return {"error":error} if not error.is_empty() else track
 

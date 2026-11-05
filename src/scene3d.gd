@@ -48,6 +48,19 @@ static func make_fixture(path: String) -> Error:
 	root.free()
 	return error
 
+static func stable_opaque_order(materials: Array) -> bool:
+	# Equal-depth opaque fragments must not depend on transient GPU resource IDs.
+	# glTF material order is immutable across managed/packed copies. Keep explicit
+	# priority and multipass contracts untouched; never clamp distinct ranks.
+	var opaque: Array=[]
+	for material in materials:
+		if not material is BaseMaterial3D:continue
+		if material.render_priority!=0 or material.next_pass!=null:return false
+		if material.transparency==BaseMaterial3D.TRANSPARENCY_DISABLED and not material in opaque:opaque.append(material)
+	if opaque.size()>256:return false
+	for i in range(opaque.size()):opaque[i].render_priority=-128+i
+	return true
+
 static func load_glb(path: String) -> Dictionary:
 	if path.get_extension().to_lower() != "glb":
 		return {"error": "This slice imports self-contained .glb files; convert .gltf sidecars first."}
@@ -84,6 +97,7 @@ static func load_glb(path: String) -> Dictionary:
 		return {"error": "GLB importer failed: %s" % error_string(error)}
 	var shapes=preload("res://src/source_shape.gd")
 	shapes.mark(state)
+	stable_opaque_order(state.get_materials())
 	var scene := doc.generate_scene(state)
 	if scene == null:
 		return {"error": "GLB contains no usable scene."}
@@ -99,6 +113,9 @@ static func load_glb(path: String) -> Dictionary:
 		var skeleton: Skeleton3D=source_skeletons[item.skeleton].get_godot_skeleton()
 		if skeleton.find_bone(item.resource_name)>=0:source_bones[i]=str(scene.get_path_to(skeleton))+"::"+item.resource_name
 	scene.set_meta("has_source_bones",source_bones)
+	var asset=data.get("asset",{})
+	if asset is Dictionary and asset.get("extras",{}) is Dictionary:
+		scene.set_meta(preload("res://src/joint_constraints.gd").META,asset.get("extras",{}).get("studio_ik_constraints",{}))
 	return {"scene": scene, "warning": "Static environment only; embedded animation is not played. Unsupported material extensions may render differently."}
 
 static func make_pose_fixture(path: String, bone_names: Array=["hip","arm"]) -> Error:

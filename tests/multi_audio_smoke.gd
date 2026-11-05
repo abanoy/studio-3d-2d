@@ -35,8 +35,13 @@ func run() -> void:
 	check(app.current_world().objects.size()==7,"actual five-native world/group/map is available for audio integration")
 	app.audio_clip={};app.rebuild_audio()
 	var world: Dictionary=World.portable(app.current_world());var shots: Array=app.keys.duplicate(true);var paint: String=Storage.image_hash(app.layers[1].cels[0].image)
+	app.set_frame(18)
 	for name in ["Voice — тест.wav","Music.wav","Effect.wav"]:
 		app.import_audio_dialog(folder.path_join("inputs/"+name));await settled()
+	check(app.audio_clips.all(func(clip):return clip.start_frame==18),"new sounds begin at the playhead in one import")
+	app.set_frame(int(app.video.duration_frames));app.import_audio_dialog(folder.path_join("inputs/Effect.wav"))
+	check(app.audio_clips.size()==3,"end boundary refuses a sound that could never play")
+	app.set_frame(18)
 	check(app.audio_clips.size()==3 and app.audio_choice.visible and not app.advanced_mode,"normal Add audio appends three selectable sounds in Simple without replacement prompts")
 	if app.audio_clips.size()!=3:app.free();quit(1);return
 	app.audio_choice.item_selected.emit(0);app.audio_start.value=24;app.audio_gain.value=-6;app.apply_audio_settings()

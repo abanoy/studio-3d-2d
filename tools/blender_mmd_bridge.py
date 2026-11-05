@@ -25,11 +25,17 @@ def run():
     if not meshes:
         raise RuntimeError("MMD Tools returned no renderable mesh. See importer messages.")
     missing = []
-    for image in bpy.data.images:
+    absent_names = request.get("missing_textures", [])
+    absent_paths = {(Path(request["source"]).parent / name).resolve() for name in absent_names}
+    absent_paths.update(output / name for name in request.get("absent_shared_toons", []))
+    for image in list(bpy.data.images):
         if image.source != "FILE": continue
         image_path = Path(bpy.path.abspath(image.filepath)).resolve()
         image_path.relative_to(output)  # no hidden dependency reads outside the staged asset
         if not image_path.is_file():
+            if image_path in absent_paths:
+                bpy.data.images.remove(image, do_unlink=True)
+                continue
             missing.append(image.filepath)
             continue
         image.reload()
@@ -48,11 +54,19 @@ def run():
               "mmd_morphs": {}, "texture_dependencies": request["dependency_hashes"],
               "preserved": ["native model/textures", "packed editable.blend with MMD properties", "GLB mesh, skin/bone and vertex morph data where exportable"],
               "limitations": ["MMD toon/sphere/edge shading approximated by simple PBR for GLB",
-                              "MMD IK/physics/display frames/material and bone morph behavior is not reproduced by GLB",
+                              "Supported MMD IK declarations are retained for pose/motion baking; native live IK, inherited bone transforms, physics, display frames and material/bone morphs are not reproduced by GLB alone",
                               "Studio uses its own posing/physics; exported vertex morphs and compatible vertex expression groups use shared deform controls",
                               "No PMD/PMX round-trip or broad asset compatibility claim"],
               "rights": "User-supplied asset; distribution rights not inferred"}
     report["warnings"] = report["limitations"][:3]
+    if request.get("absent_shared_toons"):
+        report["absent_shared_toons"] = request["absent_shared_toons"]
+        report["warnings"].append("Shared MMD toon shading files were unavailable. Studio uses the converted material colors and base textures.")
+    if absent_names:
+        report["missing_textures"] = absent_names
+        examples = ", ".join(absent_names[:3])
+        extra = f" (+{len(absent_names)-3} more)" if len(absent_names)>3 else ""
+        report["warnings"].insert(0, f"Missing textures: {examples}{extra}. Affected surfaces use their material color. Restore the files beside the original model and import again.")
     for root in roots:
         for category in ["vertex_morphs", "bone_morphs", "material_morphs", "uv_morphs", "group_morphs"]:
             report["mmd_morphs"].setdefault(category, []).extend(item.name for item in getattr(root.mmd_root, category, []))
@@ -118,6 +132,12 @@ def run():
     # Add only standard binding metadata. Preserve every exported geometry chunk.
     sys.path.insert(0, str(Path(__file__).parent))
     from mmd_expression_groups import normalize, EXTRA
+    from mmd_ik import capture,EXTRA as IK_EXTRA
+    ik=capture(request["source"],rigs,document)
+    report["ik_constraints"]=ik
+    if ik["chains"] or ik["skipped"]:
+        document.setdefault('asset',{}).setdefault('extras',{})[IK_EXTRA]=ik
+    if ik["skipped"]:report["warnings"].append("Some native joint chains are unsupported. Their declarations are reported rather than guessed.")
     expressions = normalize(groups, document)
     if group_limit:
         expressions = {"format": "studio_expression_presets_1", "entries": [],
@@ -127,6 +147,7 @@ def run():
                        "error": "Multiple MMD roots have ambiguous expression ownership."}
     if group_count:
         document.setdefault('asset', {}).setdefault('extras', {})[EXTRA] = expressions
+    if group_count or ik["chains"] or ik["skipped"]:
         glb = output / 'scene.glb'
         original = glb.read_bytes()
         tail = original[20 + struct.unpack_from('<I', original, 12)[0]:]
@@ -135,6 +156,7 @@ def run():
         glb.write_bytes(struct.pack('<4sIIII', b'glTF', 2, 20 + len(text) + len(tail), len(text), 0x4e4f534a) + text + tail)
         import hashlib
         report['expression_geometry_tail_sha256'] = hashlib.sha256(tail).hexdigest()
+        if ik["chains"] or ik["skipped"]:report['ik_geometry_tail_sha256']=hashlib.sha256(tail).hexdigest()
         assert glb.read_bytes()[20 + len(text):] == tail
     report['expression_presets'] = expressions
     if expressions['error']:

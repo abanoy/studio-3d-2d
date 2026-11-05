@@ -6,6 +6,8 @@ func check(value: bool,label: String) -> void:
 	checks+=1;print(("PASS " if value else "FAIL ")+label)
 	if not value:failures+=1
 func _initialize() -> void:
+	for pair in [["Sword Shashimi","Accessories"],["Sword","Accessories"],["Mini Skirt","Clothing"],["Sword Mouth","Other"],["Swordfish","Other"]]:
+		check(Catalog.estimate(pair[0]).area==pair[1],"sword and clothing estimates respect word boundaries and mixed regions: "+pair[0])
 	for pair in [[" blink ","Eyes"],["Eyebrows raise L","Brows"],["Eye brows forward","Brows"],["mouth angry open","Mouth"],["まばたき","Eyes"],["あ","Mouth"],["normal hair","Hair"],["Wing Shrink","Accessories"],["Tools","Accessories"],["Remove Skirt","Clothing"],["Thick legs","Body"]]:check(Catalog.estimate(pair[0]).area==pair[1],"provisional named area: "+pair[0])
 	check(Catalog.estimate("Smile").area=="Other" and Catalog.estimate("笑い").area=="Other","ambiguous smile names do not invent a whole-face expression or anatomy")
 	check(Catalog.estimate("mystery_087").area=="Other" and Catalog.estimate("eye mouth").area=="Other","unknown or mixed names remain accessible as unassigned")

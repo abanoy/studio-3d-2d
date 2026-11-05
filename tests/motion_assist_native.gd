@@ -1,4 +1,10 @@
 extends SceneTree
+
+# Project JSON has one number type. Compare exact values after the same numeric
+# conversion for live and reopened transforms (identity may begin as integers).
+static func sampled_motion_hash(actor: RefCounted,at: float) -> String:
+	var raw:=JSON.stringify({"pose":actor.sample(at),"root":actor.sample_transform(at)},"",true,true)
+	return JSON.stringify(JSON.parse_string(raw),"",true,true).sha256_text()
 const Model=preload("res://src/model.gd")
 const Preview=preload("res://src/motion_assist_preview.gd")
 const World=preload("res://src/world_document.gd")

@@ -149,8 +149,7 @@ func disable_cameras(node: Node) -> void:
 func evaluate(keys: Array, frame: int) -> void:
 	apply_lighting()
 	var value := Timeline.sample(keys, frame)
-	camera.position = value.position
-	camera.quaternion = value.rotation
+	camera.transform = Transform3D(Basis(value.rotation), value.position)
 	camera.fov = value.fov
 	camera.near=value.near;camera.far=value.far
 	view_changed.emit()
@@ -255,6 +254,8 @@ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 	evaluate(keys, frame)
 	if world_runtime:world_runtime.evaluate(frame,final,"",video_settings)
 	elif model: model.apply(frame, false, final,video_settings)
+	if world_runtime and not world_runtime.evaluation_error.is_empty():
+		last_capture_error=world_runtime.evaluation_error;return null
 	var actors: Array=world_runtime.instances.values() if world_runtime else [model] if model else []
 	for actor in actors:
 		if actor.root.is_visible_in_tree() and not actor.evaluation_error.is_empty():

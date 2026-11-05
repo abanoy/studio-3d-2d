@@ -454,3 +454,22 @@ The first bounded session completed23processes before the stale-display fix and
 is retained as pre-fix evidence only. The freshv2 session uses corrected sources;
 no pre-fix results are adopted into it. Keep source inputs unchanged while that
 session runs. A batch exit75 is a boundary between finished tests, not completion.
+
+## New near-straight knee capture hints (development, 2026-11-03)
+
+New foot plants estimate a forward knee direction from the two hips and ankles
+when the current knee is within2% of leg length of the straight hip/ankle line.
+This avoids treating tiny sideways rest offsets as the direction of a deep crouch.
+A clear current bend is retained. Degenerate or ambiguous landmarks produce no
+hint. Estimation follows world rotation and positive uniform scale.
+
+Hints are ordinary editable world-space poles in the existing contact version2;
+Advanced corrections and bend reversal remain available. Old saved contacts are
+not migrated or reinterpreted. This is a conservative capture-time heuristic,
+not anatomical constraints, collision prevention or automatic walking.
+
+Sixteen mathematical checks,33 ordinary Plant/Release checks and36 correction
+checks pass. Five native rigs keep knees on their own sides in the crouch fixture,
+with pinned feet, Undo and saved poses. Native path review remains120/121 passing:
+Miku has a one-pixel reopen difference despite identical displayed bones/camera.
+This image discrepancy is not waived. Final source is development-only.

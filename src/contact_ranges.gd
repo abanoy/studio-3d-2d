@@ -40,7 +40,7 @@ static func edit(data: Dictionary,first: int,last: int,target: Dictionary,durati
 	for boundary in [first,last]:
 		var index:=Clips.index_at(result,boundary)
 		if index>=0 and result.animation_clips[index].start!=boundary:
-			var divided:=Clips.split(result,boundary)
+			var divided: Dictionary=load("res://src/root_component_document.gd").edit_clip(result,"split","",boundary,duration) if result.get("format")=="studio_model_9" else Clips.split(result,boundary)
 			if divided.has("error"):return divided
 			result=divided.data
 	# Contact-only gaps own no body/expression controls, preserving their interpolation.
@@ -60,5 +60,5 @@ static func edit(data: Dictionary,first: int,last: int,target: Dictionary,durati
 		if piece.start<first or piece.start>=last:continue
 		var track:=replace_track(piece.get("foot_contacts",{}),int(piece.source_in),int(piece.source_in)+int(piece.length),target)
 		piece["foot_contacts"]=track;piece.auto_extend=false;piece["body_untrimmed"]=false
-	var error:=Model.validate(result,duration)
+	var error: String=load("res://src/root_component_document.gd").validate(result,duration) if result.get("format")=="studio_model_9" else Model.validate(result,duration)
 	return {"error":error} if not error.is_empty() else {"data":result,"changed":result!=data}

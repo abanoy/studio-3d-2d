@@ -21,12 +21,16 @@ func dismiss_warnings(app) -> void:
 		if control is AcceptDialog and control.title == "Source import warnings": control.confirmed.emit()
 
 func run() -> void:
-	var input = JSON.parse_string(FileAccess.get_file_as_string("res://output/sfm-verification-input.json"))
+	var input_path: String=OS.get_cmdline_user_args()[0]if not OS.get_cmdline_user_args().is_empty()else"res://output/sfm-verification-input.json"
+	var input = JSON.parse_string(FileAccess.get_file_as_string(input_path))
 	var app = load("res://main.tscn").instantiate(); root.add_child(app); await process_frame
-	var folder := ProjectSettings.globalize_path("res://output/sfm-smoke")
+	var folder: String=str(input.get("folder",ProjectSettings.globalize_path("res://output/sfm-smoke")))
 	DirAccess.make_dir_recursive_absolute(folder)
 	app.source_import.paths_file = folder.path_join("paths.cfg")
 	app.source_import.mount_overrides = {}; app.source_import.extra_roots = []
+	if input.has("gmod"):
+		app.source_import.gmod_root=str(input.gmod);app.source_import.workshop_root=str(input.workshop)
+		check(not DirAccess.dir_exists_absolute(app.source_import.gmod_root),"standalone SFM test uses an absent GMod path")
 	var browser = app.source_browser
 	browser.open(); await scan(browser)
 	browser.source_filter.text = "SFM search path / tf_movies"; browser.filter_sources()
@@ -45,7 +49,9 @@ func run() -> void:
 	var rig = Support.rig(app)
 	check(rig.order.size() == 83, "extended VTX HWM Scout retains its 83-bone skeleton")
 	var report = JSON.parse_string(FileAccess.get_file_as_string(model_bundle.path_join("parameters.json")))
-	check(report.counts.textures == 5, "SFM material dependencies resolve across tf_movies and tf without checkbox setup")
+	check(report.counts.textures == 6, "SFM body and native iris textures resolve across tf_movies and tf without checkbox setup")
+	var eyes: Array=report.materials.filter(func(row):return row.get("status","")=="neutral iris approximation")
+	check(eyes.size()==2 and report.native_parameters.eyeballs.size()==2 and eyes.all(func(row):return row.neutral_eye.loops>0 and row.warning.contains("unsupported")),"both native eyes retain source parameters and explicit neutral-appearance limitations")
 	var arm := ""
 	for id in rig.order:
 		if str(rig.bones[id].name).ends_with("bip_upperArm_L"): arm = id
@@ -77,6 +83,15 @@ func run() -> void:
 	check(app.open_project(app.project_folder), "SFM rig, pose keys and independent cels reopen in the standard project")
 	var reopened: Image = await app.renderer.capture(app.keys, app.layers, 24, true)
 	check(expected.get_data() == reopened.get_data(), "saved SFM pose and independent drawing reproduce identical pixels")
+	if input.has("gmod"):
+		app.has_project.cache_root=folder.path_join("has-cache");var packed: String=folder.path_join("scout.has")
+		app.has_project.save_file(packed,"packed")
+		while app.has_project.pid>0:await process_frame
+		check(app.has_project.path==packed,"standalone SFM asset saves through ordinary packed HAS")
+		app.new_project();app.has_project.open_file(packed)
+		while app.has_project.pid>0:await process_frame
+		var packed_picture: Image=await app.renderer.capture(app.keys,app.layers,24,true)
+		check(app.has_project.path==packed and packed_picture.get_data()==expected.get_data(),"packed SFM Open preserves exact pose/camera/independent drawing without GMod")
 	var error: String = await app.export_movie(folder)
 	var movie: String = app.last_export_folder.path_join("movie.mp4")
 	var frame := Image.load_from_file(app.last_export_folder.path_join("frame_000025.png"))

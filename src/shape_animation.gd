@@ -5,7 +5,7 @@ const LEGACY_FORMAT:="studio_model_4"
 const Clips=preload("res://src/animation_clips.gd")
 const Shape=preload("res://src/source_shape.gd")
 
-static func independent(data: Dictionary) -> bool:return data.get("format") in [FORMAT,"studio_model_6","studio_model_7","studio_model_8"]
+static func independent(data: Dictionary) -> bool:return data.get("format") in [FORMAT,"studio_model_6","studio_model_7","studio_model_8","studio_model_9"]
 static func has_data(data: Dictionary) -> bool:return independent(data) or data.get("format")==LEGACY_FORMAT
 
 static func integer(value) -> bool:

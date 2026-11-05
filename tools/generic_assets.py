@@ -20,7 +20,8 @@ def local_file(parent, name, root):
     if not name or name.startswith('/') or ':' in name or '\x00' in name:raise ValueError('Dependency must be a relative local path: '+name)
     path=(Path(parent)/name).resolve()
     if not path.is_relative_to(root):raise ValueError('Dependency is outside the asset folder. Select a common parent folder: '+name)
-    if not path.is_file():raise ValueError('Missing dependency: '+str(path))
+    if not path.is_file():
+        raise ValueError(f'Missing dependency: {name}. Restore the companion file at {path}, then import again.')
     if path.stat().st_size>MAX_FILE:raise ValueError('Dependency exceeds128MiB: '+name)
     return path
 

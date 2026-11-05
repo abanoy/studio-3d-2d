@@ -11,20 +11,25 @@ var current_frame := 0
 var final_view := false
 var duration := 0
 var video_settings: Dictionary={}
+var effects: Dictionary={}
+var evaluation_error := ""
+const Sprite=preload("res://src/particle_sprite.gd")
 
 static func prepare(document: Dictionary, duration: int) -> Dictionary:
 	var error := Document.validate(document,duration)
 	if not error.is_empty():return {"error":error}
 	# Hash all inputs before allocating a new world. Never touch the installed world.
 	var verified := {}
-	for row in document.objects:
+	for row in Document.assets(document):
 		if verified.has(row.source):
 			if verified[row.source]!=row.sha256:return {"error":"Conflicting world asset identity."}
 			continue
 		var file := FileAccess.open(row.source,FileAccess.READ)
-		if file==null or file.get_length()>128*1024*1024 or FileAccess.get_sha256(row.source)!=row.sha256:
-			return {"error":"World asset changed, disappeared or exceeds128MiB: "+row.name}
+		if file==null or file.get_length()>row.limit or FileAccess.get_sha256(row.source)!=row.sha256:
+			return {"error":"World asset changed, disappeared or exceeds its size limit."}
 		verified[row.source]=row.sha256
+	var loaded:=Document.Particles.collection(document)
+	if loaded.has("error"):return loaded
 	var candidate = new()
 	candidate.data=document.duplicate(true)
 	candidate.duration=duration
@@ -47,6 +52,17 @@ static func prepare(document: Dictionary, duration: int) -> Dictionary:
 			instance.root.free();candidate.dispose();return {"error":error}
 		candidate.root.add_child(instance.root)
 		candidate.instances[row.id]=instance
+	var textures:={}
+	for row in candidate.data.get("effects",[]):
+		var item: Dictionary=loaded.effects[row.id]
+		if row.source_in_seconds>=item.data.duration:candidate.dispose();return {"error":"Particle trim begins beyond the prepared effect duration."}
+		if not textures.has(row.texture_sha256):textures[row.texture_sha256]=ImageTexture.create_from_image(item.image)
+		var effect:=Sprite.new()
+		error=effect.setup(item.data,textures[row.texture_sha256])
+		if not error.is_empty():candidate.dispose();return {"error":error}
+		var q: Array=row.rotation_xyzw
+		effect.root.transform=Transform3D(Basis(Quaternion(q[0],q[1],q[2],q[3]).normalized()).scaled(Vector3.ONE*row.scale),Vector3(row.position[0],row.position[1],row.position[2]))
+		candidate.root.add_child(effect.root);candidate.effects[row.id]=effect
 	# Topological order, independent of serialization order, also gives deterministic evaluation.
 	var pending: Array = candidate.data.objects.duplicate()
 	while not pending.is_empty():
@@ -61,6 +77,10 @@ static func prepare(document: Dictionary, duration: int) -> Dictionary:
 	return {"runtime":candidate}
 
 func evaluate(frame: int, final := false, editing_id := "", video: Dictionary = {}) -> void:
+	if video.is_empty():video=video_settings
+	evaluation_error=""
+	if not effects.is_empty() and not preload("res://src/video_timing.gd").error(video.get("fps_num",24),video.get("fps_den",1)).is_empty():
+		evaluation_error="Particle playback requires a valid project frame rate.";return
 	current_frame=frame;final_view=final
 	video_settings=video
 	for id in order:
@@ -68,6 +88,12 @@ func evaluate(frame: int, final := false, editing_id := "", video: Dictionary = 
 		var parent_alpha: float=instances[instance.data.parent_id].evaluated_opacity if not instance.data.parent_id.is_empty() else 1.0
 		instance.apply(frame,id==editing_id,final,video,parent_alpha,editing_id)
 		instance.root.visible=instance.root.visible and frame>=instance.data.start_frame
+	for row in data.get("effects",[]):
+		var effect: RefCounted=effects[row.id]
+		effect.root.visible=row.visible and frame>=row.start_frame and frame<row.end_frame
+		var seconds: float=row.source_in_seconds+float(frame-row.start_frame)*float(video.get("fps_den",1))/float(video.get("fps_num",24))
+		effect.evaluate(seconds if effect.root.visible else -1.)
+		if not effect.evaluation_error.is_empty():evaluation_error=effect.evaluation_error
 
 func instance(id: String) -> RefCounted:
 	return instances.get(id)
@@ -105,4 +131,4 @@ func dispose() -> void:
 	if is_instance_valid(root):
 		if root.get_parent():root.get_parent().remove_child(root)
 		root.free()
-	root=null;instances.clear();order.clear()
+	root=null;instances.clear();order.clear();effects.clear()

@@ -32,7 +32,7 @@ Older files without hints infer meaningful parts from nonneutral/changed snapsho
 neutral held takes still expose a Root row. Inferred rows are identified in tooltips.
 
 Important current limitation: pose keys remain **shared whole-pose snapshots**.
-This paragraph describes legacy models1–5. New body edits use model6 independent
+This paragraph describes legacy models1â€“5. New body edits use model6 independent
 part controls and rows; Advanced deletes just the selected part's key. See
 [body animation](body_animation.md) for compatibility and remaining per-axis work.
 Every snapshot controls every part, including implicit neutral values. The rows
@@ -52,3 +52,18 @@ HAS/recovery, independent raster/WAV and MP4. Private prepared MMD/GMod/SFM fixt
 are optional; authored fixtures remain mandatory. See progress_memo.md for exact
 counts, run phase and limitations. No physical mouse/tablet feel or all-rig/fidelity
 certification is implied.
+
+## Independent root rows (development, 2026-11-03)
+
+Model9 Simple shows one combined movement row. Advanced reveals independently
+timed Position, Rotation and Scale. Clicking Position selects Move; Rotation
+selects Rotate; Scale brings the uniform-scale field into view. Returning to
+Simple highlights the combined row. These actions only select controls/frame;
+they do not record keys or change the scene, camera, drawing or Undo history.
+
+Routed engine-click coverage lives in movement_path_smoke.gd (34 app checks plus
+13 domain checks), including old-scene upgrade and save/reopen/MP4. The existing
+46-check channel suite also covers native MMD/GMod/SFM bones, filtered selection,
+scrolling, recovery and synchronized AAC. The full current verifier completed successfully on 2026-11-03, including the
+Model9 recording variant. Physical mouse/artist acceptance remains open. The
+separate native-path Miku image discrepancy is not covered by that full verifier.

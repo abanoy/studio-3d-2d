@@ -13,6 +13,10 @@ var info: Label
 var amount: SpinBox
 var turn_left: Button
 var turn_right: Button
+var use_amount: Button
+var keep_expression: CheckButton
+var view_titles: Array[Label]=[]
+var opened_frame: int
 var revision:=-1
 var root_id:=0
 var node_index:=-1
@@ -29,7 +33,7 @@ var focus:={}
 var capture_camera: Transform3D
 
 func setup(owner_editor,parent: Node) -> void:
-	editor=owner_editor;button=editor.app.button(parent,"Compare without recording…",open)
+	editor=owner_editor;button=editor.app.button(parent,"Preview this control…",open)
 	button.tooltip_text="Inspect neutral and changed geometry in an isolated preview. Your scene, keys and pending amount remain untouched."
 
 func available() -> bool:
@@ -43,22 +47,37 @@ func open() -> void:
 	if is_instance_valid(window):return
 	if not available():editor.app.message("Select a control and stop live motion before comparing its geometry.");return
 	var actor: RefCounted=editor.actor();root_id=actor.root.get_instance_id();revision=editor.app.recovery_revision;source_sha=actor.data.sha256;node_index=editor.node_index;target_index=editor.shape_index
+	opened_frame=editor.app.frame
 	direction=editor.app.renderer.camera.global_basis.z.normalized();up=editor.app.renderer.camera.global_basis.y.normalized()
 	window=Window.new();window.title="Compare deformation";window.theme=editor.app.theme;window.transient=true;window.exclusive=false;window.close_requested.connect(close);editor.app.add_child(window)
 	var panel:=PanelContainer.new();window.add_child(panel);panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var column:=VBoxContainer.new();panel.add_child(column)
-	editor.app.label(column,str(editor.row().names[target_index]).left(100))
+	var native_name:=str(editor.row().names[target_index])
+	var entry:=preload("res://src/shape_catalog.gd").lookup(actor.data,node_index,target_index,native_name)
+	editor.app.label(column,(native_name if editor.app.advanced_mode else str(entry.label)).left(100))
 	var images:=HBoxContainer.new();images.size_flags_vertical=Control.SIZE_EXPAND_FILL;column.add_child(images)
+	view_titles.clear()
 	for title in ["Neutral • all deforms off","Test • selected control only"]:
-		var box:=VBoxContainer.new();box.size_flags_horizontal=Control.SIZE_EXPAND_FILL;images.add_child(box);editor.app.label(box,title)
+		var box:=VBoxContainer.new();box.size_flags_horizontal=Control.SIZE_EXPAND_FILL;images.add_child(box);view_titles.append(editor.app.label(box,title))
 		var texture:=TextureRect.new();texture.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;texture.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;texture.custom_minimum_size=Vector2(280,240);texture.size_flags_vertical=Control.SIZE_EXPAND_FILL;box.add_child(texture)
 		if before_rect==null:before_rect=texture
 		else:after_rect=texture
 	info=editor.app.label(column,"Preparing an isolated neutral model…");info.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	keep_expression=CheckButton.new();keep_expression.text="Keep the other expression controls at this frame";column.add_child(keep_expression)
+	keep_expression.disabled=true;keep_expression.toggled.connect(func(_enabled):render_pair())
 	var controls:=HBoxContainer.new();column.add_child(controls);editor.app.label(controls,"Test amount")
-	amount=SpinBox.new();amount.min_value=-1;amount.max_value=1;amount.step=.25;amount.value=1;amount.editable=false;controls.add_child(amount);amount.value_changed.connect(func(_value):render_pair())
+	amount=SpinBox.new();amount.min_value=-1 if editor.app.advanced_mode else 0;amount.max_value=1;amount.step=.001
+	var current: float=editor.amount.value
+	# Neutral controls open at full strength so their effect is visible. An
+	# explicit pending zero can still be inspected as zero.
+	amount.value=clampf(current,amount.min_value,amount.max_value) if editor.dirty or current!=0. else 1.
+	amount.editable=false;controls.add_child(amount);amount.value_changed.connect(func(_value):render_pair())
 	amount.tooltip_text="A mathematical POSITION test, not a declaration of the native control's valid range. No key is recorded."
-	turn_left=editor.app.button(controls,"Turn left",func():turn(-45));turn_right=editor.app.button(controls,"Turn right",func():turn(45));editor.app.button(controls,"Close",close)
+	turn_left=editor.app.button(controls,"Turn left",func():turn(-45));turn_right=editor.app.button(controls,"Turn right",func():turn(45))
+	use_amount=editor.app.button(controls,"Use this amount",stage_amount)
+	use_amount.tooltip_text="Return this value to the face editor. Apply at this frame to save it."
+	use_amount.disabled=true
+	editor.app.button(controls,"Close",close)
 	turn_left.disabled=true;turn_right.disabled=true;phase=-1
 	window.popup_centered(Vector2i(mini(940,maxi(640,int(editor.app.get_viewport_rect().size.x)-100)),mini(560,maxi(400,int(editor.app.get_viewport_rect().size.y)-100))))
 	call_deferred("prepare")
@@ -90,9 +109,22 @@ func render_pair() -> void:
 	renderer.camera.fov=35;renderer.camera.near=maxf(radius*.01,.00001);renderer.camera.far=maxf(radius*20,10.)
 	var distance:=radius/sin(deg_to_rad(renderer.camera.fov*.5))*1.12
 	renderer.camera.position=bounds.get_center()+direction*distance;renderer.camera.look_at(bounds.get_center(),up);capture_camera=renderer.camera.transform
-	renderer.model.data.metadata.source_shape.overrides[str(node_index)][str(target_index)]=0.
+	var config: Dictionary={"format":"studio_source_shape_2","enabled":false,"overrides":{}}
+	if keep_expression.button_pressed:
+		config=editor.current_config().duplicate(true)
+		config.format="studio_source_shape_2"
+		view_titles[0].text="Current expression • selected control off"
+		view_titles[1].text="Current expression • preview amount"
+	else:
+		view_titles[0].text="Neutral • all deforms off"
+		view_titles[1].text="Test • selected control only"
+	if not config.has("overrides"):config["overrides"]={}
+	if not config.overrides.has(str(node_index)):config.overrides[str(node_index)]={}
+	config.overrides[str(node_index)][str(target_index)]=0.
+	renderer.model.data.metadata.source_shape=config
+	keep_expression.disabled=true
 	renderer.model.apply(0,false,true,renderer.video_settings)
-	phase=1;settling=2;amount.editable=false;turn_left.disabled=true;turn_right.disabled=true;info.text="Rendering the same view before and after…"
+	phase=1;settling=2;amount.editable=false;turn_left.disabled=true;turn_right.disabled=true;use_amount.disabled=true;info.text="Rendering the same view before and after…"
 	schedule()
 
 func schedule() -> void:
@@ -113,7 +145,11 @@ func rendered() -> void:
 	elif phase==2:
 		after_image=image;after_rect.texture=ImageTexture.create_from_image(image);renderer.viewport.render_target_update_mode=SubViewport.UPDATE_DISABLED
 		phase=0;amount.editable=true;turn_left.disabled=false;turn_right.disabled=false
+		use_amount.disabled=false
+		keep_expression.disabled=false
 		info.text=str(int(focus.moved))+" moved vertices • neutral pose • amount "+String.num(amount.value,2)+".\nSame camera, all other deforms off. Original scene and pending edits are untouched. Native shading and non-position effects may differ."
+		if not editor.app.advanced_mode:info.text="Compare the two views, or turn the model to see the change from another angle."
+		if keep_expression.button_pressed:info.text="Both views include the other expression controls from frame %d." % opened_frame
 
 func turn(degrees: float) -> void:
 	if phase!=0:return
@@ -121,12 +157,20 @@ func turn(degrees: float) -> void:
 
 func fail(message: String) -> void:
 	phase=0;info.text=message;amount.editable=false;turn_left.disabled=true;turn_right.disabled=true
+	use_amount.disabled=true
 	if is_instance_valid(renderer):renderer.viewport.render_target_update_mode=SubViewport.UPDATE_DISABLED
 
 func _process(_delta: float) -> void:
 	if not is_instance_valid(editor):return
 	button.disabled=not available() or is_instance_valid(window)
-	if is_instance_valid(window) and not valid():close()
+	if is_instance_valid(window) and (not valid() or opened_frame!=editor.app.frame):close()
+
+func stage_amount() -> void:
+	if not valid() or opened_frame!=editor.app.frame or phase!=0 or use_amount.disabled:return
+	var chosen:=amount.value
+	close()
+	editor.amount.value=chosen
+	editor.app.message("Preview amount selected. Choose Apply at this frame to use it.")
 
 func cleanup() -> void:
 	if RenderingServer.frame_post_draw.is_connected(rendered):RenderingServer.frame_post_draw.disconnect(rendered)

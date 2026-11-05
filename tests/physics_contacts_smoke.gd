@@ -19,19 +19,77 @@ func check(value: bool,label: String) -> void:
 func settled() -> void:
 	for i in range(3):await process_frame
 	await RenderingServer.frame_post_draw
-func measure(app,data: Dictionary,label: String,legacy: bool) -> Dictionary:
+func measure(app,data: Dictionary,label: String,legacy: bool,without_self:=false,excluded_arm:="",full_chain:=false) -> Dictionary:
 	app.new_project();app.load_demo_room();data=data.duplicate(true);data.position=[0,3,0];app.append_object(data,"model")
 	var actor: RefCounted=app.renderer.active_model();var before: Dictionary=actor.data.duplicate(true);var digest:=FileAccess.get_sha256(actor.data.source)
 	app.physics_editor.change(true)
 	var simulation: RefCounted=app.physics_editor.simulations[actor.data.id]
 	if legacy:
 		for pair in simulation.rest_exclusions:simulation.bodies[pair[0]].remove_collision_exception_with(simulation.bodies[pair[1]])
+	if without_self:
+		for body in simulation.bodies.values():body.collision_mask=1
+	if not excluded_arm.is_empty():
+		var arm: PhysicsBody3D=simulation.bodies["scout_ARM/Skeleton3D::"+excluded_arm]
+		var spine: String="bip_spine_1" if excluded_arm=="bip_upperArm_L" else "bip_spine_2"
+		var torso: PhysicsBody3D=simulation.bodies["scout_ARM/Skeleton3D::"+spine]
+		arm.add_collision_exception_with(torso)
+		torso.add_collision_exception_with(arm)
 	var pairs: Array=simulation.rest_exclusions.duplicate(true)
 	var valid:=true
 	for pair in pairs:
 		valid=valid and Contacts.nearby(actor,pair[0],pair[1]) and Contacts.overlapping(simulation.bodies[pair[0]].get_child(0),simulation.bodies[pair[1]].get_child(0))
 	check(valid,"only nearby initially overlapping proxy shapes gain exceptions: "+label)
-	for i in range(360):await physics_frame
+	var travel:={}
+	var origins:={}
+	var arm_bodies:={}
+	var body_ids:={}
+	var contacts:={}
+	if label=="sfm-smoke" and not legacy:
+		for id in simulation.bodies:
+			var rid: RID=simulation.bodies[id].get_rid()
+			body_ids[rid]=id
+			var role: String=simulation.joint_profiles[id].part
+			if role=="elbow" or (full_chain and role in ["shoulder","wrist"]):
+				arm_bodies[id]=rid;contacts[id]={}
+				PhysicsServer3D.body_set_max_contacts_reported(rid,32)
+	if not legacy:
+		for id in simulation.bodies:
+			var parent: String=actor.parent_id(id)
+			var role: String=simulation.joint_profiles[id].part
+			if role not in ["shoulder","elbow","hip","knee"] or not simulation.bodies.has(parent):continue
+			var child_rot: Quaternion=simulation.bodies[id].global_basis.orthonormalized().get_rotation_quaternion()
+			var parent_rot: Quaternion=simulation.bodies[parent].global_basis.orthonormalized().get_rotation_quaternion()
+			origins[id]=parent_rot.inverse()*child_rot
+			travel[id]={"role":role,"peak_degrees":0.,"peak_tick":0,"final_degrees":0.}
+	for i in range(360):
+		await physics_frame
+		for id in arm_bodies:
+			var state:=PhysicsServer3D.body_get_direct_state(arm_bodies[id])
+			if not state:continue
+			var touched:={}
+			for j in range(state.get_contact_count()):
+				var other:=state.get_contact_collider(j)
+				var collider:=state.get_contact_collider_object(j)
+				var name: String=body_ids.get(other,"scene/"+str(collider.name) if collider is Node else "external")
+				if touched.has(name):continue
+				touched[name]=true
+				if not contacts[id].has(name):contacts[id][name]={"ticks":0,"first":i+1,"last":i+1,"intervals":[]}
+				var intervals: Array=contacts[id][name].intervals
+				if intervals.is_empty() or intervals[-1][1]!=i:intervals.append([i+1,i+1])
+				else:intervals[-1][1]=i+1
+				contacts[id][name].ticks+=1
+				contacts[id][name].last=i+1
+		if (i+1)%6!=0:continue
+		for id in origins:
+			var parent: String=actor.parent_id(id)
+			var parent_rot: Quaternion=simulation.bodies[parent].global_basis.orthonormalized().get_rotation_quaternion()
+			var child_rot: Quaternion=simulation.bodies[id].global_basis.orthonormalized().get_rotation_quaternion()
+			var initial: Quaternion=origins[id]
+			var angle:=rad_to_deg(initial.angle_to(parent_rot.inverse()*child_rot))
+			travel[id].final_degrees=angle
+			if angle>travel[id].peak_degrees:
+				travel[id].peak_degrees=angle
+				travel[id].peak_tick=i+1
 	var pose: Dictionary=simulation.pose();var max_strain:=0.0;var helper_strain:=0.0;var speed:=0.0
 	for id in pose:
 		var parent: String=actor.parent_id(id)
@@ -51,11 +109,29 @@ func measure(app,data: Dictionary,label: String,legacy: bool) -> Dictionary:
 	var count:=pairs.size();app.physics_editor.change(false);await settled()
 	check(actor.data.pose_keys.is_empty() and actor.data.metadata==before.metadata and FileAccess.get_sha256(data.source)==digest,"contact setup preserves native data/source and never records motion implicitly: "+label)
 	var image: Image=await app.renderer.capture([Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,55)],[],0,true)
-	image.save_png(folder.path_join(label+"-"+("before" if legacy else "after")+".png"))
-	return {"strain":max_strain,"helper_strain":helper_strain,"speed":speed,"pairs":count}
+	var suffix: String="no-self" if without_self else "before" if legacy else "after"
+	if full_chain:suffix="trace-arm-chain"
+	if not excluded_arm.is_empty():suffix="no-scout-pair" if not full_chain else "no-shoulder-pair"
+	image.save_png(folder.path_join(label+"-"+suffix+".png"))
+	return {"strain":max_strain,"helper_strain":helper_strain,"speed":speed,"pairs":count,"joint_travel":travel,"arm_contacts":contacts}
 func compare(app,data: Dictionary,label: String) -> void:
 	var before: Dictionary=await measure(app,data,label,true);var after: Dictionary=await measure(app,data,label,false)
 	metrics[label]={"before":before,"after":after}
+	if label in ["sfm-smoke","AvatarSample_A","AvatarSample_Avrm0"]:
+		var diagnostic: Dictionary=await measure(app,data,label,false,true)
+		check(diagnostic.joint_travel.size()==8 and after.joint_travel.size()==8,"both drop conditions trace eight mapped native limb joints: "+label)
+		metrics[label]["without_self"]=diagnostic
+	if label=="sfm-smoke":
+		var isolated:=await measure(app,data,label,false,false,"bip_lowerArm_L")
+		var left: Dictionary=isolated.arm_contacts["scout_ARM/Skeleton3D::bip_lowerArm_L"]
+		check(not left.has("scout_ARM/Skeleton3D::bip_spine_2"),"Scout pair-only exception excludes the selected torso from the forearm's contact report")
+		metrics[label]["without_left_forearm_spine"]=isolated
+		var chain:=await measure(app,data,label,false,false,"",true)
+		var shoulder:=await measure(app,data,label,false,false,"bip_upperArm_L",true)
+		check(chain.arm_contacts.size()==6 and shoulder.arm_contacts.size()==6,"paired diagnostic traces both complete Scout arm chains")
+		check(not shoulder.arm_contacts["scout_ARM/Skeleton3D::bip_upperArm_L"].has("scout_ARM/Skeleton3D::bip_spine_1"),"shoulder diagnostic removes just the measured upper-arm/spine contact")
+		metrics[label]["trace_arm_chain"]=chain
+		metrics[label]["without_left_upper_arm_spine"]=shoulder
 	print("CONTACT_METRIC "+label+" "+JSON.stringify(metrics[label]))
 	if label in ["authored","sfm-smoke"]:check(after.pairs>0 and after.strain<0.005 and after.strain<before.strain*0.25,"reproduced joint stretch drops below five millimeters and to less than one quarter: "+label)
 	else:check(after.strain<0.005,"native control rig keeps joint separation below five millimeters: "+label)

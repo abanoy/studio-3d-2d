@@ -44,3 +44,10 @@ Root MIT notice and transitive-distribution limits are in THIRD_PARTY_NOTICES.md
 and docs/licenses.md. New staging, PBR conversion wrapper and studio routing are
 original task code. User-supplied/installed GMod test assets remain local; ownership
 or redistribution rights are not assigned by successful conversion.
+
+The opt-in particle experiment directly uses that same cached SourceIO datamodel
+reader and existing native ABI3 VTF codec. No codec binary is added to application
+source or installed. Its transitive notices and future binary redistribution still
+need review. Canonical sprite compilation, sampling and shader are original work;
+Valve/Godot technical references are listed in docs/source_particles.md. Native
+SFM/Workshop textures remain private local test data, not included creative assets.

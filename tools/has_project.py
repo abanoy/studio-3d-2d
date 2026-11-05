@@ -12,6 +12,10 @@ import sys
 import tempfile
 import zipfile
 import zlib
+try:from .drawing_origin import error as drawing_origin_error
+except ImportError:from drawing_origin import error as drawing_origin_error
+try:from .pose_library import error as pose_library_error
+except ImportError:from pose_library import error as pose_library_error
 
 MAX_TOTAL = 512 * 1024 * 1024
 MAX_META = 1024 * 1024
@@ -70,13 +74,31 @@ def read_json(blob):
 
 def members(manifest):
     """Only declared current playback/editing assets; never glob whole game folders."""
+    for layer in manifest.get('layers',[]):
+        if isinstance(layer,dict) and 'origin' in layer:
+            why=drawing_origin_error(layer['origin'])
+            if why:raise HasError(why)
+    world=manifest.get('world',{})
+    actors=world.get('objects',[]) if isinstance(world,dict) and 'world' in manifest else [manifest.get('model',{})]
+    if not isinstance(actors,list):raise HasError('Invalid world object list')
+    for actor in actors:
+        if isinstance(actor,dict) and isinstance(actor.get('metadata'),dict) and 'body_pose_library' in actor['metadata']:
+            library=actor['metadata']['body_pose_library'];why=pose_library_error(library)
+            if why:raise HasError(why)
+            if library['sha256']!=actor.get('sha256'):raise HasError('Saved body poses belong to a different model source')
+    palette=manifest.get('palette',[])
+    if not isinstance(palette,list) or len(palette)>32:raise HasError('Invalid project palette or more than32 swatches')
+    for row in palette:
+        if not isinstance(row,dict) or set(row)!={'name','rgba'} or not isinstance(row.get('name'),str) or not 1<=len(row['name'])<=48 or any(ord(c)<32 or ord(c)==127 or 0xd800<=ord(c)<=0xdfff for c in row['name']):raise HasError('Invalid color swatch name')
+        if not isinstance(row.get('rgba'),str) or len(row['rgba'])!=8 or any(c not in '0123456789abcdef' for c in row['rgba']):raise HasError('Invalid color swatch RGBA')
     version = manifest.get('schema_version')
-    if version not in (3,4): raise HasError('HAS v1 requires project schema3 or4')
-    if version == 4:
+    if version not in (3,4,5): raise HasError('HAS v1 requires project schema3,4 or5')
+    if version in (4,5):
         if 'scene' in manifest or 'model' in manifest: raise HasError('Schema4 cannot contain obsolete scene/model slots')
         world=manifest.get('world')
-        if not isinstance(world,dict) or world.get('format')!='studio_world_1' or not isinstance(world.get('objects'),list) or len(world['objects'])>64:
+        if not isinstance(world,dict) or world.get('format')!=('studio_world_2' if version==5 else 'studio_world_1') or not isinstance(world.get('objects'),list) or len(world['objects'])>64:
             raise HasError('Invalid world or more than64 objects')
+        if version==4 and 'effects' in world:raise HasError('Particle effects require project schema5')
         rows=world['objects']; index={}
         duration=manifest.get('video',{}).get('duration_frames')
         if type(duration) not in (int,float) or not 1<=duration<=240 or not math.isfinite(duration) or duration!=int(duration):
@@ -98,18 +120,47 @@ def members(manifest):
                 if current not in index: raise HasError('Missing world parent')
                 seen.add(current); current=index[current]['parent_id']
         slots=[('model',row) for row in rows]
+        if version==5:
+            effects=world.get('effects')
+            if not isinstance(effects,list) or len(effects)>16:raise HasError('Invalid particle collection or more than16 effects')
+            identities=set(index)
+            for row in effects:
+                if not isinstance(row,dict) or row.get('format')!='studio_particle_instance_1':raise HasError('Unsupported particle instance')
+                if set(row)-{'format','id','name','path','sha256','texture_path','texture_sha256','position','rotation_xyzw','scale','start_frame','end_frame','source_in_seconds','visible'}:raise HasError('Unsupported particle instance fields')
+                identity=row.get('id');name=row.get('name')
+                if not isinstance(identity,str) or not 1<=len(identity)<=128 or any(ord(c)<32 or c in '/\\:'for c in identity) or identity in identities:raise HasError('Invalid or duplicate particle ID')
+                identities.add(identity)
+                if not isinstance(name,str) or not 1<=len(name)<=256 or not isinstance(row.get('visible'),bool):raise HasError('Invalid particle name/visibility')
+                for field,low,high in [('start_frame',0,duration-1),('end_frame',1,duration),('source_in_seconds',0,60),('scale',.0001,1000)]:
+                    v=row.get(field)
+                    if type(v) not in (int,float) or not low<=v<=high or not math.isfinite(v) or (field in ('start_frame','end_frame')and v!=int(v)):raise HasError('Invalid particle timing/scale')
+                if row['start_frame']>=row['end_frame']:raise HasError('Invalid particle clip range')
+                for field,count in [('position',3),('rotation_xyzw',4)]:
+                    v=row.get(field)
+                    if not isinstance(v,list)or len(v)!=count or any(type(n)not in(int,float)or not -100000<=n<=100000 or not math.isfinite(n)for n in v):raise HasError('Invalid particle placement')
+                if sum(n*n for n in row['rotation_xyzw'])<.000001:raise HasError('Invalid particle rotation')
+                if 'source'in row or 'texture_source'in row or row.get('path')!='assets/'+str(row.get('sha256'))+'.json' or row.get('texture_path')!='assets/'+str(row.get('texture_sha256'))+'.png':raise HasError('Invalid managed particle paths')
+                slots.extend([('particle',row),('particle_texture',{'path':row['texture_path'],'sha256':row.get('texture_sha256')})])
     else:
         slots=[(slot,manifest.get(slot,{})) for slot in ('scene','model')]
     audio=manifest.get('audio',{})
     if not isinstance(audio,dict): raise HasError('Invalid audio metadata')
     if 'format' in audio or 'clips' in audio:
         rows=audio.get('clips')
-        if audio.get('format')!='studio_audio_2' or set(audio)!={'format','clips'} or not isinstance(rows,list) or not 1<=len(rows)<=16:
+        if audio.get('format') not in ('studio_audio_2','studio_audio_3','studio_audio_4') or set(audio)!={'format','clips'} or not isinstance(rows,list) or not 1<=len(rows)<=16:
             raise HasError('Unsupported audio collection or more than16 clips')
     else: rows=[audio] if audio else []
     identities=set()
     for row in rows:
         if not isinstance(row,dict): raise HasError('Invalid audio clip')
+        for field in ('fade_in_ms','fade_out_ms'):
+            if field not in row: continue
+            value=row[field]
+            if audio.get('format')!='studio_audio_4' or type(value) not in (int,float) or not math.isfinite(value) or value!=int(value) or not 1<=value<=60000:raise HasError('Invalid or unversioned sound fade')
+        if 'source_out_sample' in row:
+            end=row['source_out_sample'];start=row.get('source_in_sample')
+            if audio.get('format') not in ('studio_audio_3','studio_audio_4') or type(end) not in (int,float) or not math.isfinite(end) or end!=int(end) or not 0<end<=60*96000 or type(start) not in (int,float) or not math.isfinite(start) or end<=start:
+                raise HasError('Invalid or unversioned audio end trim')
         identity=row.get('id')
         if not isinstance(identity,str) or not 1<=len(identity)<=128 or identity in identities: raise HasError('Invalid or duplicate audio identity')
         identities.add(identity)
@@ -125,6 +176,7 @@ def members(manifest):
         name = safe(row['path']); digest = row['sha256']
         if not name.startswith('assets/') or not isinstance(digest,str) or not re.fullmatch(r'[0-9a-f]{64}', digest): raise HasError('Invalid asset identity')
         if slot in ('scene','model') and not name.endswith('.glb') or slot == 'audio' and not name.endswith('.wav'): raise HasError('Invalid asset format')
+        if slot=='particle'and not name.endswith('.json')or slot=='particle_texture'and not name.endswith('.png'):raise HasError('Invalid particle asset format')
         if name in assets and assets[name]['sha256'] != digest: raise HasError('Conflicting asset checksums')
         assets[name] = {'path': name, 'sha256': digest}
     cels = set()
@@ -139,6 +191,13 @@ def members(manifest):
 
 def check_cancel(request):
     if request.get('cancel') and Path(request['cancel']).exists(): raise HasError('Project operation cancelled; previous save preserved')
+
+
+def asset_limit(name):
+    if name.endswith('.glb'):return 128*1024*1024
+    if name.startswith('assets/')and name.endswith('.json'):return MAX_META
+    if name.startswith('assets/')and name.endswith('.png'):return 8*1024*1024
+    return 32*1024*1024
 
 
 def checked_copy(source, destination, digest, request):
@@ -172,7 +231,7 @@ def pack(request):
         path = (folder/name).resolve(strict=True)
         if not path.is_relative_to(folder) or path.is_symlink(): raise HasError('Asset outside snapshot')
         size = path.stat().st_size; total += size
-        limit = 128*1024*1024 if name.endswith('.glb') else 32*1024*1024
+        limit = asset_limit(name)
         if size > limit or total > MAX_TOTAL: raise HasError('Project exceeds 512 MiB or per-asset limits')
         digest = sha(path)
         if name in assets and digest != assets[name]['sha256']: raise HasError('Snapshot asset checksum changed')
@@ -243,7 +302,7 @@ def unpack(request):
             name = safe(entry.filename)
             if entry.is_dir() or name.casefold() in entries or entry.flag_bits & 1 or stat.S_ISLNK(entry.external_attr >> 16) or entry.compress_type not in (zipfile.ZIP_STORED,zipfile.ZIP_DEFLATED): raise HasError('Duplicate, encrypted or unsupported HAS entry')
             entries[name.casefold()] = entry; total += entry.file_size
-            limit = 128*1024*1024 if name.endswith('.glb') else MAX_META if name in ('has.json','project.json') else 32*1024*1024
+            limit = MAX_META if name in ('has.json','project.json') else asset_limit(name)
             if entry.file_size > limit or total > MAX_TOTAL or len(entries) > MAX_FILES: raise HasError('HAS expanded data exceeds bounds')
         header = read_json(archive.read('has.json')); blob = archive.read('project.json'); manifest = read_json(blob)
         if header.get('format') != 'hybrid_animation_studio' or header.get('version') != 1 or header.get('storage') not in ('packed','linked'): raise HasError('Unsupported HAS container version')
@@ -259,7 +318,7 @@ def unpack(request):
         expanded=sum(entries[n.casefold()].file_size for n in {'project.json',*cels})
         for name,row in index.items():
             if row['sha256'] != assets[name]['sha256']: raise HasError('Asset identity differs from project')
-            limit=128*1024*1024 if name.endswith('.glb') else 32*1024*1024
+            limit=asset_limit(name)
             if type(row.get('bytes')) is not int or not 0<=row['bytes']<=limit: raise HasError('Asset size exceeds bounds')
             expanded+=row['bytes']
             if expanded>MAX_TOTAL: raise HasError('Project expanded assets exceed 512 MiB')

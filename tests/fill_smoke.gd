@@ -33,6 +33,17 @@ func pointer(point: Vector2,pressed: bool) -> void:
 	var e:=InputEventMouseButton.new();e.button_index=MOUSE_BUTTON_LEFT;e.pressed=pressed
 	var rect: Rect2=app.canvas.image_rect();e.position=rect.position+point/Vector2(1920,1080)*rect.size;app.canvas._gui_input(e)
 func click(point: Vector2) -> void:pointer(point,true);pointer(point,false)
+func click_control(control: Control) -> void:
+	var point:=control.get_global_rect().get_center();var motion:=InputEventMouseMotion.new();motion.position=point;root.push_input(motion,true)
+	for pressed in [true,false]:
+		var event:=InputEventMouseButton.new();event.position=point;event.button_index=MOUSE_BUTTON_LEFT;event.pressed=pressed;root.push_input(event,true);await process_frame
+	await settled()
+func preview_buttons_visible() -> bool:
+	var viewport: Rect2=app.inspector_scroll.get_global_rect()
+	for title in ["Apply fill","Cancel"]:
+		var rect:=button(title,app.fill_editor.preview_row).get_global_rect()
+		if not viewport.encloses(rect) or rect.size.x<24 or rect.size.y<24:return false
+	return true
 func run() -> void:
 	var folder: String=OS.get_cmdline_user_args()[0]
 	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settled()
@@ -76,13 +87,16 @@ func run() -> void:
 	check(not app.fill_editor.pending.is_empty() and app.canvas.fill_preview!=null and Storage.image_hash(cel.image)==filled_hash and app.history.size()==prior,"edge fill previews without modifying image or history")
 	check(app.canvas.fill_preview.get_image().get_pixel(800,500).r<.01 and app.canvas.fill_preview.get_image().get_pixel(40,40).to_html()=="4a9ce6ff","preview composites candidate color beneath unchanged opaque Ink")
 	check(app.fill_editor.preview_row.get_global_rect().end.y<=app.inspector_scroll.get_global_rect().end.y,"preview Apply and Cancel remain visible in the inspector")
+	check(preview_buttons_visible(),"both complete preview button rectangles are inside the narrow inspector")
 	root.get_texture().get_image().save_png(folder.path_join("fill-preview.png"))
 	var preview_render: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	var escape:=InputEventKey.new();escape.keycode=KEY_ESCAPE;escape.pressed=true;app._input(escape);await settled()
 	check(app.fill_editor.pending.is_empty() and app.canvas.fill_preview==null and Storage.image_hash(cel.image)==filled_hash,"Escape discards preview without changing pixels")
 	var cancelled_render: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	check(preview_render.get_data()==cancelled_render.get_data(),"unapplied candidate preview never enters the final-render pipeline")
-	click(Vector2(40,40));await wait_fill();button("Apply fill").pressed.emit();await settled()
+	click(Vector2(40,40));await wait_fill();await click_control(button("Cancel",app.fill_editor.preview_row))
+	check(app.fill_editor.pending.is_empty() and Storage.image_hash(cel.image)==filled_hash,"actual pointer click reaches preview Cancel without changing pixels")
+	click(Vector2(40,40));await wait_fill();await click_control(button("Apply fill",app.fill_editor.preview_row))
 	check(cel.image.get_pixel(40,40).to_html()=="4a9ce6ff" and Storage.image_hash(ink_image)==ink_hash and app.history.size()==prior+1,"explicit Apply commits edge region while preserving line art")
 	app.undo();check(Storage.image_hash(cel.image)==filled_hash,"large fill Undo is exact")
 	click(Vector2(40,40));app.tool.select(0);click(Vector2(600,300));app.undo();app.tool.select(2);await wait_fill();check(app.fill_editor.pending.is_empty() and Storage.image_hash(cel.image)==filled_hash,"routed painting and Undo remain usable during worker and discard its stale result")

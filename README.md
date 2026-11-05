@@ -15,6 +15,21 @@ Permanent owner-selected home: `C:\a\Programming\cloudflare\prototypes\studio-3d
 The managed Git worktree retains a development snapshot. This is a separate local
 application; it does not deploy the game, portfolio, or older artist assistant.
 
+Development Draw also has [brush opacity and gentle erasing](docs/brush_opacity.md).
+Retracing a translucent stroke stays even; separate strokes build up normally.
+This newer increment is separate from the normal installed application.
+
+Opt-in [Tablet pressure size](docs/brush_pressure.md) now tapers pen/eraser size
+from reported pressure, without a full-size initial click dot. Mouse drawing is
+the default. Reproducible event tests pass; physical tablet acceptance remains open.
+
+Development Fill also offers [Close gaps](docs/fill_gaps.md), default0, using
+temporary boundaries and mandatory Apply/Cancel previews while preserving ink.
+
+Draw now also has [project color swatches](docs/project_palette.md): Keep this
+color, then click it to reuse across cels. Advanced provides names/replacement/
+removal. The swatches travel with the project; artwork and3D data stay separate.
+
 [Current Windows review](docs/current_review_2026-11-02.md): the full automated
 suite plus native/SFM/common-format/HAS checks passed on frozen development inputs.
 The current owner-approved normal installation is verified separately below and in
@@ -28,6 +43,16 @@ Studio [supports several sound clips](docs/multiple_audio.md): Add
 audio appends, the chooser selects a sound, and each audio block can move on the
 master timeline. Packed saves retain every clip. This is included in the current
 normal installation; the earlier review copy predates it.
+
+The development copy also accepts [MP3 and Ogg sounds](docs/compressed_audio.md)
+through Add audio. Hidden local conversion feeds the same PCM clips, Undo,
+timeline and packed HAS/movie path. This newer increment is separate from the
+normal installed update described above.
+
+Development **Shorten sound…** and a draggable right-edge timeline handle keep
+original samples and let you restore the end later, with Undo. Edge dragging is
+a preview until release; Escape cancels. [Trimmed projects use version3 audio](docs/audio_end_trim.md),
+which older Studio builds refuse; untrimmed projects retain their existing layout.
 
 **Size map…** in the World panel measures a known doorway/ceiling span, previews
 uniform sizing against a six-foot guide, and applies it with Undo. See
@@ -59,6 +84,32 @@ in the owner-approved current installation, which also reads older Model7 scenes
 Its earlier frozen source completed the98-process full regression before the newer
 catalogue increment below. See [motion animation](docs/motion_animation.md).
 
+Development also has an opt-in [Source particle rendering experiment](docs/source_particles.md):
+one installed SFM flash and one Workshop glow convert to common deterministic
+sprite data and render into an actual MP4. This is saved separately from the
+installed app. The first foundation predates the scene integration described below.
+
+The next [particle scene integration](docs/particle_scenes.md) now passes ordinary
+development Save/Open, recovery and Export, including portable HAS and delayed
+audio. It introduces an explicit scene version for effects. This newer source
+is separate from the normal verified installation.
+
+Development now also has an [installed particle browser and basic controls](docs/particle_browser.md):
+choose Particle effects in Installed, load a compatible named system, then add it
+and edit placement/size/timing with Undo. Existing effects reopen from World.
+All eight affected review groups passed for this UI. The normal installed app
+and the earlier full-tested backend snapshot remain separate. Broad Source
+effect compatibility, animated attachments and viewport effect gizmos remain open.
+
+Development now also allows
+[recognized installed SFM content without GMod](docs/sfm_standalone.md), retaining
+the installed-GMod requirement for GMod assets. Native material fidelity is still
+incomplete. A [Source texture row correction](docs/source_textures.md) fixes
+Scout's misplaced texture regions in new development preparations; existing saved
+assets keep their original bytes. Development also adds
+[neutral Source eyes](docs/source_eyes.md) from native iris/helper data. Animated
+gaze and native eye shading remain incomplete.
+
 Shapes recognizes common Source CamelCase names while leaving
 mixed-area controls unassigned. The separate [deform observation backend](docs/deform_observations.md)
 measures before/after geometry. Advanced Shapes now offers
@@ -79,6 +130,10 @@ Use a low [layer opacity](docs/layer_opacity.md) for faint rough sketches beneat
 Press **I** in Draw to [pick a color](docs/color_picker.md) from the picture without
 sampling editor guides; Advanced adds drawing-only and original-cel sources.
 See [drawing layers](docs/drawing_layers.md) for the current four-layer limit.
+
+Drop a `.has` file onto `Start Studio.bat` to open that project directly. From a
+terminal, use `python run.py "C:\path to\your scene.has"`. With an explicit
+project, Studio opens that file and keeps earlier checkpoints available in Recover.
 
 Double-click `Start Studio.bat` for the windowed app. It uses `pythonw.exe` and
 the installed windowed Godot executable, with startup diagnostics kept in
@@ -284,8 +339,9 @@ icons; no Microsoft/Apple artwork or external icon/font package is bundled.
 6. Press Space to preview; arrows step frames, Home/End seek first/last exported frame.
    Text-entry fields retain their keyboard input. Click the canvas to resume shortcuts.
 7. Choose **Add audio** for each voice, music or sound clip. Use PCM **16-bit mono/stereo WAV**,
-   8–96 kHz, up to 60 seconds/32 MiB. Float/24-bit WAV and MP3/OGG are not supported
-   yet; export a PCM16 WAV from your audio program. The inspector scrolls to Audio.
+   8–96 kHz, or desktop **MP3/Ogg**, up to 60 seconds/32 MiB. MP3/Ogg converts
+   locally to PCM48kHz mono/stereo using the configured FFmpeg; Cancel preserves your
+   sounds. Float/24-bit WAV still needs conversion in your audio program. The inspector scrolls to Audio.
    Set start frame, source trim in milliseconds, and gain, then **Apply audio settings** (Advanced reveals trim and gain). Mute affects preview/export. Audio edits and removal support Undo/Redo.
    Select a sound in Audio or its own timeline row; drag its block to change timing.
    Each clip has a waveform on the same timeline; overlapping sounds mix together.
@@ -307,7 +363,56 @@ Scrubbing is silent and sets the next playback position. Up to16 clips share one
 mix; live audio recording, a mixing desk and scrub sound remain unimplemented.
 See [multiple audio clips](docs/multiple_audio.md) for limits and older-app compatibility.
 
+## Project timing
+
+**Options → Scene length (frames)** extends a scene up to 240 frames with Undo.
+It keeps existing timing and refuses shortening that would discard authored
+content. Sound tails stop at the scene end while original samples remain intact.
+
+**Options → Project frame rate** now offers common integer and fractional rates.
+It keeps frame numbers fixed, updates synchronized audio, and supports Undo.
+New projects remain24fps; see [project timing](docs/project_timing.md) for exact
+fractions, older-reader compatibility and current duration/resolution limits.
+
+## Orbit navigation
+
+For orbit-style pose inspection, **Advanced → Settings → Camera controls** offers
+**Orbit around selection**. Ctrl+left orbits, Ctrl+right pans, Ctrl+wheel dollies.
+The existing fly scheme stays the default; camera keys remain explicit. See
+[orbit navigation](docs/orbit_navigation.md).
+
+## Image sequences
+
+For image output, **Advanced → Movie encoder → Export PNG sequence…** exports
+the complete scene, or transparent drawing layers when that option is checked.
+No FFmpeg is required; sound is included as a synchronized WAV sidecar. See
+[PNG export](docs/png_export.md).
+
+## Sound fades
+
+For sound editing, select a clip and use **Fade sound…** for gentle starts/ends.
+Both durations are editable in milliseconds and undoable; source samples stay
+intact. Faded scenes use version4 audio data; older builds refuse them. See
+[sound fades](docs/audio_fades.md).
+
 ## Pose a model (shared MMD / GMod path)
+
+Desktop MMD characters also offer **Import MMD pose…** in their pose properties.
+Choose a VPD and review its matched bones and shapes before applying editable
+keys at the current frame in one Undo step. [Pose import](docs/mmd_pose_import.md) explains skipped controls
+and the current native IK limitations.
+
+**Import MMD motion…** accepts a bounded VMD range as a movable standard timeline
+block, with body and expression keys in one Undo step. [Motion import](docs/mmd_motion_import.md)
+explains timing, source-range review and the remaining native IK limitations.
+
+Fresh PMD/PMX preparations now retain [supported joint chains](docs/standard_ik.md).
+VPD/VMD foot targets and IK switches bake into ordinary editable body keys.
+With Move limbs naturally enabled, imported joint controllers also pose their
+declared links through dragging, numeric edits and reset. Release auto-keys the
+changed joints together. Between keys, animation uses the saved FK poses; use
+Planted feet for persistent foot locks. Inherited effects remain unsupported;
+older models need reimporting to gain declarations.
 
 Use **Add scene** for the environment and **Add model** for a prepared GLB character.
 In **Pose model**, select a bone or click its joint, choose Move/Rotate and Local/World,
@@ -426,7 +531,8 @@ first slice, not clean-machine or artist acceptance of the full application.
 
 The supplied layered/animated Krita projects were inspected as references. See
 [KRA findings](docs/kra_reference_findings.md) for actual timing, layer counts and
-memory implications. Native KRA import is not implemented.
+memory implications. Desktop [Krita import](docs/krita_import.md) now renders
+reviewed native layers into one editable drawing layer; native-layer editing stays in Krita.
 
 ## Reproduce verification
 
@@ -513,3 +619,48 @@ can be dark) and **Studio light** for the original preview illumination. Older
 projects keep Studio light until changed. Preview and export share the saved choice,
 with Undo. See [lighting](docs/lighting.md) for material safety, native limits and
 `python tests/verify_lighting.py`. Native Source lightmaps remain unfinished.
+
+Drawing Undo/Redo preserves running 3D physics while refreshing pixels, cels and
+layer controls. See [independent drawing history](docs/drawing_history.md) for
+the regression check and the separate recording/export policies.
+
+Advanced Fill offers [Grow under lines](docs/fill_expand.md), a previewed0–8pixel
+expansion for color beneath translucent ink edges. Use Flats below ink; growth
+can cross narrow boundaries. Default0 preserves previous fill behavior.
+
+Advanced [Fill connections](docs/fill_connections.md) chooses Edges only (the
+default) or Edges and corners for diagonally touching areas. Canvas-edge/large
+fills still preview first; the choice does not change the common scene format.
+
+Draw → [Select area [M]](docs/drawing_selection.md) selects a rectangle, moves
+pixels by dragging inside, or Shift-drags a copy. Drop creates one Undo step;
+Escape cancels. This first raster tool preserves live3D physics and camera keys.
+Its [Resize / rotate](docs/drawing_transform.md) action adds numeric size/free
+rotation with preview/Apply and Advanced stretch/copy. Lasso, clipboard, canvas
+transform handles and animated2D placement remain unfinished.
+## Personal keyboard controls
+
+Settings → Keyboard shortcuts changes fifteen main keyboard actions, including
+playback, frame steps, drawing tools, Undo/Redo, Save and explicit camera keys.
+Clear and restore-defaults are available; duplicate keys refuse. Preferences stay
+personal and out of HAS. Mouse/WASD/Alt controls remain unchanged. See
+[keyboard shortcuts](docs/keyboard_shortcuts.md) for scope, validation and tests.
+
+Advanced Scene / camera also offers a [numeric camera view](docs/numeric_camera.md):
+draft position/angles, Apply to the temporary view, then explicitly Save camera
+key. Stale drafts refuse after view/frame changes; source3D and paint stay separate.
+
+[Krita preparation groundwork](docs/krita_preparation.md) now has a read-only
+native inventory and a measured installed-Krita animation-rendering experiment.
+Desktop KRA import is exposed in Draw; the current application limits and
+background/alpha review still apply.
+
+The [prepared raster clip worker](docs/raster_clip_preparation.md) now exercises
+explicit scratch-layer choices, transparent normalization, exact holds, fractional
+timing and hidden converter cancellation. [In-app review and adoption](docs/krita_import.md)
+adds one new editable layer with one Undo, portable ancestry and ordinary HAS/MP4.
+
+Pose mode now includes [Body poses](docs/body_pose_library.md): save a named
+authored pose with an isolated thumbnail, reuse it at another frame, and rename,
+duplicate or remove it with Undo. Advanced exchanges native HAS-pose data for the
+identical imported rig. Position, face and generated motion stay independent.

@@ -115,7 +115,7 @@ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void
 	box.add_child(members)
 	var text: Label = app.label(box, "Converts locally with Blender / SourceIO into the same standard GLB used by MMD.\nTextures are approximate. No game scripts run. Your current scene changes only after success.\nNative copies, parameters, editable Blender file and warnings stay in output/compatibility.")
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	app.label(box, "Garry's Mod must already be installed. Studio does not supply the game or Workshop add-ons.").autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	app.label(box, "GMod imports require an installed GMod copy. Recognized SFM content can use SFM alone. Studio supplies neither game nor Workshop add-ons.").autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var game_field := path_field(box, dialog, "Garry's Mod installation", gmod_root)
 	var workshop_field := path_field(box, dialog, "Installed Workshop content (4000)", workshop_root)
 	app.button(box, "Browse installed models and maps…", func():
@@ -241,10 +241,17 @@ func _process(_delta: float) -> void:
 	elif actor and app.renderer.active_model():app.message(app.status.text+app.placement_message(app.renderer.active_model().data))
 	if count > 0:
 		var dialog := AcceptDialog.new()
+		dialog.exclusive = false
 		dialog.title = "Imported with limitations" if not native_family.is_empty() else "Source import warnings"
-		dialog.dialog_text = "%d missing or approximated resources.\n%s\n\nFull details: %s" % [count, "\n".join(report.warnings.slice(0, 6)), folder.path_join("parameters.json")]
+		var summary := "Import notes"
+		if report.get("missing_textures") is Array:
+			var missing: int = report.missing_textures.size()
+			summary = "Missing texture files: %d" % missing
+		dialog.dialog_text = "%s\n%s\n\nFull details: %s" % [summary, "\n".join(report.warnings.slice(0, 6)), folder.path_join("parameters.json")]
 		app.add_child(dialog)
 		dialog.confirmed.connect(dialog.queue_free)
+		dialog.canceled.connect(dialog.queue_free)
+		dialog.close_requested.connect(dialog.queue_free)
 		dialog.popup_centered(Vector2i(740, 340))
 
 func apply_view(report: Dictionary) -> bool:

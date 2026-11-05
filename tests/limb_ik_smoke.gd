@@ -42,8 +42,9 @@ func move_handle(app, axis: int, amount: float, cancel:=false) -> Dictionary:
 	var during: Dictionary=editor.active_rig().data.duplicate(true)
 	var endpoint: Vector3=editor.active_rig().bone_transform(editor.selected).origin
 	var active: bool=editor.dragging;var chain: Dictionary=editor.drag_chain.duplicate(true)
+	var drag_status: String = app.status.text
 	editor.finish_drag(cancel);await settled()
-	return {"before":before,"during":during,"target":desired,"end":endpoint,"dragged":active,"chain":chain}
+	return {"before":before,"during":during,"target":desired,"end":endpoint,"dragged":active,"chain":chain,"status":drag_status}
 
 func run() -> void:
 	var folder:=ProjectSettings.globalize_path("res://output/limb-ik/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
@@ -55,7 +56,13 @@ func run() -> void:
 	var rig: RefCounted=app.renderer.active_model();var id: String=rig.data.id;var editor=app.pose_editor
 	var hand: String=rig.order[2];var limb:=IK.chain(rig,hand)
 	check(not app.advanced_mode and editor.limb_ik.button_pressed and not limb.is_empty(),"Simple defaults to natural movement for a validated hand chain")
+	var unkeyed: Dictionary=rig.data.duplicate(true)
+	editor.motion.open();check("Record a starting pose" in editor.motion.note.text,"Simple explains how to start motion assistance on an unkeyed actor")
+	editor.motion.apply()
+	check(rig.motion_enabled() and rig.authored_keys().is_empty() and not editor.motion.window.visible,"enabling assistance on a new actor creates no main keys")
+	app.undo();check(rig.data==unkeyed,"Undo restores the exact imported actor before its first pose")
 	editor.record_key();editor.frame_model();app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,60)]
+	editor.motion.open();check("one pose key" in editor.motion.note.text and rig.authored_keys().size()==1,"single-key guidance leaves the first pose intact");editor.motion.window.hide()
 	var shots: Array=app.keys.duplicate(true);var original_root: Dictionary=rig.sample_transform(0)
 	var neutral: Image=await app.renderer.capture(app.keys,[],0,true)
 	app.set_frame(8);editor.tree_items[hand].select(0);editor.operation.select(1);editor.refresh_values();await settled()
@@ -82,6 +89,8 @@ func run() -> void:
 	check(rig.data==solved and app.history.size()==history+1,"Escape/cancel restores the original hand pose without an extra key")
 	var current: Dictionary=rig.data.duplicate(true);var far:=IK.solve(rig,limb,Vector3(10000,10000,10000))
 	check(not far.has("error") and far.clamped and rig.data==current,"unreachable targets clamp to limb reach without mutating the live rig")
+	var beyond: Dictionary = await move_handle(app,0,100,true)
+	check("beyond this limb's reach" in beyond.status and "Previous pose restored" in app.status.text and rig.data==current,"unreachable gizmo target gives guidance and cancellation confirms the restored pose")
 	var invalid:=IK.solve(rig,limb,Vector3(NAN,0,0))
 	check(invalid.has("error") and rig.data==current,"nonfinite targets fail without replacing the pose")
 	var skeleton: Skeleton3D=rig.bones[hand].skeleton;var old_scale:=skeleton.scale;skeleton.scale=Vector3(1.1,1,1)
@@ -94,7 +103,13 @@ func run() -> void:
 	app.set_frame(12);editor.limb_ik.button_pressed=false;editor.tree_items[hand].select(0);editor.operation.select(1);editor.refresh_values()
 	var direct: Dictionary=await move_handle(app,0,0.1)
 	check(direct.chain.is_empty() and rig.authored_keys()[-1].pose[hand].position!=Support.keys(solved)[-1].pose[hand].position,"visible opt-out retains direct per-bone movement")
-	app.undo();editor.limb_ik.button_pressed=true;app.set_frame(8)
+	app.undo();editor.limb_ik.button_pressed=true
+	editor.auto_key.button_pressed=false
+	var manual: Dictionary=await move_handle(app,1,0.1)
+	check("Record pose key" in app.status.text and rig.authored_keys().size()==2,"manual IK draft guides recording without creating a key")
+	editor.record_dialog()
+	check(rig.authored_keys().size()==3 and rig.authored_keys()[-1].frame==12 and rig.bone_transform(hand).origin.distance_to(manual.end)<0.0001,"explicit recording keeps the draft hand position at its chosen frame")
+	app.undo();app.undo();editor.auto_key.button_pressed=true;app.set_frame(8)
 	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
 	var wav:=ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")
 	if FileAccess.file_exists(wav):

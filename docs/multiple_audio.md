@@ -1,12 +1,19 @@
 # Multiple sound clips
 
 Development **Add audio** appends a PCM16 WAV without replacing earlier sounds.
+Desktop [MP3 and Ogg import](compressed_audio.md) now normalizes those sources
+locally to the same PCM clip contract before appending.
+**Shorten sound…** or the timeline block's right-edge handle now sets a
+non-destructive end in Simple; see
+[audio end trimming](audio_end_trim.md) for version3 audio compatibility.
 Use the Audio chooser or click an audio row to select a sound. Each has its own
 Start at frame, Mute and Remove controls in Simple. Drag its timeline block to
 change the start with one Undo; motion remains a preview until release. Escape,
 focus loss, New/Open and export cancel tentative dragging. Pointer motion/release
 continues outside the timeline through the editor's normal input router. Selecting
 a sound reveals its inspector controls. Advanced keeps source trim and gain.
+**Fade sound…** adds editable fade-in/out durations in Simple; see
+[sound fades](audio_fades.md) for version4 compatibility and measured scope.
 
 This is one shared scene/timeline and one output mix, not separate playback clocks.
 Clips overlap additively. Preview and MP4 use the same full-length48kHz stereo PCM;
@@ -56,9 +63,13 @@ Technical basis: Godot's [WAV PCM stream](https://docs.godotengine.org/en/4.6/cl
 and [audio synchronization](https://docs.godotengine.org/en/4.6/tutorials/audio/sync_with_audio.html)
 documentation; actual pinned4.6 Windows tests determine behavior here.
 
-This increment does not add compressed-audio import, end trimming/splitting,
-fades/pan/loops/effects/recording, animated gain, ripple editing or audio buses.
+The base multi-clip increment does not add splitting,
+pan/loops/effects/recording, animated gain, ripple editing or audio buses.
 Mix rebuilding is synchronous and bounded; long/dense responsiveness needs work.
 Physical mouse/tablet comfort and subjective hearing remain artist acceptance.
 The normal installation, earlier review candidate and frozen web package remain
 separate. The complete specification/addendum goal remains active.
+
+Add audio places a new sound at the playhead frame where the file picker was opened.
+Its title shows that frame. Import and placement form one Undo action. At the end
+boundary choose an earlier frame, since no exported frame begins at that boundary.

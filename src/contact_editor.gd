@@ -212,5 +212,6 @@ func metadata_bytes(world: Dictionary) -> int:
 		for cel in layer.cels:cels.append({"id":cel.id,"start":cel.start,"duration":cel.duration,"path":"cels/"+"0".repeat(128+str(cel.id).length())+".png","pixel_sha256":"0".repeat(64)})
 		layers.append({"id":layer.id,"name":layer.name,"visible":layer.visible,"cels":cels})
 		if layer.has("opacity"):layers[-1].opacity=layer.opacity
+		if layer.has("origin"):layers[-1].origin=layer.origin
 	var audio: Dictionary=preload("res://src/audio_track.gd").metadata(app.audio_document())
 	return JSON.stringify({"world":preload("res://src/world_document.gd").portable(world),"video":app.video,"camera_keys":app.keys,"layers":layers,"audio":audio,"editor":{"frame":app.frame}},"",true,true).to_utf8_buffer().size()+8192

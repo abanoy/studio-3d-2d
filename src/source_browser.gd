@@ -45,7 +45,7 @@ func open(as_model := true) -> void:
 	window.add_child(margin)
 	var box := VBoxContainer.new(); margin.add_child(box)
 	var heading := HBoxContainer.new(); box.add_child(heading)
-	app.label(heading, "Installed models and maps").size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	app.label(heading, "Installed models, maps and effects").size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	app.button(heading, "Locations…", locations)
 	app.button(heading, "Refresh", refresh)
 	app.button(heading, "Cancel scan", cancel_scan)
@@ -62,7 +62,7 @@ func open(as_model := true) -> void:
 	mount.toggled.connect(toggle_mount)
 	var right := VBoxContainer.new(); split.add_child(right); right.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	var tools := HBoxContainer.new(); right.add_child(tools)
-	kind = OptionButton.new(); kind.add_item("Models"); kind.add_item("Maps"); kind.add_item("Models and maps")
+	kind = OptionButton.new(); kind.add_item("Models"); kind.add_item("Maps"); kind.add_item("Models and maps"); kind.add_item("Particle effects")
 	kind.select(0 if as_model else 1); tools.add_child(kind); kind.item_selected.connect(func(_i): filter_assets())
 	search = LineEdit.new(); search.placeholder_text = "Search asset paths…"; search.size_flags_horizontal = Control.SIZE_EXPAND_FILL; tools.add_child(search)
 	search.text_changed.connect(func(_text): filter_assets())
@@ -76,6 +76,7 @@ func open(as_model := true) -> void:
 	details.custom_minimum_size.y = 64
 	var buttons := HBoxContainer.new(); box.add_child(buttons)
 	import_button = app.button(buttons, "Import selected", import_selected); import_button.disabled = true
+	app.button(buttons,"Scene effects…",func():app.particle_editor.open())
 	app.button(buttons, "Open original file location", reveal)
 	app.button(buttons, "Close", close)
 	window.popup_centered(Vector2i(1100, 690))
@@ -90,7 +91,7 @@ func locations() -> void:
 	var dialog := ConfirmationDialog.new(); dialog.title = "Local content locations";dialog.exclusive=false;dialog.unresizable=false
 	var scroll := ScrollContainer.new(); scroll.custom_minimum_size = Vector2(720, 350); scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED; dialog.add_child(scroll)
 	var box := VBoxContainer.new(); box.size_flags_horizontal = Control.SIZE_EXPAND_FILL; scroll.add_child(box)
-	app.label(box, "GMod must be installed. SFM is optional; no games or add-ons are downloaded.").autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	app.label(box, "Use your installed GMod or SFM content. GMod imports require GMod; SFM content can use SFM alone. Nothing is downloaded.").autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var game: LineEdit = app.source_import.path_field(box, dialog, "Garry's Mod installation", app.source_import.gmod_root)
 	var workshop: LineEdit = app.source_import.path_field(box, dialog, "Workshop content / 4000", app.source_import.workshop_root)
 	app.label(box, "Additional content directories / VPKs (one per line; optional SFM game or mod folder)")
@@ -111,7 +112,7 @@ func begin_job(action: String, data: Dictionary) -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(cache_root))
 	var base := ProjectSettings.globalize_path(cache_root).path_join("%d_%d" % [OS.get_process_id(), Time.get_ticks_usec()])
 	job_result = base + "-result.json"
-	data.merge({"action": action, "gmod": app.source_import.gmod_root, "workshop": app.source_import.workshop_root, "extra": app.source_import.extra_roots, "result": job_result}, true)
+	data.merge({"action": action, "gmod": app.source_import.gmod_root, "workshop": app.source_import.workshop_root, "extra": app.source_import.extra_roots, "result": job_result, "include_particles":true}, true)
 	var file := FileAccess.open(base + "-request.json", FileAccess.WRITE)
 	if file == null: state.text = "Cannot write browser request"; return
 	file.store_string(JSON.stringify(data)); file.close()
@@ -161,7 +162,7 @@ func filter_assets() -> void:
 	entries.clear(); filtered.clear(); import_button.disabled = true
 	var matches := 0
 	for asset in assets:
-		if kind.selected == 0 and asset.kind != "model" or kind.selected == 1 and asset.kind != "map": continue
+		if kind.selected == 0 and asset.kind != "model" or kind.selected == 1 and asset.kind != "map" or kind.selected==2 and asset.kind=="particle" or kind.selected==3 and asset.kind!="particle": continue
 		if not search.text.is_empty() and not (asset.path + " " + str(asset.get("source_title", ""))).to_lower().contains(search.text.to_lower()): continue
 		matches += 1
 		if filtered.size() >= 2000: continue
@@ -180,13 +181,15 @@ func select_asset(index: int) -> void:
 	if index < 0 or index >= filtered.size(): return
 	var asset: Dictionary = filtered[index]
 	var provider: Dictionary = asset.get("provider", current)
-	details.text = ("Model" if asset.kind == "model" else "Map") + ": " + asset.path + "\n" + str(asset.get("source_title", provider.label)) + " • " + str(asset.bytes) + " bytes\n" + provider.path
+	details.text = ("Particle file"if asset.kind=="particle"else "Model" if asset.kind == "model" else "Map") + ": " + asset.path + "\n" + str(asset.get("source_title", provider.label)) + " • " + str(asset.bytes) + " bytes\n" + provider.path
 	import_button.disabled = false
 
 func import_selected() -> void:
 	if job_pid > 0 or entries.get_selected_items().is_empty(): return
 	var asset: Dictionary = filtered[entries.get_selected_items()[0]]
 	var provider: Dictionary = asset.get("provider", current)
+	if asset.kind=="particle":
+		close();app.particle_editor.choose_file(provider,asset.path);return
 	var path: String = provider.path.path_join(asset.path) if provider.kind == "folder" else provider.path
 	var member: String = "" if provider.kind == "folder" else asset.path
 	var action := func(): app.source_import.launch(path, member, asset.kind == "model", 0.01905,"",null,"","Y",0,app.import_actions.placement() if asset.kind=="model" else {})
@@ -226,7 +229,7 @@ func _process(_delta: float) -> void:
 		if job_action == "index":
 			for asset in assets: asset["provider"] = current; asset["source_title"] = result.title
 		filter_assets()
-		if assets.is_empty(): state.text = "No MDL/BSP models or maps in this location. It may contain only materials, sounds or scripts."
+		if assets.is_empty(): state.text = "No models, maps or particle files in this location. It may contain only materials, sounds or scripts."
 
 func _exit_tree() -> void:
 	cancel_scan()

@@ -45,6 +45,9 @@ func run() -> void:
 	app.advanced_toggle.button_pressed=true;app.advanced_toggle.pressed.emit();app.mode.select(1);app.change_mode(1)
 	check(app.camera_near.is_visible_in_tree() and app.camera_near.editable and app.camera_far.editable,"Advanced exposes editable view-distance controls in camera mode")
 	var count: int=app.keys.size();var history: int=app.history.size();var dirty: bool=app.dirty
+	var prior_keys: Array=app.keys.duplicate(true)
+	app.fov.value=75
+	check(app.renderer.camera.fov==75 and app.keys==prior_keys and app.history.size()==history and app.dirty==dirty and "Save camera key [K]" in app.status.text,"field-of-view preview points to explicit recording without editing shot keys")
 	app.camera_far.value=12000
 	check(app.renderer.camera.far==12000 and app.keys.size()==count and app.history.size()==history and app.dirty==dirty,"view-distance edit stays temporary without keys, history or dirty changes")
 	var prior_near: float=app.renderer.camera.near;app.camera_near.value=13000

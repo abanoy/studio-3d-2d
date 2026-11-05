@@ -43,8 +43,9 @@ class ExtendedLimits(C.Structure):
                 *[(key, C.c_size_t) for key in ('ProcessMemoryLimit', 'JobMemoryLimit', 'PeakProcessMemoryUsed', 'PeakJobMemoryUsed')]]
 
 
-def run_private(args, receipt_path, timeout=300):
+def run_private(args, receipt_path, timeout=300, cancel_file=None, memory_limit_mib=0):
     if os.name != 'nt': raise RuntimeError('Private desktop testing requires Windows')
+    if type(memory_limit_mib) is not int or memory_limit_mib and not 64<=memory_limit_mib<=16384:raise ValueError('Invalid owned job memory limit')
     u = C.WinDLL('user32', use_last_error=True); k = C.WinDLL('kernel32', use_last_error=True)
     def api(lib, name, result, *arguments):
         f = getattr(lib, name); f.restype = result; f.argtypes = arguments; return f
@@ -91,6 +92,10 @@ def run_private(args, receipt_path, timeout=300):
         require(set_thread_desktop(original_desktop), 'Restore launcher thread desktop')
         job = create_job(None, None); require(job, 'Create owned test job')
         limits = ExtendedLimits(); limits.BasicLimitInformation.LimitFlags = 0x2000
+        if memory_limit_mib:
+            limits.BasicLimitInformation.LimitFlags |= 0x200
+            limits.JobMemoryLimit = memory_limit_mib * 1024 * 1024
+            receipt['job_memory_limit_bytes'] = limits.JobMemoryLimit
         require(configure_job(job, 9, C.byref(limits), C.sizeof(limits)), 'Configure test-tree cleanup')
         nul = create_file('NUL', 0xc0000000, 3, None, 3, 0, None)
         require(nul and nul != C.c_void_p(-1).value, 'Open null input')
@@ -138,6 +143,9 @@ def run_private(args, receipt_path, timeout=300):
         monitor = threading.Thread(target=watch_desktop, daemon=True); monitor.start()
         require(resume(process.hThread) != 0xffffffff, 'Resume private test process')
         while True:
+            if cancel_file and Path(cancel_file).exists():
+                receipt['cancelled'] = True
+                raise InterruptedError('Owned converter cancelled')
             state = wait(process.hProcess, 0)
             if state == 0: break
             if state != 258: raise RuntimeError('Cannot observe owned test process')
@@ -177,8 +185,8 @@ def run_private(args, receipt_path, timeout=300):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__); parser.add_argument('--receipt', required=True); parser.add_argument('--timeout', type=float, default=300); parser.add_argument('command', nargs=argparse.REMAINDER)
+    parser = argparse.ArgumentParser(description=__doc__); parser.add_argument('--receipt', required=True); parser.add_argument('--timeout', type=float, default=300); parser.add_argument('--cancel-file'); parser.add_argument('--memory-limit-mib',type=int,default=0); parser.add_argument('command', nargs=argparse.REMAINDER)
     options = parser.parse_args(); command = options.command
     if command and command[0] == '--': command = command[1:]
     if not command: parser.error('Missing owned test command')
-    raise SystemExit(run_private(command, options.receipt, options.timeout))
+    raise SystemExit(run_private(command, options.receipt, options.timeout, options.cancel_file, options.memory_limit_mib))

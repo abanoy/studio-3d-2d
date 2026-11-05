@@ -1,5 +1,90 @@
 # Decisions — 2026-10-29
 
+## 2026-11-02 — native iris data baked into a common neutral eye
+
+Use a validated unambiguous native eye frame/iris radius/offset and the installed
+iris texture to produce ordinary GLB UVs and opaque PBR color. Stage changes and
+touch only matching eye loops. Preserve native eye fields in reports and tell the
+user this is a neutral approximation; no implicit gaze/refraction/dilation or
+Source shader execution. Missing/ambiguous bindings retain gray fallback with a
+reason. Existing saved assets stay unchanged. Source_eyes.md separates actual
+native/GLB evidence from the running remaining regression and unfinished fidelity.
+
+## 2026-11-02 — explicit Source texture row boundary
+
+Decode VTF data as before, then reverse image rows once at the Blender pixel
+boundary. The codec returns top-down rows; Blender Image.pixels expects bottom-up.
+Do not flip mesh UVs or silently rewrite previously saved GLBs/HAS. Actual native
+codec/asymmetric PNG controls and an isolated Scout before/after prove the
+boundary error. Existing source-family/model contracts and particle PNG path are
+unchanged. Eye shaders and broader native material behavior remain separate gaps.
+See source_textures.md for proof and affected-regression status.
+
+## 2026-11-02 — installed SFM host independent of GMod
+
+Admit recognized SFM content using a validated installed SFM host rather than
+requiring an unrelated GMod installation. Preserve the owner-required GMod check
+for GMod assets. Attribute SFM providers to their declaring installation; remove
+unavailable GMod fallback paths when using SFM alone. Browser inventory and native
+preparation share the context; native scene formats remain unchanged. Arbitrary
+extra roots alone do not classify a source as SFM. See sfm_standalone.md for actual
+proof, the ten-group affected review and visible pre-existing Scout material
+defect. Installation admission does not certify native rendering fidelity.
+
+## 2026-11-02 — explicit system choice and common effect-instance edits
+
+Keep Source PCF discovery opt-in for the existing data index. A modeless chooser
+distinguishes basic-operator eligibility from successful material preparation,
+retains whole-system refusals and requires explicit Add. One managed canonical
+JSON/PNG instance goes through the existing world transaction/Undo/HAS/runtime;
+there is no source-family posing engine. Static position, uniform size, timing
+and visibility are the first editable controls. World tree entries reopen exact
+IDs without misrepresenting a particle as a mesh/rig. Derived linked assets
+externalize from managed imports rather than referencing a worker cache.
+
+The panel uses a fixed action footer and preserves untouched stored precision.
+Native mount overrides/extra paths reach the bounded worker. Isolated actual
+native UI/cold-reader/MP4 tests pass; all eight integrated affected review groups
+also exit0 with seven clean private graphical receipts. See
+particle_browser.md for exact proof and limitations. Existing renderer/backend
+full regression stays attributed to its own frozen snapshot; normal source is
+not replaced by development integration.
+
+## 2026-11-02 — explicit common effect scenes and project-clock persistence
+
+Use project schema5/world2 only when the world declares effects; ordinary worlds
+keep schema4/world1 and models keep their existing contract. A separate typed
+native effect instance references content-addressed canonical JSON+PNG, stable
+ID, static uniform root, start/end/trim and visibility. One runtime samples by
+rational project time, retains that rate during editing reevaluation and feeds
+the ordinary renderer/export path. Older Storage/HAS worker code must reject
+new scenes. Shared asset inventory supplies Save, linked references and recovery
+budgets so textures cannot be omitted. Bounded preparation is transactional.
+
+Ordinary linked/packed/cold Open and MP4/AAC have focused proof; UI controls,
+attachments and richer effects remain unfinished. See particle_scenes.md for
+actual evidence and failed development checks. The full current verifier and
+separate HAS checks subsequently completed0 on frozen source; normal installed
+Studio remains separate.
+
+## 2026-11-02 — actual Source sprite foundation before particle UI
+
+Convert a deliberately supported whole childless native system into versioned
+canonical effect data plus PNG; one shared deterministic analytic renderer serves
+SFM and GMod Workshop inputs. Refuse unsupported behavior rather than silently
+importing a subset of the chosen system. Own seeded random/distribution semantics
+and simple additive shaders are an approximation, not Source bit equivalence.
+PCF/material/texture handling stays data-only and bounded, with existing optional
+decoders; no game/add-on execution or new dependency. Fixed single-image VTF7.2
+is intentionally restrictive. See source_particles.md for exact limits and proof.
+
+The opt-in experiment passes11 Python tests and29 writer+27 cold GPU checks with
+actual textures and MP4. Ordinary editor/world/Model/HAS formats remain untouched;
+do not advertise in-app particle support or copy these files over the verified
+normal installation. Future persistence must explicitly version required effect
+semantics and prove packing/cold loading before simple browser/timeline controls.
+The installed-source backup and verified update remain the separate usable app.
+
 1. **Separate worktree component.** The selected worktree has an older Cloudflare
    snapshot; the original C:\a\Programming\cloudflare includes newer projects and
    a large, separate artist-assistant effort. Read the requested spec there and

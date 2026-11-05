@@ -1,10 +1,12 @@
 extends SceneTree
+const D=preload("res://src/root_component_document.gd")
 const Model=preload("res://src/model.gd")
 const World=preload("res://src/world_document.gd")
 const Ranges=preload("res://src/contact_ranges.gd")
 const Contacts=Ranges.Contact.Contacts
 const Secondary=preload("res://src/secondary_live.gd")
 var app
+var components:=false
 var folder: String
 var checks:=0
 var failures:=0
@@ -24,6 +26,13 @@ func plant(id: String) -> Dictionary:
 	var result:=Ranges.edit(actor.data,0,49,track.segments[0],48)
 	check(not result.has("error"),"contact range prepares: "+id)
 	if result.has("error"):return {}
+	if components:
+		var value:=Model.Clips.transform(result.data)
+		result=D.put_component(result.data,0,"position",value.position,"ease",48)
+		var later: Array=value.position.duplicate();later[1]-=.015
+		result=D.put_component(result.data,24,"position",later,"ease",48)
+		result=D.put_component(result.data,9,"rotation_xyzw",value.rotation_xyzw,"linear",48)
+		result=D.put_component(result.data,10,"scale",value.scale,"hold",48)
 	app.renderer.world_runtime.restore_instance(id,result.data);app.set_frame(0)
 	return rig(id).data.duplicate(true)
 func endpoint_error(actor: RefCounted,at: float) -> float:
@@ -55,6 +64,14 @@ func record_bodies(asset: String,all: bool) -> void:
 			for at in range(6,last+1):correct=correct and not pinned(states[id],at)
 		else:correct=correct and states[id]==originals[id]
 	check(correct and not physics.is_running() and app.history.size()==history+1,"only recorded bodies release their sampled interval; outside and Local peers retain pins in one Undo")
+	if components:
+		var outside:=true
+		for id in originals:
+			var original_model:=Model.new();original_model.data=originals[id]
+			outside=outside and states[id].format==D.FORMAT
+			for at in range(49):
+				if at<6 or at>last:outside=outside and rig(id).sample_authored_transform(at)==original_model.sample_authored_transform(at)
+		check(outside,"component recording retains model version and exact roots outside its interval")
 	app.undo();correct=true
 	for id in originals:correct=correct and rig(id).data==originals[id]
 	check(correct,"recording Undo restores every target's exact original contacts")
@@ -62,6 +79,7 @@ func record_bodies(asset: String,all: bool) -> void:
 	for id in states:correct=correct and rig(id).data==states[id]
 	check(correct,"recording Redo restores the exact take and outside contacts")
 func run() -> void:
+	components="--components" in OS.get_cmdline_user_args()
 	folder=OS.get_cmdline_user_args()[0];DirAccess.make_dir_recursive_absolute(folder)
 	var asset:=folder.path_join("figure.glb");preload("res://src/tutorial_assets.gd").figure(asset);var sha:=FileAccess.get_sha256(asset)
 	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
@@ -81,7 +99,7 @@ func run() -> void:
 	var after: Dictionary=rig(actor.id).data.duplicate(true);var sampled: Dictionary=rig(actor.id).sample(12,true)
 	check(not physics.active(actor.id) and rig(actor.id).evaluation_error.is_empty() and sampled==frozen,"Physics OFF freezes the actual fallen pose without a planted-foot correction or reach error")
 	check(not pinned(after,12) and pinned(after,11) and pinned(after,13),"body OFF releases only the current frame and retains surrounding authored contacts")
-	check(app.history.size()==history+1 and rig(actor.id).authored_keys()==Model.body_animation().authored_keys(original),"freeze and one-frame release share one Undo and create no simulation keys")
+	check(app.history.size()==history+1 and rig(actor.id).authored_keys()==(D.authored_keys(original,48) if components else Model.body_animation().authored_keys(original)),"freeze and one-frame release share one Undo and create no simulation keys")
 	app.undo();check(rig(actor.id).data==original,"freeze Undo restores the exact original contact record")
 	app.redo();check(rig(actor.id).data==after,"freeze Redo restores the exact pose and contact release")
 	# A fragmented logical contact can recur after a release inside one recording.
@@ -92,7 +110,7 @@ func run() -> void:
 	# Refusing a release that exceeds the piece limit must leave the live solver on.
 	app.new_project();world=World.empty();world.objects=[actor];app.restore_world(world);original=plant(actor.id)
 	var dense:=original.duplicate(true)
-	for boundary in range(2,32):dense=Model.Clips.split(dense,boundary).data
+	for boundary in range(2,32):dense=(D.edit_clip(dense,"split","",boundary,48) if components else Model.Clips.split(dense,boundary)).data
 	app.renderer.world_runtime.restore_instance(actor.id,dense);app.set_frame(40);app.world_selection.select_entity(actor.id);physics.change(true);await settled();history=app.history.size()
 	check(dense.animation_clips.size()==32 and not physics.freeze(actor.id) and physics.body_active(actor.id) and rig(actor.id).data==dense and app.history.size()==history and app.status.text.contains("32 animation pieces"),"over-limit contact release refuses freeze before disposing the live solver or changing history")
 	physics.clear()

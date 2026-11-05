@@ -11,6 +11,7 @@ signal seek(frame: int)
 signal import_requested(frame: int, actor: bool)
 signal audio_chosen(index: int)
 signal audio_moved(id: String, start: int, previous: int)
+signal audio_end_trimmed(id: String, last: int, context: Dictionary)
 var import_menu: PopupMenu
 var import_frame:=0
 var keys: Array = []
@@ -22,11 +23,20 @@ var audio_clip := {}
 var audio_clips: Array = []
 var audio_selected := 0
 var audio_fps := 24.0
+var audio_rate:={"fps_num":24,"fps_den":1}
 var clip_waveforms: Array = []
 var moving_audio := ""
 var audio_anchor := 0
 var audio_previous := 0
 var audio_preview := 0
+var trimming_audio:=""
+var trim_previous:=0
+var trim_preview:=0
+var trim_anchor:=0
+var trim_visible_end:=0
+var trim_limit:=0
+var trim_context:={}
+var audio_trim_context: Callable
 var waveform := PackedFloat32Array()
 var pose_keys: Array = []
 var has_model := false
@@ -62,12 +72,13 @@ const LEFT := 190.0
 func set_label_mode(enabled: bool) -> void:
 	if advanced_labels==enabled:return
 	advanced_labels=enabled
+	if not enabled and selected_channel in ["@root/position","@root/rotation_xyzw","@root/scale"]:selected_channel="@root"
 	channel_cache.clear()
 	rebuild_rows()
 
 func set_objects(rows: Array, token: int, active: String) -> void:
 	if world_token!=token:
-		finish_move(true);moving_audio="";expanded.clear();channel_cache.clear();layout_ids=[];visual_rows=[];object_positions=[]
+		finish_move(true);cancel_audio();expanded.clear();channel_cache.clear();layout_ids=[];visual_rows=[];object_positions=[]
 	if selected_id!=active:last_bone="";selected_channel="@root"
 	world_token=token;object_rows=rows;selected_id=active
 	var ids: Array=[]
@@ -120,9 +131,20 @@ func audio_y() -> float:
 func audio_rect(index: int) -> Rect2:
 	var clip: Dictionary = audio_clips[index]
 	var start: int = audio_preview if moving_audio == clip.id else int(clip.start_frame)
-	var seconds: float = float(clip.source.frames-clip.source_in_sample)/clip.source.rate
-	var end := mini(duration,start+ceili(seconds*audio_fps))
+	var last: int=trim_preview if trimming_audio==clip.id else preload("res://src/audio_track.gd").last_frame(clip,audio_rate)
+	var end := mini(duration,start+last-int(clip.start_frame)+1)
 	return Rect2(x(start),audio_y()+index*30,maxf(1,x(end)-x(start)),29)
+
+func audio_end_handle(index: int) -> Rect2:
+	var rect:=audio_rect(index)
+	var width:=minf(rect.size.x,minf(9,maxf(2,rect.size.x*.3)))
+	return Rect2(rect.end.x-width,rect.position.y,width,rect.size.y)
+
+func audio_gesture_active() -> bool:
+	return not moving_audio.is_empty() or not trimming_audio.is_empty()
+
+func cancel_audio() -> void:
+	moving_audio="";trimming_audio="";trim_context={};mouse_default_cursor_shape=Control.CURSOR_ARROW;queue_redraw()
 
 func row_y(index: int) -> float:
 	return header_height()+(object_positions[index] if index<object_positions.size() else index)*ROW_HEIGHT
@@ -134,6 +156,9 @@ func channel_y(id: String, channel: String) -> float:
 	return -1
 
 func _get_tooltip(point: Vector2) -> String:
+	for index in range(audio_clips.size()):
+		if audio_end_handle(index).has_point(point):return "Drag the right edge to shorten or extend this sound. Original samples stay available."
+		if audio_rect(index).has_point(point):return "Drag to move this sound. Drag its right edge to trim the end."
 	var row:=hit_row(point)
 	if not row.is_empty():
 		if not row.channel.is_empty():return row.channel.tooltip+"\nClick a key to select this part and inspect its frame."
@@ -177,7 +202,7 @@ func finish_move(cancel:=false) -> void:
 
 func _ready() -> void:
 	focus_mode = Control.FOCUS_ALL
-	focus_exited.connect(func(): moving_audio=""; queue_redraw())
+	focus_exited.connect(cancel_audio)
 	channel_font.font_names=PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"])
 	mouse_filter=Control.MOUSE_FILTER_STOP
 	tooltip_text="Drag an object's block to move its presence and all animation keys together."
@@ -266,7 +291,7 @@ func _draw() -> void:
 		var y := audio_y()+index*30
 		var rect := audio_rect(index)
 		draw_string(ThemeDB.fallback_font,Vector2(8,y+18),"Audio" if audio_clips.size()==1 else "Audio %d" % (index+1),HORIZONTAL_ALIGNMENT_LEFT,80,14,Color("283c51"))
-		draw_rect(rect,Color("c6d0d5") if clip.muted else Color("e1edd5"))
+		draw_rect(rect,Color("d4e9fa") if trimming_audio==clip.id else Color("c6d0d5") if clip.muted else Color("e1edd5"))
 		if index==audio_selected: draw_rect(rect,Color("749c69"),false,1)
 		var peaks: PackedFloat32Array = clip_waveforms[index] if index<clip_waveforms.size() else PackedFloat32Array()
 		var offset := x(audio_preview)-x(clip.start_frame) if moving_audio==clip.id else 0.0
@@ -276,6 +301,7 @@ func _draw() -> void:
 			var amplitude := peaks[i]*11
 			draw_line(Vector2(xx,y+14-amplitude),Vector2(xx,y+14+amplitude),Color("467d45"))
 		draw_string(ThemeDB.fallback_font,rect.position+Vector2(4,11),clip.source.name.left(24)+(" [mute]" if clip.muted else ""),HORIZONTAL_ALIGNMENT_LEFT,maxf(1,rect.size.x-8),11,Color("315835"))
+		draw_line(Vector2(rect.end.x-3,y+6),Vector2(rect.end.x-3,y+23),Color("3e708d") if trimming_audio==clip.id else Color("749c69"),2)
 	draw_line(Vector2(x(frame), 0), Vector2(x(frame), size.y), Color("bf613c"), 2)
 
 func draw_diamond(point: Vector2) -> void:
@@ -283,9 +309,25 @@ func draw_diamond(point: Vector2) -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if not interactive:accept_event();return
+	if not trimming_audio.is_empty():
+		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
+			cancel_audio();accept_event();return
+		if event is InputEventMouseMotion:
+			var delta:=frame_at(event.position)-trim_anchor
+			var index:=-1
+			for i in range(audio_clips.size()):
+				if audio_clips[i].id==trimming_audio:index=i;break
+			if index<0:cancel_audio();return
+			trim_preview=trim_previous if delta==0 else clampi(trim_visible_end+delta,int(audio_clips[index].start_frame)+1,trim_limit)-1
+			mouse_default_cursor_shape=Control.CURSOR_HSIZE;queue_redraw();accept_event();return
+		if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and not event.pressed:
+			var id:=trimming_audio;var last:=trim_preview;var prior:=trim_previous;var context:=trim_context;cancel_audio()
+			if last!=prior:audio_end_trimmed.emit(id,last,context)
+			accept_event();return
+		accept_event();return
 	if not moving_audio.is_empty():
-		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
-			moving_audio="";queue_redraw();accept_event();return
+		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
+			cancel_audio();accept_event();return
 		if event is InputEventMouseMotion:
 			audio_preview=clampi(audio_previous+frame_at(event.position)-audio_anchor,0,duration-1)
 			queue_redraw();accept_event();return
@@ -293,12 +335,20 @@ func _gui_input(event: InputEvent) -> void:
 			var id := moving_audio; moving_audio=""
 			if audio_preview!=audio_previous: audio_moved.emit(id,audio_preview,audio_previous)
 			queue_redraw();accept_event();return
+		accept_event();return
 	if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT and not header_only:
 		var index := floori((event.position.y-audio_y())/30)
 		if index>=0 and index<audio_clips.size():
 			audio_chosen.emit(index)
 			if audio_rect(index).has_point(event.position):
-				finish_move(true);dragging=false;moving_audio=audio_clips[index].id
+				finish_move(true);dragging=false;cancel_audio()
+				if audio_end_handle(index).has_point(event.position):
+					var clip: Dictionary=audio_clips[index];var full:=clip.duplicate();full.erase("source_out_sample")
+					trimming_audio=clip.id;trim_previous=preload("res://src/audio_track.gd").last_frame(clip,audio_rate);trim_preview=trim_previous
+					trim_visible_end=mini(duration,trim_previous+1);trim_limit=mini(duration,preload("res://src/audio_track.gd").last_frame(full,audio_rate)+1);trim_anchor=frame_at(event.position)
+					trim_context=audio_trim_context.call(clip.id) if audio_trim_context.is_valid() else {}
+					grab_focus();accept_event();return
+				moving_audio=audio_clips[index].id
 				audio_anchor=frame_at(event.position);audio_previous=int(audio_clips[index].start_frame);audio_preview=audio_previous
 				grab_focus();accept_event();return
 	if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
@@ -339,6 +389,9 @@ func _gui_input(event: InputEvent) -> void:
 			dragging=true
 		else:dragging=false
 	if event is InputEventMouseMotion:
+		mouse_default_cursor_shape=Control.CURSOR_ARROW
+		for index in range(audio_clips.size()):
+			if audio_end_handle(index).has_point(event.position):mouse_default_cursor_shape=Control.CURSOR_HSIZE;break
 		if not moving_id.is_empty():drag_motion(event.position);accept_event();return
 		var hit:=hit_row(event.position);var hover:=int(hit.get("index",-1))
 		if hover>=0 and hover<object_rows.size():tooltip_text=str(object_rows[hover].name)+" • drag a piece; Shift-drag moves all its animation."

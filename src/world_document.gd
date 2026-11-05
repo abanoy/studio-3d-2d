@@ -2,6 +2,8 @@ extends RefCounted
 # Schema4 domain data. Every map/model/group uses the existing model contract.
 const Model = preload("res://src/model.gd")
 const FORMAT := "studio_world_1"
+const EFFECT_FORMAT := "studio_world_2"
+const Particles=preload("res://src/particle_document.gd")
 const MAX_OBJECTS := 64
 
 static func empty() -> Dictionary:
@@ -25,8 +27,10 @@ static func asset_path(digest: String) -> String:
 	return "assets/"+digest+".glb"
 
 static func validate(world, duration: int, portable := false) -> String:
-	if not world is Dictionary or world.get("format")!=FORMAT or not world.get("objects") is Array or world.objects.size()>MAX_OBJECTS:
+	if not world is Dictionary or not world.get("format") in [FORMAT,EFFECT_FORMAT] or not world.get("objects") is Array or world.objects.size()>MAX_OBJECTS:
 		return "Invalid world record or more than64 objects."
+	if world.format==FORMAT and world.has("effects"):return "Particle effects require world2/project schema5."
+	if world.format==EFFECT_FORMAT and (not world.get("effects") is Array or world.effects.size()>Particles.MAX_EFFECTS):return "Invalid particle collection or more than16 effects."
 	var index := {}
 	for row in world.objects:
 		var error := Model.validate(row,duration)
@@ -43,6 +47,12 @@ static func validate(world, duration: int, portable := false) -> String:
 			if row.get("path")!=asset_path(row.sha256) or row.has("source"): return "Invalid managed world asset path."
 		elif not row.get("source") is String or row.source.is_empty(): return "Missing world asset source."
 		index[row.id]=row
+	var identities:=index.duplicate()
+	for row in world.get("effects",[]):
+		var error:=Particles.validate(row,duration,portable)
+		if not error.is_empty():return error
+		if not identifier(row.get("id")) or identities.has(row.id):return "Invalid or duplicate particle ID."
+		identities[row.id]=true
 	for row in world.objects:
 		var seen := {}
 		var current: String = row.id
@@ -53,28 +63,38 @@ static func validate(world, duration: int, portable := false) -> String:
 			current=index[current].parent_id
 	return ""
 
+static func assets(world: Dictionary) -> Array:
+	var result:=[]
+	for row in world.objects:result.append({"source":row.get("source",""),"path":asset_path(row.sha256),"sha256":row.sha256,"limit":128*1024*1024})
+	for row in world.get("effects",[]):result.append_array(Particles.assets(row))
+	return result
+
 static func portable(world: Dictionary) -> Dictionary:
 	var result := world.duplicate(true)
 	for row in result.objects:
 		row["path"]=asset_path(row.sha256)
 		row.erase("source")
+	for row in result.get("effects",[]):
+		row["path"]=Particles.asset_path(row.sha256,"json");row["texture_path"]=Particles.asset_path(row.texture_sha256,"png")
+		row.erase("source");row.erase("texture_source")
 	return result
 
 static func resolve(world: Dictionary, folder: String) -> Dictionary:
 	var result := world.duplicate(true)
 	for row in result.objects: row["source"]=folder.path_join(row.path)
+	for row in result.get("effects",[]):row["source"]=folder.path_join(row.path);row["texture_source"]=folder.path_join(row.texture_path)
 	return result
 
 static func from_project(data: Dictionary) -> Dictionary:
 	var version=data.get("schema_version")
 	if not (version is int or version is float):return {"error":"Unsupported project version."}
-	if version==4:
+	if version==4 or version==5:
 		return data.world.duplicate(true) if data.get("world") is Dictionary else {"error":"Missing world record."}
 	if version!=1 and version!=2 and version!=3:return {"error":"Unsupported project version."}
 	return from_legacy(data)
 
 static func from_legacy(data: Dictionary) -> Dictionary:
-	if data.get("schema_version")==4:return {"error":"Use from_project for an existing multi-object world."}
+	if data.get("schema_version")==4 or data.get("schema_version")==5:return {"error":"Use from_project for an existing multi-object world."}
 	var result := empty()
 	if not str(data.get("source","")).is_empty():
 		var scene: Dictionary = data.get("scene",{})

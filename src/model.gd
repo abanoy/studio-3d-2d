@@ -40,8 +40,8 @@ var _contact_cache_order: Array=[]
 var _contact_cache_humanoid: Dictionary={}
 var _contact_cache_rows: Array=[]
 var _contact_cache_legs: Array=[]
-static func is_body(value: Dictionary) -> bool:return value.get("format") in [BODY_FORMAT,CONTACT_FORMAT,MOTION_FORMAT]
-static func is_contact(value: Dictionary) -> bool:return value.get("format") in [CONTACT_FORMAT,MOTION_FORMAT]
+static func is_body(value: Dictionary) -> bool:return value.get("format") in [BODY_FORMAT,CONTACT_FORMAT,MOTION_FORMAT,"studio_model_9"]
+static func is_contact(value: Dictionary) -> bool:return value.get("format") in [CONTACT_FORMAT,MOTION_FORMAT] or value.get("format")=="studio_model_9" and value.get("component_base_format") in [CONTACT_FORMAT,MOTION_FORMAT]
 static func motion_animation():return load("res://src/motion_animation.gd")
 static func contact_animation():return load("res://src/contact_animation.gd")
 static func body_animation():return load("res://src/body_animation.gd")
@@ -54,7 +54,14 @@ var _body_authored: Array=[]
 
 func body_state(frame: float) -> Dictionary:
 	if not _body_runtime or not is_same(_body_source,data):
-		_body_source=data;_body_runtime=body_animation().compile(data);_body_frame=INF
+		_body_source=data;_body_frame=INF
+		if data.get("format")=="studio_model_9":
+			_body_runtime=load("res://src/root_component_runtime.gd").new()
+			var error: String=_body_runtime.configure(data,int(motion_video.duration_frames))
+			if not error.is_empty():
+				evaluation_error=error;_body_runtime=null
+				return {"pose":{},"transform":Clips.transform(data)}
+		else:_body_runtime=body_animation().compile(data)
 	if _body_frame!=frame:_body_state=_body_runtime.sample(frame);_body_frame=frame
 	return _body_state
 
@@ -87,6 +94,7 @@ static func scale_valid(value) -> bool:
 static func validate(value, duration: int) -> String:
 	if not value is Dictionary: return "Invalid model record."
 	if value.is_empty(): return ""
+	if value.get("format")=="studio_model_9":return load("res://src/root_component_document.gd").validate(value,duration)
 	if not value.get("format") in ["studio_model_1",Clips.FORMAT,Visibility.FORMAT,ShapeAnimation.LEGACY_FORMAT,ShapeAnimation.FORMAT,BODY_FORMAT,CONTACT_FORMAT,MOTION_FORMAT] or not value.get("id") is String or not value.get("name") is String or not value.get("sha256") is String or not value.get("visible") is bool or not value.get("reference_only") is bool or not transform_valid(value): return "Invalid standard model identity/transform."
 	var motion_error: String=motion_animation().validate(value)
 	if not motion_error.is_empty():return motion_error
@@ -94,6 +102,10 @@ static func validate(value, duration: int) -> String:
 	if not visibility_error.is_empty():return visibility_error
 	if not scale_valid(value.get("scale")): return "Invalid model scale."
 	if not pose_valid(value.get("pose")) or not value.get("metadata") is Dictionary or not value.get("pose_keys") is Array or value.pose_keys.size() > 241: return "Invalid model pose data."
+	if value.metadata.has("body_pose_library"):
+		var library_error: String=load("res://src/pose_library.gd").error(value.metadata.body_pose_library)
+		if not library_error.is_empty():return library_error
+		if value.metadata.body_pose_library.sha256!=value.sha256:return "Saved body poses belong to a different model source."
 	if value.metadata.has("airflow"):
 		var fan_error:=Airflow.validate(value.metadata.airflow)
 		if not fan_error.is_empty():return fan_error
@@ -184,6 +196,9 @@ func contact_legs() -> Array:
 	return _contact_cache_legs.duplicate(true)
 
 func check_bindings() -> String:
+	if data.metadata.has("body_pose_library"):
+		var library_error: String=load("res://src/pose_library.gd").compatible(data.metadata.body_pose_library,self)
+		if not library_error.is_empty():return library_error
 	if is_body(data):
 		var body_error: String=body_animation().B.check_bindings(body_animation().view(data),order)
 		if not body_error.is_empty():return body_error
@@ -295,7 +310,7 @@ func sample(frame: float, editing := false,editing_ancestor: String="") -> Dicti
 	if evaluation_error.is_empty():evaluation_error=result.get("error","")
 	return result.get("pose",pose)
 
-func motion_enabled() -> bool:return data.get("format")==MOTION_FORMAT and data.get("motion_assist",{}).get("enabled",false)
+func motion_enabled() -> bool:return (data.get("format")==MOTION_FORMAT or data.get("format")=="studio_model_9" and data.get("component_base_format")==MOTION_FORMAT) and data.get("motion_assist",{}).get("enabled",false)
 
 func motion_plan() -> RefCounted:
 	var runtime: RefCounted=world_context.get_ref() if world_context else null
@@ -303,8 +318,13 @@ func motion_plan() -> RefCounted:
 	var rate: String="%s/%s/%s" % [motion_video.fps_num,motion_video.fps_den,motion_video.duration_frames]
 	if not is_same(_motion_source,data) or _motion_rate!=rate:
 		_motion_source=data;_motion_rate=rate;_motion_plan=null;_motion_error=""
-		var compiled: Dictionary=motion_animation().compile(data,motion_video)
-		_motion_error=compiled.get("error","");_motion_plan=compiled.get("plan")
+		if data.get("format")=="studio_model_9":
+			var plan: RefCounted=load("res://src/root_component_assistance.gd").new()
+			_motion_error=plan.build(data,motion_video)
+			if _motion_error.is_empty():_motion_plan=plan
+		else:
+			var compiled: Dictionary=motion_animation().compile(data,motion_video)
+			_motion_error=compiled.get("error","");_motion_plan=compiled.get("plan")
 	if not _motion_error.is_empty():evaluation_error=_motion_error
 	return _motion_plan
 
@@ -343,7 +363,9 @@ func sample_authored_transform(frame: float, editing := false) -> Dictionary:
 
 func authored_keys() -> Array:
 	if is_body(data):
-		if not is_same(_body_authored_source,data):_body_authored=body_animation().authored_keys(data);_body_authored_source=data
+		if not is_same(_body_authored_source,data):
+			_body_authored=load("res://src/root_component_document.gd").authored_keys(data,int(motion_video.duration_frames)) if data.get("format")=="studio_model_9" else body_animation().authored_keys(data)
+			_body_authored_source=data
 		return _body_authored.duplicate(true)
 	if not Clips.has_pieces(data):return data.pose_keys
 	var result: Array=[]
@@ -355,6 +377,7 @@ func authored_keys() -> Array:
 	return result
 
 func has_animation() -> bool:
+	if data.get("format")=="studio_model_9":return not load("res://src/animated_channels.gd").describe(data,false).is_empty()
 	if not Clips.has_pieces(data):return not data.pose_keys.is_empty()
 	for piece in data.animation_clips:
 		if not piece.keys.is_empty() or not piece.get("shape_keys",[]).is_empty():return true
@@ -389,8 +412,10 @@ func remove_pose_key(frame: int, duration: int,part: String="") -> String:
 		var promoted: Dictionary=body_animation().promote(data,duration)
 		if promoted.has("error"):return promoted.error
 		var id: String="@root" if part.is_empty() else part
-		if not frame in body_animation().B.frames(body_animation().view(promoted),id):return ""
+		if data.get("format")!="studio_model_9" and not frame in body_animation().B.frames(body_animation().view(promoted),id):return ""
 		var changed: Dictionary=body_animation().remove_key(promoted,frame,id,duration)
+		if changed.has("error"):return changed.error
+		changed=motion_animation().after_key_removal(data,changed.data,frame,id,duration)
 		if changed.has("error"):return changed.error
 		candidate=changed.data
 	elif Clips.has_pieces(data):candidate=Clips.delete_key(data,frame)

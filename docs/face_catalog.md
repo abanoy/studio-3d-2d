@@ -192,3 +192,51 @@ shows neutral and one selected positional control from an identical camera. This
 is separate from animation Apply and category adoption, and preserves pending
 amounts. Native compound/controller semantics, non-position effects and broad
 semantic estimation remain unfinished.
+
+In Simple mode, typing in Find shape searches all deformable parts of the selected
+character. Choosing an area such as Eyes, Mouth or Brows also lists that area's
+controls across the character. Typing narrows the list by friendly label, original
+name or area. Duplicate displayed names include a part number. Selecting a result
+switches to its actual model part and shape index. With All areas and an empty
+search, the part picker returns. Advanced and base-shape browsing keep their
+part-specific scope.
+
+When correcting a control in Advanced mode, an active area filter follows its
+new category. A search is kept if the revised name or category still matches.
+Otherwise the editor clears the search so the corrected control remains selected.
+
+Select a deform and choose Preview this control to see neutral and changed views
+framed around its moving geometry. In Simple mode the preview uses the friendly
+label and a 0–1 test amount. Turn the preview to inspect another angle. Advanced
+also supports negative test amounts and shows geometry details. Closing the
+comparison returns to the original scene and its pending deform amount.
+
+Use this amount returns a completed preview's value to the same control and
+frame. Apply at this frame uses the usual Auto-key or draft behavior. Closing
+the preview instead keeps the value that was pending before you opened it.
+Changing the timeline frame closes the preview to avoid staging on another pose.
+
+The preview starts at a pending editor strength, including an explicit zero,
+or the current nonzero animated amount. A neutral control with no pending edit
+opens at full strength so its effect is visible. Preview values use the editor's
+0.001 precision within the preview range (0 to 1 in Simple, -1 to 1 in Advanced).
+The editor value itself changes only when Use this amount is chosen.
+
+Keep the other expression controls at this frame compares the selected control
+at zero and at the preview amount with the same surrounding deform weights on
+both sides. Those weights come from the selected character's currently evaluated
+deform tracks and base shape. The isolated preview still uses the neutral skeletal
+pose and its own camera and lighting.
+
+With Auto-key off, Apply at this frame updates the expression draft. While that
+draft differs from the recorded motion, Record pose key at this frame is available
+inside the face editor. This uses the standard pose-recording action, including
+its existing prompt when replacing a pose key. A rejected Apply reports the reason
+and leaves the pending strength available for correction.
+
+Discard expression draft restores the recorded facial values at this frame,
+including any interpolated values between keys. Undo recovers the draft.
+
+Recovery preserves an unrecorded expression at its draft frame. The face editor
+offers Record and Discard whenever such a draft is present, including after a
+restart where the current Auto-key preference differs from the earlier session.

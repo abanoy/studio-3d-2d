@@ -90,4 +90,20 @@ func run() -> void:
 	var hold_split:=C.split(held,8);var hold_gap:=C.move(hold_split.data,hold_split.right_id,20,48);var hold_gap_plan:=Tracks.new();hold_gap_plan.build(hold_gap.data,["left"],video)
 	check(hold_gap_plan.helper_keys().left.is_empty() and sampled(hold_gap_plan,hold_gap.data,15.)==original(hold_gap.data,15.,"left"),"deliberate Hold also suppresses inferred gap acting")
 	var ordinary:=Tracks.Assist.new();check(not ordinary.build([{"frame":0,"value":value(0.),"interpolation":"ease"}],{"fps_num":24,"fps_den":1,"duration_frames":90024}).is_empty(),"source-space utility does not increase the project-space preview limit")
+	var adjusted := Tracks.new()
+	var source_helper: Dictionary=helpers.left[1]
+	var source_settings := {"track_helper_edits":{"left":{source_helper.id:{"phase":.75,"amount":.5}}}}
+	var authored := data.duplicate(true)
+	check(adjusted.build(data,["left","@root"],video,source_settings).is_empty() and sampled(adjusted,data,9.)!=sampled(plan,data,9.),"clip-owned helper edit changes the selected source span")
+	check(data==authored and sampled(adjusted,data,12.)==sampled(plan,data,12.) and sampled(adjusted,data,9.,"@root")==sampled(plan,data,9.,"@root"),"main pose and peer root retain their exact values")
+	var preserved: Dictionary=adjusted.helper_keys()
+	check(not adjusted.build(data,["left","@root"],video,{"track_helper_edits":{"left":{"missing/segment-0-12-2":{"phase":.7,"amount":.5}}}}).is_empty() and adjusted.helper_keys()==preserved,"unresolved owner refuses without replacing the valid plan")
+	var gap_helper: Dictionary={}
+	for helper in moved_plan.helper_keys().left:
+		if helper.get("connection",false) and helper.kind=="overshoot":gap_helper=helper;break
+	check(not gap_helper.is_empty(),"moved source slices expose an owned connecting helper")
+	if not gap_helper.is_empty():
+		var gap_settings := {"track_helper_edits":{"left":{gap_helper.id:{"phase":gap_helper.phase,"amount":0.}}}}
+		check(adjusted.build(moved.data,["left","@root"],video,gap_settings).is_empty() and sampled(adjusted,moved.data,gap_helper.frame)!=sampled(moved_plan,moved.data,gap_helper.frame),"gap adjustment changes its own evaluated motion")
+		check(sampled(adjusted,moved.data,22.)==sampled(moved_plan,moved.data,22.),"editing a gap leaves the following source clip exact")
 	print("MOTION_ASSIST_TRACKS_UNIT "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

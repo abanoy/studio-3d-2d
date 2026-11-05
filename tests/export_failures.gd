@@ -18,6 +18,12 @@ func run() -> void:
 		quit(1)
 		return
 	print("PASS failed encode preserves log and reports exit")
+	error = await encoder.encode(self, negative.path_join("absent-encoder.exe"), negative, video, "", true)
+	if not error.contains("absent-encoder.exe") or not error.contains("Details: ") or not FileAccess.file_exists(error.get_slice("Details: ",1)):
+		print("FAIL encoder launch error lacks location or saved diagnostic: ", error)
+		quit(1)
+		return
+	print("PASS retry reports missing executable and keeps separate diagnostic")
 	var cancel_dir := root.path_join("cancel-encoding")
 	DirAccess.make_dir_recursive_absolute(cancel_dir)
 	for frame in range(1, 49):

@@ -116,6 +116,16 @@ func run() -> void:
 	ws.reset();await settled();app.get_window().size=Vector2i(1200,760);await settled()
 	var visible: Rect2=root.get_visible_rect();var screen: Image=root.get_texture().get_image()
 	check(app.canvas.get_global_rect().end.x<=visible.end.x and app.timeline.get_parent().get_global_rect().end.y<=visible.end.y and screen.get_width()<=app.get_window().size.x and screen.get_height()<=app.get_window().size.y,"default resizable layout remains accessible in logical and physical bounds at1200x760")
+	app.mode.select(0);app.change_mode(0);app.color.color=Color.MAGENTA;await settled()
+	var mapped_rect: Rect2 = app.canvas.image_rect()
+	for pixel in [Vector2i(960,540),Vector2i(480,810),Vector2i(1440,270)]:
+		var point: Vector2 = app.canvas.global_position + mapped_rect.position + mapped_rect.size * Vector2(pixel) / Vector2(1920,1080)
+		var hover_canvas := InputEventMouseMotion.new();hover_canvas.position=point;root.push_input(hover_canvas,true)
+		for down in [true,false]:
+			var touch := InputEventMouseButton.new();touch.position=point;touch.button_index=MOUSE_BUTTON_LEFT;touch.pressed=down
+			root.push_input(touch,true);await settled()
+		var ink_pixel: Color = Drawing.cel_at(app.layers[1],0).image.get_pixelv(pixel)
+		check(ink_pixel.r>0.9 and ink_pixel.b>0.9 and ink_pixel.g<0.1 and ink_pixel.a>0.9,"resized workspace routes viewport pointer to Ink pixel "+str(pixel))
 	root.get_texture().get_image().save_png(folder.path_join("workspace-1200.png"));app.get_window().size=Vector2i(1400,900);await settled();root.get_texture().get_image().save_png(folder.path_join("workspace.png"))
 	var file:=FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE);file.store_string(JSON.stringify({"checks":checks,"failures":failures}));file.close();app.free();await process_frame
 	print("WORKSPACE_CONTROLS "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

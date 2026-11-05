@@ -6,8 +6,8 @@ import traceback
 import lzma
 import struct
 
-from source_content import discover, assets
-from source_paths import require_gmod
+from source_content import assets
+from source_installation import installed_context
 
 
 def main():
@@ -17,17 +17,17 @@ def main():
     request = json.loads(args.request.read_text(encoding="utf-8"))
     result_path = Path(request["result"])
     try:
-        root = require_gmod(request["gmod"])
+        context = installed_context(request["gmod"], request["workshop"], request.get("extra", []))
         if request["action"] == "discover":
-            result = discover(root, request["workshop"], request.get("extra", []))
-        elif request["action"] == "index": result = assets(request["provider"])
+            result = context['discovery']
+        elif request["action"] == "index": result = assets(request["provider"],request.get("include_particles",False))
         elif request["action"] == "search":
             rows, errors = [], []
             query = request.get("query", "").casefold()
             for provider in request["providers"][:4096]:
                 if not provider.get("present"): continue
                 try:
-                    indexed = assets(provider)
+                    indexed = assets(provider,request.get("include_particles",False))
                     for item in indexed["assets"]:
                         if query and query not in item["path"].casefold() and query not in indexed["title"].casefold(): continue
                         item["provider"] = provider

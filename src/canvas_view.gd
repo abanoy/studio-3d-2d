@@ -10,6 +10,8 @@ signal pointer(event: InputEvent, point: Vector2)
 var background: Texture2D
 var overlay: Texture2D
 var fill_preview: Texture2D
+var selection_preview: ImageTexture
+var drawing_selection:=Rect2i()
 var scene_background: Node2D
 var zoom := 1.0
 var pan := Vector2.ZERO
@@ -40,7 +42,8 @@ func image_rect() -> Rect2:
 func _draw() -> void:
 	var rect := image_rect()
 	scene_background.texture=background;scene_background.rect=rect;scene_background.queue_redraw()
-	if fill_preview:draw_texture_rect(fill_preview,rect,false)
+	if selection_preview:draw_texture_rect(selection_preview,rect,false)
+	elif fill_preview:draw_texture_rect(fill_preview,rect,false)
 	elif overlay:draw_texture_rect(overlay,rect,false)
 	for line in pose_lines:
 		draw_line(rect.position + line.a / RESOLUTION * rect.size, rect.position + line.b / RESOLUTION * rect.size, line.color, 2, true)
@@ -57,6 +60,9 @@ func _draw() -> void:
 		for p in points:draw_circle(p,4,Color("fff1a0"))
 	if review_box_visible:
 		draw_rect(Rect2(rect.position+review_box.position/RESOLUTION*rect.size,review_box.size/RESOLUTION*rect.size),Color("8cd9ff"),false,2)
+	if drawing_selection.has_area():
+		var selected:=Rect2(rect.position+Vector2(drawing_selection.position)/RESOLUTION*rect.size,Vector2(drawing_selection.size)/RESOLUTION*rect.size)
+		draw_rect(selected,Color.BLACK,false,3);draw_rect(selected,Color.WHITE,false,1)
 	draw_rect(rect, Color("dce8f2"), false, 1)
 
 func _gui_input(event: InputEvent) -> void:

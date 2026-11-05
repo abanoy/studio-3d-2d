@@ -9,7 +9,9 @@ func native_case(plan: Dictionary) -> Dictionary:
 	var baseline:=[];var roots:=[]
 	for half in range(97):baseline.append(actor.sample(float(half)/2));roots.append(actor.sample_transform(float(half)/2))
 	var ui=app.pose_editor.motion;check(ui.button.is_visible_in_tree() and not ui.button.disabled,"motion control is available in Simple: "+plan.name)
-	ui.button.pressed.emit();check(ui.window.visible,"actual motion dialog opens: "+plan.name);ui.enabled.button_pressed=true;ui.apply();await settled()
+	ui.button.pressed.emit();check(ui.window.visible,"actual motion dialog opens: "+plan.name)
+	check(ui.enabled.button_pressed and actor.data==original and app.history.size()==history,"first Simple trial is ready to apply without changing the scene: "+plan.name)
+	ui.window.hide();ui.button.pressed.emit();ui.apply();await settled()
 	check(actor.data.format==Model.MOTION_FORMAT and actor.motion_enabled() and not ui.window.visible and app.history.size()==history+1,"Apply saves model8 settings with one Undo: "+plan.name+" "+ui.note.text)
 	if actor.data.format!=Model.MOTION_FORMAT:return {"name":plan.name,"checks":checks-start,"failures":failures-first}
 	var enabled_data: Dictionary=actor.data.duplicate(true);check(actor.data.animation_clips==original.animation_clips,"enabling adds intent without rewriting native main controls: "+plan.name)
@@ -34,6 +36,7 @@ func native_case(plan: Dictionary) -> Dictionary:
 	for half in range(97):root_before.append(actor.sample_transform(float(half)/2))
 	var old_keys: Array=actor.data.animation_clips[0].keys.duplicate(true);var editor=app.pose_editor;editor.selected=id;editor.operation.select(1);editor.refresh_values();history=app.history.size();editor.fields[0].value+=.01;editor.apply_numeric();await settled()
 	check(actor.data.format==Model.MOTION_FORMAT and app.history.size()==history+1 and 10 in Motion.Body.B.frames(Motion.Body.view(actor.data),id),"actual bone edit auto-keys one main control on model8: "+plan.name+" "+app.status.text)
+	check(actor.sample(9)!=poses[18] and actor.sample(11)!=poses[22],"editing a main pose recalculates the assisted samples on both sides: "+plan.name)
 	var peers:=true
 	for half in range(97):peers=peers and actor.sample_transform(float(half)/2)==root_before[half]
 	check(peers and actor.data.animation_clips[0].keys==old_keys and Motion.Body.B.frames(Motion.Body.view(actor.data),"@root")==[0,12,24],"native bone edit never bakes helper root or legacy snapshots: "+plan.name)

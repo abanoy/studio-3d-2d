@@ -16,11 +16,14 @@ var assign_button: Button
 var estimate_button: Button
 var search: LineEdit
 var shapes: ItemList
+var result_nodes: Array[int]=[]
 var amount: SpinBox
 var apply_button: Button
 var reset_button: Button
 var reset_all: Button
 var remove_button: Button
+var record_draft: Button
+var discard_draft: Button
 var info: Label
 var node_index:=-1
 var shape_index:=-1
@@ -58,11 +61,18 @@ func setup(parent: Node) -> void:
 	search=LineEdit.new();search.placeholder_text="Find shape…";panel.add_child(search);search.text_changed.connect(func(_text):rebuild())
 	shapes=ItemList.new();shapes.custom_minimum_size=Vector2(220,105);panel.add_child(shapes)
 	var font:=SystemFont.new();font.font_names=PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"]);shapes.add_theme_font_override("font",font)
-	shapes.item_selected.connect(func(index):shape_index=int(shapes.get_item_metadata(index));load_amount())
+	shapes.item_selected.connect(func(index):select_result(index);load_amount())
 	var line:=HBoxContainer.new();panel.add_child(line);app.label(line,"Amount")
 	amount=SpinBox.new();amount.min_value=-100;amount.max_value=100;amount.step=.001;amount.size_flags_horizontal=Control.SIZE_EXPAND_FILL;line.add_child(amount)
 	amount.value_changed.connect(func(_value):dirty=true;buttons())
 	apply_button=app.button(panel,"Apply at this frame" if animated else "Apply base amount",apply_amount)
+	if animated:
+		record_draft=app.button(panel,"Record pose key at this frame",app.pose_editor.record_dialog)
+		record_draft.tooltip_text="Record the current model pose, including this expression draft."
+		record_draft.hide()
+		discard_draft=app.button(panel,"Discard expression draft",discard_expression_draft)
+		discard_draft.tooltip_text="Return all expression controls at this frame to their recorded values. Undo restores the draft."
+		discard_draft.hide()
 	reset_button=app.button(panel,"Use base amount here" if animated else "Reset this adjustment",reset_selected)
 	reset_all=app.button(panel,"Use all base amounts here" if animated else "Reset all shape adjustments",reset_adjustments)
 	if animated:remove_button=app.button(panel,"Remove this shape key here",remove_key)
@@ -76,7 +86,8 @@ func setup(parent: Node) -> void:
 		assign_button=app.button(organize,"Save name and area",assign_control)
 		estimate_button=app.button(organize,"Use estimate again",clear_assignment)
 		app.label(organize,"Organizing changes the list, not the animation.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-		comparison=preload("res://src/shape_comparison.gd").new();add_child(comparison);comparison.setup(self,organize)
+		comparison=preload("res://src/shape_comparison.gd").new();add_child(comparison);comparison.setup(self,panel)
+		panel.move_child(comparison.button,shapes.get_index()+1)
 		study=preload("res://src/shape_study.gd").new();add_child(study);study.setup(self,organize)
 	sync()
 
@@ -101,21 +112,49 @@ func sync() -> void:
 	if presets:presets.sync()
 
 func rebuild() -> void:
-	shapes.clear();var current:=row();var selected:=-1
-	if not current.is_empty():
+	shapes.clear();result_nodes.clear();var selected:=-1
+	var query:=search.text.strip_edges().to_lower()
+	var global_search: bool=animated and not app.advanced_mode and (not query.is_empty() or area_filter.selected>0)
+	parts.visible=not global_search
+	var candidates: Array=rows() if global_search else [row()]
+	var matching_labels: Dictionary={}
+	var part_numbers: Dictionary={}
+	for part in range(parts.item_count):part_numbers[int(parts.get_item_metadata(part))]=part+1
+	for current in candidates:
+		if current.is_empty():continue
+		var owner:=int(current.node)
 		for i in range(current.names.size()):
 			var name: String=str(current.names[i])
-			var entry:=Catalog.lookup(actor().data,node_index,i,name)
+			var entry:=Catalog.lookup(actor().data,owner,i,name)
 			if area_filter.selected>0 and entry.area!=Catalog.AREAS[area_filter.selected-1]:continue
 			var label: String=name if not animated or app.advanced_mode else str(entry.label)
-			if not search.text.is_empty() and not search.text.to_lower() in (name+" "+label).to_lower():continue
+			if not matches_query(query,name,entry):continue
 			var index:=shapes.add_item(label if not label.is_empty() else "Shape "+str(i+1))
-			shapes.set_item_metadata(index,i);shapes.set_item_tooltip(index,name+" · "+str(entry.area)+" · "+str(entry.evidence)+"\nPart "+str(node_index)+", shape "+str(i)+("\n"+str(entry.notice) if entry.has("notice") else ""))
-			if i==shape_index:selected=index
+			result_nodes.append(owner)
+			if global_search:
+				if not matching_labels.has(label):matching_labels[label]=[]
+				matching_labels[label].append(index)
+			shapes.set_item_metadata(index,i);shapes.set_item_tooltip(index,name+" · "+str(entry.area)+" · "+str(entry.evidence)+"\nPart "+str(owner)+", shape "+str(i)+("\n"+str(entry.notice) if entry.has("notice") else ""))
+			if owner==node_index and i==shape_index:selected=index
+	for label in matching_labels:
+		if matching_labels[label].size()<2:continue
+		for index in matching_labels[label]:
+			shapes.set_item_text(index,"%s · Part %d" % [label,part_numbers[result_nodes[index]]])
 	if selected<0 and shapes.item_count>0:selected=0
-	if selected>=0:shapes.select(selected);shape_index=int(shapes.get_item_metadata(selected))
+	if selected>=0:shapes.select(selected);select_result(selected)
 	else:shape_index=-1
 	load_amount()
+
+func matches_query(query: String,native_name: String,entry: Dictionary) -> bool:
+	return query.is_empty() or query in (native_name+" "+str(entry.label)+" "+str(entry.area)).to_lower()
+
+func select_result(index: int) -> void:
+	node_index=result_nodes[index]
+	shape_index=int(shapes.get_item_metadata(index))
+	for part in range(parts.item_count):
+		if int(parts.get_item_metadata(part))==node_index:
+			parts.select(part)
+			break
 
 func load_amount() -> void:
 	dirty=false;var current:=row()
@@ -148,6 +187,11 @@ func buttons() -> void:
 	reset_button.disabled=not valid or busy or not overrides.get(str(node_index),{}).has(str(shape_index))
 	reset_all.disabled=busy or overrides.is_empty()
 	if animated:
+		var rig: RefCounted=actor()
+		record_draft.visible=rig!=null and rig.data.get("shape_draft_frame",-1)==app.frame and rig.sample_shapes(app.frame,true)!=rig.sample_shapes(app.frame,false)
+		record_draft.disabled=busy or dirty or app.pose_editor.contacts.live_busy()
+		discard_draft.visible=record_draft.visible
+		discard_draft.disabled=record_draft.disabled
 		reset_button.disabled=not valid or busy
 		reset_all.disabled=busy or actor()==null or actor().data.get("shape_base",{}).is_empty()
 		remove_button.disabled=not valid or busy or not preload("res://src/shape_animation.gd").has_control(actor().data,app.frame,str(node_index),str(shape_index))
@@ -160,13 +204,30 @@ func organize_control(clear:=false) -> void:
 	if updated.has("error"):app.message(updated.error);return
 	if updated.data==actor().data:return
 	var selected_node:=node_index;var selected_shape:=shape_index
+	var native_name:=str(row().names[selected_shape])
+	var next_entry:=Catalog.lookup(updated.data,selected_node,selected_shape,native_name)
 	var world: Dictionary=app.current_world()
 	for i in range(world.objects.size()):
 		if world.objects[i].id==actor().data.id:world.objects[i]=updated.data
 	if app.pose_editor.contacts.metadata_bytes(world)>1024*1024:app.message("This assignment exceeds the project metadata limit.");return
 	var error: String=app.pose_editor.restore_state(updated.data)
 	if not error.is_empty():app.message(error);return
-	node_index=selected_node;shape_index=selected_shape;area_filter.select(0);signature="";sync();app.message("Control organization saved. Undo restores the previous choice.")
+	node_index=selected_node;shape_index=selected_shape
+	if area_filter.selected>0:area_filter.select(Catalog.AREAS.find(next_entry.area)+1)
+	if not matches_query(search.text.strip_edges().to_lower(),native_name,next_entry):search.text=""
+	signature="";sync();app.message("Control organization saved. Undo restores the previous choice.")
+
+func discard_expression_draft() -> void:
+	var rig: RefCounted=actor()
+	if not rig or dirty or app.playing or app.exporting or app.pose_editor.contacts.live_busy():return
+	if rig.data.get("shape_draft_frame",-1)!=app.frame:return
+	var recorded: Dictionary=rig.sample_shapes(app.frame,false)
+	if recorded==rig.sample_shapes(app.frame,true):return
+	var candidate: Dictionary=rig.data.duplicate(true)
+	candidate.shape_pose=recorded
+	var error: String=app.pose_editor.restore_state(candidate)
+	if error.is_empty():app.message("Expression draft discarded. Undo restores it.")
+	else:app.message(error)
 
 func assign_control() -> void:organize_control()
 func clear_assignment() -> void:organize_control(true)
@@ -189,7 +250,11 @@ func commit(overrides: Dictionary) -> void:
 func apply_amount() -> void:
 	if not dirty or shape_index<0 or row().is_empty():return
 	if animated:
-		app.pose_editor.set_shape_amounts({str(node_index):{str(shape_index):amount.value}});signature="";sync();return
+		var error: String=app.pose_editor.set_shape_amounts({str(node_index):{str(shape_index):amount.value}})
+		if not error.is_empty():
+			app.message(error)
+			return
+		signature="";sync();return
 	var config:=Shape.setting(actor().data);var overrides: Dictionary=config.get("overrides",{}).duplicate(true)
 	var inherited: float=row().weights[shape_index] if config.enabled else 0.
 	if absf(amount.value-inherited)<.0000001:

@@ -18,7 +18,7 @@ def main():
         for plan in json.loads((Path(audit['folder'])/'plans.json').read_text(encoding='utf-8')):
             path=Path(plan['source'])
             if path.is_file():rotations[hashlib.sha256(path.read_bytes()).hexdigest()]=plan['rotation_xyzw']
-    names={'MMD':'まばたき','GMod':'blink','SFM':'CloseLidUpL','VRM1.0':'Fcl_EYE_Close','VRM0.x':'Fcl_EYE_Close','Supplied Mima':' blink'}
+    names={'MMD':'まばたき','GMod':'blink','SFM':'CloseLidUpL','VRM1.0':'Fcl_EYE_Close','VRM0.x':'Fcl_EYE_Close','Supplied Mima':'EEEE'}
     for i,plan in enumerate(native,1):
         path=Path(plan['source'])
         if not path.is_file():continue
@@ -37,7 +37,18 @@ def main():
     teardown=json.loads((folder/'teardown-result.json').read_text(encoding='utf-8'));assert not teardown['failures']
     teardown_receipt=Path(teardown_args[teardown_args.index('--receipt')+1]);r=json.loads(teardown_receipt.read_text());assert r['exit']==0 and r['child_desktop_confirmed']and not r['foreground_child_observed']and r['job_closed']and r['desktop_closed']
     for path,value in originals.items():assert(hashlib.sha256(path.read_bytes()).hexdigest(),path.stat().st_mtime_ns)==value,path
+    draft=None
+    if any(plan['label']=='Supplied Mima' for plan in plans):
+        draft_args=command('tests/shape_comparison_smoke.gd',extra=['--',str(folder),'recover-draft'])
+        p=subprocess.run(draft_args,cwd=ROOT,capture_output=True,encoding='utf-8',errors='replace',timeout=90)
+        log=p.stdout+p.stderr;(folder/'draft-reader.log').write_text(log,encoding='utf-8')
+        assert p.returncode==0 and 'FACE_DRAFT_RECOVERY ' in log and not any(x in log for x in ['ERROR:','FAIL ','ObjectDB instances leaked']),log
+        draft=json.loads((folder/'draft-reader.json').read_text());assert draft=={'checks':4,'failures':0}
+        draft_receipt=Path(draft_args[draft_args.index('--receipt')+1]);r=json.loads(draft_receipt.read_text())
+        assert r['exit']==0 and r['child_desktop_confirmed'] and not r['foreground_child_observed'] and r['job_closed'] and r['desktop_closed']
     result.update(folder=str(folder),private_receipts=[str(receipt),str(teardown_receipt)],teardown=teardown,native_fixtures_optional=True,native_models_tested=len(plans)-1)
+    result['draft_recovery']=draft
+    if draft is not None:result['private_receipts'].append(str(draft_receipt))
     (ROOT/'output/shape-comparison-verification.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
 
 

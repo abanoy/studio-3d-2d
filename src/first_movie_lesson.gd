@@ -11,18 +11,18 @@ const DEFINITION={"title":"Basic · Your first movie","steps":[
 	"At frame 24, raise the figure’s left hand above its shoulder. Pose edits key automatically.",
 	"At frame 24, move the camera closer and Save camera key.",
 	"At frame 24, choose Draw and add a visible mark on Ink.",
-	"Play your scene, then pause. The camera, pose and drawing share one timeline.",
+	"Play your scene, then pause. Try adding a sound cue to the hand raise at frame 24.",
 	"Split the figure’s block at frame 12. Drag its right-hand piece to frame 28.",
 	"Save if you want to keep this practice. Export movie to finish; saving is optional."],"hints":[
 	"Add practice map opens the normal file picker in the included examples folder. Choose Practice room.glb.",
 	"Choose Practice figure.glb. Compatible imports begin with Physics on. Try grabbing it, then turn Physics off; nothing is recorded without Record.",
 	"Use the left World tree to select the figure. Right-click its visible surface and choose Reset pose. This records a neutral pose at frame 0.",
 	"Choose Scene / camera. Hold Ctrl and the left mouse button, then use WASD for a short move. Release the mouse to stop.",
-	"Choose Scene / camera and Save camera key [K]. Confirm replacing the frame 0 key. Navigation alone changes only your temporary view.",
+	"Choose Scene / camera and Save camera key. Confirm replacing the frame 0 key. Navigation alone changes only your temporary view.",
 	"Set frame 24. Hold Alt, select the left upper-arm joint and rotate upward. A hand above the shoulder counts only with a real frame 24 pose key.",
 	"Choose Scene / camera. Move toward the figure, then Save camera key at frame 24. This second shot interpolates from your frame 0 key.",
 	"Choose Draw, select Ink, then New drawing if needed. Paint a mark. Drawing does not modify the figure, room or camera keys.",
-	"Click Play (or Space while the canvas has focus), watch some movement, then pause. You can scrub any frame afterward.",
+	"Add practice sound places a cue at frame 24. Play from before the hand raise to hear the cue with the pose and drawing, then pause.",
 	"On the figure’s timeline row, right-click inside its block at frame 12 and choose Split. Drag the right piece’s body until it starts at 28.",
 	"Save project chooses a personal HAS file. Export movie uses its folder; without a save it asks for an output folder. Wait for successful export. No need to keep disposable practice." ]}
 
@@ -75,12 +75,39 @@ static func basis(value: Dictionary) -> Basis:
 	return Basis(Vector3(b[0],b[1],b[2]),Vector3(b[3],b[4],b[5]),Vector3(b[6],b[7],b[8]))
 
 static func action_label(step: int) -> String:
-	return "Add practice map" if step==0 else "Add practice figure" if step==1 else "Save project…" if step==10 else ""
+	return "Add practice map" if step==0 else "Add practice figure" if step==1 else "Add practice sound" if step==8 else "Save project…" if step==10 else ""
+
+static func cue_alignment(lesson) -> Dictionary:
+	if not lesson.active or lesson.done or lesson.course!=ID or lesson.step!=10:return {}
+	var rig:=object(lesson,"model")
+	if not rig:return {}
+	var matches: Array=lesson.app.audio_clips.filter(func(clip):return clip.source.sha256==lesson.asset_digest("Practice cue.wav"))
+	if matches.size()!=1:return {}
+	for piece in rig.data.get("animation_clips",[]):
+		var offset:=24-int(piece.source_in)
+		if offset<0 or offset>=int(piece.length):continue
+		var at:=int(piece.start)+offset
+		if at<lesson.app.video.duration_frames and at!=matches[0].start_frame:
+			return {"clip":matches[0].id,"from":matches[0].start_frame,"to":at}
+	return {}
 
 static func action(lesson) -> void:
 	var app=lesson.app
 	if app.exporting or app.source_import.pid>0 or app.has_dialog(app):return
 	if lesson.step==10:app.save();return
+	if lesson.step==8:
+		var path: String=ProjectSettings.globalize_path(lesson.assets_root.path_join("Practice cue.wav"))
+		var manifest: Dictionary=preload("res://src/recovery.gd").read_json(ProjectSettings.globalize_path(lesson.assets_root.path_join("manifest.json")))
+		var digest:=FileAccess.get_sha256(path)
+		if digest.is_empty() or digest!=manifest.get("files",{}).get("Practice cue.wav",{}).get("sha256",""):
+			app.message("The included practice sound is unavailable. You can still preview your movie.")
+			return
+		for clip in app.audio_clips:
+			if clip.source.sha256==digest:
+				app.message("The practice sound is on the timeline at frame %d." % clip.start_frame)
+				return
+		if app.import_audio(path,24).is_empty():app.message("Practice sound added at frame 24. Play from before the hand raise.")
+		return
 	if not lesson.step in [0,1]:return
 	var actor: bool=lesson.step==1
 	if object(lesson,"model" if actor else "environment")!=null:app.message("That practice asset is already in the scene.");return

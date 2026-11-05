@@ -106,3 +106,12 @@ Next visual before/after review and more independent native/nonfacial labels.
 The new cancellable study/review action has explicit adoption into the shared catalogue.
 Keep unknowns/manual overrides, native semantics and family-separated validation.
 The full face-editor and MD/addendum goals remain unfinished.
+
+Mima supplied three concrete speech-control aliases. In the retained v2 study,
+"ah 1" moved 1,084 vertices and matched the changed region of "KK Mouth_uresi_ss_op"
+with similarity .995. "ah 2" moved 1,149 and matched "disgusted tongue out" at
+.982. "EEEE" moved 1,061 and matched "KK Mouth_e_s_op" at 1.000 rounded.
+These are within-model region similarities against weak name seeds. The catalogue
+uses only these exact normalized spellings as provisional Mouth name estimates.
+Generic smile and surprise controls may affect more than the mouth and are not
+inferred from these three cases. Manual assignments still take priority.

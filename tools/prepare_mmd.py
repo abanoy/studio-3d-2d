@@ -43,12 +43,20 @@ def prepare(args):
     if manifest.get("id") != "mmd_tools":
         raise ValueError("Select an installed MMD Tools package directory")
     dependencies = []
+    missing_textures = []
+    if len(audit["texture_dependencies"]) > 2048:
+        raise ValueError("MMD texture budget exceeded")
     for item in audit["texture_dependencies"]:
-        if item.get("unsafe") or not item["present"]:
-            raise ValueError("Missing or unsafe texture dependency: " + item["name"])
+        if item.get("unsafe"):
+            raise ValueError("Unsafe texture dependency: " + item["name"])
         relative = safe_member(item["name"])
-        path = (source.parent / relative).resolve(strict=True)
+        path = (source.parent / relative).resolve()
         path.relative_to(source.parent)
+        if not path.exists():
+            missing_textures.append(relative)
+            continue
+        if not path.is_file():
+            raise ValueError("Texture dependency is not a file: " + relative)
         if path.stat().st_size > 64 * 1024 * 1024:
             raise ValueError("Texture exceeds 64 MiB adapter limit")
         dependencies.append((relative, path, digest(path)))
@@ -68,15 +76,22 @@ def prepare(args):
         if not target.exists(): shutil.copyfile(path, target)
     # MMD's shared toon ramp names are not part of the model's explicit texture table.
     # Stage only these ten known files, never an arbitrary folder or a global preference.
+    absent_shared_toons = []
     for index in range(1, 11):
         name = f"toon{index:02}.bmp"
-        toon = (args.shared_toons / name).resolve(strict=True)
+        toon = args.shared_toons / name
+        if not toon.exists():
+            absent_shared_toons.append(name)
+            continue
+        if not toon.is_file(): raise ValueError("Shared toon is not a file: " + name)
         if toon.stat().st_size > 1024 * 1024: raise ValueError("Shared toon exceeds 1 MiB")
         dependencies.append(("shared-toons/" + name, toon, digest(toon)))
         shutil.copyfile(toon, output / name)
     request = {"source": str(native / source.name), "original_name": source.name,
                "sha256": audit["sha256"], "mmd_tools": str(addon), "scale": args.scale,
                "output": str(output), "audit": audit,
+               "missing_textures": missing_textures,
+               "absent_shared_toons": absent_shared_toons,
                "dependency_hashes": {name: sha for name, _, sha in dependencies},
                "addon_version": manifest["version"]}
     request_path = output / "conversion-request.json"

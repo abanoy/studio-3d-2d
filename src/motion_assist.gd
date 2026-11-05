@@ -1,6 +1,5 @@
 extends RefCounted
-# Experimental derived motion, separate from authored controls and project data.
-# No normal Model evaluator or serialization is changed by this preview module.
+# Derived motion evaluator. Authored controls remain separate and exact.
 const Model=preload("res://src/model.gd")
 const T=Model.Timeline
 const FORMAT:="studio_motion_assist_preview_1"
@@ -31,7 +30,7 @@ func _build(keys,video: Dictionary,settings: Dictionary,maximum: int,key_limit: 
 		if not key is Dictionary or not Model.integer(key.get("frame"),0,duration) or key.frame<=previous or not key.get("interpolation") in ["ease","linear","hold"] or not Model.transform_valid(key.get("value")):return "Invalid or unordered main motion key."
 		if key.value.has("scale") and not Model.scale_valid(key.value.scale):return "Invalid main-key scale."
 		previous=int(key.frame)
-	var main: Array=keys.duplicate(true);var spans:=[];var helpers:=[];var fps: float=float(video.fps_num)/float(video.fps_den)
+	var main: Array=keys.duplicate(true);var spans:=[];var helpers:=[];var bindings:={};var fps: float=float(video.fps_num)/float(video.fps_den)
 	for i in range(main.size()-1):
 		var a: Dictionary=main[i];var b: Dictionary=main[i+1]
 		if a.interpolation=="hold" or float(strength)==0:continue
@@ -52,12 +51,39 @@ func _build(keys,video: Dictionary,settings: Dictionary,maximum: int,key_limit: 
 		for point in PROFILE:points.append({"frame":float(a.frame)+(float(b.frame)-float(a.frame))*point[0],"weight":point[1]})
 		var span:={"from":float(a.frame),"to":float(b.frame),"delta":delta,"axis":axis,"angle":angle,"position_gain":p_gain,"rotation_gain":q_gain,"points":points,"drivers":[int(a.frame),int(b.frame)]}
 		spans.append(span)
-		for j in range(1,4):helpers.append({"id":"segment-%d-%d" % [i,j],"frame":points[j].frame,"kind":["anticipation","overshoot","recoil"][j-1],"drivers":span.drivers.duplicate(),"generated":true})
+		for j in range(1,4):
+			var id:="segment-%d-%d-%d" % [a.frame,b.frame,j]
+			helpers.append({"id":id,"frame":points[j].frame,"kind":["anticipation","overshoot","recoil"][j-1],"drivers":span.drivers.duplicate(),"generated":true})
+			bindings[id]={"span":span,"point":j,"automatic_phase":PROFILE[j][0]}
 		if i==main.size()-2 and b.frame<duration:
 			var finish: float=minf(float(duration),float(b.frame)+fps*.24);var length: float=finish-float(b.frame)
 			var tail:=span.duplicate(true);tail.from=float(b.frame);tail.to=finish;tail.points=[{"frame":float(b.frame),"weight":0.},{"frame":float(b.frame)+length*.28,"weight":.04},{"frame":float(b.frame)+length*.60,"weight":-.015},{"frame":finish,"weight":0.}];spans.append(tail)
-			for j in range(1,4):helpers.append({"id":"settle-%d-%d" % [i,j],"frame":tail.points[j].frame,"kind":"settle","drivers":span.drivers.duplicate(),"generated":true})
+			for j in range(1,4):
+				var id:="settle-%d-%d-%d" % [a.frame,b.frame,j]
+				helpers.append({"id":id,"frame":tail.points[j].frame,"kind":"settle","drivers":span.drivers.duplicate(),"generated":true})
+				if j<3:bindings[id]={"span":tail,"point":j,"automatic_phase":.28 if j==1 else .60}
+	var edits=settings.get("helper_edits",{})
+	if not edits is Dictionary or edits.size()>4096:return "Invalid helper adjustments."
+	for id in edits:
+		if not id is String or not bindings.has(id):return "A helper's driving poses changed. Review its adjustment."
+		var edit=edits[id]
+		if not edit is Dictionary or edit.size()!=2:return "Invalid helper adjustment."
+		for field in ["phase","amount"]:
+			var number=edit.get(field)
+			if not (number is int or number is float) or not is_finite(float(number)):return "Helper adjustments must be finite numbers."
+		if edit.phase<=0 or edit.phase>=1 or edit.amount<0 or edit.amount>1:return "Helper adjustment is outside its supported bounds."
+		var binding: Dictionary=bindings[id];var span: Dictionary=binding.span;var point: Dictionary=span.points[binding.point]
+		point.frame=lerpf(float(span.from),float(span.to),float(edit.phase));point.weight*=float(edit.amount)
+	for span in spans:
+		for j in range(1,span.points.size()):
+			if span.points[j].frame<=span.points[j-1].frame:return "Helper timing must stay in order between its driving poses."
 	for helper in helpers:
+		if bindings.has(helper.id):
+			var binding: Dictionary=bindings[helper.id];var span: Dictionary=binding.span
+			helper.frame=span.points[binding.point].frame
+			helper["automatic_phase"]=binding.automatic_phase
+			helper["phase"]=(helper.frame-span.from)/(span.to-span.from);helper["amount"]=float(edits.get(helper.id,{}).get("amount",1.));helper["editable"]=true
+		else:helper["editable"]=false
 		var value:=evaluate(main,spans,float(helper.frame),1.)
 		if not Model.transform_valid(value):return "Motion preview exceeds the supported coordinate range."
 		helper["value"]=value

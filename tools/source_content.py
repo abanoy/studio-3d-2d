@@ -111,9 +111,9 @@ def archive_index(path):
         return gma_index(stream, path.stat().st_size)
 
 
-def content_files(root):
+def content_files(root,include_particles=False):
     root = Path(root).resolve(); count = 0
-    for directory in (root / "models", root / "maps"):
+    for directory in [root / "models", root / "maps"]+([root / "particles"]if include_particles else []):
         if not directory.is_dir(): continue
         for parent, dirs, files in os.walk(directory, followlinks=False):
             dirs[:] = sorted(d for d in dirs if not (Path(parent) / d).is_symlink())
@@ -121,21 +121,21 @@ def content_files(root):
                 count += 1
                 if count > MAX_ENTRIES: raise AssetError("Loose content scan exceeds 100000 files")
                 path = Path(parent) / name
-                if path.suffix.lower() not in {".mdl", ".bsp"} or path.is_symlink(): continue
+                if path.suffix.lower() not in ({".mdl", ".bsp", ".pcf"}if include_particles else {".mdl", ".bsp"}) or path.is_symlink(): continue
                 if not path.resolve().is_relative_to(root): continue
                 yield path
 
 
-def assets(provider):
+def assets(provider,include_particles=False):
     source = Path(provider["path"])
     if not source.exists(): raise AssetError("Content location is missing")
     if source.is_dir():
         return {"title": provider["label"], "assets": [{"path": p.relative_to(source).as_posix(), "bytes": p.stat().st_size,
-                "kind": "model" if p.suffix.lower() == ".mdl" else "map"} for p in content_files(source)]}
+                "kind": "particle"if p.suffix.lower()==".pcf"else "model" if p.suffix.lower() == ".mdl" else "map"} for p in content_files(source,include_particles)]}
     index = archive_index(source)
     return {"title": str(index.get("title", source.stem))[:200], "assets": [{"path": r.get("path", r.get("name")), "bytes": r.get("bytes", r.get("size", 0)),
-            "kind": "model" if r.get("path", r.get("name", "")).lower().endswith(".mdl") else "map"} for r in index["entries"]
-            if r.get("path", r.get("name", "")).lower().endswith((".mdl", ".bsp"))]}
+            "kind": "particle"if r.get("path", r.get("name", "")).lower().endswith(".pcf")else "model" if r.get("path", r.get("name", "")).lower().endswith(".mdl") else "map"} for r in index["entries"]
+            if r.get("path", r.get("name", "")).lower().endswith((".mdl", ".bsp", ".pcf")if include_particles else(".mdl", ".bsp"))]}
 
 
 def libraries(game_root):
@@ -158,18 +158,19 @@ def discover(game_root, workshop_root, extra=()):
     game_root = Path(game_root).resolve(); content = game_root / "garrysmod"
     providers, warnings, seen = [], [], set()
     steam_libraries = libraries(game_root)
-    def add(path, label, origin, enabled=True):
+    def add(path, label, origin, enabled=True, installation=None):
         path = Path(path).resolve(); key = str(path).casefold()
         if key in seen: return
         if len(providers) >= 4096: raise AssetError("Content discovery exceeds 4096 locations")
         seen.add(key)
         providers.append({"path": str(path), "label": label, "origin": origin, "present": path.exists(), "enabled": enabled and path.exists(),
                           "kind": "folder" if path.is_dir() or not path.suffix else path.suffix.lower()[1:]})
-    def folder(path, label, origin, enabled=True):
+        if installation is not None: providers[-1]['installation'] = str(Path(installation).resolve())
+    def folder(path, label, origin, enabled=True, installation=None):
         path = Path(path)
-        add(path, label, origin, enabled)
+        add(path, label, origin, enabled, installation)
         if path.is_dir():
-            for archive in sorted(path.glob("*_dir.vpk")): add(archive, label + " / " + archive.stem, origin, enabled)
+            for archive in sorted(path.glob("*_dir.vpk")): add(archive, label + " / " + archive.stem, origin, enabled, installation)
     def expanded(path, label, origin, enabled=True):
         folder(path, label, origin, enabled)
         if Path(path).is_dir():
@@ -225,13 +226,13 @@ def discover(game_root, workshop_root, extra=()):
                     path = re.sub(r"\|all_source_engine_paths\|", lambda _: str(sfm) + "/", path, flags=re.I)
                     if "|" in path: continue
                     resolved = Path(path) if Path(path).is_absolute() else sfm / path
-                    folder(resolved, "SFM search path / " + resolved.name, "sfm")
+                    folder(resolved, "SFM search path / " + resolved.name, "sfm", installation=base)
                 for mod in ("usermod", "workshop", "tf_movies", "tf", "left4dead2_movies", "hl2"):
-                    if (sfm / mod).is_dir(): folder(sfm / mod, "SFM / " + mod, "sfm")
+                    if (sfm / mod).is_dir(): folder(sfm / mod, "SFM / " + mod, "sfm", installation=base)
                 # Custom content packs need not have been added to gameinfo yet.
                 for mod in sorted(sfm.iterdir()):
                     if mod.is_dir() and not mod.is_symlink() and any((mod / key).is_dir() for key in ("models", "materials", "maps")):
-                        folder(mod, "SFM custom / " + mod.name, "sfm-custom")
+                        folder(mod, "SFM custom / " + mod.name, "sfm-custom", installation=base)
             else:
                 enabled = depots.get(subdir, "1") != "0"
                 folder(base / subdir, title, "steam", enabled)

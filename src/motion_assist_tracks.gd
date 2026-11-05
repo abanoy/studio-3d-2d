@@ -17,12 +17,22 @@ func build(data: Dictionary,ids: Array,video: Dictionary,settings: Dictionary={}
 	var validation:=Assist.new();var error:=validation.build([{"frame":0,"value":Model.identity(),"interpolation":"hold"}],video,settings)
 	if not error.is_empty():return error
 	if ids.is_empty() or ids.size()>513:return "Choose motion-preview parts first."
+	var routed := route_edits(settings.get("track_helper_edits", {}), ids)
+	if routed.has("error"):return routed.error
+	var overrides=settings.get("part_strengths",{})
+	if not overrides is Dictionary or overrides.size()>513:return "Invalid per-part motion strengths."
+	for id in overrides:
+		var amount=overrides[id]
+		if not B.valid_id(id) or not (amount is int or amount is float) or not is_finite(float(amount)) or amount<0 or amount>1:return "Invalid per-part motion strength."
 	var view:=B.extract(data,int(video.duration_frames))
 	if view.has("error"):return view.error
 	var runtime:=Runtime.new();runtime.build(view);var tracks:={};var helpers:={};var seen:={}
 	var tail: float=float(video.fps_num)/float(video.fps_den)*.24
 	for id in ids:
 		if not B.valid_id(id) or seen.has(id):return "Invalid or duplicate motion-preview part."
+		var part_settings:=settings.duplicate();part_settings.erase("track_helper_edits")
+		part_settings.strength=overrides.get(id,settings.get("strength",.65))
+		var remaining: Dictionary=routed.parts.get(id,{})
 		seen[id]=true;tracks[id]=[];helpers[id]=[]
 		var owners:=[]
 		for piece in view.pieces:
@@ -35,7 +45,7 @@ func build(data: Dictionary,ids: Array,video: Dictionary,settings: Dictionary={}
 			piece["main"]=keys;piece["plan"]=null
 			if not keys.is_empty():
 				var source_video:=video.duplicate(true);source_video.duration_frames=mini(Model.Clips.MAX_SOURCE_FRAME,maxi(1,maxi(int(keys[-1].frame),int(piece.source_in)+int(piece.length)-1)+ceili(tail)))
-				var plan:=Assist.new();error=plan.build_source(keys,source_video,settings)
+				var plan:=Assist.new();error=plan.build_source(keys,source_video,settings_for_owner(part_settings,remaining,piece.piece_id))
 				if not error.is_empty():return error
 				piece.plan=plan
 				for helper in plan.helper_keys():
@@ -50,13 +60,14 @@ func build(data: Dictionary,ids: Array,video: Dictionary,settings: Dictionary={}
 			if from<piece.start:
 				var a: Dictionary=Runtime.at(previous,from,id) if not previous.is_empty() else {"value":runtime.baseline.get(id,Model.identity()),"mode":"ease"}
 				var b:=Runtime.at(piece,int(piece.start),id);var mode: String=a.mode if not previous.is_empty() else b.mode
-				var bridge:=Assist.new();error=bridge.build([{"frame":from,"value":a.value,"interpolation":mode},{"frame":int(piece.start),"value":b.value,"interpolation":mode}],video,settings)
+				var bridge:=Assist.new();error=bridge.build([{"frame":from,"value":a.value,"interpolation":mode},{"frame":int(piece.start),"value":b.value,"interpolation":mode}],video,settings_for_owner(part_settings,remaining,"gap/"+piece.piece_id))
 				if not error.is_empty():return error
 				piece.bridge=bridge
 				for helper in bridge.helper_keys():
 					if helper.frame<=from or helper.frame>=piece.start or helper.frame<float(data.get("start_frame",0)):continue
 					helper.id="gap/"+piece.piece_id+"/"+helper.id;helper["piece_id"]=piece.piece_id;helper["connection"]=true;helpers[id].append(helper)
 			tracks[id].append(piece)
+		if not remaining.is_empty():return "A helper's animation clip or connecting gap has changed. Review its adjustment."
 		if not tracks[id].is_empty():
 			var last: Dictionary=tracks[id][-1];var end: float=float(last.start)+float(last.length)-1
 			if last.plan!=null and float(last.source_in)+float(last.length)-1>=last.main[-1].frame:
@@ -77,6 +88,38 @@ func build(data: Dictionary,ids: Array,video: Dictionary,settings: Dictionary={}
 			helper.value=value
 	_tracks=tracks;_helpers=helpers;_duration=candidate._duration;_presence=candidate._presence;_tail=tail;_position_limit=candidate._position_limit;_rotation_limit=candidate._rotation_limit
 	return ""
+
+# Index once, then consume by exact owner. Multiple parts or clips can have the
+# same pair of driving frames, so a bare evaluator ID is not a track address.
+static func route_edits(edits, ids: Array) -> Dictionary:
+	if not edits is Dictionary or edits.size()>ids.size():
+		return {"error":"Invalid helper track adjustments."}
+	var parts := {}
+	var count := 0
+	for id in edits:
+		if not id in ids or not edits[id] is Dictionary:
+			return {"error":"Unknown helper track."}
+		var owners := {}
+		for address in edits[id]:
+			count += 1
+			if count>4096 or not address is String:
+				return {"error":"Invalid helper address."}
+			var separator: int=address.rfind("/")
+			if separator<=0 or separator==address.length()-1:
+				return {"error":"A helper adjustment needs its clip and driving poses."}
+			var owner: String=address.left(separator)
+			if not owners.has(owner):owners[owner]={}
+			owners[owner][address.substr(separator+1)]=edits[id][address]
+		parts[id]=owners
+	return {"parts":parts}
+
+static func settings_for_owner(settings: Dictionary, remaining: Dictionary, owner: String) -> Dictionary:
+	if not remaining.has(owner):return settings
+	var scoped := settings.duplicate()
+	# A muted part keeps its saved choices for when its amount is raised again.
+	if settings.get("strength",.65)>0:scoped["helper_edits"]=remaining[owner]
+	remaining.erase(owner)
+	return scoped
 
 static func difference(plan: RefCounted,main: Array,frame: float,gain: float) -> Dictionary:
 	if plan==null:return Model.identity()

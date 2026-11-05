@@ -7,16 +7,16 @@ const MAX_TOTAL_KEYS:=2048
 const MAX_SOURCE_FRAME:=100000
 
 static func has_pieces(data: Dictionary) -> bool:
-	return data.get("format") in [FORMAT,"studio_model_3","studio_model_4","studio_model_5","studio_model_6","studio_model_7","studio_model_8"]
+	return data.get("format") in [FORMAT,"studio_model_3","studio_model_4","studio_model_5","studio_model_6","studio_model_7","studio_model_8","studio_model_9"]
 
 static func transform(data: Dictionary) -> Dictionary:
 	return {"position":data.position.duplicate(),"rotation_xyzw":data.rotation_xyzw.duplicate(),"scale":data.scale}
 
 static func clip(data: Dictionary, start: int, length: int, source_in: int, keys: Array) -> Dictionary:
 	var result:={"id":str(ResourceUID.create_id()),"start":start,"length":length,"source_in":source_in,"keys":keys.duplicate(true),"base_pose":data.pose.duplicate(true),"base_transform":transform(data),"auto_extend":false}
-	if data.get("format") in ["studio_model_4","studio_model_5","studio_model_6","studio_model_7","studio_model_8"]:result["base_shapes"]=data.shape_pose.duplicate(true)
-	if data.get("format") in ["studio_model_5","studio_model_6","studio_model_7","studio_model_8"]:result["shape_keys"]=[]
-	if data.get("format") in ["studio_model_6","studio_model_7","studio_model_8"]:result["body_origin"]=source_in;result["body_legacy_channels"]=[];result["body_controls"]={};result["body_removed"]={}
+	if data.get("format") in ["studio_model_4","studio_model_5","studio_model_6","studio_model_7","studio_model_8","studio_model_9"]:result["base_shapes"]=data.shape_pose.duplicate(true)
+	if data.get("format") in ["studio_model_5","studio_model_6","studio_model_7","studio_model_8","studio_model_9"]:result["shape_keys"]=[]
+	if data.get("format") in ["studio_model_6","studio_model_7","studio_model_8","studio_model_9"]:result["body_origin"]=source_in;result["body_legacy_channels"]=[];result["body_controls"]={};result["body_removed"]={}
 	return result
 
 static func promote(data: Dictionary) -> Dictionary:
@@ -74,8 +74,24 @@ static func split(data: Dictionary, frame: int) -> Dictionary:
 	var length:=frame-int(left.start)
 	right.start=frame;right.source_in=int(left.source_in)+length;right.length=int(left.length)-length
 	left.length=length;left.auto_extend=false;right.auto_extend=false
-	if result.get("format") in ["studio_model_6","studio_model_7","studio_model_8"]:left["body_untrimmed"]=false;right["body_untrimmed"]=false
+	if result.get("format") in ["studio_model_6","studio_model_7","studio_model_8","studio_model_9"]:left["body_untrimmed"]=false;right["body_untrimmed"]=false
 	result.animation_clips.insert(index+1,right)
+	# Both slices evaluate the retained source curve, including controls outside
+	# their visible range. Preserve its tuning on each independent copy.
+	var edits: Dictionary=result.get("motion_assist",{}).get("track_helper_edits",{})
+	var count:=0
+	for part in edits:
+		var rows: Dictionary=edits[part]
+		for address in rows.keys():
+			var prefix: String=""
+			if part=="@root":
+				for component in ["position/","rotation_xyzw/"]:
+					if address.begins_with(component):prefix=component;break
+			var source: String=prefix+left.id+"/"
+			if address.begins_with(source):
+				rows[prefix+right.id+"/"+address.substr(source.length())]=rows[address].duplicate(true)
+		count+=rows.size()
+		if count>4096:return {"error":"Splitting this clip would exceed the saved helper adjustment limit."}
 	return {"data":result,"left_id":left.id,"right_id":right.id}
 
 static func can_place(data: Dictionary, id: String, start: int, length: int, duration: int) -> bool:
@@ -99,6 +115,24 @@ static func remove(data: Dictionary, id: String, duration: int) -> Dictionary:
 	var result:=promote(data);var index:=index_id(result,id)
 	if index<0:return {"error":"The animation piece no longer exists."}
 	result.animation_clips.remove_at(index);update_presence(result,duration)
+	var settings: Dictionary=result.get("motion_assist",{})
+	var edits: Dictionary=settings.get("track_helper_edits",{})
+	if not edits.is_empty():
+		for part in edits.keys():
+			var rows: Dictionary=edits[part]
+			for address in rows.keys():
+				var owner: String=address
+				if part=="@root":
+					owner=owner.trim_prefix("position/").trim_prefix("rotation_xyzw/")
+				if owner.begins_with(id+"/") or owner.begins_with("gap/"+id+"/"):rows.erase(address)
+			if rows.is_empty():edits.erase(part)
+		if edits.is_empty():
+			settings.erase("track_helper_edits")
+			var motion=load("res://src/motion_animation.gd")
+			if settings.part_strengths.is_empty():
+				settings.erase("part_strengths")
+				settings.format=motion.SETTINGS
+			else:settings.format=motion.PART_SETTINGS
 	return {"data":result}
 
 static func paste(data: Dictionary, source: Dictionary, start: int, duration: int) -> Dictionary:
@@ -106,7 +140,7 @@ static func paste(data: Dictionary, source: Dictionary, start: int, duration: in
 	if result.animation_clips.size()>=MAX_CLIPS:return {"error":"This object already has32 animation pieces."}
 	if not can_place(result,"",start,int(source.length),duration):return {"error":"Choose a free space within the project for this animation piece."}
 	var piece:=source.duplicate(true);piece.id=str(ResourceUID.create_id());piece.start=start
-	if result.get("format") in ["studio_model_6","studio_model_7","studio_model_8"]:piece["body_placeholder"]=false
+	if result.get("format") in ["studio_model_6","studio_model_7","studio_model_8","studio_model_9"]:piece["body_placeholder"]=false
 	result.animation_clips.append(piece);update_presence(result,duration)
 	return {"data":result,"clip_id":piece.id}
 

@@ -48,7 +48,13 @@ func run() -> void:
 	app._unhandled_key_input(InputEventKey.new());var key:=InputEventKey.new();key.keycode=KEY_SPACE;key.pressed=true;app._input(key)
 	check(not app.playing and app.frame==frame,"Home does not send play shortcuts into its covered scene")
 	app.get_window().size=Vector2i(1200,760);await settled()
-	check(Rect2(Vector2.ZERO,Vector2(app.get_window().size)).encloses(app.home.panel.get_global_rect()) and app.home.panel.size.x<=1000 and app.home.panel.size.y<=700,"Home actions and bounded recent list fit a smaller app window")
+	# With expand stretch, controls report logical canvas units. Compare bounds
+	# there, and convert the existing physical-size limits to window pixels.
+	var viewport: Rect2=app.get_viewport_rect()
+	var pixel_scale:=Vector2(app.get_window().size)/viewport.size
+	var panel_pixels: Vector2=app.home.panel.size*pixel_scale
+	print("HOME_LAYOUT "+JSON.stringify({"window":str(app.get_window().size),"viewport":str(viewport),"panel":str(app.home.panel.get_global_rect()),"panel_pixels":str(panel_pixels)}))
+	check(viewport.encloses(app.home.panel.get_global_rect()) and panel_pixels.x<=1000 and panel_pixels.y<=700,"Home actions and bounded recent list fit a smaller app window")
 	app.get_viewport().get_texture().get_image().save_png(folder.path_join("home.png"))
 	app.home.return_button.pressed.emit();await settled()
 	check(not app.home.visible and app.renderer.view_state()==view and app.keys==keys and app.frame==frame,"Return to scene closes Home without changing camera/frame")
@@ -92,7 +98,7 @@ func run() -> void:
 		var path:=folder.path_join("unit_%02d.has" % i);paths.append(path);file=FileAccess.open(path,FileAccess.WRITE);file.store_buffer(FileAccess.get_file_as_bytes(a));file.close();unit.remember(path,"",-1)
 	check(unit.read().size()==12 and unit.read()[0].path.ends_with("unit_13.has") and unit.read()[-1].path.ends_with("unit_02.has"),"recent metadata has bounded twelve-entry retention")
 	var normal_store=app.home.store;app.home.store=unit;app.home.open_home();await settled()
-	check(app.home.find_children("RecentProject","Button",true,false).size()==12 and Rect2(Vector2.ZERO,Vector2(app.get_window().size)).encloses(app.home.panel.get_global_rect()),"all twelve valid projects stay in a bounded scrolling Home list")
+	check(app.home.find_children("RecentProject","Button",true,false).size()==12 and app.get_viewport_rect().encloses(app.home.panel.get_global_rect()),"all twelve valid projects stay in a bounded scrolling Home list")
 	var last:=recent_button(app,paths[2]);var scroll: ScrollContainer=app.home.recent_list.get_parent();scroll.ensure_control_visible(last);await settled()
 	check(scroll.get_global_rect().encloses(last.get_global_rect()),"the last recent project remains reachable without growing the Home panel")
 	app.get_viewport().get_texture().get_image().save_png(folder.path_join("home-twelve.png"));last.pressed.emit();await wait_job(app)

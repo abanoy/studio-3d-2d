@@ -4,10 +4,11 @@ import hashlib,json,subprocess,sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from run import command
+from verify_native_import import private_vrm
 def main():
     paths=[];before={}
     for name in ['AvatarSample_A.vrm','AvatarSample_Avrm0.vrm']:
-        path=Path('C:/Users/noble/Desktop')/name
+        path=private_vrm(name)
         if path.is_file():paths.append(str(path));before[path]=(hashlib.sha256(path.read_bytes()).hexdigest(),path.stat().st_mtime_ns)
         else:print('SKIP optional native fan sample: '+name)
     p=subprocess.run(command('tests/fan_motion_smoke.gd',extra=['--',*paths]),cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=230)

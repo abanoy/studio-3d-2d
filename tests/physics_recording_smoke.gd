@@ -75,6 +75,12 @@ func run() -> void:
 	check(not record.start(),"recording without live physics gives useful guidance")
 	var original: Dictionary=app.renderer.world_state();var history: int=app.history.size()
 	await record_scene(app,boxes,arm_id)
+	app.world_selection.clear();record.sync()
+	check(record.button.disabled and "Select a simulated object" in record.button.tooltip_text,"Local explains why capture requires a selected live actor")
+	record.scope.select(1);record.scope.item_selected.emit(1)
+	check(not record.button.disabled and "4 simulated objects" in record.button.tooltip_text,"switching to World enables capture without a selected actor")
+	app.world_selection.select_entity(arm_id);record.scope.select(0);record.scope.item_selected.emit(0)
+	check(not record.button.disabled and physics.simulations[arm_id].rig.data.name in record.button.tooltip_text,"Local preview identifies its selected recording target")
 	var live: RefCounted=physics.simulations[arm_id];var physical_bone: String=live.bodies.keys()[0]
 	var state: Dictionary=live.capture_pose()
 	var actor: RefCounted=live.rig;var globals:={}
@@ -93,6 +99,7 @@ func run() -> void:
 	check(record.active and record.targets.keys()==[arm_id],"selecting another model in the tree keeps the original Local capture scope")
 	var peer_body: RigidBody3D=physics.simulations[boxes[0]].body;var peer_grab: bool=physics.begin_grab(peer_body,peer_body.global_position)
 	check(peer_grab and record.active and record.targets.keys()==[arm_id] and "outside" in app.status.text,"grabbing a peer does not truncate or silently retarget Local recording")
+	check(record.scope.get_item_text(0)=="Local · "+str(record.targets[arm_id].name).left(22) and str(record.targets[arm_id].name) in record.scope.tooltip_text,"Local scope still names the recorded actor while another prop is held")
 	physics.release_grab()
 	for body in live.bodies.values():body.apply_central_impulse(Vector3(8,1,0))
 	await wait_record(record)
@@ -117,6 +124,7 @@ func run() -> void:
 			if other is PhysicalBone3D:contacts.append(other.get_instance_id()))
 		starts[id]=body.global_position
 	history=app.history.size();record.button.pressed.emit();live=physics.simulations[arm_id]
+	check(record.scope.get_item_text(1)=="World · 4 objects","World scope shows the four locked recording targets")
 	for body in live.bodies.values():body.apply_central_impulse(Vector3(8,1,0))
 	await wait_record(record)
 	check(record.last_error.is_empty() and record.targets.size()==4 and app.history.size()==history+1,"World records ragdoll and all three dynamic props in one atomic Undo")

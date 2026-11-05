@@ -1,7 +1,9 @@
 # Installed Source content browser
 
 Choose **Installed** in the blue navigation bar. This browser reads local content;
-Garry's Mod must already be installed. No games, Workshop items or texture packs
+Garry's Mod imports require an installed GMod copy. Recognized installed SFM
+content can use SFM alone in the development version; see
+[standalone SFM checks](sfm_standalone.md). No games, Workshop items or texture packs
 are installed, subscribed to, downloaded or distributed by Studio.
 
 1. Choose a location on the left, or enter an asset name and choose **Search all**.

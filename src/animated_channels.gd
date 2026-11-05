@@ -9,6 +9,10 @@ static func identity() -> Dictionary:
 	return {"position":[0,0,0],"rotation_xyzw":[0,0,0,1],"scale":1.0}
 
 static func has_data(data: Dictionary) -> bool:
+	if data.get("format")=="studio_model_9":return not data.get("visibility_keys",[]).is_empty() or not describe_components(data,false).is_empty()
+	for tracks in data.get("root_components",{}).values():
+		for field in ["position","rotation_xyzw","scale"]:
+			if tracks[field].any(func(key):return key.get("authored",true)):return true
 	if not data.get("visibility_keys",[]).is_empty() or not data.pose_keys.is_empty():return true
 	for piece in data.get("animation_clips",[]):
 		if not piece.keys.is_empty() or not piece.get("shape_keys",[]).is_empty():return true
@@ -27,6 +31,7 @@ static func key_channels(key: Dictionary, previous_pose: Dictionary, previous_tr
 	return result
 
 static func describe(data: Dictionary, advanced:=false) -> Array:
+	if data.get("format")=="studio_model_9":return describe_components(data,advanced)
 	if data.get("format") in ["studio_model_6","studio_model_7","studio_model_8"]:return describe_body(data,advanced)
 	var curves: Array=[]
 	if Clips.has_pieces(data):
@@ -106,6 +111,27 @@ static func describe(data: Dictionary, advanced:=false) -> Array:
 		var frames:=[]
 		for key in data.visibility_keys:frames.append(int(key.frame))
 		result.append({"id":"@visibility","label":"Visibility","tooltip":"Persistent visibility; independent of motion pieces","frames":frames,"ranges":[],"estimated":false})
+	return result
+
+static func describe_components(data: Dictionary,advanced: bool) -> Array:
+	var document=load("res://src/root_component_document.gd")
+	var result: Array=describe_body(document.legacy_view(data),advanced).filter(func(row):return row.id!="@root")
+	var rows:={};var labels:={"position":"Position","rotation_xyzw":"Rotation","scale":"Scale"}
+	for piece in data.animation_clips:
+		var tracks: Dictionary=data.root_components.get(piece.id,{})
+		if tracks.is_empty():tracks=document.Adapter.extract(document.Body.view(document.legacy_view(data))).get(piece.id,{})
+		for field in labels:
+			var keys: Array=tracks.get(field,[])
+			if not keys.any(func(key):return key.get("authored",true)):continue
+			var id: String="@root/"+field if advanced else "@root"
+			if not rows.has(id):rows[id]={"id":id,"label":labels[field] if advanced else "Root / transform","tooltip":"Independent "+field+" keys; select to inspect the model root." if advanced else "Model position, rotation and scale keys.","frames":[],"ranges":[],"estimated":false}
+			var row: Dictionary=rows[id];var span:=Vector2i(int(piece.start),int(piece.length))
+			if not span in row.ranges:row.ranges.append(span)
+			for key in keys:
+				if not key.get("authored",true) or key.frame<piece.source_in or key.frame>=piece.source_in+piece.length:continue
+				var at:=int(piece.start)+int(key.frame)-int(piece.source_in)
+				if not at in row.frames:row.frames.append(at)
+	for row in rows.values():row.frames.sort();result.append(row)
 	return result
 
 static func describe_body(data: Dictionary,advanced: bool) -> Array:

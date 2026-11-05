@@ -7,6 +7,7 @@ const ALIASES:={
 	"まばたき":["Eyes","Blink"],"瞬き":["Eyes","Blink"],"ウィンク":["Eyes","Wink"],
 	"あ":["Mouth","Mouth A"],"い":["Mouth","Mouth I"],"う":["Mouth","Mouth U"],"え":["Mouth","Mouth E"],"お":["Mouth","Mouth O"],
 	"blink":["Eyes","Blink"],"eyebrows raise":["Brows","Raise brows"],"mouth angry open":["Mouth","Angry open mouth"],
+	"ah 1":["Mouth","Mouth Ah 1"],"ah 2":["Mouth","Mouth Ah 2"],"eeee":["Mouth","Mouth Ee"],
 	"tools":["Accessories","Tools"],"wing shrink":["Accessories","Smaller wings"],"wing expand big":["Accessories","Larger wings"],"normal hair":["Hair","Hair shape"]}
 
 static func normalized(value: String) -> String:
@@ -29,7 +30,7 @@ static func estimate(native_name: String) -> Dictionary:
 	if ALIASES.has(name):return {"area":ALIASES[name][0],"label":ALIASES[name][1],"evidence":"Name estimate", "manual":false}
 	var tokens:=name.split(" ",false);var matches:=[]
 	if "brow" in name or "眉" in name:matches.append("Brows")
-	var clues:={"Eyes":["eye","eyes","eyelid","eyelids","lid","lids","pupil","pupils","blink","wink","squint","sclera","scerla"],"Mouth":["mouth","lip","lips","tongue","teeth","fang","fangs","jaw"],"Body":["body","belly","waist","shoulder","shoulders","arm","arms","leg","legs"],"Clothing":["skirt","dress","coat","clothing","sleeve","sleeves","shirt","pants"],"Hair":["hair","bangs"],"Accessories":["wing","wings","tools","hat","glasses","ribbon"]}
+	var clues:={"Eyes":["eye","eyes","eyelid","eyelids","lid","lids","pupil","pupils","blink","wink","squint","sclera","scerla"],"Mouth":["mouth","lip","lips","tongue","teeth","fang","fangs","jaw"],"Body":["body","belly","waist","shoulder","shoulders","arm","arms","leg","legs"],"Clothing":["skirt","dress","coat","clothing","sleeve","sleeves","shirt","pants"],"Hair":["hair","bangs"],"Accessories":["wing","wings","tools","hat","glasses","ribbon","sword"]}
 	for area in clues:
 		for token in clues[area]:
 			if area=="Eyes" and token in ["eye","eyes"] and matches.has("Brows"):continue # "eye brows" is one area, brow + lid/squint is mixed.
