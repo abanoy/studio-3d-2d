@@ -887,3 +887,41 @@ animation export, web changes or deployment. Historical tracked output results/
 logs are restored after fresh proof is copied outside checkout. Continuous goal
 remains active; full original MD/addendum completion and artist/native/Windows
 acceptance are not established.
+
+2026-11-05 UTC — decided frame3000→0 clip requirement verified
+
+Continued afterc9b6974 (confirmed pushed). Rather than assume the new duration
+budget proves all timeline behavior, verified the addendum's explicit7.3 example
+through real routed GUI dragging. Original procedural rig at3000, root/bone poses
+through3024,3600frames at60fps, independent peer/background/ink and sound at3000.
+The same scenario runs Model6 ordinary body data and Model9 components. No
+production source change was needed; no new clipping/ripple/duplicate/cross-track
+ownership decision was made. Explicit zero global fade isolates motion;300ms
+normal default remains unchanged. Details: docs/late_clip_move.md.
+
+Final61checks pass:19ordinary writer+5cold+6normal startup;20component writer+
+5cold+6normal startup. Drag previews−3000 without mutation, then commits exactly
+one stable-object Undo with introduction/block at0 and original source controls.
+All97quarter-frame root/bone samples remain exact, frame12 world pixels equal
+original3012, peer/map/camera/ink and PCM stay independent. Exact Undo/Redo. Both
+packed schema8 readers and normal startup after actual SIGKILL retain complete
+relative source/world records, pixels, PCM, ink and synchronized60second UI while
+original GLBs/WAV and writer cache are unavailable. Sources/manual HAS bytes and
+functional files remain hash-exact. No full3600frame movie exported in this check.
+Evidence: /workspace/has-handoff-audit/late-clip-move-final/verification.json.
+
+Test setup corrections are retained in failed evidence: load_scene returns an
+error String, not bool; the initial assertion used the wrong return type. Then
+strict key/sample assertions read a stale rig instance after importing its peer
+rebuilt the world. The live rig moved correctly; reacquiring it by stable ID made
+both existing strict checks pass, without loosening them or changing production.
+Model JSON before/after and one first-difference diagnostic are retained for
+inspection. Only the exact owned stalled test process was stopped.
+
+Optional next-work priority was requested asynchronously (timeline/clip editing,
+drawing consistency/proportion guides, or import fidelity). No reply yet; work
+continues on decided core timeline behavior. Proportion overlays are optional
+Stage5 and require owner-pain prioritization; none was added speculatively. The
+remaining independent drawing-exposure timeline drag gap is being investigated.
+All graphical checks remained on private Xorg:101/llvmpipe/Dummy audio. Full
+native/Windows/device/artist acceptance and other OPEN scope remain unfinished.

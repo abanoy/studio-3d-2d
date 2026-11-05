@@ -11248,3 +11248,17 @@ tracked peak94.9→95.3MB; exact hashes), with initial single-pass variation ret
 Artifact docs/benchmarks/waveform_levels_2026-11-05.json. Full accepted scope,
 failed test assumptions and the caught start-bin rendering bug are in root LLM.md.
 Continuous goal and remaining native/physical/artist acceptance stay open.
+
+2026-11-05 UTC — continuous-goal frame3000 clip proof
+
+Existing Model6/Model9 clip movement now has61fresh private checks for the decided
+3000→0 example:19+5+6 ordinary and20+5+6 components. Original source keys/curves,
+97quarter-frame samples, moved world pixels and exact Undo/Redo remain intact;
+other world rows/camera/ink/PCM stay independent. Packed cold Open and normal
+startup after SIGKILL pass with originals/writer cache unavailable. Sources and
+manual HAS bytes unchanged. No production source modification or new OPEN clip-
+ownership decision; zero visibility fade is explicit test setup. No3600frame
+movie claim. Details docs/late_clip_move.md; evidence
+/workspace/has-handoff-audit/late-clip-move-final/verification.json.
+Corrected test-only error-string and stale-instance assumptions are in LLM.md.
+Optional work priority remains unanswered; decided core timeline work continues.

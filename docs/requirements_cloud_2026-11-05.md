@@ -155,3 +155,7 @@ recovery/lesson suites also pass. See [guide alignment](reference_alignment.md).
 Sparse multi-sound quantization now matches a16-case frozen full-PCM/peaks oracle
 and passes real fade editing/cold storage/AAC checks. See [measured scope](sparse_audio.md).
 This reduces CPU work across silent gaps; duration/dense-project memory limits remain.
+
+The decided addendum7.3 frame3000→0 example now passes61private Model6/Model9
+writer/cold/crash checks; see [late clip movement](late_clip_move.md). This does
+not resolve the separate OPEN ripple/cross-track/ownership decisions.
