@@ -2,15 +2,15 @@ extends RefCounted
 const Storage=preload("res://src/storage.gd")
 const Recovery=preload("res://src/recovery.gd")
 const Timeline=preload("res://src/timeline.gd")
-const COURSES:={"first-movie-v1":11,"basic-pose":3,"advanced-camera":3,"advanced-lighting-v1":4,"advanced-interpolation-v1":5,"advanced-constraints-v1":5}
+const COURSES:={"first-movie-v1":11,"basic-pose":3,"advanced-camera":3,"advanced-lighting-v1":4,"advanced-interpolation-v1":5,"advanced-constraints-v1":5,"advanced-physics-v1":5}
 var root: String
 var error:=""
 var restored_observations:={}
 
 static func valid_observations(value) -> bool:
-	if not value is Dictionary or value.size()>3:return false
+	if not value is Dictionary or value.size()>4:return false
 	for name in value:
-		if not name in ["physics_seen","preview_seen","export_done"] or not value[name] is bool:return false
+		if not name in ["physics_seen","preview_seen","export_done","local_record_seen"] or not value[name] is bool:return false
 	return true
 
 static func checkpoint_name(course: String,name: String) -> bool:

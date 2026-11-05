@@ -696,3 +696,8 @@ recorded-shot evaluation. See [interactive practice](docs/tutorials.md).
 
 **Advanced · Rig posing and foot constraints** adds real arm keys, saved planted
 foot ranges, constrained root movement and partial release to the tutorial catalog.
+
+**Advanced · Physics recording** teaches live/frozen motion, explicit Local capture,
+recorded playback and MP4. Cancelled or wrong-scope takes do not complete the task.
+The course catalog scrolls, and the first-movie verifier now supports private Linux
+displays while retaining the Windows private-desktop checks.

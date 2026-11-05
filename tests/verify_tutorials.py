@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from run import command
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--chapter',choices=['existing','lighting','interpolation','constraints'],default='existing')
+    parser.add_argument('--chapter',choices=['existing','lighting','interpolation','constraints','physics'],default='existing')
     parser.add_argument('--isolated-display',help='Linux: pre-provisioned private dummy X display')
     options=parser.parse_args()
     if os.name!='nt':
@@ -13,7 +13,7 @@ def main():
         os.environ['DISPLAY']=options.isolated_display
     script='tests/'+options.chapter+'_lesson_smoke.gd' if options.chapter!='existing' else 'tests/tutorial_smoke.gd'
     cases=[('practice',[],'LIGHTING_LESSON_SMOKE '),('resume',['--read'],'LIGHTING_LESSON_READ ')] if options.chapter=='lighting' else [('practice',[],'TUTORIAL_SMOKE '),('resume',['--resume'],'TUTORIAL_RESUME ')]
-    if options.chapter in ['interpolation','constraints']:
+    if options.chapter in ['interpolation','constraints','physics']:
         prefix=options.chapter.upper()+'_LESSON_'
         cases=[('practice',[],prefix+'SMOKE '),('resume',['--read'],prefix+'READ ')]
     folder=ROOT/'output/tutorials'/str(time.time_ns());folder.mkdir(parents=True);results=[];receipts=[]

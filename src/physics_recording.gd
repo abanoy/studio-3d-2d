@@ -1,4 +1,5 @@
 extends Node
+signal take_committed(scope_name: String,object_ids: Array,first: int,last: int)
 # Explicit capture samples the shared physics proxies into ordinary editable pieces.
 const Model=preload("res://src/model.gd")
 const Clips=preload("res://src/animation_clips.gd")
@@ -314,6 +315,7 @@ func finish(reason: String="explicit stop") -> bool:
 		var id: String=result.values.keys()[0];app.renderer.model.data=result.values[id]
 		app.push_history({"type":"model","before":before[id],"after":result.values[id].duplicate(true)})
 	app.changed();advancing=true;app.set_frame(end);advancing=false;sync()
+	take_committed.emit("local" if scope.selected==0 else "world",targets.keys(),start_frame,end)
 	app.message("Recorded frames %d–%d for %d model(s). Physics is off; the take is editable and Undo restores it." % [start_frame,end,targets.size()]+(" "+last_error+" Later motion was not saved." if not last_error.is_empty() else ""))
 	return true
 

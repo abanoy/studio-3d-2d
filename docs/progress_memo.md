@@ -10687,3 +10687,41 @@ constraints-evidence. Existing course IDs/lengths and project formats unchanged.
 Software/procedural scope; native rig fidelity and hardware/artist acceptance
 remain. Physics recording curriculum, advanced rig authoring/demonstrations,
 richer compositing and other requirements still need work.
+
+
+## 2026-11-05 UTC — explicit physics recording practice and Linux encoder cancellation
+
+New advanced-physics-v1 has5 tasks on the original included HAS: select rig,
+observe live physics then freeze, explicitly commit a Local take from0 through12
+or later, play/pause saved animation with Physics off, and successfully export.
+A new take_committed signal fires only after successful installation of a capture;
+the teacher validates scope/target/range plus real dense keys. Cancelled or World
+takes do not satisfy the Local exercise. A fourth narrowly validated boolean
+local_record_seen joins existing lesson observations; old flags/course lengths
+remain. Previous restores observations with whole scene, Continue/Fresh retains
+independent sessions, and personal Save remains optional. Catalog now scrolls
+within the app window. World captures all live bodies; this focused chapter uses
+one original figure and does not claim multi-body collision/native cloth coverage.
+
+Fresh private Linux llvmpipe chapter25writer +5coldreader pass, including actual
+simulation/record buttons, cancellation, wrong-scope refusal, Undo, playback,
+failed/successful encoder, exact frame6 movie input and H2641080p24/48frames.
+Original sample hashes unchanged. See /workspace/has-handoff-audit/physics-lesson.log
+and physics-lesson-evidence. No native/hardware/artist acceptance claim.
+
+Made the existing first-movie verifier portable with explicit private display and
+Dummy audio on Linux, retaining all Windows private-desktop receipt checks.
+Its first fresh run caught Godot ECHILD errors after encoder cancellation despite
+79 behavioral assertions passing: OS.kill already reaps an owned Unix child.
+Encoder cancellation is now idempotent and skips post-kill liveness/exit queries.
+The strict rerun passes79writer +8coldreader with no engine errors, actual normal
+and unsaved MP4, cancellation during render and encode, missing input diagnosis,
+retry preserving frames/mix/prior movie, and decoded AAC onset sample80043 at48kHz
+(target80000; existing tolerance240). Evidence physics-first-movie-fixed.log.
+No tests weakened and no error log suppression. Tracked old outputs restored
+only after copying the fresh proof outside the checkout.
+
+Focused advanced lighting, camera, interpolation, rig posing/foot constraints and
+physics recording are now present. Progressive demonstrations, deeper rig authoring
+and artist feedback remain separate improvements; richer compositing, reusable
+locomotion/native fidelity and long-project work are not complete.

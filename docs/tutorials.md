@@ -29,7 +29,7 @@ more viewport room, including at 1200px. These visual aids are transient UI.
 camera keys and temporary editor view, frame, cels, audio and project settings,
 selection, active layer, mode, Advanced, canvas zoom/pan. Undo history and live
 simulation velocities are not restored; checkpointing freezes simulations first.
-The beginner course also stores three narrowly validated observations (actual live
+The beginner course also stores narrowly validated observations (actual live
 physics, preview playback, successful export) atomically with each lesson snapshot.
 Previous restores those observations too: returning to the final task requires a
 new successful export, not merely an old movie on disk. Camera navigation compares
@@ -49,9 +49,9 @@ Session folders retain shared content-addressed cels within each fixed checkpoin
 there is no cross-session deduplication, retention policy or concurrent writer lock.
 
 This is a runnable beginner route and initial focused chapters, **not complete
-tutorial coverage**. Still needed: focused advanced rig-authoring/physics sections, more topic/subsection entry points,
-progressive demonstrations and beginner usability feedback. Physics here teaches
-live/unrecorded motion and freeze; full capture is an advanced lesson still to add.
+tutorial coverage**. Further work: advanced rig-authoring practice, more topic/subsection entry points,
+progressive demonstrations and beginner usability feedback. The focused physics chapter below now teaches explicit Local capture; multi-body
+World recording and native secondary rigs need their own practice/acceptance.
 Tutorial Skip remains OPEN. The new course has identity `first-movie-v1` and eleven
 tasks; both older three-task course identities/contracts stay unchanged. Future
 task changes require explicit migration/versioning rather than shifting old steps.
@@ -179,3 +179,29 @@ Run `python tests/verify_tutorials.py --chapter constraints`, with an explicit
 private `--isolated-display :99` on Linux. Fresh procedural llvmpipe checks:
 24 writer +5 cold reader, real Plant/Release and pose controls, Undo/Redo, exact
 Previous pixels, ordinary HAS and H2641080p24/48frames movie input agreement.
+
+
+## Explicit physics recording
+
+**Advanced · Physics recording** separates live simulation, frozen pose and saved
+animation. Five tasks select the original figure, run/freeze Physics, commit a
+Local take from0 through12 or later, play/pause the recorded take with Physics off,
+and export an MP4. The teacher observes successful capture installation and checks
+scope, figure identity, range and saved sample keys. Cancelled and World takes do
+not satisfy the Local exercise. The hint explains that World instead records all
+currently simulated bodies; one figure does not demonstrate multi-body capture.
+
+The saved take remains editable. Previous before capture removes that take and
+its completion flag; Previous before preview retains the take but requires a new
+Play/pause. Continue restores these observations with the project, and Start fresh
+keeps prior practices. Save stays optional. The growing catalog has a scroll area.
+Run `python tests/verify_tutorials.py --chapter physics`, adding an explicitly
+provisioned private `--isolated-display :99` on Linux. Fresh software checks:
+25 writer +5 cold reader, actual simulation and capture, exact movie input and
+H2641080p24/48frames. Native joints/cloth and physical-device acceptance are separate.
+
+The original beginner path verifier now also accepts `--isolated-display :99` on
+Linux and preserves Windows private-desktop checks. Fresh79writer +8coldreader,
+actual AAC sync and render/encoder cancellation plus retry pass. Linux encoder
+cancellation avoids querying an already reaped child; cancelled frames/mix remain
+available for retry. See `tests/verify_first_movie.py`.

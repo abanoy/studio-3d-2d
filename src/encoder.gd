@@ -15,6 +15,7 @@ static func detect(path: String) -> Dictionary:
 	return {"ok": code == 0 and text.contains("libx264 ") and text.contains(" aac "), "log": text, "exit_code": code}
 
 func cancel() -> void:
+	if cancelled:return
 	cancelled = true
 	if process_id > 0 and OS.is_process_running(process_id):
 		OS.kill(process_id)
@@ -39,11 +40,13 @@ func encode(tree: SceneTree, ffmpeg: String, folder: String, video: Dictionary, 
 		return reason
 	process_id = process.pid
 	log_text = "Arguments: %s\n" % str(args)
-	while OS.is_process_running(process_id):
+	# OS.kill reaps the owned Unix child. Querying that PID again can produce
+	# ECHILD in Godot; cancellation already establishes this attempt's outcome.
+	while not cancelled and OS.is_process_running(process_id):
 		log_text += process.stderr.get_buffer(8192).get_string_from_utf8()
 		await tree.process_frame
 	log_text += process.stderr.get_buffer(65536).get_string_from_utf8()
-	var code := OS.get_process_exit_code(process_id)
+	var code := -1 if cancelled else OS.get_process_exit_code(process_id)
 	process_id = -1
 	var log_file := FileAccess.open(log_path, FileAccess.WRITE)
 	if log_file:
