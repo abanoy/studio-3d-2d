@@ -77,3 +77,6 @@ artist acceptance. See the requirement reconciliation for the remaining gates.
 Optional [sequence drop shadows](sequence_shadows.md) now add a reversible silhouette
 effect. Enabling one explicitly promotes the graph to studio_sequences_2 while
 keeping project schema6; earlier unstyled graphs keep their original format.
+
+[Held artwork caching](sequence_cache.md) now reuses source pictures across held
+exposures while keeping parent placement/shadow evaluation and marked-pixel invalidation.

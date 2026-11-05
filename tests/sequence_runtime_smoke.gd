@@ -27,6 +27,14 @@ func run() -> void:
 	check(runtime.builds==builds and again.get_data()==image.get_data(),"same local frame reuses bounded cached scene picture")
 	check(source.get_data()==before,"nested compositing never alters editable source pixels")
 	image.save_png(folder.path_join("sequence-half-alpha.png"))
+	var held: Image=await runtime.render("",12,true)
+	check(runtime.builds==builds and held.get_data()==image.get_data(),"different parent frames reuse the same held artwork picture exactly")
+	var original:=source.get_pixel(850,450);source.set_pixel(850,450,Color.BLUE);preload("res://src/drawing.gd").touch(source,Rect2i(850,450,1,1))
+	var edited: Image=await runtime.render("",12,true)
+	check(runtime.builds==builds+1 and edited.get_pixel(850,450).b>.99,"a marked pixel revision invalidates held artwork even at the same frame")
+	source.set_pixel(850,450,original);preload("res://src/drawing.gd").touch(source,Rect2i(850,450,1,1))
+	var restored: Image=await runtime.render("",13,true)
+	check(runtime.builds==builds+2 and restored.get_data()==image.get_data() and source.get_data()==before,"restoring source pixels builds once and restores the exact cached appearance")
 	runtime.free()
 	# Two actual compositing levels, each with its own local range and loops.
 	var child: Dictionary=document.sequence_graph.assets[0].scene

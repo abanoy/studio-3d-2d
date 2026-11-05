@@ -1,0 +1,41 @@
+{
+  "date_utc": "2026-11-05",
+  "baseline_revision": "711c949",
+  "scenario": "240 frames at 1920x1080, two held RGBA cels, animated parent placement and soft shadow",
+  "scope": "Private dummy X, Linux llvmpipe; original procedural pixels, no native fixtures or physical device acceptance",
+  "before": {
+    "adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "baseline": true,
+    "checks": 4,
+    "failures": 0,
+    "first_sha256": "b6bbefa8b6ae8f866f2dda65e0217ffbdd3e8703184fa8b1b31a0e7fadf6540d",
+    "frames": 240,
+    "last_sha256": "7406babede44805e77a0ff717025ad482d76ecb6693cca89753ab5b182d4a291",
+    "max_ms": 805.448,
+    "mean_ms": 734.892304166666,
+    "native_fixtures": 0,
+    "p95_ms": 759.29,
+    "peak_cached_assets": 1,
+    "source_builds": 240,
+    "total_ms": 176374.153
+  },
+  "after": {
+    "adapter": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "baseline": false,
+    "checks": 5,
+    "failures": 0,
+    "first_sha256": "b6bbefa8b6ae8f866f2dda65e0217ffbdd3e8703184fa8b1b31a0e7fadf6540d",
+    "frames": 240,
+    "last_sha256": "7406babede44805e77a0ff717025ad482d76ecb6693cca89753ab5b182d4a291",
+    "max_ms": 423.088,
+    "mean_ms": 341.172575,
+    "native_fixtures": 0,
+    "p95_ms": 358.022,
+    "peak_cached_assets": 1,
+    "source_builds": 2,
+    "total_ms": 81881.418,
+    "baseline_mean_ms": 734.892304166666,
+    "baseline_source_builds": 240
+  },
+  "timing_note": "One exploratory run per version. No machine-dependent timing threshold is an acceptance condition."
+}

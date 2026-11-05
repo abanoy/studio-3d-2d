@@ -294,3 +294,34 @@ Stage4 now has editable nested scenes/audio, per-instance transform/opacity,
 video alpha/chroma and simple2D shadows, with a bounded end-to-end cloud exit.
 Masks/glow/general layer tracks, reusable locomotion/native fidelity, measured
 long-project cache behavior and owner acceptance still remain independent work.
+
+
+## 2026-11-05 UTC — measured held-artwork cache reuse
+
+Measured the existing240-frame maximum before optimization on711c949: two120-frame
+RGBA holds with moving parent placement and a soft shadow rebuilt240 full-HD
+source pictures. Baseline4 functional checks pass, cache stays1 asset, mean734.892ms
+and total176374.153ms on private Linux llvmpipe. Source pixels remained unchanged.
+
+Runtime now reuses visible held image identities/revisions/layer opacity/order and
+skips transparent3D readback for an empty child world. Parent transforms/opacity/
+shadow still evaluate every frame. Nested clips or any world/effect content keep
+frame-based evaluation; drawing-only output can reuse independent ink. Marked
+pixel revisions invalidate even at the same frame. No persisted format or limits
+change. Existing runtime replacement remains a complete invalidation boundary.
+
+Fresh after5checks/240frames pass: source builds2, cached assets1, identical
+first/last whole-frame hashes to baseline, correct two-cel boundary and alpha
+throughout. Mean341.173ms, total81881.418ms, p95358.022ms on this software renderer.
+One exploratory timing run per version; no timing threshold or hardware24fps claim.
+Runtime15 checks pass including same-frame pixel invalidation, exact restoration,
+nested alpha/time and active+queued retirement. Actual shadow app23 +coldreader6
+regression also passes ordinary HAS/recovery/close and exact H2641080p24/48frames
+input. Evidence sequence-cache, cache-accepted, cache-runtime and cache-shadow-
+regression under /workspace/has-handoff-audit; both measurement records are in
+docs/benchmarks/sequence_cache_2026-11-05.json. Tracked outputs stayed preserved.
+
+See docs/sequence_cache.md and tests/verify_sequence_cache.py. This is a bounded
+held-art optimization, not arbitrary long/dense project support.240frames/32cels,
+audio/undo/archive and4 cached asset-picture budgets remain. Full native/hardware/
+artist acceptance and other incomplete requirements remain distinct.

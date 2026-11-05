@@ -78,7 +78,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | 12.3 Previous | Full checkpoints and observations present | Skip remains OPEN |
 | 12.4 Continue/Fresh | Separate saved practice sessions and optional personal Save present | Forced-crash lesson-context recovery and retention |
 | 13.1 autosave | Bounded background recovery workers present | Measured long-session behavior |
-| 13.2 history | Journal/checkpoint references, shared cel storage and validation present | Measured long-project caching |
+| 13.2 history | Journal/checkpoint references, shared cel storage and validation present | Held-art240-frame cache test now reduces builds240→2; arbitrary long/dense projects remain |
 | 13.3 recovery | Fresh explicit recovery restoration passes | Linux identity47 / journal33 / normal-startup147 checks now pass; broader native/hardware crash gate remains |
 | 14.1 complete scene | Shared 3D/ink/audio, imported Krita/video and particle/VFX paths | Editable nested sequences and2D shadows now present; broader layer masks/glow remain |
 | 14.2 final output | Default MP41080p24, project rate/duration and PNG options present; fresh movie verified | Device/audio sync and fault coverage |
@@ -126,3 +126,5 @@ Linux recovery was completed after the initial video checkpoint; see [linux_reco
 Editable sequences were completed after the earlier checkpoints; see [editable sequences](editable_sequences.md) for schema6, usage, limits and the portable acceptance verifier. Native packaging remains OPEN.
 
 Simple sequence shadows now pass23writer+6cold checks with exact MP4 input; graph87/runtime12 and the complete sequence recovery suite also pass. See [sequence shadows](sequence_shadows.md).
+
+Held-art sequence caching now passes the240-frame/two-cel source-reuse gate; see [measured cache scope](sequence_cache.md). This does not remove the existing duration or cel budgets.

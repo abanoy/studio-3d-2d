@@ -705,3 +705,7 @@ displays while retaining the Windows private-desktop checks.
 Sequence instances now offer [drop shadows](docs/sequence_shadows.md) with offset,
 softness and color/opacity, shared by preview, recovery and export. Original child
 art stays editable; enabling a shadow uses the explicit studio_sequences_2 format.
+
+[Held artwork caching](docs/sequence_cache.md) reuses sequence pictures across
+exposures without freezing parent placement or shadows. The measured240-frame
+software-rendering test reduced source builds240→2 while preserving exact output.

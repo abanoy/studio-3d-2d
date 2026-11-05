@@ -47,6 +47,22 @@ func render(owner: String,frame: int,final: bool=false,drawings_only: bool=false
 	busy=true;last_error=""
 	var image: Image=await render_clips(owner,frame,final,drawings_only)
 	busy=false;requests-=1;return image
+func empty_world(scene: Dictionary) -> bool:
+	return scene.world.objects.is_empty() and scene.world.get("effects",[]).is_empty()
+func picture_stamp(asset: Dictionary,frame: int,final: bool,drawings_only: bool) -> String:
+	# Held paint has no reason to repeat a full-HD scene readback. A nested scene
+	# or any world content keeps frame evaluation, including visibility and VFX.
+	if not asset.clips.is_empty() or (not drawings_only and not empty_world(asset.scene)):
+		return "%d:%s:%s" % [frame,final,drawings_only]
+	var state: Array=["held",final,drawings_only]
+	for layer in asset.scene.layers:
+		var opacity: float=layer.get("opacity",1.0)
+		if not layer.visible or opacity==0:continue
+		var cel:=Drawing.cel_at(layer,frame)
+		if cel.is_empty():continue
+		var image: Image=cel.image
+		state.append([image.get_instance_id(),image.get_meta("studio_pixels_revision",0),opacity])
+	return JSON.stringify(state,"",true,true)
 func render_clips(owner: String,frame: int,final: bool,drawings_only: bool) -> Image:
 	if cancelled:return null
 	if not owners.has(owner):last_error="Missing sequence owner.";return null
@@ -58,11 +74,11 @@ func render_clips(owner: String,frame: int,final: bool,drawings_only: bool) -> I
 		if local<0:continue
 		var placed:=Graph.placement(clip,frame)
 		if placed.opacity==0:continue
-		var stamp:="%d:%s:%s" % [local,final,drawings_only]
+		var stamp:=picture_stamp(asset,local,final,drawings_only)
 		var cached: Dictionary=frames.get(clip.asset_id,{})
 		if cached.get("stamp")!=stamp:
 			var image: Image=Drawing.blank(1920,1080)
-			if not drawings_only:
+			if not drawings_only and not empty_world(asset.scene):
 				if not renderers.has(clip.asset_id):last_error="Sequence renderer is unavailable.";return null
 				var renderer=renderers[clip.asset_id]
 				image=await renderer.capture(asset.scene.camera_keys,[],local,final)
