@@ -54,7 +54,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | 5.2 interpolation | Per-channel controls/curve runtime and gap behavior present | Owner motion preference tests |
 | 5.3 IK | Direct IK and planted/contact helpers present | Native rigs and whole-body goals |
 | 5.4 Motion Assist | V3 per-part/per-helper corrections, clips/copy/delete and bounded assist present | Broad full-body assistance and artistic intensity preference |
-| 5.5 walks / paths | Ordinary authored movement paths present | Reusable locomotion and multi-view path inference; OPEN details retained |
+| 5.5 walks / paths | Ordinary authored movement paths and reviewed data-only reusable position presets present; see `movement_path_presets.md` | Generated locomotion, terrain foot adaptation and multi-view path inference; OPEN details retained |
 | 6 camera | Explicit numeric camera controls, cuts and shared composition present; unit interpolation passes | Entire camera UI test suite |
 | 7.1 one timeline | Shared frame domain, camera/body/ink/audio/world tracks present | Editable child timelines now share the parent frame/rate domain; larger projects remain |
 | 7.2 expandable tracks | Hierarchical track display and components present | Larger projects and richer track operations |
@@ -134,3 +134,7 @@ Optional stroke smoothing now passes12domain/26app/4cold checks with original pr
 Named MP4 quality profiles now pass17app/3cold checks plus real three-profile H264/AAC decoding; see [export profiles](export_profiles.md). Scene timing/render inputs and existing Standard defaults are preserved.
 
 Sequence masks now pass26app/10cold checks, graph106/runtime23 and the full graph3 crash/startup variant48writer/19cold/5startup. See [mask scope and evidence](sequence_masks.md); general drawing-layer masks remain separate work.
+
+Reusable position path presets now pass23domain/41app/6cold checks and both original
+path-editor regressions13+34. See [preset scope](movement_path_presets.md); generated
+locomotion, terrain adaptation and path-inference details remain separate work.

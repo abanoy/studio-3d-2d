@@ -76,3 +76,9 @@ no diagnostic override. Six order-contract checks and the affected lighting,
 live appearance and camera-range wrappers pass. Full regression was completed
 before this fix; it is not claimed as fresh post-fix evidence. Normal installed
 Studio is unchanged. User-facing few-pose acting quality remains a separate task.
+
+2026-11-05 development continuation: the earlier deferred reusable-path statement
+is superseded for position waypoints by [path presets](movement_path_presets.md).
+Generated walking and depth inference remain unfinished. Fresh private Linux
+legacy/Model9 regressions each pass13unit+34app checks; this is a separate gate
+from historical native Windows and artist acceptance.

@@ -109,5 +109,5 @@ func run() -> void:
 	var reopened: Image=await app.renderer.capture(app.keys,app.layers,24,true);check(picture.get_data()==reopened.get_data(),"reopened movement and independent ink repeat exact picture")
 	var error: String=await app.export_movie(folder);check(error.is_empty()and picture.get_data()==Image.load_from_file(app.last_export_folder.path_join("frame_000025.png")).get_data(),"MP4 export frame matches edited path preview")
 	var movie: String=app.last_export_folder.path_join("movie.mp4");app.mode.select(2);app.change_mode(2);app.world_selection.select_entity(rig.data.id);await settled();app.inspector_scroll.ensure_control_visible(editor.button);await settled();await click(editor.button)
-	app.new_project();await settled();check(editor.apply_button.disabled and not editor.plot.enabled,"New invalidates stale path editing")
+	app.new_project();await settled();check(not is_instance_valid(editor.window) or editor.apply_button.disabled and not editor.plot.enabled,"New closes or disables stale path editing")
 	editor.close();app.dirty=false;app.queue_free();await settled();var result:={"checks":checks,"failures":failures,"movie":movie};var file:=FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE);file.store_string(JSON.stringify(result));file.close();print("MOVEMENT_PATH "+JSON.stringify(result));quit(0 if failures==0 else 1)

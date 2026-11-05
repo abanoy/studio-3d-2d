@@ -1,6 +1,7 @@
 extends Node
 const PathData=preload("res://src/movement_path.gd")
 const Model=PathData.Model
+const Preset=preload("res://src/movement_path_preset.gd")
 var app
 var button: Button
 var window: Window
@@ -14,6 +15,10 @@ var before: Dictionary={}
 var draft: Dictionary={}
 var video: Dictionary={}
 var target: WeakRef
+var generation:=0
+var preset_name: LineEdit
+var save_preset_button: Button
+var load_preset_button: Button
 
 func setup(parent: Node) -> void:button=app.button(parent,"Movement path…",open)
 
@@ -47,8 +52,11 @@ func open() -> void:
 	var actions:=HBoxContainer.new();box.add_child(actions);frame=app.spin(actions,"Frame",0,int(video.duration_frames),app.frame)
 	add_button=app.button(actions,"Add point",add_point);remove_button=app.button(actions,"Delete point",remove_point)
 	note=app.label(box,"Only model movement changes. Poses, expressions, camera and drawings stay independent. Walking steps are not generated yet.");note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var presets:=HBoxContainer.new();box.add_child(presets)
+	preset_name=LineEdit.new();preset_name.max_length=80;preset_name.text=(str(rig.data.name)+" route").left(80);preset_name.size_flags_horizontal=Control.SIZE_EXPAND_FILL;presets.add_child(preset_name)
+	save_preset_button=app.button(presets,"Save path preset…",save_preset);load_preset_button=app.button(presets,"Load path preset…",load_preset)
 	var footer:=HBoxContainer.new();box.add_child(footer);apply_button=app.button(footer,"Apply path",apply);app.button(footer,"Cancel",close)
-	window.popup_centered(Vector2i(850,610));refresh();call_deferred("fit")
+	window.popup_centered(Vector2i(850,650));refresh();call_deferred("fit")
 
 func fit() -> void:
 	if is_instance_valid(plot):plot.fit()
@@ -58,7 +66,7 @@ func refresh() -> void:
 
 func stage(value: Dictionary) -> void:
 	if value.has("error"):note.text=value.error;return
-	draft=value.data;refresh();note.text="Path preview only. Apply saves the movement keys as one Undo action."
+	generation+=1;draft=value.data;refresh();note.text="Path preview only. Apply saves the movement keys as one Undo action."
 
 func move_point(at: int,position: Vector3) -> void:
 	if not valid():return
@@ -89,10 +97,60 @@ func apply() -> void:
 	var at:=mini(int(frame.value),int(video.duration_frames)-1);close();app.set_frame(at);app.message("Movement path saved. Undo restores its previous keys.")
 
 func close() -> void:
+	generation+=1
 	if is_instance_valid(window):window.hide();window.queue_free()
 	window=null;plot=null;before={};draft={};target=null
 
 func _process(_delta: float) -> void:
 	if not is_instance_valid(window):return
-	var ready:=valid();plot.enabled=ready;apply_button.disabled=not ready;add_button.disabled=not ready;remove_button.disabled=not ready
+	var ready:=valid();plot.enabled=ready;apply_button.disabled=not ready;add_button.disabled=not ready;remove_button.disabled=not ready;save_preset_button.disabled=not ready;load_preset_button.disabled=not ready
 	if not ready:note.text="The scene or selection changed. Close and reopen its movement path."
+
+func protected_paths() -> Array:
+	var result: Array=[]
+	for object in app.current_world().objects:
+		if object.has("source"):
+			result.append(object.source);result.append(str(object.source).get_base_dir().path_join("parameters.json"))
+		var imported: String=str(object.get("metadata",{}).get("import_source",""))
+		if not imported.is_empty():result.append(imported);result.append(imported.get_base_dir().path_join("parameters.json"))
+		for key in ["source_dir","external_bundle"]:
+			var directory: String=str(object.get(key,object.get("metadata",{}).get(key,"")))
+			if not directory.is_empty():result.append(directory.path_join("parameters.json"))
+	return result
+
+func preset_dialog(save: bool) -> FileDialog:
+	var dialog:=FileDialog.new();dialog.access=FileDialog.ACCESS_FILESYSTEM
+	dialog.file_mode=FileDialog.FILE_MODE_SAVE_FILE if save else FileDialog.FILE_MODE_OPEN_FILE
+	dialog.title="Save movement path preset" if save else "Load movement path preset"
+	dialog.filters=PackedStringArray(["*.json ; HAS movement path preset"])
+	if save:dialog.current_file="Route.haspaths.json"
+	app.add_child(dialog);dialog.canceled.connect(dialog.queue_free)
+	return dialog
+
+func save_preset() -> void:
+	if not valid():return
+	var captured:=Preset.capture(draft,video,preset_name.text)
+	if captured.has("error"):note.text=captured.error;return
+	var token:=generation;var revision: int=app.recovery_revision;var protected:=protected_paths()
+	var dialog:=preset_dialog(true)
+	dialog.file_selected.connect(func(path):
+		dialog.hide();dialog.queue_free()
+		if not valid() or generation!=token or app.recovery_revision!=revision:app.message("The path or scene changed. Save the preset again.");return
+		var why:=Preset.write_file(path,captured.preset,protected)
+		note.text="Path preset saved. The scene still waits for Apply path." if why.is_empty() else why)
+	dialog.popup_centered_ratio(.7)
+
+func load_preset() -> void:
+	if not valid():return
+	var token:=generation;var revision: int=app.recovery_revision;var dialog:=preset_dialog(false)
+	dialog.file_selected.connect(func(path):
+		dialog.hide();dialog.queue_free()
+		if not valid() or generation!=token or app.recovery_revision!=revision:app.message("The path or scene changed. Load the preset again.");return
+		var loaded:=Preset.read_file(path)
+		if loaded.has("error"):note.text=loaded.error;return
+		var changed:=Preset.assign(draft,video,loaded.preset,app.frame)
+		stage(changed)
+		if not changed.has("error"):
+			preset_name.text=loaded.preset.name;plot.fit()
+			note.text="Preview: replaces the whole position path from this model's introduction, relative to its starting position. Turn, size and pose stay independent. Apply checks foot constraints. No walking steps are generated.")
+	dialog.popup_centered_ratio(.7)

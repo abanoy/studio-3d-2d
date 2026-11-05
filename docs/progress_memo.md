@@ -10905,3 +10905,58 @@ validation was weakened. Tracked output logs restored after copying fresh proof.
 Continue independent work: fuller reference/mask workflows, reusable locomotion,
 native fidelity and long/dense projects remain; packaging/path-inference details
 stay OPEN and hardware/artist acceptance needs owner resources.
+
+
+## 2026-11-05 UTC — reusable movement path presets
+
+Continuous authorized work continued after sequence masks. Added strict data-only
+studio_movement_path_preset_1 exchange through the existing modeless path editor:
+Save/Load path preset, relative group-coordinate position offsets, authored
+hold/linear/ease, exact matching rational rate, no automatic retiming/truncation.
+Load stages replacement of the entire position channel from the target introduction;
+Apply retains existing binding/contact/metadata validation and one Undo. Poses,
+turn, scale, expressions and foot records stay independent. Stale picker callbacks
+check both editor generation and scene revision. Atomic file writes protect known
+scene sources and original adjacent/native parameters.json. JSON is bounded64KiB,
+2–256points and1–240frames; no external file references/scripts are followed.
+Applied routes save as ordinary editable Model9 controls, independent of the
+accessory file. Native standalone model/map package extensions remain OPEN.
+
+A fresh static import originally produced separated one-frame pieces that held
+half-frame tails. It now receives one continuous position interval; exact peer
+checks remain. Static and later-introduced targets pass. Incompatible existing
+trim/gap layouts still refuse rather than flatten/bake or perturb peer tracks.
+This is reusable position motion, not generated walking, automatic turn/terrain
+adaptation, multi-view depth inference or settled OPEN algorithms. See
+movement_path_presets.md and updated requirement reconciliation.
+
+Fresh private Linux llvmpipe acceptance:23domain checks,41app checks,6cold checks.
+Two distinct original arm/leg rigs exchange the route; all97half-frame peer
+samples match; staged Apply, Cancel/stale dialogs, Undo/Redo, protected original
+parameters and source GLB bytes pass. A full procedural figure's actual planted
+feet refuse a100-unit route without document/history changes and accept a small
+crouch with constraints intact. Packed/linked cold Open and ordinary recovery
+repeat the exact rendered composite; manual HAS files remain byte-identical.
+Real H2641920x1080/24fps/48frames/2seconds probes correctly and saved frame24
+matches preview exactly. Ordinary legacy and already-Model9 path regressions each
+pass13unit+34app checks with routed drags, independent timeline rows, frame-zero
+edits and MP4. Their wrapper now accepts only an explicit private Linux display
+and retains Windows desktop receipts. Existing New check now accepts safe closure
+as well as disabled stale controls: scene context changes already close windows.
+No native/GPU/physical-input or artistic acceptance is implied.
+
+Failed harness runs remain outside the checkout: an invalid unit parameters.json
+initially collided with the app fixture directory (now separated); source fixture
+initially omitted required scale; contact setup initially used unsupported split
+placeholder ranges and an unrecorded legacy frame-zero draft. Continuous authored
+contact setup evaluates away from that draft; no production contact/model guard
+was bypassed or weakened. JSON.new().parse reports malformed input as ordinary
+feedback, without engine-error noise. Edge probing identified and fixed the real
+static-target interval issue before final acceptance. Final proof is
+/workspace/has-handoff-audit/path-presets-accepted and path-regression-{components,
+legacy}-final.log. Functional hashes were frozen during each final run.
+
+Next independent work remains broader reference/character-sheet workflows,
+progressive tutorial demonstrations, richer drawing compositing, generated
+locomotion, native fidelity and long/dense projects. Owner-dependent packaging,
+path-inference and hardware/artist questions do not block independent increments.

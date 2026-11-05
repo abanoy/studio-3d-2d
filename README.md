@@ -724,3 +724,8 @@ same saved frames/audio while preserving earlier movies.
 Sequence instances now have reversible [picture masks](docs/sequence_masks.md):
 rectangular crop or cutout before shadow generation. Source art and audio remain
 editable; applying a mask opts into studio_sequences_3 within schema6 HAS.
+
+Pose now saves and loads [reusable waypoint paths](docs/movement_path_presets.md).
+Preview a route on another model before Apply; position stays independent of pose,
+turn, size and expressions, with planted-foot validation and one Undo.
+Walking generation and depth inference remain separate work.
