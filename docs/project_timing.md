@@ -1,7 +1,9 @@
 # Project timing
 
 **Options → Scene length (frames) → Apply scene length** changes the shot length
-in Simple or Advanced, from 1 to 240 frames. The number is a duration: 24 frames
+in Simple or Advanced. Parents support up to60seconds and7200frames (1440 at24fps);
+child scenes remain bounded to240frames. See [longer timelines](extended_timing.md)
+for exact limits, schema8 compatibility and retained resource budgets. The number is a duration: 24 frames
 exports frames 0–23; frame 24 is an editable end boundary. Entering a value is a
 draft until Apply. Scrubbing preserves that draft; New/Open and actual timing
 changes refresh it. One Undo restores the previous length and exact audio mix.
@@ -50,7 +52,8 @@ its rate normally without changing personal navigation/display preferences.
 ## Data and limits
 
 Existing `video.fps_num` / `video.fps_den` fields remain the canonical rational
-clock; there is no new model/container schema. Save/Open and particle evaluation
+clock. Frame-rate selection does not change the model format; extended parent
+projects use the explicit schema8 wrapper described above. Save/Open and particle evaluation
 share a validator: positive whole numerator up to120000, denominator up to1001,
 and actual rate at most120fps. Previously valid slow rational rates remain
 readable, subject to the existing audio/project bounds. The presets avoid those
@@ -62,10 +65,11 @@ reader refuses them rather than changing playback. Use project copies with old
 installed apps/reviews. Whole-number presets within the earlier range retain
 their existing representation.
 
-This increment does not change1920x1080 resolution, the240-frame project limit,
-source/clip budgets, the60-second mixed-audio limit or synchronous mixing. It does
-not add automatic keep-seconds retiming, drop-frame timecode, longer projects,
-resolution settings, source-audio time stretch or externally exported model data.
+Resolution remains1920x1080, child scenes and individual media preparations remain
+bounded to240frames, and source/clip budgets and the60second mixed-audio limit
+remain. Parents now support the explicit extended timing envelope. There is no
+automatic keep-seconds retiming, drop-frame timecode, general resolution setting,
+source-audio time stretch or externally exported model animation.
 
 ## Verification
 

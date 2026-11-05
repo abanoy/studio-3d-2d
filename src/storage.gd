@@ -8,6 +8,7 @@ const Timeline=preload("res://src/timeline.gd")
 const Journal=preload("res://src/recovery_journal.gd")
 const Sequences=preload("res://src/sequence_graph.gd")
 const ReferenceSheet=preload("res://src/reference_sheet_data.gd")
+const Extended=preload("res://src/extended_timing.gd")
 
 static func safe_relative(path: String) -> bool:
 	if path.is_empty() or path.is_absolute_path() or path.contains(":") or path.contains("\\"):
@@ -37,6 +38,13 @@ static func readable_manifest(path: String) -> bool:
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
 	var data: Dictionary=parser.data
+	var extended:=false
+	if data.get("schema_version")==8:
+		var timing:=Extended.unwrap(data)
+		if timing.has("error"):return false
+		data=timing.base;extended=true
+	elif data.has("timing_content_schema_version"):return false
+	if not extended and Extended.required(data):return false
 	if data.get("schema_version")==7:
 		var unwrapped:=ReferenceSheet.unwrap(data)
 		if unwrapped.has("error"):return false
@@ -56,12 +64,14 @@ static func readable_manifest(path: String) -> bool:
 	if not data.get("audio",{}) is Dictionary or not AudioTrack.layout_error(data.get("audio",{})).is_empty():return false
 	if data.schema_version>=4:
 		var video=data.get("video")
-		if not video is Dictionary or not integer(video.get("duration_frames"),1,240):return false
+		if not video is Dictionary or not Extended.video_error(video).is_empty() or not extended and video.duration_frames>240:return false
 		if not WorldDocument.validate(data.get("world"),int(video.duration_frames),true).is_empty():return false
 		if data.schema_version!=6 and (data.schema_version==5)!=(data.world.format==WorldDocument.EFFECT_FORMAT):return false
 	return integer(data.get("schema_version"), 1, 6) and data.get("layers") is Array and data.get("camera_keys") is Array
 
 static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={}) -> String:
+	var video_error:=Extended.video_error(video)
+	if not video_error.is_empty():return video_error+" Previous save preserved."
 	if not reference_sheet.is_empty():
 		var reference_error:=ReferenceSheet.error(reference_sheet)
 		if not reference_error.is_empty():return reference_error
@@ -204,6 +214,8 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		var reference_error:=managed_copy(reference_sheet.source,folder.path_join(portable_reference.path),reference_sheet.sha256)
 		if not reference_error.is_empty():return reference_error
 		manifest["content_schema_version"]=manifest.schema_version;manifest.schema_version=7;manifest["reference_sheet"]=portable_reference
+	if Extended.required(manifest):
+		manifest["timing_content_schema_version"]=manifest.schema_version;manifest.schema_version=8
 	# Compact JSON keeps dense recorded motion within the unchanged1MiB metadata cap.
 	# Preserve small quaternion components across repeated editable saves.
 	var serialized := JSON.stringify(manifest,"",true,true)
@@ -253,7 +265,12 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 		return {"error": "Corrupt JSON manifest: " + parser.get_error_message()}
 	return decode_project(parser.data,folder)
 
-static func decode_project(data,folder: String) -> Dictionary:
+static func decode_project(data,folder: String,extended:=false) -> Dictionary:
+	if data is Dictionary and data.get("schema_version")==8:
+		var unwrapped:=Extended.unwrap(data)
+		return unwrapped if unwrapped.has("error") else decode_project(unwrapped.base,folder,true)
+	if data is Dictionary and data.has("timing_content_schema_version"):return {"error":"Extended project timing requires schema8."}
+	if data is Dictionary and not extended and Extended.required(data):return {"error":"Extended project timing requires schema8."}
 	if data is Dictionary and data.get("schema_version")==7:
 		var unwrapped:=ReferenceSheet.unwrap(data)
 		if unwrapped.has("error"):return unwrapped
@@ -261,7 +278,7 @@ static func decode_project(data,folder: String) -> Dictionary:
 		var loaded:=ReferenceSheet.read_image(folder.path_join(reference.path))
 		if loaded.has("error"):return loaded
 		if loaded.sha256!=reference.sha256:return {"error":"Reference sheet checksum differs. Previous project stays open."}
-		var result:=decode_project(unwrapped.base,folder)
+		var result:=decode_project(unwrapped.base,folder,extended)
 		if result.has("error"):return result
 		reference["source"]=folder.path_join(reference.path);reference.erase("path");result["reference_sheet"]=reference
 		return result
@@ -275,12 +292,12 @@ static func decode_project(data,folder: String) -> Dictionary:
 		base.schema_version=5 if base.world.get("format")==WorldDocument.EFFECT_FORMAT else 4
 		var context=base.get("editor",{}).get("sequence_editor",{}) if base.get("editor",{}) is Dictionary else {}
 		if base.get("editor",{}) is Dictionary:base.editor.erase("sequence_editor")
-		var result:=decode_project(base,folder)
+		var result:=decode_project(base,folder,extended)
 		if result.has("error"):return result
 		var decoded: Dictionary=graph.duplicate(true)
 		var pcm_bytes:=AudioTrack.memory(result.audio)
 		for asset in decoded.assets:
-			var child:=decode_project(asset.scene,folder)
+			var child:=decode_project(asset.scene,folder,extended)
 			if child.has("error"):return {"error":"Sequence %s: %s" % [asset.name,child.error]}
 			pcm_bytes+=AudioTrack.memory(child.audio)
 			if pcm_bytes>AudioTrack.MAX_PCM:return {"error":"Nested audio sources exceed64MiB."}
@@ -302,11 +319,11 @@ static func decode_project(data,folder: String) -> Dictionary:
 	if video.has("world_background") and not video.world_background in ["black","legacy_blue"]:
 		return {"error": "Invalid world background setting."}
 	if video.has("visibility_fade_ms") and not integer(video.visibility_fade_ms,0,10000):return {"error":"Visibility fade must be0–10000 milliseconds."}
-	for prop in ["width", "height", "duration_frames"]:
+	for prop in ["width", "height"]:
 		if not integer(video.get(prop), 1, 1920):
 			return {"error": "Invalid video setting: " + prop}
-	if video.width != 1920 or video.height != 1080 or video.duration_frames > 240:
-		return {"error": "Prototype supports 1920x1080 and <=240 frames."}
+	if video.width != 1920 or video.height != 1080 or not Extended.video_error(video).is_empty():
+		return {"error": "Unsupported canvas size or project timing."}
 	var rate_error:=preload("res://src/video_timing.gd").error(video.get("fps_num"),video.get("fps_den"))
 	if not rate_error.is_empty():return {"error":rate_error}
 	var keys = data.get("camera_keys")
@@ -316,7 +333,7 @@ static func decode_project(data,folder: String) -> Dictionary:
 	if not camera_error.is_empty():return {"error":camera_error}
 	var previous := -1
 	for key in keys:
-		if not key is Dictionary or not integer(key.get("frame"), 0, 240) or key.frame <= previous or not numeric_array(key.get("position"), 3) or not numeric_array(key.get("rotation_xyzw"), 4):
+		if not key is Dictionary or not integer(key.get("frame"), 0, maxi(240,int(video.duration_frames))) or key.frame <= previous or not numeric_array(key.get("position"), 3) or not numeric_array(key.get("rotation_xyzw"), 4):
 			return {"error": "Invalid or unsorted camera key."}
 		if not integer(key.get("fov"), 1, 179) and not ((key.get("fov") is float) and key.fov > 1 and key.fov < 179):
 			return {"error": "Invalid camera FOV."}

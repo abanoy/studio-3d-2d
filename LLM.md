@@ -717,3 +717,65 @@ failed/misconfigured logs remain under /workspace/has-handoff-audit for diagnosi
 
 Continue actual longer-project timing/metadata/tool support with measured bounds;
 owner-dependent native/physical/artist gates and OPEN details remain pending.
+
+2026-11-05 UTC — bounded longer parent timelines (continuous-goal continuation)
+
+Implemented explicit schema8 extended timing around existing content3–7, including
+8→7→6 kept-reference/nested projects. Parents can exceed240frames up to60seconds
+and7200frames; exact24fps maximum1440,120fps7200,24000/1001fps1438. Legacy1–240
+frames at unusual slow rates remain readable. Children, individual video/Krita
+preparations and reusable movement-path files remain capped at240frames; cel,
+layer, sparse-key, object, graph, manifest and audio source/mix budgets remain.
+No arbitrary-length/dense/lazy project claim. See docs/extended_timing.md.
+
+Godot/Python readers validate the wrapper, reject downgraded extended data, and
+retain original runtime dispatch. Storage no longer accidentally applies the1920
+canvas-coordinate bound to duration. Recovery catalog, HAS members, nested child
+save/decode and kept references understand8. Late descriptive ancestry has explicit
+Krita3/video4 formats, retains original identities, caps each original import at240
+frames, and can survive shortening/moving into a short child without downgrading
+its enclosing project. Sequence placement bound extends with the7200frame domain.
+UI exposure/contact fields and motion/path helpers accept late parent frames.
+A new child and its initial non-looped clip are capped to240frames; late parent
+camera keys are excluded from that new local camera track, with a frame0 initial
+key if every parent camera key is later than240. Existing parent keys stay intact.
+Frame-rate edits made from children also validate the enclosing60second parent.
+Import requests cap available_frames to240 even when the parent has more time.
+
+Fresh final verifier:49storage/domain +6late motion/path +29app writer +4packed/
+lesson cold +7unchanged normal-startup recovery +4linked/lesson cold checks, all0
+failures. Originals and writer cache were unavailable for packed/lesson/recovery;
+linked mode retained its deliberately external model/WAV sources and reopened
+with writer cache unavailable. Actual SIGKILL; no graceful-exit hook ran. A60second
+parent retains late frame1300 posing/drawing, nested editable child, kept reference
+and exact sparse PCM. A separate252frame1080p12 H264/AAC movie crosses the old
+limit; frame245 PNG equals preview, source hashes/manual HAS bytes remain exact,
+and decoded244frame sound starts at sample976001 (expected976000). Source/tests/
+tools/data/examples were frozen for the final verifier. Evidence outside checkout:
+/workspace/has-handoff-audit/extended-timing-final-accepted/verification.json.
+
+Actual pre-change8abb4bd storage reader refuses all7new variant manifests and
+recovery catalog entries (14checks); its Python container reader also refuses all7.
+Final Python suite297run/296pass/1existing independent-MMD-reader skip. Existing
+project-duration regression40writer +2packed +2linked +3recovery +3lesson passed
+on private Linux display; its invalid-length assertion now uses1441instead of the
+newly valid241. Existing full kept-reference regression19unit/25writer/14cold/
+5startup/7lesson also passes, including its actual crash and48frame movie.
+Evidence: extended-previous-reader.log, extended-final-python.log,
+extended-duration-regression.log, extended-reference-regression/verification.json.
+
+During development, first app probes tried duration controls before opening New/
+Options, so their stale-session guard refused correctly; test setup was corrected.
+The first expanded linked cold-reader probe hid declared original model/WAV files,
+which correctly prevented Open. The verifier was corrected to respect linked
+ownership, without changing production reference semantics. An automated source
+replacement initially touched a second indentation context; Godot parse caught it
+and the edit was corrected before functional runs. Failed logs are retained.
+
+All graphical tests stayed on an owned private dummy Xorg display:101 with Mesa
+llvmpipe and Dummy audio, never the owner's shared desktop. Runtime was rechecked
+ready/enforced after restart; previous8abb4bd push was confirmed on GitHub. No
+native art redistributed, no external-format export, deployment or web changes.
+Windows GPU/native fidelity, physical/tablet/artist acceptance, clean-PC/power-loss
+and OPEN design decisions remain open. Continuous goal remains active; longer
+parents do not complete all original MD/addendum requirements.

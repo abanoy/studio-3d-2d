@@ -1,4 +1,5 @@
 extends RefCounted
+const Extended=preload("res://src/extended_timing.gd")
 const FORMAT="studio_sequences_1"
 const SHADOW_FORMAT="studio_sequences_2"
 const MASK_FORMAT="studio_sequences_3"
@@ -30,12 +31,12 @@ static func error(graph,root) -> String:
 			var n: int=c.unicode_at(0)
 			if n<32 or n==127 or (n>=0xd800 and n<=0xdfff):return "Invalid sequence name."
 		var scene=asset.scene
-		if not scene is Dictionary or not integer(scene.get("schema_version"),4,5) or scene.has("sequence_graph") or scene.has("scene") or scene.has("model"):return "Sequence scenes require a world document without another embedded graph."
+		if not scene is Dictionary or not Extended.child_schema(scene) in [4,5] or scene.has("sequence_graph") or scene.has("scene") or scene.has("model"):return "Sequence scenes require a world document without another embedded graph."
 		index[asset.id]=asset;documents.append(scene)
 	var cels:=0;var sounds:=0;var objects:=0;var effects:=0
-	for scene in documents:
-		var video=scene.get("video")
-		if not video is Dictionary or not integer(video.get("duration_frames"),1,240):return "Invalid local sequence duration."
+	for position in range(documents.size()):
+		var scene: Dictionary=documents[position];var video=scene.get("video")
+		if not video is Dictionary or not Extended.video_error(video).is_empty() or position>0 and not integer(video.get("duration_frames"),1,240):return "Invalid parent/local sequence duration."
 		if not integer(video.get("width"),1920,1920) or not integer(video.get("height"),1080,1080) or not integer(video.get("fps_num"),1,120000) or not integer(video.get("fps_den"),1,1001) or float(video.fps_num)/video.fps_den>120:return "Invalid sequence canvas/rate."
 		for key in ["width","height","fps_num","fps_den"]:
 			if video.get(key)!=rate.get(key):return "Sequences must share canvas size and frame rate."
@@ -68,7 +69,7 @@ static func error(graph,root) -> String:
 			if not clip.keys is Array or clip.keys.is_empty() or clip.keys.size()>32:return "Expected 1–32 sequence placement keys."
 			var previous:=-1
 			for key in clip.keys:
-				if not fields(key,KEY_FIELDS) or not integer(key.frame,0,1000240) or key.frame<=previous or (previous<0 and key.frame!=0):return "Invalid sequence placement key timing."
+				if not fields(key,KEY_FIELDS) or not integer(key.frame,0,Extended.MAX_PLACEMENT) or key.frame<=previous or (previous<0 and key.frame!=0):return "Invalid sequence placement key timing."
 				if not key.offset is Array or key.offset.size()!=2 or not number(key.offset[0],-19200,19200) or not number(key.offset[1],-19200,19200) or not number(key.scale,.01,8) or not number(key.rotation,-36000,36000) or not number(key.opacity,0,1) or not key.interpolation in ["linear","hold","ease"]:return "Invalid sequence placement key."
 				previous=int(key.frame)
 	for asset in graph.assets:

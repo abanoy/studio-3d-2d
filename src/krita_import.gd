@@ -159,7 +159,7 @@ func prepare() -> void:
 	for id in choices:
 		if choices[id].check.button_pressed!=choices[id].original:overrides[id]=choices[id].check.button_pressed
 	if still:still.apply()
-	request={"source":source,"source_sha256":inventory.get("source_sha256"),"output":job.path_join("prepared"),"cancel":job.path_join("cancel"),"result":job.path_join("result.json"),"krita":krita(),"ffmpeg":app.encoder_path.text,"width":video.width,"height":video.height,"fps_num":video.fps_num,"fps_den":video.fps_den,"available_frames":int(video.duration_frames)-at,"max_cels":slots(),"still_duration_frames":int(still.value) if still else 1,"layer_visibility":overrides}
+	request={"source":source,"source_sha256":inventory.get("source_sha256"),"output":job.path_join("prepared"),"cancel":job.path_join("cancel"),"result":job.path_join("result.json"),"krita":krita(),"ffmpeg":app.encoder_path.text,"width":video.width,"height":video.height,"fps_num":video.fps_num,"fps_den":video.fps_den,"available_frames":mini(240,int(video.duration_frames)-at),"max_cels":slots(),"still_duration_frames":int(still.value) if still else 1,"layer_visibility":overrides}
 	var file:=FileAccess.open(job.path_join("request.json"),FileAccess.WRITE)
 	if not file:fail("Cannot write artwork preparation request.");return
 	file.store_string(JSON.stringify(request));file.close();review.hide();phase="prepare";response=request.result;last_stage="";start([job.path_join("request.json")],"Rendering selected layers…")

@@ -43,7 +43,7 @@ static func near(a: Vector3,b: Vector3) -> bool:
 	var magnitude:=maxf(1.0,maxf(a.length(),b.length()))
 	return a.distance_to(b)<=maxf(.00001,magnitude*.0000002)
 static func capture(data: Dictionary,video: Dictionary,name: String) -> Dictionary:
-	if not Model.integer(video.get("duration_frames"),1,240) or not Timing.error(video.get("fps_num"),video.get("fps_den")).is_empty():return {"error":"Invalid project timing for path preset."}
+	if not preload("res://src/extended_timing.gd").video_error(video).is_empty():return {"error":"Invalid project timing for path preset."}
 	if data.is_empty():return {"error":"Choose a model before exchanging movement paths."}
 	var why:=Model.validate(data,int(video.duration_frames))
 	if not why.is_empty():return {"error":why}
@@ -65,7 +65,7 @@ static func capture(data: Dictionary,video: Dictionary,name: String) -> Dictiona
 static func assign(data: Dictionary,video: Dictionary,preset: Dictionary,frame: int) -> Dictionary:
 	var why:=error(preset)
 	if not why.is_empty():return {"error":why}
-	if not Model.integer(video.get("duration_frames"),1,240) or not Timing.error(video.get("fps_num"),video.get("fps_den")).is_empty():return {"error":"Invalid project timing for path preset."}
+	if not preload("res://src/extended_timing.gd").video_error(video).is_empty():return {"error":"Invalid project timing for path preset."}
 	if data.is_empty():return {"error":"Choose a model before exchanging movement paths."}
 	why=Model.validate(data,int(video.duration_frames))
 	if not why.is_empty():return {"error":why}

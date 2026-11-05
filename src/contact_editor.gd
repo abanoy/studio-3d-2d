@@ -41,7 +41,7 @@ func setup(parent: Node) -> void:
 	var scroll:=ScrollContainer.new();outer.add_child(scroll);scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	var column:=VBoxContainer.new();scroll.add_child(column);column.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	note=app.label(column,"");note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	end_frame=app.spin(column,"Through frame (inclusive)",0,240,48)
+	end_frame=app.spin(column,"Through frame (inclusive)",0,preload("res://src/extended_timing.gd").MAX_FRAMES,48)
 	plant_button=app.button(column,"Plant feet",func():apply_range(true))
 	release_button=app.button(column,"Release feet",func():apply_range(false))
 	correction_box=VBoxContainer.new();column.add_child(correction_box)

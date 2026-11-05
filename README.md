@@ -365,9 +365,12 @@ See [multiple audio clips](docs/multiple_audio.md) for limits and older-app comp
 
 ## Project timing
 
-**Options → Scene length (frames)** extends a scene up to 240 frames with Undo.
+**Options → Scene length (frames)** extends a parent up to 60 seconds and 7200
+frames with Undo (1440 frames at24fps). Child scenes remain bounded to240frames.
 It keeps existing timing and refuses shortening that would discard authored
 content. Sound tails stop at the scene end while original samples remain intact.
+See [longer parent timelines](docs/extended_timing.md) for schema8 compatibility,
+exact rational limits and the retained drawing/import/resource budgets.
 
 **Options → Project frame rate** now offers common integer and fractional rates.
 It keeps frame numbers fixed, updates synchronized audio, and supports Undo.
@@ -746,5 +749,6 @@ the full PNG intact; movie frames continue to exclude the guide.
 
 [Sparse sound mixing](docs/sparse_audio.md) now skips quantization across silent
 timeline gaps while retaining exact PCM, fades, peaks and clipping counts. The
-measured60-second internal case improved1289ms to122ms; project length and memory
-bounds remain unchanged pending the separate longer-project work.
+measured60-second internal case improved1289ms to122ms; source and mixer memory
+bounds remain unchanged. [Longer parent timelines](docs/extended_timing.md) now use
+the explicit schema8 wrapper while retaining those resource limits.

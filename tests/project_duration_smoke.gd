@@ -62,7 +62,7 @@ func run() -> void:
 	var short_mix:=pcm();app.undo();check(app.video.duration_frames==96 and app.audio_mix.samples==192000,"shorten Undo restores longer audio mix")
 	app.redo();check(app.video.duration_frames==24 and pcm()==short_mix,"shorten Redo restores exact short mix")
 	history=app.history.size();check(app.project_timing.apply_duration(24).is_empty() and app.history.size()==history,"same length is a no-op")
-	for bad in [0,241,12.5,true,NAN]:check(not app.project_timing.apply_duration(bad).is_empty() and app.video.duration_frames==24 and app.history.size()==history,"invalid length refuses: "+str(bad))
+	for bad in [0,1441,12.5,true,NAN]:check(not app.project_timing.apply_duration(bad).is_empty() and app.video.duration_frames==24 and app.history.size()==history,"invalid length refuses: "+str(bad))
 	app.physics_editor.recording.active=true;check(not app.project_timing.apply_duration(48).is_empty() and app.video.duration_frames==24,"recording protects duration");app.physics_editor.recording.active=false
 	app.exporting=true;check(not app.project_timing.apply_duration(48).is_empty() and app.video.duration_frames==24,"export protects duration");app.exporting=false
 	app.pose_editor.dragging=true;check(not app.project_timing.apply_duration(48).is_empty() and app.video.duration_frames==24 and app.history.size()==history,"pending pose edit protects timing without committing its key");app.pose_editor.dragging=false

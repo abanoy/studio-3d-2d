@@ -11,7 +11,7 @@ var _fingerprint:=""
 const PROFILE:=[[0.,0.],[.12,-.12],[.87,.20],[.96,-.04],[1.,0.]]
 
 func build(keys,video: Dictionary,settings: Dictionary={}) -> String:
-	return _build(keys,video,settings,240,241)
+	return _build(keys,video,settings,preload("res://src/extended_timing.gd").MAX_FRAMES,241)
 
 func build_source(keys,video: Dictionary,settings: Dictionary={}) -> String:
 	# Utility domain for retained source controls outside a short visible slice.

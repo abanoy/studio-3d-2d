@@ -34,7 +34,7 @@ func show_layers() -> void:
 func prepare() -> void:
 	if phase!="layers" or not valid() or external_busy():fail("The scene changed or another operation is running. Import video again.");return
 	similarity.apply();softness.apply()
-	request={"source":source,"source_sha256":inventory.get("source_sha256"),"output":job.path_join("prepared"),"cancel":job.path_join("cancel"),"result":job.path_join("result.json"),"ffmpeg":app.encoder_path.text,"width":video.width,"height":video.height,"fps_num":video.fps_num,"fps_den":video.fps_den,"available_frames":int(video.duration_frames)-at,"max_cels":slots(),"chroma":{"enabled":key_enabled.button_pressed,"color":"00ff00" if key_color.selected==0 else "0000ff","similarity":similarity.value,"blend":softness.value}}
+	request={"source":source,"source_sha256":inventory.get("source_sha256"),"output":job.path_join("prepared"),"cancel":job.path_join("cancel"),"result":job.path_join("result.json"),"ffmpeg":app.encoder_path.text,"width":video.width,"height":video.height,"fps_num":video.fps_num,"fps_den":video.fps_den,"available_frames":mini(240,int(video.duration_frames)-at),"max_cels":slots(),"chroma":{"enabled":key_enabled.button_pressed,"color":"00ff00" if key_color.selected==0 else "0000ff","similarity":similarity.value,"blend":softness.value}}
 	var file:=FileAccess.open(job.path_join("request.json"),FileAccess.WRITE)
 	if not file:fail("Cannot write video preparation request.");return
 	file.store_string(JSON.stringify(request));file.close();review.hide();phase="prepare";response=request.result;last_stage="";start([job.path_join("request.json")],"Preparing video drawings…")

@@ -11187,3 +11187,24 @@ failed/misconfigured logs remain under /workspace/has-handoff-audit for diagnosi
 
 Continue actual longer-project timing/metadata/tool support with measured bounds;
 owner-dependent native/physical/artist gates and OPEN details remain pending.
+
+2026-11-05 UTC — continuous-goal extended parent timing
+
+Schema8 wraps existing3–7 content for parents up to60seconds/7200frames, while
+children and each media preparation stay at240frames. Late ancestry uses explicit
+Krita3/video4; motion/path helpers, camera storage, posing/exposures and nested
+FPS validation share the expanded parent domain. Packed/linked/reference/recovery
+ownership and resource budgets remain. Details: docs/extended_timing.md and the
+same-date root LLM.md entry.
+
+Final private Linux software verifier passed49domain+6motion+29writer+4packed/
+lesson+7normal startup after SIGKILL+4linked/lesson checks; actual252frame1080p12
+H264/AAC, exact late preview PNG and sound sample976001 vs expected976000. Packed/
+lesson/recovery originals/cache were unavailable; linked sources stayed available
+by design. Actual old readers refuse all7new variants. Existing duration40+10cold
+and kept-reference19/25/14/5/7 regressions pass; Python297run296pass1existing skip.
+Evidence: /workspace/has-handoff-audit/extended-timing-final-accepted/verification.json
+and extended-reference-regression/verification.json. Corrected test-only New/
+Options initialization and linked-file unavailability assumptions are recorded in
+LLM.md; failed evidence retained. Full artist/native/Windows acceptance, arbitrary
+long/dense/lazy workloads and remaining OPEN requirements are unfinished.

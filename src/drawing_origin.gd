@@ -1,4 +1,5 @@
 extends RefCounted
+const Extended=preload("res://src/extended_timing.gd")
 # Descriptive ancestry only. These fields never resolve external resources.
 static func integer(v,low: int,high: int) -> bool:
 	return (v is int or v is float) and is_finite(float(v)) and float(v)==floor(float(v)) and v>=low and v<=high
@@ -15,12 +16,12 @@ static func digest(v) -> bool:
 	return true
 static func error(v) -> String:
 	if not v is Dictionary or v.size()!=13:return "Invalid drawing source history."
-	var video: bool=v.get("format")=="studio_drawing_origin_2" and v.get("kind")=="video"
+	var video: bool=v.get("format") in ["studio_drawing_origin_2","studio_drawing_origin_4"] and v.get("kind")=="video"
 	var fields: Array=["format","kind","name","sha256","width","height","fit","rate","at","duration"]
 	fields.append_array(["source_rate","source_duration","chroma"] if video else ["fps","range","visibility"])
 	for key in fields:
 		if not v.has(key):return "Incomplete drawing source history."
-	if not video and (v.format!="studio_drawing_origin_1" or v.kind!="krita"):return "Unknown drawing source history."
+	if not video and (not v.format in ["studio_drawing_origin_1","studio_drawing_origin_3"] or v.kind!="krita"):return "Unknown drawing source history."
 	if not text(v.name,200) or v.name.contains("/") or v.name.contains("\\") or v.name.contains(":") or not digest(v.sha256):return "Invalid drawing source identity."
 	if not integer(v.width,1,32768) or not integer(v.height,1,32768) or v.width*v.height>16777216:return "Invalid original drawing dimensions."
 	if video:
@@ -44,7 +45,8 @@ static func error(v) -> String:
 	if not integer(v.fit[0],1,1920) or not integer(v.fit[1],1,1080) or not integer(v.fit[2],0,1920-int(v.fit[0])) or not integer(v.fit[3],0,1080-int(v.fit[1])):return "Invalid drawing fit."
 	if not v.rate is Array or v.rate.size()!=2:return "Invalid import rate."
 	if not integer(v.rate[0],1,120000) or not integer(v.rate[1],1,1001) or float(v.rate[0])/v.rate[1]>120:return "Invalid import rate."
-	if not integer(v.at,0,239) or not integer(v.duration,1,240) or v.at+v.duration>240:return "Invalid original drawing placement."
+	var limit:=Extended.MAX_FRAMES if v.format in ["studio_drawing_origin_3","studio_drawing_origin_4"] else 240
+	if not integer(v.at,0,limit-1) or not integer(v.duration,1,240) or v.at+v.duration>limit:return "Invalid original drawing placement."
 	if JSON.stringify(v).to_utf8_buffer().size()>32768:return "Drawing source history exceeds its limit."
 	return ""
 static func layers_error(layers: Array) -> String:
@@ -56,7 +58,7 @@ static func layers_error(layers: Array) -> String:
 static func from_clip(clip: Dictionary,at: int) -> Dictionary:
 	var source: Dictionary=clip.source
 	if source.get("kind")=="video":
-		return {"format":"studio_drawing_origin_2","kind":"video","name":str(source.path).get_file(),"sha256":source.sha256,"width":source.width,"height":source.height,"source_rate":source.get("source_rate"),"source_duration":source.get("source_duration"),"chroma":source.get("chroma"),"fit":[clip.fit.width,clip.fit.height,clip.fit.x,clip.fit.y],"rate":[clip.fps_num,clip.fps_den],"at":at,"duration":clip.duration_frames}
+		return {"format":"studio_drawing_origin_4" if at+int(clip.duration_frames)>240 else "studio_drawing_origin_2","kind":"video","name":str(source.path).get_file(),"sha256":source.sha256,"width":source.width,"height":source.height,"source_rate":source.get("source_rate"),"source_duration":source.get("source_duration"),"chroma":source.get("chroma"),"fit":[clip.fit.width,clip.fit.height,clip.fit.x,clip.fit.y],"rate":[clip.fps_num,clip.fps_den],"at":at,"duration":clip.duration_frames}
 	var native_range: Array=[]
 	if source.get("range") is Dictionary:native_range=[source.range.get("start"),source.range.get("end_inclusive")]
-	return {"format":"studio_drawing_origin_1","kind":"krita","name":str(source.path).get_file(),"sha256":source.sha256,"width":source.width,"height":source.height,"fps":source.get("fps",0) if source.get("fps")!=null else 0,"range":native_range,"visibility":source.get("layer_visibility",{}).duplicate(true),"fit":[clip.fit.width,clip.fit.height,clip.fit.x,clip.fit.y],"rate":[clip.fps_num,clip.fps_den],"at":at,"duration":clip.duration_frames}
+	return {"format":"studio_drawing_origin_3" if at+int(clip.duration_frames)>240 else "studio_drawing_origin_1","kind":"krita","name":str(source.path).get_file(),"sha256":source.sha256,"width":source.width,"height":source.height,"fps":source.get("fps",0) if source.get("fps")!=null else 0,"range":native_range,"visibility":source.get("layer_visibility",{}).duplicate(true),"fit":[clip.fit.width,clip.fit.height,clip.fit.x,clip.fit.y],"rate":[clip.fps_num,clip.fps_den],"at":at,"duration":clip.duration_frames}

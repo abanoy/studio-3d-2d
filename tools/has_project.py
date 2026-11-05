@@ -74,14 +74,21 @@ def read_json(blob):
     return value
 
 
-def members(manifest):
+def members(manifest,extended_ok=False):
     """Only declared current playback/editing assets; never glob whole game folders."""
+    try:from . import extended_timing as extended
+    except ImportError:import extended_timing as extended
+    if manifest.get('schema_version')==8:
+        base,why=extended.unwrap(manifest)
+        if why:raise HasError(why)
+        return members(base,True)
+    if 'timing_content_schema_version' in manifest or not extended_ok and extended.required(manifest):raise HasError('Extended project timing requires schema8')
     if manifest.get('schema_version')==7:
         try:from .reference_sheet import unwrap
         except ImportError:from reference_sheet import unwrap
         base,why=unwrap(manifest)
         if why:raise HasError(why)
-        assets,cels=members(base);reference=manifest['reference_sheet']
+        assets,cels=members(base,extended_ok);reference=manifest['reference_sheet']
         assets[reference['path']]={'path':reference['path'],'sha256':reference['sha256']}
         if len(assets)+len(cels)+2>MAX_FILES:raise HasError('Too many project files')
         return assets,cels
@@ -91,9 +98,9 @@ def members(manifest):
         if why:raise HasError(why)
         base=dict(manifest);base.pop('sequence_graph')
         base['schema_version']=5 if base.get('world',{}).get('format')=='studio_world_2' else 4
-        assets,cels=members(base)
+        assets,cels=members(base,extended_ok)
         for sequence in graph['assets']:
-            child_assets,child_cels=members(sequence['scene'])
+            child_assets,child_cels=members(sequence['scene'],extended_ok)
             for name,row in child_assets.items():
                 if name in assets and assets[name]!=row:raise HasError('Conflicting nested sequence asset identity')
                 assets[name]=row
@@ -128,8 +135,9 @@ def members(manifest):
         if version==4 and 'effects' in world:raise HasError('Particle effects require project schema5')
         rows=world['objects']; index={}
         duration=manifest.get('video',{}).get('duration_frames')
-        if type(duration) not in (int,float) or not 1<=duration<=240 or not math.isfinite(duration) or duration!=int(duration):
+        if type(duration) not in (int,float) or not 1<=duration<=(extended.MAX_FRAMES if extended_ok else 240) or not math.isfinite(duration) or duration!=int(duration):
             raise HasError('Invalid world duration')
+        if extended_ok and extended.video_error(manifest.get('video')):raise HasError(extended.video_error(manifest.get('video')))
         for row in rows:
             if not isinstance(row,dict): raise HasError('Invalid world object')
             identity=row.get('id'); parent=row.get('parent_id'); start=row.get('start_frame')

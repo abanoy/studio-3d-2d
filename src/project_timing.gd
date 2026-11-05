@@ -1,10 +1,12 @@
 extends Node
 const Timing=preload("res://src/video_timing.gd")
+const Extended=preload("res://src/extended_timing.gd")
 const Audio=preload("res://src/audio_track.gd")
 const World=preload("res://src/world_document.gd")
 var app
 var choices: OptionButton
 var duration: SpinBox
+var length_note: Label
 var displayed_duration:=-1
 var duration_session:=""
 func setup(parent: Node) -> void:
@@ -16,13 +18,17 @@ func setup(parent: Node) -> void:
 		if index>=0 and index<Timing.PRESETS.size():apply_values(Timing.PRESETS[index][0],Timing.PRESETS[index][1]))
 	var note: Label=app.label(parent,"Frame numbers stay fixed. Changing rate changes playback speed. Sound starts stay on their frames; original audio samples stay unchanged.")
 	note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.custom_minimum_size.x=480
-	duration=app.spin(parent,"Scene length (frames)",1,240,48)
+	duration=app.spin(parent,"Scene length (frames)",1,Extended.max_frames(app.video),48)
 	app.button(parent,"Apply scene length",func():apply_duration(duration.value))
-	var length_note: Label=app.label(parent,"Up to 240 frames. Keys and drawings keep their timing. Shortening refuses content beyond the new end; sound tails stop at the scene end.")
+	length_note=app.label(parent,"")
 	length_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;length_note.custom_minimum_size.x=480
 	sync()
+func length_limit() -> int:
+	return 240 if app.sequence_editor and not app.sequence_editor.active_owner.is_empty() else Extended.max_frames(app.video)
 func sync() -> void:
 	if not choices:return
+	duration.max_value=length_limit()
+	length_note.text="Up to %d frames at this rate. Parent scenes can extend to 60 seconds; child scenes remain bounded to 240 frames. Shortening refuses content beyond the new end; sound tails stop at the scene end." % length_limit()
 	var index:=Timing.preset_index(app.video)
 	if index<0:
 		index=Timing.PRESETS.size()
@@ -39,7 +45,7 @@ func sync() -> void:
 func apply_duration(value) -> String:
 	var error:=""
 	if app.exporting:error="Wait for export to finish."
-	elif not Timing.whole(value,240):error="Scene length must be 1–240 whole frames."
+	elif not Timing.whole(value,length_limit()):error="Scene length must be a whole frame count within the displayed limit."
 	elif duration_session!=app.recovery_session:error="The scene changed. Review its length and try again."
 	elif int(value)==int(app.video.duration_frames):sync();return ""
 	elif app.physics_editor.recording and app.physics_editor.recording.active:error="Finish or cancel recording before changing scene length."
@@ -70,6 +76,8 @@ func apply_values(numerator,denominator) -> String:
 	return commit(proposed,"Frame rate: %s fps. Frame numbers kept; audio mix updated." % Timing.label(numerator,denominator))
 
 func commit(proposed: Dictionary,feedback: String) -> String:
+	var timing_error:=Extended.video_error(proposed)
+	if not timing_error.is_empty():app.message(timing_error);sync();return timing_error
 	# Defer until an edit finishes: committing a pending pose after range validation
 	# could introduce a key beyond the candidate end.
 	if app.drawing or app.pose_editor.dragging or app.timeline.dragging or not app.timeline.moving_id.is_empty() or app.timeline.audio_gesture_active():

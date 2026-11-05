@@ -41,7 +41,10 @@ in one flat graph; cycles and more than four nested asset levels are rejected.
 A clip stores parent start/duration, child source/time windows, placement key
 window, loop, picture visibility, independent sound mute/gain and placement keys.
 The internal time/key windows preserve split curves and fractional sample phase.
-They are bounded to one million frames; local scenes remain at most240frames.
+Source windows are bounded to one million frames; placement keys allow that
+window plus the project frame bound. Child scenes remain at most240frames.
+[Longer parents](extended_timing.md) support up to60seconds and7200frames with
+an explicit schema8 wrapper; new children and their initial clips stay bounded.
 All scenes share1920×1080 and one rational frame rate. There are at most4 shared
 assets,8 clip instances and32 placement keys per clip. Limits shared across the
 project are32 cels,16 source audio clips,64 world objects and16 effects; each local

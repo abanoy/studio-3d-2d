@@ -111,11 +111,15 @@ func timing_proposal(scene: Dictionary) -> Dictionary:
 		item.scene.video.fps_num=scene.video.fps_num;item.scene.video.fps_den=scene.video.fps_den
 	return proposal
 func prepare_timing(video: Dictionary) -> Dictionary:
+	var timing_error:=preload("res://src/extended_timing.gd").video_error(video)
+	if not timing_error.is_empty():return {"error":timing_error}
 	if graph.is_empty():
 		var mixed: Dictionary={} if app.audio_document().is_empty() else Audio.mix_document(app.audio_document(),video)
 		return mixed if mixed.has("error") else {"runtime":null,"mix":mixed}
 	var scene:=scene_snapshot();scene.video=video
 	var proposal:=timing_proposal(scene)
+	var parent_timing:=preload("res://src/extended_timing.gd").video_error(proposal.root.video)
+	if not parent_timing.is_empty():return {"error":parent_timing}
 	var why:=Graph.error(proposal.graph,proposal.root)
 	if not why.is_empty():return {"error":why}
 	var prepared:=prepare_runtime(proposal.graph,proposal.root,active_owner)
@@ -237,11 +241,16 @@ func new_sequence(name: String="Sequence") -> String:
 	sync_current();var candidate:=clone_graph()
 	if candidate.assets.size()>=4:app.message("This project already has four editable sequence assets.");return ""
 	var id:=str(ResourceUID.create_id());var scene:=scene_snapshot();scene.world=World.empty();scene.schema_version=4;scene.audio={};scene.palette=app.palette.duplicate(true);scene.editor={"frame":0};scene.layers=[]
+	if scene.video.duration_frames>240:
+		scene.video.duration_frames=240
+		scene.camera_keys=scene.camera_keys.filter(func(key):return key.frame<=240)
+		if scene.camera_keys.is_empty():
+			var initial: Dictionary=app.keys[0].duplicate(true);initial.frame=0;scene.camera_keys=[initial]
 	for title in ["Rough","Ink"]:scene.layers.append({"id":str(ResourceUID.create_id()),"name":title,"visible":true,"cels":[]})
 	var used_name:=name.strip_edges()
 	if used_name.is_empty():used_name="Sequence"
 	candidate.assets.append({"id":id,"name":used_name,"scene":scene,"clips":[]})
-	var clip:=default_clip(id,app.frame,int(app.video.duration_frames)-app.frame);owner_clips(candidate).append(clip)
+	var clip:=default_clip(id,app.frame,mini(240,int(app.video.duration_frames)-app.frame));owner_clips(candidate).append(clip)
 	var error:=commit(candidate)
 	if not error.is_empty():app.message(error);return ""
 	selected_clip=clip.id;app.message("Editable sequence created. Open it to animate its own scene, drawings and sound.");return id

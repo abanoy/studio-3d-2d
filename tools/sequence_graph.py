@@ -1,5 +1,7 @@
 """Editable, project-local scene sequences. Pure metadata; never resolve sources."""
 import math
+try:from . import extended_timing as extended
+except ImportError:import extended_timing as extended
 import re
 
 FORMAT='studio_sequences_1'
@@ -33,12 +35,12 @@ def error(graph,root):
         name=asset['name']
         if not isinstance(name,str) or not 1<=len(name)<=80 or any(ord(c)<32 or ord(c)==127 or 0xd800<=ord(c)<=0xdfff for c in name):return 'Invalid sequence name'
         scene=asset['scene']
-        if not isinstance(scene,dict) or scene.get('schema_version') not in (4,5) or any(k in scene for k in ('sequence_graph','scene','model')):return 'Sequence scenes require a world document without another embedded graph'
+        if not isinstance(scene,dict) or extended.child_schema(scene) not in (4,5) or any(k in scene for k in ('sequence_graph','scene','model')):return 'Sequence scenes require a world document without another embedded graph'
         index[asset['id']]=asset;documents.append(scene)
     cels=sounds=objects=effects=0
-    for scene in documents:
+    for position,scene in enumerate(documents):
         video=scene.get('video')
-        if not isinstance(video,dict) or not integer(video.get('duration_frames'),1,240):return 'Invalid local sequence duration'
+        if not isinstance(video,dict) or extended.video_error(video) or position>0 and not integer(video.get('duration_frames'),1,240):return 'Invalid parent/local sequence duration'
         for key in ('width','height','fps_num','fps_den'):
             if video.get(key)!=rate.get(key):return 'Sequences must share canvas size and frame rate'
         if video.get('width')!=1920 or video.get('height')!=1080 or not integer(video.get('fps_num'),1,120000) or not integer(video.get('fps_den'),1,1001) or video['fps_num']/video['fps_den']>120:return 'Invalid sequence canvas/rate'
@@ -74,7 +76,7 @@ def error(graph,root):
             keys=clip['keys'];previous=-1
             if not isinstance(keys,list) or not 1<=len(keys)<=32:return 'Expected 1–32 sequence placement keys'
             for key in keys:
-                if not isinstance(key,dict) or set(key)!=KEY_FIELDS or not integer(key['frame'],0,1000240) or key['frame']<=previous or (previous<0 and key['frame']!=0):return 'Invalid sequence placement key timing'
+                if not isinstance(key,dict) or set(key)!=KEY_FIELDS or not integer(key['frame'],0,extended.MAX_PLACEMENT) or key['frame']<=previous or (previous<0 and key['frame']!=0):return 'Invalid sequence placement key timing'
                 if not isinstance(key['offset'],list) or len(key['offset'])!=2 or any(not number(v,-19200,19200) for v in key['offset']) or not number(key['scale'],.01,8) or not number(key['rotation'],-36000,36000) or not number(key['opacity'],0,1) or key['interpolation'] not in ('linear','hold','ease'):return 'Invalid sequence placement key'
                 previous=key['frame']
     context=root.get('editor',{})

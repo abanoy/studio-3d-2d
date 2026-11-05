@@ -627,7 +627,7 @@ func build_ui() -> void:
 	brush_smoothing.tooltip_text="0 keeps the original brush. Larger values reduce jitter by trailing the pointer in canvas pixels; the tail finishes on release. Mouse and tablet; pressure still controls size."
 	icon_button(drawing_section, "New drawing", "cel", func(): create_cel(false), "Start a blank cel at this frame; it holds until the next drawing.")
 	button(drawing_section, "Copy drawing here", func(): create_cel(true)).tooltip_text = "Make an independent copy of the held drawing at this frame."
-	exposure = advanced_spin(drawing_section, "Exposure length (frames)", 1, 240, 48)
+	exposure = advanced_spin(drawing_section, "Exposure length (frames)", 1, preload("res://src/extended_timing.gd").MAX_FRAMES, 48)
 	advanced(button(drawing_section, "Set held cel exposure", set_exposure))
 	advanced(button(drawing_section, "Delete held cel", delete_cel))
 	camera_section = section(controls, "Camera", "camera")

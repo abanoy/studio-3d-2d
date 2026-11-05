@@ -32,7 +32,8 @@ claim the two-build acceptance gate passed. The baseline was captured on711c949
 before changing the runtime. Final runtime regression also tests same-frame pixel
 revision invalidation, exact source restoration, nesting and queued cancellation.
 
-Current scene duration remains at most240frames, shared cels at most32 and cached
+Child scene duration remains at most240frames; [extended parents](extended_timing.md)
+support up to60seconds and7200frames. Shared cels remain at most32 and cached
 asset pictures at most4. Audio, undo and archive limits stay in place. This is one
 measured caching improvement, not support for arbitrarily long or dense projects.
 
