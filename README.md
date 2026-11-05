@@ -713,3 +713,7 @@ software-rendering test reduced source builds240→2 while preserving exact outp
 Advanced Draw now offers optional [stroke smoothing](docs/stroke_smoothing.md),
 default0. It stabilizes pen/eraser paths, finishes tails on release and keeps
 pressure gaps empty. Only normal raster pixels are saved; existing formats remain.
+
+Advanced Movie encoder now offers [Standard, Smaller file and High quality](docs/export_profiles.md).
+Standard keeps the original defaults; Retry MP4 can use another quality with the
+same saved frames/audio while preserving earlier movies.

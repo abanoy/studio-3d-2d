@@ -357,3 +357,32 @@ Both wrappers now require explicit private Linux displays and retain Windows
 private-desktop receipts; no shared-desktop fallback. Existing limits/default
 pressure and opacity contracts remain. Full hardware/artist/long-project and other
 unfinished requirements remain. No tracked historical output files changed.
+
+
+## 2026-11-05 UTC — named MP4 quality profiles and immediate encoder diagnostics
+
+Advanced Movie encoder now offers Standard (unchanged CRF18/fast/AAC192k), Smaller
+file (24/fast/128k) and High quality (14/slow/256k). Export captures the chosen
+profile before rendering; retry uses the current selection with a separate output
+name. Invalid API/normal/retry choices refuse without new folders, processes or
+retry-state loss. PNG-only output stays independent. This is a session delivery
+choice; no project schema/settings migration or tentative load-prompt decision.
+
+Fresh private llvmpipe17app +3coldreader pass: actual all-three encodes, changed
+widget during capture, cancellation from Standard and High retry, original movies/
+PNG/WAV/HAS preservation, PNG export, ordinary scene Save/reopen and original
+art/world/camera/cue. Each actual H2641080p24 movie has48frames/2sec +AAC, decoded
+frame24 onset1.000895833sec. Output pixels differ by quality. Source frame inputs
+and audio mixes remain exact. Procedural sample sizes Standard156946, Small106544,
+High188363bytes; frame0 RGB MSE10.455/10.950/10.355. Not a universal bitrate/quality
+or native/hardware acceptance promise. See docs/export_profiles.md and
+/workspace/has-handoff-audit/profiles-accepted/verification.json.
+
+Initial immediate-log assertions exposed real delayed FileAccess flushing: a
+headless focused probe saw0bytes at encode return and371bytes five frames later.
+Encoder now flushes/closes success/failure logs before returning and includes
+chosen profile and arguments. Strict rerun passes; no log-error filters weakened.
+Earlier export-profiles, export-profiles-fixed and profiles-final evidence remains
+outside checkout. Existing Standard arguments/API signatures stay compatible.
+Broader masks, reusable motion/native fidelity, long/dense projects and owner
+acceptance remain. Continue independent implementation under the active goal.

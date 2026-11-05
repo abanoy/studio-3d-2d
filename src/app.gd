@@ -99,6 +99,7 @@ var status: Label
 var debug_label: Label
 var transport_info: Label
 var encoder_path: LineEdit
+var encoder_quality: OptionButton
 var cancel_button: Button
 var controls: VBoxContainer
 var elapsed_overlay_ms := 0.0
@@ -679,6 +680,11 @@ Draw returns to the animated shot.")
 	button(audio_section, "Remove audio clip", remove_audio)
 	var encoder_section := section(controls, "Movie encoder", "export")
 	advanced(encoder_section.get_parent())
+	label(encoder_section,"Movie quality")
+	encoder_quality=OptionButton.new();encoder_section.add_child(encoder_quality)
+	for id in ["standard","small","high"]:
+		encoder_quality.add_item(Encoder.PROFILES[id].label);encoder_quality.set_item_metadata(encoder_quality.item_count-1,id)
+	encoder_quality.tooltip_text="Standard keeps the existing quality. Smaller file sacrifices detail; High quality keeps more detail with a larger file and slower encoding. Applies to this export or Retry MP4."
 	button(encoder_section, "Export to another folder…", export_elsewhere).tooltip_text = "Choose a destination for this export. The main Export movie action uses the saved HAS project folder."
 	png_drawing_only=CheckButton.new();png_drawing_only.text="PNG: drawings only (transparent)";encoder_section.add_child(png_drawing_only)
 	png_drawing_only.tooltip_text="Off: complete scene and drawings. On: visible drawing layers on transparent pixels. Audio is a separate synchronized WAV."
@@ -1832,8 +1838,15 @@ func export_images_elsewhere() -> void:
 func export_images(parent: String,drawings_only:=false) -> String:
 	return await export_frames(parent,true,drawings_only)
 
+func selected_movie_profile() -> String:
+	return str(encoder_quality.get_item_metadata(encoder_quality.selected)) if encoder_quality and encoder_quality.selected>=0 else ""
+
 func export_frames(parent: String,images_only: bool,drawings_only: bool) -> String:
 	if exporting: return "Export already running."
+	var profile:=selected_movie_profile()
+	if not images_only:
+		var why:=Encoder.profile_error(profile)
+		if not why.is_empty():message(why);return why
 	if drawing_selection_editor:drawing_selection_editor.cancel()
 	if not physics_editor.freeze_all():return status.text
 	finish_stroke()
@@ -1903,7 +1916,7 @@ func export_frames(parent: String,images_only: bool,drawings_only: bool) -> Stri
 				error = "Cannot write synchronized WAV mix. PNGs preserved."
 		if error.is_empty() and not images_only:
 			message("Encoding H.264 MP4… Cancel remains available.")
-			encoder = Encoder.new()
+			encoder = Encoder.new();encoder.profile=profile
 			error = await encoder.encode(get_tree(), encoder_path.text, folder, video, mix_path)
 			if not error.is_empty():
 				retry_render={"folder":folder,"video":video.duplicate(true),"audio":mix_path,"session":recovery_session,"revision":recovery_revision}
@@ -1943,6 +1956,8 @@ func show_movie_folder() -> void:
 
 func retry_saved_movie() -> void:
 	if exporting or retry_render.is_empty():return
+	var profile:=selected_movie_profile();var why:=Encoder.profile_error(profile)
+	if not why.is_empty():message(why);return
 	var source:=retry_render.duplicate(true)
 	for n in range(source.video.duration_frames):
 		var frame_name:="frame_%06d.png" % (n+1)
@@ -1954,7 +1969,7 @@ func retry_saved_movie() -> void:
 		return
 	stop();exporting=true;cancel_export=false;export_controls(self,true);cancel_button.show()
 	message("Encoding the saved frames and sound…")
-	encoder=Encoder.new()
+	encoder=Encoder.new();encoder.profile=profile
 	var error: String=await encoder.encode(get_tree(),encoder_path.text,source.folder,source.video,source.audio,true)
 	var finished: String=encoder.finished_path
 	encoder=null;exporting=false;export_controls(self,false);pose_editor.sync_enabled();cancel_button.hide()
