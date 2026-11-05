@@ -12,7 +12,9 @@ previous color. Choosing a color is a brush setting; it adds no document history
 The next pen stroke uses it with the existing brush-opacity control.
 
 Enable **Guide over Draw** to show a fitted, translucent copy over the drawing
-canvas. Adjust **Guide opacity (%)** as needed. The guide consumes no drawing
+canvas. Use **Use viewed region** and **Align guide…** to choose part of the
+sheet and set its size/position; see [guide alignment](reference_alignment.md).
+Adjust **Guide opacity (%)** as needed. The guide consumes no drawing
 input: drawing still creates ordinary editable cel pixels underneath it. Closing
 the viewer keeps an enabled guide available; reopen the viewer to turn it off,
 or **Clear** to release the sheet. It hides in Scene/Pose, playback, Home and

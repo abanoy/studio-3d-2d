@@ -631,3 +631,40 @@ and keep export exclusion explicit. This is procedural event verification; no
 physical input, native hardware or artist acceptance is implied. Source/output
 formats remain unchanged and earlier kept-reference tests remain scoped results.
 Continue reference alignment and other independent specification work.
+
+
+## 2026-11-05 UTC — non-destructive reference guide region/alignment
+
+Continuous work after58e3c18 adds Use viewed region, Whole sheet and Align guide
+controls. The guide can show the visible sheet area, scale10–800percent and move
+within output-pixel X/Y bounds; it follows the main canvas's zoom and pan. An empty
+view keeps the last valid guide. Whole sheet resets crop/size/offsets, and an empty
+source gives useful feedback. PNGs, kept identity, scene/ink content and document
+history/revision remain unchanged by these personal controls. Saving still keeps
+the entire original PNG; Open resets the guide and leaves it off. Saved alignment,
+multiple guides and pose/depth inference remain separate work.
+
+New reference_guide.gd draws a shared texture region without allocating another
+cropped full-resolution image. Reference metadata-only Undo states now retain
+crop/size/offsets for Clear/Undo source restoration; invalid bounds/non-finite
+alignment refuse before changing an existing reference. No project schema change,
+network calls, optional dependencies or native art were introduced.
+
+Fresh private Linux :100 llvmpipe reference-alignment-final passes20app checks:
+actual selected red source region in the Draw viewport, exact size/offset geometry,
+visible moved pixels, canvas zoom/pan registration, source/identity/history checks,
+Undo Clear, full reset, empty region and invalid-history guards, full-source kept
+Save/Open with guide reset/off, real movie source/preview equality and original
+byte/pixel preservation. H2641080p24/48frames/2seconds probes correctly. Color
+regression13 passes. Complete kept-reference regression19storage/25writer/14cold/
+5ordinary-startup/7lesson also passes, including actual SIGKILL, unavailable
+originals/cache, strict Open protection, unchanged manual saves, source PCM and
+normal automatic startup recovery. Its AAC frame6 cue remains0.250895833seconds.
+Proof: /workspace/has-handoff-audit/reference-alignment-{final,color-regression,
+project-regression}. Functional hashes frozen during the complete reference suite.
+These are synthetic/procedural and software-rendered checks, not physical device,
+Windows GPU/native importer or artist comfort acceptance. Test-generated tracked
+startup log restored after preserving fresh evidence outside the checkout.
+
+Continue independent specification work; existing OPEN/native-owner resource
+questions do not block available local engineering.

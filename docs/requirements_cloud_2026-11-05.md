@@ -147,3 +147,7 @@ Optional kept reference PNGs now pass19storage/25app/14cold/5normal-startup/7les
 through schema7, source/cache loss and actual SIGKILL. See
 [project references](project_reference_sheet.md); the earlier session viewer remains
 available without changing the saved format.
+
+Reference viewed-region/size/offset alignment now passes20app checks with exact
+source preservation and movie exclusion; color13 and the complete kept-reference
+recovery/lesson suites also pass. See [guide alignment](reference_alignment.md).

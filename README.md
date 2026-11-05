@@ -739,3 +739,7 @@ sheets use schema7; leaving Keep off preserves the existing project format.
 Right-click a visible [reference-sheet color](docs/reference_sheet.md) to choose it
 for the brush, including alpha. Transparent pixels and margins leave the current
 color intact; the PNG and project history stay unchanged until you draw.
+
+[Reference guide alignment](docs/reference_alignment.md) fits a viewed sheet region
+over Draw, with size and output-pixel offsets. It follows canvas zoom/pan and keeps
+the full PNG intact; movie frames continue to exclude the guide.
