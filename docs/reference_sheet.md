@@ -5,6 +5,12 @@ shows your local character sheet beside the canvas. Wheel zooms around the point
 drag pans, and **Fit sheet** restores the whole image. Transparency is shown over
 a checkerboard. The viewer preserves the sheet's aspect ratio.
 
+Right-click a visible sheet pixel to choose its brush color, including alpha.
+Sampling uses the original decoded pixel, independent of viewer zoom/pan,
+checkerboard and guide opacity. Fully transparent pixels and margins keep the
+previous color. Choosing a color is a brush setting; it adds no document history.
+The next pen stroke uses it with the existing brush-opacity control.
+
 Enable **Guide over Draw** to show a fitted, translucent copy over the drawing
 canvas. Adjust **Guide opacity (%)** as needed. The guide consumes no drawing
 input: drawing still creates ordinary editable cel pixels underneath it. Closing

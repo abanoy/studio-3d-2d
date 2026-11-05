@@ -735,3 +735,7 @@ open a local PNG beside the canvas, zoom/pan it, or enable a translucent guide.
 It stays out of MP4/PNG output. Enable [Keep PNG in project](docs/project_reference_sheet.md)
 to include one sheet in packed/linked saves and crash recovery, with Undo. Kept
 sheets use schema7; leaving Keep off preserves the existing project format.
+
+Right-click a visible [reference-sheet color](docs/reference_sheet.md) to choose it
+for the brush, including alpha. Transparent pixels and margins leave the current
+color intact; the PNG and project history stay unchanged until you draw.

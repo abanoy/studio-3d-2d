@@ -1,4 +1,5 @@
 extends Control
+signal color_picked(point: Vector2i)
 var picture: Texture2D
 var zoom:=1.
 var pan:=Vector2.ZERO
@@ -26,6 +27,12 @@ func _draw() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_MIDDLE]:dragging=event.pressed;grab_focus();accept_event()
+		elif event.button_index==MOUSE_BUTTON_RIGHT and event.pressed and picture:
+			var rect:=picture_rect()
+			if rect.has_point(event.position):
+				var point:=Vector2i(((event.position-rect.position)/rect.size*Vector2(picture.get_size())).floor())
+				color_picked.emit(point)
+			accept_event()
 		elif event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN] and picture:
 			var old:=picture_rect();zoom=clampf(zoom*(1.2 if event.button_index==MOUSE_BUTTON_WHEEL_UP else 1./1.2),.1,16.)
 			var rect:=picture_rect();pan+=event.position-(rect.position+(event.position-old.position)/old.size*rect.size);queue_redraw();accept_event()

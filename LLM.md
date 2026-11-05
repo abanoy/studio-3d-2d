@@ -608,3 +608,26 @@ Broader reference alignment/palettes, multiple views, painted/lasso drawing mask
 progressive demonstrations, generated locomotion, native fidelity and long/dense
 projects remain independent work. Continue the continuous goal; owner-dependent
 OPEN details and physical/artist gates do not stop available engineering.
+
+
+## 2026-11-05 UTC — sample brush colors from reference sheets
+
+Continuous work after3edd704 adds right-click color sampling in the reference
+viewer. Coordinates map back through fit, pointer zoom and pan to the decoded
+source pixel; source alpha is retained. Transparent pixels explain why the
+previous color is kept, and letterbox/outside points do nothing. Sampling changes
+only the existing brush color setting, with no document history/revision, world,
+camera, kept-source identity or PNG pixel/file changes. It does not bake checker
+background or translucent-guide opacity into the color. The next ordinary pen
+stroke uses the color with existing brush-opacity behavior. No schema changes,
+source image copies per click, external software, AI or network calls.
+
+Fresh private Linux :100 llvmpipe reference-color-first passes13app checks:
+routed right-click, source alpha, zoom/pan mapping, transparency/margins, exact
+source/document preservation, actual routed painting, one pixel Undo, stable
+brush/reference during Undo, exact Redo and MP4 source/preview equality. Real
+H2641920x1080/24fps/48frames/2seconds probes correctly. UI labels explain sampling
+and keep export exclusion explicit. This is procedural event verification; no
+physical input, native hardware or artist acceptance is implied. Source/output
+formats remain unchanged and earlier kept-reference tests remain scoped results.
+Continue reference alignment and other independent specification work.

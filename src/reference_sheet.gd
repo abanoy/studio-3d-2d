@@ -45,8 +45,8 @@ func build() -> void:
 	var row:=HBoxContainer.new();box.add_child(row)
 	app.button(row,"Open PNG…",choose);app.button(row,"Reload",reload);app.button(row,"Clear",clear)
 	app.button(row,"Fit sheet",func():viewer.fit())
-	viewer=preload("res://src/reference_sheet_view.gd").new();viewer.custom_minimum_size=Vector2(500,290);viewer.size_flags_vertical=Control.SIZE_EXPAND_FILL;viewer.size_flags_horizontal=Control.SIZE_EXPAND_FILL;box.add_child(viewer)
-	app.label(box,"Wheel to zoom; drag to pan. This view and guide never appear in movies.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	viewer=preload("res://src/reference_sheet_view.gd").new();viewer.custom_minimum_size=Vector2(500,290);viewer.size_flags_vertical=Control.SIZE_EXPAND_FILL;viewer.size_flags_horizontal=Control.SIZE_EXPAND_FILL;box.add_child(viewer);viewer.color_picked.connect(pick_color);viewer.tooltip_text="Right-click a visible sheet pixel to choose its brush color, including alpha."
+	app.label(box,"Wheel to zoom; drag to pan; right-click a sheet color to paint with it. Reference guides stay out of movies.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	var controls:=HBoxContainer.new();box.add_child(controls)
 	overlay_toggle=CheckButton.new();overlay_toggle.text="Guide over Draw";controls.add_child(overlay_toggle)
 	opacity=app.spin(controls,"Guide opacity (%)",0,100,20)
@@ -168,3 +168,10 @@ func refresh_guide() -> void:
 func _process(_delta: float) -> void:
 	if launch:launch.disabled=app.exporting
 	refresh_guide()
+
+func pick_color(point: Vector2i) -> void:
+	if image==null or not Rect2i(Vector2i.ZERO,image.get_size()).has_point(point):return
+	var selected:=image.get_pixelv(point)
+	if selected.a==0:feedback("That sheet pixel is transparent. Choose a visible color.");return
+	app.color.color=selected
+	feedback("Brush color selected from "+display_name+".")
