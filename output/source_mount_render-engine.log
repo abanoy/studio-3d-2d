@@ -1,0 +1,12 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS source-shrine-tested imports with normal standard GLB loader
+PASS native player-start view remains usable
+PASS shrine-sfm-dependencies imports with normal standard GLB loader
+PASS native player-start view remains usable
+PASS installed SFM content supplies missing native props without copying into GMod
+PASS more materials resolve and corrupt embedded material remains an explicit error
+PASS resolved dependencies visibly change the actual rendered map
+PASS dependency-resolved standard scene survives managed save/reopen
+SOURCE_MOUNTS checks=8 failures=0

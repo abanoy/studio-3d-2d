@@ -1,0 +1,68 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS original skinned hair and skirt fixture created
+RIG authored  2
+PASS source springs and colliders adapt without silent truncation: authored
+PASS unit-world spring runner accepts the declared rig: authored
+PASS standing character's declared loose parts respond to wind: authored
+PASS no-wind authored strip preserves its intended rest pose
+PASS fixed-step response avoids single-step angular jumps above20degrees: authored
+PASS authored hair/skirt settle after the wind stops
+PASS secondary experiment preserves native geometry, bone IDs and all authored data: authored
+PASS invalid solver steps reject safely: authored
+PASS same fixed steps reproduce spring poses across different render pacing: authored
+PASS matching moving-anchor no-wind control proves airflow causes the change: authored
+PASS secondary output uses the ordinary editable FK take format: authored
+PASS secondary take binds to the existing standard model: authored
+PASS Undo restores all pre-experiment motion: authored
+PASS packed reopen retains native rig/provenance and baked motion without live springs: authored
+PASS arbitrary seek preserves recorded motion, explicit camera and independent paint: authored
+PASS baked spring output exports with exact reopened preview pixels
+PASS malformed secondary data disables the complete rig with an explicit reason: fractional
+PASS malformed secondary data disables the complete rig with an explicit reason: missing
+PASS malformed secondary data disables the complete rig with an explicit reason: duplicate
+PASS malformed secondary data disables the complete rig with an explicit reason: radius
+PASS malformed secondary data disables the complete rig with an explicit reason: center
+PASS malformed secondary data disables the complete rig with an explicit reason: shape
+PASS malformed secondary data disables the complete rig with an explicit reason: vector
+PASS repeated imports bind live non-bone centers and duplicate-name colliders by exact source identity
+PASS duplicate Japanese/dotted source names bind to distinct correct engine-generated bones
+PASS legacy root traversal, seven-centimeter virtual tail and collider Z conversion are explicit
+PASS branched legacy chains refuse with a review reason instead of dropping branches
+PASS declared spring colliders change actual obstructed hair motion versus disabled collision control
+PASS scaled model with a skipped source intermediate uses unit-world scratch chains
+PASS FK reconstruction preserves skipped intermediate geometry under scale
+PASS scratch bones stay unit scale while collider sizes follow actual model units
+PASS disposed secondary runner rejects further stepping
+PASS nonuniform secondary rigs reject before running malformed physics
+PASS late invalid collider cleans already allocated temporary shapes
+RIG vrm1  12
+PASS source springs and colliders adapt without silent truncation: vrm1
+PASS unit-world spring runner accepts the declared rig: vrm1
+PASS standing character's declared loose parts respond to wind: vrm1
+PASS fixed-step response avoids single-step angular jumps above20degrees: vrm1
+PASS secondary experiment preserves native geometry, bone IDs and all authored data: vrm1
+PASS invalid solver steps reject safely: vrm1
+PASS same fixed steps reproduce spring poses across different render pacing: vrm1
+PASS matching moving-anchor no-wind control proves airflow causes the change: vrm1
+PASS secondary output uses the ordinary editable FK take format: vrm1
+PASS secondary take binds to the existing standard model: vrm1
+PASS Undo restores all pre-experiment motion: vrm1
+PASS packed reopen retains native rig/provenance and baked motion without live springs: vrm1
+PASS arbitrary seek preserves recorded motion, explicit camera and independent paint: vrm1
+RIG vrm0  12
+PASS source springs and colliders adapt without silent truncation: vrm0
+PASS unit-world spring runner accepts the declared rig: vrm0
+PASS standing character's declared loose parts respond to wind: vrm0
+PASS fixed-step response avoids single-step angular jumps above20degrees: vrm0
+PASS secondary experiment preserves native geometry, bone IDs and all authored data: vrm0
+PASS invalid solver steps reject safely: vrm0
+PASS same fixed steps reproduce spring poses across different render pacing: vrm0
+PASS matching moving-anchor no-wind control proves airflow causes the change: vrm0
+PASS secondary output uses the ordinary editable FK take format: vrm0
+PASS secondary take binds to the existing standard model: vrm0
+PASS Undo restores all pre-experiment motion: vrm0
+PASS packed reopen retains native rig/provenance and baked motion without live springs: vrm0
+PASS arbitrary seek preserves recorded motion, explicit camera and independent paint: vrm0
+SECONDARY_MOTION {"checks":61,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/secondary-motion/run_1247984","metrics":{"authored":{"chains":2,"colliders":2,"maximum_step_angle":0.00799352955073118,"recovery_angle":0.0,"repeat_quaternion_difference":0.0,"rotating_bones":5,"wind_angle":0.148890271782875,"wind_control_difference":0.0744280815124512},"vrm0":{"chains":12,"colliders":22,"maximum_step_angle":0.170456871390343,"recovery_angle":0.89918714761734,"repeat_quaternion_difference":0.0,"rotating_bones":34,"wind_angle":0.550574004650116,"wind_control_difference":0.274419009685516},"vrm1":{"chains":12,"colliders":22,"maximum_step_angle":0.170454069972038,"recovery_angle":0.899214088916779,"repeat_quaternion_difference":0.0,"rotating_bones":34,"wind_angle":1.66246151924133,"wind_control_difference":0.807506203651428}},"movies":["C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/secondary-motion/run_1247984/render_1793416067_4161376_0/movie.mp4"]}

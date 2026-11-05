@@ -1,0 +1,29 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS load shared standard skinned fixture
+PASS original manual HAS saved independently
+PASS real worker reaches its controlled file-write boundary
+PASS valid checkpoint exists before its slow preview finishes
+PASS only one preview writer can own the journal
+PASS editing stays usable while an explicit checkpoint queues without consuming edits
+PASS actual app frames and updated drawing continue while file work is held
+PASS real timeline playback advances while the background file boundary is held
+PASS background work never edits camera keys or native model state
+PASS preview completes without waiting in ordinary app processing
+PASS resize, blend, PNG and journal commit complete on the background thread
+PASS queued explicit request protects later edits automatically even with automatic recovery off
+PASS preview uses the captured paint rather than later mutable cel pixels
+PASS preview completes without waiting in ordinary app processing
+PASS waiting checkpoint commits afterward without losing the older preview/catalog entry
+PASS pending edits reset only after the next checkpoint succeeds
+PASS preview completes without waiting in ordinary app processing
+PASS real preview file failure leaves a valid recoverable checkpoint and quiet feedback
+PASS real worker reaches its controlled file-write boundary
+PASS New can complete while an older session preview is still working
+PASS preview completes without waiting in ordinary app processing
+PASS old-session preview failure cannot replace New state or its footer
+PASS worker lifecycle preserves original manual HAS and source geometry
+PASS start a final bounded worker for teardown cleanup
+PASS actual app teardown joins its worker and releases the thread
+RECOVERY_PREVIEW {"capture_ms":4.635,"checks":25,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-preview\\1793505049290450900","manual_sha256":"61c034996a366600fbb31a5d768990ea6109e7cb12c37a91d3d0280548c3830b","responsive_frames":20,"worker_ms":4.479}

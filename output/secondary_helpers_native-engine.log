@@ -1,0 +1,18 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS native derived model preserves existing bindings: mmd
+PASS native generated joints preserve actual neutral pixels: mmd
+PASS original native bone IDs remain intact: mmd
+PASS native helper descriptor binds exact source nodes: mmd
+PASS native weighted surface really deforms under a generated joint: mmd
+PASS native pose and source provenance survive packed HAS: mmd
+PASS native original remains unchanged: mmd
+PASS native derived model preserves existing bindings: gmod
+PASS native generated joints preserve actual neutral pixels: gmod
+PASS original native bone IDs remain intact: gmod
+PASS native helper descriptor binds exact source nodes: gmod
+PASS native weighted surface really deforms under a generated joint: gmod
+PASS native pose and source provenance survive packed HAS: gmod
+PASS native original remains unchanged: gmod
+HELPER_NATIVE {"checks":14,"failures":0,"metrics":{"gmod":{"bind_difference":{"changed":165,"mean":0.000095606674382716},"deformation":{"changed":2334,"mean":0.0352101417824074},"original_bones":77},"mmd":{"bind_difference":{"changed":30,"mean":0.00000446084104938272},"deformation":{"changed":511,"mean":0.0058446662808642},"original_bones":126}}}

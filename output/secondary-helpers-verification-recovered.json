@@ -1,0 +1,64 @@
+{
+  "bind_difference": {
+    "changed": 12,
+    "mean": 0.000158179012345679
+  },
+  "checks": 39,
+  "failures": 0,
+  "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793391895885038100",
+  "movie": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793391895885038100/render_1793391913_16163100_0/movie.mp4",
+  "sway_radians": 0.290376305580139,
+  "audio_onset_seconds": 1.0000416666666667,
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "24/1",
+    "nb_read_frames": "48",
+    "duration": "2.000000"
+  },
+  "native": {
+    "checks": 14,
+    "failures": 0,
+    "metrics": {
+      "gmod": {
+        "bind_difference": {
+          "changed": 165,
+          "mean": 9.5606674382716e-05
+        },
+        "deformation": {
+          "changed": 2334,
+          "mean": 0.0352101417824074
+        },
+        "original_bones": 77
+      },
+      "mmd": {
+        "bind_difference": {
+          "changed": 30,
+          "mean": 4.46084104938272e-06
+        },
+        "deformation": {
+          "changed": 511,
+          "mean": 0.0058446662808642
+        },
+        "original_bones": 126
+      }
+    }
+  },
+  "multi": {
+    "checks": 59,
+    "failures": 0,
+    "movies": [
+      "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793391895885038100/render_1793391978_14535616_0/movie.mp4"
+    ]
+  },
+  "patch": {
+    "checks": 35,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793391895885038100",
+    "movie": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793391895885038100/render_1793392036_24791668_0/movie.mp4",
+    "audio_onset_seconds": 1.0000416666666667
+  },
+  "source_sha256": "4d4ddc8b1414d149d44d881c60270113eb70ea3bec0995c6b817c002f1b20316",
+  "artifact_verification_note": "Outer150s driver expired after all four engines completed0; terminal process inventory empty. Remaining logs/FFprobe/AAC/native SHA checks completed without replay."
+}

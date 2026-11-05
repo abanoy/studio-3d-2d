@@ -1,0 +1,31 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS version5 validates alongside old model versions
+PASS shape values interpolate in source time
+PASS last expression holds after its block
+PASS split preserves the exact source expression
+PASS moving a split carries relative expression time
+PASS gap connects expressions rather than freezing
+PASS shape keys respect deliberate hold
+PASS physics range replacement preserves authored expressions
+PASS physics recording preserves later expressions
+PASS ambiguous shape identities reject
+PASS nonfinite animated amounts reject
+PASS old model versions cannot silently carry animated shapes
+PASS Simple estimates preserve exact Advanced shape names
+PASS expression insertion leaves existing body control bytes unchanged
+PASS eased body curve is exact at every half-frame after expression insertion
+PASS unrelated body keys do not reset expressions
+PASS another expression channel leaves the original curve unchanged
+PASS legacy model4 keeps its historical body evaluation
+PASS model4 promotion preserves old body and expression curves exactly
+PASS removing one expression leaves body controls exact
+PASS removing one expression leaves another expression intact
+PASS out-of-project expression introductions reject
+PASS unbound introduction identities reject
+PASS expression-only block inside body gap preserves every half-frame of body motion
+PASS earlier and later edits of another expression preserve the original introduction and curve
+PASS whole-object retiming carries independent expression introductions
+PASS different expressions at the same control frame keep their own interpolation choices
+PASS adding a body-only block leaves expression curves exact
+SHAPE_ANIMATION_UNIT {"checks":28,"failures":0}

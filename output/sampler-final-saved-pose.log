@@ -1,0 +1,49 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS original skinned GLB fixture exported
+PASS standard GLB model added beside environment
+PASS separate actor keeps existing environment and skeletal identity
+PASS bone tree selects the actual skeleton joint
+PASS bone rotation visibly deforms skin without moving actor root
+PASS pose undo restores exact rendered skin
+PASS pose redo restores exact rendered skin
+PASS pose keys sample quaternion midpoint at exact master frame
+PASS model root placement shares the same interpolated pose timeline
+PASS root rotation and uniform scale interpolate with the same keys
+PASS hold pose interpolation uses prior key
+PASS ease pose interpolation samples exact quarter time
+PASS real projected skeleton and three colored rotation handles exist
+PASS viewport joint click selects the bone and matching tree item
+PASS actual canvas press hits a pose handle
+PASS a complete gizmo drag is one undo command
+PASS gizmo edits a draft without silently recording a key
+PASS pose drag cannot paint or edit camera keys
+PASS explicit Record adds pose to shared timeline
+PASS rotation snapping uses 15 degree increments
+PASS locked axis preserves existing rotation
+PASS bone position overrides are independent from rotation
+PASS standard model/pose project saves
+PASS reopen rebuilds model rather than retaining old live skeleton
+PASS reopen installs a fresh independent rig while restoring all world objects
+PASS bone draft and recorded pose keys survive managed save/reopen
+PASS pose operations preserve original model/environment bytes
+PASS missing bone binding rejects project before replacing live scene/model
+PASS reference model is visible in preview and excluded from movie
+PASS pose model/assets included in complete recovery checkpoint
+PASS recovery restores actual model bone animation
+PASS world-axis handle translates bone in world X through its parent transform
+PASS Escape cancels a pose drag without recording or changing data
+PASS actual animated model and drawing export to MP4
+PASS export uses identical pose evaluation and changes skin/root across frames
+PASS same-path asset reload fixture preserves binary chunk lengths
+PASS reimporting changed model at same path rebuilds runtime rig
+PASS actual prepared PMD enters the same standard model slot
+PASS native MMD bone metadata stays with standard pose record
+PASS actual MMD native arm bone can be selected
+PASS actual MMD mesh deforms when native arm is rotated
+PASS actual MMD pose animation interpolates the skinned mesh
+PASS actual MMD animated MP4 uses identical frame-24 pose pixels
+PASS actual MMD pose reopens without changing its source
+PASS native parameter report and unknown fields survive managed save/reopen
+POSE_SMOKE {"actual_mmd_tested":true,"checks":45,"failures":0,"movies":["C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/pose-smoke/render_1793504984_2769110_0/movie.mp4","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/pose-smoke/render_1793504989_7720668_0/movie.mp4"]}

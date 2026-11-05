@@ -1,0 +1,43 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS startup defaults to one-minute protection with a25-edit alternative
+PASS Simple keeps scheduling controls hidden
+PASS load original standard pose fixture
+PASS manual HAS save starts a fresh action count
+PASS scrub, selection and workspace changes are not edits
+PASS Advanced routes action scheduling without changing the project
+PASS cel creation and explicit camera key count as completed edits
+PASS a long unfinished stroke neither counts segments nor checkpoints mid-gesture
+PASS stroke release counts exactly one completed edit
+PASS action threshold saves quietly without waiting for the time deadline or clearing dirty
+PASS same exposure and elapsed time do not trigger action-mode recovery
+PASS Undo of a no-op is not a meaningful edit
+PASS real layer visibility changes also count as completed edits
+PASS layer edits use the same automatic checkpoint path
+PASS successful layer visibility Undo counts once
+PASS successful layer visibility Redo counts once
+PASS Undo/Redo threshold produces a new recoverable state
+PASS ready action count defers while drawing
+PASS ready action count defers while navigating
+PASS ready action count defers while playing
+PASS ready action count defers while exporting
+PASS pose and timeline drags retain pending actions
+PASS open dialog defers a ready edit threshold
+PASS ordinary timer protects pending edits once the app becomes idle
+PASS disabled automatic protection retains rather than consumes pending edits
+PASS re-enabling protects an already reached edit threshold
+PASS explicit Checkpoint now bypasses disabled scheduling and its threshold
+PASS failed write retains edits and last valid checkpoint with a retry delay
+PASS retry backoff prevents repeated writes every timer tick
+PASS successful retry consumes pending edits only after commit
+PASS time scheduling exposes minutes and retains project/history state
+PASS time mode waits for its actual deadline
+PASS elapsed timed protection still uses the same valid checkpoint path
+PASS changing schedule does not discard pending edit count
+PASS lower threshold can protect existing pending work
+PASS New/Open reset pending actions but preserve in-session scheduling preferences
+PASS edits made after a save snapshot remain dirty and counted
+PASS successful exact-revision Save resets counts and preserves the original HAS
+PASS schedule and edit threshold remain reachable in a1200px app window
+RECOVERY_SCHEDULE {"checks":39,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-schedule\\1793505053918297600","manual_sha256":"0de30f82984bfeda3db72a6f625bf6d8ce477515cd915931ec88815afc26b1b0"}

@@ -1,0 +1,32 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS provisional named area:  blink 
+PASS provisional named area: Eyebrows raise L
+PASS provisional named area: Eye brows forward
+PASS provisional named area: mouth angry open
+PASS provisional named area: まばたき
+PASS provisional named area: あ
+PASS provisional named area: normal hair
+PASS provisional named area: Wing Shrink
+PASS provisional named area: Tools
+PASS provisional named area: Remove Skirt
+PASS provisional named area: Thick legs
+PASS ambiguous smile names do not invent a whole-face expression or anatomy
+PASS unknown or mixed names remain accessible as unassigned
+PASS native CamelCase separates regions and refuses mixed seeds: OpenJaw
+PASS native CamelCase separates regions and refuses mixed seeds: CloseLidUpL
+PASS native CamelCase separates regions and refuses mixed seeds: OuterSquintR
+PASS native CamelCase separates regions and refuses mixed seeds: TongueOut
+PASS native CamelCase separates regions and refuses mixed seeds: BrowOutV_CloseLidUpL
+PASS native CamelCase separates regions and refuses mixed seeds: BrowOutV_OuterSquintL
+PASS native CamelCase separates regions and refuses mixed seeds: OpenJaw_CloseLidUpL
+PASS native CamelCase separates regions and refuses mixed seeds: KK Mouth_n_nn
+PASS manual assignment does not mutate source data
+PASS classification preserves animation, model version and native metadata
+PASS explicit manual choice takes precedence over the name estimate
+PASS changed native identity cannot inherit a stale assignment
+PASS clearing the last assignment restores exact original metadata
+PASS invalid binding and category choices refuse
+PASS unknown catalogue versions remain preserved and are not overwritten
+PASS JSON roundtrip retains canonical source identities and explicit choices
+SHAPE_CATALOG_UNIT {"checks":29,"failures":0}

@@ -1,0 +1,36 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS original fixture created
+PASS create legacy generation 0
+PASS create legacy generation 1
+PASS first journal checkpoint adopts BOTH legacy generations before rotation
+PASS commit bounded state 3
+PASS commit bounded state 4
+PASS commit bounded state 5
+PASS commit bounded state 6
+PASS commit bounded state 7
+PASS commit bounded state 8
+PASS commit bounded state 9
+PASS commit bounded state 10
+PASS commit bounded state 11
+PASS commit bounded state 12
+PASS commit bounded state 13
+PASS commit bounded state 14
+PASS commit bounded state 15
+PASS commit bounded state 16
+PASS commit bounded state 17
+PASS catalog retains twelve states
+PASS alias deduplication and chronological history retain the correct window
+PASS metadata files are bounded including rollback catalog references
+PASS preview attachment cannot change checkpoint data
+PASS checksummed low-resolution preview decodes
+PASS damaged preview does not invalidate a recoverable state
+PASS preview header dimensions are bounded before any image decoding
+PASS bad index checksum falls back to the prior committed catalog
+PASS checksum-valid malformed catalog payload also falls back without logging an engine error
+PASS two damaged recent states fall back beyond the legacy two-generation limit
+PASS changed immutable names and path escapes are refused
+PASS failed catalog commit retains prior history and valid latest project data
+PASS retention never deletes unrelated filenames or changes original geometry
+PASS equal timestamps order by revision rather than arbitrary archive names
+RECOVERY_JOURNAL_UNIT {"checks":33,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/recovery-journal-unit/248746"}

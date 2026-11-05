@@ -1,0 +1,39 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS patch review has exact source vertices for the selected connected part
+PASS routed canvas box selects the lower patch through zoom and pan
+PASS review pins the actual connection to the surrounding surface
+PASS patch selection edits no model, history, camera keys or independent drawing
+PASS Add to patch grows the connected selection
+PASS Remove from patch restores the selected garment boundary
+PASS disconnected patch refuses Apply while retaining the source
+PASS a corrected connected patch recovers after a refused selection
+PASS Escape cancels a routed patch drag without changing the selection
+PASS focus loss cancels the patch rectangle safely
+PASS Ctrl-left remains available for free camera movement
+PASS patch tool does not interrupt an existing navigation gesture
+PASS Apply installs only the reviewed patch as one immutable revision
+PASS new patch skin retains the original neutral appearance within the existing rebuild bound
+PASS closing review removes its canvas input interceptor
+PASS a generated patch joint visibly deforms the chosen surface
+PASS surrounding upper surface keeps its actual rendered pixels
+PASS normal pose Undo restores patch deformation exactly
+PASS asset Undo restores the original unsplit mesh
+PASS partly rigged connected component remains protected in whole-part mode
+PASS patch mode can inspect a protected component without allowing whole-part overwrite
+PASS a patch overlapping earlier spring weights stays protected
+PASS a separate unrigged patch remains editable in the same connected mesh
+PASS two disjoint patches coexist on one original connected surface
+PASS packed HAS retains both patch rigs and exact reviewed mask provenance
+PASS patch authoring and reopening preserve drawings, camera and original source
+PASS normal hair motion accepts two patches within one connected mesh
+PASS ordinary Local Record captures weighted patch motion
+PASS both disjoint patches have measured recorded wind response
+PASS patch animation keeps independent WAV audio
+PASS recorded patch motion survives portable HAS reopening
+PASS recorded patch motion seeks deterministically
+PASS recorded patch motion exports with exact reopened preview pixels
+PASS starting playback cancels review and its owned worker
+PASS starting live motion closes stale review while keeping the current asset
+HELPER_PATCH {"checks":35,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793406622300522800","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793406622300522800/render_1793406680_11273295_0/movie.mp4"}

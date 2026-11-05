@@ -1,0 +1,66 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fixture retains its original native spring family: plain
+PASS review can add an unrigged part beside existing chains: plain
+PASS first HAS chain coexists with native springs: plain
+PASS review can add an unrigged part beside existing chains: plain
+PASS second review protects the first panel and selects the remaining panel: plain
+PASS one model now contains both independently generated chains: plain
+PASS second Apply retains first-joint animation/IDs as one Undo: plain
+PASS existing native and generated chain parameters/bindings remain intact: plain
+PASS helper revision history retains the original source checksum: plain
+PASS Undo removes only the second asset revision: plain
+PASS Redo restores the second chain: plain
+PASS aimed fan reaches both generated chain anchors: plain
+PASS normal live Hair & clothes accepts combined chains: plain
+PASS normal Local Record captures every combined chain: plain
+PASS each generated chain has real recorded wind response beyond its authored pose: plain
+PASS both separate weighted panels visibly animate in the recorded frames: plain
+MULTI_BODY_STORAGE {"chains":2,"expected_chains":2,"history":2,"label":"plain","rig_error":"","same_keys":true,"same_stored_clips":true}
+PASS packed HAS retains all native/generated chains, history and exact recorded controls: plain
+PASS combined recorded motion seeks deterministically: plain
+PASS combined helpers export with exact reopened preview pixels
+PASS fixture retains its original native spring family: v0
+PASS native fixture declares a genuinely poseable skin joint: v0
+PASS review can add an unrigged part beside existing chains: v0
+PASS first HAS chain coexists with native springs: v0
+PASS review can add an unrigged part beside existing chains: v0
+PASS second review protects the first panel and selects the remaining panel: v0
+PASS one model now contains both independently generated chains: v0
+PASS second Apply retains first-joint animation/IDs as one Undo: v0
+PASS existing native and generated chain parameters/bindings remain intact: v0
+PASS helper revision history retains the original source checksum: v0
+PASS Undo removes only the second asset revision: v0
+PASS Redo restores the second chain: v0
+PASS aimed fan reaches both generated chain anchors: v0
+PASS normal live Hair & clothes accepts combined chains: v0
+PASS normal Local Record captures every combined chain: v0
+PASS each generated chain has real recorded wind response beyond its authored pose: v0
+PASS both separate weighted panels visibly animate in the recorded frames: v0
+MULTI_BODY_STORAGE {"chains":3,"expected_chains":3,"history":2,"label":"v0","rig_error":"","same_keys":true,"same_stored_clips":true}
+PASS packed HAS retains all native/generated chains, history and exact recorded controls: v0
+PASS combined recorded motion seeks deterministically: v0
+PASS fixture retains its original native spring family: v1
+PASS native fixture declares a genuinely poseable skin joint: v1
+PASS review can add an unrigged part beside existing chains: v1
+PASS first HAS chain coexists with native springs: v1
+PASS review can add an unrigged part beside existing chains: v1
+PASS second review protects the first panel and selects the remaining panel: v1
+PASS one model now contains both independently generated chains: v1
+PASS second Apply retains first-joint animation/IDs as one Undo: v1
+PASS existing native and generated chain parameters/bindings remain intact: v1
+PASS helper revision history retains the original source checksum: v1
+PASS Undo removes only the second asset revision: v1
+PASS Redo restores the second chain: v1
+PASS aimed fan reaches both generated chain anchors: v1
+PASS normal live Hair & clothes accepts combined chains: v1
+PASS normal Local Record captures every combined chain: v1
+PASS each generated chain has real recorded wind response beyond its authored pose: v1
+PASS both separate weighted panels visibly animate in the recorded frames: v1
+MULTI_BODY_STORAGE {"chains":3,"expected_chains":3,"history":2,"label":"v1","rig_error":"","same_keys":true,"same_stored_clips":true}
+PASS packed HAS retains all native/generated chains, history and exact recorded controls: v1
+PASS combined recorded motion seeks deterministically: v1
+PASS older generated VRMC asset layout still loads with original joints
+PASS older generated weights receive the same overlap protection
+HELPER_MULTI {"checks":59,"failures":0,"movies":["C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\secondary-helpers\\run_1793406622300522800/render_1793406654_6159331_0/movie.mp4"]}

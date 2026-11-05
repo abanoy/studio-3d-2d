@@ -1,0 +1,43 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS old records retain their neutral shape despite declared defaults
+PASS Advanced exposes the saved compatibility choice
+PASS shape change is one Undo and creates no pose or camera key
+PASS node weights override mesh defaults in the actual rendered instance
+PASS declared shape visibly changes the rendered model
+PASS framing and placement bounds include evaluated shape positions
+PASS shared geometry queries use the visible imported shape
+PASS shape Undo restores exact neutral pixels
+PASS shape Redo restores exact imported pixels
+PASS Simple mode keeps imported shape active
+PASS malformed saved shape setting refuses without changing appearance
+PASS ordinary review worker receives actual nonzero morph snapshot
+PASS shaped strand keeps its original component identity
+PASS visible review coordinates follow morphed skin and current skeleton
+PASS ordinary Apply adds weighted joints while keeping the imported shape
+PASS derived revision keeps the actual shaped appearance within existing rebuild bound
+PASS packed HAS reopens shape, weighted rig and independent drawing
+PASS shaped model and independent overlay export with exact reopened preview pixels
+PASS ordinary new import enables source shape: mesh-default.glb
+PASS exact mesh binding and per-instance defaults: mesh-default.glb
+PASS source identity survives node replacement/reparenting: mesh-default.glb
+PASS ordinary new import enables source shape: shared.glb
+PASS exact mesh binding and per-instance defaults: shared.glb
+PASS source identity survives node replacement/reparenting: shared.glb
+PASS ordinary new import enables source shape: root.glb
+PASS exact mesh binding and per-instance defaults: root.glb
+PASS source identity survives node replacement/reparenting: root.glb
+PASS shape-aware unskinned prop creates actual collision geometry
+PASS actual prop hull fits morphed vertices rather than the neutral mesh
+PASS unsupported imported default refuses while preserving the complete current world
+PASS green selection copies shape weights and displaced culling bounds
+PASS visible import grounds on a floor morphed far beyond its original bounds
+PASS actual static map collision uses displaced morph geometry
+PASS ordinary native prepared import accepts its declared shape: MMD
+PASS all actual native morph mesh bindings resolve without inventing nonzero defaults: MMD
+PASS ordinary native prepared import accepts its declared shape: GMod
+PASS all actual native morph mesh bindings resolve without inventing nonzero defaults: GMod
+PASS ordinary native prepared import accepts its declared shape: SFM
+PASS all actual native morph mesh bindings resolve without inventing nonzero defaults: SFM
+SOURCE_SHAPES {"checks":39,"failures":0,"movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\source-shapes\\1793416088682322600/render_1793416094_5512450_0/movie.mp4","review_geometry_error":0.000000134110450744629}

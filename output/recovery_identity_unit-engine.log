@@ -1,0 +1,39 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS real Windows writer creation identity is available as an exact string
+PASS own process identity agrees with live inspection
+PASS separate real live parent has a distinct creation time
+PASS exact current owner stays protected except explicit current-session history
+PASS matching unrelated live owner remains protected even with include-current
+PASS same PID with another actual process creation time is an expired incarnation
+PASS legacy current PID-only records retain old history behavior
+PASS positive exited state permits identified and legacy records
+PASS unknown liveness cannot be bypassed by a mismatched identity
+PASS missing live creation query protects identified owners
+PASS invalid creation token refused: <null>
+PASS invalid creation token refused: 0
+PASS invalid creation token refused: 
+PASS invalid creation token refused: 0
+PASS invalid creation token refused: 01
+PASS invalid creation token refused: +1
+PASS invalid creation token refused: 1.0
+PASS invalid creation token refused: NaN
+PASS invalid creation token refused: -1
+PASS invalid creation token refused: 18446744073709551616
+PASS invalid creation token refused: 111111111111111111111
+PASS unsigned64 creation tokens are preserved without floating conversion
+PASS malformed stored identity remains protected even with a stale PID
+PASS create original journal fixture
+PASS normal checkpoint writes identified owner without project schema changes
+PASS owner record contains the exact cached native creation string
+PASS real candidate discovery respects current ownership and explicit history
+PASS normal candidate scan admits a simulated reused current PID with genuine different creation time
+PASS normal scan protects exact identity of real live foreign parent
+PASS legacy live foreign PID remains protected
+PASS bad owner identity does not turn into an unowned recoverable session
+PASS malformed PID stays protected
+PASS present corrupt owner file is protected with a quiet warning
+PASS missing sidecar preserves compatibility for older ownerless recovery folders
+PASS ownership decisions never rewrite the saved scene
+PASS caller cannot poison cached own identity
+RECOVERY_IDENTITY_UNIT {"checks":36,"failures":0,"owner":{"created_100ns":"134379673348349660","pid":15560}}

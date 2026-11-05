@@ -1,0 +1,18 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS comparison imports standard model: Authored fixture
+PASS comparison resolves exact native control: Authored fixture
+PASS actual isolated before/after renders finish: Authored fixture
+PASS actual visible geometry changes in focused snapshots: Authored fixture
+PASS before/after retain one exact camera: Authored fixture
+PASS comparison preserves document, camera, history and pending amount: Authored fixture
+PASS isolated preview never enters final scene or independent drawing: Authored fixture
+PASS zero test amount yields exact identical images
+PASS negative mathematical position test changes the isolated model
+PASS turn controls rerender both sides from the same changed view
+PASS Close disconnects readback and frees isolated resources: Authored fixture
+PASS Close keeps exact source edits and view: Authored fixture
+PASS close before deferred import cannot install a stale preview
+PASS New cancels a pending comparison without touching the replacement scene
+SHAPE_COMPARISON_APP {"checks":14,"failures":0,"models":[{"changed_channels":8068,"control":"Second shape","focus_bounds":"[P: (-1.298012, -0.498012, -0.498012), S: (2.476024, 2.996024, 1.096024)]","focus_moved":28,"label":"Authored fixture"}]}

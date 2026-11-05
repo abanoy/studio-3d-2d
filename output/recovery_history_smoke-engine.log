@@ -1,0 +1,29 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS create original standard fixtures
+PASS load map and poseable model
+PASS native model uses shared journal: MMD
+PASS native model uses shared journal: GMod
+PASS native model uses shared journal: SFM
+PASS native model uses shared journal: VRM1.0
+PASS native model uses shared journal: VRM0.x
+PASS explicit manual HAS created
+PASS deferred previews preserve shot keys, temporary view, Undo and original cel pixels
+PASS all eighteen stable checkpoints get the correct scene-and-drawing preview
+PASS bounded retained history contains twelve usable previews
+PASS retention bounds metadata and leaves manual HAS untouched
+PASS Simple recovery offers only recent choices
+PASS Advanced exposes the actual Recovery History button
+PASS Advanced history displays timestamped states and a real preview
+PASS history dialog and Restore fit inside a smaller app window
+PASS selecting an older timestamp changes the thumbnail to its original paint
+PASS restoring history asks before replacing unsaved edits
+PASS actual history Restore installs the exact older editable world, camera and drawing
+PASS older history exports synchronized movie with exact preview PNG
+PASS explicit Save resolves startup notice while Advanced retains history and manual HAS
+PASS packed HAS from older history reopens with native data and editable paint
+PASS preview readback defers when export begins before the idle frame
+PASS a later edit cannot attach a misleading thumbnail to the older checkpoint
+PASS dismiss the separate preview-guard fixture before restart history tests
+RECOVERY_HISTORY {"checkpoint":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-history\\1793664730933435500/recovery/1793664733_5279291749870482664","checks":25,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-history\\1793664730933435500","max_capture_ms":4.512,"max_preview_ms":22.962,"max_worker_ms":18.844,"movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\recovery-history\\1793664730933435500/render_1793664760_28547298_0/movie.mp4","native_models":5}
