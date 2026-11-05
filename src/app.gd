@@ -169,6 +169,7 @@ var mmd_pose_importer: Node
 var audio_importer: Node
 var raster_importer: Node
 var video_importer: Node
+var sequence_editor: Node
 var audio_trim_editor: Node
 var audio_fade_editor: Node
 var physics_editor: Node
@@ -298,6 +299,7 @@ func _ready() -> void:
 	palette_editor=preload("res://src/palette_editor.gd").new();palette_editor.app=self;add_child(palette_editor);palette_editor.setup(drawing_section)
 	drawing_selection_editor=preload("res://src/drawing_selection_editor.gd").new();drawing_selection_editor.app=self;add_child(drawing_selection_editor);drawing_selection_editor.setup(drawing_section)
 	camera_transform_editor=preload("res://src/camera_transform_editor.gd").new();add_child(camera_transform_editor);camera_transform_editor.setup(self)
+	sequence_editor=preload("res://src/sequence_editor.gd").new();add_child(sequence_editor);sequence_editor.setup(self)
 	keyboard_shortcuts.refresh_labels()
 	renderer.view_changed.connect(refresh_camera_controls)
 	import_actions=ImportActions.new();import_actions.app=self;add_child(import_actions)
@@ -787,6 +789,7 @@ func changed() -> void:
 	recovery_revision += 1
 	dirty = true
 	overlay_dirty = true
+	if sequence_editor and not sequence_editor.graph.is_empty():sequence_editor.sync_current()
 	refresh_timeline()
 
 func refresh_timeline() -> void:
@@ -1144,6 +1147,7 @@ func finish_stroke() -> void:
 	previous_pressure=-1
 
 func push_history(command: Dictionary) -> void:
+	command["sequence_stamp"]=Time.get_ticks_usec()
 	if command.type in ["model","world_object","world_objects","world"]:
 		# Charge serialized snapshots conservatively; native metadata is copied too.
 		command["bytes"] = 2 * (JSON.stringify(command.before).to_utf8_buffer().size() + JSON.stringify(command.after).to_utf8_buffer().size())
@@ -1156,8 +1160,13 @@ func push_history(command: Dictionary) -> void:
 	history_bytes += command.get("bytes", 0)
 	while (history_bytes > 64 * 1024 * 1024 or history.size() > 128) and history.size() > 1:
 		history_bytes -= history.pop_front().get("bytes", 0)
+	if sequence_editor:sequence_editor.trim_history()
 
 func apply_command(command: Dictionary, side: String) -> bool:
+	if command.type=="sequence_graph":
+		var why: String=sequence_editor.restore(command[side])
+		if not why.is_empty():message(why);return false
+		changed();return true
 	if command.type=="palette":
 		palette=command[side].duplicate(true);palette_editor.refresh(true);changed();return true
 	# Drawing history refreshes the independent overlay, without resetting live 3D.
@@ -1185,11 +1194,13 @@ func apply_command(command: Dictionary, side: String) -> bool:
 	elif command.type == "keys": keys = command[side].duplicate(true)
 	elif command.type=="video":
 		var upcoming: Dictionary=command[side]
+		var timing_prepared: Dictionary={}
 		if video.fps_num!=upcoming.fps_num or video.fps_den!=upcoming.fps_den or video.duration_frames!=upcoming.duration_frames:
-			var mixed: Dictionary={} if audio_clip.is_empty() else AudioTrack.mix_document(audio_document(),upcoming)
-			if mixed.has("error"):message(mixed.error);return false
-			audio_mix=mixed
+			timing_prepared=sequence_editor.prepare_timing(upcoming)
+			if timing_prepared.has("error"):message(timing_prepared.error);return false
+			audio_mix=timing_prepared.mix
 		video=command[side].duplicate(true);renderer.video_settings=video
+		if not timing_prepared.is_empty():sequence_editor.install_timing(timing_prepared)
 		if visibility_fade:visibility_fade.set_value_no_signal(int(video.get("visibility_fade_ms",300)))
 		refresh_audio_controls()
 	elif command.type == "model":
@@ -1224,6 +1235,7 @@ func undo() -> void:
 	if not apply_command(command,"before"):return
 	history.pop_back();history_bytes -= command.get("bytes", 0)
 	redo_history.append(command)
+	sequence_editor.trim_history()
 	note_recovery_action(command)
 
 func redo() -> void:
@@ -1237,6 +1249,7 @@ func redo() -> void:
 	redo_history.pop_back()
 	history.append(command)
 	history_bytes += command.get("bytes", 0)
+	sequence_editor.trim_history()
 	note_recovery_action(command)
 
 func create_cel(duplicate: bool,finish_current: bool=true) -> void:
@@ -1244,6 +1257,7 @@ func create_cel(duplicate: bool,finish_current: bool=true) -> void:
 	if finish_current:finish_stroke()
 	var count := 0
 	for layer in layers: count += layer.cels.size()
+	if sequence_editor:count=sequence_editor.used("cels")
 	if count >= 32: message("Prototype memory limit: 32 full-HD cels."); return
 	var layer: Dictionary = layers[active_layer]
 	for existing in layer.cels:
@@ -1499,6 +1513,9 @@ func confirm_action(text: String, action: Callable) -> void:
 	dialog.canceled.connect(dialog.queue_free)
 	dialog.popup_centered()
 
+func project_snapshot() -> Dictionary:
+	return sequence_editor.project_snapshot()
+
 func current_world() -> Dictionary:
 	if renderer.world_runtime:return renderer.world_state()
 	return WorldDocument.from_legacy({"schema_version":3,"source":source,"scene":{"source_name":source.get_file()},"model":renderer.model_state()})
@@ -1512,6 +1529,9 @@ func refresh_scene_name() -> void:
 	else:scene_name.text="Scene: "+source.get_file()+" • %d × %d" % [video.width,video.height]
 
 func restore_world(document: Dictionary) -> String:
+	if sequence_editor:
+		var why: String=sequence_editor.scene_error(document)
+		if not why.is_empty():message(why);return why
 	var prepared: Dictionary=renderer.prepare_world(document,int(video.duration_frames))
 	if prepared.has("error"):message(prepared.error);return prepared.error
 	physics_editor.clear()
@@ -1539,6 +1559,7 @@ func append_object(data: Dictionary, kind: String, start_frame := 0, placement :
 	return error
 
 func append_object_data(data: Dictionary, kind: String, start_frame := 0, placement := {}) -> String:
+	if sequence_editor and sequence_editor.used("objects")>=64:return "This project and its sequences already contain64 world objects."
 	if exporting:return "Wait for the current operation to finish."
 	if not physics_editor.freeze_all():return status.text
 	pose_editor.finish_drag();finish_stroke()
@@ -1615,6 +1636,7 @@ func reset_document(path: String, sample := false) -> bool:
 	var prepared: Dictionary=renderer.prepare_legacy(path) if sample else renderer.prepare_world(WorldDocument.empty(),48)
 	if prepared.has("error"):message(prepared.error);return false
 	if tutorials:tutorials.document_changing()
+	sequence_editor.clear()
 	stop(); finish_stroke(); pose_editor.finish_drag(); release_mouse()
 	world_selection.clear()
 	if sample:renderer.install_legacy(prepared)
@@ -1665,7 +1687,8 @@ func save() -> void:
 	finish_stroke()
 	pose_editor.finish_drag()
 	if not has_project.path.is_empty() or project_folder.is_empty(): has_project.save_current(); return
-	var error := Storage.save_project(project_folder, video, keys, layers, source, frame, audio_document(), {}, renderer.model_state(),false,renderer.world_state(),{},palette)
+	var snapshot:=project_snapshot()
+	var error := Storage.save_project(project_folder,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,{},snapshot.get("model",{}),false,snapshot.world,{"sequence_editor":snapshot.sequence_context} if not snapshot.get("sequence_context",{}).is_empty() else {},snapshot.palette,snapshot.sequence_graph)
 	if error.is_empty():
 		dirty = false
 		reset_recovery_schedule()
@@ -1694,18 +1717,28 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 		open_project_error=data.error
 		if report_error:message(open_project_error)
 		return false
-	var prepared: Dictionary = renderer.prepare_world(data.world,int(data.video.duration_frames)) if data.schema_version==4 or data.schema_version==5 else renderer.prepare_legacy(data.source,data.model)
+	var prepared: Dictionary = renderer.prepare_world(data.world,int(data.video.duration_frames)) if data.schema_version>=4 else renderer.prepare_legacy(data.source,data.model)
 	if prepared.has("error"):
 		open_project_error=prepared.error
 		if report_error:message(open_project_error)
 		return false
+	var sequence_candidate: Dictionary=sequence_editor.prepare_runtime(data.get("sequence_graph",{}),data)
+	if sequence_candidate.has("error"):
+		if data.schema_version>=4:prepared.runtime.dispose()
+		else:
+			prepared.scene.free()
+			if prepared.model:prepared.model.root.free()
+		open_project_error=sequence_candidate.error
+		if report_error:message(open_project_error)
+		return false
 	if tutorials:tutorials.document_changing()
+	sequence_editor.clear()
 	stop()
 	finish_stroke()
 	pose_editor.finish_drag()
 	release_mouse()
 	world_selection.clear()
-	if data.schema_version==4 or data.schema_version==5:renderer.install_world(prepared)
+	if data.schema_version>=4:renderer.install_world(prepared)
 	else:renderer.install_legacy(prepared)
 	pose_editor.selected="@root";pose_editor.rebuild_tree()
 	source = str(data.get("source",""));last_import_id=""
@@ -1730,6 +1763,7 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 	refresh_scene_name()
 	refresh_workspace()
 	frame_box.max_value = video.duration_frames
+	sequence_editor.adopt(data,sequence_candidate.runtime)
 	rebuild_audio()
 	var saved_editor = data.get("editor", {})
 	var saved_frame := 0
@@ -1740,6 +1774,8 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 	world_selection.refresh();world_selection.clear()
 	dirty = false
 	begin_recovery_session()
+	var context_error: String=sequence_editor.restore_context(saved_editor.get("sequence_editor",{}) if saved_editor is Dictionary else {})
+	if not context_error.is_empty():message(context_error)
 	message("Opened " + folder)
 	if home:home.hide()
 	return true
@@ -1817,7 +1853,12 @@ func export_frames(parent: String,images_only: bool,drawings_only: bool) -> Stri
 		message("Rendering %d / %d • %s" % [n + 1, video.duration_frames, folder])
 		var image: Image
 		if images_only and drawings_only:
-			image=Drawing.composite(export_layers,n,int(video.width),int(video.height))
+			image=Drawing.blank(int(video.width),int(video.height))
+			if renderer.sequence_runtime:
+				var nested: Image=await renderer.sequence_runtime.render(renderer.sequence_owner,n,true,true)
+				if nested==null:error=renderer.sequence_runtime.last_error;break
+				image.blend_rect(nested,Rect2i(0,0,int(video.width),int(video.height)),Vector2i.ZERO)
+			image.blend_rect(Drawing.composite(export_layers,n,int(video.width),int(video.height)),Rect2i(0,0,int(video.width),int(video.height)),Vector2i.ZERO)
 			await get_tree().process_frame
 		else:image=await renderer.capture(export_keys, export_layers, n, true)
 		if image==null:
@@ -1830,7 +1871,7 @@ func export_frames(parent: String,images_only: bool,drawings_only: bool) -> Stri
 		error = "Export cancelled. PNG frames preserved."
 	var mix_path := ""
 	if error.is_empty():
-		if not audio_clip.is_empty():
+		if not audio_mix.is_empty():
 			message("Writing synchronized audio mix…")
 			mix_path = folder.path_join("mixed_audio.wav")
 			if audio_mix.is_empty() or audio_mix.stream.save_to_wav(mix_path) != OK:
@@ -2038,7 +2079,8 @@ func autosave_tick(force := false) -> void:
 	recovery_checkpoint_requested=false
 	autosave_due = Time.get_ticks_msec() + int(autosave_interval.value * 60000)
 	var started := Time.get_ticks_usec()
-	var error := Recovery.checkpoint(recovery_root, recovery_session, video, keys, layers, source, frame, audio_document(), has_project.path if not has_project.path.is_empty() else project_folder, recovery_revision, renderer.model_state(),renderer.world_state(),palette)
+	var snapshot:=project_snapshot()
+	var error := Recovery.checkpoint(recovery_root,recovery_session,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,has_project.path if not has_project.path.is_empty() else project_folder,recovery_revision,snapshot.get("model",{}),snapshot.world,snapshot.palette,snapshot.sequence_graph,snapshot.get("sequence_context",{}))
 	last_recovery_ms = (Time.get_ticks_usec() - started) / 1000.0
 	if error.is_empty():
 		checkpoint_revision = recovery_revision
@@ -2060,6 +2102,7 @@ func finish_recovery_preview(folder: String,digest: String,at: int,revision: int
 	var image: Image=renderer.viewport.get_texture().get_image()
 	if not image or image.is_empty():return
 	var overlays: Array=[]
+	if canvas.sequence_overlay:overlays.append(canvas.sequence_overlay.get_image().duplicate())
 	for layer in layers:
 		if not layer.visible:continue
 		var cel:=Drawing.cel_at(layer,at)
@@ -2240,7 +2283,7 @@ func import_audio(path: String,start_frame:=0) -> String:
 	if start_frame<0 or start_frame>=video.duration_frames:
 		var error:="Choose a frame before the end of the movie for this sound."
 		message(error);return error
-	if audio_clips.size() >= AudioTrack.MAX_CLIPS: message("This scene already has16 sound clips."); return "Audio clip limit reached."
+	if sequence_editor.used("audio")>=AudioTrack.MAX_CLIPS:message("This project and its sequences already have16 sound clips.");return "Audio clip limit reached."
 	stop()
 	var decoded := AudioTrack.read_wav(path)
 	if decoded.has("error"): message(decoded.error); return decoded.error
@@ -2249,13 +2292,13 @@ func import_audio(path: String,start_frame:=0) -> String:
 func append_audio(decoded: Dictionary,start_frame: int) -> String:
 	if exporting:return "Cannot import during export."
 	if start_frame<0 or start_frame>=video.duration_frames:return "Choose a frame before the end of the movie for this sound."
-	if audio_clips.size()>=AudioTrack.MAX_CLIPS:return "Audio clip limit reached."
+	if sequence_editor.used("audio")>=AudioTrack.MAX_CLIPS:return "Project and sequence audio clip limit reached."
 	stop()
 	var candidate := AudioTrack.make_clip(decoded)
 	candidate.start_frame=start_frame
 	var proposed := audio_clips.duplicate()
 	proposed.append(candidate)
-	var mixed := AudioTrack.mix_document(AudioTrack.document(proposed), video)
+	var mixed: Dictionary=sequence_editor.mix(AudioTrack.document(proposed),video)
 	if mixed.has("error"): message(mixed.error); return mixed.error
 	var before := audio_document().duplicate(true)
 	var before_selection: String=audio_clip.get("id","")
@@ -2270,10 +2313,9 @@ func rebuild_audio() -> void:
 	refresh_workspace()
 	stop()
 	audio_mix = {}
-	if not audio_clip.is_empty():
-		var mixed := AudioTrack.mix_document(audio_document(), video)
-		if mixed.has("error"): message(mixed.error)
-		else: audio_mix = mixed
+	var mixed: Dictionary=sequence_editor.mix(audio_document(),video)
+	if mixed.has("error"):message(mixed.error)
+	else:audio_mix=mixed
 	refresh_audio_controls()
 	refresh_timeline()
 

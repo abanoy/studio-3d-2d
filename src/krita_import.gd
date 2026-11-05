@@ -44,6 +44,7 @@ func success_message() -> String:return "Krita artwork added as an editable draw
 func slots() -> int:
 	var used:=0
 	for layer in app.layers:used+=layer.cels.size()
+	if app.get("sequence_editor"):used=app.sequence_editor.used("cels")
 	return 32-used
 func available() -> bool:
 	return not OS.has_feature("web") and not app.exporting and not app.playing and app.mode.selected==0 and app.layers.size()<4 and slots()>0 and app.frame<int(app.video.duration_frames)

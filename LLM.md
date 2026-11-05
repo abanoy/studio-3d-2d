@@ -128,3 +128,46 @@ New real FFV1/PCM Matroska test verifies1second of pictures remains4frames at4fp
 while ignored audio runs2seconds. Full Python281run/280pass/1independent-MMD-reader
 skip; video11pass. See /workspace/has-handoff-audit/video-duration-python.log.
 Lighting/export tutorial9734b3b and Linux recovery680a911 are pushed to main.
+
+
+## 2026-11-05 UTC — editable child sequences and continuous implementation
+
+The active owner goal is to complete the original specification and governing
+addendum within this environment and commit/push the repository. Continue useful
+independent engineering; do not treat one OPEN design choice or missing native
+fixture as a reason to stop while implementable work remains.
+
+Added project schema6 / studio_sequences_1: up to4 shared editable child scenes,
+8 placements and4 nested levels, independent world/camera/ink/audio, per-instance
+timing/loop/transform/opacity/sound, shared-child propagation, cycle guards and
+atomic validation. Browser plus aligned timeline supports actual drag/edit,
+copy/paste/split/remove. Splits preserve full ease curves and rational PCM epoch.
+Per-document histories share64MiB/128commands; scene resource limits are global.
+FPS propagates atomically; duration validation includes all references. Rendering
+uses bounded per-asset frame caches and correct premultiplied alpha handling.
+Ordinary packed/linked saves from a child retain the enclosing graph and restore
+child/frame. Crash checkpoints preserve graph/source assets/context. Existing
+non-sequence formats and original sources remain. Fixed fractional video-keying
+SpinBox defaults after step initialization; exact GUI defaults now have coverage.
+
+Fresh acceptance at /workspace/has-handoff-audit/sequences-accepted:
+Godot graph74/audio9/storage8/runtime10/editor47/coldreader16/startup4 pass.
+Writer actually SIGKILLed, absent graceful hooks verified, ordinary scene startup
+automatically restores childframe6 and both parent backgrounds; manual HAS bytes
+unchanged. Actual H2641920x1080/24fps/48frames/2sec + AAC, child sound onset
+0.2500208333sec. Exact split samples include NTSC fractional boundaries. Cross-
+runtime malformed/cycle/path/schema guards retain prior files. Full Python288run,
+287pass/1independent-MMD-reader skip; core24/journal33 pass. Existing video20+7,
+tutorial52+5, pose-library35+6 and normal recovery15cases/147checks pass. Evidence
+copied outside checkout; tracked historical output files restored unchanged.
+Linux llvmpipe/private dummy X/dummy audio, original procedural assets only;
+no native Windows/GPU/tablet/artist acceptance claimed. Initial startup harness
+mistakenly used script mode, which intentionally bypasses recovery; corrected
+verifier launches an ordinary scene with an observer. Failed harness evidence is
+retained separately, not counted as production success.
+
+See docs/editable_sequences.md and updated requirement matrix. Broader
+compositing, advanced tutorial chapters, reusable locomotion, native importer and
+cloth fidelity, long-project measurement and artist acceptance remain. Independent
+native model/map packaging remains explicitly OPEN; no response has arrived to
+the pending packaging/native-fixture questions. Full product is not complete.

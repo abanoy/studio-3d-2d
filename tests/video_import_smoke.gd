@@ -39,6 +39,7 @@ func run() -> void:
 	check(importer.phase=="layers" and importer.review.visible,"asynchronous real video inspection opens review")
 	if importer.phase!="layers":print(app.status.text);app.free();quit(1);return
 	app.raster_importer.begin("unrelated.kra");check(app.raster_importer.phase.is_empty(),"Krita import cannot race video review")
+	check(is_equal_approx(importer.similarity.value,.1) and is_equal_approx(importer.softness.value,.05),"fractional chroma defaults survive SpinBox initialization")
 	importer.key_enabled.button_pressed=true;importer.prepare();await wait_phase("candidate")
 	check(importer.phase=="candidate" and importer.decoded.size()==2,"real FFmpeg produces two complete editable holds")
 	if importer.phase!="candidate":print(app.status.text);app.free();quit(1);return

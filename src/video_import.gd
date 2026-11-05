@@ -28,8 +28,8 @@ func show_layers() -> void:
 	caption.text="%s · %s × %s\nFit the complete video into the canvas, starting at frame %d. Original transparency is preserved. Audio is separate: use Import audio.\nThe complete range must fit the remaining scene frames and drawing capacity." % [source.get_file(),inventory.get("width",0),inventory.get("height",0),at]
 	key_enabled=CheckButton.new();key_enabled.text="Remove a green or blue background";box.add_child(key_enabled)
 	key_color=OptionButton.new();key_color.add_item("Green background");key_color.add_item("Blue background");box.add_child(key_color)
-	similarity=app.spin(box,"Color tolerance",0.01,1,0.1);similarity.step=0.01
-	softness=app.spin(box,"Edge softness",0,1,0.05);softness.step=0.01
+	similarity=app.spin(box,"Color tolerance",0.01,1,0.1);similarity.step=0.01;similarity.value=0.1
+	softness=app.spin(box,"Edge softness",0,1,0.05);softness.step=0.01;softness.value=0.05
 	review.confirmed.connect(prepare);review.canceled.connect(cancel);review.close_requested.connect(cancel);review.popup_centered(Vector2i(540,340))
 func prepare() -> void:
 	if phase!="layers" or not valid() or external_busy():fail("The scene changed or another operation is running. Import video again.");return

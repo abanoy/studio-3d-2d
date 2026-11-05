@@ -26,6 +26,9 @@ var legacy_materials: RefCounted
 var last_lighting:=""
 var last_framing: Dictionary={}
 var last_capture_error:=""
+var sequence_instance:=false
+var sequence_runtime: Node
+var sequence_owner:=""
 
 func setup(width := 1920, height := 1080) -> void:
 	viewport = SubViewport.new()
@@ -72,7 +75,7 @@ func _process(_delta: float) -> void:
 	apply_lighting()
 	if editor_grid:
 		editor_grid.position = Vector3(floorf(camera.position.x), 0, floorf(camera.position.z))
-		editor_grid.visible = empty_environment and not capturing_final
+		editor_grid.visible = empty_environment and not capturing_final and not sequence_instance
 
 func apply_lighting() -> void:
 	var kind:=Lighting.mode(video_settings)
@@ -101,7 +104,7 @@ func import_scene(path: String) -> String:
 	disable_cameras(environment_scene)
 	camera.current = true
 	empty_environment = scene_bounds().size.length_squared() == 0
-	editor_grid.visible = empty_environment
+	editor_grid.visible = empty_environment and not sequence_instance
 	assets_changed.emit()
 	return ""
 
@@ -127,7 +130,7 @@ func install_legacy(prepared: Dictionary) -> void:
 	model=prepared.model
 	if model:world.add_child(model.root);disable_cameras(model.root);model.apply(0)
 	empty_environment=scene_bounds(environment_scene).size.length_squared()==0
-	editor_grid.visible=empty_environment and not capturing_final;camera.current=true
+	editor_grid.visible=empty_environment and not capturing_final and not sequence_instance;camera.current=true
 	assets_changed.emit()
 
 func environment_root() -> Node3D:
@@ -169,7 +172,7 @@ func install_world(prepared: Dictionary, frame := 0) -> bool:
 	disable_cameras(incoming.root)
 	incoming.evaluate(frame)
 	empty_environment=scene_bounds(incoming.root).size.length_squared()==0
-	editor_grid.visible=empty_environment and not capturing_final
+	editor_grid.visible=empty_environment and not capturing_final and not sequence_instance
 	camera.current=true
 	assets_changed.emit()
 	return true
@@ -263,14 +266,19 @@ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 			if world_runtime:world_runtime.evaluate(frame,false,"",video_settings)
 			return null
 	capturing_final = final
-	editor_grid.visible = empty_environment and not final
+	editor_grid.visible = empty_environment and not final and not sequence_instance
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	await RenderingServer.frame_post_draw
 	var image := viewport.get_texture().get_image()
 	if world_runtime:world_runtime.evaluate(frame,false,"",video_settings)
 	capturing_final = false
-	editor_grid.visible = empty_environment
+	editor_grid.visible = empty_environment and not sequence_instance
 	image.convert(Image.FORMAT_RGBA8)
+	if sequence_instance:image=preload("res://src/sequence_pixels.gd").straight(image)
+	if sequence_runtime:
+		var nested: Image=await sequence_runtime.render(sequence_owner,frame,final)
+		if nested==null:last_capture_error=sequence_runtime.last_error;return null
+		image.blend_rect(nested,Rect2i(Vector2i.ZERO,viewport.size),Vector2i.ZERO)
 	var overlay := Drawing.composite(layers, frame, image.get_width(), image.get_height())
 	image.blend_rect(overlay, Rect2i(Vector2i.ZERO, viewport.size), Vector2i.ZERO)
 	return image

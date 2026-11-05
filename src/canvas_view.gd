@@ -9,6 +9,7 @@ func cancel_middle() -> void:
 signal pointer(event: InputEvent, point: Vector2)
 var background: Texture2D
 var overlay: Texture2D
+var sequence_overlay: Texture2D
 var fill_preview: Texture2D
 var selection_preview: ImageTexture
 var drawing_selection:=Rect2i()
@@ -42,6 +43,7 @@ func image_rect() -> Rect2:
 func _draw() -> void:
 	var rect := image_rect()
 	scene_background.texture=background;scene_background.rect=rect;scene_background.queue_redraw()
+	if sequence_overlay:draw_texture_rect(sequence_overlay,rect,false)
 	if selection_preview:draw_texture_rect(selection_preview,rect,false)
 	elif fill_preview:draw_texture_rect(fill_preview,rect,false)
 	elif overlay:draw_texture_rect(overlay,rect,false)

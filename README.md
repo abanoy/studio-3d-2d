@@ -681,3 +681,11 @@ for the portable tests, exact ownership protocol and remaining acceptance limits
 Home -> Tutorials also offers **Advanced - Lighting and export**, with real
 lighting controls, a successful MP4 task, hints, checkpointed Previous and
 Continue/Start fresh. See [tutorials](docs/tutorials.md).
+
+
+[Editable sequences](docs/editable_sequences.md) now reuse a child scene with its own
+world, camera, cels and sound. Use **Sequences…** above the timeline to create/edit
+a child or place another instance, then **Back to parent**. Clip timing, looping,
+placement keys and sound stay independent per instance; child edits propagate.
+Save and crash recovery retain the enclosing project and active child/frame.
+Projects containing sequences require the new schema6 reader.

@@ -6,6 +6,7 @@ const WorldDocument = preload("res://src/world_document.gd")
 const Lighting=preload("res://src/lighting.gd")
 const Timeline=preload("res://src/timeline.gd")
 const Journal=preload("res://src/recovery_journal.gd")
+const Sequences=preload("res://src/sequence_graph.gd")
 
 static func safe_relative(path: String) -> bool:
 	if path.is_empty() or path.is_absolute_path() or path.contains(":") or path.contains("\\"):
@@ -34,6 +35,11 @@ static func readable_manifest(path: String) -> bool:
 	if file == null or file.get_length() > 1024 * 1024: return false
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
+	if not integer(parser.data.get("schema_version"),1,6):return false
+	if parser.data.schema_version==6:
+		if not Sequences.error(parser.data.get("sequence_graph"),parser.data).is_empty():return false
+	elif parser.data.has("sequence_graph"):return false
+	elif parser.data.get("editor",{}) is Dictionary and parser.data.get("editor",{}).has("sequence_editor"):return false
 	if parser.data.get("video") is Dictionary and not Lighting.validate(parser.data.video).is_empty():return false
 	if not preload("res://src/color_palette.gd").error(parser.data.get("palette",[])).is_empty():return false
 	if parser.data.get("video") is Dictionary and parser.data.video.has("visibility_fade_ms") and not integer(parser.data.video.visibility_fade_ms,0,10000):return false
@@ -41,14 +47,18 @@ static func readable_manifest(path: String) -> bool:
 	if not parser.data.get("layers") is Array or not Drawing.opacity_error(parser.data.layers).is_empty():return false
 	if not preload("res://src/drawing_origin.gd").layers_error(parser.data.layers).is_empty():return false
 	if not parser.data.get("audio",{}) is Dictionary or not AudioTrack.layout_error(parser.data.get("audio",{})).is_empty():return false
-	if parser.data.get("schema_version")==4 or parser.data.get("schema_version")==5:
+	if parser.data.schema_version>=4:
 		var video=parser.data.get("video")
 		if not video is Dictionary or not integer(video.get("duration_frames"),1,240):return false
 		if not WorldDocument.validate(parser.data.get("world"),int(video.duration_frames),true).is_empty():return false
-		if (parser.data.schema_version==5)!=(parser.data.world.format==WorldDocument.EFFECT_FORMAT):return false
-	return integer(parser.data.get("schema_version"), 1, 5) and parser.data.get("layers") is Array and parser.data.get("camera_keys") is Array
+		if parser.data.schema_version!=6 and (parser.data.schema_version==5)!=(parser.data.world.format==WorldDocument.EFFECT_FORMAT):return false
+	return integer(parser.data.get("schema_version"), 1, 6) and parser.data.get("layers") is Array and parser.data.get("camera_keys") is Array
 
-static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[]) -> String:
+static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null) -> String:
+	if not sequence_graph.is_empty():
+		if world.is_empty():return "Editable sequences require a world project."
+		var sequence_error:=Sequences.error(sequence_graph,{"video":video,"layers":layers,"audio":audio,"world":world})
+		if not sequence_error.is_empty():return sequence_error
 	var palette_error:=preload("res://src/color_palette.gd").error(palette)
 	if not palette_error.is_empty():return palette_error+" Previous save preserved."
 	var rate_error:=preload("res://src/video_timing.gd").error(video.get("fps_num"),video.get("fps_den"))
@@ -60,7 +70,10 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 	if not opacity_error.is_empty():return opacity_error+" Previous save preserved."
 	var origin_error:=preload("res://src/drawing_origin.gd").layers_error(layers)
 	if not origin_error.is_empty():return origin_error+" Previous save preserved."
-	if not editor_extra.is_empty() and (editor_extra.size()!=1 or not editor_extra.get("lesson_ui") is Dictionary or JSON.stringify(editor_extra,"",true,true).to_utf8_buffer().size()>16384):return "Invalid lesson editor snapshot. Previous save preserved."
+	if not editor_extra.is_empty() and (editor_extra.size()!=1 or not (editor_extra.get("lesson_ui") is Dictionary or editor_extra.get("sequence_editor") is Dictionary) or JSON.stringify(editor_extra,"",true,true).to_utf8_buffer().size()>16384):return "Invalid lesson editor snapshot. Previous save preserved."
+	if editor_extra.has("sequence_editor"):
+		var why:=Sequences.context_error(editor_extra.sequence_editor,sequence_graph)
+		if not why.is_empty():return why
 	var camera_error:=Timeline.range_error(keys)
 	if not camera_error.is_empty():return camera_error+" Previous save preserved."
 	var lighting_error:=Lighting.validate(video)
@@ -160,10 +173,26 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 	if not recovery.is_empty(): manifest.editor["recovery"] = recovery
 	if not palette.is_empty():manifest["palette"]=palette.duplicate(true)
 	if editor_extra.has("lesson_ui"):manifest.editor["lesson_ui"]=editor_extra.lesson_ui.duplicate(true)
+	if editor_extra.has("sequence_editor"):manifest.editor["sequence_editor"]=editor_extra.sequence_editor.duplicate(true)
+	if not sequence_graph.is_empty():
+		var saved_graph:={"format":Sequences.FORMAT,"clips":sequence_graph.clips.duplicate(true),"assets":[]}
+		var decoded_audio_bytes:=AudioTrack.memory(audio)
+		for sequence in sequence_graph.assets:
+			var child: Dictionary=sequence.scene;var out:={}
+			var error:=save_project(folder,child.video,child.camera_keys,child.layers,"",int(child.get("editor",{}).get("frame",0)),child.get("audio",{}),{},{},true,child.world,{},child.get("palette",[]),{},out)
+			if not error.is_empty():return "Sequence %s: %s" % [sequence.name,error]
+			decoded_audio_bytes+=AudioTrack.memory(child.get("audio",{}))
+			if decoded_audio_bytes>AudioTrack.MAX_PCM:return "Nested audio sources exceed64MiB. Previous save preserved."
+			saved_graph.assets.append({"id":sequence.id,"name":sequence.name,"clips":sequence.clips.duplicate(true),"scene":out.manifest})
+		manifest.schema_version=6;manifest["sequence_graph"]=saved_graph
 	# Compact JSON keeps dense recorded motion within the unchanged1MiB metadata cap.
 	# Preserve small quaternion components across repeated editable saves.
 	var serialized := JSON.stringify(manifest,"",true,true)
 	if serialized.to_utf8_buffer().size() > 1024 * 1024: return "Project metadata exceeds 1 MiB. Reduce pose keys/metadata; previous manifest preserved."
+	# Child scenes share content-addressed assets/cels in the parent folder, but
+	# never replace its manifest. Only the fully checked root commits project.json.
+	if _manifest_out is Dictionary:
+		_manifest_out["manifest"]=manifest;return ""
 	var temp := folder.path_join("project.json.tmp")
 	var file := FileAccess.open(temp, FileAccess.WRITE)
 	if file == null:
@@ -203,7 +232,33 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK:
 		return {"error": "Corrupt JSON manifest: " + parser.get_error_message()}
-	var data = parser.data
+	return decode_project(parser.data,folder)
+
+static func decode_project(data,folder: String) -> Dictionary:
+	if not data is Dictionary or not integer(data.get("schema_version"),1,6):
+		return {"error":"Invalid manifest or unsupported schema. Previous project stays open."}
+	if data.schema_version==6:
+		var graph=data.get("sequence_graph");var why:=Sequences.error(graph,data)
+		if not why.is_empty():return {"error":why}
+		var base: Dictionary=data.duplicate(true);base.erase("sequence_graph")
+		base.schema_version=5 if base.world.get("format")==WorldDocument.EFFECT_FORMAT else 4
+		var context=base.get("editor",{}).get("sequence_editor",{}) if base.get("editor",{}) is Dictionary else {}
+		if base.get("editor",{}) is Dictionary:base.editor.erase("sequence_editor")
+		var result:=decode_project(base,folder)
+		if result.has("error"):return result
+		var decoded: Dictionary=graph.duplicate(true)
+		var pcm_bytes:=AudioTrack.memory(result.audio)
+		for asset in decoded.assets:
+			var child:=decode_project(asset.scene,folder)
+			if child.has("error"):return {"error":"Sequence %s: %s" % [asset.name,child.error]}
+			pcm_bytes+=AudioTrack.memory(child.audio)
+			if pcm_bytes>AudioTrack.MAX_PCM:return {"error":"Nested audio sources exceed64MiB."}
+			asset.scene=child
+		result.schema_version=6;result["sequence_graph"]=decoded
+		if not context.is_empty():result.editor["sequence_editor"]=context
+		return result
+	if data.has("sequence_graph"):return {"error":"Editable sequences require project schema6."}
+	if data.get("editor",{}) is Dictionary and data.get("editor",{}).has("sequence_editor"):return {"error":"Sequence editor context requires project schema6."}
 	if not data is Dictionary or not integer(data.get("schema_version"), 1, 5):
 		return {"error": "Invalid manifest or unsupported schema. Previous project stays open."}
 	var palette_error:=preload("res://src/color_palette.gd").error(data.get("palette",[]))

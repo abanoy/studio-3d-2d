@@ -48,17 +48,21 @@ func save_file(selected: String, mode: String) -> void:
 	app.stop(); app.finish_stroke(); app.pose_editor.finish_drag()
 	var base := ProjectSettings.globalize_path(cache_root)
 	var snapshot := base.path_join("work_%d" % OS.get_process_id())
-	var error := Storage.save_project(snapshot, app.video, app.keys, app.layers, app.source, app.frame, app.audio_document(), {}, app.renderer.model_state(), true,app.renderer.world_state(),{},app.palette)
+	var state: Dictionary=app.project_snapshot()
+	var error := Storage.save_project(snapshot,state.video,state.camera_keys,state.layers,str(state.get("source","")),int(state.editor.frame),state.audio,{},state.get("model",{}),true,state.world,{"sequence_editor":state.sequence_context} if not state.get("sequence_context",{}).is_empty() else {},state.palette,state.sequence_graph)
 	if not error.is_empty(): app.message(error); return
 	var references := {}
 	var sources: Array=[]
-	for clip in app.audio_clips: sources.append(clip.source.path)
-	if app.renderer.world_runtime:
-		for row in preload("res://src/world_document.gd").assets(app.renderer.world_state()):
-			var absolute:=ProjectSettings.globalize_path(row.source).replace("\\","/")
-			var original: String=origins.get(absolute,absolute)
-			references[row.path]=original if FileAccess.get_sha256(original)==row.sha256 else absolute
-	else:sources.append_array([app.source,app.renderer.model.data.source if app.renderer.model else ""])
+	var scenes: Array=[state]
+	for asset in state.sequence_graph.get("assets",[]):scenes.append(asset.scene)
+	for scene in scenes:
+		for clip in preload("res://src/audio_track.gd").clips(scene.get("audio",{})):sources.append(clip.source.path)
+		if not scene.get("world",{}).is_empty():
+			for row in preload("res://src/world_document.gd").assets(scene.world):
+				var absolute:=ProjectSettings.globalize_path(row.source).replace("\\","/")
+				var original: String=origins.get(absolute,absolute)
+				references[row.path]=original if FileAccess.get_sha256(original)==row.sha256 else absolute
+		else:sources.append_array([str(scene.get("source","")),str(scene.get("model",{}).get("source",""))])
 	for source_file in sources:
 		if str(source_file).is_empty(): continue
 		var absolute := ProjectSettings.globalize_path(source_file).replace("\\", "/")

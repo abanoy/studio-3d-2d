@@ -57,6 +57,7 @@ func start(point: Vector2) -> void:
 	if cel.is_empty():
 		var count:=0
 		for row in app.layers:count+=row.cels.size()
+		if app.get("sequence_editor"):count=app.sequence_editor.used("cels")
 		if count>=32:app.message("Prototype memory limit: 32 full-HD cels.");return
 	var target: Image=cel.image if not cel.is_empty() else Drawing.blank(app.video.width,app.video.height)
 	var sample: Image=Drawing.composite(app.layers,app.frame,app.video.width,app.video.height) if sample_visible.button_pressed else target

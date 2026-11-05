@@ -124,12 +124,17 @@ static func bytes_in(folder: String, depth := 0) -> int:
 		if size >= MAX_BYTES: break
 	return size
 
-static func checkpoint(root: String, session: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary, origin: String, revision: int, model: Dictionary = {}, world: Dictionary = {},palette: Array=[]) -> String:
+static func checkpoint(root: String, session: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary, origin: String, revision: int, model: Dictionary = {}, world: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},sequence_context: Dictionary={}) -> String:
 	# Conservative global budget: reserve full uncompressed cels and input assets.
 	var estimate := 6 * 1024 * 1024
 	for layer in layers:
 		for cel in layer.cels: estimate += cel.image.get_data_size()
 	var sources: Array=[]
+	for asset in sequence_graph.get("assets",[]):
+		for layer in asset.scene.layers:
+			for cel in layer.cels:estimate+=cel.image.get_data_size()
+		for clip in preload("res://src/audio_track.gd").clips(asset.scene.get("audio",{})):sources.append(clip.source.path)
+		for row in preload("res://src/world_document.gd").assets(asset.scene.world):sources.append(row.source)
 	for clip in preload("res://src/audio_track.gd").clips(audio): sources.append(clip.source.path)
 	if not world.is_empty():
 		for row in preload("res://src/world_document.gd").assets(world):sources.append(row.source)
@@ -151,7 +156,7 @@ static func checkpoint(root: String, session: String, video: Dictionary, keys: A
 	error=Journal.record(folder)
 	if not error.is_empty():return error
 	error=Storage.save_project(folder, video, keys, layers, source, frame, audio,
-		{"origin": origin, "revision": revision, "saved_at": Time.get_unix_time_from_system()}, model,false,world,{},palette)
+		{"origin": origin, "revision": revision, "saved_at": Time.get_unix_time_from_system()}, model,false,world,{"sequence_editor":sequence_context} if not sequence_context.is_empty() else {},palette,sequence_graph)
 	if not error.is_empty():return error
 	return Journal.record(folder)
 

@@ -12,6 +12,8 @@ import sys
 import tempfile
 import zipfile
 import zlib
+try:from .sequence_graph import error as sequence_graph_error
+except ImportError:from sequence_graph import error as sequence_graph_error
 try:from .drawing_origin import error as drawing_origin_error
 except ImportError:from drawing_origin import error as drawing_origin_error
 try:from .pose_library import error as pose_library_error
@@ -74,6 +76,21 @@ def read_json(blob):
 
 def members(manifest):
     """Only declared current playback/editing assets; never glob whole game folders."""
+    if manifest.get('schema_version')==6:
+        graph=manifest.get('sequence_graph');why=sequence_graph_error(graph,manifest)
+        if why:raise HasError(why)
+        base=dict(manifest);base.pop('sequence_graph')
+        base['schema_version']=5 if base.get('world',{}).get('format')=='studio_world_2' else 4
+        assets,cels=members(base)
+        for sequence in graph['assets']:
+            child_assets,child_cels=members(sequence['scene'])
+            for name,row in child_assets.items():
+                if name in assets and assets[name]!=row:raise HasError('Conflicting nested sequence asset identity')
+                assets[name]=row
+            cels.update(child_cels)
+        if len(assets)+len(cels)+2>MAX_FILES:raise HasError('Too many nested sequence files')
+        return assets,cels
+    if 'sequence_graph' in manifest:raise HasError('Editable sequences require project schema6')
     for layer in manifest.get('layers',[]):
         if isinstance(layer,dict) and 'origin' in layer:
             why=drawing_origin_error(layer['origin'])

@@ -74,12 +74,14 @@ func commit(proposed: Dictionary,feedback: String) -> String:
 	# could introduce a key beyond the candidate end.
 	if app.drawing or app.pose_editor.dragging or app.timeline.dragging or not app.timeline.moving_id.is_empty() or app.timeline.audio_gesture_active():
 		var error:="Finish or cancel the current edit before changing project timing.";app.message(error);sync();return error
-	var mixed: Dictionary={} if app.audio_clip.is_empty() else Audio.mix_document(app.audio_document(),proposed)
-	if mixed.has("error"):app.message(mixed.error);sync();return mixed.error
+	var prepared: Dictionary=app.sequence_editor.prepare_timing(proposed)
+	if prepared.has("error"):app.message(prepared.error);sync();return prepared.error
+	var mixed: Dictionary=prepared.mix
 	app.stop();app.finish_stroke();app.pose_editor.finish_drag();app.release_mouse()
 	app.timeline.finish_move(true);app.timeline.cancel_audio()
 	var before: Dictionary=app.video.duplicate(true);var view: Dictionary=app.renderer.view_state()
 	app.video=proposed;app.audio_mix=mixed;app.renderer.video_settings=proposed
+	app.sequence_editor.install_timing(prepared)
 	app.push_history({"type":"video","before":before,"after":proposed.duplicate(true)})
 	app.changed();app.set_frame(app.frame);app.refresh_audio_controls();app.renderer.restore_view(view);sync()
 	app.message(feedback);return ""
