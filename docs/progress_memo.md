@@ -10960,3 +10960,58 @@ Next independent work remains broader reference/character-sheet workflows,
 progressive tutorial demonstrations, richer drawing compositing, generated
 locomotion, native fidelity and long/dense projects. Owner-dependent packaging,
 path-inference and hardware/artist questions do not block independent increments.
+
+
+## 2026-11-05 UTC — local reference-sheet viewer and Draw guide
+
+Continuous goal progressed after reusable paths25f60dd (pushed main). Draw now
+opens a modeless Reference sheet viewer for a local PNG, with aspect-preserving
+fit, pointer-anchored wheel zoom, drag pan, Reload/Clear and a translucent Guide
+over Draw. Optional guide defaults off/20percent, passes ordinary drawing input,
+hides in Scene/Pose, Home, playback/export and resumes in Draw. Closing the viewer
+leaves an enabled guide available. Clear releases CPU image, texture and guide
+references. Generation/visibility checks reject stale file-picker callbacks.
+
+Input is preflighted before PNG decode:16MiB compressed,4megapixels,8192maximum
+side, checked signature/IHDR and dimensions; bounded read also handles source
+changes between length check and read. Failed/missing/oversized input keeps the
+current sheet. Source bytes are hashed; source changes install only on explicit
+Reload. Original PNGs are unchanged. No cloud/AI/external software or source-file
+execution. Only2CRLF-preserving app lines wire two small new editor modules.
+
+This first viewer is explicitly session-only and says sheets reopen separately
+from saved projects. It does not enter document Undo/dirty state, scene/ink render
+inputs, MP4, transparent drawing-only PNG or packed HAS assets. Existing project
+schemas stay unchanged. Project-managed linked/embedded references, saved guide
+placement, multiple reference views and proportion/anatomy tools remain work;
+this is not completion of the original linked-character-sheet requirement.
+
+Fresh private Linux llvmpipe reference-sheet-complete:30app+3cold checks pass,
+with original Unicode/space PNG name and actual transparency, routed zoom/pan/Fit,
+visible canvas guide pixels, drawing through guide, exact source/image/document
+preservation, playback/mode hiding, invalid input retention, stale Clear/picker,
+explicit reload, normal close and exact final renderer/MP4/transparent PNG inputs.
+Real H2641920x1080/24fps/48frames/2seconds probes correctly. Cold Open runs while
+both original reference PNG paths are temporarily unavailable, restores identical
+scene/ink output with no guide, leaves manual HAS bytes unchanged, then restores
+the owned test PNGs with byte checks in finally. Archive contains no sheet paths
+or assets; the included legacy room correctly retains schema3. Existing smoothing
+regression independently passes12domain/26app/4cold, preserving disabled brush,
+pressure gaps, Undo, physics and output. Functional files frozen during final run.
+Visually inspected the actual viewer screenshot; physical input/artistic and
+native Windows/GPU acceptance remain separate gates.
+
+Failed harness logs are retained outside the checkout. Synthetic picker completion
+needed a real viewer focus click, and a synthetic wheel needed its release event;
+without release Godot correctly retained mouse capture and subsequent Fit clicks
+went to the viewer. Short separate private probes identified this; production
+wheel/Fit handlers needed no relaxation. Export-guide restoration check now waits
+for its display refresh. I initially assumed the demo room used world schema4/5
+without inspecting its archive: it actually uses legacy schema3. Corrected that
+specific verifier expectation; the final full verifier passes. Evidence:
+/workspace/has-handoff-audit/reference-sheet-complete, reference-brush-regression
+and the retained reference-wheel-probe logs. No source asset was changed to pass.
+
+Continue independent project-managed references, richer compositing/tutorials,
+locomotion/native fidelity and long/dense projects; owner-dependent OPEN decisions
+remain pending without stopping independent work.

@@ -79,6 +79,7 @@ var lighting_choice: OptionButton
 var tool: OptionButton
 var fill_editor
 var onion_editor
+var reference_sheet
 var layer_editor
 var color_sampler
 var drawing_selection_editor
@@ -295,6 +296,7 @@ func _ready() -> void:
 	timeline.audio_trim_context=audio_trim_editor.drag_context
 	fill_editor=FillEditor.new();fill_editor.app=self;add_child(fill_editor);fill_editor.setup(drawing_section)
 	onion_editor=OnionEditor.new();onion_editor.app=self;add_child(onion_editor);onion_editor.setup(drawing_section)
+	reference_sheet=preload("res://src/reference_sheet.gd").new();reference_sheet.app=self;add_child(reference_sheet);reference_sheet.setup(drawing_section)
 	layer_editor=LayerEditor.new();layer_editor.app=self;add_child(layer_editor);layer_editor.setup(drawing_section)
 	raster_importer=preload("res://src/krita_import.gd").new();add_child(raster_importer);raster_importer.setup(self)
 	video_importer=preload("res://src/video_import.gd").new();add_child(video_importer);video_importer.setup(self)

@@ -729,3 +729,8 @@ Pose now saves and loads [reusable waypoint paths](docs/movement_path_presets.md
 Preview a route on another model before Apply; position stays independent of pose,
 turn, size and expressions, with planted-foot validation and one Undo.
 Walking generation and depth inference remain separate work.
+
+Draw also has a [character-sheet reference viewer](docs/reference_sheet.md):
+open a local PNG beside the canvas, zoom/pan it, or enable a translucent guide.
+It stays out of MP4/PNG output and document Undo. This first viewer is session-only;
+reference sheets reopen separately from saved projects.
