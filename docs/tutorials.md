@@ -49,8 +49,7 @@ Session folders retain shared content-addressed cels within each fixed checkpoin
 there is no cross-session deduplication, retention policy or concurrent writer lock.
 
 This is a runnable beginner route and initial focused chapters, **not complete
-tutorial coverage**. Still needed: focused advanced lighting/interpolation/
-constraints/rigging/physics/render sections, more topic/subsection entry points,
+tutorial coverage**. Still needed: focused advanced constraints/rigging/physics sections, more topic/subsection entry points,
 progressive demonstrations and beginner usability feedback. Physics here teaches
 live/unrecorded motion and freeze; full capture is an advanced lesson still to add.
 Tutorial Skip remains OPEN. The new course has identity `first-movie-v1` and eleven
@@ -134,3 +133,28 @@ provide an already provisioned private dummy display using `--isolated-display :
 Default chapter preserves the existing pose/camera regression. This adds focused
 coverage; advanced interpolation/constraints/rigging/physics chapters, richer
 demonstrations and artist feedback remain. Full application is still incomplete.
+
+
+## Interpolation and cuts
+
+Home → Tutorials → **Advanced · Interpolation and cuts** opens the included
+editable room/figure. Five tasks compare saved camera endpoints, hold/cut, linear
+and ease. The interpolation stored on the outgoing key controls the interval.
+Changing the dropdown without saving does not change animation. In Draw, seek0
+to reload the saved starting shot, switch to Scene to replace its interpolation,
+then return to Draw and seek the comparison frame. Scene mode keeps a temporary
+navigation view when seeking; Draw evaluates the recorded camera.
+
+Hold waits until the next key, linear travels a quarter of the distance at frame6
+between0 and24, and ease travels15.625% at that time while preserving both exact
+key poses. Painted cels keep their independent exposures. Grading checks actual
+saved keys, requested sample/mode and evaluated view; extra intervening keys need
+to be removed for this two-key exercise. Previous restores the whole prior
+checkpoint; Continue and fresh sessions preserve earlier practice. Save remains
+optional. Existing course identities and sample bytes stay unchanged.
+
+Run `python tests/verify_tutorials.py --chapter interpolation`; Linux additionally
+requires an explicitly provisioned `--isolated-display :99`. Fresh cloud checks:
+26 writer +6 cold reader, rendered hold/linear/ease comparison, ordinary HAS save,
+exact preview/MP4 input and H2641920×1080/24fps/48frames. These procedural llvmpipe
+checks do not establish Windows/GPU/physical-device or artist acceptance.

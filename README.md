@@ -689,3 +689,7 @@ a child or place another instance, then **Back to parent**. Clip timing, looping
 placement keys and sound stay independent per instance; child edits propagate.
 Save and crash recovery retain the enclosing project and active child/frame.
 Projects containing sequences require the new schema6 reader.
+
+Home → Tutorials now includes **Advanced · Interpolation and cuts**, an editable
+five-task comparison of camera hold, linear and ease with actual saved keys and
+recorded-shot evaluation. See [interactive practice](docs/tutorials.md).

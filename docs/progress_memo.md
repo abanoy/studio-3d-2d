@@ -10641,3 +10641,28 @@ compositing, advanced tutorial chapters, reusable locomotion, native importer an
 cloth fidelity, long-project measurement and artist acceptance remain. Independent
 native model/map packaging remains explicitly OPEN; no response has arrived to
 the pending packaging/native-fixture questions. Full product is not complete.
+
+
+## 2026-11-05 UTC — interpolation and cuts practice
+
+Added Advanced · Interpolation and cuts, new course advanced-interpolation-v1
+with5 observed tasks. Learners record distinct camera endpoints, then compare
+hold/cut, linear quarter-distance and eased quarter-time motion through the actual
+camera controls and rendered shot. Instructions explicitly distinguish temporary
+Scene camera navigation from Draw's recorded-shot evaluation. Menu-only changes,
+wrong frame/mode, insufficient endpoint separation and intervening keys do not
+qualify. Hints highlight the actual interpolation control. Full Previous,
+Continue/Start fresh and optional normal HAS save reuse existing checkpoint paths.
+No old course identity/length or scene format changed.
+
+Fresh private llvmpipe writer26 + coldreader6 pass, actual H2641080p24/48frames
+MP4 with exact frame6 eased input. Hold render equals frame0; ease differs from
+hold/linear; endpoint stays exact. Source sample hashes remain unchanged. Failed
+initial test exposed Scene mode's intentional temporary view; instructions and
+validation now teach the correct mode transition. See
+/workspace/has-handoff-audit/interpolation-lesson-v2.log. Linux software rendering
+is separate from Windows/device/artist acceptance. Rigging/constraints/physics
+focused chapters, progressive demonstrations and broader completion remain.
+
+Existing pose/draw and camera tutorial regression also passes52writer +5cold
+reader with an actual48-frame MP4 after this chapter addition.
