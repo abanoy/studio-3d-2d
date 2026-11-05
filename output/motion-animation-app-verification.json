@@ -1,0 +1,942 @@
+{
+  "checks": 119,
+  "expected_world": {
+    "format": "studio_world_1",
+    "objects": [
+      {
+        "animation_clips": [
+          {
+            "auto_extend": false,
+            "base_pose": {},
+            "base_transform": {
+              "position": [
+                0,
+                0,
+                0
+              ],
+              "rotation_xyzw": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "scale": 1.0
+            },
+            "body_controls": {
+              "@root": [
+                {
+                  "frame": 0,
+                  "interpolation": "ease",
+                  "value": {
+                    "position": [
+                      -1.3282298823469318e-05,
+                      -0.09278751909732819,
+                      -0.003888793522492051
+                    ],
+                    "rotation_xyzw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ],
+                    "scale": 1.0
+                  }
+                },
+                {
+                  "frame": 12,
+                  "interpolation": "ease",
+                  "value": {
+                    "position": [
+                      -2.6564597646938637e-05,
+                      -0.18557503819465637,
+                      -0.007777587044984102
+                    ],
+                    "rotation_xyzw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ],
+                    "scale": 1.0
+                  }
+                },
+                {
+                  "frame": 24,
+                  "interpolation": "ease",
+                  "value": {
+                    "position": [
+                      -1.3282298823469318e-05,
+                      -0.09278751909732819,
+                      -0.003888793522492051
+                    ],
+                    "rotation_xyzw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ],
+                    "scale": 1.0
+                  }
+                }
+              ],
+              "HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperArm": [
+                {
+                  "frame": 0,
+                  "interpolation": "ease",
+                  "value": {
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "rotation_xyzw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  }
+                },
+                {
+                  "frame": 12,
+                  "interpolation": "ease",
+                  "value": {
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "rotation_xyzw": [
+                      0.0,
+                      0.0,
+                      -0.3894183337688446,
+                      0.9210609793663025
+                    ]
+                  }
+                },
+                {
+                  "frame": 24,
+                  "interpolation": "ease",
+                  "value": {
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ],
+                    "rotation_xyzw": [
+                      0.0,
+                      0.0,
+                      0.0,
+                      1.0
+                    ]
+                  }
+                }
+              ]
+            },
+            "body_legacy_channels": [],
+            "body_origin": 0,
+            "body_placeholder": false,
+            "body_removed": {},
+            "body_rest_keys": [],
+            "body_untrimmed": false,
+            "foot_contacts": {
+              "format": "studio_foot_contacts_1",
+              "segments": [
+                {
+                  "feet": [
+                    {
+                      "ids": [
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperLeg",
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_L_LowerLeg",
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_L_Foot"
+                      ],
+                      "position": [
+                        0.06935809552669525,
+                        0.08612185716629028,
+                        -0.03135043755173683
+                      ],
+                      "rotation_xyzw": [
+                        0.0,
+                        1.0,
+                        0.0,
+                        0.0
+                      ]
+                    },
+                    {
+                      "ids": [
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_R_UpperLeg",
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_R_LowerLeg",
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_R_Foot"
+                      ],
+                      "position": [
+                        -0.06935809552669525,
+                        0.08612185716629028,
+                        -0.03135043755173683
+                      ],
+                      "rotation_xyzw": [
+                        0.0,
+                        1.0,
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  ],
+                  "from": 0,
+                  "id": "motion-pin",
+                  "to": 25
+                }
+              ]
+            },
+            "id": "3722889098673602765",
+            "keys": [],
+            "length": 25,
+            "shape_only": false,
+            "source_in": 0,
+            "start": 0
+          },
+          {
+            "auto_extend": false,
+            "base_pose": {},
+            "base_shapes": {},
+            "base_transform": {
+              "position": [
+                0,
+                0,
+                0
+              ],
+              "rotation_xyzw": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "scale": 1.0
+            },
+            "body_controls": {},
+            "body_legacy_channels": [],
+            "body_origin": 0,
+            "body_placeholder": false,
+            "body_removed": {},
+            "body_rest_keys": [],
+            "body_untrimmed": false,
+            "foot_contacts": {
+              "format": "studio_foot_contacts_1",
+              "segments": [
+                {
+                  "feet": [
+                    {
+                      "ids": [
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperLeg",
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_L_LowerLeg",
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_L_Foot"
+                      ],
+                      "position": [
+                        0.06935809552669525,
+                        0.08612185716629028,
+                        -0.03135043755173683
+                      ],
+                      "rotation_xyzw": [
+                        0.0,
+                        1.0,
+                        0.0,
+                        0.0
+                      ]
+                    },
+                    {
+                      "ids": [
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_R_UpperLeg",
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_R_LowerLeg",
+                        "HASAvatarRoot0/Skeleton3D::J_Bip_R_Foot"
+                      ],
+                      "position": [
+                        -0.06935809552669525,
+                        0.08612185716629028,
+                        -0.03135043755173683
+                      ],
+                      "rotation_xyzw": [
+                        0.0,
+                        1.0,
+                        0.0,
+                        0.0
+                      ]
+                    }
+                  ],
+                  "from": 0,
+                  "id": "motion-pin",
+                  "to": 24
+                }
+              ]
+            },
+            "id": "2869998419396253174",
+            "keys": [],
+            "length": 24,
+            "shape_keys": [],
+            "source_in": 0,
+            "start": 25
+          }
+        ],
+        "body_base_pose": {},
+        "body_base_transform": {
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "scale": 1.0
+        },
+        "body_starts": {
+          "@root": 0,
+          "HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperArm": 0
+        },
+        "draft_frame": 0,
+        "format": "studio_model_8",
+        "id": "actor",
+        "kind": "model",
+        "metadata": {
+          "external_bundle": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\compatibility\\source-1793566544-111-3926044",
+          "import_source": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\compatibility\\source-1793566544-111-3926044\\scene.glb",
+          "native_parameters": {
+            "counts": {
+              "meshes": 3.0,
+              "skins": 3.0,
+              "textures": 27.0
+            },
+            "expressions": {
+              "blendShapeGroups": [
+                {
+                  "binds": [
+                    {
+                      "index": 0.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Neutral",
+                  "presetName": "neutral"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 39.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "A",
+                  "presetName": "a"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 40.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "I",
+                  "presetName": "i"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 41.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "U",
+                  "presetName": "u"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 42.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "E",
+                  "presetName": "e"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 43.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "O",
+                  "presetName": "o"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 13.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Blink",
+                  "presetName": "blink"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 15.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Blink_L",
+                  "presetName": "blink_l"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 14.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Blink_R",
+                  "presetName": "blink_r"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 1.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Angry",
+                  "presetName": "angry"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 2.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Fun",
+                  "presetName": "fun"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 3.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Joy",
+                  "presetName": "joy"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 4.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Sorrow",
+                  "presetName": "sorrow"
+                },
+                {
+                  "binds": [
+                    {
+                      "index": 5.0,
+                      "mesh": 0.0,
+                      "weight": 100.0
+                    }
+                  ],
+                  "isBinary": false,
+                  "materialValues": [],
+                  "name": "Surprised",
+                  "presetName": "unknown"
+                }
+              ]
+            },
+            "extensions": [
+              "VRM",
+              "KHR_texture_transform",
+              "KHR_materials_unlit"
+            ],
+            "humanoid": {
+              "chest": {
+                "node": 3.0,
+                "node_name": "J_Bip_C_Chest"
+              },
+              "head": {
+                "node": 18.0,
+                "node_name": "J_Bip_C_Head"
+              },
+              "hips": {
+                "node": 1.0,
+                "node_name": "J_Bip_C_Hips"
+              },
+              "leftEye": {
+                "node": 19.0,
+                "node_name": "J_Adj_L_FaceEye"
+              },
+              "leftFoot": {
+                "node": 85.0,
+                "node_name": "J_Bip_L_Foot"
+              },
+              "leftHand": {
+                "node": 48.0,
+                "node_name": "J_Bip_L_Hand"
+              },
+              "leftIndexDistal": {
+                "node": 51.0,
+                "node_name": "J_Bip_L_Index3"
+              },
+              "leftIndexIntermediate": {
+                "node": 50.0,
+                "node_name": "J_Bip_L_Index2"
+              },
+              "leftIndexProximal": {
+                "node": 49.0,
+                "node_name": "J_Bip_L_Index1"
+              },
+              "leftLittleDistal": {
+                "node": 54.0,
+                "node_name": "J_Bip_L_Little3"
+              },
+              "leftLittleIntermediate": {
+                "node": 53.0,
+                "node_name": "J_Bip_L_Little2"
+              },
+              "leftLittleProximal": {
+                "node": 52.0,
+                "node_name": "J_Bip_L_Little1"
+              },
+              "leftLowerArm": {
+                "node": 47.0,
+                "node_name": "J_Bip_L_LowerArm"
+              },
+              "leftLowerLeg": {
+                "node": 84.0,
+                "node_name": "J_Bip_L_LowerLeg"
+              },
+              "leftMiddleDistal": {
+                "node": 57.0,
+                "node_name": "J_Bip_L_Middle3"
+              },
+              "leftMiddleIntermediate": {
+                "node": 56.0,
+                "node_name": "J_Bip_L_Middle2"
+              },
+              "leftMiddleProximal": {
+                "node": 55.0,
+                "node_name": "J_Bip_L_Middle1"
+              },
+              "leftRingDistal": {
+                "node": 60.0,
+                "node_name": "J_Bip_L_Ring3"
+              },
+              "leftRingIntermediate": {
+                "node": 59.0,
+                "node_name": "J_Bip_L_Ring2"
+              },
+              "leftRingProximal": {
+                "node": 58.0,
+                "node_name": "J_Bip_L_Ring1"
+              },
+              "leftShoulder": {
+                "node": 45.0,
+                "node_name": "J_Bip_L_Shoulder"
+              },
+              "leftThumbDistal": {
+                "node": 63.0,
+                "node_name": "J_Bip_L_Thumb3"
+              },
+              "leftThumbIntermediate": {
+                "node": 62.0,
+                "node_name": "J_Bip_L_Thumb2"
+              },
+              "leftThumbProximal": {
+                "node": 61.0,
+                "node_name": "J_Bip_L_Thumb1"
+              },
+              "leftToes": {
+                "node": 86.0,
+                "node_name": "J_Bip_L_ToeBase"
+              },
+              "leftUpperArm": {
+                "node": 46.0,
+                "node_name": "J_Bip_L_UpperArm"
+              },
+              "leftUpperLeg": {
+                "node": 83.0,
+                "node_name": "J_Bip_L_UpperLeg"
+              },
+              "neck": {
+                "node": 17.0,
+                "node_name": "J_Bip_C_Neck"
+              },
+              "rightEye": {
+                "node": 20.0,
+                "node_name": "J_Adj_R_FaceEye"
+              },
+              "rightFoot": {
+                "node": 89.0,
+                "node_name": "J_Bip_R_Foot"
+              },
+              "rightHand": {
+                "node": 67.0,
+                "node_name": "J_Bip_R_Hand"
+              },
+              "rightIndexDistal": {
+                "node": 70.0,
+                "node_name": "J_Bip_R_Index3"
+              },
+              "rightIndexIntermediate": {
+                "node": 69.0,
+                "node_name": "J_Bip_R_Index2"
+              },
+              "rightIndexProximal": {
+                "node": 68.0,
+                "node_name": "J_Bip_R_Index1"
+              },
+              "rightLittleDistal": {
+                "node": 73.0,
+                "node_name": "J_Bip_R_Little3"
+              },
+              "rightLittleIntermediate": {
+                "node": 72.0,
+                "node_name": "J_Bip_R_Little2"
+              },
+              "rightLittleProximal": {
+                "node": 71.0,
+                "node_name": "J_Bip_R_Little1"
+              },
+              "rightLowerArm": {
+                "node": 66.0,
+                "node_name": "J_Bip_R_LowerArm"
+              },
+              "rightLowerLeg": {
+                "node": 88.0,
+                "node_name": "J_Bip_R_LowerLeg"
+              },
+              "rightMiddleDistal": {
+                "node": 76.0,
+                "node_name": "J_Bip_R_Middle3"
+              },
+              "rightMiddleIntermediate": {
+                "node": 75.0,
+                "node_name": "J_Bip_R_Middle2"
+              },
+              "rightMiddleProximal": {
+                "node": 74.0,
+                "node_name": "J_Bip_R_Middle1"
+              },
+              "rightRingDistal": {
+                "node": 79.0,
+                "node_name": "J_Bip_R_Ring3"
+              },
+              "rightRingIntermediate": {
+                "node": 78.0,
+                "node_name": "J_Bip_R_Ring2"
+              },
+              "rightRingProximal": {
+                "node": 77.0,
+                "node_name": "J_Bip_R_Ring1"
+              },
+              "rightShoulder": {
+                "node": 64.0,
+                "node_name": "J_Bip_R_Shoulder"
+              },
+              "rightThumbDistal": {
+                "node": 82.0,
+                "node_name": "J_Bip_R_Thumb3"
+              },
+              "rightThumbIntermediate": {
+                "node": 81.0,
+                "node_name": "J_Bip_R_Thumb2"
+              },
+              "rightThumbProximal": {
+                "node": 80.0,
+                "node_name": "J_Bip_R_Thumb1"
+              },
+              "rightToes": {
+                "node": 90.0,
+                "node_name": "J_Bip_R_ToeBase"
+              },
+              "rightUpperArm": {
+                "node": 65.0,
+                "node_name": "J_Bip_R_UpperArm"
+              },
+              "rightUpperLeg": {
+                "node": 87.0,
+                "node_name": "J_Bip_R_UpperLeg"
+              },
+              "spine": {
+                "node": 2.0,
+                "node_name": "J_Bip_C_Spine"
+              },
+              "upperChest": {
+                "node": 4.0,
+                "node_name": "J_Bip_C_UpperChest"
+              }
+            },
+            "kind": "vrm_preparation",
+            "limitations": [
+              "Base textures and rig imported. VRM toon lighting/outline appearance is approximated.",
+              "VRM spring data is retained. Hair & clothes can simulate supported chains; native behavior is approximated. Gaze and first-person settings remain data only.",
+              "Facial morph geometry is retained. Supported hands/feet can use Studio limb posing; native VRM constraints and expression controls are not reproduced."
+            ],
+            "native_meta": {
+              "allowedUserName": "OnlyAuthor",
+              "author": "pixiv VRoid Project",
+              "commercialUssageName": "Disallow",
+              "licenseName": "Redistribution_Prohibited",
+              "sexualUssageName": "Disallow",
+              "texture": 24.0,
+              "title": "AvatarSample_A",
+              "violentUssageName": "Disallow"
+            },
+            "orientation": "HAS +Z forward; VRM0 rotated180degrees aroundY",
+            "preserved": [
+              "embedded geometry, skin, texture and morph buffers",
+              "native VRM extension data and provenance"
+            ],
+            "scale": 1.0,
+            "schema_version": 1.0,
+            "source_file": "AvatarSample_Avrm0.vrm",
+            "source_sha256": "f7b4573b241b3e91c7c5f58bed342133a4e5f7e0c1125e1cedc49723ace9b288",
+            "vrm_version": "0.x",
+            "warnings": [
+              "Base textures and rig imported. VRM toon lighting/outline appearance is approximated.",
+              "VRM spring data is retained. Hair & clothes can simulate supported chains; native behavior is approximated. Gaze and first-person settings remain data only.",
+              "Facial morph geometry is retained. Supported hands/feet can use Studio limb posing; native VRM constraints and expression controls are not reproduced."
+            ]
+          },
+          "note": "Keep full native preparation bundle; only GLB and this supplied report are managed here. Native fidelity is not implied.",
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "motion_assist": {
+          "enabled": true,
+          "format": "studio_motion_assist_1",
+          "strength": 0.65
+        },
+        "name": "AvatarSample_Avrm0.vrm",
+        "parent_id": "",
+        "path": "assets/3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56.glb",
+        "pose": {},
+        "pose_keys": [],
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "presence_offset": 0,
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56",
+        "shape_base": {},
+        "shape_draft_frame": 0,
+        "shape_names": {},
+        "shape_pose": {},
+        "shape_starts": {},
+        "start_frame": 0,
+        "visibility_keys": [],
+        "visible": true
+      }
+    ]
+  },
+  "failures": 0,
+  "layer_sha": "09955fd72b30583b79516049e879bf1aba5d73a69bb044ac6eba7f12a6bfb0f7",
+  "movie": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\motion-animation-app\\1793664789670892000/render_1793664807_17620331_0/movie.mp4",
+  "native_reports": [
+    {
+      "bones": 126,
+      "checks": 23,
+      "failures": 0,
+      "foot_error": 4.6601402914348e-07,
+      "name": "Miku_Hatsune.pmd"
+    },
+    {
+      "bones": 77,
+      "checks": 23,
+      "failures": 0,
+      "foot_error": 2.5707370809868735e-07,
+      "name": "reimu_hakurei_bikini_ragdoll.mdl"
+    },
+    {
+      "bones": 83,
+      "checks": 23,
+      "failures": 0,
+      "foot_error": 6.578487159458746e-07,
+      "name": "scout.mdl"
+    },
+    {
+      "bones": 91,
+      "checks": 23,
+      "failures": 0,
+      "foot_error": 2.90692014459637e-07,
+      "name": "AvatarSample_A.vrm"
+    },
+    {
+      "bones": 91,
+      "checks": 23,
+      "failures": 0,
+      "foot_error": 2.6708019618126855e-07,
+      "name": "AvatarSample_Avrm0.vrm"
+    }
+  ],
+  "pose_hashes": [
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "3d5784e0a8b9135c538643feadc42c910acfe8844e9fbb8f965506fde1b1b427",
+    "dca17f473b4a1e244a96a0df1bc28c20a014f2e44a7c921e4ca57db995a96518",
+    "c2e8d1ad344f78db7095fcb71b9b49ca6ec968b51a53850e721cdf4aef8a02c2",
+    "6519deb1dae82356e694e7d58a6c825c79e2655d06a03442d2a2c606a639a894",
+    "1e443f718915c89cd383b5106d7ae41420c81edbecf697579089a95e7a76456b",
+    "d8c1e3e2b9e69dffcf59ba8950866944018714a190bf9d434a58c9abc62c92d9",
+    "125865bd898f3a54cb15ab8207ff58d7d9f7092d52bbe123a8cd9e3905ed6db0",
+    "17d4d6f13ecbe6c4c71681ed5e175374f5bca9fc37a7d6584e2bae53053ce565",
+    "3a889ad62ebaba74432868692dd8ad8ab72dc1ab8d78fc52c659e4f4ef01c409",
+    "b6ced56acc35ca24e5dcb13124d90e595d874e803288e8f59606acf264149b8a",
+    "a8b3ce6333ec53638bded0b38a45a61260e75a92d9e454b614e4e4ca34760a75",
+    "3070ae67c394686099c923db486c4959f547d1d4c0e6bbe742efe9e638dc1e1c",
+    "6b823d7e4f4497eb3a0f9c21191d3197b6c7079c6192d2dc98f2a1abd399885a",
+    "aa0b2400914f12f467cef15d74fd9c592eb3f8faf0e4aea0d5b084843f95368f",
+    "92e4fde6b7317fc2ebe041beb1037d8b6a94da8c6d471bdeb9fc00f7b4b78b32",
+    "08068e0b112d0287854df3a163b5ffd0b8ce07c0c3c68f211f5d219461a04689",
+    "6074d82d02017d7727d62b35da22b552a73fde26892adcb6d591ef89294a7611",
+    "ec45faf9b63a2c6949fc9d137645fa4cd7c28190493b561dd9c33e4a08b60359",
+    "59878dc0455ce075beaf55bdb33b8043c3262225b0c8562dbaa32845d9464eb7",
+    "d2b8eb25def89fcfa73758583f123737c52658aff524b1c7755b0afba8b6c9dc",
+    "e3b7423cf0efbc75f423a2363e2899d7e0fc4833c155713492ff542e211b7f13",
+    "6ab035b3df45396b81b450e5afb71a1548eb3f16dd6feee187ec3c82f0841dce",
+    "dca546803e3013f2f635e5dd6573bc45ca4ceda6657257a9178d122724037a08",
+    "f55c51fbe53b0dba29338e5575473a44233b59744b9e24fb31c5e901e5a0c097",
+    "469964323bcfadb93903ddf1d61f17fc3f74a67df2b6886826dce56a9734b344",
+    "f66837b5d79df83ee0757f5c1fa7a7bc0fe67426d399d4b0bde7125742454427",
+    "8a49a0de4b912e23acc29068e51e421e002413f98c8544f75c9daced41c84e1d",
+    "c7f3bef192ef0f246cee9670c47fea3ac06b2f2032c14d3bdd0e873e2b08c3fe",
+    "4d396b6245fd3360bda26ccd32f1fbf03072247792ba73f70ecd7c28c1088147",
+    "a208129ac9209733990cb7d229772bc63fea85302279d459bdbe703472329c61",
+    "f81cb30cab7a8bf5b8f8bafa0d9a8102ec84de0a0253c642d568d80b800349b1",
+    "bffa393f726d5886208c882dcbd7a7a95c6375354eda008c436fb9cd4a5944e3",
+    "3bf28021bf964ac3ae66b79f4685c5088c8c9c8eb80330f152dca46757116a02",
+    "9a68c7b73a0e70d13f8bb3226056d2d6d3e12f80d586cd815ea6e3922e49092d",
+    "b65b452f51e11b77b886674f809e1b539e9d29d1840073f507ac1e34273d67fd",
+    "68cd8fc7a6df4fd521c789f1d690f6cf8b13d5d1de7a52823dc4567b0f85427d",
+    "402f476b211dca315f3e5d0502c599ba24a419221b6080a77c05b620e20d0130",
+    "80b48d4213ddac77c0a5778e8a3dcb89a57859c8f3d7788f7b8d19f64e37fd47",
+    "898748918e1f515301a431f69ec03af45fac23df199e4fdd57f257d0fc1d2170",
+    "738af0c77f809e74d52cfa34ba0953cea5d1bb5eaca25aa8a56bcf51b26b6ed4",
+    "024ad64517e4beb8e04f0360f1fee35a510f98243a0dfcee3098c12f820ce4d9",
+    "d93fecfd28766d489bce81e09a88e3394670c6ed3ccaa4b8bf2353b12d2cb19c",
+    "2f7ac709da5cb8a912c07a66a27ae9be423a1bee71ce5fb3eb26d142d793d5ec",
+    "41d4dfe077533433f4c75135b45e2acd6fa41b4bd8d239baedd24847ee89620c",
+    "f632dfe8ca7d95df6ebe140673453b06c5075de75d25411cb21678766d3b1707",
+    "114bbdb5e3db48b49c851db04acafa657830c91c7ab8f04c79baec0dae5fbc3d",
+    "0c30dc88b78048b32a0b3a9da9b00918613ca123ccb3df6a6409091067885a30",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "3d0619956f6ee86278ec1d6137c22942fddfd7c7010373765f1448c87bd1ad6e",
+    "c8f521605f6e2f928f558bf9838cfefebcfa66e60e8b1a1c2e9251930154f2f7",
+    "55e861d36b17821284212faa03c5fd1883e11c79c94b60402e1329e9b2eb9bd6",
+    "161a1caeec1495140b441ca18ac8161a86108fe0c1a4c4e53c3efca3fe012a9a",
+    "ff4650883533b6d008423987afdd79044b83078c2dbbc5f52c169c2fa9573adc",
+    "33a5c98c37d94aa4b63f000a006ceb23e99c236bc2b6e55308040f3d3a92f82e",
+    "eda46c4629b4653ca88e2dd461fad83a2e01bfe56cfc5133471eb5b4e8da45c3",
+    "ca72652977b9ddb20ae9a5c224bd25f31e791bdec138fa314b1f0b7bf5405709",
+    "274c80e63907e2c371ff890f8ace676580392498b27ca83db7259c4eb2013e96",
+    "f6ff257a880ceea990afcb2003558a672ce5ca840ba0364506bab56d073b6903",
+    "f9d6d367a5845fc7331d5a56945ed3cd98ffa1e71f02f5c1d554d3cb407a83be",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417",
+    "f3dc7ab94d8b599a999d15fcf267bcba15f15129aa0f01732a1e43eb09e21417"
+  ],
+  "project": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\motion-animation-app\\1793664789670892000/motion-feeling.has",
+  "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\motion-animation-app\\1793664789670892000",
+  "private_receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\motion_animation_smoke_8f8194d11504473e8a57135358fc53e4.json",
+  "reader": {
+    "changed_channels": 0,
+    "checks": 4,
+    "failures": 0,
+    "mean_error": 0.0,
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\motion_animation_read_054c0f5a657a48c098e620eafb8587f6.json"
+  }
+}

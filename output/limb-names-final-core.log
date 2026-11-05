@@ -1,0 +1,210 @@
+PASS unit: 0.355s
+PASS spikes: 5.281s
+PASS editor: 6.771s
+PASS export_failures: 1.6s
+PASS audio_editor: 8.7s
+PASS audio_dummy: 3.365s
+PASS ui: 2.542s
+PASS recovery_write: 2.159s
+PASS recovery: 2.107s
+PASS pose: 11.34s
+PASS autokey: 8.335s
+PASS new_scene: 5.299s
+PASS world_selection: 4.558s
+PASS world_document: 2.344s
+PASS world_runtime: 8.581s
+PASS world_edit: 11.056s
+PASS world_workflow: 6.462s
+PASS object_timing: 14.909s
+PASS bone_labels: 2.946s
+PASS animation_clips_unit: 0.37s
+PASS animation_clips: 18.693s
+PASS visibility: 14.482s
+PASS animated_channels: 9.021s
+PASS limb_ik: 20.188s
+{
+  "unit": {
+    "exit": 0,
+    "seconds": 0.355
+  },
+  "spikes": {
+    "exit": 0,
+    "seconds": 5.281
+  },
+  "editor": {
+    "exit": 0,
+    "seconds": 6.771
+  },
+  "export_failures": {
+    "exit": 0,
+    "seconds": 1.6
+  },
+  "audio_editor": {
+    "exit": 0,
+    "seconds": 8.7
+  },
+  "audio_dummy": {
+    "exit": 0,
+    "seconds": 3.365
+  },
+  "ui": {
+    "exit": 0,
+    "seconds": 2.542
+  },
+  "recovery_write": {
+    "exit": 0,
+    "seconds": 2.159
+  },
+  "recovery": {
+    "exit": 0,
+    "seconds": 2.107
+  },
+  "pose": {
+    "exit": 0,
+    "seconds": 11.34
+  },
+  "autokey": {
+    "exit": 0,
+    "seconds": 8.335
+  },
+  "new_scene": {
+    "exit": 0,
+    "seconds": 5.299
+  },
+  "world_selection": {
+    "exit": 0,
+    "seconds": 4.558
+  },
+  "world_document": {
+    "exit": 0,
+    "seconds": 2.344
+  },
+  "world_runtime": {
+    "exit": 0,
+    "seconds": 8.581
+  },
+  "world_edit": {
+    "exit": 0,
+    "seconds": 11.056
+  },
+  "world_workflow": {
+    "exit": 0,
+    "seconds": 6.462
+  },
+  "object_timing": {
+    "exit": 0,
+    "seconds": 14.909
+  },
+  "bone_labels": {
+    "exit": 0,
+    "seconds": 2.946
+  },
+  "animation_clips_unit": {
+    "exit": 0,
+    "seconds": 0.37
+  },
+  "animation_clips": {
+    "exit": 0,
+    "seconds": 18.693
+  },
+  "visibility": {
+    "exit": 0,
+    "seconds": 14.482
+  },
+  "animated_channels": {
+    "exit": 0,
+    "seconds": 9.021
+  },
+  "limb_ik": {
+    "exit": 0,
+    "seconds": 20.188
+  },
+  "silent_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "tone_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "editor_audio_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "autokey_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "new_scene_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_runtime_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_edit_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_workflow_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "object_timing_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animation_clips_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "visibility_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animated_channels_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "limb_ik_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_0": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_1": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "pose_checks": 45,
+  "actual_mmd_tested": true,
+  "tone_onset_seconds": 1.0,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "representative_png_sha256": {
+    "frame_000001.png": "d895f61f3feb20a69a0c3fa164390d57adb586da526e6b348fcc0ec075eb403d",
+    "frame_000025.png": "b38facabaa27f27ca6666e082b02f02d3959d079323d3fc66616ce9d1655db7d",
+    "frame_000048.png": "272d24b23ed59f7fd76d81184e76bbb9f76d442a4beb98b5f059cd0b871cc7cf"
+  }
+}

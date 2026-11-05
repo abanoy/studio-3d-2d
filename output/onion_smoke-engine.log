@@ -1,0 +1,38 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS held frames use previous and next exposures rather than the current held drawing
+PASS gaps retain their surrounding exposure guides
+PASS first exposure has no invented previous drawing
+PASS last exposure has no invented next drawing
+PASS empty layer has no guides
+PASS onion guides default off in Simple
+PASS Simple toggle shows two actual GPU ghost drawings
+PASS guides bind exact unmodified source alpha textures
+PASS previous and next opaque-black source marks become visible tinted screen guides
+PASS current opaque drawing remains exactly above the ghosts
+PASS previous blue and next pink remain distinguishable
+PASS guides preserve exact source drawings, world, camera/view and geometry
+PASS enabling guides is not a document edit or autosave action
+PASS ghosts are absent from the actual final-render evaluator
+PASS fill samples real drawing pixels rather than visible onion guides in an empty exposure
+PASS unapplied fill preview creates no cel and temporarily hides onion guides
+PASS idle frames and scrubbing inside a hold reuse both GPU textures
+PASS painting the current cel does not reupload unchanged neighboring rasters
+PASS Undo of an earlier drawing invalidates only its ghost texture
+PASS Redo refreshes the edited neighbor without rebuilding its peer
+PASS opacity updates shader uniforms without copying full-HD rasters
+PASS Advanced opacity persists when returning to Simple
+PASS hidden active layer has no onion silhouette
+PASS empty Rough never borrows Ink guides
+PASS Scene navigation hides the drawing guides
+PASS normal timeline playback hides guides
+PASS background, ghosts and front drawing share the exact floating-point zoom/pan rectangle
+PASS zoomed GPU guides move with their source pixels and stay beneath current ink
+PASS New immediately has no stale drawing texture
+PASS packed HAS keeps exact cels while the guide toggle remains a personal session setting
+PASS freshly loaded images replace the old ghost-cache identities
+PASS recovery retains actual artwork and preserves the manual HAS
+PASS MP4 PNG matches reopened artwork exactly without onion guides
+PASS Simple onion toggle fits the actual1200pixel workspace
+ONION_SMOKE {"checks":34,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\onion\\1793504862897547500","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\onion\\1793504862897547500/render_1793504873_10226409_0/movie.mp4","project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\onion\\1793504862897547500/onion.has","uploads":13}

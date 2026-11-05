@@ -1,0 +1,47 @@
+test_component_ids_survive_shapes_moving_separate_regions_together (__main__.MorphReview.test_component_ids_survive_shapes_moving_separate_regions_together) ... ok
+test_existing_review_stays_neutral (__main__.MorphReview.test_existing_review_stays_neutral) ... ok
+test_invalid_weights_and_budget_refuse_before_output (__main__.MorphReview.test_invalid_weights_and_budget_refuse_before_output) ... ok
+test_multiple_signed_targets_are_deltas_before_skinning (__main__.MorphReview.test_multiple_signed_targets_are_deltas_before_skinning) ... ok
+test_node_overrides_mesh_defaults_and_snapshot_overrides_both (__main__.MorphReview.test_node_overrides_mesh_defaults_and_snapshot_overrides_both) ... ok
+test_preview_and_derived_controls_use_shape_without_baking_source (__main__.MorphReview.test_preview_and_derived_controls_use_shape_without_baking_source) ... ok
+test_sparse_corruption_and_target_mismatch_refuse (__main__.MorphReview.test_sparse_corruption_and_target_mismatch_refuse) ... ok
+test_sparse_zero_base_and_dense_replacement (__main__.MorphReview.test_sparse_zero_base_and_dense_replacement) ... ok
+test_worker_uses_same_snapshot_for_inspect_preview_and_build (__main__.MorphReview.test_worker_uses_same_snapshot_for_inspect_preview_and_build) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.355s
+
+OK
+{
+  "checks": 24,
+  "failures": 0,
+  "metrics": {
+    "node-defaults": {
+      "deformation": 78048,
+      "gpu_geometry_error": 1.69244657399759e-07,
+      "reimport": {
+        "changed": 9,
+        "mean": 0.000118634259259259
+      }
+    },
+    "signed-snapshot": {
+      "deformation": 58500,
+      "gpu_geometry_error": 6.51659632922019e-08,
+      "reimport": {
+        "changed": 3,
+        "mean": 2.26658950617284e-05
+      }
+    },
+    "sparse": {
+      "deformation": 44289,
+      "gpu_geometry_error": 1.20137002568299e-07,
+      "reimport": {
+        "changed": 10,
+        "mean": 6.77565586419753e-05
+      }
+    }
+  },
+  "folder": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\helper-morphs\\1793393209027201500",
+  "receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\helper_morphs_render_0563cf08e92d41109ea42e8b97bd43a9.json",
+  "product_integration": false
+}

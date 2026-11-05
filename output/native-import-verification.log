@@ -1,0 +1,48 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS real model picker accepts PMD/PMX/VRM
+PASS native file starts responsive local worker without external conversion UI: Miku
+PASS native import appends one standard instance: Miku
+PASS native source identity/parameters retained: Miku
+PASS native input bytes unchanged: Miku
+PASS native arm remains selectable: Miku
+PASS native skin deformation and auto-key at0/24: Miku
+PASS native pose Undo/Redo restores same standard data: Miku
+PASS native file starts responsive local worker without external conversion UI: Street
+PASS native import appends one standard instance: Street
+PASS native source identity/parameters retained: Street
+PASS append keeps earlier instance data: Miku_Hatsune.pmd
+PASS native input bytes unchanged: Street
+PASS native PMX map uses shared root transform and auto-key
+PASS native file starts responsive local worker without external conversion UI: VRM1
+PASS native import appends one standard instance: VRM1
+PASS native source identity/parameters retained: VRM1
+PASS append keeps earlier instance data: Miku_Hatsune.pmd
+PASS append keeps earlier instance data: street01_android.pmx
+PASS native input bytes unchanged: VRM1
+PASS native arm remains selectable: VRM1
+PASS native skin deformation and auto-key at0/24: VRM1
+PASS native pose Undo/Redo restores same standard data: VRM1
+PASS native file starts responsive local worker without external conversion UI: VRM0
+PASS native import appends one standard instance: VRM0
+PASS native source identity/parameters retained: VRM0
+PASS append keeps earlier instance data: Miku_Hatsune.pmd
+PASS append keeps earlier instance data: street01_android.pmx
+PASS append keeps earlier instance data: AvatarSample_A.vrm
+PASS native input bytes unchanged: VRM0
+PASS native arm remains selectable: VRM0
+PASS native skin deformation and auto-key at0/24: VRM0
+PASS native pose Undo/Redo restores same standard data: VRM0
+PASS MMD model/map and both VRM versions coexist in one native HAS world
+PASS VRM0/1 canonical humanoid metadata and explicit facing normalization retained
+PASS all direct native imports save as portable HAS with editable drawing and pose keys
+PASS normal HAS Open restores complete native scene without selection
+NATIVE_PACKED_DIAGNOSTIC {"channels":0,"data_exact":true,"locations":[],"mean":0.0,"media_exact":true,"transforms_exact":true}
+PASS native HAS reopen retains exact scene/transforms/media within established GLB rebuild bounds
+PASS native poses/camera/independent RGBA export exactly matches preview
+PASS failed native import preserves all current instances and authored keys
+PASS native VRoid project gets actionable VRM guidance instead of false import
+PASS MMD cancellation identifies its actual owned Blender process
+PASS cancelled MMD import preserves complete world and waits for its live converter to terminate
+NATIVE_IMPORT {"bundles":["C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664835-801-1701648","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664840-289-6188623","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664844-913-10813147","C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/compatibility/source-1793664846-413-12314070"],"checks":43,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/native-import/run_522037","movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/native-import/run_522037/render_1793664852_18054235_0/movie.mp4","packed_pixels":{"channels":0,"mean":0.0},"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/native-import/run_522037/native.has"}

@@ -1,0 +1,36 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS real new project uses Unshaded without studio illumination
+PASS actual Hair & clothes control starts: original-unshaded
+PASS live secondary update retains project lighting and inherited opacity: original-unshaded
+PASS native colored skin remains visible in Unshaded live motion: original-unshaded
+PASS live appearance changes no authored model, shot key or view: original-unshaded
+PASS actual Hair & clothes control starts: original-lit
+PASS live secondary update retains project lighting and inherited opacity: original-lit
+PASS live appearance changes no authored model, shot key or view: original-lit
+PASS actual Hair & clothes control starts: original-studio
+PASS live secondary update retains project lighting and inherited opacity: original-studio
+PASS live appearance changes no authored model, shot key or view: original-studio
+PASS original fixture bytes stay unchanged
+PASS parented secondary fixture installs
+PASS ordinary world evaluation starts at half parent opacity
+PASS actual Hair & clothes control starts: parent-fade
+PASS live secondary update retains project lighting and inherited opacity: parent-fade
+PASS native colored skin remains visible in Unshaded live motion: parent-fade
+PASS live appearance changes no authored model, shot key or view: parent-fade
+PASS live peer restart after normal Add retains inherited fade and Unshaded
+PASS explicit legacy apply defaults remain independent of cached world context
+PASS native VRM loads: AvatarSample_A.vrm
+PASS actual Hair & clothes control starts: AvatarSample_A
+PASS live secondary update retains project lighting and inherited opacity: AvatarSample_A
+PASS native colored skin remains visible in Unshaded live motion: AvatarSample_A
+PASS live appearance changes no authored model, shot key or view: AvatarSample_A
+PASS original native file remains unchanged: AvatarSample_A.vrm
+PASS native VRM loads: AvatarSample_Avrm0.vrm
+PASS actual Hair & clothes control starts: AvatarSample_Avrm0
+PASS live secondary update retains project lighting and inherited opacity: AvatarSample_Avrm0
+PASS native colored skin remains visible in Unshaded live motion: AvatarSample_Avrm0
+PASS live appearance changes no authored model, shot key or view: AvatarSample_Avrm0
+PASS original native file remains unchanged: AvatarSample_Avrm0.vrm
+LIVE_APPEARANCE {"checks":32,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\live-appearance\\1793520773264493400","metrics":{"AvatarSample_A":{"before_colors":1631,"live_colors":1646,"opacity":1.0,"unshaded":true},"AvatarSample_Avrm0":{"before_colors":1631,"live_colors":1645,"opacity":1.0,"unshaded":true},"original-lit":{"before_colors":0,"live_colors":0,"opacity":1.0,"unshaded":false},"original-studio":{"before_colors":14805,"live_colors":14805,"opacity":1.0,"unshaded":false},"original-unshaded":{"before_colors":14805,"live_colors":14805,"opacity":1.0,"unshaded":true},"parent-fade":{"before_colors":14668,"live_colors":14668,"opacity":0.5,"unshaded":true}},"native_models":["AvatarSample_A.vrm","AvatarSample_Avrm0.vrm"]}

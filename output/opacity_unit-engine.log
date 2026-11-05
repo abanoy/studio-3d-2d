@@ -1,0 +1,23 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS all256 alpha values round exactly while original straight RGB and pixels stay unchanged
+PASS full opacity reuses the unchanged original image
+PASS invalid opacity refuses: -0.1
+PASS invalid opacity refuses: 1.1
+PASS invalid opacity refuses: nan
+PASS invalid opacity refuses: inf
+PASS invalid opacity refuses: true
+PASS invalid opacity refuses: 0.5
+PASS invalid opacity refuses: <null>
+PASS old missing field and normalized endpoints remain valid
+PASS held images reuse exact cached faded pixels without another traversal
+PASS a small dirty region updates only120 pixels, preserving unchanged alpha
+PASS partial refresh equals an independent whole-image opacity calculation exactly
+PASS multiple pending strokes accumulate their dirty union
+PASS whole-image replacements invalidate the complete cache
+PASS changing opacity rebuilds the source image at the new amount
+PASS zero opacity is absent while old layer output remains exact
+PASS derived cache stays bounded to four rasters across many cel images
+PASS tutorial does not count paint that rounds to invisible after layer opacity
+PASS tutorial still recognizes actually visible faint ink
+OPACITY_UNIT {"checks":20,"failures":0,"full_hd_ms":38.136,"patch120_ms":0.032}

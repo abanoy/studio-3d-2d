@@ -1,0 +1,74 @@
+{
+  "format": "studio_source_overlay_1",
+  "base": "533d71d37",
+  "state": "superseded_by_approved_model7",
+  "files": {
+    "src/model_opacity.gd": {
+      "before_sha256": "94f8888da0bcaf66161d7780cc332a0ef05014ac96ab0cc7867b8b587d8dcb23",
+      "sha256": "11f0b7f6981c726de2da174b3ed607a790254b64df04180e918664565cb8caf4"
+    },
+    "src/world_selection.gd": {
+      "before_sha256": "47c94a081be020f39da707ab00102fb6578425fa20da017be512618259ac3104",
+      "sha256": "94a93db34ea04052f4fbef8cd137513fffd2f06b135b8f9f4b7c8a95f7e5c0d4"
+    }
+  },
+  "normal_source_files": 327,
+  "normal_checks": {
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\normal-selection-checks\\1793520702177415500",
+    "results": [
+      {
+        "name": "world_selection",
+        "exit": 0,
+        "ok": true,
+        "log": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\normal-selection-checks\\1793520702177415500\\world_selection.log",
+        "sha256": "20ae76b928faf8e0baf12196efa82e5259e158315c8551df070b1be13398fe3d",
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\world_selection_smoke_1403f34714e849b5ae4de9fe55192d25.json"
+      },
+      {
+        "name": "visibility",
+        "exit": 0,
+        "ok": true,
+        "log": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\normal-selection-checks\\1793520702177415500\\visibility.log",
+        "sha256": "d48c701c6f8ab01cf017b2c0ccde50a713b32a71f7572fd3c92fa187cbe80550",
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\visibility_smoke_fa36cdfc0e604cdd9db3f909ad96b47f.json"
+      },
+      {
+        "name": "pose_bounds",
+        "exit": 0,
+        "ok": true,
+        "log": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\normal-selection-checks\\1793520702177415500\\pose_bounds.log",
+        "sha256": "3e796e3320761d4d14b2e5532e692cc111fa167314a611ed26bf89ceb001939d",
+        "report": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\pose-bounds-verification.json",
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\pose_bounds_smoke_f670d94690674169b60d2030b20cf02b.json"
+      },
+      {
+        "name": "lighting",
+        "exit": 0,
+        "ok": true,
+        "log": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\normal-selection-checks\\1793520702177415500\\lighting.log",
+        "sha256": "5910c2a14cac0abf05e1e05fd32fe88bf0d9b0b0910144b676dbb20d8652281a",
+        "report": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\lighting-verification.json",
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\lighting_smoke_cd746760add242d496252983715c15e0.json"
+      },
+      {
+        "name": "live_appearance",
+        "exit": 0,
+        "ok": true,
+        "log": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\normal-selection-checks\\1793520702177415500\\live_appearance.log",
+        "sha256": "edcb2025c89c824f932d18971f5d1b20cd1c24926af1f7f35a6b51b4037f5a5b",
+        "report": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\live-appearance-verification.json",
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\private-desktop\\live_appearance_smoke_dee36766322c43e5908d967ef5c49fd8.json"
+      }
+    ],
+    "canonical": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d",
+    "overlay_sha256": {
+      "src/model_opacity.gd": "11f0b7f6981c726de2da174b3ed607a790254b64df04180e918664565cb8caf4",
+      "src/world_selection.gd": "94a93db34ea04052f4fbef8cd137513fffd2f06b135b8f9f4b7c8a95f7e5c0d4"
+    }
+  },
+  "normal_compatibility": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\normal-selection-compat-verification.json",
+  "backup": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\normal-selection-fix",
+  "model7_supported": false,
+  "checkpoint": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\checkpoints\\2026-11-01-031749-contact-selection-WIP",
+  "superseded_by": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\normal-source-state.json"
+}

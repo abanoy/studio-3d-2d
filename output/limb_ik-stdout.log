@@ -1,0 +1,66 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS Simple defaults to natural movement for a validated hand chain
+PASS actual hand gizmo uses IK as an unkeyed draft until release
+AUTHORED_HAND_ERROR 0.00000027677677
+PASS hand reaches its gizmo target by bending the limb
+PASS hand world orientation stays stable while its chain bends
+PASS release auto-keys the three changed joints in one Undo step
+PASS IK does not move the model root or create camera keys
+PASS solved joint rotations actually deform the skinned mesh
+PASS Undo restores the complete preceding FK pose and key list
+PASS Redo restores the same solved pose without rerunning live IK
+PASS Advanced reverse bend changes the elbow side while keeping the hand in place
+PASS reverse bend is one ordinary undoable pose edit
+PASS Escape/cancel restores the original hand pose without an extra key
+PASS unreachable targets clamp to limb reach without mutating the live rig
+PASS nonfinite targets fail without replacing the pose
+PASS unsupported nonuniform scale reports direct-posing fallback without keys or Undo noise
+PASS opaque older metadata does not crash conservative name mapping
+PASS visible opt-out retains direct per-bone movement
+PASS IK fixture imports independent WAV audio
+PASS packed HAS replays solved ordinary pose keys without solver state
+PASS MP4 uses the same solved pose with independent camera/cel/audio
+PASS foot gizmo bends its thigh and knee to reach a closer target
+PASS unrecognized or incomplete rigs retain normal direct bone movement
+PASS world-axis IK works through a rotated/scaled parent without changing the group
+PASS native left hand has a validated chain: pose-smoke/miku-project
+PASS native limb solver produces a result: pose-smoke/miku-project
+NATIVE_IK_ERROR pose-smoke/miku-project 0.00000065715483
+PASS native hand reaches target and auto-keys: pose-smoke/miku-project
+PASS native IK Undo, metadata and source bytes stay intact: pose-smoke/miku-project
+PASS native left foot has a validated chain: pose-smoke/miku-project
+PASS native hand and foot use Simple body names: pose-smoke/miku-project
+PASS native foot reaches target without changing the authored hand: pose-smoke/miku-project
+PASS native solved keys and bindings survive packed HAS: pose-smoke/miku-project
+PASS native left hand has a validated chain: source-smoke/source-project
+PASS native limb solver produces a result: source-smoke/source-project
+NATIVE_IK_ERROR source-smoke/source-project 0.00000024053378
+PASS native hand reaches target and auto-keys: source-smoke/source-project
+PASS native IK Undo, metadata and source bytes stay intact: source-smoke/source-project
+PASS native left foot has a validated chain: source-smoke/source-project
+PASS native hand and foot use Simple body names: source-smoke/source-project
+PASS native foot reaches target without changing the authored hand: source-smoke/source-project
+PASS native solved keys and bindings survive packed HAS: source-smoke/source-project
+PASS native left hand has a validated chain: sfm-smoke/project
+PASS native limb solver produces a result: sfm-smoke/project
+NATIVE_IK_ERROR sfm-smoke/project 0.00000015359765
+PASS native hand reaches target and auto-keys: sfm-smoke/project
+PASS native IK Undo, metadata and source bytes stay intact: sfm-smoke/project
+PASS native left foot has a validated chain: sfm-smoke/project
+PASS native hand and foot use Simple body names: sfm-smoke/project
+PASS native foot reaches target without changing the authored hand: sfm-smoke/project
+PASS native solved keys and bindings survive packed HAS: sfm-smoke/project
+PASS VRM imports through ordinary model preparation for IK: AvatarSample_A.vrm
+PASS VRM declared humanoid map identifies its hand chain: AvatarSample_A.vrm
+PASS native VRM declared hand has a Simple body name: AvatarSample_A.vrm
+PASS VRM hand reaches target and original source stays unchanged: AvatarSample_A.vrm
+PASS VRM declared mapping and solved pose survive packed reopen: AvatarSample_A.vrm
+PASS VRM imports through ordinary model preparation for IK: AvatarSample_Avrm0.vrm
+PASS VRM declared humanoid map identifies its hand chain: AvatarSample_Avrm0.vrm
+PASS native VRM declared hand has a Simple body name: AvatarSample_Avrm0.vrm
+PASS VRM hand reaches target and original source stays unchanged: AvatarSample_Avrm0.vrm
+PASS VRM declared mapping and solved pose survive packed reopen: AvatarSample_Avrm0.vrm
+PASS IK never rewrites the source GLB
+LIMB_IK {"checks":58,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/limb-ik/run_648228","hand_error":0.000000276776773944221,"movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/limb-ik/run_648228/render_1793385635_2753026_0/movie.mp4","native_errors":{"pose-smoke/miku-project":0.000000657154828331841,"sfm-smoke/project":0.000000153597653707038,"source-smoke/source-project":0.000000240533779560792},"native_samples":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/limb-ik/run_648228/limb.has","vrm_samples":["AvatarSample_A.vrm","AvatarSample_Avrm0.vrm"]}

@@ -1,0 +1,38 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS old layers start at100percent without a new stored field
+PASS typing an amount alone does not modify the project or preview
+PASS Apply opacity creates one real edit and one autosave action
+PASS quarter opacity rounds alpha to64 without flattening or changing original red pixels
+PASS Enter applies the actual typed opacity field
+PASS onion guides combine their personal strength with the active layer opacity
+PASS rename and visibility edits retain opacity
+PASS opacity Undo restores missing-field compatibility on the original inactive layer
+PASS opacity Redo preserves another selected layer
+PASS a real faded-layer stroke refreshes a small dirty region instead of all2million pixels
+PASS tile Undo restores exact faded preview
+PASS Undo refreshes the two affected64pixel tiles, not the full image
+PASS tile Redo restores exact faded preview
+PASS scrubbing inside a held exposure reuses its faded cache
+PASS zero opacity removes the layer from actual preview
+PASS zero-opacity layers hide their editor onion guides too
+PASS zero-opacity pen and fill refuse invisible edits
+PASS zero opacity excludes paint from final GPU capture exactly
+PASS full opacity returns to the exact legacy drawing path
+PASS applying unchanged full opacity adds no history
+PASS Undo of full opacity restores the prior amount
+PASS faded visible layer still participates in the normal fill worker
+PASS visible-stack fill samples the faded region boundary and retains its edge preview
+PASS fill Undo restores original cel bytes without baking layer opacity
+PASS opacity workflow preserves world, native geometry, explicit shot keys and editor view
+PASS packed HAS reopens raw editable pixels and separate layer opacity
+PASS linked HAS keeps the same independent opacity parameter
+PASS actual background recovery worker thumbnail honors the saved layer opacity
+PASS recovery restores opacity and raw paint without overwriting manual HAS
+PASS directory project stores the new optional layer parameter
+PASS invalid live opacity refuses before any existing save is rewritten
+PASS invalid saved opacity rejects Open and cannot qualify as a good backup
+PASS exported MP4 PNG equals reopened faded preview exactly
+PASS Simple layer opacity fits the actual1200pixel workspace
+OPACITY_SMOKE {"apply_with_frames_ms":206.169,"checks":34,"failures":0,"folder":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\opacity\\1793504794502552000","movie":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\opacity\\1793504794502552000/render_1793504803_7824871_0/movie.mp4","project":"C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\opacity\\1793504794502552000/opacity.has","stroke_pixels":225}

@@ -1,0 +1,20 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS legacy single-clip PCM and waveform stay byte-exact
+PASS all overlaps sum before clipping and quantization
+PASS cancelling overlap does not depend on early clipping order
+PASS over-range mix saturates without wrap and reports clipping
+PASS mute affects only its clip; peers and per-clip waveform remain
+PASS rational frame start, source-sample trim, stereo resample and independent gain
+PASS each timeline row has project-time waveform silence
+PASS unknown collection version refuses
+PASS duplicate clip identity refuses
+PASS invalid empty collection refuses
+PASS more than16 clips refuses before mixing
+PASS nonfinite timing refuses without allocation of a mix
+PASS out-of-range gain refuses
+PASS single and silent documents keep existing layout
+PASS decoded sample budget refuses before oversized mixing
+PASS trim past decoded source end refuses
+PASS incomplete decoded PCM refuses
+MULTI_AUDIO_UNIT {"checks":17,"failures":0}

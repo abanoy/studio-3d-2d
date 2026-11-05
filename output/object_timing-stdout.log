@@ -1,0 +1,41 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS every map/model has an independent collapsed timeline row
+PASS drag previews an eight-frame move without mutating document or Undo
+PASS recovery defers during an active timeline drag
+PASS release outside timeline commits presence and every root/bone key together
+PASS one drag creates one stable-object Undo command
+PASS retiming preserves playhead, camera keys/view and independent drawing
+PASS moving one take preserves other model and map data
+PASS relative root and bone interpolation follows the shifted take
+PASS same relative time retains camera/model/drawing pixels within existing GPU edge tolerance
+TIMING_PIXEL_DIFFERENCE 2 mean=0.00000024112654
+PASS shifted first presence remains absent before its new start
+PASS single take holds its last state after its authored end
+PASS Undo restores original timing after selecting a different object
+PASS Redo restores the full shifted take
+PASS left boundary clamps the whole take without dropping keys
+PASS right boundary preserves relative spacing and the end-boundary key
+PASS Escape cancels the preview without edits or history
+PASS focus loss cancels a timeline gesture safely
+PASS stale drag cannot overwrite another edit to the same object
+PASS timeline gestures and ruler are disabled during actual export control lock
+PASS normal packed HAS reopen preserves moved object presence/keys and all rows
+PASS MP4 export uses the same retimed world and separate cel
+PASS full64-object world still installs with timeline lanes
+PASS 64rows scroll inside a bounded timeline without consuming the viewport
+PASS frame ruler/camera lane remain pinned and column-aligned after row scrolling
+PASS routed click selects the scrolled last object's row and pose target
+PASS timeline edits never alter source geometry
+PASS native rig exposes its original arm for timeline motion: pose-smoke/miku-project
+PASS native skin motion and relative arm keys survive moving its block: pose-smoke/miku-project
+PASS native timing Undo/Redo preserves provenance and original geometry: pose-smoke/miku-project
+PASS native rig exposes its original arm for timeline motion: source-smoke/source-project
+PASS native skin motion and relative arm keys survive moving its block: source-smoke/source-project
+PASS native timing Undo/Redo preserves provenance and original geometry: source-smoke/source-project
+PASS native rig exposes its original arm for timeline motion: sfm-smoke/project
+PASS native skin motion and relative arm keys survive moving its block: sfm-smoke/project
+PASS native timing Undo/Redo preserves provenance and original geometry: sfm-smoke/project
+PASS packed HAS reopens all three retimed MMD/GMod/SFM rigs and timeline rows
+OBJECT_TIMING {"changed_channels":2,"checks":36,"failures":0,"folder":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/object-timing/run_681354","mean_pixel_error":0.000000241126543209877,"movie":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/object-timing/run_681354/render_1793385577_2411625_0/movie.mp4","native_project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/object-timing/run_681354/native-retimed.has","native_samples":["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"],"project":"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/object-timing/run_681354/retimed.has"}

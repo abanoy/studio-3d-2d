@@ -1,0 +1,606 @@
+{
+  "unit": {
+    "exit": 0,
+    "seconds": 0.341
+  },
+  "spikes": {
+    "exit": 0,
+    "seconds": 6.282
+  },
+  "editor": {
+    "exit": 0,
+    "seconds": 7.533
+  },
+  "export_failures": {
+    "exit": 0,
+    "seconds": 1.27
+  },
+  "audio_editor": {
+    "exit": 0,
+    "seconds": 7.947
+  },
+  "audio_dummy": {
+    "exit": 0,
+    "seconds": 3.372
+  },
+  "ui": {
+    "exit": 0,
+    "seconds": 4.21
+  },
+  "recovery_write": {
+    "exit": 0,
+    "seconds": 2.678
+  },
+  "recovery": {
+    "exit": 0,
+    "seconds": 2.481
+  },
+  "pose": {
+    "exit": 0,
+    "seconds": 13.587
+  },
+  "autokey": {
+    "exit": 0,
+    "seconds": 9.33
+  },
+  "new_scene": {
+    "exit": 0,
+    "seconds": 7.398
+  },
+  "world_selection": {
+    "exit": 0,
+    "seconds": 8.338
+  },
+  "world_document": {
+    "exit": 0,
+    "seconds": 3.309
+  },
+  "world_runtime": {
+    "exit": 0,
+    "seconds": 11.779
+  },
+  "world_edit": {
+    "exit": 0,
+    "seconds": 21.074
+  },
+  "world_workflow": {
+    "exit": 0,
+    "seconds": 11.284
+  },
+  "object_timing": {
+    "exit": 0,
+    "seconds": 22.247
+  },
+  "bone_labels": {
+    "exit": 0,
+    "seconds": 4.165
+  },
+  "animation_clips_unit": {
+    "exit": 0,
+    "seconds": 0.616
+  },
+  "animation_clips": {
+    "exit": 0,
+    "seconds": 25.846
+  },
+  "visibility": {
+    "exit": 0,
+    "seconds": 20.758
+  },
+  "animated_channels": {
+    "exit": 0,
+    "seconds": 18.137
+  },
+  "limb_ik": {
+    "exit": 0,
+    "seconds": 32.59
+  },
+  "secondary_motion": {
+    "exit": 0,
+    "seconds": 12.213
+  },
+  "fan_motion": {
+    "exit": 0,
+    "seconds": 19.096
+  },
+  "physics": {
+    "exit": 0,
+    "seconds": 43.96
+  },
+  "physics_contacts": {
+    "exit": 0,
+    "seconds": 60.298
+  },
+  "physics_props": {
+    "exit": 0,
+    "seconds": 28.228
+  },
+  "physics_recording_unit": {
+    "exit": 0,
+    "seconds": 0.822
+  },
+  "physics_recording": {
+    "exit": 0,
+    "seconds": 46.583
+  },
+  "secondary_helpers": {
+    "bind_difference": {
+      "changed": 12,
+      "mean": 0.000217013888888889
+    },
+    "checks": 39,
+    "failures": 0,
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\secondary-helpers\\run_1793408404858365300",
+    "movie": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\secondary-helpers\\run_1793408404858365300/render_1793408416_10847795_0/movie.mp4",
+    "sway_radians": 0.290376305580139,
+    "audio_onset_seconds": 1.0000416666666667,
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "nb_read_frames": "48",
+      "r_frame_rate": "24/1",
+      "duration": "2.000000"
+    },
+    "source_sha256": "4d4ddc8b1414d149d44d881c60270113eb70ea3bec0995c6b817c002f1b20316",
+    "native": {
+      "checks": 14,
+      "failures": 0,
+      "metrics": {
+        "gmod": {
+          "bind_difference": {
+            "changed": 17,
+            "mean": 8.18624614197531e-05
+          },
+          "deformation": {
+            "changed": 1548,
+            "mean": 0.0354671826774691
+          },
+          "original_bones": 77
+        },
+        "mmd": {
+          "bind_difference": {
+            "changed": 0,
+            "mean": 0.0
+          },
+          "deformation": {
+            "changed": 351,
+            "mean": 0.00548828125
+          },
+          "original_bones": 126
+        }
+      },
+      "assessment_counts": {
+        "mmd": {
+          "regions": 89,
+          "suggested": 2,
+          "skipped": 0,
+          "truncated": false
+        },
+        "gmod": {
+          "regions": 163,
+          "suggested": 2,
+          "skipped": 0,
+          "truncated": false
+        },
+        "sfm": {
+          "regions": 32,
+          "suggested": 0,
+          "skipped": 0,
+          "truncated": false
+        }
+      }
+    },
+    "multi": {
+      "checks": 59,
+      "failures": 0,
+      "movies": [
+        "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\secondary-helpers\\run_1793408404858365300/render_1793408449_7933309_0/movie.mp4"
+      ]
+    },
+    "patch": {
+      "checks": 35,
+      "failures": 0,
+      "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\secondary-helpers\\run_1793408404858365300",
+      "movie": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\secondary-helpers\\run_1793408404858365300/render_1793408483_13987165_0/movie.mp4",
+      "audio_onset_seconds": 1.0000416666666667
+    }
+  },
+  "helper_morphs": {
+    "checks": 32,
+    "failures": 0,
+    "metrics": {
+      "many-targets": {
+        "deformation": 81594,
+        "gpu_geometry_error": 1.34110450744629e-07,
+        "reimport": {
+          "changed": 9,
+          "mean": 0.000162760416666667
+        }
+      },
+      "node-defaults": {
+        "deformation": 74574,
+        "gpu_geometry_error": 1.69244657399759e-07,
+        "reimport": {
+          "changed": 9,
+          "mean": 0.000162760416666667
+        }
+      },
+      "signed-snapshot": {
+        "deformation": 54876,
+        "gpu_geometry_error": 6.51659632922019e-08,
+        "reimport": {
+          "changed": 0,
+          "mean": 0.0
+        }
+      },
+      "sparse": {
+        "deformation": 43551,
+        "gpu_geometry_error": 1.20137002568299e-07,
+        "reimport": {
+          "changed": 0,
+          "mean": 0.0
+        }
+      }
+    },
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\helper-morphs\\1793408492055733100",
+    "receipt": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\helper_morphs_render_0494aaff30da4c618f463e0232550cd6.json",
+    "product_integration": false
+  },
+  "source_shapes": {
+    "checks": 39,
+    "failures": 0,
+    "movie": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\source-shapes\\1793408500992272700/render_1793408506_5187547_0/movie.mp4",
+    "review_geometry_error": 1.34110450744629e-07,
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\source-shapes\\1793408500992272700",
+    "private_receipt": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\source_shapes_smoke_8be23fd88a6e46169d52784b02b9b48a.json"
+  },
+  "base_shapes": {
+    "checks": 54,
+    "failures": 0,
+    "gpu_geometry_error": 5.96046447753906e-08,
+    "movie": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\base-shapes\\1793408513980097200/render_1793408520_5937983_0/movie.mp4",
+    "native": {
+      "GMod": {
+        "apply_usec": 79693,
+        "channels": 52,
+        "deformation": 0.00396997248753905,
+        "target": 0
+      },
+      "MMD": {
+        "apply_usec": 108445,
+        "channels": 15,
+        "deformation": 0.0104687800630927,
+        "target": 4
+      },
+      "SFM": {
+        "apply_usec": 2213635,
+        "channels": 520,
+        "deformation": 0.00110812031198293,
+        "target": 0
+      }
+    },
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\base-shapes\\1793408513980097200",
+    "private_receipt": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\base_shape_smoke_4e1b302b1e74419a9059f9a28a86cb12.json"
+  },
+  "shape_animation": {
+    "actual_model4_tested": true,
+    "checks": 73,
+    "failures": 0,
+    "gpu_geometry_error": 5.96046447753906e-08,
+    "movie": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\shape-animation\\1793408546238816900/render_1793408556_9782843_0/movie.mp4",
+    "native": {
+      "GMod": {
+        "average_evaluation_usec": 310.1,
+        "channels": 52,
+        "geometry_error": 0.0,
+        "peak_evaluation_usec": 1015,
+        "target": 0
+      },
+      "MMD": {
+        "average_evaluation_usec": 464.8,
+        "channels": 15,
+        "geometry_error": 0.0,
+        "peak_evaluation_usec": 772,
+        "target": 4
+      },
+      "SFM": {
+        "average_evaluation_usec": 721.96,
+        "channels": 520,
+        "geometry_error": 0.0,
+        "peak_evaluation_usec": 1043,
+        "target": 0
+      },
+      "VRM0": {
+        "average_evaluation_usec": 520.3,
+        "channels": 57,
+        "geometry_error": 0.0,
+        "peak_evaluation_usec": 2183,
+        "target": 0
+      },
+      "VRM1": {
+        "average_evaluation_usec": 389.08,
+        "channels": 57,
+        "geometry_error": 0.0,
+        "peak_evaluation_usec": 1734,
+        "target": 0
+      }
+    },
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\shape-animation\\1793408546238816900",
+    "private_receipt": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\shape_animation_smoke_fe8135168c424f05b98e519133f5060c.json",
+    "legacy_source": "C:\\a\\Programming\\cloudflare\\prototypes\\studio-3d-2d\\output\\shape-animation\\1793398519694452600\\animated-packed.has"
+  },
+  "body_curves": {
+    "checks": 60,
+    "failures": 0,
+    "metrics": {
+      "Authored": {
+        "contract": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/Authored-body-curves.json",
+        "left": "Skeleton3D::left",
+        "ordinary_conversion_component_difference": 1.19209289550781e-07,
+        "right": "Skeleton3D::right",
+        "sampled_project": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/Authored-sampled.has",
+        "source_sha256": "35561aeacec90c4dbec5cf8a2a1af13b91586e325602bc467319648fd89fa80b",
+        "warm_sample_usec": 67.38
+      },
+      "GMod": {
+        "contract": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/GMod-body-curves.json",
+        "left": "reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_L_UpperArm",
+        "ordinary_conversion_component_difference": 1.19209289550781e-07,
+        "right": "reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_R_UpperArm",
+        "sampled_project": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/GMod-sampled.has",
+        "source_sha256": "d2c9ca021a8df6acaf0406b3f26850e63aac90d2a57eb454120bde58e54c0459",
+        "warm_sample_usec": 74.26
+      },
+      "MMD": {
+        "contract": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/MMD-body-curves.json",
+        "left": "Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::\u5de6\u8155",
+        "ordinary_conversion_component_difference": 1.19209289550781e-07,
+        "right": "Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::\u53f3\u8155",
+        "sampled_project": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/MMD-sampled.has",
+        "source_sha256": "82206a87bc34c8a46fe85f7f36dddb961aaf22360ad0fcddef41b8b50308b097",
+        "warm_sample_usec": 75.62
+      },
+      "SFM": {
+        "contract": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/SFM-body-curves.json",
+        "left": "scout_ARM/Skeleton3D::bip_upperArm_L",
+        "ordinary_conversion_component_difference": 1.19209289550781e-07,
+        "right": "scout_ARM/Skeleton3D::bip_upperArm_R",
+        "sampled_project": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/SFM-sampled.has",
+        "source_sha256": "bfe3723f8fda70f674add1ae39928909a34311577f8d99689bc3072fe2c601bd",
+        "warm_sample_usec": 105.68
+      },
+      "VRM0": {
+        "contract": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/VRM0-body-curves.json",
+        "left": "HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperArm",
+        "ordinary_conversion_component_difference": 1.19209289550781e-07,
+        "right": "HASAvatarRoot0/Skeleton3D::J_Bip_R_UpperArm",
+        "sampled_project": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/VRM0-sampled.has",
+        "source_sha256": "3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56",
+        "warm_sample_usec": 95.0
+      },
+      "VRM1": {
+        "contract": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/VRM1-body-curves.json",
+        "left": "HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperArm",
+        "ordinary_conversion_component_difference": 1.19209289550781e-07,
+        "right": "HASAvatarRoot0/Skeleton3D::J_Bip_R_UpperArm",
+        "sampled_project": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/VRM1-sampled.has",
+        "source_sha256": "a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062",
+        "warm_sample_usec": 89.92
+      }
+    },
+    "movie": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900/render_1793408608_3731918_0/movie.mp4",
+    "normal_editor_integration": false,
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-curves\\1793408586302299900",
+    "private_receipt": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\body_curves_smoke_250f9909a1284ef89e117a33b5511a6d.json"
+  },
+  "body_animation": {
+    "checks": 72,
+    "failures": 0,
+    "metrics": {
+      "Authored": {
+        "parts": 2,
+        "source_sha256": "35561aeacec90c4dbec5cf8a2a1af13b91586e325602bc467319648fd89fa80b",
+        "warm_pose_root_usec": 37.93
+      },
+      "GMod": {
+        "parts": 77,
+        "source_sha256": "d2c9ca021a8df6acaf0406b3f26850e63aac90d2a57eb454120bde58e54c0459",
+        "warm_pose_root_usec": 43.38
+      },
+      "MMD": {
+        "parts": 126,
+        "source_sha256": "82206a87bc34c8a46fe85f7f36dddb961aaf22360ad0fcddef41b8b50308b097",
+        "warm_pose_root_usec": 41.67
+      },
+      "SFM": {
+        "parts": 83,
+        "source_sha256": "bfe3723f8fda70f674add1ae39928909a34311577f8d99689bc3072fe2c601bd",
+        "warm_pose_root_usec": 36.11
+      },
+      "VRM0": {
+        "parts": 91,
+        "source_sha256": "3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56",
+        "warm_pose_root_usec": 43.95
+      },
+      "VRM1": {
+        "parts": 91,
+        "source_sha256": "a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062",
+        "warm_pose_root_usec": 34.67
+      }
+    },
+    "movie": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-animation\\1793408632530121000/render_1793408638_5121690_0/movie.mp4",
+    "normal_editor_integration": true,
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\body-animation\\1793408632530121000",
+    "private_receipt": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\body_animation_smoke_a20154a10f26433f81903149c52355ef.json"
+  },
+  "lighting": {
+    "checks": 32,
+    "failures": 0,
+    "folder": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\lighting\\1793408670300922200",
+    "movie": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\lighting\\1793408670300922200/render_1793408677_6351315_0/movie.mp4",
+    "private_receipt": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\lighting_smoke_1ecce0e8eeee4eda9240e20617d0d7f6.json"
+  },
+  "silent_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "tone_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "editor_audio_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "autokey_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "new_scene_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_runtime_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_edit_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "world_workflow_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "object_timing_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animation_clips_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "visibility_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "animated_channels_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "limb_ik_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "physics_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "secondary_motion_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "fan_motion_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "physics_props_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "physics_recording_video": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_0": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "posed_model_video_1": {
+    "frames": 48,
+    "fps": "24/1",
+    "duration": "2.000000"
+  },
+  "pose_checks": 45,
+  "actual_mmd_tested": true,
+  "tone_onset_seconds": 1.0,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "representative_png_sha256": {
+    "frame_000001.png": "d895f61f3feb20a69a0c3fa164390d57adb586da526e6b348fcc0ec075eb403d",
+    "frame_000025.png": "b38facabaa27f27ca6666e082b02f02d3959d079323d3fc66616ce9d1655db7d",
+    "frame_000048.png": "272d24b23ed59f7fd76d81184e76bbb9f76d442a4beb98b5f059cd0b871cc7cf"
+  },
+  "execution_root": "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio",
+  "command_exit": 0,
+  "full_status": {
+    "exit": 0,
+    "seconds": 745.9748566150665,
+    "started": 1793407945.5447366
+  },
+  "private_receipts": [
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\animated_channels_smoke_6e64e76443254288b4bd5b79040543b3.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\animation_clips_smoke_1422c52f410d4bce9f5ffb99ba380016.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\audio_spike_d5e2dff7f2aa457f9d4c53c8556db795.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\autokey_smoke_3b9a91fee3ab4de992b6b6a2f252343b.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\base_shape_smoke_4e1b302b1e74419a9059f9a28a86cb12.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\body_animation_smoke_a20154a10f26433f81903149c52355ef.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\body_curves_smoke_250f9909a1284ef89e117a33b5511a6d.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\bone_labels_smoke_ae3137512b0c4647bd846d0ca2be5f52.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\export_failures_f68e1ef21f724a1dba14af3eb378f06b.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\fan_motion_smoke_ffa3f1073a8944b098d5595af17ee50b.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\helper_morphs_render_0494aaff30da4c618f463e0232550cd6.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\lighting_smoke_1ecce0e8eeee4eda9240e20617d0d7f6.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\limb_ik_smoke_24bd97ca264d4dcfb02594d5dc92c128.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\new_scene_smoke_6f0b24ccb6e847a9b9fbaff7fc10c312.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\object_timing_smoke_b6deae431b5e48ea8a0367a61ad4cd6d.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\physics_contacts_smoke_d1a5ab855c7b449c9037480e6055d5c8.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\physics_props_smoke_cb79a48704ff4b1abcb28e78e14d88c2.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\physics_recording_smoke_f25bd033586f4d5cb978af41ee431bf9.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\physics_smoke_d59575e2cec54fba9d7b80fab02286ac.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\secondary_helpers_multi_1b26b434afb64926a8eac8a729d845ad.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\secondary_helpers_native_d833c9d013814b62a4de1f40f7bff612.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\secondary_helpers_patch_0d741f79e9b8422caa347e40af2194dd.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\secondary_helpers_smoke_baf005a193ca4bf48b1c8c6b0ced8300.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\secondary_motion_smoke_9365aed2e7774318a8451f0da7b25bf3.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\shape_animation_smoke_fe8135168c424f05b98e519133f5060c.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\source_shapes_smoke_8be23fd88a6e46169d52784b02b9b48a.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\spikes_287e7d94cac745e0ac6d1fe6ed14c6b2.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\studio_24764944f35645c5b767a1516492d128.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\studio_61a14efd7a784b08a210b1f3fc5edc90.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\studio_9a1c2483aa8e4faeac8c8e1b493a068b.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\studio_a90e01d5433f48558b2224b893484aeb.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\studio_b3bb183c17bc4621bc4e0b411f701113.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\studio_cb8367255b5c4bed9f6140bf10659500.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\studio_ccbc487c44cc43949b0c3047a658446d.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\visibility_smoke_b67ba3cbdd6340e4ba28e4904f61d861.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\world_document_smoke_d104513bf480418fba679c5fa3201e1f.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\world_edit_smoke_d240fb79d37b4a078c6f7019517af31d.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\world_runtime_smoke_9e8f3c58cd524ce8a9f02683ba00a1af.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\world_selection_smoke_a99c1fb247c1444e960e8d9d7282db65.json",
+    "C:\\Users\\noble\\.codex\\worktrees\\ec34\\cloudflare\\hybrid-animation-studio\\output\\private-desktop\\world_workflow_smoke_1289970a15884e59a97c22ebe459f7ae.json"
+  ]
+}
