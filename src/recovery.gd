@@ -1,0 +1,182 @@
+extends RefCounted
+const Storage = preload("res://src/storage.gd")
+const Journal=preload("res://src/recovery_journal.gd")
+const MAX_BYTES := 512 * 1024 * 1024
+static var discovery_warning := ""
+static var own_record_cache:={}
+
+static func valid_creation(value) -> bool:
+	if not value is String or value.is_empty() or value.length()>20 or value.begins_with("0"):return false
+	for character in value:
+		if not character in "0123456789":return false
+	return value.length()<20 or value<="18446744073709551615"
+
+static func probe_processes(pids: Array) -> Dictionary:
+	var states:={};var created:={}
+	var args:=PackedStringArray([ProjectSettings.globalize_path("res://tools/recovery_processes.py")])
+	for pid in pids:
+		if not Storage.integer(pid,1,2147483647):continue
+		var key:=str(int(pid))
+		if states.has(key):continue
+		states[key]="unknown"
+		if args.size()<=1024:args.append(key)
+	if args.size()==1:return {"owners":states,"created_100ns":created}
+	var python:=OS.get_environment("HYBRID_PYTHON");var output: Array=[]
+	var code:=OS.execute(python if not python.is_empty() else "python",args,output,false,false)
+	if code==0 and not output.is_empty():
+		var parser:=JSON.new()
+		if parser.parse(str(output[0]))==OK and parser.data is Dictionary:
+			var data: Dictionary=parser.data
+			if data.get("format")=="studio_process_liveness_1" and data.get("owners") is Dictionary:
+				for pid in states:
+					if data.owners.get(pid) in ["alive","exited"]:states[pid]=data.owners[pid]
+					if data.get("created_100ns") is Dictionary and valid_creation(data.created_100ns.get(pid)):created[pid]=data.created_100ns[pid]
+	return {"owners":states,"created_100ns":created}
+
+static func owner_record() -> Dictionary:
+	var pid:=OS.get_process_id()
+	if own_record_cache.get("pid")!=pid:
+		own_record_cache={"pid":pid}
+		var info:=probe_processes([pid]);var key:=str(pid)
+		if info.owners.get(key)=="alive" and valid_creation(info.created_100ns.get(key)):own_record_cache["created_100ns"]=info.created_100ns[key]
+	return own_record_cache.duplicate()
+
+static func process_info(pids: Array) -> Dictionary:
+	var foreign: Array=[];var mine:=str(OS.get_process_id())
+	for pid in pids:
+		if Storage.integer(pid,1,2147483647) and int(pid)!=OS.get_process_id():foreign.append(int(pid))
+	var info:=probe_processes(foreign);info.owners[mine]="alive"
+	if OS.get_process_id() in pids:
+		var own:=owner_record()
+		if valid_creation(own.get("created_100ns")):info.created_100ns[mine]=own.created_100ns
+	return info
+
+static func process_status(pids: Array) -> Dictionary:
+	var states: Dictionary=process_info(pids).owners
+	for pid in states:
+		if states[pid]=="unknown":discovery_warning="Some recovery sessions could not be checked for a live owner and were left untouched. Check the configured Python installation or use Open saved backup.";break
+	return states
+
+static func owner_available(owner: Dictionary,info: Dictionary,include_current := false) -> bool:
+	if not Storage.integer(owner.get("pid"),1,2147483647):
+		discovery_warning="Some recovery sessions have invalid owner records and were left untouched. Use Open saved backup to inspect them.";return false
+	if owner.has("created_100ns") and not valid_creation(owner.created_100ns):
+		discovery_warning="Some recovery sessions have invalid owner identities and were left untouched. Use Open saved backup to inspect them.";return false
+	var pid:=str(int(owner.pid));var state: String=info.get("owners",{}).get(pid,"unknown")
+	if state=="exited":return true
+	if state=="alive":
+		if owner.has("created_100ns"):
+			var current=info.get("created_100ns",{}).get(pid)
+			if not valid_creation(current):
+				discovery_warning="Some recovery owners could not be identified and were left untouched. Use Open saved backup to inspect them.";return false
+			if current!=owner.created_100ns:return true
+		return include_current and int(owner.pid)==OS.get_process_id()
+	discovery_warning="Some recovery sessions could not be checked for a live owner and were left untouched. Check the configured Python installation or use Open saved backup.";return false
+
+static func read_json(path: String) -> Dictionary:
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null or file.get_length() > 1024 * 1024: return {}
+	var parser := JSON.new()
+	if parser.parse(file.get_as_text()) != OK: return {}
+	var parsed = parser.data
+	return parsed if parsed is Dictionary else {}
+
+static func write_json(path: String, data: Dictionary) -> String:
+	var file := FileAccess.open(path + ".tmp", FileAccess.WRITE)
+	if file == null: return "Cannot write recovery state."
+	file.store_string(JSON.stringify(data))
+	file.flush()
+	var error := file.get_error()
+	file.close()
+	if error != OK: return "Cannot flush recovery state."
+	return "" if DirAccess.rename_absolute(path + ".tmp", path) == OK else "Cannot commit recovery state."
+
+static func bytes_in(folder: String, depth := 0) -> int:
+	if not DirAccess.dir_exists_absolute(folder): return 0
+	if depth > 4: return MAX_BYTES
+	var size := 0
+	for name in DirAccess.get_files_at(folder):
+		var file := FileAccess.open(folder.path_join(name), FileAccess.READ)
+		if file: size += file.get_length()
+		if size >= MAX_BYTES: return size
+	for name in DirAccess.get_directories_at(folder):
+		size += bytes_in(folder.path_join(name), depth + 1)
+		if size >= MAX_BYTES: break
+	return size
+
+static func checkpoint(root: String, session: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary, origin: String, revision: int, model: Dictionary = {}, world: Dictionary = {}) -> String:
+	# Conservative global budget: reserve full uncompressed cels and input assets.
+	var estimate := 6 * 1024 * 1024
+	for layer in layers:
+		for cel in layer.cels: estimate += cel.image.get_data_size()
+	var sources: Array=[]
+	for clip in preload("res://src/audio_track.gd").clips(audio): sources.append(clip.source.path)
+	if not world.is_empty():
+		for row in world.objects:sources.append(row.source)
+	else:sources.append_array([source,model.source if not model.is_empty() else ""])
+	var counted:={}
+	for path in sources:
+		if counted.has(path):continue
+		counted[path]=true
+		if not path.is_empty():
+			var file := FileAccess.open(path, FileAccess.READ)
+			if file: estimate += file.get_length()
+	if bytes_in(root) + estimate > MAX_BYTES:
+		return "Recovery cache budget reached (512 MiB). Save manually; review output/recovery before removing old copies."
+	var folder := root.path_join(session)
+	if DirAccess.make_dir_recursive_absolute(folder) != OK: return "Cannot create recovery directory."
+	var error := write_json(folder.path_join("session.json"), owner_record())
+	if not error.is_empty(): return error
+	# Adopt both old generations before the normal writer rotates either away.
+	error=Journal.record(folder)
+	if not error.is_empty():return error
+	error=Storage.save_project(folder, video, keys, layers, source, frame, audio,
+		{"origin": origin, "revision": revision, "saved_at": Time.get_unix_time_from_system()}, model,false,world)
+	if not error.is_empty():return error
+	return Journal.record(folder)
+
+static func resolve(folder: String) -> String:
+	var primary := folder.path_join("project.json")
+	if not FileAccess.file_exists(primary) and not FileAccess.file_exists(folder.path_join("project.backup.json")): return ""
+	return write_json(folder.path_join("resolved.json"), {"sha256": FileAccess.get_sha256(primary) if FileAccess.file_exists(primary) else "missing"})
+
+static func candidates(root: String, exclude := "", include_current := false,include_resolved := false) -> Array:
+	discovery_warning=""
+	var found: Array = []
+	if not DirAccess.dir_exists_absolute(root): return found
+	var sessions:={};var pids: Array=[]
+	for session in DirAccess.get_directories_at(root):
+		if session==exclude:continue
+		var owner:=read_json(root.path_join(session).path_join("session.json"))
+		sessions[session]=owner
+		if Storage.integer(owner.get("pid"),1,2147483647) and not int(owner.pid) in pids:pids.append(int(owner.pid))
+	var owners:=process_info(pids)
+	for session in sessions:
+		if session == exclude: continue
+		var folder := root.path_join(session)
+		var owner: Dictionary=sessions[session]
+		if FileAccess.file_exists(folder.path_join("session.json")) and not owner_available(owner,owners,include_current):continue
+		var primary := folder.path_join("project.json")
+		var resolved := read_json(folder.path_join("resolved.json"))
+		var fingerprint := FileAccess.get_sha256(primary) if FileAccess.file_exists(primary) else "missing"
+		var resolved_session: bool=resolved.get("sha256","none")==fingerprint
+		if resolved_session and not include_resolved:continue
+		var manifests: Array=["project.json","project.backup.json"];var previews:={};var seen:={}
+		for entry in Journal.entries(folder):
+			manifests.append(Journal.manifest_name(entry.sha256));previews[entry.sha256]=entry.get("preview","")
+		for manifest in manifests:
+			if Journal.is_manifest(manifest) and not Journal.valid_manifest(folder,manifest):continue
+			var data := read_json(folder.path_join(manifest))
+			var editor = data.get("editor", {})
+			var info = editor.get("recovery", {}) if editor is Dictionary else {}
+			if info is Dictionary and info.get("origin") is String and Storage.integer(info.get("revision"), 0, 2147483647) and (info.get("saved_at") is float or info.get("saved_at") is int) and is_finite(float(info.saved_at)) and info.saved_at>=0:
+				var digest:=FileAccess.get_sha256(folder.path_join(manifest))
+				if seen.has(digest):continue
+				seen[digest]=true
+				found.append({"folder":folder,"manifest":manifest,"origin":info.origin,"saved_at":info.saved_at,"revision":int(info.revision),"frame":int(editor.get("frame",0)),"preview":previews.get(digest,""),"sha256":digest,"resolved":resolved_session})
+	found.sort_custom(func(a,b):
+		if a.saved_at!=b.saved_at:return a.saved_at>b.saved_at
+		if a.folder!=b.folder:return a.folder>b.folder
+		if a.get("revision",0)!=b.get("revision",0):return a.get("revision",0)>b.get("revision",0)
+		return a.manifest=="project.json" and b.manifest!="project.json")
+	return found
