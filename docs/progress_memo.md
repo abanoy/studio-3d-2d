@@ -10795,3 +10795,35 @@ See docs/sequence_cache.md and tests/verify_sequence_cache.py. This is a bounded
 held-art optimization, not arbitrary long/dense project support.240frames/32cels,
 audio/undo/archive and4 cached asset-picture budgets remain. Full native/hardware/
 artist acceptance and other incomplete requirements remain distinct.
+
+
+## 2026-11-05 UTC — optional distance-based stroke smoothing
+
+Advanced Draw now has Stroke smoothing0–32 canvas pixels, default0. A transient
+distance-based stabilizer trails the input to reduce jitter; gesture end (including
+outside release/focus loss) paints the remaining tail before one existing pixel
+Undo. Pressure-zero flushes the LAST positive contact and resets before hover,
+so there is no bridge across a pressure gap. Missing pressure creates no cel or
+history. Stroke distance/size/color/opacity settings are captured until release.
+Pen/eraser pressure and opacity remain separate; fills keep existing behavior.
+Only normal RGBA pixels persist; session setting defaults off on cold start.
+No new project data/format, online dependency or generated animation cels.
+
+Fresh private llvmpipe domain12 +app26 +coldreader4 pass. Routed disabled output
+is byte-identical to the original direct raster brush; enabled jitter geometry,
+tails, captured controls, hover/no-cel state, exact Undo/Redo, erasing, live physics
+identity through drawing history, original model file, ordinary packed HAS/recovery
+and exact H2641080p24/48frame input pass. Synthetic pressure is not physical-tablet
+acceptance. First cold fixture failed one camera-last-digit comparison because
+the test expectation helper rounded its JSON; full-precision expectations now keep
+the equality assertion intact. No production serialization check was weakened.
+Evidence /workspace/has-handoff-audit/smoothing-final and stroke-smoothing (earlier
+scoped runs retained). See docs/stroke_smoothing.md and portable verifier.
+
+Original pressure regression10domain +27app +3cold pass, including independent
+numerical swept-disc comparison (max1RGBA8 alpha unit). Original brush-opacity
+regression14domain +18app +3cold also passes, with real MP4 and exact reopening.
+Both wrappers now require explicit private Linux displays and retain Windows
+private-desktop receipts; no shared-desktop fallback. Existing limits/default
+pressure and opacity contracts remain. Full hardware/artist/long-project and other
+unfinished requirements remain. No tracked historical output files changed.

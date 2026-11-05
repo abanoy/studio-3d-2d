@@ -709,3 +709,7 @@ art stays editable; enabling a shadow uses the explicit studio_sequences_2 forma
 [Held artwork caching](docs/sequence_cache.md) reuses sequence pictures across
 exposures without freezing parent placement or shadows. The measured240-frame
 software-rendering test reduced source builds240→2 while preserving exact output.
+
+Advanced Draw now offers optional [stroke smoothing](docs/stroke_smoothing.md),
+default0. It stabilizes pen/eraser paths, finishes tails on release and keeps
+pressure gaps empty. Only normal raster pixels are saved; existing formats remain.

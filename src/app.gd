@@ -59,6 +59,7 @@ var previous_point := Vector2.ZERO
 var stroke_image: Image
 var before_tiles := {}
 var active_brush: RefCounted
+var stroke_stabilizer: RefCounted
 var previous_pressure:=-1.0
 var stroke_accumulated_input:=true
 var history: Array = []
@@ -85,6 +86,7 @@ var color: ColorPickerButton
 var radius: SpinBox
 var brush_opacity: SpinBox
 var brush_pressure: CheckButton
+var brush_smoothing: SpinBox
 var fov: SpinBox
 var camera_near: SpinBox
 var camera_far: SpinBox
@@ -618,6 +620,8 @@ func build_ui() -> void:
 	brush_pressure=CheckButton.new();brush_pressure.text="Tablet pressure size"
 	brush_pressure.tooltip_text="Off: normal mouse brush. On: pen pressure controls size; waits for positive pressure before painting. Turn off for a mouse or a tablet driver that supplies no pressure. Fill is unchanged."
 	drawing_section.add_child(brush_pressure)
+	brush_smoothing=advanced_spin(drawing_section,"Stroke smoothing (pixels)",0,32,0)
+	brush_smoothing.tooltip_text="0 keeps the original brush. Larger values reduce jitter by trailing the pointer in canvas pixels; the tail finishes on release. Mouse and tablet; pressure still controls size."
 	icon_button(drawing_section, "New drawing", "cel", func(): create_cel(false), "Start a blank cel at this frame; it holds until the next drawing.")
 	button(drawing_section, "Copy drawing here", func(): create_cel(true)).tooltip_text = "Make an independent copy of the held drawing at this frame."
 	exposure = advanced_spin(drawing_section, "Exposure length (frames)", 1, 240, 48)
@@ -1100,6 +1104,7 @@ func canvas_input(event: InputEvent, point: Vector2) -> void:
 				stroke_accumulated_input=Input.use_accumulated_input
 				Input.use_accumulated_input=false
 			active_brush.before=before_tiles
+			stroke_stabilizer=preload("res://src/stroke_stabilizer.gd").new();stroke_stabilizer.distance=brush_smoothing.value;stroke_stabilizer.reset(point)
 			previous_point = point
 			previous_pressure=-1
 			if not active_brush.pressure_size:paint_segment(point)
@@ -1113,13 +1118,20 @@ func paint_segment(point: Vector2,pressure: float=1.0) -> void:
 	var r0: float=active_brush.radius;var r1:=r0
 	if active_brush.pressure_size:
 		pressure=clampf(pressure,0,1)
-		if pressure==0:previous_pressure=0;previous_point=point;return
+		if pressure==0:
+			if previous_pressure>0:flush_stabilizer()
+			previous_pressure=0;previous_point=point
+			if stroke_stabilizer:stroke_stabilizer.reset(point)
+			return
 		r1=maxf(.5,r1*pressure)
 		if previous_pressure>0:r0=maxf(.5,r0*previous_pressure)
 		else:
 			r0=r1
-			if previous_pressure==0:from=point
+			if previous_pressure==0 or stroke_stabilizer and stroke_stabilizer.distance>0:
+				from=point
+				if stroke_stabilizer:stroke_stabilizer.reset(point)
 		previous_pressure=pressure
+	if stroke_stabilizer:point=stroke_stabilizer.sample(point)
 	if stroke_image==null:
 		# A tablet press alone is not paint. Allocate a cel only at first contact.
 		create_cel(false,false)
@@ -1130,8 +1142,20 @@ func paint_segment(point: Vector2,pressure: float=1.0) -> void:
 	previous_point = point
 	if painted:changed()
 
+func flush_stabilizer() -> void:
+	if not drawing or not active_brush or not stroke_stabilizer or stroke_stabilizer.distance<=0 or stroke_image==null:return
+	if active_brush.pressure_size and previous_pressure<=0:return
+	var end: Vector2=stroke_stabilizer.raw
+	if end==previous_point:return
+	var size: float=active_brush.radius*maxf(0,previous_pressure) if active_brush.pressure_size else active_brush.radius
+	if active_brush.pressure_size:size=maxf(.5,size)
+	var painted: bool=active_brush.paint(stroke_image,previous_point,end,size,size)
+	previous_point=end;stroke_stabilizer.reset(end)
+	if painted:changed()
+
 func finish_stroke() -> void:
 	if not drawing: return
+	flush_stabilizer()
 	drawing = false
 	if active_brush and active_brush.pressure_size:Input.use_accumulated_input=stroke_accumulated_input
 	var after := {}
@@ -1143,6 +1167,7 @@ func finish_stroke() -> void:
 	elif active_brush and active_brush.pressure_size and previous_pressure<=0:message("No pen pressure received. Turn off Tablet pressure size for mouse drawing.")
 	stroke_image = null
 	active_brush = null
+	stroke_stabilizer = null
 	before_tiles = {}
 	previous_pressure=-1
 
