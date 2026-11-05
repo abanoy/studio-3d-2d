@@ -9,6 +9,7 @@ var root_scene: Dictionary={}
 var owners: Dictionary={}
 var renderers: Dictionary={}
 var frames: Dictionary={}
+var masked_frames: Dictionary={}
 var audio_mixes: Dictionary={}
 var compositor: SubViewport
 var sprites: Array=[]
@@ -18,6 +19,7 @@ var requests:=0
 var cancelled:=false
 var last_error:=""
 var builds:=0
+var mask_builds:=0
 func prepare(incoming: Dictionary,root: Dictionary,active_owner: String="") -> String:
 	var why:=Graph.error(incoming,root)
 	if not why.is_empty():return why
@@ -63,6 +65,20 @@ func picture_stamp(asset: Dictionary,frame: int,final: bool,drawings_only: bool)
 		var image: Image=cel.image
 		state.append([image.get_instance_id(),image.get_meta("studio_pixels_revision",0),opacity])
 	return JSON.stringify(state,"",true,true)
+func masked_picture(clip: Dictionary,picture: Dictionary) -> Texture2D:
+	var mask: Dictionary=clip.get("mask",{})
+	if mask.is_empty():return picture.texture
+	var stamp:="%s:%d:%s" % [picture.stamp,picture.image.get_instance_id(),JSON.stringify(mask,"",true,true)]
+	var previous: Dictionary=masked_frames.get(clip.id,{})
+	if previous.get("stamp")==stamp:return previous.texture
+	var r: Array=mask.rect;var rect:=Rect2i(int(r[0]),int(r[1]),int(r[2]),int(r[3]))
+	var image: Image=picture.image.duplicate() if mask.invert else Drawing.blank(1920,1080)
+	if mask.invert:image.fill_rect(rect,Color.TRANSPARENT)
+	else:image.blit_rect(picture.image,rect,rect.position)
+	image.premultiply_alpha();image.generate_mipmaps()
+	var texture:=ImageTexture.create_from_image(image)
+	masked_frames[clip.id]={"stamp":stamp,"texture":texture};mask_builds+=1
+	return texture
 func render_clips(owner: String,frame: int,final: bool,drawings_only: bool) -> Image:
 	if cancelled:return null
 	if not owners.has(owner):last_error="Missing sequence owner.";return null
@@ -90,10 +106,10 @@ func render_clips(owner: String,frame: int,final: bool,drawings_only: bool) -> I
 			var ink:=Drawing.composite(asset.scene.layers,local,1920,1080)
 			image.blend_rect(ink,Rect2i(0,0,1920,1080),Vector2i.ZERO)
 			var premultiplied: Image=image.duplicate();premultiplied.premultiply_alpha()
-			if graph.format==Graph.SHADOW_FORMAT:premultiplied.generate_mipmaps()
+			if graph.format!=Graph.FORMAT:premultiplied.generate_mipmaps()
 			cached={"stamp":stamp,"image":image,"texture":ImageTexture.create_from_image(premultiplied)}
 			frames[clip.asset_id]=cached;builds+=1
-		pictures.append({"texture":cached.texture,"placement":placed,"shadow":clip.get("shadow",{})})
+		pictures.append({"texture":masked_picture(clip,cached),"placement":placed,"shadow":clip.get("shadow",{})})
 	if cancelled:return null
 	if pictures.is_empty():return Drawing.blank(1920,1080)
 	while sprites.size()<pictures.size():

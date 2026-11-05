@@ -44,6 +44,24 @@ class SequenceContainerTests(unittest.TestCase):
             with self.assertRaises(has.HasError):has.pack(request)
             self.assertEqual(Path(request['path']).read_bytes(),original)
 
+    def test_mask_roundtrip_and_downgrade_or_bad_bounds_preserve_prior(self):
+        for mode in ['packed','linked']:
+            with self.subTest(mode=mode),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);request,manifest,_,_=self.fixture(root);request['storage']=mode
+                manifest['sequence_graph']['format']='studio_sequences_3'
+                manifest['sequence_graph']['clips'][0].update(shadow={},mask=dict(rect=[800,400,50,100],invert=False))
+                source=Path(request['folder'])/'project.json';source.write_bytes(has.json_bytes(manifest));has.pack(request)
+                original=Path(request['path']).read_bytes();result=fixtures.HasTests().unpack(root,request);self.assertTrue(result['ok'])
+                self.assertEqual(json.loads((Path(result['folder'])/'project.json').read_bytes()),manifest)
+                for kind in ['downgrade','bounds','bool']:
+                    bad=copy.deepcopy(manifest)
+                    if kind=='downgrade':bad['sequence_graph']['format']='studio_sequences_2'
+                    elif kind=='bounds':bad['sequence_graph']['clips'][0]['mask']['rect']=[1919,0,2,1]
+                    else:bad['sequence_graph']['clips'][0]['mask']['invert']=1
+                    source.write_bytes(has.json_bytes(bad))
+                    with self.subTest(kind=kind),self.assertRaises(has.HasError):has.pack(request)
+                    self.assertEqual(Path(request['path']).read_bytes(),original)
+
     def test_nested_missing_link_reports_and_preserves_current_cache(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);request,_,name,wave=self.fixture(root);request['storage']='linked';has.pack(request);wave.unlink()

@@ -80,3 +80,7 @@ keeping project schema6; earlier unstyled graphs keep their original format.
 
 [Held artwork caching](sequence_cache.md) now reuses source pictures across held
 exposures while keeping parent placement/shadow evaluation and marked-pixel invalidation.
+
+[Sequence picture masks](sequence_masks.md) now add a reversible rectangular crop
+or cutout before shadow generation. Enabling one promotes to studio_sequences_3,
+still project schema6, with up to8 derived mask textures per runtime.

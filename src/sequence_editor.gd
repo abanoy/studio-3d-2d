@@ -188,14 +188,35 @@ func restore(candidate: Dictionary) -> String:
 	return commit(clone_graph(candidate),false)
 func default_clip(id: String,start: int,duration: int) -> Dictionary:
 	var clip:={"id":str(ResourceUID.create_id()),"asset_id":id,"start":start,"duration":duration,"source_in":0,"time_in":0,"key_in":0,"loop":false,"visible":true,"muted":false,"gain_db":0.0,"keys":[Graph.key()]}
-	if graph.get("format")==Graph.SHADOW_FORMAT:clip["shadow"]={}
+	if graph.get("format") in [Graph.SHADOW_FORMAT,Graph.MASK_FORMAT]:clip["shadow"]={}
+	if graph.get("format")==Graph.MASK_FORMAT:clip["mask"]={}
 	return clip
 func promote_shadows(candidate: Dictionary) -> void:
-	candidate.format=Graph.SHADOW_FORMAT
+	if candidate.format!=Graph.MASK_FORMAT:candidate.format=Graph.SHADOW_FORMAT
 	var owners: Array=[{"clips":candidate.clips}];owners.append_array(candidate.assets)
 	for owner in owners:
 		for clip in owner.clips:
 			if not clip.has("shadow"):clip["shadow"]={}
+func promote_masks(candidate: Dictionary) -> void:
+	promote_shadows(candidate);candidate.format=Graph.MASK_FORMAT
+	var owners: Array=[{"clips":candidate.clips}];owners.append_array(candidate.assets)
+	for owner in owners:
+		for clip in owner.clips:
+			if not clip.has("mask"):clip["mask"]={}
+func change_mask(id: String,mask: Dictionary) -> String:
+	var why:=Graph.mask_error(mask)
+	if not why.is_empty():return why
+	var current:=find_clip(id)
+	if current.is_empty():return "This sequence clip is no longer available."
+	var previous: Dictionary=current.get("mask",{})
+	if previous.is_empty() and mask.is_empty():return ""
+	if not previous.is_empty() and not mask.is_empty() and previous.invert==mask.invert:
+		var a: Array=previous.rect;var b: Array=mask.rect
+		if Rect2i(a[0],a[1],a[2],a[3])==Rect2i(b[0],b[1],b[2],b[3]):return ""
+	var candidate:=clone_graph();promote_masks(candidate)
+	for clip in owner_clips(candidate):
+		if clip.id==id:clip.mask=mask.duplicate(true);return commit(candidate)
+	return "This sequence clip is no longer available."
 func change_shadow(id: String,style: Dictionary) -> String:
 	var why:=Graph.shadow_error(style)
 	if not why.is_empty():return why
@@ -274,8 +295,10 @@ func paste_clip() -> String:
 	if clipboard.is_empty() or asset(str(clipboard.get("asset_id",""))).is_empty():return "Copy a sequence instance from this project first."
 	var clip:=clipboard.duplicate(true);clip.id=str(ResourceUID.create_id());clip.start=app.frame
 	var candidate:=clone_graph();owner_clips(candidate).append(clip)
+	if clip.has("mask"):promote_masks(candidate)
+	elif candidate.format==Graph.MASK_FORMAT:clip["mask"]={}
 	if clip.has("shadow"):promote_shadows(candidate)
-	elif candidate.format==Graph.SHADOW_FORMAT:clip["shadow"]={}
+	elif candidate.format in [Graph.SHADOW_FORMAT,Graph.MASK_FORMAT]:clip["shadow"]={}
 	var error:=commit(candidate)
 	if error.is_empty():selected_clip=clip.id
 	return error
@@ -522,6 +545,21 @@ func add_clip_controls(box: VBoxContainer,clip: Dictionary) -> void:
 		for field in [shadow_x,shadow_y,softness]:field.apply()
 		var color:=tint.color
 		var why:=change_shadow(id,{"offset":[shadow_x.value if shadow_x.value!=shown_x else offset[0],shadow_y.value if shadow_y.value!=shown_y else offset[1]],"color":[color.r,color.g,color.b,color.a] if color!=shown_color else rgba,"softness":softness.value if softness.value!=shown_softness else style.get("softness",4)} if shadow_enabled.button_pressed else {})
+		if why.is_empty():close_panel();show_panel()
+		else:app.message(why))
+	var mask: Dictionary=clip.get("mask",{})
+	var mask_enabled:=CheckButton.new();mask_enabled.text="Picture mask";mask_enabled.button_pressed=not mask.is_empty();box.add_child(mask_enabled)
+	app.label(box,"Mask coordinates follow the child canvas before placement. Child artwork stays editable.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var rect: Array=mask.get("rect",[0,0,1920,1080])
+	var mask_x: SpinBox=app.spin(box,"Mask left (pixels)",0,1919,rect[0])
+	var mask_y: SpinBox=app.spin(box,"Mask top (pixels)",0,1079,rect[1])
+	var mask_width: SpinBox=app.spin(box,"Mask width (pixels)",1,1920,rect[2])
+	var mask_height: SpinBox=app.spin(box,"Mask height (pixels)",1,1080,rect[3])
+	var inverted:=CheckButton.new();inverted.text="Cut out this rectangle instead";inverted.button_pressed=mask.get("invert",false);box.add_child(inverted)
+	app.button(box,"Apply mask",func():
+		if not panel_valid():app.message("The scene changed. Reopen Sequences.");return
+		for field in [mask_x,mask_y,mask_width,mask_height]:field.apply()
+		var why:=change_mask(id,{"rect":[int(mask_x.value),int(mask_y.value),int(mask_width.value),int(mask_height.value)],"invert":inverted.button_pressed} if mask_enabled.button_pressed else {})
 		if why.is_empty():close_panel();show_panel()
 		else:app.message(why))
 	app.button(box,"Remove selected clip",func():

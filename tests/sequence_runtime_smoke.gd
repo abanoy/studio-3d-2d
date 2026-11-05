@@ -61,4 +61,29 @@ func run() -> void:
 	runtime.shutdown()
 	while is_instance_valid(runtime):await process_frame
 	check(completed.has("active") and completed.has("queued") and completed.active==null and completed.queued==null,"retiring runtime completes every cancelled caller before freeing its node")
+	var masked_clip: Dictionary=document.sequence_graph.clips[0].duplicate(true)
+	masked_clip.id="masked";masked_clip.duration=8;masked_clip.loop=true;masked_clip.keys[0].opacity=.5
+	masked_clip["shadow"]={"offset":[120,0],"color":[0,0,0,.5],"softness":0};masked_clip["mask"]={"rect":[800,400,50,100],"invert":false}
+	var masked_graph:={"format":Graph.MASK_FORMAT,"assets":[{"id":"child","name":"Paint","scene":child,"clips":[]}],"clips":[masked_clip]}
+	var paint_runtime:=Runtime.new();root.add_child(paint_runtime)
+	check(paint_runtime.prepare(masked_graph,root_doc).is_empty(),"versioned picture mask runtime prepares without changing editable child")
+	var cropped: Image=await paint_runtime.render("",0,true)
+	check(absf(cropped.get_pixel(825,450).a-.25)<.015 and cropped.get_pixel(875,450).a==0,"rectangle mask retains exact left-half alpha and clears right half")
+	check(absf(cropped.get_pixel(945,450).a-.125)<.015 and cropped.get_pixel(995,450).a==0,"shadow follows masked silhouette with source/style/placement alpha exactly once")
+	var repeated: Image=await paint_runtime.render("",2,true)
+	check(repeated.get_data()==cropped.get_data() and paint_runtime.mask_builds==1 and paint_runtime.masked_frames.size()==1,"held masked picture reuses one per-instance derived texture")
+	masked_clip.mask.invert=true;var inverted: Image=await paint_runtime.render("",0,true)
+	check(inverted.get_pixel(825,450).a==0 and absf(inverted.get_pixel(875,450).a-.25)<.015 and absf(inverted.get_pixel(995,450).a-.125)<.015,"inverted mask cuts the rectangle out and updates its shadow")
+	masked_clip.shadow.softness=8;var softened: Image=await paint_runtime.render("",0,true)
+	check(softened.get_pixel(969,450).a>0 and softened.get_pixel(969,450).a<.125 and softened.get_pixel(935,450).a==0,"soft shadow feathers the newly masked edge without leaking removed artwork")
+	paint_runtime.shutdown()
+	while is_instance_valid(paint_runtime):await process_frame
+	masked_clip.mask.invert=false;masked_clip.shadow.softness=0
+	var peer: Dictionary=masked_clip.duplicate(true);peer.id="peer-mask";peer.mask.invert=true;peer.shadow={};peer.keys[0].offset=[400,0];masked_graph.clips.append(peer)
+	paint_runtime=Runtime.new();root.add_child(paint_runtime);paint_runtime.prepare(masked_graph,root_doc)
+	var separate: Image=await paint_runtime.render("",0,true)
+	check(separate.get_pixel(875,450).a==0 and separate.get_pixel(1225,450).a==0 and absf(separate.get_pixel(1275,450).a-.25)<.015 and paint_runtime.masked_frames.size()==2 and paint_runtime.frames.size()==1,"shared asset instances retain independent masks within bounded texture caches")
+	check(source.get_data()==before,"crop and cutout never alter editable source pixels")
+	paint_runtime.shutdown()
+	while is_instance_valid(paint_runtime):await process_frame
 	print("SEQUENCE_RUNTIME_SMOKE ",JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

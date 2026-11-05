@@ -24,8 +24,8 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | Stage3 posing / reference | Rig-aware pose/IK, body library, Model9 independent root components, paths, shapes and reference-only flags present | Native inherited transforms/material/bone/cloth fidelity and broader full-body locomotion |
 | Stage4 imported alpha / chroma | **New:** bounded local video→editable holds; tolerance/softness/spill, original alpha and source preservation; fresh units11 + app19 + reader7 | Long/video-track workflows and artistic keying quality |
 | Stage4 sequence assets / child propagation | **New:** editable embedded shared scene assets, nested timing/looping/placement, child invalidation and recursive audio; schema6 | Bounded4assets/8clips/240frames; native and artist acceptance remain |
-| Stage4 compositing / output | Multiple drawing layers, sequence placement transform/opacity tracks, simple2D drop shadows and transparent PNG export present | General layer tracks, masks/glow and artistic quality remain |
-| Stage5 quality / optional intelligence | Fills, ghost/onion, brush controls including optional smoothing, selection, palettes and named movie quality profiles present; no required AI | Optional suggestions require review/accept/reject, provenance and measured owner need; not a completion prerequisite for optional AI |
+| Stage4 compositing / output | Multiple drawing layers, sequence placement transform/opacity tracks, simple2D shadows, reversible sequence crop/cutout masks and transparent PNG export present | General layer tracks, painted/lasso layer masks/glow and artistic quality remain |
+| Stage5 quality / optional intelligence | Fills, ghost/onion, brush controls including optional smoothing, selection, sequence picture masks, palettes and named movie quality profiles present; no required AI | Optional suggestions require review/accept/reject, provenance and measured owner need; not a completion prerequisite for optional AI |
 | §6 import / camera / assets | Original source retained; world/asset management, common/native conversion paths | Broader native fixture fidelity and lawful conversion gates |
 | §7 raster engine | Independent full-resolution Images and held exposures, unified composition | Layer/cel bounds remain; lazy long-project support cannot be inferred |
 | §8 exact timing / output | Rational rates, end-exclusive holds; new fractional-video tests and 1080p24 movie pass | Fresh full audio sync and export fault matrix |
@@ -106,7 +106,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | REF-02 | Reference-only state present; full recovered-source gate not rerun |
 | SEQ-01 | Fresh editable child update over two parent backgrounds, shared instances, nested alpha, packed/linked cold reopen, split audio and ordinary startup recovery pass; bounded procedural cloud gate |
 | KEY-01 | Actual green removal, original immutability, transparent/half-alpha unit checks, spill filter; app19 + reader7 |
-| SAFE-01 | Full Python discovery289run/288pass/1skip, origin corpus51, raster packet17, recovery identity47/journal33/startup147 pass; full interruption/fault matrix remains |
+| SAFE-01 | Full Python discovery290run/289pass/1skip, origin corpus51, raster packet17, recovery identity47/journal33/startup147 pass; full interruption/fault matrix remains |
 | PERF-01 | Physical tablet/owner machine unavailable; no latency/comfort claim |
 | Addendum A | Procedural subset works; five-minute novice observation absent |
 | Addendum B | Owner-approved native model/map fixtures and Windows environment needed |
@@ -132,3 +132,5 @@ Held-art sequence caching now passes the240-frame/two-cel source-reuse gate; see
 Optional stroke smoothing now passes12domain/26app/4cold checks with original pressure/opacity regressions; see [scope and acceptance](stroke_smoothing.md). Physical tablet feel remains untested.
 
 Named MP4 quality profiles now pass17app/3cold checks plus real three-profile H264/AAC decoding; see [export profiles](export_profiles.md). Scene timing/render inputs and existing Standard defaults are preserved.
+
+Sequence masks now pass26app/10cold checks, graph106/runtime23 and the full graph3 crash/startup variant48writer/19cold/5startup. See [mask scope and evidence](sequence_masks.md); general drawing-layer masks remain separate work.

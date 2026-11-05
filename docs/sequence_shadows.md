@@ -48,3 +48,6 @@ Python and Godot share a malformed metadata corpus. A separate runtime regressio
 starts one active and one queued render before retirement and checks both complete.
 Fresh cloud checks use procedural originals, llvmpipe and dummy audio. Native
 hardware, physical-device feel and artistic shadow quality remain owner gates.
+
+[Picture masks](sequence_masks.md) can now crop or cut out a sequence instance.
+Graph3 preserves shadow fields and generates shadows from the masked silhouette.

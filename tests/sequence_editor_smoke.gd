@@ -34,6 +34,11 @@ func labeled_spin(node: Node,text: String) -> SpinBox:
 		var i: int=field.get_index();var siblings: Array=field.get_parent().get_children()
 		if i>0 and siblings[i-1] is Label and siblings[i-1].text==text:return field
 	return null
+func full_mask(clip: Dictionary) -> bool:
+	var mask: Dictionary=clip.get("mask",{})
+	if mask.is_empty() or mask.invert:return false
+	var r: Array=mask.rect
+	return Rect2i(int(r[0]),int(r[1]),int(r[2]),int(r[3]))==Rect2i(0,0,1920,1080)
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();var folder: String=args[0]
 	app=load("res://main.tscn").instantiate();app.display_prefs_path=folder.path_join("prefs.cfg");app.recent_path=folder.path_join("recents.json");app.recovery_root=folder.path_join("recovery-cold" if "--read" in args else "recovery")
@@ -48,7 +53,8 @@ func run() -> void:
 			if name=="Nested editing.has":
 				check(editor.active_owner==expected.asset and app.frame==6 and app.has_project.path==folder.path_join(name),"ordinary saved parent reopens the active child editor and frame")
 				editor.return_to_parent();await settle()
-			check(editor.graph.assets.size()==1 and editor.clips().size()==2,"cold project restores shared editable definition and two independent instances")
+			check(editor.graph.assets.size()==1 and editor.clips().size()==2 and app.has_project.path==folder.path_join(name),"cold project restores shared editable definition and two independent instances")
+			if expected.get("full_masks",false):check(editor.graph.format==Graph.MASK_FORMAT and editor.clips().all(full_mask),"cold project preserves full-frame masks alongside editable rig/audio")
 			var child: Dictionary=editor.graph.assets[0].scene
 			check(child.layers[1].cels.size()==2 and Storage.image_hash(child.layers[1].cels[0].image)==expected.paint,"cold child drawing holds remain editable and exact")
 			var prepared: Dictionary=app.renderer.prepare_world(child.world,int(child.video.duration_frames))
@@ -93,6 +99,9 @@ func run() -> void:
 	editor.return_to_parent();await settle()
 	check(editor.active_owner.is_empty() and app.video.duration_frames==48 and app.keys==parent_keys and Storage.image_hash(parent_ink)==ink_hash,"return preserves parent timing, camera and original ink")
 	check(editor.add_instance(id).is_empty(),"same editable child can be placed again")
+	if "--mask-recovery" in args:
+		for clip in editor.clips():editor.change_mask(clip.id,{"rect":[0,0,1920,1080],"invert":false})
+		check(editor.graph.format==Graph.MASK_FORMAT and editor.clips().all(full_mask),"full-frame masks retain ordinary editable 3D rig, ink and audio before crash test")
 	var second_id: String=editor.clips()[1].id
 	check(editor.change_clip(second_id,{"start":24,"duration":24}).is_empty(),"second instance has an independent parent range")
 	check(editor.placement_key(clip_id,{"frame":0,"offset":[-240,0],"scale":1.0,"rotation":0.0,"opacity":1.0,"interpolation":"ease"}).is_empty() and editor.placement_key(second_id,{"frame":0,"offset":[240,0],"scale":.75,"rotation":0.0,"opacity":.5,"interpolation":"ease"}).is_empty(),"instances have independent keyed placement and opacity")
@@ -157,7 +166,7 @@ func run() -> void:
 	var error: String=await app.export_movie(folder)
 	check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==render.get_data(),"actual MP4 uses exact shared nested preview/export pipeline")
 	check(FileAccess.get_sha256(parent_source)==parent_sha,"original parent geometry stays unchanged")
-	var expected_file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);expected_file.store_string(JSON.stringify({"paint":paint,"render":Storage.image_hash(render),"audio":audio_hash,"asset":id},"",true,true));expected_file.close()
+	var expected_file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);expected_file.store_string(JSON.stringify({"paint":paint,"render":Storage.image_hash(render),"audio":audio_hash,"asset":id,"full_masks":"--mask-recovery" in args},"",true,true));expected_file.close()
 	if "--crash" in args:
 		check(editor.enter(id).is_empty(),"enter the child for abrupt-exit recovery fixture")
 		app.set_frame(6);app.changed()

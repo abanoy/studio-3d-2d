@@ -19,6 +19,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--isolated-display',help='Linux: pre-provisioned private dummy X display')
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--mask-recovery',action='store_true',help='Exercise graph3 masks through real abrupt exit and ordinary startup')
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires a private --isolated-display; no shared-desktop fallback')
@@ -45,7 +46,7 @@ def main():
     run('tests/sequence_storage_unit.gd','storage',[folder/'storage'],'SEQUENCE_STORAGE_UNIT ',True)
     run('tests/sequence_runtime_smoke.gd','runtime',[folder/'storage'],'SEQUENCE_RUNTIME_SMOKE ')
     editor=folder/'editor';editor.mkdir()
-    run('tests/sequence_editor_smoke.gd','writer',[editor,'--crash'],'SEQUENCE_EDITOR_SMOKE ',abrupt=True)
+    run('tests/sequence_editor_smoke.gd','writer',[editor,'--crash',*(['--mask-recovery'] if options.mask_recovery else [])],'SEQUENCE_EDITOR_SMOKE ',abrupt=True)
     assert not (editor/'graceful-exit.txt').exists() and not (editor/'kill-returned.txt').exists()
     preserved={str(p):p.read_bytes() for p in editor.glob('*.has')}
     run('tests/sequence_editor_smoke.gd','reader',[editor,'--read'],'SEQUENCE_EDITOR_READ ')
@@ -68,13 +69,13 @@ def main():
     for name in ['Nested packed.has','Nested linked.has','Nested editing.has']:
         with zipfile.ZipFile(editor/name) as archive:
             manifest=json.loads(archive.read('project.json'));graph=manifest['sequence_graph']
-            assert manifest['schema_version']==6 and graph['format']=='studio_sequences_1'
+            assert manifest['schema_version']==6 and graph['format']==('studio_sequences_3' if options.mask_recovery else 'studio_sequences_1')
             assert len(graph['assets'])==1 and len(graph['clips'])==2
             child=graph['assets'][0]['scene']
             assert len(child['layers'][1]['cels'])==2 and child['world']['objects'] and child['audio']
             assert all(cel['path'] in archive.namelist() for layer in child['layers'] for cel in layer['cels'])
     result=dict(reports=reports,media=media,child_audio_onset=onset,private_receipts=receipts,
-                isolated_display=options.isolated_display,native_fixtures=0,writer_abrupt_exit_verified=True,manual_has_unchanged=True,folder=str(folder))
+                isolated_display=options.isolated_display,mask_recovery=options.mask_recovery,native_fixtures=0,writer_abrupt_exit_verified=True,manual_has_unchanged=True,folder=str(folder))
     (folder/'verification.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     print(json.dumps({key:value for key,value in result.items() if key!='media'},indent=2))
 

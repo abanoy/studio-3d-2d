@@ -508,7 +508,7 @@ unchanged as `CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md`.
 
 **Provisional implementation choices:** installed Godot 4.6 stable with Compatibility
 renderer; GDScript only; 1080p/48-frame starter; self-contained static GLB import;
-RGBA8/sRGB drawings; schema4 worlds (reads schema1–3); external FFmpeg; 32-cel memory limit;
+RGBA8/sRGB drawings; schema4/5 worlds and schema6 sequences (reads schema1–6); external FFmpeg; 32-cel memory limit;
 small flat source modules rather than empty future subsystem folders. The app name,
 software license and shipping/installer design remain open decisions.
 
@@ -521,13 +521,16 @@ Add model accepts MDL/GMA/bin and offers an archive-member chooser. Local Blende
 SourceIO preparation runs asynchronously, with cancellation and missing-content warnings.
 See [Source import instructions](docs/source_import.md). PMD/PMX now open directly through Add scene/model, using the installed local converter.
 VRM0/1 open directly through Add model. Manual bone/root posing works
-through the same source-independent controls; native morph/physics parameter editors remain pending.
+through the same source-independent controls. Shape and physics controls are present;
+per-format native fidelity still requires scoped fixtures.
 
-**Deferred:** multiple audio clips/MP3/OGG, tablet pressure, gap-closing fill/advanced onion ranges,
-persistent foot planting/native physics fidelity/long dense recording, morph controls, nested sequences,
-video import/chroma key, native Source fidelity, and AI tools.
-Do not interpret menu-free scope as removal of these requirements. This is a tested
-first slice, not clean-machine or artist acceptance of the full application.
+**Implemented beyond the initial slice:** multiple audio/MP3/Ogg, tablet-pressure
+software support, fill/onion controls, shape controls, planted feet, editable nested
+sequences, video alpha/chroma, sequence shadows/masks, smoothing and quality profiles.
+**Remaining work/acceptance:** broader native fidelity, reusable locomotion,
+long/dense projects, general drawing-layer masks/reference workflows and real
+hardware/artist acceptance. AI remains optional. See the
+[current requirement matrix](docs/requirements_cloud_2026-11-05.md) for scoped evidence.
 
 The supplied layered/animated Krita projects were inspected as references. See
 [KRA findings](docs/kra_reference_findings.md) for actual timing, layer counts and
@@ -717,3 +720,7 @@ pressure gaps empty. Only normal raster pixels are saved; existing formats remai
 Advanced Movie encoder now offers [Standard, Smaller file and High quality](docs/export_profiles.md).
 Standard keeps the original defaults; Retry MP4 can use another quality with the
 same saved frames/audio while preserving earlier movies.
+
+Sequence instances now have reversible [picture masks](docs/sequence_masks.md):
+rectangular crop or cutout before shadow generation. Source art and audio remain
+editable; applying a mask opts into studio_sequences_3 within schema6 HAS.

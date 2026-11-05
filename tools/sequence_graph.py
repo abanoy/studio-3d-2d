@@ -4,6 +4,7 @@ import re
 
 FORMAT='studio_sequences_1'
 SHADOW_FORMAT='studio_sequences_2'
+MASK_FORMAT='studio_sequences_3'
 CLIP_FIELDS={'id','asset_id','start','duration','source_in','time_in','key_in','loop','visible','muted','gain_db','keys'}
 KEY_FIELDS={'frame','offset','scale','rotation','opacity','interpolation'}
 
@@ -21,7 +22,7 @@ def identity(v):
 
 
 def error(graph,root):
-    if not isinstance(graph,dict) or set(graph)!={'format','assets','clips'} or graph['format'] not in (FORMAT,SHADOW_FORMAT):
+    if not isinstance(graph,dict) or set(graph)!={'format','assets','clips'} or graph['format'] not in (FORMAT,SHADOW_FORMAT,MASK_FORMAT):
         return 'Unknown editable sequence graph'
     assets=graph['assets']
     if not isinstance(assets,list) or not 1<=len(assets)<=4:return 'Expected 1–4 editable sequence assets'
@@ -57,10 +58,13 @@ def error(graph,root):
         total+=len(clips)
         if total>8:return 'At most8 sequence clips per project'
         for clip in clips:
-            expected=CLIP_FIELDS|{'shadow'} if graph['format']==SHADOW_FORMAT else CLIP_FIELDS
+            expected=CLIP_FIELDS|({'shadow'} if graph['format']!=FORMAT else set())|({'mask'} if graph['format']==MASK_FORMAT else set())
             if not isinstance(clip,dict) or set(clip)!=expected or not identity(clip['id']) or clip['id'] in ids or not isinstance(clip['asset_id'],str) or clip['asset_id'] not in index:return 'Invalid sequence clip identity or missing asset'
-            if graph['format']==SHADOW_FORMAT:
+            if graph['format']!=FORMAT:
                 why=shadow_error(clip['shadow'])
+                if why:return why
+            if graph['format']==MASK_FORMAT:
+                why=mask_error(clip['mask'])
                 if why:return why
             ids.add(clip['id']);child=index[clip['asset_id']]['scene']['video']
             if not integer(clip['start'],0,parent['video']['duration_frames']-1) or not integer(clip['duration'],1,parent['video']['duration_frames']-clip['start']) or not integer(clip['source_in'],0,child['duration_frames']-1):return 'Sequence clip exceeds its parent/local range'
@@ -96,6 +100,15 @@ def shadow_error(value):
     if set(value)!={'offset','color','softness'} or not isinstance(value['offset'],list) or len(value['offset'])!=2 or not isinstance(value['color'],list) or len(value['color'])!=4 or not number(value['softness'],0,32):return 'Invalid sequence shadow'
     if any(not number(n,-2048,2048) for n in value['offset']):return 'Sequence shadow offset exceeds2048pixels'
     if any(not number(n,0,1) for n in value['color']):return 'Invalid sequence shadow color'
+    return ''
+
+
+def mask_error(value):
+    if not isinstance(value,dict):return 'Invalid sequence picture mask'
+    if not value:return ''
+    if set(value)!={'rect','invert'} or not isinstance(value['rect'],list) or len(value['rect'])!=4 or type(value['invert']) is not bool:return 'Invalid sequence picture mask'
+    r=value['rect']
+    if not integer(r[0],0,1919) or not integer(r[1],0,1079) or not integer(r[2],1,1920) or not integer(r[3],1,1080) or r[0]+r[2]>1920 or r[1]+r[3]>1080:return 'Picture mask must be a whole-pixel rectangle inside the child canvas'
     return ''
 
 

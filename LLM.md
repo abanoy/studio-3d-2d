@@ -386,3 +386,52 @@ Earlier export-profiles, export-profiles-fixed and profiles-final evidence remai
 outside checkout. Existing Standard arguments/API signatures stay compatible.
 Broader masks, reusable motion/native fidelity, long/dense projects and owner
 acceptance remain. Continue independent implementation under the active goal.
+
+
+## 2026-11-05 UTC — reversible sequence crop/cutout masks
+
+Sequences now offers Picture mask: a whole-pixel child-canvas rectangle, optional
+cutout inversion, preview/Apply and disable. Original child world/camera/art/audio
+stay editable; mask derives detached pixels BEFORE shadow mip generation so hard
+and feathered shadows follow the masked silhouette. Per-instance parameters survive
+copy/split; shared assets keep independent masks. Invalid geometry refuses atomically;
+unchanged controls add no history, including whole-number JSON after cold reopen.
+First mask promotes to studio_sequences_3 inside schema6/HAS1; every clip retains
+shadow plus explicit mask field. Shadow edits cannot downgrade graph3. Undo can
+restore the earlier format; disable restores full picture while retaining graph3.
+Older readers reject unsupported graph3. No new native asset extension decision.
+
+Each runtime remains at4 shared source-picture frames plus at most8 derived mask
+textures, one per clip. Source changes invalidate derivatives; holds reuse them.
+No source cel replacement/flattening or mask texture persistence. This is a basic
+rectangular sequence mask, not general painted/lasso layer masks or animated mask
+shape tracks. See docs/sequence_masks.md; README's obsolete deferred-feature list
+was reconciled against implemented code without changing historical progress.
+
+Fresh private Linux llvmpipe: graph106/audio9/storage8/runtime23 pass. Actual mask
+app26 +coldreader10 pass: real browser controls, crop/cutout and shadow alpha,
+Undo/Redo/disable/no-op, independent instances, split/copy, original source/PCM,
+packed/linked HAS, recovery, unchanged manual files, normal close, exact MP4 input
+and transparent drawing-only PNG. H2641080p24/48frames/2sec +AAC decodes frame6 cue
+at0.250895833sec. Visually inspected actual composed parent scene. Python290run,
+289pass/1independent-MMD-reader skip; malformed masks/version downgrade preserve
+prior files. Evidence masks-accepted, sequence-masks, mask-runtime and masks-python-
+final under /workspace/has-handoff-audit. Synthetic/procedural originals only;
+no native Windows/GPU/tablet or artistic-mask acceptance claim.
+
+Added optional --mask-recovery to the full sequence verifier. Complete skinned
+rig/ink/audio/two-parent-background workflow now uses full-frame masks, then its
+writer really SIGKILLs itself. Fresh mask-recovery-accepted reports48writer,
+19coldreader and5ordinary-startup checks: complete graph3, active child/frame6,
+parametric rig, original art/audio and both parent backgrounds restore; no graceful
+hooks ran and manual HAS bytes remain exact. Separate synthetic transient decodes
+at0.250020833sec. Initial new startup observer lacked one explicit bool type;
+corrected harness and reran in a fresh recovery directory, retaining failed logs.
+Cold mask assertion initially compared Godot float/int array types rather than
+whole-pixel protocol values; now compares exact integer geometry while preserving
+strict source/render/PCM checks and actual opened-file identity. No production
+validation was weakened. Tracked output logs restored after copying fresh proof.
+
+Continue independent work: fuller reference/mask workflows, reusable locomotion,
+native fidelity and long/dense projects remain; packaging/path-inference details
+stay OPEN and hardware/artist acceptance needs owner resources.

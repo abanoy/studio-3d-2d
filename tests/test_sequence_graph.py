@@ -55,6 +55,16 @@ def cases():
         v=copy.deepcopy(styled);v['clips'][0]['shadow']=value;result.append((v,scene(),False))
     v=copy.deepcopy(styled);v['format']=graph.FORMAT;result.append((v,scene(),False))
     v=copy.deepcopy(styled);del v['clips'][0]['shadow'];result.append((v,scene(),False))
+    masked=copy.deepcopy(styled);masked['format']=graph.MASK_FORMAT;masked['clips'][0]['mask']={}
+    result.append((copy.deepcopy(masked),scene(),True))
+    masked['clips'][0]['mask']=dict(rect=[800,400,50,100],invert=False);result.append((copy.deepcopy(masked),scene(),True))
+    for rect in [[0,0,1920,1080],[1919,1079,1,1]]:
+        v=copy.deepcopy(masked);v['clips'][0]['mask']=dict(rect=rect,invert=True);result.append((v,scene(),True))
+    for value in [None,False,[],dict(rect=[0,0,1],invert=False),dict(rect=[0,0,1,1],invert=1),dict(rect=[-1,0,1,1],invert=False),dict(rect=[0,0,0,1],invert=False),dict(rect=[1919,0,2,1],invert=False),dict(rect=[0,1079,1,2],invert=False),dict(rect=[True,0,1,1],invert=False),dict(rect=[0,0,1.5,1],invert=False),dict(rect=[0,0,1,1],invert=False,extra=0)]:
+        v=copy.deepcopy(masked);v['clips'][0]['mask']=value;result.append((v,scene(),False))
+    v=copy.deepcopy(masked);v['format']=graph.SHADOW_FORMAT;result.append((v,scene(),False))
+    for field in ['mask','shadow']:
+        v=copy.deepcopy(masked);del v['clips'][0][field];result.append((v,scene(),False))
     return result
 
 

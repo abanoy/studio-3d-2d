@@ -35,3 +35,6 @@ revision invalidation, exact source restoration, nesting and queued cancellation
 Current scene duration remains at most240frames, shared cels at most32 and cached
 asset pictures at most4. Audio, undo and archive limits stay in place. This is one
 measured caching improvement, not support for arbitrarily long or dense projects.
+
+[Sequence masks](sequence_masks.md) additionally cache up to8 derived per-clip
+textures in each runtime; the original shared source-picture cache remains at4.
