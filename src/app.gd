@@ -168,6 +168,7 @@ var pose_editor: Node
 var mmd_pose_importer: Node
 var audio_importer: Node
 var raster_importer: Node
+var video_importer: Node
 var audio_trim_editor: Node
 var audio_fade_editor: Node
 var physics_editor: Node
@@ -292,6 +293,7 @@ func _ready() -> void:
 	onion_editor=OnionEditor.new();onion_editor.app=self;add_child(onion_editor);onion_editor.setup(drawing_section)
 	layer_editor=LayerEditor.new();layer_editor.app=self;add_child(layer_editor);layer_editor.setup(drawing_section)
 	raster_importer=preload("res://src/krita_import.gd").new();add_child(raster_importer);raster_importer.setup(self)
+	video_importer=preload("res://src/video_import.gd").new();add_child(video_importer);video_importer.setup(self)
 	color_sampler=ColorSampler.new();color_sampler.app=self;add_child(color_sampler);color_sampler.setup(drawing_section)
 	palette_editor=preload("res://src/palette_editor.gd").new();palette_editor.app=self;add_child(palette_editor);palette_editor.setup(drawing_section)
 	drawing_selection_editor=preload("res://src/drawing_selection_editor.gd").new();drawing_selection_editor.app=self;add_child(drawing_selection_editor);drawing_selection_editor.setup(drawing_section)
@@ -1925,6 +1927,8 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		if raster_importer and raster_importer.pid>0:
 			raster_importer.cancel();message("Cancelling artwork preparation. Close again after it stops.")
+		elif video_importer and video_importer.pid>0:
+			video_importer.cancel();message("Cancelling video preparation. Close again after it stops.")
 		elif source_import and source_import.pid > 0:
 			source_import.cancel()
 			message("Cancelling Source preparation. Close again after it stops.")

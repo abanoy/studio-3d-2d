@@ -15,16 +15,31 @@ static func digest(v) -> bool:
 	return true
 static func error(v) -> String:
 	if not v is Dictionary or v.size()!=13:return "Invalid drawing source history."
-	for key in ["format","kind","name","sha256","width","height","fps","range","visibility","fit","rate","at","duration"]:
+	var video: bool=v.get("format")=="studio_drawing_origin_2" and v.get("kind")=="video"
+	var fields: Array=["format","kind","name","sha256","width","height","fit","rate","at","duration"]
+	fields.append_array(["source_rate","source_duration","chroma"] if video else ["fps","range","visibility"])
+	for key in fields:
 		if not v.has(key):return "Incomplete drawing source history."
-	if v.format!="studio_drawing_origin_1" or v.kind!="krita":return "Unknown drawing source history."
+	if not video and (v.format!="studio_drawing_origin_1" or v.kind!="krita"):return "Unknown drawing source history."
 	if not text(v.name,200) or v.name.contains("/") or v.name.contains("\\") or v.name.contains(":") or not digest(v.sha256):return "Invalid drawing source identity."
-	if not integer(v.width,1,32768) or not integer(v.height,1,32768) or v.width*v.height>16777216 or not integer(v.fps,0,1000):return "Invalid original drawing dimensions/timing."
-	if not v.range is Array or not v.range.size() in [0,2]:return "Invalid original drawing range."
-	if v.range.size()==2 and (not integer(v.range[0],0,10000000) or not integer(v.range[1],int(v.range[0]),10000000)):return "Invalid original drawing range."
-	if not v.visibility is Dictionary or v.visibility.size()>128:return "Invalid original layer choices."
-	for key in v.visibility:
-		if not text(key,128) or not v.visibility[key] is bool:return "Invalid original layer choice."
+	if not integer(v.width,1,32768) or not integer(v.height,1,32768) or v.width*v.height>16777216:return "Invalid original drawing dimensions."
+	if video:
+		for key in ["source_rate","source_duration"]:
+			var r=v[key]
+			if not r is Array or r.size()!=2 or not integer(r[0],1,1000000000) or not integer(r[1],1,1000000000):return "Invalid source video timing."
+			if float(r[0])/r[1]>(240 if key=="source_rate" else 60):return "Invalid source video timing."
+		var c=v.chroma
+		if not c is Dictionary or c.size()!=4 or not c.get("enabled") is bool or not c.get("color") in ["00ff00","0000ff"]:return "Invalid chroma choices."
+		for key in ["similarity","blend"]:
+			var n=c.get(key)
+			if not (n is int or n is float) or not is_finite(float(n)) or n<(0.01 if key=="similarity" else 0.0) or n>1:return "Invalid chroma choices."
+	else:
+		if not integer(v.fps,0,1000):return "Invalid original drawing timing."
+		if not v.range is Array or not v.range.size() in [0,2]:return "Invalid original drawing range."
+		if v.range.size()==2 and (not integer(v.range[0],0,10000000) or not integer(v.range[1],int(v.range[0]),10000000)):return "Invalid original drawing range."
+		if not v.visibility is Dictionary or v.visibility.size()>128:return "Invalid original layer choices."
+		for key in v.visibility:
+			if not text(key,128) or not v.visibility[key] is bool:return "Invalid original layer choice."
 	if not v.fit is Array or v.fit.size()!=4:return "Invalid drawing fit."
 	if not integer(v.fit[0],1,1920) or not integer(v.fit[1],1,1080) or not integer(v.fit[2],0,1920-int(v.fit[0])) or not integer(v.fit[3],0,1080-int(v.fit[1])):return "Invalid drawing fit."
 	if not v.rate is Array or v.rate.size()!=2:return "Invalid import rate."
@@ -40,6 +55,8 @@ static func layers_error(layers: Array) -> String:
 	return ""
 static func from_clip(clip: Dictionary,at: int) -> Dictionary:
 	var source: Dictionary=clip.source
+	if source.get("kind")=="video":
+		return {"format":"studio_drawing_origin_2","kind":"video","name":str(source.path).get_file(),"sha256":source.sha256,"width":source.width,"height":source.height,"source_rate":source.get("source_rate"),"source_duration":source.get("source_duration"),"chroma":source.get("chroma"),"fit":[clip.fit.width,clip.fit.height,clip.fit.x,clip.fit.y],"rate":[clip.fps_num,clip.fps_den],"at":at,"duration":clip.duration_frames}
 	var native_range: Array=[]
 	if source.get("range") is Dictionary:native_range=[source.range.get("start"),source.range.get("end_inclusive")]
 	return {"format":"studio_drawing_origin_1","kind":"krita","name":str(source.path).get_file(),"sha256":source.sha256,"width":source.width,"height":source.height,"fps":source.get("fps",0) if source.get("fps")!=null else 0,"range":native_range,"visibility":source.get("layer_visibility",{}).duplicate(true),"fit":[clip.fit.width,clip.fit.height,clip.fit.x,clip.fit.y],"rate":[clip.fps_num,clip.fps_den],"at":at,"duration":clip.duration_frames}

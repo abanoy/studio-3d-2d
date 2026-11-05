@@ -10499,3 +10499,34 @@ Initial failures retained: nonexistent app.world test/watchdog; clicking before 
 OpenAI Codex, GPT-6-based Windows desktop agent, 2026-11-04 20:35 EST. Owner cleanup request explicitly relayed by Planner: inspect own component, no tests/downloads/archive moves, preserve originals/source/history/current/rollback evidence/dependencies; provide exact safe paths/sizes if deletion safety unavailable. No tests were started after that message. Saved already-tested684source Krita review separately first (20:29checkpoint), with explicit moved-copy NOT cold-tested limitation and no normal app replacement.
 Read-only assessment measured worktree output/multi-audio12,304,986,771bytes (11.4599GiB) and recovery-history11,555,182,947bytes (10.7616GiB). Scanned742current root output report/index JSONs across worktree/canonical,1380source/config/one-shot helper files; retained explicitly referenced runs. SHA256 matched extracted GLB/WAV/PNG payloads against retained sibling HAS ZIP members/non-cache assets. Final exact DELETE-SAFE list148directories/5,774,516,929bytes (5.3779GiB):83obsolete open_ extraction cache children with all binary duplicates verified,65old rendered-media folders. Keep parent caches/job JSON/work_ snapshots/saved HAS/linked sidecars/recovery; some ARCHIVE parents contain these individually assessed children and must not be deleted wholesale. Index parse errors0. Full JSON retains binary identity and retained-copy provenance. No general all-chat transitive-reference guarantee; recheck before later deletion.
 No files deleted (0bytes reclaimed), no source/assets moved, tests/downloads/deployments/new dependencies. Process-command inspection via CIM was denied; a separate visible-process snapshot found no matching Godot/Krita/Blender/FFmpeg/Python workers, but cannot certify every future/current cross-chat dependency. Left actual deletion to owner/Planner using exact list with process/reference recheck. Keep compatibility/imports/native dependencies, private receipts, all checkpoints/current evidence, normal recovery and originals; redesign outside component scope. Canonical reportC:\a\Programming\cloudflare\prototypes\studio-3d-2d\output\cleanup-assessment\2026-11-04-203301\CLEANUP-REPORT.md and JSONC:\a\Programming\cloudflare\prototypes\studio-3d-2d\output\cleanup-assessment\2026-11-04-203301\cleanup-report-final.json, byte-verified copy of worktreeC:\Users\noble\.codex\worktrees\ec34\cloudflare\hybrid-animation-studio\output\cleanup-assessment\2026-11-04-203301; reportlists absolute worktree deletion targets. Earlier initial assessment remains clearly superseded by final JSON/MD. Current normal app/web unchanged, full HAS goal ACTIVE/unfinished. Four histories backed up/raw-appended preserving existing prefixes. Same restricted Windows/local/private-test capabilities, no unattended future-work claim. Next Planner consolidates cleanup; later resume remaining HAS workflow and moved-copy startup validation when further tests are appropriate.
+
+
+## 2026-11-05 UTC — cloud review and video artwork increment
+
+Recovered source provenance and scoped baseline are in cloud_source_recovery.md.
+Completed full chronological reading of the previous10,501lines and authoritative
+spec/addendum/audit/README/dependencies; standalone root LLM.md preserves the
+missing-parent limitation. requirements_cloud_2026-11-05.md reconciles recovered
+features with full remaining scope; this is not full-product completion.
+
+Added local video artwork import via the existing raster hold/compositor path,
+with original alpha, green/blue tolerance/softness/spill removal, source identity,
+bounded conversion, cancellable async review, checkerboard preview, one-Undo Add
+and normal recovery/packed/linked persistence. No source rewrite or frame omission.
+No video audio import, linked source playback, nesting or increased resource limits.
+Explicit raster_clip_2 and drawing_origin_2 are new video contracts; Krita v1 and
+scene5/Model9/audio4 are unchanged. See video_import.md for complete usage/limits.
+
+Fresh Linux: Python272run,271pass,1missing independent-MMD-reader skip; video10,
+origin cross-runtime51, engine24, old raster17checks pass. Actual hidden app19
+and cold packed/linked reader7pass. Portable runner moves source before reopen.
+Recovery exact pixels, immutable original, Undo/Redo, stale/cancel no-late-adopt
+and preview/export input bytes pass. FFprobe verifies H2641920x1080,24fps,48frames,
+2seconds. Isolated dummy Xorg/llvmpipe only; no Windows/native hardware/physical
+audio/tablet/artist acceptance claim. Existing tracked evidence was preserved.
+
+Next: Linux automatic recovery ownership, editable nested sequences/audio/cache,
+advanced tutorials, native fidelity, measured longer projects and owner acceptance.
+Independent asset packaging remains an explicit OPEN decision; requested that
+choice and owner-approved fixture/Windows paths. No website deployment or native
+asset redistribution. Active continuation goal permits Git commits/push.

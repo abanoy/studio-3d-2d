@@ -26,3 +26,37 @@ explicitly replaces the old unconditional full-Windows-suite instruction for clo
 work: inspect scripts/fixtures and start with portable checks. Use the existing
 isolated checkout, not a new Git worktree. Keep graphical automation hidden.
 No push, website deployment, production publishing or native asset redistribution.
+
+
+## 2026-11-05 UTC — completed source review and video artwork import
+
+Completed full reading of the original specification, addendum, README, dependencies,
+AGENTS, voice audit and all10,501 historical progress-memo lines. No parent history
+was available. See docs/requirements_cloud_2026-11-05.md for the reconciled matrix;
+features described in old reports were checked against recovered source rather
+than recreated. Full product acceptance remains incomplete.
+
+Added Draw → Import video artwork: async local inspection, optional green/blue
+keying with tolerance/softness/spill suppression, preserved original alpha, bounded
+full-range preparation, checkerboard scrub review and atomic one-Undo new layer.
+Normalized cels share the existing preview/export/save/recovery path. Original
+video stays unchanged; video audio requires separate audio import. Existing
+Krita preparation shares importer hooks and mutually excludes competing reviews.
+Formats are explicit raster_clip_2 / drawing_origin_2 for video; Krita v1 and
+scene5/Model9/audio4 remain. Older readers may reject video ancestry.
+
+Fresh Python272run/271pass/1MMD-reader skip; video10, cross-runtime origin51,
+core24 and raster17 checks pass. Hidden llvmpipe integration19 + cold reader7
+passes; portable runner moves original video before both packed/linked reopening.
+Recovery pixels, Undo/Redo, source guards/cancel and exact preview/export frames
+pass. FFprobe: H2641080p24,48frames,2seconds. This is Linux software rendering,
+not Windows/native/GPU/device/artist acceptance. Full native verifier not run.
+See docs/video_import.md and /workspace/has-handoff-audit/video-portable.
+
+Remaining: automatic Linux recovery liveness, editable nested sequences and audio,
+advanced tutorial coverage, broader native/full-body fidelity, measured long-project
+caching and artist acceptance. Asked for the addendum's OPEN native asset packaging
+choice and owner-approved native fixture/Windows environment paths. No such
+decision or fixtures have arrived yet. The active continuation goal authorizes
+committing and pushing the development repository; no deployment, binary/native
+asset distribution or external messaging is authorized.

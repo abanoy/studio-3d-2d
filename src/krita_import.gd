@@ -34,6 +34,13 @@ func setup(owner_app) -> void:
 	app.drawing_section.move_child(launch,app.layer_editor.launch.get_index()+1)
 	launch.tooltip_text="Review a local KRA and add rendered artwork as one new editable drawing layer. Installed Krita is required."
 
+func worker_script() -> String:return "res://tools/prepare_krita.py"
+func worker_arguments(args: Array) -> Array:return args
+func source_extensions() -> Array:return ["kra"]
+func import_title() -> String:return "Import Krita artwork"
+func job_group() -> String:return "krita-imports"
+func success_message() -> String:return "Krita artwork added as an editable drawing layer. Undo removes this import."
+
 func slots() -> int:
 	var used:=0
 	for layer in app.layers:used+=layer.cels.size()
@@ -43,7 +50,10 @@ func available() -> bool:
 func valid() -> bool:
 	return session==app.recovery_session and revision==app.recovery_revision and video==app.video and at==app.frame and available()
 func external_busy() -> bool:
-	return app.source_import.pid>0 or app.has_project.pid>0 or app.audio_importer.pid>0
+	if app.source_import.pid>0 or app.has_project.pid>0 or app.audio_importer.pid>0:return true
+	for importer in [app.raster_importer,app.video_importer]:
+		if importer and importer!=self and not importer.phase.is_empty():return true
+	return false
 func close_dialogs() -> void:
 	for dialog in [review,preview,progress]:
 		if is_instance_valid(dialog):dialog.hide();dialog.queue_free()
@@ -56,18 +66,18 @@ func choose() -> void:
 	app.choose_file("Import Krita artwork",PackedStringArray(["*.kra ; Krita artwork"]),begin)
 func begin(path: String) -> void:
 	if not phase.is_empty() or not available() or external_busy():app.message("Finish other scene operations before importing artwork.");return
-	if path.get_extension().to_lower()!="kra" or path.begins_with("\\\\") or path.begins_with("//") or path.contains("://"):app.message("Choose a local Krita .kra file.");return
+	if not path.get_extension().to_lower() in source_extensions() or path.begins_with("\\\\") or path.begins_with("//") or path.contains("://"):app.message("Choose a supported local artwork file.");return
 	app.stop();app.finish_stroke();app.pose_editor.finish_drag();app.release_mouse()
 	session=app.recovery_session;revision=app.recovery_revision;video=app.video.duplicate(true);at=app.frame;source=path
-	job=ProjectSettings.globalize_path("res://output/krita-imports/%d-%d" % [OS.get_process_id(),Time.get_ticks_usec()])
+	job=ProjectSettings.globalize_path("res://output/%s/%d-%d" % [job_group(),OS.get_process_id(),Time.get_ticks_usec()])
 	if DirAccess.make_dir_recursive_absolute(job)!=OK:fail("Cannot create the artwork preparation folder.");return
 	cancelled=false;response=job.path_join("inspect.json");phase="inspect"
-	start(["--inspect",source,"--result",response,"--cancel-file",job.path_join("cancel")],"Reading Krita layers…")
+	start(["--inspect",source,"--result",response,"--cancel-file",job.path_join("cancel")],"Reading source artwork…")
 func start(args: Array,title: String) -> void:
-	var arguments:=PackedStringArray([ProjectSettings.globalize_path("res://tools/prepare_krita.py")]);arguments.append_array(PackedStringArray(args))
+	var arguments:=PackedStringArray([ProjectSettings.globalize_path(worker_script())]);arguments.append_array(PackedStringArray(worker_arguments(args)))
 	pid=OS.create_process(app.source_import.python(),arguments,false)
 	if pid<=0:fail("Cannot start artwork preparation. Check the desktop Python setting.");return
-	progress=AcceptDialog.new();progress.title="Import Krita artwork";progress.dialog_text=title+"\nYour original file stays unchanged.";progress.ok_button_text="Cancel";progress.exclusive=false;app.add_child(progress)
+	progress=AcceptDialog.new();progress.title=import_title();progress.dialog_text=title+"\nYour original file stays unchanged.";progress.ok_button_text="Cancel";progress.exclusive=false;app.add_child(progress)
 	progress.confirmed.connect(cancel);progress.close_requested.connect(cancel);progress.popup_centered(Vector2i(470,160))
 func cancel() -> void:
 	cancelled=true
@@ -181,7 +191,7 @@ func commit() -> void:
 	var layer:={"id":str(ResourceUID.create_id()),"name":app.layer_editor.unique_name(source.get_file().get_basename().left(60)),"visible":true,"cels":decoded,"origin":candidate.origin.duplicate(true)}
 	# Disarm stale guards before changed() advances the revision.
 	phase="";decoded=[];candidate={};close_dialogs();app.layers.append(layer);app.active_layer=app.layers.size()-1
-	app.layer_editor.structure(before,selected,bytes);app.message("Krita artwork added as an editable drawing layer. Undo removes this import.")
+	app.layer_editor.structure(before,selected,bytes);app.message(success_message())
 func _exit_tree() -> void:
 	if pid>0:
 		var flag:=FileAccess.open(job.path_join("cancel"),FileAccess.WRITE)

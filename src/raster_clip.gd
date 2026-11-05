@@ -3,8 +3,8 @@ const Origin=preload("res://src/drawing_origin.gd")
 static func be32(b: PackedByteArray,at: int) -> int:
 	return (int(b[at])<<24)|(int(b[at+1])<<16)|(int(b[at+2])<<8)|int(b[at+3])
 static func validate(v,folder: String,video: Dictionary,at: int,remaining: int,source_sha: String) -> Dictionary:
-	if not v is Dictionary or v.get("format")!="studio_raster_clip_1":return {"error":"Unknown prepared artwork format."}
-	if not v.get("source") is Dictionary or v.source.get("kind")!="krita" or not v.source.get("path") is String or v.source.get("sha256")!=source_sha:return {"error":"Prepared source identity changed."}
+	if not v is Dictionary or not v.get("format") in ["studio_raster_clip_1","studio_raster_clip_2"]:return {"error":"Unknown prepared artwork format."}
+	if not v.get("source") is Dictionary or v.source.get("kind")!=("video" if v.format=="studio_raster_clip_2" else "krita") or not v.source.get("path") is String or v.source.get("sha256")!=source_sha:return {"error":"Prepared source identity changed."}
 	for key in ["width","height","fps_num","fps_den"]:
 		if v.get(key)!=video.get(key):return {"error":"Prepared artwork does not match this movie."}
 	if not Origin.integer(v.get("duration_frames"),1,int(video.duration_frames)-at) or not v.get("holds") is Array or v.holds.is_empty() or v.holds.size()>remaining:return {"error":"Prepared artwork exceeds available frames or drawings."}

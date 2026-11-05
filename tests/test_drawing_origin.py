@@ -11,10 +11,29 @@ def cases():
         for value in values:result.append({**good(),key:value})
     result.extend([{**good(),'path':'do not resolve'},None,[]])
     return result
+def video_good():
+    v=good()
+    for key in ['fps','range','visibility']:del v[key]
+    return {**v,'format':'studio_drawing_origin_2','kind':'video','name':'clip.mov','source_rate':[24000,1001],'source_duration':[1001,500],'chroma':{'enabled':True,'color':'00ff00','similarity':.1,'blend':.05}}
+def video_cases():
+    valid=video_good();result=[(valid,True)]
+    for key,values in {'format':['studio_drawing_origin_1'],'kind':['krita'],'source_rate':[[0,1],[241,1],[1,False],[]],'source_duration':[[61,1],[1,0],[1]],'chroma':[{},None,{'enabled':1,'color':'00ff00','similarity':.1,'blend':0},{'enabled':True,'color':'ff0000','similarity':.1,'blend':0}]}.items():
+        result.extend([({**valid,key:value},False) for value in values])
+    return result
 class OriginTests(unittest.TestCase):
     def test_bounds_and_portable_identity(self):
         for i,v in enumerate(cases()):
             with self.subTest(i=i):self.assertEqual(not origin.error(v),i<3)
+    def test_video_origin_bounds(self):
+        for v,valid in video_cases():
+            with self.subTest(v=v):self.assertEqual(not origin.error(v),valid)
+    def test_video_packed_and_linked_preserve_ancestry(self):
+        for storage in ['packed','linked']:
+            with self.subTest(storage=storage),tempfile.TemporaryDirectory() as d:
+                root=Path(d);helper=HasTests();request,_,_=helper.fixture(root);request['storage']=storage
+                folder=Path(request['folder']);manifest=json.loads((folder/'project.json').read_bytes());manifest['layers'][0]['origin']=video_good();(folder/'project.json').write_bytes(has.json_bytes(manifest));has.pack(request)
+                result=helper.unpack(root,request)
+                self.assertEqual(json.loads((Path(result['folder'])/'project.json').read_bytes())['layers'][0]['origin'],video_good())
     def test_packed_and_linked_preserve_ancestry_and_bad_save(self):
         for storage in ['packed','linked']:
             with self.subTest(storage=storage),tempfile.TemporaryDirectory() as d:
@@ -26,5 +45,5 @@ class OriginTests(unittest.TestCase):
 if __name__=='__main__':
     if len(sys.argv)>1 and sys.argv[1]=='--corpus':
         # Keep surrogate failure in Python only; JSON parser may normalize it.
-        data=[v for v in cases() if not isinstance(v,dict) or v.get('name')!='\ud800.kra'];Path(sys.argv[2]).write_text(json.dumps([{'value':v,'valid':not origin.error(v)} for v in data],ensure_ascii=True),encoding='utf-8')
+        data=[v for v in cases() if not isinstance(v,dict) or v.get('name')!='\ud800.kra'];Path(sys.argv[2]).write_text(json.dumps([{'value':v,'valid':not origin.error(v)} for v in data]+[{'value':v,'valid':valid} for v,valid in video_cases()],ensure_ascii=True),encoding='utf-8')
     else:unittest.main()

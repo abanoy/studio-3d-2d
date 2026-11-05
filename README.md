@@ -664,3 +664,12 @@ Pose mode now includes [Body poses](docs/body_pose_library.md): save a named
 authored pose with an isolated thumbnail, reuse it at another frame, and rename,
 duplicate or remove it with Undo. Advanced exchanges native HAS-pose data for the
 identical imported rig. Position, face and generated motion stay independent.
+
+
+Video artwork import (2026-11-05): in Draw mode, choose **Import video artwork…**,
+review local video with preserved alpha or optional green/blue removal, prepare
+and scrub the checkerboard preview, then add one editable drawing layer. Original
+files stay unchanged; Add is one Undo. The full clip must fit the current frame
+and cel budgets. Audio is imported separately. See [video import](docs/video_import.md)
+for bounds, compatibility and tests, and [cloud requirement reconciliation](docs/requirements_cloud_2026-11-05.md)
+for remaining features and acceptance gates.
