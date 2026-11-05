@@ -10587,3 +10587,14 @@ provide an already provisioned private dummy display using `--isolated-display :
 Default chapter preserves the existing pose/camera regression. This adds focused
 coverage; advanced interpolation/constraints/rigging/physics chapters, richer
 demonstrations and artist feedback remain. Full application is still incomplete.
+
+
+## 2026-11-05 UTC — picture-stream duration refinement
+
+Video import now prefers exact stream timing, Matroska/WebM DURATION tags or known
+frame count/rate; it does not extend picture holds to a longer ignored audio
+stream's container end. Missing usable picture timing refuses rather than guesses.
+New real FFV1/PCM Matroska test verifies1second of pictures remains4frames at4fps
+while ignored audio runs2seconds. Full Python281run/280pass/1independent-MMD-reader
+skip; video11pass. See /workspace/has-handoff-audit/video-duration-python.log.
+Lighting/export tutorial9734b3b and Linux recovery680a911 are pushed to main.

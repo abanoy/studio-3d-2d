@@ -48,8 +48,8 @@ Older applications may reject the new ancestry format; no downgrade is automatic
 
 ## Fresh cloud evidence — 2026-11-05 UTC
 
-- Full Python discovery:272run,271pass, one independent MMD-reader skip.
-- Video procedural unit tests:10pass, real FFmpeg/QTRLE and VP9-alpha WebM,
+- Full Python discovery:281run,280pass, one independent MMD-reader skip.
+- Video procedural unit tests:11pass, real FFmpeg/QTRLE and VP9-alpha WebM,
   fractional24000/1001timing, green key, semi-transparent alpha, fit, budgets,
   cancellation, immutable source, invalid settings and fresh-output refusal.
 - Python/Godot drawing-origin corpus:51matching decisions; headless core24 and
@@ -71,3 +71,9 @@ On Linux, first provision an owned isolated dummy X server, then explicitly pass
 Set `HYBRID_GODOT` to pinned4.6stable and `HYBRID_FFMPEG` to installed FFmpeg.
 Local fresh logs and `verification.json` are under
 `/workspace/has-handoff-audit/video-portable`; generated media are not source files.
+
+Per-stream duration takes priority over container duration. Matroska/WebM stream
+DURATION tags and known frame counts are accepted when ordinary stream duration
+is absent. A longer ignored audio stream does not create extra video holds. A
+source without usable picture-stream timing refuses instead of guessing from the
+container's audio end. The added procedural FFV1/PCM Matroska case verifies this.

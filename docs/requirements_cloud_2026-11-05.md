@@ -22,7 +22,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | Stage1 3D / camera / cels / MP4 | Fresh procedural rig/body-pose and video imports, unit24, exact preview/export input, 48-frame movie | Entire core regression matrix below |
 | Stage2 drawing / audio | Pressure/opacity, palettes, rect select/transform, fills/closure/growth, onion, MP3/Ogg, multiple audio, trims/fades present | Tablet feel; fresh decoded frame24 audio onset |
 | Stage3 posing / reference | Rig-aware pose/IK, body library, Model9 independent root components, paths, shapes and reference-only flags present | Native inherited transforms/material/bone/cloth fidelity and broader full-body locomotion |
-| Stage4 imported alpha / chroma | **New:** bounded local video→editable holds; tolerance/softness/spill, original alpha and source preservation; fresh units10 + app19 + reader7 | Long/video-track workflows and artistic keying quality |
+| Stage4 imported alpha / chroma | **New:** bounded local video→editable holds; tolerance/softness/spill, original alpha and source preservation; fresh units11 + app19 + reader7 | Long/video-track workflows and artistic keying quality |
 | Stage4 sequence assets / child propagation | No editable nested sequence asset contract exists | Local/parent time, offset/loop/duration, cycle guard, child invalidation and nested audio must be implemented together |
 | Stage4 compositing / output | Multiple drawing layers, opacity and transparent PNG export present | General transform tracks, masks, shadows/glow and nested sequence exit scenario |
 | Stage5 quality / optional intelligence | Fills, ghost/onion, brush controls, selection and palettes present; no required AI | Optional suggestions require review/accept/reject, provenance and measured owner need; not a completion prerequisite for optional AI |
@@ -106,7 +106,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | REF-02 | Reference-only state present; full recovered-source gate not rerun |
 | SEQ-01 | Unimplemented editable nested sequence update gate |
 | KEY-01 | Actual green removal, original immutability, transparent/half-alpha unit checks, spill filter; app19 + reader7 |
-| SAFE-01 | Full Python discovery280run/279pass/1skip, origin corpus51, raster packet17, recovery identity47/journal33/startup147 pass; full interruption/fault matrix remains |
+| SAFE-01 | Full Python discovery281run/280pass/1skip, origin corpus51, raster packet17, recovery identity47/journal33/startup147 pass; full interruption/fault matrix remains |
 | PERF-01 | Physical tablet/owner machine unavailable; no latency/comfort claim |
 | Addendum A | Procedural subset works; five-minute novice observation absent |
 | Addendum B | Owner-approved native model/map fixtures and Windows environment needed |

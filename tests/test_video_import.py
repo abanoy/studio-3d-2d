@@ -102,6 +102,16 @@ class VideoImportTests(unittest.TestCase):
         self.assertEqual(packet['duration_frames'], 2)
         self.assertEqual(packet['source']['source_duration'], [1001,12000])
 
+    def test_longer_ignored_audio_does_not_extend_video_holds(self):
+        source=self.root/'long-audio.mkv'
+        subprocess.run([FFMPEG,'-v','error','-n','-i',str(self.source),'-f','lavfi','-i',
+                        'anullsrc=r=48000:cl=mono','-t','2','-map','0:v:0','-map','1:a:0',
+                        '-c:v','ffv1','-c:a','pcm_s16le','-threads','1',str(source)],check=True,**PROCESS_FLAGS)
+        self.request.update(source=str(source),source_sha256=video.raster.sha(source))
+        packet=video.prepare(self.request)
+        self.assertEqual(packet['duration_frames'],4)
+        self.assertEqual(packet['source']['source_duration'],[1,1])
+
     def test_exceeding_range_or_hold_budget_refuses_whole_import(self):
         for key, value in [('available_frames',3), ('max_cels',1)]:
             with self.subTest(key=key):

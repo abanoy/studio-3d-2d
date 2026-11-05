@@ -5,6 +5,7 @@ import argparse
 import json
 import math
 import os
+import re
 import subprocess
 import time
 
@@ -106,9 +107,22 @@ def inspect(source, ffmpeg, folder, cancel):
         raise ValueError('Convert rotated or non-square-pixel video before importing')
     try:
         rate = Fraction(stream['avg_frame_rate'])
-        duration = (Fraction(stream['duration_ts']) * Fraction(stream['time_base'])
-                    if stream.get('duration_ts') and stream.get('time_base')
-                    else Fraction(stream.get('duration') or data.get('format', {}).get('duration', '0')))
+        if stream.get('duration_ts') and stream.get('time_base'):
+            duration = Fraction(stream['duration_ts']) * Fraction(stream['time_base'])
+        elif stream.get('duration'):
+            duration = Fraction(stream['duration'])
+        else:
+            # Matroska/WebM often puts per-stream duration in a tag. Container
+            # duration can include a longer ignored audio track; do not invent
+            # extra picture holds just because that audio continues.
+            tag = stream.get('tags', {}).get('DURATION', '')
+            if re.fullmatch(r'[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]{1,9})?', tag):
+                hours, minutes, seconds = tag.split(':')
+                duration = int(hours)*3600 + int(minutes)*60 + Fraction(seconds)
+            elif stream.get('nb_frames') and rate > 0:
+                duration = Fraction(stream['nb_frames']) / rate
+            else:
+                raise ValueError('Video stream has no usable duration')
     except (KeyError, ValueError, ZeroDivisionError):
         raise ValueError('Video has no usable timing') from None
     if not 0 < rate <= 240 or max(rate.numerator, rate.denominator) > 1_000_000_000 or not 0 < duration <= 60 or max(duration.numerator, duration.denominator) > 1_000_000_000:
