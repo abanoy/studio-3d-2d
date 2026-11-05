@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "application_license": "undecided by owner",
+  "runtime": {
+    "name": "Godot Engine",
+    "version": "4.6.stable.official.89cea1439",
+    "variant": "standard",
+    "language": "GDScript",
+    "license": "MIT",
+    "source": "https://godotengine.org/",
+    "bundled": false
+  },
+  "encoder": {
+    "name": "FFmpeg",
+    "tested_version": "N-118448-g43be8d0728-20250208",
+    "license": "installed GPL/version3-enabled build",
+    "source": "https://ffmpeg.org/",
+    "bundled": false,
+    "required_encoders": [
+      "libx264",
+      "aac"
+    ]
+  },
+  "launcher": {
+    "name": "Python",
+    "tested_version": "3.13.1",
+    "license": "PSF",
+    "source": "https://www.python.org/",
+    "bundled": false,
+    "packages": []
+  },
+  "optional_preparation_tools": [
+    {
+      "name": "Blender",
+      "tested_version": "5.1.2",
+      "license": "GPL-3.0-or-later plus included dependency notices",
+      "source": "https://www.blender.org/",
+      "bundled": false
+    },
+    {
+      "name": "MMD Tools",
+      "tested_version": "4.5.11",
+      "license": "GPL-3.0-or-later",
+      "source": "https://github.com/MMD-Blender/blender_mmd_tools",
+      "bundled": false
+    },
+    {
+      "name": "SourceIO",
+      "tested_version": "5.5.5",
+      "revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+      "archive_sha256": "cd44e1d053ac853c5d1628da9faa27a594337ebacb3587744dfa5d60758623de",
+      "license": "MIT root; review included transitive notices before redistribution",
+      "source": "https://github.com/REDxEYE/SourceIO",
+      "bundled": false,
+      "local_cache": "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+      "profile_installed": false
+    }
+  ],
+  "network_services": [],
+  "downloaded_assets": [],
+  "external_content": {
+    "name": "Garry's Mod",
+    "required_for": "native GMod/Source preparation only",
+    "provided": false,
+    "downloaded_by_studio": false,
+    "default_installation": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod",
+    "default_workshop": "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\4000",
+    "workshop_use": "offline model/map indexes; selected archives plus explicitly enabled dependency mounts; no subscriptions/downloads",
+    "optional_sources": [
+      "installed CSS/TF2/HL2 content and read-only mount.cfg paths",
+      "installed SFM gameinfo/mod/Workshop directories; asset support only, no sessions"
+    ]
+  }
+}
