@@ -57,3 +57,14 @@ and current verification phase are recorded in progress_memo.md. Tests do not ce
 physical input feel, all native materials, subjective sound or clean-machine behavior.
 
 Observed visual limitation: the Miku partial-fade capture exposes overlapping/internal mesh surfaces through the character. Per-surface alpha blending is verified, but it is not a single flattened silhouette dissolve. A future whole-object compositing/depth treatment should improve that appearance; native fade aesthetic acceptance is still open.
+
+Fresh cloud verification on 2026-11-06 ran the existing scenario on the private
+Linux software renderer:47checks pass. It covers persistent visibility through
+clip gaps, rational300ms fades/reversals, immediate cuts, independent descendants,
+packed/linked/direct recovery restores, legacy promotion and source preservation.
+The48frame1080p24 H264/AAC movie retains exact preview/render input; decoded cue
+onset is sample48002 at48kHz (expected48000). Three unavailable MMD/GMod/SFM
+fixtures explicitly skip. This run uses same-process document reopening and a
+direct checkpoint restore; it is separate from cold-process/SIGKILL recovery
+verification and does not establish native fade aesthetics. Proof:
+`/workspace/has-handoff-audit/visibility-current/verification.json`.

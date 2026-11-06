@@ -32,6 +32,10 @@ func commit(id: String,start: int,context: Dictionary) -> void:
 	layer.cels[result.index].start=result.after;layer.cels.sort_custom(func(a,b):return a.start<b.start)
 	app.push_history({"type":"cel_timing","layer_id":layer.id,"cel_id":id,"owner":app.sequence_editor.active_owner,"before":result.before,"after":result.after,"bytes":512})
 	app.changed();app.refresh_layer();app.message("Drawing exposure moved. Its pixels and length stay unchanged; Undo restores its timing.")
+func resize(id: String,length: int,context: Dictionary) -> void:
+	var layer:=layer_by_id(str(context.get("layer","")))
+	if app.exporting or app.playing or context.get("cel")!=id or context.get("session")!=app.recovery_session or context.get("owner")!=app.sequence_editor.active_owner or context.get("revision")!=app.recovery_revision or context.get("video")!=app.video or layer.is_empty() or context.get("shape")!=shape(layer):app.message("The drawing or scene changed. Drag the exposure again.");return
+	set_exposure(layer.id,id,length)
 func set_exposure(layer_id: String,id: String,length: int) -> void:
 	if app.exporting or app.timeline.cel_gesture_active() or app.physics_editor.recording.active or app.pose_editor.dragging or app.drawing:app.message("Finish the current edit or recording before changing a drawing exposure.");return
 	var layer:=layer_by_id(layer_id)

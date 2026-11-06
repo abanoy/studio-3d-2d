@@ -1,4 +1,4 @@
-# Drag drawing exposures on the timeline
+# Move drawings and resize holds on the timeline
 
 Click a drawing block to choose its layer and a frame within its hold. Drag it
 horizontally to move the complete exposure along that same layer. A small hand
@@ -6,8 +6,8 @@ motion remains a click. Zoom the timeline for precise placement; the ruler and
 drawing blocks share the same frame mapping.
 
 The preview changes only the timeline block. Release commits one Undo command.
-The cel keeps its stable identity, original Image/RGBA pixels, opacity and hold
-length. Other drawings, sound, camera animation and world data remain independent.
+During a move, the cel keeps its stable identity, original Image/RGBA pixels,
+opacity and hold length. Other drawings, sound, camera animation and world data remain independent.
 The source drawing is still editable at its new frames.
 
 An overlapping destination shows an invalid outline and refuses on release.
@@ -66,3 +66,26 @@ preview. A focused three-cel1080p test retains earlier drawing history across48
 hold edits, adding24576bytes, and checks all48 Undo/Redo operations against exact
 cel IDs, ranges, Images and original RGBA. This reduces history pressure rather
 than raising the64MiB history budget or changing the saved cel format.
+
+## Dragging the right edge in Simple
+
+Drag the short mark at a drawing block’s right edge to shorten or extend its
+hold. The cursor changes to a horizontal resize arrow. The start frame and
+original pixels stay fixed. The preview range/label changes first; release
+commits one duration-only Undo action. Holds remain at least one frame and stop
+at the next drawing or scene end, using the existing exposure-control rules.
+
+The handle appears only when the true end is visible and the block has room for
+a separate body target. Zoom in for narrow blocks, or use the numeric exposure
+control in Advanced. An offscreen edge cannot become a handle at the viewport
+boundary. The body still moves the whole exposure.
+
+Escape, right-click, focus loss or Undo cancels the preview; small hand motion
+stays a click. Navigation waits during the gesture. Stale document/owner changes
+refuse release. Recovery and sequence switching use the same gesture guards as
+body dragging. Child edits use the child clock and stable history identities.
+
+The combined edge/move verifier now passes161checks, including30edge-GUI and
+child edge Undo/Redo across scene switches. The complete60second movie and
+cold/crash checks pass; see [scoped artifact](benchmarks/drawing_exposure_edges_2026-11-06.json).
+The earlier100check result above records the body-move increment.

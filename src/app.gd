@@ -300,7 +300,7 @@ func _ready() -> void:
 	onion_editor=OnionEditor.new();onion_editor.app=self;add_child(onion_editor);onion_editor.setup(drawing_section)
 	reference_sheet=preload("res://src/reference_sheet.gd").new();reference_sheet.app=self;add_child(reference_sheet);reference_sheet.setup(drawing_section)
 	layer_editor=LayerEditor.new();layer_editor.app=self;add_child(layer_editor);layer_editor.setup(drawing_section)
-	cel_timing=preload("res://src/cel_timing_editor.gd").new();cel_timing.app=self;add_child(cel_timing);timeline.cel_context_provider=cel_timing.begin;timeline.cel_moved.connect(cel_timing.commit)
+	cel_timing=preload("res://src/cel_timing_editor.gd").new();cel_timing.app=self;add_child(cel_timing);timeline.cel_context_provider=cel_timing.begin;timeline.cel_moved.connect(cel_timing.commit);timeline.cel_resized.connect(cel_timing.resize)
 	raster_importer=preload("res://src/krita_import.gd").new();add_child(raster_importer);raster_importer.setup(self)
 	video_importer=preload("res://src/video_import.gd").new();add_child(video_importer);video_importer.setup(self)
 	color_sampler=ColorSampler.new();color_sampler.app=self;add_child(color_sampler);color_sampler.setup(drawing_section)

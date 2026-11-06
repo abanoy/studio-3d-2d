@@ -1,0 +1,59 @@
+{
+  "reports": {
+    "unit": {
+      "checks": 44,
+      "failures": 0
+    },
+    "exposure-history": {
+      "charged_bytes": 24576,
+      "checks": 8,
+      "edits": 48,
+      "failures": 0
+    },
+    "exposure-edge": {
+      "checks": 30,
+      "failures": 0
+    },
+    "tools": {
+      "checks": 10,
+      "failures": 0
+    },
+    "writer": {
+      "checks": 55,
+      "failures": 0,
+      "movie": "/workspace/has-handoff-audit/cel-edge-final-accepted/render_1793924899_10721288_0/movie.mp4",
+      "render_seconds": 237.973871
+    },
+    "reader-packed": {
+      "checks": 4,
+      "failures": 0
+    },
+    "startup": {
+      "checks": 6,
+      "failures": 0
+    },
+    "reader-linked": {
+      "checks": 4,
+      "failures": 0
+    }
+  },
+  "decoded_onset_sample": 2688001,
+  "render_seconds": 237.973871,
+  "actual_abrupt_exit": true,
+  "originals_unavailable_for_packed_recovery": true,
+  "linked_sources_available": true,
+  "source_assets_unchanged": true,
+  "manual_has_unchanged": true,
+  "functional_unchanged": true,
+  "date": "2026-11-06",
+  "scope": "Drawing hold edge editing, original procedural assets; private Mesa software rendering. Other scoped regression runs overlapped this export; elapsed time is not a controlled benchmark.",
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "24/1",
+    "nb_frames": "1440"
+  },
+  "evidence": "/workspace/has-handoff-audit/cel-edge-final-accepted/verification.json",
+  "physical_or_native_acceptance": false
+}

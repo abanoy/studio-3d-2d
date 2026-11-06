@@ -163,3 +163,13 @@ not resolve the separate OPEN ripple/cross-track/ownership decisions.
 Standalone real encoder failure/cancellation checks now run without historical
 render caches; see [scope](export_failures.md). The full export fault matrix
 remains separate.
+
+Addendum visibility/gap/parent behavior now has a fresh47check procedural cloud
+run, with48frame H264/AAC and sample48002 one-second cue. See
+[visibility scope](visibility.md); three absent native fixtures explicitly skip.
+This is additional scoped evidence for scenarioC, not the full native/artist gate.
+
+ScenarioD now has fresh17domain+48procedural World/Local recording checks,
+including actual contacts, partial/cancel/focus/stale/budget/Save behavior and
+exact movie input. See [scope](physics_recording.md); three native and two VRM
+fixtures explicitly skip, so the full cross-ecosystem/artist gate stays open.

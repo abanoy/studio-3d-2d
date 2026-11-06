@@ -111,3 +111,17 @@ Before capture, Record checks the selected scope. Hover to see the Local actor
 or the World object count and starting frame. If Local has no selected simulated
 object, or the playhead is at the movie end, the disabled control explains why.
 Changing scope refreshes readiness immediately.
+
+Fresh2026-11-06 cloud verification:17recording-domain and48procedural application
+checks pass on private Linux software rendering. Local locks its target while
+peers are selected/grabbed; World captures actual ragdoll/prop contacts atomically.
+Three measured contacts and1.96437units horizontal displacement occurred in this
+run. Saved playback/scrubbing and exact preview/export pixels pass, as do partial
+Stop, Escape, focus interruption, stale authoring, budget-limited prefix, Save
+during capture and teardown. Fractional-rate constant-velocity error was below
+0.000001units; this is a scoped deterministic-tick fixture, not universal physics
+accuracy. The48frame1080p24 H264/AAC movie decodes its cue at sample48002 versus
+expected48000. Three native preparations and two VRMs explicitly skip. Sources
+remain unchanged. Proof /workspace/has-handoff-audit/recording-current/verification.json.
+This existing Model6 scenario is distinct from historical native/Model9 evidence
+and does not establish broader joint/cloth fidelity or subjective ragdoll quality.

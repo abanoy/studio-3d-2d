@@ -104,6 +104,12 @@ func run() -> void:
 	app.exposure.value=48;app.set_exposure();check(app.history[-1].type=="cel_exposure" and app.history[-1].bytes==512,"nested exposure uses bounded duration-only history");editor.return_to_parent();editor.enter(child);await settled();app.undo()
 	check(app.cel_timing.layer_by_id(child_layer).cels[0].duration==240,"existing exposure Undo rebinds across child switch")
 	app.redo();check(app.cel_timing.layer_by_id(child_layer).cels[0].duration==48 and is_same(app.cel_timing.layer_by_id(child_layer).cels[0].image,child_image),"existing exposure Redo retains its source image")
+	await settled();point=view.cel_end_handle(1,app.cel_timing.layer_by_id(child_layer).cels[0]).get_center();await press_at(view,point)
+	var child_target:=point+Vector2(view.x(12)-view.x(0),0);await move_to(view,child_target);await release_at(view,child_target)
+	check(app.cel_timing.layer_by_id(child_layer).cels[0].duration==60 and app.history[-1].type=="cel_exposure","child right edge uses local duration-only command")
+	editor.return_to_parent();editor.enter(child);await settled();app.undo()
+	check(app.cel_timing.layer_by_id(child_layer).cels[0].duration==48 and is_same(app.cel_timing.layer_by_id(child_layer).cels[0].image,child_image),"child right-edge Undo rebinds live cel after scene round trip")
+	app.redo();check(app.cel_timing.layer_by_id(child_layer).cels[0].duration==60,"child right-edge Redo restores hold after scene rebuild");app.undo()
 	var child_context: Dictionary=app.cel_timing.begin(child_layer,child_cel,8);app.cel_timing.commit(child_cel,80,child_context);var child_command: Dictionary=app.history[-1]
 	check(app.cel_timing.layer_by_id(child_layer).cels[0].start==80,"child exposure uses same timing command and local clock")
 	editor.return_to_parent();await settled();context=app.cel_timing.begin(layer_id,a_id,1344);app.cel_timing.commit(a_id,1300,context);editor.enter(child);editor.return_to_parent();await settled();app.undo()

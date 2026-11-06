@@ -3,6 +3,7 @@ const Clips=preload("res://src/animation_clips.gd")
 const ObjectTiming=preload("res://src/object_timing.gd")
 const Channels=preload("res://src/animated_channels.gd")
 signal cel_moved(id: String,start: int,context: Dictionary)
+signal cel_resized(id: String,length: int,context: Dictionary)
 signal navigation_requested(action: String, at: float)
 signal channel_selected(id: String, channel: String, at: int)
 signal piece_moved(id: String, piece_id: String, start: int, before: Dictionary)
@@ -36,6 +37,9 @@ var cel_layer:=""
 var cel_previous:=0
 var cel_preview:=0
 var cel_length:=1
+var cel_length_preview:=1
+var cel_resizing:=false
+var cel_limit:=1
 var cel_anchor:=0
 var cel_press:=Vector2.ZERO
 var cel_dragged:=false
@@ -150,29 +154,38 @@ func layer_y(index: int) -> float:
 	return header_height()+3+shift+index*30
 func cel_rect(index: int,cel: Dictionary) -> Rect2:
 	var start: int=cel_preview if moving_cel==cel.id and cel_layer==layers[index].id else int(cel.start)
-	return Rect2(x(start)+1,layer_y(index),maxf(2,x(start+int(cel.duration))-x(start)-2),23)
+	var length: int=cel_length_preview if moving_cel==cel.id and cel_layer==layers[index].id else int(cel.duration)
+	return Rect2(x(start)+1,layer_y(index),maxf(2,x(start+length)-x(start)-2),23)
+func cel_end_handle(index: int,cel: Dictionary) -> Rect2:
+	var rect:=cel_rect(index,cel)
+	if rect.size.x<18 or rect.end.x<LEFT+8 or rect.end.x>size.x-16:return Rect2()
+	return Rect2(rect.end.x-7,rect.position.y,7,23)
 func cel_hit(point: Vector2) -> Dictionary:
 	if point.x<LEFT:return {}
 	for index in range(layers.size()):
 		if point.y<layer_y(index) or point.y>=layer_y(index)+23:continue
 		for cel in layers[index].cels:
-			if cel_rect(index,cel).has_point(point):return {"layer":layers[index],"cel":cel}
+			if cel_rect(index,cel).has_point(point):return {"layer":layers[index],"cel":cel,"index":index}
 	return {}
 func cel_gesture_active() -> bool:return not moving_cel.is_empty()
 func cancel_cel() -> void:
-	moving_cel="";cel_layer="";cel_context={};cel_dragged=false;cel_valid=true;mouse_default_cursor_shape=Control.CURSOR_ARROW;queue_redraw()
+	moving_cel="";cel_layer="";cel_context={};cel_dragged=false;cel_resizing=false;cel_valid=true;mouse_default_cursor_shape=Control.CURSOR_ARROW;queue_redraw()
 func cel_motion(point: Vector2) -> void:
 	if not cel_gesture_active():return
 	if not cel_dragged and point.distance_to(cel_press)<4:return
-	cel_dragged=true;cel_preview=clampi(cel_previous+frame_at(point)-cel_anchor,0,maxi(0,duration-cel_length));cel_valid=false
+	cel_dragged=true;cel_valid=false
+	if cel_resizing:cel_length_preview=clampi(cel_length+frame_at(point)-cel_anchor,1,cel_limit)
+	else:cel_preview=clampi(cel_previous+frame_at(point)-cel_anchor,0,maxi(0,duration-cel_length))
 	for layer in layers:
-		if layer.id==cel_layer:cel_valid=not preload("res://src/cel_timing.gd").proposal(layer.cels,moving_cel,cel_preview,duration).has("error");break
-	mouse_default_cursor_shape=Control.CURSOR_MOVE;queue_redraw()
+		if layer.id==cel_layer:cel_valid=not preload("res://src/cel_timing.gd").proposal(layer.cels,moving_cel,cel_preview,duration,cel_length_preview).has("error");break
+	mouse_default_cursor_shape=Control.CURSOR_HSIZE if cel_resizing else Control.CURSOR_MOVE;queue_redraw()
 func finish_cel(cancel:=false) -> void:
 	if not cel_gesture_active():return
-	var id:=moving_cel;var start:=cel_preview;var context:=cel_context;var changed:=cel_dragged and cel_preview!=cel_previous
+	var id:=moving_cel;var start:=cel_preview;var context:=cel_context;var resize:=cel_resizing;var length:=cel_length_preview;var changed:=cel_dragged and (length!=cel_length if resize else cel_preview!=cel_previous)
 	cancel_cel()
-	if not cancel and changed:cel_moved.emit(id,start,context)
+	if not cancel and changed:
+		if resize:cel_resized.emit(id,length,context)
+		else:cel_moved.emit(id,start,context)
 
 func audio_rect(index: int) -> Rect2:
 	var clip: Dictionary = audio_clips[index]
@@ -368,7 +381,10 @@ func draw_content(painter: Control) -> void:
 			if layers[i].visible: cel_style.draw(painter.get_canvas_item(), rect)
 			else: painter.draw_rect(rect, Color("c5cbd1"))
 			if moving_cel==cel.id and cel_layer==layers[i].id:painter.draw_rect(rect,Color("3d7cba") if cel_valid else Color("b74949"),false,2)
-			painter.draw_string(ThemeDB.fallback_font, rect.position + Vector2(4, 16), "%d–%d" % [cel_preview if moving_cel==cel.id and cel_layer==layers[i].id else int(cel.start),(cel_preview if moving_cel==cel.id and cel_layer==layers[i].id else int(cel.start))+int(cel.duration)-1], HORIZONTAL_ALIGNMENT_LEFT, rect.size.x - 4, 12, Color("1e4159"))
+			var handle:=cel_end_handle(i,cel)
+			if handle.has_area():painter.draw_line(Vector2(handle.end.x-3,y+5),Vector2(handle.end.x-3,y+18),Color("3d7cba") if cel_resizing and moving_cel==cel.id else Color("7492aa"),2)
+			var visible_length: int=cel_length_preview if moving_cel==cel.id and cel_layer==layers[i].id else int(cel.duration)
+			painter.draw_string(ThemeDB.fallback_font, rect.position + Vector2(4, 16), "%d–%d" % [cel_preview if moving_cel==cel.id and cel_layer==layers[i].id else int(cel.start),(cel_preview if moving_cel==cel.id and cel_layer==layers[i].id else int(cel.start))+visible_length-1], HORIZONTAL_ALIGNMENT_LEFT, rect.size.x - 4, 12, Color("1e4159"))
 	for index in range(audio_clips.size()):
 		var clip: Dictionary = audio_clips[index]
 		var y := audio_y()+index*30
@@ -409,7 +425,10 @@ func _gui_input(event: InputEvent) -> void:
 		if not hit.is_empty():
 			var context: Dictionary=cel_context_provider.call(hit.layer.id,hit.cel.id,frame_at(event.position))
 			if not context.is_empty():
-				finish_move(true);dragging=false;cancel_audio();moving_cel=hit.cel.id;cel_layer=hit.layer.id;cel_previous=int(hit.cel.start);cel_preview=cel_previous;cel_length=int(hit.cel.duration);cel_anchor=frame_at(event.position);cel_press=event.position;cel_context=context;cel_dragged=false;cel_valid=true;grab_focus();queue_redraw()
+				finish_move(true);dragging=false;cancel_audio();moving_cel=hit.cel.id;cel_layer=hit.layer.id;cel_previous=int(hit.cel.start);cel_preview=cel_previous;cel_length=int(hit.cel.duration);cel_length_preview=cel_length;cel_resizing=cel_end_handle(hit.index,hit.cel).has_point(event.position);cel_limit=duration-cel_previous;cel_anchor=frame_at(event.position);cel_press=event.position;cel_context=context;cel_dragged=false;cel_valid=true
+				for other in hit.layer.cels:
+					if other.start>cel_previous:cel_limit=mini(cel_limit,int(other.start)-cel_previous)
+				grab_focus();queue_redraw()
 			accept_event();return
 	if not trimming_audio.is_empty():
 		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
@@ -497,7 +516,10 @@ func _gui_input(event: InputEvent) -> void:
 		for index in range(audio_clips.size()):
 			if event.position.x>=LEFT and audio_end_handle(index).has_point(event.position):mouse_default_cursor_shape=Control.CURSOR_HSIZE;break
 		if not moving_id.is_empty():drag_motion(event.position);accept_event();return
-		if not cel_hit(event.position).is_empty():mouse_default_cursor_shape=Control.CURSOR_MOVE
+		var cel_hover:=cel_hit(event.position)
+		if not cel_hover.is_empty():
+			mouse_default_cursor_shape=Control.CURSOR_HSIZE if cel_end_handle(cel_hover.index,cel_hover.cel).has_point(event.position) else Control.CURSOR_MOVE
+			tooltip_text="Drag the drawing to move it; drag its right edge to change the hold. Zoom in for short drawings."
 		var hit:=hit_row(event.position);var hover:=int(hit.get("index",-1))
 		if hover>=0 and hover<object_rows.size():tooltip_text=str(object_rows[hover].name)+" • drag a piece; Shift-drag moves all its animation."
 

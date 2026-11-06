@@ -1068,3 +1068,60 @@ policy change. Actual command exits0; proof /workspace/has-handoff-audit/
 export-failures-accepted/verification.json and export-failures-verifier.log.
 Scope docs/export_failures.md; application/UI/render-stage/disk-full/native fault
 matrix is separate and remains incomplete. Continuous goal continues.
+
+2026-11-06 UTC — Simple drawing hold edge editing and fresh independence gates
+
+Drawing blocks now offer a visible right-edge handle in Simple/Advanced. Drag
+previews duration/label only, with unchanged start/pixels. Release uses existing
+next-cel/scene-end clamps, at least1frame, and one512byte cel_exposure command.
+Body moves still preserve length. Handle needs18logical pixels and an actually
+visible endpoint; no phantom handle at clipped/offscreen edges. Shared zoom/pan
+coordinates,4pixel click threshold, early tool arbitration, Escape/right/focus/
+Undo cancellation and recovery/scene/navigation guards retained. Revision/owner/
+image-shape stale context refuses release. No new saved format or image copies.
+See docs/drawing_exposure_moves.md.
+
+Final frozen-source combined verifier161checks passes:44domain+8history-budget+
+30edge-GUI+10tool+55nested-writer/movie+4packed+6actual-SIGKILL normal startup+
+4linked. Child right-edge edits/Undo/Redo across scene rebuild retain original
+Image; full saved child remains48frames after temporary60frame resize/Undo.
+Complete1440frame1080p24 H264/AAC60s movie237.973871seconds on software instance;
+other independent regression checks overlapped, so no controlled performance
+comparison. Exact preview/PNG frames1304/1390/1430 and decoded56s cue2688001 vs
+2688000. Originals/manualHAS unchanged; packed/recovery originals and writercache
+unavailable; linked originals available by design. Proof /workspace/has-handoff-
+audit/cel-edge-final-accepted/verification.json; scoped committed artifact
+docs/benchmarks/drawing_exposure_edges_2026-11-06.json.
+
+Existing navigation42domain/34GUI/38workspace/34channels passes with48frame movie
+and3explicit unavailable-native skips (cel-edge-navigation/verification.json).
+Full Python312run311pass1existing independent-reader skip (cel-edge-python.log).
+Early edge test incorrectly assumed1frame visually narrow in a48frame Fit scene;
+manual oversized view span was clamped to scene length as designed. Correct test
+uses actual1440parent Fit. First actual duration change needed normal Project
+Options session initialization, now included. No product assertion was removed;
+all30final checks pass. Early logs/cel-edge-accepted failed probe retained.
+
+Existing visibility scenario freshly passes47actual app checks: persistent state
+through gaps,300ms rational fades/reversals/zero cuts, parent ownership/material
+restoration, packed/linked/direct-checkpoint restore and legacy promotion. Its
+48frame1080p24 H264/AAC movie has exact preview PNG and cue onset48002 vs48000.
+Same-process document restores, not a new cold/SIGKILL claim.3optional native
+fixtures explicitly skip. Proof visibility-current/verification.json.
+
+Existing physics recording freshly passes17domain+48app checks. Actual Local
+selection/peer grabs preserve locked target; World records3contacts and1.96437
+horizontal prop displacement atomically. Scrub, partial Stop, Escape/focus, stale
+authoring, bounded metadata prefix, Save during capture and owned active teardown
+pass; fractional-rate velocity error0.0000005579.48frame1080p24 H264/AAC with
+exact reopened input and onset48002.3native+2VRM fixtures explicitly skip.
+Proof recording-current/verification.json. This Model6/procedural run does not
+replace historical Model9/native evidence or establish broad joint/cloth quality.
+Both external drivers/proof are under /workspace/has-handoff-audit; relevant
+visibility/recording docs and matrix updated. Source WAV hash unchanged.
+
+Historical tracked output modifications were copied to cel-edge-historical-
+output-backup outside checkout and restored exactly from HEAD. All graphical
+runs used guarded owned private102/Dummy audio, no owner desktop. No deployment,
+native-asset redistribution or web changes. Artist/Windows/native/physical gates
+and broad remaining feature requirements stay open. Continuous goal active.

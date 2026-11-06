@@ -29,6 +29,7 @@ def main():
     if sys.byteorder!='little':data.byteswap()
     with wave.open(str(folder/'tone.wav'),'wb') as out:out.setparams((1,2,48000,0,'NONE','not compressed'));out.writeframes(data.tobytes())
     run('tests/cel_exposure_history_smoke.gd','exposure-history','CEL_EXPOSURE_HISTORY ')
+    run('tests/cel_exposure_edge_smoke.gd','exposure-edge','CEL_EXPOSURE_EDGE ')
     run('tests/cel_timing_tools_smoke.gd','tools','CEL_TIMING_TOOLS ')
     run('tests/cel_timing_smoke.gd','writer','CEL_TIMING_SMOKE ',['--export','--crash'],crash=True)
     assert not (folder/'graceful-exit.txt').exists();expected=json.loads((folder/'expected.json').read_bytes())
