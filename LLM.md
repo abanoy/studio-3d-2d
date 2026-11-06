@@ -1700,3 +1700,12 @@ These are procedural cloud software checks, not Windows/tablet/native-model or
 artist acceptance, memory benchmarks or full goal completion. Full goal remains
 active; next substantial gap is integrity-checked unique-art storage (MEM-02),
 then remaining canvas/settings and history/fault-acceptance work.
+
+
+2026-11-06 — replacement continuous goal
+
+Saved the exact5802byte uploaded replacement goal in docs/goals/complete-has.md
+and updated ledger SHA256 provenance. The user explicitly supplied it as the new
+active objective. It preserves finite acceptance, adds concrete continuation and
+no-repetition rules, and sets MEM-02 unique-art storage as the next priority after
+pushed b0acd76. No application or acceptance status change in this records update.
