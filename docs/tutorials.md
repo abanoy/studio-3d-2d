@@ -42,9 +42,11 @@ Continue reopens the latest saved practice; Start fresh creates a separate sessi
 Saved practices lists earlier sessions when more than one exists. Progress is
 personal data under `tutorial-progress` beside the recent-project preferences,
 separate from ordinary scene recovery. A step boundary, Leave, successful New/Open
-replacement or normal app close saves a checkpoint/resume state. Forced termination
-may lose teacher context since that boundary even if ordinary recovery protects
-newer scene edits. No periodic lesson autosave or recovered-lesson reattachment yet.
+replacement or normal app close saves a checkpoint/resume state. Ordinary recovery
+now includes the active teacher context and reattaches it after a crash when the
+local practice history remains available. See [lesson recovery](lesson_recovery.md)
+for checkpoint scheduling, validation, fallback and remaining limitations. There
+is no separate periodic lesson autosave.
 Session folders retain shared content-addressed cels within each fixed checkpoint;
 there is no cross-session deduplication, retention policy or concurrent writer lock.
 

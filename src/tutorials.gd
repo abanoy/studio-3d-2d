@@ -119,6 +119,27 @@ func checkpoint(name: String) -> bool:
 func save_resume() -> bool:
 	return checkpoint("resume") if active else true
 
+func recovery_context() -> Dictionary:
+	if not active or loading or restoring:return {}
+	if course==First.ID:First.observe(self)
+	if course==Capture.ID:Capture.observe(self)
+	var state:=Store.ui(app)
+	if not observed.is_empty():state["observed"]=observed.duplicate()
+	var value:={"format":"studio_lesson_recovery_1","course":course,"session":session,"step":step,"done":done,"ui":state,"baseline":baseline.duplicate(true),"fov_baseline":fov_baseline,"collapsed":collapsed}
+	return value if Store.valid_recovery(value) else {}
+
+func restore_recovery_context(value) -> String:
+	if value is Dictionary and value.is_empty():return ""
+	if not Store.valid_recovery(value):return "The scene was recovered, but its lesson context is invalid. Use Tutorials to choose a saved practice."
+	# Reattach only to an existing local practice. The recovered scene remains
+	# usable if that separate personal history was removed or is unavailable.
+	if store.progress(value.course,value.session).is_empty():return "The scene was recovered, but its saved practice history is unavailable. Use Tutorials to start a fresh practice."
+	course=value.course;session=value.session;step=int(value.step);done=value.done
+	observed=value.ui.get("observed",{}).duplicate();asset_hashes.clear()
+	Store.restore_ui(app,value.ui)
+	active=true;collapsed=value.collapsed;arm(value.baseline,float(value.fov_baseline))
+	return ""
+
 func leave(save := true) -> void:
 	if app.physics_editor.recording.active:app.message("Finish recording before leaving the lesson.");return
 	if save and not save_resume():return
@@ -127,14 +148,15 @@ func leave(save := true) -> void:
 func document_changing() -> void:
 	if active and not loading and not restoring:save_resume();active=false;panel.hide();marker.hide()
 
-func arm() -> void:
+func arm(recovered_baseline: Dictionary={},recovered_fov := -1.0) -> void:
 	next_tick=Time.get_ticks_msec()+200;last_action=Time.get_ticks_msec();last_signature="";hint_due=false
-	baseline=preload("res://src/recovery.gd").read_json(store.folder(course,session).path_join("step_%02d/project.json" % step)).get("editor",{}).get("lesson_ui",{})
+	baseline=recovered_baseline.duplicate(true) if not recovered_baseline.is_empty() else preload("res://src/recovery.gd").read_json(store.folder(course,session).path_join("step_%02d/project.json" % step)).get("editor",{}).get("lesson_ui",{})
 	var key:=key_at(24);fov_baseline=float(key.get("fov",app.renderer.camera.fov))
 	if course=="advanced-camera" and step==2:
 		var before:=preload("res://src/recovery.gd").read_json(store.folder(course,session).path_join("step_02/project.json"))
 		for item in before.get("camera_keys",[]):
 			if item is Dictionary and item.get("frame")==24 and (item.get("fov") is int or item.get("fov") is float):fov_baseline=float(item.fov)
+	if recovered_fov>=15:fov_baseline=recovered_fov
 	refresh();panel.show()
 
 func refresh() -> void:

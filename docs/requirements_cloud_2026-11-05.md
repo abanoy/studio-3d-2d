@@ -76,7 +76,7 @@ historical. The addendum governs conflicts and preserves its decision labels.
 | 12.1 courses | First-movie, basic pose/draw, advanced camera and versioned lighting/export and interpolation/cuts and rig/foot-constraint and physics-recording chapters; original dummy HAS assets present | Advanced topic/subsection coverage incomplete |
 | 12.2 teacher | State grading, quiet15s hint, highlights and auto progress present | Richer demonstrations and artist feedback |
 | 12.3 Previous | Full checkpoints and observations present | Skip remains OPEN |
-| 12.4 Continue/Fresh | Separate saved practice sessions and optional personal Save present | Forced-crash lesson-context recovery and retention |
+| 12.4 Continue/Fresh | Separate saved practice sessions, optional personal Save and forced-crash lesson-context recovery present | Lesson retention, concurrent writers and broader platform acceptance |
 | 13.1 autosave | Bounded background recovery workers present | Measured long-session behavior |
 | 13.2 history | Journal/checkpoint references, shared cel storage and validation present | Held-art240-frame cache test now reduces builds240→2; arbitrary long/dense projects remain |
 | 13.3 recovery | Fresh explicit recovery restoration passes | Linux identity47 / journal33 / normal-startup147 checks now pass; broader native/hardware crash gate remains |
@@ -198,3 +198,10 @@ Warm content-addressed Save now reuses verified PNG hash results within each
 save, with no retained validation rasters. Original32cel benchmark drops about
 2.39s to0.91s; dimension-mismatched cache members are repaired.10new cases and
 existing61+16raster/70reference checks pass; see [scope](cel_save_verification.md).
+
+Active lesson context now follows ordinary recovery checkpoints:43domain+
+6writer+63normal-startup checks pass, including actual SIGKILL, newest/older
+generation attachment, Previous/Continue/Fresh, invalid/missing history fallback,
+manual Save and exact movie input. Existing57tutorial/30physics/147startup checks
+pass. See [scope and scheduling limits](lesson_recovery.md); separate lesson
+retention and native/device/artist gates remain open.

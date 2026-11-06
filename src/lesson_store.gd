@@ -77,6 +77,15 @@ static func valid_ui(value) -> bool:
 	if absf(Basis(Vector3(b[0],b[1],b[2]),Vector3(b[3],b[4],b[5]),Vector3(b[6],b[7],b[8])).determinant())<.000001:return false
 	return Timeline.range_error([value]).is_empty() and (value.get("fov") is int or value.get("fov") is float) and is_finite(float(value.fov)) and value.fov>=15 and value.fov<=120
 
+static func valid_recovery(value) -> bool:
+	# Recovery-only metadata. Never interpret imported project fields as a request
+	# to start a lesson or use an unchecked session as a filesystem address.
+	if not value is Dictionary or value.size()!=9 or JSON.stringify(value,"",true,true).to_utf8_buffer().size()>16384:return false
+	if value.get("format")!="studio_lesson_recovery_1" or not value.get("course") is String or not value.course in COURSES or not session_ok(value.get("session")):return false
+	if not Storage.integer(value.get("step"),0,int(COURSES[value.course])) or not value.get("done") is bool or value.done!=(int(value.step)==int(COURSES[value.course])):return false
+	if not valid_ui(value.get("ui")) or not valid_ui(value.get("baseline")) or not value.get("collapsed") is bool:return false
+	return (value.get("fov_baseline") is int or value.get("fov_baseline") is float) and is_finite(float(value.fov_baseline)) and value.fov_baseline>=15 and value.fov_baseline<=120
+
 func save(app,course: String,session: String,step: int,done: bool,name: String,observations: Dictionary={}) -> bool:
 	error="";var directory:=folder(course,session)
 	if directory.is_empty() or step<0 or step>int(COURSES.get(course,0)) or done!=(step==int(COURSES.get(course,0))) or not name in ["resume","step_%02d" % step] or not valid_observations(observations):error="Invalid lesson checkpoint address.";return false
@@ -98,6 +107,12 @@ func load_snapshot(app,course: String,session: String,name: String) -> bool:
 	if not valid_ui(value):error="Lesson checkpoint has invalid editor state.";return false
 	if not app.open_project(path):error=app.open_project_error;return false
 	app.has_project.clear_identity();app.project_folder=""
+	restore_ui(app,value)
+	restored_observations=value.get("observed",{}).duplicate()
+	return true
+
+static func restore_ui(app,value: Dictionary) -> void:
+	# Call only after valid_ui and successful scene installation.
 	app.set_advanced(value.advanced)
 	if not value.selected.is_empty():app.world_selection.select_entity(value.selected)
 	var actor: RefCounted=app.pose_editor.active_rig()
@@ -106,5 +121,3 @@ func load_snapshot(app,course: String,session: String,name: String) -> bool:
 	var b: Array=value.basis
 	app.renderer.restore_view({"transform":Transform3D(Basis(Vector3(b[0],b[1],b[2]),Vector3(b[3],b[4],b[5]),Vector3(b[6],b[7],b[8])),Timeline.vector(value.origin)),"fov":value.fov,"near":value.near,"far":value.far})
 	app.canvas.zoom=value.zoom;app.canvas.pan=Vector2(value.pan[0],value.pan[1]);app.canvas.queue_redraw();app.changed()
-	restored_observations=value.get("observed",{}).duplicate()
-	return true

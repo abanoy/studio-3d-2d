@@ -2158,7 +2158,7 @@ func autosave_tick(force := false) -> void:
 	autosave_due = Time.get_ticks_msec() + int(autosave_interval.value * 60000)
 	var started := Time.get_ticks_usec()
 	var snapshot:=project_snapshot()
-	var error := Recovery.checkpoint(recovery_root,recovery_session,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,has_project.path if not has_project.path.is_empty() else project_folder,recovery_revision,snapshot.get("model",{}),snapshot.world,snapshot.palette,snapshot.sequence_graph,snapshot.get("sequence_context",{}),snapshot.get("reference_sheet",{}))
+	var error := Recovery.checkpoint(recovery_root,recovery_session,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,has_project.path if not has_project.path.is_empty() else project_folder,recovery_revision,snapshot.get("model",{}),snapshot.world,snapshot.palette,snapshot.sequence_graph,snapshot.get("sequence_context",{}),snapshot.get("reference_sheet",{}),tutorials.recovery_context() if tutorials else {})
 	last_recovery_ms = (Time.get_ticks_usec() - started) / 1000.0
 	if error.is_empty():
 		checkpoint_revision = recovery_revision
@@ -2282,7 +2282,12 @@ func restore_checkpoint(entry: Dictionary,report_error := true) -> bool:
 	if entry.get("recovery", true): recovered_from = entry.folder
 	project_folder = ""
 	changed()
-	message("Recovered as an unsaved copy. Use Save to choose a .has file; the old manual save is untouched.")
+	var lesson_notice := ""
+	if tutorials and entry.get("recovery",true):
+		var metadata := Recovery.read_json(str(entry.folder).path_join(str(entry.get("manifest","project.json"))))
+		var recovery = metadata.get("editor",{}).get("recovery",{}) if metadata.get("editor",{}) is Dictionary else {}
+		lesson_notice=tutorials.restore_recovery_context(recovery.get("lesson",{}) if recovery is Dictionary else {})
+	message("Recovered as an unsaved copy. Use Save to choose a .has file; the old manual save is untouched."+(" "+lesson_notice if not lesson_notice.is_empty() else ""))
 	return true
 
 func recover_latest(expected_session: String,expected_revision: int) -> void:
@@ -2297,7 +2302,9 @@ func recover_latest(expected_session: String,expected_revision: int) -> void:
 			if restored:
 				result.restored=true
 				result["checkpoint"]=entry.duplicate(true)
-				message("Recovered the newest valid checkpoint as an unsaved copy. Use Recover for older copies; Save chooses a .has file. Your manual save is untouched.")
+				result["lesson_restored"]=tutorials.active if tutorials else false
+				# Keep any nonmodal lesson-context diagnostic from restore_checkpoint.
+				message(status.text+" Use Recover for older copies.")
 				break
 		if not result.restored and not result.attempts.is_empty():message("No valid recovery checkpoint could be opened. Retained copies are available in Recover; your manual saves are untouched.")
 		if not Recovery.discovery_warning.is_empty():

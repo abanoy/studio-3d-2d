@@ -1387,3 +1387,48 @@ All graphics guarded private103/Dummy audio; no owner Windows installation,
 external assets, web or deployment changes. Output history backed up/restored.
 Full goal remains active; no stop_goal. Next unique-art/long-project architecture
 and remaining spec work still open; do not treat these cache gains as completion.
+
+
+2026-11-06 UTC (2026-11-05 New York) — active lesson crash recovery
+
+Resumed the user's updated continuous goal after the response-loop incident.
+Checked clean local6b22e3f and read-only GitHub main match through managed
+execution; the earlier proxy error was from restricted execution, not missing
+GitHub authorization. No deployment or owner Windows installation changes.
+
+Reproduced documented tutorial gap with actual SIGKILL and unchanged production
+normal startup: later frame18 paint recovers, but teacher attachment fails.
+Before proof /workspace/has-handoff-audit/lesson-recovery-before. Implemented
+optional bounded studio_lesson_recovery_1 metadata in editor.recovery.lesson:
+course/session/step/done, whitelisted observations, full lesson UI, immutable
+exercise/lens baseline and instruction-card collapse state. Existing recovery
+schedule/guards/journal writes carry it with the matching scene generation.
+Restoration validates it and requires existing valid local practice history;
+invalid/unavailable context preserves editable scene with nonmodal feedback.
+Ordinary Open and personal HAS do not activate/embed recovery teacher metadata.
+Reattachment does not write personal lesson progress or manual HAS. Existing
+project/journal/lesson-progress formats remain unchanged. Details lesson_recovery.md.
+
+Fresh release verifier43domain+6writer+63normal-startup checks pass. Actual
+SIGKILL, absent graceful hooks, newest and corrupt-latest older fallback, legacy,
+invalid-context and missing-history cases. Teacher/scene UI exact, pending task
+not falsely completed, idle hint, Continue, whole-scene Previous and independent
+Start fresh work. Real48frame H2641080p24 movie input matches exact recovered
+preview, explicit Save creates separate chosen HAS without recovery metadata,
+manual HAS and included practice assets remain exact. Writer cache unavailable
+to cold startup. Proof lesson-recovery-cold-cache/verification.json under audit root.
+An intermediate negative-case test attempted ordinary Open of its deliberately
+corrupted primary after successful fallback; corrected test selects the actual
+valid backup. Original failure log remains, no production/assertion weakening.
+
+Existing pose/draw+camera52writer/5cold, physics25writer/5cold and ordinary
+startup147checks/15cases pass with real movies/AAC assertions intact. Python312
+run311pass1existing independent-MMD-reader skip. Historical tracked outputs
+backed up outside repo before checks and restored exactly afterward. All graphics
+use guarded private103 and Dummy audio. This is Linux software rendering, not
+native Windows/GPU/tablet or artist acceptance.
+
+No separate periodic lesson autosave: teacher-only actions do not independently
+schedule scene snapshots, post-checkpoint work can be lost, Previous still needs
+local lesson checkpoints. Retention/concurrent writers remain open. Wider full
+spec/addendum completion and native/device/artist gates remain unfinished.
