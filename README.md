@@ -763,3 +763,5 @@ bounds remain unchanged. [Longer parent timelines](docs/extended_timing.md) now 
 the explicit schema8 wrapper while retaining those resource limits.
 
 Linux graphical verification: [private test display setup](docs/private_linux_tests.md).
+
+Held drawing playback now reuses a bounded preview overlay; see [measured scope](docs/held_drawing_preview.md).

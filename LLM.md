@@ -1159,3 +1159,60 @@ not a new Windows execution claim. See docs/private_linux_tests.md.
 Historical tracked output changes from default-mode tests are backed up outside
 checkout and restored exactly; generated proof is retained. Independent work
 toward the complete specification continues; no full-product completion claim.
+
+2026-11-06 UTC — bounded held-drawing preview cache
+
+App ordinary overlay processing now uses one app-owned derived preview image,
+with source IDs/pixel revisions, dimensions, ordered visible opacity and document
+revision as identity. Held frame changes reuse pixels and skip fullHD GPU upload;
+camera/world/audio evaluation and canvas redraw/onion updates still run. Miss
+clears old entry before fresh composition; max retained2073600pixels/8294400RGBA
+bytes, weak source references only. Raw edits reported through app.changed also
+invalidate via document revision. Oversized fallback is uncached. Fresh-image
+Drawing.composite, export, fill/selection/recovery paths unchanged. No new schema,
+cel/frame/layer budget or dependency. See docs/held_drawing_preview.md.
+
+Actual before/after benchmark uses same original two-cel1080p240frame scene and
+same script, frame0 warmup excluded, three synchronous set_frame+ordinary
+_process loops; automatic app _process disabled. GPU texture equals uncached
+reference after each loop. Baseline2e61b3b:3044.441/2989.180/2946.849ms, mean
+2993.490; final current source33.041/28.973/27.101ms, mean29.705; about
+100.8x for this loop only. Each cached loop1build/239hits (warmup separately
+builds first cel). No other owned test overlapped recorded baseline/final runs.
+An earlier final-source benchmark overlapped the full movie and is retained but
+not used for paired comparison. Artifact docs/benchmarks/held_drawing_preview_
+2026-11-06.json includes raw runs/source SHAs. No pointer comfort, hardware-FPS
+or whole-app/movie speedup claim. Extra cache memory stays bounded; sources are
+not cloned or retained by this preview cache.
+
+New frozen-source verifier50checks pass:20domain+26actualGUI+4cold. Actual GPU
+within-hold/next/reverse, raw pixel changed, brush Undo/Redo, opacity/visibility/
+exposure Undo, New/Open and child→parent same-frame source changes pass exact
+RGBA against fresh compositor. Domain checks source weak ownership, one retained
+image, oversize fallback and invalidation. Packed cold reader works with original
+GLB/WAV and writer cache unavailable; manualHAS/originals unchanged.48frame
+1080p24 H264/AAC input exact and onset48001 vs48000. Proof held-preview-accepted/
+verification.json under /workspace/has-handoff-audit. First unit probe needed
+explicit GDScript PackedByteArray/WeakRef local types; corrected test-only parse
+issues, no product behavior was weakened.
+
+Existing onion34checks+48frame movie pass (held-preview-onion/verification.json),
+including real tinted GPU sources, fill sampling, held-neighbor reuse, earlier
+cel Undo/Redo, view zoom/pan and export exclusion. Existing combined timing161
+passes current frozen source:44domain/8budget/30edge/10tool/55writer/4packed/
+6actual-SIGKILL normal startup/4linked. Complete1440frame60s1080p24 H264/AAC
+export230.175989s with overlapping regressions; exact PNG frames1304/1390/1430
+and cue2688001. Proof held-preview-cel-timing/verification.json. FullPython312run
+311pass1existing skip (held-preview-python.log). No Windows/native/device/artist
+acceptance implied.
+
+Immediately preceding this cache work, existing headless root-component suites
+passed320checks across16self-contained suites. Document/settings explicitly
+skipped missing native plans; no replacement plans invented. Reports/logs copied
+to root-components-current under /workspace/has-handoff-audit; root-component
+production code unchanged by this cache. A separate original-Image probe shows
+Godot duplicate() uses independent writable resource identities with shared pixel
+storage until edit: original8294960bytes;32copies8312936; after editing one
+16607368. This suggests a future packed-reader memory improvement; no project
+loading/sharing change is implemented in this commit. Probe/log retained outside
+checkout. Continuous full goal continues to that source-ownership investigation.

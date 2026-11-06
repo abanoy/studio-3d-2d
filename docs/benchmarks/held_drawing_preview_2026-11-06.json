@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-06",
+  "scope": "three same-process loops of set_frame+ordinary _process; automatic app _process disabled; frame0 warmup excluded; not pointer comfort or full-render performance",
+  "baseline_commit": "2e61b3b",
+  "baseline_source": {
+    "commit": "2e61b3b",
+    "app_sha256": "f55468fd9f98af1eeebd9ae1f3181e8624ff1e90aa662b4676e42c529c531131"
+  },
+  "baseline": {
+    "actual_gpu_texture": true,
+    "checks": 4,
+    "failures": 0,
+    "frames": 240,
+    "raster": [
+      1920,
+      1080
+    ],
+    "runs": [
+      {
+        "cache_builds": -1,
+        "cache_hits": -1,
+        "milliseconds": 3044.441
+      },
+      {
+        "cache_builds": -1,
+        "cache_hits": -1,
+        "milliseconds": 2989.18
+      },
+      {
+        "cache_builds": -1,
+        "cache_hits": -1,
+        "milliseconds": 2946.849
+      }
+    ],
+    "scope": "three same-process loops of set_frame+ordinary _process; automatic app _process disabled; frame0 warmup excluded; not pointer comfort or full-render performance"
+  },
+  "cached": {
+    "actual_gpu_texture": true,
+    "checks": 4,
+    "failures": 0,
+    "frames": 240,
+    "raster": [
+      1920,
+      1080
+    ],
+    "runs": [
+      {
+        "cache_builds": 1,
+        "cache_hits": 239,
+        "milliseconds": 33.041
+      },
+      {
+        "cache_builds": 1,
+        "cache_hits": 239,
+        "milliseconds": 28.973
+      },
+      {
+        "cache_builds": 1,
+        "cache_hits": 239,
+        "milliseconds": 27.101
+      }
+    ],
+    "scope": "three same-process loops of set_frame+ordinary _process; automatic app _process disabled; frame0 warmup excluded; not pointer comfort or full-render performance"
+  },
+  "mean_milliseconds": {
+    "baseline": 2993.49,
+    "cached": 29.705
+  },
+  "ratio": 100.77394378050833,
+  "retained_cache_bytes": 8294400,
+  "overlapping_owned_regressions": false,
+  "physical_or_whole_app_fps_claim": false,
+  "source_sha256": {
+    "src/app.gd": "88d568fbdf92d7cf72fa19c0dc6cf43c93fd83741b0122782bdc0177b9611bf6",
+    "src/drawing_overlay_cache.gd": "6fc3bb9c783f576d68ad0b4f7ffec668d22fcd3c6dcebbae3e8f3225cc6ff9e6",
+    "tests/held_preview_benchmark.gd": "fa9ef3d2f7cea5ae6e63a9bf343c7fe7d5fd115048610f60fecc3d703b317a26"
+  }
+}

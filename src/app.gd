@@ -66,6 +66,7 @@ var history: Array = []
 var redo_history: Array = []
 var history_bytes := 0
 var dirty := false
+var drawing_overlay_cache=preload("res://src/drawing_overlay_cache.gd").new()
 var overlay_dirty := true
 var exporting := false
 var cancel_export := false
@@ -1052,9 +1053,10 @@ func _process(delta: float) -> void:
 		renderer.camera.position += renderer.camera.basis * motion.limit_length() * delta * (8 if Input.is_key_pressed(KEY_SHIFT) else 3)
 	if overlay_dirty:
 		var start := Time.get_ticks_usec()
-		var overlay := Drawing.composite(layers, frame, video.width, video.height)
+		var sampled: Dictionary=drawing_overlay_cache.sample(layers,frame,video.width,video.height,recovery_revision)
+		var overlay: Image=sampled.image
 		if canvas.overlay == null: canvas.overlay = ImageTexture.create_from_image(overlay)
-		else: canvas.overlay.update(overlay)
+		elif sampled.changed: canvas.overlay.update(overlay)
 		elapsed_overlay_ms = (Time.get_ticks_usec() - start) / 1000.0
 		canvas.queue_redraw()
 		overlay_dirty = false

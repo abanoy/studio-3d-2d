@@ -173,3 +173,10 @@ ScenarioD now has fresh17domain+48procedural World/Local recording checks,
 including actual contacts, partial/cancel/focus/stale/budget/Save behavior and
 exact movie input. See [scope](physics_recording.md); three native and two VRM
 fixtures explicitly skip, so the full cross-ecosystem/artist gate stays open.
+
+Ordinary held-drawing preview now avoids repeated fullHD composition/uploads,
+with one8MiB-bounded derived image and weak source ownership.50new checks,
+existing34onion/161timing and scoped before/after GPU-texture benchmark pass;
+see [measured preview scope](held_drawing_preview.md). The320self-contained
+root-component checks pass separately;2native-plan suites explicitly skip.
+Physical tablet/owner-GPU and dense/long-project memory gates remain.
