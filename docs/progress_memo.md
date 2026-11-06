@@ -12072,3 +12072,38 @@ MEM-02 stays partial/open. Next migrate non-hydrating timing/history/recovery
 accounting, remaining rendering/mutation consumers and failure handling; then
 prove actual adopted-cold GUI edits/Undo/persistence/abrupt recovery/latency/parity
 before enabling. Full goal active, not globally blocked or complete.
+
+
+2026-11-06 — cold metadata consumer migration (MEM-02 partial)
+
+Timing context signatures and begin validation use non-hydrating stable raster
+tokens. CelPatch strips transient owner from metadata, recognizes same-owner
+identity without reading pixels and materializes only independent equality checks.
+Accounting still conservatively charges full decoded pixels. Recovery reservation
+extracted to drawing_reserve, includes parent/child decoded sizes without reads;
+removed-layer/retired sequence-history charges use the same metadata accessor.
+Live peers and repeated retired resources remain excluded/deduplicated per command.
+No compression-based cap expansion, budget relaxation, format or adoption change.
+
+14new metadata checks pass,96total staging/reader/owner domain.32cold cel timing,
+Cut Undo/Redo, root/child recovery reserve and actual sequence trim_history stay
+at zero decodes; repeated budget passes do not accumulate charges. Legacy eager
+shape remains byte-equivalent, rebuilt independent owner proves equal pixels on
+demand, one brush edit changes only its revision. Initial test array elements
+needed explicit Dictionary locals; corrected before successful execution.
+
+Existing154check private clipboard/history regression and41actual recovery
+schedule checks pass on final source. Includes original stroke Undo, running
+physics isolation, exact GPU inputs, packed/cold HAS/movie and real natural minute
+checkpoint, fault retry and exact-save revision accounting. These GUI tests still
+use eager cels; no adopted-cold GUI claim. Owned106/Dummy. Fresh tracked recovery
+receipt archived outside checkout, historical tracked output restored exactly.
+Proof cel-raster-metadata-final,cel-raster-metadata-clipboard and
+cel-raster-metadata-recovery verification.json under /workspace/has-handoff-audit;
+curated receipt docs/benchmarks/cel_raster_metadata_2026-11-06.json.
+
+Production Storage adoption remains eager; rendering/edit/save access and error
+propagation migration plus actual adopted-cold GUI/persistence/recovery/latency
+acceptance remain required. MEM-02 partial/open, limits unchanged. Next migrate
+readonly rendering/sampler/onion consumers and propagate missing/corrupt raster
+errors before working through write pinning and streaming save. Full goal active.

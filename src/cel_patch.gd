@@ -1,4 +1,5 @@
 extends RefCounted
+const Drawing=preload("res://src/drawing.gd")
 const Timing=preload("res://src/cel_timing.gd")
 
 static func create(layer: String,owner: String,before: Array,after: Array) -> Dictionary:
@@ -12,22 +13,24 @@ static func create(layer: String,owner: String,before: Array,after: Array) -> Di
 		if not old.has(id) or old[id]!=newer[id]:following.append(newer[id].duplicate(true))
 	var bytes:=1024;var images:={}
 	for cel in previous+following:
-		var metadata: Dictionary=cel.duplicate();metadata.erase("image")
+		var metadata: Dictionary=cel.duplicate();metadata.erase("image");metadata.erase("raster_owner")
 		# Conservative UTF-32/string and container allowance; raster resources are
 		# counted once per command even when both sides share the original Image.
 		bytes+=4*JSON.stringify(metadata,"",true,true).to_utf8_buffer().size()
-		var id: int=cel.image.get_instance_id()
-		if not images.has(id):images[id]=true;bytes+=cel.image.get_data_size()
+		var id: int=Drawing.raster_token(cel)[0]
+		if not images.has(id):images[id]=true;bytes+=Drawing.raster_bytes(cel,true)
 	return {"type":"cel_patch","layer_id":layer,"owner":owner,"before":previous,"after":following,"bytes":bytes}
 
 static func same(cel: Dictionary,expected: Dictionary) -> bool:
-	var a:=cel.duplicate();var b:=expected.duplicate();a.erase("image");b.erase("image")
+	var a:=cel.duplicate();var b:=expected.duplicate();a.erase("image");b.erase("image");a.erase("raster_owner");b.erase("raster_owner")
 	for field in ["start","duration"]:
 		if not Timing.integer(a.get(field),0,Timing.MAX_FRAMES) or not Timing.integer(b.get(field),0,Timing.MAX_FRAMES):return false
 		a[field]=int(a[field]);b[field]=int(b[field])
-	if a!=b or not cel.get("image") is Image or not expected.get("image") is Image:return false
-	if is_same(cel.image,expected.image):return true
-	return cel.image.get_size()==expected.image.get_size() and cel.image.get_format()==expected.image.get_format() and cel.image.get_data()==expected.image.get_data()
+	var left:=Drawing.raster_token(cel);var right:=Drawing.raster_token(expected)
+	if a!=b or left.is_empty() or right.is_empty():return false
+	if left[0]==right[0]:return true
+	var image:=Drawing.image(cel);var other:=Drawing.image(expected)
+	return image!=null and other!=null and image.get_size()==other.get_size() and image.get_format()==other.get_format() and image.get_data()==other.get_data()
 
 static func apply(cels: Array,command: Dictionary,side: String,frames: int,limit:=32) -> Dictionary:
 	if not side in ["before","after"]:return {"error":"Invalid drawing history direction."}

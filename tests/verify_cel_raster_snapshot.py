@@ -22,12 +22,13 @@ def main():
         assert report.get('failures',0)==0 and report.get('ok',True)
         reports[label]=report
     run('tests/cel_raster_snapshot_unit.gd','unit','CEL_RASTER_SNAPSHOT_UNIT ')
+    run('tests/cel_raster_metadata_unit.gd','metadata','CEL_RASTER_METADATA_UNIT ')
     run('tests/cel_raster_owner_unit.gd','owner','CEL_RASTER_OWNER_UNIT ')
     run('tests/cel_raster_reader_unit.gd','reader-regression','CEL_RASTER_READER_UNIT ')
     for kind in ['sparse','noise']:
         if options.benchmark in [kind,'all']:
             run('tests/cel_raster_snapshot_benchmark.gd',kind,'CEL_RASTER_SNAPSHOT_BENCHMARK ',['--noise'] if kind=='noise' else [])
-    proof={'scope':'Opt-in cold raster staging foundation only; live cel storage remains eager. No app/Undo/GPU acceptance claim.','reports':reports,'source_sha256':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/drawing.gd','src/cel_raster_owner.gd','tests/cel_raster_owner_unit.gd','src/cel_raster_reader.gd','src/cel_raster_snapshot.gd','src/cel_raster_snapshot_cache.gd','tests/cel_raster_snapshot_unit.gd','tests/cel_raster_snapshot_benchmark.gd']}}
+    proof={'scope':'Opt-in cold raster staging foundation only; live cel storage remains eager. No app/Undo/GPU acceptance claim.','reports':reports,'source_sha256':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/cel_timing_editor.gd','src/cel_patch.gd','src/recovery.gd','src/layer_editor.gd','src/sequence_editor.gd','tests/cel_raster_metadata_unit.gd','src/drawing.gd','src/cel_raster_owner.gd','tests/cel_raster_owner_unit.gd','src/cel_raster_reader.gd','src/cel_raster_snapshot.gd','src/cel_raster_snapshot_cache.gd','tests/cel_raster_snapshot_unit.gd','tests/cel_raster_snapshot_benchmark.gd']}}
     (folder/'verification.json').write_text(json.dumps(proof,indent=2),encoding='utf-8')
     print(json.dumps(proof,indent=2))
 

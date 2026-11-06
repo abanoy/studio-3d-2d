@@ -1,0 +1,46 @@
+{
+  "scope": "Non-hydrating cold metadata consumers; production app adoption remains eager.",
+  "reports": {
+    "unit": {
+      "checks": 29,
+      "failures": 0
+    },
+    "metadata": {
+      "checks": 14,
+      "failures": 0
+    },
+    "owner": {
+      "checks": 22,
+      "failures": 0
+    },
+    "reader-regression": {
+      "checks": 31,
+      "failures": 0
+    }
+  },
+  "source_sha256": {
+    "src/cel_timing_editor.gd": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+    "src/cel_patch.gd": "60b75f05e162f796041e8083d9c756eb8ade3f26cac9f2e12b61d38fe41b51bd",
+    "src/recovery.gd": "6b347166ccf77f146aa2b7851f8610bb6b260035f525da90ce657a8bf3e24cb2",
+    "src/layer_editor.gd": "1ec0e7003d369607cd38ef58cb6c566812b8cf9db0b72c9a77b3c2e44348c1c1",
+    "src/sequence_editor.gd": "385cc2e8860bf2658152e1477d5e13e85b0b7d71dfca068c187aea2d740d4390",
+    "tests/cel_raster_metadata_unit.gd": "e1ad5ae142dbbedf9570d4f78c8cb436791c73970dd3d97c8c0b57523991c6e8",
+    "src/drawing.gd": "b6e5a163be31a61cdf97c5dcab3efc19bfd14dd50177415a4a3ceb645f436b14",
+    "src/cel_raster_owner.gd": "8190fb8cecfcbf5ba4a7c29fd770e75918ff97a4b68c4334101bbae337b7ba79",
+    "tests/cel_raster_owner_unit.gd": "c12e7b941fc36dcb0411c7fa5c464115881b157e53c18b2514c763768f0722a9",
+    "src/cel_raster_reader.gd": "8a37d059fa223dd24bc35bcc61f68d9b5d066e4b2aa23ab4078e28432bf7e797",
+    "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+    "src/cel_raster_snapshot_cache.gd": "52420d38ee658a5c698f1e76a8752539991cd90fe227ab71281a875b62254247",
+    "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+    "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+  },
+  "base_commit": "9f190a9",
+  "date": "2026-11-06",
+  "eager_app_regressions": {
+    "clipboard_history_checks": 154,
+    "recovery_schedule_checks": 41,
+    "failures": 0,
+    "isolated_display": ":106",
+    "scope": "Actual eager GUI history/physics/packed/cold/movie and real natural-timer checkpoint, failure/retry, exact-revision Save accounting. Not adopted-cold GUI acceptance."
+  }
+}

@@ -847,9 +847,13 @@
         {
           "kind": "source",
           "path": "tests/cel_raster_owner_unit.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/cel_raster_metadata_unit.gd"
         }
       ],
-      "remaining": "Cold snapshot/cache and authoritative owner/accessor contracts are implemented with sparse/noise measurements and domain brush/Undo/composite checks. Live Storage/app adoption remains eager. Migrate other direct Image consumers, non-hydrating timing/history accounting, streaming saves/recovery and nested access; verify real adopted-cold GUI edits/Undo/persistence/GPU parity and latency before enabling or expanding limits.",
+      "remaining": "Cold snapshot/cache, authoritative owner/accessors and non-hydrating timing/patch/recovery/sequence-history accounting are implemented/tested. Live Storage/app adoption remains eager. Migrate remaining render/edit/save consumers and error propagation; prove actual adopted-cold GUI editing/Undo/persistence/recovery/GPU parity and acceptable latency before enabling or expanding limits.",
       "external_dependencies": []
     },
     {
@@ -2016,7 +2020,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Cold snapshots and live-cel owner/accessors are tested but not enabled in app adoption. Migrate remaining direct Image consumers and failure propagation; prove actual cold-adopted GUI editing/Undo/save/recovery/render parity before enabling or raising limits."
+      "action": "Metadata consumers stay cold and preserve conservative budgets. Migrate remaining render/edit/save consumers and failure propagation; prove actual cold-adopted GUI editing/Undo/save/recovery/render parity before enabling or raising limits."
     },
     {
       "requirement": "MEM-01",

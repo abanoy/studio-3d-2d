@@ -1,4 +1,5 @@
 extends Node
+const Drawing=preload("res://src/drawing.gd")
 const Graph=preload("res://src/sequence_graph.gd")
 const Runtime=preload("res://src/sequence_runtime.gd")
 const NestedAudio=preload("res://src/sequence_audio.gd")
@@ -377,7 +378,7 @@ func trim_history() -> void:
 	for item in graph.get("assets",[]):scenes.append(scene_snapshot() if item.id==active_owner else item.scene)
 	for scene in scenes:
 		for layer in scene.layers:
-			for cel in layer.cels:live[cel.image.get_instance_id()]=true
+			for cel in layer.cels:live[Drawing.raster_token(cel)[0]]=true
 		for clip in Audio.clips(scene.get("audio",{})):live_pcm[clip.source.sha256]=true
 	for context in contexts:
 		for command in context.history+context.redo:
@@ -388,8 +389,8 @@ func trim_history() -> void:
 				for item in command[side].get("assets",[]):
 					for layer in item.scene.layers:
 						for cel in layer.cels:
-							var id: int=cel.image.get_instance_id()
-							if not live.has(id) and not seen.has(id):seen[id]=true;command.bytes+=cel.image.get_data_size()
+							var id: int=Drawing.raster_token(cel)[0]
+							if not live.has(id) and not seen.has(id):seen[id]=true;command.bytes+=Drawing.raster_bytes(cel,true)
 					for clip in Audio.clips(item.scene.get("audio",{})):
 						if not live_pcm.has(clip.source.sha256) and not seen_pcm.has(clip.source.sha256):seen_pcm[clip.source.sha256]=true;command.bytes+=clip.source.pcm.size()
 	var total:=0;var count:=0

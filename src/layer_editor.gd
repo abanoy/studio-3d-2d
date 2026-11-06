@@ -1,4 +1,5 @@
 extends Node
+const Drawing=preload("res://src/drawing.gd")
 # Keep layer dictionaries/Images alive across structural history, as stroke commands
 # address those same objects. Only the small order arrays are copied.
 var app
@@ -172,6 +173,6 @@ func confirm_remove() -> void:
 		if is_same(app.layers[i],request.layer):index=i;break
 	if index<0 or app.layers.size()<=1:return
 	var before: Array=app.layers.duplicate();var selected: String=app.layers[app.active_layer].id;var bytes:=0
-	for cel in request.layer.cels:bytes+=cel.image.get_data_size()
+	for cel in request.layer.cels:bytes+=Drawing.raster_bytes(cel,true)
 	app.layers.remove_at(index);app.active_layer=clampi(index,0,app.layers.size()-1);structure(before,selected,bytes)
 	if session==app.recovery_session:dialog.popup_centered()

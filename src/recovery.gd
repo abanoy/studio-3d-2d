@@ -1,4 +1,5 @@
 extends RefCounted
+const Drawing=preload("res://src/drawing.gd")
 const Storage = preload("res://src/storage.gd")
 const Journal=preload("res://src/recovery_journal.gd")
 const MAX_BYTES := 512 * 1024 * 1024
@@ -124,17 +125,22 @@ static func bytes_in(folder: String, depth := 0) -> int:
 		if size >= MAX_BYTES: break
 	return size
 
+static func drawing_reserve(layers: Array,sequence_graph: Dictionary={}) -> int:
+	var bytes:=0
+	for layer in layers:
+		for cel in layer.cels:bytes+=Drawing.raster_bytes(cel,true)
+	for asset in sequence_graph.get("assets",[]):
+		for layer in asset.scene.layers:
+			for cel in layer.cels:bytes+=Drawing.raster_bytes(cel,true)
+	return bytes
+
 static func checkpoint(root: String, session: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary, origin: String, revision: int, model: Dictionary = {}, world: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},sequence_context: Dictionary={},reference_sheet: Dictionary={},lesson_context: Dictionary={}) -> String:
 	if JSON.stringify(lesson_context,"",true,true).to_utf8_buffer().size()>16384:return "Lesson recovery context exceeds16KiB. Previous checkpoint preserved."
 	# Conservative global budget: reserve full uncompressed cels and input assets.
-	var estimate := 6 * 1024 * 1024
-	for layer in layers:
-		for cel in layer.cels: estimate += cel.image.get_data_size()
+	var estimate := 6 * 1024 * 1024 + drawing_reserve(layers,sequence_graph)
 	var sources: Array=[]
 	if not reference_sheet.is_empty():sources.append(reference_sheet.get("source",""))
 	for asset in sequence_graph.get("assets",[]):
-		for layer in asset.scene.layers:
-			for cel in layer.cels:estimate+=cel.image.get_data_size()
 		for clip in preload("res://src/audio_track.gd").clips(asset.scene.get("audio",{})):sources.append(clip.source.path)
 		for row in preload("res://src/world_document.gd").assets(asset.scene.world):sources.append(row.source)
 	for clip in preload("res://src/audio_track.gd").clips(audio): sources.append(clip.source.path)

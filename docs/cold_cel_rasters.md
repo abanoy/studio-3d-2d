@@ -106,3 +106,25 @@ modified pixels, metadata queries remain cold, eager compatibility remains exact
 and actual Drawing composite agrees across cold/eager hold and opacity paths.
 These exercise the domain contract, not a GUI selecting or editing adopted cold
 cels. The other direct Image consumers in the table above still need migration.
+
+## Metadata consumer migration
+
+Timing-editor signatures now use the stable raster token, so opening a drawing
+menu or checking a drag context does not decode every inactive cel. Affected-cel
+history strips transient ownership from serialized metadata, recognizes identical
+owner identity without reading pixels, and materializes only when independent
+owners need an exact pixel-equality comparison. Legacy whole-number JSON timing
+and eager Image identity comparisons retain their behavior.
+
+Recovery reservations, removed-layer charges and retired sequence-history charges
+use decoded byte metadata without materialization. They deliberately reserve full
+uncompressed pixels, keeping the previous conservative budgets. Compression is
+not used as permission to raise caps or undercharge retained history. Retired
+sequence rasters are still charged once per command and excluded when live.
+
+The metadata migration adds 14 checks (96 total domain checks). A 32-cel cold
+fixture stays at zero decodes through timing signatures, Cut Undo/Redo, root/child
+recovery reservations and actual sequence-history budget passes. Independent
+rebuilt-owner equality decodes on demand, and editing one owner changes only its
+revision token. This advances consumer migration; remaining render/edit/save
+consumers and production cold adoption are still unfinished.

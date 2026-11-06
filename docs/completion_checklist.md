@@ -15,7 +15,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 ## Next required work
 
 - **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
-- **P1 · MEM-02** — Cold snapshots and live-cel owner/accessors are tested but not enabled in app adoption. Migrate remaining direct Image consumers and failure propagation; prove actual cold-adopted GUI editing/Undo/save/recovery/render parity before enabling or raising limits.
+- **P1 · MEM-02** — Metadata consumers stay cold and preserve conservative budgets. Migrate remaining render/edit/save consumers and failure propagation; prove actual cold-adopted GUI editing/Undo/save/recovery/render parity before enabling or raising limits.
 - **P1 · MEM-01** — Clipboard deltas are implemented. Audit remaining cel-creation/deletion/layer history after the larger OUTPUT-02/MEM-02 gaps; do not re-polish the completed clipboard change.
 - **P1 · STORE-04** — Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit.
 - **P2 · COURSE-01** — Organize Basic/Advanced sections and supported topic entry points; retain versioned progress and unresolved Skip policy.

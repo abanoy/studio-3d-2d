@@ -1,4 +1,5 @@
 extends Node
+const Drawing=preload("res://src/drawing.gd")
 const Timing=preload("res://src/cel_timing.gd")
 var app
 func layer_by_id(id: String) -> Dictionary:
@@ -7,7 +8,7 @@ func layer_by_id(id: String) -> Dictionary:
 	return {}
 func shape(layer: Dictionary) -> Array:
 	var result:=[]
-	for cel in layer.get("cels",[]):result.append([cel.id,int(cel.start),int(cel.duration),cel.image.get_instance_id(),int(cel.image.get_meta("studio_pixels_revision",0))])
+	for cel in layer.get("cels",[]):result.append([cel.id,int(cel.start),int(cel.duration)]+Drawing.raster_token(cel))
 	return result
 func begin(layer_id: String,cel_id: String,at: int) -> Dictionary:
 	if app.exporting or app.physics_editor.recording.active or app.pose_editor.dragging or app.drawing:app.message("Finish the current edit or recording before moving a drawing exposure.");return {}
@@ -16,7 +17,7 @@ func begin(layer_id: String,cel_id: String,at: int) -> Dictionary:
 	var found: Dictionary={}
 	for cel in layer.cels:
 		if cel.id==cel_id:found=cel;break
-	if found.is_empty() or not found.get("image") is Image:return {}
+	if found.is_empty() or Drawing.raster_token(found).is_empty():return {}
 	app.stop();app.finish_stroke();app.pose_editor.finish_drag()
 	app.drawing_selection_editor.cancel();app.fill_editor.cancel();app.color_sampler.cancel(false)
 	for i in range(app.layers.size()):
