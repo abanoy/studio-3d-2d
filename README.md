@@ -767,3 +767,5 @@ Linux graphical verification: [private test display setup](docs/private_linux_te
 Held drawing playback now reuses a bounded preview overlay; see [measured scope](docs/held_drawing_preview.md).
 
 Repeated saved cel PNGs now reopen with independent editable Images over shared lossless storage; see [memory measurements and scope](docs/cel_raster_reuse.md).
+
+Directory saves keep cel identities separate from raster filenames; see [path and layer-pixel preservation](docs/cel_file_paths.md).

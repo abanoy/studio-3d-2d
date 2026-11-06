@@ -188,3 +188,8 @@ load memory265.5MB to8.37MB; distinct-PNG memory is unchanged with measured
 19GUI+5cold+6SIGKILL startup and existing161timing/70reference/lesson checks pass.
 See [precise scope](cel_raster_reuse.md). Existing32cel limits remain; unique-art
 lazy loading and owner/native/device acceptance remain open.
+
+Directory-save raster names now derive from row indices, preventing opaque cel
+IDs from escaping the folder or merging equal-ID layer rasters.30targeted
+checks plus existing61+16raster and70reference/lesson checks pass; see
+[reproductions and scoped verification](cel_file_paths.md). No format change.

@@ -139,12 +139,16 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 			if not error.is_empty(): return error
 			copied[row.path]=true
 	var tracks := []
-	for layer in layers:
+	for layer_index in range(layers.size()):
+		var layer=layers[layer_index]
 		var track := {"id": layer.id, "name": layer.name, "visible": layer.visible, "cels": []}
 		if layer.has("opacity"):track.opacity=layer.opacity
 		if layer.has("origin"):track.origin=layer.origin.duplicate(true)
-		for cel in layer.cels:
-			var path := cel_dir.path_join(str(cel.id) + ".png")
+		for cel_index in range(layer.cels.size()):
+			var cel=layer.cels[cel_index]
+			# IDs are opaque document data, never filesystem path components.
+			# Ordinals also keep equal IDs on separate layers from overwriting ink.
+			var path := cel_dir.path_join("layer_%d_cel_%d.png" % [layer_index,cel_index])
 			var pixels := ""
 			if not recovery.is_empty() or content_addressed:
 				pixels = image_hash(cel.image)

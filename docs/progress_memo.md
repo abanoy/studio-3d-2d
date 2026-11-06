@@ -11570,3 +11570,58 @@ Next useful measured work: existing Save/recovery content-addressed PNG reuse
 still redecodes the same members repeatedly; investigate safely reusing verified
 read results there, then address unique-cel memory architecture rather than
 raising32cel limits. Optional owner workflow-priority question remains unanswered.
+
+2026-11-06 UTC — directory raster filenames independent of cel IDs
+
+User asked whether work runs in sandbox: answered managed /workspace/studio-3d-2d,
+verified commits pushed to GitHub, no direct owner Windows installation edits.
+Continued existing full goal. While investigating repeated PNG Save validation,
+found/reproduced two directory-save bugs and prioritized their repair first.
+Old ordinary writer used cel.id as filesystem basename. A contained owned
+fixture with../../../escaped saved outside its project folder and produced an
+unreadable manifest. A second original fixture with equal IDs across2layers
+saved successfully but lost the first layer's pixels on reopen. Before-fix proof
+cel-id-path-before.json/.log and cel-id-collision-before.json/.log under
+/workspace/has-handoff-audit. All probe writes stayed within owned audit folders.
+
+Storage.save_project now derives ordinary PNG names from layer/cel array ordinals
+(layer_0_cel_0.png etc) within existing revision folders. Source IDs stay exact
+manifest data, never path components. This also isolates duplicate IDs on distinct
+rows. Content-addressed HAS/recovery pixel-hash names unchanged; formats, reader
+path checks, revision backups, source files and all bounds unchanged. No existing
+raster migration/removal or claim of reconstructing previously overwritten art.
+Only7added/3removed production lines; details docs/cel_file_paths.md.
+
+New verifier30checks pass:12headless with32opaque/duplicate-ID cels across2layers,
+14actual Studio and4cold packed readers. Includes parent/absolute-looking IDs,
+Windows device labels, separator/control/Unicode/long/empty string IDs as opaque
+metadata; all32distinct safe raster paths, exact IDs/ranges/RGBA, outside sentinel
+preservation, readable previous-revision backup, invalid-later-save preservation,
+content/recovery path compatibility and legacy runtime schema3. First unit run
+compared integer frame values with JSON floats; canonicalizing validated whole
+frames in expected/actual signatures fixed that test-only mismatch. All original
+path and RGBA assertions retained, failed log preserved. Final headless12passes.
+
+Actual app opens directory with equal cel IDs on two layers, paints only lower
+layer, uses ordinary app.save(), reopens with exact lower+upper rasters and GPU
+overlay, packs normal HAS and exports48frame1080p24 H264/AAC. Own frame7PNG equals
+reopened composition; decoded frame24cue48001 vs48000. Fresh reader with original
+directory/WAV and writer cache unavailable retains separate images/IDs and exact
+final picture; manualHAS/importedPNGs/WAV unchanged. Proof cel-file-paths-accepted/
+verification.json under audit root (12/14/4), cel-file-paths-verifier.log.
+
+Existing raster reader31domain+16PNG compatibility+19Studio+5cold+6actual-SIGKILL
+normal startup passes unchanged assertions (cel-file-paths-raster-regression).
+Existing kept-reference19storage+25writer+14cold+5startup+7lesson passes with
+its actual movie and abrupt recovery (cel-file-paths-reference-regression).
+Final Python312run311pass1existing independent-reader skip, including private
+launch guard coverage of all29explicit GUI wrappers; cel-file-paths-python.log.
+No new native/Windows-device/artist acceptance. Historical tracked output copied
+to cel-file-paths-historical-output-backup and restored fromHEAD exactly.
+
+Full goal active; stop_goal not called. Next return to measured Save/recovery
+PNG verification cost: cache only bounded verified PNGs within a save operation,
+keep every file read/check, strict PNG reuse, and avoid retaining32extra decoded
+images in unique-art projects. Check cached dimension correctness and atomic
+repair along with performance; don't trust stale source-image hashes or raise
+prototype limits. No implementation of that optimization yet.
