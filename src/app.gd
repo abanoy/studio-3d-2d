@@ -67,6 +67,7 @@ var history: Array = []
 var redo_history: Array = []
 var history_bytes := 0
 var dirty := false
+var cold_cel_loading:=false # Staged until cold Open/startup acceptance passes.
 var raster_preview_error:=""
 var drawing_overlay_cache=preload("res://src/drawing_overlay_cache.gd").new()
 var overlay_dirty := true
@@ -1798,7 +1799,7 @@ func open_dialog() -> void:
 func open_project(folder: String, manifest_name := "project.json",report_error := true) -> bool:
 	open_project_error=""
 	if exporting:open_project_error="Cannot open a project during export.";return false
-	var data := Storage.load_project(folder, manifest_name)
+	var data := Storage.load_project(folder, manifest_name,cold_cel_loading)
 	if data.has("error"):
 		open_project_error=data.error
 		if report_error:message(open_project_error)

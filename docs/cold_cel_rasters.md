@@ -192,3 +192,59 @@ is still injected by the test; the normal loader/fresh reader remain eager.
 Cold loader adoption, its startup/recovery paths, nested scenes and latency gates
 remain next. This does not increase the 32-cel limit or certify physical pressure
 hardware. Edited owners stay hot while legacy pixel Undo may retain their Images.
+
+## Adaptive loading (opt-in acceptance stage)
+
+`CelRasterReader.read_adaptive` now captures compressible decoded pixels into
+shared immutable snapshots and returns a distinct owner per cel. Its decode
+context retains the compressed snapshot rather than every decoded Image.
+Identical encoded PNGs share one validated capture, while every declared file is
+still opened, size/header checked and fingerprinted. Supplied pixel checksums are
+checked on every record, including aliases/cache hits. Incompressible pixels use
+the existing independent eager Image/COW backing, avoiding cold-cache work on
+subsequent reads. Legacy non-PNG loaders preserve their validated pixel behavior.
+
+`Storage.load_project(folder, manifest, true)` selects this mode explicitly; its
+default remains eager. One context serves root and child scenes. Studio has an
+internal `cold_cel_loading` acceptance flag, currently false, which routes ordinary
+directory/HAS Open and recovery through that same loader. No user-facing settings
+or project fields are added. Initial PNG decoding/validation remains complete
+before adoption; only later pixel materialization is lazy. This is memory cold
+storage, not deferred validation or a claim that Open never decodes PNGs.
+
+`verify_cel_raster_adaptive.py` checks 165 domain cases and the 16-case independent
+PNG corpus in both modes. Adaptive-specific checks cover repeated/aliased files,
+missing/changed files, malformed checksums, canvas/path checks, independent paint,
+raw fallback, captured-corruption refusal, legacy JPEG and nested shared decode.
+`verify_cel_raster_write.py --adaptive-open --isolated-display :106` additionally
+uses actual ordinary Open instead of injecting owners (30 writer/12 fresh-reader
+checks). `verify_cel_raster_reader.py --adaptive-open --isolated-display :106`
+passes 31 domain,16 PNG,19 writer,5 fresh-reader and6 normal startup checks, with
+an actual SIGKILL and original project/WAV/writer cache unavailable at startup.
+The observer uses unchanged production startup, not a recovery bypass.
+
+The tests access stable raster identities and checked pixels rather than private
+`cel.image` fields; eager identities and pixel-Undo Image identity remain checked.
+An initial adaptive-edit launch omitted switching the normal Open's Scene mode to
+Draw. Diagnostics identified the missing precondition; unchanged edit assertions
+pass after selecting Draw. No product behavior or acceptance boundary was relaxed.
+
+Three-run owned 32-record measurements are in
+[the adaptive receipt](benchmarks/cel_raster_adaptive_2026-11-06.json):
+
+| Fixture | Eager loaded tracked bytes | Adaptive loaded tracked bytes | Adaptive after sequential reads |
+|---|---:|---:|---:|
+| 32 distinct sparse PNGs |265,512,940 |185,883 |16,777,683 |
+| 32 records of one PNG |8,332,312 |55,458 |8,351,334 |
+| 32 distinct incompressible PNGs |265,512,940 |265,512,940 |265,512,812 |
+
+All RGBA checksums are exact. Repeated PNGs still decode once (31 cache hits).
+Noise keeps zero cold owners and zero decoded-cache bytes, with no memory saving;
+attempted compression makes its load slower. Sparse sequential materialization
+also costs more than eager reads. These are tracked CPU deltas, not peak/RSS/GPU
+or whole-app latency measurements. Do not infer universal timing or compression.
+
+Default adoption is still disabled pending actual nested cold rendering and
+app-level load/seek latency acceptance. The 32-cel cap stays unchanged, and edited
+owners remain hot under legacy pixel Undo. Larger/dense-project budgeting and
+hardware/native acceptance remain incomplete; MEM-02 stays partial.

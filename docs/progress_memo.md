@@ -12197,3 +12197,58 @@ injected for migration tests. Next implement adaptive one-pass cold loader owner
 with repeated-PNG sharing and incompressible fallback; verify actual cold Open,
 edit/Undo/save, nested scenes, normal startup/abrupt recovery and measured latency
 before enabling. MEM-02 partial/open, full goal active and independently actionable.
+
+
+2026-11-06 — opt-in adaptive project raster loading (MEM-02 partial)
+
+Added one-pass adaptive read/record path sharing compressed immutable captures by
+actual encoded-PNG fingerprint. Every file still checked/read; supplied pixel
+checksum checked on every record including hits. Context retains cold snapshots
+rather than unique decoded Images. Distinct owners share captures; painting one
+pins an independent Image. Incompressible pixels keep existing eager Image/COW
+backing with no cold-cache work on later reads. Legacy JPEG compatibility remains.
+Storage explicit third load argument selects adaptive mode, with one recursive
+root/child context. App internal cold_cel_loading flag routes ordinary directory,
+HAS and recovery Open, default FALSE pending nested/render/latency acceptance.
+Initial decode/validation remains complete before adoption; no deferred integrity,
+format changes or cap increase. Canonical files/source assets unchanged.
+
+27new adaptive cases,165combined domain checks pass. Independent16PNG corpus
+passes eager AND adaptive (gray1/2/4/8/16,indexed transparency,RGB/GA/RGBA8/16,gamma/
+sRGB,Adam7). Missing/changed aliases, malformed checksums, canvas/paths, raw fallback,
+source preservation, cold backing corruption and nested sharing/edit isolation
+covered. Source-case accessors now use stable raster identity and pixels instead
+of private cel.image; eager identity and pixel-Undo Image identity stay checked.
+
+Actual opt-in ordinary directory/HAS cold Open:30writer+12fresh-reader pass,
+including all GUI edit/Undo/save/checkpoint/movie checks from prior increment.
+First adaptive test retained Scene mode after normal Open, so edit tools never
+ran; diagnostic captured empty transform request/status, then corrected test to
+select Draw just like existing workflows. Added explicit pending-result guard to
+fail cleanly instead of a nil-field watchdog. Same edit assertions, no product
+mode change or weakening. Initial failed logs retained; owned failed process
+stopped after script error. Final cel-raster-adaptive-write-draw/verification.json.
+
+Existing32cel suite also passes in adaptive mode:31unit+16PNG+19writer+5fresh
+reader+6normal startup. Actual SIGKILL, original project/WAV/writer cache physically
+unavailable before startup, unchanged production startup and exact32identities/
+edited peer pixels/GPU/PCM. Four late bad projects preserve live document/history.
+Manual HAS/source assets exact; actual H264/AAC48frame movie. Same77case suite
+passes eager mode. Python312run311pass1existing optional independent-MMD skip.
+Proof cel-raster-adaptive-abrupt and cel-raster-adaptive-eager-regression under
+/workspace/has-handoff-audit. Headless adaptive-final proof includes165domain plus
+both16case corpora. All graphics private106/Dummy; no hardware/native claim.
+
+Three runs each of32sparse unique/repeated/noiseHD PNGs, exactRGBA throughout.
+Sparse loaded265512940eager vs185883adaptive tracked bytes; adaptive16777683after
+sequential reads, logical decoded cache16588800. Repeated PNG decode remains1+
+31hits:8332312eager vs55458adaptive loaded,8351334afterreads. Noise identical
+265512940loaded in both modes, adaptive0coldowners/0decodedcache; attempted
+compression adds load cost. Sparse on-demand reads also slower; no universal
+speed/RAM/peak/RSS/GPU claims. Full source/raw runs/means in
+ docs/benchmarks/cel_raster_adaptive_2026-11-06.json; docs/cold_cel_rasters.md.
+
+MEM-02 partial/open. Next actual nested cold rendering and app Open/seek latency
+acceptance before default adoption, then edited-owner/global dense-project budgets
+before raising32cel cap. Full goal remains active, not complete or externally
+blocked. Default artist workflow is still eager while this acceptance continues.

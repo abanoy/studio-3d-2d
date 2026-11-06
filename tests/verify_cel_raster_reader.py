@@ -6,7 +6,7 @@ from run import configure_private_display,command
 from png_reader_fixtures import make_fixtures
 
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--isolated-display',help='Linux: explicitly provisioned private dummy X display');parser.add_argument('--output',type=Path);options=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--isolated-display',help='Linux: explicitly provisioned private dummy X display');parser.add_argument('--output',type=Path);parser.add_argument('--adaptive-open',action='store_true');options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires a private --isolated-display; no shared-desktop fallback')
         configure_private_display(options.isolated_display)
@@ -18,7 +18,7 @@ def main():
     audio=hashlib.sha256((folder/'tone.wav').read_bytes()).hexdigest()
     corpus=folder/"png-corpus";make_fixtures(corpus)
     def run(script,label,marker,headless=False,extra=(),crash=False,scene=None,argument_folder=None):
-        args=command(script,headless=headless,extra=([str(scene)] if scene else [])+(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(folder/(label+'-engine.log')),'--',str(argument_folder or folder),*extra])
+        args=command(script,headless=headless,extra=([str(scene)] if scene else [])+(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(folder/(label+'-engine.log')),'--',str(argument_folder or folder),*(['--adaptive-open'] if options.adaptive_open else []),*extra])
         result=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=195)
         log=result.stdout+result.stderr;(folder/(label+'.log')).write_text(log,encoding='utf-8')
         assert result.returncode==(-9 if crash and os.name!='nt' else 0) and marker in log and not any(x in log for x in ['ERROR:','FAIL ','ObjectDB instances leaked']),log
@@ -26,7 +26,7 @@ def main():
         if os.name=='nt' and not headless:
             path=Path(args[args.index('--receipt')+1]);receipt=json.loads(path.read_bytes());assert receipt['exit']==0 and receipt['child_desktop_confirmed'] and not receipt['foreground_child_observed'] and receipt['job_closed'] and receipt['desktop_closed'];receipts.append(str(path))
     run('tests/cel_raster_reader_unit.gd','unit','CEL_RASTER_READER_UNIT ',True)
-    run('tests/png_reader_compatibility.gd','png-compatibility','PNG_READER_COMPATIBILITY ',True,argument_folder=corpus)
+    run('tests/png_reader_compatibility.gd','png-compatibility','PNG_READER_COMPATIBILITY ',True,extra=['--adaptive'] if options.adaptive_open else [],argument_folder=corpus)
     run('tests/cel_raster_reader_smoke.gd','writer','CEL_RASTER_READER_SMOKE ',extra=['--crash'],crash=True)
     assert not (folder/'graceful-exit.txt').exists();expected=json.loads((folder/'expected.json').read_bytes());manual=(folder/'shared.has').read_bytes()
     with zipfile.ZipFile(folder/'shared.has') as archive:
@@ -50,7 +50,7 @@ def main():
     if sys.byteorder!='little':pcm.byteswap()
     onset=next(i for i,v in enumerate(pcm) if abs(v)>1000);assert abs(onset-48000)<96
     assert all(hashlib.sha256(p.read_bytes()).hexdigest()==digest for p,digest in frozen.items())
-    proof=dict(reports=reports,video=video,decoded_onset_sample=onset,actual_abrupt_exit=True,originals_and_writer_cache_unavailable_for_cold_startup=True,manual_has_unchanged=True,source_assets_unchanged=True,functional_unchanged=True,private_receipts=receipts,isolated_display=options.isolated_display,folder=str(folder))
+    proof=dict(adaptive_open=options.adaptive_open,reports=reports,video=video,decoded_onset_sample=onset,actual_abrupt_exit=True,originals_and_writer_cache_unavailable_for_cold_startup=True,manual_has_unchanged=True,source_assets_unchanged=True,functional_unchanged=True,private_receipts=receipts,isolated_display=options.isolated_display,folder=str(folder))
     (folder/'verification.json').write_text(json.dumps(proof,indent=2),encoding='utf-8');print(json.dumps(proof,indent=2))
 
 if __name__=='__main__':main()

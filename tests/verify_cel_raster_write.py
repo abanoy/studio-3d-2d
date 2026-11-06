@@ -8,6 +8,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--isolated-display',help='Linux: explicitly provisioned private display')
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--adaptive-open',action='store_true',help='Use staged normal adaptive directory/HAS loading instead of fixture injection')
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires --isolated-display; no shared-desktop fallback')
@@ -18,7 +19,7 @@ def main():
     (folder/'domain.log').write_text(domain.stdout+domain.stderr,encoding='utf-8');assert domain.returncode==0,domain.stdout+domain.stderr
     reports={};receipts=[]
     def run(label,marker,extra=()):
-        args=command('tests/cel_raster_write_smoke.gd',extra=(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(folder/(label+'-engine.log')),'--',str(folder),*extra])
+        args=command('tests/cel_raster_write_smoke.gd',extra=(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(folder/(label+'-engine.log')),'--',str(folder),*(['--adaptive-open'] if options.adaptive_open else []),*extra])
         result=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=380,**flags);log=result.stdout+result.stderr;(folder/(label+'.log')).write_text(log,encoding='utf-8')
         assert result.returncode==0 and marker in log and not any(s in log for s in ['ERROR:','FAIL ','ObjectDB instances leaked']),log
         reports[label]=json.loads(next(s[len(marker):] for s in log.splitlines() if s.startswith(marker)));assert reports[label]['failures']==0
@@ -42,7 +43,7 @@ def main():
     if sys.byteorder!='little':pcm.byteswap()
     onset=next(i for i,value in enumerate(pcm) if abs(value)>1000);assert abs(onset-48000)<96
     sources=['tests/cel_raster_write_smoke.gd','tests/verify_cel_raster_write.py']
-    proof=dict(scope='Fixture-injected cold GUI edits and streamed saves. Normal loader and this fresh reader remain eager; cold adoption/abrupt cold recovery not enabled or certified.',domain=json.loads((folder/'domain/verification.json').read_bytes()),reports=reports,video=video,decoded_onset_sample=onset,manual_has_unchanged=True,writer_cache_unavailable_for_reader=True,private_receipts=receipts,isolated_display=options.isolated_display,source_sha256={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sources})
+    proof=dict(scope='Explicit staged adaptive directory/HAS Open, cold GUI edits and streamed saves; default loading and abrupt startup recovery not certified.' if options.adaptive_open else 'Fixture-injected cold GUI edits and streamed saves. Normal loader and this fresh reader remain eager; cold adoption/abrupt cold recovery not enabled or certified.',domain=json.loads((folder/'domain/verification.json').read_bytes()),reports=reports,video=video,decoded_onset_sample=onset,manual_has_unchanged=True,writer_cache_unavailable_for_reader=True,private_receipts=receipts,isolated_display=options.isolated_display,source_sha256={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in sources})
     (folder/'verification.json').write_text(json.dumps(proof,indent=2),encoding='utf-8');print(json.dumps(proof,indent=2))
 
 if __name__=='__main__':main()

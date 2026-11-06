@@ -867,9 +867,17 @@
         {
           "kind": "source",
           "path": "tests/verify_cel_raster_write.py"
+        },
+        {
+          "kind": "source",
+          "path": "tests/cel_raster_adaptive_unit.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_raster_adaptive_2026-11-06.json"
         }
       ],
-      "remaining": "Cold owner/read/metadata and mutation pinning/clipboard/streamed save paths are implemented with fixture-injected cold GUI Undo, packed save/fresh eager reader, checkpoint, movie and refusal tests. Normal loader adoption remains eager. Add adaptive cold loading and verify actual cold-adopted open/edit/Undo/save/startup recovery/nested rendering and latency before enabling or expanding limits.",
+      "remaining": "Explicit adaptive ordinary directory/HAS Open and actual abrupt startup recovery pass with shared compressed snapshots and eager noisy fallback; source/hash/Undo/save/cold reader tests and32-record measurements exist. Default remains eager pending actual nested cold rendering and app load/seek latency acceptance. Edited-owner/global dense-project budgeting and cap expansion remain incomplete; preserve hardware/native gates.",
       "external_dependencies": []
     },
     {
@@ -2036,7 +2044,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Cold edit/streaming-save consumers are tested with fixture injection. Implement adaptive cold loader adoption and verify actual cold Open/edit/Undo/packed save/startup recovery/nested rendering and latency before enabling; keep caps unchanged."
+      "action": "Opt-in adaptive Open/edit/save/abrupt startup works. Verify actual nested cold rendering and app-level load/seek latency before default adoption; then address edited-owner/global dense-project budgets before raising caps."
     },
     {
       "requirement": "MEM-01",

@@ -256,7 +256,7 @@ static func numeric_array(value, length: int) -> bool:
 static func integer(value, minimum: int, maximum: int) -> bool:
 	return (value is int or value is float) and is_finite(float(value)) and float(value) == floor(float(value)) and value >= minimum and value <= maximum
 
-static func load_project(folder: String, manifest_name := "project.json") -> Dictionary:
+static func load_project(folder: String, manifest_name := "project.json",cold_cels:=false) -> Dictionary:
 	if manifest_name not in ["project.json", "project.backup.json"] and not Journal.valid_manifest(folder,manifest_name): return {"error": "Unsupported or changed recovery manifest."}
 	var manifest_path := folder.path_join(manifest_name)
 	if not FileAccess.file_exists(manifest_path):
@@ -267,7 +267,8 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK:
 		return {"error": "Corrupt JSON manifest: " + parser.get_error_message()}
-	return decode_project(parser.data,folder)
+	var rasters:=RasterReader.new();rasters.cold_cels=cold_cels
+	return decode_project(parser.data,folder,false,rasters)
 
 static func decode_project(data,folder: String,extended:=false,rasters=null) -> Dictionary:
 	if rasters==null:rasters=RasterReader.new()
@@ -390,10 +391,12 @@ static func decode_project(data,folder: String,extended:=false,rasters=null) -> 
 				return {"error": "Overlapping/out-of-range cels or >32 cels (memory limit)."}
 			end = int(cel.start + cel.duration)
 			var path := folder.path_join(cel.path)
-			var raster: Dictionary=rasters.read(path,int(video.width),int(video.height),cel.get("pixel_sha256"),cel.has("pixel_sha256"))
+			var raster: Dictionary=rasters.read_record(path,int(video.width),int(video.height),cel.get("pixel_sha256"),cel.has("pixel_sha256"))
 			if raster.has("error"):return raster
 			# Runtime ownership comes only from validated pixel loading, never JSON.
-			cel.erase("raster_owner");cel.image=raster.image
+			cel.erase("raster_owner");cel.erase("image")
+			if raster.has("raster_owner"):cel.raster_owner=raster.raster_owner
+			else:cel.image=raster.image
 	var audio = data.get("audio", {})
 	if not audio is Dictionary:
 		return {"error": "Invalid audio clip metadata."}

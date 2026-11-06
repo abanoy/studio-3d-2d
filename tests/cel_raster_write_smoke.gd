@@ -16,9 +16,10 @@ func menu(at: int,action: int) -> void:
 func select_area(at: int) -> void:
 	app.set_frame(at);app.tool.select(4);press(Vector2(420,220),true);motion(Vector2(460,250));press(Vector2(460,250),false);await settled()
 func run() -> void:
-	folder=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in OS.get_cmdline_user_args() else "writer-cache")
+	folder=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.cold_cel_loading="--adaptive-open" in OS.get_cmdline_user_args();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in OS.get_cmdline_user_args() else "writer-cache")
 	if "--read" in OS.get_cmdline_user_args():
 		app.has_project.open_file(folder.path_join("Cold write.has"));await wait_job();var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
+		if app.cold_cel_loading:check(app.layers[1].cels.all(func(cel):return cel.has("raster_owner") and not cel.raster_owner.is_pinned()),"fresh normal HAS Open uses adaptive cold owners without fixture injection")
 		check(app.layers[1].cels.size()==5 and app.layers[1].cels[4].duration==8,"fresh packed reader restores saved boundaries independently of later recovery edits")
 		for at in [0,12,24,36,40]:
 			check(digest(at)==expected.art[str(at)],"fresh reader restores exact authored pixels at frame"+str(at))
@@ -29,8 +30,16 @@ func run() -> void:
 	for i in range(starts.size()):
 		var image:=Drawing.blank(1920,1080);image.fill(Color(0,.5,0,0));image.fill_rect(Rect2i(400,200,128,96),Color(float(i+1)/5,.3,.7,1))
 		if i==1:image.fill_rect(Rect2i(400,200,120,120),Color.BLACK);image.fill_rect(Rect2i(410,210,100,100),Color(0,.5,0,0))
-		var end: int=starts[i+1] if i+1<starts.size() else 48;var cel:=Drawing.insert(layer,starts[i],end,image);var snapshot=Snapshot.capture(image).raster;snapshots.append(snapshot);original.append(snapshot.pixel_sha256());cel.raster_owner=Owner.from_snapshot(snapshot,cache).owner;cel.erase("image")
-	layer.opacity=.5;app.changed();app.active_layer=1;app.layer_choice.select(1);app.tool.select(0);app.brush_pressure.button_pressed=false;app.color.color=Color.BLUE;app.set_frame(0);await settled()
+		var end: int=starts[i+1] if i+1<starts.size() else 48;var cel:=Drawing.insert(layer,starts[i],end,image);var snapshot=Snapshot.capture(image).raster;snapshots.append(snapshot);original.append(snapshot.pixel_sha256())
+		if not app.cold_cel_loading:cel.raster_owner=Owner.from_snapshot(snapshot,cache).owner;cel.erase("image")
+	layer.opacity=.5
+	if app.cold_cel_loading:
+		var state: Dictionary=app.project_snapshot();var source_folder:=folder.path_join("source-project")
+		var saved_source:=Storage.save_project(source_folder,state.video,state.camera_keys,state.layers,str(state.get("source","")),int(state.editor.frame),state.audio,{},{},true,state.world,{},state.palette)
+		check(saved_source.is_empty() and app.open_project(source_folder),"ordinary directory Open adopts cold owners from verified PNGs")
+		layer=app.layers[1];cache=layer.cels[0].raster_owner._cache;snapshots=[]
+		for cel in layer.cels:snapshots.append(cel.raster_owner._cold)
+	app.mode.select(0);app.change_mode(0);app.changed();app.active_layer=1;app.layer_choice.select(1);app.tool.select(0);app.brush_pressure.button_pressed=false;app.color.color=Color.BLUE;app.set_frame(0);await settled()
 	app.brush_pressure.button_pressed=true;var idle_decodes:=cache.decodes;var idle_history: int=app.history.size();press(Vector2(700,500),true);press(Vector2(700,500),false);await settled()
 	check(not layer.cels[0].raster_owner.is_pinned() and cache.decodes==idle_decodes and app.history.size()==idle_history and digest(0)==original[0],"zero-pressure press on existing cold cel neither pins pixels nor creates history")
 	app.brush_pressure.button_pressed=false
@@ -52,7 +61,11 @@ func run() -> void:
 	app.redo();await settled();check(digest(24)==moved,"selection Redo restores transformed placement")
 	await select_area(36);var transform=app.drawing_selection_editor.transforms;transform.angle.value=20;transform.start()
 	while transform.busy():await process_frame
-	await settled();var transformed_bytes: PackedByteArray=transform.pending.data
+	await settled()
+	check(not transform.pending.is_empty(),"transform worker produces a valid pending result before Apply")
+	if transform.pending.is_empty():
+		print("TRANSFORM_DIAGNOSTIC "+JSON.stringify({"status":app.status.text,"last_result":transform.last_result,"request":transform.request,"selection_valid":app.drawing_selection_editor.valid_context(),"context":str(app.drawing_selection_editor.context)}));await app.quit_studio();quit(1);return
+	var transformed_bytes: PackedByteArray=transform.pending.data
 	check(app.canvas.selection_preview!=null and not layer.cels[3].raster_owner.is_pinned(),"real transform worker previews cold source without write pin")
 	transform.apply_pending();await settled();var transformed:=digest(36)
 	check(Drawing.image(layer.cels[3]).get_data()==transformed_bytes and transformed!=original[3],"transform Apply commits exact worker pixels through authoritative owner")

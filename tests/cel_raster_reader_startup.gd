@@ -18,8 +18,8 @@ func recovered(result: Dictionary) -> void:
 	var exact: bool=app.layers.size()==1 and app.layers[0].cels.size()==32;var ids:={}
 	if exact:
 		for i in range(32):
-			var cel: Dictionary=app.layers[0].cels[i];ids[cel.image.get_instance_id()]=true;exact=exact and cel.id==expected.ids[i] and Storage.image_hash(cel.image)==(expected.edited if i==7 else expected.base)
-	check(exact and ids.size()==32,"startup retains32distinct Images, edited cel7 and31exact original peers")
+			var cel: Dictionary=app.layers[0].cels[i];ids[Drawing.raster_token(cel)[0]]=true;exact=exact and cel.id==expected.ids[i] and Storage.image_hash(Drawing.image(cel))==(expected.edited if i==7 else expected.base)
+	check(exact and ids.size()==32,"startup retains32distinct raster identities, edited cel7 and31exact original peers")
 	check(app.frame==7 and app.frame_box.value==7 and app.video.duration_frames==48,"startup restores exact saved playhead and scene bounds")
 	check(app.canvas.overlay.get_image().get_data()==Drawing.composite(app.layers,7,1920,1080).get_data(),"startup actual GPU preview uses edited cel pixels")
 	check(Storage.RasterReader.digest_bytes(app.audio_mix.pcm)==expected.pcm,"startup restores exact independent PCM")
