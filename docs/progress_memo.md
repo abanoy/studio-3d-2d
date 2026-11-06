@@ -11625,3 +11625,16 @@ keep every file read/check, strict PNG reuse, and avoid retaining32extra decoded
 images in unique-art projects. Check cached dimension correctness and atomic
 repair along with performance; don't trust stale source-image hashes or raise
 prototype limits. No implementation of that optimization yet.
+
+2026-11-06 UTC — reproducible warm Save baseline
+
+Added tests/cel_save_benchmark.gd, a headless original32cel1080p fixture with
+independent Image resources sharing identical pixels. After excluded initial
+creation/save, three warm content-addressed saves take2388.642/2401.420/2370.599ms
+on production5e71912. Full readback validates all32source RGBA hashes. Actual
+command exits0 with no engine errors; audit cel-save-baseline.log/.json. Raw
+scoped artifact docs/benchmarks/cel_save_baseline_2026-11-06.json. No production
+change or claimed optimization in this increment. Next implement bounded reuse
+of validated PNG results while still checking every file and source raster.
+Prefer storing verified byte/pixel hashes over retaining32decoded validation
+images; preserve strict PNG/dimension checks and atomic repair. Full goal active.
