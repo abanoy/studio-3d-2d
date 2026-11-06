@@ -11845,3 +11845,57 @@ All graphics owned dummy104/Dummy audio. Tracked output history backed up and
 restored exactly; fresh evidence retained outside checkout. Details in
 drawing_clipboard.md and requirements matrix. Full specification/addendum goal
 remains unfinished. Commit/push this bounded increment, then one result message.
+
+
+2026-11-06 — exact cloud goal and finite completion ledger
+
+User submitted the full rewritten goal as uploaded text and asked that the goal
+remain with this cloud task, not depend on a file on the owner PC. Read the exact
+5263byte uploaded request, preserved it verbatim in docs/goals/complete-has.md.
+SHA256 2d549712afba258e0d90b70389d78b5df0fd4f6eac7cea234e1977ef550045b6.
+Active baseline daa063c was clean. No application source, native assets, Windows
+installation, web/prototype or deployment changed for this reconciliation.
+
+Created docs/completion_checklist.json and generated readable overview. Stable
+IDs reconcile54required capability groups plus8required acceptance gates, with
+source sections from both documents, code/report references, explicit acceptance,
+remaining work, evidence classes and named external prerequisites. Reverse section
+index covers MD1–15/ADD0–20; acceptance index maps all original CORE/AUDIO/REF/
+SEQ/KEY/SAFE/PERF IDs and addendumA–F to the reconciled requirements. Source exists
+and recorded narrower passes do not mean fresh whole-requirement verification.
+Initial implementation inventory43implemented/10partial/1missing is distinct from
+acceptance closure:53open/1packaging-decision blocked/8external gates. This is not
+a new percentage. Existing informal70percent is not a measured baseline; scoring
+is explicitly withheld pending per-item acceptance/evidence audit. Equal-item
+implementation/acceptance formulas, no partial credit, external gates retained in
+denominator, optional/decision/control exclusions and stable-ID change rules are
+documented. No blanket owner approval is needed for the engineering audit.
+
+Corrected scope priorities: Stage4 requires simple shadow OR glow, not both;
+Stage5 refinements/optionalAI need measured owner need and are not mandatory new
+gates. ADD3.4 native import roadmap governs earlier MD deferral. Existing hold-Alt,
+MMB and auto-key decisions remain resolved. OPEN ripple/cross-track/boundary,
+multi-view inference, Skip, extra fades/settings prompts and high-end rendering
+are not silently mandatory. Independent native packaging remains required with
+an unresolved owner contract; license/public distribution remains outside current
+publishing authorization. Native fixtures, actual Windows, physical tablet/audio
+and novice/artist observation are distinct named prerequisites, not excuses to
+skip independent work.
+
+Next priority is OUTPUT-02: investigate compatible configurable output dimensions
+(current reader requires1920x1080), preserving drawing coordinates and truthful
+render-resolution claims. Then MEM-02 cold/lazy unique-art loading, MEM-01 targeted
+history retention and STORE-04 fault coverage. Course organization/locomotion/
+native profile acceptance follow. This replaces drifting through optional polish;
+prior announced Undo retention has not yet been implemented and is still tracked.
+
+Added stdlib tools/check_completion.py: verifies stable IDs/statuses/source paths,
+exact goal SHA, source/gate index coverage, dependency references and overview
+consistency; generates the readable overview. Closure requires explicit scoped
+commit/test receipt, not a recorded source/report alone. Current ledger validation
+and repeatable render pass. Controlled negative cases reject duplicate IDs,
+changed goal bytes and unsupported verified closure. These are control/artifact
+checks only, not an application test run or automatic semantic certification of
+the source requirements. No numerical completion score or product-completion
+claim. Existing historical reconciliation is linked rather than overwritten.
+Full implementation goal remains active and independent required work remains.

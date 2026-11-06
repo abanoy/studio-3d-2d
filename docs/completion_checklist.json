@@ -1,0 +1,2071 @@
+{
+  "format": "has_completion_checklist_1",
+  "baseline_commit": "daa063c645182ba9af6d70fc4a87142bb2cfb727",
+  "baseline_date": "2026-11-06",
+  "goal": {
+    "path": "docs/goals/complete-has.md",
+    "sha256": "2d549712afba258e0d90b70389d78b5df0fd4f6eac7cea234e1977ef550045b6"
+  },
+  "source_documents": [
+    "CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md",
+    "docs/design/HAS_2026-10-29_Voice_Design_Addendum_for_Codex.md"
+  ],
+  "interpretation": "Addendum governs conflicts. Later established hold-Alt/MMB/auto-key decisions remain resolved. Conditional/suggested/OPEN text is not silently promoted into mandatory work.",
+  "evidence_policy": "Source existence and recorded reports are not tests executed during this reconciliation. scoped_evidence means partial/profile-specific documented tests, not full acceptance closure. Earlier requirements matrix remains historical context.",
+  "scoring": {
+    "baseline_reviewed": false,
+    "method": "After the checklist baseline has been audited, report implemented required_implementation items / all required_implementation items separately from verified required items / all required implementation+verification items. No partial credit. Exclude optional/decision/control records. External blockers stay in the acceptance denominator. Equal checklist units are not effort, reliability or release-readiness weights.",
+    "reason": "Initial finite reconciliation; acceptance conditions need per-item closure/evidence audit. No numeric completion score is published yet. The earlier informal70percent is not this baseline."
+  },
+  "requirements": [
+    {
+      "id": "ENV-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD3",
+        "MD5.Stage0"
+      ],
+      "title": "Pinned offline development workflow",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "A clean supported setup launches pinned Godot and detects Python/FFmpeg without a cloud application dependency.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "run.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/cloud_source_recovery.md"
+        }
+      ],
+      "remaining": "Clean Windows installation is a separate acceptance gate.",
+      "external_dependencies": []
+    },
+    {
+      "id": "UI-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4",
+        "ADD1"
+      ],
+      "title": "Simple and Advanced share one document",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Switching UI detail preserves scene, timeline, camera, effective parameters and output; common tasks remain usable in Simple.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/app.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/voice_addendum_audit.md"
+        }
+      ],
+      "remaining": "Full routed workflow and novice observation remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "UI-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD2.1"
+      ],
+      "title": "Home, recent projects and tutorials",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Home opens New, Tutorials and real recent projects with available thumbnails and actionable missing-file feedback.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/home_screen.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/home.md"
+        }
+      ],
+      "remaining": "Fresh complete Home interaction acceptance remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "WORLD-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD2",
+        "ADD2.2"
+      ],
+      "title": "Empty world and editor grid",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "New starts black with a fading white floor grid, no selected object, bottom timeline and hierarchy; the grid is excluded from final output.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/renderer.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/voice_addendum_audit.md"
+        }
+      ],
+      "remaining": "Fresh routed empty-world/export gate remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "NAV-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.1",
+        "ADD2.3"
+      ],
+      "title": "Navigation, focus and shortcut routing",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Fly controls, stepping, Space and remapped shortcuts respect text focus/drawing mode and release capture on Escape/focus loss; alternate navigation stays optional.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/shortcut_bindings.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/keyboard_shortcuts.md"
+        }
+      ],
+      "remaining": "Physical Windows device and complete routed focus matrix remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "IMPORT-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD6",
+        "ADD3.1",
+        "ADD3.4"
+      ],
+      "title": "Common-format import and immutable sources",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Supported common files import into editable HAS world objects with dependency errors; drop uses frame0 and timeline import uses its chosen frame without modifying originals.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/import_actions.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/common_import.md"
+        }
+      ],
+      "remaining": "Full current common-format dependency/fault matrix and physical Explorer drop remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "IMPORT-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD3.4",
+        "ADD17.B"
+      ],
+      "title": "Native ecosystem coverage",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "Source model/map containers, MMD model/motion/pose and VRM profiles have documented supported features, safe adapters and representative native acceptance evidence.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/source_import.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/native_test_inputs.md"
+        }
+      ],
+      "remaining": "Approved complete native fixtures and associated tools are required; extension recognition alone is insufficient.",
+      "external_dependencies": [
+        "B-NATIVE"
+      ]
+    },
+    {
+      "id": "IMPORT-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD6",
+        "ADD3.5",
+        "ADD10.1"
+      ],
+      "title": "Native fidelity and dependency reporting",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "Imported data uses the canonical HAS representation and cached preparations. For each supported profile verify geometry, materials, hierarchy, rig/morph/animation and supported physics/lightmaps; unsupported properties get actionable diagnostics.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/model.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/source_import.md"
+        }
+      ],
+      "remaining": "Broader native material, inherited-transform, rig/cloth, prop/lightmap fidelity remains; retain original sources.",
+      "external_dependencies": [
+        "B-NATIVE"
+      ]
+    },
+    {
+      "id": "IMPORT-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD3.2"
+      ],
+      "title": "Visible spawn and bounded grounding",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Models spawn visibly near the captured view, attempt support/overlap avoidance with bounded candidates, and remain findable on fallback; maps are not treated as tiny humanoids.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/import_placement.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/height_import.md"
+        }
+      ],
+      "remaining": "Native bounds/orientation/scale and large-world acceptance remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "WORLD-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD3.3",
+        "MD2"
+      ],
+      "title": "Multiple maps, parenting and hierarchy",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Several maps/models/groups coexist, roots move whole maps, hierarchy finds distant objects, and parenting/saving preserve transforms.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/world_document.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/architecture.md"
+        }
+      ],
+      "remaining": "Very large worlds and broader native hierarchy verification remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD4",
+        "MD5.Stage3"
+      ],
+      "title": "Selection, bones and hidden-object editing",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Selection shows an editor-only green outline, accessible bones and decided hold-Alt reveal; hidden-parent selection remains editable without changing output visibility.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/world_selection.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/visibility.md"
+        }
+      ],
+      "remaining": "Complete routed selection/context priority and native bone-binding acceptance remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD5.1",
+        "MD5.Stage3"
+      ],
+      "title": "Direct posing and automatic manual keys",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Root and bone edits key the intended object/part at the exact playhead, Undo restores them, and unrigged assets degrade gracefully.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/pose_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/body_pose_library.md"
+        }
+      ],
+      "remaining": "Native transform/rig acceptance and full direct-manipulation ergonomics remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD5.3"
+      ],
+      "title": "Rig-aware IK and foot constraints",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "Supported hand/limb IK and planted-foot/root edits preserve reachable targets; unusual or missing rigs refuse safely.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/limb_ik.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/foot_contacts.md"
+        }
+      ],
+      "remaining": "Broader native rig chains and whole-body goal handling remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage3",
+        "MD10.REF-02"
+      ],
+      "title": "Reference-only posed characters",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Poseable references can be shown/hidden independently for preview versus final render, with saved pose interpolation and usable three-quarter inspection.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/model_opacity.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/body_pose_library.md"
+        }
+      ],
+      "remaining": "Fresh complete reference-only routed/export acceptance remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-05",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage3"
+      ],
+      "title": "Reusable body poses",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Named thumbnail poses support use, rename, duplicate, removal and compatible native pose sharing without overwriting source rigs.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/pose_library_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/body_pose_library.md"
+        }
+      ],
+      "remaining": "Native fixture breadth and artist acceptance remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "MOTION-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.1",
+        "ADD5.2"
+      ],
+      "title": "Sparse interpolation and per-channel editing",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Hold/linear/ease and supported Advanced curves preserve authored endpoints, independent parameters and camera cuts during seek/save/export.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/model.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/motion_animation.md"
+        }
+      ],
+      "remaining": "Complete supported-channel regression and artistic motion preference evaluation remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "MOTION-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD5.4"
+      ],
+      "title": "Reversible Motion Assist",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "A simple assist control offers editable, disableable corrections without silently replacing authored poses; supported parts/helpers have explicit bounds.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/model.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/motion_assistance.md"
+        }
+      ],
+      "remaining": "Broader full-body assistance and owner intensity evaluation remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "MOTION-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD5.5"
+      ],
+      "title": "Reusable paths with locomotion assistance",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "Reusable editable paths/clips can drive a character, with a visible reversible locomotion suggestion and correction workflow.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/movement_path.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/movement_path_presets.md"
+        }
+      ],
+      "remaining": "Path presets exist; generated locomotion and terrain adaptation remain. Multi-view inference details remain undecided separately.",
+      "external_dependencies": []
+    },
+    {
+      "id": "CAMERA-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.1",
+        "MD6",
+        "ADD6"
+      ],
+      "title": "Shot camera authoring and cuts",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Temporary navigation is separate from explicit shot keys; numeric transforms/FOV, interpolation and adjacent-frame cuts persist and render at exact frames.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/camera_transform_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/numeric_camera.md"
+        }
+      ],
+      "remaining": "Complete routed camera matrix and Windows input acceptance remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "TIME-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD8",
+        "ADD7.1"
+      ],
+      "title": "One rational frame domain",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Camera, poses, drawings, media and sound use integer frames and rational rates; seek/preview/export agree and timing edits protect existing content.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/timeline.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/project_timing.md"
+        }
+      ],
+      "remaining": "Full rate/domain regression remains; output dimensions have their own requirement.",
+      "external_dependencies": []
+    },
+    {
+      "id": "TIME-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD7.2"
+      ],
+      "title": "Collapsed tracks and animated subtracks",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Objects begin collapsed, expansion shows animated parts, and selecting parts focuses their channels without exposing inactive rig clutter by default.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/timeline_view.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/motion_animation.md"
+        }
+      ],
+      "remaining": "Large-project track density and full routed coverage remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "TIME-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.2",
+        "ADD7.3"
+      ],
+      "title": "Structural clip and drawing edits",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Move/cut/copy/paste/split retain relative animation or independent cel pixels and have correct Undo; frame3000-to0 is supported.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/clip_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/drawing_clipboard.md"
+        }
+      ],
+      "remaining": "Retain bounded current contracts; do not silently decide unresolved ripple/cross-track semantics.",
+      "external_dependencies": []
+    },
+    {
+      "id": "TIME-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.2",
+        "ADD7.1"
+      ],
+      "title": "Timeline navigation and waveforms",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Zoom/pan/seek share a ruler and frame mapping, labels stay fixed, scroll-to-playhead works and sound waveforms remain aligned.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/timeline_navigation.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/sparse_audio.md"
+        }
+      ],
+      "remaining": "Dense-project responsiveness and physical input acceptance remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "VIS-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD7.4",
+        "ADD8",
+        "ADD17.C"
+      ],
+      "title": "Presence, persistent visibility and gaps",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Late introduction is absent beforehand; later clips do not override an explicit OFF; parent visibility, held/bridged gaps and global300ms/zero fades remain deterministic.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/model.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/visibility.md"
+        }
+      ],
+      "remaining": "Full native scenarioC and artist acceptance remain; extra per-key fades are not silently required.",
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD2",
+        "MD5.Stage1",
+        "MD5.Stage2"
+      ],
+      "title": "Independent RGBA layers",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Rough/Ink/Flats/Effects, order/visibility/opacity and painting remain independent from the world/camera and reproduce after saving and export.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/drawing.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/drawing_layers.md"
+        }
+      ],
+      "remaining": "Routed complete-layer acceptance remains; preserve current documented limits.",
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.2",
+        "MD7"
+      ],
+      "title": "Editable held cels",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Blank/copy/delete/move/resize/split exposures obey end-exclusive boundaries and preserve independent editable pixels, Undo and persistence.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/cel_clipboard.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/drawing_clipboard.md"
+        }
+      ],
+      "remaining": "Long/dense raster storage is a separate missing capability.",
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2",
+        "MD7"
+      ],
+      "title": "Brush, eraser and pressure",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Output-coordinate strokes, opacity, erasing and supported pressure events remain correct under zoom/pan and Undo.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/brush_stroke.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/brush_pressure.md"
+        }
+      ],
+      "remaining": "Physical Windows tablet behavior/latency remains externally unverified; no universal Ink/Wintab claim.",
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2",
+        "MD7"
+      ],
+      "title": "Safe fill and line-edge handling",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Iterative fill supports tolerance, connectivity, visible-ink sampling, gap preview and border growth; application is undoable and never edits invisible peers or the scene.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/fill_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/fill_connections.md"
+        }
+      ],
+      "remaining": "Broader anti-aliased artistic-quality evaluation remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-05",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2"
+      ],
+      "title": "Palette and color sampling",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "The artist can keep/select project colors and sample the intended drawing/composite without modifying reference media.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/palette_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/project_palette.md"
+        }
+      ],
+      "remaining": "Full current routed color/guide regression remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-06",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2",
+        "MD7"
+      ],
+      "title": "Onion skin and comparison guides",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Previous/next drawings can be compared with editor-only ghosts; guides never leak into stored art or final output.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/onion_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/onion_skin.md"
+        }
+      ],
+      "remaining": "Physical drawing comfort and artist feedback remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "MEM-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD7",
+        "ADD13.2"
+      ],
+      "title": "Bounded usable drawing history",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "Meaningful pixel/cel edits have measured bounded useful Undo/Redo without full-frame snapshots for every stroke or resetting independent live physics.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/app.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/drawing_history.md"
+        }
+      ],
+      "remaining": "Whole-layer Cut/Paste/Split snapshots still retain/charge unrelated cels; then audit remaining creation/deletion history.",
+      "external_dependencies": []
+    },
+    {
+      "id": "MEM-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD7",
+        "MD9",
+        "ADD13.2"
+      ],
+      "title": "Cold-cel storage and larger projects",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "Cold unique drawings can be compressed/lazily loaded with measured bounded active/history caches, source integrity and reliable large-project seek/save/export.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/cel_raster_reader.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/cel_raster_reuse.md"
+        }
+      ],
+      "remaining": "Repeated-art reuse is implemented; unique-art cold/lazy storage and dense-project scalability remain missing. Do not raise32cel cap as a substitute.",
+      "external_dependencies": []
+    },
+    {
+      "id": "AUDIO-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2",
+        "ADD14.1"
+      ],
+      "title": "Sound import and editing",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "WAV and supported MP3/Ogg clips have independent timing, trim/gain/fades/mute/solo and survive packed/linked saves without source mutation.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/audio_track.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/multiple_audio.md"
+        }
+      ],
+      "remaining": "Full current media fault/relink matrix remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "AUDIO-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD8",
+        "ADD14.2"
+      ],
+      "title": "Preview clock and exact audio export",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Playback uses the shared time authority and exported mixed sound has verified offsets and duration at rational rates, including nested sound without duplication and silent projects.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/app.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/sparse_audio.md"
+        }
+      ],
+      "remaining": "Physical output-device sync/latency and complete fault matrix remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "PHYS-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD9.1",
+        "ADD17.D"
+      ],
+      "title": "Live physics, freeze and reset",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Compatible bodies default to enabled physics when supported, simulate/grab/throw, freeze in the current pose when disabled and offer reset; simulation alone authors no take.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/physics_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/physics_recording.md"
+        }
+      ],
+      "remaining": "Native joints/cloth/helper fidelity and artist/device acceptance remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "PHYS-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD9.2",
+        "ADD9.3",
+        "ADD17.D"
+      ],
+      "title": "Explicit Local and World capture",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Visible explicit recording captures only selected Local bodies or all relevant World bodies; committed motion reproduces in seek/save/export and cancellation is safe.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/physics_recording.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/physics_recording.md"
+        }
+      ],
+      "remaining": "Native cross-ecosystem scenarioD acceptance remains; compression algorithm is a separate suggestion.",
+      "external_dependencies": []
+    },
+    {
+      "id": "LIGHT-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD10.1"
+      ],
+      "title": "Unshaded and lit presentation",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Unshaded is usable for posing; Lit uses supported scene lighting and retained compatible map lighting, with safe navigation and persisted output settings.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/lighting.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/tutorials.md"
+        }
+      ],
+      "remaining": "Native materials/lightmaps and target GPU quality remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "SEQ-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage4",
+        "ADD7.1"
+      ],
+      "title": "Editable nested sequence assets",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Shared editable child scenes support local/parent mapping, offset/loop/placement/opacity, recursive audio and cache invalidation; cycles are rejected and parents update.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/sequence_editor.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/editable_sequences.md"
+        }
+      ],
+      "remaining": "Large-project budgets and native/artist acceptance remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "COMP-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage4",
+        "ADD14.1"
+      ],
+      "title": "Alpha media and chroma compositing",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Bounded imported alpha/Krita/video artwork becomes editable transparent holds; chroma tolerance/softness/spill and originals are preserved through preview/save/export.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/video_import.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/video_import.md"
+        }
+      ],
+      "remaining": "Long/dense video workflow and artistic key quality remain; do not promise native layered video editing.",
+      "external_dependencies": []
+    },
+    {
+      "id": "COMP-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage4"
+      ],
+      "title": "Placed overlays and simple2D effects",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Multiple editable character/clip overlays support keyed transform/opacity placement and a simple2D shadow or glow without modifying the background.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/sequence_pixels.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/sequence_shadows.md"
+        }
+      ],
+      "remaining": "Shadow satisfies the stated shadow-or-glow choice; general painted/lasso masks and glow are conditional refinement, not mandatory duplication.",
+      "external_dependencies": []
+    },
+    {
+      "id": "STORE-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD9",
+        "ADD11.1",
+        "ADD11.2"
+      ],
+      "title": "Portable HAS and optional linked assets",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Default packed HAS retains editable world/rig/camera/cels/audio/settings and reopens with sources unavailable; linked saves offer actionable missing-file location.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/has_project.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/cloud_source_recovery.md"
+        }
+      ],
+      "remaining": "Broader native dependency/relink/fault acceptance remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "STORE-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD3.4",
+        "ADD11.3"
+      ],
+      "title": "Independent native model/map sharing",
+      "implementation": "missing",
+      "verification": "incomplete",
+      "acceptance_status": "decision_blocked",
+      "acceptance": "An individual native model or map can be packaged, imported and reused independently with dependencies/provenance preserved, without external-format exporting.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/has_project.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Owner decision on existing-HAS container variation versus separate native packaging is still OPEN; no extension has been invented.",
+      "external_dependencies": [
+        "D-PACKAGING"
+      ]
+    },
+    {
+      "id": "STORE-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD9",
+        "ADD11.4"
+      ],
+      "title": "Project content versus personal preferences",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Project content/settings reproduce the scene while personal input/UI preferences stay personal; loading introduces no tentative disruptive settings prompt.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/app.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/keyboard_shortcuts.md"
+        }
+      ],
+      "remaining": "Complete project/personal setting matrix remains; prompt policy stays tentative.",
+      "external_dependencies": []
+    },
+    {
+      "id": "STORE-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD9",
+        "MD10.SAFE-01",
+        "ADD11.5"
+      ],
+      "title": "Validated atomic save and fault safety",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "Corrupt/unsafe/missing assets and failed/interrupted writes cannot replace the sole valid project or escape its folder; backup/readback/integrity faults are exercised.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/storage.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/cel_file_paths.md"
+        }
+      ],
+      "remaining": "Complete interrupted/disk-full/platform fault matrix remains; existing controlled failures are scoped evidence.",
+      "external_dependencies": []
+    },
+    {
+      "id": "REC-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD13.1"
+      ],
+      "title": "Quiet time/action autosave",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Default minute or meaningful-action protection waits for safe interaction state, retains failed work for retry, and protects active lesson-only changes without dirtying saved scene content.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/app.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/recovery_schedule.md"
+        }
+      ],
+      "remaining": "Long-session resource/latency measurement remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "REC-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD13.2"
+      ],
+      "title": "Bounded journal and Advanced history",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Bounded recoverable states expose timestamps and low-resolution viewport thumbnails in Advanced without endless full-project copies.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/recovery_journal.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/recovery_history.md"
+        }
+      ],
+      "remaining": "Shared-asset cleanup, concurrent sessions and measured long-session behavior remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "REC-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD13.3",
+        "ADD17.F"
+      ],
+      "title": "Automatic newest-valid recovery",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "An actual abruptly terminated session restores the newest completely valid state, falls back through corrupt entries and never overwrites the last manual HAS.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/recovery.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/startup_recovery.md"
+        }
+      ],
+      "remaining": "Native Windows/hardware fault gate remains; Linux procedural cases are scoped evidence.",
+      "external_dependencies": []
+    },
+    {
+      "id": "COURSE-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD12.1"
+      ],
+      "title": "Basic and Advanced topic browser",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "Offline bundled original HAS practices provide a logical Basic route and accessible Advanced sections/subsections with topic entry points.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/tutorials.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/tutorials.md"
+        }
+      ],
+      "remaining": "Existing first-film/focused chapters work; course/section organization and remaining supported-topic coverage need reconciliation and implementation.",
+      "external_dependencies": []
+    },
+    {
+      "id": "COURSE-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD12.2"
+      ],
+      "title": "Interactive teacher and quiet hints",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/tutorials.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/tutorials.md"
+        }
+      ],
+      "remaining": "Richer demonstrations and beginner observation remain; demonstration depth is not a substitute for state grading.",
+      "external_dependencies": []
+    },
+    {
+      "id": "COURSE-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD12.3",
+        "ADD12.4"
+      ],
+      "title": "Whole-scene Previous and resumed practice",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Previous restores the complete step scene; Continue/Fresh preserve separate sessions and observations; optional personal Save and crash reattachment keep newer protected practice state.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/lesson_store.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/lesson_recovery.md"
+        }
+      ],
+      "remaining": "Retention/concurrent-writer/local-history robustness and Windows/artist acceptance remain; Skip stays OPEN.",
+      "external_dependencies": []
+    },
+    {
+      "id": "OUTPUT-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD8",
+        "ADD14.2"
+      ],
+      "title": "Simple MP4 and image output",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Default output is playable H264/AAC1080p24 beside the saved HAS, with exact frame count, silent-video support and complete/transparent PNG alternatives.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/encoder.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/png_export.md"
+        }
+      ],
+      "remaining": "Full target-device and encoder-build acceptance remain.",
+      "external_dependencies": []
+    },
+    {
+      "id": "OUTPUT-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD2",
+        "MD8",
+        "ADD14.2"
+      ],
+      "title": "Configurable output dimensions and timing",
+      "implementation": "partial",
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance": "The user can change supported resolution/rational rate/duration with accurate media alignment and documented canvas/output behavior, while default1080p24 remains effortless.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/project_timing.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/project_timing.md"
+        }
+      ],
+      "remaining": "Rates/duration are configurable; current reader enforces1920x1080 and broader resolution controls remain missing. Define a reversible output-size contract before implementation.",
+      "external_dependencies": []
+    },
+    {
+      "id": "OUTPUT-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD8",
+        "MD10"
+      ],
+      "title": "Export progress, cancellation and recovery",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance": "Missing codecs/tools, failures and cancellation report truthfully, preserve recoverable frames/logs and never claim success or overwrite project assets.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/encoder.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/export_failures.md"
+        }
+      ],
+      "remaining": "Complete disk-full/device/encoder/platform fault matrix remains.",
+      "external_dependencies": []
+    },
+    {
+      "id": "NOTICES-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD11",
+        "MD14",
+        "ADD3.5"
+      ],
+      "title": "Notices and honest provenance",
+      "implementation": "implemented",
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance": "Dependency notices and source attribution remain available, unknown asset rights are not fabricated, and no downloaded art or unauthorized distribution is introduced.",
+      "evidence": [
+        {
+          "kind": "source",
+          "path": "src/app.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "THIRD_PARTY_NOTICES.md"
+        }
+      ],
+      "remaining": "App/public distribution licensing decision remains outside current deployment authorization.",
+      "external_dependencies": []
+    },
+    {
+      "id": "ACCEPT-A",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.A",
+        "MD1.1",
+        "MD10.1"
+      ],
+      "title": "Five-minute novice finished animation",
+      "implementation": "not_applicable",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance": "A novice completes import/pose/camera/drawing/sound/save/reopen/MP4 in Simple using actual target controls.",
+      "evidence": [
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "external_dependencies": [
+        "B-WINDOWS",
+        "B-ARTIST"
+      ]
+    },
+    {
+      "id": "ACCEPT-B",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.B"
+      ],
+      "title": "Cross-ecosystem native scene",
+      "implementation": "not_applicable",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance": "Approved Source map with available dependencies, VRM character and PMX prop coexist, pose and reopen portably with verified supported fidelity and truthful diagnostics.",
+      "evidence": [
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "external_dependencies": [
+        "B-NATIVE",
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-C",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.C"
+      ],
+      "title": "Full timeline/presence/visibility scenario",
+      "implementation": "not_applicable",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance": "The complete decided scenarioC passes routed interaction and final rendering, including late presence, relative clip moves, split gaps, persistent OFF, hidden selection and adjacent cuts.",
+      "evidence": [
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "external_dependencies": [
+        "B-NATIVE",
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-D",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.D"
+      ],
+      "title": "Native physics capture scenario",
+      "implementation": "not_applicable",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance": "Native ragdoll freeze/reset and explicit Local/World captures reproduce selected/impacted-body motion through preview, persistence and MP4.",
+      "evidence": [
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "external_dependencies": [
+        "B-NATIVE",
+        "B-WINDOWS",
+        "B-ARTIST"
+      ]
+    },
+    {
+      "id": "ACCEPT-E",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.E"
+      ],
+      "title": "Beginner tutorial acceptance",
+      "implementation": "not_applicable",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance": "A learner uses real practice assets, receives correct grading/quiet hints, restores whole Previous states and resumes/freshens/saves without losing practice.",
+      "evidence": [
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "external_dependencies": [
+        "B-ARTIST",
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-F",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.F",
+        "MD10.SAFE-01"
+      ],
+      "title": "Target-platform crash recovery acceptance",
+      "implementation": "not_applicable",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance": "Abrupt native target-platform exits recover newest valid state/older fallback with timestamps/thumbnails and unchanged manual HAS; interrupted and storage-failure cases are exercised.",
+      "evidence": [
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "external_dependencies": [
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-TABLET",
+      "category": "required_verification",
+      "source_sections": [
+        "MD10.PERF-01",
+        "MD3.3",
+        "MD5.Stage2"
+      ],
+      "title": "Physical drawing and audio-device acceptance",
+      "implementation": "not_applicable",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance": "Record actual1080p stroke/pressure latency and comfort with the owner target tablet/driver/GPU, plus audible synchronization, without claiming universal hardware support.",
+      "evidence": [
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "external_dependencies": [
+        "B-TABLET",
+        "B-WINDOWS",
+        "B-ARTIST"
+      ]
+    },
+    {
+      "id": "ACCEPT-INSTALL",
+      "category": "required_verification",
+      "source_sections": [
+        "MD5.Stage0",
+        "MD1.1"
+      ],
+      "title": "Clean Windows installation",
+      "implementation": "not_applicable",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance": "A clean supported Windows machine installs/launches offline, imports an original sample, saves/reopens and exports a playable movie with detected compatible encoder.",
+      "evidence": [
+        {
+          "kind": "recorded_report",
+          "path": "docs/requirements_cloud_2026-11-05.md"
+        }
+      ],
+      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "external_dependencies": [
+        "B-WINDOWS"
+      ]
+    }
+  ],
+  "optional": [
+    {
+      "id": "O-AI",
+      "source_sections": [
+        "MD5.Stage5",
+        "MD7"
+      ],
+      "title": "Optional AI/line-art/painted in-between suggestions",
+      "status": "optional_deferred",
+      "rule": "Not a prerequisite for ordinary animation. If pursued, opt-in, reversible review/accept/reject, provenance and measured owner need are required."
+    },
+    {
+      "id": "O-DRAW-POLISH",
+      "source_sections": [
+        "MD5.Stage5"
+      ],
+      "title": "Advanced selection, lasso/painted masks, glow, multiple palettes and proportion tools",
+      "status": "conditional_refinement",
+      "rule": "Some are already implemented; pursue remaining refinements after stages1–4 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
+    },
+    {
+      "id": "O-RENDER",
+      "source_sections": [
+        "ADD10.2"
+      ],
+      "title": "Photorealism/ray tracing/high-end renderer",
+      "status": "preference_open",
+      "rule": "No compulsory engine rewrite or promised path tracing."
+    },
+    {
+      "id": "O-AUTHOR",
+      "source_sections": [
+        "MD5.Stage5",
+        "ADD3.4"
+      ],
+      "title": "Blender-assisted world authoring and possible USD/native-source extensions",
+      "status": "optional_deferred",
+      "rule": "Do not turn HAS into a modeling tool or require every possible extension."
+    },
+    {
+      "id": "O-CAPTURE",
+      "source_sections": [
+        "ADD9.3",
+        "ADD9.4"
+      ],
+      "title": "Third collision-following record mode and particular sample compression",
+      "status": "suggested_deferred",
+      "rule": "Local/World determinism remains required; third mode and exact thinning/delta algorithm are not decided requirements."
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-PACKAGING",
+      "source_sections": [
+        "ADD11.3",
+        "ADD18"
+      ],
+      "title": "Independent native package contract",
+      "status": "open",
+      "needed_for": [
+        "STORE-02"
+      ],
+      "question": "Choose a compatible variation of the existing HAS container or a separate native package/extension contract; do not invent an extension or add third-party exporters."
+    },
+    {
+      "id": "D-CLIPS",
+      "source_sections": [
+        "ADD7.3",
+        "ADD7.4",
+        "ADD18"
+      ],
+      "title": "Further trim/key ownership, ripple and cross-track semantics",
+      "status": "open",
+      "needed_for": [],
+      "question": "Reconcile exact boundary/key ownership, duplicate/ripple/cross-track behavior before expanding current working clip contracts. These details do not erase decided structural move/split/clipboard requirements."
+    },
+    {
+      "id": "D-PATH",
+      "source_sections": [
+        "ADD5.5",
+        "ADD18"
+      ],
+      "title": "Multi-projection3D path inference",
+      "status": "open",
+      "needed_for": [],
+      "question": "Accuracy, depth inference, additional-view request and correction rules remain undecided. Authored paths and reversible locomotion assistance can proceed independently."
+    },
+    {
+      "id": "D-ASSIST",
+      "source_sections": [
+        "ADD5.2",
+        "ADD5.4"
+      ],
+      "title": "Assist intensity preference",
+      "status": "preference_test",
+      "needed_for": [],
+      "question": "Test intensity/settling with the owner; preserve exact poses and obvious disable/edit controls."
+    },
+    {
+      "id": "D-UX",
+      "source_sections": [
+        "ADD8.2",
+        "ADD11.4",
+        "ADD12.3"
+      ],
+      "title": "Extra per-key fades, load-settings prompt and tutorial Skip",
+      "status": "open",
+      "needed_for": [],
+      "question": "Do not introduce these as mandatory features or disruptive dialogs without a decision."
+    },
+    {
+      "id": "D-LICENSE",
+      "source_sections": [
+        "MD11"
+      ],
+      "title": "Application/public-distribution license",
+      "status": "open",
+      "needed_for": [],
+      "question": "Owner chooses distribution/license terms before publishing; no publishing or native-art redistribution is authorized by this development goal."
+    }
+  ],
+  "external_blockers": [
+    {
+      "id": "B-WINDOWS",
+      "prerequisite": "A usable approved Windows10/11 execution environment with the pinned engine and compatible encoder/GPU context.",
+      "prevents": [
+        "ACCEPT-A",
+        "ACCEPT-B",
+        "ACCEPT-C",
+        "ACCEPT-D",
+        "ACCEPT-E",
+        "ACCEPT-F",
+        "ACCEPT-TABLET",
+        "ACCEPT-INSTALL"
+      ],
+      "independent_work": "Portable implementation, procedural GUI/export/recovery tests and owned-directory fault tests remain actionable."
+    },
+    {
+      "id": "B-NATIVE",
+      "prerequisite": "Owner-approved complete native fixtures/dependencies: Source/GMod/SFM model/map/material/prop/lightmap cases, VRM profiles, and MMD model/pose/motion cases with permitted local use.",
+      "prevents": [
+        "IMPORT-02",
+        "IMPORT-03",
+        "ACCEPT-B",
+        "ACCEPT-C",
+        "ACCEPT-D"
+      ],
+      "independent_work": "Common-format and procedural validation can continue; it does not establish native material/rig/cloth fidelity."
+    },
+    {
+      "id": "B-TABLET",
+      "prerequisite": "Owner target physical tablet/input driver, GPU and audio output device with actual measured sessions.",
+      "prevents": [
+        "ACCEPT-TABLET"
+      ],
+      "independent_work": "Synthetic pressure packets, coordinate mapping, deterministic pixels and decoded audio alignment can be tested in cloud."
+    },
+    {
+      "id": "B-ARTIST",
+      "prerequisite": "Owner/novice observation and artistic feedback on an actual completed short animation.",
+      "prevents": [
+        "ACCEPT-A",
+        "ACCEPT-D",
+        "ACCEPT-E",
+        "ACCEPT-TABLET"
+      ],
+      "independent_work": "Implement missing required capabilities and run objective automation first."
+    }
+  ],
+  "source_section_index": {
+    "MD1": [
+      "ACCEPT-A",
+      "ACCEPT-INSTALL"
+    ],
+    "MD2": [
+      "WORLD-01",
+      "WORLD-02",
+      "DRAW-01",
+      "OUTPUT-02"
+    ],
+    "MD3": [
+      "ENV-01",
+      "ACCEPT-TABLET"
+    ],
+    "MD4": [
+      "UI-01",
+      "NAV-01",
+      "MOTION-01",
+      "CAMERA-01",
+      "TIME-03",
+      "TIME-04",
+      "DRAW-02"
+    ],
+    "MD5": [
+      "ENV-01",
+      "POSE-01",
+      "POSE-02",
+      "POSE-04",
+      "POSE-05",
+      "DRAW-01",
+      "DRAW-03",
+      "DRAW-04",
+      "DRAW-05",
+      "DRAW-06",
+      "AUDIO-01",
+      "SEQ-01",
+      "COMP-01",
+      "COMP-02",
+      "ACCEPT-TABLET",
+      "ACCEPT-INSTALL",
+      "O-AI",
+      "O-DRAW-POLISH",
+      "O-AUTHOR"
+    ],
+    "MD6": [
+      "IMPORT-01",
+      "IMPORT-03",
+      "CAMERA-01"
+    ],
+    "MD7": [
+      "DRAW-02",
+      "DRAW-03",
+      "DRAW-04",
+      "DRAW-06",
+      "MEM-01",
+      "MEM-02",
+      "O-AI"
+    ],
+    "MD8": [
+      "TIME-01",
+      "AUDIO-02",
+      "OUTPUT-01",
+      "OUTPUT-02",
+      "OUTPUT-03"
+    ],
+    "MD9": [
+      "MEM-02",
+      "STORE-01",
+      "STORE-03",
+      "STORE-04"
+    ],
+    "MD10": [
+      "POSE-04",
+      "STORE-04",
+      "OUTPUT-03",
+      "ACCEPT-A",
+      "ACCEPT-F",
+      "ACCEPT-TABLET"
+    ],
+    "MD11": [
+      "NOTICES-01",
+      "D-LICENSE"
+    ],
+    "MD12": [
+      "MEM-02",
+      "AUDIO-02",
+      "STORE-04",
+      "OUTPUT-03"
+    ],
+    "MD13": [
+      "CONTROL-GOAL"
+    ],
+    "MD14": [
+      "NOTICES-01"
+    ],
+    "MD15": [
+      "CONTROL-GOAL"
+    ],
+    "ADD0": [
+      "CONTROL-GOAL"
+    ],
+    "ADD1": [
+      "UI-01"
+    ],
+    "ADD2": [
+      "UI-02",
+      "WORLD-01",
+      "NAV-01"
+    ],
+    "ADD3": [
+      "IMPORT-01",
+      "IMPORT-02",
+      "IMPORT-03",
+      "IMPORT-04",
+      "WORLD-02",
+      "STORE-02",
+      "NOTICES-01",
+      "O-AUTHOR"
+    ],
+    "ADD4": [
+      "POSE-01"
+    ],
+    "ADD5": [
+      "POSE-02",
+      "POSE-03",
+      "MOTION-01",
+      "MOTION-02",
+      "MOTION-03",
+      "D-PATH",
+      "D-ASSIST"
+    ],
+    "ADD6": [
+      "CAMERA-01"
+    ],
+    "ADD7": [
+      "TIME-01",
+      "TIME-02",
+      "TIME-03",
+      "TIME-04",
+      "VIS-01",
+      "SEQ-01",
+      "D-CLIPS"
+    ],
+    "ADD8": [
+      "VIS-01",
+      "D-UX"
+    ],
+    "ADD9": [
+      "PHYS-01",
+      "PHYS-02",
+      "O-CAPTURE"
+    ],
+    "ADD10": [
+      "IMPORT-03",
+      "LIGHT-01",
+      "O-RENDER"
+    ],
+    "ADD11": [
+      "STORE-01",
+      "STORE-02",
+      "STORE-03",
+      "STORE-04",
+      "D-PACKAGING",
+      "D-UX"
+    ],
+    "ADD12": [
+      "COURSE-01",
+      "COURSE-02",
+      "COURSE-03",
+      "D-UX"
+    ],
+    "ADD13": [
+      "MEM-01",
+      "MEM-02",
+      "REC-01",
+      "REC-02",
+      "REC-03"
+    ],
+    "ADD14": [
+      "AUDIO-01",
+      "AUDIO-02",
+      "COMP-01",
+      "OUTPUT-01",
+      "OUTPUT-02"
+    ],
+    "ADD15": [
+      "IMPORT-01",
+      "VIS-01",
+      "POSE-02",
+      "PHYS-02",
+      "TIME-03",
+      "STORE-01",
+      "REC-03"
+    ],
+    "ADD16": [
+      "CONTROL-GOAL"
+    ],
+    "ADD17": [
+      "IMPORT-02",
+      "VIS-01",
+      "PHYS-01",
+      "PHYS-02",
+      "REC-03",
+      "ACCEPT-A",
+      "ACCEPT-B",
+      "ACCEPT-C",
+      "ACCEPT-D",
+      "ACCEPT-E",
+      "ACCEPT-F"
+    ],
+    "ADD18": [
+      "D-PACKAGING",
+      "D-CLIPS",
+      "D-PATH"
+    ],
+    "ADD19": [
+      "CONTROL-GOAL"
+    ],
+    "ADD20": [
+      "ACCEPT-A",
+      "ACCEPT-B",
+      "ACCEPT-D",
+      "OUTPUT-01"
+    ]
+  },
+  "control_requirements": [
+    {
+      "id": "CONTROL-GOAL",
+      "acceptance": "Keep the exact cloud goal and finite stable-ID checklist, preserve sources/compatibility, run meaningful isolated verification, commit/push and report one substantive result per increment; do not call an incremental checkpoint full completion."
+    }
+  ],
+  "next_actions": [
+    {
+      "requirement": "OUTPUT-02",
+      "priority": 1,
+      "action": "Audit and implement a compatible configurable output-size contract, preserving drawing coordinates and persistence; do not label scaled artwork native high-resolution drawing."
+    },
+    {
+      "requirement": "MEM-02",
+      "priority": 1,
+      "action": "Design and implement integrity-checked cold/lazy raster access with measured unique-art behavior before expanding limits."
+    },
+    {
+      "requirement": "MEM-01",
+      "priority": 1,
+      "action": "Replace whole-layer clipboard history retention with affected-cel deltas, with exact Undo, physics/owner isolation and measured accounting."
+    },
+    {
+      "requirement": "STORE-04",
+      "priority": 1,
+      "action": "Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit."
+    },
+    {
+      "requirement": "COURSE-01",
+      "priority": 2,
+      "action": "Organize Basic/Advanced sections and supported topic entry points; retain versioned progress and unresolved Skip policy."
+    },
+    {
+      "requirement": "MOTION-03",
+      "priority": 2,
+      "action": "Implement a reversible locomotion prototype on authored paths before optional multi-view inference."
+    },
+    {
+      "requirement": "IMPORT-03",
+      "priority": 2,
+      "action": "Define per-profile native fidelity acceptance and use approved fixtures when available; report unsupported capabilities honestly."
+    }
+  ],
+  "acceptance_scenario_index": {
+    "CORE-01": [
+      "IMPORT-01"
+    ],
+    "CORE-02": [
+      "CAMERA-01"
+    ],
+    "CORE-03": [
+      "DRAW-01"
+    ],
+    "CORE-04": [
+      "DRAW-01"
+    ],
+    "CORE-05": [
+      "DRAW-02"
+    ],
+    "CORE-06": [
+      "NAV-01"
+    ],
+    "CORE-07": [
+      "STORE-01"
+    ],
+    "CORE-08": [
+      "OUTPUT-01"
+    ],
+    "AUDIO-01": [
+      "AUDIO-02"
+    ],
+    "AUDIO-02": [
+      "AUDIO-02"
+    ],
+    "REF-01": [
+      "POSE-02"
+    ],
+    "REF-02": [
+      "POSE-04"
+    ],
+    "SEQ-01": [
+      "SEQ-01"
+    ],
+    "KEY-01": [
+      "COMP-01"
+    ],
+    "SAFE-01": [
+      "STORE-04"
+    ],
+    "PERF-01": [
+      "ACCEPT-TABLET"
+    ],
+    "ADD-A": [
+      "ACCEPT-A"
+    ],
+    "ADD-B": [
+      "ACCEPT-B"
+    ],
+    "ADD-C": [
+      "ACCEPT-C"
+    ],
+    "ADD-D": [
+      "ACCEPT-D"
+    ],
+    "ADD-E": [
+      "ACCEPT-E"
+    ],
+    "ADD-F": [
+      "ACCEPT-F"
+    ]
+  }
+}

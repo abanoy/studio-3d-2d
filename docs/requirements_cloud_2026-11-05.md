@@ -1,5 +1,12 @@
 # Requirement reconciliation — 2026-11-05 UTC
 
+The active finite worklist is now [completion_checklist.md](completion_checklist.md),
+with stable IDs, explicit acceptance conditions, evidence classes and external
+prerequisites in its JSON ledger. This older reconciliation remains historical
+context; its remaining-work phrases do not promote optional/OPEN details into
+mandatory requirements. The exact uploaded cloud goal is saved in
+[goals/complete-has.md](goals/complete-has.md).
+
 The complete486-line original specification,613-line design addendum, README,
 dependencies, AGENTS, voice audit and10,501-line chronological progress memo have
 now been read. Root LLM.md is standalone; the missing Windows parent history has
