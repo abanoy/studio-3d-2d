@@ -42,3 +42,12 @@ func read(path: String,width: int,height: int,expected=null,require_pixels:=fals
 		if not expected is String or entry.pixel_hash!=expected:return {"error":"Cel checksum differs. Try the previous saved copy."}
 	entries[fingerprint]=entry
 	return {"image":entry.image.duplicate()}
+# Opt-in staging API for the upcoming live-cel ownership migration. Existing
+# read() and project adoption stay eager. Do not mix eager/cold calls on a reader:
+# cold capture releases its validated decode cache after each file.
+func read_cold(path: String,width: int,height: int,expected=null,require_pixels:=false) -> Dictionary:
+	var decoded:=read(path,width,height,expected,require_pixels)
+	if decoded.has("error"):entries.clear();return decoded
+	var captured: Dictionary=preload("res://src/cel_raster_snapshot.gd").capture(decoded.image)
+	entries.clear()
+	return captured

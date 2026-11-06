@@ -1,0 +1,312 @@
+{
+  "date": "2026-11-06",
+  "base_commit": "9f47cb5",
+  "scope": "Opt-in cold raster staging foundation only; live cel storage remains eager. No app/Undo/GPU acceptance claim.",
+  "source_sha256": {
+    "src/cel_raster_reader.gd": "8a37d059fa223dd24bc35bcc61f68d9b5d066e4b2aa23ab4078e28432bf7e797",
+    "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+    "src/cel_raster_snapshot_cache.gd": "52420d38ee658a5c698f1e76a8752539991cd90fe227ab71281a875b62254247",
+    "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+    "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+  },
+  "checks": {
+    "unit": {
+      "checks": 29,
+      "failures": 0
+    },
+    "reader-regression": {
+      "checks": 31,
+      "failures": 0
+    }
+  },
+  "fixtures": {
+    "sparse": {
+      "count": 32,
+      "fixture": "sparse",
+      "ok": true,
+      "raster": [
+        1920,
+        1080
+      ],
+      "runs": [
+        {
+          "cold": {
+            "after_sequential_tracked_bytes": 16701779,
+            "capture_or_load_ms": 2557.306,
+            "cold": true,
+            "count": 32,
+            "decoded_cache_bytes": 16588800,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 32,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 108751,
+            "owned_payload_bytes": 25725,
+            "sequential_read_verify_ms": 1835.362
+          },
+          "eager": {
+            "after_sequential_tracked_bytes": 265497832,
+            "capture_or_load_ms": 1682.185,
+            "cold": false,
+            "count": 32,
+            "decoded_cache_bytes": 0,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 0,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265496440,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 911.243
+          }
+        },
+        {
+          "cold": {
+            "after_sequential_tracked_bytes": 16701779,
+            "capture_or_load_ms": 2559.805,
+            "cold": true,
+            "count": 32,
+            "decoded_cache_bytes": 16588800,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 32,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 108751,
+            "owned_payload_bytes": 25725,
+            "sequential_read_verify_ms": 1750.441
+          },
+          "eager": {
+            "after_sequential_tracked_bytes": 265497832,
+            "capture_or_load_ms": 1600.069,
+            "cold": false,
+            "count": 32,
+            "decoded_cache_bytes": 0,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 0,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265496440,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 877.479
+          }
+        },
+        {
+          "cold": {
+            "after_sequential_tracked_bytes": 16701779,
+            "capture_or_load_ms": 2443.056,
+            "cold": true,
+            "count": 32,
+            "decoded_cache_bytes": 16588800,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 32,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 108751,
+            "owned_payload_bytes": 25725,
+            "sequential_read_verify_ms": 1743.213
+          },
+          "eager": {
+            "after_sequential_tracked_bytes": 265497832,
+            "capture_or_load_ms": 1578.295,
+            "cold": false,
+            "count": 32,
+            "decoded_cache_bytes": 0,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 0,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265496440,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 861.293
+          }
+        }
+      ],
+      "scope": "Original32distinct fullHD PNGs, sparse with hidden RGB or seeded incompressible noise as specified; three same-process eager-reader versus opt-in cold-reader runs; tracked Godot allocations exclude fixture creation; sequential read verifies every RGBA SHA; no production app/Undo/GPU integration or whole-process RSS claim.",
+      "png_sha256": {
+        "unique_00.png": "b00e703baf7d814356ac52eba4fcd77563cb547e9a1a8a75f65a29bf56c7b960",
+        "unique_01.png": "e2192e765ced86c289e3f17a8a628c2344eb1f95a8c9d87bcea02bd7b51191dd",
+        "unique_02.png": "d1ef3f135584b676429b7f8085865504ca3775753486c936507b6f336c40a4cc",
+        "unique_03.png": "0438cbf0ee6c45f2536485af0c6b1e528e01c985cfc241eb263cfb786df93f37",
+        "unique_04.png": "9202b671fdaa804aa8697e1df01356a72783c3fce8bc7f97e2fa11e67cef85e6",
+        "unique_05.png": "f2737f309cf803cca6baf99f52e9bcff57915586c78165592eecbd7ee0ccd43b",
+        "unique_06.png": "41a91f5c5afd8733bf6f4c4f237acc0c9fa0a1732f7184a02bbbc3d2738b4ced",
+        "unique_07.png": "bcf5a9687b3746bf27c0af5d6b4e502f91553e6a8753ccfdb381a336447c364a",
+        "unique_08.png": "52493cb98829f3a252ac33490451d4a56c0b98823ff0aebf4881bd749368841d",
+        "unique_09.png": "4e7e9d2a61bb713bf6c4c979485ae866b269d05b677265174feac00216624814",
+        "unique_10.png": "255e5d350b1797252bdd3f64cf74e9ca9d1b86e2873383c4c09c6e0a6ab17b35",
+        "unique_11.png": "dd310b2eed57cb212542af014c7cd70e3d9c2a874d9ae0166402d3cab8d9253d",
+        "unique_12.png": "980eadadfbb6f0b4572fa732d094c8cd4a9737b125e7d7fd73d843087eb85634",
+        "unique_13.png": "2e75158219bef8b02434bdee408c5844ed700710a5916559924edcabd8ea2e01",
+        "unique_14.png": "13402cc5349877afeb5a9fe602bc1b4b869093d70c7fa0f22f08b49927eab3b4",
+        "unique_15.png": "85e60092c2b2a65becfea4257556a436779a3c5bfcd40885f7a5fc1517e1f8e5",
+        "unique_16.png": "cf6382edeff2515b11922326a67c744497ac6a0cfda69d6b1a8b5a22b53f921e",
+        "unique_17.png": "7810c3c2590beafc78e03d5bbc6e460c188f5504c093cf7f928b94b5a449ea07",
+        "unique_18.png": "159c00e176d54fa9e1b5692a3e0d5f569539f3a3eb44cb1950c5e3f298306b7e",
+        "unique_19.png": "c1d94063ff4be233a6595dccba54544f67d8745e2e5bccd29abc3d3341733e06",
+        "unique_20.png": "8616edeb86e9b84019b5aa8c7b6f7836c7e7693faba63ca4525bc1a9b1e0c50d",
+        "unique_21.png": "91341e2120113c953028443d54457e0c658216936215b00359d2bd2a87163645",
+        "unique_22.png": "eaa7481df1925c831a9efcb180faaa4892725dcc7fc38efc55667e7ae1675cab",
+        "unique_23.png": "47191da0e3891899a79d60edeebaba25208a6691ae8d7b3e438e1aa19f2555e7",
+        "unique_24.png": "e7de99da95642a9efec140e680757d5edff98f3fa9d9b177bb7d9ec23760dfd4",
+        "unique_25.png": "9456e32c880d1bb88565cd8826dc72b5045714685e55e38cee5fdb01ac819abe",
+        "unique_26.png": "c80b3918f5b3d76c21618354bba06e88ee8cbc7da9b22236fefa87c39a36b5b9",
+        "unique_27.png": "f8f2ee9d93fc0146882f86868c36fa5788a69d0e91b5f4d24dca1603fd2f0658",
+        "unique_28.png": "7a85107d707774f30112bcf7dd204b7e8fd556d8a2ec42677be92d817f343600",
+        "unique_29.png": "d7e1425d8974de1005cc94223bc522effb892c4ef2ae88cc19e527376f4cb918",
+        "unique_30.png": "6f4b41f5494fca364a497be28baf5b9832d25c9e687655109916f763e2f867a5",
+        "unique_31.png": "1707aa353fd4b1f5993d586ffec208656364b68054604de7f26dcb76f3105ed0"
+      },
+      "means": {
+        "eager": {
+          "capture_or_load_ms": 1620.183,
+          "sequential_read_verify_ms": 883.3383333333334,
+          "loaded_tracked_bytes": 265496440,
+          "after_sequential_tracked_bytes": 265497832
+        },
+        "cold": {
+          "capture_or_load_ms": 2520.0556666666666,
+          "sequential_read_verify_ms": 1776.3386666666668,
+          "loaded_tracked_bytes": 108751,
+          "after_sequential_tracked_bytes": 16701779
+        }
+      }
+    },
+    "noise": {
+      "count": 32,
+      "fixture": "noise",
+      "ok": true,
+      "raster": [
+        1920,
+        1080
+      ],
+      "runs": [
+        {
+          "cold": {
+            "after_sequential_tracked_bytes": 265495124,
+            "capture_or_load_ms": 3927.207,
+            "cold": true,
+            "count": 32,
+            "decoded_cache_bytes": 16588800,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 32,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265490960,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 3454.31
+          },
+          "eager": {
+            "after_sequential_tracked_bytes": 265497832,
+            "capture_or_load_ms": 2231.132,
+            "cold": false,
+            "count": 32,
+            "decoded_cache_bytes": 0,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 0,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265496440,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 867.656
+          }
+        },
+        {
+          "cold": {
+            "after_sequential_tracked_bytes": 265495124,
+            "capture_or_load_ms": 3940.419,
+            "cold": true,
+            "count": 32,
+            "decoded_cache_bytes": 16588800,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 32,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265490960,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 3395.606
+          },
+          "eager": {
+            "after_sequential_tracked_bytes": 265497832,
+            "capture_or_load_ms": 2110.453,
+            "cold": false,
+            "count": 32,
+            "decoded_cache_bytes": 0,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 0,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265496440,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 869.252
+          }
+        },
+        {
+          "cold": {
+            "after_sequential_tracked_bytes": 265495124,
+            "capture_or_load_ms": 3940.094,
+            "cold": true,
+            "count": 32,
+            "decoded_cache_bytes": 16588800,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 32,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265490960,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 3501.165
+          },
+          "eager": {
+            "after_sequential_tracked_bytes": 265497832,
+            "capture_or_load_ms": 2074.072,
+            "cold": false,
+            "count": 32,
+            "decoded_cache_bytes": 0,
+            "decoded_cache_ceiling": 16588800,
+            "decodes": 0,
+            "exact_all_rgba": true,
+            "loaded_tracked_bytes": 265496440,
+            "owned_payload_bytes": 265420800,
+            "sequential_read_verify_ms": 868.978
+          }
+        }
+      ],
+      "scope": "Original32distinct fullHD PNGs, sparse with hidden RGB or seeded incompressible noise as specified; three same-process eager-reader versus opt-in cold-reader runs; tracked Godot allocations exclude fixture creation; sequential read verifies every RGBA SHA; no production app/Undo/GPU integration or whole-process RSS claim.",
+      "png_sha256": {
+        "unique_00.png": "5153a254f48fa889a00c0793c3698d7ffb4a17676b400896707299b1dc4a004d",
+        "unique_01.png": "bfbaeb6a26f26929cb75608127c2b94a2574b18c01eeb487eeb2a03475e42fa5",
+        "unique_02.png": "3b5fc9057c53410a5ffe00780b1b9cf3fbc3d8acda987935586c0d603c5c98e8",
+        "unique_03.png": "2cf1d69b061b7bf860e2b0fec8edbb75bed79ed725eed8d646e5813204f9d1a5",
+        "unique_04.png": "136345dae10c4fd62201591df78732d417ad91e11c8409edb603a055f486d5fb",
+        "unique_05.png": "a83aa09919ce6fe72fb86b0559ff34a0cc6c441279b351911c4aee7192a252e8",
+        "unique_06.png": "c692f78207041099fe40417d08a2b0beaef06a7555a86e03caad547f9b8b6374",
+        "unique_07.png": "97c846df92284e465b51d16f0179cf825376b17a64e9c0e8b997259dab185604",
+        "unique_08.png": "d8b4143fbe5a6ecaed4ba248aed9236579190e87112805e28bfb944cb558f8cc",
+        "unique_09.png": "fa5a22f84321b9a29fabef8657c76dac0db27d4d7999100bb6ad5815b0362757",
+        "unique_10.png": "fec25364ebcd9e2ef963f5599f0fd59d36603133216eda32eec0e58b4959c33b",
+        "unique_11.png": "c405ec6d5a29dab8c47f2f381cb19985ebd5c2456b168cbb7c88b377022007d5",
+        "unique_12.png": "ed1ece06d281e7b7cf838d407b9bc98f93afb67bdd23236547e8712462b2b4af",
+        "unique_13.png": "d98e86999eb3a03efb6adb3d1df22d151f24768f577200e11d8bfab29e2a954f",
+        "unique_14.png": "23543e457ec27b424469bebbd8826e9d2bf1b393ded3d216c6b108696c56b281",
+        "unique_15.png": "36c8f3b641694eb60a3bdeaf90ead049d9171579c5934bd3ebbc01296de35288",
+        "unique_16.png": "87ed0436e69157f37dcae72fb822fd12416e5a2e22e9801b1e0290db41f3e038",
+        "unique_17.png": "b97ac7aed214cd3a64092c53a4267e01c5a3d6fc96b4bc64b98f3d79d965e58f",
+        "unique_18.png": "55e871416a00e03e2378f430202cca817bf85241b33fb8e05583d6efc7bc7482",
+        "unique_19.png": "b2343b52c65e87e9592dc1a4d17971f93010ac7feb160cf523bbb8e254b6bad1",
+        "unique_20.png": "f149e1882fab4890e2e34c8a09e7adca694063f65acfc897ff2a549cf6deec96",
+        "unique_21.png": "54692cba6bed9499a87b39907c794ab8974edf8f1351321c3cc19189eafb16bb",
+        "unique_22.png": "d4613b088bd4f8837252cfcb88e1beb6506c21a50b1a228bde872cd03222774e",
+        "unique_23.png": "598cd276ce3e529c6a5d26bf8b443104e076e4f9f374636378ca45c096a5e47f",
+        "unique_24.png": "25543c2988dec706e2b85dd6b1890772b2a42591ac3969b6d2c60c08bd89c4b0",
+        "unique_25.png": "4dc2d0ad488d1f28a141fef8698a890b95d7cb420a83727541034e2c806d31c5",
+        "unique_26.png": "ce2dfa64d565b683e650be342f995de4e1f95335c88130d3a824fbac8d0e25ce",
+        "unique_27.png": "bc588da12d94ad4e4fd1679b7797c4b55afb7083ff2eeea364b3e12999c054c8",
+        "unique_28.png": "ba7ff4ed9520c7adf55d2fdf14fc7cc912c80e1b79cf55cf9eff45f3d3368edc",
+        "unique_29.png": "6d60ddc7d8115af60e374c352c359bdc4c3424113f5c2d45dd6ac853af608e1f",
+        "unique_30.png": "7f0b9371bde02a5b919b6d356c728fc87f6c8ad8d95eb54d0073e66fb6cd01bc",
+        "unique_31.png": "e9a034c5fc48e83eb0295f38a8f7d66b7f06004d62be7d6ea6fb0aaab1cea31a"
+      },
+      "means": {
+        "eager": {
+          "capture_or_load_ms": 2138.5523333333335,
+          "sequential_read_verify_ms": 868.6286666666666,
+          "loaded_tracked_bytes": 265496440,
+          "after_sequential_tracked_bytes": 265497832
+        },
+        "cold": {
+          "capture_or_load_ms": 3935.9066666666668,
+          "sequential_read_verify_ms": 3450.3603333333335,
+          "loaded_tracked_bytes": 265490960,
+          "after_sequential_tracked_bytes": 265495124
+        }
+      }
+    }
+  }
+}

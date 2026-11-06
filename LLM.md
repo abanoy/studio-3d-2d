@@ -1709,3 +1709,44 @@ and updated ledger SHA256 provenance. The user explicitly supplied it as the new
 active objective. It preserves finite acceptance, adds concrete continuation and
 no-repetition rules, and sets MEM-02 unique-art storage as the next priority after
 pushed b0acd76. No application or acceptance status change in this records update.
+
+
+2026-11-06 — measured cold raster staging foundation (MEM-02 partial)
+
+Implemented opt-in CelRasterReader.read_cold, immutable cold RGBA8 snapshots and
+an explicitly owned two-HD-image decoded LRU. Original reader validation runs
+before capture; initial PNG decoding remains eager, later materialization lazy.
+Snapshots retain compressed Zstandard only when<=7/8raw, otherwise raw pixels.
+Descriptor/payload/pixel SHA checks and fixed canvas allocation bounds protect
+rehydration. Capture detaches conversion/base mip selection from original art.
+Cache returns distinct editable Images with COW, never its own writable resource;
+weak snapshot references avoid retaining a dead document. Caller/history pins
+are outside decoded-cache accounting. No global cache or original disk dependency.
+
+29new domain+31existing reader checks pass headlessly on pinned Godot. Covers
+exact RGBA/hidden RGB, source/peer mutation isolation, explicit base-level mipmap
+handling, invalid/missing sources, raw noisy fallback, bounds, eviction/exact
+rehydration, zero/oversize budgets, corruption refusal even on cache hits, ordinary
+file checksum/dimensions and eager-reader compatibility. Initial script parsing
+used preload expression in an is-type check and untyped weakref; fixed to named
+script constant/explicit WeakRef before successful tests. No assertions weakened.
+Proof cel-raster-snapshot-final/verification.json under /workspace/has-handoff-audit.
+
+Three final runs each of32distinct original1080p sparse and seeded-noise PNGs:
+every materialized RGBA SHA exact. Sparse eager265496440tracked bytes versus
+108751cold capture and16701779after sequential access; decoded cache logical
+ceiling16588800. Noise eager265496440versus265490960cold, after reads265495124:
+no meaningful reduction. Raw backing/cache can share COW storage. Both cold modes
+cost more capture/read time; no app-wide speed or memory promise. Curated raw
+runs/source/32file hashes and means:docs/benchmarks/cold_cel_rasters_2026-11-06.json.
+Tracked CPU deltas exclude fixture creation and are not RSS/GPU/peak measurements.
+
+This is a tested staging primitive, NOT enabled in Storage.decode_project/live
+Studio. Canvas/schema/saved PNGs/32cel limits unchanged. Direct Image consumers
+in brush/fill/selection, pixel Undo, timing signatures, sequence/history budgeting
+and save/recovery need an authoritative accessor/write-pin migration first.
+Returning edited Images does NOT update a cold snapshot automatically. Documented
+integration gates in docs/cold_cel_rasters.md; MEM-02 remains partial/open with
+actual app/Undo/packed/cold/crash/GPU latency/parity tests still required. No new
+GUI/device/native acceptance claim. Next concrete work is that live-cel contract,
+not additional isolated cache polishing. Full goal remains active.
