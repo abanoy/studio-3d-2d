@@ -1,0 +1,50 @@
+extends "res://tests/movement_path_smoke.gd"
+const Sizes=preload("res://src/output_size.gd")
+const Drawing=preload("res://src/drawing.gd")
+const Storage=preload("res://src/storage.gd")
+func _initialize() -> void:
+	create_timer(210).timeout.connect(func():push_error("Output size watchdog");quit(2));call_deferred("run")
+func choose(index: int) -> void:app.output_size.select(index);app.output_size.item_selected.emit(index)
+func run() -> void:
+	folder=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in OS.get_cmdline_user_args() else "writer-cache")
+	if "--read" in OS.get_cmdline_user_args():
+		app.has_project.open_file(folder.path_join("Delivery.has"));await wait_job();var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
+		check(app.selected_output_size()=="1080p" and app.video.width==1920 and app.video.height==1080,"new session reopens original fullHD scene with standard delivery default")
+		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.art,"delivery choice never rescales saved editable art")
+		var picture: Image=await app.renderer.capture(app.keys,app.layers,12,true)
+		check(picture.get_data()==Image.load_from_file(folder.path_join("source12.png")).get_data(),"cold fullHD final scene reproduces exact original before delivery resizing")
+		print("OUTPUT_SIZE_READ "+JSON.stringify({"checks":checks,"failures":failures}));await app.quit_studio();quit(0 if failures==0 else 1);return
+	check(app.load_demo_room(),"original room opens for native fullHD composition")
+	check(app.selected_output_size()=="1080p" and not app.output_size.is_visible_in_tree(),"Simple keeps default1080p and existing effortless export")
+	app.set_advanced(true);check(app.output_size.is_visible_in_tree() and app.output_size.item_count==3,"Advanced exposes three bounded delivery dimensions")
+	var art:=Drawing.blank(1920,1080);art.fill(Color(0,1,0,0));art.fill_rect(Rect2i(480,240,192,96),Color(1,0,0,128.0/255));Drawing.touch(art);Drawing.insert(app.layers[1],0,48,art);app.layers[1].opacity=.5;app.changed()
+	var cue:="res://examples/tutorials/Practice cue.wav";var cue_hash:=FileAccess.get_sha256(cue);check(app.import_audio(ProjectSettings.globalize_path(cue),24).is_empty(),"known sound cue begins at frame24")
+	var source_video: Dictionary=app.video.duplicate(true);var world: Dictionary=app.current_world().duplicate(true);var keys: Array=app.keys.duplicate(true);var pixels:=art.get_data();var history: int=app.history.size()
+	app.set_frame(12);await settled();var picture: Image=await app.renderer.capture(app.keys,app.layers,12,true);picture.save_png(folder.path_join("source12.png"))
+	choose(1)
+	var change_during:=func():
+		if app.exporting and app.output_size.disabled:choose(2)
+	process_frame.connect(change_during);var error: String=await app.export_movie(folder);process_frame.disconnect(change_during)
+	var movie: String=app.last_finished_movie;var movie_folder: String=app.last_export_folder
+	var frame:=Image.load_from_file(movie_folder.path_join("frame_000013.png"))
+	check(error.is_empty() and frame.get_size()==Vector2i(1280,720) and app.selected_output_size()=="540p","new movie captures720p once despite later widget mutation")
+	check(frame.get_data()==Sizes.resample(picture,Vector2i(1280,720)).get_data(),"delivered scene preserves complete compositor framing and independent drawing placement")
+	choose(1);var cancel_at_encode:=func():
+		if app.exporting and app.encoder!=null and app.encoder.process_id>0:app.cancel_button.pressed.emit()
+	process_frame.connect(cancel_at_encode);error=await app.export_movie(folder);process_frame.disconnect(cancel_at_encode)
+	var retry_folder: String=app.last_export_folder;var saved_hash:=FileAccess.get_sha256(retry_folder.path_join("frame_000013.png"));var mix_hash:=FileAccess.get_sha256(retry_folder.path_join("mixed_audio.wav"))
+	check(error.to_lower().contains("cancel") and app.retry_render.video.width==1280 and app.retry_render.video.height==720,"cancelled encode retains captured delivery size with complete retry inputs")
+	choose(2);await app.retry_saved_movie();var retried: String=app.last_finished_movie
+	check(retried!=movie and retried.get_base_dir()==retry_folder and FileAccess.get_sha256(retry_folder.path_join("frame_000013.png"))==saved_hash and FileAccess.get_sha256(retry_folder.path_join("mixed_audio.wav"))==mix_hash,"Retry keeps saved720p frames/audio while current size choice is540p")
+	error=await app.export_images(folder,true);var png_folder: String=app.last_export_folder;var record: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(png_folder.path_join("sequence.json")))
+	var transparent:=Image.load_from_file(png_folder.path_join("frame_000001.png"));var overlay:=Drawing.composite(app.layers,0,1920,1080)
+	check(error.is_empty() and transparent.get_size()==Vector2i(960,540) and transparent.get_data()==Sizes.resample(overlay,Vector2i(960,540)).get_data(),"transparent PNG delivery uses captured540p alpha-safe composition")
+	check(record.video.width==960 and record.video.height==540 and record.source_video.width==1920 and record.video.duration_frames==48 and record.rendered_frames==48 and record.video.fps_num==24,"PNG timing record distinguishes output dimensions from original source canvas")
+	app.output_size.set_item_metadata(2,"invalid");var previous: String=app.last_export_folder;error=await app.export_movie(folder)
+	check(not error.is_empty() and app.last_export_folder==previous and not app.exporting,"invalid delivery size refuses before creating movie output")
+	error=await app.export_images(folder,true);check(not error.is_empty() and app.last_export_folder==previous,"PNG delivery refuses invalid size through the same preflight")
+	app.output_size.set_item_metadata(2,"540p")
+	check(app.video==source_video and app.current_world()==world and app.keys==keys and art.get_data()==pixels and app.history.size()==history and FileAccess.get_sha256(cue)==cue_hash,"all delivery modes preserve source video/world/keys/art/history and original sound")
+	app.has_project.save_file(folder.path_join("Delivery.has"),"packed");await wait_job();check(FileAccess.file_exists(folder.path_join("Delivery.has")),"ordinary compatible HAS saves fullHD sources independently of delivery size")
+	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"movie":movie,"retry":retried,"png_folder":png_folder,"art":Storage.image_hash(art)}))
+	print("OUTPUT_SIZE_SMOKE "+JSON.stringify({"checks":checks,"failures":failures,"movie":movie,"retry":retried,"png_folder":png_folder}));await app.quit_studio();quit(0 if failures==0 else 1)

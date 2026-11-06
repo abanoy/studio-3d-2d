@@ -1238,7 +1238,7 @@
       "implementation": "implemented",
       "verification": "scoped_evidence",
       "acceptance_status": "open",
-      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over.",
+      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10\u201330seconds without taking over.",
       "evidence": [
         {
           "kind": "source",
@@ -1323,9 +1323,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/project_timing.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/output_size.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/output_size_smoke.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/output_size.md"
         }
       ],
-      "remaining": "Rates/duration are configurable; current reader enforces1920x1080 and broader resolution controls remain missing. Define a reversible output-size contract before implementation.",
+      "remaining": "Rational rates/duration and session delivery sizes1080p/720p/540p are implemented with actual media/cold-save checks. Source canvas/reader still enforce1920x1080; native variable canvas sizes and project-persisted render settings remain unresolved implementation scope. Delivery downsampling does not close that requirement.",
       "external_dependencies": []
     },
     {
@@ -1588,7 +1600,7 @@
       ],
       "title": "Advanced selection, lasso/painted masks, glow, multiple palettes and proportion tools",
       "status": "conditional_refinement",
-      "rule": "Some are already implemented; pursue remaining refinements after stages1–4 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
+      "rule": "Some are already implemented; pursue remaining refinements after stages1\u20134 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
     },
     {
       "id": "O-RENDER",
@@ -1975,7 +1987,7 @@
     {
       "requirement": "OUTPUT-02",
       "priority": 1,
-      "action": "Audit and implement a compatible configurable output-size contract, preserving drawing coordinates and persistence; do not label scaled artwork native high-resolution drawing."
+      "action": "Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail."
     },
     {
       "requirement": "MEM-02",

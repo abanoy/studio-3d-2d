@@ -40,3 +40,6 @@ errors were10.455,10.950 and10.355 respectively, including color-subsampling eff
 These measurements describe this fixture/build, not universal sizes or a promise
 of identical compressed files across encoder versions. Artist quality preference,
 native material fidelity and hardware rendering remain separate acceptance gates.
+
+[Output size](output_size.md) independently selects delivery dimensions. Quality
+profiles preserve identical render inputs when the output size is held constant.

@@ -14,7 +14,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 
 ## Next required work
 
-- **P1 · OUTPUT-02** — Audit and implement a compatible configurable output-size contract, preserving drawing coordinates and persistence; do not label scaled artwork native high-resolution drawing.
+- **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
 - **P1 · MEM-02** — Design and implement integrity-checked cold/lazy raster access with measured unique-art behavior before expanding limits.
 - **P1 · MEM-01** — Clipboard deltas are implemented. Audit remaining cel-creation/deletion/layer history after the larger OUTPUT-02/MEM-02 gaps; do not re-polish the completed clipboard change.
 - **P1 · STORE-04** — Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit.

@@ -11943,3 +11943,46 @@ Next remains required OUTPUT-02 output-size contract and MEM-02 larger-project
 storage, rather than further clipboard polish. Exact user goal remains tracked
 in docs/goals/complete-has.md; no owner Windows installation, web or deployment
 changes. Full goal remains active, not complete or globally blocked.
+
+
+2026-11-06 — bounded delivery output sizes (OUTPUT-02 partial)
+
+Advanced Movie encoder now offers1080p(default),720p and540p for new movies and
+full/transparent PNG sequences. Settings are captured before rendering; Retry
+keeps its saved frame dimensions. Complete HD composition is downsampled through
+a detached premultiplied RGBA8 bilinear path and returned as straight alpha.
+Default1080p returns the original Image exactly. Source art, project schema,
+coordinate mapping and resource caps remain unchanged. Reduced PNG manifests
+record delivery video plus original source_video. Invalid choices refuse before
+folder creation. Quality selection remains independent.
+
+This is a session delivery setting, retained when returning to Simple, reset in a
+new process, not persisted project content. Native variable-resolution canvases,
+4K/aspect-ratio expansion and project render-setting persistence are NOT supplied.
+OUTPUT-02 remains partial/open; ledger evidence and next actions updated. Details
+in docs/output_size.md and scoped receipt docs/benchmarks/output_size_2026-11-06.json.
+
+Actual private105/Dummy checks:12unit+14writer+3fresh-reader pass, including
+independent alpha/color math, source immutability, exact default pixels, captured
+720p movie settings, cancelled encode/retry retaining720p despite540p selection,
+48transparent540p PNGs, invalid preflight and ordinary packed/cold HAS with writer
+cache offline. Independent ffprobe/PNG IHDR:both movies H2641280x720,24fps,48frames,
+2seconds,AAC; authored one-second cue decodes at sample48043/48000Hz. Saved HAS
+unchanged; cold original HD pixels exact. Proof output-size-private/verification.json.
+
+Existing quality regression17app+3cold passes, real default1080p three-quality
+movies/retry and PNG independence. Existing PNG regression28passes, including
+fullHD composition, transparent pixels, faded WAV, actual GUI action, rational
+25/2fps, cancellation and deliberately obstructed PNG/manifest paths. Initial
+ad-hoc launch omitted required tone.wav, causing import/nil-editor failure;
+provided the owned audio fixture and reran unchanged test. A blanket harness ERROR
+filter then rejected the intentionally blocked PNG write, despite28passes/exit0.
+Inspected that sole expected engine error against the actual directory collision;
+independent exact output counts/manifest checks pass. No product/test assertions
+were weakened. Proof output-size-png-regression-fixed/verification.json; original
+launch log retained. Python312run311pass1existing optional MMD-reader skip.
+
+These are procedural cloud software checks, not Windows/tablet/native-model or
+artist acceptance, memory benchmarks or full goal completion. Full goal remains
+active; next substantial gap is integrity-checked unique-art storage (MEM-02),
+then remaining canvas/settings and history/fault-acceptance work.

@@ -58,3 +58,7 @@ output folder with an older transparent export. It now captures the immediately
 preceding output before checking encoder refusal; no product behavior or boundary
 was weakened. Existing MP4 cancellation/retry and audio compatibility regressions
 are separate checks recorded in the dated progress memo.
+
+[Output size](output_size.md) selects 1080p, 720p or 540p delivery for both scene
+and transparent PNG sequences. The canvas remains HD; reduced-size manifests
+include `source_video` alongside the delivery `video` dimensions.

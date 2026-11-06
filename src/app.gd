@@ -11,6 +11,7 @@ const SceneIO = preload("res://src/scene3d.gd")
 const Renderer = preload("res://src/renderer.gd")
 const Storage = preload("res://src/storage.gd")
 const Encoder = preload("res://src/encoder.gd")
+const OutputSize=preload("res://src/output_size.gd")
 const CanvasView = preload("res://src/canvas_view.gd")
 const HomeScreen=preload("res://src/home_screen.gd")
 const Tutorials=preload("res://src/tutorials.gd")
@@ -105,6 +106,7 @@ var debug_label: Label
 var transport_info: Label
 var encoder_path: LineEdit
 var encoder_quality: OptionButton
+var output_size: OptionButton
 var cancel_button: Button
 var controls: VBoxContainer
 var elapsed_overlay_ms := 0.0
@@ -689,6 +691,12 @@ Draw returns to the animated shot.")
 	button(audio_section, "Remove audio clip", remove_audio)
 	var encoder_section := section(controls, "Movie encoder", "export")
 	advanced(encoder_section.get_parent())
+	label(encoder_section,"Output size")
+	output_size=OptionButton.new();encoder_section.add_child(output_size)
+	for id in OutputSize.PROFILES:
+		var dimensions: Vector2i=OutputSize.PROFILES[id]
+		output_size.add_item("%d x %d" % [dimensions.x,dimensions.y]+(" (default)" if id=="1080p" else ""));output_size.set_item_metadata(output_size.item_count-1,id)
+	output_size.tooltip_text="Delivery dimensions for new movies and PNG sequences. Artwork stays 1920 x 1080. This session choice is captured at render start; Retry MP4 keeps its saved frame size."
 	label(encoder_section,"Movie quality")
 	encoder_quality=OptionButton.new();encoder_section.add_child(encoder_quality)
 	for id in ["standard","small","high"]:
@@ -1879,8 +1887,18 @@ func export_images(parent: String,drawings_only:=false) -> String:
 func selected_movie_profile() -> String:
 	return str(encoder_quality.get_item_metadata(encoder_quality.selected)) if encoder_quality and encoder_quality.selected>=0 else ""
 
+func selected_output_size() -> String:
+	return str(output_size.get_item_metadata(output_size.selected)) if output_size and output_size.selected>=0 else ""
+
 func export_frames(parent: String,images_only: bool,drawings_only: bool) -> String:
 	if exporting: return "Export already running."
+	var delivery:=selected_output_size()
+	var size_error:=OutputSize.error(delivery)
+	if not size_error.is_empty():message(size_error);return size_error
+	var source_video: Dictionary=video.duplicate(true)
+	var output_video: Dictionary=source_video.duplicate(true)
+	var dimensions: Vector2i=OutputSize.PROFILES[delivery]
+	output_video.width=dimensions.x;output_video.height=dimensions.y
 	var profile:=selected_movie_profile()
 	if not images_only:
 		var why:=Encoder.profile_error(profile)
@@ -1924,21 +1942,23 @@ func export_frames(parent: String,images_only: bool,drawings_only: bool) -> Stri
 	var export_keys := keys.duplicate(true)
 	var export_layers := layers.duplicate(true)
 	var completed:=0
-	for n in range(video.duration_frames):
+	for n in range(output_video.duration_frames):
 		if cancel_export: error = "Export cancelled. PNG frames preserved."; break
-		message("Rendering %d / %d • %s" % [n + 1, video.duration_frames, folder])
+		message("Rendering %d / %d • %s" % [n + 1, output_video.duration_frames, folder])
 		var image: Image
 		if images_only and drawings_only:
-			image=Drawing.blank(int(video.width),int(video.height))
+			image=Drawing.blank(int(source_video.width),int(source_video.height))
 			if renderer.sequence_runtime:
 				var nested: Image=await renderer.sequence_runtime.render(renderer.sequence_owner,n,true,true)
 				if nested==null:error=renderer.sequence_runtime.last_error;break
-				image.blend_rect(nested,Rect2i(0,0,int(video.width),int(video.height)),Vector2i.ZERO)
-			image.blend_rect(Drawing.composite(export_layers,n,int(video.width),int(video.height)),Rect2i(0,0,int(video.width),int(video.height)),Vector2i.ZERO)
+				image.blend_rect(nested,Rect2i(0,0,int(source_video.width),int(source_video.height)),Vector2i.ZERO)
+			image.blend_rect(Drawing.composite(export_layers,n,int(source_video.width),int(source_video.height)),Rect2i(0,0,int(source_video.width),int(source_video.height)),Vector2i.ZERO)
 			await get_tree().process_frame
 		else:image=await renderer.capture(export_keys, export_layers, n, true)
 		if image==null:
 			error=renderer.last_capture_error;break
+		image=OutputSize.resample(image,dimensions)
+		if image==null:error="Cannot prepare the selected output size. Frames preserved.";break
 		if image.save_png(folder.path_join("frame_%06d.png" % (n + 1))) != OK:
 			error = "Could not write PNG (check disk space/permissions). Frames preserved."
 			break
@@ -1955,12 +1975,13 @@ func export_frames(parent: String,images_only: bool,drawings_only: bool) -> Stri
 		if error.is_empty() and not images_only:
 			message("Encoding H.264 MP4… Cancel remains available.")
 			encoder = Encoder.new();encoder.profile=profile
-			error = await encoder.encode(get_tree(), encoder_path.text, folder, video, mix_path)
+			error = await encoder.encode(get_tree(), encoder_path.text, folder, output_video, mix_path)
 			if not error.is_empty():
-				retry_render={"folder":folder,"video":video.duplicate(true),"audio":mix_path,"session":recovery_session,"revision":recovery_revision}
+				retry_render={"folder":folder,"video":output_video.duplicate(true),"audio":mix_path,"session":recovery_session,"revision":recovery_revision}
 				retry_encode_button.show()
 	if images_only:
-		var summary:={"format":"studio_image_sequence_1","video":video.duplicate(true),"pattern":"frame_%06d.png","first_frame":1,"first_project_frame":0,"rendered_frames":completed,"drawing_only":drawings_only,"audio":"mixed_audio.wav" if not mix_path.is_empty() and error.is_empty() else "","status":"complete" if error.is_empty() else "cancelled" if cancel_export else "failed"}
+		var summary:={"format":"studio_image_sequence_1","video":output_video.duplicate(true),"pattern":"frame_%06d.png","first_frame":1,"first_project_frame":0,"rendered_frames":completed,"drawing_only":drawings_only,"audio":"mixed_audio.wav" if not mix_path.is_empty() and error.is_empty() else "","status":"complete" if error.is_empty() else "cancelled" if cancel_export else "failed"}
+		if dimensions!=Vector2i(int(source_video.width),int(source_video.height)):summary["source_video"]=source_video
 		var temporary:=folder.path_join("sequence.json.tmp");var file:=FileAccess.open(temporary,FileAccess.WRITE)
 		if file:
 			file.store_string(JSON.stringify(summary,"",true,true));file.flush();var written:=file.get_error()==OK;file.close()

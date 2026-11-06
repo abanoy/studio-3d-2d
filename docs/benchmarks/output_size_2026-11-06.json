@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-06",
+  "scope": "Owned procedural cloud fixture; delivery downsampling only, no native variable-resolution canvas or performance claim",
+  "base_commit": "9a16057da304afd527101a916cd7782aadc6046e",
+  "source_sha256": {
+    "src/app.gd": "f9b3bafce9b816e22f692109c2a4c26b4b6f2e46684e467934e2e2a1b84f0e94",
+    "src/output_size.gd": "7e7aca84cf21545cd988431fb849e013cc8688a12fed4ea73a6fd71f9160c8cf",
+    "tests/output_size_unit.gd": "d0f11b26ccc25d9ffc931c43a21b1045047f0e74cc3a1db81f209267dd8bbe4c",
+    "tests/output_size_smoke.gd": "232678ab329c558f32bd9b8131e3e1bb899f7c5a4293ba93718c60839cf9a942",
+    "tests/verify_output_size.py": "a9d4333aa195f776f5f16e80d4987fe8c5d12b9fb5fdded584926b785185ecf4"
+  },
+  "reports": {
+    "unit": {
+      "checks": 12,
+      "failures": 0
+    },
+    "writer": {
+      "checks": 14,
+      "failures": 0
+    },
+    "reader": {
+      "checks": 3,
+      "failures": 0
+    }
+  },
+  "movies": [
+    {
+      "width": 1280,
+      "height": 720,
+      "frames": "48",
+      "fps": "24/1",
+      "decoded_onset_sample": 48043
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "frames": "48",
+      "fps": "24/1",
+      "decoded_onset_sample": 48043
+    }
+  ],
+  "alpha_png_frames": 48,
+  "manual_has_unchanged": true,
+  "writer_cache_unavailable_for_reader": true
+}
