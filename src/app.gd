@@ -1214,7 +1214,7 @@ func apply_command(command: Dictionary, side: String) -> bool:
 	if command.type=="palette":
 		palette=command[side].duplicate(true);palette_editor.refresh(true);changed();return true
 	# Drawing history refreshes the independent overlay, without resetting live 3D.
-	var drawing_command: bool=command.type in ["pixels","cels","cel_timing","layer_properties","layers"]
+	var drawing_command: bool=command.type in ["pixels","cels","cel_timing","cel_exposure","layer_properties","layers"]
 	if command.type in ["cels","layer_properties"]:
 		var live_layer: Dictionary=cel_timing.layer_by_id(str(command.layer.get("id","")))
 		if live_layer.is_empty():message("Drawing history layer is missing.");return false
@@ -1228,7 +1228,7 @@ func apply_command(command: Dictionary, side: String) -> bool:
 			command.image.blit_rect(image, Rect2i(Vector2i.ZERO, image.get_size()), pos)
 			var tile:=Rect2i(pos,image.get_size());damage=damage.merge(tile) if damage.has_area() else tile
 		Drawing.touch(command.image,damage)
-	elif command.type == "cel_timing":
+	elif command.type in ["cel_timing","cel_exposure"]:
 		var error: String=cel_timing.apply_command(command,side)
 		if not error.is_empty():message(error);return false
 	elif command.type == "cels": command.layer.cels = command[side].duplicate(true)
@@ -1331,13 +1331,7 @@ func set_exposure() -> void:
 	var layer: Dictionary = layers[active_layer]
 	var cel := Drawing.cel_at(layer, frame)
 	if cel.is_empty(): message("No cel at this frame."); return
-	var before: Array = layer.cels.duplicate(true)
-	var end: int = mini(video.duration_frames, cel.start + int(exposure.value))
-	for other in layer.cels:
-		if other.start > cel.start: end = mini(end, other.start)
-	cel.duration = end - cel.start
-	push_history({"type": "cels", "layer": layer, "before": before, "after": layer.cels.duplicate(true)})
-	changed()
+	cel_timing.set_exposure(layer.id,cel.id,int(exposure.value))
 
 func delete_cel() -> void:
 	if exporting: return

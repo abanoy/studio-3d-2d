@@ -1020,3 +1020,37 @@ that exposed automatic Wayland fallback retained; no owner UI was used. Proof:
 private-display-final-color and private-display-python-all.log.
 See docs/private_linux_tests.md. No new runtime dependency/configuration or file
 format change. Native/device/artist acceptance remains open; goal continues.
+
+2026-11-06 UTC — duration-only drawing history
+
+Existing Set held cel exposure now uses shared timing validation and stable
+layer/cel IDs instead of duplicated cel-array snapshots charged as full rasters.
+One512byte cel_exposure command stores before/after durations; original Images
+remain live. Existing next-cel/scene-end clamp retained, unchanged values add no
+history, invalid/gesture/export/recording edits refuse. Undo/Redo resolves the
+current layer across nested scene switches and preserves live3D preview. Saved
+cel format and64MiB history budget unchanged. No claim that old Dictionary
+snapshots cloned the Image resources; this removes metadata copies and excessive
+raster charging for a metadata-only edit. See docs/drawing_exposure_moves.md.
+
+Full frozen-source exposure verifier120checks pass:44domain+10tool+52writer/
+movie+4packed+6actual-SIGKILL normal startup+4linked. Complete1440frame1080p24
+H264/AAC60second export228.271848s software run (a separate small regression ran
+during this export, so not a controlled benchmark). Exact preview/PNG matches
+1304/1390/1430; decoded56second cue2688001 vs2688000. Packed/recovery originals
+and writer cache unavailable, linked originals available by design; originals/
+manualHAS unchanged. Proof /workspace/has-handoff-audit/cel-exposure-accepted/
+verification.json. Full Python312run311pass1existing skip, cel-exposure-python.log.
+
+Additional budget8checks prove48duration edits add24576bytes while keeping prior
+drawing history and all3original1080p cel identities/Images/RGBA through48Undo
+and48Redo; invalid and gesture/export conflicts preserve history/revision.
+Committed as tests/cel_exposure_history_smoke.gd; rerun8passes after adding its
+separate output subfolder. The full verifier now invokes this additional test;
+the120check combined run preceded only this test/wrapper addition, with no later
+production change. Existing live-ragdoll drawing-history36writer+3cold passes,
+including actual48frame1080p24 movie, same live simulation generation throughout
+drawing/exposure history and exact cold picture. Additional proof directories
+cel-exposure-regression/verification.json and cel-exposure-committed-budget.log
+under /workspace/has-handoff-audit. Native/physical/artist gates remain; continuous
+goal advances next to fresh export failure/cancellation evidence.

@@ -50,3 +50,19 @@ The final private run passes100checks. Its1440frame60second movie rendered and
 encoded in 226.939seconds on this software instance, with exact preview/PNG matches
 at1304/1390/1430 and decoded sound onset2688001 (expected2688000). See the
 [scoped movie artifact](benchmarks/drawing_exposure_movie_2026-11-06.json).
+
+## Changing a hold length
+
+The existing Advanced “Set held cel exposure” control now records only stable
+layer/cel IDs and before/after durations, charged 512 bytes per edit. It uses the
+same range validation and live-layer lookup as drawing moves. The existing
+clamp at the next cel or scene end is retained. An unchanged value adds no Undo
+action. Invalid lengths, active drawing gestures and export refuse the edit.
+The original Images remain in place; no cel-array snapshots or full-raster
+history charge are needed for a duration-only change.
+
+Duration Undo/Redo remains local to its owning sequence and preserves live3D
+preview. A focused three-cel1080p test retains earlier drawing history across48
+hold edits, adding24576bytes, and checks all48 Undo/Redo operations against exact
+cel IDs, ranges, Images and original RGBA. This reduces history pressure rather
+than raising the64MiB history budget or changing the saved cel format.

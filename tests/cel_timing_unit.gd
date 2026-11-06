@@ -22,4 +22,10 @@ func _initialize() -> void:
 	bad=rows.duplicate(true);bad[1].start=5;check(Timing.proposal(bad,"a",30,100).has("error"),"existing overlapping rows refuse without repair/data loss")
 	var late: Array=[{"id":"late","start":3000,"duration":24,"image":image}]
 	check(not Timing.proposal(late,"late",0,7200).has("error") and not Timing.proposal(late,"late",7176,7200).has("error"),"extended timeline moves preserve full exposure at both boundaries")
+	for length in [1,10,20]:
+		var resized:=Timing.proposal(rows,"a",0,100,length)
+		check(not resized.has("error") and resized.duration==10 and resized.after_duration==length and resized.changed==(length!=10),"hold duration proposal preserves start at "+str(length))
+	for length in [0,-1,21,101,1.5,true,NAN]:check(Timing.proposal(rows,"a",0,100,length).has("error"),"invalid/overlapping hold length refuses "+str(length))
+	check(Timing.proposal(late,"late",3000,7200,4201).has("error") and not Timing.proposal(late,"late",3000,7200,4200).has("error"),"extended hold ends exactly at scene boundary")
+	check(rows==before and image.get_data()==pixels and is_same(rows[0].image,image),"duration proposals preserve source metadata and exact image identity")
 	print("CEL_TIMING_UNIT ",JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

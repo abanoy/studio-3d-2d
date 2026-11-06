@@ -32,11 +32,35 @@ func commit(id: String,start: int,context: Dictionary) -> void:
 	layer.cels[result.index].start=result.after;layer.cels.sort_custom(func(a,b):return a.start<b.start)
 	app.push_history({"type":"cel_timing","layer_id":layer.id,"cel_id":id,"owner":app.sequence_editor.active_owner,"before":result.before,"after":result.after,"bytes":512})
 	app.changed();app.refresh_layer();app.message("Drawing exposure moved. Its pixels and length stay unchanged; Undo restores its timing.")
+func set_exposure(layer_id: String,id: String,length: int) -> void:
+	if app.exporting or app.timeline.cel_gesture_active() or app.physics_editor.recording.active or app.pose_editor.dragging or app.drawing:app.message("Finish the current edit or recording before changing a drawing exposure.");return
+	var layer:=layer_by_id(layer_id)
+	if layer.is_empty():return
+	var target: Dictionary={}
+	for cel in layer.cels:
+		if cel.id==id:target=cel;break
+	if target.is_empty():return
+	var limit: int=app.video.duration_frames-int(target.start)
+	for cel in layer.cels:
+		if cel.start>target.start:limit=mini(limit,int(cel.start-target.start))
+	var result:=Timing.proposal(layer.cels,id,target.start,app.video.duration_frames,mini(length,limit))
+	if result.has("error"):app.message(result.error);return
+	if not result.changed:return
+	app.stop();app.finish_stroke()
+	layer.cels[result.index].duration=result.after_duration
+	app.push_history({"type":"cel_exposure","layer_id":layer.id,"cel_id":id,"owner":app.sequence_editor.active_owner,"before":result.duration,"after":result.after_duration,"bytes":512})
+	app.changed();app.refresh_layer()
 func apply_command(command: Dictionary,side: String) -> String:
 	if command.get("owner")!=app.sequence_editor.active_owner:return "Drawing history belongs to another sequence."
 	var layer:=layer_by_id(str(command.get("layer_id","")))
 	if layer.is_empty():return "Drawing history layer is missing."
-	var result:=Timing.proposal(layer.cels,str(command.get("cel_id","")),command.get(side),app.video.duration_frames)
+	var id:=str(command.get("cel_id",""))
+	var start=command.get(side);var length=null
+	if command.get("type")=="cel_exposure":
+		for cel in layer.cels:
+			if cel.id==id:start=cel.start;length=command.get(side);break
+		if length==null:return "Drawing history cel is missing."
+	var result:=Timing.proposal(layer.cels,id,start,app.video.duration_frames,length)
 	if result.has("error"):return result.error
-	layer.cels[result.index].start=result.after;layer.cels.sort_custom(func(a,b):return a.start<b.start)
+	layer.cels[result.index].start=result.after;layer.cels[result.index].duration=result.after_duration;layer.cels.sort_custom(func(a,b):return a.start<b.start)
 	return ""
