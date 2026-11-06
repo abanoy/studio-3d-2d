@@ -11340,3 +11340,17 @@ drawing/exposure history and exact cold picture. Additional proof directories
 cel-exposure-regression/verification.json and cel-exposure-committed-budget.log
 under /workspace/has-handoff-audit. Native/physical/artist gates remain; continuous
 goal advances next to fresh export failure/cancellation evidence.
+
+2026-11-06 UTC — standalone real encoder failure verification
+
+Added tests/verify_export_failures.py: original generated48RGB1080p PNG fixtures
+and headless actual encoder run, no historical output/spikes dependency. Existing
+export_failures.gd accepts an optional isolated output root while retaining its
+no-argument full-suite path and all3assertions. Real missing-sequence failure,
+missing-executable retry diagnostic and timed process cancellation pass; wrapper
+checks all48original/copied PNG hashes, separate retry log, cancelled Exit:-1 and
+no movie in failed-sequence directory. No production source, format or encoder
+policy change. Actual command exits0; proof /workspace/has-handoff-audit/
+export-failures-accepted/verification.json and export-failures-verifier.log.
+Scope docs/export_failures.md; application/UI/render-stage/disk-full/native fault
+matrix is separate and remains incomplete. Continuous goal continues.

@@ -5,7 +5,8 @@ func _initialize() -> void:
 	call_deferred("run")
 
 func run() -> void:
-	var root := ProjectSettings.globalize_path("res://output")
+	var arguments:=OS.get_cmdline_user_args()
+	var root: String=arguments[0] if not arguments.is_empty() else ProjectSettings.globalize_path("res://output")
 	var negative := root.path_join("missing-sequence")
 	DirAccess.make_dir_recursive_absolute(negative)
 	var ffmpeg := OS.get_environment("HYBRID_FFMPEG")

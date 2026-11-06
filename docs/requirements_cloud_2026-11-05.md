@@ -159,3 +159,7 @@ This reduces CPU work across silent gaps; duration/dense-project memory limits r
 The decided addendum7.3 frame3000→0 example now passes61private Model6/Model9
 writer/cold/crash checks; see [late clip movement](late_clip_move.md). This does
 not resolve the separate OPEN ripple/cross-track/ownership decisions.
+
+Standalone real encoder failure/cancellation checks now run without historical
+render caches; see [scope](export_failures.md). The full export fault matrix
+remains separate.
