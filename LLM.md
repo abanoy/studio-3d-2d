@@ -1352,3 +1352,38 @@ change or claimed optimization in this increment. Next implement bounded reuse
 of validated PNG results while still checking every file and source raster.
 Prefer storing verified byte/pixel hashes over retaining32decoded validation
 images; preserve strict PNG/dimension checks and atomic repair. Full goal active.
+
+2026-11-06 UTC (2026-11-05 New York) — bounded warm-Save PNG verification
+
+Implemented CelPngVerifier for each Storage.save_project call. Retains encoded
+PNG SHA→validated RGBA SHA strings only, no decoded Images. Every member still
+opens/reads and checks size/signature/IHDR canvas; misses fully decode captured
+bytes, convert RGBA8 and hash. Source Image hash still fresh for every cel, no
+trust in stale pixel revision metadata. Child saves have their own context.
+Existing temp-PNG/atomic-rename and manifest transaction unchanged. No schema,
+source paths or resource-bound increase. docs/cel_save_verification.md.
+
+Actual original32independent-Image/identical-pixel1080p warm-save baseline
+2388.642/2401.420/2370.599ms becomes915.003/905.909/903.673ms, with all32RGBA
+hashes exact on readback. Initial save/fixture/readback excluded from timing.
+Artifact docs/benchmarks/cel_save_verification_2026-11-06.json; audit logs
+cel-save-cached.log/.json. Source hashing remains a deliberate cost for integrity.
+No whole-app/hardware or unique-art timing claim.
+
+Also closes old reuse validation gap: identical RGBA byte sequences can have
+different image dimensions. Old writer compared only pixel hash; new verifier
+checks video canvas before reuse, then repairs invalid cached PNG from source
+Image. New10headless cases pass: every-file reads/one decode, digest-only cache,
+wrong expected hash, missing/changed file, normal Save, same-bytes wrong-dimension
+fixture/repair, truncated repair and failed-later-save manifest preservation.
+Proof cel-png-verifier-unit.log under /workspace/has-handoff-audit.
+
+Existing31domain+16PNG compatibility+19GUI+5cold+6actual-SIGKILL normal startup
+passes (save-verifier-raster/verification.json). Existing kept-reference19storage/
+25writer/14cold/5startup/7lesson passes (save-verifier-reference/verification.json).
+Both include actual48frame H264/AAC, source/manualHAS preservation and offline
+source/cache cases. Python312run311pass1existing skip, save-verifier-python.log.
+All graphics guarded private103/Dummy audio; no owner Windows installation,
+external assets, web or deployment changes. Output history backed up/restored.
+Full goal remains active; no stop_goal. Next unique-art/long-project architecture
+and remaining spec work still open; do not treat these cache gains as completion.

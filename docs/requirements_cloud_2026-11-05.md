@@ -193,3 +193,8 @@ Directory-save raster names now derive from row indices, preventing opaque cel
 IDs from escaping the folder or merging equal-ID layer rasters.30targeted
 checks plus existing61+16raster and70reference/lesson checks pass; see
 [reproductions and scoped verification](cel_file_paths.md). No format change.
+
+Warm content-addressed Save now reuses verified PNG hash results within each
+save, with no retained validation rasters. Original32cel benchmark drops about
+2.39s to0.91s; dimension-mismatched cache members are repaired.10new cases and
+existing61+16raster/70reference checks pass; see [scope](cel_save_verification.md).

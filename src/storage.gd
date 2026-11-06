@@ -138,6 +138,7 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 			var error := managed_copy(row.source,folder.path_join(row.path),row.sha256)
 			if not error.is_empty(): return error
 			copied[row.path]=true
+	var png_verifier=preload("res://src/cel_png_verifier.gd").new()
 	var tracks := []
 	for layer_index in range(layers.size()):
 		var layer=layers[layer_index]
@@ -155,13 +156,7 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 				path = cel_dir.path_join(pixels + ".png")
 			var reuse := false
 			if not pixels.is_empty() and FileAccess.file_exists(folder.path_join(path)):
-				var existing := FileAccess.open(folder.path_join(path), FileAccess.READ)
-				if existing != null and existing.get_length() <= 32 * 1024 * 1024 and existing.get_buffer(8) == PackedByteArray([137, 80, 78, 71, 13, 10, 26, 10]):
-					var cached := Image.load_from_file(folder.path_join(path))
-					if cached != null:
-						cached.convert(Image.FORMAT_RGBA8)
-						reuse = image_hash(cached) == pixels
-				if existing: existing.close()
+				reuse=png_verifier.matches(folder.path_join(path),int(video.width),int(video.height),pixels)
 			if not reuse:
 				var temporary := folder.path_join(path) + ".tmp.png"
 				if cel.image.save_png(temporary) != OK or DirAccess.rename_absolute(temporary, folder.path_join(path)) != OK:

@@ -1,0 +1,43 @@
+{
+  "recorded_utc_date": "2026-11-06",
+  "client_date": "2026-11-05",
+  "baseline_commit": "1535fb4",
+  "baseline": {
+    "cels": 32,
+    "milliseconds": [
+      2388.642,
+      2401.42,
+      2370.599
+    ],
+    "ok": true,
+    "raster": [
+      1920,
+      1080
+    ],
+    "scope": "warm content-addressed saves of32independent Image resources with identical pixels; fixture creation and readback excluded"
+  },
+  "optimized": {
+    "cels": 32,
+    "milliseconds": [
+      915.003,
+      905.909,
+      903.673
+    ],
+    "ok": true,
+    "raster": [
+      1920,
+      1080
+    ],
+    "scope": "warm content-addressed saves of32independent Image resources with identical pixels; fixture creation and readback excluded"
+  },
+  "mean_ms": {
+    "before": 2386.887,
+    "after": 908.195
+  },
+  "retained_validation_images": 0,
+  "source_sha256": {
+    "src/storage.gd": "087794234fe5bc7dfeb1262aa1d7e2c78ec8a68bb80da543710aac23cf3223e9",
+    "src/cel_png_verifier.gd": "407351cee22148cc6ade3fe86394cc282cf56fa4f79b8c054329e4ed8ac80176",
+    "tests/cel_save_benchmark.gd": "0a283a40d903b6d8f130dfe6ac026dbcae6551d2bfd4b8d9bafba857ea20927b"
+  }
+}
