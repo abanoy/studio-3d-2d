@@ -925,3 +925,77 @@ Stage5 and require owner-pain prioritization; none was added speculatively. The
 remaining independent drawing-exposure timeline drag gap is being investigated.
 All graphical checks remained on private Xorg:101/llvmpipe/Dummy audio. Full
 native/Windows/device/artist acceptance and other OPEN scope remain unfinished.
+
+2026-11-06 UTC — direct drawing-exposure timeline movement
+
+Continued after2092a35. Initial GitHub push of2092a35 returned remote commit_refs
+failure; read-only ls-remote showedc9b6974 still current. Normal non-force retry
+succeeded and subsequent ls-remote confirmed2092a35. No credentials or competing
+history were replaced. Optional priority question remains unanswered; core decided
+timeline work continued without waiting or inventing Stage5 owner-pain priorities.
+
+Implemented cel_timing.gd proposals and cel_timing_editor.gd coordination. Click
+chooses the held drawing's layer/frame; horizontal drag moves its whole duration
+on that same layer with original cel/Image identity and RGBA.4logical-pixel intent
+threshold preserves ordinary clicks. Preview is metadata-only. Overlaps refuse
+without truncation/ripple; scene end clamps the whole exposure. Escape/right-click/
+focus loss/Undo cancel; startup of export and successful New/Open cancel. Timing
+changes/sequence switches and autosave defer while the gesture is active. Stale
+revision/session/video/scene/image identities refuse. Other tracks stay unchanged.
+
+New history type stores stable layer/cel IDs, owner and before/after starts,
+charged512bytes without raster copies. Undo/Redo resolves live layers across scene
+switches, and remains a drawing command so it does not clear live3D preview.
+Existing cels and layer_properties commands now rebind their layer by ID too:
+SequenceEditor deep-copies layer dictionaries when switching, so old references
+otherwise targeted retired dictionaries. Parent/child histories remain separate.
+No saved project/drawing format, source identity, pixel or resource budget changes.
+See docs/drawing_exposure_moves.md.
+
+Two related actual UI bugs were diagnosed/fixed. Updating frame_box.max_value
+while entering a shorter child emitted a clamp signal, recursively overwriting
+its requested saved frame with the end boundary (240 instead of0). Internal max/
+value synchronization now blocks/restores signals; redundant earlier max writes
+were removed. Explicit saved child0/frame-box0 and exposure Undo/Redo now pass.
+Second, existing Select/Pick Color handlers consumed first Escape while a timing
+preview was latched, so release could commit despite cancellation intent. A focused
+pre-fix probe failed4/6checks; timing now receives latched mouse/cancel input first,
+clears uncommitted pixel/fill/pick previews on begin and retains drawing-tool choice.
+Final focused test10/10passes for both tools, preserving RGBA/history.
+
+Final frozen-source verifier100checks:32domain,10tool arbitration,44GUI/full movie,
+4packed cold,6unchanged normal startup after actual SIGKILL,4linked cold. Parent
+holds move at1300+, child hold moves to80; opacity and exact original images/PCM/
+world/camera persist, live preview survives timing Undo,512byte history verified,
+collisions/bounds/cancel/stale/export-preview guards pass. Existing creation,
+exposure and layer-property Undo/Redo across child switches pass. Wrong-owner
+history cannot mutate the parent. Originals/writer cache unavailable for packed/
+recovery; linked declared sources available with writer cache unavailable.
+
+Complete1440frame1920x1080p24 H264/AAC60second movie rendered/encoded in226.938921s
+on private Mesa llvmpipe. Exact preview/PNG frames1304/1390/1430 include edited parent
+and child artwork. Decoded56second sound onset2688001 vs expected2688000. Source
+GLB/WAV and manual HAS bytes unchanged; no graceful hook ran after SIGKILL. A first
+complete run before the final tool-priority fix also passed90checks and225.305259s;
+final run includes the fix and all100checks. Proof:
+/workspace/has-handoff-audit/cel-timing-final-accepted/verification.json and
+scoped artifact docs/benchmarks/drawing_exposure_movie_2026-11-06.json.
+
+Final existing navigation42/34GUI/38workspace/34channels regression passes after
+the final fix, including48frame movie and3explicit missing-native-fixture skips.
+Existing full reference19/25/14/5/7 crash/lesson/movie and duration40writer+10cold
+regressions pass with the new gestures/range fix; those precede only the final
+Select/Pick cancel-priority cleanup, covered separately by final100+navigation.
+Python297run296pass1existing independent-MMD-reader skip; Python production code
+unchanged by this increment. Evidence: cel-timing-final-navigation,
+cel-timing-reference-regression and cel-timing-duration-regression logs/directories,
+cel-timing-python.log. Failed probes retained: child exposure failure first traced
+to actual frame240 end-boundary restore; full test now explicitly checks frame0.
+
+The old private Xorg:101 disappeared during the session. A graphical start failed
+before window creation (X11 unavailable and automatic Wayland attempt also failed);
+no owner window was used. Runtime was rechecked current/ready/enforced; a new owned
+private dummy Xorg:102 was started, and all final GUI runs used102 with Dummy audio.
+Historical tracked output logs/results are restored after fresh proof is copied
+outside checkout. Windows/native/device/tablet/artist/power-loss acceptance and
+remaining OPEN editing semantics stay open. Continuous goal remains active.

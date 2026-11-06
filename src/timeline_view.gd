@@ -2,6 +2,7 @@ extends Control
 const Clips=preload("res://src/animation_clips.gd")
 const ObjectTiming=preload("res://src/object_timing.gd")
 const Channels=preload("res://src/animated_channels.gd")
+signal cel_moved(id: String,start: int,context: Dictionary)
 signal navigation_requested(action: String, at: float)
 signal channel_selected(id: String, channel: String, at: int)
 signal piece_moved(id: String, piece_id: String, start: int, before: Dictionary)
@@ -30,6 +31,17 @@ var audio_fps := 24.0
 var audio_rate:={"fps_num":24,"fps_den":1}
 var clip_waveforms: Array = []
 var clip_waveform_levels: Array=[]
+var moving_cel:=""
+var cel_layer:=""
+var cel_previous:=0
+var cel_preview:=0
+var cel_length:=1
+var cel_anchor:=0
+var cel_press:=Vector2.ZERO
+var cel_dragged:=false
+var cel_valid:=true
+var cel_context:={}
+var cel_context_provider: Callable
 var moving_audio := ""
 var audio_anchor := 0
 var audio_previous := 0
@@ -133,6 +145,35 @@ func audio_y() -> float:
 	var shift: float = visual_rows.size()*ROW_HEIGHT if not object_rows.is_empty() else (24 if has_model else 0)
 	return header_height()+5+shift+layers.size()*30
 
+func layer_y(index: int) -> float:
+	var shift: float=visual_rows.size()*ROW_HEIGHT if not object_rows.is_empty() else (24 if has_model else 0)
+	return header_height()+3+shift+index*30
+func cel_rect(index: int,cel: Dictionary) -> Rect2:
+	var start: int=cel_preview if moving_cel==cel.id and cel_layer==layers[index].id else int(cel.start)
+	return Rect2(x(start)+1,layer_y(index),maxf(2,x(start+int(cel.duration))-x(start)-2),23)
+func cel_hit(point: Vector2) -> Dictionary:
+	if point.x<LEFT:return {}
+	for index in range(layers.size()):
+		if point.y<layer_y(index) or point.y>=layer_y(index)+23:continue
+		for cel in layers[index].cels:
+			if cel_rect(index,cel).has_point(point):return {"layer":layers[index],"cel":cel}
+	return {}
+func cel_gesture_active() -> bool:return not moving_cel.is_empty()
+func cancel_cel() -> void:
+	moving_cel="";cel_layer="";cel_context={};cel_dragged=false;cel_valid=true;mouse_default_cursor_shape=Control.CURSOR_ARROW;queue_redraw()
+func cel_motion(point: Vector2) -> void:
+	if not cel_gesture_active():return
+	if not cel_dragged and point.distance_to(cel_press)<4:return
+	cel_dragged=true;cel_preview=clampi(cel_previous+frame_at(point)-cel_anchor,0,maxi(0,duration-cel_length));cel_valid=false
+	for layer in layers:
+		if layer.id==cel_layer:cel_valid=not preload("res://src/cel_timing.gd").proposal(layer.cels,moving_cel,cel_preview,duration).has("error");break
+	mouse_default_cursor_shape=Control.CURSOR_MOVE;queue_redraw()
+func finish_cel(cancel:=false) -> void:
+	if not cel_gesture_active():return
+	var id:=moving_cel;var start:=cel_preview;var context:=cel_context;var changed:=cel_dragged and cel_preview!=cel_previous
+	cancel_cel()
+	if not cancel and changed:cel_moved.emit(id,start,context)
+
 func audio_rect(index: int) -> Rect2:
 	var clip: Dictionary = audio_clips[index]
 	var start: int = audio_preview if moving_audio == clip.id else int(clip.start_frame)
@@ -161,6 +202,7 @@ func channel_y(id: String, channel: String) -> float:
 	return -1
 
 func _get_tooltip(point: Vector2) -> String:
+	if not cel_hit(point).is_empty():return "Drag this drawing exposure along the same layer. Its pixels and length stay unchanged; overlapping another exposure refuses the move."
 	for index in range(audio_clips.size()):
 		if point.x>=LEFT and audio_end_handle(index).has_point(point):return "Drag the right edge to shorten or extend this sound. Original samples stay available."
 		if point.x>=LEFT and audio_rect(index).has_point(point):return "Drag to move this sound. Drag its right edge to trim the end."
@@ -210,6 +252,7 @@ func _ready() -> void:
 	resized.connect(layout_picture);layout_picture()
 	focus_mode = Control.FOCUS_ALL
 	focus_exited.connect(cancel_audio)
+	focus_exited.connect(cancel_cel)
 	channel_font.font_names=PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"])
 	mouse_filter=Control.MOUSE_FILTER_STOP
 	tooltip_text="Drag an object's block to move its presence and all animation keys together."
@@ -321,10 +364,11 @@ func draw_content(painter: Control) -> void:
 	for i in range(layers.size()):
 		var y := header_height()+3 + shift + i * 30
 		for cel in layers[i].cels:
-			var rect := Rect2(x(cel.start) + 1, y, maxf(2, x(cel.start + cel.duration) - x(cel.start) - 2), 23)
+			var rect:=cel_rect(i,cel)
 			if layers[i].visible: cel_style.draw(painter.get_canvas_item(), rect)
 			else: painter.draw_rect(rect, Color("c5cbd1"))
-			painter.draw_string(ThemeDB.fallback_font, rect.position + Vector2(4, 16), "%d–%d" % [cel.start, cel.start + cel.duration - 1], HORIZONTAL_ALIGNMENT_LEFT, rect.size.x - 4, 12, Color("1e4159"))
+			if moving_cel==cel.id and cel_layer==layers[i].id:painter.draw_rect(rect,Color("3d7cba") if cel_valid else Color("b74949"),false,2)
+			painter.draw_string(ThemeDB.fallback_font, rect.position + Vector2(4, 16), "%d–%d" % [cel_preview if moving_cel==cel.id and cel_layer==layers[i].id else int(cel.start),(cel_preview if moving_cel==cel.id and cel_layer==layers[i].id else int(cel.start))+int(cel.duration)-1], HORIZONTAL_ALIGNMENT_LEFT, rect.size.x - 4, 12, Color("1e4159"))
 	for index in range(audio_clips.size()):
 		var clip: Dictionary = audio_clips[index]
 		var y := audio_y()+index*30
@@ -355,6 +399,18 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN] and (event.ctrl_pressed or event.shift_pressed):
 		if event.pressed:navigation_requested.emit(("in" if event.button_index==MOUSE_BUTTON_WHEEL_UP else "out") if event.ctrl_pressed else ("left" if event.button_index==MOUSE_BUTTON_WHEEL_UP else "right"),frame_at(event.position))
 		accept_event();return
+	if cel_gesture_active():
+		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:cancel_cel();accept_event();return
+		if event is InputEventMouseMotion:cel_motion(event.position)
+		elif event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and not event.pressed:finish_cel()
+		accept_event();return
+	if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT and not header_only and cel_context_provider.is_valid():
+		var hit:=cel_hit(event.position)
+		if not hit.is_empty():
+			var context: Dictionary=cel_context_provider.call(hit.layer.id,hit.cel.id,frame_at(event.position))
+			if not context.is_empty():
+				finish_move(true);dragging=false;cancel_audio();moving_cel=hit.cel.id;cel_layer=hit.layer.id;cel_previous=int(hit.cel.start);cel_preview=cel_previous;cel_length=int(hit.cel.duration);cel_anchor=frame_at(event.position);cel_press=event.position;cel_context=context;cel_dragged=false;cel_valid=true;grab_focus();queue_redraw()
+			accept_event();return
 	if not trimming_audio.is_empty():
 		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
 			cancel_audio();accept_event();return
@@ -441,6 +497,7 @@ func _gui_input(event: InputEvent) -> void:
 		for index in range(audio_clips.size()):
 			if event.position.x>=LEFT and audio_end_handle(index).has_point(event.position):mouse_default_cursor_shape=Control.CURSOR_HSIZE;break
 		if not moving_id.is_empty():drag_motion(event.position);accept_event();return
+		if not cel_hit(event.position).is_empty():mouse_default_cursor_shape=Control.CURSOR_MOVE
 		var hit:=hit_row(event.position);var hover:=int(hit.get("index",-1))
 		if hover>=0 and hover<object_rows.size():tooltip_text=str(object_rows[hover].name)+" • drag a piece; Shift-drag moves all its animation."
 

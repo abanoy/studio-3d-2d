@@ -370,6 +370,9 @@ horizontal panning and Fit. Ctrl + wheel zooms around the pointer; Shift + wheel
 pans. Track labels stay fixed, and the ruler shares the same visible range.
 [Cached waveform detail](docs/waveform_detail.md) reveals short sound envelopes
 while zoomed, with the existing overview in Fit and unchanged source audio.
+[Drawing exposures](docs/drawing_exposure_moves.md) can be dragged along their
+own timeline layer with one Undo, preserving pixels and hold length. Overlapping
+destinations refuse; Escape cancels the preview.
 
 **Options → Scene length (frames)** extends a parent up to 60 seconds and 7200
 frames with Undo (1440 frames at24fps). Child scenes remain bounded to240frames.

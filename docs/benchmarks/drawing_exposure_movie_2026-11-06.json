@@ -1,0 +1,41 @@
+{
+  "format": "studio_drawing_exposure_movie_1",
+  "date_utc": "2026-11-06",
+  "engine": "Godot4.6 stable standard",
+  "renderer": "OpenGL Compatibility / Mesa llvmpipe software",
+  "fixture": "Original procedural room, two parent RGBA holds, one nested child hold and original1kHzWAV",
+  "width": 1920,
+  "height": 1080,
+  "fps_num": 24,
+  "fps_den": 1,
+  "frames": 1440,
+  "duration_seconds": 60,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "sample_rate": 48000,
+  "expected_sound_onset_sample": 2688000,
+  "decoded_sound_onset_sample": 2688001,
+  "exact_preview_png_frames": [
+    1304,
+    1390,
+    1430
+  ],
+  "render_and_encode_seconds": 226.938921,
+  "actual_abrupt_exit": true,
+  "cold_modes": [
+    "packed with originals/cache unavailable",
+    "linked with declared originals available and cache unavailable",
+    "normal startup recovery with originals/cache unavailable"
+  ],
+  "source_assets_unchanged": true,
+  "manual_has_unchanged": true,
+  "checks": {
+    "unit": 32,
+    "tools": 10,
+    "writer": 44,
+    "reader-packed": 4,
+    "startup": 6,
+    "reader-linked": 4
+  },
+  "notes": "Software-only scoped run. No Windows GPU, physical tablet/native import or artist acceptance claim; no performance guarantee."
+}

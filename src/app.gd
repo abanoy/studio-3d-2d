@@ -72,6 +72,7 @@ var cancel_export := false
 var encoder: RefCounted
 var renderer: Node
 var canvas: Control
+var cel_timing: Node
 var timeline_navigation: Node
 var timeline_ruler: Control
 var timeline: Control
@@ -299,6 +300,7 @@ func _ready() -> void:
 	onion_editor=OnionEditor.new();onion_editor.app=self;add_child(onion_editor);onion_editor.setup(drawing_section)
 	reference_sheet=preload("res://src/reference_sheet.gd").new();reference_sheet.app=self;add_child(reference_sheet);reference_sheet.setup(drawing_section)
 	layer_editor=LayerEditor.new();layer_editor.app=self;add_child(layer_editor);layer_editor.setup(drawing_section)
+	cel_timing=preload("res://src/cel_timing_editor.gd").new();cel_timing.app=self;add_child(cel_timing);timeline.cel_context_provider=cel_timing.begin;timeline.cel_moved.connect(cel_timing.commit)
 	raster_importer=preload("res://src/krita_import.gd").new();add_child(raster_importer);raster_importer.setup(self)
 	video_importer=preload("res://src/video_import.gd").new();add_child(video_importer);video_importer.setup(self)
 	color_sampler=ColorSampler.new();color_sampler.app=self;add_child(color_sampler);color_sampler.setup(drawing_section)
@@ -905,7 +907,8 @@ func set_frame(value: int) -> void:
 	if renderer.world_runtime:renderer.world_runtime.duration=int(video.duration_frames)
 	renderer.apply_lighting()
 	if lighting_choice:lighting_choice.select(Renderer.Lighting.MODES.find(Renderer.Lighting.mode(video)))
-	frame_box.max_value=video.duration_frames;frame_box.set_value_no_signal(frame)
+	var frame_signals_blocked:=frame_box.is_blocking_signals()
+	frame_box.set_block_signals(true);frame_box.max_value=video.duration_frames;frame_box.set_value_no_signal(frame);frame_box.set_block_signals(frame_signals_blocked)
 	transport_info.text = "%s fps  •  %.2f seconds  •  Frames 0–%d; key %d is the end boundary" % [preload("res://src/video_timing.gd").label(video.fps_num,video.fps_den), Timeline.seconds(video.duration_frames, video), video.duration_frames - 1, video.duration_frames]
 	if project_timing:project_timing.sync()
 	if mode.selected != 1: renderer.evaluate(keys, frame)
@@ -1211,7 +1214,11 @@ func apply_command(command: Dictionary, side: String) -> bool:
 	if command.type=="palette":
 		palette=command[side].duplicate(true);palette_editor.refresh(true);changed();return true
 	# Drawing history refreshes the independent overlay, without resetting live 3D.
-	var drawing_command: bool=command.type in ["pixels","cels","layer_properties","layers"]
+	var drawing_command: bool=command.type in ["pixels","cels","cel_timing","layer_properties","layers"]
+	if command.type in ["cels","layer_properties"]:
+		var live_layer: Dictionary=cel_timing.layer_by_id(str(command.layer.get("id","")))
+		if live_layer.is_empty():message("Drawing history layer is missing.");return false
+		command.layer=live_layer
 	if not drawing_command:physics_editor.clear();physics_editor.clear_previews()
 	var view: Dictionary=renderer.view_state()
 	if command.type == "pixels":
@@ -1221,6 +1228,9 @@ func apply_command(command: Dictionary, side: String) -> bool:
 			command.image.blit_rect(image, Rect2i(Vector2i.ZERO, image.get_size()), pos)
 			var tile:=Rect2i(pos,image.get_size());damage=damage.merge(tile) if damage.has_area() else tile
 		Drawing.touch(command.image,damage)
+	elif command.type == "cel_timing":
+		var error: String=cel_timing.apply_command(command,side)
+		if not error.is_empty():message(error);return false
 	elif command.type == "cels": command.layer.cels = command[side].duplicate(true)
 	elif command.type=="layer_properties":
 		command.layer.name=command[side].name;command.layer.visible=command[side].visible
@@ -1267,6 +1277,7 @@ func apply_command(command: Dictionary, side: String) -> bool:
 
 func undo() -> void:
 	if exporting: return
+	if timeline and timeline.cel_gesture_active():timeline.cancel_cel();return
 	if drawing_selection_editor and drawing_selection_editor.before_history():return
 	if physics_editor.recording and physics_editor.recording.active:physics_editor.recording.cancel();return
 	pose_editor.finish_drag()
@@ -1280,7 +1291,9 @@ func undo() -> void:
 	note_recovery_action(command)
 
 func redo() -> void:
-	if exporting or redo_history.is_empty(): return
+	if exporting:return
+	if timeline and timeline.cel_gesture_active():timeline.cancel_cel();return
+	if redo_history.is_empty():return
 	if drawing_selection_editor and drawing_selection_editor.before_history():return
 	pose_editor.finish_drag()
 	finish_stroke()
@@ -1423,6 +1436,11 @@ func frame_3d_scene() -> void:
 
 func _input(event: InputEvent) -> void:
 	if keyboard_shortcuts and keyboard_shortcuts.capture(event):get_viewport().set_input_as_handled();return
+	if timeline and timeline.cel_gesture_active():
+		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:timeline.cancel_cel();get_viewport().set_input_as_handled();return
+		if event is InputEventMouseMotion or event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and not event.pressed:
+			var local_event: InputEventMouse=event.duplicate();local_event.position=timeline.get_global_transform().affine_inverse()*event.position
+			timeline._gui_input(local_event);get_viewport().set_input_as_handled();return
 	if drawing_selection_editor and drawing_selection_editor.global_event(event):get_viewport().set_input_as_handled();return
 	if color_sampler and mode.selected==0 and tool.selected==3 and not (home and home.visible) and not has_dialog(self) and event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
 		color_sampler.cancel();get_viewport().set_input_as_handled();return
@@ -1707,7 +1725,7 @@ func reset_document(path: String, sample := false) -> bool:
 		keys = [Timeline.key(0,renderer.camera.position,renderer.camera.quaternion,60)]
 	renderer.evaluate(keys,0)
 	mode.select(0 if sample else 1); refresh_workspace()
-	frame_box.max_value = 48; set_frame(0)
+	set_frame(0)
 	scene_name.text = "Sample room • 1920 × 1080" if sample else "Empty world • 1920 × 1080"
 	begin_recovery_session()
 	refresh_recovery_schedule(false)
@@ -1812,7 +1830,6 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 	mode.select(1)
 	refresh_scene_name()
 	refresh_workspace()
-	frame_box.max_value = video.duration_frames
 	sequence_editor.adopt(data,sequence_candidate.runtime)
 	rebuild_audio()
 	var saved_editor = data.get("editor", {})
@@ -2008,7 +2025,7 @@ func open_result_folder(folder: String) -> void:
 func export_controls(node: Node, busy: bool) -> void:
 	if node is TimelineView:
 		node.interactive=not busy
-		if busy:node.finish_move(true);node.cancel_audio();node.dragging=false
+		if busy:node.finish_move(true);node.cancel_audio();node.cancel_cel();node.dragging=false
 	if node == cancel_button: return
 	if node is BaseButton: node.disabled = busy
 	if node is SpinBox or node is LineEdit: node.editable = not busy
@@ -2049,7 +2066,7 @@ func _notification(what: int) -> void:
 		release_mouse()
 		if canvas: canvas.panning = false
 		if canvas: canvas.cancel_middle()
-		if timeline: timeline.dragging = false;timeline.cancel_audio();timeline.finish_move(true);timeline.queue_redraw()
+		if timeline: timeline.dragging = false;timeline.cancel_audio();timeline.cancel_cel();timeline.finish_move(true);timeline.queue_redraw()
 		if timeline_ruler:timeline_ruler.dragging=false
 
 var closing_studio:=false
@@ -2095,6 +2112,7 @@ func begin_recovery_session() -> void:
 	if recovery_root.is_empty(): recovery_root = ProjectSettings.globalize_path("res://output/recovery")
 	recovery_session = "%d_%s" % [Time.get_unix_time_from_system(), str(ResourceUID.create_id())]
 	if project_timing:project_timing.sync()
+	if timeline:timeline.cancel_cel()
 	if timeline_navigation:timeline_navigation.sync()
 	checkpoint_revision = -1
 	reset_recovery_schedule()
@@ -2133,7 +2151,7 @@ func autosave_tick(force := false) -> void:
 	if not autosave_enabled.button_pressed and not force: return
 	if not dirty or recovery_revision == checkpoint_revision:recovery_checkpoint_requested=false;return
 	if physics_editor and physics_editor.is_running():return
-	if drawing or navigating or playing or exporting or pose_editor.dragging or timeline and (not timeline.moving_id.is_empty() or timeline.audio_gesture_active()): return
+	if drawing or navigating or playing or exporting or pose_editor.dragging or timeline and (not timeline.moving_id.is_empty() or timeline.audio_gesture_active() or timeline.cel_gesture_active()): return
 	if has_dialog(self): return
 	if not force:
 		if Time.get_ticks_msec()<autosave_retry_due:return

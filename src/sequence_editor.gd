@@ -137,7 +137,7 @@ func ready_for_edit() -> bool:
 	if app.exporting or app.source_import.pid>0 or app.has_project.pid>0 or app.audio_importer.pid>0 or app.physics_editor.recording.active:return false
 	for importer in [app.raster_importer,app.video_importer]:
 		if importer and not importer.phase.is_empty():return false
-	return not app.playing and not app.drawing and not app.pose_editor.dragging
+	return not app.playing and not app.drawing and not app.pose_editor.dragging and not app.timeline.cel_gesture_active()
 func prepare_runtime(candidate: Dictionary,root: Dictionary,owner: String="") -> Dictionary:
 	if candidate.is_empty():return {"runtime":null}
 	var next:=Runtime.new();add_child(next)

@@ -26,7 +26,7 @@ func setup(parent: Control,body,header) -> void:
 	caption=Label.new();caption.custom_minimum_size.x=140;bar.add_child(caption)
 	for view in [tracks,ruler]:view.navigation_requested.connect(func(action,at):navigate(action,at))
 func busy() -> bool:
-	return app.exporting or tracks.dragging or ruler.dragging or not tracks.moving_id.is_empty() or tracks.audio_gesture_active()
+	return app.exporting or tracks.dragging or ruler.dragging or not tracks.moving_id.is_empty() or tracks.audio_gesture_active() or tracks.cel_gesture_active()
 func length() -> float:return float(maxi(1,int(app.video.duration_frames)))
 func visible() -> float:return length() if span<=0 else clampf(span,1,length())
 func publish() -> void:

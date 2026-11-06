@@ -11262,3 +11262,26 @@ movie claim. Details docs/late_clip_move.md; evidence
 /workspace/has-handoff-audit/late-clip-move-final/verification.json.
 Corrected test-only error-string and stale-instance assumptions are in LLM.md.
 Optional work priority remains unanswered; decided core timeline work continues.
+
+2026-11-06 UTC — continuous-goal drawing exposure moves
+
+Drawing blocks now move horizontally within their own layer via direct timeline
+drag, preserving hold duration, stable image identity, RGBA/opacity and all other
+tracks.4pixel click threshold, preview/cancel/collision/boundary/stale guards;
+one512byte metadata-only Undo. Scene switches resolve live layer IDs, including
+existing cel/exposure/property history. Actual shorter-child frame-box recursive
+clamp and Select/Pick-first-Escape bugs were reproduced and corrected. Details:
+docs/drawing_exposure_moves.md and same-date root LLM.md entry.
+
+Final100checks pass (32domain+10tool+44GUI/movie+4packed+6SIGKILL startup+4linked).
+Complete1440frame1080p24 H264/AAC60second export:226.938921seconds software run,
+exact preview PNGs1304/1390/1430; decoded56s onset2688001 vs2688000. Source assets/
+manual HAS unchanged, originals/cache unavailable for packed/recovery; linked
+sources available by design. Evidence cel-timing-final-accepted/verification.json
+under /workspace/has-handoff-audit and committed movie artifact under docs/benchmarks.
+Final existing navigation42/34/38/34 passes; scoped reference19/25/14/5/7 and
+duration40+10cold pass before final tool-input cleanup, covered by final tests.
+Python297run296pass1existing skip. New private display102 replaced unavailable101;
+failed graphical start made no window. No shared owner desktop, external/native
+art distribution, deployment or web changes. Native/physical/artist acceptance,
+remaining OPEN editing decisions and the continuous goal remain unfinished.

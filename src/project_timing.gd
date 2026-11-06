@@ -80,7 +80,7 @@ func commit(proposed: Dictionary,feedback: String) -> String:
 	if not timing_error.is_empty():app.message(timing_error);sync();return timing_error
 	# Defer until an edit finishes: committing a pending pose after range validation
 	# could introduce a key beyond the candidate end.
-	if app.drawing or app.pose_editor.dragging or app.timeline.dragging or not app.timeline.moving_id.is_empty() or app.timeline.audio_gesture_active():
+	if app.drawing or app.pose_editor.dragging or app.timeline.dragging or not app.timeline.moving_id.is_empty() or app.timeline.audio_gesture_active() or app.timeline.cel_gesture_active():
 		var error:="Finish or cancel the current edit before changing project timing.";app.message(error);sync();return error
 	var prepared: Dictionary=app.sequence_editor.prepare_timing(proposed)
 	if prepared.has("error"):app.message(prepared.error);sync();return prepared.error
