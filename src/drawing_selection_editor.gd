@@ -47,12 +47,14 @@ func reveal() -> void:
 func snapshot() -> void:
 	var layer: Dictionary=app.layers[app.active_layer];var cel:=Drawing.cel_at(layer,app.frame)
 	if cel.is_empty():context={};return
-	context={"session":app.recovery_session,"revision":app.recovery_revision,"frame":app.frame,"layer_id":layer.id,"cel_id":cel.id,"image":cel.image,"pixels_revision":int(cel.image.get_meta("studio_pixels_revision",0))}
+	var pixels:=Drawing.read_image(cel)
+	if pixels.has("error"):context={};app.message(pixels.error);return
+	context={"session":app.recovery_session,"revision":app.recovery_revision,"frame":app.frame,"layer_id":layer.id,"cel_id":cel.id,"image":pixels.image,"raster_token":Drawing.raster_token(cel),"pixels_revision":int(pixels.image.get_meta("studio_pixels_revision",0))}
 
 func valid_context() -> bool:
 	if context.is_empty() or not available() or app.tool.selected!=4 or app.recovery_session!=context.session or app.recovery_revision!=context.revision or app.frame!=context.frame:return false
 	var layer: Dictionary=app.layers[app.active_layer];var cel:=Drawing.cel_at(layer,app.frame)
-	return layer.id==context.layer_id and layer.visible and float(layer.get("opacity",1.0))>0 and not cel.is_empty() and cel.id==context.cel_id and is_same(cel.image,context.image) and int(cel.image.get_meta("studio_pixels_revision",0))==context.pixels_revision
+	return layer.id==context.layer_id and layer.visible and float(layer.get("opacity",1.0))>0 and not cel.is_empty() and cel.id==context.cel_id and Drawing.raster_token(cel)==context.raster_token and int(context.image.get_meta("studio_pixels_revision",0))==context.pixels_revision
 
 func cancel() -> void:
 	selected=Rect2i();context={};gesture="";offset=Vector2i.ZERO;preview_dirty=false;prepared={}
@@ -75,7 +77,7 @@ func _process(_delta: float) -> void:
 		if prepared.has("error"):app.message(prepared.error);cancel();return
 		if not prepared.changed:app.canvas.selection_preview=null
 		else:
-			var candidate: Array=app.layers.duplicate(true);var cel:=Drawing.cel_at(candidate[app.active_layer],app.frame);cel.image=prepared.image
+			var candidate: Array=app.layers.duplicate(true);var cel:=Drawing.cel_at(candidate[app.active_layer],app.frame);Drawing.replace_image(cel,prepared.image)
 			var image:=Drawing.composite(candidate,app.frame,app.video.width,app.video.height)
 			if app.canvas.selection_preview==null:app.canvas.selection_preview=ImageTexture.create_from_image(image)
 			else:app.canvas.selection_preview.update(image)
@@ -127,6 +129,10 @@ func commit_result(result: Dictionary,note: String) -> bool:
 	var image: Image=context.image;var destination: Rect2i=result.selection
 	app.canvas.selection_preview=null
 	if result.changed:
+		var cel:=Drawing.cel_at(app.layers[app.active_layer],app.frame)
+		var editable:=Drawing.edit_image(cel,context.raster_token,context.image)
+		if editable.has("error"):app.message(editable.error);cancel();return false
+		image=editable.image
 		var before:={};var after:={};var cost:=0;var damage: Rect2i=result.damage
 		for y in range(int(damage.position.y/64),int((damage.end.y+63)/64)):
 			for x in range(int(damage.position.x/64),int((damage.end.x+63)/64)):

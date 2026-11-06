@@ -105,13 +105,15 @@ static func cel_at(layer: Dictionary, frame: int) -> Dictionary:
 			return cel
 	return {}
 
+static func replace_image(cel: Dictionary,value: Image) -> void:
+	cel.image=value;cel.erase("raster_owner")
+
 static func insert(layer: Dictionary, frame: int, end: int, image: Image) -> Dictionary:
 	# Split the active exposure; later cels retain their original boundaries.
 	var next := end
 	for cel in layer.cels:
 		if cel.start == frame:
-			cel.image = image
-			cel.erase("raster_owner")
+			replace_image(cel,image)
 			return cel
 		if cel.start < frame and cel.start + cel.duration > frame:
 			next = mini(next, cel.start + cel.duration)

@@ -15,7 +15,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 ## Next required work
 
 - **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
-- **P1 · MEM-02** — Readonly rendering accepts staged cold owners. Migrate brush/fill/selection/clipboard write pinning and streaming save, then enable only after actual cold-adoption Undo/save/recovery/nested-render/latency checks; keep limits unchanged.
+- **P1 · MEM-02** — Cold edit/streaming-save consumers are tested with fixture injection. Implement adaptive cold loader adoption and verify actual cold Open/edit/Undo/packed save/startup recovery/nested rendering and latency before enabling; keep caps unchanged.
 - **P1 · MEM-01** — Clipboard deltas are implemented. Audit remaining cel-creation/deletion/layer history after the larger OUTPUT-02/MEM-02 gaps; do not re-polish the completed clipboard change.
 - **P1 · STORE-04** — Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit.
 - **P2 · COURSE-01** — Organize Basic/Advanced sections and supported topic entry points; retain versioned progress and unresolved Skip policy.

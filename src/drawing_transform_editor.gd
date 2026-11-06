@@ -114,7 +114,7 @@ func _process(_delta: float) -> void:
 	if not valid():request={};return
 	if result.has("error"):app.message(result.error);invalidate();return
 	pending=result
-	var candidate: Array=app.layers.duplicate(true);var cel:=Drawing.cel_at(candidate[app.active_layer],app.frame);cel.image=Image.create_from_data(app.video.width,app.video.height,false,Image.FORMAT_RGBA8,result.data)
+	var candidate: Array=app.layers.duplicate(true);var cel:=Drawing.cel_at(candidate[app.active_layer],app.frame);Drawing.replace_image(cel,Image.create_from_data(app.video.width,app.video.height,false,Image.FORMAT_RGBA8,result.data))
 	app.canvas.selection_preview=ImageTexture.create_from_image(Drawing.composite(candidate,app.frame,app.video.width,app.video.height));selection.outline(result.selection);preview_row.show();reveal_next()
 	app.message("Transform preview. Repositioned to stay inside the frame; Apply or Cancel." if result.repositioned else "Transform preview. Apply or Cancel; original cel is unchanged.")
 

@@ -1127,7 +1127,7 @@ func canvas_input(event: InputEvent, point: Vector2) -> void:
 				create_cel(false)
 				cel = Drawing.cel_at(layers[active_layer], frame)
 			if cel.is_empty() and not brush_pressure.button_pressed:return
-			stroke_image = cel.get("image",null)
+			stroke_image = null
 			drawing = true
 			before_tiles = {}
 			active_brush=preload("res://src/brush_stroke.gd").new()
@@ -1168,10 +1168,13 @@ func paint_segment(point: Vector2,pressure: float=1.0) -> void:
 	if stroke_stabilizer:point=stroke_stabilizer.sample(point)
 	if stroke_image==null:
 		# A tablet press alone is not paint. Allocate a cel only at first contact.
-		create_cel(false,false)
 		var cel:=Drawing.cel_at(layers[active_layer],frame)
+		if cel.is_empty():
+			create_cel(false,false);cel=Drawing.cel_at(layers[active_layer],frame)
 		if cel.is_empty():finish_stroke();return
-		stroke_image=cel.image
+		var editable:=Drawing.edit_image(cel)
+		if editable.has("error"):message(editable.error);finish_stroke();return
+		stroke_image=editable.image
 	var painted: bool=active_brush.paint(stroke_image,from,point,r0,r1)
 	previous_point = point
 	if painted:changed()
@@ -1342,7 +1345,12 @@ func create_cel(duplicate: bool,finish_current: bool=true) -> void:
 			return
 	var before: Array = layer.cels.duplicate(true)
 	var current := Drawing.cel_at(layer, frame)
-	var image: Image = current.image.duplicate() if duplicate and not current.is_empty() else Drawing.blank(video.width, video.height)
+	var image: Image
+	if duplicate and not current.is_empty():
+		var pixels:=Drawing.read_image(current)
+		if pixels.has("error"):message(pixels.error);return
+		image=pixels.image.duplicate()
+	else:image=Drawing.blank(video.width,video.height)
 	Drawing.insert(layer, frame, video.duration_frames, image)
 	push_history({"type": "cels", "layer": layer, "before": before, "after": layer.cels.duplicate(true)})
 	changed()

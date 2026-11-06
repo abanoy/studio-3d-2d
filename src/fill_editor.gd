@@ -59,10 +59,14 @@ func start(point: Vector2) -> void:
 		for row in app.layers:count+=row.cels.size()
 		if app.get("sequence_editor"):count=app.sequence_editor.used("cels")
 		if count>=32:app.message("Prototype memory limit: 32 full-HD cels.");return
-	var target: Image=cel.image if not cel.is_empty() else Drawing.blank(app.video.width,app.video.height)
-	var sample: Image=Drawing.composite(app.layers,app.frame,app.video.width,app.video.height) if sample_visible.button_pressed else target
+	var pixels:=Drawing.read_image(cel) if not cel.is_empty() else {"image":Drawing.blank(app.video.width,app.video.height)}
+	if pixels.has("error"):app.message(pixels.error);return
+	var target: Image=pixels.image
+	var checked:=Drawing.composite_result(app.layers,app.frame,app.video.width,app.video.height) if sample_visible.button_pressed else {"image":target}
+	if checked.has("error"):app.message(checked.error);return
+	var sample: Image=checked.image
 	var color: int=app.color.color.to_rgba32();var paint:=PackedByteArray([(color>>24)&255,(color>>16)&255,(color>>8)&255,color&255])
-	context={"session":app.recovery_session,"revision":app.recovery_revision,"frame":app.frame,"layer_id":layer.id,"cel_id":cel.get("id",""),"settings":settings()}
+	context={"session":app.recovery_session,"revision":app.recovery_revision,"frame":app.frame,"layer_id":layer.id,"cel_id":cel.get("id",""),"settings":settings(),"raster_token":Drawing.raster_token(cel)}
 	thread=Thread.new()
 	var error:=thread.start(Fill.calculate.bind(sample.get_data(),target.get_data(),int(app.video.width),int(app.video.height),Vector2i(point.floor()),paint,int(tolerance.value),int(close_gaps.value),int(expand_edges.value),connectivity_choice.get_selected_id()),Thread.PRIORITY_LOW)
 	if error!=OK:thread=null;context={};app.message("Cannot prepare fill; drawing preserved.")
@@ -85,7 +89,7 @@ func _process(_delta: float) -> void:
 		var candidate_cel:=Drawing.cel_at(candidate_layer,app.frame)
 		var candidate_image:=Image.create_from_data(app.video.width,app.video.height,false,Image.FORMAT_RGBA8,result.data)
 		if candidate_cel.is_empty():Drawing.insert(candidate_layer,app.frame,app.video.duration_frames,candidate_image)
-		else:candidate_cel.image=candidate_image
+		else:Drawing.replace_image(candidate_cel,candidate_image)
 		preview_row.show();app.canvas.fill_preview=ImageTexture.create_from_image(Drawing.composite(candidate,app.frame,app.video.width,app.video.height));app.canvas.queue_redraw()
 		# Let containers lay out the newly visible row before scrolling it into view.
 		if not get_tree().process_frame.is_connected(reveal_preview):get_tree().process_frame.connect(reveal_preview,CONNECT_ONE_SHOT)
@@ -105,14 +109,17 @@ func apply_pending() -> void:
 		var before: Array=layer.cels.duplicate(true);Drawing.insert(layer,app.frame,app.video.duration_frames,image)
 		app.push_history({"type":"cels","layer":layer,"before":before,"after":layer.cels.duplicate(true)})
 	else:
+		var editable:=Drawing.edit_image(cel,context.raster_token)
+		if editable.has("error"):app.message(editable.error);cancel();return
+		var target: Image=editable.image
 		var before:={};var after:={};var cost:=0;var bounds: Rect2i=pending.bounds
 		for ty in range(int(bounds.position.y/64),int((bounds.end.y+63)/64)):
 			for tx in range(int(bounds.position.x/64),int((bounds.end.x+63)/64)):
 				var pos:=Vector2i(tx*64,ty*64);var rect:=Rect2i(pos,Vector2i(64,64)).intersection(Rect2i(0,0,app.video.width,app.video.height))
-				var old: Image=cel.image.get_region(rect);var fresh:=image.get_region(rect)
+				var old: Image=target.get_region(rect);var fresh:=image.get_region(rect)
 				if old.get_data()==fresh.get_data():continue
 				before[pos]=old;after[pos]=fresh;cost+=old.get_data_size()*2
-		cel.image.copy_from(image);Drawing.touch(cel.image);app.push_history({"type":"pixels","image":cel.image,"before":before,"after":after,"bytes":cost})
+		target.copy_from(image);Drawing.touch(target);app.push_history({"type":"pixels","image":target,"before":before,"after":after,"bytes":cost})
 	app.changed();app.refresh_layer();cancel();app.message("Filled the active drawing layer. Undo restores it; line art and 3D stay separate.")
 
 func cancel() -> void:

@@ -159,3 +159,36 @@ Live brush/fill/selection/clipboard mutation and save consumers still require
 migration. Normal Storage loading remains eager until those paths and actual
 cold-adopted save/load/Undo/recovery/latency acceptance pass. Do not enable cold
 project adoption or increase limits based on these readonly checks.
+
+## Write pinning and streamed persistence (staged)
+
+Brush contact now pins the active cel's authoritative Image only when painting
+starts; a zero-pressure tablet press does not hydrate an existing cold cel.
+Selection and transform previews keep an independent read image and do not pin
+until Apply verifies the current owner token and borrowed pixels. Fill similarly
+reads detached worker inputs and pins at commit. Preview candidates explicitly
+replace their copied dictionary's representation without mutating the live owner.
+Clipboard Copy/Cut/Split materialize independent clipboard/right-half pixels while
+preserving the untouched cold source; affected-cel Undo keeps stable ownership.
+
+Save reads one cel at a time through the accessor, validates the supported canvas
+and RGBA8 format, hashes/writes exact pixels, and keeps inactive sources cold.
+Normal canonical PNGs, schema selection, packing and checkpoint journaling remain
+unchanged. A missing/corrupt or unsupported source returns before manifest commit.
+Loading serialized data discards the transient `raster_owner` field before
+installing validated PNG pixels, so JSON cannot shadow the authoritative image.
+
+`python tests/verify_cel_raster_write.py --isolated-display :106` runs 138 domain
+checks plus a fixture-injected cold editing writer and fresh packed reader. The
+writer exercises real brush/fill/selection/transform/clipboard Undo/Redo, normal
+packed Save, actual checkpoint and movie, and a late corrupt-cel Save refusal.
+Its untouched fifth cel stays cold through Save and recovery. The fresh process
+opens that compatible HAS with the writer cache physically unavailable and
+compares five complete final frames and all authored RGBA hashes. Independent
+ZIP checks exclude transient owner/pixel-revision fields; media inspection checks
+48 H2641080p24 frames, AAC and the authored one-second cue. Readonly cold adoption
+is still injected by the test; the normal loader/fresh reader remain eager.
+
+Cold loader adoption, its startup/recovery paths, nested scenes and latency gates
+remain next. This does not increase the 32-cel limit or certify physical pressure
+hardware. Edited owners stay hot while legacy pixel Undo may retain their Images.

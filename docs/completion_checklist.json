@@ -859,9 +859,17 @@
         {
           "kind": "source",
           "path": "tests/verify_cel_raster_read.py"
+        },
+        {
+          "kind": "source",
+          "path": "tests/cel_raster_write_smoke.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_cel_raster_write.py"
         }
       ],
-      "remaining": "Cold snapshot/owner, non-hydrating metadata and checked readonly render/sampler/onion consumers are implemented with domain and fixture-injected cold GPU tests. Normal Storage/app adoption remains eager. Migrate mutation pinning/clipboard/streaming save consumers; verify actual cold-adopted edits/Undo/persistence/recovery/nested rendering and latency before enabling or expanding limits.",
+      "remaining": "Cold owner/read/metadata and mutation pinning/clipboard/streamed save paths are implemented with fixture-injected cold GUI Undo, packed save/fresh eager reader, checkpoint, movie and refusal tests. Normal loader adoption remains eager. Add adaptive cold loading and verify actual cold-adopted open/edit/Undo/save/startup recovery/nested rendering and latency before enabling or expanding limits.",
       "external_dependencies": []
     },
     {
@@ -2028,7 +2036,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Readonly rendering accepts staged cold owners. Migrate brush/fill/selection/clipboard write pinning and streaming save, then enable only after actual cold-adoption Undo/save/recovery/nested-render/latency checks; keep limits unchanged."
+      "action": "Cold edit/streaming-save consumers are tested with fixture injection. Implement adaptive cold loader adoption and verify actual cold Open/edit/Undo/packed save/startup recovery/nested rendering and latency before enabling; keep caps unchanged."
     },
     {
       "requirement": "MEM-01",

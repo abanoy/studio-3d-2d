@@ -147,19 +147,23 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		if layer.has("origin"):track.origin=layer.origin.duplicate(true)
 		for cel_index in range(layer.cels.size()):
 			var cel=layer.cels[cel_index]
+			var source_pixels:=Drawing.read_image(cel)
+			if source_pixels.has("error"):return source_pixels.error+" Previous project manifest preserved."
+			var image: Image=source_pixels.image
+			if image.get_size()!=Vector2i(int(video.width),int(video.height)) or image.get_format()!=Image.FORMAT_RGBA8:return "Cel pixels differ from the supported canvas. Previous project manifest preserved."
 			# IDs are opaque document data, never filesystem path components.
 			# Ordinals also keep equal IDs on separate layers from overwriting ink.
 			var path := cel_dir.path_join("layer_%d_cel_%d.png" % [layer_index,cel_index])
 			var pixels := ""
 			if not recovery.is_empty() or content_addressed:
-				pixels = image_hash(cel.image)
+				pixels = image_hash(image)
 				path = cel_dir.path_join(pixels + ".png")
 			var reuse := false
 			if not pixels.is_empty() and FileAccess.file_exists(folder.path_join(path)):
 				reuse=png_verifier.matches(folder.path_join(path),int(video.width),int(video.height),pixels)
 			if not reuse:
 				var temporary := folder.path_join(path) + ".tmp.png"
-				if cel.image.save_png(temporary) != OK or DirAccess.rename_absolute(temporary, folder.path_join(path)) != OK:
+				if image.save_png(temporary) != OK or DirAccess.rename_absolute(temporary, folder.path_join(path)) != OK:
 					return "Cannot commit cel PNG; previous project manifest preserved."
 			var entry := {"id": cel.id, "start": cel.start, "duration": cel.duration, "path": path}
 			if not pixels.is_empty(): entry["pixel_sha256"] = pixels
@@ -388,7 +392,8 @@ static func decode_project(data,folder: String,extended:=false,rasters=null) -> 
 			var path := folder.path_join(cel.path)
 			var raster: Dictionary=rasters.read(path,int(video.width),int(video.height),cel.get("pixel_sha256"),cel.has("pixel_sha256"))
 			if raster.has("error"):return raster
-			cel.image=raster.image
+			# Runtime ownership comes only from validated pixel loading, never JSON.
+			cel.erase("raster_owner");cel.image=raster.image
 	var audio = data.get("audio", {})
 	if not audio is Dictionary:
 		return {"error": "Invalid audio clip metadata."}

@@ -1868,3 +1868,46 @@ by actual cold-adopted GUI Undo/save/reopen/abrupt recovery/nested-render/latenc
 acceptance. MEM-02 partial/open, caps/schema/source files unchanged. Next is write
 ownership and durable persistence, not more readonly cache refinements. Full goal
 remains active, independently actionable and unfinished.
+
+
+2026-11-06 — cold write pinning and streamed persistence (MEM-02 partial)
+
+Migrated actual brush contact, fill commit, selection/transform Apply and clipboard
+operations to raster access/pinning. A zero-pressure press on an existing cold cel
+neither hydrates/pins nor creates history; first contact pins one authoritative
+Image. Selection borrows exact pixels with stable token, previews without pinning,
+and adopts only at verified Apply. Fill reads detached worker bytes and pins at
+commit. Preview replacement clears only the candidate dictionary's stale owner.
+Copy/Cut/Split freeze independent pixels while untouched source stays cold.
+
+Storage.save_project reads/validates/hashes/writes one cel at a time without pinning
+inactive sources. Supported dimensions/RGBA8 now refuse before manifest commit;
+wrong format previously could write a checksum incompatible with RGBA8 reopen.
+Runtime owner metadata is discarded on decode before validated PNG installation,
+matching existing overwrite of serialized image values. Canonical PNGs, schema,
+packing and recovery journal unchanged. No cap increase or default cold loader.
+
+138domain checks pass (131prior+7save/refusal/sanitization). Actual fixture-injected
+cold GPU writer28checks and fresh packed reader11pass. Real brush/fill/selection/
+transform/clipboard Undo/Redo, zero-pressure no-op, worker preview isolation, mixed
+hot/cold packed Save, later exposure checkpoint, exact movie input, and late corrupt
+cel Save refusal preserving both prior staging manifest and manual HAS. Untouched
+fifth owner stays cold through Save/checkpoint. Writer cache physically offline
+before fresh normal eager reader; all5RGBA hashes/full final frames exact. HAS
+unchanged, no transient owner/revision fields in ZIP. Independent H2641080p24,
+48frames/2seconds,AAC; frame24cue decodes sample48043vs48000. Proof:
+cel-raster-write-final-pressure-idle/verification.json under /workspace/has-handoff-audit.
+
+Existing pressure suite40checks plus6independent numerical taper cases (max alpha
+error1) and clipboard/history154checks pass on same final production source.
+Includes synthetic native pressure events, zero pressure, cold packed reads,
+original stroke Undo, live physics isolation, exact GPU and real movies. Physical
+tablet hardware remains unrun. Pressure receipt copied outside checkout; no
+incidental tracked output changes. Curated receipt:
+docs/benchmarks/cel_raster_write_2026-11-06.json. Details docs/cold_cel_rasters.md.
+
+Normal Storage/app loader and fresh reader still eager: cold editing was explicitly
+injected for migration tests. Next implement adaptive one-pass cold loader ownership
+with repeated-PNG sharing and incompressible fallback; verify actual cold Open,
+edit/Undo/save, nested scenes, normal startup/abrupt recovery and measured latency
+before enabling. MEM-02 partial/open, full goal active and independently actionable.

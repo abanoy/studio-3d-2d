@@ -64,6 +64,7 @@ func perform(action: String) -> bool:
 	for i in range(layer.cels.size()):
 		if layer.cels[i].id==context.cel:selected=layer.cels[i];index=i;break
 	var pasted: Dictionary={}
+	var selected_image: Image
 	if action=="paste":
 		if not available(layer.id):app.message("Copy a drawing from this layer first. Drawing copies stay within their scene and layer.");return false
 		if app.sequence_editor.used("cels")>=32:app.message("Prototype memory limit: 32 full-HD cels.");return false
@@ -76,16 +77,19 @@ func perform(action: String) -> bool:
 		if selected.is_empty():return false
 		var proposed:=Timing.proposal(layer.cels,selected.id,selected.start,app.video.duration_frames)
 		if proposed.has("error"):app.message(proposed.error);return false
-		if not selected.get("image") is Image or selected.image.get_size()!=Vector2i(app.video.width,app.video.height) or selected.image.get_format()!=Image.FORMAT_RGBA8 or selected.image.get_data_size()>8294400:app.message("This drawing cannot be copied at the current canvas size.");return false
+		var pixels:=Drawing.read_image(selected)
+		if pixels.has("error"):app.message(pixels.error);return false
+		selected_image=pixels.image
+		if selected_image.get_size()!=Vector2i(app.video.width,app.video.height) or selected_image.get_format()!=Image.FORMAT_RGBA8 or selected_image.get_data_size()>8294400:app.message("This drawing cannot be copied at the current canvas size.");return false
 		if action=="split":
 			if context.at<=selected.start or context.at>=selected.start+selected.duration:app.message("Split inside the drawing's hold, after its first frame.");return false
 			if app.sequence_editor.used("cels")>=32:app.message("Prototype memory limit: 32 full-HD cels.");return false
 		else:
-			clipboard={"layer":layer.id,"owner":app.sequence_editor.active_owner,"session":app.recovery_session,"duration":int(selected.duration),"image":selected.image.duplicate()}
+			clipboard={"layer":layer.id,"owner":app.sequence_editor.active_owner,"session":app.recovery_session,"duration":int(selected.duration),"image":selected_image.duplicate()}
 			if action=="copy":app.message("Drawing copied. Right-click a free range on this layer to paste it.");return true
 	var before: Array=layer.cels.duplicate(true)
 	if action=="cut":layer.cels.remove_at(index)
-	elif action=="split":Drawing.insert(layer,int(context.at),int(app.video.duration_frames),selected.image.duplicate())
+	elif action=="split":Drawing.insert(layer,int(context.at),int(app.video.duration_frames),selected_image.duplicate())
 	else:layer.cels.append(pasted);layer.cels.sort_custom(func(a,b):return a.start<b.start)
 	app.push_history(Patch.create(layer.id,app.sequence_editor.active_owner,before,layer.cels))
 	for i in range(app.layers.size()):
