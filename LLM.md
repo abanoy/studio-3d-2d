@@ -1477,3 +1477,53 @@ fresh outputs retained outside repo, then exact HEAD bytes restored. No external
 art downloads, deployment, Windows installation or frozen web edits. Full
 spec/addendum goal remains unfinished; this commit completes only the bounded
 clipboard task. Return one substantive result and end this turn.
+
+
+2026-11-06 — protect lesson state after a clean manual Save
+
+Continued the active full goal with a bounded next recovery fix, not a repeated
+status-only turn. Actual before probe on33bf889 saves the bundled practice,
+leaves dirty=false/actions0, changes lesson UI and waits for the ordinary timer;
+no recovery manifest is written. Proof lesson-autosave-before-runtime/probe.log
+under /workspace/has-handoff-audit. An earlier test-only inferred-Variant parse
+error is separately retained in lesson-autosave-before, not counted as reproduction.
+
+App now separately remembers the last successfully protected serialized lesson
+context plus playhead. A changed context can use the existing minute scheduler
+or Checkpoint now even with a clean scene or unchanged authored revision. Empty
+teacher context after Leave can also be protected. New/Open clears the marker.
+One timer, existing busy guards/disable/action threshold/backoff, checkpoint format
+and journal retention remain. Scene dirty flag, authored revision, Undo and
+navigation action counts do not change. Only a successful checkpoint acknowledges
+the context. Snapshot gets the same captured context used for comparison.
+
+Fresh33checks pass:22writer/11normal-startup. Actual natural timer; unchanged
+state does not repeatedly checkpoint; deadlines/disable/action-count exclusions;
+explicit checkpoint/busy/dialog deferral; controlled temporary-path write failure,
+30second backoff and successful retry; isolated whitelisted observation-only
+change; exact manual/step-file hashes and scene edit state. Actual SIGKILL, no
+graceful hooks, original writer cache offline; normal production startup restores
+course/session/step, exact editor UI/observations and final composition. New-session
+marker reset, clean Leave's removed context and whole-scene Previous pass. A first
+implementation omitted the playhead from the comparison; strict queued-checkpoint
+assertion caught frame-only loss. Added frame to the comparison, kept all original
+assertions and retained failed logs. Proof lesson-autosave-final/verification.json.
+
+Existing112lesson-recovery suite passes including corrupt-latest fallback, legacy/
+invalid/missing context, normal personal Save and real48frameH264 exact input.
+Ordinary scheduling test exposed2stale expectations, reproduced unchanged on
+33bf889 via externally staged exact baseline app/scene (no checkout mutation).
+A no-op exposure creates no history, so Undo legitimately removes the preceding
+real stroke. Test now asserts no new entry, real stroke Undo/Redo counts, then
+checkpoints before the independent layer-count case. Corrected41checks pass;
+wrapper gains explicit guarded Linux display/output support while preserving
+Windows private receipts. Baseline provenance/failures retained in audit folders.
+Python312run311pass1existing independent-MMD-reader skip.
+
+All graphics owned dummy104/Dummy audio, not owner's desktop. Historical tracked
+outputs backed up, fresh evidence retained outside checkout and exact HEAD output
+bytes restored. No original art/manual project, owner Windows install, deployment
+or frozen web edits. No new native/device/power-loss/artist or full-product claim.
+Docs lesson_recovery.md and recovery_schedule.md explain time versus action mode
+and remaining lesson retention/concurrency/local-history requirements. Full goal
+remains unfinished; this increment is ready for commit/push and one result message.

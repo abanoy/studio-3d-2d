@@ -211,3 +211,9 @@ same scene/layer, with immutable copied pixels and independent editable pastes.
 60targeted checks and existing161timing/39drawing-history/37animation-clip checks
 pass. See [drawing clipboard](drawing_clipboard.md). Cross-track semantics and
 larger-project memory remain separate; no format or cel-budget change.
+
+Timed lesson protection now also captures changed teacher state/playhead after a
+clean manual Save, without scene dirty/Undo/action-count changes.33new writer/
+normal-startup checks, existing112lesson-recovery and corrected41ordinary schedule
+checks pass. See [scheduling scope](lesson_recovery.md); no second timer, schema
+change, native Windows/power-loss or full-product acceptance claim.

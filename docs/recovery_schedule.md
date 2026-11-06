@@ -32,6 +32,13 @@ the current revision. Edits made after an asynchronous save snapshot remain dirt
 and counted. New/Open begin a fresh document count. A failed Save does not consume
 pending edits. Project/model/world/HAS schemas and legacy loading are unchanged.
 
+During a lesson, minute-based protection can also save changed teacher state and
+playhead after a manual Save has left the scene clean. It does not mark the scene
+dirty, create Undo or count navigation as authored edits. Action mode keeps its
+existing edit threshold; Checkpoint now can protect pending lesson state at once
+when idle. Only a successful checkpoint acknowledges the teacher state, so failed
+writes retain it for retry. See [lesson recovery](lesson_recovery.md).
+
 `python -u tests/verify_recovery_schedule.py` runs the real hidden app. It routes
 Advanced controls and a multi-segment stroke, checks meaningful changes/no-ops,
 Undo/Redo, all interaction guards, the natural timer, disable/re-enable, explicit

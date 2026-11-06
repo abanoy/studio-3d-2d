@@ -24,11 +24,21 @@ falls back to an earlier valid scene and that generation's matching lesson
 context. Startup reattachment does not rewrite lesson progress or manual HAS.
 
 This uses the existing recovery timer, edit threshold and interaction guards.
-It does not add a second periodic lesson autosave: changes after the latest
-successful checkpoint may still be lost, and teacher-only navigation/observations
-do not independently schedule a scene checkpoint. Previous depends on the local
-lesson checkpoint folders remaining readable. Retention, concurrent lesson
-writers, native Windows power-loss behavior and artist acceptance remain open.
+Timed recovery also protects changed lesson state after a manual Save, while
+the scene itself is clean. Its comparison includes the teacher context and
+playhead. Successful checkpoints remember that comparison; unchanged state does
+not create repeated copies. Leaving a lesson can checkpoint the removed teacher
+context too. New/Open resets the comparison for the next document.
+
+This uses the existing one-second timer and selected minute deadline, not another
+lesson timer. Disable, interaction guards and failed-write backoff still apply.
+Checkpoint now bypasses scheduling while retaining interaction guards. Teacher
+navigation does not dirty the scene, add Undo or count as scene edits: in action
+mode it waits for the ordinary edit threshold or an explicit checkpoint. Pending
+lesson changes survive a failed checkpoint and are acknowledged only on success.
+Changes after the last successful checkpoint may still be lost. Previous depends
+on local lesson folders remaining readable. Retention, concurrent lesson writers,
+native Windows power-loss behavior and artist acceptance remain open.
 
 Reproduce with pinned Godot and FFmpeg activated:
 
@@ -60,3 +70,22 @@ and normal startup recovery 147 checks across 15 cases. Their real movies and
 audio assertions remain intact. Python discovery runs 312 tests: 311 pass and
 one existing optional independent MMD reader test skips. These scoped checks do
 not establish full product or native/device/artist acceptance.
+
+The additional clean-scene test runs with
+`python tests/verify_lesson_autosave.py --isolated-display :104 --output /absolute/new/audit-folder`.
+All 33 fresh checks pass: 22 writer and 11 normal-startup checks cover the natural timer,
+playhead-only changes, an isolated whitelisted-observation fixture, unchanged
+state, deadlines, disable, action-mode counting, busy/dialog guards, a controlled
+failed write/backoff/retry, manual/step-file preservation, actual SIGKILL and cold
+startup with writer cache unavailable. Session reset, clean lesson removal and
+whole-scene Previous also pass. Scene dirty/revision/history remain unchanged
+during teacher-only protection. Proof: `/workspace/has-handoff-audit/lesson-autosave-final/verification.json`.
+
+The existing 112 lesson-recovery checks pass again, including real MP4 input and
+corrupt-latest fallback. The ordinary scheduling test now passes 41 checks and is
+portable with an explicit private display. Its old no-op-Undo assumption also
+failed on unchanged `33bf889`: an unchanged exposure no longer creates an Undo entry,
+so Undo correctly reaches the real preceding stroke. The corrected test asserts
+unchanged history for the no-op, then real stroke Undo/Redo counts and resets the
+threshold before testing layer changes. Baseline and failed logs are retained
+under `lesson-autosave-schedule-baseline` and `lesson-autosave-schedule-regression`.

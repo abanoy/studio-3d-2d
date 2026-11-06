@@ -152,6 +152,7 @@ var recovery_root := ""
 var recovery_session := ""
 var recovery_revision := 0
 var checkpoint_revision := -1
+var checkpoint_lesson_signature := ""
 var autosave_due := 0
 var autosave_enabled: CheckButton
 var autosave_interval: SpinBox
@@ -2113,6 +2114,7 @@ func begin_recovery_session() -> void:
 	if timeline:timeline.cancel_cel()
 	if timeline_navigation:timeline_navigation.sync()
 	checkpoint_revision = -1
+	checkpoint_lesson_signature = ""
 	reset_recovery_schedule()
 	refresh_recovery_schedule(false)
 
@@ -2147,7 +2149,10 @@ func autosave_tick(force := false) -> void:
 	# Serialize journal writers without waiting on the UI thread.
 	if recovery_preview.busy():return
 	if not autosave_enabled.button_pressed and not force: return
-	if not dirty or recovery_revision == checkpoint_revision:recovery_checkpoint_requested=false;return
+	# Lesson view/progress can change after Save without editing scene content.
+	var lesson_context: Dictionary=tutorials.recovery_context() if tutorials else {}
+	var lesson_signature := JSON.stringify({"lesson":lesson_context,"frame":frame},"",true,true) if not lesson_context.is_empty() else ""
+	if (not dirty or recovery_revision == checkpoint_revision) and lesson_signature==checkpoint_lesson_signature:recovery_checkpoint_requested=false;return
 	if physics_editor and physics_editor.is_running():return
 	if drawing or navigating or playing or exporting or pose_editor.dragging or timeline and (not timeline.moving_id.is_empty() or timeline.audio_gesture_active() or timeline.cel_gesture_active()): return
 	if has_dialog(self): return
@@ -2160,10 +2165,11 @@ func autosave_tick(force := false) -> void:
 	autosave_due = Time.get_ticks_msec() + int(autosave_interval.value * 60000)
 	var started := Time.get_ticks_usec()
 	var snapshot:=project_snapshot()
-	var error := Recovery.checkpoint(recovery_root,recovery_session,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,has_project.path if not has_project.path.is_empty() else project_folder,recovery_revision,snapshot.get("model",{}),snapshot.world,snapshot.palette,snapshot.sequence_graph,snapshot.get("sequence_context",{}),snapshot.get("reference_sheet",{}),tutorials.recovery_context() if tutorials else {})
+	var error := Recovery.checkpoint(recovery_root,recovery_session,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,has_project.path if not has_project.path.is_empty() else project_folder,recovery_revision,snapshot.get("model",{}),snapshot.world,snapshot.palette,snapshot.sequence_graph,snapshot.get("sequence_context",{}),snapshot.get("reference_sheet",{}),lesson_context)
 	last_recovery_ms = (Time.get_ticks_usec() - started) / 1000.0
 	if error.is_empty():
 		checkpoint_revision = recovery_revision
+		checkpoint_lesson_signature = lesson_signature
 		autosave_actions=0;autosave_retry_due=0
 		recovery_status.text = "Recovery copy saved"
 		var folder:=recovery_root.path_join(recovery_session)
