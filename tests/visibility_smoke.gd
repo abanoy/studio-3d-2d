@@ -33,10 +33,11 @@ func energy(image: Image, background: Image) -> float:
 	return total
 
 func run() -> void:
-	var folder:=ProjectSettings.globalize_path("res://output/visibility/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
+	var args:=OS.get_cmdline_user_args()
+	var folder: String=args[0] if not args.is_empty() else ProjectSettings.globalize_path("res://output/visibility/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
 	var asset:=folder.path_join("actor.glb");SceneIO.make_pose_fixture(asset)
 	var digest:=FileAccess.get_sha256(asset)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.display_prefs_path=folder.path_join("prefs.cfg");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settled()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	check(app.video.visibility_fade_ms==300 and not app.advanced_mode,"new Simple project defaults to300ms visibility fades")
 	app.pose_editor.add_model(asset)
@@ -105,7 +106,7 @@ func run() -> void:
 	app.undo();check(rig.visible_at(40),"visibility-key removal is undoable")
 	app.change_visibility_fade(300)
 	app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
-	var wav:=ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")
+	var wav: String=args[1] if args.size()>1 else ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")
 	if FileAccess.file_exists(wav):
 		check(app.import_audio(wav).is_empty(),"fade fixture imports independent audio")
 		app.audio_clip.start_frame=24;app.audio_clip.gain_db=-6;app.rebuild_audio()
@@ -172,5 +173,5 @@ func run() -> void:
 	app.new_project();app.has_project.open_file(legacy_has);await wait_job(app.has_project);rig=app.renderer.active_model()
 	check(rig!=null and rig.data.format==Track.FORMAT and not rig.visible_at(40),"legacy packed HAS retains newly authored visibility keys")
 	var report:={"checks":checks,"failures":failures,"folder":folder,"project":project,"movie":movie,"full_energy":full_energy,"partial_energy":partial_energy,"native_samples":native_samples}
-	var file:=FileAccess.open(ProjectSettings.globalize_path("res://output/visibility-result.json"),FileAccess.WRITE);file.store_string(JSON.stringify(report));file.close()
+	var file:=FileAccess.open(folder.path_join("result.json") if not args.is_empty() else ProjectSettings.globalize_path("res://output/visibility-result.json"),FileAccess.WRITE);file.store_string(JSON.stringify(report));file.close()
 	print("VISIBILITY_SMOKE "+JSON.stringify(report));app.queue_free();await process_frame;quit(0 if failures==0 else 1)

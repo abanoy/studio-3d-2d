@@ -33,3 +33,26 @@ movie. These probes do not establish physical mouse/tablet or Windows acceptance
 Session proof is outside the checkout under
 `/workspace/has-handoff-audit/private-display-final/verification.json`,
 `private-display-final-color`, and `private-display-python-all.log`.
+
+The visibility and World/Local recording commands also accept an isolated run
+folder and use the configured FFmpeg/ffprobe paths:
+
+```
+python tests/verify_visibility.py --isolated-display :103 --output /tmp/has-visibility-new
+python tests/verify_physics_recording.py --isolated-display :103 --output /tmp/has-recording-new
+```
+
+Each folder must be new. Both wrappers generate their own original WAV fixture,
+keep preferences/recents/recovery/results local to the run, and preserve explicit
+missing-native skips. Explicit `--output` avoids the historical shared report
+files. Omitting it uses a unique folder and also refreshes the old default report
+paths for downstream Windows suites. Windows graphical runs retain private
+desktop receipt checks; Linux uses the display guard. The raw GDScript scenarios
+still support their original no-argument full-verifier paths.
+
+Fresh2026-11-06 private103 runs passed both explicit and default output modes:
+47visibility and17domain+48recording checks with48frame H264/AAC, one-second
+cue onset1.0000417s, source-WAV hashes unchanged and3/5native skips respectively.
+Default reports matched their new per-run results. Full Python312run311pass with
+one existing independent-reader skip. This is test portability/isolation work;
+application behavior and saved formats are unchanged.

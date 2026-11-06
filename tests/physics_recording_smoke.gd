@@ -55,15 +55,16 @@ func binding_error(simulation) -> float:
 		error=maxf(error,actual.origin.distance_to(expected.origin))
 	return error
 func run() -> void:
-	var folder:=ProjectSettings.globalize_path("res://output/physics-recording/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
+	var args:=OS.get_cmdline_user_args()
+	var folder: String=args[0] if not args.is_empty() else ProjectSettings.globalize_path("res://output/physics-recording/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
 	var box:=folder.path_join("box.glb");var arm:=folder.path_join("arm.glb");box_asset(box);Fixture.create(arm)
 	var source_hashes:={box:FileAccess.get_sha256(box),arm:FileAccess.get_sha256(arm)}
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.display_prefs_path=folder.path_join("prefs.cfg");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settled()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache");app.load_demo_room();app.mode.select(1);app.change_mode(1)
 	app.renderer.camera.position=Vector3(4,3,7);app.renderer.camera.look_at(Vector3(0,0.7,0));app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,60)]
 	app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
 	var paint: PackedByteArray=Drawing.cel_at(app.layers[1],0).image.get_data()
-	var wav:=ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav");var audio_tested:=FileAccess.file_exists(wav)
+	var wav: String=args[1] if args.size()>1 else ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav");var audio_tested:=FileAccess.file_exists(wav)
 	if audio_tested:app.import_audio(wav);app.audio_clip.start_frame=24;app.audio_clip.gain_db=-6;app.rebuild_audio()
 	var audio_before: Dictionary=app.audio_clip.duplicate(true);var shots: Array=app.keys.duplicate(true)
 	var boxes: Array[String]=[]
@@ -269,5 +270,5 @@ func run() -> void:
 	while record.active and record.last_frame<2:await process_frame
 	check(record.active,"owned application teardown is exercised with an active unfinished recording")
 	var result:={"checks":checks,"failures":failures,"folder":folder,"project":project,"movie":movie,"audio":audio_tested,"world_contacts":contacts.size(),"horizontal_displacement":displacement,"max_sample_ms":capture_ms,"metadata_estimate":capture_bytes,"velocity_error":velocity_error,"native_models":native_ids.size(),"native_metrics":native_metrics,"vrm_samples":vrm_names}
-	var output:=FileAccess.open("res://output/physics-recording-result.json",FileAccess.WRITE);output.store_string(JSON.stringify(result));output.close()
+	var output:=FileAccess.open(folder.path_join("result.json") if not args.is_empty() else "res://output/physics-recording-result.json",FileAccess.WRITE);output.store_string(JSON.stringify(result));output.close()
 	print("PHYSICS_RECORDING "+JSON.stringify(result));app.free();quit(0 if failures==0 else 1)

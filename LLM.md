@@ -1125,3 +1125,37 @@ output-backup outside checkout and restored exactly from HEAD. All graphical
 runs used guarded owned private102/Dummy audio, no owner desktop. No deployment,
 native-asset redistribution or web changes. Artist/Windows/native/physical gates
 and broad remaining feature requirements stay open. Continuous goal active.
+
+2026-11-06 UTC — reproducible visibility and recording cloud commands
+
+Ported tests/verify_visibility.py and verify_physics_recording.py to configured
+FFmpeg/ffprobe, explicit Linux --isolated-display guard and optional --output.
+Each run generates its own original44100Hz WAV and fresh unique folder. Engine
+scenarios accept folder/WAV arguments and isolate preferences/recents/recovery/
+results there; old no-argument full-verifier paths preserved. Windows keeps
+private launcher plus explicit receipt validation. All existing engine
+assertions/native availability checks retained; no production/schema change.
+
+Downstream body-animation/curves wrappers read the historical flat
+physics-recording-verification.json. Default command mode therefore refreshes
+compatible global result/verification reports (plus visibility default log);
+explicit --output writes only run-local reports. Both modes actually tested,
+default alias folder/movie/failure values match corresponding per-run results.
+Not a mocked/default-path-only assertion. New private dummy103 was provisioned
+before the previous owned display session expired; guarded103 used throughout.
+
+Explicit-output runs: visibility47; recording17domain+48app, each with actual
+48frame1080p24 H264/AAC and onset1.0000416667sec. Original generated WAV hashes
+unchanged.3missing native visibility and5missing native/VRM recording fixtures
+explicitly skip. Default-output reruns pass same counts/movie/audio assertions,
+with copied proof visibility-portable-default-proof.json and physics-recording-
+portable-default-proof.json under /workspace/has-handoff-audit. Explicit proof:
+visibility-portable-accepted/verification.json and recording-portable-accepted/
+verification.json. Full final Python312run311pass1existing independent-reader
+skip (portable-gates-python.log), including private-display guard coverage of
+all26explicit GUI wrappers. Windows receipt branch is retained/strengthened,
+not a new Windows execution claim. See docs/private_linux_tests.md.
+
+Historical tracked output changes from default-mode tests are backed up outside
+checkout and restored exactly; generated proof is retained. Independent work
+toward the complete specification continues; no full-product completion claim.
