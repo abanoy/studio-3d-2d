@@ -2,13 +2,25 @@ extends RefCounted
 const RasterOwner=preload("res://src/cel_raster_owner.gd")
 # Eager cel.image remains compatible. Cold owners are staged opt-in records;
 # callers must handle null rather than substituting missing/corrupt artwork.
-static func image(cel: Dictionary) -> Image:
+static func raster_source(cel: Dictionary) -> RefCounted:
 	if cel.has("raster_owner"):
-		if cel.has("image") or not cel.raster_owner is RasterOwner:return null
-		var result: Dictionary=cel.raster_owner.read()
-		return null if result.has("error") else result.image
+		return cel.raster_owner if not cel.has("image") and cel.raster_owner is RasterOwner else null
 	var current=cel.get("image",null)
 	return current if current is Image else null
+static func raster_size(cel: Dictionary) -> Vector2i:
+	var source:=raster_source(cel)
+	return source.dimensions() if source is RasterOwner else source.get_size() if source is Image else Vector2i.ZERO
+static func raster_error(cel: Dictionary) -> String:
+	var source:=raster_source(cel)
+	if source is RasterOwner:return source.integrity_error()
+	return "" if source is Image and not source.is_empty() else "Drawing has no readable pixels."
+static func read_image(cel: Dictionary) -> Dictionary:
+	var source:=raster_source(cel)
+	if source is RasterOwner:return source.read()
+	return {"image":source} if source is Image and not source.is_empty() else {"error":"Drawing has no readable pixels."}
+static func image(cel: Dictionary) -> Image:
+	var result:=read_image(cel)
+	return null if result.has("error") else result.image
 static func edit_image(cel: Dictionary,expected_token: Array=[],borrowed: Image=null) -> Dictionary:
 	if cel.has("raster_owner"):
 		if cel.has("image") or not cel.raster_owner is RasterOwner:return {"error":"Ambiguous or invalid drawing ownership."}
@@ -134,15 +146,17 @@ static func stroke(image: Image, from: Vector2, to: Vector2, radius: float, colo
 	touch(image,rect)
 	return rect
 
-static func composite(layers: Array, frame: int, width: int, height: int) -> Image:
-	var result := blank(width, height)
+static func composite_result(layers: Array,frame: int,width: int,height: int) -> Dictionary:
+	var result:=blank(width,height)
 	for layer in layers:
 		var amount: float=layer.get("opacity",1.0)
-		if not layer.visible or amount==0:
-			continue
-		var cel := cel_at(layer, frame)
-		if not cel.is_empty():
-			var source: Image=image(cel)
-			if source==null:return null
-			result.blend_rect(layer_image(source,amount), Rect2i(0, 0, width, height), Vector2i.ZERO)
-	return result
+		if not layer.visible or amount==0:continue
+		var cel:=cel_at(layer,frame)
+		if cel.is_empty():continue
+		var pixels:=read_image(cel)
+		if pixels.has("error"):return {"error":"Drawing %s at frame %d: %s" % [str(cel.get("id","")),frame,pixels.error]}
+		result.blend_rect(layer_image(pixels.image,amount),Rect2i(0,0,width,height),Vector2i.ZERO)
+	return {"image":result}
+static func composite(layers: Array,frame: int,width: int,height: int) -> Image:
+	var result:=composite_result(layers,frame,width,height)
+	return null if result.has("error") else result.image

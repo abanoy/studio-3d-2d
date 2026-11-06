@@ -16,6 +16,11 @@ static func from_image(image: Image) -> Dictionary:
 	if image==null or image.is_empty() or image.is_compressed() or image.get_format()!=Image.FORMAT_RGBA8 or image.has_mipmaps() or image.get_width()>1920 or image.get_height()>1080:return {"error":"Invalid editable drawing owner."}
 	var owner=load("res://src/cel_raster_owner.gd").new();owner._hot=image
 	return {"owner":owner}
+func dimensions() -> Vector2i:
+	return _hot.get_size() if _hot!=null else _cold._size if _cold is Snapshot else Vector2i.ZERO
+func integrity_error() -> String:
+	if _hot!=null:return "" if not _hot.is_empty() else "Drawing owner has no pixels."
+	return _cold.verify() if _cold is Snapshot else "Drawing owner has no pixels."
 func token() -> Array:
 	return [get_instance_id(),int(_hot.get_meta("studio_pixels_revision",0)) if _hot!=null else 0]
 func read() -> Dictionary:

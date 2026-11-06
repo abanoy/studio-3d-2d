@@ -67,6 +67,7 @@ var history: Array = []
 var redo_history: Array = []
 var history_bytes := 0
 var dirty := false
+var raster_preview_error:=""
 var drawing_overlay_cache=preload("res://src/drawing_overlay_cache.gd").new()
 var overlay_dirty := true
 var exporting := false
@@ -1065,9 +1066,13 @@ func _process(delta: float) -> void:
 	if overlay_dirty:
 		var start := Time.get_ticks_usec()
 		var sampled: Dictionary=drawing_overlay_cache.sample(layers,frame,video.width,video.height,recovery_revision)
-		var overlay: Image=sampled.image
-		if canvas.overlay == null: canvas.overlay = ImageTexture.create_from_image(overlay)
-		elif sampled.changed: canvas.overlay.update(overlay)
+		if sampled.has("error"):
+			raster_preview_error=sampled.error;stop();message(raster_preview_error+" Last valid preview retained.")
+		else:
+			raster_preview_error=""
+			var overlay: Image=sampled.image
+			if canvas.overlay == null: canvas.overlay = ImageTexture.create_from_image(overlay)
+			elif sampled.changed: canvas.overlay.update(overlay)
 		elapsed_overlay_ms = (Time.get_ticks_usec() - start) / 1000.0
 		canvas.queue_redraw()
 		overlay_dirty = false
@@ -1078,6 +1083,7 @@ func _process(delta: float) -> void:
 func canvas_input(event: InputEvent, point: Vector2) -> void:
 	if home and home.visible:return
 	if exporting or playing: return
+	if not raster_preview_error.is_empty():message(raster_preview_error+" Reopen a valid drawing before editing.");return
 	if mode.selected in [1,2] and navigation_scheme=="orbit" and event is InputEventMouseButton and event.pressed and event.ctrl_pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
 		var active: bool=orbit_control.active;var action: String=orbit_control.action
 		var focal_point: Vector3=orbit_control.pivot if active else orbit_pivot()
@@ -1952,7 +1958,9 @@ func export_frames(parent: String,images_only: bool,drawings_only: bool) -> Stri
 				var nested: Image=await renderer.sequence_runtime.render(renderer.sequence_owner,n,true,true)
 				if nested==null:error=renderer.sequence_runtime.last_error;break
 				image.blend_rect(nested,Rect2i(0,0,int(source_video.width),int(source_video.height)),Vector2i.ZERO)
-			image.blend_rect(Drawing.composite(export_layers,n,int(source_video.width),int(source_video.height)),Rect2i(0,0,int(source_video.width),int(source_video.height)),Vector2i.ZERO)
+			var ink:=Drawing.composite_result(export_layers,n,int(source_video.width),int(source_video.height))
+			if ink.has("error"):error=ink.error;break
+			image.blend_rect(ink.image,Rect2i(0,0,int(source_video.width),int(source_video.height)),Vector2i.ZERO)
 			await get_tree().process_frame
 		else:image=await renderer.capture(export_keys, export_layers, n, true)
 		if image==null:
@@ -2217,7 +2225,9 @@ func finish_recovery_preview(folder: String,digest: String,at: int,revision: int
 		if not layer.visible:continue
 		var cel:=Drawing.cel_at(layer,at)
 		if cel.is_empty():continue
-		var copied: Image=cel.image.duplicate();copied.set_meta("studio_layer_opacity",float(layer.get("opacity",1.0)));overlays.append(copied)
+		var pixels:=Drawing.read_image(cel)
+		if pixels.has("error"):recovery_status.text="Recovery saved; preview unavailable";return
+		var copied: Image=pixels.image.duplicate();copied.set_meta("studio_layer_opacity",float(layer.get("opacity",1.0)));overlays.append(copied)
 	var preview_error: String=recovery_preview.start(folder,digest,image,overlays)
 	last_recovery_preview_capture_ms=(Time.get_ticks_usec()-started)/1000.0
 	if not preview_error.is_empty():recovery_status.text="Recovery saved; preview unavailable"

@@ -282,7 +282,9 @@ func visible_ink() -> bool:
 	for layer in app.layers:
 		if layer.name!="Ink" or not layer.visible or float(layer.get("opacity",1.0))<=0:continue
 		var cel:=Drawing.cel_at(layer,24)
-		return not cel.is_empty() and Drawing.layer_image(cel.image,float(layer.get("opacity",1.0))).get_used_rect().get_area()>=16
+		if cel.is_empty():return false
+		var pixels:=Drawing.read_image(cel)
+		return not pixels.has("error") and Drawing.layer_image(pixels.image,float(layer.get("opacity",1.0))).get_used_rect().get_area()>=16
 	return false
 
 func raised_arm(rig) -> bool:

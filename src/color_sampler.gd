@@ -64,7 +64,9 @@ static func drawing_pixel(layers: Array,at: int,point: Vector2i,background: Imag
 		if raw_index<0 and not layer.visible:continue
 		var cel:=Drawing.cel_at(layer,at)
 		if cel.is_empty():continue
-		var image: Image=cel.image
+		var pixels:=Drawing.read_image(cel)
+		if pixels.has("error"):return pixels
+		var image: Image=pixels.image
 		if not Rect2i(Vector2i.ZERO,image.get_size()).has_point(point):continue
 		var pixel:=image.get_region(Rect2i(point,Vector2i.ONE))
 		if raw_index>=0:return {"color":pixel.get_pixel(0,0)}
@@ -108,6 +110,7 @@ func finish_capture() -> void:
 
 func apply_result(result: Dictionary) -> void:
 	var request:=context.duplicate();context={};refresh()
+	if result.has("error"):app.message(result.error+" Drawing color kept.");return
 	if result.is_empty():app.message("No visible drawing color here. Choose another point or pick from View + drawings.");return
 	var color: Color=result.color
 	if color.a==0:app.message("This original pixel is transparent; drawing color kept.");return

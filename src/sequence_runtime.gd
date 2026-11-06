@@ -62,8 +62,7 @@ func picture_stamp(asset: Dictionary,frame: int,final: bool,drawings_only: bool)
 		if not layer.visible or opacity==0:continue
 		var cel:=Drawing.cel_at(layer,frame)
 		if cel.is_empty():continue
-		var image: Image=cel.image
-		state.append([image.get_instance_id(),image.get_meta("studio_pixels_revision",0),opacity])
+		state.append(Drawing.raster_token(cel)+[opacity])
 	return JSON.stringify(state,"",true,true)
 func masked_picture(clip: Dictionary,picture: Dictionary) -> Texture2D:
 	var mask: Dictionary=clip.get("mask",{})
@@ -103,8 +102,9 @@ func render_clips(owner: String,frame: int,final: bool,drawings_only: bool) -> I
 			var children: Image=await render_clips(clip.asset_id,local,final,drawings_only)
 			if children==null:return null
 			image.blend_rect(children,Rect2i(0,0,1920,1080),Vector2i.ZERO)
-			var ink:=Drawing.composite(asset.scene.layers,local,1920,1080)
-			image.blend_rect(ink,Rect2i(0,0,1920,1080),Vector2i.ZERO)
+			var ink:=Drawing.composite_result(asset.scene.layers,local,1920,1080)
+			if ink.has("error"):last_error=ink.error;return null
+			image.blend_rect(ink.image,Rect2i(0,0,1920,1080),Vector2i.ZERO)
 			var premultiplied: Image=image.duplicate();premultiplied.premultiply_alpha()
 			if graph.format!=Graph.FORMAT:premultiplied.generate_mipmaps()
 			cached={"stamp":stamp,"image":image,"texture":ImageTexture.create_from_image(premultiplied)}

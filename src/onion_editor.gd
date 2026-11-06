@@ -39,8 +39,11 @@ func refresh() -> void:
 	for index in range(2):
 		var cel: Dictionary=selected.previous if index==0 else selected.next;var view:=views[index]
 		if cel.is_empty():view.hide();view.texture=null;tokens[index]="";continue
-		var image: Image=cel.image;var token:=str(image.get_instance_id())+":"+str(image.get_meta("studio_pixels_revision",0))
-		if token!=tokens[index]:view.texture=ImageTexture.create_from_image(image);tokens[index]=token;uploads+=1;view.queue_redraw()
+		var token:=JSON.stringify(Drawing.raster_token(cel))
+		if token!=tokens[index]:
+			var pixels:=Drawing.read_image(cel)
+			if pixels.has("error"):view.hide();view.texture=null;tokens[index]="";app.message(pixels.error);continue
+			view.texture=ImageTexture.create_from_image(pixels.image);tokens[index]=token;uploads+=1;view.queue_redraw()
 		var tint:=Color("58ccf0" if index==0 else "f080ad");tint.a=opacity.value/100.0*float(app.layers[app.active_layer].get("opacity",1.0));view.material.set_shader_parameter("ghost_color",tint)
 		if view.rect!=rect:view.rect=rect;view.queue_redraw()
 		view.show()

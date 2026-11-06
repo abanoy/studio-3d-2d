@@ -279,6 +279,7 @@ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 		var nested: Image=await sequence_runtime.render(sequence_owner,frame,final)
 		if nested==null:last_capture_error=sequence_runtime.last_error;return null
 		image.blend_rect(nested,Rect2i(Vector2i.ZERO,viewport.size),Vector2i.ZERO)
-	var overlay := Drawing.composite(layers, frame, image.get_width(), image.get_height())
-	image.blend_rect(overlay, Rect2i(Vector2i.ZERO, viewport.size), Vector2i.ZERO)
+	var overlay := Drawing.composite_result(layers, frame, image.get_width(), image.get_height())
+	if overlay.has("error"):last_capture_error=overlay.error;return null
+	image.blend_rect(overlay.image, Rect2i(Vector2i.ZERO, viewport.size), Vector2i.ZERO)
 	return image

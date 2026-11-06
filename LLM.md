@@ -1821,3 +1821,50 @@ propagation migration plus actual adopted-cold GUI/persistence/recovery/latency
 acceptance remain required. MEM-02 partial/open, limits unchanged. Next migrate
 readonly rendering/sampler/onion consumers and propagate missing/corrupt raster
 errors before working through write pinning and streaming save. Full goal active.
+
+
+2026-11-06 — checked readonly cold raster consumers (MEM-02 partial)
+
+Migrated preview, onion, sampler, tutorial ink observation, recovery-preview capture
+and final render to checked raster reads. Nested picture signatures use stable
+owner/revision tokens and checked composites on rebuild. Preview cache uses weak
+logical owner/Image identity and non-hydrating dimensions/revisions, validates
+active cold payload before cache hits, and retains held composites after decoded
+cache eviction. Onion upload identity follows logical revisions, not temporary
+materialized Image IDs. Legacy eager keys/pixels remain equivalent.
+
+Drawing.composite_result returns named cel/frame errors; compatibility composite
+returns null on failure. Full/movie and transparent PNG loops propagate failures
+without replacement art. Sampler preserves pen color on error. Preview error stops
+playback, labels retained last valid picture and guards canvas editing until a
+valid preview clears it. Recovery can keep a saved checkpoint without inventing
+an unreadable preview. Normal Storage adoption remains eager.
+
+131domain checks pass (96previous+15readonly+20existing overlay). Actual private106
+fixture injects cold owners in4original heldHDcels;14GPU checks pass: exact eager/
+cold final frames and preview, onion textures/held upload reuse, actual raw picker,
+movie inputs, transparent PNG, unpinned owners/cache cap/source preservation and
+corrupt preview/PNG/MP4 refusal preserving prior finished movie. Independent
+ffprobe:48H2641920x1080frames,24fps,2seconds,AAC; frame24cue starts sample48043 vs48000.
+All48transparent PNG headers verified; failed sequence has no replacement PNG.
+Proof cel-raster-read-final-with-movie-refusal/verification.json under
+/workspace/has-handoff-audit. Initial new test previous-pixels local needed explicit
+PackedByteArray typing; fixed before successful execution. No assertions weakened.
+
+Existing readonly regressions:5nested rendering checks cover240frames and exactly
+2held-source builds;34sampler+34onion GUI checks pass with normal packed saves,
+recovery, guide-free movie inputs and UI interaction.3private native sampler project
+fixtures absent, explicitly skipped. Initial ad-hoc sampler launch omitted the
+existing wrapper's --demo-room flag, producing3expected-versus-empty-grid failures;
+inspected original wrapper, supplied documented room, reran unchanged assertions.
+No baseline/product bug inferred from that invalid launch. Original failure log
+retained; final guide-regressions/verification.json and prior sequence proof kept.
+Curated receipt docs/benchmarks/cel_raster_read_2026-11-06.json. No new whole-app
+memory/latency, hardware or native fidelity claim.
+
+Readonly cold fixture injection is NOT normal cold project adoption. Mutation
+pinning/selection/fill/clipboard and streaming save still need migration, followed
+by actual cold-adopted GUI Undo/save/reopen/abrupt recovery/nested-render/latency
+acceptance. MEM-02 partial/open, caps/schema/source files unchanged. Next is write
+ownership and durable persistence, not more readonly cache refinements. Full goal
+remains active, independently actionable and unfinished.

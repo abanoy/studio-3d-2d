@@ -128,3 +128,34 @@ recovery reservations and actual sequence-history budget passes. Independent
 rebuilt-owner equality decodes on demand, and editing one owner changes only its
 revision token. This advances consumer migration; remaining render/edit/save
 consumers and production cold adoption are still unfinished.
+
+## Readonly render consumer migration
+
+Preview, onion guides, color sampling, tutorial ink observation, recovery-preview
+capture and final renderer now use checked raster access. Nested rendering uses
+stable owner/revision picture signatures and checked composites on rebuild.
+Drawing composites preserve the original eager pixel path while returning a
+specific cel/frame error for unreadable pixels. Movie and transparent-PNG render
+loops propagate those errors and preserve completed outputs.
+
+The preview cache keeps weak logical source identities, so a held frame reuses
+its derived picture even after the decoded cold cache is cleared. Active cold
+payload integrity is checked before a preview cache hit. Onion uploads similarly
+follow stable logical revisions rather than transient materialized Image IDs.
+Sampler errors preserve the selected pen color. On preview failure, playback
+stops, editing is guarded, and the app explicitly labels its retained last valid
+preview. A later valid preview clears that error.
+
+`python tests/verify_cel_raster_read.py --isolated-display :106` runs the 131 domain
+checks and a private GPU fixture that explicitly injects cold owners into four
+original held cels. This is not enabled loader adoption. It checks exact eager/
+cold final frames, preview, onion textures, held-cache reuse, actual raw sampler,
+movie input and transparent PNG equality, independent original assets, unpinned
+readonly owners, bounded decoded cache, and corrupt-preview/PNG/movie refusal.
+Independent media inspection checks actual1080p24 H264/AAC,48frames/2seconds,
+frame24 cue timing and every PNG's dimensions. See the dated read-path receipt.
+
+Live brush/fill/selection/clipboard mutation and save consumers still require
+migration. Normal Storage loading remains eager until those paths and actual
+cold-adopted save/load/Undo/recovery/latency acceptance pass. Do not enable cold
+project adoption or increase limits based on these readonly checks.

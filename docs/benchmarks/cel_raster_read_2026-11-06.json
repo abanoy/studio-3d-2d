@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-06",
+  "base_commit": "2e845a0",
+  "scope": "Fixture-injected cold readonly GPU paths; normal loader adoption still eager. No cold GUI edit/save/recovery acceptance claim.",
+  "domain": {
+    "scope": "Opt-in cold raster staging foundation only; live cel storage remains eager. No app/Undo/GPU acceptance claim.",
+    "reports": {
+      "unit": {
+        "checks": 29,
+        "failures": 0
+      },
+      "read": {
+        "checks": 15,
+        "failures": 0
+      },
+      "overlay-regression": {
+        "checks": 20,
+        "failures": 0
+      },
+      "metadata": {
+        "checks": 14,
+        "failures": 0
+      },
+      "owner": {
+        "checks": 22,
+        "failures": 0
+      },
+      "reader-regression": {
+        "checks": 31,
+        "failures": 0
+      }
+    },
+    "source_sha256": {
+      "src/app.gd": "dd685c11d0f360b0a8a04275798fab120e97029a0b849ab42d3259578799c640",
+      "src/renderer.gd": "d7888ad718bdeb48b00d7685e20cc793fcbfd2092fa277850f87e4630ba0c7d6",
+      "src/color_sampler.gd": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+      "src/onion_editor.gd": "7895913586ce8ec7989485d62b0421ec9b4e5366eb650074c4386357cae2596d",
+      "src/sequence_runtime.gd": "ff708a9b0c0a15e97e63bfea6c6c1575c2941a701f865471c250629b0284533a",
+      "src/tutorials.gd": "dd2a6746afb98f4aa407a2f7c818be0b6f7bad7d415b8607360615131853b10f",
+      "src/drawing_overlay_cache.gd": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+      "tests/cel_raster_read_unit.gd": "ebdc572bcf2f93735540dc9f7cfad86e0b0428549e01fb9b3d66773db0375951",
+      "src/cel_timing_editor.gd": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+      "src/cel_patch.gd": "60b75f05e162f796041e8083d9c756eb8ade3f26cac9f2e12b61d38fe41b51bd",
+      "src/recovery.gd": "6b347166ccf77f146aa2b7851f8610bb6b260035f525da90ce657a8bf3e24cb2",
+      "src/layer_editor.gd": "1ec0e7003d369607cd38ef58cb6c566812b8cf9db0b72c9a77b3c2e44348c1c1",
+      "src/sequence_editor.gd": "385cc2e8860bf2658152e1477d5e13e85b0b7d71dfca068c187aea2d740d4390",
+      "tests/cel_raster_metadata_unit.gd": "e1ad5ae142dbbedf9570d4f78c8cb436791c73970dd3d97c8c0b57523991c6e8",
+      "src/drawing.gd": "405d409ac9c6ae44d1549928c6e9bd93c4047e5ac727d6d23c3abba573f575a0",
+      "src/cel_raster_owner.gd": "aeaf1176ba18159477f2dcb18e834d59e43229dc593a51d52f70836f70f35d06",
+      "tests/cel_raster_owner_unit.gd": "c12e7b941fc36dcb0411c7fa5c464115881b157e53c18b2514c763768f0722a9",
+      "src/cel_raster_reader.gd": "8a37d059fa223dd24bc35bcc61f68d9b5d066e4b2aa23ab4078e28432bf7e797",
+      "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+      "src/cel_raster_snapshot_cache.gd": "52420d38ee658a5c698f1e76a8752539991cd90fe227ab71281a875b62254247",
+      "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+      "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+    }
+  },
+  "app": {
+    "checks": 14,
+    "failures": 0
+  },
+  "media": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "24/1",
+    "nb_frames": "48",
+    "duration": "2.000000"
+  },
+  "decoded_onset_sample": 48043,
+  "transparent_png_frames": 48,
+  "source_sha256": {
+    "tests/cel_raster_read_smoke.gd": "c9fb076e0a368e990911f7712066f682fc75ac897c3b5919d59e4f2644269fd3",
+    "tests/verify_cel_raster_read.py": "04f1e99a6d185ee48e36f424511680ccff205de5aefadb12c414bf24235ea838"
+  },
+  "isolated_display": ":106",
+  "eager_regressions": {
+    "sampler": {
+      "checks": 34,
+      "failures": 0
+    },
+    "onion": {
+      "checks": 34,
+      "failures": 0
+    }
+  },
+  "nested_render_regression": {
+    "checks": 5,
+    "failures": 0,
+    "frames": 240,
+    "source_builds": 2,
+    "peak_cached_assets": 1,
+    "first_sha256": "b6bbefa8b6ae8f866f2dda65e0217ffbdd3e8703184fa8b1b31a0e7fadf6540d",
+    "last_sha256": "7406babede44805e77a0ff717025ad482d76ecb6693cca89753ab5b182d4a291"
+  },
+  "native_project_skips": 3,
+  "limits": "Fixture-injected readonly cold owners only. No cold loader adoption, GUI write pinning, durable cold project save/reopen, or hardware/native fidelity acceptance."
+}
