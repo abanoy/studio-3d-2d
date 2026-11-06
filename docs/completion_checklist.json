@@ -839,9 +839,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/cold_cel_rasters.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/cel_raster_owner.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/cel_raster_owner_unit.gd"
         }
       ],
-      "remaining": "Opt-in verified compressed cold snapshots and bounded decoded cache are implemented/measured for32distinct sparse/noise rasters; live Storage/app adoption remains eager. Migrate authoritative image/edit ownership, non-hydrating timing/history accounting, streaming saves/recovery and nested access; prove real Undo/cold persistence/GPU parity and acceptable latency before enabling or expanding limits.",
+      "remaining": "Cold snapshot/cache and authoritative owner/accessor contracts are implemented with sparse/noise measurements and domain brush/Undo/composite checks. Live Storage/app adoption remains eager. Migrate other direct Image consumers, non-hydrating timing/history accounting, streaming saves/recovery and nested access; verify real adopted-cold GUI edits/Undo/persistence/GPU parity and latency before enabling or expanding limits.",
       "external_dependencies": []
     },
     {
@@ -2008,7 +2016,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Cold snapshot/cache foundation and unique sparse/noise measurements exist. Implement the authoritative live-cel read/write ownership migration and app-level persistence/Undo/render tests before enabling it or raising limits."
+      "action": "Cold snapshots and live-cel owner/accessors are tested but not enabled in app adoption. Migrate remaining direct Image consumers and failure propagation; prove actual cold-adopted GUI editing/Undo/save/recovery/render parity before enabling or raising limits."
     },
     {
       "requirement": "MEM-01",

@@ -1,4 +1,34 @@
 extends RefCounted
+const RasterOwner=preload("res://src/cel_raster_owner.gd")
+# Eager cel.image remains compatible. Cold owners are staged opt-in records;
+# callers must handle null rather than substituting missing/corrupt artwork.
+static func image(cel: Dictionary) -> Image:
+	if cel.has("raster_owner"):
+		if cel.has("image") or not cel.raster_owner is RasterOwner:return null
+		var result: Dictionary=cel.raster_owner.read()
+		return null if result.has("error") else result.image
+	var current=cel.get("image",null)
+	return current if current is Image else null
+static func edit_image(cel: Dictionary,expected_token: Array=[],borrowed: Image=null) -> Dictionary:
+	if cel.has("raster_owner"):
+		if cel.has("image") or not cel.raster_owner is RasterOwner:return {"error":"Ambiguous or invalid drawing ownership."}
+		return cel.raster_owner.pin(expected_token,borrowed)
+	var current=image(cel)
+	if current==null:return {"error":"Drawing has no editable pixels."}
+	if not expected_token.is_empty() and expected_token!=raster_token(cel):return {"error":"Drawing pixels changed before editing."}
+	if borrowed!=null and not is_same(borrowed,current):return {"error":"Drawing edit image is stale."}
+	return {"image":current}
+static func raster_token(cel: Dictionary) -> Array:
+	if cel.has("raster_owner"):
+		return cel.raster_owner.token() if not cel.has("image") and cel.raster_owner is RasterOwner else []
+	var current=image(cel)
+	return [current.get_instance_id(),int(current.get_meta("studio_pixels_revision",0))] if current!=null else []
+static func raster_bytes(cel: Dictionary,decoded:=false) -> int:
+	if cel.has("raster_owner"):
+		if cel.has("image") or not cel.raster_owner is RasterOwner:return 0
+		return cel.raster_owner.decoded_bytes() if decoded else cel.raster_owner.retained_bytes()
+	var current=image(cel)
+	return current.get_data_size() if current!=null else 0
 static var opacity_cache: Array=[] # At most four derived full-HD rasters, never source ownership.
 static var opacity_pixels:=0
 static var opacity_builds:=0
@@ -69,6 +99,7 @@ static func insert(layer: Dictionary, frame: int, end: int, image: Image) -> Dic
 	for cel in layer.cels:
 		if cel.start == frame:
 			cel.image = image
+			cel.erase("raster_owner")
 			return cel
 		if cel.start < frame and cel.start + cel.duration > frame:
 			next = mini(next, cel.start + cel.duration)
@@ -111,5 +142,7 @@ static func composite(layers: Array, frame: int, width: int, height: int) -> Ima
 			continue
 		var cel := cel_at(layer, frame)
 		if not cel.is_empty():
-			result.blend_rect(layer_image(cel.image,amount), Rect2i(0, 0, width, height), Vector2i.ZERO)
+			var source: Image=image(cel)
+			if source==null:return null
+			result.blend_rect(layer_image(source,amount), Rect2i(0, 0, width, height), Vector2i.ZERO)
 	return result

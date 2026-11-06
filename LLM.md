@@ -1750,3 +1750,39 @@ integration gates in docs/cold_cel_rasters.md; MEM-02 remains partial/open with
 actual app/Undo/packed/cold/crash/GPU latency/parity tests still required. No new
 GUI/device/native acceptance claim. Next concrete work is that live-cel contract,
 not additional isolated cache polishing. Full goal remains active.
+
+
+2026-11-06 — authoritative cold/hot cel owner contract (MEM-02 partial)
+
+Added staged CelRasterOwner: cold reads return independent exact pixels; explicit
+pin retains one authoritative Image identity for legacy pixel Undo. Stable owner/
+revision tokens and byte accounting remain non-hydrating. Current-token selection
+may adopt its exact verified borrowed Image; modified/stale pixels refuse without
+mutation. Pin alone preserves revision, ordinary Drawing.touch advances it. Hot
+owners never automatically cool while pixel commands may retain that Image.
+Owner snapshots freeze worker/save pixels independently of subsequent edits.
+
+Drawing accessors support eager images or staged owners. Actual composite accepts
+both, including holds/opacity, and refuses missing/corrupt pixels as null. Existing
+start insertion removes stale owner when replacing pixels. Ambiguous image+owner
+records and mistyped handles refuse. Production Storage adoption remains eager;
+remaining direct Image users/error propagation must migrate before enabling cold.
+No schema, file format, canvas or resource-cap changes.
+
+22new owner checks pass (82total staging/reader domain), with real brush mutation
+and pixel-command Undo/Redo identity across cache clear, independent peers, worker
+snapshot, stale selection, non-hydrating metadata and actual composite equality.
+Initial test checkpoint local needed explicit Dictionary typing; fixed before
+successful runs. Existing154check private GUI clipboard/history suite passes:
+prior stroke Undo, running physics identity, actual GPU pixels/packed save/cold
+reader and H264/AAC movie. Manual HAS exact, writer cache offline. This GUI run
+uses eager live cels; it is not cold adoption acceptance. Owned105was unavailable
+and guard safely refused; provisioned owned106/Dummy, reran on new output folder.
+Proof cel-raster-owner-final-2/verification.json and
+cel-raster-owner-clipboard-private/verification.json under /workspace/has-handoff-audit;
+curated receipt docs/benchmarks/cel_raster_owner_2026-11-06.json.
+
+MEM-02 stays partial/open. Next migrate non-hydrating timing/history/recovery
+accounting, remaining rendering/mutation consumers and failure handling; then
+prove actual adopted-cold GUI edits/Undo/persistence/abrupt recovery/latency/parity
+before enabling. Full goal active, not globally blocked or complete.

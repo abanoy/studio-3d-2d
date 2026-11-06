@@ -1,0 +1,37 @@
+{
+  "scope": "Staged authoritative owner and Drawing accessor/composite contract. App adoption remains eager.",
+  "reports": {
+    "unit": {
+      "checks": 29,
+      "failures": 0
+    },
+    "owner": {
+      "checks": 22,
+      "failures": 0
+    },
+    "reader-regression": {
+      "checks": 31,
+      "failures": 0
+    }
+  },
+  "source_sha256": {
+    "src/drawing.gd": "b6e5a163be31a61cdf97c5dcab3efc19bfd14dd50177415a4a3ceb645f436b14",
+    "src/cel_raster_owner.gd": "8190fb8cecfcbf5ba4a7c29fd770e75918ff97a4b68c4334101bbae337b7ba79",
+    "tests/cel_raster_owner_unit.gd": "c12e7b941fc36dcb0411c7fa5c464115881b157e53c18b2514c763768f0722a9",
+    "src/cel_raster_reader.gd": "8a37d059fa223dd24bc35bcc61f68d9b5d066e4b2aa23ab4078e28432bf7e797",
+    "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+    "src/cel_raster_snapshot_cache.gd": "52420d38ee658a5c698f1e76a8752539991cd90fe227ab71281a875b62254247",
+    "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+    "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+  },
+  "base_commit": "e507ed4",
+  "date": "2026-11-06",
+  "eager_app_regression": {
+    "checks": 154,
+    "failures": 0,
+    "isolated_display": ":106",
+    "manual_has_unchanged": true,
+    "writer_cache_unavailable_for_cold_open": true,
+    "scope": "Existing eager-app clipboard/history, original stroke Undo, running physics isolation, exact GPU inputs, normal packed/cold saves and actual H264/AAC movie. Does not establish adopted-cold GUI editing."
+  }
+}

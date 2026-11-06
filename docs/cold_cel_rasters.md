@@ -74,3 +74,35 @@ the authoritative live-cel accessor/write ownership contract, then verify actual
 brush/fill/Undo, onion/sampler, parent/child scenes, normal packed saves, cold
 readers, abrupt recovery and preview/movie equality before enabling cold storage.
 Keep MEM-02 partial and resource limits unchanged throughout that migration.
+
+## Authoritative live-cel owner contract (staged)
+
+`CelRasterOwner` now provides the next migration primitive. A cold owner references
+an immutable snapshot and a caller-owned decoded cache. A read returns independent
+pixels without pinning them. Explicit `pin()` makes one Image authoritative and
+retains its exact identity, so existing pixel Undo commands continue to address
+that Image even after decoded-cache eviction. A hot owner read borrows that
+writable authoritative Image; ordinary readers must not mutate it.
+
+Tokens contain stable owner identity and the live pixel revision. Identity/byte
+queries do not hydrate cold pixels. Pinning unchanged pixels alone does not
+advance the token. Selection may adopt an already borrowed image only with the
+current token, exact dimensions/format/pixels and original revision; stale or
+modified previews refuse atomically. An owned hot Image is never automatically
+cooled while legacy Undo may still mutate it. A new immutable snapshot can be
+captured for a worker/save without changing subsequent live edits.
+
+Drawing now exposes `image`, `edit_image`, `raster_token` and `raster_bytes` accessors.
+Its real composite accepts staged owner records or legacy eager records, and
+existing-start insertion clears stale owner representation when replacing pixels.
+A record containing both `image` and `raster_owner` refuses as ambiguous. Missing
+or corrupt cold pixels return null/error instead of substituting a blank drawing.
+Callers must propagate that failure before enabling production adoption.
+
+The owner adds 22 headless checks to the verifier (82 total): brush mutation and
+pixel Undo/Redo retain exact identity across cache eviction, cold peers remain
+unchanged, worker snapshots freeze content, selection pinning rejects stale/
+modified pixels, metadata queries remain cold, eager compatibility remains exact,
+and actual Drawing composite agrees across cold/eager hold and opacity paths.
+These exercise the domain contract, not a GUI selecting or editing adopted cold
+cels. The other direct Image consumers in the table above still need migration.
