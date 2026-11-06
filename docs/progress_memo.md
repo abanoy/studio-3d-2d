@@ -11899,3 +11899,47 @@ checks only, not an application test run or automatic semantic certification of
 the source requirements. No numerical completion score or product-completion
 claim. Existing historical reconciliation is linked rather than overwritten.
 Full implementation goal remains active and independent required work remains.
+
+
+2026-11-06 — affected-cel clipboard history (MEM-01 partial)
+
+After the finite ledger, checked a concrete reliability risk before changing
+output settings. Actual31cel private fixture: one real stroke followed by Split
+charges522547200bytes, evicts the preceding stroke Undo and fails preservation.
+Before proof cel-patch-before/probe.log under /workspace/has-handoff-audit.
+
+New CelPatch stores only affected before/after cel records, stable layer/owner
+address and a conservative charge for distinct image resources plus metadata.
+Clipboard Cut/Paste/Split use this transient type; unaffected peers and the layer
+dictionary are not retained by these commands. Undo resolves live layer IDs,
+validates expected slots/whole integer frames and equal rebuilt raster data,
+refuses stale/missing/overlapping/over-budget restoration atomically, and preserves
+peer dictionaries. Normal drawing-history refresh avoids physics reset. No saved
+format, source asset or prototype-budget change.
+
+Same fixture Split now charges16590332bytes, preserving prior real-stroke Undo.
+Cut8295628/Paste8295632. Accounting/reference scope, not measured RSS/GPU/whole-app
+RAM or speed; images may be conservatively charged across separate commands.
+Curated receipt docs/benchmarks/cel_patch_history_2026-11-06.json includes source
+hashes and scoped counts; docs/cel_patch_history.md explains contract and limits.
+
+Expanded clipboard verifier154checks pass: original80 plus10patch-domain,
+18near-limit history,43real running-ragdoll history and3cold reader. Includes
+atomic stale/missing/collision/budget refusal, canonical JSON frame numbers,
+rebuilt equal-pixel resource acceptance, reachable original stroke Undo, unchanged
+peer identity/RGBA, parent/child round-trip history and wrong-owner refusal.
+Actual running simulation identity/generation survives Cut/Paste/Undo/Redo.
+Exact GPU preview, ordinary packed/cold saves and real48frame1080p24 H264 inputs
+pass; manual HAS remains exact. Final cel-patch-live/verification.json. One
+intermediate test compared generation across deliberate editing seeks, which
+normally freeze physics; corrected test isolates Undo/Redo and adds real running
+body checks. Original failure log retained. Python312run311pass1existing optional
+independent-MMD-reader skip. All graphics owned104/Dummy audio, no owner desktop.
+
+No application-wide memory/scalability or native Windows/tablet/artist claim.
+Other cel creation/deletion/layer snapshots and unique-art cold/lazy loading remain;
+MEM-01 stays partial, with evidence/remaining work updated in the cloud ledger.
+Next remains required OUTPUT-02 output-size contract and MEM-02 larger-project
+storage, rather than further clipboard polish. Exact user goal remains tracked
+in docs/goals/complete-has.md; no owner Windows installation, web or deployment
+changes. Full goal remains active, not complete or globally blocked.

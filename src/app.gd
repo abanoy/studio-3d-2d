@@ -1219,7 +1219,7 @@ func apply_command(command: Dictionary, side: String) -> bool:
 	if command.type=="palette":
 		palette=command[side].duplicate(true);palette_editor.refresh(true);changed();return true
 	# Drawing history refreshes the independent overlay, without resetting live 3D.
-	var drawing_command: bool=command.type in ["pixels","cels","cel_timing","cel_exposure","layer_properties","layers"]
+	var drawing_command: bool=command.type in ["pixels","cels","cel_patch","cel_timing","cel_exposure","layer_properties","layers"]
 	if command.type in ["cels","layer_properties"]:
 		var live_layer: Dictionary=cel_timing.layer_by_id(str(command.layer.get("id","")))
 		if live_layer.is_empty():message("Drawing history layer is missing.");return false
@@ -1235,6 +1235,9 @@ func apply_command(command: Dictionary, side: String) -> bool:
 		Drawing.touch(command.image,damage)
 	elif command.type in ["cel_timing","cel_exposure"]:
 		var error: String=cel_timing.apply_command(command,side)
+		if not error.is_empty():message(error);return false
+	elif command.type=="cel_patch":
+		var error: String=cel_clipboard.apply_patch(command,side)
 		if not error.is_empty():message(error);return false
 	elif command.type == "cels": command.layer.cels = command[side].duplicate(true)
 	elif command.type=="layer_properties":

@@ -1,6 +1,7 @@
 extends Node
 const Timing=preload("res://src/cel_timing.gd")
 const Drawing=preload("res://src/drawing.gd")
+const Patch=preload("res://src/cel_patch.gd")
 var app
 var clipboard: Dictionary={}
 var context: Dictionary={}
@@ -86,10 +87,20 @@ func perform(action: String) -> bool:
 	if action=="cut":layer.cels.remove_at(index)
 	elif action=="split":Drawing.insert(layer,int(context.at),int(app.video.duration_frames),selected.image.duplicate())
 	else:layer.cels.append(pasted);layer.cels.sort_custom(func(a,b):return a.start<b.start)
-	app.push_history({"type":"cels","layer":layer,"before":before,"after":layer.cels.duplicate(true)})
+	app.push_history(Patch.create(layer.id,app.sequence_editor.active_owner,before,layer.cels))
 	for i in range(app.layers.size()):
 		if app.layers[i].id==layer.id:app.active_layer=i;break
 	app.layer_choice.select(app.active_layer)
 	app.changed();app.set_frame(int(context.at));app.refresh_layer()
 	app.message("Drawing split into independent cels. Undo restores the original hold." if action=="split" else "Drawing cut. Undo restores it; paste places an independent copy." if action=="cut" else "Independent drawing pasted with its original exposure length. Undo removes it.")
 	return true
+
+func apply_patch(command: Dictionary,side: String) -> String:
+	if command.get("owner")!=app.sequence_editor.active_owner:return "Drawing history belongs to another sequence."
+	var layer: Dictionary=app.cel_timing.layer_by_id(str(command.get("layer_id","")))
+	if layer.is_empty():return "Drawing history layer is missing."
+	var limit: int=32-app.sequence_editor.used("cels")+layer.cels.size()
+	var result:=Patch.apply(layer.cels,command,side,int(app.video.duration_frames),limit)
+	if result.has("error"):return result.error
+	layer.cels=result.cels
+	return ""

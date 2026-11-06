@@ -66,6 +66,13 @@ func run() -> void:
 	app.redo();alive("new-layer Redo");app.layer_editor.move_layer(-1);app.undo();alive("stack-order Undo");app.layer_editor.request_remove();app.undo();alive("remove-layer Undo");app.redo();alive("remove-layer Redo")
 	check(app.layers.size()==2 and equal(world,World.portable(app.current_world())) and equal(keys,app.keys) and equal(view,app.renderer.view_state()) and app.frame==12,"drawing history preserves authored world, shot, view and playhead")
 	await settle();alive("continued physics frames");check(app.canvas.overlay.get_image().get_data()==Drawing.composite(app.layers,12,1920,1080).get_data(),"visible drawing overlay refreshes through its ordinary render path")
+	if "--patch" in args:
+		var held: Dictionary=Drawing.cel_at(app.cel_timing.layer_by_id(ink.id),12)
+		app.cel_clipboard.open_menu(ink.id,held.id,12,Vector2i(300,200));app.cel_clipboard.menu.id_pressed.emit(1);await settle();alive("patch Cut")
+		app.undo();alive("patch Cut Undo");app.redo();alive("patch Cut Redo")
+		app.cel_clipboard.open_menu(ink.id,"",12,Vector2i(300,200));app.cel_clipboard.menu.id_pressed.emit(2);await settle();alive("patch Paste")
+		app.undo();alive("patch Paste Undo");app.undo();alive("patch Cut restoration")
+		check(Drawing.cel_at(app.cel_timing.layer_by_id(ink.id),12).id==held.id and equal(world,World.portable(app.current_world())) and equal(keys,app.keys),"patch Undo restores original cel and preserves authored world/camera")
 	app.physics_editor.clear();check(app.restore_world(doc).is_empty(),"deterministic authored world is restored after the live-physics test")
 	var overlay:=Storage.image_hash(Drawing.composite(app.layers,12,1920,1080));world=World.portable(app.current_world());var rendered: Image=await app.renderer.capture(app.keys,app.layers,12,true);app.has_project.save_file(packed,"packed")
 	while app.has_project.pid>0:await process_frame

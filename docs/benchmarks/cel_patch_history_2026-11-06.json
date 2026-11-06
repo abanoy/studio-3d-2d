@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-06",
+  "baseline_commit": "d2166f74313095cb6db5ae8c1017f7ee3f34cd9a",
+  "measurement": "history charge and retained references, not process memory or speed",
+  "before_split_bytes": 522547200,
+  "after": {
+    "checks": 18,
+    "cut_bytes": 8295628,
+    "failures": 0,
+    "paste_bytes": 8295632,
+    "split_bytes": 16590332
+  },
+  "checks": {
+    "unit": {
+      "checks": 27,
+      "failures": 0
+    },
+    "patch-unit": {
+      "checks": 10,
+      "failures": 0
+    },
+    "patch-history": {
+      "checks": 18,
+      "failures": 0
+    },
+    "live-history": {
+      "checks": 43,
+      "failures": 0
+    },
+    "live-reader": {
+      "checks": 3,
+      "failures": 0
+    },
+    "writer": {
+      "checks": 47,
+      "failures": 0
+    },
+    "reader": {
+      "checks": 6,
+      "failures": 0
+    }
+  },
+  "source_sha256": {
+    "src/app.gd": "26121c744d48c651d1af8e9dc3d22c90264aac701d3e0df9fd120fd40ac29741",
+    "src/cel_clipboard.gd": "478cbd0200c314e081adde66d101e7e0e316a6d50a8835df3373684f0bb5f0af",
+    "src/cel_patch.gd": "6177093e9fd1326d1df4919717f4df9c6d57ad3fc0955c5f696044d51e6e1bb9"
+  },
+  "raw_evidence": "/workspace/has-handoff-audit/cel-patch-live/verification.json",
+  "native_windows_verified": false
+}

@@ -789,9 +789,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/drawing_history.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/cel_patch.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/cel_patch_history.md"
         }
       ],
-      "remaining": "Whole-layer Cut/Paste/Split snapshots still retain/charge unrelated cels; then audit remaining creation/deletion history.",
+      "remaining": "Cut/Paste/Split now retain only affected cels and pass near-limit/live/cold/movie checks. Audit other creation/deletion/whole-layer snapshot paths; larger unique-art cold/lazy loading remains MEM-02. This item stays partial.",
       "external_dependencies": []
     },
     {
@@ -1977,7 +1985,7 @@
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "Replace whole-layer clipboard history retention with affected-cel deltas, with exact Undo, physics/owner isolation and measured accounting."
+      "action": "Clipboard deltas are implemented. Audit remaining cel-creation/deletion/layer history after the larger OUTPUT-02/MEM-02 gaps; do not re-polish the completed clipboard change."
     },
     {
       "requirement": "STORE-04",

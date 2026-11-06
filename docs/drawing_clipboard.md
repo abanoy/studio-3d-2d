@@ -32,10 +32,11 @@ editing. Pending drawing selection/fill/color previews are cancelled when a vali
 menu opens. Clipboard data is transient; only the resulting normal cels enter
 HAS, recovery and rendering. No project format or cel budget changes.
 
-History retains the existing conservative full-cel accounting and64MiB policy.
-This increment does not improve dense-project memory, add ripple/stretch, or
-resolve cross-track clip ownership. Physical Windows input and artist acceptance
-remain separate gates.
+Cut/Paste/Split now use [affected-cel history](cel_patch_history.md), retaining only
+their targets while preserving the existing 64 MiB policy. Other drawing-history
+paths and dense-project cold/lazy loading remain separate work. This does not add
+ripple/stretch or resolve cross-track clip ownership. Physical Windows input and
+artist acceptance remain separate gates.
 
 Reproduce with the pinned Godot/FFmpeg activated:
 
@@ -47,7 +48,9 @@ Linux requires an explicitly provisioned private display. Windows uses the
 existing private desktop launcher and validates its receipts; Windows was not
 run for this increment.
 
-Fresh Linux software checks: 27 domain, 47 Studio and 6 cold-reader checks pass.
+The original operation checks comprise 27 domain, 47 Studio and 6 cold-reader
+checks. The expanded history verifier also runs the 74 targeted/domain/live
+history checks described in [affected-cel history](cel_patch_history.md).
 They include actual timeline right-click menu routing, frozen Copy pixels,
 independent repeated pastes, Cut/Paste Undo/Redo, exact exposures, overlap/end
 refusal, stale-menu/export/recording/budget guards, nested-owner isolation, New

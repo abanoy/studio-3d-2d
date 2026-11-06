@@ -14,8 +14,8 @@ def main():
         configure_private_display(options.isolated_display)
     folder=(options.output or ROOT/'output/cel-clipboard'/str(time.time_ns())).resolve();folder.mkdir(parents=True,exist_ok=False)
     reports={};receipts=[]
-    def run(script,label,marker,extra=(),headless=False):
-        args=command(script,headless=headless,extra=(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(folder/(label+'-engine.log')),'--',str(folder),*extra])
+    def run(script,label,marker,extra=(),headless=False,argument_folder=None):
+        args=command(script,headless=headless,extra=(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(folder/(label+'-engine.log')),'--',str(argument_folder or folder),*extra])
         result=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=165)
         log=result.stdout+result.stderr;(folder/(label+'.log')).write_text(log,encoding='utf-8')
         assert result.returncode==0 and marker in log and not any(s in log for s in ['ERROR:','FAIL ','ObjectDB instances leaked']),log
@@ -23,6 +23,11 @@ def main():
         if os.name=='nt' and not headless:
             path=Path(args[args.index('--receipt')+1]);r=json.loads(path.read_bytes());assert r['exit']==0 and r['child_desktop_confirmed'] and not r['foreground_child_observed'] and r['job_closed'] and r['desktop_closed'];receipts.append(str(path))
     run('tests/cel_clipboard_unit.gd','unit','CEL_CLIPBOARD_UNIT ',headless=True)
+    run('tests/cel_patch_unit.gd','patch-unit','CEL_PATCH_UNIT ',headless=True)
+    run('tests/cel_patch_history_smoke.gd','patch-history','CEL_PATCH_HISTORY ')
+    live=folder/'live-history';live.mkdir()
+    run('tests/drawing_history_smoke.gd','live-history','DRAWING_HISTORY_SMOKE ',['--patch'],argument_folder=live)
+    run('tests/drawing_history_smoke.gd','live-reader','DRAWING_HISTORY_READ ',['--read'],argument_folder=live)
     run('tests/cel_clipboard_smoke.gd','writer','CEL_CLIPBOARD_SMOKE ')
     packed=(folder/'clipboard.has').read_bytes();(folder/'writer-cache').rename(folder/'writer-cache.offline')
     run('tests/cel_clipboard_smoke.gd','reader','CEL_CLIPBOARD_READ ',['--read'])

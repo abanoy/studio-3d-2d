@@ -16,7 +16,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 
 - **P1 · OUTPUT-02** — Audit and implement a compatible configurable output-size contract, preserving drawing coordinates and persistence; do not label scaled artwork native high-resolution drawing.
 - **P1 · MEM-02** — Design and implement integrity-checked cold/lazy raster access with measured unique-art behavior before expanding limits.
-- **P1 · MEM-01** — Replace whole-layer clipboard history retention with affected-cel deltas, with exact Undo, physics/owner isolation and measured accounting.
+- **P1 · MEM-01** — Clipboard deltas are implemented. Audit remaining cel-creation/deletion/layer history after the larger OUTPUT-02/MEM-02 gaps; do not re-polish the completed clipboard change.
 - **P1 · STORE-04** — Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit.
 - **P2 · COURSE-01** — Organize Basic/Advanced sections and supported topic entry points; retain versioned progress and unresolved Skip policy.
 - **P2 · MOTION-03** — Implement a reversible locomotion prototype on authored paths before optional multi-view inference.
