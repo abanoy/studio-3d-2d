@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,array,hashlib,json,math,os,subprocess,sys,time,wave,zipfile
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from run import command
+from run import configure_private_display, command
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -11,7 +11,7 @@ def main():
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires a private --isolated-display; no shared-desktop fallback')
-        os.environ['DISPLAY']=options.isolated_display
+        configure_private_display(options.isolated_display)
     folder=(options.output or ROOT/'output/late-clip-move'/str(time.time_ns())).resolve();folder.mkdir(parents=True,exist_ok=False)
     frozen={p:hashlib.sha256(p.read_bytes()).hexdigest() for name in ['src','tests','tools','data','examples'] for p in (ROOT/name).rglob('*') if p.is_file() and p.suffix!='.pyc' and '__pycache__' not in p.parts};reports={};receipts=[]
     def run(target,script,label,marker,extra=(),crash=False,scene=None):

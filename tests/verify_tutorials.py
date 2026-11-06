@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,json,os,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from run import command
+from run import configure_private_display, command
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--chapter',choices=['existing','lighting','interpolation','constraints','physics'],default='existing')
@@ -10,7 +10,7 @@ def main():
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires --isolated-display for a private dummy display; no shared-desktop fallback')
-        os.environ['DISPLAY']=options.isolated_display
+        configure_private_display(options.isolated_display)
     script='tests/'+options.chapter+'_lesson_smoke.gd' if options.chapter!='existing' else 'tests/tutorial_smoke.gd'
     cases=[('practice',[],'LIGHTING_LESSON_SMOKE '),('resume',['--read'],'LIGHTING_LESSON_READ ')] if options.chapter=='lighting' else [('practice',[],'TUTORIAL_SMOKE '),('resume',['--resume'],'TUTORIAL_RESUME ')]
     if options.chapter in ['interpolation','constraints','physics']:

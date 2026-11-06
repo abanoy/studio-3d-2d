@@ -12,7 +12,7 @@ import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from run import command
+from run import configure_private_display, command
 
 
 def main():
@@ -23,7 +23,7 @@ def main():
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires a private --isolated-display; no shared-desktop fallback')
-        os.environ['DISPLAY']=options.isolated_display
+        configure_private_display(options.isolated_display)
     folder=(options.output or ROOT/'output/sequences'/str(time.time_ns())).resolve()
     folder.mkdir(parents=True,exist_ok=False)
     corpus=folder/'corpus.json'

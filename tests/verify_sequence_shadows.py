@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,json,os,subprocess,sys,time,zipfile
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from run import command
+from run import configure_private_display, command
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -11,7 +11,7 @@ def main():
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires an explicit private --isolated-display; no shared-desktop fallback')
-        os.environ['DISPLAY']=options.isolated_display
+        configure_private_display(options.isolated_display)
     folder=(options.output or ROOT/'output/sequence-shadows'/str(time.time_ns())).resolve();folder.mkdir(parents=True,exist_ok=False)
     reports=[];receipts=[];manual={}
     for label,extra,marker in [('writer',[],'SEQUENCE_SHADOW_SMOKE '),('reader',['--read'],'SEQUENCE_SHADOW_READ ')]:

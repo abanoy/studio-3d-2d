@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,base64,json,math,os,subprocess,sys,time,zipfile
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from run import command
+from run import configure_private_display, command
 def reference(path):
     domain=json.loads(path.read_bytes());maximum=0
     # Independent numerical maximization of the swept-disc field, rather than
@@ -27,7 +27,7 @@ def main():
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires an explicit private --isolated-display; no shared-desktop fallback')
-        os.environ['DISPLAY']=options.isolated_display
+        configure_private_display(options.isolated_display)
     folder=ROOT/'output/brush-pressure'/str(time.time_ns());folder.mkdir(parents=True);results=[];receipts=[]
     for label,headless,extra in [('unit',True,[]),('writer',False,[]),('reader',False,['--read'])]:
         script='tests/brush_pressure_unit.gd' if headless else 'tests/brush_pressure_smoke.gd'

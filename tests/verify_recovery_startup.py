@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,array,atexit,copy,hashlib,json,math,os,re,shutil,subprocess,sys,time,wave
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from run import command as engine_command
+from run import configure_private_display, command as engine_command
 
 def command(*args,**kwargs):
     result=engine_command(*args,**kwargs)
@@ -18,7 +18,7 @@ def main():
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires an explicit private --isolated-display; no shared-desktop fallback')
-        os.environ['DISPLAY']=options.isolated_display
+        configure_private_display(options.isolated_display)
     identity_field='created_100ns' if os.name=='nt' else 'linux_start'
     sys.stdout.reconfigure(encoding='utf-8')
     folder=ROOT/'output/recovery-startup'/str(time.time_ns());folder.mkdir(parents=True)

@@ -10,7 +10,7 @@ import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
-from run import command
+from run import configure_private_display, command
 from test_video_import import FFMPEG, fixture
 
 
@@ -25,9 +25,9 @@ def main():
     folder=(args.output or ROOT/'output/video-verification'/str(time.time_ns())).resolve()
     folder.mkdir(parents=True,exist_ok=False)
     source=fixture(folder/'source.mov');reports={};receipts=[]
+    if os.name!='nt':configure_private_display(args.isolated_display)
     env=dict(os.environ)
     env['HYBRID_FFMPEG']=FFMPEG
-    if os.name!='nt':env['DISPLAY']=args.isolated_display
     for label,extra in [('writer',[]),('reader',['--read'])]:
         argv=command('tests/video_import_smoke.gd',extra=['--audio-driver','Dummy','--',str(folder),*extra])
         p=subprocess.run(argv,cwd=ROOT,env=env,capture_output=True,timeout=150,

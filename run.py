@@ -1,13 +1,76 @@
 """Launch the offline Godot/GDScript prototype, without installing dependencies."""
 from pathlib import Path
 import argparse
+import atexit
+import ctypes
+import ctypes.util
 import os
+import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import uuid
 
 ROOT = Path(__file__).resolve().parent
+_PRIVATE_DISPLAY = None
+
+
+def configure_private_display(display):
+    """Select an explicitly provisioned local test display; graphical calls stay X11."""
+    if sys.platform != "linux" or not isinstance(display,str) or not re.fullmatch(r":[0-9]+(?:\.[0-9]+)?",display):
+        raise ValueError("Private Linux tests require a local X display such as :102.")
+    global _PRIVATE_DISPLAY
+    # Godot can try Wayland even with an explicit X11 driver. Keep its fallback
+    # in an empty owned runtime directory, never the user's graphical session.
+    runtime = tempfile.mkdtemp(prefix="has-private-display-")
+    atexit.register(shutil.rmtree,runtime,ignore_errors=True)
+    os.environ["XDG_RUNTIME_DIR"] = runtime
+    os.environ["WAYLAND_DISPLAY"] = "has-disabled-wayland"
+    os.environ["DISPLAY"] = display
+    _PRIVATE_DISPLAY = display
+
+
+def _check_private_display(display):
+    library = ctypes.util.find_library("X11")
+    if not library:
+        raise RuntimeError("Private graphical tests require libX11 for their display readiness check.")
+    x11 = ctypes.CDLL(library)
+    x11.XOpenDisplay.argtypes = [ctypes.c_char_p]
+    x11.XOpenDisplay.restype = ctypes.c_void_p
+    x11.XCloseDisplay.argtypes = [ctypes.c_void_p]
+    x11.XCloseDisplay.restype = ctypes.c_int
+    connection = x11.XOpenDisplay(display.encode("ascii"))
+    if not connection:
+        raise RuntimeError("Private X11 display is unavailable; no graphical fallback is permitted.")
+    x11.XCloseDisplay(connection)
+
+
+def _pin_private_driver(args, headless):
+    if sys.platform != "linux" or _PRIVATE_DISPLAY is None:
+        return
+    boundary = args.index("--") if "--" in args else len(args)
+    engine_args = args[:boundary]
+    headless = headless or "--headless" in engine_args
+    required = "headless" if headless else "x11"
+    for index,option in enumerate(engine_args):
+        option = os.fsdecode(option)
+        if option == "--display-driver":
+            value = engine_args[index+1] if index+1 < len(engine_args) else ""
+        elif option.startswith("--display-driver="):
+            value = option.split("=",1)[1]
+        else:
+            continue
+        if value != required:
+            raise RuntimeError("Private tests cannot select a competing display driver; no graphical fallback is permitted.")
+    if headless:
+        return
+    if os.environ.get("DISPLAY") != _PRIVATE_DISPLAY:
+        raise RuntimeError("Selected private DISPLAY changed; no graphical fallback is permitted.")
+    _check_private_display(_PRIVATE_DISPLAY)
+    # Last engine option, before script arguments: a missing X server fails
+    # while the private runtime directory also isolates any driver fallback.
+    args[boundary:boundary] = ["--display-driver","x11"]
 
 
 def engine_path():
@@ -51,6 +114,7 @@ def command(script=None, headless=False, extra=(), quiet=False, project=None):
         if "--" not in args:
             args.append("--")
         args.extend(["--open-project", str(path)])
+    _pin_private_driver(args, headless)
     if testing and not headless and os.name == "nt":
         # Use the actual windowed engine, never its console wrapper: the wrapper
         # creates another process and hides the real window owner's identity.

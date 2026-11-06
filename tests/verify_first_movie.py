@@ -2,14 +2,14 @@
 from pathlib import Path
 import argparse,hashlib,json,os,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from run import command
+from run import configure_private_display, command
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--isolated-display',help='Linux: pre-provisioned private dummy X display')
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires an explicit private --isolated-display; no shared-desktop fallback')
-        os.environ['DISPLAY']=options.isolated_display
+        configure_private_display(options.isolated_display)
     folder=ROOT/'output/first-movie'/str(time.time_ns());folder.mkdir(parents=True);results=[];receipts=[]
     originals={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in (ROOT/'examples/tutorials').iterdir() if p.is_file()}
     for label,extra,marker in [('movie',[],'FIRST_MOVIE_SMOKE '),('resume',['--resume'],'FIRST_MOVIE_RESUME ')]:

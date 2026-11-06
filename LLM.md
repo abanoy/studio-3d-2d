@@ -999,3 +999,24 @@ private dummy Xorg:102 was started, and all final GUI runs used102 with Dummy au
 Historical tracked output logs/results are restored after fresh proof is copied
 outside checkout. Windows/native/device/tablet/artist/power-loss acceptance and
 remaining OPEN editing semantics stay open. Continuous goal remains active.
+
+2026-11-06 UTC — private Linux test launch guard
+
+All24 explicit --isolated-display verifiers now use run.configure_private_display
+before launch/environment copies. Graphical commands preflight selected X11,
+refuse changed DISPLAY/competing drivers, and pin x11 before script arguments.
+Actual Godot4.6 experiments showed driver pinning alone still tries Wayland on
+X11 failure. An owned0700 empty runtime and absent Wayland socket now isolate
+that fallback, including loss after the preflight. Headless remains independent;
+ordinary interactive launch and Windows private desktop behavior unchanged.
+
+15focused Python tests pass; full312run311pass1existing independent-MMD-reader
+skip. Actual private102 engine probe reportsX11; missing65001 refuses before
+graphical launch; missing-X headless reportsheadless. Simulated post-check loss
+fails launch and makes no connection to a controlled inherited Wayland socket.
+Actual CelTools10GUI and updated reference-color13checks+movie pass. First probe
+that exposed automatic Wayland fallback retained; no owner UI was used. Proof:
+/workspace/has-handoff-audit/private-display-final/verification.json,
+private-display-final-color and private-display-python-all.log.
+See docs/private_linux_tests.md. No new runtime dependency/configuration or file
+format change. Native/device/artist acceptance remains open; goal continues.

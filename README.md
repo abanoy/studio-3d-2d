@@ -761,3 +761,5 @@ timeline gaps while retaining exact PCM, fades, peaks and clipping counts. The
 measured60-second internal case improved1289ms to122ms; source and mixer memory
 bounds remain unchanged. [Longer parent timelines](docs/extended_timing.md) now use
 the explicit schema8 wrapper while retaining those resource limits.
+
+Linux graphical verification: [private test display setup](docs/private_linux_tests.md).

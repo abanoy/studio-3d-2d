@@ -2,14 +2,14 @@
 from pathlib import Path
 import argparse,json,os,subprocess,sys,time,zipfile
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from run import command
+from run import configure_private_display, command
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--isolated-display',help='Linux: pre-provisioned private dummy X display')
     options=parser.parse_args()
     if os.name!='nt':
         if sys.platform!='linux' or not options.isolated_display:parser.error('Linux requires an explicit private --isolated-display; no shared-desktop fallback')
-        os.environ['DISPLAY']=options.isolated_display
+        configure_private_display(options.isolated_display)
     folder=ROOT/'output/brush-opacity'/str(time.time_ns());folder.mkdir(parents=True)
     results=[];receipts=[]
     for name,headless,extra in [('unit',True,[]),('writer',False,[]),('reader',False,['--read'])]:
