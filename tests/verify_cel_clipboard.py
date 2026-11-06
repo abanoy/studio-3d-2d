@@ -1,4 +1,4 @@
-"""Real drawing timeline copy/cut/paste, immutable pixels, Undo, cold HAS and MP4."""
+"""Drawing timeline copy/cut/paste/split, independent pixels, Undo, cold HAS and MP4."""
 from pathlib import Path
 import argparse,json,os,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))

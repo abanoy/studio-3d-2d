@@ -1527,3 +1527,35 @@ or frozen web edits. No new native/device/power-loss/artist or full-product clai
 Docs lesson_recovery.md and recovery_schedule.md explain time versus action mode
 and remaining lesson retention/concurrency/local-history requirements. Full goal
 remains unfinished; this increment is ready for commit/push and one result message.
+
+
+2026-11-06 — direct drawing-block splitting
+
+Continued the full goal with one concrete timeline interaction. Existing Copy
+drawing here already uses Drawing.insert to split a held exposure. Reused that
+exact implementation in the dedicated drawing popup as Split drawing here,
+without adding another raster/timing subsystem. First/end-boundary splits are
+disabled and authoritatively refused. New right half has a fresh ID and independent
+Image; combined end-exclusive extent stays exact. One ordinary cel Undo restores
+the original hold. Existing clipboard stays unchanged. Current scene/revision/
+owner/gesture/export/recording guards and global32cel cap apply. No project format,
+external asset, layer ancestry, cross-track choice or prototype-budget change.
+
+Expanded existing clipboard verifier now passes80checks:27domain/47Studio/6cold.
+20new assertions cover menu entry, exact halves, independent actual brush edits,
+Undo/Redo, boundary/global-budget refusal, later exposure splitting with untouched
+peers and pre-existing clipboard, exact GPU preview refresh, ordinary packed Save,
+writer-cache-offline fresh Open with independently painted split halves, distinct
+Image identities and exact frame16/20 movie inputs. Real H2641080p24 has48frames/
+two seconds. Manual HAS byte-preserved during cold read. Proof cel-split-final/
+verification.json under /workspace/has-handoff-audit.
+
+Existing edge30/tool-Escape10/exposure-history8 checks pass again. Python312run/
+311pass/1existing optional independent-MMD-reader skip. No need to repeat the
+unaffected full60second timing movie for a menu-only addition; the prior clipboard
+increment's161 full timing/39physics-history/37model-clip results stay historical.
+Fresh original pixel fixtures only; no native/device/Windows/artist acceptance.
+All graphics owned dummy104/Dummy audio. Tracked output history backed up and
+restored exactly; fresh evidence retained outside checkout. Details in
+drawing_clipboard.md and requirements matrix. Full specification/addendum goal
+remains unfinished. Commit/push this bounded increment, then one result message.

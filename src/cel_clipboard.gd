@@ -1,5 +1,6 @@
 extends Node
 const Timing=preload("res://src/cel_timing.gd")
+const Drawing=preload("res://src/drawing.gd")
 var app
 var clipboard: Dictionary={}
 var context: Dictionary={}
@@ -7,8 +8,8 @@ var menu: PopupMenu
 
 func _ready() -> void:
 	menu=PopupMenu.new();add_child(menu)
-	for title in ["Copy drawing","Cut drawing","Paste drawing here"]:menu.add_item(title)
-	menu.id_pressed.connect(func(id):menu.hide();perform(["copy","cut","paste"][id]))
+	for title in ["Copy drawing","Cut drawing","Paste drawing here","Split drawing here"]:menu.add_item(title)
+	menu.id_pressed.connect(func(id):menu.hide();perform(["copy","cut","paste","split"][id]))
 	menu.popup_hide.connect(func():call_deferred("clear_context"))
 
 func clear_context() -> void:
@@ -35,6 +36,10 @@ func open_menu(layer_id: String,id: String,at: int,position: Vector2i) -> void:
 	app.stop();app.drawing_selection_editor.cancel();app.fill_editor.cancel();app.color_sampler.cancel(false)
 	context={"layer":layer_id,"cel":id,"at":at,"session":app.recovery_session,"owner":app.sequence_editor.active_owner,"revision":app.recovery_revision,"video":app.video.duplicate(true),"shape":app.cel_timing.shape(layer)}
 	menu.set_item_disabled(0,id.is_empty());menu.set_item_disabled(1,id.is_empty());menu.set_item_disabled(2,not available(layer_id))
+	var can_split:=false
+	for cel in layer.cels:
+		if cel.id==id:can_split=at>cel.start and at<cel.start+cel.duration;break
+	menu.set_item_disabled(3,not can_split)
 	menu.position=position;menu.popup()
 
 static func placement(cels: Array,id: String,at,length,frames) -> Dictionary:
@@ -53,7 +58,7 @@ static func placement(cels: Array,id: String,at,length,frames) -> Dictionary:
 func perform(action: String) -> bool:
 	var layer: Dictionary=app.cel_timing.layer_by_id(str(context.get("layer","")))
 	if blocked() or app.playing or context.get("session")!=app.recovery_session or context.get("owner")!=app.sequence_editor.active_owner or context.get("revision")!=app.recovery_revision or context.get("video")!=app.video or layer.is_empty() or context.get("shape")!=app.cel_timing.shape(layer):app.message("The drawing or scene changed. Open the drawing menu again.");return false
-	if not action in ["copy","cut","paste"]:return false
+	if not action in ["copy","cut","paste","split"]:return false
 	var selected: Dictionary={};var index:=-1
 	for i in range(layer.cels.size()):
 		if layer.cels[i].id==context.cel:selected=layer.cels[i];index=i;break
@@ -71,15 +76,20 @@ func perform(action: String) -> bool:
 		var proposed:=Timing.proposal(layer.cels,selected.id,selected.start,app.video.duration_frames)
 		if proposed.has("error"):app.message(proposed.error);return false
 		if not selected.get("image") is Image or selected.image.get_size()!=Vector2i(app.video.width,app.video.height) or selected.image.get_format()!=Image.FORMAT_RGBA8 or selected.image.get_data_size()>8294400:app.message("This drawing cannot be copied at the current canvas size.");return false
-		clipboard={"layer":layer.id,"owner":app.sequence_editor.active_owner,"session":app.recovery_session,"duration":int(selected.duration),"image":selected.image.duplicate()}
-		if action=="copy":app.message("Drawing copied. Right-click a free range on this layer to paste it.");return true
+		if action=="split":
+			if context.at<=selected.start or context.at>=selected.start+selected.duration:app.message("Split inside the drawing's hold, after its first frame.");return false
+			if app.sequence_editor.used("cels")>=32:app.message("Prototype memory limit: 32 full-HD cels.");return false
+		else:
+			clipboard={"layer":layer.id,"owner":app.sequence_editor.active_owner,"session":app.recovery_session,"duration":int(selected.duration),"image":selected.image.duplicate()}
+			if action=="copy":app.message("Drawing copied. Right-click a free range on this layer to paste it.");return true
 	var before: Array=layer.cels.duplicate(true)
 	if action=="cut":layer.cels.remove_at(index)
+	elif action=="split":Drawing.insert(layer,int(context.at),int(app.video.duration_frames),selected.image.duplicate())
 	else:layer.cels.append(pasted);layer.cels.sort_custom(func(a,b):return a.start<b.start)
 	app.push_history({"type":"cels","layer":layer,"before":before,"after":layer.cels.duplicate(true)})
 	for i in range(app.layers.size()):
 		if app.layers[i].id==layer.id:app.active_layer=i;break
 	app.layer_choice.select(app.active_layer)
 	app.changed();app.set_frame(int(context.at));app.refresh_layer()
-	app.message("Drawing cut. Undo restores it; paste places an independent copy." if action=="cut" else "Independent drawing pasted with its original exposure length. Undo removes it.")
+	app.message("Drawing split into independent cels. Undo restores the original hold." if action=="split" else "Drawing cut. Undo restores it; paste places an independent copy." if action=="cut" else "Independent drawing pasted with its original exposure length. Undo removes it.")
 	return true

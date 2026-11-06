@@ -217,3 +217,10 @@ clean manual Save, without scene dirty/Undo/action-count changes.33new writer/
 normal-startup checks, existing112lesson-recovery and corrected41ordinary schedule
 checks pass. See [scheduling scope](lesson_recovery.md); no second timer, schema
 change, native Windows/power-loss or full-product acceptance claim.
+
+Drawing blocks now also expose Split drawing here, reusing existing held-cel
+insertion. Combined exposure stays exact, halves remain independently editable,
+clipboard stays unchanged and one Undo restores the original hold. The expanded
+clipboard suite passes 80 checks with cold split-art reopening and exact GPU/movie
+inputs; existing 48 edge/tool/history checks pass again. See
+[drawing clip operations](drawing_clipboard.md). No format/budget/cross-track change.

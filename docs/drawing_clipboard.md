@@ -6,7 +6,14 @@ The entire copied exposure keeps its length, even when you copied from its middl
 Each paste creates a fresh cel with independent editable pixels. Painting the
 source or another paste does not change the clipboard's captured drawing.
 
-Copy does not edit the project or add Undo history. Cut and Paste each create
+To divide a held drawing, right-click inside it and choose **Split drawing here**.
+The left cel ends at the clicked frame and the independent right cel begins there.
+Their combined range stays unchanged. Paint either half without changing the
+other; one Split Undo restores the original hold. Split does not replace a copied
+drawing. First-frame/end-boundary splits are unavailable, and the global cel budget
+still applies. This reuses the existing held-cel insertion behavior.
+
+Copy does not edit the project or add Undo history. Cut, Paste and Split each create
 one ordinary drawing history command. Undo/Redo restores their cel ranges and
 pixels. Cut leaves an empty range; Paste does not overwrite, shorten or extend
 another cel. An overlap, scene-end overflow or the existing global32cel limit
@@ -40,15 +47,19 @@ Linux requires an explicitly provisioned private display. Windows uses the
 existing private desktop launcher and validates its receipts; Windows was not
 run for this increment.
 
-Fresh Linux software checks:27domain,29Studio and4cold-reader checks pass.
+Fresh Linux software checks: 27 domain, 47 Studio and 6 cold-reader checks pass.
 They include actual timeline right-click menu routing, frozen Copy pixels,
 independent repeated pastes, Cut/Paste Undo/Redo, exact exposures, overlap/end
 refusal, stale-menu/export/recording/budget guards, nested-owner isolation, New
 cleanup, normal packed Save and source-cache-unavailable fresh-process Open.
-Real H2641080p24 MP4 has48frames/two seconds, with exact frame16 preview/export
+Split checks include adjacent ranges, first/end refusal, independent actual brush
+edits, Undo/Redo, unchanged clipboard, later-cel splitting with preserved peers,
+the cel budget and exact GPU overlay refresh. The independently painted halves
+survive ordinary Save and cold Open with distinct Image resources. Real H264
+1080p24 MP4 has 48 frames/two seconds, with exact frame16/frame20 preview/export
 input agreement. The saved HAS stays byte-identical during cold readback.
 
-Proof: `/workspace/has-handoff-audit/cel-clipboard-guards/verification.json`.
+Proof: `/workspace/has-handoff-audit/cel-split-final/verification.json`.
 The first graphical attempt refused safely because the prior private display
 was gone. A new owned dummy104display was started; no shared-display fallback.
 
@@ -59,3 +70,8 @@ clip-menu checks with exact split/reopen/recovery pictures. Three optional nativ
 clip fixtures skip because they are unavailable. Python discovery312run/311pass/
 1existing optional independent MMD-reader skip. These are scoped software checks,
 not Windows/device/native-asset or full-product acceptance.
+
+After the Split addition, the existing 30 edge-resize, 10 tool/Escape and 8 bounded
+exposure-history checks pass again. Python discovery still runs 312 tests: 311
+pass and one optional independent MMD-reader test skips. Earlier full movie/native
+fixture results above remain historical; this increment uses procedural drawings.
