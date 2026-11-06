@@ -765,3 +765,5 @@ the explicit schema8 wrapper while retaining those resource limits.
 Linux graphical verification: [private test display setup](docs/private_linux_tests.md).
 
 Held drawing playback now reuses a bounded preview overlay; see [measured scope](docs/held_drawing_preview.md).
+
+Repeated saved cel PNGs now reopen with independent editable Images over shared lossless storage; see [memory measurements and scope](docs/cel_raster_reuse.md).

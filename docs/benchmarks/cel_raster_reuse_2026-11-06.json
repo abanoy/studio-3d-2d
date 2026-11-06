@@ -1,0 +1,151 @@
+{
+  "date": "2026-11-06",
+  "baseline": {
+    "commit": "e7d8485",
+    "storage_sha256": "08922274348c6388a4fff2127ad1d7dc2ed02181c7cef009a2006ebb1a0b3c5a"
+  },
+  "repeated_png": {
+    "before": {
+      "cel_count": 32,
+      "ok": true,
+      "pixel_sha256": "b2cee585781f0256fc114f4a82011b326e568ab3c7660d15ba8a748902085e2e",
+      "raster": [
+        1920,
+        1080
+      ],
+      "runs": [
+        {
+          "all_original_rgba_exact": true,
+          "edit_added_bytes": 0,
+          "independent_edit": true,
+          "loaded_bytes": 265500196,
+          "milliseconds": 1619.055,
+          "unique_image_objects": 32
+        },
+        {
+          "all_original_rgba_exact": true,
+          "edit_added_bytes": 0,
+          "independent_edit": true,
+          "loaded_bytes": 265500196,
+          "milliseconds": 1538.994,
+          "unique_image_objects": 32
+        },
+        {
+          "all_original_rgba_exact": true,
+          "edit_added_bytes": 0,
+          "independent_edit": true,
+          "loaded_bytes": 265500196,
+          "milliseconds": 1578.696,
+          "unique_image_objects": 32
+        }
+      ],
+      "scope": "three same-process Storage.load_project calls on32independent cel records referencing one original PNG; existing schema4 and48frames; static memory deltas exclude fixture creation, hash assertions and post-load edit",
+      "source_sha256": "751de9a276a292fcbf52459bc97e835f69b919529803270da7b282d93d88f588"
+    },
+    "after": {
+      "cel_count": 32,
+      "ok": true,
+      "pixel_sha256": "b2cee585781f0256fc114f4a82011b326e568ab3c7660d15ba8a748902085e2e",
+      "raster": [
+        1920,
+        1080
+      ],
+      "runs": [
+        {
+          "all_original_rgba_exact": true,
+          "edit_added_bytes": 8294432,
+          "independent_edit": true,
+          "loaded_bytes": 8372804,
+          "milliseconds": 50.067,
+          "unique_image_objects": 32
+        },
+        {
+          "all_original_rgba_exact": true,
+          "edit_added_bytes": 8294432,
+          "independent_edit": true,
+          "loaded_bytes": 8372804,
+          "milliseconds": 50.874,
+          "unique_image_objects": 32
+        },
+        {
+          "all_original_rgba_exact": true,
+          "edit_added_bytes": 8294432,
+          "independent_edit": true,
+          "loaded_bytes": 8372804,
+          "milliseconds": 50.427,
+          "unique_image_objects": 32
+        }
+      ],
+      "scope": "three same-process Storage.load_project calls on32independent cel records referencing one original PNG; existing schema4 and48frames; static memory deltas exclude fixture creation, hash assertions and post-load edit",
+      "source_sha256": "751de9a276a292fcbf52459bc97e835f69b919529803270da7b282d93d88f588"
+    }
+  },
+  "distinct_png": {
+    "cel_count": 32,
+    "ok": true,
+    "raster": [
+      1920,
+      1080
+    ],
+    "runs": {
+      "new": [
+        {
+          "all_original_rgba_exact": true,
+          "distinct_images": 32,
+          "loaded_bytes": 265500964,
+          "milliseconds": 1687.653
+        },
+        {
+          "all_original_rgba_exact": true,
+          "distinct_images": 32,
+          "loaded_bytes": 265500964,
+          "milliseconds": 1676.418
+        },
+        {
+          "all_original_rgba_exact": true,
+          "distinct_images": 32,
+          "loaded_bytes": 265500964,
+          "milliseconds": 1613.717
+        }
+      ],
+      "old": [
+        {
+          "all_original_rgba_exact": true,
+          "distinct_images": 32,
+          "loaded_bytes": 265500964,
+          "milliseconds": 1573.684
+        },
+        {
+          "all_original_rgba_exact": true,
+          "distinct_images": 32,
+          "loaded_bytes": 265500964,
+          "milliseconds": 1548.612
+        },
+        {
+          "all_original_rgba_exact": true,
+          "distinct_images": 32,
+          "loaded_bytes": 265500964,
+          "milliseconds": 1598.669
+        }
+      ]
+    },
+    "scope": "same process and original32distinct-PNG fixture; baseline Storage module copied exactly frome7d8485; other modules unchanged; static load memory/time excludes fixture creation and RGBA assertions"
+  },
+  "metrics": {
+    "repeated_old_ms": 1578.915,
+    "repeated_new_ms": 50.456,
+    "repeated_old_bytes": 265500196,
+    "repeated_new_bytes": 8372804,
+    "unique_old_ms": 1573.655,
+    "unique_new_ms": 1659.2626666666667,
+    "unique_old_bytes": 265500964,
+    "unique_new_bytes": 265500964
+  },
+  "memory_scope": "Godot tracked static allocation delta during Storage.load_project; not RSS, GPU memory or full Studio peak; caller edit/assertions excluded",
+  "timing_scope": "three same-process repetitions per mode; shared before/after in separate engine runs, distinct-PNG old/new sequential in same process; no CPU pinning",
+  "source_sha256": {
+    "src/storage.gd": "8d508cb988413354fe17c7ca19db16c428657528ace6509bc25f06c042eb952c",
+    "src/cel_raster_reader.gd": "fb10df6faf64b662b397609c6695d539526e7d640857a43838e09611534783fd",
+    "tests/cel_raster_reader_benchmark.gd": "f0f2570add90d5b52bc35a56e8fdc1b7a38484ae3cda299700cd41e58417d19e"
+  }
+}

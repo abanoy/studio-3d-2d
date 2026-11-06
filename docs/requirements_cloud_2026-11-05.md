@@ -180,3 +180,11 @@ existing34onion/161timing and scoped before/after GPU-texture benchmark pass;
 see [measured preview scope](held_drawing_preview.md). The320self-contained
 root-component checks pass separately;2native-plan suites explicitly skip.
 Physical tablet/owner-GPU and dense/long-project memory gates remain.
+
+Project-scoped cel PNG decode reuse now preserves independent writable Image
+identities with shared lossless backing. The32repeated-PNG fixture drops tracked
+load memory265.5MB to8.37MB; distinct-PNG memory is unchanged with measured
+~5.4percent load-time overhead in that separate fixture.31domain+16PNG cases+
+19GUI+5cold+6SIGKILL startup and existing161timing/70reference/lesson checks pass.
+See [precise scope](cel_raster_reuse.md). Existing32cel limits remain; unique-art
+lazy loading and owner/native/device acceptance remain open.

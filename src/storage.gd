@@ -1,4 +1,5 @@
 extends RefCounted
+const RasterReader=preload("res://src/cel_raster_reader.gd")
 const Drawing = preload("res://src/drawing.gd")
 const AudioTrack = preload("res://src/audio_track.gd")
 const Model = preload("res://src/model.gd")
@@ -265,10 +266,11 @@ static func load_project(folder: String, manifest_name := "project.json") -> Dic
 		return {"error": "Corrupt JSON manifest: " + parser.get_error_message()}
 	return decode_project(parser.data,folder)
 
-static func decode_project(data,folder: String,extended:=false) -> Dictionary:
+static func decode_project(data,folder: String,extended:=false,rasters=null) -> Dictionary:
+	if rasters==null:rasters=RasterReader.new()
 	if data is Dictionary and data.get("schema_version")==8:
 		var unwrapped:=Extended.unwrap(data)
-		return unwrapped if unwrapped.has("error") else decode_project(unwrapped.base,folder,true)
+		return unwrapped if unwrapped.has("error") else decode_project(unwrapped.base,folder,true,rasters)
 	if data is Dictionary and data.has("timing_content_schema_version"):return {"error":"Extended project timing requires schema8."}
 	if data is Dictionary and not extended and Extended.required(data):return {"error":"Extended project timing requires schema8."}
 	if data is Dictionary and data.get("schema_version")==7:
@@ -278,7 +280,7 @@ static func decode_project(data,folder: String,extended:=false) -> Dictionary:
 		var loaded:=ReferenceSheet.read_image(folder.path_join(reference.path))
 		if loaded.has("error"):return loaded
 		if loaded.sha256!=reference.sha256:return {"error":"Reference sheet checksum differs. Previous project stays open."}
-		var result:=decode_project(unwrapped.base,folder,extended)
+		var result:=decode_project(unwrapped.base,folder,extended,rasters)
 		if result.has("error"):return result
 		reference["source"]=folder.path_join(reference.path);reference.erase("path");result["reference_sheet"]=reference
 		return result
@@ -292,12 +294,12 @@ static func decode_project(data,folder: String,extended:=false) -> Dictionary:
 		base.schema_version=5 if base.world.get("format")==WorldDocument.EFFECT_FORMAT else 4
 		var context=base.get("editor",{}).get("sequence_editor",{}) if base.get("editor",{}) is Dictionary else {}
 		if base.get("editor",{}) is Dictionary:base.editor.erase("sequence_editor")
-		var result:=decode_project(base,folder,extended)
+		var result:=decode_project(base,folder,extended,rasters)
 		if result.has("error"):return result
 		var decoded: Dictionary=graph.duplicate(true)
 		var pcm_bytes:=AudioTrack.memory(result.audio)
 		for asset in decoded.assets:
-			var child:=decode_project(asset.scene,folder,extended)
+			var child:=decode_project(asset.scene,folder,extended,rasters)
 			if child.has("error"):return {"error":"Sequence %s: %s" % [asset.name,child.error]}
 			pcm_bytes+=AudioTrack.memory(child.audio)
 			if pcm_bytes>AudioTrack.MAX_PCM:return {"error":"Nested audio sources exceed64MiB."}
@@ -385,15 +387,9 @@ static func decode_project(data,folder: String,extended:=false) -> Dictionary:
 				return {"error": "Overlapping/out-of-range cels or >32 cels (memory limit)."}
 			end = int(cel.start + cel.duration)
 			var path := folder.path_join(cel.path)
-			if not FileAccess.file_exists(path) or FileAccess.get_file_as_bytes(path).size() > 32 * 1024 * 1024:
-				return {"error": "Cel missing or exceeds 32 MiB."}
-			var image := Image.load_from_file(path)
-			if image == null or image.get_width() != video.width or image.get_height() != video.height:
-				return {"error": "Cel image has wrong dimensions or is unreadable."}
-			image.convert(Image.FORMAT_RGBA8)
-			if cel.has("pixel_sha256") and image_hash(image) != cel.pixel_sha256:
-				return {"error": "Cel checksum differs. Try the previous saved copy."}
-			cel.image = image
+			var raster: Dictionary=rasters.read(path,int(video.width),int(video.height),cel.get("pixel_sha256"),cel.has("pixel_sha256"))
+			if raster.has("error"):return raster
+			cel.image=raster.image
 	var audio = data.get("audio", {})
 	if not audio is Dictionary:
 		return {"error": "Invalid audio clip metadata."}

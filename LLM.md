@@ -1216,3 +1216,71 @@ storage until edit: original8294960bytes;32copies8312936; after editing one
 16607368. This suggests a future packed-reader memory improvement; no project
 loading/sharing change is implemented in this commit. Probe/log retained outside
 checkout. Continuous full goal continues to that source-ownership investigation.
+
+2026-11-06 UTC — project-scoped PNG decode reuse with independent cel Images
+
+Storage.decode_project now shares one CelRasterReader through schema8/7/6
+unwrapping and child scenes. PNGs are read into bounded captured buffers; full
+byte SHA256 keys only validated encoded content. Every declared file still opens/
+checks size/content; dimensions preflight before PNG allocation, full decoder
+validation on misses, supplied pixel checksums verified even on hits. Returned
+Image resources always distinct via Image.duplicate; Godot lossless backing data
+shares until written. Immutable cache bases stay private; decode context dies
+at return. Legacy other image formats keep original loader behavior, uncached.
+No persistent/global cache, source writes, format/schema/path/count changes or
+limit increases. Existing global/shared32cels and32MiB-per-cel bounds retained;
+new size check occurs before reading oversized files. Details docs/cel_raster_reuse.md.
+
+Measured original32cel1080p schema4 fixture referencing one PNG: old e7d8485
+Storage.load_project1619.055/1538.994/1578.696ms mean1578.915 and265500196tracked
+bytes. Final current source50.067/50.874/50.427ms mean50.456 and8372804bytes.
+All32Image identities distinct, RGBA hashes exact; editing one adds8294432bytes
+and preserves31peers. Source PNG SHA/pixels identical before/after. Tracked
+Godot static allocation delta excludes fixture generation/post-load assertions/
+edits, not whole-app RSS/GPU peak or universal speed. Separate32distinct-PNG
+same-process baseline/current test retains265500964bytes both; old1573.655ms
+mean vs new1659.263ms, about5.4percent slower in that recorded fixture. Both
+datasets/raw/source hashes in docs/benchmarks/cel_raster_reuse_2026-11-06.json.
+This does not solve unique-drawing/lazy-loading memory or justify raising bounds.
+
+Final production-source-frozen verifier passes31domain +16PNG compatibility
+cases +19actualGUI +5cold +6unchanged normal startup after actual SIGKILL.
+Domain exercises COW set_pixel/fill/stroke/meta isolation, per-member reads,
+checksum/type/path/missing/changed/size/dimension refusal, JPEG legacy behavior,
+legacy missing checksum,8→7→6 root/child sharing and context release. PNG corpus
+has independent Python mathematical RGBA plus old Image.load_from_file oracle:
+gray1/2/4/8/16, palette1/2/4/8+tRNS, RGB/gray-alpha/RGBA8/16 with gamma/sRGB
+metadata and Adam7. All16exact; each decoded/cache-hit pair has independent
+Images, and raw source bytes remain unchanged. Corpus is original procedural data.
+
+Actual Studio paints cel7 among32, Undo/Redo and reverse/adjacent frame GPU
+pixels preserve31peers and stable identities. Four invalid late-cel projects
+refuse without changing live pixels/world/camera/history/session/revision.
+Normal packed Save/Open preserves32records and2unique encoded cel members after
+one edit. Cold reader and ordinary startup work with source project directory,
+WAV and writer cache unavailable; no graceful hook after SIGKILL. ManualHAS and
+source project files unchanged.48frame1080p24 H264/AAC exact frame7 PNG and cue
+onset48001 vs48000. Evidence /workspace/has-handoff-audit/raster-reader-final-
+accepted/verification.json and raster-reader-final-verifier.log. Earlier61check
+run also passes; final run adds durable16case corpus/independent oracle only, no
+later production change. Initial external benchmark needed explicit bool local
+typing; failed parse log retained, corrected benchmark succeeds.
+
+Existing161timing/domain/tool/nested cold/actual-SIGKILL checks pass current
+production source; complete1440frame1080p24 H264/AAC60s movie230.257686s with
+concurrent regression work, exact preview PNGs1304/1390/1430 and sound2688001.
+Existing kept-reference19storage/25writer/14cold/5startup/7lesson passes, including
+legacy schema3 dispatch, wrappers and actual movie. These combined runs preceded
+only PNG test/corpus invocation additions; all production bytes unchanged since.
+Proof raster-reader-cel-timing and raster-reader-reference under audit root.
+Final Python312run311pass1existing independent-MMD-reader skip, including all28
+explicit private-GUI wrapper guard sites; raster-reader-final-python.log.
+
+Historical tracked outputs copied to raster-reader-historical-output-backup
+then restored exactly. All graphics guarded owned103/Dummy audio. No native game
+art distribution, deployment, Windows owner desktop or web edits. No claim of
+finished application, native/physical/artist acceptance. Full goal stays active.
+Next useful measured work: existing Save/recovery content-addressed PNG reuse
+still redecodes the same members repeatedly; investigate safely reusing verified
+read results there, then address unique-cel memory architecture rather than
+raising32cel limits. Optional owner workflow-priority question remains unanswered.
