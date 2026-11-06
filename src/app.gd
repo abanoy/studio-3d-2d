@@ -74,6 +74,7 @@ var encoder: RefCounted
 var renderer: Node
 var canvas: Control
 var cel_timing: Node
+var cel_clipboard: Node
 var timeline_navigation: Node
 var timeline_ruler: Control
 var timeline: Control
@@ -302,6 +303,7 @@ func _ready() -> void:
 	reference_sheet=preload("res://src/reference_sheet.gd").new();reference_sheet.app=self;add_child(reference_sheet);reference_sheet.setup(drawing_section)
 	layer_editor=LayerEditor.new();layer_editor.app=self;add_child(layer_editor);layer_editor.setup(drawing_section)
 	cel_timing=preload("res://src/cel_timing_editor.gd").new();cel_timing.app=self;add_child(cel_timing);timeline.cel_context_provider=cel_timing.begin;timeline.cel_moved.connect(cel_timing.commit);timeline.cel_resized.connect(cel_timing.resize)
+	cel_clipboard=preload("res://src/cel_clipboard.gd").new();cel_clipboard.app=self;add_child(cel_clipboard);timeline.cel_menu_provider=cel_clipboard.open_menu
 	raster_importer=preload("res://src/krita_import.gd").new();add_child(raster_importer);raster_importer.setup(self)
 	video_importer=preload("res://src/video_import.gd").new();add_child(video_importer);video_importer.setup(self)
 	color_sampler=ColorSampler.new();color_sampler.app=self;add_child(color_sampler);color_sampler.setup(drawing_section)

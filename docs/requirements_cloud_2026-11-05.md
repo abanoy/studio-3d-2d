@@ -205,3 +205,9 @@ generation attachment, Previous/Continue/Fresh, invalid/missing history fallback
 manual Save and exact movie input. Existing57tutorial/30physics/147startup checks
 pass. See [scope and scheduling limits](lesson_recovery.md); separate lesson
 retention and native/device/artist gates remain open.
+
+Drawing-row context menus now copy, cut and paste complete exposures within the
+same scene/layer, with immutable copied pixels and independent editable pastes.
+60targeted checks and existing161timing/39drawing-history/37animation-clip checks
+pass. See [drawing clipboard](drawing_clipboard.md). Cross-track semantics and
+larger-project memory remain separate; no format or cel-budget change.

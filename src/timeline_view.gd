@@ -46,6 +46,7 @@ var cel_dragged:=false
 var cel_valid:=true
 var cel_context:={}
 var cel_context_provider: Callable
+var cel_menu_provider: Callable
 var moving_audio := ""
 var audio_anchor := 0
 var audio_previous := 0
@@ -480,6 +481,12 @@ func _gui_input(event: InputEvent) -> void:
 			selected_channel=row.channel.id
 			channel_selected.emit(object_rows[row.index].id,row.channel.id,frame_at(event.position) if event.position.x>=LEFT else -1)
 			accept_event();return
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_RIGHT and event.pressed and not header_only and cel_menu_provider.is_valid() and event.position.x>=LEFT:
+		for index in range(layers.size()):
+			if event.position.y>=layer_y(index) and event.position.y<layer_y(index)+23:
+				var hit:=cel_hit(event.position)
+				cel_menu_provider.call(layers[index].id,str(hit.cel.id) if not hit.is_empty() else "",mini(duration-1,frame_at(event.position)),Vector2i(get_screen_position()+event.position))
+				accept_event();return
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_RIGHT:
 		if event.pressed:
 			finish_move(true);dragging=false;import_frame=mini(duration-1,frame_at(event.position));context_object="";context_piece=""

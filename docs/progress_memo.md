@@ -11718,3 +11718,48 @@ No separate periodic lesson autosave: teacher-only actions do not independently
 schedule scene snapshots, post-checkpoint work can be lost, Previous still needs
 local lesson checkpoints. Retention/concurrent writers remain open. Wider full
 spec/addendum completion and native/device/artist gates remain unfinished.
+
+
+2026-11-06 — bounded task: drawing timeline clipboard
+
+User asked to execute the proposed one-task/verify/commit/push workflow after
+pausing automatic continuation. Implemented drawing-row right-click Copy/Cut/
+Paste through new cel_clipboard.gd and a small timeline/app hookup. Copies are
+one bounded full-HD RGBA8 Image plus integer exposure metadata. Each paste has
+a fresh ID and independent writable Image; Copy's raster stays frozen through
+later source/paste edits. Same document/sequence/layer only; owner/document/layer
+loss clears clipboard. No OS clipboard, cross-track policy, format or budget
+change. Layer-level source ancestry remains on the same layer.
+
+Copy changes no document/history. Cut/Paste use ordinary drawing-cel history and
+existing conservative64MiB accounting. Complete exposures refuse overlap/end
+overflow and global32cel excess; they never trim/overwrite peers. Menu scene/
+video/revision/identity guards and painting/navigation/pose/timeline/export/
+recording guards prevent stale/conflicting commits. Pending pixel tool previews
+cancel on valid menu open. Clipboard is transient, not serialized. Description
+and limitations docs/drawing_clipboard.md.
+
+Fresh27domain+29actual Studio+4cold-reader checks pass, including routed real
+right-click menus, frozen Copy/independent pastes, Cut/Paste Undo/Redo, wrong-layer,
+stale/export/recording/budget refusal, actual child-owner switch/return, New cleanup,
+ordinary packed Save and fresh Open with original writer cache offline. Real
+48frame H2641080p24/two-second movie frame16 equals exact preview input. Manual
+HAS unchanged during cold read. Proof cel-clipboard-guards/verification.json
+under /workspace/has-handoff-audit. First run's private103display was unavailable;
+launcher refused before any graphical fallback. Provisioned owned dummy104,
+all subsequent graphics private/Dummy audio. No owner desktop/window controlled.
+
+Existing161timing checks pass: full1440frame60second H264/AAC, sample2688001
+late cue, packed/linked readers and actual-SIGKILL ordinary startup, nested Undo,
+edge resizing, tool Escape and bounded metadata history. Also36live-physics
+history+3cold reader and37ordinary3D clip-context checks pass; exact picture
+comparisons preserved. Three absent native clip fixtures explicitly skip.
+Python312run311pass1existing independent-MMD-reader skip. Evidence directories
+cel-clipboard-timing-regression and cel-clipboard-history-regression; Python log
+cel-clipboard-python.log. No new native/Windows/device/artist acceptance.
+
+Tracked historical outputs were backed up to cel-clipboard-artifacts-before,
+fresh outputs retained outside repo, then exact HEAD bytes restored. No external
+art downloads, deployment, Windows installation or frozen web edits. Full
+spec/addendum goal remains unfinished; this commit completes only the bounded
+clipboard task. Return one substantive result and end this turn.
