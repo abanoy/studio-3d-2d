@@ -27,6 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from asset_audit import gma_index, AssetError
 from source_archive import resource_path
 from source_texture import blender_rgba
+from source_case import CaseResolver
 from source_eyes import plan as neutral_eye_plan
 from source_lights import plan as light_plan, create as create_lights
 from source_lightmaps import capture as capture_lightmaps, bake as bake_lightmaps, tag_glb as tag_lightmap_glb
@@ -81,10 +82,10 @@ class DirectFiles(LooseFilesContentProvider):
     def find_file(self, filepath):
         name = relative_name(filepath)
         base = Path(str(self.root)).resolve()
-        path = (base / name).resolve()
-        if not path.is_relative_to(base):
-            raise ValueError("Content mount escape")
-        return FileBuffer(TinyPath(str(path))) if path.is_file() else None
+        if not hasattr(self, "_studio_case_resolver"):
+            self._studio_case_resolver = CaseResolver(base)
+        path = self._studio_case_resolver.find(name)
+        return FileBuffer(TinyPath(str(path))) if path is not None else None
 
     def check(self, filepath):
         buffer = self.find_file(filepath)
@@ -420,6 +421,7 @@ bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", 
 tag_lightmap_glb(out / "scene.glb", lightmap_report["materials"])
 report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_source": request["original_source"],
           "source_file": source.name, "source_member": request.get("source_member"),
+          "case_resolved_sidecars": request.get("case_resolved_sidecars", {}),
           "source_profile": request.get("source_profile", "gmod"),
           "source_sha256": request["sha256"], "sourceio_revision": request["sourceio_revision"],
           "sourceio_version": list(module.bl_info["version"]), "scale": request["scale"],

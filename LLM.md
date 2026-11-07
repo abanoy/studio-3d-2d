@@ -3424,3 +3424,30 @@ valid bone hierarchies, all present geometry sidecar checksums match. Rawarchive
 and extracted assets remain private/outsideGit. Full SFM/GMod installed-host
 preflight still refuses (no outputcreated); native app/BSP fidelity not claimed.
 Next finish supplied-sample dependency/sidecar diagnostics and exact prerequisites.
+
+
+## 2026-11-07 UTC — supplied SFM corpus and Linux case-sensitive resource fix
+
+Owner supplied22archives. Private safe inventory/extraction retained all originals,
+never ran auxiliary scripts, and kept all assets outsideGit.82MDL49 files parse
+with valid parent hierarchies (3–234bones);401unique VTF payloads decode,1044VMT
+files parse, all22archive/2089extracted hashes remain exact. PinnedSourceIO archive
+cd44e1d... verified against every extracted decoder file. Nativepylib requires
+GLIBC2.43 while host2.41; offline read-only nonroot Docker metadata runtime solves
+codec inspection without upgradinghost or patchingbinary. SourceIO full app
+preflight still rejects absent installed SFM/GMod before output creation.
+Initial exact-case audit appeared to miss2geometry sets; checksum search proved
+case differences, not missing art.24aliases now resolve all82matching geometry sets.
+Implemented bounded read-only case lookup in loose provider and sidecar staging;
+refuse ambiguous names/escapes/excessive indexes, preserve original sidecar names
+in report while managed copies match selectedMDL basename.78Source unit checks
+pass incl8case cases. Reviewable private-corpus probes/runner and pinned-base
+metadata Dockerfile added; no native binaries or art committed.
+Native material lookup audit initially failed to normalize trailingWindows
+backslashes; corrected probe before final frozen run.80models find all VMTs;
+Reisen`,`slot and MomoyoBaby remain unresolved;38standalone texture references
+need dependencies;4circleVMT missing braces recover atEOF. These remain distinct
+from decoder success. No geometry conversion/app posing/HAS/native movie claim.
+Receipt sfm_uploaded_samples_2026-11-07.json and B-NATIVE prerequisites updated.
+Owner asked asynchronously for an existing recognized cloud installation path;
+independent work continues. Implementation51/54 and formal5/62 unchanged.

@@ -13,6 +13,7 @@ from asset_audit import digest, inspect
 from source_archive import stage_archive, resource_path
 from source_paths import DEFAULT_GMOD, DEFAULT_WORKSHOP
 from source_installation import installed_context
+from source_case import sidecars as loose_sidecars
 from source_content import vpk_index, vpk_read, mount_paths
 
 PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
@@ -77,6 +78,7 @@ def main():
     output.mkdir(parents=True, exist_ok=False)
     sha = digest(source)
     staging = None
+    case_resolved_sidecars = {}
     if source.suffix.lower() == ".vpk":
         entries = {r["path"].lower(): r for r in vpk_index(source)}
         member = resource_path(args.member or "")
@@ -110,10 +112,11 @@ def main():
         asset = native / source.name
         shutil.copyfile(source, asset)
         if source.suffix.lower() == ".mdl":
-            for suffix in (".vvd", ".dx90.vtx", ".dx80.vtx", ".sw.vtx", ".vtx", ".phy", ".ani"):
-                sidecar = source.with_suffix(suffix)
-                if sidecar.is_file():
-                    shutil.copyfile(sidecar, native / sidecar.name)
+            for suffix, sidecar in loose_sidecars(source).items():
+                managed_name = source.with_suffix(suffix).name
+                shutil.copyfile(sidecar, native / managed_name)
+                if sidecar.name != managed_name:
+                    case_resolved_sidecars[managed_name] = sidecar.name
         content_root = next((parent.parent for parent in source.parents if parent.name.lower() in {"models", "maps"}), source.parent)
         mounts = [native, content_root]
     else:
@@ -134,7 +137,7 @@ def main():
     sfm_source = context["source_profile"] == "sfm"
     request = {"source": str(asset), "original_source": str(source), "sha256": sha,
                "source_profile": "sfm" if sfm_source else "gmod",
-               "sourceio": str(addon), "sourceio_revision": PIN, "output": str(output),
+               "sourceio": str(addon), "sourceio_revision": PIN, "output": str(output), "case_resolved_sidecars": case_resolved_sidecars,
                "gmod_installation": context["gmod_installation"], "sfm_installations": context["sfm_installations"],
                "workshop_root": str(args.workshop.resolve()),
                "source_member": args.member, "mount_discovery": discovered,
