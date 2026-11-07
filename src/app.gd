@@ -249,6 +249,11 @@ func save_display_preference(section_name: String,key_name: String,value) -> voi
 	prefs.set_value(section_name,key_name,value)
 	if prefs.save(display_prefs_path)!=OK:message("Could not save the interface preference for next time.")
 
+func toggle_fullscreen() -> void:
+	# Redesign: F11 and Settings share one fullscreen toggle (editor window only; movies are unaffected).
+	var full := DisplayServer.window_get_mode() in [DisplayServer.WINDOW_MODE_FULLSCREEN,DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN]
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if full else DisplayServer.WINDOW_MODE_FULLSCREEN)
+
 func resize_web_display() -> void:
 	var css := Vector2i(JavaScriptBridge.eval("window.innerWidth"), JavaScriptBridge.eval("window.innerHeight"))
 	if css.x > 0 and css.y > 0 and get_window().content_scale_size != css:
@@ -274,9 +279,7 @@ func show_display_settings() -> void:
 		get_window().content_scale_factor = percent / 100.0
 		save_display_preference("display","percent",percent)
 		display_dialog.popup_centered())
-	button(box,"Toggle fullscreen",func():
-		var full := DisplayServer.window_get_mode() in [DisplayServer.WINDOW_MODE_FULLSCREEN,DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN]
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if full else DisplayServer.WINDOW_MODE_FULLSCREEN))
+	button(box,"Toggle fullscreen  [F11]",toggle_fullscreen)
 	button(box,"Keyboard shortcuts…",keyboard_shortcuts.open)
 	var navigation:=VBoxContainer.new();box.add_child(advanced(navigation))
 	navigation.visible=advanced_mode
@@ -619,7 +622,7 @@ func build_ui() -> void:
 	toolbar.add_child(spacer)
 	nav_button(toolbar, "Export movie", "export", export_dialog, "Export MP4 beside your saved HAS project, with a recoverable PNG frame sequence")
 	advanced(button(title_row,"Options",show_project_options)).tooltip_text="Project settings, including visibility fades. Saved with this HAS project."
-	button(title_row,"Settings",show_display_settings).tooltip_text="Interface scale and fullscreen. Advanced also offers orbit camera controls."
+	button(title_row,"Settings",show_display_settings).tooltip_text="Interface scale and fullscreen (F11). Advanced also offers orbit camera controls."
 	advanced(nav_button(toolbar, "About", "help", show_notices, "Credits and open source notices"))
 	simple_only(menu_button(toolbar, "More", "help", [
 		["Home screen…", func(): home.open_home()],
@@ -1695,6 +1698,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	var focus := get_viewport().gui_get_focus_owner()
 	if focus is LineEdit or focus is TextEdit: return
 	if has_dialog(self): return
+	if event.keycode == KEY_F11 and not event.ctrl_pressed and not event.alt_pressed and not event.shift_pressed:
+		toggle_fullscreen();get_viewport().set_input_as_handled();return
 	match preload("res://src/shortcut_bindings.gd").action(keyboard_shortcuts.bindings,event):
 		"save": save()
 		"undo": undo()
