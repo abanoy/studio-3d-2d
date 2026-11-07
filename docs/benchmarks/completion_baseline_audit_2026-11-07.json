@@ -1598,11 +1598,18 @@
           "file_sha256": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Independent canonical HAS model/map software contract is implemented and exercised. Audit committed evidence for formal closure; native ecosystem fidelity remains under IMPORT-02/03 and Windows target execution remains external.",
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Independent canonical HAS model/map packaging acceptance is verified for the committed original-fixture software contract. Native ecosystem fidelity and Windows execution remain under their own requirements.",
       "evidence_review": "Current 74check private-display package suite with original canonical fixtures, source/cache-offline fresh reader and exact real-render input; evidence receipt documents scope and limitations.",
-      "formal_receipts": [],
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/asset_packages_2026-11-07.json",
+          "commit": "bdc5cbaae7496891a2f2a8adae9bcb88a33a9a27",
+          "scope": "Existing portable HAS variation chosen by owner; independent model/map and embedded GLB/provenance/authored controls, actual UI export/import, new identity, one Undo, source/cache-offline fresh reader, exact real media input, negative role/timing/header/current-scene protection; 74checks plus76save and70reference/crash/media regressions. Native ecosystem fidelity and Windows acceptance excluded."
+        }
+      ],
       "external_dependencies": []
     },
     {
