@@ -2772,3 +2772,32 @@ raster_admission_2026-11-06.json and docs/raster_admission.md. Current rastergui
 updated for native dimensions and registered eager/raw ownership. MEM-01/02 remain
 partial/open; next bounded resource inventory and400unique-art measurement before
 any cap expansion. Whole continuous goal active; do not repeat owneradmission.
+
+
+2026-11-07 UTC — Measure400unique full-HD raster foundation before larger caps
+
+Following pushed a779c3c admission, audited declared CPU/GPU/tile/transient resource
+bounds and old/incoming-context limitations. Found additional HAS MAX_FILES128 and
+lesson_store.load_snapshot eager-decodes before normalOpen; these must be addressed
+with consistent productcount boundaries before ordinary larger-project acceptance.
+No count/container cap raised by this measurement increment.
+
+Headless4layers×100unique1920×1080PNG, including hiddenRGB, pass18aggregate checks:
+all400initialSHAvalidation/cold owners/sequential exactRGBA,8random/reverse
+composites equal fresh eager-source decodes,4owner-addressed tile UndoRedo, every
+sourcePNG byte hash unchanged. Logical eager reservation3,317,760,000bytes not
+allocated. Cold payload321,920bytes; loadedtracked growth2,247,431bytes; max decoded
+16,588,800bytes;4edited authorities finalaccounted41,790,705bytes. Staging20.003s,
+sequential readverify22.522s,8composite/oracles2.925s, fullrun82.609s including
+fixturegeneration36.056s. Godotstaticpeak108,163,971bytes. Linux50ms samples observed
+RSS/HWM185,982,976bytes across1634samples; includesfixtures/oracles, nottotal session
+orGPU/driver memory.8compositePNG→probed8H264frames1080p24 via FFmpeg. No appGPU,
+normal400celSave/Open or nativehardware/artist acceptance inferred.
+
+New benchmark Image getter local typed explicitly after a parse-only failure;
+failed log retained. Raw dense-raster-development and dense-raster-400 under
+/workspace/has-handoff-audit. Curated dense_raster_2026-11-07.json,
+docs/dense_raster_measurement.md and drawing_resource_inventory.md. MEM-01/02
+partial/open. Next concrete work: lesson eager validation and bounded larger project
+count/container boundaries, then actual app persistence/crash/media proof. Whole
+continuous goal active; do not repeat400foundation measurement without new changes.
