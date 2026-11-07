@@ -805,9 +805,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_pixel_history_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "src/cel_raster_budget.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_cel_raster_budget.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_raster_budget_2026-11-06.json"
         }
       ],
-      "remaining": "Clipboard deltas and owner-addressed pixel history are verified with legacy compatibility and explicit cooling. Remaining cel creation/deletion/layer snapshot accounting, global active/history memory budgets and dense-project acceptance remain; do not treat scoped history tests as full closure.",
+      "remaining": "Clipboard deltas, owner-addressed pixel history and automatic idle cooling are verified in scoped fixtures. Remaining cel creation/deletion/layer snapshot accounting, global active/history memory budgets and dense-project acceptance remain; do not treat scoped history tests as full closure.",
       "external_dependencies": []
     },
     {
@@ -907,9 +919,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_pixel_history_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "src/cel_raster_budget.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_cel_raster_budget.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_raster_budget_2026-11-06.json"
         }
       ],
-      "remaining": "Automatic64MiB cold loading verified. Owned pixel commands now retain logical owner/tiles and support explicit lossless cooling with exact Undo/Redo and borrowed-image guards. Automatic idle edited-owner release and global dense-project budgeting remain incomplete before any cap expansion; preserve measured latency and hardware/native gates.",
+      "remaining": "Automatic cold loading and a soft64MiB registered owned-hot/decoded-cache idle target are verified with exact edited-pixel Undo/Redo. Global accounting/admission for newly authored eager cels, raw fallback, history tiles and dense projects remains incomplete before cap expansion; preserve measured latency and hardware/native gates.",
       "external_dependencies": []
     },
     {
@@ -2076,7 +2100,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Owner-addressed pixel history can safely rehydrate edited rasters. Implement bounded idle release/global hot accounting with borrow guards and measured edited-project behavior before raising caps."
+      "action": "Bounded idle edited-owner release is verified. Address remaining newly authored eager/raw/global memory accounting and cel creation/deletion/layer history snapshots, then measure dense-project acceptance before raising caps."
     },
     {
       "requirement": "MEM-01",

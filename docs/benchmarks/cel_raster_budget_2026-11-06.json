@@ -1,0 +1,272 @@
+{
+  "date": "2026-11-06",
+  "scope": "Automatic idle release of registered edited owners; soft owned-hot plus decoded-cache target only. Not whole-app RAM, peak/RSS/GPU, noisy/hardware/native or full-goal acceptance.",
+  "source_sha256": {
+    "src/app.gd": "275d092119364c94371388667f602028f62557997c967c02868932d5b6272c5e",
+    "src/storage.gd": "27ece3e642a383d68ead9dd5d12e8a758c0a6249ab93288d6bd6cb225ea1a65b",
+    "src/cel_raster_owner.gd": "1d31197453046a8d0e829f79927376de60c7698babe4993370c86af870ee061b",
+    "src/cel_raster_snapshot_cache.gd": "0443f8556d714cceb086a5c9fac8142cd6b7c49ff29c353d59e7e075fc59a70b",
+    "src/cel_raster_budget.gd": "c46f05b524136207b8b5248aea7b19c7f78a574167c2fd2ac7739ad4f704db24",
+    "tests/cel_raster_budget_smoke.gd": "6e6c77d9df53f6d54f7626b57f3fc20c8180feb2965c556abc09015e53aeec68"
+  },
+  "domain": {
+    "unit": {
+      "checks": 29,
+      "failures": 0
+    },
+    "budget": {
+      "checks": 13,
+      "failures": 0
+    },
+    "pixel-history": {
+      "checks": 19,
+      "failures": 0
+    },
+    "policy": {
+      "checks": 11,
+      "failures": 0
+    },
+    "adaptive": {
+      "checks": 27,
+      "failures": 0
+    },
+    "save": {
+      "checks": 7,
+      "failures": 0
+    },
+    "read": {
+      "checks": 15,
+      "failures": 0
+    },
+    "overlay-regression": {
+      "checks": 20,
+      "failures": 0
+    },
+    "metadata": {
+      "checks": 14,
+      "failures": 0
+    },
+    "owner": {
+      "checks": 22,
+      "failures": 0
+    },
+    "reader-regression": {
+      "checks": 31,
+      "failures": 0
+    }
+  },
+  "domain_checks": 208,
+  "actual_app": {
+    "after_idle": {
+      "cold_payload_bytes": 4650,
+      "decoded_cache_bytes": 8294400,
+      "hot_bytes": 58060800,
+      "hot_owners": 7,
+      "owners": 12,
+      "target_bytes": 67108864
+    },
+    "after_idle_tracked_memory": 153462202,
+    "checks": 12,
+    "failures": 0,
+    "idle_ms": 4131,
+    "peak": {
+      "cold_payload_bytes": 0,
+      "decoded_cache_bytes": 8294400,
+      "hot_bytes": 99532800,
+      "hot_owners": 12,
+      "owners": 12,
+      "target_bytes": 67108864
+    },
+    "peak_tracked_memory": 194924227,
+    "scope": "12actual brush-edited sparseHDcels,normal automatic loading and natural1second idle cadence; owned-hot/cache soft target only,not whole RAM/RSS/GPU or noisy/hardware guarantee",
+    "tracked_reduction": 41462025,
+    "isolated_display": ":106"
+  },
+  "automatic_regression": {
+    "automatic_open": true,
+    "adaptive_open": false,
+    "reports": {
+      "unit": {
+        "checks": 31,
+        "failures": 0
+      },
+      "png-compatibility": {
+        "cache_hits": 16,
+        "cases": [
+          {
+            "name": "color2-depth16.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "e67477200047df6269888bb44717bca8e22bad1e130bacea74533e1354796a68"
+          },
+          {
+            "name": "color2-depth8.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "8bebf9e71d518c8eaf7cdc2054dab35a4a6a184cb096c75acbbab85a2a2c6879"
+          },
+          {
+            "name": "color4-depth16.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "ed0e7a88b4b1c479767c78482fa62b6f1cdc83f9c5ba433c156322255a02eb6f"
+          },
+          {
+            "name": "color4-depth8.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "a61c3f48139832caa035555ccfc99393feafb00387759ab14e76596455e1428a"
+          },
+          {
+            "name": "color6-depth16.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "85f739c9b5c4b6b8f89fd570794f914aa699aae50541fa3016be7c0c660ef2df"
+          },
+          {
+            "name": "color6-depth8.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "bb800897e39951c7bab0a0fea9900e354a0fd5165a4d4ef71c5540163dddcca6"
+          },
+          {
+            "name": "gray1.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "d8b0ad8408676af0e124ddd45cd8b09cdc7303296d3d53529ae19d531bd6e573"
+          },
+          {
+            "name": "gray16.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "4c61d80075d709da4f731397de129462e1a91808a8a5a3e60c77d136b49a1ddb"
+          },
+          {
+            "name": "gray2.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "1ddea9ce26a2e89396ed886e017030af6976052dd98a6fca589c35f6a225bdb4"
+          },
+          {
+            "name": "gray4.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "c8554e2433e5a608c32c822f3f37510cf3dda0798dbe76dea8910673f3b5e9a2"
+          },
+          {
+            "name": "gray8.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "08898f1b32e5a415ad4226812d4c524429f384c5e2e69304dacad4b8921af34f"
+          },
+          {
+            "name": "interlaced.png",
+            "ok": true,
+            "pixel_sha256": "40a028bd71b22e6f2eb75e7691b59882483febd139de9c5afee334c988052ddb",
+            "source_sha256": "cdaaed121f619da685a841dc9f644e1928b4d7cdee4bd0c3600dff2a3556ec32"
+          },
+          {
+            "name": "palette1.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "22574861f0a81d9f36b138d4e4cfe20883a97fcadb9ea7e9ee493c9aee522b9b"
+          },
+          {
+            "name": "palette2.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "be871ccb3dbc75cdedec573973c5f69ee1e97b7e3c43b1edb151a0412e9ed3b0"
+          },
+          {
+            "name": "palette4.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "0ca6d9f15e32104017669a64e3dcb9386ca8aeaa84b99450b078c60fbbc82c3f"
+          },
+          {
+            "name": "palette8.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "e022d29978dfbfd8e66dc6b8d5d4a83815938b42d935a4369b49a38ab16d08a0"
+          }
+        ],
+        "failures": 0,
+        "png_decodes": 16
+      },
+      "writer": {
+        "checks": 20,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/cel-raster-budget-auto-regression/render_1794014144_14888248_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "decoded_onset_sample": 48001,
+    "actual_abrupt_exit": true,
+    "originals_and_writer_cache_unavailable_for_cold_startup": true,
+    "manual_has_unchanged": true,
+    "source_assets_unchanged": true,
+    "functional_unchanged": true,
+    "private_receipts": [],
+    "isolated_display": ":107"
+  },
+  "raw_evidence": [
+    "/workspace/has-handoff-audit/cel-raster-budget-final/verification.json",
+    "/workspace/has-handoff-audit/cel-raster-budget-auto-regression/verification.json",
+    "/workspace/has-handoff-audit/cel-raster-budget-nested-regression/verification.json"
+  ],
+  "limitations": [
+    "Only owners registered by adaptive loading participate; newly authored eager and raw fallback images remain outside target.",
+    "History tile bytes, derived previews and GPU storage are outside target.",
+    "Borrowed/protected/incompressible owners can prevent target attainment.",
+    "Global admission/accounting, structural history and dense-project cap expansion remain unfinished."
+  ],
+  "nested_regression": {
+    "reports": {
+      "graph": {
+        "checks": 106,
+        "failures": 0
+      },
+      "audio": {
+        "checks": 9,
+        "failures": 0
+      },
+      "storage": {
+        "checks": 8,
+        "failures": 0,
+        "folder": "/workspace/has-handoff-audit/cel-raster-budget-nested-regression/storage"
+      },
+      "runtime": {
+        "checks": 23,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 48,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/cel-raster-budget-nested-regression/editor/render_1794014205_20380460_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 25,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 5,
+        "failures": 0
+      }
+    },
+    "child_audio_onset": 0.25002083333333336,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "adaptive_open": true,
+    "mask_recovery": true,
+    "native_fixtures": 0,
+    "writer_abrupt_exit_verified": true,
+    "manual_has_unchanged": true
+  }
+}

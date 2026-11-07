@@ -68,6 +68,8 @@ var history: Array = []
 var redo_history: Array = []
 var history_bytes := 0
 var dirty := false
+var raster_budget=preload("res://src/cel_raster_budget.gd").new()
+var raster_budget_due:=0
 var cold_cel_loading:=true
 var cold_cel_min_bytes:=64*1024*1024 # Preserve eager small-project latency.
 var raster_preview_error:=""
@@ -1050,7 +1052,19 @@ func change_camera_range(value: float,nearest: bool) -> void:
 func camera_preview_hint() -> void:
 	message("Camera preview changed. Use Save camera key [%s] to keep this view at frame %d." % [keyboard_shortcuts.label_for("camera"),frame])
 
+func trim_idle_rasters() -> void:
+	if raster_budget.cache==null or Time.get_ticks_msec()<raster_budget_due:return
+	raster_budget_due=Time.get_ticks_msec()+1000
+	if playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.recording.active or physics_editor.is_running() or has_dialog(self) or home.visible:return
+	if fill_editor.busy() or drawing_selection_editor.transforms.busy():return
+	var protected: Array=[]
+	for layer in layers:
+		var cel:=Drawing.cel_at(layer,frame)
+		if cel.get("raster_owner")!=null:protected.append(cel.raster_owner)
+	raster_budget.step(protected,true)
+
 func _process(delta: float) -> void:
+	trim_idle_rasters()
 	poll_recovery_preview()
 	if recovery_checkpoint_requested and not recovery_preview.busy():autosave_tick(true)
 	pose_editor.update_gizmo()
@@ -1723,6 +1737,7 @@ func reset_document(path: String, sample := false) -> bool:
 	if tutorials:tutorials.document_changing()
 	reference_sheet.install_prepared({"data":{}})
 	sequence_editor.clear()
+	raster_budget.install(null)
 	stop(); finish_stroke(); pose_editor.finish_drag(); release_mouse()
 	world_selection.clear()
 	if sample:renderer.install_legacy(prepared)
@@ -1838,6 +1853,7 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 	renderer.set_background(str(video.get("world_background","legacy_blue")))
 	keys = data.camera_keys
 	layers = data.layers
+	raster_budget.install(data.get("raster_cache"));raster_budget_due=Time.get_ticks_msec()+1000
 	palette=data.get("palette",[]).duplicate(true);palette_editor.refresh(true)
 	if layers.is_empty():
 		for title in ["Rough","Ink"]:layers.append({"id":str(ResourceUID.create_id()),"name":title,"visible":true,"cels":[]})

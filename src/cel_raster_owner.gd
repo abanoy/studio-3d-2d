@@ -11,7 +11,7 @@ static func from_snapshot(snapshot,cache) -> Dictionary:
 	if not snapshot is Snapshot or not cache is Cache:return {"error":"Invalid cold drawing owner."}
 	var why: String=snapshot.verify()
 	if not why.is_empty():return {"error":why}
-	var owner=load("res://src/cel_raster_owner.gd").new();owner._cold=snapshot;owner._cache=cache
+	var owner=load("res://src/cel_raster_owner.gd").new();owner._cold=snapshot;owner._cache=cache;cache.register(owner)
 	return {"owner":owner}
 static func from_image(image: Image) -> Dictionary:
 	if image==null or image.is_empty() or image.is_compressed() or image.get_format()!=Image.FORMAT_RGBA8 or image.has_mipmaps() or image.get_width()>1920 or image.get_height()>1080:return {"error":"Invalid editable drawing owner."}

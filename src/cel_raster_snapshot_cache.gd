@@ -8,7 +8,10 @@ var retained_bytes:=0
 var decodes:=0
 var hits:=0
 var _entries: Array=[]
+var owners: Array[WeakRef]=[]
 func _init(bytes: int=DEFAULT_BUDGET) -> void:budget=clampi(bytes,0,DEFAULT_BUDGET)
+func register(owner: RefCounted) -> void:
+	var reference: WeakRef=weakref(owner);owners.append(reference)
 func clear() -> void:_entries=[];retained_bytes=0
 func read(snapshot) -> Dictionary:
 	if not snapshot is Snapshot:return {"error":"Missing cold drawing snapshot."}

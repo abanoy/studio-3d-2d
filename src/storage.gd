@@ -283,7 +283,9 @@ static func load_project(folder: String, manifest_name := "project.json",cold_ce
 	if parser.parse(file.get_as_text()) != OK:
 		return {"error": "Corrupt JSON manifest: " + parser.get_error_message()}
 	var rasters:=RasterReader.new();rasters.cold_cels=cold_cels and (cold_min_bytes==0 or raster_reserve(parser.data)>cold_min_bytes)
-	return decode_project(parser.data,folder,false,rasters)
+	var loaded:=decode_project(parser.data,folder,false,rasters)
+	if not loaded.has("error") and rasters.cold_cels:loaded["raster_cache"]=rasters.adaptive_cache
+	return loaded
 
 static func decode_project(data,folder: String,extended:=false,rasters=null) -> Dictionary:
 	if rasters==null:rasters=RasterReader.new()

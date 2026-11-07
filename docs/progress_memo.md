@@ -12356,3 +12356,36 @@ MEM-01/02 partial/open. Next bounded idle release and global hot/edited-owner
 accounting, then remaining creation/deletion/layer snapshots/dense acceptance
 before raising32cel cap. No peak/RSS/GPU, hardware/native or full-goal claim.
 Full goal remains active and independently actionable.
+
+
+2026-11-06 — Automatic idle release for edited cold-raster owners
+
+Added a project-local weak owner registry and a soft64MiB target counting owned
+hot pixels plus decoded cache. Natural idle processing attempts at most one
+compression per second, protects current cels, skips active editing/playback/
+export/physics/dialogs and rotates past borrowed/incompressible blockers. Existing
+owner reference guards prevent releasing live Image users. Successful New clears
+the context; refused New and failed preparation preserve the current document.
+No schema, source artwork, canvas size or32cel cap changes.
+
+208 headless domain checks pass (13new budget checks). The permanent actual-app
+12check fixture paints12sparseHDcels, then natural idle releases5inactive owners
+in4131ms. Owned hot pixels99,532,800 to58,060,800 plus8,294,400 decoded cache;
+tracked Godot allocation falls41,462,025 bytes. Current drawing stays hot and all
+12real Undo/Redo operations restore exact RGBA. Source manifest remains unchanged.
+Automatic32cel Open/recovery regression passes, including real SIGKILL, source/
+manual HAS preservation, cold startup and48frame1080p24 H264/AAC with exact onset.
+Tests run on owned private106/107 with Dummy audio. Initial fixture selected a hot
+owner for its cold assertion and initially lacked explicit dynamic Dictionary
+types; corrected harness. Fairness test exposed cursor starvation and implementation
+now rotates after each attempt. Failed logs preserved outside checkout.
+
+Curated receipt docs/benchmarks/cel_raster_budget_2026-11-06.json; raw receipts
+/workspace/has-handoff-audit/cel-raster-budget-final andcel-raster-budget-auto-regression.
+This is a soft registered-owner/cache target, not a process bound. Newly authored
+eager/raw fallback, history tiles, derived/GPU storage and global admission remain
+outside scope; borrowed/protected/noisy owners can prevent target attainment.
+MEM-01/02 remain partial/open. Next structural create/delete/layer history and
+global/dense acceptance, before cap increases. Whole goal remains active.
+
+Nested adaptive/mask regression also passes224checks: actual child editing, packed/linked/active-child saves, shared instances, masks, procedural rig, abrupt exit and ordinary startup. Manual HAS files unchanged; no native-fidelity claim. Receipt cel-raster-budget-nested-regression/verification.json.

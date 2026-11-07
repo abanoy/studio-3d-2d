@@ -10,7 +10,7 @@ In adaptive mode, compressible drawings retain immutable lossless snapshots unti
 pixels are needed. Incompressible drawings retain the existing independent eager
 Image/COW backing. The 1920×1080 canvas, saved schemas/PNGs and32-cel limit remain
 unchanged. This policy applies to ordinary directory/HAS Open and recovery. It
-does not cool newly authored or already edited cels during the editing session.
+does not yet cover newly authored eager cels; edited owned cels can be cooled during idle time as described below.
 
 ## Integrity and ownership
 
@@ -94,7 +94,7 @@ The display number is an example, not shared-desktop authorization. Windows uses
 the existing private-desktop launcher. Source-hashed scoped receipts are in
 [benchmarks](benchmarks/cel_raster_policy_2026-11-06.json).
 
-The195 domain checks include ownership, cache bounds, exact alpha/color, corruption,
+The208 domain checks include ownership, cache bounds, exact alpha/color, corruption,
 non-hydrating accounting, streamed-save refusal and64MiB boundaries. The independent
 16-case PNG corpus passes eager/adaptive (gray/indexed/RGB/GA/RGBA,8/16bit,gamma/sRGB,
 Adam7). The automatic32cel suite passes78checks including actual SIGKILL and normal
@@ -130,7 +130,7 @@ See [app raw runs](benchmarks/cel_raster_app_2026-11-06.json) and
 
 These are scoped CPU allocation/time results, not peak/RSS/GPU, hardware, noisy-app
 or artist-comfort certification. Cold seeks are slower; the small-project eager
-policy preserves their existing path. Edited-owner/global dense-project budgets,
+policy preserves their existing path. Global dense-project budgets,
 higher caps and device/native acceptance remain unfinished. MEM-02 stays partial.
 
 ## Edited-owner history and safe release
@@ -148,10 +148,41 @@ images carry the saved revision, so a later verified selection can adopt them.
 Weak-reference tests confirm the old Image actually dies. Undo/Redo can rehydrate
 and cool repeatedly with exact RGBA; wrong-scene or missing targets do not hydrate.
 
-This release is an internal primitive, not yet an automatic edited-owner budget.
-The app now stores owner-addressed pixel commands for owned cels, but automatic
-idle scheduling/global hot accounting still needs implementation and measurement.
-No resource cap is raised. The 35-check explicit cold editing writer/12-check fresh
+The app stores owner-addressed pixel commands for owned cels. A project-local weak
+registry includes owners retained by the current document or history without
+keeping discarded owners alive. Once owned hot pixels plus decoded-cache bytes
+exceed a soft64MiB target, the app attempts to cool one inactive owner per second
+of idle time. It protects the current cel in each active layer and defers during
+gestures, fills/transforms, playback, export, physics, dialogs and Home. A fair
+cursor prevents a borrowed or incompressible owner from starving other candidates.
+External Image references independently prevent unsafe release. Successful New
+drops the context; refused New/Open preserves the current document context.
+
+This is a soft target for registered owners and decoded cache. Newly authored eager
+cels, raw/incompressible fallback, drawing-history tiles, derived previews and GPU
+storage remain outside it. Protected, borrowed or incompressible owners can leave
+it above target. Global admission/accounting and larger dense-project acceptance
+remain unfinished. No resource cap is raised. The 35-check explicit cold editing writer/12-check fresh
 reader verifies real cooling with Undo present and all four pixel-edit tools;
 existing154legacy GUI history checks also pass. See
 [the pixel-history receipt](benchmarks/cel_pixel_history_2026-11-06.json).
+
+
+## Automatic idle-release evidence
+
+The permanent verifier runs208 domain checks and a12-check real app fixture:
+
+```sh
+python tests/verify_cel_raster_budget.py --isolated-display :107 --output /absolute/new/result
+```
+
+Provision an owned private display first; Windows uses the private desktop launcher.
+The fixture paints12 distinct sparseHDcels through the actual brush and naturally
+idles. Five inactive owners cool in4131ms, reducing owned hot pixels from99,532,800
+to58,060,800 bytes with8,294,400 decoded-cache bytes. Tracked Godot allocation
+falls by41,462,025 bytes. The current drawing stays hot, all12 commands remain,
+and every Undo/Redo restores exact RGBA. Active gestures defer release. Refused
+New preserves context; successful New clears it. Original manifest stays unchanged.
+
+These are scoped tracked allocations, not peak/RSS/GPU, noisy-project or physical
+hardware acceptance. See [the idle-release receipt](benchmarks/cel_raster_budget_2026-11-06.json).

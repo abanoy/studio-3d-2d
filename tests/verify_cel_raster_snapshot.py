@@ -1,4 +1,4 @@
-"""Headless cold-raster staging checks; optional owned 32-cel measurement fixtures."""
+"""Headless cold-raster domain checks; optional owned 32-cel measurement fixtures."""
 from pathlib import Path
 import argparse,hashlib,json,os,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
@@ -22,6 +22,7 @@ def main():
         assert report.get('failures',0)==0 and report.get('ok',True)
         reports[label]=report
     run('tests/cel_raster_snapshot_unit.gd','unit','CEL_RASTER_SNAPSHOT_UNIT ')
+    run('tests/cel_raster_budget_unit.gd','budget','CEL_RASTER_BUDGET_UNIT ')
     run('tests/cel_pixel_history_unit.gd','pixel-history','CEL_PIXEL_HISTORY_UNIT ')
     run('tests/cel_raster_policy_unit.gd','policy','CEL_RASTER_POLICY_UNIT ')
     run('tests/cel_raster_adaptive_unit.gd','adaptive','CEL_RASTER_ADAPTIVE_UNIT ')
@@ -34,7 +35,7 @@ def main():
     for kind in ['sparse','noise']:
         if options.benchmark in [kind,'all']:
             run('tests/cel_raster_snapshot_benchmark.gd',kind,'CEL_RASTER_SNAPSHOT_BENCHMARK ',['--noise'] if kind=='noise' else [])
-    proof={'scope':'Opt-in cold raster staging foundation only; live cel storage remains eager. No app/Undo/GPU acceptance claim.','reports':reports,'source_sha256':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/cel_pixel_history.gd','tests/cel_pixel_history_unit.gd','tests/cel_raster_policy_unit.gd','tests/cel_raster_adaptive_unit.gd','src/storage.gd','src/fill_editor.gd','src/drawing_selection_editor.gd','src/drawing_transform_editor.gd','src/cel_clipboard.gd','tests/cel_raster_save_unit.gd','src/app.gd','src/renderer.gd','src/color_sampler.gd','src/onion_editor.gd','src/sequence_runtime.gd','src/tutorials.gd','src/drawing_overlay_cache.gd','tests/cel_raster_read_unit.gd','src/cel_timing_editor.gd','src/cel_patch.gd','src/recovery.gd','src/layer_editor.gd','src/sequence_editor.gd','tests/cel_raster_metadata_unit.gd','src/drawing.gd','src/cel_raster_owner.gd','tests/cel_raster_owner_unit.gd','src/cel_raster_reader.gd','src/cel_raster_snapshot.gd','src/cel_raster_snapshot_cache.gd','tests/cel_raster_snapshot_unit.gd','tests/cel_raster_snapshot_benchmark.gd']}}
+    proof={'scope':'Headless cold-raster ownership, integrity, history and budget domains. No GUI/GPU or whole-project acceptance claim.','reports':reports,'source_sha256':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/cel_raster_budget.gd','src/cel_raster_snapshot_cache.gd','tests/cel_raster_budget_unit.gd','src/cel_pixel_history.gd','tests/cel_pixel_history_unit.gd','tests/cel_raster_policy_unit.gd','tests/cel_raster_adaptive_unit.gd','src/storage.gd','src/fill_editor.gd','src/drawing_selection_editor.gd','src/drawing_transform_editor.gd','src/cel_clipboard.gd','tests/cel_raster_save_unit.gd','src/app.gd','src/renderer.gd','src/color_sampler.gd','src/onion_editor.gd','src/sequence_runtime.gd','src/tutorials.gd','src/drawing_overlay_cache.gd','tests/cel_raster_read_unit.gd','src/cel_timing_editor.gd','src/cel_patch.gd','src/recovery.gd','src/layer_editor.gd','src/sequence_editor.gd','tests/cel_raster_metadata_unit.gd','src/drawing.gd','src/cel_raster_owner.gd','tests/cel_raster_owner_unit.gd','src/cel_raster_reader.gd','src/cel_raster_snapshot.gd','src/cel_raster_snapshot_cache.gd','tests/cel_raster_snapshot_unit.gd','tests/cel_raster_snapshot_benchmark.gd']}}
     (folder/'verification.json').write_text(json.dumps(proof,indent=2),encoding='utf-8')
     print(json.dumps(proof,indent=2))
 
