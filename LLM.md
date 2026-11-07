@@ -3097,3 +3097,26 @@ checklist/audit remainingwork updated. MOTION03 stillpartial/open; scores unchan
 Next: authored turning on flat walking paths while preserving root keys and stance
 orientation, then broader rig/terrain and independent remaining acceptance gaps.
 Wholegoal active.
+
+
+## 2026-11-07 UTC — walking follows authored upright yaw
+
+Extended saved walking to explicit smooth rootyaw; no generated facing/root keys.
+World stance targetposition/orientation stay fixed, swing feet turn toward next
+landing, independent rootrotation remains exact. Preserve all fixed-heading paths.
+Keep0.2mmcontact tolerance, fixedscale/upright/reach and existing sourceguards.
+New refusalforHoldturn, >5degree/halfframe turn, sustainedstationarypivot; original
+componentclip can dwell half-frame at24.5, so keepstance through up tooneframe
+instead of changing position interpolation. Diagnostic rawruns retained.
+
+Actualprivate X109turnbend/X110straight each pass43domain/26settings/23app/6reader
+withfrozensources.193quarterframe turning samples maxerror2.7837666e-7m and
+>50stancepairs hold exactposition+rotation. Exactauthoredroot/facing, reverse seek,
+zeroamount, safeguards, defaultSimplepreview, Advancedcorrection, oneUndo/Redo,
+recovery, original/writercacheoffline packedcoldOpen, five fullprecision pose/root
+strings and twoGPU/MP4inputframes pass. Actual48frame1080p24H2642s/source/manualHAS
+preservation pass. No nativeecosystem/terrain/Windows/device/artistacceptance.
+Curated authored_turn_walking_2026-11-07.json, docs/checklist/audit updated; MOTION03
+partial/open,48/54implementation/2of62formalclosure unchanged. Wholegoalactive.
+Nextfresh complete reference-only posing acceptance (POSE04) and independent
+remainingrequired work, rather than repeatedly polishing this bounded walk.

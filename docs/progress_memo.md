@@ -13200,3 +13200,14 @@ facing unchanged. Private bend+straight runs each pass34domain/26settings/23app/
 bodylowering. Integer/float JSONspelling oracle corrected without rounding.
 Receipt bending_walk_2026-11-07.json; MOTION03 partial/open, scoresunchanged.
 Next authoredflatturns, then remainingrig/terrain/acceptance work.
+
+
+### 2026-11-07 UTC — authored upright turns while walking
+
+Savedwalking follows explicit smoothyaw with plantedworldposition/orientation.
+Private turnbend+straight each pass43domain/26settings/23app/6reader;193quarterframe
+turncontacts max2.7837666e-7m. Exactroot/facing/fivecoldposes/twoGPU-exportframes,
+Undo/recovery/source/manualHAS/48frameH264 pass. Hold/fast/tilted/sustainedpivot
+refuse; retain authoredcomponent half-frame dwell, keepstance through<=oneframe.
+Receipt authored_turn_walking_2026-11-07.json. Native/terrain/grouped/artist gates
+remain, MOTION03partial, scoresunchanged. NextfreshPOSE04reference acceptance.

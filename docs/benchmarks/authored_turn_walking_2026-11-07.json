@@ -1,0 +1,274 @@
+{
+  "format": "has_authored_turn_walking_evidence_1",
+  "date": "2026-11-07 UTC",
+  "base_commit": "48b7409",
+  "scope": "Optional walking on bounded flat routes with explicit authored upright yaw; original included17bone figure, no inferred facing, terrain/native/device/artist acceptance.",
+  "runs": [
+    {
+      "folder": "/workspace/has-handoff-audit/turn-walk-app-first",
+      "reports": {
+        "evaluator": {
+          "bend_samples": 193,
+          "checks": 43,
+          "failures": 0,
+          "maximum_bend_foot_error": 4.74600565212313e-05,
+          "maximum_foot_error": 0.000179591297637671,
+          "maximum_turn_foot_error": 2.78376660389767e-07,
+          "samples": 97,
+          "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance",
+          "turn_samples": 193
+        },
+        "settings": {
+          "checks": 26,
+          "failures": 0
+        },
+        "writer": {
+          "checks": 23,
+          "failures": 0,
+          "movie": "/workspace/has-handoff-audit/turn-walk-app-first/render_1794039150_8152083_0/movie.mp4"
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0
+        }
+      },
+      "evaluator": {
+        "bend_samples": 193,
+        "checks": 43,
+        "failures": 0,
+        "maximum_bend_foot_error": 4.74600565212313e-05,
+        "maximum_foot_error": 0.000179591297637671,
+        "maximum_turn_foot_error": 2.78376660389767e-07,
+        "samples": 97,
+        "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance",
+        "turn_samples": 193
+      },
+      "bending_route": true,
+      "authored_turn": true,
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "243028",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "private_receipts": [],
+      "isolated_display": ":109",
+      "manual_has_unchanged": true,
+      "original_source_unchanged": true,
+      "original_and_writer_cache_offline_for_reader": true,
+      "cold_reader_uses_new_packed_asset_cache": true,
+      "functional_unchanged": true,
+      "native_fixtures": 0,
+      "raw_receipt_sha256": "0d24860de469bdfc387c84dc950de7e100f15f91dfe55e04b22bff67baf1c62e"
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/turn-walk-straight-first",
+      "reports": {
+        "evaluator": {
+          "bend_samples": 193,
+          "checks": 43,
+          "failures": 0,
+          "maximum_bend_foot_error": 4.74600565212313e-05,
+          "maximum_foot_error": 0.000179591297637671,
+          "maximum_turn_foot_error": 2.78376660389767e-07,
+          "samples": 97,
+          "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance",
+          "turn_samples": 193
+        },
+        "settings": {
+          "checks": 26,
+          "failures": 0
+        },
+        "writer": {
+          "checks": 23,
+          "failures": 0,
+          "movie": "/workspace/has-handoff-audit/turn-walk-straight-first/render_1794039149_7762216_0/movie.mp4"
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0
+        }
+      },
+      "evaluator": {
+        "bend_samples": 193,
+        "checks": 43,
+        "failures": 0,
+        "maximum_bend_foot_error": 4.74600565212313e-05,
+        "maximum_foot_error": 0.000179591297637671,
+        "maximum_turn_foot_error": 2.78376660389767e-07,
+        "samples": 97,
+        "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance",
+        "turn_samples": 193
+      },
+      "bending_route": false,
+      "authored_turn": false,
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "236024",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "private_receipts": [],
+      "isolated_display": ":110",
+      "manual_has_unchanged": true,
+      "original_source_unchanged": true,
+      "original_and_writer_cache_offline_for_reader": true,
+      "cold_reader_uses_new_packed_asset_cache": true,
+      "functional_unchanged": true,
+      "native_fixtures": 0,
+      "raw_receipt_sha256": "3d4a33d5a0966307ff0132a1c6743238b8ec01ff074000e25f1400b17520bb31"
+    }
+  ],
+  "source_sha256": {
+    "src/limb_ik.gd": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f",
+    "src/foot_contacts.gd": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607",
+    "src/path_locomotion.gd": "8a0ca32f6368dd351d981a2bccd594075d9ad0018ecafe29f52ea7a1e2f75807",
+    "tests/path_locomotion_unit.gd": "ab317f4c2ca631d595e180057b5cd7bf4b361c75ea9cff0ea6cf0d5e90f8abf3",
+    "tests/walking_path_smoke.gd": "5f7befdae23e24b5f1746b3e0b212677630fb8b52208eb767de55c86a99b2250",
+    "tests/verify_walking_path.py": "1dcaa2ebfb6743047bebe4203cd0213156f3164c2c36e17e5405ad826f2fa66f",
+    "examples/tutorials/Practice figure.glb": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23"
+  },
+  "diagnoses": [
+    {
+      "folder": "/workspace/has-handoff-audit/turn-walk-before",
+      "result": "Prior categorical fixed-turn refusal reproduced before implementation."
+    },
+    {
+      "folders": [
+        "/workspace/has-handoff-audit/turn-walk-second",
+        "/workspace/has-handoff-audit/turn-walk-diagnostic",
+        "/workspace/has-handoff-audit/turn-walk-route-diagnostic"
+      ],
+      "result": "Initial sustained-pivot guard rejected the existing authored component-clip half-frame dwell at24.5. Diagnostics show root position identical at24 and24.5 while smooth authored yaw progresses. Keep world stance through up toone frame of stopped turning; refuse sustained stationary turn rather than changing authored position interpolation. Final193quarter-frame tests exercise this boundary with exact root values and stance position/orientation."
+    }
+  ],
+  "limits": [
+    "240frames/64strides",
+    "fixed scale",
+    "upright authored yaw, maximum5degrees perhalf-frame",
+    "atmostone frame stopped-turn dwell; sustained pivots refused",
+    "existing0.2mm contact position/orientation bounds",
+    "no automatic facing, slopes, grouped rigs, Holdturns or reverse progress"
+  ],
+  "completion": "MOTION03 partial/open, implementation48/54 and acceptance2/62 unchanged."
+}

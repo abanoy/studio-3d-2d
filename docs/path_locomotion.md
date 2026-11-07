@@ -31,10 +31,11 @@ frame, so manual posing remains exact; final rendering ignores transient drafts.
 
 The current bound is 240 project frames and 64 strides. Build checks every
 half-frame before publishing a usable plan. It supports straight routes and forward-progressing flat bends while keeping
-authored facing fixed. Arc length controls step timing; stance targets stay fixed
+authored facing unchanged, including smooth upright yaw keys. Arc length controls
+step timing; stance position and orientation stay fixed
 in world space and swing targets follow the authored route. It refuses competing
 planted-foot ranges, ambiguous/missing legs, grouped characters, nonuniform
-parents, changing turn/scale, slopes, reversals, Hold jumps and excessive
+parents, changing scale or root tilt, slopes, reversals, Hold jumps and excessive
 stride/speed. Some wider bends need shorter steps or more body lowering; plans
 that miss the existing 0.2 mm foot-contact bound refuse atomically.
 Unsupported saved walking refuses before replacing the installed world or camera.
@@ -69,4 +70,16 @@ The flat-bend extension and straight-route regression are recorded in
 with the command above to exercise a two-segment bend. No facing keys are inferred
 or overwritten. Generated walking remains optional saved intent using the existing
 schema; older builds can refuse the newly supported route at preflight. General
-turning, terrain, grouped rigs and native/artist acceptance remain open.
+turning beyond these bounds, terrain, grouped rigs and native/artist acceptance remain open.
+
+Smooth authored yaw now passes the same app/cold-reader/export workflow; use
+`--bend --turn` for this case. During a swing the foot turns toward its next
+landing orientation. The planted foot keeps its world orientation. This does not
+steer the character automatically. Root tilt, stepped turns, turns above 5 degrees
+per half-frame and sustained pivots without travel refuse. A component-clip dwell
+of up to one frame keeps the existing stance while authored facing continues.
+The [authored-turn receipt](benchmarks/authored_turn_walking_2026-11-07.json)
+records 43 evaluator, 26 settings, 23 app and 6 cold-reader checks for both a turning
+bend and the straight-route regression. All 193 quarter-frame turning samples meet
+the existing contact bounds; full-precision five-frame pose replay and two rendered
+frames agree exactly across save/Open/export. MOTION-03 remains partial/open.

@@ -1,6 +1,6 @@
 extends RefCounted
-# Bounded flat walking evaluator; authored facing stays independent. Sampling borrows a rig only for
-# the existing verified IK solve; generated poses never replace source keys.
+# Bounded flat walking evaluator. Authored movement/facing stay authoritative.
+# Sampling borrows a rig for IK; generated poses never replace source keys.
 const Model=preload("res://src/model.gd")
 const Paths=preload("res://src/movement_path.gd")
 const Feet=preload("res://src/foot_contacts.gd")
@@ -26,6 +26,9 @@ var _direction:=Vector3.ZERO
 var _length:=0.
 var _route: Array=[]
 var _straight:=true
+var _turning:=false
+var _first_rotation:=Quaternion.IDENTITY
+var _pivot:=Vector3.ZERO
 var _stride:=0.
 var _lift:=0.
 var _lowering:=0.
@@ -46,7 +49,7 @@ func build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictio
 	var staged=load("res://src/path_locomotion.gd").new();var error: String=staged._build(actor,data,video,settings)
 	if not error.is_empty():return error
 	# Only a fully checked plan replaces an earlier usable experiment.
-	for field in ["_actor","_source","_probe","_root_id","_order","_bindings","_lower","_ramp_frames","_root_base","_parent","_feet","_start","_end","_origin","_direction","_length","_route","_straight","_stride","_lift","_lowering"]:set(field,staged.get(field))
+	for field in ["_actor","_source","_probe","_root_id","_order","_bindings","_lower","_ramp_frames","_root_base","_parent","_feet","_start","_end","_origin","_direction","_length","_route","_straight","_turning","_first_rotation","_pivot","_stride","_lift","_lowering"]:set(field,staged.get(field))
 	_last={};_last_frame=INF;_last_amount=-1.;return ""
 
 func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictionary,structure_only:=false) -> String:
@@ -96,19 +99,34 @@ func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dicti
 	var first: Dictionary=_probe.sample_authored_transform(_start);var last: Dictionary=_probe.sample_authored_transform(_end)
 	_origin=T.vector(first.position);var delta: Vector3=_parent.basis*(T.vector(last.position)-_origin);_length=delta.length()
 	if _length<.0001 or absf(delta.y)>.0001:return "Walking needs a moving flat path."
-	_direction=delta.normalized()
+	_direction=delta.normalized();_first_rotation=T.quaternion(first.rotation_xyzw);_pivot=_parent*_origin
 	var previous:=0.
 	for point in Paths.controls(data):
 		if point.mode=="hold":
 			var later: Array=Paths.controls(data).filter(func(value):return value.frame>point.frame)
 			if not later.is_empty() and later[0].position!=point.position:return "Walking does not infer steps across a Hold jump."
-	var transforms:=[];var last_offset:=Vector3.ZERO;var travelled:=0.
+	var rotations: Array=Paths.Components.controls(data).filter(func(point):return point.components.has("rotation_xyzw")) if data.get("format")=="studio_model_9" else []
+	if data.get("format")!="studio_model_9":
+		for point in Paths.controls(data):rotations.append({"frame":point.frame,"components":{"rotation_xyzw":point.mode}})
+	for i in range(rotations.size()-1):
+		if rotations[i].components.rotation_xyzw=="hold" and absf(T.quaternion(_probe.sample_authored_transform(rotations[i].frame).rotation_xyzw).dot(T.quaternion(_probe.sample_authored_transform(rotations[i+1].frame).rotation_xyzw)))<.999999:return "Walking cannot plant feet across a Hold turn. Use a smooth turn or disable walking."
+	var transforms:=[];var last_offset:=Vector3.ZERO;var travelled:=0.;var last_turn:=Quaternion.IDENTITY;var stopped_turn:=0.
 	for half in range(_start*2,_end*2+1):
 		var at:=float(half)/2.;var value: Dictionary=_probe.sample_authored_transform(at);var offset: Vector3=_parent.basis*(T.vector(value.position)-_origin);var distance:=offset.dot(_direction)
-		if absf(T.quaternion(value.rotation_xyzw).dot(T.quaternion(first.rotation_xyzw)))<.999999 or absf(float(value.scale)-float(first.scale))>.000001:return "Walking needs a fixed turn and scale; author those separately for now."
+		if absf(float(value.scale)-float(first.scale))>.000001:return "Walking needs a fixed scale; author size changes separately for now."
+		var turn:=relative_turn(value.rotation_xyzw)
+		if turn.dot(last_turn)<0:turn=Quaternion(-turn.x,-turn.y,-turn.z,-turn.w)
+		if Basis(turn).y.dot(Vector3.UP)<.99999:return "Walking supports upright yaw turns, not changing root tilt."
+		if absf(turn.dot(last_turn))<cos(deg_to_rad(5.)/2.):return "Slow down the authored turn before trying walking."
+		var changed_turn: bool=Vector3(turn.x-last_turn.x,turn.y-last_turn.y,turn.z-last_turn.z).length()>.000001
+		# Component clip boundaries can dwell for one frame. Keep stance fixed
+		# through that authored pause, but do not invent a stationary turn cycle.
+		stopped_turn=stopped_turn+.5 if changed_turn and offset.distance_to(last_offset)<.0000001 else 0.
+		if stopped_turn>1.:return "Walking needs travel during a turn at frame "+str(at)+"; use manual posing for a pivot in place."
+		if Vector3(turn.x,turn.y,turn.z).length()>.000001:_turning=true
 		if absf(offset.y)>.0001 or distance<previous-.00001:return "Walking needs a flat path without reversals."
 		if (offset-_direction*distance).length()>.0001:_straight=false
-		travelled+=offset.distance_to(last_offset);_route.append({"distance":travelled,"offset":offset});last_offset=offset
+		travelled+=offset.distance_to(last_offset);_route.append({"distance":travelled,"offset":offset,"turn":turn});last_offset=offset;last_turn=turn
 		previous=distance;transforms.append(value)
 	if not _straight:_length=travelled
 	if structure_only:return ""
@@ -185,6 +203,16 @@ func path_offset(distance: float) -> Vector3:
 		if delta.length()>.00000001:return _route[-1].offset+delta.normalized()*maxf(0,distance-_length)
 	return Vector3.ZERO
 
+func relative_turn(rotation: Array) -> Quaternion:
+	var parent_rotation:=_parent.basis.get_rotation_quaternion()
+	return (parent_rotation*T.quaternion(rotation)*_first_rotation.inverse()*parent_rotation.inverse()).normalized()
+
+func turn_at(distance: float) -> Quaternion:
+	for i in range(1,_route.size()):
+		var a: Dictionary=_route[i-1];var b: Dictionary=_route[i];var span: float=b.distance-a.distance
+		if span>.00000001 and distance<=b.distance:return a.turn.slerp(b.turn,clampf((distance-a.distance)/span,0,1))
+	return _route[-1].turn
+
 func sample(frame: float,amount:=1.) -> Dictionary:
 	if _actor==null:return {"error":"Build a walking plan first."}
 	var actor=_actor.get_ref()
@@ -206,7 +234,16 @@ func sample(frame: float,amount:=1.) -> Dictionary:
 		var foot: Dictionary=_feet[side];var shift:=float(side)*.5;var q:=distance/_stride+shift;var cycle:=floorf(q);var phase:=q-cycle;var previous:=maxf(0,(cycle-shift)*_stride);var following:=(cycle+1-shift)*_stride;var at:=previous;var height:=0.
 		if phase>=.5:
 			var u:=(phase-.5)*2.;at=lerpf(previous,following,u*u*(3.-2.*u));height=sin(PI*u)*_lift
-		var rest: Vector3=foot.position+offset;var target: Vector3=rest.lerp(foot.position+path_offset(at)+Vector3.UP*height,amount);var rotation: Quaternion=foot.rotation
+		var rest: Vector3=foot.position+offset;var landing: Vector3=foot.position+path_offset(at)+Vector3.UP*height;var rotation: Quaternion=foot.rotation
+		if _turning:
+			var current_turn:=relative_turn(transform.rotation_xyzw);var from_turn:=turn_at(previous);var to_turn:=turn_at(following);var swing:=0.
+			if phase>=.5:
+				var u:=(phase-.5)*2.;swing=u*u*(3.-2.*u)
+			var landing_turn:=from_turn.slerp(to_turn,swing)
+			rest=_pivot+offset+current_turn*(foot.position-_pivot)
+			landing=_pivot+path_offset(at)+landing_turn*(foot.position-_pivot)+Vector3.UP*height
+			rotation=(current_turn*foot.rotation).slerp(landing_turn*foot.rotation,amount)
+		var target: Vector3=rest.lerp(landing,amount)
 		targets.append({"ids":foot.limb.ids.duplicate(),"position":[target.x,target.y,target.z],"rotation_xyzw":[rotation.x,rotation.y,rotation.z,rotation.w]})
 	transform=transform.duplicate(true);transform.position[1]-=_lowering*amount/_parent.basis.y.length()
 	if amount==0:

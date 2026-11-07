@@ -53,7 +53,36 @@ func run() -> void:
 	var contact: Dictionary=Model.contact_animation().promote(route,48);contact.animation_clips[0]["foot_contacts"]=Walk.Feet.capture(actor,0,48,"authored-feet")
 	check(Model.validate(contact,48).is_empty() and not plan.build(actor,contact,video).is_empty(),"authored planted contacts refuse a competing walking plan")
 	var group:=route.duplicate(true);group.parent_id="group";check(not plan.build(actor,group,video).is_empty(),"grouped model refuses unsupported moving-parent inference")
-	var turn_base: Dictionary=D.put_component(route,0,"rotation_xyzw",[0,0,0,1],"ease",48).data;var turning: Dictionary=D.put_component(turn_base,48,"rotation_xyzw",[0,sin(.25),0,cos(.25)],"ease",48).data;check(not plan.build(actor,turning,video).is_empty(),"changing authored turn refuses instead of silently steering it")
+	var turn_base: Dictionary=D.put_component(route,0,"rotation_xyzw",[0,0,0,1],"ease",48).data;var turning: Dictionary=D.put_component(turn_base,48,"rotation_xyzw",[0,sin(.1),0,cos(.1)],"ease",48).data;var turn_plan:=Walk.new();var turn_error:=turn_plan.build(actor,turning,video,{"stride":.3,"lowering":.05});check(turn_error.is_empty(),"walking accepts explicit smooth authored yaw without replacing facing keys")
+	if not turn_error.is_empty():print("TURN_BUILD_ERROR "+turn_error)
+	var turn_maximum:=0.;var turn_bend: Dictionary=Paths.change(turning,24,Vector3(.08,0,.3),48).data;var turning_bend:=Walk.new();turn_error=turning_bend.build(actor,turn_bend,video,{"stride":.3,"lowering":.05});check(turn_error.is_empty(),"authored smooth yaw combines with a bending flat route")
+	if not turn_error.is_empty():print("TURN_BEND_BUILD_ERROR "+turn_error)
+	else:
+		probe.data=turn_bend;exact=true;feet_exact=true;var planted:=true;var stance_pairs:=0;var prior_targets: Array=[];var prior_phases: Array=[]
+		for quarter in range(193):
+			var at:=float(quarter)/4.;var result:=turning_bend.sample(at);var baseline: Dictionary=probe.sample_authored_transform(at)
+			if result.has("error"):exact=false;print(result);continue
+			exact=exact and actor.data==original and Walk.capture_state(actor)==state and result.transform.position[0]==baseline.position[0] and result.transform.position[2]==baseline.position[2] and result.transform.rotation_xyzw==baseline.rotation_xyzw and result.transform.scale==baseline.scale
+			actor.root.transform=Transform3D(Basis(Model.Timeline.quaternion(result.transform.rotation_xyzw)).scaled(Vector3.ONE*result.transform.scale),Model.Timeline.vector(result.transform.position))*actor.base_root;Walk.Feet.apply_pose(actor,result.pose)
+			for foot in result.targets:
+				var actual: Transform3D=actor.bone_transform(foot.ids[2]);var difference: float=actual.origin.distance_to(Model.Timeline.vector(foot.position));turn_maximum=maxf(turn_maximum,difference);feet_exact=feet_exact and difference<.0002 and absf(actual.basis.orthonormalized().get_rotation_quaternion().dot(Model.Timeline.quaternion(foot.rotation_xyzw)))>.99999
+			Walk.restore_state(actor,state)
+			var distance: float=turning_bend.distance_at(at)
+			for side in range(2):
+				var phase:=fposmod(distance/turning_bend._stride+float(side)*.5,1.)
+				if at>=turning_bend._ramp_frames+.25 and not prior_phases.is_empty() and phase<.5 and prior_phases[side]<.5 and phase>=prior_phases[side]:
+					stance_pairs+=1;planted=planted and result.targets[side]==prior_targets[side]
+				if prior_phases.size()<2:prior_phases.append(phase)
+				else:prior_phases[side]=phase
+			prior_targets=result.targets
+		check(exact and feet_exact,"all193turning quarter-frame samples preserve authored root/facing/live state and exact foot contact bounds")
+		check(planted and stance_pairs>50,"turning stance holds both world position and foot orientation unchanged")
+		var saved_turn:=turning_bend.sample(17.25);turning_bend.sample(40);check(turning_bend.sample(17.25)==saved_turn,"authored-turn reverse seek is deterministic")
+		var no_turn_assist:=turning_bend.sample(17.25,0);check(no_turn_assist.pose==probe.sample_body(17.25) and no_turn_assist.transform==probe.sample_authored_transform(17.25),"zero walking amount preserves exact authored turning animation")
+	var hold_turn: Dictionary=D.put_component(turning,0,"rotation_xyzw",[0,0,0,1],"hold",48).data;check(not plan.build(actor,hold_turn,video).is_empty(),"stepped Hold turn refuses invented foot rotation across a cut")
+	var tilted: Dictionary=D.put_component(turn_base,48,"rotation_xyzw",[sin(.1),0,0,cos(.1)],"ease",48).data;check(not plan.build(actor,tilted,video).is_empty(),"changing root tilt refuses unsupported ground inference")
+	var pivot: Dictionary=Paths.change(turning,24,Vector3.ZERO,48).data;check(not plan.build(actor,pivot,video).is_empty(),"pivot in place refuses while feet have no travel phase")
+	var fast: Dictionary=D.put_component(turning,1,"rotation_xyzw",[0,sin(.4),0,cos(.4)],"ease",48).data;check(not plan.build(actor,fast,video).is_empty(),"excessive half-frame turn refuses before publishing")
 	var scale_base: Dictionary=D.put_component(route,0,"scale",1.,"ease",48).data;var growing: Dictionary=D.put_component(scale_base,48,"scale",2.,"ease",48).data;check(not plan.build(actor,growing,video).is_empty(),"changing authored scale refuses unsupported stride retargeting")
 	var slope: Dictionary=Paths.change(route,48,Vector3(0,.1,.6),48).data;check(not plan.build(actor,slope,video).is_empty(),"non-flat path refuses unimplemented terrain inference")
 	var bend_maximum:=0.
@@ -91,4 +120,4 @@ func run() -> void:
 	var source_copy: Dictionary=actor.data;actor.data=original.duplicate(true);actor.data.name="changed";check(plan.sample(12).has("error"),"changed model refuses a stale suggestion");actor.data=source_copy
 	var info: Dictionary=actor.bones[arm];var index: int=info.index;info.index=-1;check(plan.sample(12).has("error"),"changed non-leg bone binding refuses before skeleton access");info.index=index
 	check(actor.data==original and Walk.capture_state(actor)==state and FileAccess.get_sha256(source)==sha,"all success/refusal paths preserve authored model/live state/original GLB")
-	var result:={"checks":checks,"failures":failures,"maximum_foot_error":maximum,"samples":97,"bend_samples":193,"maximum_bend_foot_error":bend_maximum,"scope":"bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance"};FileAccess.open(folder.path_join("verification.json"),FileAccess.WRITE).store_string(JSON.stringify(result));print("PATH_LOCOMOTION_UNIT "+JSON.stringify(result));node.free();quit(0 if failures==0 else 1)
+	var result:={"checks":checks,"failures":failures,"maximum_foot_error":maximum,"samples":97,"turn_samples":193,"maximum_turn_foot_error":turn_maximum,"bend_samples":193,"maximum_bend_foot_error":bend_maximum,"scope":"bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance"};FileAccess.open(folder.path_join("verification.json"),FileAccess.WRITE).store_string(JSON.stringify(result));print("PATH_LOCOMOTION_UNIT "+JSON.stringify(result));node.free();quit(0 if failures==0 else 1)

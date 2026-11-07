@@ -45,6 +45,8 @@ func run() -> void:
 	await settled();app.physics_editor.freeze_all();app.physics_editor.clear_previews();app.mode.select(2);app.change_mode(2);app.world_selection.select_entity(rig().data.id);app.world_selection.context_action(1);await settled()
 	var actor=rig();var original: Dictionary=actor.data.duplicate(true);var route: Dictionary=Paths.change(original,0,Vector3.ZERO,48).data;route=Paths.change(route,48,Vector3(0,0,.6),48).data
 	if "--bend" in OS.get_cmdline_user_args():route=Paths.change(route,24,Vector3(.08,0,.3),48).data
+	if "--turn" in OS.get_cmdline_user_args():
+		route=Paths.Components.put_component(route,0,"rotation_xyzw",[0,0,0,1],"ease",48).data;route=Paths.Components.put_component(route,48,"rotation_xyzw",[0,sin(.1),0,cos(.1)],"ease",48).data
 	check(app.pose_editor.restore_state(route).is_empty(),"normal Reset pose and authored path preserve neutral starting keys")
 	app.renderer.camera.position=Vector3(2,1.4,4);app.renderer.camera.look_at(Vector3(0,.9,.3),Vector3.UP);app.keys=[Timeline.from_camera(0,app.renderer.camera,"ease"),Timeline.from_camera(48,app.renderer.camera,"ease")]
 	var art:=Drawing.blank(1920,1080);art.fill_rect(Rect2i(170,180,70,50),Color(0,1,1,.6));Drawing.insert(app.layers[1],0,48,art);app.changed();app.set_frame(0);await settled()
@@ -55,7 +57,9 @@ func run() -> void:
 	editor.walk_preview.pressed.emit();await settled();check(actor.preview_frame==12 and not actor.preview_pose.is_empty() and app.frame==12 and actor.data==before,"preview shows derived pose at shared frame without authoring keys")
 	var staged: Image=await app.renderer.capture(app.keys,app.layers,12,true);check(staged.get_data()==unassisted.get_data(),"unapplied preview cannot leak into final/export sampling")
 	editor.close();await settled();check(actor.preview_frame==-1 and actor.preview_pose.is_empty() and actor.data==before and app.history.size()==history and app.frame==before_frame and app.renderer.view_state()==view,"Cancel restores prior pose/playhead/view with source/history intact")
-	app.set_advanced(true);editor.open();await settled();editor.walking_enabled.button_pressed=true;editor.walk_values.lift.value=10;await settled();check(editor.walk_values.lift.is_visible_in_tree() and editor.draft.motion_assist.walking.lift==.1,"Advanced corrects foot lift before committing suggestion")
+	app.set_advanced(true);editor.open();await settled();editor.walking_enabled.button_pressed=true;editor.walk_values.lift.value=10
+	if "--turn" in OS.get_cmdline_user_args():editor.walk_values.stride.value=30;editor.walk_values.lowering.value=5
+	await settled();check(editor.walk_values.lift.is_visible_in_tree() and editor.draft.motion_assist.walking.lift==.1,"Advanced corrects foot lift before committing suggestion")
 	var saved: Dictionary=editor.draft.duplicate(true);editor.frame.value=12;await click(editor.apply_button);await settled()
 	check(not is_instance_valid(editor.window) and actor.data==saved and app.history.size()==history+1 and Walking.active(actor.data),"Apply commits path/walking correction as one ordinary Undo")
 	var animated: Image=await app.renderer.capture(app.keys,app.layers,12,true);animated.save_png(folder.path_join("walking12.png"));check(animated.get_data()!=unassisted.get_data(),"saved walking visibly changes final character pose")
