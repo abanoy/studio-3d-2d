@@ -2532,3 +2532,35 @@ godot, full-save-sync-app/nested/lesson-recovery/lesson-autosave under
 docs/save_sync.md. Tracked generated log archived/restored. STORE-04 partial/open:
 next directory old-generation payload validity before rotating good rollback,
 then native/physical gates. Whole goal active; do not repeat completed sync work.
+
+
+2026-11-06 — Preserve valid directory rollback when previous payloads are invalid
+
+Reproduced actual Godot save defect: a structurally readable primary with a missing
+managed GLB rotated over a valid backup. Metadata check alone was insufficient.
+New operation-scoped payload guard checks managed paths, streamed asset hashes,
+bounded cel decode/pixel SHA and nested scenes before allowing backup rotation.
+No geometry load or retained eager Image collection; digest strings only, reusing
+current-save PNG verification. Legacy no-checksum images retain loader behavior.
+Invalid previous generation can be repaired without replacing the good rollback.
+Existing CAS/worker lock remains; no claim against hostile concurrent asset edits.
+
+26focused checks pass for missing/changed GLB/PNG, changed pixels, unsafe paths,
+legacy and healthy rotation, nested validation and digest reuse. Actual Python
+worker SIGKILL immediately before primary promotion leaves old primary and good
+backup bytes unchanged; actual Godot opens backup frame0 and verified frame2
+candidate remains. Generated source GLB untouched. Before/fixed artifacts retained.
+258drawing-domain,167private metadata/recovery checks and actual Godot CAS/busy/
+retry/competing/lost-status pass. Private107 app62checks+16PNG compatibility pass:
+32independent cels, edit/Undo, packed/cold Open with unavailable writer cache,
+abrupt recovery startup and H264/AAC export/sample alignment, original bytes exact.
+No native Windows, physical power-loss or native-rig acceptance inferred.
+
+Raw directory-rollback-before/after/verified/domain/godot/private/app under
+/workspace/has-handoff-audit; curated docs/benchmarks/directory_rollback_2026-11-06.json
+and docs/directory_rollback.md. STORE-04 remains partial/open for native/physical
+gates. Continuous canonical goal stays active; rollback audit no longer next work.
+
+Nested private108 regression also passed (213checks): real abrupt exit,
+manual HAS bytes exact, packed/linked/active-child state and H264/AAC cue alignment.
+No mask-recovery flag in this rerun; prior separate mask evidence is unchanged.

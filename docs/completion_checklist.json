@@ -1362,9 +1362,25 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/save_sync_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "src/project_payload_guard.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_directory_rollback.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/directory_rollback.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/directory_rollback_2026-11-06.json"
         }
       ],
-      "remaining": "Supporting POSIX payload/private/HAS/owned-sidecar and all-created-parent sync now has scoped fault/app evidence. Audit directory old-generation payload validation before rotating a valid backup; native Windows and actual physical power-loss acceptance remain incomplete.",
+      "remaining": "Supporting POSIX sync and old-generation payload validation before backup rotation now have scoped fault/app evidence, including actual pre-promotion worker SIGKILL. Native Windows and actual physical power-loss acceptance remain incomplete.",
       "external_dependencies": []
     },
     {
@@ -2260,7 +2276,7 @@
     {
       "requirement": "STORE-04",
       "priority": 1,
-      "action": "Supporting POSIX payload/private/HAS/parent sync is verified. Audit directory rollback payload validity before backup rotation, then retain explicit native Windows and physical power-loss gates."
+      "action": "Supporting POSIX sync and rollback payload validity are verified in scoped fixtures. Retain explicit native Windows and physical power-loss gates; audit the next independently actionable requirement."
     },
     {
       "requirement": "MOTION-03",
