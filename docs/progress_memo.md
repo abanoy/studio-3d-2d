@@ -13189,3 +13189,14 @@ FixedharnessstaleActorref andunequalJSONparse-countoracleusingstable-IDlookup
 andexactfullprecisiontextcomparison; noappbehavior/tolerancechanges. Target
 Windows/nativefidelity/physicalcomfortremainseparate. See scenario_d.md/receipt.
 Nextconcretework: inspect/extendgeneralpathlocomotionbeyondstraightflatroutes.
+
+
+### 2026-11-07 UTC — flat bending-route walking
+
+Bounded optional walking now follows forward-progressing flat bends with authored
+facing unchanged. Private bend+straight runs each pass34domain/26settings/23app/
+6coldreader, exactfive root/poses/two GPU-export frames, recovery/Undo/source and
+48frameH264. Existing0.2mmcontact guard retained; widerbend mayneed shortersteps/
+bodylowering. Integer/float JSONspelling oracle corrected without rounding.
+Receipt bending_walk_2026-11-07.json; MOTION03 partial/open, scoresunchanged.
+Next authoredflatturns, then remainingrig/terrain/acceptance work.

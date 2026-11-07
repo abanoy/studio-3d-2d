@@ -7,6 +7,21 @@ const Timeline=preload("res://src/timeline.gd")
 func _initialize() -> void:
 	create_timer(230).timeout.connect(func():push_error("Walking app watchdog");quit(2));call_deferred("run")
 func rig():return app.renderer.active_model()
+# JSON reload represents numeric values as floats. Normalize only integer types,
+# without roundtripping or rounding existing floating-point values.
+func floating(value):
+	if value is int:return float(value)
+	if value is Dictionary:
+		var result: Dictionary={}
+		for key in value:result[key]=floating(value[key])
+		return result
+	if value is Array:
+		var result: Array=[]
+		for entry in value:result.append(floating(entry))
+		return result
+	return value
+func stamp(actor,at: int) -> String:
+	return JSON.stringify(floating({"transform":actor.sample_transform(at),"pose":actor.sample(at)}),"",true,true)
 func run() -> void:
 	folder=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in OS.get_cmdline_user_args() else "writer-cache")
 	if "--read" in OS.get_cmdline_user_args():
@@ -14,6 +29,12 @@ func run() -> void:
 		check(Walking.active(actor.data) and actor.data.motion_assist.walking.lift==.1 and actor.data.motion_assist.format==Walking.ASSIST_FORMAT and str(actor.data.source).begins_with(app.has_project.cache_root),"fresh packed Open restores active walking and correction intent without original/writer cache")
 		var picture: Image=await app.renderer.capture(app.keys,app.layers,12,true);check(picture.get_data()==Image.load_from_file(folder.path_join("walking12.png")).get_data(),"cold final render exactly reproduces saved walking/camera/drawing")
 		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.art,"independent editable drawing survives walking cold Open")
+		var all_samples:=true;var actual_samples: Dictionary={}
+		for at in [48,36,24,12,0]:
+			actual_samples[str(at)]=stamp(actor,at);all_samples=all_samples and actual_samples[str(at)]==expected.samples[str(at)]
+		FileAccess.open(folder.path_join("reader-samples.json"),FileAccess.WRITE).store_string(JSON.stringify(actual_samples))
+		check(all_samples,"fresh reader reverse-seeks all five saved pose/root samples exactly")
+		var later: Image=await app.renderer.capture(app.keys,app.layers,36,true);check(later.get_data()==Image.load_from_file(folder.path_join("walking36.png")).get_data(),"cold final render reproduces second route segment exactly")
 		var before: Dictionary=actor.data.duplicate(true);var root_before=app.renderer.world_runtime.root;var frame_before: int=app.frame;var broken: Dictionary=app.current_world();var leg: String=actor.contact_legs()[0].ids[0];var keyed: Dictionary=Paths.Components.put_bones(before,24,{leg:Model.identity()},"ease",48).data
 		for i in range(broken.objects.size()):
 			if broken.objects[i].id==before.id:broken.objects[i]=keyed
@@ -22,7 +43,9 @@ func run() -> void:
 		print("WALKING_PATH_READ "+JSON.stringify({"checks":checks,"failures":failures}));await app.quit_studio();quit(0 if failures==0 else 1);return
 	var source:=folder.path_join("source-figure.glb");DirAccess.copy_absolute("res://examples/tutorials/Practice figure.glb",source);var source_sha:=FileAccess.get_sha256(source);app.new_project();check(app.pose_editor.add_model(source).is_empty(),"ordinary Add model imports original practice figure")
 	await settled();app.physics_editor.freeze_all();app.physics_editor.clear_previews();app.mode.select(2);app.change_mode(2);app.world_selection.select_entity(rig().data.id);app.world_selection.context_action(1);await settled()
-	var actor=rig();var original: Dictionary=actor.data.duplicate(true);var route: Dictionary=Paths.change(original,0,Vector3.ZERO,48).data;route=Paths.change(route,48,Vector3(0,0,.6),48).data;check(app.pose_editor.restore_state(route).is_empty(),"normal Reset pose and authored path preserve neutral starting keys")
+	var actor=rig();var original: Dictionary=actor.data.duplicate(true);var route: Dictionary=Paths.change(original,0,Vector3.ZERO,48).data;route=Paths.change(route,48,Vector3(0,0,.6),48).data
+	if "--bend" in OS.get_cmdline_user_args():route=Paths.change(route,24,Vector3(.08,0,.3),48).data
+	check(app.pose_editor.restore_state(route).is_empty(),"normal Reset pose and authored path preserve neutral starting keys")
 	app.renderer.camera.position=Vector3(2,1.4,4);app.renderer.camera.look_at(Vector3(0,.9,.3),Vector3.UP);app.keys=[Timeline.from_camera(0,app.renderer.camera,"ease"),Timeline.from_camera(48,app.renderer.camera,"ease")]
 	var art:=Drawing.blank(1920,1080);art.fill_rect(Rect2i(170,180,70,50),Color(0,1,1,.6));Drawing.insert(app.layers[1],0,48,art);app.changed();app.set_frame(0);await settled()
 	var editor=app.pose_editor.movement_path;var before: Dictionary=actor.data.duplicate(true);var history: int=app.history.size();var before_frame: int=app.frame;var view: Dictionary=app.renderer.view_state();var shots: Array=app.keys.duplicate(true);var art_sha:=Storage.image_hash(art)
@@ -36,6 +59,9 @@ func run() -> void:
 	var saved: Dictionary=editor.draft.duplicate(true);editor.frame.value=12;await click(editor.apply_button);await settled()
 	check(not is_instance_valid(editor.window) and actor.data==saved and app.history.size()==history+1 and Walking.active(actor.data),"Apply commits path/walking correction as one ordinary Undo")
 	var animated: Image=await app.renderer.capture(app.keys,app.layers,12,true);animated.save_png(folder.path_join("walking12.png"));check(animated.get_data()!=unassisted.get_data(),"saved walking visibly changes final character pose")
+	var later: Image=await app.renderer.capture(app.keys,app.layers,36,true);later.save_png(folder.path_join("walking36.png"))
+	var samples: Dictionary={}
+	for at in [0,12,24,36,48]:samples[str(at)]=stamp(actor,at)
 	app.undo();check(actor.data==before and not Walking.active(actor.data),"Undo restores prior authored model and keys exactly")
 	app.redo();check(actor.data==saved and Walking.active(actor.data),"Redo restores walking intent and correction exactly")
 	check(app.keys==shots and Storage.image_hash(art)==art_sha and FileAccess.get_sha256(source)==source_sha,"walking edits preserve camera/drawing/original GLB")
@@ -44,9 +70,10 @@ func run() -> void:
 	app.has_project.save_file(folder.path_join("Walking.has"),"packed");await wait_job();check(FileAccess.file_exists(folder.path_join("Walking.has")),"ordinary packed save includes walking settings and original model")
 	var movie_error: String=await app.export_movie(folder);var movie: String=app.last_finished_movie;check(movie_error.is_empty() and FileAccess.file_exists(movie),"ordinary MP4 exports saved walking through shared evaluator")
 	var rendered:=Image.load_from_file(app.last_export_folder.path_join("frame_000013.png"));check(rendered.get_data()==animated.get_data(),"movie input exactly agrees with final walking preview plus independent drawing")
+	check(Image.load_from_file(app.last_export_folder.path_join("frame_000037.png")).get_data()==later.get_data(),"movie input on second route segment agrees exactly with final preview")
 	app.set_frame(12);editor.open();await settled();check(editor.window.get_visible_rect().encloses(editor.apply_button.get_global_rect()),"reopened Advanced path keeps Apply fully reachable after export")
 	editor.walking_enabled.button_pressed=false;await click(editor.apply_button);await settled();check(not Walking.active(actor.data) and actor.sample(12)==source_probe.sample_body(12) and actor.sample_transform(12)==source_probe.sample_authored_transform(12),"explicit walking off restores authored animation without deleting source keys")
 	app.undo();check(actor.data==saved,"Undo after disabling restores full walking intent")
 	if not actor.data.has("motion_assist"):await app.quit_studio();quit(1);return
 	var bad: Dictionary=actor.data.duplicate(true);bad.motion_assist.walking.amount="bad";var current: Dictionary=actor.data.duplicate(true);check(not app.pose_editor.restore_state(bad).is_empty() and actor.data==current,"malformed walking edit refuses atomically in actual app")
-	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"art":art_sha,"movie":movie,"source_sha256":source_sha}));print("WALKING_PATH_SMOKE "+JSON.stringify({"checks":checks,"failures":failures,"movie":movie}));await app.quit_studio();quit(0 if failures==0 else 1)
+	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"art":art_sha,"movie":movie,"source_sha256":source_sha,"samples":samples}));print("WALKING_PATH_SMOKE "+JSON.stringify({"checks":checks,"failures":failures,"movie":movie}));await app.quit_studio();quit(0 if failures==0 else 1)

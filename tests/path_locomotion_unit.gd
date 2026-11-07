@@ -56,7 +56,33 @@ func run() -> void:
 	var turn_base: Dictionary=D.put_component(route,0,"rotation_xyzw",[0,0,0,1],"ease",48).data;var turning: Dictionary=D.put_component(turn_base,48,"rotation_xyzw",[0,sin(.25),0,cos(.25)],"ease",48).data;check(not plan.build(actor,turning,video).is_empty(),"changing authored turn refuses instead of silently steering it")
 	var scale_base: Dictionary=D.put_component(route,0,"scale",1.,"ease",48).data;var growing: Dictionary=D.put_component(scale_base,48,"scale",2.,"ease",48).data;check(not plan.build(actor,growing,video).is_empty(),"changing authored scale refuses unsupported stride retargeting")
 	var slope: Dictionary=Paths.change(route,48,Vector3(0,.1,.6),48).data;check(not plan.build(actor,slope,video).is_empty(),"non-flat path refuses unimplemented terrain inference")
-	var bend: Dictionary=Paths.change(route,24,Vector3(.2,0,.3),48).data;check(not plan.build(actor,bend,video).is_empty(),"bending path refuses unsupported corner stepping")
+	var bend_maximum:=0.
+	var bend: Dictionary=Paths.change(route,24,Vector3(.08,0,.3),48).data;var bent:=Walk.new();var bent_error:=bent.build(actor,bend,video);check(bent_error.is_empty(),"flat bending path builds without replacing authored facing")
+	if not bent_error.is_empty():print("BEND_BUILD_ERROR "+bent_error)
+	else:
+		probe.data=bend;exact=true;feet_exact=true;var planted:=true;var prior_targets: Array=[];var prior_phases: Array=[]
+		for quarter in range(193):
+			var at:=float(quarter)/4.;var result:=bent.sample(at);var baseline: Dictionary=probe.sample_authored_transform(at)
+			if result.has("error"):exact=false;print(result);continue
+			exact=exact and actor.data==original and Walk.capture_state(actor)==state and result.transform.position[0]==baseline.position[0] and result.transform.position[2]==baseline.position[2] and result.transform.rotation_xyzw==baseline.rotation_xyzw and result.transform.scale==baseline.scale
+			actor.root.transform=Transform3D(Basis(Model.Timeline.quaternion(result.transform.rotation_xyzw)).scaled(Vector3.ONE*result.transform.scale),Model.Timeline.vector(result.transform.position))*actor.base_root;Walk.Feet.apply_pose(actor,result.pose)
+			for foot in result.targets:
+				var difference: float=actor.bone_transform(foot.ids[2]).origin.distance_to(Model.Timeline.vector(foot.position));bend_maximum=maxf(bend_maximum,difference);feet_exact=feet_exact and difference<.0002
+			Walk.restore_state(actor,state)
+			var distance: float=bent.distance_at(at)
+			for side in range(2):
+				var phase:=fposmod(distance/bent._stride+float(side)*.5,1.)
+				if at>=bent._ramp_frames+.25 and not prior_phases.is_empty() and phase<.5 and prior_phases[side]<.5 and phase>=prior_phases[side]:planted=planted and Model.Timeline.vector(result.targets[side].position).distance_to(Model.Timeline.vector(prior_targets[side].position))<.000001
+				if prior_phases.size()<2:prior_phases.append(phase)
+				else:prior_phases[side]=phase
+			prior_targets=result.targets
+		check(exact and feet_exact,"all193quarter-frame bend samples preserve root/facing/source/live state and meet derived foot targets")
+		check(planted,"bending-route stance targets remain fixed in world space")
+		var saved_bend:=bent.sample(17.25);bent.sample(40);check(bent.sample(17.25)==saved_bend,"bending-route reverse seeking reproduces exact poses")
+	var wide: Dictionary=Paths.change(route,24,Vector3(.12,0,.3),48).data;var before_refusal:=bent.sample(24);check(not bent.build(actor,wide,video).is_empty() and bent.sample(24)==before_refusal and Walk.capture_state(actor)==state,"unsolved wider bend refuses atomically while preserving earlier usable plan")
+	var corrected:=Walk.new();var correction_error:=corrected.build(actor,wide,video,{"stride":.3,"lowering":.05})
+	check(correction_error.is_empty(),"wider bend supports explicit shorter stride/body lowering without weakening contact accuracy")
+	if not correction_error.is_empty():print("CORRECTED_BEND_ERROR "+correction_error)
 	var reverse: Dictionary=Paths.change(route,24,Vector3(0,0,1),48).data;check(not plan.build(actor,reverse,video).is_empty(),"reversing path refuses unsupported backwards gait")
 	var jump: Dictionary=D.put_component(route,0,"position",[0,0,0],"hold",48).data;check(not plan.build(actor,jump,video).is_empty(),"Hold jump refuses invented travel between cuts")
 	check(not plan.build(actor,original,video).is_empty(),"stationary model refuses a meaningless walking plan")
@@ -65,4 +91,4 @@ func run() -> void:
 	var source_copy: Dictionary=actor.data;actor.data=original.duplicate(true);actor.data.name="changed";check(plan.sample(12).has("error"),"changed model refuses a stale suggestion");actor.data=source_copy
 	var info: Dictionary=actor.bones[arm];var index: int=info.index;info.index=-1;check(plan.sample(12).has("error"),"changed non-leg bone binding refuses before skeleton access");info.index=index
 	check(actor.data==original and Walk.capture_state(actor)==state and FileAccess.get_sha256(source)==sha,"all success/refusal paths preserve authored model/live state/original GLB")
-	var result:={"checks":checks,"failures":failures,"maximum_foot_error":maximum,"samples":97,"scope":"unshipped bounded flat/straight walk evaluator on original figure; not editor/persistence/native/terrain acceptance"};FileAccess.open(folder.path_join("verification.json"),FileAccess.WRITE).store_string(JSON.stringify(result));print("PATH_LOCOMOTION_UNIT "+JSON.stringify(result));node.free();quit(0 if failures==0 else 1)
+	var result:={"checks":checks,"failures":failures,"maximum_foot_error":maximum,"samples":97,"bend_samples":193,"maximum_bend_foot_error":bend_maximum,"scope":"bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance"};FileAccess.open(folder.path_join("verification.json"),FileAccess.WRITE).store_string(JSON.stringify(result));print("PATH_LOCOMOTION_UNIT "+JSON.stringify(result));node.free();quit(0 if failures==0 else 1)

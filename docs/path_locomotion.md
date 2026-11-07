@@ -1,6 +1,6 @@
 # Optional walking along a movement path
 
-In Pose, open **Movement path…** on a supported character with a straight, flat
+In Pose, open **Movement path…** on a supported character with a flat
 route. Turn on **Suggest walking on this path**, choose a frame and press
 **Preview this frame**. Preview changes only the visible pose and playhead;
 final captures still use the saved scene. Cancel restores the previous playhead,
@@ -30,9 +30,13 @@ walking continues. Direct lower-body/root drafts suspend walking at that editing
 frame, so manual posing remains exact; final rendering ignores transient drafts.
 
 The current bound is 240 project frames and 64 strides. Build checks every
-half-frame before publishing a usable plan. It refuses competing planted-foot
-ranges, ambiguous/missing legs, grouped characters, nonuniform parents, changing
-turn/scale, slopes, corners, reversals, Hold jumps and excessive stride/speed.
+half-frame before publishing a usable plan. It supports straight routes and forward-progressing flat bends while keeping
+authored facing fixed. Arc length controls step timing; stance targets stay fixed
+in world space and swing targets follow the authored route. It refuses competing
+planted-foot ranges, ambiguous/missing legs, grouped characters, nonuniform
+parents, changing turn/scale, slopes, reversals, Hold jumps and excessive
+stride/speed. Some wider bends need shorter steps or more body lowering; plans
+that miss the existing 0.2 mm foot-contact bound refuse atomically.
 Unsupported saved walking refuses before replacing the installed world or camera.
 This does not certify terrain adaptation, automatic turning, general native rigs,
 physical input comfort or artist acceptance. MOTION-03 remains partial/open.
@@ -49,7 +53,7 @@ python tests/verify_walking_path.py --isolated-display :107 --output /absolute/n
 ```
 
 On Linux, supply an already provisioned private display. Windows uses the existing
-private desktop launcher. The scoped cloud run passes 29 evaluator, 26 canonical
+private desktop launcher. The historical straight-only cloud run passes 29 evaluator, 26 canonical
 settings, 22 actual app and 4 fresh-process reader checks. Its original included
 17-bone figure reaches targets within 0.2 mm over 97 half-frame samples. The reader
 uses a new packed asset cache with the owned original source and writer cache
@@ -59,3 +63,10 @@ the tested frame. No native fixture or hardware GPU acceptance is claimed.
 
 The original prototype receipt remains historical evidence. Current integration
 and regression evidence is in [walking integration](benchmarks/walking_path_2026-11-06.json).
+
+The flat-bend extension and straight-route regression are recorded in
+[the November 7 receipt](benchmarks/bending_walk_2026-11-07.json). Use `--bend`
+with the command above to exercise a two-segment bend. No facing keys are inferred
+or overwritten. Generated walking remains optional saved intent using the existing
+schema; older builds can refuse the newly supported route at preflight. General
+turning, terrain, grouped rigs and native/artist acceptance remain open.

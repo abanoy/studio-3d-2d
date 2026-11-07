@@ -3067,3 +3067,33 @@ using originalrigfixture, retainingnative/Windows/device acceptance gates.
 docs/progress_memo.md from the scenarioD metadata clarification. Restored the exact
 aacb2ed historical byte prefix and retained the new D entry; no history content,
 source/runtime, test assertion or goal was removed. Future memo edits stay byte-safe.
+
+
+## 2026-11-07 UTC — flat bending-route walking
+
+Extended bounded optional walking from straight routes to forward-progressing flat
+bends using sampled arc length and world-space stance targets; authored facing,
+scale and source keys stay independent. Existing IK/contact tolerance remains
+0.2mm, every half-frame preflights before publishing, and failed plans preserve the
+prior usable suggestion. Group animation inspection showed parent transforms need
+separate authored-chain handling, so categorical grouped-rig refusal is retained.
+No implicit steering, terrain or source-schema migration added.
+
+Reproduced prior bend refusal before runtime change. Final frozen private runs on
+X109 bend and X110 straight each pass34evaluator/26settings/23app/6coldreader checks.
+193quarter-frame bend samples maxfoot error0.0000474601m; original97straight samples
+max0.0001795913m. Wider0.12m bend refuses default accuracy and passes explicit
+stride0.3/lowering0.05; 0.08m bend works defaults. Both guards tested. Actual staged
+preview/cancel, oneUndo/Redo, recovery, packed source/cache-offline fresh reader,
+allfive exact root/pose samples, two exact GPU/export inputs and48frame1080p24H264
+2secondmedia pass. Camera, independent cel, original GLB and manualHAS preserved.
+
+Failed first cold oracle only differed integer1 versus JSONfloat1.0 spelling;
+Python allfive recursive numeric comparisons have zero scalar differences. Test
+now normalizes integer types tofloat without numeric roundtrip/rounding and compares
+fullprecision strings; no appbehavior or contact/pixel tolerance weakened. Raw
+failures retained. docs/path_locomotion.md, bending_walk_2026-11-07.json and matching
+checklist/audit remainingwork updated. MOTION03 stillpartial/open; scores unchanged.
+Next: authored turning on flat walking paths while preserving root keys and stance
+orientation, then broader rig/terrain and independent remaining acceptance gaps.
+Wholegoal active.

@@ -60,7 +60,7 @@ func open() -> void:
 	plot.chosen.connect(func(at):frame.set_value_no_signal(at));plot.moved.connect(move_point)
 	var actions:=HBoxContainer.new();box.add_child(actions);frame=app.spin(actions,"Frame",0,int(video.duration_frames),app.frame)
 	add_button=app.button(actions,"Add point",add_point);remove_button=app.button(actions,"Delete point",remove_point)
-	note=app.label(box,"Only model movement changes. Poses, expressions, camera and drawings stay independent. Try walking on a straight, flat path with neutral starting legs and no later leg keys.");note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	note=app.label(box,"Only model movement changes. Poses, expressions, camera and drawings stay independent. Try walking on a flat path with neutral starting legs and no later leg keys. Facing stays as authored.");note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	var walking_row:=HBoxContainer.new();box.add_child(walking_row)
 	walking_enabled=CheckButton.new();walking_enabled.text="Suggest walking on this path";walking_row.add_child(walking_enabled);walking_enabled.set_pressed_no_signal(Walking.active(before))
 	walk_preview=app.button(walking_row,"Preview this frame",preview_walking)

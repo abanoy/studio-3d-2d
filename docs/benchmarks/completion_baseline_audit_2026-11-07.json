@@ -656,7 +656,7 @@
       ],
       "implementation_before": "partial",
       "implementation": "partial",
-      "implementation_review": "Saved correction/preview walking exists for straight flat routes; turning, slopes, grouped characters and general rig locomotion remain concrete unsupported cases. Multi-view inference details remain OPEN.",
+      "implementation_review": "Saved correction/preview walking supports bounded straight routes and forward-progressing flat bends with fixed facing. Authored turning, slopes, grouped characters and general native rig locomotion remain concrete unsupported cases. Multi-view inference details remain OPEN.",
       "reviewed_code_anchors": [
         {
           "path": "src/walking_animation.gd",
@@ -673,7 +673,7 @@
       ],
       "verification": "incomplete",
       "acceptance_status": "open",
-      "acceptance_review": "Optional saved/correctable walking on bounded straight flat paths now passes staged preview/cancel, Undo/Redo, recovery, packed cold Open and exact export checks. General rig/terrain/turning coverage and native/artist acceptance remain incomplete.",
+      "acceptance_review": "Optional saved/correctable walking supports bounded straight routes and forward-progressing flat bends with fixed authored facing. Staged preview/cancel, Undo/Redo, recovery, packed cold Open, exact five-frame pose replay and two-frame export agreement have scoped cloud evidence. General rig/terrain/turning/grouped-parent coverage and native/artist acceptance remain incomplete.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
       "formal_receipts": [],
       "external_dependencies": []

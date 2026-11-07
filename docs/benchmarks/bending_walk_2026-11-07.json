@@ -1,0 +1,265 @@
+{
+  "format": "has_bending_walk_evidence_1",
+  "date": "2026-11-07 UTC",
+  "base_commit": "8784c5410dc9ed096bf1a02db76287ff072fe138",
+  "scope": "Original included 17-bone figure; fixed authored facing on bounded flat forward-progressing bends. No native ecosystem, terrain, moving-parent, physical Windows/device or artist acceptance.",
+  "runs": [
+    {
+      "folder": "/workspace/has-handoff-audit/bent-walk-final",
+      "reports": {
+        "evaluator": {
+          "bend_samples": 193,
+          "checks": 34,
+          "failures": 0,
+          "maximum_bend_foot_error": 4.74600565212313e-05,
+          "maximum_foot_error": 0.000179591297637671,
+          "samples": 97,
+          "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance"
+        },
+        "settings": {
+          "checks": 26,
+          "failures": 0
+        },
+        "writer": {
+          "checks": 23,
+          "failures": 0,
+          "movie": "/workspace/has-handoff-audit/bent-walk-final/render_1794038779_6263290_0/movie.mp4"
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0
+        }
+      },
+      "evaluator": {
+        "bend_samples": 193,
+        "checks": 34,
+        "failures": 0,
+        "maximum_bend_foot_error": 4.74600565212313e-05,
+        "maximum_foot_error": 0.000179591297637671,
+        "samples": 97,
+        "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance"
+      },
+      "bending_route": true,
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "235020",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "private_receipts": [],
+      "isolated_display": ":109",
+      "manual_has_unchanged": true,
+      "original_source_unchanged": true,
+      "original_and_writer_cache_offline_for_reader": true,
+      "cold_reader_uses_new_packed_asset_cache": true,
+      "functional_unchanged": true,
+      "native_fixtures": 0,
+      "raw_receipt_sha256": "674fbbf5b8f3d1e19b65520a3bbd918c886d44553563ca401dbebc1778b7aae6"
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/bent-walk-straight-regression",
+      "reports": {
+        "evaluator": {
+          "bend_samples": 193,
+          "checks": 34,
+          "failures": 0,
+          "maximum_bend_foot_error": 4.74600565212313e-05,
+          "maximum_foot_error": 0.000179591297637671,
+          "samples": 97,
+          "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance"
+        },
+        "settings": {
+          "checks": 26,
+          "failures": 0
+        },
+        "writer": {
+          "checks": 23,
+          "failures": 0,
+          "movie": "/workspace/has-handoff-audit/bent-walk-straight-regression/render_1794038807_5717321_0/movie.mp4"
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0
+        }
+      },
+      "evaluator": {
+        "bend_samples": 193,
+        "checks": 34,
+        "failures": 0,
+        "maximum_bend_foot_error": 4.74600565212313e-05,
+        "maximum_foot_error": 0.000179591297637671,
+        "samples": 97,
+        "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance"
+      },
+      "bending_route": false,
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "236024",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "private_receipts": [],
+      "isolated_display": ":110",
+      "manual_has_unchanged": true,
+      "original_source_unchanged": true,
+      "original_and_writer_cache_offline_for_reader": true,
+      "cold_reader_uses_new_packed_asset_cache": true,
+      "functional_unchanged": true,
+      "native_fixtures": 0,
+      "raw_receipt_sha256": "97e7d5a869e663356ca98c60b69fa371a6bc1bbd8e1af37c9f117f354f6086f2"
+    }
+  ],
+  "source_sha256": {
+    "src/limb_ik.gd": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f",
+    "src/foot_contacts.gd": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607",
+    "src/movement_path_editor.gd": "3d05b4b5a3b9fc6d68e69523abbe3c3654aed88f0577949db177533a8c563cf3",
+    "src/path_locomotion.gd": "1f32ee709c668ebeef7011ac72365bbefb64c35559e1e5e68bc50918e2e8783e",
+    "tests/path_locomotion_unit.gd": "6f819521e0195ba7cdc5ecfab264e4b70939adc3b868b9bc92bd8fd81bdc9329",
+    "tests/walking_path_smoke.gd": "ec43f0f253c434baaed096f21117a3ee9602685ef9ef69e1154b519ba2b728c5",
+    "tests/verify_walking_path.py": "17afa2c243307ac87437c326c9da0e65ff9dee3f7b4db35ec88862b01d42c22e",
+    "examples/tutorials/Practice figure.glb": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23"
+  },
+  "failed_runs_preserved": [
+    {
+      "folder": "/workspace/has-handoff-audit/bent-walk-before",
+      "cause": "Existing straight-route refusal reproduced."
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/bent-walk-first",
+      "cause": "0.12m lateral bend fails existing solver contact accuracy at default corrections; no tolerance weakened. The 0.08m bend passes defaults; 0.12m passes stride0.3/lowering0.05. Both cases retained in final evaluator."
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/bent-walk-app-first",
+      "cause": "New byte oracle distinguished integer quaternion components0/1 from JSON reloaded floats0.0/1.0. Python recursive numeric comparison found zero differing scalar values at all five frames. Harness now converts integer numeric types to float without rounding/parsing existing floats; full precision byte equality passes."
+    }
+  ],
+  "limits_retained": [
+    "240project frames",
+    "64strides",
+    "half-frame build preflight",
+    "0.2mm contact position and existing orientation accuracy",
+    "fixed root rotation/scale",
+    "no planted-foot competition, Hold jumps, reverse progress, slopes or grouped characters"
+  ],
+  "completion_status": "MOTION-03 remains partial/open; coverage48/54 and acceptance2/62 unchanged."
+}

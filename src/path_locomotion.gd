@@ -1,5 +1,5 @@
 extends RefCounted
-# Bounded flat/straight walking evaluator. Sampling borrows a rig only for
+# Bounded flat walking evaluator; authored facing stays independent. Sampling borrows a rig only for
 # the existing verified IK solve; generated poses never replace source keys.
 const Model=preload("res://src/model.gd")
 const Paths=preload("res://src/movement_path.gd")
@@ -24,6 +24,8 @@ var _end:=0
 var _origin:=Vector3.ZERO
 var _direction:=Vector3.ZERO
 var _length:=0.
+var _route: Array=[]
+var _straight:=true
 var _stride:=0.
 var _lift:=0.
 var _lowering:=0.
@@ -44,7 +46,7 @@ func build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictio
 	var staged=load("res://src/path_locomotion.gd").new();var error: String=staged._build(actor,data,video,settings)
 	if not error.is_empty():return error
 	# Only a fully checked plan replaces an earlier usable experiment.
-	for field in ["_actor","_source","_probe","_root_id","_order","_bindings","_lower","_ramp_frames","_root_base","_parent","_feet","_start","_end","_origin","_direction","_length","_stride","_lift","_lowering"]:set(field,staged.get(field))
+	for field in ["_actor","_source","_probe","_root_id","_order","_bindings","_lower","_ramp_frames","_root_base","_parent","_feet","_start","_end","_origin","_direction","_length","_route","_straight","_stride","_lift","_lowering"]:set(field,staged.get(field))
 	_last={};_last_frame=INF;_last_amount=-1.;return ""
 
 func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictionary,structure_only:=false) -> String:
@@ -100,12 +102,15 @@ func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dicti
 		if point.mode=="hold":
 			var later: Array=Paths.controls(data).filter(func(value):return value.frame>point.frame)
 			if not later.is_empty() and later[0].position!=point.position:return "Walking does not infer steps across a Hold jump."
-	var transforms:=[]
+	var transforms:=[];var last_offset:=Vector3.ZERO;var travelled:=0.
 	for half in range(_start*2,_end*2+1):
 		var at:=float(half)/2.;var value: Dictionary=_probe.sample_authored_transform(at);var offset: Vector3=_parent.basis*(T.vector(value.position)-_origin);var distance:=offset.dot(_direction)
 		if absf(T.quaternion(value.rotation_xyzw).dot(T.quaternion(first.rotation_xyzw)))<.999999 or absf(float(value.scale)-float(first.scale))>.000001:return "Walking needs a fixed turn and scale; author those separately for now."
-		if absf(offset.y)>.0001 or (offset-_direction*distance).length()>.0001 or distance<previous-.00001:return "Walking currently supports a straight flat path without reversals."
+		if absf(offset.y)>.0001 or distance<previous-.00001:return "Walking needs a flat path without reversals."
+		if (offset-_direction*distance).length()>.0001:_straight=false
+		travelled+=offset.distance_to(last_offset);_route.append({"distance":travelled,"offset":offset});last_offset=offset
 		previous=distance;transforms.append(value)
+	if not _straight:_length=travelled
 	if structure_only:return ""
 	var state:=capture_state(actor);var value: Dictionary=first
 	actor.root.transform=Transform3D(Basis(T.quaternion(value.rotation_xyzw)).scaled(Vector3.ONE*value.scale),T.vector(value.position))*actor.base_root;Feet.apply_pose(actor,_probe.sample_body(_start))
@@ -119,13 +124,13 @@ func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dicti
 	_feet=captured.feet;_stride=leg_length*float(settings.get("stride",.36));_lift=leg_length*float(settings.get("lift",.08));_lowering=leg_length*float(settings.get("lowering",.03))
 	if _length/_stride>64:return "This walking experiment supports up to64strides. Shorten the path or increase stride."
 	previous=0.
-	for value_at in transforms:
-		var distance: float=(_parent.basis*(T.vector(value_at.position)-_origin)).dot(_direction)
+	for i in range(transforms.size()):
+		var distance: float=_route[i].distance if not _straight else (_parent.basis*(T.vector(transforms[i].position)-_origin)).dot(_direction)
 		if distance-previous>_stride*.5:return "Slow down the path or shorten it before trying walking."
 		previous=distance
 	for half in range(_start*2,_end*2+1):
 		var sampled:=sample(float(half)/2.)
-		if sampled.has("error"):return sampled.error+" Reduce stride/lift or adjust lowering."
+		if sampled.has("error"):return sampled.error+" At frame "+str(float(half)/2.)+". Reduce stride/lift or adjust lowering."
 	return ""
 
 static func capture_state(actor: RefCounted) -> Dictionary:
@@ -161,6 +166,25 @@ func draft_conflict(frame: float) -> bool:
 	var shown:=Model.Clips.transform(actor.data);var authored: Dictionary=_probe.sample_authored_transform(frame)
 	return T.vector(shown.position).distance_to(T.vector(authored.position))>.000001 or absf(T.quaternion(shown.rotation_xyzw).dot(T.quaternion(authored.rotation_xyzw)))<.999999 or absf(float(shown.scale)-float(authored.scale))>.000001
 
+# Position interpolation follows the authored route exactly within each half-frame
+# interval. Arc length controls phase; feet stay fixed during stance. Extending the
+# last tangent keeps the last partial step identical to straight-route behavior.
+func distance_at(frame: float) -> float:
+	var offset: Vector3=_parent.basis*(T.vector(_probe.sample_authored_transform(frame).position)-_origin)
+	if _straight:return offset.dot(_direction)
+	var index:=clampi(int(floor((frame-_start)*2.)),0,_route.size()-1)
+	return float(_route[index].distance)+offset.distance_to(_route[index].offset)
+
+func path_offset(distance: float) -> Vector3:
+	if _straight:return _direction*distance
+	for i in range(1,_route.size()):
+		var a: Dictionary=_route[i-1];var b: Dictionary=_route[i];var span: float=b.distance-a.distance
+		if span>.00000001 and distance<=b.distance:return a.offset.lerp(b.offset,clampf((distance-a.distance)/span,0,1))
+	for i in range(_route.size()-1,0,-1):
+		var delta: Vector3=_route[i].offset-_route[i-1].offset
+		if delta.length()>.00000001:return _route[-1].offset+delta.normalized()*maxf(0,distance-_length)
+	return Vector3.ZERO
+
 func sample(frame: float,amount:=1.) -> Dictionary:
 	if _actor==null:return {"error":"Build a walking plan first."}
 	var actor=_actor.get_ref()
@@ -177,12 +201,12 @@ func sample(frame: float,amount:=1.) -> Dictionary:
 	var requested:=amount
 	var ramp:=clampf((frame-float(_start))/_ramp_frames,0,1);amount*=ramp*ramp*(3.-2.*ramp)
 	var transform: Dictionary=_probe.sample_authored_transform(frame);var pose: Dictionary=_probe.sample_body(frame)
-	var distance: float=(_parent.basis*(T.vector(transform.position)-_origin)).dot(_direction);var targets:=[]
+	var distance:=distance_at(frame);var offset: Vector3=_parent.basis*(T.vector(transform.position)-_origin);var targets:=[]
 	for side in range(2):
 		var foot: Dictionary=_feet[side];var shift:=float(side)*.5;var q:=distance/_stride+shift;var cycle:=floorf(q);var phase:=q-cycle;var previous:=maxf(0,(cycle-shift)*_stride);var following:=(cycle+1-shift)*_stride;var at:=previous;var height:=0.
 		if phase>=.5:
 			var u:=(phase-.5)*2.;at=lerpf(previous,following,u*u*(3.-2.*u));height=sin(PI*u)*_lift
-		var rest: Vector3=foot.position+_direction*distance;var target: Vector3=rest.lerp(foot.position+_direction*at+Vector3.UP*height,amount);var rotation: Quaternion=foot.rotation
+		var rest: Vector3=foot.position+offset;var target: Vector3=rest.lerp(foot.position+path_offset(at)+Vector3.UP*height,amount);var rotation: Quaternion=foot.rotation
 		targets.append({"ids":foot.limb.ids.duplicate(),"position":[target.x,target.y,target.z],"rotation_xyzw":[rotation.x,rotation.y,rotation.z,rotation.w]})
 	transform=transform.duplicate(true);transform.position[1]-=_lowering*amount/_parent.basis.y.length()
 	if amount==0:
