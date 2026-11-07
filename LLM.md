@@ -3571,3 +3571,5 @@ IK/crouch and grouped locomotion gates now running; no premature closures.
 2026-11-07: PHYS-01 formally verified from ed10572 current101check receipt. Acceptance37/62=59.68%, implementation51/54=94.44%; separate equally weighted checklist metrics. Native/device/artist/Windows gates remain.
 
 2026-11-07: Current timeline217checks pass:156navigation/workspace/animated channels and61frame3000-to0body/component writer/cold/actualSIGKILLstartup. Source/cache unavailable on read, exact independent ink/audio/camera and manualHAS unchanged; actual movie. Source snapshot unchanged throughout; no native/artist/device/Windows claim. Receipt docs/benchmarks/timeline_current_2026-11-07.json.
+
+2026-11-07: TIME-02/TIME-03 formally closed from committed current217timeline,205celclipboard and161celtiming receipts. Acceptance39/62=62.90%; implementation51/54=94.44%, separate checklist metrics. Ripple/cross-track choices remain OPEN; native/artist/device/Windows gates retained.

@@ -777,8 +777,8 @@
       ],
       "title": "Collapsed tracks and animated subtracks",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Objects begin collapsed, expansion shows animated parts, and selecting parts focuses their channels without exposing inactive rig clutter by default.",
       "evidence": [
         {
@@ -788,9 +788,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/motion_animation.md"
+        },
+        {
+          "kind": "test_result",
+          "commit": "1307cb0c8d83c4858eb98e71261f4c799dff59a3",
+          "path": "docs/benchmarks/timeline_current_2026-11-07.json",
+          "scope": "156 current domain/navigation/workspace/channel checks: Simple starts collapsed per object; routed disclosure shows only authored root/parts/visibility, part keys focus correct bone/frame through filtered inspectors, fixed labels/zoom/pan remain usable, no authored/history/camera changes, packed/linked/recovery/lesson and actual movie."
         }
       ],
-      "remaining": "Large-project track density and full routed coverage remain.",
+      "remaining": "Required bounded software condition verified. Native/artist/device/Windows acceptance remains separate; unresolved ripple/cross-track choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -802,8 +808,8 @@
       ],
       "title": "Structural clip and drawing edits",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Move/cut/copy/paste/split retain relative animation or independent cel pixels and have correct Undo; frame3000-to0 is supported.",
       "evidence": [
         {
@@ -813,9 +819,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/drawing_clipboard.md"
+        },
+        {
+          "kind": "test_result",
+          "commit": "1307cb0c8d83c4858eb98e71261f4c799dff59a3",
+          "path": "docs/benchmarks/timeline_current_2026-11-07.json",
+          "scope": "61 current original body/component frame3000-to0 writer/cold/actualSIGKILLstartup checks: relative motion, exact independent ink/audio/camera, sources/cache offline and manualHAS unchanged."
+        },
+        {
+          "kind": "test_result",
+          "commit": "c4ad3fe581aac144cf81a17168bfc98dbf2ab796",
+          "path": "docs/benchmarks/cel_clipboard_current_2026-11-07.json",
+          "scope": "205 current cel clipboard/history checks: independent copy/cut/paste/split pixels and correct bounded Undo, live physics identity untouched, cold packed and exact movie."
+        },
+        {
+          "kind": "test_result",
+          "commit": "8d74c1a7d42aa532f9c86e69552d7f73dca22ce7",
+          "path": "docs/benchmarks/cel_timing_current_2026-11-07.json",
+          "scope": "161 current cel timing/history/domain/live/cold/startup checks plus60second1080p24H264AAC media; editable child/parent clips and independent pixel/identity/Undo/source preservation. Unresolved ripple/cross-track semantics remain OPEN."
         }
       ],
-      "remaining": "Retain bounded current contracts; do not silently decide unresolved ripple/cross-track semantics.",
+      "remaining": "Required bounded software condition verified. Native/artist/device/Windows acceptance remains separate; unresolved ripple/cross-track choices remain OPEN.",
       "external_dependencies": []
     },
     {

@@ -943,11 +943,18 @@
           "file_sha256": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c"
         }
       ],
-      "verification": "historical_only",
-      "acceptance_status": "open",
-      "acceptance_review": "Large-project track density and full routed coverage remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified. Native/artist/device/Windows acceptance remains separate; unresolved ripple/cross-track choices remain OPEN.",
+      "evidence_review": "156 current domain/navigation/workspace/channel checks: Simple starts collapsed per object; routed disclosure shows only authored root/parts/visibility, part keys focus correct bone/frame through filtered inspectors, fixed labels/zoom/pan remain usable, no authored/history/camera changes, packed/linked/recovery/lesson and actual movie.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "commit": "1307cb0c8d83c4858eb98e71261f4c799dff59a3",
+          "path": "docs/benchmarks/timeline_current_2026-11-07.json",
+          "scope": "156 current domain/navigation/workspace/channel checks: Simple starts collapsed per object; routed disclosure shows only authored root/parts/visibility, part keys focus correct bone/frame through filtered inspectors, fixed labels/zoom/pan remain usable, no authored/history/camera changes, packed/linked/recovery/lesson and actual movie."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -980,11 +987,30 @@
           "file_sha256": "88ca46f1f4e0a9f174a42cdd0a4305ec80d3c32fbf59c9e055cc2aeb037434aa"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Retain bounded current contracts; do not silently decide unresolved ripple/cross-track semantics.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified. Native/artist/device/Windows acceptance remains separate; unresolved ripple/cross-track choices remain OPEN.",
+      "evidence_review": "61 current original body/component frame3000-to0 writer/cold/actualSIGKILLstartup checks: relative motion, exact independent ink/audio/camera, sources/cache offline and manualHAS unchanged. 205 current cel clipboard/history checks: independent copy/cut/paste/split pixels and correct bounded Undo, live physics identity untouched, cold packed and exact movie. 161 current cel timing/history/domain/live/cold/startup checks plus60second1080p24H264AAC media; editable child/parent clips and independent pixel/identity/Undo/source preservation. Unresolved ripple/cross-track semantics remain OPEN.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "commit": "1307cb0c8d83c4858eb98e71261f4c799dff59a3",
+          "path": "docs/benchmarks/timeline_current_2026-11-07.json",
+          "scope": "61 current original body/component frame3000-to0 writer/cold/actualSIGKILLstartup checks: relative motion, exact independent ink/audio/camera, sources/cache offline and manualHAS unchanged."
+        },
+        {
+          "kind": "test_result",
+          "commit": "c4ad3fe581aac144cf81a17168bfc98dbf2ab796",
+          "path": "docs/benchmarks/cel_clipboard_current_2026-11-07.json",
+          "scope": "205 current cel clipboard/history checks: independent copy/cut/paste/split pixels and correct bounded Undo, live physics identity untouched, cold packed and exact movie."
+        },
+        {
+          "kind": "test_result",
+          "commit": "8d74c1a7d42aa532f9c86e69552d7f73dca22ce7",
+          "path": "docs/benchmarks/cel_timing_current_2026-11-07.json",
+          "scope": "161 current cel timing/history/domain/live/cold/startup checks plus60second1080p24H264AAC media; editable child/parent clips and independent pixel/identity/Undo/source preservation. Unresolved ripple/cross-track semantics remain OPEN."
+        }
+      ],
       "external_dependencies": []
     },
     {
