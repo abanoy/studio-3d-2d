@@ -29,7 +29,7 @@ func same(a,b) -> bool:return JSON.stringify(a)==JSON.stringify(b)
 func run() -> void:
 	var folder: String=OS.get_cmdline_user_args()[0];var asset:=folder.path_join("branches.glb");Fixture.create(asset)
 	var plans: Array=[{"label":"Authored","source":asset,"metadata":{},"left":"left","right":"right"}];plans.append_array(JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("native-plans.json"))))
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache");var metrics:={};var movie:=""
 	for plan in plans:
 		app.new_project();app.pose_editor.add_model(plan.source);var actor: RefCounted=app.renderer.active_model();var id: String=actor.data.id
