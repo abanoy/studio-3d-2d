@@ -97,6 +97,28 @@ static func load_glb(path: String) -> Dictionary:
 		return {"error": "GLB importer failed: %s" % error_string(error)}
 	var shapes=preload("res://src/source_shape.gd")
 	shapes.mark(state)
+	# Godot4.6 ignores emissiveTexture.texCoord when building BaseMaterial3D.
+	# Restore the declared standard channel on each scene-owned imported material.
+	var imported: Array=state.get_materials();var definitions=data.get("materials",[])
+	if definitions is Array:
+		for i in range(mini(imported.size(),definitions.size())):
+			if not imported[i] is BaseMaterial3D or not definitions[i] is Dictionary:continue
+			var texture=definitions[i].get("emissiveTexture",{})
+			if not texture is Dictionary:continue
+			var channel=texture.get("texCoord",0)
+			var transform=texture.get("extensions",{}).get("KHR_texture_transform",{}) if texture.get("extensions",{}) is Dictionary else {}
+			if transform is Dictionary:channel=transform.get("texCoord",channel)
+			if (channel is int or channel is float) and (channel==0 or channel==1):imported[i].emission_on_uv2=channel==1
+			# KHR_materials_specular zero means no dielectric reflection. Godot's
+			# importer otherwise keeps its default0.5, adding light to baked surfaces.
+			var extensions=definitions[i].get("extensions",{})
+			var specular=extensions.get("KHR_materials_specular",{}) if extensions is Dictionary else {}
+			if specular is Dictionary and specular.get("specularFactor",1)==0:imported[i].metallic_specular=0
+			var extras=definitions[i].get("extras",{})
+			if extras is Dictionary and extras.get("has_static_source_lightmap")=="studio_source_lightmaps_1":
+				var base: BaseMaterial3D=imported[i].duplicate();base.emission_enabled=false
+				imported[i].set_meta("has_baked_lightmap_base",base)
+				var color: Color=imported[i].albedo_color;imported[i].albedo_color=Color(0,0,0,color.a)
 	stable_opaque_order(state.get_materials())
 	var scene := doc.generate_scene(state)
 	if scene == null:

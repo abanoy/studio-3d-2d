@@ -29,6 +29,7 @@ from source_archive import resource_path
 from source_texture import blender_rgba
 from source_eyes import plan as neutral_eye_plan
 from source_lights import plan as light_plan, create as create_lights
+from source_lightmaps import capture as capture_lightmaps, bake as bake_lightmaps, tag_glb as tag_lightmap_glb
 
 from SourceIO.library.utils import TinyPath, FileBuffer, MemoryBuffer
 from SourceIO.library.shared.app_id import SteamAppId
@@ -46,6 +47,7 @@ from SourceIO.library.source1.vtf import load_texture
 dependencies, missing, warnings = {}, set(), []
 mount_warnings = []
 map_lights = []
+lightmap_jobs, lightmap_cache = [], {}
 failed_lookups = set()
 dependency_bytes = 0
 mounts = [Path(p).resolve() for p in request["mounts"]]
@@ -240,6 +242,14 @@ if source.suffix.lower() == ".mdl":
 else:
     from SourceIO.blender_bindings.source1.bsp.import_bsp import import_bsp
     from SourceIO.blender_bindings.source1.bsp.entities.abstract_entity_handlers import AbstractEntityHandler
+    original_brush_loader = AbstractEntityHandler._load_brush_model
+    def lightmapped_brush(self, model_id, model_name):
+        obj = original_brush_loader(self, model_id, model_name)
+        try: lightmap_jobs.append(capture_lightmaps(self, model_id, obj, lightmap_cache))
+        except (ValueError, IndexError, KeyError, AttributeError, ArithmeticError, struct.error) as error:
+            warnings.append(model_name + ": baked lighting unavailable: " + str(error))
+        return obj
+    AbstractEntityHandler._load_brush_model = lightmapped_brush
     original_handler = AbstractEntityHandler.handle_entity
     def geometry_entity(self, entity):
         classname = entity.get("classname", "")
@@ -384,6 +394,15 @@ for material in used_materials:
         warnings.append(native_name + ": " + str(error))
     material_report.append(row)
 
+lightmap_report = bake_lightmaps(bpy, lightmap_jobs, 512 * 1024 * 1024 - decoded_texture_bytes)
+decoded_texture_bytes += lightmap_report["decoded_bytes"]
+if lightmap_report["downsampled_faces"]:
+    warnings.append("Baked lightmap textures were reduced to the512pixel-per-face bound on%d surfaces." % lightmap_report["downsampled_faces"])
+if lightmap_report["skipped"]:
+    warnings.append("Some Source brush lighting was not baked: " + json.dumps(lightmap_report["skipped"], sort_keys=True))
+if lightmap_jobs:
+    native_parameters["static_brush_lightmaps"] = lightmap_report
+
 # Save the complete native intermediate; GLB exports only active mesh variants and rigs.
 bpy.context.view_layer.update()
 bpy.ops.wm.save_as_mainfile(filepath=str(out / "editable.blend"))
@@ -398,6 +417,7 @@ if not any(o.type == "MESH" and len(o.data.polygons) for o in exported):
 bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", use_selection=True,
                           export_animations=False, export_cameras=False, export_lights=True,
                           export_extras=False, export_yup=True, export_image_format="AUTO")
+tag_lightmap_glb(out / "scene.glb", lightmap_report["materials"])
 report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_source": request["original_source"],
           "source_file": source.name, "source_member": request.get("source_member"),
           "source_profile": request.get("source_profile", "gmod"),
@@ -407,10 +427,10 @@ report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_
           "mount_warnings": mount_warnings,
           "suggested_view": suggested_view,
           "materials": material_report, "warnings": warnings,
-          "limits": ["PBR approximation; no Source shader/proxy execution, baked lightmaps or 3D skybox",
+          "limits": ["PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
                      "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
                      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"],
-          "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images),
+          "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images) + lightmap_report["atlases"],
                      "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE"), "static_lights": len(map_lights)}}
 (out / "parameters.json").write_text(json.dumps(report, ensure_ascii=True, indent=2), encoding="utf-8")
 (out / "dependencies.json").write_text(json.dumps({"resolved": list(dependencies.values()), "missing_requests": sorted(missing)}, indent=2), encoding="utf-8")

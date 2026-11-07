@@ -116,7 +116,7 @@ are listed. It needs additional content mounts for a complete scene. No assets a
 silently downloaded to fill those gaps. Other supplied archives are not certified.
 
 PBR materials approximate `$basetexture`, alpha and culling. Source shader proxies,
-animated VTF frames, material blending, water/refraction, lightmaps, decals, native
+animated VTF frames, material blending, water/refraction, HDR/styled/displacement lightmaps, decals, native
 lighting and composed 3D skyboxes are unsupported. Maps use the studio's lighting;
 skybox geometry may still exist at its original separate location. Tool surfaces
 are excluded. Native entity records survive as data, not running gameplay. Physics,
@@ -188,3 +188,7 @@ approved map fixture; it was not run here. Lightmaps, ambient sky/HDR, native
 shaders and game photometry remain unsupported. See
 [recorded evidence](benchmarks/source_entity_lights_2026-11-07.json) and
 `tests/verify_source_lights.py`.
+
+Static LDR brush lightmaps now have [bounded preservation and mode switching](source_brush_lightmaps.md).
+Earlier entity-light evidence excludes this later capability. Full installed-host
+BSP validation, HDR/styled/displacement lighting and Source photometry remain open.

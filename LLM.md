@@ -3400,3 +3400,27 @@ grouped/ungrouped walking suites supply actual staged/persistence/cold/media pro
 Required-motion review corrects POSE-03/MOTION-03 to implemented/scoped_evidence.
 Coverage51/54(94.44%); formal5/62(8.06%) pending committed acceptance review.
 Native profiles/fidelity and Windows durability remain the3partial engineering groups.
+
+
+## 2026-11-07 UTC — bounded static Source brush lightmap preservation
+
+Capture exact pinned-decoder face identities/projections and bake static LDR RGBExp32
+with native base texture into padded portable emission atlases. Preserve original
+base texture via fresh-GLB material tags; existing Unshaded/Lit control switches
+base/baked appearances with instance-local material copies. Restore glTF emission
+UV1 and explicit zero specular that Godot4.6 ignores; no original assets modified.
+Caps16384capturedfaces/512pixels perface/2048atlas and existing512MiBdecoded budget.
+Report downsampling/overflow/ambiguity/styles/unsupported surfaces. No HDR-only,
+styled/displacement/bump-direction/native-photometry claim or native host bypass.
+21Python/app checks pass via original decoded records/exact production boundary,
+realBlender4.3.2/UV1/strength/base texture/color orientation/light independence/
+modeUndo/offlineHAS/provenance/recovery/exact48frame1080p24H264.47visibility/fade
+and18entity-light regression checks pass with unchanged final SceneIO/opacity.
+Initial UV1, JSON numeric membership, specular and black Unshaded appearance failures
+were diagnosed/fixed; final assertions retained. Optional Draco unavailable,
+uncompressed GLB valid. Receipt source_brush_lightmaps_2026-11-07.json.
+Owner supplied22SFM archives:82MDL49 headers and native parser reads succeed with
+valid bone hierarchies, all present geometry sidecar checksums match. Rawarchives
+and extracted assets remain private/outsideGit. Full SFM/GMod installed-host
+preflight still refuses (no outputcreated); native app/BSP fidelity not claimed.
+Next finish supplied-sample dependency/sidecar diagnostics and exact prerequisites.
