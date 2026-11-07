@@ -81,7 +81,7 @@ func draw() -> bool:
 	handles.clear();var camera: Camera3D=app.renderer.camera
 	target_visible=not camera.is_position_behind(accepted)
 	if not target_visible:return true
-	center=camera.unproject_position(accepted);var z:=maxf(camera.near,-camera.to_local(accepted).z);var pixels:=64.*1920./maxf(1,app.canvas.image_rect().size.x);var radius:=camera.project_position(center+Vector2(pixels,0),z).distance_to(accepted)
+	center=camera.unproject_position(accepted);var z:=maxf(camera.near,-camera.to_local(accepted).z);var pixels: float=64.*app.video.width/maxf(1,app.canvas.image_rect().size.x);var radius:=camera.project_position(center+Vector2(pixels,0),z).distance_to(accepted)
 	app.canvas.pose_joints.append({"point":center,"selected":true});app.pose_editor.joints.append({"id":app.pose_editor.selected,"point":center})
 	for axis in range(3):
 		var direction: Vector3=Basis.IDENTITY[axis];var end:=camera.unproject_position(accepted+direction*radius);var points: Array[Vector2]=[center,end]
@@ -98,7 +98,7 @@ func input(event: InputEvent,point: Vector2) -> void:
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT:
 		if not event.pressed:finish(false);return
 		if app.navigating or event.ctrl_pressed or not target_visible:return
-		var threshold:=10.*1920./maxf(1,app.canvas.image_rect().size.x);var hit: Dictionary={};plane=point.distance_to(center)<threshold
+		var threshold: float=10.*app.video.width/maxf(1,app.canvas.image_rect().size.x);var hit: Dictionary={};plane=point.distance_to(center)<threshold
 		if not plane:
 			var nearest:=threshold
 			for handle in handles:
@@ -112,7 +112,7 @@ func input(event: InputEvent,point: Vector2) -> void:
 		if app.renderer.view_state()!=camera_state:stop("The view changed; target drag cancelled.");return
 		# Screen/canvas round trips have subpixel error. Returning within a quarter
 		# displayed pixel restores the exact anchor instead of authoring tiny noise.
-		if point.distance_to(drag_start)<=.25*1920./maxf(1,app.canvas.image_rect().size.x):preview(drag_origin);return
+		if point.distance_to(drag_start)<=.25*app.video.width/maxf(1,app.canvas.image_rect().size.x):preview(drag_origin);return
 		var position: Vector3=drag_origin+app.renderer.camera.project_position(point,depth)-app.renderer.camera.project_position(drag_start,depth) if plane else drag_origin+drag_axis*(point-drag_start).dot(screen_axis.normalized())/maxf(1,screen_axis.length())*units
 		preview(position)
 
@@ -166,7 +166,7 @@ func global_event(event: InputEvent) -> bool:
 		return true
 	if not dragging:return false
 	if event is InputEventMouseMotion:
-		var rect: Rect2=app.canvas.image_rect();var local: Vector2=app.canvas.get_global_transform().affine_inverse()*event.position;input(event,(local-rect.position)/rect.size*Vector2(1920,1080));return true
+		var rect: Rect2=app.canvas.image_rect();var local: Vector2=app.canvas.get_global_transform().affine_inverse()*event.position;input(event,(local-rect.position)/rect.size*Vector2(app.video.width,app.video.height));return true
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and not event.pressed:finish(false);return true
 	return false
 

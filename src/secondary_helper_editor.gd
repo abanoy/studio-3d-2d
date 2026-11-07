@@ -215,7 +215,7 @@ func global_patch_event(event: InputEvent) -> bool:
 	if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:cancel_patch_drag();return true
 	if event is InputEventMouseMotion or event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and not event.pressed:
 		var local: Vector2=app.canvas.get_global_transform_with_canvas().affine_inverse()*event.position
-		var rect: Rect2=app.canvas.image_rect();box_end=(local-rect.position)/rect.size*Vector2(1920,1080);draw_patch_box()
+		var rect: Rect2=app.canvas.image_rect();box_end=(local-rect.position)/rect.size*Vector2(app.video.width,app.video.height);draw_patch_box()
 		if event is InputEventMouseButton:finish_patch_box()
 		return true
 	return false

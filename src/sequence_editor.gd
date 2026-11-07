@@ -209,7 +209,7 @@ func promote_masks(candidate: Dictionary) -> void:
 		for clip in owner.clips:
 			if not clip.has("mask"):clip["mask"]={}
 func change_mask(id: String,mask: Dictionary) -> String:
-	var why:=Graph.mask_error(mask)
+	var why:=Graph.mask_error(mask,preload("res://src/canvas_size.gd").size(app.video))
 	if not why.is_empty():return why
 	var current:=find_clip(id)
 	if current.is_empty():return "This sequence clip is no longer available."
@@ -561,11 +561,11 @@ func add_clip_controls(box: VBoxContainer,clip: Dictionary) -> void:
 	var mask: Dictionary=clip.get("mask",{})
 	var mask_enabled:=CheckButton.new();mask_enabled.text="Picture mask";mask_enabled.button_pressed=not mask.is_empty();box.add_child(mask_enabled)
 	app.label(box,"Mask coordinates follow the child canvas before placement. Child artwork stays editable.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	var rect: Array=mask.get("rect",[0,0,1920,1080])
-	var mask_x: SpinBox=app.spin(box,"Mask left (pixels)",0,1919,rect[0])
-	var mask_y: SpinBox=app.spin(box,"Mask top (pixels)",0,1079,rect[1])
-	var mask_width: SpinBox=app.spin(box,"Mask width (pixels)",1,1920,rect[2])
-	var mask_height: SpinBox=app.spin(box,"Mask height (pixels)",1,1080,rect[3])
+	var rect: Array=mask.get("rect",[0,0,app.video.width,app.video.height])
+	var mask_x: SpinBox=app.spin(box,"Mask left (pixels)",0,app.video.width-1,rect[0])
+	var mask_y: SpinBox=app.spin(box,"Mask top (pixels)",0,app.video.height-1,rect[1])
+	var mask_width: SpinBox=app.spin(box,"Mask width (pixels)",1,app.video.width,rect[2])
+	var mask_height: SpinBox=app.spin(box,"Mask height (pixels)",1,app.video.height,rect[3])
 	var inverted:=CheckButton.new();inverted.text="Cut out this rectangle instead";inverted.button_pressed=mask.get("invert",false);box.add_child(inverted)
 	app.button(box,"Apply mask",func():
 		if not panel_valid():app.message("The scene changed. Reopen Sequences.");return

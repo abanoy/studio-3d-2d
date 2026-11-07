@@ -1,20 +1,22 @@
 # Delivery output sizes
 
-In **Advanced → Movie encoder → Output size**, choose 1920 × 1080 (default),
+In **Advanced → Movie encoder → Output size**, choose 1920 × 1080,
 1280 × 720, or 960 × 540. The choice applies to new MP4 renders and complete or
 transparent PNG sequences. Movie quality controls compression independently.
-New and legacy projects default to1080p. The selected delivery size is saved with
+New and legacy1080p projects default to1080p. A native720p/540p project defaults
+to its own canvas size; the list labels that profile as native. The selected delivery size is saved with
 the scene in packed/linked HAS, directory saves and recovery. It supports Undo/Redo,
 marks the project changed, and follows parent/child scene navigation. Returning to
 Simple mode keeps the saved choice.
 
-The source canvas, camera evaluation and saved cel coordinates remain 1920 × 1080.
-The complete composite is resized once before writing each delivery PNG. Smaller
-exports contain downsampled artwork; this does not add native variable-resolution
-canvases, extra source detail,4K or different aspect ratios. OUTPUT-02 remains
-partial for native variable canvases and broader render settings. Existing files
-without `video.output_size` keep their1080p default; this optional field uses the
-existing project schemas. Resource limits are unchanged.
+Choosing a delivery size keeps the current native canvas and saved cel coordinates.
+When dimensions differ, the complete composite is resized once before writing each
+delivery PNG. Smaller exports contain downsampled artwork; larger exports add no
+source detail. To draw at a different native size in a new project, use
+[Native drawing canvas](native_canvas.md) in Options before creating artwork or
+sequences. Supported native profiles are1080p/720p/540p;4K and other aspect ratios
+remain unsupported. Existing files without `video.output_size` use their native
+canvas, preserving legacy1080p behavior. Resource limits are unchanged.
 
 Settings are captured before rendering starts. Changing the selection during an
 attempt cannot change that attempt's size. Retry MP4 reuses its saved PNGs, WAV and

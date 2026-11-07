@@ -200,6 +200,7 @@ var map_calibration: Node
 var height_choice: CheckBox
 var project_options: AcceptDialog
 var project_timing: Node
+var project_canvas: Node
 var workspace_layout: Node
 var home
 var recent_path:=""
@@ -307,6 +308,7 @@ func _ready() -> void:
 	audio_trim_editor=preload("res://src/audio_trim_editor.gd").new();audio_trim_editor.app=self;add_child(audio_trim_editor)
 	audio_fade_editor=preload("res://src/audio_fade_editor.gd").new();audio_fade_editor.app=self;add_child(audio_fade_editor)
 	project_timing=preload("res://src/project_timing.gd").new();project_timing.app=self;add_child(project_timing)
+	project_canvas=preload("res://src/project_canvas.gd").new();project_canvas.app=self;add_child(project_canvas)
 	timeline.audio_trim_context=audio_trim_editor.drag_context
 	fill_editor=FillEditor.new();fill_editor.app=self;add_child(fill_editor);fill_editor.setup(drawing_section)
 	onion_editor=OnionEditor.new();onion_editor.app=self;add_child(onion_editor);onion_editor.setup(drawing_section)
@@ -703,7 +705,7 @@ Draw returns to the animated shot.")
 	for id in OutputSize.PROFILES:
 		var dimensions: Vector2i=OutputSize.PROFILES[id]
 		output_size.add_item("%d x %d" % [dimensions.x,dimensions.y]+(" (default)" if id=="1080p" else ""));output_size.set_item_metadata(output_size.item_count-1,id)
-	output_size.tooltip_text="Delivery dimensions for new movies and PNG sequences. Artwork stays 1920 x 1080. Saved with this scene. Captured at render start; Retry MP4 keeps its saved frame size."
+	output_size.tooltip_text="Delivery dimensions for new movies and PNG sequences. Artwork keeps its native canvas size. Saved with this scene. Captured at render start; Retry MP4 keeps its saved frame size."
 	output_size.item_selected.connect(change_output_size)
 	label(encoder_section,"Movie quality")
 	encoder_quality=OptionButton.new();encoder_section.add_child(encoder_quality)
@@ -943,7 +945,9 @@ func show_project_options() -> void:
 	stop();pose_editor.finish_drag();finish_stroke()
 	if not project_options:
 		project_options=AcceptDialog.new();project_options.title="Project options";project_options.exclusive=false;project_options.unresizable=false;add_child(project_options)
-		var content:=VBoxContainer.new();project_options.add_child(content)
+		var options_scroll:=ScrollContainer.new();options_scroll.custom_minimum_size=Vector2(520,minf(600,maxf(320,size.y-180)));options_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;project_options.add_child(options_scroll)
+		var content:=VBoxContainer.new();content.size_flags_horizontal=Control.SIZE_EXPAND_FILL;options_scroll.add_child(content)
+		project_canvas.setup(content)
 		project_timing.setup(content)
 		visibility_fade=spin(content,"Visibility fade (milliseconds)",0,10000,300)
 		label(content,"Applies to all visibility changes. 0 makes an instant cut.")
@@ -1090,7 +1094,7 @@ func _process(delta: float) -> void:
 		else:
 			raster_preview_error=""
 			var overlay: Image=sampled.image
-			if canvas.overlay == null: canvas.overlay = ImageTexture.create_from_image(overlay)
+			if canvas.overlay == null or Vector2i(canvas.overlay.get_size())!=overlay.get_size(): canvas.overlay = ImageTexture.create_from_image(overlay)
 			elif sampled.changed: canvas.overlay.update(overlay)
 		elapsed_overlay_ms = (Time.get_ticks_usec() - start) / 1000.0
 		canvas.queue_redraw()
@@ -1124,7 +1128,7 @@ func canvas_input(event: InputEvent, point: Vector2) -> void:
 		if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed:
 			var joint_hit := false
 			for joint in pose_editor.joints:
-				if point.distance_to(joint.point) < 10.0*1920/maxf(1,canvas.image_rect().size.x): joint_hit=true; break
+				if point.distance_to(joint.point) < 10.0*video.width/maxf(1,canvas.image_rect().size.x): joint_hit=true; break
 			pose_editor.input(event,point)
 			if pose_editor.dragging or joint_hit: return
 		elif pose_editor.dragging: pose_editor.input(event,point); return
@@ -1245,6 +1249,10 @@ func push_history(command: Dictionary) -> void:
 	if sequence_editor:sequence_editor.trim_history()
 
 func apply_command(command: Dictionary, side: String) -> bool:
+	if command.type=="canvas_size":
+		var why: String=project_canvas.restore(command[side])
+		if not why.is_empty():message(why);return false
+		return true
 	if command.type=="output_size":
 		var value=command[side]
 		if value!=null and not OutputSize.error(value).is_empty():message("Invalid output size history.");return false
@@ -1515,7 +1523,7 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion or event is InputEventMouseButton:
 			var rect: Rect2=canvas.image_rect()
 			var local: Vector2=canvas.get_global_transform().affine_inverse()*event.position
-			if physics_editor.pointer(event,(local-rect.position)/rect.size*Vector2(1920,1080)):
+			if physics_editor.pointer(event,(local-rect.position)/rect.size*Vector2(video.width,video.height)):
 				get_viewport().set_input_as_handled();return
 	if physics_editor and physics_editor.recording and physics_editor.recording.active and event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
 		physics_editor.recording.cancel();get_viewport().set_input_as_handled();return
@@ -1545,7 +1553,7 @@ func _input(event: InputEvent) -> void:
 		if orbit_control.active:release_mouse()
 	if event is InputEventMouseMotion and pose_editor.dragging and not exporting:
 		var rect: Rect2 = canvas.image_rect()
-		var point: Vector2 = (event.position - canvas.global_position - rect.position) / rect.size * Vector2(1920, 1080)
+		var point: Vector2 = (event.position - canvas.global_position - rect.position) / rect.size * Vector2(video.width,video.height)
 		pose_editor.input(event, point)
 		get_viewport().set_input_as_handled()
 		return
@@ -1943,19 +1951,31 @@ func export_images(parent: String,drawings_only:=false) -> String:
 func selected_movie_profile() -> String:
 	return str(encoder_quality.get_item_metadata(encoder_quality.selected)) if encoder_quality and encoder_quality.selected>=0 else ""
 
+func sync_canvas_size() -> void:
+	var size:=preload("res://src/canvas_size.gd").size(video)
+	if size==Vector2i.ZERO:return
+	if canvas:canvas.resolution=Vector2(size);canvas.queue_redraw()
+	if renderer and renderer.viewport:renderer.viewport.size=size
+	drawing_overlay_cache.clear();Drawing.opacity_cache.clear()
+	if onion_editor:onion_editor.release_guides()
+	if project_canvas:project_canvas.sync()
+
 func sync_output_size() -> void:
+	sync_canvas_size()
 	if not output_size:return
 	for i in range(output_size.item_count):
-		if output_size.get_item_metadata(i)==video.get("output_size","1080p"):output_size.select(i);return
+		var id=output_size.get_item_metadata(i);var dimensions: Vector2i=OutputSize.PROFILES[id]
+		output_size.set_item_text(i,"%d x %d" % [dimensions.x,dimensions.y]+(" (native)" if id==preload("res://src/canvas_size.gd").profile(video) else ""))
+		if id==preload("res://src/canvas_size.gd").delivery(video):output_size.select(i)
 
 func change_output_size(index: int) -> void:
 	if exporting or index<0 or index>=output_size.item_count:return
 	var value=output_size.get_item_metadata(index)
 	if not OutputSize.error(value).is_empty():message(OutputSize.error(value));sync_output_size();return
-	if value==video.get("output_size","1080p"):return
+	if value==preload("res://src/canvas_size.gd").delivery(video):return
 	finish_stroke();pose_editor.finish_drag()
 	var before=video.get("output_size")
-	if value=="1080p":video.erase("output_size")
+	if value==preload("res://src/canvas_size.gd").profile(video):video.erase("output_size")
 	else:video["output_size"]=value
 	push_history({"type":"output_size","before":before,"after":video.get("output_size"),"bytes":256})
 	changed()

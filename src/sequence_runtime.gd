@@ -11,6 +11,7 @@ var renderers: Dictionary={}
 var frames: Dictionary={}
 var masked_frames: Dictionary={}
 var audio_mixes: Dictionary={}
+var canvas_size:=Vector2i(1920,1080)
 var compositor: SubViewport
 var sprites: Array=[]
 var shadows: Array=[]
@@ -26,11 +27,12 @@ func prepare(incoming: Dictionary,root: Dictionary,active_owner: String="") -> S
 	var mixed:=Audio.build(incoming,root)
 	if mixed.has("error"):return mixed.error
 	graph=incoming;root_scene=root;audio_mixes=mixed.mixes
+	canvas_size=preload("res://src/canvas_size.gd").size(root.video)
 	owners[""]={"scene":root,"clips":graph.clips}
 	for asset in graph.assets:owners[asset.id]=asset
 	for asset in graph.assets:
 		if asset.id==active_owner:continue
-		var renderer:=Renderer.new();add_child(renderer);renderer.setup()
+		var renderer:=Renderer.new();add_child(renderer);renderer.setup(canvas_size.x,canvas_size.y)
 		renderer.sequence_instance=true;renderer.viewport.transparent_bg=true
 		renderer.world_environment.environment.background_color=Color(0,0,0,0)
 		renderer.video_settings=asset.scene.video
@@ -39,7 +41,7 @@ func prepare(incoming: Dictionary,root: Dictionary,active_owner: String="") -> S
 		renderer.install_world(prepared);renderer.editor_grid.hide()
 		renderer.viewport.render_target_update_mode=SubViewport.UPDATE_DISABLED
 		renderers[asset.id]=renderer
-	compositor=SubViewport.new();compositor.size=Vector2i(1920,1080);compositor.transparent_bg=true;compositor.disable_3d=true
+	compositor=SubViewport.new();compositor.size=canvas_size;compositor.transparent_bg=true;compositor.disable_3d=true
 	compositor.render_target_update_mode=SubViewport.UPDATE_DISABLED;add_child(compositor)
 	return ""
 func render(owner: String,frame: int,final: bool=false,drawings_only: bool=false) -> Image:
@@ -71,7 +73,7 @@ func masked_picture(clip: Dictionary,picture: Dictionary) -> Texture2D:
 	var previous: Dictionary=masked_frames.get(clip.id,{})
 	if previous.get("stamp")==stamp:return previous.texture
 	var r: Array=mask.rect;var rect:=Rect2i(int(r[0]),int(r[1]),int(r[2]),int(r[3]))
-	var image: Image=picture.image.duplicate() if mask.invert else Drawing.blank(1920,1080)
+	var image: Image=picture.image.duplicate() if mask.invert else Drawing.blank(canvas_size.x,canvas_size.y)
 	if mask.invert:image.fill_rect(rect,Color.TRANSPARENT)
 	else:image.blit_rect(picture.image,rect,rect.position)
 	image.premultiply_alpha();image.generate_mipmaps()
@@ -92,7 +94,7 @@ func render_clips(owner: String,frame: int,final: bool,drawings_only: bool) -> I
 		var stamp:=picture_stamp(asset,local,final,drawings_only)
 		var cached: Dictionary=frames.get(clip.asset_id,{})
 		if cached.get("stamp")!=stamp:
-			var image: Image=Drawing.blank(1920,1080)
+			var image: Image=Drawing.blank(canvas_size.x,canvas_size.y)
 			if not drawings_only and not empty_world(asset.scene):
 				if not renderers.has(clip.asset_id):last_error="Sequence renderer is unavailable.";return null
 				var renderer=renderers[clip.asset_id]
@@ -101,17 +103,17 @@ func render_clips(owner: String,frame: int,final: bool,drawings_only: bool) -> I
 				if image==null:last_error=renderer.last_capture_error;return null
 			var children: Image=await render_clips(clip.asset_id,local,final,drawings_only)
 			if children==null:return null
-			image.blend_rect(children,Rect2i(0,0,1920,1080),Vector2i.ZERO)
-			var ink:=Drawing.composite_result(asset.scene.layers,local,1920,1080)
+			image.blend_rect(children,Rect2i(Vector2i.ZERO,canvas_size),Vector2i.ZERO)
+			var ink:=Drawing.composite_result(asset.scene.layers,local,canvas_size.x,canvas_size.y)
 			if ink.has("error"):last_error=ink.error;return null
-			image.blend_rect(ink.image,Rect2i(0,0,1920,1080),Vector2i.ZERO)
+			image.blend_rect(ink.image,Rect2i(Vector2i.ZERO,canvas_size),Vector2i.ZERO)
 			var premultiplied: Image=image.duplicate();premultiplied.premultiply_alpha()
 			if graph.format!=Graph.FORMAT:premultiplied.generate_mipmaps()
 			cached={"stamp":stamp,"image":image,"texture":ImageTexture.create_from_image(premultiplied)}
 			frames[clip.asset_id]=cached;builds+=1
 		pictures.append({"texture":masked_picture(clip,cached),"placement":placed,"shadow":clip.get("shadow",{})})
 	if cancelled:return null
-	if pictures.is_empty():return Drawing.blank(1920,1080)
+	if pictures.is_empty():return Drawing.blank(canvas_size.x,canvas_size.y)
 	while sprites.size()<pictures.size():
 		var shadow:=Sprite2D.new();shadow.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		var shadow_material:=ShaderMaterial.new();shadow_material.shader=preload("res://src/sequence_shadow.gdshader");shadow.material=shadow_material
@@ -124,7 +126,7 @@ func render_clips(owner: String,frame: int,final: bool,drawings_only: bool) -> I
 		var shadow: Sprite2D=shadows[i];shadow.visible=false
 		if not sprite.visible:continue
 		var p: Dictionary=pictures[i].placement;sprite.texture=pictures[i].texture
-		sprite.position=Vector2(960,540)+p.offset;sprite.scale=Vector2.ONE*p.scale;sprite.rotation_degrees=p.rotation
+		sprite.position=Vector2(canvas_size)/2+p.offset;sprite.scale=Vector2.ONE*p.scale;sprite.rotation_degrees=p.rotation
 		sprite.modulate=Color(p.opacity,p.opacity,p.opacity,p.opacity)
 		var style: Dictionary=pictures[i].shadow
 		if not style.is_empty() and style.color[3]>0:

@@ -1622,11 +1622,12 @@
       "source_sections": [
         "MD2",
         "MD8",
-        "ADD14.2"
+        "ADD14.2",
+        "MD7"
       ],
       "title": "Configurable output dimensions and timing",
-      "implementation": "partial",
-      "verification": "incomplete",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
       "acceptance": "The user can change supported resolution/rational rate/duration with accurate media alignment and documented canvas/output behavior, while default1080p24 remains effortless.",
       "evidence": [
@@ -1653,9 +1654,29 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/output_settings_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "src/canvas_size.gd"
+        },
+        {
+          "kind": "source",
+          "path": "src/project_canvas.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_native_canvas.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/native_canvas.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/native_canvas_2026-11-06.json"
         }
       ],
-      "remaining": "Rational rates/duration and1080p/720p/540p delivery sizes are implemented. Scene delivery size now persists in HAS/directory/recovery with Undo and parent/child navigation, with actual media/fresh-open checks. Source canvas/reader still enforce1920x1080; native variable canvases and broader project render settings remain incomplete.",
+      "remaining": "Native1080p/720p/540p new-art canvases, rational rate/duration, distinct persisted delivery profiles and accurate media now have current scoped cloud evidence. Audit acceptance against the pushed feature commit. Existing artwork resizing,4K and other aspect ratios are outside the supported profiles. Native hardware/Windows gates are tracked separately.",
       "external_dependencies": []
     },
     {
@@ -2126,7 +2147,8 @@
       "DRAW-06",
       "MEM-01",
       "MEM-02",
-      "O-AI"
+      "O-AI",
+      "OUTPUT-02"
     ],
     "MD8": [
       "TIME-01",
@@ -2305,7 +2327,7 @@
     {
       "requirement": "OUTPUT-02",
       "priority": 1,
-      "action": "Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail."
+      "action": "Native canvases and media contracts now have scoped evidence. Audit acceptance at the pushed feature commit, then move to the next independent required item."
     },
     {
       "requirement": "MEM-02",

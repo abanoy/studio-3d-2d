@@ -270,7 +270,7 @@ func input(event: InputEvent, point: Vector2) -> void:
 
 func choose_at(point: Vector2, context := false) -> void:
 	serial += 1; var request := serial
-	if not Rect2(0,0,1920,1080).has_point(point): return
+	if not Rect2(0,0,app.video.width,app.video.height).has_point(point): return
 	picking += 1
 	_process(0); viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	await RenderingServer.frame_post_draw
@@ -292,7 +292,7 @@ func choose_at(point: Vector2, context := false) -> void:
 			menu.add_item("Hide object" if selected_rig().visible_at(app.frame) else "Show object",2)
 		menu.add_separator(); menu.add_item("Deselect",3)
 		var rect: Rect2 = app.canvas.image_rect()
-		var position: Vector2 = app.canvas.global_position+rect.position+point/Vector2(1920,1080)*rect.size
+		var position: Vector2 = app.canvas.global_position+rect.position+point/Vector2(app.video.width,app.video.height)*rect.size
 		menu.position = app.get_window().position+Vector2i(position)
 		menu.popup()
 

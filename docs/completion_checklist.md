@@ -14,7 +14,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 
 ## Next required work
 
-- **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
+- **P1 · OUTPUT-02** — Native canvases and media contracts now have scoped evidence. Audit acceptance at the pushed feature commit, then move to the next independent required item.
 - **P1 · MEM-02** — All accepted drawing representations and clipboard now register conservative owned bytes. Address history/derived/GPU accounting and dense-project admission before raising caps.
 - **P1 · MEM-01** — Whole-layer removal now charges retained cold pixels and preserves prior brush Undo. Address dynamic global history/tile/active accounting and dense-project admission/acceptance.
 - **P1 · STORE-04** — Supporting POSIX sync and rollback payload validity are verified in scoped fixtures. Retain explicit native Windows and physical power-loss gates; audit the next independently actionable requirement.
@@ -78,7 +78,7 @@ Prioritize these required gaps over optional UI/effect polishing. Resolve true o
 | COURSE-02 | Interactive teacher and quiet hints | implemented / scoped_evidence · [report](tutorials.md) | Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over. |
 | COURSE-03 | Whole-scene Previous and resumed practice | implemented / scoped_evidence · [report](lesson_recovery.md) | Previous restores the complete step scene; Continue/Fresh preserve separate sessions and observations; optional personal Save and crash reattachment keep newer protected practice state. |
 | OUTPUT-01 | Simple MP4 and image output | implemented / scoped_evidence · [report](png_export.md) | Default output is playable H264/AAC1080p24 beside the saved HAS, with exact frame count, silent-video support and complete/transparent PNG alternatives. |
-| OUTPUT-02 | Configurable output dimensions and timing | partial / incomplete · [report](project_timing.md) | The user can change supported resolution/rational rate/duration with accurate media alignment and documented canvas/output behavior, while default1080p24 remains effortless. |
+| OUTPUT-02 | Configurable output dimensions and timing | implemented / scoped_evidence · [report](project_timing.md) | The user can change supported resolution/rational rate/duration with accurate media alignment and documented canvas/output behavior, while default1080p24 remains effortless. |
 | OUTPUT-03 | Export progress, cancellation and recovery | implemented / scoped_evidence · [report](export_failures.md) | Missing codecs/tools, failures and cancellation report truthfully, preserve recoverable frames/logs and never claim success or overwrite project assets. |
 | NOTICES-01 | Notices and honest provenance | implemented / historical_only · [report](../THIRD_PARTY_NOTICES.md) | Dependency notices and source attribution remain available, unknown asset rights are not fabricated, and no downloaded art or unauthorized distribution is introduced. |
 

@@ -657,7 +657,7 @@ func input(event: InputEvent, point: Vector2) -> void:
 	if contacts.viewport.active:contacts.viewport.input(event,point);return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed: finish_drag(); return
-		var threshold: float = 10.0 * 1920 / maxf(1, app.canvas.image_rect().size.x)
+		var threshold: float = 10.0 * app.video.width / maxf(1, app.canvas.image_rect().size.x)
 		var best := threshold
 		var hit := {}
 		for handle in handles:

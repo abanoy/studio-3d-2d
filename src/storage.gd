@@ -59,6 +59,7 @@ static func readable_manifest(path: String) -> bool:
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
 	var data: Dictionary=parser.data
+	if not preload("res://src/canvas_size.gd").error(data.get("video")).is_empty():return false
 	if data.get("video") is Dictionary and not preload("res://src/output_size.gd").project_error(data.video).is_empty():return false
 	var extended:=false
 	if data.get("schema_version")==8:
@@ -103,6 +104,8 @@ static func readable_payloads(folder: String,manifest: String,png_verifier=null)
 
 static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={}) -> String:
 	var sync_boundary:=preload("res://src/save_worker.gd").existing_boundary(folder)
+	var canvas_error:=preload("res://src/canvas_size.gd").error(video)
+	if not canvas_error.is_empty():return canvas_error
 	var output_error:=preload("res://src/output_size.gd").project_error(video)
 	if not output_error.is_empty():return output_error+" Previous save preserved."
 	var video_error:=Extended.video_error(video)
@@ -312,12 +315,14 @@ static func raster_reserve(data) -> int:
 	if graph is Dictionary and graph.get("assets") is Array:
 		for asset in graph.assets:
 			if asset is Dictionary and asset.get("scene") is Dictionary:documents.append(asset.scene)
-	var count:=0
+	var bytes:=0
 	for scene in documents:
 		if not scene.get("layers") is Array:continue
+		var dimensions: Vector2i=preload("res://src/canvas_size.gd").size(scene.get("video",{}))
+		if dimensions==Vector2i.ZERO:dimensions=Vector2i(1920,1080)
 		for layer in scene.layers:
-			if layer is Dictionary and layer.get("cels") is Array:count+=layer.cels.size()
-	return count*1920*1080*4
+			if layer is Dictionary and layer.get("cels") is Array:bytes+=layer.cels.size()*dimensions.x*dimensions.y*4
+	return bytes
 
 static func load_project(folder: String, manifest_name := "project.json",cold_cels:=false,cold_min_bytes:=0) -> Dictionary:
 	if manifest_name not in ["project.json", "project.backup.json"] and not Journal.valid_manifest(folder,manifest_name): return {"error": "Unsupported or changed recovery manifest."}
@@ -395,7 +400,7 @@ static func decode_project(data,folder: String,extended:=false,rasters=null) -> 
 	for prop in ["width", "height"]:
 		if not integer(video.get(prop), 1, 1920):
 			return {"error": "Invalid video setting: " + prop}
-	if video.width != 1920 or video.height != 1080 or not Extended.video_error(video).is_empty():
+	if not preload("res://src/canvas_size.gd").error(video).is_empty() or not Extended.video_error(video).is_empty():
 		return {"error": "Unsupported canvas size or project timing."}
 	var rate_error:=preload("res://src/video_timing.gd").error(video.get("fps_num"),video.get("fps_den"))
 	if not rate_error.is_empty():return {"error":rate_error}

@@ -37,7 +37,7 @@ static func error(graph,root) -> String:
 	for position in range(documents.size()):
 		var scene: Dictionary=documents[position];var video=scene.get("video")
 		if not video is Dictionary or not Extended.video_error(video).is_empty() or position>0 and not integer(video.get("duration_frames"),1,240):return "Invalid parent/local sequence duration."
-		if not integer(video.get("width"),1920,1920) or not integer(video.get("height"),1080,1080) or not integer(video.get("fps_num"),1,120000) or not integer(video.get("fps_den"),1,1001) or float(video.fps_num)/video.fps_den>120:return "Invalid sequence canvas/rate."
+		if not preload("res://src/canvas_size.gd").error(video).is_empty() or not integer(video.get("fps_num"),1,120000) or not integer(video.get("fps_den"),1,1001) or float(video.fps_num)/video.fps_den>120:return "Invalid sequence canvas/rate."
 		for key in ["width","height","fps_num","fps_den"]:
 			if video.get(key)!=rate.get(key):return "Sequences must share canvas size and frame rate."
 		var layers=scene.get("layers");var world=scene.get("world");var audio=scene.get("audio",{})
@@ -59,7 +59,7 @@ static func error(graph,root) -> String:
 			var expected: Array=CLIP_FIELDS+(["shadow"] if graph.format!=FORMAT else [])+(["mask"] if graph.format==MASK_FORMAT else [])
 			if not fields(clip,expected) or not identity(clip.id) or ids.has(clip.id) or not clip.asset_id is String or not index.has(clip.asset_id):return "Invalid sequence clip identity or missing asset."
 			if graph.format!=FORMAT and not shadow_error(clip.shadow).is_empty():return shadow_error(clip.shadow)
-			if graph.format==MASK_FORMAT and not mask_error(clip.mask).is_empty():return mask_error(clip.mask)
+			if graph.format==MASK_FORMAT and not mask_error(clip.mask,preload("res://src/canvas_size.gd").size(rate)).is_empty():return mask_error(clip.mask,preload("res://src/canvas_size.gd").size(rate))
 			ids[clip.id]=true
 			var child: Dictionary=index[clip.asset_id].scene.video
 			if not integer(clip.start,0,parent.video.duration_frames-1) or not integer(clip.duration,1,parent.video.duration_frames-clip.start) or not integer(clip.source_in,0,child.duration_frames-1):return "Sequence clip exceeds its parent/local range."
@@ -88,12 +88,12 @@ static func shadow_error(value) -> String:
 	for n in value.color:
 		if not number(n,0,1):return "Invalid sequence shadow color."
 	return ""
-static func mask_error(value) -> String:
+static func mask_error(value,canvas:=Vector2i(1920,1080)) -> String:
 	if not value is Dictionary:return "Invalid sequence picture mask."
 	if value.is_empty():return ""
 	if not fields(value,["rect","invert"]) or not value.rect is Array or value.rect.size()!=4 or not value.invert is bool:return "Invalid sequence picture mask."
 	var r: Array=value.rect
-	if not integer(r[0],0,1919) or not integer(r[1],0,1079) or not integer(r[2],1,1920) or not integer(r[3],1,1080) or r[0]+r[2]>1920 or r[1]+r[3]>1080:return "Picture mask must be a whole-pixel rectangle inside the child canvas."
+	if not integer(r[0],0,canvas.x-1) or not integer(r[1],0,canvas.y-1) or not integer(r[2],1,canvas.x) or not integer(r[3],1,canvas.y) or r[0]+r[2]>canvas.x or r[1]+r[3]>canvas.y:return "Picture mask must be a whole-pixel rectangle inside the child canvas."
 	return ""
 static func context_error(value,graph: Dictionary) -> String:
 	if not fields(value,["format","asset_id","frame"]) or value.format!="studio_sequence_editor_1" or not value.asset_id is String:return "Invalid sequence editor context."

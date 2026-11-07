@@ -2681,3 +2681,39 @@ failed exploratorylog retained; no assertionsweakened. Raw onion-release-baselin
 before/fixed/domain under /workspace/has-handoff-audit; curated
 onion_resource_lifetime_2026-11-06.json and docs/onion_resource_lifetime.md.
 MEM-02 remains partial/open; continuous canonical goal active.
+
+
+2026-11-06 — Native720p/540p canvases with full project/media contract
+
+Options→Native drawing canvas adds reversible1080/720/540 setting before artwork
+or sequences. Refuses live/deleted-history artwork, sequences, playback/recording/
+unfinished edits; never resamples existing source pixels. New remains1080p24.
+Canvas pointer/pose/contact/world/reference/tutorial projection mapping, viewport,
+owned raster reserve, native mask bounds and nested compositor now use actual
+scene dimensions. Parent/child share size/rate. Options scrolls for accessibility.
+Delivery defaults to native with distinct saved overrides; labels show native.
+Existing1080schemas keep behavior; old1080-only apps refuse new dimensions. No
+schema renumbering, resource-cap increase,4K/aspect/old-art resize promise.
+Godot/Python sequence metadata contracts aligned. Unsupported native dimensions
+refuse before save and before rollback rotation. Original assets never rewritten.
+
+25metadata+75nativeGUIchecks pass on private107: actual brush pointer/nativeRGBA,
+exactGPUoverlay/final pixels, canvas/pixel/deletedcel UndoRedo, external3D/camera
+projection unchanged, directory/HAS/checkpoint, nested masks/real HAS publication,
+coldOpen without sourceGLB/WAV/writer-cache, exact recovered audioPCM, native PNG
+sequences. Actual720p48frames24fps/540p60frames24000/1001fps H264AAC and durations
+match, decoded frame24 tone onsets48001/48049samples. Functional sources frozen.
+89uniquePython tests,271raster domains,167private recovery, default1080app62checks+
+16PNGcompat with realSIGKILL/startup, masked nested1080 suite218checks and existing
+delivery/media/persistence regression pass. Native Windows/physical/artist/native
+fidelity unrun. Tracked generated log archived/restored before commit.
+
+Development failures retained: explicit numeric/Variant annotations, old-size
+previewtexture update fixed with size-aware recreation, Python nested contract
+still1080 fixed; harness now requires actual nested file commit/reopen instead of
+accepting unchanged live graph, JSON whole-float comparison normalized after
+integrality check. No pixel/media/assertion relaxation. Raw native-canvas-* under
+/workspace/has-handoff-audit, curated native_canvas_2026-11-06.json and
+ docs/native_canvas.md; output guide/README updated. OUTPUT-02 implemented with
+scoped evidence, acceptance closure audit follows pushed feature commit. Continuous
+goal active; do not repeat native canvas implementation.

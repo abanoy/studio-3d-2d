@@ -329,7 +329,9 @@ icons; no Microsoft/Apple artwork or external icon/font package is bundled.
    **Onion skin** shows previous/next exposures as blue/pink editing guides. They
    stay out of fill sampling and movies. [Guide details](docs/onion_skin.md).
    Middle-drag pans the 2D canvas in Draw mode; it dollies only in Scene mode.
-   Brush radius is measured in the full 1920×1080 output, regardless of window size.
+   Brush radius is measured in native canvas pixels, regardless of window size.
+   New defaults to1920×1080. Before drawing, Options → Native drawing canvas also
+   offers1280×720 and960×540; existing artwork is never silently resized.
    Wheel zooms; middle drag pans; Fit view restores framing. Space only plays/pauses.
 5. Step/scrub to frame 24, then **Copy drawing here** or **New drawing**.
    A drawing holds until its exposure ends. Editing a held cel changes that drawing

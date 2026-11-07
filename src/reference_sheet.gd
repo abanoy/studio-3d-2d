@@ -196,7 +196,7 @@ func refresh_guide() -> void:
 	var canvas_rect: Rect2=app.canvas.image_rect();var region:=guide_region.intersection(Rect2i(Vector2i.ZERO,image.get_size()))
 	if not region.has_area():guide.hide();return
 	var sheet_size:=Vector2(region.size);var factor:=minf(canvas_rect.size.x/sheet_size.x,canvas_rect.size.y/sheet_size.y)*guide_scale.value/100
-	var extent:=sheet_size*factor;var center:=canvas_rect.get_center()+Vector2(guide_x.value/1920,guide_y.value/1080)*canvas_rect.size
+	var extent:=sheet_size*factor;var center:=canvas_rect.get_center()+Vector2(guide_x.value/app.video.width,guide_y.value/app.video.height)*canvas_rect.size
 	guide.texture=texture;guide.region=region;guide.rect=Rect2(center-extent/2,extent);guide.modulate=Color(1,1,1,opacity.value/100);guide.queue_redraw();guide.show()
 func _process(_delta: float) -> void:
 	if launch:launch.disabled=app.exporting

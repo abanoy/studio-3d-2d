@@ -23,6 +23,9 @@ def identity(v):
     return isinstance(v,str) and re.fullmatch(r'[A-Za-z0-9_-]{1,128}',v) is not None
 
 
+try:from . import canvas_size
+except ImportError:import canvas_size
+
 def error(graph,root):
     if not isinstance(graph,dict) or set(graph)!={'format','assets','clips'} or graph['format'] not in (FORMAT,SHADOW_FORMAT,MASK_FORMAT):
         return 'Unknown editable sequence graph'
@@ -43,7 +46,7 @@ def error(graph,root):
         if not isinstance(video,dict) or extended.video_error(video) or position>0 and not integer(video.get('duration_frames'),1,240):return 'Invalid parent/local sequence duration'
         for key in ('width','height','fps_num','fps_den'):
             if video.get(key)!=rate.get(key):return 'Sequences must share canvas size and frame rate'
-        if video.get('width')!=1920 or video.get('height')!=1080 or not integer(video.get('fps_num'),1,120000) or not integer(video.get('fps_den'),1,1001) or video['fps_num']/video['fps_den']>120:return 'Invalid sequence canvas/rate'
+        if canvas_size.error(video) or not integer(video.get('fps_num'),1,120000) or not integer(video.get('fps_den'),1,1001) or video['fps_num']/video['fps_den']>120:return 'Invalid sequence canvas/rate'
         layers=scene.get('layers');world=scene.get('world');audio=scene.get('audio',{})
         if not isinstance(layers,list) or len(layers)>4 or not isinstance(world,dict) or not isinstance(world.get('objects'),list) or not isinstance(world.get('effects',[]),list) or not isinstance(audio,dict):return 'Invalid sequence scene tracks'
         for layer in layers:
@@ -66,7 +69,7 @@ def error(graph,root):
                 why=shadow_error(clip['shadow'])
                 if why:return why
             if graph['format']==MASK_FORMAT:
-                why=mask_error(clip['mask'])
+                why=mask_error(clip['mask'],(rate['width'],rate['height']))
                 if why:return why
             ids.add(clip['id']);child=index[clip['asset_id']]['scene']['video']
             if not integer(clip['start'],0,parent['video']['duration_frames']-1) or not integer(clip['duration'],1,parent['video']['duration_frames']-clip['start']) or not integer(clip['source_in'],0,child['duration_frames']-1):return 'Sequence clip exceeds its parent/local range'
@@ -105,12 +108,12 @@ def shadow_error(value):
     return ''
 
 
-def mask_error(value):
+def mask_error(value,canvas=(1920,1080)):
     if not isinstance(value,dict):return 'Invalid sequence picture mask'
     if not value:return ''
     if set(value)!={'rect','invert'} or not isinstance(value['rect'],list) or len(value['rect'])!=4 or type(value['invert']) is not bool:return 'Invalid sequence picture mask'
     r=value['rect']
-    if not integer(r[0],0,1919) or not integer(r[1],0,1079) or not integer(r[2],1,1920) or not integer(r[3],1,1080) or r[0]+r[2]>1920 or r[1]+r[3]>1080:return 'Picture mask must be a whole-pixel rectangle inside the child canvas'
+    if not integer(r[0],0,canvas[0]-1) or not integer(r[1],0,canvas[1]-1) or not integer(r[2],1,canvas[0]) or not integer(r[3],1,canvas[1]) or r[0]+r[2]>canvas[0] or r[1]+r[3]>canvas[1]:return 'Picture mask must be a whole-pixel rectangle inside the child canvas'
     return ''
 
 

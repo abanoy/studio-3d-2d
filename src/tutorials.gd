@@ -214,7 +214,7 @@ func layout_card() -> void:
 		if not id.is_empty():
 			var point: Vector3=rig.bone_transform(id).origin
 			if not app.renderer.camera.is_position_behind(point):
-				var image: Rect2=app.canvas.image_rect();var center: Vector2=image.position+app.renderer.camera.unproject_position(point)/Vector2(1920,1080)*image.size
+				var image: Rect2=app.canvas.image_rect();var center: Vector2=image.position+app.renderer.camera.unproject_position(point)/Vector2(app.video.width,app.video.height)*image.size
 				# Protect the28px joint marker plus4px clearance, rather than a broad
 				# region whose minimum overlap could still cover the actual marker.
 				focus=Rect2(center-Vector2(18,18),Vector2(36,36))
@@ -249,7 +249,7 @@ func update_highlight() -> void:
 			if not id.is_empty():
 				var point: Vector3=rig.bone_transform(id).origin
 				if not app.renderer.camera.is_position_behind(point):
-					var pixel: Vector2=app.renderer.camera.unproject_position(point);var image: Rect2=app.canvas.image_rect();var position: Vector2=app.canvas.global_position+image.position+pixel/Vector2(1920,1080)*image.size
+					var pixel: Vector2=app.renderer.camera.unproject_position(point);var image: Rect2=app.canvas.image_rect();var position: Vector2=app.canvas.global_position+image.position+pixel/Vector2(app.video.width,app.video.height)*image.size
 					if app.canvas.get_global_rect().has_point(position):marker.global_position=position-Vector2(14,14);marker.size=Vector2(28,28);marker.show()
 		return
 	if course==First.ID:
