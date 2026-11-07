@@ -843,8 +843,8 @@
       ],
       "title": "Brush, eraser and pressure",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Output-coordinate strokes, opacity, erasing and supported pressure events remain correct under zoom/pan and Undo.",
       "evidence": [
         {
@@ -854,9 +854,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/brush_pressure.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/brush_current_2026-11-07.json",
+          "commit": "83da652d896c82ffe37d8fdd34a885caea203930",
+          "scope": "75 current unit/editor/cold-reader checks plus independent taper alpha reference: routed output-coordinate strokes under zoom/pan, opacity/eraser and synthetic pressure events, limit refusal, release/cancel/focus cleanup, exact Undo/Redo/packed paint and shared real export pixels. Physical tablet and latency explicitly untested."
         }
       ],
-      "remaining": "Physical Windows tablet behavior/latency remains externally unverified; no universal Ink/Wintab claim.",
+      "remaining": "Required bounded software brush condition verified. Actual tablet/driver/GPU latency, physical pressure feel and audible-device acceptance remain external under ACCEPT-TABLET.",
       "external_dependencies": []
     },
     {

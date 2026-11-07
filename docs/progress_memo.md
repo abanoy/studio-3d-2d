@@ -13550,3 +13550,5 @@ IK/crouch and grouped locomotion gates now running; no premature closures.
 2026-11-07 UTC: NAV-01 software acceptance verified using committed43-check current receipt 19834f040a55b17243d801e5dd029ccb44bed559 plus current remapped-shortcut evidence. Formal14/62 (22.58%); implementation51/54 unchanged.
 
 2026-11-07 UTC: Current opacity suite passed and pressure suite initially failed4cascading assertions because its admission fixture still filled32cels. Updated fixture to actual DrawingLimits.MAX_CELS (400) across project, keeping exact refusal/cleanup/history assertions. Full final opacity and pressure unit/editor/cold-reader/independent-oracle/1080p24H264 suites pass, unchanged frozen application sources, source/shot/world/paint preservation. Physical tablet/latency not tested.
+
+2026-11-07 UTC: DRAW-03 bounded software acceptance verified by75current brush checks at 83da652d896c82ffe37d8fdd34a885caea203930; physical-tablet gate unchanged. Formal15/62 (24.19%), implementation51/54 unchanged.

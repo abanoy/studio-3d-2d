@@ -1057,11 +1057,18 @@
           "file_sha256": "2ed0fa4980f6171b725fc392edcb98b2e17ebacd604ad2c72486fa5cff0192e2"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Physical Windows tablet behavior/latency remains externally unverified; no universal Ink/Wintab claim.",
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software brush condition verified. Actual tablet/driver/GPU latency, physical pressure feel and audible-device acceptance remain external under ACCEPT-TABLET.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/brush_current_2026-11-07.json",
+          "commit": "83da652d896c82ffe37d8fdd34a885caea203930",
+          "scope": "75 current unit/editor/cold-reader checks plus independent taper alpha reference: routed output-coordinate strokes under zoom/pan, opacity/eraser and synthetic pressure events, limit refusal, release/cancel/focus cleanup, exact Undo/Redo/packed paint and shared real export pixels. Physical tablet and latency explicitly untested."
+        }
+      ],
       "external_dependencies": []
     },
     {
