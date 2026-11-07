@@ -41,10 +41,10 @@ func run() -> void:
 		check(World.validate(world,48).is_empty() and app.restore_world(world).is_empty(),"ordinary world transaction prepares installed SFM and Workshop sprite data")
 		app.keys=[Timeline.key(0,Vector3(0,1,7),Quaternion.IDENTITY,60)];app.set_frame(13)
 		app.mode.select(0);app.change_mode(0);app.create_cel(false)
-		Drawing.stroke(Drawing.cel_at(app.layers[1],13).image,Vector2(72,72),Vector2(180,72),5,Color.CYAN,false);app.changed()
+		Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],13)),Vector2(72,72),Vector2(180,72),5,Color.CYAN,false);app.changed()
 		check(app.import_audio(inputs.path_join("tone.wav")).is_empty(),"particle world accepts independent authored sound")
 		app.audio_clip.start_frame=24;app.rebuild_audio();app.changed()
-		var ink: PackedByteArray=Drawing.cel_at(app.layers[1],13).image.get_data()
+		var ink: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],13)).get_data()
 		var shots:=JSON.stringify(app.keys,"",true,true)
 		var live=app.renderer.world_runtime;var flash=live.effects["effect-0"]
 		app.set_frame(11);check(not flash.root.visible and flash.root.multimesh.visible_instance_count==0,"effect absent before its first frame")
@@ -61,7 +61,7 @@ func run() -> void:
 		for f in [47,0,19,12,30,13]:app.set_frame(f)
 		var repeat: Image=await app.renderer.capture(app.keys,app.layers,13,true)
 		check(reference.get_data()==repeat.get_data(),"ordinary timeline reverse seeks repeat exact pixels")
-		check(Drawing.cel_at(app.layers[1],13).image.get_data()==ink and JSON.stringify(app.keys,"",true,true)==shots,"particle timing never authors camera keys or modifies cel bytes")
+		check(Drawing.image(Drawing.cel_at(app.layers[1],13)).get_data()==ink and JSON.stringify(app.keys,"",true,true)==shots,"particle timing never authors camera keys or modifies cel bytes")
 		var before: Dictionary=app.current_world();var bad: Dictionary=before.duplicate(true);bad.effects[0].texture_sha256="0".repeat(64)
 		check(not app.restore_world(bad).is_empty() and app.current_world()==before and app.renderer.world_runtime==live,"failed effect preparation preserves entire installed world")
 		bad=before.duplicate(true);bad.format=World.FORMAT

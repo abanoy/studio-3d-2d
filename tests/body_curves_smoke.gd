@@ -114,7 +114,7 @@ func run() -> void:
 		if plan.label=="Authored":
 			var reopened_pixels: Image=await app.renderer.capture(app.keys,[],6,true)
 			check(reopened_pixels.get_data()==expected.get_data(),"authored diagnostic HAS preserves exact rendered body-motion pixels")
-			Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN)
+			Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN)
 			var expected_overlay: Image=await app.renderer.capture(app.keys,app.layers,6,true)
 			var error: String=await app.export_movie(folder);movie=app.last_export_folder.path_join("movie.mp4")
 			check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000007.png")).get_data()==expected_overlay.get_data(),"diagnostic motion exports with independent drawing and exact preview pixels")

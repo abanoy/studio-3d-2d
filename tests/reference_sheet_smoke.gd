@@ -58,7 +58,7 @@ func run() -> void:
 	var canvas_point: Vector2=app.canvas.image_rect().position+Vector2(120,120)/Vector2(1920,1080)*app.canvas.image_rect().size
 	await click_at(app.canvas,canvas_point)
 	var cel: Dictionary=Drawing.cel_at(app.layers[app.active_layer],0)
-	check(not cel.is_empty() and cel.image.get_pixel(120,120).a>0 and sheet.image.get_data()==original.get_data(),"routed canvas drawing passes through guide and leaves reference pixels intact")
+	check(not cel.is_empty() and Drawing.image(cel).get_pixel(120,120).a>0 and sheet.image.get_data()==original.get_data(),"routed canvas drawing passes through guide and leaves reference pixels intact")
 	var ink:=Drawing.composite(app.layers,0,1920,1080)
 	app.toggle_play();await settled();check(not sheet.guide.visible,"guide hides during synchronized playback")
 	app.stop();app.set_frame(0);await settled();check(sheet.guide.visible,"guide returns when drawing resumes")

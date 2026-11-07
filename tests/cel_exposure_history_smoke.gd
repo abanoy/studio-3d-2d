@@ -9,7 +9,7 @@ func run() -> void:
 	for at in [24,36]:
 		var other:=Drawing.blank(1920,1080);Drawing.insert(layer,at,48,other);layer.cels[-1].duration=12
 	app.changed();var old: int=app.history.size();var bytes: int=app.history_bytes;var first: Dictionary=app.history[0];var pixels:=original.get_data();var live: Array=[]
-	for cel in layer.cels:live.append([cel.id,cel.start,cel.duration,cel.image])
+	for cel in layer.cels:live.append([cel.id,cel.start,cel.duration,Drawing.image(cel)])
 	for i in range(48):app.exposure.value=6 if i%2==0 else 12;app.set_exposure()
 	check(app.history.size()==old+48 and is_same(app.history[0],first),"48 duration edits preserve earlier drawing history under64MiB budget")
 	check(app.history_bytes==bytes+48*512,"48 edits charge24576bytes regardless of three1080p rasters")

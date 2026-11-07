@@ -27,7 +27,7 @@ func run() -> void:
 		app.has_project.open_file(folder.path_join("mmd-packed.has"));await job(app.has_project);var actor: RefCounted=app.renderer.world_runtime.instance(expected.id)
 		check(actor!=null and actor.root.get_meta(P.META).entries.size()==4,"cold Open reconstructs native PMX groups from embedded standard source")
 		check(actor!=null and JSON.parse_string(JSON.stringify(actor.authored_shape_keys(),"",true,true))==expected.keys and actor.data.metadata==expected.metadata,"cold Open preserves exact ordinary deform keys/native provenance")
-		check(Drawing.cel_at(app.layers[1],12).image.get_pixel(80,80)==Color.CYAN,"cold Open keeps the independent cyan drawing editable")
+		check(Drawing.image(Drawing.cel_at(app.layers[1],12)).get_pixel(80,80)==Color.CYAN,"cold Open keeps the independent cyan drawing editable")
 		print("MMD_GROUPS_READER "+JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
 	var keys: Array=app.keys.duplicate(true);var source:=folder.path_join("Original groups.pmx");var original:=FileAccess.get_sha256(source)
 	var placement: Dictionary=app.import_actions.placement();placement.physics_on_import=false
@@ -60,7 +60,7 @@ func run() -> void:
 	check(ui.apply_button.disabled and "unsupported" in ui.info.text and actor.data==before and app.history.size()==history,"mixed UV group stays visible and refuses the entire pose")
 	choose(ui,"mmd:group:1");app.set_advanced(true);await settle();check(str(ui.entry().native_name) in ui.info.text and "bindings" in ui.info.text,"Advanced exposes exact JP group identity and prepared vertex bindings")
 	root.get_texture().get_image().save_png(folder.path_join("mmd-advanced.png"));app.set_advanced(false);await settle();root.get_texture().get_image().save_png(folder.path_join("mmd-simple.png"))
-	app.pose_editor.shape_window.hide();Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],12).image.set_pixel(80,80,Color.CYAN);app.set_frame(12)
+	app.pose_editor.shape_window.hide();Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],12)).image.set_pixel(80,80,Color.CYAN);app.set_frame(12)
 	var expected:={"id":id,"keys":actor.authored_shape_keys(),"metadata":actor.data.metadata};FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected,"",true,true))
 	for mode in ["packed","linked"]:
 		app.has_project.save_file(folder.path_join("mmd-"+mode+".has"),mode);await job(app.has_project);app.new_project();app.has_project.open_file(folder.path_join("mmd-"+mode+".has"));await job(app.has_project);actor=app.renderer.world_runtime.instance(id)

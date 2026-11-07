@@ -48,7 +48,7 @@ func run(app) -> void:
 	press.pressed = false
 	app.canvas_input(press, Vector2(1010, 520))
 	var cel := Drawing.cel_at(app.layers[1], 0)
-	var paint: PackedByteArray = cel.image.get_data()
+	var paint: PackedByteArray = Drawing.image(cel).get_data()
 	await screenshot(folder.path_join("simple.png"))
 	app.mode.select(1)
 	app.change_mode(1)
@@ -73,7 +73,7 @@ func run(app) -> void:
 	await click(app.advanced_toggle)
 	check(not app.advanced_mode and not app.fov.is_visible_in_tree(), "actual toggle click returns to Simple")
 	check(app.fov.value == 47 and app.interpolation.selected == 2 and JSON.stringify(app.keys) == keys, "hidden advanced FOV and hold interpolation remain active")
-	check(cel.image.get_data() == paint and FileAccess.get_sha256(app.source) == scene_hash, "switching preserves independent drawing and scene asset bytes")
+	check(Drawing.image(cel).get_data() == paint and FileAccess.get_sha256(app.source) == scene_hash, "switching preserves independent drawing and scene asset bytes")
 	var after: Image = await app.renderer.capture(app.keys, app.layers, 0)
 	check(before.get_data() == after.get_data(), "Simple and Advanced render identical project pixels")
 	check(app.import_audio(ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")).is_empty(), "WAV import works in Simple")

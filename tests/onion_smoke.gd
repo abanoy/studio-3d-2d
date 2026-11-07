@@ -26,7 +26,7 @@ func click(point: Vector2) -> void:
 	var rect: Rect2=app.canvas.image_rect();e.position=rect.position+point/Vector2(1920,1080)*rect.size;app.canvas._gui_input(e);e.pressed=false;app.canvas._gui_input(e)
 func hashes() -> Array:
 	var result: Array=[]
-	for cel in app.layers[1].cels:result.append(Storage.image_hash(cel.image))
+	for cel in app.layers[1].cels:result.append(Storage.image_hash(Drawing.image(cel)))
 	return result
 func run() -> void:
 	var layer:={"cels":[{"id":"none","start":0,"duration":8},{"id":"held","start":12,"duration":12},{"id":"end","start":36,"duration":12}]}

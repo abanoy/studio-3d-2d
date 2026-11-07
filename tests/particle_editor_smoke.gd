@@ -66,8 +66,8 @@ func run() -> void:
 		var result:={"checks":checks,"failures":failures};app.dirty=false;app.queue_free();await settled();var file:=FileAccess.open(folder.path_join("cold.json"),FileAccess.WRITE);file.store_string(JSON.stringify(result));file.close();print("PARTICLE_EDITOR "+JSON.stringify(result));quit(0 if failures==0 else 1);return
 	var input:=folder.path_join("inputs");DirAccess.make_dir_recursive_absolute(input);var room:=input.path_join("room.glb");SceneIO.make_fixture(room);check(app.load_scene(room).is_empty(),"original procedural room joins ordinary world")
 	app.keys=[Timeline.key(0,Vector3(0,1,7),Quaternion.IDENTITY,60)];app.mode.select(0);app.change_mode(0);app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(72,72),Vector2(180,72),5,Color.CYAN,false);app.changed();app.set_frame(12)
-	var ink: PackedByteArray=Drawing.cel_at(app.layers[1],12).image.get_data();var keys:=JSON.stringify(app.keys,"",true,true);var objects: Array=World.portable(app.current_world()).objects
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(72,72),Vector2(180,72),5,Color.CYAN,false);app.changed();app.set_frame(12)
+	var ink: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],12)).get_data();var keys:=JSON.stringify(app.keys,"",true,true);var objects: Array=World.portable(app.current_world()).objects
 	await import_file(plan.effects[0]);var editor=app.particle_editor
 	if not is_instance_valid(editor.window):app.queue_free();await settled();quit(1);return
 	check(not editor.window.exclusive,"effects panel keeps the main window clickable")
@@ -102,7 +102,7 @@ func run() -> void:
 	check(editor.selected_row().start_frame==47 and editor.selected_row().end_frame==48 and editor.instances_list.get_item_text(0).ends_with("Frame 47"),"equal first and last fields set one frame at the end of the shot")
 	app.undo();await settled()
 	check(editor.start.value==12 and editor.finish.value==23,"undo restores inclusive fields for the original effect")
-	check(World.portable(app.current_world()).objects==objects and Drawing.cel_at(app.layers[1],12).image.get_data()==ink and JSON.stringify(app.keys,"",true,true)==keys,"adding effects preserves original room, independent ink and shot keys")
+	check(World.portable(app.current_world()).objects==objects and Drawing.image(Drawing.cel_at(app.layers[1],12)).get_data()==ink and JSON.stringify(app.keys,"",true,true)==keys,"adding effects preserves original room, independent ink and shot keys")
 	app.world_selection.select_entity("effect:"+identity);check(editor.selected==identity,"World effect entry reopens exact shared instance controls")
 	var history_before: int=app.history.size()
 	var runtime_before=app.renderer.world_runtime

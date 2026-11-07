@@ -31,7 +31,7 @@ func run() -> void:
 	if reader:
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
 		app.has_project.open_file(project);await job()
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.pixels,"fresh process reopens exact half-opacity pen and gentle eraser pixels")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.pixels,"fresh process reopens exact half-opacity pen and gentle eraser pixels")
 		check(app.brush_opacity.value==100 and equal(app.keys,expected.keys) and equal(World.portable(app.current_world()),expected.world),"brush preference is session-only; authored world and camera keys survive exactly")
 		FileAccess.open(folder.path_join("cold-state.json"),FileAccess.WRITE).store_string(JSON.stringify({"opacity":app.brush_opacity.value,"keys":app.keys,"world":World.portable(app.current_world())}))
 		var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true)

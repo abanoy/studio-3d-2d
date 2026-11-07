@@ -84,7 +84,7 @@ func run() -> void:
 	check(studio.get_data()==legacy.get_data() and app.renderer.studio_light.visible,"old projects without a mode retain their original studio illumination")
 	mode(app,"unshaded");app.set_advanced(true);app.set_advanced(false)
 	check(Lighting.mode(app.video)=="unshaded" and (await app.renderer.capture(app.keys,[],0,true)).get_data()==flat.get_data(),"Simple and Advanced retain identical lighting state and pixels")
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN)
 	var bad: Dictionary=app.video.duplicate(true);bad.lighting_mode="unknown"
 	check(not Storage.save_project(folder.path_join("bad"),bad,app.keys,app.layers,"",0,{}, {},{},false,app.renderer.world_state()).is_empty() and not FileAccess.file_exists(folder.path_join("bad/project.json")),"invalid lighting modes refuse before writing project data")
 	for kind in ["unshaded","lit"]:
@@ -92,7 +92,7 @@ func run() -> void:
 		for packing in ["packed","linked"]:
 			var path:=folder.path_join(kind+"-"+packing+".has");app.has_project.save_file(path,packing);await wait_job(app.has_project)
 			var expected: Image=await app.renderer.capture(app.keys,app.layers,0,true);app.new_project();app.has_project.open_file(path);await wait_job(app.has_project)
-			check(Lighting.mode(app.video)==kind and (await app.renderer.capture(app.keys,app.layers,0,true)).get_data()==expected.get_data() and Drawing.cel_at(app.layers[1],0).image.get_pixel(80,80)==Color.CYAN,kind+" and independent drawing survive "+packing+" HAS")
+			check(Lighting.mode(app.video)==kind and (await app.renderer.capture(app.keys,app.layers,0,true)).get_data()==expected.get_data() and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(80,80)==Color.CYAN,kind+" and independent drawing survive "+packing+" HAS")
 	mode(app,"unshaded");app.changed();app.autosave_tick(true);var recovery: String=app.recovery_root.path_join(app.recovery_session);app.new_project()
 	check(app.restore_checkpoint({"folder":recovery}) and Lighting.mode(app.video)=="unshaded","recovery retains project lighting as an unsaved editable copy")
 	var expected: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder)

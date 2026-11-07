@@ -30,7 +30,7 @@ func run() -> void:
 		if actor:
 			check(actor.root.get_meta(P.META).entries.size()==expected.count,"cold Open reconstructs embedded groups from managed source")
 			check(JSON.parse_string(JSON.stringify(actor.authored_shape_keys(),"",true,true))==expected.keys and actor.data.metadata==expected.metadata,"cold Open retains exact deform keys and native metadata")
-			check(Drawing.cel_at(app.layers[1],12).image.get_pixel(80,80)==Color.CYAN,"cold Open keeps drawing editable and independent")
+			check(Drawing.image(Drawing.cel_at(app.layers[1],12)).get_pixel(80,80)==Color.CYAN,"cold Open keeps drawing editable and independent")
 			var image: Image=await app.renderer.capture(app.keys,app.layers,12,true);image.save_png(folder.path_join("cold.png"));var a:=image.get_data();var b:=Image.load_from_file(folder.path_join("middle.png")).get_data();var changed:=0;var total:=0
 			for i in range(a.size()):
 				var d:=absi(int(a[i])-int(b[i]));total+=d;changed+=int(d>0)
@@ -78,7 +78,7 @@ func run() -> void:
 			check(app.pose_editor.contacts.metadata_bytes(app.current_world())<=1024*1024,"near-limit expression fixture starts inside metadata budget")
 			ui.apply_pose();check(actor.data==budget_before and app.history.size()==history and "metadata limit" in app.status.text,"oversized grouped keys refuse before data or history mutation");actor.data.metadata.erase("budget_test")
 		app.set_frame(12);app.set_advanced(false);await settled();root.get_texture().get_image().save_png(folder.path_join(plan.label.replace(" ","_")+"-simple.png"));final_id=actor.data.id
-	var actor: RefCounted=app.renderer.active_model();Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],12).image.set_pixel(80,80,Color.CYAN)
+	var actor: RefCounted=app.renderer.active_model();Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],12)).image.set_pixel(80,80,Color.CYAN)
 	var expected:={"id":final_id,"count":actor.root.get_meta(P.META).entries.size(),"keys":actor.authored_shape_keys(),"metadata":actor.data.metadata};FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected,"",true,true))
 	app.pose_editor.shape_window.hide()
 	for mode in ["packed","linked"]:

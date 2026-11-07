@@ -207,7 +207,7 @@ func run(app) -> void:
 	# Export animated standard model plus an independent painted overlay.
 	app.mode.select(0); app.change_mode(0); app.set_frame(0)
 	app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1], 0).image, Vector2(100, 100), Vector2(200, 100), 6, Color.RED, false)
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1], 0)), Vector2(100, 100), Vector2(200, 100), 6, Color.RED, false)
 	app.changed()
 	var reference: Image = await app.renderer.capture(app.keys, app.layers, 0, true)
 	var error: String = await app.export_movie(folder)

@@ -31,7 +31,7 @@ func run() -> void:
 	var project:=folder.path_join("Pressure.has")
 	if reader:
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")));app.has_project.open_file(project);await job()
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)==expected.pixels,"fresh Open restores exact tapered pen and eraser pixels")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],24)))==expected.pixels,"fresh Open restores exact tapered pen and eraser pixels")
 		check(not app.brush_pressure.button_pressed and equal(app.keys,expected.keys) and equal(World.portable(app.current_world()),expected.world),"session pressure default and saved standard world/shot remain separate")
 		var preview: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 		check(Storage.image_hash(preview)==expected.render and FileAccess.get_sha256(project)==expected.project_hash,"cold render matches writer exactly and leaves original HAS unchanged")
@@ -57,7 +57,7 @@ func run() -> void:
 	check(not app.drawing and Input.use_accumulated_input==initial_accumulated and Drawing.cel_at(app.layers[1],24).is_empty(),"changing frames finishes a waiting gesture without inventing artwork")
 	app.set_frame(24);view=app.renderer.view_state()
 	app.canvas.zoom=1.3;app.canvas.pan=Vector2(17,-9);await settle();app.radius.value=32;app.brush_opacity.value=50;button(Vector2(300,400),true);pressure(Vector2(300,400),.1)
-	var image: Image=Drawing.cel_at(app.layers[1],24).image
+	var image: Image=Drawing.image(Drawing.cel_at(app.layers[1],24))
 	check(image.get_pixel(300,400).a>.49 and image.get_pixel(300,410).a==0 and app.history.size()==history+1,"first light pressure creates only a small dot and one new-cel command")
 	pressure(Vector2(450,400),.2);pressure(Vector2(600,400),0);pressure(Vector2(900,400),.8);pressure(Vector2(1100,400),1)
 	check(image.get_pixel(750,400).a==0 and image.get_pixel(1000,420).a>.49,"pressure lift breaks the path; resumed contact and stronger size map through zoom/pan")

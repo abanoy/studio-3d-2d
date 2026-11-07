@@ -37,12 +37,12 @@ func run() -> void:
 	var project:=folder.path_join("Smoothed.has")
 	if "--read" in args:
 		var expected:=Recovery.read_json(folder.path_join("expected.json"));app.has_project.open_file(project);await job()
-		check(app.brush_smoothing.value==0 and Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.pixels,"cold HAS keeps exact smoothed pixels while session smoothing defaults off")
+		check(app.brush_smoothing.value==0 and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.pixels,"cold HAS keeps exact smoothed pixels while session smoothing defaults off")
 		FileAccess.open(folder.path_join("cold-state.json"),FileAccess.WRITE).store_string(JSON.stringify({"world":World.portable(app.current_world()),"keys":app.keys},"",true,true))
 		check(equal(World.portable(app.current_world()),expected.world) and equal(app.keys,expected.keys),"cold project retains editable world and original camera independently")
 		var image: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 		check(Storage.image_hash(image)==expected.render and FileAccess.get_sha256(project)==expected.project_hash,"cold rendered output matches writer exactly without changing manual HAS")
-		check(app.restore_checkpoint({"folder":folder.path_join("smooth-recovery/test"),"manifest":"project.json","recovery":true}) and Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.pixels,"ordinary recovery restores smoothed ink without transient filter metadata")
+		check(app.restore_checkpoint({"folder":folder.path_join("smooth-recovery/test"),"manifest":"project.json","recovery":true}) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.pixels,"ordinary recovery restores smoothed ink without transient filter metadata")
 		print("STROKE_STABILIZER_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
 	check(app.load_demo_room(),"original parent environment loads for independent drawing")
 	app.mode.select(0);app.change_mode(0);app.layers[1].cels.clear();var image:=Drawing.blank(1920,1080);Drawing.insert(app.layers[1],0,48,image);app.set_frame(0);app.history.clear();app.redo_history.clear();app.history_bytes=0

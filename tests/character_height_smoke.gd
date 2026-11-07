@@ -29,7 +29,7 @@ func run() -> void:
 		if actor:
 			check(actor.data.metadata==expected.metadata and PackedFloat32Array([actor.data.scale]).to_byte_array().hex_encode()==expected.scale_bits and Height.queries==0,"cold Open preserves exact engine scale and measurement provenance without re-analysis")
 			app.set_frame(12);var measured:=Height.query(actor);check(absf(measured.height-Height.SIX_FEET)<.00002,"cold fitted geometry keeps its target height")
-			check(Drawing.cel_at(app.layers[1],12).image.get_pixel(80,80)==Color.CYAN,"cold fitted scene keeps independent editable drawing")
+			check(Drawing.image(Drawing.cel_at(app.layers[1],12)).get_pixel(80,80)==Color.CYAN,"cold fitted scene keeps independent editable drawing")
 		var result:={"checks":checks,"failures":failures};print("CHARACTER_HEIGHT_READER "+JSON.stringify(result));app.free();quit(0 if failures==0 else 1);return
 	var context: Dictionary=app.import_actions.placement();context.physics_on_import=false
 	var queries:=Height.queries;var error: String=app.pose_editor.add_model(plans[0].source,0,context)
@@ -94,7 +94,7 @@ func run() -> void:
 	# Save/Open does not reapply a fit. Standard scale/metadata needs no new schema.
 	app.new_project();app.append_object(last_fit.data,"model",12,last_fit.context);await wait_review(app.height_review);app.height_review.fit.button_pressed=true;app.height_review.apply();app.set_frame(12);await settled()
 	var actor: RefCounted=app.renderer.active_model();var id: String=actor.data.id
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],12).image.set_pixel(80,80,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],12)).image.set_pixel(80,80,Color.CYAN)
 	app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,55)];app.set_frame(12)
 	var metadata: Dictionary=JSON.parse_string(JSON.stringify(actor.data.metadata,"",true,true));var chosen_scale: float=actor.data.scale
 	for mode in ["packed","linked"]:

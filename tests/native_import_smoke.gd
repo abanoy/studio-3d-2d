@@ -90,11 +90,11 @@ func run() -> void:
 	app.world_selection.select_entity(vrm0 if not vrm0.is_empty() else ids[0]);app.pose_editor.set_flag("visible",true);app.pose_editor.frame_model()
 	app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
 	app.mode.select(0);app.change_mode(0);app.set_frame(24);app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],24).image,Vector2(80,80),Vector2(200,80),5,Color.RED,false);app.changed()
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],24)),Vector2(80,80),Vector2(200,80),5,Color.RED,false);app.changed()
 	var preview: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 	var saved_world:=World.portable(app.renderer.world_state());var saved_transforms:={}
 	var saved_keys: Array=app.keys.duplicate(true);var saved_video: Dictionary=app.video.duplicate(true)
-	var saved_paint: PackedByteArray=Drawing.cel_at(app.layers[1],24).image.get_data()
+	var saved_paint: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],24)).get_data()
 	for object_id in app.renderer.world_runtime.order:
 		var object: RefCounted=app.renderer.world_runtime.instance(object_id);saved_transforms[object_id]={"root":object.root.global_transform,"bones":{}}
 		for part in object.order:saved_transforms[object_id].bones[part]=object.bone_transform(part)
@@ -115,7 +115,7 @@ func run() -> void:
 		exact_transforms=exact_transforms and object.root.global_transform==saved_transforms[object_id].root
 		for part in object.order:exact_transforms=exact_transforms and object.bone_transform(part)==saved_transforms[object_id].bones[part]
 	var exact_state: bool=World.portable(app.renderer.world_state())==JSON.parse_string(JSON.stringify(saved_world,"",true,true))
-	var exact_media: bool=Drawing.cel_at(app.layers[1],24).image.get_data()==saved_paint and app.keys==JSON.parse_string(JSON.stringify(saved_keys,"",true,true)) and app.video==JSON.parse_string(JSON.stringify(saved_video,"",true,true))
+	var exact_media: bool=Drawing.image(Drawing.cel_at(app.layers[1],24)).get_data()==saved_paint and app.keys==JSON.parse_string(JSON.stringify(saved_keys,"",true,true)) and app.video==JSON.parse_string(JSON.stringify(saved_video,"",true,true))
 	print("NATIVE_PACKED_DIAGNOSTIC "+JSON.stringify({"channels":changed_channels,"mean":float(byte_difference)/old_pixels.size(),"locations":locations,"transforms_exact":exact_transforms,"data_exact":exact_state,"media_exact":exact_media}))
 	var packed_pixels:={"channels":changed_channels,"mean":float(byte_difference)/old_pixels.size()}
 	check(exact_state and exact_transforms and exact_media and changed_channels<=384 and packed_pixels.mean<0.002,"native HAS reopen retains exact scene/transforms/media within established GLB rebuild bounds")

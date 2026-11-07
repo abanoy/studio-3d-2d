@@ -38,14 +38,14 @@ func run() -> void:
 	app.undo();await settled();check(sheet.document()==kept and sheet.image.get_data()==original.get_data(),"Undo Clear restores complete reference and original alpha")
 	sheet.keep.button_pressed=false;await settled();check(sheet.document().is_empty() and sheet.image!=null,"unchecking Keep retains session reference without project ownership")
 	app.undo();await settled();check(sheet.document()==kept,"Undo uncheck restores project reference")
-	sheet.overlay_toggle.button_pressed=true;sheet.opacity.value=50;sheet.window.hide();app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.CYAN,false);app.changed()
+	sheet.overlay_toggle.button_pressed=true;sheet.opacity.value=50;sheet.window.hide();app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(80,80),Vector2(180,80),5,Color.CYAN,false);app.changed()
 	var cue:=ProjectSettings.globalize_path("res://examples/tutorials/Practice cue.wav");check(app.import_audio(cue,6).is_empty(),"synchronized sound remains independent of reference ownership")
 	var pcm: PackedByteArray=app.audio_mix.pcm.duplicate();var legacy: Image=await app.renderer.capture(app.keys,app.layers,0,true);legacy.save_png(folder.path_join("legacy.png"))
 	for mode in ["packed","linked"]:
 		var path:=folder.path_join("Legacy "+mode+".has");app.has_project.save_file(path,mode);await wait_job();check(app.has_project.path==path,"schema7 legacy "+mode+" HAS commits with kept reference")
 	var editor=app.sequence_editor;var child: String=editor.new_sequence("Child artwork");check(not child.is_empty() and editor.enter(child).is_empty(),"editable nested scene opens while enclosing project keeps its reference")
 	check(sheet.document()==kept,"enclosing reference remains shared while editing child scene")
-	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.cel_at(app.layers[1],0).image.fill_rect(Rect2i(800,400,80,80),Color.GREEN);Drawing.touch(Drawing.cel_at(app.layers[1],0).image);app.changed();editor.return_to_parent();await settled()
+	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.fill_rect(Rect2i(800,400,80,80),Color.GREEN);Drawing.touch(Drawing.image(Drawing.cel_at(app.layers[1],0)));app.changed();editor.return_to_parent();await settled()
 	var nested: Image=await app.renderer.capture(app.keys,app.layers,0,true);nested.save_png(folder.path_join("nested.png"));check(app.audio_mix.pcm==pcm,"nested reference workflow keeps exact parent sound mix")
 	for mode in ["packed","linked"]:
 		var path:=folder.path_join("Nested "+mode+".has");app.has_project.save_file(path,mode);await wait_job();check(app.has_project.path==path,"schema7 nested "+mode+" HAS includes reference and editable child")

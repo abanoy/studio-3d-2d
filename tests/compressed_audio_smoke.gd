@@ -63,7 +63,7 @@ func run() -> void:
 	assert((dummy and not app.audio_clock) or (not dummy and app.audio_clock and peak>.1))
 	app.stop();app.audio_player.bus="Master";app.video.duration_frames=48;app.rebuild_audio();app.set_frame(24)
 	assert(pcm_hash()==mixed)
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],24).image.set_pixel(90,90,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],24)).image.set_pixel(90,90,Color.CYAN)
 	var expected: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 	var packed:=folder.path_join("compressed.has");app.has_project.save_file(packed,"packed");await has_job();assert(app.has_project.path==packed)
 	var linked:=folder.path_join("linked.has");app.has_project.save_file(linked,"linked");await has_job();assert(app.has_project.path==linked)

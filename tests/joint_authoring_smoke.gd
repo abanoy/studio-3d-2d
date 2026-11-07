@@ -88,7 +88,7 @@ func run() -> void:
 			check(rig.data==planted and app.history.size()==planted_history and "Release planted feet" in app.status.text,"controller edit cannot fight an active planted-foot range")
 			app.undo();check(rig.data==solved,"Undo planting restores the authored joint pose")
 		app.message("Joint posing check complete. Editable poses and camera keys retained.")
-		Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],12).image.set_pixel(80,80,Color.CYAN)
+		Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],12)).image.set_pixel(80,80,Color.CYAN)
 		var expected: Image=await app.renderer.capture(app.keys,app.layers,12,true);var label: String="miku" if config.controller=="左足ＩＫ" else "pmx";expected.save_png(folder.path_join(label+"-pose.png"));root.get_texture().get_image().save_png(folder.path_join(label+"-editor.png"))
 		var path:=folder.path_join(label+"-authoring.has");var actor_id: String=rig.data.id;app.has_project.save_file(path,"packed");await job();check(app.has_project.path==path,"solved editable pose saves to packed HAS")
 		app.new_project();app.has_project.open_file(path);await job();rig=app.renderer.world_runtime.instance(actor_id)

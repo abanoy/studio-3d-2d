@@ -43,7 +43,7 @@ func run() -> void:
 	var fx:=Clock.new();var runtime:=preload("res://src/world_runtime.gd").new();runtime.effects={"clock":fx};runtime.data={"effects":[{"id":"clock","visible":true,"start_frame":0,"end_frame":48,"source_in_seconds":0}]}
 	runtime.evaluate(24,false,"",{"fps_num":24000,"fps_den":1001});check(runtime.evaluation_error.is_empty() and absf(fx.seconds-1.001)<1e-9,"particle clock accepts NTSC rational project time");runtime.effects.clear();fx.root.free()
 	var asset:=folder.path_join("figure.glb");SceneIO.make_pose_fixture(asset);check(app.pose_editor.add_model(asset).is_empty(),"original rig is available for timing isolation")
-	app.pose_editor.record_key();app.set_frame(24);Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],24).image.set_pixel(70,70,Color.CYAN)
+	app.pose_editor.record_key();app.set_frame(24);Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],24)).image.set_pixel(70,70,Color.CYAN)
 	check(app.import_audio(folder.path_join("tone.wav"),24).is_empty(),"audio marker is placed at frame24")
 	app.show_project_options();await settle();check(not app.advanced_mode and app.project_timing.choices.is_visible_in_tree(),"project frame rate is accessible in Simple options")
 	var before: Dictionary=app.video.duplicate(true);var mixed:=pcm();var audio: Dictionary=app.audio_document().duplicate(true);var world: Dictionary=app.current_world().duplicate(true);var shots: Array=app.keys.duplicate(true);var history: int=app.history.size();var view: Dictionary=app.renderer.view_state()

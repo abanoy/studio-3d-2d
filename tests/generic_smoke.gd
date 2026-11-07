@@ -88,7 +88,7 @@ func run() -> void:
 	app.keys=[Timeline.key(0,camera.position,camera.quaternion,camera.fov),Timeline.key(48,camera.position+Vector3(.1,0,0),camera.quaternion,camera.fov)]
 	app.pose_editor.record_key();app.set_frame(48);app.pose_editor.fields[2].value=70;app.pose_editor.apply_numeric();app.pose_editor.record_key();app.set_frame(24)
 	app.mode.select(0);app.change_mode(0);app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],24).image,Vector2(100,100),Vector2(260,100),6,Color.RED,false)
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],24)),Vector2(100,100),Vector2(260,100),6,Color.RED,false)
 	var packed:=folder.path_join("generic.has");app.has_project.cache_root=folder.path_join("has-cache")
 	app.has_project.save_file(packed,"packed")
 	while app.has_project.pid>0:await process_frame

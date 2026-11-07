@@ -98,7 +98,7 @@ func run() -> void:
 		check(actor.data==before and app.keys==keys and app.history.size()==history,"framing preserves native identities/data and explicit shot keys: "+plan.label)
 		metrics[plan.label]={"vertices":query.vertices,"conservative":query.conservative,"bound_error":error(query.bounds,actual.bounds),"elapsed_us":elapsed}
 		if plan.label=="Shaped":
-			app.video.lighting_mode="unshaded";app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN)
+			app.video.lighting_mode="unshaded";app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN)
 			var snapshot: Image=await app.renderer.capture(app.keys,app.layers,0,true);app.pose_editor.frame_model()
 			var export_error: String=await app.export_movie(folder)
 			check(export_error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==snapshot.get_data(),"temporary pose framing does not change authored MP4 camera or independent cel")

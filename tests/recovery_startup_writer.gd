@@ -41,7 +41,7 @@ func run() -> void:
 		app.set_frame(at);app.pose_editor.selected=bone;app.pose_editor.operation.select(0);app.pose_editor.refresh_values()
 		app.pose_editor.fields[2].value=25 if at==12 else 65;app.pose_editor.apply_numeric()
 		app.create_cel(false);var cel: Dictionary=Drawing.cel_at(app.layers[1],at)
-		cel.image.set_pixel(80,80,Color.CYAN if at==24 else Color.BLUE);app.changed()
+		Drawing.edit_image(cel).image.set_pixel(80,80,Color.CYAN if at==24 else Color.BLUE);app.changed()
 		app.renderer.camera.far=12000;app.insert_key();app.autosave_tick(true)
 		var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
 		require(FileAccess.file_exists(checkpoint.path_join("project.json")),"committed checkpoint")
@@ -49,7 +49,7 @@ func run() -> void:
 		var orders:={};var transforms:={}
 		for id in app.renderer.world_runtime.order:
 			var rig: RefCounted=app.renderer.world_runtime.instance(id);orders[id]=rig.order.duplicate();transforms[id]=rig.sample_transform(at)
-		expected.states[str(at)]={"frame":at,"world":portable(app.renderer.world_state()),"keys":app.keys.duplicate(true),"video":app.video.duplicate(true),"orders":orders,"transforms":transforms,"paint":Storage.image_hash(cel.image)}
+		expected.states[str(at)]={"frame":at,"world":portable(app.renderer.world_state()),"keys":app.keys.duplicate(true),"video":app.video.duplicate(true),"orders":orders,"transforms":transforms,"paint":Storage.image_hash(Drawing.image(cel))}
 	expected["checkpoint"]=app.recovery_root.path_join(app.recovery_session)
 	var partial:=FileAccess.open(str(expected.checkpoint).path_join("project.json.tmp"),FileAccess.WRITE);partial.store_string("{unfinished");partial.flush();partial.close()
 	var file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);file.store_string(JSON.stringify(expected,"",false,true));file.flush();file.close()

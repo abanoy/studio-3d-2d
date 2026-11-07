@@ -36,9 +36,9 @@ func run() -> void:
 	if reading:
 		app.has_project.open_file(packed);await wait_save();var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
 		check(app.layers.size()==3 and app.layers[2].cels.size()==8 and app.layers[2].origin==expected.origin,"cold packed HAS restores eight editable holds and portable ancestry")
-		check(Storage.image_hash(Drawing.cel_at(app.layers[2],12).image)==expected.paint and Storage.image_hash(await app.renderer.capture(app.keys,app.layers,12,true))==expected.render,"cold imported frame and composite are exact")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],12)))==expected.paint and Storage.image_hash(await app.renderer.capture(app.keys,app.layers,12,true))==expected.render,"cold imported frame and composite are exact")
 		check(not app.layers[2].origin.has("path"),"cold ancestry has no required external native path")
-		var recovered:=Storage.load_project(folder.path_join("import-recovery/imported"));check(not recovered.has("error") and equal(recovered.layers[2].origin,expected.origin) and Storage.image_hash(Drawing.cel_at(recovered.layers[2],12).image)==expected.paint,"fresh process restores recovery ancestry and exact imported pixels")
+		var recovered:=Storage.load_project(folder.path_join("import-recovery/imported"));check(not recovered.has("error") and equal(recovered.layers[2].origin,expected.origin) and Storage.image_hash(Drawing.image(Drawing.cel_at(recovered.layers[2],12)))==expected.paint,"fresh process restores recovery ancestry and exact imported pixels")
 		app.has_project.save_file(folder.path_join("Krita scene linked.has"),"linked");await wait_save()
 		check(FileAccess.file_exists(folder.path_join("Krita scene linked.has")),"linked HAS still embeds imported drawing pixels")
 		print("KRITA_IMPORT_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
@@ -76,9 +76,9 @@ func run() -> void:
 	var native_job: String=importer.job;var sha: String=importer.inventory.source_sha256
 	await click(importer.preview.get_ok_button())
 	check(app.layers.size()==3 and app.layers[2].cels.size()==8 and app.history.size()==1,"actual Add commits one new layer with one Undo")
-	var imported: Dictionary=app.layers[2];var paint:=Storage.image_hash(Drawing.cel_at(imported,12).image);var origin: Dictionary=imported.origin.duplicate(true)
+	var imported: Dictionary=app.layers[2];var paint:=Storage.image_hash(Drawing.image(Drawing.cel_at(imported,12)));var origin: Dictionary=imported.origin.duplicate(true)
 	app.undo();check(app.layers.size()==2 and Storage.image_hash(original)==oldpixels and app.keys==keys and app.current_world()==world,"Undo removes import without touching other authored content")
-	app.redo();check(app.layers.size()==3 and is_same(app.layers[2],imported) and Storage.image_hash(Drawing.cel_at(imported,12).image)==paint,"Redo restores same independent editable Images")
+	app.redo();check(app.layers.size()==3 and is_same(app.layers[2],imported) and Storage.image_hash(Drawing.image(Drawing.cel_at(imported,12)))==paint,"Redo restores same independent editable Images")
 	var packet: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(native_job.path_join("prepared/clip.json")))
 	var invalid: Dictionary=packet.duplicate(true);invalid.holds[0].path="../outside.png"
 	check(Clip.validate(invalid,native_job.path_join("prepared"),app.video,0,32,sha).has("error"),"packet traversal refuses")
@@ -89,7 +89,7 @@ func run() -> void:
 	var recovery: String=folder.path_join("import-recovery")
 	var recovery_error:=preload("res://src/recovery.gd").checkpoint(recovery,"imported",app.video,app.keys,app.layers,app.source,app.frame,app.audio_document(),"",app.recovery_revision,app.renderer.model_state(),app.renderer.world_state(),app.palette)
 	var restored:=Storage.load_project(recovery.path_join("imported"))
-	check(recovery_error.is_empty() and not restored.has("error") and equal(restored.layers[2].origin,origin) and Storage.image_hash(Drawing.cel_at(restored.layers[2],12).image)==paint,"actual recovery storage retains original ancestry and imported pixels")
+	check(recovery_error.is_empty() and not restored.has("error") and equal(restored.layers[2].origin,origin) and Storage.image_hash(Drawing.image(Drawing.cel_at(restored.layers[2],12)))==paint,"actual recovery storage retains original ancestry and imported pixels")
 	var render: Image=await app.renderer.capture(app.keys,app.layers,12,true)
 	app.has_project.save_file(packed,"packed");await wait_save();check(app.has_project.path==packed,"ordinary HAS saves normalized import")
 	var error: String=await app.export_movie(folder);check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000013.png")).get_data()==render.get_data(),"real MP4 frame equals shared 3D/camera/imported drawing preview")

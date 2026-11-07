@@ -35,7 +35,7 @@ func run() -> void:
 	var rect: Rect2=app.canvas.image_rect();pen.position=rect.position+Vector2(80,80)/Vector2(1920,1080)*rect.size;app.canvas._gui_input(pen)
 	var ink:=InputEventMouseMotion.new();ink.position=rect.position+Vector2(180,80)/Vector2(1920,1080)*rect.size;ink.button_mask=MOUSE_BUTTON_MASK_LEFT;app.canvas._gui_input(ink)
 	pen.pressed=false;pen.position=ink.position;app.canvas._gui_input(pen)
-	check(Drawing.cel_at(app.layers[1],0).image.get_pixel(120,80).a>0,"actual canvas coordinates still paint an independent visible Ink cel")
+	check(Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(120,80).a>0,"actual canvas coordinates still paint an independent visible Ink cel")
 	app.mode.select(2);app.change_mode(2);await settled()
 	var id: String=app.world_selection.selected;var world: Dictionary=World.portable(app.current_world());var shots: Array=app.keys.duplicate(true);var view: Dictionary=app.renderer.view_state();var history: int=app.history.size();var operation: int=app.pose_editor.operation.selected
 	middle(true);middle(false);await settled()
@@ -124,7 +124,7 @@ func run() -> void:
 		for down in [true,false]:
 			var touch := InputEventMouseButton.new();touch.position=point;touch.button_index=MOUSE_BUTTON_LEFT;touch.pressed=down
 			root.push_input(touch,true);await settled()
-		var ink_pixel: Color = Drawing.cel_at(app.layers[1],0).image.get_pixelv(pixel)
+		var ink_pixel: Color = Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixelv(pixel)
 		check(ink_pixel.r>0.9 and ink_pixel.b>0.9 and ink_pixel.g<0.1 and ink_pixel.a>0.9,"resized workspace routes viewport pointer to Ink pixel "+str(pixel))
 	root.get_texture().get_image().save_png(folder.path_join("workspace-1200.png"));app.get_window().size=Vector2i(1400,900);await settled();root.get_texture().get_image().save_png(folder.path_join("workspace.png"))
 	var file:=FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE);file.store_string(JSON.stringify({"checks":checks,"failures":failures}));file.close();app.free();await process_frame

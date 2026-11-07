@@ -14,7 +14,7 @@ func run() -> void:
 	layer.opacity=.5;app.changed();app.set_frame(6);await settled();var eager: Image=await app.renderer.capture(app.keys,app.layers,6,true);eager.save_png(folder.path_join("eager6.png"))
 	var cache:=Cache.new();var snapshots: Array=[]
 	for cel in layer.cels:
-		var captured:=Snapshot.capture(cel.image);snapshots.append(captured.raster);cel.raster_owner=Owner.from_snapshot(captured.raster,cache).owner;cel.erase("image")
+		var captured:=Snapshot.capture(Drawing.image(cel));snapshots.append(captured.raster);cel.raster_owner=Owner.from_snapshot(captured.raster,cache).owner;cel.erase("image")
 	app.overlay_dirty=true;await settled();var cold: Image=await app.renderer.capture(app.keys,app.layers,6,true)
 	check(cold!=null and cold.get_data()==eager.get_data(),"actual final GPU frame agrees exactly before and after staged cold ownership")
 	check(app.canvas.overlay.get_image().get_data()==Drawing.composite(app.layers,6,1920,1080).get_data() and app.raster_preview_error.is_empty(),"actual preview texture uses exact cold drawing composite")

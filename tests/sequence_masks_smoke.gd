@@ -46,7 +46,7 @@ func run() -> void:
 	var parent: Dictionary=app.current_world().duplicate(true);var shots: Array=app.keys.duplicate(true)
 	var asset: String=editor.new_sequence("Masked artwork");check(not asset.is_empty() and editor.enter(asset).is_empty(),"editable child opens without rasterizing parent world")
 	app.mode.select(0);app.change_mode(0);app.active_layer=1;app.refresh_layer();app.create_cel(false)
-	var cel: Dictionary=app.layers[1].cels[0];cel.duration=48;cel.image.fill_rect(Rect2i(800,400,100,100),Color(1,0,0,.5));app.changed();var original: PackedByteArray=cel.image.get_data()
+	var cel: Dictionary=app.layers[1].cels[0];cel.duration=48;Drawing.edit_image(cel).image.fill_rect(Rect2i(800,400,100,100),Color(1,0,0,.5));app.changed();var original: PackedByteArray=Drawing.image(cel).get_data()
 	var cue:=ProjectSettings.globalize_path("res://examples/tutorials/Practice cue.wav");var cue_hash:=FileAccess.get_sha256(cue)
 	check(app.import_audio(cue,6).is_empty(),"editable child sound starts at frame6 independently of mask")
 	editor.return_to_parent();await settle();var id: String=editor.graph.clips[0].id
@@ -58,7 +58,7 @@ func run() -> void:
 	check(editor.change_mask(id,crop).is_empty() and editor.graph.format==Graph.MASK_FORMAT,"first picture mask explicitly promotes graph with strict clip fields")
 	var cropped: Image=await picture()
 	check(absf(cropped.get_pixel(825,450).a-.25)<.015 and cropped.get_pixel(875,450).a==0 and absf(cropped.get_pixel(945,450).a-.125)<.015 and cropped.get_pixel(995,450).a==0,"actual crop and shadow preserve alpha while removing right half")
-	check(cel.image.get_data()==original and app.audio_mix.pcm==pcm,"mask changes preserve full source pixels and exact nested sound")
+	check(Drawing.image(cel).get_data()==original and app.audio_mix.pcm==pcm,"mask changes preserve full source pixels and exact nested sound")
 	app.undo();await settle();var undone: Image=await picture();check(editor.graph.format==Graph.SHADOW_FORMAT and undone.get_data()==full.get_data(),"one Undo restores old graph version and exact full picture")
 	app.redo();await settle();var redone: Image=await picture();check(editor.graph.format==Graph.MASK_FORMAT and redone.get_data()==cropped.get_data(),"Redo restores mask without flattening child artwork")
 	editor.show_panel();await settle();var inverted: CheckButton
@@ -87,7 +87,7 @@ func run() -> void:
 	check(separate.get_pixel(825,450).a==0 and absf(separate.get_pixel(875,450).a-.25)<.015 and absf(separate.get_pixel(1225,450).a-.25)<.015 and separate.get_pixel(1275,450).a==0,"shared child instances keep independent crop and cutout masks")
 	check(editor.runtime.frames.size()==1 and editor.runtime.masked_frames.size()==2,"masked texture cache stays per instance while sharing source picture")
 	editor.remove_clip(peer);editor.change_mask(id,crop);check(editor.split_clip(id,24).is_empty() and editor.graph.clips.all(func(c):return c.mask==crop),"timeline split retains mask on both source windows")
-	check(app.audio_mix.pcm==pcm and cel.image.get_data()==original and app.current_world()==parent and app.keys==shots and FileAccess.get_sha256(cue)==cue_hash,"mask/copy/split operations preserve original scene, camera, source artwork and sound")
+	check(app.audio_mix.pcm==pcm and Drawing.image(cel).get_data()==original and app.current_world()==parent and app.keys==shots and FileAccess.get_sha256(cue)==cue_hash,"mask/copy/split operations preserve original scene, camera, source artwork and sound")
 	for mode in ["packed","linked"]:
 		app.has_project.save_file(folder.path_join("Masks "+mode+".has"),mode);await job();check(FileAccess.file_exists(folder.path_join("Masks "+mode+".has")),"normal "+mode+" HAS saves editable mask graph and child sound")
 	var snapshot: Dictionary=app.project_snapshot();var error:=Recovery.checkpoint(folder.path_join("mask-recovery"),"test",snapshot.video,snapshot.camera_keys,snapshot.layers,"",0,snapshot.audio,"",app.recovery_revision,{},snapshot.world,snapshot.palette,snapshot.sequence_graph)
@@ -97,5 +97,5 @@ func run() -> void:
 	check(movie_error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==composite.get_data(),"actual MP4 uses exact parent world plus masked child and shadow")
 	var png_error: String=await app.export_images(folder,true);var png: String=app.last_export_folder.path_join("frame_000001.png");var image:=Image.load_from_file(png)
 	check(png_error.is_empty() and image.get_pixel(0,0).a==0 and absf(image.get_pixel(825,450).a-.25)<.015 and image.get_pixel(875,450).a==0,"transparent drawing-only PNG shares masks/shadows while excluding parent world")
-	var expected:={"source":Storage.image_hash(cel.image),"audio":Marshalls.raw_to_base64(pcm)};FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected))
+	var expected:={"source":Storage.image_hash(Drawing.image(cel)),"audio":Marshalls.raw_to_base64(pcm)};FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected))
 	print("SEQUENCE_MASKS_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":movie,"png":png}));await app.quit_studio();quit(0 if failures==0 else 1)

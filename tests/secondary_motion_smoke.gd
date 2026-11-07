@@ -58,8 +58,8 @@ func baked(app,actor,label: String) -> void:
 	app.undo();check(actor.data==previous,"Undo restores all pre-experiment motion: "+label);app.redo()
 	app.renderer.camera.position=Vector3(1,1.5,3);app.renderer.camera.look_at(Vector3(0,1,0))
 	app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,55)]
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(100,100,Color.RED)
-	var pixels: PackedByteArray=Drawing.cel_at(app.layers[1],0).image.get_data();var shots: Array=app.keys.duplicate(true)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(100,100,Color.RED)
+	var pixels: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data();var shots: Array=app.keys.duplicate(true)
 	app.set_frame(24);var saved_pose: Dictionary=actor.sample(24)
 	var project:=folder.path_join(label+"-secondary.has");app.has_project.save_file(project,"packed");await wait_job(app.has_project)
 	app.new_project();app.has_project.open_file(project);await wait_job(app.has_project)
@@ -67,7 +67,7 @@ func baked(app,actor,label: String) -> void:
 	var def: Dictionary=actor.root.get_meta("has_secondary_rig")
 	check(FileAccess.file_exists(project) and JSON.stringify(actor.sample(24))==JSON.stringify(saved_pose) and actor.data.metadata==previous.metadata and def.error.is_empty() and not def.chains.is_empty(),"packed reopen retains native rig/provenance and baked motion without live springs: "+label)
 	app.set_frame(24);app.set_frame(0);app.set_frame(47);app.set_frame(24)
-	check(JSON.stringify(actor.sample(24))==JSON.stringify(saved_pose) and JSON.stringify(app.keys)==JSON.stringify(JSON.parse_string(JSON.stringify(shots,"",true,true))) and Drawing.cel_at(app.layers[1],0).image.get_data()==pixels,"arbitrary seek preserves recorded motion, explicit camera and independent paint: "+label)
+	check(JSON.stringify(actor.sample(24))==JSON.stringify(saved_pose) and JSON.stringify(app.keys)==JSON.stringify(JSON.parse_string(JSON.stringify(shots,"",true,true))) and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()==pixels,"arbitrary seek preserves recorded motion, explicit camera and independent paint: "+label)
 	var image: Image=await app.renderer.capture(app.keys,app.layers,24,true);image.save_png(folder.path_join(label+"-reopened.png"))
 	if label=="authored":
 		error=await app.export_movie(folder)

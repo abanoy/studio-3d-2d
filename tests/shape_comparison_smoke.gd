@@ -56,7 +56,7 @@ func run() -> void:
 		if not actor:continue
 		actor.data.rotation_xyzw=plan.rotation;actor.apply(0,false,false,app.video)
 		app.pose_editor.frame_model();app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,55)];app.set_frame(0)
-		Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN)
+		Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN)
 		app.pose_editor.open_shapes();await settled();var editor=app.pose_editor.animated_shapes
 		check(choose(editor,plan.control),"comparison resolves exact native control: "+plan.label)
 		editor.amount.value=.625
@@ -76,7 +76,7 @@ func run() -> void:
 		check(comparison.renderer.camera.transform==comparison.capture_camera,"before/after retain one exact camera: "+plan.label)
 		check(actor.data==before and app.keys==keys and app.history.size()==history and app.recovery_revision==revision and app.renderer.view_state()==view and editor.dirty and editor.amount.value==pending_amount,"comparison preserves document, camera, history and pending amount: "+plan.label)
 		var while_open: Image=await app.renderer.capture(app.keys,app.layers,0,true)
-		check(while_open.get_data()==main_before.get_data() and Drawing.cel_at(app.layers[1],0).image.get_pixel(80,80)==Color.CYAN,"isolated preview never enters final scene or independent drawing: "+plan.label)
+		check(while_open.get_data()==main_before.get_data() and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(80,80)==Color.CYAN,"isolated preview never enters final scene or independent drawing: "+plan.label)
 		comparison.before_image.save_png(folder.path_join(plan.id+"-before.png"));comparison.after_image.save_png(folder.path_join(plan.id+"-after.png"))
 		if plan.id=="0":
 			var neutral: Image=comparison.before_image.duplicate()

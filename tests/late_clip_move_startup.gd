@@ -20,7 +20,7 @@ func recovered(result: Dictionary) -> void:
 	check(result.restored and app.dirty and app.has_project.path.is_empty(),"actual SIGKILL recovery opens moved project as dirty unsaved copy")
 	check(app.video.duration_frames==3600 and app.video.fps_num==60 and app.frame==12 and not app.home.visible,"normal startup retains60second timing and moved-take playhead before Home")
 	check(JSON.parse_string(JSON.stringify(World.portable(app.current_world()),"",true,true))==expected.world,"recovery retains complete relative source/world data")
-	check(digest(app.audio_mix.pcm)==expected.pcm and Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.paint,"recovery retains exact independent sound and ink")
+	check(digest(app.audio_mix.pcm)==expected.pcm and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.paint,"recovery retains exact independent sound and ink")
 	var picture: Image=await app.renderer.capture(app.keys,[],12,true)
 	check(picture.get_data()==Image.load_from_file(folder.path_join("moved.png")).get_data(),"recovered frame12 repeats exact moved world pixels")
 	check(app.timeline_navigation.span==0 and app.timeline.duration==3600 and app.frame_box.max_value==3600,"recovery resets synchronized view to full late-frame domain")

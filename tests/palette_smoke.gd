@@ -49,14 +49,14 @@ func run() -> void:
 		else:
 			var store:=Lesson.new();store.root=folder.path_join("lessons");ok=store.load_snapshot(app,"basic-pose","123456_1","step_01")
 		check(ok and app.palette==expected.palette and app.palette_editor.buttons.size()==expected.palette.size(),mode+" restores ordered named alpha swatches and their controls")
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.ink and equal(app.keys,expected.keys) and equal(World.portable(app.current_world()),expected.world),mode+" keeps exact artwork and standard world/shot data")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.ink and equal(app.keys,expected.keys) and equal(World.portable(app.current_world()),expected.world),mode+" keeps exact artwork and standard world/shot data")
 		var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 		check(Storage.image_hash(reference)==expected.render and FileAccess.get_sha256(packed)==expected.project_hash,mode+" preview is exact and manual HAS is untouched")
 		print("PALETTE_READ ",JSON.stringify({"checks":checks,"failures":failures,"mode":mode}));app.free();quit(0 if failures==0 else 1);return
 	check(app.restore_world(app.current_world()).is_empty(),"standard environment is installed")
 	var asset:=folder.path_join("figure.glb");check(Limb.create(asset)==OK,"original validated limb fixture is created")
 	var doc: Dictionary=app.current_world().duplicate(true);var actor:=World.object(asset,"model","Practice figure");doc.objects.append(actor);check(app.restore_world(doc).is_empty(),"poseable standard model coexists with project colors")
-	app.keys=[T.key(0,Vector3(-1.5,2,5),Quaternion.IDENTITY,60),T.key(48,Vector3(1.5,1.5,3),Quaternion.IDENTITY,52)];app.mode.select(0);app.change_mode(0);app.set_frame(0);app.color.color=Color.CYAN;stroke(Vector2(300,400),Vector2(600,400));var image: Image=Drawing.cel_at(app.layers[1],0).image
+	app.keys=[T.key(0,Vector3(-1.5,2,5),Quaternion.IDENTITY,60),T.key(48,Vector3(1.5,1.5,3),Quaternion.IDENTITY,52)];app.mode.select(0);app.change_mode(0);app.set_frame(0);app.color.color=Color.CYAN;stroke(Vector2(300,400),Vector2(600,400));var image: Image=Drawing.image(Drawing.cel_at(app.layers[1],0))
 	var ink_hash:=Storage.image_hash(image);var world: Dictionary=World.portable(app.current_world());var keys: Array=app.keys.duplicate(true);var view: Dictionary=app.renderer.view_state();var rendered: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	check(app.palette.is_empty() and not app.palette_editor.detail.visible,"Simple starts without invented project swatches or Advanced editing controls")
 	app.color.color=Color8(241,210,180);await click_control(button("Keep this color",app.palette_editor.panel));check(app.palette.size()==1 and app.palette[0].rgba=="f1d2b4ff","actual Keep button stores the current RGBA color")

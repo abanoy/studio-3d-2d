@@ -30,7 +30,7 @@ func run() -> void:
 		while app.has_project.pid>0:await process_frame
 		var restored: RefCounted=app.renderer.world_runtime.instance(expected.id)
 		check(restored!=null and restored.data.metadata==expected.metadata,"cold engine preserves exact adopted catalogue and native metadata")
-		check(Drawing.cel_at(app.layers[1],0).image.get_pixel(80,80)==Color.CYAN,"cold engine preserves independent editable cyan paint")
+		check(Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(80,80)==Color.CYAN,"cold engine preserves independent editable cyan paint")
 		app.pose_editor.open_shapes();app.set_advanced(true);await settled()
 		check(app.pose_editor.animated_shapes.study.observations.is_empty() and app.pose_editor.animated_shapes.study.pid<0,"cold engine has no resumed study or inferred auto-assignment")
 		var cold:={"checks":checks,"failures":failures};FileAccess.open(folder.path_join("reader-result.json"),FileAccess.WRITE).store_string(JSON.stringify(cold));print("SHAPE_STUDY_READER "+JSON.stringify(cold));app.free();quit(0 if failures==0 else 1);return
@@ -94,7 +94,7 @@ func run() -> void:
 	editor=app.pose_editor.animated_shapes;study=editor.study;choose(editor,0);editor.assigned_area.select(Catalog.AREAS.find("Hair"));editor.assign_control();await settled()
 	study.start();await wait_study(study);choose(editor,1);study.adopt();await settled();actor=app.renderer.active_model()
 	var saved: Dictionary=actor.data.metadata.duplicate(true);var id: String=actor.data.id
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN)
 	app.pose_editor.shape_window.hide();app.has_project.save_file(folder.path_join("study-adopted.has"),"packed")
 	while app.has_project.pid>0:await process_frame
 	app.new_project();app.has_project.open_file(folder.path_join("study-adopted.has"))

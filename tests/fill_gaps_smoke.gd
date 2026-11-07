@@ -43,7 +43,7 @@ func run() -> void:
 	var packed:=folder.path_join("Gap fill.has")
 	if reader:
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")));app.has_project.open_file(packed);await job()
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.flats and Storage.image_hash(Drawing.cel_at(app.layers[2],0).image)==expected.ink,"cold packed Open restores separate gap-filled pixels and exact original ink")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.flats and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],0)))==expected.ink,"cold packed Open restores separate gap-filled pixels and exact original ink")
 		check(app.fill_editor.close_gaps.value==0 and equal(app.keys,expected.keys) and equal(World.portable(app.current_world()),expected.world),"fill setting is session-only; standard world and animated shot remain exact")
 		var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 		check(Storage.image_hash(reference)==expected.render and FileAccess.get_sha256(packed)==expected.project_hash,"cold render matches committed fill exactly and leaves original HAS untouched")
@@ -69,9 +69,9 @@ func run() -> void:
 	root.get_texture().get_image().save_png(folder.path_join("gap-preview-1200.png"));var preview_render: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	await click_control(control("Cancel",app.fill_editor.preview_row));var cancelled_render: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	check(preview_render.get_data()==cancelled_render.get_data() and Drawing.cel_at(app.layers[1],0).is_empty(),"Cancel leaves artwork unchanged and preview never enters the final renderer")
-	click(Vector2(800,450));await wait_fill();await click_control(control("Apply fill",app.fill_editor.preview_row));var cel:=Drawing.cel_at(app.layers[1],0);var flats: Image=cel.image;var first:=Storage.image_hash(flats)
+	click(Vector2(800,450));await wait_fill();await click_control(control("Apply fill",app.fill_editor.preview_row));var cel:=Drawing.cel_at(app.layers[1],0);var flats: Image=Drawing.image(cel);var first:=Storage.image_hash(flats)
 	check(app.history.size()==history+1 and flats.get_pixel(800,450).to_html()=="55cc88ff" and flats.get_pixel(40,40).a==0 and flats.get_pixel(789,350).a==0,"actual Apply fills only Flats, leaves virtual closure unpainted and adds one cel Undo")
-	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"Undo removes the gap-filled cel completely");app.redo();flats=Drawing.cel_at(app.layers[1],0).image;check(Storage.image_hash(flats)==first,"Redo restores every committed gap-fill pixel exactly")
+	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"Undo removes the gap-filled cel completely");app.redo();flats=Drawing.image(Drawing.cel_at(app.layers[1],0));check(Storage.image_hash(flats)==first,"Redo restores every committed gap-fill pixel exactly")
 	app.color.color=Color("66aaff");click(Vector2(800,450));await wait_fill();app.fill_editor.apply_pending();var second:=Storage.image_hash(flats)
 	check(app.history[-1].type=="pixels" and app.history[-1].bytes<1024*1024 and first!=second,"recolor uses bounded tile Undo on an existing drawing")
 	app.undo();check(Storage.image_hash(flats)==first,"tile Undo restores the previous filled color");app.redo();check(Storage.image_hash(flats)==second,"tile Redo restores recolored pixels")
@@ -84,10 +84,10 @@ func run() -> void:
 	app.fill_editor.sample_visible.button_pressed=true
 	check(Storage.image_hash(ink)==ink_hash and equal(keys,app.keys) and equal(world,World.portable(app.current_world())) and equal(view,app.renderer.view_state()) and FileAccess.get_sha256(app.source)==source_hash,"all gap fills preserve original ink, standard world, shot/view and source geometry")
 	app.has_project.save_file(packed,"packed");await job();var manual:=FileAccess.get_sha256(packed);var linked:=folder.path_join("Gap fill linked.has");app.has_project.save_file(linked,"linked");await job();app.has_project.open_file(linked);await job()
-	check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==second and Storage.image_hash(Drawing.cel_at(app.layers[2],0).image)==ink_hash,"ordinary linked HAS retains separate exact line art and gap-fill pixels")
+	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==second and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],0)))==ink_hash,"ordinary linked HAS retains separate exact line art and gap-fill pixels")
 	app.changed();app.autosave_tick(true)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-	check(app.open_project(app.recovery_root.path_join(app.recovery_session)) and Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==second and FileAccess.get_sha256(packed)==manual,"recovery reopens the fill while preserving the original manual packed save")
+	check(app.open_project(app.recovery_root.path_join(app.recovery_session)) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==second and FileAccess.get_sha256(packed)==manual,"recovery reopens the fill while preserving the original manual packed save")
 	app.set_frame(0);var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder)
 	check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==reference.get_data(),"normal movie PNG exactly matches committed fill over the animated3D environment")
 	var movie: String=app.last_export_folder.path_join("movie.mp4");var expected:={"flats":second,"ink":ink_hash,"keys":keys,"world":world,"render":Storage.image_hash(reference),"project_hash":manual};FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected))

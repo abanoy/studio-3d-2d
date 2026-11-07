@@ -117,7 +117,7 @@ func run() -> void:
 	press.pressed = false; app.canvas_input(press,Vector2(240,140))
 	check(Storage.image_hash(cel.image) != paint and same(World.portable(app.current_world()),before) and app.keys == shots, "relocated drawing remains editable and independent of native 3D and shots")
 	app.undo()
-	check(Storage.image_hash(Drawing.cel_at(app.layers[1],int(config.frame)).image) == paint, "drawing Undo restores exact portable cel bytes")
+	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],int(config.frame)))) == paint, "drawing Undo restores exact portable cel bytes")
 	app.has_project.save_file(folder.path_join("Resaved portable.has"),"packed")
 	await job()
 	var saved: String = app.has_project.path

@@ -165,7 +165,7 @@ func run() -> void:
 	actor=app.renderer.world_runtime.instance(id)
 	check(record.last_error.is_empty() and actor.authored_keys().size()==49 and not physics.is_running(),"secondary-only Local take reaches the full two-second range and stops cleanly")
 	var sampled: Dictionary=actor.sample(24)
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(100,100,Color.RED)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(100,100,Color.RED)
 	app.renderer.camera.position=Vector3(2,1.5,4);app.renderer.camera.look_at(Vector3(0,1,0));app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,55)]
 	var project:=folder.path_join("fan.has");app.has_project.save_file(project,"packed");await wait_job(app.has_project)
 	app.new_project();app.has_project.open_file(project);await wait_job(app.has_project)

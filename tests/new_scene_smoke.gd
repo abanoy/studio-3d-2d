@@ -41,7 +41,7 @@ func run() -> void:
 	check(not app.navigating and JSON.stringify(app.keys)==keys,"free-camera gesture releases normally without changing shot keys")
 	app.renderer.evaluate(app.keys,0)
 	app.mode.select(0); app.change_mode(0); app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(100,100),Vector2(250,100),6,Color.RED,false); app.changed()
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(100,100),Vector2(250,100),6,Color.RED,false); app.changed()
 	var with_drawing: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	check(bright_pixels(with_drawing)>0 and app.renderer.world_state()==original_world,"drawing over empty world stays independent of empty 3D document")
 	var dirty_layers:=JSON.stringify(app.layers)

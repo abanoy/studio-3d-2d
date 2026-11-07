@@ -73,11 +73,11 @@ func run() -> void:
 		if int(row.node)==3 and int(row.primitive)==1 and int(row.component)==0:helper.select_part(i);break
 	await wait_job(helper);helper.apply();await wait_job(helper);actor=app.renderer.world_runtime.instance(id)
 	check(weights(actor,.2,.8) and actor.order.size()==6 and actor.data.metadata.source_shape==before.metadata.source_shape,"weighted helper revision retains explicit base adjustments and original channels")
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN)
 	for mode in ["packed","linked"]:
 		var path:=folder.path_join("base-"+mode+".has");app.has_project.save_file(path,mode);await wait_job(app.has_project)
 		app.new_project();app.has_project.open_file(path);await wait_job(app.has_project);actor=app.renderer.world_runtime.instance(id)
-		check(actor!=null and weights(actor,.2,.8) and Drawing.cel_at(app.layers[1],0).image.get_pixel(80,80)==Color.CYAN,"base adjustments and independent drawing survive "+mode+" HAS")
+		check(actor!=null and weights(actor,.2,.8) and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(80,80)==Color.CYAN,"base adjustments and independent drawing survive "+mode+" HAS")
 	var image: Image=await app.renderer.capture(app.keys,app.layers,0,true);image.save_png(folder.path_join("adjusted.png"))
 	var export_error: String=await app.export_movie(folder);var movie: String=app.last_export_folder.path_join("movie.mp4")
 	check(export_error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==image.get_data(),"adjusted base exports with exact reopened preview pixels")

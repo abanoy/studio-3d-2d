@@ -47,7 +47,7 @@ func run() -> void:
 	app.undo();assert(rig.data==before)
 	app.redo();assert(rig.data==posed)
 	app.pose_editor.frame_model();app.keys=[T.from_camera(0,app.renderer.camera,"linear")]
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],12).image.set_pixel(80,80,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],12)).image.set_pixel(80,80,Color.CYAN)
 	var expected: Image=await app.renderer.capture(app.keys,app.layers,12,true)
 	expected.save_png(folder.path_join("ik-pose.png"))
 	var path:=folder.path_join("ik-pose.has");app.has_project.save_file(path,"packed");await job(app)
@@ -73,7 +73,7 @@ func run() -> void:
 	app.undo();assert(rig.data==before)
 	app.redo();assert(rig.data==animated)
 	app.pose_editor.frame_model();app.keys=[T.from_camera(0,app.renderer.camera,"linear")]
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],20).image.set_pixel(80,80,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],20)).image.set_pixel(80,80,Color.CYAN)
 	expected=await app.renderer.capture(app.keys,app.layers,20,true)
 	path=folder.path_join("ik-motion.has");app.has_project.save_file(path,"packed");await job(app)
 	assert(app.has_project.path==path)

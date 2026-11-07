@@ -26,7 +26,7 @@ func run() -> void:
 		app.has_project.open_file(folder.path_join("Profiles.has"));await job()
 		check(app.selected_movie_profile()=="standard","new session defaults Standard when reopening an ordinary project")
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.pixels,"ordinary HAS retains exact authored pixels independently of delivery profile")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.pixels,"ordinary HAS retains exact authored pixels independently of delivery profile")
 		var preview: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 		check(Storage.image_hash(preview)==expected.render,"cold project renders exact original uncompressed movie input")
 		print("EXPORT_PROFILES_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return

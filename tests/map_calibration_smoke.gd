@@ -30,7 +30,7 @@ func run() -> void:
 		var rig: RefCounted=app.renderer.world_runtime.instance(expected.id)
 		check(rig!=null and JSON.parse_string(JSON.stringify(rig.data.metadata,"",true,true))==expected.metadata,"cold Open preserves exact map calibration provenance")
 		check(rig!=null and PackedFloat32Array([rig.data.scale]).to_byte_array().hex_encode()==expected.scale_bits,"cold Open keeps exact engine scale without applying a second fit")
-		check(not review.pending and Drawing.cel_at(app.layers[1],0).image.get_pixel(70,70)==Color.CYAN,"cold Open keeps editable screen drawing and no measurement session")
+		check(not review.pending and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(70,70)==Color.CYAN,"cold Open keeps editable screen drawing and no measurement session")
 		print("MAP_CALIBRATION_READER "+JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
 	review.open();check(not review.pending,"map tool refuses empty selection")
 	var path:=folder.path_join("authored-map.glb");var node:=Node3D.new();node.name="OriginalMeasuredMap"
@@ -89,7 +89,7 @@ func run() -> void:
 	check(not review.eligibility(app.renderer.active_model()).is_empty(),"attached map refuses before any transform edit");app.renderer.active_model().data=unchanged_data
 	review.open();await settle();app.world_selection.select_entity(peer_id);await settle();check(not review.pending,"selection changes invalidate the pending measuring session")
 	app.world_selection.select_entity(map_id);review.open();review.close();review.open();await settle();check(review.pending and review.triangles.size()==24,"cancel/reopen discards the old deferred map preparation");review.close()
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(70,70,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(70,70,Color.CYAN)
 	app.keys=[Model.Timeline.key(0,Vector3(2,2,8),Quaternion.IDENTITY,55)]
 	rig=app.renderer.world_runtime.instance(map_id);var metadata: Dictionary=JSON.parse_string(JSON.stringify(rig.data.metadata,"",true,true));var bits:=PackedFloat32Array([rig.data.scale]).to_byte_array().hex_encode()
 	for storage in ["packed","linked"]:

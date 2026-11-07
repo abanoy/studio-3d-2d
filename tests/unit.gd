@@ -39,8 +39,8 @@ func _initialize() -> void:
 	Drawing.insert(layer, 0, 48, image)
 	var second := Drawing.blank(32, 32)
 	Drawing.insert(layer, 2, 48, second)
-	check(Drawing.cel_at(layer, 0).image == image and Drawing.cel_at(layer, 1).image == image, "held cel on twos")
-	check(Drawing.cel_at(layer, 2).image == second, "cel advances at boundary")
+	check(Drawing.image(Drawing.cel_at(layer, 0)) == image and Drawing.image(Drawing.cel_at(layer, 1)) == image, "held cel on twos")
+	check(Drawing.image(Drawing.cel_at(layer, 2)) == second, "cel advances at boundary")
 	check(Drawing.cel_at(layer, 48).is_empty(), "end-exclusive exposure")
 	layer.visible = false
 	check(Drawing.composite([layer], 0, 32, 32).get_pixel(5, 16).a == 0, "hidden layer excluded")

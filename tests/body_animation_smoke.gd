@@ -84,7 +84,7 @@ func run() -> void:
 			print("LEGACY_BODY_CLIPBOARD "+JSON.stringify({"error":Model.validate(peer.data,48),"frames":Body.B.frames(Body.view(peer.data),left),"actual":peer.sample(19).get(left,Model.identity()),"expected":legacy_actor.sample(4)[left]}))
 			check(Model.validate(peer.data,48).is_empty() and Body.B.frames(Body.view(peer.data),left).has(19) and same(peer.sample(19).get(left,Model.identity()),legacy_actor.sample(4)[left]),"legacy snapshot clipboard remains editable when pasted onto model6")
 			app.restore_world(original_world);app.world_selection.select_entity(id,false);actor=app.renderer.world_runtime.instance(id)
-			Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN)
+			Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN)
 		for mode in ["packed","linked"]:
 			var path:=folder.path_join(plan.label+"-"+mode+".has");app.has_project.save_file(path,mode);await wait_job(app.has_project)
 			app.new_project();app.has_project.open_file(path);await wait_job(app.has_project);actor=app.renderer.world_runtime.instance(id);app.set_frame(6);await settled()

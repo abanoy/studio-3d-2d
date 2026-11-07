@@ -29,7 +29,7 @@ func run(app) -> void:
 		app.set_frame(18)
 		app.create_cel(false)
 		var cel := Drawing.cel_at(app.layers[1], 18)
-		Drawing.stroke(cel.image, Vector2(900, 480), Vector2(1020, 600), 8, Color.RED, false)
+		Drawing.stroke(Drawing.image(cel), Vector2(900, 480), Vector2(1020, 600), 8, Color.RED, false)
 		app.renderer.camera.position.x += 1
 		app.insert_key()
 		app.import_audio(ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav"))
@@ -81,7 +81,7 @@ func run(app) -> void:
 		# Leave a half-written temp file, then exit without resolving the recovery.
 		write(folder.path_join("project.json.tmp"), "{interrupted")
 		check(not Storage.load_project(folder).has("error"), "partial manifest temp does not replace last committed checkpoint")
-		write(base.path_join("last-run.json"), JSON.stringify({"root": app.recovery_root, "folder": folder, "manual": app.project_folder, "manual_sha256": manual, "pixels": Storage.image_hash(cel.image), "keys": app.keys, "checkpoint_ms": app.last_recovery_ms},"",true,true))
+		write(base.path_join("last-run.json"), JSON.stringify({"root": app.recovery_root, "folder": folder, "manual": app.project_folder, "manual_sha256": manual, "pixels": Storage.image_hash(Drawing.image(cel)), "keys": app.keys, "checkpoint_ms": app.last_recovery_ms},"",true,true))
 		print("RECOVERY_WRITE failures=%d" % failures)
 	else:
 		var expected := Recovery.read_json(base.path_join("last-run.json"))
@@ -105,7 +105,7 @@ func run(app) -> void:
 		dialog.get_ok_button().pressed.emit()
 		await get_tree().process_frame
 		check(app.dirty and app.project_folder.is_empty() and app.frame == 18, "restore is an unsaved copy at the checkpoint frame")
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1], 18).image) == expected.pixels and JSON.parse_string(JSON.stringify(app.keys,"",true,true)) == expected.keys, "restart recovery preserves exact editable paint and camera keys")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1], 18))) == expected.pixels and JSON.parse_string(JSON.stringify(app.keys,"",true,true)) == expected.keys, "restart recovery preserves exact editable paint and camera keys")
 		check(app.audio_clip.start_frame == 12 and app.audio_clip.gain_db == -9, "restart recovery preserves managed audio and timing/gain")
 		check(FileAccess.get_sha256(expected.manual.path_join("project.json")) == expected.manual_sha256, "restoring does not touch original manual project")
 		var complete := Recovery.read_json(expected.folder.path_join("project.json"))

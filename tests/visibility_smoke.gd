@@ -105,12 +105,12 @@ func run() -> void:
 	app.set_frame(30);editor.remove_visibility_key();check(not rig.visible_at(40),"removing a key restores the preceding persistent state")
 	app.undo();check(rig.visible_at(40),"visibility-key removal is undoable")
 	app.change_visibility_fade(300)
-	app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
+	app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
 	var wav: String=args[1] if args.size()>1 else ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")
 	if FileAccess.file_exists(wav):
 		check(app.import_audio(wav).is_empty(),"fade fixture imports independent audio")
 		app.audio_clip.start_frame=24;app.audio_clip.gain_db=-6;app.rebuild_audio()
-	var paint: PackedByteArray=Drawing.cel_at(app.layers[1],0).image.get_data()
+	var paint: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()
 	var project:=folder.path_join("visibility.has");app.has_project.save_file(project,"packed");await wait_job(app.has_project)
 	check(FileAccess.file_exists(project),"visibility project saves as packed HAS")
 	var invalid: Dictionary=app.video.duplicate(true);invalid.visibility_fade_ms=-1
@@ -118,7 +118,7 @@ func run() -> void:
 	check(not Storage.save_project(invalid_folder,invalid,app.keys,app.layers,app.source,app.frame,{}, {}, {},false,app.renderer.world_state()).is_empty() and not DirAccess.dir_exists_absolute(invalid_folder),"invalid project fade is rejected before writing any save files")
 	app.new_project();await settled();app.has_project.open_file(project);await wait_job(app.has_project)
 	rig=app.renderer.world_runtime.instance(id)
-	check(rig.data.format==Model.BODY_FORMAT and rig.data.visibility_keys.size()==2 and app.video.visibility_fade_ms==300 and Drawing.cel_at(app.layers[1],0).image.get_data()==paint,"packed HAS reopens independent body controls, visibility, global fade and drawing")
+	check(rig.data.format==Model.BODY_FORMAT and rig.data.visibility_keys.size()==2 and app.video.visibility_fade_ms==300 and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()==paint,"packed HAS reopens independent body controls, visibility, global fade and drawing")
 	var linked:=folder.path_join("visibility-linked.has");app.has_project.save_file(linked,"linked");await wait_job(app.has_project)
 	app.new_project();app.has_project.open_file(linked);await wait_job(app.has_project);rig=app.renderer.world_runtime.instance(id)
 	check(rig.data.visibility_keys.size()==2 and app.video.visibility_fade_ms==300,"linked HAS preserves visibility keys and project fade")

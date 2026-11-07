@@ -14,7 +14,7 @@ func run() -> void:
 	if reading:
 		app.has_project.open_file(packed);await wait_job();var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
 		check(app.keys==expected.keys and not editor.controls.visible and editor.context.is_empty(),"cold HAS preserves exact explicit keys without transient numeric draft")
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.paint and Storage.image_hash(await app.renderer.capture(app.keys,app.layers,12,true))==expected.render,"cold scene preserves independent paint and exact authored shot output")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.paint and Storage.image_hash(await app.renderer.capture(app.keys,app.layers,12,true))==expected.render,"cold scene preserves independent paint and exact authored shot output")
 		print("CAMERA_TRANSFORM_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
 	check(app.load_demo_room(),"original animated environment loads")
 	app.mode.select(1);app.change_mode(1);app.set_frame(12);app.renderer.evaluate(app.keys,12)

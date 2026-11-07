@@ -51,19 +51,19 @@ func run() -> void:
 	check(SceneIO.make_pose_fixture(fixture)==OK and app.pose_editor.add_model(fixture).is_empty(),"load shared standard skinned fixture")
 	var fixture_hash:=FileAccess.get_sha256(fixture)
 	app.mode.select(0);app.change_mode(0);app.create_cel(false)
-	var cel: Dictionary=Drawing.cel_at(app.layers[1],0);cel.image.fill_rect(Rect2i(0,0,384,216),Color.CYAN);app.changed()
+	var cel: Dictionary=Drawing.cel_at(app.layers[1],0);Drawing.edit_image(cel).image.fill_rect(Rect2i(0,0,384,216),Color.CYAN);app.changed()
 	var manual:=folder.path_join("manual.has");app.has_project.save_file(manual,"packed")
 	while app.has_project.pid>0:await process_frame
 	await settled();var manual_hash:=FileAccess.get_sha256(manual)
 	check(not app.dirty and FileAccess.file_exists(manual),"original manual HAS saved independently")
-	app.changed();var keys: Array=app.keys.duplicate(true);var world: Dictionary=app.renderer.world_state();var pixels:=Storage.image_hash(cel.image)
+	app.changed();var keys: Array=app.keys.duplicate(true);var world: Dictionary=app.renderer.world_state();var pixels:=Storage.image_hash(Drawing.image(cel))
 	held=HeldPreview.new();app.recovery_preview=held;app.autosave_tick(true);await wait_gate()
 	var checkpoint: String=app.recovery_root.path_join(app.recovery_session);var digest:=FileAccess.get_sha256(checkpoint.path_join("project.json"));var revision: int=app.checkpoint_revision
 	check(Journal.entries(checkpoint).size()==1 and Journal.entries(checkpoint)[0].preview.is_empty(),"valid checkpoint exists before its slow preview finishes")
 	check(app.recovery_preview.start(checkpoint,digest,Image.new(),[])=="A recovery preview is already being prepared.","only one preview writer can own the journal")
 	var press:=InputEventMouseButton.new();press.button_index=MOUSE_BUTTON_LEFT;press.button_mask=MOUSE_BUTTON_MASK_LEFT;press.pressed=true
 	app.color.color=Color.RED;app.canvas_input(press,Vector2(800,400));press.pressed=false;press.button_mask=0;app.canvas_input(press,Vector2(800,400))
-	cel.image.fill_rect(Rect2i(0,0,384,216),Color.RED);app.changed();var after:=Storage.image_hash(cel.image)
+	Drawing.edit_image(cel).image.fill_rect(Rect2i(0,0,384,216),Color.RED);app.changed();var after:=Storage.image_hash(Drawing.image(cel))
 	app.set_frame(12);var pending: int=app.autosave_actions;app.autosave_tick(true)
 	check(not app.drawing and pending>0 and app.recovery_checkpoint_requested and app.checkpoint_revision==revision and FileAccess.get_sha256(checkpoint.path_join("project.json"))==digest and app.autosave_actions==pending,"editing stays usable while an explicit checkpoint queues without consuming edits")
 	var frames:=0;var clock:=Time.get_ticks_msec()
@@ -78,12 +78,12 @@ func run() -> void:
 	var result: Dictionary=app.recovery_preview_result
 	check(result.background_thread and result.error.is_empty(),"resize, blend, PNG and journal commit complete on the background thread")
 	check(not app.autosave_enabled.button_pressed and not app.recovery_checkpoint_requested and app.checkpoint_revision==app.recovery_revision and Journal.entries(checkpoint).size()==2,"queued explicit request protects later edits automatically even with automatic recovery off")
-	check(Journal.preview(checkpoint,Journal.entries(checkpoint)[-1].preview).get_pixel(8,8)==Color.CYAN and Storage.image_hash(cel.image)==after,"preview uses the captured paint rather than later mutable cel pixels")
+	check(Journal.preview(checkpoint,Journal.entries(checkpoint)[-1].preview).get_pixel(8,8)==Color.CYAN and Storage.image_hash(Drawing.image(cel))==after,"preview uses the captured paint rather than later mutable cel pixels")
 	app.recovery_preview=Preview.new();app.autosave_tick(true);await wait_preview(app)
 	var records:=Journal.entries(checkpoint)
 	check(records.size()==2 and records[0].sha256!=digest and records[1].sha256==digest and Journal.preview(checkpoint,records[0].preview).get_pixel(8,8)==Color.RED,"waiting checkpoint commits afterward without losing the older preview/catalog entry")
 	check(app.autosave_actions==0 and app.checkpoint_revision==app.recovery_revision and app.dirty,"pending edits reset only after the next checkpoint succeeds")
-	app.recovery_preview=FailedPreview.new();cel.image.fill_rect(Rect2i(0,0,384,216),Color.YELLOW);app.changed();app.autosave_tick(true);await wait_preview(app)
+	app.recovery_preview=FailedPreview.new();Drawing.edit_image(cel).image.fill_rect(Rect2i(0,0,384,216),Color.YELLOW);app.changed();app.autosave_tick(true);await wait_preview(app)
 	check(not app.recovery_preview_result.error.is_empty() and app.recovery_status.text=="Recovery saved; preview unavailable" and Storage.load_project(checkpoint).has("video"),"real preview file failure leaves a valid recoverable checkpoint and quiet feedback")
 	var capture_ms: float=app.last_recovery_preview_capture_ms;var worker_ms: float=app.last_recovery_preview_worker_ms
 	held=HeldPreview.new();held.fail=true;app.recovery_preview=held;app.changed();app.autosave_tick(true);await wait_gate()

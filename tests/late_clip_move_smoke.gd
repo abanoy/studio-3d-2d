@@ -17,7 +17,7 @@ func run() -> void:
 		var path:=folder.path_join("packed.has");app.has_project.open_file(path);await wait_job()
 		check(app.has_project.path==path and app.video.duration_frames==3600 and app.video.fps_num==60,"cold packed project restores60fps/60seconds")
 		check(canonical(World.portable(app.current_world()))==expected.world,"cold reader preserves every relative source control and independent world row")
-		check(digest(app.audio_mix.pcm)==expected.pcm and Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.paint,"cold reader retains independent sound/ink exactly")
+		check(digest(app.audio_mix.pcm)==expected.pcm and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.paint,"cold reader retains independent sound/ink exactly")
 		var rig: RefCounted=app.renderer.world_runtime.instance(expected.id)
 		check(rig.data.start_frame==0 and rig.data.animation_clips[0].start==0 and rig.data.animation_clips[0].keys==expected.piece.keys,"cold reader retains source-time keys after3000frame move")
 		var picture: Image=await app.renderer.capture(app.keys,[],12,true)

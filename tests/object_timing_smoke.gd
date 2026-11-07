@@ -54,11 +54,11 @@ func run() -> void:
 	rig=app.renderer.world_runtime.instance(id);app.world_selection.select_entity(id);editor.frame_model();var camera: Camera3D=app.renderer.camera
 	app.keys=[Timeline.key(0,camera.position,camera.quaternion,camera.fov)]
 	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,90),Vector2(180,90),5,Color.RED,false);app.changed()
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(80,90),Vector2(180,90),5,Color.RED,false);app.changed()
 	app.set_frame(12);await settled()
 	var before: Dictionary=rig.data.duplicate(true);var peer_before: Dictionary=app.renderer.world_runtime.instance(peer).data.duplicate(true)
 	var map_before: Dictionary=app.renderer.world_runtime.instance(map_id).data.duplicate(true)
-	var shots: Array=app.keys.duplicate(true);var paint: PackedByteArray=Drawing.cel_at(app.layers[1],0).image.get_data()
+	var shots: Array=app.keys.duplicate(true);var paint: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()
 	var view: Transform3D=camera.transform;var history: int=app.history.size();var timeline=app.timeline
 	check(timeline.object_rows.size()==3 and timeline.object_rows[0].id==map_id and timeline.object_rows[1].id==id and timeline.object_rows[2].id==peer,"every map/model has an independent collapsed timeline row")
 	var reference: Image=await app.renderer.capture(app.keys,app.layers,12,true)
@@ -69,7 +69,7 @@ func run() -> void:
 	release(app)
 	check(timeline.moving_id.is_empty() and rig.data.start_frame==16 and rig.authored_keys()[0].frame==16 and rig.authored_keys()[2].frame==32,"release outside timeline commits presence and every root/bone key together")
 	check(app.history.size()==history+1 and app.history[-1].type=="world_object" and app.history[-1].object_id==id,"one drag creates one stable-object Undo command")
-	check(app.frame==12 and app.keys==shots and camera.transform.is_equal_approx(view) and Drawing.cel_at(app.layers[1],0).image.get_data()==paint,"retiming preserves playhead, camera keys/view and independent drawing")
+	check(app.frame==12 and app.keys==shots and camera.transform.is_equal_approx(view) and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()==paint,"retiming preserves playhead, camera keys/view and independent drawing")
 	check(app.renderer.world_runtime.instance(peer).data==peer_before and app.renderer.world_runtime.instance(map_id).data==map_before,"moving one take preserves other model and map data")
 	var shifted: Dictionary=rig.data.duplicate(true);var old:=Model.new();old.data=before
 	check(editor.same_transform(rig.sample_transform(20),old.sample_transform(12)) and rig.sample(24)==old.sample(16),"relative root and bone interpolation follows the shifted take")

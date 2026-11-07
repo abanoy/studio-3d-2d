@@ -64,7 +64,7 @@ func run() -> void:
 	check(Timeline.sample(legacy,12).far==2000 and Timeline.sample(legacy,12).near==0.05,"old keys retain the established cold-start clipping defaults")
 	var mixed: Array=legacy.duplicate(true);mixed.append(app.keys[1].duplicate(true));mixed[0]["far"]=12000
 	check(Timeline.range_error(mixed).is_empty() and is_equal_approx(Timeline.sample(mixed,12).near,0.15),"partially extended and old camera keys share the same explicit defaults")
-	app.set_frame(12);app.mode.select(0);app.change_mode(0);app.create_cel(false);Drawing.cel_at(app.layers[1],12).image.set_pixel(80,80,Color.CYAN)
+	app.set_frame(12);app.mode.select(0);app.change_mode(0);app.create_cel(false);Drawing.edit_image(Drawing.cel_at(app.layers[1],12)).image.set_pixel(80,80,Color.CYAN)
 	var before: Image=await app.renderer.capture(app.keys,app.layers,12,true);var visible:=green(before)
 	check(visible>100000,"authored long-distance shot shows actual geometry 5000 units away")
 	var close_clip: Array=app.keys.duplicate(true)

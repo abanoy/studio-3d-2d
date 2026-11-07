@@ -35,7 +35,7 @@ func run() -> void:
 		var expected:=Recovery.read_json(folder.path_join("expected.json"))
 		check(lesson.start("basic-pose",false),"fresh process Continue opens validated saved practice")
 		check(lesson.step==2 and not lesson.done and lesson.session==expected.session and app.frame==24 and app.has_project.path.is_empty() and app.dirty,"Continue restores teacher step, playhead and unsaved copy identity")
-		check(equal(Store.ui(app),expected.ui) and Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)==expected.paint,"Continue restores exact editor camera, selection and editable pixels")
+		check(equal(Store.ui(app),expected.ui) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],24)))==expected.paint,"Continue restores exact editor camera, selection and editable pixels")
 		check(app.renderer.world_runtime.instance(Assets.FIGURE_ID).authored_keys().size()==2,"Continue restores real native pose keys in a new engine process")
 		lesson.open_catalog();await settled();var catalog: AcceptDialog
 		for child in app.get_children():
@@ -71,9 +71,9 @@ func run() -> void:
 	var posed: Image=await app.renderer.capture(app.keys,[],24,true);posed.save_png(folder.path_join("practice-raised.png"));check(posed.get_data()!=neutral.get_data(),"raising tutorial arm actually changes rendered geometry")
 	await observe(lesson);check(lesson.step==2,"correct keyed arm automatically advances to independent drawing")
 	var checkpoint_ui: Dictionary=Store.ui(app);var checkpoint_world: Dictionary=app.renderer.world_state().duplicate(true);var session: String=lesson.session
-	app.active_layer=0;app.refresh_layer();app.create_cel(false);Drawing.cel_at(app.layers[0],24).image.fill_rect(Rect2i(40,40,50,50),Color.RED);app.changed();check(not lesson.satisfied(),"paint on Rough does not complete Ink exercise")
+	app.active_layer=0;app.refresh_layer();app.create_cel(false);Drawing.edit_image(Drawing.cel_at(app.layers[0],24)).image.fill_rect(Rect2i(40,40,50,50),Color.RED);app.changed();check(not lesson.satisfied(),"paint on Rough does not complete Ink exercise")
 	app.active_layer=1;app.refresh_layer();app.create_cel(false);check(not lesson.satisfied(),"empty Ink cel does not complete drawing exercise")
-	Drawing.cel_at(app.layers[1],24).image.fill_rect(Rect2i(80,80,80,40),Color.CYAN);app.changed();app.layers[1].visible=false;check(not lesson.satisfied(),"hidden Ink does not complete visible drawing exercise");app.layers[1].visible=true
+	Drawing.edit_image(Drawing.cel_at(app.layers[1],24)).image.fill_rect(Rect2i(80,80,80,40),Color.CYAN);app.changed();app.layers[1].visible=false;check(not lesson.satisfied(),"hidden Ink does not complete visible drawing exercise");app.layers[1].visible=true
 	await observe(lesson);check(lesson.done and lesson.step==3,"visible independent drawing completes real practice chapter")
 	app.renderer.camera.position+=Vector3(3,2,1);app.renderer.camera.fov=72;app.canvas.zoom=1.4;app.canvas.pan=Vector2(20,30);app.set_frame(5);app.world_selection.clear();app.set_advanced(true)
 	lesson.previous();await settled();rig=app.renderer.world_runtime.instance(Assets.FIGURE_ID)
@@ -83,13 +83,13 @@ func run() -> void:
 	lesson.previous();await settled();rig=app.renderer.world_runtime.instance(Assets.FIGURE_ID)
 	check(lesson.step==1 and app.frame==0 and rig.authored_keys().size()==1 and equal(Store.ui(app),before),"Previous again restores neutral arm, playhead and previous editor state")
 	app.set_frame(24);editor.selected=upper;editor.operation.select(0);editor.refresh_values();editor.fields[2].set_value_no_signal(65);editor.apply_numeric();await settled();await observe(lesson)
-	app.active_layer=1;app.refresh_layer();app.create_cel(false);Drawing.cel_at(app.layers[1],24).image.fill_rect(Rect2i(80,80,80,40),Color.CYAN);app.changed()
-	var resume_ui: Dictionary=Store.ui(app);var paint:=Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)
+	app.active_layer=1;app.refresh_layer();app.create_cel(false);Drawing.edit_image(Drawing.cel_at(app.layers[1],24)).image.fill_rect(Rect2i(80,80,80,40),Color.CYAN);app.changed()
+	var resume_ui: Dictionary=Store.ui(app);var paint:=Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],24)))
 	lesson.leave(true);check(not lesson.active and not lesson.panel.visible and lesson.store.progress("basic-pose").step==2,"Leave stores current partial step and keeps practice editable")
 	check(lesson.start("basic-pose",true),"Start fresh permits another independent practice");await job(app)
 	check(lesson.session!=session and lesson.store.sessions("basic-pose").size()==2,"Start fresh retains prior saved practice")
 	lesson.leave(true);check(lesson.start("basic-pose",false,session),"specific older practice can be continued")
-	check(equal(Store.ui(app),resume_ui) and Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)==paint,"Continue restores ungraded edits as well as progress")
+	check(equal(Store.ui(app),resume_ui) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],24)))==paint,"Continue restores ungraded edits as well as progress")
 	lesson.leave(true)
 	var expected:={"session":session,"ui":resume_ui,"paint":paint};write_fixture_json(folder.path_join("expected.json"),expected)
 	# Make this retained partial practice latest for the separate-process reader.

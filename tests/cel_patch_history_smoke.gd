@@ -23,12 +23,12 @@ func run() -> void:
 	check(split.type=="cel_patch" and split.before.size()==1 and split.after.size()==2 and not split.has("layer"),"split history retains only affected cels, not the layer or30peer Images")
 	check(split.bytes<=2*8294400+8192,"split charges only two distinct source/right rasters plus bounded metadata")
 	var generation: int=app.physics_editor.generation
-	app.undo();check(layer.cels.size()==31 and layer.cels[0].duration==8 and Storage.image_hash(layer.cels[0].image)==painted,"split Undo restores original exposure and painted source")
-	app.undo();check(Storage.image_hash(layer.cels[0].image)==original,"earlier actual stroke Undo remains reachable after split")
-	app.redo();app.redo();check(layer.cels.size()==32 and Storage.image_hash(layer.cels[0].image)==painted and Storage.image_hash(layer.cels[1].image)==painted,"stroke and split Redo restore exact independent halves")
+	app.undo();check(layer.cels.size()==31 and layer.cels[0].duration==8 and Storage.image_hash(Drawing.image(layer.cels[0]))==painted,"split Undo restores original exposure and painted source")
+	app.undo();check(Storage.image_hash(Drawing.image(layer.cels[0]))==original,"earlier actual stroke Undo remains reachable after split")
+	app.redo();app.redo();check(layer.cels.size()==32 and Storage.image_hash(Drawing.image(layer.cels[0]))==painted and Storage.image_hash(Drawing.image(layer.cels[1]))==painted,"stroke and split Redo restore exact independent halves")
 	check(app.physics_editor.generation==generation,"split/stroke Undo/Redo does not reset independent physics")
 	var intact:=true
-	for i in range(30):intact=intact and is_same(layer.cels[i+2],peers[i]) and Storage.image_hash(layer.cels[i+2].image)==original
+	for i in range(30):intact=intact and is_same(layer.cels[i+2],peers[i]) and Storage.image_hash(Drawing.image(layer.cels[i+2]))==original
 	check(intact,"unaffected peer dictionaries, images and original RGBA remain untouched")
 	await edit(1,4);var cut: Dictionary=app.history[-1]
 	check(cut.before.size()==1 and cut.after.is_empty() and cut.bytes<=8294400+8192 and layer.cels.size()==31,"Cut retains and charges only its removed cel")
@@ -38,7 +38,7 @@ func run() -> void:
 	check(not app.apply_command(split,"before") and layer.cels==before and app.history.size()==count,"stale split cannot erase a later moved/pasted drawing")
 	generation=app.physics_editor.generation
 	app.undo();app.undo();check(layer.cels.size()==32 and not Drawing.cel_at(layer,4).is_empty() and Drawing.cel_at(layer,40).is_empty(),"Paste and Cut Undo restore their own slots without replacing peers")
-	app.redo();app.redo();check(layer.cels.size()==32 and Drawing.cel_at(layer,4).is_empty() and Storage.image_hash(Drawing.cel_at(layer,40).image)==painted,"Cut/Paste Redo restores moved copy with exact pixels")
+	app.redo();app.redo();check(layer.cels.size()==32 and Drawing.cel_at(layer,4).is_empty() and Storage.image_hash(Drawing.image(Drawing.cel_at(layer,40)))==painted,"Cut/Paste Redo restores moved copy with exact pixels")
 	check(app.physics_editor.generation==generation,"patch Undo/Redo never resets the independent physics generation")
 	app.set_frame(40);var child: String=app.sequence_editor.new_sequence("History isolation");check(not child.is_empty() and app.sequence_editor.enter(child).is_empty(),"real child sequence opens without changing global cel budget")
 	var child_before: Array=app.layers.duplicate(true)

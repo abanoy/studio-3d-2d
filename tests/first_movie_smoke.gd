@@ -53,7 +53,7 @@ func run() -> void:
 	if "--resume" in OS.get_cmdline_user_args():
 		var expected:=Recovery.read_json(folder.path_join("first-expected.json"));check(lesson.start(First.ID,false,expected.session),"fresh process resumes completed versioned beginner lesson")
 		check(lesson.done and lesson.step==11 and lesson.observed.get("physics_seen",false) and lesson.observed.get("preview_seen",false) and lesson.observed.get("export_done",false),"all completed observed events survive fresh process Continue")
-		check(equal(Store.ui(app),expected.ui) and equal(World.portable(app.renderer.world_state()),expected.world) and Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)==expected.paint,"fresh process keeps exact whole-scene and editor state")
+		check(equal(Store.ui(app),expected.ui) and equal(World.portable(app.renderer.world_state()),expected.world) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],24)))==expected.paint,"fresh process keeps exact whole-scene and editor state")
 		lesson.previous();await settled();check(lesson.step==10 and not lesson.done and not lesson.observed.get("export_done",false) and lesson.observed.get("preview_seen",false),"Previous removes later export evidence while retaining earlier real preview")
 		check(app.has_project.path.is_empty() and lesson.action_button.visible and lesson.export_button.visible,"resumed final task offers optional Save and normal export without a personal identity")
 		lesson.export_button.pressed.emit();await settled();var directory: FileDialog=picker();check(directory!=null and directory.file_mode==FileDialog.FILE_MODE_OPEN_DIR,"unsaved practice export uses actual destination picker")
@@ -171,7 +171,7 @@ func run() -> void:
 	check(app.movie_folder_button.is_visible_in_tree() and app.movie_folder_button.tooltip_text==app.last_finished_movie and FileAccess.file_exists(app.last_finished_movie),"successful export exposes the exact completed movie in Simple")
 	check(Image.load_from_file(app.last_export_folder.path_join("frame_000041.png")).get_data()==expected.get_data(),"first-movie export exactly matches animated pose/camera/Ink preview at40")
 	if not await advance(11):return
-	var movie: String=app.last_export_folder.path_join("movie.mp4");lesson.leave(true);write_fixture_json(folder.path_join("first-expected.json"),{"session":session,"ui":Store.ui(app),"world":World.portable(app.renderer.world_state()),"paint":Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)})
+	var movie: String=app.last_export_folder.path_join("movie.mp4");lesson.leave(true);write_fixture_json(folder.path_join("first-expected.json"),{"session":session,"ui":Store.ui(app),"world":World.portable(app.renderer.world_state()),"paint":Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],24)))})
 	var movie_sha:=FileAccess.get_sha256(movie)
 	var cancel_after_frame:=func():
 		if app.exporting and FileAccess.file_exists(app.last_export_folder.path_join("frame_000001.png")):app.cancel_button.pressed.emit()

@@ -89,7 +89,7 @@ func run() -> void:
 	check(absf(rig.authored_keys()[-1].transform.position[0]-90000.05)<0.01,"small authored move far from origin updates automatic key")
 	app.undo(); app.undo()
 	app.mode.select(0); app.change_mode(0); app.set_frame(4); app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],4).image,Vector2(100,100),Vector2(200,100),6,Color.RED,false)
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],4)),Vector2(100,100),Vector2(200,100),6,Color.RED,false)
 	var has = app.has_project; has.cache_root=folder.path_join("cache")
 	var saved_keys: Array = JSON.parse_string(JSON.stringify(rig.authored_keys(),"",true,true))
 	var project := folder.path_join("auto-keyed.has")

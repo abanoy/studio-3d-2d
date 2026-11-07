@@ -9,7 +9,7 @@ func action(id: int) -> void:
 	app.cel_clipboard.menu.id_pressed.emit(id);await settled()
 func paint_hash(at: int) -> String:
 	var cel:=Drawing.cel_at(app.layers[1],at)
-	return "" if cel.is_empty() else Storage.image_hash(cel.image)
+	return "" if cel.is_empty() else Storage.image_hash(Drawing.image(cel))
 func run() -> void:
 	folder=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in OS.get_cmdline_user_args() else "writer-cache")
 	if "--read" in OS.get_cmdline_user_args():
@@ -19,7 +19,7 @@ func run() -> void:
 		check(app.cel_clipboard.clipboard.is_empty(),"transient clipboard is not saved as project state")
 		var picture: Image=await app.renderer.capture(app.keys,app.layers,16,true)
 		check(picture.get_data()==Image.load_from_file(folder.path_join("frame16.png")).get_data(),"cold final picture matches edited pasted drawing exactly")
-		check(not is_same(Drawing.cel_at(app.layers[1],16).image,Drawing.cel_at(app.layers[1],20).image),"cold split halves remain distinct editable Images")
+		check(not is_same(Drawing.image(Drawing.cel_at(app.layers[1],16)),Drawing.image(Drawing.cel_at(app.layers[1],20))),"cold split halves remain distinct editable Images")
 		picture=await app.renderer.capture(app.keys,app.layers,20,true);check(picture.get_data()==Image.load_from_file(folder.path_join("frame20.png")).get_data(),"cold independently painted split half matches exact movie input")
 		print("CEL_CLIPBOARD_READ "+JSON.stringify({"checks":checks,"failures":failures}));await app.quit_studio();quit(0 if failures==0 else 1);return
 	app.mode.select(0);app.change_mode(0)
@@ -32,10 +32,10 @@ func run() -> void:
 	await action(3)
 	check(app.layers[1].cels.size()==2 and app.layers[1].cels[0].duration==4 and app.layers[1].cels[1].start==4 and app.layers[1].cels[1].duration==4,"Split keeps exact adjacent end-exclusive halves and original overall extent")
 	check(app.history.size()==history+1 and app.cel_clipboard.clipboard.is_empty() and paint_hash(0)==original and paint_hash(4)==original,"Split creates one Undo entry, preserves both rasters and does not replace clipboard")
-	check(not is_same(Drawing.cel_at(app.layers[1],4).image,image) and app.layers[1].cels[0].id!=app.layers[1].cels[1].id,"Split gives right half independent raster and cel identity")
+	check(not is_same(Drawing.image(Drawing.cel_at(app.layers[1],4)),image) and app.layers[1].cels[0].id!=app.layers[1].cels[1].id,"Split gives right half independent raster and cel identity")
 	app.color.color=Color.GREEN;app.radius.value=6;app.tool.select(0);var press:=InputEventMouseButton.new();press.button_index=MOUSE_BUTTON_LEFT;press.pressed=true;app.canvas_input(press,Vector2(300,200));app.paint_segment(Vector2(340,200));press.pressed=false;app.canvas_input(press,Vector2(340,200));await settled()
 	check(paint_hash(0)==original and paint_hash(4)!=original,"actual brush edits only the right split drawing")
-	app.undo();app.undo();check(app.layers[1].cels.size()==1 and app.layers[1].cels[0].duration==8 and is_same(app.layers[1].cels[0].image,image),"stroke Undo then Split Undo restores complete original held drawing")
+	app.undo();app.undo();check(app.layers[1].cels.size()==1 and app.layers[1].cels[0].duration==8 and is_same(Drawing.image(app.layers[1].cels[0]),image),"stroke Undo then Split Undo restores complete original held drawing")
 	app.redo();check(app.layers[1].cels.size()==2 and paint_hash(0)==original and paint_hash(4)==original,"Split Redo restores exact independent halves")
 	app.undo();await settled();history=app.history.size();revision=app.recovery_revision
 	for at in [0,8]:
@@ -49,10 +49,10 @@ func run() -> void:
 	await open_at(1,16);check(app.cel_clipboard.menu.visible and app.cel_clipboard.menu.is_item_disabled(0) and not app.cel_clipboard.menu.is_item_disabled(2),"right-click empty range exposes Paste without a source cel")
 	await action(2)
 	check(paint_hash(16)==original and paint_hash(0)==changed and app.layers[1].cels[1].duration==8,"Paste uses frozen copied pixels and complete original exposure despite later source painting")
-	check(not is_same(app.layers[1].cels[1].image,image) and app.layers[1].cels[1].id!=app.layers[1].cels[0].id,"pasted cel has fresh stable identity and independent editable raster")
+	check(not is_same(Drawing.image(app.layers[1].cels[1]),image) and app.layers[1].cels[1].id!=app.layers[1].cels[0].id,"pasted cel has fresh stable identity and independent editable raster")
 	app.undo();check(app.layers[1].cels.size()==1 and paint_hash(0)==changed,"Paste Undo removes only the new exposure")
 	app.redo();check(app.layers[1].cels.size()==2 and paint_hash(16)==original,"Paste Redo restores its original independent drawing")
-	var pasted: Image=Drawing.cel_at(app.layers[1],16).image;pasted.fill_rect(Rect2i(500,100,25,25),Color.GREEN);Drawing.touch(pasted);app.changed();var edited:=Storage.image_hash(pasted)
+	var pasted: Image=Drawing.image(Drawing.cel_at(app.layers[1],16));pasted.fill_rect(Rect2i(500,100,25,25),Color.GREEN);Drawing.touch(pasted);app.changed();var edited:=Storage.image_hash(pasted)
 	await open_at(1,32);await action(2)
 	check(paint_hash(32)==original and paint_hash(16)==edited and paint_hash(0)==changed,"editing pasted cel does not alter source, clipboard or another pasted cel")
 	var before: Array=app.layers[1].cels.duplicate(true);history=app.history.size()
@@ -76,7 +76,7 @@ func run() -> void:
 	app.redo();check(app.layers[1].cels.size()==2 and Drawing.cel_at(app.layers[1],0).is_empty(),"Cut Redo removes only its target")
 	await open_at(1,0);await action(2);check(paint_hash(0)==changed and Drawing.cel_at(app.layers[1],0).duration==8,"cut drawing pastes back with independent pixels and original length")
 	# Restore source pixels, then copy them again for deterministic cold fixture.
-	var source: Image=Drawing.cel_at(app.layers[1],0).image;source.fill_rect(Rect2i(300,100,30,30),Color.TRANSPARENT);Drawing.touch(source);app.changed()
+	var source: Image=Drawing.image(Drawing.cel_at(app.layers[1],0));source.fill_rect(Rect2i(300,100,30,30),Color.TRANSPARENT);Drawing.touch(source);app.changed()
 	check(paint_hash(0)==original,"source variation can be independently restored without touching pasted art")
 	var clipboard_hash:=Storage.image_hash(app.cel_clipboard.clipboard.image);before=app.layers[1].cels.duplicate(true)
 	await open_at(1,20);await action(3)

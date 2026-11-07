@@ -50,7 +50,7 @@ func run() -> void:
 		app.set_frame(8);release_focus();press(KEY_RIGHT);check(app.frame==8,"old next-frame binding stays inactive after restart");press(KEY_F6);check(app.frame==9,"restored next-frame key dispatches")
 		var prefs:=ConfigFile.new();prefs.load(app.display_prefs_path);check(prefs.get_value("unrelated","keep")=="original" and prefs.get_value("display","percent")==100,"keyboard save retains unrelated display preferences")
 		var before: Dictionary=editor.bindings.duplicate();app.has_project.open_file(folder.path_join("Keyboard scene.has"));await wait_job();check(editor.bindings==before,"HAS Open does not replace personal keys")
-		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")));check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.pixels and Storage.image_hash(await app.renderer.capture(app.keys,app.layers,0,true))==expected.render,"cold saved project retains independent pixels and authored camera output")
+		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")));check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.pixels and Storage.image_hash(await app.renderer.capture(app.keys,app.layers,0,true))==expected.render,"cold saved project retains independent pixels and authored camera output")
 		print("SHORTCUT_EDITOR_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
 	check(editor.bindings==Bindings.DEFAULTS,"fresh user has all existing default shortcuts")
 	check(app.load_demo_room(),"original independent3D camera example loads")

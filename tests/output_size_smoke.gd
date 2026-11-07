@@ -10,7 +10,7 @@ func run() -> void:
 	if "--read" in OS.get_cmdline_user_args():
 		app.has_project.open_file(folder.path_join("Delivery.has"));await wait_job();var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
 		check(app.selected_output_size()=="540p" and app.video.get("output_size")=="540p" and app.video.width==1920 and app.video.height==1080,"new session restores saved delivery choice with original fullHD canvas")
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.art,"delivery choice never rescales saved editable art")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.art,"delivery choice never rescales saved editable art")
 		var picture: Image=await app.renderer.capture(app.keys,app.layers,12,true)
 		check(picture.get_data()==Image.load_from_file(folder.path_join("source12.png")).get_data(),"cold fullHD final scene reproduces exact original before delivery resizing")
 		print("OUTPUT_SIZE_READ "+JSON.stringify({"checks":checks,"failures":failures}));await app.quit_studio();quit(0 if failures==0 else 1);return

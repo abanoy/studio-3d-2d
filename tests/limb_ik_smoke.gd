@@ -110,7 +110,7 @@ func run() -> void:
 	editor.record_dialog()
 	check(rig.authored_keys().size()==3 and rig.authored_keys()[-1].frame==12 and rig.bone_transform(hand).origin.distance_to(manual.end)<0.0001,"explicit recording keeps the draft hand position at its chosen frame")
 	app.undo();app.undo();editor.auto_key.button_pressed=true;app.set_frame(8)
-	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
+	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
 	var wav:=ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")
 	if FileAccess.file_exists(wav):
 		check(app.import_audio(wav).is_empty(),"IK fixture imports independent WAV audio")

@@ -53,7 +53,7 @@ func run() -> void:
 	assert(app.import_audio(folder.path_join("peer.wav"),24).is_empty())
 	assert(app.audio_document().format==Audio.TRIM_FORMAT and app.audio_clips.size()==2)
 	var mixed:=pcm_hash();assert(app.keys==keys and app.current_world()==world)
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],24).image.set_pixel(70,70,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],24)).image.set_pixel(70,70,Color.CYAN)
 	app.set_frame(24);var expected: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 	var packed:=folder.path_join("trimmed.has");app.has_project.save_file(packed,"packed");await job();assert(app.has_project.path==packed)
 	var linked:=folder.path_join("linked.has");app.has_project.save_file(linked,"linked");await job();assert(app.has_project.path==linked)

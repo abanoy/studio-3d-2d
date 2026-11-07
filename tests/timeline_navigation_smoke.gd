@@ -34,7 +34,7 @@ func run() -> void:
 	check(nav.start==saved_start and nav.visible()==before*.5,"active seek gesture freezes zoom transform")
 	var audio: String=app.import_audio(folder.path_join("tone.wav"),1296);check(audio.is_empty(),"late sound imports for zoomed waveform and drag")
 	app.mode.select(0);app.change_mode(0);app.set_frame(1300);app.active_layer=1;app.create_cel(false)
-	Drawing.cel_at(app.layers[1],1300).image.fill_rect(Rect2i(100,100,40,40),Color.CYAN);Drawing.touch(Drawing.cel_at(app.layers[1],1300).image);app.changed()
+	Drawing.edit_image(Drawing.cel_at(app.layers[1],1300)).image.fill_rect(Rect2i(100,100,40,40),Color.CYAN);Drawing.touch(Drawing.image(Drawing.cel_at(app.layers[1],1300)));app.changed()
 	await settled();var preview: Image=await app.renderer.capture(app.keys,app.layers,1300,true)
 	var point:=Vector2(view.x(1297),view.audio_y()+14)
 	var screen: Image=app.get_viewport().get_texture().get_image();screen.save_png(folder.path_join("zoomed.png"))

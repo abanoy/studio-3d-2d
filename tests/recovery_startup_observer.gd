@@ -49,7 +49,7 @@ func on_recovered(result: Dictionary) -> void:
 			bindings=bindings and rig.order==state.orders[id]
 			transforms=transforms and canonical(rig.sample_transform(target))==state.transforms[id]
 		check(bindings and transforms,"all source-native bone identities and sampled transforms survive restart")
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],target).image)==state.paint,"editable drawing pixels survive restart exactly")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],target)))==state.paint,"editable drawing pixels survive restart exactly")
 		check(not app.audio_clip.is_empty() and app.audio_clip.start_frame==24 and app.audio_clip.gain_db==-6,"managed WAV and synchronization settings survive restart")
 		var current: Image=await app.renderer.capture(app.keys,app.layers,target,true);var before:=Image.load_from_file(folder.path_join("frame%d.png" % target));var a:=current.get_data();var b:=before.get_data();var changed:=0;var total:=0
 		for i in range(a.size()):

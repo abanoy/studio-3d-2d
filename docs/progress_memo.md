@@ -12689,3 +12689,20 @@ Generated tracked reports/logs archived outside checkout then restored exactly.
 Raw private-metadata-tutorial-regression and private-metadata-advanced-lessons under
 /workspace/has-handoff-audit. No product completion or native acceptance claim.
 Whole goal remains active; next newly authored drawing ownership/idle accounting.
+
+
+2026-11-06 — Compatible raster access in workflow test consumers
+
+Preparatory test-only migration for eager/owned drawing records. Existing cel
+lookup reads now use Drawing.image; fixture pixel mutation uses edit_image to pin
+its authoritative target. Logical Image/metadata/pixel/timing/Undo assertions are
+retained; no checks removed. This avoids coupling workflow tests to cel.image,
+which already does not exist for larger adaptive loaded projects. All referenced
+accessors exist in the prior product revision. Negative representation-domain
+tests are not replaced by accessors.
+
+97changedGDScript consumers check-parse clean, then39fixture write consumers parse
+clean after explicit pin adjustment. Native runtime/Windows fixtures remain
+unrun, not implied by parsing. Selected drawing app workflows run against the
+working-tree new-ownership increment; its behavior/evidence follows separately.
+No product source in this preparatory commit. Whole goal remains active.

@@ -16,7 +16,7 @@ func run() -> void:
 	var packed:=folder.path_join("Moved drawing.has")
 	if reader:
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")));app.has_project.open_file(packed);await job()
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],12).image)==expected.pixels and Storage.image_hash(Drawing.cel_at(app.layers[0],12).image)==expected.other,"cold Open restores exact moved/copied pixels and untouched other layer")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],12)))==expected.pixels and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[0],12)))==expected.other,"cold Open restores exact moved/copied pixels and untouched other layer")
 		check(not app.drawing_selection_editor.selected.has_area() and app.canvas.selection_preview==null and equal(app.keys,expected.keys) and equal(World.portable(app.current_world()),expected.world),"selection is transient while standard world/camera persist")
 		var rendered: Image=await app.renderer.capture(app.keys,app.layers,12,true);check(Storage.image_hash(rendered)==expected.render and FileAccess.get_sha256(packed)==expected.project_hash,"cold preview is exact and original manual HAS stays untouched")
 		print("DRAWING_SELECTION_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
@@ -63,7 +63,7 @@ func run() -> void:
 	for i in range(100):move(Vector2(701+i,510))
 	await process_frame;await process_frame;check(editor.preview_builds-builds==1 and image.get_data()==copied,"many pointer events coalesce into at most one new preview per frame");editor.cancel()
 	app.has_project.save_file(packed,"packed");await job();var manual:=FileAccess.get_sha256(packed);var linked:=folder.path_join("Moved drawing linked.has");app.has_project.save_file(linked,"linked");await job();app.has_project.open_file(linked);await job()
-	check(Storage.image_hash(Drawing.cel_at(app.layers[1],12).image)==Storage.image_hash(image) and Storage.image_hash(Drawing.cel_at(app.layers[0],12).image)==other_hash,"linked HAS preserves exact moved pixels and separate layer")
+	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],12)))==Storage.image_hash(image) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[0],12)))==other_hash,"linked HAS preserves exact moved pixels and separate layer")
 	app.changed();app.autosave_tick(true)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	check(app.open_project(app.recovery_root.path_join(app.recovery_session)) and Drawing.cel_at(app.layers[1],0).id==Drawing.cel_at(app.layers[1],47).id and FileAccess.get_sha256(packed)==manual,"recovery retains the shared held cel without altering manual HAS")

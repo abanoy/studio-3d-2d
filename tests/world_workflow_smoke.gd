@@ -56,7 +56,7 @@ func run() -> void:
 	app.world_selection.select_entity(actor0);editor.frame_model();var camera: Camera3D=app.renderer.camera
 	app.keys=[Timeline.key(0,camera.position,camera.quaternion,camera.fov),Timeline.key(48,camera.position+Vector3(0.2,0,0),camera.quaternion,camera.fov)]
 	app.mode.select(0);app.change_mode(0);app.set_frame(24);app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],24).image,Vector2(100,100),Vector2(220,100),6,Color.RED,false);app.changed()
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],24)),Vector2(100,100),Vector2(220,100),6,Color.RED,false);app.changed()
 	var wav:=ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")
 	check(app.import_audio(wav).is_empty(),"normal multi-object world accepts independent WAV audio")
 	app.audio_clip.start_frame=24;app.audio_clip.gain_db=-6;app.rebuild_audio()

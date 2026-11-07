@@ -21,7 +21,7 @@ func signature() -> Array:
 	var result: Array=[]
 	for layer in app.layers:
 		var cels: Array=[]
-		for cel in layer.cels:cels.append([cel.id,cel.start,cel.duration,Storage.image_hash(cel.image)])
+		for cel in layer.cels:cels.append([cel.id,cel.start,cel.duration,Storage.image_hash(Drawing.image(cel))])
 		result.append([layer.id,layer.name,layer.visible,cels])
 	return result
 func paint(point: Vector2) -> void:

@@ -112,7 +112,7 @@ func run() -> void:
 	while record.active:await process_frame
 	actor=app.renderer.world_runtime.instance(id)
 	check(record.last_error.is_empty() and actor.authored_keys().size()==49,"normal Local Record captures an editable generated-helper take")
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN)
 	check(app.import_audio(wav).is_empty(),"independent audio remains usable with derived assets")
 	app.audio_start.value=24;app.audio_gain.value=-6;app.apply_audio_settings();app.set_frame(24)
 	var state: Dictionary=actor.sample(24);var project:=folder.path_join("helpers.has");app.has_project.save_file(project,"packed");await wait_job(app.has_project)

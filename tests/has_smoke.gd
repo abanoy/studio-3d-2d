@@ -49,7 +49,7 @@ func run() -> void:
 	app.keys = [Timeline.key(0,camera.position,camera.quaternion,camera.fov),Timeline.key(48,camera.position+Vector3(0.1,0,0),camera.quaternion,camera.fov)]
 	app.pose_editor.record_key(); app.set_frame(48); app.pose_editor.record_key()
 	app.set_frame(24); app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],24).image,Vector2(100,100),Vector2(260,100),6,Color.RED,false)
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],24)),Vector2(100,100),Vector2(260,100),6,Color.RED,false)
 	var expected: Image = await app.renderer.capture(app.keys,app.layers,24,true)
 	var has = app.has_project
 	has.cache_root = folder.path_join("cache")

@@ -101,7 +101,7 @@ func run() -> void:
 	app.set_frame(48); editor.fields[2].value = 75; editor.apply_numeric(); editor.record_key()
 	app.mode.select(0); app.change_mode(0); app.set_frame(24)
 	app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1], 24).image, Vector2(100, 100), Vector2(260, 100), 6, Color.RED, false)
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1], 24)), Vector2(100, 100), Vector2(260, 100), 6, Color.RED, false)
 	app.changed()
 	var expected: Image = await app.renderer.capture(app.keys, app.layers, 24, true)
 	expected.save_png(folder.path_join("source-posed.png"))
@@ -133,7 +133,7 @@ func run() -> void:
 	check(app.source_import.apply_view(map_report), "map offers a usable native player-start view without rewriting camera keys")
 	app.keys = [Timeline.key(0, camera.position, camera.quaternion, camera.fov), Timeline.key(48, camera.position + Vector3(1, 0, 0), camera.quaternion, camera.fov)]
 	app.set_frame(0); app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1], 0).image, Vector2(100, 80), Vector2(260, 80), 6, Color.YELLOW, false)
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1], 0)), Vector2(100, 80), Vector2(260, 80), 6, Color.YELLOW, false)
 	var map_image: Image = await app.renderer.capture(app.keys, app.layers, 0, true)
 	var map_repeat: Image = await app.renderer.capture(app.keys, app.layers, 0, true)
 	check(map_image.get_data() == map_repeat.get_data(), "map capture repeats deterministically before saving")

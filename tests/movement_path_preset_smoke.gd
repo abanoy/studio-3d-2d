@@ -78,7 +78,7 @@ func run() -> void:
 	await settled();check(editor.draft==fresh,"closing and reopening invalidates an old load picker")
 	await click(editor.load_preset_button);await choose(arm);check(editor.draft==fresh and rig.data==staged,"non-preset source file refuses without editing draft or scene")
 	editor.close();app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,60)]
-	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.CYAN,false);app.changed();app.set_frame(24)
+	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(80,80),Vector2(180,80),5,Color.CYAN,false);app.changed();app.set_frame(24)
 	var picture: Image=await app.renderer.capture(app.keys,app.layers,24,true);picture.save_png(folder.path_join("reference.png"))
 	for mode in ["packed","linked"]:
 		var path:=folder.path_join("Route "+mode+".has");app.has_project.save_file(path,mode);await wait_job();check(app.has_project.path==path,"ordinary "+mode+" HAS saves editable position tracks")

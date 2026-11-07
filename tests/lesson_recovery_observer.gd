@@ -21,7 +21,7 @@ func recovered(result: Dictionary) -> void:
 	await RenderingServer.frame_post_draw
 	check(result.restored and not result.cancelled and not app.home.visible and not app.has_dialog(app),"production normal startup restores practice scene quietly")
 	check(app.frame==target and app.dirty and app.project_folder.is_empty() and app.has_project.path.is_empty(),"recovery retains exact playhead as unsaved copy without manual identity")
-	check(app.layers[1].cels.size()==int(state.cels) and Storage.image_hash(Drawing.cel_at(app.layers[1],target).image)==state.paint,"selected recovery generation restores exact later drawing bytes and cel count")
+	check(app.layers[1].cels.size()==int(state.cels) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],target)))==state.paint,"selected recovery generation restores exact later drawing bytes and cel count")
 	check(lesson.active==attach and lesson.panel.visible==attach,"teacher attachment matches validated recovery metadata and available practice session")
 	check(FileAccess.get_sha256(expected.manual)==expected.manual_sha256,"automatic startup preserves the last explicitly saved HAS")
 	var movie:=""

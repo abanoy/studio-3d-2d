@@ -68,7 +68,7 @@ func run() -> void:
 	var motion:=InputEventMouseMotion.new();motion.button_mask=MOUSE_BUTTON_MASK_LEFT;motion.position=timeline.get_global_transform()*(click.position+Vector2(timeline.x(6)-timeline.x(0),0));app._input(motion);release(motion.position);await settle()
 	assert(app.audio_clips[0].start_frame==12 and app.audio_clips[0].source_out_sample==26460)
 	app.undo();assert(app.audio_document()==trimmed and pcm_hash()==mixed)
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],24).image.set_pixel(70,70,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],24)).image.set_pixel(70,70,Color.CYAN)
 	app.set_frame(24);var expected: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 	var saved:=folder.path_join("edge-trim.has");app.has_project.save_file(saved,"packed");await job();assert(app.has_project.path==saved)
 	begin_edge();move_edge(11);app.has_project.open_file(saved);await job();assert(not app.timeline.audio_gesture_active() and pcm_hash()==mixed)

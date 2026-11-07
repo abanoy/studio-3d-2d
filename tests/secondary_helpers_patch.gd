@@ -44,7 +44,7 @@ func choose(app,indices: Array,operation:=0) -> void:
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();var source: String=args[0];var folder: String=args[1];var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("patch-recovery");root.add_child(app);await settled();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("patch-cache")
 	app.append_object(Model.definition(source),"model");var actor: RefCounted=app.renderer.active_model();var id: String=actor.data.id;var sha: String=actor.data.sha256;var before: Dictionary=actor.data.duplicate(true);var history: int=app.history.size()
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN);var paint: PackedByteArray=Drawing.cel_at(app.layers[1],0).image.get_data()
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN);var paint: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()
 	app.renderer.camera.position=Vector3(0,1.2,4);app.renderer.camera.look_at(Vector3(0,1.1,0));app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,48)];var shots: Array=app.keys.duplicate(true)
 	var helper=app.physics_editor.helper_editor;helper.button.pressed.emit();await wait_job(helper);helper.patch_toggle.button_pressed=true;await settled()
 	check(not helper.preview.is_empty() and helper.preview.source_vertices.size()==20,"patch review has exact source vertices for the selected connected part")
@@ -54,7 +54,7 @@ func run() -> void:
 	await choose(app,range(8,20))
 	check(helper.request.get("vertex_mask",[])==range(8,20) and helper.preview.selected_vertices.size()==12 and not helper.apply_button.disabled,"routed canvas box selects the lower patch through zoom and pan")
 	check(helper.preview.region.attachment_method=="pinned cut boundary" and int(helper.preview.region.attachment_vertices)==2,"review pins the actual connection to the surrounding surface")
-	check(actor.data==before and app.history.size()==history and app.keys==shots and Drawing.cel_at(app.layers[1],0).image.get_data()==paint,"patch selection edits no model, history, camera keys or independent drawing")
+	check(actor.data==before and app.history.size()==history and app.keys==shots and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()==paint,"patch selection edits no model, history, camera keys or independent drawing")
 	await choose(app,[6,7],1);check(helper.request.vertex_mask==range(6,20) and not helper.apply_button.disabled,"Add to patch grows the connected selection")
 	await choose(app,[6,7],2);check(helper.request.vertex_mask==range(8,20) and not helper.apply_button.disabled,"Remove from patch restores the selected garment boundary")
 	await choose(app,[0,1],1);check(helper.apply_button.disabled and helper.info.text.contains("connected"),"disconnected patch refuses Apply while retaining the source")
@@ -90,7 +90,7 @@ func run() -> void:
 	check(actor.root.get_meta("has_secondary_rig").chains.size()==2 and actor.data.metadata.generated_helper_history.size()==2,"two disjoint patches coexist on one original connected surface")
 	var project:=folder.path_join("patches.has");app.has_project.save_file(project,"packed");await wait_job(app.has_project);app.new_project();app.has_project.open_file(project);await wait_job(app.has_project);actor=app.renderer.world_runtime.instance(id)
 	check(actor!=null and actor.root.get_meta("has_secondary_rig").chains.size()==2 and indices_equal(actor.data.metadata.generated_helper_history[0].region.vertex_mask,8,20),"packed HAS retains both patch rigs and exact reviewed mask provenance")
-	check(Drawing.cel_at(app.layers[1],0).image.get_data()==paint and JSON.stringify(app.keys)==JSON.stringify(JSON.parse_string(JSON.stringify(shots,"",true,true))) and FileAccess.get_sha256(source)==sha,"patch authoring and reopening preserve drawings, camera and original source")
+	check(Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()==paint and JSON.stringify(app.keys)==JSON.stringify(JSON.parse_string(JSON.stringify(shots,"",true,true))) and FileAccess.get_sha256(source)==sha,"patch authoring and reopening preserve drawings, camera and original source")
 	var movie:=""
 	if args.size()>2:
 		app.physics_editor.fan_editor.add_fan();var fan: RefCounted=app.renderer.active_model();fan.data.position=[0,1.2,-1.5];fan.data.rotation_xyzw=[0,0,0,1];fan.data.metadata.airflow.speed=10;fan.apply(0);app.world_selection.select_entity(id,false)

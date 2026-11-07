@@ -7,7 +7,7 @@ func run() -> void:
 	var packed:=folder.path_join("Corner colors.has")
 	if reader:
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")));app.has_project.open_file(packed);await job()
-		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.flats and Storage.image_hash(Drawing.cel_at(app.layers[2],0).image)==expected.ink,"cold Open restores both corner-connected color areas and exact original ink")
+		check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==expected.flats and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],0)))==expected.ink,"cold Open restores both corner-connected color areas and exact original ink")
 		check(app.fill_editor.connectivity_choice.get_selected_id()==4 and equal(app.keys,expected.keys) and equal(World.portable(app.current_world()),expected.world),"connection choice is session-only; standard world and camera keys persist")
 		var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true);check(Storage.image_hash(reference)==expected.render and FileAccess.get_sha256(packed)==expected.project_hash,"cold render equals movie input and manual HAS remains untouched")
 		print("FILL_CONNECTIONS_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
@@ -21,7 +21,7 @@ func run() -> void:
 	check(choice.get_selected_id()==4 and not choice.is_visible_in_tree(),"Simple defaults to edges only without exposing specific connection controls")
 	click(Vector2(750,400));await wait_fill();var cel:=Drawing.cel_at(app.layers[1],0);var four:=Storage.image_hash(cel.image)
 	check(app.fill_editor.last_result.connectivity==4 and app.fill_editor.last_result.region==10000 and cel.image.get_pixel(750,400)==Color.CYAN and cel.image.get_pixel(850,500).a==0,"actual default fill colors only the clicked compartment")
-	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"default fill has one complete cel Undo");app.redo();check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==four,"default cel Redo is byte exact");app.undo()
+	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"default fill has one complete cel Undo");app.redo();check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==four,"default cel Redo is byte exact");app.undo()
 	app.set_advanced(true);await settle();app.inspector_scroll.ensure_control_visible(choice);await settle()
 	check(app.inspector_scroll.get_global_rect().encloses(choice.get_global_rect()),"complete connection dropdown is visible after Advanced layout")
 	await click_control(choice)
@@ -40,7 +40,7 @@ func run() -> void:
 	var history: int=app.history.size();click(Vector2(750,400));await wait_fill();cel=Drawing.cel_at(app.layers[1],0);var flats: Image=cel.image;var first:=Storage.image_hash(flats);var worker_ms: float=app.fill_editor.last_result.worker_ms
 	check(app.fill_editor.last_result.connectivity==8 and app.fill_editor.last_result.region==20000 and flats.get_pixel(750,400)==Color.CYAN and flats.get_pixel(850,500)==Color.CYAN and app.fill_editor.pending.is_empty(),"zoomed corner-connected fill joins both enclosed compartments")
 	check(app.history.size()==history+1 and Storage.image_hash(ink)==ink_hash and flats.get_pixel(800,449).a==0,"only Flats changes; separating ink pixels remain untouched")
-	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"corner fill has one cel Undo");app.redo();flats=Drawing.cel_at(app.layers[1],0).image;check(Storage.image_hash(flats)==first,"corner fill Redo restores both areas exactly")
+	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"corner fill has one cel Undo");app.redo();flats=Drawing.image(Drawing.cel_at(app.layers[1],0));check(Storage.image_hash(flats)==first,"corner fill Redo restores both areas exactly")
 	app.color.color=Color(1,0,0,0.5);click(Vector2(750,400));await wait_fill();var second:=Storage.image_hash(flats)
 	check(app.history[-1].type=="pixels" and app.history[-1].bytes<1024*1024 and flats.get_pixel(750,400).to_html()=="ff000080" and flats.get_pixel(850,500).to_html()=="ff000080","corner recolor uses exact RGBA and bounded tile history")
 	app.undo();check(Storage.image_hash(flats)==first,"tile Undo restores both corner-connected colors");app.redo();check(Storage.image_hash(flats)==second,"tile Redo restores both alpha colors")
@@ -58,16 +58,16 @@ func run() -> void:
 	check(background_frames>3 and app.fill_editor.last_result.background_thread,"corner traversal runs over detached worker bytes while UI frames continue")
 	check(Storage.image_hash(ink)==ink_hash and equal(keys,app.keys) and equal(world,World.portable(app.current_world())) and equal(view,app.renderer.view_state()) and FileAccess.get_sha256(app.source)==source_hash,"corner fills preserve original ink, common world, camera/view and source geometry")
 	app.has_project.save_file(packed,"packed");await job();var manual:=FileAccess.get_sha256(packed);var linked:=folder.path_join("Corner colors linked.has");app.has_project.save_file(linked,"linked");await job();app.has_project.open_file(linked);await job()
-	check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==second and Storage.image_hash(Drawing.cel_at(app.layers[2],0).image)==ink_hash,"linked HAS preserves corner-connected color and separate source ink")
+	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==second and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],0)))==ink_hash,"linked HAS preserves corner-connected color and separate source ink")
 	app.changed();app.autosave_tick(true)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-	check(app.open_project(app.recovery_root.path_join(app.recovery_session)) and Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==second and FileAccess.get_sha256(packed)==manual,"recovery preserves exact colors without changing the manual save")
+	check(app.open_project(app.recovery_root.path_join(app.recovery_session)) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==second and FileAccess.get_sha256(packed)==manual,"recovery preserves exact colors without changing the manual save")
 	app.set_frame(0);var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder)
 	check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==reference.get_data(),"ordinary MP4 frame exactly matches both colored areas over animated3D")
 	var movie: String=app.last_export_folder.path_join("movie.mp4");var expected:={"flats":second,"ink":ink_hash,"keys":keys,"world":world,"render":Storage.image_hash(reference),"project_hash":manual};FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected))
 	# Deliberately replace only the test fixture after persistence checks: a
 	# one-pixel diagonal opening must retain the existing spill protection.
-	app.mode.select(0);app.change_mode(0);app.tool.select(2);choice.select(1);app.fill_editor.expand_edges.value=0;app.layers[1].cels.clear();var spill_ink: Image=Drawing.cel_at(app.layers[2],0).image
+	app.mode.select(0);app.change_mode(0);app.tool.select(2);choice.select(1);app.fill_editor.expand_edges.value=0;app.layers[1].cels.clear();var spill_ink: Image=Drawing.image(Drawing.cel_at(app.layers[2],0))
 	for i in range(1,23):spill_ink.set_pixel(700-i,350-i,Color.TRANSPARENT)
 	Drawing.touch(spill_ink);app.changed();var spill_hash:=Storage.image_hash(spill_ink);click(Vector2(750,400));await wait_fill()
 	check(not app.fill_editor.pending.is_empty() and app.fill_editor.last_result.edge and Drawing.cel_at(app.layers[1],0).is_empty() and Storage.image_hash(spill_ink)==spill_hash,"a diagonal escape to the canvas edge previews instead of filling the canvas automatically")

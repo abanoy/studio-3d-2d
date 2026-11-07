@@ -33,7 +33,7 @@ func run() -> void:
 	var asset:=folder.path_join("figure.glb");SceneIO.make_pose_fixture(asset);check(app.pose_editor.add_model(asset).is_empty(),"original rig imports")
 	app.pose_editor.record_key();var id: String=app.renderer.active_instance_id
 	var end: Dictionary=app.keys[0].duplicate(true);end.frame=48;app.keys.append(end)
-	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.cel_at(app.layers[1],0).image.set_pixel(70,70,Color.CYAN)
+	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(70,70,Color.CYAN)
 	check(app.import_audio(folder.path_join("tone.wav"),24).is_empty(),"sound begins at frame24")
 	app.show_project_options();await settle();check(not app.advanced_mode and app.project_timing.duration.is_visible_in_tree(),"scene length is available in Simple")
 	var video: Dictionary=app.video.duplicate(true);var world: Dictionary=app.current_world().duplicate(true);var shots: Array=app.keys.duplicate(true);var audio: Dictionary=app.audio_document().duplicate(true);var prefix: PackedByteArray=app.audio_mix.pcm.duplicate();var view: Dictionary=app.renderer.view_state();var history: int=app.history.size()

@@ -95,10 +95,10 @@ func run() -> void:
 	for i in range(90):await physics_frame
 	check(physics.recording.finish() and actor.has_animation() and not physics.is_running(),"explicit Record alone creates an editable take from default live physics")
 	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false)
-	Drawing.cel_at(app.layers[1],0).image.set_pixel(80,80,Color.CYAN);var paint: PackedByteArray=Drawing.cel_at(app.layers[1],0).image.get_data()
+	Drawing.edit_image(Drawing.cel_at(app.layers[1],0)).image.set_pixel(80,80,Color.CYAN);var paint: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()
 	var project:=folder.path_join("import-physics.has");app.has_project.save_file(project,"packed");await wait_job(app.has_project)
 	app.new_project();app.has_project.open_file(project);await wait_job(app.has_project)
-	check(not physics.is_running() and physics.import_starts.is_empty() and app.renderer.world_runtime.instance(id).has_animation() and Drawing.cel_at(app.layers[1],0).image.get_data()==paint,"HAS reopens the authored take and exact drawing without fresh simulation")
+	check(not physics.is_running() and physics.import_starts.is_empty() and app.renderer.world_runtime.instance(id).has_animation() and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()==paint,"HAS reopens the authored take and exact drawing without fresh simulation")
 	var preview: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder)
 	check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==preview.get_data(),"MP4 uses saved authored motion and overlay rather than new live physics")
 	var movie: String=app.last_export_folder.path_join("movie.mp4")

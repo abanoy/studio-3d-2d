@@ -28,7 +28,7 @@ func run() -> void:
 	var expected:={"session":lesson.session,"course":lesson.course,"manual":manual,"manual_sha256":FileAccess.get_sha256(manual),"lesson_folder":lesson.store.folder(lesson.course,lesson.session),"progress_sha256":FileAccess.get_sha256(lesson.store.folder(lesson.course,lesson.session).path_join("progress.json")),"states":{}}
 	for at in [12,18]:
 		app.mode.select(0);app.change_mode(0);app.active_layer=1;app.layer_choice.select(1);app.set_frame(at);app.create_cel(false)
-		Drawing.cel_at(app.layers[1],at).image.fill_rect(Rect2i(60+at,90,80,50),Color.CYAN if at==12 else Color.MAGENTA)
+		Drawing.edit_image(Drawing.cel_at(app.layers[1],at)).image.fill_rect(Rect2i(60+at,90,80,50),Color.CYAN if at==12 else Color.MAGENTA)
 		app.canvas.zoom=1.25 if at==12 else 1.5;app.canvas.pan=Vector2(at,at+5);app.renderer.camera.position+=Vector3(.1,0,0);app.changed();await settle()
 		lesson.set_collapsed(at==18)
 		var image: Image=await app.renderer.capture(app.keys,app.layers,at,true);image.save_png(folder.path_join("frame%d.png" % at))
@@ -36,7 +36,7 @@ func run() -> void:
 		app.autosave_tick(true)
 		while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 		check(app.checkpoint_revision==app.recovery_revision,"ordinary autosave protects later practice edit at frame%d" % at)
-		expected.states[str(at)]={"ui":Store.ui(app),"paint":Storage.image_hash(Drawing.cel_at(app.layers[1],at).image),"cels":app.layers[1].cels.size(),"baseline":lesson.baseline,"fov_baseline":lesson.fov_baseline,"collapsed":lesson.collapsed}
+		expected.states[str(at)]={"ui":Store.ui(app),"paint":Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],at))),"cels":app.layers[1].cels.size(),"baseline":lesson.baseline,"fov_baseline":lesson.fov_baseline,"collapsed":lesson.collapsed}
 	expected["checkpoint"]=app.recovery_root.path_join(app.recovery_session)
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected,"",true,true))
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected"))

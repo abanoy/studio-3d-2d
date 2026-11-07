@@ -57,12 +57,12 @@ func run() -> void:
 	var before: Dictionary=rig.data.duplicate(true);var old:=Model.new();old.data=before
 	editor.frame_model();var camera: Camera3D=app.renderer.camera;app.keys=[Timeline.key(0,camera.position,camera.quaternion,camera.fov)]
 	app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false)
-	Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
+	Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
 	var wav:=ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")
 	check(app.import_audio(wav).is_empty(),"clip fixture contains actual independent WAV audio")
 	app.audio_clip.start_frame=24;app.audio_clip.gain_db=-6;app.rebuild_audio()
 	var audio: Dictionary=app.audio_clip.duplicate(true);var shots: Array=app.keys.duplicate(true)
-	var paint: PackedByteArray=Drawing.cel_at(app.layers[1],0).image.get_data();var map_data: Dictionary=app.renderer.world_runtime.instance(map_id).data.duplicate(true)
+	var paint: PackedByteArray=Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data();var map_data: Dictionary=app.renderer.world_runtime.instance(map_id).data.duplicate(true)
 	var image8: Image=await app.renderer.capture(app.keys,app.layers,8,true)
 	var history: int=app.history.size();await action(app,8,10)
 	check(rig.data.format==Model.BODY_FORMAT and rig.data.animation_clips.size()==2 and rig.data.animation_clips[1].start==8,"actual timeline context menu splits the independent model into owned source pieces")
@@ -83,7 +83,7 @@ func run() -> void:
 	var gap: float=rig.sample_transform(16).position[0]
 	app.renderer.world_runtime.evaluate(16)
 	check(rig.root.visible and gap>old.sample_transform(7).position[0] and gap<old.sample_transform(8).position[0],"gap remains visible and interprets connecting motion")
-	check(app.keys==shots and app.audio_clip==audio and Drawing.cel_at(app.layers[1],0).image.get_data()==paint and app.renderer.world_runtime.instance(map_id).data==map_data,"split/move leaves shot keys, WAV, drawing and other map unchanged")
+	check(app.keys==shots and app.audio_clip==audio and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()==paint and app.renderer.world_runtime.instance(map_id).data==map_data,"split/move leaves shot keys, WAV, drawing and other map unchanged")
 	app.undo();check(rig.data.animation_clips[1].start==8,"Undo restores only the moved piece's old timing")
 	app.redo();check(rig.data.animation_clips[1].start==24,"Redo restores the independently moved piece")
 	press.shift_pressed=true;press.position=Vector2(app.timeline.x(28),app.timeline.row_y(1)+12);app.timeline._gui_input(press)
@@ -125,7 +125,7 @@ func run() -> void:
 		exact_transforms=exact_transforms and object.root.global_transform==saved_transforms[object_id].root
 		for part in object.order:exact_transforms=exact_transforms and object.bone_transform(part)==saved_transforms[object_id].bones[part]
 	var exact_state: bool=World.portable(app.renderer.world_state())==JSON.parse_string(JSON.stringify(saved_world,"",true,true))
-	var exact_media: bool=Drawing.cel_at(app.layers[1],0).image.get_data()==paint and app.keys==JSON.parse_string(JSON.stringify(shots,"",true,true)) and app.video==JSON.parse_string(JSON.stringify(saved_video,"",true,true))
+	var exact_media: bool=Drawing.image(Drawing.cel_at(app.layers[1],0)).get_data()==paint and app.keys==JSON.parse_string(JSON.stringify(shots,"",true,true)) and app.video==JSON.parse_string(JSON.stringify(saved_video,"",true,true))
 	print("PACKED_CLIP_DIAGNOSTIC "+JSON.stringify({"pixels":packed_pixels,"transforms_exact":exact_transforms,"data_exact":exact_state,"media_exact":exact_media}))
 	check(exact_transforms and exact_state and exact_media and packed_pixels.close,"reopened multi-piece animation retains exact data/transforms/media within existing GLB rebuild edge bounds")
 	var linked:=folder.path_join("clips-linked.has");app.has_project.save_file(linked,"linked");await wait_job(app.has_project);app.new_project();app.has_project.open_file(linked);await wait_job(app.has_project)

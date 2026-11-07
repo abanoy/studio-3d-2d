@@ -64,7 +64,7 @@ func run() -> void:
 	check(app.renderer.world_runtime.instances.size()==request.models.size(),"both VRM versions coexist as independent standard instances")
 	app.world_selection.select_entity(identities[0]);app.pose_editor.set_flag("visible",true);app.pose_editor.frame_model()
 	app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
-	app.mode.select(0);app.change_mode(0);app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(100,100),Vector2(220,100),6,Color.RED,false);app.changed()
+	app.mode.select(0);app.change_mode(0);app.create_cel(false);Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(100,100),Vector2(220,100),6,Color.RED,false);app.changed()
 	var expected: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	var project:=folder.path_join("avatars.has");app.has_project.save_file(project,"packed");await wait_job(app.has_project)
 	check(app.has_project.path==project and not app.dirty,"VRM geometry/poses and independent drawing save as packed HAS")

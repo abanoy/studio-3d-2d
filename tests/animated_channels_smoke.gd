@@ -116,7 +116,7 @@ func run() -> void:
 	await click(app,Vector2(9,timeline.row_y(0)+12))
 	check(not timeline.expanded.get(id,false) and timeline.visual_rows.size()==2 and timeline.row_y(1)==timeline.ROW_HEIGHT,"collapse restores ordinary object layout and preserves both objects")
 	await click(app,Vector2(9,timeline.row_y(0)+12))
-	app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.cel_at(app.layers[1],0).image,Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
+	app.set_frame(0);app.create_cel(false);Drawing.stroke(Drawing.image(Drawing.cel_at(app.layers[1],0)),Vector2(80,80),Vector2(180,80),5,Color.RED,false);app.changed()
 	var wav:=ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav")
 	if FileAccess.file_exists(wav):
 		check(app.import_audio(wav).is_empty(),"channel fixture retains independent audio")
