@@ -1310,9 +1310,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/private_metadata_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/has_save_lock_2026-11-06.json"
         }
       ],
-      "remaining": "HAS archive and directory write/readback faults plus private recovery/journal/lesson metadata link/hardlink/permission safety are verified in scoped Linux cases. Directory-sync/power-loss, native Windows and concurrent-writer robustness remain incomplete.",
+      "remaining": "Archive/directory/private-metadata fault safety and cooperating HAS-worker exclusion now have scoped Linux evidence. Concurrent directory writers, directory sync/physical power loss and native Windows behavior remain incomplete.",
       "external_dependencies": []
     },
     {
@@ -2208,7 +2212,7 @@
     {
       "requirement": "STORE-04",
       "priority": 1,
-      "action": "Archive, directory and private recovery/lesson metadata fault safety now have scoped Linux evidence. Address concurrent-writer behavior and directory sync; keep native Windows and physical power-loss acceptance explicit."
+      "action": "HAS workers now exclude concurrent saves and use verified fresh backup temporaries. Complete concurrent directory-writer handling and directory sync; keep native Windows/physical power-loss acceptance explicit."
     },
     {
       "requirement": "MOTION-03",

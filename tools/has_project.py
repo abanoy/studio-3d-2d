@@ -1,5 +1,7 @@
 """Bounded .has project container v1. Data only; never executes archive contents."""
 from pathlib import Path
+from contextlib import contextmanager
+import errno
 import hashlib
 import json
 import math
@@ -280,9 +282,52 @@ def verify_written_archive(path, header_blob, payload, request):
                 raise HasError('Saved HAS readback checksum differs: '+row['path']+'; previous save preserved')
 
 
+@contextmanager
+def save_lock(target):
+    """A persistent inode avoids unlink/reopen races; the OS releases ownership on exit."""
+    lock = Path(str(target)+'.lock')
+    if lock.is_symlink():raise HasError('Linked HAS save lock refused; previous save preserved')
+    flags = os.O_RDWR | os.O_CREAT | getattr(os,'O_NOFOLLOW',0) | getattr(os,'O_CLOEXEC',0)
+    handle = os.open(lock,flags,0o600)
+    try:
+        opened=os.fstat(handle);named=lock.lstat()
+        if not stat.S_ISREG(opened.st_mode) or opened.st_nlink!=1 or opened.st_size!=0 or (opened.st_dev,opened.st_ino)!=(named.st_dev,named.st_ino):
+            raise HasError('Unsafe HAS save lock; previous save preserved')
+        try:
+            if os.name=='posix':
+                import fcntl
+                fcntl.flock(handle,fcntl.LOCK_EX | fcntl.LOCK_NB)
+            elif os.name=='nt':
+                import msvcrt
+                os.lseek(handle,0,os.SEEK_SET);msvcrt.locking(handle,msvcrt.LK_NBLCK,1)
+            else:raise HasError('HAS save locking is unavailable on this platform')
+        except OSError as error:
+            if error.errno not in (errno.EACCES,errno.EAGAIN):raise
+            raise HasError('Another save is writing this HAS file. Wait for it to finish, then save again.') from error
+        yield
+    finally:
+        os.close(handle)
+
+
 def pack(request):
+    chosen=Path(request['path']).expanduser();target=chosen.parent.resolve()/chosen.name
+    if target.suffix.lower()!='.has':raise HasError('Choose a .has project filename')
+    check_cancel(request)
+    for destination in (target,Path(str(target)+'.backup'),Path(str(target)+'.backup.tmp')):
+        if destination.is_symlink():raise HasError('Linked save destination refused; previous save and original source preserved')
+        if destination.is_dir():raise HasError('Save destination is blocked by a directory; previous save preserved')
+    target.parent.mkdir(parents=True,exist_ok=True)
+    with save_lock(target):
+        return _pack_locked({**request,'path':str(target)})
+
+
+def _pack_locked(request):
     folder = Path(request['folder']).resolve(strict=True)
-    target = Path(request['path']).resolve()
+    chosen = Path(request['path']).expanduser()
+    target = chosen.parent.resolve() / chosen.name
+    for destination in (target, Path(str(target)+'.backup'), Path(str(target)+'.backup.tmp')):
+        if destination.is_symlink(): raise HasError('Linked save destination refused; previous save and original source preserved')
+        if destination.is_dir(): raise HasError('Save destination is blocked by a directory; previous save preserved')
     if target.suffix.lower() != '.has': raise HasError('Choose a .has project filename')
     mode = request['storage']
     if mode not in ('packed', 'linked'): raise HasError('Choose packed or linked storage')
@@ -352,8 +397,8 @@ def pack(request):
                     if valid:verify_written_archive(target,old_header_blob,header['payload'],request)
         except (OSError,ValueError,KeyError,TypeError,EOFError,zlib.error,zipfile.BadZipFile,RuntimeError): valid = False
         if valid:
-            backup = Path(str(target)+'.backup.tmp')
-            shutil.copyfile(target,backup);os.replace(backup,Path(str(target)+'.backup'))
+            backup = Path(str(target)+'.backup')
+            checked_copy(target, backup, sha(target), request)
     check_cancel(request); os.replace(temporary,target)
     return {'ok':True,'path':str(target),'storage':mode,'bytes':target.stat().st_size}
 

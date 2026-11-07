@@ -83,10 +83,84 @@ class SaveFaultTests(unittest.TestCase):
                 with self.assertRaises(OSError):has.pack(request)
             self.assertEqual(target.read_bytes(),before);self.assertEqual(backup.read_bytes(),before)
 
+    @unittest.skipUnless(os.name=='posix','Owned symbolic-link fixture; Windows reparse gate remains')
+    def test_linked_save_destinations_preserve_original_and_saved_files(self):
+        for suffix in ('', '.backup', '.backup.tmp'):
+            with self.subTest(suffix=suffix), tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);request,target,before=self.setup_save(root)
+                original=root/'original.bin';original.write_bytes(b'ORIGINAL')
+                destination=Path(str(target)+suffix)
+                if destination.exists():destination.unlink()
+                destination.symlink_to(original)
+                with self.assertRaisesRegex(has.HasError,'Linked save destination'):has.pack(request)
+                self.assertEqual(original.read_bytes(),b'ORIGINAL');self.assertTrue(destination.is_symlink())
+                if suffix:self.assertEqual(target.read_bytes(),before)
+
+    @unittest.skipUnless(os.name=='posix','Owned hard-link fixture; Windows native gate remains')
+    def test_hard_linked_legacy_backup_temporary_preserves_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,target,before=self.setup_save(root)
+            original=root/'original.bin';original.write_bytes(b'ORIGINAL')
+            legacy=Path(str(target)+'.backup.tmp');os.link(original,legacy)
+            has.pack(request)
+            self.assertEqual(original.read_bytes(),b'ORIGINAL');self.assertEqual(legacy.read_bytes(),b'ORIGINAL')
+            self.assertEqual(Path(str(target)+'.backup').read_bytes(),before)
+
+    def test_corrupted_backup_readback_preserves_both_saved_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,target,before=self.setup_save(root)
+            backup=Path(str(target)+'.backup');backup.write_bytes(before);original=has.os.fsync
+            def corrupt(fd):
+                original(fd)
+                for path in root.glob(target.name+'.backup.*.tmp'):path.write_bytes(b'corrupt backup')
+            with mock.patch.object(has.os,'fsync',side_effect=corrupt):
+                with self.assertRaisesRegex(has.HasError,'changed during copying'):has.pack(request)
+            self.assertEqual(target.read_bytes(),before);self.assertEqual(backup.read_bytes(),before)
+
+    @unittest.skipUnless(os.name=='posix','Actual process lock/kill fixture; native Windows gate remains')
+    def test_live_writer_refuses_overlap_and_os_releases_after_exit_or_sigkill(self):
+        script="""import sys
+from pathlib import Path
+from tools import has_project as has
+with has.save_lock(Path(sys.argv[1])):
+    print('LOCKED',flush=True)
+    sys.stdin.readline()
+"""
+        for killed in (False,True):
+            with self.subTest(killed=killed),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);request,target,before=self.setup_save(root);backup=Path(str(target)+'.backup');backup.write_bytes(before)
+                child=subprocess.Popen([sys.executable,'-c',script,str(target)],cwd=Path(__file__).resolve().parents[1],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+                try:
+                    self.assertEqual(child.stdout.readline().strip(),'LOCKED')
+                    with self.assertRaisesRegex(has.HasError,'Another save'):has.pack(request)
+                    self.assertEqual(target.read_bytes(),before);self.assertEqual(backup.read_bytes(),before)
+                    self.assertEqual(list(root.glob(target.name+'.*.tmp')),[])
+                    if killed:child.kill()
+                    else:child.stdin.write('release\n');child.stdin.flush()
+                    child.wait(timeout=10)
+                    self.assertEqual(child.returncode,-signal.SIGKILL if killed else 0)
+                    has.pack(request)
+                    self.assertEqual(backup.read_bytes(),before)
+                    self.assertTrue(has.unpack({'path':str(target),'folder':str(root/'reopened')})['ok'])
+                finally:
+                    if child.poll() is None:child.kill();child.wait(timeout=10)
+                    child.stdin.close();child.stdout.close();child.stderr.close()
+
+    @unittest.skipUnless(os.name=='posix','Owned lock-link fixtures; native Windows gate remains')
+    def test_linked_or_hardlinked_lock_cannot_modify_original(self):
+        for hard in (False,True):
+            with self.subTest(hard=hard),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);request,target,before=self.setup_save(root);lock=Path(str(target)+'.lock');lock.unlink()
+                original=root/'original';original.write_bytes(b'ORIGINAL')
+                if hard:os.link(original,lock)
+                else:lock.symlink_to(original)
+                with self.assertRaises(has.HasError):has.pack(request)
+                self.assertEqual(original.read_bytes(),b'ORIGINAL');self.assertEqual(target.read_bytes(),before)
+
     def test_backup_copy_failure_preserves_both_saved_files(self):
         with tempfile.TemporaryDirectory() as directory:
             request,target,before=self.setup_save(Path(directory));backup=Path(str(target)+'.backup');backup.write_bytes(before)
-            with mock.patch.object(has.shutil,'copyfile',side_effect=OSError(errno.ENOSPC,'injected backup disk full')):
+            with mock.patch.object(has,'checked_copy',side_effect=OSError(errno.ENOSPC,'injected backup disk full')):
                 with self.assertRaises(OSError):has.pack(request)
             self.assertEqual(target.read_bytes(),before);self.assertEqual(backup.read_bytes(),before)
 
@@ -143,8 +217,9 @@ with mock.patch.object(has.os,'replace',side_effect=replace):has.pack(request)
                 result=subprocess.run([sys.executable,'-c',script,json.dumps(request),stage],cwd=Path(__file__).resolve().parents[1],capture_output=True,text=True,timeout=20)
                 self.assertEqual(result.returncode,-signal.SIGKILL,result.stdout+result.stderr);self.assertEqual(target.read_bytes(),before);self.assertEqual(backup.read_bytes(),before)
                 self.assertTrue(has.unpack({'path':str(target),'folder':str(root/'reopened')})['ok'])
-                pending=[p for p in root.glob(target.name+'.*.tmp') if p!=Path(str(target)+'.backup.tmp')];self.assertEqual(len(pending),1)
-                if stage=='backup':self.assertEqual(Path(str(target)+'.backup.tmp').read_bytes(),before)
+                pending=[p for p in root.glob(target.name+'.*.tmp') if not p.name.startswith(target.name+'.backup.')];self.assertEqual(len(pending),1)
+                if stage=='backup':
+                    backups=list(root.glob(target.name+'.backup.*.tmp'));self.assertEqual(len(backups),1);self.assertEqual(backups[0].read_bytes(),before)
                 self.assertTrue(has.unpack({'path':str(pending[0]),'folder':str(root/'verified-pending')})['ok'])
 
 if __name__=='__main__':unittest.main()

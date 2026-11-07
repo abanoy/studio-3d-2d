@@ -41,3 +41,30 @@ Directory manifests/PNG write fault coverage, directory-sync guarantees and nati
 Windows/platform testing remain part of STORE-04's open acceptance work.
 
 Evidence: [save readback and faults](benchmarks/has_save_readback_2026-11-06.json).
+
+The follow-up archive write audit also reproduced original-source truncation via
+an existing `.has.backup.tmp` symbolic link. Save now refuses linked final,
+backup and legacy temporary destinations before writing. Backup uses a fresh
+unique temporary, streams/flushed-syncs its copy, checks SHA256 and atomically
+replaces the backup entry. A legacy hard-linked temporary remains untouched.
+The selected parent directory is resolved while the final filename is inspected
+before following a link; an explicitly selected linked directory stays usable.
+
+Save holds a nonblocking OS advisory lock for the complete pack/backup/replace
+operation. A second cooperating writer receives a clear busy refusal before
+packing. The empty `.has.lock` sidecar is persistent so two writers cannot lock
+different inodes after an unlink/reopen race. The OS releases ownership when the
+worker exits or is killed; no stale PID file needs removal. Linked, hard-linked,
+nonempty and nonregular lock files refuse without changing their source.
+This covers cooperating HAS workers, not directory saves or hostile external
+filesystem mutation. POSIX lock/kill cases passed; the Windows lock branch still
+needs native validation.
+
+The current portable archive matrix passes53tests, adding linked destinations,
+hard-linked legacy backup temporary, corrupted copied-backup readback, overlapping
+real writer refusal and successful saves after graceful/SIGKILL lock release.
+Existing fault injections now target the streamed backup helper and identify its
+unique temporary; old-save/backup/pending-archive assertions remain. The real
+32cel app suite also passes62checks plus16PNG compatibility cases through packed save/reopen, actual abrupt
+recovery/fresh startup and H264/AAC output. Source assets/manual HAS stay exact.
+See [backup and lock evidence](benchmarks/has_save_lock_2026-11-06.json).

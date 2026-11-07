@@ -1,0 +1,229 @@
+{
+  "date": "2026-11-06",
+  "scope": "Cooperating HAS-worker exclusion, source-safe backup replacement and scoped POSIX fault/app regression. Directory saves, hostile filesystem mutation, native Windows and physical power loss remain open.",
+  "baseline": {
+    "commit": "53bea01",
+    "owned_backup_temporary_symlink": true,
+    "source_unchanged": false,
+    "returned_success": true
+  },
+  "python": {
+    "tests": 53,
+    "failures": 0,
+    "skips": 0,
+    "raw": "/workspace/has-handoff-audit/has-save-lock-final.log",
+    "faults": [
+      "linked final/backup/legacy temporary",
+      "hard-linked legacy backup temporary",
+      "corrupted streamed backup readback",
+      "real competing writer refuses before packing",
+      "graceful and SIGKILL lock release permits next save",
+      "existing ENOSPC/cancel/replace/readback/SIGKILL cases retained"
+    ]
+  },
+  "app": {
+    "automatic_open": true,
+    "adaptive_open": false,
+    "reports": {
+      "unit": {
+        "checks": 31,
+        "failures": 0
+      },
+      "png-compatibility": {
+        "cache_hits": 16,
+        "cases": [
+          {
+            "name": "color2-depth16.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "e67477200047df6269888bb44717bca8e22bad1e130bacea74533e1354796a68"
+          },
+          {
+            "name": "color2-depth8.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "8bebf9e71d518c8eaf7cdc2054dab35a4a6a184cb096c75acbbab85a2a2c6879"
+          },
+          {
+            "name": "color4-depth16.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "ed0e7a88b4b1c479767c78482fa62b6f1cdc83f9c5ba433c156322255a02eb6f"
+          },
+          {
+            "name": "color4-depth8.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "a61c3f48139832caa035555ccfc99393feafb00387759ab14e76596455e1428a"
+          },
+          {
+            "name": "color6-depth16.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "85f739c9b5c4b6b8f89fd570794f914aa699aae50541fa3016be7c0c660ef2df"
+          },
+          {
+            "name": "color6-depth8.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "bb800897e39951c7bab0a0fea9900e354a0fd5165a4d4ef71c5540163dddcca6"
+          },
+          {
+            "name": "gray1.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "d8b0ad8408676af0e124ddd45cd8b09cdc7303296d3d53529ae19d531bd6e573"
+          },
+          {
+            "name": "gray16.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "4c61d80075d709da4f731397de129462e1a91808a8a5a3e60c77d136b49a1ddb"
+          },
+          {
+            "name": "gray2.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "1ddea9ce26a2e89396ed886e017030af6976052dd98a6fca589c35f6a225bdb4"
+          },
+          {
+            "name": "gray4.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "c8554e2433e5a608c32c822f3f37510cf3dda0798dbe76dea8910673f3b5e9a2"
+          },
+          {
+            "name": "gray8.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "08898f1b32e5a415ad4226812d4c524429f384c5e2e69304dacad4b8921af34f"
+          },
+          {
+            "name": "interlaced.png",
+            "ok": true,
+            "pixel_sha256": "40a028bd71b22e6f2eb75e7691b59882483febd139de9c5afee334c988052ddb",
+            "source_sha256": "cdaaed121f619da685a841dc9f644e1928b4d7cdee4bd0c3600dff2a3556ec32"
+          },
+          {
+            "name": "palette1.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "22574861f0a81d9f36b138d4e4cfe20883a97fcadb9ea7e9ee493c9aee522b9b"
+          },
+          {
+            "name": "palette2.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "be871ccb3dbc75cdedec573973c5f69ee1e97b7e3c43b1edb151a0412e9ed3b0"
+          },
+          {
+            "name": "palette4.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "0ca6d9f15e32104017669a64e3dcb9386ca8aeaa84b99450b078c60fbbc82c3f"
+          },
+          {
+            "name": "palette8.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "e022d29978dfbfd8e66dc6b8d5d4a83815938b42d935a4369b49a38ab16d08a0"
+          }
+        ],
+        "failures": 0,
+        "png_decodes": 16
+      },
+      "writer": {
+        "checks": 20,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/has-save-lock-app/render_1794020652_14668826_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "19396",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "decoded_onset_sample": 48001,
+    "actual_abrupt_exit": true,
+    "originals_and_writer_cache_unavailable_for_cold_startup": true,
+    "manual_has_unchanged": true,
+    "source_assets_unchanged": true,
+    "functional_unchanged": true,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "folder": "/workspace/has-handoff-audit/has-save-lock-app"
+  },
+  "source_sha256": {
+    "tools/has_project.py": "678339a0310632705d94848d369b3517c958387e0c0a116fc6eaf49ce6260fb7",
+    "tests/test_has_save_faults.py": "c20d26fe40fb6491c1e9db24a3763b30e388cf6eaef362b8e8cc30bd4c33dcb9"
+  },
+  "status": "STORE-04 partial/open"
+}

@@ -2356,3 +2356,32 @@ Raw private-write-before, private-metadata-verified-final,
 private-metadata-lesson-recovery and private-metadata-lesson-autosave under
 /workspace/has-handoff-audit. Curated docs/benchmarks/private_metadata_2026-11-06.json;
 docs/private_metadata_writes.md. STORE-04 stays partial/open. Whole goal active.
+
+
+2026-11-06 — Source-safe HAS backup and cooperating worker exclusion
+
+Reproduced53bea01 backup.tmp symbolic-link overwrite of owned original sentinel.
+Pack now resolves chosen parent but inspects final name before following links;
+linked final/backup/legacy temporary refuse. Backup streams into fresh temp,
+flushes/fsyncs and SHA-verifies before atomic replacement. Legacy hard-linked
+temporary preserves external source inode. No archive/schema cap change.
+
+Whole pack/backup/replace operation holds nonblocking OS advisory lock on persistent
+empty sidecar inode. Concurrent cooperating HAS writer refuses before packing;
+normal/SIGKILL exit releases lock without stale PID cleanup. Linked/hard-linked/
+nonempty/nonregular lock refuses. POSIX exercised; Windows branch unverified.
+Directory writers and hostile external filesystem mutation not covered.
+
+53portable HAS tests pass, retaining prior readback/ENOSPC/cancel/replace and real
+SIGKILL boundaries, adding source-link, backup readback and real lock/kill/retry
+cases. Existing backup fault injection adjusted to streamed helper and unique
+backup temp; source/save/backup/pending archive preservation assertions retained.
+Actual automatic32cel suite62checks+16PNG compatibility cases passes private107/
+Dummy, ordinary packed save, cold reopen, real abrupt recovery/startup, exact
+peer/source/manual preservation and48frame1080p24H264/AAC with decoded onset
+48000samples within96. No native fixture, Windows or physical durability claim.
+
+Raw has-backup-source-baseline.json, has-save-lock-final.log and has-save-lock-app
+under /workspace/has-handoff-audit; curated docs/benchmarks/has_save_lock_2026-11-06.json.
+STORE-04 partial/open for concurrent directory writers, directory sync/physical
+power loss and native Windows. Whole goal remains active.
