@@ -152,6 +152,15 @@ var audio_choice: OptionButton
 var advanced_mode := false
 var advanced_toggle: Button
 var advanced_controls: Array[Control] = []
+# Redesign (Simple/Advanced): Simple-only shortcuts to Advanced controls; see docs/REDESIGN-PORT.md.
+var simple_controls: Array[Control] = []
+var mode_tabs: Array[Button] = []
+var tool_strip: HBoxContainer
+var tool_buttons: Array[Button] = []
+var camera_strip: HBoxContainer
+var physics_bar: Control
+var undo_button: Button
+var redo_button: Button
 var drawing_section: VBoxContainer
 var camera_section: VBoxContainer
 var audio_section: VBoxContainer
@@ -413,11 +422,14 @@ func icon_button(parent: Node, text: String, kind: String, action: Callable, hin
 	return control
 
 func nav_button(parent: Node, text: String, kind: String, action: Callable, hint := "") -> Button:
-	var control := icon_button(parent, text, kind, action, hint)
-	control.custom_minimum_size = Vector2(86, 66)
+	# Top-bar button: icon above a short label, transparent until hovered (see style_nav).
+	return style_nav(icon_button(parent, text, kind, action, hint))
+
+func style_nav(control: Button) -> Button:
+	control.custom_minimum_size = Vector2(80, 56)
 	control.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	control.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
-	control.add_theme_constant_override("icon_max_width", 32)
+	control.add_theme_constant_override("icon_max_width", 28)
 	control.add_theme_font_size_override("font_size", 13)
 	var normal := StyleBoxFlat.new()
 	normal.bg_color = Color.TRANSPARENT
@@ -442,6 +454,46 @@ func nav_button(parent: Node, text: String, kind: String, action: Callable, hint
 func advanced(control: Control) -> Control:
 	advanced_controls.append(control)
 	return control
+
+func simple_only(control: Control) -> Control:
+	# Mark a control as Simple-only (a shortcut to an Advanced control); refresh_workspace() hides it in Advanced.
+	simple_controls.append(control)
+	return control
+
+func menu_button(parent: Node, text: String, kind: String, items: Array, hint := "") -> MenuButton:
+	# Redesign: one top-bar button that opens a short list instead of a row of buttons.
+	var m := MenuButton.new()
+	m.text = text
+	m.icon = StudioTheme.icon(kind)
+	m.flat = false
+	m.focus_mode = Control.FOCUS_NONE
+	m.tooltip_text = hint if not hint.is_empty() else text
+	var popup := m.get_popup()
+	for i in items.size(): popup.add_item(items[i][0], i)
+	popup.id_pressed.connect(func(id): items[id][1].call())
+	parent.add_child(m)
+	style_nav(m)
+	return m
+
+func pick_mode(index: int) -> void:
+	# Simple Draw/Camera/Pose tabs drive the mode dropdown, which stays the source of truth.
+	if exporting or mode.selected == index: refresh_workspace(); return
+	mode.select(index)
+	change_mode(index)
+
+func pick_tool(index: int) -> void:
+	# Simple tool strip drives the same tool OptionButton the shortcuts use.
+	if tool.selected != index or index == 3:
+		tool.select(index)
+		tool.item_selected.emit(index)
+	refresh_tool_strip()
+
+func refresh_tool_strip() -> void:
+	if tool_strip == null or tool == null: return
+	var show_strip := not advanced_mode and mode.selected == 0
+	if tool_strip.visible != show_strip: tool_strip.visible = show_strip
+	for i in tool_buttons.size():
+		if tool_buttons[i].button_pressed != (tool.selected == i): tool_buttons[i].set_pressed_no_signal(tool.selected == i)
 
 func advanced_spin(parent: Node, text: String, low: float, high: float, value: float) -> SpinBox:
 	var row := VBoxContainer.new()
@@ -480,6 +532,12 @@ func refresh_workspace() -> void:
 	if mode.selected in [1,2] and navigation_scheme=="orbit":
 		canvas.tooltip_text=canvas.tooltip_text.replace("Ctrl + left: free fly","Ctrl + left: orbit")+" • Orbit: Ctrl+left • Pan: Ctrl+right • Dolly: Ctrl+wheel"
 	for control in advanced_controls: control.visible = advanced_mode
+	for control in simple_controls: control.visible = not advanced_mode
+	for i in mode_tabs.size(): mode_tabs[i].set_pressed_no_signal(mode.selected == i)
+	if physics_bar: physics_bar.visible = advanced_mode or mode.selected == 2
+	refresh_tool_strip()
+	if camera_strip: camera_strip.visible = not advanced_mode and mode.selected == 1
+	if undo_button: undo_button.text = "Undo" if advanced_mode else ""; redo_button.text = "Redo" if advanced_mode else ""
 	drawing_section.get_parent().visible = advanced_mode or mode.selected == 0
 	camera_section.get_parent().visible = advanced_mode or mode.selected == 1
 	pose_editor.panel.get_parent().visible = advanced_mode or mode.selected == 2
@@ -487,6 +545,9 @@ func refresh_workspace() -> void:
 	workspace_label.text = "Advanced workspace" if advanced_mode else "Simple workspace"
 	inspector_scroll.scroll_vertical = 0
 	if pose_editor:pose_editor.refresh_values()
+
+func pick_scene_file() -> void:
+	choose_file("Import 3D environment", ["*.glb", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.bsp", "*.gma", "*.bin"], load_scene, source_import.default_browse_dir())
 
 func build_ui() -> void:
 	theme = StudioTheme.make_theme()
@@ -524,35 +585,49 @@ func build_ui() -> void:
 	title.add_theme_color_override("font_color", Color("102e4d"))
 	title.add_theme_font_size_override("font_size", 20)
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	icon_button(title_row,"Home","scene",func():home.open_home(),"New, Open and recent projects; your current scene stays intact")
+	advanced(icon_button(title_row,"Home","scene",func():home.open_home(),"New, Open and recent projects; your current scene stays intact"))
 	workspace_label = label(title_row, "Simple workspace")
 	workspace_label.add_theme_color_override("font_color", Color("102e4d"))
 	advanced_toggle = button(title_row, "Advanced", func(): set_advanced(advanced_toggle.button_pressed))
 	advanced_toggle.toggle_mode = true
 	advanced_toggle.tooltip_text = "Show detailed controls. Your scene, drawings, audio and settings keep working in either mode."
-	var toolbar := HBoxContainer.new()
+	# Redesign: the nav toolbar wraps so Advanced keeps every button at 1200 px.
+	var toolbar := HFlowContainer.new()
 	header_column.add_child(toolbar)
 	nav_button(toolbar, "New", "scene", new_dialog, "Start an empty world • unsaved edits are protected by a confirmation")
 	nav_button(toolbar, "Open", "folder", open_dialog, "Open an editable project")
 	keyboard_shortcuts.decorate(nav_button(toolbar, "Save", "save", save),"save","Save project")
-	nav_button(toolbar, "Recover", "undo", show_recovery, "Review retained recovery checkpoints")
+	advanced(nav_button(toolbar, "Recover", "undo", show_recovery, "Review retained recovery checkpoints"))
 	advanced(nav_button(toolbar, "Save as…", "save", save_as))
 	advanced(nav_button(toolbar, "Open folder…", "open", func():
 		var action := func(): choose_directory("Open legacy project directory", open_project)
 		if dirty: confirm_action("Discard unsaved edits and open another project?", action)
 		else: action.call()))
 	advanced(nav_button(toolbar, "Sample room", "scene", demo_dialog, "Open the original camera/drawing example as a new unsaved project"))
-	nav_button(toolbar, "Add scene", "scene", func(): choose_file("Import 3D environment", ["*.glb", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.bsp", "*.gma", "*.bin"], load_scene, source_import.default_browse_dir()), "Add a 3D environment: GLB, glTF, FBX, OBJ, MMD or an installed Source map")
-	nav_button(toolbar, "Add model", "scene", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment")
-	nav_button(toolbar, "Installed", "folder", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts")
-	nav_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead")
+	advanced(nav_button(toolbar, "Add scene", "scene", pick_scene_file, "Add a 3D environment: GLB, glTF, FBX, OBJ, MMD or an installed Source map"))
+	advanced(nav_button(toolbar, "Add model", "scene", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment"))
+	advanced(nav_button(toolbar, "Installed", "folder", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts"))
+	advanced(nav_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead"))
+	simple_only(menu_button(toolbar, "Add", "add", [
+		["3D scene or map…", pick_scene_file],
+		["Poseable model…", func(): pose_editor.import_dialog()],
+		["Installed content…", func(): source_browser.open()],
+		["Audio (WAV, MP3, Ogg)…", func(): choose_audio_at_playhead()]],
+		"Add a scene, a model, installed content or audio"))
 	var spacer := Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	toolbar.add_child(spacer)
 	nav_button(toolbar, "Export movie", "export", export_dialog, "Export MP4 beside your saved HAS project, with a recoverable PNG frame sequence")
-	button(title_row,"Options",show_project_options).tooltip_text="Project settings, including visibility fades. Saved with this HAS project."
+	advanced(button(title_row,"Options",show_project_options)).tooltip_text="Project settings, including visibility fades. Saved with this HAS project."
 	button(title_row,"Settings",show_display_settings).tooltip_text="Interface scale and fullscreen. Advanced also offers orbit camera controls."
-	nav_button(toolbar, "About", "help", show_notices, "Credits and open source notices")
+	advanced(nav_button(toolbar, "About", "help", show_notices, "Credits and open source notices"))
+	simple_only(menu_button(toolbar, "More", "help", [
+		["Home screen…", func(): home.open_home()],
+		["Recover…", func(): show_recovery()],
+		["Project options…", func(): show_project_options()],
+		["Interface size and fullscreen…", func(): show_display_settings()],
+		["Keyboard shortcuts…", func(): keyboard_shortcuts.open()],
+		["About and credits", func(): show_notices()]], "Home screen, recovery, project options, shortcuts and credits"))
 	var margin := MarginContainer.new()
 	margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	for side in ["left", "right", "top", "bottom"]:
@@ -571,7 +646,7 @@ func build_ui() -> void:
 	var center := VBoxContainer.new()
 	center.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	middle.add_child(center)
-	var view_toolbar := HBoxContainer.new()
+	var view_toolbar := HFlowContainer.new()
 	center.add_child(view_toolbar)
 	mode = OptionButton.new()
 	mode.add_icon_item(StudioTheme.icon("draw"), "Draw")
@@ -581,16 +656,44 @@ func build_ui() -> void:
 	mode.item_selected.connect(change_mode)
 	mode.tooltip_text = "Draw on independent layers, or move the temporary 3D camera."
 	view_toolbar.add_child(mode)
+	advanced(mode)
+	# Redesign: Simple shows Draw / Camera / Pose tabs instead of the dropdown.
+	var tab_group := ButtonGroup.new()
+	for tab in [["Draw", "draw"], ["Camera", "camera"], ["Pose", "figure"]]:
+		var index := mode_tabs.size()
+		var t := icon_button(view_toolbar, tab[0], tab[1], func(): pick_mode(index), tab[0] + " mode")
+		t.toggle_mode = true
+		t.button_group = tab_group
+		t.custom_minimum_size = Vector2(96, 36)
+		mode_tabs.append(t)
+		simple_only(t)
 	lighting_choice=OptionButton.new()
 	for lighting_title in ["Unshaded","Lit","Studio light"]:lighting_choice.add_item(lighting_title)
 	lighting_choice.tooltip_text="Unshaded shows base colors. Lit uses imported scene lights. Studio light retains older projects' illumination."
 	lighting_choice.item_selected.connect(change_lighting)
 	view_toolbar.add_child(lighting_choice)
-	button(view_toolbar, "Fit view", func(): canvas.zoom = 1; canvas.pan = Vector2.ZERO; canvas.queue_redraw())
+	# Redesign: Simple Draw tool strip; drives the tool dropdown (Advanced Drawing panel).
+	tool_strip = HBoxContainer.new()
+	view_toolbar.add_child(tool_strip)
+	tool_strip.add_child(VSeparator.new())
+	var tool_group := ButtonGroup.new()
+	for entry in [["Pen", "draw", "B"], ["Eraser", "eraser", "E"], ["Fill", "fill", "F"], ["Pick color", "picker", "I"], ["Select area", "cel", "M"]]:
+		var tool_index := tool_buttons.size()
+		var tb := icon_button(tool_strip, "", entry[1], func(): pick_tool(tool_index), "%s [%s]" % [entry[0], entry[2]])
+		tb.toggle_mode = true
+		tb.button_group = tool_group
+		tb.custom_minimum_size = Vector2(40, 36)
+		tool_buttons.append(tb)
+	# Redesign: Simple Camera mode has its main action beside the tabs.
+	camera_strip = HBoxContainer.new(); view_toolbar.add_child(camera_strip)
+	camera_strip.add_child(VSeparator.new())
+	icon_button(camera_strip, "Save key", "key", key_dialog, "Save camera key at this frame")
+	simple_only(camera_strip)
+	advanced(button(view_toolbar, "Fit view", func(): canvas.zoom = 1; canvas.pan = Vector2.ZERO; canvas.queue_redraw()))
 	button(view_toolbar, "Frame scene", frame_3d_scene).tooltip_text = "Fit the 3D asset in the temporary editor camera; shot keys stay unchanged."
-	keyboard_shortcuts.decorate(icon_button(view_toolbar, "Undo", "undo", undo),"undo","Undo")
-	keyboard_shortcuts.decorate(icon_button(view_toolbar, "Redo", "redo", redo),"redo","Redo")
-	var physics_toolbar:=HFlowContainer.new();center.add_child(physics_toolbar)
+	undo_button = keyboard_shortcuts.decorate(icon_button(view_toolbar, "Undo", "undo", undo),"undo","Undo") as Button
+	redo_button = keyboard_shortcuts.decorate(icon_button(view_toolbar, "Redo", "redo", redo),"redo","Redo") as Button
+	var physics_toolbar:=HFlowContainer.new();center.add_child(physics_toolbar);physics_bar=physics_toolbar
 	physics_editor.setup(physics_toolbar)
 	canvas = CanvasView.new()
 	canvas.custom_minimum_size = Vector2(400, 180)
@@ -1082,6 +1185,7 @@ func _process(delta: float) -> void:
 	if recovery_checkpoint_requested and not recovery_writer.busy() and not recovery_preview.busy():autosave_tick(true)
 	pose_editor.update_gizmo()
 	play_button.text = "Pause" if playing else "Play"
+	refresh_tool_strip() # tool can change without a signal (shortcuts, color sampler)
 	if playing:
 		var seconds := preview_seconds()
 		preview_sample_seconds=seconds
