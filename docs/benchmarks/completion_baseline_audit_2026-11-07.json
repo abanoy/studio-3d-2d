@@ -675,11 +675,18 @@
           "file_sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Native fixture breadth and artist acceptance remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
+      "evidence_review": "41 actual named-thumbnail library UI/cold-reader checks: capture/use/rename/duplicate/remove, native HAS pose-library sharing, exact compatible rig bindings, wrong-rig refusal, packed/linked/recovery, ordinary keys/Undo and source/camera/drawing/movie preservation. Original rig; no automatic cross-rig retargeting or ecosystem fidelity claim.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/body_pose_library_current_2026-11-07.json",
+          "commit": "8464b96fc338c37a97f159a8d0406da785ff018d",
+          "scope": "41 actual named-thumbnail library UI/cold-reader checks: capture/use/rename/duplicate/remove, native HAS pose-library sharing, exact compatible rig bindings, wrong-rig refusal, packed/linked/recovery, ordinary keys/Undo and source/camera/drawing/movie preservation. Original rig; no automatic cross-rig retargeting or ecosystem fidelity claim."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -718,11 +725,30 @@
           "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Complete supported-channel regression and artistic motion preference evaluation remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
+      "evidence_review": "38 current normal per-bone editing checks preserve untouched root/peer half-frame curves, authoritative endpoints, split/move/source-time clipboard, packed/linked/recovery and exact movie inputs. 320 headless checks cover supported hold/linear/ease, root parameter independence, source-time clips, keys/authoring/deletion/recording and reverse/boundary sampling. Two native-plan suites explicitly skipped; this domain evidence is paired with normal UI/render receipts, not treated as standalone UI certification. 117 current numeric/projection/timeline scenario checks cover camera interpolation, exact adjacent-frame cuts and persistence/seek/render agreement. No unresolved multi-view or general per-axis curve graph requirement added.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/body_pose_library_current_2026-11-07.json",
+          "commit": "8464b96fc338c37a97f159a8d0406da785ff018d",
+          "scope": "38 current normal per-bone editing checks preserve untouched root/peer half-frame curves, authoritative endpoints, split/move/source-time clipboard, packed/linked/recovery and exact movie inputs."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/root_components_current_2026-11-07.json",
+          "commit": "31e32e49ff0f1b384840b78ab9ea812d281da1db",
+          "scope": "320 headless checks cover supported hold/linear/ease, root parameter independence, source-time clips, keys/authoring/deletion/recording and reverse/boundary sampling. Two native-plan suites explicitly skipped; this domain evidence is paired with normal UI/render receipts, not treated as standalone UI certification."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/camera_current_2026-11-07.json",
+          "commit": "590d914060ee0d075ac6861f45cf589fc80aa885",
+          "scope": "117 current numeric/projection/timeline scenario checks cover camera interpolation, exact adjacent-frame cuts and persistence/seek/render agreement. No unresolved multi-view or general per-axis curve graph requirement added."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -748,11 +774,18 @@
           "file_sha256": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Bounded reversible Motion feeling, per-part/helper correction and saved evaluation are implemented. Owner intensity/style preference, broader native/physics/clip/lesson acceptance and long-rig performance remain unverified. Full-body inference beyond this contract is not silently promoted from potential assistance examples into a new mandatory feature.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
+      "evidence_review": "27 actual original-rig UI/cold-reader and23domain checks: Simple trial/Cancel/Apply, Advanced per-part zero and helper phase/amount correction changes actual intermediates, every main endpoint exact, Off/Undo/Redo, reverse exact read-only sampling, source/cache-offline packed replay and exact movie. Planted-contact/native/artist/physical acceptance remains separate.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/motion_feeling_original_current_2026-11-07.json",
+          "commit": "31e32e49ff0f1b384840b78ab9ea812d281da1db",
+          "scope": "27 actual original-rig UI/cold-reader and23domain checks: Simple trial/Cancel/Apply, Advanced per-part zero and helper phase/amount correction changes actual intermediates, every main endpoint exact, Off/Undo/Redo, reverse exact read-only sampling, source/cache-offline packed replay and exact movie. Planted-contact/native/artist/physical acceptance remains separate."
+        }
+      ],
       "external_dependencies": []
     },
     {

@@ -525,8 +525,8 @@
       ],
       "title": "Reusable body poses",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Named thumbnail poses support use, rename, duplicate, removal and compatible native pose sharing without overwriting source rigs.",
       "evidence": [
         {
@@ -536,9 +536,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/body_pose_library.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/body_pose_library_current_2026-11-07.json",
+          "commit": "8464b96fc338c37a97f159a8d0406da785ff018d",
+          "scope": "41 actual named-thumbnail library UI/cold-reader checks: capture/use/rename/duplicate/remove, native HAS pose-library sharing, exact compatible rig bindings, wrong-rig refusal, packed/linked/recovery, ordinary keys/Undo and source/camera/drawing/movie preservation. Original rig; no automatic cross-rig retargeting or ecosystem fidelity claim."
         }
       ],
-      "remaining": "Native fixture breadth and artist acceptance remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -550,8 +556,8 @@
       ],
       "title": "Sparse interpolation and per-channel editing",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Hold/linear/ease and supported Advanced curves preserve authored endpoints, independent parameters and camera cuts during seek/save/export.",
       "evidence": [
         {
@@ -561,9 +567,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/motion_animation.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/body_pose_library_current_2026-11-07.json",
+          "commit": "8464b96fc338c37a97f159a8d0406da785ff018d",
+          "scope": "38 current normal per-bone editing checks preserve untouched root/peer half-frame curves, authoritative endpoints, split/move/source-time clipboard, packed/linked/recovery and exact movie inputs."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/root_components_current_2026-11-07.json",
+          "commit": "31e32e49ff0f1b384840b78ab9ea812d281da1db",
+          "scope": "320 headless checks cover supported hold/linear/ease, root parameter independence, source-time clips, keys/authoring/deletion/recording and reverse/boundary sampling. Two native-plan suites explicitly skipped; this domain evidence is paired with normal UI/render receipts, not treated as standalone UI certification."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/camera_current_2026-11-07.json",
+          "commit": "590d914060ee0d075ac6861f45cf589fc80aa885",
+          "scope": "117 current numeric/projection/timeline scenario checks cover camera interpolation, exact adjacent-frame cuts and persistence/seek/render agreement. No unresolved multi-view or general per-axis curve graph requirement added."
         }
       ],
-      "remaining": "Complete supported-channel regression and artistic motion preference evaluation remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -574,8 +598,8 @@
       ],
       "title": "Reversible Motion Assist",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "A simple assist control offers editable, disableable corrections without silently replacing authored poses; supported parts/helpers have explicit bounds.",
       "evidence": [
         {
@@ -597,9 +621,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/motion_animation.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/motion_feeling_original_current_2026-11-07.json",
+          "commit": "31e32e49ff0f1b384840b78ab9ea812d281da1db",
+          "scope": "27 actual original-rig UI/cold-reader and23domain checks: Simple trial/Cancel/Apply, Advanced per-part zero and helper phase/amount correction changes actual intermediates, every main endpoint exact, Off/Undo/Redo, reverse exact read-only sampling, source/cache-offline packed replay and exact movie. Planted-contact/native/artist/physical acceptance remains separate."
         }
       ],
-      "remaining": "Bounded reversible Motion feeling, per-part/helper correction and saved evaluation are implemented. Owner intensity/style preference, broader native/physics/clip/lesson acceptance and long-rig performance remain unverified. Full-body inference beyond this contract is not silently promoted from potential assistance examples into a new mandatory feature.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
