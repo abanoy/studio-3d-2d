@@ -41,6 +41,8 @@ func _initialize() -> void:
 	var noise_edit:=Drawing.edit_image(n1);noise_edit.image.fill(Color.GREEN);Drawing.touch(noise_edit.image);check(Drawing.image(n2).get_data()==noisy and noise_reader.adaptive_cache.decodes==0 and noise_reader.png_decodes==1,"noise fallback keeps COW independence without cold cache/materialization overhead")
 	var jpeg:=folder.path_join("legacy.jpg");source.save_jpg(jpeg);var reference:=Image.load_from_file(jpeg);reference.convert(Image.FORMAT_RGBA8);var j:=reader.read_adaptive(jpeg,128,96,Storage.image_hash(reference),true)
 	check(not j.has("error") and Drawing.image(j).get_data()==reference.get_data() and reader.fallback_decodes==1,"legacy non-PNG image loader keeps exact validated adaptive compatibility")
+	check(not reader.read_adaptive(path,128,96,digest,true,file_sha).has("error"),"prepared input validates the exact captured encoded-file identity")
+	check(reader.read_adaptive(path,128,96,digest,true,"0".repeat(64)).has("error"),"prepared encoded checksum mismatch refuses even with cached matching decoded pixels")
 	check(FileAccess.get_sha256(path)==file_sha,"all adaptive reads/edits preserve original PNG file")
 	staged.raster._payload[0]=staged.raster._payload[0]^1
 	check(reader.read_adaptive(path,128,96,digest,true).has("error"),"corrupt captured backing refuses even when original alias file remains valid")

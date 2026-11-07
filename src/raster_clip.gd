@@ -26,6 +26,6 @@ static func validate(v,folder: String,video: Dictionary,at: int,remaining: int,s
 		if FileAccess.get_sha256(path)!=row.sha256:return {"error":"Prepared drawing checksum changed."}
 		if not unique.has(row.sha256):unique[row.sha256]=true;total+=int(row.bytes)
 		if total>256*1024*1024:return {"error":"Prepared artwork exceeds its byte budget."}
-		holds.append({"start":int(row.start),"duration":int(row.duration),"path":path});cursor+=int(row.duration)
+		holds.append({"start":int(row.start),"duration":int(row.duration),"path":path,"sha256":str(row.sha256)});cursor+=int(row.duration)
 	if cursor!=int(v.duration_frames):return {"error":"Prepared drawing range is incomplete."}
 	return {"origin":origin,"holds":holds,"duration":cursor}

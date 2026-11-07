@@ -40,13 +40,19 @@ func run() -> void:
 	if importer.phase!="layers":print(app.status.text);app.free();quit(1);return
 	app.raster_importer.begin("unrelated.kra");check(app.raster_importer.phase.is_empty(),"Krita import cannot race video review")
 	check(is_equal_approx(importer.similarity.value,.1) and is_equal_approx(importer.softness.value,.05),"fractional chroma defaults survive SpinBox initialization")
-	importer.key_enabled.button_pressed=true;importer.prepare();await wait_phase("candidate")
+	importer.key_enabled.button_pressed=true;importer.prepare()
+	while importer.phase!="decode" and not importer.phase.is_empty():await process_frame
+	check(importer.phase=="decode" and importer.progress!=null and importer.progress.visible and importer.progress.get_ok_button().text=="Cancel","incremental drawing preparation remains visible and cancellable before preview")
+	await wait_phase("candidate")
 	check(importer.phase=="candidate" and importer.decoded.size()==2,"real FFmpeg produces two complete editable holds")
 	if importer.phase!="candidate":print(app.status.text);app.free();quit(1);return
+	check(importer.decoded.all(func(cel):return cel.has("raster_owner") and not cel.has("image") and not cel.raster_owner.is_pinned()),"prepared review stages cold registered drawings without eager retained frames")
 	check(app.layers.size()==2 and app.history.is_empty() and app.keys==keys and app.current_world()==world and Storage.image_hash(original)==oldpixels,"candidate leaves authored scene untouched")
-	check(importer.decoded[0].image.get_pixel(10,10).a==0 and importer.decoded[0].image.get_pixel(960,540).r>.99,"keyed background transparent and foreground retained")
+	check(Drawing.image(importer.decoded[0]).get_pixel(10,10).a==0 and Drawing.image(importer.decoded[0]).get_pixel(960,540).r>.99,"keyed background transparent and foreground retained")
 	importer.scrub.value=20;await settle();check(app.frame==0,"source preview does not seek scene")
+	var staged_cache=importer.raster_reader.adaptive_cache
 	var job: String=importer.job;importer.commit()
+	check(importer.raster_reader==null and is_same(app.raster_budget.cache,staged_cache),"Add transfers the admitted cache and releases the staging reader")
 	check(app.layers.size()==3 and app.history.size()==1 and app.layers[2].cels.size()==2,"Add makes one layer and one Undo")
 	check(app.layers[2].cels.all(func(cel):return cel.has("raster_owner") and not cel.has("image")),"accepted video drawings join document ownership and idle accounting")
 	var paint:=Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],0)));var origin: Dictionary=app.layers[2].origin.duplicate(true)
@@ -64,5 +70,13 @@ func run() -> void:
 	app.set_frame(0);importer.begin(source);await wait_phase("layers");importer.cancel();check(importer.phase.is_empty() and app.layers.size()==2,"review Cancel adds nothing")
 	importer.begin(source);app.changed();await wait_phase("");check(importer.pid<0 and app.layers.size()==2,"authored revision invalidates pending worker")
 	importer.begin(source);await wait_phase("layers");importer.prepare();importer.cancel();await wait_phase("");check(importer.pid<0 and app.layers.size()==2,"conversion Cancel drains owned worker without late layer")
+	app.set_frame(0);var before_owners: int=app.raster_budget.registered().size();importer.begin(source);await wait_phase("layers");importer.prepare();await wait_phase("candidate")
+	check(importer.phase=="candidate" and app.raster_budget.registered().size()==before_owners+2,"pending artwork participates in the existing document ownership budget")
+	var pending: Array=importer.decoded.map(func(cel):return weakref(cel.raster_owner));importer.cancel();await settle()
+	check(importer.phase.is_empty() and importer.raster_reader==null and importer.decoded.is_empty() and pending.all(func(row):return row.get_ref()==null) and app.raster_budget.registered().size()==before_owners,"candidate Cancel releases staged owners and reader without changing existing history")
+	var admission_cache=app.raster_budget.cache;var original_limit: int=admission_cache.owner_limit;admission_cache.owner_limit=admission_cache.owned_bytes();admission_cache.enforce();var prior_history: int=app.history.size()
+	importer.begin(source);await wait_phase("layers");importer.prepare();await wait_phase("")
+	check(importer.phase.is_empty() and importer.raster_reader==null and importer.progress==null and importer.decoded.is_empty() and app.layers.size()==2 and app.history.size()==prior_history and app.raster_budget.registered().size()==before_owners and FileAccess.get_sha256(source)==sha,"over-budget prepared decode releases staging and preserves existing scene/history/source")
+	admission_cache.owner_limit=original_limit
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"paint":paint,"origin":origin,"render":Storage.image_hash(render)},"",true,true))
 	print("VIDEO_IMPORT_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":app.last_export_folder.path_join("movie.mp4"),"job":job}));app.free();quit(0 if failures==0 else 1)

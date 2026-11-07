@@ -1,5 +1,7 @@
 extends Node
 const Clip=preload("res://src/raster_clip.gd")
+const Drawing=preload("res://src/drawing.gd")
+var raster_reader
 var app
 var launch: Button
 var pid:=-1
@@ -60,7 +62,7 @@ func close_dialogs() -> void:
 		if is_instance_valid(dialog):dialog.hide();dialog.queue_free()
 	review=null;preview=null;progress=null;choices={};viewer=null;scrub=null
 func fail(why: String) -> void:
-	close_dialogs();phase="";candidate={};decoded=[];app.message(why)
+	close_dialogs();phase="";candidate={};decoded=[];raster_reader=null;app.message(why)
 func choose() -> void:
 	if not phase.is_empty():app.message("Finish or cancel the current artwork import first.");return
 	if not available():app.message("Choose Draw mode with room for another layer, drawing and frame. Krita import is desktop only.");return
@@ -115,9 +117,10 @@ func _process(_delta: float) -> void:
 		if phase=="prepare":accept_packet(result);return
 	if phase=="decode":
 		var row: Dictionary=candidate.holds[decoded.size()]
-		var image:=Image.load_from_file(row.path)
-		if image==null or image.get_width()!=video.width or image.get_height()!=video.height:fail("Cannot decode this prepared drawing.");return
-		image.convert(Image.FORMAT_RGBA8);decoded.append({"id":str(ResourceUID.create_id()),"start":at+row.start,"duration":row.duration,"image":image})
+		var pixels: Dictionary=raster_reader.read_adaptive(row.path,int(video.width),int(video.height),null,false,row.sha256)
+		if pixels.has("error"):fail(pixels.error);return
+		var cel:={"id":str(ResourceUID.create_id()),"start":at+row.start,"duration":row.duration};cel.merge(pixels);decoded.append(cel)
+		if is_instance_valid(progress):progress.dialog_text="Preparing drawings: %d / %d. Cancel keeps the scene unchanged." % [decoded.size(),candidate.holds.size()]
 		if decoded.size()==candidate.holds.size():show_preview()
 	if phase=="candidate" and is_instance_valid(preview):preview.get_ok_button().disabled=external_busy()
 
@@ -168,34 +171,46 @@ func accept_packet(result: Dictionary) -> void:
 	if result.get("clip") is not String or result.clip.replace("\\","/").simplify_path()!=path.replace("\\","/").simplify_path() or result.get("sha256")!=FileAccess.get_sha256(path):fail("Prepared artwork packet changed.");return
 	candidate=Clip.validate(read_json(path),job.path_join("prepared"),video,at,slots(),str(inventory.get("source_sha256")))
 	if candidate.has("error"):fail(candidate.error);return
+	raster_reader=preload("res://src/cel_raster_reader.gd").new()
+	if app.raster_budget.cache!=null:raster_reader.adaptive_cache=app.raster_budget.cache
 	phase="decode";decoded=[]
+	progress=AcceptDialog.new();progress.title="Preparing editable artwork";progress.dialog_text="Preparing drawings: 0 / %d. Cancel keeps the scene unchanged." % candidate.holds.size();progress.ok_button_text="Cancel";progress.exclusive=false;app.add_child(progress)
+	progress.confirmed.connect(cancel);progress.close_requested.connect(cancel);progress.popup_centered(Vector2i(470,160))
 func show_preview() -> void:
+	if is_instance_valid(progress):progress.hide();progress.queue_free();progress=null
 	phase="candidate";preview=ConfirmationDialog.new();preview.title="Add prepared artwork?";preview.exclusive=false;preview.unresizable=false;preview.get_ok_button().text="Add drawing layer";app.add_child(preview)
 	var box:=VBoxContainer.new();preview.add_child(box)
 	var caption:=Label.new();caption.text="Frame %d · %d frames · %d held drawings\nCheckerboard shows transparency. Original source stays unchanged." % [at,candidate.duration,decoded.size()];box.add_child(caption)
 	viewer=preload("res://src/krita_preview.gd").new();viewer.custom_minimum_size=Vector2(480,270);viewer.size_flags_horizontal=Control.SIZE_EXPAND_FILL;box.add_child(viewer)
 	scrub=app.spin(box,"Preview source-local frame",0,candidate.duration-1,0);scrub.value_changed.connect(show_frame);show_frame(0)
+	if phase!="candidate":return
 	preview.confirmed.connect(commit);preview.canceled.connect(cancel);preview.close_requested.connect(cancel);preview.popup_centered(Vector2i(520,400))
 func show_frame(value: float) -> void:
 	for cel in decoded:
-		if at+int(value)>=cel.start and at+int(value)<cel.start+cel.duration:viewer.show_image(cel.image);return
+		if at+int(value)>=cel.start and at+int(value)<cel.start+cel.duration:
+			var pixels:=Drawing.read_image(cel)
+			if pixels.has("error"):fail(pixels.error);return
+			viewer.show_image(pixels.image);return
 func commit() -> void:
 	if phase!="candidate" or not valid() or external_busy():fail("The scene changed. Review artwork again before adding it.");return
 	var original:=FileAccess.open(source,FileAccess.READ)
 	if original==null or original.get_length()>192*1024*1024:fail("Original artwork is missing or exceeds its limit.");return
 	original.close()
 	if FileAccess.get_sha256(source)!=inventory.get("source_sha256"):fail("Original artwork changed. Import it again.");return
+	if raster_reader==null or decoded.size()>slots():fail("Prepared artwork exceeds available drawing resources.");return
+	var cache=raster_reader.adaptive_cache
+	if app.raster_budget.cache!=null and not is_same(app.raster_budget.cache,cache):fail("The drawing cache changed. Review artwork again.");return
 	var bytes:=0
-	for cel in decoded:bytes+=cel.image.get_data_size()
-	if decoded.size()>slots() or bytes>256*1024*1024:fail("Prepared artwork exceeds available drawing resources.");return
+	for cel in decoded:
+		if not cel.has("raster_owner") or cel.raster_owner._cache!=cache or not Drawing.raster_error(cel).is_empty():fail("Prepared drawing ownership changed.");return
+		bytes+=Drawing.raster_bytes(cel)
 	var owned: Array=decoded.duplicate(true)
-	for cel in owned:
-		var why: String=app.own_created_cel(cel)
-		if not why.is_empty():fail(why);return
+	if app.raster_budget.cache==null:
+		app.raster_budget.install(cache);app.raster_budget_due=Time.get_ticks_msec()+1000
 	var before: Array=app.layers.duplicate();var selected: String=app.layers[app.active_layer].id
 	var layer:={"id":str(ResourceUID.create_id()),"name":app.layer_editor.unique_name(source.get_file().get_basename().left(60)),"visible":true,"cels":owned,"origin":candidate.origin.duplicate(true)}
 	# Disarm stale guards before changed() advances the revision.
-	phase="";decoded=[];candidate={};close_dialogs();app.layers.append(layer);app.active_layer=app.layers.size()-1
+	phase="";decoded=[];candidate={};raster_reader=null;close_dialogs();app.layers.append(layer);app.active_layer=app.layers.size()-1
 	app.layer_editor.structure(before,selected,bytes);app.message(success_message())
 func _exit_tree() -> void:
 	if pid>0:

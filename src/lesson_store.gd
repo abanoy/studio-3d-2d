@@ -99,9 +99,11 @@ func save(app,course: String,session: String,step: int,done: bool,name: String,o
 func load_snapshot(app,course: String,session: String,name: String) -> bool:
 	error="";var directory:=folder(course,session)
 	if directory.is_empty() or not checkpoint_name(course,name):error="Invalid lesson checkpoint.";return false
-	var path:=directory.path_join(name);var data:=Storage.load_project(path)
-	if data.has("error"):error=data.error;return false
-	var value=data.get("editor",{}).get("lesson_ui",{})
+	# Inspect only bounded UI metadata here. Normal Open validates/decodes the
+	# project once before installing anything, including all declared assets.
+	var path:=directory.path_join(name);var data:=Recovery.read_json(path.path_join("project.json"))
+	if not data.get("editor") is Dictionary:error="Lesson checkpoint has invalid editor state.";return false
+	var value=data.editor.get("lesson_ui",{})
 	if not valid_ui(value):error="Lesson checkpoint has invalid editor state.";return false
 	if not app.open_project(path):error=app.open_project_error;return false
 	app.has_project.clear_identity();app.project_folder=""

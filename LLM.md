@@ -2801,3 +2801,35 @@ docs/dense_raster_measurement.md and drawing_resource_inventory.md. MEM-01/02
 partial/open. Next concrete work: lesson eager validation and bounded larger project
 count/container boundaries, then actual app persistence/crash/media proof. Whole
 continuous goal active; do not repeat400foundation measurement without new changes.
+
+
+2026-11-07 — Admit prepared artwork while decoding; load lesson assets once
+
+Shared Krita/video candidate phase now uses scoped adaptive reader with admitted
+cold/raw owners, sharing existing document cache or transferring a new cache only
+on acceptance. Preview reads without pinning; progress/Cancel remains available
+through incremental decode. CandidateCancel/budget/source/state failure releases
+reader/owners; oldscene/history/source unchanged. Commit verifies owner/cache,
+source and slots then retains one layer Undo charged by retained pixels. Encoded
+preparation256MiB and ownership320MiB bounds stay; live32celcap unchanged. Prepared
+file SHA preserved in validated hold and checked against captured bytes before
+cache/decode. Existing pixel checksum and all source guards retained.
+
+Lesson snapshot path reads bounded UI metadata, checks editor container/UI, then
+normalOpen validates/decodes/prepares full project once before installation. No
+separate eager full decode.6focused delegation/invalidUI/name/source-preservation
+checks included in private suite; actual Previous/Continue passed. Product paths
+stay source-compatible; no saved schema/origin/native assets rewritten.
+
+290rasterdomains (2new encodedidentity checks),173private,49Python synthetic
+Krita/preparation/video checks pass. Private107 proceduralvideo27writer/7reader
+passes coldreview/cachetransfer, cancellable decode, pending-owner participation,
+Cancelweakrefsreleased, controlled budgetrefusal withoutpartialinstall, keyedalpha,
+UndoRedo/packed/recovery/exactmovie. Private108 all5actualSIGKILLlesson cases
+unit43/writer7/startup21/19/7/8/8, source/manual/cache-isolation checks pass.
+Existing course Previous52/freshContinue5 pass with H26448frames1080p24. Native
+Krita runtime/fidelity and targetWindows/hardware are unrun; proceduralsharedpath
+is not native acceptance. Raw prepared-owner-* under /workspace/has-handoff-audit;
+curated prepared_art_ownership_2026-11-07.json and docs/prepared_art_ownership.md.
+Tracked tutorial outputs archived/restored. Whole goal active; next consistent
+larger drawing/container boundaries plus actual400cel app persistence/crash proof.

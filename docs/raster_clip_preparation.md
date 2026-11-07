@@ -84,11 +84,13 @@ Native logs retain Fontconfig warnings: these paint-layer tests do not certify
 text/font/vector fidelity. Original files remain unchanged. No new dependency,
 model weights, plugin or binary runtime is redistributed.
 
-The in-app review now validates this typed packet against captured scene state,
-decodes independent editable Images and commits one new layer with one Undo.
-Portable ancestry, HAS/recovery and preview/movie use existing common paths.
-Native audio and editable original Krita layers are explicitly not imported by
-this rendered-artwork contract. Video/chroma/nesting/long clips remain unfinished.
+The current in-app review validates the typed packet against captured scene state,
+stages admitted cold/editable owners and commits one new layer with one Undo.
+See [prepared ownership and single lesson loading](prepared_art_ownership.md).
+Portable ancestry, HAS/recovery and preview/movie use the common paths. Native
+audio and editable original Krita layers are not imported by this rendered-artwork
+contract. Procedural video/chroma exercises the same ownership path; this does not
+extend the historical native-fidelity evidence above.
 
 Tests: `python tests/test_krita_assets.py` and `python tests/test_krita_preparation.py`.
 Owner-specific real-render evidence stays local in the dated checkpoint, outside

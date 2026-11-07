@@ -1,0 +1,545 @@
+{
+  "date": "2026-11-07",
+  "scope": "Admitted prepared raster review/commit/cancel, exact file identity, bounded lesson UI preflight with one normal Open; not native Krita fidelity or larger-cel acceptance.",
+  "procedural_video": {
+    "reports": {
+      "writer": {
+        "checks": 27,
+        "failures": 0,
+        "job": "/workspace/studio-3d-2d/output/video-imports/96140-1964854",
+        "movie": "/workspace/has-handoff-audit/prepared-owner-video-accepted/render_1794030892_6607865_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 7,
+        "failures": 0
+      }
+    },
+    "private_receipts": [],
+    "display": ":107",
+    "media": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1920,
+          "height": 1080,
+          "coded_width": 1920,
+          "coded_height": 1088,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 40,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 24576,
+          "duration": "2.000000",
+          "bit_rate": "519692",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "48",
+          "nb_read_frames": "48",
+          "extradata_size": 50,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "/workspace/has-handoff-audit/prepared-owner-video-accepted/render_1794030892_6607865_0/movie.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "2.000000",
+        "size": "131353",
+        "bit_rate": "525412",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf61.7.103"
+        }
+      }
+    }
+  },
+  "private": {
+    "reports": {
+      "save_worker_unit": {
+        "checks": 12,
+        "failures": 0
+      },
+      "private_metadata_unit": {
+        "checks": 32,
+        "failures": 0,
+        "scope": "owned Linux metadata links/hardlinks/permissions; no Windows/power-loss/concurrent-writer certification"
+      },
+      "recovery_journal_unit": {
+        "checks": 33,
+        "failures": 0,
+        "folder": "/workspace/studio-3d-2d/output/recovery-journal-unit/339939"
+      },
+      "lesson_recovery_unit": {
+        "checks": 43,
+        "failures": 0
+      },
+      "lesson_snapshot_loading_unit": {
+        "checks": 6,
+        "failures": 0,
+        "scope": "bounded UI metadata and single normal-Open delegation; actual project/asset recovery verified separately"
+      },
+      "recovery_identity_unit": {
+        "checks": 47,
+        "failures": 0,
+        "owner": {
+          "linux_start": "c0322174-2fc8-428d-8f74-47ed9b9c7c09:3629880",
+          "pid": 95293
+        }
+      }
+    },
+    "folder": "/workspace/has-handoff-audit/prepared-owner-private",
+    "scope": "Headless metadata safety; graphical crash/reopen workflows run separately. No power-loss or hostile concurrent filesystem race certification.",
+    "source_sha256": {
+      "src/save_worker.gd": "038a5e769bb7ca72234f1c902127b7cbc6b14595dc559611ef7544b9cc2705e0",
+      "tools/save_sync.py": "df3e6de75d0cbbd6f2db37151e558fee6be07a777e551116be25678da7dd2283",
+      "tools/metadata_commit.py": "7ec18f77f526ddeb9ce7a96dddef107626e21ec5346e1099c45d472610c0ee82",
+      "src/atomic_metadata.gd": "3f4c10cdb5f8e9a42c91130a37216a8c4d639dcdcf4ad60d1b3309e2b20c1535",
+      "src/recovery.gd": "95cefa00f14801ee25c9e6657b92056316718006fc669309e720ba57d5f2d699",
+      "src/recovery_journal.gd": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa",
+      "src/lesson_store.gd": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260",
+      "tests/lesson_snapshot_loading_unit.gd": "66327ba81edcf96a1b23a34ee1ab14aacb89a1f7893de5b02df5ad3c44bcae68",
+      "tests/private_metadata_unit.gd": "79b8620dbc72aedf14b32f16c9b1c50aa0ffff7dfb4b4b0d9433f965ba92fb64",
+      "tests/verify_private_metadata.py": "299e26905f7dfdc0baf2f3332a71585d0ccd0c0c1f2775777cf97b7236c1b80d"
+    }
+  },
+  "raster_domain": {
+    "scope": "Headless cold-raster ownership, integrity, history and budget domains. No GUI/GPU or whole-project acceptance claim.",
+    "reports": {
+      "unit": {
+        "checks": 29,
+        "failures": 0
+      },
+      "write-paths": {
+        "checks": 17,
+        "failures": 0,
+        "scope": "owned Linux links/hardlinks/read-only paths; no Windows or hostile concurrent filesystem race certification"
+      },
+      "rollback": {
+        "checks": 26,
+        "failures": 0,
+        "scope": "owned metadata/asset/pixel rollback integrity; not native-rig or physical power-loss certification"
+      },
+      "project-ownership": {
+        "checks": 11,
+        "failures": 0
+      },
+      "admission": {
+        "checks": 17,
+        "default_owner_limit": 335544320,
+        "failures": 0,
+        "full_hd_accepted": 40,
+        "full_hd_rejected": 8,
+        "scope": "conservative owned+decoded bytes, not processRSS/GPU/tiles/temporary materializations"
+      },
+      "budget": {
+        "checks": 13,
+        "failures": 0
+      },
+      "pixel-history": {
+        "checks": 19,
+        "failures": 0
+      },
+      "policy": {
+        "checks": 11,
+        "failures": 0
+      },
+      "adaptive": {
+        "checks": 31,
+        "failures": 0
+      },
+      "save": {
+        "checks": 7,
+        "failures": 0
+      },
+      "read": {
+        "checks": 15,
+        "failures": 0
+      },
+      "overlay-regression": {
+        "checks": 20,
+        "failures": 0
+      },
+      "metadata": {
+        "checks": 14,
+        "failures": 0
+      },
+      "owner": {
+        "checks": 29,
+        "failures": 0
+      },
+      "reader-regression": {
+        "checks": 31,
+        "failures": 0
+      }
+    },
+    "source_sha256": {
+      "tests/cel_raster_admission_unit.gd": "f463ecb63f283739d83808d8a57e0a479a2f5b64dc5e39f235d75a35c65fddf9",
+      "src/project_raster_ownership.gd": "1194e6cbc364c092829ae6829312b69b8aa08db27bafe93d38c9f28f7ea176a6",
+      "tests/project_raster_ownership_unit.gd": "fb2f43acdcd1f545544cee0a22f4e3031c6d96a1e8971ec838f589e089500914",
+      "src/project_payload_guard.gd": "6bd277060a2a9fbb4dc5a3f05d9626b895474155b7ba53288aa734159e27b642",
+      "src/cel_png_verifier.gd": "bd81aa21005b6ff67f31883547a4be08a6f07fec93e3fa092c9394d18b2ad238",
+      "tests/directory_rollback_unit.gd": "2edd013f5619bde30b02f4b9ae6aa37d061f4c70078c75fc2ae78b2c5e8b07e9",
+      "tests/project_write_paths_unit.gd": "e56767cde55a4f920cbbebbd7bd1f06c45c6946210d1b09b7663089fbd724988",
+      "src/cel_raster_budget.gd": "ae0273ad3aa07c0d64dafef95aa8c0b2bac811c5f2f546d5f2c52dc8a29b3414",
+      "src/cel_raster_snapshot_cache.gd": "b9554ab47f6655da46d2039bf16f3e51453117e7a98dffd6d515b209eb38d95f",
+      "tests/cel_raster_budget_unit.gd": "76ccd0a13cae351e160ecdf86125088d11ee4f145f0732c3466a3e55ff430d32",
+      "src/cel_pixel_history.gd": "bbfc4b1464deecbdaa11a05bb39bcb2667b92cc3e145cfbbbe86397ab30b7d3b",
+      "tests/cel_pixel_history_unit.gd": "8662beed13aa6371d0d9f392698eaf6bbbcf39bc2ad1f5a6470c103f91887b8a",
+      "tests/cel_raster_policy_unit.gd": "72cb92b46b24e75a3b9f66ba79d760cba51556febabfdb98ddca4eee0c92da74",
+      "tests/cel_raster_adaptive_unit.gd": "f1fe2148bebab83b06039915f53d7bbfa78d776cd8bfd53260a65ae153c954e0",
+      "src/storage.gd": "6ecea2cfddf959e4d5e884c38fe8f514fe47a1ef986c1ac9c3bc384d2c0dd9fd",
+      "src/fill_editor.gd": "b977afe4e68e2187c7780eb63fc4efd1fab54e3489a6e87315ab314605eb75c1",
+      "src/drawing_selection_editor.gd": "bf63e7b586d79e37b3cc983854c08482dff341af252505c652ad1c15bcb35908",
+      "src/drawing_transform_editor.gd": "5ac0b2257ffa54587ecba5ff0aa36688f7fdaff7fdae6a7d575e79a3f08beec3",
+      "src/cel_clipboard.gd": "fa6178e9e32bf4da10bc343cf1b3d4c5789b18836db77646836827eecdf21613",
+      "tests/cel_raster_save_unit.gd": "958376bbb5959bf905f522e158190f27bb503e50dcb7d0205f96b9e7e8f1352c",
+      "src/app.gd": "7929a5a68437a0b6af72a12c4d1c65c6bf8016312c7a73e164101ccde0608f9c",
+      "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+      "src/color_sampler.gd": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+      "src/onion_editor.gd": "57807886afb36115cc33a31140550c041328d67e9629377ed7793c8a27efc147",
+      "src/sequence_runtime.gd": "a0bc649ec192a7eddcc54fe91eb765d67145d4974a37be390f8c5ba09a2111bc",
+      "src/tutorials.gd": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3",
+      "src/drawing_overlay_cache.gd": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+      "tests/cel_raster_read_unit.gd": "ebdc572bcf2f93735540dc9f7cfad86e0b0428549e01fb9b3d66773db0375951",
+      "src/cel_timing_editor.gd": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+      "src/cel_patch.gd": "60b75f05e162f796041e8083d9c756eb8ade3f26cac9f2e12b61d38fe41b51bd",
+      "src/recovery.gd": "95cefa00f14801ee25c9e6657b92056316718006fc669309e720ba57d5f2d699",
+      "src/layer_editor.gd": "6188e135d99aaa6a75047cc540ba8ecab3455ea7b4af928838f476623a6fa56d",
+      "src/sequence_editor.gd": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7",
+      "tests/cel_raster_metadata_unit.gd": "e1ad5ae142dbbedf9570d4f78c8cb436791c73970dd3d97c8c0b57523991c6e8",
+      "src/drawing.gd": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+      "src/cel_raster_owner.gd": "30b6601df440dcc9035e9104ac93049a0c74a0da7c3bd42df1f04c71247eb9df",
+      "tests/cel_raster_owner_unit.gd": "68d2d273f6b51b2827af3b2f2e0b0b0f841840cf6247b75dad96d261c3d6624d",
+      "src/cel_raster_reader.gd": "b41ce4a1d2c908197f149e4826dc958b5051aaf18ee9809a5cc2fb6334b959e8",
+      "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+      "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+      "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+    }
+  },
+  "abrupt_lessons": {
+    "reports": {
+      "unit": {
+        "checks": 43,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 7,
+        "failures": 0
+      },
+      "newest": {
+        "case": "newest",
+        "checks": 21,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/prepared-owner-lesson/newest/render_1794030482_2347189_0/movie.mp4",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/newest/recovery/1794030477_758224036411435304",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/newest/recovery/1794030477_758224036411435304",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/prepared-owner-lesson/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794030479.48308,
+            "sha256": "c3bf4ffa5d6271739393e5181f16770cf6e2e3fe59a9cc2dd67788675f67219e"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      },
+      "older-fallback": {
+        "case": "older-fallback",
+        "checks": 19,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/older-fallback/recovery/1794030477_758224036411435304",
+              "manifest": "project.backup.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/older-fallback/recovery/1794030477_758224036411435304",
+            "frame": 12,
+            "manifest": "project.backup.json",
+            "origin": "/workspace/has-handoff-audit/prepared-owner-lesson/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 3,
+            "saved_at": 1794030478.68786,
+            "sha256": "b1366cdae690577e566758d8012f294b73597893c2beb6390a197e88038f523f"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      },
+      "legacy": {
+        "case": "legacy",
+        "checks": 7,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/legacy/recovery/1794030477_758224036411435304",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/legacy/recovery/1794030477_758224036411435304",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/prepared-owner-lesson/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794030479.48308,
+            "sha256": "a947bce5945c3354b8baea11ff8129f61c2c52bca71ec0a21d860612ec6640ab"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      },
+      "invalid-context": {
+        "case": "invalid-context",
+        "checks": 8,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/invalid-context/recovery/1794030477_758224036411435304",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/invalid-context/recovery/1794030477_758224036411435304",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/prepared-owner-lesson/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794030479.48308,
+            "sha256": "8efdcceaf644b86ad3fe7e93ecfe82aba4e2286ea2a1a5d369bed346ec31acbd"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      },
+      "missing-practice": {
+        "case": "missing-practice",
+        "checks": 8,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/missing-practice/recovery/1794030477_758224036411435304",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/prepared-owner-lesson/missing-practice/recovery/1794030477_758224036411435304",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/prepared-owner-lesson/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794030479.48308,
+            "sha256": "c3bf4ffa5d6271739393e5181f16770cf6e2e3fe59a9cc2dd67788675f67219e"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "109920",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "actual_abrupt_exit": true,
+    "manual_has_unchanged": true,
+    "included_assets_unchanged": true,
+    "writer_cache_unavailable_for_cold_startup": true,
+    "private_receipts": [],
+    "isolated_display": ":108",
+    "folder": "/workspace/has-handoff-audit/prepared-owner-lesson"
+  },
+  "actual_previous_continue": {
+    "results": [
+      {
+        "checks": 52,
+        "failures": 0,
+        "folder": "/workspace/studio-3d-2d/output/tutorials/1794030749885176495",
+        "movie": "/workspace/studio-3d-2d/output/tutorials/1794030749885176495/render_1794030759_9260515_0/movie.mp4"
+      },
+      {
+        "checks": 5,
+        "failures": 0
+      }
+    ],
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_frames": "48"
+    },
+    "private_receipts": [],
+    "chapter": "existing",
+    "isolated_display": ":108"
+  },
+  "python": {
+    "tests": 49,
+    "failures": 0,
+    "raw": "/workspace/has-handoff-audit/prepared-owner-python.log"
+  },
+  "source_sha256": {
+    "src/krita_import.gd": "a27d7df49478a9ab476c4291fde7937c196ff7c7345fc1be54ca31eb69a03d73",
+    "src/cel_raster_reader.gd": "b41ce4a1d2c908197f149e4826dc958b5051aaf18ee9809a5cc2fb6334b959e8",
+    "src/lesson_store.gd": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260",
+    "src/raster_clip.gd": "1fb451f811d20e900f34d6efcd103657b0073969b1a0436b4c62ed1b3cd74475",
+    "tests/cel_raster_adaptive_unit.gd": "f1fe2148bebab83b06039915f53d7bbfa78d776cd8bfd53260a65ae153c954e0",
+    "tests/video_import_smoke.gd": "5a16d3d920c14d4dedb785cea9a2092bb566e167f294df2d93101f2dcef2f56e",
+    "tests/lesson_snapshot_loading_unit.gd": "66327ba81edcf96a1b23a34ee1ab14aacb89a1f7893de5b02df5ad3c44bcae68",
+    "tests/verify_private_metadata.py": "299e26905f7dfdc0baf2f3332a71585d0ccd0c0c1f2775777cf97b7236c1b80d"
+  }
+}

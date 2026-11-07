@@ -19,8 +19,8 @@ static func u32(bytes: PackedByteArray,at: int) -> int:
 	return int(bytes[at])*16777216+int(bytes[at+1])*65536+int(bytes[at+2])*256+int(bytes[at+3])
 func read(path: String,width: int,height: int,expected=null,require_pixels:=false) -> Dictionary:
 	return _read(path,width,height,expected,require_pixels,false)
-func read_adaptive(path: String,width: int,height: int,expected=null,require_pixels:=false) -> Dictionary:
-	return _read(path,width,height,expected,require_pixels,true)
+func read_adaptive(path: String,width: int,height: int,expected=null,require_pixels:=false,file_sha: String="") -> Dictionary:
+	return _read(path,width,height,expected,require_pixels,true,file_sha)
 func read_record(path: String,width: int,height: int,expected=null,require_pixels:=false) -> Dictionary:
 	return read_adaptive(path,width,height,expected,require_pixels) if cold_cels else read(path,width,height,expected,require_pixels)
 func stage(image: Image) -> Dictionary:
@@ -34,7 +34,7 @@ func record(entry: Dictionary) -> Dictionary:
 		return adopted if adopted.has("error") else {"raster_owner":adopted.owner}
 	var adopted:=Owner.from_image(entry.image.duplicate(),adaptive_cache)
 	return adopted if adopted.has("error") else {"raster_owner":adopted.owner}
-func _read(path: String,width: int,height: int,expected,require_pixels: bool,adaptive: bool) -> Dictionary:
+func _read(path: String,width: int,height: int,expected,require_pixels: bool,adaptive: bool,file_sha: String="") -> Dictionary:
 	var file:=FileAccess.open(path,FileAccess.READ)
 	if file==null:return {"error":"Cel missing or exceeds 32 MiB."}
 	var length:=file.get_length()
@@ -42,6 +42,8 @@ func _read(path: String,width: int,height: int,expected,require_pixels: bool,ada
 	if length==0:file.close();return {"error":"Cel image has wrong dimensions or is unreadable."}
 	var bytes:=file.get_buffer(length);file.close();reads+=1
 	if bytes.size()!=length:return {"error":"Cel image has wrong dimensions or is unreadable."}
+	var encoded: String=digest_bytes(bytes) if not file_sha.is_empty() else ""
+	if not file_sha.is_empty() and encoded!=file_sha:return {"error":"Prepared drawing checksum changed before decoding."}
 	var png: bool=path.get_extension().to_lower()=="png" and bytes.size()>=8 and bytes.slice(0,8)==PackedByteArray([137,80,78,71,13,10,26,10])
 	if not png:
 		# Preserve legacy directory readers' other image-loader formats. No cached
@@ -56,7 +58,7 @@ func _read(path: String,width: int,height: int,expected,require_pixels: bool,ada
 	# Check the fixed canvas before PNG allocation, then let the decoder validate
 	# the entire captured buffer. A cache hit still reads/checks its declared file.
 	if bytes.size()<33 or u32(bytes,8)!=13 or bytes.slice(12,16).get_string_from_ascii()!="IHDR" or u32(bytes,16)!=width or u32(bytes,20)!=height:return {"error":"Cel image has wrong dimensions or is unreadable."}
-	var fingerprint:=digest_bytes(bytes);var cache: Dictionary=adaptive_entries if adaptive else entries;var entry: Dictionary=cache.get(fingerprint,{})
+	var fingerprint:=encoded if not encoded.is_empty() else digest_bytes(bytes);var cache: Dictionary=adaptive_entries if adaptive else entries;var entry: Dictionary=cache.get(fingerprint,{})
 	if entry.is_empty():
 		var decoded:=Image.new()
 		if decoded.load_png_from_buffer(bytes)!=OK or decoded.get_width()!=width or decoded.get_height()!=height:return {"error":"Cel image has wrong dimensions or is unreadable."}
