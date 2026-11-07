@@ -12921,3 +12921,26 @@ No nativeWindows/hardware/fidelity inference. Raw clipboard-owner-app/cold under
 /workspace/has-handoff-audit; curated clipboard_raster_ownership_2026-11-06.json
 and docs/clipboard_raster_ownership.md. MEM-02 partial/open for history/derived/GPU/
 global admission/dense acceptance. Whole continuous goal active.
+
+
+2026-11-06 — Keep useful history when removing compact cold layers
+
+Reproduced12unique cold full-HD drawings retaining9,802bytes but charged99,532,800
+on layer deletion. Prior brush history evicted; restoring layer could not Undo the
+brush. Removal now charges retained raster payload once per identity; eager/hot
+Images retain full charge. No new decoded snapshots and deleted owners stay in
+shared registry. Charge measured at removal time, not dynamic global admission.
+64MiB soft owner target/history policy and32cel cap unchanged.
+
+Baseline13checks completed with3expected history failures; fixed13/13pass,
+including prior brush Undo after layer Undo, Redo ordering, all12exact restored
+rasters, unchanged world/camera and packed Save/Open final composition exact.
+Existing layer UI/order/visibility/remove/recovery suite40pass,48H264frames1080p24
+confirmed independently. Raster domains271pass. New portable private-display
+wrapper retains Windows receipt assertions; native Windows/hardware unrun.
+First exploratory baseline used wrong bool save argument, stopped only owned app,
+corrected to packed string and reran complete baseline; failed logs retained.
+Raw layer-retention-before/baseline/verified/domain under /workspace/has-handoff-audit.
+Curated layer_retention_2026-11-06.json and docs/layer_history_retention.md.
+MEM-01/02 remain partial for dynamic global tiles/history/derived/GPU admission
+and dense acceptance. Whole continuous goal active, no completed-loop repetition.

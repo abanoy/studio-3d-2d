@@ -853,9 +853,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/new_drawing_ownership_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/layer_history_retention.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/layer_retention_2026-11-06.json"
         }
       ],
-      "remaining": "Cut/Paste/Split/Create/Copy/Delete and new Fill use affected-cel patches. New/adaptive owners support exact pixel Undo across idle cooling, including history-only ownership. Whole-layer/legacy retention, global tile/active/history accounting and dense-project acceptance remain; scoped passes do not close the group.",
+      "remaining": "Single-cel structural edits use affected-cel patches, and deleted cold layers now charge retained pixels while preserving preceding brush Undo. Accepted eager/raw/clipboard ownership is registered. Dynamic global tile/active/history/derived accounting and dense-project admission/acceptance remain; scoped passes do not close the group.",
       "external_dependencies": []
     },
     {
@@ -2299,7 +2307,7 @@
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "All single-cel structural producers, including new fill, now use affected-cel patches. Audit whole-layer/legacy retention and global history/active memory accounting, then dense-project acceptance."
+      "action": "Whole-layer removal now charges retained cold pixels and preserves prior brush Undo. Address dynamic global history/tile/active accounting and dense-project admission/acceptance."
     },
     {
       "requirement": "STORE-04",

@@ -173,6 +173,13 @@ func confirm_remove() -> void:
 		if is_same(app.layers[i],request.layer):index=i;break
 	if index<0 or app.layers.size()<=1:return
 	var before: Array=app.layers.duplicate();var selected: String=app.layers[app.active_layer].id;var bytes:=0
-	for cel in request.layer.cels:bytes+=Drawing.raster_bytes(cel,true)
+	# Structural history keeps the existing owners, not decoded frame snapshots.
+	# Charge their retained payloads; hot/decoded owner bytes remain separately
+	# tracked by the document budget even while only Undo retains the layer.
+	var retained:={}
+	for cel in request.layer.cels:
+		var token:=Drawing.raster_token(cel)
+		if token.is_empty() or retained.has(token[0]):continue
+		retained[token[0]]=true;bytes+=Drawing.raster_bytes(cel)
 	app.layers.remove_at(index);app.active_layer=clampi(index,0,app.layers.size()-1);structure(before,selected,bytes)
 	if session==app.recovery_session:dialog.popup_centered()
