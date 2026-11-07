@@ -39,7 +39,8 @@ def cases():
         for value in values:
             v=good();v['assets'][0]['scene']['video'][field]=value;result.append((v,scene(),False))
     v=good();v['assets'][0]['scene']['sequence_graph']={};result.append((v,scene(),False))
-    v=good();v['assets'][0]['scene']['layers']=[{'cels':[{}]*17}];root=scene();root['layers']=[{'cels':[{}]*16}];result.append((v,root,False))
+    v=good();v['assets'][0]['scene']['layers']=[{'cels':[{}]*201}];root=scene();root['layers']=[{'cels':[{}]*200}];result.append((v,root,False))
+    v=good();v['assets'][0]['scene']['layers']=[{'cels':[{}]*200}];root=scene();root['layers']=[{'cels':[{}]*200}];result.append((v,root,True))
     v=good();v['assets'][0]['scene']['audio']={'clips':[{}]*9};root=scene();root['audio']={'clips':[{}]*8};result.append((v,root,False))
     v=good();v['assets'][0]['scene']['world']['objects']=[{}]*33;root=scene();root['world']['objects']=[{}]*32;result.append((v,root,False))
     v=good();v['assets'][0]['scene']['video']['duration_frames']=12;v['clips'][0]['loop']=True;result.append((v,scene(),True))

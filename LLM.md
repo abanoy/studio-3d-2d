@@ -2833,3 +2833,62 @@ is not native acceptance. Raw prepared-owner-* under /workspace/has-handoff-audi
 curated prepared_art_ownership_2026-11-07.json and docs/prepared_art_ownership.md.
 Tracked tutorial outputs archived/restored. Whole goal active; next consistent
 larger drawing/container boundaries plus actual400cel app persistence/crash proof.
+
+## 2026-11-07 UTC — ordinary400drawing projects and bounded recovery preflight
+
+Continued the cloud goal from the preserved worktree after runtime restart. Before:
+ordinary400unique drawing Open refused the32count guard, HAS128members could not
+hold400unique PNGs, and the eventual actual400app/crash workflow reproduced a
+checkpoint refusal from full decoded recovery reservation. Added shared400count
+constants across Create/clipboard/timing/fill/patch/import/storage and Godot/Python
+sequence validation. Root plus direct child scenes share400; malformed/401metadata
+refuses before writes. HAS now1024boundedmembers;512MiBpayload/1MiBmetadata/path,
+backup/integrity/locking checks unchanged. Ownership320MiB,soft64MiB,twoHDdecoded
+cache and256MiBencoded preparation stay unchanged. No raw-art400promise: admitted
+bytes can refuse much sooner. Explicit eager API refuses above320MiBdecoded;
+normal Open selects adaptive owners. No schema renumbering or artist-source edits.
+
+Large cold recovery retains cheap conservative decoded reservation for small
+projects. When it would refuse, bounded preflight measures exact PNG buffers one
+at a time, including child drawings and source-file allowance, before checkpoint
+writes. Internal compressed snapshot size is never treated as persisted PNG size.
+Refusal/read failure keeps the previous checkpoint. Existing no-decode metadata
+assertions preserved; new preflight assertions run after them and before edits.
+
+ActualGUI16checks pass:4layers×100unique fullHD,400distinctowners,exact sampled
+GPUoverlay,401stCreate refusal,delete/Create and structuralUndo,realbrush only
+cel137changed/399peersunchanged,brushUndoRedo,packed400Save/Open/finalGPUequality.
+Open20472ms/save68529ms/reopen21333ms. Newlimits13,292rasterdomains,117Python,
+205clipboard/history pass. Old33negative boundary became401with400positive;
+old31→32history fixtures remain and globalCreate refusal nowexercises400.
+
+Actual400writer7/coldreader5/normalstartup8 pass after real SIGKILL. Original
+input/audio and writer cache unavailable to fresh readers; all400pixelidentities,
+frame37/duration101,PCM,exactGPUoverlay/finalpicture restored. ExplicitmanualHAS
+unchanged. Actual101frame1080p24H264/AAC duration4.208333s,decoded onsetsample48001
+(expected48000). Writer227.844s/reader23.193s/startup23.273s, observed individual
+processRSS/HWM maxima419360768/409554944/427520000B sampled50ms. NotGPU/session,
+process-tree/targethardware or hardRSS guarantee. Registeredfinal400coldowners
+322080Bpayload+16588800Bcache=16910880B. All400sourcePNGs byte-match independent
+foundation corpus. Existing32noise regression31unit/16PNG/21writer/5reader/
+6startup passes actualkill/movie/source/manual safeguards. Benchmark scope/cap
+metadata corrected to current400; compile/check-only pass, no new foundation
+measurement invented.
+
+Raw failures retained: first restrictedhostXaccess refusal retried onlyafter
+using approvedprivatehostcontext; obsolete32/33boundary assertions updated to
+real400/401withoutremovingoldhistoryproof; actuallargecheckpoint failure fixed;
+newpreflighttestordering fixed while retaining no-decode assertions. Required
+python tests/verify.py attempted on private110: stops in existingWindows-only
+nativeKritaharness at subprocess.CREATE_NO_WINDOW absent onLinux. No fullsuite
+pass/nativeKrita/Windows/physicalartist/device acceptance claim. Actual >32prepared
+Krita/video import remains unrun. Actual cloudUI screenshot under
+/workspace/has-handoff-audit/large-project-screenshots/studio-400-drawings.png.
+
+Curated docs/benchmarks/large_projects_2026-11-07.json, docs/large_projects.md,
+README/currentguides/checklist updated. Historical receipts preserved. MEM01/02
+remainpartial and overallscore unaudited; user askedpercentage and received exact
+45/54implementation counts, with2/62formalacceptance closures, not fabricated
+releasecompletion. Material independent nextwork: synchronoussave/checkpoint
+blocks UI (68.5sSave); implement frozen independent background checkpoint writer,
+prove editing/heartbeat/failure/stalesession safety, then auditremainingacceptance.

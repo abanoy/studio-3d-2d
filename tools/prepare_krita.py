@@ -4,6 +4,8 @@ No live scene mutation. Native layers are rendered together only after explicit
 visibility choices; original source identity and exact rational timing are kept.
 """
 from pathlib import Path
+try:from .drawing_limits import MAX_CELS
+except ImportError:from drawing_limits import MAX_CELS
 from fractions import Fraction
 import argparse,hashlib,json,math,os,re,struct,subprocess,sys,time,zlib
 try:from . import krita_assets as K
@@ -120,7 +122,7 @@ def prepare(request):
     if request.get('source_sha256')!=identity:raise ValueError('Krita source changed since layer review; inspect it again')
     if inventory['width']*inventory['height']>MAX_PIXELS or len(inventory['layers'])>128 or inventory['native_member_bytes']>2*1024**3:raise ValueError('Krita canvas/layers/payload exceed current preparation limits')
     if inventory['color_space'] not in ('RGBA','GRAYA'):raise ValueError('This Krita color space needs an explicit conversion in Krita first')
-    maximum=number(request.get('max_cels',32),'available cel count',1,32)
+    maximum=number(request.get('max_cels',MAX_CELS),'available cel count',1,MAX_CELS)
     width=number(request.get('width',1920),'output width',1,1920);height=number(request.get('height',1080),'output height',1,1080)
     num=number(request['fps_num'],'frame-rate numerator',1,120000);den=number(request['fps_den'],'frame-rate denominator',1,1001)
     if Fraction(num,den)>120:raise ValueError('Project frame rate exceeds120')

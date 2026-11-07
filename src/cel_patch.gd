@@ -1,4 +1,5 @@
 extends RefCounted
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 const Drawing=preload("res://src/drawing.gd")
 const Timing=preload("res://src/cel_timing.gd")
 
@@ -32,7 +33,7 @@ static func same(cel: Dictionary,expected: Dictionary) -> bool:
 	var image:=Drawing.image(cel);var other:=Drawing.image(expected)
 	return image!=null and other!=null and image.get_size()==other.get_size() and image.get_format()==other.get_format() and image.get_data()==other.get_data()
 
-static func apply(cels: Array,command: Dictionary,side: String,frames: int,limit:=32) -> Dictionary:
+static func apply(cels: Array,command: Dictionary,side: String,frames: int,limit:=DrawingLimits.MAX_CELS) -> Dictionary:
 	if not side in ["before","after"]:return {"error":"Invalid drawing history direction."}
 	var expected: Array=command["after" if side=="before" else "before"]
 	var wanted: Array=command[side];var removed:={};var found:={};var all:={}
@@ -46,7 +47,7 @@ static func apply(cels: Array,command: Dictionary,side: String,frames: int,limit
 		else:result.append(cel)
 	if found.size()!=expected.size():return {"error":"The drawing history target is missing. Current drawings were kept."}
 	result.append_array(wanted.duplicate(true));result.sort_custom(func(a,b):return a.start<b.start)
-	if result.size()>limit:return {"error":"Restoring this drawing would exceed the global32cel budget."}
+	if result.size()>limit:return {"error":"Restoring this drawing would exceed the project drawing limit."}
 	if not result.is_empty():
 		var why:=Timing.proposal(result,result[0].id,result[0].start,frames)
 		if why.has("error"):return why

@@ -1,8 +1,9 @@
-"""Measure unique full-HD cold-raster staging without expanding production cel limits."""
+"""Measure unique full-HD cold-raster staging independently of the ordinary app."""
 from pathlib import Path
 import argparse,hashlib,json,os,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from run import command
+from tools.drawing_limits import MAX_CELS
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path);parser.add_argument('--count',type=int,choices=[32,128,400],default=400);args=parser.parse_args()
@@ -26,6 +27,6 @@ def main():
     conversion=subprocess.run([ffmpeg,'-v','error','-framerate','24','-i',str(Path(result['sequence'])/'frame_%06d.png'),'-frames:v',str(result['composite_frames']),'-c:v','libx264','-pix_fmt','yuv420p','-y',str(movie)],capture_output=True,text=True,timeout=120,creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
     assert conversion.returncode==0,conversion.stderr
     probe=str(Path(ffmpeg).with_name('ffprobe.exe' if os.name=='nt' else 'ffprobe'));media=json.loads(subprocess.check_output([probe,'-v','error','-count_frames','-show_streams','-of','json',str(movie)]));video=next(s for s in media['streams'] if s['codec_type']=='video');assert (video['codec_name'],video['width'],video['height'],video['r_frame_rate'],video['nb_read_frames'])==('h264',1920,1080,'24/1',str(result['composite_frames']))
-    proof=dict(result=result,video=video,process=dict(observed_max_rss_bytes=max_rss,observed_max_hwm_bytes=max_hwm,linux_samples=samples,wall_seconds=time.monotonic()-started,note='Linux samples50ms; OS high-water observations include fixture/oracle work, not total session/GPU memory. NonLinux processRSS unmeasured.'),source_sha256={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/cel_raster_reader.gd','src/cel_raster_snapshot.gd','src/cel_raster_snapshot_cache.gd','src/cel_raster_owner.gd','src/cel_pixel_history.gd','src/drawing.gd','tests/cel_raster_dense_benchmark.gd','tests/verify_dense_rasters.py']},production_cel_cap_unchanged=32)
+    proof=dict(result=result,video=video,process=dict(observed_max_rss_bytes=max_rss,observed_max_hwm_bytes=max_hwm,linux_samples=samples,wall_seconds=time.monotonic()-started,note='Linux samples50ms; OS high-water observations include fixture/oracle work, not total session/GPU memory. NonLinux processRSS unmeasured.'),source_sha256={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/cel_raster_reader.gd','src/cel_raster_snapshot.gd','src/cel_raster_snapshot_cache.gd','src/cel_raster_owner.gd','src/cel_pixel_history.gd','src/drawing.gd','tests/cel_raster_dense_benchmark.gd','tests/verify_dense_rasters.py']},production_cel_limit=MAX_CELS)
     (folder/'verification.json').write_text(json.dumps(proof,indent=2)+'\n');print(json.dumps(proof,indent=2))
 if __name__=='__main__':main()

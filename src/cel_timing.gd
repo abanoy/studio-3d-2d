@@ -1,10 +1,11 @@
 extends RefCounted
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 # Same-layer timing edits retain raster identity; collisions refuse.
 const MAX_FRAMES=preload("res://src/extended_timing.gd").MAX_FRAMES
 static func integer(value,low: int,high: int) -> bool:
 	return (value is int or value is float) and is_finite(float(value)) and value==floor(value) and value>=low and value<=high
 static func proposal(cels,id: String,start,frames,length=null) -> Dictionary:
-	if not integer(frames,1,MAX_FRAMES) or not integer(start,0,int(frames)-1) or not cels is Array or cels.size()>32:return {"error":"Choose a whole drawing start inside the scene."}
+	if not integer(frames,1,MAX_FRAMES) or not integer(start,0,int(frames)-1) or not cels is Array or cels.size()>DrawingLimits.MAX_CELS:return {"error":"Choose a whole drawing start inside the scene."}
 	var index:=-1;var previous_end:=0;var ids:={}
 	for i in range(cels.size()):
 		var cel=cels[i]

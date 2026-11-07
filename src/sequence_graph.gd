@@ -1,4 +1,5 @@
 extends RefCounted
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 const Extended=preload("res://src/extended_timing.gd")
 const FORMAT="studio_sequences_1"
 const SHADOW_FORMAT="studio_sequences_2"
@@ -48,7 +49,7 @@ static func error(graph,root) -> String:
 		var rows=audio.get("clips") if audio.has("clips") else [audio] if not audio.is_empty() else []
 		if not rows is Array:return "Invalid sequence audio tracks."
 		sounds+=rows.size();objects+=world.objects.size();effects+=world.get("effects",[]).size()
-	if cels>32 or sounds>16 or objects>64 or effects>16:return "Sequences exceed the shared drawing/audio/world resource budget."
+	if cels>DrawingLimits.MAX_CELS or sounds>16 or objects>64 or effects>16:return "Sequences exceed the shared drawing/audio/world resource budget."
 	var ids:={};var total:=0;var owners: Array=[{"id":"","clips":graph.clips}];owners.append_array(graph.assets)
 	for owner in owners:
 		if not owner.clips is Array:return "Invalid sequence clips."

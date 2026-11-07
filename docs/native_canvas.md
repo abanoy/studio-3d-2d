@@ -29,8 +29,10 @@ requires its own approved fixtures; a smaller canvas does not establish it.
 No project schema is renumbered. Existing1080p files keep their pixels and default
 behavior. Older application builds that only support1080p refuse the new native
 sizes; use a project copy with those builds. This is not a destructive migration.
-The32-cel cap, full-HD pixel maxima and memory targets are unchanged. Adaptive
-loading estimates now use each scene's actual decoded dimensions.
+Full-HD pixel maxima and memory targets are unchanged. Projects now permit up to
+400 drawings across editable scenes, subject to byte admission; see
+[larger projects](large_projects.md). Adaptive loading estimates use each scene's
+actual decoded dimensions.
 
 Verification exercises the actual project control, brush pointer mapping, exact
 GPU preview, source/camera projection, canvas and pixel Undo/Redo, refusal with

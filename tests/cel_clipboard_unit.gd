@@ -17,6 +17,6 @@ func _initialize() -> void:
 	check(not Clipboard.placement([],"new",3000,24,7200).has("error"),"long-parent placement retains original length")
 	check(Clipboard.placement([{"id":"bad","start":"invalid","duration":8}],"new",12,8,48).has("error"),"malformed existing range safely refused")
 	var full: Array=[]
-	for i in range(32):full.append({"id":str(i),"start":i,"duration":1})
-	check(Clipboard.placement(full,"new",32,1,48).has("error"),"32cel layer budget remains bounded")
+	for i in range(400):full.append({"id":str(i),"start":i,"duration":1})
+	check(Clipboard.placement(full,"new",400,1,401).has("error"),"400drawing layer budget remains bounded")
 	print("CEL_CLIPBOARD_UNIT "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

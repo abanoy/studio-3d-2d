@@ -16,9 +16,9 @@ can still serve preview/save/export, but an over-limit decoded frame is not cach
 
 The separate64MiB idle hot/cache target remains soft; its ordinary cooling cadence
 can free capacity. The decoded cache still retains at most two full-HD frames.
-The new320MiB limit includes that cache and cold payloads. The32-live-cel cap is
-unchanged. Current32full-HD logical authorities plus a clipboard fit the configured
-limit; additional Undo retention can reach it. Save and reopen a project to release
+The320MiB limit includes that cache and cold payloads. Projects permit up to
+400 drawings across root and direct child scenes, subject to this byte admission.
+32 full-HD logical authorities plus a clipboard fit the configured limit; additional Undo retention can reach it. Save and reopen a project to release
 old Undo/clipboard state when needed. No artist history is silently discarded by
 this admission check.
 
@@ -26,8 +26,8 @@ This is a persistent registered-ownership bound, not process RSS or total GPU RA
 History tiles, derived CPU/GPU textures, engine/3D/audio resources and bounded
 transient decoding/compression/readback buffers are outside this counter. A staged
 Open temporarily retains separate old and incoming project contexts. Broader
-resource accounting and dense-project acceptance remain necessary before increasing
-cel limits or claiming whole-project memory safety.
+resource accounting and target-device acceptance remain necessary before claiming
+whole-project memory safety. See [larger projects](large_projects.md).
 
 Focused checks use small explicit budgets to prove atomic rejection/release,
 shared-cold deduplication, safe edit/borrowed-selection refusal, decoded eviction,

@@ -55,6 +55,10 @@ func _initialize() -> void:
 	check(Patch.same(before[7],other) and cache.decodes==1,"rebuilt independent owner can prove exact equal pixels on demand")
 	var moved: Dictionary=before[7].duplicate(true);moved.duration=2
 	check(not Patch.same(before[7],moved),"metadata differences remain stale-history refusal")
+	var encoded:=Recovery.encoded_drawing_reserve([layer],graph,1024*1024)
+	check(not encoded.has("error") and encoded.bytes==64*source.save_png_to_buffer().size(),"large cold recovery reservation measures exact persisted PNG bytes including child scenes")
+	var limited:=Recovery.encoded_drawing_reserve([layer],{},1)
+	check(limited.has("error") and not layer.cels[0].raster_owner.is_pinned(),"encoded recovery preflight refuses over-budget without pinning or changing artwork")
 	var old_shape:=editor.shape(layer);var pin:=Drawing.edit_image(layer.cels[7]);Drawing.stroke(pin.image,Vector2(3,3),Vector2(9,8),2,Color.RED,false)
 	check(editor.shape(layer)!=old_shape and editor.shape(layer)[6]==old_shape[6] and not layer.cels[6].raster_owner.is_pinned(),"editing one cold owner changes only its timing revision token")
 	editor.free();print("CEL_RASTER_METADATA_UNIT "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

@@ -1,5 +1,7 @@
 """Bounded .has project container v1. Data only; never executes archive contents."""
 from pathlib import Path
+try:from .drawing_limits import MAX_PROJECT_FILES, error as drawing_count_error
+except ImportError:from drawing_limits import MAX_PROJECT_FILES, error as drawing_count_error
 from contextlib import contextmanager
 import errno
 import hashlib
@@ -25,7 +27,7 @@ except ImportError:from save_sync import existing_boundary, sync_directory, pare
 
 MAX_TOTAL = 512 * 1024 * 1024
 MAX_META = 1024 * 1024
-MAX_FILES = 128
+MAX_FILES = MAX_PROJECT_FILES
 
 
 class HasError(ValueError): pass
@@ -80,6 +82,8 @@ def read_json(blob):
 
 def members(manifest,extended_ok=False):
     """Only declared current playback/editing assets; never glob whole game folders."""
+    count_error=drawing_count_error(manifest.get("layers",[]))
+    if count_error:raise HasError(count_error)
     video=manifest.get("video",{})
     if isinstance(video,dict) and "output_size" in video and (not isinstance(video["output_size"],str) or video["output_size"] not in ("1080p","720p","540p")):raise HasError("Invalid saved output size")
     try:from . import extended_timing as extended

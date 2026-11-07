@@ -13119,3 +13119,19 @@ is not native acceptance. Raw prepared-owner-* under /workspace/has-handoff-audi
 curated prepared_art_ownership_2026-11-07.json and docs/prepared_art_ownership.md.
 Tracked tutorial outputs archived/restored. Whole goal active; next consistent
 larger drawing/container boundaries plus actual400cel app persistence/crash proof.
+
+### 2026-11-07 UTC —400drawing ordinary app workflow
+
+Shared400drawing/root+child and1024HASmember bounds now coexist with unchanged
+320MiBregistered admission and512MiBarchive/recovery limits. Actual400Open/edit/
+Undo/packedroundtrip16checks,13limitchecks,292rasterdomains,117Python and205history
+checks pass. Actualkill/cold/normalstartup7/5/8checks and101frame1080p24H264/AAC
+withsample48001onset pass; exactall400pixelidentities/sourcepreservation/manualHAS
+protected. Fixed recovery false refusal with exactonePNGatatimepreflight onlywhen
+conservative decoded estimatewouldfail. Process-only peak427520000B; notwholeapp/
+GPU/targethardware acceptance. Save68.5s/initialOpen20.5s/reopen21.3s are material
+remaining responsiveness limitations. Requiredfullverifier attempted but blocked
+by existingWindows-onlyKritaharness CREATE_NO_WINDOW onLinux; no nativefidelity
+claim. See large_projects.md and benchmarks/large_projects_2026-11-07.json. Next:
+frozen independently owned background checkpoint serialization with liveediting,
+failedwrite and stalecompletion verification; completionbaseline audit stillopen.

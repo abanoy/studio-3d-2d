@@ -18,7 +18,7 @@ func run() -> void:
 	var press:=InputEventMouseButton.new();press.button_index=MOUSE_BUTTON_LEFT;press.pressed=true;app.canvas_input(press,Vector2(300,200));app.paint_segment(Vector2(340,200));press.pressed=false;app.canvas_input(press,Vector2(340,200));await settled()
 	check(app.history.size()==1 and app.history[0].type=="pixels","real stroke creates prior Undo in31cel layer")
 	var stroke: Dictionary=app.history[0];var painted:=hash_cel(layer.cels[0]);var peers: Array=layer.cels.slice(1);app.set_frame(4);app.create_cel(true);var created: Dictionary=app.history[-1]
-	check(layer.cels.size()==32 and app.history.size()==2 and is_same(app.history[0],stroke),"Copy cel at limit preserves preceding real stroke Undo")
+	check(layer.cels.size()==32 and app.history.size()==2 and is_same(app.history[0],stroke),"Copy cel in32drawing fixture preserves preceding real stroke Undo")
 	if "--probe" in OS.get_cmdline_user_args():
 		print("CREATE_DELETE_PROBE "+JSON.stringify({"checks":checks,"failures":failures,"command_bytes":created.get("bytes",0)}));await app.quit_studio();quit(0 if failures==0 else 1);return
 	check(created.type=="cel_patch" and created.before.size()==1 and created.after.size()==2 and not created.has("layer"),"copy records only split exposure and new independent cel")
@@ -41,7 +41,10 @@ func run() -> void:
 	app.undo();check(Drawing.cel_at(layer,40).is_empty(),"blank Undo restores gap")
 	app.redo();check(hash_cel(Drawing.cel_at(layer,40))==empty_hash,"blank Redo restores exact pixels")
 	check(app.physics_editor.generation==generation,"blank Undo/Redo preserve independent physics generation")
-	var count: int=app.history.size();app.set_frame(39);app.create_cel(false);check(layer.cels.size()==32 and app.history.size()==count,"global32cel limit still refuses additional creation without history mutation")
+	var saved_duration: int=app.video.duration_frames;app.video.duration_frames=401
+	for i in range(368):app.layers[0].cels.append({"id":"limit"+str(i),"start":i,"duration":1,"image":image})
+	var count: int=app.history.size();app.set_frame(39);app.create_cel(false);check(layer.cels.size()==32 and app.history.size()==count and app.sequence_editor.used("cels")==400,"global400drawing limit refuses additional creation without history mutation")
+	app.layers[0].cels.clear();app.video.duration_frames=saved_duration
 	var before: Array=layer.cels.duplicate(true);check(not app.apply_command(created,"before") and layer.cels==before,"stale create Undo refuses atomically without erasing later drawings")
 	var intact:=true
 	for peer in peers:

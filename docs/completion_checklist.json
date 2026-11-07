@@ -889,9 +889,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/prepared_art_ownership_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/large_projects.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/large_projects_2026-11-07.json"
         }
       ],
-      "remaining": "Owned/cache admission and400unique-art foundation measurement are verified. Prepared import now stages admitted cold owners and lesson loading avoids duplicate eager decoding. Production count32 and HAS member128 still require consistent bounded expansion and actual larger-project Save/Open/GUI/crash/export/old-incoming-context verification. Native device acceptance remains separate.",
+      "remaining": "Ordinary400drawing seek/edit/Undo, packed Save/Open, exact GPU/movie/audio, cold new-process Open and actual SIGKILL startup pass under unchanged320MiB registered admission. Observed individual process peak427520000B; source corpus unchanged. Save68.5s and synchronous checkpoint latency remain material; quiet background saving and long-session responsiveness/retention need work. Whole-app/GPU and native device acceptance remain separate; >32 prepared native/video import is unrun.",
       "external_dependencies": []
     },
     {
@@ -1083,9 +1091,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/prepared_art_ownership_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/large_projects.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/large_projects_2026-11-07.json"
         }
       ],
-      "remaining": "Owned/cache admission and400unique-art foundation measurement are verified. Prepared import now stages admitted cold owners and lesson loading avoids duplicate eager decoding. Production count32 and HAS member128 still require consistent bounded expansion and actual larger-project Save/Open/GUI/crash/export/old-incoming-context verification. Native device acceptance remains separate.",
+      "remaining": "Ordinary400drawing seek/edit/Undo, packed Save/Open, exact GPU/movie/audio, cold new-process Open and actual SIGKILL startup pass under unchanged320MiB registered admission. Observed individual process peak427520000B; source corpus unchanged. Save68.5s and synchronous checkpoint latency remain material; quiet background saving and long-session responsiveness/retention need work. Whole-app/GPU and native device acceptance remain separate; >32 prepared native/video import is unrun.",
       "external_dependencies": []
     },
     {
@@ -1502,9 +1518,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/recovery_schedule.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/large_projects.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/large_projects_2026-11-07.json"
         }
       ],
-      "remaining": "Long-session resource/latency measurement remains.",
+      "remaining": "Large400drawing recovery and actual SIGKILL startup pass after bounded PNG preflight fixes false decoded-reservation refusal. Checkpoint creation remains synchronous and blocks UI; implement isolated background serialization with immutable snapshot ownership and stale-completion protection, then verify responsiveness and long-session behavior.",
       "external_dependencies": []
     },
     {
@@ -2387,14 +2411,19 @@
   ],
   "next_actions": [
     {
+      "requirement": "REC-01",
+      "priority": 1,
+      "action": "Large-project recovery is correct but synchronous. Move checkpoint serialization off the UI using isolated frozen drawing authorities; test edits during write, failed writes and stale session completions."
+    },
+    {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "400unique foundation and safe prepared/lesson loading are verified. Implement consistent bounded larger drawing and HAS member counts, then verify ordinary app seek/edit/save/cold/crash/media and observe actual transition resources."
+      "action": "400drawing ordinary app/edit/packed/cold/crash/media now pass. Resolve synchronous save/checkpoint responsiveness with frozen independent worker input and actual editing/heartbeat/stale completion checks; retain ownership and source/fault protections."
     },
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "400unique foundation and safe prepared/lesson loading are verified. Implement consistent bounded larger drawing and HAS member counts, then verify ordinary app seek/edit/save/cold/crash/media and observe actual transition resources."
+      "action": "400drawing ordinary app/edit/packed/cold/crash/media now pass. Resolve synchronous save/checkpoint responsiveness with frozen independent worker input and actual editing/heartbeat/stale completion checks; retain ownership and source/fault protections."
     },
     {
       "requirement": "STORE-04",

@@ -1,4 +1,5 @@
 extends Control
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 signal movie_export_finished(folder: String,success: bool)
 signal startup_recovery_finished(result: Dictionary)
 const Timeline = preload("res://src/timeline.gd")
@@ -1376,7 +1377,7 @@ func create_cel(duplicate: bool,finish_current: bool=true) -> void:
 	var count := 0
 	for layer in layers: count += layer.cels.size()
 	if sequence_editor:count=sequence_editor.used("cels")
-	if count >= 32: message("Prototype memory limit: 32 full-HD cels."); return
+	if count >= DrawingLimits.MAX_CELS: message("This project already has %d drawings." % DrawingLimits.MAX_CELS); return
 	var layer: Dictionary = layers[active_layer]
 	for existing in layer.cels:
 		if existing.start == frame:

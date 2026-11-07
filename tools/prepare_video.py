@@ -1,5 +1,7 @@
 """Local video -> bounded, editable RGBA holds. Never modifies a scene or source."""
 from pathlib import Path
+try:from .drawing_limits import MAX_CELS
+except ImportError:from drawing_limits import MAX_CELS
 from fractions import Fraction
 import argparse
 import json
@@ -172,7 +174,7 @@ def prepare(request):
         remaining = raster.number(request['available_frames'], 'remaining frames', 1, 240)
         if not 1 <= count <= remaining:
             raise ValueError('Video exceeds remaining scene frames; shorten it externally or extend the scene')
-        maximum = raster.number(request['max_cels'], 'available drawings', 1, 32)
+        maximum = raster.number(request['max_cels'], 'available drawings', 1, MAX_CELS)
         width = raster.number(request.get('width', 1920), 'output width', 1, 1920)
         height = raster.number(request.get('height', 1080), 'output height', 1, 1080)
         chroma = key_settings(request['chroma'])

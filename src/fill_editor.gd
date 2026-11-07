@@ -1,4 +1,5 @@
 extends Node
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 const Fill=preload("res://src/fill.gd")
 const Drawing=preload("res://src/drawing.gd")
 var app
@@ -58,7 +59,7 @@ func start(point: Vector2) -> void:
 		var count:=0
 		for row in app.layers:count+=row.cels.size()
 		if app.get("sequence_editor"):count=app.sequence_editor.used("cels")
-		if count>=32:app.message("Prototype memory limit: 32 full-HD cels.");return
+		if count>=DrawingLimits.MAX_CELS:app.message("This project already has %d drawings." % DrawingLimits.MAX_CELS);return
 	var pixels:=Drawing.read_image(cel) if not cel.is_empty() else {"image":Drawing.blank(app.video.width,app.video.height)}
 	if pixels.has("error"):app.message(pixels.error);return
 	var target: Image=pixels.image

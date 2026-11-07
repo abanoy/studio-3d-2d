@@ -1,0 +1,689 @@
+{
+  "date": "2026-11-07 UTC",
+  "scope": "Ordinary up-to400 drawing software contract, byte admission unchanged; procedural cloud fixtures, not native artist, Windows or target-device acceptance.",
+  "before": {
+    "ordinary400_open": "refused above32 drawings",
+    "archive_member_limit": 128,
+    "recovery": "full decoded reservation refused sparse400drawing checkpoint; actual movie passed before checkpoint failure"
+  },
+  "after": {
+    "drawing_limit": 400,
+    "archive_member_limit": 1024,
+    "owner_cache_limit_bytes": 335544320,
+    "recovery_limit_bytes": 536870912,
+    "recovery_fallback": "Exact PNG size preflight, one drawing at a time, only when conservative decoded reserve would refuse; no snapshot-size substitution."
+  },
+  "ordinary_app": {
+    "checks": 16,
+    "failures": 0,
+    "load_ms": 20472,
+    "memory": {
+      "accounted_bytes": 16910880,
+      "cold_payload_bytes": 322080,
+      "decoded_cache_bytes": 16588800,
+      "hot_bytes": 0,
+      "hot_owners": 0,
+      "owner_limit_bytes": 335544320,
+      "owners": 400,
+      "target_bytes": 67108864
+    },
+    "packed_open_ms": 21333,
+    "save_ms": 68529,
+    "scope": "ordinary400drawing GUI/edit/packed roundtrip; separate cold/crash/media verification remains"
+  },
+  "large_crash_media": {
+    "reports": {
+      "writer": {
+        "result": {
+          "checks": 7,
+          "failures": 0,
+          "movie": "/workspace/has-handoff-audit/large-project-recovery-3/render_1794033109_93012332_0/movie.mp4"
+        },
+        "seconds": 227.844175653001,
+        "process_rss_hwm_bytes": 419360768,
+        "samples": 4526
+      },
+      "reader": {
+        "result": {
+          "checks": 5,
+          "failures": 0
+        },
+        "seconds": 23.192621811002027,
+        "process_rss_hwm_bytes": 409554944,
+        "samples": 461
+      },
+      "startup": {
+        "result": {
+          "checks": 8,
+          "failures": 0,
+          "memory": {
+            "accounted_bytes": 16910880,
+            "cold_payload_bytes": 322080,
+            "decoded_cache_bytes": 16588800,
+            "hot_bytes": 0,
+            "hot_owners": 0,
+            "owner_limit_bytes": 335544320,
+            "owners": 400,
+            "target_bytes": 67108864
+          }
+        },
+        "seconds": 23.273080890998244,
+        "process_rss_hwm_bytes": 427520000,
+        "samples": 463
+      }
+    },
+    "actual_abrupt_exit": true,
+    "offline_sources": true,
+    "source_unchanged": true,
+    "manual_has_unchanged": true,
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 51712,
+      "duration": "4.208333",
+      "bit_rate": "78756",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "101",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "audio_onset_sample": 48001,
+    "scope": "Procedural 400 drawing corpus; process RSS excludes GPU and other processes; native artist and Windows evidence unrun.",
+    "isolated_display": ":109"
+  },
+  "domains": {
+    "checks": 292,
+    "reports": {
+      "unit": {
+        "checks": 29,
+        "failures": 0
+      },
+      "write-paths": {
+        "checks": 17,
+        "failures": 0,
+        "scope": "owned Linux links/hardlinks/read-only paths; no Windows or hostile concurrent filesystem race certification"
+      },
+      "rollback": {
+        "checks": 26,
+        "failures": 0,
+        "scope": "owned metadata/asset/pixel rollback integrity; not native-rig or physical power-loss certification"
+      },
+      "project-ownership": {
+        "checks": 11,
+        "failures": 0
+      },
+      "admission": {
+        "checks": 17,
+        "default_owner_limit": 335544320,
+        "failures": 0,
+        "full_hd_accepted": 40,
+        "full_hd_rejected": 8,
+        "scope": "conservative owned+decoded bytes, not processRSS/GPU/tiles/temporary materializations"
+      },
+      "budget": {
+        "checks": 13,
+        "failures": 0
+      },
+      "pixel-history": {
+        "checks": 19,
+        "failures": 0
+      },
+      "policy": {
+        "checks": 11,
+        "failures": 0
+      },
+      "adaptive": {
+        "checks": 31,
+        "failures": 0
+      },
+      "save": {
+        "checks": 7,
+        "failures": 0
+      },
+      "read": {
+        "checks": 15,
+        "failures": 0
+      },
+      "overlay-regression": {
+        "checks": 20,
+        "failures": 0
+      },
+      "metadata": {
+        "checks": 16,
+        "failures": 0
+      },
+      "owner": {
+        "checks": 29,
+        "failures": 0
+      },
+      "reader-regression": {
+        "checks": 31,
+        "failures": 0
+      }
+    }
+  },
+  "drawing_limits_unit": {
+    "checks": 13,
+    "failures": 0
+  },
+  "python": {
+    "tests": 117,
+    "failures": 0,
+    "raw_log": "/workspace/has-handoff-audit/large-project-unit/python-final.log"
+  },
+  "clipboard_history": {
+    "checks": 205,
+    "reports": {
+      "unit": {
+        "checks": 27,
+        "failures": 0
+      },
+      "patch-unit": {
+        "checks": 10,
+        "failures": 0
+      },
+      "patch-history": {
+        "checks": 18,
+        "cut_bytes": 8295620,
+        "failures": 0,
+        "paste_bytes": 8295632,
+        "split_bytes": 16590324
+      },
+      "create-delete": {
+        "blank_bytes": 8295632,
+        "checks": 24,
+        "copy_bytes": 16590332,
+        "delete_bytes": 8295628,
+        "failures": 0,
+        "owned": false
+      },
+      "create-delete-owned": {
+        "blank_bytes": 8295632,
+        "checks": 24,
+        "copy_bytes": 16590332,
+        "delete_bytes": 8295628,
+        "failures": 0,
+        "owned": true
+      },
+      "live-history": {
+        "checks": 43,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/large-project-clipboard-2/live-history/render_1794032531_2673953_0/movie.mp4",
+        "project": "/workspace/has-handoff-audit/large-project-clipboard-2/live-history/Drawing Undo.has"
+      },
+      "live-reader": {
+        "checks": 3,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 50,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/large-project-clipboard-2/render_1794032550_9868020_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 6,
+        "failures": 0
+      }
+    }
+  },
+  "noise_compatibility": {
+    "reports": {
+      "unit": {
+        "checks": 31,
+        "failures": 0
+      },
+      "png-compatibility": {
+        "cache_hits": 16,
+        "cases": [
+          {
+            "name": "color2-depth16.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "e67477200047df6269888bb44717bca8e22bad1e130bacea74533e1354796a68"
+          },
+          {
+            "name": "color2-depth8.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "8bebf9e71d518c8eaf7cdc2054dab35a4a6a184cb096c75acbbab85a2a2c6879"
+          },
+          {
+            "name": "color4-depth16.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "ed0e7a88b4b1c479767c78482fa62b6f1cdc83f9c5ba433c156322255a02eb6f"
+          },
+          {
+            "name": "color4-depth8.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "a61c3f48139832caa035555ccfc99393feafb00387759ab14e76596455e1428a"
+          },
+          {
+            "name": "color6-depth16.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "85f739c9b5c4b6b8f89fd570794f914aa699aae50541fa3016be7c0c660ef2df"
+          },
+          {
+            "name": "color6-depth8.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "bb800897e39951c7bab0a0fea9900e354a0fd5165a4d4ef71c5540163dddcca6"
+          },
+          {
+            "name": "gray1.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "d8b0ad8408676af0e124ddd45cd8b09cdc7303296d3d53529ae19d531bd6e573"
+          },
+          {
+            "name": "gray16.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "4c61d80075d709da4f731397de129462e1a91808a8a5a3e60c77d136b49a1ddb"
+          },
+          {
+            "name": "gray2.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "1ddea9ce26a2e89396ed886e017030af6976052dd98a6fca589c35f6a225bdb4"
+          },
+          {
+            "name": "gray4.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "c8554e2433e5a608c32c822f3f37510cf3dda0798dbe76dea8910673f3b5e9a2"
+          },
+          {
+            "name": "gray8.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "08898f1b32e5a415ad4226812d4c524429f384c5e2e69304dacad4b8921af34f"
+          },
+          {
+            "name": "interlaced.png",
+            "ok": true,
+            "pixel_sha256": "40a028bd71b22e6f2eb75e7691b59882483febd139de9c5afee334c988052ddb",
+            "source_sha256": "cdaaed121f619da685a841dc9f644e1928b4d7cdee4bd0c3600dff2a3556ec32"
+          },
+          {
+            "name": "palette1.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "22574861f0a81d9f36b138d4e4cfe20883a97fcadb9ea7e9ee493c9aee522b9b"
+          },
+          {
+            "name": "palette2.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "be871ccb3dbc75cdedec573973c5f69ee1e97b7e3c43b1edb151a0412e9ed3b0"
+          },
+          {
+            "name": "palette4.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "0ca6d9f15e32104017669a64e3dcb9386ca8aeaa84b99450b078c60fbbc82c3f"
+          },
+          {
+            "name": "palette8.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "e022d29978dfbfd8e66dc6b8d5d4a83815938b42d935a4369b49a38ab16d08a0"
+          }
+        ],
+        "failures": 0,
+        "png_decodes": 16
+      },
+      "writer": {
+        "checks": 21,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/large-project-noise-regression/render_1794033065_24892162_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "7371704",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "decoded_onset_sample": 48001,
+    "actual_abrupt_exit": true,
+    "manual_has_unchanged": true,
+    "source_assets_unchanged": true,
+    "functional_unchanged": true
+  },
+  "source_preservation": {
+    "checks": 400,
+    "failures": 0,
+    "png_files_match_unchanged_foundation_corpus": true,
+    "manifest_sha256": "d8a2c3f23e0f6ba8f83061fd376026925c293b695b19c5c829d914700b5b2024"
+  },
+  "failed_and_corrected": [
+    "Old33drawing graph negative fixture corrected to401; positive400 added.",
+    "Old32live Create boundary regression changed to actual400 global boundary while preserving31-to32 history assertions.",
+    "Recovery fulldecoded reserve reproduced actual failed400checkpoint; fixed bounded PNG preflight and full rerun passed.",
+    "New PNG preflight unit initially inserted before existing no-decode assertions; moved after those assertions and before pixel edit; all16 pass.",
+    "First new GPU wrapper call inside restricted sandbox could not access private X; same call in approved host context connected to the owned private display."
+  ],
+  "unrun_or_blocked": [
+    "Required tests/verify.py stopped in existing Windows-only native Krita harness: subprocess.CREATE_NO_WINDOW absent on Linux. No full-suite pass claimed.",
+    "Native Krita/other ecosystem fidelity, Windows and physical artist/tablet/audio/GPU acceptance unrun.",
+    "Long-session UI latency and whole-app resource safety remain open.",
+    "Actual import of more than32 prepared video/Krita drawings not exercised by this receipt; new count/backend boundaries and existing procedural import regression are separate evidence."
+  ],
+  "limitations": [
+    "Ordinary400Open20.5s, Save68.5s, reopen21.3s in isolated app run. Synchronous save/checkpoint can block UI; quiet background saving acceptance incomplete.",
+    "Largest observed individual process RSS/HWM427520000B across recovery workflow. Not GPU, whole-session/process-tree, physical target hardware, or a hard RSS guarantee.",
+    "Registered owner/cache accounting excludes history tiles, derived textures, other engine resources and old/incoming context overlap.",
+    "Benchmark scope/cap metadata updated after successful frozen functional runs; Python compile and Godot check-only pass, no new foundation measurement claimed."
+  ],
+  "raw_prefix": "/workspace/has-handoff-audit/large-project-",
+  "source_sha256": {
+    "src/sequence_pixels.gd": "4a17d48ba3035f5292b53e82ff4b72b4c68dc8d7a0727ad945c3fcae4a818cbb",
+    "src/import_placement.gd": "e5aeb9cea76fee148c0bed00f48180a300013877ebb775921fa59725641121ad",
+    "src/physics_lesson.gd": "3123f80755645d134cccf8aac1aee57103fe4ddba7ecf944eb8decb669bc5d3c",
+    "src/app.gd": "984ad1e581a3216abf978c1d677347a587c90c38ff7ea154a7b951d9c923c405",
+    "src/body_curves.gd": "8c227a2093f117d66544ee597dade2163f6859f55fabaa72987f02abed280a62",
+    "src/studio_theme.gd": "afdaa5a5834580f33ea98297f4e117b1877936e89c6ae2fc7de85a980e1b08f4",
+    "src/timeline_navigation.gd": "746569a34c0d3efa0ea391eae657637fb4e0abb85cab0f69eb565bbf2d691596",
+    "src/cel_clipboard.gd": "ed3c41077855e4e6ff0507e8a90cf76b1b93681df57a57f43e825052705d9219",
+    "src/walking_animation.gd": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb",
+    "src/sequence_timeline.gd": "dda570df19145a0837826f76e7758e2423eafca09354db268172ec61429b74fa",
+    "src/cel_timing_editor.gd": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+    "src/model_opacity.gd": "11f0b7f6981c726de2da174b3ed607a790254b64df04180e918664565cb8caf4",
+    "src/import_actions.gd": "6d32b7a099afddb56ed35b0a569b4bea09532ac1f00980613c94eb582d8c6ebd",
+    "src/stroke_stabilizer.gd": "55b760df8b28909c307c92ed2c89550a177802c8fc5bc9e767868703132144d8",
+    "src/project_raster_ownership.gd": "1194e6cbc364c092829ae6829312b69b8aa08db27bafe93d38c9f28f7ea176a6",
+    "src/cel_raster_budget.gd": "ae0273ad3aa07c0d64dafef95aa8c0b2bac811c5f2f546d5f2c52dc8a29b3414",
+    "src/pose_library_editor.gd": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f",
+    "src/video_timing.gd": "27501e86b9330da16a340f46af2cb703749136e011a806e2cac828856f040c13",
+    "src/source_shape.gd": "ec653786838c5b1a16e1c4463e16a47904e3f1045755b095996f1df356af2c8c",
+    "src/motion_assist.gd": "8dc52ae7b61859ec6874e18a4119716594a4d7f8e4291c1b6fba81f74f5be953",
+    "src/sequence_runtime.gd": "a0bc649ec192a7eddcc54fe91eb765d67145d4974a37be390f8c5ba09a2111bc",
+    "src/object_timing.gd": "745d23917a586867f3c2e9634d9bab8a62a6663ae2bbd6891b8f3c6d163b6785",
+    "src/expression_pose_editor.gd": "e59b537659c67b47721343f7c7f7ef00d5b91859468743dbb5ee10df0ae53e5a",
+    "src/limb_ik.gd": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f",
+    "src/drawing_selection_editor.gd": "bf63e7b586d79e37b3cc983854c08482dff341af252505c652ad1c15bcb35908",
+    "src/body_curve_runtime.gd": "2ab81a207b3afbb2f88ae1f4b10fdb9aae1b41f982bdef845a793ed47fa08db2",
+    "src/cel_raster_reader.gd": "b41ce4a1d2c908197f149e4826dc958b5051aaf18ee9809a5cc2fb6334b959e8",
+    "src/reference_sheet.gd": "93088df5090ea0a94bfbd18f3d993843bb8c14537c45d3eb913656ced0a77fd3",
+    "src/expression_presets.gd": "d184a8c16c8e7947e9eedbe445e40c86cdbec6c0f497ce18720432a20c2698b6",
+    "src/lesson_store.gd": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260",
+    "src/reference_guide.gd": "4ea6ade60f00f7d65c2f271c7b45a85b2eec47c7bf16d25d020ee858a3371fcc",
+    "src/source_browser.gd": "9eff527d2bae12a0b0c51f1f6fd2b9b021bd76eb3cd9a457e554a542a1ad12f6",
+    "src/project_canvas.gd": "fc83908dcbdee70204a8c7d7a47794e4b8f7289f5fa9a54b1dcc15a4c1c337b4",
+    "src/drawing_transform.gd": "f14bfa944db0d37967b97dfff396addc7735e960fac41cb627595323ee391b1e",
+    "src/physics_prop.gd": "7a9a0cf7e51e5b353fce3dcfe784ebab2c70b1b61dc989b6060159809c9d0bec",
+    "src/drawing_selection.gd": "24bfd1475afda5afc623eecea29447a6b5c3eeb9eb8bd84fca78321b0be5931a",
+    "src/shortcut_editor.gd": "8b2455ee064f64b4df28917272545d9ee445f18afad12163722ada56b0dbf297",
+    "src/pose_editor.gd": "b7b67f278c41b7aaf1623d80bc69f346dc8ae4697f7355733a6b633d31ecb4ac",
+    "src/drawing_transform_editor.gd": "5ac0b2257ffa54587ecba5ff0aa36688f7fdaff7fdae6a7d575e79a3f08beec3",
+    "src/drawing_origin.gd": "31b4fdccfa8be1bcbcb7736b3be7edc8c0bccb8dd29026462a43d8fc9b847a28",
+    "src/shape_labels.gd": "6e86df1cbef9463ab41165db1964b92ee04881858da95b8a747e1c49103706d3",
+    "src/contact_viewport.gd": "48137108abe591ccd92401c02969579219ddc5dfbdee8e682f093693fe4af346",
+    "src/physics_rig.gd": "2132c60b1a808a3f68de303a14bb910b007556912e10511dd80d26f2ddea93ba",
+    "src/root_component_runtime.gd": "ace6b71ebdc931a05fe2468a4042dc797a90836b5bd4c99e082ea3202c5d51ff",
+    "src/shape_study.gd": "7fe5fe5451cf9ed76fa42cd02534e78fb1f2a0d255dab33bf5273a2f89dc0ecf",
+    "src/model.gd": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b",
+    "src/foot_contacts.gd": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607",
+    "src/particle_sprite.gd": "2d84a7253aac552f8fe99f142fc67346879a86671c518fd6cc3f04e717e07c81",
+    "src/mmd_motion_candidate.gd": "39780d352f8ee935571e99a68e19a26bb822750206851489783e1a0474cb391e",
+    "src/motion_assist_preview.gd": "f2f770402461959f87feed2c631d21a6de433a623005e25b02aeb78c602d0090",
+    "src/secondary_helper_editor.gd": "2f0a099a269a0f288d2d9250c942482b55535b170ec584a1243978af3188ad32",
+    "src/body_animation.gd": "aae1891ae15f7e7d79c4a963aed967e73dfdcb56dcfd1431fa73e8755cdff763",
+    "src/recovery.gd": "a113d35d150c48cba1a6ad85950284738baa8190991c4e3e9830b1eb8c481b47",
+    "src/camera_transform_editor.gd": "bafa6dbf00ff4a9c17c2c2b4e94e0a255b9ce09cb3102a9dcb06f4d3b3f6374a",
+    "src/world_runtime.gd": "da21c9ba9c5e6b3add0fa9bc6417e760a9f2a3edc25118a2441024be74df4c9f",
+    "src/shortcut_bindings.gd": "9cf14682af95399dafb96c6ee7cfb9d9dd47c90dd87054c1a8e2bff89cc34bdd",
+    "src/cel_raster_snapshot_cache.gd": "b9554ab47f6655da46d2039bf16f3e51453117e7a98dffd6d515b209eb38d95f",
+    "src/fill_gaps.gd": "198337bcf8dfd5e1f00730985b89fa9351147626b162d1705b471d9f77479b3e",
+    "src/reference_sheet_view.gd": "94600005f5ea732ac29c33a5624c2886b0c47d7f957ae7c19e19265faf31b1b2",
+    "src/shape_comparison.gd": "5e6ea5328150681e6b3335544e21aaef9dc8a2d9cecef141ade8823096b0de22",
+    "src/palette_editor.gd": "d90cd4f1a32d56adc3f031d75bf8b4e10a1ba58a82c5864d1bd196f0e36e8c81",
+    "src/pose_bounds.gd": "ca501807f2956a9cec85eda6ba197b6525ca0b3c2b855104ea25e65a68ccd2cf",
+    "src/tutorial_catalog.gd": "2defdebdf4325884d2a56f52627982bc9bb3118a34ebc55c6de6fccb79fa87a7",
+    "src/project_payload_guard.gd": "6bd277060a2a9fbb4dc5a3f05d9626b895474155b7ba53288aa734159e27b642",
+    "src/root_component_curves.gd": "a0b718daffcc1285d29e3ead559746305bd5cd7d813f95788015d527e2e0235d",
+    "src/contact_clipboard.gd": "0bf565300079be0342dd1a42920c26d5972cc6b89f4e8f0ef5171234115b0806",
+    "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+    "src/airflow.gd": "7398f7f96a690ff4baa437e15202c671f8f187adfad330f7affa875d2d1da472",
+    "src/canvas_view.gd": "793cf23558fbd63b7bec57a283b5bcf4894d1f311880628f880e41d9babc7d1d",
+    "src/audio_track.gd": "de491daada16177ffdaf203b11423549494d4248c447da0395ef9afbef77e88a",
+    "src/recent_projects.gd": "ab5682f43afc0fa665bff970ee99c21f154c7d5fcd5332a709d9cba4883bb149",
+    "src/lighting_lesson.gd": "674456f18dc97947dcb9033e2073f27b633681fb322bf1b529b2ac343e3759ec",
+    "src/scene3d.gd": "0d41bb330c5c50ba816cf900aa6e018bbe7f4ca4f65c293bfe43c9683fc97eeb",
+    "src/constraints_lesson.gd": "0839da05a7253289fba7270377f0e9b86d70263a02ee9983204925d1fa519cd6",
+    "src/canvas_raster.gd": "3d72e3676aa7a417e7a92f93faac88b9568f3b8d4e9952f7067803e242e37e0e",
+    "src/color_palette.gd": "d8f7107a0a55998ba175aae1b28bd92f174190db8a7fe635372e8c3c3b36b369",
+    "src/drawing_overlay_cache.gd": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+    "src/secondary_live.gd": "8b801f471baea1b953a03d3a59bc98d47dee8bfa41bbfb5b78112ae847c80c88",
+    "src/root_component_document.gd": "98530f2cd95ec6a82bfc8f7d0362e429f264078cef62f3d529ff44a39d66128f",
+    "src/brush_stroke.gd": "2ed0fa4980f6171b725fc392edcb98b2e17ebacd604ad2c72486fa5cff0192e2",
+    "src/animation_clips.gd": "5408c7b7cd4db347d461d5c4ba56f2aa2e8646bfea7f86967e2eec459a9503cf",
+    "src/secondary_spring.gd": "3dd64644c4562af65d883ed073eeff715e9d0f8c190b1bc483edbd2e0fd13b23",
+    "src/krita_import.gd": "dd073efda160b2ccd18679a8c5a26e379510588cd162b9ed3b391cf895790ca8",
+    "src/fill.gd": "a420c1b6cbc024c86f45bcdf6068c8ba7e570a32e88eda3c49828e7ca9479413",
+    "src/movement_path.gd": "777123851803dfb2fda5c0a311c7c91d4e7e161593deda31cf7032d24ca63770",
+    "src/cel_patch.gd": "f5633aba0739e477422f8953d2a93761558c708402195d69ddba54a4ccf5d2e9",
+    "src/animated_channels.gd": "0ea45c03afcd0e8bb5d9f7f6b685ba11a0b7d8674494940ba6dec7f42996a6b0",
+    "src/contact_animation.gd": "03d56343e67064c3994632d326fce8608caff6b190e340452253370f1d97d4ba",
+    "src/motion_assist_tracks.gd": "fd9f3e530683d6e19df957decfa990987ab71a5a53cca47dcb3b1969dfbc72e0",
+    "src/audio_trim_editor.gd": "b1d2cfbbb24acbb1a2d6ff4acbbf17e2ff262d16a4e2bf4d567ebe5efe5cb864",
+    "src/map_calibration.gd": "cc9d1150c8c84924cb685c973bd9ddeb5128232d9ea42688c9e3beacffd776e2",
+    "src/joint_constraints.gd": "159b6ca53b1167bc646ebc01f599811c497664f20e87b69da3405dd3f0bd02f3",
+    "src/drawing.gd": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+    "src/movement_path_preset.gd": "9b0fb240ae55e6a485623334e68e1a65d9e6a47181876a8fb983df288476cc81",
+    "src/onion_editor.gd": "57807886afb36115cc33a31140550c041328d67e9629377ed7793c8a27efc147",
+    "src/drawing_limits.gd": "d62518750895cc368d7bc1b3826335d369dfc26344daf70f30037208c7499ffa",
+    "src/foot_hold.gd": "5fe8d8023e2d74aa99c92e402e90a6a1506fee396767d21e32a408fb398244ea",
+    "src/color_sampler.gd": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+    "src/first_movie_lesson.gd": "c112931d65f720bbc3c1031a06c9354a66bf647b0c973d2522066316f8877201",
+    "src/timeline_view.gd": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c",
+    "src/krita_preview.gd": "af9bcbb6bce378a43434fb06f0deb6cdc306ec10c05f136d2793424b23fc6c60",
+    "src/workspace_layout.gd": "94733c1b0edb6e1cb831a4102314f5785155fdf0e7034cb50dceba5bba038c39",
+    "src/world_selection.gd": "7d2c77c57f6a196bc13a0c910c39946d451d16673ebe0f7f0a172c3b391d2b64",
+    "src/project_timing.gd": "5a631dd628dbc8535ff16d775045e7973b968812012038779f42597b121f5f5a",
+    "src/import_height_review.gd": "2abba09412a488b16338605c8082546adad805b3ebe14527060553d4b916d791",
+    "src/sequence_editor.gd": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7",
+    "src/pose_library.gd": "4b0afbe38f4c9392bb89927f43b3ea1b8f5827f020823b50169e7586a139d931",
+    "src/movement_path_editor.gd": "0a3fce84816910f847473603c6cdde8096ffd67cf514b5fd4793f0c7fabf1595",
+    "src/path_locomotion.gd": "db081d8a48c24053a72f9c806d93826029f83becae06cb587af3b8c54f9995cf",
+    "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+    "src/recovery_journal.gd": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa",
+    "src/recovery_preview.gd": "250e6107ba54b6862b62194b23d48654632919e8b5bf19e8339b1ad89770b4fd",
+    "src/map_measure.gd": "f15de2e25de6ffb71506483dbca0e4d123616b5b6c5fdbb318be22251000d853",
+    "src/cel_pixel_history.gd": "bbfc4b1464deecbdaa11a05bb39bcb2667b92cc3e145cfbbbe86397ab30b7d3b",
+    "src/motion_editor.gd": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d",
+    "src/tutorials.gd": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3",
+    "src/output_size.gd": "6af5a9e209fdc753fd24c4e2e6cfefcdb4bd94c484409edf80f6b9c2a256bc40",
+    "src/contact_correction.gd": "22d5b2463cfd330cbff20216dfb6b42f56f0cd6da680b4595dbc73c589b4617c",
+    "src/fan_editor.gd": "9add5bf8ea8c089746d5ef8684302febdf30d6f989bce6191463d048bf7d93b0",
+    "src/cel_timing.gd": "0717469a7cfab94fc46e80cc2973ad68b8c5be1aac503109173414ba8719e1f0",
+    "src/fill_editor.gd": "df6a8c91f1c23c775892a404114b2c70d4b852f66d05e390746c2f44c1e21cf4",
+    "src/raster_clip.gd": "1fb451f811d20e900f34d6efcd103657b0073969b1a0436b4c62ed1b3cd74475",
+    "src/layer_editor.gd": "6188e135d99aaa6a75047cc540ba8ecab3455ea7b4af928838f476623a6fa56d",
+    "src/physics_recording.gd": "d4a5ff4c8fd55eb9f9abfe01cd08907a87d24030b1a166ccddd9c4bff396f51c",
+    "src/visibility_track.gd": "a79ae20e354d2b5f4436e6dc98186e69be41b72c71e9d3180917a586f6d37152",
+    "src/timeline.gd": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+    "src/audio_import.gd": "c4fe87781f8a4532b7e353bdd35e69c8ca14f9fe3da62edf7e6c7ca0ddc28d74",
+    "src/world_document.gd": "30dd8a9cd4ab48ec8e78c2e0be3c75c485c363b752d31cfcde1b225b0d2a7628",
+    "src/save_worker.gd": "038a5e769bb7ca72234f1c902127b7cbc6b14595dc559611ef7544b9cc2705e0",
+    "src/atomic_metadata.gd": "3f4c10cdb5f8e9a42c91130a37216a8c4d639dcdcf4ad60d1b3309e2b20c1535",
+    "src/sequence_audio.gd": "59db29ffafd39e6988e1ad116da5be8762e3edbf6d723020ba0e21bb166d8f93",
+    "src/audio_fade_editor.gd": "27c2a3e76ad042de956b5521df127990a5274b83214b88912c730423ac5f539c",
+    "src/home_screen.gd": "ea915a61ce25d834f317feb9f6233ad41d0a8aa76e00b798203d8678fe736c1e",
+    "src/contact_ranges.gd": "92da7a71da1e77543a940b6cfcee0325fb7ed26cabf7653b26f7ff55e84c9a5b",
+    "src/extended_timing.gd": "3d9f398d86b8099dc4ac5c81251f620660bcdaac802cb42fcf2b42169e15e6f6",
+    "src/cel_png_verifier.gd": "bd81aa21005b6ff67f31883547a4be08a6f07fec93e3fa092c9394d18b2ad238",
+    "src/mmd_pose_import.gd": "86cff64c101ab9cd655497e5ff93f0f22814195230cee11a077cb8da47946118",
+    "src/has_project.gd": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399",
+    "src/movement_path_view.gd": "c66a06fcf7a263599390b54dd595970be4fc393c8a89758d7e5875197d842656",
+    "src/contact_editor.gd": "a5c18edbafaad3fc4e9c78d89121d30080a18ddf08507241ae08e1839f135504",
+    "src/physics_editor.gd": "67510cb793d6c8c1b1701f1b351ff27e939b155f1a827040cdc68efa0d6148ab",
+    "src/tutorial_assets.gd": "b2fa1698ee112ab3f1b708f92731c88857d6851f91e54a24ff753f7bd891677e",
+    "src/particle_document.gd": "1d6edf3fd8c9ded52323389bdcfab5e0462b5490eb0163d2d4b95ad21e303423",
+    "src/contact_bend.gd": "5f10c4810a50ede195b40f014e4c547ce2ea9d0e6542ffc5105ed286d77a9721",
+    "src/shape_catalog.gd": "1ec7737abe92141844921b0c261f43cdeb90513185669ec92971f31f9aa4babc",
+    "src/particle_editor.gd": "74e33b917fc5857d96ff2860cb80871748041fccff46f18123456c7e5d852b34",
+    "src/pose_thumbnail.gd": "45dcce2d605d931b6253942d280ead2a9028ae2d03dfdca861f3efd5b7c90e5d",
+    "src/sequence_graph.gd": "0cdda55aa99c944023e6e12c3361b7a04cc71fc5d1e2b9de23cfcf987be44b4b",
+    "src/source_import.gd": "a1b293bb5f97017fefe0d9abe818568ef70fc8797b62bfdae8e7bc46413450df",
+    "src/shape_comparison_bounds.gd": "683ff6578f55a251686a8ec2832f69481c7430bc45c9ff212cfb983b617311f5",
+    "src/reference_sheet_data.gd": "fe594c456d6b31fc5c50948cdf2b64f7e60541461bdccb7ab134e0144807753d",
+    "src/physics_self_collision.gd": "bd2244dd68c7310da7d1afdbff263f705d5fab206708e37006876f77ba0b5ef2",
+    "src/shape_animation.gd": "0192db43abcef661aadfe897d827ddc47f1db44b9abd2c48f4b3c7efbab41148",
+    "src/root_component_motion.gd": "befef7ed4d7343ccba705e9e6676b9658566e37c3ad417ef67a9f50a007226b9",
+    "src/secondary_rig.gd": "6cb660018215782bf5d8894182780bd0a5d07f43071c118b18b6f16a3e6a6177",
+    "src/encoder.gd": "b9a340effa71165cac284eb32cb610f4f99704ab2d42ed5f8ceef8c5e8d7414f",
+    "src/lighting.gd": "a42c3b9584923e5e362b9a8674457f42ca6e327c927b46f4795d8dc30aa66c17",
+    "src/orbit_navigation.gd": "8076e1ab69c21030c984d6f4724b0a88d28ee1c917d5670daa0ddb4504feb716",
+    "src/mmd_pose_shapes.gd": "3bfee8d1317c6a80837437ea5fd785c196a7771606e76420fae443e1ca3a256b",
+    "src/interpolation_lesson.gd": "fb91ac7c3f6b0b319c5fb27ea08f8b777fcf584f98e66af97cc69f650197974a",
+    "src/base_shape_editor.gd": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+    "src/root_component_assistance.gd": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f",
+    "src/canvas_size.gd": "336b82049f63458dbc5d149ee7edfaf215f251793b5620a4aa0dde75b009e62a",
+    "src/cel_raster_owner.gd": "30b6601df440dcc9035e9104ac93049a0c74a0da7c3bd42df1f04c71247eb9df",
+    "src/motion_animation.gd": "c0116a027a9828f799dcfd9b825cecf887730b58f01afc27be5b77ef716c64d3",
+    "src/clip_editor.gd": "88ca46f1f4e0a9f174a42cdd0a4305ec80d3c32fbf59c9e055cc2aeb037434aa",
+    "src/root_component_clips.gd": "c956b4b4014fbc2e6efbdd0f6afda49ce32230b8d0c1c845d74ac9709f280f64",
+    "src/mmd_pose_candidate.gd": "3f9f89f9b98668ed1ff93b31571d55098089d27527389498edf6d366bcb2199f",
+    "src/bone_labels.gd": "c2578be56876c26dcb7b9bbf373bd5c0d54c47b255c67ad2d125103f3afbf6c2",
+    "src/storage.gd": "688ec9bf8c74612fcfff6ba3421dd903b8eccd28adfafe1ddcfa794e33004593",
+    "src/video_import.gd": "df2e52ad2fb97be4d98ed870ae1ad90f7f202b25575d19aa3e69a5e5ec3d8198",
+    "src/character_height.gd": "a67e7de2f4c53207cdf8b69422b67d140b067e72b3f1bb5bf3ecab3529690198",
+    "src/timeline_picture.gd": "e6e0394deeae91997bb64ff8e1710215372841aa6cea72877cb43020a6bcdbc0",
+    "tools/drawing_limits.py": "e049f8422dfb5735b87319a1135e6bb30c46abe65da5c7cdeafd8c53707aecae",
+    "tools/has_project.py": "35b146dbade69d54acb18f7b57544972a83cc62077d4b771302820d569342957",
+    "tools/prepare_krita.py": "3821246c4e24f75646d4ffb8b8e644d661b764881521c12141a21516092edb44",
+    "tools/prepare_video.py": "fe162c9895c1ac66f6fec229046ade6140031bc2b287b630ddae68d5697d9d91",
+    "tools/sequence_graph.py": "29e1bdb964521588ac38dfc508fb462f169d3a38c5d80680f4f388c13b82e6f5",
+    "tests/large_project_smoke.gd": "8ff5ebd965ed03bb2653d58fdf284e952bc8e5549ca011a38bc6c70fa710c7ac",
+    "tests/large_project_recovery_smoke.gd": "f73a799ca7fe8c5bd829f3a276547cdcf2bec4cc9dcdade9b91f352edf5553d9",
+    "tests/large_project_startup.gd": "23a061adb7afe8dcdbb15fe05460c8521d29ddfdc49c59cffde02a799faa23a3",
+    "tests/verify_large_project.py": "c470254f4ba0e1563f0cdf1d4d14818da0bad20a9f9c1bb2191416df3e2fb989",
+    "tests/drawing_limits_unit.gd": "3e546fd79c73fef965eba03aa8c94e35aca5a490487ef65c4d7261bdb17d1ca6",
+    "tests/test_drawing_limits.py": "d2b7cd086cb01a9d76252ef439be607b8cb5dca370abede5945b77321d4ea43e"
+  }
+}

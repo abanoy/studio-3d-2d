@@ -1,5 +1,7 @@
 """Editable, project-local scene sequences. Pure metadata; never resolve sources."""
 import math
+try:from .drawing_limits import MAX_CELS
+except ImportError:from drawing_limits import MAX_CELS
 try:from . import extended_timing as extended
 except ImportError:import extended_timing as extended
 import re
@@ -55,7 +57,7 @@ def error(graph,root):
         rows=audio.get('clips') if 'clips' in audio else [audio] if audio else []
         if not isinstance(rows,list):return 'Invalid sequence audio tracks'
         sounds+=len(rows);objects+=len(world['objects']);effects+=len(world.get('effects',[]))
-    if cels>32 or sounds>16 or objects>64 or effects>16:return 'Sequences exceed the shared drawing/audio/world resource budget'
+    if cels>MAX_CELS or sounds>16 or objects>64 or effects>16:return 'Sequences exceed the shared drawing/audio/world resource budget'
     ids=set();total=0
     for owner,clips in [('',graph['clips'])]+[(a['id'],a['clips']) for a in assets]:
         if not isinstance(clips,list):return 'Invalid sequence clips'

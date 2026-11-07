@@ -9,7 +9,9 @@ the eager path to avoid the measured distinct-frame seek cost.
 In adaptive mode, compressible drawings retain immutable lossless snapshots until
 pixels are needed. Incompressible drawings retain independent owned Image/COW backing. Accepted
 eager app loads also register their owners. Native1080p/720p/540p canvases use the
-same bounded pixel maxima, saved schemas/PNGs and unchanged32-cel limit. This policy applies to ordinary directory/HAS Open and recovery. It
+same bounded pixel maxima and saved schemas/PNGs. Projects permit up to400 drawings
+across their editable scenes, subject to320MiB registered admission; see
+[larger projects](large_projects.md). This policy applies to ordinary directory/HAS Open and recovery. It
 also covers newly authored app cels through [document ownership](new_drawing_ownership.md); edited owned cels can be cooled during idle time as described below.
 
 ## Integrity and ownership

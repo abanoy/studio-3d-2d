@@ -1,4 +1,5 @@
 extends Node
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 const Clip=preload("res://src/raster_clip.gd")
 const Drawing=preload("res://src/drawing.gd")
 var raster_reader
@@ -47,7 +48,7 @@ func slots() -> int:
 	var used:=0
 	for layer in app.layers:used+=layer.cels.size()
 	if app.get("sequence_editor"):used=app.sequence_editor.used("cels")
-	return 32-used
+	return DrawingLimits.MAX_CELS-used
 func available() -> bool:
 	return not OS.has_feature("web") and not app.exporting and not app.playing and app.mode.selected==0 and app.layers.size()<4 and slots()>0 and app.frame<int(app.video.duration_frames)
 func valid() -> bool:

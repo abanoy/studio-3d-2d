@@ -1,4 +1,5 @@
 extends Node
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 const Timing=preload("res://src/cel_timing.gd")
 const Drawing=preload("res://src/drawing.gd")
 const Patch=preload("res://src/cel_patch.gd")
@@ -67,7 +68,7 @@ func perform(action: String) -> bool:
 	var selected_image: Image
 	if action=="paste":
 		if not available(layer.id):app.message("Copy a drawing from this layer first. Drawing copies stay within their scene and layer.");return false
-		if app.sequence_editor.used("cels")>=32:app.message("Prototype memory limit: 32 full-HD cels.");return false
+		if app.sequence_editor.used("cels")>=DrawingLimits.MAX_CELS:app.message("This project already has %d drawings." % DrawingLimits.MAX_CELS);return false
 		var id:=str(ResourceUID.create_id())
 		var proposed:=placement(layer.cels,id,context.at,clipboard.duration,app.video.duration_frames)
 		if proposed.has("error"):app.message(proposed.error);return false
@@ -85,7 +86,7 @@ func perform(action: String) -> bool:
 		if selected_image.get_size()!=Vector2i(app.video.width,app.video.height) or selected_image.get_format()!=Image.FORMAT_RGBA8 or selected_image.get_data_size()>8294400:app.message("This drawing cannot be copied at the current canvas size.");return false
 		if action=="split":
 			if context.at<=selected.start or context.at>=selected.start+selected.duration:app.message("Split inside the drawing's hold, after its first frame.");return false
-			if app.sequence_editor.used("cels")>=32:app.message("Prototype memory limit: 32 full-HD cels.");return false
+			if app.sequence_editor.used("cels")>=DrawingLimits.MAX_CELS:app.message("This project already has %d drawings." % DrawingLimits.MAX_CELS);return false
 		else:
 			var candidate:={"layer":layer.id,"owner":app.sequence_editor.active_owner,"session":app.recovery_session,"duration":int(selected.duration),"image":selected_image.duplicate()}
 			var why: String=app.own_created_cel(candidate)
@@ -113,7 +114,7 @@ func apply_patch(command: Dictionary,side: String) -> String:
 	if command.get("owner")!=app.sequence_editor.active_owner:return "Drawing history belongs to another sequence."
 	var layer: Dictionary=app.cel_timing.layer_by_id(str(command.get("layer_id","")))
 	if layer.is_empty():return "Drawing history layer is missing."
-	var limit: int=32-app.sequence_editor.used("cels")+layer.cels.size()
+	var limit: int=DrawingLimits.MAX_CELS-app.sequence_editor.used("cels")+layer.cels.size()
 	var result:=Patch.apply(layer.cels,command,side,int(app.video.duration_frames),limit)
 	if result.has("error"):return result.error
 	layer.cels=result.cels

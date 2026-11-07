@@ -15,9 +15,10 @@ or source check leaves existing scene/history and the previous source file intac
 
 The former per-import sum of eagerly decoded frame sizes is replaced by admitted
 retained storage. The encoded preparation budget remains256MiB, the registered
-owner/cache limit remains320MiB, and production still permits32live drawings at
-this checkpoint. Native canvas and timing are captured as before. This change
-prepares the loading path for larger counts; it does not expand counts yet.
+owner/cache limit remains320MiB. Projects now permit up to400 drawings across
+root and direct child scenes, subject to byte admission. Native canvas and timing
+are captured as before. See [larger projects](large_projects.md); the original
+prepared-owner receipt below records the earlier32-drawing checkpoint.
 
 Lesson Previous/Continue now inspect only bounded editor UI metadata before calling
 ordinary project Open once. That Open still validates all project metadata/assets

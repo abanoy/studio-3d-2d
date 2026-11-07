@@ -127,10 +127,29 @@ static func drawing_reserve(layers: Array,sequence_graph: Dictionary={}) -> int:
 			for cel in layer.cels:bytes+=Drawing.raster_bytes(cel,true)
 	return bytes
 
+# Only used when decoded reservation would refuse. Measure one encoded image at a
+# time; never substitute snapshot compression size for persisted PNG bytes.
+static func encoded_drawing_reserve(layers: Array,sequence_graph: Dictionary,budget: int) -> Dictionary:
+	var tracks: Array=layers.duplicate()
+	for asset in sequence_graph.get("assets",[]):tracks.append_array(asset.scene.layers)
+	var total:=0
+	for layer in tracks:
+		for cel in layer.cels:
+			var read:=Drawing.read_image(cel)
+			if read.has("error"):return read
+			var image: Image=read.image
+			var encoded: PackedByteArray=image.save_png_to_buffer()
+			if encoded.is_empty():return {"error":"Cannot measure recovery drawing PNG. Previous checkpoint preserved."}
+			total+=encoded.size()
+			if total>budget:return {"error":"Recovery cache budget reached (512 MiB). Save manually; review output/recovery before removing old copies."}
+	return {"bytes":total}
+
 static func checkpoint(root: String, session: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary, origin: String, revision: int, model: Dictionary = {}, world: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},sequence_context: Dictionary={},reference_sheet: Dictionary={},lesson_context: Dictionary={}) -> String:
 	if JSON.stringify(lesson_context,"",true,true).to_utf8_buffer().size()>16384:return "Lesson recovery context exceeds16KiB. Previous checkpoint preserved."
-	# Conservative global budget: reserve full uncompressed cels and input assets.
-	var estimate := 6 * 1024 * 1024 + drawing_reserve(layers,sequence_graph)
+	# Prefer the cheap conservative reserve; large cold projects use actual PNG
+	# sizes before any checkpoint writes, bounded one encoded drawing at a time.
+	var raster_estimate:=drawing_reserve(layers,sequence_graph)
+	var estimate := 6 * 1024 * 1024 + raster_estimate
 	var sources: Array=[]
 	if not reference_sheet.is_empty():sources.append(reference_sheet.get("source",""))
 	for asset in sequence_graph.get("assets",[]):
@@ -147,8 +166,12 @@ static func checkpoint(root: String, session: String, video: Dictionary, keys: A
 		if not path.is_empty():
 			var file := FileAccess.open(path, FileAccess.READ)
 			if file: estimate += file.get_length()
-	if bytes_in(root) + estimate > MAX_BYTES:
-		return "Recovery cache budget reached (512 MiB). Save manually; review output/recovery before removing old copies."
+	var occupied:=bytes_in(root)
+	if occupied + estimate > MAX_BYTES:
+		var fixed:=occupied+estimate-raster_estimate
+		if fixed>=MAX_BYTES:return "Recovery cache budget reached (512 MiB). Save manually; review output/recovery before removing old copies."
+		var encoded:=encoded_drawing_reserve(layers,sequence_graph,MAX_BYTES-fixed)
+		if encoded.has("error"):return encoded.error
 	if not Storage.safe_relative(session) or session.contains("/"):return "Invalid recovery session address."
 	var folder := root.path_join(session)
 	var path_error:=preload("res://src/atomic_metadata.gd").path_error(folder.path_join("session.json"),root)

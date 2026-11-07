@@ -1,4 +1,5 @@
 extends RefCounted
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 const RasterReader=preload("res://src/cel_raster_reader.gd")
 const Drawing = preload("res://src/drawing.gd")
 const AudioTrack = preload("res://src/audio_track.gd")
@@ -59,6 +60,7 @@ static func readable_manifest(path: String) -> bool:
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
 	var data: Dictionary=parser.data
+	if not DrawingLimits.error(data.get("layers"),data.get("sequence_graph",{})).is_empty():return false
 	if not preload("res://src/canvas_size.gd").error(data.get("video")).is_empty():return false
 	if data.get("video") is Dictionary and not preload("res://src/output_size.gd").project_error(data.video).is_empty():return false
 	var extended:=false
@@ -103,6 +105,8 @@ static func readable_payloads(folder: String,manifest: String,png_verifier=null)
 	return guard.valid(folder,parser.data)
 
 static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={}) -> String:
+	var count_error:=DrawingLimits.error(layers,sequence_graph)
+	if not count_error.is_empty():return count_error
 	var sync_boundary:=preload("res://src/save_worker.gd").existing_boundary(folder)
 	var canvas_error:=preload("res://src/canvas_size.gd").error(video)
 	if not canvas_error.is_empty():return canvas_error
@@ -342,6 +346,9 @@ static func load_project(folder: String, manifest_name := "project.json",cold_ce
 
 static func decode_project(data,folder: String,extended:=false,rasters=null) -> Dictionary:
 	if rasters==null:rasters=RasterReader.new()
+	if data is Dictionary:
+		if not DrawingLimits.error(data.get("layers"),data.get("sequence_graph",{})).is_empty():return {"error":"Project drawing limit exceeded or invalid drawing tracks."}
+		if not rasters.cold_cels and raster_reserve(data)>preload("res://src/cel_raster_snapshot_cache.gd").DEFAULT_OWNER_LIMIT:return {"error":"This project requires adaptive raster loading; eager decoding would exceed its memory budget."}
 	if data is Dictionary and data.get("schema_version")==8:
 		var unwrapped:=Extended.unwrap(data)
 		return unwrapped if unwrapped.has("error") else decode_project(unwrapped.base,folder,true,rasters)
@@ -459,8 +466,8 @@ static func decode_project(data,folder: String,extended:=false,rasters=null) -> 
 			count += 1
 			if not cel is Dictionary or not cel.get("id") is String or not cel.get("path") is String or not safe_relative(cel.path) or not integer(cel.get("start"), 0, video.duration_frames - 1) or not integer(cel.get("duration"), 1, video.duration_frames):
 				return {"error": "Invalid cel or unsafe path."}
-			if cel.start < end or cel.start + cel.duration > video.duration_frames or count > 32:
-				return {"error": "Overlapping/out-of-range cels or >32 cels (memory limit)."}
+			if cel.start < end or cel.start + cel.duration > video.duration_frames or count > DrawingLimits.MAX_CELS:
+				return {"error": "Overlapping/out-of-range drawings or project drawing limit exceeded."}
 			end = int(cel.start + cel.duration)
 			var path := folder.path_join(cel.path)
 			var raster: Dictionary=rasters.read_record(path,int(video.width),int(video.height),cel.get("pixel_sha256"),cel.has("pixel_sha256"))

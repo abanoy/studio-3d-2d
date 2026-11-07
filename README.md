@@ -522,7 +522,7 @@ unchanged as `CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md`.
 
 **Provisional implementation choices:** installed Godot 4.6 stable with Compatibility
 renderer; GDScript only; 1080p/48-frame starter; self-contained static GLB import;
-RGBA8/sRGB drawings; schema4/5 worlds and schema6 sequences (reads schema1–6); external FFmpeg; 32-cel memory limit;
+RGBA8/sRGB drawings; schema4/5 worlds and schema6 sequences (reads schema1–6); external FFmpeg; up to400drawings subject to320MiB registered raster admission (see docs/large_projects.md);
 small flat source modules rather than empty future subsystem folders. The app name,
 software license and shipping/installer design remain open decisions.
 
