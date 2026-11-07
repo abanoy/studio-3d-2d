@@ -1421,7 +1421,7 @@
       ],
       "title": "Project content versus personal preferences",
       "implementation": "implemented",
-      "verification": "historical_only",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
       "acceptance": "Project content/settings reproduce the scene while personal input/UI preferences stay personal; loading introduces no tentative disruptive settings prompt.",
       "evidence": [
@@ -1432,9 +1432,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/keyboard_shortcuts.md"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_settings_matrix.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/project_personal_settings.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/settings_matrix_2026-11-07.json"
         }
       ],
-      "remaining": "Complete project/personal setting matrix remains; prompt policy stays tentative.",
+      "remaining": "Complete current project/personal software matrix passes two contrasting project profiles crossed with two independent persisted preference profiles and explicitly seeded session controls. New/packed/directory/recovery/refused Open, exact pixels/PCM and actual delivery media preserve the boundary without a new settings prompt. Formal closure will reference the verified evidence commit; future ownership/load-prompt choices remain tentative.",
       "external_dependencies": []
     },
     {

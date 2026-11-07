@@ -3156,3 +3156,27 @@ reference-only softwarecondition; checklist/audit both nowverified with scoped
 test_result receipt. Native/material/platform/device/artist gatesremainseparate.
 Implementation stays48/54=88.89%; formalclosure3/62=4.84%. No partialcredit or
 release/timepercentage invented. Next STORE03 project/personalsettingsmatrix.
+
+
+## 2026-11-07 UTC — complete project/personal settings boundary matrix
+
+Noapplicationbehaviorchange. Addedactualprivate2project×2personalprofile case with
+29writer+10readerA+10readerB checks. A native540/delivery720/30000over1001/61frames/
+unshaded/black/fade0; Bnative1080/delivery540/24fps48frames/studio/blue/fade725.
+Distinct100/125percent, fly/orbit, penF7/F8, swappedworld/propertiesdocks loadfrom
+separatepreferencefiles. ExplicitlyseededseparatesessionAdvanced/height/encoderpath/
+quality/PNG/recovery/brush/toolcontrols retainedacrossNew/packed/directory/recovery/
+refusedOpen. SessioncontrolsareNOTclaimedpersistedatrestart. Noimportedprefsornew
+loadprompt. Personalbytes/unrelatedsection/source/manualHASunchanged; ownedmap/
+voice/writercacheofflineforbothfreshreaders, exactnativeRGBA/PCM/matrixrepeat.
+Actual61frame720p30000over1001 and48frame540p24H264AAC, exactdeliveryframefromnative
+preview, voiceonsets38439/48001pass. Allfunctionalcodefrozenthroughrun.
+
+Initialharnessnonexistentexportparentcorrectlyrefusedbyapp, thenbadPNGdereference;
+stoppedonlyownedtest, createdparentandearlyexitonerror. Noappbehavior/assertion
+weakening. Initial/expanded49passrunsretained; finaladdscontrastingbackgroundand
+clarifiespersistedversusseededtestlabel. Curatedsettings_matrix_2026-11-07.json,
+project_personal_settings.md/checklist/auditupdated. FormalSTORE03closurefollows
+realcommit. NextMEM02 actual>32preparedvideoimport andresourcecleanup/retention gaps;
+ordinary400importedPNGsproofdoesnotestablishpreparedvideo/nativeingress. Wholegoal
+active; native/platform/device/artistgatesseparate, nofinishingheartbeat.

@@ -1,0 +1,344 @@
+{
+  "format": "has_settings_boundary_acceptance_1",
+  "date": "2026-11-07 UTC",
+  "requirement": "STORE-03",
+  "base_commit": "6e22ff5",
+  "acceptance_condition": "Project content/settings reproduce the scene while personal input/UI preferences stay personal; loading introduces no tentative disruptive settings prompt.",
+  "raw_folder": "/workspace/has-handoff-audit/settings-matrix-complete",
+  "raw_receipt_sha256": "b801c0bb3b0d1c1f518885eaf4cf6b1eb1559e397b8b282b695699cf8be58102",
+  "reports": {
+    "writer": {
+      "checks": 29,
+      "failures": 0,
+      "movies": {
+        "a": "/workspace/has-handoff-audit/settings-matrix-complete/movie-a/render_1794040402_2876333_0/movie.mp4",
+        "b": "/workspace/has-handoff-audit/settings-matrix-complete/movie-b/render_1794040408_9435545_0/movie.mp4"
+      }
+    },
+    "reader-a": {
+      "checks": 10,
+      "failures": 0,
+      "profile": "a"
+    },
+    "reader-b": {
+      "checks": 10,
+      "failures": 0,
+      "profile": "b"
+    }
+  },
+  "project_settings": {
+    "a": {
+      "duration_frames": 61.0,
+      "fps_den": 1001.0,
+      "fps_num": 30000.0,
+      "height": 540.0,
+      "lighting_mode": "unshaded",
+      "output_size": "720p",
+      "visibility_fade_ms": 0.0,
+      "width": 960.0,
+      "world_background": "black"
+    },
+    "b": {
+      "duration_frames": 48.0,
+      "fps_den": 1.0,
+      "fps_num": 24.0,
+      "height": 1080.0,
+      "lighting_mode": "studio",
+      "output_size": "540p",
+      "visibility_fade_ms": 725.0,
+      "width": 1920.0,
+      "world_background": "legacy_blue"
+    }
+  },
+  "personal_profiles": {
+    "a": {
+      "advanced": false,
+      "brush_opacity": 100.0,
+      "brush_pressure": true,
+      "brush_radius": 5.0,
+      "brush_smoothing": 0.0,
+      "encoder_path": "/usr/bin/ffmpeg",
+      "encoder_quality": "standard",
+      "height_offer": false,
+      "navigation": "fly",
+      "png_drawings_only": false,
+      "recovery_actions": 25.0,
+      "recovery_enabled": false,
+      "recovery_interval": 1.0,
+      "recovery_schedule": 0.0,
+      "scale": 1.0,
+      "shortcuts": {
+        "camera": 75.0,
+        "eraser": 69.0,
+        "fill": 70.0,
+        "first": 4194317.0,
+        "last": 4194318.0,
+        "next": 4194321.0,
+        "pen": 4194338.0,
+        "play": 32.0,
+        "previous": 4194319.0,
+        "redo": 268435545.0,
+        "redo_alternate": 301989978.0,
+        "sample": 73.0,
+        "save": 268435539.0,
+        "select": 77.0,
+        "undo": 268435546.0
+      },
+      "slots": {
+        "bottom": "timeline",
+        "left": "world",
+        "right": "properties"
+      },
+      "tool": 0.0
+    },
+    "b": {
+      "advanced": true,
+      "brush_opacity": 65.0,
+      "brush_pressure": false,
+      "brush_radius": 12.0,
+      "brush_smoothing": 1.0,
+      "encoder_path": "/workspace/has-handoff-audit/settings-matrix-complete/personal-machine-only/ffmpeg-unavailable",
+      "encoder_quality": "small",
+      "height_offer": true,
+      "navigation": "orbit",
+      "png_drawings_only": true,
+      "recovery_actions": 17.0,
+      "recovery_enabled": false,
+      "recovery_interval": 2.0,
+      "recovery_schedule": 1.0,
+      "scale": 1.25,
+      "shortcuts": {
+        "camera": 75.0,
+        "eraser": 69.0,
+        "fill": 70.0,
+        "first": 4194317.0,
+        "last": 4194318.0,
+        "next": 4194321.0,
+        "pen": 4194339.0,
+        "play": 32.0,
+        "previous": 4194319.0,
+        "redo": 268435545.0,
+        "redo_alternate": 301989978.0,
+        "sample": 73.0,
+        "save": 268435539.0,
+        "select": 77.0,
+        "undo": 268435546.0
+      },
+      "slots": {
+        "bottom": "timeline",
+        "left": "properties",
+        "right": "world"
+      },
+      "tool": 1.0
+    }
+  },
+  "profile_ownership": {
+    "persisted_preferences": [
+      "interface_scale",
+      "navigation_scheme",
+      "shortcut_bindings",
+      "workspace_dock_locations"
+    ],
+    "explicitly_seeded_session_controls": [
+      "advanced_workspace",
+      "height_review_offer",
+      "encoder_path",
+      "per_export_quality",
+      "PNG_drawings_only",
+      "recovery_UI_choices",
+      "brush_UI_choices",
+      "active_tool"
+    ],
+    "note": "Fresh readers load independent persisted preference files/layouts, then explicitly set their own session controls. Session controls are not claimed to persist across application restarts. New/Open/recovery preserve the active session values. Theme is currently fixed; no new theme preference or settings-load prompt is introduced."
+  },
+  "media": {
+    "a": {
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1280,
+        "height": 720,
+        "coded_width": 1280,
+        "coded_height": 720,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "30000/1001",
+        "avg_frame_rate": "30000/1001",
+        "time_base": "1/30000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 61061,
+        "duration": "2.035367",
+        "bit_rate": "56198",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "61",
+        "nb_read_frames": "61",
+        "extradata_size": 47,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "audio_onset_sample": 38439,
+      "expected_onset_sample": 38438
+    },
+    "b": {
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 960,
+        "height": 540,
+        "coded_width": 960,
+        "coded_height": 544,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "57284",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "audio_onset_sample": 48001,
+      "expected_onset_sample": 48000
+    }
+  },
+  "verified": {
+    "writer_and_two_cold_processes": true,
+    "two_projects_crossed_with_two_distinct_profiles": true,
+    "manual_HAS_unchanged": true,
+    "native_cel_pixels_camera_render_and_PCM_exact": true,
+    "personal_preference_bytes_unchanged_by_Open": true,
+    "personal_preferences_not_in_normal_manifest_video_editor_slots": true,
+    "packed_directory_recovery_and_refused_Open_exercised": true,
+    "owned_map_audio_and_writer_cache_offline_during_cold_readers": true,
+    "unrelated_preference_section_preserved": true,
+    "all_functional_source_frozen": true
+  },
+  "source_sha256": {
+    "src/app.gd": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04",
+    "src/workspace_layout.gd": "94733c1b0edb6e1cb831a4102314f5785155fdf0e7034cb50dceba5bba038c39",
+    "src/shortcut_editor.gd": "8b2455ee064f64b4df28917272545d9ee445f18afad12163722ada56b0dbf297",
+    "src/shortcut_bindings.gd": "9cf14682af95399dafb96c6ee7cfb9d9dd47c90dd87054c1a8e2bff89cc34bdd",
+    "src/project_canvas.gd": "fc83908dcbdee70204a8c7d7a47794e4b8f7289f5fa9a54b1dcc15a4c1c337b4",
+    "src/project_timing.gd": "5a631dd628dbc8535ff16d775045e7973b968812012038779f42597b121f5f5a",
+    "src/storage.gd": "688ec9bf8c74612fcfff6ba3421dd903b8eccd28adfafe1ddcfa794e33004593",
+    "src/has_project.gd": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399",
+    "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+    "src/encoder.gd": "b9a340effa71165cac284eb32cb610f4f99704ab2d42ed5f8ceef8c5e8d7414f",
+    "src/output_size.gd": "6af5a9e209fdc753fd24c4e2e6cfefcdb4bd94c484409edf80f6b9c2a256bc40",
+    "tests/settings_matrix_smoke.gd": "afae89a5b90b661f6a80d164aea8925c31c13b02d972db5a91fec61cf9272ffc",
+    "tests/verify_settings_matrix.py": "e87a60e2fc572f04abd44049f5d66a5116df681c10592568f642fa0d2e74099f",
+    "tools/has_project.py": "f393b639c535a38a166d73c651baffa86aab8a562a80479fbc32721fc6f5fddf"
+  },
+  "diagnoses_preserved": [
+    {
+      "folder": "/workspace/has-handoff-audit/settings-matrix-first",
+      "result": "Harness supplied nonexistent export-parent directory; app correctly refused. Test then dereferenced missingPNG. Stopped onlyownedhungtest, created owned parent beforeexport, addedearlyexitonexporterror; noapplicationchange or assertionweakening."
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/settings-matrix-second",
+      "result": "Initial49checkmatrix passed beforeexpanded session controls."
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/settings-matrix-final",
+      "result": "Expanded49checksession matrix passed beforecontrasting backgroundfield andclarifying persisted/session testlabel."
+    }
+  ],
+  "limits": [
+    "Current project/personal ownership contract only. New preference categories and alternate load-prompt policy remain tentative; none introduced.",
+    "PhysicalWindows/input/GPU/nativefidelity/artist acceptance is separate.",
+    "Existing encoder quality/PNG export mode/encoder path are session/export controls, not saved project content settings."
+  ],
+  "scope": "Complete current STORE03 software boundary, with existing per-export/session controls explicitly distinguished from persisted personal preferences."
+}
