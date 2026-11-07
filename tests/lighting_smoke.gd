@@ -58,7 +58,7 @@ func materials() -> void:
 func run() -> void:
 	materials();var folder: String=OS.get_cmdline_user_args()[0]
 	var asset:=folder.path_join("lit.glb");fixture(asset);var hash:=FileAccess.get_sha256(asset)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	check(not app.advanced_mode and app.lighting_choice.is_visible_in_tree() and Lighting.mode(app.video)=="unshaded","new Simple projects default to an accessible Unshaded control")
 	app.load_scene(asset);var id: String=app.last_import_id;var actor: RefCounted=app.renderer.world_runtime.instance(id)
