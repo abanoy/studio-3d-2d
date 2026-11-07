@@ -874,8 +874,8 @@
       ],
       "title": "Safe fill and line-edge handling",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Iterative fill supports tolerance, connectivity, visible-ink sampling, gap preview and border growth; application is undoable and never edits invisible peers or the scene.",
       "evidence": [
         {
@@ -885,9 +885,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/fill_connections.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/fill_current_2026-11-07.json",
+          "commit": "efa099d818e7fb6649625acb7bcff0f535754edb",
+          "scope": "207 current flood/tolerance/connectivity/gap-preview/border-growth unit/editor/cold-reader checks and independent per-pixel oracles. One-step bounded Undo/Redo, hidden-peer/ink/world/source preservation, packed/linked/recovery, exact real movie inputs and worker UI/cancel/stale-context/teardown behavior. Original art fixtures."
         }
       ],
-      "remaining": "Broader anti-aliased artistic-quality evaluation remains.",
+      "remaining": "Required bounded software fill condition verified; physical artist/device observations remain separate.",
       "external_dependencies": []
     },
     {
@@ -2760,7 +2766,7 @@
     {
       "requirement": "MOTION-03",
       "priority": 2,
-      "action": "Bounded saved walking supports flat bends and explicit smooth upright yaw with cold/export/Undo proof. Generalterrain/moving-parent/native-rig/artist coverage remains; optional multi-view inference details stay OPEN."
+      "action": "Required bounded reusable path/clip and reversible locomotion workflow verified by current committed receipts. Native fidelity, unsupported moving parents and artist observations remain separate; general terrain and multi-view inference are not additional decided mandatory gates."
     },
     {
       "requirement": "IMPORT-03",
