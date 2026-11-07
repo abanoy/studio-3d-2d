@@ -18,6 +18,16 @@ const ALIASES={
 static func normalized(name: String) -> String:
 	return name.to_lower().replace("_","").replace(".","").replace("-","").replace(" ","")
 
+# A mapped joint may have fixed helper/twist joints between semantic limb joints.
+# Keep their authored local transforms; never infer another independent limb.
+static func segment(rig: RefCounted,ancestor: String,descendant: String) -> Array:
+	var path: Array=[];var current:=descendant
+	while current!=ancestor:
+		if current=="@root" or not rig.bones.has(current) or path.size()>=9:return []
+		if rig.bones[current].skeleton!=rig.bones[ancestor].skeleton:return []
+		path.push_front(current);current=rig.parent_id(current)
+	return path
+
 static func chain(rig: RefCounted, tip: String) -> Dictionary:
 	if not rig or not rig.bones.has(tip):return {}
 	var declared: Dictionary={}
@@ -35,7 +45,12 @@ static func chain(rig: RefCounted, tip: String) -> Dictionary:
 	for names in [["leftUpperArm","leftLowerArm","leftHand"],["rightUpperArm","rightLowerArm","rightHand"],["leftUpperLeg","leftLowerLeg","leftFoot"],["rightUpperLeg","rightLowerLeg","rightFoot"]]:
 		if roles.get(names[2],"")!=tip or not roles.has(names[0]) or not roles.has(names[1]):continue
 		var a: String=roles[names[0]];var b: String=roles[names[1]]
-		if rig.parent_id(tip)!=b or rig.parent_id(b)!=a:continue
+		var upper:=segment(rig,a,b);var lower:=segment(rig,b,tip)
+		if upper.is_empty() or lower.is_empty():continue
+		var ambiguous:=false
+		for helper in upper.slice(0,-1)+lower.slice(0,-1):
+			if helper in roles.values():ambiguous=true
+		if ambiguous:continue
 		if rig.bones[a].skeleton!=rig.bones[b].skeleton or rig.bones[b].skeleton!=rig.bones[tip].skeleton:continue
 		return {"ids":[a,b,tip],"role":names[2],"declared":explicit_roles.get(names[2],false)}
 	return {}
@@ -52,6 +67,9 @@ static func solve(rig: RefCounted, limb: Dictionary, target: Vector3, flip := fa
 		var index: int=rig.bones[id].index
 		global.append(skeleton.get_bone_global_pose(index));local.append(skeleton.get_bone_pose(index));world.append(skeleton.global_transform*global[-1])
 		if not regular(world[-1].basis):return {"error":"Natural limb movement needs positive uniform bone scale. Use direct posing for this rig."}
+	for i in range(1,3):
+		for helper in segment(rig,ids[i-1],ids[i]):
+			if not regular(rig.bone_transform(helper).basis):return {"error":"Natural limb movement needs positive uniform helper-bone scale. Use direct posing for this rig."}
 	var length_a:=world[0].origin.distance_to(world[1].origin);var length_b:=world[1].origin.distance_to(world[2].origin)
 	var total:=length_a+length_b
 	if minf(length_a,length_b)<0.00001:return {"error":"This limb has a zero-length segment. Use direct posing."}
@@ -92,11 +110,16 @@ static func solve(rig: RefCounted, limb: Dictionary, target: Vector3, flip := fa
 	scratch.advance(0);scratch.notification(Skeleton3D.NOTIFICATION_UPDATE_SKELETON)
 	host.free()
 	if solved.size()!=3:return {"error":"The limb solver did not produce a pose."}
-	var parent: int=skeleton.get_bone_parent(rig.bones[ids[0]].index)
-	var parent_pose: Transform3D=skeleton.get_bone_global_pose(parent) if parent>=0 else Transform3D.IDENTITY
-	var values: Array[Transform3D]=[parent_pose.affine_inverse()*solved[0],solved[0].affine_inverse()*solved[1],solved[1].affine_inverse()*solved[2]]
-	# Preserve the hand/foot's original global orientation while moving its chain.
-	values[2].basis=solved[1].basis.inverse()*global[2].basis
+	var values: Array[Transform3D]=[]
+	for i in range(3):
+		var parent: int=skeleton.get_bone_parent(rig.bones[ids[i]].index)
+		var parent_pose: Transform3D=skeleton.get_bone_global_pose(parent) if parent>=0 else Transform3D.IDENTITY
+		# Fixed helpers travel with the preceding solved joint. Convert the solved
+		# transform through that actual parent instead of skipping helper bases.
+		if i>0:parent_pose=solved[i-1] if parent==rig.bones[ids[i-1]].index else solved[i-1]*global[i-1].affine_inverse()*parent_pose
+		var value: Transform3D=parent_pose.affine_inverse()*solved[i]
+		if i==2:value.basis=parent_pose.basis.inverse()*global[2].basis
+		values.append(value)
 	var pose: Dictionary=(pose_override if pose_override is Dictionary else rig.data.pose).duplicate(true)
 	for i in range(3):
 		var base: Transform3D=rig.bones[ids[i]].base

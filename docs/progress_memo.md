@@ -13295,3 +13295,22 @@ directscript parse/app checks passed. No incidental outputs committed. Receipt
 background_project_open_2026-11-07.json/docs/checklist updated. Scores unchanged.
 Owner reiterated implementation completion priority; next safe cache lifecycle
 while retaining source dependencies/liveprocess data and original resource guards.
+
+
+## 2026-11-07 UTC — helper-bearing semantic limb IK
+
+Removed direct-parent-only restriction on mapped arm/leg joints: up to8fixed
+helpers per segment retain authored local transforms while solved semantic joints
+convert through actual parents. Same-skeleton/topology/regular-scale checks and
+direct-chain arithmetic remain. No helper keys, anatomy or twist inference added.
+Actual helper/direct fixtures35checks each pass fourlimbtargets/orientation/helper
+identity, handgizmoUndoRedo, rootcrouch/twofeet/UndoRedo, visible skin deformation,
+sourceoffline packed exactFK/GPU, backgroundcheckpoint and48frame1080p24H264 exact
+input. Shared43check walking evaluator passes straight/bend/turn tolerances.
+Fixture failures retained: imported skeleton rename, missing current-frame draft,
+defaultcamera1ulp JSONroundtrip, outofview default importplacement. Fixed fixture
+via skeleton-type lookup/normaldraft/exactauthoredcamera/actualnumericoriginPose;
+no tolerances weakened. Receipt helper_limb_ik_2026-11-07.json. POSE03 stillpartial
+for broadernative/wholebody coverage; no native or artist completion claimed.
+User prioritizes implementation completion. Next reassess required partial gaps
+against actual decided scope, avoiding optional feature expansion or repeated tests.

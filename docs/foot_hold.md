@@ -40,3 +40,6 @@ Physical mouse comfort and all-rig fidelity remain unverified.
 
 The [continuous-contact track](foot_contacts.md) shares normal project evaluation;
 this direct FK checkbox remains an independent authoring option.
+
+Mapped leg chains also support fixed intervening helper joints; see
+[helper-chain implementation and evidence](limb_posing.md).

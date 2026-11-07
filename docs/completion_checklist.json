@@ -343,9 +343,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/foot_contacts.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/helper_limb_ik_2026-11-07.json"
         }
       ],
-      "remaining": "Broader native rig chains and whole-body goal handling remain.",
+      "remaining": "Mapped semantic arms/legs now support up to8fixed helpers per segment, preserve helpers and endpoint orientation, with actual hand drag/crouch/Undo/Redo/offline packed/recovery/48frameMP4 and direct-chain regression. Broader native rig-chain/constraint fidelity and whole-body goal handling remain separate; unusual or unsupported skeletons retain direct posing.",
       "external_dependencies": []
     },
     {
