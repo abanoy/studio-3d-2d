@@ -21,7 +21,7 @@ func wait_import(app) -> void:
 func run() -> void:
 	var folder := ProjectSettings.globalize_path("res://output/generic-smoke/run_%d" % Time.get_ticks_usec())
 	DirAccess.make_dir_recursive_absolute(folder)
-	var app = load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await process_frame
+	var app = load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await process_frame;app.home.hide();app.autosave_enabled.button_pressed=false
 	var fixtures := ProjectSettings.globalize_path("res://output/generic-fixtures")
 	var base_scene: String = app.source
 	app.source_import.gmod_root=folder.path_join("not-installed")

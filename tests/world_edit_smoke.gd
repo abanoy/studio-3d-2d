@@ -61,6 +61,11 @@ func run() -> void:
 	var point: Vector2=await mask_point(selection,"actor-0")
 	await click(app,point)
 	check(point.x>0 and selection.selected=="actor-0" and app.renderer.active_model()==runtime.instance("actor-0") and app.mode.selected==2 and camera.transform.is_equal_approx(camera_before),"routed click selects the correct shared-asset actor without moving camera")
+	# Isolate the editor outline from existing green gizmos/UI on the same frame.
+	selection.set_process(false);selection.outline.hide();await settled()
+	var crop:=Rect2i(app.canvas.get_global_rect());var plain_green:=green_pixels(root.get_texture().get_image().get_region(crop))
+	selection.outline.show();await settled();var outlined_green:=green_pixels(root.get_texture().get_image().get_region(crop));selection.set_process(true)
+	check(outlined_green>plain_green,"selected object has an actual green GPU outline independent of its gizmos")
 	var left: RefCounted=runtime.instance("actor-0");var right: RefCounted=runtime.instance("actor-1");var arm: String=left.order[1]
 	var left_before: Dictionary=left.data.duplicate(true);var right_before: Dictionary=right.data.duplicate(true)
 	editor.tree_items[arm].select(0);editor.operation.select(0);editor.refresh_values();editor.fields[2].value=25;editor.apply_numeric()
