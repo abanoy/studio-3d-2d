@@ -93,3 +93,8 @@ conservatively protecting unknown and legacy live owners. One pre-guard no-candi
 cause; later read-only inventory found valid older states. No restore assertion or
 live-writer protection was removed. Windows identity lifetime reference:
 https://learn.microsoft.com/windows/win32/api/processthreadsapi/ns-processthreadsapi-process_information
+
+Later increments implement [proven-owned blob retention](recovery_blob_retention.md)
+and [shared quota reservations](recovery_quota.md). Earlier remaining-work notes
+above describe their original increment; arbitrary orphan cleanup and physical
+power-loss/Windows target acceptance remain separate.

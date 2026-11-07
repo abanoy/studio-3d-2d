@@ -13396,3 +13396,23 @@ record; replaced with original empty group. Test variable shadowing fixed and
 half-frame oracle corrected to apply floating evaluator output (Model.apply takes
 integer frames); no accuracy tolerance weakened. Evidence grouped_walking receipt.
 MOTION-03 remains partial for broader terrain/native coverage; scores unchanged.
+
+
+## 2026-11-07 UTC — cross-process recovery budget reservations
+
+Reserve against the shared512MiB root before checkpoint writes, with short OS-lock
+admission/release and persistent PID+incarnation reservations spanning the actual
+Godot worker. Count actual bytes plus outstanding full reservations, bounded
+registry publication and conservative PNG overhead; fallback uses measured encoded
+bytes. Release after success/failure; reclaim only proven exited/reused owner
+incarnations. Unknown owners remain protected; no payload/source/session deletion.
+Corrupt/linked/unknown-identity/helper failures refuse safely. Limit unchanged.
+180quota/retention/journal/background writer/app/preview/schedule checks pass, plus
+70nested reference/real abrupt exit/cold startup/lesson/real48frame1080p24H264AAC.
+Initial JSON CLI quoting fixed with Base64, symlink test fixture skip corrected,
+wrapper marker typo corrected; final8Python tests have no skips or failures.
+Receipt recovery_quota_2026-11-07.json. Source files and manual saves unchanged.
+Whole-process/GPU/device/Windows/physical-power-loss and global orphan cleanup
+remain separate. Coverage49/54(90.74%); formal5/62(8.06%), no score promotion.
+Next reassess remaining required feature coverage against actual MD/addendum wording,
+then address independent native engineering; do not invent optional requirements.

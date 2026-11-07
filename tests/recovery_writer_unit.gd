@@ -31,6 +31,7 @@ func run() -> void:
  check(writer.poll().is_empty() and cache.decodes==0,"polling a held writer does not join or mutate the live cache")
  writer.gate.post();var result: Dictionary={}
  while result.is_empty():await create_timer(.001).timeout;result=writer.poll()
+ if not result.error.is_empty():print("WRITER_ERROR "+result.error)
  check(result.error.is_empty() and result.background_thread and result.request.revision==7 and not writer.busy(),"actual filesystem commit runs off the main thread with captured request metadata")
  var restored:=Storage.load_project(folder.path_join("one"))
  check(not restored.has("error") and restored.video.duration_frames==48 and restored.editor.frame==3 and Storage.image_hash(Drawing.image(restored.layers[0].cels[0]))==original,"committed checkpoint contains pre-edit timing and exact independent pixels")
@@ -38,4 +39,18 @@ func run() -> void:
  result={}
  while result.is_empty():await create_timer(.001).timeout;result=failed.poll()
  check(not result.error.is_empty() and FileAccess.get_sha256(folder.path_join("one/project.json"))==before,"real temporary-path refusal reports failure and preserves previous checkpoint")
+ var Recovery=preload("res://src/recovery.gd");var reserved:=Recovery.quota(folder,"reserve","held_for_concurrency",503*1024*1024)
+ check(reserved.ok,"shared near-capacity reservation is admitted without creating payload files")
+ var protected:=FileAccess.get_sha256(folder.path_join("one/project.json"));var admitted:=Writer.new();check(admitted.start(project,{"root":folder,"session":"one","revision":9}).is_empty(),"competing checkpoint starts normal detached worker")
+ result={}
+ while result.is_empty():await create_timer(.001).timeout;result=admitted.poll()
+ check("budget" in result.error and FileAccess.get_sha256(folder.path_join("one/project.json"))==protected,"concurrent reserved budget refuses actual checkpoint before replacing previous metadata")
+ check(Recovery.quota(folder,"release","held_for_concurrency").ok,"only the owned reservation is released")
+ var registry: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join(".quota.json")))
+ check(registry.reservations.is_empty(),"successful and failed checkpoint paths leave no live reservations")
+ var noise:=Drawing.blank(64,64);var rng:=RandomNumberGenerator.new();rng.seed=714
+ for y in 64:
+  for x in 64:noise.set_pixel(x,y,Color8(rng.randi_range(0,255),rng.randi_range(0,255),rng.randi_range(0,255),rng.randi_range(0,255)))
+ var noise_layers: Array=[{"cels":[{"image":noise}]}]
+ check(Recovery.drawing_reserve(noise_layers)>=noise.save_png_to_buffer().size(),"conservative reservation includes PNG overhead for incompressible art")
  print("RECOVERY_WRITER_UNIT "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

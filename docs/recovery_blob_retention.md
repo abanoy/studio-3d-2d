@@ -12,8 +12,8 @@ legacy non-content-addressed payloads, temporary files, other sessions and origi
 sources stay untouched. Corrupt/missing retained metadata, changed owner identity,
 unsafe paths or symbolic links prevent reclamation. Failed reclamation leaves the
 new checkpoint valid. The ordinary application serializes its writer and preview;
-this does not establish a new cross-process quota reservation or global cleanup
-protocol. The512MiB recovery root limit remains and may still require manual review
+shared admission now uses the separate [quota reservation protocol](recovery_quota.md).
+Global orphan cleanup remains separate. The512MiB recovery root limit remains and may still require manual review
 when retained states or other sessions consume the budget.
 
 In25changing real checkpoint generations, at most13drawing PNGs and13geometry GLBs
@@ -28,7 +28,7 @@ The96-check background writer/app/preview/scheduling regression and70-check nest
 reference/audio/crash/startup/lesson regression also pass. The latter includes a
 real abrupt exit, cold readers with sources/cache offline, and a48frame1080p24
 H264/AAC movie with exact preview inputs. These are scoped Linux software checks;
-Windows/device power-loss and concurrent whole-root quotas remain separate.
+Windows/device power-loss remains separate; later shared quota evidence is linked above.
 
 Run `python tests/verify_recovery_blob_retention.py --output /absolute/new-case`.
 See [recorded evidence](benchmarks/recovery_blob_retention_2026-11-07.json).

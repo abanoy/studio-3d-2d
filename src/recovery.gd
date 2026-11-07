@@ -122,10 +122,12 @@ static func bytes_in(folder: String, depth := 0) -> int:
 static func drawing_reserve(layers: Array,sequence_graph: Dictionary={}) -> int:
 	var bytes:=0
 	for layer in layers:
-		for cel in layer.cels:bytes+=Drawing.raster_bytes(cel,true)
+		for cel in layer.cels:
+			var raw:=Drawing.raster_bytes(cel,true);bytes+=raw+ceili(float(raw)/1000.)+65536
 	for asset in sequence_graph.get("assets",[]):
 		for layer in asset.scene.layers:
-			for cel in layer.cels:bytes+=Drawing.raster_bytes(cel,true)
+			for cel in layer.cels:
+				var raw:=Drawing.raster_bytes(cel,true);bytes+=raw+ceili(float(raw)/1000.)+65536
 	return bytes
 
 # Only used when decoded reservation would refuse. Measure one encoded image at a
@@ -144,6 +146,15 @@ static func encoded_drawing_reserve(layers: Array,sequence_graph: Dictionary,bud
 			total+=encoded.size()
 			if total>budget:return {"error":"Recovery cache budget reached (512 MiB). Save manually; review output/recovery before removing old copies."}
 	return {"bytes":total}
+
+static func quota(root: String,action: String,token: String,bytes: int=0) -> Dictionary:
+	var args:=PackedStringArray([ProjectSettings.globalize_path("res://tools/recovery_quota.py"),ProjectSettings.globalize_path(root),action,token,Marshalls.utf8_to_base64(JSON.stringify(owner_record())),str(bytes)])
+	var python:=OS.get_environment("HYBRID_PYTHON");var output: Array=[]
+	var code:=OS.execute(python if not python.is_empty() else "python",args,output,false,false)
+	if code==0 and not output.is_empty():
+		var value=JSON.parse_string(str(output[0]))
+		if value is Dictionary and value.get("ok") is bool:return value
+	return {"ok":false,"error":"Cannot verify shared recovery cache budget. Check the configured Python installation; previous checkpoint preserved."}
 
 static func checkpoint(root: String, session: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary, origin: String, revision: int, model: Dictionary = {}, world: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},sequence_context: Dictionary={},reference_sheet: Dictionary={},lesson_context: Dictionary={}) -> String:
 	if JSON.stringify(lesson_context,"",true,true).to_utf8_buffer().size()>16384:return "Lesson recovery context exceeds16KiB. Previous checkpoint preserved."
@@ -173,11 +184,22 @@ static func checkpoint(root: String, session: String, video: Dictionary, keys: A
 		if fixed>=MAX_BYTES:return "Recovery cache budget reached (512 MiB). Save manually; review output/recovery before removing old copies."
 		var encoded:=encoded_drawing_reserve(layers,sequence_graph,MAX_BYTES-fixed)
 		if encoded.has("error"):return encoded.error
+		estimate=estimate-raster_estimate+int(encoded.bytes)
 	if not Storage.safe_relative(session) or session.contains("/"):return "Invalid recovery session address."
 	var folder := root.path_join(session)
 	var path_error:=preload("res://src/atomic_metadata.gd").path_error(folder.path_join("session.json"),root)
 	if not path_error.is_empty():return path_error
 	if DirAccess.make_dir_recursive_absolute(folder) != OK: return "Cannot create recovery directory."
+	var token:="r_%d_%d"%[OS.get_process_id(),Time.get_ticks_usec()]
+	var admitted:=quota(root,"reserve",token,estimate)
+	if not admitted.ok:return str(admitted.get("error","Recovery reservation refused."))
+	var error:=persist_checkpoint(root,session,video,keys,layers,source,frame,audio,origin,revision,model,world,palette,sequence_graph,sequence_context,reference_sheet,lesson_context)
+	var released:=quota(root,"release",token)
+	if not released.ok and error.is_empty():return "Checkpoint saved, but its recovery budget reservation could not be released: "+str(released.get("error","Unknown error"))
+	return error
+
+static func persist_checkpoint(root: String,session: String,video: Dictionary,keys: Array,layers: Array,source: String,frame: int,audio: Dictionary,origin: String,revision: int,model: Dictionary,world: Dictionary,palette: Array,sequence_graph: Dictionary,sequence_context: Dictionary,reference_sheet: Dictionary,lesson_context: Dictionary) -> String:
+	var folder:=root.path_join(session)
 	var retained_before:=BlobRetention.inventory(folder)
 	var error := write_json(folder.path_join("session.json"), owner_record(),root)
 	if not error.is_empty(): return error
