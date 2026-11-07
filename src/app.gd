@@ -160,6 +160,7 @@ var tool_buttons: Array[Button] = []
 var camera_strip: HBoxContainer
 var physics_bar: Control
 var undo_button: Button
+var title_label: Label
 var back_texture: TextureRect
 var keyboard_nav := false
 var keyboard_focusable: Array = []
@@ -605,6 +606,23 @@ func refresh_workspace() -> void:
 	inspector_scroll.scroll_vertical = 0
 	if pose_editor:pose_editor.refresh_values()
 
+func style_accent(control: Button) -> void:
+	# Redesign: Export movie gets a light pill on hover so the main action stands out.
+	var accent := StyleBoxFlat.new()
+	accent.bg_color = Color(1, 1, 1, 0.22)
+	accent.border_color = Color(1, 1, 1, 0.6)
+	accent.set_border_width_all(1)
+	accent.set_corner_radius_all(8)
+	accent.set_content_margin_all(6)
+	control.add_theme_stylebox_override("hover", accent)
+
+func refresh_title() -> void:
+	# Redesign: header shows the project name and an unsaved dot (the window title stays the studio name).
+	if title_label == null: return
+	var shown := project_folder.get_file() if not project_folder.is_empty() else "Untitled"
+	var text := "%s%s  —  Hybrid Animation Studio" % [shown, " •" if dirty else ""]
+	if title_label.text != text: title_label.text = text
+
 func pick_scene_file() -> void:
 	choose_file("Import 3D environment", ["*.glb", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.bsp", "*.gma", "*.bin"], load_scene, source_import.default_browse_dir())
 
@@ -642,6 +660,7 @@ func build_ui() -> void:
 	var title_row := HBoxContainer.new()
 	header_column.add_child(title_row)
 	var title := label(title_row, "Hybrid Animation Studio")
+	title_label = title
 	title.add_theme_color_override("font_color", Color("102e4d"))
 	title.add_theme_font_size_override("font_size", 20)
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -677,7 +696,7 @@ func build_ui() -> void:
 	var spacer := Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	toolbar.add_child(spacer)
-	nav_button(toolbar, "Export movie", "export", export_dialog, "Export MP4 beside your saved HAS project, with a recoverable PNG frame sequence")
+	style_accent(nav_button(toolbar, "Export movie", "export", export_dialog, "Export MP4 beside your saved HAS project, with a recoverable PNG frame sequence"))
 	advanced(button(title_row,"Options",show_project_options)).tooltip_text="Project settings, including visibility fades. Saved with this HAS project."
 	button(title_row,"Settings",show_display_settings).tooltip_text="Interface scale and fullscreen (F11). Advanced also offers orbit camera controls."
 	advanced(nav_button(toolbar, "About", "help", show_notices, "Credits and open source notices"))
@@ -1311,6 +1330,7 @@ func _process(delta: float) -> void:
 	pose_editor.update_gizmo()
 	play_button.text = "Pause" if playing else "Play"
 	refresh_empty_hint()
+	refresh_title()
 	refresh_tool_strip() # tool can change without a signal (shortcuts, color sampler)
 	if playing:
 		var seconds := preview_seconds()
