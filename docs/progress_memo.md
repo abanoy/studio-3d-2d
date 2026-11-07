@@ -12944,3 +12944,26 @@ Raw layer-retention-before/baseline/verified/domain under /workspace/has-handoff
 Curated layer_retention_2026-11-06.json and docs/layer_history_retention.md.
 MEM-01/02 remain partial for dynamic global tiles/history/derived/GPU admission
 and dense acceptance. Whole continuous goal active, no completed-loop repetition.
+
+
+2026-11-06 — Release inactive onion resources and stale drawing references
+
+Baseline existing onion workflow plus3checks:37checks/3failures. Disabled/playback
+views hid but retained bothtextures and selectedcel dictionaries; New still held
+old source Image after replacing document/history. Inactive refresh now clears
+texture references, selectedcels and uploadtokens. Re-enable rebuilds correct
+neighbors. Visible idle/heldframe reuse and neighbor-only edit invalidation remain.
+This verifies object-reference lifetime, not synchronous physical VRAM/driver bytes.
+Nominal2RGBAfullHD payload16,588,800bytes is not hardwareallocation certification.
+
+Fixed37/37pass: actualGPU tint/alpha/zoom/currentlayer isolation, fillpreview,
+idleincrementaluploads, UndoRedo, no source/documentdirty changes, weak Image
+release onNew, packed/recovery originalpixels and manualHASexact, finalMP4 inputs
+exclude guides. Runner now explicitprivateLinux display/absolutewritablelog, retains
+Windowsprivate-desktop receipt assertions; ffprobe48H264frames1080p24/2seconds and
+savedmanifest no onion/revisionmetadata checks preserved. Domains271pass. Native
+Windows/hardware/globaladmission unrun. Initial typedweakref parse fault corrected,
+failed exploratorylog retained; no assertionsweakened. Raw onion-release-baseline/
+before/fixed/domain under /workspace/has-handoff-audit; curated
+onion_resource_lifetime_2026-11-06.json and docs/onion_resource_lifetime.md.
+MEM-02 remains partial/open; continuous canonical goal active.

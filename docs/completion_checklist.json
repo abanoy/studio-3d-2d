@@ -1019,9 +1019,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/clipboard_raster_ownership_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/onion_resource_lifetime.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/onion_resource_lifetime_2026-11-06.json"
         }
       ],
-      "remaining": "Accepted eager/compressed/raw app cels and the transient clipboard now share conservative owned accounting and cooling. History tiles/whole-layer retention, derived/GPU resources and global admission/dense-project acceptance remain incomplete before cap expansion.",
+      "remaining": "Accepted app/clipboard ownership is registered; cold-layer removal preserves useful Undo; inactive onion previews release textures and old source selections. Dynamic global history/tile/derived/GPU accounting and admission/dense-project acceptance remain incomplete before cap expansion.",
       "external_dependencies": []
     },
     {

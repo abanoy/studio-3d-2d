@@ -28,11 +28,17 @@ func setup(parent: Control) -> void:
 
 func _process(_delta: float) -> void:refresh()
 
+func release_guides() -> void:
+	selected={};tokens=["",""]
+	for view in views:
+		view.hide()
+		if view.texture!=null:view.texture=null;view.queue_redraw()
+
 func refresh() -> void:
 	if not enabled:return
 	var visible: bool=enabled.button_pressed and app.mode.selected==0 and not app.playing and not app.exporting and not (app.home and app.home.visible) and not app.layers.is_empty() and app.layers[app.active_layer].visible and float(app.layers[app.active_layer].get("opacity",1.0))>0 and app.canvas.fill_preview==null
 	if not visible:
-		for view in views:view.hide()
+		release_guides()
 		return
 	selected=neighbors(app.layers[app.active_layer],app.frame)
 	var rect: Rect2=app.canvas.image_rect()
