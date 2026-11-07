@@ -1849,6 +1849,12 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 	open_project_error=""
 	if exporting:open_project_error="Cannot open a project during export.";return false
 	var data := Storage.load_project(folder, manifest_name,cold_cel_loading,cold_cel_min_bytes)
+	return install_project_data(data,folder,report_error)
+
+func install_project_data(data: Dictionary,folder: String,report_error := true) -> bool:
+	# Worker loading ends before this main-thread transaction prepares scene nodes.
+	open_project_error=""
+	if exporting:open_project_error="Cannot open a project during export.";return false
 	if data.has("error"):
 		open_project_error=data.error
 		if report_error:message(open_project_error)

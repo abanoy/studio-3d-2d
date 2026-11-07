@@ -3241,3 +3241,22 @@ Curated background_manual_saves receipt/docs/ledger updated;48/54implemented and
 Automation repetition was stopped using goal control per saved goal; owner
 explicitly requested continue working, so resumed actual verification/documentation.
 Next initialOpen responsiveness with transactional main-thread adoption.
+
+
+## 2026-11-07 UTC — private CPU loading for ordinary HAS Open
+
+Open now joins private low-priority manifest/dependency/PNG/audio loading before
+main-thread transactional scene installation. Same decoder/installer for direct
+directory/recovery; original schemas/ownership/linked/backup/practice semantics
+preserved. Cancel checks between cels/stages, session/owner/revision stale guards,
+shutdownjoin, separate600sdecode/120sextraction. Actual400Open12checks pass:23.888s
+total/23.098sworker/111.254msinstall/793appframes/maxgap177.728ms;400pixelhashes and
+exactGPU137 match independent saved fixture. Cancel/corrupt/newer-edit/New preserve
+current identity/content/source. SeparateGodotRSS469.9MB/HWM472.7MB notwholeRAM.
+Save76/nestedreference70/settings49 regressions pass with packed/linked/offline
+readers, realcrash/normalstartup and48/61frameH264AAC outputs. Editor parse attempt
+scanned generated assets; stopped only owned editor, removed its528untrackedUIDs;
+directscript parse/app checks passed. No incidental outputs committed. Receipt
+background_project_open_2026-11-07.json/docs/checklist updated. Scores unchanged.
+Owner reiterated implementation completion priority; next safe cache lifecycle
+while retaining source dependencies/liveprocess data and original resource guards.

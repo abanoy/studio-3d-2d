@@ -16,6 +16,10 @@ var progress: Window
 var cancelled := false
 var started := 0
 var snapshot_writer=preload("res://src/has_snapshot_writer.gd").new()
+var project_loader=preload("res://src/has_project_loader.gd").new()
+var last_load_worker_ms:=0.
+var last_install_ms:=0.
+var _open_result: Dictionary={}
 var last_snapshot_capture_ms:=0.
 var last_snapshot_worker_ms:=0.
 var _snapshot_error:=""
@@ -80,7 +84,7 @@ func start(request: Dictionary,snapshot_state: Dictionary={}) -> void:
 	var prefix := base.path_join("job_%d_%d" % [OS.get_process_id(), Time.get_ticks_usec()])
 	result_path = prefix + "-result.json"; cancel_path = prefix + "-cancel"
 	request["result"] = result_path; request["cancel"] = cancel_path
-	_snapshot_error="";_child_done=false
+	_snapshot_error="";_child_done=false;_open_result={}
 	_operation_session=app.recovery_session;_operation_recovery_root=app.recovery_root;_operation_owner=app.sequence_editor.active_owner
 	if not snapshot_state.is_empty():
 		request["snapshot_ready"]=prefix+"-snapshot.json"
@@ -127,6 +131,21 @@ func locate_missing(result: Dictionary) -> void:
 
 func _process(_delta: float) -> void:
 	if pid<=0:return
+	if project_loader.busy():
+		if Time.get_ticks_msec()-started>600000 or not same_document() or app.recovery_revision!=revision:cancelled=true;_write_cancel()
+		var loaded: Dictionary=project_loader.poll()
+		if loaded.is_empty():return
+		last_load_worker_ms=loaded.worker_ms
+		if cancelled or not same_document() or app.recovery_revision!=revision:loaded.data={"error":"Project opening cancelled or document changed. Current project preserved."}
+		pid=-1;app.exporting=false
+		if is_instance_valid(progress):progress.hide();progress.queue_free()
+		if loaded.data.has("error"):
+			app.message(loaded.data.error);operation_finished.emit(pending.action,false);return
+		var began:=Time.get_ticks_usec()
+		var installed: bool=app.install_project_data(loaded.data,_open_result.folder)
+		last_install_ms=(Time.get_ticks_usec()-began)/1000.
+		if not installed:operation_finished.emit(pending.action,false);return
+		_finish_open(_open_result);return
 	if not _child_done:
 		if OS.is_process_running(pid):
 			var limit:=600000 if snapshot_writer.busy() else 120000
@@ -143,43 +162,54 @@ func _process(_delta: float) -> void:
 		if not _snapshot_error.is_empty():_write_cancel()
 		elif not cancelled and is_instance_valid(_progress_label):_progress_label.text="Verifying assets and finishing the project file…\n"+str(pending.path)
 	if not _child_done:return
-	pid = -1; app.exporting = false
-	if is_instance_valid(progress): progress.hide(); progress.queue_free()
 	var result = Recovery.read_json(result_path)
 	if not _snapshot_error.is_empty() and not cancelled:result={"ok":false,"error":_snapshot_error}
+	if result.get("ok",false) and pending.action=="unpack" and not cancelled and same_document():
+		_open_result=result
+		var why: String=project_loader.start({"folder":result.folder,"cancel":cancel_path,"cold":app.cold_cel_loading,"cold_min_bytes":app.cold_cel_min_bytes})
+		if why.is_empty():
+			started=Time.get_ticks_msec()
+			if is_instance_valid(_progress_label):_progress_label.text="Loading and checking project drawings…\n"+str(pending.path)
+			return
+		result={"ok":false,"error":why}
+	elif pending.action=="unpack":result={"ok":false,"error":result.get("error","Project opening cancelled or document changed. Current project preserved.")}
+	pid=-1;app.exporting=false
+	if is_instance_valid(progress):progress.hide();progress.queue_free()
 	if not result.get("ok",false):
 		app.message(str(result.get("error", "HAS worker failed; partial cache retained and current project preserved.")))
 		if not cancelled: locate_missing(result)
 		operation_finished.emit(pending.action,false)
 		return
-	if pending.action == "unpack":
-		if not app.open_project(result.folder):operation_finished.emit(pending.action,false); return
-		path = pending.path; storage_mode = result.storage; origins = {}
-		for key in result.origins: origins[str(key).replace("\\", "/")] = result.origins[key]
-		if path.ends_with(".has.backup") or pending.get("as_copy",false):
-			path = ""; app.project_folder = ""; app.changed()
-			app.message("Practice scene opened as an unsaved copy. Save chooses a personal .has file." if pending.get("as_copy",false) else "Restored HAS backup as an unsaved copy. Save chooses a new .has file.")
-			operation_finished.emit(pending.action,true)
-			return
-		app.message("Opened " + path + " • " + storage_mode)
-		app.home.remember(path)
-	else:
-		if not same_document():
-			app.message("Finished saving the previous project to "+str(pending.path)+". The current project stays unchanged.")
-			operation_finished.emit(pending.action,true);return
-		path = pending.path; storage_mode = pending.storage
-		if app.recovery_revision == revision:
-			app.dirty = false
-			app.reset_recovery_schedule()
-			var resolved := Recovery.resolve(app.recovery_root.path_join(app.recovery_session))
-			if not app.recovered_from.is_empty():
-				var error := Recovery.resolve(app.recovered_from)
-				if error.is_empty(): app.recovered_from = ""
-				else: resolved = error
-			app.recovery_status.text = "Project saved" if resolved.is_empty() else "Saved; recovery copy retained"
-		app.message("Saved " + path + " • " + storage_mode + (" • newer edits remain unsaved" if app.dirty else ""))
-		app.home.remember(path,revision)
+
+	if not same_document():
+		app.message("Finished saving the previous project to "+str(pending.path)+". The current project stays unchanged.")
+		operation_finished.emit(pending.action,true);return
+	path = pending.path; storage_mode = pending.storage
+	if app.recovery_revision == revision:
+		app.dirty = false
+		app.reset_recovery_schedule()
+		var resolved := Recovery.resolve(app.recovery_root.path_join(app.recovery_session))
+		if not app.recovered_from.is_empty():
+			var error := Recovery.resolve(app.recovered_from)
+			if error.is_empty(): app.recovered_from = ""
+			else: resolved = error
+		app.recovery_status.text = "Project saved" if resolved.is_empty() else "Saved; recovery copy retained"
+	app.message("Saved " + path + " • " + storage_mode + (" • newer edits remain unsaved" if app.dirty else ""))
+	app.home.remember(path,revision)
+	operation_finished.emit(pending.action,true)
+
+func _finish_open(result: Dictionary) -> void:
+	path = pending.path; storage_mode = result.storage; origins = {}
+	for key in result.origins: origins[str(key).replace("\\", "/")] = result.origins[key]
+	if path.ends_with(".has.backup") or pending.get("as_copy",false):
+		path = ""; app.project_folder = ""; app.changed()
+		app.message("Practice scene opened as an unsaved copy. Save chooses a personal .has file." if pending.get("as_copy",false) else "Restored HAS backup as an unsaved copy. Save chooses a new .has file.")
+		operation_finished.emit(pending.action,true)
+		return
+	app.message("Opened " + path + " • " + storage_mode)
+	app.home.remember(path)
 	operation_finished.emit(pending.action,true)
 
 func _exit_tree() -> void:
+	if project_loader.busy():_write_cancel();project_loader.finish()
 	if snapshot_writer.busy():_write_cancel();snapshot_writer.finish()
