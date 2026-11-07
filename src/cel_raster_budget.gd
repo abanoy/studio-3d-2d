@@ -1,5 +1,5 @@
 extends RefCounted
-# Soft owned-hot + decoded-cache target. Legacy/raw fallback/derived/GPU/tile
+# Soft owned-hot + decoded-cache target. Legacy eager/derived/GPU/tile
 # storage is outside this counter; never use this as a whole-process RAM bound.
 const Owner=preload("res://src/cel_raster_owner.gd")
 const Cache=preload("res://src/cel_raster_snapshot_cache.gd")

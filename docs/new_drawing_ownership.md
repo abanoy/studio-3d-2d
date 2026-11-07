@@ -10,8 +10,8 @@ The app still enforces32cels. The64MiB owned-hot/decoded-cache target is soft:
 compression runs at most once per idle second and never replaces missing/corrupt
 pixels with blanks. External writable Image handles, active work and incompressible
 artwork can prevent cooling. This is not an RSS, GPU, total history or whole-project
-memory ceiling. Legacy eager load and raw-fallback reservations remain compatible
-and are still outside this counter.
+memory ceiling. Legacy eager load remains outside this counter. Adaptive raw fallback now
+registers owned Images; see [incompressible drawings](raw_drawing_ownership.md).
 
 `RasterOwner.from_image(image, cache)` preserves the current writable Image and
 registers its logical owner. `Drawing.adopt_owner` changes only representation,
@@ -46,4 +46,4 @@ new brush Undo/Redo, creation Undo/Redo and packed Save/Open restores exact RGBA
 These are tracked ownership figures on sparse art, not hardware/RSS guarantees.
 
 See [current evidence](benchmarks/new_drawing_ownership_2026-11-06.json). MEM-01 and
-MEM-02 remain partial/open for legacy/raw/global accounting and broader acceptance.
+MEM-02 remain partial/open for legacy/global accounting and broader acceptance.

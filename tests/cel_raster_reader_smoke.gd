@@ -17,7 +17,13 @@ func independent(expected: Dictionary) -> bool:
 		if cel.id!=expected.ids[i] or Storage.image_hash(Drawing.image(cel))!=(expected.edited if i==7 else expected.base):return false
 	return ids.size()==32
 func source_project(folder: String) -> String:
-	DirAccess.make_dir_recursive_absolute(folder);var image:=Drawing.blank(1920,1080);image.fill_rect(Rect2i(100,100,200,100),Color(.2,.7,.8,.5));image.save_png(folder.path_join("drawing.png"));var digest:=Storage.image_hash(image);var cels:=[]
+	DirAccess.make_dir_recursive_absolute(folder);var image:=Drawing.blank(1920,1080)
+	if "--noise-art" in OS.get_cmdline_user_args():
+		var pixels:=PackedByteArray();pixels.resize(1920*1080*4);var random:=RandomNumberGenerator.new();random.seed=917
+		for i in range(pixels.size()):pixels[i]=random.randi_range(0,255)
+		image=Image.create_from_data(1920,1080,false,Image.FORMAT_RGBA8,pixels)
+	else:image.fill_rect(Rect2i(100,100,200,100),Color(.2,.7,.8,.5))
+	image.save_png(folder.path_join("drawing.png"));var digest:=Storage.image_hash(image);var cels:=[]
 	for i in range(32):cels.append({"id":"cel"+str(i),"start":i,"duration":1,"path":"drawing.png","pixel_sha256":digest})
 	var project:={"schema_version":4,"video":{"width":1920,"height":1080,"fps_num":24,"fps_den":1,"duration_frames":48},"camera_keys":[Timeline.key(0,Vector3(0,1,5),Quaternion.IDENTITY,60),Timeline.key(48,Vector3(1,1,5),Quaternion.IDENTITY,60)],"world":World.empty(),"layers":[{"id":"ink","name":"Ink","visible":true,"cels":cels}],"audio":{},"editor":{"frame":0}}
 	FileAccess.open(folder.path_join("project.json"),FileAccess.WRITE).store_string(JSON.stringify(project));return digest
@@ -36,6 +42,9 @@ func run() -> void:
 	var source:=folder.path_join("source-project");var base:=source_project(source);var source_sha:=FileAccess.get_sha256(source.path_join("drawing.png"));var source_manifest:=FileAccess.get_sha256(source.path_join("project.json"))
 	check(app.open_project(source),"ordinary directory project opens32cel records referencing one original PNG")
 	if "--auto-open" in args:check(app.cold_cel_loading and app.cold_cel_min_bytes==64*1024*1024 and app.layers[0].cels.all(func(cel):return cel.has("raster_owner")),"unchanged app defaults automatically cold-load a larger project")
+	if "--noise-art" in args:
+		var state: Dictionary=app.raster_budget.sample()
+		check(state.owners==32 and state.hot_owners==32 and state.hot_bytes==32*1920*1080*4,"raw full-HD source registers all32independent owners and conservative bytes")
 	var expected: Dictionary={"base":base,"edited":base,"ids":[]}
 	for cel in app.layers[0].cels:expected.ids.append(cel.id)
 	check(independent(expected),"ordinary Open provides32distinct editable raster identities with exact source RGBA")

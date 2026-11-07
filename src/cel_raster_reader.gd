@@ -32,7 +32,8 @@ func record(entry: Dictionary) -> Dictionary:
 	if entry.has("raster"):
 		var adopted:=Owner.from_snapshot(entry.raster,adaptive_cache)
 		return adopted if adopted.has("error") else {"raster_owner":adopted.owner}
-	return {"image":entry.image.duplicate()}
+	var adopted:=Owner.from_image(entry.image.duplicate(),adaptive_cache)
+	return adopted if adopted.has("error") else {"raster_owner":adopted.owner}
 func _read(path: String,width: int,height: int,expected,require_pixels: bool,adaptive: bool) -> Dictionary:
 	var file:=FileAccess.open(path,FileAccess.READ)
 	if file==null:return {"error":"Cel missing or exceeds 32 MiB."}

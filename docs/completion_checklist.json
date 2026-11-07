@@ -983,9 +983,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/new_drawing_ownership_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/raw_drawing_ownership.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/raw_drawing_ownership_2026-11-06.json"
         }
       ],
-      "remaining": "Loaded adaptive and newly authored app cels now share registered owned-hot/decoded-cache idle accounting, with exact Undo/save/cold recovery evidence. Global accounting/admission for legacy eager/raw fallback, clipboard, history tiles/whole-layer retention, GPU/derived resources and dense projects remains incomplete before cap expansion.",
+      "remaining": "Adaptive compressed and raw-fallback app cels now share registered ownership accounting; actual noisy32cel edit/save/cold/crash/export passes. Legacy eager/small-project loading, clipboard, history tiles/whole-layer retention, derived/GPU resources and global admission/dense-project acceptance remain incomplete before cap expansion.",
       "external_dependencies": []
     },
     {
@@ -2266,7 +2274,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "New authored/imported app cels now join adaptive owner cooling with exact Undo/save/crash recovery. Address legacy eager/raw fallback, clipboard/history/derived/GPU global accounting and dense-project admission before raising caps."
+      "action": "Adaptive raw fallback now reports conservative owned bytes and preserves full-HD noisy art through Undo/save/crash/export. Address legacy eager, clipboard/history/derived/GPU accounting and dense-project admission before raising caps."
     },
     {
       "requirement": "MEM-01",

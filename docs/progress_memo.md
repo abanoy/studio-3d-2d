@@ -12850,3 +12850,24 @@ gates. Continuous canonical goal stays active; rollback audit no longer next wor
 Nested private108 regression also passed (213checks): real abrupt exit,
 manual HAS bytes exact, packed/linked/active-child state and H264/AAC cue alignment.
 No mask-recovery flag in this rerun; prior separate mask evidence is unchanged.
+
+
+2026-11-06 — Count incompressible adaptive drawing ownership
+
+Baseline noisy64x64 drawing retained16,384bytes but no registered owner/zero hot
+bytes. Adaptive raw fallback now wraps a distinct writable COW Image in the same
+registered owner/cache as compressed cels. Explicit eager API unchanged. Counter
+charges logical owners conservatively; not physical shared pages/RSS. Failed idle
+compression reports incompressible and keeps pixels/charged bytes, never false
+release. No cap increase. New2focused checks plus prior domains total260pass.
+
+Actual private107 auto-open with full-HD noisy art passes63checks+16PNGcompat:
+32distinct owners conservatively charge265,420,800hotbytes; brush/Undo/Redo,
+peer/source exactness, packed cold Open with writer cache unavailable, actual
+SIGKILL recovery startup and H264/AAC/sample alignment pass. Test fixture adds an
+optional noise-art switch retaining existing pixel/preview/export assertions.
+Frozen source check passes. No Windows/native/artist/hardware acceptance inferred.
+Raw raw-owner-before/domain/app under /workspace/has-handoff-audit. Curated
+raw_drawing_ownership_2026-11-06.json and docs/raw_drawing_ownership.md. MEM-02
+partial/open: legacy eager, clipboard/history/derived/GPU/global admission next.
+Canonical continuous goal active; no repeat of adaptive raw-accounting work.
