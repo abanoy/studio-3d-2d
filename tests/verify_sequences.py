@@ -19,6 +19,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--isolated-display',help='Linux: pre-provisioned private dummy X display')
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--adaptive-open',action='store_true')
     parser.add_argument('--mask-recovery',action='store_true',help='Exercise graph3 masks through real abrupt exit and ordinary startup')
     options=parser.parse_args()
     if os.name!='nt':
@@ -30,7 +31,7 @@ def main():
     subprocess.run([sys.executable,str(ROOT/'tests/test_sequence_graph.py'),'--corpus',str(corpus)],cwd=ROOT,check=True)
     reports={};receipts=[]
     def run(script,label,args,marker,headless=False,abrupt=False,scene=None):
-        argv=command(script,headless=headless,extra=([str(scene)] if scene else [])+['--audio-driver','Dummy','--',*map(str,args)])
+        argv=command(script,headless=headless,extra=([str(scene)] if scene else [])+['--audio-driver','Dummy','--',*map(str,args),*(['--adaptive-open'] if options.adaptive_open else [])])
         result=subprocess.run(argv,cwd=ROOT,capture_output=True,timeout=290,
                               creationflags=subprocess.CREATE_NO_WINDOW if os.name=='nt' else 0)
         raw=result.stdout+result.stderr;(folder/(label+'.log')).write_bytes(raw)
@@ -75,7 +76,7 @@ def main():
             assert len(child['layers'][1]['cels'])==2 and child['world']['objects'] and child['audio']
             assert all(cel['path'] in archive.namelist() for layer in child['layers'] for cel in layer['cels'])
     result=dict(reports=reports,media=media,child_audio_onset=onset,private_receipts=receipts,
-                isolated_display=options.isolated_display,mask_recovery=options.mask_recovery,native_fixtures=0,writer_abrupt_exit_verified=True,manual_has_unchanged=True,folder=str(folder))
+                isolated_display=options.isolated_display,adaptive_open=options.adaptive_open,mask_recovery=options.mask_recovery,native_fixtures=0,writer_abrupt_exit_verified=True,manual_has_unchanged=True,folder=str(folder))
     (folder/'verification.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     print(json.dumps({key:value for key,value in result.items() if key!='media'},indent=2))
 

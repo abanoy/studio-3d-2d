@@ -1,4 +1,5 @@
 extends Node
+const Drawing=preload("res://src/drawing.gd")
 const Graph=preload("res://src/sequence_graph.gd")
 const Storage=preload("res://src/storage.gd")
 var checks:=0
@@ -19,7 +20,7 @@ func recovered(result: Dictionary) -> void:
 	check(result.restored and app.dirty and app.has_project.path.is_empty(),"normal startup automatically restores a dirty unsaved enclosing project after abrupt writer exit")
 	check(editor.active_owner==expected.asset and app.frame==6 and not app.home.visible,"automatic recovery restores child editor/frame with priority over Home")
 	check(editor.root_document.world.objects.size()==2 and editor.graph.assets.size()==1 and editor.graph.clips.size()==2,"crash recovery retains both parent backgrounds and shared child instances")
-	check(Storage.image_hash(app.layers[1].cels[0].image)==expected.paint and app.renderer.world_runtime.instances.size()==1,"recovered child keeps exact independent pixels and the native editable rig")
+	check(Storage.image_hash(Drawing.image(app.layers[1].cels[0]))==expected.paint and app.renderer.world_runtime.instances.size()==1,"recovered child keeps exact independent pixels and the native editable rig")
 	if expected.get("full_masks",false):
 		var masks: bool=editor.graph.format==Graph.MASK_FORMAT
 		for clip in editor.graph.clips:

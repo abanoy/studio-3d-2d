@@ -1,4 +1,5 @@
 extends SceneTree
+const Drawing=preload("res://src/drawing.gd")
 const Runtime=preload("res://src/sequence_runtime.gd")
 const Graph=preload("res://src/sequence_graph.gd")
 const Storage=preload("res://src/storage.gd")
@@ -12,11 +13,11 @@ func collect(runtime: Node,completed: Dictionary,id: String) -> void:
 	var image: Image=await runtime.render("",0,true)
 	completed[id]=image
 func run() -> void:
-	var folder: String=OS.get_cmdline_user_args()[0];var document:=Storage.load_project(folder)
+	var folder: String=OS.get_cmdline_user_args()[0];var document:=Storage.load_project(folder,"project.json","--adaptive-open" in OS.get_cmdline_user_args())
 	if document.has("error"):print(document.error);quit(1);return
 	var runtime:=Runtime.new();root.add_child(runtime)
 	check(runtime.prepare(document.sequence_graph,document).is_empty(),"editable child runtime prepares")
-	var source: Image=document.sequence_graph.assets[0].scene.layers[0].cels[0].image
+	var source_record: Dictionary=document.sequence_graph.assets[0].scene.layers[0].cels[0];var source: Image=Drawing.image(source_record)
 	var before:=source.get_data()
 	var image: Image=await runtime.render("",0,true)
 	check(image!=null and image.get_pixel(0,0).a==0,"empty child background remains transparent")
@@ -29,6 +30,7 @@ func run() -> void:
 	image.save_png(folder.path_join("sequence-half-alpha.png"))
 	var held: Image=await runtime.render("",12,true)
 	check(runtime.builds==builds and held.get_data()==image.get_data(),"different parent frames reuse the same held artwork picture exactly")
+	source=Drawing.edit_image(source_record).image
 	var original:=source.get_pixel(850,450);source.set_pixel(850,450,Color.BLUE);preload("res://src/drawing.gd").touch(source,Rect2i(850,450,1,1))
 	var edited: Image=await runtime.render("",12,true)
 	check(runtime.builds==builds+1 and edited.get_pixel(850,450).b>.99,"a marked pixel revision invalidates held artwork even at the same frame")

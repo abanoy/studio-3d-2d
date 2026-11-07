@@ -248,3 +248,40 @@ Default adoption is still disabled pending actual nested cold rendering and
 app-level load/seek latency acceptance. The 32-cel cap stays unchanged, and edited
 owners remain hot under legacy pixel Undo. Larger/dense-project budgeting and
 hardware/native acceptance remain incomplete; MEM-02 stays partial.
+
+## Nested acceptance and measured app latency
+
+The opt-in adaptive nested suite now passes 224 checks:106 graph,9 audio,8 storage,
+23 runtime,48 writer,25 fresh reader and5 normal startup. It includes graph3 masks,
+looped/shared instances, child brush pin/Undo/Redo through normal editor navigation,
+exact restored parent composite, packed/linked/active-child saves and recovery
+following actual SIGKILL. The procedural skinned actor remains editable; this does
+not establish fidelity for unavailable native assets. Child audio decodes at
+0.2500208s versus the authored0.25s. See
+[the nested receipt](benchmarks/cel_raster_nested_2026-11-06.json).
+
+`verify_cel_raster_app_benchmark.py --isolated-display :106` measures three pairs
+of ordinary eager/adaptive app Opens,32 distinct-frame seeks and10 held-frame
+seeks on an empty 3D world with32 original sparseHDcels. All preview RGBA is exact.
+The benchmark includes two UI frames and GPU presentation in seek time, and does
+pixel verification afterward. It is not a physical tablet, native scene, noisy
+artwork, peak-memory or artist-comfort acceptance test.
+
+| Three-run mean | Eager | Adaptive |
+|---|---:|---:|
+| Synchronous Open call |1600ms |1546ms |
+| Ready after layout/draw |1710ms |1686ms |
+| Distinct-frame seek |52.7ms |80.3ms |
+| Held-frame seek |37.5ms |36.6ms |
+| Tracked allocation increase after ready |265.5MB |8.49MB |
+
+Adaptive per-run distinct-seek p95 values were94.0,81.6 and89.8ms; eager values
+were62.4,62.9 and54.9ms. Both modes rebuilt zero held composites. The tracked
+increase is relative to an already initialized empty app, not absolute RAM/RSS,
+peak allocation or GPU memory. Raw samples, source hashes and scope are in
+[the app measurement](benchmarks/cel_raster_app_2026-11-06.json).
+
+These results verify functionality and expose the cost of on-demand decoding;
+they do not certify universal latency. Default adoption remains off while the
+latency/compatibility policy is evaluated. Larger edited-owner/global dense-project
+budgets and higher caps are still separate unfinished work.

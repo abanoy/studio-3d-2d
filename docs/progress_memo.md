@@ -12252,3 +12252,37 @@ MEM-02 partial/open. Next actual nested cold rendering and app Open/seek latency
 acceptance before default adoption, then edited-owner/global dense-project budgets
 before raising32cel cap. Full goal remains active, not complete or externally
 blocked. Default artist workflow is still eager while this acceptance continues.
+
+
+2026-11-06 — nested cold acceptance and actual app measurements (MEM-02 partial)
+
+Extended existing nested suite with explicit adaptive loading and raster accessors,
+including child brush pin/Undo/Redo after ordinary packed Open, stable writable
+identity and exact restored parent composite. Runtime test pins only before its
+intentional pixel mutation. Startup observer reads authoritative pixels through
+accessor; production startup flow unchanged. Full graph3 mask recovery suite224
+checks passes:106graph9audio8storage23runtime48writer25reader5startup. Two-level
+rendering/masks/shadows/loops, editable procedural rig, shared instances, parametric
+keys, packed/linked/active-child saves and actual SIGKILL recovery covered. Manual
+HAS unchanged; child audio decoded0.2500208s vs0.25s. No native fidelity claim.
+Proof cel-raster-adaptive-nested/verification.json under /workspace/has-handoff-audit;
+curated docs/benchmarks/cel_raster_nested_2026-11-06.json.
+
+Added real app benchmark on32distinct original sparseHDcels/empty3Dworld. Three
+paired ordinary Opens,32distinct seeks and10held seeks each. Every preview RGBA
+exact; adaptive32coldowners and decoded-cache ceiling retained. Mean Open call
+1600.303ms eager vs1546.348adaptive; ready1709.725vs1686.467ms. Distinct seek mean
+52.727vs80.345ms; adaptive run p95s94.021/81.647/89.819ms vs62.393/62.900/54.919.
+Held mean37.464vs36.584ms; zeroheld rebuilds in both. Tracked increase after ready
+265539110.7vs8490329.7bytes, relative to initialized empty app; not absolute RAM,
+RSS,peak orGPU. Seek times include2UIframes/GPU presentation, checks afterward.
+Same-process/private106softwareGL only, not hardware/native/noisy/artist latency.
+Proof cel-raster-app-latency/verification.json; curated raw/source-hashed receipt
+ docs/benchmarks/cel_raster_app_2026-11-06.json. Portable benchmark wrapper added
+and Python syntax checked; same guarded command was executed directly for proof.
+
+No default adoption change yet: measured distinct seek overhead is material and
+must be weighed alongside sparse memory gain. No resource-cap or format changes.
+MEM-02 partial/open, edited-owner/global dense budgets still unfinished. Next
+resolve bounded latency/default compatibility policy, then budget scalability.
+Full goal remains active and independently actionable.

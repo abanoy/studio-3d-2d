@@ -875,9 +875,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_raster_adaptive_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_raster_nested_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_raster_app_2026-11-06.json"
         }
       ],
-      "remaining": "Explicit adaptive ordinary directory/HAS Open and actual abrupt startup recovery pass with shared compressed snapshots and eager noisy fallback; source/hash/Undo/save/cold reader tests and32-record measurements exist. Default remains eager pending actual nested cold rendering and app load/seek latency acceptance. Edited-owner/global dense-project budgeting and cap expansion remain incomplete; preserve hardware/native gates.",
+      "remaining": "Opt-in adaptive ordinary Open/edit/save/startup recovery and224nested checks pass; app measurements show much lower sparse allocation but distinct seeks80ms vs53ms eager on softwareGL. Default remains eager pending bounded latency/default compatibility policy. Edited-owner/global dense-project budgeting and cap expansion remain incomplete; preserve hardware/native gates.",
       "external_dependencies": []
     },
     {
@@ -2044,7 +2052,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Opt-in adaptive Open/edit/save/abrupt startup works. Verify actual nested cold rendering and app-level load/seek latency before default adoption; then address edited-owner/global dense-project budgets before raising caps."
+      "action": "Nested cold render/edit/save/recovery passes and app latency is measured. Resolve measured cold-seek/default compatibility tradeoff, then edited-owner/global dense-project budgets before raising caps."
     },
     {
       "requirement": "MEM-01",

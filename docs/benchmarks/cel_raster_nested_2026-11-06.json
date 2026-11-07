@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-06",
+  "base_commit": "c2307ac",
+  "scope": "Existing nested sequence suite with opt-in adaptive loading, full masks, actual child brush/Undo/Redo and normal startup after SIGKILL. Original procedural skinned actor, no native-format fidelity acceptance.",
+  "checks": {
+    "graph": {
+      "checks": 106,
+      "failures": 0
+    },
+    "audio": {
+      "checks": 9,
+      "failures": 0
+    },
+    "storage": {
+      "checks": 8,
+      "failures": 0
+    },
+    "runtime": {
+      "checks": 23,
+      "failures": 0
+    },
+    "writer": {
+      "checks": 48,
+      "failures": 0
+    },
+    "reader": {
+      "checks": 25,
+      "failures": 0
+    },
+    "startup": {
+      "checks": 5,
+      "failures": 0
+    }
+  },
+  "child_audio_onset": 0.25002083333333336,
+  "writer_abrupt_exit_verified": true,
+  "manual_has_unchanged": true,
+  "source_sha256": {
+    "src/sequence_runtime.gd": "ff708a9b0c0a15e97e63bfea6c6c1575c2941a701f865471c250629b0284533a",
+    "src/sequence_editor.gd": "385cc2e8860bf2658152e1477d5e13e85b0b7d71dfca068c187aea2d740d4390",
+    "tests/sequence_runtime_smoke.gd": "a8766c9cbe5aa0f3b4aad57e0cacd81d3735adb4dcd7246e9937a74494618e1c",
+    "tests/sequence_editor_smoke.gd": "3292b01bfbf831affade96ec4d36a27576448e0d1a3563550bcdc163f3ba038e",
+    "tests/sequence_startup_observer.gd": "194b213f0a7813aa16eb6de904557a939346efacd6dd24edcbb90f941430c9d8",
+    "tests/verify_sequences.py": "0e1a44e892d6bb0898f0d0caaf9be4cbd51521a4f9d771caa9e85e938298be70"
+  }
+}
