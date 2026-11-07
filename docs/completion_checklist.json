@@ -1242,9 +1242,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/cel_file_paths.md"
+        },
+        {
+          "kind": "source",
+          "path": "tests/test_has_save_faults.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/has_save_readback.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/has_save_readback_2026-11-06.json"
         }
       ],
-      "remaining": "Complete interrupted/disk-full/platform fault matrix remains; existing controlled failures are scoped evidence.",
+      "remaining": "HAS temporary/readback and previous-backup SHA validation plus controlled ENOSPC/replace/cancel and actual Linux SIGKILL boundaries are verified. Directory manifest/PNG fault paths, directory-sync/power-loss durability and native Windows fault gates remain incomplete.",
       "external_dependencies": []
     },
     {

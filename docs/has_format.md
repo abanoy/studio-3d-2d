@@ -225,3 +225,11 @@ change. Missing fields retain old studio lighting. New projects choose unshaded;
 packed/linked/recovery and final export use the same value. Invalid values are
 rejected before writes/installation. Older binaries may ignore this field and use
 their original lighting; use updated Studio for the selected view. See lighting.md.
+
+
+Completed temporary HAS archives are now read back (bounded structure/header/
+inventory, entry sizes and streaming SHA256/CRC) before the current file/backup
+changes. Existing archives also need valid payload hashes before backup promotion.
+See [save verification](has_save_readback.md) for controlled ENOSPC/permission/
+cancel/SIGKILL evidence and remaining platform/power-loss limitations. No format
+change.

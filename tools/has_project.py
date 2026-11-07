@@ -253,6 +253,33 @@ def checked_copy(source, destination, digest, request):
     check_cancel(request);os.replace(temporary,destination)
 
 
+def verify_written_archive(path, header_blob, payload, request):
+    """Read the completed temporary archive before touching either saved file."""
+    preflight_archive(path)
+    if not isinstance(payload,list) or len(payload)>MAX_FILES-1:raise HasError("Invalid saved HAS readback inventory")
+    expected={'has.json':len(header_blob),**{row['path']:row['bytes'] for row in payload}}
+    with zipfile.ZipFile(path) as archive:
+        entries=archive.infolist()
+        if len(entries)!=len(expected) or {e.filename for e in entries}!=set(expected):
+            raise HasError('Saved HAS readback inventory differs; previous save preserved')
+        if sum(e.file_size for e in entries)>MAX_TOTAL:
+            raise HasError('Saved HAS expanded data exceeds bounds; previous save preserved')
+        for entry in entries:
+            if entry.file_size!=expected[entry.filename] or entry.is_dir() or entry.flag_bits & 1 or stat.S_ISLNK(entry.external_attr >> 16) or entry.compress_type not in (zipfile.ZIP_STORED,zipfile.ZIP_DEFLATED):
+                raise HasError('Saved HAS readback entry differs; previous save preserved')
+        if archive.read('has.json')!=header_blob:
+            raise HasError('Saved HAS readback header differs; previous save preserved')
+        for row in payload:
+            check_cancel(request);digest=hashlib.sha256();count=0
+            with archive.open(row['path']) as source:
+                for block in iter(lambda:source.read(1024*1024),b''):
+                    check_cancel(request);count+=len(block)
+                    if count>row['bytes']:raise HasError('Saved HAS readback exceeds declared size; previous save preserved')
+                    digest.update(block)
+            if count!=row['bytes'] or digest.hexdigest()!=row['sha256']:
+                raise HasError('Saved HAS readback checksum differs: '+row['path']+'; previous save preserved')
+
+
 def pack(request):
     folder = Path(request['folder']).resolve(strict=True)
     target = Path(request['path']).resolve()
@@ -309,6 +336,7 @@ def pack(request):
                 if h.hexdigest()!=row['sha256']: raise HasError('Snapshot changed while packing')
     if temporary.stat().st_size > MAX_TOTAL: raise HasError('HAS archive exceeds 512 MiB')
     with temporary.open('r+b') as f: f.flush(); os.fsync(f.fileno())
+    verify_written_archive(temporary,header_blob,payload,request)
     check_cancel(request)
     if target.is_file():
         # Do not promote a known corrupt archive over a usable previous backup.
@@ -319,9 +347,10 @@ def pack(request):
                 bounded = target.stat().st_size<=MAX_TOTAL and len(info)<=MAX_FILES and sum(e.file_size for e in info)<=MAX_TOTAL and old.getinfo('has.json').file_size<=MAX_META and all(e.compress_type in (zipfile.ZIP_STORED,zipfile.ZIP_DEFLATED) and not e.flag_bits & 1 for e in info)
                 valid=False
                 if bounded:
-                    header=read_json(old.read('has.json'));members(read_json(old.read('project.json')))
-                    valid=header.get('format')=='hybrid_animation_studio' and header.get('version')==1 and header.get('storage') in ('packed','linked') and old.testzip() is None
-        except (OSError,ValueError,KeyError,zipfile.BadZipFile): valid = False
+                    old_header_blob=old.read('has.json');header=read_json(old_header_blob);members(read_json(old.read('project.json')))
+                    valid=header.get('format')=='hybrid_animation_studio' and header.get('version')==1 and header.get('storage') in ('packed','linked')
+                    if valid:verify_written_archive(target,old_header_blob,header['payload'],request)
+        except (OSError,ValueError,KeyError,TypeError,EOFError,zlib.error,zipfile.BadZipFile,RuntimeError): valid = False
         if valid:
             backup = Path(str(target)+'.backup.tmp')
             shutil.copyfile(target,backup);os.replace(backup,Path(str(target)+'.backup'))

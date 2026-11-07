@@ -2195,3 +2195,34 @@ Receipt source hashes match committed implementation 831ee0947ba96f8d1a03b49ddc0
 COURSE-01 technical acceptance with17browser+57focused+87beginner current checks
 and explicit source/condition mapping. Other acceptance items and external gates
 remain open; numeric global score stays unpublished until the full audit.
+
+
+2026-11-06 — Verified HAS readback before replacement
+
+Reproduced3actual container faults on0ce45e0: changed completed pixels with valid
+ZIP CRC, changed header and truncated temporary archive all silently promoted.
+Packer now verifies completed temporary ZIP structure, exact header/inventory,
+entry sizes/types and every payload SHA/CRC after flush/fsync, before touching
+current save/backup. Streaming1MiB blocks with cancellation; failed temps retained.
+Second probe showed CRC-valid bad previous payload could overwrite good backup.
+Old archive now also passes payload readback before backup promotion. No format,
+source-art or project/cap changes. Readback adds sequential I/O/decompression cost.
+
+48portable HAS tests pass, including11fault tests: corruption/truncation/header,
+old payload guard, ENOSPC payload/sync/backupcopy, denied backup/final replace,
+cancel during readback, actual owned Linux SIGKILL before backup and final commit.
+Current/backup stay exact, and completed pending archives reopen. Initial kill
+fixture included backup.tmp in archive glob; corrected selection and added exact
+backup.tmp assertion. Failed logs preserved. Physical disk was not exhausted.
+
+Actual default32cel app load/edit/packed save, true abrupt recovery, fresh-cache
+startup and1080p24 H264/AAC/source/manual preservation pass after new-file readback.
+Final old-backup guard/list bound added afterward and covered by48Python cases;
+app was not redundantly rerun for those changes. Private107/Dummy. Raw
+/workspace/has-handoff-audit/has-save-readback-before.log,has-save-backup-before.log,
+has-save-readback-final.log andhas-save-readback-app/verification.json. Curated
+docs/benchmarks/has_save_readback_2026-11-06.json.
+
+STORE-04 partial/open: directory manifest/PNG fault paths, directory sync/physical
+power-loss durability and native Windows locks/termination/storage faults remain.
+Whole goal active; do not infer full platform acceptance from fault injection.
