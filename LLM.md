@@ -3061,3 +3061,9 @@ finalWindowsgatesremainblocked. Scoresunchanged48/54implementation/2of62formal
 closures. Wholegoalactive; next inspectconcretegeneralpathlocomotionlimitation
 (turns/corners/slopes/groupedrigs) and implementindependentrequiredimprovement
 using originalrigfixture, retainingnative/Windows/device acceptance gates.
+
+
+2026-11-07 UTC: corrected an incidental whole-file line-ending normalization in
+docs/progress_memo.md from the scenarioD metadata clarification. Restored the exact
+aacb2ed historical byte prefix and retained the new D entry; no history content,
+source/runtime, test assertion or goal was removed. Future memo edits stay byte-safe.

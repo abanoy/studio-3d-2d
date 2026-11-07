@@ -13177,6 +13177,7 @@ layoutbeforecamerabuttonclick; noappbehavior/tolerancechanges. See scenario_c.md
 andbenchmarks/scenario_c_2026-11-07.json. FinalWindowsgate remains; nativefidelity
 is separate. Scoreunchanged. Next: fulloriginal-ragdoll/props mechanicalscenarioD.
 
+
 ### 2026-11-07 UTC — mechanical physics scenarioD together
 
 Original17bonehumanoid/map+threeprops pass28app/4coldreader: defaultPhysicsON,
