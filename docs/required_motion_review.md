@@ -34,3 +34,5 @@ those external tests passed or treating OPEN inference details as requirements.
 See [fresh IK evidence](benchmarks/required_ik_review_2026-11-07.json),
 [helper/crouch evidence](benchmarks/helper_limb_ik_2026-11-07.json) and
 [grouped walking evidence](benchmarks/grouped_walking_2026-11-07.json).
+
+Current final-layout reruns passed70helper/direct IK checks and106grouped walking evaluator/editor/cold-reader checks, with zero failures and real48frame1080p24H264 exports. Frozen source hashes match this worktree. See [current motion receipts](benchmarks/required_motion_current_2026-11-07.json). Uploaded raw SFM assets now exist; native conversion/rig acceptance remains blocked by the installed-host prerequisite.

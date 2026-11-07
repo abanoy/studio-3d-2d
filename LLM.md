@@ -3501,3 +3501,5 @@ export, ruler/track/waveform mapping and explicit Local/World record/replay/canc
 conditions are covered. Native/Windows/device/novice gates are not promoted.
 Formal10/62(16.13%); implementation51/54(94.44%) unchanged. Final responsive-UI
 IK/crouch and grouped locomotion gates now running; no premature closures.
+
+2026-11-07 UTC: Current isolated-display final-layout IK and grouped walking suites passed176 checks total, zero failures, real1080p24H264 exports and cold portable replay. Frozen source hashes independently matched. Committed raw receipts in required_motion_current benchmark; native/Windows/device/artist coverage not claimed.
