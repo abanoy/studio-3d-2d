@@ -145,6 +145,14 @@ func run() -> void:
 	check(not app.exporting and not editor.scale_apply.disabled and app.renderer.active_instance_id=="actor-1","export restores active world controls and selection")
 	root.get_texture().get_image().save_png(folder.path_join("editor.png"))
 	var original_world: Dictionary=app.renderer.world_state();var rig_source: String=left.data.source
+	var far_before: Dictionary=app.renderer.world_state().duplicate(true);var far_shots: Array=app.keys.duplicate(true)
+	selection.select_entity("map-1");editor.operation.select(1);editor.refresh_values();editor.fields[0].value=5000;editor.apply_numeric()
+	selection.clear();selection.items["map-1"].select(0);await settled()
+	var distant: RefCounted=app.renderer.world_runtime.instance("map-1");var far_origin: Vector3=distant.root.global_position
+	check(selection.selected=="map-1" and app.renderer.active_model()==distant and far_origin.length()>1000,"hierarchy finds an actual far-away map by its stable ID")
+	selection.frame_selected();await settled();var far_bounds: AABB=app.renderer.scene_bounds(distant.root)
+	check(camera.global_position.distance_to(far_origin)<100 and camera.is_position_in_frustum(far_bounds.get_center()) and app.keys==far_shots,"Frame selected brings the distant map into view without authoring a shot")
+	app.undo();check(app.renderer.world_state()==far_before,"one Undo restores the original complete world after the distant-map root edit")
 	# All64 palette IDs must resolve from real rendered pixels, including nonprimary colors.
 	var many:=World.empty()
 	for i in range(64):

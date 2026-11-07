@@ -116,6 +116,28 @@ func run() -> void:
 	app.source_import.launch(fixtures.path_join("rig-linked.fbx"),"",true,1)
 	app.source_import.cancel();await wait_import(app)
 	check(app.source==retained and app.source_import.cancelled,"cancelled generic conversion preserves current project")
+	# Common-format workers must retain request intent after the playhead moves.
+	var timed_before: Array=app.current_world().objects.duplicate(true);app.set_frame(40)
+	app.import_actions.add(fixtures.path_join("rig-linked.fbx"),true,40)
+	var timed_dialog: ConfirmationDialog
+	for child in app.get_children():
+		if child is ConfirmationDialog and child.title=="Import 3D model":timed_dialog=child
+	check(timed_dialog!=null,"chosen-frame FBX import opens the normal preparation dialog")
+	if not timed_dialog:quit(1);return
+	timed_dialog.confirmed.emit();check(app.source_import.pid>0,"chosen-frame FBX uses a real asynchronous worker")
+	app.set_frame(5);app.import_actions.drop(PackedStringArray([fixtures.path_join("rig.gltf")]),app.canvas.get_global_rect().get_center())
+	check(app.current_world().objects==timed_before and app.source_import.pid>0 and app.status.text.contains("Finish"),"a second import cannot replace the pending common-format request")
+	await wait_import(app);var timed_id: String=app.last_import_id;var timed_actor: RefCounted=app.renderer.world_runtime.instance(timed_id)
+	check(timed_actor!=null and timed_actor.data.start_frame==40 and app.frame==5,"asynchronous FBX retains requested frame40 after playhead moves to5")
+	check(app.current_world().objects.size()==timed_before.size()+1 and app.current_world().objects.slice(0,timed_before.size())==timed_before,"completed timed FBX leaves every earlier object unchanged")
+	app.renderer.world_runtime.evaluate(39);var timed_absent: bool=not timed_actor.root.visible;app.renderer.world_runtime.evaluate(40)
+	check(timed_absent and timed_actor.root.visible,"prepared common-format object has exact first-presence boundary")
+	var timed_packed:=folder.path_join("timed-generic.has");app.has_project.save_file(timed_packed,"packed")
+	while app.has_project.pid>0:await process_frame
+	check(app.has_project.path==timed_packed,"ordinary packed Save retains timed common-format import")
+	app.new_project();app.has_project.open_file(timed_packed)
+	while app.has_project.pid>0:await process_frame
+	check(app.renderer.world_runtime.instance(timed_id).data.start_frame==40 and app.frame==5,"fresh New/Open preserves async import presence and independent playhead")
 	var result:={"checks":checks,"failures":failures,"folder":folder,"movie":movie,"bundles":bundles}
 	var file:=FileAccess.open("res://output/generic-result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result));file.close()
 	print("GENERIC_SMOKE "+JSON.stringify(result));quit(0 if failures==0 else 1)
