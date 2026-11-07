@@ -13152,3 +13152,16 @@ Save/initialOpen/lesson snapshots stillsync; closejoinsworker. FullWindowsKrita
 harness remainsseparateLinuxblock. See background_checkpoints.md and curatedreceipt.
 Nextsource/evidenceaudit offinitecompletionbaseline beforepublicationofpercentage;
 then prioritize remaining requiredengineering/native/device/ownerdecisiongaps.
+
+### 2026-11-07 UTC — finite baseline source/evidence audit
+
+Reviewed MD/addendum mapping, all62IDs, boundedcodepaths, evidence scope and
+remainingprerequisites. Corrected3staleimplementationlabels (MOTION02,MEM01,MEM02),
+withoutnewacceptanceclaims. Counts48/54=88.89%implementationcoverage;2/62=3.23%
+formalacceptanceclosure. Equalgroupsarenotremainingtimeorrelease readiness.
+Fivepartial+oneexplicitpackagingdecision remain. Nativefixturesarenotaprereqfor
+genericsoftwareC/D cases; removedthatunnecessarydependencywhilekeepingWindows
+finalgates andallnativefidelityrequirements. Checkerrequiresper-itemauditstatus/
+denominator/sourcehashconsistency; positiveanddeliberateinvaliddata checks pass.
+See completion_baseline_audit.md and benchmarks/completion_baseline_audit_2026-11-07.json.
+Next: fullroutedC thenD original-assetcloudcases; independentworkremainsactive.

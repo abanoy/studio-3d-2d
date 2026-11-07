@@ -13,9 +13,11 @@
   "interpretation": "Addendum governs conflicts. Later established hold-Alt/MMB/auto-key decisions remain resolved. Conditional/suggested/OPEN text is not silently promoted into mandatory work.",
   "evidence_policy": "Source existence and recorded reports are not tests executed during this reconciliation. scoped_evidence means partial/profile-specific documented tests, not full acceptance closure. Earlier requirements matrix remains historical context.",
   "scoring": {
-    "baseline_reviewed": false,
-    "method": "After the checklist baseline has been audited, report implemented required_implementation items / all required_implementation items separately from verified required items / all required implementation+verification items. No partial credit. Exclude optional/decision/control records. External blockers stay in the acceptance denominator. Equal checklist units are not effort, reliability or release-readiness weights.",
-    "reason": "Initial finite reconciliation; acceptance conditions need per-item closure/evidence audit. No numeric completion score is published yet. The earlier informal70percent is not this baseline."
+    "baseline_reviewed": true,
+    "method": "Implementation coverage = implemented required_implementation groups / all54required implementation groups. Acceptance closure = verified required groups / all62required implementation+verification groups. No partial credit; external blockers stay in the acceptance denominator. Exclude optional/decision/control records. Equal checklist groups are not effort, reliability or release-readiness weights; do not combine the two scores.",
+    "reason": "Source/evidence baseline reviewed against both governing documents on2026-11-07. Three stale implementation labels corrected; all62stable IDs and denominators retained. Current implementation code coverage and formal acceptance closure are separate metrics; this is not an overall release-completion or remaining-time estimate.",
+    "reviewed_at_commit": "7dcbb1b26d10ba5f97dabd3da671607023128816",
+    "audit": "docs/benchmarks/completion_baseline_audit_2026-11-07.json"
   },
   "requirements": [
     {
@@ -427,8 +429,8 @@
         "ADD5.4"
       ],
       "title": "Reversible Motion Assist",
-      "implementation": "partial",
-      "verification": "incomplete",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
       "acceptance": "A simple assist control offers editable, disableable corrections without silently replacing authored poses; supported parts/helpers have explicit bounds.",
       "evidence": [
@@ -439,9 +441,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/motion_assistance.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/motion_editor.gd"
+        },
+        {
+          "kind": "source",
+          "path": "src/motion_animation.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/motion_animation.md"
         }
       ],
-      "remaining": "Broader full-body assistance and owner intensity evaluation remain.",
+      "remaining": "Bounded reversible Motion feeling, per-part/helper correction and saved evaluation are implemented. Owner intensity/style preference, broader native/physics/clip/lesson acceptance and long-rig performance remain unverified. Full-body inference beyond this contract is not silently promoted from potential assistance examples into a new mandatory feature.",
       "external_dependencies": []
     },
     {
@@ -695,7 +709,7 @@
           "path": "docs/drawing_clipboard.md"
         }
       ],
-      "remaining": "Long/dense raster storage is a separate missing capability.",
+      "remaining": "Held-cel structural implementation is present; dense storage now has scoped400drawing evidence in MEM-02. Full routed exposure/structural acceptance still needs closure; no longer describe dense storage as absent.",
       "external_dependencies": []
     },
     {
@@ -805,8 +819,8 @@
         "ADD13.2"
       ],
       "title": "Bounded usable drawing history",
-      "implementation": "partial",
-      "verification": "incomplete",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
       "acceptance": "Meaningful pixel/cel edits have measured bounded useful Undo/Redo without full-frame snapshots for every stroke or resetting independent live physics.",
       "evidence": [
@@ -919,8 +933,8 @@
         "ADD13.2"
       ],
       "title": "Cold-cel storage and larger projects",
-      "implementation": "partial",
-      "verification": "incomplete",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
       "acceptance": "Cold unique drawings can be compressed/lazily loaded with measured bounded active/history caches, source integrity and reliable large-project seek/save/export.",
       "evidence": [
@@ -1512,7 +1526,7 @@
           "path": "docs/benchmarks/directory_rollback_2026-11-06.json"
         }
       ],
-      "remaining": "Supporting POSIX sync and old-generation payload validation before backup rotation now have scoped fault/app evidence, including actual pre-promotion worker SIGKILL. Native Windows and actual physical power-loss acceptance remain incomplete.",
+      "remaining": "Supporting POSIX durability and atomic/CAS/readback/backup safety have scoped actual fault evidence. tools/save_sync.py deliberately reports directory sync unsupported on Windows; target directory durability/fault coverage and physical power-loss acceptance remain incomplete. Do not count POSIX evidence as Windows durability.",
       "external_dependencies": []
     },
     {
@@ -1921,9 +1935,8 @@
           "path": "docs/requirements_cloud_2026-11-05.md"
         }
       ],
-      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "remaining": "The seven-step generic timeline/presence/gap/visibility/hidden-selection/fade/camera-cut scenario can be integrated with original procedural assets in cloud. Complete that independent routed software case; final target Windows acceptance remains unavailable. Native ecosystem fidelity belongs to IMPORT-02/03 and ACCEPT-B, not an invented prerequisite here.",
       "external_dependencies": [
-        "B-NATIVE",
         "B-WINDOWS"
       ]
     },
@@ -1933,22 +1946,20 @@
       "source_sections": [
         "ADD17.D"
       ],
-      "title": "Native physics capture scenario",
+      "title": "Physics capture scenario",
       "implementation": "not_applicable",
       "verification": "external_required",
       "acceptance_status": "external_blocked",
-      "acceptance": "Native ragdoll freeze/reset and explicit Local/World captures reproduce selected/impacted-body motion through preview, persistence and MP4.",
+      "acceptance": "A compatible ragdoll freezes/resets and explicit Local/World captures reproduce selected/impacted-body motion through preview, persistence and MP4, with measured ordinary-take responsiveness.",
       "evidence": [
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
         }
       ],
-      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "remaining": "Run the complete routed software scenario with an original compatible ragdoll and dynamic props, then retain the separate Windows execution gate. Native collision/joint fidelity remains an import requirement; artistic observation belongs to the novice/device gates.",
       "external_dependencies": [
-        "B-NATIVE",
-        "B-WINDOWS",
-        "B-ARTIST"
+        "B-WINDOWS"
       ]
     },
     {
@@ -2190,9 +2201,7 @@
       "prevents": [
         "IMPORT-02",
         "IMPORT-03",
-        "ACCEPT-B",
-        "ACCEPT-C",
-        "ACCEPT-D"
+        "ACCEPT-B"
       ],
       "independent_work": "Common-format and procedural validation can continue; it does not establish native material/rig/cloth fidelity."
     },
@@ -2209,7 +2218,6 @@
       "prerequisite": "Owner/novice observation and artistic feedback on an actual completed short animation.",
       "prevents": [
         "ACCEPT-A",
-        "ACCEPT-D",
         "ACCEPT-E",
         "ACCEPT-TABLET"
       ],
@@ -2219,7 +2227,16 @@
   "source_section_index": {
     "MD1": [
       "ACCEPT-A",
-      "ACCEPT-INSTALL"
+      "ACCEPT-INSTALL",
+      "IMPORT-01",
+      "CAMERA-01",
+      "DRAW-01",
+      "POSE-04",
+      "AUDIO-01",
+      "AUDIO-02",
+      "STORE-01",
+      "OUTPUT-01",
+      "TIME-01"
     ],
     "MD2": [
       "WORLD-01",
@@ -2229,7 +2246,12 @@
     ],
     "MD3": [
       "ENV-01",
-      "ACCEPT-TABLET"
+      "ACCEPT-TABLET",
+      "DRAW-01",
+      "AUDIO-02",
+      "OUTPUT-01",
+      "MEM-01",
+      "MEM-02"
     ],
     "MD4": [
       "UI-01",
@@ -2295,7 +2317,22 @@
       "OUTPUT-03",
       "ACCEPT-A",
       "ACCEPT-F",
-      "ACCEPT-TABLET"
+      "ACCEPT-TABLET",
+      "CAMERA-01",
+      "DRAW-01",
+      "ACCEPT-D",
+      "ACCEPT-C",
+      "ACCEPT-B",
+      "DRAW-02",
+      "OUTPUT-01",
+      "IMPORT-01",
+      "NAV-01",
+      "STORE-01",
+      "SEQ-01",
+      "ACCEPT-E",
+      "AUDIO-02",
+      "COMP-01",
+      "POSE-02"
     ],
     "MD11": [
       "NOTICES-01",
@@ -2401,7 +2438,9 @@
       "AUDIO-02",
       "COMP-01",
       "OUTPUT-01",
-      "OUTPUT-02"
+      "OUTPUT-02",
+      "DRAW-01",
+      "COMP-02"
     ],
     "ADD15": [
       "IMPORT-01",
@@ -2451,24 +2490,29 @@
   ],
   "next_actions": [
     {
-      "requirement": "CONTROL-GOAL",
+      "requirement": "ACCEPT-C",
       "priority": 1,
-      "action": "Audit the complete MD/addendum mapping, each implementation status, acceptance evidence and exact remaining work. Publish separate implementation/verified percentages only after baseline_reviewed is justified; user requested a defensible percentage."
+      "action": "Run the complete seven-step routed timeline/presence/gap/visibility/hidden-selection/fade/cut software scenario with original assets. Native fixtures are not required for this independent case; retain final Windows target acceptance."
+    },
+    {
+      "requirement": "ACCEPT-D",
+      "priority": 1,
+      "action": "Run the complete compatible-ragdoll/props, freeze/reset, unrecorded simulation and Local/World capture software scenario. Keep native fidelity and final Windows acceptance separately scoped."
     },
     {
       "requirement": "REC-01",
       "priority": 1,
-      "action": "400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations."
+      "action": "Bounded implementation and400drawing/background checkpoint software evidence are recorded. Remaining resource work is long-session retention/cleanup/quota and manual Save/Open responsiveness; keep full acceptance closure separate from implementation status."
     },
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations."
+      "action": "Bounded implementation and400drawing/background checkpoint software evidence are recorded. Remaining resource work is long-session retention/cleanup/quota and manual Save/Open responsiveness; keep full acceptance closure separate from implementation status."
     },
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations."
+      "action": "Bounded implementation and400drawing/background checkpoint software evidence are recorded. Remaining resource work is long-session retention/cleanup/quota and manual Save/Open responsiveness; keep full acceptance closure separate from implementation status."
     },
     {
       "requirement": "STORE-04",

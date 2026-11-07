@@ -1,0 +1,2201 @@
+{
+  "format": "has_completion_baseline_audit_1",
+  "date": "2026-11-07 UTC",
+  "source_commit": "7dcbb1b26d10ba5f97dabd3da671607023128816",
+  "source_document_sha256": {
+    "CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md": "2595348e15383bc3aef125d0f43118f5244271f3ef34a1ae1f1c13458b589a8b",
+    "docs/design/HAS_2026-10-29_Voice_Design_Addendum_for_Codex.md": "85c5628cb51bd8acb3abd66052bd638530e60fd2f71ea550cff773d643a4bbf7"
+  },
+  "goal_sha256": "288eb24e230d25cb342e78d45cc4878144424d334aff4d64946adad8f5a7a5f6",
+  "method": "Review the finite MD/addendum decomposition, actual bounded implementation paths, evidence scope and remaining prerequisites. Equal checklist units; no partial credit, no effort weighting and no combined product-readiness percentage. This source/evidence audit is not a fresh execution of every feature suite.",
+  "requirement_count": 62,
+  "implementation_denominator": 54,
+  "acceptance_denominator": 62,
+  "requirements": [
+    {
+      "id": "ENV-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD3",
+        "MD5.Stage0"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Pinned engine validation and local launch/tool detection exist; clean Windows installation remains a verification gate.",
+      "reviewed_code_anchors": [
+        {
+          "path": "run.py",
+          "function": "engine_path",
+          "line": 76,
+          "file_sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1"
+        },
+        {
+          "path": "run.py",
+          "function": "command",
+          "line": 87,
+          "file_sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Clean Windows installation is a separate acceptance gate.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "UI-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4",
+        "ADD1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Simple/Advanced controls share the same document; progressive visibility does not replace animation state. Novice usability remains unverified.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/app.gd",
+          "function": "set_advanced",
+          "line": 468,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "refresh_workspace",
+          "line": 476,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Full routed workflow and novice observation remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "UI-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD2.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "New, Tutorials, real recent HAS entries, optional previews and missing-path feedback are connected to application actions.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/home_screen.gd",
+          "function": "open_home",
+          "line": 42,
+          "file_sha256": "ea915a61ce25d834f317feb9f6233ad41d0a8aa76e00b798203d8678fe736c1e"
+        },
+        {
+          "path": "src/home_screen.gd",
+          "function": "refresh",
+          "line": 52,
+          "file_sha256": "ea915a61ce25d834f317feb9f6233ad41d0a8aa76e00b798203d8678fe736c1e"
+        },
+        {
+          "path": "src/home_screen.gd",
+          "function": "open_recent",
+          "line": 85,
+          "file_sha256": "ea915a61ce25d834f317feb9f6233ad41d0a8aa76e00b798203d8678fe736c1e"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Fresh complete Home interaction acceptance remains.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "WORLD-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD2",
+        "ADD2.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "The empty world, editor grid and final-capture separation are implemented; default state is exercised by current app workflows.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/renderer.gd",
+          "function": "set_background",
+          "line": 71,
+          "file_sha256": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00"
+        },
+        {
+          "path": "src/renderer.gd",
+          "function": "capture",
+          "line": 259,
+          "file_sha256": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Fresh routed empty-world/export gate remains.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "NAV-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.1",
+        "ADD2.3"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Navigation and logical shortcuts use focus/mode/capture guards; physical target input remains a separate acceptance gate.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/app.gd",
+          "function": "_input",
+          "line": 1509,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "_unhandled_key_input",
+          "line": 1588,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "release_mouse",
+          "line": 1484,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Physical Windows device and complete routed focus matrix remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "IMPORT-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD6",
+        "ADD3.1",
+        "ADD3.4"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Drop-at-zero and picker-at-frame intent survive preparation; bounded common-format conversion and source preservation exist. Shell/device and dependency breadth remain verification work.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/import_actions.gd",
+          "function": "os_drop",
+          "line": 11,
+          "file_sha256": "6d32b7a099afddb56ed35b0a569b4bea09532ac1f00980613c94eb582d8c6ebd"
+        },
+        {
+          "path": "src/import_actions.gd",
+          "function": "pick",
+          "line": 22,
+          "file_sha256": "6d32b7a099afddb56ed35b0a569b4bea09532ac1f00980613c94eb582d8c6ebd"
+        },
+        {
+          "path": "src/import_actions.gd",
+          "function": "add",
+          "line": 29,
+          "file_sha256": "6d32b7a099afddb56ed35b0a569b4bea09532ac1f00980613c94eb582d8c6ebd"
+        },
+        {
+          "path": "src/import_actions.gd",
+          "function": "drop",
+          "line": 36,
+          "file_sha256": "6d32b7a099afddb56ed35b0a569b4bea09532ac1f00980613c94eb582d8c6ebd"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Full current common-format dependency/fault matrix and physical Explorer drop remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "IMPORT-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD3.4",
+        "ADD17.B"
+      ],
+      "implementation_before": "partial",
+      "implementation": "partial",
+      "implementation_review": "Adapters cover subsets of Source/MMD/VRM/common exchange. Remaining ecosystem formats and complete native feature coverage are engineering gaps, not extension-count credit.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/source_import.gd",
+          "function": "start",
+          "line": 77,
+          "file_sha256": "a1b293bb5f97017fefe0d9abe818568ef70fc8797b62bfdae8e7bc46413450df"
+        },
+        {
+          "path": "src/source_import.gd",
+          "function": "launch",
+          "line": 159,
+          "file_sha256": "a1b293bb5f97017fefe0d9abe818568ef70fc8797b62bfdae8e7bc46413450df"
+        },
+        {
+          "path": "src/source_import.gd",
+          "function": "_process",
+          "line": 219,
+          "file_sha256": "a1b293bb5f97017fefe0d9abe818568ef70fc8797b62bfdae8e7bc46413450df"
+        }
+      ],
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance_review": "Approved complete native fixtures and associated tools are required; extension recognition alone is insufficient.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-NATIVE"
+      ]
+    },
+    {
+      "id": "IMPORT-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD6",
+        "ADD3.5",
+        "ADD10.1"
+      ],
+      "implementation_before": "partial",
+      "implementation": "partial",
+      "implementation_review": "Canonical model/world validation and provenance exist, while native material/lightmap, inherited rig, cloth and dependency fidelity remain incomplete.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/model.gd",
+          "function": "validate",
+          "line": 94,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "check_bindings",
+          "line": 198,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        }
+      ],
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance_review": "Broader native material, inherited-transform, rig/cloth, prop/lightmap fidelity remains; retain original sources.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-NATIVE"
+      ]
+    },
+    {
+      "id": "IMPORT-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD3.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "View-aware bounded placement, support queries, nine overlap candidates and visible fallback are implemented within documented bounds.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/import_placement.gd",
+          "function": "in_view",
+          "line": 19,
+          "file_sha256": "e5aeb9cea76fee148c0bed00f48180a300013877ebb775921fa59725641121ad"
+        },
+        {
+          "path": "src/import_placement.gd",
+          "function": "plan",
+          "line": 29,
+          "file_sha256": "e5aeb9cea76fee148c0bed00f48180a300013877ebb775921fa59725641121ad"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Native bounds/orientation/scale and large-world acceptance remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "WORLD-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD3.3",
+        "MD2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Stable objects/groups/maps, root transforms and parent/cycle validation support the shared world; very large/native worlds remain acceptance work.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/world_document.gd",
+          "function": "validate",
+          "line": 29,
+          "file_sha256": "30dd8a9cd4ab48ec8e78c2e0be3c75c485c363b752d31cfcde1b225b0d2a7628"
+        },
+        {
+          "path": "src/world_document.gd",
+          "function": "assets",
+          "line": 66,
+          "file_sha256": "30dd8a9cd4ab48ec8e78c2e0be3c75c485c363b752d31cfcde1b225b0d2a7628"
+        },
+        {
+          "path": "src/world_document.gd",
+          "function": "resolve",
+          "line": 82,
+          "file_sha256": "30dd8a9cd4ab48ec8e78c2e0be3c75c485c363b752d31cfcde1b225b0d2a7628"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Very large worlds and broader native hierarchy verification remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD4",
+        "MD5.Stage3"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Selection, green editor outlines, hidden-parent editing, bone reveal and context routing exist; native/focus breadth is not inferred from code.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/world_selection.gd",
+          "function": "select_entity",
+          "line": 213,
+          "file_sha256": "7d2c77c57f6a196bc13a0c910c39946d451d16673ebe0f7f0a172c3b391d2b64"
+        },
+        {
+          "path": "src/world_selection.gd",
+          "function": "input",
+          "line": 249,
+          "file_sha256": "7d2c77c57f6a196bc13a0c910c39946d451d16673ebe0f7f0a172c3b391d2b64"
+        },
+        {
+          "path": "src/world_selection.gd",
+          "function": "choose_at",
+          "line": 271,
+          "file_sha256": "7d2c77c57f6a196bc13a0c910c39946d451d16673ebe0f7f0a172c3b391d2b64"
+        },
+        {
+          "path": "src/world_selection.gd",
+          "function": "context_action",
+          "line": 299,
+          "file_sha256": "7d2c77c57f6a196bc13a0c910c39946d451d16673ebe0f7f0a172c3b391d2b64"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Complete routed selection/context priority and native bone-binding acceptance remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD5.1",
+        "MD5.Stage3"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Completed manual root/bone edits author exact-frame controls with Undo; camera and explicit simulation recording remain distinct.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/pose_editor.gd",
+          "function": "commit",
+          "line": 235,
+          "file_sha256": "b7b67f278c41b7aaf1623d80bc69f346dc8ae4697f7355733a6b633d31ecb4ac"
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "function": "apply_numeric",
+          "line": 394,
+          "file_sha256": "b7b67f278c41b7aaf1623d80bc69f346dc8ae4697f7355733a6b633d31ecb4ac"
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "function": "record_key",
+          "line": 585,
+          "file_sha256": "b7b67f278c41b7aaf1623d80bc69f346dc8ae4697f7355733a6b633d31ecb4ac"
+        },
+        {
+          "path": "src/pose_editor.gd",
+          "function": "finish_drag",
+          "line": 751,
+          "file_sha256": "b7b67f278c41b7aaf1623d80bc69f346dc8ae4697f7355733a6b633d31ecb4ac"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Native transform/rig acceptance and full direct-manipulation ergonomics remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD5.3"
+      ],
+      "implementation_before": "partial",
+      "implementation": "partial",
+      "implementation_review": "Validated humanoid two-segment chains and planted-foot constraints exist. General imported chain/whole-body coverage and unusual rig handling remain bounded/incomplete.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/limb_ik.gd",
+          "function": "chain",
+          "line": 21,
+          "file_sha256": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f"
+        },
+        {
+          "path": "src/limb_ik.gd",
+          "function": "regular",
+          "line": 43,
+          "file_sha256": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f"
+        },
+        {
+          "path": "src/limb_ik.gd",
+          "function": "solve",
+          "line": 47,
+          "file_sha256": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f"
+        }
+      ],
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance_review": "Broader native rig chains and whole-body goal handling remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage3",
+        "MD10.REF-02"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Reference-only visibility and pose sampling remain separate from final output; instance-local appearance copies preserve authored materials.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/model.gd",
+          "function": "visible_at",
+          "line": 430,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "apply_opacity",
+          "line": 433,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "sample",
+          "line": 297,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Fresh complete reference-only routed/export acceptance remains.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "POSE-05",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage3"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Named thumbnail body poses, compatibility checks, ordinary authored-key application and native HAS pose exchange are implemented.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/pose_library_editor.gd",
+          "function": "capture",
+          "line": 88,
+          "file_sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f"
+        },
+        {
+          "path": "src/pose_library_editor.gd",
+          "function": "apply_pose",
+          "line": 103,
+          "file_sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f"
+        },
+        {
+          "path": "src/pose_library_editor.gd",
+          "function": "rename_pose",
+          "line": 111,
+          "file_sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f"
+        },
+        {
+          "path": "src/pose_library_editor.gd",
+          "function": "duplicate_pose",
+          "line": 121,
+          "file_sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f"
+        },
+        {
+          "path": "src/pose_library_editor.gd",
+          "function": "import_file",
+          "line": 137,
+          "file_sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f"
+        },
+        {
+          "path": "src/pose_library_editor.gd",
+          "function": "export_file",
+          "line": 153,
+          "file_sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Native fixture breadth and artist acceptance remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "MOTION-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.1",
+        "ADD5.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Independent transform/body evaluation uses sparse interpolation, Hold and detailed channel curves with exact authored endpoints.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/model.gd",
+          "function": "curve_pose",
+          "line": 282,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "curve_transform",
+          "line": 287,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "sample_body",
+          "line": 341,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "sample_transform",
+          "line": 351,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Complete supported-channel regression and artistic motion preference evaluation remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "MOTION-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD5.4"
+      ],
+      "implementation_before": "partial",
+      "implementation": "implemented",
+      "implementation_review": "Simple reversible Motion feeling and Advanced per-part/helper edits are connected to saved Model8/9 evaluation. Broader artistic preference is not missing toggle/persistence code.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/motion_editor.gd",
+          "function": "open",
+          "line": 65,
+          "file_sha256": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d"
+        },
+        {
+          "path": "src/motion_editor.gd",
+          "function": "apply",
+          "line": 115,
+          "file_sha256": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Bounded reversible Motion feeling, per-part/helper correction and saved evaluation are implemented. Owner intensity/style preference, broader native/physics/clip/lesson acceptance and long-rig performance remain unverified. Full-body inference beyond this contract is not silently promoted from potential assistance examples into a new mandatory feature.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "MOTION-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD5.5"
+      ],
+      "implementation_before": "partial",
+      "implementation": "partial",
+      "implementation_review": "Saved correction/preview walking exists for straight flat routes; turning, slopes, grouped characters and general rig locomotion remain concrete unsupported cases. Multi-view inference details remain OPEN.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/walking_animation.gd",
+          "function": "configure",
+          "line": 21,
+          "file_sha256": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb"
+        },
+        {
+          "path": "src/walking_animation.gd",
+          "function": "binding_error",
+          "line": 42,
+          "file_sha256": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb"
+        }
+      ],
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance_review": "Optional saved/correctable walking on bounded straight flat paths now passes staged preview/cancel, Undo/Redo, recovery, packed cold Open and exact export checks. General rig/terrain/turning coverage and native/artist acceptance remain incomplete.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "CAMERA-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.1",
+        "MD6",
+        "ADD6"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Temporary navigation, explicit shot controls, FOV/range and integer-frame cuts are implemented; numeric camera editing preserves explicit key intent.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/app.gd",
+          "function": "camera_motion",
+          "line": 1466,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "insert_key",
+          "line": 1435,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "set_frame",
+          "line": 924,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Complete routed camera matrix and Windows input acceptance remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "TIME-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD8",
+        "ADD7.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Integer frame addresses and rational project rates drive preview/offline evaluation; current400/native/nested media evidence remains profile-specific.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/timeline.gd",
+          "function": "sample",
+          "line": 34,
+          "file_sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835"
+        },
+        {
+          "path": "src/timeline.gd",
+          "function": "put_key",
+          "line": 54,
+          "file_sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835"
+        },
+        {
+          "path": "src/timeline.gd",
+          "function": "seconds",
+          "line": 62,
+          "file_sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Full rate/domain regression remains; output dimensions have their own requirement.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "TIME-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD7.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Collapsed object tracks expand animated channels and synchronize selection without requiring all rig channels in Simple.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/timeline_view.gd",
+          "function": "rebuild_rows",
+          "line": 117,
+          "file_sha256": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c"
+        },
+        {
+          "path": "src/timeline_view.gd",
+          "function": "toggle_expanded",
+          "line": 128,
+          "file_sha256": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c"
+        },
+        {
+          "path": "src/timeline_view.gd",
+          "function": "sync_bone",
+          "line": 138,
+          "file_sha256": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Large-project track density and full routed coverage remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "TIME-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.2",
+        "ADD7.3"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Structural operations retain source-relative controls and independent drawing pixels. Unresolved ripple/cross-track semantics are not added to the denominator.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/clip_editor.gd",
+          "function": "move_piece",
+          "line": 27,
+          "file_sha256": "88ca46f1f4e0a9f174a42cdd0a4305ec80d3c32fbf59c9e055cc2aeb037434aa"
+        },
+        {
+          "path": "src/clip_editor.gd",
+          "function": "request",
+          "line": 36,
+          "file_sha256": "88ca46f1f4e0a9f174a42cdd0a4305ec80d3c32fbf59c9e055cc2aeb037434aa"
+        },
+        {
+          "path": "src/clip_editor.gd",
+          "function": "remap_source_helpers",
+          "line": 132,
+          "file_sha256": "88ca46f1f4e0a9f174a42cdd0a4305ec80d3c32fbf59c9e055cc2aeb037434aa"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Retain bounded current contracts; do not silently decide unresolved ripple/cross-track semantics.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "TIME-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.2",
+        "ADD7.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Shared ruler/track mapping, fixed labels, timeline zoom/pan and playhead following are implemented with gesture guards.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/timeline_navigation.gd",
+          "function": "publish",
+          "line": 32,
+          "file_sha256": "746569a34c0d3efa0ea391eae657637fb4e0abb85cab0f69eb565bbf2d691596"
+        },
+        {
+          "path": "src/timeline_navigation.gd",
+          "function": "sync",
+          "line": 47,
+          "file_sha256": "746569a34c0d3efa0ea391eae657637fb4e0abb85cab0f69eb565bbf2d691596"
+        },
+        {
+          "path": "src/timeline_navigation.gd",
+          "function": "zoom",
+          "line": 55,
+          "file_sha256": "746569a34c0d3efa0ea391eae657637fb4e0abb85cab0f69eb565bbf2d691596"
+        },
+        {
+          "path": "src/timeline_navigation.gd",
+          "function": "navigate",
+          "line": 64,
+          "file_sha256": "746569a34c0d3efa0ea391eae657637fb4e0abb85cab0f69eb565bbf2d691596"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Dense-project responsiveness and physical input acceptance remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "VIS-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD7.4",
+        "ADD8",
+        "ADD17.C"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Presence, persistent keyed visibility and parent/global fades are evaluated independently of later animation pieces; general scenario coverage remains open.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/model.gd",
+          "function": "visible_at",
+          "line": 430,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        },
+        {
+          "path": "src/model.gd",
+          "function": "sample",
+          "line": 297,
+          "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Full native scenarioC and artist acceptance remain; extra per-key fades are not silently required.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD2",
+        "MD5.Stage1",
+        "MD5.Stage2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Independent screen-space RGBA cels/layers retain exact stored pixels and compositor ordering; current400workflow checks source/pixel independence.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/drawing.gd",
+          "function": "read_image",
+          "line": 17,
+          "file_sha256": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0"
+        },
+        {
+          "path": "src/drawing.gd",
+          "function": "cel_at",
+          "line": 102,
+          "file_sha256": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0"
+        },
+        {
+          "path": "src/drawing.gd",
+          "function": "composite_result",
+          "line": 160,
+          "file_sha256": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Routed complete-layer acceptance remains; preserve current documented limits.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD4.2",
+        "MD7"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Held-cel structural edits use end-exclusive timing, independent owners and affected-cel patches with Undo and persistence.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/cel_clipboard.gd",
+          "function": "placement",
+          "line": 47,
+          "file_sha256": "ed3c41077855e4e6ff0507e8a90cf76b1b93681df57a57f43e825052705d9219"
+        },
+        {
+          "path": "src/cel_clipboard.gd",
+          "function": "perform",
+          "line": 60,
+          "file_sha256": "ed3c41077855e4e6ff0507e8a90cf76b1b93681df57a57f43e825052705d9219"
+        },
+        {
+          "path": "src/cel_clipboard.gd",
+          "function": "apply_patch",
+          "line": 113,
+          "file_sha256": "ed3c41077855e4e6ff0507e8a90cf76b1b93681df57a57f43e825052705d9219"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Held-cel structural implementation is present; dense storage now has scoped400drawing evidence in MEM-02. Full routed exposure/structural acceptance still needs closure; no longer describe dense storage as absent.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2",
+        "MD7"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Mapped pen/eraser/opacity/pressure packets update bounded tiles, preserving per-stroke Undo. Physical driver latency remains unverified.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/brush_stroke.gd",
+          "function": "paint",
+          "line": 12,
+          "file_sha256": "2ed0fa4980f6171b725fc392edcb98b2e17ebacd604ad2c72486fa5cff0192e2"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Physical Windows tablet behavior/latency remains externally unverified; no universal Ink/Wintab claim.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2",
+        "MD7"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Bounded iterative fill, sampling/gap preview, cancellation and guarded commit exist; anti-alias artistic quality remains separate.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/fill_editor.gd",
+          "function": "start",
+          "line": 53,
+          "file_sha256": "df6a8c91f1c23c775892a404114b2c70d4b852f66d05e390746c2f44c1e21cf4"
+        },
+        {
+          "path": "src/fill_editor.gd",
+          "function": "valid_context",
+          "line": 50,
+          "file_sha256": "df6a8c91f1c23c775892a404114b2c70d4b852f66d05e390746c2f44c1e21cf4"
+        },
+        {
+          "path": "src/fill_editor.gd",
+          "function": "apply_pending",
+          "line": 103,
+          "file_sha256": "df6a8c91f1c23c775892a404114b2c70d4b852f66d05e390746c2f44c1e21cf4"
+        },
+        {
+          "path": "src/fill_editor.gd",
+          "function": "cancel",
+          "line": 127,
+          "file_sha256": "df6a8c91f1c23c775892a404114b2c70d4b852f66d05e390746c2f44c1e21cf4"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Broader anti-aliased artistic-quality evaluation remains.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-05",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Saved project palettes and drawing/composite sampling exist with non-destructive guide/reference handling.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/palette_editor.gd",
+          "function": "select",
+          "line": 62,
+          "file_sha256": "d90cd4f1a32d56adc3f031d75bf8b4e10a1ba58a82c5864d1bd196f0e36e8c81"
+        },
+        {
+          "path": "src/palette_editor.gd",
+          "function": "commit",
+          "line": 68,
+          "file_sha256": "d90cd4f1a32d56adc3f031d75bf8b4e10a1ba58a82c5864d1bd196f0e36e8c81"
+        },
+        {
+          "path": "src/palette_editor.gd",
+          "function": "add_current",
+          "line": 78,
+          "file_sha256": "d90cd4f1a32d56adc3f031d75bf8b4e10a1ba58a82c5864d1bd196f0e36e8c81"
+        },
+        {
+          "path": "src/palette_editor.gd",
+          "function": "replace_selected",
+          "line": 91,
+          "file_sha256": "d90cd4f1a32d56adc3f031d75bf8b4e10a1ba58a82c5864d1bd196f0e36e8c81"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Full current routed color/guide regression remains.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "DRAW-06",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2",
+        "MD7"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Previous/next editor ghosts are separate from stored/exported pixels; inactive guides release image/texture references.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/onion_editor.gd",
+          "function": "neighbors",
+          "line": 12,
+          "file_sha256": "57807886afb36115cc33a31140550c041328d67e9629377ed7793c8a27efc147"
+        },
+        {
+          "path": "src/onion_editor.gd",
+          "function": "refresh",
+          "line": 37,
+          "file_sha256": "57807886afb36115cc33a31140550c041328d67e9629377ed7793c8a27efc147"
+        },
+        {
+          "path": "src/onion_editor.gd",
+          "function": "release_guides",
+          "line": 31,
+          "file_sha256": "57807886afb36115cc33a31140550c041328d67e9629377ed7793c8a27efc147"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Physical drawing comfort and artist feedback remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "MEM-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD7",
+        "ADD13.2"
+      ],
+      "implementation_before": "partial",
+      "implementation": "implemented",
+      "implementation_review": "Owner-addressed tile commands and affected-cel history are implemented with128-command/soft64MiB history retention and registered320MiB authorities. Drawing Undo bypasses live-physics clearing. Single large commands and extra worker contexts are explicitly outside a hard64MiB claim.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/app.gd",
+          "function": "push_history",
+          "line": 1241,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "apply_command",
+          "line": 1258,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "undo",
+          "line": 1341,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "redo",
+          "line": 1356,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Ordinary400drawing editing/history/packed/cold/crash/media and background checkpointing pass under unchanged320MiB registered admission. Snapshot34.874ms plus114.3s worker with4519application frames; process-only peak455798784B. Manual Save68.5s/initialOpen20.5s remain synchronous. Long-session retention, cleanup/concurrent quota, whole-app/GPU/native-device acceptance and actual >32prepared native/video import remain separate; audit scope before whole-item closure.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "MEM-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD7",
+        "MD9",
+        "ADD13.2"
+      ],
+      "implementation_before": "partial",
+      "implementation": "implemented",
+      "implementation_review": "Integrity-checked cold/raw owners, two-frame decoded cache,320MiB admission and400drawing ordinary app/cold/crash/media paths are implemented. Whole-app/GPU RAM, real-art breadth and responsiveness are separate verification/operational limitations.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/cel_raster_reader.gd",
+          "function": "read_adaptive",
+          "line": 22,
+          "file_sha256": "b41ce4a1d2c908197f149e4826dc958b5051aaf18ee9809a5cc2fb6334b959e8"
+        },
+        {
+          "path": "src/cel_raster_reader.gd",
+          "function": "read_record",
+          "line": 24,
+          "file_sha256": "b41ce4a1d2c908197f149e4826dc958b5051aaf18ee9809a5cc2fb6334b959e8"
+        },
+        {
+          "path": "src/cel_raster_reader.gd",
+          "function": "read_cold",
+          "line": 77,
+          "file_sha256": "b41ce4a1d2c908197f149e4826dc958b5051aaf18ee9809a5cc2fb6334b959e8"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Ordinary400drawing editing/history/packed/cold/crash/media and background checkpointing pass under unchanged320MiB registered admission. Snapshot34.874ms plus114.3s worker with4519application frames; process-only peak455798784B. Manual Save68.5s/initialOpen20.5s remain synchronous. Long-session retention, cleanup/concurrent quota, whole-app/GPU/native-device acceptance and actual >32prepared native/video import remain separate; audit scope before whole-item closure.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "AUDIO-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage2",
+        "ADD14.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Independent decoded audio clips retain rational offsets, trims/gain/fades/mute/solo and portable sources; common compressed formats use local preparation.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/audio_track.gd",
+          "function": "clip_error",
+          "line": 74,
+          "file_sha256": "de491daada16177ffdaf203b11423549494d4248c447da0395ef9afbef77e88a"
+        },
+        {
+          "path": "src/audio_track.gd",
+          "function": "mix_document",
+          "line": 112,
+          "file_sha256": "de491daada16177ffdaf203b11423549494d4248c447da0395ef9afbef77e88a"
+        },
+        {
+          "path": "src/audio_track.gd",
+          "function": "read_wav",
+          "line": 188,
+          "file_sha256": "de491daada16177ffdaf203b11423549494d4248c447da0395ef9afbef77e88a"
+        },
+        {
+          "path": "src/audio_track.gd",
+          "function": "mix",
+          "line": 235,
+          "file_sha256": "de491daada16177ffdaf203b11423549494d4248c447da0395ef9afbef77e88a"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Full current media fault/relink matrix remains.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "AUDIO-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD8",
+        "ADD14.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Shared preview audio authority and deterministic offline mixing are connected; decoded movie onset is measured in current400/native/lesson cases, not physical listening latency.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/app.gd",
+          "function": "preview_seconds",
+          "line": 2474,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "rebuild_audio",
+          "line": 2552,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "export_movie",
+          "line": 1940,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Physical output-device sync/latency and complete fault matrix remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "PHYS-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD9.1",
+        "ADD17.D"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Compatible bodies have live default physics, grab/throw and freeze behavior separate from authored tracks; native collision fidelity remains an importer/acceptance gap.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/physics_editor.gd",
+          "function": "begin_grab",
+          "line": 67,
+          "file_sha256": "67510cb793d6c8c1b1701f1b351ff27e939b155f1a827040cdc68efa0d6148ab"
+        },
+        {
+          "path": "src/physics_editor.gd",
+          "function": "release_grab",
+          "line": 113,
+          "file_sha256": "67510cb793d6c8c1b1701f1b351ff27e939b155f1a827040cdc68efa0d6148ab"
+        },
+        {
+          "path": "src/physics_editor.gd",
+          "function": "change",
+          "line": 137,
+          "file_sha256": "67510cb793d6c8c1b1701f1b351ff27e939b155f1a827040cdc68efa0d6148ab"
+        },
+        {
+          "path": "src/physics_editor.gd",
+          "function": "enable_body",
+          "line": 145,
+          "file_sha256": "67510cb793d6c8c1b1701f1b351ff27e939b155f1a827040cdc68efa0d6148ab"
+        },
+        {
+          "path": "src/physics_editor.gd",
+          "function": "freeze",
+          "line": 222,
+          "file_sha256": "67510cb793d6c8c1b1701f1b351ff27e939b155f1a827040cdc68efa0d6148ab"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Native joints/cloth/helper fidelity and artist/device acceptance remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "PHYS-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD9.2",
+        "ADD9.3",
+        "ADD17.D"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Explicit Local/World staged recording retains selected versus all relevant bodies and replayable saved controls; source compression choices remain engineering details.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/physics_recording.gd",
+          "function": "start",
+          "line": 116,
+          "file_sha256": "d4a5ff4c8fd55eb9f9abfe01cd08907a87d24030b1a166ccddd9c4bff396f51c"
+        },
+        {
+          "path": "src/physics_recording.gd",
+          "function": "_physics_process",
+          "line": 147,
+          "file_sha256": "d4a5ff4c8fd55eb9f9abfe01cd08907a87d24030b1a166ccddd9c4bff396f51c"
+        },
+        {
+          "path": "src/physics_recording.gd",
+          "function": "build",
+          "line": 266,
+          "file_sha256": "d4a5ff4c8fd55eb9f9abfe01cd08907a87d24030b1a166ccddd9c4bff396f51c"
+        },
+        {
+          "path": "src/physics_recording.gd",
+          "function": "finish",
+          "line": 298,
+          "file_sha256": "d4a5ff4c8fd55eb9f9abfe01cd08907a87d24030b1a166ccddd9c4bff396f51c"
+        },
+        {
+          "path": "src/physics_recording.gd",
+          "function": "cancel",
+          "line": 322,
+          "file_sha256": "d4a5ff4c8fd55eb9f9abfe01cd08907a87d24030b1a166ccddd9c4bff396f51c"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Native cross-ecosystem scenarioD acceptance remains; compression algorithm is a separate suggestion.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "LIGHT-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD10.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Unshaded/Lit/studio presentation and compatible scene lights share preview/output settings. Missing native map lightmap fidelity remains in IMPORT-03.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/renderer.gd",
+          "function": "apply_lighting",
+          "line": 80,
+          "file_sha256": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00"
+        },
+        {
+          "path": "src/renderer.gd",
+          "function": "evaluate",
+          "line": 152,
+          "file_sha256": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00"
+        },
+        {
+          "path": "src/renderer.gd",
+          "function": "capture",
+          "line": 259,
+          "file_sha256": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Native materials/lightmaps and target GPU quality remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "SEQ-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage4",
+        "ADD7.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Editable shared child scenes, placement/time mapping, nested audio and invalidation exist; current225check masked graph/cold/crash workflow covers a bounded profile.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/sequence_editor.gd",
+          "function": "project_snapshot",
+          "line": 64,
+          "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
+        },
+        {
+          "path": "src/sequence_editor.gd",
+          "function": "commit",
+          "line": 174,
+          "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
+        },
+        {
+          "path": "src/sequence_editor.gd",
+          "function": "switch_to",
+          "line": 332,
+          "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
+        },
+        {
+          "path": "src/sequence_editor.gd",
+          "function": "split_clip",
+          "line": 284,
+          "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Large-project budgets and native/artist acceptance remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "COMP-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage4",
+        "ADD14.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Prepared Krita/video alpha/chroma artwork becomes editable owned holds with review/cancel. Actual >32prepared drawing import is unrun; native Krita fidelity is not inferred.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/video_import.gd",
+          "function": "show_layers",
+          "line": 24,
+          "file_sha256": "df2e52ad2fb97be4d98ed870ae1ad90f7f202b25575d19aa3e69a5e5ec3d8198"
+        },
+        {
+          "path": "src/video_import.gd",
+          "function": "prepare",
+          "line": 34,
+          "file_sha256": "df2e52ad2fb97be4d98ed870ae1ad90f7f202b25575d19aa3e69a5e5ec3d8198"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Long/dense video workflow and artistic key quality remain; do not promise native layered video editing.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "COMP-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD5.Stage4"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Keyed transform/opacity overlay placement and simple2D shadow satisfy the shadow-or-glow requirement; optional glow is not a second missing requirement.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/sequence_editor.gd",
+          "function": "placement_key",
+          "line": 275,
+          "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
+        },
+        {
+          "path": "src/sequence_editor.gd",
+          "function": "change_shadow",
+          "line": 225,
+          "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
+        },
+        {
+          "path": "src/sequence_editor.gd",
+          "function": "change_mask",
+          "line": 211,
+          "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Shadow satisfies the stated shadow-or-glow choice; general painted/lasso masks and glow are conditional refinement, not mandatory duplication.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "STORE-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD9",
+        "ADD11.1",
+        "ADD11.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Packed default and linked opt-out preserve bounded editable assets with checksum/relink guards and independent caches; current cold readers run without original sources.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/has_project.gd",
+          "function": "save_file",
+          "line": 43,
+          "file_sha256": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399"
+        },
+        {
+          "path": "src/has_project.gd",
+          "function": "open_file",
+          "line": 80,
+          "file_sha256": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399"
+        },
+        {
+          "path": "src/has_project.gd",
+          "function": "locate_missing",
+          "line": 115,
+          "file_sha256": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Broader native dependency/relink/fault acceptance remains.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "STORE-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD3.4",
+        "ADD11.3"
+      ],
+      "implementation_before": "missing",
+      "implementation": "missing",
+      "implementation_review": "Only complete project packages exist. Independent native model/map distribution still lacks its selected container/API; packaging choice remains genuinely OPEN.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/has_project.gd",
+          "function": "save_file",
+          "line": 43,
+          "file_sha256": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399"
+        },
+        {
+          "path": "src/has_project.gd",
+          "function": "open_file",
+          "line": 80,
+          "file_sha256": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399"
+        }
+      ],
+      "verification": "incomplete",
+      "acceptance_status": "decision_blocked",
+      "acceptance_review": "Owner decision on existing-HAS container variation versus separate native packaging is still OPEN; no extension has been invented.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "D-PACKAGING"
+      ]
+    },
+    {
+      "id": "STORE-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD9",
+        "ADD11.4"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Project animation/render content is serialized separately from personal display/input preferences; no disruptive settings-load prompt is introduced.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/app.gd",
+          "function": "save_display_preference",
+          "line": 238,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "project_snapshot",
+          "line": 1647,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "Complete project/personal setting matrix remains; prompt policy stays tentative.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "STORE-04",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD9",
+        "MD10.SAFE-01",
+        "ADD11.5"
+      ],
+      "implementation_before": "partial",
+      "implementation": "partial",
+      "implementation_review": "Validated/CAS/backup/readback and supporting POSIX fsync exist. Directory sync reports unsupported on Windows; target durability/fault behavior remains incomplete rather than certified by POSIX tests.",
+      "reviewed_code_anchors": [
+        {
+          "path": "tools/save_sync.py",
+          "function": "sync_directory",
+          "line": 17,
+          "file_sha256": "df3e6de75d0cbbd6f2db37151e558fee6be07a777e551116be25678da7dd2283"
+        },
+        {
+          "path": "tools/save_sync.py",
+          "function": "parents",
+          "line": 33,
+          "file_sha256": "df3e6de75d0cbbd6f2db37151e558fee6be07a777e551116be25678da7dd2283"
+        }
+      ],
+      "verification": "incomplete",
+      "acceptance_status": "open",
+      "acceptance_review": "Supporting POSIX durability and atomic/CAS/readback/backup safety have scoped actual fault evidence. tools/save_sync.py deliberately reports directory sync unsupported on Windows; target directory durability/fault coverage and physical power-loss acceptance remain incomplete. Do not count POSIX evidence as Windows durability.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "REC-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD13.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Quiet default time/action scheduling now uses frozen background serialization, commit-only captured-action accounting and stale/manual-save generation guards.96focused and actual400/lesson tests do not establish long-session/device acceptance.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/app.gd",
+          "function": "note_recovery_action",
+          "line": 2259,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "autosave_tick",
+          "line": 2273,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        },
+        {
+          "path": "src/app.gd",
+          "function": "poll_recovery_checkpoint",
+          "line": 2303,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Frozen isolated background checkpointing passes96ownership/worker/live-app/preview/schedule checks, actual400drawing crash/media, native540/nested masks and all five lesson recovery startup cases. Captured actions alone are consumed; failed/stale/manual-save results preserve newer state. Remaining long-session/device latency and resource acceptance; manual Save and lesson Previous/Continue serialization are separate synchronous paths.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "REC-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD13.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Twelve immutable metadata entries, timestamps and small previews share content assets under bounded recovery admission. Shared-blob cleanup and cross-process quota coordination remain unfinished.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/recovery_journal.gd",
+          "function": "record",
+          "line": 76,
+          "file_sha256": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa"
+        },
+        {
+          "path": "src/recovery_journal.gd",
+          "function": "attach_preview",
+          "line": 96,
+          "file_sha256": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa"
+        },
+        {
+          "path": "src/recovery_journal.gd",
+          "function": "entries",
+          "line": 50,
+          "file_sha256": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa"
+        },
+        {
+          "path": "src/recovery_journal.gd",
+          "function": "prune",
+          "line": 122,
+          "file_sha256": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Shared-asset cleanup, concurrent sessions and measured long-session behavior remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "REC-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD13.3",
+        "ADD17.F"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Complete valid-generation discovery and normal newest/fallback restoration preserve manual HAS; actual SIGKILL cases cover cloud software profiles, not Windows power loss.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/recovery.gd",
+          "function": "candidates",
+          "line": 197,
+          "file_sha256": "a113d35d150c48cba1a6ad85950284738baa8190991c4e3e9830b1eb8c481b47"
+        },
+        {
+          "path": "src/recovery.gd",
+          "function": "owner_available",
+          "line": 74,
+          "file_sha256": "a113d35d150c48cba1a6ad85950284738baa8190991c4e3e9830b1eb8c481b47"
+        },
+        {
+          "path": "src/recovery.gd",
+          "function": "resolve",
+          "line": 192,
+          "file_sha256": "a113d35d150c48cba1a6ad85950284738baa8190991c4e3e9830b1eb8c481b47"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Native Windows/hardware fault gate remains; Linux procedural cases are scoped evidence.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "COURSE-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD12.1"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Logical Basic and Advanced topic navigation with original offline practices has a scoped committed acceptance receipt; independent novice/device acceptance remains elsewhere.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/tutorials.gd",
+          "function": "open_catalog",
+          "line": 64,
+          "file_sha256": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3"
+        },
+        {
+          "path": "src/tutorials.gd",
+          "function": "catalog_entry",
+          "line": 80,
+          "file_sha256": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3"
+        },
+        {
+          "path": "src/tutorials.gd",
+          "function": "request",
+          "line": 95,
+          "file_sha256": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3"
+        }
+      ],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Optional additional focused practices/teacher depth and separate novice/device acceptance remain outside this verified browser condition; Skip stays OPEN.",
+      "evidence_review": "Committed scoped acceptance receipt retained.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/tutorial_catalog_2026-11-06.json",
+          "commit": "831ee0947ba96f8d1a03b49ddc000532a1a06e91",
+          "scope": "Offline original assets, logical complete Basic first-film route, accessible Advanced sections/topics and stable practice entry/resume at1100x700; current17browser+57focused+87beginner checks with original sources and real HAS/H264/AAC. External novice/device acceptance is separately tracked."
+        }
+      ],
+      "external_dependencies": []
+    },
+    {
+      "id": "COURSE-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD12.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "State-based grading, automatic progression and quiet delayed visual hints are implemented. Richer demonstrations and real learner observation remain acceptance/refinement work.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/tutorials.gd",
+          "function": "satisfied",
+          "line": 280,
+          "file_sha256": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3"
+        },
+        {
+          "path": "src/tutorials.gd",
+          "function": "_process",
+          "line": 334,
+          "file_sha256": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3"
+        },
+        {
+          "path": "src/tutorials.gd",
+          "function": "show_hint",
+          "line": 186,
+          "file_sha256": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Richer demonstrations and beginner observation remain; demonstration depth is not a substitute for state grading.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "COURSE-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "ADD12.3",
+        "ADD12.4"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Whole-scene Previous and distinct Continue/Fresh progress use bounded snapshots and one normal validated Open; current five abrupt lesson cases preserve context and original manual saves.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/lesson_store.gd",
+          "function": "save",
+          "line": 85,
+          "file_sha256": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260"
+        },
+        {
+          "path": "src/lesson_store.gd",
+          "function": "load_snapshot",
+          "line": 99,
+          "file_sha256": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260"
+        },
+        {
+          "path": "src/lesson_store.gd",
+          "function": "restore_ui",
+          "line": 114,
+          "file_sha256": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Retention/concurrent-writer/local-history robustness and Windows/artist acceptance remain; Skip stays OPEN.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "OUTPUT-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD8",
+        "ADD14.2"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Detected H264/AAC, exact frame-duration arguments, silent support and separate PNG alternatives are wired to default output beside saved HAS.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/encoder.gd",
+          "function": "detect",
+          "line": 13,
+          "file_sha256": "b9a340effa71165cac284eb32cb610f4f99704ab2d42ed5f8ceef8c5e8d7414f"
+        },
+        {
+          "path": "src/encoder.gd",
+          "function": "encode",
+          "line": 27,
+          "file_sha256": "b9a340effa71165cac284eb32cb610f4f99704ab2d42ed5f8ceef8c5e8d7414f"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Full target-device and encoder-build acceptance remain.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "OUTPUT-02",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD2",
+        "MD8",
+        "ADD14.2",
+        "MD7"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Supported native/delivery1080p/720p/540p and rational timing controls have a scoped committed acceptance receipt. Existing-art resampling,4K and other aspect ratios are explicitly unsupported.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/project_timing.gd",
+          "function": "apply_values",
+          "line": 68,
+          "file_sha256": "5a631dd628dbc8535ff16d775045e7973b968812012038779f42597b121f5f5a"
+        },
+        {
+          "path": "src/project_timing.gd",
+          "function": "commit",
+          "line": 78,
+          "file_sha256": "5a631dd628dbc8535ff16d775045e7973b968812012038779f42597b121f5f5a"
+        }
+      ],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "No remaining work within the supported1080p/720p/540p native and delivery contract. Existing-art resizing,4K and other aspect ratios are unsupported. Native Windows/hardware/artist acceptance remains tracked by the separate platform/input requirements.",
+      "evidence_review": "Committed scoped acceptance receipt retained.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_canvas_2026-11-06.json",
+          "commit": "adce0015b3dec3fd293006922550b46ceadbafbc",
+          "scope": "Supported native1080/720/540 canvas and saved delivery, new-art coordinate/Undo/source preservation, native rational timing/duration/PCM and exact PNG/H264AAC, actual nested commit/reopen, cold source isolation, default1080p compatibility. Cloud software contract only; native platform/input gates separate."
+        }
+      ],
+      "external_dependencies": []
+    },
+    {
+      "id": "OUTPUT-03",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD8",
+        "MD10"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Process exit/cancel/error/log handling preserves rendered frames and avoids overwriting existing outputs/project sources; the complete target fault matrix remains unverified.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/encoder.gd",
+          "function": "cancel",
+          "line": 21,
+          "file_sha256": "b9a340effa71165cac284eb32cb610f4f99704ab2d42ed5f8ceef8c5e8d7414f"
+        },
+        {
+          "path": "src/encoder.gd",
+          "function": "encode",
+          "line": 27,
+          "file_sha256": "b9a340effa71165cac284eb32cb610f4f99704ab2d42ed5f8ceef8c5e8d7414f"
+        }
+      ],
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Complete disk-full/device/encoder/platform fault matrix remains.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "NOTICES-01",
+      "category": "required_implementation",
+      "source_sections": [
+        "MD11",
+        "MD14",
+        "ADD3.5"
+      ],
+      "implementation_before": "implemented",
+      "implementation": "implemented",
+      "implementation_review": "Offline notices and provenance limitations are implemented; app distribution/license choice remains OPEN and no native redistribution is authorized.",
+      "reviewed_code_anchors": [
+        {
+          "path": "src/app.gd",
+          "function": "show_notices",
+          "line": 2159,
+          "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
+        }
+      ],
+      "verification": "historical_only",
+      "acceptance_status": "open",
+      "acceptance_review": "App/public distribution licensing decision remains outside current deployment authorization.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": []
+    },
+    {
+      "id": "ACCEPT-A",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.A",
+        "MD1.1",
+        "MD10.1"
+      ],
+      "implementation_before": "not_applicable",
+      "implementation": "not_applicable",
+      "implementation_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "reviewed_code_anchors": [],
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-WINDOWS",
+        "B-ARTIST"
+      ]
+    },
+    {
+      "id": "ACCEPT-B",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.B"
+      ],
+      "implementation_before": "not_applicable",
+      "implementation": "not_applicable",
+      "implementation_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "reviewed_code_anchors": [],
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-NATIVE",
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-C",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.C"
+      ],
+      "implementation_before": "not_applicable",
+      "implementation": "not_applicable",
+      "implementation_review": "The seven-step generic timeline/presence/gap/visibility/hidden-selection/fade/camera-cut scenario can be integrated with original procedural assets in cloud. Complete that independent routed software case; final target Windows acceptance remains unavailable. Native ecosystem fidelity belongs to IMPORT-02/03 and ACCEPT-B, not an invented prerequisite here.",
+      "reviewed_code_anchors": [],
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "The seven-step generic timeline/presence/gap/visibility/hidden-selection/fade/camera-cut scenario can be integrated with original procedural assets in cloud. Complete that independent routed software case; final target Windows acceptance remains unavailable. Native ecosystem fidelity belongs to IMPORT-02/03 and ACCEPT-B, not an invented prerequisite here.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-D",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.D"
+      ],
+      "implementation_before": "not_applicable",
+      "implementation": "not_applicable",
+      "implementation_review": "Run the complete routed software scenario with an original compatible ragdoll and dynamic props, then retain the separate Windows execution gate. Native collision/joint fidelity remains an import requirement; artistic observation belongs to the novice/device gates.",
+      "reviewed_code_anchors": [],
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Run the complete routed software scenario with an original compatible ragdoll and dynamic props, then retain the separate Windows execution gate. Native collision/joint fidelity remains an import requirement; artistic observation belongs to the novice/device gates.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-E",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.E"
+      ],
+      "implementation_before": "not_applicable",
+      "implementation": "not_applicable",
+      "implementation_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "reviewed_code_anchors": [],
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-ARTIST",
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-F",
+      "category": "required_verification",
+      "source_sections": [
+        "ADD17.F",
+        "MD10.SAFE-01"
+      ],
+      "implementation_before": "not_applicable",
+      "implementation": "not_applicable",
+      "implementation_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "reviewed_code_anchors": [],
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-WINDOWS"
+      ]
+    },
+    {
+      "id": "ACCEPT-TABLET",
+      "category": "required_verification",
+      "source_sections": [
+        "MD10.PERF-01",
+        "MD3.3",
+        "MD5.Stage2"
+      ],
+      "implementation_before": "not_applicable",
+      "implementation": "not_applicable",
+      "implementation_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "reviewed_code_anchors": [],
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-TABLET",
+        "B-WINDOWS",
+        "B-ARTIST"
+      ]
+    },
+    {
+      "id": "ACCEPT-INSTALL",
+      "category": "required_verification",
+      "source_sections": [
+        "MD5.Stage0",
+        "MD1.1"
+      ],
+      "implementation_before": "not_applicable",
+      "implementation": "not_applicable",
+      "implementation_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "reviewed_code_anchors": [],
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "formal_receipts": [],
+      "external_dependencies": [
+        "B-WINDOWS"
+      ]
+    }
+  ],
+  "changes": [
+    "Three stale implementation statuses corrected: MOTION-02, MEM-01, MEM-02. Verification remains separate; no acceptance closure invented.",
+    "All62IDs/54implementation+8verification denominators retained. Optional, tentative and unresolved engineering details remain outside scored implementation units.",
+    "Removed unnecessary native-fixture dependencies from generic scenariosC/D and artist dependency from mechanical scenarioD; Windows target gates remain. Native ecosystem fidelity stays required in its original groups.",
+    "Expanded high-level source reverse mappings; every requirement source reference is represented."
+  ],
+  "limitations": [
+    "Equal groups do not measure remaining person-hours: native ecosystem fidelity can outweigh several small editor features.",
+    "48implemented groups means bounded code coverage, not release readiness or proven end-to-end Windows usability.",
+    "Only two full requirement acceptance conditions are formally closed; many other current tests provide narrower evidence.",
+    "Long-session cleanup/quota, manual Save/Open responsiveness, native/rig fidelity and target hardware/novice acceptance remain material."
+  ]
+}

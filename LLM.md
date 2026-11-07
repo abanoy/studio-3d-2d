@@ -2954,3 +2954,42 @@ archivedoutsidecheckout andrestoredexactHEAD. Raw recovery-writer-* evidenceunde
 source/evidence/remaining-work audit requestedbyownerforhonestpercentage, then
 prioritizeactualrequiredgaps; manualSave/Open andlong-sessioncleanup/quota limits
 remainmaterial, notquietbackgroundcheckpointregressions.
+
+## 2026-11-07 UTC — audited implementation versus acceptance percentages
+
+Read governing MD/addendum source sections and compared all62stable requirement
+units, actualboundedcodeanchors, evidence scope, reverse references and remaining
+prerequisites. Kept54implementation+8verification denominators and optional/OPEN/
+PREFERENCE distinctions. Structured per-item source/evidence review and current
+source anchors/hashes in benchmarks/completion_baseline_audit_2026-11-07.json;
+plain explanation completion_baseline_audit.md. This audit is notfresh runtime
+verification ofeveryfeature. Existing two fullcondition closures remain; narrower
+reports do notbecome completeacceptance merelyfrom source existence.
+
+Three implementationlabels laggedcurrentcode: MOTION02simple reversibleMotion
+feeling with savedpart/helper controls, MEM01owner/tile/patch/independentphysics
+history, MEM02integritychecked adaptive400drawing/cache/admission/storage paths.
+Changedpartial→implemented whileleaving verification/acceptance separate. No
+newruntimefeature oracceptancepass inventedby thisclassification. Fivepartial
+(nativecoverage/fidelity,broaderIK,generalwalking,targetsavedurability) andone
+missing (independentnativepackaging, actualownerchoiceOPEN) remain. SourceWindows
+directorysync explicitlyunsupported, notsilentlycertifiedbyPOSIXproof. Current
+counts48/54=88.89%implementationcoverage;2/62=3.23%formalacceptanceclosure. Equal
+groupsarenotworkhours/reliability/releasereadiness; no combinedproductpercent.
+Ownerreceived89%implementation and3%formalclosure withclear limitedmeaning.
+
+Audit alsofound unnecessary nativefixturedependencies on genericADD17C/D scenarios.
+Removednative fromC/D andartistdependencyfrommechanicalD; Windowsfinaltargetgate
+remains. Native fidelity remainsmandatoryIMPORT02/03+ACCEPTB; no requirement was
+dropped. GenericC/D canandmustgetindependentroutedcloudproofwithoriginalassets.
+Expandedhighlevelreverse source links, preservedallIDs, keptonlyexisting2formal
+closedconditions. Oldinformal70% remainshistorical, notthecurrentmetric.
+
+check_completion.py nowrequiresstructuredper-itemauditwhenreviewed, matchesIDs,
+statuses/externalprereqs/denominators, validatesgoverningsourcehashes andreverse
+source mapping, andrendersbothseparatescores. Positivevalidation/scoringpass;
+unreviewedclonesuppressesscores; deliberateunreviewedstatus andmissingreverse
+referencesrefuse. Thesearebookkeeping checks, notapplicationtests. NoWindows/
+PC/web/deployment/nativeassetchanges. Nextconcretework: completeallsevenrouted
+scenarioC steps withoriginalscene/model, thenmechanicalD cloudcase; retain
+Windows/native/physicalgates andcontinueactualrequiredgapsafterward.

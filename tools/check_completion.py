@@ -50,6 +50,22 @@ def validate(data):
     for mappings in [data['source_section_index'], data['acceptance_scenario_index']]:
         for referenced in mappings.values():
             assert referenced and set(referenced) <= known
+    for item in data['requirements']:
+        for section in item['source_sections']:
+            assert item['id'] in data['source_section_index'][section.split('.')[0]], 'Missing reverse source reference'
+    if data['scoring']['baseline_reviewed']:
+        audit = json.loads(file(data['scoring']['audit']).read_text(encoding='utf-8'))
+        assert audit['format'] == 'has_completion_baseline_audit_1'
+        reviewed = {item['id']: item for item in audit['requirements']}
+        assert len(reviewed) == len(audit['requirements']) == len(data['requirements'])
+        assert set(reviewed) == {item['id'] for item in data['requirements']}
+        assert audit['requirement_count'] == audit['acceptance_denominator'] == len(data['requirements'])
+        assert audit['implementation_denominator'] == sum(item['category'] == 'required_implementation' for item in data['requirements'])
+        for item in data['requirements']:
+            for field in ['category', 'implementation', 'verification', 'acceptance_status', 'external_dependencies']:
+                assert reviewed[item['id']][field] == item[field], 'Update per-item audit when changing completion status: ' + item['id']
+        for name, digest in audit['source_document_sha256'].items():
+            assert hashlib.sha256(file(name).read_bytes()).hexdigest() == digest, 'Governing document changed since baseline audit'
     for action in data['next_actions']:
         assert action['requirement'] in known and action['priority'] in [0, 1, 2]
     for blocker in data['external_blockers']:
@@ -110,9 +126,17 @@ def render(data):
         'The other open details do not suspend work on the already decided core behavior. '
         'No new extension, third-party exporter, mandatory AI, public release or settings prompt is authorized by this checklist.', '',
         '## Scoring and closure', '', data['scoring']['method'], '',
-        '**No numerical completion score is published while the initial baseline is under acceptance/evidence review.** '
-        'This is an engineering audit, not a request for blanket user approval. '
-        'Keep stable IDs; split or add requirements only through an explicit documented ledger revision. '
+        ('Audited implementation coverage: **{0:.2f}% ({1}/{2} groups)**. '
+         'Formal acceptance closure: **{3:.2f}% ({4}/{5} groups)**. '
+         'See the [per-item source/evidence audit](benchmarks/completion_baseline_audit_2026-11-07.json). '
+         'These are separate checklist counts, not an overall release-readiness or remaining-time estimate. '
+         .format(scores(data)['implementation_coverage']['checklist_unit_percent'],
+                 scores(data)['implementation_coverage']['numerator'], scores(data)['implementation_coverage']['denominator'],
+                 scores(data)['acceptance_closure']['checklist_unit_percent'],
+                 scores(data)['acceptance_closure']['numerator'], scores(data)['acceptance_closure']['denominator'])
+         if data['scoring']['baseline_reviewed'] else
+         '**No numerical completion score is published while the initial baseline is under acceptance/evidence review.** ')
+        + 'Keep stable IDs; split or add requirements only through an explicit documented ledger revision. '
         'Blocked required items remain incomplete and in the acceptance denominator.', '',
         'To close an item, record `acceptance_status: verified`, `verification: verified` and a `test_result` '
         'reference with its commit and exact scope. Preserve failed/skipped/unrun and historical evidence. '
