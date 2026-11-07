@@ -753,8 +753,8 @@
       ],
       "title": "One rational frame domain",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Camera, poses, drawings, media and sound use integer frames and rational rates; seek/preview/export agree and timing edits protect existing content.",
       "evidence": [
         {
@@ -764,9 +764,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/project_timing.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/project_timing_current_2026-11-07.json",
+          "commit": "b7302bd3270d3b93f78240562cde01c096af813f",
+          "scope": "54current exact rational presets/custom/invalid/over-budget/recording/no-op/Undo and frame/source/audio/world/camera isolation checks; actual24000/1001H264AAC48frames2.002s/onset48048samples, exactpreview/render and4fresh packed/linked/recovery/lesson readers. Checksum-bound historical-reader fixture explicitly unavailable; its assertion retained, skipped and not certified."
         }
       ],
-      "remaining": "Full rate/domain regression remains; output dimensions have their own requirement.",
+      "remaining": "Required current rational-time software condition verified alongside current camera/body/cel/import/audio/movie receipts. Specific absent historical-reader compatibility fixture remains explicitly unverified; native/Windows/device observations remain separate gates.",
       "external_dependencies": []
     },
     {
