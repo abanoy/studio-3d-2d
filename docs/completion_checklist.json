@@ -620,8 +620,8 @@
       ],
       "title": "Shot camera authoring and cuts",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Temporary navigation is separate from explicit shot keys; numeric transforms/FOV, interpolation and adjacent-frame cuts persist and render at exact frames.",
       "evidence": [
         {
@@ -631,9 +631,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/numeric_camera.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/camera_current_2026-11-07.json",
+          "commit": "590d914060ee0d075ac6861f45cf589fc80aa885",
+          "scope": "117 current checks across numeric camera, projection and seven-step timeline scenario: temporary navigation separate from explicit keys, typed transforms/FOV/ranges, interpolation, adjacent-frame cuts, Undo/Redo, packed/linked/recovery and exact real export frames. Original fixtures; native/Windows/device/artist gates remain separate."
         }
       ],
-      "remaining": "Complete routed camera matrix and Windows input acceptance remain.",
+      "remaining": "Required software camera condition verified by current committed receipts. Native fidelity, physical controls/artist comfort and Windows target acceptance remain separate gates.",
       "external_dependencies": []
     },
     {

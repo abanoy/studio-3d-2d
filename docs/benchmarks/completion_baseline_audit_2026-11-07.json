@@ -751,11 +751,18 @@
           "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Complete routed camera matrix and Windows input acceptance remain.",
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required software camera condition verified by current committed receipts. Native fidelity, physical controls/artist comfort and Windows target acceptance remain separate gates.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/camera_current_2026-11-07.json",
+          "commit": "590d914060ee0d075ac6861f45cf589fc80aa885",
+          "scope": "117 current checks across numeric camera, projection and seven-step timeline scenario: temporary navigation separate from explicit keys, typed transforms/FOV/ranges, interpolation, adjacent-frame cuts, Undo/Redo, packed/linked/recovery and exact real export frames. Original fixtures; native/Windows/device/artist gates remain separate."
+        }
+      ],
       "external_dependencies": []
     },
     {

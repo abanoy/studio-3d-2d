@@ -3507,3 +3507,5 @@ IK/crouch and grouped locomotion gates now running; no premature closures.
 2026-11-07 UTC: POSE-03 and MOTION-03 bounded software acceptance verified by committed current176-check receipt 687a4eec73f056624b6bdbc207927562b9d8e516. Formal closure12/62 (19.35%); implementation51/54 (94.44%) unchanged. Native profile/device/artist/Windows gates retained.
 
 2026-11-07 UTC: Ported numeric-camera and camera-range wrappers to explicit private Linux display, preserving Windows receipts and existing assertions, adding frozen-source guards and per-run proofs. Current37numeric/49projection/31scenarioC checks passed, including adjacent cuts, explicit-key Undo/Redo, packed/linked/recovery, exact authored pixels, source/cache-offline cold replay,1080p24H264/AAC and audio onset48001/48000s. Zero native fixtures; no native/target-device certification. Updated stale audit prose to match authoritative3partial/12verified counts.
+
+2026-11-07 UTC: CAMERA-01 software acceptance verified using current117-check receipt at 590d914060ee0d075ac6861f45cf589fc80aa885. Formal13/62 (20.97%); implementation51/54 unchanged.
