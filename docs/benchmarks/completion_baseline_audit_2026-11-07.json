@@ -1738,11 +1738,30 @@
           "file_sha256": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00"
         }
       ],
-      "verification": "historical_only",
-      "acceptance_status": "open",
-      "acceptance_review": "Native materials/lightmaps and target GPU quality remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded lighting software condition verified. Full native materials/lightmaps, target GPU/Windows quality and artist/device observations remain separate gates.",
+      "evidence_review": "27actual current Lit/Unshaded controls, instance-owned material copies/texture identity/cutout alpha/fades, actual authored light versus dark scene, no injected studio lamp, unchanged camera/world, Undo, legacy fallback, Simple/Advanced identical pixels, packed/linked/recovery and exact final movie. 21bounded original static style0LDR brush lightmap contract/Blender/Studio/persistence/movie checks, preserves UV/base-color and Unshaded/Lit semantics. Unsupported HDR/styled/displacement lighting explicitly diagnosed; full installed-host BSP fidelity remains IMPORT-02/03. Original supported static Source point/spot/sun planner and actual Blender/Studio/persistence/media proof; dynamic/off/unsupported entities explicitly diagnosed.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "commit": "6b7e509bbd5b399442ad01393e444298272bbb65",
+          "path": "docs/benchmarks/lighting_video_encoder_current_2026-11-07.json",
+          "scope": "27actual current Lit/Unshaded controls, instance-owned material copies/texture identity/cutout alpha/fades, actual authored light versus dark scene, no injected studio lamp, unchanged camera/world, Undo, legacy fallback, Simple/Advanced identical pixels, packed/linked/recovery and exact final movie."
+        },
+        {
+          "kind": "test_result",
+          "commit": "deb3cacd63530fab7b8bd8577b041d1dca11964d",
+          "path": "docs/benchmarks/source_brush_lightmaps_2026-11-07.json",
+          "scope": "21bounded original static style0LDR brush lightmap contract/Blender/Studio/persistence/movie checks, preserves UV/base-color and Unshaded/Lit semantics. Unsupported HDR/styled/displacement lighting explicitly diagnosed; full installed-host BSP fidelity remains IMPORT-02/03."
+        },
+        {
+          "kind": "test_result",
+          "commit": "d44cf75f5d736606cd02a410f887a8f270cb964c",
+          "path": "docs/benchmarks/source_entity_lights_2026-11-07.json",
+          "scope": "Original supported static Source point/spot/sun planner and actual Blender/Studio/persistence/media proof; dynamic/off/unsupported entities explicitly diagnosed."
+        }
+      ],
       "external_dependencies": []
     },
     {
