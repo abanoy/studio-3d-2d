@@ -26,7 +26,7 @@ func run() -> void:
 	var folder:=ProjectSettings.globalize_path("res://output/import-placement/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
 	var map:=folder.path_join("room.glb");var asset:=folder.path_join("actor.glb");SceneIO.make_fixture(map);SceneIO.make_pose_fixture(asset)
 	var original:=FileAccess.get_sha256(asset)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	var unchanged: Dictionary=app.current_world();var history: int=app.history.size()
 	var invalid: String=app.pose_editor.add_model(asset,0,{"physics_on_import":false})

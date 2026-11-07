@@ -28,7 +28,7 @@ func run() -> void:
 	var folder:=ProjectSettings.globalize_path("res://output/world-workflow/run_%d" % Time.get_ticks_usec());var inputs:=folder.path_join("inputs");DirAccess.make_dir_recursive_absolute(inputs)
 	var map:=inputs.path_join("room.glb");var actor:=inputs.path_join("actor.glb");SceneIO.make_fixture(map);SceneIO.make_pose_fixture(actor)
 	var map_hash:=FileAccess.get_sha256(map);var actor_hash:=FileAccess.get_sha256(actor)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.has_project.cache_root=folder.path_join("cache");app.autosave_enabled.button_pressed=false
 	check(app.renderer.world_runtime!=null and app.renderer.world_runtime.instances.is_empty() and app.source.is_empty() and app.world_selection.selected.is_empty(),"normal startup creates a genuinely empty multi-object world")
 	check(app.load_scene(map).is_empty(),"normal Add scene appends first map")

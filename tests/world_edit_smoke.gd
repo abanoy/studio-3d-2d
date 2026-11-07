@@ -48,7 +48,7 @@ func run() -> void:
 	var data:=Storage.load_project(runtime_report.snapshot)
 	if data.has("error"):push_error(data.error);quit(1);return
 	var folder:=ProjectSettings.globalize_path("res://output/world-edit/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	app.video=data.video;app.keys=data.camera_keys;app.layers=data.layers;app.frame=24;app.active_layer=0
 	check(app.renderer.install_world(app.renderer.prepare_world(data.world,48),24),"install prepared multi-object world in real app shell")

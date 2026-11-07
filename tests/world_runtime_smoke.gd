@@ -138,7 +138,7 @@ func run() -> void:
 	for frame in range(48):
 		var rendered:=await renderer.capture(keys,layers,frame,true)
 		if rendered.save_png(movie_folder.path_join("frame_%06d.png" % (frame+1)))!=OK:check(false,"write combined-world PNG");break
-	var encoder:=Encoder.new();var encode_error: String=await encoder.encode(self,"C:/Program Files/ffmpeg/bin/ffmpeg.exe",movie_folder,video)
+	var encoder:=Encoder.new();var encode_error: String=await encoder.encode(self,OS.get_environment("HYBRID_FFMPEG") if OS.has_environment("HYBRID_FFMPEG") else ("C:/Program Files/ffmpeg/bin/ffmpeg.exe" if OS.get_name()=="Windows" else "ffmpeg"),movie_folder,video)
 	check(encode_error.is_empty() and Image.load_from_file(movie_folder.path_join("frame_000025.png")).get_data()==reopened.get_data(),"actual camera/two-map/two-actor/drawing MP4 uses same frame24 evaluation")
 	var native:=[];var native_world:=World.empty()
 	for sample in ["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"]:
