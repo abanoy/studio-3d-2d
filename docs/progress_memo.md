@@ -12512,3 +12512,34 @@ docs/benchmarks/has_save_readback_2026-11-06.json.
 STORE-04 partial/open: directory manifest/PNG fault paths, directory sync/physical
 power-loss durability and native Windows locks/termination/storage faults remain.
 Whole goal active; do not infer full platform acceptance from fault injection.
+
+
+2026-11-06 — Directory write paths preserve original sources
+
+Owned baseline on22906b2 proved project.json.tmp symbolic link overwrote an outside
+original sentinel and promoted a linked manifest, returning success. Save now
+checks managed descendant directories and manifest/backup/PNG final paths for
+symbolic links before writes. Explicitly chosen linked root remains supported.
+Managed copy rejects linked final files. Fresh unique manifest/PNG/import temporaries
+never truncate existing temp inodes, including hard-linked sources. Backup uses
+fresh temp, byte verification and atomic replacement instead of overwriting inode.
+Legacy partial manifest temps stay untouched; directory obstruction still refuses.
+
+New PNGs receive decoded pixel readback before commit; new manifest bytes compare
+exactly and pass metadata validation; copied backups match SHA. No project format,
+source-art or cap changes. Added sequential verification I/O, not a RAM/latency claim.
+
+17owned Linux path cases pass,225combined headless domain checks. Includes links in
+manifest/temp/backup/assets/cels/PNG/managed destinations, hard-linked temporary/
+backup/PNG preservation and repair, stale temp, linked root and actual read-only
+folder. Windows fixture explicitly skipped pending native gate. Real automatic
+32cel editing/save/true abrupt recovery/cold startup/H264-AAC suite passes; nested
+adaptive/mask224checks pass, including packed/linked/active-child and shared scene
+assets, exact pixels, manual/source preservation. Graphics private107/Dummy only.
+
+Raw storage-link-before/after logs and project-write-paths-domain/app/nested under
+/workspace/has-handoff-audit; curated docs/benchmarks/project_write_paths_2026-11-06.json.
+Tracked generated log archived and restored exactly. STORE-04 partial/open:
+directory-sync/power-loss, native Windows, private recovery/lesson metadata writers
+and concurrent-writer robustness remain. Hostile filesystem races not certified.
+Whole goal active; technical COURSE-01 remains the only audited acceptance closure.

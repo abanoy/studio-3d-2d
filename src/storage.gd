@@ -25,9 +25,29 @@ static func image_hash(image: Image) -> String:
 	hash.update(image.get_data())
 	return hash.finish().hex_encode()
 
+static func write_path_error(folder: String, relative: String) -> String:
+	if not safe_relative(relative):return "Unsafe project write path. Previous save preserved."
+	var filesystem:=DirAccess.open(ProjectSettings.globalize_path("res://"))
+	if filesystem==null:return "Cannot check project write path. Previous save preserved."
+	var path:=ProjectSettings.globalize_path(folder)
+	for part in relative.split("/"):
+		path=path.path_join(part)
+		if filesystem.is_link(path):return "Project write path is a symbolic link: "+relative+". Previous save preserved."
+	return ""
+
+static func fresh_temporary(target: String,suffix: String) -> String:
+	# Never truncate an existing temporary inode (including a hard-linked source).
+	var temporary:=target+"."+str(ResourceUID.create_id())+suffix
+	var filesystem:=DirAccess.open(target.get_base_dir())
+	if filesystem==null or filesystem.is_link(temporary) or FileAccess.file_exists(temporary) or DirAccess.dir_exists_absolute(temporary):return ""
+	return temporary
+
 static func managed_copy(source: String, target: String, expected: String) -> String:
+	var path_error:=write_path_error(target.get_base_dir(),target.get_file())
+	if not path_error.is_empty():return path_error
 	if FileAccess.file_exists(target) and FileAccess.get_sha256(target) == expected: return ""
-	var temp := target + ".import.tmp"
+	var temp:=fresh_temporary(target,".import.tmp")
+	if temp.is_empty():return "Cannot create a fresh managed asset temporary. Previous save preserved."
 	if DirAccess.copy_absolute(source, temp) != OK or FileAccess.get_sha256(temp) != expected:
 		return "Cannot copy/verify managed asset; previous manifest preserved."
 	if DirAccess.rename_absolute(temp, target) != OK: return "Cannot commit managed asset; previous manifest preserved."
@@ -124,6 +144,10 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 	var revision := "%d_%d" % [Time.get_unix_time_from_system() * 1000, Time.get_ticks_usec()]
 	var cel_dir := "cels/" + revision
 	if not recovery.is_empty() or content_addressed: cel_dir = "cels/content"
+	for path in ["assets",cel_dir,"project.json","project.backup.json","project.json.tmp"]+(["references"] if not reference_sheet.is_empty() else []):
+		var path_error:=write_path_error(folder,path)
+		if not path_error.is_empty():return path_error
+	if DirAccess.dir_exists_absolute(folder.path_join("project.json.tmp")):return "Cannot write manifest: an existing temporary directory blocks saving. Previous save preserved."
 	for sub in ["assets", cel_dir]:
 		var error := DirAccess.make_dir_recursive_absolute(folder.path_join(sub))
 		if error != OK:
@@ -161,12 +185,16 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 			if not recovery.is_empty() or content_addressed:
 				pixels = image_hash(image)
 				path = cel_dir.path_join(pixels + ".png")
+			var path_error:=write_path_error(folder,path)
+			if not path_error.is_empty():return path_error
 			var reuse := false
 			if not pixels.is_empty() and FileAccess.file_exists(folder.path_join(path)):
 				reuse=png_verifier.matches(folder.path_join(path),int(video.width),int(video.height),pixels)
 			if not reuse:
-				var temporary := folder.path_join(path) + ".tmp.png"
-				if image.save_png(temporary) != OK or DirAccess.rename_absolute(temporary, folder.path_join(path)) != OK:
+				var temporary:=fresh_temporary(folder.path_join(path),".tmp.png")
+				if temporary.is_empty():return "Cannot create a fresh drawing temporary. Previous save preserved."
+				var expected_pixels:=pixels if not pixels.is_empty() else image_hash(image)
+				if image.save_png(temporary) != OK or not png_verifier.matches(temporary,int(video.width),int(video.height),expected_pixels) or DirAccess.rename_absolute(temporary, folder.path_join(path)) != OK:
 					return "Cannot commit cel PNG; previous project manifest preserved."
 			var entry := {"id": cel.id, "start": cel.start, "duration": cel.duration, "path": path}
 			if not pixels.is_empty(): entry["pixel_sha256"] = pixels
@@ -231,7 +259,8 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 	# never replace its manifest. Only the fully checked root commits project.json.
 	if _manifest_out is Dictionary:
 		_manifest_out["manifest"]=manifest;return ""
-	var temp := folder.path_join("project.json.tmp")
+	var temp:=fresh_temporary(folder.path_join("project.json"),".tmp")
+	if temp.is_empty():return "Cannot create a fresh manifest temporary. Previous save preserved."
 	var file := FileAccess.open(temp, FileAccess.WRITE)
 	if file == null:
 		return "Cannot write manifest; previous save preserved."
@@ -241,10 +270,12 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 	file.close()
 	if write_error != OK:
 		return "Manifest write failed. Previous save preserved."
+	if FileAccess.get_file_as_string(temp)!=serialized or not readable_manifest(temp):return "Manifest readback differs. Previous save preserved."
 	var target := folder.path_join("project.json")
 	if FileAccess.file_exists(target) and readable_manifest(target):
-		if DirAccess.copy_absolute(target, folder.path_join("project.backup.json")) != OK:
-			return "Cannot back up previous manifest; replacement aborted."
+		var backup:=folder.path_join("project.backup.json");var backup_temp:=fresh_temporary(backup,".tmp")
+		if backup_temp.is_empty() or DirAccess.copy_absolute(target,backup_temp)!=OK or FileAccess.get_sha256(backup_temp)!=FileAccess.get_sha256(target) or DirAccess.rename_absolute(backup_temp,backup)!=OK:
+			return "Cannot back up/verify previous manifest; replacement aborted."
 	var error := DirAccess.rename_absolute(temp, target)
 	return "" if error == OK else "Cannot replace manifest: " + error_string(error)
 

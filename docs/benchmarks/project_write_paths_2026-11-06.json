@@ -1,0 +1,370 @@
+{
+  "date": "2026-11-06",
+  "scope": "Owned Linux project-directory symlink/hardlink/read-only safety, fresh temporaries and file readback. Not hostile concurrent filesystem races, Windows reparse/locking behavior or physical power-loss durability.",
+  "baseline": {
+    "commit": "22906b2",
+    "raw": "/workspace/has-handoff-audit/storage-link-before.log",
+    "result": {
+      "save_error": "",
+      "original_unchanged": false,
+      "manifest_unchanged": false
+    },
+    "fixture": "Owned project.json.tmp symlink to an original-source sentinel outside the project folder; no real user/native assets."
+  },
+  "fixed_probe": {
+    "raw": "/workspace/has-handoff-audit/storage-link-after.log",
+    "original_unchanged": true,
+    "manifest_unchanged": true,
+    "refusal": "Project write path is a symbolic link: project.json.tmp. Previous save preserved."
+  },
+  "domain": {
+    "scope": "Headless cold-raster ownership, integrity, history and budget domains. No GUI/GPU or whole-project acceptance claim.",
+    "reports": {
+      "unit": {
+        "checks": 29,
+        "failures": 0
+      },
+      "write-paths": {
+        "checks": 17,
+        "failures": 0,
+        "scope": "owned Linux links/hardlinks/read-only paths; no Windows or hostile concurrent filesystem race certification"
+      },
+      "budget": {
+        "checks": 13,
+        "failures": 0
+      },
+      "pixel-history": {
+        "checks": 19,
+        "failures": 0
+      },
+      "policy": {
+        "checks": 11,
+        "failures": 0
+      },
+      "adaptive": {
+        "checks": 27,
+        "failures": 0
+      },
+      "save": {
+        "checks": 7,
+        "failures": 0
+      },
+      "read": {
+        "checks": 15,
+        "failures": 0
+      },
+      "overlay-regression": {
+        "checks": 20,
+        "failures": 0
+      },
+      "metadata": {
+        "checks": 14,
+        "failures": 0
+      },
+      "owner": {
+        "checks": 22,
+        "failures": 0
+      },
+      "reader-regression": {
+        "checks": 31,
+        "failures": 0
+      }
+    },
+    "source_sha256": {
+      "tests/project_write_paths_unit.gd": "e56767cde55a4f920cbbebbd7bd1f06c45c6946210d1b09b7663089fbd724988",
+      "src/cel_raster_budget.gd": "c46f05b524136207b8b5248aea7b19c7f78a574167c2fd2ac7739ad4f704db24",
+      "src/cel_raster_snapshot_cache.gd": "0443f8556d714cceb086a5c9fac8142cd6b7c49ff29c353d59e7e075fc59a70b",
+      "tests/cel_raster_budget_unit.gd": "76ccd0a13cae351e160ecdf86125088d11ee4f145f0732c3466a3e55ff430d32",
+      "src/cel_pixel_history.gd": "bbfc4b1464deecbdaa11a05bb39bcb2667b92cc3e145cfbbbe86397ab30b7d3b",
+      "tests/cel_pixel_history_unit.gd": "8662beed13aa6371d0d9f392698eaf6bbbcf39bc2ad1f5a6470c103f91887b8a",
+      "tests/cel_raster_policy_unit.gd": "72cb92b46b24e75a3b9f66ba79d760cba51556febabfdb98ddca4eee0c92da74",
+      "tests/cel_raster_adaptive_unit.gd": "d14fdc86b7ec8a94458472307b66a29e8199b37cdb7b30d013a9d717d75f2ce7",
+      "src/storage.gd": "a7f345a260e2836436735d70f181fe99d1b5b6a85d0476b40229da1349d4a78a",
+      "src/fill_editor.gd": "83617db73d2c77e8871b2153ae46db052b48a9085abeb2c34268a25acc91dda5",
+      "src/drawing_selection_editor.gd": "bf63e7b586d79e37b3cc983854c08482dff341af252505c652ad1c15bcb35908",
+      "src/drawing_transform_editor.gd": "5ac0b2257ffa54587ecba5ff0aa36688f7fdaff7fdae6a7d575e79a3f08beec3",
+      "src/cel_clipboard.gd": "687973cade8add3cb25da069f001c44d20cc8b27ccafb36a39e1885d1152a370",
+      "tests/cel_raster_save_unit.gd": "958376bbb5959bf905f522e158190f27bb503e50dcb7d0205f96b9e7e8f1352c",
+      "src/app.gd": "0a2b091e128a180f1fece291639f2930433c41bd41e13d83afca4cc72d88f453",
+      "src/renderer.gd": "d7888ad718bdeb48b00d7685e20cc793fcbfd2092fa277850f87e4630ba0c7d6",
+      "src/color_sampler.gd": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+      "src/onion_editor.gd": "7895913586ce8ec7989485d62b0421ec9b4e5366eb650074c4386357cae2596d",
+      "src/sequence_runtime.gd": "ff708a9b0c0a15e97e63bfea6c6c1575c2941a701f865471c250629b0284533a",
+      "src/tutorials.gd": "7b3cc6797fe825f2b37fc74a2c3b23c6e15591ec44ff064748e1c81f5270c6de",
+      "src/drawing_overlay_cache.gd": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+      "tests/cel_raster_read_unit.gd": "ebdc572bcf2f93735540dc9f7cfad86e0b0428549e01fb9b3d66773db0375951",
+      "src/cel_timing_editor.gd": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+      "src/cel_patch.gd": "60b75f05e162f796041e8083d9c756eb8ade3f26cac9f2e12b61d38fe41b51bd",
+      "src/recovery.gd": "6b347166ccf77f146aa2b7851f8610bb6b260035f525da90ce657a8bf3e24cb2",
+      "src/layer_editor.gd": "1ec0e7003d369607cd38ef58cb6c566812b8cf9db0b72c9a77b3c2e44348c1c1",
+      "src/sequence_editor.gd": "2b358fdb6ff03538b7e24bc51c89e41b768a662b31ff22acc770185ca3039927",
+      "tests/cel_raster_metadata_unit.gd": "e1ad5ae142dbbedf9570d4f78c8cb436791c73970dd3d97c8c0b57523991c6e8",
+      "src/drawing.gd": "faea2e1328c172bafd12c956a8d1e52e57065aad5f9055e6f6e6786203c3221e",
+      "src/cel_raster_owner.gd": "1d31197453046a8d0e829f79927376de60c7698babe4993370c86af870ee061b",
+      "tests/cel_raster_owner_unit.gd": "c12e7b941fc36dcb0411c7fa5c464115881b157e53c18b2514c763768f0722a9",
+      "src/cel_raster_reader.gd": "724eb9b552816815b15a9d22974013888e2210491e3c49d3c054858dec478152",
+      "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+      "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+      "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+    }
+  },
+  "domain_checks": 225,
+  "actual_app": {
+    "automatic_open": true,
+    "adaptive_open": false,
+    "reports": {
+      "unit": {
+        "checks": 31,
+        "failures": 0
+      },
+      "png-compatibility": {
+        "cache_hits": 16,
+        "cases": [
+          {
+            "name": "color2-depth16.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "e67477200047df6269888bb44717bca8e22bad1e130bacea74533e1354796a68"
+          },
+          {
+            "name": "color2-depth8.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "8bebf9e71d518c8eaf7cdc2054dab35a4a6a184cb096c75acbbab85a2a2c6879"
+          },
+          {
+            "name": "color4-depth16.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "ed0e7a88b4b1c479767c78482fa62b6f1cdc83f9c5ba433c156322255a02eb6f"
+          },
+          {
+            "name": "color4-depth8.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "a61c3f48139832caa035555ccfc99393feafb00387759ab14e76596455e1428a"
+          },
+          {
+            "name": "color6-depth16.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "85f739c9b5c4b6b8f89fd570794f914aa699aae50541fa3016be7c0c660ef2df"
+          },
+          {
+            "name": "color6-depth8.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "bb800897e39951c7bab0a0fea9900e354a0fd5165a4d4ef71c5540163dddcca6"
+          },
+          {
+            "name": "gray1.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "d8b0ad8408676af0e124ddd45cd8b09cdc7303296d3d53529ae19d531bd6e573"
+          },
+          {
+            "name": "gray16.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "4c61d80075d709da4f731397de129462e1a91808a8a5a3e60c77d136b49a1ddb"
+          },
+          {
+            "name": "gray2.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "1ddea9ce26a2e89396ed886e017030af6976052dd98a6fca589c35f6a225bdb4"
+          },
+          {
+            "name": "gray4.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "c8554e2433e5a608c32c822f3f37510cf3dda0798dbe76dea8910673f3b5e9a2"
+          },
+          {
+            "name": "gray8.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "08898f1b32e5a415ad4226812d4c524429f384c5e2e69304dacad4b8921af34f"
+          },
+          {
+            "name": "interlaced.png",
+            "ok": true,
+            "pixel_sha256": "40a028bd71b22e6f2eb75e7691b59882483febd139de9c5afee334c988052ddb",
+            "source_sha256": "cdaaed121f619da685a841dc9f644e1928b4d7cdee4bd0c3600dff2a3556ec32"
+          },
+          {
+            "name": "palette1.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "22574861f0a81d9f36b138d4e4cfe20883a97fcadb9ea7e9ee493c9aee522b9b"
+          },
+          {
+            "name": "palette2.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "be871ccb3dbc75cdedec573973c5f69ee1e97b7e3c43b1edb151a0412e9ed3b0"
+          },
+          {
+            "name": "palette4.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "0ca6d9f15e32104017669a64e3dcb9386ca8aeaa84b99450b078c60fbbc82c3f"
+          },
+          {
+            "name": "palette8.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "e022d29978dfbfd8e66dc6b8d5d4a83815938b42d935a4369b49a38ab16d08a0"
+          }
+        ],
+        "failures": 0,
+        "png_decodes": 16
+      },
+      "writer": {
+        "checks": 20,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/project-write-paths-app/render_1794016122_14582104_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "19396",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "decoded_onset_sample": 48001,
+    "actual_abrupt_exit": true,
+    "originals_and_writer_cache_unavailable_for_cold_startup": true,
+    "manual_has_unchanged": true,
+    "source_assets_unchanged": true,
+    "functional_unchanged": true,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "folder": "/workspace/has-handoff-audit/project-write-paths-app"
+  },
+  "nested": {
+    "reports": {
+      "graph": {
+        "checks": 106,
+        "failures": 0
+      },
+      "audio": {
+        "checks": 9,
+        "failures": 0
+      },
+      "storage": {
+        "checks": 8,
+        "failures": 0,
+        "folder": "/workspace/has-handoff-audit/project-write-paths-nested/storage"
+      },
+      "runtime": {
+        "checks": 23,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 48,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/project-write-paths-nested/editor/render_1794016194_20918704_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 25,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 5,
+        "failures": 0
+      }
+    },
+    "child_audio_onset": 0.25002083333333336,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "adaptive_open": true,
+    "mask_recovery": true,
+    "native_fixtures": 0,
+    "writer_abrupt_exit_verified": true,
+    "manual_has_unchanged": true,
+    "folder": "/workspace/has-handoff-audit/project-write-paths-nested"
+  },
+  "source_sha256": {
+    "src/storage.gd": "a7f345a260e2836436735d70f181fe99d1b5b6a85d0476b40229da1349d4a78a",
+    "tests/project_write_paths_unit.gd": "e56767cde55a4f920cbbebbd7bd1f06c45c6946210d1b09b7663089fbd724988",
+    "tests/verify_cel_raster_snapshot.py": "2327db697c134ee7469319e39a73de82453e2958f4d3c2cc39367b03cc82e027"
+  },
+  "raw": [
+    "/workspace/has-handoff-audit/project-write-paths-domain/verification.json",
+    "/workspace/has-handoff-audit/project-write-paths-app/verification.json",
+    "/workspace/has-handoff-audit/project-write-paths-nested/verification.json"
+  ],
+  "remaining": [
+    "Directory-sync and physical power-loss durability.",
+    "Native Windows path/locking/termination gates.",
+    "Remaining private recovery/lesson metadata writers and concurrent-writer robustness."
+  ]
+}

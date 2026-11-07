@@ -1254,9 +1254,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/has_save_readback_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "tests/project_write_paths_unit.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/project_write_paths.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/project_write_paths_2026-11-06.json"
         }
       ],
-      "remaining": "HAS temporary/readback and previous-backup SHA validation plus controlled ENOSPC/replace/cancel and actual Linux SIGKILL boundaries are verified. Directory manifest/PNG fault paths, directory-sync/power-loss durability and native Windows fault gates remain incomplete.",
+      "remaining": "HAS readback/fault boundaries and directory symlink/hardlink/read-only refusal, fresh temporaries, verified PNG/manifest/backup writes are covered by current scoped tests. Directory-sync/power-loss, native Windows, remaining private recovery/lesson metadata writers and concurrent-writer robustness remain incomplete.",
       "external_dependencies": []
     },
     {
@@ -2152,7 +2164,7 @@
     {
       "requirement": "STORE-04",
       "priority": 1,
-      "action": "Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit."
+      "action": "Archive and directory write/readback faults are verified in scoped Linux cases. Audit private recovery/lesson metadata writers and concurrent-writer behavior; keep native Windows and power-loss gates explicit."
     },
     {
       "requirement": "MOTION-03",
