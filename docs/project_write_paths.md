@@ -39,6 +39,6 @@ source preservation, exact editable pixels, actual abrupt exit/fresh startup and
 H264/AAC output. These suites overlap and do not establish native-format fidelity.
 See [write-path evidence](benchmarks/project_write_paths_2026-11-06.json).
 
-STORE-04 remains open for directory sync/power-loss, native Windows, remaining
-private recovery/lesson metadata writers and concurrent-writer robustness. These
+STORE-04 remains open for directory sync/power-loss, native Windows, concurrent-writer robustness. Private recovery/lesson metadata writers now have
+[their own scoped fix and verification](private_metadata_writes.md). These
 checks do not certify hostile concurrent filesystem mutation.

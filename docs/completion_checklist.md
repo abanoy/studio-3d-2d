@@ -17,7 +17,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 - **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
 - **P1 · MEM-02** — Idle edited-owner release and affected-cel create/delete are verified. Address remaining newly authored eager/raw/global memory accounting and whole-layer history, then dense-project acceptance before raising caps.
 - **P1 · MEM-01** — Affected-cel structural create/delete history is verified. Audit remaining whole-layer retention/global memory budgets and dense-project acceptance; do not re-polish completed clipboard/create/delete patches.
-- **P1 · STORE-04** — Archive and directory write/readback faults are verified in scoped Linux cases. Audit private recovery/lesson metadata writers and concurrent-writer behavior; keep native Windows and power-loss gates explicit.
+- **P1 · STORE-04** — Archive, directory and private recovery/lesson metadata fault safety now have scoped Linux evidence. Address concurrent-writer behavior and directory sync; keep native Windows and physical power-loss acceptance explicit.
 - **P2 · MOTION-03** — Bounded saved walking now passes staged preview/correction, Undo, recovery, packed cold Open and exact render checks. Extend beyond straight flat routes and obtain native-rig/artist acceptance; optional multi-view inference remains separate.
 - **P2 · IMPORT-03** — Define per-profile native fidelity acceptance and use approved fixtures when available; report unsupported capabilities honestly.
 

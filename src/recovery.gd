@@ -102,15 +102,8 @@ static func read_json(path: String) -> Dictionary:
 	var parsed = parser.data
 	return parsed if parsed is Dictionary else {}
 
-static func write_json(path: String, data: Dictionary) -> String:
-	var file := FileAccess.open(path + ".tmp", FileAccess.WRITE)
-	if file == null: return "Cannot write recovery state."
-	file.store_string(JSON.stringify(data))
-	file.flush()
-	var error := file.get_error()
-	file.close()
-	if error != OK: return "Cannot flush recovery state."
-	return "" if DirAccess.rename_absolute(path + ".tmp", path) == OK else "Cannot commit recovery state."
+static func write_json(path: String, data: Dictionary,owned_root: String="") -> String:
+	return preload("res://src/atomic_metadata.gd").write_bytes(path,JSON.stringify(data).to_utf8_buffer(),path.get_base_dir() if owned_root.is_empty() else owned_root)
 
 static func bytes_in(folder: String, depth := 0) -> int:
 	if not DirAccess.dir_exists_absolute(folder): return 0
@@ -156,9 +149,12 @@ static func checkpoint(root: String, session: String, video: Dictionary, keys: A
 			if file: estimate += file.get_length()
 	if bytes_in(root) + estimate > MAX_BYTES:
 		return "Recovery cache budget reached (512 MiB). Save manually; review output/recovery before removing old copies."
+	if not Storage.safe_relative(session) or session.contains("/"):return "Invalid recovery session address."
 	var folder := root.path_join(session)
+	var path_error:=preload("res://src/atomic_metadata.gd").path_error(folder.path_join("session.json"),root)
+	if not path_error.is_empty():return path_error
 	if DirAccess.make_dir_recursive_absolute(folder) != OK: return "Cannot create recovery directory."
-	var error := write_json(folder.path_join("session.json"), owner_record())
+	var error := write_json(folder.path_join("session.json"), owner_record(),root)
 	if not error.is_empty(): return error
 	# Adopt both old generations before the normal writer rotates either away.
 	error=Journal.record(folder)
@@ -173,7 +169,7 @@ static func checkpoint(root: String, session: String, video: Dictionary, keys: A
 static func resolve(folder: String) -> String:
 	var primary := folder.path_join("project.json")
 	if not FileAccess.file_exists(primary) and not FileAccess.file_exists(folder.path_join("project.backup.json")): return ""
-	return write_json(folder.path_join("resolved.json"), {"sha256": FileAccess.get_sha256(primary) if FileAccess.file_exists(primary) else "missing"})
+	return write_json(folder.path_join("resolved.json"), {"sha256": FileAccess.get_sha256(primary) if FileAccess.file_exists(primary) else "missing"},folder.get_base_dir())
 
 static func candidates(root: String, exclude := "", include_current := false,include_resolved := false) -> Array:
 	discovery_warning=""

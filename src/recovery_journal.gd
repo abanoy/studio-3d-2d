@@ -54,15 +54,13 @@ static func entries(folder: String) -> Array:
 	return []
 
 static func write_bytes(path: String,data: PackedByteArray) -> String:
-	if FileAccess.file_exists(path) and FileAccess.get_sha256(path)==sha(data):return ""
-	var file:=FileAccess.open(path+".tmp",FileAccess.WRITE)
-	if not file:return "Cannot write recovery history."
-	file.store_buffer(data);file.flush();var error:=file.get_error();file.close()
-	if error!=OK:return "Cannot flush recovery history."
-	if DirAccess.rename_absolute(path+".tmp",path)!=OK:return "Cannot commit recovery history."
-	return "" if FileAccess.get_sha256(path)==sha(data) else "Recovery history checksum failed."
+	return preload("res://src/atomic_metadata.gd").write_bytes(path,data,path.get_base_dir().get_base_dir())
 
 static func commit(folder: String,records: Array) -> String:
+	for name in ["journal.json","journal.backup.json","journal.json.tmp","journal.backup.json.tmp"]:
+		var why:=preload("res://src/atomic_metadata.gd").path_error(folder.path_join(name),folder.get_base_dir())
+		if not why.is_empty():return why
+		if DirAccess.dir_exists_absolute(folder.path_join(name)):return "Recovery history destination is blocked by a directory. Previous state preserved."
 	var payload:=JSON.stringify(records,"",true,true)
 	var primary:=folder.path_join("journal.json")
 	var previous:=read_catalog(primary)

@@ -1294,9 +1294,25 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/project_write_paths_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "src/atomic_metadata.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_private_metadata.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/private_metadata_writes.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/private_metadata_2026-11-06.json"
         }
       ],
-      "remaining": "HAS readback/fault boundaries and directory symlink/hardlink/read-only refusal, fresh temporaries, verified PNG/manifest/backup writes are covered by current scoped tests. Directory-sync/power-loss, native Windows, remaining private recovery/lesson metadata writers and concurrent-writer robustness remain incomplete.",
+      "remaining": "HAS archive and directory write/readback faults plus private recovery/journal/lesson metadata link/hardlink/permission safety are verified in scoped Linux cases. Directory-sync/power-loss, native Windows and concurrent-writer robustness remain incomplete.",
       "external_dependencies": []
     },
     {
@@ -2192,7 +2208,7 @@
     {
       "requirement": "STORE-04",
       "priority": 1,
-      "action": "Archive and directory write/readback faults are verified in scoped Linux cases. Audit private recovery/lesson metadata writers and concurrent-writer behavior; keep native Windows and power-loss gates explicit."
+      "action": "Archive, directory and private recovery/lesson metadata fault safety now have scoped Linux evidence. Address concurrent-writer behavior and directory sync; keep native Windows and physical power-loss acceptance explicit."
     },
     {
       "requirement": "MOTION-03",

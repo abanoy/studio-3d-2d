@@ -1,0 +1,338 @@
+{
+  "date": "2026-11-06",
+  "baseline_commit": "0f6960c",
+  "scope": "Owned Linux metadata source/path safety and private-display real recovery/lesson workflows. Not Windows/power-loss/concurrent-writer acceptance.",
+  "baseline": {
+    "script": "/workspace/has-handoff-audit/private-write-before.gd",
+    "engine_log": "/workspace/has-handoff-audit/private-write-before-engine.log",
+    "results": {
+      "journal": {
+        "error": "",
+        "source_unchanged": false
+      },
+      "lesson": {
+        "error": "",
+        "source_unchanged": false
+      },
+      "recovery": {
+        "error": "",
+        "source_unchanged": false
+      }
+    }
+  },
+  "domain": {
+    "reports": {
+      "private_metadata_unit": {
+        "checks": 32,
+        "failures": 0,
+        "scope": "owned Linux metadata links/hardlinks/permissions; no Windows/power-loss/concurrent-writer certification"
+      },
+      "recovery_journal_unit": {
+        "checks": 33,
+        "failures": 0,
+        "folder": "/workspace/studio-3d-2d/output/recovery-journal-unit/312329"
+      },
+      "lesson_recovery_unit": {
+        "checks": 43,
+        "failures": 0
+      },
+      "recovery_identity_unit": {
+        "checks": 47,
+        "failures": 0,
+        "owner": {
+          "linux_start": "c0322174-2fc8-428d-8f74-47ed9b9c7c09:2605423",
+          "pid": 54406
+        }
+      }
+    },
+    "folder": "/workspace/has-handoff-audit/private-metadata-verified-final",
+    "scope": "Headless metadata safety; graphical crash/reopen workflows run separately. No power-loss or hostile concurrent filesystem race certification.",
+    "source_sha256": {
+      "src/atomic_metadata.gd": "f07b9db3cfc774327b26f14813729516f7b8a5dffc1773ae0a8c15a67ce403ca",
+      "src/recovery.gd": "95cefa00f14801ee25c9e6657b92056316718006fc669309e720ba57d5f2d699",
+      "src/recovery_journal.gd": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa",
+      "src/lesson_store.gd": "cf98f033569d90765e71726176c13a0e05d427eb0b4c58a7637d97e6a8330cf0",
+      "tests/private_metadata_unit.gd": "79b8620dbc72aedf14b32f16c9b1c50aa0ffff7dfb4b4b0d9433f965ba92fb64",
+      "tests/verify_private_metadata.py": "b1db6a75b7b654e809bc744dce7a9f6b54e7d4f2993dc4a40c15ebc3c26906a9"
+    }
+  },
+  "lesson_recovery": {
+    "reports": {
+      "unit": {
+        "checks": 43,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 6,
+        "failures": 0
+      },
+      "newest": {
+        "case": "newest",
+        "checks": 21,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/newest/render_1794020365_2244229_0/movie.mp4",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/newest/recovery/1794020361_731139786792714405",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/newest/recovery/1794020361_731139786792714405",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794020362.88817,
+            "sha256": "8a86f24d8654769a8d18016610c183b1e37da67497095d31af5621a115dd86c8"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      },
+      "older-fallback": {
+        "case": "older-fallback",
+        "checks": 19,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/older-fallback/recovery/1794020361_731139786792714405",
+              "manifest": "project.backup.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/older-fallback/recovery/1794020361_731139786792714405",
+            "frame": 12,
+            "manifest": "project.backup.json",
+            "origin": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 3,
+            "saved_at": 1794020362.37227,
+            "sha256": "79b933ebf4958d28142eb8c1770796a82d8a0a679557df2b8071e57fcee12e64"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      },
+      "legacy": {
+        "case": "legacy",
+        "checks": 7,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/legacy/recovery/1794020361_731139786792714405",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/legacy/recovery/1794020361_731139786792714405",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794020362.88817,
+            "sha256": "3a5fc138ae8d2e29cac9eacc257aee1556f79b9bb8449b4af27181db6196b1dc"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      },
+      "invalid-context": {
+        "case": "invalid-context",
+        "checks": 8,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/invalid-context/recovery/1794020361_731139786792714405",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/invalid-context/recovery/1794020361_731139786792714405",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794020362.88817,
+            "sha256": "f77047b08b19eafe5c59f1f6d3af099cd75722fbef9418becab6e7a6202e1e09"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      },
+      "missing-practice": {
+        "case": "missing-practice",
+        "checks": 8,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/missing-practice/recovery/1794020361_731139786792714405",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/missing-practice/recovery/1794020361_731139786792714405",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/private-metadata-lesson-recovery/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794020362.88817,
+            "sha256": "8a86f24d8654769a8d18016610c183b1e37da67497095d31af5621a115dd86c8"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "109920",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "actual_abrupt_exit": true,
+    "manual_has_unchanged": true,
+    "included_assets_unchanged": true,
+    "writer_cache_unavailable_for_cold_startup": true,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "folder": "/workspace/has-handoff-audit/private-metadata-lesson-recovery"
+  },
+  "lesson_autosave": {
+    "reports": {
+      "writer": {
+        "checks": 22,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 11,
+        "failures": 0,
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/private-metadata-lesson-autosave/recovery/1794020385_8832307584512464252",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/private-metadata-lesson-autosave/recovery/1794020385_8832307584512464252",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/private-metadata-lesson-autosave/Manual practice.has",
+            "preview": "930acf38a48881aeae29b37214c569600c7a9d44ed80eee542a0ee9493002f4b",
+            "resolved": false,
+            "revision": 1,
+            "saved_at": 1794020389.00671,
+            "sha256": "2019bbe8eff0e14a1791de9d487a8c1d0677a921f9111bb67b0f0d7e4be9ebbd"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      }
+    },
+    "actual_abrupt_exit": true,
+    "manual_has_unchanged": true,
+    "included_assets_unchanged": true,
+    "writer_cache_unavailable_for_startup": true,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "folder": "/workspace/has-handoff-audit/private-metadata-lesson-autosave"
+  },
+  "failed_harness_runs": "Initial ad hoc headless runner omitted lesson output-folder and identity parent-PID arguments. Fixed runner uses actual existing test interfaces, final155checks all pass; assertions unchanged. Logs retained.",
+  "status": "STORE-04 partial/open; concurrent writers, directory sync, native Windows and physical power loss remain"
+}

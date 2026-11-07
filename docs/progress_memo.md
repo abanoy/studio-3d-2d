@@ -12613,3 +12613,32 @@ walking-other-motion-final, walking-movement-path-regression.log and
 walking-preset-regression under /workspace/has-handoff-audit. Curated receipt
 in docs/benchmarks/walking_path_2026-11-06.json. Ledger MOTION-03 partial/open;
 straight flat240frame/64stride bounds explicit. Whole goal remains active.
+
+
+2026-11-06 — Source-safe private recovery and lesson metadata
+
+Baseline owned .tmp symlink fixtures reproduced original sentinel truncation in
+Recovery.write_json, Journal.write_bytes and Lesson.write_json; all returned
+success. New atomic_metadata writer checks owned boundaries/managed links, uses
+fresh temporary inode, flushes and verifies length+SHA before replacement. Final
+hard links atomically replace directory entry without changing external inode;
+legacy hard-linked/stale temporaries stay untouched. Oversize1MiB/unset root,
+linked managed session/course paths, legacy temporary directory and permissions
+refuse with previous state preserved. Journal preflights primary/backup before
+rotation; checkpoint/lesson project saves check managed ancestors. No schema or
+resource cap changes; directory sync/concurrent-writer guarantees not claimed.
+
+32focused Linux fault+33journal+43lesson-context+47identity checks pass (155total).
+Initial ad hoc runner omitted two existing test arguments (output folder/parent
+PID); fixed permanent runner passes actual interfaces, assertions unchanged.
+Real private GUI lesson recovery passes unit43/writer6 plus all5startup cases;
+autosave22writer+11startup passes after real abrupt termination. Continue,
+Previous/Fresh, normal save, exact restored drawing/model/teacher and H264 export
+remain; manual HAS/original bundled assets unchanged, writer cache unavailable.
+Native Windows link/locking, physical power loss and concurrent writers remain
+explicitly open. Private display107/Dummy only; no desktop fallback.
+
+Raw private-write-before, private-metadata-verified-final,
+private-metadata-lesson-recovery and private-metadata-lesson-autosave under
+/workspace/has-handoff-audit. Curated docs/benchmarks/private_metadata_2026-11-06.json;
+docs/private_metadata_writes.md. STORE-04 stays partial/open. Whole goal active.

@@ -30,12 +30,8 @@ func folder(course: String,session: String) -> String:
 	return root.path_join(course).path_join(session) if course in COURSES and session_ok(session) else ""
 
 func write_json(path: String,data: Dictionary) -> bool:
-	if DirAccess.make_dir_recursive_absolute(path.get_base_dir())!=OK:error="Cannot create lesson progress folder.";return false
-	var file:=FileAccess.open(path+".tmp",FileAccess.WRITE)
-	if not file:error="Cannot write lesson progress.";return false
-	file.store_string(JSON.stringify(data,"",true,true));file.flush();var code:=file.get_error();file.close()
-	if code!=OK or DirAccess.rename_absolute(path+".tmp",path)!=OK:error="Cannot commit lesson progress.";return false
-	return true
+	error=preload("res://src/atomic_metadata.gd").write_bytes(path,JSON.stringify(data,"",true,true).to_utf8_buffer(),root)
+	return error.is_empty()
 
 func progress(course: String,session := "") -> Dictionary:
 	if not course in COURSES:return {}
@@ -89,6 +85,8 @@ static func valid_recovery(value) -> bool:
 func save(app,course: String,session: String,step: int,done: bool,name: String,observations: Dictionary={}) -> bool:
 	error="";var directory:=folder(course,session)
 	if directory.is_empty() or step<0 or step>int(COURSES.get(course,0)) or done!=(step==int(COURSES.get(course,0))) or not name in ["resume","step_%02d" % step] or not valid_observations(observations):error="Invalid lesson checkpoint address.";return false
+	error=preload("res://src/atomic_metadata.gd").path_error(directory.path_join(name).path_join("project.json"),root)
+	if not error.is_empty():return false
 	var state:=ui(app)
 	if not observations.is_empty():state["observed"]=observations.duplicate()
 	if not valid_ui(state):error="Invalid lesson view state.";return false
