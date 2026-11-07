@@ -3241,3 +3241,14 @@ Curated background_manual_saves receipt/docs/ledger updated;48/54implemented and
 Automation repetition was stopped using goal control per saved goal; owner
 explicitly requested continue working, so resumed actual verification/documentation.
 Next initialOpen responsiveness with transactional main-thread adoption.
+
+## 2026-11-07 UTC — Simple/Advanced redesign port (Claude, branch claude/studio-redesign)
+
+Re-applied the separate "Simplicity is key" redesign onto main in six small commits:
+Simple top bar (New/Open/Save/Add/Export/More), Draw/Camera/Pose tabs and tool strip
+driving the existing dropdowns, new StudioTheme icons, F11 fullscreen beside the
+existing Settings scale, Simple empty-state hints, fading status toast (status.text is
+kept) and plain wording, opt-in dark theme and keyboard navigation in Settings, header
+title with unsaved dot. Presentation only; tests/ untouched. Linux xvfb: ui, editor,
+pose, world_selection, recovery_write, recovery pass (same as baseline). Windows
+verify.py not run. Details, dropped items and runner: docs/REDESIGN-PORT.md.
