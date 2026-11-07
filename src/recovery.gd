@@ -2,6 +2,7 @@ extends RefCounted
 const Drawing=preload("res://src/drawing.gd")
 const Storage = preload("res://src/storage.gd")
 const Journal=preload("res://src/recovery_journal.gd")
+const BlobRetention=preload("res://src/recovery_blob_retention.gd")
 const MAX_BYTES := 512 * 1024 * 1024
 static var discovery_warning := ""
 static var own_record_cache:={}
@@ -177,6 +178,7 @@ static func checkpoint(root: String, session: String, video: Dictionary, keys: A
 	var path_error:=preload("res://src/atomic_metadata.gd").path_error(folder.path_join("session.json"),root)
 	if not path_error.is_empty():return path_error
 	if DirAccess.make_dir_recursive_absolute(folder) != OK: return "Cannot create recovery directory."
+	var retained_before:=BlobRetention.inventory(folder)
 	var error := write_json(folder.path_join("session.json"), owner_record(),root)
 	if not error.is_empty(): return error
 	# Adopt both old generations before the normal writer rotates either away.
@@ -187,7 +189,9 @@ static func checkpoint(root: String, session: String, video: Dictionary, keys: A
 	error=Storage.save_project(folder, video, keys, layers, source, frame, audio,
 		recovery, model,false,world,{"sequence_editor":sequence_context} if not sequence_context.is_empty() else {},palette,sequence_graph,null,reference_sheet)
 	if not error.is_empty():return error
-	return Journal.record(folder)
+	error=Journal.record(folder)
+	if error.is_empty():BlobRetention.retire(folder,retained_before)
+	return error
 
 static func resolve(folder: String) -> String:
 	var primary := folder.path_join("project.json")

@@ -13333,3 +13333,21 @@ fixture remains unrun; bakedlightmap/ambientHDR/nativephotometry unsupported.
 Receipt source_entity_lights_2026-11-07.json and docs/ledger updated, partialnative
 coverage remains honest. Owner packaging decision requested asynchronously while
 independent implementation proceeds; no format choice imposed.
+
+
+## 2026-11-07 UTC — reclaim expired proven-owned recovery blobs
+
+Capture prior retained payload inventory, commit project+journal, then retire only
+formerly referenced content-addressed files absent from both catalog roots and
+current/backup generations. Check process owner, all referenced metadata/hashes,
+path safety and stable new metadata; skip corruption/foreign/link/unknown cases.
+No arbitrary orphan sweep or other-session deletion. Cleanup stays in ordinary
+serialized checkpoint worker; failed deletion cannot invalidate valid publication.
+25changing pixel/geometry generations retain13PNG/13GLB with all retained states
+opening and25originals exact.37retention+33journal checks pass incl actualsymlink,
+unknownhashfiles, corruptbackup, foreignowner, escapes, nested/audio/effect/refroots.
+96background writer/app/preview/schedule and70nestedreference/realcrash/cold/startup/
+lesson/media checks pass. Receipt recovery_blob_retention_2026-11-07.json. Existing
+512MiBroot limit retained; globalorphan/concurrentwhole-rootquota remain separate.
+BaselineMarkdown stale2closures corrected to current4; scores48/54and4/62unchanged.
+Next remaining decided implementation gaps; packaging choice awaits owner reply.

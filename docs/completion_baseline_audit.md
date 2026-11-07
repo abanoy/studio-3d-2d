@@ -1,7 +1,7 @@
 # MD/addendum completion baseline audit
 
 The reviewed checklist has **48 of54required capability groups implemented
-(88.89%)** and **2 of62required acceptance conditions formally closed (3.23%)**.
+(88.89%)** and **4 of62required acceptance conditions formally closed (6.45%)**.
 These are separate, equally weighted checklist counts. They do not estimate
 remaining engineering time, native fidelity, reliability or release readiness.
 No combined product-completion percentage is calculated.
@@ -11,8 +11,7 @@ It checks both governing documents, the addendum's precedence, bounded code path
 source/acceptance reverse mappings, evidence scope and exact remaining work.
 Every group has a source/evidence review in the
 [structured audit](benchmarks/completion_baseline_audit_2026-11-07.json).
-Existing tests are not represented as a fresh run of all features. Only the two
-previously committed full-condition closures remain formally verified; many
+Existing tests are not represented as a fresh run of all features. Four committed full-condition closures are formally verified; many
 other current tests supply narrower evidence.
 
 Three old implementation labels were corrected without inventing new acceptance
@@ -43,7 +42,10 @@ source hashes. Its checks passed for the current ledger, withheld scores for an
 unreviewed copy, and rejected deliberately changed status/missing source mappings.
 It validates bookkeeping; it does not execute the application or certify behavior.
 
-Next: complete the routed software scenariosC/D, then prioritize the recorded
-native/rig/walking/durability gaps and long-session resource limitations. The
+The routed software scenariosC/D now have committed cloud cases; final Windows
+execution remains external. Current work addresses native/rig/walking/durability
+gaps and resource limitations. Background HAS Save/Open, helper-bearing IK, static
+Source entity lights and proven-owned recovery blob retirement now have scoped
+implementation and evidence. These do not certify full native/device acceptance. The
 [generated checklist](completion_checklist.md) and
 [JSON ledger](completion_checklist.json) remain authoritative progress records.
