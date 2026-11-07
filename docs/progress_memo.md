@@ -13379,3 +13379,20 @@ and map independently package/import/reuse with dependencies/provenance, no exte
 exporter.74checks plus76save/70reference regressions satisfy this software condition.
 Formal closure5/62(8.06%); implementation49/54(90.74%). Broader native fidelity and
 Windows target acceptance remain separate open gates; no fixture equivalence claimed.
+
+
+## 2026-11-07 UTC — walking under stationary parent hierarchies
+
+Removed blanket grouped-character refusal. Validate complete stationary authored
+ancestor roots with procedural parent assistance off; establish authored transforms
+before detached world preflight. Supports nested translated/yawed/positive-uniform
+parents; animated/tilted/assisted ancestors refuse before installation. Existing
+source/binding/parent-change guards remain.97nested-parent world-space samples
+pass unchanged0.2mm threshold(max0.000177715m), with negative parent fixtures and
+old world/camera unchanged. Grouped and ordinary bent/turning end-to-end suites
+pass staged UI/Undo/Redo/recovery/source+group+cache-offline fresh Open/exact real
+48frame1080p24H264. Development fixture initially reused invalid animated parent
+record; replaced with original empty group. Test variable shadowing fixed and
+half-frame oracle corrected to apply floating evaluator output (Model.apply takes
+integer frames); no accuracy tolerance weakened. Evidence grouped_walking receipt.
+MOTION-03 remains partial for broader terrain/native coverage; scores unchanged.

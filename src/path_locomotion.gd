@@ -52,6 +52,25 @@ func build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictio
 	for field in ["_actor","_source","_probe","_root_id","_order","_bindings","_lower","_ramp_frames","_root_base","_parent","_feet","_start","_end","_origin","_direction","_length","_route","_straight","_turning","_first_rotation","_pivot","_stride","_lift","_lowering"]:set(field,staged.get(field))
 	_last={};_last_frame=INF;_last_amount=-1.;return ""
 
+# World parenting is safe only when every ancestor has a stationary authored root.
+# Check the same bounded half-frame grid as locomotion preflight, including endpoints.
+static func parent_error(actor: RefCounted,data: Dictionary,video: Dictionary) -> String:
+	var id: String=data.get("parent_id","")
+	if id.is_empty():return ""
+	var world: RefCounted=actor.world_context.get_ref() if actor.world_context else null
+	if world==null:return "Walking needs its complete parent hierarchy."
+	var seen: Array=[]
+	while not id.is_empty():
+		if id in seen or not world.instances.has(id):return "Walking parent hierarchy is incomplete."
+		seen.append(id)
+		var ancestor: RefCounted=world.instances[id]
+		if ancestor.data.get("motion_assist",{}).get("enabled",false):return "Turn off motion assistance on parent groups before enabling child walking."
+		var first: Dictionary=ancestor.sample_authored_transform(0)
+		for half in range(int(video.duration_frames)*2+1):
+			if ancestor.sample_authored_transform(float(half)/2.)!=first:return "Walking needs stationary parent groups; animate the character path instead."
+		id=ancestor.data.get("parent_id","")
+	return ""
+
 func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictionary,structure_only:=false) -> String:
 	var why:=settings_error(settings)
 	if not why.is_empty():return why
@@ -62,7 +81,9 @@ func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dicti
 	why=Model.validate(data,int(video.duration_frames))
 	if not why.is_empty():return why
 	if data.get("id")!=actor.data.get("id") or data.get("sha256")!=actor.data.get("sha256"):return "Walking candidate belongs to another model."
-	if not str(data.get("parent_id","")).is_empty():return "This walking experiment needs an ungrouped character."
+	if not structure_only:
+		why=parent_error(actor,data,video)
+		if not why.is_empty():return why
 	var legs: Array=actor.contact_legs()
 	if legs.size()!=2:return "Walking needs two validated leg chains. Use manual posing for this rig."
 	for piece in data.get("animation_clips",[]):

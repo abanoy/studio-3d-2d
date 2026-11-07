@@ -78,6 +78,12 @@ static func prepare(document: Dictionary, duration: int,incoming_video: Dictiona
 				candidate.root.remove_child(instance.root)
 				candidate.instances[row.parent_id].root.add_child(instance.root)
 			candidate.order.append(row.id);pending.remove_at(i)
+	# Walking targets are world-space. Establish authored parent transforms before
+	# private detached preflight rather than probing default imported transforms.
+	for id in candidate.order:
+		var actor: RefCounted=candidate.instances[id]
+		var value: Dictionary=actor.sample_authored_transform(0)
+		actor.root.transform=Transform3D(Basis(Model.Timeline.quaternion(value.rotation_xyzw)).scaled(Vector3.ONE*value.scale),Model.Timeline.vector(value.position))*actor.base_root
 	error=load("res://src/walking_animation.gd").preflight_detached(candidate.root,candidate.instances.values(),walking_video)
 	if not error.is_empty():candidate.dispose();return {"error":error}
 	return {"runtime":candidate}

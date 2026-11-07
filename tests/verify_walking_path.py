@@ -23,6 +23,7 @@ def main():
     parser.add_argument('--output', type=Path)
     parser.add_argument('--bend', action='store_true', help='Exercise a flat two-segment bend')
     parser.add_argument('--turn', action='store_true', help='Include smooth authored yaw keys')
+    parser.add_argument('--grouped', action='store_true', help='Stationary translated/yawed/scaled parent hierarchy')
     options = parser.parse_args()
     if os.name != 'nt':
         if sys.platform != 'linux' or not options.isolated_display:
@@ -60,13 +61,13 @@ def main():
     evaluator = json.loads((folder / 'verification.json').read_bytes())
     assert evaluator['samples'] == 97 and evaluator['maximum_foot_error'] < .0002
     execute('settings', 'walking_animation_unit', 'WALKING_ANIMATION_UNIT ', True)
-    mode = (['--bend'] if options.bend else []) + (['--turn'] if options.turn else [])
+    mode = (['--bend'] if options.bend else []) + (['--turn'] if options.turn else []) + (['--grouped'] if options.grouped else [])
     execute('writer', 'walking_path_smoke', 'WALKING_PATH_SMOKE ', extra=mode)
     packed = folder / 'Walking.has'
     packed_sha = digest(packed)
     source = folder / 'source-figure.glb'
     source_sha = digest(source)
-    originals = [source, folder / 'writer-cache']
+    originals = [source, folder / 'writer-cache'] + ([folder / 'source-group.glb'] if options.grouped else [])
     moved = []
     try:
         for path in originals:
@@ -87,7 +88,7 @@ def main():
     assert (video['codec_name'], video['width'], video['height'], video['nb_read_frames'], video['r_frame_rate']) == ('h264', 1920, 1080, '48', '24/1'), video
     assert abs(float(media['format']['duration']) - 2) < .001
     assert all(digest(path) == expected for path, expected in frozen.items())
-    result = dict(folder=str(folder), reports=reports, evaluator=evaluator, bending_route=options.bend, authored_turn=options.turn,
+    result = dict(folder=str(folder), reports=reports, evaluator=evaluator, bending_route=options.bend, authored_turn=options.turn, grouped_parent=options.grouped,
                   video=video, private_receipts=receipts, isolated_display=options.isolated_display,
                   manual_has_unchanged=True, original_source_unchanged=True,
                   original_and_writer_cache_offline_for_reader=True,
