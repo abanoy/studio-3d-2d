@@ -182,8 +182,8 @@
       ],
       "title": "Common-format import and immutable sources",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Supported common files import into editable HAS world objects with dependency errors; drop uses frame0 and timeline import uses its chosen frame without modifying originals.",
       "evidence": [
         {
@@ -193,9 +193,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/common_import.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "52 current common-format app checks+9Python tests: actual linked/embedded FBX/glTF and OBJ/MTL preparation, rigs/textures/scale, dependency error/retry/cancel preservation, exact Undo/packed/movie and asynchronous frame40 intent across playhead5/refused second request/Save/New/Open."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "17 drop/timeline intent checks: window drop handler, frame0 versus chosen timeline frame24, no partial multi-file request, exact39/40-style presence boundary/save/movie and original GLB integrity. Physical Explorer drag and native ecosystems remain separate."
         }
       ],
-      "remaining": "Full current common-format dependency/fault matrix and physical Explorer drop remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -285,8 +297,8 @@
       ],
       "title": "Visible spawn and bounded grounding",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Models spawn visibly near the captured view, attempt support/overlap avoidance with bounded candidates, and remain findable on fallback; maps are not treated as tiny humanoids.",
       "evidence": [
         {
@@ -296,9 +308,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/height_import.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_current_2026-11-07.json",
+          "commit": "5b71c8601c680fa89d3bb24b43fd48db52c91042",
+          "scope": "20 current placement checks: captured distant camera, translated support floor, complete frustum fit, bounded nine-candidate overlap refusal/fallback, aerial visible fallback, exact Undo/packed/movie and original source. Original maps retain map-root behavior; no native map fidelity claim."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "Actual OBJ environment retains chosen scale/up-axis, full authored bounds and coexists with independent imported models rather than being normalized as a humanoid."
         }
       ],
-      "remaining": "Native bounds/orientation/scale and large-world acceptance remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -310,8 +334,8 @@
       ],
       "title": "Multiple maps, parenting and hierarchy",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Several maps/models/groups coexist, roots move whole maps, hierarchy finds distant objects, and parenting/saving preserve transforms.",
       "evidence": [
         {
@@ -321,9 +345,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/architecture.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_current_2026-11-07.json",
+          "commit": "5b71c8601c680fa89d3bb24b43fd48db52c91042",
+          "scope": "Current actual two-map/two-rig/group hierarchy, parent transforms and complete map-root edits, stable-ID Undo, ordinary Add/New/recovery and exact packed/linked/movie evidence."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "31 current world-editor checks include hierarchy lookup of map5000units away, actual temporary Frame selected, unchanged shot keys and exact one-step world Undo; packed/linked readers match exactly."
         }
       ],
-      "remaining": "Very large worlds and broader native hierarchy verification remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -335,8 +371,8 @@
       ],
       "title": "Selection, bones and hidden-object editing",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Selection shows an editor-only green outline, accessible bones and decided hold-Alt reveal; hidden-parent selection remains editable without changing output visibility.",
       "evidence": [
         {
@@ -346,9 +382,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/visibility.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "Actual positive green GPU outline measured separately from gizmos, zero wrong-object green,64GPU object picks, accessible active bones and hidden-parent ghost selection/posing excluded from final output."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/navigation_current_2026-11-07.json",
+          "commit": "19834f040a55b17243d801e5dd029ccb44bed559",
+          "scope": "Actual Alt press/release reveals/hides skeleton while optional orbit is active; escape/focus and source/key isolation remain verified within43current navigation checks."
         }
       ],
-      "remaining": "Complete routed selection/context priority and native bone-binding acceptance remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -360,8 +408,8 @@
       ],
       "title": "Direct posing and automatic manual keys",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Root and bone edits key the intended object/part at the exact playhead, Undo restores them, and unrigged assets degrade gracefully.",
       "evidence": [
         {
@@ -371,9 +419,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/body_pose_library.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "Current world editor auto-keys map roots and bones at frame24, stable target IDs survive selection switches, one-step drag/Undo/Redo, rotated/scaled parent transforms, unrigged map root controls and invalid bone transaction preservation."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "Common-format imported skin visibly deforms through ordinary pose controls and exact Undo; source geometry/rigs and authored shot remain preserved. Native fidelity and unusual ecosystem rigs are not inferred."
         }
       ],
-      "remaining": "Native transform/rig acceptance and full direct-manipulation ergonomics remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {

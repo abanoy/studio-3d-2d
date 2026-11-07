@@ -243,11 +243,24 @@
           "file_sha256": "6d32b7a099afddb56ed35b0a569b4bea09532ac1f00980613c94eb582d8c6ebd"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Full current common-format dependency/fault matrix and physical Explorer drop remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
+      "evidence_review": "52 current common-format app checks+9Python tests: actual linked/embedded FBX/glTF and OBJ/MTL preparation, rigs/textures/scale, dependency error/retry/cancel preservation, exact Undo/packed/movie and asynchronous frame40 intent across playhead5/refused second request/Save/New/Open. 17 drop/timeline intent checks: window drop handler, frame0 versus chosen timeline frame24, no partial multi-file request, exact39/40-style presence boundary/save/movie and original GLB integrity. Physical Explorer drag and native ecosystems remain separate.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "52 current common-format app checks+9Python tests: actual linked/embedded FBX/glTF and OBJ/MTL preparation, rigs/textures/scale, dependency error/retry/cancel preservation, exact Undo/packed/movie and asynchronous frame40 intent across playhead5/refused second request/Save/New/Open."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "17 drop/timeline intent checks: window drop handler, frame0 versus chosen timeline frame24, no partial multi-file request, exact39/40-style presence boundary/save/movie and original GLB integrity. Physical Explorer drag and native ecosystems remain separate."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -346,11 +359,24 @@
           "file_sha256": "e5aeb9cea76fee148c0bed00f48180a300013877ebb775921fa59725641121ad"
         }
       ],
-      "verification": "historical_only",
-      "acceptance_status": "open",
-      "acceptance_review": "Native bounds/orientation/scale and large-world acceptance remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
+      "evidence_review": "20 current placement checks: captured distant camera, translated support floor, complete frustum fit, bounded nine-candidate overlap refusal/fallback, aerial visible fallback, exact Undo/packed/movie and original source. Original maps retain map-root behavior; no native map fidelity claim. Actual OBJ environment retains chosen scale/up-axis, full authored bounds and coexists with independent imported models rather than being normalized as a humanoid.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_current_2026-11-07.json",
+          "commit": "5b71c8601c680fa89d3bb24b43fd48db52c91042",
+          "scope": "20 current placement checks: captured distant camera, translated support floor, complete frustum fit, bounded nine-candidate overlap refusal/fallback, aerial visible fallback, exact Undo/packed/movie and original source. Original maps retain map-root behavior; no native map fidelity claim."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "Actual OBJ environment retains chosen scale/up-axis, full authored bounds and coexists with independent imported models rather than being normalized as a humanoid."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -383,11 +409,24 @@
           "file_sha256": "30dd8a9cd4ab48ec8e78c2e0be3c75c485c363b752d31cfcde1b225b0d2a7628"
         }
       ],
-      "verification": "historical_only",
-      "acceptance_status": "open",
-      "acceptance_review": "Very large worlds and broader native hierarchy verification remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
+      "evidence_review": "Current actual two-map/two-rig/group hierarchy, parent transforms and complete map-root edits, stable-ID Undo, ordinary Add/New/recovery and exact packed/linked/movie evidence. 31 current world-editor checks include hierarchy lookup of map5000units away, actual temporary Frame selected, unchanged shot keys and exact one-step world Undo; packed/linked readers match exactly.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_current_2026-11-07.json",
+          "commit": "5b71c8601c680fa89d3bb24b43fd48db52c91042",
+          "scope": "Current actual two-map/two-rig/group hierarchy, parent transforms and complete map-root edits, stable-ID Undo, ordinary Add/New/recovery and exact packed/linked/movie evidence."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "31 current world-editor checks include hierarchy lookup of map5000units away, actual temporary Frame selected, unchanged shot keys and exact one-step world Undo; packed/linked readers match exactly."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -426,11 +465,24 @@
           "file_sha256": "7d2c77c57f6a196bc13a0c910c39946d451d16673ebe0f7f0a172c3b391d2b64"
         }
       ],
-      "verification": "historical_only",
-      "acceptance_status": "open",
-      "acceptance_review": "Complete routed selection/context priority and native bone-binding acceptance remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
+      "evidence_review": "Actual positive green GPU outline measured separately from gizmos, zero wrong-object green,64GPU object picks, accessible active bones and hidden-parent ghost selection/posing excluded from final output. Actual Alt press/release reveals/hides skeleton while optional orbit is active; escape/focus and source/key isolation remain verified within43current navigation checks.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "Actual positive green GPU outline measured separately from gizmos, zero wrong-object green,64GPU object picks, accessible active bones and hidden-parent ghost selection/posing excluded from final output."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/navigation_current_2026-11-07.json",
+          "commit": "19834f040a55b17243d801e5dd029ccb44bed559",
+          "scope": "Actual Alt press/release reveals/hides skeleton while optional orbit is active; escape/focus and source/key isolation remain verified within43current navigation checks."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -469,11 +521,24 @@
           "file_sha256": "b7b67f278c41b7aaf1623d80bc69f346dc8ae4697f7355733a6b633d31ecb4ac"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Native transform/rig acceptance and full direct-manipulation ergonomics remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
+      "evidence_review": "Current world editor auto-keys map roots and bones at frame24, stable target IDs survive selection switches, one-step drag/Undo/Redo, rotated/scaled parent transforms, unrigged map root controls and invalid bone transaction preservation. Common-format imported skin visibly deforms through ordinary pose controls and exact Undo; source geometry/rigs and authored shot remain preserved. Native fidelity and unusual ecosystem rigs are not inferred.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "Current world editor auto-keys map roots and bones at frame24, stable target IDs survive selection switches, one-step drag/Undo/Redo, rotated/scaled parent transforms, unrigged map root controls and invalid bone transaction preservation."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "Common-format imported skin visibly deforms through ordinary pose controls and exact Undo; source geometry/rigs and authored shot remain preserved. Native fidelity and unusual ecosystem rigs are not inferred."
+        }
+      ],
       "external_dependencies": []
     },
     {
