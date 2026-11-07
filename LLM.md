@@ -3472,3 +3472,20 @@ cases remain skipped behind their actual installed-host/fixture prerequisites.
 Receipt responsive_workspace_2026-11-07.json; no project/settings schema change.
 Next resume exact open acceptance review and independent required work; no overall
 completion claim or changes to51/54implementation and5/62formal closure.
+
+
+## 2026-11-07 UTC — current core interface/Home/keyboard acceptance evidence
+
+Portable Home/shortcuts wrappers retain original assertions and Windows desktop
+receipts; explicitLinux private display, Dummy audio, frozen sources and compact
+console reports added. Startupfixture literal slash-n corrected to actual scene
+newlines. InitialHome ALSA-device error failed strict wrapper; device-free final
+run is clean.46Home/startup and94keyboard/preference checks pass. New core runner
+executes existing defaultNew20 and Simple/Advanced23routed checks unchanged,
+validates real48frame1080p24H264 and originalvoice/frozen source hashes.
+UI preserves hiddenFOV/interpolation/audio gain/trim/cels/source and exactpixels;
+Home covers recent thumbnails/missingpaths/normalstartup/recovery; keyboard covers
+focus/capture/remap/freshprefs/invalidprefs/personalkeysabsentHAS. No physical
+audio/input/GPU/Windows/novice/native fidelity claim. Coreinterface receipt added.
+Next audit full software conditions against these committed receipts; native
+installed-host question remains pending while independent work continues.
