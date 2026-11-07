@@ -11,11 +11,16 @@ static func from_snapshot(snapshot,cache) -> Dictionary:
 	if not snapshot is Snapshot or not cache is Cache:return {"error":"Invalid cold drawing owner."}
 	var why: String=snapshot.verify()
 	if not why.is_empty():return {"error":why}
+	why=cache.admit(cache.snapshot_cost(snapshot))
+	if not why.is_empty():return {"error":why}
 	var owner=load("res://src/cel_raster_owner.gd").new();owner._cold=snapshot;owner._cache=cache;cache.register(owner)
 	return {"owner":owner}
 static func from_image(image: Image,cache=null) -> Dictionary:
 	if image==null or image.is_empty() or image.is_compressed() or image.get_format()!=Image.FORMAT_RGBA8 or image.has_mipmaps() or image.get_width()>1920 or image.get_height()>1080:return {"error":"Invalid editable drawing owner."}
 	if cache!=null and not cache is Cache:return {"error":"Invalid editable drawing cache."}
+	if cache is Cache:
+		var why: String=cache.admit(image.get_data_size())
+		if not why.is_empty():return {"error":why}
 	var owner=load("res://src/cel_raster_owner.gd").new();owner._hot=image;owner._cache=cache
 	if cache is Cache:cache.register(owner)
 	return {"owner":owner}
@@ -50,6 +55,11 @@ func pin(expected_token: Array=[],borrowed: Image=null) -> Dictionary:
 		if borrowed!=null and not is_same(borrowed,_hot):return {"error":"Drawing edit image is stale."}
 		return {"image":_hot}
 	if not _cold is Snapshot:return {"error":"Drawing owner has no pixels."}
+	var integrity: String=_cold.verify()
+	if not integrity.is_empty():return {"error":integrity}
+	if _cache is Cache:
+		var why: String=_cache.admit(_cold.decoded_bytes())
+		if not why.is_empty():return {"error":why}
 	if borrowed!=null:
 		# Selection/worker previews may already hold this exact read image. Adopt
 		# it only while its token and independent full pixel identity still match.
@@ -62,6 +72,7 @@ func pin(expected_token: Array=[],borrowed: Image=null) -> Dictionary:
 		if result.has("error"):return result
 		_hot=result.image
 	_hot.set_meta("studio_pixels_revision",_revision);_cold=null
+	if _cache is Cache:_cache.enforce()
 	return {"image":_hot}
 func snapshot() -> Dictionary:
 	if _hot!=null:return Snapshot.capture(_hot)

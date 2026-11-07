@@ -861,9 +861,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/layer_retention_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/raster_admission.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/raster_admission_2026-11-06.json"
         }
       ],
-      "remaining": "Single-cel structural edits use affected-cel patches, and deleted cold layers now charge retained pixels while preserving preceding brush Undo. Accepted eager/raw/clipboard ownership is registered. Dynamic global tile/active/history/derived accounting and dense-project admission/acceptance remain; scoped passes do not close the group.",
+      "remaining": "Registered live/history/clipboard authorities and decoded cache now enforce320MiB admission with atomic refusal, while the64MiB idle target stays soft. Inventory bounded history tiles/derived/GPU/transient buffers and old+incoming contexts; measure dense unique-art staging/seek/render before any cel-cap expansion and broader acceptance.",
       "external_dependencies": []
     },
     {
@@ -1027,9 +1035,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/onion_resource_lifetime_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/raster_admission.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/raster_admission_2026-11-06.json"
         }
       ],
-      "remaining": "Accepted app/clipboard ownership is registered; cold-layer removal preserves useful Undo; inactive onion previews release textures and old source selections. Dynamic global history/tile/derived/GPU accounting and admission/dense-project acceptance remain incomplete before cap expansion.",
+      "remaining": "Registered live/history/clipboard authorities and decoded cache now enforce320MiB admission with atomic refusal, while the64MiB idle target stays soft. Inventory bounded history tiles/derived/GPU/transient buffers and old+incoming contexts; measure dense unique-art staging/seek/render before any cel-cap expansion and broader acceptance.",
       "external_dependencies": []
     },
     {
@@ -2333,12 +2349,12 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "All accepted drawing representations and clipboard now register conservative owned bytes. Address history/derived/GPU accounting and dense-project admission before raising caps."
+      "action": "Registered owned+decoded admission now passes actual refusal and32noisy-art compatibility. Audit remaining bounded tiles/derived/transient resources and measure dense unique art before raising the unchanged32cel cap."
     },
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "Whole-layer removal now charges retained cold pixels and preserves prior brush Undo. Address dynamic global history/tile/active accounting and dense-project admission/acceptance."
+      "action": "Registered owned+decoded admission now passes actual refusal and32noisy-art compatibility. Audit remaining bounded tiles/derived/transient resources and measure dense unique art before raising the unchanged32cel cap."
     },
     {
       "requirement": "STORE-04",

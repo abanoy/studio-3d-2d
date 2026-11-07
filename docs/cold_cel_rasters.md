@@ -1,15 +1,15 @@
 # Cel raster ownership and automatic cold loading
 
-Studio automatically requests adaptive raster loading when the project's full-HD
-cel reservation exceeds64MiB. Eight cel records remain eager; nine exceed the
-threshold. Root and direct editable child scenes count together. Aliases count
+Studio automatically requests adaptive raster loading when the project's native
+cel reservation exceeds64MiB. At1080p, eight records remain eager and nine exceed
+the threshold; lower native sizes reserve their actual decoded pixels. Root and direct editable child scenes count together. Aliases count
 conservatively, so reservation is not unique physical memory. Small projects keep
 the eager path to avoid the measured distinct-frame seek cost.
 
 In adaptive mode, compressible drawings retain immutable lossless snapshots until
-pixels are needed. Incompressible drawings retain the existing independent eager
-Image/COW backing. The 1920×1080 canvas, saved schemas/PNGs and32-cel limit remain
-unchanged. This policy applies to ordinary directory/HAS Open and recovery. It
+pixels are needed. Incompressible drawings retain independent owned Image/COW backing. Accepted
+eager app loads also register their owners. Native1080p/720p/540p canvases use the
+same bounded pixel maxima, saved schemas/PNGs and unchanged32-cel limit. This policy applies to ordinary directory/HAS Open and recovery. It
 also covers newly authored app cels through [document ownership](new_drawing_ownership.md); edited owned cels can be cooled during idle time as described below.
 
 ## Integrity and ownership
@@ -186,3 +186,6 @@ New preserves context; successful New clears it. Original manifest stays unchang
 
 These are scoped tracked allocations, not peak/RSS/GPU, noisy-project or physical
 hardware acceptance. See [the idle-release receipt](benchmarks/cel_raster_budget_2026-11-06.json).
+
+Registered authorities and retained decoded cache now also use
+[owned-raster admission](raster_admission.md); the64MiB idle target stays soft.

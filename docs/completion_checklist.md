@@ -14,8 +14,8 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 
 ## Next required work
 
-- **P1 · MEM-02** — All accepted drawing representations and clipboard now register conservative owned bytes. Address history/derived/GPU accounting and dense-project admission before raising caps.
-- **P1 · MEM-01** — Whole-layer removal now charges retained cold pixels and preserves prior brush Undo. Address dynamic global history/tile/active accounting and dense-project admission/acceptance.
+- **P1 · MEM-02** — Registered owned+decoded admission now passes actual refusal and32noisy-art compatibility. Audit remaining bounded tiles/derived/transient resources and measure dense unique art before raising the unchanged32cel cap.
+- **P1 · MEM-01** — Registered owned+decoded admission now passes actual refusal and32noisy-art compatibility. Audit remaining bounded tiles/derived/transient resources and measure dense unique art before raising the unchanged32cel cap.
 - **P1 · STORE-04** — Supporting POSIX sync and rollback payload validity are verified in scoped fixtures. Retain explicit native Windows and physical power-loss gates; audit the next independently actionable requirement.
 - **P2 · MOTION-03** — Bounded saved walking now passes staged preview/correction, Undo, recovery, packed cold Open and exact render checks. Extend beyond straight flat routes and obtain native-rig/artist acceptance; optional multi-view inference remains separate.
 - **P2 · IMPORT-03** — Define per-profile native fidelity acceptance and use approved fixtures when available; report unsupported capabilities honestly.

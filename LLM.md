@@ -2739,3 +2739,36 @@ corrected; no test assertion or unsupported feature acceptance weakened.
 Next independent work: bounded drawing-resource admission before any cel-cap
 expansion, preserving current32cel workflows and actual old-project safety.
 Whole continuous canonical goal remains active.
+
+
+2026-11-06 — Bound registered raster authority and decoded-cache admission
+
+Baseline direct ownerAPI accepted48independentCOWfullHDauthorities/398,131,200
+logical bytes (not48live appcels/RSS). Shared document cache now enforces320MiB
+registered hot/cold+retained decoded admission. Unique immutable snapshots counted
+once, hot owners conservatively peridentity; dead weakrefs releasecapacity. New
+owner/adaptive decode/cold edit hydration check before authority mutation, evict
+only disposable decodedcache first. Read-only materialization still works atbound
+without over-limit caching. Cooling only reducesauthoritycost.64MiB idletargetsoft,
+two-frame decodedbudget and32livecelcap unchanged. No globalRSS/GPU/tiles/transient
+or old+incoming-context bound claimed. Current32fullHD+clipboard remains supported.
+
+17newfocused checks/288rasterdomain total pass; default admission40accepted/8refused
+with331,776,000logical retainedbytes. Private107 actualapp13 checks: Create failure
+restores exposure/history/revision withoutorphan, failedCopy keepsoldclipboard,
+clearClipboardfrees capacity, UndoRedo/packedSaveOpen exact, actualbrush hydration
+refusal no partialstroke/pixelchange and finalreadworksatbound. Full32noisy art
+63checks+16PNGcompat pass with actualSIGKILL/cold startup, H264AAC, source/manual
+HAS bytes exact and writer cache unavailable. Private108 coldedit writer35/reader12
+and288domains pass (checkpoint not actual abruptstartup in that particular suite).
+Native540 regression25metadata+32writer+6reader passes rational60frames24000/1001,
+exact PNG/GPU/nested/cold/audio. All functional source frozen during media suites.
+Native Windows/hardware/globaldenseacceptance still unrun. Newtestparse annotations
+corrected; exploratoryfailedlogs retained, no assertions weakened.
+
+Raw raster-admission-before/unit*/app*/domain/verified/cold-regression/native-
+regression under /workspace/has-handoff-audit; curated
+raster_admission_2026-11-06.json and docs/raster_admission.md. Current rasterguide
+updated for native dimensions and registered eager/raw ownership. MEM-01/02 remain
+partial/open; next bounded resource inventory and400unique-art measurement before
+any cap expansion. Whole continuous goal active; do not repeat owneradmission.

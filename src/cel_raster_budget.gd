@@ -24,7 +24,7 @@ func sample() -> Dictionary:
 	for owner in owners:
 		if owner.is_pinned():hot+=owner.decoded_bytes();pinned+=1
 		elif owner._cold!=null and not unique.has(owner._cold.get_instance_id()):unique[owner._cold.get_instance_id()]=true;cold+=owner.retained_bytes()
-	return {"owners":owners.size(),"hot_owners":pinned,"hot_bytes":hot,"cold_payload_bytes":cold,"decoded_cache_bytes":cache.retained_bytes if cache is Cache else 0,"target_bytes":target}
+	return {"owner_limit_bytes":cache.owner_limit if cache is Cache else 0,"accounted_bytes":hot+cold+(cache.retained_bytes if cache is Cache else 0),"owners":owners.size(),"hot_owners":pinned,"hot_bytes":hot,"cold_payload_bytes":cold,"decoded_cache_bytes":cache.retained_bytes if cache is Cache else 0,"target_bytes":target}
 func step(protected: Array=[],idle:=true) -> Dictionary:
 	var before:=sample()
 	if not idle:return {"released":false,"reason":"busy","before":before,"after":before}
