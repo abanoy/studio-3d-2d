@@ -1421,8 +1421,8 @@
       ],
       "title": "Project content versus personal preferences",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Project content/settings reproduce the scene while personal input/UI preferences stay personal; loading introduces no tentative disruptive settings prompt.",
       "evidence": [
         {
@@ -1444,9 +1444,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/settings_matrix_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/settings_matrix_2026-11-07.json",
+          "commit": "56bb6ea7c8bce5d43a644f2ca84c23953491d364",
+          "scope": "Complete current STORE03 software boundary: two contrasting saved content profiles crossed with two separately loaded persistent personal profiles and explicitly seeded session controls; New/packed/directory/recovery/refused Open, no settings prompt, exact pixels/PCM, unchanged preference/source/manual bytes and actual rational720p/24fps540pH264AAC delivery. Session choices are not claimed persisted at restart; platform/input/native fidelity remain separate."
         }
       ],
-      "remaining": "Complete current project/personal software matrix passes two contrasting project profiles crossed with two independent persisted preference profiles and explicitly seeded session controls. New/packed/directory/recovery/refused Open, exact pixels/PCM and actual delivery media preserve the boundary without a new settings prompt. Formal closure will reference the verified evidence commit; future ownership/load-prompt choices remain tentative.",
+      "remaining": "No remaining work in the current project-content versus personal UI/input software boundary. Existing scene settings and content load from the project while separate persisted preferences and active session choices remain personal. No tentative alternate settings-load prompt or new preference/theme policy was introduced. Physical platform/input/native fidelity acceptance remains separately tracked.",
       "external_dependencies": []
     },
     {
