@@ -1,0 +1,150 @@
+{
+  "reports": {
+    "writer": {
+      "checks": 28,
+      "contacts": 5,
+      "displacement": 1.50635015964508,
+      "failures": 0,
+      "local": {
+        "bytes": 200888,
+        "frames": 48,
+        "max_frame_gap_ms": 44.851,
+        "max_sample_ms": 4.101
+      },
+      "local_contacts": 10,
+      "world": {
+        "bytes": 238963,
+        "frames": 45,
+        "max_frame_gap_ms": 47.359,
+        "max_sample_ms": 2.287
+      }
+    },
+    "reader": {
+      "checks": 4,
+      "failures": 0
+    }
+  },
+  "video": {
+    "index": 0,
+    "codec_name": "h264",
+    "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+    "profile": "High",
+    "codec_type": "video",
+    "codec_tag_string": "avc1",
+    "codec_tag": "0x31637661",
+    "width": 1920,
+    "height": 1080,
+    "coded_width": 1920,
+    "coded_height": 1080,
+    "closed_captions": 0,
+    "film_grain": 0,
+    "has_b_frames": 2,
+    "pix_fmt": "yuv420p",
+    "level": 40,
+    "color_range": "tv",
+    "color_transfer": "iec61966-2-1",
+    "color_primaries": "bt709",
+    "chroma_location": "left",
+    "field_order": "progressive",
+    "refs": 1,
+    "is_avc": "true",
+    "nal_length_size": "4",
+    "id": "0x1",
+    "r_frame_rate": "24/1",
+    "avg_frame_rate": "24/1",
+    "time_base": "1/12288",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 24576,
+    "duration": "2.000000",
+    "bit_rate": "228336",
+    "bits_per_raw_sample": "8",
+    "nb_frames": "48",
+    "extradata_size": 50,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0,
+      "multilayer": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "VideoHandler",
+      "vendor_id": "[0][0][0][0]",
+      "encoder": "Lavc61.19.101 libx264"
+    }
+  },
+  "audio_onset_sample": 48001,
+  "manual_has_unchanged": true,
+  "originals_and_writer_cache_unavailable_for_cold_open": true,
+  "functional_source_unchanged": true,
+  "private_receipts": [],
+  "isolated_display": ":109",
+  "scope": "All six mechanical scenarioD software steps on an original included humanoid and generated props; final Windows target/native fidelity/physical input remain separate.",
+  "date": "2026-11-07 UTC",
+  "base_commit": "aacb2ed",
+  "source_sha256": {
+    "src/app.gd": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04",
+    "src/model.gd": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b",
+    "src/physics_editor.gd": "67510cb793d6c8c1b1701f1b351ff27e939b155f1a827040cdc68efa0d6148ab",
+    "src/physics_rig.gd": "2132c60b1a808a3f68de303a14bb910b007556912e10511dd80d26f2ddea93ba",
+    "src/physics_prop.gd": "7a9a0cf7e51e5b353fce3dcfe784ebab2c70b1b61dc989b6060159809c9d0bec",
+    "src/physics_recording.gd": "d4a5ff4c8fd55eb9f9abfe01cd08907a87d24030b1a166ccddd9c4bff396f51c",
+    "src/world_runtime.gd": "da21c9ba9c5e6b3add0fa9bc6417e760a9f2a3edc25118a2441024be74df4c9f",
+    "tests/scenario_d_smoke.gd": "3f563fd4c51e413cbc0f4b3f8ab91f8be463f17d9c8f534deab7b0264703961c",
+    "tests/verify_scenario_d.py": "3cd9f97a92ad9f66476417299f79a5394e3c1bfae2f030bf09165401b52626b2"
+  },
+  "raw_folder": "/workspace/has-handoff-audit/scenario-d-third",
+  "recording_metrics": {
+    "local": {
+      "bytes": 200888,
+      "frames": 48,
+      "max_frame_gap_ms": 44.851,
+      "max_sample_ms": 4.101
+    },
+    "world_metrics": {
+      "bytes": 238963,
+      "frames": 45,
+      "max_frame_gap_ms": 47.359,
+      "max_sample_ms": 2.287
+    },
+    "local_contacts": 10,
+    "contacts": 5,
+    "horizontal_displacement": 1.5063501596450806,
+    "bytes_note": "Recorder budget estimate; actual packed project.json is230715bytes."
+  },
+  "steps": [
+    "Compatible original17bone humanoid imports with Physics ON; actual viewport grab/motion/release works.",
+    "Physics OFF freezes actual fallen pose; real context menu Reset restores imported neutral pose.",
+    "Unrecorded manipulation changes no authored data, keys or Undo history.",
+    "World captures humanoid plus three props with actual contacts; arbitrary seeks reproduce saved motion.",
+    "Local captures49humanoid samples after actual contacts while unselected prop authoring remains unchanged.",
+    "Ordinary two-second takes process application frames, remain under1MiBmetadata and preserve independent drawing/audio/camera."
+  ],
+  "sample_oracle": "Sorted full-precision sample JSON text is stored as strings and compared byte for byte for all49frames and four model IDs. This avoids an extra JSON numeric parse cycle; no float/pixel tolerance was increased.",
+  "failed_and_corrected": [
+    "First Local assertion retained an actor reference from before structural prop append rebuilt the world. Re-querying the stable actor ID makes Local/Redo checks observe actual current data.",
+    "Initial cold sample test normalized sampled numbers once but loaded oracle numbers after two JSON parses. Diagnostic found1.3234889800848443e-23difference in a near-zero thigh component; matching parse cycles gives exact equality, and Python-comparison diagnostic had zero scalar differences. Oracle now stores exact full-precision strings; fresh reverse sample comparison passes byte for byte."
+  ],
+  "unrun": [
+    "Final Windows10/11 execution, physical input/device/artist comfort.",
+    "Native ecosystem ragdoll/joint/cloth fidelity; fixture is the original included humanoid, not Source/MMD/VRM acceptance.",
+    "Long/dense-take performance beyond the measured two-second bounded case."
+  ],
+  "packed_manifest_bytes": 230715
+}

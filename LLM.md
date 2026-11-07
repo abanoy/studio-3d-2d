@@ -3026,3 +3026,38 @@ acceptance. Scoresremain48/54implementation and2/62formalclosures. Nextconcrete
 independentwork: complete compatible-ragdoll/props freeze/reset/unrecorded/Local/
 World capture scenarioD with original included humanoid assets, thenremaining
 requirednative/rig/walking/durability andresourcegaps. Wholegoalactive.
+
+## 2026-11-07 UTC — complete mechanical physics scenarioD cloud proof
+
+AddedfullDworkflowwithoriginalincluded17bonePracticefigure/map andgeneratedthree
+solidprops.28writer+4freshreader pass. CompatibledefaultPhysicsON/visibleSimple
+Record, actualviewportgrab/move/release, unrecordedsimulationnoauthoreddata/keys/
+Undochanges, PhysicsOFFfreezesfallenpose, realpickedcontextmenuResetrestoresneutral
+pose. ActualLocal10contacts whileonlyhumanoid49samplesrecorded, peerpropsauthored
+rowsunchanged. ActualWorld5contacts/all3props49samples, maxhorizontaldisplacement
+1.50635015964508m. SingleUndo/Redo, exactend48, simulationoff, arbitraryseek replay,
+independentRGBA/PCM/camera/source/manualHAS preservation pass. Localbudgetestimate200888B/48app
+frames/maxsample4.101ms;Worldbudgetestimate238963B(actualmanifest230715B)/45appframes/maxsample2.287ms/maxframegap47.359ms.
+Observedcloudshorttakeonly; notuniversalhardwarelatencyorlongcaptureproof.
+
+PackedfreshreaderoriginalcopiedGLBs/audio/writercacheoffline; includedrepository
+originalshashcheckedandnevermoved. All49root/bone state stringsforeachfourmodels
+comparebyteforbyteinreverse. Exactframe24GPU/independentpaint/PCM pass. Actual
+48frame1080p24H264AAC2secondmovie inputequalsreopenedpreview, onsetsample48001.
+NoNativeecosystemfixtures; originalhumanoidmechanicsdo notestablishPMX/VRM/Source
+joint/clothfidelity, targetWindows/physicaldevice/artistcomfortstillunrun.
+
+Rawfirstfailuresretained. LocalassertionreadoldActorRef frombeforestructuralprops
+appendrebuiltworld; replacedwithstable-IDlookup, retainedactualcollision/peerscope
+assertions. Initialcoldnumericoracle comparedoneJSON-normalizationcycleagainsttwo.
+Freshdiagnosticsfound1.3234889800848443e-23differenceinnear-zerothighcomponent;
+equalparsecycles giveexactequality, Pythonserializedsamplecomparisonzero scalar
+ differences. Oracle nowstores sortedfullprecisionJSONstrings andcomparesbytefor
+byte; nofloat/pixeltoleranceraised. Noappcodebehavior changedto makechecks pass.
+
+Curatedbenchmarks/scenario_d_2026-11-07.json, docs/scenario_d.md, per-itemaudit and
+checklist scopedremainingwork updated. SoftwareC/D cases independentlycomplete;
+finalWindowsgatesremainblocked. Scoresunchanged48/54implementation/2of62formal
+closures. Wholegoalactive; next inspectconcretegeneralpathlocomotionlimitation
+(turns/corners/slopes/groupedrigs) and implementindependentrequiredimprovement
+using originalrigfixture, retainingnative/Windows/device acceptance gates.

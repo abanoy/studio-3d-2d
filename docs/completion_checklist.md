@@ -15,7 +15,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 ## Next required work
 
 - **P1 · ACCEPT-C** — Complete seven-step cloud software scenario now passes31checks and cold/media/source preservation. Retain final Windows target gate; proceed to independent physics scenarioD and remaining required engineering.
-- **P1 · ACCEPT-D** — Run the complete compatible-ragdoll/props, freeze/reset, unrecorded simulation and Local/World capture software scenario. Keep native fidelity and final Windows acceptance separately scoped.
+- **P1 · ACCEPT-D** — All six cloud mechanical steps pass32checks, actual Local/World contacts and exact cold replay/media. Retain final Windows gate; continue concrete remaining native/rig/general-walking/durability engineering.
 - **P1 · REC-01** — Bounded implementation and400drawing/background checkpoint software evidence are recorded. Remaining resource work is long-session retention/cleanup/quota and manual Save/Open responsiveness; keep full acceptance closure separate from implementation status.
 - **P1 · MEM-02** — Bounded implementation and400drawing/background checkpoint software evidence are recorded. Remaining resource work is long-session retention/cleanup/quota and manual Save/Open responsiveness; keep full acceptance closure separate from implementation status.
 - **P1 · MEM-01** — Bounded implementation and400drawing/background checkpoint software evidence are recorded. Remaining resource work is long-session retention/cleanup/quota and manual Save/Open responsiveness; keep full acceptance closure separate from implementation status.

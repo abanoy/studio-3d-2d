@@ -13176,3 +13176,15 @@ preservation pass. Correctedtestlifetime/visibility distinction andsettledmode
 layoutbeforecamerabuttonclick; noappbehavior/tolerancechanges. See scenario_c.md
 andbenchmarks/scenario_c_2026-11-07.json. FinalWindowsgate remains; nativefidelity
 is separate. Scoreunchanged. Next: fulloriginal-ragdoll/props mechanicalscenarioD.
+
+### 2026-11-07 UTC — mechanical physics scenarioD together
+
+Original17bonehumanoid/map+threeprops pass28app/4coldreader: defaultPhysicsON,
+actualgrab/release, unrecordedno-keys, freeze/contextReset, Local10contactswithout
+peerkeys, World5contactswithallpropscaptured,49exactreverse root/bonestates, saved
+GPU/paint/PCM and48frameH264AAC/sample48001media/source/manualpreservation. World
+budgetestimate238963B(actualmanifest230715B)/45appframes/maxsample2.287ms oncloud; notlongtake/devicepromise.
+FixedharnessstaleActorref andunequalJSONparse-countoracleusingstable-IDlookup
+andexactfullprecisiontextcomparison; noappbehavior/tolerancechanges. Target
+Windows/nativefidelity/physicalcomfortremainseparate. See scenario_d.md/receipt.
+Nextconcretework: inspect/extendgeneralpathlocomotionbeyondstraightflatroutes.
