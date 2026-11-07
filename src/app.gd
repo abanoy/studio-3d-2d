@@ -2175,7 +2175,7 @@ func show_notices() -> void:
 	var dialog := AcceptDialog.new()
 	dialog.title = "Credits / open source notices"
 	dialog.exclusive=false
-	dialog.dialog_text = "Godot Engine 4.6 — MIT\nCopyright (c) 2014-present Godot Engine contributors.\nCopyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.\nhttps://godotengine.org/license/\n\nFFmpeg is invoked as your separately installed executable.\nThis installed build enables GPL/version3; no binary is bundled.\nhttps://ffmpeg.org/legal.html\n\nRoom fixture: original procedural geometry; no downloaded models.\nApplication license: owner decision pending.\nFull records: THIRD_PARTY_NOTICES.md and docs/licenses.md."
+	dialog.dialog_text = "Godot Engine 4.6 — MIT\nCopyright (c) 2014-present Godot Engine contributors.\nCopyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.\nhttps://godotengine.org/license/\n\nFFmpeg is invoked as your separately installed executable.\nLicense and codec options depend on the installed build; no binary is bundled.\nhttps://ffmpeg.org/legal.html\n\nRoom fixture: original procedural geometry. Imported asset rights must be verified.\nApplication license: owner decision pending.\nFull records: THIRD_PARTY_NOTICES.md and docs/licenses.md."
 	add_child(dialog)
 	dialog.confirmed.connect(dialog.queue_free)
 	dialog.popup_centered(Vector2i(720, 430))

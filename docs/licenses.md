@@ -1,9 +1,11 @@
 # Component and asset records
 
 Application license/name remain the owner's decision. No installer or engine/encoder
-binary is distributed in this source component. No model or texture was downloaded.
+binary is distributed in this source component. Owner-supplied SFM test archives
+and extracted models/textures remain private outside Git; no third-party art is
+redistributed by this source tree.
 
-| Component | Version actually used | License/source | Use |
+| Component | Earlier Windows validation version | License/source | Use |
 |---|---|---|---|
 | Godot Engine | 4.6.stable.official.89cea1439 | MIT, https://godotengine.org/license/ | Installed external runtime, rendering/import/UI/GDScript |
 | FFmpeg/ffprobe | N-118448-g43be8d0728-20250208 | GPL/version3-enabled installed build; https://ffmpeg.org/legal.html | External H.264/AAC encoder, metadata and decode tests |
@@ -16,7 +18,8 @@ own third-party components/notices; obtain and preserve the full matching engine
 notices when packaging an executable. Linking to Godot's license is accepted by its
 own guidance, but does not settle every component's redistribution obligation.
 
-The FFmpeg configure banner reports --enable-gpl and --enable-version3. We invoke
+The earlier Windows FFmpeg banner reported --enable-gpl and --enable-version3.
+The cloud build below enables GPL but does not report --enable-version3. We invoke
 that local executable through process arguments, do not copy/link its libraries into
 the app and do not assign it an LGPL-only description. Before distributing binaries,
 choose a reviewed distribution, retain exact source/build notices and evaluate codec
@@ -56,3 +59,22 @@ every transitive component has that license. Review their included notices/sourc
 before publicly packaging this optional dependency. Blender remains external GPL.
 The owner-requested local progress copy includes this private dependency cache;
 no public package, installer or third-party creative assets are being published.
+
+## Current cloud validation (2026-11-07 UTC)
+
+The current cloud tools are Godot4.6.stable.official.89cea1439, Python3.12.14,
+FFmpeg/ffprobe7.1.5-0+deb13u1 (`--enable-gpl`, `--enable-libx264`; no
+`--enable-version3` configure flag), and external Blender4.3.2. They are separate
+installed runtimes; their binaries and dependencies are not bundled in Git.
+The earlier Windows records above remain historical evidence for those builds.
+The About dialog describes external tool licenses as build-dependent rather
+than assigning the older Windows codec configuration to every installation.
+
+Pinned SourceIO's native metadata/texture decoder was tested in a separate
+Debian GLIBC2.43/Python3.14.10/NumPy2.4.6 container, with read-only owner SFM files.
+This does not establish full Blender/native model conversion. The metadata image
+contains no creative assets, and no image or third-party code is published here.
+SourceIO notices remain with its private cache. The supplied archives' own rights
+and attribution documents are retained unchanged; receipt of an archive grants
+no assumed redistribution rights. The actual82-model corpus and dependency
+checks are recorded in `docs/sfm_uploaded_samples.md`.
