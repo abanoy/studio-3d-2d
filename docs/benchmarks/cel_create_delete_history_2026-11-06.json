@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-06",
+  "scope": "Affected-cel create/delete history accounting and retained references, not RAM/RSS/GPU or whole-goal acceptance.",
+  "baseline": {
+    "commit": "62031a3",
+    "checks": 2,
+    "failures": 1,
+    "command_bytes": 522547200,
+    "failure": "Copy at31cels evicts the preceding real brush Undo.",
+    "raw": "/workspace/has-handoff-audit/cel-create-delete-before/run.log"
+  },
+  "fixed": {
+    "reports": {
+      "unit": {
+        "checks": 27,
+        "failures": 0
+      },
+      "patch-unit": {
+        "checks": 10,
+        "failures": 0
+      },
+      "patch-history": {
+        "checks": 18,
+        "cut_bytes": 8295628,
+        "failures": 0,
+        "paste_bytes": 8295632,
+        "split_bytes": 16590332
+      },
+      "create-delete": {
+        "blank_bytes": 8295628,
+        "checks": 24,
+        "copy_bytes": 16590332,
+        "delete_bytes": 8295628,
+        "failures": 0,
+        "owned": false
+      },
+      "create-delete-owned": {
+        "blank_bytes": 8295632,
+        "checks": 24,
+        "copy_bytes": 16590332,
+        "delete_bytes": 8295628,
+        "failures": 0,
+        "owned": true
+      },
+      "live-history": {
+        "checks": 43,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/cel-create-delete-final/live-history/render_1794014440_2628270_0/movie.mp4",
+        "project": "/workspace/has-handoff-audit/cel-create-delete-final/live-history/Drawing Undo.has"
+      },
+      "live-reader": {
+        "checks": 3,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 47,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/cel-create-delete-final/render_1794014459_8936742_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "22388",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "manual_has_unchanged": true,
+    "writer_cache_unavailable_for_cold_open": true,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "folder": "/workspace/has-handoff-audit/cel-create-delete-final"
+  },
+  "source_sha256": {
+    "src/app.gd": "4fadf59bc6fde66e70bf307533fd0a486a3559b9f82aebb5a1740980d02b658b",
+    "src/cel_patch.gd": "60b75f05e162f796041e8083d9c756eb8ade3f26cac9f2e12b61d38fe41b51bd",
+    "tests/cel_create_delete_history_smoke.gd": "3727a81116e280b29bcf74ccac2fd2441cb20064b9fa9c1d12569229d809d4ab",
+    "tests/verify_cel_clipboard.py": "12d0e5518a01561bb594e31fc1982ffbbbc3f52c1c65cca7242af6061ca3bb31"
+  },
+  "raw": "/workspace/has-handoff-audit/cel-create-delete-final/verification.json",
+  "remaining": [
+    "Whole-layer history accounting and globally retained active/history storage.",
+    "Newly authored eager/raw images remain outside automatic registered-owner target.",
+    "Larger dense-project and physical/native acceptance before cap increases."
+  ]
+}

@@ -50,7 +50,30 @@ Final evidence: `/workspace/has-handoff-audit/cel-patch-live/verification.json`.
 The curated measurement is in
 [cel_patch_history_2026-11-06.json](benchmarks/cel_patch_history_2026-11-06.json).
 
-Other cel-creation/deletion and whole-layer history paths still use their earlier
-conservative snapshots. Unique-art cold/lazy loading is also separate work.
+Whole-layer history paths still use their earlier conservative snapshots.
+Automatic cold loading and idle release are described in cold_cel_rasters.md.
 MEM-01 remains partial in the completion checklist; these changes do not complete
 the larger-project memory requirements or justify raising prototype limits.
+
+
+## Create, duplicate and delete
+
+Create/Copy Cel and Delete Cel use the same stable affected-cel patches. Copy
+inside a held drawing keeps its shortened exposure and the inserted independent
+cel; blank creation in a gap keeps only its new cel; deletion keeps only the
+removed cel. Thirty unrelated peers are no longer retained by these commands.
+The legacy transient `cels` command remains readable for compatibility.
+
+A real31-cel fixture reproduced a522,547,200-byte copy history charge that discarded
+the preceding brush Undo. The fixed copy charges16,590,332 bytes, deletion8,295,628
+and gap creation8,295,632. These conservative history charges are not process RAM.
+The expanded verifier passes202 checks, including24new checks for each eager and
+owned-cel variant. Earlier stroke Undo remains reachable, all pixels and exposure
+boundaries are exact, peers retain identity, stale/wrong-sequence targets refuse,
+child round trips work, and physics generation stays unchanged during Undo/Redo.
+The existing live physics, packed cold reopen and H264 movie tests also pass.
+The32-cel/64MiB/128-command limits and saved project formats are unchanged.
+
+Evidence: [create/delete receipt](benchmarks/cel_create_delete_history_2026-11-06.json).
+Whole-layer and global storage accounting remain open; no cap expansion or full
+MEM-01/MEM-02 closure is claimed.

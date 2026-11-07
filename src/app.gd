@@ -4,6 +4,7 @@ signal startup_recovery_finished(result: Dictionary)
 const Timeline = preload("res://src/timeline.gd")
 const Drawing = preload("res://src/drawing.gd")
 const PixelHistory=preload("res://src/cel_pixel_history.gd")
+const CelPatch=preload("res://src/cel_patch.gd")
 const FillEditor=preload("res://src/fill_editor.gd")
 const OnionEditor=preload("res://src/onion_editor.gd")
 const LayerEditor=preload("res://src/layer_editor.gd")
@@ -1366,7 +1367,7 @@ func create_cel(duplicate: bool,finish_current: bool=true) -> void:
 		image=pixels.image.duplicate()
 	else:image=Drawing.blank(video.width,video.height)
 	Drawing.insert(layer, frame, video.duration_frames, image)
-	push_history({"type": "cels", "layer": layer, "before": before, "after": layer.cels.duplicate(true)})
+	push_history(CelPatch.create(str(layer.id),sequence_editor.active_owner,before,layer.cels))
 	changed()
 	refresh_layer()
 
@@ -1385,7 +1386,7 @@ func delete_cel() -> void:
 	if cel.is_empty(): return
 	var before: Array = layer.cels.duplicate(true)
 	layer.cels.erase(cel)
-	push_history({"type": "cels", "layer": layer, "before": before, "after": layer.cels.duplicate(true)})
+	push_history(CelPatch.create(str(layer.id),sequence_editor.active_owner,before,layer.cels))
 	changed()
 
 func key_dialog() -> void:

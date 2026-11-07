@@ -12389,3 +12389,27 @@ MEM-01/02 remain partial/open. Next structural create/delete/layer history and
 global/dense acceptance, before cap increases. Whole goal remains active.
 
 Nested adaptive/mask regression also passes224checks: actual child editing, packed/linked/active-child saves, shared instances, masks, procedural rig, abrupt exit and ordinary startup. Manual HAS files unchanged; no native-fidelity claim. Receipt cel-raster-budget-nested-regression/verification.json.
+
+
+2026-11-06 — Affected-cel Create/Copy/Delete history
+
+Reproduced near-limit Copy Cel on actual31cel layer:522,547,200byte history charge
+evicted preceding real brush Undo (baseline probe1pass/1fail). New/Copy and Delete
+now use existing stable cel patches instead of whole-layer cel arrays. Copied hold
+keeps changed original/new independent cel; gap blank keeps inserted cel only;
+delete keeps removed cel only. Legacy cels command application remains compatible.
+No saved schema, source artwork,32cel cap or64MiB/128entry policy changes.
+
+Expanded permanent clipboard/history suite202checks pass, including24new eager
+and24new owned-cel checks. Copy16,590,332bytes, delete8,295,628, blank8,295,632.
+These are retained-reference/history charges, not process/RSS/GPU measurements.
+Earlier actual stroke Undo stays reachable; exact RGBA/exposure/independence,30peer
+identities, blank gap, unchanged global cap, stale/wrong-owner atomic refusal and
+actual child roundtrip pass. Physics checks isolate Undo/Redo from deliberate
+seeks. Existing live-ragdoll, packed HAS/fresh-cache Open and1080p24 H264 tests pass.
+Private107/Dummy only. Raw baseline cel-create-delete-before; final
+/workspace/has-handoff-audit/cel-create-delete-final/verification.json. Curated
+docs/benchmarks/cel_create_delete_history_2026-11-06.json. No native/hardware claim.
+
+MEM-01/02 stay partial/open. Whole-layer/global accounting, newly authored eager/raw
+storage and dense acceptance still actionable before raising limits. Goal active.

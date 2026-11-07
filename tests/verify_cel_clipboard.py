@@ -25,6 +25,9 @@ def main():
     run('tests/cel_clipboard_unit.gd','unit','CEL_CLIPBOARD_UNIT ',headless=True)
     run('tests/cel_patch_unit.gd','patch-unit','CEL_PATCH_UNIT ',headless=True)
     run('tests/cel_patch_history_smoke.gd','patch-history','CEL_PATCH_HISTORY ')
+    for label,extra in [('create-delete',[]),('create-delete-owned',['--owned'])]:
+        target=folder/label;target.mkdir()
+        run('tests/cel_create_delete_history_smoke.gd',label,'CREATE_DELETE_HISTORY ',extra,argument_folder=target)
     live=folder/'live-history';live.mkdir()
     run('tests/drawing_history_smoke.gd','live-history','DRAWING_HISTORY_SMOKE ',['--patch'],argument_folder=live)
     run('tests/drawing_history_smoke.gd','live-reader','DRAWING_HISTORY_READ ',['--read'],argument_folder=live)

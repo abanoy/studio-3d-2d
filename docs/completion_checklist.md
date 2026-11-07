@@ -15,8 +15,8 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 ## Next required work
 
 - **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
-- **P1 · MEM-02** — Bounded idle edited-owner release is verified. Address remaining newly authored eager/raw/global memory accounting and cel creation/deletion/layer history snapshots, then measure dense-project acceptance before raising caps.
-- **P1 · MEM-01** — Clipboard deltas are implemented. Audit remaining cel-creation/deletion/layer history after the larger OUTPUT-02/MEM-02 gaps; do not re-polish the completed clipboard change.
+- **P1 · MEM-02** — Idle edited-owner release and affected-cel create/delete are verified. Address remaining newly authored eager/raw/global memory accounting and whole-layer history, then dense-project acceptance before raising caps.
+- **P1 · MEM-01** — Affected-cel structural create/delete history is verified. Audit remaining whole-layer retention/global memory budgets and dense-project acceptance; do not re-polish completed clipboard/create/delete patches.
 - **P1 · STORE-04** — Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit.
 - **P2 · COURSE-01** — Organize Basic/Advanced sections and supported topic entry points; retain versioned progress and unresolved Skip policy.
 - **P2 · MOTION-03** — Implement a reversible locomotion prototype on authored paths before optional multi-view inference.

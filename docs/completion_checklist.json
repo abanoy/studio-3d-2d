@@ -817,9 +817,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_raster_budget_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_create_delete_history_2026-11-06.json"
         }
       ],
-      "remaining": "Clipboard deltas, owner-addressed pixel history and automatic idle cooling are verified in scoped fixtures. Remaining cel creation/deletion/layer snapshot accounting, global active/history memory budgets and dense-project acceptance remain; do not treat scoped history tests as full closure.",
+      "remaining": "Cut/Paste/Split and Create/Copy/Delete use affected-cel patches; owner-addressed pixels and idle cooling are verified in scoped fixtures. Whole-layer history retention/accounting, global active/history memory budgets and dense-project acceptance remain; do not treat scoped tests as full closure.",
       "external_dependencies": []
     },
     {
@@ -931,9 +935,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_raster_budget_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_create_delete_history_2026-11-06.json"
         }
       ],
-      "remaining": "Automatic cold loading and a soft64MiB registered owned-hot/decoded-cache idle target are verified with exact edited-pixel Undo/Redo. Global accounting/admission for newly authored eager cels, raw fallback, history tiles and dense projects remains incomplete before cap expansion; preserve measured latency and hardware/native gates.",
+      "remaining": "Automatic cold loading and a soft64MiB registered owned-hot/decoded-cache idle target are verified with exact edited-pixel Undo/Redo. Global accounting/admission for newly authored eager cels, raw fallback, history tiles/whole-layer retention and dense projects remains incomplete before cap expansion; preserve measured latency and hardware/native gates.",
       "external_dependencies": []
     },
     {
@@ -2100,12 +2108,12 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Bounded idle edited-owner release is verified. Address remaining newly authored eager/raw/global memory accounting and cel creation/deletion/layer history snapshots, then measure dense-project acceptance before raising caps."
+      "action": "Idle edited-owner release and affected-cel create/delete are verified. Address remaining newly authored eager/raw/global memory accounting and whole-layer history, then dense-project acceptance before raising caps."
     },
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "Clipboard deltas are implemented. Audit remaining cel-creation/deletion/layer history after the larger OUTPUT-02/MEM-02 gaps; do not re-polish the completed clipboard change."
+      "action": "Affected-cel structural create/delete history is verified. Audit remaining whole-layer retention/global memory budgets and dense-project acceptance; do not re-polish completed clipboard/create/delete patches."
     },
     {
       "requirement": "STORE-04",
