@@ -2290,3 +2290,40 @@ docs/benchmarks/path_locomotion_2026-11-06.json. MOTION-03 partial/open. Next st
 saved intent, explicit editor preview/enable/disable/correction and actual
 Undo/HAS/cold-open/recovery/render, then broader native/terrain/artist gates.
 Whole goal remains active.
+
+
+2026-11-06 — Optional saved walking on authored paths
+
+Connected the bounded evaluator to strict walking intent / motion-assist version4
+on Model9, shared preview/final sampling, private detached-candidate preflight,
+and incoming project timing. Movement path now has explicit enable/off, staged
+frame preview/Cancel and Advanced stride/lift/lowering/amount corrections. Apply
+is one ordinary model Undo; original keys/assets are not rewritten. Master motion
+off/zero returns authored animation. Corrections persist across disable; normal
+helper editing retains walking intent. Upper-arm drafts stay editable; direct
+lower-body/root drafts suspend suggestion only in editing. Neutral introduction
+keys allowed; later/nonneutral lower-body keys refuse before scene replacement.
+
+Real app exposed two product defects: frame0 lowering for unkeyed figures, fixed
+with eased onset; reopened Advanced Apply below visible edge, fixed scroll content
+and pinned footer. Existing read-only root helper view also needed auto_extend
+false for empty independent channels; authored controls unchanged. Cold-reader
+harness used nonexistent selection API, corrected to actual world selection.
+Failed logs retained; no assertion weakened.
+
+Verified walking29evaluator+26canonical+22actualapp+4freshreader checks. 97half-frame
+foot errors under0.2mm. Preview staged-only, Cancel restored pose/frame/view,
+Undo/Redo exact, off restored authored motion, malformed edit atomic, recovery
+and packed save retained intent, original GLB unchanged, reader used fresh packed
+asset cache with owned original/writer cache unavailable. Cold drawing and final
+render exact; real48frame1080p24H264 export matched tested final frame input.
+Existing regressions:320root components (2native-plan suites skipped unavailable),
+23motion animation+40per-part+34track helpers,13path domain+34component path app,
+and23preset domain+41writer+6coldreader. Private cloud107/Dummy only. No Windows,
+hardware, native rig, terrain or artist acceptance claim.
+
+Raw walking-path-verified-2, walking-root-components-final.log,
+walking-other-motion-final, walking-movement-path-regression.log and
+walking-preset-regression under /workspace/has-handoff-audit. Curated receipt
+in docs/benchmarks/walking_path_2026-11-06.json. Ledger MOTION-03 partial/open;
+straight flat240frame/64stride bounds explicit. Whole goal remains active.

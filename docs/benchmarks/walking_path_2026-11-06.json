@@ -1,0 +1,449 @@
+{
+  "date": "2026-11-06",
+  "scope": "Optional saved walking on bounded straight flat authored paths; software-rendered original practice figure. Native rigs, terrain, physical input, Windows and artist acceptance remain open.",
+  "walking": {
+    "folder": "/workspace/has-handoff-audit/walking-path-verified-2",
+    "reports": {
+      "evaluator": {
+        "checks": 29,
+        "failures": 0,
+        "maximum_foot_error": 0.000179591297637671,
+        "samples": 97,
+        "scope": "unshipped bounded flat/straight walk evaluator on original figure; not editor/persistence/native/terrain acceptance"
+      },
+      "settings": {
+        "checks": 26,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 22,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/walking-path-verified-2/render_1794020025_5125572_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 4,
+        "failures": 0
+      }
+    },
+    "evaluator": {
+      "checks": 29,
+      "failures": 0,
+      "maximum_foot_error": 0.000179591297637671,
+      "samples": 97,
+      "scope": "unshipped bounded flat/straight walk evaluator on original figure; not editor/persistence/native/terrain acceptance"
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1088,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 4,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "236024",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "nb_read_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "manual_has_unchanged": true,
+    "original_source_unchanged": true,
+    "original_and_writer_cache_offline_for_reader": true,
+    "cold_reader_uses_new_packed_asset_cache": true,
+    "functional_unchanged": true,
+    "native_fixtures": 0,
+    "source_sha256": {
+      "src/app.gd": "03219af8fac5cf664b70387391c0b5fefa254b6fd5108d6b1b47147e79b46cb6",
+      "src/walking_animation.gd": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb",
+      "src/model.gd": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b",
+      "src/world_runtime.gd": "da21c9ba9c5e6b3add0fa9bc6417e760a9f2a3edc25118a2441024be74df4c9f",
+      "src/contact_clipboard.gd": "0bf565300079be0342dd1a42920c26d5972cc6b89f4e8f0ef5171234115b0806",
+      "src/animation_clips.gd": "5408c7b7cd4db347d461d5c4ba56f2aa2e8646bfea7f86967e2eec459a9503cf",
+      "src/movement_path.gd": "777123851803dfb2fda5c0a311c7c91d4e7e161593deda31cf7032d24ca63770",
+      "src/movement_path_editor.gd": "0a3fce84816910f847473603c6cdde8096ffd67cf514b5fd4793f0c7fabf1595",
+      "src/path_locomotion.gd": "db081d8a48c24053a72f9c806d93826029f83becae06cb587af3b8c54f9995cf",
+      "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+      "src/motion_editor.gd": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d",
+      "src/root_component_motion.gd": "befef7ed4d7343ccba705e9e6676b9658566e37c3ad417ef67a9f50a007226b9",
+      "src/root_component_assistance.gd": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f",
+      "src/motion_animation.gd": "c0116a027a9828f799dcfd9b825cecf887730b58f01afc27be5b77ef716c64d3",
+      "tests/walking_path_smoke.gd": "d894a7be1fb1bcd2f20a4586e7f85bffcdb904484adfc01bbb89bd5b3065dadd",
+      "tests/walking_animation_unit.gd": "93bbb79c862a65b08bf6f59900ec456fdc602c2bcfe13554f2d31d1c413b2dbb",
+      "tests/verify_walking_path.py": "21a4a7114e875230e201cff9ec531e34c74c17012c8f3fc70783dec055fe88bc",
+      "examples/tutorials/Practice figure.glb": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23"
+    }
+  },
+  "regressions": {
+    "root_components": {
+      "folder": "/workspace/studio-3d-2d/output/component-regression/1794020027435769192",
+      "suites": [
+        {
+          "name": "curves",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 30,
+            "failures": 0
+          },
+          "seconds": 0.257
+        },
+        {
+          "name": "clips",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 36,
+            "failures": 0
+          },
+          "seconds": 2.125
+        },
+        {
+          "name": "first_key",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 6,
+            "failures": 0
+          },
+          "seconds": 0.36
+        },
+        {
+          "name": "gap",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 48,
+            "failures": 0
+          },
+          "seconds": 2.44
+        },
+        {
+          "name": "motion",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 27,
+            "failures": 0
+          },
+          "seconds": 0.498
+        },
+        {
+          "name": "virtual",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 3,
+            "failures": 0
+          },
+          "seconds": 0.366
+        },
+        {
+          "name": "backward",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 24,
+            "failures": 0
+          },
+          "seconds": 0.534
+        },
+        {
+          "name": "pose",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 45,
+            "failures": 0
+          },
+          "seconds": 0.536
+        },
+        {
+          "name": "paste",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 15,
+            "failures": 0
+          },
+          "seconds": 0.44
+        },
+        {
+          "name": "keys",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 5,
+            "failures": 0
+          },
+          "seconds": 0.357
+        },
+        {
+          "name": "delete",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 18,
+            "failures": 0
+          },
+          "seconds": 0.634
+        },
+        {
+          "name": "path",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 15,
+            "failures": 0
+          },
+          "seconds": 0.534
+        },
+        {
+          "name": "shapes",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 11,
+            "failures": 0
+          },
+          "seconds": 0.443
+        },
+        {
+          "name": "authoring",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 18,
+            "failures": 0
+          },
+          "seconds": 0.447
+        },
+        {
+          "name": "recording",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 12,
+            "failures": 0
+          },
+          "seconds": 0.442
+        },
+        {
+          "name": "channels",
+          "ok": true,
+          "exit": 0,
+          "result": {
+            "checks": 7,
+            "failures": 0
+          },
+          "seconds": 0.351
+        }
+      ],
+      "skipped": [
+        "document: native plans file unavailable",
+        "settings: native plans file unavailable"
+      ],
+      "ordinary_model9_admission": true,
+      "checks": 320,
+      "ok": true,
+      "source_sha256": {
+        "src/root_component_runtime.gd": "ace6b71ebdc931a05fe2468a4042dc797a90836b5bd4c99e082ea3202c5d51ff",
+        "src/root_component_curves.gd": "a0b718daffcc1285d29e3ead559746305bd5cd7d813f95788015d527e2e0235d",
+        "src/root_component_document.gd": "98530f2cd95ec6a82bfc8f7d0362e429f264078cef62f3d529ff44a39d66128f",
+        "src/root_component_motion.gd": "befef7ed4d7343ccba705e9e6676b9658566e37c3ad417ef67a9f50a007226b9",
+        "src/root_component_assistance.gd": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f",
+        "src/root_component_clips.gd": "c956b4b4014fbc2e6efbdd0f6afda49ce32230b8d0c1c845d74ac9709f280f64",
+        "tests/root_component_curves_unit.gd": "6fc4aec33e8883437df53be827ee0d6047a97928a3abfccce7c19b444936f0a6",
+        "tests/root_component_clips_unit.gd": "7a6a66dafdf5737075b4e3a544f5f8a9b1eff393a9153c22ff9d107064083039",
+        "tests/root_component_document_unit.gd": "551c3dc130006f690b0fc828bbde5e77b249e2e74b18babac9761ede0def30c5",
+        "tests/root_component_first_key_unit.gd": "7b492a7dd2de418a0f6eeb219f63c13f57028a68d1172fa82d005e479a68b63a",
+        "tests/root_component_gap_unit.gd": "e8d5b71cd6b09fc13b6790089a9cc2abade0b8c46047a313dca481c152c1481b",
+        "tests/root_component_motion_unit.gd": "a8d269571d721ac387c489cd8043616e3ae6743ad473725c7b676ec4a8f15d0b",
+        "tests/root_component_virtual_unit.gd": "3c55b5bd083ea9b234d531ad6f1713fbc7415f88391090fb6ee50ed4f062a2cf",
+        "tests/root_component_backward_unit.gd": "35961821ed2805067270d387e605e89aa88df6948359d5aabf965ef1b32fcfa0",
+        "tests/root_component_pose_unit.gd": "bd0bfb42b0e4da58c5cef05296d9266851cb3cfbacfa2f60eb41c71be805c402",
+        "tests/root_component_paste_unit.gd": "1f030ad5fcee32635d84f0e62760593186f160b450f60ad4a5f81407fe26d77c",
+        "tests/root_component_keys_unit.gd": "fc5635cde277d75257a9792bae6d0010efb46a0748f3db2298e168bce3c174a4",
+        "tests/root_component_delete_unit.gd": "73e79ce36fda0340db8b8d5e7450e2382f6c064941d17759e7aa2f699af341e6",
+        "tests/root_component_path_unit.gd": "7225a92dcf5d481a798f169178699bcb71a3d05012f4e9206df2644ba9f3e118",
+        "tests/root_component_shapes_unit.gd": "90e32d2ecada247240c0d374fd39a2109a59ba33191f1695171e97f15765821f",
+        "tests/root_component_authoring_unit.gd": "b86a44b3630cf56a8622fa6034fba2cabc376462732cd050ef24e9ae8e40fd50",
+        "tests/root_component_settings_unit.gd": "6509e646963b0eb570f8f3c01b19b8e615314611186709cf45a95ca86d17c5de",
+        "tests/root_component_recording_unit.gd": "dbbe2d182cc8d40e9ced97574f4c259835200ba6e2cea89c222127ffdfbb327c",
+        "tests/root_component_channels_unit.gd": "305a7fab1eb57269d717e455f711b5a2ff7786bf31cf73bf8351e7da23e2dc47"
+      }
+    },
+    "motion_animation": {
+      "checks": 23,
+      "failures": 0
+    },
+    "motion_parts": {
+      "checks": 40,
+      "failures": 0
+    },
+    "motion_assist_tracks": {
+      "checks": 34,
+      "failures": 0
+    },
+    "component_path": {
+      "checks": 34,
+      "failures": 0,
+      "movie": "/workspace/studio-3d-2d/output/movement-path-components/1794020061676751435/render_1794020070_7865990_0/movie.mp4",
+      "folder": "/workspace/studio-3d-2d/output/movement-path-components/1794020061676751435",
+      "private_receipts": [],
+      "functional_unchanged": true,
+      "unit_checks": 13,
+      "component_model": true,
+      "isolated_display": ":107"
+    },
+    "path_presets": {
+      "reports": [
+        {
+          "checks": 23,
+          "failures": 0
+        },
+        {
+          "checks": 41,
+          "failures": 0,
+          "movie": "/workspace/has-handoff-audit/walking-preset-regression/render_1794020085_7044031_0/movie.mp4"
+        },
+        {
+          "checks": 6,
+          "failures": 0
+        }
+      ],
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "306120",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "private_receipts": [],
+      "isolated_display": ":107",
+      "manual_has_unchanged": true,
+      "functional_unchanged": true,
+      "native_fixtures": 0,
+      "folder": "/workspace/has-handoff-audit/walking-preset-regression"
+    }
+  },
+  "diagnosed_failures": [
+    "Unkeyed starting figure was lowered at frame0: derive an eased onset for all supported paths; exact start now verified.",
+    "Reopened Advanced window put Apply outside visible bounds: scroll content above fixed footer; routed clicks and reachability now pass.",
+    "Cold-reader harness initially called nonexistent renderer.select_model: use existing world_selection.select_entity. No product assertion weakened.",
+    "Root-only helper compilation rejected an empty independent turn channel with auto_extend: read-only component view disables auto_extend; authored controls unchanged and320root component checks pass."
+  ],
+  "raw_logs": "/workspace/has-handoff-audit",
+  "acceptance_status": "MOTION-03 remains partial/open; no whole-item closure"
+}

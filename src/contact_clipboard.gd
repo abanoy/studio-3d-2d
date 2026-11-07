@@ -37,6 +37,7 @@ static func validate_candidate(rig: RefCounted,data: Dictionary,duration: int) -
 	var error:=Model.validate(data,duration)
 	if not error.is_empty():return error
 	var probe:=Model.new();probe.data=data;probe.root=rig.root;probe.base_root=rig.base_root;probe.order=rig.order;probe.bones=rig.bones;probe.world_context=rig.world_context
+	probe.motion_video=rig.motion_video.duplicate(true);probe.motion_video.duration_frames=duration
 	error=probe.check_bindings()
 	if not error.is_empty():return error
 	var before: Dictionary=rig.data;rig.data=data

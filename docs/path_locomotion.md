@@ -1,45 +1,61 @@
-# Walking along a path: bounded evaluator experiment
+# Optional walking along a movement path
 
-`src/path_locomotion.gd` is an internal read-only prototype. It is not connected to
-the app's menus, saved model settings or final rendering yet. Existing movement
-paths and preset behavior stay unchanged; MOTION-03 remains partial.
+In Pose, open **Movement path…** on a supported character with a straight, flat
+route. Turn on **Suggest walking on this path**, choose a frame and press
+**Preview this frame**. Preview changes only the visible pose and playhead;
+final captures still use the saved scene. Cancel restores the previous playhead,
+view and pose. **Apply path** saves the route and walking choice as one Undo.
+Turning the suggestion off restores authored motion; Undo restores the choice.
 
-The first feasibility spike solved49samples on the original seventeen-bone figure
-along a flat straight0.6m path, using0.3m stride,0.06m lift and0.025m root lowering.
-It left model data/source bytes unchanged. The generalized evaluator derives
-stride/lift/lowering from measured leg length and accepts bounded correction
-amounts. It samples the authored path exactly rather than replacing its keys.
-Stance targets remain fixed; the opposite foot swings with eased travel and lift.
-The existing two-leg IK solver resolves both feet and verifies actual positions.
-Root/turn/scale and upper-body channels remain authored; the derived root lowering
-and leg pose are returned separately.
+Advanced exposes step length, foot lift, body lowering and walking amount. Length,
+lift and lowering are percentages of measured leg length. The regular Motion
+feeling master switch and amount also control walking; per-part anticipation
+controls remain separate. Existing helper settings and upper-body motion survive.
+The window keeps Apply and Cancel visible while its content scrolls.
 
-Build publishes only after every half-frame is checked. It refuses keyed legs or
-hips (even explicit identity keys), competing planted contacts, missing/ambiguous
-legs, grouped characters, nonuniform parents, changing turn/scale, slopes, corners,
-reversals, Hold jumps, excessive speed/length and invalid correction values.
-The experiment supports up to240frames and64strides. This is a flat-ground bound,
-not terrain adaptation or general native-rig certification.
+The saved intent uses `studio_path_walking_1` inside strict
+`studio_motion_assist_4` settings on the existing Model9 component document.
+Generated steps never replace authored keys or alter original model bytes.
+Recovery, ordinary directory/HAS save, packed cold Open, preview and export use
+this same intent. Route presets exchange position keys only: after loading one,
+review or enable walking separately. They do not carry these walking settings.
 
-Sampling snapshots/restores live root and every bone field around temporary IK.
-It retains only a weak actor/skeleton binding and a single cached returned pose.
-Changed source data, parent, root or any bone binding refuses before use. Caller
-changes cannot mutate the cache. Zero amount returns the exact authored result.
-Failed builds preserve the previous usable plan.
+`src/path_locomotion.gd` samples the authored path. Alternating feet retain fixed
+stance targets and use eased swing travel/lift, resolved by the existing two-leg
+IK solver. Root lowering and leg poses are derived. The suggestion eases in over
+0.15 seconds (bounded by half the remaining duration), preserving the exact
+starting pose. Neutral leg/hip keys at introduction are supported; later or
+nonneutral lower-body keys are refused. An upper-arm draft remains editable while
+walking continues. Direct lower-body/root drafts suspend walking at that editing
+frame, so manual posing remains exact; final rendering ignores transient drafts.
+
+The current bound is 240 project frames and 64 strides. Build checks every
+half-frame before publishing a usable plan. It refuses competing planted-foot
+ranges, ambiguous/missing legs, grouped characters, nonuniform parents, changing
+turn/scale, slopes, corners, reversals, Hold jumps and excessive stride/speed.
+Unsupported saved walking refuses before replacing the installed world or camera.
+This does not certify terrain adaptation, automatic turning, general native rigs,
+physical input comfort or artist acceptance. MOTION-03 remains partial/open.
+
+Sampling snapshots and restores live root and every bone field around temporary
+IK. Plans retain weak actor/bone bindings and one detached cached result. Changed
+source, parent or bindings refuse before use; transient editing fields have
+separate draft handling. Zero amount and disabled walking return authored motion.
+Detached project candidates preflight in their own non-rendering 3D viewport,
+leaving the installed camera and world untouched.
 
 ```sh
-python tests/verify_path_locomotion.py --output /absolute/new/result
+python tests/verify_walking_path.py --isolated-display :107 --output /absolute/new/result
 ```
 
-29checks pass on the included original figure, including97half-frame samples,
-actual feet within0.2mm of targets, exact source/live-state restoration, zero and
-partial amount, deterministic seeks, keyed arm preservation, source/binding
-staleness and all stated refusal cases. Whole-valued JSON timing/routes also work.
-Initial test fixture corrections used the real loader result/name normalization
-and anchored both endpoints to create an actual changing turn; assertions stayed.
-See [walking evidence](benchmarks/path_locomotion_2026-11-06.json).
+On Linux, supply an already provisioned private display. Windows uses the existing
+private desktop launcher. The scoped cloud run passes 29 evaluator, 26 canonical
+settings, 22 actual app and 4 fresh-process reader checks. Its original included
+17-bone figure reaches targets within 0.2 mm over 97 half-frame samples. The reader
+uses a new packed asset cache with the owned original source and writer cache
+unavailable; drawing pixels and the saved project bytes remain exact. The actual
+48-frame 1080p/24 H.264 export has the same input image as final walking preview at
+the tested frame. No native fixture or hardware GPU acceptance is claimed.
 
-Next is a strict saved-intent contract and explicit editor enable/disable/preview/
-correction controls, followed by actual Undo/HAS/cold-open/recovery/render checks.
-No walking UI, exported movie behavior, native fidelity, terrain adaptation or
-artist acceptance is claimed by this experiment.
+The original prototype receipt remains historical evidence. Current integration
+and regression evidence is in [walking integration](benchmarks/walking_path_2026-11-06.json).

@@ -16,8 +16,9 @@ These files contain relative position points and their hold/linear/ease modes,
 not bones, scripts, meshes or referenced file paths. They can therefore be shared
 between different skeletons. They do **not** generate walking steps, adapt feet
 to terrain, align a character's turn to a path, infer depth, transform a moving
-parent's world-space route, or carry generated motion assistance. Those remain
-separate work under addendum §5.5 and its OPEN design details. Native independent
+parent's world-space route, or carry generated motion assistance. Walking can now be enabled separately on a supported flat, straight route in
+Movement path; see [optional walking](path_locomotion.md). Terrain, turning and
+broader inference remain separate work under addendum §5.5 and its OPEN details. Native independent
 model/map package extensions remain OPEN; this accessory uses JSON like the
 existing body-pose accessory, without choosing those package extensions.
 

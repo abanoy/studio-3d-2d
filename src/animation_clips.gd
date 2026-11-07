@@ -127,12 +127,15 @@ static func remove(data: Dictionary, id: String, duration: int) -> Dictionary:
 				if owner.begins_with(id+"/") or owner.begins_with("gap/"+id+"/"):rows.erase(address)
 			if rows.is_empty():edits.erase(part)
 		if edits.is_empty():
-			settings.erase("track_helper_edits")
 			var motion=load("res://src/motion_animation.gd")
-			if settings.part_strengths.is_empty():
-				settings.erase("part_strengths")
-				settings.format=motion.SETTINGS
-			else:settings.format=motion.PART_SETTINGS
+			if settings.has("walking"):
+				settings.format=motion.WALK_SETTINGS;settings["track_helper_edits"]={}
+			else:
+				settings.erase("track_helper_edits")
+				if settings.part_strengths.is_empty():
+					settings.erase("part_strengths")
+					settings.format=motion.SETTINGS
+				else:settings.format=motion.PART_SETTINGS
 	return {"data":result}
 
 static func paste(data: Dictionary, source: Dictionary, start: int, duration: int) -> Dictionary:

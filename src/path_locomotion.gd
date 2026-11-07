@@ -1,6 +1,6 @@
 extends RefCounted
-# Bounded read-only flat/straight walking experiment. Not yet a saved setting or
-# editor feature. Sampling borrows a rig only for the existing verified IK solve.
+# Bounded flat/straight walking evaluator. Sampling borrows a rig only for
+# the existing verified IK solve; generated poses never replace source keys.
 const Model=preload("res://src/model.gd")
 const Paths=preload("res://src/movement_path.gd")
 const Feet=preload("res://src/foot_contacts.gd")
@@ -13,6 +13,9 @@ var _probe: RefCounted
 var _root_id:=0
 var _order: Array=[]
 var _bindings: Array=[]
+var _lower: Array=[]
+var _ramp_frames:=1.
+const DRAFT_FIELDS=["pose","position","rotation_xyzw","scale","draft_frame","shape_pose","shape_draft_frame"]
 var _root_base:=Transform3D.IDENTITY
 var _parent:=Transform3D.IDENTITY
 var _feet: Array=[]
@@ -41,13 +44,13 @@ func build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictio
 	var staged=load("res://src/path_locomotion.gd").new();var error: String=staged._build(actor,data,video,settings)
 	if not error.is_empty():return error
 	# Only a fully checked plan replaces an earlier usable experiment.
-	for field in ["_actor","_source","_probe","_root_id","_order","_bindings","_root_base","_parent","_feet","_start","_end","_origin","_direction","_length","_stride","_lift","_lowering"]:set(field,staged.get(field))
+	for field in ["_actor","_source","_probe","_root_id","_order","_bindings","_lower","_ramp_frames","_root_base","_parent","_feet","_start","_end","_origin","_direction","_length","_stride","_lift","_lowering"]:set(field,staged.get(field))
 	_last={};_last_frame=INF;_last_amount=-1.;return ""
 
-func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictionary) -> String:
+func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dictionary,structure_only:=false) -> String:
 	var why:=settings_error(settings)
 	if not why.is_empty():return why
-	if actor==null or not is_instance_valid(actor.root) or not actor.root.is_inside_tree():return "Walking needs a live supported model."
+	if actor==null or not is_instance_valid(actor.root) or not structure_only and not actor.root.is_inside_tree():return "Walking needs a live supported model."
 	if not Model.integer(video.get("duration_frames"),1,240):return "This walking experiment supports up to240frames."
 	why=preload("res://src/video_timing.gd").error(video.get("fps_num"),video.get("fps_den"))
 	if not why.is_empty():return why
@@ -69,16 +72,25 @@ func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dicti
 			ancestor=actor.parent_id(ancestor)
 	var body: Dictionary=Model.body_animation().B.extract(data,int(video.duration_frames))
 	if body.has("error"):return body.error
-	var authored: Array=Model.body_animation().B.known_channels(body)
+	var authored: Array=Model.body_animation().B.known_channels(body);var first_frame:=int(data.get("start_frame",0))
 	for id in lower:
-		if authored.has(id) or data.pose.has(id):return "Walking will not replace authored legs or hips. Keep those keys and use manual motion, or try an unkeyed practice figure."
-	_actor=weakref(actor);_root_id=actor.root.get_instance_id();_order=actor.order.duplicate();_source=actor.data.duplicate(true)
+		if not authored.has(id) and not data.pose.has(id):continue
+		# A neutral starting pose is common after Reset pose. Keep that exact
+		# anchor and ease into the suggestion; later/nonneutral keys stay protected.
+		if not neutral(Model.body_animation().B.sample_channel(body,first_frame,id)) or data.pose.has(id) and not neutral(data.pose[id]):return "Walking needs neutral starting legs and no later leg/hip keys. Keep your keys and use manual motion, or try a neutral practice figure."
+		for piece in body.pieces:
+			for point in Model.body_animation().B.points(body,piece,id,false):
+				if int(piece.start)+int(point.frame)-int(piece.source_in)!=first_frame or not neutral(point.value):return "Walking will not replace later or nonneutral leg/hip keys. Turn walking off to edit those poses."
+	_actor=weakref(actor);_root_id=actor.root.get_instance_id();_order=actor.order.duplicate();_source=actor.data.duplicate(true);_lower=lower.duplicate()
+	if _source.get("format")=="studio_model_9":
+		for field in DRAFT_FIELDS:_source.erase(field)
 	_root_base=actor.base_root
 	for id in _order:
 		var bone: Dictionary=actor.bones[id];_bindings.append({"id":id,"skeleton":weakref(bone.skeleton),"index":int(bone.index),"name":str(bone.name),"base":bone.base,"parent":bone.skeleton.get_bone_parent(bone.index)})
-	_parent=actor.root.get_parent().global_transform if actor.root.get_parent() is Node3D else Transform3D.IDENTITY
+	_parent=actor.root.get_parent().global_transform if actor.root.is_inside_tree() and actor.root.get_parent() is Node3D else Transform3D.IDENTITY
 	if not Hold.IK.regular(_parent.basis) or _parent.basis.y.normalized().dot(Vector3.UP)<.99999:return "Walking needs a positive uniform, upright parent transform."
 	_probe=Model.new();_probe.data=data.duplicate(true);_probe.motion_video=video.duplicate(true);_start=int(data.get("start_frame",0));_end=int(video.duration_frames)
+	_ramp_frames=maxf(1.,minf(float(video.fps_num)/float(video.fps_den)*.15,float(_end-_start)/2.))
 	var first: Dictionary=_probe.sample_authored_transform(_start);var last: Dictionary=_probe.sample_authored_transform(_end)
 	_origin=T.vector(first.position);var delta: Vector3=_parent.basis*(T.vector(last.position)-_origin);_length=delta.length()
 	if _length<.0001 or absf(delta.y)>.0001:return "Walking needs a moving flat path."
@@ -94,6 +106,7 @@ func _build(actor: RefCounted,data: Dictionary,video: Dictionary,settings: Dicti
 		if absf(T.quaternion(value.rotation_xyzw).dot(T.quaternion(first.rotation_xyzw)))<.999999 or absf(float(value.scale)-float(first.scale))>.000001:return "Walking needs a fixed turn and scale; author those separately for now."
 		if absf(offset.y)>.0001 or (offset-_direction*distance).length()>.0001 or distance<previous-.00001:return "Walking currently supports a straight flat path without reversals."
 		previous=distance;transforms.append(value)
+	if structure_only:return ""
 	var state:=capture_state(actor);var value: Dictionary=first
 	actor.root.transform=Transform3D(Basis(T.quaternion(value.rotation_xyzw)).scaled(Vector3.ONE*value.scale),T.vector(value.position))*actor.base_root;Feet.apply_pose(actor,_probe.sample_body(_start))
 	var captured:=Hold.capture(actor,"@root");var leg_length:=INF
@@ -127,10 +140,31 @@ static func restore_state(actor: RefCounted,state: Dictionary) -> void:
 		var bone: Dictionary=actor.bones[actor.order[i]];bone.skeleton.set_bone_pose_position(bone.index,state.bones[i][0]);bone.skeleton.set_bone_pose_rotation(bone.index,state.bones[i][1]);bone.skeleton.set_bone_pose_scale(bone.index,state.bones[i][2])
 	for skeleton in state.skeletons:skeleton.force_update_all_bone_transforms()
 
+static func neutral(value: Dictionary) -> bool:
+	return T.vector(value.position).length()<.000001 and absf(T.quaternion(value.rotation_xyzw).dot(Quaternion.IDENTITY))>.999999
+
+func source_matches(data: Dictionary) -> bool:
+	if _source.get("format")!="studio_model_9":return data==_source
+	var count:=0
+	for field in data:
+		if field in DRAFT_FIELDS:continue
+		if not _source.has(field) or data[field]!=_source[field]:return false
+		count+=1
+	return count==_source.size()
+
+func draft_conflict(frame: float) -> bool:
+	var actor=_actor.get_ref() if _actor!=null else null
+	if actor==null or actor.data.get("draft_frame",-1)!=frame:return false
+	var baseline: Dictionary=_probe.sample_body(frame)
+	for id in _lower:
+		if actor.data.pose.get(id,Model.identity())!=baseline.get(id,Model.identity()):return true
+	var shown:=Model.Clips.transform(actor.data);var authored: Dictionary=_probe.sample_authored_transform(frame)
+	return T.vector(shown.position).distance_to(T.vector(authored.position))>.000001 or absf(T.quaternion(shown.rotation_xyzw).dot(T.quaternion(authored.rotation_xyzw)))<.999999 or absf(float(shown.scale)-float(authored.scale))>.000001
+
 func sample(frame: float,amount:=1.) -> Dictionary:
 	if _actor==null:return {"error":"Build a walking plan first."}
 	var actor=_actor.get_ref()
-	if actor==null or not is_instance_valid(actor.root) or not actor.root.is_inside_tree() or actor.root.get_instance_id()!=_root_id or actor.order!=_order or actor.data!=_source:return {"error":"The walking model changed; rebuild the suggestion."}
+	if actor==null or not is_instance_valid(actor.root) or not actor.root.is_inside_tree() or actor.root.get_instance_id()!=_root_id or actor.order!=_order or not source_matches(actor.data):return {"error":"The walking model changed; rebuild the suggestion."}
 	if actor.base_root!=_root_base:return {"error":"The walking model binding changed; rebuild the suggestion."}
 	for saved in _bindings:
 		if not actor.bones.has(saved.id):return {"error":"A walking bone disappeared; rebuild the suggestion."}
@@ -140,8 +174,9 @@ func sample(frame: float,amount:=1.) -> Dictionary:
 	if parent!=_parent:return {"error":"The walking parent changed; rebuild the suggestion."}
 	if not is_finite(frame) or frame<_start or frame>_end or not is_finite(amount) or amount<0 or amount>1:return {"error":"Invalid walking frame or amount."}
 	if frame==_last_frame and amount==_last_amount:return _last.duplicate(true)
+	var requested:=amount
+	var ramp:=clampf((frame-float(_start))/_ramp_frames,0,1);amount*=ramp*ramp*(3.-2.*ramp)
 	var transform: Dictionary=_probe.sample_authored_transform(frame);var pose: Dictionary=_probe.sample_body(frame)
-	if amount==0:return {"pose":pose,"transform":transform}
 	var distance: float=(_parent.basis*(T.vector(transform.position)-_origin)).dot(_direction);var targets:=[]
 	for side in range(2):
 		var foot: Dictionary=_feet[side];var shift:=float(side)*.5;var q:=distance/_stride+shift;var cycle:=floorf(q);var phase:=q-cycle;var previous:=maxf(0,(cycle-shift)*_stride);var following:=(cycle+1-shift)*_stride;var at:=previous;var height:=0.
@@ -150,7 +185,9 @@ func sample(frame: float,amount:=1.) -> Dictionary:
 		var rest: Vector3=foot.position+_direction*distance;var target: Vector3=rest.lerp(foot.position+_direction*at+Vector3.UP*height,amount);var rotation: Quaternion=foot.rotation
 		targets.append({"ids":foot.limb.ids.duplicate(),"position":[target.x,target.y,target.z],"rotation_xyzw":[rotation.x,rotation.y,rotation.z,rotation.w]})
 	transform=transform.duplicate(true);transform.position[1]-=_lowering*amount/_parent.basis.y.length()
+	if amount==0:
+		_last={"pose":pose,"transform":transform,"targets":targets};_last_frame=frame;_last_amount=requested;return _last.duplicate(true)
 	var state:=capture_state(actor);actor.root.transform=Transform3D(Basis(T.quaternion(transform.rotation_xyzw)).scaled(Vector3.ONE*transform.scale),T.vector(transform.position))*actor.base_root
 	var solved:=Feet.resolve(actor,pose,{"id":"walking-preview","from":0,"to":_end+1,"feet":targets});restore_state(actor,state)
 	if solved.has("error"):return solved
-	_last={"pose":solved.pose,"transform":transform,"targets":targets};_last_frame=frame;_last_amount=amount;return _last.duplicate(true)
+	_last={"pose":solved.pose,"transform":transform,"targets":targets};_last_frame=frame;_last_amount=requested;return _last.duplicate(true)

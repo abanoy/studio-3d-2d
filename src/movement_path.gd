@@ -61,7 +61,7 @@ static func preview(data: Dictionary,video: Dictionary) -> Array:
 	if data.get("format")==Components.FORMAT:
 		prepared=Components.compile(data,int(video.duration_frames))
 		if prepared.has("error"):return []
-		if data.get("motion_assist",{}).get("enabled",false):
+		if data.get("motion_assist",{}).get("enabled",false) and not load("res://src/walking_animation.gd").active(data):
 			assistance=preload("res://src/root_component_motion.gd").new()
 			if not assistance.build(data,video,{"strength":data.motion_assist.strength}).is_empty():return []
 	var keys:=controls(data);var frames:={0:true,int(video.duration_frames):true}

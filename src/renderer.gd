@@ -108,10 +108,10 @@ func import_scene(path: String) -> String:
 	assets_changed.emit()
 	return ""
 
-func prepare_legacy(path: String, data: Dictionary = {}) -> Dictionary:
+func prepare_legacy(path: String, data: Dictionary = {},incoming_video: Dictionary={}) -> Dictionary:
 	var scene:=SceneIO.load_glb(path)
 	if scene.has("error"):return scene
-	var actor:=prepare_model(data)
+	var actor:=prepare_model(data,incoming_video)
 	if actor.has("error"):scene.scene.free();return actor
 	return {"scene":scene.scene,"model":actor.model}
 
@@ -159,8 +159,8 @@ func evaluate(keys: Array, frame: int) -> void:
 	if world_runtime:world_runtime.evaluate(frame,false,"",video_settings)
 	elif model: model.apply(frame,false,false,video_settings)
 
-func prepare_world(document: Dictionary, duration: int) -> Dictionary:
-	return WorldRuntime.prepare(document,duration)
+func prepare_world(document: Dictionary, duration: int,incoming_video: Dictionary={}) -> Dictionary:
+	return WorldRuntime.prepare(document,duration,incoming_video if not incoming_video.is_empty() else video_settings)
 
 func install_world(prepared: Dictionary, frame := 0) -> bool:
 	if not prepared.get("runtime") is WorldRuntime:return false
@@ -189,7 +189,7 @@ func select_instance(id: String) -> bool:
 	active_instance_id=id
 	return true
 
-func prepare_model(data: Dictionary) -> Dictionary:
+func prepare_model(data: Dictionary,incoming_video: Dictionary={}) -> Dictionary:
 	if data.is_empty(): return {"model": null}
 	var result := SceneIO.load_glb(data.source)
 	if result.has("error"): return result
@@ -198,10 +198,14 @@ func prepare_model(data: Dictionary) -> Dictionary:
 	candidate.base_root = candidate.root.transform
 	candidate.data = data
 	candidate.inventory(candidate.root)
+	var timing: Dictionary=incoming_video if not incoming_video.is_empty() else video_settings
+	if load("res://src/walking_animation.gd").active(data):candidate.motion_video=timing.duplicate(true)
 	var error := candidate.check_bindings()
 	if not error.is_empty():
 		candidate.root.free()
 		return {"error": error}
+	error=load("res://src/walking_animation.gd").preflight_detached(candidate.root,[candidate],timing)
+	if not error.is_empty():candidate.root.free();return {"error":error}
 	return {"model": candidate}
 
 func install_model(prepared: Dictionary) -> bool:

@@ -205,6 +205,9 @@ func check_bindings() -> String:
 	if is_contact(data):
 		var contact_error: String=contact_animation().check_bindings(self)
 		if not contact_error.is_empty():return contact_error
+	if load("res://src/walking_animation.gd").active(data):
+		var walk_error: String=load("res://src/walking_animation.gd").binding_error(self,data,motion_video)
+		if not walk_error.is_empty():return walk_error
 	if root:
 		var shape_error:=Shape.check(root,Shape.setting(data))
 		if not shape_error.is_empty():return shape_error
@@ -303,7 +306,7 @@ func sample(frame: float, editing := false,editing_ancestor: String="") -> Dicti
 			# The draft contains the user's visible edited target. Do not add the
 			# generated offset twice; unchanged draft peers still receive it once.
 			if editing and data.draft_frame==frame and original!=baseline.get(id,identity()):continue
-			var value:=motion_value(original,id,frame)
+			var value:=motion_value(original,id,frame,editing)
 			if pose.has(id) or value!=original:pose[id]=value
 	if not evaluation_error.is_empty() or not is_contact(data) or frame<float(data.start_frame):return pose
 	var result: Dictionary=contact_animation().sample(self,frame,editing,pose,editing_ancestor)
@@ -320,7 +323,7 @@ func motion_plan() -> RefCounted:
 		_motion_source=data;_motion_rate=rate;_motion_plan=null;_motion_error=""
 		if data.get("format")=="studio_model_9":
 			var plan: RefCounted=load("res://src/root_component_assistance.gd").new()
-			_motion_error=plan.build(data,motion_video)
+			_motion_error=plan.build(data,motion_video,self)
 			if _motion_error.is_empty():_motion_plan=plan
 		else:
 			var compiled: Dictionary=motion_animation().compile(data,motion_video)
@@ -328,10 +331,10 @@ func motion_plan() -> RefCounted:
 	if not _motion_error.is_empty():evaluation_error=_motion_error
 	return _motion_plan
 
-func motion_value(original: Dictionary,id: String,frame: float) -> Dictionary:
+func motion_value(original: Dictionary,id: String,frame: float,editing:=false) -> Dictionary:
 	var plan:=motion_plan()
 	if plan==null:return original
-	var value: Dictionary=plan.apply(original,id,frame)
+	var value: Dictionary=plan.apply_editing(original,id,frame,editing) if plan.has_method("apply_editing") else plan.apply(original,id,frame)
 	if value.has("error"):evaluation_error=value.error;return original
 	return value
 
@@ -349,7 +352,7 @@ func sample_transform(frame: float, editing := false) -> Dictionary:
 	var original:=sample_authored_transform(frame,editing)
 	if not motion_enabled():return original
 	if editing and data.draft_frame==frame and original!=sample_authored_transform(frame,false):return original
-	return motion_value(original,"@root",frame)
+	return motion_value(original,"@root",frame,editing)
 
 func sample_authored_transform(frame: float, editing := false) -> Dictionary:
 	if editing and data.draft_frame==frame:return Clips.transform(data)

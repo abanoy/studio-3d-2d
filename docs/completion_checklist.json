@@ -479,9 +479,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/path_locomotion_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "src/walking_animation.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_walking_path.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/walking_path_2026-11-06.json"
         }
       ],
-      "remaining": "Reusable paths/presets work. Bounded read-only flat/straight walking evaluator passes29domain checks with preserved authored/live state; not app-enabled. Saved intent and explicit reversible/correctable editor suggestion, actual persistence/Undo/render, general rig/terrain and external acceptance remain incomplete.",
+      "remaining": "Optional saved/correctable walking on bounded straight flat paths now passes staged preview/cancel, Undo/Redo, recovery, packed cold Open and exact export checks. General rig/terrain/turning coverage and native/artist acceptance remain incomplete.",
       "external_dependencies": []
     },
     {
@@ -2185,7 +2197,7 @@
     {
       "requirement": "MOTION-03",
       "priority": 2,
-      "action": "Bounded read-only walking feasibility/evaluator passes. Integrate strict saved intent and explicit enable/disable/preview/correction on authored paths, then actual Undo/persistence/render before optional multi-view inference."
+      "action": "Bounded saved walking now passes staged preview/correction, Undo, recovery, packed cold Open and exact render checks. Extend beyond straight flat routes and obtain native-rig/artist acceptance; optional multi-view inference remains separate."
     },
     {
       "requirement": "IMPORT-03",

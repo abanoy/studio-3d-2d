@@ -26,6 +26,9 @@ func build(data: Dictionary,video: Dictionary,settings: Dictionary={}) -> String
 	var old:=D.legacy_view(data);var body:=D.Body.view(old);var staged:={}
 	for field in ["position","rotation_xyzw"]:
 		var view:=D.Adapter.component_view(body,data.root_components,field)
+		# A read-only single-component view may have no controls on a piece.
+		# It does not own the complete editable body/expression boundary.
+		for piece in view.pieces:piece.auto_extend=false
 		var model:=D.Body.install(old,view);var plan:=Tracks.new()
 		var scoped := settings.duplicate()
 		scoped["track_helper_edits"]={"@root":component_edits[field]}

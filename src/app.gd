@@ -1833,7 +1833,7 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 		open_project_error=reference_candidate.error
 		if report_error:message(open_project_error)
 		return false
-	var prepared: Dictionary = renderer.prepare_world(data.world,int(data.video.duration_frames)) if data.schema_version>=4 else renderer.prepare_legacy(data.source,data.model)
+	var prepared: Dictionary = renderer.prepare_world(data.world,int(data.video.duration_frames),data.video) if data.schema_version>=4 else renderer.prepare_legacy(data.source,data.model,data.video)
 	if prepared.has("error"):
 		open_project_error=prepared.error
 		if report_error:message(open_project_error)

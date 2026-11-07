@@ -4,6 +4,7 @@ const FORMAT:="studio_model_8"
 const PART_SETTINGS:="studio_motion_assist_2"
 const HELPER_SETTINGS:="studio_motion_assist_3"
 const SETTINGS:="studio_motion_assist_1"
+const WALK_SETTINGS:="studio_motion_assist_4"
 const Body=preload("res://src/body_animation.gd")
 const Tracks=preload("res://src/motion_assist_tracks.gd")
 
@@ -13,15 +14,19 @@ static func validate(data: Dictionary) -> String:
 	if not value is Dictionary or not value.get("enabled") is bool:return "Invalid character-assistance settings."
 	if value.get("format")==SETTINGS:
 		if value.size()!=3:return "Invalid character-assistance settings."
-	elif value.get("format") in [PART_SETTINGS,HELPER_SETTINGS]:
-		var has_edits: bool=value.format==HELPER_SETTINGS
-		if value.size()!=(5 if has_edits else 4) or not value.get("part_strengths") is Dictionary or value.part_strengths.size()>513:return "Invalid per-part assistance settings."
+	elif value.get("format") in [PART_SETTINGS,HELPER_SETTINGS,WALK_SETTINGS]:
+		var has_walk: bool=value.format==WALK_SETTINGS
+		var has_edits: bool=value.format in [HELPER_SETTINGS,WALK_SETTINGS]
+		if has_walk:
+			var walk_error: String=load("res://src/walking_animation.gd").error(value.get("walking"))
+			if not walk_error.is_empty():return walk_error
+		if value.size()!=(6 if has_walk else 5 if has_edits else 4) or not value.get("part_strengths") is Dictionary or value.part_strengths.size()>513:return "Invalid per-part assistance settings."
 		if not has_edits and value.part_strengths.is_empty():return "Missing per-part assistance settings."
 		for id in value.part_strengths:
 			if not Body.B.valid_id(id) or not valid_strength(value.part_strengths[id]):return "Invalid per-part assistance strength."
 		if has_edits:
 			var edits=value.get("track_helper_edits")
-			if not edits is Dictionary or edits.is_empty() or edits.size()>513:return "Invalid helper adjustments."
+			if not edits is Dictionary or (edits.is_empty() and not has_walk) or edits.size()>513:return "Invalid helper adjustments."
 			var total := 0
 			for part in edits:
 				if not Body.B.valid_id(part) or not edits[part] is Dictionary or edits[part].is_empty():return "Invalid helper part."
@@ -54,6 +59,11 @@ static func configure(data: Dictionary,enabled: bool,strength: float,duration: i
 		result.motion_assist.format=HELPER_SETTINGS
 		result.motion_assist["part_strengths"]=overrides.duplicate(true)
 		result.motion_assist["track_helper_edits"]=edits.duplicate(true)
+	if data.get("motion_assist",{}).has("walking"):
+		result.motion_assist.format=WALK_SETTINGS
+		result.motion_assist["part_strengths"]=overrides.duplicate(true)
+		result.motion_assist["track_helper_edits"]=edits.duplicate(true)
+		result.motion_assist["walking"]=data.motion_assist.walking.duplicate(true)
 	var error: String=load("res://src/root_component_document.gd").validate(result,duration) if result.get("format")=="studio_model_9" else Body.Model.validate(result,duration)
 	return {"error":error} if not error.is_empty() else {"data":result}
 

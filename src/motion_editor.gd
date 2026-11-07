@@ -7,6 +7,7 @@ var window: Window
 var enabled: CheckButton
 var strength: HSlider
 var note: Label
+var summary: Label
 var before: Dictionary={}
 var target: WeakRef
 var helpers: Tree
@@ -26,7 +27,7 @@ func setup(parent: Node) -> void:
 	window=Window.new();window.title="Motion feeling";window.theme=app.theme;app.add_child(window);window.close_requested.connect(func():window.hide())
 	var panel:=PanelContainer.new();window.add_child(panel);panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var body:=VBoxContainer.new();panel.add_child(body)
-	app.label(body,"Anticipation and settling around your pose keys.\nYour main keys stay exact.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	summary=app.label(body,"Anticipation and settling around your pose keys.\nYour main keys stay exact.");summary.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	enabled=CheckButton.new();enabled.text="Add motion feeling";body.add_child(enabled)
 	app.label(body,"Gentle                                      Lively")
 	strength=HSlider.new();strength.min_value=0;strength.max_value=1;strength.step=.05;body.add_child(strength)
@@ -67,6 +68,7 @@ func open() -> void:
 	if app.pose_editor.contacts.live_busy():app.message("Turn Physics and Hair & clothes off before changing motion feeling.");return
 	app.pose_editor.finish_drag();before=rig.data.duplicate(true);target=weakref(rig.root)
 	var first_try: bool=not app.advanced_mode and not before.has("motion_assist")
+	summary.text="This switch and amount also control walking. Adjust its steps in Movement path. Per-part controls below change anticipation and settling." if load("res://src/walking_animation.gd").active(before) else "Anticipation and settling around your pose keys.\nYour main keys stay exact."
 	enabled.set_pressed_no_signal(first_try or rig.motion_enabled())
 	strength.set_value_no_signal(float(rig.data.get("motion_assist",{}).get("strength",.65)))
 	note.text="Apply to try this amount between your pose keys. Play the shot to see it, or Undo to return." if first_try else "Saved with this model. Undo restores the previous setting."

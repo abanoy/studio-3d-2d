@@ -90,3 +90,10 @@ are a proposed later editing rule, not a confirmed or implemented contract.
 
 Next: broader Model8 editor/physics/clip/recovery acceptance and full regression;
 then individual helper editing and richer acting. Preserve the full core workflow.
+
+
+Saved optional walking now uses the Model9 evaluator through version4 assistance
+settings. Its master toggle/amount follow Motion feeling, while corrections and
+staged preview live in Movement path. See [walking scope and evidence](path_locomotion.md).
+Earlier experiment limitations above describe their historical increments; broader
+terrain/native-rig/artist acceptance remains open.

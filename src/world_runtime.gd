@@ -15,7 +15,7 @@ var effects: Dictionary={}
 var evaluation_error := ""
 const Sprite=preload("res://src/particle_sprite.gd")
 
-static func prepare(document: Dictionary, duration: int) -> Dictionary:
+static func prepare(document: Dictionary, duration: int,incoming_video: Dictionary={}) -> Dictionary:
 	var error := Document.validate(document,duration)
 	if not error.is_empty():return {"error":error}
 	# Hash all inputs before allocating a new world. Never touch the installed world.
@@ -33,6 +33,9 @@ static func prepare(document: Dictionary, duration: int) -> Dictionary:
 	var candidate = new()
 	candidate.data=document.duplicate(true)
 	candidate.duration=duration
+	var walking_video: Dictionary=incoming_video.duplicate(true);walking_video["duration_frames"]=duration
+	if not walking_video.has("fps_num"):walking_video["fps_num"]=24
+	if not walking_video.has("fps_den"):walking_video["fps_den"]=1
 	candidate.root=Node3D.new();candidate.root.name="StudioWorld"
 	for row in candidate.data.objects:
 		var decoded := SceneIO.load_glb(row.source)
@@ -47,6 +50,7 @@ static func prepare(document: Dictionary, duration: int) -> Dictionary:
 		instance.inventory(instance.root)
 		# Capture mesh ownership before parent/child instances are attached.
 		instance.opacity_materials=Model.Opacity.new();instance.opacity_materials.inventory(instance.root)
+		if load("res://src/walking_animation.gd").active(row):instance.motion_video=walking_video.duplicate(true)
 		error=instance.check_bindings()
 		if not error.is_empty():
 			instance.root.free();candidate.dispose();return {"error":error}
@@ -74,6 +78,8 @@ static func prepare(document: Dictionary, duration: int) -> Dictionary:
 				candidate.root.remove_child(instance.root)
 				candidate.instances[row.parent_id].root.add_child(instance.root)
 			candidate.order.append(row.id);pending.remove_at(i)
+	error=load("res://src/walking_animation.gd").preflight_detached(candidate.root,candidate.instances.values(),walking_video)
+	if not error.is_empty():candidate.dispose();return {"error":error}
 	return {"runtime":candidate}
 
 func evaluate(frame: int, final := false, editing_id := "", video: Dictionary = {}) -> void:
@@ -118,6 +124,7 @@ func restore_instances(values: Dictionary) -> String:
 		for field in ["source","sha256","kind","parent_id"]:
 			if target.data.get(field)!=value.get(field):return "This edit cannot replace an asset or reparent an instance."
 		var probe:=Model.new();probe.data=value;probe.order=target.order;probe.bones=target.bones;probe.root=target.root
+		probe.base_root=target.base_root;probe.world_context=target.world_context;probe.motion_video=target.motion_video.duplicate(true);probe.motion_video.duration_frames=duration
 		var binding_error:=probe.check_bindings()
 		if not binding_error.is_empty():return binding_error
 		for i in range(document.objects.size()):
