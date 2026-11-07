@@ -35,7 +35,7 @@ func run() -> void:
 	var asset:=folder.path_join("box.glb");var arm_asset:=folder.path_join("arm.glb")
 	check(box_asset(asset)==OK and Fixture.create(arm_asset)==OK,"original solid prop and skinned ragdoll fixtures export as standard GLB")
 	var digest:=FileAccess.get_sha256(asset)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache");app.load_demo_room()
 	var data:=Model.definition(asset);data.position=[0,3,0];app.append_object(data,"model")
 	var actor: RefCounted=app.renderer.active_model();var id: String=actor.data.id;var physics=app.physics_editor
