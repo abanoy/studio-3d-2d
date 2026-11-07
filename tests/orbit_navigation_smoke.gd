@@ -17,21 +17,48 @@ func motion(delta: Vector2) -> void:
 	var event:=InputEventMouseMotion.new();event.relative=delta;app.canvas_input(event,Vector2(960,540))
 func release(index: int) -> void:
 	var event:=InputEventMouseButton.new();event.button_index=index;app._input(event)
+func physical(code: int,down: bool) -> void:
+	var event:=InputEventKey.new();event.physical_keycode=code;event.keycode=code;event.pressed=down;Input.parse_input_event(event);Input.flush_buffered_events()
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();var folder: String=args[0];var prefs_path:=folder.path_join("display.cfg")
 	app=load("res://main.tscn").instantiate();app.display_prefs_path=prefs_path;app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settle();app.home.hide();app.autosave_enabled.button_pressed=false
-	if args.size()>1:
+	if "--read" in args:
 		var prefs:=ConfigFile.new();check(prefs.load(prefs_path)==OK and app.navigation_scheme=="orbit" and is_equal_approx(app.get_window().content_scale_factor,1.25),"fresh app restores orbit and125percent interface preference")
 		check(prefs.get_value("unrelated","keep")=="preserved","saving navigation and scale preserves unrelated preferences")
 		print("ORBIT_NAVIGATION_READ ",JSON.stringify({"checks":checks,"failures":failures}));app.free();quit(0 if failures==0 else 1);return
 	check(app.navigation_scheme=="fly","new users retain the existing fly controls")
 	var asset:=folder.path_join("figure.glb");check(SceneIO.make_pose_fixture(asset)==OK and app.pose_editor.add_model(asset).is_empty(),"original skinned fixture loads")
 	app.physics_editor.freeze_all();app.pose_editor.frame_model();var rig: RefCounted=app.renderer.active_model();app.mode.select(2);app.change_mode(2);app.set_frame(8)
+	physical(KEY_RIGHT,true);physical(KEY_RIGHT,false);check(app.frame==9,"default Right advances exactly one frame")
+	physical(KEY_LEFT,true);physical(KEY_LEFT,false);check(app.frame==8,"default Left returns exactly one frame")
+	physical(KEY_SPACE,true);physical(KEY_SPACE,false);check(app.playing,"default Space starts synchronized preview")
+	physical(KEY_SPACE,true);physical(KEY_SPACE,false);check(not app.playing,"default Space pauses preview")
+	app.set_frame(8);app.frame_box.get_line_edit().grab_focus();physical(KEY_RIGHT,true);physical(KEY_RIGHT,false)
+	check(app.frame==8,"numeric text focus blocks frame shortcuts");app.frame_box.get_line_edit().release_focus()
+	app.mode.select(0);app.change_mode(0);var old_opacity: float=app.brush_opacity.value;app.brush_opacity.value=0
+	press(MOUSE_BUTTON_LEFT);motion(Vector2(8,4));release(MOUSE_BUTTON_LEFT)
+	check(not app.navigating and Input.mouse_mode==Input.MOUSE_MODE_VISIBLE,"Draw mode never captures the 3D fly camera")
+	app.brush_opacity.value=old_opacity;app.mode.select(2);app.change_mode(2)
 	var keys: Array=app.keys.duplicate(true);var data: Dictionary=rig.data.duplicate(true);var history: int=app.history.size()
 	var camera: Camera3D=app.renderer.camera;var old_position:=camera.global_position;var old_rotation:=camera.quaternion
 	var initial_view: Dictionary=app.renderer.view_state();var expected: Image=await app.renderer.capture(app.keys,app.layers,8,true);app.renderer.restore_view(initial_view)
 	press(MOUSE_BUTTON_LEFT);motion(Vector2(20,10));release(MOUSE_BUTTON_LEFT)
 	check(camera.global_position==old_position and absf(camera.quaternion.dot(old_rotation))<.99999,"default Ctrl-left remains free mouse look")
+	app.set_process(false);press(MOUSE_BUTTON_LEFT)
+	physical(KEY_W,true);check(Input.is_physical_key_pressed(KEY_W),"engine input authority receives physical forward key")
+	var fly_start: Vector3=camera.position;var fly_basis: Basis=camera.basis;app._process(.1)
+	check(camera.position.distance_to(fly_start-fly_basis.z*.3)<.00001,"held W flies forward at the default speed")
+	physical(KEY_D,true);fly_start=camera.position;app._process(.1)
+	check(absf(camera.position.distance_to(fly_start)-.3)<.00001,"diagonal fly speed is normalized")
+	physical(KEY_SHIFT,true);fly_start=camera.position;app._process(.1)
+	check(absf(camera.position.distance_to(fly_start)-.8)<.00001,"Shift selects the documented faster fly speed")
+	physical(KEY_W,false);physical(KEY_D,false);physical(KEY_SHIFT,false);fly_start=camera.position;app._process(.1)
+	check(camera.position==fly_start,"released fly keys stop camera movement")
+	physical(KEY_E,true);fly_start=camera.position;app._process(.1)
+	check(camera.position.distance_to(fly_start+camera.basis.y*.3)<.00001,"E flies along the camera up axis")
+	app._notification(Window.NOTIFICATION_WM_WINDOW_FOCUS_OUT);fly_start=camera.position;app._process(.1)
+	check(not app.navigating and Input.mouse_mode==Input.MOUSE_MODE_VISIBLE and camera.position==fly_start,"focus loss releases default fly capture even with a held key")
+	physical(KEY_E,false);app.set_process(true)
 	app.pose_editor.frame_model();app.show_display_settings();await settle()
 	check(not app.navigation_choices.is_visible_in_tree(),"Simple Settings hides the optional camera scheme")
 	app.set_advanced(true);check(app.navigation_choices.is_visible_in_tree(),"Advanced reveals the camera scheme")
@@ -86,15 +113,17 @@ func run() -> void:
 	app.new_project();app.has_project.open_file(saved)
 	while app.has_project.pid>0:await process_frame
 	await settle();check(app.navigation_scheme=="orbit" and (await app.renderer.capture(app.keys,app.layers,8,true)).get_data()==expected.get_data(),"reopening HAS keeps personal navigation and exact authored shot pixels")
-	app.new_project();app.has_project.open_file(folder.path_join("native.has"))
-	while app.has_project.pid>0:await process_frame
-	await settle();var native: RefCounted
-	for row in app.current_world().objects:
-		if row.kind=="model":app.world_selection.select_entity(row.id);native=app.renderer.active_model();break
-	check(native!=null and native.order.size()>100,"real packed Miku is available for native orbit acceptance")
-	if native:
-		app.mode.select(2);app.change_mode(2);app.pose_editor.frame_model();var native_before: Dictionary=native.data.duplicate(true);var native_keys: Array=app.keys.duplicate(true)
-		var center: Vector3=app.orbit_pivot();var distance:=camera.global_position.distance_to(center)
-		press(MOUSE_BUTTON_LEFT);motion(Vector2(45,15));release(MOUSE_BUTTON_LEFT)
-		check(absf(camera.global_position.distance_to(center)-distance)<.0001 and native.data==native_before and app.keys==native_keys,"posed native Miku orbits without changing its joints or authored camera")
-	var result:={"checks":checks,"failures":failures,"prefs":prefs_path};FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE).store_string(JSON.stringify(result));print("ORBIT_NAVIGATION_SMOKE ",JSON.stringify(result));app.free();quit(0 if failures==0 else 1)
+	if "--original-only" not in args:
+		app.new_project();app.has_project.open_file(folder.path_join("native.has"))
+		while app.has_project.pid>0:await process_frame
+		await settle();var native: RefCounted
+		for row in app.current_world().objects:
+			if row.kind=="model":app.world_selection.select_entity(row.id);native=app.renderer.active_model();break
+		check(native!=null and native.order.size()>100,"real packed Miku is available for native orbit acceptance")
+		if native:
+			app.mode.select(2);app.change_mode(2);app.pose_editor.frame_model();var native_before: Dictionary=native.data.duplicate(true);var native_keys: Array=app.keys.duplicate(true)
+			var center: Vector3=app.orbit_pivot();var distance:=camera.global_position.distance_to(center)
+			press(MOUSE_BUTTON_LEFT);motion(Vector2(45,15));release(MOUSE_BUTTON_LEFT)
+			check(absf(camera.global_position.distance_to(center)-distance)<.0001 and native.data==native_before and app.keys==native_keys,"posed native Miku orbits without changing its joints or authored camera")
+	else:print("UNRUN native orbit acceptance: original-only software run")
+	var result:={"checks":checks,"failures":failures,"prefs":prefs_path,"native_checks_unrun":"--original-only" in args};FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE).store_string(JSON.stringify(result));print("ORBIT_NAVIGATION_SMOKE ",JSON.stringify(result));app.free();quit(0 if failures==0 else 1)
