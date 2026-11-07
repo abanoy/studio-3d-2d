@@ -1,7 +1,7 @@
 # MD/addendum completion baseline audit
 
-The reviewed checklist has **49 of54required capability groups implemented
-(90.74%)** and **5 of62required acceptance conditions formally closed (8.06%)**.
+The reviewed checklist has **51 of54required capability groups implemented
+(94.44%)** and **5 of62required acceptance conditions formally closed (8.06%)**.
 These are separate, equally weighted checklist counts. They do not estimate
 remaining engineering time, native fidelity, reliability or release readiness.
 No combined product-completion percentage is calculated.
@@ -49,3 +49,8 @@ Source entity lights and proven-owned recovery blob retirement now have scoped
 implementation and evidence. These do not certify full native/device acceptance. The
 [generated checklist](completion_checklist.md) and
 [JSON ledger](completion_checklist.json) remain authoritative progress records.
+
+The [required motion review](required_motion_review.md) corrects POSE-03/MOTION-03
+implementation labels against their exact decided conditions. General full-body
+IK and unresolved multi-view/automatic terrain inference are not extra mandatory
+gates. Native/artist/device/Windows limits and formal closure stay separate.

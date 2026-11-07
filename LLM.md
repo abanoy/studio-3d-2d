@@ -3381,3 +3381,22 @@ Whole-process/GPU/device/Windows/physical-power-loss and global orphan cleanup
 remain separate. Coverage49/54(90.74%); formal5/62(8.06%), no score promotion.
 Next reassess remaining required feature coverage against actual MD/addendum wording,
 then address independent native engineering; do not invent optional requirements.
+
+
+## 2026-11-07 UTC — exact required IK/path implementation review
+
+ADD5.3 requires default supported hand/limb IK and appropriate root/foot holds with
+graceful fallback; general full-body IK is not mandated. ADD5.5 requires reusable
+editable paths/clips and visible reversible correction, while multi-view inference
+details remain OPEN. Existing staged walking/parent/clip code supplies that bounded
+contract; terrain/automatic facing/generalfullbody are not extra mandatory gates.
+Fresh31check default IK actual app suite passes gizmo/autokey/Undo/Redo/Cancel/
+unsupported rigs/scales/parents/source/HAS/48frame1080p24H264AAC; onset1.0000417s.
+No optional native fixtures available, explicitly skipped; not native certification.
+Portable test harness now supports explicit private display and configured media
+tools, freezes functional source hashes and validates Windows private receipt.
+Prior committed70helper/direct app checks include crouch and offline/recovery/media;
+grouped/ungrouped walking suites supply actual staged/persistence/cold/media proof.
+Required-motion review corrects POSE-03/MOTION-03 to implemented/scoped_evidence.
+Coverage51/54(94.44%); formal5/62(8.06%) pending committed acceptance review.
+Native profiles/fidelity and Windows durability remain the3partial engineering groups.

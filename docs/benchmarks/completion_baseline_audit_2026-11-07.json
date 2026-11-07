@@ -455,8 +455,8 @@
         "ADD5.3"
       ],
       "implementation_before": "partial",
-      "implementation": "partial",
-      "implementation_review": "Validated humanoid two-segment chains and planted-foot constraints exist. General imported chain/whole-body coverage and unusual rig handling remain bounded/incomplete.",
+      "implementation": "implemented",
+      "implementation_review": "Reassessed against ADD5.3/ADD5.5 exact conditions; bounded default IK/foot/root edits and reusable editable paths with staged reversible locomotion implement the decided workflows. Unsupported rigs/routes retain actionable manual fallback; optional broader inference is not required.",
       "reviewed_code_anchors": [
         {
           "path": "src/limb_ik.gd",
@@ -477,9 +477,9 @@
           "file_sha256": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f"
         }
       ],
-      "verification": "incomplete",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
-      "acceptance_review": "Mapped semantic arms/legs now support up to8fixed helpers per segment, preserve helpers and endpoint orientation, with actual hand drag/crouch/Undo/Redo/offline packed/recovery/48frameMP4 and direct-chain regression. Broader native rig-chain/constraint fidelity and whole-body goal handling remain separate; unusual or unsupported skeletons retain direct posing.",
+      "acceptance_review": "Required bounded software workflow is implemented and exercised; review committed evidence for formal closure. Broader native fidelity, physical input/artist and Windows target acceptance remain separate requirements. General full-body IK and multi-view/automatic terrain inference are not added as mandatory gates. See docs/required_motion_review.md.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
       "formal_receipts": [],
       "external_dependencies": []
@@ -662,8 +662,8 @@
         "ADD5.5"
       ],
       "implementation_before": "partial",
-      "implementation": "partial",
-      "implementation_review": "Saved correction/preview walking supports bounded straight and bending flat routes with smooth authored upright yaw. Automatic facing, sustained stationary turns, slopes, grouped characters and general native rig locomotion remain concrete unsupported cases. Multi-view inference details remain OPEN.",
+      "implementation": "implemented",
+      "implementation_review": "Reassessed against ADD5.3/ADD5.5 exact conditions; bounded default IK/foot/root edits and reusable editable paths with staged reversible locomotion implement the decided workflows. Unsupported rigs/routes retain actionable manual fallback; optional broader inference is not required.",
       "reviewed_code_anchors": [
         {
           "path": "src/walking_animation.gd",
@@ -678,9 +678,9 @@
           "file_sha256": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb"
         }
       ],
-      "verification": "incomplete",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
-      "acceptance_review": "Optional saved/correctable walking supports bounded straight routes, forward-progressing flat bends and smooth explicitly authored upright yaw. Staged preview/cancel, Undo/Redo, recovery, packed cold Open, exact five-frame pose replay and two-frame export agreement have scoped cloud evidence. Automatic facing, sustained pivots, general rig/terrain/moving-parent coverage and native/artist acceptance remain incomplete. Stationary nested parent walking now has97sample0.2mm accuracy and actual staged UI/cold/media/regression proof in grouped_walking_2026-11-07.json.",
+      "acceptance_review": "Required bounded software workflow is implemented and exercised; review committed evidence for formal closure. Broader native fidelity, physical input/artist and Windows target acceptance remain separate requirements. General full-body IK and multi-view/automatic terrain inference are not added as mandatory gates. See docs/required_motion_review.md.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
       "formal_receipts": [],
       "external_dependencies": []
