@@ -20,7 +20,8 @@ def main():
     folder = (options.output or ROOT / 'output/private-metadata' / str(time.time_ns())).resolve()
     folder.mkdir(parents=True, exist_ok=False)
     reports = {}
-    for name, marker in [('private_metadata_unit', 'PRIVATE_METADATA_UNIT '),
+    for name, marker in [('save_worker_unit', 'SAVE_WORKER_UNIT '),
+                         ('private_metadata_unit', 'PRIVATE_METADATA_UNIT '),
                          ('recovery_journal_unit', 'RECOVERY_JOURNAL_UNIT '),
                          ('lesson_recovery_unit', 'LESSON_RECOVERY_UNIT '),
                          ('recovery_identity_unit', 'RECOVERY_IDENTITY_UNIT ')]:
@@ -38,7 +39,7 @@ def main():
         assert report['failures'] == 0 and (report['checks'] > 0 or 'skipped' in report), report
         reports[name] = report
         print(name + ': ' + ('SKIPPED' if 'skipped' in report else 'PASS'), flush=True)
-    sources = ['src/atomic_metadata.gd', 'src/recovery.gd', 'src/recovery_journal.gd',
+    sources = ['src/save_worker.gd', 'tools/save_sync.py', 'tools/metadata_commit.py', 'src/atomic_metadata.gd', 'src/recovery.gd', 'src/recovery_journal.gd',
                'src/lesson_store.gd', 'tests/private_metadata_unit.gd', 'tests/verify_private_metadata.py']
     result = dict(reports=reports, folder=str(folder),
                   scope='Headless metadata safety; graphical crash/reopen workflows run separately. No power-loss or hostile concurrent filesystem race certification.',

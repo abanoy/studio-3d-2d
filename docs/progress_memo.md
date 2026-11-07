@@ -12783,3 +12783,38 @@ under /workspace/has-handoff-audit; curated docs/benchmarks/directory_commit_202
 Generated tracked log archived/restored. STORE-04 partial/open, next full payload,
 private metadata and all-created-parent sync plus external native/physical gates.
 Whole goal remains active.
+
+
+2026-11-06 — Supporting-POSIX saved payload/private/HAS parent sync
+
+Directory promotion now rechecks declared asset hashes in bounded1MiB chunks,
+fsyncs managed assets/PNGs and all created parents up to the pre-creation existing
+boundary. Known scene/world/particle/audio/reference/cel/nested records only;
+no metadata-path globbing. PNG pixel checks remain in Godot writer. Private
+owner/resolved/journal/preview/lesson files now verify before/after file fsync,
+sync created parents and promote atomically. Shared small GDScript save-worker
+adapter strictly handles real success bool, nonzero exit, empty/malformed status,
+and post-promotion outcome. No false old-state preservation on lost status.
+
+HAS fsyncs owned externalized sidecars/new parents and archive directory around
+promotion. Linked managed sidecar folder/file now refuses before copying outside.
+Existing external linked sources are never rewritten. Unsupported platform/dirsync
+flags remain explicit; no physical or Windows durability certification. Existing
+Python only, no network/packages, saved schemas/caps/native-source bytes unchanged.
+Synchronous worker/filesystem overhead is real; native latency gate remains.
+
+40unique private/directory Python sync/fault tests and58HAS tests pass,167private
+headless (including12protocol),232drawing domain and actual Godot stale/busy/retry/
+lost-status scenarios pass. Initial imported-test-class rediscovery inflated one
+exploratory count; import corrected, final counts unique. Actual private107/108/
+Dummy app62checks+16PNG cases, nested224, all5lesson startup cases and23writer+
+11startup autosave pass after real SIGKILL, manual HAS/assets exact and writer
+cache unavailable. H264/AAC, PCM alignment and exact source/editable pixels pass.
+Native fixtures, Windows, physical input/hardware and physical power loss unrun.
+
+Raw save-sync-private-directory/has-unit.log, full-sync-metadata, save-sync-domain/
+godot, full-save-sync-app/nested/lesson-recovery/lesson-autosave under
+/workspace/has-handoff-audit. Curated docs/benchmarks/save_sync_2026-11-06.json;
+docs/save_sync.md. Tracked generated log archived/restored. STORE-04 partial/open:
+next directory old-generation payload validity before rotating good rollback,
+then native/physical gates. Whole goal active; do not repeat completed sync work.

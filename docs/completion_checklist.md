@@ -17,7 +17,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 - **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
 - **P1 · MEM-02** — New authored/imported app cels now join adaptive owner cooling with exact Undo/save/crash recovery. Address legacy eager/raw fallback, clipboard/history/derived/GPU global accounting and dense-project admission before raising caps.
 - **P1 · MEM-01** — All single-cel structural producers, including new fill, now use affected-cel patches. Audit whole-layer/legacy retention and global history/active memory accounting, then dense-project acceptance.
-- **P1 · STORE-04** — Cooperating archive/directory promotions and directory generation guards are verified. Complete PNG/asset, private-metadata and all-parent directory sync; retain native Windows/physical power-loss gates.
+- **P1 · STORE-04** — Supporting POSIX payload/private/HAS/parent sync is verified. Audit directory rollback payload validity before backup rotation, then retain explicit native Windows and physical power-loss gates.
 - **P2 · MOTION-03** — Bounded saved walking now passes staged preview/correction, Undo, recovery, packed cold Open and exact render checks. Extend beyond straight flat routes and obtain native-rig/artist acceptance; optional multi-view inference remains separate.
 - **P2 · IMPORT-03** — Define per-profile native fidelity acceptance and use approved fixtures when available; report unsupported capabilities honestly.
 

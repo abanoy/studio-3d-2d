@@ -1,7 +1,6 @@
 """Guarded promotion of an already validated directory-project manifest."""
 from pathlib import Path
 import argparse
-import errno
 import hashlib
 import json
 import os
@@ -11,8 +10,12 @@ import tempfile
 
 try:
     from .has_project import HasError, MAX_META, save_lock, sha
+    from .directory_payloads import sync_files, parent_directories
+    from .save_sync import sync_directory
 except ImportError:
     from has_project import HasError, MAX_META, save_lock, sha
+    from directory_payloads import sync_files, parent_directories
+    from save_sync import sync_directory
 
 
 def check_path(folder, name):
@@ -34,25 +37,7 @@ def read_manifest(path, expected=None):
     return data
 
 
-def sync_directory(folder):
-    # Python does not expose a portable Windows directory-flush handle. Keep its
-    # established save behavior; native directory/power-loss validation is open.
-    if os.name != 'posix':
-        return False
-    handle = os.open(folder, os.O_RDONLY | getattr(os, 'O_DIRECTORY', 0))
-    try:
-        try:
-            os.fsync(handle)
-        except OSError as error:
-            if error.errno in (errno.EINVAL, errno.ENOTSUP, errno.ENOSYS):
-                return False
-            raise
-    finally:
-        os.close(handle)
-    return True
-
-
-def commit(folder, candidate_name, expected, candidate_sha, previous_valid):
+def commit(folder, candidate_name, expected, candidate_sha, previous_valid, boundary=None):
     folder = Path(folder).resolve(strict=True)
     if not re.fullmatch(r'project\.json\.[A-Za-z0-9_-]+\.tmp', candidate_name):
         raise HasError('Invalid prepared manifest filename; previous save preserved')
@@ -78,6 +63,8 @@ def commit(folder, candidate_name, expected, candidate_sha, previous_valid):
         # Read after sync too, before either committed directory entry changes.
         if read_manifest(candidate, candidate_sha) != data:
             raise HasError('Manifest readback differs; previous save preserved')
+        payload, directories = sync_files(folder, json.loads(data))
+        directories = parent_directories(directories, folder, folder if boundary is None else boundary)
         if current and previous_valid:
             old = read_manifest(target, current)
             handle, name = tempfile.mkstemp(prefix='project.backup.json.', suffix='.tmp', dir=folder)
@@ -89,13 +76,16 @@ def commit(folder, candidate_name, expected, candidate_sha, previous_valid):
             if temporary.read_bytes() != old:
                 raise HasError('Backup readback differs; previous save preserved')
             os.replace(temporary, backup)
-        synced = sync_directory(folder)
+        synced_count = 0
+        for directory in directories:
+            if sync_directory(directory):synced_count += 1
+        synced = synced_count == len(directories)
         os.replace(candidate, target)
         try:
-            sync_directory(folder)
+            final_synced = sync_directory(folder)
         except OSError as error:
             return dict(ok=False, committed=True, error='Project was written, but directory sync failed: ' + str(error))
-        return dict(ok=True, committed=True, directory_synced=synced)
+        return dict(ok=True, committed=True, directory_synced=synced and final_synced, directories_synced=synced_count, manifest_directory_synced=final_synced, **payload)
 
 
 def main():
@@ -105,9 +95,10 @@ def main():
     parser.add_argument('expected')
     parser.add_argument('candidate_sha')
     parser.add_argument('previous_valid', choices=['yes', 'no'])
+    parser.add_argument('--sync-boundary')
     args = parser.parse_args()
     try:
-        result = commit(args.folder, args.candidate, '' if args.expected == 'missing' else args.expected, args.candidate_sha, args.previous_valid == 'yes')
+        result = commit(args.folder, args.candidate, '' if args.expected == 'missing' else args.expected, args.candidate_sha, args.previous_valid == 'yes', args.sync_boundary)
     except (OSError, ValueError, RuntimeError) as error:
         result = dict(ok=False, committed=False, error=str(error))
     sys.stdout.reconfigure(encoding='utf-8')

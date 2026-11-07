@@ -39,3 +39,7 @@ This does not serialize multiple concurrent writers or certify hostile filesyste
 mutation between checks and rename. File flush/readback does not establish
 physical durability or directory sync. STORE-04 remains partial/open for those
 remaining requirements. See [scoped evidence](benchmarks/private_metadata_2026-11-06.json).
+
+Supporting POSIX payload/private/all-created-parent sync is now implemented and
+scoped-tested in [save syncing](save_sync.md). Earlier open-sync notes above describe
+the preceding increment; native/physical acceptance remains open.

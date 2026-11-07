@@ -92,6 +92,7 @@ static func readable_manifest(path: String) -> bool:
 	return integer(data.get("schema_version"), 1, 6) and data.get("layers") is Array and data.get("camera_keys") is Array
 
 static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={}) -> String:
+	var sync_boundary:=preload("res://src/save_worker.gd").existing_boundary(folder)
 	var output_error:=preload("res://src/output_size.gd").project_error(video)
 	if not output_error.is_empty():return output_error+" Previous save preserved."
 	var video_error:=Extended.video_error(video)
@@ -278,15 +279,9 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		return "Manifest write failed. Previous save preserved."
 	if FileAccess.get_file_as_string(temp)!=serialized or not readable_manifest(temp):return "Manifest readback differs. Previous save preserved."
 	var target := folder.path_join("project.json")
-	var python:=OS.get_environment("HYBRID_PYTHON");var output: Array=[]
-	var args:=PackedStringArray([ProjectSettings.globalize_path("res://tools/directory_commit.py"),ProjectSettings.globalize_path(folder),temp.get_file(),expected_manifest if not expected_manifest.is_empty() else "missing",FileAccess.get_sha256(temp),"yes" if readable_manifest(target) else "no"])
-	var code:=OS.execute(python if not python.is_empty() else "python",args,output,false,false)
-	if output.is_empty():return "Save worker ended without status. Check the configured Python and saved project before retrying."
-	var parser:=JSON.new()
-	if parser.parse(str(output[0]))!=OK or not parser.data is Dictionary:return "Directory commit worker returned unreadable status. Check the saved project before retrying."
-	var result: Dictionary=parser.data
-	if code==0 and result.get("ok",false)==true:return ""
-	return str(result.get("error","Directory commit failed; inspect saved project before retrying."))
+	var args:=PackedStringArray([ProjectSettings.globalize_path(folder),temp.get_file(),expected_manifest if not expected_manifest.is_empty() else "missing",FileAccess.get_sha256(temp),"yes" if readable_manifest(target) else "no","--sync-boundary",sync_boundary])
+	var result:=preload("res://src/save_worker.gd").run("directory_commit.py",args)
+	return "" if result.get("ok",false)==true else str(result.error)
 
 static func numeric_array(value, length: int) -> bool:
 	if not value is Array or value.size() != length:

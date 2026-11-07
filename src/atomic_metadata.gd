@@ -18,6 +18,7 @@ static func path_error(path: String,owned_root: String) -> String:
   if filesystem.is_link(at):return "Metadata write path is a symbolic link. Previous state preserved."
  return ""
 static func write_bytes(path: String,bytes: PackedByteArray,owned_root: String) -> String:
+ var boundary:=preload("res://src/save_worker.gd").existing_boundary(owned_root)
  if bytes.size()>MAX_BYTES:return "Metadata exceeds1MiB. Previous state preserved."
  for candidate in [path,path+".tmp"]:
   var why:=path_error(candidate,owned_root)
@@ -39,6 +40,6 @@ static func write_bytes(path: String,bytes: PackedByteArray,owned_root: String) 
   DirAccess.remove_absolute(temporary);return "Cannot verify metadata temporary. Previous state preserved."
  var why:=path_error(path,owned_root)
  if not why.is_empty():DirAccess.remove_absolute(temporary);return why
- if DirAccess.rename_absolute(temporary,path)!=OK:
-  DirAccess.remove_absolute(temporary);return "Cannot commit metadata. Previous state preserved."
- return ""
+ var arguments:=PackedStringArray([ProjectSettings.globalize_path(owned_root).simplify_path(),ProjectSettings.globalize_path(path).simplify_path(),ProjectSettings.globalize_path(temporary).simplify_path(),digest,boundary])
+ var result:=preload("res://src/save_worker.gd").run("metadata_commit.py",arguments)
+ return "" if result.get("ok",false)==true else str(result.error)

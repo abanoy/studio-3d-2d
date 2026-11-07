@@ -55,3 +55,7 @@ Drawing-domain and private metadata regressions, the automatic32cel packed save/
 cold recovery/H264-AAC workflow and nested adaptive/mask/active-child save/recovery
 workflows pass on owned private cloud displays. See
 [scoped evidence](benchmarks/directory_commit_2026-11-06.json).
+
+Supporting POSIX payload/private/all-created-parent sync is now implemented and
+scoped-tested in [save syncing](save_sync.md). Earlier open-sync notes above describe
+the preceding increment; native/physical acceptance remains open.

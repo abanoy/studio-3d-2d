@@ -20,6 +20,8 @@ try:from .drawing_origin import error as drawing_origin_error
 except ImportError:from drawing_origin import error as drawing_origin_error
 try:from .pose_library import error as pose_library_error
 except ImportError:from pose_library import error as pose_library_error
+try:from .save_sync import existing_boundary, sync_directory, parents as sync_parents
+except ImportError:from save_sync import existing_boundary, sync_directory, parents as sync_parents
 
 MAX_TOTAL = 512 * 1024 * 1024
 MAX_META = 1024 * 1024
@@ -316,15 +318,17 @@ def pack(request):
     for destination in (target,Path(str(target)+'.backup'),Path(str(target)+'.backup.tmp')):
         if destination.is_symlink():raise HasError('Linked save destination refused; previous save and original source preserved')
         if destination.is_dir():raise HasError('Save destination is blocked by a directory; previous save preserved')
+    boundary=existing_boundary(target.parent)
     target.parent.mkdir(parents=True,exist_ok=True)
     with save_lock(target):
-        return _pack_locked({**request,'path':str(target)})
+        return _pack_locked({**request,'path':str(target),'_sync_boundary':str(boundary)})
 
 
 def _pack_locked(request):
     folder = Path(request['folder']).resolve(strict=True)
     chosen = Path(request['path']).expanduser()
     target = chosen.parent.resolve() / chosen.name
+    sync_paths={target.parent};sidecars_synced=os.name=='posix'
     for destination in (target, Path(str(target)+'.backup'), Path(str(target)+'.backup.tmp')):
         if destination.is_symlink(): raise HasError('Linked save destination refused; previous save and original source preserved')
         if destination.is_dir(): raise HasError('Save destination is blocked by a directory; previous save preserved')
@@ -355,9 +359,13 @@ def _pack_locked(request):
                 caches = [Path(request['cache_root']).resolve()]+[Path(p).resolve() for p in request.get('cache_roots',[])]
                 if any(reference.is_relative_to(cache) for cache in caches):
                     reference = target.with_name(target.stem+'.assets') / Path(name).name
+                    if reference.parent.is_symlink() or reference.is_symlink():raise HasError('Linked managed sidecar refused; previous save and original source preserved')
                     if not reference.is_file() or sha(reference) != digest:
                         if reference.exists(): raise HasError('Conflicting linked sidecar asset')
                         checked_copy(path, reference, digest, request)
+                    if os.name=='posix':
+                        with reference.open('rb') as stream:os.fsync(stream.fileno())
+                    sync_paths.add(reference.parent)
                 try: row['reference'] = reference.relative_to(target.parent).as_posix()
                 except ValueError: row['reference'] = str(reference)
             else: payload.append(row)
@@ -399,8 +407,13 @@ def _pack_locked(request):
         if valid:
             backup = Path(str(target)+'.backup')
             checked_copy(target, backup, sha(target), request)
+    synced=True
+    for directory in sync_parents(sync_paths,request['_sync_boundary']):
+        check_cancel(request);synced=sync_directory(directory) and synced
     check_cancel(request); os.replace(temporary,target)
-    return {'ok':True,'path':str(target),'storage':mode,'bytes':target.stat().st_size}
+    try:final_synced=sync_directory(target.parent)
+    except OSError as error:return {'ok':False,'committed':True,'error':'HAS file was written, but directory sync failed: '+str(error)}
+    return {'ok':True,'path':str(target),'storage':mode,'bytes':target.stat().st_size,'directory_synced':synced and final_synced,'owned_sidecars_synced':sidecars_synced}
 
 
 def unpack(request):

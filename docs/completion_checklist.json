@@ -1346,9 +1346,25 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/directory_commit_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "tools/save_sync.py"
+        },
+        {
+          "kind": "source",
+          "path": "tools/metadata_commit.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/save_sync.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/save_sync_2026-11-06.json"
         }
       ],
-      "remaining": "Archive and directory promotions now exclude cooperating writers; directory generation checks, metadata sync and scoped readback/source/fault cases pass. Complete payload/private/all-parent directory sync; native Windows and actual physical power-loss acceptance remain incomplete.",
+      "remaining": "Supporting POSIX payload/private/HAS/owned-sidecar and all-created-parent sync now has scoped fault/app evidence. Audit directory old-generation payload validation before rotating a valid backup; native Windows and actual physical power-loss acceptance remain incomplete.",
       "external_dependencies": []
     },
     {
@@ -2244,7 +2260,7 @@
     {
       "requirement": "STORE-04",
       "priority": 1,
-      "action": "Cooperating archive/directory promotions and directory generation guards are verified. Complete PNG/asset, private-metadata and all-parent directory sync; retain native Windows/physical power-loss gates."
+      "action": "Supporting POSIX payload/private/HAS/parent sync is verified. Audit directory rollback payload validity before backup rotation, then retain explicit native Windows and physical power-loss gates."
     },
     {
       "requirement": "MOTION-03",
