@@ -41,7 +41,7 @@ func full_mask(clip: Dictionary) -> bool:
 	return Rect2i(int(r[0]),int(r[1]),int(r[2]),int(r[3]))==Rect2i(0,0,1920,1080)
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();var folder: String=args[0]
-	app=load("res://main.tscn").instantiate();app.cold_cel_loading="--adaptive-open" in args;app.display_prefs_path=folder.path_join("prefs.cfg");app.recent_path=folder.path_join("recents.json");app.recovery_root=folder.path_join("recovery-cold" if "--read" in args else "recovery")
+	app=load("res://main.tscn").instantiate();app.cold_cel_loading="--adaptive-open" in args;app.cold_cel_min_bytes=0;app.display_prefs_path=folder.path_join("prefs.cfg");app.recent_path=folder.path_join("recents.json");app.recovery_root=folder.path_join("recovery-cold" if "--read" in args else "recovery")
 	if "--crash" in args:app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected cleanup"))
 	root.add_child(app);await settle();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache-cold" if "--read" in args else "cache")
 	var editor=app.sequence_editor

@@ -256,7 +256,22 @@ static func numeric_array(value, length: int) -> bool:
 static func integer(value, minimum: int, maximum: int) -> bool:
 	return (value is int or value is float) and is_finite(float(value)) and float(value) == floor(float(value)) and value >= minimum and value <= maximum
 
-static func load_project(folder: String, manifest_name := "project.json",cold_cels:=false) -> Dictionary:
+static func raster_reserve(data) -> int:
+	# Policy estimate only, never validation. Saved schema wrappers keep tracks at
+	# the root; editable sequence assets contain one additional scene level.
+	if not data is Dictionary:return 0
+	var documents: Array=[data];var graph=data.get("sequence_graph",{})
+	if graph is Dictionary and graph.get("assets") is Array:
+		for asset in graph.assets:
+			if asset is Dictionary and asset.get("scene") is Dictionary:documents.append(asset.scene)
+	var count:=0
+	for scene in documents:
+		if not scene.get("layers") is Array:continue
+		for layer in scene.layers:
+			if layer is Dictionary and layer.get("cels") is Array:count+=layer.cels.size()
+	return count*1920*1080*4
+
+static func load_project(folder: String, manifest_name := "project.json",cold_cels:=false,cold_min_bytes:=0) -> Dictionary:
 	if manifest_name not in ["project.json", "project.backup.json"] and not Journal.valid_manifest(folder,manifest_name): return {"error": "Unsupported or changed recovery manifest."}
 	var manifest_path := folder.path_join(manifest_name)
 	if not FileAccess.file_exists(manifest_path):
@@ -267,7 +282,7 @@ static func load_project(folder: String, manifest_name := "project.json",cold_ce
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK:
 		return {"error": "Corrupt JSON manifest: " + parser.get_error_message()}
-	var rasters:=RasterReader.new();rasters.cold_cels=cold_cels
+	var rasters:=RasterReader.new();rasters.cold_cels=cold_cels and (cold_min_bytes==0 or raster_reserve(parser.data)>cold_min_bytes)
 	return decode_project(parser.data,folder,false,rasters)
 
 static func decode_project(data,folder: String,extended:=false,rasters=null) -> Dictionary:

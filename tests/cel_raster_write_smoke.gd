@@ -16,7 +16,7 @@ func menu(at: int,action: int) -> void:
 func select_area(at: int) -> void:
 	app.set_frame(at);app.tool.select(4);press(Vector2(420,220),true);motion(Vector2(460,250));press(Vector2(460,250),false);await settled()
 func run() -> void:
-	folder=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.cold_cel_loading="--adaptive-open" in OS.get_cmdline_user_args();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in OS.get_cmdline_user_args() else "writer-cache")
+	folder=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.cold_cel_loading="--adaptive-open" in OS.get_cmdline_user_args();app.cold_cel_min_bytes=0;app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in OS.get_cmdline_user_args() else "writer-cache")
 	if "--read" in OS.get_cmdline_user_args():
 		app.has_project.open_file(folder.path_join("Cold write.has"));await wait_job();var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
 		if app.cold_cel_loading:check(app.layers[1].cels.all(func(cel):return cel.has("raster_owner") and not cel.raster_owner.is_pinned()),"fresh normal HAS Open uses adaptive cold owners without fixture injection")

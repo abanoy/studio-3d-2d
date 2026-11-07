@@ -22,7 +22,9 @@ func source_project(folder: String) -> String:
 	var project:={"schema_version":4,"video":{"width":1920,"height":1080,"fps_num":24,"fps_den":1,"duration_frames":48},"camera_keys":[Timeline.key(0,Vector3(0,1,5),Quaternion.IDENTITY,60),Timeline.key(48,Vector3(1,1,5),Quaternion.IDENTITY,60)],"world":World.empty(),"layers":[{"id":"ink","name":"Ink","visible":true,"cels":cels}],"audio":{},"editor":{"frame":0}}
 	FileAccess.open(folder.path_join("project.json"),FileAccess.WRITE).store_string(JSON.stringify(project));return digest
 func run() -> void:
-	var args:=OS.get_cmdline_user_args();folder=args[0];app=load("res://main.tscn").instantiate();app.cold_cel_loading="--adaptive-open" in args;app.display_prefs_path=folder.path_join("prefs.cfg");app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in args else "writer-cache")
+	var args:=OS.get_cmdline_user_args();folder=args[0];app=load("res://main.tscn").instantiate()
+	if not "--auto-open" in args:app.cold_cel_loading="--adaptive-open" in args;app.cold_cel_min_bytes=0
+	app.display_prefs_path=folder.path_join("prefs.cfg");app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in args else "writer-cache")
 	if "--read" in args:
 		var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")));app.has_project.open_file(folder.path_join("shared.has"));await wait_job()
 		check(app.has_project.path==folder.path_join("shared.has") and independent(expected),"cold packed Open preserves32independent raster identities and all edited/peer RGBA")
@@ -33,6 +35,7 @@ func run() -> void:
 		print("CEL_RASTER_READER_READ ",JSON.stringify({"checks":checks,"failures":failures}));await app.quit_studio();quit(0 if failures==0 else 1);return
 	var source:=folder.path_join("source-project");var base:=source_project(source);var source_sha:=FileAccess.get_sha256(source.path_join("drawing.png"));var source_manifest:=FileAccess.get_sha256(source.path_join("project.json"))
 	check(app.open_project(source),"ordinary directory project opens32cel records referencing one original PNG")
+	if "--auto-open" in args:check(app.cold_cel_loading and app.cold_cel_min_bytes==64*1024*1024 and app.layers[0].cels.all(func(cel):return cel.has("raster_owner")),"unchanged app defaults automatically cold-load a larger project")
 	var expected: Dictionary={"base":base,"edited":base,"ids":[]}
 	for cel in app.layers[0].cels:expected.ids.append(cel.id)
 	check(independent(expected),"ordinary Open provides32distinct editable raster identities with exact source RGBA")
@@ -69,7 +72,7 @@ func run() -> void:
 	app.autosave_tick(true)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	check(app.checkpoint_revision==app.recovery_revision,"ordinary recovery checkpoint saves all independent shared-source cels")
-	expected["recovery"]=app.recovery_session;FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected,"",true,true))
+	expected["recovery"]=app.recovery_session;var expected_file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);expected_file.store_string(JSON.stringify(expected,"",true,true));expected_file.flush();expected_file.close()
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected"))
 	print("CEL_RASTER_READER_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":expected.movie}))
 	if "--crash" in args:OS.kill(OS.get_process_id());quit(2);return

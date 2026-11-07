@@ -12286,3 +12286,38 @@ must be weighed alongside sparse memory gain. No resource-cap or format changes.
 MEM-02 partial/open, edited-owner/global dense budgets still unfinished. Next
 resolve bounded latency/default compatibility policy, then budget scalability.
 Full goal remains active and independently actionable.
+
+
+2026-11-06 — automatic bounded raster loading policy (MEM-02 partial)
+
+Enabled app adaptive requests only above64MiB estimated fullHD cel reservation.
+Count includes root and direct child scene records;8cels below threshold,9above.
+Aliases conservatively count per record, not unique physical bytes. Small projects
+keep eager latency, larger compressible sources use cold snapshots, noise retains
+eager/COW fallback. Storage API default remains eager; explicit adaptive threshold0
+retained for acceptance/compatibility. No UI setting, persisted policy, schema or
+32cel cap change. Newly authored/edited owners are not automatically cooled.
+
+11policy boundary/root+child/unsafe-path cases pass;176combined domain checks.
+Unchanged app defaults ordinary32cel directory/HAS Open confirmed cold; full78case
+suite31unit16PNG20writer5reader6startup passes with actual SIGKILL and original
+project/WAV/writer cache unavailable. Manual HAS/source exact. Existing154case
+small-project clipboard/history/GPU/movie regression passes with new defaults.
+The first automatic crash run had an empty test expected.json afterSIGKILL despite
+all product assertions passing: temporary FileAccess buffer lacked explicit close.
+Changed ONLY test receipt to flush/close before intentional kill; reran unchanged
+recovery assertions successfully. Original log/empty receipt retained. No application
+checkpoint defect or weakened assertion inferred. Test startup class respects real
+defaults under --auto-open; explicit eager/adaptive modes remain isolated controls.
+Proof cel-raster-policy-domain,policy-auto-flushed andpolicy-small-regression under
+/workspace/has-handoff-audit; curated docs/benchmarks/cel_raster_policy_2026-11-06.json.
+
+Rewrote docs/cold_cel_rasters.md as a coherent current implementation contract,
+removing obsolete staged/default-off statements while preserving earlier scoped
+measurements and Git/history evidence. Actual cold seek cost remains documented;
+small-project policy avoids imposing it universally. No hardware/native/artist,
+peak/RSS/GPU or noise compression claims. Source assets preserved.
+
+MEM-02 remains partial/open. Next edited-owner/pixel-history migration and global
+dense-project budgeting before any cap expansion; default cold opening alone does
+not close scalability. Full goal active, not complete or externally blocked.

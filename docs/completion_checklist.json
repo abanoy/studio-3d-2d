@@ -883,9 +883,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_raster_app_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "tests/cel_raster_policy_unit.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_raster_policy_2026-11-06.json"
         }
       ],
-      "remaining": "Opt-in adaptive ordinary Open/edit/save/startup recovery and224nested checks pass; app measurements show much lower sparse allocation but distinct seeks80ms vs53ms eager on softwareGL. Default remains eager pending bounded latency/default compatibility policy. Edited-owner/global dense-project budgeting and cap expansion remain incomplete; preserve hardware/native gates.",
+      "remaining": "Automatic64MiB root+child policy verified: larger sparse projects use cold snapshots, small/noisy sources preserve eager behavior, normal Open/edit/save/abrupt startup and nested evidence pass. Edited owners remain hot under legacy pixel Undo; global dense-project budgeting and cap expansion remain incomplete. Preserve hardware/native gates and measured cold seek tradeoff.",
       "external_dependencies": []
     },
     {
@@ -2052,7 +2060,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Nested cold render/edit/save/recovery passes and app latency is measured. Resolve measured cold-seek/default compatibility tradeoff, then edited-owner/global dense-project budgets before raising caps."
+      "action": "Automatic cold loading is enabled above64MiB reserve with verified compatibility. Next migrate edited-owner/pixel-history ownership and global dense-project budgets before raising caps."
     },
     {
       "requirement": "MEM-01",
