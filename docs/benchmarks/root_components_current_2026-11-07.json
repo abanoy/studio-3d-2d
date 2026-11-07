@@ -1,0 +1,201 @@
+{
+  "folder": "/workspace/studio-3d-2d/output/component-regression/1794089209069648637",
+  "suites": [
+    {
+      "name": "curves",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 30,
+        "failures": 0
+      },
+      "seconds": 0.259
+    },
+    {
+      "name": "clips",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 36,
+        "failures": 0
+      },
+      "seconds": 2.117
+    },
+    {
+      "name": "first_key",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 6,
+        "failures": 0
+      },
+      "seconds": 0.352
+    },
+    {
+      "name": "gap",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 48,
+        "failures": 0
+      },
+      "seconds": 2.12
+    },
+    {
+      "name": "motion",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 27,
+        "failures": 0
+      },
+      "seconds": 0.45
+    },
+    {
+      "name": "virtual",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 3,
+        "failures": 0
+      },
+      "seconds": 0.349
+    },
+    {
+      "name": "backward",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 24,
+        "failures": 0
+      },
+      "seconds": 0.536
+    },
+    {
+      "name": "pose",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 45,
+        "failures": 0
+      },
+      "seconds": 0.534
+    },
+    {
+      "name": "paste",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 15,
+        "failures": 0
+      },
+      "seconds": 0.441
+    },
+    {
+      "name": "keys",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 5,
+        "failures": 0
+      },
+      "seconds": 0.351
+    },
+    {
+      "name": "delete",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 18,
+        "failures": 0
+      },
+      "seconds": 0.543
+    },
+    {
+      "name": "path",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 15,
+        "failures": 0
+      },
+      "seconds": 0.44
+    },
+    {
+      "name": "shapes",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 11,
+        "failures": 0
+      },
+      "seconds": 0.349
+    },
+    {
+      "name": "authoring",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 18,
+        "failures": 0
+      },
+      "seconds": 0.44
+    },
+    {
+      "name": "recording",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 12,
+        "failures": 0
+      },
+      "seconds": 0.444
+    },
+    {
+      "name": "channels",
+      "ok": true,
+      "exit": 0,
+      "result": {
+        "checks": 7,
+        "failures": 0
+      },
+      "seconds": 0.348
+    }
+  ],
+  "skipped": [
+    "document: native plans file unavailable",
+    "settings: native plans file unavailable"
+  ],
+  "ordinary_model9_admission": true,
+  "checks": 320,
+  "ok": true,
+  "source_sha256": {
+    "src/root_component_runtime.gd": "ace6b71ebdc931a05fe2468a4042dc797a90836b5bd4c99e082ea3202c5d51ff",
+    "src/root_component_curves.gd": "a0b718daffcc1285d29e3ead559746305bd5cd7d813f95788015d527e2e0235d",
+    "src/root_component_document.gd": "98530f2cd95ec6a82bfc8f7d0362e429f264078cef62f3d529ff44a39d66128f",
+    "src/root_component_motion.gd": "befef7ed4d7343ccba705e9e6676b9658566e37c3ad417ef67a9f50a007226b9",
+    "src/root_component_assistance.gd": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f",
+    "src/root_component_clips.gd": "c956b4b4014fbc2e6efbdd0f6afda49ce32230b8d0c1c845d74ac9709f280f64",
+    "tests/root_component_curves_unit.gd": "6fc4aec33e8883437df53be827ee0d6047a97928a3abfccce7c19b444936f0a6",
+    "tests/root_component_clips_unit.gd": "7a6a66dafdf5737075b4e3a544f5f8a9b1eff393a9153c22ff9d107064083039",
+    "tests/root_component_document_unit.gd": "551c3dc130006f690b0fc828bbde5e77b249e2e74b18babac9761ede0def30c5",
+    "tests/root_component_first_key_unit.gd": "7b492a7dd2de418a0f6eeb219f63c13f57028a68d1172fa82d005e479a68b63a",
+    "tests/root_component_gap_unit.gd": "e8d5b71cd6b09fc13b6790089a9cc2abade0b8c46047a313dca481c152c1481b",
+    "tests/root_component_motion_unit.gd": "a8d269571d721ac387c489cd8043616e3ae6743ad473725c7b676ec4a8f15d0b",
+    "tests/root_component_virtual_unit.gd": "3c55b5bd083ea9b234d531ad6f1713fbc7415f88391090fb6ee50ed4f062a2cf",
+    "tests/root_component_backward_unit.gd": "35961821ed2805067270d387e605e89aa88df6948359d5aabf965ef1b32fcfa0",
+    "tests/root_component_pose_unit.gd": "bd0bfb42b0e4da58c5cef05296d9266851cb3cfbacfa2f60eb41c71be805c402",
+    "tests/root_component_paste_unit.gd": "1f030ad5fcee32635d84f0e62760593186f160b450f60ad4a5f81407fe26d77c",
+    "tests/root_component_keys_unit.gd": "fc5635cde277d75257a9792bae6d0010efb46a0748f3db2298e168bce3c174a4",
+    "tests/root_component_delete_unit.gd": "73e79ce36fda0340db8b8d5e7450e2382f6c064941d17759e7aa2f699af341e6",
+    "tests/root_component_path_unit.gd": "7225a92dcf5d481a798f169178699bcb71a3d05012f4e9206df2644ba9f3e118",
+    "tests/root_component_shapes_unit.gd": "90e32d2ecada247240c0d374fd39a2109a59ba33191f1695171e97f15765821f",
+    "tests/root_component_authoring_unit.gd": "b86a44b3630cf56a8622fa6034fba2cabc376462732cd050ef24e9ae8e40fd50",
+    "tests/root_component_settings_unit.gd": "6509e646963b0eb570f8f3c01b19b8e615314611186709cf45a95ca86d17c5de",
+    "tests/root_component_recording_unit.gd": "dbbe2d182cc8d40e9ced97574f4c259835200ba6e2cea89c222127ffdfbb327c",
+    "tests/root_component_channels_unit.gd": "305a7fab1eb57269d717e455f711b5a2ff7786bf31cf73bf8351e7da23e2dc47"
+  },
+  "format": "has_root_components_current_1",
+  "date": "2026-11-07 UTC",
+  "scope": "320 headless component sampling/authoring/clip/motion/shape/recording/channel checks; document and settings suites require absent native plans and are explicitly skipped. This is domain coverage, not native or standalone normal-editor UI certification."
+}
