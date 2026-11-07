@@ -160,6 +160,9 @@ var tool_buttons: Array[Button] = []
 var camera_strip: HBoxContainer
 var physics_bar: Control
 var undo_button: Button
+var status_serial := 0
+var empty_hint: PanelContainer
+var empty_hint_label: Label
 var redo_button: Button
 var drawing_section: VBoxContainer
 var camera_section: VBoxContainer
@@ -540,6 +543,7 @@ func refresh_workspace() -> void:
 	if physics_bar: physics_bar.visible = advanced_mode or mode.selected == 2
 	refresh_tool_strip()
 	if camera_strip: camera_strip.visible = not advanced_mode and mode.selected == 1
+	refresh_status_style()
 	if undo_button: undo_button.text = "Undo" if advanced_mode else ""; redo_button.text = "Redo" if advanced_mode else ""
 	drawing_section.get_parent().visible = advanced_mode or mode.selected == 0
 	camera_section.get_parent().visible = advanced_mode or mode.selected == 1
@@ -707,6 +711,22 @@ func build_ui() -> void:
 	canvas.middle_clicked=cycle_pose_operation
 	canvas.tooltip_text = "Wheel: zoom • Middle drag: pan • Space: play/pause"
 	center.add_child(canvas)
+	# Redesign: friendly next step on an empty world / frame (Simple only; a child of the canvas control, not the film).
+	empty_hint = PanelContainer.new()
+	empty_hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var hint_style := StyleBoxFlat.new()
+	hint_style.bg_color = Color(0.93, 0.96, 0.99, 0.92)
+	hint_style.set_corner_radius_all(10)
+	hint_style.set_content_margin_all(14)
+	empty_hint.add_theme_stylebox_override("panel", hint_style)
+	empty_hint_label = label(empty_hint, "")
+	empty_hint_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	empty_hint_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	empty_hint.visible = false
+	canvas.add_child(empty_hint)
+	empty_hint.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	empty_hint.position.y = 24
+	empty_hint.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	scene_name = label(center, "")
 	scene_name.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	var scroll := ScrollContainer.new()
@@ -933,7 +953,54 @@ func default_ffmpeg() -> String:
 
 func message(text: String) -> void:
 	status.text = text
+	status_serial += 1
+	refresh_status_style()
+	schedule_status_fade(status_serial)
 	if home and home.visible and home.notice:home.feedback(text)
+
+func schedule_status_fade(serial: int) -> void:
+	# Redesign: the Simple toast fades after 6 s. Only the look changes; status.text is kept,
+	# because Codex's code and tests read it back as the latest result.
+	if advanced_mode or not is_inside_tree(): return
+	get_tree().create_timer(6.0).timeout.connect(func():
+		if serial == status_serial and not advanced_mode and status: status.self_modulate.a = 0.0)
+
+func refresh_status_style() -> void:
+	# Redesign: Simple shows status as a rounded toast (red for problems); Advanced keeps the plain line.
+	if status == null: return
+	if advanced_mode:
+		status.remove_theme_stylebox_override("normal")
+		status.self_modulate.a = 1
+		return
+	var problem := is_problem_message(status.text)
+	var toast := StyleBoxFlat.new()
+	toast.bg_color = Color("fdecea") if problem else Color("eaf3fb")
+	toast.border_color = Color("d9534f") if problem else Color("9cc3e4")
+	toast.set_border_width_all(1)
+	toast.set_corner_radius_all(10)
+	toast.content_margin_left = 12
+	toast.content_margin_right = 12
+	toast.content_margin_top = 6
+	toast.content_margin_bottom = 6
+	status.add_theme_stylebox_override("normal", toast)
+	status.self_modulate.a = 1.0 if not status.text.is_empty() else 0.0
+
+func is_problem_message(text: String) -> bool:
+	var lower := text.to_lower()
+	return lower.contains("fail") or lower.contains("error") or lower.contains("cannot") or lower.contains("could not") or lower.contains("unsupported")
+
+func refresh_empty_hint() -> void:
+	# Redesign: Simple-only next-step hint over the canvas (editor overlay, never in renders). Writes only on change.
+	if empty_hint == null: return
+	var text := ""
+	if not advanced_mode and not playing and not exporting:
+		var empty: bool = source.is_empty() and (renderer.world_runtime == null or renderer.world_runtime.instances.is_empty())
+		if empty: text = "Start here:  Add a 3D scene or a model,\nmove the camera and save a key, then draw on top."
+		elif mode.selected == 0 and active_layer < layers.size() and Drawing.cel_at(layers[active_layer], frame).is_empty(): text = "No drawing at this frame yet.\nPress New drawing, then draw on the picture."
+		elif mode.selected == 1 and keys.is_empty(): text = "No camera keys yet.\nMove the view, then press Save key."
+	var show_hint := not text.is_empty()
+	if show_hint and empty_hint_label.text != text: empty_hint_label.text = text
+	if empty_hint.visible != show_hint: empty_hint.visible = show_hint
 
 func changed() -> void:
 	if drawing_selection_editor:drawing_selection_editor.cancel()
@@ -1138,9 +1205,11 @@ func change_mode(index: int) -> void:
 	pose_editor.apply_frame()
 	pose_editor.refresh_values()
 	if index == 2 and not renderer.world_runtime and renderer.model and world_selection.selected != "model": world_selection.select_entity("model",false)
-	if index == 1: message("Editor camera is temporary. Insert a key explicitly; switching to Draw restores the shot.")
-	elif index == 2: message("Pose model: click a joint, then drag colored handles. Completed edits auto-key by default. Camera keys and drawing remain separate.")
-	else: message("Drawing edits only the active cel. Held frames share this drawing; duplicate to make a variation.")
+	# Redesign: plain wording in Simple; Advanced keeps the original messages.
+	if index == 1: message("Camera: move around freely, then press Save camera key [%s] to keep this view in the movie." % keyboard_shortcuts.label_for("camera") if not advanced_mode else "Editor camera is temporary. Insert a key explicitly; switching to Draw restores the shot.")
+	elif index == 2 and not advanced_mode and not pose_editor.active_rig(): message("Pose: no model yet. Press Add, then Poseable model…")
+	elif index == 2: message("Pose: click a joint and drag the colored handles. Your changes are keyed for you." if not advanced_mode else "Pose model: click a joint, then drag colored handles. Completed edits auto-key by default. Camera keys and drawing remain separate.")
+	else: message("Draw: this drawing stays on screen until the next one. Use New drawing to change it from this frame on." if not advanced_mode else "Drawing edits only the active cel. Held frames share this drawing; duplicate to make a variation.")
 
 func refresh_camera_controls() -> void:
 	if fov:fov.set_value_no_signal(renderer.camera.fov);fov.editable=mode.selected==1 and not exporting
@@ -1188,6 +1257,7 @@ func _process(delta: float) -> void:
 	if recovery_checkpoint_requested and not recovery_writer.busy() and not recovery_preview.busy():autosave_tick(true)
 	pose_editor.update_gizmo()
 	play_button.text = "Pause" if playing else "Play"
+	refresh_empty_hint()
 	refresh_tool_strip() # tool can change without a signal (shortcuts, color sampler)
 	if playing:
 		var seconds := preview_seconds()
