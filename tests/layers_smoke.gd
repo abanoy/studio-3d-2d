@@ -87,7 +87,7 @@ func run() -> void:
 	check(equal(signature(),expected),"packed HAS reopens exact names, layer order, visibility, exposure IDs and raster hashes")
 	app.has_project.save_file(folder.path_join("linked.has"),"linked");await job();app.new_project();app.has_project.open_file(folder.path_join("linked.has"));await job()
 	check(equal(signature(),expected),"linked HAS preserves the same editable layer stack")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	check(app.open_project(app.recovery_root.path_join(app.recovery_session)) and equal(signature(),expected) and FileAccess.get_sha256(packed)==manual,"recovery restores all layer edits without rewriting the manual HAS")
 	app.set_frame(0);var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder)

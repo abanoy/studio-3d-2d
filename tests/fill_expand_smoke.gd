@@ -84,7 +84,7 @@ func run() -> void:
 	check(Storage.image_hash(ink)==ink_hash and equal(keys,app.keys) and equal(world,World.portable(app.current_world())) and equal(view,app.renderer.view_state()) and FileAccess.get_sha256(app.source)==source_hash,"all fills preserve original ink, common world, camera/view and source geometry")
 	app.has_project.save_file(packed,"packed");await job();var manual:=FileAccess.get_sha256(packed);var linked:=folder.path_join("Under ink linked.has");app.has_project.save_file(linked,"linked");await job();app.has_project.open_file(linked);await job()
 	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==second and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],0)))==ink_hash,"linked HAS retains exact grown color and separate ink")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	check(app.open_project(app.recovery_root.path_join(app.recovery_session)) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==second and FileAccess.get_sha256(packed)==manual,"recovery retains growth pixels without changing the manual save")
 	app.set_frame(0);var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder)

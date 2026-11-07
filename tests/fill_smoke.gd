@@ -112,7 +112,7 @@ func run() -> void:
 	check(equal(keys,app.keys) and equal(world,World.portable(app.renderer.world_state())),"painted HAS preserves complete standard world and camera values")
 	var linked:=folder.path_join("filled-linked.has");app.has_project.save_file(linked,"linked");await job();app.new_project();app.has_project.open_file(linked);await job()
 	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==filled_hash,"linked HAS retains editable filled pixels")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	var recovery: String=app.recovery_root.path_join(app.recovery_session);check(not Storage.load_project(recovery).has("error") and app.open_project(recovery),"normal recovery checkpoint reopens three-layer drawing")
 	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==filled_hash and FileAccess.get_sha256(packed)==manual_hash,"recovery preserves fill and original manual HAS bytes")

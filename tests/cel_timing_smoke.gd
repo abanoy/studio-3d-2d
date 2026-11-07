@@ -62,7 +62,7 @@ func run() -> void:
 	check(view.cel_gesture_active() and app.active_layer==1 and app.frame==1304,"press selects exact drawing layer/frame before drag")
 	await move_to(view,Vector2(view.x(1344),point.y))
 	check(view.cel_preview==1340 and view.cel_valid and cel(a_id).start==1300 and app.history.size()==history,"drag previews new timing without mutating hold/history")
-	var checkpoint: int=app.checkpoint_revision;app.autosave_tick(true);check(app.checkpoint_revision==checkpoint,"ordinary recovery defers while exposure gesture is active")
+	var checkpoint: int=app.checkpoint_revision;app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.checkpoint_revision==checkpoint,"ordinary recovery defers while exposure gesture is active")
 	check(not app.project_timing.apply_duration(1400).is_empty() and app.video.duration_frames==1440,"scene timing refuses mid-gesture coordinate changes")
 	await release_at(view,Vector2(view.x(1344),point.y))
 	check(cel(a_id).start==1340 and cel(a_id).duration==24 and cel(b_id).start==1376,"release moves complete hold and keeps neighboring timing")
@@ -130,7 +130,7 @@ func run() -> void:
 		for at in [1304,1390,1430]:check(Image.load_from_file(app.last_export_folder.path_join("frame_%06d.png" % (at+1))).get_data()==Image.load_from_file(folder.path_join("expected-%d.png" % at)).get_data(),"full movie frame%d equals exact exposure/child preview" % at)
 	app.set_frame(1304);app.changed()
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-	app.autosave_tick(true);check(app.checkpoint_revision==app.recovery_revision,"ordinary recovery commits moved parent/child exposures")
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.checkpoint_revision==app.recovery_revision,"ordinary recovery commits moved parent/child exposures")
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"a":a_id,"b":b_id,"layer":layer_id,"child":child,"pixels":a_pixels,"pcm":pcm,"movie":movie,"render_seconds":seconds,"recovery":app.recovery_session},"",true,true))
 	app.get_viewport().get_texture().get_image().save_png(folder.path_join("timing.png"))
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected"))

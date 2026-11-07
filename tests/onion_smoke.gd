@@ -84,7 +84,7 @@ func run() -> void:
 	check(not app.onion_editor.views[0].visible and not app.onion_editor.views[1].visible,"New immediately has no stale drawing texture")
 	app.has_project.open_file(packed);await job();check(hashes()==expected and app.onion_editor.enabled.button_pressed,"packed HAS keeps exact cels while the guide toggle remains a personal session setting")
 	app.mode.select(0);app.change_mode(0);await settled();check(app.onion_editor.views[0].texture.get_image().get_data()==Drawing.image(app.layers[1].cels[0]).get_data(),"freshly loaded images replace the old ghost-cache identities")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	var recovery: String=app.recovery_root.path_join(app.recovery_session);check(app.open_project(recovery) and hashes()==expected and FileAccess.get_sha256(packed)==manual,"recovery retains actual artwork and preserves the manual HAS")
 	app.mode.select(0);app.change_mode(0);app.set_frame(18);var reference: Image=await app.renderer.capture(app.keys,app.layers,18,true);var error: String=await app.export_movie(folder)

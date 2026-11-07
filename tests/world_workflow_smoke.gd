@@ -91,7 +91,7 @@ func run() -> void:
 	var before:=World.portable(app.renderer.world_state());var state: RefCounted=app.renderer.world_runtime
 	var broken:=folder.path_join("broken.glb");var file:=FileAccess.open(broken,FileAccess.WRITE);file.store_string("broken");file.close()
 	check(not app.load_scene(broken).is_empty() and app.renderer.world_runtime==state and World.portable(app.renderer.world_state())==before,"failed normal map import keeps whole world intact")
-	app.changed();app.autosave_tick(true);var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
 	app.new_project()
 	check(app.restore_checkpoint({"folder":checkpoint}) and app.renderer.world_runtime.instances.size()==4 and app.dirty and app.has_project.path.is_empty(),"ordinary recovery restores all objects as unsaved copy")
 	var recovery_preview: Image=await app.renderer.capture(app.keys,app.layers,24,true)

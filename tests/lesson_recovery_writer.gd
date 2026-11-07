@@ -33,7 +33,7 @@ func run() -> void:
 		lesson.set_collapsed(at==18)
 		var image: Image=await app.renderer.capture(app.keys,app.layers,at,true);image.save_png(folder.path_join("frame%d.png" % at))
 		while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-		app.autosave_tick(true)
+		app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 		while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 		check(app.checkpoint_revision==app.recovery_revision,"ordinary autosave protects later practice edit at frame%d" % at)
 		expected.states[str(at)]={"ui":Store.ui(app),"paint":Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],at))),"cels":app.layers[1].cels.size(),"baseline":lesson.baseline,"fov_baseline":lesson.fov_baseline,"collapsed":lesson.collapsed}

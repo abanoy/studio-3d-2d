@@ -35,7 +35,7 @@ func run() -> void:
 	begin_edge();var point:=move_edge(17);await settle()
 	assert(app.timeline.trim_preview==17 and is_equal_approx(app.timeline.audio_rect(0).end.x,app.timeline.x(18)))
 	assert(app.audio_document()==before and app.history.size()==history and pcm_hash()==original_pcm)
-	var checkpoint: int=app.checkpoint_revision;app.autosave_tick(true);assert(app.checkpoint_revision==checkpoint);app.recovery_checkpoint_requested=false
+	var checkpoint: int=app.checkpoint_revision;app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);assert(app.checkpoint_revision==checkpoint);app.recovery_checkpoint_requested=false
 	app.get_viewport().get_texture().get_image().save_png(folder.path_join("edge-preview.png"))
 	escape();assert(not app.timeline.audio_gesture_active() and app.audio_document()==before and app.history.size()==history)
 	begin_edge();point=move_edge(17);release(point);await settle()

@@ -140,7 +140,7 @@ func run() -> void:
 	var bad := folder.path_join("broken.has"); var bad_file := FileAccess.open(bad,FileAccess.WRITE); bad_file.store_string("not a project");bad_file.close()
 	before = app.source; has.open_file(bad); await wait_job(has)
 	check(app.source==before and has.path==linked, "corrupt HAS open leaves existing project and save identity intact")
-	app.changed(); app.autosave_tick(true)
+	app.changed(); app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var recovered := Recovery.read_json(app.recovery_root.path_join(app.recovery_session).path_join("project.json"))
 	check(recovered.editor.recovery.origin==linked, "recovery records HAS filename rather than temporary cache folder")
 	var restored: bool = app.restore_checkpoint({"folder":app.recovery_root.path_join(app.recovery_session),"manifest":"project.json"})

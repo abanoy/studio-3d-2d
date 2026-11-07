@@ -42,7 +42,7 @@ func run() -> void:
 		app.pose_editor.fields[2].value=25 if at==12 else 65;app.pose_editor.apply_numeric()
 		app.create_cel(false);var cel: Dictionary=Drawing.cel_at(app.layers[1],at)
 		Drawing.edit_image(cel).image.set_pixel(80,80,Color.CYAN if at==24 else Color.BLUE);app.changed()
-		app.renderer.camera.far=12000;app.insert_key();app.autosave_tick(true)
+		app.renderer.camera.far=12000;app.insert_key();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 		var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
 		require(FileAccess.file_exists(checkpoint.path_join("project.json")),"committed checkpoint")
 		var image: Image=await app.renderer.capture(app.keys,app.layers,at,true);image.save_png(folder.path_join("frame%d.png" % at))

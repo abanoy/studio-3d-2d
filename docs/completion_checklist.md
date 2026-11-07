@@ -14,9 +14,10 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 
 ## Next required work
 
-- **P1 · REC-01** — Large-project recovery is correct but synchronous. Move checkpoint serialization off the UI using isolated frozen drawing authorities; test edits during write, failed writes and stale session completions.
-- **P1 · MEM-02** — 400drawing ordinary app/edit/packed/cold/crash/media now pass. Resolve synchronous save/checkpoint responsiveness with frozen independent worker input and actual editing/heartbeat/stale completion checks; retain ownership and source/fault protections.
-- **P1 · MEM-01** — 400drawing ordinary app/edit/packed/cold/crash/media now pass. Resolve synchronous save/checkpoint responsiveness with frozen independent worker input and actual editing/heartbeat/stale completion checks; retain ownership and source/fault protections.
+- **P1 · CONTROL-GOAL** — Audit the complete MD/addendum mapping, each implementation status, acceptance evidence and exact remaining work. Publish separate implementation/verified percentages only after baseline_reviewed is justified; user requested a defensible percentage.
+- **P1 · REC-01** — 400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations.
+- **P1 · MEM-02** — 400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations.
+- **P1 · MEM-01** — 400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations.
 - **P1 · STORE-04** — Supporting POSIX sync and rollback payload validity are verified in scoped fixtures. Retain explicit native Windows and physical power-loss gates; audit the next independently actionable requirement.
 - **P2 · MOTION-03** — Bounded saved walking now passes staged preview/correction, Undo, recovery, packed cold Open and exact render checks. Extend beyond straight flat routes and obtain native-rig/artist acceptance; optional multi-view inference remains separate.
 - **P2 · IMPORT-03** — Define per-profile native fidelity acceptance and use approved fixtures when available; report unsupported capabilities honestly.

@@ -34,7 +34,7 @@ func run() -> void:
 	var a:=folder.path_join("My scene 日本.has");var b:=folder.path_join("Second scene.has")
 	app.has_project.save_file(a,"packed");await wait_job(app)
 	check(app.home.store.read().size()==1 and not app.dirty,"successful normal Save adds a real HAS to recent projects")
-	app.changed();app.autosave_tick(true);await settled()
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);await settled()
 	while app.recovery_preview.busy():await process_frame
 	app.has_project.save_current();await wait_job(app)
 	var row: Dictionary=app.home.store.read()[0];var preview:=Recents.preview(row,app.recovery_root)

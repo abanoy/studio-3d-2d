@@ -75,7 +75,7 @@ func run() -> void:
 	check(app.layers[1].opacity==.25 and Drawing.image(app.layers[1].cels[0]).get_data()==expected,"packed HAS reopens raw editable pixels and separate layer opacity")
 	app.has_project.save_file(folder.path_join("linked.has"),"linked");await job();app.new_project();app.has_project.open_file(folder.path_join("linked.has"));await job()
 	check(app.layers[1].opacity==.25 and Drawing.image(app.layers[1].cels[0]).get_data()==expected,"linked HAS keeps the same independent opacity parameter")
-	app.changed();app.autosave_tick(true);await settled()
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);await settled()
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	var checkpoint: String=app.recovery_root.path_join(app.recovery_session);var entries:=Journal.entries(checkpoint);var thumbnail: Image=Journal.preview(checkpoint,entries[0].preview)
 	var expected_preview: Image=app.renderer.viewport.get_texture().get_image();expected_preview.convert(Image.FORMAT_RGBA8);expected_preview.resize(256,144,Image.INTERPOLATE_BILINEAR)

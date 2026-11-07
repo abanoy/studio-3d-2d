@@ -36,9 +36,10 @@ normal older-state restore, HAS, synchronized MP4 and fresh-process fallback.
 
 Current reports split main capture/copy time from worker time. Their sum remains
 the legacy `last_recovery_preview_ms` diagnostic; it no longer means one UI pause.
-Earlier synchronous202ms peaks are historical. GPU readback/full-size image copies
-and the checkpoint itself remain synchronous; no universal input-latency/frame-rate
-guarantee. Low-resolution/asynchronous GPU capture, asset cleanup/concurrent quota,
+Earlier synchronous202ms peaks are historical. GPU thumbnail readback and snapshot
+capture remain on the main thread. Checkpoint serialization now uses an isolated
+[background checkpoint worker](background_checkpoints.md); no universal
+input-latency/frame-rate guarantee. Low-resolution/asynchronous GPU capture, asset cleanup/concurrent quota,
 large-project profiling and other reliability work remain unfinished.
 
 Thread/resource ownership follows the pinned [Godot4.6 thread-safety guidance](https://docs.godotengine.org/en/4.6/tutorials/performance/thread_safe_apis.html)

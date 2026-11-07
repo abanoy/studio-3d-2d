@@ -78,7 +78,7 @@ func run() -> void:
 	app.redo();check(rig.data==moved,"Redo restores exact moved take")
 	app.set_frame(12);app.has_project.save_file(folder.path_join("packed.has"),"packed");await wait_job();check(app.has_project.path==folder.path_join("packed.has"),"moved long project saves as packed schema8")
 	app.changed();while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-	app.autosave_tick(true);check(app.checkpoint_revision==app.recovery_revision,"ordinary recovery commits moved relative motion")
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.checkpoint_revision==app.recovery_revision,"ordinary recovery commits moved relative motion")
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"world":World.portable(app.current_world()),"id":id,"pcm":pcm,"paint":paint,"piece":moved.animation_clips[0],"recovery":app.recovery_session},"",true,true))
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected"))
 	print("LATE_CLIP_MOVE_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"components":"--components" in args}))

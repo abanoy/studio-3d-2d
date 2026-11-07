@@ -79,7 +79,7 @@ func run() -> void:
 	var expected: Image=await app.renderer.capture(app.keys,app.layers,12,true)
 	var packed:=folder.path_join("duration.has");app.has_project.save_file(packed,"packed");await job();check(app.has_project.path==packed,"changed length saves packed")
 	var linked:=folder.path_join("linked.has");app.has_project.save_file(linked,"linked");await job();check(app.has_project.path==linked,"changed length saves linked")
-	app.changed();app.autosave_tick(true);var recovery: String=app.recovery_root.path_join(app.recovery_session)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);var recovery: String=app.recovery_root.path_join(app.recovery_session)
 	var store:=Store.new();store.root=folder.path_join("lessons");check(store.save(app,"basic-pose","1234",1,false,"step_01"),"length enters lesson snapshot")
 	var mix:=pcm();FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"packed":packed,"linked":linked,"recovery":recovery,"mix":mix}))
 	check(await app.export_movie(folder)=="","short fractional-rate movie exports")

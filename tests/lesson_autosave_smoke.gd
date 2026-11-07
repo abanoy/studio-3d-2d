@@ -25,27 +25,27 @@ func run() -> void:
 	var data:=Recovery.read_json(target);var previous:=FileAccess.get_sha256(target)
 	check(data.editor.frame==12 and data.editor.recovery.lesson.ui.pan==[12.,17.] and data.editor.recovery.lesson.collapsed,"timed checkpoint captures matching scene frame and full teacher UI")
 	check(not app.dirty and app.recovery_revision==revision and app.history.size()==history and app.autosave_actions==0 and app.has_project.path==manual,"lesson-only checkpoint does not dirty scene, create Undo or change personal Save identity")
-	app.autosave_due=0;app.autosave_tick();await idle();check(FileAccess.get_sha256(target)==previous,"unchanged teacher state does not create repeated checkpoints")
-	app.set_frame(14);app.autosave_due=Time.get_ticks_msec()+600000;app.autosave_tick();await idle();check(FileAccess.get_sha256(target)==previous,"lesson UI changes respect existing minute deadline")
-	app.autosave_enabled.button_pressed=false;app.autosave_due=0;app.autosave_tick();await idle();check(FileAccess.get_sha256(target)==previous,"disabled automatic recovery preserves pending lesson changes")
-	app.autosave_tick(true);await idle();check(FileAccess.get_sha256(target)!=previous and Recovery.read_json(target).editor.frame==14,"explicit Checkpoint now protects pending lesson despite disabled schedule")
-	previous=FileAccess.get_sha256(target);app.set_frame(16);app.autosave_enabled.button_pressed=true;app.autosave_schedule.select(1);app.autosave_action_limit.value=1;app.autosave_due=0;app.autosave_tick();await idle()
+	app.autosave_due=0;app.autosave_tick();await preload("res://tests/recovery_wait.gd").checkpoint(app);await idle();check(FileAccess.get_sha256(target)==previous,"unchanged teacher state does not create repeated checkpoints")
+	app.set_frame(14);app.autosave_due=Time.get_ticks_msec()+600000;app.autosave_tick();await preload("res://tests/recovery_wait.gd").checkpoint(app);await idle();check(FileAccess.get_sha256(target)==previous,"lesson UI changes respect existing minute deadline")
+	app.autosave_enabled.button_pressed=false;app.autosave_due=0;app.autosave_tick();await preload("res://tests/recovery_wait.gd").checkpoint(app);await idle();check(FileAccess.get_sha256(target)==previous,"disabled automatic recovery preserves pending lesson changes")
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);await idle();check(FileAccess.get_sha256(target)!=previous and Recovery.read_json(target).editor.frame==14,"explicit Checkpoint now protects pending lesson despite disabled schedule")
+	previous=FileAccess.get_sha256(target);app.set_frame(16);app.autosave_enabled.button_pressed=true;app.autosave_schedule.select(1);app.autosave_action_limit.value=1;app.autosave_due=0;app.autosave_tick();await preload("res://tests/recovery_wait.gd").checkpoint(app);await idle()
 	check(app.autosave_actions==0 and FileAccess.get_sha256(target)==previous,"teacher navigation does not count as a scene edit in action-count mode")
 	app.autosave_schedule.select(0);app.autosave_due=0
 	for property in ["drawing","navigating","playing","exporting"]:
-		app.set(property,true);app.autosave_tick(true);app.set(property,false);check(FileAccess.get_sha256(target)==previous,"lesson checkpoint waits while "+property)
-	var modal:=AcceptDialog.new();app.add_child(modal);modal.popup_centered();app.autosave_tick(true);check(FileAccess.get_sha256(target)==previous,"lesson checkpoint waits for open dialog");modal.hide();modal.queue_free()
-	app.autosave_tick(true);deadline=Time.get_ticks_msec()+5000
+		app.set(property,true);app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);app.set(property,false);check(FileAccess.get_sha256(target)==previous,"lesson checkpoint waits while "+property)
+	var modal:=AcceptDialog.new();app.add_child(modal);modal.popup_centered();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(FileAccess.get_sha256(target)==previous,"lesson checkpoint waits for open dialog");modal.hide();modal.queue_free()
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);deadline=Time.get_ticks_msec()+5000
 	while FileAccess.get_sha256(target)==previous and Time.get_ticks_msec()<deadline:await process_frame
 	await idle();print("LESSON_QUEUE_STATE "+JSON.stringify({"frame":app.frame,"saved_frame":Recovery.read_json(target).get("editor",{}).get("frame"),"pending":app.recovery_checkpoint_requested,"dialog":app.has_dialog(app)}))
 	check(FileAccess.get_sha256(target)!=previous and Recovery.read_json(target).editor.frame==16,"queued lesson checkpoint runs after interaction guards clear")
 	previous=FileAccess.get_sha256(target);app.set_frame(18);app.canvas.pan=Vector2(18,23);app.autosave_due=0
-	DirAccess.make_dir_recursive_absolute(target+".tmp");app.autosave_tick();var retry: int=app.autosave_retry_due
+	DirAccess.make_dir_recursive_absolute(target+".tmp");app.autosave_tick();await preload("res://tests/recovery_wait.gd").checkpoint(app);var retry: int=app.autosave_retry_due
 	check(retry>Time.get_ticks_msec() and FileAccess.get_sha256(target)==previous,"failed lesson-only write preserves last checkpoint and schedules retry")
-	app.autosave_tick();check(app.autosave_retry_due==retry and FileAccess.get_sha256(target)==previous,"unchanged retry backoff avoids repeated lesson writes")
-	DirAccess.remove_absolute(target+".tmp");app.autosave_retry_due=Time.get_ticks_msec()-1;app.autosave_tick();await idle()
+	app.autosave_tick();await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.autosave_retry_due==retry and FileAccess.get_sha256(target)==previous,"unchanged retry backoff avoids repeated lesson writes")
+	DirAccess.remove_absolute(target+".tmp");app.autosave_retry_due=Time.get_ticks_msec()-1;app.autosave_tick();await preload("res://tests/recovery_wait.gd").checkpoint(app);await idle()
 	check(FileAccess.get_sha256(target)!=previous and Recovery.read_json(target).editor.frame==18,"successful retry captures pending lesson after clean-scene write failure")
-	previous=FileAccess.get_sha256(target);lesson.observed["preview_seen"]=true;app.autosave_due=0;app.autosave_tick();await idle()
+	previous=FileAccess.get_sha256(target);lesson.observed["preview_seen"]=true;app.autosave_due=0;app.autosave_tick();await preload("res://tests/recovery_wait.gd").checkpoint(app);await idle()
 	check(FileAccess.get_sha256(target)!=previous and Recovery.read_json(target).editor.recovery.lesson.ui.observed.preview_seen,"whitelisted teacher observation alone checkpoints without a scene edit")
 	check(not app.dirty and app.recovery_revision==revision and app.history.size()==history and FileAccess.get_sha256(manual)==manual_hash and FileAccess.get_sha256(progress)==progress_hash,"all lesson autosaves preserve manual project, step progress and scene edit state")
 	var picture: Image=await app.renderer.capture(app.keys,app.layers,18,true);picture.save_png(folder.path_join("frame18.png"))

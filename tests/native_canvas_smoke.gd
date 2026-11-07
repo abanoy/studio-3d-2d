@@ -57,7 +57,7 @@ func run() -> void:
  var movie: String=app.last_export_folder.path_join("movie.mp4")
  var png_error: String=await app.export_images(folder,true);var png_folder: String=app.last_export_folder
  check(png_error.is_empty() and Image.load_from_file(png_folder.path_join("frame_000001.png")).get_data()==Drawing.composite(app.layers,0,size.x,size.y).get_data(),"native transparent PNG sequence preserves exact editable alpha pixels")
- app.changed();app.autosave_tick(true)
+ app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
  while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
  var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
  check(app.open_project(checkpoint) and Canvas.profile(app.video)==profile and Storage.image_hash(Drawing.image(app.layers[1].cels[0]))==hash,"real recovery checkpoint restores native dimensions and editable pixels")

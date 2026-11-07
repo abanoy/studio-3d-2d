@@ -897,9 +897,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/large_projects_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/background_checkpoints.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
         }
       ],
-      "remaining": "Ordinary400drawing seek/edit/Undo, packed Save/Open, exact GPU/movie/audio, cold new-process Open and actual SIGKILL startup pass under unchanged320MiB registered admission. Observed individual process peak427520000B; source corpus unchanged. Save68.5s and synchronous checkpoint latency remain material; quiet background saving and long-session responsiveness/retention need work. Whole-app/GPU and native device acceptance remain separate; >32 prepared native/video import is unrun.",
+      "remaining": "Ordinary400drawing editing/history/packed/cold/crash/media and background checkpointing pass under unchanged320MiB registered admission. Snapshot34.874ms plus114.3s worker with4519application frames; process-only peak455798784B. Manual Save68.5s/initialOpen20.5s remain synchronous. Long-session retention, cleanup/concurrent quota, whole-app/GPU/native-device acceptance and actual >32prepared native/video import remain separate; audit scope before whole-item closure.",
       "external_dependencies": []
     },
     {
@@ -1099,9 +1107,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/large_projects_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/background_checkpoints.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
         }
       ],
-      "remaining": "Ordinary400drawing seek/edit/Undo, packed Save/Open, exact GPU/movie/audio, cold new-process Open and actual SIGKILL startup pass under unchanged320MiB registered admission. Observed individual process peak427520000B; source corpus unchanged. Save68.5s and synchronous checkpoint latency remain material; quiet background saving and long-session responsiveness/retention need work. Whole-app/GPU and native device acceptance remain separate; >32 prepared native/video import is unrun.",
+      "remaining": "Ordinary400drawing editing/history/packed/cold/crash/media and background checkpointing pass under unchanged320MiB registered admission. Snapshot34.874ms plus114.3s worker with4519application frames; process-only peak455798784B. Manual Save68.5s/initialOpen20.5s remain synchronous. Long-session retention, cleanup/concurrent quota, whole-app/GPU/native-device acceptance and actual >32prepared native/video import remain separate; audit scope before whole-item closure.",
       "external_dependencies": []
     },
     {
@@ -1526,9 +1542,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/large_projects_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/background_checkpoints.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
         }
       ],
-      "remaining": "Large400drawing recovery and actual SIGKILL startup pass after bounded PNG preflight fixes false decoded-reservation refusal. Checkpoint creation remains synchronous and blocks UI; implement isolated background serialization with immutable snapshot ownership and stale-completion protection, then verify responsiveness and long-session behavior.",
+      "remaining": "Frozen isolated background checkpointing passes96ownership/worker/live-app/preview/schedule checks, actual400drawing crash/media, native540/nested masks and all five lesson recovery startup cases. Captured actions alone are consumed; failed/stale/manual-save results preserve newer state. Remaining long-session/device latency and resource acceptance; manual Save and lesson Previous/Continue serialization are separate synchronous paths.",
       "external_dependencies": []
     },
     {
@@ -1550,6 +1574,14 @@
         {
           "kind": "recorded_report",
           "path": "docs/recovery_history.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/background_checkpoints.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
         }
       ],
       "remaining": "Shared-asset cleanup, concurrent sessions and measured long-session behavior remain.",
@@ -1575,6 +1607,14 @@
         {
           "kind": "recorded_report",
           "path": "docs/startup_recovery.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/background_checkpoints.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
         }
       ],
       "remaining": "Native Windows/hardware fault gate remains; Linux procedural cases are scoped evidence.",
@@ -2411,19 +2451,24 @@
   ],
   "next_actions": [
     {
+      "requirement": "CONTROL-GOAL",
+      "priority": 1,
+      "action": "Audit the complete MD/addendum mapping, each implementation status, acceptance evidence and exact remaining work. Publish separate implementation/verified percentages only after baseline_reviewed is justified; user requested a defensible percentage."
+    },
+    {
       "requirement": "REC-01",
       "priority": 1,
-      "action": "Large-project recovery is correct but synchronous. Move checkpoint serialization off the UI using isolated frozen drawing authorities; test edits during write, failed writes and stale session completions."
+      "action": "400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations."
     },
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "400drawing ordinary app/edit/packed/cold/crash/media now pass. Resolve synchronous save/checkpoint responsiveness with frozen independent worker input and actual editing/heartbeat/stale completion checks; retain ownership and source/fault protections."
+      "action": "400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations."
     },
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "400drawing ordinary app/edit/packed/cold/crash/media now pass. Resolve synchronous save/checkpoint responsiveness with frozen independent worker input and actual editing/heartbeat/stale completion checks; retain ownership and source/fault protections."
+      "action": "400drawing and responsive background checkpoint workflows now pass. Audit per-item implementation/acceptance evidence before scoring or selecting remaining gaps; retain manual Save/Open and long-session resource limitations."
     },
     {
       "requirement": "STORE-04",

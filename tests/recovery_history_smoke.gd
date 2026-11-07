@@ -47,7 +47,7 @@ func run() -> void:
 		app.set_frame(at);app.pose_editor.selected=bone;app.pose_editor.operation.select(0);app.pose_editor.refresh_values();app.pose_editor.fields[2].value=at*3;app.pose_editor.apply_numeric()
 		Drawing.edit_image(cel).image.fill_rect(Rect2i(0,0,192,144),Color(0,0.3+at/34.,1,1));app.changed();app.renderer.camera.far=12000;app.insert_key()
 		var keys: Array=app.keys.duplicate(true);var view: Dictionary=app.renderer.view_state();var history: int=app.history.size();var pixels:=Storage.image_hash(Drawing.image(cel))
-		app.autosave_tick(true);await settled()
+		app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);await settled()
 		isolation=isolation and app.keys==keys and app.renderer.view_state()==view and app.history.size()==history and Storage.image_hash(Drawing.image(cel))==pixels
 		var checkpoint: String=app.recovery_root.path_join(app.recovery_session);var records:=Journal.entries(checkpoint)
 		var preview: Image=Journal.preview(checkpoint,records[0].preview)
@@ -117,9 +117,9 @@ func run() -> void:
 	check(not app.dirty and FileAccess.get_sha256(manual)==expected.manual_sha256 and Recovery.candidates(app.recovery_root,"",true).is_empty() and Recovery.candidates(app.recovery_root,"",true,true).size()==12,"explicit Save resolves startup notice while Advanced retains history and manual HAS")
 	app.new_project();app.has_project.open_file(folder.path_join("chosen.has"));await wait_job(app.has_project)
 	check(app.frame==12 and portable(app.renderer.world_state())==expected.states["12"].world and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],12)))==expected.states["12"].paint,"packed HAS from older history reopens with native data and editable paint")
-	app.set_frame(20);app.changed();app.autosave_tick(true);var later: String=app.recovery_root.path_join(app.recovery_session);app.exporting=true;await settled();app.exporting=false
+	app.set_frame(20);app.changed();app.autosave_tick(true);var later: String=app.recovery_root.path_join(app.recovery_session);app.exporting=true;await preload("res://tests/recovery_wait.gd").checkpoint(app);await settled();app.exporting=false
 	check(Journal.entries(later)[0].preview.is_empty(),"preview readback defers when export begins before the idle frame")
-	app.set_frame(21);app.changed();app.autosave_tick(true);Drawing.edit_image(Drawing.cel_at(app.layers[1],21)).image.set_pixel(80,80,Color.RED);app.changed();await settled()
+	app.set_frame(21);app.changed();app.autosave_tick(true);Drawing.edit_image(Drawing.cel_at(app.layers[1],21)).image.set_pixel(80,80,Color.RED);app.changed();await preload("res://tests/recovery_wait.gd").checkpoint(app);await settled()
 	check(Journal.entries(later)[0].preview.is_empty(),"a later edit cannot attach a misleading thumbnail to the older checkpoint")
 	check(Recovery.resolve(later).is_empty(),"dismiss the separate preview-guard fixture before restart history tests")
 	var file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);file.store_string(JSON.stringify(expected,"",false,true));file.close()

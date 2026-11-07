@@ -81,7 +81,7 @@ func run() -> void:
 	expected["movie"]=app.last_export_folder.path_join("movie.mp4");expected["pcm"]=Storage.RasterReader.digest_bytes(app.audio_mix.pcm);expected["source_png_sha256"]=source_sha;expected["source_manifest_sha256"]=source_manifest
 	app.set_frame(7);app.changed()
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-	app.autosave_tick(true)
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	check(app.checkpoint_revision==app.recovery_revision,"ordinary recovery checkpoint saves all independent shared-source cels")
 	expected["recovery"]=app.recovery_session;var expected_file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);expected_file.store_string(JSON.stringify(expected,"",true,true));expected_file.flush();expected_file.close()

@@ -13135,3 +13135,20 @@ by existingWindows-onlyKritaharness CREATE_NO_WINDOW onLinux; no nativefidelity
 claim. See large_projects.md and benchmarks/large_projects_2026-11-07.json. Next:
 frozen independently owned background checkpoint serialization with liveediting,
 failedwrite and stalecompletion verification; completionbaseline audit stillopen.
+
+### 2026-11-07 UTC — background checkpoint serialization
+
+Normal recovery checkpoints now freeze independent metadata/hotImage/coldpayload
+resources and serialize in one private low-priority worker/cache. Live edits and
+laterpendingactions remain safe; failed/stale/manualSave/New/close results preserve
+newer state and manualHAS. Final96snapshot/worker/app/preview/schedule checks pass,
+including lateobsoletecheckpoint resolution on close after manualSave. Actual400
+capture34.874ms, worker114.3s with4519applicationframes;8/5/8writer/cold/startup after
+realSIGKILL andexact101frameH264AAC/sample48001movie pass.292domains, all5lesson
+cases, noisy32art, native540 and225maskednested checks pass. Finalteardown-only
+fix cameafter400/native/nested runs and passed96suite; receipt explicitly scopes
+sourcehashes. Process-onlypeak455798784B, nothardwholeapp/GPU guarantee. Manual
+Save/initialOpen/lesson snapshots stillsync; closejoinsworker. FullWindowsKrita
+harness remainsseparateLinuxblock. See background_checkpoints.md and curatedreceipt.
+Nextsource/evidenceaudit offinitecompletionbaseline beforepublicationofpercentage;
+then prioritize remaining requiredengineering/native/device/ownerdecisiongaps.

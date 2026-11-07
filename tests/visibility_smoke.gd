@@ -122,7 +122,7 @@ func run() -> void:
 	var linked:=folder.path_join("visibility-linked.has");app.has_project.save_file(linked,"linked");await wait_job(app.has_project)
 	app.new_project();app.has_project.open_file(linked);await wait_job(app.has_project);rig=app.renderer.world_runtime.instance(id)
 	check(rig.data.visibility_keys.size()==2 and app.video.visibility_fade_ms==300,"linked HAS preserves visibility keys and project fade")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var recovery: String=app.recovery_root.path_join(app.recovery_session)
 	check(not Storage.load_project(recovery).has("error") and app.open_project(recovery),"actual recovery checkpoint restores visibility project")
 	rig=app.renderer.world_runtime.instance(id)

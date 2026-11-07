@@ -57,7 +57,7 @@ func run() -> void:
 	app.set_frame(24);var expected: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 	var packed:=folder.path_join("trimmed.has");app.has_project.save_file(packed,"packed");await job();assert(app.has_project.path==packed)
 	var linked:=folder.path_join("linked.has");app.has_project.save_file(linked,"linked");await job();assert(app.has_project.path==linked)
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var recovery: String=app.recovery_root.path_join(app.recovery_session)
 	assert(Recovery.read_json(recovery.path_join("project.json")).audio.format==Audio.TRIM_FORMAT)
 	var lesson:=Store.new();lesson.root=folder.path_join("lessons");assert(lesson.save(app,"basic-pose","1234",1,false,"step_01"))

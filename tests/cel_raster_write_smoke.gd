@@ -95,7 +95,7 @@ func run() -> void:
 	check(app.has_project.path==saved and not app.dirty and not layer.cels[4].raster_owner.is_pinned(),"normal packed Save streams mixed hot/cold art without pinning inactive source")
 	var error: String=await app.export_movie(folder);var movie: String=app.last_finished_movie
 	check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000013.png")).get_data()==Image.load_from_file(folder.path_join("frame12.png")).get_data(),"edited cold-source movie input matches saved final frame")
-	app.set_frame(40);app.exposure.value=7;app.set_exposure();app.autosave_tick(true);await settled();var recovery_folder: String=app.recovery_root.path_join(app.recovery_session);var recovered:=Storage.load_project(recovery_folder)
+	app.set_frame(40);app.exposure.value=7;app.set_exposure();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);await settled();var recovery_folder: String=app.recovery_root.path_join(app.recovery_session);var recovered:=Storage.load_project(recovery_folder)
 	check(not recovered.has("error") and recovered.layers[1].cels[4].duration==7 and Storage.image_hash(recovered.layers[1].cels[4].image)==original[4] and not layer.cels[4].raster_owner.is_pinned(),"real checkpoint preserves later exposure and exact cold pixels without pinning")
 	check(FileAccess.get_sha256(saved)==manual_sha and FileAccess.get_sha256(cue)==cue_sha,"checkpoint/export preserve manual HAS and original sound")
 	var work_manifest:=folder.path_join("writer-cache/work_%d/project.json"%OS.get_process_id());var manifest_sha:=FileAccess.get_sha256(work_manifest);snapshots[4]._payload[0]=snapshots[4]._payload[0]^1;app.has_project.save_file(saved,"packed");await settled()

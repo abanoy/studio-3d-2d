@@ -66,7 +66,7 @@ func run() -> void:
 	var expected: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 	var saved:=folder.path_join("ntsc.has");app.has_project.save_file(saved,"packed");await job();check(app.has_project.path==saved,"NTSC project saves as ordinary packed HAS")
 	var linked:=folder.path_join("linked.has");app.has_project.save_file(linked,"linked");await job();check(app.has_project.path==linked,"rational-rate project also saves linked assets")
-	app.changed();app.autosave_tick(true);var recovery: String=app.recovery_root.path_join(app.recovery_session)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);var recovery: String=app.recovery_root.path_join(app.recovery_session)
 	var store:=Store.new();store.root=folder.path_join("lessons");check(store.save(app,"basic-pose","1234",1,false,"step_01"),"rational project timing enters a lesson snapshot")
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"packed":saved,"linked":linked,"recovery":recovery,"mix":ntsc_mix}))
 	app.new_project();app.has_project.open_file(saved);await job();check(app.video.fps_num==24000 and app.video.fps_den==1001 and pcm()==ntsc_mix,"packed reopening restores exact rate and audio PCM")

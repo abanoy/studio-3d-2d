@@ -173,7 +173,7 @@ func run(app) -> void:
 	editor.set_flag("reference_only", false)
 	app.recovery_root = folder.path_join("recovery")
 	app.begin_recovery_session()
-	app.changed(); app.autosave_tick(true)
+	app.changed(); app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var checkpoint: String = app.recovery_root.path_join(app.recovery_session)
 	check(not Storage.load_project(checkpoint).has("error"), "pose model/assets included in complete recovery checkpoint")
 	check(app.restore_checkpoint({"folder": checkpoint}) and Support.same_keys(Support.rig(app).data,expected), "recovery restores actual model bone animation")

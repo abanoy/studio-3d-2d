@@ -64,7 +64,7 @@ func run() -> void:
 	var reference: Image=await app.renderer.capture(app.keys,app.layers,12,true)
 	press(timeline,1,12);motion(app,20)
 	check(timeline.moving_id==id and timeline.moving_delta==8 and rig.data==before and app.history.size()==history,"drag previews an eight-frame move without mutating document or Undo")
-	app.changed();var checkpoint: int=app.checkpoint_revision;app.autosave_tick(true)
+	app.changed();var checkpoint: int=app.checkpoint_revision;app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	check(app.checkpoint_revision==checkpoint,"recovery defers during an active timeline drag")
 	release(app)
 	check(timeline.moving_id.is_empty() and rig.data.start_frame==16 and rig.authored_keys()[0].frame==16 and rig.authored_keys()[2].frame==32,"release outside timeline commits presence and every root/bone key together")

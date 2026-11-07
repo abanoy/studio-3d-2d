@@ -26,6 +26,7 @@ const StudioTheme = preload("res://src/studio_theme.gd")
 const Recovery = preload("res://src/recovery.gd")
 const RecoveryJournal=preload("res://src/recovery_journal.gd")
 const RecoveryPreview=preload("res://src/recovery_preview.gd")
+const RecoveryWriter=preload("res://src/recovery_writer.gd")
 const PoseEditor = preload("res://src/pose_editor.gd")
 const PhysicsEditor=preload("res://src/physics_editor.gd")
 const ImportPlacement = preload("res://src/import_placement.gd")
@@ -177,6 +178,11 @@ var last_recovery_ms := 0.0
 var last_recovery_preview_ms := 0.0
 var last_recovery_preview_capture_ms := 0.0
 var last_recovery_preview_worker_ms := 0.0
+var recovery_writer=RecoveryWriter.new()
+var recovery_writer_result: Dictionary={}
+var recovery_schedule_generation:=0
+var last_recovery_capture_ms:=0.0
+var last_recovery_worker_ms:=0.0
 var recovery_preview=RecoveryPreview.new()
 var recovery_preview_result: Dictionary={}
 var recovery_checkpoint_requested:=false
@@ -1073,7 +1079,7 @@ func trim_idle_rasters() -> void:
 func _process(delta: float) -> void:
 	trim_idle_rasters()
 	poll_recovery_preview()
-	if recovery_checkpoint_requested and not recovery_preview.busy():autosave_tick(true)
+	if recovery_checkpoint_requested and not recovery_writer.busy() and not recovery_preview.busy():autosave_tick(true)
 	pose_editor.update_gizmo()
 	play_button.text = "Pause" if playing else "Play"
 	if playing:
@@ -2239,6 +2245,7 @@ func begin_recovery_session() -> void:
 	refresh_recovery_schedule(false)
 
 func reset_recovery_schedule() -> void:
+	recovery_schedule_generation+=1
 	autosave_actions=0;autosave_retry_due=0
 	recovery_checkpoint_requested=false
 	autosave_due=Time.get_ticks_msec()+int(autosave_interval.value*60000)
@@ -2267,7 +2274,7 @@ func autosave_tick(force := false) -> void:
 	if force:recovery_checkpoint_requested=true
 	poll_recovery_preview()
 	# Serialize journal writers without waiting on the UI thread.
-	if recovery_preview.busy():return
+	if recovery_writer.busy() or recovery_preview.busy():return
 	if not autosave_enabled.button_pressed and not force: return
 	# Lesson view/progress can change after Save without editing scene content.
 	var lesson_context: Dictionary=tutorials.recovery_context() if tutorials else {}
@@ -2283,27 +2290,40 @@ func autosave_tick(force := false) -> void:
 			if autosave_schedule.selected==1 and autosave_actions<int(autosave_action_limit.value):return
 	recovery_checkpoint_requested=false
 	autosave_due = Time.get_ticks_msec() + int(autosave_interval.value * 60000)
-	var started := Time.get_ticks_usec()
-	var snapshot:=project_snapshot()
-	var error := Recovery.checkpoint(recovery_root,recovery_session,snapshot.video,snapshot.camera_keys,snapshot.layers,str(snapshot.get("source","")),int(snapshot.editor.frame),snapshot.audio,has_project.path if not has_project.path.is_empty() else project_folder,recovery_revision,snapshot.get("model",{}),snapshot.world,snapshot.palette,snapshot.sequence_graph,snapshot.get("sequence_context",{}),snapshot.get("reference_sheet",{}),lesson_context)
-	last_recovery_ms = (Time.get_ticks_usec() - started) / 1000.0
-	if error.is_empty():
-		checkpoint_revision = recovery_revision
-		checkpoint_lesson_signature = lesson_signature
-		autosave_actions=0;autosave_retry_due=0
-		recovery_status.text = "Recovery copy saved"
-		var folder:=recovery_root.path_join(recovery_session)
-		finish_recovery_preview.call_deferred(folder,FileAccess.get_sha256(folder.path_join("project.json")),frame,recovery_revision,renderer.view_state())
-	else:
-		autosave_retry_due=Time.get_ticks_msec()+30000
-		recovery_status.text = "Recovery failed. Edits are pending."
-		message(error + (" Studio will retry after 30 seconds when idle. You can also save manually." if autosave_enabled.button_pressed else " Use Checkpoint now to retry, or save manually."))
+	var request:={"root":recovery_root,"session":recovery_session,"revision":recovery_revision,"generation":recovery_schedule_generation,"actions":autosave_actions,"lesson_signature":lesson_signature,"lesson_context":lesson_context,"frame":frame,"view":renderer.view_state(),"origin":has_project.path if not has_project.path.is_empty() else project_folder}
+	var error: String=recovery_writer.start(project_snapshot(),request)
+	if error.is_empty():recovery_status.text="Saving recovery copy…"
+	else:recovery_checkpoint_failed(error)
+
+func recovery_checkpoint_failed(error: String) -> void:
+	autosave_retry_due=Time.get_ticks_msec()+30000
+	recovery_status.text="Recovery failed. Edits are pending."
+	message(error + (" Studio will retry after 30 seconds when idle. You can also save manually." if autosave_enabled.button_pressed else " Use Checkpoint now to retry, or save manually."))
+
+func poll_recovery_checkpoint() -> void:
+	var result: Dictionary=recovery_writer.poll()
+	if result.is_empty():return
+	recovery_writer_result=result
+	var request: Dictionary=result.request
+	if request.root!=recovery_root or request.session!=recovery_session:return
+	if request.generation!=recovery_schedule_generation:
+		# An exact-current manual Save reset this schedule during the write.
+		# Resolve its now-obsolete checkpoint only after its final commit.
+		if result.error.is_empty():recovery_writer_result["resolve_error"]=Recovery.resolve(result.folder)
+		return
+	last_recovery_capture_ms=request.capture_ms;last_recovery_worker_ms=result.worker_ms
+	last_recovery_ms=last_recovery_capture_ms+last_recovery_worker_ms
+	if not result.error.is_empty():recovery_checkpoint_failed(result.error);return
+	checkpoint_revision=int(request.revision);checkpoint_lesson_signature=request.lesson_signature
+	autosave_actions=maxi(0,autosave_actions-int(request.actions));autosave_retry_due=0
+	recovery_status.text="Recovery copy saved" if recovery_revision==checkpoint_revision else "Recovery saved; newer edits pending"
+	finish_recovery_preview.call_deferred(result.folder,result.digest,int(request.frame),int(request.revision),request.view)
 
 func finish_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
 	await RenderingServer.frame_post_draw
 	if not is_inside_tree() or folder!=recovery_root.path_join(recovery_session) or recovery_revision!=revision or frame!=at or renderer.view_state()!=view:return
 	if playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.is_running() or has_dialog(self):return
-	if recovery_preview.busy():return
+	if recovery_writer.busy() or recovery_preview.busy():return
 	var started:=Time.get_ticks_usec()
 	var image: Image=renderer.viewport.get_texture().get_image()
 	if not image or image.is_empty():return
@@ -2321,6 +2341,7 @@ func finish_recovery_preview(folder: String,digest: String,at: int,revision: int
 	if not preview_error.is_empty():recovery_status.text="Recovery saved; preview unavailable"
 
 func poll_recovery_preview() -> void:
+	poll_recovery_checkpoint()
 	var result: Dictionary=recovery_preview.poll()
 	if result.is_empty():return
 	recovery_preview_result=result
@@ -2331,6 +2352,10 @@ func poll_recovery_preview() -> void:
 func _exit_tree() -> void:
 	Drawing.opacity_cache.clear()
 	# Join only at teardown; ordinary processing polls completed work without waiting.
+	var completed: Dictionary=recovery_writer.finish()
+	if not completed.is_empty() and completed.error.is_empty():
+		var request: Dictionary=completed.request
+		if request.root==recovery_root and request.session==recovery_session and request.generation!=recovery_schedule_generation:Recovery.resolve(completed.folder)
 	recovery_preview.finish()
 
 func show_recovery(history_view := false) -> void:

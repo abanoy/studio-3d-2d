@@ -1,0 +1,1026 @@
+{
+  "date": "2026-11-07 UTC",
+  "scope": "Background checkpoint serialization with isolated frozen CPU resources; actual procedural cloud app/crash/media evidence, not target-device or native ecosystem fidelity.",
+  "background_suite": {
+    "reports": {
+      "snapshot": {
+        "result": {
+          "checks": 9,
+          "failures": 0
+        },
+        "seconds": 0.15661482499854174
+      },
+      "writer-unit": {
+        "result": {
+          "checks": 8,
+          "failures": 0
+        },
+        "seconds": 1.0007377110014204
+      },
+      "app": {
+        "result": {
+          "capture_ms": 27.537,
+          "checks": 13,
+          "failures": 0,
+          "heartbeat_frames": 6
+        },
+        "seconds": 6.932124853999994
+      },
+      "preview": {
+        "result": {
+          "capture_ms": 8.771,
+          "checks": 25,
+          "failures": 0,
+          "folder": "/workspace/has-handoff-audit/recovery-writer-suite-final/preview",
+          "manual_sha256": "90e88181c1abca74c17ddf99880fe6c14e65ea4dcbce4b458aadca4200cfae5e",
+          "responsive_frames": 20,
+          "worker_ms": 4.412
+        },
+        "seconds": 5.813776603994484
+      },
+      "schedule": {
+        "result": {
+          "checks": 41,
+          "failures": 0,
+          "folder": "/workspace/has-handoff-audit/recovery-writer-suite-final/schedule",
+          "manual_sha256": "af443deb2a6402f78b97316ca9a1ae1913f022bf3053b504c85fbbcec13aae6f"
+        },
+        "seconds": 10.528726392003591
+      }
+    },
+    "private_receipts": [],
+    "isolated_display": ":110",
+    "source_sha256": {
+      "src/app.gd": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04",
+      "src/recovery_writer.gd": "7a9f9fb29d19c319d042f813705e3315802ee449fd3e81822c0fba1660ef2e93",
+      "src/recovery_snapshot.gd": "b6b45f09ab60a4abd020fc333691e243c9e14ddb2a94dc8dccadeb0d911d4233",
+      "src/recovery.gd": "a113d35d150c48cba1a6ad85950284738baa8190991c4e3e9830b1eb8c481b47",
+      "tests/recovery_wait.gd": "b29cff9f7c0a6eaaac6f8f903c8fbc5dbe4018889103ab1eea018553dbf22be3"
+    }
+  },
+  "large400": {
+    "reports": {
+      "writer": {
+        "result": {
+          "checks": 8,
+          "failures": 0,
+          "movie": "/workspace/has-handoff-audit/recovery-writer-large-400/render_1794034069_93462659_0/movie.mp4"
+        },
+        "seconds": 237.3289739219981,
+        "process_rss_hwm_bytes": 455798784,
+        "samples": 4690
+      },
+      "reader": {
+        "result": {
+          "checks": 5,
+          "failures": 0
+        },
+        "seconds": 23.18032695799775,
+        "process_rss_hwm_bytes": 409612288,
+        "samples": 461
+      },
+      "startup": {
+        "result": {
+          "checks": 8,
+          "failures": 0,
+          "memory": {
+            "accounted_bytes": 16910880,
+            "cold_payload_bytes": 322080,
+            "decoded_cache_bytes": 16588800,
+            "hot_bytes": 0,
+            "hot_owners": 0,
+            "owner_limit_bytes": 335544320,
+            "owners": 400,
+            "target_bytes": 67108864
+          }
+        },
+        "seconds": 22.873494428000413,
+        "process_rss_hwm_bytes": 426823680,
+        "samples": 455
+      }
+    },
+    "actual_abrupt_exit": true,
+    "offline_sources": true,
+    "source_unchanged": true,
+    "manual_has_unchanged": true,
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 51712,
+      "duration": "4.208333",
+      "bit_rate": "78756",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "101",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "audio_onset_sample": 48001,
+    "scope": "Procedural 400 drawing corpus; process RSS excludes GPU and other processes; native artist and Windows evidence unrun.",
+    "isolated_display": ":109"
+  },
+  "large400_capture": {
+    "checkpoint_capture_ms": 34.874,
+    "checkpoint_worker_ms": 114308.034,
+    "heartbeat_frames": 4519,
+    "memory": {
+      "accounted_bytes": 16910880,
+      "cold_payload_bytes": 322080,
+      "decoded_cache_bytes": 16588800,
+      "hot_bytes": 0,
+      "hot_owners": 0,
+      "owner_limit_bytes": 335544320,
+      "owners": 400,
+      "target_bytes": 67108864
+    }
+  },
+  "lesson_recovery": {
+    "reports": {
+      "unit": {
+        "checks": 43,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 7,
+        "failures": 0
+      },
+      "newest": {
+        "case": "newest",
+        "checks": 21,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/recovery-writer-lessons/newest/render_1794034438_2625951_0/movie.mp4",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/newest/recovery/1794034431_114279458171624968",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/newest/recovery/1794034431_114279458171624968",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/recovery-writer-lessons/Manual practice.has",
+            "preview": "232652309448e35e34ea39a263450bda5b073b09c7fffb397260e7baccecfb0f",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794034434.70965,
+            "sha256": "62c862e5f83c2dfc02266b2266c1aa56d3f9949bb1e9fb12eafaf1db6c0346d2"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      },
+      "older-fallback": {
+        "case": "older-fallback",
+        "checks": 19,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/older-fallback/recovery/1794034431_114279458171624968",
+              "manifest": "project.backup.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/older-fallback/recovery/1794034431_114279458171624968",
+            "frame": 12,
+            "manifest": "project.backup.json",
+            "origin": "/workspace/has-handoff-audit/recovery-writer-lessons/Manual practice.has",
+            "preview": "f135b7f5cbcf82ce527400a5190096980589f56651450ef69580cbcbde6f22a4",
+            "resolved": false,
+            "revision": 3,
+            "saved_at": 1794034433.49283,
+            "sha256": "6a65ee522663a7c19e689193ffef88069f999f31ff4d20e7497b0c3d58677239"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      },
+      "legacy": {
+        "case": "legacy",
+        "checks": 7,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/legacy/recovery/1794034431_114279458171624968",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/legacy/recovery/1794034431_114279458171624968",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/recovery-writer-lessons/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794034434.70965,
+            "sha256": "719cd5b02bd9cbab81ff355dc7aa12a40d4f95c24c078950ed253c9c2d85096a"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      },
+      "invalid-context": {
+        "case": "invalid-context",
+        "checks": 8,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/invalid-context/recovery/1794034431_114279458171624968",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/invalid-context/recovery/1794034431_114279458171624968",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/recovery-writer-lessons/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794034434.70965,
+            "sha256": "5f0ada1cb3b85441115d1db62ab7f3547c276521538479ea11cd5a051fec1787"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      },
+      "missing-practice": {
+        "case": "missing-practice",
+        "checks": 8,
+        "failures": 0,
+        "movie": "",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/missing-practice/recovery/1794034431_114279458171624968",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/recovery-writer-lessons/missing-practice/recovery/1794034431_114279458171624968",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/recovery-writer-lessons/Manual practice.has",
+            "preview": "232652309448e35e34ea39a263450bda5b073b09c7fffb397260e7baccecfb0f",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794034434.70965,
+            "sha256": "62c862e5f83c2dfc02266b2266c1aa56d3f9949bb1e9fb12eafaf1db6c0346d2"
+          },
+          "lesson_restored": false,
+          "restored": true
+        }
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "109920",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "actual_abrupt_exit": true,
+    "manual_has_unchanged": true,
+    "included_assets_unchanged": true,
+    "writer_cache_unavailable_for_cold_startup": true,
+    "private_receipts": [],
+    "isolated_display": ":109",
+    "folder": "/workspace/has-handoff-audit/recovery-writer-lessons"
+  },
+  "native540": {
+    "metadata": {
+      "checks": 25,
+      "failures": 0
+    },
+    "reports": {
+      "540p": {
+        "writer": {
+          "checks": 32,
+          "duration_frames": 60.0,
+          "failures": 0,
+          "fps_den": 1001.0,
+          "fps_num": 24000.0,
+          "movie": "/workspace/has-handoff-audit/recovery-writer-native/540p/render_1794034496_3809453_0/movie.mp4",
+          "pcm": "8772d7e514efb4cd8c9cef80876b6b8f0f0eedfd047ce7d04435c22fbcfc5a26",
+          "pixels": "280e482f2923c63c338561c440999e8ebfa6bd1f7cf3a61e28758b523f402c9a",
+          "png_sequence": "/workspace/has-handoff-audit/recovery-writer-native/540p/images_1794034500_7140424_0",
+          "source_sha256": "713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad"
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0
+        },
+        "video": {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 960,
+          "height": 540,
+          "coded_width": 960,
+          "coded_height": 544,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24000/1001",
+          "avg_frame_rate": "24000/1001",
+          "time_base": "1/24000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 60060,
+          "duration": "2.502500",
+          "bit_rate": "46184",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "60",
+          "nb_read_frames": "60",
+          "extradata_size": 48,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        "decoded_onset_sample": 48049,
+        "manual_has_unchanged": true,
+        "originals_and_writer_cache_unavailable_for_reader": true
+      }
+    },
+    "scope": "Owned native profiles with actual GUI/GPU/native-size media and generated3D; not native ecosystem fidelity or hardware/artist acceptance.",
+    "private_receipts": [],
+    "isolated_display": ":109",
+    "functional_source_unchanged": true
+  },
+  "nested_masked_sequences": {
+    "reports": {
+      "graph": {
+        "checks": 107,
+        "failures": 0
+      },
+      "audio": {
+        "checks": 9,
+        "failures": 0
+      },
+      "storage": {
+        "checks": 8,
+        "failures": 0,
+        "folder": "/workspace/has-handoff-audit/recovery-writer-sequences/storage"
+      },
+      "runtime": {
+        "checks": 23,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 48,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/recovery-writer-sequences/editor/render_1794034526_22277268_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 25,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 5,
+        "failures": 0
+      }
+    },
+    "media": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1920,
+          "height": 1080,
+          "coded_width": 1920,
+          "coded_height": 1080,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 40,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 1,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 24576,
+          "duration": "2.000000",
+          "bit_rate": "634840",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "48",
+          "extradata_size": 50,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_long_name": "AAC (Advanced Audio Coding)",
+          "profile": "LC",
+          "codec_type": "audio",
+          "codec_tag_string": "mp4a",
+          "codec_tag": "0x6134706d",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "id": "0x2",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 96000,
+          "duration": "2.000000",
+          "bit_rate": "53113",
+          "nb_frames": "95",
+          "extradata_size": 5,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "SoundHandler",
+            "vendor_id": "[0][0][0][0]"
+          }
+        }
+      ],
+      "format": {
+        "filename": "/workspace/has-handoff-audit/recovery-writer-sequences/editor/render_1794034526_22277268_0/movie.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "2.000000",
+        "size": "174941",
+        "bit_rate": "699764",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf61.7.103"
+        }
+      }
+    },
+    "child_audio_onset": 0.25002083333333336,
+    "private_receipts": [],
+    "isolated_display": ":110",
+    "adaptive_open": true,
+    "mask_recovery": true,
+    "native_fixtures": 0,
+    "writer_abrupt_exit_verified": true,
+    "manual_has_unchanged": true,
+    "folder": "/workspace/has-handoff-audit/recovery-writer-sequences"
+  },
+  "raster_domains": {
+    "checks": 292,
+    "reports": {
+      "unit": {
+        "checks": 29,
+        "failures": 0
+      },
+      "write-paths": {
+        "checks": 17,
+        "failures": 0,
+        "scope": "owned Linux links/hardlinks/read-only paths; no Windows or hostile concurrent filesystem race certification"
+      },
+      "rollback": {
+        "checks": 26,
+        "failures": 0,
+        "scope": "owned metadata/asset/pixel rollback integrity; not native-rig or physical power-loss certification"
+      },
+      "project-ownership": {
+        "checks": 11,
+        "failures": 0
+      },
+      "admission": {
+        "checks": 17,
+        "default_owner_limit": 335544320,
+        "failures": 0,
+        "full_hd_accepted": 40,
+        "full_hd_rejected": 8,
+        "scope": "conservative owned+decoded bytes, not processRSS/GPU/tiles/temporary materializations"
+      },
+      "budget": {
+        "checks": 13,
+        "failures": 0
+      },
+      "pixel-history": {
+        "checks": 19,
+        "failures": 0
+      },
+      "policy": {
+        "checks": 11,
+        "failures": 0
+      },
+      "adaptive": {
+        "checks": 31,
+        "failures": 0
+      },
+      "save": {
+        "checks": 7,
+        "failures": 0
+      },
+      "read": {
+        "checks": 15,
+        "failures": 0
+      },
+      "overlay-regression": {
+        "checks": 20,
+        "failures": 0
+      },
+      "metadata": {
+        "checks": 16,
+        "failures": 0
+      },
+      "owner": {
+        "checks": 29,
+        "failures": 0
+      },
+      "reader-regression": {
+        "checks": 31,
+        "failures": 0
+      }
+    }
+  },
+  "noise_regression": {
+    "noise_art": true,
+    "automatic_open": true,
+    "adaptive_open": false,
+    "reports": {
+      "unit": {
+        "checks": 31,
+        "failures": 0
+      },
+      "png-compatibility": {
+        "cache_hits": 16,
+        "cases": [
+          {
+            "name": "color2-depth16.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "e67477200047df6269888bb44717bca8e22bad1e130bacea74533e1354796a68"
+          },
+          {
+            "name": "color2-depth8.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "8bebf9e71d518c8eaf7cdc2054dab35a4a6a184cb096c75acbbab85a2a2c6879"
+          },
+          {
+            "name": "color4-depth16.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "ed0e7a88b4b1c479767c78482fa62b6f1cdc83f9c5ba433c156322255a02eb6f"
+          },
+          {
+            "name": "color4-depth8.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "a61c3f48139832caa035555ccfc99393feafb00387759ab14e76596455e1428a"
+          },
+          {
+            "name": "color6-depth16.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "85f739c9b5c4b6b8f89fd570794f914aa699aae50541fa3016be7c0c660ef2df"
+          },
+          {
+            "name": "color6-depth8.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "bb800897e39951c7bab0a0fea9900e354a0fd5165a4d4ef71c5540163dddcca6"
+          },
+          {
+            "name": "gray1.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "d8b0ad8408676af0e124ddd45cd8b09cdc7303296d3d53529ae19d531bd6e573"
+          },
+          {
+            "name": "gray16.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "4c61d80075d709da4f731397de129462e1a91808a8a5a3e60c77d136b49a1ddb"
+          },
+          {
+            "name": "gray2.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "1ddea9ce26a2e89396ed886e017030af6976052dd98a6fca589c35f6a225bdb4"
+          },
+          {
+            "name": "gray4.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "c8554e2433e5a608c32c822f3f37510cf3dda0798dbe76dea8910673f3b5e9a2"
+          },
+          {
+            "name": "gray8.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "08898f1b32e5a415ad4226812d4c524429f384c5e2e69304dacad4b8921af34f"
+          },
+          {
+            "name": "interlaced.png",
+            "ok": true,
+            "pixel_sha256": "40a028bd71b22e6f2eb75e7691b59882483febd139de9c5afee334c988052ddb",
+            "source_sha256": "cdaaed121f619da685a841dc9f644e1928b4d7cdee4bd0c3600dff2a3556ec32"
+          },
+          {
+            "name": "palette1.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "22574861f0a81d9f36b138d4e4cfe20883a97fcadb9ea7e9ee493c9aee522b9b"
+          },
+          {
+            "name": "palette2.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "be871ccb3dbc75cdedec573973c5f69ee1e97b7e3c43b1edb151a0412e9ed3b0"
+          },
+          {
+            "name": "palette4.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "0ca6d9f15e32104017669a64e3dcb9386ca8aeaa84b99450b078c60fbbc82c3f"
+          },
+          {
+            "name": "palette8.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "e022d29978dfbfd8e66dc6b8d5d4a83815938b42d935a4369b49a38ab16d08a0"
+          }
+        ],
+        "failures": 0,
+        "png_decodes": 16
+      },
+      "writer": {
+        "checks": 21,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/recovery-writer-noise/render_1794034343_26905466_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "7371704",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "decoded_onset_sample": 48001,
+    "actual_abrupt_exit": true,
+    "originals_and_writer_cache_unavailable_for_cold_startup": true,
+    "manual_has_unchanged": true,
+    "source_assets_unchanged": true,
+    "functional_unchanged": true,
+    "private_receipts": [],
+    "isolated_display": ":109",
+    "folder": "/workspace/has-handoff-audit/recovery-writer-noise"
+  },
+  "runtime_hashes_match_successful400_run": false,
+  "test_migrations": {
+    "syntax_checked_scripts": 54,
+    "purpose": "Former synchronous persistence assertions now await checkpoint completion. Controlled preview gates retain explicit in-flight checks; immediate interaction guards do not yield when no work started. All original pixel/history/action/failure assertions retained.",
+    "scope": "54 scripts parsed; not all migrated native-fixture scripts were executed."
+  },
+  "failed_and_corrected": [
+    "Initial GDScript inferred dynamic types fixed with explicit assignment.",
+    "Cold PackedByteArray assignment shared mutable bytes; snapshot corruption test exposed it. Explicit payload.duplicate() now preserves captured data; nine ownership checks pass.",
+    "Preview waiter initially returned before queued checkpoint completion; updated to follow both stages.",
+    "Schedule waiter first missed a checkpoint deferred behind preview; then yielded during immediate synthetic playing guards. Final helper waits only when work actually started and retries only normal guarded schedule ticks. All41schedule and25preview assertions pass."
+  ],
+  "unrun_or_separate": [
+    "Existing full tests/verify.py entrypoint remains blocked in the Windows-only Krita harness by CREATE_NO_WINDOW on Linux, as recorded in the preceding large-project increment. No repeat/full-suite pass claimed.",
+    "Original native Source/MMD/VRM/Krita fixtures and physical Windows/tablet/audio/GPU/artist acceptance remain separate. Procedural skeleton/scene fixtures do not close them.",
+    "No actual physical disk stall/power loss; held semaphore and real temporary-path refusals exercise controlled boundaries."
+  ],
+  "limitations": [
+    "Main-thread capture still duplicates metadata and compressed cold bytes; GPU thumbnail readback remains separate.",
+    "Worker is one additional admitted context; overlap is outside a single live cache counter. Process/GPU/whole-session memory is not hard bounded by registered admission.",
+    "Observed400workflow processRSS/HWM peak455798784B; main capture34.874ms, checkpoint worker114308.034ms with4519application frames. No universal input-latency/FPS guarantee.",
+    "Manual Save, initial Open and lesson snapshot serialization remain synchronous; actual source400 Save previously68.5s.",
+    "Closing joins an active worker; slow storage can delay final teardown.",
+    "Shared-asset cleanup and cross-process recovery quota locking remain unfinished."
+  ],
+  "raw_prefix": "/workspace/has-handoff-audit/recovery-writer-",
+  "source_sha256": {
+    "src/app.gd": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04",
+    "src/recovery_snapshot.gd": "b6b45f09ab60a4abd020fc333691e243c9e14ddb2a94dc8dccadeb0d911d4233",
+    "src/recovery_writer.gd": "7a9f9fb29d19c319d042f813705e3315802ee449fd3e81822c0fba1660ef2e93",
+    "src/recovery.gd": "a113d35d150c48cba1a6ad85950284738baa8190991c4e3e9830b1eb8c481b47",
+    "src/recovery_preview.gd": "250e6107ba54b6862b62194b23d48654632919e8b5bf19e8339b1ad89770b4fd",
+    "src/storage.gd": "688ec9bf8c74612fcfff6ba3421dd903b8eccd28adfafe1ddcfa794e33004593",
+    "src/cel_raster_owner.gd": "30b6601df440dcc9035e9104ac93049a0c74a0da7c3bd42df1f04c71247eb9df",
+    "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+    "src/cel_raster_snapshot_cache.gd": "b9554ab47f6655da46d2039bf16f3e51453117e7a98dffd6d515b209eb38d95f",
+    "tests/recovery_wait.gd": "b29cff9f7c0a6eaaac6f8f903c8fbc5dbe4018889103ab1eea018553dbf22be3",
+    "tests/recovery_snapshot_unit.gd": "b6097703e8c5604669142c826d3466c226443d2cf5202cf4f02b4593d781ac74",
+    "tests/recovery_writer_unit.gd": "51f4df68cb8640bec1b516376ade14ce2a22fb5ac4bd1de9a21ca8fa202799df",
+    "tests/recovery_writer_smoke.gd": "e1ae2a9d21b82a1bc70ea89ee91b6e4bc6988afb86b65e001219105b5a71f71b",
+    "tests/verify_recovery_writer.py": "096e75a2fbcbd259cf0e167a8aba3c2a036e627e2720c9e20cbc5808f8f54ef4",
+    "tests/large_project_recovery_smoke.gd": "3f305907a25f38d743761d40faa0e5d46a105cec1e493594e9437a67ada314a6"
+  },
+  "post400_change": {
+    "path": "src/app.gd",
+    "scope": "Teardown-only guard resolves a late obsolete checkpoint when manual Save completed before closing. Ordinary capture/write/poll paths are unchanged from the successful400 run.",
+    "verification": "Final96check suite, including new actual app close-after-manual-Save assertion (13appchecks), passes.400/nested/native runs preceded only this teardown guard; they are not represented as runs of an identical final app file."
+  }
+}

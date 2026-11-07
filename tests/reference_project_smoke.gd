@@ -53,7 +53,7 @@ func run() -> void:
 	var movie: String=app.last_export_folder.path_join("movie.mp4");check(FileAccess.get_sha256(png)==original_hash,"original user PNG remains byte-identical through save and export")
 	check(editor.enter(child).is_empty(),"child opens for crash recovery of reference plus editor context");app.set_frame(6);app.changed()
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-	app.autosave_tick(true);check(app.checkpoint_revision==app.recovery_revision,"ordinary autosave commits reference and active child before abrupt exit")
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.checkpoint_revision==app.recovery_revision,"ordinary autosave commits reference and active child before abrupt exit")
 	var expected:={"reference":original_hash,"pixels":Storage.image_hash(original),"audio":Marshalls.raw_to_base64(pcm),"child":child,"recovery":app.recovery_session}
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected,"",true,true))
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected graceful hook"))

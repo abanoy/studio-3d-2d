@@ -130,7 +130,7 @@ func run() -> void:
 	check(exact_transforms and exact_state and exact_media and packed_pixels.close,"reopened multi-piece animation retains exact data/transforms/media within existing GLB rebuild edge bounds")
 	var linked:=folder.path_join("clips-linked.has");app.has_project.save_file(linked,"linked");await wait_job(app.has_project);app.new_project();app.has_project.open_file(linked);await wait_job(app.has_project)
 	check(app.renderer.world_runtime.instance(id).data.animation_clips==JSON.parse_string(JSON.stringify(current.animation_clips,"",true,true)),"linked HAS also preserves all piece curves and timing")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var recovery: String=app.recovery_root.path_join(app.recovery_session)
 	check(not Storage.load_project(recovery).has("error") and app.open_project(recovery) and app.renderer.world_runtime.instance(id).data.format==Model.BODY_FORMAT,"actual recovery checkpoint reopens the editable clip world")
 	var recovered_image: Image=await app.renderer.capture(app.keys,app.layers,28,true)

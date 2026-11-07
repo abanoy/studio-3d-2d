@@ -43,7 +43,7 @@ func run() -> void:
 	Drawing.insert(app.layers[1],0,48,Drawing.blank(1920,1080));Drawing.edit_image(Drawing.cel_at(app.layers[1],24)).image.set_pixel(70,70,Color.CYAN);app.set_frame(24);var expected: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 	var saved:=folder.path_join("faded.has");app.has_project.save_file(saved,"packed");await job();assert(app.has_project.path==saved)
 	var linked:=folder.path_join("linked.has");app.has_project.save_file(linked,"linked");await job();assert(app.has_project.path==linked)
-	app.changed();app.autosave_tick(true);var recovery: String=app.recovery_root.path_join(app.recovery_session)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);var recovery: String=app.recovery_root.path_join(app.recovery_session)
 	assert(Recovery.read_json(recovery.path_join("project.json")).audio.format==Audio.FADE_FORMAT)
 	var store:=Store.new();store.root=folder.path_join("lessons");assert(store.save(app,"basic-pose","1234",1,false,"step_01"))
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"packed":saved,"linked":linked,"recovery":recovery,"audio":final_audio,"mix":final_mix}))

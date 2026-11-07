@@ -123,7 +123,7 @@ func run() -> void:
 		var path:=folder.path_join("animated-"+mode+".has");app.has_project.save_file(path,mode);await wait_job(app.has_project)
 		app.new_project();app.has_project.open_file(path);await wait_job(app.has_project);actor=app.renderer.world_runtime.instance(id)
 		app.set_frame(12);await settled();check(actor!=null and close_value(value(actor),.5) and Drawing.image(Drawing.cel_at(app.layers[1],12)).get_pixel(80,80)==Color.CYAN,"animated shapes and independent cels survive "+mode+" HAS")
-	app.changed();app.autosave_tick(true);var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
 	check(FileAccess.file_exists(checkpoint.path_join("project.json")),"silent checkpoint writes version5 expressions")
 	app.new_project();check(app.restore_checkpoint({"folder":checkpoint}),"normal recovery accepts complete animated-shape world")
 	actor=app.renderer.world_runtime.instance(id);app.set_frame(12);await settled()

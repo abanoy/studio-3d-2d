@@ -83,7 +83,7 @@ func run() -> void:
 	var final_ink:=Storage.image_hash(image);world=World.portable(app.current_world());app.has_project.save_file(packed,"packed");await job();check(FileAccess.file_exists(packed),"packed HAS saves the project palette")
 	var manual:=FileAccess.get_sha256(packed);app.has_project.save_file(linked,"linked");await job()
 	app.has_project.clear_identity();app.project_folder=folder.path_join("folder-save");app.save();check(Storage.load_project(app.project_folder).get("palette")==app.palette,"legacy folder Save also retains project colors")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	var recovery: String=app.recovery_root.path_join(app.recovery_session);var lesson:=Lesson.new();lesson.root=folder.path_join("lessons");check(lesson.save(app,"basic-pose","123456_1",1,false,"step_01"),"lesson checkpoint stores project colors with the whole document")
 	var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder);check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==reference.get_data(),"reused colors render into the ordinary movie with exact preview PNG")

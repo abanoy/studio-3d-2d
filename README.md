@@ -503,14 +503,16 @@ recovery stops and reports a warning; manual Save still works. After saving and
 closing active work, review old session folders before removing them yourself.
 No automatic shared-asset cleanup or multi-instance quota locking is implemented.
 See [recovery history](docs/recovery_history.md) for retention and preview limits.
-Preview resizing, blending and file writing run in one background worker, so
-editing and playback can continue after its image snapshot. Checkpoint writers
-take turns; Checkpoint now stays queued until safe. See the [preview worker](docs/recovery_preview.md).
+Checkpoint serialization and preview file work use isolated background workers;
+editing can continue after the captured snapshot. Journal writers take turns,
+and Checkpoint now stays queued until safe. See [background checkpoints](docs/background_checkpoints.md)
+and the [preview worker](docs/recovery_preview.md).
 
 Recovery preserves committed cels, camera **keys**, layer visibility, audio and
 frame. Temporary unkeyed navigation, undo history and UI preferences are not
-checkpointed. Last edits within the interval may be lost. Synchronous copies can
-briefly pause a large project. Filesystem flush/rename and interruption tests are
+checkpointed. Last edits within the interval may be lost. Snapshot capture and
+thumbnail readback still take main-thread time. Manual Save can pause a large
+project, and closing waits for an active checkpoint writer. Filesystem flush/rename and interruption tests are
 not proof against real power loss, hardware failure or a full physical disk.
 
 ## Requirements, decisions, deferred work

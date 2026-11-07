@@ -2892,3 +2892,65 @@ remainpartial and overallscore unaudited; user askedpercentage and received exac
 releasecompletion. Material independent nextwork: synchronoussave/checkpoint
 blocks UI (68.5sSave); implement frozen independent background checkpoint writer,
 prove editing/heartbeat/failure/stalesession safety, then auditremainingacceptance.
+
+## 2026-11-07 UTC — isolated background recovery checkpoint serialization
+
+Replaced normal app's synchronous Recovery.checkpoint call with one low-priority
+writer. Main capture deep-copies metadata, distinct COW hotImage resources and
+explicitly copied immutable cold payload bytes; logical owners and caches never
+cross into worker. Root/child cold sharing deduplicates snapshot copies. Worker
+adopts into a private320MiBowner/cache context, then uses unchanged integrity,
+PNG-budget preflight, atomic storage, journal and source guards. NoNode/GPU access
+in worker. Captured context includes session, schedule generation, revision,
+actions, lesson signature, frame/view; one writer/preview at a time, one queued
+explicit request, no growing snapshot queue. Main polls only completed threads.
+Success consumes only captured actions; later edits stay pending/dirty. Oldsession
+results do not change New/Open. Exact-current manualSave resets schedulegeneration;
+its late obsolete checkpoint is resolved after commit, including at final teardown.
+Closing joins owned thread; storage can delay closing. No schema/source/native
+asset changes. ManualSave/initialOpen/lesson snapshot serialization remain sync.
+
+Ownership9/domainworker8 pass; final actualapp13/preview25/schedule41 =96suite pass.
+Actual held filesystem worker permits frames and routed brush edits; initialstate
+remains exact despite laterpixels/metadata changes. Queued requests protectlater
+edits with autosaveoff; capturedactionsaloneconsumed. Actualtemporarypathfailure
+preservescheckpoint/manualHAS; realNew/stalesession/manualSave/race/close/join
+checks pass. Initial PackedByteArray assignment shared mutable bytes; deliberate
+corruption test exposed it; payload.duplicate now protects snapshot. Dynamictype
+parse failures fixed; raw failedlogs retained.53old synchronous assertion callers
+now await persistence via shared testhelper;54scriptsparse. Controlledpreviewgate
+optsout, guardassertions do notyield ifnoasyncworkstarted. Initialwaiters returned
+betweenpreview/queuedcheckpoint, thenyieldedduring syntheticplayingguard andlet
+playbackstop; finalwaiter followsbothstages onlywhenbusy, normalguardedretry, all
+originalpixel/history/action/failure assertions retained. Notallnativefixturesuites
+were executed merelybecause their callers nowparse.
+
+Actual400drawing capture34.874ms, worker114308.034ms while4519applicationframes
+continue;8writer/5coldreader/8normalstartup pass afteractualSIGKILL, originalinput/
+audio/writercache unavailable. Exact400pixels/PCM/frame37/duration101/GPUpreview/
+finalmovieinput preserved; manualHASunchanged;101frame1080p24H264AAC, onset48001.
+Observed process-only maxRSS/HWM455798784B; notsession/GPU/hardRAM/devicepromise.
+Additional workercontext canoverlaplivecontext; oldownershipcounterdoesnotinclude
+alltransients. All5actuallessonrecoverycases43unit/7writer/startup21/19/7/8/8 pass.
+32noisyart31unit/16PNG/21writer/5reader/6startup actualcrash/media/source checks pass.
+292rasterdomains pass. Native540metadata25/writer32/reader6 and maskednested225
+(graph107/audio9/storage8/runtime23/editor48/cold25/startup5) pass actualkill,
+independentroot/childpixels/audio, savedmask/cold/export equality. Nativeecosystem
+fixtures0insequence; procedural3D doesnotestablishMMD/VRM/Source/Kritafidelity.
+
+Final review found close-after-manualSave variant: joining at_exit previouslydid
+notapplyobsolete-generation resolution. Added teardown-only resolve and final
+actualappassertion; final96suitepasses.400/native/nested runtime runs precedeonly
+that finalteardownguard; curatedreceipt explicitly records differentappsourcehashes,
+unchangedordinarycapture/write/poll paths, and finalappteardown evidence. No blanket
+same-binaryclaim. Existing fullverify entrypoint's unchangedWindowsKrita
+CREATE_NO_WINDOW Linuxblock remains frompreviousincrement; notpointlesslyrerun or
+claimedfullsuitepass. PhysicalWindows/tablet/audio/GPU/artistacceptanceunrun.
+
+Docs/background_checkpoints.md, benchmarks/background_checkpoints_2026-11-07.json,
+README/recovery/resourceguides/checklist updated. OwntrackedStudioengine log
+archivedoutsidecheckout andrestoredexactHEAD. Raw recovery-writer-* evidenceunder
+/workspace/has-handoff-audit. Wholegoalstillactive. Next: finitecompletionbaseline
+source/evidence/remaining-work audit requestedbyownerforhonestpercentage, then
+prioritizeactualrequiredgaps; manualSave/Open andlong-sessioncleanup/quota limits
+remainmaterial, notquietbackgroundcheckpointregressions.

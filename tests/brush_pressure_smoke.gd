@@ -45,7 +45,7 @@ func run() -> void:
 	check(blank.get_pixel(300,260).a>.99 and Input.use_accumulated_input==initial_accumulated,"ordinary zero-pressure mouse motions retain full brush size and input settings")
 	app.brush_pressure.button_pressed=true;app.set_frame(24);view=app.renderer.view_state();var revision: int=app.recovery_revision;var history: int=app.history.size();button(Vector2(300,400),true);pressure(Vector2(350,400),0)
 	check(app.drawing and app.stroke_image==null and Drawing.cel_at(app.layers[1],24).is_empty() and not Input.use_accumulated_input,"tablet press/zero pressure waits without a cel and temporarily disables event accumulation")
-	app.autosave_tick(true);check(app.history.size()==history and app.recovery_revision==revision,"waiting pressure makes no edit or Undo/recovery action")
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.history.size()==history and app.recovery_revision==revision,"waiting pressure makes no edit or Undo/recovery action")
 	button(Vector2(350,400),false);check(not app.drawing and app.history.size()==history and Input.use_accumulated_input==initial_accumulated and app.status.text.contains("No pen pressure"),"missing pressure finishes cleanly with mouse-fallback guidance")
 	button(Vector2(300,400),true);app.undo();check(not app.drawing and Drawing.cel_at(app.layers[1],24).is_empty() and blank.get_pixel(300,250).a==0 and Input.use_accumulated_input==initial_accumulated,"Undo while waiting ends the pending tablet gesture and undoes the previous real edit")
 	app.redo();check(blank.get_pixel(300,250).a>.99,"Redo still restores the preceding mouse stroke after pending tablet cancellation")

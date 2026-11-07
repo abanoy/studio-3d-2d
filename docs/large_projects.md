@@ -31,8 +31,11 @@ time, including child drawings and source assets, before checkpoint writes. It
 never uses the internal snapshot compression size as a persisted PNG estimate.
 Over-budget or unreadable drawings preserve the previous checkpoint.
 
-Save serialization and checkpoint creation can block the application; this is a
-remaining responsiveness issue, not quiet background saving acceptance.
+Manual Save serialization can still block the application. Recovery checkpoint
+serialization now uses an isolated [background worker](background_checkpoints.md):
+the measured400-drawing capture takes34.874ms, followed by114.3seconds of file
+work while4,519application frames continue. Long-session and target-device
+acceptance remain separate.
 
 The16application assertions, 13 focused drawing-limit assertions, 292
 raster-domain checks, 117 Python tests and clipboard/history regression passed.

@@ -93,7 +93,7 @@ func run() -> void:
 			var path:=folder.path_join(kind+"-"+packing+".has");app.has_project.save_file(path,packing);await wait_job(app.has_project)
 			var expected: Image=await app.renderer.capture(app.keys,app.layers,0,true);app.new_project();app.has_project.open_file(path);await wait_job(app.has_project)
 			check(Lighting.mode(app.video)==kind and (await app.renderer.capture(app.keys,app.layers,0,true)).get_data()==expected.get_data() and Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(80,80)==Color.CYAN,kind+" and independent drawing survive "+packing+" HAS")
-	mode(app,"unshaded");app.changed();app.autosave_tick(true);var recovery: String=app.recovery_root.path_join(app.recovery_session);app.new_project()
+	mode(app,"unshaded");app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);var recovery: String=app.recovery_root.path_join(app.recovery_session);app.new_project()
 	check(app.restore_checkpoint({"folder":recovery}) and Lighting.mode(app.video)=="unshaded","recovery retains project lighting as an unsaved editable copy")
 	var expected: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder)
 	check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==expected.get_data(),"final MP4 uses the same lighting and independent cel as reopened preview")

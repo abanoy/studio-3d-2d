@@ -155,7 +155,7 @@ func run() -> void:
 	check(not reject.is_empty() and editor.find_clip(clip_id).duration==48,"invalid timing refuses atomically")
 	check(editor.enter(id).is_empty(),"enter child for cycle refusal")
 	check(not editor.add_instance(id).is_empty() and editor.clips().is_empty(),"self-nesting refuses without partial clips")
-	app.set_frame(6);app.changed();app.autosave_tick(true)
+	app.set_frame(6);app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var recovery_folder: String=app.recovery_root.path_join(app.recovery_session)
 	var recovered:=Storage.load_project(recovery_folder)
 	check(not recovered.has("error") and recovered.sequence_graph.assets.size()==1 and recovered.editor.sequence_editor.asset_id==id and recovered.editor.sequence_editor.frame==6,"recovery retains complete enclosing project and active child context")
@@ -182,7 +182,7 @@ func run() -> void:
 		check(editor.enter(id).is_empty(),"enter the child for abrupt-exit recovery fixture")
 		app.set_frame(6);app.changed()
 		while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-		app.autosave_tick(true)
+		app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 		check(app.checkpoint_revision==app.recovery_revision,"complete nested checkpoint is committed before abrupt exit")
 		var partial:=FileAccess.open(app.recovery_root.path_join(app.recovery_session).path_join("project.json.tmp"),FileAccess.WRITE);partial.store_string("{unfinished");partial.flush();partial.close()
 	print("SEQUENCE_EDITOR_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":app.last_export_folder.path_join("movie.mp4")}))

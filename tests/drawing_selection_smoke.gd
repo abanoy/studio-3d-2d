@@ -64,7 +64,7 @@ func run() -> void:
 	await process_frame;await process_frame;check(editor.preview_builds-builds==1 and image.get_data()==copied,"many pointer events coalesce into at most one new preview per frame");editor.cancel()
 	app.has_project.save_file(packed,"packed");await job();var manual:=FileAccess.get_sha256(packed);var linked:=folder.path_join("Moved drawing linked.has");app.has_project.save_file(linked,"linked");await job();app.has_project.open_file(linked);await job()
 	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],12)))==Storage.image_hash(image) and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[0],12)))==other_hash,"linked HAS preserves exact moved pixels and separate layer")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	check(app.open_project(app.recovery_root.path_join(app.recovery_session)) and Drawing.cel_at(app.layers[1],0).id==Drawing.cel_at(app.layers[1],47).id and FileAccess.get_sha256(packed)==manual,"recovery retains the shared held cel without altering manual HAS")
 	app.set_frame(12);var reference: Image=await app.renderer.capture(app.keys,app.layers,12,true);editor.arm();marquee(Vector2(660,450),Vector2(760,530));mouse(Vector2(700,490),true);move(Vector2(760,550));await settle();var error: String=await app.export_movie(folder)

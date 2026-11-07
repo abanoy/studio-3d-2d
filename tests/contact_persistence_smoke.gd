@@ -90,7 +90,7 @@ func run() -> void:
 	var packed:=folder.path_join("native-packed.has");app.has_project.save_file(packed,"packed");await job();check(FileAccess.file_exists(packed),"normal packed HAS saves the complete native contact world")
 	var linked:=folder.path_join("native-linked.has");app.has_project.save_file(linked,"linked");await job();check(FileAccess.file_exists(linked),"normal linked HAS saves the same native contact world")
 	var store:=Store.new();store.root=folder.path_join("lessons");check(store.save(app,"basic-pose","1234",1,false,"step_01",{"preview_seen":true}),"normal lesson checkpoint API retains this contact world and editor state")
-	expected["lesson_ui"]=Store.ui(app);app.changed();app.autosave_tick(true);await settled()
+	expected["lesson_ui"]=Store.ui(app);app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);await settled()
 	while app.recovery_preview.busy():await process_frame;app.poll_recovery_preview()
 	check(app.checkpoint_revision==app.recovery_revision,"ordinary recovery writes the combined contact world")
 	var movie_error: String=await app.export_movie(folder);check(movie_error.is_empty() and reference.get_data()==Image.load_from_file(app.last_export_folder.path_join("frame_000013.png")).get_data(),"combined native contacts, camera, paint and audio export through the actual MP4 workflow")

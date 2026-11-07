@@ -71,7 +71,7 @@ func run() -> void:
 	check(Image.load_from_file(app.last_export_folder.path_join("frame_000246.png")).get_data()==preview.get_data(),"exported late frame exactly matches preview")
 	app.has_project.open_file(folder.path_join("packed.has"));await wait_job();app.set_frame(1300);app.changed()
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
-	app.autosave_tick(true);check(app.checkpoint_revision==app.recovery_revision,"ordinary autosave commits long project at late frame")
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.checkpoint_revision==app.recovery_revision,"ordinary autosave commits long project at late frame")
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"pcm":original_pcm,"child":child,"movie":movie,"recovery":app.recovery_session}))
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected"))
 	print("EXTENDED_TIMING_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":movie}))

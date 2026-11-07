@@ -128,7 +128,7 @@ func run() -> void:
 	app.has_project.clear_identity();app.project_folder=folder.path_join("directory");app.save()
 	var directory:=Storage.load_project(app.project_folder)
 	check(not directory.has("error") and directory.schema_version==4 and World.portable(directory.world)==JSON.parse_string(JSON.stringify(expected,"",true,true)),"directory Save also preserves all edited instances")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var recovered:=Storage.load_project(app.recovery_root.path_join(app.recovery_session))
 	check(not recovered.has("error") and recovered.schema_version==4 and World.portable(recovered.world)==JSON.parse_string(JSON.stringify(expected,"",true,true)),"quiet recovery checkpoint preserves whole edited world")
 	check(app.open_project(app.has_project.pending.folder) and app.renderer.world_runtime.instances.size()==5 and selection.selected.is_empty(),"normal schema4 Open restores the whole edited world with no selected object")

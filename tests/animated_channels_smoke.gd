@@ -131,7 +131,7 @@ func run() -> void:
 	app.has_project.open_file(project);await wait_job(app.has_project);app.world_selection.select_entity(id);rig=app.renderer.active_model()
 	check(rig.authored_keys()[1].authored_channels==[arm] and timeline.visual_rows.size()==2 and timeline.expanded.is_empty(),"packed HAS retains native independent controls while expansion remains editor-only")
 	check(World.portable(app.renderer.world_state())==JSON.parse_string(JSON.stringify(original_world,"",true,true)),"packed HAS preserves all object transforms, poses, visibility and provenance with channel hints")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var recovery: String=app.recovery_root.path_join(app.recovery_session)
 	check(not Storage.load_project(recovery).has("error") and app.open_project(recovery),"recovery preserves channel annotations and existing motion/visibility")
 	app.set_frame(8);var recovered: Image=await app.renderer.capture(app.keys,app.layers,8,true)

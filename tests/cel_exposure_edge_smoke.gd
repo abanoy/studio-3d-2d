@@ -22,7 +22,7 @@ func run() -> void:
 	check(view.cel_length_preview==16 and view.cel_preview==4 and layer.cels[0].duration==8 and app.history.size()==history,"right-edge motion previews only length without changing source/history")
 	var navigation_span: float=app.timeline_navigation.span;app.timeline_navigation.zoom(.5,8)
 	check(app.timeline_navigation.span==navigation_span,"timeline navigation cannot change coordinates during edge preview")
-	var checkpoint: int=app.checkpoint_revision;app.autosave_tick(true);check(app.checkpoint_revision==checkpoint,"recovery defers during right-edge preview")
+	var checkpoint: int=app.checkpoint_revision;app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.checkpoint_revision==checkpoint,"recovery defers during right-edge preview")
 	await mouse(target,false)
 	check(layer.cels[0].duration==16 and layer.cels[0].start==4 and layer.cels[1].start==24,"release extends hold without shifting either drawing")
 	check(app.history.size()==history+1 and app.history_bytes==bytes+512 and app.history[-1].type=="cel_exposure","right-edge release creates one512byte duration command")

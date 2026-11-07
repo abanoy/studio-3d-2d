@@ -117,7 +117,7 @@ func run() -> void:
 			editor.apply_button.pressed.emit();await settled()
 			check(actor.authored_shape_keys()==previous_keys and editor.record_draft.is_visible_in_tree() and not editor.record_draft.disabled,"with Auto-key off the preview strength creates a draft with Record available")
 			var draft_state: Dictionary=actor.data.duplicate(true)
-			app.autosave_tick(true)
+			app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 			var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
 			check(FileAccess.file_exists(checkpoint.path_join("project.json")),"recovery checkpoint captures the unrecorded expression")
 			FileAccess.open(folder.path_join("draft.json"),FileAccess.WRITE).store_string(JSON.stringify({"path":checkpoint,"actor":actor.data.id,"node":str(editor.node_index),"target":str(editor.shape_index),"keys":previous_keys.size()}))

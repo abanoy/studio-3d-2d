@@ -25,12 +25,12 @@ func recovered(result: Dictionary) -> void:
 	check(picture.get_data()==Image.load_from_file(folder.path_join("frame18.png")).get_data(),"cold restored practice has exact protected final composition")
 	app.has_project.cache_root=folder.path_join("reader-cache");app.has_project.save_file(folder.path_join("Recovered practice.has"),"packed")
 	while app.has_project.pid>0:await get_tree().process_frame
-	app.autosave_tick(true)
+	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	for i in range(5):await get_tree().process_frame
 	while app.recovery_preview.busy():app.poll_recovery_preview();await get_tree().process_frame
 	var target: String=app.recovery_root.path_join(app.recovery_session).path_join("project.json")
 	check(not app.dirty and Recovery.read_json(target).editor.recovery.has("lesson"),"new document recovery session starts with its own protected teacher fingerprint")
-	var teacher: Dictionary=lesson.recovery_context();lesson.leave(true);app.autosave_tick(true)
+	var teacher: Dictionary=lesson.recovery_context();lesson.leave(true);app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	for i in range(5):await get_tree().process_frame
 	while app.recovery_preview.busy():app.poll_recovery_preview();await get_tree().process_frame
 	check(not app.dirty and not Recovery.read_json(target).editor.recovery.has("lesson") and app.checkpoint_lesson_signature.is_empty(),"leaving a clean lesson checkpoints removal of teacher context without dirtying scene")

@@ -90,7 +90,7 @@ func run() -> void:
 			app.new_project();app.has_project.open_file(path);await wait_job(app.has_project);actor=app.renderer.world_runtime.instance(id);app.set_frame(6);await settled()
 			check(actor!=null and actor.data.format==Model.BODY_FORMAT and same(actor.sample(6),Body.sample(keyed,6).pose) and actor.order==native_ids,"normal "+mode+" HAS retains editable native body controls: "+plan.label)
 		if plan.label=="Authored":
-			app.changed();app.autosave_tick(true);var checkpoint: String=app.recovery_root.path_join(app.recovery_session);app.new_project()
+			app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);var checkpoint: String=app.recovery_root.path_join(app.recovery_session);app.new_project()
 			check(app.restore_checkpoint({"folder":checkpoint}),"normal recovery accepts the complete model6 project")
 			actor=app.renderer.world_runtime.instance(id);app.set_frame(6);await settled();var expected: Image=await app.renderer.capture(app.keys,app.layers,6,true);expected.save_png(folder.path_join("independent-body.png"))
 			var error: String=await app.export_movie(folder);movie=app.last_export_folder.path_join("movie.mp4")

@@ -82,7 +82,7 @@ func run() -> void:
 		if child is Window and child.visible and child.title=="Tutorials":catalog=child
 	check(catalog!=null and not catalog.exclusive and not app.has_dialog(app),"tutorial browsing remains non-blocking; starting a lesson still has its separate discard check")
 	if catalog:catalog.hide();catalog.queue_free()
-	app.changed();app.autosave_tick(true);app.show_recovery(true);await settled();var recovery: Window
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);app.show_recovery(true);await settled();var recovery: Window
 	for child in app.get_children():
 		if child is Window and child.visible and child.title=="Recovery History":recovery=child
 	check(recovery!=null and not recovery.exclusive and not app.has_dialog(app),"recovery history browsing permits main-window interaction without restoring anything")

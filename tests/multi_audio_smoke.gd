@@ -91,7 +91,7 @@ func run() -> void:
 	var expected:=audio_rows();mixed=pcm_hash()
 	var linked:=folder.path_join("Linked sounds.has");app.has_project.save_file(linked,"linked");await job()
 	check(app.has_project.path==linked and DirAccess.dir_exists_absolute(folder.path_join("Linked sounds.assets")),"linked save externalizes managed audio to stable checksum sidecars")
-	app.changed();app.autosave_tick(true)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app)
 	var recovery: String=app.recovery_root.path_join(app.recovery_session)
 	check(not Recovery.read_json(recovery.path_join("project.json")).is_empty(),"ordinary quiet recovery checkpoints the audio collection")
 	var lesson:=Store.new();lesson.root=folder.path_join("lessons")

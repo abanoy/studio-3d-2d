@@ -113,7 +113,7 @@ func run() -> void:
 	var state_before: Dictionary=app.renderer.world_state();var key_before: Array=app.keys.duplicate(true)
 	check(not app.open_project(saved) and app.keys==key_before and app.renderer.world_state()==state_before,"invalid range on Open preserves the complete live project")
 	file=FileAccess.open(manifest,FileAccess.WRITE);file.store_buffer(original);file.close()
-	app.changed();app.autosave_tick(true);var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
+	app.changed();app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);var checkpoint: String=app.recovery_root.path_join(app.recovery_session)
 	app.new_project();app.renderer.camera.near=5;app.renderer.camera.far=90000
 	check(app.restore_checkpoint({"folder":checkpoint}) and app.keys==portable_keys,"actual recovery restores saved camera range and full keys")
 	var recovered: Image=await app.renderer.capture(app.keys,app.layers,12,true)

@@ -25,7 +25,8 @@ this admission check.
 This is a persistent registered-ownership bound, not process RSS or total GPU RAM.
 History tiles, derived CPU/GPU textures, engine/3D/audio resources and bounded
 transient decoding/compression/readback buffers are outside this counter. A staged
-Open temporarily retains separate old and incoming project contexts. Broader
+Open temporarily retains separate old and incoming project contexts. Background
+recovery also retains a separate frozen worker context until its write completes. Broader
 resource accounting and target-device acceptance remain necessary before claiming
 whole-project memory safety. See [larger projects](large_projects.md).
 

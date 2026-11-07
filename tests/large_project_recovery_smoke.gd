@@ -22,10 +22,11 @@ func run() -> void:
  app.has_project.save_file(folder.path_join("large.has"),"packed");await wait_job();check(app.has_project.path==folder.path_join("large.has") and FileAccess.file_exists(folder.path_join("large.has")),"self-contained400drawing/audio HAS actually commits")
  var manual:=FileAccess.get_sha256(folder.path_join("large.has"));var error: String=await app.export_movie(folder);var movie: String=app.last_export_folder.path_join("movie.mp4")
  check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000038.png")).get_data()==Image.load_from_file(folder.path_join("expected-final.png")).get_data(),"101frame dense MP4 input matches exact original frame37")
- app.set_frame(37);app.changed();app.autosave_tick(true)
- while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
+ app.set_frame(37);app.changed();var checkpoint_started:=Time.get_ticks_usec();app.autosave_tick(true);var capture_ms:=(Time.get_ticks_usec()-checkpoint_started)/1000.0;var heartbeat:=0
+ while app.recovery_writer.busy() or app.recovery_preview.busy():app.poll_recovery_preview();heartbeat+=1;await process_frame
+ check(heartbeat>10 and app.recovery_writer_result.background_thread,"dense checkpoint serialization allows continuing actual application frames")
  var checkpoint: String=app.recovery_root.path_join(app.recovery_session);check(Storage.readable_manifest(checkpoint.path_join("project.json")),"ordinary dense recovery checkpoint commits a readable manifest")
  check(FileAccess.get_sha256(folder.path_join("large.has"))==manual and FileAccess.get_sha256(args[1])==input_sha,"dense checkpoint/export preserve both explicit HAS files")
- var expected:={"pixels":hashes(),"pcm":Storage.RasterReader.digest_bytes(app.audio_mix.pcm),"manual_sha":manual,"movie":movie,"checkpoint":checkpoint,"frame":37,"duration_frames":101,"memory":app.raster_budget.sample(),"checks":checks,"failures":failures}
+ var expected:={"pixels":hashes(),"pcm":Storage.RasterReader.digest_bytes(app.audio_mix.pcm),"manual_sha":manual,"movie":movie,"checkpoint":checkpoint,"frame":37,"duration_frames":101,"memory":app.raster_budget.sample(),"checkpoint_capture_ms":capture_ms,"checkpoint_worker_ms":app.last_recovery_worker_ms,"heartbeat_frames":heartbeat,"checks":checks,"failures":failures}
  var serialized:=JSON.stringify(expected);var file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);file.store_string(serialized);file.flush();file.close();check(FileAccess.get_file_as_string(folder.path_join("expected.json"))==serialized,"crash oracle is closed and readable before intentional termination")
  print("LARGE_PROJECT_WRITE "+JSON.stringify({"checks":checks,"failures":failures,"movie":movie}));OS.kill(OS.get_process_id());await create_timer(2).timeout;push_error("Large project kill returned");quit(3)
