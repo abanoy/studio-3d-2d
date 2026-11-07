@@ -3189,3 +3189,34 @@ project/personalownershipcondition. Checklist/auditverified, persistedpreference
 versusseeded sessioncontrols explicit. Existingtentativepromptpolicy unchanged.
 Implementation48/54=88.89%,formalclosure4/62=6.45%. Norelease/timeestimate. Next
 actual>32preparedvideoingress/resourcegaps; wholegoalactive.
+
+
+## 2026-11-07 UTC — actual400preparedvideo ingress and exactcoldmedia
+
+Found/reproduced old240frame worker/request/Origin-duration bound despite global
+400drawingcapacity and60secondparenttiming. Video nowpasses actualremainingparent
+range anddecodes atmost400frames; workerrejects401withouttruncation. Source192MiB/
+16MP/60seconds/240fps, PNG256MiB, owned+decoded320MiB, HAS512MiB/1024files/1MiBmeta
+unchanged. ExtendedvideoOrigin4duration400, legacyOrigin2/KritaOrigin1/3keep240.
+Olderbuildscanrefuseaboveoldbound; noforcedmigration. Kritapreparationnotexpanded.
+
+13realFFmpegPythonvideotests,27origindiscovery(includesimported23HAS tests),57paired
+Godot/Pythonorigin decisions pass. Existingprivate27videoapp+7packed/linkedreader
+regressionpasses. FullfrozensourceprivateX10928writer+7coldreader400case passes:
+originalgenerated64x36RGBAQTRLE movingsemitransparentmarker/counter normalized1080,
+400coldpendingownersunderlimit, Cancelall400weakownersreleased, repeat/AddoneUndo,
+realbrushchangesone/preserves399, exactbrushUndoRedo, fourGPUoverlay/finalsamples,
+backgroundrecovery, packedHAS, source/map/acceptedpreparedjob/writercacheoffline
+freshreader all400pixelhashesexact. Actual400frame1080p24H26416.666667s moviefour
+PNGinputs equalpreview. Originalsource/map/camera/world/manualHASpreserved.
+
+Prepare46.878/46.689s,1403appframes/maxingressgap172.802ms. PNG35,603,691B. Final
+registered51,212,405B, cold42,989,051B <=335,544,320. SeparateGodotRSS/HWMpeak
+545,894,400B, notwholeprocessfamily/GPU/OS hardbound. Backgroundcheckpoint120.796s;
+manualSave76.036s synchronousPNGstagebeforepackaging remainsnextconcretefix.
+InitialGUItestcalleddurationapplybeforeOptionsinitializedsessionguard; keptfailure
+andcorrectedtesttoopenrealOptions, noappbehavior/assertionsweakened. Curatedlarge_
+prepared_video_2026-11-07.json/docs/video_import/checklist/audit updated. MEM01/02
+stillopen;48/54implementation/4of62formalclosure unchanged. Wholegoalactive. Next
+backgroundmanualHASsnapshot usingdetachedownedpixels, preserveactualOSPID/busy
+guards, cancel/drain, revision/context, existingpack/CAS/backup/linked safety.

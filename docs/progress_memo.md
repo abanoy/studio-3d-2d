@@ -13243,3 +13243,15 @@ closuretofollowrealcommit. Nextactual>32preparedvideoingress/resourcegaps.
 2026-11-07 UTC: STORE03 scopedsoftwareclosure references 56bb6ea7c8bce5d43a644f2ca84c23953491d364.
 Currentsettingboundaryverified; persistedpreferencesandseededsessionchoices
 distinguished.48/54implementation/4of62=6.45%formalclosure. Nextpreparedvideo>32.
+
+
+### 2026-11-07 UTC —400preparedvideo drawings endtoend
+
+Removedstale240framevideo bounds withinexisting400drawing/60secondparent limits;
+Origin4video400,legacy/Krita boundsunchanged.13videoPython/27origin-discovery/57paired
+cases, existing27app7reader, large28writer7coldreader pass. Cancel400owners/repeat/
+Add/brushUndo/399peers/recovery/HAS/all400coldhashes/4GPU+exportinputs and400frame
+H264/sourcepreservation verified. PNG35.6MB,registered51.2MB/cold43.0MBunder335.5MB;
+Godotprocesspeak545.9MBseparate. Prepare46.9/46.7s/1403appframes/maxgap172.8ms.
+Checkpoint120.8s; manualSave76.0s synchronousstage remains. Receiptlarge_prepared_
+video_2026-11-07.json. Nextbackgroundmanualsnapshot/saveSafety, thenresourcegaps.

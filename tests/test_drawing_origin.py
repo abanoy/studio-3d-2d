@@ -19,6 +19,8 @@ def video_cases():
     valid=video_good();result=[(valid,True)]
     for key,values in {'format':['studio_drawing_origin_1'],'kind':['krita'],'source_rate':[[0,1],[241,1],[1,False],[]],'source_duration':[[61,1],[1,0],[1]],'chroma':[{},None,{'enabled':1,'color':'00ff00','similarity':.1,'blend':0},{'enabled':True,'color':'ff0000','similarity':.1,'blend':0}]}.items():
         result.extend([({**valid,key:value},False) for value in values])
+    extended={**valid,'format':'studio_drawing_origin_4','at':0,'duration':400}
+    result.extend([(extended,True),({**extended,'duration':401},False),({**extended,'at':6800},True),({**extended,'at':6801},False),({**extended,'format':'studio_drawing_origin_2'},False),({**good(),'format':'studio_drawing_origin_3','duration':400},False)])
     return result
 class OriginTests(unittest.TestCase):
     def test_bounds_and_portable_identity(self):

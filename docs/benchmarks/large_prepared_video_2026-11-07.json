@@ -1,0 +1,229 @@
+{
+  "format": "has_large_prepared_video_evidence_1",
+  "date": "2026-11-07 UTC",
+  "base_commit": "7ded243",
+  "scope": "400uniqueoriginal64x36RGBAQTRLEframes withmoving semitransparentmarker/counter, normalizedto1920x1080. Registeredowned/decodedbudget and softwareingress/cancel/Undo/brush/recovery/packed cold/media proof; no400noisyframe/nativeKrita/physicalWindows/GPU/tablet/artist/wholeRAM certification.",
+  "raw_folder": "/workspace/has-handoff-audit/video-400-second",
+  "raw_receipt_sha256": "55317f0c16b62062a774e87f16a77a8c44d8b401c8939d74a270b5f4f6dbd868",
+  "reports": {
+    "writer": {
+      "checkpoint_ms": 120796,
+      "checks": 28,
+      "failures": 0,
+      "final_memory": {
+        "accounted_bytes": 51212405,
+        "cold_payload_bytes": 26329205,
+        "decoded_cache_bytes": 16588800,
+        "hot_bytes": 8294400,
+        "hot_owners": 1,
+        "owner_limit_bytes": 335544320,
+        "owners": 400,
+        "target_bytes": 67108864
+      },
+      "first_prepare_ms": 46878,
+      "ingress_application_frames": 1403,
+      "ingress_max_frame_gap_ms": 172.802,
+      "job": "/workspace/studio-3d-2d/output/video-imports/125904-48976297",
+      "movie": "/workspace/has-handoff-audit/video-400-second/render_1794041465_334090928_0/movie.mp4",
+      "prepared_PNG_bytes": 35603691,
+      "save_ms": 76036,
+      "second_prepare_ms": 46689,
+      "source_duration": [
+        50.0,
+        3.0
+      ],
+      "staged_memory": {
+        "accounted_bytes": 34694651,
+        "limit": 335544320,
+        "owners": 400
+      }
+    },
+    "reader": {
+      "checks": 7,
+      "failures": 0,
+      "memory": {
+        "accounted_bytes": 42989051,
+        "cold_payload_bytes": 26400251,
+        "decoded_cache_bytes": 16588800,
+        "hot_bytes": 0,
+        "hot_owners": 0,
+        "owner_limit_bytes": 335544320,
+        "owners": 400,
+        "target_bytes": 67108864
+      }
+    }
+  },
+  "process_memory": {
+    "writer": {
+      "process_RSS_sample_peak_bytes": 545894400,
+      "process_HWM_observed_bytes": 545894400,
+      "wall_seconds": 411.23565639600565,
+      "scope": "Godot process only, excludes converter/Python/driver/OS processes; not a whole-app hard budget"
+    },
+    "reader": {
+      "process_RSS_sample_peak_bytes": 495374336,
+      "process_HWM_observed_bytes": 497184768,
+      "wall_seconds": 24.397551333000592,
+      "scope": "Godot process only, excludes converter/Python/driver/OS processes; not a whole-app hard budget"
+    }
+  },
+  "memory_scope_clarification": "RSS/HWM is Godot process only, including allocations within that process. The320MiBcounter covers registeredrasterowners+retaineddecodedcache, not entireprocessfamily/GPU/OS/transients/frozencontexts.",
+  "media": {
+    "index": 0,
+    "codec_name": "h264",
+    "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+    "profile": "High",
+    "codec_type": "video",
+    "codec_tag_string": "avc1",
+    "codec_tag": "0x31637661",
+    "width": 1920,
+    "height": 1080,
+    "coded_width": 1920,
+    "coded_height": 1088,
+    "closed_captions": 0,
+    "film_grain": 0,
+    "has_b_frames": 2,
+    "pix_fmt": "yuv420p",
+    "level": 40,
+    "color_range": "tv",
+    "color_transfer": "iec61966-2-1",
+    "color_primaries": "bt709",
+    "chroma_location": "left",
+    "field_order": "progressive",
+    "refs": 4,
+    "is_avc": "true",
+    "nal_length_size": "4",
+    "id": "0x1",
+    "r_frame_rate": "24/1",
+    "avg_frame_rate": "24/1",
+    "time_base": "1/12288",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 204800,
+    "duration": "16.666667",
+    "bit_rate": "434314",
+    "bits_per_raw_sample": "8",
+    "nb_frames": "400",
+    "nb_read_frames": "400",
+    "extradata_size": 50,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0,
+      "multilayer": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "VideoHandler",
+      "vendor_id": "[0][0][0][0]",
+      "encoder": "Lavc61.19.101 libx264"
+    }
+  },
+  "eager_logical_RGBA_bytes_not_allocated": 3317760000,
+  "original_video_sha256": "6a013f45a32c7735519f928e4b203ccfedfcc7c698f32c2092995ab67b355298",
+  "source_png_owner_and_cold_pixel_hashes_exact": 400,
+  "exact_sampled_GPU_and_export_frames": [
+    399,
+    0,
+    137,
+    250
+  ],
+  "verified": {
+    "all400pendingowners_released_on_Cancel": true,
+    "one_import_Undo_Redo": true,
+    "actualbrush_changes_one_and_preserves399": true,
+    "brush_Undo_Redo_exact": true,
+    "actual_background_recovery": true,
+    "actual_packed_Save": true,
+    "original_video_map_accepted_job_writer_cache_offline_in_cold_reader": true,
+    "manual_HAS_and_original_sources_unchanged": true,
+    "source_frozen_through_full_run": true
+  },
+  "worker_units": {
+    "video_tests": 13,
+    "log": "/workspace/has-handoff-audit/video-400-python.log",
+    "drawing_origin_discovery_tests": 27,
+    "origin_test_note": "Includes importedHasTests; not27uniqueorigin-onlytestmethods.",
+    "origin_log": "/workspace/has-handoff-audit/video-400-origin-python.log",
+    "paired_Godot_Python_origin_cases": 57,
+    "Godot_log": "/workspace/has-handoff-audit/video-400-origin-godot.log"
+  },
+  "short_video_regression": {
+    "reports": {
+      "writer": {
+        "checks": 27,
+        "failures": 0,
+        "job": "/workspace/studio-3d-2d/output/video-imports/125647-1906769",
+        "movie": "/workspace/has-handoff-audit/video-400-small-regression/render_1794041090_6977019_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 7,
+        "failures": 0
+      }
+    },
+    "raw_receipt": "/workspace/has-handoff-audit/video-400-small-regression/verification.json",
+    "raw_receipt_sha256": "7a19a554aedcb43ecac2ff67c8f56e1a4ad6640c0a6e44391439de65111db5de",
+    "scope": "Existing alpha/chroma, cancellation, immutable source, owneradmission and packed/linked reader plus48frameMP4; no expandedKritaclaim."
+  },
+  "source_sha256": {
+    "src/video_import.gd": "8307220b2c021924ad3eaaece5eababa9b617c967e9e47ee060fac6b1f10ebf2",
+    "src/krita_import.gd": "dd073efda160b2ccd18679a8c5a26e379510588cd162b9ed3b391cf895790ca8",
+    "src/drawing_origin.gd": "6aa6d775f105ee67f4f280db6adf0d3668566c8aa324a2e56286b6cde95ca64d",
+    "src/raster_clip.gd": "1fb451f811d20e900f34d6efcd103657b0073969b1a0436b4c62ed1b3cd74475",
+    "src/cel_raster_reader.gd": "b41ce4a1d2c908197f149e4826dc958b5051aaf18ee9809a5cc2fb6334b959e8",
+    "src/cel_raster_owner.gd": "30b6601df440dcc9035e9104ac93049a0c74a0da7c3bd42df1f04c71247eb9df",
+    "src/cel_raster_snapshot_cache.gd": "b9554ab47f6655da46d2039bf16f3e51453117e7a98dffd6d515b209eb38d95f",
+    "src/cel_raster_budget.gd": "ae0273ad3aa07c0d64dafef95aa8c0b2bac811c5f2f546d5f2c52dc8a29b3414",
+    "src/drawing_limits.gd": "d62518750895cc368d7bc1b3826335d369dfc26344daf70f30037208c7499ffa",
+    "src/storage.gd": "688ec9bf8c74612fcfff6ba3421dd903b8eccd28adfafe1ddcfa794e33004593",
+    "src/has_project.gd": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399",
+    "src/recovery_writer.gd": "7a9f9fb29d19c319d042f813705e3315802ee449fd3e81822c0fba1660ef2e93",
+    "tests/large_video_import_smoke.gd": "655e730a4b3d04823ea1e57bf7a4abd80b3a99b98dd049766629afd9ffa26d8f",
+    "tests/verify_large_video_import.py": "1132a3aaccae92f3de929be72dfe49bd17a4d11fb9724e8465542ddbe450711c",
+    "tests/test_video_import.py": "5168080c182dcb3d5c6881f4f663711ad61d4e8c7311564c37c838548c8fa106",
+    "tests/test_drawing_origin.py": "b3f9dabac4b4efe2e3823935ac92cc196a8d9a88d6e417200ee884e9a3d5e2c0",
+    "tools/prepare_video.py": "7295b5acde32dbc74e66e095be30c4155cebd60eb0aedb9539e4d941df50d4c9",
+    "tools/drawing_origin.py": "4c146da1fc4adfbb0ff67a55998d9879e24815a3a790ce31b60c40d5742abbb8",
+    "tools/drawing_limits.py": "e049f8422dfb5735b87319a1135e6bb30c46abe65da5c7cdeafd8c53707aecae",
+    "tools/extended_timing.py": "6df4896ceefadf6b7e6d95d2f091b0bbae2018efbb7a31472a3ea15ac8a8402a"
+  },
+  "failed_runs_preserved": [
+    {
+      "path": "/workspace/has-handoff-audit/video-400-before-python.log",
+      "cause": "Prior240frameworkerboundreproduced:400fails,401doesnotgiveproperbounded400refusal."
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/video-400-first",
+      "cause": "NewtestcalleddurationapplybeforeProjectOptionssetup, so sessionguardcorrectlyrefused400andvideoexceededremaining48. CorrectedharnesstoopenrealOptionsfirst; finalcaseallassertionskept."
+    }
+  ],
+  "bounds_retained": {
+    "source_bytes": 201326592,
+    "source_pixels": 16777216,
+    "source_seconds": 60,
+    "source_fps": 240,
+    "normalized_PNG_bytes": 268435456,
+    "registered_raster_admission_bytes": 335544320,
+    "project_drawings": 400,
+    "project_files": 1024,
+    "HAS_bytes": 536870912,
+    "metadata_bytes": 1048576
+  },
+  "compatibility": "Onevideo preparation supports up to400decodedframes insideactualremainingextendedparentrange. Origin4video duration admits400; legacyOrigin2andKritaOrigin1/3keep240bound. Olderreaderscanrefuseextendedduration; noformatflattening/truncation.",
+  "remaining": "ManualSave76.036s remains synchronous before packaging. NextbackgroundmanualPNGsnapshot; retain longsession/quota/cleanup/native/device/artist work. Scoresunchanged48/54implementation and4/62formalclosure."
+}

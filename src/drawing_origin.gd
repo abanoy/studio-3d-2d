@@ -1,5 +1,6 @@
 extends RefCounted
 const Extended=preload("res://src/extended_timing.gd")
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 # Descriptive ancestry only. These fields never resolve external resources.
 static func integer(v,low: int,high: int) -> bool:
 	return (v is int or v is float) and is_finite(float(v)) and float(v)==floor(float(v)) and v>=low and v<=high
@@ -46,7 +47,8 @@ static func error(v) -> String:
 	if not v.rate is Array or v.rate.size()!=2:return "Invalid import rate."
 	if not integer(v.rate[0],1,120000) or not integer(v.rate[1],1,1001) or float(v.rate[0])/v.rate[1]>120:return "Invalid import rate."
 	var limit:=Extended.MAX_FRAMES if v.format in ["studio_drawing_origin_3","studio_drawing_origin_4"] else 240
-	if not integer(v.at,0,limit-1) or not integer(v.duration,1,240) or v.at+v.duration>limit:return "Invalid original drawing placement."
+	var duration_limit:=DrawingLimits.MAX_CELS if v.format=="studio_drawing_origin_4" else 240
+	if not integer(v.at,0,limit-1) or not integer(v.duration,1,duration_limit) or v.at+v.duration>limit:return "Invalid original drawing placement."
 	if JSON.stringify(v).to_utf8_buffer().size()>32768:return "Drawing source history exceeds its limit."
 	return ""
 static func layers_error(layers: Array) -> String:

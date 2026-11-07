@@ -1,5 +1,7 @@
 """Portable descriptive drawing ancestry, never an external asset reference."""
 import json,math,re
+try:from .drawing_limits import MAX_CELS
+except ImportError:from drawing_limits import MAX_CELS
 FIELDS={'format','kind','name','sha256','width','height','fps','range','visibility','fit','rate','at','duration'}
 def integer(v,low,high):return type(v) in (int,float) and math.isfinite(v) and v==math.floor(v) and low<=v<=high
 def text(v,limit):return isinstance(v,str) and 0<len(v)<=limit and not any(ord(c)<32 or ord(c)==127 or 0xd800<=ord(c)<=0xdfff for c in v)
@@ -29,6 +31,7 @@ def error(v):
     r=v['rate']
     if not isinstance(r,list) or len(r)!=2 or not integer(r[0],1,120000) or not integer(r[1],1,1001) or r[0]/r[1]>120:return 'Invalid import rate'
     limit=7200 if v['format'] in ('studio_drawing_origin_3','studio_drawing_origin_4') else 240
-    if not integer(v['at'],0,limit-1) or not integer(v['duration'],1,240) or v['at']+v['duration']>limit:return 'Invalid original drawing placement'
+    duration_limit=MAX_CELS if v['format']=='studio_drawing_origin_4' else 240
+    if not integer(v['at'],0,limit-1) or not integer(v['duration'],1,duration_limit) or v['at']+v['duration']>limit:return 'Invalid original drawing placement'
     if len(json.dumps(v,ensure_ascii=False).encode())>32768:return 'Drawing source history exceeds its limit'
     return ''

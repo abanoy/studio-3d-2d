@@ -51,6 +51,27 @@ class VideoImportTests(unittest.TestCase):
         return subprocess.check_output([FFMPEG, '-v', 'error', '-i', str(Path(self.request['output'])/row['path']),
                                         '-f', 'rawvideo', '-pix_fmt', 'rgba', '-threads', '1', '-'], **PROCESS_FLAGS)
 
+    def long_source(self, count):
+        path=self.root/'long.mov'
+        pixels=b''.join(bytes((i%256,i//256,120,255))*(64*36) for i in range(count))
+        subprocess.run([FFMPEG,'-v','error','-n','-f','rawvideo','-pixel_format','rgba','-video_size','64x36','-framerate','24','-i','-','-an','-c:v','qtrle','-threads','1',str(path)],input=pixels,check=True,**PROCESS_FLAGS)
+        self.request.update(source=str(path),source_sha256=video.raster.sha(path),fps_num=24,available_frames=500,max_cels=400)
+        return path
+
+    def test_four_hundred_unique_video_drawings_extended_range(self):
+        source=self.long_source(400);before=video.raster.sha(source)
+        packet=video.prepare(self.request)
+        self.assertEqual(packet['duration_frames'],400)
+        self.assertEqual(len(packet['holds']),400)
+        self.assertEqual([(h['start'],h['duration']) for h in packet['holds']],[(i,1) for i in range(400)])
+        self.assertEqual(len({h['sha256'] for h in packet['holds']}),400)
+        self.assertEqual(video.raster.sha(source),before)
+
+    def test_four_hundred_frame_limit_refuses_without_truncation(self):
+        self.long_source(401)
+        with self.assertRaisesRegex(ValueError,'400'):video.prepare(self.request)
+        self.assertFalse((Path(self.request['output'])/'clip.json').exists())
+
     def test_complete_timing_and_deduplication(self):
         packet = video.prepare(self.request)
         self.assertEqual(packet['duration_frames'], 4)

@@ -2,6 +2,9 @@
 from pathlib import Path
 try:from .drawing_limits import MAX_CELS
 except ImportError:from drawing_limits import MAX_CELS
+try:from .extended_timing import MAX_FRAMES
+except ImportError:from extended_timing import MAX_FRAMES
+MAX_DECODE_FRAMES = MAX_CELS
 from fractions import Fraction
 import argparse
 import json
@@ -36,7 +39,7 @@ def run(args, folder, cancel, timeout=60, frames=None):
                     raise ValueError('Video converter produced excessive diagnostics')
                 if frames:
                     files = list(frames.glob('*.png'))
-                    if len(files) > 240 or sum(p.stat().st_size for p in files) > raster.MAX_NORMALIZED_BYTES:
+                    if len(files) > MAX_DECODE_FRAMES or sum(p.stat().st_size for p in files) > raster.MAX_NORMALIZED_BYTES:
                         raise ValueError('Video exceeds its frame/disk budget')
                 time.sleep(.025)
             raster.check_cancel(cancel)
@@ -171,7 +174,9 @@ def prepare(request):
         if rate > 120:
             raise ValueError('Project frame rate exceeds120')
         count = math.ceil(Fraction(*info['source_duration']) * rate)
-        remaining = raster.number(request['available_frames'], 'remaining frames', 1, 240)
+        remaining = raster.number(request['available_frames'], 'remaining frames', 1, MAX_FRAMES)
+        if count > MAX_DECODE_FRAMES:
+            raise ValueError(f'Video preparation supports up to{MAX_DECODE_FRAMES}project frames; shorten the source or choose a lower project rate')
         if not 1 <= count <= remaining:
             raise ValueError('Video exceeds remaining scene frames; shorten it externally or extend the scene')
         maximum = raster.number(request['max_cels'], 'available drawings', 1, MAX_CELS)
