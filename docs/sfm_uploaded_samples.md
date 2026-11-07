@@ -29,6 +29,12 @@ non-root user and dedicated output. The host was not upgraded. The tested runtim
 image ID and decoder hash are retained in the receipt. A pinned-base Dockerfile is
 at`tools/docker/sourceio_metadata.Dockerfile`.
 
+A separate [compatible Blender worker runtime](sourceio_worker_runtime.md) now
+imports the full SourceIO bindings and exports an original skinned, morph-animated
+GLB. Its offline probe does not load these owner samples and does not bypass the
+installed-game requirement. This removes the host ABI obstacle for runtime
+preparation; it does not establish native conversion or app fidelity.
+
 Full native conversion, mesh/material appearance, posing, HAS replay and movie
 acceptance remain unrun for these models. The actual preparation command still
 refuses before creating output because no recognized installed SFM/GMod host is

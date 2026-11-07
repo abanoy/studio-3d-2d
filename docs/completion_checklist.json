@@ -248,9 +248,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/sfm_uploaded_samples_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sourceio_worker_runtime_2026-11-07.json"
         }
       ],
-      "remaining": "Approved complete native fixtures and associated tools are required; extension recognition alone is insufficient. Static Source point/spot/sun entity emission now has planner/actual Blender/Studio/packed/recovery/48frameMP4 proof, with explicit dynamic/off/unsupported diagnostics. Full native BSP/SourceIO/GMod path and full native BSP and HDR/styled/displacement lightmaps remain separate. Static LDR brush baking and original-texture Unshaded/Lit switching now pass21contract/app checks plus47visibility and18entity-light regressions. Full installed-host BSP validation remains unrun.22owner SFM archives/82MDLs are now available; read-only native parser checks are separate from app fidelity. Owner supplied22SFM archives:82MDLs parse with valid hierarchies,401unique VTFs decode, all82geometry sets/checksums resolve after a24case-alias fix.78Source unit checks pass. Full SFM conversion/posing/render remains blocked by recognized installed-host preflight; texture/material dependency and4syntax diagnostics are recorded. See sfm_uploaded_samples_2026-11-07.json.",
+      "remaining": "Owner SFM corpus is available and has read-only metadata/codec/sidecar proof. Full SFM app conversion requires a genuine cloud-accessible installed SFM/GMod host. Compatible full Blender/SourceIO runtime is now independently probed, but guarded conversion integration/fidelity is unrun. Approved complete BSP/MMD/VRM fixtures/dependencies remain prerequisites for their profiles.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -288,9 +292,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/sfm_uploaded_samples_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sourceio_worker_runtime_2026-11-07.json"
         }
       ],
-      "remaining": "Broader native material, inherited-transform, rig/cloth, prop/lightmap fidelity remains; retain original sources. Static Source point/spot/sun entity emission now has planner/actual Blender/Studio/packed/recovery/48frameMP4 proof, with explicit dynamic/off/unsupported diagnostics. Full native BSP/SourceIO/GMod path and full native BSP and HDR/styled/displacement lightmaps remain separate. Static LDR brush baking and original-texture Unshaded/Lit switching now pass21contract/app checks plus47visibility and18entity-light regressions. Full installed-host BSP validation remains unrun.22owner SFM archives/82MDLs are now available; read-only native parser checks are separate from app fidelity. Owner supplied22SFM archives:82MDLs parse with valid hierarchies,401unique VTFs decode, all82geometry sets/checksums resolve after a24case-alias fix.78Source unit checks pass. Full SFM conversion/posing/render remains blocked by recognized installed-host preflight; texture/material dependency and4syntax diagnostics are recorded. See sfm_uploaded_samples_2026-11-07.json.",
+      "remaining": "Native geometry/material/rig/morph/animation/physics/dependency acceptance still requires guarded conversion and app/pose/HAS/movie tests against the supplied SFM models, plus approved complete BSP/MMD/VRM fixtures. Two SFM material-slot and38texture dependency diagnostics remain explicit; runtime import/export probes are not native fidelity.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -1770,10 +1778,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/video_import.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/krita_boundary_current_2026-11-07.json"
         }
       ],
-      "remaining": "Long/dense video workflow and artistic key quality remain; do not promise native layered video editing.",
-      "external_dependencies": []
+      "remaining": "Editable video/alpha/chroma software and actual400prepared-video workflows have executed evidence.38current Krita parser/preparation tests pass, but native Krita render/import/HAS/movie acceptance needs an approved complete .kra and the supported private native runtime. More than32nativeKrita frames and subjective key quality remain unverified; no native layered-video editing claim.",
+      "external_dependencies": [
+        "B-NATIVE",
+        "B-WINDOWS"
+      ]
     },
     {
       "id": "COMP-02",
@@ -2056,8 +2071,10 @@
           "path": "docs/benchmarks/directory_rollback_2026-11-06.json"
         }
       ],
-      "remaining": "Supporting POSIX durability and atomic/CAS/readback/backup safety have scoped actual fault evidence. tools/save_sync.py deliberately reports directory sync unsupported on Windows; target directory durability/fault coverage and physical power-loss acceptance remain incomplete. Do not count POSIX evidence as Windows durability.",
-      "external_dependencies": []
+      "remaining": "POSIX sync and controlled atomic/CAS/readback/backup faults have executed evidence. Target Windows directory durability remains unimplemented/unverified: tools/save_sync.py deliberately reports unsupported directory sync there. A usable approved Windows environment is needed to implement and test the target path; physical power-loss observations remain separate.",
+      "external_dependencies": [
+        "B-WINDOWS"
+      ]
     },
     {
       "id": "REC-01",
@@ -2853,19 +2870,21 @@
         "ACCEPT-E",
         "ACCEPT-F",
         "ACCEPT-TABLET",
-        "ACCEPT-INSTALL"
+        "ACCEPT-INSTALL",
+        "STORE-04"
       ],
-      "independent_work": "Portable implementation, procedural GUI/export/recovery tests and owned-directory fault tests remain actionable."
+      "independent_work": "Current cloud core, recovery, storage, course, media and bounded fault work is recorded. Target Windows directory durability and installer/scenario/device observations remain; do not represent POSIX results as Windows acceptance."
     },
     {
       "id": "B-NATIVE",
-      "prerequisite": "SFM fixtures are now owner-approved and available (22archives/82MDLs). Full native app tests still require a recognized cloud-accessible installed SFM/GMod host and compatible full conversion worker. Approved complete BSP/map/prop/lightmap, VRM and MMD model/pose/motion fixtures and dependencies remain needed for their separate profiles.",
+      "prerequisite": "Owner SFM samples are available (22archives/82MDLs). Full native app tests require a genuine cloud-accessible installed SFM/GMod host. Approved complete BSP/map/prop/lightmap, VRM, MMD model/pose/motion and native Krita artwork fixtures/dependencies remain needed for their separate profiles; Krita also needs its supported private runtime.",
       "prevents": [
         "IMPORT-02",
         "IMPORT-03",
+        "COMP-01",
         "ACCEPT-B"
       ],
-      "independent_work": "SFM metadata/texture decoding, original-hash checks, loose-case fix and78Source unit checks completed. Offline compatible-libc metadata container preserves the host and game preflight. Full app/rig/cloth/render fidelity remains unrun until its host/fixtures are available."
+      "independent_work": "SFM native metadata/401unique texture decodes/hash/sidecar/case safety and78Source unit checks completed. A separate full Blender5.2.2/GLIBC2.43 SourceIO binding/originalGLB runtime probe now passes offline with574pinned files verified.38Krita parser/preparation checks pass. Actual owner-model/nativeKrita conversion and fidelity remain unrun; installed-host guard is unchanged."
     },
     {
       "id": "B-TABLET",
@@ -3152,6 +3171,26 @@
   ],
   "next_actions": [
     {
+      "requirement": "IMPORT-02",
+      "priority": 1,
+      "action": "Owner SFM corpus is available and has read-only metadata/codec/sidecar proof. Full SFM app conversion requires a genuine cloud-accessible installed SFM/GMod host. Compatible full Blender/SourceIO runtime is now independently probed, but guarded conversion integration/fidelity is unrun. Approved complete BSP/MMD/VRM fixtures/dependencies remain prerequisites for their profiles."
+    },
+    {
+      "requirement": "IMPORT-03",
+      "priority": 1,
+      "action": "Native geometry/material/rig/morph/animation/physics/dependency acceptance still requires guarded conversion and app/pose/HAS/movie tests against the supplied SFM models, plus approved complete BSP/MMD/VRM fixtures. Two SFM material-slot and38texture dependency diagnostics remain explicit; runtime import/export probes are not native fidelity."
+    },
+    {
+      "requirement": "COMP-01",
+      "priority": 1,
+      "action": "Editable video/alpha/chroma software and actual400prepared-video workflows have executed evidence.38current Krita parser/preparation tests pass, but native Krita render/import/HAS/movie acceptance needs an approved complete .kra and the supported private native runtime. More than32nativeKrita frames and subjective key quality remain unverified; no native layered-video editing claim."
+    },
+    {
+      "requirement": "STORE-04",
+      "priority": 1,
+      "action": "POSIX sync and controlled atomic/CAS/readback/backup faults have executed evidence. Target Windows directory durability remains unimplemented/unverified: tools/save_sync.py deliberately reports unsupported directory sync there. A usable approved Windows environment is needed to implement and test the target path; physical power-loss observations remain separate."
+    },
+    {
       "requirement": "ACCEPT-C",
       "priority": 2,
       "action": "Complete seven-step cloud case is recorded; finalWindows target gate remains. Do not repeat completed cloud case while independent engineering remains."
@@ -3160,36 +3199,6 @@
       "requirement": "ACCEPT-D",
       "priority": 2,
       "action": "Complete mechanical cloud case is recorded; finalWindows target gate remains. Do not repeat completed cloud case while independent engineering remains."
-    },
-    {
-      "requirement": "REC-01",
-      "priority": 1,
-      "action": "Cold raster/history and background HAS/recovery paths, proven-owned blob retirement and shared512MiB quota reservations have scoped evidence. Prioritize remaining native/required feature gaps. Whole-process/GPU/device measurement and arbitrary orphan cleanup remain separate; do not repeat passed bounded worker/quota checks without a new change."
-    },
-    {
-      "requirement": "MEM-02",
-      "priority": 1,
-      "action": "Cold raster/history and background HAS/recovery paths, proven-owned blob retirement and shared512MiB quota reservations have scoped evidence. Prioritize remaining native/required feature gaps. Whole-process/GPU/device measurement and arbitrary orphan cleanup remain separate; do not repeat passed bounded worker/quota checks without a new change."
-    },
-    {
-      "requirement": "MEM-01",
-      "priority": 1,
-      "action": "Cold raster/history and background HAS/recovery paths, proven-owned blob retirement and shared512MiB quota reservations have scoped evidence. Prioritize remaining native/required feature gaps. Whole-process/GPU/device measurement and arbitrary orphan cleanup remain separate; do not repeat passed bounded worker/quota checks without a new change."
-    },
-    {
-      "requirement": "STORE-04",
-      "priority": 1,
-      "action": "Supporting POSIX sync and rollback payload validity are verified in scoped fixtures. Retain explicit native Windows and physical power-loss gates; audit the next independently actionable requirement."
-    },
-    {
-      "requirement": "MOTION-03",
-      "priority": 2,
-      "action": "Required bounded reusable path/clip and reversible locomotion workflow verified by current committed receipts. Native fidelity, unsupported moving parents and artist observations remain separate; general terrain and multi-view inference are not additional decided mandatory gates."
-    },
-    {
-      "requirement": "IMPORT-03",
-      "priority": 2,
-      "action": "Define per-profile native fidelity acceptance and use approved fixtures when available; report unsupported capabilities honestly."
     }
   ],
   "acceptance_scenario_index": {

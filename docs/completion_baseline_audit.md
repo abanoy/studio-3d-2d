@@ -16,9 +16,9 @@ other current tests supply narrower evidence.
 
 Three old implementation labels were corrected without inventing new acceptance
 passes: reversible Motion feeling, bounded drawing history, and cold larger-project
-storage now have their required bounded code paths. Owner motion intensity/style,
-native/device breadth, actual >32prepared imports and long-session performance
-remain separately unverified. History keeps a single large command even beyond
+storage now have their required bounded code paths. Subjective owner review,
+native/device breadth, >32 native Krita frames and whole-app long-session
+performance remain separately unverified. History keeps a single large command even beyond
 its soft64MiB target; registered authorities have320MiB admission. Frozen worker
 contexts, GPU and other resources are not a whole-app RAM guarantee.
 

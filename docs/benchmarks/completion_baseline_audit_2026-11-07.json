@@ -302,7 +302,7 @@
       ],
       "verification": "incomplete",
       "acceptance_status": "open",
-      "acceptance_review": "Approved complete native fixtures and associated tools are required; extension recognition alone is insufficient. Static Source point/spot/sun entity emission now has planner/actual Blender/Studio/packed/recovery/48frameMP4 proof, with explicit dynamic/off/unsupported diagnostics. Full native BSP/SourceIO/GMod path and full native BSP and HDR/styled/displacement lightmaps remain separate. Static LDR brush baking and original-texture Unshaded/Lit switching now pass21contract/app checks plus47visibility and18entity-light regressions. Full installed-host BSP validation remains unrun.22owner SFM archives/82MDLs are now available; read-only native parser checks are separate from app fidelity. Owner supplied22SFM archives:82MDLs parse with valid hierarchies,401unique VTFs decode, all82geometry sets/checksums resolve after a24case-alias fix.78Source unit checks pass. Full SFM conversion/posing/render remains blocked by recognized installed-host preflight; texture/material dependency and4syntax diagnostics are recorded. See sfm_uploaded_samples_2026-11-07.json.",
+      "acceptance_review": "Owner SFM corpus is available and has read-only metadata/codec/sidecar proof. Full SFM app conversion requires a genuine cloud-accessible installed SFM/GMod host. Compatible full Blender/SourceIO runtime is now independently probed, but guarded conversion integration/fidelity is unrun. Approved complete BSP/MMD/VRM fixtures/dependencies remain prerequisites for their profiles.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
       "formal_receipts": [],
       "external_dependencies": [
@@ -336,7 +336,7 @@
       ],
       "verification": "incomplete",
       "acceptance_status": "open",
-      "acceptance_review": "Broader native material, inherited-transform, rig/cloth, prop/lightmap fidelity remains; retain original sources. Static Source point/spot/sun entity emission now has planner/actual Blender/Studio/packed/recovery/48frameMP4 proof, with explicit dynamic/off/unsupported diagnostics. Full native BSP/SourceIO/GMod path and full native BSP and HDR/styled/displacement lightmaps remain separate. Static LDR brush baking and original-texture Unshaded/Lit switching now pass21contract/app checks plus47visibility and18entity-light regressions. Full installed-host BSP validation remains unrun.22owner SFM archives/82MDLs are now available; read-only native parser checks are separate from app fidelity. Owner supplied22SFM archives:82MDLs parse with valid hierarchies,401unique VTFs decode, all82geometry sets/checksums resolve after a24case-alias fix.78Source unit checks pass. Full SFM conversion/posing/render remains blocked by recognized installed-host preflight; texture/material dependency and4syntax diagnostics are recorded. See sfm_uploaded_samples_2026-11-07.json.",
+      "acceptance_review": "Native geometry/material/rig/morph/animation/physics/dependency acceptance still requires guarded conversion and app/pose/HAS/movie tests against the supplied SFM models, plus approved complete BSP/MMD/VRM fixtures. Two SFM material-slot and38texture dependency diagnostics remain explicit; runtime import/export probes are not native fidelity.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
       "formal_receipts": [],
       "external_dependencies": [
@@ -1878,10 +1878,13 @@
       ],
       "verification": "scoped_evidence",
       "acceptance_status": "open",
-      "acceptance_review": "Long/dense video workflow and artistic key quality remain; do not promise native layered video editing.",
+      "acceptance_review": "Editable video/alpha/chroma software and actual400prepared-video workflows have executed evidence.38current Krita parser/preparation tests pass, but native Krita render/import/HAS/movie acceptance needs an approved complete .kra and the supported private native runtime. More than32nativeKrita frames and subjective key quality remain unverified; no native layered-video editing claim.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
       "formal_receipts": [],
-      "external_dependencies": []
+      "external_dependencies": [
+        "B-NATIVE",
+        "B-WINDOWS"
+      ]
     },
     {
       "id": "COMP-02",
@@ -2092,10 +2095,12 @@
       ],
       "verification": "incomplete",
       "acceptance_status": "open",
-      "acceptance_review": "Supporting POSIX durability and atomic/CAS/readback/backup safety have scoped actual fault evidence. tools/save_sync.py deliberately reports directory sync unsupported on Windows; target directory durability/fault coverage and physical power-loss acceptance remain incomplete. Do not count POSIX evidence as Windows durability.",
+      "acceptance_review": "POSIX sync and controlled atomic/CAS/readback/backup faults have executed evidence. Target Windows directory durability remains unimplemented/unverified: tools/save_sync.py deliberately reports unsupported directory sync there. A usable approved Windows environment is needed to implement and test the target path; physical power-loss observations remain separate.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
       "formal_receipts": [],
-      "external_dependencies": []
+      "external_dependencies": [
+        "B-WINDOWS"
+      ]
     },
     {
       "id": "REC-01",

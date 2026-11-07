@@ -1,0 +1,68 @@
+{
+  "format": "has_sourceio_worker_runtime_1",
+  "date": "2026-11-07 UTC",
+  "image_id": "sha256:920ce476fe22608deb971d51c152ee67cc4072c0e2781ce5c1c164ece0d0966e",
+  "base_image": "debian:unstable-slim@sha256:0616b6687a2b155010c25f9019d2e87461bed2b19b2733ca079b4700a2513949",
+  "runtime": {
+    "format": "has_sourceio_worker_probe_1",
+    "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "codec_sha256": "a3ef1d98f3a9489e23b591ec052eaa051467ec3cd7d4f58f6be029474ef58d7f",
+    "blender": "5.2.2 LTS",
+    "python": "3.14.10",
+    "libc": [
+      "glibc",
+      "2.43"
+    ],
+    "numpy": "2.4.6",
+    "sourceio_blender_bindings_imported": true,
+    "original_glb": "/evidence/original-runtime-probe.glb",
+    "original_glb_sha256": "309abd03b4f7fcfccee5a6714b6c48b40a6d7e054ab52c6d5981fa5368f9795a",
+    "native_model_conversion": false,
+    "installed_host_guard_bypassed": false
+  },
+  "packages": [
+    "blender\t5.2.2+dfsg-1",
+    "libc6:amd64\t2.43-7",
+    "python3\t3.14.8-1",
+    "python3-cattr\t26.2.1-1",
+    "python3-numpy\t1:2.4.6+ds-5+b1",
+    "python3-requests\t2.34.2-1"
+  ],
+  "independent": {
+    "checks": {
+      "one_original_mesh": true,
+      "original_geometry": true,
+      "original_skin_binding": true,
+      "normalized_original_weights": true,
+      "original_morph_delta": true,
+      "original_animation_clock": true,
+      "original_animation_weights": true,
+      "original_material": true
+    },
+    "sourceio_archive_files_verified": 574
+  },
+  "source_sha256": {
+    "tests/sourceio_worker_probe.py": "8105dcb1c2b2f93f236d7b77aa28ae3d181e263edeb3eba18da0dc2e70a6107d",
+    "tools/docker/sourceio_worker.Dockerfile": "e8ccb30b5a8014e4aa20d22c9f6c5c9b013f805e4ba1122735f8aeec417c8ec4"
+  },
+  "sourceio_archive_sha256": "cd44e1d053ac853c5d1628da9faa27a594337ebacb3587744dfa5d60758623de",
+  "restrictions": {
+    "network": "none",
+    "root_filesystem": "read-only",
+    "user": "1000:1000",
+    "capabilities": "ALL dropped",
+    "no_new_privileges": true,
+    "memory": "4GiB",
+    "cpus": 2,
+    "tmpfs_bytes": 268435456,
+    "sourceio_mount": "read-only",
+    "owner_assets_mounted": false
+  },
+  "optional_codec_notices": [
+    "ERROR Draco is not available because library could not be found at /usr/lib/x86_64-linux-gnu/blender/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_draco_bridge.so",
+    "ERROR MeshOptimizer is not available because library could not be found at /usr/lib/x86_64-linux-gnu/blender/5.2/scripts/addons_core/io_scene_gltf2/libbf_intern_meshopt_bridge.so"
+  ],
+  "python_tracebacks": 0,
+  "log_sha256": "b1318404fdb8f2a97700d1cb068e4c522f71131e761bf4100e3f3ddb8c91ac0e",
+  "scope": "Full pinned SourceIO Blender bindings import and original skinned/morph-animated uncompressed GLB export, eight independent accessor checks and574pinned SourceIO archive-file hashes. Not owner-model conversion, native fidelity, guarded preparation/app integration, Windows/device or redistribution certification. Installed-host guard unchanged."
+}

@@ -1,0 +1,17 @@
+{
+  "format": "has_krita_boundary_current_1",
+  "date": "2026-11-07 UTC",
+  "command": "python -m unittest discover -s tests -p 'test_krita*.py'",
+  "checks": 38,
+  "failures": 0,
+  "log_sha256": "d8bfbfddf4e6931907e46ee37b2b12e18ad36e68e3f5bd4ea33ca04aa9bd5841",
+  "source_sha256": {
+    "tools/prepare_krita.py": "3821246c4e24f75646d4ffb8b8e644d661b764881521c12141a21516092edb44",
+    "tools/krita_assets.py": "3325b1b55a2073f13d992d414f9afc3c643b14f6bb01ed6629cb1397bef22edd",
+    "tests/test_krita_preparation.py": "3a3c16228d69a24b6f63fcd8021db494e6034f31482a239bb4bc609475c369d8",
+    "tests/test_krita_assets.py": "b12e1c8b6d4375f4b2fb58f259f7b9af28c3bc21f339319d99f07d68743a452e"
+  },
+  "native_krita_execution": false,
+  "owner_kra_fixture_available": false,
+  "scope": "Parser/preparation inventory, safe archive/timing/visibility/frame/resource/refusal contracts only. No actual native Krita render/import, native layer fidelity or artist/device/Windows certification."
+}
