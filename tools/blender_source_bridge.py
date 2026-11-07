@@ -28,6 +28,7 @@ from asset_audit import gma_index, AssetError
 from source_archive import resource_path
 from source_texture import blender_rgba
 from source_eyes import plan as neutral_eye_plan
+from source_lights import plan as light_plan, create as create_lights
 
 from SourceIO.library.utils import TinyPath, FileBuffer, MemoryBuffer
 from SourceIO.library.shared.app_id import SteamAppId
@@ -44,6 +45,7 @@ from SourceIO.library.source1.vtf import load_texture
 
 dependencies, missing, warnings = {}, set(), []
 mount_warnings = []
+map_lights = []
 failed_lookups = set()
 dependency_bytes = 0
 mounts = [Path(p).resolve() for p in request["mounts"]]
@@ -260,6 +262,11 @@ else:
     for text in bpy.data.texts:
         if not text.name.endswith("_entities.json"): continue
         entities = json.loads(text.as_string())
+        planned_lights = light_plan(entities, request["scale"])
+        create_lights(bpy, planned_lights)
+        map_lights.extend(planned_lights["lights"])
+        if len(map_lights)>64:raise ValueError("Source map exceeds64supported static lights")
+        warnings.extend(planned_lights["warnings"])
         (out / "entities.json").write_text(json.dumps(entities, indent=2), encoding="utf-8")
         for entity in entities:
             if not entity.get("classname", "").startswith("info_player_"): continue
@@ -298,7 +305,7 @@ else:
             props_loaded += 1
         except Exception as error:
             warnings.append("Prop failed: " + str(path) + ": " + str(error))
-    native_parameters = {"props_found": len(placeholders), "props_loaded": props_loaded, "removed_tool_faces": removed_tool_faces}
+    native_parameters = {"props_found": len(placeholders), "props_loaded": props_loaded, "removed_tool_faces": removed_tool_faces, "static_entity_lights": map_lights}
 
 
 images = {}
@@ -383,13 +390,13 @@ bpy.ops.wm.save_as_mainfile(filepath=str(out / "editable.blend"))
 bpy.ops.object.select_all(action="DESELECT")
 exported = []
 for obj in bpy.context.scene.objects:
-    if obj.type in {"MESH", "ARMATURE", "EMPTY"} and not obj.hide_render and not obj.hide_get():
+    if obj.type in {"MESH", "ARMATURE", "EMPTY", "LIGHT"} and not obj.hide_render and not obj.hide_get():
         obj.select_set(True)
         exported.append(obj)
 if not any(o.type == "MESH" and len(o.data.polygons) for o in exported):
     raise ValueError("No renderable geometry imported")
 bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", use_selection=True,
-                          export_animations=False, export_cameras=False, export_lights=False,
+                          export_animations=False, export_cameras=False, export_lights=True,
                           export_extras=False, export_yup=True, export_image_format="AUTO")
 report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_source": request["original_source"],
           "source_file": source.name, "source_member": request.get("source_member"),
@@ -404,7 +411,7 @@ report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_
                      "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
                      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"],
           "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images),
-                     "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE")}}
+                     "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE"), "static_lights": len(map_lights)}}
 (out / "parameters.json").write_text(json.dumps(report, ensure_ascii=True, indent=2), encoding="utf-8")
 (out / "dependencies.json").write_text(json.dumps({"resolved": list(dependencies.values()), "missing_requests": sorted(missing)}, indent=2), encoding="utf-8")
 print("STUDIO_SOURCE_READY", json.dumps(report["counts"]), flush=True)

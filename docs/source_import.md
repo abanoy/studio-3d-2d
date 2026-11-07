@@ -156,3 +156,35 @@ agreement. Full canonical `python -u tests/verify.py` also exits0, including act
 Miku/audio/recovery/UI regressions. A visual review caught an oversized setup dialog;
 its scrollable content and accessible buttons are now explicitly checked. No
 second real Steam library, clean-machine, physical input or arbitrary DPI claim.
+
+
+## Static Source entity lights
+
+Map preparation now emits bounded static `light`, `light_spot` and
+`light_environment` entities into GLB punctual lights, in addition to mesh/props.
+Their Source origins, directions, colors and unit scale map through Blender's
+normal Z-up to Y-up export. Static point/spot brightness scales with squared unit
+scale; directional brightness does not. These are approximate intensity and
+falloff conversions, not Source renderer photometry or baked lightmaps.
+
+Starts-off entities and animated light styles remain in `entities.json` and get
+explicit warnings; they are not silently enabled. Other light entity types get
+unsupported diagnostics. No entity programs or gameplay switching are executed.
+Malformed colors, transforms, cones, flags/styles and more than64supported static
+lights refuse preparation. Native parameters retain the emitted light inventory.
+The installed-game preflight and original-source preservation rules remain.
+
+Nine planner tests (including malformed and capacity cases), actual Blender4.3.2
+GLB export with verified types/axes/colors/spot angle, and nine private Studio
+checks pass. The latter proves Lit response, exact Unshaded independence, lighting
+Undo, source-offline packed Open, recovery, independent drawing and exact export
+input; the actual48frame1080p24H264 movie passes inspection. The optional Draco
+module is absent in this Blender installation; the verified output is ordinary
+uncompressed GLB. A first harness parse needed an explicit GDScript Image type.
+
+This exercises the exact emitter on original entity records and geometry. The
+full pinned SourceIO/native BSP/GMod path still requires the installed-game and
+approved map fixture; it was not run here. Lightmaps, ambient sky/HDR, native
+shaders and game photometry remain unsupported. See
+[recorded evidence](benchmarks/source_entity_lights_2026-11-07.json) and
+`tests/verify_source_lights.py`.

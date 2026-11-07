@@ -13314,3 +13314,22 @@ no tolerances weakened. Receipt helper_limb_ik_2026-11-07.json. POSE03 stillpart
 for broadernative/wholebody coverage; no native or artist completion claimed.
 User prioritizes implementation completion. Next reassess required partial gaps
 against actual decided scope, avoiding optional feature expansion or repeated tests.
+
+
+## 2026-11-07 UTC — preserve static Source entity lights
+
+Source bridge previously excluded all LIGHT objects and GLB light export. New
+bounded pure planner and real Blender emitter preserve static point/spot/sun
+origins/directions/linearcolors/scale as GLB punctual lights, with approximate
+intensity/attenuation. Off/style/unsupported diagnostics, malformed/range/64light
+refusal, no entity programs or gameplay execution. Full original entities and
+prepared inventory retained; game installation preflight unchanged.
+Nine Python planner tests and9actual private Studio checks pass after realBlender
+4.3.2export; GLB axes/colors/types/cones checked, Lit/Unshaded/Undo/sourceoffline
+packed/recovery/independentcel/exact48frame1080p24H264 input verified. Optional
+Draco missing; ordinary uncompressedGLB succeeds. Initialharness Image inference
+parse fixed explicitly; no assertions weakened. Full nativeBSP/SourceIO/GMod
+fixture remains unrun; bakedlightmap/ambientHDR/nativephotometry unsupported.
+Receipt source_entity_lights_2026-11-07.json and docs/ledger updated, partialnative
+coverage remains honest. Owner packaging decision requested asynchronously while
+independent implementation proceeds; no format choice imposed.

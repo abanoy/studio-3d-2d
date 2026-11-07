@@ -68,3 +68,8 @@ alter source materials. It does not add animated live-parent opacity evaluation.
 in Unshaded/Lit/Studio, a half-faded parent, normal Add peer restart and both available
 VRM samples. It checks visible rendered color, settings, authored-data/shot/view
 isolation and original file hashes. See the latest progress entry for actual results.
+
+
+Source preparation now emits approximate static point/spot/sun entity lights;
+see [implementation and limits](source_import.md#static-source-entity-lights).
+Baked BSP lightmaps and full native lighting fidelity remain open.
