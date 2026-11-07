@@ -13552,3 +13552,5 @@ IK/crouch and grouped locomotion gates now running; no premature closures.
 2026-11-07 UTC: Current opacity suite passed and pressure suite initially failed4cascading assertions because its admission fixture still filled32cels. Updated fixture to actual DrawingLimits.MAX_CELS (400) across project, keeping exact refusal/cleanup/history assertions. Full final opacity and pressure unit/editor/cold-reader/independent-oracle/1080p24H264 suites pass, unchanged frozen application sources, source/shot/world/paint preservation. Physical tablet/latency not tested.
 
 2026-11-07 UTC: DRAW-03 bounded software acceptance verified by75current brush checks at 83da652d896c82ffe37d8fdd34a885caea203930; physical-tablet gate unchanged. Formal15/62 (24.19%), implementation51/54 unchanged.
+
+2026-11-07 UTC: Current onion-skin software suite passed37checks on isolated display110: actual GPU ghosts/zoom/pan, hidden/empty layers, held-neighbor caching and invalidation, opacity uniforms, playback/New resource release, packed/recovery exact art and final37-check H264 export exclusion. Source hashes match frozen concurrent current fill run.
