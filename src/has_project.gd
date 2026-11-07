@@ -67,6 +67,27 @@ func save_file(selected: String, mode: String) -> void:
 	var state: Dictionary=app.project_snapshot()
 	start({"action":"pack", "path":selected, "storage":mode, "folder":snapshot, "cache_root":base,"cache_roots":[ProjectSettings.globalize_path("res://output/imports"),ProjectSettings.globalize_path("res://output/audio-imports"),ProjectSettings.globalize_path(app.reference_sheet.cache_root)]},state)
 
+func save_asset(selected: String) -> void:
+	if app.exporting or app.source_import.pid>0:return
+	if selected.get_extension().to_lower()!="has":selected+=".has"
+	if builtin(selected):app.message("Choose a personal asset package file.");return
+	var target:=ProjectSettings.globalize_path(selected).simplify_path()
+	var current:=ProjectSettings.globalize_path(path).simplify_path() if not path.is_empty() else ""
+	if OS.get_name()=="Windows":target=target.to_lower();current=current.to_lower()
+	if not current.is_empty() and target==current:
+		app.message("Choose another filename; this file is the current scene.");return
+	if not app.physics_editor.freeze_all():return
+	app.stop();app.finish_stroke();app.pose_editor.finish_drag()
+	var captured:=preload("res://src/asset_package.gd").snapshot(app)
+	if captured.has("error"):app.message(captured.error);return
+	var base:=ProjectSettings.globalize_path(cache_root)
+	start({"action":"pack","path":selected,"storage":"packed","folder":base.path_join("asset_work_%d"%OS.get_process_id()),"asset_package":captured.header,"cache_root":base},captured.project)
+
+func import_asset(selected: String,kind: String,at_frame: int) -> void:
+	if app.exporting or app.source_import.pid>0:return
+	var base:=ProjectSettings.globalize_path(cache_root)
+	start({"action":"unpack","path":selected,"folder":base.path_join("asset_open_%d_%d"%[OS.get_process_id(),Time.get_ticks_usec()]),"relinks":{},"import_asset":true,"asset_kind":kind,"asset_frame":at_frame})
+
 func builtin(selected: String) -> bool:
 	var root:=ProjectSettings.globalize_path("res://examples/tutorials").replace("\\","/").simplify_path().to_lower()+"/"
 	return ProjectSettings.globalize_path(selected).replace("\\","/").simplify_path().to_lower().begins_with(root)
@@ -141,6 +162,10 @@ func _process(_delta: float) -> void:
 		if is_instance_valid(progress):progress.hide();progress.queue_free()
 		if loaded.data.has("error"):
 			app.message(loaded.data.error);operation_finished.emit(pending.action,false);return
+		if pending.get("import_asset",false):
+			var why: String=preload("res://src/asset_package.gd").import_into(app,loaded.data,_open_result.get("asset_package",{}),pending.asset_kind,pending.path,pending.asset_frame)
+			if not why.is_empty():app.message(why)
+			operation_finished.emit(pending.action,why.is_empty());return
 		var began:=Time.get_ticks_usec()
 		var installed: bool=app.install_project_data(loaded.data,_open_result.folder)
 		last_install_ms=(Time.get_ticks_usec()-began)/1000.
@@ -164,6 +189,7 @@ func _process(_delta: float) -> void:
 	if not _child_done:return
 	var result = Recovery.read_json(result_path)
 	if not _snapshot_error.is_empty() and not cancelled:result={"ok":false,"error":_snapshot_error}
+	if pending.get("import_asset",false) and result.get("ok",false) and not result.has("asset_package"):result={"ok":false,"error":"This HAS file is a scene. Use Open project, or choose an asset package."}
 	if result.get("ok",false) and pending.action=="unpack" and not cancelled and same_document():
 		_open_result=result
 		var why: String=project_loader.start({"folder":result.folder,"cancel":cancel_path,"cold":app.cold_cel_loading,"cold_min_bytes":app.cold_cel_min_bytes})
@@ -181,6 +207,8 @@ func _process(_delta: float) -> void:
 		operation_finished.emit(pending.action,false)
 		return
 
+	if pending.has("asset_package"):
+		app.message("Saved asset package "+str(pending.path));operation_finished.emit(pending.action,true);return
 	if not same_document():
 		app.message("Finished saving the previous project to "+str(pending.path)+". The current project stays unchanged.")
 		operation_finished.emit(pending.action,true);return

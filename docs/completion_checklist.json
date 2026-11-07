@@ -1437,9 +1437,9 @@
         "ADD11.3"
       ],
       "title": "Independent native model/map sharing",
-      "implementation": "missing",
-      "verification": "incomplete",
-      "acceptance_status": "decision_blocked",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
       "acceptance": "An individual native model or map can be packaged, imported and reused independently with dependencies/provenance preserved, without external-format exporting.",
       "evidence": [
         {
@@ -1449,12 +1449,22 @@
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/asset_package.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/asset_packages.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/asset_packages_2026-11-07.json"
         }
       ],
-      "remaining": "Owner decision on existing-HAS container variation versus separate native packaging is still OPEN; no extension has been invented.",
-      "external_dependencies": [
-        "D-PACKAGING"
-      ]
+      "remaining": "Independent canonical HAS model/map software contract is implemented and exercised. Audit committed evidence for formal closure; native ecosystem fidelity remains under IMPORT-02/03 and Windows target execution remains external.",
+      "external_dependencies": []
     },
     {
       "id": "STORE-03",
@@ -1786,7 +1796,7 @@
       "implementation": "implemented",
       "verification": "scoped_evidence",
       "acceptance_status": "open",
-      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over.",
+      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10\u201330seconds without taking over.",
       "evidence": [
         {
           "kind": "source",
@@ -2184,7 +2194,7 @@
       ],
       "title": "Advanced selection, lasso/painted masks, glow, multiple palettes and proportion tools",
       "status": "conditional_refinement",
-      "rule": "Some are already implemented; pursue remaining refinements after stages1–4 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
+      "rule": "Some are already implemented; pursue remaining refinements after stages1\u20134 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
     },
     {
       "id": "O-RENDER",
@@ -2224,11 +2234,11 @@
         "ADD18"
       ],
       "title": "Independent native package contract",
-      "status": "open",
+      "status": "resolved",
       "needed_for": [
         "STORE-02"
       ],
-      "question": "Choose a compatible variation of the existing HAS container or a separate native package/extension contract; do not invent an extension or add third-party exporters."
+      "question": "Owner explicitly chose: Reuse the existing .has container (2026-11-07). Implemented as a validated independent model/map variation of portable HAS."
     },
     {
       "id": "D-CLIPS",

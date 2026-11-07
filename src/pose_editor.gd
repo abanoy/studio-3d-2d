@@ -177,7 +177,7 @@ func sync_enabled(node: Node = panel) -> void:
 		sync_enabled(child)
 
 func import_dialog() -> void:
-	app.choose_file("Add 3D model", ["*.glb", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.vrm", "*.mdl", "*.gma", "*.bin"], func(path):app.import_actions.add(path,true,0), app.source_import.default_browse_dir())
+	app.choose_file("Add 3D model", ["*.has", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.vrm", "*.mdl", "*.gma", "*.bin"], func(path):app.import_actions.add(path,true,0), app.source_import.default_browse_dir())
 
 func remove_dialog() -> void:
 	if not active_rig():return

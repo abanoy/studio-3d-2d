@@ -542,7 +542,7 @@ func build_ui() -> void:
 		if dirty: confirm_action("Discard unsaved edits and open another project?", action)
 		else: action.call()))
 	advanced(nav_button(toolbar, "Sample room", "scene", demo_dialog, "Open the original camera/drawing example as a new unsaved project"))
-	nav_button(toolbar, "Add scene", "scene", func(): choose_file("Import 3D environment", ["*.glb", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.bsp", "*.gma", "*.bin"], load_scene, source_import.default_browse_dir()), "Add a 3D environment: GLB, glTF, FBX, OBJ, MMD or an installed Source map")
+	nav_button(toolbar, "Add scene", "scene", func(): choose_file("Import 3D environment", ["*.has", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.bsp", "*.gma", "*.bin"], func(path):import_actions.add(path,false,0), source_import.default_browse_dir()), "Add a 3D environment: GLB, glTF, FBX, OBJ, MMD or an installed Source map")
 	nav_button(toolbar, "Add model", "scene", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment")
 	nav_button(toolbar, "Installed", "folder", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts")
 	nav_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead")

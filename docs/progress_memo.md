@@ -13351,3 +13351,22 @@ lesson/media checks pass. Receipt recovery_blob_retention_2026-11-07.json. Exist
 512MiBroot limit retained; globalorphan/concurrentwhole-rootquota remain separate.
 BaselineMarkdown stale2closures corrected to current4; scores48/54and4/62unchanged.
 Next remaining decided implementation gaps; packaging choice awaits owner reply.
+
+
+## 2026-11-07 UTC — independent model/map sharing in existing HAS
+
+Owner explicitly chose reuse of the existing .has container. Implemented portable
+independent model/map packages with strict purpose/header/inventory validation,
+background export/import, Simple World save action and ordinary Add model/Add scene
+picker routes. New independent object identity, one Undo, exact authored timing,
+dependencies/native provenance preserved; scene paint/camera/settings/identity and
+dirty/recovery state unchanged. Refuse current-scene overwrite, grouped roots,
+wrong roles, ordinary scene import and incompatible animated timing before append.
+74package checks pass with actual UI, source/cache-offline fresh reader and real
+48frame1080p24H264. Ordinary background save76checks and nested reference70checks
+(including real crash/cold startup/media) pass on private displays. Development
+fixture hash/Array inference failures corrected before final runs; final receipts
+have no script errors. Original canonical fixtures do not certify broader native
+ecosystem fidelity or Windows. docs/asset_packages.md and evidence receipt added.
+STORE-02 implemented, D-PACKAGING resolved; coverage49/54(90.74%), formal4/62
+(6.45%) pending committed full-condition review. Goal remains finish implementation.

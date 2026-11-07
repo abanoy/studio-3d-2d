@@ -1582,8 +1582,8 @@
         "ADD11.3"
       ],
       "implementation_before": "missing",
-      "implementation": "missing",
-      "implementation_review": "Only complete project packages exist. Independent native model/map distribution still lacks its selected container/API; packaging choice remains genuinely OPEN.",
+      "implementation": "implemented",
+      "implementation_review": "Owner chose existing HAS. Independent model/map snapshot, validated portable package marker, background export/import, UI routing, new identity and one-step Undo are implemented. Current-scene overwrite refused.",
       "reviewed_code_anchors": [
         {
           "path": "src/has_project.gd",
@@ -1598,14 +1598,12 @@
           "file_sha256": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399"
         }
       ],
-      "verification": "incomplete",
-      "acceptance_status": "decision_blocked",
-      "acceptance_review": "Owner decision on existing-HAS container variation versus separate native packaging is still OPEN; no extension has been invented.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "verification": "scoped_evidence",
+      "acceptance_status": "open",
+      "acceptance_review": "Independent canonical HAS model/map software contract is implemented and exercised. Audit committed evidence for formal closure; native ecosystem fidelity remains under IMPORT-02/03 and Windows target execution remains external.",
+      "evidence_review": "Current 74check private-display package suite with original canonical fixtures, source/cache-offline fresh reader and exact real-render input; evidence receipt documents scope and limitations.",
       "formal_receipts": [],
-      "external_dependencies": [
-        "D-PACKAGING"
-      ]
+      "external_dependencies": []
     },
     {
       "id": "STORE-03",

@@ -1,7 +1,7 @@
 # MD/addendum completion baseline audit
 
-The reviewed checklist has **48 of54required capability groups implemented
-(88.89%)** and **4 of62required acceptance conditions formally closed (6.45%)**.
+The reviewed checklist has **49 of54required capability groups implemented
+(90.74%)** and **4 of62required acceptance conditions formally closed (6.45%)**.
 These are separate, equally weighted checklist counts. They do not estimate
 remaining engineering time, native fidelity, reliability or release readiness.
 No combined product-completion percentage is calculated.
@@ -24,8 +24,8 @@ contexts, GPU and other resources are not a whole-app RAM guarantee.
 
 Five capability groups remain partial: native ecosystem coverage, native fidelity,
 broader rig IK, general reusable-path locomotion, and save durability/fault safety
-on the target platform. Independent native model/map packaging remains missing
-with an explicit owner packaging decision. Native fidelity can require more work
+on the target platform. Independent canonical model/map packaging is implemented using the existing HAS
+container selected by the owner. Native ecosystem fidelity remains separate. Native fidelity can require more work
 than several small editor groups; the unit percentages do not hide that limitation.
 
 The generic timeline scenarioC and mechanical physics scenarioD do not require

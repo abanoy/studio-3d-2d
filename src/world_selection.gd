@@ -34,6 +34,7 @@ func setup(parent: Node) -> void:
 		if not updating_tree and item and item.get_metadata(0) is String: select_entity(item.get_metadata(0)))
 	parent.add_child(tree)
 	app.button(parent,"Frame selected",frame_selected).tooltip_text = "Find the selected map or model without changing shot keys."
+	app.button(parent,"Save asset .has...",func():preload("res://src/asset_package.gd").export_dialog(app)).tooltip_text="Package the selected independent model or map with its editable controls and embedded dependencies."
 	app.button(parent,"Size map…",func():app.map_calibration.open()).tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
 	app.label(parent,"Click an object to select.\nRight-click empty space\nto deselect.").add_theme_font_size_override("font_size",12)
 
