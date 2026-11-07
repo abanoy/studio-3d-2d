@@ -2993,3 +2993,36 @@ referencesrefuse. Thesearebookkeeping checks, notapplicationtests. NoWindows/
 PC/web/deployment/nativeassetchanges. Nextconcretework: completeallsevenrouted
 scenarioC steps withoriginalscene/model, thenmechanicalD cloudcase; retain
 Windows/native/physicalgates andcontinueactualrequiredgapsafterward.
+
+## 2026-11-07 UTC — complete seven-step timeline scenarioC cloud proof
+
+Added actual routed scenarioC workflow using original generated two-map sets and
+articulated GLB actor. Actualtimelinecontext/picker imports at100; renderer roots
+absentall0..99/present100. Realblockdrag100→0 carries25root/bone samples exactly,
+oneUndo/Redo. ActualSplitcontext andrightpiecedragto100 preservevisiblebounded
+gapbridge. SimpleOFF10persistsat100despitelaterpiece. TreehiddenSelection hasactual
+greeneditorghost withoutvisibility/data/finalpixelchanges.300msfadeactualpartial
+pixels;Options0msinstantcut. Visiblecamera-keybuttons store120/121 inoneworld;
+actualdistinctsetimages preserveindependentscreen-spaceRGBAmarker.25writerchecks
+pass, real128frame1080p24H264AAC withsample48001onset andexactcutPNGinputs.
+Freshpackedreader6checks passes withallthreeGLB/audiooriginals+writer cacheoffline;
+exactworld/keys/cels/PCM/cutpictures retained. Originalassets/manualHAS unchanged.
+
+Rawfirsttwofailedrunsretained: initialtestusedModel.visible_at (visibilitytarget)
+forpresence, replacedwithactualevaluatedrendererroots; anOptionsscrollloopcalled
+nondescendantcontainers, correctedancestorcheck. Camera-keytestscrolledbeforemode
+layoutsettled andclickedoffscreeny=-8. Instrumentedactualbuttonrouting/rectangle,
+waitedforlayoutbeforescrolling, nowassertsfullvisibilityandbothstoredframes. Shot
+checksuseDraw/finalsampling;Scene-modeeditorcamera correctlystaystemporary. Drawing
+fixtureusesDrawing.touchandactualGPUoverlaycheck. Noappbehavior/assertiontolerance
+waschangedorweakened.31finalend-to-endchecks passed withfrozensources. Subsequent
+harness-onlymedia subprocess update honorsHYBRID_FFMPEG andWindowsCREATE_NO_WINDOW;
+PythoncompileandconfiguredLinuxmedia/PCM checks pass; noextrafreshGUIrunclaimed.
+
+Curatedbenchmarks/scenario_c_2026-11-07.json anddocs/scenario_c.md, per-itemaudit/
+checklist remainingwork updated. ACCEPT-C remains targetWindowsexternalblocked;
+this completesitsindependentcloudsoftwarecase, notnativeecosystem/physical/novice
+acceptance. Scoresremain48/54implementation and2/62formalclosures. Nextconcrete
+independentwork: complete compatible-ragdoll/props freeze/reset/unrecorded/Local/
+World capture scenarioD with original included humanoid assets, thenremaining
+requirednative/rig/walking/durability andresourcegaps. Wholegoalactive.

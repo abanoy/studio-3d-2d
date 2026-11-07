@@ -1,0 +1,123 @@
+{
+  "reports": {
+    "writer": {
+      "checks": 25,
+      "failures": 0,
+      "movie": "/workspace/has-handoff-audit/scenario-c-final/render_1794036631_8446956_0/movie.mp4",
+      "native_fixtures": 0,
+      "steps": 7
+    },
+    "reader": {
+      "checks": 6,
+      "failures": 0
+    }
+  },
+  "video": {
+    "index": 0,
+    "codec_name": "h264",
+    "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+    "profile": "High",
+    "codec_type": "video",
+    "codec_tag_string": "avc1",
+    "codec_tag": "0x31637661",
+    "width": 1920,
+    "height": 1080,
+    "coded_width": 1920,
+    "coded_height": 1080,
+    "closed_captions": 0,
+    "film_grain": 0,
+    "has_b_frames": 2,
+    "pix_fmt": "yuv420p",
+    "level": 40,
+    "color_range": "tv",
+    "color_transfer": "iec61966-2-1",
+    "color_primaries": "bt709",
+    "chroma_location": "left",
+    "field_order": "progressive",
+    "refs": 1,
+    "is_avc": "true",
+    "nal_length_size": "4",
+    "id": "0x1",
+    "r_frame_rate": "24/1",
+    "avg_frame_rate": "24/1",
+    "time_base": "1/12288",
+    "start_pts": 0,
+    "start_time": "0.000000",
+    "duration_ts": 65536,
+    "duration": "5.333333",
+    "bit_rate": "105459",
+    "bits_per_raw_sample": "8",
+    "nb_frames": "128",
+    "extradata_size": 50,
+    "disposition": {
+      "default": 1,
+      "dub": 0,
+      "original": 0,
+      "comment": 0,
+      "lyrics": 0,
+      "karaoke": 0,
+      "forced": 0,
+      "hearing_impaired": 0,
+      "visual_impaired": 0,
+      "clean_effects": 0,
+      "attached_pic": 0,
+      "timed_thumbnails": 0,
+      "non_diegetic": 0,
+      "captions": 0,
+      "descriptions": 0,
+      "metadata": 0,
+      "dependent": 0,
+      "still_image": 0,
+      "multilayer": 0
+    },
+    "tags": {
+      "language": "und",
+      "handler_name": "VideoHandler",
+      "vendor_id": "[0][0][0][0]",
+      "encoder": "Lavc61.19.101 libx264"
+    }
+  },
+  "audio_onset_sample": 48001,
+  "manual_has_unchanged": true,
+  "originals_and_writer_cache_unavailable_for_cold_open": true,
+  "functional_source_unchanged": true,
+  "private_receipts": [],
+  "isolated_display": ":109",
+  "scope": "All seven scenarioC software steps on original generated maps/rig; final Windows target and native ecosystem fidelity remain separate.",
+  "date": "2026-11-07 UTC",
+  "base_commit": "988d00b",
+  "source_sha256": {
+    "src/app.gd": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04",
+    "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+    "src/model.gd": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b",
+    "src/world_runtime.gd": "da21c9ba9c5e6b3add0fa9bc6417e760a9f2a3edc25118a2441024be74df4c9f",
+    "src/visibility_track.gd": "a79ae20e354d2b5f4436e6dc98186e69be41b72c71e9d3180917a586f6d37152",
+    "src/timeline_view.gd": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c",
+    "src/clip_editor.gd": "88ca46f1f4e0a9f174a42cdd0a4305ec80d3c32fbf59c9e055cc2aeb037434aa",
+    "src/import_actions.gd": "6d32b7a099afddb56ed35b0a569b4bea09532ac1f00980613c94eb582d8c6ebd",
+    "tests/scenario_c_smoke.gd": "38728806c3733cb2ecb9cf88815ccdab25c636839dc96ab460d86fec97def305",
+    "tests/verify_scenario_c.py": "f87ae3bbcdcfe35d0b7cbb850f4e9662507617f228281c95458f32a1d9a5f874"
+  },
+  "raw_folder": "/workspace/has-handoff-audit/scenario-c-final",
+  "steps": [
+    "Actual timeline context and file picker import at100; rendered absence0..99 and presence100.",
+    "Actual block drag100to0 carries25root/bone source-relative samples, exact Undo/Redo.",
+    "Actual context Split and right-piece drag to100 retain predictable visible gap bridge.",
+    "Simple visibility OFF at10 remainsOFFat100 despite later clip.",
+    "Tree selects hidden actor; actual green editor ghost leaves final pixels and visibility unchanged.",
+    "Default300ms fade produces intermediate pixels; project0ms produces an instant cut.",
+    "Visible Simple camera-key buttons store120/121 views in one world; exact distinct final frames retain independent paint."
+  ],
+  "failed_and_corrected": [
+    "Initial test confused Model.visible_at (persistent visibility target) with object lifetime; corrected to actual evaluated renderer root visibility for all100earlier frames.",
+    "Initial Options test scrolled every nested container rather than only the control ancestor, causing a Godot error; corrected ancestor check.",
+    "First shot-key test scrolled before mode layout settled and clicked an offscreen button at y=-8. Waited for layout, scrolled afterward, asserted full visible rectangle and each stored frame.",
+    "Preview shot checks now use Draw mode evaluation rather than expecting Scene-mode temporary navigation to be overwritten.",
+    "Drawing fixture now calls Drawing.touch and verifies actual GPU overlay before export."
+  ],
+  "unrun": [
+    "Final Windows10/11 execution and physical input/novice acceptance.",
+    "Third-party native ecosystem fidelity; all threeGLBs are original generated fixtures."
+  ],
+  "harness_followup": "After the frozen end-to-end run, media subprocesses were changed to honor HYBRID_FFMPEG and suppress Windows console windows. Python compilation and the sameLinux configured-tool ffprobe/PCM checks passed; no additional GUI run is claimed."
+}

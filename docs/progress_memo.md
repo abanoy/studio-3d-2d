@@ -13165,3 +13165,14 @@ finalgates andallnativefidelityrequirements. Checkerrequiresper-itemauditstatus/
 denominator/sourcehashconsistency; positiveanddeliberateinvaliddata checks pass.
 See completion_baseline_audit.md and benchmarks/completion_baseline_audit_2026-11-07.json.
 Next: fullroutedC thenD original-assetcloudcases; independentworkremainsactive.
+
+### 2026-11-07 UTC — all seven timeline scenarioC steps together
+
+Actualprivate-display timeline/picker import100, realrelativeclipdragto0, split/gap,
+persistentOFF, hiddenGreenGhost, global300/0fade andadjacentcamera cut pass25app
+checks. Sixfreshpackedreaderchecks pass withoriginal3GLBs/audio/writercacheoffline.
+Actual128frame1080p24H264AAC,exactcutPNGinputs,PCM onset48001 andsource/manualHAS
+preservation pass. Correctedtestlifetime/visibility distinction andsettledmode
+layoutbeforecamerabuttonclick; noappbehavior/tolerancechanges. See scenario_c.md
+andbenchmarks/scenario_c_2026-11-07.json. FinalWindowsgate remains; nativefidelity
+is separate. Scoreunchanged. Next: fulloriginal-ragdoll/props mechanicalscenarioD.
