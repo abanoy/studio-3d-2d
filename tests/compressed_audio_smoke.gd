@@ -16,7 +16,7 @@ func has_job() -> void:
 func pcm_hash() -> String:return app.audio_mix.pcm.hex_encode().sha256_text()
 func run() -> void:
 	var folder: String=OS.get_cmdline_user_args()[0]
-	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settle()
+	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settle()
 	app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	var keys: Array=app.keys.duplicate(true);var world: Dictionary=app.current_world().duplicate(true)
 	assert(app.import_audio(folder.path_join("base.wav")).is_empty())
