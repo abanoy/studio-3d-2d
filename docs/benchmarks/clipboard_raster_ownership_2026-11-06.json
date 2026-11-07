@@ -1,0 +1,327 @@
+{
+  "date": "2026-11-06",
+  "scope": "Transient clipboard registered ownership and exact cold integrity through app workflows; no hard admission/RSS/native-platform certification.",
+  "ordinary_app": {
+    "reports": {
+      "unit": {
+        "checks": 27,
+        "failures": 0
+      },
+      "patch-unit": {
+        "checks": 10,
+        "failures": 0
+      },
+      "patch-history": {
+        "checks": 18,
+        "cut_bytes": 8295628,
+        "failures": 0,
+        "paste_bytes": 8295632,
+        "split_bytes": 16590332
+      },
+      "create-delete": {
+        "blank_bytes": 8295632,
+        "checks": 24,
+        "copy_bytes": 16590332,
+        "delete_bytes": 8295628,
+        "failures": 0,
+        "owned": false
+      },
+      "create-delete-owned": {
+        "blank_bytes": 8295632,
+        "checks": 24,
+        "copy_bytes": 16590332,
+        "delete_bytes": 8295628,
+        "failures": 0,
+        "owned": true
+      },
+      "live-history": {
+        "checks": 43,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/clipboard-owner-app/live-history/render_1794026625_2771769_0/movie.mp4",
+        "project": "/workspace/has-handoff-audit/clipboard-owner-app/live-history/Drawing Undo.has"
+      },
+      "live-reader": {
+        "checks": 3,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 50,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/clipboard-owner-app/render_1794026646_11563717_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "22388",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "manual_has_unchanged": true,
+    "writer_cache_unavailable_for_cold_open": true,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "folder": "/workspace/has-handoff-audit/clipboard-owner-app"
+  },
+  "cold_write_app": {
+    "scope": "Explicit staged adaptive directory/HAS Open, cold GUI edits and streamed saves; default loading and abrupt startup recovery not certified.",
+    "domain": {
+      "scope": "Headless cold-raster ownership, integrity, history and budget domains. No GUI/GPU or whole-project acceptance claim.",
+      "reports": {
+        "unit": {
+          "checks": 29,
+          "failures": 0
+        },
+        "write-paths": {
+          "checks": 17,
+          "failures": 0,
+          "scope": "owned Linux links/hardlinks/read-only paths; no Windows or hostile concurrent filesystem race certification"
+        },
+        "rollback": {
+          "checks": 26,
+          "failures": 0,
+          "scope": "owned metadata/asset/pixel rollback integrity; not native-rig or physical power-loss certification"
+        },
+        "project-ownership": {
+          "checks": 11,
+          "failures": 0
+        },
+        "budget": {
+          "checks": 13,
+          "failures": 0
+        },
+        "pixel-history": {
+          "checks": 19,
+          "failures": 0
+        },
+        "policy": {
+          "checks": 11,
+          "failures": 0
+        },
+        "adaptive": {
+          "checks": 29,
+          "failures": 0
+        },
+        "save": {
+          "checks": 7,
+          "failures": 0
+        },
+        "read": {
+          "checks": 15,
+          "failures": 0
+        },
+        "overlay-regression": {
+          "checks": 20,
+          "failures": 0
+        },
+        "metadata": {
+          "checks": 14,
+          "failures": 0
+        },
+        "owner": {
+          "checks": 29,
+          "failures": 0
+        },
+        "reader-regression": {
+          "checks": 31,
+          "failures": 0
+        }
+      },
+      "source_sha256": {
+        "src/project_raster_ownership.gd": "1194e6cbc364c092829ae6829312b69b8aa08db27bafe93d38c9f28f7ea176a6",
+        "tests/project_raster_ownership_unit.gd": "fb2f43acdcd1f545544cee0a22f4e3031c6d96a1e8971ec838f589e089500914",
+        "src/project_payload_guard.gd": "6bd277060a2a9fbb4dc5a3f05d9626b895474155b7ba53288aa734159e27b642",
+        "src/cel_png_verifier.gd": "bd81aa21005b6ff67f31883547a4be08a6f07fec93e3fa092c9394d18b2ad238",
+        "tests/directory_rollback_unit.gd": "2edd013f5619bde30b02f4b9ae6aa37d061f4c70078c75fc2ae78b2c5e8b07e9",
+        "tests/project_write_paths_unit.gd": "e56767cde55a4f920cbbebbd7bd1f06c45c6946210d1b09b7663089fbd724988",
+        "src/cel_raster_budget.gd": "041492f7ee739a661cbb08f18f26540205f615ba39a5c85e864df3dbb4d3302b",
+        "src/cel_raster_snapshot_cache.gd": "a8e868eded16d2c1d2c5fd11f81ea190021f081fd64e98ce3090df6274767c7f",
+        "tests/cel_raster_budget_unit.gd": "76ccd0a13cae351e160ecdf86125088d11ee4f145f0732c3466a3e55ff430d32",
+        "src/cel_pixel_history.gd": "bbfc4b1464deecbdaa11a05bb39bcb2667b92cc3e145cfbbbe86397ab30b7d3b",
+        "tests/cel_pixel_history_unit.gd": "8662beed13aa6371d0d9f392698eaf6bbbcf39bc2ad1f5a6470c103f91887b8a",
+        "tests/cel_raster_policy_unit.gd": "72cb92b46b24e75a3b9f66ba79d760cba51556febabfdb98ddca4eee0c92da74",
+        "tests/cel_raster_adaptive_unit.gd": "669bf16f658db9096c806cb651c0a99740d80e6d7aea608c45cad305ed6f7f5f",
+        "src/storage.gd": "7d480f6c29b86ff11c34543e57e3db5bc97df2c0a60e24ce962f391c10935930",
+        "src/fill_editor.gd": "b977afe4e68e2187c7780eb63fc4efd1fab54e3489a6e87315ab314605eb75c1",
+        "src/drawing_selection_editor.gd": "bf63e7b586d79e37b3cc983854c08482dff341af252505c652ad1c15bcb35908",
+        "src/drawing_transform_editor.gd": "5ac0b2257ffa54587ecba5ff0aa36688f7fdaff7fdae6a7d575e79a3f08beec3",
+        "src/cel_clipboard.gd": "fa6178e9e32bf4da10bc343cf1b3d4c5789b18836db77646836827eecdf21613",
+        "tests/cel_raster_save_unit.gd": "958376bbb5959bf905f522e158190f27bb503e50dcb7d0205f96b9e7e8f1352c",
+        "src/app.gd": "be3e667371e6c5ebe5aa93983f39c4b04bae5cc36392ef90fa9269ab6abe9406",
+        "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+        "src/color_sampler.gd": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+        "src/onion_editor.gd": "7895913586ce8ec7989485d62b0421ec9b4e5366eb650074c4386357cae2596d",
+        "src/sequence_runtime.gd": "ff708a9b0c0a15e97e63bfea6c6c1575c2941a701f865471c250629b0284533a",
+        "src/tutorials.gd": "7b3cc6797fe825f2b37fc74a2c3b23c6e15591ec44ff064748e1c81f5270c6de",
+        "src/drawing_overlay_cache.gd": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+        "tests/cel_raster_read_unit.gd": "ebdc572bcf2f93735540dc9f7cfad86e0b0428549e01fb9b3d66773db0375951",
+        "src/cel_timing_editor.gd": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+        "src/cel_patch.gd": "60b75f05e162f796041e8083d9c756eb8ade3f26cac9f2e12b61d38fe41b51bd",
+        "src/recovery.gd": "95cefa00f14801ee25c9e6657b92056316718006fc669309e720ba57d5f2d699",
+        "src/layer_editor.gd": "1ec0e7003d369607cd38ef58cb6c566812b8cf9db0b72c9a77b3c2e44348c1c1",
+        "src/sequence_editor.gd": "2b358fdb6ff03538b7e24bc51c89e41b768a662b31ff22acc770185ca3039927",
+        "tests/cel_raster_metadata_unit.gd": "e1ad5ae142dbbedf9570d4f78c8cb436791c73970dd3d97c8c0b57523991c6e8",
+        "src/drawing.gd": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+        "src/cel_raster_owner.gd": "ee69dfa7ccd67a2cbe12452a584c853a43f286a75ea676853668d49a246eab60",
+        "tests/cel_raster_owner_unit.gd": "68d2d273f6b51b2827af3b2f2e0b0b0f841840cf6247b75dad96d261c3d6624d",
+        "src/cel_raster_reader.gd": "dab9f4069fa9fa6a53ad57b51e602b3994f09a66a113c51d1b0a4fc4db5ea146",
+        "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+        "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+        "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+      }
+    },
+    "reports": {
+      "writer": {
+        "checks": 35,
+        "failures": 0,
+        "manual_sha256": "e09573e3542507e78b71f7f43c7e1a1395b6e1b67ef9b6d984e845c966785787",
+        "movie": "/workspace/has-handoff-audit/clipboard-owner-cold/render_1794026656_14833939_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 12,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "537852",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "decoded_onset_sample": 48043,
+    "manual_has_unchanged": true,
+    "writer_cache_unavailable_for_reader": true,
+    "private_receipts": [],
+    "isolated_display": ":108",
+    "source_sha256": {
+      "tests/cel_raster_write_smoke.gd": "ceba1048405267cea03459715087a27350c4abfff37e1fe2233d84cd4a6a1f43",
+      "tests/verify_cel_raster_write.py": "5467b1da5441e128467f3cb6eb65d092b60655e82d77182b13157ae3818c35a2"
+    }
+  },
+  "source_sha256": {
+    "src/cel_clipboard.gd": "fa6178e9e32bf4da10bc343cf1b3d4c5789b18836db77646836827eecdf21613",
+    "tests/cel_clipboard_smoke.gd": "577bbe2d628243d062bbd3861baa5139d90611b904effd86b5d39b9862dec87f",
+    "tests/cel_raster_write_smoke.gd": "ceba1048405267cea03459715087a27350c4abfff37e1fe2233d84cd4a6a1f43"
+  }
+}

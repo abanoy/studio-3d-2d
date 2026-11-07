@@ -29,3 +29,6 @@ covers parent/child navigation and recovery.
 
 See [recorded evidence](benchmarks/eager_drawing_ownership_2026-11-06.json).
 Native Windows, hardware and native-format fidelity are separate acceptance gates.
+
+The transient clipboard now also joins shared ownership; see
+[clipboard ownership](clipboard_raster_ownership.md).

@@ -80,10 +80,10 @@ func run() -> void:
 	app.redo();await settled();check(digest(36)==transformed,"transform Redo restores exact committed pixels")
 	if "--cool-history" in OS.get_cmdline_user_args():check(app.history.filter(func(command):return command.type=="pixels").all(func(command):return command.has("raster_owner") and not command.has("image")),"brush/fill/selection/transform pixel histories all retain logical owners")
 
-	app.set_frame(40);await menu(40,0);check(not layer.cels[4].raster_owner.is_pinned() and Snapshot.digest(app.cel_clipboard.clipboard.image.get_data())==original[4],"actual Copy preserves cold owner and freezes exact clipboard pixels")
+	app.set_frame(40);await menu(40,0);check(not layer.cels[4].raster_owner.is_pinned() and Snapshot.digest(Drawing.image(app.cel_clipboard.clipboard).get_data())==original[4],"actual Copy preserves cold owner and freezes exact clipboard pixels")
 	await menu(40,1);check(Drawing.cel_at(layer,40).is_empty(),"actual Cut removes cold source through affected-cel history")
 	app.undo();await settled();check(digest(40)==original[4] and not layer.cels[4].raster_owner.is_pinned(),"Cut Undo restores exact unpinned cold owner")
-	app.redo();await settled();await menu(40,2);check(digest(40)==original[4] and Drawing.cel_at(layer,40).has("image"),"actual Paste creates independent editable pixels from cold copy")
+	app.redo();await settled();await menu(40,2);check(digest(40)==original[4] and Drawing.cel_at(layer,40).has("raster_owner"),"actual Paste creates independent editable pixels from cold copy")
 	app.undo();app.undo();await settled();await menu(44,3);check(layer.cels.size()==6 and not layer.cels[4].raster_owner.is_pinned(),"actual Split preserves cold source and creates independent right half")
 	app.undo();await settled();check(layer.cels.size()==5 and layer.cels[4].duration==8 and digest(40)==original[4],"Split Undo restores original cold exposure and pixels")
 	var cue:="res://examples/tutorials/Practice cue.wav";var cue_sha:=FileAccess.get_sha256(cue);check(app.import_audio(ProjectSettings.globalize_path(cue),24).is_empty(),"original frame24 sound loads for edited movie")

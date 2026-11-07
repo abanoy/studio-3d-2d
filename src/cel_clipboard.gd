@@ -71,8 +71,10 @@ func perform(action: String) -> bool:
 		var id:=str(ResourceUID.create_id())
 		var proposed:=placement(layer.cels,id,context.at,clipboard.duration,app.video.duration_frames)
 		if proposed.has("error"):app.message(proposed.error);return false
-		if clipboard.image.get_width()!=app.video.width or clipboard.image.get_height()!=app.video.height:app.message("The drawing size changed. Copy it again.");return false
-		pasted={"id":id,"start":int(context.at),"duration":int(clipboard.duration),"image":clipboard.image.duplicate()}
+		var copied:=Drawing.read_image(clipboard)
+		if copied.has("error"):app.message(copied.error);return false
+		if copied.image.get_width()!=app.video.width or copied.image.get_height()!=app.video.height:app.message("The drawing size changed. Copy it again.");return false
+		pasted={"id":id,"start":int(context.at),"duration":int(clipboard.duration),"image":copied.image.duplicate()}
 	else:
 		if selected.is_empty():return false
 		var proposed:=Timing.proposal(layer.cels,selected.id,selected.start,app.video.duration_frames)
@@ -85,7 +87,10 @@ func perform(action: String) -> bool:
 			if context.at<=selected.start or context.at>=selected.start+selected.duration:app.message("Split inside the drawing's hold, after its first frame.");return false
 			if app.sequence_editor.used("cels")>=32:app.message("Prototype memory limit: 32 full-HD cels.");return false
 		else:
-			clipboard={"layer":layer.id,"owner":app.sequence_editor.active_owner,"session":app.recovery_session,"duration":int(selected.duration),"image":selected_image.duplicate()}
+			var candidate:={"layer":layer.id,"owner":app.sequence_editor.active_owner,"session":app.recovery_session,"duration":int(selected.duration),"image":selected_image.duplicate()}
+			var why: String=app.own_created_cel(candidate)
+			if not why.is_empty():app.message(why);return false
+			clipboard=candidate
 			if action=="copy":app.message("Drawing copied. Right-click a free range on this layer to paste it.");return true
 	var before: Array=layer.cels.duplicate(true)
 	if action=="cut":layer.cels.remove_at(index)

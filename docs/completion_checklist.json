@@ -1003,9 +1003,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/eager_drawing_ownership_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/clipboard_raster_ownership.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/clipboard_raster_ownership_2026-11-06.json"
         }
       ],
-      "remaining": "Accepted app projects now register eager/small-project, compressed and incompressible drawing owners across root/child scenes. Clipboard, history tiles/whole-layer retention, derived/GPU resources and global admission/dense-project acceptance remain incomplete before cap expansion.",
+      "remaining": "Accepted eager/compressed/raw app cels and the transient clipboard now share conservative owned accounting and cooling. History tiles/whole-layer retention, derived/GPU resources and global admission/dense-project acceptance remain incomplete before cap expansion.",
       "external_dependencies": []
     },
     {
@@ -2286,7 +2294,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "All accepted app drawing representations now register conservative owned bytes. Address clipboard/history/derived/GPU accounting and dense-project admission before raising caps."
+      "action": "All accepted drawing representations and clipboard now register conservative owned bytes. Address history/derived/GPU accounting and dense-project admission before raising caps."
     },
     {
       "requirement": "MEM-01",

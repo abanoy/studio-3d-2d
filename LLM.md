@@ -2610,3 +2610,28 @@ docs/eager_drawing_ownership.md. MEM-02 partial/open; canonical goal active.
 Masked nested private108 regression also passes 218checks after real abrupt
 exit: packed/linked/active-child masks, ordinary recovery and synchronized export;
 manual HAS/source bytes exact. Evidence added to the same curated receipt.
+
+
+2026-11-06 — Register transient drawing clipboard ownership
+
+Copy/Cut stage a distinct registered raster owner before replacing clipboard;
+Paste reads its integrity-checked pixels before creating an independent destination.
+One transient clipboard joins document hot/cold/cache accounting and idle cooling;
+scene/session/layer invalidation and no-project-persistence rules unchanged. Failed
+adoption preserves previous copy; corrupted cold payload refuses without editor or
+history mutation. Split leaves clipboard intact. No cap/schema change or hardRSS
+bound. Existing test reads use Drawing.image; prior Paste assertion updated from
+obsolete eager representation to registered owner, retaining exact pixel check.
+
+Private107 clipboard suite205checks pass, including3new registration/cooling/
+corrupt-paste checks, frozen copy source independence, copy/cut/paste/split UndoRedo,
+prior live physics-aware history, parent/child invalidation, packed cold reader,
+preview and48frameH264 output. Private108 adaptive+cool-history cold writer35+
+reader12 and271domains pass; brush/fill/selection/transform history, manual HAS
+bytes exact, real checkpoint, bad later cold save refusal and H264AAC cue sample
+48043 pass with writer cache unavailable. This cold writer rerun does NOT test
+actual abrupt startup recovery; prior separate crash evidence remains unchanged.
+No nativeWindows/hardware/fidelity inference. Raw clipboard-owner-app/cold under
+/workspace/has-handoff-audit; curated clipboard_raster_ownership_2026-11-06.json
+and docs/clipboard_raster_ownership.md. MEM-02 partial/open for history/derived/GPU/
+global admission/dense acceptance. Whole continuous goal active.

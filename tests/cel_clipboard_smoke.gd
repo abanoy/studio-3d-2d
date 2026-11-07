@@ -44,7 +44,14 @@ func run() -> void:
 	await open_at(1,4)
 	await action(0)
 	check(app.history.size()==history and app.recovery_revision==revision and not app.cel_clipboard.clipboard.is_empty(),"Copy captures drawing without document edit or Undo command")
-	check(not is_same(app.cel_clipboard.clipboard.image,image) and app.cel_clipboard.clipboard.image.get_data_size()==8294400,"clipboard owns one independent bounded fullHD Image")
+	check(not is_same(Drawing.image(app.cel_clipboard.clipboard),image) and Drawing.image(app.cel_clipboard.clipboard).get_data_size()==8294400,"clipboard owns one independent bounded fullHD Image")
+	var copy_owner=app.cel_clipboard.clipboard.raster_owner
+	check(app.raster_budget.registered().has(copy_owner),"clipboard pixels register in the same project budget")
+	check(copy_owner.cool().get("cooled",false) and not copy_owner.is_pinned() and Storage.image_hash(Drawing.image(app.cel_clipboard.clipboard))==original,"clipboard can cool without losing frozen exact source pixels")
+	var payload: PackedByteArray=copy_owner._cold._payload.duplicate();copy_owner._cold._payload[0]=copy_owner._cold._payload[0]^1
+	await open_at(1,16);await action(2)
+	check(app.layers[1].cels.size()==1 and app.history.size()==history and paint_hash(0)==original,"corrupt cold clipboard refuses Paste before changing drawings or history")
+	copy_owner._cold._payload=payload;copy_owner=null
 	image.fill_rect(Rect2i(300,100,30,30),Color.RED);Drawing.touch(image);app.changed();var changed:=Storage.image_hash(image)
 	await open_at(1,16);check(app.cel_clipboard.menu.visible and app.cel_clipboard.menu.is_item_disabled(0) and not app.cel_clipboard.menu.is_item_disabled(2),"right-click empty range exposes Paste without a source cel")
 	await action(2)
@@ -78,11 +85,11 @@ func run() -> void:
 	# Restore source pixels, then copy them again for deterministic cold fixture.
 	var source: Image=Drawing.image(Drawing.cel_at(app.layers[1],0));source.fill_rect(Rect2i(300,100,30,30),Color.TRANSPARENT);Drawing.touch(source);app.changed()
 	check(paint_hash(0)==original,"source variation can be independently restored without touching pasted art")
-	var clipboard_hash:=Storage.image_hash(app.cel_clipboard.clipboard.image);before=app.layers[1].cels.duplicate(true)
+	var clipboard_hash:=Storage.image_hash(Drawing.image(app.cel_clipboard.clipboard));before=app.layers[1].cels.duplicate(true)
 	await open_at(1,20);await action(3)
 	check(app.layers[1].cels.size()==4 and Drawing.cel_at(app.layers[1],16).duration==4 and Drawing.cel_at(app.layers[1],20).duration==4 and paint_hash(20)==edited and paint_hash(32)==original,"splitting a later exposure preserves earlier/later peers and both initial halves")
 	app.color.color=Color.YELLOW;press.pressed=true;app.canvas_input(press,Vector2(900,300));app.paint_segment(Vector2(940,300));press.pressed=false;app.canvas_input(press,Vector2(940,300));await settled();var split_edited:=paint_hash(20)
-	check(split_edited!=edited and paint_hash(16)==edited and Storage.image_hash(app.cel_clipboard.clipboard.image)==clipboard_hash,"painting later split half preserves its left peer and pre-existing clipboard")
+	check(split_edited!=edited and paint_hash(16)==edited and Storage.image_hash(Drawing.image(app.cel_clipboard.clipboard))==clipboard_hash,"painting later split half preserves its left peer and pre-existing clipboard")
 	app.undo();app.undo();check(app.layers[1].cels==before,"later stroke and Split Undo restore exact original peers and ranges")
 	app.redo();app.redo();check(paint_hash(20)==split_edited and paint_hash(16)==edited and app.layers[1].cels.size()==4,"later Split and stroke Redo restore the independently painted half")
 	await settled();check(app.canvas.overlay.get_image().get_data()==Drawing.composite(app.layers,app.frame,1920,1080).get_data(),"actual GPU drawing preview refreshes exactly after split and stroke Redo")

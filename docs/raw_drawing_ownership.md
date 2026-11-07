@@ -14,7 +14,7 @@ eager API and small-project eager policy are unchanged.
 When raw artwork cannot compress, an idle release attempt reports `incompressible`
 and keeps both the owner and its charged bytes. It never substitutes blank pixels
 or reports a successful release. The 64 MiB target remains soft, and the 32-cel cap
-is unchanged. Standalone eager images, clipboard, history tiles, derived/GPU resources
+is unchanged. Standalone eager images, history tiles, derived/GPU resources
 and global admission remain separate accounting work.
 
 Focused checks cover two noisy independent owners, exact decoded bytes, conservative
@@ -30,3 +30,6 @@ python tests/verify_cel_raster_reader.py --isolated-display :107 --auto-open --n
 Use an owned private display; the number above is an example. Native hardware and
 Windows acceptance are not established by the cloud fixtures. See
 [recorded evidence](benchmarks/raw_drawing_ownership_2026-11-06.json).
+
+The transient clipboard now also joins shared ownership; see
+[clipboard ownership](clipboard_raster_ownership.md).
