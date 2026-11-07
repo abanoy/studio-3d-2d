@@ -995,11 +995,24 @@
           "file_sha256": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Routed complete-layer acceptance remains; preserve current documented limits.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by current committed receipts. Native/Windows/physical/artist acceptance and whole-process/GPU measurements remain separate where applicable.",
+      "evidence_review": "53 current actual layer and retention checks: four editable layers, names/order/visibility/opacity, original paint/source/world/camera independence, useful Undo/Redo, packed/recovery and exact real movie. Current actual Simple Flats creation and independent Ink/Flats painting, layer composition, unchanged source/world/camera and exact save/render evidence within207fill checks.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/layers_current_2026-11-07.json",
+          "commit": "b4083f25124d37387c71478edd74563167393a70",
+          "scope": "53 current actual layer and retention checks: four editable layers, names/order/visibility/opacity, original paint/source/world/camera independence, useful Undo/Redo, packed/recovery and exact real movie."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/fill_current_2026-11-07.json",
+          "commit": "efa099d818e7fb6649625acb7bcff0f535754edb",
+          "scope": "Current actual Simple Flats creation and independent Ink/Flats painting, layer composition, unchanged source/world/camera and exact save/render evidence within207fill checks."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -1169,11 +1182,18 @@
           "file_sha256": "d90cd4f1a32d56adc3f031d75bf8b4e10a1ba58a82c5864d1bd196f0e36e8c81"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Full current routed color/guide regression remains.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by current committed receipts. Native/Windows/physical/artist acceptance and whole-process/GPU measurements remain separate where applicable.",
+      "evidence_review": "80 current domain/editor/cold-reader checks,3container tests and16cross-runtime validation cases: project swatches, intended drawing/composite sampling, reference/source preservation, packed/linked/folder/recovery/lesson and exact movie output.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/color_current_2026-11-07.json",
+          "commit": "a92406b163902148875e7d3f03731bef5b3809ee",
+          "scope": "80 current domain/editor/cold-reader checks,3container tests and16cross-runtime validation cases: project swatches, intended drawing/composite sampling, reference/source preservation, packed/linked/folder/recovery/lesson and exact movie output."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -1256,11 +1276,30 @@
           "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Ordinary and actual400prepared-video editing/history/cold/crash/media have scoped evidence. Manual HAS PNG staging now runs on a detached worker: final400 Save call21ms/capture3.851ms, total80.022s with1898appframes and all400cold pixel hashes exact; previous target/backup/cancel/revision/context/recovery regressions pass. Registered34.7MB and separateGodotprocess HWM501.7MB do not establish whole-app/GPU bounds. long-session retention/cleanup/concurrent quota, native-device acceptance and >32preparednativeKrita input remain separate. HAS Open now validates/decodes400drawings on a private worker (23.098s/793appframes, main install111.254ms), with Cancel/corrupt/newer-edit/New transaction refusal and exact pixels/GPU composition. Direct directory/recovery loading and native runtime preparation remain main-thread work. Recovery payload retirement now bounds25changing generations to13drawing/geometry blobs each while all retained/rollback states open, with unsafe/corrupt/foreign/link/unrelated preservation. Global orphan caches and concurrent whole-root quota remain separate. Shared512MiB cross-process reservations now pass180quota/recovery and70nested/crash/media checks. Unknown owners stay reserved; proven exited incarnations release reservations without deleting data. Whole-process/GPU/native/device and arbitrary orphan lifecycle coverage remain separate.",
-      "evidence_review": "Newactual400preparedvideo source/job/cache-offline softwareproof plus priorordinary400cases, scopedmemorycounter and processmeasurements; manualSave76s synchronousstage and broaderremainingwork preventwhole-itemclosure.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by current committed receipts. Native/Windows/physical/artist acceptance and whole-process/GPU measurements remain separate where applicable.",
+      "evidence_review": "205 current clipboard/history checks including actual pixel edits and exact Undo/Redo, bounded cel patches and preserved identity/generation/body positions of independent running physics. 48 timing edits charge24576bytes, duration-only command512bytes, exact image identity and parent/child Undo/Redo within161current timing/persistence/recovery checks. Current12cold-drawing layer deletion charges9802retained raster bytes, preserves preceding useful brush Undo and restores exact art; ordinary layer/media checks pass. History has64MiB soft/128entry policy with one large command retained; registered raster admission separate. No whole-process/GPU/transient or physical-device bound claimed.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/cel_clipboard_current_2026-11-07.json",
+          "commit": "c4ad3fe581aac144cf81a17168bfc98dbf2ab796",
+          "scope": "205 current clipboard/history checks including actual pixel edits and exact Undo/Redo, bounded cel patches and preserved identity/generation/body positions of independent running physics."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/cel_timing_current_2026-11-07.json",
+          "commit": "8d74c1a7d42aa532f9c86e69552d7f73dca22ce7",
+          "scope": "48 timing edits charge24576bytes, duration-only command512bytes, exact image identity and parent/child Undo/Redo within161current timing/persistence/recovery checks."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/layers_current_2026-11-07.json",
+          "commit": "b4083f25124d37387c71478edd74563167393a70",
+          "scope": "Current12cold-drawing layer deletion charges9802retained raster bytes, preserves preceding useful brush Undo and restores exact art; ordinary layer/media checks pass. History has64MiB soft/128entry policy with one large command retained; registered raster admission separate. No whole-process/GPU/transient or physical-device bound claimed."
+        }
+      ],
       "external_dependencies": []
     },
     {
