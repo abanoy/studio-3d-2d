@@ -27,7 +27,7 @@ func portable(world: Dictionary) -> Dictionary:
 	return result
 func run() -> void:
 	var folder: String=OS.get_cmdline_user_args()[0]
-	var app=load("res://main.tscn").instantiate();tested_app=app;app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();tested_app=app;app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	var map:=folder.path_join("map.glb");var actor:=folder.path_join("actor.glb")
 	check(SceneIO.make_fixture(map)==OK and SceneIO.make_pose_fixture(actor)==OK,"create original standard fixtures")
