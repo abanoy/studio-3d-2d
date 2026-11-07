@@ -54,8 +54,8 @@
       ],
       "title": "Simple and Advanced share one document",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Switching UI detail preserves scene, timeline, camera, effective parameters and output; common tasks remain usable in Simple.",
       "evidence": [
         {
@@ -69,9 +69,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/responsive_workspace_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/core_interface_2026-11-07.json",
+          "commit": "a43a0945564d25780089dad7c2bdfbf2bfcc5411",
+          "scope": "Actual Simple/Advanced button interactions preserve temporary camera, frame, Undo, hidden FOV/interpolation and audio gain/trim, source/cel bytes and exact final pixels; responsive workspace and ordinary recording/package regressions cover common tasks. Physical/novice/Windows gates remain separate."
         }
       ],
-      "remaining": "Full routed workflow and novice observation remain. Responsive World/view/physics docks fix reproduced1200x760 and125percent overflow.156timeline/workspace/channel,65recording and74asset-package current checks pass; original bounds assertion and exact output preserved. See responsive_workspace_2026-11-07.json.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -82,8 +88,8 @@
       ],
       "title": "Home, recent projects and tutorials",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Home opens New, Tutorials and real recent projects with available thumbnails and actionable missing-file feedback.",
       "evidence": [
         {
@@ -93,9 +99,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/home.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/core_interface_2026-11-07.json",
+          "commit": "a43a0945564d25780089dad7c2bdfbf2bfcc5411",
+          "scope": "46current Home/startup checks cover New/Open/Tutorials/recent paths, committed preview thumbnails, missing-file handling, source hashes and ordinary startup with/without pending recovery."
         }
       ],
-      "remaining": "Fresh complete Home interaction acceptance remains.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -107,8 +119,8 @@
       ],
       "title": "Empty world and editor grid",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "New starts black with a fading white floor grid, no selected object, bottom timeline and hierarchy; the grid is excluded from final output.",
       "evidence": [
         {
@@ -118,9 +130,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/voice_addendum_audit.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/core_interface_2026-11-07.json",
+          "commit": "a43a0945564d25780089dad7c2bdfbf2bfcc5411",
+          "scope": "20current default-scene checks cover empty black startup, no placeholder/selected actor, timeline/hierarchy, fading editor grid excluded from final output, background persistence/invalid-setting refusal and real48frame1080p24H264 export."
         }
       ],
-      "remaining": "Fresh routed empty-world/export gate remains.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -689,8 +707,8 @@
       ],
       "title": "Timeline navigation and waveforms",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Zoom/pan/seek share a ruler and frame mapping, labels stay fixed, scroll-to-playhead works and sound waveforms remain aligned.",
       "evidence": [
         {
@@ -704,9 +722,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/responsive_workspace_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/responsive_workspace_2026-11-07.json",
+          "commit": "024e91ea3c59e5b150557e02ec33e3435b995ea9",
+          "scope": "42domain+34actual timeline checks verify shared zoom/pan/seek mapping, fixed labels, late neighboring-frame targets, scroll-to-playhead, waveform selection/drag/trim and floating/parent-child view resets;46workspace+34channel/media checks preserve output and accessibility."
         }
       ],
-      "remaining": "Dense-project responsiveness and physical input acceptance remain. Responsive World/view/physics docks fix reproduced1200x760 and125percent overflow.156timeline/workspace/channel,65recording and74asset-package current checks pass; original bounds assertion and exact output preserved. See responsive_workspace_2026-11-07.json.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -1333,8 +1357,8 @@
       ],
       "title": "Explicit Local and World capture",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Visible explicit recording captures only selected Local bodies or all relevant World bodies; committed motion reproduces in seek/save/export and cancellation is safe.",
       "evidence": [
         {
@@ -1344,9 +1368,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/physics_recording.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/responsive_workspace_2026-11-07.json",
+          "commit": "024e91ea3c59e5b150557e02ec33e3435b995ea9",
+          "scope": "17recording-domain+48actual-app checks verify explicit selected Local/relevant World capture, contacts, velocity, safe cancellation, Undo/persistence/replay and real48frame1080p24H264/AAC with1.0000417s audio onset. Native ecosystem/physical target scenario gates remain separate; compression algorithm remains optional."
         }
       ],
-      "remaining": "Native cross-ecosystem scenarioD acceptance remains; compression algorithm is a separate suggestion.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {

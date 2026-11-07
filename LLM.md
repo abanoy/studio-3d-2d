@@ -3489,3 +3489,15 @@ focus/capture/remap/freshprefs/invalidprefs/personalkeysabsentHAS. No physical
 audio/input/GPU/Windows/novice/native fidelity claim. Coreinterface receipt added.
 Next audit full software conditions against these committed receipts; native
 installed-host question remains pending while independent work continues.
+
+
+## 2026-11-07 UTC — five complete software acceptance closures
+
+Reviewed exact current conditions and committed receipts: UI-01/UI-02/WORLD-01
+close from a43a094 coreinterface/Home evidence; TIME-04 and PHYS-02 close from
+024e91e timeline/workspace/recording evidence. Explicit camera/hiddenparameter/
+pixel preservation, Home paths/previews/startup, empty black world/grid/final
+export, ruler/track/waveform mapping and explicit Local/World record/replay/cancel
+conditions are covered. Native/Windows/device/novice gates are not promoted.
+Formal10/62(16.13%); implementation51/54(94.44%) unchanged. Final responsive-UI
+IK/crouch and grouped locomotion gates now running; no premature closures.
