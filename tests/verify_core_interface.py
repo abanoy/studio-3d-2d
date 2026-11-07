@@ -10,7 +10,7 @@ def main():
  if os.name!='nt':
   if sys.platform!='linux' or not o.isolated_display:p.error('Explicit private display required; no shared fallback')
   configure_private_display(o.isolated_display)
- folder=o.output.resolve();folder.mkdir(parents=True,exist_ok=False);fixtures=ROOT/'output/fixtures';fixtures.mkdir(exist_ok=True);voice=fixtures/'voice — тест.wav'
+ folder=o.output.resolve();folder.mkdir(parents=True,exist_ok=False);fixtures=ROOT/'output/fixtures';fixtures.mkdir(parents=True,exist_ok=True);voice=fixtures/'voice — тест.wav'
  if not voice.exists():
   pcm=array.array('h',(round(16000*math.sin(2*math.pi*1000*n/44100)) for n in range(22050)))
   if sys.byteorder!='little':pcm.byteswap()
