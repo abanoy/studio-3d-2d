@@ -198,7 +198,7 @@ func _process(_delta: float) -> void:
 			if is_instance_valid(_progress_label):_progress_label.text="Loading and checking project drawings…\n"+str(pending.path)
 			return
 		result={"ok":false,"error":why}
-	elif pending.action=="unpack":result={"ok":false,"error":result.get("error","Project opening cancelled or document changed. Current project preserved.")}
+	elif pending.action=="unpack" and result.get("ok",false):result={"ok":false,"error":"Project opening cancelled or document changed. Current project preserved."}
 	pid=-1;app.exporting=false
 	if is_instance_valid(progress):progress.hide();progress.queue_free()
 	if not result.get("ok",false):
