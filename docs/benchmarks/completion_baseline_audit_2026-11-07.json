@@ -1055,11 +1055,24 @@
           "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Full native scenarioC and artist acceptance remain; extra per-key fades are not silently required.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, physical audible/device synchronization, subjective artist review and Windows observations remain separate gates where applicable.",
+      "evidence_review": "47 current post-Solo actual visibility checks: late presence, persistent OFF across later pieces, parent inheritance, held/bridged gaps, default300ms/zero fade, packed/recovery and exact preview/movie with synchronized AAC. Optional native fixtures explicitly skipped. Current all-seven-step scenarioC verifies late introduction, moved/split clips, held gaps and explicit OFF together with source-offline cold replay and exact movie/cuts.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_media_visibility_current_2026-11-07.json",
+          "commit": "d657472648825ff41021be96e2ff7f3648901936",
+          "scope": "47 current post-Solo actual visibility checks: late presence, persistent OFF across later pieces, parent inheritance, held/bridged gaps, default300ms/zero fade, packed/recovery and exact preview/movie with synchronized AAC. Optional native fixtures explicitly skipped."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/camera_current_2026-11-07.json",
+          "commit": "590d914060ee0d075ac6861f45cf589fc80aa885",
+          "scope": "Current all-seven-step scenarioC verifies late introduction, moved/split clips, held gaps and explicit OFF together with source-offline cold replay and exact movie/cuts."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -1474,11 +1487,24 @@
           "file_sha256": "de491daada16177ffdaf203b11423549494d4248c447da0395ef9afbef77e88a"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Full current media fault/relink matrix remains.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, physical audible/device synchronization, subjective artist review and Windows observations remain separate gates where applicable.",
+      "evidence_review": "Required Solo implemented and verified with38domain/25cross-runtime/22writer/22cold-reader checks plus30HAS tests: multiple solos, mute authoritative, gain/fade/end-trim coexistence, scene-local nested semantics, one-step Undo/Redo, strict version5 packed/linked/recovery and source/cache-offline exact PCM/decoded AAC. Actual current WAV/MP3/Ogg preparation/import, captured request frame, source-preserving cancel/stale/missing decoder/bad input/overlong refusal and retry, exact Undo/packed/linked, normalized PCM and independent decoded stereo AAC levels/offsets.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_solo_current_2026-11-07.json",
+          "commit": "119c3a6a0564cf980a7afd698ba48b1424987984",
+          "scope": "Required Solo implemented and verified with38domain/25cross-runtime/22writer/22cold-reader checks plus30HAS tests: multiple solos, mute authoritative, gain/fade/end-trim coexistence, scene-local nested semantics, one-step Undo/Redo, strict version5 packed/linked/recovery and source/cache-offline exact PCM/decoded AAC."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_media_visibility_current_2026-11-07.json",
+          "commit": "d657472648825ff41021be96e2ff7f3648901936",
+          "scope": "Actual current WAV/MP3/Ogg preparation/import, captured request frame, source-preserving cancel/stale/missing decoder/bad input/overlong refusal and retry, exact Undo/packed/linked, normalized PCM and independent decoded stereo AAC levels/offsets."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -1511,11 +1537,30 @@
           "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Physical output-device sync/latency and complete fault matrix remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, physical audible/device synchronization, subjective artist review and Windows observations remain separate gates where applicable.",
+      "evidence_review": "Current43sparse/multi/nested domain checks include24fps and30000/1001, offsets/loops without duplication, exact PCM after packed/linked/recovery/lesson, actual fade levels and silence in decoded AAC; Solo uses the same scene-composed preview/export bytes. Actual AudioStreamPlayer bus capture and explicit Dummy-driver fallback, exact reopened mix, independent WAV/MP3/stereoOgg offsets and absent early/wrong-channel leakage in AAC. Engine capture is explicitly not a physical audio-device measurement. Committed current project settings/rational-rate matrix verifies actual encoded media and alignment across supported rates/sizes; hardware/subjective listening remains under the separate physical gate.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_solo_current_2026-11-07.json",
+          "commit": "119c3a6a0564cf980a7afd698ba48b1424987984",
+          "scope": "Current43sparse/multi/nested domain checks include24fps and30000/1001, offsets/loops without duplication, exact PCM after packed/linked/recovery/lesson, actual fade levels and silence in decoded AAC; Solo uses the same scene-composed preview/export bytes."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_media_visibility_current_2026-11-07.json",
+          "commit": "d657472648825ff41021be96e2ff7f3648901936",
+          "scope": "Actual AudioStreamPlayer bus capture and explicit Dummy-driver fallback, exact reopened mix, independent WAV/MP3/stereoOgg offsets and absent early/wrong-channel leakage in AAC. Engine capture is explicitly not a physical audio-device measurement."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/settings_matrix_2026-11-07.json",
+          "commit": "56bb6ea7c8bce5d43a644f2ca84c23953491d364",
+          "scope": "Committed current project settings/rational-rate matrix verifies actual encoded media and alignment across supported rates/sizes; hardware/subjective listening remains under the separate physical gate."
+        }
+      ],
       "external_dependencies": []
     },
     {
