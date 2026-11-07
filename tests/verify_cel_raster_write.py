@@ -8,6 +8,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--isolated-display',help='Linux: explicitly provisioned private display')
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--cool-history',action='store_true')
     parser.add_argument('--adaptive-open',action='store_true',help='Use staged normal adaptive directory/HAS loading instead of fixture injection')
     options=parser.parse_args()
     if os.name!='nt':
@@ -19,7 +20,7 @@ def main():
     (folder/'domain.log').write_text(domain.stdout+domain.stderr,encoding='utf-8');assert domain.returncode==0,domain.stdout+domain.stderr
     reports={};receipts=[]
     def run(label,marker,extra=()):
-        args=command('tests/cel_raster_write_smoke.gd',extra=(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(folder/(label+'-engine.log')),'--',str(folder),*(['--adaptive-open'] if options.adaptive_open else []),*extra])
+        args=command('tests/cel_raster_write_smoke.gd',extra=(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(folder/(label+'-engine.log')),'--',str(folder),*(['--adaptive-open'] if options.adaptive_open else []),*(['--cool-history'] if options.cool_history else []),*extra])
         result=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=380,**flags);log=result.stdout+result.stderr;(folder/(label+'.log')).write_text(log,encoding='utf-8')
         assert result.returncode==0 and marker in log and not any(s in log for s in ['ERROR:','FAIL ','ObjectDB instances leaked']),log
         reports[label]=json.loads(next(s[len(marker):] for s in log.splitlines() if s.startswith(marker)));assert reports[label]['failures']==0

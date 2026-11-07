@@ -2035,3 +2035,38 @@ peak/RSS/GPU or noise compression claims. Source assets preserved.
 MEM-02 remains partial/open. Next edited-owner/pixel-history migration and global
 dense-project budgeting before any cap expansion; default cold opening alone does
 not close scalability. Full goal active, not complete or externally blocked.
+
+
+2026-11-06 — owner-addressed pixel history and explicit safe cooling (MEM partial)
+
+App push_history promotes pixel commands only for one unambiguous active owner,
+retaining owner/scene/tiles instead of writable Image. Legacy eager Image commands
+remain compatible. Apply checks scene/live target and every tile before pin/write;
+malformed/empty/out-of-canvas commands refuse atomically. Drawing history still
+avoids physics reset. All brush/fill/selection/transform producers pass through
+this common path. No format, cap or source-asset change.
+
+Owner now retains logical revision across explicit cool/rehydration. cool captures
+exact compressed content only with shared cache and no external Image references;
+legacy history, active stroke/selection or caller handles conservatively block it.
+Incompressible sources remain hot. Shared cache retained for later rehydration.
+Rehydrated read images carry saved revision, so verified selection adoption works
+after nonzero-revision cooling. Native refcount probe confirmed member-only1 versus
+external2; guard checks internal1. No automatic idle scheduling in this increment.
+
+19new domain checks pass,195combined. Exact RGBA through repeated cool/Undo/Redo,
+wrong scene/missing target refusal without hydration, late invalid tiles atomic,
+empty/mixed command refusal, legacy behavior, nonzero selection revision and weak
+proof old full Image dies. Original owner22checks still pass, including strong
+legacy pixel-image identity behavior. Actual opt-in GUI writer35+fresh reader12
+pass with history present during cool, exact post-cool Undo/Redo, all4pixel-tool
+commands owner-addressed, normal packed/save/checkpoint/movie and late refusal.
+Existing154legacy clipboard/history/private GPU/movie checks pass. Manual HAS
+unchanged; writer cache unavailable before fresh reader. All graphics106/Dummy.
+Proof cel-pixel-history-domain-final,cel-pixel-history-live andcel-pixel-history-legacy
+under /workspace/has-handoff-audit; curated docs/benchmarks/cel_pixel_history_2026-11-06.json.
+
+MEM-01/02 partial/open. Next bounded idle release and global hot/edited-owner
+accounting, then remaining creation/deletion/layer snapshots/dense acceptance
+before raising32cel cap. No peak/RSS/GPU, hardware/native or full-goal claim.
+Full goal remains active and independently actionable.

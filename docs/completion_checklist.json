@@ -797,9 +797,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/cel_patch_history.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/cel_pixel_history.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_pixel_history_2026-11-06.json"
         }
       ],
-      "remaining": "Cut/Paste/Split now retain only affected cels and pass near-limit/live/cold/movie checks. Audit other creation/deletion/whole-layer snapshot paths; larger unique-art cold/lazy loading remains MEM-02. This item stays partial.",
+      "remaining": "Clipboard deltas and owner-addressed pixel history are verified with legacy compatibility and explicit cooling. Remaining cel creation/deletion/layer snapshot accounting, global active/history memory budgets and dense-project acceptance remain; do not treat scoped history tests as full closure.",
       "external_dependencies": []
     },
     {
@@ -891,9 +899,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_raster_policy_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "src/cel_pixel_history.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/cel_pixel_history_2026-11-06.json"
         }
       ],
-      "remaining": "Automatic64MiB root+child policy verified: larger sparse projects use cold snapshots, small/noisy sources preserve eager behavior, normal Open/edit/save/abrupt startup and nested evidence pass. Edited owners remain hot under legacy pixel Undo; global dense-project budgeting and cap expansion remain incomplete. Preserve hardware/native gates and measured cold seek tradeoff.",
+      "remaining": "Automatic64MiB cold loading verified. Owned pixel commands now retain logical owner/tiles and support explicit lossless cooling with exact Undo/Redo and borrowed-image guards. Automatic idle edited-owner release and global dense-project budgeting remain incomplete before any cap expansion; preserve measured latency and hardware/native gates.",
       "external_dependencies": []
     },
     {
@@ -2060,7 +2076,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Automatic cold loading is enabled above64MiB reserve with verified compatibility. Next migrate edited-owner/pixel-history ownership and global dense-project budgets before raising caps."
+      "action": "Owner-addressed pixel history can safely rehydrate edited rasters. Implement bounded idle release/global hot accounting with borrow guards and measured edited-project behavior before raising caps."
     },
     {
       "requirement": "MEM-01",

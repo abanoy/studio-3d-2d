@@ -15,7 +15,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 ## Next required work
 
 - **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
-- **P1 · MEM-02** — Automatic cold loading is enabled above64MiB reserve with verified compatibility. Next migrate edited-owner/pixel-history ownership and global dense-project budgets before raising caps.
+- **P1 · MEM-02** — Owner-addressed pixel history can safely rehydrate edited rasters. Implement bounded idle release/global hot accounting with borrow guards and measured edited-project behavior before raising caps.
 - **P1 · MEM-01** — Clipboard deltas are implemented. Audit remaining cel-creation/deletion/layer history after the larger OUTPUT-02/MEM-02 gaps; do not re-polish the completed clipboard change.
 - **P1 · STORE-04** — Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit.
 - **P2 · COURSE-01** — Organize Basic/Advanced sections and supported topic entry points; retain versioned progress and unresolved Skip policy.

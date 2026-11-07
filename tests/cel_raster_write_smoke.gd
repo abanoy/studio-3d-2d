@@ -47,6 +47,13 @@ func run() -> void:
 	check(stroke!=original[0] and layer.cels[0].raster_owner.is_pinned() and not layer.cels[1].raster_owner.is_pinned(),"actual brush pins only edited cold cel")
 	cache.clear();app.undo();await settled();check(digest(0)==original[0] and is_same(Drawing.image(layer.cels[0]),stroke_image),"actual brush Undo retains authoritative identity after cache eviction")
 	app.redo();await settled();check(digest(0)==stroke,"actual brush Redo restores edited pixels")
+	if "--cool-history" in OS.get_cmdline_user_args():
+		check(app.history[-1].has("raster_owner") and not app.history[-1].has("image"),"actual pixel history retains owner rather than hot Image")
+		stroke_image=null;var before_cool: Array=layer.cels[0].raster_owner.token();var cooled: Dictionary=layer.cels[0].raster_owner.cool()
+		check(cooled.get("cooled",false) and not layer.cels[0].raster_owner.is_pinned() and layer.cels[0].raster_owner.token()==before_cool,"actual edited cel cools with Undo history present and revision unchanged")
+		cache.clear();app.undo();await settled();check(digest(0)==original[0],"actual Undo rehydrates cooled edited pixels")
+		app.redo();await settled();check(digest(0)==stroke,"actual Redo restores authored pixels after cooling")
+
 	app.set_frame(12);app.tool.select(2);app.color.color=Color.RED;app.fill_editor.sample_visible.button_pressed=false;app.fill_editor.start(Vector2(450,250))
 	while app.fill_editor.busy():await process_frame
 	await settled();if not app.fill_editor.pending.is_empty():app.fill_editor.apply_pending();await settled()
@@ -71,6 +78,8 @@ func run() -> void:
 	check(Drawing.image(layer.cels[3]).get_data()==transformed_bytes and transformed!=original[3],"transform Apply commits exact worker pixels through authoritative owner")
 	app.undo();await settled();check(digest(36)==original[3],"transform Undo restores original cold pixels")
 	app.redo();await settled();check(digest(36)==transformed,"transform Redo restores exact committed pixels")
+	if "--cool-history" in OS.get_cmdline_user_args():check(app.history.filter(func(command):return command.type=="pixels").all(func(command):return command.has("raster_owner") and not command.has("image")),"brush/fill/selection/transform pixel histories all retain logical owners")
+
 	app.set_frame(40);await menu(40,0);check(not layer.cels[4].raster_owner.is_pinned() and Snapshot.digest(app.cel_clipboard.clipboard.image.get_data())==original[4],"actual Copy preserves cold owner and freezes exact clipboard pixels")
 	await menu(40,1);check(Drawing.cel_at(layer,40).is_empty(),"actual Cut removes cold source through affected-cel history")
 	app.undo();await settled();check(digest(40)==original[4] and not layer.cels[4].raster_owner.is_pinned(),"Cut Undo restores exact unpinned cold owner")

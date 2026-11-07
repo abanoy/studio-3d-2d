@@ -3,6 +3,7 @@ signal movie_export_finished(folder: String,success: bool)
 signal startup_recovery_finished(result: Dictionary)
 const Timeline = preload("res://src/timeline.gd")
 const Drawing = preload("res://src/drawing.gd")
+const PixelHistory=preload("res://src/cel_pixel_history.gd")
 const FillEditor=preload("res://src/fill_editor.gd")
 const OnionEditor=preload("res://src/onion_editor.gd")
 const LayerEditor=preload("res://src/layer_editor.gd")
@@ -1211,6 +1212,7 @@ func finish_stroke() -> void:
 	previous_pressure=-1
 
 func push_history(command: Dictionary) -> void:
+	PixelHistory.promote(command,layers,sequence_editor.active_owner if sequence_editor else "")
 	command["sequence_stamp"]=Time.get_ticks_usec()
 	if command.type in ["model","world_object","world_objects","world"]:
 		# Charge serialized snapshots conservatively; native metadata is copied too.
@@ -1246,12 +1248,8 @@ func apply_command(command: Dictionary, side: String) -> bool:
 	if not drawing_command:physics_editor.clear();physics_editor.clear_previews()
 	var view: Dictionary=renderer.view_state()
 	if command.type == "pixels":
-		var damage:=Rect2i()
-		for pos in command[side]:
-			var image: Image = command[side][pos]
-			command.image.blit_rect(image, Rect2i(Vector2i.ZERO, image.get_size()), pos)
-			var tile:=Rect2i(pos,image.get_size());damage=damage.merge(tile) if damage.has_area() else tile
-		Drawing.touch(command.image,damage)
+		var applied:=PixelHistory.apply(command,side,layers,sequence_editor.active_owner if sequence_editor else "")
+		if applied.has("error"):message(applied.error);return false
 	elif command.type in ["cel_timing","cel_exposure"]:
 		var error: String=cel_timing.apply_command(command,side)
 		if not error.is_empty():message(error);return false

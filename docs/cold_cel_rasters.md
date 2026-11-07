@@ -34,9 +34,10 @@ Caller/history-held images, derived preview/opacity images and GPU textures are
 outside that count; it is not a whole-app memory bound.
 
 A cold read does not pin editable pixels. Brush contact, fill commit and selection/
-transform Apply explicitly pin one authoritative Image. Pixel Undo retains that
-exact Image identity across cache eviction. Edited owners stay hot while legacy
-pixel commands can mutate them. Selection adopts borrowed pixels only with the
+transform Apply explicitly pin one authoritative Image. Owned pixel Undo commands retain the logical owner, scene address and tiles,
+rather than a live Image pointer. They preserve writable identity while hot and
+can rehydrate exact content after explicit cooling. Legacy Image commands remain
+compatible and keep their strong pointer. Selection adopts borrowed pixels only with the
 current token and exact format/dimensions/content. Zero-pressure presses and
 previews do not pin cold sources. Clipboard copies/right halves remain independent.
 
@@ -93,7 +94,7 @@ The display number is an example, not shared-desktop authorization. Windows uses
 the existing private-desktop launcher. Source-hashed scoped receipts are in
 [benchmarks](benchmarks/cel_raster_policy_2026-11-06.json).
 
-The176 domain checks include ownership, cache bounds, exact alpha/color, corruption,
+The195 domain checks include ownership, cache bounds, exact alpha/color, corruption,
 non-hydrating accounting, streamed-save refusal and64MiB boundaries. The independent
 16-case PNG corpus passes eager/adaptive (gray/indexed/RGB/GA/RGBA,8/16bit,gamma/sRGB,
 Adam7). The automatic32cel suite passes78checks including actual SIGKILL and normal
@@ -131,3 +132,26 @@ These are scoped CPU allocation/time results, not peak/RSS/GPU, hardware, noisy-
 or artist-comfort certification. Cold seeks are slower; the small-project eager
 policy preserves their existing path. Edited-owner/global dense-project budgets,
 higher caps and device/native acceptance remain unfinished. MEM-02 stays partial.
+
+## Edited-owner history and safe release
+
+App history promotes a pixel command only when exactly one active owner holds its
+Image. Owner-addressed Undo validates the current scene and unique live target,
+checks every tile before pinning/writing, and refuses malformed/empty/out-of-bounds
+history atomically. Eager legacy commands keep their existing Image behavior.
+
+`CelRasterOwner.cool()` can now capture edited pixels without changing logical
+identity or revision, then release the full Image. It refuses while any external
+Image handle remains (active stroke/selection or unpromoted legacy history), when
+there is no shared cache, or when pixels are incompressible. Decoded borrowed
+images carry the saved revision, so a later verified selection can adopt them.
+Weak-reference tests confirm the old Image actually dies. Undo/Redo can rehydrate
+and cool repeatedly with exact RGBA; wrong-scene or missing targets do not hydrate.
+
+This release is an internal primitive, not yet an automatic edited-owner budget.
+The app now stores owner-addressed pixel commands for owned cels, but automatic
+idle scheduling/global hot accounting still needs implementation and measurement.
+No resource cap is raised. The 35-check explicit cold editing writer/12-check fresh
+reader verifies real cooling with Undo present and all four pixel-edit tools;
+existing154legacy GUI history checks also pass. See
+[the pixel-history receipt](benchmarks/cel_pixel_history_2026-11-06.json).
