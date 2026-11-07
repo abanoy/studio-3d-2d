@@ -38,7 +38,7 @@ func run() -> void:
 			check(app.has_project.path==folder.path_join("Masks "+mode+".has") and editor.graph.get("format")==Graph.MASK_FORMAT and editor.graph.clips.size()==2 and editor.graph.clips.all(crop_mask),"cold "+mode+" HAS retains exact masks on split clips")
 			editor.show_panel();await settle();var history: int=app.history.size();await apply_panel("Apply mask");editor.close_panel();check(app.history.size()==history,"cold whole-number JSON mask remains unchanged on inspector Apply")
 			var image: Image=await picture();check(absf(image.get_pixel(825,450).a-.25)<.015 and image.get_pixel(875,450).a==0 and image.get_pixel(995,450).a==0,"cold mask and shadow reproduce clipped silhouette")
-			check(Storage.image_hash(editor.graph.assets[0].scene.layers[1].cels[0].image)==expected.source and app.audio_mix.pcm==Marshalls.base64_to_raw(expected.audio),"cold reopen retains full editable source artwork and exact child sound")
+			check(Storage.image_hash(Drawing.image(editor.graph.assets[0].scene.layers[1].cels[0]))==expected.source and app.audio_mix.pcm==Marshalls.base64_to_raw(expected.audio),"cold reopen retains full editable source artwork and exact child sound")
 		check(app.restore_checkpoint({"folder":folder.path_join("mask-recovery/test"),"manifest":"project.json","recovery":true}),"ordinary recovery restores graph3 masks and source assets")
 		var recovered: Image=await picture();check(recovered.get_pixel(875,450).a==0 and app.audio_mix.pcm==Marshalls.base64_to_raw(expected.audio),"recovery keeps cropped appearance and synchronized editable audio")
 		print("SEQUENCE_MASKS_READ ",JSON.stringify({"checks":checks,"failures":failures}));await app.quit_studio();quit(0 if failures==0 else 1);return

@@ -1,4 +1,5 @@
 extends SceneTree
+const Drawing=preload("res://src/drawing.gd")
 const Graph=preload("res://src/sequence_graph.gd")
 const Recovery=preload("res://src/recovery.gd")
 const Storage=preload("res://src/storage.gd")
@@ -33,7 +34,7 @@ func run() -> void:
 	var parent: Dictionary=app.current_world().duplicate(true);var shots: Array=app.keys.duplicate(true)
 	var id: String=editor.new_sequence("Shadow artwork");check(not id.is_empty() and editor.enter(id).is_empty(),"create actual editable child for compositing")
 	app.mode.select(0);app.change_mode(0);app.active_layer=1;app.refresh_layer();app.create_cel(false)
-	var cel: Dictionary=app.layers[1].cels[0];cel.duration=48;cel.image.fill_rect(Rect2i(800,400,100,100),Color(1,0,0,.5));app.changed();var pixels: PackedByteArray=cel.image.get_data()
+	var cel: Dictionary=app.layers[1].cels[0];cel.duration=48;Drawing.image(cel).fill_rect(Rect2i(800,400,100,100),Color(1,0,0,.5));Drawing.touch(Drawing.image(cel));app.changed();var pixels: PackedByteArray=Drawing.image(cel).get_data()
 	editor.return_to_parent();await settle();var clip: Dictionary=editor.graph.clips[0]
 	var keys: Array=clip.keys.duplicate(true);keys[0].opacity=.5;check(editor.change_clip(clip.id,{"keys":keys}).is_empty(),"placement opacity stays independent of source artwork")
 	var before: Image=await picture();check(before.get_pixel(970,450).a==0 and absf(before.get_pixel(850,450).a-.25)<.015,"legacy graph has no shadow and correct source alpha")
@@ -42,7 +43,7 @@ func run() -> void:
 	check(editor.change_shadow(clip.id,style).is_empty() and editor.graph.format==Graph.SHADOW_FORMAT,"applying shadow explicitly promotes graph and fills clip styles")
 	var shadowed: Image=await picture();var shadow:=shadowed.get_pixel(970,450)
 	check(shadow.r<.01 and shadow.g<.01 and shadow.b<.01 and absf(shadow.a-.125)<.015,"actual shadow multiplies source alpha, style opacity and placement opacity once")
-	check(shadowed.get_pixel(850,450)==before.get_pixel(850,450) and cel.image.get_data()==pixels,"shadow leaves source picture and editable source pixels unchanged")
+	check(shadowed.get_pixel(850,450)==before.get_pixel(850,450) and Drawing.image(cel).get_data()==pixels,"shadow leaves source picture and editable source pixels unchanged")
 	shadowed.save_png(folder.path_join("hard-shadow.png"))
 	app.undo();await settle();var undone: Image=await picture();check(editor.graph.format==Graph.FORMAT and undone.get_data()==before.get_data(),"one Undo restores old graph version and exact original pixels")
 	app.redo();await settle();var redone: Image=await picture();check(redone.get_data()==shadowed.get_data(),"Redo restores shadow without flattening the child")
@@ -71,7 +72,7 @@ func run() -> void:
 	editor.remove_clip(editor.graph.clips[-1].id);editor.remove_asset(extra)
 	check(editor.copy_clip(clip.id).is_empty() and editor.paste_clip().is_empty() and editor.graph.clips[-1].shadow==style,"copy/paste retains independent shadow parameters")
 	editor.remove_clip(editor.graph.clips[-1].id)
-	check(app.current_world()==parent and app.keys==shots and cel.image.get_data()==pixels,"all style operations preserve parent world, camera and child source pixels")
+	check(app.current_world()==parent and app.keys==shots and Drawing.image(cel).get_data()==pixels,"all style operations preserve parent world, camera and child source pixels")
 	for mode in ["packed","linked"]:
 		app.has_project.save_file(folder.path_join("Shadow "+mode+".has"),mode);await job();check(FileAccess.file_exists(folder.path_join("Shadow "+mode+".has")),"ordinary "+mode+" HAS saves style and editable child")
 	var snapshot: Dictionary=app.project_snapshot();var error:=Recovery.checkpoint(folder.path_join("shadow-recovery"),"test",snapshot.video,snapshot.camera_keys,snapshot.layers,"",0,snapshot.audio,"",app.recovery_revision,{},snapshot.world,snapshot.palette,snapshot.sequence_graph)
