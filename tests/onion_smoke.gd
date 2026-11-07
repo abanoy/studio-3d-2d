@@ -48,7 +48,7 @@ func run() -> void:
 	var final_before: Image=await app.renderer.capture(app.keys,app.layers,18,true)
 	app.onion_editor.enabled.button_pressed=true;await settled()
 	check(app.onion_editor.views[0].visible and app.onion_editor.views[1].visible,"Simple toggle shows two actual GPU ghost drawings")
-	check(app.onion_editor.views[0].texture.get_image().get_data()==app.layers[1].cels[0].image.get_data() and app.onion_editor.views[1].texture.get_image().get_data()==app.layers[1].cels[2].image.get_data(),"guides bind exact unmodified source alpha textures")
+	check(app.onion_editor.views[0].texture.get_image().get_data()==Drawing.image(app.layers[1].cels[0]).get_data() and app.onion_editor.views[1].texture.get_image().get_data()==Drawing.image(app.layers[1].cels[2]).get_data(),"guides bind exact unmodified source alpha textures")
 	var screen: Image=root.get_texture().get_image();screen.save_png(folder.path_join("onion.png"))
 	check(sample(screen,Vector2(470,370))!=sample(baseline,Vector2(470,370)) and sample(screen,Vector2(1370,370))!=sample(baseline,Vector2(1370,370)),"previous and next opaque-black source marks become visible tinted screen guides")
 	check(sample(screen,Vector2(970,570))==sample(baseline,Vector2(970,570)),"current opaque drawing remains exactly above the ghosts")
@@ -66,7 +66,7 @@ func run() -> void:
 	app.tool.select(0);app.color.color=Color.WHITE;click(Vector2(1100,700));await settled()
 	check(app.onion_editor.uploads==uploaded,"painting the current cel does not reupload unchanged neighboring rasters")
 	app.set_frame(0);click(Vector2(600,300));app.set_frame(18);await settled();uploaded=app.onion_editor.uploads
-	app.undo();await settled();check(app.onion_editor.uploads==uploaded+1 and app.onion_editor.views[0].texture.get_image().get_data()==app.layers[1].cels[0].image.get_data(),"Undo of an earlier drawing invalidates only its ghost texture")
+	app.undo();await settled();check(app.onion_editor.uploads==uploaded+1 and app.onion_editor.views[0].texture.get_image().get_data()==Drawing.image(app.layers[1].cels[0]).get_data(),"Undo of an earlier drawing invalidates only its ghost texture")
 	app.redo();await settled();check(app.onion_editor.uploads==uploaded+2,"Redo refreshes the edited neighbor without rebuilding its peer")
 	app.onion_editor.opacity.value=45;await settled();check(absf(app.onion_editor.views[0].material.get_shader_parameter("ghost_color").a-.45)<.001 and app.onion_editor.uploads==uploaded+2,"opacity updates shader uniforms without copying full-HD rasters")
 	app.advanced_toggle.button_pressed=true;await settled();app.advanced_toggle.button_pressed=false;await settled();check(app.onion_editor.opacity.value==45 and not app.onion_editor.opacity.is_visible_in_tree(),"Advanced opacity persists when returning to Simple")
@@ -80,7 +80,7 @@ func run() -> void:
 	var expected:=hashes();var packed:=folder.path_join("onion.has");app.has_project.save_file(packed,"packed");await job();var manual:=FileAccess.get_sha256(packed)
 	app.new_project();await settled();check(not app.onion_editor.views[0].visible and not app.onion_editor.views[1].visible,"New immediately has no stale drawing texture")
 	app.has_project.open_file(packed);await job();check(hashes()==expected and app.onion_editor.enabled.button_pressed,"packed HAS keeps exact cels while the guide toggle remains a personal session setting")
-	app.mode.select(0);app.change_mode(0);await settled();check(app.onion_editor.views[0].texture.get_image().get_data()==app.layers[1].cels[0].image.get_data(),"freshly loaded images replace the old ghost-cache identities")
+	app.mode.select(0);app.change_mode(0);await settled();check(app.onion_editor.views[0].texture.get_image().get_data()==Drawing.image(app.layers[1].cels[0]).get_data(),"freshly loaded images replace the old ghost-cache identities")
 	app.changed();app.autosave_tick(true)
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	var recovery: String=app.recovery_root.path_join(app.recovery_session);check(app.open_project(recovery) and hashes()==expected and FileAccess.get_sha256(packed)==manual,"recovery retains actual artwork and preserves the manual HAS")

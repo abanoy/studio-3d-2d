@@ -63,7 +63,7 @@ func run() -> void:
 	var store:=Store.new();store.root=folder.path_join("lessons");check(store.save(app,"basic-pose","1234",1,false,"step_01"),"long parent enters lesson snapshot")
 	# A separate252frame movie crosses the old limit while keeping test rendering bounded.
 	app.new_project();await settled();check(app.project_timing.apply_values(12,1).is_empty() and app.project_timing.apply_duration(252).is_empty(),"movie scene crosses old240frame bound")
-	app.mode.select(0);app.change_mode(0);app.set_frame(241);app.active_layer=1;app.create_cel(false);var movie_cel: Dictionary=Drawing.cel_at(app.layers[1],241);movie_cel.image.fill_rect(Rect2i(150,150,80,80),Color.MAGENTA);Drawing.touch(movie_cel.image);app.changed()
+	app.mode.select(0);app.change_mode(0);app.set_frame(241);app.active_layer=1;app.create_cel(false);var movie_cel: Dictionary=Drawing.cel_at(app.layers[1],241);Drawing.edit_image(movie_cel).image.fill_rect(Rect2i(150,150,80,80),Color.MAGENTA);Drawing.touch(Drawing.image(movie_cel));app.changed()
 	check(app.import_audio(folder.path_join("tone.wav"),244).is_empty(),"movie sound is placed past old timeline end")
 	var preview: Image=await app.renderer.capture(app.keys,app.layers,245,true);preview.save_png(folder.path_join("movie-preview.png"))
 	var error: String=await app.export_movie(folder);check(error.is_empty(),"longer movie exports: "+error)

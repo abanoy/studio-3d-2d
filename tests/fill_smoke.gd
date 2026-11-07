@@ -68,7 +68,7 @@ func run() -> void:
 	app.redo();app.redo();check(app.layers[1].id==flats_id and Storage.image_hash(ink_image)==ink_hash,"Redo preserves earlier stroke history and layer identities")
 	var prior: int=app.history.size();var actions: int=app.autosave_actions;app.color.color=Color("e67345");click(Vector2(900,500));await wait_fill()
 	var cel:=Drawing.cel_at(app.layers[1],0)
-	check(not cel.is_empty() and Drawing.image(cel).get_pixel(900,500).to_html()=="e67345ff" and Drawing.image(cel).get_pixel(50,50).a==0,"viewport fill uses visible Ink boundaries and changes only Flats")
+	check(not cel.is_empty() and cel.has("raster_owner") and Drawing.image(cel).get_pixel(900,500).to_html()=="e67345ff" and Drawing.image(cel).get_pixel(50,50).a==0,"viewport fill uses visible Ink boundaries and changes only Flats")
 	check(app.history.size()==prior+1 and app.autosave_actions==actions+1 and app.fill_editor.pending.is_empty(),"closed fill auto-applies as one meaningful undoable action")
 	check(Drawing.image(Drawing.cel_at(app.layers[1],24))==Drawing.image(cel),"fill edits the held drawing without inventing new frame exposures")
 	check(Storage.image_hash(ink_image)==ink_hash and equal(keys,app.keys) and equal(world,World.portable(app.renderer.world_state())) and equal(view,app.renderer.view_state()) and FileAccess.get_sha256(app.source)==source_hash,"fill preserves exact ink, native world, camera keys/view and source bytes")

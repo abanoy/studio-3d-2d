@@ -849,9 +849,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_create_delete_history_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/new_drawing_ownership_2026-11-06.json"
         }
       ],
-      "remaining": "Cut/Paste/Split and Create/Copy/Delete use affected-cel patches; owner-addressed pixels and idle cooling are verified in scoped fixtures. Whole-layer history retention/accounting, global active/history memory budgets and dense-project acceptance remain; do not treat scoped tests as full closure.",
+      "remaining": "Cut/Paste/Split/Create/Copy/Delete and new Fill use affected-cel patches. New/adaptive owners support exact pixel Undo across idle cooling, including history-only ownership. Whole-layer/legacy retention, global tile/active/history accounting and dense-project acceptance remain; scoped passes do not close the group.",
       "external_dependencies": []
     },
     {
@@ -967,9 +971,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/cel_create_delete_history_2026-11-06.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/new_drawing_ownership.md"
+        },
+        {
+          "kind": "source",
+          "path": "tests/new_cel_owner_smoke.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/new_drawing_ownership_2026-11-06.json"
         }
       ],
-      "remaining": "Automatic cold loading and a soft64MiB registered owned-hot/decoded-cache idle target are verified with exact edited-pixel Undo/Redo. Global accounting/admission for newly authored eager cels, raw fallback, history tiles/whole-layer retention and dense projects remains incomplete before cap expansion; preserve measured latency and hardware/native gates.",
+      "remaining": "Loaded adaptive and newly authored app cels now share registered owned-hot/decoded-cache idle accounting, with exact Undo/save/cold recovery evidence. Global accounting/admission for legacy eager/raw fallback, clipboard, history tiles/whole-layer retention, GPU/derived resources and dense projects remains incomplete before cap expansion.",
       "external_dependencies": []
     },
     {
@@ -2202,12 +2218,12 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Idle edited-owner release and affected-cel create/delete are verified. Address remaining newly authored eager/raw/global memory accounting and whole-layer history, then dense-project acceptance before raising caps."
+      "action": "New authored/imported app cels now join adaptive owner cooling with exact Undo/save/crash recovery. Address legacy eager/raw fallback, clipboard/history/derived/GPU global accounting and dense-project admission before raising caps."
     },
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "Affected-cel structural create/delete history is verified. Audit remaining whole-layer retention/global memory budgets and dense-project acceptance; do not re-polish completed clipboard/create/delete patches."
+      "action": "All single-cel structural producers, including new fill, now use affected-cel patches. Audit whole-layer/legacy retention and global history/active memory accounting, then dense-project acceptance."
     },
     {
       "requirement": "STORE-04",

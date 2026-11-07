@@ -188,8 +188,12 @@ func commit() -> void:
 	var bytes:=0
 	for cel in decoded:bytes+=cel.image.get_data_size()
 	if decoded.size()>slots() or bytes>256*1024*1024:fail("Prepared artwork exceeds available drawing resources.");return
+	var owned: Array=decoded.duplicate(true)
+	for cel in owned:
+		var why: String=app.own_created_cel(cel)
+		if not why.is_empty():fail(why);return
 	var before: Array=app.layers.duplicate();var selected: String=app.layers[app.active_layer].id
-	var layer:={"id":str(ResourceUID.create_id()),"name":app.layer_editor.unique_name(source.get_file().get_basename().left(60)),"visible":true,"cels":decoded,"origin":candidate.origin.duplicate(true)}
+	var layer:={"id":str(ResourceUID.create_id()),"name":app.layer_editor.unique_name(source.get_file().get_basename().left(60)),"visible":true,"cels":owned,"origin":candidate.origin.duplicate(true)}
 	# Disarm stale guards before changed() advances the revision.
 	phase="";decoded=[];candidate={};close_dialogs();app.layers.append(layer);app.active_layer=app.layers.size()-1
 	app.layer_editor.structure(before,selected,bytes);app.message(success_message())

@@ -89,8 +89,13 @@ func perform(action: String) -> bool:
 			if action=="copy":app.message("Drawing copied. Right-click a free range on this layer to paste it.");return true
 	var before: Array=layer.cels.duplicate(true)
 	if action=="cut":layer.cels.remove_at(index)
-	elif action=="split":Drawing.insert(layer,int(context.at),int(app.video.duration_frames),selected_image.duplicate())
-	else:layer.cels.append(pasted);layer.cels.sort_custom(func(a,b):return a.start<b.start)
+	elif action=="split":
+		var created:=Drawing.insert(layer,int(context.at),int(app.video.duration_frames),selected_image.duplicate());var why: String=app.own_created_cel(created)
+		if not why.is_empty():layer.cels=before;app.message(why);return false
+	else:
+		var why: String=app.own_created_cel(pasted)
+		if not why.is_empty():app.message(why);return false
+		layer.cels.append(pasted);layer.cels.sort_custom(func(a,b):return a.start<b.start)
 	app.push_history(Patch.create(layer.id,app.sequence_editor.active_owner,before,layer.cels))
 	for i in range(app.layers.size()):
 		if app.layers[i].id==layer.id:app.active_layer=i;break

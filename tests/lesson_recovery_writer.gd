@@ -38,7 +38,8 @@ func run() -> void:
 		check(app.checkpoint_revision==app.recovery_revision,"ordinary autosave protects later practice edit at frame%d" % at)
 		expected.states[str(at)]={"ui":Store.ui(app),"paint":Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],at))),"cels":app.layers[1].cels.size(),"baseline":lesson.baseline,"fov_baseline":lesson.fov_baseline,"collapsed":lesson.collapsed}
 	expected["checkpoint"]=app.recovery_root.path_join(app.recovery_session)
-	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected,"",true,true))
+	var expected_bytes:=JSON.stringify(expected,"",true,true);var expected_file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);expected_file.store_string(expected_bytes);expected_file.flush();var expected_error:=expected_file.get_error();expected_file.close()
+	check(expected_error==OK and FileAccess.get_file_as_string(folder.path_join("expected.json"))==expected_bytes,"harness expectation file is flushed and read back before deliberate abrupt termination")
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected"))
 	print("LESSON_RECOVERY_WRITER "+JSON.stringify({"checks":checks,"failures":failures}))
 	if failures>0:app.free();quit(1);return

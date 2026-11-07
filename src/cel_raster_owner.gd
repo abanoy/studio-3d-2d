@@ -13,9 +13,11 @@ static func from_snapshot(snapshot,cache) -> Dictionary:
 	if not why.is_empty():return {"error":why}
 	var owner=load("res://src/cel_raster_owner.gd").new();owner._cold=snapshot;owner._cache=cache;cache.register(owner)
 	return {"owner":owner}
-static func from_image(image: Image) -> Dictionary:
+static func from_image(image: Image,cache=null) -> Dictionary:
 	if image==null or image.is_empty() or image.is_compressed() or image.get_format()!=Image.FORMAT_RGBA8 or image.has_mipmaps() or image.get_width()>1920 or image.get_height()>1080:return {"error":"Invalid editable drawing owner."}
-	var owner=load("res://src/cel_raster_owner.gd").new();owner._hot=image
+	if cache!=null and not cache is Cache:return {"error":"Invalid editable drawing cache."}
+	var owner=load("res://src/cel_raster_owner.gd").new();owner._hot=image;owner._cache=cache
+	if cache is Cache:cache.register(owner)
 	return {"owner":owner}
 func dimensions() -> Vector2i:
 	return _hot.get_size() if _hot!=null else _cold._size if _cold is Snapshot else Vector2i.ZERO

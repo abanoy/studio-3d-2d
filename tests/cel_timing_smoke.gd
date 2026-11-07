@@ -96,7 +96,7 @@ func run() -> void:
 	check(cel(a_id).start==1340 and app.history.size()==history,"stale revision refuses without changing hold or history")
 	app.set_frame(1344);var editor=app.sequence_editor;var child: String=editor.new_sequence("Nested drawing timing");check(not child.is_empty() and editor.enter(child).is_empty(),"editable child opens for history rebinding")
 	app.mode.select(0);app.change_mode(0);app.active_layer=1;app.set_frame(0);app.create_cel(false)
-	var child_layer: String=app.layers[1].id;var child_cel: String=app.layers[1].cels[0].id;var child_image: Image=app.layers[1].cels[0].image;child_image.fill_rect(Rect2i(300,100,60,40),Color.MAGENTA);Drawing.touch(child_image);app.changed();app.layer_editor.set_opacity(35)
+	var child_layer: String=app.layers[1].id;var child_cel: String=app.layers[1].cels[0].id;var child_image: Image=Drawing.image(app.layers[1].cels[0]);child_image.fill_rect(Rect2i(300,100,60,40),Color.MAGENTA);Drawing.touch(child_image);app.changed();app.layer_editor.set_opacity(35)
 	editor.return_to_parent();editor.enter(child);await settled();check(app.frame==0 and app.frame_box.value==0 and app.frame_box.max_value==240,"shorter child restores its saved frame without range-clamp reentry");app.undo()
 	check(app.cel_timing.layer_by_id(child_layer).get("opacity",1.0)==1.0,"existing layer-property Undo resolves live layer after scene switch")
 	app.undo();check(app.cel_timing.layer_by_id(child_layer).cels.is_empty(),"existing cel-creation Undo resolves live layer after scene switch")

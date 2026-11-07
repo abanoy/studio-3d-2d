@@ -106,8 +106,9 @@ func apply_pending() -> void:
 	if cel.get("id","")!=context.cel_id:cancel();return
 	var image:=Image.create_from_data(app.video.width,app.video.height,false,Image.FORMAT_RGBA8,pending.data)
 	if cel.is_empty():
-		var before: Array=layer.cels.duplicate(true);Drawing.insert(layer,app.frame,app.video.duration_frames,image)
-		app.push_history({"type":"cels","layer":layer,"before":before,"after":layer.cels.duplicate(true)})
+		var before: Array=layer.cels.duplicate(true);var created:=Drawing.insert(layer,app.frame,app.video.duration_frames,image);var why: String=app.own_created_cel(created)
+		if not why.is_empty():layer.cels=before;app.message(why);cancel();return
+		app.push_history(preload("res://src/cel_patch.gd").create(str(layer.id),app.sequence_editor.active_owner,before,layer.cels))
 	else:
 		var editable:=Drawing.edit_image(cel,context.raster_token)
 		if editable.has("error"):app.message(editable.error);cancel();return

@@ -72,7 +72,7 @@ func run() -> void:
 			for half in range(96,-1,-1):
 				poses_exact = poses_exact and JSON.stringify(actor.sample(float(half)/2),"",true,true).sha256_text() == expected.samples[id][half] and actor.evaluation_error.is_empty()
 		check(same(app.video,expected.video) and same(app.keys,expected.keys), "legacy video and explicit camera keys survive exactly")
-		check(Storage.image_hash(app.layers[1].cels[0].image) == expected.paint, "legacy editable drawing survives exactly")
+		check(Storage.image_hash(Drawing.image(app.layers[1].cels[0])) == expected.paint, "legacy editable drawing survives exactly")
 		check(app.audio_clip.source.sha256 == expected.audio.sha256 and app.audio_clip.start_frame == expected.audio.start_frame and app.audio_clip.gain_db == expected.audio.gain_db, "legacy audio bytes, timing and gain survive exactly")
 	else:
 		var actor: RefCounted = app.renderer.world_runtime.instance("actor")
@@ -80,7 +80,7 @@ func run() -> void:
 		if actor:
 			for half in range(96,-1,-1):
 				poses_exact = poses_exact and JSON.stringify(actor.sample(float(half)/2),"",true,true).sha256_text() == expected.pose_hashes[half] and actor.evaluation_error.is_empty()
-		check(app.layers[1].cels[0].image.get_data().hex_encode().sha256_text() == expected.layer_sha, "Model8 independent editable drawing survives exactly")
+		check(Drawing.image(app.layers[1].cels[0]).get_data().hex_encode().sha256_text() == expected.layer_sha, "Model8 independent editable drawing survives exactly")
 		check(app.import_audio(config.audio).is_empty(), "Model8 scene accepts a real local PCM sound clip")
 		app.audio_clip.start_frame = 24
 		app.audio_clip.gain_db = -6
@@ -106,7 +106,7 @@ func run() -> void:
 	app.mode.select(0); app.change_mode(0)
 	app.active_layer = 1; app.layer_choice.select(1); app.refresh_layer()
 	var cel: Dictionary = Drawing.cel_at(app.layers[1],int(config.frame))
-	var paint: String = Storage.image_hash(cel.image)
+	var paint: String = Storage.image_hash(Drawing.image(cel))
 	var before: Dictionary = World.portable(app.current_world())
 	var shots: Array = app.keys.duplicate(true)
 	app.color.color = Color.CYAN
@@ -115,7 +115,7 @@ func run() -> void:
 	app.canvas_input(press,Vector2(80,140))
 	app.canvas_input(InputEventMouseMotion.new(),Vector2(240,140))
 	press.pressed = false; app.canvas_input(press,Vector2(240,140))
-	check(Storage.image_hash(cel.image) != paint and same(World.portable(app.current_world()),before) and app.keys == shots, "relocated drawing remains editable and independent of native 3D and shots")
+	check(Storage.image_hash(Drawing.image(cel)) != paint and same(World.portable(app.current_world()),before) and app.keys == shots, "relocated drawing remains editable and independent of native 3D and shots")
 	app.undo()
 	check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],int(config.frame)))) == paint, "drawing Undo restores exact portable cel bytes")
 	app.has_project.save_file(folder.path_join("Resaved portable.has"),"packed")

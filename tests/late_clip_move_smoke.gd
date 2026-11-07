@@ -43,11 +43,11 @@ func run() -> void:
 	var peer_placement:=placement.duplicate(true);check(app.pose_editor.add_model(asset,0,peer_placement).is_empty(),"same original asset has an independent peer")
 	var peer: String=app.last_import_id;rig=app.renderer.world_runtime.instance(id);app.world_selection.select_entity(id);app.set_frame(3012);editor.frame_model()
 	var camera: Camera3D=app.renderer.camera;app.keys=[Timeline.key(0,camera.position,camera.quaternion,camera.fov)]
-	Drawing.insert(app.layers[1],0,3600,Drawing.blank(1920,1080));var ink: Dictionary=Drawing.cel_at(app.layers[1],0);ink.image.fill_rect(Rect2i(80,80,80,20),Color.CYAN);Drawing.touch(ink.image);app.changed()
+	Drawing.insert(app.layers[1],0,3600,Drawing.blank(1920,1080));var ink: Dictionary=Drawing.cel_at(app.layers[1],0);Drawing.edit_image(ink).image.fill_rect(Rect2i(80,80,80,20),Color.CYAN);Drawing.touch(Drawing.image(ink));app.changed()
 	check(app.import_audio(folder.path_join("tone.wav"),3000).is_empty(),"independent sound stays at frame3000")
 	app.world_selection.select_entity(id);app.set_frame(3012);await settled()
 	var before: Dictionary=rig.data.duplicate(true);var peer_before: Dictionary=app.renderer.world_runtime.instance(peer).data.duplicate(true);var map_before: Dictionary=app.renderer.world_runtime.instance(map_id).data.duplicate(true)
-	var audio: Dictionary=app.audio_document().duplicate(true);var pcm:=digest(app.audio_mix.pcm);var paint:=Storage.image_hash(ink.image);var shots: Array=app.keys.duplicate(true);var history: int=app.history.size()
+	var audio: Dictionary=app.audio_document().duplicate(true);var pcm:=digest(app.audio_mix.pcm);var paint:=Storage.image_hash(Drawing.image(ink));var shots: Array=app.keys.duplicate(true);var history: int=app.history.size()
 	var reference: Image=await app.renderer.capture(app.keys,[],3012,true);reference.save_png(folder.path_join("before.png"))
 	var view=app.timeline;app.timeline_navigation.fit_all();await settled()
 	var row: int=view.object_rows.find_custom(func(item):return item.id==id)
@@ -64,7 +64,7 @@ func run() -> void:
 	check(app.history.size()==history+1 and view.moving_id.is_empty(),"3000frame move is one Undo command")
 	check(rig.data.get("root_components",{})==before.get("root_components",{}),"component source curves remain exact during structural movement")
 	check(app.renderer.world_runtime.instance(peer).data==peer_before and app.renderer.world_runtime.instance(map_id).data==map_before,"moving the take preserves peer and background documents")
-	check(app.audio_document()==audio and digest(app.audio_mix.pcm)==pcm and Storage.image_hash(ink.image)==paint and app.keys==shots,"independent sound ink and camera keys stay unchanged")
+	check(app.audio_document()==audio and digest(app.audio_mix.pcm)==pcm and Storage.image_hash(Drawing.image(ink))==paint and app.keys==shots,"independent sound ink and camera keys stay unchanged")
 	var moved: Dictionary=rig.data.duplicate(true);var old:=Model.new();old.data=before;old.motion_video=app.video;var current:=Model.new();current.data=moved;current.motion_video=app.video
 	var exact:=true
 	for quarter in range(97):

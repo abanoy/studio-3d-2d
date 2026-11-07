@@ -1,5 +1,5 @@
 extends RefCounted
-# Explicitly owned by a future loader/document; no global cache or disk dependency.
+# Document-owned decoded cache; no global cache or disk dependency.
 # Callers receive separate editable resources, never the cache's own Image.
 const Snapshot=preload("res://src/cel_raster_snapshot.gd")
 const DEFAULT_BUDGET=2*1920*1080*4

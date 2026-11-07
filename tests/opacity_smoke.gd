@@ -23,7 +23,7 @@ func paint(point: Vector2) -> void:
 func run() -> void:
 	var folder: String=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recent.json");root.add_child(app);await settled()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache");app.mode.select(0);app.change_mode(0);app.create_cel(false)
-	var layer: Dictionary=app.layers[1];var image: Image=layer.cels[0].image;image.fill_rect(Rect2i(0,0,384,216),Color.RED);Drawing.touch(image);app.changed();await settled()
+	var layer: Dictionary=app.layers[1];var image: Image=Drawing.image(layer.cels[0]);image.fill_rect(Rect2i(0,0,384,216),Color.RED);Drawing.touch(image);app.changed();await settled()
 	var original:=image.get_data();var world: Dictionary=World.portable(app.current_world());var view: Dictionary=app.renderer.view_state();var keys: Array=app.keys.duplicate(true);var source:=FileAccess.get_sha256(app.source)
 	var editor=app.layer_editor;editor.open();await settled();var history: int=app.history.size();var actions: int=app.autosave_actions
 	check(editor.opacity.value==100 and not layer.has("opacity"),"old layers start at100percent without a new stored field")
@@ -72,16 +72,16 @@ func run() -> void:
 	check(image.get_data()==hidden_pixels,"fill Undo restores original cel bytes without baking layer opacity")
 	check(equal(world,World.portable(app.current_world())) and equal(keys,app.keys) and equal(view,app.renderer.view_state()) and FileAccess.get_sha256(app.source)==source,"opacity workflow preserves world, native geometry, explicit shot keys and editor view")
 	var packed:=folder.path_join("opacity.has");app.has_project.save_file(packed,"packed");await job();var manual:=FileAccess.get_sha256(packed);var expected:=image.get_data();app.new_project();app.has_project.open_file(packed);await job()
-	check(app.layers[1].opacity==.25 and app.layers[1].cels[0].image.get_data()==expected,"packed HAS reopens raw editable pixels and separate layer opacity")
+	check(app.layers[1].opacity==.25 and Drawing.image(app.layers[1].cels[0]).get_data()==expected,"packed HAS reopens raw editable pixels and separate layer opacity")
 	app.has_project.save_file(folder.path_join("linked.has"),"linked");await job();app.new_project();app.has_project.open_file(folder.path_join("linked.has"));await job()
-	check(app.layers[1].opacity==.25 and app.layers[1].cels[0].image.get_data()==expected,"linked HAS keeps the same independent opacity parameter")
+	check(app.layers[1].opacity==.25 and Drawing.image(app.layers[1].cels[0]).get_data()==expected,"linked HAS keeps the same independent opacity parameter")
 	app.changed();app.autosave_tick(true);await settled()
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	var checkpoint: String=app.recovery_root.path_join(app.recovery_session);var entries:=Journal.entries(checkpoint);var thumbnail: Image=Journal.preview(checkpoint,entries[0].preview)
 	var expected_preview: Image=app.renderer.viewport.get_texture().get_image();expected_preview.convert(Image.FORMAT_RGBA8);expected_preview.resize(256,144,Image.INTERPOLATE_BILINEAR)
 	var dot:=Image.create(1,1,false,Image.FORMAT_RGBA8);dot.fill(Color8(255,0,0,64));expected_preview.blend_rect(dot,Rect2i(0,0,1,1),Vector2i(8,8))
 	check(thumbnail!=null and thumbnail.get_pixel(8,8)==expected_preview.get_pixel(8,8),"actual background recovery worker thumbnail honors the saved layer opacity")
-	check(app.open_project(checkpoint) and app.layers[1].opacity==.25 and app.layers[1].cels[0].image.get_data()==expected and FileAccess.get_sha256(packed)==manual,"recovery restores opacity and raw paint without overwriting manual HAS")
+	check(app.open_project(checkpoint) and app.layers[1].opacity==.25 and Drawing.image(app.layers[1].cels[0]).get_data()==expected and FileAccess.get_sha256(packed)==manual,"recovery restores opacity and raw paint without overwriting manual HAS")
 	var good:=folder.path_join("directory");check(Storage.save_project(good,app.video,app.keys,app.layers,app.source,app.frame,{}, {}, {},false,app.current_world()).is_empty(),"directory project stores the new optional layer parameter")
 	var manifest:=good.path_join("project.json");var saved:=FileAccess.get_file_as_bytes(manifest);app.layers[1].opacity=NAN
 	check(not Storage.save_project(good,app.video,app.keys,app.layers,app.source,app.frame).is_empty() and FileAccess.get_file_as_bytes(manifest)==saved,"invalid live opacity refuses before any existing save is rewritten")

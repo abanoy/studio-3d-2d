@@ -26,7 +26,7 @@ func run() -> void:
 	await mouse(target,false)
 	check(layer.cels[0].duration==16 and layer.cels[0].start==4 and layer.cels[1].start==24,"release extends hold without shifting either drawing")
 	check(app.history.size()==history+1 and app.history_bytes==bytes+512 and app.history[-1].type=="cel_exposure","right-edge release creates one512byte duration command")
-	check(is_same(layer.cels[0].image,image) and image.get_data()==pixels,"right-edge edit preserves exact original Image/RGBA")
+	check(is_same(Drawing.image(layer.cels[0]),image) and image.get_data()==pixels,"right-edge edit preserves exact original Image/RGBA")
 	check(Drawing.composite(app.layers,18,1920,1080).get_data()==composite and Drawing.cel_at(layer,20).is_empty(),"extended held pixels render exactly through end-exclusive boundary")
 	app.undo();check(layer.cels[0].duration==8,"right-edge Undo restores prior hold")
 	app.redo();check(layer.cels[0].duration==16,"right-edge Redo reapplies hold");app.undo()

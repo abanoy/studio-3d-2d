@@ -1,0 +1,979 @@
+{
+  "date": "2026-11-06",
+  "scope": "Newly authored document-owned raster registration/cooling, affected-cel fill history and scoped procedural app regressions. Not a global/RSS/GPU/history/raw-fallback bound, larger cap, native Krita, Windows or hardware/artist acceptance.",
+  "baseline_commit": "ae58a00",
+  "baseline": {
+    "new_cels": 12,
+    "registered_budget": {
+      "cold_payload_bytes": 0,
+      "decoded_cache_bytes": 0,
+      "hot_bytes": 0,
+      "hot_owners": 0,
+      "owners": 0,
+      "target_bytes": 67108864
+    },
+    "retained_drawing_bytes": 99532800
+  },
+  "budget": {
+    "after_idle": {
+      "cold_payload_bytes": 4650,
+      "decoded_cache_bytes": 8294400,
+      "hot_bytes": 58060800,
+      "hot_owners": 7,
+      "owners": 12,
+      "target_bytes": 67108864
+    },
+    "after_idle_tracked_memory": 153920274,
+    "checks": 12,
+    "failures": 0,
+    "idle_ms": 4079,
+    "peak": {
+      "cold_payload_bytes": 0,
+      "decoded_cache_bytes": 8294400,
+      "hot_bytes": 99532800,
+      "hot_owners": 12,
+      "owners": 12,
+      "target_bytes": 67108864
+    },
+    "peak_tracked_memory": 195382299,
+    "scope": "12actual brush-edited sparseHDcels,normal automatic loading and natural1second idle cadence; owned-hot/cache soft target only,not whole RAM/RSS/GPU or noisy/hardware guarantee",
+    "tracked_reduction": 41462025,
+    "new_authored": {
+      "checks": 12,
+      "cooled": {
+        "cold_payload_bytes": 3629,
+        "decoded_cache_bytes": 0,
+        "hot_bytes": 66355200,
+        "hot_owners": 8,
+        "owners": 12,
+        "target_bytes": 67108864
+      },
+      "failures": 0,
+      "idle_ms": 3066,
+      "peak": {
+        "cold_payload_bytes": 0,
+        "decoded_cache_bytes": 0,
+        "hot_bytes": 99532800,
+        "hot_owners": 12,
+        "owners": 12,
+        "target_bytes": 67108864
+      },
+      "released_bytes": 33177600,
+      "scope": "new authored drawing owned-hot/decoded-cache accounting only; not RSS/GPU/global/history/raw fallback bound"
+    },
+    "new_fill_history": {
+      "cels": 32,
+      "checks": 9,
+      "failures": 0,
+      "fill_command_bytes": 8295628,
+      "history_bytes": 58133044
+    },
+    "domain": {
+      "scope": "Headless cold-raster ownership, integrity, history and budget domains. No GUI/GPU or whole-project acceptance claim.",
+      "reports": {
+        "unit": {
+          "checks": 29,
+          "failures": 0
+        },
+        "write-paths": {
+          "checks": 17,
+          "failures": 0,
+          "scope": "owned Linux links/hardlinks/read-only paths; no Windows or hostile concurrent filesystem race certification"
+        },
+        "budget": {
+          "checks": 13,
+          "failures": 0
+        },
+        "pixel-history": {
+          "checks": 19,
+          "failures": 0
+        },
+        "policy": {
+          "checks": 11,
+          "failures": 0
+        },
+        "adaptive": {
+          "checks": 27,
+          "failures": 0
+        },
+        "save": {
+          "checks": 7,
+          "failures": 0
+        },
+        "read": {
+          "checks": 15,
+          "failures": 0
+        },
+        "overlay-regression": {
+          "checks": 20,
+          "failures": 0
+        },
+        "metadata": {
+          "checks": 14,
+          "failures": 0
+        },
+        "owner": {
+          "checks": 29,
+          "failures": 0
+        },
+        "reader-regression": {
+          "checks": 31,
+          "failures": 0
+        }
+      },
+      "source_sha256": {
+        "tests/project_write_paths_unit.gd": "e56767cde55a4f920cbbebbd7bd1f06c45c6946210d1b09b7663089fbd724988",
+        "src/cel_raster_budget.gd": "c46f05b524136207b8b5248aea7b19c7f78a574167c2fd2ac7739ad4f704db24",
+        "src/cel_raster_snapshot_cache.gd": "a8e868eded16d2c1d2c5fd11f81ea190021f081fd64e98ce3090df6274767c7f",
+        "tests/cel_raster_budget_unit.gd": "76ccd0a13cae351e160ecdf86125088d11ee4f145f0732c3466a3e55ff430d32",
+        "src/cel_pixel_history.gd": "bbfc4b1464deecbdaa11a05bb39bcb2667b92cc3e145cfbbbe86397ab30b7d3b",
+        "tests/cel_pixel_history_unit.gd": "8662beed13aa6371d0d9f392698eaf6bbbcf39bc2ad1f5a6470c103f91887b8a",
+        "tests/cel_raster_policy_unit.gd": "72cb92b46b24e75a3b9f66ba79d760cba51556febabfdb98ddca4eee0c92da74",
+        "tests/cel_raster_adaptive_unit.gd": "d14fdc86b7ec8a94458472307b66a29e8199b37cdb7b30d013a9d717d75f2ce7",
+        "src/storage.gd": "a7f345a260e2836436735d70f181fe99d1b5b6a85d0476b40229da1349d4a78a",
+        "src/fill_editor.gd": "b977afe4e68e2187c7780eb63fc4efd1fab54e3489a6e87315ab314605eb75c1",
+        "src/drawing_selection_editor.gd": "bf63e7b586d79e37b3cc983854c08482dff341af252505c652ad1c15bcb35908",
+        "src/drawing_transform_editor.gd": "5ac0b2257ffa54587ecba5ff0aa36688f7fdaff7fdae6a7d575e79a3f08beec3",
+        "src/cel_clipboard.gd": "1ec5e410ce6e23fd314eafdf95f00cade153de27620844d8d4f0679db612fce2",
+        "tests/cel_raster_save_unit.gd": "958376bbb5959bf905f522e158190f27bb503e50dcb7d0205f96b9e7e8f1352c",
+        "src/app.gd": "7f16e6c5129c9f05e5c47c7bb4f554e30a31509ed01f6adddd3bb311c709fadb",
+        "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+        "src/color_sampler.gd": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+        "src/onion_editor.gd": "7895913586ce8ec7989485d62b0421ec9b4e5366eb650074c4386357cae2596d",
+        "src/sequence_runtime.gd": "ff708a9b0c0a15e97e63bfea6c6c1575c2941a701f865471c250629b0284533a",
+        "src/tutorials.gd": "7b3cc6797fe825f2b37fc74a2c3b23c6e15591ec44ff064748e1c81f5270c6de",
+        "src/drawing_overlay_cache.gd": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+        "tests/cel_raster_read_unit.gd": "ebdc572bcf2f93735540dc9f7cfad86e0b0428549e01fb9b3d66773db0375951",
+        "src/cel_timing_editor.gd": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+        "src/cel_patch.gd": "60b75f05e162f796041e8083d9c756eb8ade3f26cac9f2e12b61d38fe41b51bd",
+        "src/recovery.gd": "95cefa00f14801ee25c9e6657b92056316718006fc669309e720ba57d5f2d699",
+        "src/layer_editor.gd": "1ec0e7003d369607cd38ef58cb6c566812b8cf9db0b72c9a77b3c2e44348c1c1",
+        "src/sequence_editor.gd": "2b358fdb6ff03538b7e24bc51c89e41b768a662b31ff22acc770185ca3039927",
+        "tests/cel_raster_metadata_unit.gd": "e1ad5ae142dbbedf9570d4f78c8cb436791c73970dd3d97c8c0b57523991c6e8",
+        "src/drawing.gd": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+        "src/cel_raster_owner.gd": "ee69dfa7ccd67a2cbe12452a584c853a43f286a75ea676853668d49a246eab60",
+        "tests/cel_raster_owner_unit.gd": "68d2d273f6b51b2827af3b2f2e0b0b0f841840cf6247b75dad96d261c3d6624d",
+        "src/cel_raster_reader.gd": "724eb9b552816815b15a9d22974013888e2210491e3c49d3c054858dec478152",
+        "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+        "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+        "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+      }
+    },
+    "source_sha256": {
+      "src/app.gd": "7f16e6c5129c9f05e5c47c7bb4f554e30a31509ed01f6adddd3bb311c709fadb",
+      "src/storage.gd": "a7f345a260e2836436735d70f181fe99d1b5b6a85d0476b40229da1349d4a78a",
+      "src/cel_raster_owner.gd": "ee69dfa7ccd67a2cbe12452a584c853a43f286a75ea676853668d49a246eab60",
+      "src/cel_raster_snapshot_cache.gd": "a8e868eded16d2c1d2c5fd11f81ea190021f081fd64e98ce3090df6274767c7f",
+      "src/cel_raster_budget.gd": "c46f05b524136207b8b5248aea7b19c7f78a574167c2fd2ac7739ad4f704db24",
+      "tests/cel_raster_budget_smoke.gd": "6e6c77d9df53f6d54f7626b57f3fc20c8180feb2965c556abc09015e53aeec68",
+      "tests/new_cel_owner_smoke.gd": "35bf923438a40eb5e61ccf91c20d14e3d9aa6d3fae17a743e494438837c2b6d6",
+      "tests/fill_cel_patch_smoke.gd": "a7fd84ecfd5495504da8f354d11e182defc9b6585e9454f386f522dd46b40b6a",
+      "src/drawing.gd": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+      "src/cel_clipboard.gd": "1ec5e410ce6e23fd314eafdf95f00cade153de27620844d8d4f0679db612fce2",
+      "src/fill_editor.gd": "b977afe4e68e2187c7780eb63fc4efd1fab54e3489a6e87315ab314605eb75c1",
+      "src/krita_import.gd": "396a250f83e35ddef6888d903b509b8829929291342ec51763c98e0098442949",
+      "tests/verify_cel_raster_budget.py": "3c096ff8e6a14588ef90f058b2059a77b369236fbdec3ae9fefa4842ee7f7e32"
+    },
+    "isolated_display": ":107"
+  },
+  "clipboard": {
+    "reports": {
+      "unit": {
+        "checks": 27,
+        "failures": 0
+      },
+      "patch-unit": {
+        "checks": 10,
+        "failures": 0
+      },
+      "patch-history": {
+        "checks": 18,
+        "cut_bytes": 8295628,
+        "failures": 0,
+        "paste_bytes": 8295632,
+        "split_bytes": 16590332
+      },
+      "create-delete": {
+        "blank_bytes": 8295632,
+        "checks": 24,
+        "copy_bytes": 16590328,
+        "delete_bytes": 8295624,
+        "failures": 0,
+        "owned": false
+      },
+      "create-delete-owned": {
+        "blank_bytes": 8295632,
+        "checks": 24,
+        "copy_bytes": 16590332,
+        "delete_bytes": 8295628,
+        "failures": 0,
+        "owned": true
+      },
+      "live-history": {
+        "checks": 43,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/new-cel-clipboard-verified/live-history/render_1794021790_3411605_0/movie.mp4",
+        "project": "/workspace/has-handoff-audit/new-cel-clipboard-verified/live-history/Drawing Undo.has"
+      },
+      "live-reader": {
+        "checks": 3,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 47,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/new-cel-clipboard-verified/render_1794021809_9007147_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "22388",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "manual_has_unchanged": true,
+    "writer_cache_unavailable_for_cold_open": true,
+    "private_receipts": [],
+    "isolated_display": ":108",
+    "folder": "/workspace/has-handoff-audit/new-cel-clipboard-verified"
+  },
+  "drawing_regressions": {
+    "fill": {
+      "unit": {
+        "checks": 18,
+        "failures": 0,
+        "full_hd_ms": 2785.93
+      },
+      "writer": {
+        "background_frames": 82,
+        "checks": 48,
+        "close_during_worker_ms": 3099,
+        "failures": 0,
+        "folder": "/workspace/has-handoff-audit/new-owner-drawing-regression/fill",
+        "movie": "/workspace/has-handoff-audit/new-owner-drawing-regression/fill/render_1794021385_25181915_0/movie.mp4",
+        "new_during_worker_ms": 2
+      },
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "590452",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      }
+    },
+    "drawing_selection": {
+      "unit": {
+        "checks": 12,
+        "failures": 0,
+        "large_ms": 27.622
+      },
+      "writer": {
+        "checks": 35,
+        "failures": 0,
+        "max_preview_ms": 93.324,
+        "movie": "/workspace/has-handoff-audit/new-owner-drawing-regression/drawing_selection/render_1794021406_5607942_0/movie.mp4",
+        "preview_builds": 4,
+        "project": "/workspace/has-handoff-audit/new-owner-drawing-regression/drawing_selection/Moved drawing.has"
+      },
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "520676",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "reader": {
+        "checks": 3,
+        "failures": 0
+      },
+      "independent_reference": {
+        "checks": 12,
+        "failures": 0,
+        "large_ms": 27.622,
+        "independent_cases": 192,
+        "exact_opaque_cases": 64,
+        "max_alpha_math_error": 1
+      }
+    },
+    "drawing_transform": {
+      "unit": {
+        "checks": 11,
+        "failures": 0,
+        "full_hd_ms": 303.211
+      },
+      "writer": {
+        "checks": 34,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/new-owner-drawing-regression/drawing_transform/render_1794021434_16174802_0/movie.mp4",
+        "new_during_worker_ms": 3,
+        "project": "/workspace/has-handoff-audit/new-owner-drawing-regression/drawing_transform/Rotated drawing.has",
+        "worker_frames": 184,
+        "worker_ms": 272.338
+      },
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "525652",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.19.101 libx264"
+        }
+      },
+      "reader": {
+        "checks": 3,
+        "failures": 0
+      },
+      "independent_reference": {
+        "checks": 11,
+        "failures": 0,
+        "full_hd_ms": 303.211,
+        "independent_cases": 96,
+        "exact_quarter_cases": 16,
+        "max_math_error": 0
+      }
+    }
+  },
+  "fill_final": {
+    "background_frames": 74,
+    "checks": 48,
+    "close_during_worker_ms": 2814,
+    "failures": 0,
+    "folder": "/workspace/has-handoff-audit/new-owner-fill-verified",
+    "movie": "/workspace/has-handoff-audit/new-owner-fill-verified/render_1794021843_24035888_0/movie.mp4",
+    "new_during_worker_ms": 2
+  },
+  "editor": {
+    "checks": 39,
+    "export": "/workspace/studio-3d-2d/output/editor-smoke/render_1794021860_2880287_0",
+    "failures": 0,
+    "renderer": "llvmpipe (LLVM 19.1.7, 256 bits)"
+  },
+  "video_import": {
+    "reports": {
+      "writer": {
+        "checks": 21,
+        "failures": 0,
+        "job": "/workspace/studio-3d-2d/output/video-imports/61925-1895242",
+        "movie": "/workspace/has-handoff-audit/new-owner-video-import-final/render_1794021698_6462380_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 7,
+        "failures": 0
+      }
+    },
+    "private_receipts": [],
+    "display": ":107",
+    "media": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1920,
+          "height": 1080,
+          "coded_width": 1920,
+          "coded_height": 1088,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 40,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 24576,
+          "duration": "2.000000",
+          "bit_rate": "519692",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "48",
+          "nb_read_frames": "48",
+          "extradata_size": 50,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        }
+      ],
+      "format": {
+        "filename": "/workspace/has-handoff-audit/new-owner-video-import-final/render_1794021698_6462380_0/movie.mp4",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "2.000000",
+        "size": "131353",
+        "bit_rate": "525412",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf61.7.103"
+        }
+      }
+    }
+  },
+  "beginner": {
+    "results": [
+      {
+        "checks": 79,
+        "failures": 0,
+        "folder": "/workspace/studio-3d-2d/output/first-movie/1794021748758277827",
+        "movie": "/workspace/studio-3d-2d/output/first-movie/1794021748758277827/render_1794021765_16733944_0/movie.mp4"
+      },
+      {
+        "checks": 8,
+        "failures": 0
+      }
+    ],
+    "private_receipts": [],
+    "originals": {
+      "first-movie.has": "8c2689d1e8ae8f1d424d72900273dd656cf871ee1c725bcbe8198aa9f6be7fc6",
+      "manifest.json": "aba9741b5f9633c2321d89be8cc50bb40163b0d3e7c9dbe788d3be68130e066d",
+      "practice.has": "050e2afe0b04e79d65b5c62a3a3db875421d9af6fed4e825498182b846f7ec61",
+      "Practice cue.wav": "35252cc25a1d09b33ef80de04a26e3cd294025b4f4277cefae1142a5c31787ac",
+      "Practice figure.glb": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+      "Practice room.glb": "713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad"
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1088,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 4,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "436120",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "nb_read_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "cue_onset_sample": 80043,
+    "isolated_display": ":107"
+  },
+  "lesson_recovery_newest": {
+    "reports": {
+      "unit": {
+        "checks": 43,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 7,
+        "failures": 0
+      },
+      "newest": {
+        "case": "newest",
+        "checks": 21,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/new-owner-lesson-recovery-verified/newest/render_1794022033_2223607_0/movie.mp4",
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/new-owner-lesson-recovery-verified/newest/recovery/1794022029_95142727469151679",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/new-owner-lesson-recovery-verified/newest/recovery/1794022029_95142727469151679",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/new-owner-lesson-recovery-verified/Manual practice.has",
+            "preview": "",
+            "resolved": false,
+            "revision": 5,
+            "saved_at": 1794022030.82667,
+            "sha256": "6041b3298e5c5d35abf7c5f34c6cb7b743b8f89a53b0154d4fca0e0478304718"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "109920",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "actual_abrupt_exit": true,
+    "manual_has_unchanged": true,
+    "included_assets_unchanged": true,
+    "writer_cache_unavailable_for_cold_startup": true,
+    "private_receipts": [],
+    "isolated_display": ":108",
+    "folder": "/workspace/has-handoff-audit/new-owner-lesson-recovery-verified"
+  },
+  "lesson_autosave": {
+    "reports": {
+      "writer": {
+        "checks": 23,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 11,
+        "failures": 0,
+        "startup": {
+          "attempts": [
+            {
+              "error": "",
+              "folder": "/workspace/has-handoff-audit/new-owner-lesson-autosave-verified/recovery/1794022043_4106281109010103102",
+              "manifest": "project.json",
+              "restored": true
+            }
+          ],
+          "cancelled": false,
+          "checkpoint": {
+            "folder": "/workspace/has-handoff-audit/new-owner-lesson-autosave-verified/recovery/1794022043_4106281109010103102",
+            "frame": 18,
+            "manifest": "project.json",
+            "origin": "/workspace/has-handoff-audit/new-owner-lesson-autosave-verified/Manual practice.has",
+            "preview": "930acf38a48881aeae29b37214c569600c7a9d44ed80eee542a0ee9493002f4b",
+            "resolved": false,
+            "revision": 1,
+            "saved_at": 1794022046.1912,
+            "sha256": "a17bc543e50f9929f8684be2ddff5aaff359eecb74ef092b1af98828fd94a4d1"
+          },
+          "lesson_restored": true,
+          "restored": true
+        }
+      }
+    },
+    "actual_abrupt_exit": true,
+    "manual_has_unchanged": true,
+    "included_assets_unchanged": true,
+    "writer_cache_unavailable_for_startup": true,
+    "private_receipts": [],
+    "isolated_display": ":108",
+    "folder": "/workspace/has-handoff-audit/new-owner-lesson-autosave-verified"
+  },
+  "failed_harness_runs": [
+    "Legacy test Image-field reads/aliases raised errors after new cels acquired logical ownership. Replaced with preexisting Drawing.image/edit_image interfaces; pixel/identity/Undo assertions retained. Full clipboard202checks and relevant workflows rerun.",
+    "Ad hoc main-editor runner omitted its required --demo-room argument. Correct sample-room run passes39checks; no app startup behavior changed.",
+    "Deliberately killed lesson writer left expectation JSON empty. Explicit flush/close/readback added to two test harnesses before SIGKILL; actual abrupt exit and recovered app checks retained."
+  ],
+  "parse_only": "97initial GDScript consumer parses,39fixture-pinning parses and14local/array-alias parses passed. Broad native runtime/Windows remains unrun.",
+  "source_sha256": {
+    "src/app.gd": "7f16e6c5129c9f05e5c47c7bb4f554e30a31509ed01f6adddd3bb311c709fadb",
+    "src/cel_clipboard.gd": "1ec5e410ce6e23fd314eafdf95f00cade153de27620844d8d4f0679db612fce2",
+    "src/cel_raster_owner.gd": "ee69dfa7ccd67a2cbe12452a584c853a43f286a75ea676853668d49a246eab60",
+    "src/cel_raster_snapshot_cache.gd": "a8e868eded16d2c1d2c5fd11f81ea190021f081fd64e98ce3090df6274767c7f",
+    "src/drawing.gd": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+    "src/fill_editor.gd": "b977afe4e68e2187c7780eb63fc4efd1fab54e3489a6e87315ab314605eb75c1",
+    "src/krita_import.gd": "396a250f83e35ddef6888d903b509b8829929291342ec51763c98e0098442949",
+    "tests/cel_clipboard_smoke.gd": "4583b2a6d1b9281fdbb86453b4e0a47ddc33b3d32ebd44f04c2cff2f8d3dc026",
+    "tests/cel_exposure_edge_smoke.gd": "40e2f62a2b7d3d2ff0bda834cb50dc27d83283af673a4df74957a7e3239728e3",
+    "tests/cel_exposure_history_smoke.gd": "8df2b63cf8149637bedce15f297ff7feef1819891bbbe6afea7f9e5594a48519",
+    "tests/cel_file_paths_smoke.gd": "a64139783c53ed38426974cac5467cd36837e9d7eadb5a8be3b2e55cea0ff74e",
+    "tests/cel_raster_owner_unit.gd": "68d2d273f6b51b2827af3b2f2e0b0b0f841840cf6247b75dad96d261c3d6624d",
+    "tests/cel_timing_smoke.gd": "9d1068b17c71cbd9029be586e71de7bd1bc9338bfcbb1e44d1359891502498f7",
+    "tests/color_sampler_smoke.gd": "3ba69db40bab27db5a8dde831c94689f978f406ad03ca3c017993f60f8b6bb62",
+    "tests/drawing_history_smoke.gd": "2e64a50df412b6cc0f2289b0743c88ed416eba70d57a264494dc6e62a201cb47",
+    "tests/drawing_overlay_cache_smoke.gd": "cf062c9ab194c7e1f0b0c7e15e6965f6609acd5c5b95d10cb8fb3ddbb4624dd8",
+    "tests/extended_timing_smoke.gd": "5995854bb44045aedfc557d75030d4735dfc661378a1eca3978a3dfe6030fa35",
+    "tests/fill_connections_smoke.gd": "60b490392b5cc287ae8613617c935c68f52d52af1d65e43150af3fc8fd35c5e7",
+    "tests/fill_smoke.gd": "f20a0d15e51a21245344d64630cdb5e616912bca93dbbdffecef46b90d0fb471",
+    "tests/late_clip_move_smoke.gd": "21cb4701692ff773aaf94b72080be6e7e7d23ae2a65a3bb14ca5ade2f74d64fa",
+    "tests/layers_smoke.gd": "496271490d7fdbb6a9ca2b0f6883d01465a62baa52c0059982ded84466b5fc8e",
+    "tests/lesson_autosave_smoke.gd": "f69ae4f1978917f2dcd69e37b237d80c0696c926383b09a399d6f510cfbe1eb1",
+    "tests/lesson_recovery_writer.gd": "658d41965b0ddfee266d2d005a9cf41605eeb77d5c577d1e864c7e0fb0c5d492",
+    "tests/onion_smoke.gd": "126cbfc8883a64b0562b0166a5db637d892b0a03b9a3703e5ca19ef0138f755b",
+    "tests/opacity_smoke.gd": "60d895dbb74e1fb1896912f407fe188860d8c7185bc14c1c49985951fe46401f",
+    "tests/portable_candidate.gd": "2f302625bd8e5b53de0815d9478693bbb2c1fb3eab67d14a6a06fca566c521d1",
+    "tests/verify_cel_raster_budget.py": "3c096ff8e6a14588ef90f058b2059a77b369236fbdec3ae9fefa4842ee7f7e32",
+    "tests/video_import_smoke.gd": "f8a0c4a32a6ad251da3bf6c6685f40483cb26336805c9e2e4880872f1fd04c26"
+  },
+  "status": "MEM-01/MEM-02 partial/open; global legacy/raw, clipboard/history tile/GPU and dense-project acceptance remain before cap expansion"
+}

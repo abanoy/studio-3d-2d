@@ -50,7 +50,8 @@ func run() -> void:
 	check(not app.dirty and app.recovery_revision==revision and app.history.size()==history and FileAccess.get_sha256(manual)==manual_hash and FileAccess.get_sha256(progress)==progress_hash,"all lesson autosaves preserve manual project, step progress and scene edit state")
 	var picture: Image=await app.renderer.capture(app.keys,app.layers,18,true);picture.save_png(folder.path_join("frame18.png"))
 	var expected:={"manual":manual,"manual_sha256":manual_hash,"course":lesson.course,"session":lesson.session,"ui":Store.ui(app),"observed":lesson.observed,"progress":progress,"progress_sha256":progress_hash,"checkpoint":target.get_base_dir()}
-	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected,"",true,true))
+	var expected_bytes:=JSON.stringify(expected,"",true,true);var expected_file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);expected_file.store_string(expected_bytes);expected_file.flush();var expected_error:=expected_file.get_error();expected_file.close()
+	check(expected_error==OK and FileAccess.get_file_as_string(folder.path_join("expected.json"))==expected_bytes,"harness expectation file is flushed and read back before deliberate abrupt termination")
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected"))
 	print("LESSON_AUTOSAVE_WRITER "+JSON.stringify({"checks":checks,"failures":failures}))
 	if failures>0:lesson.active=false;app.free();quit(1);return

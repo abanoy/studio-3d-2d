@@ -13,7 +13,7 @@ func source_project(path: String) -> Array:
 	FileAccess.open(path.path_join("project.json"),FileAccess.WRITE).store_string(JSON.stringify(data));return hashes
 func pixel_hashes() -> Array:
 	var result:=[]
-	for layer in app.layers:result.append(Storage.image_hash(layer.cels[0].image))
+	for layer in app.layers:result.append(Storage.image_hash(Drawing.image(layer.cels[0])))
 	return result
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();folder=args[0];app=load("res://main.tscn").instantiate();app.display_prefs_path=folder.path_join("prefs.cfg");app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in args else "writer-cache")

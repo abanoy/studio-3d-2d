@@ -5,7 +5,7 @@ func _initialize() -> void:
 func run() -> void:
 	folder=OS.get_cmdline_user_args()[0].path_join("exposure-history");DirAccess.make_dir_recursive_absolute(folder);app=load("res://main.tscn").instantiate();app.display_prefs_path=folder.path_join("prefs.cfg");app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
 	app.active_layer=1;app.set_frame(0);app.create_cel(false)
-	var layer: Dictionary=app.layers[1];var original: Image=layer.cels[0].image;original.fill(Color(.2,.6,.8,.5));Drawing.touch(original);layer.cels[0].duration=12
+	var layer: Dictionary=app.layers[1];var original: Image=Drawing.image(layer.cels[0]);original.fill(Color(.2,.6,.8,.5));Drawing.touch(original);layer.cels[0].duration=12
 	for at in [24,36]:
 		var other:=Drawing.blank(1920,1080);Drawing.insert(layer,at,48,other);layer.cels[-1].duration=12
 	app.changed();var old: int=app.history.size();var bytes: int=app.history_bytes;var first: Dictionary=app.history[0];var pixels:=original.get_data();var live: Array=[]
@@ -18,7 +18,7 @@ func run() -> void:
 	for i in range(48):app.redo()
 	check(app.history.size()==old+48 and layer.cels[0].duration==12,"all48 duration edits Redo")
 	var intact:=original.get_data()==pixels
-	for i in range(3):intact=intact and layer.cels[i].id==live[i][0] and layer.cels[i].start==live[i][1] and layer.cels[i].duration==live[i][2] and is_same(layer.cels[i].image,live[i][3])
+	for i in range(3):intact=intact and layer.cels[i].id==live[i][0] and layer.cels[i].start==live[i][1] and layer.cels[i].duration==live[i][2] and is_same(Drawing.image(layer.cels[i]),live[i][3])
 	check(intact,"all three cel identities, ranges, Images and original RGBA remain exact")
 	var count: int=app.history.size();var revision: int=app.recovery_revision
 	for length in [0,-1]:app.cel_timing.set_exposure(layer.id,layer.cels[0].id,length)

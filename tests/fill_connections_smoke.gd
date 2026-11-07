@@ -19,8 +19,8 @@ func run() -> void:
 	app.tool.select(2);app.fill_editor.refresh();button("Color layer below",app.fill_editor.panel).pressed.emit();app.color.color=Color.CYAN;app.canvas.zoom=1.2;app.canvas.pan=Vector2(17,-9);root.size=Vector2i(1200,760);app.set_advanced(false);await settle()
 	var choice: OptionButton=app.fill_editor.connectivity_choice
 	check(choice.get_selected_id()==4 and not choice.is_visible_in_tree(),"Simple defaults to edges only without exposing specific connection controls")
-	click(Vector2(750,400));await wait_fill();var cel:=Drawing.cel_at(app.layers[1],0);var four:=Storage.image_hash(cel.image)
-	check(app.fill_editor.last_result.connectivity==4 and app.fill_editor.last_result.region==10000 and cel.image.get_pixel(750,400)==Color.CYAN and cel.image.get_pixel(850,500).a==0,"actual default fill colors only the clicked compartment")
+	click(Vector2(750,400));await wait_fill();var cel:=Drawing.cel_at(app.layers[1],0);var four:=Storage.image_hash(Drawing.image(cel))
+	check(app.fill_editor.last_result.connectivity==4 and app.fill_editor.last_result.region==10000 and Drawing.image(cel).get_pixel(750,400)==Color.CYAN and Drawing.image(cel).get_pixel(850,500).a==0,"actual default fill colors only the clicked compartment")
 	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"default fill has one complete cel Undo");app.redo();check(Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[1],0)))==four,"default cel Redo is byte exact");app.undo()
 	app.set_advanced(true);await settle();app.inspector_scroll.ensure_control_visible(choice);await settle()
 	check(app.inspector_scroll.get_global_rect().encloses(choice.get_global_rect()),"complete connection dropdown is visible after Advanced layout")
@@ -37,7 +37,7 @@ func run() -> void:
 	check(choice.is_visible_in_tree() and choice.get_selected_id()==8 and not menu.visible,"dropdown keyboard selection chooses Edges and corners")
 	if choice.get_selected_id()!=8:
 		root.get_texture().get_image().save_png(folder.path_join("dropdown-keyboard-failure.png"));app.free();quit(1);return
-	var history: int=app.history.size();click(Vector2(750,400));await wait_fill();cel=Drawing.cel_at(app.layers[1],0);var flats: Image=cel.image;var first:=Storage.image_hash(flats);var worker_ms: float=app.fill_editor.last_result.worker_ms
+	var history: int=app.history.size();click(Vector2(750,400));await wait_fill();cel=Drawing.cel_at(app.layers[1],0);var flats: Image=Drawing.image(cel);var first:=Storage.image_hash(flats);var worker_ms: float=app.fill_editor.last_result.worker_ms
 	check(app.fill_editor.last_result.connectivity==8 and app.fill_editor.last_result.region==20000 and flats.get_pixel(750,400)==Color.CYAN and flats.get_pixel(850,500)==Color.CYAN and app.fill_editor.pending.is_empty(),"zoomed corner-connected fill joins both enclosed compartments")
 	check(app.history.size()==history+1 and Storage.image_hash(ink)==ink_hash and flats.get_pixel(800,449).a==0,"only Flats changes; separating ink pixels remain untouched")
 	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"corner fill has one cel Undo");app.redo();flats=Drawing.image(Drawing.cel_at(app.layers[1],0));check(Storage.image_hash(flats)==first,"corner fill Redo restores both areas exactly")

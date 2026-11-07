@@ -19,7 +19,15 @@ def main():
     proof=json.loads((folder/'verification.json').read_bytes());assert proof['failures']==0
     if os.name=='nt':
         path=Path(args[args.index('--receipt')+1]);r=json.loads(path.read_bytes());assert r['exit']==0 and r['child_desktop_confirmed'] and not r['foreground_child_observed'] and r['job_closed'] and r['desktop_closed'];proof['private_receipt']=str(path)
-    proof['domain']=json.loads((folder/'domain/verification.json').read_bytes());proof['source_sha256']={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/app.gd','src/storage.gd','src/cel_raster_owner.gd','src/cel_raster_snapshot_cache.gd','src/cel_raster_budget.gd','tests/cel_raster_budget_smoke.gd']};proof['isolated_display']=options.isolated_display
+    for label,script,marker,result_name in [('new_authored','new_cel_owner_smoke','NEW_CEL_OWNER_SMOKE ','new-cel-owner-result.json'),('new_fill_history','fill_cel_patch_smoke','FILL_CEL_PATCH_SMOKE ','result.json')]:
+        authored=folder/label;authored.mkdir()
+        new_args=command('tests/'+script+'.gd',extra=(['--audio-driver','Dummy'] if os.name!='nt' else [])+['--log-file',str(authored/'engine.log'),'--',str(authored)])
+        result=subprocess.run(new_args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=240,**flags);log=result.stdout+result.stderr;(authored/'run.log').write_text(log,encoding='utf-8')
+        assert result.returncode==0 and marker in log and not any(s in log for s in ['ERROR:','FAIL ','ObjectDB instances leaked']),log
+        proof[label]=json.loads((authored/result_name).read_bytes());assert proof[label]['failures']==0
+        if os.name=='nt':
+            path=Path(new_args[new_args.index('--receipt')+1]);r=json.loads(path.read_bytes());assert r['exit']==0 and r['child_desktop_confirmed'] and not r['foreground_child_observed'] and r['job_closed'] and r['desktop_closed'];proof[label+'_private_receipt']=str(path)
+    proof['domain']=json.loads((folder/'domain/verification.json').read_bytes());proof['source_sha256']={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ['src/app.gd','src/storage.gd','src/cel_raster_owner.gd','src/cel_raster_snapshot_cache.gd','src/cel_raster_budget.gd','tests/cel_raster_budget_smoke.gd','tests/new_cel_owner_smoke.gd','tests/fill_cel_patch_smoke.gd','src/drawing.gd','src/cel_clipboard.gd','src/fill_editor.gd','src/krita_import.gd','tests/verify_cel_raster_budget.py']};proof['isolated_display']=options.isolated_display
     (folder/'verification.json').write_text(json.dumps(proof,indent=2),encoding='utf-8');print(json.dumps(proof,indent=2))
 
 if __name__=='__main__':main()

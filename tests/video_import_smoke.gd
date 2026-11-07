@@ -48,6 +48,7 @@ func run() -> void:
 	importer.scrub.value=20;await settle();check(app.frame==0,"source preview does not seek scene")
 	var job: String=importer.job;importer.commit()
 	check(app.layers.size()==3 and app.history.size()==1 and app.layers[2].cels.size()==2,"Add makes one layer and one Undo")
+	check(app.layers[2].cels.all(func(cel):return cel.has("raster_owner") and not cel.has("image")),"accepted video drawings join document ownership and idle accounting")
 	var paint:=Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],0)));var origin: Dictionary=app.layers[2].origin.duplicate(true)
 	app.undo();check(app.layers.size()==2 and Storage.image_hash(original)==oldpixels and app.keys==keys and app.current_world()==world,"Undo preserves existing camera, 3D and ink")
 	app.redo();check(app.layers.size()==3 and Storage.image_hash(Drawing.image(Drawing.cel_at(app.layers[2],0)))==paint,"Redo restores exact editable pixels")

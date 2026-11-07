@@ -12706,3 +12706,45 @@ clean after explicit pin adjustment. Native runtime/Windows fixtures remain
 unrun, not implied by parsing. Selected drawing app workflows run against the
 working-tree new-ownership increment; its behavior/evidence follows separately.
 No product source in this preparatory commit. Whole goal remains active.
+
+
+2026-11-06 — Newly authored drawings join owned idle release
+
+Baseline12new blank cels retained99,532,800pixel bytes while budget registered0.
+New/copy, timeline paste/split, new fill and accepted prepared-artwork cels now
+adopt a logical registered owner before structural history. Cache is lazily
+created for New; existing loaded cache reused. Factory preserves writable Image
+identity; invalid ownership refuses without changing logical data, and producers
+keep prior structure on adoption error. Shared video/Krita commit stages adopted
+records before layer installation. Native Krita preparation remains unrun.
+
+Fill creation now uses affected-cel patch. Actual near-limit31cel fill charges
+one8.3MB raster, keeps preceding actual brush Undo and exact two-step Undo/Redo.
+New owned pixel history never pins full Image, so inactive authored drawings can
+cool before any Save/Open.32cel cap unchanged;64MiB is soft owned-hot+decoded-cache,
+not global/RSS/GPU/history bound. Legacy eager/raw/clipboard/tiles remain open.
+
+Final232domain+12loaded idle+12new-authored idle+9near-limit fill checks pass.
+New12fixture naturally releases33,177,600tracked bytes in about3.1s, exact all12
+brush and creation Undo/Redo and packed Save/Open. Clipboard202checks pass with
+explicit owned paste/split; fill48app, selection12domain/35writer/3reader and
+transform11domain/34writer/3reader plus independent pixel-math references pass.
+Video import shared commit/cold Open passes with ownership assertion; main editor
+39checks and beginner79+8reader pass. New-art lesson abrupt recovery43unit/7writer/
+21startup and autosave23writer/11startup pass, manual HAS/assets unchanged, writer
+cache unavailable; actual H264 media checks retained. Private107/108/Dummy only.
+
+Legacy test local/array Image-field aliases also needed logical accessors; pixel/
+identity/Undo assertions retained, explicit producer ownership assertions added.
+97initial/39pinning/14alias parse sets pass; native runtime not inferred. Initial
+ad hoc editor invocation lacked --demo-room (corrected). SIGKILL harness expectation
+file was empty; two harnesses now explicitly flush/close/readback before deliberate
+kill, without gracefully saving app. Failed logs retained. Generated tracked logs
+archived then restored exactly. No Windows/hardware/native fidelity certification.
+
+Raw new-drawing-ownership-final, new-cel-clipboard-verified,
+new-owner-drawing-regression, new-owner-fill/editor-verified,
+new-owner-video-import-final, new-owner-first-movie-console.log and new-owner-lesson-
+recovery/autosave-verified under /workspace/has-handoff-audit. Curated receipt:
+docs/benchmarks/new_drawing_ownership_2026-11-06.json. MEM-01/02 partial/open.
+Whole goal active; next global accounting/admission and concurrent directory save.

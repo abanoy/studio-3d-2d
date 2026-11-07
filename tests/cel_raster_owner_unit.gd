@@ -47,4 +47,16 @@ func _initialize() -> void:
 	var ambiguous:={"image":image,"raster_owner":peer}
 	check(Drawing.image(ambiguous)==null and Drawing.edit_image(ambiguous).has("error") and Drawing.raster_token(ambiguous).is_empty() and Drawing.raster_bytes(ambiguous)==0,"two simultaneous authoritative pixel representations refuse instead of shadowing artwork")
 	check(Drawing.image({"image":"invalid"})==null and Drawing.edit_image({"raster_owner":false}).has("error"),"mistyped eager pixels or cold owner refuse without native type exceptions")
+	var authored:=Drawing.blank(32,16);authored.fill(Color(.2,.6,.7,.5));var authored_pixels:=authored.get_data();var document_cache:=Cache.new();var new_cel:={"id":"new","start":3,"duration":4,"image":authored}
+	check(Drawing.adopt_owner(new_cel,document_cache).is_empty() and not new_cel.has("image") and new_cel.id=="new" and new_cel.start==3 and new_cel.duration==4 and document_cache.owners.size()==1,"new cel adopts registered ownership without changing logical identity or timing")
+	check(is_same(Drawing.image(new_cel),authored) and new_cel.raster_owner._cache==document_cache and new_cel.raster_owner.is_pinned(),"new ownership preserves exact writable identity and document cooling context")
+	var authored_token:=Drawing.raster_token(new_cel);authored=null
+	check(new_cel.raster_owner.cool().get("cooled",false) and Drawing.raster_token(new_cel)==authored_token and Drawing.image(new_cel).get_data()==authored_pixels,"new authored owner cools losslessly with stable logical pixel identity")
+	var adopted_edit:=Drawing.edit_image(new_cel,authored_token)
+	check(not adopted_edit.has("error") and new_cel.raster_owner.is_pinned() and adopted_edit.image.get_data()==authored_pixels,"new authored owner rehydrates exact editable pixels after release")
+	var malformed:={"id":"untouched","image":Drawing.blank(16,16)};var malformed_before:=malformed.duplicate(true)
+	check(not Drawing.adopt_owner(malformed,null).is_empty() and malformed==malformed_before and Owner.from_image(image,false).has("error"),"invalid new ownership cache refuses before mutating cel")
+	check(not Drawing.adopt_owner(new_cel,document_cache).is_empty() and Drawing.raster_token(new_cel)==authored_token,"already owned cel cannot silently gain a second owner")
+	var rgb:=Image.create(16,16,false,Image.FORMAT_RGB8);var wrong:={"id":"rgb","image":rgb}
+	check(not Drawing.adopt_owner(wrong,document_cache).is_empty() and is_same(wrong.image,rgb) and not wrong.has("raster_owner"),"unsupported new pixel format refuses without losing eager source")
 	print("CEL_RASTER_OWNER_UNIT "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

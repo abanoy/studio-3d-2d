@@ -1354,6 +1354,14 @@ func redo() -> void:
 	sequence_editor.trim_history()
 	note_recovery_action(command)
 
+func own_created_cel(cel: Dictionary) -> String:
+	var cache=raster_budget.cache
+	if cache==null:cache=preload("res://src/cel_raster_snapshot_cache.gd").new()
+	var why:=Drawing.adopt_owner(cel,cache)
+	if why.is_empty() and raster_budget.cache==null:
+		raster_budget.install(cache);raster_budget_due=Time.get_ticks_msec()+1000
+	return why
+
 func create_cel(duplicate: bool,finish_current: bool=true) -> void:
 	if exporting or frame >= video.duration_frames: return
 	if finish_current:finish_stroke()
@@ -1374,7 +1382,9 @@ func create_cel(duplicate: bool,finish_current: bool=true) -> void:
 		if pixels.has("error"):message(pixels.error);return
 		image=pixels.image.duplicate()
 	else:image=Drawing.blank(video.width,video.height)
-	Drawing.insert(layer, frame, video.duration_frames, image)
+	var created:=Drawing.insert(layer, frame, video.duration_frames, image)
+	var why:=own_created_cel(created)
+	if not why.is_empty():layer.cels=before;message(why);return
 	push_history(CelPatch.create(str(layer.id),sequence_editor.active_owner,before,layer.cels))
 	changed()
 	refresh_layer()

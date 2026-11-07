@@ -55,7 +55,7 @@ func run() -> void:
 	for bone in before:positions=positions and before[bone]==simulation.bodies[bone].global_transform
 	check(positions,"drawing Undo does not teleport any physics body within the input event")
 	app.redo();alive("brush Redo");check(image.get_data()==painted,"pixel Redo restores exact painted bytes")
-	app.create_cel(true);var copy:=Drawing.cel_at(ink,12);check(copy.start==12 and copy.image.get_data()==painted,"copy exposure creates an independent held drawing")
+	app.create_cel(true);var copy:=Drawing.cel_at(ink,12);check(copy.start==12 and Drawing.image(copy).get_data()==painted,"copy exposure creates an independent held drawing")
 	app.undo();alive("cel Undo");check(ink.cels.size()==1 and Drawing.cel_at(ink,12).start==0,"cel Undo restores the original exposure")
 	app.redo();alive("cel Redo");app.exposure.value=5;app.set_exposure();app.undo();alive("exposure Undo");check(app.exposure.value==36 and Drawing.cel_at(ink,12).duration==36,"exposure control refreshes correctly without reevaluating3D")
 	app.redo();alive("exposure Redo");app.undo();app.delete_cel();app.undo();alive("delete-cel Undo");check(Drawing.cel_at(ink,12).start==12,"deleted cel is restored at the correct frame")

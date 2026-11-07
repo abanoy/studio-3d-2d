@@ -10,7 +10,7 @@ In adaptive mode, compressible drawings retain immutable lossless snapshots unti
 pixels are needed. Incompressible drawings retain the existing independent eager
 Image/COW backing. The 1920×1080 canvas, saved schemas/PNGs and32-cel limit remain
 unchanged. This policy applies to ordinary directory/HAS Open and recovery. It
-does not yet cover newly authored eager cels; edited owned cels can be cooled during idle time as described below.
+also covers newly authored app cels through [document ownership](new_drawing_ownership.md); edited owned cels can be cooled during idle time as described below.
 
 ## Integrity and ownership
 

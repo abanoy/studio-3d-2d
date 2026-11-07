@@ -97,12 +97,12 @@ func run() -> void:
 	if grid_point.x>=0:
 		picker.arm();click(Vector2(grid_point));await settled();check(app.color.color==Color.BLACK and app.renderer.editor_grid.visible,"read-only color view excludes the grid without hiding or flashing the main editor grid")
 	root.size=Vector2i(1200,760);app.advanced_toggle.button_pressed=false;picker.arm();await settled();root.get_texture().get_image().save_png(folder.path_join("picker-1200.png"));check(app.canvas.size.x>=500 and picker.panel.is_visible_in_tree() and not picker.source.is_visible_in_tree(),"Simple picker instructions fit the1200pixel workspace")
-	picker.cancel();app.create_cel(false);var color_image: Image=app.layers[1].cels[0].image;color_image.fill_rect(Rect2i(700,400,80,80),Color8(42,120,210,255));Drawing.touch(color_image);app.changed();await settled()
+	picker.cancel();app.create_cel(false);var color_image: Image=Drawing.image(app.layers[1].cels[0]);color_image.fill_rect(Rect2i(700,400,80,80),Color8(42,120,210,255));Drawing.touch(color_image);app.changed();await settled()
 	picker.arm();click(Vector2(740,440));await settled();click(Vector2(800,500));await settled()
 	check(app.color.color==Color8(42,120,210,255) and color_image.get_pixel(800,500)==app.color.color,"the actual picked color paints a new mark with Pen after the same click has finished")
 	var drawn: PackedByteArray=color_image.get_data()
 	var packed:=folder.path_join("picker.has");app.has_project.save_file(packed,"packed");await job();app.new_project();app.has_project.open_file(packed);await job()
-	check(app.layers[1].cels[0].image.get_data()==drawn,"painting with a picked color stays normally editable through packed HAS reopen")
+	check(Drawing.image(app.layers[1].cels[0]).get_data()==drawn,"painting with a picked color stays normally editable through packed HAS reopen")
 	app.set_frame(0);var reference: Image=await app.renderer.capture(app.keys,app.layers,0,true);var error: String=await app.export_movie(folder)
 	check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000001.png")).get_data()==reference.get_data(),"eyedropper helper view stays absent from actual MP4 PNG output")
 	var movie: String=app.last_export_folder.path_join("movie.mp4");var native_models: Array=[]

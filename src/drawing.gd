@@ -1,7 +1,7 @@
 extends RefCounted
 const RasterOwner=preload("res://src/cel_raster_owner.gd")
-# Eager cel.image remains compatible. Cold owners are staged opt-in records;
-# callers must handle null rather than substituting missing/corrupt artwork.
+# Eager cel.image remains compatible; new app cels and adaptive loads use owners.
+# Callers must handle null rather than substituting missing/corrupt artwork.
 static func raster_source(cel: Dictionary) -> RefCounted:
 	if cel.has("raster_owner"):
 		return cel.raster_owner if not cel.has("image") and cel.raster_owner is RasterOwner else null
@@ -107,6 +107,15 @@ static func cel_at(layer: Dictionary, frame: int) -> Dictionary:
 
 static func replace_image(cel: Dictionary,value: Image) -> void:
 	cel.image=value;cel.erase("raster_owner")
+
+static func adopt_owner(cel: Dictionary,cache) -> String:
+	# New logical cels adopt their own writable Image before structural history.
+	# Legacy records/API callers may still keep eager images explicitly.
+	if cel.has("raster_owner") or not cel.get("image") is Image:return "Drawing ownership is ambiguous or missing."
+	if not cache is RasterOwner.Cache:return "New drawing needs a document raster cache."
+	var result:=RasterOwner.from_image(cel.image,cache)
+	if result.has("error"):return result.error
+	cel.erase("image");cel["raster_owner"]=result.owner;return ""
 
 static func insert(layer: Dictionary, frame: int, end: int, image: Image) -> Dictionary:
 	# Split the active exposure; later cels retain their original boundaries.
