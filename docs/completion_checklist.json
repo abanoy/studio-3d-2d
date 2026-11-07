@@ -1472,9 +1472,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/multiple_audio.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/audio_solo_current_2026-11-07.json"
         }
       ],
-      "remaining": "Full current media fault/relink matrix remains.",
+      "remaining": "Previously missed required Solo is now implemented and verified with explicit scene-local/nested semantics, versioned persistence, Undo and actual decoded AAC. Complete current compressed-input/fault/relink acceptance review next; physical-device and Windows gates remain separate.",
       "external_dependencies": []
     },
     {

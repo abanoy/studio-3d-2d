@@ -193,7 +193,7 @@ def members(manifest,extended_ok=False):
     if not isinstance(audio,dict): raise HasError('Invalid audio metadata')
     if 'format' in audio or 'clips' in audio:
         rows=audio.get('clips')
-        if audio.get('format') not in ('studio_audio_2','studio_audio_3','studio_audio_4') or set(audio)!={'format','clips'} or not isinstance(rows,list) or not 1<=len(rows)<=16:
+        if audio.get('format') not in ('studio_audio_2','studio_audio_3','studio_audio_4','studio_audio_5') or set(audio)!={'format','clips'} or not isinstance(rows,list) or not 1<=len(rows)<=16:
             raise HasError('Unsupported audio collection or more than16 clips')
     else: rows=[audio] if audio else []
     identities=set()
@@ -202,10 +202,10 @@ def members(manifest,extended_ok=False):
         for field in ('fade_in_ms','fade_out_ms'):
             if field not in row: continue
             value=row[field]
-            if audio.get('format')!='studio_audio_4' or type(value) not in (int,float) or not math.isfinite(value) or value!=int(value) or not 1<=value<=60000:raise HasError('Invalid or unversioned sound fade')
+            if audio.get('format') not in ('studio_audio_4','studio_audio_5') or type(value) not in (int,float) or not math.isfinite(value) or value!=int(value) or not 1<=value<=60000:raise HasError('Invalid or unversioned sound fade')
         if 'source_out_sample' in row:
             end=row['source_out_sample'];start=row.get('source_in_sample')
-            if audio.get('format') not in ('studio_audio_3','studio_audio_4') or type(end) not in (int,float) or not math.isfinite(end) or end!=int(end) or not 0<end<=60*96000 or type(start) not in (int,float) or not math.isfinite(start) or end<=start:
+            if audio.get('format') not in ('studio_audio_3','studio_audio_4','studio_audio_5') or type(end) not in (int,float) or not math.isfinite(end) or end!=int(end) or not 0<end<=60*96000 or type(start) not in (int,float) or not math.isfinite(start) or end<=start:
                 raise HasError('Invalid or unversioned audio end trim')
         identity=row.get('id')
         if not isinstance(identity,str) or not 1<=len(identity)<=128 or identity in identities: raise HasError('Invalid or duplicate audio identity')
@@ -215,6 +215,7 @@ def members(manifest,extended_ok=False):
             value=row.get(field)
             if type(value) not in (int,float) or not math.isfinite(value) or not low<=value<=high or (field!='gain_db' and value!=int(value)): raise HasError('Invalid audio timing/gain')
         if not isinstance(row.get('muted'),bool): raise HasError('Invalid audio mute value')
+        if 'solo' in row and (audio.get('format')!='studio_audio_5' or type(row['solo']) is not bool): raise HasError('Invalid or unversioned audio solo value')
         slots.append(('audio',row))
     assets = {}
     for slot,row in slots:

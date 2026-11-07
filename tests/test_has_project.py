@@ -16,6 +16,25 @@ import has_project as has
 
 
 class HasTests(unittest.TestCase):
+    def test_solo_audio_roundtrip_and_independent_fades(self):
+        for storage in ('packed','linked'):
+            with self.subTest(storage=storage),tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);request,manifest,_,_=self.audio_fixture(root)
+                request['storage']=storage;manifest['audio']['format']='studio_audio_5'
+                manifest['audio']['clips'][0].update(solo=True,fade_in_ms=100,fade_out_ms=200,source_out_sample=4800)
+                (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(manifest))
+                has.pack(request);result=self.unpack(root,request)
+                self.assertEqual(json.loads((Path(result['folder'])/'project.json').read_bytes())['audio'],manifest['audio'])
+
+    def test_invalid_or_unversioned_solo_preserves_valid_package(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,manifest,_,_=self.audio_fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            for version,value in [('studio_audio_2',True),('studio_audio_3',False),('studio_audio_4',True),('studio_audio_5',1),('studio_audio_5',0),('studio_audio_5','yes'),('studio_audio_5',None)]:
+                bad=copy.deepcopy(manifest);bad['audio']['format']=version;bad['audio']['clips'][0]['solo']=value
+                (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(bad))
+                with self.subTest(version=version,value=value),self.assertRaises(has.HasError):has.pack(request)
+                self.assertEqual(Path(request['path']).read_bytes(),before)
+
     def test_faded_audio_packed_and_linked_roundtrip(self):
         for storage in ('packed','linked'):
             with self.subTest(storage=storage),tempfile.TemporaryDirectory() as directory:

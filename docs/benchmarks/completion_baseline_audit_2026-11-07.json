@@ -1447,7 +1447,7 @@
       ],
       "implementation_before": "implemented",
       "implementation": "implemented",
-      "implementation_review": "Independent decoded audio clips retain rational offsets, trims/gain/fades/mute/solo and portable sources; common compressed formats use local preparation.",
+      "implementation_review": "Baseline implementation label missed required Solo. Current implementation now adds an authored per-clip scene-local Solo control and shared preview/export filtering with mute authoritative, child-scene semantics, strict version5 persistence and exact legacy behavior. See current committed Solo receipts; full compressed-input/fault review remains open.",
       "reviewed_code_anchors": [
         {
           "path": "src/audio_track.gd",

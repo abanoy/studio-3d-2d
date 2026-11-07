@@ -29,8 +29,9 @@ static func mix_scene(owner: String,state: Dictionary) -> Dictionary:
 	var own: Dictionary={} if scene.get("audio",{}).is_empty() else Audio.mix_document(scene.audio,video)
 	if own.has("error"):return own
 	var parts: Array=[]
+	var soloing:=Audio.has_solo(scene.get("audio",{}))
 	for clip in state.clips[owner]:
-		if clip.muted:continue
+		if clip.muted or soloing:continue
 		var child:=mix_scene(clip.asset_id,state)
 		if child.has("error"):return child
 		if not child.is_empty():parts.append({"clip":clip,"mix":child,"duration":state.scenes[clip.asset_id].video.duration_frames})

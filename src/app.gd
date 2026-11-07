@@ -148,6 +148,7 @@ var audio_start: SpinBox
 var audio_trim: SpinBox
 var audio_gain: SpinBox
 var audio_mute: CheckButton
+var audio_solo: CheckButton
 var audio_choice: OptionButton
 var advanced_mode := false
 var advanced_toggle: Button
@@ -708,6 +709,15 @@ Draw returns to the animated shot.")
 			audio_clip.muted = value
 			commit_audio(before))
 	audio_section.add_child(audio_mute)
+	audio_solo=CheckButton.new();audio_solo.text="Solo audio clip"
+	audio_solo.tooltip_text="Hear only soloed sound clips in this scene, including export. Mute still silences a soloed clip."
+	audio_solo.toggled.connect(func(value):
+		if exporting or audio_clip.is_empty():return
+		var before:=audio_document().duplicate(true)
+		if value:audio_clip["solo"]=true
+		else:audio_clip.erase("solo")
+		commit_audio(before))
+	audio_section.add_child(audio_solo)
 	button(audio_section,"Shorten sound…",func():audio_trim_editor.open())
 	button(audio_section,"Fade sound…",func():audio_fade_editor.open())
 	button(audio_section, "Remove audio clip", remove_audio)
@@ -2585,6 +2595,7 @@ func refresh_audio_controls() -> void:
 	if audio_clip.is_empty():
 		audio_info.text = "No audio clip"
 		audio_mute.set_pressed_no_signal(false)
+		audio_solo.set_pressed_no_signal(false)
 		audio_start.value = 0
 		audio_trim.value = 0
 		audio_gain.value = 0
@@ -2594,6 +2605,7 @@ func refresh_audio_controls() -> void:
 		audio_trim.value = float(audio_clip.source_in_sample) * 1000 / audio_clip.source.rate
 		audio_gain.value = audio_clip.gain_db
 		audio_mute.set_pressed_no_signal(audio_clip.muted)
+		audio_solo.set_pressed_no_signal(audio_clip.get("solo",false))
 		if audio_mix.get("clipped_samples",0) > 0: audio_info.text += "\nSounds overlap too loudly. Lower clip gain in Advanced."
 
 func commit_audio(before: Dictionary, before_selection: String="") -> void:
