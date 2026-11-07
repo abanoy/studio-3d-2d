@@ -1,7 +1,7 @@
 # MD/addendum completion baseline audit
 
 The reviewed checklist has **51 of54required capability groups implemented
-(94.44%)** and **10 of62required acceptance conditions formally closed (16.13%)**.
+(94.44%)** and **12 of62required acceptance conditions formally closed (19.35%)**.
 These are separate, equally weighted checklist counts. They do not estimate
 remaining engineering time, native fidelity, reliability or release readiness.
 No combined product-completion percentage is calculated.

@@ -378,8 +378,8 @@
       ],
       "title": "Rig-aware IK and foot constraints",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Supported hand/limb IK and planted-foot/root edits preserve reachable targets; unusual or missing rigs refuse safely.",
       "evidence": [
         {
@@ -397,9 +397,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/required_motion_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_motion_current_2026-11-07.json",
+          "commit": "687a4eec73f056624b6bdbc207927562b9d8e516",
+          "scope": "Current original helper/direct rig checks cover actual hand dragging, planted-foot/root crouch, Undo/Redo, recovery, cold packed replay and exact exported frames; default limb/fallback evidence separately recorded. Native profile fidelity and physical/artist/Windows gates remain separate."
         }
       ],
-      "remaining": "Required bounded software workflow is implemented and exercised; review committed evidence for formal closure. Broader native fidelity, physical input/artist and Windows target acceptance remain separate requirements. General full-body IK and multi-view/automatic terrain inference are not added as mandatory gates. See docs/required_motion_review.md.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem, Windows, physical-device and artist observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -538,8 +544,8 @@
       ],
       "title": "Reusable paths with locomotion assistance",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Reusable editable paths/clips can drive a character, with a visible reversible locomotion suggestion and correction workflow.",
       "evidence": [
         {
@@ -593,9 +599,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/required_motion_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_motion_current_2026-11-07.json",
+          "commit": "687a4eec73f056624b6bdbc207927562b9d8e516",
+          "scope": "Current grouped walking checks cover reusable edited path settings, staged reversible suggestion, authored turns/bends, one-step Undo/Redo, manual correction persistence, recovery, source/cache-offline cold replay and exact exported frames. General terrain and multi-view inference remain outside the decided contract."
         }
       ],
-      "remaining": "Required bounded software workflow is implemented and exercised; review committed evidence for formal closure. Broader native fidelity, physical input/artist and Windows target acceptance remain separate requirements. General full-body IK and multi-view/automatic terrain inference are not added as mandatory gates. See docs/required_motion_review.md.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem, Windows, physical-device and artist observations remain separate gates.",
       "external_dependencies": []
     },
     {

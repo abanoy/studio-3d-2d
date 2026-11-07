@@ -498,11 +498,18 @@
           "file_sha256": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Required bounded software workflow is implemented and exercised; review committed evidence for formal closure. Broader native fidelity, physical input/artist and Windows target acceptance remain separate requirements. General full-body IK and multi-view/automatic terrain inference are not added as mandatory gates. See docs/required_motion_review.md.",
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified with committed current receipts. Native ecosystem, Windows, physical-device and artist observations remain separate gates.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_motion_current_2026-11-07.json",
+          "commit": "687a4eec73f056624b6bdbc207927562b9d8e516",
+          "scope": "Current original helper/direct rig checks cover actual hand dragging, planted-foot/root crouch, Undo/Redo, recovery, cold packed replay and exact exported frames; default limb/fallback evidence separately recorded. Native profile fidelity and physical/artist/Windows gates remain separate."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -699,11 +706,18 @@
           "file_sha256": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Required bounded software workflow is implemented and exercised; review committed evidence for formal closure. Broader native fidelity, physical input/artist and Windows target acceptance remain separate requirements. General full-body IK and multi-view/automatic terrain inference are not added as mandatory gates. See docs/required_motion_review.md.",
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified with committed current receipts. Native ecosystem, Windows, physical-device and artist observations remain separate gates.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_motion_current_2026-11-07.json",
+          "commit": "687a4eec73f056624b6bdbc207927562b9d8e516",
+          "scope": "Current grouped walking checks cover reusable edited path settings, staged reversible suggestion, authored turns/bends, one-step Undo/Redo, manual correction persistence, recovery, source/cache-offline cold replay and exact exported frames. General terrain and multi-view inference remain outside the decided contract."
+        }
+      ],
       "external_dependencies": []
     },
     {

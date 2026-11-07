@@ -13538,3 +13538,5 @@ Formal10/62(16.13%); implementation51/54(94.44%) unchanged. Final responsive-UI
 IK/crouch and grouped locomotion gates now running; no premature closures.
 
 2026-11-07 UTC: Current isolated-display final-layout IK and grouped walking suites passed176 checks total, zero failures, real1080p24H264 exports and cold portable replay. Frozen source hashes independently matched. Committed raw receipts in required_motion_current benchmark; native/Windows/device/artist coverage not claimed.
+
+2026-11-07 UTC: POSE-03 and MOTION-03 bounded software acceptance verified by committed current176-check receipt 687a4eec73f056624b6bdbc207927562b9d8e516. Formal closure12/62 (19.35%); implementation51/54 (94.44%) unchanged. Native profile/device/artist/Windows gates retained.
