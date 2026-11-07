@@ -357,8 +357,8 @@
       ],
       "title": "Reference-only posed characters",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Poseable references can be shown/hidden independently for preview versus final render, with saved pose interpolation and usable three-quarter inspection.",
       "evidence": [
         {
@@ -380,9 +380,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/posed_reference_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/posed_reference_2026-11-07.json",
+          "commit": "e8f2d9007032ae4c7e2ab5d697af2f31126c5d18",
+          "scope": "Complete POSE04 reference-only software contract: separate actual reference/visibility/working-opacity controls, root/arm interpolation, routed three-quarter inspection, Undo/Redo, recovery, packed source/cache-offline fresh reader with five exact poses/three final RGBA/working fade, real48frame1080p24H264AAC with sample48001 audio and source/camera/cel/manual preservation. Native platform/input/fidelity/artist gates remain separate."
         }
       ],
-      "remaining": "Complete reference-only software acceptance now passes actual pose/interpolation/orbit/visibility/opacity/Undo/recovery/packed cold Open and exact export checks. Formal closure will reference the verified implementation commit; native/platform/device/artist gates remain separately tracked.",
+      "remaining": "No remaining work in the reference-only software contract. Working/final visibility, saved pose interpolation, three-quarter inspection, adjustable standard-material preview opacity, Undo/recovery/cold Open and exact movie inputs pass. Native-format fidelity, arbitrary custom shaders, physical Windows/device performance and artist acceptance remain outside this closure and tracked separately.",
       "external_dependencies": []
     },
     {

@@ -514,11 +514,18 @@
           "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Complete reference-only software acceptance now passes actual pose/interpolation/orbit/visibility/opacity/Undo/recovery/packed cold Open and exact export checks. Formal closure will reference the verified implementation commit; native/platform/device/artist gates remain separately tracked.",
-      "evidence_review": "New frozen original-asset/private GUI and cold-reader evidence covers full reference-only softwarecondition. Formalreceipt will name implementationcommit afterrecordingcode; native/platform/input/artist gates stay separate.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "No remaining work in the reference-only software contract. Working/final visibility, saved pose interpolation, three-quarter inspection, adjustable standard-material preview opacity, Undo/recovery/cold Open and exact movie inputs pass. Native-format fidelity, arbitrary custom shaders, physical Windows/device performance and artist acceptance remain outside this closure and tracked separately.",
+      "evidence_review": "Complete reference-only software acceptance receipt committed ate8f2d9007032ae4c7e2ab5d697af2f31126c5d18; original-asset scoped evidence does not establish native/platform/input/artist gates.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/posed_reference_2026-11-07.json",
+          "commit": "e8f2d9007032ae4c7e2ab5d697af2f31126c5d18",
+          "scope": "Complete POSE04 reference-only software contract: separate actual reference/visibility/working-opacity controls, root/arm interpolation, routed three-quarter inspection, Undo/Redo, recovery, packed source/cache-offline fresh reader with five exact poses/three final RGBA/working fade, real48frame1080p24H264AAC with sample48001 audio and source/camera/cel/manual preservation. Native platform/input/fidelity/artist gates remain separate."
+        }
+      ],
       "external_dependencies": []
     },
     {
