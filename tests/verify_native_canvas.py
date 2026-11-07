@@ -42,8 +42,8 @@ def main():
         assert (case/'native.has').read_bytes()==manual and (case/'nested.has').read_bytes()==nested
         ffmpeg=os.environ.get('HYBRID_FFMPEG','ffmpeg');probe=str(Path(ffmpeg).with_name('ffprobe.exe' if os.name=='nt' else 'ffprobe'))
         assert all(int(writer[k])==writer[k] for k in ['fps_num','fps_den','duration_frames'])
-        sequence=Path(writer['png_sequence']);metadata=json.loads((sequence/'sequence.json').read_text())
-        assert metadata['rendered_frames']==writer['duration_frames'] and metadata['drawing_only'] and (metadata['video']['width'],metadata['video']['height'])==size
+        sequence=Path(writer['png_sequence']);sequence_metadata=json.loads((sequence/'sequence.json').read_text())
+        assert sequence_metadata['rendered_frames']==writer['duration_frames'] and sequence_metadata['drawing_only'] and (sequence_metadata['video']['width'],sequence_metadata['video']['height'])==size
         frames=list(sequence.glob('frame_*.png'));assert len(frames)==writer['duration_frames']
         assert all(struct.unpack('>II',frame.read_bytes()[16:24])==size for frame in frames)
         media=json.loads(subprocess.check_output([probe,'-v','error','-count_frames','-show_streams','-of','json',writer['movie']]));video=next(s for s in media['streams'] if s['codec_type']=='video')

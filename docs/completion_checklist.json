@@ -1627,8 +1627,8 @@
       ],
       "title": "Configurable output dimensions and timing",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "The user can change supported resolution/rational rate/duration with accurate media alignment and documented canvas/output behavior, while default1080p24 remains effortless.",
       "evidence": [
         {
@@ -1674,9 +1674,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/native_canvas_2026-11-06.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_canvas_2026-11-06.json",
+          "commit": "adce0015b3dec3fd293006922550b46ceadbafbc",
+          "scope": "Supported native1080/720/540 canvas and saved delivery, new-art coordinate/Undo/source preservation, native rational timing/duration/PCM and exact PNG/H264AAC, actual nested commit/reopen, cold source isolation, default1080p compatibility. Cloud software contract only; native platform/input gates separate."
         }
       ],
-      "remaining": "Native1080p/720p/540p new-art canvases, rational rate/duration, distinct persisted delivery profiles and accurate media now have current scoped cloud evidence. Audit acceptance against the pushed feature commit. Existing artwork resizing,4K and other aspect ratios are outside the supported profiles. Native hardware/Windows gates are tracked separately.",
+      "remaining": "No remaining work within the supported1080p/720p/540p native and delivery contract. Existing-art resizing,4K and other aspect ratios are unsupported. Native Windows/hardware/artist acceptance remains tracked by the separate platform/input requirements.",
       "external_dependencies": []
     },
     {
@@ -2324,11 +2330,6 @@
     }
   ],
   "next_actions": [
-    {
-      "requirement": "OUTPUT-02",
-      "priority": 1,
-      "action": "Native canvases and media contracts now have scoped evidence. Audit acceptance at the pushed feature commit, then move to the next independent required item."
-    },
     {
       "requirement": "MEM-02",
       "priority": 1,

@@ -3,24 +3,8 @@
   "scope": "Native1080/720/540 canvas contract, new-art settings, exact coordinates, rational media, independent audio and scoped compatibility; not native ecosystem, physical hardware or Windows acceptance.",
   "native": {
     "metadata": {
-      "audio": "mixed_audio.wav",
-      "drawing_only": true,
-      "first_frame": 1,
-      "first_project_frame": 0,
-      "format": "studio_image_sequence_1",
-      "pattern": "frame_%06d.png",
-      "rendered_frames": 60,
-      "status": "complete",
-      "video": {
-        "duration_frames": 60,
-        "fps_den": 1001,
-        "fps_num": 24000,
-        "height": 540,
-        "lighting_mode": "unshaded",
-        "visibility_fade_ms": 300,
-        "width": 960,
-        "world_background": "black"
-      }
+      "checks": 25,
+      "failures": 0
     },
     "reports": {
       "720p": {
@@ -941,5 +925,107 @@
     "Nested Godot graph passed but Python backend refused fixed1080p contract; both aligned and actual commit/reopen assertions added.",
     "Media harness compared JSON whole floats as strings with ffprobe integer text; validate integral fields and normalize exact integer text."
   ],
-  "raw_development_root": "/workspace/has-handoff-audit/native-canvas-development"
+  "raw_development_root": "/workspace/has-handoff-audit/native-canvas-development",
+  "reporter_verification": {
+    "metadata": {
+      "checks": 25,
+      "failures": 0
+    },
+    "reports": {
+      "720p": {
+        "writer": {
+          "checks": 31,
+          "duration_frames": 48.0,
+          "failures": 0,
+          "fps_den": 1.0,
+          "fps_num": 24.0,
+          "movie": "/workspace/has-handoff-audit/native-canvas-reporting-check/720p/render_1794028263_3806857_0/movie.mp4",
+          "pcm": "d2972ee20cbd91bcc8012573028cd055499073c7f52bf2e685db35b8089a0358",
+          "pixels": "778c5d6ad62177a9eca83c42f53d17ffa306a40da2e0bb8db68aaab9d473ea04",
+          "png_sequence": "/workspace/has-handoff-audit/native-canvas-reporting-check/720p/images_1794028267_7515203_0",
+          "source_sha256": "713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad"
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0
+        },
+        "video": {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1280,
+          "height": 720,
+          "coded_width": 1280,
+          "coded_height": 720,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 24576,
+          "duration": "2.000000",
+          "bit_rate": "74784",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "48",
+          "nb_read_frames": "48",
+          "extradata_size": 48,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        "decoded_onset_sample": 48001,
+        "manual_has_unchanged": true,
+        "originals_and_writer_cache_unavailable_for_reader": true
+      }
+    },
+    "scope": "Owned native profiles with actual GUI/GPU/native-size media and generated3D; not native ecosystem fidelity or hardware/artist acceptance.",
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "functional_source_unchanged": true
+  },
+  "reporting_correction": "PNG sequence metadata reused the unit summary variable in the original runner. Curated unit summary reconstructed from its actual25check console marker; raw original artifacts preserved. Separate variable names and a full720p rerun now verify25metadata+31writer+6reader results. Product code unchanged.",
+  "verified_feature_commit": "adce0015b3dec3fd293006922550b46ceadbafbc",
+  "reporter_sha256_after_fix": "2e63c999fd916e67241c7ce8287d625ff375c48b69749609d7da723d5e179643"
 }

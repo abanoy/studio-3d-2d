@@ -2717,3 +2717,25 @@ integrality check. No pixel/media/assertion relaxation. Raw native-canvas-* unde
  docs/native_canvas.md; output guide/README updated. OUTPUT-02 implemented with
 scoped evidence, acceptance closure audit follows pushed feature commit. Continuous
 goal active; do not repeat native canvas implementation.
+
+
+2026-11-06 — OUTPUT-02 acceptance audit at pushed adce001
+
+Verified20recorded functional file hashes equal featurecommit
+adce0015b3dec3fd293006922550b46ceadbafbc. MD2/7/8 andADD14.2 support resolution/
+rational timing/duration contract; supportednative3profiles now preserve pixels,
+coordinates, Undo, audio and persisted output while1080p24default remains. No
+requirement for arbitrary old-art resampling,4K or differentaspect ratio inferred.
+OUTPUT-02 marked verified with scoped test_result commit and curated receipt.
+Native platform/hardware/input gates remain in their separate requirement rows.
+Baseline-wide scoring still unaudited; no global percentage published.
+
+Provenance check found runner PNG metadata shadowed the final unit-summary slot.
+Actual unitconsole25/0passed; corrected curated field from that marker, preserved
+raw original artifacts, renamed report variable and reran full720p:25metadata+
+31writer+6coldreader pass with frozen functional source. No product code changed
+in this audit. A command-line profile spacing typo refused before running and was
+corrected; no test assertion or unsupported feature acceptance weakened.
+Next independent work: bounded drawing-resource admission before any cel-cap
+expansion, preserving current32cel workflows and actual old-project safety.
+Whole continuous canonical goal remains active.
