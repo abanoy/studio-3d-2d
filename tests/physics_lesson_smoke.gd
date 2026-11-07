@@ -75,8 +75,11 @@ func run() -> void:
 	check(error.is_empty() and lesson.satisfied() and Image.load_from_file(app.last_export_folder.path_join("frame_000007.png")).get_data()==captured.get_data(),"actual MP4 uses exact saved take pixels and awards export")
 	await observe();check(lesson.done and lesson.step==5,"chapter completes only after recorded practice exports")
 	lesson.previous();await settle();check(lesson.step==4 and not lesson.done and not lesson.satisfied() and Capture.recorded(current()),"Previous clears export completion while retaining recorded animation")
-	lesson.leave(true);lesson.store.write_json(folder.path_join("expected.json"),{"session":session})
+	lesson.leave(true);write_fixture_json(folder.path_join("expected.json"),{"session":session})
 	var unchanged:=true
 	for name in manifest.files:unchanged=unchanged and FileAccess.get_sha256("res://examples/tutorials/"+name)==manifest.files[name].sha256
 	check(unchanged,"original room, figure, audio and tutorial HAS files stay unchanged")
 	app.free();print("PHYSICS_LESSON_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":movie}));quit(0 if failures==0 else 1)
+
+func write_fixture_json(path: String,value: Dictionary) -> void:
+	var file:=FileAccess.open(path,FileAccess.WRITE);file.store_string(JSON.stringify(value,"",true,true));file.close()

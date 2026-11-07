@@ -91,7 +91,7 @@ func run() -> void:
 	lesson.leave(true);check(lesson.start("basic-pose",false,session),"specific older practice can be continued")
 	check(equal(Store.ui(app),resume_ui) and Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)==paint,"Continue restores ungraded edits as well as progress")
 	lesson.leave(true)
-	var expected:={"session":session,"ui":resume_ui,"paint":paint};lesson.store.write_json(folder.path_join("expected.json"),expected)
+	var expected:={"session":session,"ui":resume_ui,"paint":paint};write_fixture_json(folder.path_join("expected.json"),expected)
 	# Make this retained partial practice latest for the separate-process reader.
 	lesson.store.write_json(lesson.store.root.path_join("basic-pose.json"),{"session":session})
 	check(lesson.start("advanced-camera",true),"Advanced chapter starts its own real practice scene");await job(app)
@@ -131,3 +131,6 @@ func run() -> void:
 	# Preserve the same latest partial practice for the fresh reader.
 	lesson.store.write_json(lesson.store.root.path_join("basic-pose.json"),{"session":session})
 	print("TUTORIAL_SMOKE "+JSON.stringify({"checks":checks,"failures":failures,"folder":folder,"movie":movie}));app.free();quit(0 if failures==0 else 1)
+
+func write_fixture_json(path: String,value: Dictionary) -> void:
+	var file:=FileAccess.open(path,FileAccess.WRITE);file.store_string(JSON.stringify(value,"",true,true));file.close()

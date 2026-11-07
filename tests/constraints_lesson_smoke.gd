@@ -73,8 +73,11 @@ func run() -> void:
 	lesson.previous();await settle();check(lesson.step==4 and not lesson.done and not pin(12).is_empty() and not lesson.satisfied(),"Previous restores whole pre-release constrained scene")
 	var restored: Image=await app.renderer.capture(app.keys,app.layers,12,true)
 	check(restored.get_data()==planted.get_data(),"Previous restores identical constrained geometry pixels")
-	lesson.leave(true);lesson.store.write_json(folder.path_join("expected.json"),{"session":session})
+	lesson.leave(true);write_fixture_json(folder.path_join("expected.json"),{"session":session})
 	var unchanged:=true
 	for name in manifest.files:unchanged=unchanged and FileAccess.get_sha256("res://examples/tutorials/"+name)==manifest.files[name].sha256
 	check(unchanged,"bundled original assets and sample HAS bytes stay unchanged")
 	app.free();print("CONSTRAINTS_LESSON_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":movie}));quit(0 if failures==0 else 1)
+
+func write_fixture_json(path: String,value: Dictionary) -> void:
+	var file:=FileAccess.open(path,FileAccess.WRITE);file.store_string(JSON.stringify(value,"",true,true));file.close()

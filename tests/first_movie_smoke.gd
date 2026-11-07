@@ -171,7 +171,7 @@ func run() -> void:
 	check(app.movie_folder_button.is_visible_in_tree() and app.movie_folder_button.tooltip_text==app.last_finished_movie and FileAccess.file_exists(app.last_finished_movie),"successful export exposes the exact completed movie in Simple")
 	check(Image.load_from_file(app.last_export_folder.path_join("frame_000041.png")).get_data()==expected.get_data(),"first-movie export exactly matches animated pose/camera/Ink preview at40")
 	if not await advance(11):return
-	var movie: String=app.last_export_folder.path_join("movie.mp4");lesson.leave(true);lesson.store.write_json(folder.path_join("first-expected.json"),{"session":session,"ui":Store.ui(app),"world":World.portable(app.renderer.world_state()),"paint":Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)})
+	var movie: String=app.last_export_folder.path_join("movie.mp4");lesson.leave(true);write_fixture_json(folder.path_join("first-expected.json"),{"session":session,"ui":Store.ui(app),"world":World.portable(app.renderer.world_state()),"paint":Storage.image_hash(Drawing.cel_at(app.layers[1],24).image)})
 	var movie_sha:=FileAccess.get_sha256(movie)
 	var cancel_after_frame:=func():
 		if app.exporting and FileAccess.file_exists(app.last_export_folder.path_join("frame_000001.png")):app.cancel_button.pressed.emit()
@@ -209,3 +209,6 @@ func run() -> void:
 	check(FileAccess.get_sha256(rendered_folder.path_join("frame_000041.png"))==frame_hash and FileAccess.get_sha256(rendered_folder.path_join("mixed_audio.wav"))==mix_hash and FileAccess.get_sha256(movie)==movie_sha,"retry preserves the original frames, sound mix and prior successful movie")
 	check(not Store.valid_observations({"export_done":"yes"}) and not Store.valid_observations({"other":true}) and not Store.checkpoint_name("basic-pose","step_11") and Store.checkpoint_name(First.ID,"step_11"),"versioned course counts and observation validation preserve old checkpoint contracts")
 	print("FIRST_MOVIE_SMOKE "+JSON.stringify({"checks":checks,"failures":failures,"folder":folder,"movie":movie}));app.free();quit(0 if failures==0 else 1)
+
+func write_fixture_json(path: String,value: Dictionary) -> void:
+	var file:=FileAccess.open(path,FileAccess.WRITE);file.store_string(JSON.stringify(value,"",true,true));file.close()

@@ -12671,3 +12671,21 @@ Raw has-backup-source-baseline.json, has-save-lock-final.log and has-save-lock-a
 under /workspace/has-handoff-audit; curated docs/benchmarks/has_save_lock_2026-11-06.json.
 STORE-04 partial/open for concurrent directory writers, directory sync/physical
 power loss and native Windows. Whole goal remains active.
+
+
+2026-11-06 — Whole tutorial regression after private writer boundaries
+
+Six legacy lesson test harnesses used the product lesson-store utility to write
+expected-result JSON outside its tutorial-progress root. Moved only those harness
+artifacts to direct FileAccess; product boundary and intentional in-root fault
+mutations unchanged. No UI/action/assertion changed. This follows the source-safe
+private metadata fix; it does not relax ownership to accommodate tests.
+
+Private107/Dummy actual catalog17, focused52+5reader, firstmovie79+8reader pass.
+All4advanced chapters writer/reader and their real48frame1080p24H264 exports pass;
+counts and source hashes in docs/benchmarks/lesson_writer_regression_2026-11-06.json.
+Teacher Previous/Continue/Fresh and exact restored scene/editor/drawing remain.
+Generated tracked reports/logs archived outside checkout then restored exactly.
+Raw private-metadata-tutorial-regression and private-metadata-advanced-lessons under
+/workspace/has-handoff-audit. No product completion or native acceptance claim.
+Whole goal remains active; next newly authored drawing ownership/idle accounting.

@@ -55,8 +55,11 @@ func run() -> void:
 	var session: String=lesson.session;lesson.leave(true)
 	check(lesson.start(Light.ID,true),"Start fresh opens independent practice");await job();check(lesson.session!=session and lesson.store.sessions(Light.ID).size()==2,"Start fresh retains earlier checkpointed session")
 	lesson.leave(true);check(lesson.start(Light.ID,false,session) and lesson.step==3 and app.video.lighting_mode=="studio" and not lesson.satisfied(),"Continue restores specified earlier practice and grading context")
-	lesson.leave(true);lesson.store.write_json(folder.path_join("expected.json"),{"session":session})
+	lesson.leave(true);write_fixture_json(folder.path_join("expected.json"),{"session":session})
 	var unchanged:=true
 	for name in manifest.files:unchanged=unchanged and FileAccess.get_sha256("res://examples/tutorials/"+name)==manifest.files[name].sha256
 	check(unchanged,"included sample geometry, audio, HAS files and hashes stay unchanged")
 	app.free();print("LIGHTING_LESSON_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":movie}));quit(0 if failures==0 else 1)
+
+func write_fixture_json(path: String,value: Dictionary) -> void:
+	var file:=FileAccess.open(path,FileAccess.WRITE);file.store_string(JSON.stringify(value,"",true,true));file.close()
