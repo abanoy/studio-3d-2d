@@ -104,7 +104,8 @@ static func readable_payloads(folder: String,manifest: String,png_verifier=null)
 	if png_verifier!=null:guard.png=png_verifier
 	return guard.valid(folder,parser.data)
 
-static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={}) -> String:
+static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={},cancel_path: String="") -> String:
+	if not cancel_path.is_empty() and FileAccess.file_exists(cancel_path):return "Project saving cancelled. Previous save preserved."
 	var count_error:=DrawingLimits.error(layers,sequence_graph)
 	if not count_error.is_empty():return count_error
 	var sync_boundary:=preload("res://src/save_worker.gd").existing_boundary(folder)
@@ -197,6 +198,7 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		if layer.has("opacity"):track.opacity=layer.opacity
 		if layer.has("origin"):track.origin=layer.origin.duplicate(true)
 		for cel_index in range(layer.cels.size()):
+			if not cancel_path.is_empty() and FileAccess.file_exists(cancel_path):return "Project saving cancelled. Previous save preserved."
 			var cel=layer.cels[cel_index]
 			var source_pixels:=Drawing.read_image(cel)
 			if source_pixels.has("error"):return source_pixels.error+" Previous project manifest preserved."
@@ -224,6 +226,7 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 			if not pixels.is_empty(): entry["pixel_sha256"] = pixels
 			track.cels.append(entry)
 		tracks.append(track)
+	if not cancel_path.is_empty() and FileAccess.file_exists(cancel_path):return "Project saving cancelled. Previous save preserved."
 	var saved_clips := []
 	for clip in AudioTrack.clips(audio):
 		var timing_error := AudioTrack.clip_error(clip,video)
@@ -261,7 +264,7 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		var decoded_audio_bytes:=AudioTrack.memory(audio)
 		for sequence in sequence_graph.assets:
 			var child: Dictionary=sequence.scene;var out:={}
-			var error:=save_project(folder,child.video,child.camera_keys,child.layers,"",int(child.get("editor",{}).get("frame",0)),child.get("audio",{}),{},{},true,child.world,{},child.get("palette",[]),{},out)
+			var error:=save_project(folder,child.video,child.camera_keys,child.layers,"",int(child.get("editor",{}).get("frame",0)),child.get("audio",{}),{},{},true,child.world,{},child.get("palette",[]),{},out,{},cancel_path)
 			if not error.is_empty():return "Sequence %s: %s" % [sequence.name,error]
 			decoded_audio_bytes+=AudioTrack.memory(child.get("audio",{}))
 			if decoded_audio_bytes>AudioTrack.MAX_PCM:return "Nested audio sources exceed64MiB. Previous save preserved."
@@ -295,6 +298,7 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 	if write_error != OK:
 		return "Manifest write failed. Previous save preserved."
 	if FileAccess.get_file_as_string(temp)!=serialized or not readable_manifest(temp):return "Manifest readback differs. Previous save preserved."
+	if not cancel_path.is_empty() and FileAccess.file_exists(cancel_path):return "Project saving cancelled. Previous save preserved."
 	var target := folder.path_join("project.json")
 	var args:=PackedStringArray([ProjectSettings.globalize_path(folder),temp.get_file(),expected_manifest if not expected_manifest.is_empty() else "missing",FileAccess.get_sha256(temp),"yes" if readable_payloads(folder,target,png_verifier) else "no","--sync-boundary",sync_boundary])
 	var result:=preload("res://src/save_worker.gd").run("directory_commit.py",args)

@@ -55,7 +55,8 @@ func run() -> void:
 	while app.recovery_preview.busy():app.poll_recovery_preview();await process_frame
 	app.autosave_tick(true);await preload("res://tests/recovery_wait.gd").checkpoint(app);check(app.checkpoint_revision==app.recovery_revision,"ordinary autosave commits reference and active child before abrupt exit")
 	var expected:={"reference":original_hash,"pixels":Storage.image_hash(original),"audio":Marshalls.raw_to_base64(pcm),"child":child,"recovery":app.recovery_session}
-	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify(expected,"",true,true))
+	var expected_text:=JSON.stringify(expected,"",true,true);var expected_file:=FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE);expected_file.store_string(expected_text);expected_file.flush();expected_file.close()
+	assert(FileAccess.get_file_as_string(folder.path_join("expected.json"))==expected_text,"Expected-data artifact must be complete before actual SIGKILL")
 	app.tree_exiting.connect(func():FileAccess.open(folder.path_join("graceful-exit.txt"),FileAccess.WRITE).store_string("unexpected graceful hook"))
 	print("REFERENCE_PROJECT_SMOKE ",JSON.stringify({"checks":checks,"failures":failures,"movie":movie}))
 	if "--crash" in args:

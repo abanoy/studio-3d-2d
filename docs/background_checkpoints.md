@@ -27,8 +27,8 @@ freeing its owner; slow storage can delay that final close.
 The temporary worker snapshot is a separate admitted context. Main and worker
 retention can overlap. This is not a whole-process or GPU memory bound. Capture
 still copies compressed payload bytes and obtains scene metadata on the main
-thread; GPU thumbnail readback is separate. Manual project Save and lesson
-Previous/Continue serialization are not made asynchronous by this change.
+thread; GPU thumbnail readback is separate. Manual project Save now has a separate [background snapshot worker](background_manual_saves.md).
+Lesson Previous/Continue serialization remains separate.
 
 Verification uses isolated cloud displays and owned procedural fixtures. Ownership tests pass nine assertions;
 worker filesystem/failure tests pass eight. The actual isolated app passes thirteen

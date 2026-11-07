@@ -1,6 +1,6 @@
 """Poseable reference visibility/transparency, private app, cold HAS and MP4."""
 from pathlib import Path
-import argparse,hashlib,json,math,os,struct,subprocess,sys,time,wave
+import argparse,hashlib,json,math,os,re,struct,subprocess,sys,time,wave
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from run import command,configure_private_display
 
@@ -17,8 +17,8 @@ def main():
  domain_args=command('tests/reference_opacity_unit.gd',headless=True,extra=['--log-file',str(folder/'domain-engine.log')]);domain=subprocess.run(domain_args,cwd=ROOT,capture_output=True,text=True,timeout=45);domain_log=domain.stdout+domain.stderr;(folder/'domain.log').write_text(domain_log)
  assert domain.returncode==0 and 'REFERENCE_OPACITY_UNIT ' in domain_log and not any(x in domain_log for x in ['ERROR:','FAIL ','ObjectDB instances leaked']),domain_log
  reports['domain']=json.loads(next(line.split('REFERENCE_OPACITY_UNIT ',1)[1] for line in domain_log.splitlines() if line.startswith('REFERENCE_OPACITY_UNIT ')))
- python=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-p','test_has_project.py'],cwd=ROOT,capture_output=True,text=True,timeout=60);(folder/'python.log').write_text(python.stdout+python.stderr);assert python.returncode==0 and 'Ran 23 tests' in python.stderr,python.stdout+python.stderr
- reports['python']={'checks':23,'failures':0}
+ python=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-p','test_has_project.py'],cwd=ROOT,capture_output=True,text=True,timeout=60);(folder/'python.log').write_text(python.stdout+python.stderr);count=re.search(r'Ran ([1-9][0-9]*) tests',python.stderr);assert python.returncode==0 and count and int(count.group(1))>=23,python.stdout+python.stderr
+ reports['python']={'checks':int(count.group(1)),'failures':0}
  for label,extra,marker in [('writer',[],'POSED_REFERENCE_WRITE '),('reader',['--read'],'POSED_REFERENCE_READ ')]:
   args=command('tests/posed_reference_smoke.gd',extra=['--audio-driver','Dummy','--log-file',str(folder/(label+'-engine.log')),'--',str(folder),*extra]);r=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=390);text=r.stdout+r.stderr;(folder/(label+'.log')).write_text(text)
   assert r.returncode==0 and marker in text and not any(x in text for x in ['ERROR:','FAIL ','ObjectDB instances leaked']),text

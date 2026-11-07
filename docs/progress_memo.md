@@ -13255,3 +13255,24 @@ H264/sourcepreservation verified. PNG35.6MB,registered51.2MB/cold43.0MBunder335.
 Godotprocesspeak545.9MBseparate. Prepare46.9/46.7s/1403appframes/maxgap172.8ms.
 Checkpoint120.8s; manualSave76.0s synchronousstage remains. Receiptlarge_prepared_
 video_2026-11-07.json. Nextbackgroundmanualsnapshot/saveSafety, thenresourcegaps.
+
+
+## 2026-11-07 UTC — responsive manual HAS snapshot saves
+
+Moved manual PNG snapshot staging to a detached low-priority CPU worker, with
+atomic checked readiness before real Python packing. Positive OS PID/busy guards,
+linked root/child audio/world/reference dependencies, original schema/CAS/backup,
+cancel/drain and captured revision/document identity remain. Preparation600s and
+packaging120s have separate guards. Worker shares no live scene/cache owners.
+Final400drawing Save call21ms/capture3.851ms, worker78.763s/total80.022s,1898appframes,
+max observed gap184.622ms; all400cold pixels, old target and exact backup pass.
+Registered34.7MB; separateGodot HWM501.7MB is not whole-app/GPU admission.
+Final core76/large12/nested-reference70/recovery96 checks pass on private109/110.
+Nested fixture's expected JSON was truncated by deliberateSIGKILL; explicit flush/
+close/readback fixes artifact, no assertion weakened. Posed-reference wrapper
+reads actual Python count. InitialOpen and long-session quota/cleanup remain.
+Curated background_manual_saves receipt/docs/ledger updated;48/54implemented and
+4/62formal acceptance unchanged. Aggregate Windows-only Krita remains unrun.
+Automation repetition was stopped using goal control per saved goal; owner
+explicitly requested continue working, so resumed actual verification/documentation.
+Next initialOpen responsiveness with transactional main-thread adoption.

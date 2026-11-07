@@ -15,6 +15,18 @@ var revision := -1
 var progress: Window
 var cancelled := false
 var started := 0
+var snapshot_writer=preload("res://src/has_snapshot_writer.gd").new()
+var last_snapshot_capture_ms:=0.
+var last_snapshot_worker_ms:=0.
+var _snapshot_error:=""
+var _child_done:=false
+var _operation_session:=""
+var _operation_recovery_root:=""
+var _operation_owner:=""
+var _progress_label: Label
+
+func same_document() -> bool:
+	return app.recovery_root==_operation_recovery_root and app.recovery_session==_operation_session and app.sequence_editor.active_owner==_operation_owner
 
 func clear_identity() -> void:
 	path = ""; storage_mode = "packed"; origins = {}
@@ -49,29 +61,7 @@ func save_file(selected: String, mode: String) -> void:
 	var base := ProjectSettings.globalize_path(cache_root)
 	var snapshot := base.path_join("work_%d" % OS.get_process_id())
 	var state: Dictionary=app.project_snapshot()
-	var error := Storage.save_project(snapshot,state.video,state.camera_keys,state.layers,str(state.get("source","")),int(state.editor.frame),state.audio,{},state.get("model",{}),true,state.world,{"sequence_editor":state.sequence_context} if not state.get("sequence_context",{}).is_empty() else {},state.palette,state.sequence_graph,null,state.get("reference_sheet",{}))
-	if not error.is_empty(): app.message(error); return
-	var references := {}
-	var sheet: Dictionary=state.get("reference_sheet",{})
-	if not sheet.is_empty():references["references/"+str(sheet.sha256)+".png"]=ProjectSettings.globalize_path(sheet.source).replace("\\","/")
-	var sources: Array=[]
-	var scenes: Array=[state]
-	for asset in state.sequence_graph.get("assets",[]):scenes.append(asset.scene)
-	for scene in scenes:
-		for clip in preload("res://src/audio_track.gd").clips(scene.get("audio",{})):sources.append(clip.source.path)
-		if not scene.get("world",{}).is_empty():
-			for row in preload("res://src/world_document.gd").assets(scene.world):
-				var absolute:=ProjectSettings.globalize_path(row.source).replace("\\","/")
-				var original: String=origins.get(absolute,absolute)
-				references[row.path]=original if FileAccess.get_sha256(original)==row.sha256 else absolute
-		else:sources.append_array([str(scene.get("source","")),str(scene.get("model",{}).get("source",""))])
-	for source_file in sources:
-		if str(source_file).is_empty(): continue
-		var absolute := ProjectSettings.globalize_path(source_file).replace("\\", "/")
-		var key := "assets/" + FileAccess.get_sha256(absolute) + "." + absolute.get_extension().to_lower()
-		var original: String=origins.get(absolute,absolute)
-		references[key] = original if FileAccess.get_sha256(original)==FileAccess.get_sha256(absolute) else absolute
-	start({"action":"pack", "path":selected, "storage":mode, "folder":snapshot, "references":references, "cache_root":base,"cache_roots":[ProjectSettings.globalize_path("res://output/imports"),ProjectSettings.globalize_path("res://output/audio-imports"),ProjectSettings.globalize_path(app.reference_sheet.cache_root)]})
+	start({"action":"pack", "path":selected, "storage":mode, "folder":snapshot, "cache_root":base,"cache_roots":[ProjectSettings.globalize_path("res://output/imports"),ProjectSettings.globalize_path("res://output/audio-imports"),ProjectSettings.globalize_path(app.reference_sheet.cache_root)]},state)
 
 func builtin(selected: String) -> bool:
 	var root:=ProjectSettings.globalize_path("res://examples/tutorials").replace("\\","/").simplify_path().to_lower()+"/"
@@ -83,19 +73,28 @@ func open_file(selected: String, relinks := {},as_copy := false) -> void:
 	var base := ProjectSettings.globalize_path(cache_root)
 	start({"action":"unpack", "path":selected, "folder":base.path_join("open_%d_%d" % [OS.get_process_id(), Time.get_ticks_usec()]), "relinks":relinks,"as_copy":as_copy})
 
-func start(request: Dictionary) -> void:
+func start(request: Dictionary,snapshot_state: Dictionary={}) -> void:
 	app.stop(); app.release_mouse()
 	var base := ProjectSettings.globalize_path(cache_root)
 	DirAccess.make_dir_recursive_absolute(base)
 	var prefix := base.path_join("job_%d_%d" % [OS.get_process_id(), Time.get_ticks_usec()])
 	result_path = prefix + "-result.json"; cancel_path = prefix + "-cancel"
 	request["result"] = result_path; request["cancel"] = cancel_path
+	_snapshot_error="";_child_done=false
+	_operation_session=app.recovery_session;_operation_recovery_root=app.recovery_root;_operation_owner=app.sequence_editor.active_owner
+	if not snapshot_state.is_empty():
+		request["snapshot_ready"]=prefix+"-snapshot.json"
+		var began:=Time.get_ticks_usec();var why: String=snapshot_writer.start(snapshot_state,{"folder":request.folder,"ready":request.snapshot_ready,"cancel":cancel_path,"origins":origins.duplicate(true)})
+		last_snapshot_capture_ms=(Time.get_ticks_usec()-began)/1000.
+		if not why.is_empty():app.message(why);operation_finished.emit(request.action,false);return
 	var file := FileAccess.open(prefix+".json",FileAccess.WRITE)
-	if file == null: app.message("Cannot write HAS operation request");operation_finished.emit(request.action,false); return
+	if file == null:
+		_write_cancel();snapshot_writer.finish();app.message("Cannot write HAS operation request");operation_finished.emit(request.action,false);return
 	file.store_string(JSON.stringify(request)); file.close()
 	pending = request; revision = app.recovery_revision; cancelled = false; started = Time.get_ticks_msec()
 	pid = OS.create_process(app.source_import.python(), [ProjectSettings.globalize_path("res://tools/has_project.py"), prefix+".json"], false)
-	if pid < 0: app.message("Cannot start Python project worker");operation_finished.emit(request.action,false); return
+	if pid < 0:
+		_write_cancel();snapshot_writer.finish();app.message("Cannot start Python project worker");operation_finished.emit(request.action,false);return
 	app.exporting = true
 	progress = Window.new(); progress.title = "Saving .has project" if request.action == "pack" else "Opening .has project"
 	progress.transient = true; progress.exclusive = true; progress.close_requested.connect(cancel)
@@ -103,14 +102,18 @@ func start(request: Dictionary) -> void:
 	var panel := PanelContainer.new(); panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	panel.add_theme_stylebox_override("panel", preload("res://src/studio_theme.gd").surface("f4f7fb","dce5ee")); progress.add_child(panel)
 	var box := VBoxContainer.new(); panel.add_child(box)
-	app.label(box, "Preparing editable project and verifying assets…\n" + str(request.path)).autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_progress_label=app.label(box, "Preparing editable project and verifying assets…\n" + str(request.path));_progress_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	app.button(box, "Cancel", cancel)
 	progress.popup_centered(Vector2i(650,160))
 
+func _write_cancel() -> void:
+	if cancel_path.is_empty():return
+	var file:=FileAccess.open(cancel_path,FileAccess.WRITE)
+	if file:file.store_string("cancel");file.close()
 func cancel() -> void:
-	cancelled = true
-	var file := FileAccess.open(cancel_path,FileAccess.WRITE)
-	if file: file.store_string("cancel"); file.close()
+	cancelled=true;_write_cancel()
+	if is_instance_valid(_progress_label):_progress_label.text="Cancelling project operation…\nThe current project stays open until saving stops."
+
 
 func locate_missing(result: Dictionary) -> void:
 	if not result.get("missing") is Array or result.missing.is_empty(): return
@@ -123,13 +126,27 @@ func locate_missing(result: Dictionary) -> void:
 			open_file(request.path, links)))
 
 func _process(_delta: float) -> void:
-	if pid <= 0: return
-	if OS.is_process_running(pid):
-		if Time.get_ticks_msec()-started > 120000: OS.kill(pid); cancelled = true
-		else: return
+	if pid<=0:return
+	if not _child_done:
+		if OS.is_process_running(pid):
+			var limit:=600000 if snapshot_writer.busy() else 120000
+			if Time.get_ticks_msec()-started>limit:OS.kill(pid);cancelled=true;_child_done=true;_write_cancel()
+		else:_child_done=true
+	if snapshot_writer.busy():
+		var captured: Dictionary=snapshot_writer.poll()
+		if captured.is_empty():
+			if _child_done:_write_cancel()
+			return
+		# Keep the existing two-minute packaging allowance separate from PNG work.
+		started=Time.get_ticks_msec()
+		last_snapshot_capture_ms=captured.capture_ms;last_snapshot_worker_ms=captured.worker_ms;_snapshot_error=captured.error
+		if not _snapshot_error.is_empty():_write_cancel()
+		elif not cancelled and is_instance_valid(_progress_label):_progress_label.text="Verifying assets and finishing the project file…\n"+str(pending.path)
+	if not _child_done:return
 	pid = -1; app.exporting = false
 	if is_instance_valid(progress): progress.hide(); progress.queue_free()
 	var result = Recovery.read_json(result_path)
+	if not _snapshot_error.is_empty() and not cancelled:result={"ok":false,"error":_snapshot_error}
 	if not result.get("ok",false):
 		app.message(str(result.get("error", "HAS worker failed; partial cache retained and current project preserved.")))
 		if not cancelled: locate_missing(result)
@@ -147,6 +164,9 @@ func _process(_delta: float) -> void:
 		app.message("Opened " + path + " • " + storage_mode)
 		app.home.remember(path)
 	else:
+		if not same_document():
+			app.message("Finished saving the previous project to "+str(pending.path)+". The current project stays unchanged.")
+			operation_finished.emit(pending.action,true);return
 		path = pending.path; storage_mode = pending.storage
 		if app.recovery_revision == revision:
 			app.dirty = false
@@ -160,3 +180,6 @@ func _process(_delta: float) -> void:
 		app.message("Saved " + path + " • " + storage_mode + (" • newer edits remain unsaved" if app.dirty else ""))
 		app.home.remember(path,revision)
 	operation_finished.emit(pending.action,true)
+
+func _exit_tree() -> void:
+	if snapshot_writer.busy():_write_cancel();snapshot_writer.finish()

@@ -14,6 +14,7 @@ import stat
 import struct
 import sys
 import tempfile
+import time
 import zipfile
 import zlib
 try:from .sequence_graph import error as sequence_graph_error
@@ -319,7 +320,40 @@ def save_lock(target, label="HAS"):
         os.close(handle)
 
 
+def await_snapshot(request):
+    """An owned Godot CPU worker publishes readiness; no manifest is read early."""
+    if 'snapshot_ready' not in request:
+        return request
+    result = request.get('result')
+    ready_name = request['snapshot_ready']
+    if not isinstance(result, str) or not result.endswith('-result.json') or not isinstance(ready_name, str):
+        raise HasError('Invalid project snapshot status address')
+    expected = Path(result[:-len('-result.json')] + '-snapshot.json')
+    ready = Path(ready_name)
+    if ready.parent.resolve() / ready.name != expected.parent.resolve() / expected.name:
+        raise HasError('Project snapshot status must belong to this operation')
+    started = time.monotonic()
+    while True:
+        check_cancel(request)
+        if ready.exists() or ready.is_symlink():
+            if ready.is_symlink() or not ready.is_file():
+                raise HasError('Linked or invalid project snapshot status refused')
+            with ready.open('rb') as stream:
+                status = read_json(stream.read(MAX_META + 1))
+            if set(status) != {'format','ok','error','references'} or status['format'] != 'studio_has_snapshot_ready_1' or type(status['ok']) is not bool or not isinstance(status['error'], str) or not isinstance(status['references'], dict):
+                raise HasError('Invalid project snapshot status')
+            if not status['ok']:
+                raise HasError(status['error'][:4096] or 'Project snapshot failed; previous save preserved')
+            if status['error'] or any(not isinstance(k,str) or not isinstance(v,str) for k,v in status['references'].items()):
+                raise HasError('Invalid project snapshot references')
+            return {**request, 'references':status['references']}
+        if time.monotonic() - started > 600:
+            raise HasError('Project snapshot preparation timed out; previous save preserved')
+        time.sleep(.025)
+
+
 def pack(request):
+    request=await_snapshot(request)
     chosen=Path(request['path']).expanduser();target=chosen.parent.resolve()/chosen.name
     if target.suffix.lower()!='.has':raise HasError('Choose a .has project filename')
     check_cancel(request)

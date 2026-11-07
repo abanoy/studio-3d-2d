@@ -5,7 +5,10 @@ import stat
 import struct
 import sys
 import tempfile
+import threading
+import time
 import unittest
+from unittest import mock
 import zipfile
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
@@ -243,6 +246,60 @@ class HasTests(unittest.TestCase):
                 (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(manifest))
                 with self.assertRaisesRegex(has.HasError,'Reference opacity'):has.pack(request)
                 self.assertEqual(Path(request['path']).read_bytes(),before)
+
+    def test_pack_waits_for_owned_snapshot_and_uses_linked_references(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,name,original=self.fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            request.update(storage='linked',result=str(root/'job-result.json'),snapshot_ready=str(root/'job-snapshot.json'))
+            manifest=json.loads((Path(request['folder'])/'project.json').read_bytes());manifest['palette']=[{'name':'New','rgba':'ff0000ff'}];(Path(request['folder'])/'project.json').write_bytes(has.json_bytes(manifest))
+            outcome=[]
+            def run():
+                try:outcome.append(has.pack(request))
+                except Exception as error:outcome.append(error)
+            thread=threading.Thread(target=run);thread.start()
+            try:
+                time.sleep(.06);self.assertTrue(thread.is_alive());self.assertEqual(Path(request['path']).read_bytes(),before)
+            finally:
+                Path(request['snapshot_ready']).write_bytes(has.json_bytes(dict(format='studio_has_snapshot_ready_1',ok=True,error='',references={name:str(original)})))
+                thread.join(10)
+            self.assertFalse(thread.is_alive());self.assertEqual(len(outcome),1);self.assertIsInstance(outcome[0],dict);self.assertTrue(outcome[0]['ok'])
+            self.assertEqual(Path(str(request['path'])+'.backup').read_bytes(),before)
+            result=self.unpack(root,request);self.assertEqual(json.loads((Path(result['folder'])/'project.json').read_bytes())['palette'],manifest['palette'])
+
+    def test_pending_snapshot_cancellation_preserves_prior_good_save(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,_,_=self.fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            request.update(result=str(root/'job-result.json'),snapshot_ready=str(root/'job-snapshot.json'),cancel=str(root/'cancel'));Path(request['cancel']).write_text('cancel')
+            with self.assertRaisesRegex(has.HasError,'cancelled'):has.pack(request)
+            self.assertEqual(Path(request['path']).read_bytes(),before)
+
+    def test_failed_or_malformed_snapshot_status_preserves_prior_good_save(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,_,_=self.fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            request.update(result=str(root/'job-result.json'),snapshot_ready=str(root/'job-snapshot.json'))
+            good=dict(format='studio_has_snapshot_ready_1',ok=True,error='',references={})
+            for bad in [dict(good,ok=False,error='Snapshot failed'),dict(good,ok=1),dict(good,format='unknown'),dict(good,references=[]),dict(good,references={'asset':1}),dict(good,extra=True)]:
+                Path(request['snapshot_ready']).write_bytes(has.json_bytes(bad))
+                with self.assertRaises(has.HasError):has.pack(request)
+                self.assertEqual(Path(request['path']).read_bytes(),before)
+
+    def test_snapshot_status_address_and_symlink_refuse(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,_,_=self.fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            request.update(result=str(root/'job-result.json'),snapshot_ready=str(root/'unrelated.json'))
+            with self.assertRaisesRegex(has.HasError,'belong'):has.pack(request)
+            target=root/'status.json';target.write_bytes(has.json_bytes(dict(format='studio_has_snapshot_ready_1',ok=True,error='',references={})));ready=root/'job-snapshot.json';ready.symlink_to(target);request['snapshot_ready']=str(ready)
+            with self.assertRaisesRegex(has.HasError,'Linked'):has.pack(request)
+            self.assertEqual(Path(request['path']).read_bytes(),before)
+
+    def test_snapshot_wait_has_separate_bounded_preparation_allowance(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,_,_=self.fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            request.update(result=str(root/'job-result.json'),snapshot_ready=str(root/'job-snapshot.json'))
+            with mock.patch.object(has.time,'monotonic',side_effect=[0.,121.,601.]) as clock, mock.patch.object(has.time,'sleep'):
+                with self.assertRaisesRegex(has.HasError,'preparation timed out'):has.pack(request)
+                self.assertEqual(clock.call_count,3)
+            self.assertEqual(Path(request['path']).read_bytes(),before)
 
 
 if __name__=='__main__':unittest.main()

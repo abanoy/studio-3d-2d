@@ -949,9 +949,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/large_prepared_video_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_manual_saves_2026-11-07.json"
         }
       ],
-      "remaining": "Ordinary400drawing editing/history/packed/cold/crash/media and background checkpointing have scoped evidence. Actual400unique prepared-video ingestion now passes pending-owner Cancel, Add/brush Undo/Redo, recovery, all400cold pixel hashes and400frameMP4 under unchanged320MiB registered admission. This video corpus uses35.6MBpreparedPNGs; measured registered51.2MB and separateGodotprocess545.9MBpeak. Manual Save76.036s remains synchronous before packaging; next move PNGsnapshot to a worker. InitialOpen, long-session retention/cleanup/concurrent quota, whole-app/GPU/native-device acceptance and >32preparednativeKrita input remain separate.",
+      "remaining": "Ordinary and actual400prepared-video editing/history/cold/crash/media have scoped evidence. Manual HAS PNG staging now runs on a detached worker: final400 Save call21ms/capture3.851ms, total80.022s with1898appframes and all400cold pixel hashes exact; previous target/backup/cancel/revision/context/recovery regressions pass. Registered34.7MB and separateGodotprocess HWM501.7MB do not establish whole-app/GPU bounds. InitialOpen responsiveness, long-session retention/cleanup/concurrent quota, native-device acceptance and >32preparednativeKrita input remain separate.",
       "external_dependencies": []
     },
     {
@@ -1163,9 +1167,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/large_prepared_video_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_manual_saves_2026-11-07.json"
         }
       ],
-      "remaining": "Ordinary400drawing editing/history/packed/cold/crash/media and background checkpointing have scoped evidence. Actual400unique prepared-video ingestion now passes pending-owner Cancel, Add/brush Undo/Redo, recovery, all400cold pixel hashes and400frameMP4 under unchanged320MiB registered admission. This video corpus uses35.6MBpreparedPNGs; measured registered51.2MB and separateGodotprocess545.9MBpeak. Manual Save76.036s remains synchronous before packaging; next move PNGsnapshot to a worker. InitialOpen, long-session retention/cleanup/concurrent quota, whole-app/GPU/native-device acceptance and >32preparednativeKrita input remain separate.",
+      "remaining": "Ordinary and actual400prepared-video editing/history/cold/crash/media have scoped evidence. Manual HAS PNG staging now runs on a detached worker: final400 Save call21ms/capture3.851ms, total80.022s with1898appframes and all400cold pixel hashes exact; previous target/backup/cancel/revision/context/recovery regressions pass. Registered34.7MB and separateGodotprocess HWM501.7MB do not establish whole-app/GPU bounds. InitialOpen responsiveness, long-session retention/cleanup/concurrent quota, native-device acceptance and >32preparednativeKrita input remain separate.",
       "external_dependencies": []
     },
     {
@@ -1616,9 +1624,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_manual_saves_2026-11-07.json"
         }
       ],
-      "remaining": "Frozen isolated background checkpointing passes96ownership/worker/live-app/preview/schedule checks, actual400drawing crash/media, native540/nested masks and all five lesson recovery startup cases. Captured actions alone are consumed; failed/stale/manual-save results preserve newer state. Remaining long-session/device latency and resource acceptance; manual Save and lesson Previous/Continue serialization are separate synchronous paths.",
+      "remaining": "Background checkpoints and manual HAS snapshots pass detached ownership, cancel, revision/context, save-race, preview and scheduling regressions. Long-session/device latency and resource acceptance remain; lesson Previous/Continue serialization is still separate.",
       "external_dependencies": []
     },
     {
@@ -1738,7 +1750,7 @@
       "implementation": "implemented",
       "verification": "scoped_evidence",
       "acceptance_status": "open",
-      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10\u201330seconds without taking over.",
+      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over.",
       "evidence": [
         {
           "kind": "source",
@@ -2136,7 +2148,7 @@
       ],
       "title": "Advanced selection, lasso/painted masks, glow, multiple palettes and proportion tools",
       "status": "conditional_refinement",
-      "rule": "Some are already implemented; pursue remaining refinements after stages1\u20134 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
+      "rule": "Some are already implemented; pursue remaining refinements after stages1–4 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
     },
     {
       "id": "O-RENDER",
@@ -2562,17 +2574,17 @@
     {
       "requirement": "REC-01",
       "priority": 1,
-      "action": "Actual400preparedvideo and ordinary400drawing cases pass. Next move the manualHAS PNGsnapshot off the main thread: preserve verified temporary output, cancellation, captured revision, existing save/CAS/backup and normal reader compatibility. Then long-session cleanup/retention/quota and initialOpen responsiveness; do not claim wholeRAM/native-device closure."
+      "action": "Background manualHAS snapshots now pass final400/core/nested/recovery suites. Next address initialOpen responsiveness with private CPU loading and main-thread adoption; preserve cold ownership, document transaction, cancellation, linked/source integrity and preview agreement. Then audit long-session cleanup/retention/concurrent quota; physical/native acceptance remains separate."
     },
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Actual400preparedvideo and ordinary400drawing cases pass. Next move the manualHAS PNGsnapshot off the main thread: preserve verified temporary output, cancellation, captured revision, existing save/CAS/backup and normal reader compatibility. Then long-session cleanup/retention/quota and initialOpen responsiveness; do not claim wholeRAM/native-device closure."
+      "action": "Background manualHAS snapshots now pass final400/core/nested/recovery suites. Next address initialOpen responsiveness with private CPU loading and main-thread adoption; preserve cold ownership, document transaction, cancellation, linked/source integrity and preview agreement. Then audit long-session cleanup/retention/concurrent quota; physical/native acceptance remains separate."
     },
     {
       "requirement": "MEM-01",
       "priority": 1,
-      "action": "Actual400preparedvideo and ordinary400drawing cases pass. Next move the manualHAS PNGsnapshot off the main thread: preserve verified temporary output, cancellation, captured revision, existing save/CAS/backup and normal reader compatibility. Then long-session cleanup/retention/quota and initialOpen responsiveness; do not claim wholeRAM/native-device closure."
+      "action": "Background manualHAS snapshots now pass final400/core/nested/recovery suites. Next address initialOpen responsiveness with private CPU loading and main-thread adoption; preserve cold ownership, document transaction, cancellation, linked/source integrity and preview agreement. Then audit long-session cleanup/retention/concurrent quota; physical/native acceptance remains separate."
     },
     {
       "requirement": "STORE-04",
