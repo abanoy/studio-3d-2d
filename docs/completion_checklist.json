@@ -1274,8 +1274,8 @@
       ],
       "title": "Cold-cel storage and larger projects",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Cold unique drawings can be compressed/lazily loaded with measured bounded active/history caches, source integrity and reliable large-project seek/save/export.",
       "evidence": [
         {
@@ -1489,9 +1489,39 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/recovery_quota_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/large_prepared_video_2026-11-07.json",
+          "commit": "c4900bddaeae38e6c8ddaff563550dec853d35ef",
+          "scope": "Actual400unique original preparedvideo drawings normalized1080p with bounded registered owned/decoded accounting, cancellable ingress, editable brush/Undo, exact cold/recovery/movie proof. No noisy400frame or nativeKrita claim."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/background_manual_saves_2026-11-07.json",
+          "commit": "b0dab90d5e5543d8e985a8acd6ebed185112bccf",
+          "scope": "Actual400drawing detached PNG staging and save:21ms call/3.851ms capture,1898responsive app frames, all400cold pixel hashes exact; cancel/revision/context/readback/backup safety."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "Current400drawing background Open after latest fix:25.068sworker/96.891msmaininstall/468responsiveframes, exact registered owners/pixels, Cancel/newer-edit/corrupt/New protections."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/layers_current_2026-11-07.json",
+          "commit": "b4083f25124d37387c71478edd74563167393a70",
+          "scope": "Current53layer/retention checks include12cold drawings retaining9802compressed bytes with99,532,800decoded reservation and useful older brush Undo; separate decoded authority reservations."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/recovery_current_2026-11-07.json",
+          "commit": "961e38d797f768c84bd961341f288a0f089f4aef",
+          "scope": "Current327checks cover25changing generations with bounded retained CAS payloads, shared512MiB cross-process quota, crash-incarnation reclamation and unknown/live/corrupt/link preservation. Arbitrary orphan cleanup and process/GPU memory are outside this registered authority guarantee."
         }
       ],
-      "remaining": "Ordinary and actual400prepared-video editing/history/cold/crash/media have scoped evidence. Manual HAS PNG staging now runs on a detached worker: final400 Save call21ms/capture3.851ms, total80.022s with1898appframes and all400cold pixel hashes exact; previous target/backup/cancel/revision/context/recovery regressions pass. Registered34.7MB and separateGodotprocess HWM501.7MB do not establish whole-app/GPU bounds. long-session retention/cleanup/concurrent quota, native-device acceptance and >32preparednativeKrita input remain separate. HAS Open now validates/decodes400drawings on a private worker (23.098s/793appframes, main install111.254ms), with Cancel/corrupt/newer-edit/New transaction refusal and exact pixels/GPU composition. Direct directory/recovery loading and native runtime preparation remain main-thread work. Recovery payload retirement now bounds25changing generations to13drawing/geometry blobs each while all retained/rollback states open, with unsafe/corrupt/foreign/link/unrelated preservation. Global orphan caches and concurrent whole-root quota remain separate. Shared512MiB cross-process reservations now pass180quota/recovery and70nested/crash/media checks. Unknown owners stay reserved; proven exited incarnations release reservations without deleting data. Whole-process/GPU/native/device and arbitrary orphan lifecycle coverage remain separate.",
+      "remaining": "Required bounded registered raster/cache/history/storage condition verified. Whole-process/GPU/audio limits, arbitrary orphan cleanup, noisy400frame/nativeKrita breadth, subjective long-session/device performance and Windows observations remain unverified separate scopes.",
       "external_dependencies": []
     },
     {
@@ -1779,8 +1809,8 @@
       ],
       "title": "Portable HAS and optional linked assets",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Default packed HAS retains editable world/rig/camera/cels/audio/settings and reopens with sources unavailable; linked saves offer actionable missing-file location.",
       "evidence": [
         {
@@ -1790,9 +1820,33 @@
         {
           "kind": "recorded_report",
           "path": "docs/cloud_source_recovery.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/has_linked_relocation_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "26current app+30container checks: real packed/source-offline project and actual3checksum-bound linked-asset relink prompts/filepickers, remembered paths/backup, cancelled/corrupt safety, unsaved recovery and independent movie sound."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/body_pose_library_current_2026-11-07.json",
+          "commit": "8464b96fc338c37a97f159a8d0406da785ff018d",
+          "scope": "Current38normal body-animation and41pose-library checks retain editable rig/root/part/source-time motion and pose data through packed/linked/recovery/cold/movie paths."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_solo_current_2026-11-07.json",
+          "commit": "119c3a6a0564cf980a7afd698ba48b1424987984",
+          "scope": "Current strict-version Solo/gain/fade/trim, exact independent audio/art and packed/linked/recovery/source-cache-offline PCM/decodedAAC roundtrips."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "Current400drawing cold background Open preserves exact registered owners/pixels and refuses Cancel/newer-edit/corrupt/New transactions."
         }
       ],
-      "remaining": "Broader native dependency/relink/fault acceptance remains.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -2007,8 +2061,8 @@
       ],
       "title": "Quiet time/action autosave",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Default minute or meaningful-action protection waits for safe interaction state, retains failed work for retry, and protects active lesson-only changes without dirtying saved scene content.",
       "evidence": [
         {
@@ -2050,9 +2104,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/recovery_quota_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/recovery_current_2026-11-07.json",
+          "commit": "961e38d797f768c84bd961341f288a0f089f4aef",
+          "scope": "Current327check recovery suite includes natural timer, completed-action thresholds, safe gesture deferral, failure/retry and background ownership without consuming newer edits."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/lesson_protection_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "147current lesson protection checks include clean-scene lesson-only autosave, actualSIGKILL and normal startup with writer cache offline; manualHAS and included assets unchanged."
         }
       ],
-      "remaining": "Background checkpoints and manual HAS snapshots pass detached ownership, cancel, revision/context, save-race, preview and scheduling regressions. Long-session/device latency and resource acceptance remain; lesson Previous/Continue serialization is still separate. HAS Open now validates/decodes400drawings on a private worker (23.098s/793appframes, main install111.254ms), with Cancel/corrupt/newer-edit/New transaction refusal and exact pixels/GPU composition. Direct directory/recovery loading and native runtime preparation remain main-thread work. Recovery payload retirement now bounds25changing generations to13drawing/geometry blobs each while all retained/rollback states open, with unsafe/corrupt/foreign/link/unrelated preservation. Global orphan caches and concurrent whole-root quota remain separate. Shared512MiB cross-process reservations now pass180quota/recovery and70nested/crash/media checks. Unknown owners stay reserved; proven exited incarnations release reservations without deleting data. Whole-process/GPU/native/device and arbitrary orphan lifecycle coverage remain separate.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -2063,8 +2129,8 @@
       ],
       "title": "Bounded journal and Advanced history",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Bounded recoverable states expose timestamps and low-resolution viewport thumbnails in Advanced without endless full-project copies.",
       "evidence": [
         {
@@ -2082,9 +2148,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "91current journal/Advanced history checks:12retained timestamped states with real low-resolution thumbnails, smaller-window usability, selected older paint preview, unsaved-edit confirmation, exact world/camera/drawing restoration, cold deep/index fallback."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/recovery_current_2026-11-07.json",
+          "commit": "961e38d797f768c84bd961341f288a0f089f4aef",
+          "scope": "Current327check recovery evidence includes25changing generations with bounded retained payload retirement, shared512MiB quota, real parallel clients, unknown/live-owner preservation and responsive detached previews."
         }
       ],
-      "remaining": "Shared-asset cleanup, concurrent sessions and measured long-session behavior remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -2096,8 +2174,8 @@
       ],
       "title": "Automatic newest-valid recovery",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "An actual abruptly terminated session restores the newest completely valid state, falls back through corrupt entries and never overwrites the last manual HAS.",
       "evidence": [
         {
@@ -2115,9 +2193,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/recovery_current_2026-11-07.json",
+          "commit": "961e38d797f768c84bd961341f288a0f089f4aef",
+          "scope": "147actual normal-startup checks across15cases after joinedSIGKILL writer: newest valid state, corrupt JSON/missing assets/audio/binding/all-invalid fallback and live/unknown/reusedPID identity safeguards; manualHAS unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "Three fresh normal-startup cases independently restore newest history and deep/index-corrupt fallback; exact older state and preserved manualHAS."
         }
       ],
-      "remaining": "Native Windows/hardware fault gate remains; Linux procedural cases are scoped evidence.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -2170,8 +2260,8 @@
       ],
       "title": "Interactive teacher and quiet hints",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10\u201330seconds without taking over.",
       "evidence": [
         {
@@ -2181,9 +2271,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/tutorials.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/tutorial_grading_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "57current actual lesson-state grading/Previous/freshContinue checks. Unrelated or temporary state cannot complete recorded tasks; real15second hint logic exercised at simulated16seconds without taking control."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/course_output_current_2026-11-07.json",
+          "commit": "4b6bdd6bdc092508918bd8308b70d13105b9c1eb",
+          "scope": "57current beginner-course writer/freshContinue checks include visual control/bone highlights with no edits or input interception and observed normal import/physics/pose/drawing/timedcue/playback/save/movie tasks."
         }
       ],
-      "remaining": "Richer demonstrations and beginner observation remain; demonstration depth is not a substitute for state grading.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -2195,8 +2297,8 @@
       ],
       "title": "Whole-scene Previous and resumed practice",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Previous restores the complete step scene; Continue/Fresh preserve separate sessions and observations; optional personal Save and crash reattachment keep newer protected practice state.",
       "evidence": [
         {
@@ -2206,9 +2308,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/lesson_recovery.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/tutorial_grading_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "57current checks include complete Previous scene/editor restoration, independent session choices and exact fresh Continue with unsaved copy identity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/lesson_protection_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "147current protection checks exercise lesson-only edits without dirtying manual scene, actualSIGKILL/cache-offline startup reattachment, newer protected state and corrupt/foreign/checksum-bound fallback cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/course_output_current_2026-11-07.json",
+          "commit": "4b6bdd6bdc092508918bd8308b70d13105b9c1eb",
+          "scope": "Current beginner-course fresh Continue preserves scene/step and permits optional personal Save or unsaved practice destination-picked movie export. Skip remains OPEN."
         }
       ],
-      "remaining": "Retention/concurrent-writer/local-history robustness and Windows/artist acceptance remain; Skip stays OPEN.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -2220,8 +2340,8 @@
       ],
       "title": "Simple MP4 and image output",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Default output is playable H264/AAC1080p24 beside the saved HAS, with exact frame count, silent-video support and complete/transparent PNG alternatives.",
       "evidence": [
         {
@@ -2231,9 +2351,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/png_export.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/course_output_current_2026-11-07.json",
+          "commit": "4b6bdd6bdc092508918bd8308b70d13105b9c1eb",
+          "scope": "Current normal beginner movie and named delivery-profile tests verify default playable1080p24H264AAC, exact48frames, saved/unsaved destination flows, independently decoded synchronized cue, original compositor inputs and preserved manualHAS."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "56current output-size/settings/writer/cold checks verify complete and transparent alpha PNG alternatives, dimensions, exact source pixels, manualHAS unchanged and captured retry settings."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/clean_source_launch_current_2026-11-07.json",
+          "commit": "49b15665aa8ba3a2b1234ba4b24514096ef63a62",
+          "scope": "43current clean-source normal core checks include real silent48frame1080p24H264 movie with fresh user data and no existing output/cache."
         }
       ],
-      "remaining": "Full target-device and encoder-build acceptance remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -2314,8 +2452,8 @@
       ],
       "title": "Export progress, cancellation and recovery",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Missing codecs/tools, failures and cancellation report truthfully, preserve recoverable frames/logs and never claim success or overwrite project assets.",
       "evidence": [
         {
@@ -2325,9 +2463,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/export_failures.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/lighting_video_encoder_current_2026-11-07.json",
+          "commit": "6b7e509bbd5b399442ad01393e444298272bbb65",
+          "scope": "Actual encoder failure/missing-tool/owned-process cancellation keeps48original PNG frames and separate retry diagnostics; failed encode produces no claimed movie."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/course_output_current_2026-11-07.json",
+          "commit": "4b6bdd6bdc092508918bd8308b70d13105b9c1eb",
+          "scope": "Current actual export/profile failure/cancellation/retry checks identify missing frame/mixed audio/unavailable encoder, retain logs and finished movie, restore editor controls and preserve manualHAS."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "Current output settings are captured across retry; cold source art and complete/transparent output stay exact. Physical disk/device/Windows faults are separate unverified target observations."
         }
       ],
-      "remaining": "Complete disk-full/device/encoder/platform fault matrix remains.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
