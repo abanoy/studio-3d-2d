@@ -76,6 +76,8 @@ def read_json(blob):
 
 def members(manifest,extended_ok=False):
     """Only declared current playback/editing assets; never glob whole game folders."""
+    video=manifest.get("video",{})
+    if isinstance(video,dict) and "output_size" in video and (not isinstance(video["output_size"],str) or video["output_size"] not in ("1080p","720p","540p")):raise HasError("Invalid saved output size")
     try:from . import extended_timing as extended
     except ImportError:import extended_timing as extended
     if manifest.get('schema_version')==8:

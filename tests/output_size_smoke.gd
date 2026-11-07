@@ -9,7 +9,7 @@ func run() -> void:
 	folder=OS.get_cmdline_user_args()[0];app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("reader-cache" if "--read" in OS.get_cmdline_user_args() else "writer-cache")
 	if "--read" in OS.get_cmdline_user_args():
 		app.has_project.open_file(folder.path_join("Delivery.has"));await wait_job();var expected: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("expected.json")))
-		check(app.selected_output_size()=="1080p" and app.video.width==1920 and app.video.height==1080,"new session reopens original fullHD scene with standard delivery default")
+		check(app.selected_output_size()=="540p" and app.video.get("output_size")=="540p" and app.video.width==1920 and app.video.height==1080,"new session restores saved delivery choice with original fullHD canvas")
 		check(Storage.image_hash(Drawing.cel_at(app.layers[1],0).image)==expected.art,"delivery choice never rescales saved editable art")
 		var picture: Image=await app.renderer.capture(app.keys,app.layers,12,true)
 		check(picture.get_data()==Image.load_from_file(folder.path_join("source12.png")).get_data(),"cold fullHD final scene reproduces exact original before delivery resizing")
@@ -44,7 +44,8 @@ func run() -> void:
 	check(not error.is_empty() and app.last_export_folder==previous and not app.exporting,"invalid delivery size refuses before creating movie output")
 	error=await app.export_images(folder,true);check(not error.is_empty() and app.last_export_folder==previous,"PNG delivery refuses invalid size through the same preflight")
 	app.output_size.set_item_metadata(2,"540p")
-	check(app.video==source_video and app.current_world()==world and app.keys==keys and art.get_data()==pixels and app.history.size()==history and FileAccess.get_sha256(cue)==cue_hash,"all delivery modes preserve source video/world/keys/art/history and original sound")
+	var retained_video: Dictionary=app.video.duplicate(true);retained_video.erase("output_size")
+	check(retained_video==source_video and app.video.get("output_size")=="540p" and app.current_world()==world and app.keys==keys and art.get_data()==pixels and app.history.size()==history+2 and app.history.slice(history).all(func(command):return command.type=="output_size") and FileAccess.get_sha256(cue)==cue_hash,"delivery edits add only two reversible settings commands while source video/world/keys/art/sound stay unchanged")
 	app.has_project.save_file(folder.path_join("Delivery.has"),"packed");await wait_job();check(FileAccess.file_exists(folder.path_join("Delivery.has")),"ordinary compatible HAS saves fullHD sources independently of delivery size")
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"movie":movie,"retry":retried,"png_folder":png_folder,"art":Storage.image_hash(art)}))
 	print("OUTPUT_SIZE_SMOKE "+JSON.stringify({"checks":checks,"failures":failures,"movie":movie,"retry":retried,"png_folder":png_folder}));await app.quit_studio();quit(0 if failures==0 else 1)

@@ -39,6 +39,7 @@ static func readable_manifest(path: String) -> bool:
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK or not parser.data is Dictionary: return false
 	var data: Dictionary=parser.data
+	if data.get("video") is Dictionary and not preload("res://src/output_size.gd").project_error(data.video).is_empty():return false
 	var extended:=false
 	if data.get("schema_version")==8:
 		var timing:=Extended.unwrap(data)
@@ -71,6 +72,8 @@ static func readable_manifest(path: String) -> bool:
 	return integer(data.get("schema_version"), 1, 6) and data.get("layers") is Array and data.get("camera_keys") is Array
 
 static func save_project(folder: String, video: Dictionary, keys: Array, layers: Array, source: String, frame: int, audio: Dictionary = {}, recovery: Dictionary = {}, model: Dictionary = {}, content_addressed := false, world: Dictionary = {}, editor_extra: Dictionary = {},palette: Array=[],sequence_graph: Dictionary={},_manifest_out: Variant=null,reference_sheet: Dictionary={}) -> String:
+	var output_error:=preload("res://src/output_size.gd").project_error(video)
+	if not output_error.is_empty():return output_error+" Previous save preserved."
 	var video_error:=Extended.video_error(video)
 	if not video_error.is_empty():return video_error+" Previous save preserved."
 	if not reference_sheet.is_empty():
@@ -337,6 +340,8 @@ static func decode_project(data,folder: String,extended:=false,rasters=null) -> 
 	var video = data.get("video")
 	if not video is Dictionary:
 		return {"error": "Missing video settings."}
+	var output_error:=preload("res://src/output_size.gd").project_error(video)
+	if not output_error.is_empty():return {"error":output_error}
 	var lighting_error:=Lighting.validate(video)
 	if not lighting_error.is_empty():return {"error":lighting_error}
 	if video.has("world_background") and not video.world_background in ["black","legacy_blue"]:

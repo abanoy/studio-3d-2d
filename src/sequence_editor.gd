@@ -346,6 +346,7 @@ func switch_to(id: String,route: Array) -> String:
 	app.video=scene.video.duplicate(true);app.keys=scene.camera_keys.duplicate(true);app.layers=scene.layers.duplicate(true)
 	if app.layers.is_empty():
 		for title in ["Rough","Ink"]:app.layers.append({"id":str(ResourceUID.create_id()),"name":title,"visible":true,"cels":[]})
+	app.sync_output_size()
 	app.audio_clip=scene.get("audio",{});app.palette=scene.get("palette",[]).duplicate(true);app.palette_editor.refresh(true)
 	app.source="";app.renderer.set_background(str(app.video.get("world_background","black")))
 	var state: Dictionary=editor_states.get(id,{})

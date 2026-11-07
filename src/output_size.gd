@@ -4,6 +4,9 @@ const PROFILES={"1080p":Vector2i(1920,1080),"720p":Vector2i(1280,720),"540p":Vec
 static func error(value) -> String:
 	return "" if value is String and PROFILES.has(value) else "Choose an available Output size in Advanced → Movie encoder."
 
+static func project_error(video: Dictionary) -> String:
+	return "Invalid saved output size. " + error(video.output_size) if video.has("output_size") and not error(video.output_size).is_empty() else ""
+
 static func resample(image: Image,size: Vector2i) -> Image:
 	if image==null or image.is_empty() or size.x<1 or size.y<1 or size.x>1920 or size.y>1080:return null
 	if image.get_size()==size:return image

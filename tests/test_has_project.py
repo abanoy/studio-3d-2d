@@ -89,6 +89,23 @@ class HasTests(unittest.TestCase):
                 with self.assertRaises(has.HasError):has.pack(request)
                 self.assertEqual(Path(request['path']).read_bytes(),before)
 
+    def test_output_size_roundtrip(self):
+        for value in ('1080p','720p','540p'):
+            with self.subTest(value=value), tempfile.TemporaryDirectory() as directory:
+                root=Path(directory);request,_,_=self.fixture(root);path=Path(request['folder'])/'project.json'
+                data=json.loads(path.read_bytes());data['video']={'output_size':value};path.write_bytes(has.json_bytes(data));has.pack(request)
+                out=self.unpack(root,request);reopened=json.loads((Path(out['folder'])/'project.json').read_bytes())
+                self.assertEqual(reopened['video']['output_size'],value)
+
+    def test_invalid_output_size_preserves_previous_container(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,_,_=self.fixture(root);has.pack(request);before=Path(request['path']).read_bytes();path=Path(request['folder'])/'project.json';data=json.loads(path.read_bytes())
+            for value in (None,True,720,[],{},'', '4k'):
+                with self.subTest(value=value):
+                    data['video']={'output_size':value};path.write_bytes(has.json_bytes(data))
+                    with self.assertRaises(has.HasError):has.pack(request)
+                    self.assertEqual(Path(request['path']).read_bytes(),before)
+
     def fixture(self, root):
         folder=root/'snapshot';folder.mkdir()
         original=root/'external.glb';original.write_bytes(b'controlled geometry fixture'*200)

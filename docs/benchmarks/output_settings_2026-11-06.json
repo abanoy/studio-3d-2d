@@ -1,0 +1,216 @@
+{
+  "date": "2026-11-06",
+  "scope": "Scene-persisted bounded delivery size, not variable source canvases, broader render presets, native fidelity or full OUTPUT-02 closure.",
+  "baseline": {
+    "commit": "ea91618",
+    "checks": 2,
+    "failures": 1,
+    "raw": "/workspace/has-handoff-audit/output-settings-before/run.log",
+    "failure": "Delivery selection was session-only, absent from project metadata/history."
+  },
+  "media_suite": {
+    "reports": {
+      "unit": {
+        "checks": 22,
+        "failures": 0
+      },
+      "settings": {
+        "checks": 15,
+        "failures": 0
+      },
+      "settings-reader": {
+        "checks": 1,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 14,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/output-settings-final/render_1794014735_2147846_0/movie.mp4",
+        "png_folder": "/workspace/has-handoff-audit/output-settings-final/images_1794014748_14812817_0",
+        "retry": "/workspace/has-handoff-audit/output-settings-final/render_1794014741_8582247_0/movie-14057293.mp4"
+      },
+      "reader": {
+        "checks": 3,
+        "failures": 0
+      }
+    },
+    "media": [
+      {
+        "path": "/workspace/has-handoff-audit/output-settings-final/render_1794014735_2147846_0/movie.mp4",
+        "video": {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1280,
+          "height": 720,
+          "coded_width": 1280,
+          "coded_height": 720,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 1,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 24576,
+          "duration": "2.000000",
+          "bit_rate": "337956",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "48",
+          "extradata_size": 48,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        "decoded_onset_sample": 48043
+      },
+      {
+        "path": "/workspace/has-handoff-audit/output-settings-final/render_1794014741_8582247_0/movie-14057293.mp4",
+        "video": {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1280,
+          "height": 720,
+          "coded_width": 1280,
+          "coded_height": 720,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 31,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 1,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 24576,
+          "duration": "2.000000",
+          "bit_rate": "337956",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "48",
+          "extradata_size": 48,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        "decoded_onset_sample": 48043
+      }
+    ],
+    "alpha_png_frames": 48,
+    "manual_has_unchanged": true,
+    "writer_cache_unavailable_for_reader": true,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "folder": "/workspace/has-handoff-audit/output-settings-final"
+  },
+  "checkpoint_and_fresh_cache": {
+    "writer": {
+      "checks": 16,
+      "failures": 0
+    },
+    "reader": {
+      "checks": 1,
+      "failures": 0
+    }
+  },
+  "python_container_tests": {
+    "passed": 22,
+    "failures": 0,
+    "raw": "/workspace/has-handoff-audit/output-settings-python.log"
+  },
+  "source_sha256": {
+    "src/app.gd": "0a2b091e128a180f1fece291639f2930433c41bd41e13d83afca4cc72d88f453",
+    "src/output_size.gd": "6af5a9e209fdc753fd24c4e2e6cfefcdb4bd94c484409edf80f6b9c2a256bc40",
+    "src/storage.gd": "0464a1395c472bfd8696b83c716cd82feda56500041e9b6380c95c018bd5c05e",
+    "src/sequence_editor.gd": "2b358fdb6ff03538b7e24bc51c89e41b768a662b31ff22acc770185ca3039927",
+    "tools/has_project.py": "f737e462ed0d7f14ad131d968b6607b7d9d06ca367a0c6302cfe3a2476cba361",
+    "tests/output_settings_smoke.gd": "a4986e2feccca833f8e93a8fd797688295869191a539d908692720c8d2975226",
+    "tests/output_size_smoke.gd": "212e83e612afa80329748d4797d95aa73510d6c4b8d133faf55132f2944b6c3b",
+    "tests/verify_output_size.py": "105501d3c01b040645b157baff3eeb5245894238f21b9a16f91d3b5153c6adc1",
+    "tests/test_has_project.py": "0244ef734096e1f404cbe54e4402a8eaeeaa8bb4a524f9cfe7afc9ad761f1e45"
+  },
+  "note": "The checkpoint assertion was added after the complete media pass; reran only the affected settings writer/fresh reader. Product source was unchanged. Do not add overlapping suite counts as unique coverage.",
+  "remaining": [
+    "Native variable canvas size and non-16:9 dimensions.",
+    "Broader project render settings; quality remains the existing export choice.",
+    "Physical Windows/hardware and artist acceptance."
+  ]
+}

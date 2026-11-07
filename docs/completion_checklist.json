@@ -1451,9 +1451,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/output_size.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/output_settings_2026-11-06.json"
         }
       ],
-      "remaining": "Rational rates/duration and session delivery sizes1080p/720p/540p are implemented with actual media/cold-save checks. Source canvas/reader still enforce1920x1080; native variable canvas sizes and project-persisted render settings remain unresolved implementation scope. Delivery downsampling does not close that requirement.",
+      "remaining": "Rational rates/duration and1080p/720p/540p delivery sizes are implemented. Scene delivery size now persists in HAS/directory/recovery with Undo and parent/child navigation, with actual media/fresh-open checks. Source canvas/reader still enforce1920x1080; native variable canvases and broader project render settings remain incomplete.",
       "external_dependencies": []
     },
     {

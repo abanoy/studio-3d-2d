@@ -703,7 +703,8 @@ Draw returns to the animated shot.")
 	for id in OutputSize.PROFILES:
 		var dimensions: Vector2i=OutputSize.PROFILES[id]
 		output_size.add_item("%d x %d" % [dimensions.x,dimensions.y]+(" (default)" if id=="1080p" else ""));output_size.set_item_metadata(output_size.item_count-1,id)
-	output_size.tooltip_text="Delivery dimensions for new movies and PNG sequences. Artwork stays 1920 x 1080. This session choice is captured at render start; Retry MP4 keeps its saved frame size."
+	output_size.tooltip_text="Delivery dimensions for new movies and PNG sequences. Artwork stays 1920 x 1080. Saved with this scene. Captured at render start; Retry MP4 keeps its saved frame size."
+	output_size.item_selected.connect(change_output_size)
 	label(encoder_section,"Movie quality")
 	encoder_quality=OptionButton.new();encoder_section.add_child(encoder_quality)
 	for id in ["standard","small","high"]:
@@ -1244,6 +1245,12 @@ func push_history(command: Dictionary) -> void:
 	if sequence_editor:sequence_editor.trim_history()
 
 func apply_command(command: Dictionary, side: String) -> bool:
+	if command.type=="output_size":
+		var value=command[side]
+		if value!=null and not OutputSize.error(value).is_empty():message("Invalid output size history.");return false
+		if value==null:video.erase("output_size")
+		else:video["output_size"]=value
+		sync_output_size();changed();return true
 	if command.type=="reference_sheet":
 		var why: String=reference_sheet.restore_state(command[side])
 		if not why.is_empty():message(why);return false
@@ -1291,6 +1298,7 @@ func apply_command(command: Dictionary, side: String) -> bool:
 			if timing_prepared.has("error"):message(timing_prepared.error);return false
 			audio_mix=timing_prepared.mix
 		video=command[side].duplicate(true);renderer.video_settings=video
+		sync_output_size()
 		if not timing_prepared.is_empty():sequence_editor.install_timing(timing_prepared)
 		if visibility_fade:visibility_fade.set_value_no_signal(int(video.get("visibility_fade_ms",300)))
 		refresh_audio_controls()
@@ -1747,6 +1755,7 @@ func reset_document(path: String, sample := false) -> bool:
 	pose_editor.rebuild_tree()
 	source = path if sample else "";last_import_id="";project_folder = ""; has_project.clear_identity()
 	video = {"width":1920,"height":1080,"fps_num":24,"fps_den":1,"duration_frames":48,"visibility_fade_ms":300,"world_background":"legacy_blue" if sample else "black","lighting_mode":"studio" if sample else "unshaded"}
+	sync_output_size()
 	renderer.set_background(video.world_background)
 	palette=[];palette_editor.refresh(true)
 	layers.clear(); layer_choice.clear()
@@ -1851,6 +1860,7 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 	pose_editor.selected="@root";pose_editor.rebuild_tree()
 	source = str(data.get("source",""));last_import_id=""
 	video = data.video
+	sync_output_size()
 	renderer.set_background(str(video.get("world_background","legacy_blue")))
 	keys = data.camera_keys
 	layers = data.layers
@@ -1917,6 +1927,23 @@ func export_images(parent: String,drawings_only:=false) -> String:
 
 func selected_movie_profile() -> String:
 	return str(encoder_quality.get_item_metadata(encoder_quality.selected)) if encoder_quality and encoder_quality.selected>=0 else ""
+
+func sync_output_size() -> void:
+	if not output_size:return
+	for i in range(output_size.item_count):
+		if output_size.get_item_metadata(i)==video.get("output_size","1080p"):output_size.select(i);return
+
+func change_output_size(index: int) -> void:
+	if exporting or index<0 or index>=output_size.item_count:return
+	var value=output_size.get_item_metadata(index)
+	if not OutputSize.error(value).is_empty():message(OutputSize.error(value));sync_output_size();return
+	if value==video.get("output_size","1080p"):return
+	finish_stroke();pose_editor.finish_drag()
+	var before=video.get("output_size")
+	if value=="1080p":video.erase("output_size")
+	else:video["output_size"]=value
+	push_history({"type":"output_size","before":before,"after":video.get("output_size"),"bytes":256})
+	changed()
 
 func selected_output_size() -> String:
 	return str(output_size.get_item_metadata(output_size.selected)) if output_size and output_size.selected>=0 else ""

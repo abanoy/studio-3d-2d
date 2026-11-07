@@ -22,6 +22,10 @@ def main():
         if os.name=='nt' and not headless:
             path=Path(args[args.index('--receipt')+1]);r=json.loads(path.read_bytes());assert r['exit']==0 and r['child_desktop_confirmed'] and not r['foreground_child_observed'] and r['job_closed'] and r['desktop_closed'];receipts.append(str(path))
     run('tests/output_size_unit.gd','unit','OUTPUT_SIZE_UNIT ',True)
+    run('tests/output_settings_smoke.gd','settings','OUTPUT_SETTINGS_SMOKE ')
+    settings=(folder/'Settings.has').read_bytes();(folder/'cache').rename(folder/'cache.offline')
+    run('tests/output_settings_smoke.gd','settings-reader','OUTPUT_SETTINGS_READ ',extra=['--read'])
+    assert (folder/'Settings.has').read_bytes()==settings
     run('tests/output_size_smoke.gd','writer','OUTPUT_SIZE_SMOKE ')
     manual=(folder/'Delivery.has').read_bytes();(folder/'writer-cache').rename(folder/'writer-cache.offline')
     run('tests/output_size_smoke.gd','reader','OUTPUT_SIZE_READ ',extra=['--read'])

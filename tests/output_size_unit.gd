@@ -8,6 +8,9 @@ func check(ok: bool,label: String) -> void:
 func _initialize() -> void:
 	for id in ["1080p","720p","540p"]:check(Sizes.error(id).is_empty(),"known size accepted: "+id)
 	for value in ["",true,1280,"4k"]:check(not Sizes.error(value).is_empty(),"unknown or mistyped profile refused: "+str(value))
+	check(Sizes.project_error({}).is_empty(),"legacy metadata defaults without adding a field")
+	for value in ["1080p","720p","540p"]:check(Sizes.project_error({"output_size":value}).is_empty(),"saved profile accepted: "+value)
+	for value in [null,true,720,[],{},"4k"]:check(not Sizes.project_error({"output_size":value}).is_empty(),"invalid saved profile refuses: "+str(value))
 	var full:=Image.create(1920,1080,false,Image.FORMAT_RGBA8);full.fill(Color(.2,.4,.6,1));var data:=full.get_data()
 	check(is_same(Sizes.resample(full,Vector2i(1920,1080)),full) and full.get_data()==data,"default fullHD path preserves exact input and resource without resizing")
 	var tiny:=Image.create(2,1,false,Image.FORMAT_RGBA8);tiny.set_pixel(0,0,Color(1,0,0,128.0/255));tiny.set_pixel(1,0,Color(0,1,0,0));var original:=tiny.get_data()

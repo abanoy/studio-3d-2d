@@ -3,15 +3,18 @@
 In **Advanced → Movie encoder → Output size**, choose 1920 × 1080 (default),
 1280 × 720, or 960 × 540. The choice applies to new MP4 renders and complete or
 transparent PNG sequences. Movie quality controls compression independently.
-A new application session starts at 1080p; this choice is not saved in a HAS.
-Returning to Simple mode keeps the current session choice.
+New and legacy projects default to1080p. The selected delivery size is saved with
+the scene in packed/linked HAS, directory saves and recovery. It supports Undo/Redo,
+marks the project changed, and follows parent/child scene navigation. Returning to
+Simple mode keeps the saved choice.
 
 The source canvas, camera evaluation and saved cel coordinates remain 1920 × 1080.
 The complete composite is resized once before writing each delivery PNG. Smaller
 exports contain downsampled artwork; this does not add native variable-resolution
-canvases, extra source detail, 4K, different aspect ratios, or project-persisted
-render settings. OUTPUT-02 remains partial for those canvas/settings requirements.
-Existing project files and resource limits are unchanged.
+canvases, extra source detail,4K or different aspect ratios. OUTPUT-02 remains
+partial for native variable canvases and broader render settings. Existing files
+without `video.output_size` keep their1080p default; this optional field uses the
+existing project schemas. Resource limits are unchanged.
 
 Settings are captured before rendering starts. Changing the selection during an
 attempt cannot change that attempt's size. Retry MP4 reuses its saved PNGs, WAV and
@@ -36,7 +39,7 @@ provisioned private Linux display and activated pinned tools. Windows uses the
 existing private-desktop launcher. The display number is an example, not shared
 or automatically discovered desktop authorization.
 
-The owned procedural fixture passed 12 unit, 14 app and 3 fresh-reader checks:
+The owned procedural media fixture passed22 unit,14 app and3 fresh-reader checks:
 independent alpha/color interpolation oracles, unchanged sources/default pixels,
 720p movie and retry, 48 transparent 540p PNGs, captured selection, invalid-input
 refusal, ordinary packed HAS and cold load with the writer cache unavailable.
@@ -45,3 +48,16 @@ have 48 H264 frames at 24fps and AAC, with the authored one-second cue decoded a
 sample 48043 of 48000Hz. The original 1080p quality and PNG export regressions
 are recorded separately in the progress memo. These are cloud software checks,
 not native model fidelity, Windows hardware or artist acceptance.
+
+
+Project-settings checks additionally verify16 writer and1 fresh-reader cases:
+reversible scene metadata, unchanged physics during settings Undo, export-time
+mutation guards, ordinary packed/directory save, a real recovery checkpoint,
+invalid settings preserving the prior manifest/current project, scene navigation
+and New reset. The writer cache is unavailable for fresh packed Open. Two Python
+container tests exercise all3valid values and mistyped/unknown values, preserving
+the prior HAS on refusal (22container tests pass). Earlier media assertions now
+expect the intentional two settings history commands and saved540p choice; source
+video/canvas, world, keys, drawings and sound still compare exactly.
+
+See [persisted settings evidence](benchmarks/output_settings_2026-11-06.json).

@@ -2127,3 +2127,33 @@ docs/benchmarks/cel_create_delete_history_2026-11-06.json. No native/hardware cl
 
 MEM-01/02 stay partial/open. Whole-layer/global accounting, newly authored eager/raw
 storage and dense acceptance still actionable before raising limits. Goal active.
+
+
+2026-11-06 — Scene-persisted delivery size
+
+Reproduced missing project-owned delivery metadata/history on ea91618:1pass/1fail
+probe. Advanced Output size now updates optional video.output_size, marks dirty,
+and supports Undo/Redo without resetting independent physics. Default1080p needs
+no field; legacy files stay compatible. Successful New/Open, parent/child navigation
+and video history synchronize the control. Export-time events cannot mutate saved
+settings/history; each export still captures its dimensions and Retry uses saved
+frames/audio. Authored canvas stays1920x1080. Quality remains export/session choice.
+
+Storage save/load/readable-manifest and Python HAS member validation reject unknown
+or mistyped saved sizes. Invalid save keeps previous manifest/HAS; failed Open
+keeps current project/choice. No schema version or resource cap changes.
+
+Media suite22unit+15settings+1settingsreader+14movie/PNG+3coldreader pass. Later
+added real checkpoint assertion and reran only affected settings:16writer+1fresh
+reader pass, product source unchanged. Both media movies720p48H264frames24fps/AAC
+with original one-second cue;48transparent540pPNGs and alpha checks pass. Prior
+writer cache unavailable for fresh Open; manual files unchanged.22Python container
+tests pass including2new valid/invalid saved-size cases. Media test updates check
+the intentional two reversible settings commands and restored540p, while comparing
+source video excluding the new field, canvas/world/keys/art/audio exactly.
+
+Private107/Dummy. Raw output-settings-before,output-settings-final and
+output-settings-checkpoint under /workspace/has-handoff-audit. Curated
+docs/benchmarks/output_settings_2026-11-06.json. Native variable canvases, broader
+render settings and physical/native/artist acceptance remain. OUTPUT-02 partial;
+whole goal active.
