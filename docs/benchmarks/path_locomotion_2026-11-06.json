@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-06",
+  "scope": "Unshipped read-only walking evaluator and IK feasibility. No editor/settings/save/export/native/terrain or whole MOTION-03 acceptance claim.",
+  "domain": {
+    "checks": 29,
+    "failures": 0,
+    "maximum_foot_error": 0.000179591297637671,
+    "samples": 97,
+    "scope": "unshipped bounded flat/straight walk evaluator on original figure; not editor/persistence/native/terrain acceptance",
+    "source_sha256": {
+      "src/path_locomotion.gd": "6f8ffb4e1d521fbf24b0ad48921e2f84246bedd99a0ac934e7b2d1e9698c1db5",
+      "tests/path_locomotion_unit.gd": "6bd34efc9474e9e770cb4332495916175dfb4abdb14dba55da5571791abd50b6",
+      "src/model.gd": "091d8f56218871bb857274d4081884f591214c012c522246c04bca371a705e99",
+      "src/foot_contacts.gd": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607",
+      "src/limb_ik.gd": "7d1ab55c976740f0b02849c5538115478dbc1d3c0d296894d84f3a9f703aeb0f",
+      "src/root_component_document.gd": "98530f2cd95ec6a82bfc8f7d0362e429f264078cef62f3d529ff44a39d66128f",
+      "examples/tutorials/Practice figure.glb": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23"
+    },
+    "original_source_unchanged": true
+  },
+  "raw": "/workspace/has-handoff-audit/path-locomotion-final/verification.json",
+  "initial_feasibility": {
+    "compute_ms": 53.934,
+    "failures": [],
+    "maximum_foot_error": 1.79433740754575e-07,
+    "maximum_swing_height": 0.0599936539156265,
+    "model_data_unchanged": true,
+    "samples": 49,
+    "scope": "unshipped feasibility spike: original17bone figure, flat straight0.6m route,0.3m stride,0.06m lift and0.025m root lowering; not native/terrain/manual-key or UI acceptance",
+    "solved": 49,
+    "source_unchanged": true
+  },
+  "initial_raw": "/workspace/has-handoff-audit/path-walk-spike-2/result.json",
+  "failed_harnesses": [
+    "Initial standalone probe used the loader key node instead of scene; owned process stopped and corrected.",
+    "First domain fixture matched literal upper_arm.L although GLB names are normalized; corrected to existing IK name normalization.",
+    "Turning refusal fixture had only one rotation key, which correctly produced a constant leading value. Added explicit zero-frame rotation anchor to test an actual changing turn."
+  ],
+  "limits": [
+    "Straight flat forward-progress paths only; no changing turn/scale, groups, Hold jumps, reversals or terrain.",
+    "Unkeyed legs/hips and no competing authored planted contacts.",
+    "Up to240frames and64strides; positive uniform upright parent.",
+    "Fresh source/binding checks and one cached returned pose; no persistence or UI activation."
+  ],
+  "next": "Integrate strict versioned saved intent and an explicit reversible/correctable editor suggestion; test native/terrain/longer behavior separately."
+}

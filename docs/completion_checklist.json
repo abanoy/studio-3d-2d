@@ -463,9 +463,25 @@
         {
           "kind": "recorded_report",
           "path": "docs/movement_path_presets.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/path_locomotion.gd"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_path_locomotion.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/path_locomotion.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/path_locomotion_2026-11-06.json"
         }
       ],
-      "remaining": "Path presets exist; generated locomotion and terrain adaptation remain. Multi-view inference details remain undecided separately.",
+      "remaining": "Reusable paths/presets work. Bounded read-only flat/straight walking evaluator passes29domain checks with preserved authored/live state; not app-enabled. Saved intent and explicit reversible/correctable editor suggestion, actual persistence/Undo/render, general rig/terrain and external acceptance remain incomplete.",
       "external_dependencies": []
     },
     {
@@ -2169,7 +2185,7 @@
     {
       "requirement": "MOTION-03",
       "priority": 2,
-      "action": "Implement a reversible locomotion prototype on authored paths before optional multi-view inference."
+      "action": "Bounded read-only walking feasibility/evaluator passes. Integrate strict saved intent and explicit enable/disable/preview/correction on authored paths, then actual Undo/persistence/render before optional multi-view inference."
     },
     {
       "requirement": "IMPORT-03",

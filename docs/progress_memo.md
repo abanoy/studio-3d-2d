@@ -12543,3 +12543,36 @@ Tracked generated log archived and restored exactly. STORE-04 partial/open:
 directory-sync/power-loss, native Windows, private recovery/lesson metadata writers
 and concurrent-writer robustness remain. Hostile filesystem races not certified.
 Whole goal active; technical COURSE-01 remains the only audited acceptance closure.
+
+
+2026-11-06 — Bounded walking evaluator feasibility (not app-enabled)
+
+MOTION-03 next substantive feature. Original17bone figure spike solves49samples
+of flat0.6m route with fixed0.3m stride/.06m lift/.025m root lowering,53.934ms
+headless compute; maxfooterror1.79e-7m and exact model/source preservation. This
+scoped spike is not a product performance/native/terrain result.
+
+Added internal path_locomotion evaluator: measured leg-relative stride/lift/lowering,
+authored path sampling, alternating fixed stance/eased swing, existing two-leg IK,
+full-half-frame preflight and atomic plan publication. Weak actor/bone bindings,
+source/parent/binding staleness checks, snapshot/restore all live root/bone fields,
+one cached result returned detached. Zero amount is exact authored pose/path.
+Refuses keyed legs/hips, planted contacts, unsupported rigs, groups, changing turn/
+scale, nonflat/corner/reverse/Hold-jump routes, bad corrections/speed/length.
+Bound240frames/64strides; no new saved fields, UI behavior or source-asset changes.
+
+29domain checks pass, including97half-frame targets within0.2mm, exact live/source
+restoration, keyed arm preservation, deterministic seek/cache, zero/partial amount,
+JSON whole-number compatibility and refusals. Maximum measured foot error
+0.0001795913m in this generalized fixture. Pure headless experiment only. Initial
+standalone loader key typo corrected; first domain harness literal bone name
+normalized; actual-turn fixture needed explicit frame0anchor because a sole final
+rotation key correctly carried its constant value into the lead-in. Invalid draft
+Dictionary inference fixed before domain execution. Failed logs retained; no
+assertion weakened and normal app modules unchanged.
+
+Raw /workspace/has-handoff-audit/path-walk-spike-2 andpath-locomotion-final; curated
+docs/benchmarks/path_locomotion_2026-11-06.json. MOTION-03 partial/open. Next strict
+saved intent, explicit editor preview/enable/disable/correction and actual
+Undo/HAS/cold-open/recovery/render, then broader native/terrain/artist gates.
+Whole goal remains active.
