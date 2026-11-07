@@ -1612,11 +1612,18 @@
           "file_sha256": "67510cb793d6c8c1b1701f1b351ff27e939b155f1a827040cdc68efa0d6148ab"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Native joints/cloth/helper fidelity and artist/device acceptance remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified. Native joints/cloth/helper fidelity and artist/device/Windows acceptance remain separate gates.",
+      "evidence_review": "101 actual original-fixture checks: compatible interactive imports default on, queued cancellation and live peers preserved; Jolt120Hz fall/contact/grab and release retains actual drag velocity, freeze without keys, Simple context Reset pose exact Undo/Redo, solid prop/ragdoll collisions, packed reopen and exact48-frame1080p24H264 movies. Optional native fixtures explicitly absent.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/live_physics_current_2026-11-07.json",
+          "commit": "ed10572ce4bfbc7b0680dcd0ab7c28d67ea3d91b",
+          "scope": "101 actual original-fixture checks: compatible interactive imports default on, queued cancellation and live peers preserved; Jolt120Hz fall/contact/grab and release retains actual drag velocity, freeze without keys, Simple context Reset pose exact Undo/Redo, solid prop/ragdoll collisions, packed reopen and exact48-frame1080p24H264 movies. Optional native fixtures explicitly absent."
+        }
+      ],
       "external_dependencies": []
     },
     {
