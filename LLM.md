@@ -2188,3 +2188,10 @@ Supplied originals unchanged. Tracked generated reports/logs archived then resto
 to HEAD bytes. COURSE-01 implementation complete; per-item acceptance commit audit
 next. Optional course depth, teacher demonstrations, COURSE-03 retention/concurrency
 and novice/physical Windows/device acceptance remain separate. Whole goal active.
+
+
+2026-11-06 — COURSE-01 acceptance audit
+Receipt source hashes match committed implementation 831ee0947ba96f8d1a03b49ddc000532a1a06e91. Closed only
+COURSE-01 technical acceptance with17browser+57focused+87beginner current checks
+and explicit source/condition mapping. Other acceptance items and external gates
+remain open; numeric global score stays unpublished until the full audit.

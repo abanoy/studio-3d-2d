@@ -1328,8 +1328,8 @@
       ],
       "title": "Basic and Advanced topic browser",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Offline bundled original HAS practices provide a logical Basic route and accessible Advanced sections/subsections with topic entry points.",
       "evidence": [
         {
@@ -1351,9 +1351,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/tutorial_catalog_2026-11-06.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/tutorial_catalog_2026-11-06.json",
+          "commit": "831ee0947ba96f8d1a03b49ddc000532a1a06e91",
+          "scope": "Offline original assets, logical complete Basic first-film route, accessible Advanced sections/topics and stable practice entry/resume at1100x700; current17browser+57focused+87beginner checks with original sources and real HAS/H264/AAC. External novice/device acceptance is separately tracked."
         }
       ],
-      "remaining": "Technical acceptance run passes: Basic/Advanced sections, all seven stable topic entries, original offline assets, actual first-film and focused checkpoints/movie workflows. Record tested implementation commit for final per-item acceptance audit; optional chapter depth and external novice/device acceptance remain separate.",
+      "remaining": "Optional additional focused practices/teacher depth and separate novice/device acceptance remain outside this verified browser condition; Skip stays OPEN.",
       "external_dependencies": []
     },
     {
@@ -2135,11 +2141,6 @@
       "requirement": "STORE-04",
       "priority": 1,
       "action": "Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit."
-    },
-    {
-      "requirement": "COURSE-01",
-      "priority": 2,
-      "action": "Organize Basic/Advanced sections and supported topic entry points; retain versioned progress and unresolved Skip policy."
     },
     {
       "requirement": "MOTION-03",

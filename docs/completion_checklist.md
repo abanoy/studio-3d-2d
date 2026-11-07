@@ -18,7 +18,6 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 - **P1 · MEM-02** — Idle edited-owner release and affected-cel create/delete are verified. Address remaining newly authored eager/raw/global memory accounting and whole-layer history, then dense-project acceptance before raising caps.
 - **P1 · MEM-01** — Affected-cel structural create/delete history is verified. Audit remaining whole-layer retention/global memory budgets and dense-project acceptance; do not re-polish completed clipboard/create/delete patches.
 - **P1 · STORE-04** — Complete self-contained interrupted-write and storage-failure acceptance, keeping Windows/hardware gates explicit.
-- **P2 · COURSE-01** — Organize Basic/Advanced sections and supported topic entry points; retain versioned progress and unresolved Skip policy.
 - **P2 · MOTION-03** — Implement a reversible locomotion prototype on authored paths before optional multi-view inference.
 - **P2 · IMPORT-03** — Define per-profile native fidelity acceptance and use approved fixtures when available; report unsupported capabilities honestly.
 
@@ -75,7 +74,7 @@ Prioritize these required gaps over optional UI/effect polishing. Resolve true o
 | REC-01 | Quiet time/action autosave | implemented / scoped_evidence · [report](recovery_schedule.md) | Default minute or meaningful-action protection waits for safe interaction state, retains failed work for retry, and protects active lesson-only changes without dirtying saved scene content. |
 | REC-02 | Bounded journal and Advanced history | implemented / scoped_evidence · [report](recovery_history.md) | Bounded recoverable states expose timestamps and low-resolution viewport thumbnails in Advanced without endless full-project copies. |
 | REC-03 | Automatic newest-valid recovery | implemented / scoped_evidence · [report](startup_recovery.md) | An actual abruptly terminated session restores the newest completely valid state, falls back through corrupt entries and never overwrites the last manual HAS. |
-| COURSE-01 | Basic and Advanced topic browser | implemented / scoped_evidence · [report](tutorials.md) | Offline bundled original HAS practices provide a logical Basic route and accessible Advanced sections/subsections with topic entry points. |
+| COURSE-01 | Basic and Advanced topic browser | implemented / verified · [report](tutorials.md) | Offline bundled original HAS practices provide a logical Basic route and accessible Advanced sections/subsections with topic entry points. |
 | COURSE-02 | Interactive teacher and quiet hints | implemented / scoped_evidence · [report](tutorials.md) | Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over. |
 | COURSE-03 | Whole-scene Previous and resumed practice | implemented / scoped_evidence · [report](lesson_recovery.md) | Previous restores the complete step scene; Continue/Fresh preserve separate sessions and observations; optional personal Save and crash reattachment keep newer protected practice state. |
 | OUTPUT-01 | Simple MP4 and image output | implemented / scoped_evidence · [report](png_export.md) | Default output is playable H264/AAC1080p24 beside the saved HAS, with exact frame count, silent-video support and complete/transparent PNG alternatives. |
