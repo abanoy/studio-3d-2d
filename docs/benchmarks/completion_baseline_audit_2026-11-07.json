@@ -1032,11 +1032,24 @@
           "file_sha256": "ed3c41077855e4e6ff0507e8a90cf76b1b93681df57a57f43e825052705d9219"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Held-cel structural implementation is present; dense storage now has scoped400drawing evidence in MEM-02. Full routed exposure/structural acceptance still needs closure; no longer describe dense storage as absent.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required software condition verified by current committed receipts. Native/device/artist/Windows observations and any future distribution authorization remain separate where applicable.",
+      "evidence_review": "205 current blank/copy/delete/cut/paste/split, independent editable pixels, bounded patches, exact Undo/Redo, live-physics isolation, cold packed and real movie checks. 161 current end-exclusive exposure/move/resize/history/nested-owner checks, actual1440frame movie with exact selected pixels, packed/linked cold readers and forced-exit startup recovery.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/cel_clipboard_current_2026-11-07.json",
+          "commit": "c4ad3fe581aac144cf81a17168bfc98dbf2ab796",
+          "scope": "205 current blank/copy/delete/cut/paste/split, independent editable pixels, bounded patches, exact Undo/Redo, live-physics isolation, cold packed and real movie checks."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/cel_timing_current_2026-11-07.json",
+          "commit": "8d74c1a7d42aa532f9c86e69552d7f73dca22ce7",
+          "scope": "161 current end-exclusive exposure/move/resize/history/nested-owner checks, actual1440frame movie with exact selected pixels, packed/linked cold readers and forced-exit startup recovery."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -2118,11 +2131,18 @@
           "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
         }
       ],
-      "verification": "historical_only",
-      "acceptance_status": "open",
-      "acceptance_review": "App/public distribution licensing decision remains outside current deployment authorization.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required software condition verified by current committed receipts. Native/device/artist/Windows observations and any future distribution authorization remain separate where applicable.",
+      "evidence_review": "8 actual Simple/Advanced About UI checks, unchanged scene/history, installed-tool build-neutral attribution, matching dependency records and read-only private2089-member versus Git hash audit. No rights fabricated or binaries/native art redistributed; application distribution licensing remains outside authorized work.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/notices_current_2026-11-07.json",
+          "commit": "0a2180c21ba7b92c75ad9ddefad300eb5f2e5f55",
+          "scope": "8 actual Simple/Advanced About UI checks, unchanged scene/history, installed-tool build-neutral attribution, matching dependency records and read-only private2089-member versus Git hash audit. No rights fabricated or binaries/native art redistributed; application distribution licensing remains outside authorized work."
+        }
+      ],
       "external_dependencies": []
     },
     {
