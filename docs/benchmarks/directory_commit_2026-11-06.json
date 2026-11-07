@@ -1,0 +1,570 @@
+{
+  "date": "2026-11-06",
+  "scope": "Cooperating directory promotion exclusion/optimistic generation guard, metadata file/directory sync and scoped faults. Not all payload/private-parent directory durability, hostile filesystem mutation, physical power loss or native Windows certification.",
+  "python": {
+    "directory_tests": 20,
+    "failures": 0,
+    "raw": "/workspace/has-handoff-audit/directory-commit-unit-final.log",
+    "archive_regression_tests": 53,
+    "archive_raw": "/workspace/has-handoff-audit/directory-commit-has-regression.log"
+  },
+  "godot": {
+    "reports": {
+      "initial": {
+        "error": "",
+        "frame": 0.0,
+        "load_error": ""
+      },
+      "blocked": {
+        "error": "Another save is writing this project file. Wait for it to finish, then save again.",
+        "frame": 0.0,
+        "load_error": ""
+      },
+      "retry": {
+        "error": "",
+        "frame": 2.0,
+        "load_error": ""
+      },
+      "stale": {
+        "error": "Another save changed this project. Current saved generation preserved; save again to retry.",
+        "frame": 7.0,
+        "load_error": ""
+      },
+      "competing_generation": "Real worker committed frame7 between Godot preparation and its original worker; frame3 refused.",
+      "lost-status": {
+        "error": "Directory commit worker returned unreadable status. Check the saved project before retrying.",
+        "frame": 9.0,
+        "load_error": ""
+      }
+    },
+    "folder": "/workspace/has-handoff-audit/directory-commit-godot-final",
+    "scope": "Actual headless Godot/worker exclusion and optimistic generation check; not physical power-loss or hostile filesystem mutation certification.",
+    "source_sha256": {
+      "src/storage.gd": "68f8bfc28982a9ebbcd7828ae01594ea2bd943fe12dc7ac6e188a72cca64ac0b",
+      "tools/directory_commit.py": "a49e4ca3699c1043e71889fe2ae12cb7741c24ce3544fdde4df100072ff11c80",
+      "tools/has_project.py": "a10a1bedc73bccb3c12188d35f3060d67e858cc5283975c749ffce1ec9dcd9d4",
+      "tests/directory_commit_smoke.gd": "5dd2a1e9775de75789ca0c1f6ef393eaaabf2cb263d8d5a5205946c3a40113e5",
+      "tests/verify_directory_commit.py": "e61fe0e0c542ec8365f45eedd6e0375ecf2c4d0b26c03bfad008af9f7b0ad560"
+    }
+  },
+  "drawing_domain": {
+    "scope": "Headless cold-raster ownership, integrity, history and budget domains. No GUI/GPU or whole-project acceptance claim.",
+    "reports": {
+      "unit": {
+        "checks": 29,
+        "failures": 0
+      },
+      "write-paths": {
+        "checks": 17,
+        "failures": 0,
+        "scope": "owned Linux links/hardlinks/read-only paths; no Windows or hostile concurrent filesystem race certification"
+      },
+      "budget": {
+        "checks": 13,
+        "failures": 0
+      },
+      "pixel-history": {
+        "checks": 19,
+        "failures": 0
+      },
+      "policy": {
+        "checks": 11,
+        "failures": 0
+      },
+      "adaptive": {
+        "checks": 27,
+        "failures": 0
+      },
+      "save": {
+        "checks": 7,
+        "failures": 0
+      },
+      "read": {
+        "checks": 15,
+        "failures": 0
+      },
+      "overlay-regression": {
+        "checks": 20,
+        "failures": 0
+      },
+      "metadata": {
+        "checks": 14,
+        "failures": 0
+      },
+      "owner": {
+        "checks": 29,
+        "failures": 0
+      },
+      "reader-regression": {
+        "checks": 31,
+        "failures": 0
+      }
+    },
+    "source_sha256": {
+      "tests/project_write_paths_unit.gd": "e56767cde55a4f920cbbebbd7bd1f06c45c6946210d1b09b7663089fbd724988",
+      "src/cel_raster_budget.gd": "c46f05b524136207b8b5248aea7b19c7f78a574167c2fd2ac7739ad4f704db24",
+      "src/cel_raster_snapshot_cache.gd": "a8e868eded16d2c1d2c5fd11f81ea190021f081fd64e98ce3090df6274767c7f",
+      "tests/cel_raster_budget_unit.gd": "76ccd0a13cae351e160ecdf86125088d11ee4f145f0732c3466a3e55ff430d32",
+      "src/cel_pixel_history.gd": "bbfc4b1464deecbdaa11a05bb39bcb2667b92cc3e145cfbbbe86397ab30b7d3b",
+      "tests/cel_pixel_history_unit.gd": "8662beed13aa6371d0d9f392698eaf6bbbcf39bc2ad1f5a6470c103f91887b8a",
+      "tests/cel_raster_policy_unit.gd": "72cb92b46b24e75a3b9f66ba79d760cba51556febabfdb98ddca4eee0c92da74",
+      "tests/cel_raster_adaptive_unit.gd": "d14fdc86b7ec8a94458472307b66a29e8199b37cdb7b30d013a9d717d75f2ce7",
+      "src/storage.gd": "dffd36b1822eac0b0eb93e25a1699a645c72487d2f3aba44f4e720ec4222d91b",
+      "src/fill_editor.gd": "b977afe4e68e2187c7780eb63fc4efd1fab54e3489a6e87315ab314605eb75c1",
+      "src/drawing_selection_editor.gd": "bf63e7b586d79e37b3cc983854c08482dff341af252505c652ad1c15bcb35908",
+      "src/drawing_transform_editor.gd": "5ac0b2257ffa54587ecba5ff0aa36688f7fdaff7fdae6a7d575e79a3f08beec3",
+      "src/cel_clipboard.gd": "1ec5e410ce6e23fd314eafdf95f00cade153de27620844d8d4f0679db612fce2",
+      "tests/cel_raster_save_unit.gd": "958376bbb5959bf905f522e158190f27bb503e50dcb7d0205f96b9e7e8f1352c",
+      "src/app.gd": "7f16e6c5129c9f05e5c47c7bb4f554e30a31509ed01f6adddd3bb311c709fadb",
+      "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+      "src/color_sampler.gd": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+      "src/onion_editor.gd": "7895913586ce8ec7989485d62b0421ec9b4e5366eb650074c4386357cae2596d",
+      "src/sequence_runtime.gd": "ff708a9b0c0a15e97e63bfea6c6c1575c2941a701f865471c250629b0284533a",
+      "src/tutorials.gd": "7b3cc6797fe825f2b37fc74a2c3b23c6e15591ec44ff064748e1c81f5270c6de",
+      "src/drawing_overlay_cache.gd": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+      "tests/cel_raster_read_unit.gd": "ebdc572bcf2f93735540dc9f7cfad86e0b0428549e01fb9b3d66773db0375951",
+      "src/cel_timing_editor.gd": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+      "src/cel_patch.gd": "60b75f05e162f796041e8083d9c756eb8ade3f26cac9f2e12b61d38fe41b51bd",
+      "src/recovery.gd": "95cefa00f14801ee25c9e6657b92056316718006fc669309e720ba57d5f2d699",
+      "src/layer_editor.gd": "1ec0e7003d369607cd38ef58cb6c566812b8cf9db0b72c9a77b3c2e44348c1c1",
+      "src/sequence_editor.gd": "2b358fdb6ff03538b7e24bc51c89e41b768a662b31ff22acc770185ca3039927",
+      "tests/cel_raster_metadata_unit.gd": "e1ad5ae142dbbedf9570d4f78c8cb436791c73970dd3d97c8c0b57523991c6e8",
+      "src/drawing.gd": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+      "src/cel_raster_owner.gd": "ee69dfa7ccd67a2cbe12452a584c853a43f286a75ea676853668d49a246eab60",
+      "tests/cel_raster_owner_unit.gd": "68d2d273f6b51b2827af3b2f2e0b0b0f841840cf6247b75dad96d261c3d6624d",
+      "src/cel_raster_reader.gd": "724eb9b552816815b15a9d22974013888e2210491e3c49d3c054858dec478152",
+      "src/cel_raster_snapshot.gd": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+      "tests/cel_raster_snapshot_unit.gd": "a4f54c3b16593fe8bd2cee69f206b2f9371f810e9c973b07fce0620be93621ce",
+      "tests/cel_raster_snapshot_benchmark.gd": "3b5cde3708870bf954aa204341af4951326e496ef081cd223a8dfe3a3674b426"
+    }
+  },
+  "private_metadata": {
+    "reports": {
+      "private_metadata_unit": {
+        "checks": 32,
+        "failures": 0,
+        "scope": "owned Linux metadata links/hardlinks/permissions; no Windows/power-loss/concurrent-writer certification"
+      },
+      "recovery_journal_unit": {
+        "checks": 33,
+        "failures": 0,
+        "folder": "/workspace/studio-3d-2d/output/recovery-journal-unit/298324"
+      },
+      "lesson_recovery_unit": {
+        "checks": 43,
+        "failures": 0
+      },
+      "recovery_identity_unit": {
+        "checks": 47,
+        "failures": 0,
+        "owner": {
+          "linux_start": "c0322174-2fc8-428d-8f74-47ed9b9c7c09:2829497",
+          "pid": 65979
+        }
+      }
+    },
+    "folder": "/workspace/has-handoff-audit/directory-commit-metadata",
+    "scope": "Headless metadata safety; graphical crash/reopen workflows run separately. No power-loss or hostile concurrent filesystem race certification.",
+    "source_sha256": {
+      "src/atomic_metadata.gd": "f07b9db3cfc774327b26f14813729516f7b8a5dffc1773ae0a8c15a67ce403ca",
+      "src/recovery.gd": "95cefa00f14801ee25c9e6657b92056316718006fc669309e720ba57d5f2d699",
+      "src/recovery_journal.gd": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa",
+      "src/lesson_store.gd": "cf98f033569d90765e71726176c13a0e05d427eb0b4c58a7637d97e6a8330cf0",
+      "tests/private_metadata_unit.gd": "79b8620dbc72aedf14b32f16c9b1c50aa0ffff7dfb4b4b0d9433f965ba92fb64",
+      "tests/verify_private_metadata.py": "b1db6a75b7b654e809bc744dce7a9f6b54e7d4f2993dc4a40c15ebc3c26906a9"
+    }
+  },
+  "app": {
+    "automatic_open": true,
+    "adaptive_open": false,
+    "reports": {
+      "unit": {
+        "checks": 31,
+        "failures": 0
+      },
+      "png-compatibility": {
+        "cache_hits": 16,
+        "cases": [
+          {
+            "name": "color2-depth16.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "e67477200047df6269888bb44717bca8e22bad1e130bacea74533e1354796a68"
+          },
+          {
+            "name": "color2-depth8.png",
+            "ok": true,
+            "pixel_sha256": "fe0025b0d60310ab6656ae4d54b3e445c2fa4a94b725190821f872145b7736f0",
+            "source_sha256": "8bebf9e71d518c8eaf7cdc2054dab35a4a6a184cb096c75acbbab85a2a2c6879"
+          },
+          {
+            "name": "color4-depth16.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "ed0e7a88b4b1c479767c78482fa62b6f1cdc83f9c5ba433c156322255a02eb6f"
+          },
+          {
+            "name": "color4-depth8.png",
+            "ok": true,
+            "pixel_sha256": "8f3b05d2bef9975e86b19624a9080d084a5e09017af536c1d3d2f2252c06c1d9",
+            "source_sha256": "a61c3f48139832caa035555ccfc99393feafb00387759ab14e76596455e1428a"
+          },
+          {
+            "name": "color6-depth16.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "85f739c9b5c4b6b8f89fd570794f914aa699aae50541fa3016be7c0c660ef2df"
+          },
+          {
+            "name": "color6-depth8.png",
+            "ok": true,
+            "pixel_sha256": "45945ec7d1308b43e63a6671ee0a7d1a7d4017db4ad4fec9b35fda141d2f28b2",
+            "source_sha256": "bb800897e39951c7bab0a0fea9900e354a0fd5165a4d4ef71c5540163dddcca6"
+          },
+          {
+            "name": "gray1.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "d8b0ad8408676af0e124ddd45cd8b09cdc7303296d3d53529ae19d531bd6e573"
+          },
+          {
+            "name": "gray16.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "4c61d80075d709da4f731397de129462e1a91808a8a5a3e60c77d136b49a1ddb"
+          },
+          {
+            "name": "gray2.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "1ddea9ce26a2e89396ed886e017030af6976052dd98a6fca589c35f6a225bdb4"
+          },
+          {
+            "name": "gray4.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "c8554e2433e5a608c32c822f3f37510cf3dda0798dbe76dea8910673f3b5e9a2"
+          },
+          {
+            "name": "gray8.png",
+            "ok": true,
+            "pixel_sha256": "402cbb2653e5b33b3795cd88e3fbe2e2e60bae8a0993a2108ac47c2d4d2b301c",
+            "source_sha256": "08898f1b32e5a415ad4226812d4c524429f384c5e2e69304dacad4b8921af34f"
+          },
+          {
+            "name": "interlaced.png",
+            "ok": true,
+            "pixel_sha256": "40a028bd71b22e6f2eb75e7691b59882483febd139de9c5afee334c988052ddb",
+            "source_sha256": "cdaaed121f619da685a841dc9f644e1928b4d7cdee4bd0c3600dff2a3556ec32"
+          },
+          {
+            "name": "palette1.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "22574861f0a81d9f36b138d4e4cfe20883a97fcadb9ea7e9ee493c9aee522b9b"
+          },
+          {
+            "name": "palette2.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "be871ccb3dbc75cdedec573973c5f69ee1e97b7e3c43b1edb151a0412e9ed3b0"
+          },
+          {
+            "name": "palette4.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "0ca6d9f15e32104017669a64e3dcb9386ca8aeaa84b99450b078c60fbbc82c3f"
+          },
+          {
+            "name": "palette8.png",
+            "ok": true,
+            "pixel_sha256": "bf69e4f0e6c920c57c35a7d07e429bf60c4905dee8e9544f2d1b57bcd19fcb6b",
+            "source_sha256": "e022d29978dfbfd8e66dc6b8d5d4a83815938b42d935a4369b49a38ab16d08a0"
+          }
+        ],
+        "failures": 0,
+        "png_decodes": 16
+      },
+      "writer": {
+        "checks": 20,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/directory-commit-app/render_1794022959_15566484_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "19396",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "decoded_onset_sample": 48001,
+    "actual_abrupt_exit": true,
+    "originals_and_writer_cache_unavailable_for_cold_startup": true,
+    "manual_has_unchanged": true,
+    "source_assets_unchanged": true,
+    "functional_unchanged": true,
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "folder": "/workspace/has-handoff-audit/directory-commit-app"
+  },
+  "nested": {
+    "reports": {
+      "graph": {
+        "checks": 106,
+        "failures": 0
+      },
+      "audio": {
+        "checks": 9,
+        "failures": 0
+      },
+      "storage": {
+        "checks": 8,
+        "failures": 0,
+        "folder": "/workspace/has-handoff-audit/directory-commit-nested/storage"
+      },
+      "runtime": {
+        "checks": 23,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 48,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/directory-commit-nested/editor/render_1794022976_22306942_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 25,
+        "failures": 0
+      },
+      "startup": {
+        "checks": 5,
+        "failures": 0
+      }
+    },
+    "media": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1920,
+          "height": 1080,
+          "coded_width": 1920,
+          "coded_height": 1080,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 40,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 1,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 24576,
+          "duration": "2.000000",
+          "bit_rate": "634840",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "48",
+          "extradata_size": 50,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_long_name": "AAC (Advanced Audio Coding)",
+          "profile": "LC",
+          "codec_type": "audio",
+          "codec_tag_string": "mp4a",
+          "codec_tag": "0x6134706d",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "id": "0x2",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 96000,
+          "duration": "2.000000",
+          "bit_rate": "53113",
+          "nb_frames": "95",
+          "extradata_size": 5,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "SoundHandler",
+            "vendor_id": "[0][0][0][0]"
+          }
+        }
+      ],
+      "format": {
+        "filename": "/workspace/has-handoff-audit/directory-commit-nested/editor/render_1794022976_22306942_0/movie.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "2.000000",
+        "size": "174941",
+        "bit_rate": "699764",
+        "probe_score": 100,
+        "tags": {
+          "major_brand": "isom",
+          "minor_version": "512",
+          "compatible_brands": "isomiso2avc1mp41",
+          "encoder": "Lavf61.7.103"
+        }
+      }
+    },
+    "child_audio_onset": 0.25002083333333336,
+    "private_receipts": [],
+    "isolated_display": ":108",
+    "adaptive_open": true,
+    "mask_recovery": true,
+    "native_fixtures": 0,
+    "writer_abrupt_exit_verified": true,
+    "manual_has_unchanged": true,
+    "folder": "/workspace/has-handoff-audit/directory-commit-nested"
+  },
+  "phase_precision": "Domain and app checks exercise the normal supporting-filesystem path. The final unsupported-directory-sync branch and worker-lost-status behavior are additionally covered by20Python cases and final actual Godot scenarios. No runtime acceptance inferred from parsing.",
+  "source_sha256": {
+    "src/storage.gd": "68f8bfc28982a9ebbcd7828ae01594ea2bd943fe12dc7ac6e188a72cca64ac0b",
+    "tools/directory_commit.py": "a49e4ca3699c1043e71889fe2ae12cb7741c24ce3544fdde4df100072ff11c80",
+    "tools/has_project.py": "a10a1bedc73bccb3c12188d35f3060d67e858cc5283975c749ffce1ec9dcd9d4",
+    "tests/test_directory_commit.py": "9f6186dbeac07f25351885e01bbc177b8bed6f47e36b2c4d7fc252570d48706b",
+    "tests/directory_commit_smoke.gd": "5dd2a1e9775de75789ca0c1f6ef393eaaabf2cb263d8d5a5205946c3a40113e5",
+    "tests/verify_directory_commit.py": "e61fe0e0c542ec8365f45eedd6e0375ecf2c4d0b26c03bfad008af9f7b0ad560"
+  },
+  "status": "STORE-04 partial/open for full payload/private/parent sync, physical power loss and native Windows"
+}

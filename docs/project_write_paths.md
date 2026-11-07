@@ -42,3 +42,7 @@ See [write-path evidence](benchmarks/project_write_paths_2026-11-06.json).
 STORE-04 remains open for directory sync/power-loss, native Windows, concurrent-writer robustness. Private recovery/lesson metadata writers now have
 [their own scoped fix and verification](private_metadata_writes.md). These
 checks do not certify hostile concurrent filesystem mutation.
+
+Cooperating directory manifest promotions now also have an OS lock and starting-
+generation guard; see [guarded directory commits](directory_commit.md). Full payload/
+private/parent sync and native/physical durability remain open.

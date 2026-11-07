@@ -2462,3 +2462,38 @@ new-owner-video-import-final, new-owner-first-movie-console.log and new-owner-le
 recovery/autosave-verified under /workspace/has-handoff-audit. Curated receipt:
 docs/benchmarks/new_drawing_ownership_2026-11-06.json. MEM-01/02 partial/open.
 Whole goal active; next global accounting/admission and concurrent directory save.
+
+
+2026-11-06 — Cooperating directory commit exclusion and generation guard
+
+Directory saves capture starting manifest SHA before preparation. Verified bounded
+manifest promotion now runs under shared nonblocking OS lock in local Python
+worker. Stale/busy candidate preserves other committed generation; root stays
+dirty. Unique process/RID revision paths avoid ordinal PNG collisions. Child scene
+staging never promotes parent manifest. Fresh verified/synced backup and manifest
+readback, supporting POSIX directory fsync around promotion. Schemas/caps unchanged.
+Existing required Python only; no package/network dependency. Full payload/private/
+all-parent sync and physical/native durability not claimed.
+
+20Python directory cases pass: real two-prepared-worker one-winner, stale/busy,
+link/hardlink/source preservation, corrupt/readback/sync/replace failures, actual
+SIGKILL before backup/primary and after commit, OS lock release/retry, explicit
+unsupported dirsync and whole-valued JSON schema compatibility. Archive53regression
+cases pass after generalizing shared lock label. Actual headless Godot initial,
+busy refusal, retry, real competing frame7 vs stale frame3 and lost-worker-status
+with readable committed frame9 pass. Unknown worker outcome never falsely claims
+old manifest preserved; post-promotion sync error states new generation written.
+
+232drawing-domain and155private-metadata regressions pass. Actual automatic32cel
+packed/cold-open/abrupt recovery/startup/H264-AAC suite passes62checks+16PNG cases;
+nested adaptive/mask/active-child/packed-linked/recovery suite passes, exact counts
+in curated receipt. Normal supporting-FS paths exercised there; final unsupported
+sync/lost-status hardening additionally tested directly. Private107/108/Dummy only.
+No native fixture, Windows, hardware or physical power-loss certification.
+
+Raw directory-commit-unit-final.log, directory-commit-godot-final,
+directory-commit-domain/metadata/app/nested and directory-commit-has-regression.log
+under /workspace/has-handoff-audit; curated docs/benchmarks/directory_commit_2026-11-06.json.
+Generated tracked log archived/restored. STORE-04 partial/open, next full payload,
+private metadata and all-created-parent sync plus external native/physical gates.
+Whole goal remains active.

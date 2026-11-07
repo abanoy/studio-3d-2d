@@ -141,13 +141,19 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		if particles.has("error"):return particles.error
 	elif not FileAccess.file_exists(source):
 		return "Scene source is missing; save aborted."
-	var revision := "%d_%d" % [Time.get_unix_time_from_system() * 1000, Time.get_ticks_usec()]
+	var revision := "%d_%d_%d_%d" % [Time.get_unix_time_from_system() * 1000, Time.get_ticks_usec(),OS.get_process_id(),ResourceUID.create_id()]
 	var cel_dir := "cels/" + revision
 	if not recovery.is_empty() or content_addressed: cel_dir = "cels/content"
 	for path in ["assets",cel_dir,"project.json","project.backup.json","project.json.tmp"]+(["references"] if not reference_sheet.is_empty() else []):
 		var path_error:=write_path_error(folder,path)
 		if not path_error.is_empty():return path_error
 	if DirAccess.dir_exists_absolute(folder.path_join("project.json.tmp")):return "Cannot write manifest: an existing temporary directory blocks saving. Previous save preserved."
+	var expected_manifest:=""
+	if not _manifest_out is Dictionary and FileAccess.file_exists(folder.path_join("project.json")):
+		var existing:=FileAccess.open(folder.path_join("project.json"),FileAccess.READ)
+		if not existing or existing.get_length()>1024*1024:return "Cannot inspect previous manifest within1MiB. Save to another folder; previous save preserved."
+		existing.close();expected_manifest=FileAccess.get_sha256(folder.path_join("project.json"))
+		if expected_manifest.is_empty():return "Cannot fingerprint previous manifest; previous save preserved."
 	for sub in ["assets", cel_dir]:
 		var error := DirAccess.make_dir_recursive_absolute(folder.path_join(sub))
 		if error != OK:
@@ -272,12 +278,15 @@ static func save_project(folder: String, video: Dictionary, keys: Array, layers:
 		return "Manifest write failed. Previous save preserved."
 	if FileAccess.get_file_as_string(temp)!=serialized or not readable_manifest(temp):return "Manifest readback differs. Previous save preserved."
 	var target := folder.path_join("project.json")
-	if FileAccess.file_exists(target) and readable_manifest(target):
-		var backup:=folder.path_join("project.backup.json");var backup_temp:=fresh_temporary(backup,".tmp")
-		if backup_temp.is_empty() or DirAccess.copy_absolute(target,backup_temp)!=OK or FileAccess.get_sha256(backup_temp)!=FileAccess.get_sha256(target) or DirAccess.rename_absolute(backup_temp,backup)!=OK:
-			return "Cannot back up/verify previous manifest; replacement aborted."
-	var error := DirAccess.rename_absolute(temp, target)
-	return "" if error == OK else "Cannot replace manifest: " + error_string(error)
+	var python:=OS.get_environment("HYBRID_PYTHON");var output: Array=[]
+	var args:=PackedStringArray([ProjectSettings.globalize_path("res://tools/directory_commit.py"),ProjectSettings.globalize_path(folder),temp.get_file(),expected_manifest if not expected_manifest.is_empty() else "missing",FileAccess.get_sha256(temp),"yes" if readable_manifest(target) else "no"])
+	var code:=OS.execute(python if not python.is_empty() else "python",args,output,false,false)
+	if output.is_empty():return "Save worker ended without status. Check the configured Python and saved project before retrying."
+	var parser:=JSON.new()
+	if parser.parse(str(output[0]))!=OK or not parser.data is Dictionary:return "Directory commit worker returned unreadable status. Check the saved project before retrying."
+	var result: Dictionary=parser.data
+	if code==0 and result.get("ok",false)==true:return ""
+	return str(result.get("error","Directory commit failed; inspect saved project before retrying."))
 
 static func numeric_array(value, length: int) -> bool:
 	if not value is Array or value.size() != length:

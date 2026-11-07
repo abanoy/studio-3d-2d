@@ -283,16 +283,16 @@ def verify_written_archive(path, header_blob, payload, request):
 
 
 @contextmanager
-def save_lock(target):
+def save_lock(target, label="HAS"):
     """A persistent inode avoids unlink/reopen races; the OS releases ownership on exit."""
     lock = Path(str(target)+'.lock')
-    if lock.is_symlink():raise HasError('Linked HAS save lock refused; previous save preserved')
+    if lock.is_symlink():raise HasError('Linked '+label+' save lock refused; previous save preserved')
     flags = os.O_RDWR | os.O_CREAT | getattr(os,'O_NOFOLLOW',0) | getattr(os,'O_CLOEXEC',0)
     handle = os.open(lock,flags,0o600)
     try:
         opened=os.fstat(handle);named=lock.lstat()
         if not stat.S_ISREG(opened.st_mode) or opened.st_nlink!=1 or opened.st_size!=0 or (opened.st_dev,opened.st_ino)!=(named.st_dev,named.st_ino):
-            raise HasError('Unsafe HAS save lock; previous save preserved')
+            raise HasError('Unsafe '+label+' save lock; previous save preserved')
         try:
             if os.name=='posix':
                 import fcntl
@@ -303,7 +303,7 @@ def save_lock(target):
             else:raise HasError('HAS save locking is unavailable on this platform')
         except OSError as error:
             if error.errno not in (errno.EACCES,errno.EAGAIN):raise
-            raise HasError('Another save is writing this HAS file. Wait for it to finish, then save again.') from error
+            raise HasError('Another save is writing this '+label+' file. Wait for it to finish, then save again.') from error
         yield
     finally:
         os.close(handle)
