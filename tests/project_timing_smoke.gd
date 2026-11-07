@@ -27,7 +27,7 @@ func job() -> void:
 func pcm() -> String:return app.audio_mix.pcm.hex_encode().sha256_text()
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();var folder: String=args[0];var mode: String=args[1] if args.size()>1 else "writer"
-	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery-"+mode);app.recent_path=folder.path_join("recents-"+mode+".json");root.add_child(app);await settle();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache-"+mode)
+	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery-"+mode);app.recent_path=folder.path_join("recents-"+mode+".json");app.display_prefs_path=folder.path_join("prefs-"+mode+".cfg");root.add_child(app);await settle();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache-"+mode)
 	if mode!="writer":
 		var reference:=Recovery.read_json(folder.path_join("expected.json"))
 		if mode in ["packed","linked"]:app.has_project.open_file(reference[mode]);await job()
@@ -70,9 +70,12 @@ func run() -> void:
 	var store:=Store.new();store.root=folder.path_join("lessons");check(store.save(app,"basic-pose","1234",1,false,"step_01"),"rational project timing enters a lesson snapshot")
 	FileAccess.open(folder.path_join("expected.json"),FileAccess.WRITE).store_string(JSON.stringify({"packed":saved,"linked":linked,"recovery":recovery,"mix":ntsc_mix}))
 	app.new_project();app.has_project.open_file(saved);await job();check(app.video.fps_num==24000 and app.video.fps_den==1001 and pcm()==ntsc_mix,"packed reopening restores exact rate and audio PCM")
-	var legacy=load(folder.path_join("previous_storage.gd"));var cache: String=app.audio_clips[0].source.path.get_base_dir().get_base_dir()
-	var legacy_result: Dictionary=legacy.load_project(cache)
-	check(FileAccess.file_exists(cache.path_join("project.json")) and legacy_result.has("error") and "fps" in legacy_result.error,"actual previous reader refuses unsupported numerator rather than changing timing")
+	if "--current-only" in args:
+		print("SKIP checksum-bound previous reader: explicit current-only mode; historical-reader refusal remains unverified")
+	else:
+		var legacy=load(folder.path_join("previous_storage.gd"));var cache: String=app.audio_clips[0].source.path.get_base_dir().get_base_dir()
+		var legacy_result: Dictionary=legacy.load_project(cache)
+		check(FileAccess.file_exists(cache.path_join("project.json")) and legacy_result.has("error") and "fps" in legacy_result.error,"actual previous reader refuses unsupported numerator rather than changing timing")
 	check(await app.export_movie(folder)=="","NTSC MP4 export succeeds")
 	check(Image.load_from_file(app.last_export_folder.path_join("frame_000025.png")).get_data()==expected.get_data(),"NTSC movie frame matches preview exactly")
 	var result:={"checks":checks,"failures":failures,"project":saved,"movie":app.last_export_folder.path_join("movie.mp4"),"mix":ntsc_mix};FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE).store_string(JSON.stringify(result));print("PROJECT_TIMING_SMOKE ",JSON.stringify(result));app.free();quit(0 if failures==0 else 1)
