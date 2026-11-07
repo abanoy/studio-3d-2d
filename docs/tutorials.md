@@ -1,7 +1,10 @@
 # Interactive practice
 
-Home → Tutorials opens a beginner path and focused chapters using an included,
-original room and seventeen-bone practice figure:
+Home → Tutorials opens Basic and Advanced tabs, with named topic sections and
+short practice descriptions. Basic starts with the first-movie path; Advanced
+groups Camera/rendering, Animation/posing and Physics. All seven existing
+practices keep their saved sessions and checkpoints. See [course browser](tutorial_catalog.md).
+The lessons use an included original room and seventeen-bone practice figure:
 
 - **Basic · Your first movie** starts from empty `first-movie.has`. Eleven observed
   tasks cover normal map/model import, default live ragdoll and freeze, selection/
@@ -196,7 +199,7 @@ currently simulated bodies; one figure does not demonstrate multi-body capture.
 The saved take remains editable. Previous before capture removes that take and
 its completion flag; Previous before preview retains the take but requires a new
 Play/pause. Continue restores these observations with the project, and Start fresh
-keeps prior practices. Save stays optional. The growing catalog has a scroll area.
+keeps prior practices. Save stays optional. Both catalog tabs have a scroll area.
 Run `python tests/verify_tutorials.py --chapter physics`, adding an explicitly
 provisioned private `--isolated-display :99` on Linux. Fresh software checks:
 25 writer +5 cold reader, actual simulation and capture, exact movie input and

@@ -12443,3 +12443,34 @@ output-settings-checkpoint under /workspace/has-handoff-audit. Curated
 docs/benchmarks/output_settings_2026-11-06.json. Native variable canvases, broader
 render settings and physical/native/artist acceptance remain. OUTPUT-02 partial;
 whole goal active.
+
+
+2026-11-06 — Basic/Advanced topic browser and accessible lesson hints
+
+Reproduced flat catalog on345a028:1pass/1fail. Added Basic/Advanced tabs with named
+sections, topic descriptions and all7existing course entry points. Basic first
+movie stays first. Topic entry starts its existing validated first task; Continue/
+Fresh/finished/Saved practices and unsaved replacement confirmation are preserved.
+No checkpoint/task identity, source asset, Skip policy or project schema changes.
+Catalog uses existing theme surface for readable panels and bounded scroll areas.
+
+New17actual GUI checks pass at1100x700, including all7IDs exactly once, unchanged
+scene/history while browsing, actual Advanced startup/Continue/cancel and Basic
+entry preserving previous practice. Existing focused52writer+5coldreader and
+beginner79writer+8coldreader pass, including actual input/state grading, whole
+Previous, optional personal saving, ordinary HAS, H264/AAC and cancel/retry.
+
+Initial beginner regression found real guide/shoulder overlap about6pixels. An
+extra normal layout pass left identical rectangles, confirming product geometry.
+Layout now protects28px joint marker plus4px clearance and tries edge-aligned
+corners when inset ones overlap. Original assertion passes; first_movie_smoke.gd
+remains byte-identical to prior tracked source. Initial patch indentation caused
+a compile error; stopped only owned test, corrected and inspected check-only
+output before fresh GUI run. Failed logs retained. No assertions weakened.
+
+All graphics private107/Dummy. Raw /workspace/has-handoff-audit/tutorial-catalog-verified
+with screenshots and receipts; curated docs/benchmarks/tutorial_catalog_2026-11-06.json.
+Supplied originals unchanged. Tracked generated reports/logs archived then restored
+to HEAD bytes. COURSE-01 implementation complete; per-item acceptance commit audit
+next. Optional course depth, teacher demonstrations, COURSE-03 retention/concurrency
+and novice/physical Windows/device acceptance remain separate. Whole goal active.

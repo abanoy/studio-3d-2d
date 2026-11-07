@@ -1,0 +1,165 @@
+{
+  "date": "2026-11-06",
+  "scope": "COURSE-01 technical acceptance: offline original practice assets, logical Basic path, accessible Advanced topic sections and stable entry/resume contracts. Not novice/Windows/device acceptance or complete optional course depth.",
+  "baseline": {
+    "commit": "345a028",
+    "browser_checks": 2,
+    "browser_failures": 1,
+    "raw": "/workspace/has-handoff-audit/tutorial-catalog-before/run.log"
+  },
+  "verified": {
+    "browser": {
+      "checks": 17,
+      "failures": 0
+    },
+    "regressions": {
+      "focused": {
+        "results": [
+          {
+            "checks": 52,
+            "failures": 0,
+            "folder": "/workspace/studio-3d-2d/output/tutorials/1794015323269637344",
+            "movie": "/workspace/studio-3d-2d/output/tutorials/1794015323269637344/render_1794015330_7058730_0/movie.mp4"
+          },
+          {
+            "checks": 5,
+            "failures": 0
+          }
+        ],
+        "video": {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "24/1",
+          "nb_frames": "48"
+        },
+        "private_receipts": [],
+        "chapter": "existing",
+        "isolated_display": ":107"
+      },
+      "beginner": {
+        "results": [
+          {
+            "checks": 79,
+            "failures": 0,
+            "folder": "/workspace/studio-3d-2d/output/first-movie/1794015340892796197",
+            "movie": "/workspace/studio-3d-2d/output/first-movie/1794015340892796197/render_1794015356_16017421_0/movie.mp4"
+          },
+          {
+            "checks": 8,
+            "failures": 0
+          }
+        ],
+        "private_receipts": [],
+        "originals": {
+          "first-movie.has": "8c2689d1e8ae8f1d424d72900273dd656cf871ee1c725bcbe8198aa9f6be7fc6",
+          "manifest.json": "aba9741b5f9633c2321d89be8cc50bb40163b0d3e7c9dbe788d3be68130e066d",
+          "practice.has": "050e2afe0b04e79d65b5c62a3a3db875421d9af6fed4e825498182b846f7ec61",
+          "Practice cue.wav": "35252cc25a1d09b33ef80de04a26e3cd294025b4f4277cefae1142a5c31787ac",
+          "Practice figure.glb": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+          "Practice room.glb": "713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad"
+        },
+        "video": {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+          "profile": "High",
+          "codec_type": "video",
+          "codec_tag_string": "avc1",
+          "codec_tag": "0x31637661",
+          "width": 1920,
+          "height": 1080,
+          "coded_width": 1920,
+          "coded_height": 1088,
+          "closed_captions": 0,
+          "film_grain": 0,
+          "has_b_frames": 2,
+          "pix_fmt": "yuv420p",
+          "level": 40,
+          "color_range": "tv",
+          "color_transfer": "iec61966-2-1",
+          "color_primaries": "bt709",
+          "chroma_location": "left",
+          "field_order": "progressive",
+          "refs": 4,
+          "is_avc": "true",
+          "nal_length_size": "4",
+          "id": "0x1",
+          "r_frame_rate": "24/1",
+          "avg_frame_rate": "24/1",
+          "time_base": "1/12288",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 24576,
+          "duration": "2.000000",
+          "bit_rate": "436120",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "48",
+          "nb_read_frames": "48",
+          "extradata_size": 50,
+          "disposition": {
+            "default": 1,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "language": "und",
+            "handler_name": "VideoHandler",
+            "vendor_id": "[0][0][0][0]",
+            "encoder": "Lavc61.19.101 libx264"
+          }
+        },
+        "cue_onset_sample": 80043,
+        "isolated_display": ":107"
+      }
+    },
+    "private_receipts": [],
+    "isolated_display": ":107",
+    "source_sha256": {
+      "src/tutorials.gd": "7b3cc6797fe825f2b37fc74a2c3b23c6e15591ec44ff064748e1c81f5270c6de",
+      "src/tutorial_catalog.gd": "2defdebdf4325884d2a56f52627982bc9bb3118a34ebc55c6de6fccb79fa87a7",
+      "src/lesson_store.gd": "8e0ada3a67be62138a290ee5bdcb2d4f7dbafc120c78bffbefff595e832c9b22",
+      "tests/tutorial_catalog_smoke.gd": "06d0bb415f77fbb089844d93e315e4cd4372750e6d7e5265f01bf476f92406cb"
+    }
+  },
+  "raw": "/workspace/has-handoff-audit/tutorial-catalog-verified/verification.json",
+  "regression_diagnosis": {
+    "initial_beginner": "79checks/1failure: card overlapped shoulder marker by about6pixels.",
+    "layout_probe": "Extra ordinary layout pass left identical card/marker rectangles; real layout defect, not disabled observer processing.",
+    "fix": "Use28px marker plus4px clearance and add edge-aligned candidates when inset corners cover the joint.",
+    "compile_correction": "First patch had an indentation/scope error; owned test stopped, corrected and check-only inspected before final GUI run.",
+    "unchanged_assertions": "tests/first_movie_smoke.gd is byte-identical to the pre-change tracked file.",
+    "raw": [
+      "/workspace/has-handoff-audit/tutorial-catalog-final/beginner.log",
+      "/workspace/has-handoff-audit/tutorial-catalog-beginner-layout.log",
+      "/workspace/has-handoff-audit/tutorial-catalog-fixed/engine.log"
+    ]
+  },
+  "acceptance_mapping": {
+    "offline_original_assets": "Browser hashes preserved; beginner verifier independently checks every included asset/manifest hash.",
+    "logical_basic_route": "79writer+8fresh-reader checks of ordinary imports, camera/pose/physics/drawing/timeline/optional Save and MP4/AAC.",
+    "advanced_sections_topics": "17browser checks: separate tabs, named sections, all7existing course identities reachable once,1100x700fit and actual camera topic startup.",
+    "stable_progress": "52focused+5fresh-reader checks and browser Continue/cancel/Fresh preserve existing checkpoints/identities."
+  },
+  "remaining": [
+    "Optional additional advanced practice depth and teacher demonstrations.",
+    "COURSE-03 retention/concurrency robustness and external novice/device acceptance remain separate.",
+    "Skip remains OPEN."
+  ]
+}

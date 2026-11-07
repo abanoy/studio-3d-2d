@@ -1327,8 +1327,8 @@
         "ADD12.1"
       ],
       "title": "Basic and Advanced topic browser",
-      "implementation": "partial",
-      "verification": "incomplete",
+      "implementation": "implemented",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
       "acceptance": "Offline bundled original HAS practices provide a logical Basic route and accessible Advanced sections/subsections with topic entry points.",
       "evidence": [
@@ -1339,9 +1339,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/tutorials.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/tutorial_catalog.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/tutorial_catalog.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/tutorial_catalog_2026-11-06.json"
         }
       ],
-      "remaining": "Existing first-film/focused chapters work; course/section organization and remaining supported-topic coverage need reconciliation and implementation.",
+      "remaining": "Technical acceptance run passes: Basic/Advanced sections, all seven stable topic entries, original offline assets, actual first-film and focused checkpoints/movie workflows. Record tested implementation commit for final per-item acceptance audit; optional chapter depth and external novice/device acceptance remain separate.",
       "external_dependencies": []
     },
     {

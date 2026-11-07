@@ -1,5 +1,6 @@
 extends Node
 const Store=preload("res://src/lesson_store.gd")
+const Catalog=preload("res://src/tutorial_catalog.gd")
 const Assets=preload("res://src/tutorial_assets.gd")
 const Drawing=preload("res://src/drawing.gd")
 const Timeline=preload("res://src/timeline.gd")
@@ -63,19 +64,33 @@ func _ready() -> void:
 func open_catalog() -> void:
 	if app.exporting or app.has_dialog(app):return
 	var dialog:=AcceptDialog.new();dialog.title="Tutorials";dialog.exclusive=false;dialog.ok_button_text="Back";app.add_child(dialog)
-	var scroll:=ScrollContainer.new();scroll.custom_minimum_size=Vector2(540,minf(570,maxf(260,app.get_viewport_rect().size.y-180)));dialog.add_child(scroll)
-	var box:=VBoxContainer.new();box.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(box);app.label(box,"Learn by making a movie · focused practice chapters")
-	for id in Store.COURSES:
-		app.label(box,COURSES[id].title)
-		var row:=HBoxContainer.new();box.add_child(row);var recent:=store.progress(id)
-		if not recent.is_empty():app.button(row,"Open finished practice" if recent.done else "Continue",func():dialog.hide();dialog.queue_free();request(id,false))
-		app.button(row,"Start fresh",func():dialog.hide();dialog.queue_free();request(id,true))
-		var sessions:=store.sessions(id)
-		if sessions.size()>1:
-			var history:=MenuButton.new();history.text="Saved practices";row.add_child(history)
-			for value in sessions:history.get_popup().add_item(Time.get_datetime_string_from_unix_time(int(value.updated_at)).replace("T"," ")+" UTC • step %d" % (int(value.step)+1))
-			history.get_popup().index_pressed.connect(func(index):dialog.hide();dialog.queue_free();request(id,false,sessions[index].session))
+	var tabs:=TabContainer.new();tabs.custom_minimum_size=Vector2(580,minf(580,maxf(280,app.get_viewport_rect().size.y-180)));dialog.add_child(tabs)
+	tabs.add_theme_stylebox_override("panel",preload("res://src/studio_theme.gd").surface("ffffff","edf3f8"))
+	for level in ["Basic","Advanced"]:
+		var scroll:=ScrollContainer.new();scroll.name=level;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;tabs.add_child(scroll)
+		var box:=VBoxContainer.new();box.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(box)
+		app.label(box,"Follow the first-movie path, or choose a focused practice." if level=="Basic" else "Choose a topic. Each practice starts with the scene it needs.")
+		for section in Catalog.SECTIONS:
+			if section.level!=level:continue
+			var heading: Label=app.label(box,section.title);heading.add_theme_font_size_override("font_size",20)
+			for entry in section.courses:catalog_entry(box,dialog,entry)
+	tabs.current_tab=0
 	dialog.confirmed.connect(func():dialog.hide();dialog.queue_free());dialog.canceled.connect(dialog.queue_free);dialog.popup_centered()
+
+func catalog_entry(box: VBoxContainer,dialog: AcceptDialog,entry: Dictionary) -> void:
+	var id: String=entry.id
+	app.label(box,COURSES[id].title)
+	var description: Label=app.label(box,entry.description);description.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var row:=HBoxContainer.new();box.add_child(row);var recent:=store.progress(id)
+	if not recent.is_empty():
+		var resume: Button=app.button(row,"Open finished practice" if recent.done else "Continue",func():dialog.hide();dialog.queue_free();request(id,false));resume.set_meta("course_id",id)
+	var fresh: Button=app.button(row,"Start fresh",func():dialog.hide();dialog.queue_free();request(id,true));fresh.set_meta("course_id",id)
+	var sessions:=store.sessions(id)
+	if sessions.size()>1:
+		var history:=MenuButton.new();history.text="Saved practices";row.add_child(history)
+		for value in sessions:history.get_popup().add_item(Time.get_datetime_string_from_unix_time(int(value.updated_at)).replace("T"," ")+" UTC • step %d" % (int(value.step)+1))
+		history.get_popup().index_pressed.connect(func(index):dialog.hide();dialog.queue_free();request(id,false,sessions[index].session))
+	box.add_child(HSeparator.new())
 
 func request(id: String,fresh: bool,saved_session := "") -> void:
 	if not id in Store.COURSES or app.exporting:return
@@ -188,6 +203,10 @@ func layout_card() -> void:
 	panel.size.x=minf(460,app.canvas.size.x-20)
 	var extent: Vector2=app.canvas.size-panel.size-Vector2(10,10)
 	var candidates: Array[Vector2]=[Vector2(10,maxf(0,extent.y)),Vector2(maxf(10,extent.x),maxf(0,extent.y)),Vector2(10,0),Vector2(maxf(10,extent.x),0)]
+	# If inset corners all cover a requested joint, edge-aligned corners can
+	# preserve access without moving the scene or collapsing instructions.
+	var edge: Vector2=(app.canvas.size-panel.size).max(Vector2.ZERO)
+	candidates.append_array([Vector2.ZERO,Vector2(edge.x,0),Vector2(0,edge.y),edge])
 	var rig=First.object(self,"model") if course==First.ID else app.renderer.world_runtime.instance(Assets.FIGURE_ID) if app.renderer.world_runtime else null
 	var focus:=Rect2(app.canvas.size*.5-Vector2(60,80),Vector2(120,160))
 	if rig:
@@ -196,7 +215,9 @@ func layout_card() -> void:
 			var point: Vector3=rig.bone_transform(id).origin
 			if not app.renderer.camera.is_position_behind(point):
 				var image: Rect2=app.canvas.image_rect();var center: Vector2=image.position+app.renderer.camera.unproject_position(point)/Vector2(1920,1080)*image.size
-				focus=Rect2(center-Vector2(60,80),Vector2(120,160))
+				# Protect the28px joint marker plus4px clearance, rather than a broad
+				# region whose minimum overlap could still cover the actual marker.
+				focus=Rect2(center-Vector2(18,18),Vector2(36,36))
 	var best: Vector2=candidates[0];var area:=INF
 	for candidate in candidates:
 		var overlap:=Rect2(candidate,panel.size).intersection(focus).get_area()
