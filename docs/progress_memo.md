@@ -13554,3 +13554,5 @@ IK/crouch and grouped locomotion gates now running; no premature closures.
 2026-11-07 UTC: DRAW-03 bounded software acceptance verified by75current brush checks at 83da652d896c82ffe37d8fdd34a885caea203930; physical-tablet gate unchanged. Formal15/62 (24.19%), implementation51/54 unchanged.
 
 2026-11-07 UTC: Current onion-skin software suite passed37checks on isolated display110: actual GPU ghosts/zoom/pan, hidden/empty layers, held-neighbor caching and invalidation, opacity uniforms, playback/New resource release, packed/recovery exact art and final37-check H264 export exclusion. Source hashes match frozen concurrent current fill run.
+
+2026-11-07 UTC: DRAW-06 software acceptance verified by committed37-check current onion GPU/persistence/media receipt203773f. Formal16/62 (25.81%); implementation51/54 unchanged.

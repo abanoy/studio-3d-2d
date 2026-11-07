@@ -1186,11 +1186,18 @@
           "file_sha256": "57807886afb36115cc33a31140550c041328d67e9629377ed7793c8a27efc147"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Physical drawing comfort and artist feedback remain.",
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required software onion comparison and output-isolation condition verified. Artist/device observations remain separate.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/onion_current_2026-11-07.json",
+          "commit": "203773fdac831c2c7a5c56bb75f5e323dda6983f",
+          "scope": "37 actual current editor/GPU checks: nearest previous/next drawings, hold/zoom/pan and active-layer isolation, keyed opacity, resource release/invalidation, exact artwork after packed/recovery and guide-free actual MP4 input. Original fixtures; no physical or artist certification."
+        }
+      ],
       "external_dependencies": []
     },
     {

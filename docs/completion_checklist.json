@@ -923,8 +923,8 @@
       ],
       "title": "Onion skin and comparison guides",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Previous/next drawings can be compared with editor-only ghosts; guides never leak into stored art or final output.",
       "evidence": [
         {
@@ -934,9 +934,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/onion_skin.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/onion_current_2026-11-07.json",
+          "commit": "203773fdac831c2c7a5c56bb75f5e323dda6983f",
+          "scope": "37 actual current editor/GPU checks: nearest previous/next drawings, hold/zoom/pan and active-layer isolation, keyed opacity, resource release/invalidation, exact artwork after packed/recovery and guide-free actual MP4 input. Original fixtures; no physical or artist certification."
         }
       ],
-      "remaining": "Physical drawing comfort and artist feedback remain.",
+      "remaining": "Required software onion comparison and output-isolation condition verified. Artist/device observations remain separate.",
       "external_dependencies": []
     },
     {

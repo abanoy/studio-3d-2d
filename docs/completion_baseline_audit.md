@@ -1,7 +1,7 @@
 # MD/addendum completion baseline audit
 
 The reviewed checklist has **51 of54required capability groups implemented
-(94.44%)** and **15 of62required acceptance conditions formally closed (24.19%)**.
+(94.44%)** and **16 of62required acceptance conditions formally closed (25.81%)**.
 These are separate, equally weighted checklist counts. They do not estimate
 remaining engineering time, native fidelity, reliability or release readiness.
 No combined product-completion percentage is calculated.
@@ -11,7 +11,7 @@ It checks both governing documents, the addendum's precedence, bounded code path
 source/acceptance reverse mappings, evidence scope and exact remaining work.
 Every group has a source/evidence review in the
 [structured audit](benchmarks/completion_baseline_audit_2026-11-07.json).
-Existing tests are not represented as a fresh run of all features. Fifteen committed full-condition closures are formally verified; many
+Existing tests are not represented as a fresh run of all features. Sixteen committed full-condition closures are formally verified; many
 other current tests supply narrower evidence.
 
 Three old implementation labels were corrected without inventing new acceptance
