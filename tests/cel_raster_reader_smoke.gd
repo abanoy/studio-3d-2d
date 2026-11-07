@@ -42,6 +42,9 @@ func run() -> void:
 	var source:=folder.path_join("source-project");var base:=source_project(source);var source_sha:=FileAccess.get_sha256(source.path_join("drawing.png"));var source_manifest:=FileAccess.get_sha256(source.path_join("project.json"))
 	check(app.open_project(source),"ordinary directory project opens32cel records referencing one original PNG")
 	if "--auto-open" in args:check(app.cold_cel_loading and app.cold_cel_min_bytes==64*1024*1024 and app.layers[0].cels.all(func(cel):return cel.has("raster_owner")),"unchanged app defaults automatically cold-load a larger project")
+	if not "--auto-open" in args and not "--adaptive-open" in args:
+		var eager_state: Dictionary=app.raster_budget.sample()
+		check(not app.cold_cel_loading and eager_state.owners==32 and eager_state.hot_bytes==32*1920*1080*4,"eager decoder path joins all32owned drawings before the app publishes them")
 	if "--noise-art" in args:
 		var state: Dictionary=app.raster_budget.sample()
 		check(state.owners==32 and state.hot_owners==32 and state.hot_bytes==32*1920*1080*4,"raw full-HD source registers all32independent owners and conservative bytes")

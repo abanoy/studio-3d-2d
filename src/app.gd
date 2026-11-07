@@ -1838,6 +1838,11 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 		open_project_error=data.error
 		if report_error:message(open_project_error)
 		return false
+	var ownership_error:=preload("res://src/project_raster_ownership.gd").adopt(data)
+	if not ownership_error.is_empty():
+		open_project_error=ownership_error
+		if report_error:message(open_project_error)
+		return false
 	var reference_candidate: Dictionary=reference_sheet.prepare_project(data.get("reference_sheet",{}))
 	if reference_candidate.has("error"):
 		open_project_error=reference_candidate.error

@@ -15,7 +15,7 @@ Recorded reports can contain narrower passes alongside native/device skips. Do n
 ## Next required work
 
 - **P1 · OUTPUT-02** — Delivery downsampling is verified. Complete native canvas/persisted output settings contract after the larger unique-art storage work; preserve coordinate/project compatibility and do not claim scaled artwork adds source detail.
-- **P1 · MEM-02** — Adaptive raw fallback now reports conservative owned bytes and preserves full-HD noisy art through Undo/save/crash/export. Address legacy eager, clipboard/history/derived/GPU accounting and dense-project admission before raising caps.
+- **P1 · MEM-02** — All accepted app drawing representations now register conservative owned bytes. Address clipboard/history/derived/GPU accounting and dense-project admission before raising caps.
 - **P1 · MEM-01** — All single-cel structural producers, including new fill, now use affected-cel patches. Audit whole-layer/legacy retention and global history/active memory accounting, then dense-project acceptance.
 - **P1 · STORE-04** — Supporting POSIX sync and rollback payload validity are verified in scoped fixtures. Retain explicit native Windows and physical power-loss gates; audit the next independently actionable requirement.
 - **P2 · MOTION-03** — Bounded saved walking now passes staged preview/correction, Undo, recovery, packed cold Open and exact render checks. Extend beyond straight flat routes and obtain native-rig/artist acceptance; optional multi-view inference remains separate.

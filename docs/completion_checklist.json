@@ -991,9 +991,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/raw_drawing_ownership_2026-11-06.json"
+        },
+        {
+          "kind": "source",
+          "path": "src/project_raster_ownership.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/eager_drawing_ownership.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/eager_drawing_ownership_2026-11-06.json"
         }
       ],
-      "remaining": "Adaptive compressed and raw-fallback app cels now share registered ownership accounting; actual noisy32cel edit/save/cold/crash/export passes. Legacy eager/small-project loading, clipboard, history tiles/whole-layer retention, derived/GPU resources and global admission/dense-project acceptance remain incomplete before cap expansion.",
+      "remaining": "Accepted app projects now register eager/small-project, compressed and incompressible drawing owners across root/child scenes. Clipboard, history tiles/whole-layer retention, derived/GPU resources and global admission/dense-project acceptance remain incomplete before cap expansion.",
       "external_dependencies": []
     },
     {
@@ -2274,7 +2286,7 @@
     {
       "requirement": "MEM-02",
       "priority": 1,
-      "action": "Adaptive raw fallback now reports conservative owned bytes and preserves full-HD noisy art through Undo/save/crash/export. Address legacy eager, clipboard/history/derived/GPU accounting and dense-project admission before raising caps."
+      "action": "All accepted app drawing representations now register conservative owned bytes. Address clipboard/history/derived/GPU accounting and dense-project admission before raising caps."
     },
     {
       "requirement": "MEM-01",

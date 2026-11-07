@@ -2585,3 +2585,28 @@ Raw raw-owner-before/domain/app under /workspace/has-handoff-audit. Curated
 raw_drawing_ownership_2026-11-06.json and docs/raw_drawing_ownership.md. MEM-02
 partial/open: legacy eager, clipboard/history/derived/GPU/global admission next.
 Canonical continuous goal active; no repeat of adaptive raw-accounting work.
+
+
+2026-11-06 — Register eager project drawings before app installation
+
+New project_raster_ownership prepares incoming root/child drawings in one shared
+cache before publishing representation changes. Small/explicit-eager decoder
+Images wrap without compression or writable identity changes. Existing adaptive
+owners/cache remain exact. Late invalid child, bad cache or mismatched owner
+refuses without partial adoption. Standalone Storage eager API unchanged. App
+adopts before any runtime/live-project installation. No saved schema/cap changes.
+
+11new focused ownership checks pass; all271raster domains pass. Private107 ordinary
+app with forced eager decoder input passes62checks+16PNGcompat:32owners register
+265,420,800conservative hotbytes, brush/pixel UndoRedo, source/peer exactness,
+packed/cold Open with unavailable writer cache, actual SIGKILL recovery/startup,
+preview/composition/H264AAC and PCM alignment. Frozen functional source passes.
+No processRSS, hard admission, native Windows/hardware/fidelity claim. Clipboard,
+history tiles/whole-layer retention, derived/GPU accounting and dense admission
+remain separate required work. Raw eager-owner-unit/domain/app under
+/workspace/has-handoff-audit. Curated eager_drawing_ownership_2026-11-06.json and
+docs/eager_drawing_ownership.md. MEM-02 partial/open; canonical goal active.
+
+Masked nested private108 regression also passes 218checks after real abrupt
+exit: packed/linked/active-child masks, ordinary recovery and synchronized export;
+manual HAS/source bytes exact. Evidence added to the same curated receipt.

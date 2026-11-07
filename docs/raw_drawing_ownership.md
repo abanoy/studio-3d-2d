@@ -14,7 +14,7 @@ eager API and small-project eager policy are unchanged.
 When raw artwork cannot compress, an idle release attempt reports `incompressible`
 and keeps both the owner and its charged bytes. It never substitutes blank pixels
 or reports a successful release. The 64 MiB target remains soft, and the 32-cel cap
-is unchanged. Legacy eager images, clipboard, history tiles, derived/GPU resources
+is unchanged. Standalone eager images, clipboard, history tiles, derived/GPU resources
 and global admission remain separate accounting work.
 
 Focused checks cover two noisy independent owners, exact decoded bytes, conservative

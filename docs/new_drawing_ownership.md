@@ -10,7 +10,8 @@ The app still enforces32cels. The64MiB owned-hot/decoded-cache target is soft:
 compression runs at most once per idle second and never replaces missing/corrupt
 pixels with blanks. External writable Image handles, active work and incompressible
 artwork can prevent cooling. This is not an RSS, GPU, total history or whole-project
-memory ceiling. Legacy eager load remains outside this counter. Adaptive raw fallback now
+memory ceiling. Eager app Open now registers its accepted Images without compression; see
+[eager ownership](eager_drawing_ownership.md). Adaptive raw fallback also
 registers owned Images; see [incompressible drawings](raw_drawing_ownership.md).
 
 `RasterOwner.from_image(image, cache)` preserves the current writable Image and
