@@ -3451,3 +3451,24 @@ from decoder success. No geometry conversion/app posing/HAS/native movie claim.
 Receipt sfm_uploaded_samples_2026-11-07.json and B-NATIVE prerequisites updated.
 Owner asked asynchronously for an existing recognized cloud installation path;
 independent work continues. Implementation51/54 and formal5/62 unchanged.
+
+
+## 2026-11-07 UTC — responsive World/toolbars keep timeline and footer reachable
+
+Open timeline acceptance run reproduced default1200x760 workspace overflow:
+timeline bottom902 beyond logical900. World minimum height accumulated hierarchy
+actions; fixed logical viewport also hid physical compact sizing. Add scrollable
+World body without replacing live controls; observe physical window size and UI
+scale, keep view/physics rows horizontally scrollable, compact canvas reserve and
+caption. First correction passed original window but125percent footer bottom801
+exceeded720; measured minimums drove final toolbar/minimum correction.
+Original assertion unchanged. Added same-aspect1120x720,125percent1400x900, full
+footer bounds, fully visible World action after scroll and exact final pixel checks.
+156timeline/workspace/channels,65recording and74asset-package regressions pass,
+including realH264/AAC and source/Undo/cold persistence checks in their scopes.
+CurrentIKhelper/direct70checks and reusablepath70checks also passed during the
+requirement review before this presentation correction. Optional native app
+cases remain skipped behind their actual installed-host/fixture prerequisites.
+Receipt responsive_workspace_2026-11-07.json; no project/settings schema change.
+Next resume exact open acceptance review and independent required work; no overall
+completion claim or changes to51/54implementation and5/62formal closure.

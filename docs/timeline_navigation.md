@@ -37,3 +37,8 @@ scaled windows and unchanged HAS bytes on Open. Existing workspace and animated
 channel tests also exercise the shared timeline and an actual1080p H.264 movie.
 Native fixture skips are reported separately. These checks use original procedural
 assets; they do not establish native import fidelity or physical-device feel.
+
+The later [responsive dock correction](workspace_panels.md) keeps the shared ruler,
+tracks and footer within small/scaled windows. Its156check regression includes
+fixed labels, late waveform dragging, floating timeline, workspace input mapping
+and current animated-channel save/recovery/movie behavior.

@@ -57,8 +57,17 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 		elif index==3:float_panel(id)
 		else:reset())
 	panels[id]=panel;slots[slot].add_child(panel)
-	if content.get_parent():content.reparent(panel,false)
-	else:panel.add_child(content)
+	var body: Control=panel
+	if id=="world":
+		# Hierarchy actions must not force the entire camera/timeline offscreen.
+		# Preserve the same live controls; the dock body scrolls when space is tight.
+		var scroll:=ScrollContainer.new();scroll.name="WorldContentScroll"
+		scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+		scroll.custom_minimum_size=Vector2(156,120);scroll.follow_focus=true
+		scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
+		panel.add_child(scroll);body=scroll
+	if content.get_parent():content.reparent(body,false)
+	else:body.add_child(content)
 	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
 
 func header_input(id: String,event: InputEvent) -> void:

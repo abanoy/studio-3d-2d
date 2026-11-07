@@ -571,8 +571,11 @@ func build_ui() -> void:
 	var center := VBoxContainer.new()
 	center.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	middle.add_child(center)
+	var view_strip:=ScrollContainer.new();view_strip.name="ViewControlsScroll";view_strip.follow_focus=true
+	view_strip.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO;view_strip.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	center.add_child(view_strip)
 	var view_toolbar := HBoxContainer.new()
-	center.add_child(view_toolbar)
+	view_strip.add_child(view_toolbar)
 	mode = OptionButton.new()
 	mode.add_icon_item(StudioTheme.icon("draw"), "Draw")
 	mode.add_icon_item(StudioTheme.icon("camera"), "Scene / camera")
@@ -590,7 +593,10 @@ func build_ui() -> void:
 	button(view_toolbar, "Frame scene", frame_3d_scene).tooltip_text = "Fit the 3D asset in the temporary editor camera; shot keys stay unchanged."
 	keyboard_shortcuts.decorate(icon_button(view_toolbar, "Undo", "undo", undo),"undo","Undo")
 	keyboard_shortcuts.decorate(icon_button(view_toolbar, "Redo", "redo", redo),"redo","Redo")
-	var physics_toolbar:=HFlowContainer.new();center.add_child(physics_toolbar)
+	var physics_strip:=ScrollContainer.new();physics_strip.name="PhysicsControlsScroll";physics_strip.follow_focus=true
+	physics_strip.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO;physics_strip.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	center.add_child(physics_strip)
+	var physics_toolbar:=HBoxContainer.new();physics_strip.add_child(physics_toolbar)
 	physics_editor.setup(physics_toolbar)
 	canvas = CanvasView.new()
 	canvas.custom_minimum_size = Vector2(400, 180)
@@ -812,11 +818,14 @@ Draw returns to the animated shot.")
 	workspace_layout=preload("res://src/workspace_layout.gd").new();add_child(workspace_layout)
 	workspace_layout.setup(self,column,middle,hierarchy,scroll,transport,ruler_holder,timeline_scroll)
 	var fit_panels := func():
-		var compact := get_viewport_rect().size.y < 800
+		var usable_height:=minf(get_viewport_rect().size.y,float(get_window().size.y)/get_window().content_scale_factor)
+		var compact := usable_height < 800
 		world_selection.tree.custom_minimum_size.y = 80 if compact else 150
 		timeline_scroll.custom_minimum_size.y = 84 if compact else 144
-		canvas.custom_minimum_size.y = 140 if compact else 180
+		canvas.custom_minimum_size.y = 90 if compact else 180
+		scene_name.visible=not compact
 	resized.connect(fit_panels)
+	get_window().size_changed.connect(fit_panels)
 	fit_panels.call()
 
 func default_ffmpeg() -> String:

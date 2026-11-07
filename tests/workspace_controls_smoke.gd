@@ -115,6 +115,7 @@ func run() -> void:
 	ws.timer.stop();ws.load_layout();await settled();check(ws.locations==saved.slots,"saved docking preferences reload without a project-format change")
 	ws.reset();await settled();app.get_window().size=Vector2i(1200,760);await settled()
 	var visible: Rect2=root.get_visible_rect();var screen: Image=root.get_texture().get_image()
+	print("WORKSPACE_BOUNDS ",JSON.stringify({"window":str(app.get_window().size),"visible":str(visible),"canvas":str(app.canvas.get_global_rect()),"timeline":str(app.timeline.get_parent().get_global_rect()),"footer":str(app.status.get_parent().get_global_rect())}))
 	check(app.canvas.get_global_rect().end.x<=visible.end.x and app.timeline.get_parent().get_global_rect().end.y<=visible.end.y and screen.get_width()<=app.get_window().size.x and screen.get_height()<=app.get_window().size.y,"default resizable layout remains accessible in logical and physical bounds at1200x760")
 	app.mode.select(0);app.change_mode(0);app.color.color=Color.MAGENTA;await settled()
 	var mapped_rect: Rect2 = app.canvas.image_rect()
@@ -126,6 +127,17 @@ func run() -> void:
 			root.push_input(touch,true);await settled()
 		var ink_pixel: Color = Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixelv(pixel)
 		check(ink_pixel.r>0.9 and ink_pixel.b>0.9 and ink_pixel.g<0.1 and ink_pixel.a>0.9,"resized workspace routes viewport pointer to Ink pixel "+str(pixel))
+	var expected: Image=await app.renderer.capture(app.keys,app.layers,0,true)
+	for window_case in [{"size":Vector2i(1120,720),"scale":1.},{"size":Vector2i(1400,900),"scale":1.25}]:
+		app.get_window().content_scale_factor=window_case.scale;app.get_window().size=window_case.size;await settled()
+		var area: Rect2=root.get_visible_rect();var footer: Rect2=app.status.get_parent().get_global_rect()
+		check(app.canvas.get_global_rect().end.x<=area.end.x and app.timeline.get_parent().get_global_rect().end.y<=area.end.y and footer.end.y<=area.end.y and footer.end.x<=area.end.x,"same-aspect resize and125percent interface keep camera timeline and footer reachable: "+str(window_case))
+		var scroll: ScrollContainer=ws.panels.world.get_node("WorldContentScroll");var asset_actions: Array=app.find_children("*","Button",true,false).filter(func(node):return node.text=="Save asset .has...")
+		check(asset_actions.size()==1 and scroll.is_visible_in_tree(),"compact World retains asset action inside a scrollable dock")
+		if asset_actions.size()==1:
+			scroll.ensure_control_visible(asset_actions[0]);await settled();check(scroll.get_global_rect().encloses(asset_actions[0].get_global_rect()),"World action can be brought into the visible dock without changing layout")
+		check((await app.renderer.capture(app.keys,app.layers,0,true)).get_data()==expected.get_data(),"responsive dock and interface scale preserve exact final3D/2D output")
+	app.get_window().content_scale_factor=1.;app.get_window().size=Vector2i(1200,760);await settled()
 	root.get_texture().get_image().save_png(folder.path_join("workspace-1200.png"));app.get_window().size=Vector2i(1400,900);await settled();root.get_texture().get_image().save_png(folder.path_join("workspace.png"))
 	var file:=FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE);file.store_string(JSON.stringify({"checks":checks,"failures":failures}));file.close();app.free();await process_frame
 	print("WORKSPACE_CONTROLS "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

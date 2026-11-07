@@ -132,3 +132,21 @@ This fresh-folder result does not certify a clean Windows PC or artist comfort.
 
 The saved runnable location is in `output/workspace-review-checkpoint.json`.
 Normal installed Model7 Studio and the frozen web preview remain separate.
+
+## Responsive dock bounds
+
+The World body now scrolls when its hierarchy/actions exceed the available dock.
+The same live controls remain in place, including independent asset packaging.
+View and physics controls stay on horizontally scrollable rows instead of forcing
+minimum window width or additional tall rows. Focused controls scroll into view.
+Compact sizing observes physical window changes even when Godot keeps a fixed
+logical viewport. The extra scene caption is hidden in compact mode; scene data
+and final output remain unchanged.
+
+The original1200x760 accessibility check exposed an overflow and remains intact.
+The final suite also checks same-aspect1120x720,125percent at1400x900, both footer
+bounds, reachable World actions and identical final pixels.156timeline/workspace/
+channel checks pass, plus65Local/World recording and74asset-package regressions.
+These include real movies, audio, Undo and source-offline packed replay where
+applicable. Native/physical-device/Windows acceptance remains separate. See
+[the evidence receipt](benchmarks/responsive_workspace_2026-11-07.json).
