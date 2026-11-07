@@ -357,7 +357,7 @@
       ],
       "title": "Reference-only posed characters",
       "implementation": "implemented",
-      "verification": "historical_only",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
       "acceptance": "Poseable references can be shown/hidden independently for preview versus final render, with saved pose interpolation and usable three-quarter inspection.",
       "evidence": [
@@ -368,9 +368,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/body_pose_library.md"
+        },
+        {
+          "kind": "source",
+          "path": "tests/verify_posed_reference.py"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/posed_references.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/posed_reference_2026-11-07.json"
         }
       ],
-      "remaining": "Fresh complete reference-only routed/export acceptance remains.",
+      "remaining": "Complete reference-only software acceptance now passes actual pose/interpolation/orbit/visibility/opacity/Undo/recovery/packed cold Open and exact export checks. Formal closure will reference the verified implementation commit; native/platform/device/artist gates remain separately tracked.",
       "external_dependencies": []
     },
     {

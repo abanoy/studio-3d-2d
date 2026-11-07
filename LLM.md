@@ -3120,3 +3120,30 @@ Curated authored_turn_walking_2026-11-07.json, docs/checklist/audit updated; MOT
 partial/open,48/54implementation/2of62formalclosure unchanged. Wholegoalactive.
 Nextfresh complete reference-only posing acceptance (POSE04) and independent
 remainingrequired work, rather than repeatedly polishing this bounded walk.
+
+
+## 2026-11-07 UTC — working reference opacity and full POSE04 case
+
+Added0..100percent Referenceopacity/Apply shownonlyforreference-onlyobjects. Optional
+reference_opacity permodel defaults1; fullrestoreomitsfield, noautokey. Appliesonly
+workingreferenceappearance viaexistinginstance-localmaterials; finalreferencehidden
+andturningreferenceflagoffrestoresfulloutputgeometry. GodotModel1..9/PythonHAS
+validatefinite0..1/rejectbool; badsavepreservespriorcontainer. CRLFModelpreserved.
+
+Reproduced11of15domainfailuresbeforeimplementation. FinalfrozenprivateX109 run passes
+15domain/23Python/37actualapp/7freshreader. Realnumericstageplacement, root45degree
+andarm60degree auto-key, midpoint22.5/30, actualreference/visibility/opacity25/0/100
+controls/Undo/Redo, routedCtrl-leftorbit, recovery andpackedcoldOpen pass. Original
+map/17bonefigure/audio/writercacheoffline freshreader exactfivepose/rootstrings and
+threefinalRGBA plusworkingfadedframe. Actual48frame1080p24H264AAC2secondmovie
+threeinputs equalreference-excludedpreview;voiceonsetsample48001.Independent
+RGBA/camera/originalsources/manualHASunchanged. X110walkingturnregression98passes.
+
+Rawfailuresretained: missingtestArraytype, wrongfixtureboneupperarm_L correctedto
+actualupper_arm_L, then3visualassertionsbecauseactualimportplacementwasoutside
+fixedtestcamera. Inspectedframe/worldpositions andmovedrootthroughactualnumeric
+controltoorigin; retainedallvisualassertions, noappbehavior/toleranceweakening.
+Inspectedactualappandfadedcaptures. Curatedposed_reference_2026-11-07.json anddocs
+posed_references/checklist/auditupdated; formalclosurefollowsimplementationcommit
+withitsrealhash. Native/material/platform/device/artistgatesremainseparate. Whole
+goalactive; nextproject/personal-settings matrix STORE03 andindependentrequiredgaps.

@@ -493,7 +493,7 @@
       ],
       "implementation_before": "implemented",
       "implementation": "implemented",
-      "implementation_review": "Reference-only visibility and pose sampling remain separate from final output; instance-local appearance copies preserve authored materials.",
+      "implementation_review": "Reference-only preview/final visibility, optional working opacity and pose interpolation use shared saved model and instance-local appearance copies. Full scoped softwarecase nowpasses.",
       "reviewed_code_anchors": [
         {
           "path": "src/model.gd",
@@ -514,10 +514,10 @@
           "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
         }
       ],
-      "verification": "historical_only",
+      "verification": "scoped_evidence",
       "acceptance_status": "open",
-      "acceptance_review": "Fresh complete reference-only routed/export acceptance remains.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "acceptance_review": "Complete reference-only software acceptance now passes actual pose/interpolation/orbit/visibility/opacity/Undo/recovery/packed cold Open and exact export checks. Formal closure will reference the verified implementation commit; native/platform/device/artist gates remain separately tracked.",
+      "evidence_review": "New frozen original-asset/private GUI and cold-reader evidence covers full reference-only softwarecondition. Formalreceipt will name implementationcommit afterrecordingcode; native/platform/input/artist gates stay separate.",
       "formal_receipts": [],
       "external_dependencies": []
     },

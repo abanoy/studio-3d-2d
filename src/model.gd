@@ -94,6 +94,9 @@ static func scale_valid(value) -> bool:
 static func validate(value, duration: int) -> String:
 	if not value is Dictionary: return "Invalid model record."
 	if value.is_empty(): return ""
+	if value.has("reference_opacity"):
+		var opacity=value.reference_opacity
+		if not (opacity is int or opacity is float) or not is_finite(float(opacity)) or opacity<0 or opacity>1:return "Reference opacity must be between0 and1."
 	if value.get("format")=="studio_model_9":return load("res://src/root_component_document.gd").validate(value,duration)
 	if not value.get("format") in ["studio_model_1",Clips.FORMAT,Visibility.FORMAT,ShapeAnimation.LEGACY_FORMAT,ShapeAnimation.FORMAT,BODY_FORMAT,CONTACT_FORMAT,MOTION_FORMAT] or not value.get("id") is String or not value.get("name") is String or not value.get("sha256") is String or not value.get("visible") is bool or not value.get("reference_only") is bool or not transform_valid(value): return "Invalid standard model identity/transform."
 	var motion_error: String=motion_animation().validate(value)
@@ -448,6 +451,7 @@ func apply(frame: int, editing := false, final := false, video: Dictionary = {},
 	root.transform = Transform3D(Basis(Timeline.quaternion(transform.rotation_xyzw)).scaled(Vector3.ONE * transform.scale), Timeline.vector(transform.position)) * base_root
 	if not final and live_world_transform is Transform3D:root.global_transform=live_world_transform
 	var alpha:=Visibility.opacity(data,frame,video)*parent_opacity
+	if not final and data.reference_only:alpha*=float(data.get("reference_opacity",1.))
 	apply_opacity(alpha,video.get("lighting_mode")=="unshaded")
 	root.visible = alpha>0 and not (final and data.reference_only) and (not Clips.has_pieces(data) or not data.animation_clips.is_empty() and frame>=int(data.start_frame))
 	evaluation_error=""

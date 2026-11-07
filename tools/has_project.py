@@ -218,6 +218,10 @@ def members(manifest,extended_ok=False):
     assets = {}
     for slot,row in slots:
         if not row: continue
+        if slot == 'model' and 'reference_opacity' in row:
+            opacity = row['reference_opacity']
+            if type(opacity) not in (int, float) or not math.isfinite(opacity) or not 0 <= opacity <= 1:
+                raise HasError('Reference opacity must be between0 and1')
         name = safe(row['path']); digest = row['sha256']
         if not name.startswith('assets/') or not isinstance(digest,str) or not re.fullmatch(r'[0-9a-f]{64}', digest): raise HasError('Invalid asset identity')
         if slot in ('scene','model') and not name.endswith('.glb') or slot == 'audio' and not name.endswith('.wav'): raise HasError('Invalid asset format')

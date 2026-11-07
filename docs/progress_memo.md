@@ -13211,3 +13211,14 @@ Undo/recovery/source/manualHAS/48frameH264 pass. Hold/fast/tilted/sustainedpivot
 refuse; retain authoredcomponent half-frame dwell, keepstance through<=oneframe.
 Receipt authored_turn_walking_2026-11-07.json. Native/terrain/grouped/artist gates
 remain, MOTION03partial, scoresunchanged. NextfreshPOSE04reference acceptance.
+
+
+### 2026-11-07 UTC — working reference opacity and full posed-reference proof
+
+Optionalsavedworkingreferenceopacity0..100/Apply/Undo, Godot/Pythonfinitevalidation,
+fulloutputrestorewhenreferenceflagoff. Fullprivatecase15domain/23Python/37app/7cold
+reader passes: actualpose/interpolation/orbit/visibility,25/0/100fade,recovery,5exact
+poses/3finalimages/workingfade,48frameH264AAC/sample48001/sourcepreservation.
+Walking98checkregressionpasses. Retainedfailedtesttype/bonename/importplacement
+diagnostics; allvisualassertionskept. Receiptposed_reference_2026-11-07.json; formal
+POSE04closuretoreferenceimplementationcommit. NextSTORE03settingsmatrix.

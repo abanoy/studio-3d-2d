@@ -229,5 +229,20 @@ class HasTests(unittest.TestCase):
                 for name,blob in entries.items():z.writestr(name,blob)
             with self.assertRaisesRegex(has.HasError,'checksum'):self.unpack(root,req)
 
+    def test_reference_opacity_roundtrip_and_invalid_atomic_refusal(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,name,_=self.fixture(root)
+            manifest=json.loads((Path(request['folder'])/'project.json').read_bytes())
+            manifest['model']=dict(manifest['scene'],reference_opacity=.25)
+            (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(manifest));has.pack(request)
+            result=self.unpack(root,request)
+            self.assertEqual(json.loads((Path(result['folder'])/'project.json').read_bytes())['model']['reference_opacity'],.25)
+            before=Path(request['path']).read_bytes()
+            for bad in [-.1,1.1,float('nan'),float('inf'),True,'.5',None]:
+                manifest['model']['reference_opacity']=bad
+                (Path(request['folder'])/'project.json').write_bytes(has.json_bytes(manifest))
+                with self.assertRaisesRegex(has.HasError,'Reference opacity'):has.pack(request)
+                self.assertEqual(Path(request['path']).read_bytes(),before)
+
 
 if __name__=='__main__':unittest.main()

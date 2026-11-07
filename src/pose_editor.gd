@@ -18,6 +18,9 @@ var scale_field: SpinBox
 var interpolation: OptionButton
 var visible_toggle: CheckButton
 var reference_toggle: CheckButton
+var reference_opacity_row: HBoxContainer
+var reference_opacity: SpinBox
+var apply_reference_opacity: Button
 var info: Label
 var selected := "@root"
 var tree_items := {}
@@ -143,6 +146,12 @@ func setup(owner_app, parent: Node) -> void:
 	reference_toggle.text = "Reference only (hide in movie)"
 	reference_toggle.toggled.connect(func(value): set_flag("reference_only", value))
 	panel.add_child(reference_toggle)
+	reference_opacity_row=HBoxContainer.new();panel.add_child(reference_opacity_row)
+	app.label(reference_opacity_row,"Reference opacity (%)")
+	reference_opacity=SpinBox.new();reference_opacity.min_value=0;reference_opacity.max_value=100;reference_opacity.step=1;reference_opacity.value=100;reference_opacity_row.add_child(reference_opacity)
+	reference_opacity.tooltip_text="Working reference transparency only. Reference-only objects stay hidden in the movie."
+	apply_reference_opacity=app.button(reference_opacity_row,"Apply",func():set_reference_opacity(reference_opacity.value))
+	reference_opacity.get_line_edit().text_submitted.connect(func(_text):reference_opacity.apply();set_reference_opacity(reference_opacity.value))
 	source_shape=CheckButton.new();source_shape.text="Use imported shape"
 	source_shape.tooltip_text="Use declared model defaults underneath base-shape adjustments. Turning this off keeps your adjustments. This is a saved whole-project setting, not a pose key."
 	panel.add_child(app.advanced(source_shape));source_shape.toggled.connect(set_source_shape)
@@ -296,6 +305,7 @@ func rebuild_tree() -> void:
 	tree_items.clear()
 	if not active_rig():
 		if source_shape:source_shape.visible=false
+		if reference_opacity_row:reference_opacity_row.hide()
 		info.text = "No model. Add a prepared GLB to pose."
 		return
 	var rig = active_rig()
@@ -347,8 +357,12 @@ func refresh_values() -> void:
 	if animated_shapes:animated_shapes.sync()
 	if shape_button:shape_button.visible=active_rig()!=null and (not active_rig().root.get_meta(Model.Shape.META,{"rows":[]}).rows.is_empty() or preload("res://src/expression_presets.gd").has_data(active_rig().root));shape_button.disabled=app.exporting or app.playing
 	if source_shape:source_shape.visible=app.advanced_mode and active_rig()!=null and not active_rig().root.get_meta(Model.Shape.META,{"rows":[]}).rows.is_empty()
+	if reference_opacity_row:reference_opacity_row.visible=active_rig()!=null and active_rig().data.reference_only
 	if not active_rig(): return
 	var rig = active_rig()
+	reference_toggle.set_pressed_no_signal(rig.data.reference_only)
+	reference_opacity.set_value_no_signal(float(rig.data.get("reference_opacity",1.))*100)
+	apply_reference_opacity.disabled=app.exporting or app.playing
 	if source_shape:source_shape.set_pressed_no_signal(Model.Shape.enabled(rig.data))
 	visible_toggle.set_pressed_no_signal(rig.visible_at(app.frame))
 	var value: Dictionary = rig.sample_transform(app.frame, true) if selected == "@root" else rig.sample(app.frame, true).get(selected, Model.identity())
@@ -486,6 +500,16 @@ func set_flag(flag: String, value: bool) -> void:
 	var before: Dictionary = active_rig().data.duplicate(true)
 	active_rig().data[flag] = value
 	commit(before)
+
+func set_reference_opacity(percent: float) -> void:
+	if not active_rig() or app.exporting or app.playing:return
+	if not active_rig().data.reference_only:return
+	if not is_finite(percent) or percent<0 or percent>100:app.message("Reference opacity must be between0 and100 percent.");return
+	var data: Dictionary=active_rig().data.duplicate(true)
+	if float(data.get("reference_opacity",1.))==percent/100.:return
+	if percent==100:data.erase("reference_opacity")
+	else:data["reference_opacity"]=percent/100.
+	if restore_state(data).is_empty():app.message("Working reference opacity saved. Undo restores the previous amount.")
 
 func set_source_shape(value: bool) -> void:
 	if not active_rig() or app.exporting:return

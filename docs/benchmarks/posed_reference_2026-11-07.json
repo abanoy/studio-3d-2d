@@ -1,0 +1,193 @@
+{
+  "format": "has_posed_reference_acceptance_1",
+  "date": "2026-11-07 UTC",
+  "requirement": "POSE-04",
+  "base_commit": "99b7c0f",
+  "acceptance_condition": "Poseable references can be shown/hidden independently for preview versus final render, with saved pose interpolation and usable three-quarter inspection.",
+  "scope": "Complete required reference-only software contract, with original included17boneGLB/room; not native ecosystem fidelity, physicalWindows/tablet/GPU/audio/artist acceptance.",
+  "raw_folder": "/workspace/has-handoff-audit/posed-reference-fourth",
+  "raw_receipt_sha256": "d3fe3744f9c1eedf92818b99074f4d33a402c9d691722230b8ee448158752bb1",
+  "reports": {
+    "domain": {
+      "checks": 15,
+      "failures": 0
+    },
+    "python": {
+      "checks": 23,
+      "failures": 0
+    },
+    "writer": {
+      "checks": 37,
+      "failures": 0,
+      "movie": "/workspace/has-handoff-audit/posed-reference-fourth/render_1794039692_10226492_0/movie.mp4"
+    },
+    "reader": {
+      "checks": 7,
+      "failures": 0
+    }
+  },
+  "media": {
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "84208",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.19.101 libx264"
+      }
+    },
+    "audio_onset_sample": 48001
+  },
+  "cold_reader": {
+    "owned_originals_and_writer_cache_offline": true,
+    "new_asset_cache": true,
+    "exact_root_body_samples": [
+      48,
+      36,
+      24,
+      12,
+      0
+    ],
+    "exact_final_RGBA_frames": [
+      12,
+      24,
+      36
+    ],
+    "exact_transparent_working_frame": 24,
+    "manual_HAS_unchanged": true
+  },
+  "acceptance_mapping": {
+    "independent_working_final_visibility": "Actual reference-only and visibility controls; full/25/0/100percent transparency, Undo/Redo and exact final exclusion; disabled reference-only restores full output geometry.",
+    "pose_interpolation": "Actual auto-key root45degree/arm60degree endpoints, exact22.5degree/30degree midpoint plusfive exactfullprecision coldseek samples.",
+    "three_quarter_inspection": "Routed Ctrl-left orbit changes temporaryview only, preserves actor and authoredcamera; actualscreen inspected.",
+    "persistence_source": "Ordinary recovery checkpoint, packedHAS, newprocess/cacheswithoriginals offline; independentRGBA/voice/camera andoriginalsourcehashes preserved.",
+    "movie": "Real48frame1080p24H264AAC2seconds; three exactPNGinputscorrespondtoreference-excludedfinalpreview; voiceonsetsample48001."
+  },
+  "regression": {
+    "raw_receipt": "/workspace/has-handoff-audit/reference-walking-regression/verification.json",
+    "sha256": "fb5eca81aabd97ada690f4e798573757564bd20021a54bf8c7ba0b9e96d2ab36",
+    "reports": {
+      "evaluator": {
+        "bend_samples": 193,
+        "checks": 43,
+        "failures": 0,
+        "maximum_bend_foot_error": 4.74600565212313e-05,
+        "maximum_foot_error": 0.000179591297637671,
+        "maximum_turn_foot_error": 2.78376660389767e-07,
+        "samples": 97,
+        "scope": "bounded flat straight/bending walk evaluator on original figure; not native/terrain/artist acceptance",
+        "turn_samples": 193
+      },
+      "settings": {
+        "checks": 26,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 23,
+        "failures": 0,
+        "movie": "/workspace/has-handoff-audit/reference-walking-regression/render_1794039705_7393729_0/movie.mp4"
+      },
+      "reader": {
+        "checks": 6,
+        "failures": 0
+      }
+    },
+    "scope": "Shared model changes preserve saved turning/bending walk, preflight, staged preview, Undo, recovery, coldOpen and48frameMP4."
+  },
+  "source_sha256": {
+    "src/model.gd": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678",
+    "src/pose_editor.gd": "abedaf4a79703f738cc32a9e13b964d1e26a15e19c1b15887cd4287408eede80",
+    "src/model_opacity.gd": "11f0b7f6981c726de2da174b3ed607a790254b64df04180e918664565cb8caf4",
+    "src/renderer.gd": "e3516302bf220f0da8842213b36878e1023453886f9a0ba51f0e8a78046ffd00",
+    "src/world_runtime.gd": "da21c9ba9c5e6b3add0fa9bc6417e760a9f2a3edc25118a2441024be74df4c9f",
+    "src/storage.gd": "688ec9bf8c74612fcfff6ba3421dd903b8eccd28adfafe1ddcfa794e33004593",
+    "src/has_project.gd": "12f9b31a33650017f0239b052739530d47984e4a149b32796ef450c0db352399",
+    "src/recovery.gd": "a113d35d150c48cba1a6ad85950284738baa8190991c4e3e9830b1eb8c481b47",
+    "tests/posed_reference_smoke.gd": "a7b345036b097fcfdbe05624ecf61154af9da4519d50eaf18b9366e182e8150b",
+    "tests/reference_opacity_unit.gd": "3f0c863656a226b80bf222dc375ae9ba6b6d374dd379cd4b07080161ec84507e",
+    "tests/verify_posed_reference.py": "df3a24b3e350508e7b5ba3ebe7c1b955d6d52538fb8e0b12695319e6241f1217",
+    "tests/test_has_project.py": "4d57a8e74b56499b80339d48eef231c117ea136814417ad69f834c1751d274fe",
+    "tests/walking_path_smoke.gd": "5f7befdae23e24b5f1746b3e0b212677630fb8b52208eb767de55c86a99b2250",
+    "tests/movement_path_smoke.gd": "d53d556fffe5eff0e8d97ddb7d565ffa0a7b2f0b5d0b309ea6859c9698aba8e2",
+    "tools/has_project.py": "f393b639c535a38a166d73c651baffa86aab8a562a80479fbc32721fc6f5fddf"
+  },
+  "diagnoses_preserved": [
+    {
+      "folder": "/workspace/has-handoff-audit/reference-opacity-before",
+      "result": "Before implementation11of15 domain checks fail: absentopacityapplication andunguardedoptionalvalues."
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/posed-reference-first",
+      "result": "Newtestparseerror explicitArray typeforshots; noappchecksrun."
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/posed-reference-second",
+      "result": "Testusedincorrect originalbonename; actualGLBjointupper_arm_Lconfirmedandused."
+    },
+    {
+      "folder": "/workspace/has-handoff-audit/posed-reference-third",
+      "result": "3visualassertionsfailbecausenormalimportplacementputreferenceat3.81,2.17,5.07outsidefixedcamera. Keptallvisualassertionsandmovedactualroottoauthoredstageoriginviarealnumericcontrols; noappbehavior/tolerancechanged."
+    }
+  ],
+  "limitations": [
+    "Optionalreference_opacity defaults1; onlyworkingreference-onlygeometryaffected. Oldbuildscanignorethenewoptionalworkingvisualsetting.",
+    "Existinginstance-localBaseMaterial3Dfadepath; no new arbitraryShaderMaterial/native-materialpromise.",
+    "This closes onlyPOSE04 softwareacceptance; othernative/platform/input/artist requirements remain separate."
+  ]
+}
