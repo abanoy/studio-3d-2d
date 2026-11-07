@@ -160,6 +160,9 @@ var tool_buttons: Array[Button] = []
 var camera_strip: HBoxContainer
 var physics_bar: Control
 var undo_button: Button
+var back_texture: TextureRect
+var keyboard_nav := false
+var keyboard_focusable: Array = []
 var status_serial := 0
 var empty_hint: PanelContainer
 var empty_hint_label: Label
@@ -243,6 +246,8 @@ func initialize_display() -> void:
 	if prefs.load(display_prefs_path)==OK:
 		var saved = prefs.get_value("display","percent",percent)
 		if saved in UI_PERCENT: percent = int(saved)
+		StudioTheme.dark = bool(prefs.get_value("display","dark",false))
+		keyboard_nav = bool(prefs.get_value("display","keyboard_nav",false))
 		var scheme=prefs.get_value("navigation","scheme","fly")
 		if scheme in ["fly","orbit"]:navigation_scheme=scheme
 	get_window().content_scale_factor = percent / 100.0
@@ -256,6 +261,42 @@ func toggle_fullscreen() -> void:
 	# Redesign: F11 and Settings share one fullscreen toggle (editor window only; movies are unaffected).
 	var full := DisplayServer.window_get_mode() in [DisplayServer.WINDOW_MODE_FULLSCREEN,DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN]
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if full else DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+func back_gradient() -> Texture2D:
+	return StudioTheme.svg_texture('<defs><linearGradient id="back" x2="0" y2="1"><stop stop-color="#%s"/><stop offset="1" stop-color="#%s"/></linearGradient></defs><rect width="64" height="64" fill="url(#back)"/>' % [StudioTheme.tone_hex("f4f7fb"), StudioTheme.tone_hex("dce5ee")], 64, 64)
+
+func apply_dark(on: bool) -> void:
+	# Redesign: opt-in dark theme (Settings, Advanced). Re-tones the theme and background only;
+	# the drawing paper, renders and saved projects are unchanged.
+	StudioTheme.dark = on
+	theme = StudioTheme.make_theme()
+	get_window().theme = theme
+	if back_texture: back_texture.texture = back_gradient()
+	if canvas: canvas.queue_redraw()
+	if timeline: timeline.queue_redraw()
+	if empty_hint: (empty_hint.get_theme_stylebox("panel") as StyleBoxFlat).bg_color = StudioTheme.tone(Color(0.93, 0.96, 0.99, 0.92))
+	refresh_status_style()
+
+func apply_keyboard_nav(on: bool) -> void:
+	# Redesign: buttons normally use FOCUS_NONE so Space drives playback; this opt-in makes them
+	# Tab-reachable (theme focus outline) and restores FOCUS_NONE when turned off.
+	keyboard_nav = on
+	if on:
+		keyboard_focusable.clear()
+		var pending: Array = [self]
+		while not pending.is_empty():
+			var node: Node = pending.pop_back()
+			if node is Window: continue
+			if node is BaseButton and node.focus_mode == Control.FOCUS_NONE:
+				node.focus_mode = Control.FOCUS_ALL
+				keyboard_focusable.append(node)
+			pending.append_array(node.get_children())
+	else:
+		var focus := get_viewport().gui_get_focus_owner()
+		if focus and keyboard_focusable.has(focus): focus.release_focus()
+		for node in keyboard_focusable:
+			if is_instance_valid(node): node.focus_mode = Control.FOCUS_NONE
+		keyboard_focusable.clear()
 
 func resize_web_display() -> void:
 	var css := Vector2i(JavaScriptBridge.eval("window.innerWidth"), JavaScriptBridge.eval("window.innerHeight"))
@@ -284,6 +325,16 @@ func show_display_settings() -> void:
 		display_dialog.popup_centered())
 	button(box,"Toggle fullscreen  [F11]",toggle_fullscreen)
 	button(box,"Keyboard shortcuts…",keyboard_shortcuts.open)
+	var access:=VBoxContainer.new();box.add_child(advanced(access))
+	access.visible=advanced_mode
+	var dark_check:=CheckBox.new();dark_check.text="Dark theme";access.add_child(dark_check)
+	dark_check.tooltip_text="Dark studio interface. Drawing paper and your movie are not affected."
+	dark_check.button_pressed=StudioTheme.dark
+	dark_check.toggled.connect(func(on): apply_dark(on);save_display_preference("display","dark",on))
+	var keyboard_check:=CheckBox.new();keyboard_check.text="Keyboard navigation";access.add_child(keyboard_check)
+	keyboard_check.tooltip_text="Tab / Shift+Tab move between buttons with a visible outline; Enter presses. Playback keys keep working."
+	keyboard_check.button_pressed=keyboard_nav
+	keyboard_check.toggled.connect(func(on): apply_keyboard_nav(on);save_display_preference("display","keyboard_nav",on))
 	var navigation:=VBoxContainer.new();box.add_child(advanced(navigation))
 	navigation.visible=advanced_mode
 	label(navigation,"Camera controls")
@@ -346,6 +397,7 @@ func _ready() -> void:
 	camera_transform_editor=preload("res://src/camera_transform_editor.gd").new();add_child(camera_transform_editor);camera_transform_editor.setup(self)
 	sequence_editor=preload("res://src/sequence_editor.gd").new();add_child(sequence_editor);sequence_editor.setup(self)
 	keyboard_shortcuts.refresh_labels()
+	if keyboard_nav: apply_keyboard_nav(true)
 	renderer.view_changed.connect(refresh_camera_controls)
 	import_actions=ImportActions.new();import_actions.app=self;add_child(import_actions)
 	height_review=preload("res://src/import_height_review.gd").new();height_review.app=self;add_child(height_review)
@@ -560,7 +612,8 @@ func build_ui() -> void:
 	theme = StudioTheme.make_theme()
 	get_window().theme=theme
 	var back := TextureRect.new()
-	back.texture = StudioTheme.svg_texture('<defs><linearGradient id="back" x2="0" y2="1"><stop stop-color="#f4f7fb"/><stop offset="1" stop-color="#dce5ee"/></linearGradient></defs><rect width="64" height="64" fill="url(#back)"/>', 64, 64)
+	back_texture = back
+	back.texture = back_gradient()
 	back.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	back.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	back.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -715,7 +768,7 @@ func build_ui() -> void:
 	empty_hint = PanelContainer.new()
 	empty_hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var hint_style := StyleBoxFlat.new()
-	hint_style.bg_color = Color(0.93, 0.96, 0.99, 0.92)
+	hint_style.bg_color = StudioTheme.tone(Color(0.93, 0.96, 0.99, 0.92))
 	hint_style.set_corner_radius_all(10)
 	hint_style.set_content_margin_all(14)
 	empty_hint.add_theme_stylebox_override("panel", hint_style)
@@ -974,8 +1027,8 @@ func refresh_status_style() -> void:
 		return
 	var problem := is_problem_message(status.text)
 	var toast := StyleBoxFlat.new()
-	toast.bg_color = Color("fdecea") if problem else Color("eaf3fb")
-	toast.border_color = Color("d9534f") if problem else Color("9cc3e4")
+	toast.bg_color = StudioTheme.tone(Color("fdecea") if problem else Color("eaf3fb"))
+	toast.border_color = StudioTheme.tone(Color("d9534f") if problem else Color("9cc3e4"))
 	toast.set_border_width_all(1)
 	toast.set_corner_radius_all(10)
 	toast.content_margin_left = 12
@@ -1685,6 +1738,10 @@ func frame_3d_scene() -> void:
 
 func _input(event: InputEvent) -> void:
 	if keyboard_shortcuts and keyboard_shortcuts.capture(event):get_viewport().set_input_as_handled();return
+	# Redesign keyboard navigation: a focused button must not swallow studio shortcuts (Space, arrows, Home/End...).
+	if keyboard_nav and event is InputEventKey and event.pressed and not event.keycode in [KEY_TAB, KEY_ENTER, KEY_KP_ENTER] and get_viewport().gui_get_focus_owner() is BaseButton:
+		_unhandled_key_input(event)
+		if get_viewport().is_input_handled(): return
 	if timeline and timeline.cel_gesture_active():
 		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:timeline.cancel_cel();get_viewport().set_input_as_handled();return
 		if event is InputEventMouseMotion or event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and not event.pressed:

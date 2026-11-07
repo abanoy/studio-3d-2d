@@ -2,6 +2,16 @@ extends RefCounted
 # Original vector artwork and nine-patch gradients, rasterized by Godot itself.
 # No downloaded icon pack, native OS artwork, fonts or image-model assets.
 static var icons := {}
+# Redesign: opt-in dark theme (editor only, off by default). tone() maps the light palette's
+# neutrals and text to dark equivalents; saturated accents stay as they are.
+static var dark := false
+
+static func tone(c: Color) -> Color:
+	if not dark or (c.s > 0.45 and c.v > 0.45): return c
+	return Color.from_hsv(c.h, c.s * 0.6, clampf(1.06 - c.v, 0.12, 0.92), c.a)
+
+static func tone_hex(hex: String) -> String:
+	return tone(Color(hex)).to_html(false) if dark else hex
 
 static func svg_texture(body: String, width := 32, height := 32) -> ImageTexture:
 	var image := Image.new()
@@ -11,6 +21,7 @@ static func svg_texture(body: String, width := 32, height := 32) -> ImageTexture
 	return ImageTexture.create_from_image(image)
 
 static func surface(top: String, bottom: String, edge := "9ca9b3", inset := 7) -> StyleBoxTexture:
+	top = tone_hex(top); bottom = tone_hex(bottom); edge = tone_hex(edge)
 	var body := '<defs><linearGradient id="g" x2="0" y2="1"><stop stop-color="#%s"/><stop offset="0.48" stop-color="#%s"/><stop offset="1" stop-color="#%s"/></linearGradient></defs><rect x="1" y="1" width="62" height="62" rx="6" fill="url(#g)" stroke="#%s"/><path d="M8 3H56" stroke="white" stroke-opacity="0.65"/>' % [top, top, bottom, edge]
 	var style := StyleBoxTexture.new()
 	style.texture = svg_texture(body, 64, 64)
@@ -25,19 +36,19 @@ static func make_theme() -> Theme:
 	var result := Theme.new()
 	result.default_font_size = 14
 	for type in ["Label", "Button", "OptionButton", "CheckButton", "CheckBox", "MenuButton", "LineEdit", "PopupMenu", "SpinBox"]:
-		result.set_color("font_color", type, Color("283c51"))
-		result.set_color("font_hover_color", type, Color("163854"))
-		result.set_color("font_pressed_color", type, Color("163854"))
-		result.set_color("font_hover_pressed_color", type, Color("163854"))
-		result.set_color("font_disabled_color", type, Color("7f8992"))
-		result.set_color("font_focus_color", type, Color("163854"))
+		result.set_color("font_color", type, tone(Color("283c51")))
+		result.set_color("font_hover_color", type, tone(Color("163854")))
+		result.set_color("font_pressed_color", type, tone(Color("163854")))
+		result.set_color("font_hover_pressed_color", type, tone(Color("163854")))
+		result.set_color("font_disabled_color", type, tone(Color("7f8992")))
+		result.set_color("font_focus_color", type, tone(Color("163854")))
 	var normal := surface("ffffff", "d6e0e8")
 	var hover := surface("ffffff", "bddcf5", "628db9")
 	var pressed := surface("bdd7f0", "e5f2fc", "4c7fab")
 	var focus := StyleBoxFlat.new()
 	focus.bg_color = Color.TRANSPARENT
 	focus.set_border_width_all(2)
-	focus.border_color = Color("4384bd")
+	focus.border_color = tone(Color("4384bd"))
 	focus.set_corner_radius_all(5)
 	for type in ["Button", "OptionButton", "MenuButton"]:
 		for state in ["normal", "disabled"]: result.set_stylebox(state, type, normal)
@@ -48,36 +59,36 @@ static func make_theme() -> Theme:
 		result.set_constant("outline_size", type, 0)
 	result.set_stylebox("normal", "LineEdit", surface("ffffff", "f5f8fa", "a0adb9", 6))
 	result.set_stylebox("focus", "LineEdit", focus)
-	result.set_color("caret_color", "LineEdit", Color("254c74"))
-	result.set_color("selection_color", "LineEdit", Color("b5d8f8"))
-	result.set_color("font_selected_color", "LineEdit", Color("163854"))
+	result.set_color("caret_color", "LineEdit", tone(Color("254c74")))
+	result.set_color("selection_color", "LineEdit", tone(Color("b5d8f8")))
+	result.set_color("font_selected_color", "LineEdit", tone(Color("163854")))
 	for type in ["TextEdit","CodeEdit"]:
-		result.set_color("font_color",type,Color("283c51"))
-		result.set_color("font_selected_color",type,Color("163854"))
-		result.set_color("selection_color",type,Color("b5d8f8"))
-		result.set_color("caret_color",type,Color("254c74"))
-	result.set_color("default_color","RichTextLabel",Color("283c51"))
-	result.set_color("font_selected_color","RichTextLabel",Color("163854"))
-	result.set_color("selection_color","RichTextLabel",Color("b5d8f8"))
-	result.set_color("font_placeholder_color", "LineEdit", Color("6d7f90"))
+		result.set_color("font_color",type,tone(Color("283c51")))
+		result.set_color("font_selected_color",type,tone(Color("163854")))
+		result.set_color("selection_color",type,tone(Color("b5d8f8")))
+		result.set_color("caret_color",type,tone(Color("254c74")))
+	result.set_color("default_color","RichTextLabel",tone(Color("283c51")))
+	result.set_color("font_selected_color","RichTextLabel",tone(Color("163854")))
+	result.set_color("selection_color","RichTextLabel",tone(Color("b5d8f8")))
+	result.set_color("font_placeholder_color", "LineEdit", tone(Color("6d7f90")))
 	result.set_stylebox("panel", "PanelContainer", surface("fafbfd", "e9edf0", "b5c1cb", 10))
 	result.set_stylebox("panel", "PopupMenu", surface("ffffff", "e8eff6", "8095a8"))
 	result.set_stylebox("hover", "PopupMenu", hover)
-	result.set_color("font_hover_color", "PopupMenu", Color("163854"))
-	result.set_color("font_color", "TooltipLabel", Color("283c51"))
+	result.set_color("font_hover_color", "PopupMenu", tone(Color("163854")))
+	result.set_color("font_color", "TooltipLabel", tone(Color("283c51")))
 	result.set_stylebox("panel", "TooltipPanel", surface("fffde7", "fff8cf", "a69a70"))
 	result.set_stylebox("panel", "AcceptDialog", surface("fafbfd", "e4eaf0", "8095a8"))
 	result.set_stylebox("panel", "ItemList", surface("ffffff", "f1f6fa", "a0adb9", 4))
 	result.set_stylebox("selected", "ItemList", hover)
 	result.set_stylebox("selected_focus", "ItemList", hover)
-	result.set_color("font_color", "ItemList", Color("283c51"))
-	result.set_color("font_selected_color", "ItemList", Color("163854"))
+	result.set_color("font_color", "ItemList", tone(Color("283c51")))
+	result.set_color("font_selected_color", "ItemList", tone(Color("163854")))
 	result.set_stylebox("panel", "Tree", surface("ffffff", "f1f6fa", "a0adb9", 4))
 	result.set_stylebox("selected", "Tree", hover)
 	result.set_stylebox("selected_focus", "Tree", hover)
-	result.set_color("font_color", "Tree", Color("283c51"))
-	result.set_color("font_selected_color", "Tree", Color("163854"))
-	result.set_color("font_color", "CheckButton", Color("283c51"))
+	result.set_color("font_color", "Tree", tone(Color("283c51")))
+	result.set_color("font_selected_color", "Tree", tone(Color("163854")))
+	result.set_color("font_color", "CheckButton", tone(Color("283c51")))
 	result.set_constant("separation", "VBoxContainer", 7)
 	result.set_constant("separation", "HBoxContainer", 7)
 	return result
