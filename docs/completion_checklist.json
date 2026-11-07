@@ -150,8 +150,8 @@
       ],
       "title": "Navigation, focus and shortcut routing",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Fly controls, stepping, Space and remapped shortcuts respect text focus/drawing mode and release capture on Escape/focus loss; alternate navigation stays optional.",
       "evidence": [
         {
@@ -161,9 +161,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/keyboard_shortcuts.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/navigation_current_2026-11-07.json",
+          "commit": "19834f040a55b17243d801e5dd029ccb44bed559",
+          "scope": "43 current engine-event/editor/fresh-reader checks: default fly movement and Shift/diagonal bounds, Space/stepping, numeric text focus, Draw mode, Escape/focus release, optional orbit/pan/dolly, personal preferences and exact shot preservation; committed core_interface shortcut suite additionally covers remapped commands. Native rig orbit explicitly unrun."
         }
       ],
-      "remaining": "Physical Windows device and complete routed focus matrix remain.",
+      "remaining": "Required software navigation/input condition verified with committed current receipts; physical comfort/Windows/native fidelity remain separate gates.",
       "external_dependencies": []
     },
     {

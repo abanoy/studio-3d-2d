@@ -192,11 +192,18 @@
           "file_sha256": "d24936a35b4184d484610493f68c1143f1f4a721b0f506c8462fe221e58b5f04"
         }
       ],
-      "verification": "historical_only",
-      "acceptance_status": "open",
-      "acceptance_review": "Physical Windows device and complete routed focus matrix remain.",
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required software navigation/input condition verified with committed current receipts; physical comfort/Windows/native fidelity remain separate gates.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/navigation_current_2026-11-07.json",
+          "commit": "19834f040a55b17243d801e5dd029ccb44bed559",
+          "scope": "43 current engine-event/editor/fresh-reader checks: default fly movement and Shift/diagonal bounds, Space/stepping, numeric text focus, Draw mode, Escape/focus release, optional orbit/pan/dolly, personal preferences and exact shot preservation; committed core_interface shortcut suite additionally covers remapped commands. Native rig orbit explicitly unrun."
+        }
+      ],
       "external_dependencies": []
     },
     {

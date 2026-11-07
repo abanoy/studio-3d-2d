@@ -13546,3 +13546,5 @@ IK/crouch and grouped locomotion gates now running; no premature closures.
 2026-11-07 UTC: CAMERA-01 software acceptance verified using current117-check receipt at 590d914060ee0d075ac6861f45cf589fc80aa885. Formal13/62 (20.97%); implementation51/54 unchanged.
 
 2026-11-07 UTC: Portable orbit/navigation verifier now requires explicit private Linux display and explicit original-only scope or native project; Windows native assertions/desktop receipts preserved. Expanded engine-event checks cover default W/E, diagonal normalization, Shift speed, held-key focus-loss release, Space, stepping, numeric focus and Draw capture guards. Final41writer+2fresh-preference-reader checks pass, exact original shot pixels and packed replay; native checks explicitly unrun. Initial harness Windows flag and buffered synthetic input issues corrected without product/assertion changes.
+
+2026-11-07 UTC: NAV-01 software acceptance verified using committed43-check current receipt 19834f040a55b17243d801e5dd029ccb44bed559 plus current remapped-shortcut evidence. Formal14/62 (22.58%); implementation51/54 unchanged.
