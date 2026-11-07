@@ -36,11 +36,18 @@
           "file_sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Clean Windows installation is a separate acceptance gate.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
+      "evidence_review": "Clean source-only launch excluding output/.godot/.git, fresh XDG and isolated stdlib-only Python driver:43 actual UI checks and48-frame1080p24H264 movie with pinned local Godot/Python/FFmpeg. Existing system runtimes reused; target Windows installer remains ACCEPT-INSTALL.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/clean_source_launch_current_2026-11-07.json",
+          "commit": "49b15665aa8ba3a2b1234ba4b24514096ef63a62",
+          "scope": "Clean source-only launch excluding output/.godot/.git, fresh XDG and isolated stdlib-only Python driver:43 actual UI checks and48-frame1080p24H264 movie with pinned local Godot/Python/FFmpeg. Existing system runtimes reused; target Windows installer remains ACCEPT-INSTALL."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -1741,11 +1748,18 @@
           "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Large-project budgets and native/artist acceptance remain.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
+      "evidence_review": "225 current editable sequence graph/audio/storage/runtime/editor/cold/startup checks: shared child edits update parents, local/parent mapping/offset/loop/placement/opacity, recursive sound and cache invalidation, cycles refused, packed sources/cache offline, actual forced-exit recovery and exact movie.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sequences_compositing_current_2026-11-07.json",
+          "commit": "16c84be4c191967f05a1e2aead200eab4a3f151b",
+          "scope": "225 current editable sequence graph/audio/storage/runtime/editor/cold/startup checks: shared child edits update parents, local/parent mapping/offset/loop/placement/opacity, recursive sound and cache invalidation, cycles refused, packed sources/cache offline, actual forced-exit recovery and exact movie."
+        }
+      ],
       "external_dependencies": []
     },
     {
@@ -1808,11 +1822,18 @@
           "file_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7"
         }
       ],
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
-      "acceptance_review": "Shadow satisfies the stated shadow-or-glow choice; general painted/lasso masks and glow are conditional refinement, not mandatory duplication.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
+      "evidence_review": "Current editable sequence placement and keyed opacity plus29shadow/glow and36mask checks: transparent alpha, crop/invert, copy/split/Undo, unchanged original art/background/camera/nested sound, packed/linked/recovery/cold reads and actual exact movie export. Required shadow-or-glow condition satisfied.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sequences_compositing_current_2026-11-07.json",
+          "commit": "16c84be4c191967f05a1e2aead200eab4a3f151b",
+          "scope": "Current editable sequence placement and keyed opacity plus29shadow/glow and36mask checks: transparent alpha, crop/invert, copy/split/Undo, unchanged original art/background/camera/nested sound, packed/linked/recovery/cold reads and actual exact movie export. Required shadow-or-glow condition satisfied."
+        }
+      ],
       "external_dependencies": []
     },
     {

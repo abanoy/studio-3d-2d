@@ -29,8 +29,8 @@
       ],
       "title": "Pinned offline development workflow",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "A clean supported setup launches pinned Godot and detects Python/FFmpeg without a cloud application dependency.",
       "evidence": [
         {
@@ -40,9 +40,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/cloud_source_recovery.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/clean_source_launch_current_2026-11-07.json",
+          "commit": "49b15665aa8ba3a2b1234ba4b24514096ef63a62",
+          "scope": "Clean source-only launch excluding output/.godot/.git, fresh XDG and isolated stdlib-only Python driver:43 actual UI checks and48-frame1080p24H264 movie with pinned local Godot/Python/FFmpeg. Existing system runtimes reused; target Windows installer remains ACCEPT-INSTALL."
         }
       ],
-      "remaining": "Clean Windows installation is a separate acceptance gate.",
+      "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -1638,8 +1644,8 @@
       ],
       "title": "Editable nested sequence assets",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Shared editable child scenes support local/parent mapping, offset/loop/placement/opacity, recursive audio and cache invalidation; cycles are rejected and parents update.",
       "evidence": [
         {
@@ -1649,9 +1655,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/editable_sequences.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sequences_compositing_current_2026-11-07.json",
+          "commit": "16c84be4c191967f05a1e2aead200eab4a3f151b",
+          "scope": "225 current editable sequence graph/audio/storage/runtime/editor/cold/startup checks: shared child edits update parents, local/parent mapping/offset/loop/placement/opacity, recursive sound and cache invalidation, cycles refused, packed sources/cache offline, actual forced-exit recovery and exact movie."
         }
       ],
-      "remaining": "Large-project budgets and native/artist acceptance remain.",
+      "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -1687,8 +1699,8 @@
       ],
       "title": "Placed overlays and simple2D effects",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Multiple editable character/clip overlays support keyed transform/opacity placement and a simple2D shadow or glow without modifying the background.",
       "evidence": [
         {
@@ -1698,9 +1710,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/sequence_shadows.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sequences_compositing_current_2026-11-07.json",
+          "commit": "16c84be4c191967f05a1e2aead200eab4a3f151b",
+          "scope": "Current editable sequence placement and keyed opacity plus29shadow/glow and36mask checks: transparent alpha, crop/invert, copy/split/Undo, unchanged original art/background/camera/nested sound, packed/linked/recovery/cold reads and actual exact movie export. Required shadow-or-glow condition satisfied."
         }
       ],
-      "remaining": "Shadow satisfies the stated shadow-or-glow choice; general painted/lasso masks and glow are conditional refinement, not mandatory duplication.",
+      "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
