@@ -252,9 +252,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/sourceio_worker_runtime_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/standalone_source_samples_2026-11-07.json"
         }
       ],
-      "remaining": "Owner SFM corpus is available and has read-only metadata/codec/sidecar proof. Full SFM app conversion requires a genuine cloud-accessible installed SFM/GMod host. Compatible full Blender/SourceIO runtime is now independently probed, but guarded conversion integration/fidelity is unrun. Approved complete BSP/MMD/VRM fixtures/dependencies remain prerequisites for their profiles.",
+      "remaining": "Owner clarification: standalone supplied models/maps do not require a game installation. Ran/ReimuV2/Chen now pass actual standalone conversion, native bone posing/UndoRedo, packed source-cache-offline exact pixel replay, live HAS physics/freeze and a real posed movie.83Source and49app checks pass, all original hashes unchanged. Full82model/material/variant/cloth/nativeSourcePhysics fidelity remains unverified; complete approved BSP/MMD/VRM fixtures/dependencies and target observations remain separate prerequisites.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -296,9 +300,13 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/sourceio_worker_runtime_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/standalone_source_samples_2026-11-07.json"
         }
       ],
-      "remaining": "Native geometry/material/rig/morph/animation/physics/dependency acceptance still requires guarded conversion and app/pose/HAS/movie tests against the supplied SFM models, plus approved complete BSP/MMD/VRM fixtures. Two SFM material-slot and38texture dependency diagnostics remain explicit; runtime import/export probes are not native fidelity.",
+      "remaining": "Owner clarification: standalone supplied models/maps do not require a game installation. Ran/ReimuV2/Chen now pass actual standalone conversion, native bone posing/UndoRedo, packed source-cache-offline exact pixel replay, live HAS physics/freeze and a real posed movie.83Source and49app checks pass, all original hashes unchanged. Full82model/material/variant/cloth/nativeSourcePhysics fidelity remains unverified; complete approved BSP/MMD/VRM fixtures/dependencies and target observations remain separate prerequisites.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -2877,14 +2885,14 @@
     },
     {
       "id": "B-NATIVE",
-      "prerequisite": "Owner SFM samples are available (22archives/82MDLs). Full native app tests require a genuine cloud-accessible installed SFM/GMod host. Approved complete BSP/map/prop/lightmap, VRM, MMD model/pose/motion and native Krita artwork fixtures/dependencies remain needed for their separate profiles; Krita also needs its supported private runtime.",
+      "prerequisite": "Standalone owner SFM files are available and require no installed game. Other profiles still need approved complete BSP/map/prop/lightmap, VRM, MMD model/pose/motion and native Krita fixtures/dependencies; Krita needs its supported private runtime. An installed game is relevant only for browsing its content or supplying an actual missing dependency.",
       "prevents": [
         "IMPORT-02",
         "IMPORT-03",
         "COMP-01",
         "ACCEPT-B"
       ],
-      "independent_work": "SFM native metadata/401unique texture decodes/hash/sidecar/case safety and78Source unit checks completed. A separate full Blender5.2.2/GLIBC2.43 SourceIO binding/originalGLB runtime probe now passes offline with574pinned files verified.38Krita parser/preparation checks pass. Actual owner-model/nativeKrita conversion and fidelity remain unrun; installed-host guard is unchanged."
+      "independent_work": "Three supplied SFM models have real standalone conversion/app/pose/packed-cold/exact-render/HAS-physics/movie evidence, with83Source and49app checks. All22archives and2089native file hashes unchanged. Broader82model/native material/variant/cloth/SourcePhysics/other-profile and target fidelity remain distinct; do not reinstate the blanket installation gate."
     },
     {
       "id": "B-TABLET",
@@ -3173,12 +3181,12 @@
     {
       "requirement": "IMPORT-02",
       "priority": 1,
-      "action": "Owner SFM corpus is available and has read-only metadata/codec/sidecar proof. Full SFM app conversion requires a genuine cloud-accessible installed SFM/GMod host. Compatible full Blender/SourceIO runtime is now independently probed, but guarded conversion integration/fidelity is unrun. Approved complete BSP/MMD/VRM fixtures/dependencies remain prerequisites for their profiles."
+      "action": "Use standalone supplied assets without requiring SFM/GMod. Three actual SFM rigs are verified for the recorded bounded workflows. Extend native coverage based on concrete new profile/dependency findings; use installed content only if actually needed. Complete BSP/MMD/VRM and target fidelity still need their fixtures/observations."
     },
     {
       "requirement": "IMPORT-03",
       "priority": 1,
-      "action": "Native geometry/material/rig/morph/animation/physics/dependency acceptance still requires guarded conversion and app/pose/HAS/movie tests against the supplied SFM models, plus approved complete BSP/MMD/VRM fixtures. Two SFM material-slot and38texture dependency diagnostics remain explicit; runtime import/export probes are not native fidelity."
+      "action": "Use standalone supplied assets without requiring SFM/GMod. Three actual SFM rigs are verified for the recorded bounded workflows. Extend native coverage based on concrete new profile/dependency findings; use installed content only if actually needed. Complete BSP/MMD/VRM and target fidelity still need their fixtures/observations."
     },
     {
       "requirement": "COMP-01",

@@ -1,5 +1,6 @@
-"""Read-only installed Source context. SFM content does not require GMod."""
+"""Read-only installed discovery and standalone Source conversion context."""
 from pathlib import Path
+from asset_audit import AssetError
 from source_content import discover, child, value, kv_read
 from source_paths import require_gmod, DEFAULT_GMOD, DEFAULT_WORKSHOP
 
@@ -21,11 +22,11 @@ def source_is_sfm(source, discovery):
 
 
 def installed_context(gmod=DEFAULT_GMOD, workshop=DEFAULT_WORKSHOP, extra=(), source=None):
-    """Allow browsing with either installed host; native GMod assets still require GMod.
+    """Allow installed browsing with either host; GMod browsing still requires GMod.
 
-    Without GMod, native imports must originate in a recognized installed SFM
-    provider (including its Workshop locations). Extra directories remain useful
-    as dependencies, but merely calling an arbitrary folder SFM cannot admit it.
+    This installed browsing context recognizes validated SFM providers without
+    GMod. Arbitrary supplied files use conversion_context instead; their
+    conversion does not require an installed game.
     No executable is run; presence/configuration checks are not Steam ownership DRM.
     """
     discovery = discover(gmod, workshop, extra)
@@ -55,3 +56,53 @@ def installed_context(gmod=DEFAULT_GMOD, workshop=DEFAULT_WORKSHOP, extra=(), so
     return {'discovery': discovery, 'gmod_installation': str(game) if game else '',
             'sfm_installations': [str(p) for p in sfm],
             'source_profile': 'sfm' if source is not None and source_is_sfm(source, discovery) else 'gmod'}
+
+
+def conversion_context(gmod=DEFAULT_GMOD, workshop=DEFAULT_WORKSHOP, extra=(), source=None):
+    """Resolve a supplied package independently of optional installed game content.
+
+    Installed browsing keeps its host checks. A directly selected file can be
+    read without a game, even if its folder resembles a former installation.
+    Optional installed providers are mounted only when their host is validated.
+    """
+    if source is None:
+        return installed_context(gmod, workshop, extra)
+    source = Path(source).resolve(strict=True)
+    try:
+        discovery = discover(gmod, workshop, extra)
+    except (AssetError, OSError, ValueError) as error:
+        # Broken optional game configuration must not reject an unrelated asset.
+        providers = []
+        for item in extra:
+            path = Path(item).resolve()
+            providers.append({'path': str(path), 'label': path.name, 'origin': 'manual',
+                              'present': path.exists(), 'enabled': path.exists(),
+                              'kind': 'folder' if path.is_dir() else path.suffix.lower()[1:]})
+        discovery = {'providers': providers, 'games': [], 'libraries': [],
+                     'warnings': ['Optional installed-content discovery failed: ' + str(error)],
+                     'note': 'Using selected asset and explicit dependencies only.'}
+    try:
+        game = require_gmod(gmod)
+    except ValueError:
+        game = None
+    sfm = []
+    for row in discovery['games']:
+        if row['appid'] != '1840':
+            continue
+        for location in row['locations']:
+            try:
+                sfm.append(sfm_installation(location))
+            except ValueError:
+                pass
+    valid_sfm = {str(path) for path in sfm}
+    game_origins = {'game', 'addon', 'workshop', 'download', 'gamemode', 'mount.cfg'}
+    discovery['providers'] = [provider for provider in discovery['providers']
+                             if (provider['origin'] not in game_origins or game is not None)
+                             and (not provider['origin'].startswith('sfm') or
+                                  provider.get('installation') in valid_sfm or
+                                  provider['origin'] == 'sfm-workshop' and bool(sfm))]
+    return {'discovery': discovery, 'gmod_installation': str(game) if game else '',
+            'sfm_installations': [str(path) for path in sfm],
+            'source_profile': ('sfm' if source_is_sfm(source, discovery) else
+                               'gmod' if game and (source.is_relative_to(game) or source.is_relative_to(Path(workshop).resolve()))
+                               else 'standalone')}

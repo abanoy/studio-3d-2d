@@ -9,7 +9,7 @@ DEFAULT_WORKSHOP = r"C:\Program Files (x86)\Steam\steamapps\workshop\content\400
 def require_gmod(root):
     root = Path(root).expanduser().resolve()
     marker = root / "garrysmod/gameinfo.txt"
-    message = "Garry's Mod must already be installed for native Source imports. Studio does not include or install it. Select your GarrysMod installation folder: "
+    message = "Garry's Mod must already be installed to browse or import its installed content. Studio does not include or install it. Select your GarrysMod installation folder: "
     if not marker.is_file() or marker.stat().st_size > 1024 * 1024:
         raise ValueError(message + str(root))
     content = re.sub(r"//[^\r\n]*", "", marker.read_text(encoding="utf-8-sig"))

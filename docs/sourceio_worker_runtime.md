@@ -5,10 +5,20 @@ GLIBC 2.43, Python 3.14 and NumPy 2.4.6. It imports the full Blender bindings
 from the unchanged pinned SourceIO package, whose native codec cannot load on
 the cloud host's GLIBC 2.41. The host was not upgraded.
 
-This is runtime preparation, not successful native model conversion. No owner
-model is mounted in the probe. The installed SFM/GMod requirement in
-`tools/prepare_source.py` remains enforced, and full native appearance, posing,
-physics, HAS replay and movie acceptance remain open.
+The original runtime probe below does not mount owner models. Later standalone
+integration tests used this image with the actual production adapter to convert
+Ran, Reimu V2 and Chen, then pose/save/reopen/render them in HAS. See the separate
+[standalone receipt](benchmarks/standalone_source_samples_2026-11-07.json).
+Supplied model files do not require a game installation; validated installed
+content is an optional source of dependencies.
+
+The tested cloud adapter is `tools/sourceio_blender_container.py`. Pass its
+absolute executable path to `tools/prepare_source.py --blender`, together with the
+pinned `--sourceio` folder and your own source/output paths. It mounts only the
+selected resource folders and worker code read-only, gives the output its own
+writable mount and runs the verified image offline. Windows continues to use its
+normal installed Blender executable. This adapter is an optional Linux cloud
+runtime, not a replacement for the native format-fidelity acceptance tests.
 
 Build from the existing checkout using the managed local Docker daemon:
 

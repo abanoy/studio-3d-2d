@@ -12,7 +12,7 @@ import lzma
 from asset_audit import digest, inspect
 from source_archive import stage_archive, resource_path
 from source_paths import DEFAULT_GMOD, DEFAULT_WORKSHOP
-from source_installation import installed_context
+from source_installation import conversion_context
 from source_case import sidecars as loose_sidecars
 from source_content import vpk_index, vpk_read, mount_paths
 
@@ -56,8 +56,8 @@ def main():
         return 0
     if not args.output:
         raise ValueError("--output is required for conversion")
-    # Apply the owner's installed-game requirement before creating any output or
-    # starting Blender. Read-only archive inventory remains available independently.
+    # Supplied standalone assets do not require a game installation. Installed
+    # content retains its host checks; missing dependencies remain explicit.
     settings = {}
     if args.mount_settings:
         if args.mount_settings.stat().st_size > 1024 * 1024: raise ValueError("Mount settings exceed 1 MiB")
@@ -67,7 +67,7 @@ def main():
         overrides = settings.get("overrides", {})
         if not isinstance(extra, list) or len(extra) > 128 or not all(isinstance(p, str) for p in extra): raise ValueError("Invalid additional roots")
         if not isinstance(overrides, dict) or len(overrides) > 4096 or not all(isinstance(p, str) and isinstance(v, bool) for p, v in overrides.items()): raise ValueError("Invalid mount overrides")
-    context = installed_context(args.gmod, args.workshop, settings.get("extra", []), source)
+    context = conversion_context(args.gmod, args.workshop, settings.get("extra", []), source)
     discovered = context["discovery"]
     addon = args.sourceio.resolve(strict=True)
     if not (addon / "library/utils/pylib").is_dir():
@@ -134,9 +134,8 @@ def main():
     for mount in mounts:
         if not mount.is_dir() and mount.suffix.lower() not in {".vpk", ".gma"}:
             raise ValueError("Dependencies must be directories, VPK indexes or GMA archives: " + str(mount))
-    sfm_source = context["source_profile"] == "sfm"
     request = {"source": str(asset), "original_source": str(source), "sha256": sha,
-               "source_profile": "sfm" if sfm_source else "gmod",
+               "source_profile": context["source_profile"],
                "sourceio": str(addon), "sourceio_revision": PIN, "output": str(output), "case_resolved_sidecars": case_resolved_sidecars,
                "gmod_installation": context["gmod_installation"], "sfm_installations": context["sfm_installations"],
                "workshop_root": str(args.workshop.resolve()),

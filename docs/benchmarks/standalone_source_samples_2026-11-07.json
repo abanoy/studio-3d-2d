@@ -1,0 +1,117 @@
+{
+  "format": "has_standalone_source_samples_1",
+  "date": "2026-11-07 America/New_York",
+  "owner_policy": "A supplied standalone model does not require an SFM/GMod installation. Installed browsing and optional installed dependency providers retain their validation.",
+  "source_unit_checks": 83,
+  "app_checks": 49,
+  "failures": 0,
+  "runs": {
+    "writer": {
+      "checks": 28,
+      "failures": 0,
+      "mode": "writer",
+      "observations": [
+        {
+          "movie": "/workspace/has-handoff-audit/standalone-source-studio/render_1794102192_6838646_0/movie.mp4",
+          "name": "Ran"
+        }
+      ]
+    },
+    "cold_reader": {
+      "checks": 9,
+      "failures": 0,
+      "mode": "reader",
+      "observations": []
+    },
+    "physics": {
+      "checks": 12,
+      "failures": 0,
+      "mode": "physics"
+    }
+  },
+  "models": [
+    {
+      "name": "Ran",
+      "source_file": "ran.mdl",
+      "source_sha256": "3b8c8d3d79a2969a3ec4621fac895727fe35619e71a884d625b06954af57dc21",
+      "counts": {
+        "meshes": 7,
+        "textures": 12,
+        "bones": 163,
+        "static_lights": 0
+      },
+      "mount_warnings": [],
+      "limits": [
+        "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+        "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
+        "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+      ],
+      "glb_sha256": "0ff92c8138116fd5d96b4f06edbdbd2b73de78b1684635c162204981e235f676",
+      "source_profile": "standalone"
+    },
+    {
+      "name": "Reimu V2",
+      "source_file": "reimu_v2.mdl",
+      "source_sha256": "72cb7710ab4ecefe07773319734459c2745b967d44c8f8b0163e3482fa6ebe86",
+      "counts": {
+        "meshes": 7,
+        "textures": 11,
+        "bones": 220,
+        "static_lights": 0
+      },
+      "mount_warnings": [],
+      "limits": [
+        "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+        "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
+        "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+      ],
+      "glb_sha256": "27ce7409a98457661fc2b611f4f6b0e8f71d291329a8298293ad860fb925508e",
+      "source_profile": "standalone"
+    },
+    {
+      "name": "Chen",
+      "source_file": "chen.mdl",
+      "source_sha256": "998ff915ee9ca5a14794892ef6cf3cd131c3c61ef30f55055efe241282b0bcb2",
+      "counts": {
+        "meshes": 11,
+        "textures": 11,
+        "bones": 186,
+        "static_lights": 0
+      },
+      "mount_warnings": [],
+      "limits": [
+        "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+        "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
+        "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+      ],
+      "glb_sha256": "f5e233a5e3dae16e50b8b735e77088bbcccf1a2c331b0420977e3eafd509bbde",
+      "source_profile": "standalone"
+    }
+  ],
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "24/1",
+    "nb_frames": "24",
+    "duration": "1.000000"
+  },
+  "originals": {
+    "extracted_files": 2089,
+    "archives": 22,
+    "all_hashes_unchanged": true
+  },
+  "conversion_bundles_and_writer_cache_offline_during_cold_read": true,
+  "source_sha256": {
+    "tools/source_installation.py": "6352130c687fa30a184e962962469f6f8cd4d9562d88bba375dcfca3136d3361",
+    "tools/prepare_source.py": "660920b1554f6da744842c3c1c737f822642870fdf9327349c9935199048dd0d",
+    "tools/source_paths.py": "291e0a5b20464f49d7329f1f733be218f7870b661316976fe05ab638869e41b9",
+    "src/source_import.gd": "9e2327bd8896ce2fa37651e1078a432afd3d9f55cddea68f1eaeaa01437897f1",
+    "tests/test_source_installation.py": "bf741c400ff3688bebb5dce2179b4241952e8a65d19cc54d7ce8f1f21f626d6c",
+    "tests/test_source_paths.py": "30b944850a4f3d6b9764ceb3641d3ac2e31e8f0683f7c2f3ba0a23d8c5870baf",
+    "tests/source_standalone_smoke.gd": "3e9b38d3f11757612a49a5592e29c9784e46bef81b0fd703cf74a81dded0d9dd",
+    "tools/sourceio_blender_container.py": "20c372e850d189e521c71486f623e08271720bd55b2ab71cc6a958328e5cfa68"
+  },
+  "scope": "Three actual supplied SFM MDL conversions without a game install; normal canonical GLB adoption, native bone posing/clip-backed keys and exact Undo/Redo, actual render differences, packed HAS and fresh source/cache-offline exact preview pixels, live HAS ragdoll floor/contact/freeze without recording, real posed1080p24movie. Not full82model/native shader/variant/cloth/SourcePhysics/Windows fidelity. Owner scripts ignored, all22archives and2089native extracted hashes unchanged. Two diagnostic reader attempts used obsolete selection/key-field assumptions; corrected fixture uses restored object selection and current clip-backed authored_keys API, with original assertions retained.",
+  "unit_log_sha256": "0ea1f7642b233cfb2cc573352ec22d98538f41996452f4aada2675e3827a9315"
+}

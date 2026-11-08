@@ -29,19 +29,34 @@ non-root user and dedicated output. The host was not upgraded. The tested runtim
 image ID and decoder hash are retained in the receipt. A pinned-base Dockerfile is
 at`tools/docker/sourceio_metadata.Dockerfile`.
 
-A separate [compatible Blender worker runtime](sourceio_worker_runtime.md) now
-imports the full SourceIO bindings and exports an original skinned, morph-animated
-GLB. Its offline probe does not load these owner samples and does not bypass the
-installed-game requirement. This removes the host ABI obstacle for runtime
-preparation; it does not establish native conversion or app fidelity.
+A separate [compatible Blender worker runtime](sourceio_worker_runtime.md)
+imports the full SourceIO bindings. Its original runtime-only probe is distinct
+from the actual supplied-model conversion and app evidence below.
 
-Full native conversion, mesh/material appearance, posing, HAS replay and movie
-acceptance remain unrun for these models. The actual preparation command still
-refuses before creating output because no recognized installed SFM/GMod host is
-available. The installed-game requirement was preserved. This metadata/codec
-inspection does not certify native app or rig/physics fidelity. An existing
-cloud-accessible installation path has been requested; BSP/MMD/VRM and Windows/
-artist/device prerequisites remain separate.
+The owner's clarification supersedes the earlier blanket installation check:
+standalone supplied models do not require SFM or GMod. Installed browsing still
+validates its installation; installed resources are optional dependencies.
+
+Three supplied models have now passed actual standalone conversion and HAS tests:
+
+| Model | Meshes | Textures | Bones |
+| --- | ---: | ---: | ---: |
+| Ran | 7 | 12 | 163 |
+| Reimu V2 | 7 | 11 | 220 |
+| Chen | 11 | 11 | 186 |
+
+They render, accept native arm poses with exact Undo/Redo, save as ordinary packed
+HAS and reopen in a fresh process with their conversion bundles and writer cache
+unavailable. Posed pixels match exactly. Their compatible HAS ragdolls also fall
+onto the original test floor and freeze without creating an animation take. Ran
+exported a real 24-frame 1080p/24 H.264 movie. All 22 archives and 2,089 extracted
+file hashes remain unchanged. See [the standalone receipt](benchmarks/standalone_source_samples_2026-11-07.json).
+
+These results cover three models, not all 82. The adapter still documents PBR
+material approximations, default skin/bodygroup selection and unsupported native
+Source physics/IK/gameplay/sequence playback. HAS ragdoll behavior is distinct
+from preserving original Source physics. Complete BSP/MMD/VRM fixture and target
+Windows/artist/device acceptance remain separate.
 
 Reproduce against the private cloud inventory:
 

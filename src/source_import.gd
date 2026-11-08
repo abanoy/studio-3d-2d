@@ -115,8 +115,8 @@ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void
 	box.add_child(members)
 	var text: Label = app.label(box, "Converts locally with Blender / SourceIO into the same standard GLB used by MMD.\nTextures are approximate. No game scripts run. Your current scene changes only after success.\nNative copies, parameters, editable Blender file and warnings stay in output/compatibility.")
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	app.label(box, "GMod imports require an installed GMod copy. Recognized SFM content can use SFM alone. Studio supplies neither game nor Workshop add-ons.").autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	var game_field := path_field(box, dialog, "Garry's Mod installation", gmod_root)
+	app.label(box, "Standalone models and maps do not require a game installation. Installed content folders are optional for browsing or resolving missing dependencies. Studio supplies neither games nor add-ons.").autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	var game_field := path_field(box, dialog, "Optional Garry's Mod content", gmod_root)
 	var workshop_field := path_field(box, dialog, "Installed Workshop content (4000)", workshop_root)
 	app.button(box, "Browse installed models and maps…", func():
 		gmod_root = game_field.text.strip_edges()
@@ -128,7 +128,7 @@ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void
 	scale.step = 0.00001; scale.value = 0.01905
 	var content := LineEdit.new()
 	content.placeholder_text = "Optional additional content directory or _dir.vpk"
-	content.tooltip_text = "Installed Garry's Mod content mounts automatically. Add one missing game/content mount here. CLI supports more."
+	content.tooltip_text = "Validated installed content is optional. Add a folder or VPK only when your model needs files from it."
 	box.add_child(content)
 	app.add_child(dialog)
 	dialog.confirmed.connect(func():

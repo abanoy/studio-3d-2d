@@ -1,6 +1,6 @@
 """Private uploaded SFM corpus: native metadata/textures and production loose lookup.
 
-Linux test tooling only. No mesh conversion, installed-host bypass or native app
+Linux test tooling only. No mesh conversion or native app
 posing/render claim. Never extracts archives, alters fixtures or publishes assets.
 """
 from pathlib import Path,PurePosixPath
@@ -8,7 +8,7 @@ from zipfile import ZipFile
 import argparse,hashlib,json,os,struct,subprocess,sys
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tools'))
 from tools.source_case import sidecars
-from source_installation import installed_context
+from source_installation import conversion_context
 PIN='fe24260b97ac03b899d9b5d4f0fd7b34772f3647'
 ARCHIVE_SHA='cd44e1d053ac853c5d1628da9faa27a594337ebacb3587744dfa5d60758623de'
 
@@ -66,10 +66,10 @@ def main():
  if o.archive_index:
   for row in json.loads(o.archive_index.read_bytes()):assert digest(Path(row['archive']))==row['sha256'];archive_checks+=1
  try:
-  context=installed_context(source=first);preflight={'eligible':True,'profile':context['source_profile']}
+  context=conversion_context(source=first);preflight={'eligible':True,'profile':context['source_profile']}
  except ValueError as error:preflight={'eligible':False,'error':str(error)}
  sourceio_hash=digest(decoder/'library/utils/pylib/linux/pylib.abi3.so');log=(folder/'dependencies.log').read_text();warnings=[line for line in log.splitlines() if '[WARNING]'in line or '[ERROR]'in line]
- proof=dict(format='has_sfm_uploaded_readonly_1',sourceio_pin=PIN,sourceio_archive_sha256=ARCHIVE_SHA,sourceio_native_sha256=sourceio_hash,docker_image_id=image_id,archives=len(packages),models=model_count,metadata=metadata['summary'],dependencies=deps['summary'],case_resolution=dict(complete_geometry_sets=complete,checksum_mismatches=0,aliases=aliases),extracted_file_hashes_checked=asset_hashes,archive_hashes_checked=archive_checks,material_syntax_diagnostics=warnings,installed_host_preflight=preflight,source_sha256=frozen,scope=__doc__.strip())
+ proof=dict(format='has_sfm_uploaded_readonly_1',sourceio_pin=PIN,sourceio_archive_sha256=ARCHIVE_SHA,sourceio_native_sha256=sourceio_hash,docker_image_id=image_id,archives=len(packages),models=model_count,metadata=metadata['summary'],dependencies=deps['summary'],case_resolution=dict(complete_geometry_sets=complete,checksum_mismatches=0,aliases=aliases),extracted_file_hashes_checked=asset_hashes,archive_hashes_checked=archive_checks,material_syntax_diagnostics=warnings,conversion_preflight=preflight,source_sha256=frozen,scope=__doc__.strip())
  assert all(digest(ROOT/name)==sha for name,sha in frozen.items())
  (folder/'verification.json').write_text(json.dumps(proof,indent=2));print(json.dumps({k:v for k,v in proof.items() if k not in ['source_sha256','case_resolution']},indent=2))
 if __name__=='__main__':main()

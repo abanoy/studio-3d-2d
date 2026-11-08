@@ -2,7 +2,7 @@ from pathlib import Path
 import sys, tempfile, unittest
 from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from source_installation import installed_context, sfm_installation
+from source_installation import installed_context, sfm_installation, conversion_context
 
 
 class InstalledSource(unittest.TestCase):
@@ -34,7 +34,7 @@ class InstalledSource(unittest.TestCase):
         self.install_sfm(); source=self.steam/'steamapps/workshop/content/1840/123/models/a.mdl'
         source.parent.mkdir(parents=True); source.write_bytes(b'fixture')
         self.assertEqual(self.context(source)['source_profile'], 'sfm')
-    def test_unrelated_native_source_does_not_bypass_gmod(self):
+    def test_installed_context_rejects_unrelated_location(self):
         self.install_sfm(); source=Path(self.tmp.name)/'arbitrary/models/a.mdl'
         source.parent.mkdir(parents=True);source.write_bytes(b'fixture')
         with self.assertRaisesRegex(ValueError, 'must already be installed'):self.context(source, [str(source.parents[1])])
@@ -42,7 +42,7 @@ class InstalledSource(unittest.TestCase):
         self.install_sfm(); source=self.steam/'steamapps/workshop/content/4000/123/pack.gma'
         source.parent.mkdir(parents=True);source.write_bytes(b'fixture')
         with self.assertRaisesRegex(ValueError, 'must already be installed'):self.context(source)
-    def test_neither_host_rejects_before_conversion(self):
+    def test_installed_browser_requires_host(self):
         with self.assertRaisesRegex(ValueError, 'Alternatively install Source Filmmaker'):self.context()
     def test_incomplete_or_wrong_sfm_marker_rejected(self):
         source=self.install_sfm(); exe=self.sfm/'game/sfm.exe';data=exe.read_bytes();exe.unlink()
@@ -61,5 +61,39 @@ class InstalledSource(unittest.TestCase):
         result=self.context(self.gmod/'garrysmod/models/test.mdl')
         self.assertEqual(result['gmod_installation'], str(self.gmod.resolve()))
         self.assertEqual(result['source_profile'], 'gmod')
+
+class StandaloneSource(unittest.TestCase):
+    setUp = InstalledSource.setUp
+    install_sfm = InstalledSource.install_sfm
+    def standalone(self):
+        source=Path(self.tmp.name)/'own-model/models/character.mdl'
+        source.parent.mkdir(parents=True);source.write_bytes(b'IDST own fixture')
+        return source
+    def convert(self, source, extra=()):
+        return conversion_context(self.gmod,self.steam/'steamapps/workshop/content/4000',extra,source)
+    def test_standalone_without_either_host(self):
+        source=self.standalone();r=self.convert(source,[str(source.parents[1])])
+        self.assertEqual(r['source_profile'],'standalone');self.assertEqual(r['gmod_installation'],'')
+        self.assertEqual(r['sfm_installations'],[])
+        self.assertTrue(any(p['origin']=='manual' for p in r['discovery']['providers']))
+        self.assertFalse(any(p['origin'] in {'game','addon','workshop'} for p in r['discovery']['providers']))
+    def test_broken_optional_game_config_does_not_reject_own_asset(self):
+        config=self.gmod/'garrysmod/cfg/mount.cfg';config.parent.mkdir(parents=True)
+        config.write_text('"mountcfg" { broken')
+        source=self.standalone();r=self.convert(source,[str(source.parents[1])])
+        self.assertEqual(r['source_profile'],'standalone')
+        self.assertTrue(r['discovery']['warnings'])
+        self.assertTrue(all(p['origin']=='manual' for p in r['discovery']['providers']))
+    def test_standalone_with_optional_sfm(self):
+        self.install_sfm();r=self.convert(self.standalone())
+        self.assertEqual(r['source_profile'],'standalone');self.assertEqual(r['sfm_installations'],[str(self.sfm.resolve())])
+    def test_direct_file_in_former_workshop_does_not_need_host(self):
+        source=self.steam/'steamapps/workshop/content/4000/123/models/a.mdl'
+        source.parent.mkdir(parents=True);source.write_bytes(b'fixture')
+        self.assertEqual(self.convert(source)['source_profile'],'standalone')
+    def test_direct_sfm_file_keeps_working_if_installation_is_removed(self):
+        source=self.install_sfm();self.assertEqual(self.convert(source)['source_profile'],'sfm')
+        (self.sfm/'game/sfm.exe').unlink()
+        result=self.convert(source);self.assertEqual(result['source_profile'],'standalone');self.assertEqual(result['sfm_installations'],[])
 
 if __name__ == '__main__':unittest.main()
