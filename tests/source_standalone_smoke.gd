@@ -15,6 +15,19 @@ func settle() -> void:
 func jobs() -> void:
 	while app.has_project.pid>0:await process_frame
 	await settle()
+func collision_low(simulation,server: bool) -> float:
+	var result:=INF
+	for body in simulation.bodies.values():
+		var node: CollisionShape3D=body.get_child(0);var shape: Shape3D=node.shape
+		var transform: Transform3D=(PhysicsServer3D.body_get_state(body.get_rid(),PhysicsServer3D.BODY_STATE_TRANSFORM)*PhysicsServer3D.body_get_shape_transform(body.get_rid(),0)) if server else node.global_transform
+		if shape is SphereShape3D:result=minf(result,transform.origin.y-shape.radius)
+		elif shape is CapsuleShape3D:
+			var half: float=shape.height*0.5-shape.radius;result=minf(result,minf((transform*Vector3(0,half,0)).y,(transform*Vector3(0,-half,0)).y)-shape.radius)
+		elif shape is BoxShape3D:
+			for x in [-0.5,0.5]:
+				for y in [-0.5,0.5]:
+					for z in [-0.5,0.5]:result=minf(result,(transform*(shape.size*Vector3(x,y,z))).y)
+	return result
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();var folder: String=args[0]
 	var plans: Array=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("plans.json")))
@@ -34,7 +47,8 @@ func run() -> void:
 			var end_y:=0.0;var finite:=true;var low:=INF
 			for body in simulation.bodies.values():end_y+=body.global_position.y;finite=finite and body.global_position.is_finite();low=minf(low,body.global_position.y)
 			end_y/=simulation.bodies.size()
-			check(simulation.bodies.size()>=3 and finite and end_y<start_y-0.2 and low>-0.05,plan.name+" native bodies fall onto real map collision with finite positions")
+			print("NATIVE_PHYSICS_METRICS "+JSON.stringify({"name":plan.name,"bodies":simulation.bodies.size(),"start_y":start_y,"end_y":end_y,"lowest_center":low,"finite":finite,"collision_low":collision_low(simulation,false),"server_collision_low":collision_low(simulation,true)}))
+			check(simulation.bodies.size()>=3 and finite and end_y<start_y-0.2 and low>-0.05 and collision_low(simulation,true)>-0.015,plan.name+" native bodies fall onto real map collision with finite positions")
 			app.physics_editor.toggle.button_pressed=false;await settle();rig=app.renderer.world_runtime.instance(id)
 			check(not app.physics_editor.active(id) and not rig.data.pose.is_empty() and rig.authored_keys()==keys,plan.name+" Physics off freezes native pose without authoring an animation take")
 			check(rig.data.metadata==metadata and app.history.size()==history+1,plan.name+" freeze preserves native provenance and is one undoable edit")
