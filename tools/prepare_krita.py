@@ -133,7 +133,9 @@ def prepare(request):
         frame_count=1;indices=[0]*number(request.get('still_duration_frames',1),'still exposure',1,240)
     if len(indices)>number(request['available_frames'],'remaining project frames',1,240):raise ValueError('Artwork extends beyond the scene; extend Scene length or import earlier')
     krita=Path(request['krita']);ffmpeg=Path(request['ffmpeg'])
-    if not krita.is_file() or not ffmpeg.is_file():raise ValueError('Installed Krita and FFmpeg are required for this preparation')
+    container_image=request.get('container_image','')
+    if container_image and (sys.platform!='linux' or not isinstance(container_image,str) or not re.fullmatch(r'sha256:[0-9a-f]{64}',container_image)):raise ValueError('Invalid private Krita runtime image')
+    if (not container_image and not krita.is_file()) or not ffmpeg.is_file():raise ValueError('A configured Krita renderer and installed FFmpeg are required for this preparation')
     folder=Path(request['output']).resolve()
     if folder.exists():raise ValueError('Artwork preparation needs a fresh output directory')
     folder.mkdir(parents=True);native=folder/'native';native.mkdir();images=folder/'images';images.mkdir()
@@ -145,9 +147,15 @@ def prepare(request):
         write_json(folder/'progress.json',{'stage':'render','frames':frame_count})
         export=native/('frame.png' if inventory['animated'] else 'still.png');receipt=folder/'private-desktop.json'
         args=[sys.executable,str(Path(__file__).with_name('private_desktop.py')),'--receipt',str(receipt),'--timeout','180','--cancel-file',str(cancel),'--memory-limit-mib','3072','--',str(krita),'--nosplash','--export-sequence' if inventory['animated'] else '--export','--export-filename',str(export),str(render_source)]
+        if container_image:
+            receipt=folder/'private-renderer.json'
+            args=[sys.executable,str(Path(__file__).with_name('private_krita_container.py')),'--image',container_image,'--source',str(render_source),'--output',str(native),'--receipt',str(receipt),'--cancel-file',str(cancel),'--timeout','180','--memory-limit-mib','3072']
+            if inventory['animated']:args.append('--animated')
         run(args,folder,cancel,190,native=True,maximum_files=frame_count)
         placement=json.loads(receipt.read_bytes())
-        if not placement.get('child_desktop_confirmed') or placement.get('foreground_child_observed') or not placement.get('job_closed') or not placement.get('desktop_closed') or placement.get('exit')!=0:raise RuntimeError('Native converter did not complete hidden-desktop verification')
+        if container_image:
+            if placement.get('format')!='studio_private_krita_container_1' or placement.get('image_id')!=container_image or placement.get('exit')!=0 or not all(placement.get(k) is True for k in ['container_started','container_removed','launcher_reaped','private_display','private_display_started','network_disabled','source_read_only','read_only_root','init']):raise RuntimeError('Native converter did not complete private-container verification')
+        elif not placement.get('child_desktop_confirmed') or placement.get('foreground_child_observed') or not placement.get('job_closed') or not placement.get('desktop_closed') or placement.get('exit')!=0:raise RuntimeError('Native converter did not complete hidden-desktop verification')
         files=list(native.glob('*.png'))
         if len(files)!=frame_count:raise ValueError('Krita did not render the full expected source range')
         ordered={}

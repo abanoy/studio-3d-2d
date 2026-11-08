@@ -15,11 +15,25 @@ The selected native layers render together into **one new drawing layer**.
 Existing layers, camera keys, models and audio remain independent. Undo removes
 the complete import; Redo restores the same editable drawing images.
 
-Installed Krita and FFmpeg are required; no runtime is bundled or installed.
+A configured Krita renderer and installed FFmpeg are required; no runtime is bundled or installed.
 Studio checks `HYBRID_KRITA`, a personally saved location, then the usual Program
 Files locations. Locate Krita remembers `krita.exe` separately from project data.
 The batch renderer runs on a private Windows desktop, with no visible fallback
 or command sent to the owner's open Krita instance. Preparation is cancellable.
+
+On Linux, an explicitly configured `HYBRID_KRITA_CONTAINER_IMAGE=sha256:…` may
+select an existing local image containing Krita, Python3, Xvfb and xauth. The
+renderer uses its own virtual display, offline network, read-only root and source
+file, a bounded temporary filesystem, and only the owned output bind. It never
+mounts the host display or document plugins. A trusted worker extension is written
+only into its temporary private profile; it waits for each native document frame,
+exports through Krita’s document API, and closes the document before normal quit.
+KRA contents never provide executable startup code. Xvfb reports readiness through
+its own display pipe before Krita starts. Image selection comes from the
+application environment, never the artwork. Missing images fail without pulling
+or opening a visible renderer. Cancellation removes only the labeled owned
+container and reaps its launcher; the receipt records actual container isolation
+separately from Windows desktop verification.
 
 Changing the scene, frame, working mode or document revision invalidates pending
 work. Cancel and New cannot adopt a late result. Adding artwork is deferred while
@@ -37,15 +51,31 @@ both retain the normalized drawing PNGs; the original KRA is not needed to reope
 the imported scene. Recovery uses the same metadata/pixels. Older readers can
 display the ordinary cels but may drop optional ancestry on resave.
 
-Current limits remain four drawing layers,32total held drawings,1920×1080 and
-240scene frames. Preparation also bounds native source size, pixels, layers,
+Current limits are four drawing layers,400 total held drawings across scenes,
+1920×1080, and240 frames per native preparation. Registered raster owners have
+separate320MiB admission; compressible inactive artwork can remain cold. Preparation also bounds native source size, pixels, layers,
 render time, memory and output bytes; see [the worker contract](raster_clip_preparation.md).
 Oversized or dense input refuses instead of truncating it. Native audio, editable
-Krita layer structures/tiles, linked source refresh, ICC/HDR fidelity, video,
-chroma and nested sequences are unfinished. Krita remains the native editor.
+Krita layer structures/tiles, linked source refresh and ICC/HDR fidelity are
+unsupported by this importer. Video/chroma and nested sequences have their own
+workflows. Krita remains the native editor.
 
 `python tests/verify_krita_import.py` exercises the installed native renderer and
 actual hidden Studio flow with the owner's local Hecatia sample. Unit guards are
 in `test_drawing_origin.py` and `drawing_origin_unit.gd`; see the dated progress
 memo for exact accepted runs and retained failures, rather than treating this
 procedure as a new full-application regression or physical-input certification.
+
+The original native acceptance fixture is authored by real Krita through
+`tests/author_krita_fixture.py --image sha256:… --output /absolute/fresh/folder`.
+It creates forty unique transparent frames at24fps using only original rectangles
+and this repository's trusted fixture plugin. It is not a synthetic KRA header or
+an owner artwork copy. `tools/krita-runtime.Dockerfile` records the tested runtime
+recipe; image packages can change at rebuild, so record the resulting image ID and
+actual Krita version. The runtime must already exist locally before preparation.
+`tests/krita_original_smoke.gd` accepts the fixture folder/source and exercises the
+normal review, preview, editable import, persistence and movie flow; `--read`
+reopens the saved scene, `--linked` selects its linked version and `--visibility`
+checks an explicit native background override followed by Cancel. Use an explicitly
+owned private display through `run.configure_private_display`; the older Windows
+verifier remains specific to its historical local fixture.

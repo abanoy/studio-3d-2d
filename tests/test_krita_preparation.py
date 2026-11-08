@@ -33,6 +33,20 @@ class PreparationTests(unittest.TestCase):
         return path
     def request(self):
         source=self.source();return {'source':str(source),'source_sha256':P.sha(source),'output':str(self.folder/'prepared'),'cancel':str(self.folder/'cancel'),'krita':__file__,'ffmpeg':__file__,'fps_num':24,'fps_den':1,'available_frames':48}
+    def test_container_image_refuses_mutable_tags_before_output(self):
+        r=self.request();r['container_image']='krita:latest'
+        with self.assertRaisesRegex(ValueError,'runtime image'):P.prepare(r)
+        self.assertFalse(Path(r['output']).exists())
+    def test_container_backend_is_linux_only(self):
+        from unittest.mock import patch
+        r=self.request();r['container_image']='sha256:'+'a'*64
+        with patch.object(P.sys,'platform','win32'),self.assertRaisesRegex(ValueError,'runtime image'):P.prepare(r)
+        self.assertFalse(Path(r['output']).exists())
+    def test_container_backend_still_requires_real_ffmpeg(self):
+        from unittest.mock import patch
+        r=self.request();r['container_image']='sha256:'+'a'*64;r['ffmpeg']=str(self.folder/'missing')
+        with patch.object(P.sys,'platform','linux'),self.assertRaisesRegex(ValueError,'FFmpeg'):P.prepare(r)
+        self.assertFalse(Path(r['output']).exists())
     def test_same_rate_preserves_every_frame(self):self.assertEqual(P.target_indices(48,24,24,1),list(range(48)))
     def test_double_and_half_rate_mapping(self):
         self.assertEqual(P.target_indices(4,24,48,1),[0,0,1,1,2,2,3,3]);self.assertEqual(P.target_indices(8,48,24,1),[0,2,4,6])
