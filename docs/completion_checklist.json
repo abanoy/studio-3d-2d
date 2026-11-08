@@ -256,9 +256,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/standalone_source_samples_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
+          "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
+          "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
         }
       ],
-      "remaining": "Owner clarification: standalone supplied models/maps do not require a game installation. Ran/ReimuV2/Chen now pass actual standalone conversion, native bone posing/UndoRedo, packed source-cache-offline exact pixel replay, live HAS physics/freeze and a real posed movie.83Source and49app checks pass, all original hashes unchanged. Full82model/material/variant/cloth/nativeSourcePhysics fidelity remains unverified; complete approved BSP/MMD/VRM fixtures/dependencies and target observations remain separate prerequisites.",
+      "remaining": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -304,9 +310,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/standalone_source_samples_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
+          "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
+          "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
         }
       ],
-      "remaining": "Owner clarification: standalone supplied models/maps do not require a game installation. Ran/ReimuV2/Chen now pass actual standalone conversion, native bone posing/UndoRedo, packed source-cache-offline exact pixel replay, live HAS physics/freeze and a real posed movie.83Source and49app checks pass, all original hashes unchanged. Full82model/material/variant/cloth/nativeSourcePhysics fidelity remains unverified; complete approved BSP/MMD/VRM fixtures/dependencies and target observations remain separate prerequisites.",
+      "remaining": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -1775,8 +1787,8 @@
       ],
       "title": "Alpha media and chroma compositing",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Bounded imported alpha/Krita/video artwork becomes editable transparent holds; chroma tolerance/softness/spill and originals are preserved through preview/save/export.",
       "evidence": [
         {
@@ -1790,13 +1802,22 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/krita_boundary_current_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_krita_acceptance_2026-11-08.json",
+          "commit": "2df1ee0d556115b5bbcbedfeb11ad91b80d3036c",
+          "scope": "Bounded alpha/chroma software is verified with the existing400prepared-video and separate alpha/chroma cases plus current real native Krita54app/41parser-preparation checks,40distinct native frames, exact original RGBA, layer-policy/Cancel, independent edit/UndoRedo, adaptive recovery, packed/linked source-and-cache-offline cold pixels and48frame1080p24H264. ICC/native layer editing/native audio and subjective artist/Windows/device certification stay outside this software closure in their explicit gates."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/large_prepared_video_2026-11-07.json",
+          "commit": "c4900bddaeae38e6c8ddaff563550dec853d35ef",
+          "scope": "Recorded current-session400unique-alpha-cel ingress/edit/recovery/cold/movie case and separate alpha/chroma27writer+7reader regression. NativeKrita gap is closed by the new real-native receipt; this is not physical/artist/Windows certification."
         }
       ],
-      "remaining": "Editable video/alpha/chroma software and actual400prepared-video workflows have executed evidence.38current Krita parser/preparation tests pass, but native Krita render/import/HAS/movie acceptance needs an approved complete .kra and the supported private native runtime. More than32nativeKrita frames and subjective key quality remain unverified; no native layered-video editing claim.",
-      "external_dependencies": [
-        "B-NATIVE",
-        "B-WINDOWS"
-      ]
+      "remaining": "Bounded alpha/chroma software is verified with the existing400prepared-video and separate alpha/chroma cases plus current real native Krita54app/41parser-preparation checks,40distinct native frames, exact original RGBA, layer-policy/Cancel, independent edit/UndoRedo, adaptive recovery, packed/linked source-and-cache-offline cold pixels and48frame1080p24H264. ICC/native layer editing/native audio and subjective artist/Windows/device certification stay outside this software closure in their explicit gates.",
+      "external_dependencies": []
     },
     {
       "id": "COMP-02",
@@ -2885,14 +2906,13 @@
     },
     {
       "id": "B-NATIVE",
-      "prerequisite": "Standalone owner SFM files are available and require no installed game. Other profiles still need approved complete BSP/map/prop/lightmap, VRM, MMD model/pose/motion and native Krita fixtures/dependencies; Krita needs its supported private runtime. An installed game is relevant only for browsing its content or supplying an actual missing dependency.",
+      "prerequisite": "Approved complete BSP/map/prop/lightmap, VRM and MMD model/pose/motion fixtures and any actual missing dependency files. The supplied82SFMmodels and original40frame native Krita fixture/runtime are now exercised. An installed game is relevant only for browsing its content or obtaining a genuinely missing dependency.",
       "prevents": [
         "IMPORT-02",
         "IMPORT-03",
-        "COMP-01",
         "ACCEPT-B"
       ],
-      "independent_work": "Three supplied SFM models have real standalone conversion/app/pose/packed-cold/exact-render/HAS-physics/movie evidence, with83Source and49app checks. All22archives and2089native file hashes unchanged. Broader82model/native material/variant/cloth/SourcePhysics/other-profile and target fidelity remain distinct; do not reinstate the blanket installation gate."
+      "independent_work": "All82supplied MDLs convert and import/render in Studio; nine full-character posed/contact/cold cases are separate. NativeKrita54app/41parser checks and original40frame exact-native pixels pass. Keep other native-profile, skin/bodygroup/morph/cloth/SourcePhysics and target/artist fidelity unverified until their required assets/observations exist."
     },
     {
       "id": "B-TABLET",
@@ -3181,17 +3201,12 @@
     {
       "requirement": "IMPORT-02",
       "priority": 1,
-      "action": "Use standalone supplied assets without requiring SFM/GMod. Three actual SFM rigs are verified for the recorded bounded workflows. Extend native coverage based on concrete new profile/dependency findings; use installed content only if actually needed. Complete BSP/MMD/VRM and target fidelity still need their fixtures/observations."
+      "action": "Use the completed82model conversion/app-ingress evidence and nine posed/contact/cold cases. Next native tests require complete approved BSP/MMD/VRM fixtures and actual missing dependencies; do not repeat the corpus or require an installation for standalone files. Target/artist fidelity remains separate."
     },
     {
       "requirement": "IMPORT-03",
       "priority": 1,
-      "action": "Use standalone supplied assets without requiring SFM/GMod. Three actual SFM rigs are verified for the recorded bounded workflows. Extend native coverage based on concrete new profile/dependency findings; use installed content only if actually needed. Complete BSP/MMD/VRM and target fidelity still need their fixtures/observations."
-    },
-    {
-      "requirement": "COMP-01",
-      "priority": 1,
-      "action": "Editable video/alpha/chroma software and actual400prepared-video workflows have executed evidence.38current Krita parser/preparation tests pass, but native Krita render/import/HAS/movie acceptance needs an approved complete .kra and the supported private native runtime. More than32nativeKrita frames and subjective key quality remain unverified; no native layered-video editing claim."
+      "action": "Use the completed82model conversion/app-ingress evidence and nine posed/contact/cold cases. Next native tests require complete approved BSP/MMD/VRM fixtures and actual missing dependencies; do not repeat the corpus or require an installation for standalone files. Target/artist fidelity remains separate."
     },
     {
       "requirement": "STORE-04",

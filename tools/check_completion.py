@@ -122,7 +122,7 @@ def render(data):
         '## Unresolved decisions', '']
     for item in data['decisions']:
         lines += [f"- **{item['id']} · {item['title']}** ({item['status']}): {item['question']}"]
-    lines += ['', 'Only independent native packaging currently has an explicit requirement-level owner-decision dependency. '
+    lines += ['', 'Independent native packaging is resolved within the existing HAS container. '
         'The other open details do not suspend work on the already decided core behavior. '
         'No new extension, third-party exporter, mandatory AI, public release or settings prompt is authorized by this checklist.', '',
         '## Scoring and closure', '', data['scoring']['method'], '',

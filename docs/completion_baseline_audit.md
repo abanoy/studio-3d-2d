@@ -1,7 +1,7 @@
 # MD/addendum completion baseline audit
 
 The reviewed checklist has **51 of54required capability groups implemented
-(94.44%)** and **50 of62required acceptance conditions formally closed (80.65%)**.
+(94.44%)** and **51 of62required acceptance conditions formally closed (82.26%)**.
 These are separate, equally weighted checklist counts. They do not estimate
 remaining engineering time, native fidelity, reliability or release readiness.
 No combined product-completion percentage is calculated.
@@ -11,13 +11,13 @@ It checks both governing documents, the addendum's precedence, bounded code path
 source/acceptance reverse mappings, evidence scope and exact remaining work.
 Every group has a source/evidence review in the
 [structured audit](benchmarks/completion_baseline_audit_2026-11-07.json).
-Existing tests are not represented as a fresh run of all features. Fifty committed full-condition closures are formally verified; many
+Existing tests are not represented as a fresh run of all features. Fifty-one committed full-condition closures are formally verified; many
 other current tests supply narrower evidence.
 
 Three old implementation labels were corrected without inventing new acceptance
 passes: reversible Motion feeling, bounded drawing history, and cold larger-project
 storage now have their required bounded code paths. Subjective owner review,
-native/device breadth, >32 native Krita frames and whole-app long-session
+native/device breadth and whole-app long-session
 performance remain separately unverified. History keeps a single large command even beyond
 its soft64MiB target; registered authorities have320MiB admission. Frozen worker
 contexts, GPU and other resources are not a whole-app RAM guarantee.
@@ -49,3 +49,10 @@ The [required motion review](required_motion_review.md) corrects POSE-03/MOTION-
 implementation labels against their exact decided conditions. General full-body
 IK and unresolved multi-view/automatic terrain inference are not extra mandatory
 gates. Native/artist/device/Windows limits and formal closure stay separate.
+
+Real native Krita now has54current app checks,41parser/preparation checks and40
+full-frame native RGBA matches, plus source/cache-offline packed and linked cold
+replay and a48frame movie. This closes bounded COMP-01; artist/ICC/native-layer
+editing and target observations stay separate. All82supplied Source MDLs have
+conversion/ingress/render evidence, while full native cross-ecosystem fidelity
+still needs the named approved assets and observations.
