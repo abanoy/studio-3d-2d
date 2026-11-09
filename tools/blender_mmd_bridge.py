@@ -10,6 +10,9 @@ def run():
     request = json.loads(Path(sys.argv[sys.argv.index("--") + 1]).read_text(encoding="utf-8"))
     output = Path(request["output"])
     sys.path.insert(0, str(Path(request["mmd_tools"]).parent))
+    sys.path.insert(0,str(Path(__file__).resolve().parent))
+    from blender_addon_runtime import add_bundled_wheels
+    dependency_wheels=add_bundled_wheels(request["mmd_tools"],output/"blender-dependencies")
     import mmd_tools
     mmd_tools.register()
     bpy.context.preferences.filepaths.file_preview_type = 'NONE'
@@ -19,7 +22,7 @@ def run():
                                    clean_model=False, remove_doubles=False, rename_bones=False,
                                    fix_bone_order=False, save_log=False)
     objects = list(bpy.context.scene.objects)
-    meshes = [obj for obj in objects if obj.type == "MESH" and getattr(obj, "mmd_type", "NONE") == "NONE"]
+    meshes = [obj for obj in objects if obj.type == "MESH" and getattr(obj, "mmd_type", "NONE") == "NONE" and len(obj.data.vertices)>0 and len(obj.data.polygons)>0]
     rigs = [obj for obj in objects if obj.type == "ARMATURE"]
     roots = [obj for obj in objects if getattr(obj, "mmd_type", "NONE") == "ROOT"]
     if not meshes:
@@ -45,7 +48,7 @@ def run():
         raise RuntimeError("Unresolved textures: " + str(missing))
     report = {"schema_version": 1, "kind": "mmd_preparation", "source_file": request["original_name"],
               "source_sha256": request["sha256"], "scale": request["scale"],
-              "tools": {"blender": bpy.app.version_string, "mmd_tools": mmd_tools.MMD_TOOLS_VERSION},
+              "tools": {"blender": bpy.app.version_string, "mmd_tools": mmd_tools.MMD_TOOLS_VERSION, "dependency_wheels": dependency_wheels},
               "meshes": [{"name": o.name, "vertices": len(o.data.vertices),
                           "shape_keys": [k.name for k in o.data.shape_keys.key_blocks] if o.data.shape_keys else []} for o in meshes],
               "rigs": [{"name": o.name, "bones": [{"name": b.name, "parent": b.parent.name if b.parent else None} for b in o.data.bones]} for o in rigs],

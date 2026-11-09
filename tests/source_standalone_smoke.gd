@@ -79,7 +79,7 @@ func run() -> void:
 		var before_image: Image=await app.renderer.capture(app.keys,[],0,true);before_image.save_png(folder.path_join(plan.name+"-rest.png"))
 		var arm:=""
 		for id in rig.order:
-			if id.to_lower().ends_with("::bip_upperarm_l"):arm=id;break
+			if id.to_lower().ends_with(str(plan.get("bone_suffix","::bip_upperarm_l")).to_lower()):arm=id;break
 		check(not arm.is_empty(),plan.name+" exposes its native left upper arm for posing")
 		if arm.is_empty():continue
 		var before: Dictionary=rig.data.duplicate(true);var history: int=app.history.size();var id: String=rig.data.id

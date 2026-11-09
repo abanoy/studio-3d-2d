@@ -76,3 +76,8 @@ the original geometry, bone identity, normalized weights, morph displacement,
 checksum-bound archive. No supplied SFM model was converted by this probe.
 
 See [the runtime receipt](benchmarks/sourceio_worker_runtime_2026-11-07.json).
+
+For mixed native sessions, `HYBRID_SOURCE_BLENDER` now selects this Source-only
+worker without replacing `HYBRID_BLENDER` for MMD/generic conversion or VPD/VMD.
+See [native runtime profiles](native_mmd_runtime.md) for the exercised configuration
+and its separately scoped native model/pose/motion/GMA results.

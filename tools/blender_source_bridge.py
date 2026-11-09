@@ -232,6 +232,11 @@ suggested_view = None
 if source.suffix.lower() == ".mdl":
     container = load_model(source, FileBuffer(TinyPath(str(source))), request["scale"])
     mdl = getattr(container, "mdl", None)
+    native_physics = CaseResolver(source.parent).find(source.with_suffix(".phy").name)
+    if native_physics:
+        with native_physics.open("rb") as stream:
+            physics_sha=hashlib.file_digest(stream,"sha256").hexdigest()
+        warnings.append("Source physics file retained in the preparation folder, but its collision shapes and constraints are not reproduced. HAS Physics uses its own generated bodies.")
     native_parameters = {
         "bones": [{"name": b.name, "parent": b.parent_id} for b in mdl.bones] if mdl else [],
         "bodygroups": {k: [o.name if o else None for o in v] for k, v in container.bodygroups.items()},
@@ -240,6 +245,8 @@ if source.suffix.lower() == ".mdl":
         "flex_controllers": [asdict(c) for c in mdl.flex_controllers if is_dataclass(c)] if mdl else [],
         "selected_skin": 0, "selected_bodygroup_indices": {k: 0 for k in container.bodygroups},
         "eyeballs": [asdict(eye) for part in mdl.body_parts for model in part.models for eye in model.eyeballs] if mdl else []}
+    if native_physics:
+        native_parameters["source_physics"]={"file":native_physics.name,"sha256":physics_sha,"bytes":native_physics.stat().st_size,"applied":False}
 else:
     from SourceIO.blender_bindings.source1.bsp.import_bsp import import_bsp
     from SourceIO.blender_bindings.source1.bsp.entities.abstract_entity_handlers import AbstractEntityHandler

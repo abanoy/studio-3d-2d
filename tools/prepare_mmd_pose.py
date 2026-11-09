@@ -24,7 +24,7 @@ try:
              "--offline-mode","--python-exit-code","1","--python",
              str(Path(__file__).with_name("blender_mmd_motion.py" if motion else "blender_mmd_pose.py")),"--",str(request_path)]
     with result_path.with_suffix(".log").open("w",encoding="utf-8") as log:
-        process=subprocess.Popen(command,stdout=log,stderr=log,creationflags=subprocess.CREATE_NO_WINDOW)
+        process=subprocess.Popen(command,stdout=log,stderr=log,creationflags=subprocess.CREATE_NO_WINDOW if os.name=="nt" else 0)
         started=time.monotonic()
         try:
             while process.poll() is None:

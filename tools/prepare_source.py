@@ -31,7 +31,7 @@ def main():
     p.add_argument("--cancel-file", type=Path)
     p.add_argument("--member", help="Explicit models/...mdl or maps/...bsp within an archive")
     p.add_argument("--sourceio", type=Path, default=Path(os.environ.get("HYBRID_SOURCEIO", ROOT / "output/dependencies" / ("sourceio-" + PIN))))
-    p.add_argument("--blender", default=os.environ.get("HYBRID_BLENDER", r"C:\Program Files\Blender Foundation\Blender 5.1\blender.exe"))
+    p.add_argument("--blender", default=os.environ.get("HYBRID_SOURCE_BLENDER", os.environ.get("HYBRID_BLENDER", r"C:\Program Files\Blender Foundation\Blender 5.1\blender.exe")))
     p.add_argument("--gmod", type=Path, default=Path(os.environ.get("HYBRID_GMOD", DEFAULT_GMOD)))
     p.add_argument("--workshop", type=Path, default=Path(os.environ.get("HYBRID_GMOD_WORKSHOP", DEFAULT_WORKSHOP)))
     p.add_argument("--content", action="append", type=Path, default=[], help="Additional read-only content directory or _dir.vpk (repeatable)")

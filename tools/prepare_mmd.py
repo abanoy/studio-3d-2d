@@ -36,6 +36,8 @@ def prepare(args):
     audit = inspect(source)
     if audit["kind"] not in ("pmx", "pmd"):
         raise ValueError("Only PMD/PMX are converted by this adapter; Source assets need their own adapter.")
+    if not audit["vertices"] or not audit["triangles"]:
+        raise ValueError("This model contains no renderable triangles. Skeleton-only helpers cannot be added as a rendered model.")
     if not 0.0001 <= args.scale <= 100:
         raise ValueError("Scale must be between 0.0001 and 100")
     addon = args.mmd_tools.resolve(strict=True)
