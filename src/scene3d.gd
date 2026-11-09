@@ -63,6 +63,19 @@ static func stable_opaque_order(materials: Array) -> bool:
 	for i in range(opaque.size()):opaque[i].render_priority=-128+i
 	return true
 
+static func required_extensions_error(data: Dictionary) -> String:
+	var required=data.get("extensionsRequired",[])
+	if not required is Array:return "Invalid required-feature declaration in 3D asset."
+	var supported:=GLTFDocument.get_supported_gltf_extensions()
+	var unsupported: Array[String]=[]
+	for entry in required:
+		if not entry is String or entry.is_empty():return "Invalid required-feature declaration in 3D asset."
+		if not entry in supported and not entry in unsupported:unsupported.append(entry)
+	if unsupported.is_empty():return ""
+	var names: Array[String]=[]
+	for entry in unsupported.slice(0,6):names.append(entry.left(128))
+	return "Unsupported required features: %s%s. Choose a compatible export." % [", ".join(names)," (+%d more)" % (unsupported.size()-6) if unsupported.size()>6 else ""]
+
 static func load_glb(path: String) -> Dictionary:
 	if path.get_extension().to_lower() != "glb":
 		return {"error": "This slice imports self-contained .glb files; convert .gltf sidecars first."}
@@ -84,6 +97,8 @@ static func load_glb(path: String) -> Dictionary:
 	var data = parser.data
 	if not data is Dictionary:
 		return {"error": "Invalid GLB JSON."}
+	var required_error:=required_extensions_error(data)
+	if not required_error.is_empty():return {"error":required_error}
 	for group in [data.get("buffers", []), data.get("images", [])]:
 		if not group is Array:
 			return {"error": "Invalid GLB resource list."}

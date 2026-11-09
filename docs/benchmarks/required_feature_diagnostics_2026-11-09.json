@@ -1,0 +1,129 @@
+{
+  "format": "has_required_feature_diagnostics_1",
+  "date": "2026-11-09",
+  "private_evidence_root": "/workspace/has-handoff-audit/required-extension-2026-11-09",
+  "before": {
+    "probe": "/workspace/has-handoff-audit/vrm-raster-2026-11-09/required-extension-probe/app.log",
+    "user_error": "GLB importer failed: Parse error",
+    "engine_error": "Required extension HAS_unknown_required_for_test is not supported.",
+    "native_preparer": "Preserved the unsupported required declaration and returned a prepared file; no silent required-feature stripping occurred."
+  },
+  "fix": "Before allocating the GLTF import state, validate the required-feature declaration against GLTFDocument.get_supported_gltf_extensions(). Name unsupported features in the app with a compatible-export action. Optional extensions remain optional and the loader does not strip required features or pretend to support them.",
+  "checks": {
+    "required_extension_unit": {
+      "checks": 9,
+      "failures": 0
+    },
+    "canonical_opaque_order_unit": {
+      "checks": 9,
+      "failures": 0
+    },
+    "native_refusal_ui_preservation": {
+      "checks": 5,
+      "failures": 0,
+      "status": "Unsupported required features: HAS_unknown_required_for_test. Choose a compatible export."
+    },
+    "actual_source_mmd_native_workers": {
+      "checks": 7,
+      "failures": 0,
+      "jobs": [
+        {
+          "file": "touhou_reimu_bikini.gma",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794258451-10683-1772790"
+        },
+        {
+          "file": "Miku_Hatsune.pmd",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794258463-53535-14201400"
+        },
+        {
+          "file": "street01_android.pmx",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794258467-1239-17789967"
+        }
+      ]
+    },
+    "actual_vrm_native_workers": {
+      "checks": 9,
+      "failures": 0,
+      "jobs": [
+        {
+          "file": "Sakuya_Izayoi.vrm",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794258475-05882-1773406"
+        },
+        {
+          "file": "AvatarSample_A.vrm",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794258476-03352-2748131"
+        },
+        {
+          "file": "AvatarSample_Avrm0.vrm",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794258477-63035-4344959"
+        },
+        {
+          "file": "Marisa touhou fantasykaleidoscope.vrm",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794258479-80563-6520251"
+        }
+      ]
+    },
+    "current_scenario_a_wrapper": {
+      "reports": {
+        "writer": {
+          "checks": 21,
+          "conversion_folder": "/workspace/studio-3d-2d/output/compatibility/source-1794258593-9699-2331534",
+          "failures": 0,
+          "mode": "writer",
+          "movie": "/workspace/has-handoff-audit/required-extension-2026-11-09/scenario-a-wrapper/render_1794258600_9148278_0/movie.mp4",
+          "source_sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3"
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0,
+          "mode": "reader"
+        }
+      },
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "24"
+      },
+      "original_sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3",
+      "original_unchanged": true,
+      "packed_decimal_values_exact": true,
+      "conversion_inputs_writer_cache_offline_for_reader": true,
+      "manual_has_unchanged": true,
+      "private_receipts": [],
+      "isolated_display": ":116",
+      "scope": "Eight software steps on supplied VRM; no five-minute novice, Windows or physical-device certification."
+    },
+    "vrm_secondary_python": {
+      "checks": 28,
+      "failures": 0
+    }
+  },
+  "refusal_scope": "An actual derivative of the supplied self-contained AvatarSample_A VRM adds only an authored unsupported required-feature declaration; embedded binary is retained and the uploaded original is untouched. The real native worker runs, then the app refuses with a named feature and preserves world, camera, Undo history, editable drawing pixels and native input hash. Derivative stays private.",
+  "wrapper_scope": "New tests/verify_scenario_a.py stages an owned byte copy of the original VRM, uses run.command private desktop/display, validates packed scene/camera decimal values, offlines only owned copy/conversion/cache folders for the fresh reader, restores them in finally, verifies original SHA/mtime and unchanged manual HAS, and probes actual24frame1080p24H264. This gives a runnable target command; it does not certify Windows or novice behavior.",
+  "retained_failed_probe": "app/app.log is the initial test-only Drawing.touch(Dictionary) parse error. Corrected to the required Image argument; app-02 is the actual executed passing case. No product result is inferred from the parse-failed run.",
+  "aggregate_verifier": "The canonical runner now expects the extended9-check opaque suite and registers the9-check required-feature suite. Both pass through its actual headless run/command helpers. Python wrappers compile. Full Windows graphical aggregate was not run in this Linux environment.",
+  "source_sha256": {
+    "src/scene3d.gd": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1",
+    "tests/required_extensions_unit.gd": "75aa3d79dfece9da03285fb86f0d2aa3bdd6e9069dded56ee3764e6a4543d853",
+    "tests/required_extensions_smoke.gd": "a4296d22c50c0fbc0ba5043073d2f7b5195b051402f45533961a8f5aeded3085",
+    "tests/verify_scenario_a.py": "c7661c2d9050c3fcc3d4ca498f4d087b5b5546b4941893ab5a78d296e27c9da9",
+    "tests/verify.py": "ce0d555b995b4979fd9927bbe3e8046f601d261459e602de2d6dd958fc042a79"
+  },
+  "logs_sha256": {
+    "app-02/app.log": "67aa5ebe0ef63c9e1322822af8bc000ea1ff2d7110770512b356b9f41fb32266",
+    "source-mmd/app.log": "26861e01e192faa72acada2714dfea95bac96cfd40cea1a37335f739391567d9",
+    "vrm/app.log": "3b65f664416211d65660095fb5104a508891e77c3df2ab950fe26e4a2d115811",
+    "scenario-a-wrapper/writer.log": "921e469fd3285935abd5d89272c754c57431e62c5b377b5bb46d46aada54fa36",
+    "scenario-a-wrapper/reader.log": "1daf625d5ec846bdd836dda83d473a33bbd8052b6e65a2065f06a8f60cd4b293",
+    "required_extensions_unit-canonical.log": "0cc736861edc097e06332ee1c6fec93b3c452b718a16383dcb0cd127080a43c3",
+    "opaque_order_unit-canonical.log": "7c860884319ed6c3d83bf602831c94df1e28ee5a915f72df9543a93de87d49fc",
+    "python-regression.log": "354badbd8733b6568eb6dcd751cfeb86233cd260c7224a4d5e44d2e4f9f4ce52"
+  },
+  "remaining": [
+    "Actual complete native BSP/map/props/lightmaps and dependencies remain unavailable, as do the five named street atlas PNG files.",
+    "Windows/clean installation/device/novice observations remain external.",
+    "No extra mandatory gate for every roadmap format, native shader or simulator was introduced."
+  ]
+}
