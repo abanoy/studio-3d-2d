@@ -302,8 +302,8 @@
       ],
       "verification": "incomplete",
       "acceptance_status": "open",
-      "acceptance_review": "Complete native BSP/map materials, props and lightmaps still need an approved complete input and dependencies. temp.gma exceeds the 32 MiB transfer limit; street01_android.pmx needs its five exact named atlas PNG files. All four newly supplied VRMs have current native import/pose/expression/spring/physics/HAS/movie evidence, with two retained one-pixel cold raster differences. Full native shading, constraints and simulator behavior remain limited as diagnosed; target/artist fidelity observations remain unrun. No game installation is required for standalone supplied files.",
-      "evidence_review": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity.",
+      "acceptance_review": "Complete native BSP/map materials, props and compatible lighting still need an approved complete native input and dependencies; no .bsp is present in current uploaded attachments. temp.gma exceeds the32MiBtransfer limit and its contents are unknown; street01_android.pmx needs five exact named atlas PNG files. Supported native Source/MMD/VRM cases have current scoped evidence, stable cutout replay and actionable unsupported required-feature diagnostics. Compatibility limits are explicitly reported; universal shader/simulator/roadmap-format reproduction is not an invented gate. Final target/artist observations remain unrun; standalone input files do not require a game installation.",
+      "evidence_review": "Current supported native profiles have scoped receipts; controlled cutout ordering and actionable required-feature refusal are fixed and tested. Full native BSP acceptance still lacks actual input/dependencies; target/artist observations are not inferred. See docs/native_profile_acceptance_review.md.",
       "formal_receipts": [
         {
           "kind": "test_result",
@@ -322,6 +322,18 @@
           "path": "docs/benchmarks/native_vrm_2026-11-09.json",
           "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
           "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+          "commit": "38a72ee6aa65c0fec311613fa197b7417c1eda84",
+          "scope": "Controlled GPU allocation probes reproduce legacy cutout image variation with bit-exact camera/root/all-bone transforms; copy-only control fails to stabilize and stable source order removes variation. Current9contract/16allocation-state/37native writer/16fresh cold/28expression-spring/31lighting checks pass. Original test assertions and historical failed hashes remain; new fixed-version writer/cold replay is exact on all four models without added tolerance. Native originals unchanged and actual24/48frame1080p24H264 movies probed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
         }
       ],
       "external_dependencies": [
@@ -355,8 +367,8 @@
       ],
       "verification": "incomplete",
       "acceptance_status": "open",
-      "acceptance_review": "Complete native BSP/map materials, props and lightmaps still need an approved complete input and dependencies. temp.gma exceeds the 32 MiB transfer limit; street01_android.pmx needs its five exact named atlas PNG files. All four newly supplied VRMs have current native import/pose/expression/spring/physics/HAS/movie evidence, with two retained one-pixel cold raster differences. Full native shading, constraints and simulator behavior remain limited as diagnosed; target/artist fidelity observations remain unrun. No game installation is required for standalone supplied files.",
-      "evidence_review": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity.",
+      "acceptance_review": "Complete native BSP/map materials, props and compatible lighting still need an approved complete native input and dependencies; no .bsp is present in current uploaded attachments. temp.gma exceeds the32MiBtransfer limit and its contents are unknown; street01_android.pmx needs five exact named atlas PNG files. Supported native Source/MMD/VRM cases have current scoped evidence, stable cutout replay and actionable unsupported required-feature diagnostics. Compatibility limits are explicitly reported; universal shader/simulator/roadmap-format reproduction is not an invented gate. Final target/artist observations remain unrun; standalone input files do not require a game installation.",
+      "evidence_review": "Current supported native profiles have scoped receipts; controlled cutout ordering and actionable required-feature refusal are fixed and tested. Full native BSP acceptance still lacks actual input/dependencies; target/artist observations are not inferred. See docs/native_profile_acceptance_review.md.",
       "formal_receipts": [
         {
           "kind": "test_result",
@@ -375,6 +387,18 @@
           "path": "docs/benchmarks/native_vrm_2026-11-09.json",
           "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
           "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+          "commit": "38a72ee6aa65c0fec311613fa197b7417c1eda84",
+          "scope": "Controlled GPU allocation probes reproduce legacy cutout image variation with bit-exact camera/root/all-bone transforms; copy-only control fails to stabilize and stable source order removes variation. Current9contract/16allocation-state/37native writer/16fresh cold/28expression-spring/31lighting checks pass. Original test assertions and historical failed hashes remain; new fixed-version writer/cold replay is exact on all four models without added tolerance. Native originals unchanged and actual24/48frame1080p24H264 movies probed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
         }
       ],
       "external_dependencies": [
@@ -2670,6 +2694,12 @@
           "path": "docs/benchmarks/scenario_a_2026-11-09.json",
           "commit": "2cfdd583a6610d939277adf67069f17deebda8f4",
           "scope": "All eight section17.A software steps pass21writer+6fresh-process checks using the supplied native VRM1, actual canvas model/bone/gizmo interaction, frame0/frame4 auto-keys, exact packed scene/camera and cold frame0/2/4pixels, conversion/cache offline, and actual24frame1080p24H264. Fixed premature floating fallback;20existing translated-floor/overlap/aerial-placement regressions pass. Native GMod branch is explicitly not tested. Real Windows novice timing, actual OS drag/physical input and subjective usability remain unrun; no acceptance status is promoted."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
         }
       ],
       "external_dependencies": [

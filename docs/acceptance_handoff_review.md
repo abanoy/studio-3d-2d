@@ -66,3 +66,5 @@ nearby ground candidates before accepting a floating view fallback. The native
 scenario is grounded on candidate 5 instead of floating about 2.43 m above the
 floor. The separate Windows/novice gate remains open; no acceptance percentage
 was promoted by the software case.
+
+The [completed native profile audit](native_profile_acceptance_review.md) records the additional required-feature diagnostic fix and actual safe-refusal/supported-worker checks. The [target handoff](local_acceptance_handoff.md) supplies exact remaining Windows, asset and human cases plus runnable wrappers, including the newly verified scenario A wrapper. No further independent software defect was identified in this reviewed scope; native BSP/dependency and target/physical/novice conditions remain unrun.
