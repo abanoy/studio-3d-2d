@@ -56,7 +56,9 @@ static func stable_opaque_order(materials: Array) -> bool:
 	for material in materials:
 		if not material is BaseMaterial3D:continue
 		if material.render_priority!=0 or material.next_pass!=null:return false
-		if material.transparency==BaseMaterial3D.TRANSPARENCY_DISABLED and not material in opaque:opaque.append(material)
+		# Alpha-scissor writes opaque depth too. Its equal-depth fragments need the
+		# same source order; blended/hash/prepass transparency keeps its own sorting.
+		if material.transparency in [BaseMaterial3D.TRANSPARENCY_DISABLED,BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR] and not material in opaque:opaque.append(material)
 	if opaque.size()>256:return false
 	for i in range(opaque.size()):opaque[i].render_priority=-128+i
 	return true

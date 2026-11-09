@@ -22,12 +22,14 @@ replace an actual learner, artist, tablet, or audible-output observation.
 | Tablet/audio | Synthetic pressure/input and decoded-media synchronization evidence | Software input routing and decoded-media faults remain testable here. | Real tablet/driver/GPU latency and comfort, plus listening to actual target audio output. A local worker alone cannot make these observations. |
 | Clean installation | Pinned tool/setup and cloud clean-source launch evidence | Packaging logic, offline dependency completeness and source-launch defects remain cloud work where reproducible. | A clean supported Windows environment installs and launches offline, imports a sample, saves/reopens and exports using a detected encoder. An already configured development PC alone does not establish clean installation. |
 
-The two original strict VRM cold-image assertions still fail at one RGB pixel
-each. Exact authored body keys, native metadata, camera and embedded model hashes
-pass. Their exact rendering cause remains unproven. They remain a cloud
-investigation item; a local handoff does not turn them into passed checks. The
-original specification permits documented image tolerance, but no assertion was
-weakened and this review does not introduce a new tolerance or claim resolution.
+The earlier strict VRM raster failures now have a confirmed cause and fix in the
+[cutout ordering receipt](benchmarks/vrm_cutout_order_2026-11-09.json). Cutout depth
+ties depended on GPU resource allocation because only opaque materials had stable
+source order. Current fixed-version writer/fresh reader is exact for all four
+models, including all original assertions. Historical images retain their
+arbitrary tie winners and old-reference hash failures; they were not overwritten
+or relabeled. No tolerance was added. Cross-driver or full native shader fidelity
+is not inferred from this bounded reproducibility fix.
 
 Full reproduction of every native shader or simulator is not a prerequisite
 invented by this review. Addendum sections 3.4/3.5 require practical supported
