@@ -1,0 +1,365 @@
+{
+  "format": "has_native_vrm_receipt_1",
+  "date": "2026-11-09",
+  "private_evidence_root": "/workspace/has-handoff-audit/vrm-native-2026-11-09",
+  "runtime": {
+    "godot": "4.6.stable.official.89cea1439",
+    "display": "isolated Xorg :114 through run.command; no owner desktop",
+    "renderer": "Compatibility OpenGL 4.5 Mesa llvmpipe 25.0.7",
+    "ffmpeg": "7.1.5 GPL/libx264"
+  },
+  "inputs": [
+    {
+      "name": "Sakuya_Izayoi.vrm",
+      "path": "/workspace/attachments/cf5a4a5c-9b3a-44d5-ac9b-d64b2b58b303/Sakuya_Izayoi.vrm",
+      "size_bytes": 12712172,
+      "sha256": "0b54d177c506fab587e6404b1d970aecfd3d52ff02a004f18fa41670380562dd",
+      "family": "0.x",
+      "required": [],
+      "used": [
+        "VRM",
+        "KHR_texture_transform"
+      ],
+      "meshes": 2,
+      "materials": 23,
+      "skins": [
+        213,
+        213
+      ],
+      "original_unchanged_after_tests": true,
+      "humanoid_roles": 53
+    },
+    {
+      "name": "AvatarSample_A.vrm",
+      "path": "/workspace/attachments/79f1199b-3a08-4968-b59c-63013f32f5ca/AvatarSample_A.vrm",
+      "size_bytes": 18633112,
+      "sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3",
+      "family": "1.0",
+      "required": [],
+      "used": [
+        "KHR_texture_transform",
+        "KHR_materials_unlit",
+        "VRMC_vrm",
+        "VRMC_springBone",
+        "VRMC_materials_mtoon"
+      ],
+      "meshes": 3,
+      "materials": 15,
+      "skins": [
+        91,
+        91,
+        91
+      ],
+      "original_unchanged_after_tests": true,
+      "humanoid_roles": 54
+    },
+    {
+      "name": "AvatarSample_Avrm0.vrm",
+      "path": "/workspace/attachments/136b796d-1309-4372-9df1-09b81247d7ec/AvatarSample_Avrm0.vrm",
+      "size_bytes": 18630608,
+      "sha256": "f7b4573b241b3e91c7c5f58bed342133a4e5f7e0c1125e1cedc49723ace9b288",
+      "family": "0.x",
+      "required": [],
+      "used": [
+        "VRM",
+        "KHR_texture_transform",
+        "KHR_materials_unlit"
+      ],
+      "meshes": 3,
+      "materials": 15,
+      "skins": [
+        91,
+        91,
+        91
+      ],
+      "original_unchanged_after_tests": true,
+      "humanoid_roles": 54
+    },
+    {
+      "name": "Marisa touhou fantasykaleidoscope.vrm",
+      "path": "/workspace/attachments/5e1f4b86-97ad-44e4-8cea-a57041f79adf/Marisa touhou fantasykaleidoscope.vrm",
+      "size_bytes": 16863324,
+      "sha256": "c9cd1372d223cd33b39a1257aac86814f8c79652c3ab784a631ebf570c7cd758",
+      "family": "0.x",
+      "required": [],
+      "used": [
+        "VRM",
+        "KHR_texture_transform",
+        "KHR_materials_unlit"
+      ],
+      "meshes": 3,
+      "materials": 20,
+      "skins": [
+        171,
+        171,
+        171
+      ],
+      "original_unchanged_after_tests": true,
+      "humanoid_roles": 54
+    }
+  ],
+  "preservation": [
+    {
+      "name": "Sakuya_Izayoi.vrm",
+      "original_unchanged": true,
+      "full_embedded_binary_sha256": "934b2ced58f1371367aef74c87cc71e899d79fcaa36a7faccf9d3f83300a2d19",
+      "source_nodes_mesh_skin_material_texture_morph_extensions_unchanged": true
+    },
+    {
+      "name": "AvatarSample_A.vrm",
+      "original_unchanged": true,
+      "full_embedded_binary_sha256": "7fc5a37abc2b9f2dd05f9fbca9ecbd12994a0de0426b6a8194b14f81a0964fb8",
+      "source_nodes_mesh_skin_material_texture_morph_extensions_unchanged": true
+    },
+    {
+      "name": "AvatarSample_Avrm0.vrm",
+      "original_unchanged": true,
+      "full_embedded_binary_sha256": "5859a02083d1d13053eaddedc20d6dbb376304bcc7ac91d2ea40db6aabb99c2a",
+      "source_nodes_mesh_skin_material_texture_morph_extensions_unchanged": true
+    },
+    {
+      "name": "Marisa touhou fantasykaleidoscope.vrm",
+      "original_unchanged": true,
+      "full_embedded_binary_sha256": "4c4a16ba1f9c1621c1d1699aeeb4d9fbbd0b8ad1c470308c6f0842d8779dbec0",
+      "source_nodes_mesh_skin_material_texture_morph_extensions_unchanged": true
+    }
+  ],
+  "checks": {
+    "actual_native_worker_ingress": {
+      "checks": 9,
+      "failures": 0,
+      "jobs": [
+        {
+          "file": "Sakuya_Izayoi.vrm",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794244840-91425-1835058"
+        },
+        {
+          "file": "AvatarSample_A.vrm",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794244841-98775-2908567"
+        },
+        {
+          "file": "AvatarSample_Avrm0.vrm",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794244843-64781-4568638"
+        },
+        {
+          "file": "Marisa touhou fantasykaleidoscope.vrm",
+          "folder": "/workspace/studio-3d-2d/output/compatibility/source-1794244845-8117-6732541"
+        }
+      ]
+    },
+    "pose_undo_redo_save_movie": {
+      "checks": 37,
+      "failures": 0,
+      "mode": "writer",
+      "observations": [
+        {
+          "movie": "/workspace/has-handoff-audit/vrm-native-2026-11-09/app-precision/render_1794244549_8055373_0/movie.mp4",
+          "name": "Avatar1"
+        }
+      ]
+    },
+    "cold_reopen_strict": {
+      "checks": 16,
+      "failures": 2,
+      "mode": "reader",
+      "observations": []
+    },
+    "generated_has_physics_freeze": {
+      "checks": 16,
+      "failures": 0,
+      "mode": "physics"
+    },
+    "native_expressions_and_springs": {
+      "checks": 28,
+      "failures": 0,
+      "models": [
+        {
+          "chains": 36,
+          "expressions": 18,
+          "name": "Sakuya",
+          "spring_error": ""
+        },
+        {
+          "chains": 12,
+          "expressions": 14,
+          "name": "Avatar1",
+          "spring_error": ""
+        },
+        {
+          "chains": 12,
+          "expressions": 14,
+          "name": "Avatar0",
+          "spring_error": ""
+        },
+        {
+          "chains": 46,
+          "expressions": 14,
+          "name": "Marisa",
+          "spring_error": ""
+        }
+      ]
+    },
+    "spring_regression": {
+      "checks": 35,
+      "failures": 0,
+      "folder": "/workspace/studio-3d-2d/output/secondary-motion/run_454321",
+      "metrics": {
+        "authored": {
+          "chains": 2,
+          "colliders": 2,
+          "maximum_step_angle": 0.00799352955073118,
+          "recovery_angle": 0.0,
+          "repeat_quaternion_difference": 0.0,
+          "rotating_bones": 5,
+          "wind_angle": 0.148890271782875,
+          "wind_control_difference": 0.0744280815124512
+        }
+      },
+      "movies": [
+        "/workspace/studio-3d-2d/output/secondary-motion/run_454321/render_1794244871_2750182_0/movie.mp4"
+      ]
+    },
+    "leaf_endpoint_unit": {
+      "checks": 8,
+      "failures": 0
+    },
+    "vrm_and_secondary_helper_python": {
+      "checks": 28,
+      "failures": 0
+    }
+  },
+  "fix": {
+    "before": "Sakuya had four native spring chains ending in nondeforming unweighted ribbon helper nodes. Startup failed because the parser appended another virtual tail and required the actual offset leaf to be a rotating skin bone.",
+    "after": "Use the exact existing terminal offset as the passive endpoint, preserving the original joint reference and source data. Only an empty leaf directly bound to the preceding skin bone is eligible. Mesh/camera/extension-bearing and collider-bearing helpers are excluded. Weighted skin leaves retain their native virtual tail.",
+    "actual_sakuya_springs": 36,
+    "actual_sakuya_colliders": 2
+  },
+  "cold_reopen": {
+    "isolation": "Fresh Godot process with four conversion folders, the writer cache and private input copies renamed offline; original uploaded attachments remain intact and are not used by the reader.",
+    "exact_authored_data_checks": {
+      "models": 4,
+      "failures": 0,
+      "scope": "Exact body animation keys, full native metadata, camera keys and embedded GLB SHA256; all source skin joints have runtime bindings."
+    },
+    "original_exact_pixel_assertions_retained": true,
+    "strict_pixel_passes": [
+      "Sakuya",
+      "Avatar0"
+    ],
+    "strict_pixel_failures": [
+      "Avatar1",
+      "Marisa"
+    ],
+    "raster_differences": {
+      "Sakuya": {
+        "width": 1920,
+        "height": 1080,
+        "changed_bytes": 0,
+        "changed_pixels": 0,
+        "max_channel_delta": 0,
+        "sum_channel_delta": 0,
+        "mean_channel_delta": 0.0
+      },
+      "Avatar1": {
+        "width": 1920,
+        "height": 1080,
+        "changed_bytes": 3,
+        "changed_pixels": 1,
+        "max_channel_delta": 18,
+        "sum_channel_delta": 42,
+        "mean_channel_delta": 5.063657407407407e-06
+      },
+      "Avatar0": {
+        "width": 1920,
+        "height": 1080,
+        "changed_bytes": 0,
+        "changed_pixels": 0,
+        "max_channel_delta": 0,
+        "sum_channel_delta": 0,
+        "mean_channel_delta": 0.0
+      },
+      "Marisa": {
+        "width": 1920,
+        "height": 1080,
+        "changed_bytes": 3,
+        "changed_pixels": 1,
+        "max_channel_delta": 96,
+        "sum_channel_delta": 220,
+        "mean_channel_delta": 2.652391975308642e-05
+      }
+    },
+    "interpretation": "Both failed strict hashes differ at one RGB pixel out of1920x1080. Exact authored data and model buffers pass. Driver/rebuild raster differences are observed; their exact engine cause is not proven. These two assertions remain failed, not silently waived."
+  },
+  "movie": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "24"
+      }
+    ],
+    "path": "/workspace/has-handoff-audit/vrm-native-2026-11-09/app-precision/render_1794244549_8055373_0/movie.mp4"
+  },
+  "decoded_movie_vs_preview": {
+    "width": 1920,
+    "height": 1080,
+    "mean_absolute_channel_delta": 0.07577256944444444,
+    "mean_square_error": 0.4898305684156379,
+    "psnr_db": 51.23034476608449,
+    "comparison": "actual decoded H264 first frame versus native posed preview; lossy video color conversion included"
+  },
+  "retained_failed_runs": [
+    {
+      "path": "features/app.log",
+      "result": "Sakuya spring startup failure reproduced before the endpoint fix."
+    },
+    {
+      "path": "app/writer.log",
+      "result": "Initial test assumed213skin joints meant213runtime bones; Godot includes215runtime bones. Corrected test now validates every original skin-joint binding rather than an invalid equality."
+    },
+    {
+      "path": "app-final/reader-final.log",
+      "result": "Expected-state JSON initially used default reduced number precision, causing four false data mismatches. Full-precision expected serialization retains the exact-equality assertion; all four current comparisons pass."
+    },
+    {
+      "path": "app-precision/reader-final.log",
+      "result": "16checks,2strict raster-hash failures retained and measured."
+    }
+  ],
+  "warnings": [
+    "Base textures and rig imported. VRM toon lighting/outline appearance is approximated.",
+    "VRM spring data is retained. Hair & clothes can simulate supported chains; native behavior is approximated. Gaze and first-person settings remain data only.",
+    "Facial morph geometry is retained. Studio supports embedded expression poses and limb posing; native constraints, procedural expression animation and material/texture expression effects remain unsupported."
+  ],
+  "remaining": [
+    "Actual complete BSP/map materials/props/lightmaps acceptance still needs a supplied complete native map.",
+    "Street PMX still needs its five exact named atlas files. temp.gma remains unavailable above the32MiBtransfer limit.",
+    "Full MToon outlines/lighting, gaze/first-person, procedural/material expression effects, native constraints and exact native simulator behavior are not claimed. Existing limitation warnings remain.",
+    "The two one-pixel cold raster differences remain recorded failures of the original exact assertions.",
+    "Target Windows, physical device and artist/novice acceptance remain unrun."
+  ],
+  "scope": "Four supplied native VRM files, both version families: original-preserving offline preparation and actual native-worker ingress, textured geometry/rig, manual pose and expression edits with exact UndoRedo, supported native spring startup/steps, generated HAS body collision/freeze, portable cold authored data and real24frame1080p24H264. This is scoped evidence, not full native fidelity or overall acceptance closure.",
+  "source_sha256": {
+    "src/secondary_rig.gd": "e781bd6949ed32cd3b3bf27d6a881ef105ce84d05dff41370861de6c39344ba1",
+    "tools/prepare_vrm.py": "b0e432484617c61f911b98ef729fedfff746f24960b1e4296535d9bcd59593df",
+    "tests/vrm_native_smoke.gd": "7f21309debc39b667e8f876c7b355a95ec79cedd0e52a4efc7d9c1f92f359b04",
+    "tests/vrm_features_smoke.gd": "56a7c3a2b3c03a4119555c2d97521e5e602f651cbc42f1d1bfaffcbec3c46efe",
+    "tests/vrm_leaf_endpoint_unit.gd": "4e22ace8536f325687f866206f682ca38c12f1bd8e6f9267e38506f06a6aa915",
+    "tests/native_backend_smoke.gd": "dbf169b3e64f8d2483f207595710c8fe79a9f57bd07a17ecf5ffbff2dc27ae51",
+    "tests/secondary_motion_smoke.gd": "ede527617ba9440aaab551687fa9189d5b3f0d51c94f564e7ee57eb294e83bb4"
+  },
+  "logs_sha256": {
+    "/workspace/has-handoff-audit/vrm-native-2026-11-09/app-precision/writer.log": "c4f34d21dfd2bdb6d07da42b8741d73c1c03829ce8d0db3fde455c357e8f1ee6",
+    "/workspace/has-handoff-audit/vrm-native-2026-11-09/app-precision/reader-final.log": "a35beea473e22c866e004bafdc9d5129a615ee29103ee6f52fd2e2057ad62779",
+    "/workspace/has-handoff-audit/vrm-native-2026-11-09/app-fixed/physics.log": "ea213b82f0e65c99039619daf7dce57db602716c9d0b40a997dbefdc59eab1fc",
+    "/workspace/has-handoff-audit/vrm-native-2026-11-09/features-final/app.log": "94d7af48d6d712acdfc0790b2670a977998cebccee9e4b1411289985b0c03d82",
+    "/workspace/has-handoff-audit/vrm-native-2026-11-09/backend-final/app.log": "3a7bd1955de617e1a85f35aeeb01722165363b8a5cf0098bbc889c4f5a0b231f",
+    "/workspace/has-handoff-audit/vrm-native-2026-11-09/regression-final/app.log": "b17a55997cb128ef772a846d6cdb75753cecfe5c1529ab23258d0b7112bf93f3",
+    "/workspace/has-handoff-audit/vrm-native-2026-11-09/leaf-unit-final.log": "f5ab31c76c31c46169e08235593bdf647a15b67ad76321c50ab3ad9fc7a4da64",
+    "/workspace/has-handoff-audit/vrm-native-2026-11-09/unit-final.log": "a87018eb3659db0a3b2dbfce465232f73d43c4d3be541fae55565a9eb663aeeb"
+  }
+}

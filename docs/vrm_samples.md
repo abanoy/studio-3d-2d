@@ -69,3 +69,14 @@ This supersedes older no-spring-UI statements above; it does not reproduce nativ
 MToon, gaze/first-person/expression behavior or full physical cloth constraints.
 Missing-chain assessment/generated helpers with skin weights are still required.
 See secondary_motion.md and the current progress checkpoint for exact evidence.
+
+
+## Current cloud native samples, 2026-11-09
+
+The four newly uploaded VRM files now have a [current receipt](benchmarks/native_vrm_2026-11-09.json). Sakuya, Marisa and both AvatarSample versions pass actual native-worker ingress, manual posing/UndoRedo, expression edits, supported native spring startup and generated HAS physics/freeze. Original source hashes, embedded BIN and source mesh/skin/material/morph definitions stay exact. Four packed projects cold reopen with exact authored pose, metadata, camera and GLB checksum while conversion bundles and writer cache are offline.
+
+Sakuya exposed an unweighted terminal-helper case. Its real empty leaf offsets now serve as spring endpoints; no native bone or extra tail is invented. Geometry, camera, extension and collider-bearing helpers cannot silently use this path. The focused safety and existing spring regression pass.
+
+The strict pixel assertions are retained: Sakuya and Avatar0 match exactly, while Avatar1 and Marisa each differ at one RGB pixel out of1920x1080 after cold reconstruction. This is a recorded limitation, not an exact-image pass. Native MToon, gaze/first-person, native constraints and procedural/material-expression effects remain diagnosed approximations or unsupported. The real24frame1080p24H264 movie was probed and decoded against the posed preview (51.23dB PSNR). No native assets or private projects are committed.
+
+Reproduction uses private plans rather than distributing art: prepare each approved input with tools/prepare_vrm.py; pass a plans.json folder to tests/vrm_native_smoke.gd (writer, then --read in a new process with conversion/cache folders offline, and --physics separately) and tests/vrm_features_smoke.gd. Plans list name, glb, all original skin joint indices and the humanoid leftUpperArm node name as bone_suffix. tests/native_backend_smoke.gd also accepts a third argument containing file/member/actor/scale plans for actual native worker ingress. Run GUI cases only through run.command on an explicitly isolated display. tests/vrm_leaf_endpoint_unit.gd is headless. Exact failed checks must remain visible in receipts.

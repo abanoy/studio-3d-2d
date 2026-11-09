@@ -130,7 +130,18 @@ func parse_v0(native: Dictionary) -> void:
 				if children.size()!=1:fail("Branched legacy springs need explicit chain review.");break
 				at=index(children[0],nodes.size())
 				if seen.has(at):fail("Cyclic legacy spring hierarchy.")
-			add_chain(joints,str(spring.get("comment","Spring")),spring.get("center"),selected_colliders(spring.get("colliderGroups",[])),0.07)
+			var extension:=0.07
+			# A non-deforming leaf under the final skin bone is already a tail.
+			# It has no geometry or descendants to rotate; preserve its real offset
+			# as the endpoint instead of demanding an invented skin bone/extra tail.
+			if joints.size()>1 and joints[-1].binding.kind=="offset" and joints[-2].binding.kind=="bone" and joints[-1].binding.id==joints[-2].binding.id:
+				var leaf: Dictionary=nodes[int(joints[-1].source_node)]
+				var children=leaf.get("children",[]);var extensions=leaf.get("extensions",{})
+				var carries_collider:=false
+				for collider in colliders:
+					if int(collider.binding.get("source_node",-1))==int(joints[-1].source_node):carries_collider=true
+				if not carries_collider and children is Array and children.is_empty() and not leaf.has("mesh") and not leaf.has("camera") and extensions is Dictionary and extensions.is_empty():extension=0.0
+			add_chain(joints,str(spring.get("comment","Spring")),spring.get("center"),selected_colliders(spring.get("colliderGroups",[])),extension)
 
 static func from_gltf(data: Dictionary,state: GLTFState,scene: Node3D) -> Dictionary:
 	var extensions=data.get("extensions",{})

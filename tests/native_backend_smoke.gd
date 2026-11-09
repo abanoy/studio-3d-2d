@@ -15,7 +15,9 @@ func run() -> void:
 	app=load("res://main.tscn").instantiate();app.display_prefs_path=folder.path_join("prefs.cfg");app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recent.json");root.add_child(app);await settle();app.home.hide();app.autosave_enabled.button_pressed=false
 	var importer=app.source_import;importer.gmod_root="";importer.workshop_root="";importer.extra_roots=[];importer.mount_overrides={}
 	var jobs:=[]
-	for row in [{"file":"touhou_reimu_bikini.gma","member":"models/player/reimu_hakurei_bikini.mdl","actor":true,"scale":0.01905},{"file":"Miku_Hatsune.pmd","member":"","actor":true,"scale":0.08},{"file":"street01_android.pmx","member":"","actor":false,"scale":0.08}]:
+	var plans: Array=[{"file":"touhou_reimu_bikini.gma","member":"models/player/reimu_hakurei_bikini.mdl","actor":true,"scale":0.01905},{"file":"Miku_Hatsune.pmd","member":"","actor":true,"scale":0.08},{"file":"street01_android.pmx","member":"","actor":false,"scale":0.08}]
+	if args.size()>2:plans=JSON.parse_string(FileAccess.get_file_as_string(args[2]))
+	for row in plans:
 		var previous: int=app.current_world().objects.size()
 		importer.launch(native.path_join(row.file),row.member,row.actor,row.scale)
 		check(importer.pid>0,"native importer launches "+row.file)
@@ -26,5 +28,5 @@ func run() -> void:
 		jobs.append({"file":row.file,"folder":importer.folder})
 		for child in app.get_children():
 			if child is AcceptDialog and child.title in ["Source import warnings","Imported with limitations"]:child.confirmed.emit();child.hide()
-	check(app.current_world().objects.size()==3,"Source and MMD models plus PMX environment coexist without changing renderer settings")
+	check(app.current_world().objects.size()==plans.size(),"all native import plans coexist without changing renderer settings")
 	var result:={"checks":checks,"failures":failures,"jobs":jobs};FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE).store_string(JSON.stringify(result));print("NATIVE_BACKENDS "+JSON.stringify(result));app.free();quit(0 if failures==0 else 1)
