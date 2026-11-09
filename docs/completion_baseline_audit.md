@@ -62,4 +62,7 @@ SAFE-01’s recovery/data-loss contract. It corrects an extra unconditional Wind
 directory-flush gate, preserves the original acceptance text and records current
 fault/rollback evidence. Unsupported sync stays reported and Windows/physical
 acceptance is not promoted by this correction. Native MMD/GMA now adds93app
-checks; complete BSP/VRM and the named street textures remain missing.
+checks; complete BSP and the named street textures remain missing. Current VRM0/1
+checks now cover all four uploaded files; the [VRM receipt](benchmarks/native_vrm_2026-11-09.json)
+retains two one-pixel cold raster failures alongside exact authored-data passes.
+The missing-VRM-file prerequisite is removed without closing full native fidelity.

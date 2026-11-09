@@ -268,9 +268,15 @@
           "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
           "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
           "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_vrm_2026-11-09.json",
+          "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
+          "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
         }
       ],
-      "remaining": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred.",
+      "remaining": "Complete native BSP/map materials, props and lightmaps still need an approved complete input and dependencies. temp.gma exceeds the 32 MiB transfer limit; street01_android.pmx needs its five exact named atlas PNG files. All four newly supplied VRMs have current native import/pose/expression/spring/physics/HAS/movie evidence, with two retained one-pixel cold raster differences. Full native shading, constraints and simulator behavior remain limited as diagnosed; target/artist fidelity observations remain unrun. No game installation is required for standalone supplied files.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -328,9 +334,15 @@
           "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
           "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
           "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_vrm_2026-11-09.json",
+          "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
+          "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
         }
       ],
-      "remaining": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred.",
+      "remaining": "Complete native BSP/map materials, props and lightmaps still need an approved complete input and dependencies. temp.gma exceeds the 32 MiB transfer limit; street01_android.pmx needs its five exact named atlas PNG files. All four newly supplied VRMs have current native import/pose/expression/spring/physics/HAS/movie evidence, with two retained one-pixel cold raster differences. Full native shading, constraints and simulator behavior remain limited as diagnosed; target/artist fidelity observations remain unrun. No game installation is required for standalone supplied files.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -2921,13 +2933,13 @@
     },
     {
       "id": "B-NATIVE",
-      "prerequisite": "Approved complete BSP/map/prop/lightmap and VRM fixture profiles, genuinely missing dependencies and target/artist observations. The supplied MMD PMD/PMX, real MMD Tools VPD/VMD, GMA,82SFM and original Krita cases are exercised. temp.gma needs transport within the32MiBfile-transfer limit; street01_android.pmx needs its five named atlas PNG files. No game installation is required for standalone files.",
+      "prerequisite": "Approved complete BSP/map/prop/lightmap input, genuinely missing dependencies and target/artist observations. VRM0/1, MMD PMD/PMX, real MMD Tools VPD/VMD, GMA, 82 SFM models and original Krita now have scoped evidence. temp.gma needs transport within the 32 MiB transfer limit; street01_android.pmx needs its five named atlas PNG files. No game installation is required for standalone files.",
       "prevents": [
         "IMPORT-02",
         "IMPORT-03",
         "ACCEPT-B"
       ],
-      "independent_work": "Fixed native MMD dependency/empty-geometry and Linux motion worker bugs, Source-only runtime selection and empty optional-path discovery;93new app checks,85Source and98focused tests pass. Source.phy omissions have explicit warning/fingerprint provenance. Existing82model Source corpus and nativeKrita evidence remain separately scoped. BSP/VRM and broader native fidelity await their specific assets and observations."
+      "independent_work": "Current four-avatar VRM receipts cover actual native-worker import, editable pose/expression, supported spring chains, generated HAS physics, portable exact authored data and movie output. Sakuya terminal-helper startup is fixed with negative safety and spring regressions. Two strict one-pixel cold raster failures remain measured. Existing MMD/GMA, 82-model Source and native Krita evidence stays separately scoped. Complete BSP/dependencies, unsupported native fidelity and target/artist observations remain."
     },
     {
       "id": "B-TABLET",
@@ -3216,12 +3228,12 @@
     {
       "requirement": "IMPORT-02",
       "priority": 1,
-      "action": "Use the current committed MMD/GMA/model/pose/motion/PMX-scene evidence. Remaining native runs need complete BSP and VRM inputs; temp.gma is over the32MiBtransfer limit and street atlas filenames are missing. Preserve explicit unsupported-physics/material diagnostics and do not repeat unchanged passing cases."
+      "action": "Use the current committed VRM0/1, MMD/GMA and Source evidence. Next native map acceptance needs a complete BSP and dependencies; temp.gma exceeds the 32 MiB transfer limit and five street atlas files are missing. Preserve the two recorded one-pixel VRM cold raster failures and unsupported native behavior diagnostics. Reopen tests when a concrete new fixture or relevant fix is available."
     },
     {
       "requirement": "IMPORT-03",
       "priority": 1,
-      "action": "Use the current committed MMD/GMA/model/pose/motion/PMX-scene evidence. Remaining native runs need complete BSP and VRM inputs; temp.gma is over the32MiBtransfer limit and street atlas filenames are missing. Preserve explicit unsupported-physics/material diagnostics and do not repeat unchanged passing cases."
+      "action": "Use the current committed VRM0/1, MMD/GMA and Source evidence. Next native map acceptance needs a complete BSP and dependencies; temp.gma exceeds the 32 MiB transfer limit and five street atlas files are missing. Preserve the two recorded one-pixel VRM cold raster failures and unsupported native behavior diagnostics. Reopen tests when a concrete new fixture or relevant fix is available."
     },
     {
       "requirement": "ACCEPT-C",

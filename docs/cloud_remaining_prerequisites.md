@@ -12,7 +12,7 @@ No goal rewrite is needed to resume this work.
 
 | Requirement | Missing prerequisite | Work it prevents |
 | --- | --- | --- |
-| IMPORT-02/03 | Approved complete BSP and VRM fixtures and actual missing dependencies; supplied MMD/GMA profiles are now exercised; standalone SFM imports no longer require an installation | Guarded native conversion, actual app appearance/posing/physics, portable HAS replay and movie comparison |
+| IMPORT-02/03 | Approved complete BSP fixture and actual missing dependencies; supplied VRM0/1 and MMD/GMA profiles are now exercised; standalone SFM imports no longer require an installation | Guarded native conversion, actual app appearance/posing/physics, portable HAS replay and movie comparison |
 | ACCEPT-A through ACCEPT-F, ACCEPT-INSTALL | The required Windows target, with native fixtures and owner/novice observation where the scenario requires them | Target crash/scenario and clean installer acceptance; passed cloud mechanical cases remain recorded |
 | ACCEPT-TABLET | Actual target tablet/driver, GPU and audible output, plus owner observation | Physical pressure/input, audible synchronization, target performance and artistic usability observations |
 
@@ -78,3 +78,5 @@ Godot/Python receipts and the governing “fsync/rename where supported” wordi
 Windows directory synchronization still reports unsupported, and no Windows kernel
 or physical-power-loss result is claimed. Windows crash/installer and other target
 observations remain required by the external acceptance gates.
+
+The four newly supplied VRM files now have [current native evidence](benchmarks/native_vrm_2026-11-09.json). Both VRM versions pass actual import-worker ingress, posing and expression Undo/Redo, supported native springs and generated HAS physics/freeze. Cold packed replay preserves exact authored pose, metadata, camera and GLB checksum for all four with conversion folders and writer cache offline. Two original exact raster assertions remain failed: Avatar1 and Marisa each differ at one RGB pixel after cold reconstruction. A real 1080p/24 H.264 movie is verified. The missing-VRM-file prerequisite is removed; full native fidelity, complete BSP acceptance and target/artist observations remain open.
