@@ -2,7 +2,9 @@
 
 Reviewed on 2026-11-09 against the actual addendum section 17 scenarios, the
 Windows target in the original specification, the current ledger, test source,
-and committed receipts through `9f882e9`. This is an evidence review, not a fresh
+and the original committed receipts through `9f882e9`. The follow-up scenario A
+case and placement fix are committed in `2cfdd583a6610d939277adf67069f17deebda8f4`.
+The review itself is not a fresh
 execution of the application or a claim that all remaining cloud work is done.
 
 A local Codex worker is useful for the Windows target checks. It is not a

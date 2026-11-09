@@ -420,6 +420,12 @@
           "path": "docs/benchmarks/common_import_current_2026-11-07.json",
           "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
           "scope": "Actual OBJ environment retains chosen scale/up-axis, full authored bounds and coexists with independent imported models rather than being normalized as a humanoid."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/scenario_a_2026-11-09.json",
+          "commit": "2cfdd583a6610d939277adf67069f17deebda8f4",
+          "scope": "All eight section17.A software steps pass21writer+6fresh-process checks using the supplied native VRM1, actual canvas model/bone/gizmo interaction, frame0/frame4 auto-keys, exact packed scene/camera and cold frame0/2/4pixels, conversion/cache offline, and actual24frame1080p24H264. Fixed premature floating fallback;20existing translated-floor/overlap/aerial-placement regressions pass. Native GMod branch is explicitly not tested. Real Windows novice timing, actual OS drag/physical input and subjective usability remain unrun; no acceptance status is promoted."
         }
       ],
       "external_dependencies": []
@@ -2658,7 +2664,14 @@
       "acceptance_status": "external_blocked",
       "acceptance_review": "The exact native section17.A software route now passes21writer+6new-process reader checks with conversion/cache offline, exact scene/camera and pixels, frame0/frame4 gizmo auto-keys and an actual1080p24H264 movie. It exposed/fixed premature floating placement;20existing placement checks pass. A real novice on Windows, actual OS drag/input behavior, elapsed time and usability remain unobserved. Programmatic events cannot certify five-minute novice success.",
       "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/scenario_a_2026-11-09.json",
+          "commit": "2cfdd583a6610d939277adf67069f17deebda8f4",
+          "scope": "All eight section17.A software steps pass21writer+6fresh-process checks using the supplied native VRM1, actual canvas model/bone/gizmo interaction, frame0/frame4 auto-keys, exact packed scene/camera and cold frame0/2/4pixels, conversion/cache offline, and actual24frame1080p24H264. Fixed premature floating fallback;20existing translated-floor/overlap/aerial-placement regressions pass. Native GMod branch is explicitly not tested. Real Windows novice timing, actual OS drag/physical input and subjective usability remain unrun; no acceptance status is promoted."
+        }
+      ],
       "external_dependencies": [
         "B-WINDOWS",
         "B-ARTIST"
