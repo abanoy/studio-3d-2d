@@ -55,3 +55,9 @@ audio. Native fixtures, hardware/input comfort and Windows are not implied.
 
 STORE-04 remains open for the directory rollback payload-validation audit and
 native/physical acceptance. See [scoped sync evidence](benchmarks/save_sync_2026-11-06.json).
+
+The current STORE-04 source review and executed fault/rollback receipt are in
+[atomic safety](benchmarks/atomic_safety_current_2026-11-08.json). The bounded
+software condition is verified; target Windows and physical storage observations
+remain separate. This supersedes the earlier open-status paragraph above without
+claiming an unsupported directory flush.

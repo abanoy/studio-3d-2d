@@ -1,7 +1,7 @@
 # MD/addendum completion baseline audit
 
-The reviewed checklist has **51 of54required capability groups implemented
-(94.44%)** and **51 of62required acceptance conditions formally closed (82.26%)**.
+The reviewed checklist has **52 of54required capability groups implemented
+(96.30%)** and **52 of62required acceptance conditions formally closed (83.87%)**.
 These are separate, equally weighted checklist counts. They do not estimate
 remaining engineering time, native fidelity, reliability or release readiness.
 No combined product-completion percentage is calculated.
@@ -11,7 +11,7 @@ It checks both governing documents, the addendum's precedence, bounded code path
 source/acceptance reverse mappings, evidence scope and exact remaining work.
 Every group has a source/evidence review in the
 [structured audit](benchmarks/completion_baseline_audit_2026-11-07.json).
-Existing tests are not represented as a fresh run of all features. Fifty-one committed full-condition closures are formally verified; many
+Existing tests are not represented as a fresh run of all features. Fifty-two committed full-condition closures are formally verified; many
 other current tests supply narrower evidence.
 
 Three old implementation labels were corrected without inventing new acceptance
@@ -22,8 +22,8 @@ performance remain separately unverified. History keeps a single large command e
 its soft64MiB target; registered authorities have320MiB admission. Frozen worker
 contexts, GPU and other resources are not a whole-app RAM guarantee.
 
-Three capability groups remain partial: native ecosystem coverage, native fidelity,
-and save durability/fault safety on the target platform. Independent canonical
+Two capability groups remain partial: native ecosystem coverage and native fidelity.
+Current bounded atomic-save/fault safety is verified; target execution stays separate. Independent canonical
 model/map packaging and its storage-kind decision are resolved within the existing
 HAS container. Exact required bounded IK and reusable-path locomotion are implemented
 and now formally verified by current committed software receipts. Native fixtures
@@ -56,3 +56,10 @@ replay and a48frame movie. This closes bounded COMP-01; artist/ICC/native-layer
 editing and target observations stay separate. All82supplied Source MDLs have
 conversion/ingress/render evidence, while full native cross-ecosystem fidelity
 still needs the named approved assets and observations.
+
+The STORE-04 review follows MD9’s explicit “fsync/rename where supported” and
+SAFE-01’s recovery/data-loss contract. It corrects an extra unconditional Windows
+directory-flush gate, preserves the original acceptance text and records current
+fault/rollback evidence. Unsupported sync stays reported and Windows/physical
+acceptance is not promoted by this correction. Native MMD/GMA now adds93app
+checks; complete BSP/VRM and the named street textures remain missing.

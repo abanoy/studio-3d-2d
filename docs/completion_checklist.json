@@ -262,9 +262,15 @@
           "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
           "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
           "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
         }
       ],
-      "remaining": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases.",
+      "remaining": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -316,9 +322,15 @@
           "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
           "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
           "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
         }
       ],
-      "remaining": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases.",
+      "remaining": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -1994,9 +2006,9 @@
         "ADD11.5"
       ],
       "title": "Validated atomic save and fault safety",
-      "implementation": "partial",
-      "verification": "incomplete",
-      "acceptance_status": "open",
+      "implementation": "implemented",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Corrupt/unsafe/missing assets and failed/interrupted writes cannot replace the sole valid project or escape its folder; backup/readback/integrity faults are exercised.",
       "evidence": [
         {
@@ -2098,12 +2110,16 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/directory_rollback_2026-11-06.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/atomic_safety_current_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Bounded atomic-save/readback/backup/unsafe-path/payload/integrity/interruption software contract verified by current86Python save-safety cases,173Godot private metadata/journal/recovery checks,26rollback checks and five real commit/competing-writer/lost-status runs plus actual pre-promotion kill. MD9 explicitly requires fsync/rename where supported; unconditional Windows directory flushing was an extra gate. Unsupported directory sync still reports false. Windows crash/installer/scenario execution and physical storage/power-loss are separate unrun target gates, not certified by this closure."
         }
       ],
-      "remaining": "POSIX sync and controlled atomic/CAS/readback/backup faults have executed evidence. Target Windows directory durability remains unimplemented/unverified: tools/save_sync.py deliberately reports unsupported directory sync there. A usable approved Windows environment is needed to implement and test the target path; physical power-loss observations remain separate.",
-      "external_dependencies": [
-        "B-WINDOWS"
-      ]
+      "remaining": "Bounded atomic-save/readback/backup/unsafe-path/payload/integrity/interruption software contract verified by current86Python save-safety cases,173Godot private metadata/journal/recovery checks,26rollback checks and five real commit/competing-writer/lost-status runs plus actual pre-promotion kill. MD9 explicitly requires fsync/rename where supported; unconditional Windows directory flushing was an extra gate. Unsupported directory sync still reports false. Windows crash/installer/scenario execution and physical storage/power-loss are separate unrun target gates, not certified by this closure.",
+      "external_dependencies": []
     },
     {
       "id": "REC-01",
@@ -2899,20 +2915,19 @@
         "ACCEPT-E",
         "ACCEPT-F",
         "ACCEPT-TABLET",
-        "ACCEPT-INSTALL",
-        "STORE-04"
+        "ACCEPT-INSTALL"
       ],
-      "independent_work": "Current cloud core, recovery, storage, course, media and bounded fault work is recorded. Target Windows directory durability and installer/scenario/device observations remain; do not represent POSIX results as Windows acceptance."
+      "independent_work": "Current cloud atomic-save/fault/rollback and native MMD/GMA software evidence is recorded. Target Windows installer/crash/scenario/device observations remain. No physical storage or native Windows directory-sync guarantee is inferred."
     },
     {
       "id": "B-NATIVE",
-      "prerequisite": "Approved complete BSP/map/prop/lightmap, VRM and MMD model/pose/motion fixtures and any actual missing dependency files. The supplied82SFMmodels and original40frame native Krita fixture/runtime are now exercised. An installed game is relevant only for browsing its content or obtaining a genuinely missing dependency.",
+      "prerequisite": "Approved complete BSP/map/prop/lightmap and VRM fixture profiles, genuinely missing dependencies and target/artist observations. The supplied MMD PMD/PMX, real MMD Tools VPD/VMD, GMA,82SFM and original Krita cases are exercised. temp.gma needs transport within the32MiBfile-transfer limit; street01_android.pmx needs its five named atlas PNG files. No game installation is required for standalone files.",
       "prevents": [
         "IMPORT-02",
         "IMPORT-03",
         "ACCEPT-B"
       ],
-      "independent_work": "All82supplied MDLs convert and import/render in Studio; nine full-character posed/contact/cold cases are separate. NativeKrita54app/41parser checks and original40frame exact-native pixels pass. Keep other native-profile, skin/bodygroup/morph/cloth/SourcePhysics and target/artist fidelity unverified until their required assets/observations exist."
+      "independent_work": "Fixed native MMD dependency/empty-geometry and Linux motion worker bugs, Source-only runtime selection and empty optional-path discovery;93new app checks,85Source and98focused tests pass. Source.phy omissions have explicit warning/fingerprint provenance. Existing82model Source corpus and nativeKrita evidence remain separately scoped. BSP/VRM and broader native fidelity await their specific assets and observations."
     },
     {
       "id": "B-TABLET",
@@ -3201,17 +3216,12 @@
     {
       "requirement": "IMPORT-02",
       "priority": 1,
-      "action": "Use the completed82model conversion/app-ingress evidence and nine posed/contact/cold cases. Next native tests require complete approved BSP/MMD/VRM fixtures and actual missing dependencies; do not repeat the corpus or require an installation for standalone files. Target/artist fidelity remains separate."
+      "action": "Use the current committed MMD/GMA/model/pose/motion/PMX-scene evidence. Remaining native runs need complete BSP and VRM inputs; temp.gma is over the32MiBtransfer limit and street atlas filenames are missing. Preserve explicit unsupported-physics/material diagnostics and do not repeat unchanged passing cases."
     },
     {
       "requirement": "IMPORT-03",
       "priority": 1,
-      "action": "Use the completed82model conversion/app-ingress evidence and nine posed/contact/cold cases. Next native tests require complete approved BSP/MMD/VRM fixtures and actual missing dependencies; do not repeat the corpus or require an installation for standalone files. Target/artist fidelity remains separate."
-    },
-    {
-      "requirement": "STORE-04",
-      "priority": 1,
-      "action": "POSIX sync and controlled atomic/CAS/readback/backup faults have executed evidence. Target Windows directory durability remains unimplemented/unverified: tools/save_sync.py deliberately reports unsupported directory sync there. A usable approved Windows environment is needed to implement and test the target path; physical power-loss observations remain separate."
+      "action": "Use the current committed MMD/GMA/model/pose/motion/PMX-scene evidence. Remaining native runs need complete BSP and VRM inputs; temp.gma is over the32MiBtransfer limit and street atlas filenames are missing. Preserve explicit unsupported-physics/material diagnostics and do not repeat unchanged passing cases."
     },
     {
       "requirement": "ACCEPT-C",

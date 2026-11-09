@@ -1,9 +1,9 @@
 # Remaining prerequisites after current cloud verification
 
-The product is not complete. The current ledger has 51 of 54 implementation
-groups covered (94.44%) and 51 of 62 acceptance conditions verified (82.26%).
+The product is not complete. The current ledger has 52 of 54 implementation
+groups covered (96.30%) and 52 of 62 acceptance conditions verified (83.87%).
 These are separate equal-group checklist counts, not a combined completion,
-remaining-time or release-readiness estimate. Three capability acceptance conditions
+remaining-time or release-readiness estimate. Two capability acceptance conditions
 remain open and eight external acceptance gates remain blocked.
 
 The continuous goal is versioned in [complete-has.md](goals/complete-has.md).
@@ -12,9 +12,8 @@ No goal rewrite is needed to resume this work.
 
 | Requirement | Missing prerequisite | Work it prevents |
 | --- | --- | --- |
-| IMPORT-02/03 | Approved complete BSP, MMD and VRM fixtures and any genuinely missing dependency files; standalone SFM imports no longer require an installation | Guarded native conversion, actual app appearance/posing/physics, portable HAS replay and movie comparison |
-| STORE-04 | An approved usable Windows 10/11 environment | Implementing and verifying target directory durability and atomic/fault behavior; `tools/save_sync.py` deliberately reports Windows directory sync unsupported |
-| ACCEPT-A through ACCEPT-F, ACCEPT-INSTALL | The required Windows target, with native fixtures and owner/novice observation where the scenario requires them | Target scenario and clean installer acceptance; passed cloud mechanical cases remain recorded |
+| IMPORT-02/03 | Approved complete BSP and VRM fixtures and actual missing dependencies; supplied MMD/GMA profiles are now exercised; standalone SFM imports no longer require an installation | Guarded native conversion, actual app appearance/posing/physics, portable HAS replay and movie comparison |
+| ACCEPT-A through ACCEPT-F, ACCEPT-INSTALL | The required Windows target, with native fixtures and owner/novice observation where the scenario requires them | Target crash/scenario and clean installer acceptance; passed cloud mechanical cases remain recorded |
 | ACCEPT-TABLET | Actual target tablet/driver, GPU and audible output, plus owner observation | Physical pressure/input, audible synchronization, target performance and artistic usability observations |
 
 The supplied 22 SFM archives are already available privately. Do not ask for them
@@ -64,3 +63,18 @@ alpha, cancellation, recovery, packed/linked cold replay and a real movie. See
 [the receipt](benchmarks/native_krita_acceptance_2026-11-08.json). No owner artwork,
 ICC, native-layer editing, physical-device, artist or Windows certification is
 implied. The configured private container is optional and uses no host desktop.
+
+The newest [native MMD/GMA receipt](benchmarks/native_mmd_gma_2026-11-08.json)
+records13renderable PMD/PMX conversions and93app checks. The supplied bone-only
+PMD explicitly refuses as a rendered model. Native VPD/VMD exported by MMD Tools
+pass actual review/apply/UndoRedo and saved animation. All32new input hashes stay
+exact. `temp.gma` exceeds the32MiBfile-transfer limit; its contents were not read.
+Street PMX needs `atlas03_street_d.png`, `atlas02_street_d.png`,
+`atlas03_props_d.png`, `atlas02_props_d.png`, and `atlas09_props_d.png` as named
+file dependencies. Chat images were not assigned names by appearance.
+
+STORE-04’s bounded atomic/fault-safety condition is now verified against current
+Godot/Python receipts and the governing “fsync/rename where supported” wording.
+Windows directory synchronization still reports unsupported, and no Windows kernel
+or physical-power-loss result is claimed. Windows crash/installer and other target
+observations remain required by the external acceptance gates.
