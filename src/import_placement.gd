@@ -115,6 +115,8 @@ static func plan(renderer: Node, source: String, context: Dictionary, use_shape=
 				if not triangle.horizontal and placed.grow(-0.02).intersects(triangle.box.grow(0.005)):overlap=true;break
 		var candidate:={"position":position,"support":support,"attempts":attempts,"overlap":overlap,"triangles":used,"skipped_surfaces":skipped}
 		if fallback.is_empty():fallback=candidate
-		if not overlap:return candidate
+		# Keep searching nearby floor-supported positions before choosing the
+		# center's visible floating fallback. A later candidate may fit on ground.
+		if not overlap and support!="view":return candidate
 	fallback["attempts"]=attempts
 	return fallback
