@@ -1,5 +1,6 @@
 """Actual UI/default-shape/review/Undo/HAS/movie integration; hidden Windows GPU."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import hashlib
 import json
 import subprocess
@@ -37,7 +38,7 @@ def prepare(folder):
     g.doc['materials'] = [{'doubleSided':True,'pbrMetallicRoughness':{'baseColorFactor':[.4,.5,.6,1.], 'metallicFactor':0.}}]
     write_glb(folder / 'floor.glb',g.doc,bytes(g.binary))
     native_plans = []
-    base = Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output')
+    base = fixture_output()
     for label, relative in [('MMD','pose-smoke/miku-project'),('GMod','source-smoke/source-project'),('SFM','sfm-smoke/project')]:
         project = base / relative
         if not (project / 'project.json').is_file(): continue

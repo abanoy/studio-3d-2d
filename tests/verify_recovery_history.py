@@ -1,5 +1,6 @@
 """Bounded journal, real Advanced preview/restore, and fresh-process deep fallback."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import argparse,os,array,atexit,hashlib,json,math,subprocess,sys,time,wave
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from run import command as engine_command,configure_private_display
@@ -24,7 +25,7 @@ def main():
     assert p.returncode==0 and 'RECOVERY_JOURNAL_UNIT ' in unit and '"failures":0' in unit and 'ERROR:' not in unit,unit
     unit_result=json.loads(unit.split('RECOVERY_JOURNAL_UNIT ')[-1].splitlines()[0])
     (folder/'unit.log').write_text(unit,encoding='utf-8')
-    plans=[];base=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output');originals={}
+    plans=[];base=fixture_output();originals={}
     for label,relative in [('MMD','pose-smoke/miku-project'),('GMod','source-smoke/source-project'),('SFM','sfm-smoke/project')]:
         project=base/relative
         if not (project/'project.json').is_file():continue

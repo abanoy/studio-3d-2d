@@ -1,5 +1,6 @@
 """Shared catalogue unit/UI/metadata/Undo/HAS/cold Open/movie, private GPU only."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import hashlib,json,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from run import command
@@ -15,7 +16,7 @@ def execute(script,folder,extra,marker,headless=False):
 def main():
     folder=ROOT/'output/shape-catalog'/str(time.time_ns());folder.mkdir(parents=True);originals=prepare(folder)
     plans=[{'label':'Authored fixture','source':str(folder/'shape.glb')}]+json.loads((folder/'native-plans.json').read_text(encoding='utf-8'))
-    native=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output\native-import-verification.json')
+    native=(fixture_output()/'native-import-verification.json')
     if native.is_file():
         for name in json.loads(native.read_text(encoding='utf-8')).get('bundles',[]):
             bundle=Path(name);report=json.loads((bundle/'parameters.json').read_text(encoding='utf-8'))

@@ -1,5 +1,6 @@
 """Interactive automatic ragdolls, existing live peers, explicit Record and hidden GPU."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import argparse,os,hashlib,json,shutil,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
@@ -20,7 +21,7 @@ def main():
         parameters=plan['metadata'].get('native_parameters')
         if parameters:(target/'parameters.json').write_text(json.dumps(parameters),encoding='utf-8')
         plan['source']=str(target/'scene.glb')
-    report=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output\native-import-verification.json')
+    report=(fixture_output()/'native-import-verification.json')
     if report.is_file():
         for bundle in json.loads(report.read_text(encoding='utf-8')).get('bundles',[]):
             bundle=Path(bundle);parameters=json.loads((bundle/'parameters.json').read_text(encoding='utf-8'))

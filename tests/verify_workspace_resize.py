@@ -18,4 +18,3 @@ def main():
     result=json.loads((folder/'result.json').read_text(encoding='utf-8'));result.update(folder=str(folder),private_receipt=str(receipt),functional_unchanged=True)
     (ROOT/'output/workspace-resize-verification.json').write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps(result,indent=2))
 if __name__=='__main__':main()
-

@@ -1,5 +1,6 @@
 """Real abrupt writer exit and unmodified normal startup with corrupt-generation fallback."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import argparse,array,atexit,copy,hashlib,json,math,os,re,shutil,subprocess,sys,time,wave
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from run import configure_private_display, command as engine_command
@@ -27,7 +28,7 @@ def main():
     assert probe(os.getpid())=='alive','unrelated parent process must be seen from the separate helper'
     child=subprocess.Popen([sys.executable,'-c','pass']);child.wait(timeout=20)
     assert probe(child.pid)=='exited','joined test child must be seen as stopped'
-    base=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output') if os.name=='nt' else folder/'no-native-fixtures';plans=[];originals={}
+    base=fixture_output() if os.name=='nt' else folder/'no-native-fixtures';plans=[];originals={}
     for label,relative in [('MMD','pose-smoke/miku-project'),('GMod','source-smoke/source-project'),('SFM','sfm-smoke/project')]:
         project=base/relative
         if not (project/'project.json').is_file():continue

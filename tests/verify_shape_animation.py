@@ -1,5 +1,6 @@
 """Real hidden GPU animation, block ownership, native shapes, HAS and MP4."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import hashlib
 import json
 import subprocess
@@ -27,7 +28,7 @@ def main():
                 originals[candidate]=(hashlib.sha256(candidate.read_bytes()).hexdigest(),candidate.stat().st_mtime_ns)
     (folder/'legacy-project.json').write_text(json.dumps({'path':legacy}),encoding='utf-8')
     plan_path=folder/'native-plans.json';plans=json.loads(plan_path.read_text(encoding='utf-8'))
-    native_report=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output\native-import-verification.json')
+    native_report=(fixture_output()/'native-import-verification.json')
     if native_report.is_file():
         for bundle in json.loads(native_report.read_text(encoding='utf-8')).get('bundles',[]):
             bundle=Path(bundle);report=json.loads((bundle/'parameters.json').read_text(encoding='utf-8'))

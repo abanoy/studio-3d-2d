@@ -1,6 +1,7 @@
 import argparse,os
 """Experimental independent body contract; normal editor integration remains open."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import hashlib
 import json
 import subprocess
@@ -24,7 +25,7 @@ def main():
     plan_path=folder/'native-plans.json';plans=json.loads(plan_path.read_text(encoding='utf-8'))
     names={'MMD':('左腕','右腕'),'GMod':('L_UpperArm','R_UpperArm'),'SFM':('bip_upperArm_L','bip_upperArm_R')}
     for plan in plans:plan['left'],plan['right']=names[plan['label']]
-    native=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output/native-import-verification.json')
+    native=(fixture_output()/'native-import-verification.json')
     if native.is_file():
         for bundle in json.loads(native.read_text(encoding='utf-8')).get('bundles',[]):
             bundle=Path(bundle);report=json.loads((bundle/'parameters.json').read_text(encoding='utf-8'))

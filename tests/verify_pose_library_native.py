@@ -1,9 +1,10 @@
 from pathlib import Path
+from native_fixture_root import fixture_output
 import hashlib,json,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from run import command
 def main():
-    normal=Path('C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output');folder=ROOT/'output/body-pose-native'/str(time.time_ns());folder.mkdir(parents=True);plans=[]
+    normal=fixture_output();folder=ROOT/'output/body-pose-native'/str(time.time_ns());folder.mkdir(parents=True);plans=[]
     for label,relative in [('GMod','source-smoke/source-project'),('SFM','sfm-smoke/project')]:
         p=normal/relative;document=json.loads((p/'project.json').read_bytes());row=document.get('model') or next(x for x in document['world']['objects'] if x['kind']=='model');source=p/row['path'];assert source.is_file();plans.append({'label':label,'source':str(source)})
     native=json.loads((normal/'native-import-verification.json').read_bytes())

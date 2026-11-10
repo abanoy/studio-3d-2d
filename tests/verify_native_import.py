@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import os
 import subprocess
 import sys
 
@@ -14,6 +15,8 @@ from asset_audit import inspect
 
 def private_vrm(name):
     """Use an original or an exact retained import input, never a renamed GLB."""
+    supplied = Path(os.environ['HYBRID_NATIVE_INPUTS']) / name if os.environ.get('HYBRID_NATIVE_INPUTS') else None
+    if supplied is not None and supplied.is_file(): return supplied
     desktop = Path.home() / 'Desktop' / name
     if desktop.is_file(): return desktop
     for base in [ROOT / 'output', Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output')]:

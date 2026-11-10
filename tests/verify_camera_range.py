@@ -1,5 +1,6 @@
 """Shot/editor projection isolation, original large scene, native project and movie."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import argparse,hashlib,json,os,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from run import command,configure_private_display
@@ -10,7 +11,7 @@ def main():
         configure_private_display(o.isolated_display)
     folder=(o.output or ROOT/'output/camera-range'/str(time.time_ns())).resolve();folder.mkdir(parents=True,exist_ok=False)
     frozen={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for part in ['src','tests','tools','examples','data'] for p in (ROOT/part).rglob('*') if p.is_file() and p.suffix!='.pyc' and '__pycache__' not in p.parts}
-    plans=[];originals={};base=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output')
+    plans=[];originals={};base=fixture_output()
     for label,relative in [('MMD','pose-smoke/miku-project'),('GMod','source-smoke/source-project'),('SFM','sfm-smoke/project')]:
         project=base/relative
         if not (project/'project.json').is_file():continue

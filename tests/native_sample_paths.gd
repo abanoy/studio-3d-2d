@@ -11,6 +11,8 @@ static func json_file(path: String) -> Dictionary:
 
 static func resolve(name: String) -> Dictionary:
 	if not name in NAMES:return {}
+	var supplied: String=OS.get_environment("HYBRID_NATIVE_INPUTS").path_join(name) if not OS.get_environment("HYBRID_NATIVE_INPUTS").is_empty() else ""
+	if not supplied.is_empty() and FileAccess.file_exists(supplied):return {"path":supplied,"sha256":FileAccess.get_sha256(supplied),"provenance":"explicit owner native-input directory"}
 	var desktop: String="C:/Users/noble/Desktop/"+name
 	if FileAccess.file_exists(desktop):return {"path":desktop,"sha256":FileAccess.get_sha256(desktop),"provenance":"owner Desktop input"}
 	for base in [ProjectSettings.globalize_path("res://output"),"C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output"]:

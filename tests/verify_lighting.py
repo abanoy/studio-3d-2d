@@ -1,5 +1,6 @@
 """Project lighting, material isolation/fades, native rigs, HAS and hidden GPU export."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import argparse,os,json,subprocess,sys,time,hashlib
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
@@ -14,7 +15,7 @@ def main():
     frozen={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for part in ['src','tests','tools','examples','data'] for p in (ROOT/part).rglob('*') if p.is_file() and p.suffix!='.pyc' and '__pycache__' not in p.parts}
     originals=prepare(folder)
     plan_path=folder/'native-plans.json';plans=json.loads(plan_path.read_text(encoding='utf-8'))
-    native=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output\native-import-verification.json')
+    native=(fixture_output()/'native-import-verification.json')
     if native.is_file():
         for bundle in json.loads(native.read_text(encoding='utf-8')).get('bundles',[]):
             bundle=Path(bundle);report=json.loads((bundle/'parameters.json').read_text(encoding='utf-8'))
