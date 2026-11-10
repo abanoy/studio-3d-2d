@@ -1,0 +1,126 @@
+{
+  "format": "has_scene_workspace_resize_1",
+  "date": "2026-11-10",
+  "owner_observation": "The 3D scene screen is too damn small and can't be adjusted downward",
+  "owner_screen_pixels": [
+    3440,
+    1440
+  ],
+  "baseline": {
+    "timeline_minimum_logical_height": 367,
+    "scene_logical_height": 208,
+    "downward_offset_200_growth": 0,
+    "observation": "Original private probe output/workspace-sizing/probe.log; source screenshot is private and not committed."
+  },
+  "fix": {
+    "timeline_minimum_logical_height": 138,
+    "default_timeline_height": 234,
+    "scrollable_live_content": true,
+    "ordinary_open_project_layout_persists": true,
+    "source_sha256": "89c89c1ce83d69e26ad9679f65f43fbc98f573f6e4779a0f5faddec344f3a4fd"
+  },
+  "native_resize": {
+    "checks": 28,
+    "failures": 0,
+    "measurements": [
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 437.0,
+        "canvas_before": 341.0,
+        "window": "(3440, 1440)"
+      },
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 437.0,
+        "canvas_before": 341.0,
+        "window": "(1400, 900)"
+      },
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 464.0,
+        "canvas_before": 368.0,
+        "window": "(1200, 760)"
+      }
+    ],
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-resize\\1794289491343544900",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_resize_smoke_2e54f446dfe14af99f3ef7c0b0199460.json",
+    "functional_unchanged": true
+  },
+  "workspace_controls": {
+    "checks": 48,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-controls\\1794289530695674900",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_controls_smoke_2c8c125a1f504ca787a0eb13ba82df36.json",
+    "functional_unchanged": true
+  },
+  "receipts": {
+    "native_resize": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_8420377a0b7e4217a32d092cf3ae3a36",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 21044,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 15.441
+    },
+    "workspace_controls": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_6d65813775a54a88980f75e4363a39d9",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 22108,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.697
+    }
+  },
+  "intermediate_failures": [
+    "First reset default -96 clamped at bottom minimum; actual downward-drag tests failed 3/24. Fixed default to -234, retaining real drag thresholds.",
+    "First scroll wrapper left Timeline content narrow. Visual inspection caught per-button wrapping; content now fills width and regression asserts it.",
+    "Historical compact bounds asserted entire unscrollable Timeline content fits. New scroll body intentionally overflows internally; check now asserts dock in bounds AND complete interactive ruler can be scrolled into view at1120x720 and125percent. Original failed logs retained."
+  ],
+  "review_update": {
+    "format": "has_owner_review_layout_update_1",
+    "source_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Studio\\src\\workspace_layout.gd",
+    "source_sha256": "89c89c1ce83d69e26ad9679f65f43fbc98f573f6e4779a0f5faddec344f3a4fd",
+    "prior_source_sha256": "974a543823a44ca72af0853bd79f72f0dca02bb28d845eeac5bd37a119ba821d",
+    "project_hashes_before_and_after": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Avatar.has": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Flatgrass.has": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Street.has": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5"
+    },
+    "changed_only_source_file": true,
+    "running_review_not_closed": true,
+    "profile_and_recovery_not_changed": true,
+    "restart_required": true,
+    "time_ns": 1794289561012605000
+  },
+  "owner_recheck": "Pending. Save/close/reopen requested; current review process and private profile/recovery were not controlled.",
+  "aggregate_interruption": {
+    "reason": "Owner screenshot exposed actionable layout defect. Deliberately stopped only owned automated physics child before editing source; no aggregate pass claimed.",
+    "receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_aeeadb7ecf5544d7a39bc66b25078111",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 4294967295,
+      "child_pid": 21512,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 20.19
+    }
+  },
+  "acceptance_closure_unchanged": "55/62; actual native appearance and comfort observation still pending."
+}

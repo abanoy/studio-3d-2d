@@ -130,6 +130,8 @@ def main():
     workspace_log = run([sys.executable, '-u', 'tests/verify_workspace_controls.py'], timeout=310)
     (output / 'workspace-controls-suite.log').write_text(workspace_log, encoding='utf-8')
     results['workspace_controls'] = json.loads((output / 'workspace-controls-verification.json').read_text(encoding='utf-8'))
+    run([sys.executable, '-u', 'tests/verify_workspace_resize.py'], timeout=310)
+    results['workspace_resize'] = json.loads((output / 'workspace-resize-verification.json').read_text(encoding='utf-8'))
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')
 
     shortcuts_log = run([sys.executable, '-u', 'tests/verify_shortcuts.py'], timeout=500)

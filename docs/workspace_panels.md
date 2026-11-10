@@ -150,3 +150,10 @@ channel checks pass, plus65Local/World recording and74asset-package regressions.
 These include real movies, audio, Undo and source-offline packed replay where
 applicable. Native/physical-device/Windows acceptance remains separate. See
 [the evidence receipt](benchmarks/responsive_workspace_2026-11-07.json).
+
+
+## Scene and Timeline height
+
+Drag the horizontal divider immediately above the Timeline title downward to enlarge the scene, or upward for more tracks. The Timeline body scrolls when compressed; its controls remain live and retain their full available width. A new/reset workspace starts with a234logical-pixel Timeline. The title menu's Reset workspace also restores sensible Properties width. Normal project launches save the layout between sessions.
+
+The owner screenshot exposed the previous367pixel Timeline minimum. Real mouse-drag regressions now cover the native Avatar at3440x1440 and two smaller sizes, plus125percent interface scale. Exact pose/camera/Undo state and render pixels remain unchanged. See [verification](benchmarks/scene_workspace_resize_2026-11-10.json).

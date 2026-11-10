@@ -2,6 +2,7 @@ extends Node
 # Presentation only: move the same controls, never rebuild scene/editor state.
 const FORMAT := "studio_workspace_1"
 const DEFAULT := {"left":"world","right":"properties","bottom":"timeline"}
+const DEFAULT_VERTICAL_OFFSET := -234
 var app
 var vertical: VSplitContainer
 var horizontal: HSplitContainer
@@ -20,7 +21,9 @@ var loading := false
 func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarchy: Control, inspector: Control, transport: Control, ruler: Control, tracks: Control) -> void:
 	app=owner_app
 	path=ProjectSettings.globalize_path("res://output/workspace-layout.json")
-	if "--script" in OS.get_cmdline_args() or OS.get_cmdline_user_args().size()>0:path=ProjectSettings.globalize_path("res://output/test-preferences/workspace-%d.json" % OS.get_process_id())
+	var args:=OS.get_cmdline_user_args()
+	var opening_project:=args.size()==2 and args[0]=="--open-project"
+	if "--script" in OS.get_cmdline_args() or not args.is_empty() and not opening_project:path=ProjectSettings.globalize_path("res://output/test-preferences/workspace-%d.json" % OS.get_process_id())
 	vertical=VSplitContainer.new();vertical.name="WorkspaceVertical";vertical.size_flags_vertical=Control.SIZE_EXPAND_FILL;column.add_child(vertical);column.move_child(vertical,0)
 	horizontal=HSplitContainer.new();horizontal.size_flags_vertical=Control.SIZE_EXPAND_FILL;vertical.add_child(horizontal)
 	right_split=HSplitContainer.new();right_split.size_flags_horizontal=Control.SIZE_EXPAND_FILL;horizontal.add_child(right_split)
@@ -37,12 +40,17 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 	wrap_panel("world","World",hierarchy,"left")
 	wrap_panel("properties","Properties",inspector,"right")
 	wrap_panel("timeline","Timeline",time_box,"bottom")
+	tracks.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	vertical.get_drag_area_control().tooltip_text="Drag up or down to resize the scene and timeline."
 	# The hierarchy's former caption is replaced by its draggable panel title.
 	if hierarchy.get_child_count()>0 and hierarchy.get_child(0) is Label:hierarchy.get_child(0).hide()
 	old_middle.queue_free()
 	for split in [vertical,horizontal,right_split]:split.dragged.connect(func(_offset):save_later())
 	timer=Timer.new();timer.one_shot=true;timer.wait_time=.35;timer.timeout.connect(save);add_child(timer)
-	load_layout()
+	if not load_layout():call_deferred("apply_default_split")
+
+func apply_default_split() -> void:
+	vertical.split_offset=DEFAULT_VERTICAL_OFFSET
 
 func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 	var panel:=VBoxContainer.new();panel.name="WorkspacePanel"+id.capitalize();panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL;panel.size_flags_vertical=Control.SIZE_EXPAND_FILL
@@ -58,16 +66,17 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 		else:reset())
 	panels[id]=panel;slots[slot].add_child(panel)
 	var body: Control=panel
-	if id=="world":
+	if id=="world" or id=="timeline":
 		# Hierarchy actions must not force the entire camera/timeline offscreen.
 		# Preserve the same live controls; the dock body scrolls when space is tight.
-		var scroll:=ScrollContainer.new();scroll.name="WorldContentScroll"
+		var scroll:=ScrollContainer.new();scroll.name="WorldContentScroll" if id=="world" else "TimelineContentScroll"
 		scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-		scroll.custom_minimum_size=Vector2(156,120);scroll.follow_focus=true
+		scroll.custom_minimum_size=Vector2(156,120) if id=="world" else Vector2(0,96);scroll.follow_focus=true
 		scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 		panel.add_child(scroll);body=scroll
 	if content.get_parent():content.reparent(body,false)
 	else:body.add_child(content)
+	if id=="timeline":content.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
 
 func header_input(id: String,event: InputEvent) -> void:
@@ -132,6 +141,7 @@ func reset() -> void:
 	for slot in locations:
 		if panels[locations[slot]].get_parent()!=slots[slot]:panels[locations[slot]].reparent(slots[slot],false)
 	for split in [vertical,horizontal,right_split]:split.split_offset=0
+	vertical.split_offset=DEFAULT_VERTICAL_OFFSET
 	loading=false;save_later()
 
 func state() -> Dictionary:
@@ -147,21 +157,22 @@ func save() -> void:
 	if not file:return
 	file.store_string(JSON.stringify(state()));file.close();DirAccess.rename_absolute(path+".tmp",path)
 
-func load_layout() -> void:
+func load_layout() -> bool:
 	var file:=FileAccess.open(path,FileAccess.READ)
-	if not file or file.get_length()>16384:return
+	if not file or file.get_length()>16384:return false
 	var value=JSON.parse_string(file.get_as_text())
-	if not value is Dictionary or value.get("format")!=FORMAT or not value.get("slots") is Dictionary or value.slots.size()!=3 or not value.get("split") is Array or value.split.size()!=3:return
+	if not value is Dictionary or value.get("format")!=FORMAT or not value.get("slots") is Dictionary or value.slots.size()!=3 or not value.get("split") is Array or value.split.size()!=3:return false
 	var ids:=[]
 	for slot in DEFAULT:
-		if not value.slots.get(slot) is String or not panels.has(value.slots[slot]) or value.slots[slot] in ids:return
+		if not value.slots.get(slot) is String or not panels.has(value.slots[slot]) or value.slots[slot] in ids:return false
 		ids.append(value.slots[slot])
 	for offset in value.split:
-		if not (offset is int or offset is float) or not is_finite(float(offset)) or offset!=floor(offset) or absf(offset)>4000:return
+		if not (offset is int or offset is float) or not is_finite(float(offset)) or offset!=floor(offset) or absf(offset)>4000:return false
 	loading=true;locations=value.slots.duplicate()
 	for slot in locations:
 		if panels[locations[slot]].get_parent()!=slots[slot]:panels[locations[slot]].reparent(slots[slot],false)
 	vertical.split_offset=int(value.split[0]);horizontal.split_offset=int(value.split[1]);right_split.split_offset=int(value.split[2]);loading=false
+	return true
 
 func _notification(what: int) -> void:
 	if what==NOTIFICATION_WM_WINDOW_FOCUS_OUT:drag_id="";dragged=false

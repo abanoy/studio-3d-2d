@@ -115,8 +115,9 @@ func run() -> void:
 	ws.timer.stop();ws.load_layout();await settled();check(ws.locations==saved.slots,"saved docking preferences reload without a project-format change")
 	ws.reset();await settled();app.get_window().size=Vector2i(1200,760);await settled()
 	var visible: Rect2=root.get_visible_rect();var screen: Image=root.get_texture().get_image()
+	var timeline_scroll: ScrollContainer=ws.panels.timeline.get_node("TimelineContentScroll")
 	print("WORKSPACE_BOUNDS ",JSON.stringify({"window":str(app.get_window().size),"visible":str(visible),"canvas":str(app.canvas.get_global_rect()),"timeline":str(app.timeline.get_parent().get_global_rect()),"footer":str(app.status.get_parent().get_global_rect())}))
-	check(app.canvas.get_global_rect().end.x<=visible.end.x and app.timeline.get_parent().get_global_rect().end.y<=visible.end.y and screen.get_width()<=app.get_window().size.x and screen.get_height()<=app.get_window().size.y,"default resizable layout remains accessible in logical and physical bounds at1200x760")
+	check(app.canvas.get_global_rect().end.x<=visible.end.x and timeline_scroll.get_global_rect().end.y<=visible.end.y and screen.get_width()<=app.get_window().size.x and screen.get_height()<=app.get_window().size.y,"default resizable layout remains accessible in logical and physical bounds at1200x760")
 	app.mode.select(0);app.change_mode(0);app.color.color=Color.MAGENTA;await settled()
 	var mapped_rect: Rect2 = app.canvas.image_rect()
 	for pixel in [Vector2i(960,540),Vector2i(480,810),Vector2i(1440,270)]:
@@ -131,7 +132,9 @@ func run() -> void:
 	for window_case in [{"size":Vector2i(1120,720),"scale":1.},{"size":Vector2i(1400,900),"scale":1.25}]:
 		app.get_window().content_scale_factor=window_case.scale;app.get_window().size=window_case.size;await settled()
 		var area: Rect2=root.get_visible_rect();var footer: Rect2=app.status.get_parent().get_global_rect()
-		check(app.canvas.get_global_rect().end.x<=area.end.x and app.timeline.get_parent().get_global_rect().end.y<=area.end.y and footer.end.y<=area.end.y and footer.end.x<=area.end.x,"same-aspect resize and125percent interface keep camera timeline and footer reachable: "+str(window_case))
+		check(app.canvas.get_global_rect().end.x<=area.end.x and timeline_scroll.get_global_rect().end.y<=area.end.y and footer.end.y<=area.end.y and footer.end.x<=area.end.x,"same-aspect resize and125percent interface keep camera timeline and footer reachable: "+str(window_case))
+		timeline_scroll.ensure_control_visible(app.timeline.get_parent());await settled()
+		check(timeline_scroll.get_global_rect().encloses(app.timeline.get_parent().get_global_rect()),"compressed Timeline scrolls its complete interactive ruler into view")
 		var scroll: ScrollContainer=ws.panels.world.get_node("WorldContentScroll");var asset_actions: Array=app.find_children("*","Button",true,false).filter(func(node):return node.text=="Save asset .has...")
 		check(asset_actions.size()==1 and scroll.is_visible_in_tree(),"compact World retains asset action inside a scrollable dock")
 		if asset_actions.size()==1:
