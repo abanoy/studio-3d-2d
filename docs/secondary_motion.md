@@ -127,8 +127,9 @@ no third-party implementation copied, installed or redistributed.
 
 Add and aim a fan first, then select a model with supported declared chains and
 enable **Hair & clothes** in Simple. Its body stays posed. Enable **Physics** too for a ragdoll with secondary
-motion; either activation order works. A missing/unsupported descriptor disables
-Hair & clothes with an explanation. Import activation remains manual.
+motion; either activation order works. A malformed/unsupported descriptor disables
+Hair & clothes with an explanation. A skinned model without declared chains
+offers reviewed helper setup instead. Import activation remains manual.
 
 **Add fan** creates an original selectable standard model. Move and rotate it with
 ordinary root handles; its blue arrow points along the blowing direction (+Z).
@@ -196,6 +197,30 @@ a weighted attachment. Simple uses body-part names; Advanced exposes original
 names and editable joint positions. Cancel keeps the original. **Add joints to
 this part** creates a new immutable standard GLB revision as one Undo step.
 Use Hair & clothes and an ordinary fan, then Local/World Record to retain motion.
+
+**Hair & clothes** also opens this review when a skinned model has no declared
+secondary chains. The toggle stays off until joints have been reviewed and added;
+turn it on again to start simulation. Existing declared chains use the ordinary
+simulation path. Source material labels identify the parts in the list. Opening
+from Hair & clothes favors a usable hair/ribbon/clothing-labelled initial preview;
+this hint does not classify surfaces or apply weights automatically. Every usable
+region remains selectable and Apply is explicit.
+
+For the supplied Bikini Reimu player model (`reimu_hakurei_bikini.mdl`), select
+the model, turn on Hair & clothes, and review **Hair Acce** attached to the left
+hair ribbon. Add joints, then turn Hair & clothes on again. Add/aim an ordinary
+fan and press Record to keep the motion. The tested region has244vertices and
+13pinned seam vertices; one Apply adds4weighted joints to the77-bone source.
+Other connected hair surfaces lack a common weighted attachment and need manual
+patch/attachment refinement. This is a reviewed part setup, not full automatic
+hair/cloth rigging. The original GMA and converted source are preserved.
+
+`tests/verify_reimu_helpers.py --prepared-source <scene.glb>` repeats the actual
+native setup, Cancel, Undo/Redo, fan-off/on, Local Record, packed Save/cold Open
+and24-frame1080p24H264 export. Keep the conversion's `parameters.json` sibling.
+On Linux add `--isolated-display :N` for a provisioned private display; Windows
+uses the existing hidden desktop launcher. Private models are not in Git.
+See `docs/benchmarks/reimu_missing_helpers_2026-11-10.json` for scoped results.
 
 The longest local extent and nearest-anchor cross-section estimate the attachment
 edge. All vertices within a3percent cross-section band seed geodesic distances;

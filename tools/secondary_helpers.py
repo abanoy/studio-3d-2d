@@ -392,7 +392,12 @@ def region(glb, node_index, primitive_index, component_index, anchor=None, conte
             nearby = True; break
     extents = sorted((bounds[1][k] - bounds[0][k] for k in range(3)), reverse=True)
     boundary = sum(1 for (a, b), count in edges.items() if count == 1 and a in distances and b in distances)
+    material_name = ''
+    if 'material' in primitive:
+        name = glb.ref('materials', primitive['material']).get('name', '')
+        if isinstance(name, str): material_name = name[:128]
     report = {'node': node_index, 'primitive': primitive_index, 'component': component_index,
+              'material_name': material_name,
               'vertices': len(selected), 'anchor_node': skin['joints'][joint], 'anchor_name': str(glb.doc['nodes'][skin['joints'][joint]].get('name', ''))[:256],
               'anchor_min_weight': coverage, 'length_in_anchor_units': length, 'bounds_in_anchor': bounds,
               'length_relative_to_rig': relative_length,

@@ -24,10 +24,15 @@ func pixels(a: Image,b: Image) -> Dictionary:
 func wait_review(editor) -> void:
 	while editor.pid>0:await process_frame
 	await settled()
+func worker_running(pid: int) -> bool:
+	# OS.kill reaps Unix children. Asking Godot to wait on that PID again emits
+	# ECHILD even when cancellation succeeded; /proc checks actual existence.
+	if OS.get_name()=="Linux":return FileAccess.file_exists("/proc/%d/stat"%pid)
+	return OS.is_process_running(pid)
 func review(app,folder: String) -> bool:
 	var helper=app.physics_editor.helper_editor;var actor: RefCounted=app.renderer.active_model();var before: Dictionary=actor.data.duplicate(true);var history: int=app.history.size()
 	helper.button.pressed.emit();var worker: int=helper.pid;helper.close();await settled()
-	check(worker>0 and not OS.is_process_running(worker) and actor.data==before and app.history.size()==history,"Cancel stops the owned inspection worker without editing the model")
+	check(worker>0 and not worker_running(worker) and actor.data==before and app.history.size()==history,"Cancel stops the owned inspection worker without editing the model")
 	helper.button.pressed.emit();await wait_review(helper)
 	check(not helper.preview.is_empty() and helper.parts.item_count==3 and not helper.apply_button.disabled,"normal loose-part action offers connected regions and a usable preview")
 	if helper.preview.is_empty():return false
@@ -55,7 +60,7 @@ func lifecycle(app,original: String) -> void:
 	helper.apply_button.pressed.emit();actor.data.metadata["owner_edit"]="keep this edit";app.changed();await wait_review(helper)
 	check(not is_instance_valid(helper.window) and actor.data.sha256==sha and actor.data.metadata.owner_edit=="keep this edit" and app.history.size()==history,"edits made during preparation cancel installation without losing current work")
 	helper.button.pressed.emit();var worker: int=helper.pid;app.new_project();await settled()
-	check(worker>0 and not OS.is_process_running(worker) and not is_instance_valid(helper.window) and app.renderer.world_runtime.order.is_empty() and app.canvas.review_lines.is_empty(),"New cancels an owned helper worker and clears its preview safely")
+	check(worker>0 and not worker_running(worker) and not is_instance_valid(helper.window) and app.renderer.world_runtime.order.is_empty() and app.canvas.review_lines.is_empty(),"New cancels an owned helper worker and clears its preview safely")
 func mixed_weights(app,source: String,derived: String) -> void:
 	app.new_project();app.append_object(Model.definition(source),"model");var id: String=app.last_import_id
 	app.renderer.camera.position=Vector3(0,1.2,4);app.renderer.camera.look_at(Vector3(0,1.1,0));app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,48)]

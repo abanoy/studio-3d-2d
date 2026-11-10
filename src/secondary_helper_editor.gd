@@ -36,6 +36,7 @@ var projected_vertices: Array=[]
 var box_start:=Vector2.ZERO
 var box_end:=Vector2.ZERO
 var box_dragging:=false
+var prefer_loose:=false
 
 func setup(parent: Node) -> void:
 	button=app.icon_button(parent,"Set up loose parts","scene",open,"Review a connected hair/clothing region and attachment, then add weighted joints to a new HAS asset. Existing authored springs take priority.")
@@ -49,11 +50,11 @@ func sync() -> void:
 	var current: RefCounted=app.renderer.active_model()
 	button.disabled=app.exporting or pid>0 or is_instance_valid(window) or current==null or current.order.is_empty() or current.data.get("kind","model")!="model" or not current.root.get_meta("has_secondary_rig",{}).get("error","").is_empty()
 
-func open() -> void:
+func open(prefer_hair_clothing:=false) -> void:
 	if app.exporting or app.source_import.pid>0 or app.has_project.pid>0:return
 	var current: RefCounted=app.renderer.active_model()
 	if not current:return
-	close();app.stop();app.pose_editor.finish_drag();app.finish_stroke()
+	close();prefer_loose=prefer_hair_clothing;app.stop();app.pose_editor.finish_drag();app.finish_stroke()
 	if not app.physics_editor.freeze_all():return
 	target_id=current.data.id;source=ProjectSettings.globalize_path(current.data.source);revision=app.recovery_revision
 	before_world=app.current_world().duplicate(true)
@@ -138,17 +139,18 @@ func completed(value: Dictionary) -> void:
 		assessment=value
 		for i in range(value.regions.size()):
 			var row: Dictionary=value.regions[i];var name:=Labels.standard(row.anchor_name,Labels.role(actor().data,row.anchor_name))+" area "+str(i+1)
+			if not str(row.get("material_name","")).is_empty():name=str(row.material_name).left(64).capitalize()+" · "+name
 			parts.add_item(name+(" (already set up)" if row.already_rigged else " (suggested)" if row.suggested else " (review)"))
 			parts.set_item_disabled(i,row.already_rigged and not patch_toggle.button_pressed)
 			parts.set_item_tooltip(i,str(int(row.vertices))+" vertices; attachment: "+str(row.anchor_name) if app.advanced_mode else "Preview this connected part before adding joints.")
 		if value.regions.is_empty():info.text="No usable skinned regions found. Unskinned meshes and unsupported data still need a separate rig/region editor.";return
-		var selected:=-1
+		var selected:=-1;var priority:=-1
 		for i in range(value.regions.size()):
 			if value.regions[i].already_rigged and not patch_toggle.button_pressed:continue
-			if selected<0:selected=i
-			if value.regions[i].suggested:selected=i;break
+			var score:=region_priority(value.regions[i])
+			if score>priority:selected=i;priority=score
 		if selected<0:info.text="These connected surfaces already use spring joints. Their existing setup is kept.";return
-		parts.select(selected);select_part(selected)
+		parts.select(selected);parts.ensure_current_is_visible();select_part(selected)
 	elif stage=="preview":
 		preview=value;request["points_in_anchor"]=value.points_in_anchor.duplicate(true)
 		if request.has("vertex_mask"):request.vertex_mask=Array(value.region.vertex_mask).map(func(v):return int(v))
@@ -167,6 +169,17 @@ func completed(value: Dictionary) -> void:
 		if not assessment.get("skipped",[]).is_empty():info.text+=" Some sections could not be assessed."
 		if not value.can_apply:info.text="This patch includes existing motion joints. Refine it to an unrigged area." if value.region.already_rigged else "Choose an available attachment in Attach to, or refine the patch."
 	elif stage=="build":install(value)
+
+func region_priority(row: Dictionary) -> int:
+	var weighted: bool=float(row.get("anchor_min_weight",0))>=0.01
+	var result: int=(2 if row.suggested else 0)+(1 if weighted else 0)
+	# Source labels only choose the initial preview; every region stays selectable
+	# and generation still requires the artist's explicit reviewed Apply.
+	if prefer_loose and weighted:
+		var hint: String=(str(row.get("material_name",""))+" "+str(row.anchor_name)).to_lower()
+		for word in ["hair","ribbon","skirt","cloth","cape","sleeve"]:
+			if word in hint:return result+4
+	return result
 
 func refresh_anchor_labels() -> void:
 	last_advanced=app.advanced_mode
@@ -304,7 +317,7 @@ func install(value: Dictionary) -> void:
 	clear_preview();applying=true;error=app.restore_world(after);applying=false
 	if not error.is_empty():info.text="The new rig could not preserve existing bindings. Original kept. "+error;return
 	app.has_project.origins[managed.replace("\\","/")]=str(value.glb);app.push_history({"type":"world","before":before,"after":after});app.changed();close()
-	app.message("Added weighted joints to the reviewed part. The original is kept; Undo restores it. Hair & clothes can now use the new chain.")
+	app.message("Added weighted joints to the reviewed part. The original is kept; Undo restores it. Turn on Hair & clothes to simulate the new chain.")
 
 func clear_preview() -> void:
 	if is_instance_valid(app.canvas):app.canvas.review_lines=PackedVector2Array();app.canvas.review_chain=PackedVector2Array();app.canvas.queue_redraw()
@@ -315,6 +328,6 @@ func close() -> void:
 	if pid>0 and OS.is_process_running(pid):OS.kill(pid)
 	pid=-1;clear_preview()
 	if is_instance_valid(window):window.hide();window.queue_free()
-	window=null;preview={};assessment={};request={};fields.clear();target_id=""
+	window=null;preview={};assessment={};request={};fields.clear();target_id="";prefer_loose=false
 
 func _exit_tree() -> void:close()

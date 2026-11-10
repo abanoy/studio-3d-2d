@@ -181,3 +181,8 @@ Original owner inputs, `C:\a\Programming\HAS`, Downloads archives, `C:\a\dump`, 
 Earlier verified cleanup removed 17 superseded test folders (123,881,173 bytes); its exact record is committed. Do not run broad cleanup/reset on shutdown. Retain private deliverables until a safe backup/owner decision exists. At eventual assignment end: commit/push evidence, verify remote, then remove only finished session-owned disposable paths and the checkout when no pending/private unbacked deliverable remains.
 
 For each next completed increment: update source/tests/compact findings, preserve stable IDs and optional/OPEN distinctions, append history, push without force, verify remote, then clean exact finished disposable outputs. Do not mark the goal complete merely because this shutdown handoff is saved.
+
+
+## Later cloud increment: Bikini Reimu missing helpers
+
+The owner subsequently requested the missing-rig issue specifically. Hair & clothes now opens the existing reviewed weighted-helper setup for chainless skinned models, with actual hair-ribbon generation/fan/Record/cold-HAS/movie evidence. Fetch the latest main before resuming Windows work. See docs/benchmarks/reimu_missing_helpers_2026-11-10.json and docs/secondary_motion.md. This does not close remaining human/device or full-aggregate gates, nor imply full automatic hair/cloth rigging.

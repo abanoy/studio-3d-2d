@@ -122,10 +122,13 @@ func sync() -> void:
 	toggle.disabled=app.exporting or rig==null or rig.data.get("kind","model")!="model"
 	toggle.set_pressed_no_signal(rig!=null and body_active(rig.data.id))
 	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{}) if rig else {}
-	hair_toggle.disabled=app.exporting or rig==null or rig.data.get("kind","model")!="model" or definition.get("chains",[]).is_empty() or pending.has(rig.data.id)
+	var missing_chains: bool=definition.get("chains",[]).is_empty()
+	var can_setup: bool=rig!=null and rig.data.get("kind","model")=="model" and not rig.order.is_empty() and helper_editor!=null and definition.get("error","").is_empty()
+	var reviewing: bool=helper_editor!=null and is_instance_valid(helper_editor.window)
+	hair_toggle.disabled=app.exporting or rig==null or rig.data.get("kind","model")!="model" or not definition.get("error","").is_empty() or missing_chains and (not can_setup or reviewing) or pending.has(rig.data.id)
 	hair_toggle.set_pressed_no_signal(rig!=null and (pending.has(rig.data.id) or active(rig.data.id) and simulations[rig.data.id] is Secondary))
 	hair_toggle.tooltip_text="Simulate existing hair/clothing joints while the body stays posed, or together with Physics. Off freezes the current whole pose. Add a fan and press Record to keep motion."
-	if definition.get("chains",[]).is_empty():hair_toggle.tooltip_text=definition.get("error","") if not definition.get("error","").is_empty() else "This model has no declared secondary chains. Missing-rig helper generation is not implemented yet."
+	if missing_chains:hair_toggle.tooltip_text=definition.get("error","") if not definition.get("error","").is_empty() else "This model needs hair/clothing joints. Turn on to review a loose part and add weighted helpers; the original is kept." if can_setup else "Select a skinned model to review and add hair/clothing joints."
 	if fan_editor:fan_editor.sync()
 	if recording:recording.sync()
 
@@ -179,6 +182,13 @@ func enable_hair(actor: RefCounted) -> void:
 	if pending.has(actor.data.id) or active(actor.data.id) and simulations[actor.data.id] is Secondary:return
 	if recording.active:sync();app.message("Stop recording before enabling another simulation.");return
 	if actor.data.get("kind","model")!="model" or not actor.root.is_visible_in_tree():sync();app.message("Select a visible model with declared hair/clothing joints.");return
+	var definition: Dictionary=actor.root.get_meta("has_secondary_rig",{})
+	if definition.get("chains",[]).is_empty():
+		hair_toggle.set_pressed_no_signal(false)
+		if definition.get("error","").is_empty() and not actor.order.is_empty() and helper_editor:
+			helper_editor.open(true)
+		else:app.message(definition.get("error","") if not definition.get("error","").is_empty() else "Select a skinned model to set up loose parts.")
+		sync();return
 	for simulation in simulations.values():
 		if simulation.rig!=actor and (simulation.rig.root.is_ancestor_of(actor.root) or actor.root.is_ancestor_of(simulation.rig.root)):
 			sync();app.message("Freeze the live parent or child before enabling this simulation.");return
