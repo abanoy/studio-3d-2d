@@ -29,6 +29,8 @@ func run() -> void:
 	else:
 		var legacy:={"format":"studio_workspace_1","slots":{"left":"world","right":"properties","bottom":"timeline"},"split":[-367,0,-120]}
 		FileAccess.open(ws.path,FileAccess.WRITE).store_string(JSON.stringify(legacy));check(ws.load_layout() and ws.groups.left==["world"] and ws.groups.top.is_empty(),"owner's previous three-dock layout migrates to the tab-capable format")
+		var tabbed:={"format":"studio_workspace_2","slots":{"left":"world","right":"","bottom":"","top":"timeline"},"groups":{"left":["world"],"right":[],"bottom":[],"top":["timeline","properties"]},"split":[-234,0,0,180],"selected":{"top":"Properties"},"floating":{"world":{"position":[120,160],"size":[420,520]}}}
+		FileAccess.open(ws.path,FileAccess.WRITE).store_string(JSON.stringify(tabbed));check(ws.load_layout() and ws.floating.has("world") and ws.tabs.top.get_child_count()==2 and ws.tabs.top.get_current_tab_control()==ws.panels.properties,"previous v2 tab group, selection and native floating window migrate to nested layout v3")
 		var unchanged: Dictionary=ws.state();var invalid:=unchanged.duplicate(true);invalid.groups.left=["world","world"]
 		FileAccess.open(ws.path,FileAccess.WRITE).store_string(JSON.stringify(invalid));check(not ws.load_layout() and ws.state()==unchanged,"invalid duplicated panel layout leaves live controls unchanged")
 		var placement: Dictionary=app.import_actions.placement();placement.physics_on_import=false

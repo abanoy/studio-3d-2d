@@ -1,6 +1,6 @@
 extends Node
 # Presentation only: every dock/window owns the same live editor controls.
-const FORMAT := "studio_workspace_2"
+const FORMAT := "studio_workspace_3"
 const DEFAULT := {"left":"world","right":"properties","bottom":"timeline","top":""}
 const DEFAULT_VERTICAL_OFFSET := -234
 const EDGES := ["left","right","bottom","top"]
@@ -24,6 +24,7 @@ var loading := false
 var preview: Panel
 var preview_label: Label
 var last_window_geometry := {}
+var dock_tree: RefCounted
 
 func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarchy: Control, inspector: Control, transport: Control, ruler: Control, tracks: Control) -> void:
 	app=owner_app
@@ -36,6 +37,7 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 	horizontal=HSplitContainer.new();horizontal.size_flags_vertical=Control.SIZE_EXPAND_FILL;top_split.add_child(horizontal)
 	right_split=HSplitContainer.new();right_split.size_flags_horizontal=Control.SIZE_EXPAND_FILL;horizontal.add_child(right_split)
 	var center: Control=old_middle.get_child(1);center.reparent(right_split,false)
+	dock_tree=preload("res://src/dock_tree.gd").new(self)
 	for key in EDGES:
 		var slot:=VBoxContainer.new();slot.name="DockSlot"+key.capitalize();slot.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		slots[key]=slot
@@ -43,19 +45,7 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 		elif key=="right":right_split.add_child(slot);slot.size_flags_horizontal=Control.SIZE_FILL
 		elif key=="top":top_split.add_child(slot);top_split.move_child(slot,0)
 		else:vertical.add_child(slot)
-		var book:=TabContainer.new();book.name="DockTabs";book.size_flags_horizontal=Control.SIZE_EXPAND_FILL;book.size_flags_vertical=Control.SIZE_EXPAND_FILL;book.all_tabs_in_front=true;book.use_hidden_tabs_for_min_size=true;slot.add_child(book);tabs[key]=book
-		book.add_theme_stylebox_override("panel",StyleBoxEmpty.new())
-		for styled in [book,book.get_tab_bar()]:
-			for state_name in ["tab_selected","tab_unselected","tab_hovered","tab_disabled"]:styled.add_theme_stylebox_override(state_name,app.theme.get_stylebox("pressed" if state_name=="tab_selected" else "normal","Button"))
-			for color_name in ["font_selected_color","font_unselected_color","font_hovered_color"]:styled.add_theme_color_override(color_name,Color("163854"))
-		book.tab_changed.connect(func(_index):save_later())
-		book.get_tab_bar().gui_input.connect(func(event):
-			if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed:
-				var index: int=book.get_tab_bar().get_tab_idx_at_point(event.position)
-				if index>=0:
-					var panel: Control=book.get_tab_control(index)
-					for id in panels:
-						if panels[id]==panel:header_input(id,event);break)
+		dock_tree.seed(key,groups[key])
 	var time_box:=VBoxContainer.new()
 	for control in [transport,ruler,tracks]:control.reparent(time_box,false)
 	wrap_panel("world","World",hierarchy,"left");wrap_panel("properties","Properties",inspector,"right");wrap_panel("timeline","Timeline",time_box,"bottom")
@@ -80,7 +70,7 @@ func apply_default_split() -> void:
 func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 	var panel:=VBoxContainer.new();panel.name=title;panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL;panel.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	var header:=HBoxContainer.new();header.add_theme_constant_override("separation",2);panel.add_child(header)
-	var handle:=Button.new();handle.text="⋮⋮  "+title;handle.alignment=HORIZONTAL_ALIGNMENT_LEFT;handle.size_flags_horizontal=Control.SIZE_EXPAND_FILL;handle.mouse_default_cursor_shape=Control.CURSOR_DRAG;handle.tooltip_text="Drag to a highlighted edge to dock, onto another panel to make tabs, or into open space to detach a window. Esc cancels.";header.add_child(handle)
+	var handle:=Button.new();handle.text="⋮⋮  "+title;handle.alignment=HORIZONTAL_ALIGNMENT_LEFT;handle.size_flags_horizontal=Control.SIZE_EXPAND_FILL;handle.mouse_default_cursor_shape=Control.CURSOR_DRAG;handle.tooltip_text="Drag near a panel edge to split beside it, into its center for tabs, or into open space for a window. Esc cancels.";header.add_child(handle)
 	handle.gui_input.connect(func(event):header_input(id,event))
 	var menu:=MenuButton.new();menu.text="▾";menu.tooltip_text="Dock, tab, detach or reset this panel";header.add_child(menu)
 	var popup:=menu.get_popup()
@@ -101,6 +91,7 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 		panel.add_child(scroll);body=scroll
 	if content.get_parent():content.reparent(body,false)
 	else:body.add_child(content)
+	if id=="properties":content.custom_minimum_size.y=maxf(content.custom_minimum_size.y,96)
 	content.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
 
@@ -129,21 +120,30 @@ func cancel_drag() -> void:
 	drag_id="";dragged=false
 	if is_instance_valid(preview):preview.hide()
 
-func target_at(point: Vector2) -> Dictionary:
+func target_at(point: Vector2,source:="") -> Dictionary:
+	var local: Dictionary=dock_tree.target_at(point,source if not source.is_empty() else drag_id)
+	if not local.is_empty():return local
 	var area:=vertical.get_global_rect()
 	if area.has_point(point):
-		var band:=36.0
+		var band:=24.0
 		if point.x<area.position.x+band:return {"kind":"dock","slot":"left"}
 		if point.x>area.end.x-band:return {"kind":"dock","slot":"right"}
 		if point.y<area.position.y+band:return {"kind":"dock","slot":"top"}
 		if point.y>area.end.y-band:return {"kind":"dock","slot":"bottom"}
-		for slot in EDGES:
-			if slots[slot].visible and slots[slot].get_global_rect().has_point(point):return {"kind":"tab","slot":slot}
 	return {"kind":"float"}
 
 func show_target(point: Vector2) -> void:
 	var target:=target_at(point);var area:=vertical.get_global_rect();var rect: Rect2
-	if target.kind=="tab":rect=slots[target.slot].get_global_rect();preview_label.text="Tab here"
+	if target.kind=="stay":preview.hide();return
+	if target.kind=="tab":rect=target.rect;preview_label.text="Tab here"
+	elif target.kind=="split":
+		rect=target.rect;preview_label.text="Split "+str(target.side)
+		if target.side in ["left","right"]:
+			rect.size.x*=.5
+			if target.side=="right":rect.position.x+=rect.size.x
+		else:
+			rect.size.y*=.5
+			if target.side=="bottom":rect.position.y+=rect.size.y
 	elif target.kind=="dock":
 		rect=area;preview_label.text="Dock "+str(target.slot)
 		if target.slot in ["left","right"]:
@@ -159,50 +159,23 @@ func show_target(point: Vector2) -> void:
 func finish_drag(point: Vector2) -> void:
 	var id:=drag_id;var moved:=dragged;cancel_drag()
 	if id.is_empty() or not moved:return
-	var target:=target_at(point)
+	var target:=target_at(point,id)
 	if target.kind=="dock":dock(id,target.slot)
-	elif target.kind=="tab":
-		var other: String=""
-		for candidate in groups[target.slot]:
-			if candidate!=id and not floating.has(candidate):other=candidate;break
-		if not other.is_empty():tab_panel(id,other)
-	else:
-		float_panel(id,Vector2i(Vector2(app.get_window().position)+point*app.get_window().content_scale_factor))
+	elif target.kind=="tab":tab_panel(id,target.other)
+	elif target.kind=="split":split_panel(id,target.other,target.side)
+	elif target.kind=="float":float_panel(id,Vector2i(Vector2(app.get_window().position)+point*app.get_window().content_scale_factor))
 
-func slot_of(id: String) -> String:
-	for key in groups:
-		if id in groups[key]:return key
-	return ""
-
-func refresh_slots() -> void:
-	for slot in EDGES:
-		locations[slot]=groups[slot][0] if not groups[slot].is_empty() else ""
-		var count: int=tabs[slot].get_child_count();tabs[slot].tabs_visible=count>1;slots[slot].visible=count>0
-
-func restore_panel(id: String,slot: String) -> void:
+func slot_of(id: String) -> String:return dock_tree.edge_for(id)
+func refresh_slots() -> void:dock_tree.refresh()
+func restore_to_book(id: String,book: TabContainer) -> void:
 	if floating.has(id):
 		panels[id].set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
-		var window: Window=floating[id];floating.erase(id);panels[id].reparent(tabs[slot],false);window.hide();window.queue_free()
-	elif panels[id].get_parent()!=tabs[slot]:
-		panels[id].set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);panels[id].reparent(tabs[slot],false)
-
-func dock(id: String,slot: String) -> void:
-	if not panels.has(id) or not slots.has(slot):return
-	var previous:=slot_of(id)
-	if previous==slot:
-		if floating.has(id):restore_panel(id,slot);refresh_slots();save_later()
-		return
-	# Explicit edge docking swaps an occupied dock's first panel; body drops make tabs.
-	var other: String=groups[slot][0] if not groups[slot].is_empty() else ""
-	groups[previous].erase(id)
-	if not other.is_empty():groups[slot].erase(other);groups[previous].append(other);restore_panel(other,previous)
-	groups[slot].append(id);restore_panel(id,slot);refresh_slots();tabs[slot].current_tab=panels[id].get_index();save_later()
-
-func tab_panel(id: String,other: String) -> void:
-	if id==other or not panels.has(id) or not panels.has(other):return
-	var slot:=slot_of(other);var previous:=slot_of(id)
-	if previous!=slot:groups[previous].erase(id);groups[slot].append(id)
-	restore_panel(other,slot);restore_panel(id,slot);refresh_slots();tabs[slot].current_tab=panels[id].get_index();save_later()
+		var window: Window=floating[id];floating.erase(id);panels[id].reparent(book,false);window.hide();window.queue_free()
+	elif panels[id].get_parent()!=book:
+		panels[id].set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);panels[id].reparent(book,false)
+func dock(id: String,slot: String) -> void:dock_tree.dock_edge(id,slot)
+func tab_panel(id: String,other: String) -> void:dock_tree.tab_into(id,other)
+func split_panel(id: String,other: String,side: String) -> void:dock_tree.split_into(id,other,side)
 
 func float_panel(id: String,point:=Vector2i(-100000,-100000)) -> void:
 	if not panels.has(id):return
@@ -223,11 +196,7 @@ func float_panel(id: String,point:=Vector2i(-100000,-100000)) -> void:
 	refresh_slots();save_later()
 
 func reset() -> void:
-	loading=true;cancel_drag()
-	groups={"left":["world"],"right":["properties"],"bottom":["timeline"],"top":[]}
-	for slot in groups:
-		for id in groups[slot]:restore_panel(id,slot)
-	refresh_slots()
+	loading=true;cancel_drag();dock_tree.replace(dock_tree.defaults())
 	for split in [vertical,horizontal,right_split]:split.split_offset=0
 	apply_default_split();loading=false;save_later()
 
@@ -238,7 +207,7 @@ func state() -> Dictionary:
 	for slot in EDGES:
 		var current: Control=tabs[slot].get_current_tab_control()
 		if current:selected[slot]=str(current.name)
-	return {"format":FORMAT,"slots":locations.duplicate(),"groups":groups.duplicate(true),"split":[vertical.split_offset,horizontal.split_offset,right_split.split_offset,top_split.split_offset],"floating":windows,"selected":selected}
+	return {"format":FORMAT,"slots":locations.duplicate(),"groups":groups.duplicate(true),"split":[vertical.split_offset,horizontal.split_offset,right_split.split_offset,top_split.split_offset],"floating":windows,"selected":selected,"trees":dock_tree.state()}
 
 func save_later() -> void:
 	if not loading and timer:timer.start()
@@ -267,7 +236,7 @@ func load_layout() -> bool:
 		for slot in ["left","right","bottom"]:value.groups[slot]=[value.slots.get(slot,"")]
 		if not value.get("split") is Array or value.split.size()!=3:return false
 		value.split.append(180);value.floating={};value.selected={}
-	elif value.get("format")!=FORMAT:return false
+	elif not value.get("format") in [FORMAT,"studio_workspace_2"]:return false
 	if not value.get("groups") is Dictionary or value.groups.size()!=4 or not value.get("split") is Array or value.split.size()!=4:return false
 	var ids:=[]
 	for slot in EDGES:
@@ -287,10 +256,14 @@ func load_layout() -> bool:
 			for number in pair:
 				if not (number is int or number is float) or not is_finite(float(number)) or number!=floor(number) or absf(number)>50000:return false
 		if value.floating[id].size[0]<1 or value.floating[id].size[1]<1:return false
-	loading=true;cancel_drag();groups=value.groups.duplicate(true)
-	for slot in EDGES:
-		for id in groups[slot]:restore_panel(id,slot)
-	refresh_slots()
+	if not value.has("trees"):
+		if value.format==FORMAT:return false
+		value.trees={}
+		for edge in EDGES:value.trees[edge]={"key":edge,"tabs":value.groups[edge],"selected":value.selected.get(edge,"")}
+	if not dock_tree.validate(value.trees):return false
+	for edge in EDGES:
+		if dock_tree.value_ids(value.trees[edge])!=value.groups[edge]:return false
+	loading=true;cancel_drag();dock_tree.replace(value.trees)
 	vertical.split_offset=int(value.split[0]);horizontal.split_offset=int(value.split[1]);right_split.split_offset=int(value.split[2]);top_split.split_offset=int(value.split[3])
 	for id in value.floating:
 		var geometry: Dictionary=value.floating[id];float_panel(id);var window: Window=floating[id];window.size=Vector2i(geometry.size[0],geometry.size[1]);var point:=Vector2i(geometry.position[0],geometry.position[1]);var reachable:=false

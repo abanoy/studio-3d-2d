@@ -103,6 +103,7 @@ func _physics_process(delta: float) -> void:
 			if not simulation is Secondary:continue
 			var error: String=simulation.advance(delta,app.frame,time,recording.active,fields,app.renderer.world_runtime)
 			if not error.is_empty():freeze(id);app.message(error);break
+	if fan_editor:fan_editor.update_status()
 	if not grabbing():return
 	if not is_instance_valid(grab_anchor):release_grab();return
 	var camera: Camera3D=app.renderer.camera

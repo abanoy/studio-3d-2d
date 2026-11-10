@@ -172,3 +172,10 @@ Fresh verification: 21 docking/cold checks, 31 native Avatar resize checks, and 
 
 
 Camera movement: hold Ctrl during WASD flight for quarter-speed precision; release it to restore normal speed, or Shift speed if Shift is still held. Ending capture returns the cursor to its first-button position. Additional buttons do not replace that position; switching apps releases capture without moving the other app's pointer. The original fly/orbit entry controls remain. [Camera verification](benchmarks/camera_input_refinement_2026-11-10.json) distinguishes restore requests tested on a private desktop from the pending physical cursor observation.
+
+
+## Nested arrangements and fan feedback
+
+Dock groups can now split recursively. Drop in a panel group's outer quarter to split left/right/above/below; drop in its center to make tabs. For two top docks, first dock Timeline above the scene, then drag World into the right quarter of Timeline. A further drop can split one of those groups vertically. Dividers resize each split. Floating a group member collapses its unused visual column; closing its window returns it to the same nested home. Layout v3 migrates prior v1/v2 files.
+
+Fan controls now show whether air reaches active hair/clothing chains. **Aim at hair** repositions/aims the selected fan toward the last selected eligible model, preserving scale and offering one Undo. **Add fan** aims at the selected model when it has declared secondary joints. Gusts use fixed simulation time and stay bounded; a missed stream or zero speed adds no flutter. Hair needs Hair & clothes enabled; body Physics is independent. No automatic floor or pose reset is added. See [native and regression evidence](benchmarks/nested_docks_fan_flutter_2026-11-10.json).
