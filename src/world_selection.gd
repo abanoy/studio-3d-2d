@@ -15,6 +15,7 @@ var outline_material: ShaderMaterial
 var menu: PopupMenu
 var pending_button := 0
 var pending_motion := Vector2.ZERO
+var pending_cursor := Vector2.ZERO
 var serial := 0
 var updating_tree := false
 var picking := 0
@@ -168,7 +169,7 @@ func _process(_delta: float) -> void:
 	if pending_button!=0:
 		for key in [KEY_W,KEY_A,KEY_S,KEY_D,KEY_Q,KEY_E]:
 			if Input.is_physical_key_pressed(key):
-				app.camera_button(pending_button,true);cancel_gesture();break
+				app.camera_button(pending_button,true,false,pending_cursor);cancel_gesture();break
 	var current: Camera3D = app.renderer.camera
 	camera.transform = current.transform; camera.fov = current.fov
 	camera.near = current.near; camera.far = current.far; camera.keep_aspect = current.keep_aspect
@@ -256,8 +257,8 @@ func input(event: InputEvent, point: Vector2) -> void:
 			if index==MOUSE_BUTTON_MIDDLE or event.ctrl_pressed or app.navigating:
 				cancel_gesture(); app.camera_button(index,true,event.ctrl_pressed)
 			elif pending_button!=0 and pending_button!=index:
-				app.camera_button(pending_button,true); app.camera_button(index,true); cancel_gesture()
-			else: pending_button=index; pending_motion=Vector2.ZERO
+				app.camera_button(pending_button,true,false,pending_cursor); app.camera_button(index,true); cancel_gesture()
+			else: pending_button=index; pending_motion=Vector2.ZERO;pending_cursor=app.get_viewport().get_mouse_position()
 		else:
 			if pending_button==index:
 				cancel_gesture(); choose_at(point,index==MOUSE_BUTTON_RIGHT)
@@ -266,7 +267,7 @@ func input(event: InputEvent, point: Vector2) -> void:
 		if pending_button!=0:
 			pending_motion+=event.relative
 			if pending_motion.length()>=4:
-				var delta := pending_motion; app.camera_button(pending_button,true); cancel_gesture(); app.camera_motion(delta)
+				var delta := pending_motion; app.camera_button(pending_button,true,false,pending_cursor); cancel_gesture(); app.camera_motion(delta)
 		elif app.navigating: app.camera_motion(event.relative)
 
 func choose_at(point: Vector2, context := false) -> void:

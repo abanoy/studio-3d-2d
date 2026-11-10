@@ -2,6 +2,7 @@ extends Control
 const DrawingLimits=preload("res://src/drawing_limits.gd")
 signal movie_export_finished(folder: String,success: bool)
 signal startup_recovery_finished(result: Dictionary)
+signal camera_cursor_return_requested(position: Vector2)
 const Timeline = preload("res://src/timeline.gd")
 const Drawing = preload("res://src/drawing.gd")
 const PixelHistory=preload("res://src/cel_pixel_history.gd")
@@ -57,6 +58,8 @@ var drawing := false
 var navigating := false
 var camera_buttons := 0
 var camera_free := false
+var camera_cursor_origin := Vector2.ZERO
+var camera_cursor_restore_pending := false
 var navigation_scheme:="fly"
 var orbit_control=preload("res://src/orbit_navigation.gd").new()
 var navigation_choices: OptionButton
@@ -1112,7 +1115,8 @@ func _process(delta: float) -> void:
 		elif next != frame: set_frame(next)
 	if navigating and not exporting and not orbit_control.active:
 		var motion := Vector3(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), float(Input.is_physical_key_pressed(KEY_E)) - float(Input.is_physical_key_pressed(KEY_Q)), float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W)))
-		renderer.camera.position += renderer.camera.basis * motion.limit_length() * delta * (8 if Input.is_key_pressed(KEY_SHIFT) else 3)
+		var fly_speed := .75 if Input.is_key_pressed(KEY_CTRL) else 8.0 if Input.is_key_pressed(KEY_SHIFT) else 3.0
+		renderer.camera.position += renderer.camera.basis * motion.limit_length() * delta * fly_speed
 	if overlay_dirty:
 		var start := Time.get_ticks_usec()
 		var sampled: Dictionary=drawing_overlay_cache.sample(layers,frame,video.width,video.height,recovery_revision)
@@ -1470,18 +1474,22 @@ func delete_key() -> void:
 	changed()
 	set_frame(frame)
 
-func camera_button(index: int, pressed: bool, ctrl := false) -> void:
+func camera_button(index: int, pressed: bool, ctrl := false, cursor_origin:=Vector2(INF,INF)) -> void:
 	if index not in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT, MOUSE_BUTTON_MIDDLE]: return
 	if index == MOUSE_BUTTON_LEFT: camera_free = pressed and ctrl
 	if pressed and ctrl and navigation_scheme=="orbit" and index in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT] and camera_buttons==0:
 		if not orbit_control.begin(renderer.camera,orbit_pivot(),"orbit" if index==MOUSE_BUTTON_LEFT else "pan"):
 			camera_free=false;message("Frame the selected object before orbiting this close.");return
+	if pressed and camera_buttons==0:
+		camera_cursor_origin=cursor_origin if cursor_origin.is_finite() else get_viewport().get_mouse_position()
+		camera_cursor_restore_pending=true
 	var flag := 1 << (index - 1)
 	if pressed: camera_buttons |= flag
 	else: camera_buttons &= ~flag
 	navigating = camera_buttons != 0
-	if not navigating:orbit_control.end()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if navigating else Input.MOUSE_MODE_VISIBLE
+	if navigating:Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	else:
+		orbit_control.end();finish_camera_capture()
 
 func camera_motion(relative: Vector2) -> void:
 	var camera: Camera3D = renderer.camera
@@ -1501,7 +1509,14 @@ func camera_motion(relative: Vector2) -> void:
 	elif camera_buttons & MOUSE_BUTTON_MASK_LEFT:
 		camera.position += (-camera.basis.x * relative.x + camera.basis.y * relative.y) * speed
 
-func release_mouse() -> void:
+func finish_camera_capture(restore_cursor:=true) -> void:
+	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+	var pending:=camera_cursor_restore_pending;camera_cursor_restore_pending=false
+	if pending and restore_cursor:
+		var point:=camera_cursor_origin.clamp(Vector2.ZERO,get_viewport_rect().size-Vector2.ONE)
+		get_viewport().warp_mouse(point);camera_cursor_return_requested.emit(point)
+
+func release_mouse(restore_cursor:=true) -> void:
 	orbit_control.end()
 	if canvas:canvas.cancel_middle()
 	if physics_editor:physics_editor.release_grab()
@@ -1509,7 +1524,7 @@ func release_mouse() -> void:
 	camera_free = false
 	camera_buttons = 0
 	navigating = false
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	finish_camera_capture(restore_cursor)
 
 func orbit_pivot() -> Vector3:
 	var node=world_selection.entity_root(world_selection.selected) if world_selection else null
@@ -2214,7 +2229,7 @@ func _notification(what: int) -> void:
 		if physics_editor and physics_editor.helper_editor:physics_editor.helper_editor.cancel_patch_drag()
 		if pose_editor: pose_editor.reveal_bones = false; pose_editor.finish_drag()
 		finish_stroke()
-		release_mouse()
+		release_mouse(false)
 		if canvas: canvas.panning = false
 		if canvas: canvas.cancel_middle()
 		if timeline: timeline.dragging = false;timeline.cancel_audio();timeline.cancel_cel();timeline.finish_move(true);timeline.queue_redraw()

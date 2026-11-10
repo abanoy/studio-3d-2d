@@ -1,0 +1,131 @@
+{
+  "format": "has_camera_input_refinement_1",
+  "date": "2026-11-10",
+  "requests": [
+    "Ctrl temporarily slows LMB/WASD navigation and release restores speed.",
+    "Return mouse to its prior location after camera movement instead of leaving it centered."
+  ],
+  "implementation": {
+    "normal_units_per_second": 3,
+    "ctrl_units_per_second": 0.75,
+    "shift_units_per_second": 8,
+    "ctrl_overrides_shift": true,
+    "cursor_origin": "First button-down, including delayed click-to-navigation transition; additional held buttons do not replace it.",
+    "cursor_exit": "Last button release or Escape makes viewport-coordinate warp request. Focus loss suppresses warp."
+  },
+  "report": {
+    "checks": 52,
+    "failures": 0,
+    "native_checks_unrun": false,
+    "prefs": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794291557490317100/display.cfg",
+    "reports": {
+      "writer": {
+        "checks": 52,
+        "failures": 0,
+        "native_checks_unrun": false,
+        "prefs": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794291557490317100/display.cfg"
+      },
+      "reader": {
+        "checks": 2,
+        "failures": 0
+      }
+    },
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794291557490317100",
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\orbit_navigation_smoke_15cc0da26f1f4571ad5869c7379f1d89.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\orbit_navigation_smoke_f3cc4c9af1b34bd593a9434581a04a85.json"
+    ],
+    "native_project_unchanged": true,
+    "isolated_display": null,
+    "scope": "Includes provided prepared native model"
+  },
+  "source_hashes": {
+    "src/app.gd": "326ca7fd7f7d78680ca86a0c6976772655d19a76dfae8b0d8938150e11448ce8",
+    "src/world_selection.gd": "ff68a9b1b75ac046e216805fc49c27a790c58edb0c46f29450f784bcb870f622",
+    "tests/orbit_navigation_smoke.gd": "f6af670db8fde613f8ece97e1e6d7db3be5d5c1ccb12f062bba8d798e3e7c61a"
+  },
+  "private_receipts": {
+    "orbit_navigation_smoke_15cc0da26f1f4571ad5869c7379f1d89.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_7aa29c7db62d4991a286af24d04bfbe5",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 6588,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.701
+    },
+    "orbit_navigation_smoke_f3cc4c9af1b34bd593a9434581a04a85.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_66726167defd49c29f98ade441dd31b8",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 29412,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 2.841
+    }
+  },
+  "limitation": "Automated cursor checks observe the actual restore request and its logical target on a private desktop. Physical OS cursor return on the owner desktop needs owner observation; no visible automation is used.",
+  "first_attempt": "Provided Avatar to native-Miku navigation wrapper. All camera checks passed but original >100-bone Miku fixture guard failed for91-bone Avatar. Repacked actual current126-bone MMD prerequisite and reran without weakening the guard.",
+  "review_update": {
+    "format": "has_owner_camera_input_update_1",
+    "files": {
+      "app.gd": {
+        "before_sha256": "ca2a9f2f3e1278525dc3a4d2e6e501c72c82bdcdaefa2d9781ecd37efe10b637",
+        "after_sha256": "326ca7fd7f7d78680ca86a0c6976772655d19a76dfae8b0d8938150e11448ce8"
+      },
+      "world_selection.gd": {
+        "before_sha256": "0b525db313b7a022264fafeac60c664c5b7db1fa31e22ba8c73d7a1b3702789e",
+        "after_sha256": "ff68a9b1b75ac046e216805fc49c27a790c58edb0c46f29450f784bcb870f622"
+      }
+    },
+    "private_project_hashes_unchanged": {
+      "Avatar.has": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77",
+      "Flatgrass.has": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e",
+      "Street.has": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5"
+    },
+    "profile_recovery_and_running_windows_untouched": true,
+    "restart_required": true,
+    "time_ns": 1794291672323104400
+  },
+  "aggregate_interruption": {
+    "record": {
+      "aggregate_pid": 28572,
+      "private_launcher_pid": 15488,
+      "test_pid": 9984,
+      "owner_review_untouched": true,
+      "reason": "Deliberately interrupted for owner requested nested dock splits after confirming World clipping fixed; not an assertion failure or pass",
+      "test_command": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe --path C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110 --log-file C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\studio-engine.log -- --audio-smoke --demo-room",
+      "stopped_at_utc": "2026-11-10T06:15:03.8437718Z"
+    },
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_ecf8602f085443808b9c30ac04c3a757",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 4294967295,
+      "child_pid": 9984,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 5.962
+    },
+    "scope": "Deliberate interruption after new nested-dock request; aggregate pass not claimed."
+  },
+  "other_active_work": [
+    "Nested horizontal/vertical docking requested after owner confirmed World clipping fixed.",
+    "Owner reports fan does not give expected continuous hair flutter; investigate actual native Avatar and force response."
+  ],
+  "acceptance_unchanged": "55/62"
+}
