@@ -6,7 +6,12 @@ class WheelRuntimeTests(unittest.TestCase):
     def fixture(self,root,members):
         addon=root/'addon';addon.mkdir();(addon/'blender_manifest.toml').write_text('wheels=["data-1-py3-none-any.whl"]')
         with zipfile.ZipFile(addon/'data-1-py3-none-any.whl','w') as z:
-            for name,data in members:z.writestr(name,data)
+            for name,data in members:
+                # ZipInfo's Windows constructor normalizes backslashes. Assign
+                # the raw member afterwards so the invalid archive is identical
+                # on every host and reaches the production path validation.
+                info=zipfile.ZipInfo('fixture');info.filename=name
+                z.writestr(info,data)
         return addon
     def test_real_files_are_available_to_filesystem_based_packages(self):
         with tempfile.TemporaryDirectory() as d:

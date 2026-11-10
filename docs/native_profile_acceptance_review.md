@@ -1,5 +1,27 @@
 # Native profile acceptance review — 2026-11-09
 
+## Windows follow-up (supersedes the missing-input state below)
+
+The owner supplied local originals and authorized read-only installed Steam
+content plus a disposable pinned SourceIO runtime. `temp.gma` is Transit and
+contains `maps/nt_transit.bsp`; the first legacy BIN contains Hakurei Shrine.
+All five street atlas PNGs are present in the supplied MMD Model folder.
+
+Fresh Windows native scenario B passes 19 writer and 5 cold-reader checks:
+two independent Flatgrass BSP roots, one of one native props, textures and
+bounded baked lightmaps, posed VRM, and complete textured street PMX coexist.
+Exact Lit/Unshaded cold pixels pass with owned source/conversion/import caches
+withheld; actual MP4 and original SHA/mtime checks pass. This is supported
+software behavior, not artist approval of source appearance or scene composition.
+Transit refuses the existing 64-static-light limit; the app now names that limit
+and action while preserving the existing scene, camera, ink and Undo (5 checks).
+No import or pixel assertion was weakened. See the
+[native Windows receipt](benchmarks/windows_native_acceptance_2026-11-09.json)
+and [exact remaining observations](windows_acceptance_followup.md).
+
+The earlier cloud-only missing-file statements below remain historical context.
+They must not be reused as current evidence that these local inputs are absent.
+
 This review follows addendum 3.4/3.5 and the actual IMPORT-02/03 and scenario B
 conditions. Format coverage is a roadmap. Practical supported behavior and
 truthful loss reports are required; perfect reproduction of every native shader,

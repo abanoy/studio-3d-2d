@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -19,6 +20,22 @@ from source_content import vpk_index, vpk_read, mount_paths
 PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
 ROOT = Path(__file__).resolve().parent.parent
 status_path = None
+
+
+def conversion_failure(log_path, returncode):
+    """Keep a bounded worker exception actionable in the ordinary import UI."""
+    reason = ""
+    try:
+        with Path(log_path).open("rb") as stream:
+            stream.seek(0, 2)
+            stream.seek(max(0, stream.tell() - 16384))
+            tail = stream.read(16384).decode("utf-8", "replace").replace("\r\n", "\n")
+        matches = re.findall(r"^(?:ValueError|RuntimeError|ImportError|ModuleNotFoundError): ([^\r\n]{1,500})$", tail, re.MULTILINE)
+        if matches: reason = matches[-1].rstrip("\r")
+    except OSError:
+        pass
+    detail = (": " + reason) if reason else ""
+    return f"Conversion failed (exit {returncode}){detail}; see {log_path}"
 
 
 def main():
@@ -167,7 +184,7 @@ def main():
     if digest(source) != sha:
         raise RuntimeError("Original input changed during conversion")
     if process.returncode or not (output / "scene.glb").is_file():
-        raise RuntimeError(f"Conversion failed (exit {process.returncode}); see {output / 'conversion.log'}")
+        raise RuntimeError(conversion_failure(output / 'conversion.log', process.returncode))
     if (output / "scene.glb").stat().st_size > 128 * 1024 * 1024:
         raise RuntimeError("Prepared GLB exceeds the studio's 128 MiB limit; retain bundle for simplification")
     print("Prepared:", output / "scene.glb", flush=True)

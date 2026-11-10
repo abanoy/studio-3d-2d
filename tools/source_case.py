@@ -16,7 +16,10 @@ class CaseResolver:
   self.cache={};self.names=0
  def _entries(self,directory):
   stamp=directory.stat();identity=(stamp.st_dev,stamp.st_ino,stamp.st_mtime_ns);old=self.cache.get(directory)
-  if old and old[0]==identity:return old[1]
+  # NTFS can defer directory last-write updates after a child is created. A
+  # matching timestamp cannot certify this name inventory on Windows; refresh
+  # it within the same per-directory and total cached-name budgets.
+  if old and old[0]==identity and os.name!='nt':return old[1]
   rows={};count=0
   with os.scandir(directory) as entries:
    for entry in entries:

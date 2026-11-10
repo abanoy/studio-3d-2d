@@ -29,7 +29,7 @@ def add_bundled_wheels(addon, output):
             seen=set()
             for entry in entries:
                 path=PurePosixPath(entry.filename)
-                if not entry.filename.rstrip('/') or path.is_absolute() or any(x in ('','..','.') or ':' in x for x in entry.filename.rstrip('/').split('/')) or '\\' in entry.filename or stat.S_ISLNK(entry.external_attr>>16):raise ValueError('Unsafe addon wheel path')
+                if entry.orig_filename!=entry.filename or not entry.filename.rstrip('/') or path.is_absolute() or any(x in ('','..','.') or ':' in x for x in entry.filename.rstrip('/').split('/')) or '\\' in entry.filename or stat.S_ISLNK(entry.external_attr>>16):raise ValueError('Unsafe addon wheel path')
                 folded=entry.filename.casefold()
                 if folded in seen:raise ValueError('Duplicate addon wheel path')
                 seen.add(folded)
