@@ -1,0 +1,1657 @@
+{
+  "format": "has_windows_acceptance_1",
+  "date": "2026-11-09 America/New_York",
+  "starting_commit": "59a1c4e969995089fdfc0e93b4e5766311bb5591",
+  "session_owned_checkout": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+  "scope": "Fresh Windows software checks on Intel Arc 140V/OpenGL; no human, tablet, audible listening, clean-OS installation, physical power-loss or complete native fidelity claim.",
+  "runs": {
+    "format": "has_windows_session_runs_1",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+    "starting_commit": "59a1c4e969995089fdfc0e93b4e5766311bb5591",
+    "checkout": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109",
+    "cases": [
+      {
+        "command": [
+          "C:\\Program Files\\Python313\\python.exe",
+          "-u",
+          "tests/verify.py"
+        ],
+        "exit": 1,
+        "seconds": 3.711,
+        "log": "output\\windows-acceptance\\verify.log",
+        "log_sha256": "310772bb4484645cb68be662467a310425c07764bb4a665a50196397aa09c0b3"
+      },
+      {
+        "command": [
+          "C:\\Program Files\\Python313\\python.exe",
+          "-u",
+          "tests/verify_scenario_d.py"
+        ],
+        "exit": 0,
+        "seconds": 24.439,
+        "log": "output\\windows-acceptance\\verify_scenario_d.log",
+        "log_sha256": "2bf85532b048b0c9b422191932786b52934e7a82e0fa3f4563287d2fd4ef434f"
+      },
+      {
+        "command": [
+          "C:\\Program Files\\Python313\\python.exe",
+          "-u",
+          "tests/verify_tutorials.py"
+        ],
+        "exit": 0,
+        "seconds": 22.505,
+        "log": "output\\windows-acceptance\\verify_tutorials.log",
+        "log_sha256": "c5a50d9483785a9baf779cdc1dd8d1607e85ec6ee5203a858a383aa8ab8bc354"
+      },
+      {
+        "command": [
+          "C:\\Program Files\\Python313\\python.exe",
+          "-u",
+          "tests/verify_first_movie.py"
+        ],
+        "exit": 0,
+        "seconds": 41.404,
+        "log": "output\\windows-acceptance\\verify_first_movie.log",
+        "log_sha256": "fc64e942883bb54e5fed08774362f2ed0d06959eb750e9df9b6a29681d6cf725"
+      },
+      {
+        "command": [
+          "C:\\Program Files\\Python313\\python.exe",
+          "-u",
+          "tests/verify_recovery_schedule.py"
+        ],
+        "exit": 0,
+        "seconds": 20.022,
+        "log": "output\\windows-acceptance\\verify_recovery_schedule.log",
+        "log_sha256": "9470f853d55ff3d678482c8f86dccaf8ef3b3a0659593c21db83698f74bbf164"
+      },
+      {
+        "command": [
+          "C:\\Program Files\\Python313\\python.exe",
+          "-u",
+          "tests/verify_recovery_startup.py"
+        ],
+        "exit": 0,
+        "seconds": 56.088,
+        "log": "output\\windows-acceptance\\verify_recovery_startup.log",
+        "log_sha256": "c785cfc6c472288933d9c038df4642b255cd13da4f2b198ad1651b8f3b9477ec"
+      },
+      {
+        "command": [
+          "C:\\Program Files\\Python313\\python.exe",
+          "-u",
+          "tests/verify_recovery_history.py"
+        ],
+        "exit": 0,
+        "seconds": 68.024,
+        "log": "output\\windows-acceptance\\verify_recovery_history.log",
+        "log_sha256": "6572f2b4b106c8b3f7a9add467d90422549c21443c383dae3e11207f979c246b"
+      }
+    ]
+  },
+  "cases": {
+    "scenario_a": {
+      "reports": {
+        "writer": {
+          "checks": 21,
+          "conversion_folder": "C:/a/Programming/cloudflare/has-windows-session-20261109/output/compatibility/source-1794284719-73-2732392",
+          "failures": 0,
+          "mode": "writer",
+          "movie": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\scenario-a\\1794284716771159200/render_1794284726_9143268_0/movie.mp4"
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0,
+          "mode": "reader"
+        }
+      },
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "24"
+      },
+      "original_sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3",
+      "original_unchanged": true,
+      "packed_decimal_values_exact": true,
+      "conversion_inputs_writer_cache_offline_for_reader": true,
+      "manual_has_unchanged": true,
+      "private_receipts": [
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\scenario_a_smoke_a68a5da8946848e8ab7db7a97df8af5f.json",
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\scenario_a_smoke_d49fc266c15b4b13ad58d7480b6a7eae.json"
+      ],
+      "isolated_display": null,
+      "scope": "Eight software steps on supplied VRM; no five-minute novice, Windows or physical-device certification."
+    },
+    "scenario_c": {
+      "reports": {
+        "writer": {
+          "checks": 25,
+          "failures": 0,
+          "movie": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\scenario-c\\1794284343646143900/render_1794284355_10953667_0/movie.mp4",
+          "native_fixtures": 0,
+          "steps": 7
+        },
+        "reader": {
+          "checks": 6,
+          "failures": 0
+        }
+      },
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 65536,
+        "duration": "5.333333",
+        "bit_rate": "105849",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "128",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.33.100 libx264"
+        }
+      },
+      "audio_onset_sample": 48001,
+      "manual_has_unchanged": true,
+      "originals_and_writer_cache_unavailable_for_cold_open": true,
+      "functional_source_unchanged": true,
+      "private_receipts": [
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\scenario_c_smoke_cfe211c0427e47b79a803a85c79fc868.json",
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\scenario_c_smoke_de41062789934b38bae8c1099ae6e6d2.json"
+      ],
+      "isolated_display": null,
+      "scope": "All seven scenarioC software steps on original generated maps/rig; final Windows target and native ecosystem fidelity remain separate.",
+      "source_tree_manifest_sha256": "4cc22c693ea4784a3d6023bc61a6f84c052b8f15f8887771df61146cc49aaffe",
+      "source_file_count": 866
+    },
+    "scenario_d": {
+      "reports": {
+        "writer": {
+          "checks": 28,
+          "contacts": 15,
+          "displacement": 1.76213526725769,
+          "failures": 0,
+          "local": {
+            "bytes": 201281,
+            "frames": 46,
+            "max_frame_gap_ms": 43.074,
+            "max_sample_ms": 2.376
+          },
+          "local_contacts": 12,
+          "world": {
+            "bytes": 239294,
+            "frames": 46,
+            "max_frame_gap_ms": 40.97,
+            "max_sample_ms": 2.446
+          }
+        },
+        "reader": {
+          "checks": 4,
+          "failures": 0
+        }
+      },
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1080,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "232396",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.33.100 libx264"
+        }
+      },
+      "audio_onset_sample": 48001,
+      "manual_has_unchanged": true,
+      "originals_and_writer_cache_unavailable_for_cold_open": true,
+      "functional_source_unchanged": true,
+      "private_receipts": [
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\scenario_d_smoke_6878408b2ca1476fa92feff3a7e23485.json",
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\scenario_d_smoke_4e98eba3c6884da7b4b6aebdd8e7c529.json"
+      ],
+      "isolated_display": null,
+      "scope": "All six mechanical scenarioD software steps on an original included humanoid and generated props; final Windows target/native fidelity/physical input remain separate.",
+      "source_tree_manifest_sha256": "4cc22c693ea4784a3d6023bc61a6f84c052b8f15f8887771df61146cc49aaffe",
+      "source_file_count": 866
+    },
+    "tutorials": {
+      "results": [
+        {
+          "checks": 52,
+          "failures": 0,
+          "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\tutorials\\1794284421814766700",
+          "movie": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\tutorials\\1794284421814766700/render_1794284435_13119971_0/movie.mp4"
+        },
+        {
+          "checks": 5,
+          "failures": 0
+        }
+      ],
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "48"
+      },
+      "private_receipts": [
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\tutorial_smoke_5132990fff784035ab2945127c9255b1.json",
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\tutorial_smoke_79632d9b364241d19fcdbdcdd69282a3.json"
+      ],
+      "chapter": "existing",
+      "isolated_display": null
+    },
+    "first_movie": {
+      "results": [
+        {
+          "checks": 79,
+          "failures": 0,
+          "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\first-movie\\1794284444343061100",
+          "movie": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\first-movie\\1794284444343061100/render_1794284465_21289749_0/movie.mp4"
+        },
+        {
+          "checks": 8,
+          "failures": 0
+        }
+      ],
+      "private_receipts": [
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\first_movie_smoke_43cc691a617d46feab0707ad692316c2.json",
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\first_movie_smoke_195974fa28c14427bd44d3e1d388f6fa.json"
+      ],
+      "originals": {
+        "first-movie.has": "8c2689d1e8ae8f1d424d72900273dd656cf871ee1c725bcbe8198aa9f6be7fc6",
+        "manifest.json": "aba9741b5f9633c2321d89be8cc50bb40163b0d3e7c9dbe788d3be68130e066d",
+        "Practice cue.wav": "35252cc25a1d09b33ef80de04a26e3cd294025b4f4277cefae1142a5c31787ac",
+        "Practice figure.glb": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+        "Practice room.glb": "713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad",
+        "practice.has": "050e2afe0b04e79d65b5c62a3a3db875421d9af6fed4e825498182b846f7ec61"
+      },
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "435620",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.33.100 libx264"
+        }
+      },
+      "cue_onset_sample": 80043,
+      "isolated_display": null
+    },
+    "recovery_schedule": {
+      "checks": 41,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-schedule\\1794284485742646600",
+      "manual_sha256": "8debb69cbc62b85b5ff12c7c95839ed69aeb44a8c50daa3c27f75b2897a2063d",
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\recovery_schedule_smoke_8563dbc17ee44253aa6ac3ffe0a0a94f.json",
+      "isolated_display": null
+    },
+    "recovery_startup": {
+      "checks": 147,
+      "failures": 0,
+      "cases": [
+        {
+          "checks": 13,
+          "failures": 0,
+          "case": "newest",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+              "manifest": "project.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/manual.has",
+              "saved_at": 1794284510.135,
+              "revision": 12,
+              "frame": 24,
+              "preview": "",
+              "sha256": "c31412647085eb46ba6f85d79d397d2e8005a13c2b52586bea38471182ca0123",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/render_1794284514_2792661_0/movie.mp4"
+        },
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "broken-json",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.backup.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+              "manifest": "project.backup.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/manual.has",
+              "saved_at": 1794284508.944,
+              "revision": 8,
+              "frame": 12,
+              "preview": "",
+              "sha256": "6d973512981b43b44f85fea1d445b9eba53aadcab4c08b4bb72ec36232dded12",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "missing-asset",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.json",
+                "restored": false,
+                "error": "Invalid managed world asset path."
+              },
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.backup.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+              "manifest": "project.backup.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/manual.has",
+              "saved_at": 1794284508.944,
+              "revision": 8,
+              "frame": 12,
+              "preview": "",
+              "sha256": "6d973512981b43b44f85fea1d445b9eba53aadcab4c08b4bb72ec36232dded12",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "bad-binding",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.json",
+                "restored": false,
+                "error": "Stored pose refers to a missing bone: missing::bone"
+              },
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.backup.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+              "manifest": "project.backup.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/manual.has",
+              "saved_at": 1794284508.944,
+              "revision": 8,
+              "frame": 12,
+              "preview": "",
+              "sha256": "6d973512981b43b44f85fea1d445b9eba53aadcab4c08b4bb72ec36232dded12",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "missing-audio",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.json",
+                "restored": false,
+                "error": "Audio asset missing or checksum changed. Open aborted."
+              },
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.backup.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+              "manifest": "project.backup.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/manual.has",
+              "saved_at": 1794284508.944,
+              "revision": 8,
+              "frame": 12,
+              "preview": "",
+              "sha256": "6d973512981b43b44f85fea1d445b9eba53aadcab4c08b4bb72ec36232dded12",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 7,
+          "failures": 0,
+          "case": "all-invalid",
+          "startup": {
+            "restored": false,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.json",
+                "restored": false,
+                "error": "Stored pose refers to a missing bone: missing::bone"
+              },
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.backup.json",
+                "restored": false,
+                "error": "Invalid managed world asset path."
+              }
+            ],
+            "cancelled": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 7,
+          "failures": 0,
+          "case": "live-writer",
+          "startup": {
+            "restored": false,
+            "attempts": [],
+            "cancelled": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 7,
+          "failures": 0,
+          "case": "resolved",
+          "startup": {
+            "restored": false,
+            "attempts": [],
+            "cancelled": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 13,
+          "failures": 0,
+          "case": "save",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+              "manifest": "project.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/manual.has",
+              "saved_at": 1794284510.135,
+              "revision": 12,
+              "frame": 24,
+              "preview": "",
+              "sha256": "c31412647085eb46ba6f85d79d397d2e8005a13c2b52586bea38471182ca0123",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 7,
+          "failures": 0,
+          "case": "live-identified-writer",
+          "startup": {
+            "restored": false,
+            "attempts": [],
+            "cancelled": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "reused-pid",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+              "manifest": "project.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/manual.has",
+              "saved_at": 1794284510.135,
+              "revision": 12,
+              "frame": 24,
+              "preview": "",
+              "sha256": "c31412647085eb46ba6f85d79d397d2e8005a13c2b52586bea38471182ca0123",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 7,
+          "failures": 0,
+          "case": "invalid-owner-identity",
+          "startup": {
+            "restored": false,
+            "attempts": [],
+            "cancelled": false,
+            "warning": "Some recovery sessions have invalid owner identities and were left untouched. Use Open saved backup to inspect them."
+          },
+          "movie": ""
+        },
+        {
+          "checks": 7,
+          "failures": 0,
+          "case": "helper-unavailable",
+          "startup": {
+            "restored": false,
+            "attempts": [],
+            "cancelled": false,
+            "warning": "Some recovery sessions could not be checked for a live owner and were left untouched. Check the configured Python installation or use Open saved backup."
+          },
+          "movie": ""
+        },
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "current-pid-mismatch",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+                "manifest": "project.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/recovery/1794284508_7214113165167020968",
+              "manifest": "project.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/manual.has",
+              "saved_at": 1794284510.135,
+              "revision": 12,
+              "frame": 24,
+              "preview": "",
+              "sha256": "c31412647085eb46ba6f85d79d397d2e8005a13c2b52586bea38471182ca0123",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 7,
+          "failures": 0,
+          "case": "current-pid-match",
+          "startup": {
+            "restored": false,
+            "attempts": [],
+            "cancelled": false
+          },
+          "movie": ""
+        }
+      ],
+      "native_models": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800",
+      "movie": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-startup\\1794284505790646800/render_1794284514_2792661_0/movie.mp4",
+      "audio_onset": 1.0000416666666667,
+      "private_receipts": [
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\recovery_startup_writer_87e8df6add0641b9afd181fb3ab3d103.json",
+          "expected_abrupt_exit": true,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_23ecb8232d2e42899333cb6514970ef3.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_2932d3d78b054420b8d53072d104b2c6.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_76f3c918c9ca487a83e48cfc8930f9af.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_f2b177b4ad6c4ad7ae558f1db4488b49.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_cc2f5cae79e64e1883e02d18720d2ef0.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_db0c3e2445e54d1c8b7292e7139862d7.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_3b2d6c35222f4dabbc483c180b95cff2.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_a1912f39542e4a438b4e1bb28a6510a1.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_ec001a805fe0455ba011f0d6234e4ae6.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_f3950dc865654c7294167623c05a9e2f.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_ef6658233ce741578c63e5d22407631c.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_5e12a1b6b6774d038e8851e4fbc26f46.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_61c50d9a6cf94ff3bff72b7e94a4a684.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_e512315ba2cd4967911be1679ee24db7.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        },
+        {
+          "path": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_b8794d077c7742b6999a01d2a871fbf1.json",
+          "expected_abrupt_exit": false,
+          "exit": 0
+        }
+      ],
+      "writer_abrupt_exit_verified": true,
+      "owner_identity": {
+        "pid": 26020,
+        "synchronize_handle_retained": true,
+        "writer_exit_verified": true
+      },
+      "owner_handle_closed": true,
+      "isolated_display": null
+    },
+    "recovery_history": {
+      "checkpoint": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/recovery/1794284580_7195717072800560304",
+      "checks": 22,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400",
+      "max_capture_ms": 5.525,
+      "max_preview_ms": 534.49,
+      "max_worker_ms": 530.195,
+      "movie": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/render_1794284611_32837989_0/movie.mp4",
+      "native_models": 0,
+      "unit_checks": 33,
+      "startup_cases": [
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "history-newest",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/recovery/1794284580_7195717072800560304",
+                "manifest": "project.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/recovery/1794284580_7195717072800560304",
+              "manifest": "project.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/manual.has",
+              "saved_at": 1794284608.45,
+              "revision": 59,
+              "frame": 17,
+              "preview": "e99d1985d8e609b02a98e5ebc444cb6d55a7403e9a4e341ccc8ceb8e67cf039d",
+              "sha256": "6f81f72d6efaa457cc587ed4659b64e02678b96886c2ac9345bfd8ed5b597ba0",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "history-deep-fallback",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/recovery/1794284580_7195717072800560304",
+                "manifest": "history_c7f5ffe8ecd0a925b701967305a4071291ab2873cf3b2504101b355ec7012b65.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/recovery/1794284580_7195717072800560304",
+              "manifest": "history_c7f5ffe8ecd0a925b701967305a4071291ab2873cf3b2504101b355ec7012b65.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/manual.has",
+              "saved_at": 1794284605.288,
+              "revision": 53,
+              "frame": 15,
+              "preview": "a69b103dd20cc63679113812af642b7c38f83f3ae8a92aca8d57505ac69b48d4",
+              "sha256": "c7f5ffe8ecd0a925b701967305a4071291ab2873cf3b2504101b355ec7012b65",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        },
+        {
+          "checks": 12,
+          "failures": 0,
+          "case": "history-index-fallback",
+          "startup": {
+            "restored": true,
+            "attempts": [
+              {
+                "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/recovery/1794284580_7195717072800560304",
+                "manifest": "history_c7f5ffe8ecd0a925b701967305a4071291ab2873cf3b2504101b355ec7012b65.json",
+                "restored": true,
+                "error": ""
+              }
+            ],
+            "cancelled": false,
+            "checkpoint": {
+              "folder": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/recovery/1794284580_7195717072800560304",
+              "manifest": "history_c7f5ffe8ecd0a925b701967305a4071291ab2873cf3b2504101b355ec7012b65.json",
+              "origin": "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\recovery-history\\1794284561884972400/manual.has",
+              "saved_at": 1794284605.288,
+              "revision": 53,
+              "frame": 15,
+              "preview": "a69b103dd20cc63679113812af642b7c38f83f3ae8a92aca8d57505ac69b48d4",
+              "sha256": "c7f5ffe8ecd0a925b701967305a4071291ab2873cf3b2504101b355ec7012b65",
+              "resolved": false
+            },
+            "lesson_restored": false
+          },
+          "movie": ""
+        }
+      ],
+      "private_receipts": [
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\recovery_history_smoke_57fc1bf0bd9945b981dc523c2a777d4e.json",
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_38b4a5d9a70847e7915aef401dd28402.json",
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_9dd1146ba6e04439a0a045e932cf26da.json",
+        "C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\output\\private-desktop\\studio_8535de2ccd8341e7af100b104e3bff54.json"
+      ],
+      "audio_onset": 1.0000416666666667,
+      "owner_identity": {
+        "pid": 19912,
+        "synchronize_handle_retained": true,
+        "writer_exit_verified": true
+      },
+      "owner_handle_closed": true,
+      "isolated_display": null,
+      "source_tree_manifest_sha256": "5497a09ac7ce5585cf1ac99ab581c9797d7d80f2b69e5eab33690e209ccaeca6",
+      "source_file_count": 875
+    }
+  },
+  "private_receipts": [
+    {
+      "path": "output\\private-desktop\\first_movie_smoke_195974fa28c14427bd44d3e1d388f6fa.json",
+      "sha256": "0ff8815d870dc62a2fc49554e617fda165cd01c0b0b9c1a6040c7954a68a5edd",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2eb00fb9de47415bb5ba2bbb4e15e3e6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 17740,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.93
+      }
+    },
+    {
+      "path": "output\\private-desktop\\first_movie_smoke_43cc691a617d46feab0707ad692316c2.json",
+      "sha256": "cbeeb36a4c507af530dfcbb15a127ccd64de943b5a65dda2d9b0aedb73e87901",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8c9d01cef0814d2e889a5a6a3a9d8385",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12568,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 31.94
+      }
+    },
+    {
+      "path": "output\\private-desktop\\krita_import_smoke_1d50601975734004acef753314883135.json",
+      "sha256": "3ec260a2dfaea95881dc6d32a2f7c9afa9e504a4d1559ecda6c9e55987587d4d",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_786eec312ff34b60b7de60a079d0e598",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 21920,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.521
+      }
+    },
+    {
+      "path": "output\\private-desktop\\recovery_history_smoke_57fc1bf0bd9945b981dc523c2a777d4e.json",
+      "sha256": "0de1bb451b7b326865765fc8b1dbc6fe1c96d2f9b8d211dfcf37a3b3aaa75895",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_d3426a4d39464e328e80aab33464b6df",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19912,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 41.361
+      }
+    },
+    {
+      "path": "output\\private-desktop\\recovery_schedule_smoke_8563dbc17ee44253aa6ac3ffe0a0a94f.json",
+      "sha256": "d93284552239d67b755c1278089bddfa6cf7bdb986fba82762789fe09ba3dd8f",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2f70a132c47e48409b15f60b1abc4c40",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 11520,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 19.817
+      }
+    },
+    {
+      "path": "output\\private-desktop\\recovery_startup_writer_87e8df6add0641b9afd181fb3ab3d103.json",
+      "sha256": "73a00daa9f6bb0287c99f7ef36ea8e2a58e4aa5a692dcb720bac5ae60fa79496",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b990a9b7a71e463badfe90a513265003",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 26020,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.527
+      }
+    },
+    {
+      "path": "output\\private-desktop\\scenario_a_smoke_a68a5da8946848e8ab7db7a97df8af5f.json",
+      "sha256": "84e0bdfe5f4120a66eec17d357052b9f1f574732a3717986e2ee726669b1a2ff",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_6687685d5bb844e1bc1e0a095cb2852d",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25144,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.837
+      }
+    },
+    {
+      "path": "output\\private-desktop\\scenario_a_smoke_d49fc266c15b4b13ad58d7480b6a7eae.json",
+      "sha256": "472c1991193fe05ae516da110c167af024cfe6bc22561ac1bc95e59712e57b45",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_9ef01fbd480442dba4b0ed04a625888a",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 15112,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.016
+      }
+    },
+    {
+      "path": "output\\private-desktop\\scenario_c_smoke_600facda35954cde9113e31d94dead33.json",
+      "sha256": "21093e8c4135b7131e0c5f3accdc94d6e0659ff8894d549331cfb52046f14f61",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_53b687ad37a44d4daa3ad60ecb582706",
+        "desktop_switch_requested": false,
+        "private_window_seen": false,
+        "child_desktop_confirmed": false,
+        "maximum_owned_windows": 0,
+        "foreground_child_observed": false,
+        "exit": 2,
+        "error": "[Errno 5] Create private test desktop",
+        "seconds": 0.001
+      }
+    },
+    {
+      "path": "output\\private-desktop\\scenario_c_smoke_cfe211c0427e47b79a803a85c79fc868.json",
+      "sha256": "3f3279bcca4997ee3ef3427bb82386f3be351cf3c3357d2dabd4483a89a04591",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_982d353d5b25432a81e8096113744db8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27536,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 23.017
+      }
+    },
+    {
+      "path": "output\\private-desktop\\scenario_c_smoke_de41062789934b38bae8c1099ae6e6d2.json",
+      "sha256": "431032502de233ba52de55d140f03ce6df807072e3f8fd885e83a4f12e0eea80",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1415aaf22aba40a29ae16c02e8cd608b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 21616,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.29
+      }
+    },
+    {
+      "path": "output\\private-desktop\\scenario_d_smoke_4e98eba3c6884da7b4b6aebdd8e7c529.json",
+      "sha256": "5c8c424bbb5ea19077e99413dad46002e10b6d5ad37021940846338f34395df7",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_73326bd3991740df949100308c177b18",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27516,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.389
+      }
+    },
+    {
+      "path": "output\\private-desktop\\scenario_d_smoke_6878408b2ca1476fa92feff3a7e23485.json",
+      "sha256": "111bc3631c8a00c3e3df723df95db5fef3ffa79c6277af041c0b4f09d12d1b21",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ef41c436dac04485b90e65124407436e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 17608,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 20.44
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_23ecb8232d2e42899333cb6514970ef3.json",
+      "sha256": "4f19f04ce4033a7ca0dd541ddea44ed7b6ad416856f877490f6eb7461df32ed7",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_82df4893338e45e4a7a3535c840f7d5b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 4196,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.371
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_2932d3d78b054420b8d53072d104b2c6.json",
+      "sha256": "10b4443a7d2e76e8497c01546a7ef72c3355b647b3db92ff2bf80ea80b14eafb",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_918e621e77de47d18c7dee13add631ab",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 17000,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.978
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_38b4a5d9a70847e7915aef401dd28402.json",
+      "sha256": "dcc33e39522356be6824780c6a513f70e56edd0cedb2e2fb74d8883fe5203039",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0510ec78f8114c7fb20233e334178eaa",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25964,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.088
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_3b2d6c35222f4dabbc483c180b95cff2.json",
+      "sha256": "e875448499ef843c8beea64b67091b6996ccfbcb74896341a040409b83432199",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_4f541d4d1921456ebdbf7d6969b541dd",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 21484,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.595
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_5e12a1b6b6774d038e8851e4fbc26f46.json",
+      "sha256": "482424ee54e02737b1d49ced505ef1bd61bc470013f4b7411588d8808903e1cd",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_3d869be8e315433bb0b1b91e29378fe6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 1532,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.571
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_61c50d9a6cf94ff3bff72b7e94a4a684.json",
+      "sha256": "099af078fa0805e716933498f3c1adefac07838ab6908a47ac159a738b909f1c",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_63a2776137754fdeb38198389cfc9a92",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24728,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.536
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_76f3c918c9ca487a83e48cfc8930f9af.json",
+      "sha256": "bcc0fa8e355a0607d62010353c8445107ae32ec730d5fcb93302374209e7df62",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_50ac2b2192bc42cc937fbc691d304c8e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 7248,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.138
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_8535de2ccd8341e7af100b104e3bff54.json",
+      "sha256": "f831abfadaa0ee1346530f43299173d8d5b3d213d2e2c41b7f73a83df19a4fb3",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_82854310c82449f5b45eb72085ffa291",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 15716,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.046
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_9dd1146ba6e04439a0a045e932cf26da.json",
+      "sha256": "ade77868b5582db99a52c100baa84b1de71ae688e2f7fc6cf62d8d2860abd5dc",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_a256a52b47204ce2872d7cc23b2bad59",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 18208,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.026
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_a1912f39542e4a438b4e1bb28a6510a1.json",
+      "sha256": "80e4f5ad37f610f83376fc6ff8b8643233a7eb22b59e7014c152c6c2af3f76c8",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c6f720e7e06144d9ad8bfab0b1cb1af0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 5296,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.59
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_b8794d077c7742b6999a01d2a871fbf1.json",
+      "sha256": "bc84e3cf9677d3b0dfba5cf69df6f11debbbc91dbbbbc6eec8aad369e5ebc980",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_978c24ad6a4c4bbbbfae662ce856bde2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20032,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.684
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_cc2f5cae79e64e1883e02d18720d2ef0.json",
+      "sha256": "8dd286f8c7cf55351ff9a1f6505cda9247c61b7a249096d9c935f81698996531",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_285edc99ad504240816aa16ff3a1c3d2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27960,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.996
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_db0c3e2445e54d1c8b7292e7139862d7.json",
+      "sha256": "f58e921f96af572a53ed8ac920bd26fb3a2c51d1eb8314a5650ac7f7d514d527",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_425960c30f85406d98ede63073804c25",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27616,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.021
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_e512315ba2cd4967911be1679ee24db7.json",
+      "sha256": "e346bf4e44d9eb2e75b431641d2fb3eb36f1c058d49a3ee688b49d8c04e00aa8",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1dad8baaae6f4e0a8e7853ebc114b7ec",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25692,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.127
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_ec001a805fe0455ba011f0d6234e4ae6.json",
+      "sha256": "9a0c6baa0294c6c8283cd2f3af30fa9f545b2310a403ec9211037230a4a74422",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_d7984b58d2c942b5a8db925c5f2b05f0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25536,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.618
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_ef6658233ce741578c63e5d22407631c.json",
+      "sha256": "590e92da99a940f72795082394b2ebf866345d3577b0b5e8d4ca6b647fb4c32c",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5a9a995d62164058985db6ab70fa5c62",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24400,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.979
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_f2b177b4ad6c4ad7ae558f1db4488b49.json",
+      "sha256": "de51d81da6db5881ab4768fead8a03eb3af9d594ed15b1edf08fec97e8bbf03c",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_9a6ea223f979443fbcd94cccce9fd716",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12852,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.229
+      }
+    },
+    {
+      "path": "output\\private-desktop\\studio_f3950dc865654c7294167623c05a9e2f.json",
+      "sha256": "c2614b56511f0bbc9f524a43f8f30553fc2a0cb4487e158155872dcbbb2a3af1",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_6a19999e38e14e25b2b7d887116c5cc7",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25576,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.491
+      }
+    },
+    {
+      "path": "output\\private-desktop\\tutorial_smoke_5132990fff784035ab2945127c9255b1.json",
+      "sha256": "a3ca185dc82bc6c266498c54d8e0fe43d135bdf00c5729b0c777101070e80651",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_da071dfa66224eb0906fe785e1437fea",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24916,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 19.23
+      }
+    },
+    {
+      "path": "output\\private-desktop\\tutorial_smoke_79632d9b364241d19fcdbdcdd69282a3.json",
+      "sha256": "641e68d35921d13f7faca709e9efd9c181d2b9998a919c6fb7ccec097df16a02",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_785d4c7a604a434ba845451693ae5a5c",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25824,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.895
+      }
+    }
+  ],
+  "tools": {
+    "godot": {
+      "path": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+      "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+      "version": "4.6.stable.official.89cea1439"
+    },
+    "ffmpeg": {
+      "path": "C:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe",
+      "sha256": "8d334ffec552898aed0f095f507cd994c4f2825d4b88c352e7a37cd26b7f5b70",
+      "version": "ffmpeg version N-118448-g43be8d0728-20250208 Copyright (c) 2000-2025 the FFmpeg developers"
+    },
+    "ffprobe": {
+      "path": "C:\\Program Files\\ffmpeg\\bin\\ffprobe.exe",
+      "sha256": "6080217dc842c5850c1ab58988074ef11012423d594c0c942f075563a483fd19",
+      "version": "ffprobe version N-118448-g43be8d0728-20250208 Copyright (c) 2007-2025 the FFmpeg developers"
+    }
+  },
+  "failed_attempts": [
+    {
+      "log": "output\\windows-acceptance\\verify.log",
+      "sha256": "310772bb4484645cb68be662467a310425c07764bb4a665a50196397aa09c0b3",
+      "text": "Traceback (most recent call last):\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\verify.py\", line 460, in <module>\n    main()\n    ~~~~^^\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\verify.py\", line 38, in main\n    origin_log = run([sys.executable, 'tests/test_drawing_origin.py'])\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\verify.py\", line 24, in run\n    raise RuntimeError(f\"Exit {result.returncode}: {args}\\n{result.stdout}\\n{result.stderr}\")\nRuntimeError: Exit 1: ['C:\\\\Program Files\\\\Python313\\\\python.exe', 'tests/test_drawing_origin.py']\n\n........................E.........\n======================================================================\nERROR: test_snapshot_status_address_and_symlink_refuse (test_has_project.HasTests.test_snapshot_status_address_and_symlink_refuse)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\test_has_project.py\", line 310, in test_snapshot_status_address_and_symlink_refuse\n    target=root/'status.json';target.write_bytes(has.json_bytes(dict(format='studio_has_snapshot_ready_1',ok=True,error='',references={})));ready=root/'job-snapshot.json';ready.symlink_to(target);request['snapshot_ready']=str(ready)\n                                                                                                                                                                           ~~~~~~~~~~~~~~~~^^^^^^^^\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_local.py\", line 789, in symlink_to\n    os.symlink(target, self, target_is_directory)\n    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [WinError 1314] A required privilege is not held by the client: 'C:\\\\Users\\\\noble\\\\AppData\\\\Local\\\\Temp\\\\tmph3j4xq30\\\\status.json' -> 'C:\\\\Users\\\\noble\\\\AppData\\\\Local\\\\Temp\\\\tmph3j4xq30\\\\job-snapshot.json'\n\n----------------------------------------------------------------------\nRan 34 tests in 1.738s\n\nFAILED (errors=1)\n\n"
+    },
+    {
+      "log": "output\\windows-acceptance\\verify-retry.log",
+      "sha256": "4a4c27a12ce75ebc3dd71a8180c7fd6ad699b84a70ec85e8d9b5d68599d0d880",
+      "text": "Traceback (most recent call last):\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\verify.py\", line 460, in <module>\n    main()\n    ~~~~^^\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\verify.py\", line 48, in main\n    krita_import_log = run([sys.executable, '-u', 'tests/verify_krita_import.py'], timeout=500)\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\verify.py\", line 24, in run\n    raise RuntimeError(f\"Exit {result.returncode}: {args}\\n{result.stdout}\\n{result.stderr}\")\nRuntimeError: Exit 1: ['C:\\\\Program Files\\\\Python313\\\\python.exe', '-u', 'tests/verify_krita_import.py']\n\nTraceback (most recent call last):\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\verify_krita_import.py\", line 22, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"C:\\a\\Programming\\cloudflare\\has-windows-session-20261109\\tests\\verify_krita_import.py\", line 11, in main\n    assert p.returncode==0 and b'KRITA_IMPORT_' in raw and not any(s in raw for s in [b'SCRIPT ERROR',b'SHADER ERROR',b'FAIL ',b'ObjectDB instances leaked']),raw.decode('utf-8',errors='replace')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org\n\nOpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)\n\n\n\nPASS original 3D room loads\n\nPASS actual Simple import button opens a KRA file chooser\n\nFAIL actual async KRA inspection exposes native layer review\n\nCannot inspect Krita source: [WinError 3] The system cannot find the path specified: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\prototypes\\\\artist-animation-assistant\\\\samples\\\\hecatia.kra'\n\n\n\n"
+    },
+    {
+      "case": "initial restricted-context scenario C",
+      "result": "Create private test desktop denied with WinError 5; launcher refused without any graphical child. Host retry passes; original receipt included."
+    }
+  ],
+  "fixes": {
+    "line_endings": "Pin LF for hashed goal/addendum documents; restore committed bytes without updating provenance hashes.",
+    "symlink_fixture": "Split status-address and real linked-status tests. Only WinError 1314 reports a skipped fixture; linked-status assertions remain unchanged and unverified on this token. Other setup errors still fail."
+  },
+  "remaining": [
+    "Aggregate stopped at absent historical checksum-bound hecatia.kra; no fixture substitution or weakened pixel/animation assertions.",
+    "Native supplied map/material/rig cases in progress; native scenario A now passes.",
+    "Human novice/learner, actual tablet/driver and audible synchronization observations; clean supported offline Windows environment.",
+    "Windows symlink fixture requires a token with symbolic-link privilege or Developer Mode; no OS security settings changed."
+  ]
+}

@@ -302,12 +302,23 @@ class HasTests(unittest.TestCase):
                 with self.assertRaises(has.HasError):has.pack(request)
                 self.assertEqual(Path(request['path']).read_bytes(),before)
 
-    def test_snapshot_status_address_and_symlink_refuse(self):
+    def test_snapshot_status_address_refuses_unrelated_status(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);request,_,_=self.fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
             request.update(result=str(root/'job-result.json'),snapshot_ready=str(root/'unrelated.json'))
             with self.assertRaisesRegex(has.HasError,'belong'):has.pack(request)
-            target=root/'status.json';target.write_bytes(has.json_bytes(dict(format='studio_has_snapshot_ready_1',ok=True,error='',references={})));ready=root/'job-snapshot.json';ready.symlink_to(target);request['snapshot_ready']=str(ready)
+            self.assertEqual(Path(request['path']).read_bytes(),before)
+
+    def test_snapshot_status_symlink_refuses_linked_status(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);request,_,_=self.fixture(root);has.pack(request);before=Path(request['path']).read_bytes()
+            target=root/'status.json';target.write_bytes(has.json_bytes(dict(format='studio_has_snapshot_ready_1',ok=True,error='',references={})));ready=root/'job-snapshot.json'
+            try:ready.symlink_to(target)
+            except OSError as error:
+                if sys.platform=='win32' and error.winerror==1314:
+                    self.skipTest('Windows symlink fixture needs SeCreateSymbolicLinkPrivilege or Developer Mode; refusal remains unverified here')
+                raise
+            request.update(result=str(root/'job-result.json'),snapshot_ready=str(ready))
             with self.assertRaisesRegex(has.HasError,'Linked'):has.pack(request)
             self.assertEqual(Path(request['path']).read_bytes(),before)
 
