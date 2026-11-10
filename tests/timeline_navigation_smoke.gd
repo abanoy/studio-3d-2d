@@ -9,6 +9,12 @@ func wheel(view: Control,point: Vector2,index: int,ctrl:=false,shift:=false) -> 
 func run() -> void:
 	folder=OS.get_cmdline_user_args()[0];DirAccess.make_dir_recursive_absolute(folder)
 	app=load("res://main.tscn").instantiate();app.display_prefs_path=folder.path_join("prefs.cfg");app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
+	# The scene-first default deliberately compresses Timeline. Expand it for these
+	# simultaneous ruler/channel/audio gestures; compact scroll access has its own checks.
+	var divider: Control=app.workspace_layout.vertical.get_drag_area_control()
+	var height_before: float=app.workspace_layout.slots.bottom.size.y
+	await drag(divider,divider.size/2,Vector2(0,-220))
+	check(app.workspace_layout.slots.bottom.size.y>height_before+100,"actual divider drag expands Timeline for detailed editing")
 	app.show_project_options();app.project_options.hide();check(app.project_timing.apply_duration(1440).is_empty(),"long parent opens for navigation")
 	var source:=folder.path_join("figure.glb");preload("res://src/scene3d.gd").make_pose_fixture(source)
 	check(app.pose_editor.add_model(source).is_empty(),"original rig imports for fixed model/channel labels")

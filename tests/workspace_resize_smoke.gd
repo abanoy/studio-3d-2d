@@ -28,7 +28,8 @@ func run() -> void:
 		check(app.current_world().objects.size()==1,"actual native review project opens")
 		app.world_selection.select_entity(app.current_world().objects[0].id)
 	else:
-		app.pose_editor.add_model(ProjectSettings.globalize_path("res://examples/tutorials/Practice figure.glb"),0,{"physics_on_import":false});app.world_selection.select_entity(app.last_import_id)
+		var placement: Dictionary=app.import_actions.placement();placement.physics_on_import=false
+		check(app.pose_editor.add_model(ProjectSettings.globalize_path("res://examples/tutorials/Practice figure.glb"),0,placement).is_empty() and app.current_world().objects.size()==1,"actual included rig opens for resize checks");app.world_selection.select_entity(app.last_import_id)
 	app.mode.select(2);app.change_mode(2)
 	var ws=app.workspace_layout;ws.path=folder.path_join("layout.json")
 	var world: Dictionary=World.portable(app.current_world());var history: int=app.history.size();var view: Dictionary=app.renderer.view_state()

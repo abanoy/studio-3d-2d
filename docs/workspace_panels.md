@@ -160,3 +160,12 @@ The owner screenshot exposed the previous367pixel Timeline minimum. Real mouse-d
 
 
 Desktop Settings → Interface scale now uses actual window pixels:100percent no longer grows automatically when maximizing onto a large screen.125,150and175percent remain optional and persist when selected. Existing saved scale choices are respected. At3440x1440 the native Avatar test scene now has881pixels of default height, expandable to977; UI scaling does not alter movie output or camera framing. See [true-scale verification](benchmarks/true_desktop_scale_2026-11-10.json).
+
+
+## Docking and tabs — 2026-11-10
+
+Drag a panel title or its actual tab label to a highlighted left, right, top or bottom edge to dock. Drop onto another panel to form a selectable tab group. Drop into open scene space to detach a separate native Windows tool window; its position and size save automatically. Drag its panel title back onto a main-window target to redock. Closing a detached window returns the panel to its remembered dock. Esc cancels a drag.
+
+The title's ▾ menu offers all four dock edges, Tab with another panel, Float panel and Reset workspace. Edge docking into an occupied dock exchanges a panel; body drops group panels as tabs. The scene remains in the main window. Resize separators have a larger grab area. World tree and actions fill the selected width, including after reset/reload. Existing three-dock layout files migrate to v2; preferences stay separate from project content.
+
+Fresh verification: 21 docking/cold checks, 31 native Avatar resize checks, and 172 timeline/domain/workspace/native-channel checks, with actual H264 and unchanged output pixels. The original compact-pointer test failures are retained, and tests now bring scrollable controls into view before interacting. See [docking evidence](benchmarks/workspace_docking_2026-11-10.json). Owner confirms docking works but requested visual refinement; latest World clipping fix awaits their recheck.

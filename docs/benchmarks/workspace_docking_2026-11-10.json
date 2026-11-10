@@ -1,0 +1,372 @@
+{
+  "format": "has_workspace_docking_1",
+  "date": "2026-11-10",
+  "owner_feedback": [
+    "World bar on the left is stuck; wants movable/snapping tabs and separate windows like Kdenlive/Krita.",
+    "Docking is fine but a bit rough visually; screenshot shows World tree/actions remain in a narrow column while header grows."
+  ],
+  "implemented": [
+    "Four edge docks with highlighted drop targets. Drop onto another panel for real selectable tabs; drag title or actual tab label into open space for a separate native Windows tool window.",
+    "Wider resize separators; actual World widening/narrowing by routed mouse input.",
+    "Floating windows stay nonblocking, redock by dragging, retain geometry automatically and recreate after a fresh process. Closing returns live panel to its home.",
+    "Version2 layout persists tab groups, selected tabs, split offsets and floating geometry; old three-dock version1 migrates. Invalid duplicate layouts leave live controls unchanged.",
+    "Themed tabs and softer rounded drop highlight. World content fills width; reset/reload preserves TabContainer-managed anchors."
+  ],
+  "source_sha256": "edc5ef1fe5bdb87b8f9c044a7c31fd4d90f70989720b49f210414674e22450a9",
+  "docking": {
+    "reports": {
+      "writer": {
+        "checks": 17,
+        "failures": 0,
+        "reader": false
+      },
+      "reader": {
+        "checks": 4,
+        "failures": 0,
+        "reader": true
+      }
+    },
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_docking_smoke_568af8105cdc4128aa988d4a0937f9a6.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_docking_smoke_1d11aef5e6eb4768941279a472c08004.json"
+    ],
+    "source_unchanged": true,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-docking\\1794290951274243900"
+  },
+  "native_avatar_resize": {
+    "checks": 31,
+    "failures": 0,
+    "measurements": [
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 979.0,
+        "canvas_before": 883.0,
+        "window": "(3440, 1440)"
+      },
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 439.0,
+        "canvas_before": 343.0,
+        "window": "(1400, 900)"
+      },
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 318.0,
+        "canvas_before": 222.0,
+        "window": "(1200, 760)"
+      }
+    ],
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-resize\\1794291011450590100",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_resize_smoke_3e78db6560b44c04b16e0d4dd07ab91c.json",
+    "functional_unchanged": true
+  },
+  "timeline_and_native_channels": {
+    "reports": {
+      "unit": {
+        "checks": 42,
+        "failures": 0
+      },
+      "app": {
+        "checks": 35,
+        "failures": 0
+      },
+      "workspace": {
+        "checks": 48,
+        "failures": 0
+      },
+      "channels": {
+        "checks": 47,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/animated-channels/run_681786",
+        "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/animated-channels/run_681786/render_1794291001_7538621_0/movie.mp4",
+        "native_samples": [
+          "pose-smoke/miku-project",
+          "source-smoke/source-project",
+          "sfm-smoke/project"
+        ],
+        "project": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/animated-channels/run_681786/channels.has",
+        "recovery_pixels": {
+          "channels": 0,
+          "close": true,
+          "mean": 0.0
+        }
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "155472",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.33.100 libx264"
+      }
+    },
+    "optional_native_skips": [],
+    "functional_unchanged": true,
+    "source_audio_unchanged": true,
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\timeline_navigation_smoke_214b143710df4794b157307a0ff26a8a.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_controls_smoke_a8ac03885b3e4a10812818a831c82a2a.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\animated_channels_smoke_4b7a9d2c9cfc43f1bbc6c176d2292b49.json"
+    ],
+    "isolated_display": null,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\timeline-navigation\\1794290969598453000"
+  },
+  "private_receipts": {
+    "workspace_docking_smoke_568af8105cdc4128aa988d4a0937f9a6.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_696677bf8c5e43c19ad5622de1090b5f",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 29072,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 13.902
+    },
+    "workspace_docking_smoke_1d11aef5e6eb4768941279a472c08004.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_dc0f25cac76545e8bb96e5d9acde2de3",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 25916,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.934
+    },
+    "workspace_resize_smoke_3e78db6560b44c04b16e0d4dd07ab91c.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_b084baa32f514313a6470337259c3db0",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 28068,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 13.551
+    },
+    "timeline_navigation_smoke_214b143710df4794b157307a0ff26a8a.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_8e3740078a92482496d51dbcb1fd54ad",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 23288,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.591
+    },
+    "workspace_controls_smoke_a8ac03885b3e4a10812818a831c82a2a.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_4916c67df15348a98e31b60c3ff945e7",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 16436,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.488
+    },
+    "animated_channels_smoke_4b7a9d2c9cfc43f1bbc6c176d2292b49.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_179c59fa82a4487ca3aae5f48b6299c7",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 23480,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 17.769
+    }
+  },
+  "failed_intermediates": [
+    {
+      "log": "workspace-docking-existing.log",
+      "sha256": "eed881b959eb367d4a28127f70afa698d174aa63de952cc24aa9e457ac6be781",
+      "failed_checks": [
+        "FAIL dragging a panel heading onto another panel creates selectable tabs",
+        "FAIL World action can be brought into the visible dock without changing layout",
+        "FAIL World action can be brought into the visible dock without changing layout"
+      ]
+    },
+    {
+      "log": "workspace-docking-run.log",
+      "sha256": "31a616508d2ba1abe09f2d79feea577cd19b6a2bd2c462c87709559a25947d5e",
+      "failed_checks": [
+        "FAIL dragging detached World onto the main left edge docks the same live panel",
+        "FAIL body drop creates real selectable Timeline and Properties tabs",
+        "FAIL top-edge drop snaps Timeline above the scene",
+        "FAIL top tab group and floating World coexist"
+      ]
+    },
+    {
+      "log": "workspace-docking-run-2.log",
+      "sha256": "b04ccc6b9195d7136fd442faed51ee66d5b3508b2539e19d23a6e95b39e5c5e4",
+      "failed_checks": [
+        "FAIL actual tab click reveals Properties controls"
+      ]
+    },
+    {
+      "log": "workspace-docking-run-4.log",
+      "sha256": "5c0dbc1fbe68f6c4a6ca14882101bf7584997e9d2aa9f5a0b9a9cf003a0ec419",
+      "failed_checks": [
+        "FAIL cold reader restores exact tabs, selected tab, split offsets and floating geometry"
+      ]
+    },
+    {
+      "log": "workspace-docking-timeline.log",
+      "sha256": "a85a313533586a260afaa0cc357f5a957c8e12a47b40d93958d17da37ee58894",
+      "failed_checks": [
+        "FAIL model expands to animated channels while zoomed",
+        "FAIL zoomed sound drag moves exactly one frame in one Undo",
+        "FAIL zoomed sound right-edge trim shortens exactly one frame",
+        "FAIL zoomed right-edge Undo restores exact source trim",
+        "FAIL zoomed model piece drag shifts its block exactly one frame",
+        "FAIL zoomed model Undo restores exact authored world",
+        "FAIL timeline navigation and sound drag leave scene pixels unchanged"
+      ]
+    },
+    {
+      "log": "workspace-docking-timeline-2.log",
+      "sha256": "3014056a97863b4aad148b444b03f1df7e1ad93b9380baa0259dd91564b19b1c",
+      "failed_checks": [
+        "FAIL routed disclosure click expands only animated channels",
+        "FAIL following object rows map below expanded channels without changing domain order",
+        "FAIL channel key click selects the actual bone and frame through a filtered inspector",
+        "FAIL channel inspection highlights its row without moving an animation block",
+        "FAIL visibility channel selects for inspection without changing state or frame",
+        "FAIL export-locked timeline cannot change expansion or selection",
+        "FAIL split and moved pieces update source-time channel key addresses",
+        "FAIL collapse restores ordinary object layout and preserves both objects"
+      ]
+    },
+    {
+      "log": "workspace-docking-run-8.log",
+      "sha256": "7a8520b162094d9461350886c56515a4d7004cf77fb2a74ad94f0c359273e606",
+      "failed_checks": [
+        "FAIL World tree fills the widened dock instead of staying clipped in a fixed narrow column"
+      ]
+    }
+  ],
+  "test_corrections": [
+    "Default-only resize fixture previously supplied incomplete placement and did not assert import success. Now uses normal complete placement and requires an actual rig. Native Avatar checks always used the packed native project.",
+    "Compact scene-first Timeline intentionally clips scroll content. Detailed editing tests now expand by actual divider drag; channel disclosure first scrolls full editing area into view, with added accessibility assertion. All prior motion/Undo/native-binding/recovery/media assertions retained.",
+    "Cold layout comparison normalizes serialized numeric types; exact stored tab/split/window values are retained.",
+    "Source panel anchors were reset even when panel stayed in same TabContainer, leaving minimum-sized controls. Restore now retains tab-managed anchors unless actually reparenting; World tree and actions have explicit widened-fill assertions and inspected image."
+  ],
+  "aggregate_interruption": {
+    "record": {
+      "stopped_at_utc": "2026-11-10T05:52:00.3228208Z",
+      "owner_review_untouched": 1168,
+      "reason": "Deliberately interrupted for newly requested docking/float workflow; not an assertion failure or pass",
+      "test_command": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe --path C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110 --log-file C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\world_selection_smoke-engine.log --script tests/world_selection_smoke.gd --",
+      "aggregate_pid": 29164,
+      "test_pid": 27148,
+      "private_launcher_pid": 29176
+    },
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_6282aff0dcef4e0d9d7195e4d39bfc31",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 4294967295,
+      "child_pid": 27148,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 0.948
+    },
+    "status": "Deliberate stop for new owner docking request, not a pass or spontaneous test failure. Full aggregate still needs rerun."
+  },
+  "review_update": {
+    "format": "has_owner_review_world_fill_update_1",
+    "time_ns": 1794291007746016900,
+    "source_sha256": "edc5ef1fe5bdb87b8f9c044a7c31fd4d90f70989720b49f210414674e22450a9",
+    "prior_source_sha256": "b97bf61cd33559ce765af939c3cf688e9a9318c66d57ac2b0593e49a023e45f8",
+    "projects_before_and_after": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Avatar.has": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Flatgrass.has": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Street.has": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5"
+    },
+    "changed_only_session_review_source": true,
+    "restart_required": true,
+    "normal_installation_profile_recovery_and_running_window_untouched": true
+  },
+  "owner_recheck": "Docking accepted functionally but visual roughness noted. Latest left-fill/anchor fix supplied for restart; final comfort and native appearance comparison remain pending.",
+  "completion": "55/62 acceptance and52/54 implementation unchanged. No private media committed; retain review projects/profile/recovery and native fixtures for pending work."
+}
