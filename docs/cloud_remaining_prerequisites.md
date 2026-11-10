@@ -1,3 +1,20 @@
+# Windows continuation update — 2026-11-09
+
+Current [Windows follow-up](windows_acceptance_followup.md) and
+[native receipt](benchmarks/windows_native_acceptance_2026-11-09.json) supersede
+the older missing-BSP/atlas/unrun-Windows statements below. The owner supplied
+the local inputs; fresh native A/B and Windows C/D/F software cases pass.
+C/D/F are formally verified in the current ledger. Remaining prerequisites are
+actual native source-appearance/artist comparison, novice/learner/device/audible
+observations, and an approved clean offline Windows setup. No blanket local-only
+or missing-input gate remains for the completed supplied native cases. Transit
+still refuses the explicit 64-static-light bound. Full aggregate retains its
+separate absent historical `hecatia.kra` fixture prerequisite.
+
+---
+
+## Historical cloud handoff state
+
 # Remaining prerequisites after current cloud verification
 
 The product is not complete. The current ledger has 52 of 54 implementation

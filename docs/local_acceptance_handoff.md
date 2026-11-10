@@ -1,5 +1,27 @@
 # Target acceptance handoff — 2026-11-09
 
+## Current Windows checkpoint
+
+The local Windows continuation supersedes the unrun/missing-input state below.
+Fresh A/B/C/D/tutorial/first-movie/recovery software wrappers, 36 canonical core
+groups and 413 Python tests (44 explicit skips) pass. Windows C/D/F acceptance
+is now verified: 55/62 required acceptance groups are closed; implementation
+coverage stays 52/54. Full aggregate is not claimed: its historical eight-cel
+`hecatia.kra` fixture is absent. Initial failures and their fixes are preserved.
+
+The supplied GMA contains Transit; installed Flatgrass and all five original
+street atlases now have native evidence. Transit retains its explicit 64-light
+refusal, with named diagnostics and project-preservation checks. Native source
+appearance/artist comparison, actual novice/learner/tablet/listening sessions,
+and clean offline Windows setup remain specific external prerequisites. See
+[the remaining exercises](windows_acceptance_followup.md),
+[Windows receipt](benchmarks/windows_acceptance_2026-11-09.json),
+[native/core receipt](benchmarks/windows_native_acceptance_2026-11-09.json)
+and the current ledger. Retrieve saved progress from current main; disposable
+session files and the temporary SourceIO runtime are cleaned after remote
+verification. Owner originals, Steam content and installed Studio/tools remain
+protected. Earlier cloud-only text below is retained as historical handoff scope.
+
 Implementation/evidence baseline: `90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f`.
 It includes the preceding cutout fix `38a72ee6aa65c0fec311613fa197b7417c1eda84`.
 Use the latest pushed `origin/main`, which also contains this handoff and updated

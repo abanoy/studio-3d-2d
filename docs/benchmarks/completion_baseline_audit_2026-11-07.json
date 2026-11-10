@@ -300,10 +300,10 @@
           "file_sha256": "a1b293bb5f97017fefe0d9abe818568ef70fc8797b62bfdae8e7bc46413450df"
         }
       ],
-      "verification": "incomplete",
-      "acceptance_status": "open",
-      "acceptance_review": "Complete native BSP/map materials, props and compatible lighting still need an approved complete native input and dependencies; no .bsp is present in current uploaded attachments. temp.gma exceeds the32MiBtransfer limit and its contents are unknown; street01_android.pmx needs five exact named atlas PNG files. Supported native Source/MMD/VRM cases have current scoped evidence, stable cutout replay and actionable unsupported required-feature diagnostics. Compatibility limits are explicitly reported; universal shader/simulator/roadmap-format reproduction is not an invented gate. Final target/artist observations remain unrun; standalone input files do not require a game installation.",
-      "evidence_review": "Current supported native profiles have scoped receipts; controlled cutout ordering and actionable required-feature refusal are fixed and tested. Full native BSP acceptance still lacks actual input/dependencies; target/artist observations are not inferred. See docs/native_profile_acceptance_review.md.",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Native inputs are now available and the combined Windows supported-profile route passes. Remaining external prerequisite: artist/source-appearance comparison against the actual native originals using docs/windows_acceptance_followup.md. Roadmap formats/full native shader-simulator reproduction remain optional or explicit unsupported limits; no known independent software defect is being handed off.",
+      "evidence_review": "Fresh Windows native BSP/VRM/complete PMX route passes19writer+5exact cold checks with2map roots,1of1native prop,12textures,two static lights and29bounded baked-lightmap faces. Five original street atlases are present and embedded. Transit CRC5entries identifies its BSP; its64light-bound refusal has5actual app preservation checks. Prior Source/MMD/VRM evidence remains scoped; artist comparison to original native appearance is still unobserved.",
       "formal_receipts": [
         {
           "kind": "test_result",
@@ -334,6 +334,12 @@
           "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
           "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
           "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows native BSP/VRM/complete PMX route passes19writer+5exact cold checks with2map roots,1of1native prop,12textures,two static lights and29bounded baked-lightmap faces. Five original street atlases are present and embedded. Transit CRC5entries identifies its BSP; its64light-bound refusal has5actual app preservation checks. Prior Source/MMD/VRM evidence remains scoped; artist comparison to original native appearance is still unobserved."
         }
       ],
       "external_dependencies": [
@@ -365,10 +371,10 @@
           "file_sha256": "adbbf011e94ed50144fc7335506fbf97abef1f6bb722695d0327610d34917c9b"
         }
       ],
-      "verification": "incomplete",
-      "acceptance_status": "open",
-      "acceptance_review": "Complete native BSP/map materials, props and compatible lighting still need an approved complete native input and dependencies; no .bsp is present in current uploaded attachments. temp.gma exceeds the32MiBtransfer limit and its contents are unknown; street01_android.pmx needs five exact named atlas PNG files. Supported native Source/MMD/VRM cases have current scoped evidence, stable cutout replay and actionable unsupported required-feature diagnostics. Compatibility limits are explicitly reported; universal shader/simulator/roadmap-format reproduction is not an invented gate. Final target/artist observations remain unrun; standalone input files do not require a game installation.",
-      "evidence_review": "Current supported native profiles have scoped receipts; controlled cutout ordering and actionable required-feature refusal are fixed and tested. Full native BSP acceptance still lacks actual input/dependencies; target/artist observations are not inferred. See docs/native_profile_acceptance_review.md.",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
+      "acceptance_review": "Native dependencies, original preservation, bounded materials/props/lightmaps and exact portable cold replay now have Windows evidence. Obtain actual source-appearance/artist comparison for supported geometry/material/rig behavior. Preserve the explicitly reported partial lightmap/native-shader/physics limits; do not infer original visual fidelity solely from self-replay hashes.",
+      "evidence_review": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external.",
       "formal_receipts": [
         {
           "kind": "test_result",
@@ -399,6 +405,12 @@
           "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
           "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
           "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external."
         }
       ],
       "external_dependencies": [
@@ -2686,8 +2698,8 @@
       "reviewed_code_anchors": [],
       "verification": "external_required",
       "acceptance_status": "external_blocked",
-      "acceptance_review": "The exact native section17.A software route now passes21writer+6new-process reader checks with conversion/cache offline, exact scene/camera and pixels, frame0/frame4 gizmo auto-keys and an actual1080p24H264 movie. It exposed/fixed premature floating placement;20existing placement checks pass. A real novice on Windows, actual OS drag/input behavior, elapsed time and usability remain unobserved. Programmatic events cannot certify five-minute novice success.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
+      "acceptance_review": "Windows native21+6 software and core drawing/audio checks now pass. A real novice still must perform the eight-step timed exercise, actual Explorer drop/input and original independent drawing/sound workflow; record time, assistance, confusing controls and audible synchronization. Automation is not novice evidence.",
+      "evidence_review": "Fresh Windows21writer+6cold exact native VRM scenarioA checks and1080p24H264 pass in f77c90a receipt. Core36groups now pass, including actual drawing and WASAPI/Dummy capture. Native refusal/source/cold safeguards remain exact. Human novice timing, actual Explorer drop and original drawing/sound usability still need observations.",
       "formal_receipts": [
         {
           "kind": "test_result",
@@ -2700,10 +2712,15 @@
           "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
           "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
           "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows21writer+6cold exact native VRM scenarioA checks and1080p24H264 pass in f77c90a receipt. Core36groups now pass, including actual drawing and WASAPI/Dummy capture. Native refusal/source/cold safeguards remain exact. Human novice timing, actual Explorer drop and original drawing/sound usability still need observations."
         }
       ],
       "external_dependencies": [
-        "B-WINDOWS",
         "B-ARTIST"
       ]
     },
@@ -2719,12 +2736,18 @@
       "reviewed_code_anchors": [],
       "verification": "external_required",
       "acceptance_status": "external_blocked",
-      "acceptance_review": "Current Source, MMD/GMA and VRM receipts are separately scoped. The combined multiple-map/VRM/PMX/Lit-Unshaded/packed-cold native scenario needs a complete BSP and dependencies. That input-blocked test can run in cloud and does not require a local Codex worker; final Windows execution remains separate.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "acceptance_review": "The combined Windows native software route now passes19+5checks, cold exact Lit/Unshaded replay and actual MP4 with all five original street atlases. Actual artist comparison to supported original source appearance remains required. The automated overlapping large-environment fixture is not a composed or approved artistic scene.",
+      "evidence_review": "Fresh Windows19writer+5cold checks combine2independent BSP roots, posed native VRM and complete textured street PMX. Actual prop/material/bounded lightmap reports, root UndoRedo, exact scene/camera/Lit-Unshaded pixels, source/import/cache-offline packed reopen, original preservation and24frame1080p24H264 pass. Artist supported-source appearance comparison remains distinct; automated overlapping-environment arrangement is not artistic approval.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows19writer+5cold checks combine2independent BSP roots, posed native VRM and complete textured street PMX. Actual prop/material/bounded lightmap reports, root UndoRedo, exact scene/camera/Lit-Unshaded pixels, source/import/cache-offline packed reopen, original preservation and24frame1080p24H264 pass. Artist supported-source appearance comparison remains distinct; automated overlapping-environment arrangement is not artistic approval."
+        }
+      ],
       "external_dependencies": [
-        "B-NATIVE",
-        "B-WINDOWS"
+        "B-NATIVE"
       ]
     },
     {
@@ -2737,14 +2760,19 @@
       "implementation": "not_applicable",
       "implementation_review": "The seven-step generic timeline/presence/gap/visibility/hidden-selection/fade/camera-cut scenario can be integrated with original procedural assets in cloud. Complete that independent routed software case; final target Windows acceptance remains unavailable. Native ecosystem fidelity belongs to IMPORT-02/03 and ACCEPT-B, not an invented prerequisite here.",
       "reviewed_code_anchors": [],
-      "verification": "external_required",
-      "acceptance_status": "external_blocked",
-      "acceptance_review": "All seven routed software steps pass25app+6fresh-process checks on original generated maps/rig, with source/cache offline, exact packed pixels and128frame1080p24H264AAC/sample48001timing. Final Windows target execution remains the named external gate. Native fidelity is still required separately under IMPORT-02/03 and ACCEPT-B.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
-      "external_dependencies": [
-        "B-WINDOWS"
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required seven-step Windows software scenario verified by committed fresh31routed/cold checks, exact media/state/pixels and valid private-desktop receipts. Physical input, native fidelity and clean setup remain separate requirements.",
+      "evidence_review": "Fresh Windows all7routed scenarioC steps pass25writer+6cold checks,128frame1080p24H264AAC and decoded48kHz onset sample48001, exact pixels/state, source/cache-offline reopen and unchanged manualHAS. Private-desktop child/foreground/job/desktop receipts pass. Subsequent36coregroups also pass. Native fidelity remains separately scoped.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows all7routed scenarioC steps pass25writer+6cold checks,128frame1080p24H264AAC and decoded48kHz onset sample48001, exact pixels/state, source/cache-offline reopen and unchanged manualHAS. Private-desktop child/foreground/job/desktop receipts pass. Subsequent36coregroups also pass. Native fidelity remains separately scoped."
+        }
       ],
+      "external_dependencies": [],
       "software_evidence_update": "docs/benchmarks/scenario_c_2026-11-07.json"
     },
     {
@@ -2757,14 +2785,19 @@
       "implementation": "not_applicable",
       "implementation_review": "Run the complete routed software scenario with an original compatible ragdoll and dynamic props, then retain the separate Windows execution gate. Native collision/joint fidelity remains an import requirement; artistic observation belongs to the novice/device gates.",
       "reviewed_code_anchors": [],
-      "verification": "external_required",
-      "acceptance_status": "external_blocked",
-      "acceptance_review": "All six mechanical cloud software steps pass28app+4fresh-reader checks with the original17bone humanoid and three props. Actual Local10/World5contacts,49exact reverse sample states,230715BactualWorldmanifest(238963Bbudgetestimate), H264AAC and source/manual preservation pass. Final Windows target gate remains; native joint/cloth fidelity and physical artist comfort are separate requirements.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
-      "external_dependencies": [
-        "B-WINDOWS"
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required six-step Windows mechanical scenario verified by committed fresh32routed/cold checks, actual contacts/recording responsiveness and exact media/state with valid isolation receipts. Artist comfort and universal native physics remain separate.",
+      "evidence_review": "Fresh Windows all6mechanical scenarioD steps pass28writer+4cold checks with15World/12Local contacts. Local201281B/World239294B,46frames each; max sample2.376/2.446ms and max frame gap43.074/40.970ms. Actual H264AAC, exact recorded replay and original/manual/source/cache preservation pass, with private-desktop receipts. No physical artist comfort or universal native physics claim.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows all6mechanical scenarioD steps pass28writer+4cold checks with15World/12Local contacts. Local201281B/World239294B,46frames each; max sample2.376/2.446ms and max frame gap43.074/40.970ms. Actual H264AAC, exact recorded replay and original/manual/source/cache preservation pass, with private-desktop receipts. No physical artist comfort or universal native physics claim."
+        }
       ],
+      "external_dependencies": [],
       "software_evidence_update": "docs/benchmarks/scenario_d_2026-11-07.json"
     },
     {
@@ -2779,12 +2812,18 @@
       "reviewed_code_anchors": [],
       "verification": "external_required",
       "acceptance_status": "external_blocked",
-      "acceptance_review": "The committed 52+5 grading checks and catalog/79+8 first-movie cases cover bundled assets, actual grading, simulated16second stuck hints, whole Previous, Continue/Fresh and normal Save/export. A real learner must still observe the Windows course, clarity and hint usefulness. New software defects remain cloud work.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
+      "acceptance_review": "Windows software course/first-movie cases now pass. A real learner still needs to observe grading, clarity, a genuine10-30second stuck hint, full Previous/Continue-Fresh and optional normal Save. Record actual observations using docs/windows_acceptance_followup.md.",
+      "evidence_review": "Fresh Windows tutorial and first-movie wrappers pass real grading/Previous/Continue-Fresh/save/movie routes with private-desktop receipts and decoded cue timing. Real learner clarity/usefulness and an actual10-30second stuck interval remain unobserved.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows tutorial and first-movie wrappers pass real grading/Previous/Continue-Fresh/save/movie routes with private-desktop receipts and decoded cue timing. Real learner clarity/usefulness and an actual10-30second stuck interval remain unobserved."
+        }
+      ],
       "external_dependencies": [
-        "B-ARTIST",
-        "B-WINDOWS"
+        "B-ARTIST"
       ]
     },
     {
@@ -2798,14 +2837,19 @@
       "implementation": "not_applicable",
       "implementation_review": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
       "reviewed_code_anchors": [],
-      "verification": "external_required",
-      "acceptance_status": "external_blocked",
-      "acceptance_review": "Committed327cloud recovery checks include actualSIGKILL and147normal-startup checks across15cases, newest/older fallback, timestamps/previews, background scheduling and exact manualHAS/source/media preservation. Windows abrupt-exit/restart and target storage-failure behavior remain unrun; neither process-kill test certifies physical power loss.",
-      "evidence_review": "Code/report coverage is not promoted into complete current acceptance. Existing evidence is scoped or historical; full condition remains open/externally blocked as recorded.",
-      "formal_receipts": [],
-      "external_dependencies": [
-        "B-WINDOWS"
-      ]
+      "verification": "verified",
+      "acceptance_status": "verified",
+      "acceptance_review": "Required Windows abrupt-exit/restart/fallback/history/background scheduling and injected storage-failure preservation conditions pass with process ownership, original/manual hashes, exact restore and private-desktop receipts. Physical power-loss durability is not claimed or added as an unconditional gate.",
+      "evidence_review": "Fresh Windows41schedule,147normal-startup,22history+33journal+36history-cold checks pass with actual abrupt owned-writer exit, native owner-handle proof, latest/older/deep fallback, timestamps/previews and unchanged manualHAS. Background10domain+17writer+5cold plus31HAS/16fault tests pass; current457Python run has413passes/44explicit skips including POSIX/symlink prerequisites. Actual Windows injected ENOSPC/permission/replace/readback failure preservation is covered; no physical power-loss or symlink-privilege certification.",
+      "formal_receipts": [
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows41schedule,147normal-startup,22history+33journal+36history-cold checks pass with actual abrupt owned-writer exit, native owner-handle proof, latest/older/deep fallback, timestamps/previews and unchanged manualHAS. Background10domain+17writer+5cold plus31HAS/16fault tests pass; current457Python run has413passes/44explicit skips including POSIX/symlink prerequisites. Actual Windows injected ENOSPC/permission/replace/readback failure preservation is covered; no physical power-loss or symlink-privilege certification."
+        }
+      ],
+      "external_dependencies": []
     },
     {
       "id": "ACCEPT-TABLET",
@@ -2858,12 +2902,12 @@
     "Expanded high-level source reverse mappings; every requirement source reference is represented.",
     "Current software closures retain explicit external gates; verified rows now describe their actual committed receipt scope instead of stale generic open-condition prose.",
     "2026-11-08: real native Krita40frame exact RGBA/API/54app/41unit evidence closes COMP-01 with existing400alpha-video/chroma receipts. All82supplied Source models now have actual conversion/ingress/render evidence; IMPORT-02/03 remain partial pending missing native profiles and target observations.",
-    "2026-11-08: STORE-04 source-contract review corrects the added unconditional Windows directory-flush gate. Original bounded acceptance text is unchanged; current executed atomic/fault/rollback receipts verify it. Windows/physical observations remain in external gates. Native MMD/GMA gaps fixed with93new app checks; BSP/VRM remain unrun."
+    "2026-11-08: STORE-04 source-contract review corrects the added unconditional Windows directory-flush gate. Original bounded acceptance text is unchanged; current executed atomic/fault/rollback receipts verify it. Windows/physical observations remain in external gates. Native MMD/GMA gaps fixed with93new app checks; BSP/VRM remain unrun.",
+    "2026-11-09 Windows: fresh target receipts close ACCEPT-C/D/F;52/54implementation and55/62acceptance. Native input/atlas absence is resolved. IMPORT-02/03 and ACCEPT-B retain actual artist/source-appearance prerequisites; A/E/tablet/clean-install observations remain external. Stable IDs, acceptance text, original source/goal hashes, historical failures and optional/OPEN distinctions are unchanged."
   ],
   "limitations": [
     "Equal checklist groups do not measure remaining engineering effort or release readiness.",
-    "52implemented required groups describe bounded code coverage;52/62software acceptance closures do not certify the eight external gates.",
     "Source coverage includes82converter/app-ingress/render cases and separately nine full-character pose/contact/cold cases, not82full-fidelity artist approvals.",
-    "Windows installer/crash/scenario execution, approved complete other native profiles and physical tablet/audio/novice/artist observations remain external prerequisites."
+    "Current52/54implemented groups and55/62verified acceptance groups are separate checklist measures. Seven explicitly external conditions remain: native supported-source appearance2groups+scenarioB, noviceA, learnerE, physical tablet/audio and clean offline setup. No product-completion or release-readiness claim."
   ]
 }
