@@ -223,12 +223,13 @@ var camera_transform_editor: Node
 
 func initialize_display() -> void:
 	var prefs := ConfigFile.new()
-	var screen := DisplayServer.screen_get_size().min(get_window().size)
 	if OS.has_feature("web"):
-		screen = Vector2i(JavaScriptBridge.eval("window.innerWidth"), JavaScriptBridge.eval("window.innerHeight"))
 		resize_web_display()
 		get_window().size_changed.connect(resize_web_display)
-	var percent := 150 if screen.x >= 2400 and screen.y >= 1300 else 125 if screen.x >= 1800 and screen.y >= 1000 else 100
+	else:
+		# Desktop zoom is explicit: resizing a window must not magnify a 1400x900 UI.
+		get_window().content_scale_size=Vector2i.ZERO
+	var percent := 100
 	if prefs.load(display_prefs_path)==OK:
 		var saved = prefs.get_value("display","percent",percent)
 		if saved in UI_PERCENT: percent = int(saved)

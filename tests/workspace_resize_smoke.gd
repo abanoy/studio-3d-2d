@@ -36,6 +36,7 @@ func run() -> void:
 	var image: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	for window_size in [Vector2i(3440,1440),Vector2i(1400,900),Vector2i(1200,760)]:
 		root.size=window_size;await settle();ws.reset();await settle()
+		check(root.get_visible_rect().size.is_equal_approx(Vector2(window_size)),"100 percent uses actual window pixels rather than automatic magnification")
 		var before: float=app.canvas.size.y
 		check(ws.slots.right.size.x<root.get_visible_rect().size.x*.3,"Properties default leaves scene width at "+str(window_size))
 		await drag(200)

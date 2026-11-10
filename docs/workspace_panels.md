@@ -157,3 +157,6 @@ applicable. Native/physical-device/Windows acceptance remains separate. See
 Drag the horizontal divider immediately above the Timeline title downward to enlarge the scene, or upward for more tracks. The Timeline body scrolls when compressed; its controls remain live and retain their full available width. A new/reset workspace starts with a234logical-pixel Timeline. The title menu's Reset workspace also restores sensible Properties width. Normal project launches save the layout between sessions.
 
 The owner screenshot exposed the previous367pixel Timeline minimum. Real mouse-drag regressions now cover the native Avatar at3440x1440 and two smaller sizes, plus125percent interface scale. Exact pose/camera/Undo state and render pixels remain unchanged. See [verification](benchmarks/scene_workspace_resize_2026-11-10.json).
+
+
+Desktop Settings → Interface scale now uses actual window pixels:100percent no longer grows automatically when maximizing onto a large screen.125,150and175percent remain optional and persist when selected. Existing saved scale choices are respected. At3440x1440 the native Avatar test scene now has881pixels of default height, expandable to977; UI scaling does not alter movie output or camera framing. See [true-scale verification](benchmarks/true_desktop_scale_2026-11-10.json).
