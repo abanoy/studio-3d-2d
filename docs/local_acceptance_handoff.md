@@ -11,6 +11,23 @@ groups and 52/62 formally closed acceptance conditions. Two native capability
 conditions and eight target/device/human gates are unclosed. A local worker can
 run Windows software tests; it cannot invent missing files or human observations.
 
+## Repository progress and local cleanup
+
+Owner clarification, 2026-11-09: every completed increment's new source, tests,
+findings and compact progress/evidence must be committed and pushed to this repo.
+Verify the remote copy before removing that task's disposable local generated
+outputs, staged copies and caches that no pending case needs. Record cleanup in
+the next checkpoint. Later workers must clone/fetch/download progress from the repo.
+
+At assignment end, push/verify the final state and retrieval commit, then remove
+the session-owned isolated checkout/worktree and disposable staging files once
+no pending work remains. Protect owner originals/projects, the existing install,
+shared tools and final deliverables without a verified backup. Private artwork
+must not be uploaded merely to make cleanup possible.
+
+The small [Windows worker packet](handoff/windows/START_HERE.md) carries this rule
+and the local continuation goal; its ZIP is in `docs/handoff/`.
+
 ## Completed cloud work to preserve
 
 - Exact scenario A: 21 writer and 6 fresh-reader checks; actual drop handler,
