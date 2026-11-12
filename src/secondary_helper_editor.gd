@@ -41,6 +41,16 @@ var existing_toggle: CheckButton
 var mode_choice:="auto"
 var selected_key:=""
 var part_press:=false
+var include_toggle: CheckButton
+var include_status: Label
+var included: Dictionary={}
+var part_names: Array[String]=[]
+var point_review_after:=0
+var pending_install: Dictionary={}
+var restore_list_focus:=false
+var source_stamp:=0
+var inclusion_navigation:=false
+var preview_ready:=false
 
 func setup(parent: Node) -> void:
 	button=app.icon_button(parent,"Set up loose parts","scene",open,"Review a connected hair/clothing region and attachment, then add weighted joints to a new HAS asset. Existing authored springs take priority.")
@@ -61,6 +71,7 @@ func open(prefer_hair_clothing:=false) -> void:
 	close();prefer_loose=prefer_hair_clothing;app.stop();app.pose_editor.finish_drag();app.finish_stroke()
 	if not app.physics_editor.freeze_all():return
 	target_id=current.data.id;source=ProjectSettings.globalize_path(current.data.source);revision=app.recovery_revision
+	source_stamp=FileAccess.get_modified_time(source)
 	before_world=app.current_world().duplicate(true)
 	request={"source_sha256":current.data.sha256,"segments":3}
 	var shape_snapshot:=Model.Shape.snapshot(current.root)
@@ -71,7 +82,9 @@ func open(prefer_hair_clothing:=false) -> void:
 	scroll=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;column.add_child(scroll)
 	var box:=VBoxContainer.new();box.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(box)
 	info=app.label(box,"Inspecting geometry and existing weights…");info.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	parts=ItemList.new();parts.custom_minimum_size=Vector2(420,125);parts.item_selected.connect(select_part);box.add_child(parts)
+	parts=ItemList.new();parts.custom_minimum_size=Vector2(420,125);parts.item_selected.connect(select_part);parts.gui_input.connect(include_key);box.add_child(parts)
+	include_toggle=CheckButton.new();include_toggle.text="Include in setup";include_toggle.toggled.connect(include_part);box.add_child(include_toggle)
+	include_toggle.tooltip_text="Check several reviewed parts to set them up together. Clicking a list row only changes the part in view. Space toggles this check when the list has focus."
 	app.label(box,"Attach to")
 	anchors=OptionButton.new();anchors.item_selected.connect(change_anchor);box.add_child(anchors)
 	existing_toggle=CheckButton.new();existing_toggle.text="Use existing joints";existing_toggle.visible=false;box.add_child(existing_toggle);existing_toggle.toggled.connect(existing_mode)
@@ -91,25 +104,28 @@ func open(prefer_hair_clothing:=false) -> void:
 	for axis in ["X","Y","Z"]:
 		app.label(row,axis);var spin:=SpinBox.new();spin.min_value=-100000;spin.max_value=100000;spin.step=.005;spin.allow_greater=false;spin.custom_minimum_size.x=100;row.add_child(spin);fields.append(spin);spin.value_changed.connect(func(_v):change_point())
 	app.button(details,"Reset proposed joints",reset_points)
+	include_status=app.label(column,"Include several parts to set them up together.");include_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	var actions:=HBoxContainer.new();column.add_child(actions);apply_button=app.button(actions,"Add joints to this part",apply);app.button(actions,"Cancel",close)
 	window.popup_centered(Vector2i(470,mini(560,maxi(380,int(app.get_viewport_rect().size.y)-180))))
 	window.position+=Vector2i(maxi(0,int((app.get_viewport_rect().size.x-window.size.x)/2)-12),0)
 	launch("inspect")
 	app.canvas.review_pointer=patch_pointer
 
-func launch(operation: String) -> void:
+func launch(operation: String,payload: Dictionary={}) -> void:
 	if pid>0 or not is_instance_valid(window):return
 	clear_preview();stage=operation;apply_button.disabled=true;parts.mouse_filter=Control.MOUSE_FILTER_IGNORE;anchors.disabled=true
-	existing_toggle.disabled=true
+	if operation in ["inspect","preview","review"]:preview_ready=false
+	existing_toggle.disabled=true;include_toggle.disabled=true
+	restore_list_focus=parts.has_focus() or restore_list_focus
 	parts.release_focus();parts.focus_mode=Control.FOCUS_NONE
 	for spin in fields:spin.editable=false
 	if operation=="inspect":preview={}
-	info.text="Checking geometry…" if operation!="build" else "Creating a new weighted asset…"
+	info.text="Preparing all checked parts…" if operation=="batch_build" else "Checking the original source…" if operation=="source_check" else "Creating a new weighted asset…" if operation=="build" else "Checking geometry…"
 	folder=ProjectSettings.globalize_path("res://output/helper-authoring/run_"+str(ResourceUID.create_id()))
 	if DirAccess.make_dir_recursive_absolute(folder)!=OK:info.text="Cannot create the authoring folder.";return
 	var f:=FileAccess.open(folder.path_join("request.json"),FileAccess.WRITE)
 	if not f:info.text="Cannot save the helper request.";return
-	f.store_string(JSON.stringify(request));f.close()
+	f.store_string(JSON.stringify(request if payload.is_empty() else payload,"",true,true));f.close()
 	pid=OS.create_process(app.source_import.python(),[ProjectSettings.globalize_path("res://tools/secondary_helper_worker.py"),source,operation,folder],false)
 	deadline=Time.get_ticks_msec()+120000
 	if pid<0:info.text="Cannot start the local helper worker. Check Python.";parts.mouse_filter=Control.MOUSE_FILTER_STOP
@@ -121,6 +137,10 @@ func _process(_delta: float) -> void:
 	if app.playing or not app.physics_editor.simulations.is_empty() or not app.physics_editor.pending.is_empty():
 		close();app.message("Live motion started. Pause it and reopen loose-part review to continue.");return
 	if app.exporting:close();return
+	if inclusion_navigation!=app.navigating:
+		inclusion_navigation=app.navigating;refresh_inclusions()
+	if point_review_after>0 and pid<=0 and Time.get_ticks_msec()>=point_review_after:
+		point_review_after=0;launch("review")
 	details.visible=app.advanced_mode
 	if not preview.is_empty() and last_advanced!=app.advanced_mode:refresh_anchor_labels()
 	if app.recovery_revision!=revision or not actor() or actor().data.sha256!=request.get("source_sha256"):
@@ -134,10 +154,12 @@ func _process(_delta: float) -> void:
 		var result=JSON.parse_string(file.get_as_text()) if file and file.get_length()<=4*1024*1024 else null
 		if not result is Dictionary or not result.get("ok",false):
 			info.text=str(result.get("error","Helper worker ended without a result")) if result is Dictionary else "Helper worker ended without a result."
+			restore_list_focus=false
 			parts.mouse_filter=Control.MOUSE_FILTER_STOP;parts.focus_mode=Control.FOCUS_ALL
 			for spin in fields:spin.editable=true
 			existing_toggle.disabled=false
-			anchors.disabled=preview.is_empty();apply_button.disabled=stage!="build" or preview.is_empty() or not preview.get("can_apply",false);return
+			anchors.disabled=preview.is_empty();apply_button.disabled=stage!="build" or preview.is_empty() or not preview.get("can_apply",false)
+			refresh_inclusions();return
 		completed(result.value)
 	if not preview.is_empty():draw_preview()
 
@@ -149,7 +171,7 @@ func completed(value: Dictionary) -> void:
 		for i in range(value.regions.size()):
 			var row: Dictionary=value.regions[i];var name:=Labels.standard(row.anchor_name,Labels.role(actor().data,row.anchor_name))+" area "+str(i+1)
 			if not str(row.get("material_name","")).is_empty():name=str(row.material_name).left(64).capitalize()+" · "+name
-			parts.add_item(name+(" (already set up)" if row.already_rigged else " (suggested)" if row.suggested else " (review)"))
+			part_names.append(name+(" (already set up)" if row.already_rigged else " (suggested)" if row.suggested else " (review)"));parts.add_item(part_names[-1])
 			parts.set_item_disabled(i,row.already_rigged and not patch_toggle.button_pressed)
 			parts.set_item_tooltip(i,str(int(row.vertices))+" vertices; attachment: "+str(row.anchor_name) if app.advanced_mode else "Preview this connected part before adding joints.")
 		if value.regions.is_empty():info.text="No usable skinned regions found. Unskinned meshes and unsupported data still need a separate rig/region editor.";return
@@ -160,10 +182,10 @@ func completed(value: Dictionary) -> void:
 			if score>priority:selected=i;priority=score
 		if selected<0:info.text="These connected surfaces already use spring joints. Their existing setup is kept.";return
 		parts.select(selected);parts.ensure_current_is_visible();select_part(selected)
-	elif stage=="preview":
+	elif stage in ["preview","review"]:
 		if smart_existing(value):
 			request.erase("vertex_mask");request.erase("points_in_anchor");request["use_existing_joints"]=true;launch("preview");return
-		preview=value
+		preview=value;preview_ready=true
 		var use_existing: bool=value.get("mode","")=="existing_joints"
 		if use_existing:request.erase("points_in_anchor")
 		else:request["points_in_anchor"]=value.points_in_anchor.duplicate(true)
@@ -195,6 +217,13 @@ func completed(value: Dictionary) -> void:
 			var names: Array=[]
 			for name in value.existing_chain.joint_names:names.append(str(name).replace("_"," ").capitalize())
 			info.text="Review: "+", ".join(names)+" and the pale endpoint. This moves "+str(value.affected_regions.size())+" connected regions ("+str(int(value.affected_vertices))+" weighted vertices). Orange shows all shared regions. Original weights and poses are kept; Undo removes this setup."
+		cache_included(value);refresh_inclusions()
+		if restore_list_focus and not app.navigating:parts.grab_focus()
+		restore_list_focus=false
+	elif stage=="batch_build":
+		pending_install=value
+		launch("source_check",{"source_sha256":request.source_sha256,"source_stamp_ns":value.batch.source_stamp_ns})
+	elif stage=="source_check":install(pending_install)
 	elif stage=="build":install(value)
 
 func region_priority(row: Dictionary) -> int:
@@ -208,6 +237,76 @@ func region_priority(row: Dictionary) -> int:
 			if word in hint:return result+4
 	return result
 
+func region_key(row: Dictionary) -> String:
+	return "%d:%d:%d"%[int(row.node),int(row.primitive),int(row.component)]
+
+func included_key(key: String) -> String:
+	for group in included:
+		if key in included[group].source_keys:return group
+	return ""
+
+func proposal_entry(value: Dictionary) -> Dictionary:
+	var group: String="part:"+selected_key;var keys: Array=[selected_key]
+	if value.get("mode","")=="existing_joints":
+		var nodes:=PackedStringArray()
+		for node in value.existing_chain.joint_nodes:nodes.append(str(int(node)))
+		group="native:%d:%s"%[int(value.existing_chain.center_node),",".join(nodes)];keys=[]
+		for row in value.affected_regions:keys.append(region_key(row))
+	var reviewed:=request.duplicate(true);reviewed["reviewed"]=true
+	return {"group":group,"focus_key":selected_key,"source_keys":keys,"request":reviewed,"valid":value.get("can_apply",false),"mode":value.get("mode","weighted")}
+
+func cache_included(value: Dictionary) -> void:
+	var old:=included_key(selected_key)
+	if old.is_empty():return
+	if not value.get("can_apply",false):included[old].valid=false;return
+	var entry:=proposal_entry(value)
+	if old!=entry.group:included.erase(old)
+	included[entry.group]=entry
+
+func queue_changed() -> bool:
+	var group:=included_key(selected_key)
+	if group.is_empty():return false
+	included[group].request=request.duplicate(true);included[group].request["reviewed"]=true;included[group].valid=false
+	refresh_inclusions();return true
+
+func preview_operation() -> String:
+	return "review" if not included_key(selected_key).is_empty() else "preview"
+
+func include_part(enabled: bool) -> void:
+	if changing:return
+	if pid>0 or app.navigating:refresh_inclusions();return
+	var group:=included_key(selected_key)
+	if not enabled:
+		included.erase(group);point_review_after=0;refresh_inclusions();return
+	if not preview_ready or preview.is_empty() or not preview.get("can_apply",false):refresh_inclusions();return
+	var entry:=proposal_entry(preview);entry.valid=false;included[entry.group]=entry
+	refresh_inclusions();launch("review")
+
+func include_key(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_SPACE and parts.has_focus() and pid<=0 and not app.navigating and not app.playing and not include_toggle.disabled:
+		include_toggle.button_pressed=not include_toggle.button_pressed;parts.accept_event()
+
+func refresh_inclusions() -> void:
+	if not is_instance_valid(include_toggle) or not is_instance_valid(apply_button):return
+	var current:=included_key(selected_key);var pending:=0;var areas: Dictionary={}
+	for group in included:
+		if not included[group].valid:pending+=1
+		for key in included[group].source_keys:areas[key]=true
+	changing=true;include_toggle.set_pressed_no_signal(not current.is_empty());changing=false
+	include_toggle.disabled=pid>0 or app.navigating or current.is_empty() and (not preview_ready or preview.is_empty() or not preview.get("can_apply",false))
+	include_toggle.tooltip_text="Included shared group: these "+str(included[current].source_keys.size())+" areas move together. Unchecking removes the whole group; individual exclusion needs different weights." if not current.is_empty() and included[current].mode=="existing_joints" else "Check several reviewed parts to set them up together. Clicking a row only changes the part in view. Space toggles this check when the list has focus."
+	for i in range(mini(part_names.size(),assessment.get("regions",[]).size())):
+		var group:=included_key(region_key(assessment.regions[i]))
+		parts.set_item_text(i,(("✓ " if included[group].valid else "? ") if not group.is_empty() else "")+part_names[i])
+	if included.is_empty():
+		include_status.text="Include several parts to set them up together."
+		apply_button.text="Enable these existing joints" if preview.get("mode","")=="existing_joints" else "Add joints to this part"
+		apply_button.disabled=pid>0 or not preview_ready or preview.is_empty() or not preview.get("can_apply",false)
+	else:
+		include_status.text=str(included.size())+" checked setup"+("s" if included.size()!=1 else "")+" · "+str(areas.size())+" connected area"+("s" if areas.size()!=1 else "")+(" · "+str(pending)+" needs review" if pending>0 else " · reviewed")
+		apply_button.text="Set up "+str(included.size())+" checked part"+("s" if included.size()!=1 else "")
+		apply_button.disabled=pid>0 or pending>0 or point_review_after>0
+
 func refresh_anchor_labels() -> void:
 	last_advanced=app.advanced_mode
 	for i in range(preview.anchors.size()):
@@ -218,24 +317,36 @@ func refresh_anchor_labels() -> void:
 func select_part(index: int) -> void:
 	if pid>0 or index<0 or index>=assessment.get("regions",[]).size() or assessment.regions[index].already_rigged and not patch_toggle.button_pressed:return
 	var row: Dictionary=assessment.regions[index]
-	var key: String="%d:%d:%d"%[int(row.node),int(row.primitive),int(row.component)]
+	point_review_after=0
+	var key:=region_key(row)
 	var keep_existing: bool=key==selected_key and preview.get("mode","")=="existing_joints"
 	if key!=selected_key:mode_choice="auto"
 	selected_key=key;parts.select(index);parts.ensure_current_is_visible()
+	var group:=included_key(key)
+	if not group.is_empty():
+		request=included[group].request.duplicate(true);included[group].valid=false
+		mode_choice="existing" if request.get("use_existing_joints",false) else "weighted"
+		patch_toggle.set_pressed_no_signal(request.has("vertex_mask"));patch_controls.visible=patch_toggle.button_pressed;patch_hint.visible=patch_toggle.button_pressed
+		refresh_inclusions();launch("review");return
 	var shape_snapshot: Dictionary=request.get("morph_weights",{}).duplicate(true)
 	request={"source_sha256":request.source_sha256,"segments":3,"node":int(row.node),"primitive":int(row.primitive),"component":int(row.component),"anchor_node":int(row.anchor_node)}
 	if not shape_snapshot.is_empty():request["morph_weights"]=shape_snapshot
 	if mode_choice=="existing" or mode_choice=="auto" and keep_existing:request["use_existing_joints"]=true
 	request["review_only"]=true
-	launch("preview")
+	refresh_inclusions();launch("preview")
 
 func existing_mode(enabled: bool) -> void:
 	if changing or pid>0 or not request.has("node"):return
 	mode_choice="existing" if enabled else "weighted"
 	request.erase("vertex_mask");request.erase("points_in_anchor")
 	if enabled:request["use_existing_joints"]=true
-	else:request.erase("use_existing_joints")
-	launch("preview")
+	else:
+		request.erase("use_existing_joints")
+		for row in assessment.get("regions",[]):
+			if region_key(row)==selected_key:
+				for key in ["node","primitive","component","anchor_node"]:request[key]=int(row[key])
+				break
+	queue_changed();launch(preview_operation())
 
 func smart_existing(value: Dictionary) -> bool:
 	if app.advanced_mode or mode_choice!="auto" or patch_toggle.button_pressed or value.get("mode","")=="existing_joints" or value.get("can_apply",false) or not value.get("region",{}).has("existing_chain"):return false
@@ -288,9 +399,9 @@ func choose_part(point: Vector2) -> void:
 		var row: Dictionary=assessment.regions[index]
 		selected_key="%d:%d:%d"%[int(row.node),int(row.primitive),int(row.component)];mode_choice="auto"
 		parts.deselect_all();parts.select(index);parts.ensure_current_is_visible()
-		clear_preview();preview={};apply_button.disabled=true;anchors.clear();anchors.disabled=true;existing_toggle.visible=false;patch_toggle.disabled=false
+		clear_preview();preview={};preview_ready=false;apply_button.disabled=true;anchors.clear();anchors.disabled=true;existing_toggle.visible=false;patch_toggle.disabled=false
 		for field in fields:field.editable=false
-		info.text="That area already has motion joints. Its setup is kept. Choose a smaller patch to review an unconfigured section, or choose another part.";return
+		refresh_inclusions();info.text="That area already has motion joints. Its setup is kept. Choose a smaller patch to review an unconfigured section, or choose another part.";return
 	select_part(index)
 
 func part_pointer(event: InputEventMouse,point: Vector2) -> bool:
@@ -325,11 +436,11 @@ func patch_mode(enabled: bool) -> void:
 
 func reset_patch() -> void:
 	if pid>0 or preview.is_empty():return
-	request.erase("vertex_mask");request.erase("points_in_anchor");launch("preview")
+	request.erase("vertex_mask");request.erase("points_in_anchor");queue_changed();launch(preview_operation())
 
 func reset_points() -> void:
 	if pid>0 or preview.is_empty():return
-	request.erase("points_in_anchor");launch("preview")
+	request.erase("points_in_anchor");queue_changed();launch(preview_operation())
 
 func patch_pointer(event: InputEventMouse,point: Vector2) -> bool:
 	if not is_instance_valid(window):return false
@@ -381,11 +492,11 @@ func finish_patch_box() -> void:
 			var v:=int(preview.source_vertices[i])
 			if patch_operation.selected==2:mask.erase(v)
 			else:mask[v]=true
-	var values: Array=mask.keys();values.sort();request["vertex_mask"]=values;request.erase("points_in_anchor");launch("preview")
+	var values: Array=mask.keys();values.sort();request["vertex_mask"]=values;request.erase("points_in_anchor");queue_changed();launch(preview_operation())
 
 func change_anchor(index: int) -> void:
 	if changing or pid>0:return
-	request.anchor_node=anchors.get_item_metadata(index);request.erase("points_in_anchor");launch("preview")
+	request.anchor_node=anchors.get_item_metadata(index);request.erase("points_in_anchor");queue_changed();launch(preview_operation())
 
 func point_values() -> void:
 	if preview.get("mode","")=="existing_joints":
@@ -400,6 +511,7 @@ func point_values() -> void:
 func change_point() -> void:
 	if changing or pid>0 or preview.is_empty() or not request.has("points_in_anchor"):return
 	request.points_in_anchor[point_choice.selected]=[fields[0].value,fields[1].value,fields[2].value]
+	if queue_changed():point_review_after=Time.get_ticks_msec()+250
 
 func draw_preview() -> void:
 	var current: RefCounted=actor();var bindings: Dictionary=current.root.get_meta("has_source_bones",{});var transforms:={};var camera: Camera3D=app.renderer.camera
@@ -427,31 +539,50 @@ func draw_preview() -> void:
 	app.canvas.review_lines=lines;app.canvas.review_chain=chain;app.canvas.queue_redraw()
 
 func apply() -> void:
-	if preview.is_empty() or not preview.get("can_apply",false) or pid>0 or app.exporting:return
+	if pid>0 or app.exporting or app.navigating:return
+	if not included.is_empty():
+		var plans: Array=[]
+		for group in included:
+			if not included[group].valid or point_review_after>0:refresh_inclusions();return
+			plans.append(included[group].request.duplicate(true))
+		var lineage=actor().data.metadata.get("generated_helper_history",[])
+		if not lineage is Array or lineage.size()+plans.size()+(1 if lineage.is_empty() and actor().data.metadata.has("generated_helpers") else 0)>128:
+			info.text="The stored helper history needs review before adding these parts.";return
+		launch("batch_build",{"format":"studio_secondary_batch_1","source_sha256":request.source_sha256,"source_stamp_ns":assessment.get("source_stamp_ns",""),"reviewed":true,"items":plans});return
+	if not preview_ready or preview.is_empty() or not preview.get("can_apply",false):return
 	request["reviewed"]=true;launch("build")
 
 func install(value: Dictionary) -> void:
 	app.pose_editor.finish_drag();app.finish_stroke()
 	if app.recovery_revision!=revision or app.current_world()!=before_world:close();app.message("The scene changed during preparation. Original and current edits were kept; open review again.");return
+	if value.has("batch") and (FileAccess.get_sha256(source)!=request.source_sha256 or FileAccess.get_modified_time(source)!=source_stamp or value.batch.source_sha256!=request.source_sha256):
+		info.text="The original source changed. Reopen loose-part review; the current scene is kept.";refresh_inclusions();return
 	var before: Dictionary=app.current_world();var after:=before.duplicate(true);var row: Dictionary={}
 	for item in after.objects:
 		if item.id==target_id:row=item;break
 	if row.is_empty():close();return
 	var sha:=FileAccess.get_sha256(value.glb);var managed:=ProjectSettings.globalize_path("res://output/imports").path_join(sha+".glb")
+	if value.has("batch") and value.batch.get("final_sha256","")!=sha:
+		info.text="The checked candidate changed. Current model kept; review the checked parts again.";refresh_inclusions();return
 	var error:=Storage.managed_copy(value.glb,managed,sha)
 	if not error.is_empty():info.text=error;return
-	row.source=managed;row.sha256=sha;row.metadata["generated_helpers"]=value.report
+	var reports: Array=value.get("reports",[value.report])
+	if reports.is_empty() or reports.size()>128 or reports.any(func(report):return not report is Dictionary or report.get("format","")!="studio_generated_helpers_1"):
+		info.text="The checked setup returned invalid history. Current model kept.";return
+	row.source=managed;row.sha256=sha;row.metadata["generated_helpers"]=reports[-1]
 	var stored_lineage=row.metadata.get("generated_helper_history",[])
 	if not stored_lineage is Array or stored_lineage.size()>=128:info.text="The stored helper history needs review. Current model kept.";return
 	var lineage: Array=stored_lineage.duplicate(true)
 	if lineage.is_empty():
 		for old in before.objects:
 			if old.id==target_id and old.metadata.has("generated_helpers"):lineage.append(old.metadata.generated_helpers.duplicate(true))
-	lineage.append(value.report.duplicate(true));row.metadata["generated_helper_history"]=lineage
+	if lineage.size()+reports.size()>128:info.text="The stored helper history needs review. Current model kept.";return
+	for report in reports:lineage.append(report.duplicate(true))
+	row.metadata["generated_helper_history"]=lineage
 	clear_preview();applying=true;error=app.restore_world(after);applying=false
-	if not error.is_empty():info.text="The new rig could not preserve existing bindings. Original kept. "+error;return
+	if not error.is_empty():info.text="The new rig could not preserve existing bindings. Original kept. "+error;refresh_inclusions();return
 	app.has_project.origins[managed.replace("\\","/")]=str(value.glb);app.push_history({"type":"world","before":before,"after":after});app.changed();close()
-	app.message("Enabled the reviewed existing joints. Original weights are kept; Undo removes the setup. Turn on Hair & clothes to simulate the chain." if value.report.get("mode","")=="existing_joints" else "Added weighted joints to the reviewed part. The original is kept; Undo restores it. Turn on Hair & clothes to simulate the new chain.")
+	app.message("Set up "+str(reports.size())+" checked parts as one edit. Original poses are kept; Undo removes the whole setup. Turn on Hair & clothes to simulate them." if value.has("batch") else "Enabled the reviewed existing joints. Original weights are kept; Undo removes the setup. Turn on Hair & clothes to simulate the chain." if value.report.get("mode","")=="existing_joints" else "Added weighted joints to the reviewed part. The original is kept; Undo restores it. Turn on Hair & clothes to simulate the new chain.")
 
 func clear_preview() -> void:
 	if is_instance_valid(app.canvas):app.canvas.review_lines=PackedVector2Array();app.canvas.review_chain=PackedVector2Array();app.canvas.queue_redraw()
@@ -459,6 +590,7 @@ func clear_preview() -> void:
 func close() -> void:
 	if part_press and app.world_selection:app.world_selection.cancel_gesture(true)
 	part_press=false;mode_choice="auto";selected_key=""
+	included.clear();part_names.clear();point_review_after=0;pending_install={};restore_list_focus=false;inclusion_navigation=false;preview_ready=false
 	cancel_patch_drag()
 	if is_instance_valid(app.canvas):app.canvas.review_pointer=Callable()
 	if pid>0 and OS.is_process_running(pid):OS.kill(pid)

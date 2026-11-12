@@ -31,7 +31,7 @@ func start_hair(id: String) -> bool:
 	while app.physics_editor.pending.has(id):await process_frame
 	await settle();return app.physics_editor.active(id)
 func run() -> void:
-	var args:=OS.get_cmdline_user_args();folder=args[0];var source: String=args[1];var with_ribbon: bool="--with-ribbon" in args
+	var args:=OS.get_cmdline_user_args();folder=args[0];var source: String=args[1];var with_ribbon: bool="--with-ribbon" in args;var batch: bool="--batch" in args;var added: int=2 if batch else 1
 	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recent.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settle();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	check(app.pose_editor.add_model(source).is_empty(),"actual native Reimu loads through ordinary Add model")
 	await settle();app.physics_editor.clear();var actor=app.renderer.active_model();var id: String=actor.data.id
@@ -49,6 +49,15 @@ func run() -> void:
 	var before: Image=await app.renderer.capture(app.keys,app.layers,0,true);before.save_png(folder.path_join("before.png"))
 	app.set_advanced(true)
 	var helper=app.physics_editor.helper_editor;helper.open(true);await ready(helper)
+	if batch:
+		var ribbon:=-1
+		for i in range(helper.assessment.regions.size()):
+			var row: Dictionary=helper.assessment.regions[i]
+			if int(row.node)==85 and int(row.primitive)==0 and int(row.component)==2:ribbon=i;break
+		check(ribbon>=0,"native batch finds the actual independent weighted ribbon")
+		if ribbon<0:finish();return
+		helper.select_part(ribbon);await ready(helper);helper.include_toggle.button_pressed=true;await ready(helper)
+		check(helper.included.size()==1 and helper.include_toggle.button_pressed and actor.data==original,"native ribbon is checked without installing a partial setup")
 	var index:=-1
 	for i in range(helper.assessment.get("regions",[]).size()):
 		var row: Dictionary=helper.assessment.regions[i]
@@ -74,16 +83,31 @@ func run() -> void:
 	check(helper.preview.affected_regions.size()==3 and int(helper.preview.affected_vertices)==1369,"review discloses all three surfaces sharing the native Back hair joints")
 	check(helper.preview.existing_chain.joint_nodes==[11.,10.,9.] and app.canvas.review_chain.size()==4 and app.canvas.review_lines.size()>0,"review shows actual native chain and its nondeforming endpoint")
 	check(helper.patch_toggle.disabled and helper.anchors.disabled and helper.info.text.contains("3 connected regions"),"review explains shared scope rather than promising patch isolation or arbitrary reattachment")
+	if batch:
+		helper.include_toggle.button_pressed=true;await ready(helper)
+		check(helper.included.size()==2 and helper.apply_button.text=="Set up 2 checked parts" and not helper.apply_button.disabled,"native batch checks ribbon and shared Back hair as two reviewed operations")
+		var alias:=-1
+		for i in range(helper.assessment.regions.size()):
+			if i!=index and helper.included_key(helper.region_key(helper.assessment.regions[i]))==helper.included_key(helper.selected_key):alias=i;break
+		check(alias>=0,"another actual Back hair surface links to the shared native chain")
+		if alias>=0:
+			helper.select_part(alias);await ready(helper)
+			check(helper.included.size()==2 and helper.include_toggle.button_pressed and helper.existing_toggle.button_pressed and helper.patch_toggle.disabled and helper.info.text.contains("3 connected regions"),"focusing a linked area restores the grouped native review without promising separate exclusion")
+			helper.include_toggle.button_pressed=false;await ready(helper)
+			check(helper.included.size()==1 and not helper.include_toggle.button_pressed,"unchecking one linked area removes the entire native group and keeps the ribbon")
+			helper.select_part(index);await ready(helper);helper.include_toggle.button_pressed=true;await ready(helper)
 	helper.window.get_texture().get_image().save_png(folder.path_join("review.png"))
 	helper.apply_button.pressed.emit();await ready(helper);actor=app.renderer.world_runtime.instance(id)
 	var definition: Dictionary=actor.root.get_meta("has_secondary_rig",{});var derived: Dictionary=actor.data.duplicate(true)
-	check(not is_instance_valid(helper.window) and definition.get("error","").is_empty() and definition.get("chains",[]).size()==initial_chains.size()+1,"reviewed native chain installs as a usable source-bound spring")
-	if not definition.get("error","").is_empty() or definition.get("chains",[]).size()!=initial_chains.size()+1:finish({"definition":definition});return
+	check(not is_instance_valid(helper.window) and definition.get("error","").is_empty() and definition.get("chains",[]).size()==initial_chains.size()+added,"reviewed native chain installs as a usable source-bound spring")
+	if not definition.get("error","").is_empty() or definition.get("chains",[]).size()!=initial_chains.size()+added:finish({"definition":definition});return
+	if batch:
+		check(actor.data.metadata.generated_helper_history.size()==2 and int(actor.data.metadata.generated_helper_history[0].region.node)==85 and actor.data.metadata.generated_helper_history[1].mode=="existing_joints","one native batch preserves both individual ribbon and Back hair reports")
 	if with_ribbon:
 		check(definition.chains[0]==initial_chains[0],"Back hair setup retains the original weighted-ribbon chain exactly")
 		check(actor.data.metadata.generated_helper_history.size()==2 and actor.data.metadata.generated_helper_history[0]==original.metadata.generated_helpers,"Back hair setup appends its provenance without overwriting ribbon history")
 	check(actor.data.pose==original.pose and actor.authored_keys().is_empty() and app.keys==shots and app.history.size()==history+1,"existing joints preserve non-rest manual pose and camera as one Undo edit")
-	check(old_ids.all(func(b):return actor.bones.has(b)) and actor.data.metadata.generated_helpers.changed_vertices==0,"original native bones remain and setup reports zero changed skin vertices")
+	check(old_ids.all(func(b):return actor.bones.has(b)) and actor.data.metadata.generated_helpers.changed_vertices==0,"original native bones remain and Back hair reports zero changed skin vertices")
 	var after: Image=await app.renderer.capture(app.keys,app.layers,0,true);var bind_difference:=difference(before,after);after.save_png(folder.path_join("after.png"))
 	check(bind_difference.changed<=384 and bind_difference.mean<.002,"adding an endpoint and spring declaration preserves actual non-rest native pixels")
 	app.undo();await settle();actor=app.renderer.world_runtime.instance(id);check(actor.data==original,"one Undo restores exact native asset and authored pose")
@@ -114,6 +138,15 @@ func run() -> void:
 		if windy.has(bone) and quiet_pose.has(bone):wind_radians=maxf(wind_radians,Timeline.quaternion(windy[bone].rotation_xyzw).angle_to(Timeline.quaternion(quiet_pose[bone].rotation_xyzw)))
 	var windy_image: Image=await app.renderer.capture(app.keys,app.layers,0,false);windy_image.save_png(folder.path_join("wind.png"))
 	check(wind_radians>.005 and quiet.get_data()!=windy_image.get_data(),"fan changes existing Back hair joints and their actual rendered surfaces")
+	if batch:
+		var all_moved:=true
+		for chain in definition.chains:
+			var angle:=0.
+			for joint in chain.joints:
+				var bone: String=joint.binding.get("id","")
+				if windy.has(bone) and quiet_pose.has(bone):angle=maxf(angle,Timeline.quaternion(windy[bone].rotation_xyzw).angle_to(Timeline.quaternion(quiet_pose[bone].rotation_xyzw)))
+			all_moved=all_moved and angle>.005
+		check(definition.chains.size()==2 and app.physics_editor.simulations[id].runner.chains.size()==2 and all_moved,"both expected ribbon and Back hair chains have measured fan response")
 	check(actor.data==authored,"unrecorded native joint simulation authors no pose or animation")
 	app.physics_editor.hair_toggle.button_pressed=false;await settle();actor=app.renderer.world_runtime.instance(id)
 	check(not app.physics_editor.active(id) and actor.data==authored,"Hair & clothes off stops this chain without authoring deformation")
@@ -122,7 +155,7 @@ func run() -> void:
 	app.video.duration_frames=24;app.has_project.save_file(folder.path_join("Back hair.has"),"packed");await ready(app.has_project)
 	check(not app.has_project.path.is_empty() and not app.dirty,"ordinary Save packs the configured existing chain")
 	app.new_project();app.has_project.open_file(folder.path_join("Back hair.has"));await ready(app.has_project);actor=app.renderer.world_runtime.instance(id)
-	check(actor!=null and actor.data.metadata.generated_helpers.mode=="existing_joints" and actor.root.get_meta("has_secondary_rig").chains.size()==initial_chains.size()+1,"normal packed reopen restores the native chain setup")
+	check(actor!=null and actor.data.metadata.generated_helpers.mode=="existing_joints" and actor.root.get_meta("has_secondary_rig").chains.size()==initial_chains.size()+added,"normal packed reopen restores the native chain setup")
 	var error: String=await app.export_movie(folder);check(error.is_empty(),"native existing-joint project exports a real movie")
 	check(FileAccess.get_sha256(source)==sha,"native source stays checksum-exact through reviewed setup, fan and Save")
 	finish({"bind_difference":bind_difference,"wind_radians":wind_radians,"movie":app.last_finished_movie,"derived":derived.sha256})

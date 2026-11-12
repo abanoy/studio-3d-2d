@@ -27,7 +27,9 @@ def main():
     parser.add_argument('--isolated-display')
     parser.add_argument('--output', type=Path)
     parser.add_argument('--with-ribbon', action='store_true', help='Explicit known weighted-ribbon composition regression')
+    parser.add_argument('--batch', action='store_true', help='Explicit one-edit ribbon plus Back hair setup on the pristine source')
     options = parser.parse_args()
+    if options.batch and options.with_ribbon: parser.error('Batch starts from the pristine source; choose one explicit regression')
     if sys.platform == 'linux':
         if not options.isolated_display: parser.error('An explicit private display is required')
         run.configure_private_display(options.isolated_display)
@@ -50,13 +52,18 @@ def main():
     originals = {str(p): identity(p) for p in (source, parameters)}
     folder = (options.output or ROOT/'output/secondary-existing-native'/str(time.time_ns())).resolve()
     folder.mkdir(parents=True, exist_ok=False)
+    source_paths = sorted([*ROOT.glob('src/*.gd'),*ROOT.glob('src/*.gdshader'),ROOT/'main.tscn',ROOT/'project.godot',
+        ROOT/'tools/secondary_helpers.py',ROOT/'tools/secondary_helpers_batch.py',ROOT/'tools/secondary_helper_worker.py',
+        ROOT/'tests/secondary_existing_native_smoke.gd',Path(__file__)])
+    source_hashes = {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}
+    (folder/'source-sha256.json').write_text(json.dumps(source_hashes,indent=2)+'\n',encoding='utf-8')
     staged = folder/'input'; staged.mkdir()
     for path in (source, parameters): shutil.copy2(path, staged/path.name)
     (folder/'input-provenance.json').write_text(json.dumps({'with_ribbon': options.with_ribbon,
         'input_sha256': expected_sha, 'pristine_sha256': pristine_sha, 'ribbon_report': ribbon_report},indent=2)+'\n',encoding='utf-8')
     args = run.command('tests/secondary_existing_native_smoke.gd', extra=[
         '--audio-driver', 'Dummy', '--log-file', str(folder/'engine.log'),
-        '--', str(folder), str(staged/source.name)] + (['--with-ribbon'] if options.with_ribbon else []))
+        '--', str(folder), str(staged/source.name)] + (['--with-ribbon'] if options.with_ribbon else []) + (['--batch'] if options.batch else []))
     with (folder/'stdout.log').open('w', encoding='utf-8') as log:
         p = subprocess.run(args, cwd=ROOT, stdout=log, stderr=log, timeout=190)
     text = (folder/'stdout.log').read_text(encoding='utf-8', errors='replace')
@@ -79,7 +86,8 @@ def main():
             video['nb_read_frames'], float(video['duration'])) == ('h264', 1920, 1080, '24/1', '24', 1.)
     assert not any(s['codec_type'] == 'audio' for s in media['streams'])
     assert all(identity(Path(path)) == before for path, before in originals.items())
-    proof = {'result': result, 'originals': originals, 'private_receipt': receipt, 'with_ribbon': options.with_ribbon,
+    assert source_hashes == {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in source_paths}, 'Runtime changed during native verification'
+    proof = {'result': result, 'originals': originals, 'private_receipt': receipt, 'with_ribbon': options.with_ribbon, 'batch': options.batch,
              'video': {k: video[k] for k in ['codec_name', 'width', 'height', 'r_frame_rate', 'nb_read_frames', 'duration']},
              'scope': 'Actual prepared native player Back hair; same-process packed reopen, not a cold-machine or artist fidelity certification'}
     (folder/'verification.json').write_text(json.dumps(proof, indent=2)+'\n', encoding='utf-8')

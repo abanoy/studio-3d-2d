@@ -29,8 +29,8 @@ vertices. Pristine26checks and existing-ribbon composition29checks pass, with
 exact posed pixels, real fan movement, off restoration, Undo/Redo, packed reopen
 and24frame1080p24H264. The composition test seeds history from the actual ribbon
 report; it is not a test of the owner's private recorded project. See
-[evidence](benchmarks/back_hair_existing_joints_2026-11-12.json). Multiple selection
-and per-item blow inclusion remain separate UI work.
+[evidence](benchmarks/back_hair_existing_joints_2026-11-12.json). Per-item wind
+inclusion and a local-blow preview remain separate work.
 
 ### Scene-click selection and simpler chain review
 
@@ -49,6 +49,28 @@ the selected part changes; Advanced and patch mode retain their explicit choices
 Reviewing, picking and correcting do not edit model data, keys or Undo history.
 Actual native pristine30/ribbon-composed33 and focused20unit/25interaction checks
 pass; see [selection evidence](benchmarks/secondary_part_picking_2026-11-12.json).
+
+### Set up several reviewed parts together
+
+Focus a part through the list or a scene click, refine its attachment/patch, then
+check **Include in setup**. Repeat for other parts. Clicking a row changes the
+precise focus; it does not change membership. Checked requests retain their own
+corrections when revisited. Space toggles the visible check while the list has
+focus. The count and **Needs review** markers show which plans are ready.
+
+**Set up N checked parts** prepares one complete candidate and applies one edit.
+Undo/Redo restores/removes the whole setup; individual helper reports persist
+in packed HAS. Invalid/conflicting parts, changed sources or failed imports keep
+the current scene. Native shared-chain rows are one linked group: their affected
+areas move together, and unchecking one alias removes that whole group. This
+does not promise independent vertex exclusion from shared native joints.
+
+With nothing checked, the original single-part action remains available. A failed
+preview cannot reactivate Apply through a later navigation/membership refresh.
+Request transport preserves corrected numeric controls at full precision.
+Setup membership lasts for the current review; committed joints remain in the
+derived asset. This is not a local-wind preview or per-group simulation filter.
+See [batch evidence](benchmarks/secondary_batch_setup_2026-11-12.json).
 
 ## Evidence and existing representation
 

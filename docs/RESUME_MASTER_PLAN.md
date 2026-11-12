@@ -95,7 +95,16 @@ native checks and the original helper/patch suites preserved. A click guesses
 from current joint-transformed region bounds; the list corrects that approximate
 guess. Manual mode correction, navigation and cancellation remain available.
 See [selection evidence](benchmarks/secondary_part_picking_2026-11-12.json).
-Multiple items, local-blow exclusions and further Simple refinement remain open.
+**Multiple-part setup update:** one precise focused part plus visible **Include
+in setup** checks now retain separate reviewed requests and apply one complete
+candidate as one Undo edit. Shared native-chain regions are linked/disclosed;
+invalid plans stay marked rather than silently disappear. Full-precision control
+transport and a persistent per-request eligibility flag prevent stale Apply.
+Final 26 CPU/5 state/34 app, 38 combined native, 30 single/33 composition,
+20+31 picker and unchanged 39/14/59/35 helper checks pass; source freeze covers
+193 runtime/backend files. [Evidence](benchmarks/secondary_batch_setup_2026-11-12.json).
+Local-blow preview, per-item wind exclusions and further refinement remain open;
+setup membership is distinct from persistent simulation/blow membership.
 
 1. **Deformation remains after switching Hair & Cloth off.** A configured joint
    deforms correctly while enabled, but the deformation stays after disabling

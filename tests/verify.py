@@ -178,6 +178,9 @@ def main():
     picking_log = run([sys.executable, '-u', 'tests/verify_secondary_picking.py'], timeout=240)
     (output / 'secondary-picking-suite.log').write_text(picking_log, encoding='utf-8')
     results['secondary_picking'] = {'exit': 0}
+    batch_log = run([sys.executable, '-u', 'tests/verify_secondary_batch.py'], timeout=350)
+    (output / 'secondary-batch-suite.log').write_text(batch_log, encoding='utf-8')
+    results['secondary_batch'] = {'exit': 0}
     print('PASS reviewed weighted helpers, native bindings, HAS and movie')
     morph_log = run([sys.executable, '-u', 'tests/verify_helper_morphs.py'])
     (output / 'helper-morphs-suite.log').write_text(morph_log, encoding='utf-8')
