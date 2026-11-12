@@ -12,6 +12,12 @@ requested **recording only, with no work yet**. The report and deferred steps
 are in [hair_accessories_feedback_2026-11-12.md](hair_accessories_feedback_2026-11-12.md).
 Keep the pause in effect; previous helper tests do not close these new issues.
 
+Further November 12 feedback: invert the affected RGB rotation ring's direction
+(at least the top ring), and add a camera-facing relative rotation ring for
+left/right rotation from the current view, with SMH/SFM as owner-provided
+references. Details are in [rotation_gizmo_feedback_2026-11-12.md](rotation_gizmo_feedback_2026-11-12.md).
+This is another deferred request; no implementation or diagnosis has begun.
+
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4
 historical backups are dead by owner report; retain their historical checks and
@@ -41,7 +47,8 @@ Next actions:
 
 1. After the owner resumes work, reproduce and address the November 12 hair and
    accessories report in the linked note, preserving precise single-item edits
-   and the useful Advanced workflow. Then resume the full default suite from
+   and the useful Advanced workflow. Also reproduce and address the linked
+   rotation-ring direction and camera-facing ring requests. Then resume the full default suite from
    stable source. Fix reproducible failures without loosening
    assertions; preserve each failure and rerun the affected scope.
 2. Verify final movie metadata and decoded audio analyses included by the suite.
