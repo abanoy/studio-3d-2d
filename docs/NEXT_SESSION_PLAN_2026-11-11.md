@@ -72,6 +72,9 @@ Owner then clarified the organizing idea as **one Discovery tab covering Local
 and Online with proper labels**. The concept is updated accordingly; Saved as
 an internal filter remains an optional assistant proposal, not a separate
 required main tab. This does not resume implementation.
+Owner also suggests a later optional sounds category using the same researched
+directory catalogue and Local/Online Discovery principle. Models remain the
+priority; sound discovery is not a new prerequisite or acceptance gate.
 
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4

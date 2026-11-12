@@ -3922,3 +3922,7 @@ Owner invited assistant contributions to the browser idea. Created docs/model_br
 ### 2026-11-12 — Discovery tab organizing idea clarified
 
 Owner identifies the browser as a Discovery tab covering local and online models with proper labels. Updated the concept's earlier three-entry-point sketch to one Discovery umbrella with Local/location and Online/website provenance; existing search/type/site filtering and explicit optional network use remain. Saved as an internal optional filter is an assistant proposal, not blanket owner approval of all additions. Linked clarification in original feedback and pickup plan. Documentation only; no code, online model requests, app launches or tests. Goal stays paused and existing verification/ledger status unchanged.
+
+### 2026-11-12 — sound discovery recorded as secondary optional extension
+
+Owner suggests eventually expanding Discovery to sounds using the same principle: research directory websites, retain their provider list, then browse/search the listings. Recorded in model-browser concept, original feedback and pickup plan as a later optional Local/Online category, explicitly secondary to models and not a new prerequisite or acceptance gate. No sound-site research, downloads, playback, implementation, app launches or tests. Work remains paused; existing audio editing, incomplete aggregate and ledger unchanged.

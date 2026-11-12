@@ -111,6 +111,18 @@ a new result context and cancels obsolete work.
 
 ## Keep the first version focused
 
+### Later optional category: sounds
+
+Owner suggests eventually extending the same Discovery principle to **sounds**,
+explicitly as a secondary priority. First research suitable sound-directory sites
+and save their provider records in a catalogue; later expose listings through
+the same clearly labelled Local/Online search-and-source-link flow. Reuse the
+discovery foundation, defining sound-specific metadata/filters only when that
+extension is taken up. Do not assume every model provider also supplies sounds.
+Models remain the main focus; sound discovery is not a prerequisite for the
+model browser or a new mandatory acceptance gate. No sound-site research,
+downloads, playback or implementation is authorized by this paused-work note.
+
 On an explicit resume, retain the owner's source research, international aliases,
 badges, filters, pagination and preview goals. Prototype the shared browser/card
 flow before multiplying controls. The shortlist/downloaded-file bridge and visible

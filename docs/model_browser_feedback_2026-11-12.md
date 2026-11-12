@@ -14,6 +14,11 @@ local and online models, properly labelled**. The concept now reflects that
 umbrella instead of its earlier three-entry-point sketch. This accepts the
 organizing idea, not implementation or every optional assistant suggestion.
 
+Later extension proposed by the owner: **sound discovery**, with the same
+principle of researching directory sites, retaining a provider list and using
+the Discovery flow. This is explicitly secondary to models and remains optional
+future work; see the concept's sounds note. No audio sources were researched.
+
 ## Optional online listings browser
 
 - A search box takes a keyword and lists matching models from sites such as
