@@ -55,6 +55,11 @@ research for the future catalogue, client-bundled language/name/case/format
 query variants, and evidence-based Downloadable/Preview/Password badges.
 These labels may overlap; unverified metadata must stay unknown. Details are
 in the same browser note. This does not authorize starting the research now.
+Further clarification: open the online browser with a diverse initial feed of
+about100listings, load about100more on scrolling to the bottom, and apply query
+expansion when the top search bar is used. Explicit example: Hatsune Miku,
+Hatsune, Miku, Miku Hatsune, with order-independent Miku/Hatsune keywords and
+other relevant aliases. This remains deferred; no listings were fetched.
 
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4

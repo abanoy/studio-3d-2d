@@ -31,6 +31,29 @@ Keep source attribution, links and unavailable-source messages clear. Merely
 offering these ideas does not authorize implementing scraping, handling accounts
 or downloading assets during the pause.
 
+## Initial discovery feed and incremental browsing
+
+Owner clarification: when the optional online browser is opened without a
+search query, first show **about 100 model listings**, prioritizing diversity
+and discoverability. This is a combined initial feed, not a request to download
+100 model files or to fetch 100 results from every provider. Possible diversity
+dimensions include source, creator, subject and format where metadata permits;
+the owner has not specified a balancing algorithm.
+
+Scrolling to the bottom should fetch **another approximately 100 listings**,
+appending them while preserving the current position and removing duplicate
+results. Track provider pagination/cursors and exhausted sources, so the feed
+can continue without repeating the same items. Retain source labels, optional
+thumbnails and evidence-based availability badges.
+
+The **top search bar** switches to targeted keyword search with the language,
+name and formatting expansions below. Keep query relevance primary in search
+results; the diversity-focused unfiltered feed is a separate entry experience.
+The same incremental browsing pattern can support search results. Changing the
+query must reset its pagination and discard obsolete responses without mixing
+the previous query or unfiltered feed into the new result set. These are future
+interaction/validation goals, not implemented network behavior.
+
 ## International source catalogue and client-side query variants
 
 Owner clarification: future browser work includes **actively researching model
@@ -47,6 +70,13 @@ This is future research work; no new providers were searched or verified now.
 
 Build possible query variations **locally in the client** so useful matching
 does not require a translation service or compulsory AI. Proposed approach:
+
+The owner's explicit example is `Hatsune Miku` expanding to **`Hatsune Miku`,
+`Hatsune`, `Miku`, `Miku Hatsune`**, plus other relevant aliases. Also consider
+the keywords **`Miku` and `Hatsune`** independent of their order. Preserve full
+names and reordered names as strong matches, with individual words providing
+broader alternatives. Combine or separate the terms according to each site's
+actual keyword-search behavior rather than requiring only one exact phrase.
 
 - Keep the exact original query and original-script model titles intact.
 - Bundle an extensible alias dictionary for known names and terms, including
@@ -127,5 +157,7 @@ and unchanged scenes/originals. Validate each online adapter and prerequisite
 notice separately; provide source-specific unavailable states. Keep automated
 graphics on private desktops. Include original-script/alias searches, case and
 format variants, overlapping badges, unavailable metadata and duplicate titles
-in future browser verification. No implementation, downloads, app launches or
+in future browser verification. Include the diverse first approximately100
+listings, subsequent scroll batches, feed/search transitions, pagination reset
+and rejection of obsolete query responses. No implementation, downloads, app launches or
 tests were performed for this report. Existing pause and ledger counts remain.
