@@ -595,6 +595,16 @@ After remote verification of `12f5d612f2c748b5ed4dc46878291251ffb836de`, only
 receipts remain, with compact evidence in Git. No private originals were used
 by that counterfactual. Other reviews, recovery and native fixtures are retained.
 
+After remote re-verification of `e82580da9fe8d12ea29afc1f3e1780035605daa2`,
+**576 disposable interior PNG frames / 23,442,386 bytes** were removed from
+16 explicitly bound completed hair/helper render attempts. All encoded movies,
+compared/representative frames, HAS files, WAVs, inputs, metadata, failure logs
+and desktop receipts remain. Current SceneView outputs and owner reviews/
+recovery were excluded. Exact attempts/frame numbers and evidence commits are
+in [the cleanup receipt](benchmarks/generated_frame_cleanup_2026-11-12.json).
+Those old attempt folders intentionally no longer contain complete PNG sequences;
+fresh wrappers create new ones. Use the retained movies or rerun the saved source.
+
 ## 12. Order of work after an explicit resume
 
 1. Fetch latest repository state and inspect local status; preserve private and

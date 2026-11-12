@@ -24,6 +24,6 @@
     "caches_excluded": true,
     "local_evidence": "output/review-source-probe/1794517497981228200/verification.json"
   },
-  "failed_or_interrupted_probe": "First full-repository verification used two Git processes per file and was explicitly stopped as too slow; no assertion failure or review startup occurred. Replaced that probe's verification with independent length-prefixed blob hashes against one Git tree listing, preserving the same exact-byte oracle. Both disposable copies retained until remote verification.",
+  "failed_or_interrupted_probe": "First full-repository verification used two Git processes per file and was explicitly stopped as too slow; no assertion failure or review startup occurred. Replaced that probe's verification with independent length-prefixed blob hashes against one Git tree listing, preserving the same exact-byte oracle. All three copies, including the final safety-guard rerun, were retained until remote verification, then only their Studio subdirectories were removed as recorded in the following history checkpoint.",
   "scope": "Source-freezing tool only. No review application startup, native project replay, human/device acceptance or full aggregate is claimed by this CPU increment. Startup still runs the unchanged private-desktop validation when the builder is invoked normally."
 }
