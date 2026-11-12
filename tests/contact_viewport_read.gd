@@ -5,7 +5,7 @@ func run() -> void:
 	var exact:=true
 	for half in range(96,-1,-1):exact=exact and JSON.stringify(actor("child").sample(float(half)/2),"",true,true).sha256_text()==reader.pose_hashes[half]
 	check(exact,"all97 native solved poses match in reverse order after cold reopen")
-	check(app.layers[1].cels[0].image.get_data().hex_encode().sha256_text()==reader.layer_sha,"fresh process preserves the independent editable cyan drawing")
+	check(preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data().hex_encode().sha256_text()==reader.layer_sha,"fresh process preserves the independent editable cyan drawing")
 	check(not app.pose_editor.contacts.viewport.active and not app.pose_editor.contacts.viewport.dragging and actor("child").preview_frame==-1,"project has no transient target gesture or preview on cold Open")
 	app.set_frame(12);var image: Image=await app.renderer.capture(app.keys,app.layers,12,true);var original:=Image.load_from_file(folder.path_join("saved-frame.png"));var a:=image.get_data();var b:=original.get_data();var changed:=0;var total:=0.
 	for i in range(a.size()):

@@ -182,7 +182,7 @@ func run() -> void:
 			if not rig(native_id).evaluation_error.is_empty():reach_errors[at]={"error":rig(native_id).evaluation_error,"before_pose":prior_model.sample_body(at),"after_pose":rig(native_id).sample_body(at),"before_root":prior_model.sample_transform(at),"after_root":rig(native_id).sample_transform(at)}
 		var diagnosis:=FileAccess.open(folder.path_join("reach-diagnostic.json"),FileAccess.WRITE);diagnosis.store_string(JSON.stringify(reach_errors,"",true,true));diagnosis.close()
 		check(reach_errors.is_empty(),"combined take preserves reachable authored contacts at every outside frame")
-		app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(app.layers[1].cels[0].image,Vector2(40,40),Vector2(130,40),8,Color.CYAN,false);app.changed()
+		app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(preload("res://src/drawing.gd").edit_image(app.layers[1].cels[0]).image,Vector2(40,40),Vector2(130,40),8,Color.CYAN,false);app.changed()
 		app.set_frame(14);app.world_selection.select_entity(native_id);app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
 		var has_path:=folder.path_join("contact-physics.has");app.has_project.save_file(has_path,"packed")
 		while app.has_project.pid>0:await process_frame

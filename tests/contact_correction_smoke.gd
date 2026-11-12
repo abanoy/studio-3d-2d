@@ -90,7 +90,7 @@ func run() -> void:
 	app.set_frame(12);app.pose_editor.frame_model();await settled();await open(12,18);dialog.window.get_texture().get_image().save_png(folder.path_join("advanced-window.png"));check(dialog.window.size.x<=root.size.x and dialog.window.size.y<=root.size.y and dialog.apply_target.is_visible_in_tree(),"Advanced correction controls fit the actual window with Apply reachable")
 	check(Rect2(Vector2.ZERO,Vector2(dialog.window.size)).encloses(dialog.apply_target.get_global_rect()),"Advanced Apply remains inside the window without scrolling to the last field")
 	dialog.window.hide();app.set_advanced(false);await open(12,18);dialog.window.get_texture().get_image().save_png(folder.path_join("simple-window.png"));dialog.window.hide()
-	app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(app.layers[1].cels[0].image,Vector2(40,40),Vector2(140,40),8,Color.CYAN,false);app.changed();app.set_frame(12);app.keys=[T.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
+	app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(preload("res://src/drawing.gd").edit_image(app.layers[1].cels[0]).image,Vector2(40,40),Vector2(140,40),8,Color.CYAN,false);app.changed();app.set_frame(12);app.keys=[T.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
 	var expected_pose: Dictionary=rig().sample(12);var id: String=rig().data.id;var has_path:=folder.path_join("corrected-feet.has");app.has_project.save_file(has_path,"packed")
 	while app.has_project.pid>0:await process_frame
 	app.new_project();app.has_project.open_file(has_path)

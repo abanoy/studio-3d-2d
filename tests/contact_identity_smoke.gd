@@ -113,7 +113,7 @@ func run() -> void:
 	if plans.size()!=5:app.free();quit(1);return
 	var reports:=[]
 	for plan in plans:reports.append(case_for(plan))
-	app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(app.layers[1].cels[0].image,Vector2(40,40),Vector2(130,40),8,Color.CYAN,false);app.changed()
+	app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(preload("res://src/drawing.gd").edit_image(app.layers[1].cels[0]).image,Vector2(40,40),Vector2(130,40),8,Color.CYAN,false);app.changed()
 	app.set_frame(22);app.world_selection.select_entity("source");app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
 	var before: Dictionary=World.portable(app.current_world());var path:=folder.path_join("independent-pastes.has");app.has_project.save_file(path,"packed");await job();app.new_project();app.has_project.open_file(path);await job()
 	var expected_file:=FileAccess.open(folder.path_join("expected-world.json"),FileAccess.WRITE);expected_file.store_string(JSON.stringify(before,"",true,true));expected_file.close()

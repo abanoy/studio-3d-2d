@@ -73,7 +73,7 @@ func run() -> void:
 	app.video.visibility_fade_ms=0;var last: RefCounted=app.renderer.world_runtime.instance(ids[-1]);last.data.visibility_keys=[{"frame":40,"visible":false},{"frame":46,"visible":true}]
 	app.set_frame(12);app.world_selection.select_entity(ids[0]);app.frame_3d_scene();await settled()
 	var camera: Camera3D=app.renderer.camera;app.keys=[T.key(0,camera.position,camera.quaternion,camera.fov),T.key(24,camera.position+Vector3(.3,.1,0),camera.quaternion,camera.fov)]
-	app.set_frame(0);app.active_layer=1;app.create_cel(false);preload("res://src/drawing.gd").stroke(app.layers[1].cels[0].image,Vector2(40,40),Vector2(150,40),9,Color.CYAN,false);app.layers[0]["opacity"]=.4
+	app.set_frame(0);app.active_layer=1;app.create_cel(false);preload("res://src/drawing.gd").stroke(preload("res://src/drawing.gd").edit_image(app.layers[1].cels[0]).image,Vector2(40,40),Vector2(150,40),9,Color.CYAN,false);app.layers[0]["opacity"]=.4
 	check(app.import_audio(folder.path_join("tone.wav")).is_empty(),"actual PCM audio imports into the combined scene")
 	app.audio_clip.start_frame=24;app.audio_clip.gain_db=-6;app.rebuild_audio();app.changed();app.set_frame(12)
 	var samples:={};var timings:={};var error_count:=0
@@ -85,7 +85,7 @@ func run() -> void:
 		timings[id]={"sample_49_ms":float(Time.get_ticks_usec()-began)/1000.,"bones":actor.order.size()}
 	check(error_count==0,"all native version2 contacts and explicit release intervals are reachable across the complete project")
 	var reference: Image=await app.renderer.capture(app.keys,app.layers,12,true);reference.save_png(folder.path_join("reference.png"))
-	var expected:={"world":World.portable(app.current_world()),"samples":samples,"video":app.video,"keys":app.keys,"audio":{},"paint":Storage.image_hash(app.layers[1].cels[0].image),"ids":ids,"frame":12}
+	var expected:={"world":World.portable(app.current_world()),"samples":samples,"video":app.video,"keys":app.keys,"audio":{},"paint":Storage.image_hash(preload("res://src/drawing.gd").image(app.layers[1].cels[0])),"ids":ids,"frame":12}
 	expected.audio={"sha256":app.audio_clip.source.sha256,"start_frame":app.audio_clip.start_frame,"gain_db":app.audio_clip.gain_db}
 	var packed:=folder.path_join("native-packed.has");app.has_project.save_file(packed,"packed");await job();check(FileAccess.file_exists(packed),"normal packed HAS saves the complete native contact world")
 	var linked:=folder.path_join("native-linked.has");app.has_project.save_file(linked,"linked");await job();check(FileAccess.file_exists(linked),"normal linked HAS saves the same native contact world")
