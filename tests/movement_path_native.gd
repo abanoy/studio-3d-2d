@@ -56,13 +56,13 @@ func run() -> void:
   check(is_instance_valid(editor.window) and editor.valid(),"native Simple path panel opens: "+plan.name)
   if not is_instance_valid(editor.window):continue
   editor.frame.value=6
-  var history: int=app.history.size();var keys: Array=app.keys.duplicate(true);var ink: PackedByteArray=app.layers[1].cels[0].image.get_data()
+  var history: int=app.history.size();var keys: Array=app.keys.duplicate(true);var ink: PackedByteArray=preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data()
   editor.move_point(6,original+Vector3(100,0,0));await click(editor.apply_button)
   check(editor.window.visible and actor.data==before and app.history.size()==history and not editor.note.text.is_empty(),"actual Apply refuses unreachable path without committing: "+plan.name)
   editor.move_point(6,original+Vector3(.001,0,0));var expected: Dictionary=editor.draft.duplicate(true);await click(editor.apply_button)
   check(not is_instance_valid(editor.window) and actor.data==expected and app.history.size()==history+1,"actual Apply commits reachable native movement once: "+plan.name)
   app.undo();await settled();check(actor.data==before,"native path Undo restores exact original: "+plan.name)
-  app.redo();await settled();check(actor.data==expected and app.keys==keys and app.layers[1].cels[0].image.get_data()==ink,"native path Redo preserves camera and independent ink: "+plan.name)
+  app.redo();await settled();check(actor.data==expected and app.keys==keys and preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data()==ink,"native path Redo preserves camera and independent ink: "+plan.name)
   check(actor.data.format=="studio_model_9","ordinary native path edit upgrades the model: "+plan.name)
   var probe:=Model.new();probe.data=before;var exact:=true;var reachable:=true;var repeatable:=true;var poses:=[];var peak:=0.;var uncrossed:=true
   for half in range(97):

@@ -19,7 +19,7 @@ func run() -> void:
 	if actor:
 		for half in range(96,-1,-1):exact=exact and JSON.stringify(actor.sample(float(half)/2),"",true,true).sha256_text()==expected.pose_hashes[half]
 	check(exact,"cold reader retains all97 assisted solved native poses exactly in reverse")
-	check(app.layers[1].cels[0].image.get_data().hex_encode().sha256_text()==expected.layer_sha,"cold reader retains independent editable drawing bytes")
+	check(preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data().hex_encode().sha256_text()==expected.layer_sha,"cold reader retains independent editable drawing bytes")
 	app.set_frame(10);app.world_selection.clear();var image: Image=await app.renderer.capture(app.keys,app.layers,10,true);image.save_png(folder.path_join("reader-frame.png"));var reference:=Image.load_from_file(folder.path_join("saved-frame.png"));var a:=image.get_data();var b:=reference.get_data();var changed:=0;var total:=0.
 	for i in range(a.size()):
 		if a[i]!=b[i]:changed+=1;total+=absf(float(a[i])-float(b[i]))

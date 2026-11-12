@@ -49,7 +49,7 @@ func setup(plan: Dictionary) -> RefCounted:
 		check(actor.put_pose_key({"frame":at,"pose":pose,"transform":transform,"authored_channels":["@root",id],"interpolation":"ease"},48,false,actor.data.duplicate(true)).is_empty(),"author native root and arm main key "+str(at)+": "+plan.name)
 	var planted:=Ranges.edit(actor.data,0,49,pin.segments[0],48)
 	check(not planted.has("error") and app.renderer.world_runtime.restore_instance(row.id,planted.data).is_empty(),"continuous contacts wrap the original three keys: "+plan.name)
-	app.create_cel(false);preload("res://src/drawing.gd").stroke(app.layers[1].cels[0].image,Vector2(40,40),Vector2(140,40),8,Color.CYAN,false)
+	app.create_cel(false);preload("res://src/drawing.gd").stroke(preload("res://src/drawing.gd").edit_image(app.layers[1].cels[0]).image,Vector2(40,40),Vector2(140,40),8,Color.CYAN,false)
 	app.set_frame(0);return app.renderer.world_runtime.instance(row.id)
 func make_preview(actor: RefCounted) -> RefCounted:
 	var id:=arm(actor);var tracks:={"@root":[],id:[]}
@@ -76,7 +76,7 @@ func case_for(plan: Dictionary) -> Dictionary:
 	for half in range(97):
 		var at:=float(half)/2;equivalent=equivalent and Preview.matching(preview.sample_transform(at),supplied.sample_transform(at)) and Preview.matching(preview.sample_body(at).get(id,Model.identity()),supplied.sample_body(at).get(id,Model.identity()))
 	check(equivalent,"source-time compiler retains the established native three-key acting: "+plan.name)
-	var before: Dictionary=actor.data.duplicate(true);var history: int=app.history.size();var state:=snapshot(actor);var paint: PackedByteArray=app.layers[1].cels[0].image.get_data()
+	var before: Dictionary=actor.data.duplicate(true);var history: int=app.history.size();var state:=snapshot(actor);var paint: PackedByteArray=preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data()
 	app.world_selection.select_entity("actor");app.pose_editor.frame_model();app.world_selection.clear()
 	app.keys=[T.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
 	var shots: Array=app.keys.duplicate(true)
@@ -120,7 +120,7 @@ func case_for(plan: Dictionary) -> Dictionary:
 		for at in range(48):
 			visible_preview(actor,preview,at);var image: Image=await app.renderer.capture(app.keys,app.layers,at,false);image.save_png(movie_folder.path_join("frame_%06d.png" % (at+1)))
 		var encoder:=preload("res://src/encoder.gd").new();check((await encoder.encode(self,"C:/Program Files/ffmpeg/bin/ffmpeg.exe",movie_folder,app.video)).is_empty(),"experimental derived poses render to a48frame diagnostic MP4")
-	clear_preview(actor);check(actor.data==before and app.keys==shots and app.history.size()==history and app.layers[1].cels[0].image.get_data()==paint,"preview preserves authored data/history/camera and independent editable paint: "+plan.name)
+	clear_preview(actor);check(actor.data==before and app.keys==shots and app.history.size()==history and preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data()==paint,"preview preserves authored data/history/camera and independent editable paint: "+plan.name)
 	# Real native source slices: trim the recorded take to its three main keys,
 	# split BETWEEN controls, then move its right slice while retaining foot pins.
 	var trimmed: Dictionary=before.duplicate(true);trimmed.animation_clips=[trimmed.animation_clips[0]];trimmed.animation_clips[0].length=25
@@ -149,7 +149,7 @@ func case_for(plan: Dictionary) -> Dictionary:
 		visible_preview(actor,moved_preview,at)
 		for foot in Contacts.active(actor.data.animation_clips,at).get("feet",[]):gap_peak=maxf(gap_peak,actor.bone_transform(foot.ids[2]).origin.distance_to(T.vector(foot.position)))
 	check(moved_ok and gap_peak<.0002,"native gap/trimmed tail stay reachable, reversible and visibly planted: "+plan.name)
-	clear_preview(actor);check(actor.data==moved.data and app.keys==shots and app.history.size()==history and app.layers[1].cels[0].image.get_data()==paint,"native slice preview leaves records, explicit shots, history and paint untouched: "+plan.name)
+	clear_preview(actor);check(actor.data==moved.data and app.keys==shots and app.history.size()==history and preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data()==paint,"native slice preview leaves records, explicit shots, history and paint untouched: "+plan.name)
 	app.renderer.world_runtime.restore_instance("actor",before);app.set_frame(0)
 	return {"name":plan.name,"bones":actor.order.size(),"checks":checks-start,"failures":failures-first,"foot_error":peak,"gap_foot_error":gap_peak,"helpers":preview.helper_keys()}
 func run() -> void:
