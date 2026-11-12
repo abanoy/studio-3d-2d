@@ -47,12 +47,15 @@ def main():
         shutil.copy2(path, staged / path.name)
     prepared = staged / source.name
 
+    private_receipts = []
+
     def invoke(mode):
         args = ["--audio-driver", "Dummy", "--log-file", str(folder / (mode + "-engine.log")),
                 "--", str(folder), str(prepared)]
         if mode == "reader": args.append("--read")
         with (folder / (mode + ".log")).open("w", encoding="utf-8") as log:
-            result = subprocess.run(run.command("tests/reimu_helpers_smoke.gd", extra=args),
+            command = run.command("tests/reimu_helpers_smoke.gd", extra=args)
+            result = subprocess.run(command,
                                     cwd=ROOT, stdout=log, stderr=log, timeout=250)
         text = (folder / (mode + ".log")).read_text(encoding="utf-8", errors="replace")
         if result.returncode or any(marker in text for marker in
@@ -60,6 +63,13 @@ def main():
             raise RuntimeError(f"{mode} failed; see {folder / (mode + '.log')}")
         report = json.loads((folder / (mode + "-result.json")).read_text(encoding="utf-8"))
         assert report["failures"] == 0
+        if os.name == "nt":
+            receipt = Path(command[command.index("--receipt") + 1])
+            private = json.loads(receipt.read_bytes())
+            assert (private["exit"] == 0 and private["child_desktop_confirmed"]
+                    and not private["foreground_child_observed"]
+                    and private["job_closed"] and private["desktop_closed"]), private
+            private_receipts.append(str(receipt))
         return report
 
     writer = invoke("writer")
@@ -88,6 +98,7 @@ def main():
             video["r_frame_rate"], float(video["duration"])) == ("h264",1920,1080,"24","24/1",1.0)
     assert all(identity(Path(path)) == before for path, before in originals.items())
     report = {"writer": writer, "reader": reader, "originals": originals,
+              "private_receipts": private_receipts,
               "packed_keys_exact": True, "private_source_offline_for_reader": True,
               "video": {key: video[key] for key in ("codec_name","width","height","nb_read_frames","r_frame_rate","duration")}}
     (folder / "verification.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
