@@ -40,6 +40,17 @@ Remixed as a reference and asked about non-RTX feasibility. Research and deferre
 steps: [lighting_feedback_2026-11-12.md](lighting_feedback_2026-11-12.md).
 No renderer change or implementation has begun; the goal remains paused.
 
+Later clarification: final video export can spend longer per frame than live
+preview; distinguish lighting/render quality from existing encoder compression.
+The lighting note records flat/simple/GMod-like/MMD-like/RTX-like choices and
+retains the owner's uncertainty about an SFM default. Also record an optional
+keyword-based online listings browser with provider labels/thumbnails, default
+browser links, dismissible contextual retrieval notices, continued local
+discovery and selection-triggered model previews with bounded conversion.
+Details: [model_browser_feedback_2026-11-12.md](model_browser_feedback_2026-11-12.md).
+Provider prerequisites and preview isolation remain unverified design work;
+do not start online fetching, conversion or implementation during the pause.
+
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4
 historical backups are dead by owner report; retain their historical checks and

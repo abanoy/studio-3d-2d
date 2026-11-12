@@ -22,6 +22,11 @@ claimed feature. Preserve deliberate Unshaded behavior and authored animation.
 
 ## Requested appearance/control references
 
+- Owner's later proposed range: **flat light, simple light, GMod-like,
+  MMD-like and RTX-like lighting**. Preserve these as requested appearance
+  choices; do not assume the current Unshaded/Lit/Studio modes implement them
+  all. The owner is unsure whether SFM has a default lighting style; no SFM
+  default or preset has been established by this report.
 - **GMod-style and MMD-style lighting**: retain the owner's terms as future
   directions. These involve material/shader response as well as light controls;
   exact native appearance is not established by a preset name.
@@ -88,6 +93,25 @@ do not require RTX for Forward+, but minimum engine support is not a heavy-GI
 performance guarantee.
 
 ## On an explicit resume
+
+### Render quality versus real-time preview
+
+Owner explicitly emphasizes **rendering to video**: demanding lighting may be
+too slow during real-time editing, but final export can spend longer rendering
+each frame. Keep output playback timing tied to the intended frame rate rather
+than the wall-clock speed of generating frames. Explore economical preview
+settings and a more demanding final lighting/render quality setting, with a
+way to inspect the intended final appearance before exporting. Slower export
+does not remove memory limits or automatically create a path-tracing backend.
+
+Distinguish scene-render quality from encoder compression. Existing
+[movie quality profiles](export_profiles.md) change compression while keeping
+the renderer's PNG inputs identical; they do not add GI or improve light-bounce
+accuracy. The existing [PNG sequence timing contract](png_export.md) and
+[output-size controls](output_size.md) should inform future work. Preserve
+synchronized sound, camera/physics/animation sampling and independent drawing
+layers when spending longer per frame. No slower-quality lighting mode or
+preview/export switch was implemented or tested for this feedback.
 
 Design light editing and material/style choices separately from rendering-quality
 choices. Evaluate a responsive preview and potentially slower high-quality final
