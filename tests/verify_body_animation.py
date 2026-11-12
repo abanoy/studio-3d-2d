@@ -13,6 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from run import command,configure_private_display
 from verify_source_shapes import prepare
+from native_fixture_plans import recorded_native_models
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--isolated-display');parser.add_argument('--output',type=Path);options=parser.parse_args()
@@ -34,14 +35,8 @@ def main():
             plans.append({'label':label,'source':str(path),'metadata':{},'left':'J_Bip_L_UpperArm','right':'J_Bip_R_UpperArm'})
             originals[path]=(hashlib.sha256(path.read_bytes()).hexdigest(),path.stat().st_mtime_ns)
     plan_path.write_text(json.dumps(plans),encoding='utf-8')
-    recorded=[]
-    capture=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output/physics-recording-verification.json')
-    if capture.is_file():
-        path=Path(json.loads(capture.read_text(encoding='utf-8'))['folder'])/'native-recording.has'
-        if path.is_file():
-            with zipfile.ZipFile(path) as archive:document=json.loads(archive.read('project.json'))
-            recorded=[row for row in document['world']['objects'] if row.get('kind')=='model']
-            originals[path]=(hashlib.sha256(path.read_bytes()).hexdigest(),path.stat().st_mtime_ns)
+    recorded,path=recorded_native_models()
+    if path is not None:originals[path]=(hashlib.sha256(path.read_bytes()).hexdigest(),path.stat().st_mtime_ns)
     (folder/'recorded-models.json').write_text(json.dumps(recorded),encoding='utf-8')
     for script,headless,marker in [('tests/body_animation_unit.gd',True,'BODY_ANIMATION_UNIT '),('tests/body_animation_smoke.gd',False,'BODY_ANIMATION ')]:
         cmd=command(script,headless=headless,extra=(["--audio-driver","Dummy"] if os.name!="nt" else [])+['--',str(folder)])

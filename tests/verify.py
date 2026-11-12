@@ -29,6 +29,9 @@ def main():
     output = ROOT / "output"
     output.mkdir(exist_ok=True)
     results = {}
+    native_fixture_log = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_native_fixture_plans.py'])
+    (output / 'native-fixture-plans-unit.log').write_text(native_fixture_log, encoding='utf-8')
+    results['native_fixture_plans'] = {'exit': 0}
     krita_inventory_log = run([sys.executable, 'tests/test_krita_assets.py'])
     (output / 'krita-inventory-unit.log').write_text(krita_inventory_log, encoding='utf-8')
     results['krita_inventory'] = {'exit': 0}

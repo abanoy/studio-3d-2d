@@ -14,10 +14,15 @@ func run() -> void:
 	for plan in plans:
 		app.new_project();var error: String=app.pose_editor.add_model(plan.source);await settle()
 		if not error.is_empty():push_error(error);failures+=1;continue
+		if plan.has("root_rotation_degrees"):
+			var editor=app.pose_editor
+			editor.tree_items["@root"].select(0);editor.operation.select(0);editor.refresh_values()
+			for axis in range(3):editor.fields[axis].value=plan.root_rotation_degrees[axis]
+			editor.apply_numeric();await settle()
 		app.pose_editor.frame_model();await settle()
 		app.keys=[Timeline.from_camera(0,app.renderer.camera,"ease")]
 		app.project_folder=plan.project;app.save();await settle()
 		var saved:=FileAccess.file_exists(plan.project.path_join("project.json"))
 		if not saved:failures+=1
-		var rig=app.renderer.active_model();results.append({"label":plan.label,"project":plan.project,"source_sha256":FileAccess.get_sha256(plan.source),"bones":rig.order.size(),"native_metadata":not rig.data.metadata.get("native_parameters",{}).is_empty(),"saved":saved})
+		var rig=app.renderer.active_model();results.append({"label":plan.label,"project":plan.project,"source_sha256":FileAccess.get_sha256(plan.source),"bones":rig.order.size(),"root_rotation_xyzw":rig.data.rotation_xyzw,"native_metadata":not rig.data.metadata.get("native_parameters",{}).is_empty(),"saved":saved})
 	print("NATIVE_FIXTURE_PROJECTS "+JSON.stringify({"failures":failures,"results":results}));app.free();quit(0 if failures==0 else 1)

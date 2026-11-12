@@ -52,6 +52,7 @@ func run() -> void:
 		print("HEIGHT_RESULT "+str(plan.label)+" "+JSON.stringify(review.assessment))
 		if review.assessment.is_empty():check(false,"height assessment produced a result");review.cancel();continue
 		var measured: Dictionary=review.assessment.duplicate(true)
+		if plan.label=="SFM":check(measured.upright,"declared Scout fixture retains its reviewed upright root orientation")
 		if plan.label in ["Supplied Mima","Head with full rig"]:
 			check(not measured.complete and review.fit.disabled and not review.fit.button_pressed,"separate head cannot be normalized as a whole person: "+plan.label)
 		else:check(measured.complete and measured.height>0 and not review.fit.disabled,"actual full character has head and both-leg skin coverage: "+plan.label)

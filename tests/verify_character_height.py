@@ -2,18 +2,11 @@
 from pathlib import Path
 import hashlib,json,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));from run import command
+from native_fixture_plans import catalogue_native_plans
 def main():
     folder=ROOT/'output/character-height'/str(time.time_ns());folder.mkdir(parents=True)
     plans=[{'label':'Authored figure','source':str(ROOT/'examples/tutorials/Practice figure.glb'),'metadata':{},'rotation':[0,0,0,1]}]
-    native=[];by_sha={};catalogue_path=ROOT/'output/shape-catalog-verification.json';audit_path=ROOT/'output/import-height-audit.json'
-    if catalogue_path.is_file():
-        prior=json.loads(catalogue_path.read_text(encoding='utf-8'));native=json.loads((Path(prior['folder'])/'catalogue-plans.json').read_text(encoding='utf-8'))[1:]
-    audit_rows=[]
-    if audit_path.is_file():
-        audit=json.loads(audit_path.read_text(encoding='utf-8'));audit_rows=json.loads((Path(audit['folder'])/'plans.json').read_text(encoding='utf-8'))
-    for row in audit_rows:
-        path=Path(row['source'])
-        if path.is_file():by_sha[hashlib.sha256(path.read_bytes()).hexdigest()]=row
+    native=catalogue_native_plans()
     originals={}
     raw_plan={};native_manifest=ROOT/'output/native-import-verification.json'
     if native_manifest.is_file():
@@ -26,9 +19,7 @@ def main():
     (folder/'raw-vrm.json').write_text(json.dumps(raw_plan),encoding='utf-8')
     for row in native:
         path=Path(row['source'])
-        if not path.is_file():continue
-        digest=hashlib.sha256(path.read_bytes()).hexdigest();old=by_sha.get(digest,{})
-        plans.append({'label':row['label'],'source':str(path),'metadata':old.get('metadata',{}),'rotation':old.get('rotation_xyzw',[0,0,0,1])})
+        plans.append({'label':row['label'],'source':str(path),'metadata':row['metadata'],'rotation':row['rotation_xyzw']})
     for row in plans:
         path=Path(row['source']);originals[path]=(hashlib.sha256(path.read_bytes()).hexdigest(),path.stat().st_mtime_ns)
     (folder/'plans.json').write_text(json.dumps(plans),encoding='utf-8')

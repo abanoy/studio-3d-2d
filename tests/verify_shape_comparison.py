@@ -4,26 +4,18 @@ import hashlib,json,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from run import command
 from verify_source_shapes import prepare
+from native_fixture_plans import catalogue_native_plans
 
 
 def main():
     folder=ROOT/'output/shape-comparison-tests'/str(time.time_ns());folder.mkdir(parents=True);originals=prepare(folder)
     plans=[{'id':'0','label':'Authored fixture','source':str(folder/'shape.glb'),'control':'Second shape','rotation':[0,0,0,1]}]
-    catalogue_path=ROOT/'output/shape-catalog-verification.json';native=[];rotations={}
-    if catalogue_path.is_file():
-        catalogue=json.loads(catalogue_path.read_text(encoding='utf-8'));native=json.loads((Path(catalogue['folder'])/'catalogue-plans.json').read_text(encoding='utf-8'))[1:]
-    audit_path=ROOT/'output/import-height-audit.json'
-    if audit_path.is_file():
-        audit=json.loads(audit_path.read_text(encoding='utf-8'))
-        for plan in json.loads((Path(audit['folder'])/'plans.json').read_text(encoding='utf-8')):
-            path=Path(plan['source'])
-            if path.is_file():rotations[hashlib.sha256(path.read_bytes()).hexdigest()]=plan['rotation_xyzw']
+    native=catalogue_native_plans()
     names={'MMD':'まばたき','GMod':'blink','SFM':'CloseLidUpL','VRM1.0':'Fcl_EYE_Close','VRM0.x':'Fcl_EYE_Close','Supplied Mima':'EEEE'}
     for i,plan in enumerate(native,1):
         path=Path(plan['source'])
-        if not path.is_file():continue
         digest=hashlib.sha256(path.read_bytes()).hexdigest();originals[path]=(digest,path.stat().st_mtime_ns)
-        plans.append({'id':str(i),'label':plan['label'],'source':str(path),'control':names[plan['label']],'rotation':rotations.get(digest,[0,0,0,1])})
+        plans.append({'id':str(i),'label':plan['label'],'source':str(path),'control':names[plan['label']],'rotation':plan['rotation_xyzw']})
     (folder/'plans.json').write_text(json.dumps(plans,ensure_ascii=False),encoding='utf-8')
     args=command('tests/shape_comparison_smoke.gd',extra=['--',str(folder)]);p=subprocess.run(args,cwd=ROOT,capture_output=True,encoding='utf-8',errors='replace',timeout=200)
     log=p.stdout+p.stderr;(folder/'engine.log').write_text(log,encoding='utf-8')

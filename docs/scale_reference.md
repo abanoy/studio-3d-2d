@@ -8,6 +8,15 @@ calibration is now available for static unattached maps through
 [known-distance map sizing](map_calibration.md). Animated/attached map resizing,
 contact reanchoring and existing animated-model resizing remain unfinished.
 
+Windows continuation, 2026-11-11: current tests resolve root orientation and
+metadata from checksum-matched saved native fixtures rather than the historical
+audit's deleted plan directory. The fresh HWM Scout prerequisite must use the
+ordinary 90-degree root rotation already demonstrated by `sfm_render_smoke.gd`;
+pass `root_rotation_degrees: [90, 0, 0]` to `prepare_native_projects.gd` for that
+specific fixture. This is fixture setup, not automatic reorientation of every
+Source asset. The height test explicitly checks the reviewed Scout is upright.
+Historical audit values and reports remain historical observations.
+
 On2026-11-01 the owner requested consistent size across imported humanoids, while
 preserving intentionally unusual proportions. Provide an optional human-height
 choice using6feet (exactly1.8288metres) as the reference. If unchecked or declined,
