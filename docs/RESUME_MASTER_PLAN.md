@@ -505,8 +505,18 @@ separate Junko/clothing components provide grounded next cases. The bridge
 currently exports default bodygroup/skin choices to GLB; editable choices,
 native assembly and sequence/procedural support need separate implementation
 and validation. Exact multi-skin positives and broader native rule counts are
-being inventoried with approved readers. No new feature/appearance pass follows
-from this identity/evidence review.
+now have a fresh [native metadata inventory](sfm_native_feature_inventory_2026-11-12.md):
+all 82 actual MDL49 files parse, representing 71 distinct definitions. There are
+28 files/27 distinct definitions with differing skin families and 55 files/46
+distinct definitions declaring native JIGGLE bones. Nitori's glove has three
+skins; Junko v25 main has 16, and its hair has 49 JIGGLE declarations. Keiki Tools
+is a positive nonfacial control. All 3,203 rules in this supplied corpus are
+single FETCH1 with declared 0..1 controls; moving native sequences are not a
+positive case here (all animation headers are one-frame). Portable extraction/
+parser reproduction also passes 82/82 with exact native records and unchanged
+original archives. Switching skins/bodygroups, native jiggle fidelity, assembly
+and rendered appearance remain separate work; these metadata checks do not
+establish their implementation or acceptance.
 
 ### Actual external observations still needed, only when participation is granted
 

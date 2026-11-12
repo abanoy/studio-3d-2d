@@ -4,6 +4,12 @@ This is a read-only inventory and test-gap review, not a new application pass.
 No model was extracted, converted, launched, downloaded or uploaded. No supplied
 script was executed. Original archives were read only for identity checks.
 
+The later same-day [native metadata follow-up](sfm_native_feature_inventory_2026-11-12.md)
+now resolves the initial unknown skin/procedural/sequence counts across all 82
+definitions. It confirms 28 files with differing skins and 55 with native JIGGLE
+declarations; all animation headers are one frame. The initial pass below remains
+scoped to existing evidence. Neither pass certifies native feature behavior.
+
 ## What the existing evidence actually covers
 
 - The November 8 receipt records **22 supplied archives, 82 MDL files and 82
