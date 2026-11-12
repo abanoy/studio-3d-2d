@@ -481,17 +481,35 @@ unpassed. Current-candidate Git inventory support does not certify those readers
 Older plans telling the worker to request these files or prompt owner reviews
 are superseded by the owner's later instructions.
 
+### Supplied SFM extra features: independent coverage work
+
+The owner reminded us on November 12 that the other supplied SFM models have
+additional features. Review the broader archive corpus and test representative
+controls actually present in those sources, rather than treating Scout as
+complete SFM coverage. Candidate areas include facial/flex controls,
+bodygroups/skins, material variants, accessories and extra joints; inventory
+which are truly present before claiming support. Default conversion success
+alone does not certify editable extra features. This independent feature review
+is in progress; it does not depend on asking the busy owner to enumerate files
+again or provide new observations.
+
+**Inventory update:** [the feature map](sfm_extra_features_2026-11-12.md) and
+[metadata receipt](benchmarks/sfm_extra_feature_inventory_2026-11-12.json) now
+separate the historical 82 default conversions / 71 distinct MDL hashes from
+extra-feature acceptance. All 22 supplied archives were freshly hash/size checked
+under `C:\a\dump\New folder`, unchanged before/after. The older 20-archive /
+66-definition totals remain historical. Retained Mima head metadata establishes
+hair/hat blank bodygroups, 82 controllers, 156 descriptors, 143 prepared facial
+targets and 229 bones, but only one skin family. Keiki Tools, Shinki wings and
+separate Junko/clothing components provide grounded next cases. The bridge
+currently exports default bodygroup/skin choices to GLB; editable choices,
+native assembly and sequence/procedural support need separate implementation
+and validation. Exact multi-skin positives and broader native rule counts are
+being inventoried with approved readers. No new feature/appearance pass follows
+from this identity/evidence review.
+
 ### Actual external observations still needed, only when participation is granted
 
-- **Supplied SFM extra features:** the owner reminded us on November 12 that
-  the other supplied SFM models have additional features. Review the broader
-  archive corpus and test representative controls actually present in those
-  sources, rather than treating Scout as complete SFM coverage. Candidate areas
-  include facial/flex controls, bodygroups/skins, material variants, accessories
-  and extra joints; inventory which are truly present before claiming support.
-  Default conversion success alone does not certify editable extra features.
-  This independent feature review is in progress; it does not depend on asking
-  the busy owner to enumerate files again or provide new observations.
 - **Native appearance:** supported originals versus imports, materials/UVs/rigs/
   expressions/lighting and useful posing. Exact cold self-replay is not approval.
 - **Novice A:** a real new user's timed VRM/pose/save/reopen/export exercise plus
