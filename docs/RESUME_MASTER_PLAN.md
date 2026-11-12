@@ -118,6 +118,12 @@ owner to repeat tests without permission.
 
 ## 4. Rotation controls
 
+**Resumed software update:** signed ring dragging and inner-frame overlay bounds
+are fixed in software.131checks pass versus27failures with the two old sources;
+the same24camera/axis/quadrant gestures and actual overlay clipping are checked.
+See [evidence](benchmarks/rotation_gizmo_fix_2026-11-12.json). Camera-facing
+relative rotation is still pending; owner visual/physical approval is unobserved.
+
 - **Direction bug:** the RGB rotation interaction feels reversed, affecting at
   least the **top ring**. The exact axis/view/cause is not yet reproduced. Correct
   the affected direction; do not blindly invert all axes.

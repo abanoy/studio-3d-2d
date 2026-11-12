@@ -4,6 +4,12 @@ Recorded November 12, 2026 while work remains paused. This adds the owner's
 screenshot observations and requests to the pickup notes. No implementation,
 app launch, reproduction tests or acceptance changes were performed.
 
+**Resumed update:** the inner-frame gizmo drawing/hit bug now has a software
+fix with131focused checks, including actual clipping pixels. The old code fails
+27of those checks; see [evidence](benchmarks/rotation_gizmo_fix_2026-11-12.json).
+Full-area scene setup, optional framing/grid and new resolution requests remain
+separate pending work. No new layout is claimed from this bounds repair.
+
 ## Scene setup and optional camera focus
 
 Owner clarification: **prefers a single-camera view**. The current arrangement

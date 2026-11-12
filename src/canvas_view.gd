@@ -1,4 +1,28 @@
 extends Control
+
+# The outer canvas includes letterbox space; pose helpers belong to its inner
+# image instead. A clipped child keeps lines/circles and helper review overlays
+# inside that image without changing painting or camera-navigation coordinates.
+class FrameOverlay extends Control:
+	var canvas_view
+	func _draw() -> void:
+		var scale_factor: Vector2=size/canvas_view.resolution
+		for line in canvas_view.pose_lines:
+			draw_line(line.a*scale_factor,line.b*scale_factor,line.color,2,true)
+		for joint in canvas_view.pose_joints:
+			draw_circle(joint.point*scale_factor,4 if joint.selected else 2,Color("ffe086") if joint.selected else Color("a0e5f5"))
+		if not canvas_view.review_lines.is_empty():
+			var points:=PackedVector2Array()
+			for p in canvas_view.review_lines:points.append(p*scale_factor)
+			draw_multiline(points,Color(1,0.6,0.16,0.75),1,true)
+		if canvas_view.review_chain.size()>1:
+			var points:=PackedVector2Array()
+			for p in canvas_view.review_chain:points.append(p*scale_factor)
+			draw_polyline(points,Color("fff1a0"),3,true)
+			for p in points:draw_circle(p,4,Color("fff1a0"))
+		if canvas_view.review_box_visible:
+			draw_rect(Rect2(canvas_view.review_box.position*scale_factor,canvas_view.review_box.size*scale_factor),Color("8cd9ff"),false,2)
+
 var middle_target: Callable
 var middle_clicked: Callable
 var middle_pending := ""
@@ -14,6 +38,8 @@ var fill_preview: Texture2D
 var selection_preview: ImageTexture
 var drawing_selection:=Rect2i()
 var scene_background: Node2D
+var frame_clip: Control
+var frame_overlay: FrameOverlay
 var zoom := 1.0
 var pan := Vector2.ZERO
 var panning := false
@@ -34,6 +60,8 @@ func _ready() -> void:
 	resized.connect(queue_redraw)
 	var surround:=ColorRect.new();surround.color=Color("7e8f9e");surround.mouse_filter=Control.MOUSE_FILTER_IGNORE;surround.show_behind_parent=true;add_child(surround);surround.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	scene_background=preload("res://src/canvas_raster.gd").new();scene_background.show_behind_parent=true;add_child(scene_background)
+	frame_clip=Control.new();frame_clip.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.clip_contents=true;add_child(frame_clip)
+	frame_overlay=FrameOverlay.new();frame_overlay.canvas_view=self;frame_overlay.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.add_child(frame_overlay)
 
 func image_rect() -> Rect2:
 	var scale_factor := minf(size.x / resolution.x, size.y / resolution.y) * zoom
@@ -47,21 +75,7 @@ func _draw() -> void:
 	if selection_preview:draw_texture_rect(selection_preview,rect,false)
 	elif fill_preview:draw_texture_rect(fill_preview,rect,false)
 	elif overlay:draw_texture_rect(overlay,rect,false)
-	for line in pose_lines:
-		draw_line(rect.position + line.a / resolution * rect.size, rect.position + line.b / resolution * rect.size, line.color, 2, true)
-	for joint in pose_joints:
-		draw_circle(rect.position + joint.point / resolution * rect.size, 4 if joint.selected else 2, Color("ffe086") if joint.selected else Color("a0e5f5"))
-	if not review_lines.is_empty():
-		var points:=PackedVector2Array()
-		for p in review_lines:points.append(rect.position+p/resolution*rect.size)
-		draw_multiline(points,Color(1,0.6,0.16,0.75),1,true)
-	if review_chain.size()>1:
-		var points:=PackedVector2Array()
-		for p in review_chain:points.append(rect.position+p/resolution*rect.size)
-		draw_polyline(points,Color("fff1a0"),3,true)
-		for p in points:draw_circle(p,4,Color("fff1a0"))
-	if review_box_visible:
-		draw_rect(Rect2(rect.position+review_box.position/resolution*rect.size,review_box.size/resolution*rect.size),Color("8cd9ff"),false,2)
+	frame_clip.position=rect.position;frame_clip.size=rect.size;frame_overlay.size=rect.size;frame_overlay.queue_redraw()
 	if drawing_selection.has_area():
 		var selected:=Rect2(rect.position+Vector2(drawing_selection.position)/resolution*rect.size,Vector2(drawing_selection.size)/resolution*rect.size)
 		draw_rect(selected,Color.BLACK,false,3);draw_rect(selected,Color.WHITE,false,1)

@@ -34,6 +34,9 @@ var drag_world := Transform3D.IDENTITY
 var drag_screen_axis := Vector2.ZERO
 var drag_pixels := 80.0
 var drag_units := 1.0
+var drag_ring_start := Vector3.ZERO
+var drag_ring_previous := 0.0
+var drag_ring_angle := 0.0
 var import_control: Button
 var scale_apply: Button
 var auto_key: CheckButton
@@ -678,16 +681,20 @@ func update_gizmo() -> void:
 
 func input(event: InputEvent, point: Vector2) -> void:
 	if not active_rig(): return
+	# Letterbox margins are outside the displayed 3D view. Continuing gestures
+	# still receive motion/release globally, but no invisible handle starts here.
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not Rect2(Vector2.ZERO,app.canvas.resolution).has_point(point):return
 	if contacts.viewport.active:contacts.viewport.input(event,point);return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed: finish_drag(); return
 		var threshold: float = 10.0 * app.video.width / maxf(1, app.canvas.image_rect().size.x)
 		var best := threshold
 		var hit := {}
+		var hit_segment:=0
 		for handle in handles:
 			for i in range(handle.points.size() - 1):
 				var distance: float = point.distance_to(Geometry2D.get_closest_point_to_segment(point, handle.points[i], handle.points[i + 1]))
-				if distance < best: best = distance; hit = handle
+				if distance < best: best = distance; hit = handle;hit_segment=i
 		if not hit.is_empty():
 			var contact_error:=contact_edit_error()
 			if not contact_error.is_empty():app.message(contact_error);return
@@ -701,8 +708,14 @@ func input(event: InputEvent, point: Vector2) -> void:
 			drag_chain=LimbIK.chain(active_rig(),selected) if limb_ik.button_pressed and operation.selected==1 and drag_joints.is_empty() else {}
 			drag_before = before
 			drag_start = point; drag_axis = hit.axis; drag_world = hit.world; drag_units = hit.units
-			drag_screen_axis = hit.points[-1] - hit.points[0] if operation.selected == 1 else Vector2(1, -1)
+			drag_screen_axis = hit.points[-1] - hit.points[0] if operation.selected == 1 else hit.points[hit_segment+1]-hit.points[hit_segment]
 			drag_pixels = maxf(1, drag_screen_axis.length())
+			if operation.selected==0:
+				# Ray/plane angles follow the actual ring and camera. The projected
+				# tangent is a usable fallback when its plane is viewed edge-on.
+				drag_pixels=maxf(1,drag_screen_axis.length()/ (TAU/(hit.points.size()-1)))
+				drag_ring_start=ring_vector(point)
+				drag_ring_previous=0.;drag_ring_angle=0.
 			return
 		for joint in joints:
 			if point.distance_to(joint.point) < best:
@@ -722,7 +735,7 @@ func input(event: InputEvent, point: Vector2) -> void:
 		var position := Timeline.vector(value.position)
 		var rotation := Timeline.quaternion(value.rotation_xyzw)
 		if operation.selected == 0:
-			var angle := (point - drag_start).dot(Vector2(1, -1)) * 0.01
+			var angle:=ring_angle(point)
 			if snap.button_pressed: angle = snappedf(angle, deg_to_rad(15))
 			if selected == "@root":
 				var axis:=drag_axis
@@ -771,6 +784,25 @@ func input(event: InputEvent, point: Vector2) -> void:
 			var error:=FootHold.solve(active_rig(),drag_feet,apply_frame)
 			if not error.is_empty():active_rig().data=last_valid;apply_frame();app.message(error)
 		refresh_values()
+
+func ring_vector(point: Vector2) -> Vector3:
+	var camera: Camera3D=app.renderer.camera
+	var direction:=camera.project_ray_normal(point)
+	if absf(direction.dot(drag_axis))<0.08:return Vector3.ZERO
+	var intersection=Plane(drag_axis.normalized(),drag_world.origin).intersects_ray(camera.project_ray_origin(point),direction)
+	if intersection==null:return Vector3.ZERO
+	var radial: Vector3=intersection-drag_world.origin
+	return radial.normalized() if radial.length_squared()>0.00000001 else Vector3.ZERO
+
+func ring_angle(point: Vector2) -> float:
+	if drag_ring_start!=Vector3.ZERO:
+		var radial:=ring_vector(point)
+		if radial==Vector3.ZERO:return drag_ring_angle
+		var principal:=atan2(drag_axis.dot(drag_ring_start.cross(radial)),drag_ring_start.dot(radial))
+		drag_ring_angle+=wrapf(principal-drag_ring_previous,-PI,PI)
+		drag_ring_previous=principal
+		return drag_ring_angle
+	return (point-drag_start).dot(drag_screen_axis.normalized())/drag_pixels
 
 func finish_drag(cancel := false) -> void:
 	if contacts and contacts.viewport and contacts.viewport.dragging:contacts.viewport.finish(cancel);return

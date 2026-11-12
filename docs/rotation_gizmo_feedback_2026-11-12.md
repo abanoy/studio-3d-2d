@@ -4,6 +4,13 @@ Recorded November 12, 2026 as an addition to the paused-work notes. The owner
 has not asked to resume implementation. No code changes, app launches or tests
 were performed for this report.
 
+**Resumed update:** the owner has now resumed work. Ring direction and focused
+overlay bounds have software fixes:131checks pass, while the same checks with
+the two old source files produce27real failures (including all24projected arc
+cases). Actual overlay pixels confirm clipping. See
+[evidence](benchmarks/rotation_gizmo_fix_2026-11-12.json). The additional
+camera-facing ring is still pending; no owner/device approval is inferred.
+
 ## Requested behavior
 
 - **Correct the RGB ring direction.** The owner reports rotation feels reversed,

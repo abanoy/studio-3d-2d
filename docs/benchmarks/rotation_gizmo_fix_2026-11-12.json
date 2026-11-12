@@ -1,0 +1,390 @@
+{
+  "format": "has_rotation_gizmo_fix_1",
+  "date": "2026-11-12",
+  "base_commit": "08295464a063c63d0602475e59958528ee443785",
+  "cause": "One screen diagonal drove all RGB rings irrespective of camera/axis/quadrant. Overlays were clipped to the outer canvas only.",
+  "change": "Signed ray/axis-plane ring angles with continuous wrap and edge-on tangent fallback; child overlay clipped by image-sized parent and off-frame handle presses refused. Outside active drag/release remains supported.",
+  "fixed": {
+    "cases": [
+      {
+        "axis": 0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 6
+      },
+      {
+        "axis": 0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.0001220703125,
+        "quadrant": 18
+      },
+      {
+        "axis": 0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 30
+      },
+      {
+        "axis": 0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.00013647876039613,
+        "quadrant": 42
+      },
+      {
+        "axis": 1,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 6
+      },
+      {
+        "axis": 1,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 18
+      },
+      {
+        "axis": 1,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.0001220703125,
+        "quadrant": 30
+      },
+      {
+        "axis": 1,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 42
+      },
+      {
+        "axis": 2,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.000110032691736706,
+        "quadrant": 6
+      },
+      {
+        "axis": 2,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 6.82393801980652e-05,
+        "quadrant": 18
+      },
+      {
+        "axis": 2,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 30
+      },
+      {
+        "axis": 2,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 42
+      },
+      {
+        "axis": 0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.00013647876039613,
+        "quadrant": 6
+      },
+      {
+        "axis": 0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.0001220703125,
+        "quadrant": 18
+      },
+      {
+        "axis": 0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 30
+      },
+      {
+        "axis": 0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.00013647876039613,
+        "quadrant": 42
+      },
+      {
+        "axis": 1,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 6
+      },
+      {
+        "axis": 1,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 18
+      },
+      {
+        "axis": 1,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.0001220703125,
+        "quadrant": 30
+      },
+      {
+        "axis": 1,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 42
+      },
+      {
+        "axis": 2,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.000110032691736706,
+        "quadrant": 6
+      },
+      {
+        "axis": 2,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.82393801980652e-05,
+        "quadrant": 18
+      },
+      {
+        "axis": 2,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 30
+      },
+      {
+        "axis": 2,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 42
+      }
+    ],
+    "checks": 131,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\rotation-gizmo\\1794515349307549400",
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_82436a0986724c20bdff0c021b45bda5",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 19700,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.3
+    },
+    "source_sha256": {
+      "src\\pose_editor.gd": "bbf6aeef9309bb89eb8b252ee1d1e0d439fa8d3d143da8856aadb6cf4f0afa21",
+      "src\\canvas_view.gd": "9b1baf4d51f3c977450a7fa9ed719de1ef45e93091faef65282e55b24ddef859",
+      "tests\\rotation_gizmo_smoke.gd": "62bc8528434e76da4e27d873ea7a8cbaae9bb429fedb3f15ff40b34a15a5884c"
+    }
+  },
+  "counterfactual": {
+    "base_commit": "08295464a063c63d0602475e59958528ee443785",
+    "restored_head_sources": {
+      "src/pose_editor.gd": "72fe7b3eb05ba8cf3b8ba2c8cf6d2f34b64b662fff0291d9c86afb10c1a13ed5",
+      "src/canvas_view.gd": "793cf23558fbd63b7bec57a283b5bcf4894d1f311880628f880e41d9babc7d1d"
+    },
+    "test_sha256": "62bc8528434e76da4e27d873ea7a8cbaae9bb429fedb3f15ff40b34a15a5884c",
+    "private_originals_used": false,
+    "exit": 1,
+    "result": {
+      "cases": [
+        {
+          "axis": 0,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 34.9622955322266,
+          "quadrant": 6
+        },
+        {
+          "axis": 0,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 7.52542877197266,
+          "quadrant": 18
+        },
+        {
+          "axis": 0,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 2.47635841369629,
+          "quadrant": 30
+        },
+        {
+          "axis": 0,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 10.5110425949097,
+          "quadrant": 42
+        },
+        {
+          "axis": 1,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 3.33375906944275,
+          "quadrant": 6
+        },
+        {
+          "axis": 1,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 8.59390640258789,
+          "quadrant": 18
+        },
+        {
+          "axis": 1,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 27.5673637390137,
+          "quadrant": 30
+        },
+        {
+          "axis": 1,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 9.86939811706543,
+          "quadrant": 42
+        },
+        {
+          "axis": 2,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 16.5846519470215,
+          "quadrant": 6
+        },
+        {
+          "axis": 2,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 21.5434055328369,
+          "quadrant": 18
+        },
+        {
+          "axis": 2,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 17.980131149292,
+          "quadrant": 30
+        },
+        {
+          "axis": 2,
+          "eye": "(3.0, 2.2, 4.0)",
+          "pixel_error": 3.61626243591309,
+          "quadrant": 42
+        },
+        {
+          "axis": 0,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 14.2374095916748,
+          "quadrant": 6
+        },
+        {
+          "axis": 0,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 7.52542877197266,
+          "quadrant": 18
+        },
+        {
+          "axis": 0,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 2.47635841369629,
+          "quadrant": 30
+        },
+        {
+          "axis": 0,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 10.5110425949097,
+          "quadrant": 42
+        },
+        {
+          "axis": 1,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 3.33375906944275,
+          "quadrant": 6
+        },
+        {
+          "axis": 1,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 8.59390640258789,
+          "quadrant": 18
+        },
+        {
+          "axis": 1,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 27.5673637390137,
+          "quadrant": 30
+        },
+        {
+          "axis": 1,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 9.86939811706543,
+          "quadrant": 42
+        },
+        {
+          "axis": 2,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 16.5846519470215,
+          "quadrant": 6
+        },
+        {
+          "axis": 2,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 21.5434055328369,
+          "quadrant": 18
+        },
+        {
+          "axis": 2,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 17.980131149292,
+          "quadrant": 30
+        },
+        {
+          "axis": 2,
+          "eye": "(-3.0, 1.7, -4.0)",
+          "pixel_error": 3.61626243591309,
+          "quadrant": 42
+        }
+      ],
+      "checks": 131,
+      "failures": 27,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\rotation-counterfactual\\1794515417597023600\\Studio\\output\\counterfactual"
+    },
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_66ec4b453f4c464fbcd9e1895ef33bdc",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 1,
+      "child_pid": 5440,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.215
+    },
+    "failed_checks": [
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL the actual model marker follows the requested ring arc from either side/quadrant",
+      "FAIL rotation remains continuous after passing half and full turns",
+      "FAIL a letterbox-margin click cannot grab an invisible rotation handle",
+      "FAIL actual line/joint/helper pixels clip to the white frame while remaining visible inside"
+    ]
+  },
+  "measurement_scope": "24projected actual model-local reference-point arc comparisons, maximum fixed endpoint error below0.001px; independent real pixel comparison for clipped line/joint/helper overlays. Not all131checks are raster-pixel assertions.",
+  "fixed_max_projected_error_px": 0.00013647876039613,
+  "old_max_projected_error_px": 34.9622955322266,
+  "canonical_integration": "tests/verify.py now calls verify_rotation_gizmo.py; full aggregate not yet run.",
+  "official_references": [
+    "https://docs.godotengine.org/en/4.6/classes/class_control.html",
+    "https://docs.godotengine.org/en/4.6/classes/class_plane.html#class-plane-method-intersects-ray"
+  ],
+  "pending": "Camera-facing fourth ring and broader scene framing remain separate work. No human/device/native appearance acceptance claimed."
+}
