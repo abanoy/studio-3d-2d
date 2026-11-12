@@ -8,13 +8,20 @@ new completion gates. No adapters, UI, downloads or previews were implemented.
 
 ## A small model library with a useful journey
 
-Keep one browser with a shared search bar and three proposed entry points:
+Owner clarification after the remix: **one Discovery tab covering local and
+online models with proper labels**. This replaces the earlier three-entry-point
+sketch as the preferred organizing idea. Keep one shared search bar and make
+each item's source and available action clear:
 
-| Entry | What it shows | Main next step |
+| Source label | What it shows | Main next step |
 | --- | --- | --- |
-| Discover | International online listings; about 100 varied results initially | Open original page or save listing |
-| On this PC | Available files in installed content and chosen locations | Preview, then Add to scene |
-| Saved | A locally stored shortlist of listing links and local models | Return to source or locate a downloaded file |
+| Online, plus website name | International listings; about 100 varied results initially | Open original page or save listing |
+| Local, plus location | Available files in installed content and chosen locations | Preview, then Add to scene |
+
+The Saved shortlist can be an optional filter within Discovery rather than a
+third main tab; that remains an assistant proposal. Exact source-switch/filter
+layout is not settled, and the clarification does not approve every suggested
+extra. Preserve both clear origin labels and website/model-type filtering.
 
 Choosing the online area is explicit. Ordinary local model picking stays useful
 offline. Searching from the top bar in Discover changes its feed to relevant
@@ -98,7 +105,7 @@ a new result context and cancels obsolete work.
 2. Search `Hatsune Miku`, choose MMD and optionally narrow the website filter.
 3. Inspect a result and Save it; its source page opens in the default browser
    when its title/thumbnail is clicked.
-4. Retrieve the file using that site's normal process, then return to Saved and
+4. Retrieve the file using that site's normal process, then use the Saved filter and
    choose Locate downloaded file.
 5. Select the linked local item, inspect its prepared preview, then Add to scene.
 

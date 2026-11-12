@@ -68,6 +68,10 @@ Owner invited an assistant design contribution: see the proposed
 shortlist/downloaded-file bridge, correctable search expansions, clear per-card
 actions and calm previews/partial results. These are proposals distinct from
 owner requirements; implementation and the goal remain paused.
+Owner then clarified the organizing idea as **one Discovery tab covering Local
+and Online with proper labels**. The concept is updated accordingly; Saved as
+an internal filter remains an optional assistant proposal, not a separate
+required main tab. This does not resume implementation.
 
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4

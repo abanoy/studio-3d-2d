@@ -9,6 +9,11 @@ and clearly marked additions are in [model_browser_concept_2026-11-12.md](model_
 That invitation authorizes design contributions, not implementation or replacing
 the original requests with unreviewed new requirements.
 
+Owner's subsequent clarification: organize this as **one Discovery tab with
+local and online models, properly labelled**. The concept now reflects that
+umbrella instead of its earlier three-entry-point sketch. This accepts the
+organizing idea, not implementation or every optional assistant suggestion.
+
 ## Optional online listings browser
 
 - A search box takes a keyword and lists matching models from sites such as
