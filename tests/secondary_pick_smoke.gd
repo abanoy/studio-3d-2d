@@ -37,6 +37,7 @@ func selected(primitive: int,component: int) -> bool:
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();folder=args[0];var source: String=args[1]
 	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recent.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settle();app.home.hide();app.autosave_enabled.button_pressed=false
+	app.scene_view.set_setup(false,false)
 	app.append_object(Model.definition(source),"model");await settle();app.mode.select(2);app.change_mode(2);app.set_advanced(false)
 	var actor: RefCounted=app.renderer.active_model();var source_bones: Dictionary=actor.root.get_meta("has_source_bones",{});var head: String=source_bones.get(2,"")
 	check(not head.is_empty(),"actual source Head binding is available")
@@ -90,6 +91,26 @@ func run() -> void:
 	check(actor.data==posed and app.history.size()==posed_history and app.keys==shots and FileAccess.get_sha256(source)==sha,"picking, navigation and correction author no asset, pose, camera key or history")
 	helper.window.get_texture().get_image().save_png(folder.path_join("review.png"));root.get_texture().get_image().save_png(folder.path_join("editor.png"));helper.close();await settle()
 	check(not app.canvas.review_pointer.is_valid() and not helper.part_press,"closing review removes the part-click interceptor")
+	# Separate Setup oracle: move actual source geometry to a virtual native pixel
+	# beyond the output frame, while retaining the original camera projection.
+	app.canvas.reparent(root);app.canvas.position=Vector2(12,12);app.canvas.size=Vector2(1200,360);app.canvas.z_index=100
+	app.scene_view.set_setup(true,false);app.renderer.camera.transform=camera;await settle()
+	var outside:=Vector2(-250,540);var wanted: Vector3=app.renderer.camera.project_position(outside,4.)
+	var current: Vector3=actor.bone_transform(head)*Vector3(.4,-.6,.1);var shift: Vector3=wanted-current
+	actor.data.position=[shift.x,shift.y,shift.z];app.pose_editor.apply_frame();app.changed();await settle()
+	var setup_world: Dictionary=app.current_world().duplicate(true);var setup_history: int=app.history.size();var setup_keys: Array=app.keys.duplicate(true)
+	helper.open(true);await ready()
+	check(app.canvas.scene_setup and app.canvas.scene_contains(outside) and not Rect2(Vector2.ZERO,app.canvas.resolution).has_point(outside),"Setup test geometry lies visibly outside native output but inside the scene")
+	await click(outside);check(selected(1,0),"a routed Setup click guesses the actual off-frame source strip")
+	helper.parts.select(correction);helper.parts.item_selected.emit(correction);await ready()
+	check(selected(1,1),"the list can correct an off-frame Setup guess")
+	var setup_choice: Dictionary=helper.request.duplicate(true)
+	button(outside,true,MOUSE_BUTTON_MIDDLE);motion(outside+Vector2(0,10),Vector2(0,10),MOUSE_BUTTON_MASK_MIDDLE);await process_frame
+	check(app.navigating and app.camera_buttons==MOUSE_BUTTON_MASK_MIDDLE,"Pose middle drag navigates the 3D camera in Setup")
+	button(outside,false,MOUSE_BUTTON_MIDDLE);await ready()
+	check(not app.navigating and helper.request==setup_choice,"Setup middle release keeps the corrected selection and releases capture")
+	check(app.current_world()==setup_world and app.history.size()==setup_history and app.keys==setup_keys and FileAccess.get_sha256(source)==sha,"off-frame Setup picking and navigation change no authored scene or source")
+	root.get_texture().get_image().save_png(folder.path_join("setup-editor.png"));helper.close();app.scene_view.set_setup(false,false)
 	app.new_project();app.append_object(Model.definition(args[2]),"model");await settle();app.mode.select(2);app.change_mode(2)
 	app.renderer.camera.position=Vector3(0,1.2,4);app.renderer.camera.look_at(Vector3(0,1.1,0));helper.open();await ready()
 	check(not helper.preview.is_empty() and not helper.apply_button.disabled,"a different unconfigured area can be reviewed beside existing helper weights")

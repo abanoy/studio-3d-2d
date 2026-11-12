@@ -43,6 +43,7 @@ func run() -> void:
 	folder=OS.get_cmdline_user_args()[0]
 	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recent.json");app.display_prefs_path=folder.path_join("prefs.cfg")
 	root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
+	app.scene_view.set_setup(false,false)
 	if "--read" in OS.get_cmdline_user_args():await cold_read();return
 	var fixture:=folder.path_join("original-rig.glb")
 	check(SceneIO.make_pose_fixture(fixture)==OK,"ordinary skinned fixture is created without owner assets")

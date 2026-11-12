@@ -37,6 +37,9 @@ func run() -> void:
 	pen.pressed=false;pen.position=ink.position;app.canvas._gui_input(pen)
 	check(Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(120,80).a>0,"actual canvas coordinates still paint an independent visible Ink cel")
 	app.mode.select(2);app.change_mode(2);await settled()
+	# This fixture asserts the retained Focus paper-pan behavior. Setup camera
+	# navigation has its own independent scene_view_smoke interaction checks.
+	app.scene_view.set_setup(false,false)
 	var id: String=app.world_selection.selected;var world: Dictionary=World.portable(app.current_world());var shots: Array=app.keys.duplicate(true);var view: Dictionary=app.renderer.view_state();var history: int=app.history.size();var operation: int=app.pose_editor.operation.selected
 	middle(true);middle(false);await settled()
 	check(app.pose_editor.operation.selected==1-operation and app.world_selection.selected==id,"middle click cycles Rotate/Move without deselecting the model")

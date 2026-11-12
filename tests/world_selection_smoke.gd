@@ -43,6 +43,7 @@ func run() -> void:
 	DirAccess.make_dir_recursive_absolute(folder)
 	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app)
 	await settled()
+	app.scene_view.set_setup(false,false)
 	var selection=app.world_selection
 	check(selection.selected.is_empty() and selection.items.is_empty() and selection.tree.get_selected()==null,"empty world hierarchy opens without a selection")
 	var fixture:=folder.path_join("rig.glb");SceneIO.make_pose_fixture(fixture)

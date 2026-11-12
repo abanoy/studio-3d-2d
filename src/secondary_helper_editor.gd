@@ -270,7 +270,7 @@ static func ray_region(rows: Array,transforms: Dictionary,origin: Vector3,direct
 	return best
 
 func guess_part(point: Vector2) -> int:
-	if not Rect2(Vector2.ZERO,Vector2(app.video.width,app.video.height)).has_point(point) or not point.is_finite() or assessment.is_empty():return -1
+	if not app.canvas.scene_contains(point) or assessment.is_empty():return -1
 	var current: RefCounted=actor()
 	if not current:return -1
 	var transforms:={};var bindings: Dictionary=current.root.get_meta("has_source_bones",{})
@@ -297,7 +297,7 @@ func part_pointer(event: InputEventMouse,point: Vector2) -> bool:
 	if not is_instance_valid(window) or app.playing or app.pose_editor.dragging:return false
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			if event.ctrl_pressed or app.navigating or not Rect2(Vector2.ZERO,Vector2(app.video.width,app.video.height)).has_point(point):return false
+			if event.ctrl_pressed or app.navigating or not app.canvas.scene_contains(point):return false
 			part_press=true;app.canvas.grab_focus();app.world_selection.input(event,point);return true
 		if part_press:
 			part_press=false

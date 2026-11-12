@@ -1,8 +1,7 @@
 extends Control
 
-# The outer canvas includes letterbox space; pose helpers belong to its inner
-# image instead. A clipped child keeps lines/circles and helper review overlays
-# inside that image without changing painting or camera-navigation coordinates.
+# Helpers keep native projection coordinates. Their clip is the full rendered
+# scene in Setup, or the fitted image in Focus, independently of drawing pixels.
 class FrameOverlay extends Control:
 	var canvas_view
 	func _draw() -> void:
@@ -32,6 +31,11 @@ func cancel_middle() -> void:
 	middle_pending="";middle_motion=Vector2.ZERO;panning=false
 signal pointer(event: InputEvent, point: Vector2)
 var background: Texture2D
+var setup_background: Texture2D
+var scene_editing:=false
+var scene_setup:=false
+var show_camera_frame:=false
+var show_thirds:=false
 var overlay: Texture2D
 var sequence_overlay: Texture2D
 var fill_preview: Texture2D
@@ -64,22 +68,52 @@ func _ready() -> void:
 	frame_overlay=FrameOverlay.new();frame_overlay.canvas_view=self;frame_overlay.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.add_child(frame_overlay)
 
 func image_rect() -> Rect2:
+	if scene_setup:
+		var area:=scene_rect()
+		var factor:=minf(area.size.x/resolution.x,area.size.y/resolution.y)
+		return Rect2(area.position+(area.size-resolution*factor)/2.,resolution*factor)
 	var scale_factor := minf(size.x / resolution.x, size.y / resolution.y) * zoom
 	var extent := resolution * scale_factor
 	return Rect2((size - extent) / 2 + pan, extent)
 
+func setup_size() -> Vector2i:
+	# Match the texture's actual aspect without stretching to fractional UI sizes.
+	return Vector2i(maxi(1,floori(size.x)),maxi(1,floori(size.y)))
+
+func scene_rect() -> Rect2:
+	if scene_setup:
+		var extent:=Vector2(setup_size())
+		return Rect2((size-extent)/2.,extent)
+	return image_rect()
+
+func scene_contains(point: Vector2) -> bool:
+	if not point.is_finite():return false
+	var frame:=image_rect()
+	var screen:=frame.position+point/resolution*frame.size
+	return Rect2(Vector2.ZERO,size).has_point(screen) and scene_rect().has_point(screen)
+
+func scene_uv(point: Vector2) -> Vector2:
+	var frame:=image_rect();var area:=scene_rect()
+	return (frame.position+point/resolution*frame.size-area.position)/area.size
+
 func _draw() -> void:
 	var rect := image_rect()
-	scene_background.texture=background;scene_background.rect=rect;scene_background.queue_redraw()
+	scene_background.texture=setup_background if scene_setup else background;scene_background.rect=scene_rect() if scene_setup else rect;scene_background.queue_redraw()
 	if sequence_overlay:draw_texture_rect(sequence_overlay,rect,false)
 	if selection_preview:draw_texture_rect(selection_preview,rect,false)
 	elif fill_preview:draw_texture_rect(fill_preview,rect,false)
 	elif overlay:draw_texture_rect(overlay,rect,false)
-	frame_clip.position=rect.position;frame_clip.size=rect.size;frame_overlay.size=rect.size;frame_overlay.queue_redraw()
+	var bounds:=scene_rect()
+	frame_clip.position=bounds.position;frame_clip.size=bounds.size;frame_overlay.position=rect.position-bounds.position;frame_overlay.size=rect.size;frame_overlay.queue_redraw()
 	if drawing_selection.has_area():
 		var selected:=Rect2(rect.position+Vector2(drawing_selection.position)/resolution*rect.size,Vector2(drawing_selection.size)/resolution*rect.size)
 		draw_rect(selected,Color.BLACK,false,3);draw_rect(selected,Color.WHITE,false,1)
-	draw_rect(rect, Color("dce8f2"), false, 1)
+	if not scene_editing or show_camera_frame:draw_rect(rect, Color("dce8f2"), false, 1)
+	if scene_editing and show_thirds:
+		for i in [1,2]:
+			var portion:=float(i)/3.
+			draw_line(rect.position+Vector2(rect.size.x*portion,0),rect.position+Vector2(rect.size.x*portion,rect.size.y),Color(1,1,1,.6),1,true)
+			draw_line(rect.position+Vector2(0,rect.size.y*portion),rect.position+Vector2(rect.size.x,rect.size.y*portion),Color(1,1,1,.6),1,true)
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouse and review_pointer.is_valid():

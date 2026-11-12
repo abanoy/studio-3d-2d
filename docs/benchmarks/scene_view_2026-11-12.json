@@ -1,0 +1,513 @@
+{
+  "format": "has_full_area_scene_view_1",
+  "date": "2026-11-12",
+  "base_commit": "e82580da9fe8d12ea29afc1f3e1780035605daa2",
+  "changes": [
+    "One full-area Scene Setup view in Scene/Pose, optional Camera focus and editor-only Frame/3x3 guides, personal preference persistence",
+    "Shared-world editor camera matches centered native projection; virtual native pixels preserve existing ray/pose/drawing coordinates",
+    "Actual displayed-scene bounds and adaptive ID-mask projection/UVs permit outside-frame model and part selection; Draw/color sampling retain native bounds",
+    "Fresh native readback scope covers capture and recovery while unused scene pass is suspended",
+    "Cached pose helpers redraw immediately when cleared; valid picks survive pure inspector/panel translation while view/camera/extent changes invalidate stale picks"
+  ],
+  "source_sha256": {
+    "src/scene_view.gd": "1a32b42ac5cad1ee816b50717e07f78071e266cbce3284b9e1418b143f56716a",
+    "src/app.gd": "3991f00070c410a17c857785a5341e6fb8ec24fd8a688a8048a5e787c1f02ef2",
+    "src/canvas_view.gd": "296aba09440ad481b18930296d217a3d092bccf7bb8b49b8a2592d8057a1d244",
+    "src/pose_editor.gd": "bd4941ee25c3cc7833b725b29c6b7c35eb9561014502368517e5f42025c60027",
+    "src/renderer.gd": "e3096ab3e31064f2620089328940276679e9a6cff8397fd67257a1ddd6b75f01",
+    "src/world_selection.gd": "221af2eb63b81d860c82c7ef81128c6ba0e5f9458a2887a995a37637d45e4e1d",
+    "tests/scene_view_unit.gd": "78639224a5f9be51bb177e87a8889c79c69a2202ecee2db3c86fc6b11f793185",
+    "tests/scene_view_smoke.gd": "23edd53c98a992ee915f45f366b996b982af5ca9dfd3e32dc4c30e925e76a3cb",
+    "tests/verify_scene_view.py": "e98eb9bb6bd44ca72586ba27155abbab1d61fc1adc02319af0c7514ab1e5739e",
+    "tests/rotation_gizmo_smoke.gd": "469007c72c456ca4ea721c022fb77c56164647cc4b18ea122101450ad1ef0f39",
+    "tests/world_selection_smoke.gd": "50bfc05e049716f77c543426b63a51dc2a4e6c1a00235ebb972d997d5fdee5a9",
+    "tests/world_edit_smoke.gd": "d49e0051ffafe94af22270cb3542706d16be813c4bbc200d1834903732172074",
+    "tests/workspace_controls_smoke.gd": "7bca93807f36a9f9ac5af30f720a11d301969db82be83d8cc3b37840ad0d88c6",
+    "src/secondary_helper_editor.gd": "5e2255cc40a58db3562b84e1b738c098ed3131cc11f0936e90e919ba994a987f"
+  },
+  "frozen_runtime_file_count": 188,
+  "frozen_runtime_manifest_sha256": "640230bf8bd3098379b0feb008cd50c1656cd387c1160c9d0349b2768fd9fc3f",
+  "focused": {
+    "scene_view_unit": {
+      "cases": 144,
+      "checks": 12830,
+      "failures": 0,
+      "maximum_projection_error_pixels": 0.00013647876039613038,
+      "maximum_ray_error": 2.327635826304686e-07,
+      "outside_native_samples": 4860,
+      "world_samples": 34992
+    },
+    "scene_view_smoke": {
+      "cases": [
+        {
+          "extent": "(1200.0, 360.0)",
+          "green_outline_pixels": 612,
+          "guide_pixels": 7920,
+          "outside_guide_pixels": 0,
+          "roll": 0.0
+        },
+        {
+          "extent": "(1200.0, 360.0)",
+          "green_outline_pixels": 700,
+          "guide_pixels": 7920,
+          "outside_guide_pixels": 0,
+          "roll": 0.4
+        },
+        {
+          "extent": "(480.0, 760.0)",
+          "green_outline_pixels": 502,
+          "guide_pixels": 6856,
+          "outside_guide_pixels": 0,
+          "roll": 0.0
+        },
+        {
+          "extent": "(480.0, 760.0)",
+          "green_outline_pixels": 604,
+          "guide_pixels": 6856,
+          "outside_guide_pixels": 0,
+          "roll": 0.4
+        }
+      ],
+      "checks": 102,
+      "failures": 0,
+      "native_size": "(1920, 1080)",
+      "source_sha256": "62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac",
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ad051755a3464f0c8be06750a481b2bf",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19544,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.801
+      },
+      "private_receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\scene_view_smoke_9a751ea33d5148c2a8fd5dbc5c750703.json"
+    },
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view\\1794518332171384400"
+  },
+  "final_same_runtime_regressions": {
+    "groups": [
+      {
+        "label": "unit",
+        "exit": 0,
+        "seconds": 0.4372051999998803,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\unit.log"
+      },
+      {
+        "label": "rotation",
+        "exit": 0,
+        "seconds": 7.094546800000899,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\rotation.log"
+      },
+      {
+        "label": "picking",
+        "exit": 0,
+        "seconds": 10.110290099999474,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\picking.log"
+      },
+      {
+        "label": "pose",
+        "exit": 0,
+        "seconds": 15.778638399999181,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\pose.log",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_119134db78c4431c872d1fbf68c5076e",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 3332,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 15.729
+        },
+        "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_fe1feb4284b649948ba1fe3428645eea.json"
+      },
+      {
+        "label": "world_selection",
+        "exit": 0,
+        "seconds": 9.717572600000494,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\world_selection.log",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_275de35691ba484cacb4e521f26a36a4",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 3868,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 9.663
+        },
+        "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_selection_smoke_61ef9de31e0c4297ba0e1e2a37d14cd8.json"
+      },
+      {
+        "label": "world_edit",
+        "exit": 0,
+        "seconds": 23.169765499998903,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\world_edit.log",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_82c7eac2ecc347bd908dd8541bd39807",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 15880,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 23.116
+        },
+        "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_edit_smoke_29e3818cda93490ab1a97067e80fe8c5.json"
+      },
+      {
+        "label": "stroke",
+        "exit": 0,
+        "seconds": 13.335611599999538,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\stroke.log"
+      },
+      {
+        "label": "bounds",
+        "exit": 0,
+        "seconds": 23.20469090000006,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\bounds.log"
+      },
+      {
+        "label": "recovery",
+        "exit": 0,
+        "seconds": 38.10718239999915,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-regressions\\1794518356055344100\\recovery.log"
+      }
+    ],
+    "checks": {
+      "unit": 24,
+      "rotation_writer": 309,
+      "rotation_cold_reader": 4,
+      "picking_unit": 20,
+      "picking_app": 31,
+      "actual_miku_pose": 45,
+      "native_world_selection": 41,
+      "native_world_edit": 41,
+      "stroke_unit_writer_reader": [
+        12,
+        26,
+        4
+      ],
+      "pose_bounds": 34,
+      "recovery": [
+        9,
+        14,
+        13,
+        25,
+        41
+      ]
+    },
+    "native_sources": [
+      {
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\pose-smoke\\miku-project\\project.json",
+        "name": "Miku_Hatsune.pmd",
+        "prepared_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\pose-smoke\\miku-project\\assets\\b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a.glb",
+        "prepared_sha256": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a",
+        "original_source": "Miku_Hatsune.pmd",
+        "original_sha256": "2bf8a0790d427630a49c3af2eaa83015d16efa26de8d4838e4434c32ef7559a1"
+      },
+      {
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-smoke\\source-project\\project.json",
+        "name": "reimu_hakurei_bikini_ragdoll.mdl",
+        "prepared_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-smoke\\source-project\\assets\\41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089.glb",
+        "prepared_sha256": "41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089",
+        "original_source": "C:\\a\\tools\\touhou_reimu_bikini.gma",
+        "original_sha256": "66442ce25e36ca4a8dbccbe0c321278d4d2afbbd5603495d470ad366f869a88b"
+      },
+      {
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-smoke\\project\\project.json",
+        "name": "scout.mdl",
+        "prepared_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-smoke\\project\\assets\\a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac.glb",
+        "prepared_sha256": "a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac",
+        "original_source": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies\\models\\player\\hwm\\scout.mdl",
+        "original_sha256": "ea2e77398ed9ba51242cba69369f23650505fefa45224242f004a2170bf04f65"
+      }
+    ]
+  },
+  "earlier_adjacent_checks": {
+    "workspace": 48,
+    "color_sampler": 44,
+    "scope": "Passed before the final narrow pick-signature translation repair, with functional-source immutability. Final native Focus/Setup suites cover that repair; these two are not relabelled exact-final-source reruns."
+  },
+  "independent_video_probes": [
+    {
+      "path": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/pose-smoke/render_1794518378_4783618_0/movie.mp4",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "duration": "2.000000",
+      "nb_read_frames": "48"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/pose-smoke/render_1794518383_9868328_0/movie.mp4",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "duration": "2.000000",
+      "nb_read_frames": "48"
+    },
+    {
+      "path": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1377494/render_1794518405_5921038_0/movie.mp4",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "duration": "2.000000",
+      "nb_read_frames": "48"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\color-sampler\\1794517931260494400/render_1794517940_8540893_0/movie.mp4",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "duration": "2.000000",
+      "nb_read_frames": "48"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\pose-bounds\\1794518436118832100/render_1794518439_3536092_0/movie.mp4",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "duration": "2.000000",
+      "nb_read_frames": "48"
+    }
+  ],
+  "validated_private_receipts": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_ad051755a3464f0c8be06750a481b2bf",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 19544,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 11.801
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_119134db78c4431c872d1fbf68c5076e",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 3332,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 15.729
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_275de35691ba484cacb4e521f26a36a4",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 3868,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 9.663
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_82c7eac2ecc347bd908dd8541bd39807",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 15880,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 23.116
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_bd42120d0bb54cf3baf351d6d8f9d3ad",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 18296,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 22.69
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_3ee9cfe993ab4373b50eba901b27886c",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 19004,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.716
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_f8917390cfa840adbe1bdd280a61f9ef",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 20076,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.107
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_15b43e9550e847379c09838a66d26e2a",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 15556,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.856
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_7fe3f2dfa096405db4282cc651e7ce4c",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 10224,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 19.843
+    }
+  ],
+  "retained_failures": [
+    {
+      "result": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view\\1794517621375867800\\result.json",
+      "checks": 93,
+      "failures": 1,
+      "exterior_changes": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "result": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view\\1794517774064560400\\result.json",
+      "checks": 101,
+      "failures": 4,
+      "exterior_changes": [
+        2134,
+        2415,
+        1346,
+        1577
+      ]
+    },
+    {
+      "result": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view\\1794517809916688500\\result.json",
+      "checks": 101,
+      "failures": 4,
+      "exterior_changes": [
+        2134,
+        2415,
+        1346,
+        1577
+      ]
+    }
+  ],
+  "diagnosed_defects_and_oracle_correction": [
+    {
+      "kind": "real source bug",
+      "reproduction": "Navigation then settle then deselect leaves cached pose gizmo; guide redraw removes it later.",
+      "old_exterior_changed_pixels": [
+        2134,
+        2415,
+        1346,
+        1577
+      ],
+      "fix": "Queue redraw whenever prior helper geometry is cleared before an early return.",
+      "final_exterior_changed_pixels": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "kind": "real source bug",
+      "reproduction": "Deselect Miku changes inspector layout during queued Focus pick.",
+      "diagnostic_log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view-selection-probe.log",
+      "old_frame_x": 155.7222,
+      "new_frame_x": 166.2222,
+      "same_frame_size": [
+        595.5555,
+        335.0
+      ],
+      "same_serial": 54,
+      "same_camera": true,
+      "fix": "Pick signature compares sizes/projection, ignoring pure UI translation; native ray/mask UV invariant.",
+      "final_native_selection_checks": 41
+    },
+    {
+      "kind": "test oracle error",
+      "reproduction": "Original recovery freshness fixture was outside both native views, so both legitimate thumbnails were black.",
+      "fix": "Warm old native view with known in-frame original geometry before moving camera away; no source fix for this assertion."
+    }
+  ],
+  "failed_native_selection": "output/scene-view-regressions/1794517994480669300/world_selection.log; unchanged native Miku assertion failed after a false stale-pick rejection, then fixture secondary dereference/watchdog. Final same assertions pass after projection-invariant translation handling.",
+  "reproduction": [
+    "python tests/verify_scene_view.py",
+    "python tests/verify_secondary_picking.py",
+    "python tests/verify_rotation_gizmo.py",
+    "Native pose/world sources and exact original checks are in the canonical python tests/verify.py route."
+  ],
+  "limits": [
+    "Centered perspective Setup; unsupported custom projection falls back to Focus.",
+    "Output resolution/timeline changes are separate, unimplemented requests.",
+    "No human/device/clean-PC acceptance or full aggregate pass claimed.",
+    "No RTX/GI/output-size expansion or multi-camera panel layout; no measured FPS guarantee. Current full canonical aggregate still pending."
+  ],
+  "next": "Atomic multiple-part setup/local blow refinements, broader supplied SFM extra-feature coverage, stable-source full canonical run and separate runnable review; do not request busy owner participation."
+}

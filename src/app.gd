@@ -223,6 +223,7 @@ const UI_PERCENT := [100,125,150,175]
 var display_dialog: AcceptDialog
 var keyboard_shortcuts: Node
 var camera_transform_editor: Node
+var scene_view: Node
 
 func initialize_display() -> void:
 	var prefs := ConfigFile.new()
@@ -492,6 +493,7 @@ func refresh_workspace() -> void:
 	workspace_label.text = "Advanced workspace" if advanced_mode else "Simple workspace"
 	inspector_scroll.scroll_vertical = 0
 	if pose_editor:pose_editor.refresh_values()
+	if scene_view:scene_view.sync()
 
 func build_ui() -> void:
 	theme = StudioTheme.make_theme()
@@ -612,6 +614,7 @@ func build_ui() -> void:
 	canvas.middle_clicked=cycle_pose_operation
 	canvas.tooltip_text = "Wheel: zoom • Middle drag: pan • Space: play/pause"
 	center.add_child(canvas)
+	scene_view=preload("res://src/scene_view.gd").new();add_child(scene_view);scene_view.setup(self,view_toolbar)
 	scene_name = label(center, "")
 	scene_name.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	var scroll := ScrollContainer.new()
@@ -1103,7 +1106,6 @@ func _process(delta: float) -> void:
 	trim_idle_rasters()
 	poll_recovery_preview()
 	if recovery_checkpoint_requested and not recovery_writer.busy() and not recovery_preview.busy():autosave_tick(true)
-	pose_editor.update_gizmo()
 	play_button.text = "Pause" if playing else "Play"
 	if playing:
 		var seconds := preview_seconds()
@@ -1117,6 +1119,7 @@ func _process(delta: float) -> void:
 		var motion := Vector3(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), float(Input.is_physical_key_pressed(KEY_E)) - float(Input.is_physical_key_pressed(KEY_Q)), float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W)))
 		var fly_speed := .75 if Input.is_key_pressed(KEY_CTRL) else 8.0 if Input.is_key_pressed(KEY_SHIFT) else 3.0
 		renderer.camera.position += renderer.camera.basis * motion.limit_length() * delta * fly_speed
+	pose_editor.update_gizmo()
 	if overlay_dirty:
 		var start := Time.get_ticks_usec()
 		var sampled: Dictionary=drawing_overlay_cache.sample(layers,frame,video.width,video.height,recovery_revision)
@@ -1137,6 +1140,9 @@ func _process(delta: float) -> void:
 func canvas_input(event: InputEvent, point: Vector2) -> void:
 	if home and home.visible:return
 	if exporting or playing: return
+	# Only new editing presses are bounded. Captured camera motion, active drags,
+	# releases and cancellation must continue after leaving the displayed scene.
+	if mode.selected in [1,2] and event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not event.ctrl_pressed and not canvas.scene_contains(point):return
 	if not raster_preview_error.is_empty():message(raster_preview_error+" Reopen a valid drawing before editing.");return
 	if mode.selected in [1,2] and navigation_scheme=="orbit" and event is InputEventMouseButton and event.pressed and event.ctrl_pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
 		var active: bool=orbit_control.active;var action: String=orbit_control.action
@@ -2361,12 +2367,11 @@ func poll_recovery_checkpoint() -> void:
 	finish_recovery_preview.call_deferred(result.folder,result.digest,int(request.frame),int(request.revision),request.view)
 
 func finish_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
-	await RenderingServer.frame_post_draw
+	var image: Image=await renderer.readback_native()
 	if not is_inside_tree() or folder!=recovery_root.path_join(recovery_session) or recovery_revision!=revision or frame!=at or renderer.view_state()!=view:return
 	if playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.is_running() or has_dialog(self):return
 	if recovery_writer.busy() or recovery_preview.busy():return
 	var started:=Time.get_ticks_usec()
-	var image: Image=renderer.viewport.get_texture().get_image()
 	if not image or image.is_empty():return
 	var overlays: Array=[]
 	if canvas.sequence_overlay:overlays.append(canvas.sequence_overlay.get_image().duplicate())

@@ -170,7 +170,9 @@ func _process(_delta: float) -> void:
 		for key in [KEY_W,KEY_A,KEY_S,KEY_D,KEY_Q,KEY_E]:
 			if Input.is_physical_key_pressed(key):
 				app.camera_button(pending_button,true,false,pending_cursor);cancel_gesture();break
-	var current: Camera3D = app.renderer.camera
+	var current: Camera3D = app.scene_view.display_camera()
+	var extent: Vector2i=app.scene_view.viewport.size if app.canvas.scene_setup else app.renderer.viewport.size/2
+	if viewport.size!=extent:viewport.size=extent
 	camera.transform = current.transform; camera.fov = current.fov
 	camera.near = current.near; camera.far = current.far; camera.keep_aspect = current.keep_aspect
 	camera.projection = current.projection; camera.size = current.size
@@ -196,7 +198,7 @@ func _process(_delta: float) -> void:
 			for material in entry.materials+entry.ghost_materials:material.set_shader_parameter("object_color",color)
 			entry.color=color
 		for i in range(entry.original.get_blend_shape_count()): entry.copy.set_blend_shape_value(i,entry.original.get_blend_shape_value(i))
-	outline.position = app.canvas.image_rect().position; outline.size = app.canvas.image_rect().size
+	outline.position = app.canvas.scene_rect().position; outline.size = app.canvas.scene_rect().size
 	outline.visible = not selected.is_empty() and not app.exporting
 	if outline.visible:
 		outline_material.set_shader_parameter("object_color",color_for(selected))
@@ -272,14 +274,16 @@ func input(event: InputEvent, point: Vector2) -> void:
 
 func choose_at(point: Vector2, context := false) -> void:
 	serial += 1; var request := serial
-	if not Rect2(0,0,app.video.width,app.video.height).has_point(point): return
+	if not app.canvas.scene_contains(point): return
 	picking += 1
 	_process(0); viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	var view: Array=app.scene_view.pick_state()
+	var uv: Vector2=app.canvas.scene_uv(point)
 	await RenderingServer.frame_post_draw
 	picking -= 1
-	if request!=serial or app.exporting or app.playing or app.navigating or pending_button!=0 or app.mode.selected==0: return
+	if request!=serial or view!=app.scene_view.pick_state() or app.exporting or app.playing or app.navigating or pending_button!=0 or app.mode.selected==0: return
 	var image := viewport.get_texture().get_image()
-	var pixel := image.get_pixel(clampi(int(point.x/2),0,959),clampi(int(point.y/2),0,539))
+	var pixel := image.get_pixel(clampi(int(uv.x*image.get_width()),0,image.get_width()-1),clampi(int(uv.y*image.get_height()),0,image.get_height()-1))
 	var kind := ""
 	var nearest:=0.015
 	var rgb:=Vector3(pixel.r,pixel.g,pixel.b)

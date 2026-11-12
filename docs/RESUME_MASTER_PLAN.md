@@ -154,11 +154,27 @@ These supersede the earlier pending status; human/device review remains unobserv
   from the sign bug. Reproduce positioning/drawing and hit testing; make controls
   respect the intended focused view and agree with displayed geometry.
 
-Check different camera positions, local/world modes, left/right drags, angle
+The preceding bullets preserve the original reports. Check different camera
+positions, local/world modes, left/right drags, angle
 boundaries, panel resizing/aspect changes, existing axis controls, Undo/Redo and
-normal pose/key persistence. No new rotation implementation/testing has occurred.
+normal pose/key persistence. Current resumed fixes and their actual tests are
+recorded above; this original feedback is not a statement that they remain unrun.
 
 ## 5. Scene setup, camera framing and output size
+
+**Resumed software update:** [Scene setup](scene_view.md) now fills the available
+scene area, with optional Camera focus, Frame and 3×3 guides. Personal view
+preferences preserve Draw zoom/pan and leave camera keys, native output and
+project state unchanged. Native virtual coordinates keep outside-frame selection
+and handles aligned; Focus retains clipping. Exact native capture and fresh
+recovery readback are verified. Current scoped proof is 12,830 headless checks
+across 144 configurations and 102 app checks, including zero guide changes outside
+the frame. Nine regression groups pass on the same 188 runtime-file hashes,
+including actual Miku45, native selection41/edit41 across Miku/Reimu/Scout,
+picker20+31, rotation309+4 and drawing/bounds/recovery. The checks also caught and
+fixed cached rings after deselection and valid clicks discarded during a pure
+inspector translation. See [evidence](benchmarks/scene_view_2026-11-12.json).
+No full aggregate, artist or performance approval follows from these counts.
 
 - Owner prefers **one main camera view**. Multi-camera layouts may be optional;
   they are not the desired ordinary workflow or a claimed implemented feature.
@@ -467,6 +483,15 @@ are superseded by the owner's later instructions.
 
 ### Actual external observations still needed, only when participation is granted
 
+- **Supplied SFM extra features:** the owner reminded us on November 12 that
+  the other supplied SFM models have additional features. Review the broader
+  archive corpus and test representative controls actually present in those
+  sources, rather than treating Scout as complete SFM coverage. Candidate areas
+  include facial/flex controls, bodygroups/skins, material variants, accessories
+  and extra joints; inventory which are truly present before claiming support.
+  Default conversion success alone does not certify editable extra features.
+  This independent feature review is in progress; it does not depend on asking
+  the busy owner to enumerate files again or provide new observations.
 - **Native appearance:** supported originals versus imports, materials/UVs/rigs/
   expressions/lighting and useful posing. Exact cold self-replay is not approval.
 - **Novice A:** a real new user's timed VRM/pose/save/reopen/export exercise plus

@@ -640,9 +640,13 @@ func frame_model() -> void:
 	else:app.message(app.renderer.last_framing.get("error","No mesh geometry to frame."))
 
 func update_gizmo() -> void:
+	var had_helpers: bool=not app.canvas.pose_lines.is_empty() or not app.canvas.pose_joints.is_empty()
 	app.canvas.pose_lines = []
 	app.canvas.pose_joints = []
 	handles.clear(); joints.clear()
+	# Deselect, mode changes and behind-camera targets return before the normal
+	# redraw below. Clear their cached visible geometry in the same frame.
+	if had_helpers:app.canvas.queue_redraw()
 	if contacts.viewport.active and contacts.viewport.draw():return
 	if app.mode.selected != 2 or not active_rig(): return
 	if app.physics_editor and app.physics_editor.active(active_rig().data.id):return
@@ -696,9 +700,9 @@ func update_gizmo() -> void:
 
 func input(event: InputEvent, point: Vector2) -> void:
 	if not active_rig(): return
-	# Letterbox margins are outside the displayed 3D view. Continuing gestures
-	# still receive motion/release globally, but no invisible handle starts here.
-	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not Rect2(Vector2.ZERO,app.canvas.resolution).has_point(point):return
+	# Scene bounds follow Setup/Focus presentation. Continuing gestures still
+	# receive motion/release globally, but no invisible handle starts here.
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not app.canvas.scene_contains(point):return
 	if contacts.viewport.active:contacts.viewport.input(event,point);return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed: finish_drag(); return

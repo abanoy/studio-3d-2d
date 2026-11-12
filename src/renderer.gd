@@ -19,6 +19,7 @@ var active_instance_id := ""
 var editor_grid: MeshInstance3D
 var empty_environment := true
 var capturing_final := false
+var native_readbacks:=0
 var world_environment: WorldEnvironment
 var video_settings: Dictionary={}
 var studio_light: DirectionalLight3D
@@ -256,6 +257,15 @@ func restore_view(value: Dictionary) -> void:
 	camera.transform=value.transform;camera.fov=value.fov;camera.near=value.near;camera.far=value.far
 	view_changed.emit()
 
+func readback_native() -> Image:
+	# Setup can suspend the unused native pass. All native reads, including
+	# recovery thumbnails, request a fresh frame without resizing the shot.
+	native_readbacks+=1;viewport.render_target_update_mode=SubViewport.UPDATE_ALWAYS
+	await RenderingServer.frame_post_draw
+	var image:=viewport.get_texture().get_image()
+	native_readbacks-=1
+	return image
+
 func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 	last_capture_error=""
 	evaluate(keys, frame)
@@ -271,9 +281,7 @@ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 			return null
 	capturing_final = final
 	editor_grid.visible = empty_environment and not final and not sequence_instance
-	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
-	await RenderingServer.frame_post_draw
-	var image := viewport.get_texture().get_image()
+	var image: Image=await readback_native()
 	if world_runtime:world_runtime.evaluate(frame,false,"",video_settings)
 	capturing_final = false
 	editor_grid.visible = empty_environment and not sequence_instance

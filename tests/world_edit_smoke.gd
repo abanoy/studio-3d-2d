@@ -50,6 +50,7 @@ func run() -> void:
 	var folder:=ProjectSettings.globalize_path("res://output/world-edit/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
 	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
+	app.scene_view.set_setup(false,false)
 	app.video=data.video;app.keys=data.camera_keys;app.layers=data.layers;app.frame=24;app.active_layer=0
 	check(app.renderer.install_world(app.renderer.prepare_world(data.world,48),24),"install prepared multi-object world in real app shell")
 	app.mode.select(1);app.change_mode(1);app.set_frame(24);app.renderer.evaluate(app.keys,24);await settled()
