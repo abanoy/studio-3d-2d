@@ -33,6 +33,13 @@ keep multi-camera layouts optional rather than making them the ordinary flow.
 The private screenshot copy under `output\owner-feedback-20261112` is retained
 locally and must not be uploaded or deleted as disposable output.
 
+Future lighting direction: GMod/MMD, possible Ray-MMD/Raycast and Advanced Light
+Entities controls; the priority is bounced/reflected illumination reaching props
+and native character models as well as the map. The owner supplied GMod RTX
+Remixed as a reference and asked about non-RTX feasibility. Research and deferred
+steps: [lighting_feedback_2026-11-12.md](lighting_feedback_2026-11-12.md).
+No renderer change or implementation has begun; the goal remains paused.
+
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4
 historical backups are dead by owner report; retain their historical checks and
