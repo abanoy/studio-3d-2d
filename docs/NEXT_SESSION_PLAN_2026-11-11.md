@@ -6,8 +6,14 @@ file is a pickup record, not an acceptance pass. The owner requested pausing wor
 on November 11, clarifying that the PC must remain running. No shutdown command
 was sent. Resume work only when the owner asks.
 
+November 12 addition: the owner reported further hair/accessory selection and
+joint-assignment problems, especially Bikini Reimu's Back hair, and explicitly
+requested **recording only, with no work yet**. The report and deferred steps
+are in [hair_accessories_feedback_2026-11-12.md](hair_accessories_feedback_2026-11-12.md).
+Keep the pause in effect; previous helper tests do not close these new issues.
+
 The owner is busy and expressly requested no further test/review questions.
-Continue independent work without prompting. The four checksum-bound November 4
+After an explicit resume, continue independent work without prompting. The four checksum-bound November 4
 historical backups are dead by owner report; retain their historical checks and
 do not substitute other files or ask for those backups again.
 
@@ -33,7 +39,10 @@ no owner applications were targeted. There is no complete aggregate pass.
 
 Next actions:
 
-1. Resume the full default suite. Fix reproducible failures without loosening
+1. After the owner resumes work, reproduce and address the November 12 hair and
+   accessories report in the linked note, preserving precise single-item edits
+   and the useful Advanced workflow. Then resume the full default suite from
+   stable source. Fix reproducible failures without loosening
    assertions; preserve each failure and rerun the affected scope.
 2. Verify final movie metadata and decoded audio analyses included by the suite.
    Record a complete aggregate only after its process exits successfully.
