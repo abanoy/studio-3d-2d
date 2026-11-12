@@ -608,6 +608,10 @@ by that counterfactual. Other reviews, recovery and native fixtures are retained
 5. Prepare a separate current runnable review with existing private projects,
    without replacing installations, earlier reviews or owner recovery. Do not
    issue participation prompts while the owner remains unavailable.
+   The review builder now accepts `--revision` to freeze a verified commit
+   without including concurrent working edits; seven CPU cases and an exact
+   1,282-file repository probe pass. This tool evidence alone is not a new
+   runnable-review or application-startup result.
 6. Update compact evidence, history and stable ledger; commit, push and verify
    remote contents before exact safe cleanup. All completed source/progress must
    be retrievable from Git, not PC-only caches.

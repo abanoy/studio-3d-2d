@@ -1,0 +1,29 @@
+{
+  "format": "has_committed_review_snapshot_1",
+  "date": "2026-11-12",
+  "change": "Optional --revision freezes exact committed Git blobs for a separate owner review, excluding simultaneous working-tree edits. Default working-file mode retained; no existing Studio folder is overwritten.",
+  "unit_command": "python tests/test_owner_review_snapshot.py",
+  "unit_checks": 7,
+  "unit_failures": 0,
+  "unit_scope": [
+    "Modified, staged, deleted and untracked files cannot leak into a revision snapshot",
+    "Exact binary/CRLF/Unicode-path blob contents and SHA256s match",
+    "Output/private-art, .godot and bytecode caches excluded",
+    "Default mode still copies current working files",
+    "Existing target, invalid revision and committed symlink are refused",
+    "Twelve unsafe Windows path/case-collision variants are refused before copying",
+    "A target created concurrently during Git reads is preserved by atomic reservation"
+  ],
+  "actual_repository_probe": {
+    "commit": "614dc3465bc0df032b5cda66468f85804d64eb0e",
+    "files": 1282,
+    "bytes": 17635298,
+    "all_copied_bytes_match_independently_computed_git_blob_ids": true,
+    "concurrent_runtime_edit_excluded": "src/secondary_helper_editor.gd",
+    "private_art_and_output_excluded": true,
+    "caches_excluded": true,
+    "local_evidence": "output/review-source-probe/1794517497981228200/verification.json"
+  },
+  "failed_or_interrupted_probe": "First full-repository verification used two Git processes per file and was explicitly stopped as too slow; no assertion failure or review startup occurred. Replaced that probe's verification with independent length-prefixed blob hashes against one Git tree listing, preserving the same exact-byte oracle. Both disposable copies retained until remote verification.",
+  "scope": "Source-freezing tool only. No review application startup, native project replay, human/device acceptance or full aggregate is claimed by this CPU increment. Startup still runs the unchanged private-desktop validation when the builder is invoked normally."
+}

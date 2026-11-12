@@ -32,6 +32,9 @@ def main():
     native_fixture_log = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_native_fixture_plans.py'])
     (output / 'native-fixture-plans-unit.log').write_text(native_fixture_log, encoding='utf-8')
     results['native_fixture_plans'] = {'exit': 0}
+    snapshot_log = run([sys.executable, 'tests/test_owner_review_snapshot.py'])
+    (output / 'owner-review-snapshot-unit.log').write_text(snapshot_log, encoding='utf-8')
+    results['owner_review_snapshot'] = {'exit': 0}
     if os.name == 'nt':
         metadata_log = run([sys.executable, '-u', 'tests/verify_private_metadata_windows.py'])
         (output / 'private-metadata-windows-suite.log').write_text(metadata_log, encoding='utf-8')
