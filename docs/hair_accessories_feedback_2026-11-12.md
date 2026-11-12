@@ -14,6 +14,12 @@ does not dispose its borrowed body. See
 Back hair and the selection/refinement requests remain separate open work.
 No owner visual/device approval or complete aggregate is inferred.
 
+Back hair now also has a reviewed **Use existing joints** path, with native26
+and ribbon-composition29 checks. It keeps skin/weights unchanged and discloses
+the3shared regions affected. See [evidence](benchmarks/back_hair_existing_joints_2026-11-12.json).
+This resolves the unavailable-attachment route in software, while direct picking,
+multiple selection, blow inclusion and Simple refinements remain open.
+
 ## Report and requested behavior
 
 - **Deformation persists after disabling Hair & Cloth:** with a joint configured

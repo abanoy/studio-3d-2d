@@ -8,6 +8,30 @@ This is required development scope. Existing-chain fan motion is now usable as
 described below; a first reviewed weighted-helper setup is also implemented.
 Unskinned models and a complete garment/region editor remain unfinished.
 
+### Parts already weighted to several native joints
+
+Loose-part review offers **Use existing joints** for a validated linear native
+chain when no single new-helper attachment can cover the selected vertices.
+Review the orange shared regions and named chain, then choose **Enable these
+existing joints**. The attachment and native joint positions are read-only in
+this mode; small-patch isolation is unavailable because shared joints can move
+other regions too. Ordinary weighted-helper generation remains a separate path.
+
+This keeps original weights, skin, mesh/material data, binary buffers and poses.
+The derived GLB adds an unweighted terminal endpoint and declares the existing
+chain for simulation; the original file is preserved. Existing springs/helper
+history remain intact. Setup is Undoable and portable. New node, combined spring
+and coordinate bounds refuse oversized derivations before creating output.
+
+Actual Bikini Reimu Back hair spans Head plus back_hair1/2/3 and had no eligible
+single attachment. Its reviewed chain affects3connected regions/1369weighted
+vertices. Pristine26checks and existing-ribbon composition29checks pass, with
+exact posed pixels, real fan movement, off restoration, Undo/Redo, packed reopen
+and24frame1080p24H264. The composition test seeds history from the actual ribbon
+report; it is not a test of the owner's private recorded project. See
+[evidence](benchmarks/back_hair_existing_joints_2026-11-12.json). Direct picking,
+multiple selection and per-item blow inclusion remain separate UI work.
+
 ## Evidence and existing representation
 
 Read-only inspection of the actual supplied VRMs confirms:

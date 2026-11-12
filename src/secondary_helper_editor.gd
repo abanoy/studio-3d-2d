@@ -37,6 +37,7 @@ var box_start:=Vector2.ZERO
 var box_end:=Vector2.ZERO
 var box_dragging:=false
 var prefer_loose:=false
+var existing_toggle: CheckButton
 
 func setup(parent: Node) -> void:
 	button=app.icon_button(parent,"Set up loose parts","scene",open,"Review a connected hair/clothing region and attachment, then add weighted joints to a new HAS asset. Existing authored springs take priority.")
@@ -70,6 +71,8 @@ func open(prefer_hair_clothing:=false) -> void:
 	parts=ItemList.new();parts.custom_minimum_size=Vector2(420,125);parts.item_selected.connect(select_part);box.add_child(parts)
 	app.label(box,"Attach to")
 	anchors=OptionButton.new();anchors.item_selected.connect(change_anchor);box.add_child(anchors)
+	existing_toggle=CheckButton.new();existing_toggle.text="Use existing joints";existing_toggle.visible=false;box.add_child(existing_toggle);existing_toggle.toggled.connect(existing_mode)
+	existing_toggle.tooltip_text="Review the model's existing joint chain without replacing its weights. Shared joints can move more than one connected part."
 	app.label(box,"Orange shows the selected area. Pale dots show the proposed joints.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	patch_toggle=CheckButton.new();patch_toggle.text="Choose a smaller patch";box.add_child(patch_toggle);patch_toggle.toggled.connect(patch_mode)
 	patch_controls=HBoxContainer.new();box.add_child(patch_controls);patch_controls.visible=false
@@ -93,6 +96,7 @@ func open(prefer_hair_clothing:=false) -> void:
 func launch(operation: String) -> void:
 	if pid>0 or not is_instance_valid(window):return
 	clear_preview();stage=operation;apply_button.disabled=true;parts.mouse_filter=Control.MOUSE_FILTER_IGNORE;anchors.disabled=true
+	existing_toggle.disabled=true
 	parts.release_focus();parts.focus_mode=Control.FOCUS_NONE
 	for spin in fields:spin.editable=false
 	if operation=="inspect":preview={}
@@ -128,6 +132,7 @@ func _process(_delta: float) -> void:
 			info.text=str(result.get("error","Helper worker ended without a result")) if result is Dictionary else "Helper worker ended without a result."
 			parts.mouse_filter=Control.MOUSE_FILTER_STOP;parts.focus_mode=Control.FOCUS_ALL
 			for spin in fields:spin.editable=true
+			existing_toggle.disabled=false
 			anchors.disabled=preview.is_empty();apply_button.disabled=stage!="build" or preview.is_empty() or not preview.get("can_apply",false);return
 		completed(result.value)
 	if not preview.is_empty():draw_preview()
@@ -152,7 +157,14 @@ func completed(value: Dictionary) -> void:
 		if selected<0:info.text="These connected surfaces already use spring joints. Their existing setup is kept.";return
 		parts.select(selected);parts.ensure_current_is_visible();select_part(selected)
 	elif stage=="preview":
-		preview=value;request["points_in_anchor"]=value.points_in_anchor.duplicate(true)
+		preview=value
+		var use_existing: bool=value.get("mode","")=="existing_joints"
+		if use_existing:request.erase("points_in_anchor")
+		else:request["points_in_anchor"]=value.points_in_anchor.duplicate(true)
+		changing=true;existing_toggle.visible=value.region.has("existing_chain");existing_toggle.disabled=false;existing_toggle.set_pressed_no_signal(use_existing);changing=false
+		patch_toggle.disabled=use_existing
+		if use_existing:patch_toggle.set_pressed_no_signal(false);patch_controls.visible=false;patch_hint.visible=false
+		apply_button.text="Enable these existing joints" if use_existing else "Add joints to this part"
 		if request.has("vertex_mask"):request.vertex_mask=Array(value.region.vertex_mask).map(func(v):return int(v))
 		anchors.clear();changing=true;var bindings: Dictionary=actor().root.get_meta("has_source_bones",{})
 		for choice in value.anchors:
@@ -160,14 +172,23 @@ func completed(value: Dictionary) -> void:
 			anchors.add_item(Labels.display(choice.name,app.advanced_mode,Labels.role(actor().data,choice.name)));anchors.set_item_metadata(anchors.item_count-1,int(choice.node))
 			anchors.set_item_disabled(anchors.item_count-1,id.is_empty() or not choice.get("available",false))
 			if int(choice.node)==int(value.region.anchor_node):anchors.select(anchors.item_count-1)
-		anchors.disabled=false;point_choice.clear()
+		anchors.disabled=use_existing;point_choice.clear()
 		refresh_anchor_labels()
-		for i in range(value.points_in_anchor.size()):point_choice.add_item("Joint "+str(i+1))
+		for i in range(value.points_in_anchor.size()):
+			var name: String="Joint "+str(i+1)
+			if use_existing:name="Endpoint" if i==value.points_in_anchor.size()-1 else str(value.existing_chain.joint_names[i]).replace("_"," ").capitalize()
+			point_choice.add_item(name)
 		point_choice.select(0);changing=false;point_values();apply_button.disabled=not value.can_apply
+		for spin in fields:spin.editable=not use_existing
 		info.text="Review the orange area and its attachment. Use this for flexible hair or clothing. The edge stays attached; Undo restores the original."
 		if app.advanced_mode:info.text+=" "+str(int(value.region.vertices))+" vertices; "+str(int(value.region.attachment_vertices))+" pinned."
 		if not assessment.get("skipped",[]).is_empty():info.text+=" Some sections could not be assessed."
 		if not value.can_apply:info.text="This patch includes existing motion joints. Refine it to an unrigged area." if value.region.already_rigged else "Choose an available attachment in Attach to, or refine the patch."
+		if not use_existing and value.region.has("existing_chain") and not value.can_apply:info.text="This part spans existing joints. Turn on Use existing joints to review the shared chain without changing its weights."
+		if use_existing:
+			var names: Array=[]
+			for name in value.existing_chain.joint_names:names.append(str(name).replace("_"," ").capitalize())
+			info.text="Review: "+", ".join(names)+" and the pale endpoint. This moves "+str(value.affected_regions.size())+" connected regions ("+str(int(value.affected_vertices))+" weighted vertices). Orange shows all shared regions. Original weights and poses are kept; Undo removes this setup."
 	elif stage=="build":install(value)
 
 func region_priority(row: Dictionary) -> int:
@@ -195,6 +216,13 @@ func select_part(index: int) -> void:
 	request={"source_sha256":request.source_sha256,"segments":3,"node":int(row.node),"primitive":int(row.primitive),"component":int(row.component),"anchor_node":int(row.anchor_node)}
 	if not shape_snapshot.is_empty():request["morph_weights"]=shape_snapshot
 	request["review_only"]=true
+	launch("preview")
+
+func existing_mode(enabled: bool) -> void:
+	if changing or pid>0 or not request.has("node"):return
+	request.erase("vertex_mask");request.erase("points_in_anchor")
+	if enabled:request["use_existing_joints"]=true
+	else:request.erase("use_existing_joints")
 	launch("preview")
 
 func patch_mode(enabled: bool) -> void:
@@ -258,6 +286,10 @@ func change_anchor(index: int) -> void:
 	request.anchor_node=anchors.get_item_metadata(index);request.erase("points_in_anchor");launch("preview")
 
 func point_values() -> void:
+	if preview.get("mode","")=="existing_joints":
+		changing=true;var p: Array=preview.points_in_anchor[point_choice.selected]
+		for axis in range(3):fields[axis].set_value_no_signal(p[axis])
+		changing=false;return
 	if request.get("points_in_anchor",[]).is_empty():return
 	changing=true;var p: Array=request.points_in_anchor[point_choice.selected]
 	for axis in range(3):fields[axis].set_value_no_signal(p[axis])
@@ -317,7 +349,7 @@ func install(value: Dictionary) -> void:
 	clear_preview();applying=true;error=app.restore_world(after);applying=false
 	if not error.is_empty():info.text="The new rig could not preserve existing bindings. Original kept. "+error;return
 	app.has_project.origins[managed.replace("\\","/")]=str(value.glb);app.push_history({"type":"world","before":before,"after":after});app.changed();close()
-	app.message("Added weighted joints to the reviewed part. The original is kept; Undo restores it. Turn on Hair & clothes to simulate the new chain.")
+	app.message("Enabled the reviewed existing joints. Original weights are kept; Undo removes the setup. Turn on Hair & clothes to simulate the chain." if value.report.get("mode","")=="existing_joints" else "Added weighted joints to the reviewed part. The original is kept; Undo restores it. Turn on Hair & clothes to simulate the new chain.")
 
 func clear_preview() -> void:
 	if is_instance_valid(app.canvas):app.canvas.review_lines=PackedVector2Array();app.canvas.review_chain=PackedVector2Array();app.canvas.queue_redraw()

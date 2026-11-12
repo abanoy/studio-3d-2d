@@ -85,6 +85,13 @@ and explicit Record remain intact, including cancellation of pending hair setup.
 See [evidence](benchmarks/hair_disable_restoration_2026-11-12.json). Remaining
 items and human/device/aggregate acceptance are still open.
 
+**Back hair update:** an explicit reviewed existing-chain path now passes26
+native checks and29checks with the existing ribbon setup preserved. Original
+skin/weights/posed pixels remain unchanged;3shared regions/1369weighted vertices
+are disclosed before Apply. See [evidence](benchmarks/back_hair_existing_joints_2026-11-12.json).
+Direct selection, multiple items, local-blow exclusions and broader Simple-mode
+refinement are still pending; this does not claim them implemented.
+
 1. **Deformation remains after switching Hair & Cloth off.** A configured joint
    deforms correctly while enabled, but the deformation stays after disabling
    the feature. Restore the appropriate authored/current-frame pose when removing

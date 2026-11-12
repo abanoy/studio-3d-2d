@@ -324,6 +324,73 @@ def components(positions, indices):
     return list(groups.values()), ids, graph, edges
 
 
+def existing_chain(glb, skin, pairs, selected):
+    """Offer one reviewed native chain; do not infer motion or rewrite its skin."""
+    parents = {}
+    for ni, node in enumerate(glb.doc['nodes']):
+        for child in node.get('children', []):
+            if type(child) is not int or not 0 <= child < len(glb.doc['nodes']) or child in parents:
+                return None
+            parents[child] = ni
+    weighted = {skin['joints'][j] for v in selected for j, w in pairs[v] if w > 0}
+    if not 3 <= len(weighted) <= 65 or weighted & glb.spring_nodes(): return None
+    depths = {}
+    for node in weighted:
+        at = node; seen = set()
+        while at in parents:
+            if at in seen or len(seen) >= 512: return None
+            seen.add(at); at = parents[at]
+        depths[node] = len(seen)
+    ordered = sorted(weighted, key=lambda n: (depths[n], n))
+    if any(parents.get(b) != a for a, b in zip(ordered, ordered[1:])): return None
+    center, joints = ordered[0], ordered[1:]
+    binds = glb.accessor(skin['inverseBindMatrices'], 'MAT4', 1024) if 'inverseBindMatrices' in skin else [IDENTITY] * len(skin['joints'])
+    indices = [skin['joints'].index(n) for n in ordered]
+    origins = [bind_origin(binds[i]) for i in indices]
+    if any(distance(a, b) < 1e-6 for a, b in zip(origins, origins[1:])): return None
+    tail = tuple(origins[-1][k] + (origins[-1][k] - origins[-2][k]) * .5 for k in range(3))
+    points = [point(binds[indices[0]], p) for p in origins[1:] + [tail]]
+    tail_offset = point(binds[indices[-1]], tail)
+    if any(not math.isfinite(v) or abs(v) > 100000 for p in points + [tail_offset] for v in p): return None
+    return {'center_node': center, 'center_name': str(glb.doc['nodes'][center].get('name', ''))[:256],
+            'joint_nodes': joints, 'joint_names': [str(glb.doc['nodes'][n].get('name', ''))[:256] for n in joints],
+            'points_in_anchor': points, 'tail_offset': tail_offset,
+            'method': 'reviewed existing weighted hierarchy with an unweighted terminal endpoint'}
+
+
+def existing_affected(glb, proposal, shape=None):
+    """Enumerate all geometry sharing the rotating native joints for disclosure."""
+    nodes = set(proposal['joint_nodes']); regions = []; vertices = []; lines = set(); total = 0
+    for ni, node in enumerate(glb.doc['nodes']):
+        if 'mesh' not in node or 'skin' not in node: continue
+        mesh = glb.ref('meshes', node['mesh'])
+        for pi in range(len(mesh.get('primitives', []))):
+            data = glb.shaped_skin(ni, pi, shape)
+            skin, positions, indices, pairs, binds = data[3], data[4], data[5], data[6], data[7]
+            total += len(positions)
+            if total > 500000: raise ValueError('Shared-joint review exceeds500kvertices; choose a narrower asset')
+            topology = components(glb.skin(ni, pi)[4] if shape_requested(shape) else positions, indices)
+            groups = topology[0]
+            for ci, whole in enumerate(groups):
+                touched = [v for v in whole if any(skin['joints'][j] in nodes for j, w in pairs[v])]
+                if not touched: continue
+                if len(regions) >= 1024 or len(vertices) + len(whole) > 10000:
+                    raise ValueError('Shared-joint preview exceeds its bounded region/vertex budget')
+                summary = region(glb, ni, pi, ci, context=(data, topology))[-1]
+                regions.append({'node': ni, 'primitive': pi, 'component': ci,
+                                'material_name': summary['material_name'], 'vertices': len(whole),
+                                'affected_vertices': len(touched)})
+                selected = set(whole); mapping = {v: len(vertices) + i for i, v in enumerate(whole)}
+                for v in whole:
+                    vertices.append([[skin['joints'][j], *point(binds[j], positions[v]), w] for j, w in pairs[v]])
+                for at in range(0, len(indices), 3):
+                    tri = indices[at:at + 3]
+                    if all(v in selected for v in tri):
+                        for a, b in zip(tri, tri[1:] + tri[:1]): lines.add(tuple(sorted((mapping[a], mapping[b]))))
+    if not regions: raise ValueError('Existing chain does not affect any reviewed geometry')
+    return regions, vertices, sorted(lines)
+
+
 def region(glb, node_index, primitive_index, component_index, anchor=None, context=None, vertex_mask=None, shape=None):
     data, topology = context if context else (glb.shaped_skin(node_index, primitive_index, shape), None)
     node, mesh, primitive, skin, positions, indices, pairs, binds = data
@@ -408,6 +475,8 @@ def region(glb, node_index, primitive_index, component_index, anchor=None, conte
               'already_rigged': already_rigged,
               'suggested': not already_rigged and coverage >= .95 and extents[0] > 2 * extents[1] and boundary > 0 and not nearby and relative_length >= .06,
               'assessment': 'Geometry/weights suggest a strand or panel; review attachment and stiffness. Length cannot establish looseness.'}
+    proposal = existing_chain(glb, skin, pairs, selected)
+    if proposal is not None: report['existing_chain'] = proposal
     if vertex_mask is not None: report['vertex_mask'] = selected
     return data, selected, welded, distances, coords, joint, report
 
@@ -450,6 +519,24 @@ def preview(source, request):
     if request.get('source_sha256') != glb.sha: raise ValueError('Model changed; inspect it again')
     data, selected, welded, distances, coords, joint, summary = region(glb, request.get('node'), request.get('primitive'), request.get('component'), request.get('anchor_node'), vertex_mask=request.get('vertex_mask'), shape=request)
     node, mesh, primitive, skin, positions, indices, pairs, binds = data
+    use_existing = request.get('use_existing_joints', False)
+    if type(use_existing) is not bool: raise ValueError('Invalid existing-joint choice')
+    if use_existing:
+        proposal = summary.get('existing_chain')
+        if not proposal: raise ValueError('This part has no available unconfigured linear joint chain')
+        if len(glb.spring_nodes() | set(proposal['joint_nodes'])) + 1 > 512:
+            raise ValueError('Existing chain endpoint exceeds512spring-node budget')
+        if 'vertex_mask' in request: raise ValueError('Review the whole shared-joint group instead of a smaller patch')
+        affected, vertices, lines = existing_affected(glb, proposal, request)
+        summary = dict(summary, anchor_node=proposal['center_node'], anchor_name=proposal['center_name'])
+        bindings = sorted({proposal['center_node']} | {int(influence[0]) for vertex in vertices for influence in vertex})
+        return {'format': 'studio_secondary_preview_1', 'mode': 'existing_joints', 'region': summary,
+                'vertices': vertices, 'source_vertices': list(range(len(vertices))),
+                'selected_vertices': list(range(len(vertices))), 'can_apply': True, 'edges': lines,
+                'points_in_anchor': proposal['points_in_anchor'], 'existing_chain': proposal,
+                'affected_regions': affected, 'affected_vertices': sum(r['affected_vertices'] for r in affected),
+                'anchors': [{'node': n, 'name': str(glb.doc['nodes'][n].get('name', ''))[:256],
+                             'available': n == proposal['center_node']} for n in bindings]}
     can_apply = not summary['already_rigged'] and summary['anchor_min_weight'] >= .01
     if not request.get('review_only', False):
         if summary['already_rigged']: raise ValueError('This region already uses spring joints; its existing rig and weights were kept')
@@ -479,6 +566,8 @@ def build(source, output, request):
     if not isinstance(request, dict) or request.get('source_sha256') != glb.sha or request.get('reviewed') is not True:
         raise ValueError('A reviewed region and matching source checksum are required')
     if len(glb.springs()) >= 128: raise ValueError('Additional helpers exceed128spring chains')
+    if type(request.get('use_existing_joints', False)) is not bool: raise ValueError('Invalid existing-joint choice')
+    if request.get('use_existing_joints', False): return build_existing(glb, output, request, original_stat)
     count = request.get('segments', 3); integer(count - 1 if type(count) is int else None, 8)
     if count < 2: raise ValueError('Use2–8helper segments')
     strength = finite(request.get('strength', .95), .01, 1); pin = finite(request.get('pin_fraction', .2), .01, .4)
@@ -550,6 +639,43 @@ def build(source, output, request):
     if output == glb.source or output.exists(): raise ValueError('Choose a new derived asset folder; existing files are never replaced')
     output.mkdir(parents=True, exist_ok=False)
     temporary = output / 'scene.glb.tmp'
+    with temporary.open('xb') as f: f.write(raw); f.flush(); os.fsync(f.fileno())
+    os.replace(temporary, output / 'scene.glb')
+    (output / 'helpers.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    return {'glb': str(output / 'scene.glb'), 'report': report}
+
+
+def build_existing(glb, output, request, original_stat):
+    if request.get('use_existing_joints') is not True: raise ValueError('Invalid existing-joint choice')
+    if len(glb.doc['nodes']) >= 100000: raise ValueError('Existing endpoint exceeds100000source-node budget')
+    value = preview(glb.source, request); proposal = value['existing_chain']
+    nodes = glb.doc['nodes']; first = len(nodes); parent = proposal['joint_nodes'][-1]
+    prefix = '__HAS_Existing_' + hashlib.sha256(json.dumps(request, sort_keys=True).encode()).hexdigest()[:12]
+    if any(n.get('name') == prefix + '_End' for n in nodes): raise ValueError('Existing-chain endpoint identity collision')
+    nodes[parent].setdefault('children', []).append(first)
+    nodes.append({'name': prefix + '_End', 'translation': list(proposal['tail_offset']),
+                  'extras': {'has_generated_helper_endpoint': {'source_sha256': glb.sha, 'chain': prefix}}})
+    report = {'format': 'studio_generated_helpers_1', 'mode': 'existing_joints', 'source_sha256': glb.sha,
+              'region': value['region'], 'method': proposal['method'], 'helper_nodes': [first],
+              'configured_nodes': proposal['joint_nodes'], 'points_in_anchor': proposal['points_in_anchor'],
+              'affected_regions': value['affected_regions'], 'affected_vertices': value['affected_vertices'],
+              'changed_vertices': 0, 'source_skin_preserved': True}
+    spring = glb.doc.setdefault('extras', {}).setdefault('has_secondary_helpers_1', {'specVersion': '1.0', 'springs': []})
+    spring['springs'].append({'name': prefix, 'center': proposal['center_node'],
+                             'joints': [{'node': n, 'stiffness': 1., 'dragForce': .45, 'hitRadius': .005}
+                                        for n in proposal['joint_nodes'] + [first]]})
+    # No accessor, skin, material, morph or binary buffer is rewritten. The only
+    # new scene node is an unweighted tail so the last native skin bone rotates.
+    encoded = json.dumps(glb.doc, separators=(',', ':'), ensure_ascii=True, allow_nan=False).encode()
+    encoded += b' ' * (-len(encoded) % 4)
+    if len(encoded) > MAX_JSON: raise ValueError('Derived GLB JSON exceeds16MiB; simplify the asset metadata first')
+    raw = struct.pack('<4sII', b'glTF', 2, 28 + len(encoded) + len(glb.binary)) + struct.pack('<II', len(encoded), 0x4e4f534a) + encoded + struct.pack('<II', len(glb.binary), 0x004e4942) + glb.binary
+    if len(raw) > MAX_FILE: raise ValueError('Derived asset exceeds128MiB')
+    if hashlib.sha256(glb.source.read_bytes()).hexdigest() != glb.sha or glb.source.stat().st_mtime_ns != original_stat:
+        raise ValueError('Source changed during helper authoring')
+    output = Path(output).resolve()
+    if output == glb.source or output.exists(): raise ValueError('Choose a new derived asset folder; existing files are never replaced')
+    output.mkdir(parents=True, exist_ok=False); temporary = output / 'scene.glb.tmp'
     with temporary.open('xb') as f: f.write(raw); f.flush(); os.fsync(f.fileno())
     os.replace(temporary, output / 'scene.glb')
     (output / 'helpers.json').write_text(json.dumps(report, indent=2), encoding='utf-8')

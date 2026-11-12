@@ -55,6 +55,7 @@ def native_checks(folder):
 
 def main():
     subprocess.run([sys.executable, '-X', 'utf8', 'tests/test_secondary_helpers.py'], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, '-X', 'utf8', 'tests/test_secondary_existing_joints.py'], cwd=ROOT, check=True)
     folder = ROOT / 'output' / 'secondary-helpers' / ('run_' + str(time.time_ns())); folder.mkdir(parents=True)
     original = folder / 'original.glb'; g = fixture(original); before = (original.read_bytes(), original.stat().st_mtime_ns)
     derived = H.build(original, folder / 'derived', request(g))

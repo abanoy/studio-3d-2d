@@ -1,0 +1,559 @@
+{
+  "format": "has_native_existing_hair_chain_1",
+  "date": "2026-11-12",
+  "baseline": {
+    "baseline_commit": "02631f916ef28c146d36b684aff0b26f32cf013c",
+    "backend_source_sha256": "7d8fdeac6089263625bf5a8e91d7e884590c90f43563ce66c5ee950d38e27f3f",
+    "source_sha256": "4b23dbf5dfc402a08871d392143efa687dc10b869fc9344aa3f565099947e1f2",
+    "region": {
+      "node": 80,
+      "primitive": 1,
+      "component": 5,
+      "material_name": "hair2",
+      "vertices": 499,
+      "anchor_node": 9,
+      "anchor_name": "back_hair3",
+      "anchor_min_weight": 0,
+      "length_in_anchor_units": 0.31385509116512045,
+      "bounds_in_anchor": [
+        [
+          -0.1712416476858858,
+          -0.06694347487762942,
+          -0.23939212175108082
+        ],
+        [
+          0.07306446604781813,
+          0.09688102657893216,
+          0.11378700237431794
+        ]
+      ],
+      "length_relative_to_rig": 0.23578681708244734,
+      "attachment_vertices": 33,
+      "attachment_method": "nearest-anchor cross-section within3percent of longest local extent",
+      "elongation": 1.4456417759171083,
+      "boundary_edges": 228,
+      "existing_joint_near_free_region": true,
+      "already_rigged": false,
+      "suggested": false,
+      "assessment": "Geometry/weights suggest a strand or panel; review attachment and stiffness. Length cannot establish looseness."
+    },
+    "can_apply": false,
+    "available_anchors": [],
+    "execution": "Read-only Python backend from git show, no source checkout replacement or graphics"
+  },
+  "cause": "Native Back hair vertices blend Head and three existing Back hair bones; no single attachment influences every vertex, so the old weighted-helper guard correctly offered no eligible anchor.",
+  "change": "Explicit reviewed Use existing joints path configures the linear native chain and appends one nondeforming endpoint; original weights/skin/binary/mesh/materials/animations remain unchanged. Shared affected regions are disclosed, not silently isolated or reweighted.",
+  "native_proof": {
+    "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\reimu-helpers\\1794448369022219400\\input\\scene.glb",
+    "original": {
+      "sha256": "4b23dbf5dfc402a08871d392143efa687dc10b869fc9344aa3f565099947e1f2",
+      "mtime_ns": 1794448157922062600
+    },
+    "derived": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-existing\\1794515039747501200\\derived\\scene.glb",
+    "derived_sha256": "b51797502ad1338cf1b1b615d2a975d37c510b19d6c96acd43a1c8c5b91f4862",
+    "chain": {
+      "center_node": 16,
+      "center_name": "ValveBiped.Bip01_Head1",
+      "joint_nodes": [
+        11,
+        10,
+        9
+      ],
+      "joint_names": [
+        "back_hair1",
+        "back_hair2",
+        "back_hair3"
+      ],
+      "points_in_anchor": [
+        [
+          0.04305326719557567,
+          0.06338442145941606,
+          -0.0004984109243664349
+        ],
+        [
+          -0.03991955154358684,
+          0.0709229517066299,
+          0.000247068453710613
+        ],
+        [
+          -0.1329691083590574,
+          0.06227172343959844,
+          0.001360551147191991
+        ],
+        [
+          -0.1794938867667928,
+          0.05794610930608268,
+          0.00191729249393268
+        ]
+      ],
+      "tail_offset": [
+        0.018523292593696783,
+        0.012386872045317021,
+        0.04107345623978631
+      ],
+      "method": "reviewed existing weighted hierarchy with an unweighted terminal endpoint"
+    },
+    "affected_regions": [
+      {
+        "node": 80,
+        "primitive": 1,
+        "component": 0,
+        "material_name": "hair2",
+        "vertices": 113,
+        "affected_vertices": 58
+      },
+      {
+        "node": 80,
+        "primitive": 1,
+        "component": 1,
+        "material_name": "hair2",
+        "vertices": 1352,
+        "affected_vertices": 862
+      },
+      {
+        "node": 80,
+        "primitive": 1,
+        "component": 5,
+        "material_name": "hair2",
+        "vertices": 499,
+        "affected_vertices": 449
+      }
+    ],
+    "affected_vertices": 1369,
+    "source_skin_accessors_binary_native_animation_unchanged": true,
+    "report": {
+      "format": "studio_generated_helpers_1",
+      "mode": "existing_joints",
+      "source_sha256": "4b23dbf5dfc402a08871d392143efa687dc10b869fc9344aa3f565099947e1f2",
+      "region": {
+        "node": 80,
+        "primitive": 1,
+        "component": 5,
+        "material_name": "hair2",
+        "vertices": 499,
+        "anchor_node": 16,
+        "anchor_name": "ValveBiped.Bip01_Head1",
+        "anchor_min_weight": 0,
+        "length_in_anchor_units": 0.31385509116512045,
+        "bounds_in_anchor": [
+          [
+            -0.1712416476858858,
+            -0.06694347487762942,
+            -0.23939212175108082
+          ],
+          [
+            0.07306446604781813,
+            0.09688102657893216,
+            0.11378700237431794
+          ]
+        ],
+        "length_relative_to_rig": 0.23578681708244734,
+        "attachment_vertices": 33,
+        "attachment_method": "nearest-anchor cross-section within3percent of longest local extent",
+        "elongation": 1.4456417759171083,
+        "boundary_edges": 228,
+        "existing_joint_near_free_region": true,
+        "already_rigged": false,
+        "suggested": false,
+        "assessment": "Geometry/weights suggest a strand or panel; review attachment and stiffness. Length cannot establish looseness.",
+        "existing_chain": {
+          "center_node": 16,
+          "center_name": "ValveBiped.Bip01_Head1",
+          "joint_nodes": [
+            11,
+            10,
+            9
+          ],
+          "joint_names": [
+            "back_hair1",
+            "back_hair2",
+            "back_hair3"
+          ],
+          "points_in_anchor": [
+            [
+              0.04305326719557567,
+              0.06338442145941606,
+              -0.0004984109243664349
+            ],
+            [
+              -0.03991955154358684,
+              0.0709229517066299,
+              0.000247068453710613
+            ],
+            [
+              -0.1329691083590574,
+              0.06227172343959844,
+              0.001360551147191991
+            ],
+            [
+              -0.1794938867667928,
+              0.05794610930608268,
+              0.00191729249393268
+            ]
+          ],
+          "tail_offset": [
+            0.018523292593696783,
+            0.012386872045317021,
+            0.04107345623978631
+          ],
+          "method": "reviewed existing weighted hierarchy with an unweighted terminal endpoint"
+        }
+      },
+      "method": "reviewed existing weighted hierarchy with an unweighted terminal endpoint",
+      "helper_nodes": [
+        99
+      ],
+      "configured_nodes": [
+        11,
+        10,
+        9
+      ],
+      "points_in_anchor": [
+        [
+          0.04305326719557567,
+          0.06338442145941606,
+          -0.0004984109243664349
+        ],
+        [
+          -0.03991955154358684,
+          0.0709229517066299,
+          0.000247068453710613
+        ],
+        [
+          -0.1329691083590574,
+          0.06227172343959844,
+          0.001360551147191991
+        ],
+        [
+          -0.1794938867667928,
+          0.05794610930608268,
+          0.00191729249393268
+        ]
+      ],
+      "affected_regions": [
+        {
+          "node": 80,
+          "primitive": 1,
+          "component": 0,
+          "material_name": "hair2",
+          "vertices": 113,
+          "affected_vertices": 58
+        },
+        {
+          "node": 80,
+          "primitive": 1,
+          "component": 1,
+          "material_name": "hair2",
+          "vertices": 1352,
+          "affected_vertices": 862
+        },
+        {
+          "node": 80,
+          "primitive": 1,
+          "component": 5,
+          "material_name": "hair2",
+          "vertices": 499,
+          "affected_vertices": 449
+        }
+      ],
+      "affected_vertices": 1369,
+      "changed_vertices": 0,
+      "source_skin_preserved": true
+    }
+  },
+  "final_pristine": {
+    "result": {
+      "bind_difference": {
+        "changed": 0,
+        "mean": 0.0
+      },
+      "checks": 26,
+      "derived": "b51797502ad1338cf1b1b615d2a975d37c510b19d6c96acd43a1c8c5b91f4862",
+      "failures": 0,
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-existing-native\\1794515904111564100/render_1794515918_14544196_0/movie.mp4",
+      "wind_radians": 0.04199811443686485
+    },
+    "originals": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\reimu-helpers\\1794448369022219400\\input\\scene.glb": {
+        "sha256": "4b23dbf5dfc402a08871d392143efa687dc10b869fc9344aa3f565099947e1f2",
+        "mtime_ns": 1794448157922062600,
+        "bytes": 7217520
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\reimu-helpers\\1794448369022219400\\input\\parameters.json": {
+        "sha256": "f4e1850d9f4fa9359a72d43f3c945aaf61a1bd726538b025da31c4fa5f8071ba",
+        "mtime_ns": 1794448157924587200,
+        "bytes": 28797
+      }
+    },
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_cefee6c34eba432a968a8c5423d013db",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 4072,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 17.591
+    },
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "24",
+      "duration": "1.000000"
+    },
+    "scope": "Actual prepared native player Back hair; same-process packed reopen, not a cold-machine or artist fidelity certification"
+  },
+  "with_ribbon": {
+    "result": {
+      "bind_difference": {
+        "changed": 0,
+        "mean": 0.0
+      },
+      "checks": 29,
+      "derived": "d7036490ef624c8f517766ecd16937496a1322f62b7d90902ff4d72f266f3ace",
+      "failures": 0,
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-existing-native\\1794516117760502700/render_1794516132_14481219_0/movie.mp4",
+      "wind_radians": 0.038866076618433
+    },
+    "originals": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-composition\\1794516017604605200\\input\\scene.glb": {
+        "sha256": "4d62236d5c34468ea1f91c43089d6ce3c193be27b8460d53ea8d91d2238ab7b5",
+        "mtime_ns": 1794448224429503700,
+        "bytes": 7273728
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-composition\\1794516017604605200\\input\\parameters.json": {
+        "sha256": "f4e1850d9f4fa9359a72d43f3c945aaf61a1bd726538b025da31c4fa5f8071ba",
+        "mtime_ns": 1794448157924587200,
+        "bytes": 28797
+      }
+    },
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_c6ad90bbecc14f82b5392299d07d479b",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 15420,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 17.505
+    },
+    "with_ribbon": true,
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "24",
+      "duration": "1.000000"
+    },
+    "scope": "Actual prepared native player Back hair; same-process packed reopen, not a cold-machine or artist fidelity certification"
+  },
+  "original_helpers": {
+    "main": {
+      "bind_difference": {
+        "changed": 12,
+        "mean": 0.000217013888888889
+      },
+      "checks": 39,
+      "failures": 0,
+      "sway_radians": 0.303969025611877,
+      "audio_onset_seconds": 1.0000416666666667,
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "48",
+        "r_frame_rate": "24/1",
+        "duration": "2.000000"
+      }
+    },
+    "native": {
+      "checks": 14,
+      "failures": 0
+    },
+    "multi": {
+      "checks": 59,
+      "failures": 0
+    },
+    "patch": {
+      "checks": 35,
+      "failures": 0,
+      "audio_onset_seconds": 1.0000416666666667
+    }
+  },
+  "original_ribbon": {
+    "writer": {
+      "bind_difference": {
+        "changed_channels": 4,
+        "mean": 4.822530864197531e-07
+      },
+      "checks": 22,
+      "failures": 0,
+      "force": 0.35999998450279236,
+      "wind_radians": 0.28370028734207153
+    },
+    "reader": {
+      "checks": 7,
+      "failures": 0
+    },
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "nb_read_frames": "24",
+      "r_frame_rate": "24/1",
+      "duration": "1.000000"
+    },
+    "packed_keys_exact": true
+  },
+  "unit_checks": {
+    "new_existing_chain": 9,
+    "old_weighted_helpers": 20,
+    "morphs": 10,
+    "extra_refusals": [
+      "100000source node bound",
+      "512combinedspring nodes",
+      "finite in-range endpoint coordinates"
+    ]
+  },
+  "source_sha256": {
+    "tools/secondary_helpers.py": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+    "src/secondary_helper_editor.gd": "8cf171687a18b112a31f25a4fd53923fe05ab30a27cb003061974fde7d31a006",
+    "tests/test_secondary_existing_joints.py": "9777a19fd08ddb81bd9f4e8ce7a205b18220aa10fbf85010c3280227f053ac7f",
+    "tests/secondary_existing_native_smoke.gd": "420472b35a728d22c391b9a8bab657727920408ec8f55242d75c4db3543742fe",
+    "tests/verify_secondary_existing.py": "cc0995c7b276b4dce0846705ddaa6f48bbe2dec1d77f513b3abaad4d9105467c",
+    "tests/verify_secondary_helpers.py": "b7c663c8608169876554eaa34c86b25f5d58bb04a1f38764dc687bb67d8d8590"
+  },
+  "private_receipts": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_cefee6c34eba432a968a8c5423d013db",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 4072,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 17.591
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_c6ad90bbecc14f82b5392299d07d479b",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 15420,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 17.505
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_0b484c63a6384bb0ab1d40faaed2910d",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 11480,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 16.366
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_f89e1d1014d248a292749b7f045af032",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 13244,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 6.287
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_4f177c44b49e4b6a9c89c47f4c1ff449",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 7368,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 20.751
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_67fe1b42fe16411990af31a5911c9b91",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 13088,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 16.972
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_9b802dce71da4b9ebc11667d779862c7",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 2940,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 18.261
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_3aa1f12377fb401e8b7fe616493b6c79",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 25248,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.59
+    }
+  ],
+  "failed_native_trial": {
+    "path": "output/secondary-existing-native/1794515549917253300",
+    "checks": 26,
+    "failures": 1,
+    "cause": "Fixture fan occluded camera, so model motion did not change captured pixels; fixed controlled sightline, retaining motion/pixel assertions."
+  },
+  "scope": "Configured Windows native source/derived data, UI, visible fan deformation, authored pose restoration, Undo/Redo, packed replay and actual24frame1080p24H264. Composition seeds prior helper history from genuine embedded ribbon report; it does not certify the owner private saved recorded take.",
+  "pending": "Direct picking, multiple selection, per-item local-blow inclusion and further Simple refinements remain separate work; no full aggregate/artist/device approval is claimed."
+}
