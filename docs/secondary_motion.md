@@ -156,8 +156,14 @@ Secondary-only recording follows authored root/bone motion at120Hz, using fracti
 sampling between integer authored frames. Project addresses and saved keys remain
 integer/rational. Live unrecorded preview holds the activation pose/root.
 
-Turning either active toggle OFF freezes the **whole combined pose**, stops both
-solvers and supplies one Undo. Seek/play/save/export use the established stop/commit
+Turning **Hair & clothes OFF** removes live secondary offsets and restores the
+authored/current-frame pose, keeping manual drafts and recorded animation. It
+does not author a freeze draft or add an Undo command. An existing body solver
+continues running; cancelling unfinished hair setup preserves that borrowed body.
+Turning **Physics OFF** still freezes the whole combined pose, stops both solvers
+and supplies one Undo. If Record is active, switching off hair finishes the take
+through the established recording stop/commit path.
+Seek/play/save/export use the established stop/commit
 barriers; New invalidates deferred setup. Static frozen poses save normally;
 animated frozen drafts resume authored motion on scrub/reopen unless recorded.
 Explicit Record is the reliable way to preserve moving hair. Cancel discards the

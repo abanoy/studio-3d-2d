@@ -5,6 +5,12 @@ It includes the earlier requests, later corrections and proposed ideas inline,
 plus current status, inputs and resume instructions. This detailed pickup record
 is retained as provenance; implementation remains paused.
 
+**November 12 resume update:** owner explicitly said "you may continue";
+the goal is active. Hair toggle-off restoration now passes focused8, fan63 and
+import-physics41 software checks; see the master/evidence for scope. Later pause
+wording below is historical, while no-participation-prompt and protected-data
+rules remain current. Back hair/control work and the full aggregate continue.
+
 Fetch current main from `https://github.com/abanoy/studio-3d-2d` and follow
 `AGENTS.md`, the governing specification/addendum and the Windows goal. This
 file is a pickup record, not an acceptance pass. The owner requested pausing work

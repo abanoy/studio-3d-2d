@@ -1,17 +1,18 @@
 # HAS — consolidated master reference for resuming work
 
-**Updated November 12, 2026. Implementation is PAUSED at the owner's request.**
+**Updated November 12, 2026. The owner explicitly resumed work; the goal is ACTIVE.**
 
 This is the single reading document for the requests, corrections, proposals,
 current software/test state, protected inputs and next steps from this chat.
 The contents are included below; the detailed source notes are retained for
 provenance, not required merely to reconstruct the requested behavior.
 
-Recording ideas, discussing designs and compiling this document do **not** resume
-implementation. Resume only when the owner explicitly asks. The owner clarified
-that pausing work does **not** mean shutting down the PC. No shutdown command was
-sent. Do not resume tests, app automation, model-site searches or installations
-merely because these plans exist.
+The owner has now said "you may continue." Continue independent authorized work,
+starting with concrete hair/cloth and control bugs. This does not grant owner
+participation time or authorize replacing installed tools/Studio. Earlier pause
+and documentation-only entries below are historical observations. The owner
+clarified that pausing work does **not** mean shutting down the PC; no shutdown
+command was sent.
 
 ## 1. Owner instructions and working boundaries
 
@@ -40,7 +41,7 @@ merely because these plans exist.
 Repository: `https://github.com/abanoy/studio-3d-2d`, branch `main`.
 This compilation follows documentation checkpoint
 `979d7fad91e868ae0a54b8e46fbb59ccabaae731`; fetch latest main rather than treating
-that checkpoint as a permanent head. Last application-changing fix:
+that checkpoint as a permanent head. Application baseline before this resume:
 `02631f916ef28c146d36b684aff0b26f32cf013c`.
 
 ## 2. Earlier requests: what changed and what is still unobserved
@@ -76,6 +77,13 @@ to make a test look better. Aim/reposition through ordinary controls as needed.
 
 These are owner reports and requested refinements, **not diagnosed or fixed**
 by the documentation work.
+
+**Resumed software update:** item1 below now has a verified restoration fix;
+focused8, full fan63 and import-physics41 checks (five native models) pass.
+The unchanged focused test fails4/8 with the old controller. Ordinary body Freeze
+and explicit Record remain intact, including cancellation of pending hair setup.
+See [evidence](benchmarks/hair_disable_restoration_2026-11-12.json). Remaining
+items and human/device/aggregate acceptance are still open.
 
 1. **Deformation remains after switching Hair & Cloth off.** A configured joint
    deforms correctly while enabled, but the deformation stays after disabling
@@ -603,6 +611,7 @@ authorities, full exercises and historical receipts:
   [remaining scoped checks](benchmarks/motion_remaining_scope_2026-11-11.json),
   and [review source](benchmarks/current_review_ready_2026-11-11.json).
 
-This compilation is documentation only. It does not resume the paused goal,
-certify new acceptance, verify current input availability or authorize code,
-provider research, installations or app launches during the pause.
+The initial compilation was documentation only; the owner subsequently resumed
+work. This reference does not certify acceptance or current input availability,
+grant participation time, or authorize replacing installations or private-art
+redistribution. Update actual results incrementally as resumed work is verified.

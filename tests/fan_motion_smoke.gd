@@ -62,7 +62,9 @@ func native(app,path: String,label: String) -> void:
 	check(actor.data==before and not actor.has_animation(),"native live hair retains original parameters and creates no automatic take: "+label)
 	if label.ends_with("vrm0"):
 		# Exercise the reverse activation order as well as Hair-first on VRM1.
-		physics.hair_toggle.button_pressed=false;app.undo();select(app,id)
+		var off_history: int=app.history.size();physics.hair_toggle.button_pressed=false;await settled()
+		check(actor.data==before and app.history.size()==off_history,"native hair off restores authored state without a freeze edit: "+label)
+		select(app,id)
 		physics.toggle.button_pressed=true;await settled()
 		check(physics.body_active(id) and not physics.hair_toggle.button_pressed,"body starts independently before secondary setup: "+label)
 		physics.hair_toggle.button_pressed=true;await wait_hair(physics,id)
@@ -74,6 +76,16 @@ func native(app,path: String,label: String) -> void:
 		for bone in chain.ids:
 			preserved=preserved and Timeline.quaternion(sim.primary.initial_pose.get(bone,Model.identity()).rotation_xyzw).angle_to(Timeline.quaternion(before.pose.get(bone,Model.identity()).rotation_xyzw))<0.000001
 	check(preserved,"adding body physics preserves authored secondary rest instead of reusing simulated sway: "+label)
+	var primary: RefCounted=sim.primary;var body_count: int=primary.bodies.size();var live_before: Dictionary=actor.data.duplicate(true)
+	physics.hair_toggle.button_pressed=false;await settled()
+	check(physics.simulations.get(id)==primary and primary.running and primary.bodies.size()==body_count and body_count>0 and actor.data==live_before,"native hair off retains the same active body solver and authored data: "+label)
+	physics.hair_toggle.button_pressed=true
+	check(physics.pending.has(id),"native hair setup actually enters its asynchronous pending stage: "+label)
+	physics.change_hair(false)
+	for i in range(8):await process_frame
+	await settled()
+	check(physics.simulations.get(id)==primary and primary.running and primary.bodies.size()==body_count and actor.data==live_before,"cancelling pending native hair setup keeps its borrowed body solver alive: "+label)
+	physics.hair_toggle.button_pressed=true;await wait_hair(physics,id);sim=physics.simulations[id]
 	var body: PhysicsBody3D=sim.bodies.values()[0]
 	check(physics.begin_grab(body,body.global_position),"combined simulation retains actual body grab controls: "+label);physics.release_grab()
 	select(app,fan_id);physics.toggle.button_pressed=true;await settled()
@@ -121,6 +133,32 @@ func lifecycle(app,asset: String) -> void:
 	var state: Dictionary=actor.data.duplicate(true)
 	app.new_project();app.has_project.open_file(project);await wait_job(app.has_project);actor=app.renderer.world_runtime.instance(id)
 	check(not record.active and not physics.is_running() and actor.has_animation() and JSON.stringify(actor.sample(4))==JSON.stringify(Model.curve_pose(preload("res://src/animation_clips.gd").location(state,4).a)),"Save during secondary capture preserves an ordinary partial take through reopen")
+func hair_off(app,asset: String) -> void:
+	app.new_project();app.append_object(Model.definition(asset),"model")
+	var actor: RefCounted=app.renderer.active_model();var id: String=actor.data.id;var physics=app.physics_editor
+	var definition: Dictionary=actor.root.get_meta("has_secondary_rig");var joint: String=definition.chains[0].joints[0].binding.id
+	var transform: Dictionary=actor.sample_transform(0)
+	var posed: Dictionary={joint:{"position":[0,0,0],"rotation_xyzw":[0,0,sin(0.18),cos(0.18)]}}
+	actor.data.pose_keys=[{"frame":0,"pose":{},"transform":transform.duplicate(true),"interpolation":"linear"},{"frame":24,"pose":posed.duplicate(true),"transform":transform.duplicate(true),"interpolation":"linear"}]
+	app.mode.select(2);app.change_mode(2);app.set_frame(12)
+	# A manual current-frame draft differs from the recorded track and must survive.
+	actor.data.draft_frame=12;actor.data.pose=posed.duplicate(true);app.pose_editor.apply_frame()
+	var expected: Transform3D=actor.bone_transform(joint);var recorded: Dictionary=actor.sample(24).duplicate(true)
+	physics.fan_editor.add_fan();var fan: RefCounted=app.renderer.active_model()
+	fan.data.position=[0,1,-2];fan.data.rotation_xyzw=[0,0,0,1];fan.data.metadata.airflow.speed=8;fan.apply(12)
+	select(app,id);var before: Dictionary=actor.data.duplicate(true);var history: int=app.history.size()
+	for cycle in range(2):
+		select(app,id);physics.hair_toggle.button_pressed=true;await wait_hair(physics,id)
+		if not physics.active(id):check(false,"hair-off regression starts actual solver");return
+		for i in range(90):await physics_frame
+		check(difference(physics.simulations[id].pose(),posed)>0.01,"hair-off regression actually deforms a non-rest authored pose")
+		physics.hair_toggle.button_pressed=false;await settled()
+		actor=app.renderer.world_runtime.instance(id)
+		check(not physics.active(id) and actor.data==before and app.history.size()==history,"Hair & clothes off restores exact authored data and adds no freeze draft or history")
+		var restored: Transform3D=actor.bone_transform(joint)
+		check(actor.live_pose==null and restored.is_equal_approx(expected),"Hair & clothes off restores the visible manual pose rather than rest or simulated sway")
+	app.set_frame(24)
+	check(actor.sample(24)==recorded and actor.authored_keys().size()==2,"hair toggle cycles preserve the explicit recorded track when seeking")
 func run() -> void:
 	folder=ProjectSettings.globalize_path("res://output/fan-motion/run_"+str(Time.get_ticks_usec()));DirAccess.make_dir_recursive_absolute(folder)
 	var asset:=folder.path_join("hair-skirt.glb");Fixture.create(asset)
@@ -155,8 +193,10 @@ func run() -> void:
 	check(app.get_combined_minimum_size().x<=1200 and fan_ui.speed.get_global_rect().end.x<=app.size.x and physics.hair_toggle.get_global_rect().end.x<=app.size.x and app.canvas.size.x>=600,"wrapped simulation toolbar keeps fan controls and canvas usable at1200pixels")
 	root.get_texture().get_image().save_png(folder.path_join("fan-running-editor.png"));root.size=old_size;await settled()
 	select(app,id);var pose: Dictionary=sim.pose();var history: int=app.history.size();physics.hair_toggle.button_pressed=false;await settled()
-	check(not physics.is_running() and app.history.size()==history+1 and difference(actor.data.pose,pose)<0.001 and actor.data.pose_keys.is_empty(),"Hair off freezes the current pose in one Undo without recording keys")
-	app.undo();check(actor.data==before,"Undo restores the exact pose from before live hair simulation")
+	check(not physics.is_running() and app.history.size()==history and actor.data==before and actor.data.pose_keys.is_empty(),"Hair off restores authored state without creating a freeze edit or keys")
+	var fan_before: Dictionary=fan.data.duplicate(true);app.undo();app.redo()
+	actor=app.renderer.world_runtime.instance(id);fan=app.renderer.world_runtime.instance(fan_id)
+	check(actor.data==before and fan.data==fan_before,"hair restoration preserves ordinary fan Undo/Redo without a phantom history command")
 	# Use the existing connected recorder, not a test-only range installation.
 	select(app,id);physics.hair_toggle.button_pressed=true;await wait_hair(physics,id)
 	var record=physics.recording;record.scope.select(0);record.button.pressed.emit()
@@ -181,6 +221,7 @@ func run() -> void:
 		if path.ends_with(".vrm"):await native(app,path,path.get_file().get_basename())
 	await moving_anchor(app,asset)
 	await lifecycle(app,asset)
+	await hair_off(app,asset)
 	# Cancel asynchronous setup using an actual world replacement.
 	app.new_project();app.append_object(Model.definition(asset),"model");physics.hair_toggle.button_pressed=true;app.new_project();await settled()
 	check(physics.pending.is_empty() and not physics.is_running() and app.renderer.world_runtime.order.is_empty(),"New during asynchronous hair setup leaves no stale solver or object")

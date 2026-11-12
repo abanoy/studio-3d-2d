@@ -127,7 +127,7 @@ func sync() -> void:
 	var reviewing: bool=helper_editor!=null and is_instance_valid(helper_editor.window)
 	hair_toggle.disabled=app.exporting or rig==null or rig.data.get("kind","model")!="model" or not definition.get("error","").is_empty() or missing_chains and (not can_setup or reviewing) or pending.has(rig.data.id)
 	hair_toggle.set_pressed_no_signal(rig!=null and (pending.has(rig.data.id) or active(rig.data.id) and simulations[rig.data.id] is Secondary))
-	hair_toggle.tooltip_text="Simulate existing hair/clothing joints while the body stays posed, or together with Physics. Off freezes the current whole pose. Add a fan and press Record to keep motion."
+	hair_toggle.tooltip_text="Simulate hair/clothing joints while posed or with Physics. Off restores their authored pose; body Physics keeps running. Record explicitly keeps motion."
 	if missing_chains:hair_toggle.tooltip_text=definition.get("error","") if not definition.get("error","").is_empty() else "This model needs hair/clothing joints. Turn on to review a loose part and add weighted helpers; the original is kept." if can_setup else "Select a skinned model to review and add hair/clothing joints."
 	if fan_editor:fan_editor.sync()
 	if recording:recording.sync()
@@ -175,8 +175,24 @@ func change_hair(enabled: bool) -> void:
 	if not actor or app.exporting:return
 	import_starts.erase(actor.data.id)
 	if not enabled:
-		generation+=1;pending.erase(actor.data.id);freeze(actor.data.id);sync();return
+		generation+=1;pending.erase(actor.data.id);disable_hair(actor.data.id);sync();return
 	enable_hair(actor)
+
+func disable_hair(id: String) -> void:
+	if recording and recording.active:
+		recording.finish("hair/clothes off");return
+	if not simulations.has(id) or not simulations[id] is Secondary:return
+	var simulation: RefCounted=simulations[id];var actor: RefCounted=simulation.rig
+	var body: RefCounted=simulation.detach_primary();var world: Transform3D=actor.root.global_transform
+	# Keep the live body's solver and shared body dictionary. Disposing secondary
+	# offsets must neither freeze the body nor author a simulated hair draft.
+	simulation.dispose();simulations.erase(id)
+	actor.preview_frame=-1;actor.preview_pose={};actor.preview_transform={}
+	if body:
+		simulations[id]=body;actor.live_pose=body.initial_pose;actor.live_world_transform=world
+	app.pose_editor.apply_frame()
+	if not is_running():clear_colliders()
+	app.message("Hair & clothes off: authored pose restored. Recorded animation is kept."+(" Body Physics is still on." if body else ""))
 
 func enable_hair(actor: RefCounted) -> void:
 	if pending.has(actor.data.id) or active(actor.data.id) and simulations[actor.data.id] is Secondary:return
@@ -198,7 +214,15 @@ func enable_hair(actor: RefCounted) -> void:
 	var valid: bool=is_inside_tree() and pending.get(id,-1)==token and is_instance_valid(actor.root) and actor.data==before
 	if pending.get(id,-1)==token:pending.erase(id)
 	if not valid:
-		if result.has("physics"):result.physics.dispose()
+		if result.has("physics"):
+			var cancelled: RefCounted=result.physics;var keep: RefCounted=null
+			var world:=Transform3D.IDENTITY
+			# An unfinished secondary wrapper borrows its primary. Cancelling that
+			# wrapper cannot dispose a body still owned by the live editor.
+			if cancelled.primary!=null and simulations.get(id)==cancelled.primary and is_instance_valid(actor.root):
+				world=actor.root.global_transform;keep=cancelled.detach_primary()
+			cancelled.dispose()
+			if keep:actor.live_pose=keep.initial_pose;actor.live_world_transform=world
 		if is_inside_tree():app.pose_editor.apply_frame();sync()
 		return
 	if result.has("error"):app.pose_editor.apply_frame();sync();app.message(result.error);return

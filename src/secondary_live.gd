@@ -81,6 +81,10 @@ func root_transform(_frame: int,_editing: bool) -> Dictionary:
 	return {"position":[local.origin.x,local.origin.y,local.origin.z],"rotation_xyzw":[q.x,q.y,q.z,q.w],"scale":local.basis.get_scale().x}
 func capture_pose() -> Dictionary:return latest.duplicate(true)
 func pose() -> Dictionary:return latest.duplicate(true)
+func detach_primary() -> RefCounted:
+	var body: RefCounted=primary
+	primary=null;bodies={}
+	return body
 func stop() -> Dictionary:
 	var result:=pose();running=false
 	if primary:primary.stop()

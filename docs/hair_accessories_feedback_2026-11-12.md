@@ -5,6 +5,15 @@ record it for yourself when you get the option to resume."** Work remains
 paused. These are owner-reported problems and requested refinements, not
 reproduced findings, implemented changes or new test results.
 
+**Resume update, November 12:** the owner has explicitly resumed work. The
+toggle-off restoration defect now has a software fix: isolated old/new comparison
+8checks/4failures versus8/0; final fan63, focused8 and import-physics41 checks pass,
+including five native models. Body Physics keeps running and cancelled setup
+does not dispose its borrowed body. See
+[restoration evidence](benchmarks/hair_disable_restoration_2026-11-12.json).
+Back hair and the selection/refinement requests remain separate open work.
+No owner visual/device approval or complete aggregate is inferred.
+
 ## Report and requested behavior
 
 - **Deformation persists after disabling Hair & Cloth:** with a joint configured
