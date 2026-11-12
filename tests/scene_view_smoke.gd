@@ -33,6 +33,10 @@ func motion(point: Vector2) -> void:
 	app.canvas._gui_input(event)
 func view_image() -> Image:
 	return root.get_texture().get_image().get_region(Rect2i(Vector2i(app.canvas.global_position),Vector2i(app.canvas.size)))
+func native_pixels() -> Image:
+	if not app.renderer.begin_native_readback():return null
+	await app.renderer.native_frame_ready
+	return app.renderer.finish_native_readback()
 func run() -> void:
 	folder=OS.get_cmdline_user_args()[0]
 	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recent.json");app.display_prefs_path=folder.path_join("prefs.cfg")
@@ -131,10 +135,10 @@ func run() -> void:
 	app.world_selection.choose_at(center);app.canvas.size+=Vector2(21,0);app.scene_view.sync();await settled()
 	check(app.canvas.image_rect().size==old_frame.size and app.canvas.image_rect().position!=old_frame.position and app.world_selection.selected==id,"queued native pick survives a pure frame translation with unchanged size and camera")
 	app.world_selection.select_entity("",false);app.scene_view.set_setup(true,false);await settled()
-	var cached: Image=await app.renderer.readback_native();camera.position+=Vector3(10,0,0);app.scene_view.sync();await settled()
+	var cached: Image=await native_pixels();camera.position+=Vector3(10,0,0);app.scene_view.sync();await settled()
 	check(app.renderer.viewport.render_target_update_mode==SubViewport.UPDATE_DISABLED,"Setup suspends the unused native scene pass")
 	var recorder:=CapturedPreview.new();var previous=app.recovery_preview;app.recovery_preview=recorder
-	await app.finish_recovery_preview(app.recovery_root.path_join(app.recovery_session),"a".repeat(64),app.frame,app.recovery_revision,app.renderer.view_state())
+	app.finish_recovery_preview(app.recovery_root.path_join(app.recovery_session),"a".repeat(64),app.frame,app.recovery_revision,app.renderer.view_state());await settled()
 	check(recorder.image!=null and recorder.image.get_size()==native_size and recorder.image.get_data()!=cached.get_data() and app.renderer.native_readbacks==0,"recovery receives fresh native pixels after Setup camera movement and releases its readback scope")
 	app.recovery_preview=previous
 	app.mode.select(0);app.change_mode(0);await settled()

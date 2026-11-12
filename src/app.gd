@@ -189,6 +189,7 @@ var last_recovery_capture_ms:=0.0
 var last_recovery_worker_ms:=0.0
 var recovery_preview=RecoveryPreview.new()
 var recovery_preview_result: Dictionary={}
+var recovery_native_requests: Array=[]
 var recovery_checkpoint_requested:=false
 var recovered_from := ""
 var startup_recovery_result: Dictionary={}
@@ -2367,12 +2368,22 @@ func poll_recovery_checkpoint() -> void:
 	finish_recovery_preview.call_deferred(result.folder,result.digest,int(request.frame),int(request.revision),request.view)
 
 func finish_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
-	var image: Image=await renderer.readback_native()
-	if not is_inside_tree() or folder!=recovery_root.path_join(recovery_session) or recovery_revision!=revision or frame!=at or renderer.view_state()!=view:return
-	if playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.is_running() or has_dialog(self):return
-	if recovery_writer.busy() or recovery_preview.busy():return
+	if not renderer.begin_native_readback():return
+	recovery_native_requests.append({"folder":folder,"digest":digest,"at":at,"revision":revision,"view":view})
+	if not renderer.native_frame_ready.is_connected(complete_recovery_previews):renderer.native_frame_ready.connect(complete_recovery_previews,CONNECT_ONE_SHOT)
+
+func complete_recovery_previews() -> void:
+	var requests: Array=recovery_native_requests;recovery_native_requests=[]
+	for request in requests:complete_recovery_preview(request.folder,request.digest,request.at,request.revision,request.view)
+
+func complete_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
+	var current: bool=is_inside_tree() and renderer.native_view_available() and folder==recovery_root.path_join(recovery_session) and recovery_revision==revision and frame==at and renderer.view_state()==view
+	current=current and not (playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.is_running() or has_dialog(self))
+	current=current and not (recovery_writer.busy() or recovery_preview.busy())
+	# Release even a detached/stale request, without reading obsolete GPU pixels.
+	var image: Image=renderer.finish_native_readback(current)
+	if not current or image==null:return
 	var started:=Time.get_ticks_usec()
-	if not image or image.is_empty():return
 	var overlays: Array=[]
 	if canvas.sequence_overlay:overlays.append(canvas.sequence_overlay.get_image().duplicate())
 	for layer in layers:

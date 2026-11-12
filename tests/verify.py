@@ -152,6 +152,10 @@ def main():
     scene_view_log = run([sys.executable, '-u', 'tests/verify_scene_view.py'], timeout=300)
     (output / 'scene-view-suite.log').write_text(scene_view_log, encoding='utf-8')
     results['scene_view'] = json.loads((output / 'scene-view-verification.json').read_bytes())
+    readback_log = run([sys.executable, '-u', 'tests/verify_native_readback_lifecycle.py'], timeout=350)
+    (output / 'native-readback-lifecycle-suite.log').write_text(readback_log, encoding='utf-8')
+    readback_result = json.loads((output / 'native-readback-lifecycle-latest.json').read_bytes())
+    results['native_readback_lifecycle'] = {k: readback_result[k] for k in ['revision','source_mode','folder','exit','result','unchanged_source','receipt']}
     run([sys.executable, '-u', 'tests/verify_fan_flutter.py'], timeout=250)
     results['fan_flutter'] = json.loads((output / 'fan-flutter-verification.json').read_text(encoding='utf-8'))
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')

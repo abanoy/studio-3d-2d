@@ -1,0 +1,49 @@
+--- a/src/renderer.gd
++++ b/src/renderer.gd
+@@ -1,11 +1,7 @@
+ extends Node
+ signal assets_changed
+ signal view_changed
+-class NativeFrameNotification extends RefCounted:
+-	signal ready
+-var native_frame_notification:=NativeFrameNotification.new()
+-var native_frame_ready: Signal:
+-	get:return native_frame_notification.ready
++signal native_frame_ready
+ const SceneIO = preload("res://src/scene3d.gd")
+ const Timeline = preload("res://src/timeline.gd")
+ const Drawing = preload("res://src/drawing.gd")
+@@ -270,9 +266,8 @@
+ 	if RenderingServer.frame_post_draw.is_connected(dispatch_native_frame):RenderingServer.frame_post_draw.disconnect(dispatch_native_frame)
+ 	# Complete owner-bound waits while the renderer still exists. Cancellation
+ 	# during destruction otherwise retains coroutine/signal-name references.
+-	var notification:=native_frame_notification
+-	var pending:=native_readbacks>0;native_readbacks=0
+-	if pending:notification.ready.emit()
++	if native_readbacks>0:native_frame_ready.emit()
++	native_readbacks=0
+ 
+ func native_view_available() -> bool:
+ 	return not native_view_closing and is_inside_tree() and is_instance_valid(viewport) and viewport.is_inside_tree()
+@@ -288,10 +283,7 @@
+ func dispatch_native_frame() -> void:
+ 	# Disconnect before notifying callers, so a callback may request a later frame.
+ 	if RenderingServer.frame_post_draw.is_connected(dispatch_native_frame):RenderingServer.frame_post_draw.disconnect(dispatch_native_frame)
+-	# A resumed capture caller may free this renderer before emission returns.
+-	# Keep the RefCounted signal owner alive independently of that Node.
+-	var notification:=native_frame_notification
+-	notification.ready.emit()
++	native_frame_ready.emit()
+ 
+ func finish_native_readback(read_pixels:=true) -> Image:
+ 	if native_readbacks<=0:return null
+@@ -319,8 +311,7 @@
+ 	if not begin_native_readback():
+ 		capturing_final=false;editor_grid.visible=empty_environment and not sequence_instance
+ 		last_capture_error="Native render view is unavailable.";return null
+-	var notification:=native_frame_notification
+-	await notification.ready
++	await native_frame_ready
+ 	var image: Image=finish_native_readback()
+ 	if native_view_available() and world_runtime:world_runtime.evaluate(frame,false,"",video_settings)
+ 	capturing_final = false

@@ -176,6 +176,17 @@ fixed cached rings after deselection and valid clicks discarded during a pure
 inspector translation. See [evidence](benchmarks/scene_view_2026-11-12.json).
 No full aggregate, artist or performance approval follows from these counts.
 
+**Capture teardown update:** closing during native capture/recovery is now
+covered by 58 lifecycle checks. The shipped nested-wait path leaked six
+coroutine states and crashed cleanup in the matched regression. A first
+owner-bound signal fix passed 50 checks but failed the unchanged helper test
+when its caller immediately freed Studio after capture. A locally retained
+RefCounted notification now keeps the emitter alive, drains close/cancel waits,
+returns no image for closed captures and suppresses obsolete thumbnails.
+Current lifecycle58, SceneView102/12,830 and the unchanged helper39/native14/
+multi59/patch35 pass. [Evidence](benchmarks/native_readback_lifecycle_2026-11-12.json).
+The broader full aggregate is still pending; intermediate failures remain saved.
+
 - Owner prefers **one main camera view**. Multi-camera layouts may be optional;
   they are not the desired ordinary workflow or a claimed implemented feature.
 - Scene setup should use the whole available view. The white output-shaped

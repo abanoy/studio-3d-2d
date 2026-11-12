@@ -23,6 +23,13 @@ explicitly request fresh native pixels. A harmless interface translation does
 not discard an in-flight selection. A changed camera, projection, view mode or
 scene extent invalidates an outdated pick.
 
+Pending captures and recovery thumbnails drain when their renderer closes.
+Closed captures return no image; obsolete recovery requests write no thumbnail.
+A separate, locally retained frame notification also permits a caller to close
+Studio immediately after a completed capture. Lifecycle coverage includes
+Focus/Setup, immediate or queued deletion and detached live renderers; see
+[the regression evidence](benchmarks/native_readback_lifecycle_2026-11-12.json).
+
 HAS currently authors centered perspective cameras. Unsupported off-center or
 other projections fall back to Focus. This is not a multi-camera layout or new
 output-resolution support. See [output sizes](output_size.md) for the current
