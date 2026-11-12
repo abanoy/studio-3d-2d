@@ -11,6 +11,14 @@ cases). Actual overlay pixels confirm clipping. See
 [evidence](benchmarks/rotation_gizmo_fix_2026-11-12.json). The additional
 camera-facing ring is still pending; no owner/device approval is inferred.
 
+**Camera-relative ring update:** the pale outer ring is now implemented in
+Local/World modes for roots and skinned bones. It follows camera orientation,
+honors snap/Undo/Redo/cancel/auto-key, and dims/rejects pose drags when an XYZ
+axis is locked.309writer+4cold-reader checks pass, retaining the24RGB cases
+and adding24view cases. Original pose45/world-selection41/world-edit41 and
+three48frame1080p24H264 movies pass. See
+[view-ring evidence](benchmarks/view_rotation_ring_2026-11-12.json).
+
 ## Requested behavior
 
 - **Correct the RGB ring direction.** The owner reports rotation feels reversed,

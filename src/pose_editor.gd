@@ -95,6 +95,7 @@ func setup(owner_app, parent: Node) -> void:
 	operation = OptionButton.new()
 	operation.add_item("Rotate")
 	operation.add_item("Move")
+	operation.tooltip_text="Rotate with a colored axis ring, or use the outer pale ring to turn relative to your view. Unlock all axes to use the outer ring."
 	operation.item_selected.connect(func(_index): refresh_values())
 	panel.add_child(operation)
 	space = OptionButton.new()
@@ -127,6 +128,7 @@ func setup(owner_app, parent: Node) -> void:
 	for axis in ["X", "Y", "Z"]:
 		var lock := CheckBox.new()
 		lock.text = "Lock " + axis
+		lock.tooltip_text="Keep this axis locked. The camera-facing rotation ring is available when all axes are unlocked."
 		lock_row.add_child(lock)
 		locks.append(lock)
 	scale_field = app.advanced_spin(panel, "Model uniform scale", 0.001, 10000, 1)
@@ -677,6 +679,19 @@ func update_gizmo() -> void:
 		for i in range(points.size() - 1):
 			app.canvas.pose_lines.append({"a": points[i], "b": points[i + 1], "color": colors[axis]})
 		handles.append({"axis": direction, "points": points, "world": transform, "units": radius})
+	if operation.selected==0:
+		# View-relative rotation is independent of Local/World axis display. A
+		# separate outer ring keeps its target clear of the three RGB ellipses.
+		var unlocked: bool=locks.all(func(lock):return not lock.button_pressed)
+		var view_radius:=radius*(90./70.)
+		var points: Array[Vector2]=[]
+		for i in range(65):
+			var angle:=TAU*i/64.
+			var radial: Vector3=(camera.global_basis.x*cos(angle)+camera.global_basis.y*sin(angle))*view_radius
+			points.append(camera.unproject_position(transform.origin+radial))
+		var color:=Color("e4eaf0") if unlocked else Color(0.65,0.68,0.72,0.4)
+		for i in range(points.size()-1):app.canvas.pose_lines.append({"a":points[i],"b":points[i+1],"color":color})
+		handles.append({"axis":camera.global_basis.z.normalized(),"points":points,"world":transform,"units":view_radius,"view":true,"enabled":unlocked})
 	app.canvas.queue_redraw()
 
 func input(event: InputEvent, point: Vector2) -> void:
@@ -696,6 +711,7 @@ func input(event: InputEvent, point: Vector2) -> void:
 				var distance: float = point.distance_to(Geometry2D.get_closest_point_to_segment(point, handle.points[i], handle.points[i + 1]))
 				if distance < best: best = distance; hit = handle;hit_segment=i
 		if not hit.is_empty():
+			if not hit.get("enabled",true):return
 			var contact_error:=contact_edit_error()
 			if not contact_error.is_empty():app.message(contact_error);return
 			var joints_plan:=joint_plan()

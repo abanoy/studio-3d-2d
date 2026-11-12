@@ -77,7 +77,7 @@ func run() -> void:
 	var alt:=InputEventKey.new();alt.keycode=KEY_ALT;alt.pressed=true;app._input(alt);app.pose_editor.update_gizmo()
 	check(app.pose_editor.reveal_bones and app.canvas.pose_joints.size()==2,"holding Alt reveals full joint structure")
 	alt.pressed=false;app._input(alt);app.pose_editor.update_gizmo()
-	check(not app.pose_editor.reveal_bones and app.canvas.pose_joints.size()<2 and app.pose_editor.handles.size()==3,"releasing Alt hides full skeleton while selected handles remain")
+	check(not app.pose_editor.reveal_bones and app.canvas.pose_joints.size()<2 and app.pose_editor.handles.filter(func(handle):return not handle.get("view",false)).size()==3,"releasing Alt hides full skeleton while selected handles remain")
 	var free_before:=JSON.stringify(rig.data)
 	var handle_point: Vector2=app.pose_editor.handles[0].points[0]
 	var free_event:=InputEventMouseButton.new();free_event.button_index=MOUSE_BUTTON_LEFT;free_event.pressed=true;free_event.ctrl_pressed=true

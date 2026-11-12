@@ -84,7 +84,7 @@ func run() -> void:
 	var invalid:=left_after.duplicate(true);invalid.pose["missing bone"]=Model.identity()
 	check(not editor.restore_state(invalid,false).is_empty() and left.data==left_after and right.data==right_before,"invalid stored bone edit preserves target and peers")
 	selection.items["map-1"].select(0);await settled()
-	check(app.renderer.active_model()==runtime.instance("map-1") and editor.selected=="@root" and editor.handles.size()==3,"map root gets same direct transform controls as models")
+	check(app.renderer.active_model()==runtime.instance("map-1") and editor.selected=="@root" and editor.handles.filter(func(handle):return not handle.get("view",false)).size()==3,"map root gets same direct transform controls as models")
 	editor.operation.select(1);editor.refresh_values();var old_map: Dictionary=runtime.instance("map-1").data.duplicate(true)
 	var peer_origin: Vector3=left.root.global_position;var child_origin: Vector3=right.root.global_position
 	editor.fields[0].value=5;editor.fields[1].value=1;editor.fields[2].value=-1;editor.apply_numeric()

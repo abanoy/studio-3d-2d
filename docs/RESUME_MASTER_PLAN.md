@@ -131,6 +131,12 @@ the same24camera/axis/quadrant gestures and actual overlay clipping are checked.
 See [evidence](benchmarks/rotation_gizmo_fix_2026-11-12.json). Camera-facing
 relative rotation is still pending; owner visual/physical approval is unobserved.
 
+**Camera-relative ring now implemented:** a pale outer ring follows the camera
+for root/bone rotation in Local/World modes, with lock/snap/history/cancel and
+normal saved-key behavior.309writer+4cold-reader checks and original45/41/41
+pose/world cases pass. See [view-ring evidence](benchmarks/view_rotation_ring_2026-11-12.json).
+These supersede the earlier pending status; human/device review remains unobserved.
+
 - **Direction bug:** the RGB rotation interaction feels reversed, affecting at
   least the **top ring**. The exact axis/view/cause is not yet reproduced. Correct
   the affected direction; do not blindly invert all axes.
