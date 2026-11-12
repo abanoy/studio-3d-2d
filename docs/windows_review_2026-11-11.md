@@ -6,7 +6,7 @@ to resume them. Automated checks cannot certify those observations.
 
 Current review folder:
 
-`C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\owner-review`
+`C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\owner-review-current`
 
 Owner-operated launchers:
 
@@ -19,22 +19,30 @@ Owner-operated launchers:
 - `Start review.bat`: ordinary Home with an independent settings profile.
 
 The source copy was frozen from retrieval commit
-`9b64a62f4f006dabb3cb1b8ece09a9ad2bbd935e`. Normal Home/startup was tested on a
+`bd09769150ede7a47590b6024928bc050bc52c9d`, including the verified Windows metadata
+separator fix. Normal Home/startup was tested on a
 private desktop, with no foreground child and a closed job/desktop. All four
 packed project copies retained their hashes after preparation. Originals and
 installed Studio were preserved. No automated visible launch was performed.
 
-Yesterday's review is still retained at
+Today's earlier `output\owner-review` copy is retained too. Yesterday's review is
+still retained at
 `C:\a\Programming\cloudflare\has-acceptance-session-20261110\output\owner-review`.
 Its `Studio\output\recovery` contains private owner work and must remain intact.
 Nothing was migrated out of that recovery folder or overwritten there.
 
 To recreate source later, fetch the retrieval commit and use
-`tools/build_owner_review_snapshot.py` with separately preserved private packed
+`tools/build_owner_review_snapshot.py --output output/owner-review-current` with
+separately preserved private packed
 projects. The repository deliberately excludes those private projects. Native
 Mima preparation is reproducible using `tests/prepare_mima_fixture.py` and the
 checksum-bound original archive. Existing approved tools and the pinned
 temporary SourceIO runtime remain separate from the source snapshot.
+
+The builder refuses a folder outside this checkout's output and refuses to
+overwrite an existing Studio. The current snapshot's four launchers include
+Reimu helpers automatically. Neither old review source nor its profile/recovery
+was replaced.
 
 Detailed observations, when the owner grants time, remain in
 [windows_acceptance_followup.md](windows_acceptance_followup.md). A configured

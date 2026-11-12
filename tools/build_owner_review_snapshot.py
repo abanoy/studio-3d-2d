@@ -1,8 +1,11 @@
 """Freeze an owner-operated review app away from automated test output/profile."""
 from pathlib import Path
-import hashlib,importlib.util,json,os,subprocess,sys,time
+import argparse,hashlib,importlib.util,json,os,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1]
-folder=ROOT/'output/owner-review';target=folder/'Studio'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--output',type=Path,default=ROOT/'output/owner-review',help='Existing owned project folder; Studio must not exist')
+options=parser.parse_args();folder=options.output.resolve();target=folder/'Studio'
+assert folder.is_relative_to(ROOT/'output') and folder!=ROOT/'output','Review folder must stay inside this checkout/output'
 assert folder.is_dir() and not target.exists()
 names=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','-z'],cwd=ROOT).decode().split('\0')
 names=sorted(set(n for n in names if n and Path(n).parts[0] not in ['output','.git','.godot','__pycache__'] and '__pycache__' not in Path(n).parts and not n.endswith('.pyc')))
@@ -26,7 +29,7 @@ assert receipt['exit']==0 and receipt['child_desktop_confirmed'] and not receipt
 assert all(hashlib.sha256((target/n).read_bytes()).hexdigest()==digest for n,digest in hashes.items())
 pythonw=Path(sys.executable).with_name('pythonw.exe');assert pythonw.is_file()
 runtime=ROOT/'output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647'
-for name in ['Flatgrass','Avatar','Street']:
+for name in ['Flatgrass','Avatar','Street']+(['Reimu helpers']if(folder/'Reimu helpers.has').is_file()else[]):
     assert (folder/(name+'.has')).is_file()
     text=f'@echo off\r\nsetlocal\r\nset "HYBRID_SOURCEIO={runtime}"\r\nstart "" "{pythonw}" "%~dp0Studio\\launch.pyw" "%~dp0{name}.has"\r\n'
     (folder/('Open '+name+'.bat')).write_bytes(text.encode('utf-8'))
