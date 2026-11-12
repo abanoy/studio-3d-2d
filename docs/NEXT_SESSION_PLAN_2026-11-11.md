@@ -1,5 +1,10 @@
 # Windows continuation — November 11
 
+**Current consolidated reference: [RESUME_MASTER_PLAN.md](RESUME_MASTER_PLAN.md).**
+It includes the earlier requests, later corrections and proposed ideas inline,
+plus current status, inputs and resume instructions. This detailed pickup record
+is retained as provenance; implementation remains paused.
+
 Fetch current main from `https://github.com/abanoy/studio-3d-2d` and follow
 `AGENTS.md`, the governing specification/addendum and the Windows goal. This
 file is a pickup record, not an acceptance pass. The owner requested pausing work

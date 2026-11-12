@@ -1,5 +1,11 @@
 # HAS next-session plan — shutdown checkpoint, 2026-11-10
 
+**Historical checkpoint. Read [RESUME_MASTER_PLAN.md](RESUME_MASTER_PLAN.md)
+first for the consolidated current instructions.** Later owner instructions
+keep implementation paused, leave the PC running, defer participation prompts
+and confirm the historical reader backups are dead. Stale requests below to
+seek those backups or initiate owner review are superseded, not new directions.
+
 The owner explicitly requested shutdown wrap-up and this concrete pickup plan. Pause work; do not treat the product as complete.
 
 Repository: https://github.com/abanoy/studio-3d-2d
