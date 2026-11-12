@@ -1,0 +1,92 @@
+# Windows continuation — November 11
+
+Fetch current main from `https://github.com/abanoy/studio-3d-2d` and follow
+`AGENTS.md`, the governing specification/addendum and the Windows goal. This
+file is a pickup record, not an acceptance pass. The owner requested pausing work
+on November 11, clarifying that the PC must remain running. No shutdown command
+was sent. Resume work only when the owner asks.
+
+The owner is busy and expressly requested no further test/review questions.
+Continue independent work without prompting. The four checksum-bound November 4
+historical backups are dead by owner report; retain their historical checks and
+do not substitute other files or ask for those backups again.
+
+## Current software work
+
+Retrievable fix commit: `02631f916ef28c146d36b684aff0b26f32cf013c`.
+It restores speculative contact distance to 0.02 m after the correctly upright
+Scout exposed a 6.97 mm failure. All original contact thresholds remain intact.
+The candidate plus two main repeats pass 76 checks each; normal physics 56,
+props 35 and recording 17 unit + 62 app checks also pass with native fixtures,
+private desktops and verified movies. See the compact contact-distance benchmark.
+
+The complete default suite was interrupted at the owner's pause request in the retained checkout
+`C:\a\Programming\cloudflare\has-acceptance-session-20261111`.
+Its log is `output\canonical-contact002-20261111.log`. A previous full run failed
+at physics contacts; individual scoped passes do not establish an aggregate pass.
+The interrupted run passed physics contacts76, physics, props, recording,
+workspace resize/docking/nested layouts, fan flutter, shortcuts, camera edits,
+helpers/morphs, shape catalogue/study/comparison, expressions, MMD groups, native
+height review and map calibration. It was stopped during the subsequent body
+curves work. The verified suite PID36200 and its owned children were terminated;
+no owner applications were targeted. There is no complete aggregate pass.
+
+Next actions:
+
+1. Resume the full default suite. Fix reproducible failures without loosening
+   assertions; preserve each failure and rerun the affected scope.
+2. Verify final movie metadata and decoded audio analyses included by the suite.
+   Record a complete aggregate only after its process exits successfully.
+3. Refresh a separate review from the final remotely verified source, preserving
+   all existing projects, profiles and recovery. Current `owner-review-current`
+   still contains the earlier physics settings. `owner-review-verified` contains
+   only four hash-matched project copies staged for the next snapshot; it is not
+   a runnable new review yet. Do not request owner feedback.
+4. Commit compact evidence, ledger/history and accurate remaining prerequisites;
+   push without force and fetch/verify. Then remove only finished disposable
+   outputs that no remaining case needs. Preserve private inputs and deliverables.
+
+Current suite environment:
+
+```powershell
+$env:HYBRID_HECATIA_KRA=(Resolve-Path output/owner-fixtures/hecatia.kra).Path
+$env:HYBRID_NATIVE_INPUTS='C:\a\dump'
+$env:HYBRID_FFMPEG='C:\Program Files\ffmpeg\bin\ffmpeg.exe'
+Remove-Item Env:HYBRID_FAN_PROJECT -ErrorAction SilentlyContinue
+python -u tests/verify.py
+```
+
+All automated graphics use `run.command()` private Windows desktops. Do not
+fall back to visible windows. Verify child desktop, no foreground child and
+closed job/desktop receipts. Reuse existing approved Godot 4.6 standard/Python/
+FFmpeg and the pinned temporary SourceIO runtime; no new installations or
+replacement of installed Studio is authorized.
+
+## Preserved inputs and deliverables
+
+Keep both November 10 and November 11 session checkouts while their unbacked
+private deliverables are pending. Especially protect:
+
+- November 10 `output\owner-review\Studio\output\recovery`: actual owner work.
+- November 10 `output\fan-native-probe\input`: actual fan reproduction.
+- November 11 `output\owner-review` and `output\owner-review-current`.
+- Current native preparation inputs, Mima prepared head and project aliases
+  required by remaining tests. Do not delete them during an aggregate run.
+
+Original HAS/KRA, Downloads archives, `C:\a\dump`, `C:\a\tools`, Steam content,
+installed Studio and shared tools remain protected. No private art is uploaded.
+Mima can be reconstructed with `tests/prepare_mima_fixture.py` and the original
+checksum-bound archive. Native fixture provenance/rotations must remain intact.
+
+After remote verification of the contact fix, only the disposable
+`output\physics-solver-probe\Studio` source/fixture copy was removed: 1,409 files,
+349,432,050 bytes. Its parent retains all raw failed/successful candidate JSON,
+logs and source snapshot receipt; compact results are in the repository.
+
+## Required observations still pending
+
+Ledger remains 55/62 accepted groups and 52/54 implementation groups. Actual
+artist/native appearance, novice/learner use, physical tablet/cursor/audio and
+clean offline Windows setup remain separate gates. Do not certify these with
+automation or invent feedback. Resume participation only when the owner grants
+time. Do not mark the goal complete while independent required work remains.
