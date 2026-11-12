@@ -50,6 +50,11 @@ discovery and selection-triggered model previews with bounded conversion.
 Details: [model_browser_feedback_2026-11-12.md](model_browser_feedback_2026-11-12.md).
 Provider prerequisites and preview isolation remain unverified design work;
 do not start online fetching, conversion or implementation during the pause.
+The owner further requests broad international/non-English model-source
+research for the future catalogue, client-bundled language/name/case/format
+query variants, and evidence-based Downloadable/Preview/Password badges.
+These labels may overlap; unverified metadata must stay unknown. Details are
+in the same browser note. This does not authorize starting the research now.
 
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4

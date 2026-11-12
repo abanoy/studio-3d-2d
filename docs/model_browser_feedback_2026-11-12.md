@@ -31,6 +31,64 @@ Keep source attribution, links and unavailable-source messages clear. Merely
 offering these ideas does not authorize implementing scraping, handling accounts
 or downloading assets during the pause.
 
+## International source catalogue and client-side query variants
+
+Owner clarification: future browser work includes **actively researching model
+resources across the internet, including non-English communities**, to build
+a useful catalogue of model-listing sites. The three named providers above
+are examples, not the search boundary. Aim for broad international coverage;
+do not promise an exhaustive index of the whole internet.
+
+On resume, research and document each suitable source's name/URL, languages,
+model formats or categories, supported search entry points, thumbnail/metadata
+availability and retrieval prerequisites, with dated primary-source evidence.
+Separate a discovered directory entry from a working/tested search adapter.
+This is future research work; no new providers were searched or verified now.
+
+Build possible query variations **locally in the client** so useful matching
+does not require a translation service or compulsory AI. Proposed approach:
+
+- Keep the exact original query and original-script model titles intact.
+- Bundle an extensible alias dictionary for known names and terms, including
+  alternate spellings, original-script names and romanizations. For example,
+  `Hatsune Miku` and `初音ミク` can be explicit aliases. Do not assume mechanical
+  transliteration or word-for-word translation recovers every proper name.
+- Generate relevant alternate forms for capitalization, full-width/half-width
+  characters, spacing, punctuation, hyphens/underscores and word order. Treat
+  these as additional candidates rather than destructively rewriting every
+  query. Case and character-width changes can matter differently by provider.
+- Keep query syntax, encoding and case-sensitive behavior provider-specific.
+  Preserve provider IDs, URLs and access credentials as supplied; these search
+  transformations apply to query candidates, not passwords or asset paths.
+  Run a bounded set of useful variant searches where necessary; appending all
+  aliases to one query may make a provider require every term and lose matches.
+- Merge duplicate results using provider item IDs/canonical URLs, retain source
+  attribution and rank exact/original matches ahead of less-certain expansions.
+  Preserve different models that merely share a title. Cancellation, caching
+  and provider request limits must keep broad searches manageable.
+
+The exact dictionaries, languages, normalization tools and provider adapters
+remain to be researched and chosen on resume. Do not claim universal translation,
+case-insensitive retrieval or successful cross-language matching from this note.
+
+## Evidence-based availability badges
+
+Owner proposes **"Downloadable," "Preview," and "Password"** labels based on
+what HAS can actually retrieve or establish from a source's listing metadata.
+These can overlap: a password-protected download may also offer a preview.
+Do not force them into mutually exclusive availability states.
+Define whether Preview means an image, interactive 3D or preview-only access;
+a thumbnail alone does not establish an available 3D model preview.
+
+Determine each badge from explicit provider evidence. Preserve the distinction
+between a link to a download page, an available image/3D preview and a verified
+file retrieval; a listing does not prove a compatible local model is ready to
+import. A password label reports an access condition, not that HAS knows the
+password. A failed fetch, sign-in wall or missing metadata is **unknown/unverified**,
+not proof of "preview only" or "no download." Record when the information was
+checked and keep prerequisite notices separate from uncertain availability.
+No availability rules or live badge classifications were implemented or tested.
+
 ## Model preview when selecting a result
 
 Owner asks for SFM-like behavior: selecting a model attempts to load/show it in
@@ -67,5 +125,7 @@ browser/preview flow. Verify direct loads and conversions, missing dependencies,
 corrupt assets, rapid selection, cancellation, stale results, cache invalidation
 and unchanged scenes/originals. Validate each online adapter and prerequisite
 notice separately; provide source-specific unavailable states. Keep automated
-graphics on private desktops. No implementation, downloads, app launches or
+graphics on private desktops. Include original-script/alias searches, case and
+format variants, overlapping badges, unavailable metadata and duplicate titles
+in future browser verification. No implementation, downloads, app launches or
 tests were performed for this report. Existing pause and ledger counts remain.
