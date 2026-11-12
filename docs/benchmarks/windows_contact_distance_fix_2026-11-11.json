@@ -1,0 +1,350 @@
+{
+  "format": "has_windows_contact_distance_fix_1",
+  "date": "2026-11-11",
+  "base_commit": "a3221e6e14637ff92e59a46fb0607ee187d5e795",
+  "initial_full_failure": {
+    "checks": 76,
+    "failures": 1,
+    "scope": "full",
+    "native_end_strain_m": {
+      "AvatarSample_A": 0.00129937659949064,
+      "AvatarSample_Avrm0": 0.00349846063181758,
+      "authored": 4.5846049033571e-05,
+      "pose-smoke": 0.00299024116247892,
+      "sfm-smoke": 0.00697144493460655,
+      "source-smoke": 0.00270311953499913
+    },
+    "native_legacy_strain_m": {
+      "AvatarSample_A": 0.0412335991859436,
+      "AvatarSample_Avrm0": 0.0398479513823986,
+      "authored": 0.169899761676788,
+      "pose-smoke": 0.0116760767996311,
+      "sfm-smoke": 0.0598940625786781,
+      "source-smoke": 0.0116815725341439
+    }
+  },
+  "controlled_candidates": {
+    "candidate-full": {
+      "settings": {},
+      "result": {
+        "checks": 76,
+        "failures": 1,
+        "scope": "full",
+        "native_end_strain_m": {
+          "AvatarSample_A": 0.0011077307863161,
+          "AvatarSample_Avrm0": 0.00289282365702093,
+          "authored": 0.000126442406326532,
+          "pose-smoke": 0.000416659953771159,
+          "sfm-smoke": 0.00687597459182143,
+          "source-smoke": 0.00494295218959451
+        },
+        "native_legacy_strain_m": {
+          "AvatarSample_A": 0.0425961650907993,
+          "AvatarSample_Avrm0": 0.0399854220449924,
+          "authored": 0.168556243181229,
+          "pose-smoke": 0.0117607163265347,
+          "sfm-smoke": 0.0557143017649651,
+          "source-smoke": 0.0118161048740149
+        }
+      },
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b2f969c9bb254329b011629dfec22df3",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 27508,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 81.469
+      },
+      "raw_sha256": "689f3c55c7f3a66cbc60c1d2cedafaf41041bd2ce6b5c4c51ca8f87b97797003"
+    },
+    "velocity20-full": {
+      "settings": {
+        "position_steps": 4,
+        "velocity_steps": 20,
+        "speculative_contact_distance": 0.1
+      },
+      "result": {
+        "checks": 76,
+        "failures": 0,
+        "scope": "full",
+        "native_end_strain_m": {
+          "AvatarSample_A": 0.00151172385085374,
+          "AvatarSample_Avrm0": 0.00305948429740965,
+          "authored": 0.000199363319552504,
+          "pose-smoke": 0.000145673679071479,
+          "sfm-smoke": 0.00121775607112795,
+          "source-smoke": 0.00365316751413047
+        },
+        "native_legacy_strain_m": {
+          "AvatarSample_A": 0.0406946465373039,
+          "AvatarSample_Avrm0": 0.0379224196076393,
+          "authored": 0.164446026086807,
+          "pose-smoke": 0.0118353739380836,
+          "sfm-smoke": 0.0608613826334476,
+          "source-smoke": 0.0120880249887705
+        }
+      },
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0326f8581b2440ea93801fe4b7c91824",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 35232,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 80.773
+      },
+      "raw_sha256": "d2e62d1eb5323ce5018fd524e9ab175d159f5ee3775db5e886af0425388b5d9f"
+    },
+    "prediction002-full": {
+      "settings": {
+        "position_steps": 4,
+        "velocity_steps": 10,
+        "speculative_contact_distance": 0.02
+      },
+      "result": {
+        "checks": 76,
+        "failures": 0,
+        "scope": "full",
+        "native_end_strain_m": {
+          "AvatarSample_A": 0.000146703081554733,
+          "AvatarSample_Avrm0": 0.000705247512087226,
+          "authored": 0.000156563197379,
+          "pose-smoke": 0.000346213608281687,
+          "sfm-smoke": 0.00259680557064712,
+          "source-smoke": 0.000722500204574317
+        },
+        "native_legacy_strain_m": {
+          "AvatarSample_A": 0.0413556694984436,
+          "AvatarSample_Avrm0": 0.0379445850849152,
+          "authored": 0.169287905097008,
+          "pose-smoke": 0.0116764875128865,
+          "sfm-smoke": 0.0607567615807056,
+          "source-smoke": 0.0116292322054505
+        }
+      },
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_82bfc6d9a9244fba8e64d82f2de54cae",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 13320,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 80.733
+      },
+      "raw_sha256": "f307718e93b7e7151ed108dec54f2e1a2ae419917ded562d5e022c135cdbbcfb"
+    }
+  },
+  "main_checkout_repeats": {
+    "1": {
+      "checks": 76,
+      "failures": 0,
+      "scope": "full",
+      "native_end_strain_m": {
+        "AvatarSample_A": 0.000146703081554733,
+        "AvatarSample_Avrm0": 0.000705247512087226,
+        "authored": 0.000171036837855354,
+        "pose-smoke": 0.000346213608281687,
+        "sfm-smoke": 0.00259719346649945,
+        "source-smoke": 0.000728184240870178
+      },
+      "native_legacy_strain_m": {
+        "AvatarSample_A": 0.0413556694984436,
+        "AvatarSample_Avrm0": 0.0379431582987309,
+        "authored": 0.171154424548149,
+        "pose-smoke": 0.0116764875128865,
+        "sfm-smoke": 0.0607592463493347,
+        "source-smoke": 0.0119262849912047
+      }
+    },
+    "2": {
+      "checks": 76,
+      "failures": 0,
+      "scope": "full",
+      "native_end_strain_m": {
+        "AvatarSample_A": 0.000159719216753729,
+        "AvatarSample_Avrm0": 0.000705247512087226,
+        "authored": 0.000174515269463882,
+        "pose-smoke": 0.000346213608281687,
+        "sfm-smoke": 0.00259680557064712,
+        "source-smoke": 0.000728184240870178
+      },
+      "native_legacy_strain_m": {
+        "AvatarSample_A": 0.0413612388074398,
+        "AvatarSample_Avrm0": 0.0379460267722607,
+        "authored": 0.169287905097008,
+        "pose-smoke": 0.0116830933839083,
+        "sfm-smoke": 0.0607567615807056,
+        "source-smoke": 0.0116292322054505
+      }
+    }
+  },
+  "change": "Restore speculative contact distance from 0.1 m to Godot 4.6 standard 0.02 m; keep 120 Hz, position iterations 4, default velocity iterations 10, penetration slop 0.002 m and all runtime collisions unchanged.",
+  "official_setting_reference": "https://docs.godotengine.org/en/4.6/classes/class_projectsettings.html#class-projectsettings-property-physics-jolt-physics-3d-simulation-speculative-contact-distance",
+  "interpretation": "The larger speculative region is a plausible cause of excessive constraints; experiments establish the bounded regression result, not universal ragdoll stability.",
+  "unchanged_assertions": "All six cases must finish below 5 mm; authored and Scout must also improve to less than one quarter of their legacy strain. No runtime pair exclusion or Scout orientation workaround.",
+  "scope": "Configured Windows software only. Full canonical aggregate still pending. No artist/device/native fidelity acceptance is inferred.",
+  "main_repeat_private_receipts": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_354e641a12574688909194bd9eef6e3f",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 34516,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 81.111
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_ab96c582961a4b2a8b4db9b3cb74430e",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 27256,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 80.871
+    }
+  ],
+  "regressions": {
+    "physics": {
+      "checks": 56,
+      "failures": 0,
+      "native_samples": [
+        "pose-smoke/miku-project",
+        "source-smoke/source-project",
+        "sfm-smoke/project"
+      ],
+      "native_metrics": {
+        "pose-smoke/miku-project": {
+          "bodies": 19,
+          "collision_min": -0.00230182707309723,
+          "max": 0.275996118783951,
+          "min": 0.0390412099659443,
+          "poses": 126,
+          "speed": 0.0
+        },
+        "sfm-smoke/project": {
+          "bodies": 21,
+          "collision_min": -0.0025167316198349,
+          "max": 0.413846880197525,
+          "min": 0.048313993960619,
+          "poses": 83,
+          "speed": 0.0231763422489166
+        },
+        "source-smoke/source-project": {
+          "bodies": 21,
+          "collision_min": -0.00204401090741158,
+          "max": 0.210991516709328,
+          "min": 0.0166151467710733,
+          "poses": 77,
+          "speed": 0.0
+        }
+      },
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "48"
+      },
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b5e27b56334b4330adf79e8c7d48bc9e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 36240,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 39.688
+      }
+    },
+    "props": {
+      "checks": 35,
+      "failures": 0,
+      "native_samples": [],
+      "max_box_displacement": 1.85958278179169,
+      "ragdoll_contacts": 5,
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "48"
+      },
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ca70481e480644dd9bb29b0966708893",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25324,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 20.556
+      }
+    },
+    "recording": {
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "frames": 48,
+        "fps": "24/1",
+        "duration": "2.000000",
+        "audio": "aac",
+        "onset": 1.0000416666666667
+      },
+      "source_audio_unchanged": true,
+      "optional_native_skips": [],
+      "checks": 62,
+      "unit_checks": 17,
+      "private_receipts": [
+        {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_ac494ebc58f8489285a1b3b310e344f2",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 16024,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 38.512
+        }
+      ]
+    }
+  }
+}

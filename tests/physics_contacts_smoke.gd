@@ -90,7 +90,7 @@ func measure(app,data: Dictionary,label: String,legacy: bool,without_self:=false
 			if angle>travel[id].peak_degrees:
 				travel[id].peak_degrees=angle
 				travel[id].peak_tick=i+1
-	var pose: Dictionary=simulation.pose();var max_strain:=0.0;var helper_strain:=0.0;var speed:=0.0
+	var pose: Dictionary=simulation.pose();var max_strain:=0.0;var helper_strain:=0.0;var speed:=0.0;var joint_strain:={}
 	for id in pose:
 		var parent: String=actor.parent_id(id)
 		if parent=="@root":continue
@@ -99,7 +99,7 @@ func measure(app,data: Dictionary,label: String,legacy: bool,without_self:=false
 		if simulation.bodies.has(id):
 			# A free physical root (VRM hips below a nonphysical scene root)
 			# moves through space; its fall is not separation at a physical joint.
-			if simulation.bodies.has(parent):max_strain=maxf(max_strain,distance)
+			if simulation.bodies.has(parent):max_strain=maxf(max_strain,distance);joint_strain[id]=distance
 		else:helper_strain=maxf(helper_strain,distance)
 	for body in simulation.bodies.values():speed=maxf(speed,body.linear_velocity.length())
 	var center:=Vector3.ZERO
@@ -113,7 +113,7 @@ func measure(app,data: Dictionary,label: String,legacy: bool,without_self:=false
 	if full_chain:suffix="trace-arm-chain"
 	if not excluded_arm.is_empty():suffix="no-scout-pair" if not full_chain else "no-shoulder-pair"
 	image.save_png(folder.path_join(label+"-"+suffix+".png"))
-	return {"strain":max_strain,"helper_strain":helper_strain,"speed":speed,"pairs":count,"joint_travel":travel,"arm_contacts":contacts}
+	return {"strain":max_strain,"joint_strain":joint_strain,"helper_strain":helper_strain,"speed":speed,"pairs":count,"joint_travel":travel,"arm_contacts":contacts}
 func compare(app,data: Dictionary,label: String) -> void:
 	var before: Dictionary=await measure(app,data,label,true);var after: Dictionary=await measure(app,data,label,false)
 	metrics[label]={"before":before,"after":after}
@@ -182,19 +182,22 @@ func loose_fitting(app) -> void:
 	check(not simulation.bodies[far_a].get_collision_exceptions().has(body) and not body.get_collision_exceptions().has(simulation.bodies[far_a]),"distant body parts remain collidable even when brought into overlap")
 	body.global_transform=saved;simulation.dispose()
 func run() -> void:
+	var scout_only: bool="--scout-only" in OS.get_cmdline_user_args()
 	folder=ProjectSettings.globalize_path("res://output/physics-contacts/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
 	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled();app.autosave_enabled.button_pressed=false
 	await geometry(app)
 	await loose_fitting(app)
 	var asset:=folder.path_join("original-torso.glb");check(Fixture.create(asset)==OK,"original overlapping torso fixture writes a standard skinned GLB")
-	await compare(app,Model.definition(asset),"authored")
+	if not scout_only:await compare(app,Model.definition(asset),"authored")
 	for sample in ["pose-smoke/miku-project","source-smoke/source-project","sfm-smoke/project"]:
+		if scout_only and sample!="sfm-smoke/project":continue
 		var path:=ProjectSettings.globalize_path("res://output/"+sample)
 		if not FileAccess.file_exists(path.path_join("project.json")):print("SKIP optional contact sample: "+sample);continue
 		var source: Dictionary=World.from_project(Storage.load_project(path)).objects[-1];var model:=Model.new();model.data=source
 		var data:=Model.definition(source.source);data.metadata=source.metadata.duplicate(true);data.rotation_xyzw=model.sample_transform(0).rotation_xyzw;data.scale=model.sample_transform(0).scale
 		await compare(app,data,sample.split("/")[0])
 	for name in ["AvatarSample_A.vrm","AvatarSample_Avrm0.vrm"]:
+		if scout_only:break
 		var path: String=preload("res://tests/native_sample_paths.gd").vrm(name)
 		if not FileAccess.file_exists(path):print("SKIP optional VRM contact sample: "+name);continue
 		var digest:=FileAccess.get_sha256(path);app.new_project();app.pose_editor.add_model(path)
@@ -203,6 +206,6 @@ func run() -> void:
 			if child is AcceptDialog and child.title=="Imported with limitations":child.hide();child.queue_free()
 		await settled();var data: Dictionary=app.renderer.active_model().data.duplicate(true)
 		await compare(app,data,name.trim_suffix(".vrm"));check(FileAccess.get_sha256(path)==digest,"VRM source bytes remain unchanged: "+name)
-	var result:={"checks":checks,"failures":failures,"folder":folder,"metrics":metrics}
+	var result:={"checks":checks,"failures":failures,"folder":folder,"metrics":metrics,"scope":"scout-only" if scout_only else "full","position_steps":ProjectSettings.get_setting("physics/jolt_physics_3d/simulation/position_steps"),"velocity_steps":ProjectSettings.get_setting("physics/jolt_physics_3d/simulation/velocity_steps"),"speculative_contact_distance":ProjectSettings.get_setting("physics/jolt_physics_3d/simulation/speculative_contact_distance")}
 	var output:=FileAccess.open("res://output/physics-contacts-result.json",FileAccess.WRITE);output.store_string(JSON.stringify(result));output.close()
 	print("PHYSICS_CONTACTS "+JSON.stringify(result));app.free();quit(0 if failures==0 else 1)

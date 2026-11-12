@@ -219,6 +219,31 @@ Matched six-body diagnostic trace_arm_chain: left/right elbow peaks [59.1, 38.1]
 
 Matched six-body diagnostic without_left_upper_arm_spine: left/right elbow peaks [40.5, 38.2] degrees, maximum end separation 0.53 mm.
 
+## Windows native contact-distance regression — 2026-11-11
+
+With the correctly upright native Scout fixture, the full contact sequence found
+6.97 mm final joint separation, above the unchanged 5 mm limit. Increasing
+position iterations from four to eight still failed at 6.88 mm. Twenty velocity
+iterations passed, but restoring speculative contact distance from 0.1 m to the
+Godot 4.6 standard 0.02 m also passed without raising solver iteration counts.
+The selected setting passed the full 76-check disposable comparison and two
+independent 76-check runs in the main checkout. Scout measured approximately
+2.60 mm in those runs. All six ordinary cases remained below 5 mm, with the
+authored and Scout cases also below one quarter of their legacy strain.
+
+The [Godot setting documentation](https://docs.godotengine.org/en/4.6/classes/class_projectsettings.html#class-projectsettings-property-physics-jolt-physics-3d-simulation-speculative-contact-distance)
+describes the speculative contact region and cautions that excessive values can
+produce ghost collisions. This supports the setting choice; it does not prove a
+unique cause or guarantee stability for every native model and trajectory.
+Keep 120 Hz, four position iterations, ten velocity iterations, 2 mm penetration
+slop, continuous collision detection and the existing runtime collision rules.
+No Scout-specific pair exclusion is enabled. The optional `--scout-only` test
+scope is diagnostic; the default full assertions and native cases are unchanged.
+Per-joint strain and actual settings are now included in the contact report.
+See `benchmarks/windows_contact_distance_fix_2026-11-11.json` for failed and
+successful measurements. Full aggregate and human/device acceptance remain
+separate checks.
+
 ## Grab attachment at the clicked surface
 
 The physical grab uses a pin at the selected world point. Both its anchor and the

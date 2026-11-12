@@ -1767,6 +1767,10 @@
           "path": "docs/benchmarks/live_physics_current_2026-11-07.json",
           "commit": "ed10572ce4bfbc7b0680dcd0ab7c28d67ea3d91b",
           "scope": "101 actual original-fixture checks: compatible interactive imports default on, queued cancellation and live peers preserved; Jolt120Hz fall/contact/grab and release retains actual drag velocity, freeze without keys, Simple context Reset pose exact Undo/Redo, solid prop/ragdoll collisions, packed reopen and exact48-frame1080p24H264 movies. Optional native fixtures explicitly absent."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_contact_distance_fix_2026-11-11.json"
         }
       ],
       "remaining": "Required bounded software condition verified. Native joints/cloth/helper fidelity and artist/device/Windows acceptance remain separate gates.",
