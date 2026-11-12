@@ -1,0 +1,274 @@
+{
+  "format": "has_windows_metadata_separator_fix_1",
+  "date": "2026-11-11",
+  "initial": {
+    "accepted": true,
+    "error": "",
+    "manifest": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\cache-packed\\open_31520_7332528/project.json",
+    "mix_unchanged": true,
+    "schema_version": 4.0,
+    "seeded_ids": [
+      "1268959177344159422",
+      "2415018928578945573",
+      "3063138746980439378"
+    ],
+    "write_error": "Metadata write escapes its owned folder. Previous state preserved."
+  },
+  "cause": "Atomic metadata containment compared mixed native Windows/Godot separator spellings. The intended invalid manifest was refused before being written, so the test reopened an unchanged valid project.",
+  "change": "Normalize separators on Windows only before existing containment and managed-link checks. Preserve POSIX spelling, file-size/readback/fresh-inode checks and Python commit validation.",
+  "strengthened_oracle": "Assert corruption write succeeds and duplicate IDs are actually read back before requiring exact duplicate-ID refusal and unchanged PCM.",
+  "windows_filesystem": {
+    "checks": 13,
+    "failures": 0,
+    "unavailable_link_fixtures": [
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-metadata-windows\\1794454286641211400\\owned metadata \u2014 \u0442\u0435\u0441\u0442\\primary-link.json",
+        "reason": "[WinError 1314] A required privilege is not held by the client: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-acceptance-session-20261111\\\\output\\\\private-metadata-windows\\\\1794454286641211400\\\\sentinel.json' -> 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-acceptance-session-20261111\\\\output\\\\private-metadata-windows\\\\1794454286641211400\\\\owned metadata \u2014 \u0442\u0435\u0441\u0442\\\\primary-link.json'"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-metadata-windows\\1794454286641211400\\owned metadata \u2014 \u0442\u0435\u0441\u0442\\temporary-link.json.tmp",
+        "reason": "[WinError 1314] A required privilege is not held by the client: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-acceptance-session-20261111\\\\output\\\\private-metadata-windows\\\\1794454286641211400\\\\sentinel.json' -> 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-acceptance-session-20261111\\\\output\\\\private-metadata-windows\\\\1794454286641211400\\\\owned metadata \u2014 \u0442\u0435\u0441\u0442\\\\temporary-link.json.tmp'"
+      }
+    ],
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-metadata-windows\\1794454286641211400",
+    "original_preserved": true,
+    "hard_link_replaced_without_changing_original": true,
+    "junction_target_preserved": true,
+    "source_unchanged": true,
+    "scope": "Actual Windows filesystem; headless, no graphical app window."
+  },
+  "python_metadata_tests": {
+    "run": 12,
+    "passed": 8,
+    "skipped": 4,
+    "failures": 0
+  },
+  "existing_headless_regressions": {
+    "save_worker_unit": {
+      "checks": 12,
+      "failures": 0
+    },
+    "private_metadata_unit": {
+      "checks": 0,
+      "failures": 0,
+      "skipped": "Linux owned link/permission faults; Windows gate remains"
+    },
+    "recovery_journal_unit": {
+      "checks": 33,
+      "failures": 0,
+      "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/recovery-journal-unit/1187216"
+    },
+    "lesson_recovery_unit": {
+      "checks": 43,
+      "failures": 0
+    },
+    "lesson_snapshot_loading_unit": {
+      "checks": 6,
+      "failures": 0,
+      "scope": "bounded UI metadata and single normal-Open delegation; actual project/asset recovery verified separately"
+    },
+    "recovery_identity_unit": {
+      "checks": 47,
+      "failures": 0,
+      "owner": {
+        "created_100ns": "134389281393174336",
+        "pid": 32032
+      }
+    }
+  },
+  "multi_audio": {
+    "writer": {
+      "audio_driver": "WASAPI",
+      "captured_peak": 0.3311871886253357,
+      "checks": 26,
+      "failures": 0,
+      "linked": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794454368748383000/Linked sounds.has",
+      "mixed_wav": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794454368748383000/render_1794454421_44095443_0/mixed_audio.wav",
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794454368748383000/render_1794454421_44095443_0/movie.mp4",
+      "packed": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794454368748383000/Multiple sounds.has"
+    },
+    "readers": {
+      "packed": {
+        "changed_channels": 0,
+        "checks": 7,
+        "failures": 0,
+        "mode": "packed",
+        "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794454368748383000/render_1794454441_11276179_0/movie.mp4"
+      },
+      "linked": {
+        "changed_channels": 0,
+        "checks": 6,
+        "failures": 0,
+        "mode": "linked",
+        "movie": ""
+      },
+      "recovery": {
+        "changed_channels": 0,
+        "checks": 5,
+        "failures": 0,
+        "mode": "recovery",
+        "movie": ""
+      },
+      "lesson": {
+        "changed_channels": 0,
+        "checks": 5,
+        "failures": 0,
+        "mode": "lesson",
+        "movie": ""
+      }
+    },
+    "original_inputs": {
+      "Effect.wav": "84a91ffca906ceff562910e688b49d51e4131bc0b6935234c1f2a14c14ee35f2",
+      "Music.wav": "21febb38e9db2124792b15e03c31e6a33f9bc9b088443b7669bcf5ba872bd3a6",
+      "Voice \u2014 \u0442\u0435\u0441\u0442.wav": "ff1114cf3cfc6d755549c2462fe518178735e9e92b6cc94a1436883835ebe099"
+    },
+    "source_unchanged": true,
+    "diagnostics": {
+      "duplicate-diagnostic-linked": {
+        "accepted": false,
+        "error": "Invalid or duplicate audio clip identity.",
+        "manifest": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794454368748383000\\cache-linked\\open_33660_3586835/project.json",
+        "mix_unchanged": true,
+        "schema_version": 4.0,
+        "seeded_ids": [
+          "4454552004935239629",
+          "4454552004935239629",
+          "3913570407046719409"
+        ],
+        "write_error": ""
+      },
+      "duplicate-diagnostic-packed": {
+        "accepted": false,
+        "error": "Invalid or duplicate audio clip identity.",
+        "manifest": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794454368748383000\\cache-packed\\open_14108_3935700/project.json",
+        "mix_unchanged": true,
+        "schema_version": 4.0,
+        "seeded_ids": [
+          "4454552004935239629",
+          "4454552004935239629",
+          "3913570407046719409"
+        ],
+        "write_error": ""
+      }
+    },
+    "media": [
+      {
+        "video": {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "24/1",
+          "nb_read_frames": "48"
+        },
+        "audio_codec": "aac",
+        "decoded_magnitudes": {
+          "music_left": 2007.9356375847017,
+          "music_right": 1506.5813384439816,
+          "voice": 8005.02965348552,
+          "effect": 1419.2999822813952,
+          "early_voice": 0.02985951825147179,
+          "early_effect": 1419.302197189346
+        },
+        "first_onset_seconds": 0.25004166666666666
+      },
+      {
+        "video": {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "24/1",
+          "nb_read_frames": "48"
+        },
+        "audio_codec": "aac",
+        "decoded_magnitudes": {
+          "music_left": 2007.9356375847017,
+          "music_right": 1506.5813384439816,
+          "voice": 8005.02965348552,
+          "effect": 1419.2999822813952,
+          "early_voice": 0.02985951825147179,
+          "early_effect": 1419.302197189346
+        },
+        "first_onset_seconds": 0.25004166666666666
+      }
+    ]
+  },
+  "private_desktops": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_11c747adeafa49958e4995623f894663",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 13884,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 53.241
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_729b4f0b3fd546b49c8a6e8be3d668ff",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 14108,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 20.071
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_2b43b537abbf42af809801b168998c52",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 33660,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.592
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_4111d45f8d30492e84bb03ea125414eb",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 33444,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.653
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_a37f855d73154fe98d31624b1e1596f6",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 25696,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.617
+    }
+  ],
+  "initial_unit_compile_failure": "Windows fixture initially needed an explicit String type for link_path; corrected before any runtime case passed.",
+  "limits": [
+    "Symbolic-link fixtures unavailable under current Windows privilege; real junction and hard-link cases passed. No privilege change requested.",
+    "Linux-specific private metadata fault suite explicitly skipped on Windows; no POSIX runtime pass claimed.",
+    "Full canonical aggregate, physical power loss, clean installation and human/device acceptance remain unpassed."
+  ],
+  "next": "Resume remaining scoped sequence at project_duration, verify motion/movement-path raster ports, then complete the full canonical run. Update separate review source after this fix is pushed and verified."
+}

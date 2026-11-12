@@ -1689,6 +1689,10 @@
           "path": "docs/benchmarks/audio_media_visibility_current_2026-11-07.json",
           "commit": "d657472648825ff41021be96e2ff7f3648901936",
           "scope": "Actual current WAV/MP3/Ogg preparation/import, captured request frame, source-preserving cancel/stale/missing decoder/bad input/overlong refusal and retry, exact Undo/packed/linked, normalized PCM and independent decoded stereo AAC levels/offsets."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_metadata_separator_fix_2026-11-11.json"
         }
       ],
       "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, physical audible/device synchronization, subjective artist review and Windows observations remain separate gates where applicable.",
@@ -2199,6 +2203,10 @@
           "path": "docs/benchmarks/atomic_safety_current_2026-11-08.json",
           "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
           "scope": "Bounded atomic-save/readback/backup/unsafe-path/payload/integrity/interruption software contract verified by current86Python save-safety cases,173Godot private metadata/journal/recovery checks,26rollback checks and five real commit/competing-writer/lost-status runs plus actual pre-promotion kill. MD9 explicitly requires fsync/rename where supported; unconditional Windows directory flushing was an extra gate. Unsupported directory sync still reports false. Windows crash/installer/scenario execution and physical storage/power-loss are separate unrun target gates, not certified by this closure."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_metadata_separator_fix_2026-11-11.json"
         }
       ],
       "remaining": "Bounded atomic-save/readback/backup/unsafe-path/payload/integrity/interruption software contract verified by current86Python save-safety cases,173Godot private metadata/journal/recovery checks,26rollback checks and five real commit/competing-writer/lost-status runs plus actual pre-promotion kill. MD9 explicitly requires fsync/rename where supported; unconditional Windows directory flushing was an extra gate. Unsupported directory sync still reports false. Windows crash/installer/scenario execution and physical storage/power-loss are separate unrun target gates, not certified by this closure.",
@@ -2267,6 +2275,10 @@
           "path": "docs/benchmarks/lesson_protection_current_2026-11-07.json",
           "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
           "scope": "147current lesson protection checks include clean-scene lesson-only autosave, actualSIGKILL and normal startup with writer cache offline; manualHAS and included assets unchanged."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_metadata_separator_fix_2026-11-11.json"
         }
       ],
       "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",

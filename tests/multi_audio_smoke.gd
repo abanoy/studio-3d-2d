@@ -34,7 +34,7 @@ func run() -> void:
 	app.has_project.open_file(args[2]);await job()
 	check(app.current_world().objects.size()==7,"actual five-native world/group/map is available for audio integration")
 	app.audio_clip={};app.rebuild_audio()
-	var world: Dictionary=World.portable(app.current_world());var shots: Array=app.keys.duplicate(true);var paint: String=Storage.image_hash(app.layers[1].cels[0].image)
+	var world: Dictionary=World.portable(app.current_world());var shots: Array=app.keys.duplicate(true);var paint: String=Storage.image_hash(preload("res://src/drawing.gd").image(app.layers[1].cels[0]))
 	app.set_frame(18)
 	for name in ["Voice — тест.wav","Music.wav","Effect.wav"]:
 		app.import_audio_dialog(folder.path_join("inputs/"+name));await settled()
@@ -48,7 +48,7 @@ func run() -> void:
 	app.audio_choice.item_selected.emit(1);app.audio_start.value=0;app.audio_gain.value=-12;app.apply_audio_settings()
 	app.audio_choice.item_selected.emit(2);app.audio_start.value=12;app.audio_gain.value=-9;app.audio_trim.value=50;app.apply_audio_settings()
 	check(app.audio_clip.id==app.audio_clips[2].id and app.audio_clips[0].start_frame==24 and app.audio_clips[1].gain_db==-12 and app.audio_clips[2].source_in_sample==2400,"clip chooser edits only selected timing/trim/gain while peers retain settings")
-	check(same(World.portable(app.current_world()),world) and app.keys==shots and Storage.image_hash(app.layers[1].cels[0].image)==paint,"audio authoring preserves every native object, camera key and independent drawing")
+	check(same(World.portable(app.current_world()),world) and app.keys==shots and Storage.image_hash(preload("res://src/drawing.gd").image(app.layers[1].cels[0]))==paint,"audio authoring preserves every native object, camera key and independent drawing")
 	var mixed:=pcm_hash();app.audio_mute.button_pressed=true
 	check(app.audio_clips[2].muted and not app.audio_clips[0].muted and pcm_hash()!=mixed,"mute affects only the selected sound")
 	app.undo();check(pcm_hash()==mixed and app.audio_clips.size()==3,"mute Undo restores the complete mix and all three clips")
@@ -115,12 +115,19 @@ func reader(mode: String) -> void:
 	check(app.audio_clips.size()==3,"fresh "+mode+" reader has all three clips")
 	if app.audio_clips.size()!=3:app.free();quit(1);return
 	check(same(audio_rows(),expected.audio) and pcm_hash()==expected.mix,"fresh "+mode+" reader preserves exact clip identities/settings/source bytes and combined PCM")
-	check(same(World.portable(app.current_world()),expected.world) and same(app.keys,expected.keys) and Storage.image_hash(app.layers[1].cels[0].image)==expected.paint,"fresh "+mode+" reader preserves native world, explicit camera and independent drawing")
+	check(same(World.portable(app.current_world()),expected.world) and same(app.keys,expected.keys) and Storage.image_hash(preload("res://src/drawing.gd").image(app.layers[1].cels[0]))==expected.paint,"fresh "+mode+" reader preserves native world, explicit camera and independent drawing")
 	# Invalid collection metadata must fail before replacing live state.
 	var directory: String=app.project_folder
 	if not directory.is_empty():
 		var path:=directory.path_join("project.json");var bytes:=FileAccess.get_file_as_bytes(path);var bad:=Recovery.read_json(path);bad.audio.clips[1].id=bad.audio.clips[0].id
-		Recovery.write_json(path,bad);var accepted: bool=app.open_project(directory)
+		var write_error: String=Recovery.write_json(path,bad)
+		var seeded: Dictionary=Recovery.read_json(path)
+		var duplicate_written: bool=seeded.audio.clips[1].id==seeded.audio.clips[0].id
+		check(write_error.is_empty() and duplicate_written,"owned duplicate-ID corruption is actually committed before testing refusal")
+		if not write_error.is_empty() or not duplicate_written:
+			var restore:=FileAccess.open(path,FileAccess.WRITE);restore.store_buffer(bytes);restore.close();app.free();quit(1);return
+		var accepted: bool=app.open_project(directory)
+		write("duplicate-diagnostic-"+mode+".json",{"accepted":accepted,"error":app.open_project_error,"write_error":write_error,"seeded_ids":seeded.audio.clips.map(func(clip):return clip.id),"mix_unchanged":pcm_hash()==expected.mix,"manifest":path,"schema_version":bad.schema_version})
 		check(not accepted and app.open_project_error.contains("duplicate") and pcm_hash()==expected.mix,"duplicate audio identity refuses atomically and preserves current mix")
 		var file:=FileAccess.open(path,FileAccess.WRITE);file.store_buffer(bytes);file.close()
 	app.set_frame(24);var image: Image=await app.renderer.capture(app.keys,app.layers,24,true);var reference:=Image.load_from_file(folder.path_join("reference.png"));var a:=image.get_data();var b:=reference.get_data();var changed:=0;var total:=0.0

@@ -4,8 +4,13 @@ extends RefCounted
 const MAX_BYTES:=1024*1024
 static func path_error(path: String,owned_root: String) -> String:
  if path.is_empty() or owned_root.is_empty():return "Metadata needs an owned folder. Previous state preserved."
- var base:=ProjectSettings.globalize_path(owned_root).simplify_path().trim_suffix("/")
- var target:=ProjectSettings.globalize_path(path).simplify_path()
+ # Native Windows pickers/workers can return backslashes while Godot joins
+ # descendants with slashes. Compare the same filesystem spelling on Windows;
+ # retain POSIX backslash rejection and all descendant/link checks below.
+ var root_path:=owned_root.replace("\\","/") if OS.get_name()=="Windows" else owned_root
+ var target_path:=path.replace("\\","/") if OS.get_name()=="Windows" else path
+ var base:=ProjectSettings.globalize_path(root_path).simplify_path().trim_suffix("/")
+ var target:=ProjectSettings.globalize_path(target_path).simplify_path()
  if not target.begins_with(base+"/"):return "Metadata write escapes its owned folder. Previous state preserved."
  var relative:=target.substr(base.length()+1)
  if relative.is_empty() or relative.contains(":") or relative.contains("\\"):return "Unsafe metadata write path. Previous state preserved."
