@@ -119,13 +119,18 @@ func run() -> void:
 	# The UI-authored record survives actual HAS worker save/open, with editable paint.
 	app.mode.select(0);app.change_mode(0);app.create_cel(false)
 	var drawing=preload("res://src/drawing.gd");var cel: Dictionary=drawing.cel_at(app.layers[1],app.frame)
-	drawing.stroke(cel.image,Vector2(80,70),Vector2(170,70),4,Color.CYAN,false);app.changed();var pixels: PackedByteArray=cel.image.get_data()
+	var editable: Dictionary=drawing.edit_image(cel)
+	check(not editable.has("error"),"ordinary cel exposes editable pixels through its raster owner")
+	if editable.has("error"):app.free();quit(1);return
+	var paint: Image=editable.image
+	drawing.stroke(paint,Vector2(80,70),Vector2(170,70),4,Color.CYAN,false);app.changed();var pixels: PackedByteArray=paint.get_data()
 	var saved:=folder.path_join("ui-contacts.has");app.has_project.save_file(saved,"packed")
 	while app.has_project.pid>0:await process_frame
 	var id: String=current().data.id;app.new_project();app.has_project.open_file(saved)
 	while app.has_project.pid>0:await process_frame
 	app.world_selection.select_entity(id);app.set_frame(12)
-	check(current().data.format==Model.CONTACT_FORMAT and active(current().data,12) and drawing.cel_at(app.layers[1],12).image.get_data()==pixels,"real UI contact range reopens with independent editable drawing")
+	var reopened_paint: Image=drawing.image(drawing.cel_at(app.layers[1],12))
+	check(current().data.format==Model.CONTACT_FORMAT and active(current().data,12) and reopened_paint!=null and reopened_paint.get_data()==pixels,"real UI contact range reopens with independent editable drawing")
 	var preview: Image=await app.renderer.capture(app.keys,app.layers,12,true);var export_error: String=await app.export_movie(folder)
 	check(export_error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000013.png")).get_data()==preview.get_data(),"UI-authored contact range and paint match actual movie frames exactly")
 	var movie: String=app.last_export_folder.path_join("movie.mp4")
