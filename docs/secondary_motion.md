@@ -29,8 +29,26 @@ vertices. Pristine26checks and existing-ribbon composition29checks pass, with
 exact posed pixels, real fan movement, off restoration, Undo/Redo, packed reopen
 and24frame1080p24H264. The composition test seeds history from the actual ribbon
 report; it is not a test of the owner's private recorded project. See
-[evidence](benchmarks/back_hair_existing_joints_2026-11-12.json). Direct picking,
-multiple selection and per-item blow inclusion remain separate UI work.
+[evidence](benchmarks/back_hair_existing_joints_2026-11-12.json). Multiple selection
+and per-item blow inclusion remain separate UI work.
+
+### Scene-click selection and simpler chain review
+
+While reviewing loose parts, click a visible part to suggest its connected region.
+Orange outlines and the list show the guess; choose another list item to correct
+it. Picking uses source bounds transformed by the current attachment joint, so it
+is approximate rather than exact skinned-surface or occlusion selection. Dragging
+still navigates, Ctrl retains camera controls, and Escape/focus loss cancels a
+pending click. Clicking an already configured area clears the previous Apply
+proposal and lets smaller-patch review start on that same component.
+
+Simple now automatically reviews a validated existing chain when all ordinary
+weighted attachments are unavailable. It still requires explicit Apply and shows
+the shared affected areas. Unchecking **Use existing joints** is respected until
+the selected part changes; Advanced and patch mode retain their explicit choices.
+Reviewing, picking and correcting do not edit model data, keys or Undo history.
+Actual native pristine30/ribbon-composed33 and focused20unit/25interaction checks
+pass; see [selection evidence](benchmarks/secondary_part_picking_2026-11-12.json).
 
 ## Evidence and existing representation
 

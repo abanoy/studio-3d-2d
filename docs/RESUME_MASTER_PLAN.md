@@ -89,8 +89,13 @@ items and human/device/aggregate acceptance are still open.
 native checks and29checks with the existing ribbon setup preserved. Original
 skin/weights/posed pixels remain unchanged;3shared regions/1369weighted vertices
 are disclosed before Apply. See [evidence](benchmarks/back_hair_existing_joints_2026-11-12.json).
-Direct selection, multiple items, local-blow exclusions and broader Simple-mode
-refinement are still pending; this does not claim them implemented.
+Direct scene-click selection and Simple's automatic reviewed-chain choice now
+pass 20 unit and 25 routed interaction checks, with 30 pristine/33 ribbon-composed
+native checks and the original helper/patch suites preserved. A click guesses
+from current joint-transformed region bounds; the list corrects that approximate
+guess. Manual mode correction, navigation and cancellation remain available.
+See [selection evidence](benchmarks/secondary_part_picking_2026-11-12.json).
+Multiple items, local-blow exclusions and further Simple refinement remain open.
 
 1. **Deformation remains after switching Hair & Cloth off.** A configured joint
    deforms correctly while enabled, but the deformation stays after disabling

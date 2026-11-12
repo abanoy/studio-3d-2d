@@ -38,6 +38,9 @@ var box_end:=Vector2.ZERO
 var box_dragging:=false
 var prefer_loose:=false
 var existing_toggle: CheckButton
+var mode_choice:="auto"
+var selected_key:=""
+var part_press:=false
 
 func setup(parent: Node) -> void:
 	button=app.icon_button(parent,"Set up loose parts","scene",open,"Review a connected hair/clothing region and attachment, then add weighted joints to a new HAS asset. Existing authored springs take priority.")
@@ -73,6 +76,7 @@ func open(prefer_hair_clothing:=false) -> void:
 	anchors=OptionButton.new();anchors.item_selected.connect(change_anchor);box.add_child(anchors)
 	existing_toggle=CheckButton.new();existing_toggle.text="Use existing joints";existing_toggle.visible=false;box.add_child(existing_toggle);existing_toggle.toggled.connect(existing_mode)
 	existing_toggle.tooltip_text="Review the model's existing joint chain without replacing its weights. Shared joints can move more than one connected part."
+	app.label(box,"Click a part in the scene to make a best-effort selection, or correct it in this list. Drag to navigate; Ctrl keeps camera controls.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	app.label(box,"Orange shows the selected area. Pale dots show the proposed joints.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	patch_toggle=CheckButton.new();patch_toggle.text="Choose a smaller patch";box.add_child(patch_toggle);patch_toggle.toggled.connect(patch_mode)
 	patch_controls=HBoxContainer.new();box.add_child(patch_controls);patch_controls.visible=false
@@ -157,6 +161,8 @@ func completed(value: Dictionary) -> void:
 		if selected<0:info.text="These connected surfaces already use spring joints. Their existing setup is kept.";return
 		parts.select(selected);parts.ensure_current_is_visible();select_part(selected)
 	elif stage=="preview":
+		if smart_existing(value):
+			request.erase("vertex_mask");request.erase("points_in_anchor");request["use_existing_joints"]=true;launch("preview");return
 		preview=value
 		var use_existing: bool=value.get("mode","")=="existing_joints"
 		if use_existing:request.erase("points_in_anchor")
@@ -210,20 +216,100 @@ func refresh_anchor_labels() -> void:
 		anchors.set_item_text(i,name)
 
 func select_part(index: int) -> void:
-	if pid>0 or assessment.regions[index].already_rigged and not patch_toggle.button_pressed:return
+	if pid>0 or index<0 or index>=assessment.get("regions",[]).size() or assessment.regions[index].already_rigged and not patch_toggle.button_pressed:return
 	var row: Dictionary=assessment.regions[index]
+	var key: String="%d:%d:%d"%[int(row.node),int(row.primitive),int(row.component)]
+	var keep_existing: bool=key==selected_key and preview.get("mode","")=="existing_joints"
+	if key!=selected_key:mode_choice="auto"
+	selected_key=key;parts.select(index);parts.ensure_current_is_visible()
 	var shape_snapshot: Dictionary=request.get("morph_weights",{}).duplicate(true)
 	request={"source_sha256":request.source_sha256,"segments":3,"node":int(row.node),"primitive":int(row.primitive),"component":int(row.component),"anchor_node":int(row.anchor_node)}
 	if not shape_snapshot.is_empty():request["morph_weights"]=shape_snapshot
+	if mode_choice=="existing" or mode_choice=="auto" and keep_existing:request["use_existing_joints"]=true
 	request["review_only"]=true
 	launch("preview")
 
 func existing_mode(enabled: bool) -> void:
 	if changing or pid>0 or not request.has("node"):return
+	mode_choice="existing" if enabled else "weighted"
 	request.erase("vertex_mask");request.erase("points_in_anchor")
 	if enabled:request["use_existing_joints"]=true
 	else:request.erase("use_existing_joints")
 	launch("preview")
+
+func smart_existing(value: Dictionary) -> bool:
+	if app.advanced_mode or mode_choice!="auto" or patch_toggle.button_pressed or value.get("mode","")=="existing_joints" or value.get("can_apply",false) or not value.get("region",{}).has("existing_chain"):return false
+	var current: RefCounted=actor()
+	if not current:return false
+	var bindings: Dictionary=current.root.get_meta("has_source_bones",{})
+	for choice in value.get("anchors",[]):
+		if choice.get("available",false) and not str(bindings.get(int(choice.node),"")).is_empty():return false
+	var proposal: Dictionary=value.region.existing_chain
+	for node in [proposal.center_node]+proposal.joint_nodes:
+		var id: String=bindings.get(int(node),"")
+		if id.is_empty() or not current.bones.has(id):return false
+	return true
+
+static func ray_region(rows: Array,transforms: Dictionary,origin: Vector3,direction: Vector3,distance_limit:=1000.0) -> int:
+	if not origin.is_finite() or not direction.is_finite() or direction.length_squared()<0.0000000001 or not is_finite(distance_limit) or distance_limit<=0:return -1
+	var finish:=origin+direction.normalized()*distance_limit;var best:=-1;var depth:=INF;var volume:=INF
+	for i in range(rows.size()):
+		if not rows[i] is Dictionary:continue
+		var row: Dictionary=rows[i];var bounds=row.get("bounds_in_anchor",[]);var node:=int(row.get("anchor_node",-1))
+		if not transforms.has(node) or not transforms[node] is Transform3D or not bounds is Array or bounds.size()!=2:continue
+		if not bounds[0] is Array or not bounds[1] is Array or bounds[0].size()!=3 or bounds[1].size()!=3:continue
+		var lower:=Vector3(bounds[0][0],bounds[0][1],bounds[0][2]);var upper:=Vector3(bounds[1][0],bounds[1][1],bounds[1][2]);var extent:=upper-lower
+		var transform: Transform3D=transforms[node]
+		if not lower.is_finite() or not upper.is_finite() or extent.x<0 or extent.y<0 or extent.z<0 or not transform.is_finite() or absf(transform.basis.determinant())<1e-30:continue
+		var padding:=maxf(maxf(extent.x,maxf(extent.y,extent.z))*.01,.00001)
+		var box:=AABB(lower,extent).grow(padding);var inverse:=transform.affine_inverse();var hit=box.intersects_segment(inverse*origin,inverse*finish)
+		if not hit is Vector3:continue
+		var current_depth: float=origin.distance_to(transform*hit);var current_volume: float=box.get_volume()*absf(transform.basis.determinant())
+		if current_depth<depth-.00001 or absf(current_depth-depth)<=.00001 and current_volume<volume:
+			best=i;depth=current_depth;volume=current_volume
+	return best
+
+func guess_part(point: Vector2) -> int:
+	if not Rect2(Vector2.ZERO,Vector2(app.video.width,app.video.height)).has_point(point) or not point.is_finite() or assessment.is_empty():return -1
+	var current: RefCounted=actor()
+	if not current:return -1
+	var transforms:={};var bindings: Dictionary=current.root.get_meta("has_source_bones",{})
+	for row in assessment.get("regions",[]):
+		var node:=int(row.anchor_node);var id: String=bindings.get(node,"")
+		if not transforms.has(node) and current.bones.has(id):transforms[node]=current.bone_transform(id)
+	var camera: Camera3D=app.renderer.camera
+	return ray_region(assessment.get("regions",[]),transforms,camera.project_ray_origin(point),camera.project_ray_normal(point),camera.far)
+
+func choose_part(point: Vector2) -> void:
+	if pid>0:return
+	var index:=guess_part(point)
+	if index<0:info.text="No part was found there. Try another point or choose from the list.";return
+	if assessment.regions[index].already_rigged and not patch_toggle.button_pressed:
+		var row: Dictionary=assessment.regions[index]
+		selected_key="%d:%d:%d"%[int(row.node),int(row.primitive),int(row.component)];mode_choice="auto"
+		parts.deselect_all();parts.select(index);parts.ensure_current_is_visible()
+		clear_preview();preview={};apply_button.disabled=true;anchors.clear();anchors.disabled=true;existing_toggle.visible=false;patch_toggle.disabled=false
+		for field in fields:field.editable=false
+		info.text="That area already has motion joints. Its setup is kept. Choose a smaller patch to review an unconfigured section, or choose another part.";return
+	select_part(index)
+
+func part_pointer(event: InputEventMouse,point: Vector2) -> bool:
+	if not is_instance_valid(window) or app.playing or app.pose_editor.dragging:return false
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			if event.ctrl_pressed or app.navigating or not Rect2(Vector2.ZERO,Vector2(app.video.width,app.video.height)).has_point(point):return false
+			part_press=true;app.canvas.grab_focus();app.world_selection.input(event,point);return true
+		if part_press:
+			part_press=false
+			if app.navigating or app.camera_buttons!=0:app.world_selection.input(event,point)
+			else:
+				app.world_selection.cancel_gesture(true)
+				if not event.ctrl_pressed:choose_part(point)
+			return true
+	if part_press:
+		if event is InputEventMouseButton and event.button_index not in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT,MOUSE_BUTTON_MIDDLE]:return false
+		app.world_selection.input(event,point);return true
+	return false
 
 func patch_mode(enabled: bool) -> void:
 	cancel_patch_drag()
@@ -231,7 +317,11 @@ func patch_mode(enabled: bool) -> void:
 	if assessment.is_empty():return
 	for i in range(assessment.regions.size()):parts.set_item_disabled(i,assessment.regions[i].already_rigged and not enabled)
 	if enabled and preview.is_empty():
-		parts.select(0);select_part(0)
+		var selected:=0
+		for i in range(assessment.regions.size()):
+			var row: Dictionary=assessment.regions[i]
+			if selected_key=="%d:%d:%d"%[int(row.node),int(row.primitive),int(row.component)]:selected=i;break
+		parts.select(selected);select_part(selected)
 
 func reset_patch() -> void:
 	if pid>0 or preview.is_empty():return
@@ -242,7 +332,8 @@ func reset_points() -> void:
 	request.erase("points_in_anchor");launch("preview")
 
 func patch_pointer(event: InputEventMouse,point: Vector2) -> bool:
-	if not is_instance_valid(window) or not patch_toggle.button_pressed:return false
+	if not is_instance_valid(window):return false
+	if not patch_toggle.button_pressed:return part_pointer(event,point)
 	if event.ctrl_pressed:return false
 	if app.navigating or app.pose_editor.dragging or app.playing:return false
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT:
@@ -252,6 +343,15 @@ func patch_pointer(event: InputEventMouse,point: Vector2) -> bool:
 	return false
 
 func global_patch_event(event: InputEvent) -> bool:
+	if part_press:
+		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
+			part_press=false;app.world_selection.cancel_gesture(true);return not app.navigating
+		if event is InputEventMouse:
+			var local: Vector2=app.canvas.get_global_transform_with_canvas().affine_inverse()*event.position
+			var image: Rect2=app.canvas.image_rect()
+			var point: Vector2=(local-image.position)/image.size*Vector2(app.video.width,app.video.height)
+			if not app.canvas.get_global_rect().has_point(event.position) and event is InputEventMouseButton and not event.pressed:point=Vector2(-1,-1)
+			return part_pointer(event,point)
 	if not box_dragging:return false
 	if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:cancel_patch_drag();return true
 	if event is InputEventMouseMotion or event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and not event.pressed:
@@ -265,6 +365,8 @@ func draw_patch_box() -> void:
 	app.canvas.review_box=Rect2(box_start,box_end-box_start).abs();app.canvas.review_box_visible=box_dragging;app.canvas.queue_redraw()
 
 func cancel_patch_drag() -> void:
+	if part_press and app.world_selection:app.world_selection.cancel_gesture(true)
+	part_press=false
 	box_dragging=false
 	if is_instance_valid(app.canvas):app.canvas.review_box_visible=false;app.canvas.queue_redraw()
 
@@ -355,6 +457,8 @@ func clear_preview() -> void:
 	if is_instance_valid(app.canvas):app.canvas.review_lines=PackedVector2Array();app.canvas.review_chain=PackedVector2Array();app.canvas.queue_redraw()
 
 func close() -> void:
+	if part_press and app.world_selection:app.world_selection.cancel_gesture(true)
+	part_press=false;mode_choice="auto";selected_key=""
 	cancel_patch_drag()
 	if is_instance_valid(app.canvas):app.canvas.review_pointer=Callable()
 	if pid>0 and OS.is_process_running(pid):OS.kill(pid)

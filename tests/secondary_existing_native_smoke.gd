@@ -47,6 +47,7 @@ func run() -> void:
 	var q:=Quaternion(Vector3.UP,.23);actor.data.pose[head]={"position":[0,0,0],"rotation_xyzw":[q.x,q.y,q.z,q.w]};app.pose_editor.apply_frame();app.changed();app.pose_editor.frame_model();app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,48)];await settle()
 	var original: Dictionary=actor.data.duplicate(true);var old_ids: Array=actor.order.duplicate();var sha:=FileAccess.get_sha256(source);var history: int=app.history.size();var shots: Array=app.keys.duplicate(true)
 	var before: Image=await app.renderer.capture(app.keys,app.layers,0,true);before.save_png(folder.path_join("before.png"))
+	app.set_advanced(true)
 	var helper=app.physics_editor.helper_editor;helper.open(true);await ready(helper)
 	var index:=-1
 	for i in range(helper.assessment.get("regions",[]).size()):
@@ -57,6 +58,17 @@ func run() -> void:
 	helper.parts.select(index);helper.select_part(index);await ready(helper)
 	check(not helper.preview.can_apply and helper.existing_toggle.visible and not helper.existing_toggle.button_pressed,"mixed native Back hair retains old generation refusal and offers explicit existing-joint review")
 	check(actor.data==original and app.history.size()==history,"opening the existing-joint option changes no pose, keys or history")
+	app.set_advanced(false);helper.select_part(index);await ready(helper)
+	check(helper.existing_toggle.button_pressed and helper.preview.get("mode","")=="existing_joints" and actor.data==original,"Simple selects a usable shared-joint review without applying it")
+	helper.existing_toggle.button_pressed=false;await ready(helper);await settle()
+	check(not helper.existing_toggle.button_pressed and not helper.preview.can_apply and helper.pid<0,"manual uncheck remains respected without an automatic existing-mode loop")
+	var alternate:=-1
+	for i in range(helper.assessment.regions.size()):
+		if i!=index and not helper.assessment.regions[i].already_rigged and float(helper.assessment.regions[i].anchor_min_weight)>=.01:alternate=i;break
+	check(alternate>=0,"native list has another correctable selection")
+	if alternate>=0:
+		helper.select_part(alternate);await ready(helper);helper.select_part(index);await ready(helper)
+		check(helper.existing_toggle.button_pressed and helper.preview.get("mode","")=="existing_joints","choosing another part resets Smart review for the newly selected Back hair")
 	helper.existing_toggle.button_pressed=true;await ready(helper)
 	check(helper.preview.get("mode","")=="existing_joints" and helper.preview.can_apply and not helper.apply_button.disabled,"ordinary opt-in makes actual Back hair configurable")
 	check(helper.preview.affected_regions.size()==3 and int(helper.preview.affected_vertices)==1369,"review discloses all three surfaces sharing the native Back hair joints")

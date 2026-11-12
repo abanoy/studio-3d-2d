@@ -168,6 +168,9 @@ def main():
     helper_log = run([sys.executable, '-u', 'tests/verify_secondary_helpers.py'], timeout=600)
     (output / 'secondary-helpers-suite.log').write_text(helper_log, encoding='utf-8')
     results['secondary_helpers'] = json.loads((output / 'secondary-helpers-verification.json').read_text(encoding='utf-8'))
+    picking_log = run([sys.executable, '-u', 'tests/verify_secondary_picking.py'], timeout=240)
+    (output / 'secondary-picking-suite.log').write_text(picking_log, encoding='utf-8')
+    results['secondary_picking'] = {'exit': 0}
     print('PASS reviewed weighted helpers, native bindings, HAS and movie')
     morph_log = run([sys.executable, '-u', 'tests/verify_helper_morphs.py'])
     (output / 'helper-morphs-suite.log').write_text(morph_log, encoding='utf-8')
