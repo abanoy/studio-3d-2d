@@ -3910,3 +3910,7 @@ Owner clarifies future model-browser work must research resources broadly, inclu
 ### 2026-11-12 — initial discovery feed and keyword-expansion examples recorded
 
 Owner clarifies two browser flows: initial diverse/discoverable feed of approximately100model listings, another approximately100appended on bottom scroll; top search bar activates targeted keyword/alias variations. Exact example Hatsune Miku -> Hatsune Miku/Hatsune/Miku/Miku Hatsune, with Miku/Hatsune keywords independent of order. Added distinction between strong full/reordered-name matches and broader individual words, combined feed versus per-provider counts, metadata listings versus asset downloads, and future pagination/query reset/stale-response checks. Details docs/model_browser_feedback_2026-11-12.md and pickup plan. No provider queries, downloads, implementation, app launches or tests; pause, incomplete aggregate and ledger unchanged.
+
+### 2026-11-12 — separate website and model-type filters recorded
+
+Owner explicitly requests recording only: model browser should narrow by website/source and by model type/ecosystem such as MMD, SFM, VRM or GMod, with website filtering a separate control. Added independent/combinable filters to docs/model_browser_feedback_2026-11-12.md and pickup plan, applying to discovery, keyword searches and scroll batches. Preserve source-versus-compatibility distinction, All/clear choices and future filter-change pagination checks. No implementation, provider queries, app launches or tests. Goal remains paused; aggregate and ledger unchanged.

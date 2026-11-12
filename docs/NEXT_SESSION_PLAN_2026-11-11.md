@@ -60,6 +60,9 @@ about100listings, load about100more on scrolling to the bottom, and apply query
 expansion when the top search bar is used. Explicit example: Hatsune Miku,
 Hatsune, Miku, Miku Hatsune, with order-independent Miku/Hatsune keywords and
 other relevant aliases. This remains deferred; no listings were fetched.
+Also record separate, combinable **website/source** and **model-type/ecosystem**
+filters (MMD, SFM, VRM, GMod), usable with discovery, search and pagination.
+Details are in the same browser note; this is recording only, not implementation.
 
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4

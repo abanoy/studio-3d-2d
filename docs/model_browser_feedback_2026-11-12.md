@@ -33,6 +33,21 @@ or downloading assets during the pause.
 
 ## Initial discovery feed and incremental browsing
 
+### Separate website and model-type filters
+
+Owner requests independent filters for **website/source** and **model type or
+ecosystem**, with examples **MMD, SFM, VRM and GMod**. Let either filter narrow
+the browser on its own, or combine them with each other and the search query.
+Provide an unfiltered/All choice for each group. Apply the selected filters to
+both the discovery feed and targeted search, including subsequent scroll batches.
+
+Keep website identity distinct from model compatibility: a source can host
+multiple types, and one model may support multiple ecosystems. Use available
+listing/format metadata rather than assuming a site's name determines the
+model type. On resume, define classification and verify combined filters,
+clearing filters and pagination reset when filters change. This is recorded
+only; no filtering UI, classification or source queries were implemented.
+
 Owner clarification: when the optional online browser is opened without a
 search query, first show **about 100 model listings**, prioritizing diversity
 and discoverability. This is a combined initial feed, not a request to download
