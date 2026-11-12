@@ -22,6 +22,14 @@ left/right rotation from the current view, with SMH/SFM as owner-provided
 references. Details are in [rotation_gizmo_feedback_2026-11-12.md](rotation_gizmo_feedback_2026-11-12.md).
 This is another deferred request; no implementation or diagnosis has begun.
 
+Additional screenshot feedback: full-area scene setup with optional focused
+camera framing, a possible 3 by 3 guide, rotation gizmos escaping that panel,
+and configurable output resolution with a 1080p default. Timeline-varying
+resolution is an exploratory Advanced idea, not an agreed design or acceptance
+gate. See [viewport_framing_feedback_2026-11-12.md](viewport_framing_feedback_2026-11-12.md).
+The private screenshot copy under `output\owner-feedback-20261112` is retained
+locally and must not be uploaded or deleted as disposable output.
+
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4
 historical backups are dead by owner report; retain their historical checks and
@@ -52,7 +60,9 @@ Next actions:
 1. After the owner resumes work, reproduce and address the November 12 hair and
    accessories report in the linked note, preserving precise single-item edits
    and the useful Advanced workflow. Also reproduce and address the linked
-   rotation-ring direction and camera-facing ring requests. Then resume the full default suite from
+   rotation-ring direction and camera-facing ring requests. Reproduce the linked
+   focus-panel/gizmo bug and review scene-view, framing and resolution requests,
+   keeping the timeline-resolution idea exploratory. Then resume the full default suite from
    stable source. Fix reproducible failures without loosening
    assertions; preserve each failure and rerun the affected scope.
 2. Verify final movie metadata and decoded audio analyses included by the suite.
