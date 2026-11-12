@@ -658,6 +658,14 @@ in [the cleanup receipt](benchmarks/generated_frame_cleanup_2026-11-12.json).
 Those old attempt folders intentionally no longer contain complete PNG sequences;
 fresh wrappers create new ones. Use the retained movies or rerun the saved source.
 
+After remote verification of `0af5d417d00a9053181e2c6b72ba4a07e729c33a`, the
+duplicate native stage `output/sfm-extra-native-inventory/1794519206301446900/stage`
+was removed: **82 files / 62,843,920 bytes**. All 82 hashes were checked against
+the identical private definitions retained at
+`output/sfm-extra-native-inventory/portable-root-639301165838922272/stage` for
+ongoing SFM cases. Original archives, complete/failed metadata, logs and staging
+manifests remain. [Receipt](benchmarks/sfm_native_definition_cleanup_2026-11-12.json).
+
 ## 12. Order of work after an explicit resume
 
 1. Fetch latest repository state and inspect local status; preserve private and

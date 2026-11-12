@@ -66,8 +66,13 @@ Both initial observations, logs and partial outputs remain retained.
 [The compact native inventory](benchmarks/sfm_native_feature_inventory_2026-11-12.json)
 is the repository metadata record. It contains per-model counts/identities, selected native control/rule/
 skin/bodygroup records and preservation details, with no art, raw vertex/delta
-arrays or credentials. The detailed 4.18 MB metadata, full per-model bone/rule lists and all native
-copies remain private under `output/sfm-extra-native-inventory/1794519206301446900`.
+arrays or credentials. Detailed 4.18 MB metadata, full bone/rule lists and failed
+logs remain private under `output/sfm-extra-native-inventory/1794519206301446900`.
+After remote verification, its duplicate `stage` was removed: 82 MDLs / 62,843,920
+bytes. Every file was checked against the identical private copy retained in
+`output/sfm-extra-native-inventory/portable-root-639301165838922272/stage` for
+ongoing feature cases. Original archives remain protected. See the
+[cleanup receipt](benchmarks/sfm_native_definition_cleanup_2026-11-12.json).
 
 This inventory proves the features are present. It does not prove HAS skin
 switching, native shaders, jiggle constraints/solver fidelity, assembly, arbitrary
