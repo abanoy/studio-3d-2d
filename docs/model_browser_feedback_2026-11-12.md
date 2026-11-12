@@ -4,6 +4,14 @@ Recorded November 12, 2026 while implementation remains paused. These are
 owner requests and proposed design safeguards, not implemented adapters,
 validated provider rules or new test results.
 
+After the owner resumed work, the first public-source research pass was saved in
+the [source catalogue](discovery_source_catalogue_2026-11-12.md), with
+[machine-readable records](../data/discovery_sources.json): 12 researched
+directory entries plus the requested, unverified SFMLab link. These are research
+records, not working adapters or verified asset retrieval. The recording-only
+statements below preserve the earlier paused phase; this update adds research,
+without implementing the online browser or downloading models.
+
 The owner subsequently invited an assistant remix. A proposed coherent flow
 and clearly marked additions are in [model_browser_concept_2026-11-12.md](model_browser_concept_2026-11-12.md).
 That invitation authorizes design contributions, not implementation or replacing

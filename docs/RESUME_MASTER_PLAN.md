@@ -267,6 +267,16 @@ scene. A source website is not the same thing as a local directory or compatibil
 
 ### Research a broad international source catalogue
 
+**Resumed research update:** the saved
+[catalogue](discovery_source_catalogue_2026-11-12.md) and
+[structured metadata](../data/discovery_sources.json) now cover 12 researched
+directory entries across Japanese, Chinese, Russian and international sources,
+plus the requested but challenge-blocked SFMLab link. These are research records,
+not working HAS search adapters. Every live-interface test remains false;
+authentication, uncertain metadata and failed access are recorded explicitly.
+Provider integration, multilingual query behavior, feed pagination and the
+Discovery UI remain future implementation work.
+
 On resume, actively research model-directory resources across the internet,
 including **non-English communities**. SFMLabs, BowlRoll and Steam Workshop are
 examples, not the search boundary. Build a saved provider catalogue documenting
@@ -573,6 +583,12 @@ After remote verification of the physics fix, only the disposable
 bytes**. Parent JSON/logs/source receipt remain. Previous scoped cleanup is
 recorded in benchmarks. Do not redo deletion or generalize it to other Studio,
 output, native fixture, review or recovery directories.
+
+After remote verification of `12f5d612f2c748b5ed4dc46878291251ffb836de`, only
+`output/rotation-counterfactual/1794515417597023600/Studio` was removed:
+**1,284 files / 17,967,128 bytes**. Its parent failed/fixed comparison, logs and
+receipts remain, with compact evidence in Git. No private originals were used
+by that counterfactual. Other reviews, recovery and native fixtures are retained.
 
 ## 12. Order of work after an explicit resume
 
