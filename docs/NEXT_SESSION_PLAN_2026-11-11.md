@@ -27,6 +27,9 @@ camera framing, a possible 3 by 3 guide, rotation gizmos escaping that panel,
 and configurable output resolution with a 1080p default. Timeline-varying
 resolution is an exploratory Advanced idea, not an agreed design or acceptance
 gate. See [viewport_framing_feedback_2026-11-12.md](viewport_framing_feedback_2026-11-12.md).
+Owner subsequently clarified a **single-camera view preference**: the current
+arrangement could suit multi-camera use, but favor one main camera view and
+keep multi-camera layouts optional rather than making them the ordinary flow.
 The private screenshot copy under `output\owner-feedback-20261112` is retained
 locally and must not be uploaded or deleted as disposable output.
 

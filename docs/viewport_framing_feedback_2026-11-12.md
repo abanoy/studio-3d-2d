@@ -6,6 +6,13 @@ app launch, reproduction tests or acceptance changes were performed.
 
 ## Scene setup and optional camera focus
 
+Owner clarification: **prefers a single-camera view**. The current arrangement
+could potentially serve a multi-camera layout, but that is not the owner's
+preferred ordinary workspace. Favor one main camera view with the scene-setup
+and framing options below; keep any multi-camera arrangement optional. This
+is a recorded preference, not evidence that a multi-camera feature already
+exists or authorization to implement one during the pause.
+
 The white rectangular frame is useful for composing a specific camera shot,
 camera positions, presets or output formats. While simply arranging the scene,
 the owner wants to use the whole available view to see and edit the scene,
