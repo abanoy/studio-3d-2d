@@ -63,6 +63,11 @@ other relevant aliases. This remains deferred; no listings were fetched.
 Also record separate, combinable **website/source** and **model-type/ecosystem**
 filters (MMD, SFM, VRM, GMod), usable with discovery, search and pagination.
 Details are in the same browser note; this is recording only, not implementation.
+Owner invited an assistant design contribution: see the proposed
+[model-browser remix](model_browser_concept_2026-11-12.md). It adds a local
+shortlist/downloaded-file bridge, correctable search expansions, clear per-card
+actions and calm previews/partial results. These are proposals distinct from
+owner requirements; implementation and the goal remain paused.
 
 The owner is busy and expressly requested no further test/review questions.
 After an explicit resume, continue independent work without prompting. The four checksum-bound November 4

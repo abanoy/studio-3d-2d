@@ -4,6 +4,11 @@ Recorded November 12, 2026 while implementation remains paused. These are
 owner requests and proposed design safeguards, not implemented adapters,
 validated provider rules or new test results.
 
+The owner subsequently invited an assistant remix. A proposed coherent flow
+and clearly marked additions are in [model_browser_concept_2026-11-12.md](model_browser_concept_2026-11-12.md).
+That invitation authorizes design contributions, not implementation or replacing
+the original requests with unreviewed new requirements.
+
 ## Optional online listings browser
 
 - A search box takes a keyword and lists matching models from sites such as
