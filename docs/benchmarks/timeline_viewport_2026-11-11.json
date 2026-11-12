@@ -1,0 +1,66 @@
+{
+  "format": "has_timeline_viewport_verification_1",
+  "date": "2026-11-11",
+  "initial": {
+    "changed_channels": 0,
+    "checks": 36,
+    "failures": 1,
+    "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/object-timing/run_617083",
+    "mean_pixel_error": 0.0,
+    "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/object-timing/run_617083/render_1794448938_4035764_0/movie.mp4",
+    "native_project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/object-timing/run_617083/native-retimed.has",
+    "native_samples": [
+      "pose-smoke/miku-project",
+      "source-smoke/source-project",
+      "sfm-smoke/project"
+    ],
+    "project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/object-timing/run_617083/retimed.has"
+  },
+  "final": {
+    "changed_channels": 0,
+    "checks": 38,
+    "failures": 0,
+    "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/object-timing/run_659694",
+    "mean_pixel_error": 0.0,
+    "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/object-timing/run_659694/render_1794448994_4027765_0/movie.mp4",
+    "native_project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/object-timing/run_659694/native-retimed.has",
+    "native_samples": [
+      "pose-smoke/miku-project",
+      "source-smoke/source-project",
+      "sfm-smoke/project"
+    ],
+    "project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/object-timing/run_659694/retimed.has"
+  },
+  "private_desktop": {
+    "format": "studio_private_desktop_1",
+    "desktop": "HAS_Test_e54c1b64d7274187bf8a60c5472c4148",
+    "desktop_switch_requested": false,
+    "private_window_seen": true,
+    "child_desktop_confirmed": true,
+    "maximum_owned_windows": 9,
+    "foreground_child_observed": false,
+    "exit": 0,
+    "child_pid": 28128,
+    "job_closed": true,
+    "desktop_closed": true,
+    "seconds": 17.909
+  },
+  "initial_aggregate_log_sha256": "96e8cc0e12cef84075187f961551004c70a9dec70c419c97ddee13063b349c7e",
+  "cause": "The row ScrollContainer was scrolled, but its viewport was clipped by the compact outer Timeline dock. The routed click was outside the visible area.",
+  "change": "Reveal the complete track viewport through its ordinary outer ScrollContainer before the row click; assert both viewport visibility and that the click falls inside it.",
+  "preserved": "All original retiming, actual routed selection, native rig, Undo/Redo, source preservation and exact rendered-pixel assertions retained. No app source or tolerance changed.",
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24/1",
+    "frames": 48
+  },
+  "helper_backend": {
+    "command": "python -m unittest discover -s tests -p test_secondary_helpers.py -v",
+    "tests": 20,
+    "failures": 0
+  },
+  "aggregate": "Stopped at object_timing in first run; no full aggregate pass. Restart after this checkpoint.",
+  "acceptance": "55/62 verified; implementation52/54 unchanged. Human review deferred at owner request."
+}
