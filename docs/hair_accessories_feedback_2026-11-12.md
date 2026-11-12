@@ -7,6 +7,14 @@ reproduced findings, implemented changes or new test results.
 
 ## Report and requested behavior
 
+- **Deformation persists after disabling Hair & Cloth:** with a joint configured
+  and enabled, deformation behaves as intended while the feature is on. Turning
+  "Hair & Cloth" off leaves that deformation in place. The owner expects it to
+  return instead of remaining deformed. Record this as a separate toggle-off
+  restoration bug; its cause has not been investigated. On resume, restore the
+  appropriate authored/current-frame pose when removing live simulation offsets,
+  preserving manual posing and any explicitly recorded animation. Do not treat
+  this report as a request to delete saved keys or reset the entire model.
 - **Joint assignment:** some items will not add to joints. Specific target:
   **Bikini Reimu's Back hair**. Investigate this actual case on resume; existing
   helper-generation tests do not establish that this part works.
@@ -39,7 +47,13 @@ reproduced findings, implemented changes or new test results.
 3. Verify Back hair assignment, individual and group edits, and unaffected
    excluded parts. Check Undo/Redo, cancellation, saved/reopened assignments and
    the Advanced workflow as relevant to the changes, using private desktops.
-   Then continue the unfinished aggregate and refresh the separate review.
+4. Reproduce the toggle-off restoration bug: configure a joint, enable Hair &
+   Cloth, allow visible deformation, then disable it and compare with the
+   expected authored pose at the current frame. Check a non-rest manual pose,
+   recorded animation, repeated on/off cycles and re-enabling without accumulated
+   offsets. Preserve configured joints, saved animation and other live physics.
+   No such checks have been run for this report.
+5. Then continue the unfinished aggregate and refresh the separate review.
 
 No implementation, app launch or tests were performed for this report. Ledger
 counts and the incomplete aggregate remain unchanged. Do not request further

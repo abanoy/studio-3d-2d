@@ -11,6 +11,10 @@ joint-assignment problems, especially Bikini Reimu's Back hair, and explicitly
 requested **recording only, with no work yet**. The report and deferred steps
 are in [hair_accessories_feedback_2026-11-12.md](hair_accessories_feedback_2026-11-12.md).
 Keep the pause in effect; previous helper tests do not close these new issues.
+The same note now also records the owner's toggle-off bug: a configured joint
+deforms correctly while Hair & Cloth is on, but the deformation remains after
+switching it off instead of returning. Reproduce and fix on resume, preserving
+authored poses and recorded animation. No investigation has been started.
 
 Further November 12 feedback: invert the affected RGB rotation ring's direction
 (at least the top ring), and add a camera-facing relative rotation ring for
