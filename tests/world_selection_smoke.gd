@@ -153,6 +153,9 @@ func run() -> void:
 		Support.select_rig(app);model_key=Support.key(app,Support.rig(app));app.pose_editor.frame_model();await settled()
 		var native_mask: Image=selection.viewport.get_texture().get_image()
 		var native_point:=id_point(native_mask,selection.color_for(model_key));selection.select_entity("")
+		# Deselect changes the inspector and canvas extent. Click the next displayed
+		# layout, as the generic fixture does, rather than queuing a stale-view pick.
+		await settled()
 		await click(app,native_point)
 		check(native_point.x>=0 and selection.selected==model_key,"GPU picking selects actual native skinned model: "+str(sample.path))
 		var native_id: String=""

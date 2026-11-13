@@ -440,6 +440,29 @@ acceptance gate or a prerequisite for the model browser.
 
 ## 10. Current verification and incomplete acceptance
 
+### Fresh full-run correction — November 13
+
+The first full launcher stopped before tests because its older PowerShell host
+could not load Get-FileHash. The unchanged coordinator then ran under existing
+PowerShell7.6.9 at exacteb7c069 and failed the fresh native MMD picking step;
+947functional hashes/HEAD remained exact. An instrumented replay proves a
+stale synthetic click: native ID/serial/visibility were correct, but deselect
+changed mode/inspector layout from581.3333×327 to595.5555×335 before readback.
+The production view guard correctly rejected it. Test-only use of the existing
+settled() helper before the next click restores41/0on fresh MMD/GMod/SFM
+fixtures, preserving every original predicate and resize/projection guard.
+[Evidence](native_selection_displayed_layout_2026-11-13.md). Full aggregate remains
+unpassed and must restart from the next committed checkpoint.
+
+Read-only Steam inspection found installed SFM/GMod HLMV viewers and42unchanged
+selected files, including SFM's own MDL49-header assets. This is a compatibility
+lead, not a native load/render pass. Official source research confirms historical
+HLMV source distribution but did not retrieve the matching implementation;
+capture controls, registry/profile redirection and arbitrary-bone posing remain
+unverified. Native viewer executables were never launched. Research is saved in
+`experiments/source_appearance/native_oracle_research_20261113`. Do not guess
+flags, patch MDL versions or expose owner preferences just to produce screenshots.
+
 
 ### Main local-wind integration — November 13
 

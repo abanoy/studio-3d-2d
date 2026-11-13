@@ -1,0 +1,319 @@
+{
+  "format": "has_native_selection_displayed_layout_1",
+  "date": "2026-11-13",
+  "base_commit": "eb7c069af72220c26471e7ceaf8b8055c40e6268",
+  "production_changed": false,
+  "full_aggregate": false,
+  "launcher_failure": {
+    "status": "launcher_failed_before_tests",
+    "launch_pid": 2344,
+    "creation_utc": "2026-11-13T06:18:39.2132262Z",
+    "old_host": "powershell.exe",
+    "reason": "Get-FileHash unavailable in that host",
+    "state_file_created": false,
+    "canonical_log_created": false,
+    "tests_started": false,
+    "restart_host": "C:\\Users\\noble\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+    "source_revision": "eb7c069af72220c26471e7ceaf8b8055c40e6268"
+  },
+  "actual_failed_full": {
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 23696,
+      "process_started": "2026-11-13T06:23:41.2114122Z",
+      "started_utc": "2026-11-13T06:23:41.7599074Z",
+      "status": "failed",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T012341190",
+      "source_commit": "eb7c069af72220c26471e7ceaf8b8055c40e6268",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "e65cd66168a6148a8d521e16f46cf02f380ffe9bb93c33e0895b48af5c8e9a49",
+      "suite_exit": 1,
+      "source_unchanged": true,
+      "finished_utc": "2026-11-13T06:27:58.2569593Z"
+    },
+    "source_files": 947,
+    "source_before_sha256": "4319521cbc9800bbb4009b7940de531ed58b9386348f14a2771ca7e2b57403a4",
+    "source_after_sha256": "4319521cbc9800bbb4009b7940de531ed58b9386348f14a2771ca7e2b57403a4",
+    "canonical_log_sha256": "f6eec88c10b3d2d94cd1b2a0d9730fc365690d55459f5926b26b0e824d9e6fe4",
+    "completed_named_core_groups": [],
+    "stopped_at": "world_selection native MMD pick, followed by a secondary invalid pose-tree lookup and watchdog",
+    "all_later_full_groups_unrun": true
+  },
+  "diagnostic": {
+    "exit": 1,
+    "receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_40d74031b94f4c3880530af10902e2f3",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 1,
+      "child_pid": 20148,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 6.045
+    },
+    "original_test_sha256": "50bfc05e049716f77c543426b63a51dc2a4e6c1a00235ebb972d997d5fdee5a9",
+    "diagnostic_sha256": "a10f1fa5e4f6f81ffd87046c842ba2bc31ba9df834005a13b1e6633afbdeafc4",
+    "scope": "Footer/state logging and explicit stop after failed original native pick predicate; no production changes or full-pass claim"
+  },
+  "diagnostic_events": {
+    "NATIVE_PICK_BEFORE_CLEAR": {
+      "actor_visible": true,
+      "mode": 2,
+      "point": "(941.0, 189.0)",
+      "sample": "pose-smoke/miku-project",
+      "selected": "18667465115270085",
+      "view": "[2, false, (581.3333, 327.0), (581.3333, 327.0), [X: (0.943858, 0.0, -0.33035), Y: (-0.061279, 0.982645, -0.175082), Z: (0.324617, 0.185496, 0.927478), O: (0.729119, 1.234714, 2.047884)], 0, 1, 60.0, 1.0, 0.05000000074506, 2000.0, 0.0, 0.0, (0.0, 0.0)]",
+      "actor_state": {
+        "visible": true,
+        "start_frame": 0.0,
+        "draft_frame": 48.0,
+        "visibility_keys": [],
+        "kind": "model"
+      }
+    },
+    "NATIVE_PICK_AFTER_CLEAR": {
+      "mode": 1,
+      "selected": "",
+      "view": "[1, false, (581.3333, 327.0), (581.3333, 327.0), [X: (0.943858, 0.0, -0.33035), Y: (-0.061279, 0.982645, -0.175082), Z: (0.324617, 0.185496, 0.927478), O: (0.729119, 1.234714, 2.047884)], 0, 1, 60.0, 1.0, 0.05000000074506, 2000.0, 0.0, 0.0, (0.0, 0.0)]"
+    },
+    "NATIVE_PICK_PENDING": {
+      "colors": "{ \"18667465115270085\": (0.15, 0.15, 0.15), \"4536916604520422724\": (0.4, 0.15, 0.15), \"3255428408131892568\": (0.65, 0.15, 0.15), \"7301986716768526739\": (0.9, 0.15, 0.15), \"legacy-scene-713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad\": (0.15, 0.4, 0.15) }",
+      "current_view": "[1, false, (595.5555, 335.0), (595.5555, 335.0), [X: (0.943858, 0.0, -0.33035), Y: (-0.061279, 0.982645, -0.175082), Z: (0.324617, 0.185496, 0.927478), O: (0.729119, 1.234714, 2.047884)], 0, 1, 60.0, 1.0, 0.05000000074506, 2000.0, 0.0, 0.0, (0.0, 0.0)]",
+      "exporting": false,
+      "mode": 1,
+      "navigating": false,
+      "pending_button": 0,
+      "pixel": "(0.1451, 0.1451, 0.1451, 1.0)",
+      "playing": false,
+      "request_serial": 54,
+      "same_view": false,
+      "saved_view": "[1, false, (581.3333, 327.0), (581.3333, 327.0), [X: (0.943858, 0.0, -0.33035), Y: (-0.061279, 0.982645, -0.175082), Z: (0.324617, 0.185496, 0.927478), O: (0.729119, 1.234714, 2.047884)], 0, 1, 60.0, 1.0, 0.05000000074506, 2000.0, 0.0, 0.0, (0.0, 0.0)]",
+      "selected": "",
+      "serial": 54
+    },
+    "NATIVE_PICK_AFTER_CLICK": {
+      "expected": "18667465115270085",
+      "mode": 1,
+      "picking": 0,
+      "selected": "",
+      "view": "[1, false, (595.5555, 335.0), (595.5555, 335.0), [X: (0.943858, 0.0, -0.33035), Y: (-0.061279, 0.982645, -0.175082), Z: (0.324617, 0.185496, 0.927478), O: (0.729119, 1.234714, 2.047884)], 0, 1, 60.0, 1.0, 0.05000000074506, 2000.0, 0.0, 0.0, (0.0, 0.0)]"
+    }
+  },
+  "cause": "Synthetic native loop deselected in Pose mode and clicked immediately before the inspector/canvas completed its mode1relayout. Saved extent581.3333x327 changed to595.5555x335 at completion. Same serial and expectedIDpixel, but product correctly rejected stale size. Native asset/bone/visibility were valid.",
+  "fix": "Use existing settled() frame/presentation helper after deselect, as the generic fixture already does, before synthesizing the native-coordinate click. Original41predicates and production stale-view guards remain unchanged.",
+  "corrected_full_selection_replay": {
+    "exit": 0,
+    "command": [
+      "C:\\Program Files\\Python313\\pythonw.exe",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\private_desktop.py",
+      "--receipt",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_selection_smoke_5afad64f49e840a588b46dc99766a0fb.json",
+      "--",
+      "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+      "--path",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+      "--log-file",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world_selection_smoke-engine.log",
+      "--script",
+      "tests/world_selection_smoke.gd",
+      "--"
+    ],
+    "source_sha256": "009b0ec1529bb119fa2ed15c9b689a674922721f65e1c60c9c0506d24cd3c3fa",
+    "result": {
+      "checks": 41,
+      "failures": 0,
+      "final_changed_channels": 0,
+      "final_mean_delta": 0.0,
+      "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-selection/run_824416",
+      "native_projects": [
+        "pose-smoke/miku-project",
+        "source-smoke/source-project",
+        "sfm-smoke/project"
+      ]
+    },
+    "receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_e4b5db56ca324aa8a309bfe489c1538e",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 25296,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.48
+    }
+  },
+  "no_native_art_payload_published": true,
+  "remaining": "Full default aggregate must rerun from a new stable checkpoint. Main Wind845/94and8integration checks remain scoped; native/artist/device/cleaninstall gates are unchanged.",
+  "native_fixture_identity_snapshot_after_replay": {
+    "pose-smoke/miku-project": [
+      {
+        "path": "assets/62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac.glb",
+        "sha256": "62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac",
+        "bytes": 5512,
+        "mtime_ns": 1794450419915443700
+      },
+      {
+        "path": "assets/713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad.glb",
+        "sha256": "713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad",
+        "bytes": 8856,
+        "mtime_ns": 1794450419905410400
+      },
+      {
+        "path": "assets/8d9163c3b11aa52f2b03c75fd82035e21ed9ed6e652aed74868e5e1d0b526973.glb",
+        "sha256": "8d9163c3b11aa52f2b03c75fd82035e21ed9ed6e652aed74868e5e1d0b526973",
+        "bytes": 5512,
+        "mtime_ns": 1794450419917841300
+      },
+      {
+        "path": "assets/b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a.glb",
+        "sha256": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a",
+        "bytes": 1243888,
+        "mtime_ns": 1794448155397079300
+      },
+      {
+        "path": "cels/1794450419900_15494141_20724_9106639956028712506/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794450419997026700
+      },
+      {
+        "path": "cels/1794456265324_14033195_20608_3398401082476348407/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794456265381964200
+      },
+      {
+        "path": "cels/1794458182529_13518280_23108_5508329378005296290/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794458182584645600
+      },
+      {
+        "path": "cels/1794516322677_14277331_21896_6083121561789632847/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794516322746795300
+      },
+      {
+        "path": "cels/1794518028737_15352199_21336_7523929747544649694/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794518028817290000
+      },
+      {
+        "path": "cels/1794518388847_14940590_3332_4051351302344135720/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794518388905376400
+      },
+      {
+        "path": "cels/1794522110399_13760449_24260_7221434323366572385/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794522110455121000
+      },
+      {
+        "path": "cels/1794523328687_14324291_21096_6484764959020412870/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794523328752248000
+      },
+      {
+        "path": "cels/1794537431741_14281051_8840_2617710398683082713/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794537431819091200
+      },
+      {
+        "path": "cels/1794542440938_15452664_17940_7729891225834501347/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794542441006542500
+      },
+      {
+        "path": "cels/1794551163624_15133723_13500_243897470274561241/layer_1_cel_0.png",
+        "sha256": "db61e543f93accf8ba74b569b2ddae0ebace0bafff12f44549828f8a9d6592b2",
+        "bytes": 10795,
+        "mtime_ns": 1794551163685670400
+      },
+      {
+        "path": "project.backup.json",
+        "sha256": "850729366a472cea219c02f8d3a5d0fede6ceb73834b4bfd0d60905171aac459",
+        "bytes": 21119,
+        "mtime_ns": 1794551163827777000
+      },
+      {
+        "path": "project.json",
+        "sha256": "53971d90424428b8c53845c4a9b883c1253c442864b81b72252ff9a62ae8298d",
+        "bytes": 21117,
+        "mtime_ns": 1794551163719312000
+      },
+      {
+        "path": "project.json.lock",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "mtime_ns": 1794448155521900700
+      }
+    ],
+    "source-smoke/source-project": [
+      {
+        "path": "assets/41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089.glb",
+        "sha256": "41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089",
+        "bytes": 7217664,
+        "mtime_ns": 1794448156577975300
+      },
+      {
+        "path": "project.json",
+        "sha256": "bcd814405b817d40cfb9334d60ca29a4c2eaa6f0bd97c93441f4ce51e95ace9c",
+        "bytes": 20646,
+        "mtime_ns": 1794448156606761600
+      },
+      {
+        "path": "project.json.lock",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "mtime_ns": 1794448156755835700
+      }
+    ],
+    "sfm-smoke/project": [
+      {
+        "path": "assets/a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac.glb",
+        "sha256": "a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac",
+        "bytes": 22251392,
+        "mtime_ns": 1794448159559527500
+      },
+      {
+        "path": "project.backup.json",
+        "sha256": "bab5b4dcab0d0328f358d9be7a6a2772f89cc6c5ae7b3b636f4c9043331e09a1",
+        "bytes": 37889,
+        "mtime_ns": 1794451810140338800
+      },
+      {
+        "path": "project.json",
+        "sha256": "08babd48a61b3a3dd3e983391490cf3d7a9623ebd007523afc3eb209dee2b4d4",
+        "bytes": 38714,
+        "mtime_ns": 1794451809914148300
+      },
+      {
+        "path": "project.json.lock",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "mtime_ns": 1794448159732488800
+      }
+    ]
+  }
+}

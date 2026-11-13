@@ -1,0 +1,873 @@
+{
+  "format": "has_installed_native_source_viewer_inventory_1",
+  "created_utc": "2026-11-13T06:22:39.5294947Z",
+  "scope": "Explicit SFM/GMod viewer/compiler and material-system companion metadata only; no launch, extraction, install, Steam write or registry access.",
+  "records": [
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\sfm.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 104960,
+        "mtime_utc": "2026-10-29T20:18:47.3162933Z",
+        "sha256": "8c719e1b1c913695545eddbcd5ebd80f2737702ae1e68e614b0a38472354671c"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\hlmv.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 2437632,
+        "mtime_utc": "2026-10-29T20:17:42.9013261Z",
+        "sha256": "313d4333131f15c751fce9ea5919ff59f6a9b3e4f0c5426a5d05751fa1f655e0"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\hlfaceposer.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 1330688,
+        "mtime_utc": "2026-10-29T20:17:42.9013261Z",
+        "sha256": "3769356d5c7de3fa76cbdf0e60a7ebecce1096450e1b0ba48af8578713f4f2a2"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\studiomdl.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 8249344,
+        "mtime_utc": "2026-10-29T20:17:42.9394838Z",
+        "sha256": "aa30ccdff81d4e292710962cd850f97243b808270c442254b859b252c3208d23"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\sdktemplates\\content\\run_hlmv_template.bat",
+      "exists": true,
+      "identity": {
+        "bytes": 68,
+        "mtime_utc": "2026-10-29T20:17:59.1176727Z",
+        "sha256": "a2aa706403f64fc7c2bad2b7ff38edfee66cc0b3a9f45b0f899139f6c180ead5"
+      },
+      "installed_launch_template": "@\"%bindir%\\hlmv.exe\" -game \"%moddir%\" %1 %2 %3 %4 %5 %6 %7 %8 %9",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod\\gameinfo.txt",
+      "exists": true,
+      "identity": {
+        "bytes": 1573,
+        "mtime_utc": "2026-10-29T20:24:23.8041773Z",
+        "sha256": "6d2c597cd5c74460c9c180d6b5c5fc4367b033337ed1e6a2a45e9d4dc55d6673"
+      },
+      "relevant_configuration_lines": [
+        "game\t\"Source Filmmaker [Beta]\"",
+        "SteamAppId\t\t\t\t1840\t\t// This will mount all the GCFs we need (240=CS:S, 220=HL2).",
+        "ToolsAppId\t\t\t\t1840\t\t// Tools will load this (ie: source SDK caches) to get things like materials\\debug, materials\\editor, etc.",
+        "Game\t\t\t\t|gameinfo_path|.",
+        "Game\t\t\t\ttf_movies",
+        "Game\t\t\t\ttf",
+        "Game\t\t\t\tleft4dead2_movies",
+        "Game\t\t\t\thl2",
+        "Game\t\t\t\tworkshop",
+        "\"Engine\"\t\"SFM\"",
+        "\"ToolsDir\"\t\"../sdktools\"\t// Default Tools path. NOTE: This is relative to the mod path."
+      ],
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies\\gameinfo.txt",
+      "exists": true,
+      "identity": {
+        "bytes": 1696,
+        "mtime_utc": "2026-10-29T20:21:40.1755630Z",
+        "sha256": "b635c9f2d8132dbce1ed626c9f17771209f3eb09a8787a8adbe4791a9b0c8bc6"
+      },
+      "relevant_configuration_lines": [
+        "game\t\"Team Fortress Source\"",
+        "SteamAppId\t\t\t\t1840\t\t// This will mount all the GCFs we need (240=CS:S, 220=HL2).",
+        "ToolsAppId\t\t\t\t1840\t\t// Tools will load this (ie: source SDK caches) to get things like materials\\debug, materials\\editor, etc.",
+        "Game\t\t\t\t|gameinfo_path|.",
+        "Game\t\t\t\ttf",
+        "Game\t\t\t\thl2",
+        "\"Engine\"\t\"SFM\"",
+        "\"ToolsDir\"\t\"../sdktools\"\t// Default Tools path. NOTE: This is relative to the mod path."
+      ],
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf\\gameinfo.txt",
+      "exists": true,
+      "identity": {
+        "bytes": 1684,
+        "mtime_utc": "2026-10-29T20:19:01.9633518Z",
+        "sha256": "07ef2df5e60f3bbf8a20f78ffbdcd4efaed72049cdca21b245bee44affe1d253"
+      },
+      "relevant_configuration_lines": [
+        "game\t\"Team Fortress 2\"",
+        "SteamAppId\t\t\t\t1840\t\t// This will mount all the GCFs we need (240=CS:S, 220=HL2).",
+        "ToolsAppId\t\t\t\t1840\t\t// Tools will load this (ie: source SDK caches) to get things like materials\\debug, materials\\editor, etc.",
+        "Game\t\t\t\t|gameinfo_path|.",
+        "Game\t\t\t\ttf",
+        "Game\t\t\t\t|all_source_engine_paths|hl2",
+        "\"Engine\"\t\"SFM\"",
+        "\"ToolsDir\"\t\"../sdktools\"\t// Default Tools path. NOTE: This is relative to the mod path."
+      ],
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies\\gameinfo.txt",
+      "exists": true,
+      "identity": {
+        "bytes": 1686,
+        "mtime_utc": "2026-10-29T20:18:29.5737476Z",
+        "sha256": "6aca062d3d2ceb52c0054b2786e06d43d8bd45b7a16ceea608520c9ff0b001ef"
+      },
+      "relevant_configuration_lines": [
+        "game\t\"Left 4 Dead 2\"",
+        "SteamAppId\t\t\t\t1840\t\t// This will mount all the GCFs we need (240=CS:S, 220=HL2).",
+        "ToolsAppId\t\t\t\t1840\t\t// Tools will load this (ie: source SDK caches) to get things like materials\\debug, materials\\editor, etc.",
+        "Game\t\t\t\t|gameinfo_path|.",
+        "Game\t\t\t\ttf",
+        "Game\t\t\t\thl2",
+        "\"Engine\"\t\"SFM\"",
+        "\"ToolsDir\"\t\"../sdktools\"\t// Default Tools path. NOTE: This is relative to the mod path."
+      ],
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2\\gameinfo.txt",
+      "exists": true,
+      "identity": {
+        "bytes": 1502,
+        "mtime_utc": "2026-10-29T20:17:57.5952368Z",
+        "sha256": "38627817c38ad74c75efc56c2283a56b7b6f70be1f9447037fe0a662672c3419"
+      },
+      "relevant_configuration_lines": [
+        "game \t\t\"HALF-LIFE 2\"",
+        "SteamAppId\t\t\t\t1840\t\t// This will mount all the GCFs we need (240=CS:S, 220=HL2).",
+        "ToolsAppId\t\t\t\t1840\t\t// Tools will load this (ie: source SDK caches) to get things like materials\\debug, materials\\editor, etc.",
+        "Game\t\t\t\t|gameinfo_path|.",
+        "Game\t\t\t\thl2",
+        "\"Engine\"\t\"SFM\"",
+        "\"ToolsDir\"\t\"../sdktools\"\t// Default Tools path. NOTE: This is relative to the mod path."
+      ],
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\garrysmod\\gameinfo.txt",
+      "exists": true,
+      "identity": {
+        "bytes": 1197,
+        "mtime_utc": "2026-06-16T14:10:48.9131792Z",
+        "sha256": "c616a6f675f69b6fe2d35d5950949a8379b49e4e26c6690ba40c3b33822a7df4"
+      },
+      "relevant_configuration_lines": [
+        "game\t\"Garry's Mod\"",
+        "SteamAppId\t\t\t\t4000",
+        "ToolsAppId\t\t\t\t211",
+        "game+mod\t\t\tgarrysmod/addons/*",
+        "game+mod\t\t\tgarrysmod/garrysmod.vpk",
+        "game\t\t\t\t|all_source_engine_paths|sourceengine/hl2_textures.vpk",
+        "game\t\t\t\t|all_source_engine_paths|sourceengine/hl2_sound_vo_english.vpk",
+        "game\t\t\t\t|all_source_engine_paths|sourceengine/hl2_sound_misc.vpk",
+        "game\t\t\t\t|all_source_engine_paths|sourceengine/hl2_misc.vpk",
+        "platform\t\t\t|all_source_engine_paths|platform/platform_misc.vpk",
+        "mod+mod_write+default_write_path\t\t|gameinfo_path|.",
+        "game+game_write\t\tgarrysmod",
+        "gamebin\t\t\t\tgarrysmod/bin",
+        "game\t\t\t\t|all_source_engine_paths|sourceengine",
+        "platform\t\t\t|all_source_engine_paths|platform",
+        "game+download\t\tgarrysmod/download"
+      ],
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\hlmv.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 1003856,
+        "mtime_utc": "2026-10-29T17:21:24.4336368Z",
+        "sha256": "a5668ee91b6996826632fea061fd43f176e227d56c8fc0e964f4936b2486f6e2"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Model Viewer (Garry's Mod)",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "hlmv.exe",
+        "description": "Model Viewer (Garry's Mod)"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\hlmv.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 1127752,
+        "mtime_utc": "2026-10-29T17:21:24.4618957Z",
+        "sha256": "68ab93356be69724408feafea194afe4705333fb88031e292557584e76182ae3"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Model Viewer (Garry's Mod)",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "hlmv.exe",
+        "description": "Model Viewer (Garry's Mod)"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\hlfaceposer.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 2159440,
+        "mtime_utc": "2026-10-29T17:21:24.4336368Z",
+        "sha256": "e630737af56caf7f0eaaa4e48fbdd17ce23cdceed0e95e74198a5df27ac617ed"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Choreography Editor (Garry's Mod)",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "hlfaceposer.exe",
+        "description": "Choreography Editor (Garry's Mod)"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\studiomdl.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 2298704,
+        "mtime_utc": "2026-11-06T07:20:53.2167030Z",
+        "sha256": "1ce995243ef1c0c840181fde951e54181b6a0d6f99c2f7b96b35ad34b12cc971"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Model Compiler"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\studiomdl.exe",
+      "exists": true,
+      "identity": {
+        "bytes": 2871120,
+        "mtime_utc": "2026-11-06T07:20:53.2316433Z",
+        "sha256": "3bc52aefcf891edde6d6607e438593f9d8a31607f6e40ff6b2c029e4e1863891"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Model Compiler"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\materialsystem.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 1122304,
+        "mtime_utc": "2026-10-29T20:17:42.9069682Z",
+        "sha256": "c78e414891b4d87e3922610a8bf937bca3efbaab95bced488522045998bc87f8"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\shaderapidx9.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 1614336,
+        "mtime_utc": "2026-10-29T20:17:42.9374829Z",
+        "sha256": "07cee65141f5c1cca85a73b25c675ca01c0068cf6e758e49b07e38424ac75baa"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\stdshader_dx9.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 840192,
+        "mtime_utc": "2026-10-29T20:17:42.9374829Z",
+        "sha256": "fb09e2ddc8a99aff4ef31e3fddfdb1ca84d89379336abdab4e76e94adfa7e6f8"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\filesystem_stdio.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 362496,
+        "mtime_utc": "2026-10-29T20:17:42.8983242Z",
+        "sha256": "6fffa2ca69792eab02ea6069448c7c1e81c0c8f389f7d85b984a83963192f88e"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\studiorender.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 622080,
+        "mtime_utc": "2026-10-29T20:17:42.9394838Z",
+        "sha256": "dc7eef7620f2a687c3cdd4182f2f17f0d78890e2748abcbe923b459b5fa340f7"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\datacache.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 273920,
+        "mtime_utc": "2026-10-29T20:17:42.8935738Z",
+        "sha256": "2534c6e8cc5da07f33170f220983f8fd562d2b6fb3316d5d678c2c984d1f6e06"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\tier0.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 256512,
+        "mtime_utc": "2026-10-29T20:17:58.8258586Z",
+        "sha256": "6c05ae3d1f32e9f943b1ad30005f55ae69ddfad2f00f969b11d0c6d9c7356251"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\vstdlib.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 216064,
+        "mtime_utc": "2026-10-29T20:18:00.5766646Z",
+        "sha256": "602233be05e2981d92690f96ba80ef2906de9db42919e384d551ba2760bc27c3"
+      },
+      "version": {
+        "file_version": null,
+        "product_version": null,
+        "product_name": null,
+        "company_name": null,
+        "original_filename": null,
+        "description": null
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\game_shader_generic_garrysmod.dll",
+      "exists": false
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\materialsystem.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 952656,
+        "mtime_utc": "2026-10-29T17:21:24.4351477Z",
+        "sha256": "17f57dd3b2039c2a1043be33b7be900ead20aad2ec1c1aaa9ce2761e9f42073f"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\shaderapidx9.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 717648,
+        "mtime_utc": "2026-10-29T17:21:24.4397292Z",
+        "sha256": "b651f9da9bf4c111995ec2e803784b2b0e58008d4070d8660ebd507044995bf6"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\stdshader_dx9.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 928584,
+        "mtime_utc": "2026-10-29T17:21:24.4427073Z",
+        "sha256": "8f1ffad5e971e6d20069b7112d1fb9409836426dad6255b0b56b554f977b287e"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\filesystem_stdio.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 761680,
+        "mtime_utc": "2026-10-29T17:21:24.4284650Z",
+        "sha256": "4abea0b90be102c7315b802e7c6cd197388e90052fffca8c94392baee89e8550"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\studiorender.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 806224,
+        "mtime_utc": "2026-10-29T17:21:24.4437072Z",
+        "sha256": "e4cab6b768570e2ba773c4d8ea9e7ecb2fdc53051b131515278683a02de0bff7"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\datacache.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 375120,
+        "mtime_utc": "2026-11-06T07:20:53.2120101Z",
+        "sha256": "28a02f8d2d40168ab786d66a0fb1da686c30d92ed155ffb773702940a1c0968f"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\tier0.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 385872,
+        "mtime_utc": "2026-10-02T02:03:08.3248441Z",
+        "sha256": "c8c092b820e85decd9a8fd063b08a85e07329493e5c61007916bd2e72988c94c"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\vstdlib.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 317264,
+        "mtime_utc": "2026-10-29T17:21:24.4517997Z",
+        "sha256": "e6298b874fce8e32f9cb84d7297e12ceaabf880069224cb220afa70b0fbd0b43"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\game_shader_generic_garrysmod.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 407888,
+        "mtime_utc": "2026-10-29T17:21:24.4299722Z",
+        "sha256": "495426bf9eefc2080a236b3d61ee184ce292035b3ce11f3cdaa665460118575e"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x014c",
+      "pe_architecture": "x86",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\materialsystem.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 1161552,
+        "mtime_utc": "2026-10-29T17:21:24.4638969Z",
+        "sha256": "6c9075c5384a1f9b99921928151a1d17b69faa81f1534e8f7c633a30fdb3e1ad"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\shaderapidx9.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 829776,
+        "mtime_utc": "2026-10-29T17:21:24.4679712Z",
+        "sha256": "7534cd56738f3f729dab0b88fce7f5fa224898fc15c28021762f3352643f8ca9"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\stdshader_dx9.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 1098064,
+        "mtime_utc": "2026-10-29T17:21:24.4700508Z",
+        "sha256": "7f28c1c3a62a7ca8956f6c6de9fc0a482bfb02dcc088d222380ac7f9b6d8a747"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\filesystem_stdio.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 970064,
+        "mtime_utc": "2026-10-29T17:21:24.4578957Z",
+        "sha256": "814373ea10b7e4e4f48c1eaf820f35e7fed2a5ef756e77f0fb2d68d1323ce1ad"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\studiorender.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 885584,
+        "mtime_utc": "2026-10-29T17:21:24.4710493Z",
+        "sha256": "1dcb270dc9fa7186acd7ae2f66207416412ba1b7c606d7e65bf923d7152ce4b6"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\datacache.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 510280,
+        "mtime_utc": "2026-11-06T07:20:53.2268625Z",
+        "sha256": "9709a5d350ee1ed3b1025a1434283b18b8d545e97c87386c9a29331dd135317c"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\tier0.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 442192,
+        "mtime_utc": "2026-10-02T02:03:08.3583077Z",
+        "sha256": "ca36907cc304148f6d37024ae321bccfadccca50c59744d5ff7e07f4d7c80277"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\vstdlib.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 433480,
+        "mtime_utc": "2026-10-29T17:21:24.4745605Z",
+        "sha256": "23d8d10e5c168d8215d79654537be8bbbd8b4f861258a505b33e4a1d59070872"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\game_shader_generic_garrysmod.dll",
+      "exists": true,
+      "identity": {
+        "bytes": 424272,
+        "mtime_utc": "2026-10-29T17:21:24.4599076Z",
+        "sha256": "b3772a7b9da0e3a1271252f66f1f550abf7852b057eb6da6818b5075051b7bb3"
+      },
+      "version": {
+        "file_version": "2026.09.16",
+        "product_version": "2026.09.16",
+        "product_name": "Garry's Mod",
+        "company_name": "Facepunch Studios Ltd",
+        "original_filename": "",
+        "description": "Garry's Mod Component"
+      },
+      "pe_machine": "0x8664",
+      "pe_architecture": "x64",
+      "unchanged_read": true
+    }
+  ],
+  "shipped_model_headers": [
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf\\models\\player\\hwm\\scout.mdl",
+      "bytes": 909888,
+      "mtime_utc": "2026-10-29T20:17:51.3320231Z",
+      "identifier": "IDST",
+      "mdl_version": 49,
+      "read_scope": "Only first eight header bytes; no geometry decoded. Shipped file is a compatibility lead, not proof this HLMV can load it."
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2\\models\\alyx.mdl",
+      "bytes": 480624,
+      "mtime_utc": "2026-10-29T20:17:44.1603130Z",
+      "identifier": "IDST",
+      "mdl_version": 49,
+      "read_scope": "Only first eight header bytes; no geometry decoded. Shipped file is a compatibility lead, not proof this HLMV can load it."
+    }
+  ],
+  "viewer_load_render_capture": "UNRUN",
+  "mdl49_viewer_compatibility": "UNVERIFIED",
+  "steam_files_changed": false
+}
