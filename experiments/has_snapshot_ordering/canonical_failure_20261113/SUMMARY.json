@@ -1,0 +1,62 @@
+{
+  "format": "has_windows_save_launch_failure_1",
+  "source_commit": "1236796865e677b150a2d7e2add20f2aac5325fe",
+  "full_status": "failed",
+  "finished_utc": "2026-11-13T20:30:44.2917726Z",
+  "source_files": 967,
+  "source_unchanged": true,
+  "failed_check": "body_animation72/1 VRM0linkedHAS; child creation returned-1 atHasProject.start",
+  "original_windows_error_number": "not exposed by pinnedGodot generic error",
+  "unchanged_focused_retry": {
+    "checks": 72,
+    "unit_checks": 24,
+    "failures": 0,
+    "native_profiles": 5,
+    "movie": "48frames1080p24H264",
+    "status": "scoped pass only; full run staysfailed"
+  },
+  "diagnosis": {
+    "same_process_earlier_saves_passed": true,
+    "bare_python_hint_witnessed": true,
+    "current_directory_race": "inference only; actualheadless240childprobe didnotreproduce",
+    "memory_after_failure": "available5274MiB; committed15.4GB/80.2GBlimit",
+    "focused_godot_sample": {
+      "pid": 22948,
+      "working_set_bytes": 1103237120,
+      "peak_pagefile_kib": 1392684
+    }
+  },
+  "private_receipts": [
+    {
+      "path": "body_animation_smoke_b0d1bb78fde14faf92ca4148627aafa3.json",
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_2434734e61ad43ef8aabe5c1eee35e30",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 1,
+      "child_pid": 8872,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 32.833
+    },
+    {
+      "path": "body_animation_smoke_dd6c1cfbd54c486b82a0ef2eb7d3362c.json",
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_02deaeb75cf54073bff93597a6eea6f1",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 22948,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 33.843
+    }
+  ],
+  "protected_art_uploaded": false
+}

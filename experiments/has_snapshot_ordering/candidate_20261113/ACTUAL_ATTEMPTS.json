@@ -1,0 +1,73 @@
+{
+  "format": "studio_snapshot_ordering_attempts_1",
+  "attempts": [
+    {
+      "run": "1794602791903330600-27680230",
+      "passed": false,
+      "actual": {
+        "actual_thread_and_capture": true,
+        "checks": 31,
+        "failures": 0,
+        "gpu": false,
+        "persistence": "observed inert persist override; existing Storage/app acceptance separate"
+      },
+      "exit": 0,
+      "forbidden_log_lines": [
+        "SCRIPT ERROR: Parse Error: Preload file \"res://src/particle_sprite.gdshader\" does not exist.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "ERROR: Failed to load script \"res://ordering_unit.gd\" with error \"Compilation failed\".",
+        "SCRIPT ERROR: Parse Error: Preload file \"res://src/particle_sprite.gdshader\" does not exist.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "SCRIPT ERROR: Compile Error: Failed to compile depended scripts.",
+        "ERROR: Failed to load script \"res://ordering_unit.gd\" with error \"Compilation failed\"."
+      ]
+    },
+    {
+      "run": "1794602808548787700-3d78d256",
+      "passed": true,
+      "actual": {
+        "actual_thread_and_capture": true,
+        "checks": 31,
+        "failures": 0,
+        "gpu": false,
+        "persistence": "observed inert persist override; existing Storage/app acceptance separate"
+      },
+      "exit": 0,
+      "forbidden_log_lines": []
+    },
+    {
+      "run": "1794602837014647500-ccc3b661",
+      "passed": false,
+      "actual": null,
+      "exit": 1,
+      "forbidden_log_lines": [
+        "SCRIPT ERROR: Parse Error: Cannot call non-static function \"can_instantiate()\" on the class \"res://src/has_project.gd\" directly. Make an instance instead.",
+        "ERROR: Failed to load script \"res://ordering_unit.gd\" with error \"Parse error\".",
+        "SCRIPT ERROR: Parse Error: Cannot call non-static function \"can_instantiate()\" on the class \"res://src/has_project.gd\" directly. Make an instance instead.",
+        "ERROR: Failed to load script \"res://ordering_unit.gd\" with error \"Parse error\"."
+      ]
+    },
+    {
+      "run": "1794602846262952000-64b158a8",
+      "passed": true,
+      "actual": {
+        "actual_thread_and_capture": true,
+        "checks": 32,
+        "failures": 0,
+        "gpu": false,
+        "persistence": "observed inert persist override; existing Storage/app acceptance separate"
+      },
+      "exit": 0,
+      "forbidden_log_lines": []
+    }
+  ],
+  "main_application_acceptance": "UNRUN",
+  "original_failure_cause": "Unknown; no causal relabelling"
+}

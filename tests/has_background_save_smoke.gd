@@ -3,14 +3,22 @@ const Writer=preload("res://src/has_snapshot_writer.gd")
 class HeldWriter extends Writer:
 	var entered:=Semaphore.new()
 	var release:=Semaphore.new()
+	var controller: WeakRef
+	var launched_after_child:=false
+	func launch() -> String:
+		var owner=controller.get_ref()
+		launched_after_child=is_instance_valid(owner) and owner.pid>0 and OS.is_process_running(owner.pid) and has_prepared() and not busy()
+		return super.launch()
 	func persist(project: Dictionary,request: Dictionary) -> String:
 		entered.post()
 		while not release.try_wait() and not FileAccess.file_exists(request.cancel):OS.delay_msec(1)
 		return super.persist(project,request)
+class FailedThreadWriter extends Writer:
+	func _start_thread(_work: Callable) -> Error:return ERR_CANT_CREATE
 func _initialize() -> void:
 	create_timer(180).timeout.connect(func():push_error("Background HAS watchdog");quit(2));call_deferred("run")
 func hold() -> HeldWriter:
-	var worker:=HeldWriter.new();app.has_project.snapshot_writer=worker;return worker
+	var worker:=HeldWriter.new();worker.controller=weakref(app.has_project);app.has_project.snapshot_writer=worker;return worker
 func entered(worker: HeldWriter) -> void:
 	while not worker.entered.try_wait():await process_frame
 	await settled()
@@ -29,6 +37,7 @@ func run() -> void:
 	app.new_project();app.show_project_options();await settled();check(app.project_canvas.apply("540p").is_empty(),"native540snapshot fixture uses ordinary canvas setting");app.project_options.hide();app.mode.select(0);app.change_mode(0);app.set_frame(0);app.create_cel(false);paint(Color.RED);app.palette=[{"name":"Captured","rgba":"ff0000ff"}];app.palette_editor.refresh(true);check(app.import_audio(folder.path_join("tone.wav"),24).is_empty(),"real voice joins independent snapshot pixels")
 	app.has_project.save_file(packed,"packed");await wait_job();check(FileAccess.file_exists(packed) and not app.dirty,"normal initial asynchronous Save finishes through existing PID wait API");var original:=FileAccess.get_sha256(packed);var capture_before: Dictionary=app.video.duplicate(true)
 	paint(Color.BLUE);var worker:=hold();var began:=Time.get_ticks_msec();app.has_project.save_file(packed,"packed");var call_ms:=Time.get_ticks_msec()-began;await entered(worker);var live_pid: int=app.has_project.pid
+	check(worker.launched_after_child,"real packer is alive before the captured snapshot starts its filesystem thread")
 	check(live_pid>0 and OS.is_process_running(live_pid) and app.exporting and app.has_project.progress.visible and not FileAccess.file_exists(app.has_project.pending.snapshot_ready),"real packer waits behind unpublished snapshot while progress stays alive")
 	var counted:=0
 	for n in range(20):await process_frame;counted+=1
@@ -48,6 +57,14 @@ func run() -> void:
 	app.has_project.save_file(folder.path_join("Linked.has"),"linked");await wait_job();check(FileAccess.file_exists(folder.path_join("Linked.has")),"background snapshot publishes required linked audio references")
 	var current:=FileAccess.get_sha256(packed);var old_cache: String=app.has_project.cache_root;var blocked:=folder.path_join("blocked-cache");DirAccess.make_dir_recursive_absolute(blocked.path_join("work_%d/project.json.tmp"%OS.get_process_id()));app.has_project.cache_root=blocked;app.changed();app.has_project.save_file(packed,"packed");await wait_job();app.has_project.cache_root=old_cache
 	check(FileAccess.get_sha256(packed)==current and app.dirty and not app.exporting and not app.has_project.snapshot_writer.busy(),"failed snapshot refuses before packaging and preserves good target")
+	var completions: Array=[]
+	var completed:=func(action: String,success: bool):
+		if action=="pack":completions.append(success)
+	app.has_project.operation_finished.connect(completed)
+	app.has_project.snapshot_writer=FailedThreadWriter.new();app.has_project.save_file(packed,"packed");var failed_pid: int=app.has_project.pid
+	check(failed_pid>0 and app.exporting and FileAccess.file_exists(app.has_project.cancel_path) and not app.has_project.snapshot_writer.busy(),"snapshot thread startup failure keeps the real child pending and publishes cancellation")
+	await wait_job();app.has_project.operation_finished.disconnect(completed)
+	check(completions==[false] and app.has_project.pid<0 and not app.exporting and not OS.is_process_running(failed_pid) and not app.has_project.snapshot_writer.has_prepared() and FileAccess.get_sha256(packed)==current and app.dirty,"failed thread startup drains one child and one failure completion without changing the prior save or dirty edits")
 	# A programmatic context replacement cannot attach a late old save to New.
 	worker=hold();var previous_session: String=app.recovery_session;app.has_project.save_file(folder.path_join("Previous.has"),"packed");await entered(worker);app.exporting=false;app.new_project();var session: String=app.recovery_session;var new_world=app.renderer.world_runtime.root;var status: String=app.status.text;worker.release.post();await wait_job()
 	check(session!=previous_session and app.recovery_session==session and app.renderer.world_runtime.root==new_world and app.has_project.path.is_empty() and not app.dirty,"late previous-document save never attaches identity or clears New state")

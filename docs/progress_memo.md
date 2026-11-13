@@ -14226,3 +14226,56 @@ No artwork, models, projects or media are in that packet. The concrete read-only
 static SFM skin/bodygroup port plan and Junko/Mima/Kanako matrix preserve the wider
 collection reminder without claiming a chooser, assembly or native jiggle port.
 Formal counts remain 55/62 acceptance and 52/54 implementation.
+
+
+## 2026-11-13 — Failed full saved; project worker ordering hardened
+
+Checkpoint1236796865e677b150a2d7e2add20f2aac5325fe was pushed/fetched/ls-remote
+verified. The new full run at output/canonical-owned-20261113T200642700 finished
+FAILED after24m01s, exit1, with all967functional hashes/HEAD unchanged. All36core
+and both wind matrices passed, but BodyAnimation72/1 failed on the finalVRM0
+linkedSave: OS.create_process returned-1 for the Python HAS worker. Prior good
+packed/native inputs stay protected. Do not use the older output/verification.json
+as this failed run's result; the suite never reached its final write.
+
+An unchanged fresh bare-Python focused retry passed24units+72app checks, five native
+profiles plus authored, and48frame1080p24H264. Memory was healthy; no HAS desktops
+remained. The pinned engine message omits GetLastError, so the Windows cause is
+unknown. A real240child absolute-Python headless probe with concurrent directory
+churn, including390-character paths, did NOT reproduce the failure. Preserve
+that negative finding; neither PATH nor CWD is proven as the original cause.
+
+Main now captures detached state with HasSnapshotWriter.prepare, creates the
+actual Python packer, then starts its own filesystem Thread with launch. Legacy
+start still delegates prepare/launch. Request/child failures discard prepared
+state; Thread startup failure after child creation publishes cancellation and
+retains normal pid/progress/exporting ownership until one failed completion.
+This removes an avoidable overlap with our own directory-writing thread. Other
+filesystem threads may still overlap; no universal Windows-race fix is claimed.
+
+Actual main tests pass10legacy writer +32new staged-capture controls,31HAS/16fault
+Python,20writer(original17+3) and5offline cold-reader checks. New real-app checks
+observe a live packer before snapshot launch and force Thread startup failure,
+proving cancellation/drain/singlecompletion/priorgoodfile/dirtyedit preservation.
+The held Save returns in9ms on this small fixture; no new400drawing claim.
+Original24/72native body checks and48frame1080p24movie pass after the change.
+Three graphical jobs closeexit0, and Phase1's94units plus parse preparation pass.
+
+Default verification now registers that whole background-save wrapper, including
+the32new controls, with fresh owned output and private-receipt checks. Its driver
+also pins HYBRID_PYTHON to the already approved absolutePython313 for the next
+canonical run. This is explicit runtime selection, not proof of the old failure's
+cause. One shared HasProject manifest row is updated; old94/845predicates stay.
+
+Retained evidence: experiments/has_snapshot_ordering/{canonical_failure_20261113,
+cwd_probe_20261113,candidate_20261113,main_actual_20261113}; benchmark
+docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json. Candidate harness
+failures stay separate from32/0 and actual app acceptance. No artwork/media upload.
+
+The broader SFM static-choice output-only draft also has82authored Python checks
+and a source review, saved under experiments/source_appearance/static_choice_draft_20261113.
+Its Godot/UI/native conversion/graphics are unparsed/unrun, not main behavior.
+Updated review preparation remains gated on a future passed full+released lease;
+no owner prompt, installation change or review replacement occurred. Formal
+ledger remains55/62acceptance and52/54implementation. Next: commit/push/verify this
+scoped hardening, freeze source and run a completely fresh full default.

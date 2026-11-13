@@ -1,0 +1,129 @@
+{
+  "format": "has_windows_snapshot_launch_order_1",
+  "date": "2026-11-13",
+  "base_commit": "1236796865e677b150a2d7e2add20f2aac5325fe",
+  "source_context": "post-port working main; canonical registration added after standalone background run; same two production bytes in actual background/body runs",
+  "source_files": {
+    "src/has_project.gd": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032",
+    "src/has_snapshot_writer.gd": "61400dfcf743cf4bd1e0d99e3aec7e1c74f05d61108cfa64cf7afe3f7613111f",
+    "tests/has_snapshot_ordering_unit.gd": "1576a3df191b5ea8df83e7c7d3d16ddef879f20046cc0e232f11fe247c809a9d",
+    "tests/has_background_save_smoke.gd": "323828e96f6f74939582d90de2b7ed6209ca05ea095c624dae8787856466d30c",
+    "tests/verify_has_background_save.py": "df5303a778d79995a26cf2eb855239c25cb30cb681b90414180cf519cfb72e5b",
+    "tests/verify.py": "c1246b9e8319d49328e60ec6eba54f8140c56b4dfb810c5817d2fd7ce1c33d61",
+    "tests/wind_review_port_files.json": "c9e8a9443b49617d53d3a70dc9c2ef286a81c1aedf4af850bf70eb5c4aeb6ca8",
+    "experiments/verification_runner/run_canonical_owned.ps1": "6856faad316cc7188abb46a558aea3e0c08e2d409fedf173bf3b55a9a89c6bfa"
+  },
+  "change": "Capture immutable snapshot first; create the actual project Python worker before launching the snapshot filesystem Thread. Preserve old start() and ready-gated packaging, cancellation, dirty-state and backup contracts.",
+  "actual_main_tests": {
+    "background": {
+      "folder": "output/has-background/1794603269822635900",
+      "reports": {
+        "domain": {
+          "checks": 10,
+          "failures": 0
+        },
+        "ordering": {
+          "actual_thread_and_capture": true,
+          "checks": 32,
+          "failures": 0,
+          "gpu": false,
+          "persistence": "observed inert persist override; existing Storage/app acceptance separate"
+        },
+        "test_has_project.py": {
+          "checks": 31,
+          "failures": 0
+        },
+        "test_has_save_faults.py": {
+          "checks": 16,
+          "failures": 0
+        },
+        "writer": {
+          "capture_ms": 0.125,
+          "checks": 20,
+          "failures": 0,
+          "held_call_ms": 9,
+          "worker_ms": 169.742
+        },
+        "reader": {
+          "checks": 5,
+          "failures": 0
+        }
+      },
+      "preservation": {
+        "manual_files_unchanged_in_reader": true,
+        "owned_source_and_writer_cache_offline": true,
+        "frozen_functional_sources": true
+      },
+      "private_receipts": [
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\has_background_save_smoke_151cca1fdf3841e980602ada06d674f5.json",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\has_background_save_smoke_3d43763fc84445c981b85637d966e150.json"
+      ],
+      "old_writer_predicates_retained": 17,
+      "new_writer_predicates": 3
+    },
+    "body": {
+      "folder": "output/body-animation/1794603418479670500",
+      "unit_checks": 24,
+      "app_checks": 72,
+      "failures": 0,
+      "native_profiles": 5,
+      "authored_profile": 1,
+      "movie": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "fps": "24/1",
+        "frames": "48"
+      },
+      "private_receipts": [
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\body_animation_smoke_eebf296ad668411a82ed2e3e11ecb6b1.json"
+      ]
+    },
+    "wind_phase1_headless": {
+      "checks": 94,
+      "failures": 0,
+      "folder": "output/wind-review/headless-1794603436220791800"
+    },
+    "wind_preparation": {
+      "passed": true,
+      "folder": "output/wind-review/prepare-1794603242186233600"
+    }
+  },
+  "failed_full": {
+    "folder": "output/canonical-owned-20261113T200642700",
+    "status": "failed",
+    "suite_exit": 1,
+    "source_unchanged": true,
+    "functional_files": 967,
+    "failed_case": "BodyAnimation72/1, lastVRM0linkedSave child creation returned-1",
+    "exact_windows_error": "not exposed by engine",
+    "unchanged_focused_retry": "24unit+72app pass on same1236 committed source, fresh private folder; doesnotretroactivelypassfull"
+  },
+  "causality": {
+    "observed": "Godot generic child-launch failure; earlier saves in same process passed. Healthy post-failure memory and no retained HAS desktops.",
+    "inference": "SnapshotThread used directory APIs concurrently with child creation. Removing its avoidable overlap is hardening, not proof of original Windows failure cause.",
+    "counterfactual_probe": "Actual240headless absolutePython launches allpass while concurrentDirAccess path churn including390chars. Suspectedrace NOTREPRODUCED; preserved without reinterpretation.",
+    "remaining_limit": "Other recovery/resource/preview filesystem threads may still overlap launch. No universalCWD-race orWindowslaunch guarantee.",
+    "runtime_pin": "Next canonical runner explicitlysetsHYBRID_PYTHON toapprovedabsolutePython313. Thisremovesbare-name variability; notprovenoriginalcause."
+  },
+  "primary_sources": [
+    "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/platform/windows/os_windows.cpp",
+    "https://github.com/godotengine/godot/blob/4.6-stable/drivers/windows/dir_access_windows.cpp",
+    "https://github.com/MicrosoftDocs/sdk-api/blob/docs/sdk-api-src/content/winbase/nf-winbase-setcurrentdirectory.md"
+  ],
+  "evidence": [
+    "experiments/has_snapshot_ordering/canonical_failure_20261113",
+    "experiments/has_snapshot_ordering/cwd_probe_20261113",
+    "experiments/has_snapshot_ordering/candidate_20261113",
+    "experiments/has_snapshot_ordering/main_actual_20261113"
+  ],
+  "large_400_drawing_rerun": "not run inthisincrement; original persistence and large-workload evidence retained separately",
+  "post_fix_complete_canonical": "pending fresh stable committed run",
+  "formal_acceptance_unchanged": {
+    "accepted": 55,
+    "total": 62,
+    "implemented": 52,
+    "implementation_total": 54
+  },
+  "private_art_uploaded": false
+}

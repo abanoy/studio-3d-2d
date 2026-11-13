@@ -112,7 +112,7 @@ func start(request: Dictionary,snapshot_state: Dictionary={}) -> void:
 	_operation_session=app.recovery_session;_operation_recovery_root=app.recovery_root;_operation_owner=app.sequence_editor.active_owner
 	if not snapshot_state.is_empty():
 		request["snapshot_ready"]=prefix+"-snapshot.json"
-		var began:=Time.get_ticks_usec();var why: String=snapshot_writer.start(snapshot_state,{"folder":request.folder,"ready":request.snapshot_ready,"cancel":cancel_path,"origins":origins.duplicate(true)})
+		var began:=Time.get_ticks_usec();var why: String=snapshot_writer.prepare(snapshot_state,{"folder":request.folder,"ready":request.snapshot_ready,"cancel":cancel_path,"origins":origins.duplicate(true)})
 		last_snapshot_capture_ms=(Time.get_ticks_usec()-began)/1000.
 		if not why.is_empty():app.message(why);operation_finished.emit(request.action,false);return
 	var file := FileAccess.open(prefix+".json",FileAccess.WRITE)
@@ -123,6 +123,13 @@ func start(request: Dictionary,snapshot_state: Dictionary={}) -> void:
 	pid = OS.create_process(app.source_import.python(), [ProjectSettings.globalize_path("res://tools/has_project.py"), prefix+".json"], false)
 	if pid < 0:
 		_write_cancel();snapshot_writer.finish();app.message("Cannot start Python project worker");operation_finished.emit(request.action,false);return
+	# The packer already waits for snapshot_ready. Start our directory-writing
+	# Thread only after child creation, removing this avoidable CWD overlap.
+	if not snapshot_state.is_empty():
+		var why: String=snapshot_writer.launch()
+		if not why.is_empty():_snapshot_error=why;_write_cancel();snapshot_writer.finish()
+	# A launch failure keeps this child owned until normal polling observes
+	# cancellation/exit; no orphan or second completion signal is introduced.
 	app.exporting = true
 	progress = Window.new(); progress.title = "Saving .has project" if request.action == "pack" else "Opening .has project"
 	progress.transient = true; progress.exclusive = true; progress.close_requested.connect(cancel)
@@ -242,5 +249,6 @@ func _finish_open(result: Dictionary) -> void:
 	operation_finished.emit(pending.action,true)
 
 func _exit_tree() -> void:
+	snapshot_writer.discard_prepared()
 	if project_loader.busy():_write_cancel();project_loader.finish()
 	if snapshot_writer.busy():_write_cancel();snapshot_writer.finish()

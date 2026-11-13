@@ -1,0 +1,45 @@
+{
+  "format": "has_external_review_coordinator_readonly_audit_1",
+  "source": "output\\helper-review-package-prep-20261113\\execute_after_full.py",
+  "source_sha256": "a88d457bfbfa2ae413fff65503d94e67b2b81afd56fe61b68f5af4effb874329",
+  "source_bytes": 23985,
+  "review_type": "static read-only source review; no product/runtime/Godot/GPU/build/copy execution",
+  "addressed_findings": [
+    {
+      "priority": "P2",
+      "title": "Restore aggregate final-package preservation check",
+      "initial_lines": [
+        187,
+        195,
+        211,
+        217
+      ],
+      "reason": "Per-case package comparison alone did not detect a later case changing a previously replayed final HAS. The original main verifier also checks all packages at run end.",
+      "resolution": "Final six-package hash/size/nsmtime baseline is now captured after copy/readback and written to evidence; all_final_packages_unchanged finally gate and final after/error evidence are included in pass admission.",
+      "observed_resolution_lines": [
+        164,
+        165,
+        219,
+        225,
+        232,
+        233
+      ]
+    }
+  ],
+  "unresolved_clear_blockers": [],
+  "reviewed_scope": [
+    "Explicit fresh external named final path and separate checkout/output evidence scope; unchanged main verifier guards.",
+    "Exact committed builder/GDScript/pure comparison functions, normal scene startup, requested final runner root and approved engine/private wrapper.",
+    "Relative project/Studio/SourceIO BAT paths with approved absolute Python/Godot/FFmpeg and retained SourceIO license/file map.",
+    "Source/runtime/original-review before/after gates, per-case saved-state/cache/profile checks, 129 expected predicates and private exit0/closure checks.",
+    "Full canonical terminal/release-state binding and conservative synchronized native coordinator absence probe.",
+    "Data-only bounded archive payload CRC/SHA readback and exact package copy checks.",
+    "Explicit startup/replay completion markers and finally hash/size/nsmtime preservation of core harness, own coordinator, template and prepared input/runtime indexes."
+  ],
+  "limitations": [
+    "The execution path remains unrun until root releases the canonical graphics lease.",
+    "This is not a claim that the external relocated copy is already built or usable.",
+    "Actual runtime/profile/file-API behavior and every replay predicate still require the prepared execution.",
+    "Artist/source fidelity, learner/device observations and clean installation remain separate."
+  ]
+}

@@ -1,0 +1,2872 @@
+{
+  ".gitignore": {
+    "bytes": 1404,
+    "mtime_ns": 1794287744389151800,
+    "sha256": "afe972f4043639935eafdc53076d5f583d064426b6bc6bf5bcb8856d2ed17c3b"
+  },
+  "__init__.py": {
+    "bytes": 1406,
+    "mtime_ns": 1794287744392150300,
+    "sha256": "4693edee91a621e43c0524ee0437774d6a3039f270089967306104ba560e9225"
+  },
+  "blender_bindings/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744392655300,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "blender_bindings/assets/source2_materials.blend": {
+    "bytes": 2025829,
+    "mtime_ns": 1794287744398681600,
+    "sha256": "6cc068799f3a5f518e7d63f8a4a96bd4082be5238bd08f1415120953414ead41"
+  },
+  "blender_bindings/assets/source2_materials_5_0.blend": {
+    "bytes": 287611,
+    "mtime_ns": 1794287744400682200,
+    "sha256": "57ac17c1d9b5e06780dbd40949ea46e83e88448d4667e5f63f84d15881737a1d"
+  },
+  "blender_bindings/assets/sycreation-s-default.blend": {
+    "bytes": 7316331,
+    "mtime_ns": 1794287744420458800,
+    "sha256": "e90765d52aef9847d9645366b20a41fce8af77bf5f7f954926d44e7e1a1f30da"
+  },
+  "blender_bindings/attributes/__init__.py": {
+    "bytes": 1691,
+    "mtime_ns": 1794287744421447300,
+    "sha256": "1b916c381fd72abb635946d6e6ec08576ab3b89986b1ffb94170dd5b79b8ec69"
+  },
+  "blender_bindings/bindings.py": {
+    "bytes": 9814,
+    "mtime_ns": 1794287744422447500,
+    "sha256": "216ac5891226de356276833724405339dfae901a8d98fd877852138f6ade4544"
+  },
+  "blender_bindings/bridge/source2_bridge.py": {
+    "bytes": 1335,
+    "mtime_ns": 1794287744424959900,
+    "sha256": "b748a1b4e75d0ccd6260232bd23e88cad97b7256ff34a1c165e9a7434cf2a87a"
+  },
+  "blender_bindings/goldsrc/bsp/entity_handlers.py": {
+    "bytes": 14959,
+    "mtime_ns": 1794287744425959400,
+    "sha256": "1d6f43408e4bd0ddef7b54027199afd05f66a08c291f1c1b82bd9c44f26e2d11"
+  },
+  "blender_bindings/goldsrc/bsp/import_bsp.py": {
+    "bytes": 27674,
+    "mtime_ns": 1794287744425959400,
+    "sha256": "7e9666323034b73884205eaafa9a52076351c78437823634703cbf689423e50c"
+  },
+  "blender_bindings/icons/bsp_icon.png": {
+    "bytes": 1655,
+    "mtime_ns": 1794287744426984300,
+    "sha256": "4d95c58fe61ae92ec1d56a06fa056b064ffc5a39a8a614de8f1e800679f6f8bf"
+  },
+  "blender_bindings/icons/crowbar_icon.png": {
+    "bytes": 1682,
+    "mtime_ns": 1794287744426984300,
+    "sha256": "e1fc249b7b6d471548b0ff5777e49ca7120953107d290a7b4638a8ab210a6b3c"
+  },
+  "blender_bindings/icons/model_doc_icon.png": {
+    "bytes": 2062,
+    "mtime_ns": 1794287744427985300,
+    "sha256": "05c8e7eeaef00d3b4f477f04e5e5b7b592e3d6a1ce18d2ea6bd8e42a7b351a8c"
+  },
+  "blender_bindings/icons/sourceio_icon.png": {
+    "bytes": 1678,
+    "mtime_ns": 1794287744429388500,
+    "sha256": "a2300165dc8e8baa6ff8c67f60339156922c87cbc0c7d3f41957812913c6345b"
+  },
+  "blender_bindings/icons/vmat_icon.png": {
+    "bytes": 2364,
+    "mtime_ns": 1794287744429388500,
+    "sha256": "69f6634aca51c02fcfe0fa9f37618ece856ecfc32e21d262342698338e60ee2d"
+  },
+  "blender_bindings/icons/vmt_icon.png": {
+    "bytes": 173,
+    "mtime_ns": 1794287744430388200,
+    "sha256": "bbe18d037a71ae306b29e95cd5e4d8c51a7118779195cba32abae6681dd77fe3"
+  },
+  "blender_bindings/icons/vtex_icon.png": {
+    "bytes": 1901,
+    "mtime_ns": 1794287744430388200,
+    "sha256": "b5eaffee214592303ac7670f8a7c0f9735d409042f2c0b8c1b4cea1cacec271b"
+  },
+  "blender_bindings/icons/vtf_icon.png": {
+    "bytes": 1745,
+    "mtime_ns": 1794287744431388500,
+    "sha256": "b8106321d133b3bdf423b1bf1bdded0e3fc304573b639f669c13954cd93f5321"
+  },
+  "blender_bindings/icons/vwrld_icon.png": {
+    "bytes": 3768,
+    "mtime_ns": 1794287744431388500,
+    "sha256": "a546cc47762a8abc8b85381c021efb5af5d029d0282f83bd85b89496ffa3d20f"
+  },
+  "blender_bindings/material_loader/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744432388700,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "blender_bindings/material_loader/material_loader.py": {
+    "bytes": 6310,
+    "mtime_ns": 1794287744433387400,
+    "sha256": "834a75b90dc1c0626386d81d8fefa54e40aa1579bef83c4e7bdc747fda595ba2"
+  },
+  "blender_bindings/material_loader/node_arranger.py": {
+    "bytes": 5510,
+    "mtime_ns": 1794287744433387400,
+    "sha256": "ec8ef97771bf016b974e16115df8ca71ed09cd9fbd210a8ba85fef0898b657ca"
+  },
+  "blender_bindings/material_loader/shader_base.py": {
+    "bytes": 21747,
+    "mtime_ns": 1794287744434433100,
+    "sha256": "7072f88bec22be0045ecbe58b094b7716fdf5cf725c958cac6752802dc77f00e"
+  },
+  "blender_bindings/material_loader/shaders/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744435938800,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "blender_bindings/material_loader/shaders/debug_material.py": {
+    "bytes": 1626,
+    "mtime_ns": 1794287744435938800,
+    "sha256": "c4d180ff7d81531eec8bff7e5a29ba2d50fc950aa7e221173443733c9a2d0b34"
+  },
+  "blender_bindings/material_loader/shaders/goldsrc_shader_base.py": {
+    "bytes": 2856,
+    "mtime_ns": 1794287744436944900,
+    "sha256": "afc8cabf2a9c9702c956bbf9b50ceca03ead25afaa76f204961f880d3267b9f5"
+  },
+  "blender_bindings/material_loader/shaders/goldsrc_shaders/__init__.py": {
+    "bytes": 28,
+    "mtime_ns": 1794287744437950300,
+    "sha256": "57655b94fdf6502b651d0c3fddf95ed88f8e3baa2a8be7ed936ece740c23b872"
+  },
+  "blender_bindings/material_loader/shaders/goldsrc_shaders/goldsrc_shader.py": {
+    "bytes": 2453,
+    "mtime_ns": 1794287744438949900,
+    "sha256": "4630af19090bbf245ec5cfb61ee68787fea663a4d0152e2a8394ac658ab05067"
+  },
+  "blender_bindings/material_loader/shaders/goldsrc_shaders/goldsrc_shader_mode1.py": {
+    "bytes": 3013,
+    "mtime_ns": 1794287744440950000,
+    "sha256": "122ddd3aa1dab05f5a48db8897822e61beb99eb30e2517028fca8b59dbd65b36"
+  },
+  "blender_bindings/material_loader/shaders/goldsrc_shaders/goldsrc_shader_mode2.py": {
+    "bytes": 2830,
+    "mtime_ns": 1794287744442953800,
+    "sha256": "505b7d10ffb7abe6c6ac5e2fa1bb857e587a40cff99e28c694a88a45a0c17279"
+  },
+  "blender_bindings/material_loader/shaders/goldsrc_shaders/goldsrc_shader_mode5.py": {
+    "bytes": 2269,
+    "mtime_ns": 1794287744442953800,
+    "sha256": "61dfbce12f2dec764a182a49058c80980649220bf261744c030055527daa8f50"
+  },
+  "blender_bindings/material_loader/shaders/idtech3/idtech3.py": {
+    "bytes": 19421,
+    "mtime_ns": 1794287744444458700,
+    "sha256": "5d2f9afe6126c19c2690368355de45914e91654fea435b5371bb6cf6ccb6db64"
+  },
+  "blender_bindings/material_loader/shaders/source1_shader_base.py": {
+    "bytes": 7257,
+    "mtime_ns": 1794287744444458700,
+    "sha256": "2ee09ba3607ad8ff55c935391cb70d8018f3423d695c4c298b123dd2ef040164"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/__init__.py": {
+    "bytes": 339,
+    "mtime_ns": 1794287744445974600,
+    "sha256": "96dca96e622579456501ccb110ecb1a473d4014388cd7bf723c16cdbaf57ecc0"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/cable.py": {
+    "bytes": 2168,
+    "mtime_ns": 1794287744446980600,
+    "sha256": "1eb23c8503f4dac87bc5fb05418615b82a9dfab196b1a26aabc32b4635d45616"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/decalmodulate.py": {
+    "bytes": 2264,
+    "mtime_ns": 1794287744446980600,
+    "sha256": "8af58d14997a5ae9b1fd87156b6335a883f5618229a9fead6c6661077261a1ca"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/detail.py": {
+    "bytes": 12323,
+    "mtime_ns": 1794287744447980500,
+    "sha256": "bd6ee4c38dacaddc043b7aa45eacdd22efbbc093b5f4d3d0c8394c4d3fa9544f"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/eyerefract.py": {
+    "bytes": 5380,
+    "mtime_ns": 1794287744447980500,
+    "sha256": "94362127c63c1345b4cb59f7a36393125f7524f704d5c85a2f96817c3c0a8d4a"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/eyes.py": {
+    "bytes": 2394,
+    "mtime_ns": 1794287744448979700,
+    "sha256": "3b940ddf80529fe7d3057db592fea334dae199bd6e525044876865b654dd4e6a"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/heroes_armor.py": {
+    "bytes": 16448,
+    "mtime_ns": 1794287744448979700,
+    "sha256": "7c2d7bd284cf28b65b6806169b488101b83457ea157d3ded5edd033f2b0ebbe5"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/heroes_faceskin.py": {
+    "bytes": 195,
+    "mtime_ns": 1794287744449980000,
+    "sha256": "a2e3fb92a982bb8b494be86b30010e89db3b92a673186385b91448cd63d39c28"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/heroes_hair.py": {
+    "bytes": 284,
+    "mtime_ns": 1794287744450980500,
+    "sha256": "aaab5d82e1048f76dc8db7a61a944686cdd6d9cd2079c8bd3bd6b8c56d67c4b2"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/heroes_pbs.py": {
+    "bytes": 271,
+    "mtime_ns": 1794287744451980900,
+    "sha256": "622e73c5404e2607367cb1da5b7867ba2568559318baa6f65d0dbf50fb87b32a"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/infected.py": {
+    "bytes": 20144,
+    "mtime_ns": 1794287744451980900,
+    "sha256": "e4581a2dd49788bb295439fcb69d080a3b772c8c8532ef9c4ffc61e6ba981162"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/lightmap_generic.py": {
+    "bytes": 26880,
+    "mtime_ns": 1794287744452980900,
+    "sha256": "452df30d2b126152394ee50e5652a328d5c4d1fe0616d72697dc5bfd3b64b49f"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/lightmapped_4wayblend.py": {
+    "bytes": 33521,
+    "mtime_ns": 1794287744453978700,
+    "sha256": "7f0d47f96e5ba945be0ee2def6cca1a1f7f0bb072dad843736546a5a94d75afc"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/modulate.py": {
+    "bytes": 3753,
+    "mtime_ns": 1794287744453978700,
+    "sha256": "9f256d485d04598ceb0ed7f35503967dd1eb8a0fc60e91447c3deb644c2aa59c"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/pbr.py": {
+    "bytes": 5291,
+    "mtime_ns": 1794287744455087700,
+    "sha256": "f40d78fce28bcded660d11b749e545f0a7551d1dc9148693636bfb309abd90e8"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/refract.py": {
+    "bytes": 4235,
+    "mtime_ns": 1794287744455087700,
+    "sha256": "8508c4d2bfaeb72f0ac066d0e8c81bd4fe0d74a340a38fa5721e3e27d61b45ca"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/sky.py": {
+    "bytes": 1800,
+    "mtime_ns": 1794287744456087400,
+    "sha256": "835b2f674e484869c20baa2aa3276dc680cace50da499f893e42cc8920dc459c"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/teeth.py": {
+    "bytes": 1059,
+    "mtime_ns": 1794287744456087400,
+    "sha256": "5548f23bcded4f4e8aec04b0dffde284ade96a53a3e6f1fa98419b1b37362643"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/unlit_generic.py": {
+    "bytes": 7190,
+    "mtime_ns": 1794287744457115200,
+    "sha256": "77dbf89347343b170f966e11ffc20e6d00af6d6850bd4b38b648186785629b84"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/unlittwotexture.py": {
+    "bytes": 6785,
+    "mtime_ns": 1794287744458114400,
+    "sha256": "1d2e99163abe65cb48be4809aa9bd0da65e235926c4109daa280ed6390e9ecc5"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/vertexlit_generic.py": {
+    "bytes": 38986,
+    "mtime_ns": 1794287744458114400,
+    "sha256": "ae100cbaa481d4a512d25e09663c9f17174302a02bb71cf0a4631c6838a79919"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/water.py": {
+    "bytes": 29709,
+    "mtime_ns": 1794287744458114400,
+    "sha256": "f74e31bd8dca0e560f06e48bb06eae001fa0615bdcc19abeab2191cd2a7d1e14"
+  },
+  "blender_bindings/material_loader/shaders/source1_shaders/worldvertextransition.py": {
+    "bytes": 441,
+    "mtime_ns": 1794287744459620600,
+    "sha256": "3d8d735c7674fc0c69ac556ce1569e45a00ef2f77ddcb672977b30abd9764932"
+  },
+  "blender_bindings/material_loader/shaders/source2_shader_base.py": {
+    "bytes": 8392,
+    "mtime_ns": 1794287744459620600,
+    "sha256": "49da69f15e14bd77ba79dfb31a5a6eb85a114eb1a3dedaf05e45d7e32c28805d"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/__init__.py": {
+    "bytes": 593,
+    "mtime_ns": 1794287744460627400,
+    "sha256": "162ac5e496ecdb864d014783ef9241c879f551f83c15b390754e848ab5f3ee7f"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/blend.py": {
+    "bytes": 8686,
+    "mtime_ns": 1794287744460627400,
+    "sha256": "7975595f454f6776643427ccfe0cd6611265c57bb28743f618f4155a872c9722"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/citadel_overlay.py": {
+    "bytes": 4150,
+    "mtime_ns": 1794287744461647300,
+    "sha256": "3e76f84898c5bf5f6e80f138a178a9fc84eb4aa64d9e983056053452ef1723d8"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/complex.py": {
+    "bytes": 93,
+    "mtime_ns": 1794287744462655000,
+    "sha256": "6dceb6fe294ba485b92f291790b2b1c41519aef50823b7402fd2b0d088254343"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_black_unlit.py": {
+    "bytes": 933,
+    "mtime_ns": 1794287744462655000,
+    "sha256": "65bccffe608ddb359dd2cd3eae40ff1da91b2f54d920a2819afd84e0d5f9b93e"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_complex.py": {
+    "bytes": 6250,
+    "mtime_ns": 1794287744464160700,
+    "sha256": "c1ab72657b66209d2d6aa95739be31f3346836cb74349102ec16e2aa9ceca742"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_effects.py": {
+    "bytes": 7910,
+    "mtime_ns": 1794287744465156800,
+    "sha256": "e39bfcd9043633276d20f36ba7d159d1509b76f0b1ee2b22c20a5e98802eec4d"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_environment.py": {
+    "bytes": 2637,
+    "mtime_ns": 1794287744465663000,
+    "sha256": "d004ef987d0a2b0e836ff366823b94cb6d3b028aba44b97737069815025d2a1d"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_environment_blend.py": {
+    "bytes": 5748,
+    "mtime_ns": 1794287744466169300,
+    "sha256": "116ba76d07fcb9174bd20f27ec9d678c86812fae927c3eebebe8204415164189"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_foliage.py": {
+    "bytes": 2456,
+    "mtime_ns": 1794287744466169300,
+    "sha256": "d1613cbd1ff3c6ae434a6e11958b890b7ad98cde8722ea0a8cc1083954dd40af"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_glass.py": {
+    "bytes": 1950,
+    "mtime_ns": 1794287744467177500,
+    "sha256": "88c180f4054579277e5cd8fd136b27e88585ab4818547c1f4cabea13e8defe43"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_lightmappedgeneric.py": {
+    "bytes": 4172,
+    "mtime_ns": 1794287744467177500,
+    "sha256": "8fec812714d82d25a8483e40c4f630eaa21bb0ff96b0819d2f6cb3c9865ca3f8"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_static_overlay.py": {
+    "bytes": 7068,
+    "mtime_ns": 1794287744468177700,
+    "sha256": "32eb466f67cc7c456450d1f8e7e916200a67fb116aeb7d35329c453413de298f"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_unlitgeneric.py": {
+    "bytes": 3454,
+    "mtime_ns": 1794287744468177700,
+    "sha256": "6c94d3b0bc6e9f0820005948e9ef25e64b4b1f89d49113980731f20e90ffa2bc"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_vertexlitgeneric.py": {
+    "bytes": 7318,
+    "mtime_ns": 1794287744469684300,
+    "sha256": "1d842d72c352aedd4da8c52cee4fcb0de19c68452e7cc64fb7b072c87c4d97db"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/csgo_weapon.py": {
+    "bytes": 2281,
+    "mtime_ns": 1794287744469684300,
+    "sha256": "cfb17ff1cf34dbdbd24db5cd02a4a1d59da030c9b743834521bc8590829bc79a"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/dummy.py": {
+    "bytes": 2065,
+    "mtime_ns": 1794287744470690800,
+    "sha256": "c1959fd579d2acf2df55fcffdd76c0aa2edf13a3cbe87de8b3d3db6ea1c48d18"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/environment_blend.py": {
+    "bytes": 32657,
+    "mtime_ns": 1794287744471690400,
+    "sha256": "f6354e6ade54e766b0b6b5026fa2f8374d81116f3ee1bcc2101b71ddb0e75a1d"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/environment_layer.py": {
+    "bytes": 4391,
+    "mtime_ns": 1794287744471690400,
+    "sha256": "b1a994bdcddb1e8f709cd2d5d01cff06ed1869fbd3677394015a9487e3a4b5a0"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/eyeball.py": {
+    "bytes": 93,
+    "mtime_ns": 1794287744472690000,
+    "sha256": "3efefaa4bc49ebe3ec5ab25c4e981bd44fa586fcf3bbd146317e5e35422e105e"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/generic.py": {
+    "bytes": 5493,
+    "mtime_ns": 1794287744472690000,
+    "sha256": "b5ab339a53c4c5c716eff7433b8df278f55e1923b64c8ee4fe3522be56f06025"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/hero.py": {
+    "bytes": 7456,
+    "mtime_ns": 1794287744474197500,
+    "sha256": "86098d6b3d025635dc877ada6bf458fc62047a51d6d6a118495390ce3d27f4c6"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/pbr.py": {
+    "bytes": 9994,
+    "mtime_ns": 1794287744474197500,
+    "sha256": "27acd98d4dbcd812664c8d887a4897807e4d233ed1926af0aa697a0689a9ebf7"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/simple.py": {
+    "bytes": 88,
+    "mtime_ns": 1794287744475719000,
+    "sha256": "34e8e9a5a2fe65e125cb72e9e3c9f13c57de9fd42046b345302b7b6edbc1e548"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/sky.py": {
+    "bytes": 3815,
+    "mtime_ns": 1794287744475719000,
+    "sha256": "b39808ad7e383f15474d426cd1f17092d508a7c643db601c48860bb6df94f122"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/static_overlay.py": {
+    "bytes": 106,
+    "mtime_ns": 1794287744475719000,
+    "sha256": "210e364dc58d2802289af263d101c8c258545381deb69580c616bec6201de49a"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/vr_bloody_simple.py": {
+    "bytes": 231,
+    "mtime_ns": 1794287744475719000,
+    "sha256": "2625c6a123f91184418ca5bf310ebfd5d6214e0d93d69c32d7d13b54768d3690"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/vr_complex.py": {
+    "bytes": 10073,
+    "mtime_ns": 1794287744477233700,
+    "sha256": "e1f1dd39d7aee85c28f0e60317eff57637ea6999193656861def4e866bdc1cd8"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/vr_eyeball.py": {
+    "bytes": 5864,
+    "mtime_ns": 1794287744477233700,
+    "sha256": "9c0d79caaa6aa77e88a20e68f9820347ee006135d6daa9bde44cef2604d348a8"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/vr_generic.py": {
+    "bytes": 5365,
+    "mtime_ns": 1794287744478239600,
+    "sha256": "79464f34b0c07831847bc01a68da64c0ebc5da53366ef5a2d64184ee5f55926f"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/vr_glass.py": {
+    "bytes": 7524,
+    "mtime_ns": 1794287744478239600,
+    "sha256": "002f21d11e738ddbaff30badfe8ae29de3b9fac6ea747c65bce1779913a6b039"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/vr_simple.py": {
+    "bytes": 11559,
+    "mtime_ns": 1794287744479274300,
+    "sha256": "4978c93df4cb1374a24c46407049e3b74ceded339c09dcc301f7da7f41c0004f"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/vr_simple_2way_blend.py": {
+    "bytes": 194,
+    "mtime_ns": 1794287744480276800,
+    "sha256": "cbad91cf2f30de9f5835408d60e88362796615946afc6d9fc0efb22c18568d8f"
+  },
+  "blender_bindings/material_loader/shaders/source2_shaders/vr_skin.py": {
+    "bytes": 4033,
+    "mtime_ns": 1794287744480276800,
+    "sha256": "7e5bab61a6961b9d15ea30db363c6ed010b87e371f59973f4787ece79f476564"
+  },
+  "blender_bindings/models/__init__.py": {
+    "bytes": 1578,
+    "mtime_ns": 1794287744481371200,
+    "sha256": "241eab1a52fbcd93e22281e65712d9998b2cf7d5eece6139775e14284988c6c2"
+  },
+  "blender_bindings/models/common.py": {
+    "bytes": 23149,
+    "mtime_ns": 1794287744482371400,
+    "sha256": "2522f2a451f082edcfcf66c3b445782716e24feb45f8b43d5d6e459f6408f750"
+  },
+  "blender_bindings/models/glm2_6/__init__.py": {
+    "bytes": 706,
+    "mtime_ns": 1794287744483370900,
+    "sha256": "78f6ca9984e4314d98b80dafef1b737ae11a30799e6e5070b858e93a4a2c7f8c"
+  },
+  "blender_bindings/models/glm2_6/import_glm.py": {
+    "bytes": 4856,
+    "mtime_ns": 1794287744483370900,
+    "sha256": "572f8ccd10104bc9eb44eae01b246cd2625ee78b70d7bdff31fd9024ef83fa20"
+  },
+  "blender_bindings/models/import_animations.py": {
+    "bytes": 6762,
+    "mtime_ns": 1794287744483370900,
+    "sha256": "ac7afa03029c9cf90eb6363b7dc14a96a944e5fcf8cc376914389ad01b059e9f"
+  },
+  "blender_bindings/models/materials.py": {
+    "bytes": 1940,
+    "mtime_ns": 1794287744484370200,
+    "sha256": "d0ef0bb1fa338d59b481fd1e12f607feab66606b21ab5d3be53233e734602979"
+  },
+  "blender_bindings/models/md3_15/__init__.py": {
+    "bytes": 4365,
+    "mtime_ns": 1794287744486911300,
+    "sha256": "5a3afc99a61150b2ed2a14018618438ac5f7f007b352d12aa12e63c092bf48f1"
+  },
+  "blender_bindings/models/mdl10/__init__.py": {
+    "bytes": 809,
+    "mtime_ns": 1794287744487908700,
+    "sha256": "8704b55552bf7c6a2c65563e9584f2c5956cd44165bec9972a95b23aad349c6a"
+  },
+  "blender_bindings/models/mdl10/import_mdl.py": {
+    "bytes": 16921,
+    "mtime_ns": 1794287744488906900,
+    "sha256": "11ec2f867ba56ff9bf2f94815200b531d01eefa0341285b191253f1b12e3977f"
+  },
+  "blender_bindings/models/mdl2531/__init__.py": {
+    "bytes": 2309,
+    "mtime_ns": 1794287744488906900,
+    "sha256": "9ff99424b5080927be940d2d42a367150ec3200686c0bb27badf8b22cd715002"
+  },
+  "blender_bindings/models/mdl2531/import_mdl.py": {
+    "bytes": 13379,
+    "mtime_ns": 1794287744489909500,
+    "sha256": "644c7c78243fb42b920858c5dffbdbce0648b2e67be2c4c63e22fd0209acd2d6"
+  },
+  "blender_bindings/models/mdl36/__init__.py": {
+    "bytes": 2346,
+    "mtime_ns": 1794287744491908500,
+    "sha256": "037e08cb47a9fd16c575bfdbe7f3042337eff07f1025ad5e1691feb4e4689a9a"
+  },
+  "blender_bindings/models/mdl36/import_mdl.py": {
+    "bytes": 10321,
+    "mtime_ns": 1794287744491908500,
+    "sha256": "c3fa80bd3a5ea1d35885984b7747a9bca115601ebfa2488452ddb7bbdf55aafd"
+  },
+  "blender_bindings/models/mdl4/__init__.py": {
+    "bytes": 727,
+    "mtime_ns": 1794287744494432000,
+    "sha256": "bbdcf7f566e8fa4aad417a4b2415088a4b1e3d74661295943bd6b2e5f15df4aa"
+  },
+  "blender_bindings/models/mdl4/import_mdl.py": {
+    "bytes": 9411,
+    "mtime_ns": 1794287744494938900,
+    "sha256": "50063ddc2bca60b20960b7340d139a22a1fb4c357793393efaafc8de27acf948"
+  },
+  "blender_bindings/models/mdl44/__init__.py": {
+    "bytes": 4261,
+    "mtime_ns": 1794287744495944000,
+    "sha256": "d833e69c1b6a381a8cacbc363c39f4feec9c361eca15f65643de00881e323c15"
+  },
+  "blender_bindings/models/mdl44/import_mdl.py": {
+    "bytes": 17032,
+    "mtime_ns": 1794287744496956200,
+    "sha256": "080b91589e0fec462e3eea4b55793aec41399ff95f6d9f2d561d5cda9dddada8"
+  },
+  "blender_bindings/models/mdl49/__init__.py": {
+    "bytes": 4135,
+    "mtime_ns": 1794287744499473600,
+    "sha256": "45dec2da9299fedfbcd66d89786fbcd10e44520144e1584990adb7c1a47532ed"
+  },
+  "blender_bindings/models/mdl49/import_mdl.py": {
+    "bytes": 12880,
+    "mtime_ns": 1794287744500475000,
+    "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+  },
+  "blender_bindings/models/mdl52/__init__.py": {
+    "bytes": 4348,
+    "mtime_ns": 1794287744501471200,
+    "sha256": "05c2d19a9ffd49b3dfd67b14b900a4473ac577b666b18de65307619812f4c3d4"
+  },
+  "blender_bindings/models/mdl52/import_mdl.py": {
+    "bytes": 11334,
+    "mtime_ns": 1794287744501471200,
+    "sha256": "548d6ef135a98eeed872279c6cbf63c5f7323b72bf5949acfc93c78f9b78fa45"
+  },
+  "blender_bindings/models/mdl6/__init__.py": {
+    "bytes": 817,
+    "mtime_ns": 1794287744504472300,
+    "sha256": "c5502ccf2207bc1d95923de28e77b97ca3f3df227fcd90107bdc5455b66146a4"
+  },
+  "blender_bindings/models/mdl6/import_mdl.py": {
+    "bytes": 9903,
+    "mtime_ns": 1794287744504472300,
+    "sha256": "09d526e968122f9a80a4be9e926c9869fcb01a9bca95c883e5a51d3146c0ddab"
+  },
+  "blender_bindings/models/mdl9/__init__.py": {
+    "bytes": 808,
+    "mtime_ns": 1794287744505979400,
+    "sha256": "ef838206001c82250fd60acab4ea7bef5eacc7f448514b7e14ebdd88b6bc7616"
+  },
+  "blender_bindings/models/mdl9/import_mdl.py": {
+    "bytes": 9329,
+    "mtime_ns": 1794287744505979400,
+    "sha256": "fc01197f6baeddf03f056c67bff99f17a1ad95edf1e6edc8757b11aa36c39a0e"
+  },
+  "blender_bindings/models/model_tags.py": {
+    "bytes": 2002,
+    "mtime_ns": 1794287744506985600,
+    "sha256": "2e9a3f10e53265527aa9ac3afb61676e3521ff227ba748a0b8aa2dc207f26a8e"
+  },
+  "blender_bindings/models/prop_animations.py": {
+    "bytes": 8965,
+    "mtime_ns": 1794287744506985600,
+    "sha256": "3b46f484dfe31a66f0db650ff4f398652717b9fa17060a5c1936060d10bfff11"
+  },
+  "blender_bindings/operators/dragndrop.py": {
+    "bytes": 3399,
+    "mtime_ns": 1794287744508989800,
+    "sha256": "016e751cbfd0894c002af4f62c9003fdd3b3b714e3f2e3b004fed2a77e311278"
+  },
+  "blender_bindings/operators/flex_operators.py": {
+    "bytes": 15369,
+    "mtime_ns": 1794287744510498300,
+    "sha256": "4a84d63b47588c2e1ebfdcb3a85f69a5b7645a542ae6e55fc873ddb357b27d19"
+  },
+  "blender_bindings/operators/goldsrc_operators.py": {
+    "bytes": 2227,
+    "mtime_ns": 1794287744510498300,
+    "sha256": "7c506dc44f82bf355ece7b67ed582bca4b0c726b6220530d5fec839b3e0cba6f"
+  },
+  "blender_bindings/operators/import_settings_base.py": {
+    "bytes": 3572,
+    "mtime_ns": 1794287744512004800,
+    "sha256": "8ef523b2bf982ff4ac7158774cadd030ff83d2ba9a727de34c9fc7ccce220cd9"
+  },
+  "blender_bindings/operators/operator_helper.py": {
+    "bytes": 1789,
+    "mtime_ns": 1794287744512524100,
+    "sha256": "95bbe2d0a075021717181d3d68be522bd47850a2f4a26c7b419c49e37457210b"
+  },
+  "blender_bindings/operators/shared_operators.py": {
+    "bytes": 36544,
+    "mtime_ns": 1794287744513530300,
+    "sha256": "8dfd145759f2adabaa4d40630ba4b13a004574e9b97196858381a7a31a982b5f"
+  },
+  "blender_bindings/operators/source1_operators.py": {
+    "bytes": 23186,
+    "mtime_ns": 1794287744513530300,
+    "sha256": "b86e161d941dbec681bd42c2dbccedcfe54fe610b7df8b6f31ffd46ef2311db4"
+  },
+  "blender_bindings/operators/source2_operators.py": {
+    "bytes": 14112,
+    "mtime_ns": 1794287744515040600,
+    "sha256": "b11624148002c029f35364517d3688421918e1718601ecaf761bde3341ec0559"
+  },
+  "blender_bindings/shared/exceptions.py": {
+    "bytes": 142,
+    "mtime_ns": 1794287744516562500,
+    "sha256": "52243cd0739f60d42ba55587d2b4618f80f779f6772900a4db6ec64ea4287fb9"
+  },
+  "blender_bindings/shared/model_container.py": {
+    "bytes": 455,
+    "mtime_ns": 1794287744516562500,
+    "sha256": "905f435ca95e98eeb1bdc1bea1f5afc98fa0aaf82f10c4f7659b6460ba553cb5"
+  },
+  "blender_bindings/shared/skins.py": {
+    "bytes": 2555,
+    "mtime_ns": 1794287744517565300,
+    "sha256": "94e98fded05b7ee9e0dc51f9da84aefdeca5fe04f2ca60b427aa2a5e99cd6c41"
+  },
+  "blender_bindings/source1/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744521565500,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "blender_bindings/source1/bsp/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744522565500,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "blender_bindings/source1/bsp/entities/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744523564400,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "blender_bindings/source1/bsp/entities/abstract_entity_handlers.py": {
+    "bytes": 29812,
+    "mtime_ns": 1794287744524567600,
+    "sha256": "bf008e13fe80c7dad6c95d5bce6849c06541a792ebff976cd12a573e3be08aeb"
+  },
+  "blender_bindings/source1/bsp/entities/base_entity_classes.py": {
+    "bytes": 176565,
+    "mtime_ns": 1794287744526601100,
+    "sha256": "df4832776c5c437383bbfeb26d6169648cca6587e3d47de7299194f9649ac15d"
+  },
+  "blender_bindings/source1/bsp/entities/base_entity_handler.py": {
+    "bytes": 45529,
+    "mtime_ns": 1794287744528609400,
+    "sha256": "ec48be852a11a6ecf960db6dfc3486b0ff9ffb4c4a2fb5ed6ecc70ab50b6a90d"
+  },
+  "blender_bindings/source1/bsp/entities/bms_entity_classes.py": {
+    "bytes": 329030,
+    "mtime_ns": 1794287744529612300,
+    "sha256": "c92a2534f531d32c4bda929ea5b15fd43e8f42c3821c2d65de3431b034cf2073"
+  },
+  "blender_bindings/source1/bsp/entities/bms_entity_handlers.py": {
+    "bytes": 2265,
+    "mtime_ns": 1794287744529612300,
+    "sha256": "c8c54f2434714490585d3313a63b8efd23f8891712232b36d25c8e2879c19238"
+  },
+  "blender_bindings/source1/bsp/entities/csgo_entity_classes.py": {
+    "bytes": 254284,
+    "mtime_ns": 1794287744532609400,
+    "sha256": "1e5a1fd913ca5fd8927b0e67ba79f40016aef87c98dba292e2ac88e030f763c9"
+  },
+  "blender_bindings/source1/bsp/entities/csgo_entity_handlers.py": {
+    "bytes": 1703,
+    "mtime_ns": 1794287744534616000,
+    "sha256": "83855f25b36ac1cb46639c8b36c566e0542c49962c394994f68bf47503d322a3"
+  },
+  "blender_bindings/source1/bsp/entities/halflife2_entity_classes.py": {
+    "bytes": 280836,
+    "mtime_ns": 1794287744536112200,
+    "sha256": "914d771c00610d547238ceef182f24d59811f8fd0cf4bb422138177a26624465"
+  },
+  "blender_bindings/source1/bsp/entities/halflife2_entity_handler.py": {
+    "bytes": 33931,
+    "mtime_ns": 1794287744537121100,
+    "sha256": "14fc7a75abe7506e92bedafcf7e5ec01842c44771c769e4ff5fcf84f961e491b"
+  },
+  "blender_bindings/source1/bsp/entities/left4dead2_entity_classes.py": {
+    "bytes": 247148,
+    "mtime_ns": 1794287744539119600,
+    "sha256": "0e25e7ca3e2e1fa570c7a28a8f901d5c055e7b9995a7c17f8cc9a7f17341d8a3"
+  },
+  "blender_bindings/source1/bsp/entities/left4dead2_entity_handlers.py": {
+    "bytes": 14270,
+    "mtime_ns": 1794287744540121700,
+    "sha256": "1f4a31462b48ba7c648e334c18d6542a45094e083e3f88fe4f8720f51e32df35"
+  },
+  "blender_bindings/source1/bsp/entities/p2ce_entity_classes.py": {
+    "bytes": 473636,
+    "mtime_ns": 1794287744541119400,
+    "sha256": "659ae4a9ae21bb06ca116c8ca9f5bf04d5f154d2c415ce7716a74c36b9dd34ae"
+  },
+  "blender_bindings/source1/bsp/entities/p2ce_entity_handlers.py": {
+    "bytes": 5231,
+    "mtime_ns": 1794287744543120700,
+    "sha256": "4dd1cc51ee793aebaf0e28b042171cecb0ac78b565cebe1e1e8ab12144fd362c"
+  },
+  "blender_bindings/source1/bsp/entities/portal2_entity_classes.py": {
+    "bytes": 254998,
+    "mtime_ns": 1794287744544212900,
+    "sha256": "0bbb62a53f5d42487db192415989f95e91bb2f8a4b7f94c58a3d99c5ec863655"
+  },
+  "blender_bindings/source1/bsp/entities/portal2_entity_handlers.py": {
+    "bytes": 8075,
+    "mtime_ns": 1794287744546236900,
+    "sha256": "2823fb69b8bfbe75d010cfa0798ae839fc0b10e826d3fd3c6c27ca561fef43aa"
+  },
+  "blender_bindings/source1/bsp/entities/portal_entity_classes.py": {
+    "bytes": 209615,
+    "mtime_ns": 1794287744547244500,
+    "sha256": "e510e2c6731dc3fa030986f57c3d45d4fd313a5382f4e8a02f746755f0e28513"
+  },
+  "blender_bindings/source1/bsp/entities/portal_entity_handlers.py": {
+    "bytes": 3364,
+    "mtime_ns": 1794287744548245700,
+    "sha256": "13770c43cbf50435f5f5a13ce35aaa3b49b96507873aca416bb0398cbd3f1011"
+  },
+  "blender_bindings/source1/bsp/entities/quake3/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744550244200,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "blender_bindings/source1/bsp/entities/quake3/quake3_entity_handler.py": {
+    "bytes": 42601,
+    "mtime_ns": 1794287744551245400,
+    "sha256": "02aa07f2c3c86835f2b35d819a2e3f0590369849a26f5131591d4d7b597ffd9d"
+  },
+  "blender_bindings/source1/bsp/entities/quake3/sof_entity_handler.py": {
+    "bytes": 15170,
+    "mtime_ns": 1794287744552243000,
+    "sha256": "7082ea3fa02e943326494a910a959c6292210db7d90845ad5a7caa9a4ef52609"
+  },
+  "blender_bindings/source1/bsp/entities/quake3/swjk2.py": {
+    "bytes": 36574,
+    "mtime_ns": 1794287744553243000,
+    "sha256": "797cc9046b38d585ecb9ec0202d8323d80f9e82eead245484f93e549253514b7"
+  },
+  "blender_bindings/source1/bsp/entities/r1_entity_classes.py": {
+    "bytes": 9878,
+    "mtime_ns": 1794287744553243000,
+    "sha256": "abfc0431a85a4850153f21e5968151ffea636f4fcc603e7e14b9f6c9b068844c"
+  },
+  "blender_bindings/source1/bsp/entities/sfm/swarm_entity_classes.py": {
+    "bytes": 35984,
+    "mtime_ns": 1794287744555759200,
+    "sha256": "9d55e172b18c8a8e6c62374fefffae07ac0c5f0f895124dec876fb6f57eb8b94"
+  },
+  "blender_bindings/source1/bsp/entities/sfm/swarm_entity_handler.py": {
+    "bytes": 227,
+    "mtime_ns": 1794287744556767200,
+    "sha256": "47f16a28db9e1f495061beb7618eccbb88aaec3974d6150f23318d27ba10a0c9"
+  },
+  "blender_bindings/source1/bsp/entities/tf2_entity_handler.py": {
+    "bytes": 10254,
+    "mtime_ns": 1794287744556767200,
+    "sha256": "bb1e4b106d83de27840af22a923177a6123eb0a7c0de99a4a52938e08468c521"
+  },
+  "blender_bindings/source1/bsp/entities/tf_entity_classes.py": {
+    "bytes": 241516,
+    "mtime_ns": 1794287744558765600,
+    "sha256": "a08829f55008e5cbb60b918e6c7c04b3165a730c89a89b5c8171ab9844cc6021"
+  },
+  "blender_bindings/source1/bsp/entities/titanfall_entity_handler.py": {
+    "bytes": 14536,
+    "mtime_ns": 1794287744559769900,
+    "sha256": "5fccb5a568a5f62dd39825a1450d9d16c20be8be375e0caf334b57a381f9c01b"
+  },
+  "blender_bindings/source1/bsp/entities/vampire_entity_classes.py": {
+    "bytes": 37195,
+    "mtime_ns": 1794287744561627000,
+    "sha256": "b1a27463053600149d8a3ba9fb126ce1efc91b9f171805539d7ff199bb61fdd2"
+  },
+  "blender_bindings/source1/bsp/entities/vampire_entity_handler.py": {
+    "bytes": 6021,
+    "mtime_ns": 1794287744561627000,
+    "sha256": "f03012ead43abfe0a3a9764f01c7304f59fff9ec4720eb9e80d0998adc8c5247"
+  },
+  "blender_bindings/source1/bsp/entities/vindictus_entity_handler.py": {
+    "bytes": 747,
+    "mtime_ns": 1794287744562635200,
+    "sha256": "2c3b0a275579e78b7904afff31b9289bb3acf7f51f64ec3af5692cd2e6c35e95"
+  },
+  "blender_bindings/source1/bsp/import_bsp.py": {
+    "bytes": 24764,
+    "mtime_ns": 1794287744563635300,
+    "sha256": "37d6bb30e47beb40db29e7ca15136a7fc7eb663cbda61503c2934d51eece4500"
+  },
+  "blender_bindings/source1/phy/__init__.py": {
+    "bytes": 2917,
+    "mtime_ns": 1794287744564636400,
+    "sha256": "1e934e85dc58c182bc7654ba37b96d22a0706eb3f49e30ba1e6e635588444cbd"
+  },
+  "blender_bindings/source1/vtf/__init__.py": {
+    "bytes": 4448,
+    "mtime_ns": 1794287744567155500,
+    "sha256": "917cfccbd3bdae6bfbdf3a610289ceabf0963cce42333370cb82e08f57d2e3e6"
+  },
+  "blender_bindings/source1/vtf/export_vtf.py": {
+    "bytes": 2250,
+    "mtime_ns": 1794287744568156300,
+    "sha256": "47ba5ea2106596ef7a8dafb145c84e4b09398477b4b356a39fb21c433e7472bd"
+  },
+  "blender_bindings/source2/dmx/camera_loader.py": {
+    "bytes": 2291,
+    "mtime_ns": 1794287744568156300,
+    "sha256": "ddb78ea94bf2a0859ad10c4b13c09c7d27848ea3d49af6f65ca31fccf3b52ce3"
+  },
+  "blender_bindings/source2/vmat_loader.py": {
+    "bytes": 807,
+    "mtime_ns": 1794287744569664200,
+    "sha256": "59aa94a18607666917a09cdec156f96b2127da12b3a21756efa6122f012c15f4"
+  },
+  "blender_bindings/source2/vmdl_loader.py": {
+    "bytes": 62457,
+    "mtime_ns": 1794287744569664200,
+    "sha256": "45fc5d3244a3b044096ab5f3035524e4e5e882f915f8755ae0b74eadef065cdf"
+  },
+  "blender_bindings/source2/vphy_loader.py": {
+    "bytes": 15660,
+    "mtime_ns": 1794287744571682500,
+    "sha256": "e5cc503211a66d8892c8d88c6b988d6fdfa86c091f6ce4a4e955c4d6a5fa2cee"
+  },
+  "blender_bindings/source2/vtex_loader.py": {
+    "bytes": 1183,
+    "mtime_ns": 1794287744572682900,
+    "sha256": "cb09e97835c6d1e7584a603ee6292d5e17a7bd7cbf642028c78f1114aeae2faa"
+  },
+  "blender_bindings/source2/vwrld/entities/abstract_entity_handlers.py": {
+    "bytes": 10495,
+    "mtime_ns": 1794287744574678500,
+    "sha256": "02fdf933564d5ad86c757e78984084a4140341db31234f1c2f74498f0ecb3698"
+  },
+  "blender_bindings/source2/vwrld/entities/base_entity_classes.py": {
+    "bytes": 400197,
+    "mtime_ns": 1794287744576208800,
+    "sha256": "e33ac05a291ca6f295bc6f07d877aebf7d332775af4566aa6cb83f8e563fcb67"
+  },
+  "blender_bindings/source2/vwrld/entities/base_entity_handlers.py": {
+    "bytes": 12488,
+    "mtime_ns": 1794287744578748800,
+    "sha256": "aebbc65fd254263cdef03ddf4e9d8a0303b9a920e56adc7359571202cd92901c"
+  },
+  "blender_bindings/source2/vwrld/entities/cs2_entity_classes.py": {
+    "bytes": 478580,
+    "mtime_ns": 1794287744580746200,
+    "sha256": "f43b5bd02dde554a4fa12e54344c2a6aa4de5cb029668ac5c4d6ba2d0fc3c422"
+  },
+  "blender_bindings/source2/vwrld/entities/cs2_entity_handlers.py": {
+    "bytes": 11815,
+    "mtime_ns": 1794287744581746600,
+    "sha256": "e2219da60847d19518531f09cc3af65e99ff9669337d036fb9632ffa9ab0ac29"
+  },
+  "blender_bindings/source2/vwrld/entities/deadlock_entity_handlers.py": {
+    "bytes": 19267,
+    "mtime_ns": 1794287744582752700,
+    "sha256": "0c6c412562262c33c2cc7a1abaeb40f3d22d9544fb31ca130e49fb48f38903f0"
+  },
+  "blender_bindings/source2/vwrld/entities/hlvr_entity_classes.py": {
+    "bytes": 718752,
+    "mtime_ns": 1794287744586252500,
+    "sha256": "453fef1c1b3c8f0c6fd2cb85cf521f61c7321256c90e59b457deb560dfd22464"
+  },
+  "blender_bindings/source2/vwrld/entities/hlvr_entity_handlers.py": {
+    "bytes": 14176,
+    "mtime_ns": 1794287744587259400,
+    "sha256": "11a507c7c74198552741487cf2ac06f5c218bcdf00109d7f75a0bc0e5106dba4"
+  },
+  "blender_bindings/source2/vwrld/entities/sbox_entity_classes.py": {
+    "bytes": 338089,
+    "mtime_ns": 1794287744589262500,
+    "sha256": "492000c0a923105fbe35f5abe9cafe0a0f0da68e5c217cb8b4a10f681d1794fa"
+  },
+  "blender_bindings/source2/vwrld/entities/sbox_entity_handlers.py": {
+    "bytes": 314,
+    "mtime_ns": 1794287744590259400,
+    "sha256": "b6d94f23893c7f4fd523eca34f21792a16dd6da5ae9bc947073873ab82f76789"
+  },
+  "blender_bindings/source2/vwrld/entities/steampal_entity_handlers.py": {
+    "bytes": 4537,
+    "mtime_ns": 1794287744591259600,
+    "sha256": "55e73001fc11d57fcf2757747eedad0880367c2de592a670b355925d465b8157"
+  },
+  "blender_bindings/source2/vwrld/loader.py": {
+    "bytes": 9914,
+    "mtime_ns": 1794287744591259600,
+    "sha256": "10e5986e09c1732ba1564b2604e2d7ef25f76d64debb1f90e4196a86df06348f"
+  },
+  "blender_bindings/ui/export_nodes/__init__.py": {
+    "bytes": 3859,
+    "mtime_ns": 1794287744592766600,
+    "sha256": "c1d1676b6fb80f59d06d7ab59710a6ea1a818f405bcbf7ed225e6c935386fa00"
+  },
+  "blender_bindings/ui/export_nodes/model_tree_nodes.py": {
+    "bytes": 8869,
+    "mtime_ns": 1794287744592766600,
+    "sha256": "efa8c39b4424308f377385c142d92454646382c21b8e0975a02376a8f1eb9a3c"
+  },
+  "blender_bindings/ui/export_nodes/nodes/__init__.py": {
+    "bytes": 468,
+    "mtime_ns": 1794287744595774600,
+    "sha256": "e4dd2aa644a38f907a325122c86fe5a434814767f461cb2a3f636f0c78402787"
+  },
+  "blender_bindings/ui/export_nodes/nodes/base_node.py": {
+    "bytes": 662,
+    "mtime_ns": 1794287744598288000,
+    "sha256": "6ac7f68bf9e7c44346872e801a32dc80d2e0d2a7e6caef508a01a7a71438c80f"
+  },
+  "blender_bindings/ui/export_nodes/nodes/bodygroup_node.py": {
+    "bytes": 2698,
+    "mtime_ns": 1794287744600288800,
+    "sha256": "62ae08415a1caec56e54a94d14fee7b6cda0c5fcd9e3d58f69d6871b4fcc6931"
+  },
+  "blender_bindings/ui/export_nodes/nodes/input_material_node.py": {
+    "bytes": 651,
+    "mtime_ns": 1794287744602288400,
+    "sha256": "a112c1403698bb44ab32305dd7d058b8cf7fbc1b3a4a5a2ade860ce009bb9ac2"
+  },
+  "blender_bindings/ui/export_nodes/nodes/input_object_node.py": {
+    "bytes": 1337,
+    "mtime_ns": 1794287744603296400,
+    "sha256": "336cd8eba383cd73e42b52eaefe464dad0ff672f65a3d76777eb8f85e980b115"
+  },
+  "blender_bindings/ui/export_nodes/nodes/materials/__init__.py": {
+    "bytes": 61,
+    "mtime_ns": 1794287744604290400,
+    "sha256": "3c7b57a3841c4560dbe8ba5b1de3c328b89fb7d60215fd7557b7101ad56ff977"
+  },
+  "blender_bindings/ui/export_nodes/nodes/materials/vertex_lit_generic.py": {
+    "bytes": 923,
+    "mtime_ns": 1794287744604290400,
+    "sha256": "e1f7fe5018d9a227b90505958c1f89ecb655bf510ab0669ba84989e15a04f1b0"
+  },
+  "blender_bindings/ui/export_nodes/nodes/output_model_node.py": {
+    "bytes": 1227,
+    "mtime_ns": 1794287744605796900,
+    "sha256": "b11b55ef90c90616280c51220ebb82cc09a8e72e571e4f4926056e27e75cb4a0"
+  },
+  "blender_bindings/ui/export_nodes/nodes/skingroup_node.py": {
+    "bytes": 3218,
+    "mtime_ns": 1794287744606807100,
+    "sha256": "a432d6812e21ae151911a10057aca345801b0a01d4de3009ab88fd073bb6568d"
+  },
+  "blender_bindings/ui/export_nodes/nodes/textures/__init__.py": {
+    "bytes": 193,
+    "mtime_ns": 1794287744609314400,
+    "sha256": "d094ba9155f77d1f04344fc2e976b28079316f05c16a513cc3e1e5cc862ae61c"
+  },
+  "blender_bindings/ui/export_nodes/nodes/textures/input_texture_node.py": {
+    "bytes": 839,
+    "mtime_ns": 1794287744609314400,
+    "sha256": "fcc07683d210bd15f7de4ea58f7e44713cad503eb0f9b4ac5a3169738dd4dce7"
+  },
+  "blender_bindings/ui/export_nodes/nodes/textures/texture_ops.py": {
+    "bytes": 26852,
+    "mtime_ns": 1794287744610322500,
+    "sha256": "9c36116844d7d134c256861047ec6621c3f26bfd6d8474570da02f8b5a99348b"
+  },
+  "blender_bindings/ui/export_nodes/nodes/textures/texture_preview.py": {
+    "bytes": 2815,
+    "mtime_ns": 1794287744612324100,
+    "sha256": "2d5e182b6025d5a5e812bbc76411c156532b1dbbd28a3c1dc5f5988b8a10e803"
+  },
+  "blender_bindings/ui/export_nodes/nodes/textures/texture_to_vtf.py": {
+    "bytes": 3188,
+    "mtime_ns": 1794287744613744000,
+    "sha256": "efadde38511bbc98b317312881c4d1d1bf0e75bc12e9d55c6eb78c1b16964979"
+  },
+  "blender_bindings/ui/export_nodes/sockets/__init__.py": {
+    "bytes": 211,
+    "mtime_ns": 1794287744614744400,
+    "sha256": "14c4be9173bcad65b01ac78ba68312bcef4f310d8c8cd0b9d59ba29be1f4302b"
+  },
+  "blender_bindings/ui/export_nodes/sockets/bodygroup_socket.py": {
+    "bytes": 346,
+    "mtime_ns": 1794287744614744400,
+    "sha256": "3b08a4b0f0c4fc607f6c7c59e2f17c094fe7f8de2f6177aeedc7a56455bc2adf"
+  },
+  "blender_bindings/ui/export_nodes/sockets/material_socket.py": {
+    "bytes": 540,
+    "mtime_ns": 1794287744615743100,
+    "sha256": "cd1353499ce58d6c8a4a4d63be51566409bd17199a0dadb65aa8bdfc1af1d132"
+  },
+  "blender_bindings/ui/export_nodes/sockets/object_socket.py": {
+    "bytes": 334,
+    "mtime_ns": 1794287744617764800,
+    "sha256": "1d1d53ca43ea2dba15ac773bee1bb40a21bf81d3c22504cbba8f71b79fa23c67"
+  },
+  "blender_bindings/ui/export_nodes/sockets/skin_socket.py": {
+    "bytes": 626,
+    "mtime_ns": 1794287744618762200,
+    "sha256": "3519d8b5644a7341526accf255250f624ec7010b07be4152e1eaf4ee9daa5241"
+  },
+  "blender_bindings/ui/export_nodes/sockets/texture_socket.py": {
+    "bytes": 1264,
+    "mtime_ns": 1794287744619762600,
+    "sha256": "62fa8a0109a0f7d1f75ade9ad4aa9a1150e0dbf2924b9da9291259540bec131b"
+  },
+  "blender_bindings/utils/bpy_utils.py": {
+    "bytes": 7221,
+    "mtime_ns": 1794287744619762600,
+    "sha256": "4c8bb4a31ed7cac3278567632673acf53befd84dc852635dff813a20f38332e4"
+  },
+  "blender_bindings/utils/fast_mesh.py": {
+    "bytes": 2102,
+    "mtime_ns": 1794287744620760800,
+    "sha256": "ece5c47ac13eb5885bdc7c5b415784a6c7ea3ecc76d13c620bb561ca9c30058a"
+  },
+  "blender_bindings/utils/flex_controller_ui.py": {
+    "bytes": 18251,
+    "mtime_ns": 1794287744620760800,
+    "sha256": "ab8f856635c20a4ea3201d8074ec9ebf5e128307ee3d0151f2bc8f2df14830b8"
+  },
+  "blender_bindings/utils/logging_impl.py": {
+    "bytes": 3713,
+    "mtime_ns": 1794287744621759800,
+    "sha256": "bc98252f1a1ea37d47dd018588629d5a5725326c402b47d555dcd9f051eb09c1"
+  },
+  "blender_bindings/utils/resource_utils.py": {
+    "bytes": 831,
+    "mtime_ns": 1794287744622760200,
+    "sha256": "52ced9e2765bd4d9fe73c2790319ef8279da83445c8c9481fdfc8a94174f7d0d"
+  },
+  "blender_bindings/utils/texture_utils.py": {
+    "bytes": 10132,
+    "mtime_ns": 1794287744624760800,
+    "sha256": "ca050c87a47573f05bdbf88132b6f9549316cee5a49dcef22ff60529778ae581"
+  },
+  "library/__init__.py": {
+    "bytes": 349,
+    "mtime_ns": 1794287744625762900,
+    "sha256": "10c135dd15445379ba887cf928599a410311a0511d8a5cc47bf9a5fe82aab8ed"
+  },
+  "library/archives/__init__.py": {
+    "bytes": 80,
+    "mtime_ns": 1794287744626269600,
+    "sha256": "f970ceb27aee804675b6ca606cc2b8c1507f1b7d152f372ba3cdaa5660c71eaa"
+  },
+  "library/archives/gma/__init__.py": {
+    "bytes": 2823,
+    "mtime_ns": 1794287744627277000,
+    "sha256": "e3a3bd283906cee4547d06867a943c7629fb755b999a899387fe0cb75779c7e8"
+  },
+  "library/archives/hfsv1/__init__.py": {
+    "bytes": 1331,
+    "mtime_ns": 1794287744627277000,
+    "sha256": "f758047c145b83c398408de413ca3bf01f3a2afba9a7e80b1ebe0f171be09f6d"
+  },
+  "library/archives/hfsv1/file.py": {
+    "bytes": 2579,
+    "mtime_ns": 1794287744630286700,
+    "sha256": "37915bf30cc2604be4301d453618b4b3ce40659c7849b58d6d62ebda4a9c26e7"
+  },
+  "library/archives/hfsv1/index.py": {
+    "bytes": 1185,
+    "mtime_ns": 1794287744631285500,
+    "sha256": "070950df1ff32e1a1b308df71d8ff0b607b0793e37f8b84f5388d9d123f6e504"
+  },
+  "library/archives/hfsv1/xor_key.py": {
+    "bytes": 26082,
+    "mtime_ns": 1794287744633283600,
+    "sha256": "5f12631a9849668aeee928d67d8a23ca71ac2ec7e00c6d16df73f7068878ddd2"
+  },
+  "library/archives/hfsv2/__init__.py": {
+    "bytes": 1109,
+    "mtime_ns": 1794287744635800600,
+    "sha256": "a0a35001be40ad4700b027962e5d2029a6b4809a857fec545a3f83afe9f7aaf6"
+  },
+  "library/archives/hfsv2/archive.py": {
+    "bytes": 2900,
+    "mtime_ns": 1794287744637332000,
+    "sha256": "2f6eb645554a3b0494e007c684035f1e197a1ae01e90cd8fa2f7e14b8a8b0ac9"
+  },
+  "library/archives/hfsv2/file.py": {
+    "bytes": 933,
+    "mtime_ns": 1794287744637332000,
+    "sha256": "ac7231347eeb9dfd95c9c92318ee3140d2db9b0aeb9fda76a749d4992668ef5e"
+  },
+  "library/archives/hfsv2/header.py": {
+    "bytes": 320,
+    "mtime_ns": 1794287744638341800,
+    "sha256": "43b710b7d2dc846bb535b25996fa0ca732c2ed850289dbfcbdd9100db8eabd6b"
+  },
+  "library/archives/hfsv2/Serpent.dll": {
+    "bytes": 20992,
+    "mtime_ns": 1794287744634289000,
+    "sha256": "3821fc7668addd52262eedca69c952a50fe0c7431dcbe8ab3e35a819675137a7"
+  },
+  "library/archives/hfsv2/serpent.py": {
+    "bytes": 6882,
+    "mtime_ns": 1794287744638341800,
+    "sha256": "e5afdd233edccb4f773626abacbd607e782bee10250cc07ba47126399eeef93a"
+  },
+  "library/archives/hfsv2/tables.py": {
+    "bytes": 19549,
+    "mtime_ns": 1794287744640341100,
+    "sha256": "195a988d5f4891d4ad5ed09bb983d435482bee86ef325a0a17825b03f6471cb9"
+  },
+  "library/archives/hfsv2/utils.py": {
+    "bytes": 311,
+    "mtime_ns": 1794287744641342400,
+    "sha256": "97d72cb9248ff99f4c58377a1eaea52cc3163df894569df6b8f3ef66a224f547"
+  },
+  "library/global_config.py": {
+    "bytes": 143,
+    "mtime_ns": 1794287744642341800,
+    "sha256": "c9a97af0fae759bc46fab1cfc46a6e8e3333878a7eeb878e3ae85b6a93b23c52"
+  },
+  "library/goldsrc/bsp/bsp_file.py": {
+    "bytes": 2302,
+    "mtime_ns": 1794287744642848200,
+    "sha256": "e8e76c822d65124931b5a11b2a1a8fa9f2374ea2b888819c31c473760e280512"
+  },
+  "library/goldsrc/bsp/lump.py": {
+    "bytes": 1097,
+    "mtime_ns": 1794287744643854700,
+    "sha256": "bb569af596db54af22b38d4f66f3b043b60349d215d71f5be697099c24a6d75e"
+  },
+  "library/goldsrc/bsp/lumps/edge_lump.py": {
+    "bytes": 505,
+    "mtime_ns": 1794287744644856300,
+    "sha256": "f5c898d462158f92bfd5f1de58c5f687cc678e2a942ff7430afa418491c58749"
+  },
+  "library/goldsrc/bsp/lumps/entity_lump.py": {
+    "bytes": 1098,
+    "mtime_ns": 1794287744645856600,
+    "sha256": "07aeaea041798716361d12f7a610956de6628333b8b78bfec38e4fcda4617335"
+  },
+  "library/goldsrc/bsp/lumps/face_lump.py": {
+    "bytes": 554,
+    "mtime_ns": 1794287744646361900,
+    "sha256": "1f1cca633ddb230b05e6f590dea7cc03b5229b7f2f9d22ce492a2b32db1593c8"
+  },
+  "library/goldsrc/bsp/lumps/model_lump.py": {
+    "bytes": 536,
+    "mtime_ns": 1794287744647368900,
+    "sha256": "4c7ab7ce8fcc07a06878eaa9d18a8e3f37afe76fd11101736fb9b603a6f13d1b"
+  },
+  "library/goldsrc/bsp/lumps/surface_edge_lump.py": {
+    "bytes": 502,
+    "mtime_ns": 1794287744648377000,
+    "sha256": "1825daed9076a57ea6670791f26ffa7b5e813e57af2d14df81b5aabdc588fc80"
+  },
+  "library/goldsrc/bsp/lumps/texture_data.py": {
+    "bytes": 1087,
+    "mtime_ns": 1794287744648377000,
+    "sha256": "0ab4ceb8f9884ae2e9152463d85512fc8ed01bed370cc14e35cde61bbdbdf1bb"
+  },
+  "library/goldsrc/bsp/lumps/texture_info.py": {
+    "bytes": 609,
+    "mtime_ns": 1794287744649374800,
+    "sha256": "e2a096099fc300dbcf082060c578d4677c758b362e654a7c32e676352d37cf6b"
+  },
+  "library/goldsrc/bsp/lumps/vertex_lump.py": {
+    "bytes": 511,
+    "mtime_ns": 1794287744649374800,
+    "sha256": "3932871f187f24275ee0585017ee1f06df5eea20dd2cc4b7bd1700ca17c2ff60"
+  },
+  "library/goldsrc/bsp/structs/face.py": {
+    "bytes": 423,
+    "mtime_ns": 1794287744650373300,
+    "sha256": "27b9e927ab605f8923bb64597250013090d4cc491eaf9d2e5ec80c7c8b4e5d02"
+  },
+  "library/goldsrc/bsp/structs/model.py": {
+    "bytes": 559,
+    "mtime_ns": 1794287744651377000,
+    "sha256": "004b4200a8a1d129b8a921beeace0b29ae7ff9f2f5261fc0c3e7a1f55c3a6698"
+  },
+  "library/goldsrc/bsp/structs/texture.py": {
+    "bytes": 2874,
+    "mtime_ns": 1794287744652381800,
+    "sha256": "ed8157731f3236e2891014dae33bdf1b2df935e30169f2d3d56e0a2a235a5ed7"
+  },
+  "library/goldsrc/rad.py": {
+    "bytes": 819,
+    "mtime_ns": 1794287744653377100,
+    "sha256": "2c19923256aabde38651a8f5cf450e1b033eeabffbbb529dfb25f15d615038bd"
+  },
+  "library/goldsrc/wad.py": {
+    "bytes": 5682,
+    "mtime_ns": 1794287744653377100,
+    "sha256": "918ba4c90ae16af4da1975a93737770f8b5599e540b025df54d721e3bc4dcf65"
+  },
+  "library/models/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744654376900,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/glm/__init__.py": {
+    "bytes": 10189,
+    "mtime_ns": 1794287744654376900,
+    "sha256": "2b09901ff0a00fb2d7e37fc08d80a3034d7391aa27ef98ef48ca295817c110ac"
+  },
+  "library/models/md3/__init__.py": {
+    "bytes": 4297,
+    "mtime_ns": 1794287744655882700,
+    "sha256": "f14b7c2a5054c0cfa7d892cbc3b286f477dc860dbd1b2cb071e03392082ad578"
+  },
+  "library/models/mdl/__init__.py": {
+    "bytes": 20,
+    "mtime_ns": 1794287744656890000,
+    "sha256": "a485bf79dd7a98ed294f469c310941c8eae63fc7564ec2fa9ddaee5386aff12b"
+  },
+  "library/models/mdl/load_animations.py": {
+    "bytes": 8110,
+    "mtime_ns": 1794287744657891900,
+    "sha256": "e81e22198689c206c7b753c3910f339146bdfdb36673455697415e1f84d54f1c"
+  },
+  "library/models/mdl/structs/__init__.py": {
+    "bytes": 300,
+    "mtime_ns": 1794287744659170100,
+    "sha256": "0c5c9c829be66b195ffdb5d654bf096535e5e6ef8280afcd8bb0872500cb10f7"
+  },
+  "library/models/mdl/structs/ani_file.py": {
+    "bytes": 1596,
+    "mtime_ns": 1794287744660180200,
+    "sha256": "7c36529cc30a71425eb94d6805bbb4b382a45a43dd36f8e4777cf571b64a2cc8"
+  },
+  "library/models/mdl/structs/attachment.py": {
+    "bytes": 1223,
+    "mtime_ns": 1794287744660686400,
+    "sha256": "5f8d4320b948ed7362d833e8096337921555509c68d1b203dbca51cf25366fac"
+  },
+  "library/models/mdl/structs/auto_layer.py": {
+    "bytes": 402,
+    "mtime_ns": 1794287744660686400,
+    "sha256": "60fb2ede5e7ec5d682d4f40dd4c3de63ad38b29000d140469c4877b587f7814b"
+  },
+  "library/models/mdl/structs/axis_interp_rule.py": {
+    "bytes": 542,
+    "mtime_ns": 1794287744661691500,
+    "sha256": "a4325d732ecbfa176aba5ca64660eef19ab65286f96485fed0cb87eb561a61d2"
+  },
+  "library/models/mdl/structs/bodygroup.py": {
+    "bytes": 887,
+    "mtime_ns": 1794287744661691500,
+    "sha256": "34d41c35681550fe4512c0541bcb859c076a960d04054efb633c098ff70c17b8"
+  },
+  "library/models/mdl/structs/bone.py": {
+    "bytes": 8415,
+    "mtime_ns": 1794287744664086600,
+    "sha256": "a61a3e0378e7b2d2d070f2b9ef138b78516db4a9830144cd6a6d907295b7d085"
+  },
+  "library/models/mdl/structs/compressed_vectors.py": {
+    "bytes": 2002,
+    "mtime_ns": 1794287744665093900,
+    "sha256": "6a273175f313a93e13e3b2c5e036b5d67cede2a19f45caefc4b30112b349a61b"
+  },
+  "library/models/mdl/structs/event.py": {
+    "bytes": 579,
+    "mtime_ns": 1794287744666102300,
+    "sha256": "c1c8984286abe05971e48922c84690678233ad11b4bccf8b2d7f6918ce05855f"
+  },
+  "library/models/mdl/structs/eyeball.py": {
+    "bytes": 1961,
+    "mtime_ns": 1794287744666609700,
+    "sha256": "d35b1ff4bd823b4027dfce41cc5499fd8297ac215834aad7fa9b787d3f2b0d17"
+  },
+  "library/models/mdl/structs/flex.py": {
+    "bytes": 7637,
+    "mtime_ns": 1794287744667618000,
+    "sha256": "93887e58a4918500a237246243b97b0c9f12126534d6abdc6beed247fc682ca9"
+  },
+  "library/models/mdl/structs/frame_anim.py": {
+    "bytes": 418,
+    "mtime_ns": 1794287744667618000,
+    "sha256": "26055fd32443468aaa8e431dea00f340e26844fbd483dc6b089fac9468744ef7"
+  },
+  "library/models/mdl/structs/header.py": {
+    "bytes": 29180,
+    "mtime_ns": 1794287744669619900,
+    "sha256": "03fe4f685c3818785c9b5ff81356f91aa9ab8160d1a17ca27e57520a1c37f57f"
+  },
+  "library/models/mdl/structs/jiggle_bone.py": {
+    "bytes": 2503,
+    "mtime_ns": 1794287744670757800,
+    "sha256": "a06cd6e0234fd29894c702003015fad7d0601839572b4fe3dbbfb4b9b082feec"
+  },
+  "library/models/mdl/structs/local_animation.py": {
+    "bytes": 16993,
+    "mtime_ns": 1794287744670757800,
+    "sha256": "5e8eb13180488a7b5c4170ab6e92afbb29e0527697d5df7e218e515f89b3bbe4"
+  },
+  "library/models/mdl/structs/material.py": {
+    "bytes": 1919,
+    "mtime_ns": 1794287744671756800,
+    "sha256": "2513cf53c3fbefc1e290351c73cb56b5a0387eac7ede9f900f2d5b72e31d09ab"
+  },
+  "library/models/mdl/structs/mesh.py": {
+    "bytes": 2210,
+    "mtime_ns": 1794287744671756800,
+    "sha256": "ea5c9d478b40924e8610c3d4699b894f6b4f56a375b0594ebfb581d80100ef71"
+  },
+  "library/models/mdl/structs/model.py": {
+    "bytes": 5674,
+    "mtime_ns": 1794287744672756600,
+    "sha256": "d11d7e0235e2607f8d4ca2e5e32ca482969035277f274b57f713df8e8ba0c176"
+  },
+  "library/models/mdl/structs/quat_interp_bone.py": {
+    "bytes": 1139,
+    "mtime_ns": 1794287744672756600,
+    "sha256": "7d7268c14c1b95380559aacd37fcc7667ebdcc717ad1a46d6c19035054f76373"
+  },
+  "library/models/mdl/structs/sequence.py": {
+    "bytes": 5944,
+    "mtime_ns": 1794287744673756600,
+    "sha256": "6c239cd68bfea186dde04681b67577312cdf65d3257280557454bc7c9f190283"
+  },
+  "library/models/mdl/v10/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744674755600,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v10/mdl_file.py": {
+    "bytes": 3614,
+    "mtime_ns": 1794287744675757100,
+    "sha256": "fa34e492c1ddcc96b0e0f5ade6a1f957957b8c56c2adddab20872f2e65b50f65"
+  },
+  "library/models/mdl/v10/structs/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744675757100,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v10/structs/bodypart.py": {
+    "bytes": 628,
+    "mtime_ns": 1794287744675757100,
+    "sha256": "8ec10a2f6bc190d5a93145e8cbb87c1e6570823119f17ba18a230843d8ae9e25"
+  },
+  "library/models/mdl/v10/structs/bone.py": {
+    "bytes": 653,
+    "mtime_ns": 1794287744677255400,
+    "sha256": "50348462302c118a6fec6d3d8a7f306d28bd63952d9309baaf3808562e9eb530"
+  },
+  "library/models/mdl/v10/structs/event.py": {
+    "bytes": 501,
+    "mtime_ns": 1794287744677255400,
+    "sha256": "211f89f68899c67add785618b045550c7edc89f81fae1efc060c8b5a22138098"
+  },
+  "library/models/mdl/v10/structs/mesh.py": {
+    "bytes": 1485,
+    "mtime_ns": 1794287744678254700,
+    "sha256": "c7a0dfbe6672392c34dfd1e5231ff0a30c24e67e5e91053320f31302808c85c4"
+  },
+  "library/models/mdl/v10/structs/model.py": {
+    "bytes": 2162,
+    "mtime_ns": 1794287744678254700,
+    "sha256": "5fb5f9d4a3a808cde4c6219442675f4f5d4c5b1d94df36b4ab6b2a63ab94df86"
+  },
+  "library/models/mdl/v10/structs/pivot.py": {
+    "bytes": 380,
+    "mtime_ns": 1794287744679293000,
+    "sha256": "8e6fd421c857f795fd4f4871c839aeed4ff9f9540c172bf3a8a1e0a5b0063b38"
+  },
+  "library/models/mdl/v10/structs/sequence.py": {
+    "bytes": 2561,
+    "mtime_ns": 1794287744679799100,
+    "sha256": "86626b597766a8a02fa6c2c4a2ddf607e24c3db7e0bb615445b55c82233d2cc2"
+  },
+  "library/models/mdl/v10/structs/studioheader.py": {
+    "bytes": 2362,
+    "mtime_ns": 1794287744679799100,
+    "sha256": "5fe01949034f5bf5fd87eb50e6647180ae69c43f569a12dc80dccaf8d21b7189"
+  },
+  "library/models/mdl/v10/structs/texture.py": {
+    "bytes": 5561,
+    "mtime_ns": 1794287744680808400,
+    "sha256": "c6ddc495eca62e0559d617708b05e9b8f4f1828957183b11d55ac6bfe2b87eb5"
+  },
+  "library/models/mdl/v2531/__init__.py": {
+    "bytes": 31,
+    "mtime_ns": 1794287744680808400,
+    "sha256": "3a71c5e0409fcef702dd4167a21e88c7e85c96d2ec4afcf5d9e0102eb02cd217"
+  },
+  "library/models/mdl/v2531/mdl_file.py": {
+    "bytes": 9585,
+    "mtime_ns": 1794287744681807400,
+    "sha256": "2e0ac840cd0d38360aeaff54759d3d2d8c774d0a9cd1d39d90d850b36df123a2"
+  },
+  "library/models/mdl/v36/__init__.py": {
+    "bytes": 29,
+    "mtime_ns": 1794287744682805400,
+    "sha256": "26b812e4b0dd57c44aeee1d5345c2e358314920af1ceb3213f0b0f8f5e055a78"
+  },
+  "library/models/mdl/v36/mdl_file.py": {
+    "bytes": 9122,
+    "mtime_ns": 1794287744682805400,
+    "sha256": "6df728887c16e06b8cd475ee92480695dec8511b42b11d087796ec10faeb8ead"
+  },
+  "library/models/mdl/v4/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744683807500,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v4/mdl_file.py": {
+    "bytes": 1756,
+    "mtime_ns": 1794287744683807500,
+    "sha256": "c8caf8110c0bdfad300db0e348c74c6bf8368322fd1b9b06d621f09e179af9bc"
+  },
+  "library/models/mdl/v4/structs/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744683807500,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v4/structs/bone.py": {
+    "bytes": 376,
+    "mtime_ns": 1794287744684804400,
+    "sha256": "d39f991ca7f99951bd2d65058026308b74513d2d2b691f4f18fa7edda381f4bd"
+  },
+  "library/models/mdl/v4/structs/mesh.py": {
+    "bytes": 1258,
+    "mtime_ns": 1794287744685807200,
+    "sha256": "f35edb61819a58e4517d048acabed0d7cc86e213f3d1067e7ccdff0fdea0b5ff"
+  },
+  "library/models/mdl/v4/structs/model.py": {
+    "bytes": 1455,
+    "mtime_ns": 1794287744685807200,
+    "sha256": "236233b2758861191dc3d19fa073b7f10f72b47e566392ad6acddabce064cf2a"
+  },
+  "library/models/mdl/v4/structs/sequence.py": {
+    "bytes": 1887,
+    "mtime_ns": 1794287744686943300,
+    "sha256": "f78b77cd7776b36eb82645f60507fd3de438e24690fe30aa7c967c9cedf322ee"
+  },
+  "library/models/mdl/v4/structs/studioheader.py": {
+    "bytes": 1275,
+    "mtime_ns": 1794287744686943300,
+    "sha256": "32bac0762b5ed542e72b289c16ae188729567b6eb79200d7ea3eea3782534db9"
+  },
+  "library/models/mdl/v4/structs/texture.py": {
+    "bytes": 801,
+    "mtime_ns": 1794287744687942100,
+    "sha256": "44c92e91a8dfab073e5c0503e5ed93017b21f58c56c582234721bfc572d9fdf1"
+  },
+  "library/models/mdl/v44/__init__.py": {
+    "bytes": 29,
+    "mtime_ns": 1794287744687942100,
+    "sha256": "43f3a82839ea73a5caaef13de22cdbb34dbf86b4b98ecf808fe43a151655a18f"
+  },
+  "library/models/mdl/v44/mdl_file.py": {
+    "bytes": 13734,
+    "mtime_ns": 1794287744688944700,
+    "sha256": "b1e387142952b96e86af190596aee94f3b706102f7f1e7ab3bd64ee3d103ba5d"
+  },
+  "library/models/mdl/v44/vertex_animation_cache.py": {
+    "bytes": 2129,
+    "mtime_ns": 1794287744688944700,
+    "sha256": "74203eaa21cdb51674e54b356845a013d83ef5f646f4450a295100765961c197"
+  },
+  "library/models/mdl/v49/__init__.py": {
+    "bytes": 29,
+    "mtime_ns": 1794287744689943600,
+    "sha256": "d411bb60e900cdd8d6f59448824f4b8166939af57978f98342608ad87a2b98fb"
+  },
+  "library/models/mdl/v49/flex_expressions.py": {
+    "bytes": 12446,
+    "mtime_ns": 1794287744689943600,
+    "sha256": "8e9676002b032317258b9fc3d22cb04ed17d63b049b6adb527a9eb9365db9c94"
+  },
+  "library/models/mdl/v49/mdl_file.py": {
+    "bytes": 5436,
+    "mtime_ns": 1794287744690944000,
+    "sha256": "a30f5fae981dedff47de4ce56152b876acd734bbb03e0df59ec9d320351f10ed"
+  },
+  "library/models/mdl/v52/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744691945800,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v52/mdl_file.py": {
+    "bytes": 150,
+    "mtime_ns": 1794287744691945800,
+    "sha256": "7fd2ad1983ec09a6c49216262e2b357cfb8b024045a1a70a402220103f432036"
+  },
+  "library/models/mdl/v6/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744692988900,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v6/mdl_file.py": {
+    "bytes": 1603,
+    "mtime_ns": 1794287744692988900,
+    "sha256": "e352f41b03232a08f3992836b878fc89f23291c28157c99cdcc1ba386fd99f77"
+  },
+  "library/models/mdl/v6/structs/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744693995100,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v6/structs/animation.py": {
+    "bytes": 1896,
+    "mtime_ns": 1794287744693995100,
+    "sha256": "3e3ec3e79aff5056e97c73c15a3851d5a39f6d74d11d169c512d24ae5f4492aa"
+  },
+  "library/models/mdl/v6/structs/bodypart.py": {
+    "bytes": 645,
+    "mtime_ns": 1794287744694994200,
+    "sha256": "ae2dd158d369d32977ced15ff9f8de3d30f93fe9854a32178a695931afc6fd17"
+  },
+  "library/models/mdl/v6/structs/bone.py": {
+    "bytes": 511,
+    "mtime_ns": 1794287744694994200,
+    "sha256": "ca2feba04e39e79d08ccb8e832c0bdcf00caccb96b19198849fc7ff514eb16d2"
+  },
+  "library/models/mdl/v6/structs/event.py": {
+    "bytes": 380,
+    "mtime_ns": 1794287744694994200,
+    "sha256": "e09fb3bab10fd0fe93c0afa021c03127be4de149f56607a2a1b30415f194f880"
+  },
+  "library/models/mdl/v6/structs/mesh.py": {
+    "bytes": 959,
+    "mtime_ns": 1794287744695994700,
+    "sha256": "2bf8761d2dba71aa45728653c7cde5802d77347fae85c67833892f6953e2432e"
+  },
+  "library/models/mdl/v6/structs/model.py": {
+    "bytes": 3498,
+    "mtime_ns": 1794287744697224600,
+    "sha256": "1857b06661c92343307e32c401e109313d3d1991dba1e4e9175433b9f435f440"
+  },
+  "library/models/mdl/v6/structs/pivot.py": {
+    "bytes": 265,
+    "mtime_ns": 1794287744697224600,
+    "sha256": "bd2826beee8c6ebe45a96c016e3f7475f9f7c0df8ea4a4d4fac5ab6fef64d37f"
+  },
+  "library/models/mdl/v6/structs/sequence.py": {
+    "bytes": 1389,
+    "mtime_ns": 1794287744698729700,
+    "sha256": "e153bd2b7bfef361c6a02ef2181149f6b8e02b05659868b60a1a42f98ce20d96"
+  },
+  "library/models/mdl/v6/structs/studioheader.py": {
+    "bytes": 2268,
+    "mtime_ns": 1794287744698729700,
+    "sha256": "7fa2c2538ea9c09f292365d4b1d6343c81305e9bdf485d9a7aadb71a30d74dd5"
+  },
+  "library/models/mdl/v6/structs/texture.py": {
+    "bytes": 1393,
+    "mtime_ns": 1794287744698729700,
+    "sha256": "686942905534d54e49ce7c7b6f1728fb3d8ef9c8dd3e3a1a48deae88d0b01f6e"
+  },
+  "library/models/mdl/v9/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744699735000,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v9/mdl_file.py": {
+    "bytes": 890,
+    "mtime_ns": 1794287744699735000,
+    "sha256": "22d1f77e222503f9cc6340661be43f34fe7a4c3c5e68a25bc268c8d3eca160e0"
+  },
+  "library/models/mdl/v9/structs/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744700734300,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/mdl/v9/structs/bodypart.py": {
+    "bytes": 628,
+    "mtime_ns": 1794287744700734300,
+    "sha256": "8ec10a2f6bc190d5a93145e8cbb87c1e6570823119f17ba18a230843d8ae9e25"
+  },
+  "library/models/mdl/v9/structs/bone.py": {
+    "bytes": 547,
+    "mtime_ns": 1794287744700734300,
+    "sha256": "3350d106da9be58584e84c476018241a1179c6ec4ce5050c8f39ee5aa15ca7d9"
+  },
+  "library/models/mdl/v9/structs/mesh.py": {
+    "bytes": 1485,
+    "mtime_ns": 1794287744701779100,
+    "sha256": "c7a0dfbe6672392c34dfd1e5231ff0a30c24e67e5e91053320f31302808c85c4"
+  },
+  "library/models/mdl/v9/structs/model.py": {
+    "bytes": 2162,
+    "mtime_ns": 1794287744702782000,
+    "sha256": "5fb5f9d4a3a808cde4c6219442675f4f5d4c5b1d94df36b4ab6b2a63ab94df86"
+  },
+  "library/models/mdl/v9/structs/studioheader.py": {
+    "bytes": 2314,
+    "mtime_ns": 1794287744703781300,
+    "sha256": "184fe25aa96c9dac375dd55eadc8a6ae8b8f66d6433e23b1bd51a2ad96ca9d8a"
+  },
+  "library/models/mdl/v9/structs/texture.py": {
+    "bytes": 5561,
+    "mtime_ns": 1794287744704780500,
+    "sha256": "c6ddc495eca62e0559d617708b05e9b8f4f1828957183b11d55ac6bfe2b87eb5"
+  },
+  "library/models/phy/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744704780500,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/phy/phy.py": {
+    "bytes": 6528,
+    "mtime_ns": 1794287744705779500,
+    "sha256": "c729038d23f321db2ed984692033067cfe3fd250d94721c643379d1f846e3c6d"
+  },
+  "library/models/vtx/__init__.py": {
+    "bytes": 880,
+    "mtime_ns": 1794287744706284500,
+    "sha256": "794e50aa7089a281fc70006c24994d2875a15f71e3711e998aaff5523841c379"
+  },
+  "library/models/vtx/v107/structs/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744707290900,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/vtx/v107/structs/bodypart.py": {
+    "bytes": 592,
+    "mtime_ns": 1794287744707290900,
+    "sha256": "ec98ef0232e6a078f2c411fec65ed3552e2abb892191201f6fd348ebf4de0358"
+  },
+  "library/models/vtx/v107/structs/header.py": {
+    "bytes": 1204,
+    "mtime_ns": 1794287744708291400,
+    "sha256": "15ab8d5ad32c2b409078c2e6f937a80960efe3adaefff395e70dc45c41f42e56"
+  },
+  "library/models/vtx/v107/structs/lod.py": {
+    "bytes": 740,
+    "mtime_ns": 1794287744709379500,
+    "sha256": "9a7cb2c418bdac2f3964721c4ff06fcb65e0b0dcac7add76149bd197ce51c77f"
+  },
+  "library/models/vtx/v107/structs/material_replacement_list.py": {
+    "bytes": 995,
+    "mtime_ns": 1794287744709379500,
+    "sha256": "6a8526a148d2fa9e64e6cfdff659fb91d7c26025686428079387537d568ef576"
+  },
+  "library/models/vtx/v107/structs/mesh.py": {
+    "bytes": 776,
+    "mtime_ns": 1794287744710378700,
+    "sha256": "481c3ea6201b95206f771e2a6c2addd71425287023d18b4012fae7b713a494db"
+  },
+  "library/models/vtx/v107/structs/model.py": {
+    "bytes": 657,
+    "mtime_ns": 1794287744710378700,
+    "sha256": "c9fce3f15714e85484d502b64dd1d15d3cc15c76da4dac8a6a1484b18ffc2fd6"
+  },
+  "library/models/vtx/v107/structs/strip.py": {
+    "bytes": 1075,
+    "mtime_ns": 1794287744711380000,
+    "sha256": "0de7ccfddd66ac9eef2e9104daa2e065f5b22502a6bd10b7684d0f25f55df5c9"
+  },
+  "library/models/vtx/v107/structs/strip_group.py": {
+    "bytes": 2095,
+    "mtime_ns": 1794287744711380000,
+    "sha256": "6c8e18fe622581e5ffc686d02e722b33230a5ed468f49c2f6563dc1c1366edd5"
+  },
+  "library/models/vtx/v107/vtx.py": {
+    "bytes": 1055,
+    "mtime_ns": 1794287744711380000,
+    "sha256": "46d18194b758cb8ddf5f72a42e9c37670358fe4cf07ed0f429ec59358443a49c"
+  },
+  "library/models/vtx/v6/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744711380000,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/vtx/v6/structs/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744712884300,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/vtx/v6/structs/bodypart.py": {
+    "bytes": 581,
+    "mtime_ns": 1794287744712884300,
+    "sha256": "5bafa1947fed8670a9d5b7e74fbc4f114625d6872cd6623bd77a1ab57ce39ac3"
+  },
+  "library/models/vtx/v6/structs/header.py": {
+    "bytes": 1216,
+    "mtime_ns": 1794287744713890100,
+    "sha256": "90ed3a9cc0d187a579857d1a729d6e31941cae70c675e73766ef9953fb43d03c"
+  },
+  "library/models/vtx/v6/structs/lod.py": {
+    "bytes": 728,
+    "mtime_ns": 1794287744714892000,
+    "sha256": "8e57084ab405d15f7ebb8197003d9367f2d00734326b25d227a366db330bc102"
+  },
+  "library/models/vtx/v6/structs/material_replacement_list.py": {
+    "bytes": 983,
+    "mtime_ns": 1794287744714892000,
+    "sha256": "657af02ccc6770f00389ccee5b706bb5d358b2438ead0e6e78a240fc25c24648"
+  },
+  "library/models/vtx/v6/structs/mesh.py": {
+    "bytes": 786,
+    "mtime_ns": 1794287744715891500,
+    "sha256": "135a29e04831bbf56e1ea47bbf15db03071ec00bfee31617985dc7456c0c4510"
+  },
+  "library/models/vtx/v6/structs/model.py": {
+    "bytes": 645,
+    "mtime_ns": 1794287744715891500,
+    "sha256": "f31243ea748b7511fda29e7fd97f61c4d138aeca76ba97c661d14e15bc90ed65"
+  },
+  "library/models/vtx/v6/structs/strip.py": {
+    "bytes": 1087,
+    "mtime_ns": 1794287744716992700,
+    "sha256": "1cec61804ca7dfb7e0450a45d2d0a8d427580d4fa9260243789e9b19c4603028"
+  },
+  "library/models/vtx/v6/structs/strip_group.py": {
+    "bytes": 1930,
+    "mtime_ns": 1794287744716992700,
+    "sha256": "8abfe339c0aa7adca1e012aea72bfcbba88a9a083a7397fc57350c18f51db37b"
+  },
+  "library/models/vtx/v6/vtx.py": {
+    "bytes": 1055,
+    "mtime_ns": 1794287744716992700,
+    "sha256": "46d18194b758cb8ddf5f72a42e9c37670358fe4cf07ed0f429ec59358443a49c"
+  },
+  "library/models/vtx/v7/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744717994300,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/models/vtx/v7/structs/__init__.py": {
+    "bytes": 183,
+    "mtime_ns": 1794287744718993900,
+    "sha256": "b259a120998f0a4d4a17f56886c87e518ec1265eaf98e62f39fcf97873c05533"
+  },
+  "library/models/vtx/v7/structs/bodypart.py": {
+    "bytes": 611,
+    "mtime_ns": 1794287744718993900,
+    "sha256": "1c5e4b1a5028ef34c8aed9e5c82802253968d9eee1e702133631534f232cd1b3"
+  },
+  "library/models/vtx/v7/structs/lod.py": {
+    "bytes": 792,
+    "mtime_ns": 1794287744719502600,
+    "sha256": "189d2d4373472dae06c591db7cc445bd7d62e2abab1c4418dc96f455bb7a4ec6"
+  },
+  "library/models/vtx/v7/structs/material_replacement_list.py": {
+    "bytes": 984,
+    "mtime_ns": 1794287744720510000,
+    "sha256": "8aceb79ca4e820c7a4f42a5a0787102aaba4d8d45a7d2b8d2e15c37ca9177a1d"
+  },
+  "library/models/vtx/v7/structs/mesh.py": {
+    "bytes": 849,
+    "mtime_ns": 1794287744720510000,
+    "sha256": "efc8ed89687e30cdd2e27f54ca6cf0ac3869e0517df0d6df6484cdb245fc3ba7"
+  },
+  "library/models/vtx/v7/structs/model.py": {
+    "bytes": 676,
+    "mtime_ns": 1794287744721508600,
+    "sha256": "2d2675645364eb35ae5ea249e1c15a6166edd30700ee59249365eb0ff46d8d5b"
+  },
+  "library/models/vtx/v7/structs/strip.py": {
+    "bytes": 1155,
+    "mtime_ns": 1794287744721508600,
+    "sha256": "51fb7903c7b9e25bde4612757d5e421675c14b49816d6fb09974e9d5eb6f2d8d"
+  },
+  "library/models/vtx/v7/structs/strip_group.py": {
+    "bytes": 2006,
+    "mtime_ns": 1794287744722510600,
+    "sha256": "018626db3f6bc6a1f436cdd0bb4e9f67a07e42f244b8ccad354a99b01a4f29c2"
+  },
+  "library/models/vtx/v7/vtx.py": {
+    "bytes": 1405,
+    "mtime_ns": 1794287744722510600,
+    "sha256": "b1faa3708c50ded62c912bb76b20e8773686f5bef56bf4740229cef0d98fad5c"
+  },
+  "library/models/vvc/__init__.py": {
+    "bytes": 816,
+    "mtime_ns": 1794287744723509800,
+    "sha256": "c8e8b68f9a302640fadc558f982712a6fcb8ecc9a2ef9060f9899e234437a4bf"
+  },
+  "library/models/vvc/header.py": {
+    "bytes": 1033,
+    "mtime_ns": 1794287744723509800,
+    "sha256": "6d6c573daef58db064e06fb127c3977bc52f2a4b1f251d8875b7d993995fbe60"
+  },
+  "library/models/vvd/__init__.py": {
+    "bytes": 3743,
+    "mtime_ns": 1794287744724508900,
+    "sha256": "2dc91e450ed1b32835c5b133360e8f56d923785d20aecce2c39a312b754a17ed"
+  },
+  "library/models/vvd/fixup.py": {
+    "bytes": 281,
+    "mtime_ns": 1794287744724508900,
+    "sha256": "f90b8223751be9a7324b033a23cd614a97326ca44458b512844f0cb2230fb9ac"
+  },
+  "library/models/vvd/header.py": {
+    "bytes": 1069,
+    "mtime_ns": 1794287744726044800,
+    "sha256": "e8bd386e182e3c4bf6b41829e6962ffb43eefa8e6ae97e9ba02a6873d0455e60"
+  },
+  "library/shared/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744727051300,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/shared/app_id.py": {
+    "bytes": 1886,
+    "mtime_ns": 1794287744728049500,
+    "sha256": "b06bfeae0a11c7a6f572c75fa7380d67b135e09ead3e446a114cb1b44abd3076"
+  },
+  "library/shared/content_manager/__init__.py": {
+    "bytes": 36,
+    "mtime_ns": 1794287744728049500,
+    "sha256": "a64046aab4d70149c50b8c4580f73605fabfce64140cc3b6fcbd7fce3f49686f"
+  },
+  "library/shared/content_manager/detectors/__init__.py": {
+    "bytes": 3833,
+    "mtime_ns": 1794287744729050000,
+    "sha256": "8970297f0d408eff4e1eabada3803af532bb6b35066e2a835a92e76361951b5f"
+  },
+  "library/shared/content_manager/detectors/bms.py": {
+    "bytes": 1770,
+    "mtime_ns": 1794287744729050000,
+    "sha256": "8dc15c1f8846769c1fbbe1e1832e6c387909b1d9680259ddf81bf6d9c907d8dc"
+  },
+  "library/shared/content_manager/detectors/codmv2.py": {
+    "bytes": 1663,
+    "mtime_ns": 1794287744729050000,
+    "sha256": "2819bd51e26ddd51032b04eccf13fe9cbc9bf85bb531554271660ade2682d64d"
+  },
+  "library/shared/content_manager/detectors/content_detector.py": {
+    "bytes": 1262,
+    "mtime_ns": 1794287744730050500,
+    "sha256": "a58e1307bae6185ebde19f307280937d02b5dab11e280de25ef8f932a1b90c73"
+  },
+  "library/shared/content_manager/detectors/cs2.py": {
+    "bytes": 1590,
+    "mtime_ns": 1794287744731050600,
+    "sha256": "c8fd313b26381760f1b784d7a111b8aed8620428f60a41f34c188556103c635b"
+  },
+  "library/shared/content_manager/detectors/csgo.py": {
+    "bytes": 1935,
+    "mtime_ns": 1794287744732052800,
+    "sha256": "c6807648c1bb2b5665001aa70e579200872fecfb5a3122895511645e5d58d988"
+  },
+  "library/shared/content_manager/detectors/deadlock.py": {
+    "bytes": 1584,
+    "mtime_ns": 1794287744732052800,
+    "sha256": "8b1eb346fc39dd778cb8cec6a10934ccf117b525a96eab416d99549ac8473348"
+  },
+  "library/shared/content_manager/detectors/dota2.py": {
+    "bytes": 1562,
+    "mtime_ns": 1794287744733052500,
+    "sha256": "17cd043d2588af2871f05c54b22d2ef78cd6a8c191c8595f878b5d3e900ec952"
+  },
+  "library/shared/content_manager/detectors/gmod.py": {
+    "bytes": 3202,
+    "mtime_ns": 1794287744733052500,
+    "sha256": "e44e72a8170e66d6cfd0aa5d96d3df97f0c0f4e7bdbdfc45646a7b4b3f3faddb"
+  },
+  "library/shared/content_manager/detectors/goldsrc.py": {
+    "bytes": 1908,
+    "mtime_ns": 1794287744734051700,
+    "sha256": "81c0187c75fcda549dca9a9b48f343736f8885eaedda5e19f232a626800eb86a"
+  },
+  "library/shared/content_manager/detectors/hla.py": {
+    "bytes": 1994,
+    "mtime_ns": 1794287744734051700,
+    "sha256": "a8b8a5bc9bca755342daf2b7effafc678e46eebed54bab75ef862386738b4c0f"
+  },
+  "library/shared/content_manager/detectors/infra.py": {
+    "bytes": 2071,
+    "mtime_ns": 1794287744734051700,
+    "sha256": "2fe62d7bb33325e247453eb9f867f095edb755932db513d1e79d3b6acc47f9b8"
+  },
+  "library/shared/content_manager/detectors/left4dead.py": {
+    "bytes": 2054,
+    "mtime_ns": 1794287744735052200,
+    "sha256": "4eb5e8c1fc1587f825824a31b4187de87530044f47b1a5e4b8560ea1e24a9cdd"
+  },
+  "library/shared/content_manager/detectors/portal2.py": {
+    "bytes": 2354,
+    "mtime_ns": 1794287744735052200,
+    "sha256": "bf945b0cc12b7a090f0d26f2c7874e7cbf80d78177d34a7e39ebd2ca66446a30"
+  },
+  "library/shared/content_manager/detectors/portal2_ce.py": {
+    "bytes": 2300,
+    "mtime_ns": 1794287744736052700,
+    "sha256": "5ae738d72c5505d7883ceca8e540ec0ebb24152e7f8625022f62157329d4a95a"
+  },
+  "library/shared/content_manager/detectors/portal2_revolution.py": {
+    "bytes": 2288,
+    "mtime_ns": 1794287744736559000,
+    "sha256": "7715b18b11a4bef2944a7de024d8aa1261b2e1fbd86dc10cd1f6773b2170886f"
+  },
+  "library/shared/content_manager/detectors/quake3.py": {
+    "bytes": 1278,
+    "mtime_ns": 1794287744737566300,
+    "sha256": "3140c5599c0a4c816ebe6a8070e64a9f37d8e91cbfef5fbcd6f5d6f68f12a15c"
+  },
+  "library/shared/content_manager/detectors/robot_repair.py": {
+    "bytes": 1310,
+    "mtime_ns": 1794287744738564600,
+    "sha256": "11fc44459c16af17c901e3e945233656c002f9f1a43f80d8feed695c773f08be"
+  },
+  "library/shared/content_manager/detectors/sbox.py": {
+    "bytes": 1792,
+    "mtime_ns": 1794287744738564600,
+    "sha256": "a4265bda1cf6b925f2fa2979a377b3415f0b9880b987a041a28b3de561d4a76e"
+  },
+  "library/shared/content_manager/detectors/sfm.py": {
+    "bytes": 2297,
+    "mtime_ns": 1794287744739567200,
+    "sha256": "43e5ae102c9da2b59e02b62fc7ebca6d0fb15d6b395194056b9bffe76d0e2adb"
+  },
+  "library/shared/content_manager/detectors/sof2.py": {
+    "bytes": 1503,
+    "mtime_ns": 1794287744740073600,
+    "sha256": "860b60da5d971f731374e59c13fd25fedce12c7086d5091d4a224e0d13def94d"
+  },
+  "library/shared/content_manager/detectors/source1.py": {
+    "bytes": 2994,
+    "mtime_ns": 1794287744740073600,
+    "sha256": "12832d0adaf450d0ba485ea40979761e86e4988335afc0f7168733b0c4a5444b"
+  },
+  "library/shared/content_manager/detectors/source2.py": {
+    "bytes": 1315,
+    "mtime_ns": 1794287744740073600,
+    "sha256": "8ea03a078722d34cbad7230c3c79d2223318400c18443151334296c7b924b811"
+  },
+  "library/shared/content_manager/detectors/sourcemod.py": {
+    "bytes": 1627,
+    "mtime_ns": 1794287744741079300,
+    "sha256": "7f74fdfa7cb1acbac5275996165d3d55ecc40ec09a21968b1eac048988fa4ecd"
+  },
+  "library/shared/content_manager/detectors/swjk2.py": {
+    "bytes": 1461,
+    "mtime_ns": 1794287744741079300,
+    "sha256": "0f289bc8a0137cb8c98d120adbbc31a124a8a049a48aec60a015ed2bb3f665f6"
+  },
+  "library/shared/content_manager/detectors/titanfall1.py": {
+    "bytes": 1212,
+    "mtime_ns": 1794287744742085900,
+    "sha256": "6e8d1ef00c048b60cbd016f4e8eeb4988a45a71a1b61b5181d79a95dc29ed6e9"
+  },
+  "library/shared/content_manager/detectors/vampire.py": {
+    "bytes": 1258,
+    "mtime_ns": 1794287744742085900,
+    "sha256": "616a326f6f613aed8cceb0e79fc0db0607382c79db7a8effa461e12a8b3beaca"
+  },
+  "library/shared/content_manager/detectors/vindictus.py": {
+    "bytes": 1217,
+    "mtime_ns": 1794287744743087200,
+    "sha256": "a89487ce07f20a65f17c512e4174f4e31eaf9298ff076ea2b1235b8790a001c7"
+  },
+  "library/shared/content_manager/detectors/workshop.py": {
+    "bytes": 11408,
+    "mtime_ns": 1794287744743087200,
+    "sha256": "fe8831d7276257b54fe83b0c9da2303e75860abae76c21a9c40aee2737caca0c"
+  },
+  "library/shared/content_manager/manager.py": {
+    "bytes": 16250,
+    "mtime_ns": 1794287744744086800,
+    "sha256": "68af31d05cce25113de16bf3a9d484165a130c1d45c1b7ad598f6efc0486045a"
+  },
+  "library/shared/content_manager/provider.py": {
+    "bytes": 2897,
+    "mtime_ns": 1794287744744086800,
+    "sha256": "573b62b249d12d8f4af425879a23bc21315b3be2cbf92d039b5f9ae377a78455"
+  },
+  "library/shared/content_manager/providers/__init__.py": {
+    "bytes": 490,
+    "mtime_ns": 1794287744745086400,
+    "sha256": "a580caae7d3ad2da6341750082e40cf56615fd29cd7af14be78d2d91ee612bf0"
+  },
+  "library/shared/content_manager/providers/gma_provider.py": {
+    "bytes": 2024,
+    "mtime_ns": 1794287744746084500,
+    "sha256": "371a6cb9f7ba3d77435ff70d07afc471eea5371a4f1d614ff9863bada0222c6f"
+  },
+  "library/shared/content_manager/providers/goldsrc_content_provider.py": {
+    "bytes": 2270,
+    "mtime_ns": 1794287744746084500,
+    "sha256": "17b2cbb4d52275ac3c8785be91eb8a55a00eff5d52ff8b9a2ecb7e3bef9baf0c"
+  },
+  "library/shared/content_manager/providers/hfs_provider.py": {
+    "bytes": 3009,
+    "mtime_ns": 1794287744747183600,
+    "sha256": "db280f20732e8c1cac437105b4e41302b22ff2fd057d3846ce5f62bbae4831e9"
+  },
+  "library/shared/content_manager/providers/loose_files.py": {
+    "bytes": 1991,
+    "mtime_ns": 1794287744747183600,
+    "sha256": "d6abb9890ead80ea37704dcf542e2b3f118007e5ecbd06dfcc7b6710d9e66a3b"
+  },
+  "library/shared/content_manager/providers/sbox_content_provider.py": {
+    "bytes": 602,
+    "mtime_ns": 1794287744748181800,
+    "sha256": "e563fdebf5f1100bf7152a004ddba816849a52e687b822457c58a6d844f5ed9d"
+  },
+  "library/shared/content_manager/providers/source1_gameinfo_provider.py": {
+    "bytes": 6570,
+    "mtime_ns": 1794287744749182700,
+    "sha256": "703ad3281a1242bef4be260edb40cfa7fe86a632504aae06f450ab228aeb1428"
+  },
+  "library/shared/content_manager/providers/source2_gameinfo_provider.py": {
+    "bytes": 4363,
+    "mtime_ns": 1794287744749182700,
+    "sha256": "fa57fb0a968ac0ad833a9a94ec883dbc7fe5abc8b7b0930049461cfb4804df7f"
+  },
+  "library/shared/content_manager/providers/vpk_provider.py": {
+    "bytes": 2075,
+    "mtime_ns": 1794287744749182700,
+    "sha256": "91a8ebbc308f2a18f2ad8ea46b7fba8f4438eef0f0aebffce82eeab525bcb29c"
+  },
+  "library/shared/content_manager/providers/zip_content_provider.py": {
+    "bytes": 1825,
+    "mtime_ns": 1794287744750183100,
+    "sha256": "7768c5982a66da8b5b63841dd8caf112e26d0b311c87f12be7827eee45cd6cae"
+  },
+  "library/shared/intermidiate_data/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744750183100,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/shared/intermidiate_data/attachment.py": {
+    "bytes": 394,
+    "mtime_ns": 1794287744751181600,
+    "sha256": "1a0406c5a6a837a6c7e5a719e0dc75272e337b82e091b283ba8c3ce850fc40f0"
+  },
+  "library/shared/intermidiate_data/bone.py": {
+    "bytes": 983,
+    "mtime_ns": 1794287744751181600,
+    "sha256": "ce45ba22a656745dcd25d694680b838159725c7c27271351514d935833574b1b"
+  },
+  "library/shared/intermidiate_data/common.py": {
+    "bytes": 129,
+    "mtime_ns": 1794287744751181600,
+    "sha256": "7e1f4757cf6e0e1a4e54f25cd92012a0e86f2d2a9b4d54ba7722d4d1240581b6"
+  },
+  "library/shared/vector_types.py": {
+    "bytes": 133,
+    "mtime_ns": 1794287744752181800,
+    "sha256": "f53dcdd3235fa174b080cec5cffde29b4418ac37632dd0fa6a4e4ab29c1269ef"
+  },
+  "library/source1/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744753181300,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/source1/bsp/__init__.py": {
+    "bytes": 84,
+    "mtime_ns": 1794287744753181300,
+    "sha256": "bfc16c1b1c6d70d6bf68ea4f148203722caa01abdb08a11af9f3fe765e6f8cd4"
+  },
+  "library/source1/bsp/bsp_file.py": {
+    "bytes": 9890,
+    "mtime_ns": 1794287744754182800,
+    "sha256": "2a7447ce5354e8bd75de3fa5fd1dcc89b60712e290e3b1d1b96db04830f1ec62"
+  },
+  "library/source1/bsp/datatypes/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744754182800,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/source1/bsp/datatypes/brush.py": {
+    "bytes": 809,
+    "mtime_ns": 1794287744755688600,
+    "sha256": "e38c4cfca5a6a7a46dc9af265dff220da4e6fe46e00685290edaf36f281072d5"
+  },
+  "library/source1/bsp/datatypes/cubemap.py": {
+    "bytes": 436,
+    "mtime_ns": 1794287744755688600,
+    "sha256": "8ecc34d1ca3b53fe7c005374363beaa64c98a142ffcc60ab19dc842d2191cf20"
+  },
+  "library/source1/bsp/datatypes/detail_prop_lump.py": {
+    "bytes": 2405,
+    "mtime_ns": 1794287744756694500,
+    "sha256": "8f97786018cbca4b19dc074f34ea0d13416722040d089408c1658079cb8cd54c"
+  },
+  "library/source1/bsp/datatypes/displacement.py": {
+    "bytes": 3507,
+    "mtime_ns": 1794287744757199100,
+    "sha256": "458fdcaef0fd3574b53d07f546b5818f11f97b304bedf6d3858e907e0615ad9d"
+  },
+  "library/source1/bsp/datatypes/face.py": {
+    "bytes": 10303,
+    "mtime_ns": 1794287744757199100,
+    "sha256": "4d8ad9ed2112ed247f7a57605a4fad8cf5623a856b1f48f5f4e23c5f5907d14b"
+  },
+  "library/source1/bsp/datatypes/game_lump_header.py": {
+    "bytes": 1379,
+    "mtime_ns": 1794287744757199100,
+    "sha256": "f07ef564199cfaee3c26d43c58dee73bfa22d3923192c90d40db99a8b846113b"
+  },
+  "library/source1/bsp/datatypes/lightmap_header.py": {
+    "bytes": 373,
+    "mtime_ns": 1794287744758203500,
+    "sha256": "6007535632fcb7ea2c5bfe21d401120c41005905fa66297c703936634cb3dafa"
+  },
+  "library/source1/bsp/datatypes/material_sort.py": {
+    "bytes": 418,
+    "mtime_ns": 1794287744758203500,
+    "sha256": "12ff6bd7863638ad9db61e73655db16103cd9655d12179cf5836bfbcd607616a"
+  },
+  "library/source1/bsp/datatypes/mesh.py": {
+    "bytes": 1385,
+    "mtime_ns": 1794287744759708200,
+    "sha256": "507842d81d80507397d5151ef248c9db130bf460dc0bcb71e0c5a57d4f4db33e"
+  },
+  "library/source1/bsp/datatypes/model.py": {
+    "bytes": 1582,
+    "mtime_ns": 1794287744760715800,
+    "sha256": "e9f9110f2cd52a8bcb66233b555463aa1f080c07d171e1124e9c9e3bd03d444a"
+  },
+  "library/source1/bsp/datatypes/node.py": {
+    "bytes": 1415,
+    "mtime_ns": 1794287744760715800,
+    "sha256": "e3284b47856503004f5200f21e2bbec4505b7ae5b9f10cbbb42ac22c9fb44342"
+  },
+  "library/source1/bsp/datatypes/occluderdata.py": {
+    "bytes": 1193,
+    "mtime_ns": 1794287744760715800,
+    "sha256": "cb62625d01c1bdbf90db7e2429b2f0940e48cffc7baca9f53b6926eb7d761298"
+  },
+  "library/source1/bsp/datatypes/overlay.py": {
+    "bytes": 3150,
+    "mtime_ns": 1794287744761714700,
+    "sha256": "a15ef58bd3357dd8dbcdaad9fc2f3d3c048b48eca255c6695424203183862eb5"
+  },
+  "library/source1/bsp/datatypes/plane.py": {
+    "bytes": 685,
+    "mtime_ns": 1794287744761714700,
+    "sha256": "a1385f31ca41546e675481120a64e80998d7c6f583e28088ce5d3cd841c2ecff"
+  },
+  "library/source1/bsp/datatypes/static_prop_lump.py": {
+    "bytes": 10243,
+    "mtime_ns": 1794287744762715400,
+    "sha256": "652abfd36b5b24d8311d1dc93240c5317d0b0498df662c4cfb282a5b46e04216"
+  },
+  "library/source1/bsp/datatypes/texture_data.py": {
+    "bytes": 1328,
+    "mtime_ns": 1794287744762715400,
+    "sha256": "ba3393af9bae40f0fea8093ba1226a0b7a17230ce3fb8217c514d25c9f3ef46a"
+  },
+  "library/source1/bsp/datatypes/texture_info.py": {
+    "bytes": 1954,
+    "mtime_ns": 1794287744763713700,
+    "sha256": "0ca0cf5919452516822cf8859ced5bda473a60fab86d602cc97ed619beb1e551"
+  },
+  "library/source1/bsp/datatypes/world_light.py": {
+    "bytes": 3338,
+    "mtime_ns": 1794287744763713700,
+    "sha256": "f0effadd5bbe6a480f27a41f8338db14b6b90f0e99eb6c77004c6585a5fbb570"
+  },
+  "library/source1/bsp/lump.py": {
+    "bytes": 4691,
+    "mtime_ns": 1794287744763713700,
+    "sha256": "83e9a046fc2603b1ba90ec5ceec36a11243642ce1d4f3a6e1e33593b04e9fae8"
+  },
+  "library/source1/bsp/lumps/__init__.py": {
+    "bytes": 2408,
+    "mtime_ns": 1794287744765734900,
+    "sha256": "b05437b61c55b26ae111a5526d8ecd91d89e740c42349c8d3c7ffa3898bf67cc"
+  },
+  "library/source1/bsp/lumps/brush_lump.py": {
+    "bytes": 1614,
+    "mtime_ns": 1794287744765734900,
+    "sha256": "1ae3796b2afee8f2b78a9872f3f7270cf02becd6fd71bc07ed97be2758cf1ae8"
+  },
+  "library/source1/bsp/lumps/cubemap.py": {
+    "bytes": 601,
+    "mtime_ns": 1794287744766742200,
+    "sha256": "b3c8ed62993cce592a20b20ba57af54a36d2f74de4b9dc3952595bebc2cc03d7"
+  },
+  "library/source1/bsp/lumps/displacement_lump.py": {
+    "bytes": 2828,
+    "mtime_ns": 1794287744766742200,
+    "sha256": "ed1eaf33bd89bd5f02cc1c3e336994be18261d195b090c07ead62f90d8155d58"
+  },
+  "library/source1/bsp/lumps/edge_lump.py": {
+    "bytes": 1026,
+    "mtime_ns": 1794287744767744200,
+    "sha256": "5817d8b46fc1dea4ee852c810b80c960a3fa571d8a689633cfe66a271c4ece1e"
+  },
+  "library/source1/bsp/lumps/entity_lump.py": {
+    "bytes": 2080,
+    "mtime_ns": 1794287744767744200,
+    "sha256": "42730f9d8b3145f3a0bb05a423c6d00d5553f9bc1a3c31f2489b688600bdfd89"
+  },
+  "library/source1/bsp/lumps/face_indices_lump.py": {
+    "bytes": 570,
+    "mtime_ns": 1794287744768741600,
+    "sha256": "f0ff9dc703235b6e62bbdc709a43979978b40d632152b09650665a19ae508e5e"
+  },
+  "library/source1/bsp/lumps/face_lump.py": {
+    "bytes": 4274,
+    "mtime_ns": 1794287744769246900,
+    "sha256": "48f5c2d095d4ff5d18bf42621fd9ebba24d8eb13b48e1f892c63d8c8cd5382c4"
+  },
+  "library/source1/bsp/lumps/game_lump.py": {
+    "bytes": 6394,
+    "mtime_ns": 1794287744769750800,
+    "sha256": "01268726c3ef7047bf2781cea6995326ae2592e9b52e5db625bc3dbe8c52b38a"
+  },
+  "library/source1/bsp/lumps/lightmap_header_lump.py": {
+    "bytes": 681,
+    "mtime_ns": 1794287744769750800,
+    "sha256": "c3fcaac82ec57226189bf8519c3c33a36b76d57858ab1f6e9457a59cbf2b8a45"
+  },
+  "library/source1/bsp/lumps/lightmap_lump.py": {
+    "bytes": 1475,
+    "mtime_ns": 1794287744771758800,
+    "sha256": "d18128673a95c9af2e89fdfa3971337ebcc15ddd3e4f6eda87c69548881242ff"
+  },
+  "library/source1/bsp/lumps/material_sort_lump.py": {
+    "bytes": 651,
+    "mtime_ns": 1794287744771758800,
+    "sha256": "8d4e9f227bb92d6e484ddefc313cfb3be33e2bbcfaac7cd9868c42f768d42b44"
+  },
+  "library/source1/bsp/lumps/mesh_lump.py": {
+    "bytes": 602,
+    "mtime_ns": 1794287744772758500,
+    "sha256": "06b417ec9d3a75c41c2499d4d93b30dd50e82b86ac60672c239562742be194d2"
+  },
+  "library/source1/bsp/lumps/model_lump.py": {
+    "bytes": 1338,
+    "mtime_ns": 1794287744772758500,
+    "sha256": "2f9f848ea0f17d8aa6c2361ab90a9de4d774ec2fc6de6c6aa65d1dc211cf8880"
+  },
+  "library/source1/bsp/lumps/node_lump.py": {
+    "bytes": 1068,
+    "mtime_ns": 1794287744773757900,
+    "sha256": "3f887e79a80a2dfc6c4a31297d2888d4eb2260611876ab2a55769b3d0445d45d"
+  },
+  "library/source1/bsp/lumps/occlusion_lump.py": {
+    "bytes": 1102,
+    "mtime_ns": 1794287744774265000,
+    "sha256": "714ec547a3f678131e09a4826fcf383227ab75f3dcd8557c61eef6ec2b118d43"
+  },
+  "library/source1/bsp/lumps/overlay_lump.py": {
+    "bytes": 1030,
+    "mtime_ns": 1794287744774265000,
+    "sha256": "8702a386168e9f66c62e9b1e8c2677421d493d9c4f20c6ebbaab5f4e5cc5090d"
+  },
+  "library/source1/bsp/lumps/pak_lump.py": {
+    "bytes": 1051,
+    "mtime_ns": 1794287744774265000,
+    "sha256": "3aed7c7d9182fb4abc8257113ad2a8c707a25f02233879f19821f7b0614b614c"
+  },
+  "library/source1/bsp/lumps/physics.py": {
+    "bytes": 1285,
+    "mtime_ns": 1794287744775772600,
+    "sha256": "88de6af2892c3e4c213ea4b70c7d6b4f174a53b271e08764dff800e858707883"
+  },
+  "library/source1/bsp/lumps/plane_lump.py": {
+    "bytes": 1145,
+    "mtime_ns": 1794287744775772600,
+    "sha256": "3942c72c2d3a7f9be78fed9be389fd026ce47ff3c78be0bd49494e7a8025b87a"
+  },
+  "library/source1/bsp/lumps/string_lump.py": {
+    "bytes": 1519,
+    "mtime_ns": 1794287744777779800,
+    "sha256": "74008f236a755937c41335de7cabe7f214fec0e2ed806d4d0e8b9389188dc0c5"
+  },
+  "library/source1/bsp/lumps/surf_edge_lump.py": {
+    "bytes": 839,
+    "mtime_ns": 1794287744778780700,
+    "sha256": "debf31db2bf8ea945814e0cad6c935ad976693aa11d6ee6b2e849abd81feadca"
+  },
+  "library/source1/bsp/lumps/texture_lump.py": {
+    "bytes": 2114,
+    "mtime_ns": 1794287744778780700,
+    "sha256": "90427a2d131dae3412df523b7af73788a95ac7e9d6d163240545c9bbc879f06f"
+  },
+  "library/source1/bsp/lumps/vertex_lump.py": {
+    "bytes": 5619,
+    "mtime_ns": 1794287744780287000,
+    "sha256": "80ddc3ace5b5f1227070f689c070d5c44b237c61e7f2513ca8a9e22feb4e6322"
+  },
+  "library/source1/bsp/lumps/vertex_normal_lump.py": {
+    "bytes": 906,
+    "mtime_ns": 1794287744780287000,
+    "sha256": "5b8cf3e58f76e99c10930220180aaf13825ce4f9c57237f3d19cd1004707cf90"
+  },
+  "library/source1/bsp/lumps/world_light_lump.py": {
+    "bytes": 616,
+    "mtime_ns": 1794287744780287000,
+    "sha256": "50e7a24e03b502a29f8b27b2b05c3d44a5c2d8d60f5b29dbf118837cfc271a42"
+  },
+  "library/source1/dmx/sfm_utils.py": {
+    "bytes": 573,
+    "mtime_ns": 1794287744781294000,
+    "sha256": "c5245ea54cbe1e1837b71539c6fc01d147fb988f00759af2403c9f930c786f23"
+  },
+  "library/source1/dmx/source1_to_dmx.py": {
+    "bytes": 13516,
+    "mtime_ns": 1794287744782292200,
+    "sha256": "1e2f0cf6e2d488a2715520f8251e523c07187fb8f6a16774f2d4539fd36aaffe"
+  },
+  "library/source1/fgd/generate_entity_classes.py": {
+    "bytes": 7826,
+    "mtime_ns": 1794287744783294000,
+    "sha256": "5f31e5b771d2ae7b4b4833c353ac30b0970345e03cfc7b95d7f9b41965236d58"
+  },
+  "library/source1/vmt/__init__.py": {
+    "bytes": 12172,
+    "mtime_ns": 1794287744784295300,
+    "sha256": "d8e31966dd937e23ae22be1d6a3002d90206deb3ffa02a825936befc85cf3063"
+  },
+  "library/source1/vtf/__init__.py": {
+    "bytes": 10009,
+    "mtime_ns": 1794287744784295300,
+    "sha256": "c009a6723a99db159b1c303c5bc4f02c010b975a1016d52f3f679e7df51413f4"
+  },
+  "library/source2/__init__.py": {
+    "bytes": 525,
+    "mtime_ns": 1794287744784295300,
+    "sha256": "f151652a306b42ff20a73655b9e852adc2963d6d3c8db3718f624d06159f56f7"
+  },
+  "library/source2/blocks/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744785802000,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/source2/blocks/agrp_block.py": {
+    "bytes": 147,
+    "mtime_ns": 1794287744785802000,
+    "sha256": "0d8b3ac304c4a7d30c57dcd252c11b40b0840f9ef52d47051fa286b197ca4383"
+  },
+  "library/source2/blocks/all_blocks.py": {
+    "bytes": 1735,
+    "mtime_ns": 1794287744786809600,
+    "sha256": "f11a367681ac6b6eb162d969853d55d318ae6c204ddf8618137562e5538bcf9b"
+  },
+  "library/source2/blocks/aseq_block.py": {
+    "bytes": 146,
+    "mtime_ns": 1794287744786809600,
+    "sha256": "4e2fb502d3fe5ed1d271ec5b78aa28921ed0f46a1a5a1aa0370ca5f294b1573a"
+  },
+  "library/source2/blocks/base.py": {
+    "bytes": 448,
+    "mtime_ns": 1794287744787809100,
+    "sha256": "4589d7ec16114e5d5aa7675395a98c8930ac6301bc7841469aef7005e588910f"
+  },
+  "library/source2/blocks/binary_blob.py": {
+    "bytes": 528,
+    "mtime_ns": 1794287744788811000,
+    "sha256": "0dfcae297986eac8a23f7728462d4b1a419bcea852973e331d063b8651e64eab"
+  },
+  "library/source2/blocks/dummy.py": {
+    "bytes": 369,
+    "mtime_ns": 1794287744788811000,
+    "sha256": "9629fce1d69cf0f763f5f6b08aa6be20966bcb871e98d0bc9c63d11b01ec15d6"
+  },
+  "library/source2/blocks/kv3_block.py": {
+    "bytes": 2786,
+    "mtime_ns": 1794287744788811000,
+    "sha256": "156f0b0237723dcf75992da135e977cac77d18ce6f19e724b1707440e9bb44cb"
+  },
+  "library/source2/blocks/manifest.py": {
+    "bytes": 1029,
+    "mtime_ns": 1794287744790317300,
+    "sha256": "679e14f3bf56b911b20456309201ac430acac73ba9f4ebd7fd9f4b0d088d5be9"
+  },
+  "library/source2/blocks/morph_block.py": {
+    "bytes": 3013,
+    "mtime_ns": 1794287744790317300,
+    "sha256": "ac45ee52dd8f04ecd2a33fb9ae2bd86b5223835000c231509df3a1343755f7a0"
+  },
+  "library/source2/blocks/phys_block.py": {
+    "bytes": 139,
+    "mtime_ns": 1794287744791324100,
+    "sha256": "a36e19141def5d0c893592e97110ec6d5264df31def2a4c20b48d9b1da565cd2"
+  },
+  "library/source2/blocks/resource_edit_info/__init__.py": {
+    "bytes": 5771,
+    "mtime_ns": 1794287744791324100,
+    "sha256": "df8de74d958bd27db5beb033345b15e9ddc4197cc50c0a31e995580265f960b6"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/__init__.py": {
+    "bytes": 582,
+    "mtime_ns": 1794287744792323500,
+    "sha256": "c0557dcbe99ed91bf0fe66bb3b5fef12754e3d60a256cac05f9a9df97ede93a9"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/additional_related_file.py": {
+    "bytes": 1277,
+    "mtime_ns": 1794287744792323500,
+    "sha256": "90c1c51ef5dfc41af808eeb73652cd235119edae32a4e3395561fba69b2e196f"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/argument_dependency.py": {
+    "bytes": 1968,
+    "mtime_ns": 1794287744793322000,
+    "sha256": "f6ccc290d1a2fe80440750e9e42be889786dfd2ad070bca47251eeee359ebc6f"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/child_resource.py": {
+    "bytes": 1034,
+    "mtime_ns": 1794287744794324800,
+    "sha256": "eab14588556df4c32d00cc98e093c596e1d3a5eeade819fa7abdfe0f83064e2a"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/custom_dependency.py": {
+    "bytes": 717,
+    "mtime_ns": 1794287744794324800,
+    "sha256": "432ef022312d292456b5ac08ffac4ce59601a2711d208d17c978aac0a10936e4"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/dependency.py": {
+    "bytes": 2076,
+    "mtime_ns": 1794287744795831700,
+    "sha256": "8a09cab8b344e60070b70522caae5b2e028a4abb2a359787a3467a3cd4b171e3"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/extra_data.py": {
+    "bytes": 2642,
+    "mtime_ns": 1794287744795831700,
+    "sha256": "7d709a9952a10190f938b77cd6bf1a203e157177ca22a1574a4f1778f8598d3a"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/input_dependency.py": {
+    "bytes": 1532,
+    "mtime_ns": 1794287744796837100,
+    "sha256": "92709643d9cd74099d0dddd5fd7ca918d8cd6ea4b12664fa01ae680399eeaca4"
+  },
+  "library/source2/blocks/resource_edit_info/dependencies/special_dependency.py": {
+    "bytes": 1502,
+    "mtime_ns": 1794287744796837100,
+    "sha256": "68819ea3ba9bfe752df471015c8dd016b2b04aa684dc0f9871d0da2f7ebd3de2"
+  },
+  "library/source2/blocks/resource_external_reference_list.py": {
+    "bytes": 2387,
+    "mtime_ns": 1794287744797837500,
+    "sha256": "f4bfd5c992edbe00f4b7c6ec5280965ba37daffc812521dc2bd82bd777e135b6"
+  },
+  "library/source2/blocks/resource_introspection_manifest/manifest.py": {
+    "bytes": 1714,
+    "mtime_ns": 1794287744797837500,
+    "sha256": "6400c315f644199e1f179689d8f8b6278259a2862da3a0190379a9e4f8598e06"
+  },
+  "library/source2/blocks/resource_introspection_manifest/types.py": {
+    "bytes": 4372,
+    "mtime_ns": 1794287744798836000,
+    "sha256": "9be323b8321a6e3e8f80145ce2df73f683f305a839b762ab067c15ea1d076ff7"
+  },
+  "library/source2/blocks/texture_data/__init__.py": {
+    "bytes": 2939,
+    "mtime_ns": 1794287744798836000,
+    "sha256": "1c634b3474d45ab772718195f282d1f1ed18d9a2902334b3175ceb1763461a97"
+  },
+  "library/source2/blocks/texture_data/enums.py": {
+    "bytes": 1792,
+    "mtime_ns": 1794287744801344100,
+    "sha256": "8d4dbee8352e88e3c1aed0a752d7caffbcd822514a67d52c51d0c9e65b549fb4"
+  },
+  "library/source2/blocks/vertex_index_buffer/__init__.py": {
+    "bytes": 1788,
+    "mtime_ns": 1794287744802351100,
+    "sha256": "c038a9b27e3875bf1df79864edeccf9b41cdcce1535935c8ac94d71b1aa3fc0a"
+  },
+  "library/source2/blocks/vertex_index_buffer/enums.py": {
+    "bytes": 3032,
+    "mtime_ns": 1794287744803353000,
+    "sha256": "4f1078b7b9cf559ace0dce63501c5d523b2d68eb01557ab5453088faf823baa5"
+  },
+  "library/source2/blocks/vertex_index_buffer/index_buffer.py": {
+    "bytes": 4445,
+    "mtime_ns": 1794287744803353000,
+    "sha256": "329de4a0364271ac9d1874a2419b8b52083f4fa6646c176ba0c36284ef00f35f"
+  },
+  "library/source2/blocks/vertex_index_buffer/vertex_buffer.py": {
+    "bytes": 8902,
+    "mtime_ns": 1794287744804351300,
+    "sha256": "3ebfb29d3596ed6a8d7ad8ab393f0aa2a060024624ec90ed6688fb9acb3635cf"
+  },
+  "library/source2/common.py": {
+    "bytes": 2424,
+    "mtime_ns": 1794287744804351300,
+    "sha256": "644c518cd144541c7ae75a9321bf185775862c782c1377276a5fe29d2ae7eabe"
+  },
+  "library/source2/compiled_file_header.py": {
+    "bytes": 1894,
+    "mtime_ns": 1794287744805858600,
+    "sha256": "602dd9a5687477fb8e946c9436cc75c090437024e116a2707013115d4e1d66c9"
+  },
+  "library/source2/compiled_resource.py": {
+    "bytes": 7714,
+    "mtime_ns": 1794287744806866400,
+    "sha256": "4abaffabb2bf552b45927fa744537204dae26acb271802c977c49dae6a2ed7ef"
+  },
+  "library/source2/exceptions.py": {
+    "bytes": 40,
+    "mtime_ns": 1794287744806866400,
+    "sha256": "cc3f356c7b78f886b1efb5f887f9c49c50184f22afa18dbae570f76452f26464"
+  },
+  "library/source2/keyvalues3/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744808077000,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/source2/keyvalues3/binary_keyvalues.py": {
+    "bytes": 77583,
+    "mtime_ns": 1794287744808077000,
+    "sha256": "80f499a83b7ab4ada4c8a18773e2ac14429b10fbf4b12255811b78bf9466f578"
+  },
+  "library/source2/keyvalues3/enums.py": {
+    "bytes": 16911,
+    "mtime_ns": 1794287744809074800,
+    "sha256": "655aa93943ecc7cc4b9d5c22083a18fb73d498fd5e91b7bd1c773f064255e4a7"
+  },
+  "library/source2/keyvalues3/types.py": {
+    "bytes": 9716,
+    "mtime_ns": 1794287744809074800,
+    "sha256": "470889df9af92b123c1cd794366c4c2815543078ed780f6df052d8a9f692a271"
+  },
+  "library/source2/resource_types/__init__.py": {
+    "bytes": 490,
+    "mtime_ns": 1794287744810075200,
+    "sha256": "c59779d58fa4d8d6ff417f65fb3ef75584ef4c44445107cd0b24e8dc500fefb3"
+  },
+  "library/source2/resource_types/compiled_manifest_resource.py": {
+    "bytes": 310,
+    "mtime_ns": 1794287744810075200,
+    "sha256": "a84da4350f86f71714752234e25a76b868a0d77b3bcf4d872ce4ae70c90f9fca"
+  },
+  "library/source2/resource_types/compiled_material_resource.py": {
+    "bytes": 2014,
+    "mtime_ns": 1794287744812616600,
+    "sha256": "9bfe1c45f36a0f7a70e2c89d039853292b1f174876cd4f5f115367e70e696ab9"
+  },
+  "library/source2/resource_types/compiled_mesh_resource.py": {
+    "bytes": 361,
+    "mtime_ns": 1794287744813133100,
+    "sha256": "2a1bfafc0c0fc7c091e1cba6641aa50606b74d85306c0ed4a2f5d223e1914c7f"
+  },
+  "library/source2/resource_types/compiled_model_resource.py": {
+    "bytes": 1609,
+    "mtime_ns": 1794287744813133100,
+    "sha256": "8149138d8204b80eaf40e538d5fc1427c6242002ea906b58688e90742efeccf2"
+  },
+  "library/source2/resource_types/compiled_physics_resource.py": {
+    "bytes": 2058,
+    "mtime_ns": 1794287744814140600,
+    "sha256": "5237af28940842e5c861e10c4c980eecc353ac3594f330d2b88b2076495f54a9"
+  },
+  "library/source2/resource_types/compiled_texture_resource.py": {
+    "bytes": 14256,
+    "mtime_ns": 1794287744814140600,
+    "sha256": "c0a80f5eb0504e4e152709b709d0a8f4bbfd050bb07aeb576853ac52d0719371"
+  },
+  "library/source2/resource_types/compiled_vmorf_resource.py": {
+    "bytes": 281,
+    "mtime_ns": 1794287744814140600,
+    "sha256": "0002ea6c7b53cad90f78d9f2b229d4d661a2330d8b05f501bb6aff82bac85085"
+  },
+  "library/source2/resource_types/compiled_world_resource.py": {
+    "bytes": 2974,
+    "mtime_ns": 1794287744814140600,
+    "sha256": "7115d6ff2887ba485685587e685e37aa6d049059a9c267593e9febc43041d31b"
+  },
+  "library/source2/utils/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744815647100,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "library/source2/utils/decode_animations.py": {
+    "bytes": 6175,
+    "mtime_ns": 1794287744816232400,
+    "sha256": "ab2abfc3e657cdda2087e7e04acf3859d7c0f3d9ab9b64308e1af3dd51d9bfd2"
+  },
+  "library/source2/utils/entity_keyvalues.py": {
+    "bytes": 7693,
+    "mtime_ns": 1794287744818241300,
+    "sha256": "98c1135e56daca4f85c270fe5c93ca7f84b3d4d46ffb52e99b89c68701b9d893"
+  },
+  "library/source2/utils/entity_keyvalues_keys.py": {
+    "bytes": 1620,
+    "mtime_ns": 1794287744818241300,
+    "sha256": "6567772d67b15e09a213150aeafb18470f45c4387170f5fb2aae8fed47ff6b5f"
+  },
+  "library/source2/utils/entitykeyvalues_strings.json": {
+    "bytes": 224913,
+    "mtime_ns": 1794287744820237800,
+    "sha256": "9e7616c9d650ce28cdb13427ce38f854f5c5d40990f9d3fc2be88accfa3d037c"
+  },
+  "library/source2/utils/entitykeyvalues_strings.txt": {
+    "bytes": 105358,
+    "mtime_ns": 1794287744821237700,
+    "sha256": "6fb04c5905b21a2e8e922cf55a93f3ec01296b3fb13a0bee701ad6473b3356e5"
+  },
+  "library/source2/utils/entitykv_lists/condence.py": {
+    "bytes": 282,
+    "mtime_ns": 1794287744821237700,
+    "sha256": "59eaa12dce32b81b53f9ce9aa0963c187bf2b88b6d63ebe89cfe5a89bb5d00db"
+  },
+  "library/source2/utils/kv3_generator.py": {
+    "bytes": 5269,
+    "mtime_ns": 1794287744822388800,
+    "sha256": "d395ca3d2233ebd9fc49e7d43b2c29171121f5a158b3aa96639c1b6b3a9541fc"
+  },
+  "library/source2/utils/murmurhash2.py": {
+    "bytes": 2051,
+    "mtime_ns": 1794287744823896400,
+    "sha256": "9912c1ad5a37bdcbe38e90ce13d88a011ab6efbf2a6827b24c3c637cafb12cfb"
+  },
+  "library/source2/utils/ntro_reader.py": {
+    "bytes": 14228,
+    "mtime_ns": 1794287744823896400,
+    "sha256": "46354308fcc38df15f2272add2b1a95cd87f17091dfbb010f52b576ea96c7c36"
+  },
+  "library/utils/__init__.py": {
+    "bytes": 1612,
+    "mtime_ns": 1794287744824904500,
+    "sha256": "72e7ea8529cf735eeba9d6ae8101ecd3439bc31e3b094b675df1b3f95f62682d"
+  },
+  "library/utils/common.py": {
+    "bytes": 173,
+    "mtime_ns": 1794287744824904500,
+    "sha256": "e94399b663aaf83c68df587d3a227ab5ced3633b6911eafd28a0d07d3b7f5e01"
+  },
+  "library/utils/datamodel.py": {
+    "bytes": 42502,
+    "mtime_ns": 1794287744825903300,
+    "sha256": "75a2a3227b9e2a9701e87a3fbd0f44e4dee67a0148c67f5ba32fd25ad3beea65"
+  },
+  "library/utils/datamodel_.py": {
+    "bytes": 44339,
+    "mtime_ns": 1794287744826408800,
+    "sha256": "eb1f82e9b2be5fb372f4fe8a678e3cd9e1aaa06b1abc50e0b926f14f5dc767eb"
+  },
+  "library/utils/exceptions.py": {
+    "bytes": 193,
+    "mtime_ns": 1794287744826408800,
+    "sha256": "08dd0665adb594de7d4977cc784b01be096a7dc3061a77bc37d94c5756401d02"
+  },
+  "library/utils/extended_enum.py": {
+    "bytes": 1178,
+    "mtime_ns": 1794287744827415300,
+    "sha256": "51f06cca83c822dd346acad8aad5469c0b146506effa19f787aa784368b48370"
+  },
+  "library/utils/fgd_parser/__init__.py": {
+    "bytes": 147,
+    "mtime_ns": 1794287744828415300,
+    "sha256": "591489940810077fa0779855f2f0707dbab00396dceb511535692c60918b2172"
+  },
+  "library/utils/fgd_parser/fgd_classes.py": {
+    "bytes": 12080,
+    "mtime_ns": 1794287744829416500,
+    "sha256": "e8523981b73acae6e7ebac9261293b4d8a0bdcd1adc6d7149f31a2a1c3e7a0e3"
+  },
+  "library/utils/fgd_parser/fgd_parser.py": {
+    "bytes": 22551,
+    "mtime_ns": 1794287744829416500,
+    "sha256": "aceceaa7fed699198ef39e6a6f2a485753e22296b01a001907fb8b13e77b1b33"
+  },
+  "library/utils/file_utils.py": {
+    "bytes": 20519,
+    "mtime_ns": 1794287744830416100,
+    "sha256": "6d91d0eae0ea912aff31dc210f24665bf4303f71c00ebc3b4245aaf775185ba0"
+  },
+  "library/utils/idtech3_shader_parser.py": {
+    "bytes": 2617,
+    "mtime_ns": 1794287744830416100,
+    "sha256": "d69aebc0b734370250b4ba3e9cb615f1c5d46fa3b748ed54fea6eeda71e975a8"
+  },
+  "library/utils/kv1.py": {
+    "bytes": 39813,
+    "mtime_ns": 1794287744831415700,
+    "sha256": "d8173b60a2add5ea93e81f9b9fe6d0151a441cdd0c3cddbafb6c76c4d7e12472"
+  },
+  "library/utils/kv_parser.py": {
+    "bytes": 18296,
+    "mtime_ns": 1794287744831415700,
+    "sha256": "7d95ec335fda7f15a50ee3dd3de8b0e0e4b37594c737159648f51d88554c3e20"
+  },
+  "library/utils/logging_stub.py": {
+    "bytes": 2780,
+    "mtime_ns": 1794287744832415300,
+    "sha256": "e083108cb0857a7cbb060207ad52da3231bea25518486b1006766b99f1fc5894"
+  },
+  "library/utils/math_utilities.py": {
+    "bytes": 8661,
+    "mtime_ns": 1794287744832415300,
+    "sha256": "ce524b421db0d742203fc385dc280dbdcce6c8a02c619fb59d4cff6aea5489b6"
+  },
+  "library/utils/path_utilities.py": {
+    "bytes": 4450,
+    "mtime_ns": 1794287744833417100,
+    "sha256": "e646ea9a859de5a8c725fc74f5d25c8d8b5c2d5f5923a1c06afacb43ea23d3c4"
+  },
+  "library/utils/perf_sampler.py": {
+    "bytes": 2215,
+    "mtime_ns": 1794287744834419200,
+    "sha256": "7afd16decc1d0aae538c84e398e22c4b52b1afcdf49f6b0c95119cffa01769ce"
+  },
+  "library/utils/pylib/__init__.py": {
+    "bytes": 1156,
+    "mtime_ns": 1794287744835926100,
+    "sha256": "ed6674880f65ea89a950e93cea6d4fc4f3a7f4c5f395ac67c41e1710f10ea42f"
+  },
+  "library/utils/pylib/__init__.pyi": {
+    "bytes": 796,
+    "mtime_ns": 1794287744835926100,
+    "sha256": "5367694440a4a49f977fc8ab9db816c2632616ebc2aab885c6a4c062a669299f"
+  },
+  "library/utils/pylib/compression.pyi": {
+    "bytes": 2292,
+    "mtime_ns": 1794287744836933000,
+    "sha256": "2458b07858a6046e1bf72e1db2b42c4ad4af48b1c0fce79d46094eca8ee365c7"
+  },
+  "library/utils/pylib/image.pyi": {
+    "bytes": 874,
+    "mtime_ns": 1794287744836933000,
+    "sha256": "2440fd79a6b4df0aa67e882c8e91ed75888852f6e5689fb97b498d68350395a9"
+  },
+  "library/utils/pylib/linux/pylib.abi3.so": {
+    "bytes": 6550128,
+    "mtime_ns": 1794287744865838800,
+    "sha256": "a3ef1d98f3a9489e23b591ec052eaa051467ec3cd7d4f58f6be029474ef58d7f"
+  },
+  "library/utils/pylib/macos/pylib.abi3.so": {
+    "bytes": 3341696,
+    "mtime_ns": 1794287744884005500,
+    "sha256": "02a3e93bb20ed18944c099b25dbacaed7a54f45984c194d81e00287ab14b0ab0"
+  },
+  "library/utils/pylib/mesh.pyi": {
+    "bytes": 1866,
+    "mtime_ns": 1794287744884987900,
+    "sha256": "22d661e32533f46cda70ade866dcf266b5d50c9db057fc00d2a9c649a9f0651f"
+  },
+  "library/utils/pylib/vtf.pyi": {
+    "bytes": 8263,
+    "mtime_ns": 1794287744885993800,
+    "sha256": "17b48849ac52680eb1a15d35e77e35ac266a450fc2cf5d90c4164de0bf96d2f3"
+  },
+  "library/utils/pylib/windows/pylib.pyd": {
+    "bytes": 1010688,
+    "mtime_ns": 1794287744891576700,
+    "sha256": "5532a312b135c7af4be5b818d6f158da78025ed3f5b24361764de91500258454"
+  },
+  "library/utils/s1_keyvalues.py": {
+    "bytes": 11156,
+    "mtime_ns": 1794287744892573700,
+    "sha256": "a404e5cacc98ad6631814d233c63c441e3d7e623468f06949839071c92b37b11"
+  },
+  "library/utils/s2_keyvalues.py": {
+    "bytes": 10994,
+    "mtime_ns": 1794287744892573700,
+    "sha256": "4ffb0b695b72978c6529e044460ad7a83695e20b5b673cbe56d0f3ba2a11cd99"
+  },
+  "library/utils/singleton.py": {
+    "bytes": 574,
+    "mtime_ns": 1794287744893575800,
+    "sha256": "70037508287835d6ffc77b000c5b7495076e96bf053bbc1a8bc01698fbf5f560"
+  },
+  "library/utils/thirdparty/equilib/cube2equi_numpy.py": {
+    "bytes": 6483,
+    "mtime_ns": 1794287744894576300,
+    "sha256": "6a2c1e2ef40b92648444fad7e485105c11c2b956914b330ffad8161091a46e28"
+  },
+  "library/utils/thirdparty/equilib/numpy_grid_sample/__init__.py": {
+    "bytes": 96,
+    "mtime_ns": 1794287744894576300,
+    "sha256": "6c8d4f63b5284925b1991b406642ee7159c7799e87e40e920297996f5ca5ad04"
+  },
+  "library/utils/thirdparty/equilib/numpy_grid_sample/faster.py": {
+    "bytes": 2004,
+    "mtime_ns": 1794287744894576300,
+    "sha256": "083d9a8302841ed290d46672e4df97ff6fd6d76efae21a54d518969773771916"
+  },
+  "library/utils/tiny_path.py": {
+    "bytes": 6259,
+    "mtime_ns": 1794287744897094500,
+    "sha256": "630299955d9becd10021774cf759f2070436c777e4218f8ef016a3c26a11784e"
+  },
+  "LICENSE": {
+    "bytes": 1064,
+    "mtime_ns": 1794287744389151800,
+    "sha256": "5d8a471d5a63802fd05ed226a4c2dde2577212a2c3021cb0f9ca11b1bf05075d"
+  },
+  "logger.py": {
+    "bytes": 542,
+    "mtime_ns": 1794287744898101300,
+    "sha256": "88b5aaddadedd100338f38143e194fda0839fdfcb8830ab8ead8fd11fe6dd5f8"
+  },
+  "README.md": {
+    "bytes": 5439,
+    "mtime_ns": 1794287744390152200,
+    "sha256": "1de3ee4a863ec7367b64901a80bf9e40770b8157dc5e4dc5c8ed087ea90773db"
+  },
+  "tests/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744899102200,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tests/animation_tests/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744900101000,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tests/animation_tests/test_ani_loading.py": {
+    "bytes": 6009,
+    "mtime_ns": 1794287744901100900,
+    "sha256": "63551c01cba0aa1e14c3c5ab140a3b57b365d5bbcb012d5ebed936f939060b0d"
+  },
+  "tests/blender_tests/test_material_paths.py": {
+    "bytes": 4513,
+    "mtime_ns": 1794287744902610700,
+    "sha256": "fee460da27befb1389965ac02d47fd3c328686172fcbe7edfd1180357e974a6b"
+  },
+  "tests/blender_tests/test_skins.py": {
+    "bytes": 6083,
+    "mtime_ns": 1794287744903618700,
+    "sha256": "4e5c68213630d345e6cef3f49450c53a40dc7b80b9374d8a88c2826520363e7c"
+  },
+  "tests/kv1/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744904618400,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tests/kv1/test_kv1_parser.py": {
+    "bytes": 24873,
+    "mtime_ns": 1794287744904618400,
+    "sha256": "6f86a2748fd0b2d6a52016cdb935f7cdbfc55b2fb3c20643b17f2bc2780e0c0f"
+  },
+  "tests/kv1/test_kv1_r.py": {
+    "bytes": 1503,
+    "mtime_ns": 1794287744906126600,
+    "sha256": "a71769a6889f69f84c1d92fa1ef2a40ad4c5e975e0a56a9fbe0dbc19638a91e6"
+  },
+  "tests/kv1/test_vmt.py": {
+    "bytes": 4751,
+    "mtime_ns": 1794287744906126600,
+    "sha256": "84531154df0b2960f7245c3c86ccb80f1f3aab6e5f6c4ff772f011b45c841401"
+  },
+  "tests/kv3_tests/__init__.py": {
+    "bytes": 0,
+    "mtime_ns": 1794287744907133900,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "tests/kv3_tests/test_kv3_rw.py": {
+    "bytes": 10322,
+    "mtime_ns": 1794287744908134500,
+    "sha256": "eeac19352bcfbfb109ef66699067a3fb35e426a209bf2c5ff06a40a43191685d"
+  },
+  "TODO.md": {
+    "bytes": 189,
+    "mtime_ns": 1794287744391149800,
+    "sha256": "79b0e5ba6742ee69edd99792d534e3bc50792de2c026a32b13afa252a9aa427e"
+  },
+  "wiki/BSP_IMPORT.md": {
+    "bytes": 947,
+    "mtime_ns": 1794287744910134500,
+    "sha256": "0b686f52e0aca3e43e2666690a904df8c6c32d0775d450290f1051707fc2e46d"
+  },
+  "wiki/init.md": {
+    "bytes": 91,
+    "mtime_ns": 1794287744911134400,
+    "sha256": "b78f2cb639a9b194ccb880a4211ca5a0e9428a4b0fec69e6ec3be25c1770d1b8"
+  },
+  "wiki/MDL_IMPORT.md": {
+    "bytes": 1149,
+    "mtime_ns": 1794287744911134400,
+    "sha256": "26a498beb202fd509cc9c6008f2693caff56c165ec056619ca9a7e0eadcd6149"
+  }
+}

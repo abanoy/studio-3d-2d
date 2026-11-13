@@ -1,0 +1,25 @@
+{
+  "format": "has_external_review_checkout_eol_addendum_1",
+  "scope": "Narrow static review of explicit CRLF-to-LF admission only; prior audit is unchanged.",
+  "source_sha256": "d5c17e97d67bf91250229d9f62bfe9aaefe922057c148a362e4fdc706ba4fadd",
+  "source_bytes": 24729,
+  "lines": [
+    101,
+    123,
+    124,
+    125,
+    126,
+    133
+  ],
+  "clear_unresolved_blockers": [],
+  "findings": [
+    "The flag defaults false and is required to admit any raw-byte difference.",
+    "Admission compares exact raw bytes first; the only opt-in alternative replaces CRLF byte pairs with LF in the two compared byte strings. Lone CR, other whitespace, BOM and content edits are not normalized away.",
+    "The admitted set is the fixed five textual builder/replay/startup files, not caller-supplied paths or arbitrary binary payloads.",
+    "Evidence records working and Git SHA256 separately and labels exact versus explicit EOL-only admission.",
+    "No working file or copied source is rewritten. The snapshot builder still selects the exact requested Git blobs, and the final Studio copies those checksum-bound blobs.",
+    "The PLAN invocation explicitly supplies --allow-checkout-eol and retains the initial strict-raw preflight failure as separate evidence."
+  ],
+  "preflight_observation": "Three checkout-CRLF rows (builder, startup.gd, startup.tscn) differ raw but match after CRLF-to-LF; verifier/replay rows remain raw-exact.",
+  "execution": "No default CLI, execute mode, Godot, product, review build/copy or GPU operation was run by this addendum."
+}

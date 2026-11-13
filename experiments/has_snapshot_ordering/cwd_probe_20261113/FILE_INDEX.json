@@ -1,0 +1,83 @@
+{
+  "format": "studio_cwd_race_probe_packet_1",
+  "main_revision": "1236796865e677b150a2d7e2add20f2aac5325fe",
+  "outcome": "240 successful absolute Python launches; suspected race not reproduced",
+  "files": {
+    "README.md": {
+      "sha256": "5f3df49a892f3c873a17953f4f414ffc7df6d8c2f4830fb5d1d78b61a0b86c7e",
+      "bytes": 3665
+    },
+    "probe.gd": {
+      "sha256": "cc03e253be19f285bee2695d4e0f6450152f982e3d8367d2106f447e49ebfcac",
+      "bytes": 4617
+    },
+    "run_probe.py": {
+      "sha256": "8b81a354360484f24a54fce46b5584de17f08bd845b74c816839d83714112bd5",
+      "bytes": 5331
+    },
+    "package_probe.py": {
+      "sha256": "99c7e3df54b9093ab4c72ac5cc92748398e2af08cd0b9cacf1578a32a8e10bc0",
+      "bytes": 2181
+    },
+    "actual/request.json": {
+      "sha256": "ca22709def8987d3c3d1c710da0d41af9526b0eca393adc779a6457e295f8e7a",
+      "bytes": 952,
+      "original": {
+        "sha256": "ca22709def8987d3c3d1c710da0d41af9526b0eca393adc779a6457e295f8e7a",
+        "bytes": 952
+      }
+    },
+    "actual/command.json": {
+      "sha256": "22222a926b291d2e68dfd1d0a76eef5d59a3aa15b42849a7a5fc2e02f30dd8f0",
+      "bytes": 852,
+      "original": {
+        "sha256": "22222a926b291d2e68dfd1d0a76eef5d59a3aa15b42849a7a5fc2e02f30dd8f0",
+        "bytes": 852
+      }
+    },
+    "actual/process.json": {
+      "sha256": "90e3ddd81e4cb48de0c6344e876d8326a58382e98d4f9f6357d9e3d23f7dd10e",
+      "bytes": 57,
+      "original": {
+        "sha256": "90e3ddd81e4cb48de0c6344e876d8326a58382e98d4f9f6357d9e3d23f7dd10e",
+        "bytes": 57
+      }
+    },
+    "actual/proof.json.gz": {
+      "sha256": "402a82c8dcb03d78e392db8f08d8004bedf3000c19f5022cd5577c8ababde701",
+      "bytes": 5045,
+      "original": {
+        "sha256": "38900907d3592d8c8ae4650011dea473d4e3772e646ea6e4f8430f7ccd8e192d",
+        "bytes": 208715
+      }
+    },
+    "actual/result.json.gz": {
+      "sha256": "4676872b79619f0b5a07bbfa5c770cce43b5d952b5ccc85df9f7c435050d2c97",
+      "bytes": 3889,
+      "original": {
+        "sha256": "33beaaafacc04a76b0822f626a84d44d14722931f1a6a29fb03db5d81946b7ba",
+        "bytes": 170176
+      }
+    },
+    "actual/engine.log.gz": {
+      "sha256": "619fbfa5e9f243942c386dda86e136a0af188621b8d353bd9ea5abbb20e6b4d6",
+      "bytes": 3574,
+      "original": {
+        "sha256": "a2a313a9f5d27eb6347343f79fc9fd8bdfe6545c445a6ef0947a33ca1ecfb1e5",
+        "bytes": 139680
+      }
+    },
+    "actual/stdout.log.gz": {
+      "sha256": "cd096ca5a8c30a1841c0a003202d1497275f868b68317a88153877b210c57c4c",
+      "bytes": 3580,
+      "original": {
+        "sha256": "c4192a202ecd977fe3c7c740d6e5d40a88926563b90cb7b5cc04e11a5ad63649",
+        "bytes": 139683
+      }
+    }
+  },
+  "file_count": 11,
+  "total_bytes": 33743,
+  "private_native_assets_included": false,
+  "godot_gpu_or_blender": false
+}

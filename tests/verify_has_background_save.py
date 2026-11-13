@@ -22,6 +22,7 @@ def main():
    path=Path(args[args.index('--receipt')+1]);r=json.loads(path.read_bytes());assert r['exit']==0 and r['child_desktop_confirmed'] and not r['foreground_child_observed'] and r['job_closed'] and r['desktop_closed'];receipts.append(str(path))
   print(label+': PASS',flush=True)
  execute('domain','has_snapshot_writer_unit','HAS_SNAPSHOT_WRITER_UNIT ',True)
+ execute('ordering','has_snapshot_ordering_unit','HAS_SNAPSHOT_ORDERING_UNIT ',True)
  for pattern in ['test_has_project.py','test_has_save_faults.py']:
   p=subprocess.run([sys.executable,'-m','unittest','discover','-s','tests','-p',pattern],cwd=ROOT,capture_output=True,text=True,timeout=90);(folder/(pattern+'.log')).write_text(p.stdout+p.stderr);count=re.search(r'Ran ([1-9][0-9]*) tests',p.stderr);assert p.returncode==0 and count,p.stdout+p.stderr;reports[pattern]={'checks':int(count.group(1)),'failures':0}
  execute('writer','has_background_save_smoke','HAS_BACKGROUND_WRITE ')

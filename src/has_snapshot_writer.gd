@@ -5,20 +5,34 @@ const Storage=preload("res://src/storage.gd")
 const World=preload("res://src/world_document.gd")
 const FORMAT="studio_has_snapshot_ready_1"
 var thread: Thread
+var _prepared: Dictionary={}
 func busy() -> bool:return thread!=null and thread.is_started()
-func start(project: Dictionary,request: Dictionary) -> String:
-	if busy():return "A project snapshot is already being saved."
+func prepare(project: Dictionary,request: Dictionary) -> String:
+	if busy() or has_prepared():return "A project snapshot is already being saved."
 	for field in ["folder","ready","cancel"]:
 		if not request.get(field) is String or request[field].is_empty():return "Missing project snapshot address."
 	var began:=Time.get_ticks_usec();var frozen:=Frozen.capture(project)
 	if frozen.has("error"):return frozen.error
 	var copied:=request.duplicate(true);copied["capture_ms"]=(Time.get_ticks_usec()-began)/1000.
-	thread=Thread.new();var why:=thread.start(_run.bind(frozen.project,copied),Thread.PRIORITY_LOW)
+	_prepared={"project":frozen.project,"request":copied}
+	return ""
+func has_prepared() -> bool:return not _prepared.is_empty()
+func discard_prepared() -> void:_prepared={}
+func _start_thread(work: Callable) -> Error:return thread.start(work,Thread.PRIORITY_LOW)
+func launch() -> String:
+	if busy():return "A project snapshot is already being saved."
+	if not has_prepared():return "No captured project snapshot is ready to start."
+	var captured: Dictionary=_prepared;_prepared={}
+	thread=Thread.new();var why:=_start_thread(_run.bind(captured.project,captured.request))
 	if why!=OK:thread=null;return "Cannot start project snapshot worker."
 	return ""
+func start(project: Dictionary,request: Dictionary) -> String:
+	var why:=prepare(project,request)
+	return why if not why.is_empty() else launch()
 func poll() -> Dictionary:
 	return finish() if busy() and not thread.is_alive() else {}
 func finish() -> Dictionary:
+	discard_prepared()
 	if not busy():return {}
 	var result: Dictionary=thread.wait_to_finish();thread=null;return result
 func persist(project: Dictionary,request: Dictionary) -> String:

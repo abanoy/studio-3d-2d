@@ -10,8 +10,8 @@
     },
     {
       "path": "src/has_project.gd",
-      "sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
-      "lf_sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032",
+      "lf_sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
       "category": "runtime"
     },
     {
@@ -116,5 +116,10 @@
     ],
     "unit_predicates": "Original 51/14/29 assertions preserved; coherent no-pending-preview doubles and real Review stop delegation only. Fresh headless result 94/0, all functional source identities unchanged.",
     "scope": "Historical16-row Phase1 boundary retained. Pending-helper preview has its own verifier and evidence. app.gd retains original CRLF style."
+  },
+  "snapshot_launch_order_revision": {
+    "baseline": "1236796865e677b150a2d7e2add20f2aac5325fe",
+    "changed_row": "src/has_project.gd",
+    "scope": "Capture immutable snapshot before project worker creation, start own filesystem Thread afterward. Original16-row scope and all old94unit/845graphics predicates retained; separate32ordering unit and actual background-save tests cover new ordering/failure lifecycle. Precise originalWindows launch-error cause remains unknown."
   }
 }

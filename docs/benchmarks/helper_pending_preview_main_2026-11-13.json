@@ -447,7 +447,15 @@
   "full_aggregate": {
     "previous_pass_commit": "9897f86019dfb8499d0ee30f6560580fac7bb8da",
     "previous_report": "docs/benchmarks/windows_canonical_full_2026-11-13.json",
-    "post_port_committed_default": "pending; run after committing stable source, without functional changes during execution"
+    "post_port_committed_default": {
+      "commit": "1236796865e677b150a2d7e2add20f2aac5325fe",
+      "status": "failed",
+      "source_unchanged": true,
+      "functional_files": 967,
+      "wind_matrices_passed": true,
+      "reason": "LaterBodyAnimationVRM0linkedSave helpercreation failed; unchanged focused retry passes but doesnotpassaggregate. New snapshot-order hardening and full retry are separate.",
+      "report": "docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json"
+    }
   },
   "limits": [
     "Temporary wind checks remain separate from Apply inclusion; no permanent Hair & clothes exclusions.",

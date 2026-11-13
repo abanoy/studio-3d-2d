@@ -12,6 +12,7 @@ $env:HYBRID_HECATIA_KRA=(Resolve-Path -LiteralPath 'output/owner-fixtures/hecati
 $env:HYBRID_NATIVE_INPUTS='C:\a\dump'
 $env:HYBRID_FFMPEG='C:\Program Files\ffmpeg\bin\ffmpeg.exe'
 $env:PYTHONDONTWRITEBYTECODE='1'
+$env:HYBRID_PYTHON=$pythonPath
 Remove-Item Env:HYBRID_FAN_PROJECT -ErrorAction SilentlyContinue
 $sourceProbe=@'
 import hashlib,json,pathlib,subprocess,sys

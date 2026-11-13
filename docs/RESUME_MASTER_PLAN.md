@@ -2,6 +2,16 @@
 
 **Updated November 13, 2026. The owner explicitly resumed work; the goal is ACTIVE.**
 
+The committed full attempt at `1236796` is **failed**, with all 967 functional
+hashes and HEAD unchanged. Both wind matrices pass, but Windows refuses the final
+VRM0 linked-save helper. An unchanged focused retry passes 24 units + 72 app checks;
+it does not retroactively pass that aggregate. Main now separates immutable save
+capture from background writing, starting the real packer first. Actual background
+checks pass 10 legacy + 32 new domain, 31/16 Python, 20 writer and 5 cold-reader
+checks; the native body case also passes after the change. Precise Windows cause
+remains unknown, and the 240-child CWD-churn probe did not reproduce it. A new
+stable committed full run is next. [Evidence](benchmarks/windows_snapshot_launch_order_2026-11-13.json).
+
 Latest integration: [loose-part wind before Apply](helper_setup_wind_preview.md)
 is now in main source. Final working-source checks pass 208 CPU + 305 private graphics
 (221 focused, 45 peer/child, 39 native Back hair), plus 120 driver-domain controls.
@@ -19,6 +29,9 @@ The broader supplied SFM collection remains in scope. The concrete
 and [Junko/Mima/Kanako feature matrix](../experiments/source_appearance/static_choice_main_plan_20261113/native_feature_matrix.md)
 preserve those next cases. The chooser is planned, not implemented; native
 assembly, shader, jiggle and runtime-variant fidelity remain separate.
+An [output-only chooser draft](../experiments/source_appearance/static_choice_draft_20261113/README.md)
+now has 82 authored Python checks and an independent source review. Its Godot/UI,
+native conversion and graphical paths remain unparsed/unrun. It is not in main.
 
 This is the single reading document for the requests, corrections, proposals,
 current software/test state, protected inputs and next steps from this chat.

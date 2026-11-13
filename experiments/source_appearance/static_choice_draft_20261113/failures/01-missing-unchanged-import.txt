@@ -1,0 +1,9 @@
+Attempt: first combined CPU invocation, 2026-11-13.
+Command: approved Python313 -B overlay/tests/test_static_choices_draft.py
+Exit: 1 before unittest collection.
+ModuleNotFoundError: No module named 'source_paths'
+Trace: test_static_choices_draft.py imports prepare_source.py, whose unchanged
+line16 imports source_paths. Isolated overlay initially copied only six files.
+No Godot, Blender, conversion, GPU or original native read occurred.
+Correction: add exact unchanged source_paths/source_installation/source_case
+dependencies to the isolated overlay, with commit and preservation receipts.

@@ -209,6 +209,19 @@ def main():
         if helper_mode == 'graphical': assert all(case['clean_private_receipt'] is True for case in pending_result['results']), pending_result
         results['helper_preview_' + helper_mode] = pending_result
     print('PASS pending helper wind before Apply, temporary group checks, popup Escape and exact source restoration')
+    manual_folder = spike / 'has-background'
+    manual_log = run([sys.executable, '-u', 'tests/verify_has_background_save.py', '--output', str(manual_folder)], timeout=600)
+    (output / 'has-background-suite.log').write_text(manual_log, encoding='utf-8')
+    manual_result = json.loads((manual_folder / 'verification.json').read_bytes())
+    assert set(manual_result['reports']) == {'domain', 'ordering', 'test_has_project.py', 'test_has_save_faults.py', 'writer', 'reader'} and all(row['checks'] > 0 and row['failures'] == 0 for row in manual_result['reports'].values()), manual_result
+    assert manual_result['reports']['ordering']['checks'] == 32 and manual_result['reports']['writer']['checks'] == 20, manual_result
+    assert manual_result['frozen_functional_sources'] and manual_result['manual_files_unchanged_in_reader'] and manual_result['owned_source_and_writer_cache_offline'], manual_result
+    assert len(manual_result['private_receipts']) == 2, manual_result
+    for receipt_name in manual_result['private_receipts']:
+        receipt = json.loads(Path(receipt_name).read_bytes())
+        assert receipt['exit'] == 0 and receipt['child_desktop_confirmed'] and not receipt['foreground_child_observed'] and receipt['job_closed'] and receipt['desktop_closed'], receipt
+    results['has_background_save'] = {key: manual_result[key] for key in ['reports', 'manual_files_unchanged_in_reader', 'owned_source_and_writer_cache_offline', 'frozen_functional_sources', 'private_receipts', 'scope']}
+    print('PASS captured snapshot launch order, live save frames, failed thread startup, cancellation and offline cold reads')
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')
 
     shortcuts_log = run([sys.executable, '-u', 'tests/verify_shortcuts.py'], timeout=500)

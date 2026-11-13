@@ -73,6 +73,9 @@ Back hair case. A new checkout must rebuild its private input pair rather than
 consume a cached prototype candidate. See the main fixture resolver and
 [native input rebuilding](../experiments/local_wind_review/main_driver_proposal_20261113/REBUILD_INPUTS.md).
 
-The earlier full default pass at `9897f86` predates this port. A fresh full default
-from the committed integration remains required; scoped checks are not a new
-aggregate pass. Evidence: [main integration](benchmarks/helper_pending_preview_main_2026-11-13.json).
+The earlier full default pass at `9897f86` predates this port. The committed full
+attempt at `1236796` passes both wind matrices and then fails a later VRM0 linked
+save-worker launch. It remains failed. Save launch-order hardening has separate
+actual checks; a fresh stable full default is still required. Scoped checks are
+not a new aggregate pass. Evidence: [main integration](benchmarks/helper_pending_preview_main_2026-11-13.json),
+[save investigation](benchmarks/windows_snapshot_launch_order_2026-11-13.json).
