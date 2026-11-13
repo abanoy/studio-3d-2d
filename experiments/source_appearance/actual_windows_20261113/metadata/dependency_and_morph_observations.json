@@ -1,0 +1,717 @@
+{
+  "format": "has_sfm_postrun_dependency_and_morph_observations_1",
+  "basis": "Read-only derivation from retained actual parameters/dependencies/GLB structure plus the pinned resolver implementation. No converter/source changes or additional native/GPU run.",
+  "resolver_source": {
+    "path": "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/blender_bindings/models/materials.py",
+    "sha256": "d0ef0bb1fa338d59b481fd1e12f607feab66606b21ab5d3be53233e734602979"
+  },
+  "cases": [
+    {
+      "case": "multi_skin_glove",
+      "variant": "default-no-appearance",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/Gloves glowg.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Gloves glowg.vmt",
+          "resolved_sha256": "f8fc918a97ad2c070235d0256d44b5a9824fa0a3eb85ca01437a3ea4da58b509",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Gloves gloww.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Gloves gloww.vmt",
+          "resolved_sha256": "229118ac40ea604d0c3c5a6c45623b63f5c91e968834967731917532f5be6ac5",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Glovesg.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Glovesg.vmt",
+          "resolved_sha256": "577983146eba9bd9fabcb0ec2984f6f2586b1a6f6a2921ed3f5dc07879ab5099",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Glovesw.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Glovesw.vmt",
+          "resolved_sha256": "63f0fc9d17279f9a378696a4e55bf265e430f9fb9d4182a454a69f8b51806688",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "inactive native material map absent",
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "inactive native material map absent",
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "active native material map absent",
+          "supported_bridge_input": false
+        }
+      ],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "gloves.dmx": [
+          {
+            "names": [
+              "Ah"
+            ],
+            "counts": [
+              2751
+            ]
+          },
+          {
+            "names": [
+              "Ah"
+            ],
+            "counts": [
+              2751
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "default-no-appearance",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/blush.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+          "resolved_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/box.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+          "resolved_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/excl mark.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+          "resolved_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "box.smd": [
+          {
+            "names": [],
+            "counts": []
+          }
+        ],
+        "flame.smd": [
+          {
+            "names": [],
+            "counts": []
+          },
+          {
+            "names": [],
+            "counts": []
+          }
+        ],
+        "tools.dmx": [
+          {
+            "names": [
+              "Tools"
+            ],
+            "counts": [
+              1180
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-0",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/Gloves glowg.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Gloves glowg.vmt",
+          "resolved_sha256": "f8fc918a97ad2c070235d0256d44b5a9824fa0a3eb85ca01437a3ea4da58b509",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Gloves gloww.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Gloves gloww.vmt",
+          "resolved_sha256": "229118ac40ea604d0c3c5a6c45623b63f5c91e968834967731917532f5be6ac5",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Glovesg.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Glovesg.vmt",
+          "resolved_sha256": "577983146eba9bd9fabcb0ec2984f6f2586b1a6f6a2921ed3f5dc07879ab5099",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Glovesw.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Glovesw.vmt",
+          "resolved_sha256": "63f0fc9d17279f9a378696a4e55bf265e430f9fb9d4182a454a69f8b51806688",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "inactive native material map absent",
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "inactive native material map absent",
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "active native material map absent",
+          "supported_bridge_input": false
+        }
+      ],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "gloves.dmx": [
+          {
+            "names": [
+              "Ah"
+            ],
+            "counts": [
+              2751
+            ]
+          },
+          {
+            "names": [
+              "Ah"
+            ],
+            "counts": [
+              2751
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-000",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/blush.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+          "resolved_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/box.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+          "resolved_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/excl mark.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+          "resolved_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "box.smd": [
+          {
+            "names": [],
+            "counts": []
+          }
+        ],
+        "flame.smd": [
+          {
+            "names": [],
+            "counts": []
+          },
+          {
+            "names": [],
+            "counts": []
+          }
+        ],
+        "tools.dmx": [
+          {
+            "names": [
+              "Tools"
+            ],
+            "counts": [
+              1180
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-1",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/Gloves glowg.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Gloves glowg.vmt",
+          "resolved_sha256": "f8fc918a97ad2c070235d0256d44b5a9824fa0a3eb85ca01437a3ea4da58b509",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Gloves gloww.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Gloves gloww.vmt",
+          "resolved_sha256": "229118ac40ea604d0c3c5a6c45623b63f5c91e968834967731917532f5be6ac5",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Glovesg.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Glovesg.vmt",
+          "resolved_sha256": "577983146eba9bd9fabcb0ec2984f6f2586b1a6f6a2921ed3f5dc07879ab5099",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Glovesw.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Glovesw.vmt",
+          "resolved_sha256": "63f0fc9d17279f9a378696a4e55bf265e430f9fb9d4182a454a69f8b51806688",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "active native material map absent",
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "inactive native material map absent",
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "inactive native material map absent",
+          "supported_bridge_input": false
+        }
+      ],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "gloves.dmx": [
+          {
+            "names": [
+              "Ah"
+            ],
+            "counts": [
+              2751
+            ]
+          },
+          {
+            "names": [
+              "Ah"
+            ],
+            "counts": [
+              2751
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-2",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/Gloves glowg.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Gloves glowg.vmt",
+          "resolved_sha256": "f8fc918a97ad2c070235d0256d44b5a9824fa0a3eb85ca01437a3ea4da58b509",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Gloves gloww.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Gloves gloww.vmt",
+          "resolved_sha256": "229118ac40ea604d0c3c5a6c45623b63f5c91e968834967731917532f5be6ac5",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Glovesg.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Glovesg.vmt",
+          "resolved_sha256": "577983146eba9bd9fabcb0ec2984f6f2586b1a6f6a2921ed3f5dc07879ab5099",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/Glovesw.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Nitori edit/Glovesw.vmt",
+          "resolved_sha256": "63f0fc9d17279f9a378696a4e55bf265e430f9fb9d4182a454a69f8b51806688",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "inactive native material map absent",
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "active native material map absent",
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "reference": "materials/hairbump.vtf",
+          "key": "$bumpmap",
+          "classification": "inactive native material map absent",
+          "supported_bridge_input": false
+        }
+      ],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "gloves.dmx": [
+          {
+            "names": [
+              "Ah"
+            ],
+            "counts": [
+              2751
+            ]
+          },
+          {
+            "names": [
+              "Ah"
+            ],
+            "counts": [
+              2751
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-001",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/blush.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+          "resolved_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/box.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+          "resolved_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/excl mark.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+          "resolved_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "box.smd": [
+          {
+            "names": [],
+            "counts": []
+          }
+        ],
+        "tools.dmx": [
+          {
+            "names": [
+              "Tools"
+            ],
+            "counts": [
+              1180
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-010",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/blush.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+          "resolved_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/box.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+          "resolved_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/excl mark.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+          "resolved_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "flame.smd": [
+          {
+            "names": [],
+            "counts": []
+          },
+          {
+            "names": [],
+            "counts": []
+          }
+        ],
+        "tools.dmx": [
+          {
+            "names": [
+              "Tools"
+            ],
+            "counts": [
+              1180
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-011",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/blush.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+          "resolved_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/box.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+          "resolved_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/excl mark.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+          "resolved_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "tools.dmx": [
+          {
+            "names": [
+              "Tools"
+            ],
+            "counts": [
+              1180
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-100",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/blush.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+          "resolved_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/box.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+          "resolved_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/excl mark.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+          "resolved_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "box.smd": [
+          {
+            "names": [],
+            "counts": []
+          }
+        ],
+        "flame.smd": [
+          {
+            "names": [],
+            "counts": []
+          },
+          {
+            "names": [],
+            "counts": []
+          }
+        ]
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-101",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/blush.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+          "resolved_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/box.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+          "resolved_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/excl mark.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+          "resolved_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "box.smd": [
+          {
+            "names": [],
+            "counts": []
+          }
+        ]
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-110",
+      "actual_unresolved_lookup_candidates": [
+        {
+          "missing_candidate": "materials/blush.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+          "resolved_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/box.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+          "resolved_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+          "classification": "failed bare-name candidate for inactive material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        },
+        {
+          "missing_candidate": "materials/excl mark.vmt",
+          "resolved_material": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+          "resolved_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+          "classification": "failed bare-name candidate for active material; actual native search-path candidate resolved",
+          "classification_basis": "Pinned resolve_model_material tries the bare material name, then native MDL materials_paths; the unique indexed VMT and actual owned resolved dependency bind this result."
+        }
+      ],
+      "native_catalogue_missing_map_edges": [],
+      "missing_active_PBR_base_inputs": 0,
+      "all_active_materials_PBR_approximation": true,
+      "nonzero_position_morph_vertices": {
+        "flame.smd": [
+          {
+            "names": [],
+            "counts": []
+          },
+          {
+            "names": [],
+            "counts": []
+          }
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "Failed bare-name probes do not make actual full VMT/base resources absent when the owned native-search-path lookup resolved them. Raw driver classifications remain intact.",
+    "Nitori hairbump remains genuinely absent: one active and two inactive native map-reference edges per skin selection, all to the same missing file. No map substituted.",
+    "Recorded morph target nonzero counts are decoded derived GLB observations, not independent native delta equivalence, animation semantics or rendered proof."
+  ]
+}

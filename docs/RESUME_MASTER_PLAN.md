@@ -685,24 +685,40 @@ Nitori's6VMTs have25/28 resolved references, with three references to one missin
 `materials/hairbump.vtf`. All basic bridge base textures resolve, but native
 bump/Phong/environment/warp/glow fidelity is unproven; no substitute or installed
 fallback was used. [Actual staging/closure report](sfm_native_resource_staging_2026-11-12.md).
-Source-only staging, allowlists, requests and an unrun serial conversion driver
-are preserved under `experiments/source_appearance/native_resources`. Its21 CPU
-controls pass after independent review of bind/rest and stage-membership guards.
-Prepare a fresh schema2 input lock at the next stable HEAD before any conversion;
-the old schema1 preflight is historical and deliberately refuses current code.
-Selected skin/bodygroup exports, rendered comparisons and app adoption remain unaccepted; the first baseline observation follows.
+Source-only staging, allowlists, requests and the initial serial driver are
+preserved under `experiments/source_appearance/native_resources`. Its21 CPU
+controls pass. Earlier schema1/schema2 locks are historical and must not be
+reused after code, path, runtime or HEAD changes.
 
-**First actual converter attempt:** the no-request Nitori baseline emitted an
-836,088-byte GLB (1mesh/2textures/66bones), but the original private wrapper
-returned2 because no window/child-desktop placement was confirmed for the
-background route. Accepted0/14;13 cases remain unrun. All protected inputs and
-source stayed exact; owned processes exited. [Failure receipt](benchmarks/sfm_first_conversion_isolation_2026-11-12.json).
-The separate `background_route_candidate_20261113` preserves an explicit headless
-bootstrap and independent Python/Blender WinAPI desktop/process/source/import
-attestations. Its44 CPU controls pass, with no forged private flags or acceptance
-of old exit2. Actual private attestation/rerun is unrun. Review and prepare a fresh
-schema3 lock at the next stable remote checkpoint before granting its exclusive
-conversion lease. Native material/render/app acceptance remains incomplete.
+**First actual converter attempt, preserved failure:** the no-request Nitori
+baseline emitted an836,088-byte GLB(1mesh/2textures/66bones), but the original
+private wrapper returned2 because it could not confirm the background process
+through its graphical-window oracle. That attempt accepted0/14 and left13unrun;
+its exact inputs and failed receipt remain. This is not reinterpreted as a pass.
+
+**November13 actual background rerun:** a fresh schema3 lock at exact2904f3f
+completed14/14 serial cases in82.71seconds:12bundles and2expected all-blank
+refusals. Nitori's3skins and Keiki's7visible tools/box/flame combinations pass
+bounded metadata/geometry/rig/morph checks. Both Python and Blender independently
+self-attested the fresh private desktop, process/creation identity and exact
+code/import origins. Original monitor flags stayed false and unchanged; no old
+exit2 was accepted. All42 recorded owned instances ended, jobs/desktops closed,
+and343protected/934root/934prototype/574SourceIO/296stage files stayed exact.
+The conversion lease is released. [Actual results/source recipe](sfm_static_appearance_actual_2026-11-13.md).
+
+The broader82MDL/71distinct-definition corpus remains in scope: skins, bodygroups,
+expressions, nonfacial controls, accessories and declared native jiggle/assembly
+need separate cases. The14passes do not certify those features across allmodels.
+Nitori's base/glow geometry is coincident; its tiny image namedblack contains
+opaque greys0/40/120, and ordinary PBR does not reproduce native additive shader
+behavior. Its missing hairbump map remains explicit. Keiki's actual Tools morph
+and weighted box joint provide small independent pose/morph candidates.
+[Next rendered/app probe](sfm_static_appearance_next_probe_2026-11-13.md) is still
+unrun. Normal app choice/adoption, native visual/deformation fidelity, Undo/HAS/
+movie agreement, runtimevariants and nativejiggle are unfinished. No private
+assets were published. The checkpoint also retains the separate published
+selection shutdown fix981895008aa61817c83bd031c73cf2193dd4bfa2; installed Studio,
+earlier reviews and recovery stay protected.
 
 ### Actual external observations still needed, only when participation is granted
 

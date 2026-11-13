@@ -1,0 +1,89 @@
+{
+  "format": "has_sfm_background3_actual_handoff_1",
+  "root_revision": "2904f3f18e4211f95ddd385953219b2e5460aee9",
+  "lock_sha256": "9a3d65108148a2e41eebb6a2dabfd556541aff27affe1cc48e4c099e21e00521",
+  "actual_run": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800",
+  "actual_driver_exit": 0,
+  "passed_cases": 14,
+  "successful_bundles": 12,
+  "explicit_expected_refusals": 2,
+  "failed_cases": 0,
+  "unrun_cases": 0,
+  "seconds": 82.7094904,
+  "independent_dual_self_attestation_cases": 14,
+  "original_monitor_flags_forged": false,
+  "old_exit2_failure_unaccepted_and_preserved": true,
+  "all_owned_instances_ended": true,
+  "recorded_owned_instances": 42,
+  "conversion_gpu_lease_released": true,
+  "protected_sources_runtimes_originals_stage_requests_lock_unchanged_during_run": true,
+  "metadata_geometry_binding_rest_morph_fingerprints_checked": true,
+  "actual_GPU_render_app_native_fidelity_acceptance": false,
+  "cleanup_private_art_upload_or_source_edits": false,
+  "files": {
+    "output/sfm-next-cases-20261112/BACKGROUND3-ACTUAL-RESULTS.md": {
+      "sha256": "e88bc7ebca96d5189ef2a52cea374d77068e32ca4e2477a5b73c0d2922a7d41c",
+      "bytes": 4588,
+      "mtime_ns": 1794546916093113000
+    },
+    "output/sfm-next-cases-20261112/BACKGROUND3-ACTUAL-RESULTS.json": {
+      "sha256": "8bfa2071c9cc6846c9972d53ce93ce433fd8b46293b9155409fcef00f8f97478",
+      "bytes": 81183,
+      "mtime_ns": 1794546706495146500
+    },
+    "output/sfm-next-cases-20261112/BACKGROUND3-DEPENDENCY-AND-MORPH-OBSERVATIONS.json": {
+      "sha256": "55daf3969fd2afa29771acbe389d2a6e2ac4a650574aae9da4eb5466f3533bc9",
+      "bytes": 36830,
+      "mtime_ns": 1794546799199791400
+    },
+    "output/sfm-next-cases-20261112/background3-owned-process-exit-observations.json": {
+      "sha256": "7157bb72ca5a46508e6706e8bf41ae0cc9b8e53287300b119deb938a18233758",
+      "bytes": 10632,
+      "mtime_ns": 1794546613946816200
+    },
+    "output/sfm-next-cases-20261112/background3-recorded-owned-processes.json": {
+      "sha256": "8d53598d891ba591a0378c57d2b9bc6da25b6e42888f26e40c6f31c2f944ed2d",
+      "bytes": 7154,
+      "mtime_ns": 1794546599998967500
+    },
+    "output/sfm-next-cases-20261112/background3-actual-conversions.log": {
+      "sha256": "4f841e8c81ae381ce2f130981232f760ef551404c00cf4602699954e84a9bf76",
+      "bytes": 839,
+      "mtime_ns": 1794546555251521200
+    },
+    "output/sfm-next-cases-20261112/background3-actual-conversions-time.json": {
+      "sha256": "b4ac0aba4c0da2c0f9bf19a8243b1b757e3a4d867ae02037c521f8a6f51c5097",
+      "bytes": 154,
+      "mtime_ns": 1794546555336647800
+    },
+    "output/sfm-next-cases-20261112/conversion-inputs-background3.json": {
+      "sha256": "9a3d65108148a2e41eebb6a2dabfd556541aff27affe1cc48e4c099e21e00521",
+      "bytes": 753668,
+      "mtime_ns": 1794546409371005900
+    },
+    "output/sfm-next-cases-20261112/source/background_conversion_driver.py": {
+      "sha256": "08a63f739f21cdb019468b3b274ecc1772fb942695320dfd20d2b1826c120587",
+      "bytes": 42556,
+      "mtime_ns": 1794545617878294500
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/verification.json": {
+      "sha256": "2a3c720629396efdfc3e6c20f3280e47568f287d51621a94518431b6288ce89e",
+      "bytes": 5728506,
+      "mtime_ns": 1794546555250521400
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794546430866547700/verification.json": {
+      "sha256": "5f9d0c16a117870152f9c7596918bf0b6a4e2d4bd469a764ea16340d9223b5e7",
+      "bytes": 806,
+      "mtime_ns": 1794546437769202900
+    },
+    "output/sfm-next-cases-20261112/FIRST-ACTUAL-CONVERSION-FAILURE.json": {
+      "sha256": "44805d18a996ae040d460f5233a54ac467dedfb0274fdfee448a94f137ff85cc",
+      "bytes": 7358,
+      "mtime_ns": 1794544903008500300
+    }
+  },
+  "per_case_summary_reference": "output/sfm-next-cases-20261112/BACKGROUND3-ACTUAL-RESULTS.json",
+  "native_active_inactive_dependency_review_reference": "output/sfm-next-cases-20261112/BACKGROUND3-DEPENDENCY-AND-MORPH-OBSERVATIONS.json",
+  "publication_scope": "Reviewed source and compact metadata only; preserve all private GLB/blend/native resources and failed attempts locally for later rendering/adoption cases.",
+  "next_requested_work": "Root requested bounded read-only actual material/image, morph and weighted-native-bone review to select small GPU/app probes; no additional Blender/GPU execution."
+}

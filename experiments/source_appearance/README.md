@@ -1,45 +1,52 @@
 # Unshipped Source appearance experiment
 
-This source-only worker prototype is not loaded by the normal app. It adds
-bounded, checksum-bound static skin/bodygroup choices before adopting a new
-object. Default conversion remains the existing route. It does not implement
-runtime or animated variant switching, native jiggle or model assembly.
+The worker-level experiment now has actual Windows evidence: **14/14 static
+cases passed**, comprising twelve GLB bundles and two exact all-blank refusals
+at checkpoint `2904f3f18e4211f95ddd385953219b2e5460aee9`. Both Nitori glove
+baselines, its three skins, Keiki's seven visible tools/box/flame combinations
+and their empty refusals passed exact catalogue/selection, embedded structure,
+retained geometry/bind/rest/morph, owned dependency and dual private-attestation
+checks. These are import-time derived bundles, not production UI or runtime
+variant switching.
 
-Use a new owned checkout at `checkpoint.json`'s exact base commit, then copy the
-four overlay files into it. Run `tests/test_source_appearance.py` and the existing
-`tests/test_source_failure.py` with the approved Python. Recorded total:
-21 CPU checks, zero failures or skips. Native hash bindings were checked against
-two retained MDLs; model bytes are not included. The reference verifier is a
-session aid and requires review of its owned-output/input paths when relocating.
+See `actual_windows_20261113/README.md`, the source/fixture recipe copies and
+compact metadata there, plus
+`docs/sfm_static_appearance_actual_2026-11-13.md` and its benchmark. No private
+model/texture/GLB/blend/project/movie payload is stored in these experiments.
 
-The real pinned skin functions were executed with inert stand-ins. This is not
-a Blender export or rendered material proof. Nonidentity default skin tables and
-ambiguous duplicate material columns refuse; an all-empty selection also refuses.
-Nitori and Keiki supplied the actual metadata positives. Later fixtures and
-validation are in `reference/PLAN.md` and `native-fixture-requirements.json`.
+The four worker overlays still start from exact base
+`85fa482b3ef1ed752e8a97191b5ea7b235cea7aa`. The normal app does not load them.
+Native/index/source-bound requests choose a static appearance before adopting a
+new object. Existing default/BSP paths are preserved. Ambiguous duplicate or
+nonidentity default skin columns, invalid correspondence and empty selections
+refuse rather than guessing. Existing edited objects are not reconverted.
 
-Blender conversion, textures, rig/morph preservation, app review/adoption,
-Undo/Redo, portable replay and movie agreement remain unrun. Do not port to the
-active application on the strength of CPU tests alone. No private art or native
-model/archive payload is included here.
+Historical checkpoints remain separately scoped:
 
-Later native resource preparation is preserved in `native_resources/`:296exact
-sidecar/material files were staged locally;34CPU controls and actual10VMT
-reference analysis are complete. No native payloads are in Git. Keiki's16refs
-resolve; Nitori25/28refs leaves one missing native hairbump resource repeated3times.
-Base textures resolve in both, with no substitution or installed fallback.
-The source-only serial converter driver has21CPU controls after review; it has
-not run actual conversions. Prepare a fresh schema2 input lock at a stable HEAD.
-Its retained schema1 lock/preflight is historical and current code refuses it.
-See docs/sfm_native_resource_staging_2026-11-12.md. Rendered/native/app acceptance
-remains unrun. Recreate the source tree under its documented owned output layout
-before invoking these machine-specific helpers; review paths, stamps and hashes.
+- Initial 21 CPU checks exercised strict requests, actual pinned skin functions
+  with inert stand-ins and two native hash bindings, without Blender export.
+- Resource preparation staged exactly 296 sidecar/material resources locally;
+  34 CPU controls and actual ten-VMT closure analysis passed. Keiki resolves
+  all sixteen observed texture edges; Nitori resolves 25/28, leaving one absent
+  native hairbump map referenced by three glow materials. Basic base inputs
+  resolve, with no substitution or installed fallback.
+- The first actual baseline emitted a bundle but the old graphical window
+  oracle returned exit 2. No case was accepted then. That failed observation
+  remains retained and is not reinterpreted as clean.
+- The explicit background route added independent Python and Blender WinAPI
+  self-attestation, exact native import-context provenance and 44 CPU controls.
+  Its fresh schema3 runtime completed the fourteen cases. Original private
+  monitor flags remain unchanged; closed jobs/desktops and actual child identity
+  attestations provide the separately scoped background proof.
 
-The first native baseline later emitted a bundle but failed the original private
-window-proof requirement (exit2); zero cases were accepted and the other13are
-unrun. See docs/benchmarks/sfm_first_conversion_isolation_2026-11-12.json.
-`background_route_candidate_20261113` preserves a separately reviewed explicit
-headless route with independent Python/Blender desktop attestations.44CPU
-controls pass; actual private attestation/native rerun remainsunrun. Original
-private flags are never forged; oldexit2is rejected. A new schema3lock and an
-exclusive lease are required after a stable remotely verified main checkpoint.
+Nitori's base/glow primitives are exactly coincident. Actual GLB materials use
+ordinary PBR, while native additive/environment/Phong/warp/bump behavior is not
+reproduced. The tiny image named black is opaque greys 0/40/120, not uniformly
+black. Material/image mapping is observed; native visual fidelity is not.
+
+GPU rendering, independent native VTX/VVD/vertex-delta/texture comparisons,
+normal app choices/adoption, Undo/Redo, linked/packed/fresh-offline HAS, movie
+agreement, runtime/animated variants, native jiggle/assembly and owner/device
+acceptance remain unrun or unfinished. The broader supplied 82-MDL corpus still
+matters; these two candidates do not certify every extra feature. Read the
+native inventory and small next-case plan before expanding the implementation.

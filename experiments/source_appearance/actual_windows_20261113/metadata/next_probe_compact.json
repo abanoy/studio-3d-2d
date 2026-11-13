@@ -1,0 +1,762 @@
+{
+  "format": "has_next_small_gpu_adoption_actual_readonly_review_1",
+  "status": "Bounded read-only actual data review complete. No code, GPU, Blender app, asset mutation or adoption run.",
+  "nitori_native_material_to_glb_image": [
+    {
+      "skin": 0,
+      "native_mesh_index": 0,
+      "native_mesh_vertices": 3272,
+      "native_vertex_start": 0,
+      "native_skin_column": 0,
+      "native_material_table_index": 0,
+      "native_requested_family_material_name": "models/touhou/tamo/Nitori edit/Gloves",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "actual_owned_vmt": "materials/models/touhou/tamo/nitori edit/gloves.vmt",
+      "vmt_sha256": "1e1afa18250001156e68e98cf7f054d8096e153d2a69307802384f6ce3f80933",
+      "actual_native_base_vtf": "materials/models\\touhou\\tamo\\Nitori edit\\gloves.vtf",
+      "native_vtf_sha256": "36edd6253bd29c5759dbb36e566a50b21755424bc7245b1eda02ef0068b69fca",
+      "native_vtf_bytes": 1048784,
+      "glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+      "actual_glb_material_index": 0,
+      "actual_glb_material_name": "models/touhou/tamo/Nitori edit/Gloves",
+      "actual_glb_primitive_users": [
+        {
+          "node": "gloves.dmx",
+          "primitive": 0
+        }
+      ],
+      "glb_material_properties": {
+        "name": "models/touhou/tamo/Nitori edit/Gloves",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.800000011920929
+        }
+      },
+      "actual_glb_image_index": 0,
+      "actual_glb_texture_index": 0,
+      "actual_embedded_png_sha256": "31d7d4e9fdfc3e377b836fdc33362c4a0e076af0ccf3807941cb1b786b56f0e0",
+      "actual_embedded_png_bytes": 291676,
+      "actual_png_dimensions": [
+        1024,
+        1024
+      ],
+      "correspondence_scope": "Actual native MDL mesh column\u2192requested native family material ID/name\u2192unique owned VMT and actual converter report\u2192actual GLB material/texture/embedded image. Not independent native VTX face/UV/texture-pixel/shader/render equivalence."
+    },
+    {
+      "skin": 0,
+      "native_mesh_index": 1,
+      "native_mesh_vertices": 3272,
+      "native_vertex_start": 3272,
+      "native_skin_column": 1,
+      "native_material_table_index": 1,
+      "native_requested_family_material_name": "models/touhou/tamo/Nitori edit/Gloves glow",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "actual_owned_vmt": "materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+      "vmt_sha256": "b2fb3224f8ff9acc5d7defa7f6bdd673e6fa9a7ddf60e41330419a9994b1a053",
+      "actual_native_base_vtf": "materials/black.vtf",
+      "native_vtf_sha256": "2ef1f568043dcea49271b211933f2e646a0de8edd317e02982ea5d26504763a6",
+      "native_vtf_bytes": 96,
+      "glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+      "actual_glb_material_index": 1,
+      "actual_glb_material_name": "models/touhou/tamo/Nitori edit/Gloves glow",
+      "actual_glb_primitive_users": [
+        {
+          "node": "gloves.dmx",
+          "primitive": 1
+        }
+      ],
+      "glb_material_properties": {
+        "name": "models/touhou/tamo/Nitori edit/Gloves glow",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 1
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.800000011920929
+        }
+      },
+      "actual_glb_image_index": 1,
+      "actual_glb_texture_index": 1,
+      "actual_embedded_png_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20",
+      "actual_embedded_png_bytes": 273,
+      "actual_png_dimensions": [
+        4,
+        4
+      ],
+      "correspondence_scope": "Actual native MDL mesh column\u2192requested native family material ID/name\u2192unique owned VMT and actual converter report\u2192actual GLB material/texture/embedded image. Not independent native VTX face/UV/texture-pixel/shader/render equivalence."
+    },
+    {
+      "skin": 1,
+      "native_mesh_index": 0,
+      "native_mesh_vertices": 3272,
+      "native_vertex_start": 0,
+      "native_skin_column": 0,
+      "native_material_table_index": 2,
+      "native_requested_family_material_name": "Glovesg",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "actual_owned_vmt": "materials/models/touhou/tamo/nitori edit/glovesg.vmt",
+      "vmt_sha256": "577983146eba9bd9fabcb0ec2984f6f2586b1a6f6a2921ed3f5dc07879ab5099",
+      "actual_native_base_vtf": "materials/models\\touhou\\tamo\\Nitori edit\\glovesg.vtf",
+      "native_vtf_sha256": "86a031c6232be7d60a956b00d0c8bedef8c537f254efb35f738c026eb5364f3c",
+      "native_vtf_bytes": 1048784,
+      "glb_sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a",
+      "actual_glb_material_index": 0,
+      "actual_glb_material_name": "Glovesg",
+      "actual_glb_primitive_users": [
+        {
+          "node": "gloves.dmx",
+          "primitive": 0
+        }
+      ],
+      "glb_material_properties": {
+        "name": "Glovesg",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.800000011920929
+        }
+      },
+      "actual_glb_image_index": 0,
+      "actual_glb_texture_index": 0,
+      "actual_embedded_png_sha256": "12adf37b798a1a1bd578be6cd0c0ccc9ffed60ef56e2bc46b0af8a11db63450d",
+      "actual_embedded_png_bytes": 248194,
+      "actual_png_dimensions": [
+        1024,
+        1024
+      ],
+      "correspondence_scope": "Actual native MDL mesh column\u2192requested native family material ID/name\u2192unique owned VMT and actual converter report\u2192actual GLB material/texture/embedded image. Not independent native VTX face/UV/texture-pixel/shader/render equivalence."
+    },
+    {
+      "skin": 1,
+      "native_mesh_index": 1,
+      "native_mesh_vertices": 3272,
+      "native_vertex_start": 3272,
+      "native_skin_column": 1,
+      "native_material_table_index": 3,
+      "native_requested_family_material_name": "Gloves glowg",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "actual_owned_vmt": "materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+      "vmt_sha256": "f8fc918a97ad2c070235d0256d44b5a9824fa0a3eb85ca01437a3ea4da58b509",
+      "actual_native_base_vtf": "materials/black.vtf",
+      "native_vtf_sha256": "2ef1f568043dcea49271b211933f2e646a0de8edd317e02982ea5d26504763a6",
+      "native_vtf_bytes": 96,
+      "glb_sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a",
+      "actual_glb_material_index": 1,
+      "actual_glb_material_name": "Gloves glowg",
+      "actual_glb_primitive_users": [
+        {
+          "node": "gloves.dmx",
+          "primitive": 1
+        }
+      ],
+      "glb_material_properties": {
+        "name": "Gloves glowg",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 1
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.800000011920929
+        }
+      },
+      "actual_glb_image_index": 1,
+      "actual_glb_texture_index": 1,
+      "actual_embedded_png_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20",
+      "actual_embedded_png_bytes": 273,
+      "actual_png_dimensions": [
+        4,
+        4
+      ],
+      "correspondence_scope": "Actual native MDL mesh column\u2192requested native family material ID/name\u2192unique owned VMT and actual converter report\u2192actual GLB material/texture/embedded image. Not independent native VTX face/UV/texture-pixel/shader/render equivalence."
+    },
+    {
+      "skin": 2,
+      "native_mesh_index": 0,
+      "native_mesh_vertices": 3272,
+      "native_vertex_start": 0,
+      "native_skin_column": 0,
+      "native_material_table_index": 4,
+      "native_requested_family_material_name": "Glovesw",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "actual_owned_vmt": "materials/models/touhou/tamo/nitori edit/glovesw.vmt",
+      "vmt_sha256": "63f0fc9d17279f9a378696a4e55bf265e430f9fb9d4182a454a69f8b51806688",
+      "actual_native_base_vtf": "materials/models\\touhou\\tamo\\Nitori edit\\glovesw.vtf",
+      "native_vtf_sha256": "a446b2fc7a246376872ca55e7741e90c4e2b4f94880505a1b0e9bf2c0cfe5c8b",
+      "native_vtf_bytes": 1048784,
+      "glb_sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0",
+      "actual_glb_material_index": 0,
+      "actual_glb_material_name": "Glovesw",
+      "actual_glb_primitive_users": [
+        {
+          "node": "gloves.dmx",
+          "primitive": 0
+        }
+      ],
+      "glb_material_properties": {
+        "name": "Glovesw",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 0
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.800000011920929
+        }
+      },
+      "actual_glb_image_index": 0,
+      "actual_glb_texture_index": 0,
+      "actual_embedded_png_sha256": "3aebcbfee0fccf84b574ac499be502bf3ac1d4a199cc11186f1617651c1b828e",
+      "actual_embedded_png_bytes": 248683,
+      "actual_png_dimensions": [
+        1024,
+        1024
+      ],
+      "correspondence_scope": "Actual native MDL mesh column\u2192requested native family material ID/name\u2192unique owned VMT and actual converter report\u2192actual GLB material/texture/embedded image. Not independent native VTX face/UV/texture-pixel/shader/render equivalence."
+    },
+    {
+      "skin": 2,
+      "native_mesh_index": 1,
+      "native_mesh_vertices": 3272,
+      "native_vertex_start": 3272,
+      "native_skin_column": 1,
+      "native_material_table_index": 5,
+      "native_requested_family_material_name": "Gloves gloww",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "actual_owned_vmt": "materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+      "vmt_sha256": "229118ac40ea604d0c3c5a6c45623b63f5c91e968834967731917532f5be6ac5",
+      "actual_native_base_vtf": "materials/black.vtf",
+      "native_vtf_sha256": "2ef1f568043dcea49271b211933f2e646a0de8edd317e02982ea5d26504763a6",
+      "native_vtf_bytes": 96,
+      "glb_sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0",
+      "actual_glb_material_index": 1,
+      "actual_glb_material_name": "Gloves gloww",
+      "actual_glb_primitive_users": [
+        {
+          "node": "gloves.dmx",
+          "primitive": 1
+        }
+      ],
+      "glb_material_properties": {
+        "name": "Gloves gloww",
+        "pbrMetallicRoughness": {
+          "baseColorTexture": {
+            "index": 1
+          },
+          "metallicFactor": 0,
+          "roughnessFactor": 0.800000011920929
+        }
+      },
+      "actual_glb_image_index": 1,
+      "actual_glb_texture_index": 1,
+      "actual_embedded_png_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20",
+      "actual_embedded_png_bytes": 273,
+      "actual_png_dimensions": [
+        4,
+        4
+      ],
+      "correspondence_scope": "Actual native MDL mesh column\u2192requested native family material ID/name\u2192unique owned VMT and actual converter report\u2192actual GLB material/texture/embedded image. Not independent native VTX face/UV/texture-pixel/shader/render equivalence."
+    }
+  ],
+  "nitori_coincident_geometry": {
+    "attribute_values_equal": {
+      "POSITION": true,
+      "NORMAL": true,
+      "TEXCOORD_0": true,
+      "JOINTS_0": true,
+      "WEIGHTS_0": true
+    },
+    "triangle_indices_equal": true,
+    "indices_each": 16608,
+    "position_records_each": 3339,
+    "native_mesh_vertices_each": [
+      3272,
+      3272
+    ],
+    "identity_rule": "Geometry fingerprints are not unique identities here; native material columns and unique actual material names/VMTs provide the recorded role join."
+  },
+  "glow_png_actual_decode": {
+    "format": "has_glb_embedded_glow_png_observation_1",
+    "source_glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+    "embedded_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20",
+    "PNG_IHDR": [
+      4,
+      4,
+      8,
+      6,
+      0,
+      0,
+      0
+    ],
+    "unique_RGBA8_pixels": [
+      [
+        0,
+        0,
+        0,
+        255
+      ],
+      [
+        40,
+        40,
+        40,
+        255
+      ],
+      [
+        120,
+        120,
+        120,
+        255
+      ]
+    ],
+    "pixel_count": 16,
+    "scope": "Read-only CRC-checked PNG decode of the actual derived embedded4x4 image; no edit/render or original VTF pixel equivalence."
+  },
+  "keiki_actual_seven_visible_combinations": [
+    {
+      "bodygroup_bits": "000",
+      "glb_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+      "native_selected_indices": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "meshes": [
+        {
+          "node": "box.smd",
+          "targets": [],
+          "primitive_fingerprints": [
+            "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+          ]
+        },
+        {
+          "node": "flame.smd",
+          "targets": [],
+          "primitive_fingerprints": [
+            "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+            "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+          ]
+        },
+        {
+          "node": "tools.dmx",
+          "targets": [
+            {
+              "name": "Tools",
+              "primitive": 0,
+              "position_accessor": 25,
+              "nonzero_used_delta_records": 1180,
+              "used_vertex_records": 1180,
+              "decoded_position_delta_sha256": "101cced5d3d357b7b13ab244e24c7e9a60f9d3eb075fa509ef57fd2e91615a9d"
+            }
+          ],
+          "primitive_fingerprints": [
+            "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+          ]
+        }
+      ],
+      "tools_target_present": true
+    },
+    {
+      "bodygroup_bits": "001",
+      "glb_sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82",
+      "native_selected_indices": {
+        "0": 0,
+        "1": 0,
+        "2": 1
+      },
+      "meshes": [
+        {
+          "node": "box.smd",
+          "targets": [],
+          "primitive_fingerprints": [
+            "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+          ]
+        },
+        {
+          "node": "tools.dmx",
+          "targets": [
+            {
+              "name": "Tools",
+              "primitive": 0,
+              "position_accessor": 13,
+              "nonzero_used_delta_records": 1180,
+              "used_vertex_records": 1180,
+              "decoded_position_delta_sha256": "101cced5d3d357b7b13ab244e24c7e9a60f9d3eb075fa509ef57fd2e91615a9d"
+            }
+          ],
+          "primitive_fingerprints": [
+            "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+          ]
+        }
+      ],
+      "tools_target_present": true
+    },
+    {
+      "bodygroup_bits": "010",
+      "glb_sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a",
+      "native_selected_indices": {
+        "0": 0,
+        "1": 1,
+        "2": 0
+      },
+      "meshes": [
+        {
+          "node": "flame.smd",
+          "targets": [],
+          "primitive_fingerprints": [
+            "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+            "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+          ]
+        },
+        {
+          "node": "tools.dmx",
+          "targets": [
+            {
+              "name": "Tools",
+              "primitive": 0,
+              "position_accessor": 19,
+              "nonzero_used_delta_records": 1180,
+              "used_vertex_records": 1180,
+              "decoded_position_delta_sha256": "101cced5d3d357b7b13ab244e24c7e9a60f9d3eb075fa509ef57fd2e91615a9d"
+            }
+          ],
+          "primitive_fingerprints": [
+            "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+          ]
+        }
+      ],
+      "tools_target_present": true
+    },
+    {
+      "bodygroup_bits": "011",
+      "glb_sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0",
+      "native_selected_indices": {
+        "0": 0,
+        "1": 1,
+        "2": 1
+      },
+      "meshes": [
+        {
+          "node": "tools.dmx",
+          "targets": [
+            {
+              "name": "Tools",
+              "primitive": 0,
+              "position_accessor": 6,
+              "nonzero_used_delta_records": 1180,
+              "used_vertex_records": 1180,
+              "decoded_position_delta_sha256": "101cced5d3d357b7b13ab244e24c7e9a60f9d3eb075fa509ef57fd2e91615a9d"
+            }
+          ],
+          "primitive_fingerprints": [
+            "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+          ]
+        }
+      ],
+      "tools_target_present": true
+    },
+    {
+      "bodygroup_bits": "100",
+      "glb_sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3",
+      "native_selected_indices": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "meshes": [
+        {
+          "node": "box.smd",
+          "targets": [],
+          "primitive_fingerprints": [
+            "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+          ]
+        },
+        {
+          "node": "flame.smd",
+          "targets": [],
+          "primitive_fingerprints": [
+            "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+            "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+          ]
+        }
+      ],
+      "tools_target_present": false
+    },
+    {
+      "bodygroup_bits": "101",
+      "glb_sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40",
+      "native_selected_indices": {
+        "0": 1,
+        "1": 0,
+        "2": 1
+      },
+      "meshes": [
+        {
+          "node": "box.smd",
+          "targets": [],
+          "primitive_fingerprints": [
+            "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+          ]
+        }
+      ],
+      "tools_target_present": false
+    },
+    {
+      "bodygroup_bits": "110",
+      "glb_sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+      "native_selected_indices": {
+        "0": 1,
+        "1": 1,
+        "2": 0
+      },
+      "meshes": [
+        {
+          "node": "flame.smd",
+          "targets": [],
+          "primitive_fingerprints": [
+            "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+            "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+          ]
+        }
+      ],
+      "tools_target_present": false
+    }
+  ],
+  "remaining_gaps": [
+    "Original native VTX face/UV/material assignment and VVD influences have not been independently compared against exported data.",
+    "Original VTF decoded pixels/gamma/alpha versus embedded PNG equivalence is unrun; PNG hashes and the small glowPNG actual pixels are observed.",
+    "Native additive/envmap/bump/Phong/warp/glow behavior is not represented by the ordinary PBR GLB properties; Nitori missing hairbump remains.",
+    "Full GPU appearance, posed/skinned/morph pixels, normal app adoption/Undo/HAS/fresh-offline/movie and artist fidelity remain unrun or unimplemented.",
+    "Native non-ASCII bone names retain pinned Latin1 identities/raw bytes; do not rename/translate identifiers to make a probe easier."
+  ],
+  "eligible_and_cautionary_bones": [
+    {
+      "case": "multi_skin_glove",
+      "mesh_node": "gloves.dmx",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "native_index": 8,
+      "exact_reader_decoded_name": "bip_hand_L",
+      "decoded_name_utf8_sha256": "98a9d62211ae84f112383062706cba428016ff765c380b01ec084229896e8d2d",
+      "native_parent_index": 6,
+      "native_parent_name": "bip_lowerArm_L",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 8,
+        "name": "bip_hand_L",
+        "native_parent": 6,
+        "direct_used_records": 538,
+        "subtree_used_records": 2214,
+        "unaffected_used_records": 4464,
+        "direct_weight_sum": 322.14499762654305,
+        "max_direct_weight": 1.0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    },
+    {
+      "case": "multi_skin_glove",
+      "mesh_node": "gloves.dmx",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "native_index": 19,
+      "exact_reader_decoded_name": "ValveBiped.Bip01_L_Finger2",
+      "decoded_name_utf8_sha256": "8dc6f400c0b9f0993cddd6c0a8a066730b8ced77f4448049d652f8fd19185079",
+      "native_parent_index": 18,
+      "native_parent_name": "MiddleFinger1Expand1_L",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 19,
+        "name": "ValveBiped.Bip01_L_Finger2",
+        "native_parent": 18,
+        "direct_used_records": 176,
+        "subtree_used_records": 360,
+        "unaffected_used_records": 6318,
+        "direct_weight_sum": 100.120001912117,
+        "max_direct_weight": 1.0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    },
+    {
+      "case": "multi_skin_glove",
+      "mesh_node": "gloves.dmx",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "native_index": 40,
+      "exact_reader_decoded_name": "bip_hand_R",
+      "decoded_name_utf8_sha256": "e70be2a2a1e20c8e51148a0ea1a87feed21e4685522aad996e3599ed399407e5",
+      "native_parent_index": 38,
+      "native_parent_name": "bip_lowerArm_R",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 40,
+        "name": "bip_hand_R",
+        "native_parent": 38,
+        "direct_used_records": 538,
+        "subtree_used_records": 3482,
+        "unaffected_used_records": 3196,
+        "direct_weight_sum": 322.14499762654305,
+        "max_direct_weight": 1.0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "mesh_node": "box.smd",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "native_index": 23,
+      "exact_reader_decoded_name": "box",
+      "decoded_name_utf8_sha256": "26f8567f2569182294c3fa5b9f9cb2270b554eef628b4c149cf82a42888ff4ae",
+      "native_parent_index": 2,
+      "native_parent_name": "bip_pelvis",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 23,
+        "name": "box",
+        "native_parent": 2,
+        "direct_used_records": 38,
+        "subtree_used_records": 38,
+        "unaffected_used_records": 0,
+        "direct_weight_sum": 38.0,
+        "max_direct_weight": 1.0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "mesh_node": "tools.dmx",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "native_index": 8,
+      "exact_reader_decoded_name": "bip_hand_L",
+      "decoded_name_utf8_sha256": "98a9d62211ae84f112383062706cba428016ff765c380b01ec084229896e8d2d",
+      "native_parent_index": 7,
+      "native_parent_name": "bip_lowerArm_L",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 8,
+        "name": "bip_hand_L",
+        "native_parent": 7,
+        "direct_used_records": 0,
+        "subtree_used_records": 620,
+        "unaffected_used_records": 560,
+        "direct_weight_sum": 0,
+        "max_direct_weight": 0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "mesh_node": "tools.dmx",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "native_index": 17,
+      "exact_reader_decoded_name": "bip_hand_R",
+      "decoded_name_utf8_sha256": "e70be2a2a1e20c8e51148a0ea1a87feed21e4685522aad996e3599ed399407e5",
+      "native_parent_index": 16,
+      "native_parent_name": "bip_lowerArm_R",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 17,
+        "name": "bip_hand_R",
+        "native_parent": 16,
+        "direct_used_records": 0,
+        "subtree_used_records": 560,
+        "unaffected_used_records": 620,
+        "direct_weight_sum": 0,
+        "max_direct_weight": 0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "mesh_node": "tools.dmx",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "native_index": 12,
+      "exact_reader_decoded_name": "Change\u00e5\u00bd\u00a2Circle\u00e5\u0088\u0080",
+      "decoded_name_utf8_sha256": "7664b273aa3ad53d880ac6e620f09f02ef0426585f8f9418e7f7ad544c551dde",
+      "native_parent_index": 9,
+      "native_parent_name": "\u00e5\u00bd\u00ab\u00e5\u0088\u00bb\u00e5\u0088\u0080Parent_L",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 12,
+        "name": "Change\u00e5\u00bd\u00a2Circle\u00e5\u0088\u0080",
+        "native_parent": 9,
+        "direct_used_records": 198,
+        "subtree_used_records": 198,
+        "unaffected_used_records": 982,
+        "direct_weight_sum": 198.0,
+        "max_direct_weight": 1.0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "mesh_node": "tools.dmx",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "native_index": 20,
+      "exact_reader_decoded_name": "Change\u00e5\u00bd\u00a2SmallCircle\u00e5\u0088\u0080",
+      "decoded_name_utf8_sha256": "15cd678b81987d5ee7a3776e1c8fa5c016f957606475e47a901228966f571d83",
+      "native_parent_index": 18,
+      "native_parent_name": "\u00e5\u00bd\u00ab\u00e5\u0088\u00bb\u00e5\u0088\u0080Parent_R",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 20,
+        "name": "Change\u00e5\u00bd\u00a2SmallCircle\u00e5\u0088\u0080",
+        "native_parent": 18,
+        "direct_used_records": 198,
+        "subtree_used_records": 198,
+        "unaffected_used_records": 982,
+        "direct_weight_sum": 198.0,
+        "max_direct_weight": 1.0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "mesh_node": "flame.smd",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "native_index": 30,
+      "exact_reader_decoded_name": "Flame",
+      "decoded_name_utf8_sha256": "dfb0f521ab244b542f896bc5dd8424b1b9d3506fd674e4ffa1d16b7c605ba2f2",
+      "native_parent_index": 0,
+      "native_parent_name": "ParentNode",
+      "used_by_vertex_lod0_flag": true,
+      "actual_glb_weight_eligibility": {
+        "native_index": 30,
+        "name": "Flame",
+        "native_parent": 0,
+        "direct_used_records": 8,
+        "subtree_used_records": 8,
+        "unaffected_used_records": 1570,
+        "direct_weight_sum": 8.0,
+        "max_direct_weight": 1.0
+      },
+      "count_rule": "Used GLB vertex records deduplicated by POSITION/JOINTS/WEIGHTS accessor triplet and vertex index. Not independent native vertex counts.",
+      "eligibility_scope": "Actual derived GLB influence joined to exact native MDL bone index/name/parent; native VVD weights have not been independently decoded/compared."
+    }
+  ],
+  "source_evidence_hashes": {
+    "metadata.json": {
+      "sha256": "f16ec1c38654b4ccb636b8437d25f917791cb5ec2e8676ab855844c63819bbd1",
+      "bytes": 549376
+    },
+    "material-search-paths.json": {
+      "sha256": "0d6c1ff02b00cda828485ef587d945d647f029fe288250b5f614d1d651dfe319",
+      "bytes": 16457
+    },
+    "bone-name-bytes.json": {
+      "sha256": "75c0367048fd1744f139b667ecc1ff490bf72d2ba1b5c116339ed8327921f1b3",
+      "bytes": 56825
+    },
+    "HANDOFF.json": {
+      "sha256": "1b817e7d00b8b25c0006ae12e64a3c3db1e1759e79b7cb82ffba8c5935b510f8",
+      "bytes": 1936
+    }
+  },
+  "private_pose_and_geometry_arrays_included": false
+}

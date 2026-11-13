@@ -1,0 +1,134 @@
+{
+  "format": "has_sfm_publication_checks_1",
+  "status": "PASS",
+  "graphics_or_native_runtime_launched": false,
+  "source_copies_verified": 13,
+  "metadata_copies_verified": 5,
+  "parsed_json_files_before_this_receipt": 25,
+  "historical_lock_sha256": "9a3d65108148a2e41eebb6a2dabfd556541aff27affe1cc48e4c099e21e00521",
+  "historical_lock_decoded_bytes": 753668,
+  "private_asset_extensions_found": 0,
+  "markdown_links": [
+    {
+      "document": "docs/sfm_static_appearance_actual_2026-11-13.md",
+      "target": "../experiments/source_appearance/actual_windows_20261113/metadata/actual_results.json",
+      "resolved_in": "candidate"
+    },
+    {
+      "document": "docs/sfm_static_appearance_actual_2026-11-13.md",
+      "target": "../experiments/source_appearance/actual_windows_20261113/metadata/dependency_and_morph_observations.json",
+      "resolved_in": "candidate"
+    },
+    {
+      "document": "docs/sfm_static_appearance_actual_2026-11-13.md",
+      "target": "../experiments/source_appearance/actual_windows_20261113/metadata/historical-input-lock3.json.gz",
+      "resolved_in": "candidate"
+    },
+    {
+      "document": "docs/sfm_static_appearance_actual_2026-11-13.md",
+      "target": "sfm_native_feature_inventory_2026-11-12.md",
+      "resolved_in": "existing repository"
+    },
+    {
+      "document": "docs/sfm_static_appearance_actual_2026-11-13.md",
+      "target": "sfm_static_appearance_next_probe_2026-11-13.md",
+      "resolved_in": "candidate"
+    },
+    {
+      "document": "docs/sfm_static_appearance_actual_2026-11-13.md",
+      "target": "benchmarks/sfm_static_appearance_actual_2026-11-13.json",
+      "resolved_in": "candidate"
+    },
+    {
+      "document": "docs/sfm_static_appearance_actual_2026-11-13.md",
+      "target": "../experiments/source_appearance/actual_windows_20261113/README.md",
+      "resolved_in": "candidate"
+    },
+    {
+      "document": "experiments/source_appearance/actual_windows_20261113/README.md",
+      "target": "../../../docs/sfm_static_appearance_next_probe_2026-11-13.md",
+      "resolved_in": "candidate"
+    }
+  ],
+  "source_copies": [
+    {
+      "name": "stage_resources.py",
+      "sha256": "f00be8c033d0b30faaf7e7727ee398d03341a8fb117e71ddc6ff72d252af39b5",
+      "bytes": 20835,
+      "equal_original": true
+    },
+    {
+      "name": "test_stage_resources.py",
+      "sha256": "30bd31fe90516d1544e6f79ea6487f84a21de05fc47d0e8fa6bc3ce0d4d6828c",
+      "bytes": 11409,
+      "equal_original": true
+    },
+    {
+      "name": "vmt_closure.py",
+      "sha256": "c06c279de5b29239879c9ad019f91b9b5cbef22bc564f3d63ec7c600530e22b6",
+      "bytes": 14101,
+      "equal_original": true
+    },
+    {
+      "name": "test_vmt_closure.py",
+      "sha256": "70aa86f4680aa03da5e4442b3f6618159ee63464204cbf04bf5e003e60ecfa80",
+      "bytes": 6082,
+      "equal_original": true
+    },
+    {
+      "name": "conversion_driver.py",
+      "sha256": "d8749db85f324f799740c2802a77e7ec6d8640f0752312fe7ecfdf34cee2d127",
+      "bytes": 42973,
+      "equal_original": true
+    },
+    {
+      "name": "test_conversion_driver.py",
+      "sha256": "2a511ec237cef0ecfb43d583a0ec68a722bda1f462d85c800350d9de6e71e151",
+      "bytes": 18952,
+      "equal_original": true
+    },
+    {
+      "name": "background_conversion_driver.py",
+      "sha256": "08a63f739f21cdb019468b3b274ecc1772fb942695320dfd20d2b1826c120587",
+      "bytes": 42556,
+      "equal_original": true
+    },
+    {
+      "name": "background_route.py",
+      "sha256": "94c30dab411043c1308379003c06babd0be3bba09a86654cb8ac56541510565b",
+      "bytes": 24721,
+      "equal_original": true
+    },
+    {
+      "name": "background_python_bootstrap.py",
+      "sha256": "d65bdc1edba89f7a2cda7edbd3e99a07ac1f6e25f58f0020bc3b11a4e53e67bf",
+      "bytes": 4717,
+      "equal_original": true
+    },
+    {
+      "name": "background_blender_observer.py",
+      "sha256": "c02d4ac4fcde7d6a4cd5218d83f782c03876a75f3a77910de978c352ade67854",
+      "bytes": 3127,
+      "equal_original": true
+    },
+    {
+      "name": "win_desktop_attestation.py",
+      "sha256": "67a07d2666d927fb9ffb2d2d2432c0bc60cda5f1d3d3e4a02363511b7fd6d2d3",
+      "bytes": 6178,
+      "equal_original": true
+    },
+    {
+      "name": "test_background_route.py",
+      "sha256": "6b77aab3e30df344452c7bea2b1939f99dd38f5ca85d89539a042cb20117ba8b",
+      "bytes": 15357,
+      "equal_original": true
+    },
+    {
+      "name": "test_background_driver.py",
+      "sha256": "1a29776af7de8611aa261f92a5705e64c018b8a39e37299e8e8cc2e95ee1b454",
+      "bytes": 4403,
+      "equal_original": true
+    }
+  ],
+  "scope": "Filesystem, hashes, JSON and gzip only. Actual conversion results remain the previously completed fourteen cases."
+}

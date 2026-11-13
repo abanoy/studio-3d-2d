@@ -1,0 +1,398 @@
+{
+  "format": "has_native_column_publication_compact_1",
+  "native_metadata_sha256": "f16ec1c38654b4ccb636b8437d25f917791cb5ec2e8676ab855844c63819bbd1",
+  "models": [
+    {
+      "case": "multi_skin_glove",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "version": 49,
+      "material_table": [
+        {
+          "index": 0,
+          "name": "models/touhou/tamo/Nitori edit/Gloves"
+        },
+        {
+          "index": 1,
+          "name": "models/touhou/tamo/Nitori edit/Gloves glow"
+        },
+        {
+          "index": 2,
+          "name": "Glovesg"
+        },
+        {
+          "index": 3,
+          "name": "Gloves glowg"
+        },
+        {
+          "index": 4,
+          "name": "Glovesw"
+        },
+        {
+          "index": 5,
+          "name": "Gloves gloww"
+        }
+      ],
+      "skin_family_indices": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          4,
+          5,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "bodygroups": [
+        {
+          "index": 0,
+          "name": "glove",
+          "choices": [
+            {
+              "index": 0,
+              "name": "gloves.dmx",
+              "vertex_count": 6544,
+              "vvd_vertex_offset": 0,
+              "tangent_offset_raw": 0,
+              "blank_by_zero_vertices": false,
+              "meshes": [
+                {
+                  "index": 0,
+                  "material_index": 0,
+                  "native_material": "models/touhou/tamo/Nitori edit/Gloves",
+                  "vertex_count": 3272,
+                  "vertex_index_start_within_model": 0,
+                  "vvd_lod0_vertex_start_as_model_plus_mesh": 0,
+                  "mesh_id": 0,
+                  "flexes": [
+                    {
+                      "index": 0,
+                      "descriptor_index": 0,
+                      "descriptor_name": "Ah",
+                      "targets": [
+                        0.0,
+                        1.0,
+                        10.0,
+                        11.0
+                      ],
+                      "partner_index": 0,
+                      "vertex_anim_type": 0,
+                      "record_count": 2751,
+                      "raw_vertex_index_min": 0,
+                      "raw_vertex_index_max": 3271
+                    }
+                  ],
+                  "selected_material_by_family": [
+                    {
+                      "family": 0,
+                      "native_skin_column": 0,
+                      "material_table_index": 0,
+                      "material_name": "models/touhou/tamo/Nitori edit/Gloves"
+                    },
+                    {
+                      "family": 1,
+                      "native_skin_column": 0,
+                      "material_table_index": 2,
+                      "material_name": "Glovesg"
+                    },
+                    {
+                      "family": 2,
+                      "native_skin_column": 0,
+                      "material_table_index": 4,
+                      "material_name": "Glovesw"
+                    }
+                  ]
+                },
+                {
+                  "index": 1,
+                  "material_index": 1,
+                  "native_material": "models/touhou/tamo/Nitori edit/Gloves glow",
+                  "vertex_count": 3272,
+                  "vertex_index_start_within_model": 3272,
+                  "vvd_lod0_vertex_start_as_model_plus_mesh": 3272,
+                  "mesh_id": 1,
+                  "flexes": [
+                    {
+                      "index": 0,
+                      "descriptor_index": 0,
+                      "descriptor_name": "Ah",
+                      "targets": [
+                        0.0,
+                        1.0,
+                        10.0,
+                        11.0
+                      ],
+                      "partner_index": 0,
+                      "vertex_anim_type": 0,
+                      "record_count": 2751,
+                      "raw_vertex_index_min": 0,
+                      "raw_vertex_index_max": 3271
+                    }
+                  ],
+                  "selected_material_by_family": [
+                    {
+                      "family": 0,
+                      "native_skin_column": 1,
+                      "material_table_index": 1,
+                      "material_name": "models/touhou/tamo/Nitori edit/Gloves glow"
+                    },
+                    {
+                      "family": 1,
+                      "native_skin_column": 1,
+                      "material_table_index": 3,
+                      "material_name": "Gloves glowg"
+                    },
+                    {
+                      "family": 2,
+                      "native_skin_column": 1,
+                      "material_table_index": 5,
+                      "material_name": "Gloves gloww"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertex_count": 0,
+              "vvd_vertex_offset": 6544,
+              "tangent_offset_raw": 104704,
+              "blank_by_zero_vertices": true,
+              "meshes": []
+            }
+          ]
+        }
+      ],
+      "bone_count": 66,
+      "flex_descriptors": [
+        {
+          "index": 0,
+          "name": "Ah"
+        }
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "version": 49,
+      "material_table": [
+        {
+          "index": 0,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props"
+        },
+        {
+          "index": 1,
+          "name": "box"
+        },
+        {
+          "index": 2,
+          "name": "blush"
+        },
+        {
+          "index": 3,
+          "name": "excl mark"
+        }
+      ],
+      "skin_family_indices": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "bodygroups": [
+        {
+          "index": 0,
+          "name": "tools",
+          "choices": [
+            {
+              "index": 0,
+              "name": "tools.dmx",
+              "vertex_count": 1180,
+              "vvd_vertex_offset": 0,
+              "tangent_offset_raw": 0,
+              "blank_by_zero_vertices": false,
+              "meshes": [
+                {
+                  "index": 0,
+                  "material_index": 0,
+                  "native_material": "models/touhou/tamo/Keiki Haniyashin/props",
+                  "vertex_count": 1180,
+                  "vertex_index_start_within_model": 0,
+                  "vvd_lod0_vertex_start_as_model_plus_mesh": 0,
+                  "mesh_id": 0,
+                  "flexes": [
+                    {
+                      "index": 0,
+                      "descriptor_index": 0,
+                      "descriptor_name": "Tools",
+                      "targets": [
+                        0.0,
+                        1.0,
+                        10.0,
+                        11.0
+                      ],
+                      "partner_index": 0,
+                      "vertex_anim_type": 0,
+                      "record_count": 1180,
+                      "raw_vertex_index_min": 0,
+                      "raw_vertex_index_max": 1179
+                    }
+                  ],
+                  "selected_material_by_family": [
+                    {
+                      "family": 0,
+                      "native_skin_column": 0,
+                      "material_table_index": 0,
+                      "material_name": "models/touhou/tamo/Keiki Haniyashin/props"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertex_count": 0,
+              "vvd_vertex_offset": 1180,
+              "tangent_offset_raw": 18880,
+              "blank_by_zero_vertices": true,
+              "meshes": []
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "name": "box",
+          "choices": [
+            {
+              "index": 0,
+              "name": "box.smd",
+              "vertex_count": 38,
+              "vvd_vertex_offset": 1180,
+              "tangent_offset_raw": 18880,
+              "blank_by_zero_vertices": false,
+              "meshes": [
+                {
+                  "index": 0,
+                  "material_index": 1,
+                  "native_material": "box",
+                  "vertex_count": 38,
+                  "vertex_index_start_within_model": 0,
+                  "vvd_lod0_vertex_start_as_model_plus_mesh": 1180,
+                  "mesh_id": 1,
+                  "flexes": [],
+                  "selected_material_by_family": [
+                    {
+                      "family": 0,
+                      "native_skin_column": 1,
+                      "material_table_index": 1,
+                      "material_name": "box"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertex_count": 0,
+              "vvd_vertex_offset": 1218,
+              "tangent_offset_raw": 19488,
+              "blank_by_zero_vertices": true,
+              "meshes": []
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "name": "flame",
+          "choices": [
+            {
+              "index": 0,
+              "name": "flame.smd",
+              "vertex_count": 1479,
+              "vvd_vertex_offset": 1218,
+              "tangent_offset_raw": 19488,
+              "blank_by_zero_vertices": false,
+              "meshes": [
+                {
+                  "index": 0,
+                  "material_index": 2,
+                  "native_material": "blush",
+                  "vertex_count": 1471,
+                  "vertex_index_start_within_model": 0,
+                  "vvd_lod0_vertex_start_as_model_plus_mesh": 1218,
+                  "mesh_id": 2,
+                  "flexes": [],
+                  "selected_material_by_family": [
+                    {
+                      "family": 0,
+                      "native_skin_column": 2,
+                      "material_table_index": 2,
+                      "material_name": "blush"
+                    }
+                  ]
+                },
+                {
+                  "index": 1,
+                  "material_index": 3,
+                  "native_material": "excl mark",
+                  "vertex_count": 8,
+                  "vertex_index_start_within_model": 1471,
+                  "vvd_lod0_vertex_start_as_model_plus_mesh": 2689,
+                  "mesh_id": 3,
+                  "flexes": [],
+                  "selected_material_by_family": [
+                    {
+                      "family": 0,
+                      "native_skin_column": 3,
+                      "material_table_index": 3,
+                      "material_name": "excl mark"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertex_count": 0,
+              "vvd_vertex_offset": 2697,
+              "tangent_offset_raw": 43152,
+              "blank_by_zero_vertices": true,
+              "meshes": []
+            }
+          ]
+        }
+      ],
+      "bone_count": 31,
+      "flex_descriptors": [
+        {
+          "index": 0,
+          "name": "Tools"
+        }
+      ]
+    }
+  ],
+  "no_rest_matrices_positions_vertex_arrays_or_art_payload": true,
+  "protected_unchanged": true,
+  "actual_blender_app_gpu_extraction_network_source_edits": false
+}
