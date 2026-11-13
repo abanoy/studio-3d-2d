@@ -1,6 +1,6 @@
 # HAS — consolidated master reference for resuming work
 
-**Updated November 12, 2026. The owner explicitly resumed work; the goal is ACTIVE.**
+**Updated November 13, 2026. The owner explicitly resumed work; the goal is ACTIVE.**
 
 This is the single reading document for the requests, corrections, proposals,
 current software/test state, protected inputs and next steps from this chat.
@@ -439,6 +439,24 @@ downloads, playback or implementation has occurred. This is not a new required
 acceptance gate or a prerequisite for the model browser.
 
 ## 10. Current verification and incomplete acceptance
+
+### Latest software correction — November 13
+
+A later suffix passed fill, gap fill, expanded fill, connection fill, palette and
+drawing history, then the drawing-selection writer printed35/0 but crashed
+during native shutdown. Its cold reader and nine later wrappers were not run.
+Preserve that failure; it is not a successful aggregate.
+
+The pending scene picker retained one camera Transform3D while awaiting the
+global frame signal. Explicit owned request receivers now disconnect and clear
+on close. New28checks pass with clean private exits; exactold2904source prints
+four passes but repeats0xC0000005. Final source also passes unchanged selection41,
+world edit41, SceneView12830+102 and drawing selection12+35+3 with the original
+pixel, persistence and movie predicates. Initial harness type errors and a
+rejected bound-callback candidate(28/5) remain recorded. The regression is now
+in the default suite. [Fix/evidence](selection_readback_shutdown_2026-11-13.md).
+Continue nine later wrappers, phase1 Wind integration and a final full suite;
+existing human/device/native/clean-install gates remain open.
 
 Formal ledger remains **55/62 acceptance groups verified** and **52/54 required
 implementation groups implemented**. Seven open acceptance IDs:

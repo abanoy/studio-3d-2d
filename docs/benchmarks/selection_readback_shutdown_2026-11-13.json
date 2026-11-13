@@ -1,0 +1,590 @@
+{
+  "format": "has_owned_selection_readback_shutdown_fix_1",
+  "date": "2026-11-13",
+  "base_commit": "2904f3f18e4211f95ddd385953219b2e5460aee9",
+  "full_aggregate": false,
+  "ledger_unchanged": {
+    "accepted": 55,
+    "required": 62,
+    "implemented": 52,
+    "implementation_required": 54
+  },
+  "source_sha256": {
+    "src/world_selection.gd": "7c36ec46c6ba7a9e52eada2d08f5356c23e6312c47a05330cdb37ecbde3161c3",
+    "tests/world_selection_teardown.gd": "0b536c255e52cd335b5f5f609883b95a1e63b5dbad6faa14d0daf989f5d1afc0",
+    "tests/verify_world_selection_teardown.py": "bcd1f87c18eff70af0e5d59b1f9ea1dac5e586911082d3d8a4f4fcef6123adbb",
+    "tests/verify.py": "f4f20bc7083fb8d5317ed0db3ed2b5850c3ecb12d15b51c1ab886677154a2760"
+  },
+  "original_failure": {
+    "scoped_run": {
+      "format": "has_canonical_suffix_scopes_1",
+      "full_aggregate": false,
+      "runner_sha256": "04b7561d66090235795e5c09f6215889ab353823971c638ddc757ef3a6aed99d",
+      "status": "failed",
+      "pid": 15144,
+      "started_ns": 1794546655409292600,
+      "source_commit": "2904f3f18e4211f95ddd385953219b2e5460aee9",
+      "source_files": 934,
+      "original_scope_count": 36,
+      "selected_after": "onion",
+      "requested_scopes": 16,
+      "results": [
+        {
+          "name": "fill",
+          "script": "tests/verify_fill.py",
+          "report": "fill-verification.json",
+          "timeout": 240,
+          "exit": 0,
+          "elapsed_s": 39.5194175,
+          "case": "output\\remaining-scopes-tail16-20261113T051055143\\01-fill",
+          "passed": true,
+          "report_sha256": "c617c2ff8d8488a0ec1db2b530c9954b2c837cb1f2b89111ae28a2ddaa85f0e6"
+        },
+        {
+          "name": "fill_gaps",
+          "script": "tests/verify_fill_gaps.py",
+          "report": "fill-gaps-verification.json",
+          "timeout": 500,
+          "exit": 0,
+          "elapsed_s": 43.5337268,
+          "case": "output\\remaining-scopes-tail16-20261113T051055143\\02-fill_gaps",
+          "passed": true,
+          "report_sha256": "7a13aedc9cb8946776d4fd72146aff234c51b1a84ebb90ae3bf343e35dec549a"
+        },
+        {
+          "name": "fill_expand",
+          "script": "tests/verify_fill_expand.py",
+          "report": "fill-expand-verification.json",
+          "timeout": 500,
+          "exit": 0,
+          "elapsed_s": 28.7933568,
+          "case": "output\\remaining-scopes-tail16-20261113T051055143\\03-fill_expand",
+          "passed": true,
+          "report_sha256": "0fb848cb23d82a1e3803bc4d72d445c36bf4b44ee7e7234c594bd13e4e0ad26b"
+        },
+        {
+          "name": "fill_connections",
+          "script": "tests/verify_fill_connections.py",
+          "report": "fill-connections-verification.json",
+          "timeout": 500,
+          "exit": 0,
+          "elapsed_s": 29.4208761,
+          "case": "output\\remaining-scopes-tail16-20261113T051055143\\04-fill_connections",
+          "passed": true,
+          "report_sha256": "b5a5d6c7efeda7146a8db4373ccf97695f2bd4612a55091cb600a4839e045414"
+        },
+        {
+          "name": "palette",
+          "script": "tests/verify_palette.py",
+          "report": "palette-verification.json",
+          "timeout": 500,
+          "exit": 0,
+          "elapsed_s": 37.418685,
+          "case": "output\\remaining-scopes-tail16-20261113T051055143\\05-palette",
+          "passed": true,
+          "report_sha256": "4b3123c5fb2ca0e7bed3b548131b684c3e33822ce2a109f3d0fc585b57e1842f"
+        },
+        {
+          "name": "drawing_history",
+          "script": "tests/verify_drawing_history.py",
+          "report": "drawing-history-verification.json",
+          "timeout": 400,
+          "exit": 0,
+          "elapsed_s": 13.8849401,
+          "case": "output\\remaining-scopes-tail16-20261113T051055143\\06-drawing_history",
+          "passed": true,
+          "report_sha256": "f9f6b4b71d316a561d50b3f1430ea13ad720083b46dd808fc70a93a50f5c31d5"
+        },
+        {
+          "name": "drawing_selection",
+          "script": "tests/verify_drawing_selection.py",
+          "report": "drawing-selection-verification.json",
+          "timeout": 500,
+          "exit": 1,
+          "elapsed_s": 17.1917544,
+          "case": "output\\remaining-scopes-tail16-20261113T051055143\\07-drawing_selection",
+          "passed": false
+        }
+      ],
+      "all_requested_scopes_passed": false,
+      "source_unchanged": true,
+      "error": "RuntimeError: Wrapper failed: drawing_selection",
+      "finished_ns": 1794546865485800300
+    },
+    "original_dump_sha256": "e2a1cbd4a3da4c38f0174562c8077a33a1fea6de2cf6950fb0eb988c4ea7c4d4",
+    "raw_memory_dump_retained_privately_not_uploaded": true,
+    "exact_binary_correlation": {
+      "original_dump_sha256": "e2a1cbd4a3da4c38f0174562c8077a33a1fea6de2cf6950fb0eb988c4ea7c4d4",
+      "original_dump_unchanged": true,
+      "evidence_log": "cdb-allocator-explicit.log",
+      "frame_number": 5,
+      "frame_pc": "0x00007ff6b6e8049c",
+      "callee_saved_rbx": "0x00007ff6bc6ec7a0",
+      "allocator_rva": "0xa3cc7a0",
+      "type_correlated_from_exact_binary_rtti": "PagedAllocator<Variant::Pools::BucketMedium, true>",
+      "medium_types_from_exact_source": [
+        "Basis",
+        "Transform3D"
+      ],
+      "page_pool": "0x000001b7ad6be9e0",
+      "available_pool": "0x000001b7ad6be6a0",
+      "pages_allocated": 1,
+      "allocs_available": 4095,
+      "page_shift": 12,
+      "page_mask": 4095,
+      "page_size": 4096,
+      "spin_lock_byte": 1,
+      "outstanding_medium_allocations": 1,
+      "page_pointer_heap_memory_captured": false,
+      "owner_identifiable_from_available_pool_memory": false,
+      "critical_section": {
+        "address": "0x00007ff6bc6eaf80",
+        "rva": "0xa3caf80",
+        "debug_info": "0x0",
+        "lock_count": -6,
+        "recursion_count": 0,
+        "owning_thread": "0x0",
+        "lock_semaphore": "0xffffffffffffffff",
+        "spin_count": 0,
+        "layout_source": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.28000.0\\um\\winnt.h:25085",
+        "prior_destruction_sequence_proven": false
+      },
+      "limitations": [
+        "One outstanding medium allocation is not a count of retained application objects.",
+        "The pool type cannot distinguish Basis from Transform3D without the missing heap memory.",
+        "No exact Godot debug symbols are present; source correlation is based on instructions, embedded literals, RTTI, and the supplied engine commit.",
+        "cdb-allocator.log @rbx reads are exception-context values, not allocator reads; use cdb-allocator-explicit.log."
+      ]
+    },
+    "mutex_prior_destruction_history_unproven": true,
+    "diagnostic": {
+      "source_sha256": "e9ce50ebb9d50cb82d483a9d83988bbdb83d261682c3660f40883282db086655",
+      "script_sha256": "8d3d875e988227577f1cd8fafccfd87d4882369779bf02e3d5f7b845e2cbdb65",
+      "case": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-selection-crash-20261113\\verbose-1794547680031445800",
+      "command": [
+        "C:\\Program Files\\Python313\\pythonw.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\private_desktop.py",
+        "--receipt",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\selection_verbose_pick_diagnostic_58f2c33f953e4122a0f5ef591ba6423d.json",
+        "--",
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\selection_verbose_pick_diagnostic-engine.log",
+        "--script",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-selection-crash-20261113\\selection_verbose_pick_diagnostic.gd",
+        "--verbose",
+        "--",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-selection-crash-20261113\\verbose-1794547680031445800",
+        "--demo-room"
+      ],
+      "start_ns": 1794547680116807000,
+      "end_ns": 1794547695740294100,
+      "exit": 3221225477,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_6357bc1c4f8e4a5d9c66208a5d6ff18c",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 3221225477,
+        "child_pid": 26228,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 15.565
+      }
+    },
+    "pre_free": {
+      "picking": 1,
+      "frame_post_draw_function_states": 1,
+      "native_readbacks": 0,
+      "native_callbacks": 0,
+      "selection_reveal": false,
+      "transform_reveal": false,
+      "physics": 0,
+      "project_pid": -1
+    }
+  },
+  "cause_and_fix": "world_selection.choose_at directly awaited global frame_post_draw with pick_state containing one Transform3D. Closing its Node before a draw retained that coroutine. Replace with distinct RefCounted request receivers owned by the selection Node, weak receiver links, per-request serial/view guards, explicit exit disconnect/clear and callback self-lifetime guard. No selection/material/pose/raster limits changed.",
+  "counterfactual": {
+    "revision": "2904f3f18e4211f95ddd385953219b2e5460aee9",
+    "source_mode": "git_revision",
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794548186042929700",
+    "shared_test_sha256": "0b536c255e52cd335b5f5f609883b95a1e63b5dbad6faa14d0daf989f5d1afc0",
+    "unchanged_source": true,
+    "unchanged_override": true,
+    "normal-startup": {
+      "exit": 0,
+      "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794548186042929700\\shipped-source\\output\\private-desktop\\studio_67b2c223b809401798ab2c10fbdb3915.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5561d811ccc445e987322776c4dfc2b2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20748,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.608
+      }
+    },
+    "process": {
+      "exit": 3221225477,
+      "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794548186042929700\\shipped-source\\output\\private-desktop\\world_selection_teardown_7e4b7e735dca4468a64f9a177de890f0.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_15d53b2e017f472eb4fc09042db12fe1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 3221225477,
+        "child_pid": 12356,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.912
+      }
+    },
+    "result": {
+      "cases": [
+        {
+          "case": "focus-free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        }
+      ],
+      "checks": 4,
+      "failures": 0
+    }
+  },
+  "fixed": {
+    "revision": "2904f3f18e4211f95ddd385953219b2e5460aee9",
+    "source_mode": "working_tree",
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794548155377706700",
+    "shared_test_sha256": "0b536c255e52cd335b5f5f609883b95a1e63b5dbad6faa14d0daf989f5d1afc0",
+    "unchanged_source": true,
+    "unchanged_override": true,
+    "normal-startup": {
+      "exit": 0,
+      "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794548155377706700\\shipped-source\\output\\private-desktop\\studio_6a039dbd077e4380896d4446c4f49cff.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c7a141c157d54aafa3a04c8ffbc838c3",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25772,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.185
+      }
+    },
+    "process": {
+      "exit": 0,
+      "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794548155377706700\\shipped-source\\output\\private-desktop\\world_selection_teardown_eaa378a9075c45ed9f51986e97487d11.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_59cd972a681e45f191486483528aab10",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 24952,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.108
+      }
+    },
+    "result": {
+      "cases": [
+        {
+          "case": "controls-queue-free",
+          "reentrant_pending_after_first_draw": 1,
+          "signal_connections": 0
+        },
+        {
+          "case": "focus-free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "setup-free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "focus-detach",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        }
+      ],
+      "checks": 28,
+      "failures": 0
+    }
+  },
+  "unchanged_existing_regressions": {
+    "source_sha256": "7c36ec46c6ba7a9e52eada2d08f5356c23e6312c47a05330cdb37ecbde3161c3",
+    "results": [
+      {
+        "name": "world_selection",
+        "command": [
+          "C:\\Program Files\\Python313\\pythonw.exe",
+          "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\private_desktop.py",
+          "--receipt",
+          "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_selection_smoke_824cf96af9ee46709bb70f8ce0c22caa.json",
+          "--",
+          "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+          "--path",
+          "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+          "--log-file",
+          "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world_selection_smoke-engine.log",
+          "--script",
+          "tests/world_selection_smoke.gd",
+          "--"
+        ],
+        "exit": 0,
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_58c1479057d7486bb9c54027023ff544",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 15148,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 9.904
+        },
+        "log_sha256": "1c4af15b2a70b700bf0a5bcfea3f3c17cfd46b6f9cf70e83775be13025811105",
+        "result": {
+          "checks": 41,
+          "failures": 0,
+          "final_changed_channels": 0,
+          "final_mean_delta": 0.0,
+          "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-selection/run_832324",
+          "native_projects": [
+            "pose-smoke/miku-project",
+            "source-smoke/source-project",
+            "sfm-smoke/project"
+          ]
+        }
+      },
+      {
+        "name": "world_edit",
+        "command": [
+          "C:\\Program Files\\Python313\\pythonw.exe",
+          "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\private_desktop.py",
+          "--receipt",
+          "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_edit_smoke_de3110e095b44a558e30a41e6622d938.json",
+          "--",
+          "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+          "--path",
+          "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+          "--log-file",
+          "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world_edit_smoke-engine.log",
+          "--script",
+          "tests/world_edit_smoke.gd",
+          "--"
+        ],
+        "exit": 0,
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_6a0a7e45c87d4278a13e36b68b5cf2a3",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 15004,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 23.493
+        },
+        "log_sha256": "e2708e75a3222dc017f79284165db3b3c6cdce41feac93810b0055d3d0908747",
+        "result": {
+          "checks": 41,
+          "failures": 0,
+          "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1057681",
+          "linked_project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1057681/linked-edited.has",
+          "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1057681/render_1794548242_5820568_0/movie.mp4",
+          "native_project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1057681/native-edited.has",
+          "native_projects": [
+            "pose-smoke/miku-project",
+            "source-smoke/source-project",
+            "sfm-smoke/project"
+          ],
+          "palette_picks": 64,
+          "project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1057681/edited.has",
+          "unselected_green_pixels": 0
+        }
+      },
+      {
+        "name": "scene_view",
+        "exit": 0
+      }
+    ]
+  },
+  "scene_view": {
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\scene-view\\1794548259959103900",
+    "scene_view_unit": {
+      "cases": 144,
+      "checks": 12830,
+      "failures": 0,
+      "maximum_projection_error_pixels": 0.00013647876039613038,
+      "maximum_ray_error": 2.327635826304686e-07,
+      "outside_native_samples": 4860,
+      "world_samples": 34992
+    },
+    "scene_view_smoke": {
+      "cases": [
+        {
+          "extent": "(1200.0, 360.0)",
+          "green_outline_pixels": 612,
+          "guide_pixels": 7920,
+          "outside_guide_pixels": 0,
+          "roll": 0.0
+        },
+        {
+          "extent": "(1200.0, 360.0)",
+          "green_outline_pixels": 700,
+          "guide_pixels": 7920,
+          "outside_guide_pixels": 0,
+          "roll": 0.4
+        },
+        {
+          "extent": "(480.0, 760.0)",
+          "green_outline_pixels": 502,
+          "guide_pixels": 6856,
+          "outside_guide_pixels": 0,
+          "roll": 0.0
+        },
+        {
+          "extent": "(480.0, 760.0)",
+          "green_outline_pixels": 604,
+          "guide_pixels": 6856,
+          "outside_guide_pixels": 0,
+          "roll": 0.4
+        }
+      ],
+      "checks": 102,
+      "failures": 0,
+      "native_size": "(1920, 1080)",
+      "source_sha256": "62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac",
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_36ab582d977043b9baa431a3baa17e6b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19404,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 12.175
+      },
+      "private_receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\scene_view_smoke_b1a93e4c12f04859880a32659dfe3011.json"
+    }
+  },
+  "drawing_selection": {
+    "checks": 35,
+    "failures": 0,
+    "max_preview_ms": 55.33,
+    "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-selection\\1794548272746515900/render_1794548280_7428301_0/movie.mp4",
+    "preview_builds": 4,
+    "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-selection\\1794548272746515900/Moved drawing.has",
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-selection\\1794548272746515900",
+    "results": [
+      {
+        "checks": 12,
+        "failures": 0,
+        "large_ms": 15.99
+      },
+      {
+        "checks": 35,
+        "failures": 0,
+        "max_preview_ms": 55.33,
+        "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-selection\\1794548272746515900/render_1794548280_7428301_0/movie.mp4",
+        "preview_builds": 4,
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-selection\\1794548272746515900/Moved drawing.has"
+      },
+      {
+        "checks": 3,
+        "failures": 0
+      }
+    ],
+    "domain": {
+      "checks": 12,
+      "failures": 0,
+      "large_ms": 15.99,
+      "independent_cases": 192,
+      "exact_opaque_cases": 64,
+      "max_alpha_math_error": 1
+    },
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\drawing_selection_smoke_a82373218e944f798b340369fc775414.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\drawing_selection_smoke_e81d2082ed2244139201c4b87f355e62.json"
+    ],
+    "pixels_exact": true
+  },
+  "intermediate_failures": [
+    {
+      "folder": "output/world-selection-teardown/1794548024356747100",
+      "stage": "test parse",
+      "exit": 1,
+      "reason": "New harness inferred weakref() return as Variant under clean snapshot warnings-as-errors. Corrected explicit WeakRef declarations only; first headless check-only did not establish clean-snapshot equivalence."
+    },
+    {
+      "folder": "output/world-selection-teardown/1794548066783234300",
+      "checks": 28,
+      "failures": 5,
+      "exit": 1,
+      "reason": "Bound callback payloads do not distinguish signal connection identities in pinned4.6. Multiple requests collided. Replaced with unique request receiver objects; test predicates unchanged."
+    },
+    {
+      "folder": "output/pick-fix-regressions-1794547796745961500",
+      "reason": "Root first launched world_selection with --demo-room although canonical script starts empty; five assertions failed. Corrected invocation to canonical extra=[] and reran all relevant tests. No production failure inferred from that launch."
+    }
+  ],
+  "prior_batch_candidate": "Original12+35+3 passed on initial batch callback; independent review found same-emission reentrancy risk. Batch was not promoted. Final unique receivers pass unchanged tests plus reentrant regression.",
+  "next": [
+    "Complete nine wrappers after drawing_selection using fresh committed source; preserve initial six passes and failed seventh as scoped history.",
+    "Port already830-GPU-tested Wind phase1 candidate with native-fixture reconstruction, rerun affected regressions and final default aggregate.",
+    "Continue broader native SFM variants, rendered fidelity and app workflow coverage.",
+    "Keep actual owner/device/clean-install gates deferred; no participation prompts."
+  ],
+  "source_and_diagnostic_artifact_hashes": {
+    "experiments/selection_readback_shutdown_20261113/reference/allocator-disassembly.txt": "2ac7919db8085660f58f38ad3db4dffde53482c091b5ee17a32e5f03b0f8d968",
+    "experiments/selection_readback_shutdown_20261113/reference/cdb-allocator-explicit-commands.txt": "655e614e4b45dfdd68183e473567b850daff00cd6cc459e07981921dc1ba0a03",
+    "experiments/selection_readback_shutdown_20261113/reference/cdb-allocator-findings.json": "a5f4c8d74703c4d08203c11224c9768940f617629763e8eb71d75359d5b21a88",
+    "experiments/selection_readback_shutdown_20261113/reference/error-printer-disassembly.txt": "97706f69c75e32404369658c1d15ad8611d8134cb086ce82b17af7d9236730e8",
+    "experiments/selection_readback_shutdown_20261113/reference/global-mutex-disassembly.txt": "cd31e462e9c4effe7bb9d9e898df9f6e2352d2e749ceb43e32bcdc280fd27390",
+    "experiments/selection_readback_shutdown_20261113/reference/inspect_pe.py": "eae4d186f538b4b35b26c9cf54bb95abd05739676dd478a6de20b0b1927c1472",
+    "experiments/selection_readback_shutdown_20261113/reference/pe-evidence.json": "081cef65818b7089a6f7f0f3259685b11b1fc753d9b13bed507f6580bcbe4bfb",
+    "experiments/selection_readback_shutdown_20261113/reference/README.md": "6619430aa25b1d39d721e803a150acc7a26f0356ab63bb066f0a87c01818e58b",
+    "experiments/selection_readback_shutdown_20261113/retained-medium-variants-audit.md": "00fa366a0c60ef31139a8d69208996e0bcc509002ae105dd505787a678441e8a",
+    "experiments/selection_readback_shutdown_20261113/run_existing_regressions.py": "356ccfbc9e1937536211cb6091a4bba2e1ab157f46cccd449195b56cc28907bb",
+    "experiments/selection_readback_shutdown_20261113/run_verbose_diagnostic.py": "cc6219e4898e0c61d6eb8822cd7b8fd60780315bd6df43f3ad401cdf33b99263",
+    "experiments/selection_readback_shutdown_20261113/run_verbose_pick_diagnostic.py": "6b7fb88625cd1c376f5acf4339618147a6e910a41d2c5e9ae4c1a891213cd3e0"
+  }
+}

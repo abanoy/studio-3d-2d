@@ -1,0 +1,40 @@
+{
+  "original_dump_sha256": "e2a1cbd4a3da4c38f0174562c8077a33a1fea6de2cf6950fb0eb988c4ea7c4d4",
+  "original_dump_unchanged": true,
+  "evidence_log": "cdb-allocator-explicit.log",
+  "frame_number": 5,
+  "frame_pc": "0x00007ff6b6e8049c",
+  "callee_saved_rbx": "0x00007ff6bc6ec7a0",
+  "allocator_rva": "0xa3cc7a0",
+  "type_correlated_from_exact_binary_rtti": "PagedAllocator<Variant::Pools::BucketMedium, true>",
+  "medium_types_from_exact_source": ["Basis", "Transform3D"],
+  "page_pool": "0x000001b7ad6be9e0",
+  "available_pool": "0x000001b7ad6be6a0",
+  "pages_allocated": 1,
+  "allocs_available": 4095,
+  "page_shift": 12,
+  "page_mask": 4095,
+  "page_size": 4096,
+  "spin_lock_byte": 1,
+  "outstanding_medium_allocations": 1,
+  "page_pointer_heap_memory_captured": false,
+  "owner_identifiable_from_available_pool_memory": false,
+  "critical_section": {
+    "address": "0x00007ff6bc6eaf80",
+    "rva": "0xa3caf80",
+    "debug_info": "0x0",
+    "lock_count": -6,
+    "recursion_count": 0,
+    "owning_thread": "0x0",
+    "lock_semaphore": "0xffffffffffffffff",
+    "spin_count": 0,
+    "layout_source": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.28000.0\\um\\winnt.h:25085",
+    "prior_destruction_sequence_proven": false
+  },
+  "limitations": [
+    "One outstanding medium allocation is not a count of retained application objects.",
+    "The pool type cannot distinguish Basis from Transform3D without the missing heap memory.",
+    "No exact Godot debug symbols are present; source correlation is based on instructions, embedded literals, RTTI, and the supplied engine commit.",
+    "cdb-allocator.log @rbx reads are exception-context values, not allocator reads; use cdb-allocator-explicit.log."
+  ]
+}

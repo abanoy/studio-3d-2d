@@ -1,6 +1,13 @@
 extends Node
 # Editor-only ID rendering shares meshes/skins, never source materials or save data.
 const MASK_LAYER := 1 << 19
+class PickRequest extends RefCounted:
+	var receiver: WeakRef
+	var data: Dictionary
+	func complete() -> void:
+		var keep_alive: RefCounted=self
+		var target=receiver.get_ref()
+		if target:target.complete_pick(keep_alive)
 var app
 var tree: Tree
 var items := {}
@@ -19,6 +26,7 @@ var pending_cursor := Vector2.ZERO
 var serial := 0
 var updating_tree := false
 var picking := 0
+var pick_requests: Dictionary = {}
 var colors := {}
 var boundaries := {}
 
@@ -277,11 +285,20 @@ func choose_at(point: Vector2, context := false) -> void:
 	if not app.canvas.scene_contains(point): return
 	picking += 1
 	_process(0); viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
-	var view: Array=app.scene_view.pick_state()
-	var uv: Vector2=app.canvas.scene_uv(point)
-	await RenderingServer.frame_post_draw
-	picking -= 1
-	if request!=serial or view!=app.scene_view.pick_state() or app.exporting or app.playing or app.navigating or pending_button!=0 or app.mode.selected==0: return
+	# Keep each frame wait owned by this Node. A suspended coroutine otherwise
+	# retains its camera Transform3D after its selection owner is freed. Separate
+	# receivers keep picks requested during an emission on the next frame; bound
+	# arguments alone do not give signal connections distinct identities in 4.6.
+	var pending:=PickRequest.new();pending.receiver=weakref(self)
+	pending.data={"serial":request,"view":app.scene_view.pick_state(),"uv":app.canvas.scene_uv(point),"point":point,"context":context}
+	pick_requests[request]=pending
+	RenderingServer.frame_post_draw.connect(pending.complete,CONNECT_ONE_SHOT)
+
+func complete_pick(pending: RefCounted) -> void:
+	var request: Dictionary=pending.data
+	pick_requests.erase(request.serial);picking=pick_requests.size()
+	if request.serial!=serial or request.view!=app.scene_view.pick_state() or app.exporting or app.playing or app.navigating or pending_button!=0 or app.mode.selected==0: return
+	var uv: Vector2=request.uv
 	var image := viewport.get_texture().get_image()
 	var pixel := image.get_pixel(clampi(int(uv.x*image.get_width()),0,image.get_width()-1),clampi(int(uv.y*image.get_height()),0,image.get_height()-1))
 	var kind := ""
@@ -291,16 +308,22 @@ func choose_at(point: Vector2, context := false) -> void:
 		var distance:=rgb.distance_squared_to(color_for(id))
 		if distance<nearest:nearest=distance;kind=id
 	select_entity(kind)
-	if context and not kind.is_empty():
+	if request.context and not kind.is_empty():
 		menu.clear(); menu.add_item("Frame selected",0)
 		if selected_rig() and (kind=="model" or app.renderer.world_runtime):
 			menu.add_item("Reset pose",1)
 			menu.add_item("Hide object" if selected_rig().visible_at(app.frame) else "Show object",2)
 		menu.add_separator(); menu.add_item("Deselect",3)
 		var rect: Rect2 = app.canvas.image_rect()
-		var position: Vector2 = app.canvas.global_position+rect.position+point/Vector2(app.video.width,app.video.height)*rect.size
+		var position: Vector2 = app.canvas.global_position+rect.position+request.point/Vector2(app.video.width,app.video.height)*rect.size
 		menu.position = app.get_window().position+Vector2i(position)
 		menu.popup()
+
+func _exit_tree() -> void:
+	serial+=1
+	for pending in pick_requests.values():
+		if RenderingServer.frame_post_draw.is_connected(pending.complete):RenderingServer.frame_post_draw.disconnect(pending.complete)
+	pick_requests.clear();picking=0
 
 func context_action(id: int) -> void:
 	menu.hide()

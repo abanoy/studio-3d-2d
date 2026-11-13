@@ -1,0 +1,62 @@
+
+C:\a\tools\Godot\Godot_v4.6-stable_win64.exe:	file format coff-x86-64
+
+Disassembly of section .text:
+
+0000000140002ce0 <NoHotPatch>:
+143d95b00: 48 8b 44 24 50              	movq	0x50(%rsp), %rax
+143d95b05: c6 00 01                    	movb	$0x1, (%rax)
+143d95b08: e8 13 3a a6 ff              	callq	0x1437f9520 <NoHotPatch+0x37f6840>
+143d95b0d: 48 85 c0                    	testq	%rax, %rax
+143d95b10: 0f 84 ba 00 00 00           	je	0x143d95bd0 <NoHotPatch+0x3d92ef0>
+143d95b16: e8 05 3a a6 ff              	callq	0x1437f9520 <NoHotPatch+0x37f6840>
+143d95b1b: 4c 8d 7c 24 60              	leaq	0x60(%rsp), %r15
+143d95b20: 31 d2                       	xorl	%edx, %edx
+143d95b22: 4c 89 f9                    	movq	%r15, %rcx
+143d95b25: 48 89 44 24 58              	movq	%rax, 0x58(%rsp)
+143d95b2a: e8 d1 3b f7 ff              	callq	0x143d09700 <NoHotPatch+0x3d06a20>
+143d95b2f: 40 0f b6 c7                 	movzbl	%dil, %eax
+143d95b33: 89 6c 24 38                 	movl	%ebp, 0x38(%rsp)
+143d95b37: 45 89 f1                    	movl	%r14d, %r9d
+143d95b3a: 4c 89 7c 24 40              	movq	%r15, 0x40(%rsp)
+143d95b3f: 48 8b 4c 24 58              	movq	0x58(%rsp), %rcx
+143d95b44: 4d 89 e8                    	movq	%r13, %r8
+143d95b47: 4c 89 e2                    	movq	%r12, %rdx
+143d95b4a: 89 44 24 30                 	movl	%eax, 0x30(%rsp)
+143d95b4e: 48 89 74 24 28              	movq	%rsi, 0x28(%rsp)
+143d95b53: 48 89 5c 24 20              	movq	%rbx, 0x20(%rsp)
+143d95b58: e8 63 3a a6 ff              	callq	0x1437f95c0 <NoHotPatch+0x37f68e0>
+143d95b5d: 48 8d 4c 24 68              	leaq	0x68(%rsp), %rcx
+143d95b62: e8 59 d2 42 01              	callq	0x1451c2dc0 <NoHotPatch+0x51c00e0>
+143d95b67: e8 24 2d a6 ff              	callq	0x1437f8890 <NoHotPatch+0x37f5bb0>
+143d95b6c: 4c 8b 3d ad c4 73 06        	movq	0x673c4ad(%rip), %r15   # 0x14a4d2020
+143d95b73: 40 0f b6 ff                 	movzbl	%dil, %edi
+143d95b77: 4d 85 ff                    	testq	%r15, %r15
+143d95b7a: 74 2f                       	je	0x143d95bab <NoHotPatch+0x3d92ecb>
+143d95b7c: 0f 1f 40 00                 	nopl	(%rax)
+143d95b80: 49 8b 4f 08                 	movq	0x8(%r15), %rcx
+143d95b84: 45 89 f1                    	movl	%r14d, %r9d
+143d95b87: 89 6c 24 38                 	movl	%ebp, 0x38(%rsp)
+143d95b8b: 4d 89 e8                    	movq	%r13, %r8
+143d95b8e: 89 7c 24 30                 	movl	%edi, 0x30(%rsp)
+143d95b92: 4c 89 e2                    	movq	%r12, %rdx
+143d95b95: 48 89 74 24 28              	movq	%rsi, 0x28(%rsp)
+143d95b9a: 48 89 5c 24 20              	movq	%rbx, 0x20(%rsp)
+143d95b9f: 41 ff 17                    	callq	*(%r15)
+143d95ba2: 4d 8b 7f 10                 	movq	0x10(%r15), %r15
+143d95ba6: 4d 85 ff                    	testq	%r15, %r15
+143d95ba9: 75 d5                       	jne	0x143d95b80 <NoHotPatch+0x3d92ea0>
+143d95bab: e8 f0 2c a6 ff              	callq	0x1437f88a0 <NoHotPatch+0x37f5bc0>
+143d95bb0: 48 8b 44 24 50              	movq	0x50(%rsp), %rax
+143d95bb5: c6 00 00                    	movb	$0x0, (%rax)
+143d95bb8: 48 83 c4 78                 	addq	$0x78, %rsp
+143d95bbc: 5b                          	popq	%rbx
+143d95bbd: 5e                          	popq	%rsi
+143d95bbe: 5f                          	popq	%rdi
+143d95bbf: 5d                          	popq	%rbp
+143d95bc0: 41 5c                       	popq	%r12
+143d95bc2: 41 5d                       	popq	%r13
+143d95bc4: 41 5e                       	popq	%r14
+143d95bc6: 41 5f                       	popq	%r15
+143d95bc8: c3                          	retq
+143d95bc9: 0f 1f 80 00 00 00 00        	nopl	(%rax)

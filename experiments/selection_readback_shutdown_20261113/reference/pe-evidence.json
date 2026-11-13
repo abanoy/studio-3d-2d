@@ -1,0 +1,127 @@
+{
+  "image": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+  "length": 171924488,
+  "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+  "preferred_base": "0x140000000",
+  "characteristics": "0x22e",
+  "coff_symbol_pointer": "0x0",
+  "coff_symbol_count": 0,
+  "debug_directory_rva": "0x0",
+  "debug_directory_size": 0,
+  "sections": [
+    {
+      "name": ".text",
+      "virtual_size": "0x6462260",
+      "rva": "0x1000",
+      "raw_size": "0x6462400",
+      "raw_pointer": "0x400"
+    },
+    {
+      "name": ".data",
+      "virtual_size": "0x102540",
+      "rva": "0x6464000",
+      "raw_size": "0x102600",
+      "raw_pointer": "0x6462800"
+    },
+    {
+      "name": ".rdata",
+      "virtual_size": "0x38e1518",
+      "rva": "0x6567000",
+      "raw_size": "0x38e1600",
+      "raw_pointer": "0x6564e00"
+    },
+    {
+      "name": ".pdata",
+      "virtual_size": "0x266520",
+      "rva": "0x9e49000",
+      "raw_size": "0x266600",
+      "raw_pointer": "0x9e46400"
+    },
+    {
+      "name": ".xdata",
+      "virtual_size": "0x274f44",
+      "rva": "0xa0b0000",
+      "raw_size": "0x275000",
+      "raw_pointer": "0xa0aca00"
+    },
+    {
+      "name": ".bss",
+      "virtual_size": "0x1b77c0",
+      "rva": "0xa325000",
+      "raw_size": "0x0",
+      "raw_pointer": "0x0"
+    },
+    {
+      "name": ".edata",
+      "virtual_size": "0xaa",
+      "rva": "0xa4dd000",
+      "raw_size": "0x200",
+      "raw_pointer": "0xa321a00"
+    },
+    {
+      "name": ".idata",
+      "virtual_size": "0x6c18",
+      "rva": "0xa4de000",
+      "raw_size": "0x6e00",
+      "raw_pointer": "0xa321c00"
+    },
+    {
+      "name": ".tls",
+      "virtual_size": "0x10",
+      "rva": "0xa4e5000",
+      "raw_size": "0x200",
+      "raw_pointer": "0xa328a00"
+    },
+    {
+      "name": ".rsrc",
+      "virtual_size": "0x234f0",
+      "rva": "0xa4e6000",
+      "raw_size": "0x23600",
+      "raw_pointer": "0xa328c00"
+    },
+    {
+      "name": ".reloc",
+      "virtual_size": "0xa76e8",
+      "rva": "0xa50a000",
+      "raw_size": "0xa7800",
+      "raw_pointer": "0xa34c200"
+    }
+  ],
+  "literals": [
+    {
+      "va": "0x147209528",
+      "rva": "0x7209528",
+      "file_offset": "0x7207328",
+      "section": ".rdata",
+      "text": "./core/templates/paged_allocator.h"
+    },
+    {
+      "va": "0x14720954b",
+      "rva": "0x720954b",
+      "file_offset": "0x720734b",
+      "section": ".rdata",
+      "text": "~PagedAllocator"
+    },
+    {
+      "va": "0x1472094f8",
+      "rva": "0x72094f8",
+      "file_offset": "0x72072f8",
+      "section": ".rdata",
+      "text": "Pages in use exist at exit in PagedAllocator: "
+    },
+    {
+      "va": "0x147c4c4e0",
+      "rva": "0x7c4c4e0",
+      "file_offset": "0x7c4a2e0",
+      "section": ".rdata",
+      "text": "N7Variant5Pools12BucketMediumE"
+    }
+  ],
+  "stack_rvas": [
+    "0x3d95b6c",
+    "0x3d95e44",
+    "0x4b6049c"
+  ],
+  "lock_helper_rva": "0x37f8890",
+  "critical_section_rva": "0xa3caf80"
+}

@@ -156,6 +156,10 @@ def main():
     (output / 'native-readback-lifecycle-suite.log').write_text(readback_log, encoding='utf-8')
     readback_result = json.loads((output / 'native-readback-lifecycle-latest.json').read_bytes())
     results['native_readback_lifecycle'] = {k: readback_result[k] for k in ['revision','source_mode','folder','exit','result','unchanged_source','receipt']}
+    pick_teardown_log = run([sys.executable, '-u', 'tests/verify_world_selection_teardown.py'], timeout=180)
+    (output / 'world-selection-teardown-suite.log').write_text(pick_teardown_log, encoding='utf-8')
+    pick_teardown_result = json.loads((output / 'world-selection-teardown-latest.json').read_bytes())
+    results['world_selection_teardown'] = {k: pick_teardown_result[k] for k in ['revision','source_mode','folder','result','unchanged_source','process']}
     run([sys.executable, '-u', 'tests/verify_fan_flutter.py'], timeout=250)
     results['fan_flutter'] = json.loads((output / 'fan-flutter-verification.json').read_text(encoding='utf-8'))
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')

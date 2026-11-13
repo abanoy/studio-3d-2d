@@ -1,0 +1,73 @@
+
+C:\a\tools\Godot\Godot_v4.6-stable_win64.exe:	file format coff-x86-64
+
+Disassembly of section .text:
+
+0000000140002ce0 <NoHotPatch>:
+144b603a0: 41 56                       	pushq	%r14
+144b603a2: 57                          	pushq	%rdi
+144b603a3: 56                          	pushq	%rsi
+144b603a4: 53                          	pushq	%rbx
+144b603a5: 48 83 ec 58                 	subq	$0x58, %rsp
+144b603a9: 48 89 cb                    	movq	%rcx, %rbx
+144b603ac: 48 8d 51 24                 	leaq	0x24(%rcx), %rdx
+144b603b0: 48 8d 74 24 40              	leaq	0x40(%rsp), %rsi
+144b603b5: b9 01 00 00 00              	movl	$0x1, %ecx
+144b603ba: 31 c0                       	xorl	%eax, %eax
+144b603bc: c6 44 24 40 00              	movb	$0x0, 0x40(%rsp)
+144b603c1: f0                          	lock
+144b603c2: 0f b0 0a                    	cmpxchgb	%cl, (%rdx)
+144b603c5: 74 11                       	je	0x144b603d8 <NoHotPatch+0x4b5d6f8>
+144b603c7: 88 06                       	movb	%al, (%rsi)
+144b603c9: f3 90                       	pause
+144b603cb: 0f b6 02                    	movzbl	(%rdx), %eax
+144b603ce: 84 c0                       	testb	%al, %al
+144b603d0: 75 f7                       	jne	0x144b603c9 <NoHotPatch+0x4b5d6e9>
+144b603d2: eb e6                       	jmp	0x144b603ba <NoHotPatch+0x4b5d6da>
+144b603d4: 0f 1f 40 00                 	nopl	(%rax)
+144b603d8: 8b 43 10                    	movl	0x10(%rbx), %eax
+144b603db: 8b 53 20                    	movl	0x20(%rbx), %edx
+144b603de: 0f af d0                    	imull	%eax, %edx
+144b603e1: 39 53 14                    	cmpl	%edx, 0x14(%rbx)
+144b603e4: 0f 83 d6 00 00 00           	jae	0x144b604c0 <NoHotPatch+0x4b5d7e0>
+144b603ea: 80 3d 1f 07 9e 01 00        	cmpb	$0x0, 0x19e071f(%rip)   # 0x146540b10 <NvOptimusEnablement+0xdcb0c>
+144b603f1: 75 15                       	jne	0x144b60408 <NoHotPatch+0x4b5d728>
+144b603f3: c6 43 24 00                 	movb	$0x0, 0x24(%rbx)
+144b603f7: 48 83 c4 58                 	addq	$0x58, %rsp
+144b603fb: 5b                          	popq	%rbx
+144b603fc: 5e                          	popq	%rsi
+144b603fd: 5f                          	popq	%rdi
+144b603fe: 41 5e                       	popq	%r14
+144b60400: c3                          	retq
+144b60401: 0f 1f 80 00 00 00 00        	nopl	(%rax)
+144b60408: 48 8d 05 d1 c0 0e 03        	leaq	0x30ec0d1(%rip), %rax   # 0x147c4c4e0
+144b6040f: 48 89 f2                    	movq	%rsi, %rdx
+144b60412: 48 8d 4c 24 38              	leaq	0x38(%rsp), %rcx
+144b60417: 48 c7 44 24 38 00 00 00 00  	movq	$0x0, 0x38(%rsp)
+144b60420: 48 89 44 24 40              	movq	%rax, 0x40(%rsp)
+144b60425: 48 c7 44 24 48 1e 00 00 00  	movq	$0x1e, 0x48(%rsp)
+144b6042e: e8 7d 00 20 ff              	callq	0x143d604b0 <NoHotPatch+0x3d5d7d0>
+144b60433: 48 8d 05 be 90 6a 02        	leaq	0x26a90be(%rip), %rax   # 0x1472094f8
+144b6043a: 48 89 f2                    	movq	%rsi, %rdx
+144b6043d: 48 8d 4c 24 30              	leaq	0x30(%rsp), %rcx
+144b60442: 48 89 44 24 40              	movq	%rax, 0x40(%rsp)
+144b60447: 48 c7 44 24 30 00 00 00 00  	movq	$0x0, 0x30(%rsp)
+144b60450: 48 c7 44 24 48 2e 00 00 00  	movq	$0x2e, 0x48(%rsp)
+144b60459: e8 52 00 20 ff              	callq	0x143d604b0 <NoHotPatch+0x3d5d7d0>
+144b6045e: 4c 8d 44 24 38              	leaq	0x38(%rsp), %r8
+144b60463: 48 8d 54 24 30              	leaq	0x30(%rsp), %rdx
+144b60468: 48 89 f1                    	movq	%rsi, %rcx
+144b6046b: e8 50 d7 1f ff              	callq	0x143d5dbc0 <NoHotPatch+0x3d5aee0>
+144b60470: c7 44 24 28 00 00 00 00     	movl	$0x0, 0x28(%rsp)
+144b60478: 49 89 f1                    	movq	%rsi, %r9
+144b6047b: 41 b8 a9 00 00 00           	movl	$0xa9, %r8d
+144b60481: c7 44 24 20 00 00 00 00     	movl	$0x0, 0x20(%rsp)
+144b60489: 48 8d 15 98 90 6a 02        	leaq	0x26a9098(%rip), %rdx   # 0x147209528
+144b60490: 48 8d 0d b4 90 6a 02        	leaq	0x26a90b4(%rip), %rcx   # 0x14720954b
+144b60497: e8 34 59 23 ff              	callq	0x143d95dd0 <NoHotPatch+0x3d930f0>
+144b6049c: 48 89 f1                    	movq	%rsi, %rcx
+144b6049f: e8 2c 7e 67 00              	callq	0x1451d82d0 <NoHotPatch+0x51d55f0>
+144b604a4: 48 8d 4c 24 30              	leaq	0x30(%rsp), %rcx
+144b604a9: e8 22 7e 67 00              	callq	0x1451d82d0 <NoHotPatch+0x51d55f0>
+144b604ae: 48 8d 4c 24 38              	leaq	0x38(%rsp), %rcx
+144b604b3: e8 18 7e 67 00              	callq	0x1451d82d0 <NoHotPatch+0x51d55f0>
