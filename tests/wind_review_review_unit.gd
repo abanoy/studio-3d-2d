@@ -10,7 +10,10 @@ class AuditApp extends "res://src/app.gd":
 	func message(value: String) -> void:last_message=value
 class AuditHelper extends Node:
 	var window: Window
+	var pending_preview: Node
 	func cancel_patch_drag() -> void:pass
+	func stop_pending_preview(_reason: String) -> void:pass
+	func pending_preview_active() -> bool:return false
 class AuditOps extends Node:
 	var simulations: Dictionary={}
 	var recording: Dictionary={"active":false}

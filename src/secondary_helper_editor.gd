@@ -3,6 +3,16 @@ extends Node
 const Model=preload("res://src/model.gd")
 const Storage=preload("res://src/storage.gd")
 const Labels=preload("res://src/bone_labels.gd")
+const PendingPreview=preload("res://src/pending_helper_preview.gd")
+var pending_preview: Node
+var try_wind: CheckButton
+var wind_status: Label
+var wind_parts: ItemList
+var wind_check: CheckButton
+var wind_strength: SpinBox
+var wind_direction: OptionButton
+var wind_detail: Label
+var wind_options: HBoxContainer
 var app
 var button: Button
 var window: Window
@@ -53,6 +63,7 @@ var inclusion_navigation:=false
 var preview_ready:=false
 
 func setup(parent: Node) -> void:
+	pending_preview=PendingPreview.new();pending_preview.app=app;pending_preview.editor=self;add_child(pending_preview)
 	button=app.icon_button(parent,"Set up loose parts","scene",open,"Review a connected hair/clothing region and attachment, then add weighted joints to a new HAS asset. Existing authored springs take priority.")
 	app.renderer.assets_changed.connect(func():
 		if not applying:close())
@@ -68,15 +79,16 @@ func open(prefer_hair_clothing:=false) -> void:
 	if app.exporting or app.source_import.pid>0 or app.has_project.pid>0:return
 	var current: RefCounted=app.renderer.active_model()
 	if not current:return
+	if not pending_preview.target_idle(current):app.message("Pause this model's Physics and Hair & clothes before reviewing loose parts.");return
+	if is_instance_valid(app.local_wind_review):app.local_wind_review.close()
 	close();prefer_loose=prefer_hair_clothing;app.stop();app.pose_editor.finish_drag();app.finish_stroke()
-	if not app.physics_editor.freeze_all():return
 	target_id=current.data.id;source=ProjectSettings.globalize_path(current.data.source);revision=app.recovery_revision
 	source_stamp=FileAccess.get_modified_time(source)
 	before_world=app.current_world().duplicate(true)
 	request={"source_sha256":current.data.sha256,"segments":3}
 	var shape_snapshot:=Model.Shape.snapshot(current.root)
 	if not shape_snapshot.is_empty():request["morph_weights"]=shape_snapshot
-	window=Window.new();window.title="Review loose parts";window.theme=app.theme;window.close_requested.connect(close);app.add_child(window)
+	window=Window.new();window.title="Review loose parts";window.theme=app.theme;window.close_requested.connect(close);window.window_input.connect(window_input);app.add_child(window)
 	var panel:=PanelContainer.new();window.add_child(panel);panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var column:=VBoxContainer.new();panel.add_child(column)
 	scroll=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;column.add_child(scroll)
@@ -105,13 +117,24 @@ func open(prefer_hair_clothing:=false) -> void:
 		app.label(row,axis);var spin:=SpinBox.new();spin.min_value=-100000;spin.max_value=100000;spin.step=.005;spin.allow_greater=false;spin.custom_minimum_size.x=100;row.add_child(spin);fields.append(spin);spin.value_changed.connect(func(_v):change_point())
 	app.button(details,"Reset proposed joints",reset_points)
 	include_status=app.label(column,"Include several parts to set them up together.");include_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	wind_parts=ItemList.new();wind_parts.custom_minimum_size=Vector2(410,95);column.add_child(wind_parts);wind_parts.item_selected.connect(pending_preview.focus_group)
+	wind_check=CheckButton.new();wind_check.text="Try wind on this group";column.add_child(wind_check);wind_check.toggled.connect(pending_preview.check_group)
+	wind_detail=app.label(column,"Temporary wind groups appear after preparation.");wind_detail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	wind_options=HBoxContainer.new();column.add_child(wind_options);app.label(wind_options,"Wind strength")
+	wind_strength=SpinBox.new();wind_strength.min_value=0;wind_strength.max_value=50;wind_strength.step=1;wind_strength.value=6;wind_options.add_child(wind_strength);wind_strength.value_changed.connect(func(_v):pending_preview.settings_changed())
+	wind_direction=OptionButton.new();wind_options.add_child(wind_direction)
+	for label in ["From right","From left","From front","From behind"]:wind_direction.add_item(label)
+	wind_direction.item_selected.connect(func(_i):pending_preview.settings_changed())
+	try_wind=CheckButton.new();try_wind.text="Try a local blow";column.add_child(try_wind);try_wind.toggled.connect(try_pending_preview)
+	wind_status=app.label(column,"Try the reviewed setup before Apply.");wind_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	var actions:=HBoxContainer.new();column.add_child(actions);apply_button=app.button(actions,"Add joints to this part",apply);app.button(actions,"Cancel",close)
-	window.popup_centered(Vector2i(470,mini(560,maxi(380,int(app.get_viewport_rect().size.y)-180))))
+	window.popup_centered(Vector2i(470,mini(680,maxi(380,int(app.get_viewport_rect().size.y)-180))))
 	window.position+=Vector2i(maxi(0,int((app.get_viewport_rect().size.x-window.size.x)/2)-12),0)
 	launch("inspect")
 	app.canvas.review_pointer=patch_pointer
 
 func launch(operation: String,payload: Dictionary={}) -> void:
+	stop_pending_preview("Reviewed setup changed")
 	if pid>0 or not is_instance_valid(window):return
 	clear_preview();stage=operation;apply_button.disabled=true;parts.mouse_filter=Control.MOUSE_FILTER_IGNORE;anchors.disabled=true
 	if operation in ["inspect","preview","review"]:preview_ready=false
@@ -134,7 +157,7 @@ func _process(_delta: float) -> void:
 	if not is_instance_valid(button):return
 	sync()
 	if not is_instance_valid(window):return
-	if app.playing or not app.physics_editor.simulations.is_empty() or not app.physics_editor.pending.is_empty():
+	if app.playing or not pending_preview.target_idle(actor()):
 		close();app.message("Live motion started. Pause it and reopen loose-part review to continue.");return
 	if app.exporting:close();return
 	if inclusion_navigation!=app.navigating:
@@ -161,7 +184,8 @@ func _process(_delta: float) -> void:
 			anchors.disabled=preview.is_empty();apply_button.disabled=stage!="build" or preview.is_empty() or not preview.get("can_apply",false)
 			refresh_inclusions();return
 		completed(result.value)
-	if not preview.is_empty():draw_preview()
+	if not preview.is_empty() and not pending_preview.display_active():draw_preview()
+	if is_instance_valid(try_wind):try_wind.disabled=pid>0 or point_review_after>0 or not preview_ready
 
 func completed(value: Dictionary) -> void:
 	parts.mouse_filter=Control.MOUSE_FILTER_STOP;parts.focus_mode=Control.FOCUS_ALL
@@ -264,6 +288,7 @@ func cache_included(value: Dictionary) -> void:
 	included[entry.group]=entry
 
 func queue_changed() -> bool:
+	stop_pending_preview("Reviewed setup changed")
 	var group:=included_key(selected_key)
 	if group.is_empty():return false
 	included[group].request=request.duplicate(true);included[group].request["reviewed"]=true;included[group].valid=false
@@ -273,6 +298,7 @@ func preview_operation() -> String:
 	return "review" if not included_key(selected_key).is_empty() else "preview"
 
 func include_part(enabled: bool) -> void:
+	stop_pending_preview("Reviewed setup changed")
 	if changing:return
 	if pid>0 or app.navigating:refresh_inclusions();return
 	var group:=included_key(selected_key)
@@ -315,6 +341,7 @@ func refresh_anchor_labels() -> void:
 		anchors.set_item_text(i,name)
 
 func select_part(index: int) -> void:
+	stop_pending_preview("Reviewed setup changed")
 	if pid>0 or index<0 or index>=assessment.get("regions",[]).size() or assessment.regions[index].already_rigged and not patch_toggle.button_pressed:return
 	var row: Dictionary=assessment.regions[index]
 	point_review_after=0
@@ -423,6 +450,7 @@ func part_pointer(event: InputEventMouse,point: Vector2) -> bool:
 	return false
 
 func patch_mode(enabled: bool) -> void:
+	stop_pending_preview("Reviewed setup changed")
 	cancel_patch_drag()
 	patch_controls.visible=enabled;patch_hint.visible=enabled
 	if assessment.is_empty():return
@@ -454,6 +482,7 @@ func patch_pointer(event: InputEventMouse,point: Vector2) -> bool:
 	return false
 
 func global_patch_event(event: InputEvent) -> bool:
+	if pending_preview.global_event(event):return true
 	if part_press:
 		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:
 			part_press=false;app.world_selection.cancel_gesture(true);return not app.navigating
@@ -471,6 +500,10 @@ func global_patch_event(event: InputEvent) -> bool:
 		if event is InputEventMouseButton:finish_patch_box()
 		return true
 	return false
+
+func window_input(event: InputEvent) -> void:
+	# Popup mouse coordinates belong to this window, not the scene canvas.
+	if event is InputEventKey and pending_preview.global_event(event):window.set_input_as_handled()
 
 func draw_patch_box() -> void:
 	app.canvas.review_box=Rect2(box_start,box_end-box_start).abs();app.canvas.review_box_visible=box_dragging;app.canvas.queue_redraw()
@@ -539,6 +572,8 @@ func draw_preview() -> void:
 	app.canvas.review_lines=lines;app.canvas.review_chain=chain;app.canvas.queue_redraw()
 
 func apply() -> void:
+	stop_pending_preview("Apply")
+	if not can_install():info.text="Pause all live motion before applying this setup. Preview and current edits were kept.";return
 	if pid>0 or app.exporting or app.navigating:return
 	if not included.is_empty():
 		var plans: Array=[]
@@ -553,6 +588,8 @@ func apply() -> void:
 	request["reviewed"]=true;launch("build")
 
 func install(value: Dictionary) -> void:
+	stop_pending_preview("Apply")
+	if not can_install():info.text="Live motion started while preparing. Pause it before applying; current edits were kept.";return
 	app.pose_editor.finish_drag();app.finish_stroke()
 	if app.recovery_revision!=revision or app.current_world()!=before_world:close();app.message("The scene changed during preparation. Original and current edits were kept; open review again.");return
 	if value.has("batch") and (FileAccess.get_sha256(source)!=request.source_sha256 or FileAccess.get_modified_time(source)!=source_stamp or value.batch.source_sha256!=request.source_sha256):
@@ -588,6 +625,7 @@ func clear_preview() -> void:
 	if is_instance_valid(app.canvas):app.canvas.review_lines=PackedVector2Array();app.canvas.review_chain=PackedVector2Array();app.canvas.queue_redraw()
 
 func close() -> void:
+	stop_pending_preview("Closed")
 	if part_press and app.world_selection:app.world_selection.cancel_gesture(true)
 	part_press=false;mode_choice="auto";selected_key=""
 	included.clear();part_names.clear();point_review_after=0;pending_install={};restore_list_focus=false;inclusion_navigation=false;preview_ready=false
@@ -597,5 +635,21 @@ func close() -> void:
 	pid=-1;clear_preview()
 	if is_instance_valid(window):window.hide();window.queue_free()
 	window=null;preview={};assessment={};request={};fields.clear();target_id="";prefer_loose=false
+
+func try_pending_preview(enabled: bool) -> void:
+	if enabled:pending_preview.start()
+	else:stop_pending_preview("Stopped")
+
+func stop_pending_preview(reason: String) -> void:
+	if is_instance_valid(pending_preview):pending_preview.stop(reason)
+
+func pending_preview_active() -> bool:
+	return is_instance_valid(pending_preview) and pending_preview.active()
+
+func stop_pending_for_actor(id: String) -> void:
+	if id==target_id:stop_pending_preview("Model motion changed")
+
+func can_install() -> bool:
+	return app.physics_editor.simulations.is_empty() and app.physics_editor.pending.is_empty() and not app.physics_editor.recording.active
 
 func _exit_tree() -> void:close()

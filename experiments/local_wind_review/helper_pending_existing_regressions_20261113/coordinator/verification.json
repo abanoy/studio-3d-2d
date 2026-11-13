@@ -1,0 +1,104 @@
+{
+  "format": "has_pending_helper_existing_regressions_1",
+  "head_before": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+  "head_after": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+  "source_context": "main_working_source",
+  "results": [
+    {
+      "label": "secondary_helpers",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-u",
+        "tests/verify_secondary_helpers.py"
+      ],
+      "pid": 3916,
+      "started_ns": 1794599770268612500,
+      "exit": 0,
+      "reaped": true,
+      "finished_ns": 1794599836105685100,
+      "passed": true
+    },
+    {
+      "label": "secondary_existing_ribbon",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-u",
+        "tests/verify_secondary_existing.py",
+        "--prepared-source",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200\\wind-native\\ribbon\\scene.glb",
+        "--with-ribbon"
+      ],
+      "pid": 24960,
+      "started_ns": 1794599836111677200,
+      "exit": 0,
+      "reaped": true,
+      "finished_ns": 1794599856500868300,
+      "passed": true
+    },
+    {
+      "label": "secondary_picking",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-u",
+        "tests/verify_secondary_picking.py"
+      ],
+      "pid": 13688,
+      "started_ns": 1794599856506864400,
+      "exit": 0,
+      "reaped": true,
+      "finished_ns": 1794599866731640800,
+      "passed": true
+    },
+    {
+      "label": "secondary_batch",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-u",
+        "tests/verify_secondary_batch.py"
+      ],
+      "pid": 7736,
+      "started_ns": 1794599866737964100,
+      "exit": 0,
+      "reaped": true,
+      "finished_ns": 1794599887778083400,
+      "passed": true
+    },
+    {
+      "label": "helper_morphs",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-u",
+        "tests/verify_helper_morphs.py"
+      ],
+      "pid": 27584,
+      "started_ns": 1794599887784661000,
+      "exit": 0,
+      "reaped": true,
+      "finished_ns": 1794599894936764100,
+      "passed": true
+    },
+    {
+      "label": "scene_view",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-u",
+        "tests/verify_scene_view.py"
+      ],
+      "pid": 3384,
+      "started_ns": 1794599894943157800,
+      "exit": 0,
+      "reaped": true,
+      "finished_ns": 1794599907374268300,
+      "passed": true
+    }
+  ],
+  "error": null,
+  "source_preserved": true,
+  "passed": true
+}

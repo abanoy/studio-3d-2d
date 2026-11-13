@@ -1,0 +1,102 @@
+{
+  "capture_records": {
+    "before": {
+      "path": "output/helper-preview/prepare-1794598882353432000-3276c603/main-source-before.json",
+      "entries": 968,
+      "bytes": 177050,
+      "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+      "mtime_ns": 1794598883654990500
+    },
+    "after": {
+      "path": "output/helper-preview/prepare-1794598882353432000-3276c603/main-source-after.json",
+      "entries": 968,
+      "bytes": 177050,
+      "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+      "mtime_ns": 1794598902276165500
+    },
+    "snapshot": {
+      "path": "output/helper-preview/prepare-1794598882353432000-3276c603/snapshot-source-before.json",
+      "entries": 968,
+      "bytes": 177050,
+      "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+      "mtime_ns": 1794598895916129000
+    }
+  },
+  "before_after_exact": true,
+  "functional_file_count": 968,
+  "sha256_inventory": "924320116ac3e3a786527251c4ddf50a0c7dbb5d75181c362dbd9fe6aae2bdc4",
+  "selected_runtime_files": {
+    "src/app.gd": {
+      "bytes": 147447,
+      "mtime_ns": 1794598040770010300,
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+    },
+    "src/physics_editor.gd": {
+      "bytes": 22395,
+      "mtime_ns": 1794595716979509400,
+      "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+    },
+    "src/pose_editor.gd": {
+      "bytes": 48374,
+      "mtime_ns": 1794595716980511400,
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+    },
+    "src/secondary_helper_editor.gd": {
+      "bytes": 42528,
+      "mtime_ns": 1794598384628598100,
+      "sha256": "aa5b046c85efd845e66e395cd488223cfee6e197d678641c9b9582b9c5aab50b"
+    },
+    "src/wind_review.gd": {
+      "bytes": 17923,
+      "mtime_ns": 1794595716985518400,
+      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+    },
+    "src/pending_helper_preview.gd": {
+      "bytes": 16979,
+      "mtime_ns": 1794597940162560600,
+      "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca"
+    },
+    "src/pending_helper_wind_player.gd": {
+      "bytes": 8476,
+      "mtime_ns": 1794595716978508900,
+      "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+    },
+    "src/wind_helper_bridge.gd": {
+      "bytes": 16539,
+      "mtime_ns": 1794595716982511200,
+      "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+    },
+    "src/wind_helper_runtime.gd": {
+      "bytes": 2746,
+      "mtime_ns": 1794595716984511000,
+      "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+    },
+    "src/wind_helper_candidate.gd": {
+      "bytes": 25396,
+      "mtime_ns": 1794595716983512600,
+      "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+    },
+    "tools/wind_helper_preview.py": {
+      "bytes": 22479,
+      "mtime_ns": 1794595716988514700,
+      "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+    },
+    "tools/wind_preview_controller.py": {
+      "bytes": 25768,
+      "mtime_ns": 1794595716989510600,
+      "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+    },
+    "tools/wind_preview_owned.py": {
+      "bytes": 20640,
+      "mtime_ns": 1794595716990514800,
+      "sha256": "812852ed626b10042ae464de1d65cc6ac8eff158e0c60a1522575d3387d1b294"
+    },
+    "tools/wind_preview_worker.py": {
+      "bytes": 5784,
+      "mtime_ns": 1794595716991513500,
+      "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+    }
+  },
+  "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+  "snapshot_before_equals_main_before": true
+}

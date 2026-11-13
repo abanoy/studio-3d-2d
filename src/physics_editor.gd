@@ -149,6 +149,7 @@ func change(enabled: bool) -> void:
 	sync()
 
 func enable_body(actor: RefCounted) -> void:
+	helper_editor.stop_pending_for_actor(actor.data.id)
 	if pending.has(actor.data.id):sync();app.message("Hair/clothing setup is finishing. Try the body toggle when it is ready.");return
 	if body_active(actor.data.id):sync();return
 	if recording and recording.active:sync();app.message("Stop recording before enabling another physics object.");return
@@ -175,6 +176,7 @@ func enable_body(actor: RefCounted) -> void:
 func change_hair(enabled: bool) -> void:
 	var actor: RefCounted=app.renderer.active_model()
 	if not actor or app.exporting:return
+	helper_editor.stop_pending_for_actor(actor.data.id)
 	import_starts.erase(actor.data.id)
 	if not enabled:
 		generation+=1;pending.erase(actor.data.id);disable_hair(actor.data.id);sync();return
@@ -197,6 +199,7 @@ func disable_hair(id: String) -> void:
 	app.message("Hair & clothes off: authored pose restored. Recorded animation is kept."+(" Body Physics is still on." if body else ""))
 
 func enable_hair(actor: RefCounted) -> void:
+	helper_editor.stop_pending_for_actor(actor.data.id)
 	if pending.has(actor.data.id) or active(actor.data.id) and simulations[actor.data.id] is Secondary:return
 	if recording.active:sync();app.message("Stop recording before enabling another simulation.");return
 	if actor.data.get("kind","model")!="model" or not actor.root.is_visible_in_tree():sync();app.message("Select a visible model with declared hair/clothing joints.");return

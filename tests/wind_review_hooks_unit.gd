@@ -18,6 +18,7 @@ class Harness extends "res://src/app.gd":
 	func message(value: String) -> void:last_message=value
 class Operations extends Node:
 	var app
+	var helper_editor: Node
 	var pid:=-1
 	var observed_stopped:=false
 	var recording: Dictionary={"active":false,"advancing":false}

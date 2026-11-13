@@ -1,0 +1,472 @@
+{
+  "format": "has_pending_helper_preview_main_1",
+  "date": "2026-11-13",
+  "main_ported": true,
+  "tested_source_context": "exact uncommitted working-main snapshots without overlays; existing regression wrappers use literal working main",
+  "recorded_head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+  "not_a_test_of_that_committed_head_alone": true,
+  "reviewed_source_manifest": "tests/helper_preview_port_files.json",
+  "source_files": [
+    {
+      "path": "src/app.gd",
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "lf_sha256": "817e94f33b9d667d4e1deae7f36ba5212dd0290322140576b7ec6cb5902d770b",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "lf_sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "lf_sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "category": "runtime"
+    },
+    {
+      "path": "src/secondary_helper_editor.gd",
+      "sha256": "b3541073b274e85871a581eeebaecc3cea7baf0da296571cd8240313a32efb93",
+      "lf_sha256": "b3541073b274e85871a581eeebaecc3cea7baf0da296571cd8240313a32efb93",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "lf_sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pending_helper_preview.gd",
+      "sha256": "f4ced1db5c123a7d7f6e8395ceba9dcb6aa65f6f19d27244d3cd3ea73694ac7e",
+      "lf_sha256": "f4ced1db5c123a7d7f6e8395ceba9dcb6aa65f6f19d27244d3cd3ea73694ac7e",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pending_helper_wind_player.gd",
+      "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+      "lf_sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_helper_bridge.gd",
+      "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "lf_sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_helper_runtime.gd",
+      "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "lf_sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_helper_candidate.gd",
+      "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+      "lf_sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+      "category": "runtime"
+    },
+    {
+      "path": "tools/wind_helper_preview.py",
+      "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+      "lf_sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+      "category": "runtime"
+    },
+    {
+      "path": "tools/wind_preview_controller.py",
+      "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac",
+      "lf_sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac",
+      "category": "runtime"
+    },
+    {
+      "path": "tools/wind_preview_owned.py",
+      "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f",
+      "lf_sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f",
+      "category": "runtime"
+    },
+    {
+      "path": "tools/wind_preview_worker.py",
+      "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414",
+      "lf_sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414",
+      "category": "runtime"
+    },
+    {
+      "path": "tests/helper_preview_fixtures.py",
+      "sha256": "b019dace70e6c0c1d18c872ba9b92ebfdba09ce7605005e742f56612c7bf29f3",
+      "lf_sha256": "b019dace70e6c0c1d18c872ba9b92ebfdba09ce7605005e742f56612c7bf29f3",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_gpu.gd",
+      "sha256": "f78ea14531cd0e86795feb9448626b6620ab299eacec7a0875478df87b86bb7f",
+      "lf_sha256": "f78ea14531cd0e86795feb9448626b6620ab299eacec7a0875478df87b86bb7f",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_gpu_common.gd",
+      "sha256": "9f6adb3ce974e3b21a1982808285c8a5b9a7edc879e5a086180f2efb9cda3bc9",
+      "lf_sha256": "9f6adb3ce974e3b21a1982808285c8a5b9a7edc879e5a086180f2efb9cda3bc9",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_gpu_native.gd",
+      "sha256": "83b15369e130364e425804dfa3af5b5b11612b03085a3da86b261b1ba7982fc8",
+      "lf_sha256": "83b15369e130364e425804dfa3af5b5b11612b03085a3da86b261b1ba7982fc8",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_gpu_peers.gd",
+      "sha256": "e7acd248bcc0a989e454553815c747aaa2ca85dda2ef86f04e270b0ef5219f4f",
+      "lf_sha256": "e7acd248bcc0a989e454553815c747aaa2ca85dda2ef86f04e270b0ef5219f4f",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_integration_cpu.gd",
+      "sha256": "d7ef435c3c4e34d24fc675f293aa96d8eb72d50dc8a26a33b69a518af9e9ef72",
+      "lf_sha256": "d7ef435c3c4e34d24fc675f293aa96d8eb72d50dc8a26a33b69a518af9e9ef72",
+      "category": "test"
+    },
+    {
+      "path": "tests/helper_preview_transport_cpu.py",
+      "sha256": "556209a85c45e907a520074c983810bf42dbdccd9c4615c15e2dbc9855988f17",
+      "lf_sha256": "556209a85c45e907a520074c983810bf42dbdccd9c4615c15e2dbc9855988f17",
+      "category": "test"
+    },
+    {
+      "path": "tests/test_helper_preview_driver.py",
+      "sha256": "6b0b6a9a5a7bc7f0e48f7b3a020d2b36128c50ec76b45bb108b59686ab8245a7",
+      "lf_sha256": "6b0b6a9a5a7bc7f0e48f7b3a020d2b36128c50ec76b45bb108b59686ab8245a7",
+      "category": "test"
+    },
+    {
+      "path": "tests/verify_helper_preview.py",
+      "sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+      "lf_sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+      "category": "test"
+    },
+    {
+      "path": "tests/wind_helper_candidate_cpu.gd",
+      "sha256": "bd2fac67850fb63cee46a35c9e7390b401756933499b5273a803714b3c24e22b",
+      "lf_sha256": "bd2fac67850fb63cee46a35c9e7390b401756933499b5273a803714b3c24e22b",
+      "category": "test"
+    }
+  ],
+  "actual_final_runs": {
+    "prepare": "output/helper-preview/prepare-1794599472068354400-3b5efcbd",
+    "driver_domain_120": "output/helper-preview-driver-domain/1794599472205709600-da313665",
+    "cpu": {
+      "folder": "output/helper-preview/cpu-1794599514381327300-8ae7d73e",
+      "checks": 208,
+      "cases": [
+        [
+          "transport",
+          11
+        ],
+        [
+          "adapter",
+          128
+        ],
+        [
+          "host",
+          69
+        ]
+      ],
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      }
+    },
+    "graphical_explicit_native": {
+      "folder": "output/helper-preview/graphical-1794599542182978200-657f180d",
+      "checks": 305,
+      "cases": [
+        [
+          "focused",
+          221
+        ],
+        [
+          "peers",
+          45
+        ],
+        [
+          "native",
+          39
+        ]
+      ],
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "metrics": {
+        "focused": {
+          "derived_helper_max_angle": 0.17884913086891174,
+          "fresh_startup_workspace": true,
+          "main_revision": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+          "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+          "original_vs_blowing_image_bytes": 65442,
+          "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/helper-preview/graphical-1794599542182978200-657f180d/Studio",
+          "same_candidate_wind_changed_image_bytes": 50607,
+          "source_adoption_error": "",
+          "source_context": "main_working_source_snapshot",
+          "source_manifest_sha256": "ccb6b34d9358f0eb8385c5d904fe20c731a61dfe404ee2db860b94540f4ccd2b"
+        },
+        "peers": {
+          "fresh_startup_workspace": true,
+          "main_revision": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+          "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+          "peer_movement_during_prepare_and_wind": 16.37753677368164,
+          "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/helper-preview/graphical-1794599542182978200-657f180d/Studio",
+          "source_adoption_error": "",
+          "source_context": "main_working_source_snapshot",
+          "source_manifest_sha256": "ccb6b34d9358f0eb8385c5d904fe20c731a61dfe404ee2db860b94540f4ccd2b"
+        },
+        "native": {
+          "fresh_startup_workspace": true,
+          "main_revision": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+          "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+          "native_candidate_sha256": "58e446ae213bc04d62aea49edb02bd9844ae6c021be00c55a3ea50a38f00dbc1",
+          "native_original_skin_bone_max_angle": 0.03529345616698265,
+          "native_same_candidate_changed_image_bytes": 135966,
+          "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/helper-preview/graphical-1794599542182978200-657f180d/Studio",
+          "source_adoption_error": "",
+          "source_context": "main_working_source_snapshot",
+          "source_manifest_sha256": "ccb6b34d9358f0eb8385c5d904fe20c731a61dfe404ee2db860b94540f4ccd2b"
+        }
+      },
+      "receipts": [
+        {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_c08ed842702e4f34b96393b6870d3d78",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 12740,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 65.781
+        },
+        {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_1bac16aeabac423aa55e29b61ba9ff80",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 25768,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 7.476
+        },
+        {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_ae0ad9ab81ee404e8818e2956cfce80f",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 8764,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 17.418
+        }
+      ]
+    },
+    "existing_regressions": {
+      "folder": "output/helper-preview-regressions-20261113",
+      "results": [
+        {
+          "label": "secondary_helpers",
+          "command": [
+            "C:\\Program Files\\Python313\\python.exe",
+            "-B",
+            "-u",
+            "tests/verify_secondary_helpers.py"
+          ],
+          "pid": 3916,
+          "started_ns": 1794599770268612500,
+          "exit": 0,
+          "reaped": true,
+          "finished_ns": 1794599836105685100,
+          "passed": true
+        },
+        {
+          "label": "secondary_existing_ribbon",
+          "command": [
+            "C:\\Program Files\\Python313\\python.exe",
+            "-B",
+            "-u",
+            "tests/verify_secondary_existing.py",
+            "--prepared-source",
+            "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200\\wind-native\\ribbon\\scene.glb",
+            "--with-ribbon"
+          ],
+          "pid": 24960,
+          "started_ns": 1794599836111677200,
+          "exit": 0,
+          "reaped": true,
+          "finished_ns": 1794599856500868300,
+          "passed": true
+        },
+        {
+          "label": "secondary_picking",
+          "command": [
+            "C:\\Program Files\\Python313\\python.exe",
+            "-B",
+            "-u",
+            "tests/verify_secondary_picking.py"
+          ],
+          "pid": 13688,
+          "started_ns": 1794599856506864400,
+          "exit": 0,
+          "reaped": true,
+          "finished_ns": 1794599866731640800,
+          "passed": true
+        },
+        {
+          "label": "secondary_batch",
+          "command": [
+            "C:\\Program Files\\Python313\\python.exe",
+            "-B",
+            "-u",
+            "tests/verify_secondary_batch.py"
+          ],
+          "pid": 7736,
+          "started_ns": 1794599866737964100,
+          "exit": 0,
+          "reaped": true,
+          "finished_ns": 1794599887778083400,
+          "passed": true
+        },
+        {
+          "label": "helper_morphs",
+          "command": [
+            "C:\\Program Files\\Python313\\python.exe",
+            "-B",
+            "-u",
+            "tests/verify_helper_morphs.py"
+          ],
+          "pid": 27584,
+          "started_ns": 1794599887784661000,
+          "exit": 0,
+          "reaped": true,
+          "finished_ns": 1794599894936764100,
+          "passed": true
+        },
+        {
+          "label": "scene_view",
+          "command": [
+            "C:\\Program Files\\Python313\\python.exe",
+            "-B",
+            "-u",
+            "tests/verify_scene_view.py"
+          ],
+          "pid": 3384,
+          "started_ns": 1794599894943157800,
+          "exit": 0,
+          "reaped": true,
+          "finished_ns": 1794599907374268300,
+          "passed": true
+        }
+      ],
+      "source_preserved": true,
+      "head_before": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "head_after": "223a322bfcf3c075d013d0441323fd6b61f9d5cf"
+    }
+  },
+  "canonical_registration": {
+    "driver_domain": 120,
+    "cpu": 208,
+    "graphical_default": 266,
+    "graphical_cases": [
+      [
+        "focused",
+        221
+      ],
+      [
+        "peers",
+        45
+      ]
+    ],
+    "native_assets_required_by_new_defaults": false,
+    "explicit_native_graphical_addition": 39,
+    "explicit_native_cpu_addition": 23,
+    "strict_fresh_report_and_source_context_admission": true
+  },
+  "failed_attempts": [
+    {
+      "folder": "output/helper-preview/graphical-1794598970889753100-ae1dbcb8",
+      "checks": 207,
+      "failures": 1,
+      "skipped_endpoint_predicates": 11,
+      "reason": "CreateProcess current-directory limit on260-character job directory; exact minimal reproduction failsWin267 while194-character checked work_root reads273-character request successfully. Extendedprefix also refuses.",
+      "retained_status": "failed"
+    },
+    {
+      "folder": "output/helper-preview/graphical-1794599304309599100-20ce72d0",
+      "checks": 219,
+      "failures": 1,
+      "reason": "Actual268-character-job worker and popup restoration pass; new test compared equivalent mixed-slash and backslash path spellings literally. Comparator now normalizes separators; same launch requirement retained.",
+      "retained_status": "failed"
+    }
+  ],
+  "main_refinements": [
+    "helper window680px bounded by viewport",
+    "initial focus on an actually checked wind group",
+    "popup window input forwards keys only for pending-preview Escape",
+    "Windows worker uses checked shorter work_root as cwd; absolute job paths and Job/start gate remain unchanged; actual >=260-character job regression added",
+    "Show additional wind-group and strength controls only once temporary groups are prepared, preserving refinement space beforehand"
+  ],
+  "evidence_packet": {
+    "path": "experiments/local_wind_review/helper_pending_main_20261113",
+    "indexed_files": 141,
+    "indexed_bytes": 1536200,
+    "index_sha256": "721f914ec0d75d05a4d243eefe10fcbca832103763b8d6c7851bae0d2c0d7a53"
+  },
+  "full_aggregate": {
+    "previous_pass_commit": "9897f86019dfb8499d0ee30f6560580fac7bb8da",
+    "previous_report": "docs/benchmarks/windows_canonical_full_2026-11-13.json",
+    "post_port_committed_default": "pending; run after committing stable source, without functional changes during execution"
+  },
+  "limits": [
+    "Temporary wind checks remain separate from Apply inclusion; no permanent Hair & clothes exclusions.",
+    "No new wind-active MP4, persisted recovery-worker, original native shader/jiggle/assembly fidelity or artist/device/clean-install claim.",
+    "Earlier installed Studio and protected owner reviews/recovery remain unchanged. Broader supplied SFM features remain separate."
+  ],
+  "formal_counts": {
+    "accepted": 55,
+    "acceptance_total": 62,
+    "implemented": 52,
+    "implementation_total": 54
+  },
+  "private_art_uploaded": false,
+  "existing_regression_evidence_packet": {
+    "path": "experiments/local_wind_review/helper_pending_existing_regressions_20261113",
+    "indexed_files": 28,
+    "indexed_bytes": 451906,
+    "index_sha256": "2f1e9782228474828d9a4333e2620aa13848ae45035d4ee8f19113b528b94a53",
+    "clean_unique_private_receipts": 9,
+    "source_maps_match_final_helper_305": true
+  }
+}

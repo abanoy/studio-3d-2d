@@ -1,0 +1,94 @@
+{
+  "capture_records": {
+    "before": {
+      "path": "output/wind-review/graphical-1794598242958272700/source-before.json",
+      "entries": 959,
+      "bytes": 175350,
+      "sha256": "1e7fa749848ab1d0c8a2619f27868c077d6d3e7e0ada93584e0e2f1c1b92f673",
+      "mtime_ns": 1794598243060816700
+    },
+    "after": {
+      "path": "output/wind-review/graphical-1794598242958272700/source-after.json",
+      "entries": 959,
+      "bytes": 175350,
+      "sha256": "1e7fa749848ab1d0c8a2619f27868c077d6d3e7e0ada93584e0e2f1c1b92f673",
+      "mtime_ns": 1794598359587925100
+    }
+  },
+  "before_after_exact": true,
+  "functional_file_count": 959,
+  "sha256_inventory": "cced54a1321784de2d15070a2ca2062229af3dac8452186a6e04cadb62c950c0",
+  "selected_runtime_files": {
+    "src/app.gd": {
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "bytes": 147447,
+      "mtime_ns": 1794598040770010300
+    },
+    "src/physics_editor.gd": {
+      "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "bytes": 22395,
+      "mtime_ns": 1794595716979509400
+    },
+    "src/pose_editor.gd": {
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "bytes": 48374,
+      "mtime_ns": 1794595716980511400
+    },
+    "src/secondary_helper_editor.gd": {
+      "sha256": "3d22c621176b245d14dc89d9aae4ba8d7f6545afa7bd51f37c517fa7377071ab",
+      "bytes": 42270,
+      "mtime_ns": 1794597939986387900
+    },
+    "src/wind_review.gd": {
+      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "bytes": 17923,
+      "mtime_ns": 1794595716985518400
+    },
+    "src/pending_helper_preview.gd": {
+      "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca",
+      "bytes": 16979,
+      "mtime_ns": 1794597940162560600
+    },
+    "src/pending_helper_wind_player.gd": {
+      "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+      "bytes": 8476,
+      "mtime_ns": 1794595716978508900
+    },
+    "src/wind_helper_bridge.gd": {
+      "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "bytes": 16539,
+      "mtime_ns": 1794595716982511200
+    },
+    "src/wind_helper_runtime.gd": {
+      "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "bytes": 2746,
+      "mtime_ns": 1794595716984511000
+    },
+    "src/wind_helper_candidate.gd": {
+      "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+      "bytes": 25396,
+      "mtime_ns": 1794595716983512600
+    },
+    "tools/wind_helper_preview.py": {
+      "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+      "bytes": 22479,
+      "mtime_ns": 1794595716988514700
+    },
+    "tools/wind_preview_controller.py": {
+      "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac",
+      "bytes": 25768,
+      "mtime_ns": 1794595716989510600
+    },
+    "tools/wind_preview_owned.py": {
+      "sha256": "812852ed626b10042ae464de1d65cc6ac8eff158e0c60a1522575d3387d1b294",
+      "bytes": 20640,
+      "mtime_ns": 1794595716990514800
+    },
+    "tools/wind_preview_worker.py": {
+      "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414",
+      "bytes": 5784,
+      "mtime_ns": 1794595716991513500
+    }
+  },
+  "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits."
+}

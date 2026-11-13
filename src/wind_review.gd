@@ -254,8 +254,8 @@ func global_event(event: InputEvent) -> bool:
 func window_input(event: InputEvent) -> void:
 	if global_event(event):window.set_input_as_handled()
 
-func stop_for_capture() -> void:stop_preview("Final render")
-func stop_for_asset() -> void:stop_preview("Asset replacement")
+func stop_for_capture() -> void:app.stop_local_wind("Final render")
+func stop_for_asset() -> void:app.stop_local_wind("Asset replacement")
 
 func stop_preview(_reason: String="Stopped",uncheck:=true) -> void:
 	if RenderingServer.frame_post_draw.is_connected(warm_frame):RenderingServer.frame_post_draw.disconnect(warm_frame)

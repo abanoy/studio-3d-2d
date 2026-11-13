@@ -4157,3 +4157,57 @@ A separate unported helper editor now prepares reviewed drafts without freezing 
 The display prototype then passes199private graphics checks: same-candidate50,607image bytes change with0.178849rad helper motion; Off restores exact original native pixels, poses, visibility, refinement overlays and pointer. Save/final capture/seek/Close/New/Record refusal, startup and observed worker-stage cancellation pass. Additional45checks preserve a real moving prop and a separately registered posed/morphed skinned child during preparation, wind and Stop; normal Apply/late-install refusal preserves the live solver. The first45behavior result remains rejected because an unused native test file changed during that run; the new fully frozen45run passes. Actual retained Backhair-alias39checks select region80/1/1 and original joints11/10/9, add endpoint103, preserve all original binary/mesh/skin/morph/material data, move those actual weighted joints and135,966same-candidate image bytes, then restore exact native pixels. Its first parse failed a missing bool annotation; source/logs retained. These do not certify original Source shader/jiggle fidelity, new movies, main integration or artist observations. Three accepted private jobs close cleanly; all source/overlay/harness/runtime/HEAD gates pass. Sources/results/recipes are recoverable in helper_pending_display_candidate_20261113, helper_pending_gpu_actual_20261113 and helper_pending_gpu_extended_20261113; benchmarks distinguish every scope. Main functional code remains unchanged since e9. Publish this checkpoint before reviewed main integration and affected regressions.
 
 The corrected cleanup executor passes35controls and two fresh-process forged/resident-native-type refusals. Root's actual default read-only preflight verifies4,308exact code files and2,613retained files, all membership and retention checks, then conservatively refuses199unknown process identities. No deletion, PID exceptions or process kills occurred. The original unexecuted v1 packet is unchanged; two reviewed safety defects are documented and corrected in v2. Exact scripts/compact evidence are saved under experiments/source_appearance/v2_code_cleanup_executor_20261113. Retain those old source copies while nonuse cannot be established. No tools installed, owner prompts issued or artwork uploaded; owner installation, originals, earlier reviews and recovery remain protected.
+
+
+## 2026-11-13 — Pending helper wind integrated into main
+
+The reviewed pending-helper preview now runs before Apply, for focused and checked
+batch setups. Temporary wind checks, row focus and Apply membership remain separate.
+The original paused pose/expression and independently moving objects are preserved.
+Apply and late installation refuse live motion. Save, seek, Record, final capture,
+scene replacement and close invalidate the candidate. No installed Studio or
+protected owner review/recovery was replaced.
+
+Final exact working-main snapshots pass 208 CPU checks (11 transport, 128 synthetic
+imported-binding, 69 actual editor), 305 private graphics checks (221 focused,
+45 moving-peer/posed-morphed child, 39 native Back hair), six-script preparation
+and 120 driver-domain controls without subprocesses. Six existing literal-main
+wrappers pass: helpers, native existing ribbon, picking, batch, morphs and SceneView.
+Every final 24-file binding matches actual main bytes, all nine preservation gates
+pass, and three successful graphical jobs close with exit zero without foreground
+placement or switching. Same-candidate motion changes 50,607 image bytes; native
+Back hair changes 135,966 bytes and a real weighted bone by 0.035293456 radians.
+Off restores exact original poses/pixels. These are software/API results.
+
+Review found popup Escape could not reach app._input. The popup now forwards key
+events through Window.window_input. A separate probe proves Viewport.push_input
+does not emit that signal, so the regression honestly exercises the window signal
+endpoint. The window has a viewport-bounded 680-pixel default, focuses an actually
+checked group, and hides unused wind controls before preparation.
+
+Two attempts remain failed. First, 207/1 skipped 11 popup endpoint predicates when
+Windows CreateProcess rejected a 260-character job cwd (Win267). A minimal approved
+Python child reads the same 273-character request from the checked 194-character
+work root; an extended job prefix still fails. Worker cwd now uses the explicit
+work root; absolute job paths, isolated Python, Job assignment and the start gate
+remain unchanged. A real 268-character job regression is included. Second, 219/1
+passed that launch and Escape restoration but my new guard compared equivalent
+slash spellings literally. Separator normalization retains the same requirement;
+final 221 focused checks pass, including two additional visibility checks.
+
+The older Phase1 matrix also passes 94 units and 845 graphics before the popup fix.
+Its 16-file manifest records four shared runtime revisions and three coherent
+unit-double updates without changing the 51/14/29 predicates. New canonical
+registration requires fresh typed CPU208/default graphics266 reports and all nine
+preservation gates; native39 is explicit. The genuine earlier full pass at9897f86
+predates this integration. Next: push this scoped checkpoint, verify it, freeze
+functional source for a fresh complete default, then build a separate owner review
+without participation prompts.
+
+Metadata-only evidence: experiments/local_wind_review/helper_pending_main_20261113,
+141 indexed files / 1,536,200 bytes, INDEX SHA256
+721f914ec0d75d05a4d243eefe10fcbca832103763b8d6c7851bae0d2c0d7a53.
+No artwork, models, projects or media are in that packet. The concrete read-only
+static SFM skin/bodygroup port plan and Junko/Mima/Kanako matrix preserve the wider
+collection reminder without claiming a chooser, assembly or native jiggle port.
+Formal counts remain 55/62 acceptance and 52/54 implementation.

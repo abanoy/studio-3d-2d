@@ -1,0 +1,52 @@
+{
+  "unit": {
+    "checks": 5,
+    "failures": 0
+  },
+  "result": {
+    "checks": 34,
+    "derived_sha256": "d72e17bb56220b1422820b07ccf493f352379dca3c75f6760a693b12c87b7e46",
+    "failures": 0,
+    "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-batch\\1794599868082134100/render_1794599880_11922344_0/movie.mp4",
+    "precision_transport": {
+      "actual": 98765.43210987654,
+      "expected": 98765.43210987654,
+      "old_absolute_loss": 2.9103830456733704e-11,
+      "old_default": 98765.4321098765
+    },
+    "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d"
+  },
+  "private_receipt": {
+    "format": "studio_private_desktop_1",
+    "desktop": "HAS_Test_2fd563a73c9a400bbf3d14acb526d732",
+    "desktop_switch_requested": false,
+    "private_window_seen": true,
+    "child_desktop_confirmed": true,
+    "maximum_owned_windows": 9,
+    "foreground_child_observed": false,
+    "exit": 0,
+    "child_pid": 22544,
+    "job_closed": true,
+    "desktop_closed": true,
+    "seconds": 18.866
+  },
+  "originals": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-batch\\1794599868082134100\\original.glb": [
+      "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+      1794599868085983400
+    ],
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-batch\\1794599868082134100\\shared.glb": [
+      "6a70169b5b808775e514553076eb986b414825de7eaecd99af9ba232d7e58fd6",
+      1794599868094000200
+    ]
+  },
+  "audio_onset_seconds": 1.0000416666666667,
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "r_frame_rate": "24/1",
+    "nb_read_frames": "48",
+    "duration": "2.000000"
+  }
+}

@@ -2,6 +2,24 @@
 
 **Updated November 13, 2026. The owner explicitly resumed work; the goal is ACTIVE.**
 
+Latest integration: [loose-part wind before Apply](helper_setup_wind_preview.md)
+is now in main source. Final working-source checks pass 208 CPU + 305 private graphics
+(221 focused, 45 peer/child, 39 native Back hair), plus 120 driver-domain controls.
+Two failed attempts are retained: deep Windows worker CWD, then a test path-spelling
+comparison. The worker launch is corrected, popup Escape restores the original,
+and unused wind controls no longer crowd ordinary refinement. Six existing workflow
+wrappers also pass with exact main source/HEAD. The new committed-source full
+aggregate is the next gate.
+The prior9897full default remains a valid earlier pass, not a pass for this port.
+Formal counts remain 55/62 acceptance and 52/54 implementation; no human/device or
+installation observation has been invented or requested.
+
+The broader supplied SFM collection remains in scope. The concrete
+[static skin/bodygroup main-port plan](../experiments/source_appearance/static_choice_main_plan_20261113/PLAN.md)
+and [Junko/Mima/Kanako feature matrix](../experiments/source_appearance/static_choice_main_plan_20261113/native_feature_matrix.md)
+preserve those next cases. The chooser is planned, not implemented; native
+assembly, shader, jiggle and runtime-variant fidelity remain separate.
+
 This is the single reading document for the requests, corrections, proposals,
 current software/test state, protected inputs and next steps from this chat.
 The contents are included below; the detailed source notes are retained for

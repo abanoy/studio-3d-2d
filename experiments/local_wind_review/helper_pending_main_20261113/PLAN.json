@@ -1,0 +1,148 @@
+{
+  "format": "has_helper_main_compact_evidence_plan_1",
+  "source_index": {
+    "path": "output/helper-preview-main-driver-20261113/SOURCE_INDEX.json",
+    "sha256": "937ef24763200832ccf2fe2cc6996f3d5c8ade5b818d117aea0753f82a1bdd74",
+    "scope": "Initial frozen ten-file driver candidate before root cwd/UI refinements; later main source is bound separately by actual run inventories and24 reviewed-file bindings."
+  },
+  "metadata_groups": [
+    {
+      "source": "output/helper-preview-main-audit-20261113",
+      "target": "audits/integration",
+      "files": [
+        "audit.json",
+        "audit.md",
+        "INDEX.json",
+        "window_input_probe.gd",
+        "window-input-probe-process.log",
+        "window-input-probe-engine-python.log",
+        "window-input-probe-engine.log"
+      ]
+    },
+    {
+      "source": "output/helper-preview-main-verifier-audit-20261113",
+      "target": "audits/verifier",
+      "files": [
+        "audit.json",
+        "audit.md",
+        "INDEX.json"
+      ]
+    },
+    {
+      "source": "output/helper-preview-popup-boundary-20261113",
+      "target": "probes/popup-signal-routing",
+      "files": [
+        "command.json",
+        "engine.log",
+        "probe.gd",
+        "process.log"
+      ]
+    },
+    {
+      "source": "output/helper-preview-long-cwd-20261113",
+      "target": "probes/long-worker-cwd",
+      "files": [
+        "result.json",
+        "extended-prefix-result.json"
+      ]
+    },
+    {
+      "source": "output/helper-preview-main-evidence-20261113",
+      "target": "audits/cwd-fix",
+      "files": [
+        "cwd-review.md",
+        "cwd-review.json"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "id": "phase1-before-popup-fix",
+      "kind": "phase1",
+      "folder": "output/wind-review/graphical-1794598242958272700",
+      "expected_terminal_pass": true,
+      "scope": "Original Phase1 845 graphical plus 94 headless checks on actual working main BEFORE popup fix. Separate from new pending-helper preview."
+    },
+    {
+      "id": "main-prepare",
+      "kind": "helper",
+      "folder": "output/helper-preview/prepare-1794598882353432000-3276c603",
+      "expected_terminal_pass": true,
+      "scope": "Six approved headless syntax checks of the exact working-main snapshot; no graphical launch."
+    },
+    {
+      "id": "main-driver-domain",
+      "kind": "domain",
+      "folder": "output/helper-preview-driver-domain/1794598882494022700-68dd61bb",
+      "expected_terminal_pass": true,
+      "scope": "120 pure mocked driver-domain predicates; no actual runtime process or product/GPU pass."
+    },
+    {
+      "id": "main-cpu",
+      "kind": "helper",
+      "folder": "output/helper-preview/cpu-1794598908611293300-caa7ba1f",
+      "expected_terminal_pass": true,
+      "scope": "208 actual headless checks: transport11, synthetic imported-binding adapter128 and real editor hosting69; all nine preservation gates true."
+    },
+    {
+      "id": "main-graphical-long-cwd-failure",
+      "kind": "helper",
+      "folder": "output/helper-preview/graphical-1794598970889753100-ae1dbcb8",
+      "expected_terminal_pass": false,
+      "scope": "FAILED actual focused popup-Escape endpoint attempt: 207 executed checks, one failure and 11 endpoint predicates not reached after owned worker CreateProcess cwd hit Win267. All nine preservation gates remained true; private job/desktop closed, native exit1. This remains failed and is not replaced by a later retry."
+    },
+    {
+      "id": "main-native-cpu-before-cwd-fix",
+      "kind": "helper",
+      "folder": "output/helper-preview/cpu-1794599078614288100-6cf19ea3",
+      "expected_terminal_pass": true,
+      "scope": "231 actual headless checks BEFORE cwd fix: transport11, adapter151 including separately validated retained native Backhair23, and actual editor hosting69. This retains its original source context and does not certify the later cwd revision."
+    },
+    {
+      "id": "main-cpu-after-cwd-before-ui",
+      "kind": "helper",
+      "folder": "output/helper-preview/cpu-1794599287215415200-9aff0f5e",
+      "expected_terminal_pass": true,
+      "scope": "208 actual CPU checks after the worker cwd fix and before the later conditional-controls UI revision. Preserved as a distinct source-bound observation."
+    },
+    {
+      "id": "main-graphical-slash-guard-failure",
+      "kind": "helper",
+      "folder": "output/helper-preview/graphical-1794599304309599100-20ce72d0",
+      "expected_terminal_pass": false,
+      "scope": "FAILED actual focused219/1. The long268-character worker job succeeded and popup Stop/pixel restoration predicates passed; the new cwd proof predicate compared equivalent slash spellings literally. Retain as failed despite later path-normalization correction. All nine preservation gates remained true."
+    },
+    {
+      "id": "final-main-prepare",
+      "kind": "helper",
+      "folder": "output/helper-preview/prepare-1794599472068354400-3b5efcbd",
+      "expected_terminal_pass": true,
+      "scope": "FINAL cwd/UI revision: six actual approved headless syntax checks on exact working-main source; no graphical launch."
+    },
+    {
+      "id": "final-main-driver-domain",
+      "kind": "domain",
+      "folder": "output/helper-preview-driver-domain/1794599472205709600-da313665",
+      "expected_terminal_pass": true,
+      "scope": "FINAL revision actual120 mocked driver-domain predicates; no product/runtime process or GPU acceptance."
+    },
+    {
+      "id": "final-main-cpu",
+      "kind": "helper",
+      "folder": "output/helper-preview/cpu-1794599514381327300-8ae7d73e",
+      "expected_terminal_pass": true,
+      "scope": "FINAL cwd/UI revision actual208 headless predicates (transport11, synthetic imported-binding adapter128, real editor69); all nine preservation gates true."
+    },
+    {
+      "id": "final-main-graphical-native",
+      "kind": "helper",
+      "folder": "output/helper-preview/graphical-1794599542182978200-657f180d",
+      "expected_terminal_pass": true,
+      "scope": "FINAL cwd/UI revision actual305 private graphical predicates: focused221, independent peers45, separately validated retained native Backhair39. Three clean exit0 private desktops; all nine preservation gates true. Working-main/no-overlay evidence, not original Source shader/jiggle/artist fidelity."
+    }
+  ],
+  "pending_cases": [
+    "new committed-source full default aggregate",
+    "six additional existing regression wrappers retained in a separate later checkpoint"
+  ]
+}

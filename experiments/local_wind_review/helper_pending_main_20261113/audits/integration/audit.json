@@ -1,0 +1,86 @@
+{
+  "format": "has_pending_helper_main_readonly_audit_1",
+  "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+  "main_edited_by_auditor": false,
+  "graphical_launches": 0,
+  "finding": {
+    "priority": "P2",
+    "title": "Escape from the loose-part popup does not reach the preview stop handler",
+    "paths": [
+      "src/secondary_helper_editor.gd:91",
+      "src/secondary_helper_editor.gd:483",
+      "src/app.gd:1585",
+      "src/pending_helper_preview.gd:238"
+    ],
+    "proof": {
+      "probe": "window_input_probe.gd",
+      "accepted_native_exit": 0,
+      "app_seen": 0,
+      "popup_child_seen": 1,
+      "accepted_log": "window-input-probe-process.log"
+    },
+    "recommendation": "Connect Window.window_input to a helper callback that forwards InputEventKey only to pending_preview.global_event, marking the Window event handled on success. Keep popup-local mouse coordinates out of the root-canvas path.",
+    "regression": "Emit the actual helper Window.window_input Escape boundary while pending/running; require stopped state, unchecked master, restored owned meshes and one transport release with no late resurrection."
+  },
+  "initial_attempt": {
+    "log": "window-input-probe-engine.log",
+    "status": "UNUSABLE_NO_RESULT",
+    "reason": "Direct PowerShell GUI-executable invocation returned only startup banner; shell exit0 is not treated as child result. Later subprocess.run waited and captured the accepted native exit0."
+  },
+  "other_review": "No additional concrete integration regression found in changed/stop cycles, teardown, independent-peer ownership, separated focus/temp checks/Apply inclusion, candidate transfer, or retained worker/process boundaries. Static review does not certify those routes.",
+  "source_files": {
+    "src/app.gd": {
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "bytes": 147447
+    },
+    "src/secondary_helper_editor.gd": {
+      "sha256": "3d22c621176b245d14dc89d9aae4ba8d7f6545afa7bd51f37c517fa7377071ab",
+      "bytes": 42270
+    },
+    "src/pending_helper_preview.gd": {
+      "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca",
+      "bytes": 16979
+    },
+    "src/pending_helper_wind_player.gd": {
+      "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+      "bytes": 8476
+    },
+    "src/wind_review.gd": {
+      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "bytes": 17923
+    },
+    "src/wind_helper_bridge.gd": {
+      "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "bytes": 16539
+    },
+    "src/wind_helper_runtime.gd": {
+      "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "bytes": 2746
+    },
+    "src/wind_helper_candidate.gd": {
+      "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+      "bytes": 25396
+    },
+    "tools/wind_helper_preview.py": {
+      "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+      "bytes": 22479
+    },
+    "tools/wind_preview_controller.py": {
+      "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac",
+      "bytes": 25768
+    },
+    "tools/wind_preview_owned.py": {
+      "sha256": "812852ed626b10042ae464de1d65cc6ac8eff158e0c60a1522575d3387d1b294",
+      "bytes": 20640
+    },
+    "tools/wind_preview_worker.py": {
+      "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414",
+      "bytes": 5784
+    }
+  },
+  "approved_godot": {
+    "path": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+    "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+    "bytes": 171924488
+  }
+}

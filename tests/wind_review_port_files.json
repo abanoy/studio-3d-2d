@@ -4,8 +4,8 @@
   "files": [
     {
       "path": "src/app.gd",
-      "sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
-      "lf_sha256": "6a232f502f967068006cdd2ca26be2f70cd94f7419428354ab9f8e5cc1d787a8",
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "lf_sha256": "817e94f33b9d667d4e1deae7f36ba5212dd0290322140576b7ec6cb5902d770b",
       "category": "runtime"
     },
     {
@@ -16,8 +16,8 @@
     },
     {
       "path": "src/physics_editor.gd",
-      "sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
-      "lf_sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+      "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "lf_sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
       "category": "runtime"
     },
     {
@@ -28,8 +28,8 @@
     },
     {
       "path": "src/pose_editor.gd",
-      "sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
-      "lf_sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "lf_sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
       "category": "runtime"
     },
     {
@@ -46,8 +46,8 @@
     },
     {
       "path": "src/wind_review.gd",
-      "sha256": "8edc067263b9613e2d64520437f49312027a691a3948cf9bae2cab6f4aa12d1d",
-      "lf_sha256": "8edc067263b9613e2d64520437f49312027a691a3948cf9bae2cab6f4aa12d1d",
+      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "lf_sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
       "category": "runtime"
     },
     {
@@ -58,20 +58,20 @@
     },
     {
       "path": "tests/wind_review_unit.gd",
-      "sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
-      "lf_sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+      "sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
+      "lf_sha256": "1d33926688e10be7c546862b7cabd87d73e9ec0ae4cbf0cfa5f9d0c42603b77e",
       "category": "headless_unit"
     },
     {
       "path": "tests/wind_review_hooks_unit.gd",
-      "sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
-      "lf_sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+      "sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
+      "lf_sha256": "bc9d4c1fe9fe4dea6987c096fd4879f5de0de42b0fa81889a1104494f3bf5bbe",
       "category": "headless_unit"
     },
     {
       "path": "tests/wind_review_review_unit.gd",
-      "sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
-      "lf_sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+      "sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
+      "lf_sha256": "4b0ff04f26b24518a12076adee8f3218d681187b764e58b8b9b773b042295b7f",
       "category": "headless_unit"
     },
     {
@@ -99,5 +99,22 @@
       "category": "gpu_test"
     }
   ],
-  "main_integration_fix": "Canvas-first teardown: validate the canvas before pose redraw; preserve original830 predicates and add3dormant canvas-first closure assertions."
+  "main_integration_fix": "Canvas-first teardown: validate the canvas before pose redraw; preserve original830 predicates and add3dormant canvas-first closure assertions.",
+  "pending_helper_integration_revision": {
+    "baseline": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+    "source_packet": "experiments/local_wind_review/helper_pending_display_candidate_20261113",
+    "changed_runtime_rows": [
+      "src/app.gd",
+      "src/physics_editor.gd",
+      "src/pose_editor.gd",
+      "src/wind_review.gd"
+    ],
+    "unit_double_rows": [
+      "tests/wind_review_unit.gd",
+      "tests/wind_review_hooks_unit.gd",
+      "tests/wind_review_review_unit.gd"
+    ],
+    "unit_predicates": "Original 51/14/29 assertions preserved; coherent no-pending-preview doubles and real Review stop delegation only. Fresh headless result 94/0, all functional source identities unchanged.",
+    "scope": "Historical16-row Phase1 boundary retained. Pending-helper preview has its own verifier and evidence. app.gd retains original CRLF style."
+  }
 }

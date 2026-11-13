@@ -1,0 +1,403 @@
+{
+  "format": "has_helper_preview_main_verification_1",
+  "source_context": "main_working_source_snapshot",
+  "source_state": {
+    "revision": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+    "working_status": [
+      {
+        "status": " M",
+        "paths": [
+          "src/app.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "src/physics_editor.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "src/pose_editor.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "src/secondary_helper_editor.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "src/wind_review.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/verify.py"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/verify_wind_review.py"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/wind_review_hooks_unit.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/wind_review_port_files.json"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/wind_review_review_unit.gd"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/wind_review_unit.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "src/pending_helper_preview.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "src/pending_helper_wind_player.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "src/wind_helper_bridge.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "src/wind_helper_candidate.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "src/wind_helper_runtime.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/helper_preview_fixtures.py"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/helper_preview_gpu.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/helper_preview_gpu_common.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/helper_preview_gpu_native.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/helper_preview_gpu_peers.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/helper_preview_integration_cpu.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/helper_preview_port_files.json"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/helper_preview_transport_cpu.py"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/test_helper_preview_driver.py"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/verify_helper_preview.py"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tests/wind_helper_candidate_cpu.gd"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tools/wind_helper_preview.py"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tools/wind_preview_controller.py"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tools/wind_preview_owned.py"
+        ]
+      },
+      {
+        "status": "??",
+        "paths": [
+          "tools/wind_preview_worker.py"
+        ]
+      }
+    ],
+    "ignored_generated_status": [
+      {
+        "status": " M",
+        "paths": [
+          "tests/__pycache__/mmd_expression_fixture.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/__pycache__/test_has_project.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/__pycache__/test_helper_morphs.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/__pycache__/test_mmd_expression_groups.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/__pycache__/test_secondary_helpers.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/__pycache__/test_vrm_import.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/__pycache__/verify_source_shapes.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tests/__pycache__/windows_owner_guard.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/asset_audit.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/has_project.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/mmd_expression_groups.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/prepare_vrm.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/secondary_helpers.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/source_archive.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/source_content.cpython-313.pyc"
+        ]
+      },
+      {
+        "status": " M",
+        "paths": [
+          "tools/__pycache__/source_paths.cpython-313.pyc"
+        ]
+      }
+    ],
+    "source_context": "main_working_source_snapshot"
+  },
+  "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+  "actual_res_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\helper-preview\\graphical-1794599542182978200-657f180d\\Studio",
+  "overlay_files": 0,
+  "mode": "graphical",
+  "native_requested": true,
+  "native_inputs_checked": true,
+  "native_fidelity": false,
+  "graphical_process_attempted": true,
+  "gpu_used": true,
+  "checks": 305,
+  "results": [
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "focused",
+      "script": "res://tests/helper_preview_gpu.gd",
+      "checks": 221,
+      "expected_checks": 221,
+      "failures": 0,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c08ed842702e4f34b96393b6870d3d78",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12740,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 65.781
+      },
+      "clean_private_receipt": true,
+      "result_source_context_bound": true,
+      "passed": true
+    },
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "peers",
+      "script": "res://tests/helper_preview_gpu_peers.gd",
+      "checks": 45,
+      "expected_checks": 45,
+      "failures": 0,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1bac16aeabac423aa55e29b61ba9ff80",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25768,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.476
+      },
+      "clean_private_receipt": true,
+      "result_source_context_bound": true,
+      "passed": true
+    },
+    {
+      "exit": 0,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "error_markers": [],
+      "label": "native",
+      "script": "res://tests/helper_preview_gpu_native.gd",
+      "checks": 39,
+      "expected_checks": 39,
+      "failures": 0,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ae0ad9ab81ee404e8818e2956cfce80f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8764,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 17.418
+      },
+      "clean_private_receipt": true,
+      "result_source_context_bound": true,
+      "passed": true
+    }
+  ],
+  "error": null,
+  "preservation": {
+    "main_sources": true,
+    "runtimes": true,
+    "head": true,
+    "native_originals": true,
+    "staged_native_inputs": true,
+    "published_requests": true,
+    "snapshot_sources": true,
+    "snapshot_extras": true,
+    "fixtures": true
+  },
+  "passed": true
+}

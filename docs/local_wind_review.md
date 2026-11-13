@@ -17,10 +17,11 @@ output stop the preview; its temporary motion stays out of saved projects and
 rendered output. Wind checks are temporary and do not author permanent group
 exclusions in Hair & clothes.
 
-This first phase requires already configured chains. Trying a proposed single
-or batch helper setup **before Apply**, and making exclusions permanent, remain
-unfinished. Generated helper names are still generic. Native Source jiggle,
-runtime wardrobe switching and the wider supplied SFM feature set are separate.
+This first phase requires already configured chains. Proposed single or batch
+setups now have a separate [before-Apply try-out](helper_setup_wind_preview.md).
+Permanent exclusions remain unfinished. Generated helper names are still generic.
+Native Source jiggle, runtime wardrobe switching and the wider supplied SFM
+feature set are separate.
 
 ## Verified software scope
 
@@ -42,8 +43,10 @@ clean result with the correction. The old failure remains recorded.
 After that correction, eight existing wrapper runs pass: native readback,
 selection teardown, original secondary helpers, part picking, batch setup,
 SceneView, ordinary contact physics and component contact physics. Source and
-HEAD stay fixed. The full default suite still needs a fresh stable-source run;
-artist/device/native-fidelity and clean-install gates remain open.
+HEAD stay fixed. A later full default at9897f86 passes, recorded in
+[its separate receipt](benchmarks/windows_canonical_full_2026-11-13.json).
+That source predates the pending-helper port; the port needs its own fresh stable
+aggregate. Artist/device/native-fidelity and clean-install gates remain open.
 
 Run `python tests/verify_wind_review.py --mode graphical --lease-confirmed
 --allow-checkout-eol` serially under the graphics coordinator. The normal

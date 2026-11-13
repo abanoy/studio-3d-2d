@@ -181,6 +181,34 @@ def main():
     assert [case['mode'] for case in wind_result['results']] == ['procedural', 'vrm0', 'vrm1', 'backhair', 'lifecycle', 'primary'] and all(case['passed'] for case in wind_result['results']), wind_result
     assert wind_result['all_functional_sources_hash_size_mtime_unchanged'] and wind_result['native_inputs_checked'] and wind_result['native_prepared_inputs_unchanged'], wind_result
     results['wind_review'] = {key: wind_result[key] for key in ['mode', 'passed', 'folder', 'revision_before', 'results', 'gpu_used', 'all_functional_sources_hash_size_mtime_unchanged', 'native_prepared_inputs_unchanged']}
+    pending_driver_log = run([sys.executable, '-B', 'tests/test_helper_preview_driver.py'], timeout=120)
+    (output / 'helper-preview-driver-unit.log').write_text(pending_driver_log, encoding='utf-8')
+    results['helper_preview_driver'] = {'exit': 0}
+    for helper_mode, expected_cases, expected_total in [
+        ('cpu', [('transport', 11), ('adapter', 128), ('host', 69)], 208),
+        ('graphical', [('focused', 221), ('peers', 45)], 266),
+    ]:
+        helper_started = time.time_ns()
+        helper_args = [sys.executable, '-u', 'tests/verify_helper_preview.py', '--mode', helper_mode, '--allow-checkout-eol']
+        if helper_mode == 'graphical': helper_args.append('--lease-confirmed')
+        pending_log = run(helper_args, timeout=750)
+        (output / ('helper-preview-' + helper_mode + '-suite.log')).write_text(pending_log, encoding='utf-8')
+        pending_lines = [line[len('HELPER_PREVIEW_MAIN '):] for line in pending_log.splitlines() if line.startswith('HELPER_PREVIEW_MAIN ')]
+        assert len(pending_lines) == 1, pending_log
+        pending_status = json.loads(pending_lines[0])
+        pending_path = Path(pending_status['verification']).resolve(strict=True)
+        assert pending_path.name == 'verification.json' and pending_path.is_relative_to((output / 'helper-preview').resolve()) and pending_path.stat().st_mtime_ns >= helper_started, pending_status
+        pending_result = json.loads(pending_path.read_bytes())
+        assert pending_status['passed'] is True and pending_result['format'] == 'has_helper_preview_main_verification_1' and pending_result['passed'] is True, pending_result
+        assert pending_result['mode'] == helper_mode and pending_result['source_context'] == 'main_source_snapshot' and pending_result['overlay_files'] == 0, pending_result
+        assert Path(pending_result['main_root']).resolve() == ROOT.resolve() and Path(pending_result['actual_res_root']).resolve() == pending_path.parent / 'Studio', pending_result
+        assert pending_result['native_requested'] is False and pending_result['native_inputs_checked'] is False and pending_result['native_fidelity'] is False, pending_result
+        assert [(case['label'], case['checks']) for case in pending_result['results']] == expected_cases and pending_result['checks'] == expected_total and all(case['passed'] is True for case in pending_result['results']), pending_result
+        assert set(pending_result['preservation']) == {'main_sources', 'runtimes', 'head', 'native_originals', 'staged_native_inputs', 'published_requests', 'snapshot_sources', 'snapshot_extras', 'fixtures'} and all(value is True for value in pending_result['preservation'].values()), pending_result
+        assert pending_result['gpu_used'] is (helper_mode == 'graphical'), pending_result
+        if helper_mode == 'graphical': assert all(case['clean_private_receipt'] is True for case in pending_result['results']), pending_result
+        results['helper_preview_' + helper_mode] = pending_result
+    print('PASS pending helper wind before Apply, temporary group checks, popup Escape and exact source restoration')
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')
 
     shortcuts_log = run([sys.executable, '-u', 'tests/verify_shortcuts.py'], timeout=500)

@@ -205,6 +205,8 @@ var audio_fade_editor: Node
 var physics_editor: Node
 var local_wind_review: Node
 var local_wind_generation:=0
+var helper_preview_runtime_path:=""
+var helper_preview_work_root:=""
 var source_import: Node
 var source_browser: Node
 var clip_editor: Node
@@ -859,6 +861,7 @@ func message(text: String) -> void:
 	if home and home.visible and home.notice:home.feedback(text)
 
 func changed() -> void:
+	stop_local_wind("Document edited")
 	if drawing_selection_editor:drawing_selection_editor.cancel()
 	recovery_revision += 1
 	dirty = true
@@ -952,9 +955,13 @@ func refresh_layer_choices() -> void:
 
 func stop_local_wind(reason: String) -> void:
 	if is_instance_valid(local_wind_review):local_wind_review.stop_preview(reason)
+	if is_instance_valid(physics_editor) and is_instance_valid(physics_editor.helper_editor):physics_editor.helper_editor.stop_pending_preview(reason)
+
+func local_wind_display_active() -> bool:
+	return (is_instance_valid(local_wind_review) and local_wind_review.phase in ["warming","running"]) or (is_instance_valid(physics_editor) and is_instance_valid(physics_editor.helper_editor) and is_instance_valid(physics_editor.helper_editor.pending_preview) and physics_editor.helper_editor.pending_preview.display_active())
 
 func local_wind_active() -> bool:
-	return is_instance_valid(local_wind_review) and local_wind_review.phase in ["warming","running"]
+	return (is_instance_valid(local_wind_review) and local_wind_review.phase in ["warming","running"]) or (is_instance_valid(physics_editor) and is_instance_valid(physics_editor.helper_editor) and physics_editor.helper_editor.pending_preview_active())
 
 func set_frame(value: int) -> void:
 	if exporting: return

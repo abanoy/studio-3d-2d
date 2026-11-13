@@ -43,6 +43,9 @@ class FakeApp extends Node:
 	var recovery_revision:=7
 	var playing:=false
 	var exporting:=false
+	func stop_local_wind(reason: String) -> void:
+		for child in get_children():
+			if child is Review:child.stop_preview(reason)
 	func _ready() -> void:
 		for node in [renderer,pose_editor,world_selection,canvas,mode]:add_child(node)
 		mode.add_item("Draw");mode.add_item("Camera");mode.add_item("Pose");mode.select(2)

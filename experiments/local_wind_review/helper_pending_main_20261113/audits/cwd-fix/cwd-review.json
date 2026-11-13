@@ -1,0 +1,17 @@
+{
+  "format": "has_helper_worker_cwd_readonly_review_1",
+  "source_path": "tools/wind_preview_owned.py",
+  "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f",
+  "bytes": 20828,
+  "scope": "Static review of replacing Popen cwd=token.job with cwd=self.work_root and recording cwd in owned-launch.json; no runtime tests by reviewer.",
+  "finding": "No new semantic/safety regression found in this narrow change.",
+  "reason": [
+    "Executable, worker script, main_root/work_root/owned_root/job arguments are absolute.",
+    "Isolated Python -I excludes the current directory from import lookup; worker imports trusted source through explicit main/tools paths.",
+    "Worker input/output operations use explicit absolute job paths; command --job remains unchanged.",
+    "Request regular-file validation traverses parent paths, including work_root, and refuses links/reparse paths before launch.",
+    "Native Job assignment, start gate, retained process identity and cleanup sequence are unchanged."
+  ],
+  "limitation": "The work_root must remain an existing directory usable by CreateProcess. This change addresses a long nested job cwd; it does not establish unlimited support for an arbitrarily long work_root itself. Fresh real long-job regression remains necessary.",
+  "minimal_probe_limit": "The first minimal CWD probe captured the request hash only after reading it. Its request_preserved field is retained verbatim but does not establish a before/after hash check. The separate extended-prefix probe recorded identity_before and reports preservation."
+}
