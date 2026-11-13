@@ -1,0 +1,110 @@
+{
+  "format": "has_sfm_probe_ready_source_candidate_1",
+  "status": "READY_FOR_ROOT_REVIEW_NOT_GPU_PROOF",
+  "source": [
+    {
+      "path": "source/app_probe.gd",
+      "bytes": 17986,
+      "sha256": "2e7fc498e333dc85a4b69b8943358541e6196a19e1581b6d827f52837af5fa08"
+    },
+    {
+      "path": "source/glb_reference.py",
+      "bytes": 18544,
+      "sha256": "b951b6e760933fbd7f745c50422ad4197467873ea79b45fc2daebaa7e6065ae3"
+    },
+    {
+      "path": "source/probe_driver.py",
+      "bytes": 22717,
+      "sha256": "505d85ee4be89f15c66f34f74c4026a6d5672fac79bee03104ba8fd5d731f420"
+    },
+    {
+      "path": "source/raw_probe.gd",
+      "bytes": 14677,
+      "sha256": "209b70197ee7769238add7d9ac47453da3a66dd6d5e28d0f6b47e4f3cb34add6"
+    },
+    {
+      "path": "source/test_probe_cpu.py",
+      "bytes": 11921,
+      "sha256": "801260f4fbebd4f789ebe2ba92f2f7449e5dc974d4bd8bf34d55b8c80783de26"
+    }
+  ],
+  "base_head": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+  "source_mode": "working_tree_at_git_base",
+  "working_context": "Root-reviewed uncommitted Wind phase 1 port: sixteen overlays plus driver, native_resolver and canonical changes; root GPU matrix running, no further source edits planned during this CPU-only preparation.",
+  "functional_members_under_this_policy": 963,
+  "actual_bundle_inputs": 12,
+  "planned_raw_captures": 8,
+  "planned_ordinary_app_cases": [
+    "nitori-skin-0",
+    "keiki-000"
+  ],
+  "cpu_controls": 29,
+  "cpu_receipt": {
+    "path": "cpu-check-1794549763594279900/verification.json",
+    "bytes": 1030,
+    "sha256": "ca58970c0fc85fcd50604021278929d0708459b17a47c1fe2db0195174557037"
+  },
+  "manifest": {
+    "path": "runs/1794549675994255000-ba7b8ec3d91f4282a12af08e0e2645ce/manifest.json",
+    "bytes": 962777,
+    "sha256": "1b50ee89eeb3334e55115e885321752e5d1b1cc373aadf7d4ec89c8db813260e"
+  },
+  "parse_receipt": {
+    "path": "runs/1794549675994255000-ba7b8ec3d91f4282a12af08e0e2645ce/parse-verification.json",
+    "bytes": 339,
+    "sha256": "9ad89a74e06f040912ea0441124c4048bf2b44cf2685a8c6e2acfbeb68542721"
+  },
+  "derived_reference_observations": [
+    {
+      "before": "keiki-tools-0.0",
+      "after": "keiki-tools-1.0",
+      "affected_mesh": "tools.dmx",
+      "moved_used_vertex_records": 1180,
+      "unchanged_used_vertex_records": 1616,
+      "maximum_world_delta": 0.0842537368192496,
+      "scope": "Actual derived GLB CPU reference, not native Source"
+    },
+    {
+      "before": "keiki-tools-0.0",
+      "after": "keiki-000-pose",
+      "affected_mesh": "box.smd",
+      "moved_used_vertex_records": 38,
+      "unchanged_used_vertex_records": 2758,
+      "maximum_world_delta": 0.03529694673524234,
+      "scope": "Actual derived GLB CPU reference, not native Source"
+    },
+    {
+      "before": "nitori-skin-0-rest",
+      "after": "nitori-skin-0-pose",
+      "affected_mesh": "gloves.dmx",
+      "moved_used_vertex_records": 2214,
+      "unchanged_used_vertex_records": 4464,
+      "maximum_world_delta": 0.034803247818788574,
+      "scope": "Actual derived GLB CPU reference, not native Source"
+    }
+  ],
+  "gpu": "UNRUN",
+  "app": "UNRUN",
+  "native_fidelity": "UNTESTED",
+  "originals_and_functional_source_preserved_during_recorded_prepare_parse": true,
+  "not_current_execution_authorization": "Root now editing Wind lifetime guard; fresh stable commit preparation and exclusive lease required later. Parsed run is consumed.",
+  "retained_partial_cpu_preparations": [
+    {
+      "path": "runs/1794549366411794200-faef5430fe1e4156bd3069397b5a749e",
+      "retained_files": 3,
+      "status": "UNACCEPTED_CPU_PREPARATION_PARTIAL_RETAINED"
+    },
+    {
+      "path": "runs/1794549444939653800-4f95ce5905b347498f8cd6f1abf08b70",
+      "retained_files": 6,
+      "status": "UNACCEPTED_CPU_PREPARATION_PARTIAL_RETAINED"
+    }
+  ],
+  "stale_head_refusal": {
+    "path": "stale-pin-refusal-0f8.json",
+    "bytes": 305,
+    "sha256": "ab46bfaab0affe7065ad1a2e96456d367916fa53f650e4660dcd7a03fc12bdd3"
+  },
+  "private_payload_publication": "Do not publish inputs, raw positions, source snapshots, packages or screenshots. Source and compact metadata only.",
+  "root_git_or_production_writes_by_this_task": false
+}

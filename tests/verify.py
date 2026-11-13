@@ -162,6 +162,19 @@ def main():
     results['world_selection_teardown'] = {k: pick_teardown_result[k] for k in ['revision','source_mode','folder','result','unchanged_source','process']}
     run([sys.executable, '-u', 'tests/verify_fan_flutter.py'], timeout=250)
     results['fan_flutter'] = json.loads((output / 'fan-flutter-verification.json').read_text(encoding='utf-8'))
+    wind_started = time.time_ns()
+    wind_log = run([sys.executable, '-u', 'tests/verify_wind_review.py', '--mode', 'graphical', '--lease-confirmed', '--allow-checkout-eol'], timeout=2600)
+    (output / 'wind-review-suite.log').write_text(wind_log, encoding='utf-8')
+    wind_lines = [line[len('WIND_REVIEW_MAIN '):] for line in wind_log.splitlines() if line.startswith('WIND_REVIEW_MAIN ')]
+    assert len(wind_lines) == 1, wind_log
+    wind_status = json.loads(wind_lines[0])
+    wind_path = Path(wind_status['verification']).resolve(strict=True)
+    assert wind_path.is_relative_to((output / 'wind-review').resolve()) and wind_path.stat().st_mtime_ns >= wind_started, wind_status
+    wind_result = json.loads(wind_path.read_bytes())
+    assert wind_result['mode'] == 'graphical' and wind_result['gpu_used'] is True and wind_result['passed'] is True, wind_result
+    assert [case['mode'] for case in wind_result['results']] == ['procedural', 'vrm0', 'vrm1', 'backhair', 'lifecycle', 'primary'] and all(case['passed'] for case in wind_result['results']), wind_result
+    assert wind_result['all_functional_sources_hash_size_mtime_unchanged'] and wind_result['native_inputs_checked'] and wind_result['native_prepared_inputs_unchanged'], wind_result
+    results['wind_review'] = {key: wind_result[key] for key in ['mode', 'passed', 'folder', 'revision_before', 'results', 'gpu_used', 'all_functional_sources_hash_size_mtime_unchanged', 'native_prepared_inputs_unchanged']}
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')
 
     shortcuts_log = run([sys.executable, '-u', 'tests/verify_shortcuts.py'], timeout=500)

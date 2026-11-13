@@ -1,0 +1,34 @@
+test_changed_input_detected (test_probe_cpu.DriverControls.test_changed_input_detected) ... ok
+test_output_parent_escape_refused (test_probe_cpu.DriverControls.test_output_parent_escape_refused) ... ok
+test_output_sibling_escape_refused (test_probe_cpu.DriverControls.test_output_sibling_escape_refused) ... ok
+test_private_isolation_fails_closed_for_every_required_field (test_probe_cpu.DriverControls.test_private_isolation_fails_closed_for_every_required_field) ... ok
+test_refuses_overwrite (test_probe_cpu.DriverControls.test_refuses_overwrite) ... ok
+test_refuses_task_root_as_file_destination (test_probe_cpu.DriverControls.test_refuses_task_root_as_file_destination) ... ok
+test_stale_manifest_hash_refused_before_launch (test_probe_cpu.DriverControls.test_stale_manifest_hash_refused_before_launch) ... ok
+test_timeout_preserves_partial_output_without_retry (test_probe_cpu.DriverControls.test_timeout_preserves_partial_output_without_retry) ... ok
+test_accessor_overrun_refused (test_probe_cpu.ReferenceControls.test_accessor_overrun_refused) ... ok
+test_crc_checked_png_independent_rgba (test_probe_cpu.ReferenceControls.test_crc_checked_png_independent_rgba) ... ok
+test_cycle_refused (test_probe_cpu.ReferenceControls.test_cycle_refused) ... ok
+test_external_buffer_refused (test_probe_cpu.ReferenceControls.test_external_buffer_refused) ... ok
+test_half_morph_is_linear_and_pose_does_not_mutate_base (test_probe_cpu.ReferenceControls.test_half_morph_is_linear_and_pose_does_not_mutate_base) ... ok
+test_hand_computed_skin_morph_and_pose_order (test_probe_cpu.ReferenceControls.test_hand_computed_skin_morph_and_pose_order) ... ok
+test_malformed_sparse_accessor_refused (test_probe_cpu.ReferenceControls.test_malformed_sparse_accessor_refused) ... ok
+test_native_binding_duplicate_name_refused (test_probe_cpu.ReferenceControls.test_native_binding_duplicate_name_refused) ... ok
+test_native_binding_parent_mismatch_refused (test_probe_cpu.ReferenceControls.test_native_binding_parent_mismatch_refused) ... ok
+test_native_binding_table_is_joined_not_assumed_palette_order (test_probe_cpu.ReferenceControls.test_native_binding_table_is_joined_not_assumed_palette_order) ... ok
+test_native_readers_are_not_imported (test_probe_cpu.ReferenceControls.test_native_readers_are_not_imported) ... ok
+test_nonfinite_position_refused (test_probe_cpu.ReferenceControls.test_nonfinite_position_refused) ... ok
+test_png_crc_corruption_refused (test_probe_cpu.ReferenceControls.test_png_crc_corruption_refused) ... ok
+test_png_excess_decoded_bytes_refused (test_probe_cpu.ReferenceControls.test_png_excess_decoded_bytes_refused) ... ok
+test_png_trailing_payload_refused (test_probe_cpu.ReferenceControls.test_png_trailing_payload_refused) ... ok
+test_required_extension_refused (test_probe_cpu.ReferenceControls.test_required_extension_refused) ... ok
+test_sparse_duplicate_indices_refused (test_probe_cpu.ReferenceControls.test_sparse_duplicate_indices_refused) ... ok
+test_sparse_implicit_zero_base_matches_dense (test_probe_cpu.ReferenceControls.test_sparse_implicit_zero_base_matches_dense) ... ok
+test_sparse_out_of_range_indices_refused (test_probe_cpu.ReferenceControls.test_sparse_out_of_range_indices_refused) ... ok
+test_sparse_truncated_values_refused (test_probe_cpu.ReferenceControls.test_sparse_truncated_values_refused) ... ok
+test_truncated_glb_refused (test_probe_cpu.ReferenceControls.test_truncated_glb_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.055s
+
+OK

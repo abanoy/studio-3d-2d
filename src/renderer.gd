@@ -36,6 +36,8 @@ var last_capture_error:=""
 var sequence_instance:=false
 var sequence_runtime: Node
 var sequence_owner:=""
+var before_final_capture:=Callable()
+var before_asset_replace:=Callable()
 
 func setup(width := 1920, height := 1080) -> void:
 	viewport = SubViewport.new()
@@ -101,6 +103,7 @@ func import_scene(path: String) -> String:
 	var result := SceneIO.load_glb(path)
 	if result.has("error"):
 		return result.error
+	if before_asset_replace.is_valid():before_asset_replace.call()
 	if environment_scene != null:
 		world.remove_child(environment_scene)
 		environment_scene.queue_free()
@@ -123,6 +126,7 @@ func prepare_legacy(path: String, data: Dictionary = {},incoming_video: Dictiona
 	return {"scene":scene.scene,"model":actor.model}
 
 func clear_assets() -> void:
+	if before_asset_replace.is_valid():before_asset_replace.call()
 	legacy_materials=null
 	if world_runtime:world_runtime.dispose();world_runtime=null
 	active_instance_id=""
@@ -217,6 +221,7 @@ func prepare_model(data: Dictionary,incoming_video: Dictionary={}) -> Dictionary
 
 func install_model(prepared: Dictionary) -> bool:
 	if world_runtime:return false
+	if before_asset_replace.is_valid():before_asset_replace.call()
 	if model:
 		world.remove_child(model.root)
 		model.root.queue_free()
@@ -301,6 +306,7 @@ func finish_native_readback(read_pixels:=true) -> Image:
 	return null if image==null or image.is_empty() else image
 
 func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
+	if final and before_final_capture.is_valid():before_final_capture.call()
 	last_capture_error=""
 	if not native_view_available():last_capture_error="Native render view is unavailable.";return null
 	evaluate(keys, frame)

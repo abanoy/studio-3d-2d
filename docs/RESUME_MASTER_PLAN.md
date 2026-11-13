@@ -440,6 +440,33 @@ acceptance gate or a prerequisite for the model browser.
 
 ## 10. Current verification and incomplete acceptance
 
+
+### Main local-wind integration — November 13
+
+Local wind review is now integrated into main source and scoped-verified:
+94units plus845private graphics checks at the actual main root, with all948
+functional files and native inputs preserved. The eight existing integration
+wrappers also pass: readback, selection teardown, helpers, picking, batch,
+SceneView and ordinary/component contact physics. This does not close the full
+default aggregate, which must run from the next stable published source.
+
+The earlier842main matrix passed but SceneView then caught a canvas-first
+cleanup error. A valid-canvas redraw guard and3additional lifetime checks fix it;
+the old error and same-test five-check comparison are retained. Source/body
+physics and final-output exclusion remain intact. [Behavior/evidence](local_wind_review.md).
+This first phase previews already declared groups; proposed helper drafts before
+Apply and permanent exclusions remain unfinished. Earlier prototype-only entries
+below describe their historical checkpoints.
+
+A bounded SFM derived render/adoption probe is source-ready with29CPU controls
+and historical headless parsing. It joins native names/parents to the actual
+Blender joint palette, supports sparse morphs, and independently decodes the
+Tools/box/hand control geometry. GPU/app/HAS/native-fidelity results remain
+unrun. Its five source files and compact receipts are saved in
+`experiments/source_appearance/derived_probe_candidate_20261113`; private point
+arrays/manifests/bundles are excluded. Fresh exact final-commit preparation and
+a released graphics lease are required after the Wind checkpoint.
+
 ### Latest software correction — November 13
 
 A later suffix passed fill, gap fill, expanded fill, connection fill, palette and
@@ -586,7 +613,8 @@ all six desktop receipts are clean. Two real48-frame1080p PNG exports exclude
 the candidate at frame1; no new movie is claimed. Source-only
 `experiments/local_wind_review/production_port_candidate_20261112` contains the
 exact tested overlay, retrieval chain and normal-regression/UI review plan.
-No main-app port occurred. Pending helper-before-Apply preview, permanent choices,
+No main-app port occurred at that prototype checkpoint. The later main port is
+recorded above. Pending helper-before-Apply preview, permanent choices,
 physical/human observations and normal regressions stay separate. [Actual matrix](benchmarks/wind_review_gpu_matrix_2026-11-12.json).
 
 **Remaining-scope continuation:** a separate2c scoped run passed19 wrappers

@@ -58,6 +58,7 @@ func save_current() -> void:
 
 func save_file(selected: String, mode: String) -> void:
 	if app.exporting or app.source_import.pid > 0: return
+	app.stop_local_wind("Save")
 	if selected.get_extension().to_lower() != "has": selected += ".has"
 	if builtin(selected):app.message("Choose a personal project file; the included practice scene stays unchanged.");return
 	if not app.physics_editor.freeze_all():return
@@ -69,6 +70,7 @@ func save_file(selected: String, mode: String) -> void:
 
 func save_asset(selected: String) -> void:
 	if app.exporting or app.source_import.pid>0:return
+	app.stop_local_wind("Save asset")
 	if selected.get_extension().to_lower()!="has":selected+=".has"
 	if builtin(selected):app.message("Choose a personal asset package file.");return
 	var target:=ProjectSettings.globalize_path(selected).simplify_path()
@@ -99,6 +101,7 @@ func open_file(selected: String, relinks := {},as_copy := false) -> void:
 	start({"action":"unpack", "path":selected, "folder":base.path_join("open_%d_%d" % [OS.get_process_id(), Time.get_ticks_usec()]), "relinks":relinks,"as_copy":as_copy})
 
 func start(request: Dictionary,snapshot_state: Dictionary={}) -> void:
+	app.stop_local_wind("Project operation")
 	app.stop(); app.release_mouse()
 	var base := ProjectSettings.globalize_path(cache_root)
 	DirAccess.make_dir_recursive_absolute(base)

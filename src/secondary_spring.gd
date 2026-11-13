@@ -10,12 +10,13 @@ var chains: Array=[]
 var colliders: Array=[]
 var error:=""
 
-static func create(rig: RefCounted) -> Dictionary:
-	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{})
+static func construct(rig: RefCounted,private_definition: Dictionary={},host_owner: Node=null) -> Dictionary:
+	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{}) if private_definition.is_empty() else private_definition
 	if not definition.get("error","").is_empty():return {"error":definition.error}
 	if definition.get("chains",[]).is_empty():return {"error":"This model has no declared secondary chains."}
 	var runner=new();runner.actor=rig;runner.host=Node3D.new();runner.host.name="SecondaryMotionScratch"
-	rig.root.get_tree().root.add_child(runner.host)
+	var owner: Node=host_owner if is_instance_valid(host_owner) else rig.root.get_tree().root
+	owner.add_child(runner.host)
 	for c in definition.colliders:
 		if not IK.regular(Definition.binding_transform(rig,c.binding).basis):runner.dispose();return {"error":"Secondary colliders need positive uniform scale."}
 		var node: SpringBoneCollision3D
@@ -70,6 +71,12 @@ static func create(rig: RefCounted) -> Dictionary:
 	runner.colliders.clear()
 	if not runner.error.is_empty():runner.dispose();return {"error":runner.error}
 	runner.update_colliders()
+	return {"runner":runner}
+
+static func create(rig: RefCounted) -> Dictionary:
+	var result:=construct(rig)
+	if result.has("error"):return result
+	var runner: RefCounted=result.runner
 	# Spring joint configuration commits through engine deferred calls. Complete
 	# those before tick zero, otherwise the first tight loop has no initialized
 	# Verlet state and behavior depends on when a render happens to run.

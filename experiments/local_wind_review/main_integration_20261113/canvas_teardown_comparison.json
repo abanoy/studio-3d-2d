@@ -1,0 +1,70 @@
+[
+  {
+    "case": "old-wind-review",
+    "base_commit": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+    "working_source_plus_old_wind_only": true,
+    "exit": 0,
+    "result": {
+      "checks": 5,
+      "failures": 0,
+      "metrics": {
+        "fresh_startup_workspace": true,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/wind-canvas-teardown-1794549831156786200/old-wind-review/Studio"
+      },
+      "mode": "lifecycle"
+    },
+    "receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_173f5666f6bb4c1aba0a3c037c6ed86e",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 16048,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.458
+    },
+    "source_unchanged": true,
+    "wind_review_sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+    "shared_test_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+    "observed_script_error": true,
+    "clean_log": false
+  },
+  {
+    "case": "fixed",
+    "base_commit": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+    "working_source_plus_old_wind_only": false,
+    "exit": 0,
+    "result": {
+      "checks": 5,
+      "failures": 0,
+      "metrics": {
+        "fresh_startup_workspace": true,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/wind-canvas-teardown-1794549831156786200/fixed/Studio"
+      },
+      "mode": "lifecycle"
+    },
+    "receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_ad1bb516c7e540ea940f3f1d9712d612",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 19244,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.491
+    },
+    "source_unchanged": true,
+    "wind_review_sha256": "8edc067263b9613e2d64520437f49312027a691a3948cf9bae2cab6f4aa12d1d",
+    "shared_test_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+    "observed_script_error": false,
+    "clean_log": true
+  }
+]

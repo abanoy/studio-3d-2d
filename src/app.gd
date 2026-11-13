@@ -203,6 +203,8 @@ var sequence_editor: Node
 var audio_trim_editor: Node
 var audio_fade_editor: Node
 var physics_editor: Node
+var local_wind_review: Node
+var local_wind_generation:=0
 var source_import: Node
 var source_browser: Node
 var clip_editor: Node
@@ -948,8 +950,15 @@ func refresh_layer_choices() -> void:
 	active_layer=clampi(active_layer,0,layers.size()-1);layer_choice.select(active_layer);refresh_layer()
 	if layer_editor:layer_editor.refresh()
 
+func stop_local_wind(reason: String) -> void:
+	if is_instance_valid(local_wind_review):local_wind_review.stop_preview(reason)
+
+func local_wind_active() -> bool:
+	return is_instance_valid(local_wind_review) and local_wind_review.phase in ["warming","running"]
+
 func set_frame(value: int) -> void:
 	if exporting: return
+	if value!=frame:stop_local_wind("Frame changed")
 	if drawing_selection_editor and value!=frame:drawing_selection_editor.cancel()
 	if fill_editor and value!=frame:fill_editor.cancel()
 	if physics_editor and physics_editor.recording and physics_editor.recording.active and not physics_editor.recording.advancing:
@@ -1025,6 +1034,7 @@ func step(amount: int) -> void:
 
 func toggle_play() -> void:
 	if exporting: return
+	stop_local_wind("Playback")
 	physics_editor.freeze_all();physics_editor.clear_previews()
 	finish_stroke()
 	if playing:
@@ -1549,6 +1559,7 @@ func frame_3d_scene() -> void:
 	else: message(renderer.last_framing.get("error","No renderable mesh to frame."))
 
 func _input(event: InputEvent) -> void:
+	if local_wind_review and local_wind_review.global_event(event):get_viewport().set_input_as_handled();return
 	if keyboard_shortcuts and keyboard_shortcuts.capture(event):get_viewport().set_input_as_handled();return
 	if timeline and timeline.cel_gesture_active():
 		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:timeline.cancel_cel();get_viewport().set_input_as_handled();return
@@ -1704,6 +1715,7 @@ func refresh_scene_name() -> void:
 	else:scene_name.text="Scene: "+source.get_file()+" • %d × %d" % [video.width,video.height]
 
 func restore_world(document: Dictionary) -> String:
+	stop_local_wind("World changed")
 	if sequence_editor:
 		var why: String=sequence_editor.scene_error(document)
 		if not why.is_empty():message(why);return why
@@ -1808,6 +1820,7 @@ func demo_dialog() -> void:
 
 func reset_document(path: String, sample := false) -> bool:
 	if exporting or source_import.pid > 0: return false
+	stop_local_wind("Document changed")
 	var prepared: Dictionary=renderer.prepare_legacy(path) if sample else renderer.prepare_world(WorldDocument.empty(),48)
 	if prepared.has("error"):message(prepared.error);return false
 	if tutorials:tutorials.document_changing()
@@ -1861,6 +1874,7 @@ func load_demo_room() -> bool:
 
 func save() -> void:
 	if exporting: return
+	stop_local_wind("Save")
 	if not physics_editor.freeze_all():return
 	finish_stroke()
 	pose_editor.finish_drag()
@@ -2040,6 +2054,7 @@ func selected_output_size() -> String:
 
 func export_frames(parent: String,images_only: bool,drawings_only: bool) -> String:
 	if exporting: return "Export already running."
+	stop_local_wind("Export")
 	var delivery:=selected_output_size()
 	var size_error:=OutputSize.error(delivery)
 	if not size_error.is_empty():message(size_error);return size_error
@@ -2368,17 +2383,22 @@ func poll_recovery_checkpoint() -> void:
 	finish_recovery_preview.call_deferred(result.folder,result.digest,int(request.frame),int(request.revision),request.view)
 
 func finish_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
+	if local_wind_active():return
 	if not renderer.begin_native_readback():return
-	recovery_native_requests.append({"folder":folder,"digest":digest,"at":at,"revision":revision,"view":view})
+	recovery_native_requests.append({"folder":folder,"digest":digest,"at":at,"revision":revision,"view":view,"wind_generation":local_wind_generation})
 	if not renderer.native_frame_ready.is_connected(complete_recovery_previews):renderer.native_frame_ready.connect(complete_recovery_previews,CONNECT_ONE_SHOT)
 
 func complete_recovery_previews() -> void:
 	var requests: Array=recovery_native_requests;recovery_native_requests=[]
-	for request in requests:complete_recovery_preview(request.folder,request.digest,request.at,request.revision,request.view)
+	for request in requests:complete_recovery_preview(request.folder,request.digest,request.at,request.revision,request.view,int(request.wind_generation))
 
-func complete_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
+func complete_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary,wind_generation:=-1) -> void:
 	var current: bool=is_inside_tree() and renderer.native_view_available() and folder==recovery_root.path_join(recovery_session) and recovery_revision==revision and frame==at and renderer.view_state()==view
 	current=current and not (playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.is_running() or has_dialog(self))
+	current=current and not local_wind_active()
+	# Queued production requests always carry their start epoch. The five-argument
+	# direct endpoint stays compatible with existing focused callers/tests.
+	current=current and (wind_generation<0 or wind_generation==local_wind_generation)
 	current=current and not (recovery_writer.busy() or recovery_preview.busy())
 	# Release even a detached/stale request, without reading obsolete GPU pixels.
 	var image: Image=renderer.finish_native_readback(current)

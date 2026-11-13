@@ -647,6 +647,7 @@ func update_gizmo() -> void:
 	# Deselect, mode changes and behind-camera targets return before the normal
 	# redraw below. Clear their cached visible geometry in the same frame.
 	if had_helpers:app.canvas.queue_redraw()
+	if app.local_wind_review and app.local_wind_review.phase in ["warming","running"]:return
 	if contacts.viewport.active and contacts.viewport.draw():return
 	if app.mode.selected != 2 or not active_rig(): return
 	if app.physics_editor and app.physics_editor.active(active_rig().data.id):return

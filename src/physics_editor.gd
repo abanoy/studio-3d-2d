@@ -9,6 +9,7 @@ const Secondary=preload("res://src/secondary_live.gd")
 const Airflow=preload("res://src/airflow.gd")
 const FanEditor=preload("res://src/fan_editor.gd")
 const HelperEditor=preload("res://src/secondary_helper_editor.gd")
+const WindReview=preload("res://src/wind_review.gd")
 const ContactRanges=preload("res://src/contact_ranges.gd")
 var recording
 var app
@@ -38,6 +39,7 @@ func setup(parent: Node) -> void:
 	recording=Recording.new();recording.editor=self;add_child(recording);recording.setup(parent)
 	fan_editor=FanEditor.new();fan_editor.app=app;fan_editor.setup(parent)
 	helper_editor=HelperEditor.new();helper_editor.app=app;add_child(helper_editor);helper_editor.setup(parent)
+	app.local_wind_review=WindReview.new();app.local_wind_review.app=app;add_child(app.local_wind_review);app.local_wind_review.setup(parent)
 	app.renderer.assets_changed.connect(clear)
 
 func active(id: String) -> bool:return simulations.has(id)

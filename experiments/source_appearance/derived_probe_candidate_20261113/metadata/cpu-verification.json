@@ -1,0 +1,27 @@
+{
+  "scope": "Synthetic CPU only; no Godot, Blender, app, graphics or native readers launched",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113\\source",
+    "-p",
+    "test_probe_cpu.py",
+    "-v"
+  ],
+  "exit": 0,
+  "started_ns": 1794549763596904400,
+  "finished_ns": 1794549763902425800,
+  "code_sha256": {
+    "app_probe.gd": "2e7fc498e333dc85a4b69b8943358541e6196a19e1581b6d827f52837af5fa08",
+    "glb_reference.py": "b951b6e760933fbd7f745c50422ad4197467873ea79b45fc2daebaa7e6065ae3",
+    "probe_driver.py": "505d85ee4be89f15c66f34f74c4026a6d5672fac79bee03104ba8fd5d731f420",
+    "raw_probe.gd": "209b70197ee7769238add7d9ac47453da3a66dd6d5e28d0f6b47e4f3cb34add6",
+    "test_probe_cpu.py": "801260f4fbebd4f789ebe2ba92f2f7449e5dc974d4bd8bf34d55b8c80783de26"
+  },
+  "code_unchanged": true,
+  "passed": true
+}

@@ -1,0 +1,1271 @@
+{
+  "format": "has_local_wind_main_integration_1",
+  "date": "2026-11-13",
+  "base_commit": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+  "source_mode": "working main plus explicit reviewed phase1 overlay and canvas cleanup fix",
+  "main_port": true,
+  "installation_or_old_owner_review_modified": false,
+  "full_aggregate": false,
+  "source_files": 948,
+  "matrix": {
+    "format": "has_wind_review_main_1",
+    "mode": "graphical",
+    "passed": true,
+    "error": "",
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700",
+    "project_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+    "revision_before": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+    "revision_after": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+    "reviewed_port_bindings": {
+      "src/app.gd": {
+        "sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+        "reviewed_sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+        "reconstruction": "exact bytes"
+      },
+      "src/has_project.gd": {
+        "sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+        "reviewed_sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+        "reconstruction": "exact bytes"
+      },
+      "src/physics_editor.gd": {
+        "sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+        "reviewed_sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+        "reconstruction": "exact bytes"
+      },
+      "src/physics_recording.gd": {
+        "sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+        "reviewed_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+        "reconstruction": "exact bytes"
+      },
+      "src/pose_editor.gd": {
+        "sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+        "reviewed_sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+        "reconstruction": "exact bytes"
+      },
+      "src/renderer.gd": {
+        "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+        "reviewed_sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+        "reconstruction": "exact bytes"
+      },
+      "src/secondary_spring.gd": {
+        "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+        "reviewed_sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+        "reconstruction": "exact bytes"
+      },
+      "src/wind_review.gd": {
+        "sha256": "8edc067263b9613e2d64520437f49312027a691a3948cf9bae2cab6f4aa12d1d",
+        "reviewed_sha256": "8edc067263b9613e2d64520437f49312027a691a3948cf9bae2cab6f4aa12d1d",
+        "reconstruction": "exact bytes"
+      },
+      "src/wind_review_groups.gd": {
+        "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+        "reviewed_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+        "reconstruction": "exact bytes"
+      },
+      "tests/wind_review_unit.gd": {
+        "sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+        "reviewed_sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+        "reconstruction": "exact bytes"
+      },
+      "tests/wind_review_hooks_unit.gd": {
+        "sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+        "reviewed_sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+        "reconstruction": "exact bytes"
+      },
+      "tests/wind_review_review_unit.gd": {
+        "sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+        "reviewed_sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+        "reconstruction": "exact bytes"
+      },
+      "tests/wind_review_gpu_common.gd": {
+        "sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+        "reviewed_sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+        "reconstruction": "exact bytes"
+      },
+      "tests/wind_review_gpu_motion.gd": {
+        "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+        "reviewed_sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+        "reconstruction": "exact bytes"
+      },
+      "tests/wind_review_gpu_lifecycle.gd": {
+        "sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+        "reviewed_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+        "reconstruction": "exact bytes"
+      },
+      "tests/wind_review_gpu_primary.gd": {
+        "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+        "reviewed_sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+        "reconstruction": "exact bytes"
+      }
+    },
+    "headless": [
+      {
+        "script": "tests/wind_review_unit.gd",
+        "exit": 0,
+        "result": {
+          "checks": 51,
+          "failures": 0
+        },
+        "error_markers": [],
+        "passed": true
+      },
+      {
+        "script": "tests/wind_review_hooks_unit.gd",
+        "exit": 0,
+        "result": {
+          "checks": 14,
+          "failures": 0
+        },
+        "error_markers": [],
+        "passed": true
+      },
+      {
+        "script": "tests/wind_review_review_unit.gd",
+        "exit": 0,
+        "result": {
+          "checks": 29,
+          "failures": 0
+        },
+        "error_markers": [],
+        "passed": true
+      }
+    ],
+    "parse": [
+      {
+        "script": "src/app.gd",
+        "exit": 0,
+        "error_markers": [],
+        "gpu": false,
+        "passed": true
+      },
+      {
+        "script": "tests/wind_review_gpu_common.gd",
+        "exit": 0,
+        "error_markers": [],
+        "gpu": false,
+        "passed": true
+      },
+      {
+        "script": "tests/wind_review_gpu_motion.gd",
+        "exit": 0,
+        "error_markers": [],
+        "gpu": false,
+        "passed": true
+      },
+      {
+        "script": "tests/wind_review_gpu_lifecycle.gd",
+        "exit": 0,
+        "error_markers": [],
+        "gpu": false,
+        "passed": true
+      },
+      {
+        "script": "tests/wind_review_gpu_primary.gd",
+        "exit": 0,
+        "error_markers": [],
+        "gpu": false,
+        "passed": true
+      }
+    ],
+    "results": [
+      {
+        "mode": "procedural",
+        "script": "tests/wind_review_gpu_motion.gd",
+        "exit": 0,
+        "checks": 62,
+        "failures": 0,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "correct_main_root": true,
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\procedural\\private-receipt.json",
+        "clean_isolation": true,
+        "error_markers": [],
+        "passed": true
+      },
+      {
+        "mode": "vrm0",
+        "script": "tests/wind_review_gpu_motion.gd",
+        "exit": 0,
+        "checks": 47,
+        "failures": 0,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "correct_main_root": true,
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\vrm0\\private-receipt.json",
+        "clean_isolation": true,
+        "error_markers": [],
+        "passed": true
+      },
+      {
+        "mode": "vrm1",
+        "script": "tests/wind_review_gpu_motion.gd",
+        "exit": 0,
+        "checks": 47,
+        "failures": 0,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "correct_main_root": true,
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\vrm1\\private-receipt.json",
+        "clean_isolation": true,
+        "error_markers": [],
+        "passed": true
+      },
+      {
+        "mode": "backhair",
+        "script": "tests/wind_review_gpu_motion.gd",
+        "exit": 0,
+        "checks": 49,
+        "failures": 0,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "correct_main_root": true,
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\backhair\\private-receipt.json",
+        "clean_isolation": true,
+        "error_markers": [],
+        "passed": true
+      },
+      {
+        "mode": "lifecycle",
+        "script": "tests/wind_review_gpu_lifecycle.gd",
+        "exit": 0,
+        "checks": 549,
+        "failures": 0,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "correct_main_root": true,
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\lifecycle\\private-receipt.json",
+        "clean_isolation": true,
+        "error_markers": [],
+        "passed": true
+      },
+      {
+        "mode": "primary",
+        "script": "tests/wind_review_gpu_primary.gd",
+        "exit": 0,
+        "checks": 91,
+        "failures": 0,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "correct_main_root": true,
+        "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\primary\\private-receipt.json",
+        "clean_isolation": true,
+        "error_markers": [],
+        "passed": true
+      }
+    ],
+    "all_functional_sources_hash_size_mtime_unchanged": true,
+    "native_inputs_checked": true,
+    "native_prepared_inputs_unchanged": true,
+    "gpu_requested": true,
+    "graphical_process_attempted": true,
+    "gpu_used": true,
+    "private_art_uploaded": false,
+    "historical_gpu_checks": 830,
+    "expected_main_gpu_checks": 845,
+    "main_root_startup_guards": 12,
+    "canvas_first_teardown_checks": 3,
+    "scope": "Phase1: temporary preview of already declared groups; original830 checks plus12 explicit main-root/startup guards and3 canvas-first closure checks. PNG export, in-memory recovery sink, original-only start/cancel recording; no movie or persisted recovery-worker claim. Pending helper-before-Apply, permanent exclusions, native jiggle/assembly, artist/device/installation acceptance remain open."
+  },
+  "matrix_verification_sha256": "b27b8ba110757b773cfea3b0e1982864ae35cfce22c8163844c423fcfcf7124e",
+  "cases": [
+    {
+      "mode": "procedural",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 62,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\procedural\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true,
+      "result_sha256": "5fd23232fe25f1669d11ab2d2d5cb65adf08fad2be8c8aea2c72c0381adeb399",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e5142fd55bfb45bcbf0203d38901070a",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 7036,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.924
+      },
+      "receipt_sha256": "f3f38ae2a3b699ceda382f64d0f987d02ed32ba7d7eb7ad334b5b8c1177855ad",
+      "metrics": {
+        "changed_native_bytes": 214947,
+        "fresh_startup_workspace": true,
+        "groups": [
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          }
+        ],
+        "independent_exclusion_available": true,
+        "opposite": {
+          "direction": 1,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 2,
+          "late_force_variation": 0.2249833047389984,
+          "late_range_degrees": 7.213900659847605,
+          "maximum_step_degrees": 0.5112900853814362,
+          "mean_camera_x_force": 0.35989663218458495,
+          "reversals": 10,
+          "selected_rotators": 3,
+          "speed": 12.0,
+          "ticks": 1200
+        },
+        "peer_adoption_error": "",
+        "peer_parent_install_error": "",
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "source_adoption_error": "",
+        "strong": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 2,
+          "late_force_variation": 0.2245045006275177,
+          "late_range_degrees": 6.056150725245063,
+          "maximum_step_degrees": 0.609093378375847,
+          "mean_camera_x_force": -0.35997745729982855,
+          "reversals": 10,
+          "selected_rotators": 3,
+          "speed": 12.0,
+          "ticks": 1200
+        },
+        "weak": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 2,
+          "late_force_variation": 0.02247343212366104,
+          "late_range_degrees": 0.5733490774584662,
+          "maximum_step_degrees": 0.14265252956010954,
+          "mean_camera_x_force": -0.08999221770713726,
+          "reversals": 8,
+          "selected_rotators": 3,
+          "speed": 3.0,
+          "ticks": 1200
+        },
+        "wind_control_angle": 0.3137471079826355,
+        "zero": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 2,
+          "late_force_variation": 0.0,
+          "late_range_degrees": 0.0,
+          "maximum_step_degrees": 0.0,
+          "mean_camera_x_force": 0.0,
+          "reversals": 0,
+          "selected_rotators": 3,
+          "speed": 0.0,
+          "ticks": 1200
+        }
+      }
+    },
+    {
+      "mode": "vrm0",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 47,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\vrm0\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true,
+      "result_sha256": "b867e4e7e49475216ed9240e2e29f755f961db884b82468ff5291d2b7865f69b",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0b92d936f4f04f189b9051851202100b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 16048,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.835
+      },
+      "receipt_sha256": "947d90b6af78413d16bc484369793f6766c1d8ee5f18dccc3d30bb6e4a7033b0",
+      "metrics": {
+        "changed_native_bytes": 18640,
+        "fresh_startup_workspace": true,
+        "groups": [
+          {
+            "chains": 4,
+            "linked": true,
+            "rotators": 8
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          }
+        ],
+        "independent_exclusion_available": true,
+        "opposite": {
+          "direction": 1,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.2042476385831833,
+          "late_range_degrees": 17.79475331633675,
+          "maximum_step_degrees": 1.5008956502962207,
+          "mean_camera_x_force": 0.36179769091929,
+          "reversals": 21,
+          "selected_rotators": 8,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "source_adoption_error": "",
+        "strong": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.20855137705802917,
+          "late_range_degrees": 18.588725241310296,
+          "maximum_step_degrees": 1.501417092550669,
+          "mean_camera_x_force": -0.36198179541776576,
+          "reversals": 21,
+          "selected_rotators": 8,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "weak": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.021273870021104813,
+          "late_range_degrees": 2.1484917121579286,
+          "maximum_step_degrees": 1.1909117836834233,
+          "mean_camera_x_force": -0.08996883362221221,
+          "reversals": 18,
+          "selected_rotators": 8,
+          "speed": 3.0,
+          "ticks": 480
+        },
+        "wind_control_angle": 0.7665599584579468,
+        "zero": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.0,
+          "late_range_degrees": 0.055952909680744456,
+          "maximum_step_degrees": 0.5774299554049902,
+          "mean_camera_x_force": 0.0,
+          "reversals": 10,
+          "selected_rotators": 8,
+          "speed": 0.0,
+          "ticks": 480
+        }
+      }
+    },
+    {
+      "mode": "vrm1",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 47,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\vrm1\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true,
+      "result_sha256": "7886de74035efe65d41abd92f62176c52aa6f305efbd888fb1a2cfea21eaa343",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f112c9733d6140d8b1d111674955a2e2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 14420,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.387
+      },
+      "receipt_sha256": "b57919db9519f03e363a210a2a38912889bb1f3a0c2cb9c40146faafbf2d1ee2",
+      "metrics": {
+        "changed_native_bytes": 18639,
+        "fresh_startup_workspace": true,
+        "groups": [
+          {
+            "chains": 4,
+            "linked": true,
+            "rotators": 8
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          }
+        ],
+        "independent_exclusion_available": true,
+        "opposite": {
+          "direction": 1,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.20424768328666687,
+          "late_range_degrees": 18.46279704358277,
+          "maximum_step_degrees": 1.501417092550669,
+          "mean_camera_x_force": 0.36179769234731796,
+          "reversals": 21,
+          "selected_rotators": 8,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "source_adoption_error": "",
+        "strong": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.20855151116847992,
+          "late_range_degrees": 17.88522600208274,
+          "maximum_step_degrees": 1.501417092550669,
+          "mean_camera_x_force": -0.361981798397998,
+          "reversals": 21,
+          "selected_rotators": 8,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "weak": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.02127387560904026,
+          "late_range_degrees": 2.1637416035838632,
+          "maximum_step_degrees": 1.096465315222662,
+          "mean_camera_x_force": -0.08996883265984555,
+          "reversals": 18,
+          "selected_rotators": 8,
+          "speed": 3.0,
+          "ticks": 480
+        },
+        "wind_control_angle": 0.7687285542488098,
+        "zero": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.0,
+          "late_range_degrees": 0.06852804166478502,
+          "maximum_step_degrees": 0.5774299554049902,
+          "mean_camera_x_force": 0.0,
+          "reversals": 10,
+          "selected_rotators": 8,
+          "speed": 0.0,
+          "ticks": 480
+        }
+      }
+    },
+    {
+      "mode": "backhair",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 49,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\backhair\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true,
+      "result_sha256": "308928667af9e26ac4c8b9b501066ff746eb7ccdb4180f36ba258e2cde96f14c",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_961d037431fb4074ac5b4376103486e4",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25984,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.416
+      },
+      "receipt_sha256": "6894f964a878864077c92ce80be87cefafbf9996cdba635da7758bdd22cf3b53",
+      "metrics": {
+        "changed_native_bytes": 13265,
+        "fresh_startup_workspace": true,
+        "groups": [
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          }
+        ],
+        "independent_exclusion_available": true,
+        "opposite": {
+          "direction": 1,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 3,
+          "late_force_variation": 0.27582359313964844,
+          "late_range_degrees": 12.998588504738272,
+          "maximum_step_degrees": 1.1288257910148305,
+          "mean_camera_x_force": 0.3563187071122229,
+          "reversals": 9,
+          "selected_rotators": 3,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "source_adoption_error": "",
+        "strong": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 3,
+          "late_force_variation": 0.2775365710258484,
+          "late_range_degrees": 3.880501967503752,
+          "maximum_step_degrees": 0.32864938623226714,
+          "mean_camera_x_force": -0.3562274103363355,
+          "reversals": 14,
+          "selected_rotators": 3,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "weak": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 3,
+          "late_force_variation": 0.017506562173366547,
+          "late_range_degrees": 0.41116911710256954,
+          "maximum_step_degrees": 0.055952909680744456,
+          "mean_camera_x_force": -0.09013491466951867,
+          "reversals": 10,
+          "selected_rotators": 3,
+          "speed": 3.0,
+          "ticks": 480
+        },
+        "wind_control_angle": 0.1118384301662445,
+        "zero": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 3,
+          "late_force_variation": 0.0,
+          "late_range_degrees": 0.0,
+          "maximum_step_degrees": 0.0,
+          "mean_camera_x_force": 0.0,
+          "reversals": 0,
+          "selected_rotators": 3,
+          "speed": 0.0,
+          "ticks": 480
+        }
+      }
+    },
+    {
+      "mode": "lifecycle",
+      "script": "tests/wind_review_gpu_lifecycle.gd",
+      "exit": 0,
+      "checks": 549,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\lifecycle\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true,
+      "result_sha256": "302e13e4339d5fab45025b71bd0e93007b73dd94d153b022f613df83daf107ad",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_57edfcd2b8c1437faec424313d920022",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20632,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 55.843
+      },
+      "receipt_sha256": "39841860c5a8bc37b73ac9695e987a21347f7f1088f70eca8bb17e475d7a627e",
+      "metrics": {
+        "fresh_startup_workspace": true,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "running-export-frames": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/wind-review/graphical-1794549914864750700/lifecycle/images_1794549990_25407753_0",
+        "source_adoption_error": "",
+        "warming-export-frames": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/wind-review/graphical-1794549914864750700/lifecycle/images_1794549972_7683897_0"
+      }
+    },
+    {
+      "mode": "primary",
+      "script": "tests/wind_review_gpu_primary.gd",
+      "exit": 0,
+      "checks": 91,
+      "failures": 0,
+      "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+      "correct_main_root": true,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review\\graphical-1794549914864750700\\primary\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true,
+      "result_sha256": "e9763cd1e37f21196cfd577a63629b0cbbce59e005a65b4ce05dff06c172fb04",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_900664d8f22c44d2bcb733b3bc1356ed",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 26236,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.787
+      },
+      "receipt_sha256": "70c18fe0cc61374a5b5b88b517ecbc6033e0ecd0de6c4e8f453205d0ff768048",
+      "metrics": {
+        "fresh_startup_workspace": true,
+        "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111",
+        "running": {
+          "candidate_body_alignment": 1.1175870895385742e-08,
+          "native_body_count": 20,
+          "record_scope": "local",
+          "record_target_count": 1
+        },
+        "running_peer_adoption_error": "",
+        "source_adoption_error": "",
+        "warming": {
+          "candidate_body_alignment": 1.1175870895385742e-08,
+          "native_body_count": 20,
+          "record_scope": "world",
+          "record_target_count": 2
+        },
+        "warming_peer_adoption_error": ""
+      }
+    }
+  ],
+  "headless_native_fixture_units": {
+    "run": 5,
+    "passed": 5,
+    "log_sha256": "62a2fac2498b54f57fa87d6e5b4c84da8199af06e73bd7e7201d263046d8ed8a"
+  },
+  "integration_regressions": {
+    "format": "has_wind_main_integration_regressions_1",
+    "status": "passed_scopes_only",
+    "source_revision": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+    "source_files": 948,
+    "pid": 4100,
+    "started_ns": 1794550114704115400,
+    "results": [
+      {
+        "script": "tests/verify_native_readback_lifecycle.py",
+        "extra": [],
+        "timeout": 350,
+        "case": "output\\wind-main-regressions-20261113T010834458\\01-native_readback_lifecycle",
+        "exit": 0,
+        "elapsed_seconds": 25.5620149,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_world_selection_teardown.py",
+        "extra": [],
+        "timeout": 180,
+        "case": "output\\wind-main-regressions-20261113T010834458\\02-world_selection_teardown",
+        "exit": 0,
+        "elapsed_seconds": 20.9969868,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_secondary_helpers.py",
+        "extra": [],
+        "timeout": 600,
+        "case": "output\\wind-main-regressions-20261113T010834458\\03-secondary_helpers",
+        "exit": 0,
+        "elapsed_seconds": 67.3366132,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_secondary_picking.py",
+        "extra": [],
+        "timeout": 240,
+        "case": "output\\wind-main-regressions-20261113T010834458\\04-secondary_picking",
+        "exit": 0,
+        "elapsed_seconds": 10.7214767,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_secondary_batch.py",
+        "extra": [],
+        "timeout": 350,
+        "case": "output\\wind-main-regressions-20261113T010834458\\05-secondary_batch",
+        "exit": 0,
+        "elapsed_seconds": 22.4055393,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_scene_view.py",
+        "extra": [],
+        "timeout": 300,
+        "case": "output\\wind-main-regressions-20261113T010834458\\06-scene_view",
+        "exit": 0,
+        "elapsed_seconds": 12.8214933,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_contact_physics.py",
+        "extra": [],
+        "timeout": 500,
+        "case": "output\\wind-main-regressions-20261113T010834458\\07-contact_physics",
+        "exit": 0,
+        "elapsed_seconds": 19.7669911,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_contact_physics.py",
+        "extra": [
+          "--components"
+        ],
+        "timeout": 500,
+        "case": "output\\wind-main-regressions-20261113T010834458\\08-contact_physics-components",
+        "exit": 0,
+        "elapsed_seconds": 23.1919387,
+        "passed": true
+      }
+    ],
+    "all_requested_passed": true,
+    "source_unchanged": true,
+    "finished_ns": 1794550317743259400
+  },
+  "integration_source_before_sha256": "6b44f7904a97db8b7802e3aa91600344262391a98cd7ec458d416bcd9412bef7",
+  "integration_source_after_sha256": "6b44f7904a97db8b7802e3aa91600344262391a98cd7ec458d416bcd9412bef7",
+  "failed_initial_integration": {
+    "format": "has_wind_main_integration_regressions_1",
+    "status": "failed",
+    "source_revision": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+    "source_files": 948,
+    "pid": 10768,
+    "started_ns": 1794549449531158300,
+    "results": [
+      {
+        "script": "tests/verify_native_readback_lifecycle.py",
+        "extra": [],
+        "timeout": 350,
+        "case": "output\\wind-main-regressions-20261113T005729292\\01-native_readback_lifecycle",
+        "exit": 0,
+        "elapsed_seconds": 28.6791933,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_world_selection_teardown.py",
+        "extra": [],
+        "timeout": 180,
+        "case": "output\\wind-main-regressions-20261113T005729292\\02-world_selection_teardown",
+        "exit": 0,
+        "elapsed_seconds": 20.4695865,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_secondary_helpers.py",
+        "extra": [],
+        "timeout": 600,
+        "case": "output\\wind-main-regressions-20261113T005729292\\03-secondary_helpers",
+        "exit": 0,
+        "elapsed_seconds": 68.5897213,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_secondary_picking.py",
+        "extra": [],
+        "timeout": 240,
+        "case": "output\\wind-main-regressions-20261113T005729292\\04-secondary_picking",
+        "exit": 0,
+        "elapsed_seconds": 13.4400397,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_secondary_batch.py",
+        "extra": [],
+        "timeout": 350,
+        "case": "output\\wind-main-regressions-20261113T005729292\\05-secondary_batch",
+        "exit": 0,
+        "elapsed_seconds": 23.1790223,
+        "passed": true
+      },
+      {
+        "script": "tests/verify_scene_view.py",
+        "extra": [],
+        "timeout": 300,
+        "case": "output\\wind-main-regressions-20261113T005729292\\06-scene_view",
+        "exit": 1,
+        "elapsed_seconds": 12.7823505,
+        "passed": false
+      }
+    ],
+    "all_requested_passed": false,
+    "source_unchanged": true,
+    "error": "AssertionError: scene_view",
+    "finished_ns": 1794549616830600000
+  },
+  "first_842_matrix": {
+    "passed": true,
+    "verification_sha256": "81536b6c50bb003330b91125f33cc3c3fa8690501d44cb5aaabfd7dfdd12f353",
+    "not_complete_integration_acceptance": "SceneView later printed102/0 then logged pose_lines access after explicit app.canvas.free; integration run rejected it."
+  },
+  "demonstrated_fix": "Wind stop_preview redraw now requires a valid canvas. No gizmo redraw occurs after explicit canvas disposal. Original830 predicates preserved;12main root/startup guards plus3canvas-first lifetime checks give845.",
+  "same_shared_canvas_comparison": [
+    {
+      "case": "old-wind-review",
+      "base_commit": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+      "working_source_plus_old_wind_only": true,
+      "exit": 0,
+      "result": {
+        "checks": 5,
+        "failures": 0,
+        "metrics": {
+          "fresh_startup_workspace": true,
+          "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/wind-canvas-teardown-1794549831156786200/old-wind-review/Studio"
+        },
+        "mode": "lifecycle"
+      },
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_173f5666f6bb4c1aba0a3c037c6ed86e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 16048,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.458
+      },
+      "source_unchanged": true,
+      "wind_review_sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+      "shared_test_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "observed_script_error": true,
+      "clean_log": false
+    },
+    {
+      "case": "fixed",
+      "base_commit": "2a54f252d128e4c800ae608ae798e0041a996b6b",
+      "working_source_plus_old_wind_only": false,
+      "exit": 0,
+      "result": {
+        "checks": 5,
+        "failures": 0,
+        "metrics": {
+          "fresh_startup_workspace": true,
+          "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/wind-canvas-teardown-1794549831156786200/fixed/Studio"
+        },
+        "mode": "lifecycle"
+      },
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_ad1bb516c7e540ea940f3f1d9712d612",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 19244,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.491
+      },
+      "source_unchanged": true,
+      "wind_review_sha256": "8edc067263b9613e2d64520437f49312027a691a3948cf9bae2cab6f4aa12d1d",
+      "shared_test_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+      "observed_script_error": false,
+      "clean_log": true
+    }
+  ],
+  "canvas_comparison_sha256": "5a56540ebe350f6aabb6493fe420bd5d0bdd1af9c55ee962a3a75259e7d1279e",
+  "native_fixture_staging": {
+    "format": "has_wind_main_fixture_staging_1",
+    "source_observation_sha256": "f2c0d9d72ef38cd0763eee7b64be2e8034ccc16b54a3ef949d73974f92e140fb",
+    "fixture_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output",
+    "manifest": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-inputs.json",
+    "manifest_identity": {
+      "sha256": "293c6827f3b2312ee7a56062290ec0281990a8fd0609c238a1419236a4ad5fb8",
+      "bytes": 686,
+      "mtime_ns": 1794548724185260400
+    },
+    "target": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200",
+    "files": [
+      {
+        "role": "vrm0",
+        "kind": "source",
+        "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448093-218-23395070\\scene.glb",
+        "destination": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200\\wind-native\\vrm0\\scene.glb",
+        "identity": {
+          "sha256": "3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56",
+          "bytes": 18630996,
+          "mtime_ns": 1794448093357726200
+        },
+        "source_unchanged": true
+      },
+      {
+        "role": "vrm0",
+        "kind": "parameters",
+        "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448093-218-23395070\\parameters.json",
+        "destination": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200\\wind-native\\vrm0\\parameters.json",
+        "identity": {
+          "sha256": "0f8f746ca68a821acaf9e502b6895a2f2798d8d1d2bd62569d78deea652fc0ef",
+          "bytes": 10130,
+          "mtime_ns": 1794448093358725400
+        },
+        "source_unchanged": true
+      },
+      {
+        "role": "vrm1",
+        "kind": "source",
+        "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448091-467-21644406\\scene.glb",
+        "destination": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200\\wind-native\\vrm1\\scene.glb",
+        "identity": {
+          "sha256": "a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062",
+          "bytes": 18633340,
+          "mtime_ns": 1794448091627224100
+        },
+        "source_unchanged": true
+      },
+      {
+        "role": "vrm1",
+        "kind": "parameters",
+        "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448091-467-21644406\\parameters.json",
+        "destination": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200\\wind-native\\vrm1\\parameters.json",
+        "identity": {
+          "sha256": "21f11bfb2c606fd13fa21e2d4cdbe130555918b52f92ff6030598b10ce680372",
+          "bytes": 10855,
+          "mtime_ns": 1794448091628224200
+        },
+        "source_unchanged": true
+      },
+      {
+        "role": "backhair",
+        "kind": "source",
+        "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-composition\\1794516017604605200\\input\\scene.glb",
+        "destination": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200\\wind-native\\ribbon\\scene.glb",
+        "identity": {
+          "sha256": "4d62236d5c34468ea1f91c43089d6ce3c193be27b8460d53ea8d91d2238ab7b5",
+          "bytes": 7273728,
+          "mtime_ns": 1794448224429503700
+        },
+        "source_unchanged": true
+      },
+      {
+        "role": "backhair",
+        "kind": "parameters",
+        "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-composition\\1794516017604605200\\input\\parameters.json",
+        "destination": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-main-fixtures-1794548724013390200\\wind-native\\ribbon\\parameters.json",
+        "identity": {
+          "sha256": "f4e1850d9f4fa9359a72d43f3c945aaf61a1bd726538b025da31c4fa5f8071ba",
+          "bytes": 28797,
+          "mtime_ns": 1794448157924587200
+        },
+        "source_unchanged": true
+      }
+    ],
+    "originals_and_existing_bundles_unchanged": true,
+    "private_assets_in_git": false,
+    "actual_main_graphics_or_feature_acceptance": false
+  },
+  "source_pin_manifest": {
+    "format": "has_wind_review_main_port_files_1",
+    "source_packet": "experiments/local_wind_review/production_port_candidate_20261112",
+    "files": [
+      {
+        "path": "src/app.gd",
+        "sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+        "lf_sha256": "6a232f502f967068006cdd2ca26be2f70cd94f7419428354ab9f8e5cc1d787a8",
+        "category": "runtime"
+      },
+      {
+        "path": "src/has_project.gd",
+        "sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+        "lf_sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+        "category": "runtime"
+      },
+      {
+        "path": "src/physics_editor.gd",
+        "sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+        "lf_sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+        "category": "runtime"
+      },
+      {
+        "path": "src/physics_recording.gd",
+        "sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+        "lf_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+        "category": "runtime"
+      },
+      {
+        "path": "src/pose_editor.gd",
+        "sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+        "lf_sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+        "category": "runtime"
+      },
+      {
+        "path": "src/renderer.gd",
+        "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+        "lf_sha256": "1c29ed28eff20cece320fd9e6c3e1491770c5604831e11ce4694ede34267677a",
+        "category": "runtime"
+      },
+      {
+        "path": "src/secondary_spring.gd",
+        "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+        "lf_sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+        "category": "runtime"
+      },
+      {
+        "path": "src/wind_review.gd",
+        "sha256": "8edc067263b9613e2d64520437f49312027a691a3948cf9bae2cab6f4aa12d1d",
+        "lf_sha256": "8edc067263b9613e2d64520437f49312027a691a3948cf9bae2cab6f4aa12d1d",
+        "category": "runtime"
+      },
+      {
+        "path": "src/wind_review_groups.gd",
+        "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+        "lf_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+        "category": "runtime"
+      },
+      {
+        "path": "tests/wind_review_unit.gd",
+        "sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+        "lf_sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+        "category": "headless_unit"
+      },
+      {
+        "path": "tests/wind_review_hooks_unit.gd",
+        "sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+        "lf_sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+        "category": "headless_unit"
+      },
+      {
+        "path": "tests/wind_review_review_unit.gd",
+        "sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+        "lf_sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+        "category": "headless_unit"
+      },
+      {
+        "path": "tests/wind_review_gpu_common.gd",
+        "sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+        "lf_sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+        "category": "gpu_test"
+      },
+      {
+        "path": "tests/wind_review_gpu_motion.gd",
+        "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+        "lf_sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+        "category": "gpu_test"
+      },
+      {
+        "path": "tests/wind_review_gpu_lifecycle.gd",
+        "sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+        "lf_sha256": "bfc7fec18f0ac79de78e28831db243472d352e0663ef846454ed3b13a5f707b6",
+        "category": "gpu_test"
+      },
+      {
+        "path": "tests/wind_review_gpu_primary.gd",
+        "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+        "lf_sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+        "category": "gpu_test"
+      }
+    ],
+    "main_integration_fix": "Canvas-first teardown: validate the canvas before pose redraw; preserve original830 predicates and add3dormant canvas-first closure assertions."
+  },
+  "source_sha256": {
+    "tests/verify.py": "4badf38f4fd2149587822cbf6a3865241a7f2dd2dc5a326d30498f038bc1c4d1",
+    "tests/verify_wind_review.py": "d57772808049d8d0076c4844f391dab79947118674b99a8cdf3f71c27cf81b48",
+    "tests/native_fixture_plans.py": "6ccc26b5ac880fc03edde96e4dcff3bf1c4590ef6576033dd8e32feca71e0f74",
+    "src/world_selection.gd": "7c36ec46c6ba7a9e52eada2d08f5356c23e6312c47a05330cdb37ecbde3161c3"
+  },
+  "private_visual_inspection": {
+    "backhair_main_sha256": "7c918a08a958941cd7407470ece980ca8530532949d140b378c66858be4a4f0d",
+    "backhair_window_sha256": "39d4e33c92af495ace02c3bb14df330dcb9c9d930236f0ce02accc9fdb01a734",
+    "observation": "Controls and complete window are readable; model remains in the main Scene Setup view. Generated group names remain generic; pending helper-draft naming/refinement is separate. Images retain private art locally and are not uploaded."
+  },
+  "scope": "Temporary preview of already declared groups, independent candidate/solver, source/data/input/physics ownership and final-output exclusion. Two48frame1080p PNG exports; no new wind movie or persisted recovery-worker claim. Pending helper-before-Apply, permanent exclusions, native Source jiggle/assembly, wider SFM and human/device/clean-install acceptance remain separate.",
+  "next": "Publish source and compact evidence, verify remote, then run full default canonical from stable final source. Prepare fresh exact-commit SFM probe afterward with a released graphics lease.",
+  "ledger_unchanged": "55/62accepted,52/54implemented"
+}
