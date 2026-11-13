@@ -1,0 +1,353 @@
+{
+  "format": "has_resumed_canonical_qa_checkpoint_1",
+  "local_date": "2026-11-12",
+  "application_base": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "full_aggregate_passed": false,
+  "application_runtime_changed_by_these_test_ports": false,
+  "attempts": [
+    {
+      "log": {
+        "path": "output/canonical-resumed-20261112.log",
+        "sha256": "24fcbbe5d932fdb21576768d80da0fec26233465aedbd35585799cf1d5a87e3e",
+        "bytes": 12825
+      },
+      "exit": 1,
+      "failure": "One Authored Python pack process did not launch; absent HAS caused two body-curve checks to fail. Five native pack/unpack pairs then succeeded. Windows launch cause is unrecorded.",
+      "unchanged_focused_replay": {
+        "unit_checks": 31,
+        "gpu_checks": 60,
+        "failures": 0,
+        "report": {
+          "path": "output/body-curves/1794523145085637400/verification.json",
+          "sha256": "a6a0c521216fd4a383b7a83fcfc7330fc46424b9d28f793db4f22fd5e25262f7",
+          "bytes": 108979
+        }
+      },
+      "diagnosis": {
+        "path": "output/body-curves-launch-diagnosis-20261112.json",
+        "sha256": "b046401fdc05ae6ff7437f28c51b0de8a4ddb29045b0ae099541d5abf7ab9f94",
+        "bytes": 12660
+      }
+    },
+    {
+      "log": {
+        "path": "output/canonical-resumed-replay-20261112.log",
+        "sha256": "20b3a14d1b95a969d5ad0c2fcf442f1fb750920446dba38e9a3024e8ce24c64a",
+        "bytes": 1295
+      },
+      "exit": 1073807364,
+      "status": "Interrupted before helper-suite completion; no new assertion failure in the retained log. This is not a pass."
+    },
+    {
+      "log": {
+        "path": "output/canonical-owned-20261113T023427932/canonical.log",
+        "sha256": "f5e080cf690e6c0589c65e8b0dc4f40b5e1de0e02208fbc57e6f94b8e12ca461",
+        "bytes": 7553
+      },
+      "state": {
+        "format": "has_owned_canonical_run_1",
+        "pid": 19952,
+        "process_started": "2026-11-13T02:34:27.9578458Z",
+        "started_utc": "2026-11-13T02:34:28.4299661Z",
+        "status": "failed",
+        "checkout": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+        "run_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T023427932",
+        "source_commit": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+        "python": "C:\\Program Files\\Python313\\python.exe",
+        "command": [
+          "C:\\Program Files\\Python313\\python.exe",
+          "-u",
+          "tests/verify.py"
+        ],
+        "script_sha256": "e65cd66168a6148a8d521e16f46cf02f380ffe9bb93c33e0895b48af5c8e9a49",
+        "suite_exit": 1,
+        "source_unchanged": true,
+        "finished_utc": "2026-11-13T02:55:37.3535500Z"
+      },
+      "functional_files_unchanged": 932,
+      "source_before": {
+        "path": "output/canonical-owned-20261113T023427932/source-before.json",
+        "sha256": "ae491934f466bcb324f78687f7a3214e541f081e743e21f3b27922a90fb21289",
+        "bytes": 97593
+      },
+      "source_after": {
+        "path": "output/canonical-owned-20261113T023427932/source-after.json",
+        "sha256": "ae491934f466bcb324f78687f7a3214e541f081e743e21f3b27922a90fb21289",
+        "bytes": 97593
+      },
+      "failure": "Live appearance32/4: direct reads of the suspended native viewport under default Scene Setup produced black images. The actual displayed scene was not the sampled buffer.",
+      "notable_fresh_groups": "36 core groups, actual Miku and native world editing, upright contact test76/0, workspace/rings/SceneView/readback, helpers/batch/shapes/presets, body curves/body editing and lighting passed before the live-appearance stop."
+    }
+  ],
+  "test_adaptations": {
+    "policy": "Retain original colour, geometric, contact-error and image-difference assertions. Request a native frame without reevaluating manually solved/hidden/live state; use fresh owned display/recent preferences.",
+    "live_appearance": {
+      "report": {
+        "path": "output/live-appearance-verification.json",
+        "sha256": "2658f2753b8f3b8145909258f4b324e1d7dbf8c2f6924dfc2da9227ade54bd78",
+        "bytes": 1278
+      },
+      "folder": "output/live-appearance/1794538704552487800",
+      "checks": 38,
+      "failures": 0,
+      "private_receipt": {
+        "path": "output\\private-desktop\\live_appearance_smoke_85336c37806540e39ce20fd2cf910347.json",
+        "sha256": "b36b1662e7d76b4ebafc2796e31da82142f7438f09a9822aad56e42f941eb964",
+        "bytes": 388
+      },
+      "desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true,
+      "color_metrics": {
+        "AvatarSample_A": {
+          "before_colors": 1631,
+          "live_colors": 1648,
+          "opacity": 1.0,
+          "unshaded": true
+        },
+        "AvatarSample_Avrm0": {
+          "before_colors": 1631,
+          "live_colors": 1648,
+          "opacity": 1.0,
+          "unshaded": true
+        },
+        "original-lit": {
+          "before_colors": 0,
+          "live_colors": 0,
+          "opacity": 1.0,
+          "unshaded": false
+        },
+        "original-studio": {
+          "before_colors": 14805,
+          "live_colors": 14805,
+          "opacity": 1.0,
+          "unshaded": false
+        },
+        "original-unshaded": {
+          "before_colors": 14805,
+          "live_colors": 14805,
+          "opacity": 1.0,
+          "unshaded": true
+        },
+        "parent-fade": {
+          "before_colors": 14668,
+          "live_colors": 14668,
+          "opacity": 0.5,
+          "unshaded": true
+        }
+      },
+      "native_models": [
+        "AvatarSample_A.vrm",
+        "AvatarSample_Avrm0.vrm"
+      ]
+    },
+    "camera_range": {
+      "before": {
+        "checks": 59,
+        "failures": 1,
+        "log": {
+          "path": "output/camera-range-before-readback-adaptation-20261112.log",
+          "sha256": "d20fa43995b3b80301eea3cf8048675091b3d464e6da69364b9991d4a0c8925b",
+          "bytes": 5456
+        }
+      },
+      "after": {
+        "report": {
+          "path": "output/camera-range-verification.json",
+          "sha256": "7a144c1bd57af7c927fbd23de9370b547e2a70ded608ad326ff2044a56a2a1a2",
+          "bytes": 100532
+        },
+        "folder": "output/camera-range/1794538937848465200",
+        "checks": 60,
+        "failures": 0,
+        "private_receipt": {
+          "path": "output\\private-desktop\\camera_range_smoke_691ff12dd57048d2b880d83074ebd4fd.json",
+          "sha256": "8e24bf540d534076aa0b39df29c64d50fee6289c987e3c9aa936e867813c5366",
+          "bytes": 387
+        },
+        "desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "native_models": 5,
+        "video": {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "nb_read_frames": "48",
+          "r_frame_rate": "24/1"
+        }
+      }
+    },
+    "foot_contacts": {
+      "before": {
+        "checks": 73,
+        "failures": 1,
+        "log": {
+          "path": "output/foot-contacts-before-readback-adaptation-20261112.log",
+          "sha256": "4baa7afc95103c500b0de61c8b4f544c3e85bc107ea2b137fa5b37bed855d05d",
+          "bytes": 12648
+        }
+      },
+      "after": {
+        "report": {
+          "path": "output/foot-contacts-verification.json",
+          "sha256": "3b79de7483760f8d6c1696baccc22fcf7ca4cb16b6a9879a0d6abb15204cf82f",
+          "bytes": 11549
+        },
+        "folder": "output/foot-contacts/1794539077481684100",
+        "checks": 74,
+        "failures": 0,
+        "private_receipt": {
+          "path": "output\\private-desktop\\foot_contacts_smoke_4362b3fa522649cfbfa4091695d09946.json",
+          "sha256": "4666019dc6dc186ff9c25b0ee72c43ede639bf09712d39243d136d909f1720d4",
+          "bytes": 387
+        },
+        "desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      }
+    },
+    "selection": {
+      "before": {
+        "checks": 67,
+        "failures": 40,
+        "log": {
+          "path": "output/contact-selection-before-display-adaptation-20261112.log",
+          "sha256": "090d23e66f9ac2e05c88bec6b6763ac970aff5fa16a8b9d498bf8a6cb7e44710",
+          "bytes": 12927
+        }
+      },
+      "display_projection_port": {
+        "checks": 67,
+        "failures": 1,
+        "log": {
+          "path": "output/contact-selection-display-fix-20261112.log",
+          "sha256": "5ff6d2e4b7fed818cbe1d02e78c1e1e0e55603a8fe15696686388d442879d2cd",
+          "bytes": 12575
+        }
+      },
+      "cause": "VRM0 frame6 has one CPU-baked reference-only hair-edge pixel; matching original-source GPU geometry is exact. Alpha/camera controls isolate CPU-baked versus GPU-skinned coverage. Internal arithmetic location remains uninstrumented.",
+      "correction": "Independent original Mesh/Skin/morph inputs and separate frozen Skeleton3D instances for displayed silhouette; CPU-baked world vertices/bounds remain independent. All original assertions and zero-outside-one-pixel predicate retained.",
+      "after": {
+        "report": {
+          "path": "output/contact-selection-verification.json",
+          "sha256": "9e90c4d36e9a88004152895dd43ec64efb2ee8df33cd54c70ccefb5529a5cc20",
+          "bytes": 10124
+        },
+        "folder": "output/contact-selection/1794541000556650000",
+        "checks": 67,
+        "failures": 0,
+        "private_receipt": {
+          "path": "output\\private-desktop\\contact_selection_smoke_eae89e7967d64679b8480bafcc68b486.json",
+          "sha256": "1544ada44cd0923262d623e66f2e65054b978096dfd9076757e6ffaa78cc36d7",
+          "bytes": 388
+        },
+        "desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "frozen_reference_snapshots": 40,
+      "local_global_pose_and_transform_delta": 0,
+      "negative_controls_outside_pixels": {
+        "wrong_transform": 757,
+        "missing_hair": 87,
+        "stale_pose": 320,
+        "wrong_mask_alpha": 5990
+      },
+      "wrong_960_reference": "Explicit unequal-dimension rejection",
+      "restored_reference": {
+        "different_pixels": 0,
+        "outside_one_pixel": 0
+      },
+      "causal_report": {
+        "path": "output/selection-raster-probe/causal-review-20261112.md",
+        "sha256": "1384d38d348568a880e91c2cafc0f07bcd0f2cf7bb597468f74200d0b4890aca",
+        "bytes": 3962
+      },
+      "raw_private_probe_metadata": {
+        "path": "output/selection-raster-probe/causal-review-20261112.json",
+        "sha256": "f637264ef8a032475abbb3839e899f514a00fb3d5f1596a2ff5a3021dd59b209",
+        "bytes": 21875
+      }
+    },
+    "diagnostic_only_image_refresh": {
+      "contact_animation": {
+        "report": {
+          "path": "output/contact-animation-verification.json",
+          "sha256": "f53b5a2cb169ffb764aaaec8e24ce8e7271f7858792a80cf46c2dfdccf5f1927",
+          "bytes": 1440
+        },
+        "folder": "output/contact-animation/1794541069293637500",
+        "checks": 44,
+        "failures": 0,
+        "private_receipt": {
+          "path": "output\\private-desktop\\contact_animation_smoke_d5aecc285281492aac00aa8808937729.json",
+          "sha256": "d3eedd737d162d08c90dc191ea5452c1095481065c6637e7f960b1cfdb1222d4",
+          "bytes": 387
+        },
+        "desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "contact_editor": {
+        "report": {
+          "path": "output/contact-editor-verification.json",
+          "sha256": "68193f8c7497bb245727ca781dc87dc2adad8d9ce9b26121fa5c0a6fa0b6b460",
+          "bytes": 499
+        },
+        "folder": "output/contact-editor/1794541085926203400",
+        "checks": 34,
+        "failures": 0,
+        "private_receipt": {
+          "path": "output\\private-desktop\\contact_editor_smoke_2a4479fcdc284488ad3d7ee21d63b93c.json",
+          "sha256": "5b14282eb9ae4710ae255775e82382f6be5f4e0f9166e5b883544913d21ec110",
+          "bytes": 388
+        },
+        "desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "assertions_changed": false
+    }
+  },
+  "audit": {
+    "markdown": {
+      "path": "output/remaining-native-readback-audit-20261112.md",
+      "sha256": "200516726a930f2e95073c56fab644090d7ec25f709174719c72ffd22aacbacc",
+      "bytes": 4745
+    },
+    "metadata": {
+      "path": "output/remaining-native-readback-audit-20261112.json",
+      "sha256": "28bcb28232a3f99c1be41345d034a2e023cc58dbdf84a126d94213c1d85dbe5a",
+      "bytes": 26787
+    },
+    "scope": "Eight product image-read sites traced to central scopes or independent viewports/CPU textures. No corresponding dormant-native product read found in this static scope. Two diagnostic-only test PNG reads were also refreshed."
+  },
+  "limits": [
+    "Full canonical remains unpassed.",
+    "Native source appearance and artist/novice/learner/device/clean-install observations remain separate.",
+    "Historical November4 source-reader backups are dead; no substitutes or new owner request.",
+    "Private source art, HAS packages, PNGs, audio and raw pose/geometry arrays are not included."
+  ],
+  "ledger": {
+    "acceptance_verified": 55,
+    "acceptance_total": 62,
+    "implementation": 52,
+    "implementation_total": 54
+  },
+  "owned_test_source_sha256": {
+    "tests/live_appearance_smoke.gd": "55aaa7644082681ea73cd57a8adc45e0566eefe39ad1c25a2f025bf1cacb7f9a",
+    "tests/camera_range_smoke.gd": "e8b8287451874d26fed4f6ed7d91e463322ed08af179fc80b330150cde841bef",
+    "tests/foot_contacts_smoke.gd": "56192aed4068875d8f27a30c98af44a473aa2d3de8f7b20feb5bce0f179078bc",
+    "tests/contact_selection_smoke.gd": "6181cec154a3a05c69424eda4f99bb342c4ae73ab0c253c12beee98b6160279b",
+    "tests/verify_contact_selection.py": "175427cec9aab26a12393a92b9a58bd075fe127e51ea8b8b209ab61d21c730ec",
+    "tests/contact_animation_smoke.gd": "0f79d22b69e4d6431ffaa784ec160d2f529cc0e83fe6bca29a491f564600c71b",
+    "tests/contact_editor_smoke.gd": "fc344315d82845e323c61c7deec476f884cad41ed73cd43f01aa486fac746c31"
+  }
+}

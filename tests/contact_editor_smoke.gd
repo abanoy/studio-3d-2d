@@ -15,6 +15,11 @@ func check(ok: bool,text: String) -> void:
 func settled() -> void:
 	for i in range(4):await process_frame
 	await RenderingServer.frame_post_draw
+func native_pixels() -> Image:
+	if not app.renderer.begin_native_readback():return null
+	var notification=app.renderer.native_frame_notification
+	await notification.ready
+	return app.renderer.finish_native_readback()
 func active(data: Dictionary,frame: int) -> bool:return not Ranges.Contact.Contacts.active(data.get("animation_clips",[]),frame).is_empty()
 func root_value(y: float) -> Dictionary:return {"position":[0,y,0],"rotation_xyzw":[0,0,0,1],"scale":1.}
 func choose_range(first: int,last: int) -> void:
@@ -91,7 +96,7 @@ func run() -> void:
 			if key.frame==24:key.value.position[1]=10.
 	editor.restore_state(bad,false);app.set_frame(0);history=app.history.size();before=current().data.duplicate(true);await choose_range(0,48);dialog.plant_button.pressed.emit()
 	check(current().data==before and app.history.size()==history and dialog.window.visible and dialog.note.text.contains("Frame"),"range validation refuses an unreachable future pose without partial data or Undo")
-	dialog.window.hide();editor.restore_state(planted,false);app.set_frame(12);await settled();var scene: Image=app.renderer.viewport.get_texture().get_image();scene.save_png(folder.path_join("planted-ui.png"))
+	dialog.window.hide();editor.restore_state(planted,false);app.set_frame(12);await settled();var scene: Image=await native_pixels();scene.save_png(folder.path_join("planted-ui.png"))
 	await choose_range(12,18);await settled();dialog.window.get_texture().get_image().save_png(folder.path_join("range-window.png"))
 	check(dialog.window.size.x<=root.size.x and dialog.window.size.y<=root.size.y,"range window fits the actual application")
 	dialog.window.hide();var bad_pin: Dictionary=current().data.duplicate(true)

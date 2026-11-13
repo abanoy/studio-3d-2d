@@ -1,4 +1,4 @@
-"""Actual native planted/hidden selection silhouettes versus independent engine bakes."""
+"""Native selection versus frozen source poses, with independent CPU-baked bounds."""
 from pathlib import Path
 import json,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))

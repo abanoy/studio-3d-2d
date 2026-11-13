@@ -15,6 +15,11 @@ func check(ok: bool,text: String) -> void:
 func settled() -> void:
 	for i in range(4):await process_frame
 	await RenderingServer.frame_post_draw
+func native_pixels() -> Image:
+	if not app.renderer.begin_native_readback():return null
+	var notification=app.renderer.native_frame_notification
+	await notification.ready
+	return app.renderer.finish_native_readback()
 func root_value(y: float) -> Dictionary:return {"position":[0,y,0],"rotation_xyzw":[0,0,0,1],"scale":1.}
 func bone_state(rig) -> Array:
 	var result:=[]
@@ -97,7 +102,7 @@ func run() -> void:
 	check(errors==0 and peak<.0002,"normal world playback holds both endpoints between authored root keys")
 	check(isolated,"fractional/reverse read-only samples are exact and restore displayed root and bones")
 	check(rig.data==original and app.keys==shots and FileAccess.get_sha256(asset)==sha,"evaluation preserves authored document, camera keys and source bytes")
-	app.set_frame(12);await settled();var image: Image=app.renderer.viewport.get_texture().get_image();image.save_png(folder.path_join("midpoint.png"))
+	app.set_frame(12);await settled();var image: Image=await native_pixels();image.save_png(folder.path_join("midpoint.png"))
 	var split:=Model.Clips.split(rig.data,12)
 	check(not split.has("error") and Model.validate(split.data,48).is_empty() and split.data.format==Model.CONTACT_FORMAT,"real source split retains valid versioned contacts")
 	var saved:=folder.path_join("contacts.has")

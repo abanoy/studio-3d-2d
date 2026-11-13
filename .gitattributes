@@ -8,3 +8,5 @@ docs/goals/*.md text eol=lf
 # This regression patch deliberately mixes LF headers and CRLF source context.
 # Preserve its exact bytes; patch context prefixes are data, not code indentation.
 tests/fixtures/readback_node_emitter_v3.patch -text -whitespace
+# Unshipped source checkpoints preserve the exact reviewed/hashed byte sequences.
+experiments/** -text -whitespace

@@ -1,0 +1,54 @@
+{
+  "format": "has_unshipped_source_appearance_checkpoint_1",
+  "base_commit": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "files": {
+    "overlay/tools/prepare_source.py": {
+      "sha256": "6546ee6987afa5ebf634333a07441d75fc9aa5b191bb4552707cf5908d5120d6",
+      "bytes": 12481
+    },
+    "overlay/tools/blender_source_bridge.py": {
+      "sha256": "06b2c0ce5df66158d2a269310457b5d9e18e9617037dd5ccc39501b87f5cb767",
+      "bytes": 24819
+    },
+    "overlay/tools/source_appearance.py": {
+      "sha256": "bab2c923e1e659df622350626bf36a62e0518d9d3bbe108c62ba60485281c236",
+      "bytes": 8417
+    },
+    "overlay/tests/test_source_appearance.py": {
+      "sha256": "0d6fabf2afaf61d8879bbe05888a0a41dae2f9a272b3837e8cbe9971aa904446",
+      "bytes": 15572
+    },
+    "reference/PLAN.md": {
+      "sha256": "e0e004bafa1035f0e469d4a871e55b9392760ddc7d28ab4bfb4020508bb0fd5a",
+      "bytes": 5837
+    },
+    "reference/native-fixture-requirements.json": {
+      "sha256": "993cf310d2ba0d7a4d6910f94390942e7dedd2dd0313aaff5984db2f800eaa3b",
+      "bytes": 59776
+    },
+    "reference/verify_prototype.py": {
+      "sha256": "9a95c1ba4653e7c11b0865b309646d4251755bb1d56e8cb9c2c9c322a59d2d64",
+      "bytes": 7596
+    }
+  },
+  "status": "Worker-level prototype only; no production or application selector port.",
+  "cpu_checks": 21,
+  "failures": 0,
+  "skips": 0,
+  "native_definition_hash_bindings": 2,
+  "real_skin_helper_scope": "Actual pinned functions executed with inert materials/containers; no real Blender material slot, mesh, skeleton, morph, texture or exporter proof.",
+  "worker_scope": "Actual prepare_source.main request path with conversion-context and Popen mocked; no native scene conversion.",
+  "native_profile_limits": [
+    "Explicit requests need validated native skin/bodygroup metadata, unique bodygroup names and complete converted correspondence.",
+    "Different skins with ambiguous duplicate default columns or a nonidentity native default skin table refuse rather than guessing a mesh-slot mapping.",
+    "A selection with no renderable geometry refuses explicitly; ordinary default and BSP-prop path retain old behavior."
+  ],
+  "unrun": [
+    "Actual native resource extraction and VMT reference closure",
+    "Blender conversion/export and actual selected material-slot mapping",
+    "Rendered native skins/bodygroups, native rig/weights/morph deformation preservation",
+    "Application selector/review/adoption, Undo/Redo, packed/linked/fresh-offline HAS and movies",
+    "Runtime/animated variants, native procedural/jiggle/assembly fidelity, artist/device/clean-install acceptance"
+  ],
+  "private_art_included": false
+}

@@ -78,6 +78,30 @@ This inventory proves the features are present. It does not prove HAS skin
 switching, native shaders, jiggle constraints/solver fidelity, assembly, arbitrary
 native controller semantics, artist usability or rendered equivalence.
 
+## Proposed first appearance increment
+
+The smallest proposed implementation is a reviewed **import-time** choice of
+native skin and bodygroups, before adopting a new object. The current bridge
+already has a skin-remapping helper but selects skin zero and the first bodygroup
+choice. Validate requested native indices, bake the chosen appearance into a new
+derived GLB, and record those actual indices in its preparation report. Existing
+projects keep their embedded appearance. This is a proposed step, not implemented
+runtime or animated variant switching, and does not replace that broader goal.
+
+Use Nitori's glove for three visibly different material families, then Keiki's
+chisels for independent tools/box/flame present/blank choices and its nonfacial
+`Tools` flex. Full VVD/VTX and every chosen skin's material/texture dependencies
+must be staged from the verified originals; the retained MDLs alone cannot
+establish rendered results. Verify actual mesh membership/material remaps,
+preserved bones/weights/morphs, import Undo/Redo, packed/linked and fresh
+source-offline reopening, plus preview/movie agreement. Refuse an all-blank
+selection explicitly while the converter requires visible geometry.
+
+Do not reconvert an already edited object as a shortcut: changed mesh/target
+identities could invalidate shape animation or generated-helper provenance.
+Later runtime switching must preserve those identities and coordinate material
+and opacity caches. Native jiggle and multi-component binding remain separate.
+
 The earlier [feature review](sfm_extra_features_2026-11-12.md) and
 [identity audit](benchmarks/sfm_extra_feature_inventory_2026-11-12.json) remain
 separately scoped. The actual model versions were read before parsing; this pass

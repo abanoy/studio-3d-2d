@@ -1,0 +1,54 @@
+{
+  "format": "has_readback_cleanup_publication_1",
+  "state": "Plan published; deletion not yet performed",
+  "source_evidence_revision": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "raw_plan_sha256": "2030b3c4f6b838fa874a2cb93ad2a990f6b6d14d8e2088138f9c6065cf7c08ab",
+  "compressed_plan": "readback_reconstructible_cleanup_plan_2026-11-12.json.gz",
+  "compressed_sha256": "911f895858bf75b35021f037679a758e1bee5bccebfff05557b3d8da9ffade15",
+  "decompression": "Python gzip.decompress, then verify the raw SHA256 before parsing",
+  "totals": {
+    "copies": 13,
+    "planned_individual_deletions": 16875,
+    "planned_bytes": 224835913,
+    "reconstructible_source_files": 16862,
+    "reconstructible_source_bytes": 224683631,
+    "regenerable_cache_files": 13,
+    "regenerable_cache_bytes": 152282,
+    "retained_source_tree_files": 104,
+    "retained_source_tree_bytes": 8976831,
+    "retained_parent_evidence_files": 142,
+    "retained_parent_evidence_bytes": 7808986
+  },
+  "explicit_allowed_nonces": [
+    "1794518904450251700",
+    "1794518972504964900",
+    "1794519038987472200",
+    "1794519164817658300",
+    "1794519222461088800",
+    "1794519379862095400",
+    "1794519479391580800",
+    "1794519635389990600",
+    "1794519700574817300",
+    "1794519720433512700",
+    "1794520506647727000",
+    "1794520570736123000",
+    "1794520812223244900"
+  ],
+  "protected_canonical_nonces": [
+    "1794522587152585700",
+    "1794523812750198700"
+  ],
+  "all_unlisted_future_copies_excluded": true,
+  "no_directory_deletion": true,
+  "unique_historical_sources_receipts_profiles_logs_retained_in_place": true,
+  "private_asset_payloads_included": false,
+  "execution_preconditions": [
+    "Root publishes compact audit/source/evidence and verifies the remote after the canonical source freeze ends. This plan is not execution approval.",
+    "Root independently validates this plan hash, explicit nonce set, current Git source recovery recipes and every planned file hash/size/containment/no-reparse check immediately before mutation.",
+    "Root confirms no owned active process uses any planned source copy; this audit did not inspect or stop processes.",
+    "Delete only exact individual file paths from delete_individual_files using native PowerShell Remove-Item -LiteralPath; never use recursive directory deletion or inferred wildcard paths.",
+    "Leave all remaining source, profile, receipt, engine log and parent evidence paths exactly in place. Exclude both canonical snapshots and every unlisted/future copy.",
+    "Post-verify every retained hash and parent proof, account for each literal deletion, record intentionally sparse historical source trees and push the actual cleanup receipt."
+  ],
+  "recovery_note": "Git source recovery must use the exact revision/object/line-ending recipe per removed source entry. Cache files are regenerable; their bytes are not promised identical. For historical replay create a fresh isolated source tree and overlay the retained exact historical source files; never run or overwrite the intentionally sparse old folder."
+}

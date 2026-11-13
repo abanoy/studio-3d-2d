@@ -15,7 +15,15 @@ func check(value: bool,message: String) -> void:
 func settled() -> void:
 	for i in range(6):await process_frame
 	await RenderingServer.frame_post_draw
+func native_pixels() -> Image:
+	# Setup renders through its own viewport. Request a fresh native pass without
+	# evaluating the world again or disturbing the running secondary solver.
+	if not app.renderer.begin_native_readback():return null
+	var notification=app.renderer.native_frame_notification
+	await notification.ready
+	return app.renderer.finish_native_readback()
 func colors(image: Image) -> int:
+	if image==null or image.is_empty():return 0
 	var count:=0
 	for y in range(0,image.get_height(),3):
 		for x in range(0,image.get_width(),3):
@@ -28,10 +36,13 @@ func start_hair(rig) -> void:
 	await settled()
 func appearance(rig,label: String,flat: bool,parent_alpha:=1.) -> void:
 	var data: Dictionary=rig.data.duplicate(true);var shots: Array=app.keys.duplicate(true);var view: Dictionary=app.renderer.view_state()
-	var before: Image=app.renderer.viewport.get_texture().get_image();before.save_png(folder.path_join(label+"-before.png"))
+	var before: Image=await native_pixels()
+	if before!=null:before.save_png(folder.path_join(label+"-before.png"))
 	var count:=colors(before)
 	await start_hair(rig)
-	var after: Image=app.renderer.viewport.get_texture().get_image();after.save_png(folder.path_join(label+"-live.png"))
+	var after: Image=await native_pixels()
+	if after!=null:after.save_png(folder.path_join(label+"-live.png"))
+	check(before!=null and after!=null and before.get_size()==Vector2i(1920,1080) and after.get_size()==before.get_size() and app.renderer.native_readbacks==0,"fresh native live pixels complete with balanced readback scopes: "+label)
 	check(app.physics_editor.active(rig.data.id),"actual Hair & clothes control starts: "+label)
 	check(rig.opacity_materials.unshaded==flat and absf(rig.evaluated_opacity-parent_alpha)<.000001,"live secondary update retains project lighting and inherited opacity: "+label)
 	if flat:check(count>1000 and colors(after)>1000,"native colored skin remains visible in Unshaded live motion: "+label)
@@ -41,7 +52,7 @@ func appearance(rig,label: String,flat: bool,parent_alpha:=1.) -> void:
 func run() -> void:
 	folder=OS.get_cmdline_user_args()[0];DirAccess.make_dir_recursive_absolute(folder)
 	var asset:=folder.path_join("secondary.glb");Fixture.create(asset);var sha:=FileAccess.get_sha256(asset)
-	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
+	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.display_prefs_path=folder.path_join("display.cfg");app.recent_path=folder.path_join("recent.json");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
 	app.pose_editor.add_model(asset);var rig: RefCounted=app.renderer.active_model();app.pose_editor.frame_model();await settled()
 	check(app.video.lighting_mode=="unshaded" and not app.renderer.studio_light.visible,"real new project uses Unshaded without studio illumination")
 	await appearance(rig,"original-unshaded",true)

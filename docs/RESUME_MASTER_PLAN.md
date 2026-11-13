@@ -447,6 +447,48 @@ implementation groups implemented**. Seven open acceptance IDs:
 because supported native appearance still needs actual comparison. Counts are
 not a single release-readiness percentage. C/D/F remain closed.
 
+### Resumed QA and preserved experiments — November 12
+
+The full canonical is **still unpassed**. Three exact85fa attempts are retained:
+one Python pack launch failure (unchanged31+60 focused replay passes), an
+interrupted replay, and a dedicated hidden run that passed the core/contact/
+workspace/helper/shape/body/lighting groups before live-appearance32/4 failed.
+Its932 functional hashes and revision remained identical before/after.
+
+That last failure sampled the native viewport while Scene Setup rendered through
+its separate view. Test-only fresh, non-evaluating readbacks now pass live38,
+camera-range60 and manual foot-contact74 checks with their original pixel/error
+assertions. Contact animation44/editor34 also pass with fresh diagnostic images.
+The selection reference first needed the displayed projection/extent (67/40 to
+67/1), then exposed one CPU-baked versus GPU-skinned hair-edge coverage difference.
+Separate frozen native skeletons pass67/0, retaining all assertions, the
+zero-outside-one-pixel bound and independent CPU-baked vertices/bounds. Deliberate
+wrong transform, omitted hair, stale pose, wrong alpha and old projection fail.
+The old failures remain preserved; exact internal engine arithmetic is unproven.
+See [QA evidence](benchmarks/resumed_canonical_qa_2026-11-12.json) and
+[selection diagnosis](selection_raster_reference_2026-11-12.md). Product renderer/
+picker code was not changed by these test corrections. Run the full suite again
+from the new published checkpoint; scoped checks do not substitute for it.
+
+Source-only [experiment checkpoints](../experiments/README.md) preserve the local
+wind prototype (94 headless, graphics unrun), static Source appearance worker
+(21 CPU, actual conversion/app/render unrun), and six-project review checker
+(25 CPU, actual package replay unrun). These overlays are **not installed in the
+normal app**. Wind's pending-helper integration and permanent inclusion settings,
+and Source runtime/animated skin/bodygroup switching remain separate work.
+Do not claim native jiggle/assembly fidelity or accept the features from CPU
+tests alone. Their plans, exact source and limitations are recoverable from Git.
+
+An individual-file cleanup plan covers only16,875 Git-reconstructible source/cache
+files (224,835,913bytes) in13older readback snapshots. All104 unique source-tree
+files and142parent evidence files stay in place; both previous canonical copies
+and every unlisted future copy are excluded. No deletion has occurred at this
+checkpoint. Publish/fetch/verify this plan first, then independently revalidate
+every file/path/recipe and delete only exact listed files. Old snapshots become
+intentionally sparse; reconstruct from recorded Git blobs plus retained overlays.
+The compressed machine-readable plan is in the benchmark directory; no private
+asset payload is in it. Keep owner reviews, recovery, originals and pending work.
+
 ### What the last application fix actually established
 
 The upright Scout fixture exposed **6.97 mm** final joint separation, failing
@@ -524,8 +566,8 @@ targets and 229 bones, but only one skin family. Keiki Tools, Shinki wings and
 separate Junko/clothing components provide grounded next cases. The bridge
 currently exports default bodygroup/skin choices to GLB; editable choices,
 native assembly and sequence/procedural support need separate implementation
-and validation. Exact multi-skin positives and broader native rule counts are
-now have a fresh [native metadata inventory](sfm_native_feature_inventory_2026-11-12.md):
+and validation. Exact multi-skin positives and broader native rule counts now
+have a fresh [native metadata inventory](sfm_native_feature_inventory_2026-11-12.md):
 all 82 actual MDL49 files parse, representing 71 distinct definitions. There are
 28 files/27 distinct definitions with differing skin families and 55 files/46
 distinct definitions declaring native JIGGLE bones. Nitori's glove has three
@@ -537,6 +579,14 @@ parser reproduction also passes 82/82 with exact native records and unchanged
 original archives. Switching skins/bodygroups, native jiggle fidelity, assembly
 and rendered appearance remain separate work; these metadata checks do not
 establish their implementation or acceptance.
+
+The native inventory also records a proposed first appearance increment: choose
+validated skins/bodygroups before importing a new object, beginning with Nitori's
+glove and Keiki's chisels. Bake that selected appearance into a derived GLB and
+report the actual indices; preserve old embedded projects. This does not implement
+later runtime/animated variant switching or justify replacing an edited object
+whose shape/helper identities must survive. Full geometry/material dependencies
+and actual rendered/persistence tests are required beyond the MDL-only inventory.
 
 ### Actual external observations still needed, only when participation is granted
 
