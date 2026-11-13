@@ -5,7 +5,7 @@
   "failed_core_run": "output\\sfm-broader-native-cases-20261113\\conversion-run-20261113T232338350",
   "failed_core_status": "failed after one positive Nitori default; second Keiki default hit WinError206 in archival resolved-native directory creation",
   "source_before_failure_unchanged": true,
-  "native_retry_after_fix": "pending fresh committed source/lock/lease; no native pass claimed",
+  "native_retry_after_fix": "Core14 and Wider11 pass at cf7a805:25worker cases, including actual261UTF16unit resolved-native copy; later app startup failure is separate",
   "change": "Keep logical hierarchy and resource-path boundary; use Windows extended-length syntax only for bounded exclusive filesystem cache writes; SourceIO still consumes the original MemoryBuffer bytes",
   "source_sha256": {
     "tools/source_archive.py": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
@@ -32,5 +32,6 @@
   "scope_limit": "This fixes resolved-dependency archival IO, not every possible long Windows path or current-directory process-launch restriction",
   "evidence": "experiments/source_appearance/main_resource_path_fix_20261113",
   "private_art_uploaded": false,
-  "evidence_index_sha256": "ab7589a0b14305a86b23706cff1cd5f9e6f39a96eb24989eed8778fdf86931aa"
+  "evidence_index_sha256": "ab7589a0b14305a86b23706cff1cd5f9e6f39a96eb24989eed8778fdf86931aa",
+  "native_worker_report": "docs/benchmarks/sfm_static_native_workers_2026-11-13.json"
 }

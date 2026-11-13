@@ -1,6 +1,5 @@
 """Isolated Blender worker. SourceIO decodes resources; this adapter emits standard PBR/GLB."""
 import hashlib
-import source_appearance
 import importlib.util
 import json
 import os
@@ -25,6 +24,7 @@ module = importlib.util.module_from_spec(spec)
 sys.modules["SourceIO"] = module
 spec.loader.exec_module(module)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import source_appearance
 from asset_audit import gma_index, AssetError
 from source_archive import resource_path, write_resource
 from source_texture import blender_rgba

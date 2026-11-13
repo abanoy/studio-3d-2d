@@ -1,0 +1,99 @@
+{
+  "format": "has_source_native_rebind_ready_1",
+  "root_revision": "cf7a805dd6ec76890da048ff28aa0080757e7c34",
+  "batches": {
+    "core": {
+      "lock": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\conversion-inputs-core2.json",
+        "sha256": "e99fd831dc9c8c939f7c2b3c29e1d43c7c5d7708567ac68b37e8c22b8ece7f51",
+        "bytes": 406018,
+        "mtime_ns": 1794613184753089200
+      },
+      "driver": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\core-source\\background_conversion_driver.py",
+        "sha256": "5a7edc66f6455da870bbbd23c2c85ad1995145b66804cc5bc0955f7d17f8071e",
+        "bytes": 42723,
+        "mtime_ns": 1794613156963243700
+      },
+      "preflight": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\conversion-run-1794613244382131500\\verification.json",
+        "sha256": "8ba7f40ea08d9d3451dc39523c0672b9c2df6a15e577950999f579614839ae9e",
+        "bytes": 816,
+        "mtime_ns": 1794613248920694700
+      },
+      "focused_cpu": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\rebind-cpu-core-1794613242127697500\\verification.json",
+        "sha256": "b33621436ce353870d1d04f5a910a5beb236ebee657c4d276595f4b5c4199d6c",
+        "bytes": 1588,
+        "mtime_ns": 1794613242460357900
+      },
+      "cases": 14,
+      "expected_successes": 12,
+      "expected_refusals": 2,
+      "resource_files": 296,
+      "sourceio_files": 574,
+      "main_python_files": 17,
+      "native_execution": "UNRUN"
+    },
+    "wider": {
+      "lock": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\conversion-inputs-wide2.json",
+        "sha256": "031b16a7c1e5b12003391650f113703e81b9dc602d092a335f803d3e42c2c94c",
+        "bytes": 603487,
+        "mtime_ns": 1794613184727850200
+      },
+      "driver": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\wider-source\\background_conversion_driver.py",
+        "sha256": "f3135d92ea7dfb850bc61fecfb5cf2134b1b95c14f22cc617666aef72d5fd6d1",
+        "bytes": 44455,
+        "mtime_ns": 1794613157004778600
+      },
+      "preflight": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\conversion-run-1794613244337061700\\verification.json",
+        "sha256": "37b1c82c9f807b834f26dbc1434b7abed1b2af1054be6f6588b89a0d2311f6c9",
+        "bytes": 815,
+        "mtime_ns": 1794613248632968100
+      },
+      "focused_cpu": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\rebind-cpu-wider-1794613242128972700\\verification.json",
+        "sha256": "fa0778e0d89399c85b45296a252d605c03cd4a423075edf3951fa5bc220418ff",
+        "bytes": 1592,
+        "mtime_ns": 1794613242416357900
+      },
+      "cases": 11,
+      "expected_successes": 10,
+      "expected_refusals": 1,
+      "resource_files": 265,
+      "sourceio_files": 574,
+      "main_python_files": 17,
+      "native_execution": "UNRUN"
+    }
+  },
+  "sources": {
+    "sha256": "9701f1493b9819152a4abd8a83c3d56868abf4aabbf79dc1048c7f3f0c0d7f05",
+    "bytes": 3013,
+    "mtime_ns": 1794613311351627600
+  },
+  "commands": {
+    "sha256": "240e5845006847499f10ae425c4e674ce57a75b670276eb286d45a817e745b1b",
+    "bytes": 1607,
+    "mtime_ns": 1794613311351627600
+  },
+  "diff": {
+    "sha256": "e03f6d37338bb32c4281f4cc1c00e1193856954ce54ab53e92ebe2c05ef8258a",
+    "bytes": 8767,
+    "mtime_ns": 1794613157018776400
+  },
+  "old_metadata_driver_request_lock_inputs_preserved": 44,
+  "focused_cpu_checks": 18,
+  "focused_cpu_failures": 0,
+  "preflights_passed": 2,
+  "converter_private_blender_gpu_launched": false,
+  "scope": "New actual-main request/source bindings at tested long-path fix, no conversion or native fidelity acceptance",
+  "limits": [
+    "Old root-owned Keiki Win206 failure remains failed and preserved.",
+    "Nitori native missing hairbump and opaque additiveglow approximation remain.",
+    "Static variants only; no native shader, flex/controller evaluation, jiggle, animation or rig assembly acceptance.",
+    "Source checks cover17mainPython files; no whole-tree/GDScript freeze claim."
+  ]
+}

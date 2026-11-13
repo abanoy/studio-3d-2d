@@ -1,0 +1,454 @@
+{
+  "format": "has_native_main_longpath_rebind_plan_1",
+  "historical_revision": "76f89e82af583001af8cd16260b441555feb2fe2",
+  "observed_revision": "76f89e82af583001af8cd16260b441555feb2fe2",
+  "allowed_changed_sources": [
+    "tools/blender_source_bridge.py",
+    "tools/source_archive.py"
+  ],
+  "old_scoped_main_python": {
+    "tools/source_appearance.py": {
+      "sha256": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+      "bytes": 8468,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_mdl_choices.py": {
+      "sha256": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+      "bytes": 13104,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_choice_io.py": {
+      "sha256": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+      "bytes": 5646,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/prepare_source.py": {
+      "sha256": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+      "bytes": 13626,
+      "mtime_ns": 1794610640902281900
+    },
+    "tools/blender_source_bridge.py": {
+      "sha256": "dfef09700405e96e289b92bc2b5e98d897f9fcdc86fce54be7f649a7b161372b",
+      "bytes": 25278,
+      "mtime_ns": 1794610640902281900
+    },
+    "tools/asset_audit.py": {
+      "sha256": "f91daebf1a7f7351b04d1018fd87f629a85460c4a67c540db7e7f7697a0eebeb",
+      "bytes": 10171,
+      "mtime_ns": 1794447912617551300
+    },
+    "tools/source_archive.py": {
+      "sha256": "a7c659ea8653136ed740d99508aaa07b2e33c7ddd64093e272739c49661a1c48",
+      "bytes": 4493,
+      "mtime_ns": 1794447912645316500
+    },
+    "tools/source_content.py": {
+      "sha256": "7ee3f3b2556322dd4a3c22ce5a358e3d6733c4722fb71444e4077ea5ddf140b1",
+      "bytes": 17070,
+      "mtime_ns": 1794447912649839200
+    },
+    "tools/source_case.py": {
+      "sha256": "63094142f40cc13fb7877a317667bf596910a1df6dfc3796c0c9b4a88db795c2",
+      "bytes": 2512,
+      "mtime_ns": 1794447912648331200
+    },
+    "tools/source_paths.py": {
+      "sha256": "8b174b8de9c2b7db108152b62c8c7a72992bf101e35decafe778f38318c02071",
+      "bytes": 1129,
+      "mtime_ns": 1794447912651846000
+    },
+    "tools/source_installation.py": {
+      "sha256": "10cddc7e1da7b68b97e24e3d5c5d3a87ead25a2a4595cbf9c7d61bbf0bcbd6d2",
+      "bytes": 5867,
+      "mtime_ns": 1794447912650851900
+    },
+    "tools/source_texture.py": {
+      "sha256": "2bd5abbbc113670674cc7e5e86af86360e9f41ef07f7abced702a58d508c0cf5",
+      "bytes": 612,
+      "mtime_ns": 1794447912652851600
+    },
+    "tools/source_eyes.py": {
+      "sha256": "139274445c6817831bf4389b30370ff50209d4a646534a4fd7e7d2355b4702de",
+      "bytes": 2876,
+      "mtime_ns": 1794447912649839200
+    },
+    "tools/source_lights.py": {
+      "sha256": "703ee9eb35f417b699fc5677f79173657e5e5f2860f17a6bfc2b30a1dad798f1",
+      "bytes": 4522,
+      "mtime_ns": 1794447912651846000
+    },
+    "tools/source_lightmaps.py": {
+      "sha256": "5c24783cb9e7fbad316ace461652c92a00190b76f9b8bfd00cdd6ee216de5573",
+      "bytes": 13369,
+      "mtime_ns": 1794447912650851900
+    },
+    "tests/test_source_appearance.py": {
+      "sha256": "65bdd235ed038978e19394a86fa10537538ed732fd4c5183677b7672d4f2c26d",
+      "bytes": 24446,
+      "mtime_ns": 1794610776604962100
+    },
+    "tests/test_source_mdl_choices.py": {
+      "sha256": "1f6eebb3282c8d172069de429919b5c45e084205d61e899980f10fa7e82daf2d",
+      "bytes": 19569,
+      "mtime_ns": 1794610640902281900
+    }
+  },
+  "current_scoped_main_python": {
+    "tools/source_appearance.py": {
+      "sha256": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+      "bytes": 8468,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_mdl_choices.py": {
+      "sha256": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+      "bytes": 13104,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_choice_io.py": {
+      "sha256": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+      "bytes": 5646,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/prepare_source.py": {
+      "sha256": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+      "bytes": 13626,
+      "mtime_ns": 1794610640902281900
+    },
+    "tools/blender_source_bridge.py": {
+      "sha256": "e885074a2cb8c21976b25429e9c09c43c976eca760b835bc4b295fcac6185f4d",
+      "bytes": 25105,
+      "mtime_ns": 1794612594606500700
+    },
+    "tools/asset_audit.py": {
+      "sha256": "f91daebf1a7f7351b04d1018fd87f629a85460c4a67c540db7e7f7697a0eebeb",
+      "bytes": 10171,
+      "mtime_ns": 1794447912617551300
+    },
+    "tools/source_archive.py": {
+      "sha256": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
+      "bytes": 5628,
+      "mtime_ns": 1794612594606500700
+    },
+    "tools/source_content.py": {
+      "sha256": "7ee3f3b2556322dd4a3c22ce5a358e3d6733c4722fb71444e4077ea5ddf140b1",
+      "bytes": 17070,
+      "mtime_ns": 1794447912649839200
+    },
+    "tools/source_case.py": {
+      "sha256": "63094142f40cc13fb7877a317667bf596910a1df6dfc3796c0c9b4a88db795c2",
+      "bytes": 2512,
+      "mtime_ns": 1794447912648331200
+    },
+    "tools/source_paths.py": {
+      "sha256": "8b174b8de9c2b7db108152b62c8c7a72992bf101e35decafe778f38318c02071",
+      "bytes": 1129,
+      "mtime_ns": 1794447912651846000
+    },
+    "tools/source_installation.py": {
+      "sha256": "10cddc7e1da7b68b97e24e3d5c5d3a87ead25a2a4595cbf9c7d61bbf0bcbd6d2",
+      "bytes": 5867,
+      "mtime_ns": 1794447912650851900
+    },
+    "tools/source_texture.py": {
+      "sha256": "2bd5abbbc113670674cc7e5e86af86360e9f41ef07f7abced702a58d508c0cf5",
+      "bytes": 612,
+      "mtime_ns": 1794447912652851600
+    },
+    "tools/source_eyes.py": {
+      "sha256": "139274445c6817831bf4389b30370ff50209d4a646534a4fd7e7d2355b4702de",
+      "bytes": 2876,
+      "mtime_ns": 1794447912649839200
+    },
+    "tools/source_lights.py": {
+      "sha256": "703ee9eb35f417b699fc5677f79173657e5e5f2860f17a6bfc2b30a1dad798f1",
+      "bytes": 4522,
+      "mtime_ns": 1794447912651846000
+    },
+    "tools/source_lightmaps.py": {
+      "sha256": "5c24783cb9e7fbad316ace461652c92a00190b76f9b8bfd00cdd6ee216de5573",
+      "bytes": 13369,
+      "mtime_ns": 1794447912650851900
+    },
+    "tests/test_source_appearance.py": {
+      "sha256": "65bdd235ed038978e19394a86fa10537538ed732fd4c5183677b7672d4f2c26d",
+      "bytes": 24446,
+      "mtime_ns": 1794610776604962100
+    },
+    "tests/test_source_mdl_choices.py": {
+      "sha256": "1f6eebb3282c8d172069de429919b5c45e084205d61e899980f10fa7e82daf2d",
+      "bytes": 19569,
+      "mtime_ns": 1794610640902281900
+    }
+  },
+  "six_explicit_worker_source_expectations": {
+    "tools/prepare_source.py": {
+      "sha256": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+      "bytes": 13626,
+      "mtime_ns": 1794610640902281900
+    },
+    "tools/blender_source_bridge.py": {
+      "sha256": "e885074a2cb8c21976b25429e9c09c43c976eca760b835bc4b295fcac6185f4d",
+      "bytes": 25105,
+      "mtime_ns": 1794612594606500700
+    },
+    "tools/source_appearance.py": {
+      "sha256": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+      "bytes": 8468,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_mdl_choices.py": {
+      "sha256": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+      "bytes": 13104,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_choice_io.py": {
+      "sha256": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+      "bytes": 5646,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_archive.py": {
+      "sha256": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
+      "bytes": 5628,
+      "mtime_ns": 1794612594606500700
+    }
+  },
+  "preserved_old_metadata_driver_request_lock_inputs": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\RESOURCE_PLAN.json": {
+      "sha256": "9dbf1ac891379505a8c56657d93ee6efb8bac9ce41a14d0f76ffdbba5aa15cad",
+      "bytes": 454496,
+      "mtime_ns": 1794611385578072400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\CORE_FAMILIES.json": {
+      "sha256": "690681c7d185af312bd31f8a829d1b44eceed53ef3b0811ee228504942979124",
+      "bytes": 235316,
+      "mtime_ns": 1794611625383137800
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\CORE_VMT_CLOSURE.json": {
+      "sha256": "e84a74903558ace23dd3b2b06d60052bf3d5908c0f0ad53be24e7a1c34cfffc9",
+      "bytes": 153524,
+      "mtime_ns": 1794611625385156000
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\CORE_COMMANDS.json": {
+      "sha256": "c5a5c17787217af402b4c55a71eb042935418d874417cb7ff213e4e353c4861c",
+      "bytes": 19375,
+      "mtime_ns": 1794611625817082200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\native-core-cases.json": {
+      "sha256": "110721e0bd3a9b1d48772e61b8c837bb07b96d77b6bd5697321dff7d9c6d58ed",
+      "bytes": 16587,
+      "mtime_ns": 1794611991430225600
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\WIDER_FAMILIES.json": {
+      "sha256": "43525a380a88cd7ec60420476b27cea1a0a9ec83ed948cb39841c38a438aba48",
+      "bytes": 892052,
+      "mtime_ns": 1794612244504370200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\WIDER_METADATA_RECEIPT.json": {
+      "sha256": "d29a7ffc9a85440e30b8694009b90d28699624231eaa328987b933b07c556081",
+      "bytes": 93289,
+      "mtime_ns": 1794612244955196200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\WIDER_COMMANDS.json": {
+      "sha256": "d1930cfda34fa6f5a21e0632c11f0aefeb9df913bd12a1408a8544f220500e83",
+      "bytes": 13442,
+      "mtime_ns": 1794612244514473200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\native-wider-cases.json": {
+      "sha256": "6d8b33e6658d1ab4ebbfe21d89e6d194c3b09c2a70e30886b4f8429added0f30",
+      "bytes": 10905,
+      "mtime_ns": 1794612244513467600
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\empty-mount-plan.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3,
+      "mtime_ns": 1794611625386138300
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\conversion-inputs-main_core1.json": {
+      "sha256": "acfa18d4465b2e8a351682c4be638fb317c6d5c7d290718042624a5d20634b2a",
+      "bytes": 406045,
+      "mtime_ns": 1794612001774418100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\conversion-inputs-wide1.json": {
+      "sha256": "5e773dbd707389b94c9478fc0158d0b54ba9aaeeeb457cbda6bdec300a99e39f",
+      "bytes": 603583,
+      "mtime_ns": 1794612386255186500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\runs\\wider-execute-1794612147814048100\\verification.json": {
+      "sha256": "d156534b42c58f4f3fc673c940aa17878ef889fb0406ab42f69676a7932850ef",
+      "bytes": 403763,
+      "mtime_ns": 1794612159239808500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\source\\stage_resources.py": {
+      "sha256": "f00be8c033d0b30faaf7e7727ee398d03341a8fb117e71ddc6ff72d252af39b5",
+      "bytes": 20835,
+      "mtime_ns": 1794611768964413700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\source\\win_desktop_attestation.py": {
+      "sha256": "67a07d2666d927fb9ffb2d2d2432c0bc60cda5f1d3d3e4a02363511b7fd6d2d3",
+      "bytes": 6178,
+      "mtime_ns": 1794611768964413700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\source\\background_python_bootstrap.py": {
+      "sha256": "d65bdc1edba89f7a2cda7edbd3e99a07ac1f6e25f58f0020bc3b11a4e53e67bf",
+      "bytes": 4717,
+      "mtime_ns": 1794611768965401500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\source\\background_blender_observer.py": {
+      "sha256": "c02d4ac4fcde7d6a4cd5218d83f782c03876a75f3a77910de978c352ade67854",
+      "bytes": 3127,
+      "mtime_ns": 1794611768965401500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\source\\background_route.py": {
+      "sha256": "b3f72442b2293cff5294537842fcfa09b24587aa2ab57449eb52546336321fa0",
+      "bytes": 24890,
+      "mtime_ns": 1794611768966396500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\source\\background_conversion_driver.py": {
+      "sha256": "f4e41a24f1d2057d719de89909d57b93f96be71e5fb94e66ddba86eac76d0e4e",
+      "bytes": 42628,
+      "mtime_ns": 1794611768976395200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-source\\stage_resources.py": {
+      "sha256": "f00be8c033d0b30faaf7e7727ee398d03341a8fb117e71ddc6ff72d252af39b5",
+      "bytes": 20835,
+      "mtime_ns": 1794612347375645700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-source\\win_desktop_attestation.py": {
+      "sha256": "67a07d2666d927fb9ffb2d2d2432c0bc60cda5f1d3d3e4a02363511b7fd6d2d3",
+      "bytes": 6178,
+      "mtime_ns": 1794612347375645700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-source\\background_python_bootstrap.py": {
+      "sha256": "d65bdc1edba89f7a2cda7edbd3e99a07ac1f6e25f58f0020bc3b11a4e53e67bf",
+      "bytes": 4717,
+      "mtime_ns": 1794612347377648100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-source\\background_blender_observer.py": {
+      "sha256": "c02d4ac4fcde7d6a4cd5218d83f782c03876a75f3a77910de978c352ade67854",
+      "bytes": 3127,
+      "mtime_ns": 1794612347377648100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-source\\background_route.py": {
+      "sha256": "d40c3eb420cb999e6c6db6a665d7bccba8a3b253bb96c02e1d1e4972e48b46a2",
+      "bytes": 24865,
+      "mtime_ns": 1794612347378637700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-source\\background_conversion_driver.py": {
+      "sha256": "c1c950014ce100269303f7162057f1b3c29f2b5bf4982bb1d74031dd4fe0feb9",
+      "bytes": 44350,
+      "mtime_ns": 1794612383527742800
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\keiki_tools_chisels-groups-000.json": {
+      "sha256": "6882608c35cf7c5afb4b8dce35fb3a32b554d19af49d334773c9b07196eff17a",
+      "bytes": 302,
+      "mtime_ns": 1794611625388137500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\keiki_tools_chisels-groups-001.json": {
+      "sha256": "25d3dc6d75f0bc6cfb1f592fd25a6089e52eccbed13e5b2ae23779031257df32",
+      "bytes": 302,
+      "mtime_ns": 1794611625485436200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\keiki_tools_chisels-groups-010.json": {
+      "sha256": "a6a47320d79cdad8506653679dd73970ce814545150334af3609ed7415ce1048",
+      "bytes": 302,
+      "mtime_ns": 1794611625689533900
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\keiki_tools_chisels-groups-011.json": {
+      "sha256": "7787adba3e31bcbda9761f1a22ce390225702952ff008d345217ee5f7b91b284",
+      "bytes": 302,
+      "mtime_ns": 1794611625691535700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\keiki_tools_chisels-groups-100.json": {
+      "sha256": "763b44ec1f388e73273f6fb181370608643c54e6da61fbd0fd3e55c0c71417ec",
+      "bytes": 302,
+      "mtime_ns": 1794611625692540400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\keiki_tools_chisels-groups-101.json": {
+      "sha256": "d014d118fddcd3a506b927d9c786606ad5dfc6352d0b130bcd5366a12dfc97f5",
+      "bytes": 302,
+      "mtime_ns": 1794611625693539700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\keiki_tools_chisels-groups-110.json": {
+      "sha256": "05776005d331fdea23bcfed73fc69f16d85a80e7347e577a62b7860c2ee4c270",
+      "bytes": 302,
+      "mtime_ns": 1794611625812077800
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\keiki_tools_chisels-groups-111.json": {
+      "sha256": "5cfeb3b19d39378fe5706628532debad42f21910b8a8f752dfb5531e09890c98",
+      "bytes": 302,
+      "mtime_ns": 1794611625815087700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\multi_skin_glove-all-blank-refusal.json": {
+      "sha256": "800b5cecfa12556de2533aeb3b369327b5dec69f081c7f79a6e60c11455cf1da",
+      "bytes": 278,
+      "mtime_ns": 1794611625814088200
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\multi_skin_glove-skin-0.json": {
+      "sha256": "26549648bfc61f0d7a6e8a48ba5d34dd164c61e0f9e06b0108e4befcd687c771",
+      "bytes": 278,
+      "mtime_ns": 1794611625387142900
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\multi_skin_glove-skin-1.json": {
+      "sha256": "906790120495b902205f3ac7132475843be87473c39eabf6574aaf9c80ea6c16",
+      "bytes": 278,
+      "mtime_ns": 1794611625482430100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\requests\\multi_skin_glove-skin-2.json": {
+      "sha256": "01ec3548917da181e46a0eecf1c55209c0e3b1990a1053f7e24b55ee758d7193",
+      "bytes": 278,
+      "mtime_ns": 1794611625484438000
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-requests\\junko_hair-hat-off.json": {
+      "sha256": "4d4f2dd5e469a0488de8e160e8eef1c3be8275bafb69c44c3300d228e881efbe",
+      "bytes": 290,
+      "mtime_ns": 1794612244507372800
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-requests\\junko_main-skin-15-belt-off.json": {
+      "sha256": "4b99e75d284710a14ca4953316786fbdb59317da6aad394832707373bcaedbd0",
+      "bytes": 291,
+      "mtime_ns": 1794612244506374300
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-requests\\junko_main-skin-15.json": {
+      "sha256": "59dff70ffa2de08c2bf2df13bae1632c543afc09a16b58ef3dd557ff132dc85f",
+      "bytes": 291,
+      "mtime_ns": 1794612244505373400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-requests\\kanako_props-all-blank-refusal.json": {
+      "sha256": "995636db1ce35ed83cd0d481a5a098334c4ed66c9fee27ba93cefc9a3cc94e6d",
+      "bytes": 314,
+      "mtime_ns": 1794612244512530400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-requests\\kanako_props-bat-left-off.json": {
+      "sha256": "26aca684f9ab4cf86617e88a8cedd6a259b491fcd258b723b8430a1ea80ec78e",
+      "bytes": 314,
+      "mtime_ns": 1794612244511530500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-requests\\mima_body-skin-3-socks-off.json": {
+      "sha256": "b18e1020b70d8ae9da65bc36f9a5cf304d81e40292da0a4244e92f5b5d600199",
+      "bytes": 314,
+      "mtime_ns": 1794612244510530700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\wider-requests\\mima_body-skin-3.json": {
+      "sha256": "f839a65de4d51bf1326af5e2b1ff0ccfd2e08ccf35f1b46b678cecc1a27d98ed",
+      "bytes": 314,
+      "mtime_ns": 1794612244509524400
+    }
+  },
+  "core_input_stage": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage",
+  "wider_input_stage": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage",
+  "new_output_task": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113",
+  "new_driver_directories": [
+    "core-source",
+    "wider-source"
+  ],
+  "requests": "Fresh exact request bytes copied into this task; no old request is edited",
+  "materialization_gate": "Exact new root-supplied committed HEAD distinct from76f89e and six source hashes matching these expectations; old15scoped files exact",
+  "fresh_lock_created": false,
+  "converter_or_gpu_launched": false,
+  "limits": [
+    "Read-only native resource reuse, no staging/extraction or original/Steam writes.",
+    "No source/metadata expectation is silently refreshed to accept a new change.",
+    "Root must review new copies, then separately prepare fresh locks and grant conversion lease.",
+    "Previous Keiki Win206 failure and historical locks remain unchanged."
+  ]
+}

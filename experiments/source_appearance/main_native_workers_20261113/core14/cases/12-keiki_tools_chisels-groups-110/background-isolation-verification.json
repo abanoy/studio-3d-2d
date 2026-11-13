@@ -1,0 +1,55 @@
+{
+  "format": "has_background_isolation_verification_1",
+  "passed": true,
+  "expected_worker_exit": 0,
+  "desktop": "HAS_Test_34911aca5fe64aa9aeb3770144ec0c06",
+  "window_station": "WinSta0",
+  "python_pid": 16196,
+  "blender_pid": 22844,
+  "private_monitor_child_desktop_confirmed": false,
+  "independent_python_and_blender_self_attestation": true,
+  "original_private_receipt_edited": false,
+  "scope": "Explicit headless background route only; graphical private receipt rules remain unchanged.",
+  "evidence_hashes": {
+    "private-receipt.json": {
+      "sha256": "43f91fe0bf800ca6e962365518f5b3c03c61ace0513880fd7f0b86220cb41011",
+      "bytes": 389,
+      "mtime_ns": 1794613547255372400
+    },
+    "python-desktop-attestation.json": {
+      "sha256": "417296474a89efc98f377a52254a4a15eb801f69ec619191225135f6cb51a30e",
+      "bytes": 4688,
+      "mtime_ns": 1794613544306662900
+    },
+    "blender-desktop-attestation.json": {
+      "sha256": "76212a2dda6de908eb5cb9932440a373f824e386f119f6546756fe251042731a",
+      "bytes": 4714,
+      "mtime_ns": 1794613546054350300
+    },
+    "blender-spawn.json": {
+      "sha256": "882bfafdaa6dc41c7a669da65514a317ddf046a46811a96538b49c68c629f576",
+      "bytes": 1777,
+      "mtime_ns": 1794613544422160900
+    },
+    "background-outer-launch.json": {
+      "sha256": "fb5202abca259e36c5fd6a54c19fda80945ecc275f7584a0fe5b801064229b75",
+      "bytes": 196,
+      "mtime_ns": 1794613544199822800
+    },
+    "python-background-completion.json": {
+      "sha256": "f74454aa8d6a33ad5fae598dc662947aa34c70bdc471a5a875dba799b4f33f5c",
+      "bytes": 5423,
+      "mtime_ns": 1794613547232725000
+    },
+    "blender-background-completion.json": {
+      "sha256": "74c840e0fc72c3b27cccabce80bd8bbba16d06d3f98822dca2cc08e4e4b1ff9b",
+      "bytes": 5695,
+      "mtime_ns": 1794613546905019000
+    }
+  },
+  "native_worker_pid_file": {
+    "sha256": "f02c164177b02f0910b20207a054e060eaf07282502c8d421ddaff6b3d59e6c4",
+    "bytes": 22,
+    "mtime_ns": 1794613544422160900
+  }
+}

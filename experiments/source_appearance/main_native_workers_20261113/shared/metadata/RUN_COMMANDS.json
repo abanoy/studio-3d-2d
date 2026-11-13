@@ -1,0 +1,31 @@
+{
+  "format": "has_native_rebind_future_execution_commands_1",
+  "root_revision": "cf7a805dd6ec76890da048ff28aa0080757e7c34",
+  "authorization": "Review-ready only. Root must explicitly grant an exclusive serial core14 then wider11 lease. Do not run both concurrently.",
+  "automatic_fresh_run_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113",
+  "automatic_child_pattern": "conversion-run-<time_ns>",
+  "commands": {
+    "core": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\core-source\\background_conversion_driver.py",
+      "--input-lock",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\conversion-inputs-core2.json",
+      "--lock-sha256",
+      "e99fd831dc9c8c939f7c2b3c29e1d43c7c5d7708567ac68b37e8c22b8ece7f51",
+      "--run-conversions",
+      "--lease-confirmed"
+    ],
+    "wider": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\wider-source\\background_conversion_driver.py",
+      "--input-lock",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\conversion-inputs-wide2.json",
+      "--lock-sha256",
+      "031b16a7c1e5b12003391650f113703e81b9dc602d092a335f803d3e42c2c94c",
+      "--run-conversions",
+      "--lease-confirmed"
+    ]
+  }
+}

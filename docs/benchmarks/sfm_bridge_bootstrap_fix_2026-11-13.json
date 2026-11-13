@@ -1,0 +1,35 @@
+{
+  "format": "has_source_bridge_bootstrap_fix_1",
+  "date": "2026-11-13",
+  "base_commit": "cf7a805dd6ec76890da048ff28aa0080757e7c34",
+  "failed_actual_app_run": "output/source-choices-native/1794613879951143500-cbada71e",
+  "failure_preserved": true,
+  "change": "Import source_appearance after the existing script-local sys.path setup, alongside the other local helpers",
+  "source_sha256": {
+    "tools/blender_source_bridge.py": "18eebda3d5f44be35f12e1e7d8a17b6f13cbd21bda59331a2565cda85111e53e",
+    "tests/test_source_bridge_bootstrap.py": "01e7a37bb84e8012d6ca778758aa8e88fe6c2958480cb8f8b2a932cc33828599",
+    "tests/verify_source_choice_foundation.py": "5e3f613c9abb8b695b3ff2224c3145b1da4dc5e5dfc63cbc34d26d16d38c10f0",
+    "tests/source_choices_native_smoke.gd": "ef897adebd49d6322b6fa0f357bd0b8e83a97540beb36d521f4c6ec3b3fd2e48",
+    "tests/verify_source_choices_native.py": "1a3cfd3a81d03aeaeeb0e515b3cc548a7832c931596d046168f1002d3c8190a1"
+  },
+  "cpu_bootstrap": {
+    "methods": 2,
+    "passed": 2,
+    "native_conversion": false,
+    "host_APIs_stubbed": true
+  },
+  "foundation": {
+    "passed": true,
+    "checks": 167,
+    "resource_passed": 6,
+    "resource_skipped": 1,
+    "bootstrap_passed": 2,
+    "report": "output/source-choice-foundation/1794614172469403400/verification.json"
+  },
+  "actual_app_retry": "pending fresh current-source Core14 then Wider11",
+  "full_default_suite": "not yet run after this feature port",
+  "native_app_harness": "authored/parse checked; ordinary packed Open before linked Save;393core writer and287wider writer anticipated, not passed",
+  "evidence": "experiments/source_appearance/main_bridge_bootstrap_fix_20261113",
+  "evidence_index_sha256": "d7e1bb648832d7863bfaaee48ecd7b131ede39042c1cce04df8ce5f18f80a0b0",
+  "formal_counts_unchanged": true
+}

@@ -3,12 +3,20 @@
 **Updated November 13, 2026. The owner directed continued SFM extra-feature work
 while busy. Manual acceptance checks do not stop this implementation work.**
 
-Current increment: import-time Source skins and bodygroups are now in working main
-source. Fresh scoped checks pass 53 parser + 29 appearance/IO + 65 headless control
-+ 20 actual private-app metadata checks. The new 167-check foundation is registered
-in default verification. Real native conversion/adoption and wider-model cases are
-being prepared next; these scoped results are not a new full-suite pass. Native
-jiggle, shader fidelity, facial semantics and assembly remain distinct features.
+Current increment: import-time Source skins and bodygroups are implemented. The
+167-check foundation passes and is registered in default verification. At exact
+`cf7a805`, fresh main-worker Core14 and Wider11 both pass: 22 native conversions
+and three expected all-hidden refusals across Nitori, Keiki, Junko main/hair,
+Mima body and Kanako props. Original inputs and pinned tools remain unchanged.
+These worker results do not certify app adoption or native visual fidelity.
+
+The first actual Studio import then exposed a separate startup bug: the new
+appearance helper was imported before Blender's script-local tools path existed.
+The failed private run is retained. The narrow import-order fix passes two
+isolated-host CPU methods and the affected 167-check foundation. A fresh full
+app matrix is next, including normal Add/Undo/Redo, packed/linked cold reopening
+and a movie. The earlier full suite below predates this feature. Native jiggle,
+shader fidelity, facial semantics and assembly remain distinct features.
 
 
 The fresh full Windows suite at `12071fe182a17d17e2a1547c7dbb97f6aa4dd160`
@@ -57,15 +65,12 @@ installation observation has been invented or requested.
 The broader supplied SFM collection remains in scope. The concrete
 [static skin/bodygroup main-port plan](../experiments/source_appearance/static_choice_main_plan_20261113/PLAN.md)
 and [Junko/Mima/Kanako feature matrix](../experiments/source_appearance/static_choice_main_plan_20261113/native_feature_matrix.md)
-preserve those next cases. The chooser is planned, not implemented; native
-assembly, shader, jiggle and runtime-variant fidelity remain separate.
-An [output-only chooser draft](../experiments/source_appearance/static_choice_draft_20261113/README.md)
-now has 82 authored Python checks and an independent source review. Its Godot/UI,
-native conversion and graphical paths remain unparsed/unrun. It is not active
-application behavior. The copied nested catalogue index/README records historical
-local context; the draft packet’s top index is authoritative. The duplicated
-parser is stored once under `overlay/tools`; reproduce only from a fresh owned
-overlay copy rather than treating the historical nested command as runnable.
+preserve the wider corpus and remaining features. The chooser has since been
+ported to main; native assembly, shader, jiggle and runtime-variant fidelity remain
+separate. The [earlier output-only chooser draft](../experiments/source_appearance/static_choice_draft_20261113/README.md)
+and its 82 authored checks are historical design evidence, superseded by the main
+foundation and native worker checks above. Its nested paths describe the earlier
+local context; they are not current run commands.
 
 This is the single reading document for the requests, corrections, proposals,
 current software/test state, protected inputs and next steps from this chat.

@@ -1,0 +1,55 @@
+{
+  "format": "has_background_isolation_verification_1",
+  "passed": true,
+  "expected_worker_exit": 0,
+  "desktop": "HAS_Test_2f4f95905585492d881fe1e2f18830a1",
+  "window_station": "WinSta0",
+  "python_pid": 3024,
+  "blender_pid": 8512,
+  "private_monitor_child_desktop_confirmed": false,
+  "independent_python_and_blender_self_attestation": true,
+  "original_private_receipt_edited": false,
+  "scope": "Explicit headless background route only; graphical private receipt rules remain unchanged.",
+  "evidence_hashes": {
+    "private-receipt.json": {
+      "sha256": "28742f4b0aff307c45ae74df806983771712fdc49252bba7ef8617d0fa8d7f86",
+      "bytes": 389,
+      "mtime_ns": 1794613626992971900
+    },
+    "python-desktop-attestation.json": {
+      "sha256": "491f6595b9d8f774e68f9c9e0f1a6c265577dc505f9adc6602550e06a9a536a4",
+      "bytes": 4693,
+      "mtime_ns": 1794613616228365500
+    },
+    "blender-desktop-attestation.json": {
+      "sha256": "75b5e9969d21ec5fb5fb9e9c1cb181046020a2de494df3930067255bd274d3ad",
+      "bytes": 4716,
+      "mtime_ns": 1794613617965918100
+    },
+    "blender-spawn.json": {
+      "sha256": "c945c1b38689ee0b1786d6ad710f5c0e0d98fdd3a8c56e5a1f9cbbb54bb0ed62",
+      "bytes": 1780,
+      "mtime_ns": 1794613616344310700
+    },
+    "background-outer-launch.json": {
+      "sha256": "0ad572127867023e64534240f3f6c8a68e48b8269039c92a67a37946557eb5f8",
+      "bytes": 196,
+      "mtime_ns": 1794613616116741300
+    },
+    "python-background-completion.json": {
+      "sha256": "7034f1bd32db41c9b96ae7940895430201ecd800584e76e7912deb4b93030f7c",
+      "bytes": 5428,
+      "mtime_ns": 1794613626975558500
+    },
+    "blender-background-completion.json": {
+      "sha256": "a2cf1cea46b3a653ad0c477afd53920ed0b19116960308a130172f647ac2ee2d",
+      "bytes": 5700,
+      "mtime_ns": 1794613626700562500
+    }
+  },
+  "native_worker_pid_file": {
+    "sha256": "dbb3ffd7fe91eef70159821592802499d679367eb1dc3e8aa1f10cceae4e9d78",
+    "bytes": 21,
+    "mtime_ns": 1794613616345310200
+  }
+}

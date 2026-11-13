@@ -4390,3 +4390,36 @@ Windows long-path or process-CWD guarantee. Native retries require a new committ
 source/lock/lease; no new native aggregate is claimed. Failure/source evidence is
 in experiments/source_appearance/main_resource_path_fix_20261113. Manual checks
 remain separate and do not stop the owner's newly directed SFM feature work.
+
+
+## 2026-11-13 — Wider native static choices pass; actual app exposes helper bootstrap
+
+At exactcf7a805, fresh main Core14+Wider11 worker batches pass25cases:22successful
+conversions and3expected all-hidden refusals across Nitori, Keiki, Junko main/hair,
+Mima body and Kanako props. All25dual private self-attestations and job/desktop
+closures pass; both coordinator leases are authoritatively closed. Original561
+staged resources,574SourceIO files,17scoped Python files and locks remain exact.
+Actual Keiki archival copy261UTF16units/513bytes matches its declared provider.
+The priorWin206 failure and rejected rootoutput-name attempt remain separate.
+Compact code/protocol/log/metadata evidence is in main_native_workers_20261113;
+no native art, GLB, image, video or runtime binary is uploaded.
+
+The first actual Studio Core14 writer then FAILED on first default Nitori import:
+source_appearance was imported before Blender's script-local tools path existed.
+The background protocol preloaded modules, so its25worker passes did not cover
+this launch condition. The failed writer/private exit1 is retained; source,
+runtime, native original/copy and snapshot identities stayed exact, private Job/
+desktop closed, and authoritative host query found no owned workers remaining.
+
+The narrow fix relocates that import into the existing local-helper section.
+Two meaningful isolated-host CPU bootstrap methods pass, including the historical
+early-import negative control. Blender/SourceIO host APIs are stubbed there;
+no conversion is claimed. The affected fresh foundation passes167checks again,
+plus separately reported bootstrap2/2 and resource6pass/1symlink-privilege skip.
+The actual native app harness is parsed but its matrix is still unpassed; its
+linked-save preparation now normally opens packed HAS before Save linked so
+stable .assets sidecars, rather than soon-offline originals, are referenced.
+Fresh actualappCore14/Wider11, cold Undo/HAS/movie checks and complete default
+Windows verification are next. Native shader/flex/jiggle/assembly fidelity and
+manual acceptance stay distinct. Formal55/62 and52/54 remain unchanged; owner
+participation is not requested and does not stop continued SFM implementation.
