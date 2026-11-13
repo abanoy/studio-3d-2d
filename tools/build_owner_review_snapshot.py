@@ -91,7 +91,7 @@ def main():
     assert all(hashlib.sha256((target/n).read_bytes()).hexdigest()==digest for n,digest in hashes.items())
     pythonw=Path(sys.executable).with_name('pythonw.exe');assert pythonw.is_file()
     runtime=ROOT/'output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647'
-    for name in ['Flatgrass','Avatar','Street']+[n for n in ['Reimu helpers','Back hair demo'] if(folder/(n+'.has')).is_file()]:
+    for name in ['Flatgrass','Avatar','Street']+[n for n in ['Reimu helpers','Back hair demo','Mima head expressions'] if(folder/(n+'.has')).is_file()]:
         assert (folder/(name+'.has')).is_file()
         text=f'@echo off\r\nsetlocal\r\nset "HYBRID_SOURCEIO={runtime}"\r\nstart "" "{pythonw}" "%~dp0Studio\\launch.pyw" "%~dp0{name}.has"\r\n'
         (folder/('Open '+name+'.bat')).write_bytes(text.encode('utf-8'))

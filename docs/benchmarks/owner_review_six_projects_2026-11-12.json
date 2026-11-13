@@ -1,0 +1,397 @@
+{
+  "format": "has_owner_review_six_project_checkpoint_1",
+  "date": "2026-11-12",
+  "source_commit": "c6782d2f0f7b6ebbe868214ceb975e42afd129dd",
+  "runtime_app_baseline": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "review_folder": "output/owner-review-verified",
+  "profile": "HAS Owner Acceptance 1794541418905935300",
+  "source_mode": "git_revision",
+  "built_committed_source_files": 1360,
+  "before_after_manifest_file_count": 1361,
+  "normal_home_builder": {
+    "empty": true,
+    "home_visible": true,
+    "profile": "C:/Users/noble/AppData/Roaming/HAS Owner Acceptance 1794541418905935300",
+    "recovery": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "simple": true
+  },
+  "builder_private_receipt": {
+    "exit": 0,
+    "child_desktop_confirmed": true,
+    "foreground_child_observed": false,
+    "job_closed": true,
+    "desktop_closed": true
+  },
+  "builder_proof_sha256": "6b36525a233943272b1ede54cfc187930b0d2aa7a44d70f67b07594e2b20901a",
+  "replay_verification_sha256": "6a6c961b2e8b9e901f4491aa6288676887283e608f5a3f07156da5fe07199a3b",
+  "command": "python tools/verify_owner_review.py --run-gpu --expected-revision c6782d2f0f7b6ebbe868214ceb975e42afd129dd",
+  "checker_source": {
+    "tools/verify_owner_review.py": "3311880608febf7ecc4ec45d393e631cd18e0cf0fa91ba4c8ff35888ab54dcca",
+    "tests/owner_review_replay.gd": "f4a168af04bbb748178322492a9f826e027567b30eeba5d5e29bae2e9578fd6c",
+    "docs/owner_review_validation.md": "4e803054e27c16b2016afe5068b05dfca3a5d056de49538a3baa3d7f9c3cec1d"
+  },
+  "cpu_scene_fix": {
+    "checks": 22,
+    "passed": true,
+    "evidence": "output/owner-review-validation/scene-fix-cpu-1794541869074561300/verification.json",
+    "sha256": "59a2aaeeab418380acc9add03c309a167271b6282c85c5b49dc88566a0ad12f4"
+  },
+  "projects": [
+    {
+      "package": "Avatar.has",
+      "package_bytes": 12420758,
+      "package_sha256": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77",
+      "checks": 21,
+      "failures": 0,
+      "normal_startup": {
+        "empty": true,
+        "home_visible": true,
+        "result": {
+          "attempts": [],
+          "cancelled": false,
+          "restored": false
+        },
+        "signal_seen": true,
+        "simple": true
+      },
+      "open_ms": 1079,
+      "load_worker_ms": 62.597,
+      "install_ms": 572.522,
+      "runtime_object_count": 1,
+      "saved_raster_count": 0,
+      "setup_extent": [
+        928.0,
+        335.0
+      ],
+      "native_size": [
+        1920,
+        1080
+      ],
+      "native_pixels_same_setup_focus": true,
+      "native_nonblack_samples": 580,
+      "native_distinct_sampled_colors": 363,
+      "saved_metadata_differences_before_after": {
+        "before": [],
+        "after": []
+      },
+      "strict_resolved_cache_containment": true,
+      "native_readbacks_at_finish": 0,
+      "evidence_folder": "output/owner-review-validation/replay-1794542007734603300/01-avatar",
+      "result_sha256": "24a5480b5ec09d81618861f05fb8811236a4426dd7c7aaaa2bf455dd7af1f8c2",
+      "receipt_sha256": "5febee52f5e70b9eb5106e331248d16afa0f4351635499200a231ca5550bc65e",
+      "private_receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      }
+    },
+    {
+      "package": "Flatgrass.has",
+      "package_bytes": 19038132,
+      "package_sha256": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e",
+      "checks": 21,
+      "failures": 0,
+      "normal_startup": {
+        "empty": true,
+        "home_visible": true,
+        "result": {
+          "attempts": [],
+          "cancelled": false,
+          "restored": false
+        },
+        "signal_seen": true,
+        "simple": true
+      },
+      "open_ms": 714,
+      "load_worker_ms": 61.633,
+      "install_ms": 308.576,
+      "runtime_object_count": 1,
+      "saved_raster_count": 0,
+      "setup_extent": [
+        928.0,
+        335.0
+      ],
+      "native_size": [
+        1920,
+        1080
+      ],
+      "native_pixels_same_setup_focus": true,
+      "native_nonblack_samples": 8956,
+      "native_distinct_sampled_colors": 5177,
+      "saved_metadata_differences_before_after": {
+        "before": [],
+        "after": []
+      },
+      "strict_resolved_cache_containment": true,
+      "native_readbacks_at_finish": 0,
+      "evidence_folder": "output/owner-review-validation/replay-1794542007734603300/02-flatgrass",
+      "result_sha256": "db3ba54f698ad72c211d5974c27ecefdab3afcfeb04b7817e150fc429340d437",
+      "receipt_sha256": "0882abbecdfb2b4fbd2207b360ed132bf623ed55f53423044a9cdd5ac6bc3696",
+      "private_receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      }
+    },
+    {
+      "package": "Street.has",
+      "package_bytes": 1441988,
+      "package_sha256": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5",
+      "checks": 21,
+      "failures": 0,
+      "normal_startup": {
+        "empty": true,
+        "home_visible": true,
+        "result": {
+          "attempts": [],
+          "cancelled": false,
+          "restored": false
+        },
+        "signal_seen": true,
+        "simple": true
+      },
+      "open_ms": 358,
+      "load_worker_ms": 26.899,
+      "install_ms": 102.207,
+      "runtime_object_count": 1,
+      "saved_raster_count": 0,
+      "setup_extent": [
+        928.0,
+        335.0
+      ],
+      "native_size": [
+        1920,
+        1080
+      ],
+      "native_pixels_same_setup_focus": true,
+      "native_nonblack_samples": 1055,
+      "native_distinct_sampled_colors": 654,
+      "saved_metadata_differences_before_after": {
+        "before": [],
+        "after": []
+      },
+      "strict_resolved_cache_containment": true,
+      "native_readbacks_at_finish": 0,
+      "evidence_folder": "output/owner-review-validation/replay-1794542007734603300/03-street",
+      "result_sha256": "02b180e2960d6bd738ae16c4e7d14dda5894711570a0527b34baf308a19b9381",
+      "receipt_sha256": "21a0675bf12dbfda8e33d76b3d548614b512d0db6b01ff141996f829ad767137",
+      "private_receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      }
+    },
+    {
+      "package": "Reimu helpers.has",
+      "package_bytes": 5350043,
+      "package_sha256": "766f3bc365f851cdd2428b64f26773ca55fe31e173376ffae05b1e04b60cd4d7",
+      "checks": 23,
+      "failures": 0,
+      "normal_startup": {
+        "empty": true,
+        "home_visible": true,
+        "result": {
+          "attempts": [],
+          "cancelled": false,
+          "restored": false
+        },
+        "signal_seen": true,
+        "simple": true
+      },
+      "open_ms": 675,
+      "load_worker_ms": 72.182,
+      "install_ms": 253.616,
+      "runtime_object_count": 2,
+      "saved_raster_count": 1,
+      "setup_extent": [
+        928.0,
+        335.0
+      ],
+      "native_size": [
+        1920,
+        1080
+      ],
+      "native_pixels_same_setup_focus": true,
+      "native_nonblack_samples": 1101,
+      "native_distinct_sampled_colors": 280,
+      "saved_metadata_differences_before_after": {
+        "before": [],
+        "after": []
+      },
+      "strict_resolved_cache_containment": true,
+      "native_readbacks_at_finish": 0,
+      "evidence_folder": "output/owner-review-validation/replay-1794542007734603300/04-reimu-helpers",
+      "result_sha256": "67f6c5a5ecb76a24c3e71fb93934d7c92ead8f71c3a2441d60dbe5015708234a",
+      "receipt_sha256": "cb3deac614fde2339ad5b94cc5f4f76f829af12cacef191e1128c02c5b37cdaf",
+      "private_receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      }
+    },
+    {
+      "package": "Back hair demo.has",
+      "package_bytes": 5346123,
+      "package_sha256": "95fad71369deb9f98a506d9718ff2a802283f64971deecd918f47821fd8635d4",
+      "checks": 22,
+      "failures": 0,
+      "normal_startup": {
+        "empty": true,
+        "home_visible": true,
+        "result": {
+          "attempts": [],
+          "cancelled": false,
+          "restored": false
+        },
+        "signal_seen": true,
+        "simple": true
+      },
+      "open_ms": 635,
+      "load_worker_ms": 38.346,
+      "install_ms": 251.245,
+      "runtime_object_count": 2,
+      "saved_raster_count": 0,
+      "setup_extent": [
+        928.0,
+        335.0
+      ],
+      "native_size": [
+        1920,
+        1080
+      ],
+      "native_pixels_same_setup_focus": true,
+      "native_nonblack_samples": 1289,
+      "native_distinct_sampled_colors": 439,
+      "saved_metadata_differences_before_after": {
+        "before": [],
+        "after": []
+      },
+      "strict_resolved_cache_containment": true,
+      "native_readbacks_at_finish": 0,
+      "evidence_folder": "output/owner-review-validation/replay-1794542007734603300/05-back-hair-demo",
+      "result_sha256": "4149463413bf613922ba19fdcd1819e18317a5d85ae24b3ba9bad9e453792452",
+      "receipt_sha256": "608217277bcdbc4187a69109f93848ab4a5a4d9c184893a2bd2fce3966a73df3",
+      "private_receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      }
+    },
+    {
+      "package": "Mima head expressions.has",
+      "package_bytes": 3238410,
+      "package_sha256": "94a46183c7ee895b7c94b92d827e572f267b53b58e410a3b854d05c32e175d4a",
+      "checks": 21,
+      "failures": 0,
+      "normal_startup": {
+        "empty": true,
+        "home_visible": true,
+        "result": {
+          "attempts": [],
+          "cancelled": false,
+          "restored": false
+        },
+        "signal_seen": true,
+        "simple": true
+      },
+      "open_ms": 1091,
+      "load_worker_ms": 33.867,
+      "install_ms": 740.124,
+      "runtime_object_count": 1,
+      "saved_raster_count": 0,
+      "setup_extent": [
+        928.0,
+        335.0
+      ],
+      "native_size": [
+        1920,
+        1080
+      ],
+      "native_pixels_same_setup_focus": true,
+      "native_nonblack_samples": 1194,
+      "native_distinct_sampled_colors": 36,
+      "saved_metadata_differences_before_after": {
+        "before": [],
+        "after": []
+      },
+      "strict_resolved_cache_containment": true,
+      "native_readbacks_at_finish": 0,
+      "evidence_folder": "output/owner-review-validation/replay-1794542007734603300/06-mima-head-expressions",
+      "result_sha256": "a7ac638b768911542f101e4db2283f46b226fffcc99b45541a7d46d81dbf4039",
+      "receipt_sha256": "831c5993ba474e56ee21ed61d6110f73870cdcaa67dc3560f776a173fbaf0409",
+      "private_receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      }
+    }
+  ],
+  "six_project_total_checks": 129,
+  "all_six_passed": true,
+  "source_hash_size_mtime_changes": [],
+  "package_hash_size_mtime_changes": [],
+  "harness_unchanged": true,
+  "first_failed_attempt": {
+    "folder": "output/owner-review-validation/replay-1794541459557567800",
+    "verification_sha256": "e87ab425c7083f5071f6684bb8cf24cd15941451c5bf403c5da635d8459b80b9",
+    "failed_cases": 6,
+    "problems": "Checker launched --script, which deliberately suppresses ordinary Home/recovery; a second check compared Windows backslashes against slash-only cache paths. App source and snapshot were unchanged. All six saved metadata comparisons and native captures passed even in this first attempt.",
+    "correction": "Generated external scene with Node harness follows normal app startup, waits for real startup_recovery_finished, retains Home assertions. Normalize separators/case/dots and independently resolve/refuse reparse/strictly require descendant cache. No product changes or relaxed saved-state/pixel assertions."
+  },
+  "limits": [
+    "No human/artist fidelity or usability approval.",
+    "No clean Windows installation or standalone redistributable claim; launchers reuse approved tools on this PC.",
+    "No real-time performance measurement or six-movie claim; PNG captures only.",
+    "Back hair is an automated synthetic helper demo, not an owner-authored take.",
+    "Mima is head-only with 143 prepared facial targets, not whole-character/skin/bodygroup/jiggle acceptance.",
+    "Local Wind Review and Source appearance experiments are unshipped; they are absent from normal application runtime.",
+    "The default aggregate remains unpassed until a fresh full run completes."
+  ],
+  "acceptance_counts_unchanged": {
+    "verified": 55,
+    "required_acceptance_groups": 62,
+    "implemented": 52,
+    "required_implementation_groups": 54
+  },
+  "private_art_uploaded": false,
+  "final_guide_and_mima_launcher": {
+    "files": {
+      "Open Mima head expressions.bat": {
+        "sha256": "799efb0c34b68840fd97cfb6e51137d3c907af81435b08ed485e0c9461852fc2",
+        "bytes": 283
+      },
+      "README.md": {
+        "sha256": "dc331be44b3da3041b52a4bf6a4a7f6297bfd5e617d6f71f0f9cb45cd8d28a6c",
+        "bytes": 3229
+      }
+    },
+    "installed_by": "Root exact-byte copy after confirming all six pass; absent destinations only",
+    "guide_source": "docs/owner_review_package_2026-11-12.md",
+    "future_mima_launcher_reconstruction": "tools/build_owner_review_snapshot.py now includes the optional existing Mima head expressions.has",
+    "new_launcher_executed": false,
+    "launcher_pattern_verified": "Exact existing Open Avatar.bat bytes with only project filename replaced"
+  },
+  "snapshot_builder_units": {
+    "command": "python -B -m unittest discover -s tests -p test_owner_review_snapshot.py",
+    "tests": 7,
+    "failures": 0,
+    "errors": 0,
+    "expected_invalid_revision_diagnostic": "fatal: Needed a single revision"
+  }
+}

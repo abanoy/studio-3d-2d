@@ -472,9 +472,22 @@ from the new published checkpoint; scoped checks do not substitute for it.
 
 Source-only [experiment checkpoints](../experiments/README.md) preserve the local
 wind prototype (94 headless, graphics unrun), static Source appearance worker
-(21 CPU, actual conversion/app/render unrun), and six-project review checker
-(25 CPU, actual package replay unrun). These overlays are **not installed in the
-normal app**. Wind's pending-helper integration and permanent inclusion settings,
+(21 CPU, actual conversion/app/render unrun), and the historical first review
+checker. The current checker is now in `tools/verify_owner_review.py` and
+`tests/owner_review_replay.gd`: all six existing packages pass **129 checks** in
+fresh private processes against committed-source review `c6782d2`. Normal
+recovery/Home startup, ordinary Python unpack/loading, saved metadata, native
+Setup/Focus pixels, strict cache containment and unchanged source/package/harness
+hashes are verified. The first failed checker attempt remains preserved: its
+`--script` route suppressed Home and its cache test mishandled Windows separators.
+The corrected checker uses ordinary scene startup and resolved containment;
+application source and the review snapshot were unchanged. See
+[review evidence](benchmarks/owner_review_six_projects_2026-11-12.json) and
+[replay contract](owner_review_validation.md). This is runnable-review evidence,
+not artist approval, a clean installation or six new movies.
+
+The wind and Source appearance overlays are **not installed in the normal app**.
+Wind's pending-helper integration and permanent inclusion settings,
 and Source runtime/animated skin/bodygroup switching remain separate work.
 Do not claim native jiggle/assembly fidelity or accept the features from CPU
 tests alone. Their plans, exact source and limitations are recoverable from Git.

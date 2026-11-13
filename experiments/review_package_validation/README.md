@@ -14,3 +14,11 @@ The source verifier and README in `reference` retain the CPU-probe context; revi
 their session paths before relocating. The actual application, package replay,
 source-fidelity, owner/device and clean-install checks remain separate.
 No model, HAS, PNG, audio or other private art payload is included here.
+
+The first checker source above remains an immutable historical checkpoint. The
+current ordinary-scene checker is now at `tools/verify_owner_review.py` and
+`tests/owner_review_replay.gd`; six real review packages pass129 checks after
+correcting startup-route and Windows-separator assumptions. See
+`docs/benchmarks/owner_review_six_projects_2026-11-12.json`. Preserve the first
+failed logs and this source; do not infer that the original archived checker
+passed. The normal application source was unchanged by the checker correction.
