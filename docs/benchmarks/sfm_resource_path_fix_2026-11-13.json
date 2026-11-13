@@ -1,0 +1,36 @@
+{
+  "format": "has_source_resource_windows_path_fix_1",
+  "date": "2026-11-13",
+  "base_commit": "76f89e82af583001af8cd16260b441555feb2fe2",
+  "failed_core_run": "output\\sfm-broader-native-cases-20261113\\conversion-run-20261113T232338350",
+  "failed_core_status": "failed after one positive Nitori default; second Keiki default hit WinError206 in archival resolved-native directory creation",
+  "source_before_failure_unchanged": true,
+  "native_retry_after_fix": "pending fresh committed source/lock/lease; no native pass claimed",
+  "change": "Keep logical hierarchy and resource-path boundary; use Windows extended-length syntax only for bounded exclusive filesystem cache writes; SourceIO still consumes the original MemoryBuffer bytes",
+  "source_sha256": {
+    "tools/source_archive.py": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
+    "tools/blender_source_bridge.py": "e885074a2cb8c21976b25429e9c09c43c976eca760b835bc4b295fcac6185f4d",
+    "tests/test_source_resource_write.py": "d3b2e3a5f338a6c0e2b92a993b810cfc6526a03c8cd31c7fef85bd45597aa823",
+    "tests/verify_source_choice_foundation.py": "7ee555ef1f33c524c1f7aaa1300d89465b5db95a6aa57d8c19c3f5d673a464c9"
+  },
+  "cpu": {
+    "methods": 7,
+    "passed": 6,
+    "skipped": 1,
+    "explicit_skip": "Directory symlink creation denied WinError1314; no symlink escape pass claimed",
+    "first_mandatory_long_path_characters": 382,
+    "archive_regressions_passed": 8
+  },
+  "integrated_foundation": {
+    "checks": 167,
+    "passed": true,
+    "resource_writer_additional_methods": 7,
+    "resource_writer_passed": 6,
+    "resource_writer_skipped": 1,
+    "actual_long_path_characters": 373
+  },
+  "scope_limit": "This fixes resolved-dependency archival IO, not every possible long Windows path or current-directory process-launch restriction",
+  "evidence": "experiments/source_appearance/main_resource_path_fix_20261113",
+  "private_art_uploaded": false,
+  "evidence_index_sha256": "ab7589a0b14305a86b23706cff1cd5f9e6f39a96eb24989eed8778fdf86931aa"
+}

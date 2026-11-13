@@ -1,0 +1,75 @@
+{
+  "resolved_count": 10,
+  "all_resolved_providers_owned": true,
+  "actual_missing_requests": [
+    {
+      "path": "materials/Gloves glowg.vmt",
+      "classification": "optional lookup probe or unclassified request"
+    },
+    {
+      "path": "materials/Gloves gloww.vmt",
+      "classification": "optional lookup probe or unclassified request"
+    },
+    {
+      "path": "materials/Glovesg.vmt",
+      "classification": "optional lookup probe or unclassified request"
+    },
+    {
+      "path": "materials/Glovesw.vmt",
+      "classification": "optional lookup probe or unclassified request"
+    }
+  ],
+  "active_materials": [
+    {
+      "material": "models/touhou/tamo/Nitori edit/Gloves",
+      "vmt": "materials/models/touhou/tamo/nitori edit/gloves.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\gloves.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/Nitori edit/Gloves glow",
+      "vmt": "materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/black.vtf",
+      "status": "PBR approximation"
+    }
+  ],
+  "inactive_materials": [],
+  "native_preflight_missing_references": [
+    {
+      "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+      "key": "$bumpmap",
+      "value": "hairbump",
+      "kind": "texture",
+      "reference": "materials/hairbump.vtf",
+      "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+      "resolved": false,
+      "engine_generated": false,
+      "supported_bridge_input": false
+    },
+    {
+      "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+      "key": "$bumpmap",
+      "value": "hairbump",
+      "kind": "texture",
+      "reference": "materials/hairbump.vtf",
+      "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+      "resolved": false,
+      "engine_generated": false,
+      "supported_bridge_input": false
+    },
+    {
+      "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+      "key": "$bumpmap",
+      "value": "hairbump",
+      "kind": "texture",
+      "reference": "materials/hairbump.vtf",
+      "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+      "resolved": false,
+      "engine_generated": false,
+      "supported_bridge_input": false
+    }
+  ],
+  "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+}

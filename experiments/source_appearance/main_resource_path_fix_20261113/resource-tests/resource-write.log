@@ -1,0 +1,13 @@
+test_existing_cache_payload_refuses_without_replacement (test_source_resource_write.SourceResourceWriteTests.test_existing_cache_payload_refuses_without_replacement) ... ok
+test_invalid_logical_names_refuse_before_any_layout_change (test_source_resource_write.SourceResourceWriteTests.test_invalid_logical_names_refuse_before_any_layout_change) ... ok
+test_invalid_payloads_refuse_before_parent_directories (test_source_resource_write.SourceResourceWriteTests.test_invalid_payloads_refuse_before_parent_directories) ... ok
+test_nested_unicode_and_backslash_names_keep_exact_layout (test_source_resource_write.SourceResourceWriteTests.test_nested_unicode_and_backslash_names_keep_exact_layout) ... ok
+SOURCE_RESOURCE_LONG_PATH {"format": "has_source_resource_long_path_1", "platform": "win32", "logical_path_characters": 382, "relative": "materials/touhou/keiki/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-3/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-4/haniyashin chisels texture \u2014 \u3042.vtf", "normal_returned_path": true, "exact_layout": true, "payload": {"bytes": 4379, "mtime_ns": 1600000000333333300, "sha256": "be2e53842cc481e0ad4ac5e5807c66a173ff68964d2fb4fc1d482d3053eddedc"}, "exclusive_refusal_preserved": true}
+test_real_windows_path_over_320_characters_and_exclusive_refusal (test_source_resource_write.SourceResourceWriteTests.test_real_windows_path_over_320_characters_and_exclusive_refusal) ... ok
+test_short_binary_empty_and_bytearray_payloads (test_source_resource_write.SourceResourceWriteTests.test_short_binary_empty_and_bytearray_payloads) ... ok
+test_symlink_parent_escape_refuses_and_preserves_outside_payload (test_source_resource_write.SourceResourceWriteTests.test_symlink_parent_escape_refuses_and_preserves_outside_payload) ... skipped "Directory symbolic links unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\Users\\\\noble\\\\AppData\\\\Local\\\\Packages\\\\OpenAI.Codex_2p2nqsd0c76g0\\\\AC\\\\#!sandbox.{3665c6cb-c802-44f4-a3c2-201eaddf4b3d}\\\\Temp\\\\has-source-resource-h2obz0d_\\\\outside' -> 'C:\\\\Users\\\\noble\\\\AppData\\\\Local\\\\Packages\\\\OpenAI.Codex_2p2nqsd0c76g0\\\\AC\\\\#!sandbox.{3665c6cb-c802-44f4-a3c2-201eaddf4b3d}\\\\Temp\\\\has-source-resource-h2obz0d_\\\\resolved-native\\\\linked'"
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.123s
+
+OK (skipped=1)

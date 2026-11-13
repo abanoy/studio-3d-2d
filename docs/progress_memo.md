@@ -14382,3 +14382,26 @@ are next; prior14 prototype conversions do not pass the new chooser. The supplie
 models, originals, private reviews and installed tools remain protected. Formal
 55/62acceptance and52/54implementation counts are unchanged. No manual review prompt,
 new tool installation, Steam write or private-art upload occurred.
+
+
+## 2026-11-13 — Native static-choice retry exposed a Windows cache-path defect
+
+Foundation76f89e82af583001af8cd16260b441555feb2fe2 was pushed/fetched/remote
+verified. The fresh core14 main-worker run passed Nitori default, then stopped at
+Keiki default: Blender's bundled Python raised WinError206 while creating a long
+resolved-native material directory. The complete attempt remains FAILED; all
+source/runtime/original/staged/request identities stayed exact, both background
+Jobs/desktops closed, and root authoritatively released the failed lease. No
+wider converter was launched. Fresh wider265resource staging completed separately.
+
+The bounded fix adds source_archive.write_resource: same logical relative-path
+validation/hierarchy, Windows extended-length IO only,128MiB perresource bound and
+exclusive cache write. Bridge still returns original MemoryBuffer bytes. Focused
+writer tests run7methods:6pass plus explicit directory-symlink privilege skip
+(WinError1314). Mandatory382char/4379byte Windows path and old archive8cases pass.
+The integrated167 foundation passes again, with extra writer6pass/1skip recorded
+separately; its independent long-path fixture is373chars. This is not a universal
+Windows long-path or process-CWD guarantee. Native retries require a new committed
+source/lock/lease; no new native aggregate is claimed. Failure/source evidence is
+in experiments/source_appearance/main_resource_path_fix_20261113. Manual checks
+remain separate and do not stop the owner's newly directed SFM feature work.

@@ -26,7 +26,7 @@ sys.modules["SourceIO"] = module
 spec.loader.exec_module(module)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from asset_audit import gma_index, AssetError
-from source_archive import resource_path
+from source_archive import resource_path, write_resource
 from source_texture import blender_rgba
 from source_case import CaseResolver
 from source_eyes import plan as neutral_eye_plan
@@ -176,10 +176,7 @@ def find_file(value, *args, **kwargs):
                 dependency_bytes += len(blob)
                 if dependency_bytes > 512 * 1024 * 1024:
                     raise ValueError("Resolved native dependencies exceed 512 MiB")
-                native_copy = (out / "resolved-native" / name).resolve()
-                native_copy.relative_to(out / "resolved-native")
-                native_copy.parent.mkdir(parents=True, exist_ok=True)
-                native_copy.write_bytes(blob)
+                write_resource(out / "resolved-native", name, blob)
                 dependencies[key] = {"path": name, "provider": str(provider.filepath), "bytes": len(blob),
                                      "sha256": hashlib.sha256(blob).hexdigest()}
             return VTXBuffer(blob) if name.lower().endswith(".vtx") else MemoryBuffer(blob)

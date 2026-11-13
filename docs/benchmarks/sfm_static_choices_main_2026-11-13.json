@@ -2,7 +2,7 @@
   "format": "has_source_static_choices_main_progress_1",
   "date": "2026-11-13",
   "base_commit": "489215fcbfb69acde05d4a1341cc872cc69a9132",
-  "state": "working main; native integration in progress",
+  "state": "Working main native retry pending after concrete Windows resolved-resource copy fix",
   "foundation": {
     "checks": 167,
     "reports": {
@@ -23,7 +23,8 @@
     "tools/source_mdl_choices.py": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
     "tools/source_choice_io.py": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
     "tools/prepare_source.py": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
-    "tools/blender_source_bridge.py": "dfef09700405e96e289b92bc2b5e98d897f9fcdc86fce54be7f649a7b161372b"
+    "tools/blender_source_bridge.py": "e885074a2cb8c21976b25429e9c09c43c976eca760b835bc4b295fcac6185f4d",
+    "tools/source_archive.py": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131"
   },
   "process_primary_sources": [
     "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/platform/windows/os_windows.cpp",
@@ -42,5 +43,18 @@
     "implementation_total": 54
   },
   "foundation_packet": "experiments/source_appearance/main_foundation_20261113",
-  "foundation_packet_index_sha256": "408fb5dd176e323a2e18a4b9d4731c70d1c6b778bfd73878414a27a60d90aab6"
+  "foundation_packet_index_sha256": "408fb5dd176e323a2e18a4b9d4731c70d1c6b778bfd73878414a27a60d90aab6",
+  "native_core_attempt": {
+    "status": "failed",
+    "positive_before_failure": 1,
+    "failed_case": "Keiki default WinError206 cache path",
+    "report": "docs/benchmarks/sfm_resource_path_fix_2026-11-13.json"
+  },
+  "foundation_after_resource_fix": {
+    "passed": true,
+    "checks": 167,
+    "resource_methods": 7,
+    "resource_passed": 6,
+    "resource_skipped": 1
+  }
 }
