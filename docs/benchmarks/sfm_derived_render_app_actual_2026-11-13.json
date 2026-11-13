@@ -1,0 +1,120 @@
+{
+  "format": "has_sfm_derived_render_app_actual_v3_1",
+  "date": "2026-11-13",
+  "source_commit": "4fa5efc175c0da53fcd61087e9685c89f4614db3",
+  "source_mode": "exact_git_revision",
+  "run_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\runs\\1794557737001097300-90ebeaa43b5e48d584496a609cd3c203",
+  "manifest_sha256": "93bc068effc67443e2fef8a78ad2c65fe6fdd4965cb67c134314251619a0af55",
+  "status": "DERIVED_RENDER_APP_PASS_NOT_NATIVE_FIDELITY",
+  "writer_checks": 328,
+  "reader_checks": 60,
+  "total_checks": 388,
+  "failures": 0,
+  "raw_bundle_inspections": 12,
+  "raw_capture_cases": [
+    "nitori-skin-0-rest",
+    "nitori-skin-1-rest",
+    "nitori-skin-2-rest",
+    "keiki-tools-0.0",
+    "keiki-tools-0.5",
+    "keiki-tools-1.0",
+    "keiki-000-pose",
+    "nitori-skin-0-pose"
+  ],
+  "derived_world_point_comparisons": 24,
+  "maximum_derived_point_error": 6.003679686727992e-07,
+  "unchanged_point_tolerance": 0.0002,
+  "positive_image_samples": {
+    "writer": {
+      "nitori-skin-0": 563,
+      "keiki-000": 4873
+    },
+    "reader": {
+      "nitori-skin-0": 563,
+      "keiki-000": 4873
+    }
+  },
+  "exact_writer_reader_pixels": true,
+  "normal_app_scope": "PreparedGLBadoption plus oneimportUndo/Redo, namednumericboneposeUndo/Redo, nativeparameterreport/bindings/keys/rootretention, normalpack/unpack andemptycachefreshreader afterownedinputsoffline. Studio light chosenbeforebaseline.",
+  "packages": [
+    {
+      "key": "nitori-skin-0",
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\runs\\1794557737001097300-90ebeaa43b5e48d584496a609cd3c203\\nitori-skin-0.has",
+      "bytes": 592000,
+      "sha256": "b8a259f7145316e35f0133b3143784a65eb58c2d0359881aac93e15dd05edf75",
+      "packed_payload_sha256_crc_readback": true,
+      "schema": 4,
+      "lighting_mode": "studio",
+      "asset_count": 1
+    },
+    {
+      "key": "keiki-000",
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\runs\\1794557737001097300-90ebeaa43b5e48d584496a609cd3c203\\keiki-000.has",
+      "bytes": 797071,
+      "sha256": "26c323d9787017035056c835936543e4a25e0206ff798e1250c0ba55df6853bb",
+      "packed_payload_sha256_crc_readback": true,
+      "schema": 4,
+      "lighting_mode": "studio",
+      "asset_count": 1
+    }
+  ],
+  "preservation": {
+    "passed": true,
+    "inputs_offline": true,
+    "gate_results": {
+      "protected_originals_runtimes_candidate": true,
+      "root_head": true,
+      "root_functional": true,
+      "derived_reference": true,
+      "private_source_writer": true,
+      "private_source_reader": true,
+      "full_context_and_owned_inputs": true
+    },
+    "protected_prepared_bundle_runtime_candidate_files": 59,
+    "root_functional_files": 963,
+    "copied_source_counts": {
+      "writer": 1780,
+      "reader": 1780
+    }
+  },
+  "private_graphics_receipts": {
+    "writer": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_46e4958d218c401083de0272eaba4754",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 21560,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.591
+    },
+    "reader": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_c71b839f211d4de8bd96001d9d85f996",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 10880,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.323
+    }
+  },
+  "compact_archive": "experiments/source_appearance/derived_probe_actual_v3_20261113",
+  "full_aggregate": false,
+  "new_movies": "UNRUN",
+  "app_tools_shape_ui": "UNRUN; Tools0/.5/1wasrawenginechannel exercise",
+  "native_fidelity": "Notcertified: priornativebaseoracle7wholemaps/3wholetrianglemapspartial; Nitoritopologyunrun/Tools5nearcoincidentmapsunresolved; nativeflexdeltas/shaders/additive/envmap/Phong/warp/jiggle remainseparate. Nitorithree skinsrenderalikebehindretainedopaqueglow, nativehairbumpmissing.",
+  "prior_v2_failures_preserved": "docs/benchmarks/sfm_derived_v2_actual_attempts_2026-11-13.json",
+  "art_media_glb_payload_uploaded": false,
+  "cleanup_performed": false,
+  "next": "Publish/remoteverify; preservebroaderJunko/Mima/Kanakocases andmainruntime/UIport distinction. Freshfullpost-encoderdefault remainsrequired.",
+  "static_appearance_worker_chooser_ported": false
+}

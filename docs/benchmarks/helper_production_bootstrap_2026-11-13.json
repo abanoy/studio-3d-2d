@@ -1,0 +1,72 @@
+{
+  "format": "has_wind_production_bootstrap_cpu_checkpoint_1",
+  "date": "2026-11-13",
+  "context_commit": "4fa5efc175c0da53fcd61087e9685c89f4614db3",
+  "main_ported": false,
+  "headless_tests": 18,
+  "failures": 0,
+  "errors": 0,
+  "retained_processes": 45,
+  "normal_host_identity_injected": false,
+  "large_request_metrics": {
+    "submission_bytes": [
+      12934,
+      12934,
+      12934
+    ],
+    "context_ascii_bytes": [
+      5594,
+      5594,
+      5594
+    ],
+    "would_be_inline_poll_bytes": [
+      5781,
+      5781,
+      5781
+    ],
+    "actual_control_frame_max_bytes": 849
+  },
+  "mapped_release_handle_counts": {
+    "before": 267,
+    "after": 265,
+    "repeated": 265,
+    "delta": 2,
+    "repeated_delta": 0,
+    "first": {
+      "attempted": true,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    },
+    "second": {
+      "attempted": false,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    }
+  },
+  "root_audit": "45retained observerhandlesclosed, observedPID+creation matchowners, no genericPIDtermination; allpriorindexedbytechecksrecorded.",
+  "index": {
+    "path": "experiments/local_wind_review/helper_production_bootstrap_20261113/FILE_INDEX.json",
+    "sha256": "81a406a3f77d4e1a16ed2c0fcac1858be9aea88250103fc50f5f4ca2f3419d53"
+  },
+  "source_review": {
+    "reviewer": "bootstrap_review",
+    "type": "Independent primaryAPI/design/actualsource read-onlyreview, no runtimes or edits",
+    "fixes": [
+      "Poll context moved todigest to support validUnicode-heavycontexts",
+      "Fresh boundedperattemptfilename preservesretry withoutreplacement",
+      "Controller controlcap alignedto2048; filebudgetseparate"
+    ],
+    "result": "No remaining concrete source blocker reported"
+  },
+  "retained_failure": [
+    "cpu-tests-content-equivalence-failure.json",
+    "cpu-tests-content-equivalence-failure.log"
+  ],
+  "failure_reason": "16pass/2harnessfail aftervalidlargepreparation: identicalattemptbytes legitimatelysharedSHA acrossfreshpaths, contrarytouniquepathassumption. Allmatchingcopies nowmustbebyteidentical; no productgate relaxed.",
+  "scope": "NormalisolatedGDScriptNode derives livehost identity and validates trustedPythonretainedhostready; smallcontrolframes referencechecksum-boundownedrequestfiles. No mainapp/UI/native-model/render acceptance.",
+  "next": "Actualimportedbindingcompleteness and reviewedmainhelperdraft integration beforedisplaying anyderivedcandidate.",
+  "graphics_or_native_conversion_started": false,
+  "private_art_uploaded": false
+}

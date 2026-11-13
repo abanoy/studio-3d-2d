@@ -539,7 +539,28 @@ release drops none. This is the pinned Windows backend's retained-handle branch,
 with a once-only ownership flag, not a generic PID lookup. Initial parse/name and
 expected-failure-wait harness failures remain. Production host bootstrap,
 larger-message handling, hidden model bindings and helper-window simulation
-remain unfinished. Source: `experiments/local_wind_review/helper_godot_bridge_20261113`.
+were unfinished at that checkpoint. Source: `experiments/local_wind_review/helper_godot_bridge_20261113`.
+
+The subsequent isolated production bootstrap passes18actual headless tests and
+45retained process/handle observations. A normal Node derives its live host
+identity through the trusted controller, without an observer-supplied identity.
+Control frames remain at most2048bytes; a12934byte Unicode-heavy submission uses
+a checksum-bound owned request file, with the largest actual control849bytes.
+Mapped release drops two native handles once and none on repetition. The initial
+16pass/2test-assumption failures remain recorded. This is unported foundation,
+not main helper UI, rendering or physics. Source/evidence:
+`experiments/local_wind_review/helper_production_bootstrap_20261113`.
+
+The separate imported-binding gate passes22CPU tests and eight headless imports.
+Actual VRM0/VRM1/Back hair-alias inputs have complete100/110/103source-node maps;
+the103-to104endpoint candidate retains every original binding, local/global base
+and bone-parent join. Synthetic transfer cases independently verify0.25/0.5shape
+weights. All65preservation gates pass. VRM0/1 produced no usable new-helper
+proposal within the bounded first64regions, so their derived-helper support is
+explicitly unproved. Source/evidence:
+`experiments/local_wind_review/helper_imported_binding_gate_20261113`.
+Before-Apply preview still needs integration with authored pose/shape transfer,
+main lifecycle invalidation, actual display/wind and separate Apply behavior.
 
 A bounded SFM derived render/adoption probe has a newer v2 source packet with
 39CPU controls and independent source review. Four harness corrections pin the
@@ -567,9 +588,21 @@ light before the import baseline, retains the exact visibility/replay predicates
 normalizes manifest paths, and binds/rechecks a standard-based layout proof.
 Only one exact Godot `print_verbose` packed-layout notice can then be classified;
 all406old lines remain recorded, and every other warning/error still fails.
-All12actual layouts pass the bounded read-only proof. V3 graphics are still
-unrun. Source: `experiments/source_appearance/derived_probe_candidate_v3_20261113`;
+All12actual layouts pass the bounded read-only proof. Source:
+`experiments/source_appearance/derived_probe_candidate_v3_20261113`;
 [actual failed attempts](benchmarks/sfm_derived_v2_actual_attempts_2026-11-13.json).
+
+**Later actual v3 outcome:** exact4fa5efc passes328writer and60fresh-reader
+checks, all24derived point comparisons and same-image positive-content guards.
+Two ordinary prepared-GLB imports exercise Undo/Redo, named numeric poses, normal
+packed saving and exact cold-reader pixels after owned inputs go offline. Both
+private jobs/desktops close; all seven preservation gates pass. Tools0/0.5/1,
+box and hand captures change as expected. The Tools checks use raw engine
+channels, not the app's shape controls. New movies and native Source fidelity
+remain unrun; the new static variant worker/chooser is still unported. Nitori's
+three skins still render alike behind the retained opaque glow and its missing
+hair bump remains explicit. The wider82MDL feature set and Junko/Mima/Kanako
+next representatives remain separate. [Actual scope and evidence](sfm_derived_render_app_2026-11-13.md).
 
 ### Separate current review — November 13
 
@@ -1048,6 +1081,15 @@ the identical private definitions retained at
 `output/sfm-extra-native-inventory/portable-root-639301165838922272/stage` for
 ongoing SFM cases. Original archives, complete/failed metadata, logs and staging
 manifests remain. [Receipt](benchmarks/sfm_native_definition_cleanup_2026-11-12.json).
+
+A new conservative plan covers only4,308exact Git-e9 code files/33,607,832bytes
+inside four historical SFM v2 writer/reader source copies. All2,613generated,
+private, custom and unlisted files/68,376,831bytes remain excluded. No directories
+or other source copies are eligible. No deletion has occurred: a subsequent
+read-only executor matched the files but refused13uninspectable process
+identities. Review also found two safety gaps in that unexecuted version; a
+separate corrected version is in progress. Preserve the copies while current
+nonuse cannot be established. [Plan](benchmarks/sfm_v2_code_cleanup_plan_2026-11-13.json).
 
 ## 12. Order of work after an explicit resume
 

@@ -1,0 +1,123 @@
+{
+  "format": "has_wind_production_bootstrap_handoff_1",
+  "scope": "Actual isolated normalNode hostbootstrap and boundedrequest references, not main/UI/model/render acceptance",
+  "tests": {
+    "format": "has_wind_production_bootstrap_cpu_tests_1",
+    "tests": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-production-bootstrap-20261113\\cpu-results\\ede5f4a5ec584d72a653069d88f62416",
+    "real_windows_godot_headless": true,
+    "godot_binary": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+    "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+    "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+    "gpu_used": false,
+    "main_project_launched": false,
+    "native_model_or_converter_started": false,
+    "prior_packets_modified": false,
+    "normal_config_omits_host_identity": true,
+    "scope": "Isolated host bootstrap, large references and CPU lifecycle only"
+  },
+  "retained_process_count": 45,
+  "process_kinds": {
+    "external Popen Godot handle": 18,
+    "Godot-created controller": 11,
+    "Job-owned nonreading CPU worker": 8,
+    "tampered bootstrap controller": 3,
+    "malformed-ready controller": 1,
+    "actual wrong-host-pin controller": 1,
+    "accepted large-submission worker": 1,
+    "cancelled large-submission worker": 1,
+    "fresh large-submission worker": 1
+  },
+  "normal_configuration_has_no_host_identity": true,
+  "external_observer_role": "Independently verifies capturedGodotPopenhandle PID/creation/image; never provideshostidentity toNode",
+  "bootstrap": "Node deriveslivePID/image/path/SHA; samePythonretainedhosthandle suppliesPID/creation/QueryFullProcessImageNameW andon-diskSHA; liveNode compares beforestart",
+  "request_transport": "Bothends2048bytecontrols; dedicatedownedASCIIJSONfiles<=1MiB with exactrawSHA/bytecount/context/source/session/PREstartticket gates; pollcontext bydigest",
+  "large_request_values": {
+    "submission_bytes": [
+      12934,
+      12934,
+      12934
+    ],
+    "context_ascii_bytes": [
+      5594,
+      5594,
+      5594
+    ],
+    "would_be_inline_poll_bytes": [
+      5781,
+      5781,
+      5781
+    ],
+    "actual_control_frame_max_bytes": 849
+  },
+  "mapped_release_handle_counts": {
+    "before": 267,
+    "after": 265,
+    "repeated": 265,
+    "delta": 2,
+    "repeated_delta": 0,
+    "first": {
+      "attempted": true,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    },
+    "second": {
+      "attempted": false,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    }
+  },
+  "trusted_completion": "Separate owned-successful-worker pipe completion/generatedrequestSHA/fullreceiptSHA; submissionfile never itsownexpectedtoken",
+  "source": [
+    "isolated/helper_preview_bridge.gd",
+    "isolated/fixture.gd",
+    "isolated/project.godot",
+    "candidate/tools/wind_preview_controller.py"
+  ],
+  "review": {
+    "reviewer": "bootstrap_review",
+    "type": "Independent primaryAPI/design/actualsource read-onlyreview, no runtimes or edits",
+    "fixes": [
+      "Poll context moved todigest to support validUnicode-heavycontexts",
+      "Fresh boundedperattemptfilename preservesretry withoutreplacement",
+      "Controller controlcap alignedto2048; filebudgetseparate"
+    ],
+    "result": "No remaining concrete source blocker reported"
+  },
+  "harness": "Separate agent implemented18actualruntimecases; parentchildagent executedall; content-equivalenceassertioncorrectedwithoutproductchanges",
+  "retained_failure": [
+    "cpu-tests-content-equivalence-failure.json",
+    "cpu-tests-content-equivalence-failure.log"
+  ],
+  "failure_reason": "16pass/2harnessfail aftervalidlargepreparation: identicalattemptbytes legitimatelysharedSHA acrossfreshpaths, contrarytouniquepathassumption. Allmatchingcopies nowmustbebyteidentical; no productgate relaxed.",
+  "main_head_to_preserve": "4fa5efc175c0da53fcd61087e9685c89f4614db3",
+  "prior_index_sha256": "f49c8c7a45e582e64eaffc60cc2ba2b75174ec6556b3830b6e099e2891eab108",
+  "prior_all24indexed_files_unchanged": true,
+  "main_project_launched": false,
+  "main_source_or_HEAD_modified": false,
+  "git_commands": false,
+  "gpu_used": false,
+  "native_model_or_converter_started": false,
+  "new_tools_installed": false,
+  "limits": [
+    "ActualnormalNode bootstrap is isolated; no mainHASUI integration",
+    "Queriedimagepath/on-diskSHA islocalintegrity notloadedmemoryattestation",
+    "Strict2048control/1MiBfilebudget; arbitrary stalled-peer writeguarantees notclaimed",
+    "No realmodelimport/binding snapshots/helperUI/physics/visibility/canvas/Apply/Undo/render acceptance",
+    "Mappedrelease remains exclusive ownsuccessfulexecute_with_pipe once; neverexpandedtoEncoder/SourceImport/arbitraryPIDs",
+    "Trustedlocalcode/ownedfilesystem integrity, nothostilemultiwriter isolation"
+  ],
+  "next_step": "ReviewmainappCPUpreviewcontext integration under releasedsourcelease; preserveexistingguards andApply/Undo, then actualhiddenimport/binding gates before isolatedsimulation",
+  "documents": [
+    "README.md",
+    "INTEGRATION_CONTRACT.md",
+    "PRIMARY_EVIDENCE.json"
+  ],
+  "publication": "FILE_INDEX.json plusindexedfilesonly; exclude generatedcpu-results GLBs/jobs/wrappers and.godotcache"
+}

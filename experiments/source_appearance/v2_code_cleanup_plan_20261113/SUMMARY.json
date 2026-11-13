@@ -1,0 +1,159 @@
+{
+  "format": "has_four_v2_cleanup_summary_1",
+  "status": "PLAN_ONLY_NO_CLEANUP_AUTHORIZED_OR_PERFORMED",
+  "source_revision": "e9cc7cfb20266b4863bde134bcb30457547a343d",
+  "observed_head": "4fa5efc175c0da53fcd61087e9685c89f4614db3",
+  "candidate_files": 4308,
+  "candidate_bytes": 33607832,
+  "retained_files": 2613,
+  "retained_bytes": 68376831,
+  "observed_paths_and_all_file_identities_unchanged": true,
+  "raw_plan_sha256": "e65b408acdf63eade874709b6dc37de43b6c244ff3f9fe5fc11cab222c43fa8a",
+  "raw_plan_bytes": 7532146,
+  "projects": [
+    {
+      "run_id": "1794555713647050600-5718442689ac488f931dce81ca1c3101",
+      "mode": "writer",
+      "source_root_local_only": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794555713647050600-5718442689ac488f931dce81ca1c3101\\writer-source",
+      "candidate_files": 1077,
+      "candidate_bytes": 8401958,
+      "retained_files": 651,
+      "retained_bytes": 16623600,
+      "retained_reasons": {
+        "conservative_non_code_asset_media_metadata_or_other_payload": 647,
+        "always_retained_runtime_generated_or_private_path": 1,
+        "not_an_ordinary_exact_commit_blob": 3
+      },
+      "unique_source_exceptions": [
+        {
+          "relative_path": "override.cfg",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 161,
+          "sha256": "6e3a9c6ebd42326154bc6e8e12a3c8598ee3b6302dcee1d621a3f34c72dad7e9"
+        },
+        {
+          "relative_path": "tests/sfm_probe_app_probe.gd",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 18659,
+          "sha256": "a5e17ee27d554475daf21fc68688e59f7baf6bdf5aa46b127f16b500f02f1675"
+        },
+        {
+          "relative_path": "tests/sfm_probe_raw_probe.gd",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 14870,
+          "sha256": "37dd07c238e5a492974886718973d1e02b4e64c2e552d149de23c35661b86d10"
+        }
+      ],
+      "historical_closure_status": "HISTORICAL_PRIVATE_JOB_AND_DESKTOP_CLOSED",
+      "future_process_nonuse_revalidation_required": true
+    },
+    {
+      "run_id": "1794555713647050600-5718442689ac488f931dce81ca1c3101",
+      "mode": "reader",
+      "source_root_local_only": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794555713647050600-5718442689ac488f931dce81ca1c3101\\reader-source",
+      "candidate_files": 1077,
+      "candidate_bytes": 8401958,
+      "retained_files": 650,
+      "retained_bytes": 16623212,
+      "retained_reasons": {
+        "conservative_non_code_asset_media_metadata_or_other_payload": 647,
+        "not_an_ordinary_exact_commit_blob": 3
+      },
+      "unique_source_exceptions": [
+        {
+          "relative_path": "override.cfg",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 161,
+          "sha256": "f9ae33ed8707c905d9abfeee7e1af03c3716382c3d51a2432e9eee252e4df806"
+        },
+        {
+          "relative_path": "tests/sfm_probe_app_probe.gd",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 18659,
+          "sha256": "a5e17ee27d554475daf21fc68688e59f7baf6bdf5aa46b127f16b500f02f1675"
+        },
+        {
+          "relative_path": "tests/sfm_probe_raw_probe.gd",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 14870,
+          "sha256": "37dd07c238e5a492974886718973d1e02b4e64c2e552d149de23c35661b86d10"
+        }
+      ],
+      "historical_closure_status": "NO_RETAINED_PHASE_COMMAND_OR_JOB_RECEIPT",
+      "future_process_nonuse_revalidation_required": true
+    },
+    {
+      "run_id": "1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba",
+      "mode": "writer",
+      "source_root_local_only": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\writer-source",
+      "candidate_files": 1077,
+      "candidate_bytes": 8401958,
+      "retained_files": 662,
+      "retained_bytes": 18506807,
+      "retained_reasons": {
+        "conservative_non_code_asset_media_metadata_or_other_payload": 647,
+        "always_retained_runtime_generated_or_private_path": 12,
+        "not_an_ordinary_exact_commit_blob": 3
+      },
+      "unique_source_exceptions": [
+        {
+          "relative_path": "override.cfg",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 161,
+          "sha256": "ae81a62b2d42e814b088085a31aa9d081f91d78373ec0424cd483a64fef2457c"
+        },
+        {
+          "relative_path": "tests/sfm_probe_app_probe.gd",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 18659,
+          "sha256": "a5e17ee27d554475daf21fc68688e59f7baf6bdf5aa46b127f16b500f02f1675"
+        },
+        {
+          "relative_path": "tests/sfm_probe_raw_probe.gd",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 14870,
+          "sha256": "37dd07c238e5a492974886718973d1e02b4e64c2e552d149de23c35661b86d10"
+        }
+      ],
+      "historical_closure_status": "HISTORICAL_PRIVATE_JOB_AND_DESKTOP_CLOSED",
+      "future_process_nonuse_revalidation_required": true
+    },
+    {
+      "run_id": "1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba",
+      "mode": "reader",
+      "source_root_local_only": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\reader-source",
+      "candidate_files": 1077,
+      "candidate_bytes": 8401958,
+      "retained_files": 650,
+      "retained_bytes": 16623212,
+      "retained_reasons": {
+        "conservative_non_code_asset_media_metadata_or_other_payload": 647,
+        "not_an_ordinary_exact_commit_blob": 3
+      },
+      "unique_source_exceptions": [
+        {
+          "relative_path": "override.cfg",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 161,
+          "sha256": "7ee947683c8df2e6e8accdc13f3e047b7b894fc5f4fac813935b476427b90618"
+        },
+        {
+          "relative_path": "tests/sfm_probe_app_probe.gd",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 18659,
+          "sha256": "a5e17ee27d554475daf21fc68688e59f7baf6bdf5aa46b127f16b500f02f1675"
+        },
+        {
+          "relative_path": "tests/sfm_probe_raw_probe.gd",
+          "retain_reason": "not_an_ordinary_exact_commit_blob",
+          "bytes": 14870,
+          "sha256": "37dd07c238e5a492974886718973d1e02b4e64c2e552d149de23c35661b86d10"
+        }
+      ],
+      "historical_closure_status": "NO_RETAINED_PHASE_COMMAND_OR_JOB_RECEIPT",
+      "future_process_nonuse_revalidation_required": true
+    }
+  ],
+  "deletion_move_kill_or_git_mutation": false,
+  "live_process_nonuse_assessed": false
+}

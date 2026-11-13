@@ -1,0 +1,147 @@
+{
+  "format": "has_headless_actual_binding_gate_1",
+  "source_revision": "4fa5efc175c0da53fcd61087e9685c89f4614db3",
+  "status": "BOUNDED_HEADLESS_GATE_WITH_EXPLICIT_VRM_NO_PROPOSAL",
+  "cpu": {
+    "tests": 22,
+    "failures": 0,
+    "errors": 0,
+    "receipt_local_only": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-bindings-20261113\\synthetic-cpu-1794559498822485700.json"
+  },
+  "synthetic_actual_import_pairs": [
+    {
+      "shape": {
+        "format": "studio_source_shape_2",
+        "enabled": true,
+        "overrides": {}
+      },
+      "source_sha256": "5e6961d80b8bd829fa9ec5069e9ec351578857ca0c3e2127834554d947a8d9af",
+      "candidate_sha256": "228b5ae455ab2e67ad4424b72a91f731e41e089e99531e48e1539d314fedd38e",
+      "original_nodes": 6,
+      "bound_nodes": 6,
+      "added_helper_nodes": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "retained_glb_nodes": 6
+    },
+    {
+      "shape": {
+        "format": "studio_source_shape_2",
+        "enabled": false,
+        "overrides": {
+          "3": {
+            "0": 0.5
+          }
+        }
+      },
+      "source_sha256": "5e6961d80b8bd829fa9ec5069e9ec351578857ca0c3e2127834554d947a8d9af",
+      "candidate_sha256": "51fd9ea8b0ad1e659fb300946dfe5122165d3f9653a982752fbe36b6f4cec148",
+      "original_nodes": 6,
+      "bound_nodes": 6,
+      "added_helper_nodes": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "retained_glb_nodes": 6
+    }
+  ],
+  "retained_cases": [
+    {
+      "role": "vrm0",
+      "alias": "vrm0",
+      "source_identity": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-bindings-20261113\\retained-imports-v2\\1794559515885836100\\vrm0\\scene.glb",
+        "bytes": 18630996,
+        "mtime_ns": 1794559515921490500,
+        "sha256": "3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56"
+      },
+      "original_import": "COMPLETE_BINDING_COVERAGE",
+      "original_nodes": 100,
+      "original_bound_nodes": 100,
+      "original_required_nodes": 100,
+      "original_binding_kinds": {
+        "bone": 91,
+        "node": 9
+      },
+      "secondary_chains": 12,
+      "secondary_colliders": 22,
+      "derivation": "NO_BOUNDED_EXISTING_BUILDER_PROPOSAL"
+    },
+    {
+      "role": "vrm1",
+      "alias": "vrm1",
+      "source_identity": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-bindings-20261113\\retained-imports-v2\\1794559515885836100\\vrm1\\scene.glb",
+        "bytes": 18633340,
+        "mtime_ns": 1794559515984588500,
+        "sha256": "a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062"
+      },
+      "original_import": "COMPLETE_BINDING_COVERAGE",
+      "original_nodes": 110,
+      "original_bound_nodes": 110,
+      "original_required_nodes": 110,
+      "original_binding_kinds": {
+        "bone": 91,
+        "offset": 12,
+        "node": 7
+      },
+      "secondary_chains": 12,
+      "secondary_colliders": 22,
+      "derivation": "NO_BOUNDED_EXISTING_BUILDER_PROPOSAL"
+    },
+    {
+      "role": "backhair",
+      "alias": "backhair input is staged ribbon; not a separate Back Hair file",
+      "source_identity": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-bindings-20261113\\retained-imports-v2\\1794559515885836100\\backhair\\scene.glb",
+        "bytes": 7273728,
+        "mtime_ns": 1794559516034087900,
+        "sha256": "4d62236d5c34468ea1f91c43089d6ce3c193be27b8460d53ea8d91d2238ab7b5"
+      },
+      "original_import": "COMPLETE_BINDING_COVERAGE",
+      "original_nodes": 103,
+      "original_bound_nodes": 103,
+      "original_required_nodes": 103,
+      "original_binding_kinds": {
+        "bone": 81,
+        "node": 22
+      },
+      "secondary_chains": 1,
+      "secondary_colliders": 0,
+      "derivation": "COMPLETE_ACTUAL_BINDING_TRANSFER",
+      "candidate_sha256": "4bfc8d8ae5d4330d0e02d358f74f60ca989d43b2a61a3e59b937e8fa03b79c55",
+      "added_helper_nodes": [
+        103
+      ],
+      "original_transferred_nodes": 103,
+      "builder_mode": "existing_joints"
+    }
+  ],
+  "final_actual_headless_processes": 8,
+  "final_preservation_gates": 65,
+  "all_final_preservation_passed": true,
+  "complete_metadata": {
+    "path": "metadata/complete_binding_observations.json.gz",
+    "gzip_sha256": "38e1e40391e6d3bf748a34b7bd13f315c67702859f4676e54e2c188bd0ae71db",
+    "gzip_bytes": 150992,
+    "uncompressed_sha256": "8cb4a1858fbbcc475c0989cf2fc971595ea9d516c62d657c6386ced117e69445",
+    "uncompressed_bytes": 844639,
+    "records": 70
+  },
+  "proof_folders_local_only": {
+    "synthetic": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-bindings-20261113\\synthetic-imports-v2\\1794559510115711900",
+    "retained": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-bindings-20261113\\retained-imports-v2\\1794559515885836100"
+  },
+  "limits": [
+    "VRM0/VRM1 original import/declarations only: no bounded new helper proposal among first64 assessed regions",
+    "backhair input alias is the staged ribbon source, not a separate model file",
+    "No graphical/main-view preview or physics behavior tested",
+    "No live authored pose/body/contact interoperation proved",
+    "No native shader/flex/jiggle or artist acceptance"
+  ]
+}

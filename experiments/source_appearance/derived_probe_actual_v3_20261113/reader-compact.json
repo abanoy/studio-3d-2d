@@ -1,0 +1,188 @@
+{
+  "checks": 60,
+  "failures": 0,
+  "app_checks": 59,
+  "app_failures": 0,
+  "app_cases": [
+    "nitori-skin-0",
+    "keiki-000"
+  ],
+  "raw_captures": [],
+  "geometry": [],
+  "observations": [
+    {
+      "key": "nitori-skin-0",
+      "object_id": "8762906989797291840",
+      "runtime_bones": 66,
+      "picture": {
+        "content": {
+          "required_samples_exclusive": 100,
+          "rgb_contrast_threshold": 0.02,
+          "sample_step": 4,
+          "significant_content_samples": 563
+        },
+        "format": 5,
+        "height": 1080,
+        "pixel_sha256": "de3ff8d4aa4fde2cd211f0afbd3e5a8217faa745a79d4793fb95721f30d5c3a3",
+        "png": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\runs\\1794557737001097300-90ebeaa43b5e48d584496a609cd3c203\\reader/nitori-skin-0-reader.png",
+        "png_sha256": "cd79133ee904e1ef0f8c980a5a3706d2afefb9d03a9aaf9b2d64262d4813f950",
+        "width": 1920
+      },
+      "writer_pixel_sha256": "de3ff8d4aa4fde2cd211f0afbd3e5a8217faa745a79d4793fb95721f30d5c3a3"
+    },
+    {
+      "key": "keiki-000",
+      "object_id": "9217003324692452490",
+      "runtime_bones": 31,
+      "picture": {
+        "content": {
+          "required_samples_exclusive": 100,
+          "rgb_contrast_threshold": 0.02,
+          "sample_step": 4,
+          "significant_content_samples": 4873
+        },
+        "format": 5,
+        "height": 1080,
+        "pixel_sha256": "5b6904c8625ae93f257234ebe3d17e9b0aa11c6d2294343b8bb339d5fa24e86c",
+        "png": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\runs\\1794557737001097300-90ebeaa43b5e48d584496a609cd3c203\\reader/keiki-000-reader.png",
+        "png_sha256": "fa78f90940246f92ba4decfc83ea0f73e8372d4a8066815deedc1f67a7c77cd9",
+        "width": 1920
+      },
+      "writer_pixel_sha256": "5b6904c8625ae93f257234ebe3d17e9b0aa11c6d2294343b8bb339d5fa24e86c"
+    }
+  ],
+  "receipt": {
+    "format": "studio_private_desktop_1",
+    "desktop": "HAS_Test_c71b839f211d4de8bd96001d9d85f996",
+    "desktop_switch_requested": false,
+    "private_window_seen": true,
+    "child_desktop_confirmed": true,
+    "maximum_owned_windows": 9,
+    "foreground_child_observed": false,
+    "exit": 0,
+    "child_pid": 10880,
+    "job_closed": true,
+    "desktop_closed": true,
+    "seconds": 4.323
+  },
+  "layout_verification": {
+    "passed": true,
+    "cases": [
+      {
+        "case": "nitori-default",
+        "glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "layout_proof_sha256": "7edbb5f1ee5e1f9832015b87cf6f49d012983e857dfce3bae7ae90e1d89d6846"
+      },
+      {
+        "case": "keiki-default",
+        "glb_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "layout_proof_sha256": "3c6c7acaea4b992b23fe54eea32b01d583448b51c258151813cde52f29218244"
+      },
+      {
+        "case": "nitori-skin-0",
+        "glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "layout_proof_sha256": "7edbb5f1ee5e1f9832015b87cf6f49d012983e857dfce3bae7ae90e1d89d6846"
+      },
+      {
+        "case": "keiki-000",
+        "glb_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "layout_proof_sha256": "3c6c7acaea4b992b23fe54eea32b01d583448b51c258151813cde52f29218244"
+      },
+      {
+        "case": "nitori-skin-1",
+        "glb_sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a",
+        "layout_proof_sha256": "ce01f1ef32664beb09b16c15b1520dd9ce66727df1e7a3a07681a72f75026640"
+      },
+      {
+        "case": "nitori-skin-2",
+        "glb_sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0",
+        "layout_proof_sha256": "3367a874e9e229faf3926d7422892b4b9aef6a8b794837a9399e661bf7067009"
+      },
+      {
+        "case": "keiki-001",
+        "glb_sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82",
+        "layout_proof_sha256": "1ad028c2bb46ca2204d5b8d7dac7985a0810881038dc7bb6636cfb8ab2358a2e"
+      },
+      {
+        "case": "keiki-010",
+        "glb_sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a",
+        "layout_proof_sha256": "6f002c006b30100f2aaaa0b9be9091478cb667427fbb575fa341919676c7378a"
+      },
+      {
+        "case": "keiki-011",
+        "glb_sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0",
+        "layout_proof_sha256": "64384ec936461f23e605b3cec617eee9091c611e6edd282595e2c60499343499"
+      },
+      {
+        "case": "keiki-100",
+        "glb_sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3",
+        "layout_proof_sha256": "2190406a13cebdab44f88f1bad2f9c91a06db9c6b0ce38adcf0c490564da6664"
+      },
+      {
+        "case": "keiki-101",
+        "glb_sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40",
+        "layout_proof_sha256": "cf803248ad89ebbf61ef4e9631da126ae6758abaa8bb83f1577bef42385924c7"
+      },
+      {
+        "case": "keiki-110",
+        "glb_sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+        "layout_proof_sha256": "ae26353f901014672f0524ea9230c5f18fe1773b0291021a1575971c64f98316"
+      }
+    ],
+    "inputs_offline": true
+  },
+  "log_classification": {
+    "classified_packed_vertex_verbose": {
+      "exact_line": "WARNING: glTF import: Buffer view byte stride should be declared for vertex attributes. Assuming packed data and reading anyway.",
+      "count": 38,
+      "line_numbers": [
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        141,
+        142
+      ],
+      "primary_source": "https://raw.githubusercontent.com/godotengine/godot/4.6-stable/modules/gltf/structures/gltf_accessor.cpp",
+      "independent_layouts_verified": true
+    },
+    "rejected_lines": [],
+    "forbidden_log_markers": [],
+    "raw_log_modified": false
+  },
+  "forbidden_log_markers": [],
+  "full_process_log_sha256": "ca83536943ef93ac63ee1a0d559b0b2013031bb79090b8ffb168849178f024cf",
+  "full_result_sha256": "59394a7ed5d431d93572a82ca237f6343d233a11334809032fb67be5095f3693"
+}

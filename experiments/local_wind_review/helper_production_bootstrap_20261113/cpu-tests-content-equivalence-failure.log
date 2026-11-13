@@ -1,0 +1,47 @@
+test_abrupt_godot_death_ends_controller_and_worker (__main__.GodotBridge.test_abrupt_godot_death_ends_controller_and_worker) ... ok
+test_actual_host_image_pin_mismatch_refuses_before_ready (__main__.GodotBridge.test_actual_host_image_pin_mismatch_refuses_before_ready) ... ok
+test_cancel_rejects_stale_submission_then_fresh_large_file_prepares (__main__.GodotBridge.test_cancel_rejects_stale_submission_then_fresh_large_file_prepares) ... FAIL
+test_controller_death_ends_worker_and_node_detects_exit (__main__.GodotBridge.test_controller_death_ends_worker_and_node_detects_exit) ... ok
+test_createprocess_empty_return_never_reserves_process_map_entry (__main__.GodotBridge.test_createprocess_empty_return_never_reserves_process_map_entry) ... ok
+test_four_bad_references_refuse_then_large_file_prepares (__main__.GodotBridge.test_four_bad_references_refuse_then_large_file_prepares) ... FAIL
+test_malformed_nested_ready_fails_closed_without_worker_start (__main__.GodotBridge.test_malformed_nested_ready_fails_closed_without_worker_start) ... ok
+test_mapped_release_closes_two_godot_handles_exactly_once (__main__.GodotBridge.test_mapped_release_closes_two_godot_handles_exactly_once) ... ok
+test_missing_runtime_never_reserves_process_map_entry (__main__.GodotBridge.test_missing_runtime_never_reserves_process_map_entry) ... ok
+test_node_free_ends_controller_and_owned_live_worker (__main__.GodotBridge.test_node_free_ends_controller_and_owned_live_worker) ... ok
+test_node_tree_exit_ends_controller_and_owned_live_worker (__main__.GodotBridge.test_node_tree_exit_ends_controller_and_owned_live_worker) ... ok
+test_normal_godot_tree_shutdown_ends_controller_and_worker (__main__.GodotBridge.test_normal_godot_tree_shutdown_ends_controller_and_worker) ... ok
+test_ready_missing_host_creation_is_refused_before_start (__main__.GodotBridge.test_ready_missing_host_creation_is_refused_before_start) ... ok
+test_ready_wrong_host_image_is_refused_before_start (__main__.GodotBridge.test_ready_wrong_host_image_is_refused_before_start) ... ok
+test_ready_wrong_host_pid_is_refused_before_start (__main__.GodotBridge.test_ready_wrong_host_pid_is_refused_before_start) ... ok
+test_real_node_normal_prepared_transport_and_unicode_context (__main__.GodotBridge.test_real_node_normal_prepared_transport_and_unicode_context) ... ok
+test_unknown_matching_poll_event_releases_controller_and_worker (__main__.GodotBridge.test_unknown_matching_poll_event_releases_controller_and_worker) ... ok
+test_watchdog_forces_only_self_after_host_loss_during_blocked_service (__main__.GodotBridge.test_watchdog_forces_only_self_after_host_loss_during_blocked_service) ... ok
+
+======================================================================
+FAIL: test_cancel_rejects_stale_submission_then_fresh_large_file_prepares (__main__.GodotBridge.test_cancel_rejects_stale_submission_then_fresh_large_file_prepares)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-production-bootstrap-20261113\tests\test_bootstrap.py", line 713, in test_cancel_rejects_stale_submission_then_fresh_large_file_prepares
+    self.assert_submission_binding(started, prepared, require_large=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-production-bootstrap-20261113\tests\test_bootstrap.py", line 297, in assert_submission_binding
+    self.assertEqual(len(matches), 1, started)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 1 : {'context_sha256': '236af755e63076f5bf1e64665f59af66cd90efa86e8b6ed950bd41e0d8ed573a', 'event': 'started', 'format': 'has_wind_preview_controller_event_1', 'job': 'C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-production-bootstrap-20261113\\cpu-results\\076e9c4837144c37989fbae329b96732\\dba0278535\\controller-jobs\\5b69554b5a5c44e29a76add066f4fdc3', 'owner': {'created_100ns': '134390321865740243', 'generation': 3.0, 'nonce': 'ef9f0c736549428287b3e6af000720f6', 'pid': 25784.0}, 'phase': 'building', 'request_file_sha256': '6f05f897da99ef5351f726772950aadd944e4f72d5c4436e44e93a6dd702eee4', 'seq': 4.0, 'session': '9c9bb23fc08e45e09d88f52f1be82e77', 'submission_sha256': '948ee51648cd74cfb5e7e7f6cbe880a206d7037a8994fc1c2790711207db3807', 'ticket': {'generation': 3.0, 'nonce': 'ef9f0c736549428287b3e6af000720f6'}}
+
+======================================================================
+FAIL: test_four_bad_references_refuse_then_large_file_prepares (__main__.GodotBridge.test_four_bad_references_refuse_then_large_file_prepares)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-production-bootstrap-20261113\tests\test_bootstrap.py", line 680, in test_four_bad_references_refuse_then_large_file_prepares
+    self.assert_submission_binding(started, prepared, require_large=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-production-bootstrap-20261113\tests\test_bootstrap.py", line 297, in assert_submission_binding
+    self.assertEqual(len(matches), 1, started)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 5 != 1 : {'context_sha256': '236af755e63076f5bf1e64665f59af66cd90efa86e8b6ed950bd41e0d8ed573a', 'event': 'started', 'format': 'has_wind_preview_controller_event_1', 'job': 'C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-production-bootstrap-20261113\\cpu-results\\076e9c4837144c37989fbae329b96732\\b291348177\\controller-jobs\\b9abfbaadd3c47a78c723aeb24470f76', 'owner': {'created_100ns': '134390321929321592', 'generation': 1.0, 'nonce': 'f6db9b539f5c42fb826838e417fa055a', 'pid': 27268.0}, 'phase': 'building', 'request_file_sha256': 'b83964b04a779589c1986fa4168b08c7948edffcbf0f8397a6d8ce52b155b5ce', 'seq': 5.0, 'session': 'f81170a4aecf423b9ec0808695d33ec6', 'submission_sha256': 'b90729593034947785b7070c176c9e97d7f148644487a5df2e7e87e2c6cfa579', 'ticket': {'generation': 1.0, 'nonce': 'f6db9b539f5c42fb826838e417fa055a'}}
+
+----------------------------------------------------------------------
+Ran 18 tests in 31.084s
+
+FAILED (failures=2)
