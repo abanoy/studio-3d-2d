@@ -1,0 +1,178 @@
+{
+  "format": "has_windows_canonical_post_save_order_pass_20261113_1",
+  "date": "2026-11-13",
+  "candidate_only": false,
+  "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-u",
+    "tests/verify.py"
+  ],
+  "run_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019",
+  "status": "PASSED_FULL_DEFAULT",
+  "exit": 0,
+  "started_utc": "2026-11-13T21:12:16.4001044Z",
+  "finished_utc": "2026-11-13T21:58:36.3690200Z",
+  "seconds": 2779.9689156,
+  "duration_rounded": "46m20s",
+  "functional_source_files": 968,
+  "source_and_head_unchanged": true,
+  "core_groups": 36,
+  "result_keys": 154,
+  "final_movies": 21,
+  "decoded_tone_onset_seconds": 1.0,
+  "decoded_editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "wind_graphical": {
+    "checks": 845,
+    "failures": 0,
+    "cases": {
+      "procedural": 62,
+      "vrm0": 47,
+      "vrm1": 47,
+      "backhair": 49,
+      "lifecycle": 549,
+      "primary": 91
+    },
+    "source_unchanged": true,
+    "prepared_native_inputs_unchanged": true
+  },
+  "pending_helper": {
+    "cpu_checks": 208,
+    "graphical_checks": 266,
+    "graphical_focused_checks": 221,
+    "graphical_peer_checks": 45,
+    "source_context": "main_source_snapshot",
+    "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+    "cpu_passed": true,
+    "graphical_passed": true,
+    "native_helper_extension_requested": false,
+    "all_preservation_gates_passed": true
+  },
+  "background_save": {
+    "checks": 114,
+    "reports": {
+      "domain": {
+        "checks": 10,
+        "failures": 0
+      },
+      "ordering": {
+        "checks": 32,
+        "failures": 0
+      },
+      "test_has_project.py": {
+        "checks": 31,
+        "failures": 0
+      },
+      "test_has_save_faults.py": {
+        "checks": 16,
+        "failures": 0
+      },
+      "writer": {
+        "checks": 20,
+        "failures": 0
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      }
+    },
+    "writer_timings": {
+      "held_call_ms": 8,
+      "capture_ms": 0.131,
+      "worker_ms": 173.387
+    },
+    "manual_files_unchanged_in_reader": true,
+    "owned_source_and_writer_cache_offline": true,
+    "frozen_functional_sources": true,
+    "scope": "Actual detached manual snapshot, ready-gated packer, cancel/fault/newer-edit/stale-document/close/teardown/backup safety and packed/linked cold audio+pixels; large workload and broader compatibility separate."
+  },
+  "body_animation": {
+    "unit_checks": 24,
+    "app_checks": 72,
+    "failures": 0,
+    "native_profiles": 5,
+    "normal_editor_integration": true,
+    "movie": {
+      "width": 1920,
+      "height": 1080,
+      "avg_frame_rate": "24/1",
+      "nb_frames": "48"
+    },
+    "scope": "Authored independent skinned branches and explicitly available native plans; original fixture does not certify native-format fidelity."
+  },
+  "receipts": {
+    "fresh_root": 176,
+    "fresh_root_all_exit0_private_closed": true,
+    "unique_files": 190,
+    "unique_desktops": 190,
+    "nested_outside_root": 14,
+    "successful_exit0": 189,
+    "expected_krita_cancel_exit2": 1,
+    "all_private_closed_no_foreground_or_switch": true,
+    "all_fresh_in_exact_aware_utc_interval": true,
+    "inline_occurrences": 11,
+    "inline_unique_desktops": 9,
+    "all_inline_exact_physical_match": true,
+    "unexpected_failures": 0,
+    "expected_cancel_assertion": "tests/verify_krita_import.py:17; full result $.krita_import.cancelled_receipt"
+  },
+  "authoritative_host": {
+    "coordinator_absent": true,
+    "owned_runtime_command_matches_absent": true,
+    "observed_utc": "2026-11-13T21:59:39.3144749Z",
+    "remaining_HAS_test_desktops": [],
+    "desktop_enumeration_utc": "2026-11-13T21:59:59.592826+00:00"
+  },
+  "archive": "experiments/windows_canonical_post_save_order_20261113",
+  "archive_status": "Frozen metadata/source-only packet copied and verified against outer INDEX; no private model, project or media payload",
+  "full_result_sha256": "c431e33c5374c7881683713cca1c22ee415fa98fe5b66973f3785731f6acb79c",
+  "metadata_audit_index_sha256": "9d030cb221ab6d1363435e9bf4a1953905841b2a7bac947c2fd56f9e418c50a0",
+  "private_art_media_uploaded": false,
+  "original_windows_launch_failure": {
+    "source_commit": "1236796865e677b150a2d7e2add20f2aac5325fe",
+    "run_folder": "output/canonical-owned-20261113T200642700",
+    "status": "failed",
+    "suite_exit": 1,
+    "source_unchanged": true,
+    "functional_source_files": 967,
+    "failed_case": "BodyAnimation72/1: final VRM0 linked save child creation returned -1",
+    "exact_windows_error": "unknown; not exposed by engine",
+    "unchanged_focused_retry": "24 unit plus 72 app checks passed on the same committed 1236796 source; failed full remains failed",
+    "hardening": "Capture immutable snapshot, create owned packer child, then start snapshot filesystem Thread. Explicit approved absolute Python runtime pin is an independent variability reduction.",
+    "causal_limit": "Original Windows cause remains unknown. Concurrent DirAccess churn probe passed 240 child launches and did not reproduce the suspected race. This successful full does not establish original causality."
+  },
+  "formal_acceptance_unchanged": {
+    "accepted": 55,
+    "total": 62,
+    "implemented": 52,
+    "implementation_total": 54
+  },
+  "remaining_gates": [
+    "IMPORT-02/IMPORT-03/ACCEPT-B: actual artist comparison with supported native originals",
+    "ACCEPT-A: real novice timed animation exercise",
+    "ACCEPT-E: real learner tutorial observations",
+    "ACCEPT-TABLET: physical tablet/driver latency, comfort and listening on target audio device",
+    "ACCEPT-INSTALL: clean supported offline Windows install/import/save/reopen/export exercise"
+  ],
+  "audio_limit": "Decoded WASAPI output and sample onset are automatic evidence; physical audible sync remains separate.",
+  "owner_review": {
+    "status": "PASSED",
+    "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+    "final": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe",
+    "evidence_folder": "output/owner-review-final-validation-12071fe-1794607570195742200",
+    "project_count": 6,
+    "replay_checks": 129,
+    "clean_private_jobs": 8,
+    "protected_review_runtime_source_and_packages_unchanged": true,
+    "guide_utf8_correction": "output/owner-review-guide-utf8-correction.json",
+    "artist_device_install_acceptance": false,
+    "report": "docs/benchmarks/windows_owner_review_relocated_2026-11-13.json",
+    "archive": "experiments/owner_review/relocated_actual_20261113"
+  },
+  "archive_index_sha256": "0632fde453b5712d503011070bf02a607fd19fcbbc5bdd0af01b054b96fda5a3",
+  "optional_scope": "Broader SFM skins/bodygroups/flex/jiggle/assembly/shader features and future lighting/Discovery remain distinct roadmap or supported-profile-limit work, not invented prerequisites for this configured-Windows full pass."
+}

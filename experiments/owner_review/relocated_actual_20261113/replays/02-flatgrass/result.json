@@ -1,0 +1,218 @@
+{
+  "camera_after": {
+    "basis": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "far": 3819.986328125,
+    "fov": 60.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      -9.753600120544434,
+      -232.84814453125,
+      -10.972800254821777
+    ]
+  },
+  "camera_before": {
+    "basis": [
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "far": 3819.986328125,
+    "fov": 60.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      -9.753600120544434,
+      -232.84814453125,
+      -10.972800254821777
+    ]
+  },
+  "canvas_extent": [
+    928.0,
+    335.0
+  ],
+  "checks": [
+    {
+      "label": "replay uses ordinary scene startup without testing flags",
+      "ok": true
+    },
+    {
+      "label": "ordinary automatic recovery completes without restoring or cancelling the fresh scene",
+      "ok": true
+    },
+    {
+      "label": "fresh process starts empty at Home",
+      "ok": true
+    },
+    {
+      "label": "per-project recent/display paths start absent",
+      "ok": true
+    },
+    {
+      "label": "normal .has open started its Python worker",
+      "ok": true
+    },
+    {
+      "label": "normal open operation completed successfully",
+      "ok": true
+    },
+    {
+      "label": "worker and project loader finished before replay",
+      "ok": true
+    },
+    {
+      "label": "normal open retains packed package identity",
+      "ok": true
+    },
+    {
+      "label": "unpacked runtime assets stay in the fresh owned cache",
+      "ok": true
+    },
+    {
+      "label": "open installs an unedited project with empty Undo history",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object gm_flatgrass.bsp",
+      "ok": true
+    },
+    {
+      "label": "normal load starts in Scene / camera mode",
+      "ok": true
+    },
+    {
+      "label": "Setup uses the full available scene area",
+      "ok": true
+    },
+    {
+      "label": "Setup canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup captures and saves the actual native output size",
+      "ok": true
+    },
+    {
+      "label": "native saved camera capture contains nonuniform nonblack scene pixels",
+      "ok": true
+    },
+    {
+      "label": "Focus restores the output-shaped scene area",
+      "ok": true
+    },
+    {
+      "label": "Focus canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup and Focus preserve and save identical native render pixels",
+      "ok": true
+    },
+    {
+      "label": "view toggles and captures preserve all project state and shot camera",
+      "ok": true
+    },
+    {
+      "label": "replay ends unedited with no retained readback",
+      "ok": true
+    }
+  ],
+  "failures": 0,
+  "focus_image": {
+    "distinct_sampled_colors": 5193,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 20654,
+    "pixel_sha256": "b018b5795f4aad82e3bf125ac984cb1b56fa266e7fc79fa9d639eac2cacd13a3",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/02-flatgrass/focus.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "format": "has_owner_review_replay_1",
+  "install_ms": 284.128,
+  "load_worker_ms": 59.624,
+  "native_focus": {
+    "distinct_sampled_colors": 5177,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 8956,
+    "pixel_sha256": "0468e088f978db75a68c3b399256f9ce5d1ff73993f493924f4b3a0a398ea6fb",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/02-flatgrass/native-focus.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "native_readbacks_at_finish": 0,
+  "native_setup": {
+    "distinct_sampled_colors": 5177,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 8956,
+    "pixel_sha256": "0468e088f978db75a68c3b399256f9ce5d1ff73993f493924f4b3a0a398ea6fb",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/02-flatgrass/native-setup.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "normal_startup": {
+    "empty": true,
+    "home_visible": true,
+    "result": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "signal_seen": true,
+    "simple": true
+  },
+  "normalized_cache_root": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/02-flatgrass/has-cache",
+  "normalized_project_folder": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/02-flatgrass/has-cache/open_1964_2377838",
+  "open_ms": 681,
+  "package": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Flatgrass.has",
+  "process_id": 1964,
+  "profile": "C:/Users/noble/AppData/Roaming/HAS Owner Acceptance 1794607573296736500",
+  "project_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\02-flatgrass\\has-cache\\open_1964_2377838",
+  "project_root": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Studio/",
+  "rasters": [],
+  "runtime_objects": [
+    {
+      "asset_sha256": "3b81c80d065d1ac922a7c7728d9b5d3a04d0428ce627eea597aed87c7ef21a46",
+      "bones": 0,
+      "id": "70293058354498612",
+      "name": "gm_flatgrass.bsp",
+      "stored_sha256": "3b81c80d065d1ac922a7c7728d9b5d3a04d0428ce627eea597aed87c7ef21a46",
+      "visible": true
+    }
+  ],
+  "setup_extent": [
+    928.0,
+    335.0
+  ],
+  "setup_image": {
+    "distinct_sampled_colors": 7723,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 14545,
+    "pixel_sha256": "34ce7205fd766ca4a62cdd5dd0031ff283caa9f82b2c050aaaf0dbbc9c975e1a",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/02-flatgrass/setup.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "worker_pid": 6620
+}

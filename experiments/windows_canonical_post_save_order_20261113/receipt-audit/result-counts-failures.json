@@ -1,0 +1,1445 @@
+{
+  "count_semantics": "Exact JSON locations; nested aggregate/child counts overlap and are not summed as independent assertions. This is metadata verification, not a rerun.",
+  "full_result_top_level_entries": 154,
+  "check_count_records": 230,
+  "records": [
+    {
+      "path": "$.private_metadata_windows",
+      "checks": 13,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.krita_import.reports.writer",
+      "checks": 32,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.krita_import.reports.reader",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_pose_library.reports.writer",
+      "checks": 35,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_pose_library.reports.reader",
+      "checks": 6,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_pose_native.report",
+      "checks": 24,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.workspace_controls",
+      "checks": 48,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.workspace_resize",
+      "checks": 31,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.workspace_docking.reports.writer",
+      "checks": 18,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.workspace_docking.reports.reader",
+      "checks": 4,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.workspace_nested.reports.writer",
+      "checks": 13,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.workspace_nested.reports.reader",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.rotation_gizmo",
+      "checks": 309,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.rotation_gizmo.cold",
+      "checks": 4,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.scene_view.scene_view_unit",
+      "checks": 12830,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.scene_view.scene_view_smoke",
+      "checks": 102,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.native_readback_lifecycle.result",
+      "checks": 58,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.world_selection_teardown.result",
+      "checks": 28,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fan_flutter",
+      "checks": 15,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.wind_review.results[0]",
+      "checks": 62,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.wind_review.results[1]",
+      "checks": 47,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.wind_review.results[2]",
+      "checks": 47,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.wind_review.results[3]",
+      "checks": 49,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.wind_review.results[4]",
+      "checks": 549,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.wind_review.results[5]",
+      "checks": 91,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.helper_preview_cpu",
+      "checks": 208,
+      "failures": null,
+      "expected_checks": null
+    },
+    {
+      "path": "$.helper_preview_cpu.results[0]",
+      "checks": 11,
+      "failures": [],
+      "expected_checks": 11
+    },
+    {
+      "path": "$.helper_preview_cpu.results[1]",
+      "checks": 128,
+      "failures": [],
+      "expected_checks": 128
+    },
+    {
+      "path": "$.helper_preview_cpu.results[2]",
+      "checks": 69,
+      "failures": [],
+      "expected_checks": 69
+    },
+    {
+      "path": "$.helper_preview_graphical",
+      "checks": 266,
+      "failures": null,
+      "expected_checks": null
+    },
+    {
+      "path": "$.helper_preview_graphical.results[0]",
+      "checks": 221,
+      "failures": 0,
+      "expected_checks": 221
+    },
+    {
+      "path": "$.helper_preview_graphical.results[1]",
+      "checks": 45,
+      "failures": 0,
+      "expected_checks": 45
+    },
+    {
+      "path": "$.has_background_save.reports.domain",
+      "checks": 10,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.has_background_save.reports.ordering",
+      "checks": 32,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.has_background_save.reports.test_has_project.py",
+      "checks": 31,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.has_background_save.reports.test_has_save_faults.py",
+      "checks": 16,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.has_background_save.reports.writer",
+      "checks": 20,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.has_background_save.reports.reader",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shortcuts.reports.unit",
+      "checks": 43,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shortcuts.reports.writer",
+      "checks": 42,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shortcuts.reports.reader",
+      "checks": 6,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shortcuts.reports.invalid",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.numeric_camera.reports.unit",
+      "checks": 10,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.numeric_camera.reports.writer",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.numeric_camera.reports.reader",
+      "checks": 2,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.secondary_helpers",
+      "checks": 39,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.secondary_helpers.native",
+      "checks": 14,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.secondary_helpers.multi",
+      "checks": 59,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.secondary_helpers.patch",
+      "checks": 35,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.helper_morphs",
+      "checks": 32,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.source_shapes",
+      "checks": 39,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.base_shapes",
+      "checks": 54,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_animation",
+      "checks": 70,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_catalogue",
+      "checks": 130,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_catalogue.reader",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_study",
+      "checks": 42,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_study.reader",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_study.teardown",
+      "checks": 2,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_comparison",
+      "checks": 94,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_comparison.teardown",
+      "checks": 2,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.shape_comparison.draft_recovery",
+      "checks": 4,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.expression_presets",
+      "checks": 85,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.expression_presets.results.unit",
+      "checks": 35,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.expression_presets.results.app",
+      "checks": 45,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.expression_presets.results.reader",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.mmd_groups",
+      "checks": 39,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.mmd_groups.results[0]",
+      "checks": 24,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.mmd_groups.results[1]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.character_height",
+      "checks": 105,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.character_height.reader",
+      "checks": 4,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.character_height.native_import",
+      "checks": 9,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.map_calibration",
+      "checks": 39,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.map_calibration.results[0]",
+      "checks": 36,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.map_calibration.results[1]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_curves",
+      "checks": 60,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_curves.reports.BODY_CURVES_UNIT",
+      "checks": 31,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_curves.reports.BODY_CURVES",
+      "checks": 60,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_animation",
+      "checks": 72,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_animation.reports.BODY_ANIMATION_UNIT",
+      "checks": 24,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.body_animation.reports.BODY_ANIMATION",
+      "checks": 72,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.lighting",
+      "checks": 32,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.live_appearance",
+      "checks": 38,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.import_physics",
+      "checks": 41,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.pose_bounds",
+      "checks": 34,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.camera_range",
+      "checks": 60,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.color_sampler",
+      "checks": 44,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.foot_hold",
+      "checks": 44,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.foot_contacts_experiment",
+      "checks": 74,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_animation",
+      "checks": 44,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_editor",
+      "checks": 34,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_clipboard",
+      "checks": 27,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.component_contact_clipboard",
+      "checks": 30,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_physics",
+      "checks": 51,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.component_contact_physics",
+      "checks": 53,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_parent",
+      "checks": 20,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_correction",
+      "checks": 36,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_persistence.writer",
+      "checks": 26,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_persistence.readers.linked",
+      "checks": 8,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_persistence.readers.packed",
+      "checks": 9,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_persistence.readers.recovery",
+      "checks": 8,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_persistence.readers.lesson",
+      "checks": 9,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_bindings",
+      "checks": 36,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_identity",
+      "checks": 76,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_identity.native_reports[0]",
+      "checks": 16,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_identity.native_reports[1]",
+      "checks": 14,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_identity.native_reports[2]",
+      "checks": 14,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_identity.native_reports[3]",
+      "checks": 14,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_identity.native_reports[4]",
+      "checks": 14,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_identity.reopen",
+      "checks": 4,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_selection",
+      "checks": 67,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_transform",
+      "checks": 129,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_transform.native_reports[0]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_transform.native_reports[1]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_transform.native_reports[2]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_transform.native_reports[3]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_transform.native_reports[4]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_viewport",
+      "checks": 174,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_viewport.native_reports[0]",
+      "checks": 33,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_viewport.native_reports[1]",
+      "checks": 33,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_viewport.native_reports[2]",
+      "checks": 33,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_viewport.native_reports[3]",
+      "checks": 33,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_viewport.native_reports[4]",
+      "checks": 33,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.contact_viewport.reader",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.multi_audio.writer",
+      "checks": 26,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.multi_audio.readers.packed",
+      "checks": 7,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.multi_audio.readers.linked",
+      "checks": 6,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.multi_audio.readers.recovery",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.multi_audio.readers.lesson",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.project_duration",
+      "checks": 40,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.project_duration.fresh_readers[0]",
+      "checks": 2,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.project_duration.fresh_readers[1]",
+      "checks": 2,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.project_duration.fresh_readers[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.project_duration.fresh_readers[3]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_assist",
+      "checks": 28,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_tracks",
+      "checks": 34,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_native_preview",
+      "checks": 163,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_native_preview.native_reports[0]",
+      "checks": 32,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_native_preview.native_reports[1]",
+      "checks": 32,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_native_preview.native_reports[2]",
+      "checks": 32,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_native_preview.native_reports[3]",
+      "checks": 32,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_native_preview.native_reports[4]",
+      "checks": 33,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_model",
+      "checks": 23,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_editor",
+      "checks": 129,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_editor.native_reports[0]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_editor.native_reports[1]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_editor.native_reports[2]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_editor.native_reports[3]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_editor.native_reports[4]",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.motion_editor.reader",
+      "checks": 4,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.opacity",
+      "checks": 34,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.opacity.domain",
+      "checks": 20,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_opacity",
+      "checks": 18,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_opacity.results[0]",
+      "checks": 14,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_opacity.results[1]",
+      "checks": 18,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_opacity.results[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_pressure",
+      "checks": 27,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_pressure.domain",
+      "checks": 10,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_pressure.results[0]",
+      "checks": 10,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_pressure.results[1]",
+      "checks": 27,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.brush_pressure.results[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.layers",
+      "checks": 40,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.onion",
+      "checks": 37,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill.unit",
+      "checks": 18,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill.app",
+      "checks": 48,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_gaps",
+      "checks": 24,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_gaps.domain",
+      "checks": 28,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_gaps.results[0]",
+      "checks": 28,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_gaps.results[1]",
+      "checks": 24,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_gaps.results[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_expand",
+      "checks": 23,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_expand.results[0]",
+      "checks": 22,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_expand.results[1]",
+      "checks": 23,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_expand.results[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_expand.domain",
+      "checks": 22,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_connections",
+      "checks": 27,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_connections.results[0]",
+      "checks": 8,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_connections.results[1]",
+      "checks": 27,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_connections.results[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.fill_connections.domain",
+      "checks": 8,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.palette",
+      "checks": 23,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.palette.results[0]",
+      "checks": 8,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.palette.results[1]",
+      "checks": 23,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.palette.results[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.palette.results[3]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.palette.results[4]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.palette.results[5]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.palette.results[6]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_history",
+      "checks": 36,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_history.results[0]",
+      "checks": 36,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_history.results[1]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_selection",
+      "checks": 35,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_selection.results[0]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_selection.results[1]",
+      "checks": 35,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_selection.results[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_selection.domain",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_transform",
+      "checks": 34,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_transform.results[0]",
+      "checks": 11,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_transform.results[1]",
+      "checks": 34,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_transform.results[2]",
+      "checks": 3,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.drawing_transform.domain",
+      "checks": 11,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_identity",
+      "checks": 47,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup",
+      "checks": 147,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[0]",
+      "checks": 13,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[1]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[2]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[3]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[4]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[5]",
+      "checks": 7,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[6]",
+      "checks": 7,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[7]",
+      "checks": 7,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[8]",
+      "checks": 13,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[9]",
+      "checks": 7,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[10]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[11]",
+      "checks": 7,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[12]",
+      "checks": 7,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[13]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_startup.cases[14]",
+      "checks": 7,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_history",
+      "checks": 27,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_history.startup_cases[0]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_history.startup_cases[1]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_history.startup_cases[2]",
+      "checks": 12,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_schedule",
+      "checks": 41,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.recovery_preview",
+      "checks": 25,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.home",
+      "checks": 34,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.home.startup[0]",
+      "checks": 6,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.home.startup[1]",
+      "checks": 6,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.tutorials.results[0]",
+      "checks": 52,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.tutorials.results[1]",
+      "checks": 5,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.first_movie.results[0]",
+      "checks": 79,
+      "failures": 0,
+      "expected_checks": null
+    },
+    {
+      "path": "$.first_movie.results[1]",
+      "checks": 8,
+      "failures": 0,
+      "expected_checks": null
+    }
+  ],
+  "nonzero_failure_fields": [],
+  "error_marker_arrays": [
+    {
+      "path": "$.wind_review.results[0].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.wind_review.results[1].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.wind_review.results[2].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.wind_review.results[3].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.wind_review.results[4].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.wind_review.results[5].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.helper_preview_cpu.results[0].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.helper_preview_cpu.results[1].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.helper_preview_cpu.results[2].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.helper_preview_graphical.results[0].error_markers",
+      "markers": []
+    },
+    {
+      "path": "$.helper_preview_graphical.results[1].error_markers",
+      "markers": []
+    }
+  ],
+  "nonempty_error_marker_arrays": [],
+  "passed_false_fields": [],
+  "top_level_video_metadata_records": [],
+  "tone_onset_seconds": 1.0,
+  "pose_checks": 45,
+  "actual_mmd_tested": true,
+  "editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  }
+}

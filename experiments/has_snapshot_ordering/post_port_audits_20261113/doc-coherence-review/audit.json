@@ -1,0 +1,125 @@
+{
+  "format": "has_read_only_doc_coherence_audit_1",
+  "observed_utc": "2026-11-13T22:13:10.435312+00:00",
+  "files": [
+    {
+      "path": "docs/RESUME_MASTER_PLAN.md",
+      "bytes": 84109,
+      "sha256": "369d3415d97f7dd66d560f46ac01c299219f075858506a60e4ffb8f74aa55a45"
+    },
+    {
+      "path": "docs/helper_setup_wind_preview.md",
+      "bytes": 5692,
+      "sha256": "d8ab77c70ef0c5655a60bfcafb2f27cefce48a665d12cacf12224a0f94591fc6"
+    },
+    {
+      "path": "docs/background_manual_saves.md",
+      "bytes": 5748,
+      "sha256": "927327a6d0b3f78ce2d1b825ab94fd1225f006ffa9ee32de5cced13033a19812"
+    },
+    {
+      "path": "docs/benchmarks/windows_canonical_post_save_order_2026-11-13.json",
+      "bytes": 7233,
+      "sha256": "569fe8d0b013018c83fc08088ca14166dc312a8e9b4e47a92d22f9115351d05a"
+    },
+    {
+      "path": "docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json",
+      "bytes": 6402,
+      "sha256": "f1c9317fe6672cce1f159171f7cad4c75efdf2ebaa1daaab5eaf73126889eca6"
+    },
+    {
+      "path": "docs/benchmarks/windows_canonical_full_2026-11-13.json",
+      "bytes": 2079,
+      "sha256": "bd2fe35120fdba3cba7b68da3cb9865f4377aecf5bf3201e9d21cfe52a8ae63c"
+    },
+    {
+      "path": "docs/benchmarks/helper_pending_preview_main_2026-11-13.json",
+      "bytes": 19341,
+      "sha256": "d15a3f1d040dea2f553abf5f8063774bc06b34e02e750beadcce98da5b705959"
+    },
+    {
+      "path": "docs/benchmarks/local_wind_main_2026-11-13.json",
+      "bytes": 50669,
+      "sha256": "539fede8169b0c687ed121d583d0a23bf2226d7d465c5173ced6ad284c5b53ae"
+    }
+  ],
+  "findings": [
+    {
+      "id": "D1",
+      "file": "docs/RESUME_MASTER_PLAN.md",
+      "observed_lines": "156-159 in initial read",
+      "current_line": 158,
+      "issue": "Current hair/accessory section still labels proposed helper preview before Apply open, contradicting the now-integrated feature and current full pass.",
+      "minimal_fix": "State that proposed setup preview is implemented/tested in the November 13 main integration; keep permanent per-item exclusions and further refinement open.",
+      "reported_to_root": true
+    },
+    {
+      "id": "D2",
+      "file": "docs/helper_setup_wind_preview.md",
+      "observed_lines": "76-81",
+      "current_line": 79,
+      "issue": "The retained save-order paragraph still says a fresh stable full is required, while the following paragraph records the actual 12071fe full pass.",
+      "minimal_fix": "Use historical tense: At that checkpoint a fresh stable full was still required; the subsequent 12071fe pass below closes that software-validation step. Preserve the 1236796 failed attempt and unknown original cause.",
+      "reported_to_root": true
+    },
+    {
+      "id": "D3",
+      "file": "docs/RESUME_MASTER_PLAN.md",
+      "observed_lines": "1204-1213 in initial read",
+      "current_line": 1205,
+      "issue": "Current resume-order instructions still request a full default and new review, and describe review-builder evidence alone; those concrete steps have now actually completed.",
+      "minimal_fix": "Mark the complete full at 12071fe and relocated 129-check review done, with future reruns conditioned on later functional changes. Keep real external observations pending.",
+      "reported_to_root": true
+    }
+  ],
+  "clarifications": [
+    {
+      "file": "docs/RESUME_MASTER_PLAN.md",
+      "observed_location": "section 10, starting at494 in initial read",
+      "recommendation": "Add one explicit historical-checkpoint note under section 10, identifying the top 12071fe full/review as current. This qualifies retained unported/main-integration-next/still-unpassed statements under dated historical checkpoint narratives without rewriting them."
+    },
+    {
+      "file": "docs/benchmarks/local_wind_main_2026-11-13.json",
+      "observed_lines": "1268-1269",
+      "recommendation": "Label phase1 scope/next statements as historical or add pointers to the later helper integration and 12071fe full pass. Its scoped counts need not change."
+    }
+  ],
+  "consistent_items": [
+    "Current top-of-master 12071fe full pass and final external review129 match actual metadata.",
+    "New benchmark numbers/source/audio/receipt outcomes and expected Krita cancel2 match the frozen actual full audit.",
+    "Mandatory remaining gates remain the seven ledger IDs in five real-observation categories; optional wider SFM/lighting/Discovery is separate.",
+    "55/62 accepted and52/54 implemented remain unchanged.",
+    "1236796 failed aggregate and unknown original Windows cause are preserved.",
+    "Background manual-save 9ms standalone and8ms full-run observations are separately identified.",
+    "208+305 scoped helper-native evidence and208+266 complete default are separately identified; native extension remains explicit.",
+    "Snapshot-order and helper-main benchmarks contain valid post-save-order complete-pass pointers; earlier9897 checkpoint stays historically valid."
+  ],
+  "current_state_checks": {
+    "new_source": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+    "new_full_status": "PASSED_FULL_DEFAULT",
+    "review_checks": 129,
+    "mandatory_gate_descriptions": [
+      "IMPORT-02/IMPORT-03/ACCEPT-B: actual artist comparison with supported native originals",
+      "ACCEPT-A: real novice timed animation exercise",
+      "ACCEPT-E: real learner tutorial observations",
+      "ACCEPT-TABLET: physical tablet/driver latency, comfort and listening on target audio device",
+      "ACCEPT-INSTALL: clean supported offline Windows install/import/save/reopen/export exercise"
+    ],
+    "helper_current_full_pointer": {
+      "status": "passed",
+      "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+      "cpu_checks": 208,
+      "graphical_checks": 266,
+      "report": "docs/benchmarks/windows_canonical_post_save_order_2026-11-13.json",
+      "optional_native_preview_requested": false
+    },
+    "ordering_current_full_pointer": {
+      "status": "passed",
+      "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+      "report": "docs/benchmarks/windows_canonical_post_save_order_2026-11-13.json",
+      "failed_prior_run_preserved": true
+    }
+  },
+  "no_mutations_tests_graphics": true,
+  "scope": "Read-only documentation/metadata review; observed lines may shift while root edits docs. current_line null means the reported exact old text was already changed by root before this final capture."
+}

@@ -1,0 +1,35 @@
+{
+  "format": "has_relocatable_owner_review_launch_1",
+  "pid": 9548,
+  "creation_utc": "2026-11-13T22:05:49.1745134Z",
+  "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+  "final": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261113-12071fe",
+  "launch_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-relocation-launch-20261113T220549159",
+  "command": {
+    "format": "has_post_save_fix_review_command_1",
+    "prepared_only": true,
+    "execute_now": false,
+    "working_directory": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+    "executable": "C:\\Program Files\\Python313\\python.exe",
+    "arguments": [
+      "-B",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\helper-review-package-prep-20261113\\execute_after_full.py",
+      "--revision",
+      "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+      "--canonical-run",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019",
+      "--lease-release",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019\\graphics-lease-released.json",
+      "--final",
+      "C:\\a\\Programming\\cloudflare\\HAS-Review-20261113-12071fe",
+      "--execute-after-full",
+      "--exclusive-graphics-lease",
+      "--allow-checkout-eol"
+    ],
+    "background_window_style": "Hidden",
+    "coordinator_sha256": "d5c17e97d67bf91250229d9f62bfe9aaefe922057c148a362e4fdc706ba4fadd",
+    "requires": "Passed exact12071fe full run, terminal state hash-bound release, authoritative owned-process absence, and exclusive graphics lease"
+  },
+  "prior_canonical_released": true,
+  "exclusive_graphics_lease": true
+}

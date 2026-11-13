@@ -1,0 +1,25 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS replay uses ordinary scene startup without testing flags
+PASS ordinary automatic recovery completes without restoring or cancelling the fresh scene
+PASS fresh process starts empty at Home
+PASS per-project recent/display paths start absent
+PASS normal .has open started its Python worker
+PASS normal open operation completed successfully
+PASS worker and project loader finished before replay
+PASS normal open retains packed package identity
+PASS unpacked runtime assets stay in the fresh owned cache
+PASS open installs an unedited project with empty Undo history
+PASS runtime asset checksum matches saved object mima head.mdl
+PASS normal load starts in Scene / camera mode
+PASS Setup uses the full available scene area
+PASS Setup canvas evidence is nonempty and saved
+PASS Setup captures and saves the actual native output size
+PASS native saved camera capture contains nonuniform nonblack scene pixels
+PASS Focus restores the output-shaped scene area
+PASS Focus canvas evidence is nonempty and saved
+PASS Setup and Focus preserve and save identical native render pixels
+PASS view toggles and captures preserve all project state and shot camera
+PASS replay ends unedited with no retained readback
+OWNER_REVIEW_REPLAY {"failures":0,"package":"C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Mima head expressions.has"}

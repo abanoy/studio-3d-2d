@@ -36,7 +36,8 @@ owned Windows Job/start gate remain unchanged, including for deep job paths.
 
 ## Recorded Windows verification
 
-The current main working-source snapshot passes 208 CPU checks (11 transport,
+The dedicated main-port working-source snapshot recorded before save-order
+hardening passed 208 CPU checks (11 transport,
 128 synthetic imported-binding, 69 actual editor/hosting) and 305 private graphics
 checks (221 focused/lifecycle, 45 independent peer/owned child, 39 retained native
 Back hair). The focused case retains all 199 earlier predicates and adds four UI,
@@ -76,6 +77,16 @@ consume a cached prototype candidate. See the main fixture resolver and
 The earlier full default pass at `9897f86` predates this port. The committed full
 attempt at `1236796` passes both wind matrices and then fails a later VRM0 linked
 save-worker launch. It remains failed. Save launch-order hardening has separate
-actual checks; a fresh stable full default is still required. Scoped checks are
-not a new aggregate pass. Evidence: [main integration](benchmarks/helper_pending_preview_main_2026-11-13.json),
+actual checks. At that checkpoint a fresh stable full was still required; the
+subsequent `12071fe` pass below closes that software-validation step. Scoped
+checks alone were not a new aggregate pass. Evidence: [main integration](benchmarks/helper_pending_preview_main_2026-11-13.json),
 [save investigation](benchmarks/windows_snapshot_launch_order_2026-11-13.json).
+
+
+The subsequent complete default run at `12071fe` passes the CPU 208 and graphical
+266 checks in the same full suite as background-save and native body animation.
+The earlier `1236796` full remains a failed historical attempt. The new private
+review at `C:\a\Programming\cloudflare\HAS-Review-20261113-12071fe` passes normal
+startup and 129 unchanged six-project replay checks, with its own approved
+SourceIO dependency copy. Native artist/human/device acceptance remains separate.
+[Full evidence](benchmarks/windows_canonical_post_save_order_2026-11-13.json).

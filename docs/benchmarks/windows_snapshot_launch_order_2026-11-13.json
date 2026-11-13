@@ -118,7 +118,12 @@
     "experiments/has_snapshot_ordering/main_actual_20261113"
   ],
   "large_400_drawing_rerun": "not run inthisincrement; original persistence and large-workload evidence retained separately",
-  "post_fix_complete_canonical": "pending fresh stable committed run",
+  "post_fix_complete_canonical": {
+    "status": "passed",
+    "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+    "report": "docs/benchmarks/windows_canonical_post_save_order_2026-11-13.json",
+    "failed_prior_run_preserved": true
+  },
   "formal_acceptance_unchanged": {
     "accepted": 55,
     "total": 62,

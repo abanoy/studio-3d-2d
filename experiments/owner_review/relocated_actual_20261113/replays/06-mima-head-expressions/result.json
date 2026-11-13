@@ -1,0 +1,218 @@
+{
+  "camera_after": {
+    "basis": [
+      0.9438583850860596,
+      0.0,
+      -0.330350399017334,
+      -0.06127852946519852,
+      0.9826450943946838,
+      -0.1750815361738205,
+      0.3246172070503235,
+      0.18549557030200958,
+      0.9274778366088867
+    ],
+    "far": 2000.0,
+    "fov": 55.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      0.4497835040092468,
+      1.3413742780685425,
+      1.1696898937225342
+    ]
+  },
+  "camera_before": {
+    "basis": [
+      0.9438583850860596,
+      0.0,
+      -0.330350399017334,
+      -0.06127852946519852,
+      0.9826450943946838,
+      -0.1750815361738205,
+      0.3246172070503235,
+      0.18549557030200958,
+      0.9274778366088867
+    ],
+    "far": 2000.0,
+    "fov": 55.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      0.4497835040092468,
+      1.3413742780685425,
+      1.1696898937225342
+    ]
+  },
+  "canvas_extent": [
+    928.0,
+    335.0
+  ],
+  "checks": [
+    {
+      "label": "replay uses ordinary scene startup without testing flags",
+      "ok": true
+    },
+    {
+      "label": "ordinary automatic recovery completes without restoring or cancelling the fresh scene",
+      "ok": true
+    },
+    {
+      "label": "fresh process starts empty at Home",
+      "ok": true
+    },
+    {
+      "label": "per-project recent/display paths start absent",
+      "ok": true
+    },
+    {
+      "label": "normal .has open started its Python worker",
+      "ok": true
+    },
+    {
+      "label": "normal open operation completed successfully",
+      "ok": true
+    },
+    {
+      "label": "worker and project loader finished before replay",
+      "ok": true
+    },
+    {
+      "label": "normal open retains packed package identity",
+      "ok": true
+    },
+    {
+      "label": "unpacked runtime assets stay in the fresh owned cache",
+      "ok": true
+    },
+    {
+      "label": "open installs an unedited project with empty Undo history",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object mima head.mdl",
+      "ok": true
+    },
+    {
+      "label": "normal load starts in Scene / camera mode",
+      "ok": true
+    },
+    {
+      "label": "Setup uses the full available scene area",
+      "ok": true
+    },
+    {
+      "label": "Setup canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup captures and saves the actual native output size",
+      "ok": true
+    },
+    {
+      "label": "native saved camera capture contains nonuniform nonblack scene pixels",
+      "ok": true
+    },
+    {
+      "label": "Focus restores the output-shaped scene area",
+      "ok": true
+    },
+    {
+      "label": "Focus canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup and Focus preserve and save identical native render pixels",
+      "ok": true
+    },
+    {
+      "label": "view toggles and captures preserve all project state and shot camera",
+      "ok": true
+    },
+    {
+      "label": "replay ends unedited with no retained readback",
+      "ok": true
+    }
+  ],
+  "failures": 0,
+  "focus_image": {
+    "distinct_sampled_colors": 107,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 12527,
+    "pixel_sha256": "fd7bee8a70e175104a35ec71ca1b2b22aafb9751b852e695134c8a04b2c49379",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/06-mima-head-expressions/focus.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "format": "has_owner_review_replay_1",
+  "install_ms": 699.599,
+  "load_worker_ms": 34.492,
+  "native_focus": {
+    "distinct_sampled_colors": 36,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 1194,
+    "pixel_sha256": "4b53abcae7ea5bc0d48680b922032c4b02243a409961fbbddb2fc8b23e802ff6",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/06-mima-head-expressions/native-focus.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "native_readbacks_at_finish": 0,
+  "native_setup": {
+    "distinct_sampled_colors": 36,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 1194,
+    "pixel_sha256": "4b53abcae7ea5bc0d48680b922032c4b02243a409961fbbddb2fc8b23e802ff6",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/06-mima-head-expressions/native-setup.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "normal_startup": {
+    "empty": true,
+    "home_visible": true,
+    "result": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "signal_seen": true,
+    "simple": true
+  },
+  "normalized_cache_root": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/06-mima-head-expressions/has-cache",
+  "normalized_project_folder": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/06-mima-head-expressions/has-cache/open_25400_2347426",
+  "open_ms": 1049,
+  "package": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Mima head expressions.has",
+  "process_id": 25400,
+  "profile": "C:/Users/noble/AppData/Roaming/HAS Owner Acceptance 1794607573296736500",
+  "project_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\06-mima-head-expressions\\has-cache\\open_25400_2347426",
+  "project_root": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Studio/",
+  "rasters": [],
+  "runtime_objects": [
+    {
+      "asset_sha256": "e9b21ab5f1171b21d0a7d3e3f83e5341f6b297516d09582e49c0283dfe10d8da",
+      "bones": 229,
+      "id": "7967551149727597243",
+      "name": "mima head.mdl",
+      "stored_sha256": "e9b21ab5f1171b21d0a7d3e3f83e5341f6b297516d09582e49c0283dfe10d8da",
+      "visible": true
+    }
+  ],
+  "setup_extent": [
+    928.0,
+    335.0
+  ],
+  "setup_image": {
+    "distinct_sampled_colors": 33,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 1240,
+    "pixel_sha256": "957e89d331d47c507d51f1b449b08319fc3652592e07307525a5331f22d1b6c3",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/06-mima-head-expressions/setup.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "worker_pid": 27004
+}

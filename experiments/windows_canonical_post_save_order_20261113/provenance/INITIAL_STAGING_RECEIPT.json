@@ -1,0 +1,165 @@
+{
+  "format": "studio_canonical_metadata_staging_1",
+  "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+  "stage": "Awaiting root final receipt-audit and graphics-release paths; no final INDEX/README yet",
+  "files": {
+    "verification.json.gz": {
+      "sha256": "7d27878353f349df5d71b65d94bdbc34c781989b19559b5f045dffa8582066f7",
+      "bytes": 785510
+    },
+    "canonical/source-before.json": {
+      "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+      "bytes": 101475
+    },
+    "canonical/source-after.json": {
+      "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+      "bytes": 101475
+    },
+    "canonical/state.json": {
+      "sha256": "719dbac8c2db82968b9eaabf46b47a9010d6aa26901d31cd2e17987f41e0fd29",
+      "bytes": 812
+    },
+    "canonical/launch.json": {
+      "sha256": "540479cbbeddbc1c8dcca74f834f5ddd4bb922ab8cb6e6bde80ce0a3aeee83fd",
+      "bytes": 448
+    },
+    "canonical/authoritative-host-termination.json": {
+      "sha256": "5615b8009ea56ead814450d4243ab7036f3c422a1026f528cb93984bfd49e276",
+      "bytes": 673
+    },
+    "canonical/desktop-enumeration.json": {
+      "sha256": "c638f74e8c77f5e9d9f9943015a5102648d9521686b59641dd72b8f169ab06bc",
+      "bytes": 233
+    },
+    "canonical/canonical.log.gz": {
+      "sha256": "6f990368fe72bbee3e28199d87079b80b50779a43a0393ec310d0d77ddd7cfe7",
+      "bytes": 788037
+    },
+    "canonical/pass-markers.txt": {
+      "sha256": "aa3261edb237277e150caeb879ebbf8b9d866dc31d2452bb92ba384e583e7993",
+      "bytes": 7101
+    },
+    "summary/content-audit/CONTENT_AUDIT.md": {
+      "sha256": "de2096767ff34a5c990b482f0a407745a9baf9aa4eb34254de37055cc4992f25",
+      "bytes": 2791
+    },
+    "summary/content-audit/RESULT.json": {
+      "sha256": "03cba5c2d84c521a0bb3bbd263b9fef298704610e1477589ea874cf58f7043de",
+      "bytes": 2049
+    },
+    "summary/summarize.py": {
+      "sha256": "d925dd86618aab52d2de5cfa1838925376089d228666fb6a5097119f8a4d9493",
+      "bytes": 7452
+    },
+    "summary/SUMMARY.json": {
+      "sha256": "e7eeec7887eb4b18cbfd6a82a6d2ea5e896a2f9a7f26af13337d06cae29133cb",
+      "bytes": 13401
+    },
+    "summary/SUMMARY.md": {
+      "sha256": "295a48f6c2f9447652aebb3c4db9542b0daa6c1ccffc4272ff20513e4445da11",
+      "bytes": 3302
+    },
+    "summary/INDEX.json": {
+      "sha256": "1bbd2149f55482b6d48b154d4df33f67d6b030e553b04d8a07af6bc616485ba7",
+      "bytes": 954
+    },
+    "recipe/stage_publication.py": {
+      "sha256": "656c8d0edb5ad4af17e9a36456a3a1bd968876c98de665db2a3f49be4aff6458",
+      "bytes": 6052
+    }
+  },
+  "file_count": 16,
+  "total_bytes": 1821765,
+  "gzip_originals": {
+    "verification.json.gz": {
+      "sha256": "c431e33c5374c7881683713cca1c22ee415fa98fe5b66973f3785731f6acb79c",
+      "bytes": 2090687
+    },
+    "canonical/canonical.log.gz": {
+      "sha256": "db41eeca0c679623f500e23a565752f272344e9248d8d22c871dd6c61dc07b0f",
+      "bytes": 2097912
+    }
+  },
+  "input_identities_preserved": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\verification.json": {
+      "sha256": "c431e33c5374c7881683713cca1c22ee415fa98fe5b66973f3785731f6acb79c",
+      "bytes": 2090687,
+      "mtime_ns": 1794607115993245700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019\\source-before.json": {
+      "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+      "bytes": 101475,
+      "mtime_ns": 1794604336596380400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019\\source-after.json": {
+      "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+      "bytes": 101475,
+      "mtime_ns": 1794607116302695400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019\\state.json": {
+      "sha256": "719dbac8c2db82968b9eaabf46b47a9010d6aa26901d31cd2e17987f41e0fd29",
+      "bytes": 812,
+      "mtime_ns": 1794607116370319700
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019\\launch.json": {
+      "sha256": "540479cbbeddbc1c8dcca74f834f5ddd4bb922ab8cb6e6bde80ce0a3aeee83fd",
+      "bytes": 448,
+      "mtime_ns": 1794604336061571100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019\\authoritative-host-termination.json": {
+      "sha256": "5615b8009ea56ead814450d4243ab7036f3c422a1026f528cb93984bfd49e276",
+      "bytes": 673,
+      "mtime_ns": 1794607179334871400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019\\desktop-enumeration.json": {
+      "sha256": "c638f74e8c77f5e9d9f9943015a5102648d9521686b59641dd72b8f169ab06bc",
+      "bytes": 233,
+      "mtime_ns": 1794607199593169600
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019\\canonical.log": {
+      "sha256": "db41eeca0c679623f500e23a565752f272344e9248d8d22c871dd6c61dc07b0f",
+      "bytes": 2097912,
+      "mtime_ns": 1794607116156437800
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-post-save-summary-20261113\\INDEX.json": {
+      "sha256": "1bbd2149f55482b6d48b154d4df33f67d6b030e553b04d8a07af6bc616485ba7",
+      "bytes": 954,
+      "mtime_ns": 1794607384968464000
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-post-save-summary-20261113\\content-audit\\CONTENT_AUDIT.md": {
+      "sha256": "de2096767ff34a5c990b482f0a407745a9baf9aa4eb34254de37055cc4992f25",
+      "bytes": 2791,
+      "mtime_ns": 1794607277727498500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-post-save-summary-20261113\\content-audit\\RESULT.json": {
+      "sha256": "03cba5c2d84c521a0bb3bbd263b9fef298704610e1477589ea874cf58f7043de",
+      "bytes": 2049,
+      "mtime_ns": 1794607277917207800
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-post-save-summary-20261113\\summarize.py": {
+      "sha256": "d925dd86618aab52d2de5cfa1838925376089d228666fb6a5097119f8a4d9493",
+      "bytes": 7452,
+      "mtime_ns": 1794607335491408300
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-post-save-summary-20261113\\SUMMARY.json": {
+      "sha256": "e7eeec7887eb4b18cbfd6a82a6d2ea5e896a2f9a7f26af13337d06cae29133cb",
+      "bytes": 13401,
+      "mtime_ns": 1794607336328993100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-post-save-summary-20261113\\SUMMARY.md": {
+      "sha256": "295a48f6c2f9447652aebb3c4db9542b0daa6c1ccffc4272ff20513e4445da11",
+      "bytes": 3302,
+      "mtime_ns": 1794607384349439900
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-post-save-publication-20261113\\stage_publication.py": {
+      "sha256": "656c8d0edb5ad4af17e9a36456a3a1bd968876c98de665db2a3f49be4aff6458",
+      "bytes": 6052,
+      "mtime_ns": 1794607484850784600
+    }
+  },
+  "source_before_after_files": 968,
+  "canonical_pass_marker_lines": 122,
+  "raw_report_artifact_copied": false,
+  "no_private_assets_media_or_runtime_included": true,
+  "source_git_test_graphics_or_release_action": false
+}

@@ -2,15 +2,30 @@
 
 **Updated November 13, 2026. The owner explicitly resumed work; the goal is ACTIVE.**
 
-The committed full attempt at `1236796` is **failed**, with all 967 functional
-hashes and HEAD unchanged. Both wind matrices pass, but Windows refuses the final
-VRM0 linked-save helper. An unchanged focused retry passes 24 units + 72 app checks;
-it does not retroactively pass that aggregate. Main now separates immutable save
-capture from background writing, starting the real packer first. Actual background
-checks pass 10 legacy + 32 new domain, 31/16 Python, 20 writer and 5 cold-reader
-checks; the native body case also passes after the change. Precise Windows cause
-remains unknown, and the 240-child CWD-churn probe did not reproduce it. A new
-stable committed full run is next. [Evidence](benchmarks/windows_snapshot_launch_order_2026-11-13.json).
+The fresh full Windows suite at `12071fe182a17d17e2a1547c7dbb97f6aa4dd160`
+**passed** in 46m20s with all 968 functional files and HEAD unchanged: 36 core
+groups, 154 result entries, 21 final movie checks and both decoded audio onsets
+at 1.0 seconds. Wind 845, pending-helper CPU 208 / graphics 266, background-save
+114 and body-animation 24 + 72 checks pass in that same complete run. All 190
+private runs closed without foreground exposure or a desktop switch: 189 exit 0
+plus the explicitly expected Krita cancellation exit 2. The earlier `1236796`
+full remains failed; the original Windows launch cause is still unknown.
+[Full evidence](benchmarks/windows_canonical_post_save_order_2026-11-13.json).
+
+The new private review is **C:\a\Programming\cloudflare\HAS-Review-20261113-12071fe**.
+Use `Start review.bat` or its six `Open … .bat` launchers when desired. Normal
+startup and all 129 six-project replays pass at that final location. Its approved
+SourceIO copy is local to `Dependencies`, so those launchers do not depend on the
+disposable checkout. The installed Studio, earlier review/recovery, originals and
+shared runtimes remain protected. The written guide received an explicit UTF-8
+correction after replay; Studio/project bytes were not changed.
+[Relocation evidence](benchmarks/windows_owner_review_relocated_2026-11-13.json).
+
+Formal counts remain **55/62 acceptance and 52/54 implementation**. The outstanding
+seven IDs require actual native-artist comparisons, a timed novice, a learner,
+physical tablet/audio observations and a clean offline Windows installation.
+The owner remains busy: do not ask for participation until they grant it.
+Broader SFM features, lighting and Discovery remain separate planned work.
 
 Latest integration: [loose-part wind before Apply](helper_setup_wind_preview.md)
 is now in main source. Final working-source checks pass 208 CPU + 305 private graphics
@@ -18,9 +33,10 @@ is now in main source. Final working-source checks pass 208 CPU + 305 private gr
 Two failed attempts are retained: deep Windows worker CWD, then a test path-spelling
 comparison. The worker launch is corrected, popup Escape restores the original,
 and unused wind controls no longer crowd ordinary refinement. Six existing workflow
-wrappers also pass with exact main source/HEAD. The new committed-source full
-aggregate is the next gate.
-The prior9897full default remains a valid earlier pass, not a pass for this port.
+wrappers also pass with exact main source/HEAD. The port and subsequent save-order hardening now pass the complete full run
+recorded above.
+The prior `9897` full remains a valid earlier checkpoint; the current full pass
+is `12071fe`.
 Formal counts remain 55/62 acceptance and 52/54 implementation; no human/device or
 installation observation has been invented or requested.
 
@@ -31,7 +47,11 @@ preserve those next cases. The chooser is planned, not implemented; native
 assembly, shader, jiggle and runtime-variant fidelity remain separate.
 An [output-only chooser draft](../experiments/source_appearance/static_choice_draft_20261113/README.md)
 now has 82 authored Python checks and an independent source review. Its Godot/UI,
-native conversion and graphical paths remain unparsed/unrun. It is not in main.
+native conversion and graphical paths remain unparsed/unrun. It is not active
+application behavior. The copied nested catalogue index/README records historical
+local context; the draft packet’s top index is authoritative. The duplicated
+parser is stored once under `overlay/tools`; reproduce only from a fresh owned
+overlay copy rather than treating the historical nested command as runnable.
 
 This is the single reading document for the requests, corrections, proposals,
 current software/test state, protected inputs and next steps from this chat.
@@ -136,8 +156,9 @@ Final 26 CPU/5 state/34 app, 38 combined native, 30 single/33 composition,
 193 runtime/backend files. [Evidence](benchmarks/secondary_batch_setup_2026-11-12.json).
 Local-blow preview for already declared groups is now implemented in main (see
 the November 13 integration below). Previewing proposed helper setups before
-Apply, permanent per-item exclusions and further refinement remain open. Setup
-membership stays distinct from temporary and persistent wind membership.
+Apply is also implemented and tested in that main integration. Permanent per-item
+exclusions and further refinement remain separate open work. Setup membership
+stays distinct from temporary and persistent wind membership.
 
 1. **Deformation remains after switching Hair & Cloth off.** A configured joint
    deforms correctly while enabled, but the deformation stays after disabling
@@ -472,6 +493,11 @@ downloads, playback or implementation has occurred. This is not a new required
 acceptance gate or a prerequisite for the model browser.
 
 ## 10. Current verification and incomplete acceptance
+
+The subsections below preserve successive historical checkpoints and their actual
+failures/unrun limits. Their older “next”, “unported” and “unpassed” statements
+describe those checkpoints. The current full and relocated-review result is the
+`12071fe` pass at the top of this master; use it before selecting new work.
 
 ### Fresh full-run correction — November 13
 
@@ -1175,23 +1201,22 @@ be established. [Plan](benchmarks/sfm_v2_code_cleanup_plan_2026-11-13.json),
 1. Fetch latest repository state and inspect local status; preserve private and
    concurrent work. Read the governing documents. This master is the consolidated
    chat reference, not a replacement for the full specification/addendum.
-2. Prioritize concrete owner bugs: Hair & Cloth restoration/Back hair assignment,
-   Simple selection/refinement, ring direction and focused-panel bounds. Preserve
-   old confirmed fixes. Implement requested camera-relative controls and framing
-   changes in small reviewable increments with relevant validation.
+2. Preserve the implemented restoration, Back hair setup, selection, rotation,
+   camera controls and framing fixes recorded above. Investigate new concrete
+   reproductions before widening scope; remaining subjective refinement requires
+   actual feedback. Do not label those completed software routes unimplemented.
 3. Keep exploratory resolution animation, optional sounds and assistant additions
    separate. Research/phase Discovery and lighting requirements deliberately;
    broad future roadmap work must not hide a newly failing ordinary control.
-4. Run the full default suite from stable final source and complete its media/
-   audio checks. Preserve actual failures/skips; do not present scoped composition
-   or an interrupted run as an aggregate pass.
-5. Prepare a separate current runnable review with existing private projects,
-   without replacing installations, earlier reviews or owner recovery. Do not
-   issue participation prompts while the owner remains unavailable.
-   The review builder now accepts `--revision` to freeze a verified commit
-   without including concurrent working edits; seven CPU cases and an exact
-   1,282-file repository probe pass. This tool evidence alone is not a new
-   runnable-review or application-startup result.
+4. The complete default suite and final media/audio checks are completed at
+   `12071fe`, with source/HEAD frozen. Preserve earlier failures/skips separately.
+   Rerun when later functional changes, a new failure or an unresolved concern
+   justifies it; do not repeat this completed run merely because old prose says next.
+5. The separate current runnable review is completed at
+   `C:\a\Programming\cloudflare\HAS-Review-20261113-12071fe`: normal startup,
+   129 six-project replays and eight private jobs pass. Existing installations,
+   earlier reviews/recovery and originals are preserved. Do not issue owner
+   participation prompts while the owner remains unavailable.
 6. Update compact evidence, history and stable ledger; commit, push and verify
    remote contents before exact safe cleanup. All completed source/progress must
    be retrievable from Git, not PC-only caches.

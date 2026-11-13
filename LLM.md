@@ -4264,3 +4264,65 @@ Updated review preparation remains gated on a future passed full+released lease;
 no owner prompt, installation change or review replacement occurred. Formal
 ledger remains55/62acceptance and52/54implementation. Next: commit/push/verify this
 scoped hardening, freeze source and run a completely fresh full default.
+
+
+## 2026-11-13 — Complete Windows pass and relocated private review
+
+Tested source12071fe182a17d17e2a1547c7dbb97f6aa4dd160 was pushed, fetched and
+remote/raw-progress verified before this run. A single fresh default suite ran
+21:12:16–21:58:36 UTC (46m20s), exit0, with all968 functional files/HEAD unchanged.
+It passed36core groups,154result entries,21final movies and both decoded1.0second
+audio onsets. WASAPI editor RMS5658.299233592635 stays inside the original gate.
+Within this same run: wind845, pending-helper CPU208/graphics266, background-save
+114 across six reports and native body24unit+72app checks pass. The optional
+native extension of pending-helper preview was not requested; the earlier
+standalone39native checks remain their own evidence. Counts are scoped rather
+than a fabricated deduplicated grand total.
+
+Receipt audit verifies176fresh root exit0 receipts and190distinct physical
+receipts/desktops overall:189exit0 plus one intentionally cancelled Krita converter
+exit2, explicitly required by tests/verify_krita_import.py:17. All190 are private,
+closed, fresh and without foreground exposure/switch. All inline receipts match
+physical records. The authoritative host found the coordinator/owned runtimes
+absent and only Default desktop. Root recorded a hash-bound release before the
+separate review graphics lease. The earlier1236796 full remains FAILED; the exact
+Windows launch cause is still unknown, and the240child directory-churn probe did
+not reproduce it. This later pass does not prove causality.
+
+A new private delivery at C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe
+passed stage Home, final Home and129unchanged replay checks across six projects:
+eight isolated exit0 jobs. All source, six package, frozen harness, original
+SourceIO and approved-runtime preservation checks pass. A574file approved SourceIO
+copy including LICENSE lives in its Dependencies folder; final BAT paths use it
+relatively instead of the disposable checkout. No install/download or installed
+Studio replacement occurred. The final guide alone received explicit UTF8 decoding
+after a locale-default template read produced mojibake; before/after evidence and
+an unapplied one-line future coordinator patch are preserved. No Studio/HAS bytes
+changed for that correction. A preliminary host query saw a known read-only audit
+shell; it was preserved, allowed to exit, and the later final absence check passed.
+
+Published metadata/source packets: experiments/windows_canonical_post_save_order_20261113
+(34files/2190529bytes), experiments/owner_review/relocated_actual_20261113
+(119files/1114487bytes), and experiments/has_snapshot_ordering/post_port_audits_20261113.
+Full report metadata is losslessly compressed; no native art, models, projects,
+images, videos or runtime payloads are uploaded. Current benchmark documents bind
+exact indexes, raw report hashes, counts, limits and retention paths.
+
+Root then removed exactly88source/metadata publication-copy files (498427bytes)
+under three literal owned roots, already backed by remotely verified12071fe.
+The reviewed executor used fresh authoritative process proof and a fsynced ordered
+journal; no recursive operation or directory removal occurred. Independent final
+checks confirm all106Git backups and18excluded logs exact. The old broad SFM
+cleanup199unknown-owner refusal was not bypassed. The session checkout is retained
+because earlier private review/recovery and working deliverables remain protected;
+whole-checkout removal is unsafe. The new final review is outside that checkout.
+
+The master now marks completed full/review steps and preserves earlier chronology.
+The wider SFM collection remains in the feature matrix/plan, with the82check static
+chooser draft still unshipped and Godot/UI/native conversion unrun. Native skins,
+bodygroups, flex, jiggle, shaders and assembly are distinct scopes. Optional wider
+features, lighting and Discovery are not new mandatory acceptance prerequisites.
+Formal acceptance remains55/62, implementation52/54. Remaining seven IDs require
+actual native artist comparison, a timed novice, learner feedback, physical tablet/
+audio observation and a clean offline Windows install exercise. The owner remains
+busy: no participation prompt was issued or observation invented.

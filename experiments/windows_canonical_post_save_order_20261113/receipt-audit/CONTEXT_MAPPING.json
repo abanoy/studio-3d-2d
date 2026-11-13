@@ -1,0 +1,300 @@
+{
+  "format": "studio_canonical_audit_context_mapping_1",
+  "original_context_index_sha256": "9d030cb221ab6d1363435e9bf4a1953905841b2a7bac947c2fd56f9e418c50a0",
+  "original_context_index_outer_path": "receipt-audit/ORIGINAL_CONTEXT_INDEX.json",
+  "not_a_local_directory_index": true,
+  "original_entries": 16,
+  "distinct_files_copied": 10,
+  "duplicate_entries_represented": 6,
+  "mappings": [
+    {
+      "original_context_path": "audit_receipts.py",
+      "original_identity": {
+        "sha256": "9289fd31e39cf5000c27ea96c9c120a55787ac3096da65f1844ee411a1725cb4",
+        "bytes": 8244
+      },
+      "outer_path": "receipt-audit/audit_receipts.py",
+      "outer_identity": {
+        "sha256": "9289fd31e39cf5000c27ea96c9c120a55787ac3096da65f1844ee411a1725cb4",
+        "bytes": 8244
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "9289fd31e39cf5000c27ea96c9c120a55787ac3096da65f1844ee411a1725cb4",
+        "bytes": 8244
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "authoritative-host-termination.json",
+      "original_identity": {
+        "sha256": "5615b8009ea56ead814450d4243ab7036f3c422a1026f528cb93984bfd49e276",
+        "bytes": 673
+      },
+      "outer_path": "canonical/authoritative-host-termination.json",
+      "outer_identity": {
+        "sha256": "5615b8009ea56ead814450d4243ab7036f3c422a1026f528cb93984bfd49e276",
+        "bytes": 673
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "5615b8009ea56ead814450d4243ab7036f3c422a1026f528cb93984bfd49e276",
+        "bytes": 673
+      },
+      "reason": "Already preserved as exact outer raw bytes"
+    },
+    {
+      "original_context_path": "desktop-enumeration.json",
+      "original_identity": {
+        "sha256": "c638f74e8c77f5e9d9f9943015a5102648d9521686b59641dd72b8f169ab06bc",
+        "bytes": 233
+      },
+      "outer_path": "canonical/desktop-enumeration.json",
+      "outer_identity": {
+        "sha256": "c638f74e8c77f5e9d9f9943015a5102648d9521686b59641dd72b8f169ab06bc",
+        "bytes": 233
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "c638f74e8c77f5e9d9f9943015a5102648d9521686b59641dd72b8f169ab06bc",
+        "bytes": 233
+      },
+      "reason": "Already preserved as exact outer raw bytes"
+    },
+    {
+      "original_context_path": "EXPECTED_CANCEL_ADDENDUM.md",
+      "original_identity": {
+        "sha256": "a8a8fc573551968b0af6b39671e766b4694eafd3213984d3832dbd2fa5464f16",
+        "bytes": 1191
+      },
+      "outer_path": "receipt-audit/EXPECTED_CANCEL_ADDENDUM.md",
+      "outer_identity": {
+        "sha256": "a8a8fc573551968b0af6b39671e766b4694eafd3213984d3832dbd2fa5464f16",
+        "bytes": 1191
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "a8a8fc573551968b0af6b39671e766b4694eafd3213984d3832dbd2fa5464f16",
+        "bytes": 1191
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "finish_summary.py",
+      "original_identity": {
+        "sha256": "2d0deaced0cba8fbf64ddfb4986b3b8fef90ca3d9837dd0267f850a976daa4fe",
+        "bytes": 8110
+      },
+      "outer_path": "receipt-audit/finish_summary.py",
+      "outer_identity": {
+        "sha256": "2d0deaced0cba8fbf64ddfb4986b3b8fef90ca3d9837dd0267f850a976daa4fe",
+        "bytes": 8110
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "2d0deaced0cba8fbf64ddfb4986b3b8fef90ca3d9837dd0267f850a976daa4fe",
+        "bytes": 8110
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "full-verification.json",
+      "original_identity": {
+        "sha256": "c431e33c5374c7881683713cca1c22ee415fa98fe5b66973f3785731f6acb79c",
+        "bytes": 2090687
+      },
+      "outer_path": "verification.json.gz",
+      "outer_identity": {
+        "sha256": "7d27878353f349df5d71b65d94bdbc34c781989b19559b5f045dffa8582066f7",
+        "bytes": 785510
+      },
+      "representation": "gzip",
+      "decoded_identity": {
+        "sha256": "c431e33c5374c7881683713cca1c22ee415fa98fe5b66973f3785731f6acb79c",
+        "bytes": 2090687
+      },
+      "reason": "Already preserved losslessly by outer gzip"
+    },
+    {
+      "original_context_path": "input-hashes.json",
+      "original_identity": {
+        "sha256": "fea0f47a6e60e8259cff2b514b3a21a57ac7e63a427dead409fc10e198c4323a",
+        "bytes": 2018
+      },
+      "outer_path": "receipt-audit/input-hashes.json",
+      "outer_identity": {
+        "sha256": "fea0f47a6e60e8259cff2b514b3a21a57ac7e63a427dead409fc10e198c4323a",
+        "bytes": 2018
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "fea0f47a6e60e8259cff2b514b3a21a57ac7e63a427dead409fc10e198c4323a",
+        "bytes": 2018
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "README.md",
+      "original_identity": {
+        "sha256": "5925a6315bfe78fa90ede5677789100b4389345d0b83f1152d254430ec742127",
+        "bytes": 2713
+      },
+      "outer_path": "receipt-audit/ORIGINAL_CONTEXT_README.md",
+      "outer_identity": {
+        "sha256": "5925a6315bfe78fa90ede5677789100b4389345d0b83f1152d254430ec742127",
+        "bytes": 2713
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "5925a6315bfe78fa90ede5677789100b4389345d0b83f1152d254430ec742127",
+        "bytes": 2713
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "receipt-inventory.json",
+      "original_identity": {
+        "sha256": "1b2b75ffb410b62214c0606289645818b9df1ed6d6706519e13f84e3d4380e39",
+        "bytes": 255969
+      },
+      "outer_path": "receipt-audit/receipt-inventory.json",
+      "outer_identity": {
+        "sha256": "1b2b75ffb410b62214c0606289645818b9df1ed6d6706519e13f84e3d4380e39",
+        "bytes": 255969
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "1b2b75ffb410b62214c0606289645818b9df1ed6d6706519e13f84e3d4380e39",
+        "bytes": 255969
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "receipt-ready-final.json",
+      "original_identity": {
+        "sha256": "b84f4c4099e557ee20e3593447efa8b70e2331e94ca2518da92cae15ae4c6daf",
+        "bytes": 2033
+      },
+      "outer_path": "receipt-audit/receipt-ready-final.json",
+      "outer_identity": {
+        "sha256": "b84f4c4099e557ee20e3593447efa8b70e2331e94ca2518da92cae15ae4c6daf",
+        "bytes": 2033
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "b84f4c4099e557ee20e3593447efa8b70e2331e94ca2518da92cae15ae4c6daf",
+        "bytes": 2033
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "receipt-ready.json",
+      "original_identity": {
+        "sha256": "a708f6c26c136dd30fda7cea4264a18e65023a48b4a35dfb4b54f34c33aa2bfc",
+        "bytes": 2259
+      },
+      "outer_path": "receipt-audit/receipt-ready.json",
+      "outer_identity": {
+        "sha256": "a708f6c26c136dd30fda7cea4264a18e65023a48b4a35dfb4b54f34c33aa2bfc",
+        "bytes": 2259
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "a708f6c26c136dd30fda7cea4264a18e65023a48b4a35dfb4b54f34c33aa2bfc",
+        "bytes": 2259
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "result-counts-failures.json",
+      "original_identity": {
+        "sha256": "799bcf625c03a76e97404c3a00fc8f2c1aa609c07eff81f990d043bf3adeb4c7",
+        "bytes": 32430
+      },
+      "outer_path": "receipt-audit/result-counts-failures.json",
+      "outer_identity": {
+        "sha256": "799bcf625c03a76e97404c3a00fc8f2c1aa609c07eff81f990d043bf3adeb4c7",
+        "bytes": 32430
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "799bcf625c03a76e97404c3a00fc8f2c1aa609c07eff81f990d043bf3adeb4c7",
+        "bytes": 32430
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    },
+    {
+      "original_context_path": "source-after.json",
+      "original_identity": {
+        "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+        "bytes": 101475
+      },
+      "outer_path": "canonical/source-after.json",
+      "outer_identity": {
+        "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+        "bytes": 101475
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+        "bytes": 101475
+      },
+      "reason": "Already preserved as exact outer raw bytes"
+    },
+    {
+      "original_context_path": "source-before.json",
+      "original_identity": {
+        "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+        "bytes": 101475
+      },
+      "outer_path": "canonical/source-before.json",
+      "outer_identity": {
+        "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+        "bytes": 101475
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "9deab39a7c936e45b6235158a8a624094467ddbeb26aed78347ae37700ba5e5a",
+        "bytes": 101475
+      },
+      "reason": "Already preserved as exact outer raw bytes"
+    },
+    {
+      "original_context_path": "state.json",
+      "original_identity": {
+        "sha256": "719dbac8c2db82968b9eaabf46b47a9010d6aa26901d31cd2e17987f41e0fd29",
+        "bytes": 812
+      },
+      "outer_path": "canonical/state.json",
+      "outer_identity": {
+        "sha256": "719dbac8c2db82968b9eaabf46b47a9010d6aa26901d31cd2e17987f41e0fd29",
+        "bytes": 812
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "719dbac8c2db82968b9eaabf46b47a9010d6aa26901d31cd2e17987f41e0fd29",
+        "bytes": 812
+      },
+      "reason": "Already preserved as exact outer raw bytes"
+    },
+    {
+      "original_context_path": "summary.json",
+      "original_identity": {
+        "sha256": "3379c91aab196fe63857691fb118e22c373b226a2cc5f0569578d1fe75a72be3",
+        "bytes": 6497
+      },
+      "outer_path": "receipt-audit/summary.json",
+      "outer_identity": {
+        "sha256": "3379c91aab196fe63857691fb118e22c373b226a2cc5f0569578d1fe75a72be3",
+        "bytes": 6497
+      },
+      "representation": "identity",
+      "decoded_identity": {
+        "sha256": "3379c91aab196fe63857691fb118e22c373b226a2cc5f0569578d1fe75a72be3",
+        "bytes": 6497
+      },
+      "reason": "Distinct audit source/metadata file retained"
+    }
+  ],
+  "reconstruction": "For each original_context_path, write exact outer bytes or gzip-decompressed bytes to a fresh owned context folder, verify original_identity, then copy ORIGINAL_CONTEXT_INDEX.json as INDEX.json"
+}

@@ -1,0 +1,13 @@
+Canonical metadata audit: PASS
+
+`receipt-ready.json` is the preserved preliminary scan, before expected cancellation classification and startup companion resolution. It is superseded by `receipt-ready-final.json` and `receipt-inventory.json`; its unresolved/exit-0-only flags must not be used as the terminal audit outcome.
+
+Source `12071fe182a17d17e2a1547c7dbb97f6aa4dd160`; run `canonical-owned-20261113T211216019`, terminal exit 0 at 2026-11-13T21:58:36.3690200Z. Before/after source maps match exactly across 968 entries. The full result has 154 top-level entries and is preserved byte for byte as `full-verification.json` (SHA256 `c431e33c5374c7881683713cca1c22ee415fa98fe5b66973f3785731f6acb79c`). Elapsed time: 2779.9689156 seconds.
+
+Receipt inventory: 176 fresh root receipts, all successful/private/closed. The deduplicated union has 190 physical receipt files and 190 unique desktops: 176 root plus 14 nested. Outcomes are 189 successful exit 0 and one expected Krita cancellation exit 2. Every receipt confirms private child desktop and window, no foreground exposure or requested desktop switch, and closed Job and desktop. All are fresh in the exact aware-UTC run interval. Eleven inline receipt occurrences, representing nine desktops, match exact physical JSON. No missing referenced receipt, conflicting duplicate, filename false positive, unexpected exit, or isolation failure was found. Twenty-two actual result/report JSON documents were read; historical output trees were not swept into the inventory.
+
+The copied authoritative host report observes the coordinator absent and owned runtime command matches absent at 21:59:39Z. The separately copied desktop enumeration succeeded at 21:59:59Z and lists only Default, with no HAS_Test_ desktop remaining. These are host observations supplied by root, preserved with their original contents. This audit creates no release.
+
+Actual result highlights: helper CPU 208; helper graphical 266 (focused 221 plus peers 45), all preservation gates true; body animation 72/0; background-save domain/order/packer/fault/writer/reader records are retained individually in summary.json. Result-count paths and error-marker arrays are inventoried without adding overlapping parent/child assertion totals.
+
+The earlier failed canonical run at source 1236796 remains a separate failed attempt. This pass does not prove the cause of its earlier Windows child-launch failure, nor does it certify broad Source fidelity, artist comparisons, devices, installed distributions, or outstanding human acceptance. No source/Git modifications, product reruns, graphics launches, media copies, or installed runtime changes were performed by this metadata audit.

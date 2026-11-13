@@ -1,0 +1,79 @@
+{
+  "format": "has_snapshot_main_final_readonly_audit_1",
+  "source_context": "Current uncommitted working main on baseline1236796; no new full pass claimed",
+  "blocking_findings": [],
+  "source_files": {
+    "src/has_project.gd": {
+      "bytes": 15268,
+      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032",
+      "matches_benchmark": true
+    },
+    "src/has_snapshot_writer.gd": {
+      "bytes": 5630,
+      "sha256": "61400dfcf743cf4bd1e0d99e3aec7e1c74f05d61108cfa64cf7afe3f7613111f",
+      "matches_benchmark": true
+    },
+    "tests/has_snapshot_ordering_unit.gd": {
+      "bytes": 7498,
+      "sha256": "1576a3df191b5ea8df83e7c7d3d16ddef879f20046cc0e232f11fe247c809a9d",
+      "matches_benchmark": true
+    },
+    "tests/has_background_save_smoke.gd": {
+      "bytes": 10611,
+      "sha256": "323828e96f6f74939582d90de2b7ed6209ca05ea095c624dae8787856466d30c",
+      "matches_benchmark": true
+    },
+    "tests/verify_has_background_save.py": {
+      "bytes": 4240,
+      "sha256": "df5303a778d79995a26cf2eb855239c25cb30cb681b90414180cf519cfb72e5b",
+      "matches_benchmark": true
+    },
+    "tests/verify.py": {
+      "bytes": 49707,
+      "sha256": "c1246b9e8319d49328e60ec6eba54f8140c56b4dfb810c5817d2fd7ce1c33d61",
+      "matches_benchmark": true
+    },
+    "tests/wind_review_port_files.json": {
+      "bytes": 5889,
+      "sha256": "c9e8a9443b49617d53d3a70dc9c2ef286a81c1aedf4af850bf70eb5c4aeb6ca8",
+      "matches_benchmark": true
+    },
+    "experiments/verification_runner/run_canonical_owned.ps1": {
+      "bytes": 3732,
+      "sha256": "6856faad316cc7188abb46a558aea3e0c08e2d409fedf173bf3b55a9a89c6bfa",
+      "matches_benchmark": true
+    }
+  },
+  "phase1_manifest_rows": 16,
+  "phase1_has_project_row_matches": true,
+  "main_actual_index_files": 16,
+  "main_actual_index_mismatches": [],
+  "actual_background_reports": {
+    "domain": 10,
+    "ordering": 32,
+    "test_has_project.py": 31,
+    "test_has_save_faults.py": 16,
+    "writer": 20,
+    "reader": 5
+  },
+  "private_receipts": [
+    {
+      "path": "background/private-0.json",
+      "clean_exit0_private_closed": true
+    },
+    {
+      "path": "background/private-1.json",
+      "clean_exit0_private_closed": true
+    },
+    {
+      "path": "body/private-0.json",
+      "clean_exit0_private_closed": true
+    }
+  ],
+  "reviewed_registration": "Fresh canonical-spikes path; exact six report labels, positive zero-failure reports, exact ordering32/writer20, offline/manual/source gates and two closed private receipts. Registration itself was added after standalone execution and remains pending the fresh committed default run.",
+  "reviewed_behavior": "Prepare retains detached capture before process creation; launch consumes it once after positive packer pid. Request/process failures release prepared refs. Thread-start failure retains normal pid/export/progress polling, cancellation and single false completion. Legacy start retained.",
+  "scope_matches_docs": true,
+  "causality": "Original Win error remains unknown; directory churn240 did not reproduce. Own-writer ordering is hardening; other filesystem threads can still overlap. Next-run absolute Python env pin is orthogonal stability, not causal proof.",
+  "remaining": "Fresh stable committed full default and owner review remain pending; prior failed full stays failed. Large400-drawing rerun, broad Source fidelity, human/device/install acceptance not claimed.",
+  "audit_execution": "Read-only source/diff/JSON/byte-hash inspection only; no Python/Godot test, graphics, main/Git edit, runtime change or owner prompt."
+}

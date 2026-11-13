@@ -1,0 +1,239 @@
+{
+  "format": "studio_publication_packet_readonly_audit_1",
+  "packets": [
+    {
+      "index": "experiments/has_snapshot_ordering/canonical_failure_20261113/INDEX.json",
+      "index_identity": {
+        "sha256": "4e8436172ea9924e4129921cd46333b91c0338c0fe0db70ce98f2d98ac0ea41d",
+        "bytes": 1756,
+        "mtime_ns": 1794603050864934000
+      },
+      "format": null,
+      "indexed_files": 11,
+      "indexed_bytes": 326869,
+      "declared_counts": {},
+      "declared_bytes": {},
+      "errors": [],
+      "unindexed_files": [],
+      "original_receipts_checked": [],
+      "packet": "experiments/has_snapshot_ordering/canonical_failure_20261113",
+      "actual_files": 12,
+      "actual_bytes": 328625,
+      "suffix_counts": {
+        ".json": 11,
+        ".log": 1
+      },
+      "gzip_streams_decoded": 0,
+      "content_errors": []
+    },
+    {
+      "index": "experiments/has_snapshot_ordering/candidate_20261113/FILE_INDEX.json",
+      "index_identity": {
+        "sha256": "1aabbe71b1697c79e7e0cbd26ddf26039ba63d97c9d57378a624226d72f18408",
+        "bytes": 12298,
+        "mtime_ns": 1794603103497095100
+      },
+      "format": "studio_snapshot_ordering_source_packet_1",
+      "indexed_files": 39,
+      "indexed_bytes": 148844,
+      "declared_counts": {
+        "file_count": 39
+      },
+      "declared_bytes": {
+        "total_bytes": 148844
+      },
+      "errors": [],
+      "unindexed_files": [],
+      "original_receipts_checked": [
+        "README.md",
+        "BASE_SOURCE_CONTEXT.json",
+        "build_candidate.py",
+        "candidate.patch",
+        "ordering_unit.gd",
+        "verify_candidate.py",
+        "package_candidate.py",
+        "overlay/src/has_snapshot_writer.gd",
+        "overlay/src/has_project.gd",
+        "overlay/tests/has_snapshot_ordering_unit.gd",
+        "actual/1794602791903330600-27680230/command.json",
+        "actual/1794602791903330600-27680230/process.json",
+        "actual/1794602791903330600-27680230/proof.json.gz",
+        "actual/1794602791903330600-27680230/stdout.log.gz",
+        "actual/1794602791903330600-27680230/engine.log.gz",
+        "actual/1794602791903330600-27680230/ordering_unit_used.gd",
+        "actual/1794602791903330600-27680230/driver_used.py",
+        "actual/1794602808548787700-3d78d256/command.json",
+        "actual/1794602808548787700-3d78d256/process.json",
+        "actual/1794602808548787700-3d78d256/proof.json.gz",
+        "actual/1794602808548787700-3d78d256/stdout.log.gz",
+        "actual/1794602808548787700-3d78d256/engine.log.gz",
+        "actual/1794602808548787700-3d78d256/ordering_unit_used.gd",
+        "actual/1794602808548787700-3d78d256/driver_used.py",
+        "actual/1794602837014647500-ccc3b661/command.json",
+        "actual/1794602837014647500-ccc3b661/process.json",
+        "actual/1794602837014647500-ccc3b661/proof.json.gz",
+        "actual/1794602837014647500-ccc3b661/stdout.log.gz",
+        "actual/1794602837014647500-ccc3b661/engine.log.gz",
+        "actual/1794602837014647500-ccc3b661/ordering_unit_used.gd",
+        "actual/1794602837014647500-ccc3b661/driver_used.py",
+        "actual/1794602846262952000-64b158a8/command.json",
+        "actual/1794602846262952000-64b158a8/process.json",
+        "actual/1794602846262952000-64b158a8/proof.json.gz",
+        "actual/1794602846262952000-64b158a8/stdout.log.gz",
+        "actual/1794602846262952000-64b158a8/engine.log.gz",
+        "actual/1794602846262952000-64b158a8/ordering_unit_used.gd",
+        "actual/1794602846262952000-64b158a8/driver_used.py",
+        "ACTUAL_ATTEMPTS.json"
+      ],
+      "packet": "experiments/has_snapshot_ordering/candidate_20261113",
+      "actual_files": 40,
+      "actual_bytes": 161142,
+      "suffix_counts": {
+        ".json": 11,
+        ".py": 7,
+        ".gz": 12,
+        ".gd": 8,
+        ".patch": 1,
+        ".md": 1
+      },
+      "gzip_streams_decoded": 12,
+      "content_errors": []
+    },
+    {
+      "index": "experiments/has_snapshot_ordering/cwd_probe_20261113/FILE_INDEX.json",
+      "index_identity": {
+        "sha256": "56ac260db66e4b44a74e00bf8ce53fe462d8b99eaea92fb862d54adece06dab1",
+        "bytes": 2890,
+        "mtime_ns": 1794602543901103600
+      },
+      "format": "studio_cwd_race_probe_packet_1",
+      "indexed_files": 11,
+      "indexed_bytes": 33743,
+      "declared_counts": {
+        "file_count": 11
+      },
+      "declared_bytes": {
+        "total_bytes": 33743
+      },
+      "errors": [],
+      "unindexed_files": [],
+      "original_receipts_checked": [
+        "actual/request.json",
+        "actual/command.json",
+        "actual/process.json",
+        "actual/proof.json.gz",
+        "actual/result.json.gz",
+        "actual/engine.log.gz",
+        "actual/stdout.log.gz"
+      ],
+      "packet": "experiments/has_snapshot_ordering/cwd_probe_20261113",
+      "actual_files": 12,
+      "actual_bytes": 36633,
+      "suffix_counts": {
+        ".json": 4,
+        ".gz": 4,
+        ".py": 2,
+        ".gd": 1,
+        ".md": 1
+      },
+      "gzip_streams_decoded": 4,
+      "content_errors": []
+    },
+    {
+      "index": "experiments/has_snapshot_ordering/main_actual_20261113/INDEX.json",
+      "index_identity": {
+        "sha256": "568c2f0b86e5ed2a6d2a44b462227875088bba443f82a76ca1603b7a230a15ea",
+        "bytes": 2419,
+        "mtime_ns": 1794603804005600300
+      },
+      "format": "has_snapshot_ordering_main_actual_1",
+      "indexed_files": 16,
+      "indexed_bytes": 233126,
+      "declared_counts": {},
+      "declared_bytes": {},
+      "errors": [],
+      "unindexed_files": [],
+      "original_receipts_checked": [],
+      "packet": "experiments/has_snapshot_ordering/main_actual_20261113",
+      "actual_files": 17,
+      "actual_bytes": 235545,
+      "suffix_counts": {
+        ".json": 13,
+        ".log": 2,
+        ".gd": 1,
+        ".md": 1
+      },
+      "gzip_streams_decoded": 0,
+      "content_errors": []
+    },
+    {
+      "index": "experiments/source_appearance/static_choice_draft_20261113/FILE_INDEX.json",
+      "index_identity": {
+        "sha256": "9ee70b5f50ea95f0f0b8487d59c04b82b90d80afe5b32c37c6e354cc21d46332",
+        "bytes": 9256,
+        "mtime_ns": 1794601310645414200
+      },
+      "format": "studio_static_choice_unshipped_packet_1",
+      "indexed_files": 53,
+      "indexed_bytes": 344989,
+      "declared_counts": {
+        "file_count": 53
+      },
+      "declared_bytes": {
+        "total_bytes": 344989
+      },
+      "errors": [],
+      "unindexed_files": [],
+      "original_receipts_checked": [],
+      "packet": "experiments/source_appearance/static_choice_draft_20261113",
+      "actual_files": 54,
+      "actual_bytes": 354245,
+      "suffix_counts": {
+        ".json": 21,
+        ".py": 18,
+        ".md": 3,
+        ".log": 8,
+        ".patch": 1,
+        ".txt": 1,
+        ".gd": 2
+      },
+      "gzip_streams_decoded": 0,
+      "content_errors": []
+    },
+    {
+      "index": "experiments/owner_review/relocatable_prep_20261113/INDEX.json",
+      "index_identity": {
+        "sha256": "ea345867bbccc96f21e50237c1e5fa2c7d572513b4f45aaf2112f304669493bf",
+        "bytes": 3249,
+        "mtime_ns": 1794601779137920500
+      },
+      "format": "has_updated_owner_review_preparation_files_1",
+      "indexed_files": 21,
+      "indexed_bytes": 513942,
+      "declared_counts": {},
+      "declared_bytes": {},
+      "errors": [],
+      "unindexed_files": [],
+      "original_receipts_checked": [],
+      "packet": "experiments/owner_review/relocatable_prep_20261113",
+      "actual_files": 22,
+      "actual_bytes": 517191,
+      "suffix_counts": {
+        ".json": 14,
+        ".md": 4,
+        ".log": 2,
+        ".gd": 1,
+        ".py": 1
+      },
+      "gzip_streams_decoded": 0,
+      "content_errors": []
+    }
+  ],
+  "packet_files_preserved": true,
+  "all_top_indexes_exact": true,
+  "all_source_metadata_text": true,
+  "checked_files": 157,
+  "packet_code_or_graphics_executed": false,
+  "audit_python_only": true,
+  "limit": "Content type/signature/JSON and index verification; paths and numeric metadata are allowed, no claim that embedded arbitrary source is safe to execute"
+}

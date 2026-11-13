@@ -74,3 +74,15 @@ not reproduce it. This ordering change removes an avoidable overlap with our own
 snapshot thread; it does not establish the original failure's cause or serialize
 every other filesystem thread. The next full runner explicitly selects the already
 approved absolute Python runtime. See [actual results and retained failures](benchmarks/windows_snapshot_launch_order_2026-11-13.json).
+
+
+## Complete Windows verification after launch ordering
+
+The fresh default suite at `12071fe` passes with 968 source files/HEAD unchanged.
+Its background-save reports pass 10 + 32 + 31 + 16 + 20 + 5 checks, including
+real child-before-thread ordering, failed-thread cancellation/drain, dirty edits,
+backups and offline cold reads. The held Save call was 8ms on the small fixture;
+this is not a new large-workload bound. The original native body route also passes
+24 unit + 72 app checks within that complete run. The earlier full failure and
+unknown Windows cause remain preserved separately. See
+[the full result](benchmarks/windows_canonical_post_save_order_2026-11-13.json).
