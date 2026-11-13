@@ -1,0 +1,26 @@
+{
+  "format": "has_helper_candidate_adapter_frozen_1",
+  "files": {
+    "overlay/src/wind_helper_candidate.gd": {
+      "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+      "bytes": 25396
+    },
+    "overlay/tests/wind_helper_candidate_cpu.gd": {
+      "sha256": "2b93ad6b06358233c0a8cd2cd3cbbc1ef6c959ce48cf2de600f7cfe59afe2875",
+      "bytes": 10121
+    },
+    "candidate-adapter-harness/run.py": {
+      "sha256": "e8f446c96dbcdb04a64c7d019c2beccac8213320912f21715912f84ee8a2cb8f",
+      "bytes": 3884
+    },
+    "candidate-adapter-harness/make_fixtures.py": {
+      "sha256": "9221e5d2112e9d9a6b232639cbe97c1692a3cc8ac950ab3b735958346db504b6",
+      "bytes": 4066
+    }
+  },
+  "actual_final_run": "candidate-adapter-runs/1794595047383269200",
+  "checks": 151,
+  "failures": 0,
+  "scope": "Headless actual hidden imports and paused pose/effective morph transfer only; main/UI/display/simulation unported",
+  "main_head_frozen": "9897f86019dfb8499d0ee30f6560580fac7bb8da"
+}

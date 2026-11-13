@@ -1,0 +1,140 @@
+{
+  "format": "has_sfm_v2_cleanup_executor_v2_packet_1",
+  "status": "READ_ONLY_FILE_GATES_PASS_NONUSE_REFUSED_EXECUTE_UNRUN",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5438,
+      "sha256": "b2b89b431b7985e009a0955e31048e424655e4ce7b60f2390753baf75add0c3b"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 2033,
+      "sha256": "e2994ac1216276a2003e19a87c513ed4df97f1023416e47db42fe1fd738acfbd"
+    },
+    {
+      "path": "RESULTS.json",
+      "bytes": 8380,
+      "sha256": "06ffbdf63da410b5a34cb751bbc86d0e60afeeea8b0b866b201ec8ec989aa4b0"
+    },
+    {
+      "path": "execute-sfm-v2-cleanup.ps1",
+      "bytes": 33974,
+      "sha256": "282c16991d37fcd5233869fcf32562d379fe30da76f31f15710f0b70fc205a38"
+    },
+    {
+      "path": "verify-git.py",
+      "bytes": 7572,
+      "sha256": "5cb7b75a21244d4ceffe4fd0c405ec4a56f1824ff99b15c335fa19b95c06da3c"
+    },
+    {
+      "path": "test-safety.ps1",
+      "bytes": 8008,
+      "sha256": "b192d944d118d61e247473420e97a985eeeaf4ad5d3ef7cf18ab47ebf6262848"
+    },
+    {
+      "path": "test-native-preload.ps1",
+      "bytes": 1532,
+      "sha256": "34b8a2c2bf4a79ef79d6ceddefa3880e654a095c01961dc5067b03c7fd058a90"
+    },
+    {
+      "path": "audit-processes-only.ps1",
+      "bytes": 1195,
+      "sha256": "84e552589352a7825f068e166cfe36519bc92b7f58d41a5b5ea48a017c1d6257"
+    },
+    {
+      "path": "freeze-v2-packet.py",
+      "bytes": 8075,
+      "sha256": "d0621ff97e5832949130d8eb10e32917c91841ae4cbb0bd546a43e6571b4f1bf"
+    },
+    {
+      "path": "git-local-proof-final.json",
+      "bytes": 614,
+      "sha256": "2cb47b75f682d63854ec3b913f22a28092cd55f04de08454d40629d9b044359a"
+    },
+    {
+      "path": "native-preload-forged-final.json",
+      "bytes": 976,
+      "sha256": "27cda3a37e0b47d5d668ae9536e61c1d5717c87b90cab236f910298d0093d7dd"
+    },
+    {
+      "path": "native-preload-legitimate-reuse-final.json",
+      "bytes": 994,
+      "sha256": "7786473502f8cdba476371f605bb375b8fb63e6a0cae50697550335bab17d7ab"
+    },
+    {
+      "path": "synthetic-deb27bc0fe3247a3b881fd8ecd6e50a6/TESTS.json",
+      "bytes": 6773,
+      "sha256": "f06017013a2d34baa70ae926b4efcc8e157cff34d621a22b812d8427d899bcd9"
+    },
+    {
+      "path": "prior-v1/PACKET.json",
+      "bytes": 2245,
+      "sha256": "dd9d3cc1cb001890d1bbd93207187e4078d691e88c2a22d41c6d47b03c48873a"
+    },
+    {
+      "path": "prior-v1/README.md",
+      "bytes": 5546,
+      "sha256": "a6536b97274f06f5f36ae713f5a99484b25ed3d216725626d81e2de70a8dc4e2"
+    },
+    {
+      "path": "prior-v1/RESULTS.json",
+      "bytes": 11616,
+      "sha256": "1ea9d5da08ccbc5d4618df189d4a67d0272ccb9067960357d38b9d184c4b582f"
+    },
+    {
+      "path": "prior-v1/execute-sfm-v2-cleanup.ps1",
+      "bytes": 33836,
+      "sha256": "41d0b54881bc5e339885e56010487defa903f9890eb445daaf168e70571b8931"
+    },
+    {
+      "path": "prior-v1/verify-git.py",
+      "bytes": 7569,
+      "sha256": "c2716b4b305bf2458766aaea61c78ebd6bc74a4155513cd5b002e0037500c01f"
+    },
+    {
+      "path": "prior-v1/test-safety.ps1",
+      "bytes": 6410,
+      "sha256": "07ebdd9ad310db529a5f28d23a396da66b6f1ac42f3ae8590b087a8a25bc9147"
+    },
+    {
+      "path": "prior-v1/audit-processes-only.ps1",
+      "bytes": 1195,
+      "sha256": "84e552589352a7825f068e166cfe36519bc92b7f58d41a5b5ea48a017c1d6257"
+    },
+    {
+      "path": "prior-v1/make-packet.py",
+      "bytes": 7637,
+      "sha256": "7ddbec120e8c04e3aa8951f46a4a1982098a2620bf167190693feb1a64ab3c4d"
+    },
+    {
+      "path": "prior-v1/git-local-proof-final.json",
+      "bytes": 614,
+      "sha256": "2cb47b75f682d63854ec3b913f22a28092cd55f04de08454d40629d9b044359a"
+    },
+    {
+      "path": "prior-v1/failed-long-path-first-dry-run/execute-sfm-v2-cleanup.ps1",
+      "bytes": 32734,
+      "sha256": "fb8c1c57f4ece94f60012593492c9244d633f808d6a72d567cefc8bb2b21f443"
+    },
+    {
+      "path": "prior-v1/failed-process-automatic-variable/execute-sfm-v2-cleanup.ps1",
+      "bytes": 32899,
+      "sha256": "5acd67c6b71e0dc33e05f0c821c5718575c4711ebd450336081c61a2aa249753"
+    },
+    {
+      "path": "prior-v1/prior-getprocess-identity/execute-sfm-v2-cleanup.ps1",
+      "bytes": 32924,
+      "sha256": "281a49da58cfab8e27cc72b78b4ab7ca1b7c4e89339565a3749f62529128ebcb"
+    },
+    {
+      "path": "prior-v1/synthetic-b2cb188c5df646058055746d97143751/TESTS.json",
+      "bytes": 6127,
+      "sha256": "501a7d9ec2c7b7ff59c924d8e9bf24421acc707606e456c54b6b5e9b0a351af7"
+    }
+  ],
+  "total_bytes": 266916,
+  "execute_invoked": false,
+  "local_full_process_receipt_and_synthetic_fixture_payloads_excluded_from_publication": true,
+  "v1_packet_preserved_sha256": "dd9d3cc1cb001890d1bbd93207187e4078d691e88c2a22d41c6d47b03c48873a"
+}

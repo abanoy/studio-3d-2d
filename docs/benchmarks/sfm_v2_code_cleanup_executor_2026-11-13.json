@@ -1,0 +1,54 @@
+{
+  "format": "has_sfm_v2_code_cleanup_executor_checkpoint_2",
+  "date": "2026-11-13",
+  "context_commit": "9897f86019dfb8499d0ee30f6560580fac7bb8da",
+  "packet": {
+    "path": "experiments/source_appearance/v2_code_cleanup_executor_20261113/PACKET.json",
+    "sha256": "b4cac5cd9fd2442d3e0cf805fbffb66a535d143fe037dd8b773db64cafbaa14a",
+    "indexed_files": 26,
+    "indexed_bytes": 266916
+  },
+  "status": "READ_ONLY_FILE_GATES_PASS_NONUSE_REFUSED_EXECUTE_UNRUN",
+  "execute_invoked": false,
+  "deletion_performed": false,
+  "candidate_files": 4308,
+  "candidate_bytes": 33607832,
+  "retained_files": 2613,
+  "retained_bytes": 68376831,
+  "file_membership_retention_gates_pass": true,
+  "synthetic_controls": 35,
+  "synthetic_pass": true,
+  "fresh_preloaded_type_negatives": [
+    {
+      "case": "Forged",
+      "passed": true,
+      "expected_refusal": true,
+      "process_id": 23788,
+      "process_created_utc": "2026-11-13T18:49:35.7905683Z",
+      "executor_sha256": "282c16991d37fcd5233869fcf32562d379fe30da76f31f15710f0b70fc205a38",
+      "test_source_sha256": "34b8a2c2bf4a79ef79d6ceddefa3880e654a095c01961dc5067b03c7fd058a90"
+    },
+    {
+      "case": "LegitimateReuse",
+      "passed": true,
+      "expected_refusal": true,
+      "process_id": 23900,
+      "process_created_utc": "2026-11-13T18:49:37.1788311Z",
+      "executor_sha256": "282c16991d37fcd5233869fcf32562d379fe30da76f31f15710f0b70fc205a38",
+      "test_source_sha256": "34b8a2c2bf4a79ef79d6ceddefa3880e654a095c01961dc5067b03c7fd058a90"
+    }
+  ],
+  "root_actual_dry_run_receipt": "output/sfm-v2-code-cleanup-executor-20261113-v2/receipt-20261113T1840164784783Z-5b2026675bf345d4a7b781b14a48ce88.json",
+  "actual_process_snapshot": {
+    "processes": 343,
+    "observed_uses": 0,
+    "unknowns": 199,
+    "known_owned_unknowns": 5,
+    "unresolved_owner_unknowns": 194,
+    "exceptions_added": false
+  },
+  "prior_v1": "Frozen unchanged with all12indexedfiles; neverexecuted. Reviewfound crosssessionunresolvedowner exclusion and uncheckedresidentnativeType reuse. V2refusesallunresolvedliveowners andallpreloadedinspectorTypes.",
+  "remaining": "No cleanup: current process nonuse cannot be established under conservative gate. Do notkillprotectedprocesses, addPIDexceptions, weakenpermissions orrunExecute. Retainfourreconstructiblecodecopies whileotheracceptance workcontinues.",
+  "scope_limit": "Not universal file-handle nonuse, fsync/power-loss journal durability or test ofactualdeletion; per-fileprocessaudits couldtakehours ifevereligible.",
+  "private_assets_uploaded": false
+}

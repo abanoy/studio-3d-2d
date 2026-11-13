@@ -1,0 +1,277 @@
+{
+  "format": "has_sfm_v2_cleanup_executor_preparation_results_1",
+  "status": "PREPARATION_ONLY_EXECUTE_UNRUN_NO_CLEANUP",
+  "deletes_moves_kills_or_git_mutation": false,
+  "frozen_plan": {
+    "packet_sha256": "847609fa241f70f89c711a93ed0035a8a1fe69cf34bd998b9d418630db1cb70a",
+    "gzip_sha256": "c772ec391c36db95b8a016125e41bc1588cdbc14ae542d6a64e66d66136f55a4",
+    "raw_sha256": "e65b408acdf63eade874709b6dc37de43b6c244ff3f9fe5fc11cab222c43fa8a",
+    "raw_bytes": 7532146,
+    "candidate_files": 4308,
+    "candidate_bytes": 33607832,
+    "retained_files": 2613,
+    "retained_bytes": 68376831
+  },
+  "current_executor": {
+    "path": "execute-sfm-v2-cleanup.ps1",
+    "bytes": 33836,
+    "sha256": "41d0b54881bc5e339885e56010487defa903f9890eb445daaf168e70571b8931"
+  },
+  "current_git_helper": {
+    "path": "verify-git.py",
+    "bytes": 7569,
+    "sha256": "c2716b4b305bf2458766aaea61c78ebd6bc74a4155513cd5b002e0037500c01f"
+  },
+  "runtime_executable_files": [
+    {
+      "path": "C:\\Program Files\\Python313\\python.exe",
+      "bytes": 105840,
+      "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+    },
+    {
+      "path": "C:\\Users\\noble\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe",
+      "bytes": 301360,
+      "sha256": "2a6769a3330dc1084d0154bfde7d164ab750ca7f700f313f9d417c1be78b2233"
+    },
+    {
+      "path": "C:\\Program Files\\Git\\cmd\\git.exe",
+      "bytes": 46480,
+      "sha256": "544548de8c9bed98eb90531729a2955f554e7009338788b68777258ea61867e4"
+    }
+  ],
+  "runtime_hash_limit": "Executable files only; no complete installed dependency-tree hash is asserted.",
+  "local_git_proof": {
+    "format": "has_sfm_v2_readonly_git_proof_1",
+    "passed": true,
+    "raw_plan_sha256": "e65b408acdf63eade874709b6dc37de43b6c244ff3f9fe5fc11cab222c43fa8a",
+    "packet_sha256": "847609fa241f70f89c711a93ed0035a8a1fe69cf34bd998b9d418630db1cb70a",
+    "gzip_sha256": "c772ec391c36db95b8a016125e41bc1588cdbc14ae542d6a64e66d66136f55a4",
+    "historical_revision": "e9cc7cfb20266b4863bde134bcb30457547a343d",
+    "candidate_files": 4308,
+    "candidate_bytes": 33607832,
+    "raw_git_objects": 1032,
+    "eol_conversion_used": false,
+    "publication_status": "UNRUN_LOCAL_PROOF_ONLY",
+    "git_or_source_mutation": false
+  },
+  "synthetic_controls": [
+    {
+      "path": "synthetic-0bd62e694e864bdcaec23e6ccf6a8a65/TESTS.json",
+      "bytes": 5217,
+      "sha256": "c6558902e207bb27d68da5959d2b02d3ca166e159feaddbe839f1cea139ee5da",
+      "passed": true,
+      "tests": 27,
+      "executor_sha256": null,
+      "test_source_sha256": null,
+      "production_execute_invoked": false
+    },
+    {
+      "path": "synthetic-85c1673c45474cd0a84c8f01ecf27f39/TESTS.json",
+      "bytes": 5944,
+      "sha256": "91fe0c7fd963ba953111d8b77eeb734529378d54376b4c52e8eb77bf49c5a8fc",
+      "passed": true,
+      "tests": 31,
+      "executor_sha256": null,
+      "test_source_sha256": null,
+      "production_execute_invoked": false
+    },
+    {
+      "path": "synthetic-b2cb188c5df646058055746d97143751/TESTS.json",
+      "bytes": 6127,
+      "sha256": "501a7d9ec2c7b7ff59c924d8e9bf24421acc707606e456c54b6b5e9b0a351af7",
+      "passed": true,
+      "tests": 31,
+      "executor_sha256": "41d0b54881bc5e339885e56010487defa903f9890eb445daaf168e70571b8931",
+      "test_source_sha256": "07ebdd9ad310db529a5f28d23a396da66b6f1ac42f3ae8590b087a8a25bc9147",
+      "production_execute_invoked": false
+    },
+    {
+      "path": "synthetic-e91821571abe43b0ac7bbedd7679aa3b/TESTS.json",
+      "bytes": 5539,
+      "sha256": "a8049999b512a2cd763a0f4a4c2221e96f4ea3240f0e0375fe51f1cc21fee002",
+      "passed": true,
+      "tests": 29,
+      "executor_sha256": null,
+      "test_source_sha256": null,
+      "production_execute_invoked": false
+    }
+  ],
+  "real_dry_run_receipts_local_only": [
+    {
+      "path": "receipt-20261113T0839225011155Z-9b21a71a00b14807bb92be11a484be68.json",
+      "bytes": 1921,
+      "sha256": "3cde0b4aa281de86d080bcd58d82d433021a255af0446964ac8426580b25eb51",
+      "status": "PREFLIGHT_FAILED_NO_DELETION",
+      "mode": "DRY_RUN",
+      "executor_sha256": "fb8c1c57f4ece94f60012593492c9244d633f808d6a72d567cefc8bb2b21f443",
+      "helper_sha256": "c2716b4b305bf2458766aaea61c78ebd6bc74a4155513cd5b002e0037500c01f",
+      "started_utc": "2026-11-13T08:39:22.5096335Z",
+      "finished_utc": "2026-11-13T08:39:23.7736666Z",
+      "candidate_files_checked": 11,
+      "retained_files_checked": 0,
+      "file_preflight_passed": null,
+      "preflight_membership_passed": null,
+      "retained_recheck_passed": false,
+      "post_membership_passed": false,
+      "publication_status": "UNRUN_LOCAL_PROOF_ONLY",
+      "deletion_invoked": false,
+      "deleted_files": 0,
+      "deleted_bytes": 0,
+      "errors": [
+        "Exception calling \"DirectoryIdentity\" with \"1\" argument(s): \"The system cannot find the path specified.\""
+      ],
+      "unrun": [
+        "Individual deletion and all post-deletion proof remain unrun."
+      ],
+      "process_audit_count": 0,
+      "last_process_matches": 0,
+      "last_process_unknowns": 0
+    },
+    {
+      "path": "receipt-20261113T0839364941938Z-32d9a49a89c84f6c866d705a2ca69a6b.json",
+      "bytes": 1872,
+      "sha256": "b4948ac2456e9f688941f490e2359052b76efeeb88610203deb414af0762e046",
+      "status": "PREFLIGHT_FAILED_NO_DELETION",
+      "mode": "DRY_RUN",
+      "executor_sha256": "5acd67c6b71e0dc33e05f0c821c5718575c4711ebd450336081c61a2aa249753",
+      "helper_sha256": "c2716b4b305bf2458766aaea61c78ebd6bc74a4155513cd5b002e0037500c01f",
+      "started_utc": "2026-11-13T08:39:36.5015989Z",
+      "finished_utc": "2026-11-13T08:44:06.0210395Z",
+      "candidate_files_checked": 4308,
+      "retained_files_checked": 2613,
+      "file_preflight_passed": null,
+      "preflight_membership_passed": null,
+      "retained_recheck_passed": true,
+      "post_membership_passed": false,
+      "publication_status": "UNRUN_LOCAL_PROOF_ONLY",
+      "deletion_invoked": false,
+      "deleted_files": 0,
+      "deleted_bytes": 0,
+      "errors": [
+        "Access to a CIM resource was not available to the client."
+      ],
+      "unrun": [
+        "Individual deletion and all post-deletion proof remain unrun."
+      ],
+      "process_audit_count": 0,
+      "last_process_matches": 0,
+      "last_process_unknowns": 0
+    },
+    {
+      "path": "receipt-20261113T0844559168633Z-fd57bc03477949cb8ed79fe1cb5ea700.json",
+      "bytes": 512022,
+      "sha256": "cc84f50030de811cda71d5a08b3dac077591ef7986d7e9e9772bdb005cf30837",
+      "status": "PREFLIGHT_FAILED_NO_DELETION",
+      "mode": "DRY_RUN",
+      "executor_sha256": "41d0b54881bc5e339885e56010487defa903f9890eb445daaf168e70571b8931",
+      "helper_sha256": "c2716b4b305bf2458766aaea61c78ebd6bc74a4155513cd5b002e0037500c01f",
+      "started_utc": "2026-11-13T08:44:55.9238641Z",
+      "finished_utc": "2026-11-13T08:47:09.2976359Z",
+      "candidate_files_checked": 4308,
+      "retained_files_checked": 2613,
+      "file_preflight_passed": true,
+      "preflight_membership_passed": true,
+      "retained_recheck_passed": true,
+      "post_membership_passed": false,
+      "publication_status": "UNRUN_LOCAL_PROOF_ONLY",
+      "deletion_invoked": false,
+      "deleted_files": 0,
+      "deleted_bytes": 0,
+      "errors": [
+        "Process nonuse gate refused: observed use or an inaccessible live owned/runtime process."
+      ],
+      "unrun": [
+        "Publication checkpoint verification; no checkpoint supplied for read-only preparation.",
+        "Individual deletion and all post-deletion proof remain unrun."
+      ],
+      "process_audit_count": 1,
+      "last_process_matches": 0,
+      "last_process_unknowns": 13
+    }
+  ],
+  "supplemental_process_audits_local_only": [
+    {
+      "path": "nonuse-host-084fe17d2c2c484ba8903a44be8a6515.json",
+      "bytes": 236449,
+      "sha256": "7ea8b5609802dc6a7b0290abc7349d97fb2c191e51d09761445cf1c4f72c8e26",
+      "utc": "2026-11-13T08:44:03.1062988Z",
+      "processes": 354,
+      "matches": 0,
+      "unknowns": 13,
+      "inaccessible": 196,
+      "exceptions_used": false
+    },
+    {
+      "path": "nonuse-host-19db80b6fa33435388fcca72bb5476e0.json",
+      "bytes": 178327,
+      "sha256": "48205753e0727cc52e055200460777fd6677c623de83a8bc17254c4dfd624549",
+      "utc": "2026-11-13T08:42:32.5903284Z",
+      "processes": 354,
+      "matches": 0,
+      "unknowns": 13,
+      "inaccessible": 196,
+      "exceptions_used": false
+    },
+    {
+      "path": "nonuse-host-ffb7d555f3fe43be88ec404976aa32db.json",
+      "bytes": 189894,
+      "sha256": "dfca8d2ddb4b578755dcea0d27bcafd4395e71d480abdc640abb853bea8f26be",
+      "utc": "2026-11-13T08:43:30.4022565Z",
+      "processes": 355,
+      "matches": 0,
+      "unknowns": 13,
+      "inaccessible": 197,
+      "exceptions_used": false
+    }
+  ],
+  "preserved_preparation_failures": [
+    {
+      "case": "first full dry-run",
+      "outcome": "FAILED_NO_DELETION_AFTER11_CANDIDATES",
+      "reason": "Native file-ID reader lacked extended literal-path prefix for long Windows paths.",
+      "exact_source": {
+        "path": "failed-long-path-first-dry-run/execute-sfm-v2-cleanup.ps1",
+        "bytes": 32734,
+        "sha256": "fb8c1c57f4ece94f60012593492c9244d633f808d6a72d567cefc8bb2b21f443"
+      }
+    },
+    {
+      "case": "first supplemental host process audit",
+      "outcome": "FAILED_BEFORE_REPORT_NO_DELETION",
+      "reason": "PowerShell automatic $Matches variable replaced the audit list during regex matching. Corrected to usageMatches.",
+      "exact_source": {
+        "path": "failed-process-automatic-variable/execute-sfm-v2-cleanup.ps1",
+        "bytes": 32899,
+        "sha256": "5acd67c6b71e0dc33e05f0c821c5718575c4711ebd450336081c61a2aa249753"
+      }
+    },
+    {
+      "case": "restricted process inspection",
+      "outcome": "ACCESS_DENIED_NO_DELETION",
+      "reason": "Get-CimInstance unavailable in restricted context. Approved host audit used instead; full restricted dry-run receipt retained."
+    },
+    {
+      "case": "prior Get-Process creation acquisition",
+      "outcome": "STRICT_NONUSE_GATE_REFUSED13_UNKNOWN",
+      "reason": "Native retained-handle owner/creation now replaces nullable Get-Process.StartTime. Access-limited records remain blockers.",
+      "exact_source": {
+        "path": "prior-getprocess-identity/execute-sfm-v2-cleanup.ps1",
+        "bytes": 32924,
+        "sha256": "281a49da58cfab8e27cc72b78b4ab7ca1b7c4e89339565a3749f62529128ebcb"
+      }
+    }
+  ],
+  "unrun": [
+    "No Execute invocation, deletion, move, process termination or post-deletion proof.",
+    "Published exact checkpoint/artifact and actual remote ancestry gates until root supplies reviewed publication values.",
+    "No root-reviewed inaccessible-process exception mechanism is included or implicitly authorized."
+  ],
+  "limits": [
+    "Fresh inaccessible owned/runtime identities refuse. Other-account/non-runtime and arbitrary handle access are explicitly limited.",
+    "WMI has microsecond precision; native owner handle acquires full100ns creation, then native CWD reads require exact full creation.",
+    "Directory IDs are initially pinned per invocation because the frozen plan did not record original directory IDs.",
+    "Path-based rechecks/removal are not atomic against hostile concurrent changes.",
+    "Full per-file process audits are intentionally expensive; no scope-broadening retry exists.",
+    "Local full process-audit receipts and all authored synthetic fixture files remain retained outside the compact publication selection."
+  ]
+}

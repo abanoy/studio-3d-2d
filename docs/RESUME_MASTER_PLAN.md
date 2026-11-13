@@ -453,8 +453,8 @@ changed mode/inspector layout from581.3333×327 to595.5555×335 before readback.
 The production view guard correctly rejected it. Test-only use of the existing
 settled() helper before the next click restores41/0on fresh MMD/GMod/SFM
 fixtures, preserving every original predicate and resize/projection guard.
-[Evidence](native_selection_displayed_layout_2026-11-13.md). Full aggregate remains
-unpassed and must restart from the next committed checkpoint.
+[Evidence](native_selection_displayed_layout_2026-11-13.md). That aggregate
+remained failed; the later fresh default pass is recorded below.
 
 Read-only Steam inspection found installed SFM/GMod HLMV viewers and42unchanged
 selected files, including SFM's own MDL49-header assets. This is a compatibility
@@ -479,8 +479,19 @@ tone and failure fixtures retain the original AAC/onset/RMS checks and add a
 silent-spike check. Five focused failure checks pass; the preserved old encoder
 fails the new existing-output check. Scoped media verification passes21movies
 (two fresh,19retained), exact1.0second onsets and unchanged audio-level bounds.
-This is not a full aggregate; rerun the default from the next stable checkpoint.
+That scoped check was not a full aggregate.
 [Details and source](encoder_existing_output_fix_2026-11-13.md).
+
+The subsequent **full default at9897f86 passes** in2635.835seconds: all36core
+groups, every later registered wrapper and21final movie checks. Both decoded
+audio onsets are exactly1.0second; the editor RMS is5658.299 within the unchanged
+bounds. All947functional files and HEAD remain exact before/after. Root verifies
+174fresh root private receipts and126referenced receipt paths: all checked jobs
+close with exit0, confirmed private child desktops and no foreground/switch.
+The actual coordinator and known child are absent after completion. This is a
+fresh complete run, not a composition of scoped results. Human/device/clean-install
+observations remain separate, and the unported pending-helper candidate is not
+part of that tested main. [Full evidence](benchmarks/windows_canonical_full_2026-11-13.json).
 
 ### Main local-wind integration — November 13
 
@@ -559,8 +570,35 @@ weights. All65preservation gates pass. VRM0/1 produced no usable new-helper
 proposal within the bounded first64regions, so their derived-helper support is
 explicitly unproved. Source/evidence:
 `experiments/local_wind_review/helper_imported_binding_gate_20261113`.
-Before-Apply preview still needs integration with authored pose/shape transfer,
+At that checkpoint, before-Apply preview still needed authored pose/shape transfer,
 main lifecycle invalidation, actual display/wind and separate Apply behavior.
+
+The subsequent **unported editor candidate** now has151headless adapter checks,
+57real editor/CPU-host checks and69checks on the display candidate, plus11separate
+transport-boundary controls. These are separate scopes, not a combined graphics
+result. Actual posed source-node mapping, canonical physical bone identities,
+runtime parents, frozen effective morphs and separate child-model ownership are
+checked. The editor preserves independent running props, refuses stale reviewed
+expressions, and keeps Apply as one Undo operation with conservative live-motion
+guards. Temporary wind checks remain distinct from row focus and Apply inclusion.
+The graphical player is implemented only in an isolated source overlay. Its first
+private-desktop run passes199checks: newly proposed joints and the same admitted
+candidate's pixels move; Off restores exact original scene pixels, poses, mesh
+visibility and orange/joint refinement overlays. Save, final capture, Record
+refusal, seeking, Close, New, startup and actual-worker cancellation pass with
+no late resurrection. The private job closes cleanly and all five preservation
+gates pass. A further45checks preserve a real moving independent prop and a
+separately owned, posed/morphed child model. A fresh39-check retained Backhair
+profile moves original joints11/10/9 before Apply, adds only endpoint103,
+preserves original skin/binary data and restores exact original pixels on Off.
+The staged input is still the documented ribbon/Backhair alias, not a newly
+supplied original. Its Source shader/jiggle fidelity remains separate. The first
+peer attempt stays rejected for concurrent test-file mutation; its frozen rerun
+passes. Main integration is next.
+Exact sources and failed observations are saved in
+`experiments/local_wind_review/helper_editor_cpu_host_20261113` and
+`experiments/local_wind_review/helper_pending_display_candidate_20261113`.
+[Scoped evidence](benchmarks/helper_pending_preview_candidate_2026-11-13.json).
 
 A bounded SFM derived render/adoption probe has a newer v2 source packet with
 39CPU controls and independent source review. Four harness corrections pin the
@@ -808,9 +846,14 @@ props 35; recording 17 unit + 62 app. Movies, audio timing and private desktop
 receipts are recorded. Windows metadata containment also has a verified separator
 fix; preserve all containment, ownership and link checks.
 
-### The full default suite is still unpassed
+### Full default suite: fresh November 13 pass
 
-The last run from `02631f916ef28c146d36b684aff0b26f32cf013c` was intentionally
+Exact9897f86 now passes the complete default, including final media/audio checks;
+see the November13entry above and its benchmark. The following paused/failed
+attempts remain historical failures. A later functional main change still needs
+appropriate regressions and a new stable default run.
+
+The historical run from `02631f916ef28c146d36b684aff0b26f32cf013c` was intentionally
 stopped at the owner's pause request. It passed through core editing/recovery,
 native MMD posing, physics/contact/props/recording, workspace resize/docking/nested
 layouts, fan flutter, shortcuts/camera, helpers/morphs, shapes/studies, expressions,
@@ -1088,8 +1131,13 @@ private, custom and unlisted files/68,376,831bytes remain excluded. No directori
 or other source copies are eligible. No deletion has occurred: a subsequent
 read-only executor matched the files but refused13uninspectable process
 identities. Review also found two safety gaps in that unexecuted version; a
-separate corrected version is in progress. Preserve the copies while current
-nonuse cannot be established. [Plan](benchmarks/sfm_v2_code_cleanup_plan_2026-11-13.json).
+separate corrected version now passes35controls and two fresh-process
+preloaded-type refusals. Its actual read-only preflight matches every candidate,
+retained file and membership gate, then refuses199unknown process identities
+under its stronger cross-session owner rule. Execute remains unrun; no deletion
+or process exceptions occurred. Preserve the copies while current nonuse cannot
+be established. [Plan](benchmarks/sfm_v2_code_cleanup_plan_2026-11-13.json),
+[corrected executor/refusal](benchmarks/sfm_v2_code_cleanup_executor_2026-11-13.json).
 
 ## 12. Order of work after an explicit resume
 

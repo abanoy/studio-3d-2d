@@ -1,0 +1,15 @@
+{
+  "reason": "Preloaded SfmCleanupNativeV2 is refused. Start a fresh approved PowerShell process; no native implementation may be reused.",
+  "execute_invoked": false,
+  "process_created_utc": "2026-11-13T18:49:37.1788311Z",
+  "test_source_sha256": "34b8a2c2bf4a79ef79d6ceddefa3880e654a095c01961dc5067b03c7fd058a90",
+  "process_id": 23900,
+  "passed": true,
+  "process_creation_ticks": 639301925771788311,
+  "expected_refusal": true,
+  "command_line": "C:\\Users\\noble\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.dll -NoProfile -NonInteractive -File C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-v2-code-cleanup-executor-20261113-v2\\test-native-preload.ps1 -Case LegitimateReuse",
+  "format": "has_sfm_v2_preloaded_native_negative_2",
+  "case": "LegitimateReuse",
+  "deletes_moves_kills_or_git_mutation": false,
+  "executor_sha256": "282c16991d37fcd5233869fcf32562d379fe30da76f31f15710f0b70fc205a38"
+}

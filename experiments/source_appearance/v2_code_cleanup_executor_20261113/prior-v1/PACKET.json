@@ -1,0 +1,69 @@
+{
+  "format": "has_sfm_v2_cleanup_executor_packet_1",
+  "status": "PREPARATION_ONLY_EXECUTE_UNRUN_NO_CLEANUP",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5546,
+      "sha256": "a6536b97274f06f5f36ae713f5a99484b25ed3d216725626d81e2de70a8dc4e2"
+    },
+    {
+      "path": "RESULTS.json",
+      "bytes": 11616,
+      "sha256": "1ea9d5da08ccbc5d4618df189d4a67d0272ccb9067960357d38b9d184c4b582f"
+    },
+    {
+      "path": "execute-sfm-v2-cleanup.ps1",
+      "bytes": 33836,
+      "sha256": "41d0b54881bc5e339885e56010487defa903f9890eb445daaf168e70571b8931"
+    },
+    {
+      "path": "verify-git.py",
+      "bytes": 7569,
+      "sha256": "c2716b4b305bf2458766aaea61c78ebd6bc74a4155513cd5b002e0037500c01f"
+    },
+    {
+      "path": "test-safety.ps1",
+      "bytes": 6410,
+      "sha256": "07ebdd9ad310db529a5f28d23a396da66b6f1ac42f3ae8590b087a8a25bc9147"
+    },
+    {
+      "path": "audit-processes-only.ps1",
+      "bytes": 1195,
+      "sha256": "84e552589352a7825f068e166cfe36519bc92b7f58d41a5b5ea48a017c1d6257"
+    },
+    {
+      "path": "make-packet.py",
+      "bytes": 7637,
+      "sha256": "7ddbec120e8c04e3aa8951f46a4a1982098a2620bf167190693feb1a64ab3c4d"
+    },
+    {
+      "path": "git-local-proof-final.json",
+      "bytes": 614,
+      "sha256": "2cb47b75f682d63854ec3b913f22a28092cd55f04de08454d40629d9b044359a"
+    },
+    {
+      "path": "failed-long-path-first-dry-run/execute-sfm-v2-cleanup.ps1",
+      "bytes": 32734,
+      "sha256": "fb8c1c57f4ece94f60012593492c9244d633f808d6a72d567cefc8bb2b21f443"
+    },
+    {
+      "path": "failed-process-automatic-variable/execute-sfm-v2-cleanup.ps1",
+      "bytes": 32899,
+      "sha256": "5acd67c6b71e0dc33e05f0c821c5718575c4711ebd450336081c61a2aa249753"
+    },
+    {
+      "path": "prior-getprocess-identity/execute-sfm-v2-cleanup.ps1",
+      "bytes": 32924,
+      "sha256": "281a49da58cfab8e27cc72b78b4ab7ca1b7c4e89339565a3749f62529128ebcb"
+    },
+    {
+      "path": "synthetic-b2cb188c5df646058055746d97143751/TESTS.json",
+      "bytes": 6127,
+      "sha256": "501a7d9ec2c7b7ff59c924d8e9bf24421acc707606e456c54b6b5e9b0a351af7"
+    }
+  ],
+  "total_bytes": 179107,
+  "local_full_receipts_and_fixture_payloads_excluded_from_publication": true,
+  "execute_invoked": false
+}

@@ -1,0 +1,9 @@
+{
+  "reviewer": "/root/sfm_next_cases/integration_lifecycle_review",
+  "read_only": true,
+  "scope": "Display-v2 player/host/selection/lifecycle source; no graphical runtime",
+  "found": "Existing pose_editor suppressed only original phase1 preview, allowing camera/selection updates to reintroduce source handles",
+  "resolved": "app.local_wind_display_active includes pending player; existing pose_editor gate uses it; synthetic phase controls pass",
+  "additional_seam": "helper.open closes prior phase1 review before another preview owner",
+  "final": "No further source blockers; actual headless69/0 all6preservation gates; graphical acceptance remains pending"
+}
