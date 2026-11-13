@@ -471,7 +471,7 @@ picker code was not changed by these test corrections. Run the full suite again
 from the new published checkpoint; scoped checks do not substitute for it.
 
 Source-only [experiment checkpoints](../experiments/README.md) preserve the local
-wind prototype (94 headless, graphics unrun), static Source appearance worker
+wind prototype (94 headless; later incomplete GPU attempt below), static Source appearance worker
 (21 CPU, actual conversion/app/render unrun), and the historical first review
 checker. The current checker is now in `tools/verify_owner_review.py` and
 `tests/owner_review_replay.gd`: all six existing packages pass **129 checks** in
@@ -501,6 +501,44 @@ every file/path/recipe and delete only exact listed files. Old snapshots become
 intentionally sparse; reconstruct from recorded Git blobs plus retained overlays.
 The compressed machine-readable plan is in the benchmark directory; no private
 asset payload is in it. Keep owner reviews, recovery, originals and pending work.
+
+**Later verified outcome:** the exact plan was executed after remote verification.
+All **16,875 files / 224,835,913 bytes** were removed; no directories were removed.
+The runner and root independently rechecked all104 retained source files and142
+parent evidence files. All planned paths are absent and the journal matches the
+ordered plan. Both protected canonical copies and all unlisted/future copies stay
+excluded. Process checks establish no observed session/test use, with five exact
+reviewed protected-helper exceptions; universal ownership/CWD/open-handle freedom
+is not claimed. [Actual receipt](benchmarks/readback_reconstructible_cleanup_result_2026-11-12.json)
+and [reviewed runner source](../experiments/readback_cleanup/README.md).
+
+### Later canonical contract correction — November 12
+
+The next full run at `4fee0a9` also remains **failed/incomplete**. All934 functional
+file hashes and HEAD stayed exact. Body editing, lighting, live hair appearance,
+camera range, foot contacts and contact animation/editor/clipboard passed before
+one old contact-physics expectation failed (48checks/1failure). It expected Hair
+OFF to author a freeze and add an Undo entry, contradicting the owner's requested
+restoration behavior already implemented in the app.
+
+An exact-old-assert private diagnostic showed all91 native bone poses restored
+exactly and full world/data/history/redo/dirty unchanged after OFF. The old Undo
+then removed the earlier fan addition. The corrected test asserts exact authored
+restoration, no phantom edit, and real prior fan Undo/Redo, preserving every other
+contact/body/recording/HAS/movie check and limit. Ordinary51 and component53 checks
+pass with actual48-frame1080p24H264 movies. No product code changed. See
+[contract evidence](benchmarks/contact_hair_off_contract_2026-11-12.json).
+Continue the unrun suffix independently before another final full run; scoped
+replays never turn this failed aggregate into a pass.
+
+Wind's first actual graphical attempt reached only its procedural case:56checks,
+one failed fixture-adoption assertion. Native, lifecycle and primary jobs did not
+run. Separate-child preservation is unproven because the fixture did not establish
+a distinct peer; diagnose the exact append error before changing the harness.
+The runtime and originals stayed exact. The strengthened hidden-mesh, nonzero
+excluded-pose and both-simulator oracles remain saved separately. [First failed
+GPU receipt](benchmarks/wind_review_first_gpu_2026-11-12.json). The feature remains
+unshipped; do not infer a production failure or a complete graphical pass.
 
 ### What the last application fix actually established
 
@@ -600,6 +638,20 @@ report the actual indices; preserve old embedded projects. This does not impleme
 later runtime/animated variant switching or justify replacing an edited object
 whose shape/helper identities must survive. Full geometry/material dependencies
 and actual rendered/persistence tests are required beyond the MDL-only inventory.
+
+**Resource preparation now completed:** exact296 native resources /181,460,484
+bytes were staged read-only from the two RARs, with all originals unchanged.
+Thirty-four CPU controls pass. Keiki's4VMTs/16 observed texture references resolve;
+Nitori's6VMTs have25/28 resolved references, with three references to one missing
+`materials/hairbump.vtf`. All basic bridge base textures resolve, but native
+bump/Phong/environment/warp/glow fidelity is unproven; no substitute or installed
+fallback was used. [Actual staging/closure report](sfm_native_resource_staging_2026-11-12.md).
+Source-only staging, allowlists, requests and an unrun serial conversion driver
+are preserved under `experiments/source_appearance/native_resources`. Its21 CPU
+controls pass after independent review of bind/rest and stage-membership guards.
+Prepare a fresh schema2 input lock at the next stable HEAD before any conversion;
+the old schema1 preflight is historical and deliberately refuses current code.
+Blender, actual selected GLBs, render/app adoption and variants remain unrun.
 
 ### Actual external observations still needed, only when participation is granted
 

@@ -1,0 +1,119 @@
+{
+  "format": "has_verified_individual_readback_cleanup_result_1",
+  "date": "2026-11-12",
+  "plan_publication_commit": "c6782d2f0f7b6ebbe868214ceb975e42afd129dd",
+  "remote_reverified_before_execution": "4fee0a9f25dca5c265966c7433e21a7ccd0c3bf9",
+  "raw_plan_sha256": "2030b3c4f6b838fa874a2cb93ad2a990f6b6d14d8e2088138f9c6065cf7c08ab",
+  "published_plan": "docs/benchmarks/readback_reconstructible_cleanup_plan_2026-11-12.json.gz",
+  "status": "completed_individual_deletions_retained_evidence_verified",
+  "started_utc": "2026-11-13T04:02:13.0912900Z",
+  "finished_utc": "2026-11-13T04:09:52.9813688Z",
+  "deleted_files": 16875,
+  "deleted_bytes": 224835913,
+  "failed_files": 0,
+  "no_directories_deleted": true,
+  "all_unlisted_paths_excluded": true,
+  "checked_directories": 276,
+  "retained_source_files": 104,
+  "retained_source_bytes": 8976831,
+  "retained_parent_evidence_files": 142,
+  "retained_parent_evidence_bytes": 7808986,
+  "retained_hash_size_mtime_rechecked_by_runner_and_root": true,
+  "all_planned_deleted_paths_independently_absent": true,
+  "journal_exactly_matches_ordered_plan": true,
+  "root_independent_recheck_files": 246,
+  "runtime_script_sha256": "0dec3ea4ec5376e624f1ef5c3f1cd37a2a1f94604a7b054123f558ee1edc9060",
+  "git_helper_sha256": "b75917f825febac612b75f6a694a07ebd2cece2bedf2ea62629e456064e7fed0",
+  "git_recovery_proof": {
+    "format": "has_read_only_cleanup_git_verification_1",
+    "passed": true,
+    "raw_plan_sha256": "2030b3c4f6b838fa874a2cb93ad2a990f6b6d14d8e2088138f9c6065cf7c08ab",
+    "published_checkpoint": "c6782d2f0f7b6ebbe868214ceb975e42afd129dd",
+    "published_gzip_git_path": "docs/benchmarks/readback_reconstructible_cleanup_plan_2026-11-12.json.gz",
+    "published_gzip_sha256": "911f895858bf75b35021f037679a758e1bee5bccebfff05557b3d8da9ffade15",
+    "published_gzip_matches_exact_raw_plan": true,
+    "origin_main_at_check": "4fee0a9f25dca5c265966c7433e21a7ccd0c3bf9",
+    "published_checkpoint_reachable_from_origin": true,
+    "source_revisions_reachable_from_checkpoint": [
+      "297ac619f0b05f897959e9f38d5b36493b6b9594",
+      "3efe01a754903fc6faa4b52607f5da6e4f19218e",
+      "7c49fc3693f990a345a315cc9220600db0d90bb9",
+      "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa"
+    ],
+    "source_files": 16862,
+    "regenerable_caches": 13,
+    "git_objects": 1315,
+    "byte_recipes": 2394,
+    "all_git_paths_modes_objects_sizes_sha_and_eol_recipes_match": true,
+    "source_files_read_or_changed": false
+  },
+  "original_raw_receipt": "output/readback-reconstructible-cleanup-execution-20261113T0402130823743Z-c304a25dde334288888eebb2824b80ea.json",
+  "original_raw_receipt_sha256": "b2b830dcfa32447f2ff74a2851de193af8cbd106365b39ef721ec0607f97e9d3",
+  "journal": "output/readback-reconstructible-cleanup-execution-20261113T0402130823743Z-c304a25dde334288888eebb2824b80ea.jsonl",
+  "journal_sha256": "6d3934cb253d1ed834bdc68aa36bf760778ea2ec81791492719236e08c9eea48",
+  "process_scan_count": 35,
+  "no_observed_target_process_use_or_unknown_owned_runtime": true,
+  "process_scope": "Absence of observed session/test use of the thirteen old source copies.",
+  "process_limit": "CWD inspection covers positively identified current-account processes except the exact independently reviewed protected helper identities. Inaccessible system/service ownership is reported. Universal ownership, CWD or arbitrary open-file-handle freedom is not proven.",
+  "narrow_protected_helper_exclusions": [
+    {
+      "reason": "Exact protected helper identity independently reviewed by root; unreadable CWD/command/executable. No arbitrary file-handle freedom asserted.",
+      "created_utc": "2026-11-13T02:30:45.1630040Z",
+      "process_id": 13228,
+      "name": "DefenderSessionHelper.exe"
+    },
+    {
+      "reason": "Exact protected helper identity independently reviewed by root; unreadable CWD/command/executable. No arbitrary file-handle freedom asserted.",
+      "created_utc": "2026-11-13T02:30:47.2577220Z",
+      "process_id": 13532,
+      "name": "logioptionsplus_appbroker.exe"
+    },
+    {
+      "reason": "Exact protected helper identity independently reviewed by root; unreadable CWD/command/executable. No arbitrary file-handle freedom asserted.",
+      "created_utc": "2026-11-13T02:30:48.6619190Z",
+      "process_id": 15132,
+      "name": "aihost.exe"
+    },
+    {
+      "reason": "Exact protected helper identity independently reviewed by root; unreadable CWD/command/executable. No arbitrary file-handle freedom asserted.",
+      "created_utc": "2026-11-13T02:30:57.2708490Z",
+      "process_id": 4876,
+      "name": "ctfmon.exe"
+    },
+    {
+      "reason": "Exact protected helper identity independently reviewed by root; unreadable CWD/command/executable. No arbitrary file-handle freedom asserted.",
+      "created_utc": "2026-11-13T02:30:57.2793970Z",
+      "process_id": 2592,
+      "name": "TabTip.exe"
+    }
+  ],
+  "sparse_source_trees": [
+    "1794518904450251700",
+    "1794518972504964900",
+    "1794519038987472200",
+    "1794519164817658300",
+    "1794519222461088800",
+    "1794519379862095400",
+    "1794519479391580800",
+    "1794519635389990600",
+    "1794519700574817300",
+    "1794519720433512700",
+    "1794520506647727000",
+    "1794520570736123000",
+    "1794520812223244900"
+  ],
+  "protected_old_canonical_nonces": [
+    "1794522587152585700",
+    "1794523812750198700"
+  ],
+  "recovery_note": "Git source recovery must use the exact revision/object/line-ending recipe per removed source entry. Cache files are regenerable; their bytes are not promised identical. For historical replay create a fresh isolated source tree and overlay the retained exact historical source files; never run or overwrite the intentionally sparse old folder.",
+  "kept": [
+    "104 unique source overlays/metadata in their original source trees",
+    "142 parent evidence files",
+    "All directories",
+    "Both protected old canonical copies and every unlisted/future copy",
+    "Original art, private fixtures, runtime dependencies, owner reviews and recovery"
+  ],
+  "private_art_uploaded": false,
+  "note": "Native PowerShell only removed exact individual LiteralPath files, no recursive deletion/move, no other shell performed filesystem mutation. Historical source trees are intentionally sparse; use exact Git blobs/EOL recipes plus retained overlays for reconstruction. Runner exit code was not captured separately; terminal receipt and clean stdout/stderr plus independent filesystem recheck establish the actual outcome."
+}

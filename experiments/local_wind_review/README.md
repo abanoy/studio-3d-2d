@@ -24,3 +24,13 @@ Do not treat its old machine paths as permission to modify other directories.
 The separate pending-helper integration is described in `reference/PLAN-PHASE2.md`.
 Persistent normal Hair & clothes exclusions and native Source jiggle equivalence
 are not supplied. Original/private assets and saved projects are not in this tree.
+
+Later first GPU attempt and stronger test overlay: apply
+`oracle_strengthening_20261112/tests` over the original overlay before graphics.
+Its independent nonempty owned-mesh set, known nonzero excluded recorded pose and
+both-simulator continuation checks parse successfully. Runtime9files are unchanged.
+The first procedural GPU case then failed fixture adoption (56checks/1failure);
+no native/lifecycle/primary jobs ran. Distinct-child preservation is unproven.
+See docs/benchmarks/wind_review_first_gpu_2026-11-12.json. Preserve the failure;
+diagnose the actual append error before changing the fixture. No graphical
+acceptance or production port is established.

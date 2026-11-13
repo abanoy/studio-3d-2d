@@ -22,3 +22,15 @@ Blender conversion, textures, rig/morph preservation, app review/adoption,
 Undo/Redo, portable replay and movie agreement remain unrun. Do not port to the
 active application on the strength of CPU tests alone. No private art or native
 model/archive payload is included here.
+
+Later native resource preparation is preserved in `native_resources/`:296exact
+sidecar/material files were staged locally;34CPU controls and actual10VMT
+reference analysis are complete. No native payloads are in Git. Keiki's16refs
+resolve; Nitori25/28refs leaves one missing native hairbump resource repeated3times.
+Base textures resolve in both, with no substitution or installed fallback.
+The source-only serial converter driver has21CPU controls after review; it has
+not run actual conversions. Prepare a fresh schema2 input lock at a stable HEAD.
+Its retained schema1 lock/preflight is historical and current code refuses it.
+See docs/sfm_native_resource_staging_2026-11-12.md. Rendered/native/app acceptance
+remains unrun. Recreate the source tree under its documented owned output layout
+before invoking these machine-specific helpers; review paths, stamps and hashes.

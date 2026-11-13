@@ -1,0 +1,112 @@
+{
+  "format": "has_sfm_serial_conversion_driver_handoff_2",
+  "status": "Corrected driver preparation and21CPUcontrols complete. No native conversion/private desktop/Blender/GPU run. Fresh schema2 input lock/preflight must wait for root stable HEAD after its canonical test-contract update.",
+  "source_files": {
+    "source/conversion_driver.py": {
+      "sha256": "d8749db85f324f799740c2802a77e7ec6d8640f0752312fe7ecfdf34cee2d127",
+      "bytes": 42973,
+      "mtime_ns": 1794544035249975400
+    },
+    "source/test_conversion_driver.py": {
+      "sha256": "2a511ec237cef0ecfb43d583a0ec68a722bda1f462d85c800350d9de6e71e151",
+      "bytes": 18952,
+      "mtime_ns": 1794544035456427000
+    },
+    "CONVERSION-DRIVER.md": {
+      "sha256": "0981f3cdab14a3f7d35faad25c2a4bc7635b84b664c99fe40e079af62a9370d5",
+      "bytes": 8017,
+      "mtime_ns": 1794544145092804900
+    }
+  },
+  "evidence_files": {
+    "conversion-cpu-tests-1794544052107580600/verification.json": {
+      "sha256": "fcfce886626f3c22da59625cb12151f3ed753ffe0b42337cb29ff9bb20a7f996",
+      "bytes": 401,
+      "mtime_ns": 1794544052385960200
+    },
+    "conversion-driver-cpu-first.log": {
+      "sha256": "a16cbed58809313aaf6737da6862a33af45a4cfe44cb25700177a6bfbb66504e",
+      "bytes": 2676,
+      "mtime_ns": 1794543693488850400
+    },
+    "conversion-driver-cpu-final.log": {
+      "sha256": "33a792fe06fe4dd41f3f9d45e6b77529a21e6971b5ee211a6e4f98332d8a714c",
+      "bytes": 2990,
+      "mtime_ns": 1794543738952834700
+    },
+    "conversion-driver-cpu-reviewfix.log": {
+      "sha256": "72cc48279f57dc49332c3f3ca5ee83a86566e3de0c29ab64fdfa6a879ea40e83",
+      "bytes": 3429,
+      "mtime_ns": 1794544052386960500
+    },
+    "conversion-inputs-prepared1.json": {
+      "sha256": "619264e06dbfefb2dea6a8e895cca6d866b7bc23c279032d3163fa02f2e6484e",
+      "bytes": 715921,
+      "mtime_ns": 1794543766984066200
+    },
+    "conversion-run-1794543782467396200/verification.json": {
+      "sha256": "6ab1a06aba95dc00f678239918a2079ff7966da6bde2b35c36b1f9b6a71102e5",
+      "bytes": 793,
+      "mtime_ns": 1794543789197103900
+    },
+    "conversion-run-1794543782467396200/candidate-commands.json": {
+      "sha256": "27d2b9757a76de3b93f250674dc14af9764620e552388e5906efd9958da638f7",
+      "bytes": 56063,
+      "mtime_ns": 1794543782486082900
+    },
+    "conversion-driver-before-reviewfix/conversion_driver.py": {
+      "sha256": "2fcfd053a184ef3a755cf576213e9794c639e715208b471e82d957b40b135490",
+      "bytes": 38898,
+      "mtime_ns": 1794544107720582300
+    },
+    "conversion-driver-before-reviewfix/preservation.json": {
+      "sha256": "2c7a3d3a528dd14152dc289e44bb3a2abce4c494ead1ffc4ed016ed53c12dd9a",
+      "bytes": 470,
+      "mtime_ns": 1794544107721581700
+    },
+    "conversion-driver-independent-review.json": {
+      "sha256": "6c4c986231bbf7174942e687b2035948ce61861e88af3c89333c75405c376e68",
+      "bytes": 1121,
+      "mtime_ns": 1794544191813722600
+    }
+  },
+  "current_driver_lock_schema": "has_sfm_serial_conversion_input_lock_2",
+  "historical_schema1_lock": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\conversion-inputs-prepared1.json",
+    "sha256": "619264e06dbfefb2dea6a8e895cca6d866b7bc23c279032d3163fa02f2e6484e",
+    "root_revision": "4fee0a9f25dca5c265966c7433e21a7ccd0c3bf9",
+    "first_default_preflight_passed": true,
+    "current_driver_can_reuse_it": false,
+    "old_driver_byte_hash_retained": true
+  },
+  "preparation_preservation": {
+    "unchanged_protected_inputs_except_intended_driver_source_update": 326,
+    "all_unchanged": true,
+    "prototype_functional_files": 934,
+    "sourceio_files": 574,
+    "stage_members": 296,
+    "originals_stage_requests_old_arrays_four_workers_unchanged": true,
+    "root_functional_edits_by_this_agent": false,
+    "root_head_observed_now": "4fee0a9f25dca5c265966c7433e21a7ccd0c3bf9",
+    "root_functional_differences_from_historical_preflight": [
+      "tests/contact_physics_smoke.gd"
+    ],
+    "root_difference_context": "Root explicitly announced its canonical test-contract correction; this agent does not create a fresh root lock during that change."
+  },
+  "cpu_checks": 21,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "native_conversion_blender_private_desktop_gpu_network": false,
+  "actual_future_conversion_cases": 14,
+  "future_expected_successes": 12,
+  "future_expected_refusals": 2,
+  "mutations_only_under": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112",
+  "cleanup_performed": false,
+  "next_action": "After root-reviewed stable checkpoint, invoke --prepare-inputs/--freeze-lock with a new conversion-inputs-<name>.json and that exact40character root revision. Record its printed SHA, run default preflight, then root may grant --run-conversions --lease-confirmed. Do not execute the historical schema1 lock or claim native/render/app acceptance.",
+  "explicit_limits": [
+    "Nitori native missing materials/hairbump.vtf remains3edges/one resource; all basic bridge base inputs resolve.",
+    "Actual native material-slot mapping and independent native vertex/weight/morph deformation/render equivalence remain unrun.",
+    "Application selector/adoption, Undo/HAS/movies, runtime variants, native jiggle/assembly and owner acceptance remain unimplemented or unrun."
+  ]
+}

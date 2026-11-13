@@ -1,0 +1,14 @@
+{
+  "format": "has_sfm_conversion_driver_independent_static_review_1",
+  "reviewed_driver_sha256": "d8749db85f324f799740c2802a77e7ec6d8640f0752312fe7ecfdf34cee2d127",
+  "review_only_no_writes_processes_tests": true,
+  "initial_concrete_findings": [
+    "Baseline signature omitted joint ordering/inverse binds/rest transforms/default morph weights and allowed unused skins to satisfy native binding coverage.",
+    "Locked staged files did not prove exact stage membership; owned-provider dependency checks could accept added unlisted resources."
+  ],
+  "corrected": [
+    "Only referenced skins supply native bindings. Ordered joint names/rest chains, decoded inverse binds, mesh rest chains and effective default morph weights enter retained-mesh signatures.",
+    "Schema2 freezes exact stage membership; dependency source SHA/size must match a recorded staged resource or the five known model-copy aliases."
+  ],
+  "followup_verdict": "Read-only re-review found no remaining concrete blocker in these fixes. Prepare a fresh schema2 lock/preflight at root next stable checkpoint before any execution."
+}
