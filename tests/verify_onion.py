@@ -21,5 +21,7 @@ def main():
             for v in value:check_keys(v)
     with zipfile.ZipFile(result['project']) as z:check_keys(json.loads(z.read('project.json')))
     probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-show_streams','-of','json',result['movie']],text=True));v=next(x for x in probe['streams'] if x['codec_type']=='video');assert (v['codec_name'],v['width'],v['height'],v['r_frame_rate'],v['nb_read_frames'])==('h264',1920,1080,'24/1','48') and abs(float(v['duration'])-2)<.001
-    (folder/'verification.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
+    summary=json.dumps(result,indent=2)
+    (folder/'verification.json').write_text(summary,encoding='utf-8')
+    (ROOT/'output/onion-verification.json').write_text(summary,encoding='utf-8');print(summary)
 if __name__=='__main__':main()

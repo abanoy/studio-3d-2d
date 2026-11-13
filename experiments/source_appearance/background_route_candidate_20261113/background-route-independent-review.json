@@ -1,0 +1,51 @@
+{
+  "format": "has_background_route_independent_readonly_review_1",
+  "reviewed_sources": {
+    "source/win_desktop_attestation.py": {
+      "sha256": "67a07d2666d927fb9ffb2d2d2432c0bc60cda5f1d3d3e4a02363511b7fd6d2d3",
+      "bytes": 6178,
+      "mtime_ns": 1794545764981477000
+    },
+    "source/background_route.py": {
+      "sha256": "94c30dab411043c1308379003c06babd0be3bba09a86654cb8ac56541510565b",
+      "bytes": 24721,
+      "mtime_ns": 1794545765163344700
+    },
+    "source/background_python_bootstrap.py": {
+      "sha256": "d65bdc1edba89f7a2cda7edbd3e99a07ac1f6e25f58f0020bc3b11a4e53e67bf",
+      "bytes": 4717,
+      "mtime_ns": 1794545765352423500
+    },
+    "source/background_blender_observer.py": {
+      "sha256": "c02d4ac4fcde7d6a4cd5218d83f782c03876a75f3a77910de978c352ade67854",
+      "bytes": 3127,
+      "mtime_ns": 1794545765536793300
+    },
+    "source/background_conversion_driver.py": {
+      "sha256": "08a63f739f21cdb019468b3b274ecc1772fb942695320dfd20d2b1826c120587",
+      "bytes": 42556,
+      "mtime_ns": 1794545617878294500
+    },
+    "source/test_background_route.py": {
+      "sha256": "6b77aab3e30df344452c7bea2b1939f99dd38f5ca85d89539a042cb20117ba8b",
+      "bytes": 15357,
+      "mtime_ns": 1794545765725605500
+    },
+    "source/test_background_driver.py": {
+      "sha256": "1a29776af7de8611aa261f92a5705e64c018b8a39e37299e8e8cc2e95ee1b454",
+      "bytes": 4403,
+      "mtime_ns": 1794545826625256000
+    }
+  },
+  "initial_findings": [
+    "runpy does not recreate the normal native script-directory import context and root guard modules were already cached.",
+    "Literal windows_created falsely implied a process-wide window observation."
+  ],
+  "corrections": [
+    "Save/clear/restore eleven native helper modules and sys.path; both runpy entries verify exact seven/eight role-specific import origins and hashes, and parent completion requires them.",
+    "Rename literals to observation-code actions; current-thread desktop/process-window-station scope explicit and no whole-process window claim enters placement check."
+  ],
+  "followup_verdict": "Read-only review found no remaining concrete blocker in corrections or candidate wiring. Old exit2 cannot pass; allblank still requires dual proof plus exact native refusal/no GLB or parameters.",
+  "review_no_writes_tests_or_native_processes": true,
+  "actual_private_python_blender_route": "UNRUN"
+}

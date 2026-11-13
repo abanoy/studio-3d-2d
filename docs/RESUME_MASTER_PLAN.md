@@ -471,7 +471,7 @@ picker code was not changed by these test corrections. Run the full suite again
 from the new published checkpoint; scoped checks do not substitute for it.
 
 Source-only [experiment checkpoints](../experiments/README.md) preserve the local
-wind prototype (94 headless; later incomplete GPU attempt below), static Source appearance worker
+wind prototype (94 headless; later830 isolated GPU checks below), static Source appearance worker
 (21 CPU, actual conversion/app/render unrun), and the historical first review
 checker. The current checker is now in `tools/verify_owner_review.py` and
 `tests/owner_review_replay.gd`: all six existing packages pass **129 checks** in
@@ -539,6 +539,27 @@ The runtime and originals stayed exact. The strengthened hidden-mesh, nonzero
 excluded-pose and both-simulator oracles remain saved separately. [First failed
 GPU receipt](benchmarks/wind_review_first_gpu_2026-11-12.json). The feature remains
 unshipped; do not infer a production failure or a complete graphical pass.
+
+**Later Wind outcome:** the corrected fixture uses valid draft frame0, adopts
+the peer through normal Add model and then validates explicit world parenting,
+with distinct IDs/roots and logged errors. All six private cases now pass:
+procedural60, VRM045, VRM145, derived Back hair47, lifecycle544 and primary89 —
+**830 checks, zero failures**. Runtime/source/native/root hashes remain exact;
+all six desktop receipts are clean. Two real48-frame1080p PNG exports exclude
+the candidate at frame1; no new movie is claimed. Source-only
+`experiments/local_wind_review/production_port_candidate_20261112` contains the
+exact tested overlay, retrieval chain and normal-regression/UI review plan.
+No main-app port occurred. Pending helper-before-Apply preview, permanent choices,
+physical/human observations and normal regressions stay separate. [Actual matrix](benchmarks/wind_review_gpu_matrix_2026-11-12.json).
+
+**Remaining-scope continuation:** a separate2c scoped run passed19 wrappers
+through layers, then caught an old central onion summary. The actual fresh onion
+wrapper passed37 checks/movie, but wrote only its per-case result. The reporting
+fix publishes identical UTF8 per-case/central bytes after all unchanged assertions;
+a fresh37-check replay passes. No app code changed. All16 later report channels
+are statically correct but their wrappers remain unrun. Continue those16, then
+run the final full aggregate; neither this suffix nor prior partial runs count
+as a complete aggregate. [Onion provenance evidence](benchmarks/onion_fresh_summary_2026-11-12.json).
 
 ### What the last application fix actually established
 
@@ -651,7 +672,19 @@ are preserved under `experiments/source_appearance/native_resources`. Its21 CPU
 controls pass after independent review of bind/rest and stage-membership guards.
 Prepare a fresh schema2 input lock at the next stable HEAD before any conversion;
 the old schema1 preflight is historical and deliberately refuses current code.
-Blender, actual selected GLBs, render/app adoption and variants remain unrun.
+Selected skin/bodygroup exports, rendered comparisons and app adoption remain unaccepted; the first baseline observation follows.
+
+**First actual converter attempt:** the no-request Nitori baseline emitted an
+836,088-byte GLB (1mesh/2textures/66bones), but the original private wrapper
+returned2 because no window/child-desktop placement was confirmed for the
+background route. Accepted0/14;13 cases remain unrun. All protected inputs and
+source stayed exact; owned processes exited. [Failure receipt](benchmarks/sfm_first_conversion_isolation_2026-11-12.json).
+The separate `background_route_candidate_20261113` preserves an explicit headless
+bootstrap and independent Python/Blender WinAPI desktop/process/source/import
+attestations. Its44 CPU controls pass, with no forged private flags or acceptance
+of old exit2. Actual private attestation/rerun is unrun. Review and prepare a fresh
+schema3 lock at the next stable remote checkpoint before granting its exclusive
+conversion lease. Native material/render/app acceptance remains incomplete.
 
 ### Actual external observations still needed, only when participation is granted
 

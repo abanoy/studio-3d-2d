@@ -1,0 +1,122 @@
+{
+  "format": "has_sfm_background_route_candidate_handoff_1",
+  "status": "Output-only candidate/source design and44CPUcontrols complete, reviewed read-only. No new private/Python-worker/Blender/GPU conversion. Root must review and prepare a new schema3 lock/preflight at its next stable remotely verified checkpoint, then grant exclusive lease before any retry.",
+  "original_frozen_driver_sha256": "d8749db85f324f799740c2802a77e7ec6d8640f0752312fe7ecfdf34cee2d127",
+  "source_files": {
+    "source/win_desktop_attestation.py": {
+      "sha256": "67a07d2666d927fb9ffb2d2d2432c0bc60cda5f1d3d3e4a02363511b7fd6d2d3",
+      "bytes": 6178,
+      "mtime_ns": 1794545764981477000
+    },
+    "source/background_route.py": {
+      "sha256": "94c30dab411043c1308379003c06babd0be3bba09a86654cb8ac56541510565b",
+      "bytes": 24721,
+      "mtime_ns": 1794545765163344700
+    },
+    "source/background_python_bootstrap.py": {
+      "sha256": "d65bdc1edba89f7a2cda7edbd3e99a07ac1f6e25f58f0020bc3b11a4e53e67bf",
+      "bytes": 4717,
+      "mtime_ns": 1794545765352423500
+    },
+    "source/background_blender_observer.py": {
+      "sha256": "c02d4ac4fcde7d6a4cd5218d83f782c03876a75f3a77910de978c352ade67854",
+      "bytes": 3127,
+      "mtime_ns": 1794545765536793300
+    },
+    "source/background_conversion_driver.py": {
+      "sha256": "08a63f739f21cdb019468b3b274ecc1772fb942695320dfd20d2b1826c120587",
+      "bytes": 42556,
+      "mtime_ns": 1794545617878294500
+    },
+    "source/test_background_route.py": {
+      "sha256": "6b77aab3e30df344452c7bea2b1939f99dd38f5ca85d89539a042cb20117ba8b",
+      "bytes": 15357,
+      "mtime_ns": 1794545765725605500
+    },
+    "source/test_background_driver.py": {
+      "sha256": "1a29776af7de8611aa261f92a5705e64c018b8a39e37299e8e8cc2e95ee1b454",
+      "bytes": 4403,
+      "mtime_ns": 1794545826625256000
+    }
+  },
+  "design_and_patch": {
+    "BACKGROUND-ROUTE-DESIGN.md": {
+      "sha256": "019a2aa34a847f66aab9904ea924a542c6f1b64861f3c3ae4c46a42f6a92b441",
+      "bytes": 7650,
+      "mtime_ns": 1794546051078185800
+    },
+    "background-driver-integration.patch": {
+      "sha256": "10d11a01ebdd2e03dc1107793f1610e199c9f0715347367b6cad2deede228f4a",
+      "bytes": 10959,
+      "mtime_ns": 1794545617879295000
+    },
+    "background-route-independent-review.json": {
+      "sha256": "3723a6cceb2814e996fd8dce613ff22c2cd95d164f9972560c9dd53a0513f61b",
+      "bytes": 2449,
+      "mtime_ns": 1794546107631100000
+    }
+  },
+  "evidence": {
+    "route_cpu": {
+      "path": "output/sfm-next-cases-20261112/background-route-cpu-1794545788056785500/verification.json",
+      "sha256": "669ff2ba7f236a346acd1465dfd7ebb5966491b395e8636387d2efb7abeaa97e",
+      "bytes": 461,
+      "mtime_ns": 1794545788201914700
+    },
+    "candidate_cpu": {
+      "path": "output/sfm-next-cases-20261112/background-driver-cpu-1794545994173514500/verification.json",
+      "sha256": "d58504c3d27a8f5ccc363228121e14dc08aca112d625876b79486e58bfb0928b",
+      "bytes": 461,
+      "mtime_ns": 1794545994416340300
+    },
+    "own_readonly_probe": {
+      "path": "output/sfm-next-cases-20261112/background-own-desktop-self-probe-reviewed.json",
+      "sha256": "cfe3ec3342a09a5b3eb44bfd6ec16206e92117b71ef769ea82e2d013b0fe387c",
+      "bytes": 917,
+      "mtime_ns": 1794545783232301600
+    },
+    "old_actual_failure": {
+      "path": "output/sfm-next-cases-20261112/FIRST-ACTUAL-CONVERSION-FAILURE.json",
+      "sha256": "44805d18a996ae040d460f5233a54ac467dedfb0274fdfee448a94f137ff85cc",
+      "bytes": 7358,
+      "mtime_ns": 1794544903008500300
+    }
+  },
+  "cpu_checks": 44,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "native_helper_code_files_bound": 19,
+  "python_import_origins": 7,
+  "blender_import_origins": 8,
+  "preserved_old_input_lock_files": 327,
+  "prototype_functional_files_unchanged": 934,
+  "sourceio_tree_files_unchanged": 574,
+  "staged_members_unchanged": 296,
+  "production_private_tool_four_worker_original_driver_old_arrays_requests_originals_unchanged": true,
+  "source_ROOT_or_HEAD_edits_by_this_agent": false,
+  "root_head_observed": "2c7320fa5195245fc2bd65ee50a031dbd9daad2a",
+  "new_schema3_lock_prepared": false,
+  "new_default_preflight_run": false,
+  "private_desktop_blender_gpu_native_worker_launched_in_this_preparation": false,
+  "own_desktop_probe_scope": "Read-only current Default thread desktop and process WinSta0 identity; it is explicitly rejected as private placement proof and does not enumerate prior windows/other threads.",
+  "old_actual_exit2_failure_preserved_and_unaccepted": true,
+  "cleanup_performed": false,
+  "actual_native_material_render_app_acceptance": "UNRUN; Nitori native hairbump gap remains explicit.",
+  "next_prepare_command_template": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\source\\background_conversion_driver.py",
+    "--prepare-inputs",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\conversion-inputs-background3.json",
+    "--expected-root-revision",
+    "<ROOT_REVIEWED_STABLE_40_CHARACTER_COMMIT>"
+  ],
+  "next_steps": [
+    "Wait for root current functional/HEAD correction to finish and be remotely verified.",
+    "Root review candidate/helper sources and the bounded integration patch.",
+    "Prepare fresh schema3 lock, record actual printed SHA, run default no-conversion preflight with that lock/hash.",
+    "Only after a new exclusive lease execute all14fresh cases serially, stopping at first unexpected failure and keeping every proof/artifact."
+  ]
+}

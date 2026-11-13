@@ -34,3 +34,11 @@ no native/lifecycle/primary jobs ran. Distinct-child preservation is unproven.
 See docs/benchmarks/wind_review_first_gpu_2026-11-12.json. Preserve the failure;
 diagnose the actual append error before changing the fixture. No graphical
 acceptance or production port is established.
+
+The later completed matrix passes830actual private-GPU checks across all six
+cases; see docs/benchmarks/wind_review_gpu_matrix_2026-11-12.json. Source-only
+`production_port_candidate_20261112` contains the exact830-tested overlay,
+retrieval chain, fixture corrections and bounded integration/regression plan.
+It remains a candidate: no normal-app port or full canonical result is claimed.
+Preserve the earlier56/1failure and all scope limits. Both main runtime EOL
+recipes and newer parent-owned QA corrections must survive any actual port.

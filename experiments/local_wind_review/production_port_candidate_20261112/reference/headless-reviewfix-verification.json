@@ -1,0 +1,139 @@
+{
+  "format": "has_wind_review_fix_headless_1",
+  "base_commit": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "runs": [
+    {
+      "script": "tests/wind_review_unit.gd",
+      "command": [
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\wind_review_unit-review-fixed-engine.log",
+        "--headless",
+        "--script",
+        "tests/wind_review_unit.gd",
+        "--"
+      ],
+      "exit": 0,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\wind_review_unit-review-fixed.log",
+      "gpu": false,
+      "summary": {
+        "checks": 51,
+        "failures": 0
+      },
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_hooks_unit.gd",
+      "command": [
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\wind_review_hooks_unit-review-fixed-engine.log",
+        "--headless",
+        "--script",
+        "tests/wind_review_hooks_unit.gd",
+        "--"
+      ],
+      "exit": 0,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\wind_review_hooks_unit-review-fixed.log",
+      "gpu": false,
+      "summary": {
+        "checks": 14,
+        "failures": 0
+      },
+      "passed": true
+    },
+    {
+      "script": "tests/wind_review_review_unit.gd",
+      "command": [
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\wind_review_review_unit-review-fixed-engine.log",
+        "--headless",
+        "--script",
+        "tests/wind_review_review_unit.gd",
+        "--"
+      ],
+      "exit": 0,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\wind_review_review_unit-review-fixed.log",
+      "gpu": false,
+      "summary": {
+        "checks": 29,
+        "failures": 0
+      },
+      "passed": true
+    },
+    {
+      "script": "src/app.gd",
+      "command": [
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\app-review-fixed-engine.log",
+        "--headless",
+        "--script",
+        "src/app.gd",
+        "--check-only",
+        "--"
+      ],
+      "exit": 0,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\app-review-fixed.log",
+      "gpu": false,
+      "passed": true
+    }
+  ],
+  "prototype_source_sha256": {
+    "src/app.gd": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+    "src/has_project.gd": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+    "src/physics_editor.gd": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+    "src/physics_recording.gd": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+    "src/pose_editor.gd": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+    "src/renderer.gd": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+    "src/secondary_spring.gd": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+    "src/wind_review.gd": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+    "src/wind_review_groups.gd": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+    "tests/wind_review_unit.gd": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+    "tests/wind_review_hooks_unit.gd": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+    "tests/wind_review_review_unit.gd": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5"
+  },
+  "prototype_sources_unchanged": true,
+  "active_root_functional_changes": [],
+  "old_runtime_backup": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-review-fixes",
+  "old_runtime_sha256": {
+    "src/app.gd": "b95e526354809086c607ee1448e759d7509cbb302eb2c55c4463a4fae3fac942",
+    "src/has_project.gd": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+    "src/physics_editor.gd": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+    "src/physics_recording.gd": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+    "src/pose_editor.gd": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+    "src/renderer.gd": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+    "src/secondary_spring.gd": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+    "src/wind_review.gd": "ced9b2c683bbc49a70f9b207f077eaded95d686b90a496035969d11620050aee",
+    "src/wind_review_groups.gd": "28f187d0b9af00654168b05c01c61436c51fe9e6b2f33b038003bb0aac28ded5",
+    "tests/wind_review_unit.gd": "84a1de8706c5ea6b391cd7a1cfdb3d31db636b8eb5564156d189fb319a5ddf64",
+    "tests/wind_review_hooks_unit.gd": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15"
+  },
+  "old_clean_counterfactual": {
+    "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\audit-old-final-oracle-headless.log",
+    "checks": 29,
+    "failures": 21,
+    "exit": 1,
+    "test_sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+    "same_oracle": true,
+    "no_engine_error": true,
+    "fixed_runtime_restored": true
+  },
+  "initial_harness_failures_retained": [
+    "audit-old-headless.log",
+    "audit-old-clean-headless.log"
+  ],
+  "earlier_clean_28_check_counterfactual": "audit-old-clean2-headless.log",
+  "limits": "Headless state/callback/scope checks only; fake renderer deliberately records whether pixels would be read. No actual GPU pixels, Windows cursor movement, native displayed motion, movie or owner acceptance.",
+  "gpu_used": false,
+  "all_passed": true
+}

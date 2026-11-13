@@ -34,3 +34,12 @@ Its retained schema1 lock/preflight is historical and current code refuses it.
 See docs/sfm_native_resource_staging_2026-11-12.md. Rendered/native/app acceptance
 remains unrun. Recreate the source tree under its documented owned output layout
 before invoking these machine-specific helpers; review paths, stamps and hashes.
+
+The first native baseline later emitted a bundle but failed the original private
+window-proof requirement (exit2); zero cases were accepted and the other13are
+unrun. See docs/benchmarks/sfm_first_conversion_isolation_2026-11-12.json.
+`background_route_candidate_20261113` preserves a separately reviewed explicit
+headless route with independent Python/Blender desktop attestations.44CPU
+controls pass; actual private attestation/native rerun remainsunrun. Original
+private flags are never forged; oldexit2is rejected. A new schema3lock and an
+exclusive lease are required after a stable remotely verified main checkpoint.

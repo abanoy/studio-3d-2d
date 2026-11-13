@@ -1,0 +1,119 @@
+{
+  "format": "has_wind_gpu_peer_fixture_fix_1",
+  "prior_gpu_folder": "gpu-verification/1794544174461270100",
+  "prior_result": "Procedural56checks1failure at peer fixture adoption; all five later GPU cases unrun. Prior peer-preservation assertion could alias the source and was not valid independent-peer evidence.",
+  "cause": {
+    "existing_world_error": "Invalid world object: Invalid pose draft frame.",
+    "invalid_fixture": "Recorded source draft_frame=-1 violates Model.validate; appending any peer validates the existing world first.",
+    "separate_parent_route": "app.append_object_data always sets new parent_id empty; it does not provide parenting.",
+    "metadata_probe": "before-gpu-peer-fixture-fix/metadata-preflight.json",
+    "metadata_probe_sha256": "e35c10c425c5b7cce4a8217b23ed183e619dbb53e0aa2507e9824e20a4939966",
+    "observed_scope": "Direct Model/World metadata validators with hashes of the actual failed two GLBs; no app/GLB scene instantiated. Source analysis maps that error through the append route; first GPU attempt did not log the append error itself."
+  },
+  "changes": [
+    "Valid draft_frame0 preserves frame12 authored interpolation while allowing world validation.",
+    "Log source/peer adoption errors; never recover a failed append by treating the old active source as the new object.",
+    "Use exact requested peer ID and require distinct source/peer registry objects. Adopt peer standalone, then prepare the parented fixture with the supported complete world-document install transaction; verify both parent_id and actual Node parent.",
+    "Require the real peer and all its independently inventoried meshes remain visible while source-only meshes are hidden.",
+    "Primary-physics peer also logs/refuses failed adoption and requires an exact distinct peer ID."
+  ],
+  "changed_tests": {
+    "tests/wind_review_gpu_common.gd": {
+      "old_sha256": "1c80e67423c470ca1f3dfefdcf8bbc8e412a6b3d79dd5cc3a63ff20ee8ce3651",
+      "sha256": "313e5022e96faa9545b01b73e1ae40fafda66cb3f11643868d47305127d8ffd3",
+      "bytes": 11726,
+      "mtime_ns": 1794544501587156100
+    },
+    "tests/wind_review_gpu_motion.gd": {
+      "old_sha256": "9c2acb78832621a55bd528b16674a024122822b510040e218e9b3aba36851a76",
+      "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "bytes": 10705,
+      "mtime_ns": 1794544501825757400
+    },
+    "tests/wind_review_gpu_primary.gd": {
+      "old_sha256": "e5dea67892670d756916776852a33f026c630c21ab8d1c6fc0ce61f8c1ea31cd",
+      "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "bytes": 7321,
+      "mtime_ns": 1794544502054229500
+    }
+  },
+  "runtime_files_hash_size_mtime_unchanged": {
+    "src/app.gd": {
+      "sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+      "bytes": 146668,
+      "mtime_ns": 1794537929058501000
+    },
+    "src/has_project.gd": {
+      "sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+      "bytes": 14515,
+      "mtime_ns": 1794537929060013600
+    },
+    "src/physics_editor.gd": {
+      "sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+      "bytes": 22236,
+      "mtime_ns": 1794537929061030300
+    },
+    "src/physics_recording.gd": {
+      "sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "bytes": 19381,
+      "mtime_ns": 1794537929061030300
+    },
+    "src/pose_editor.gd": {
+      "sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+      "bytes": 48421,
+      "mtime_ns": 1794537929062029100
+    },
+    "src/renderer.gd": {
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "bytes": 15232,
+      "mtime_ns": 1794537929062029100
+    },
+    "src/secondary_spring.gd": {
+      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "bytes": 9592,
+      "mtime_ns": 1794537929063024800
+    },
+    "src/wind_review.gd": {
+      "sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+      "bytes": 17875,
+      "mtime_ns": 1794537929063024800
+    },
+    "src/wind_review_groups.gd": {
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "bytes": 8617,
+      "mtime_ns": 1794537929064035500
+    }
+  },
+  "headless_parse_proof": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-preparation\\1794544546963429500\\verification.json",
+  "headless_parse_proof_sha256": "11e1c4933d493be95181edd290bf4252cb0c1fe1a41b9db7ccc8e726876361c0",
+  "headless_parse_checks": 4,
+  "parse_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "native_originals_unchanged": true,
+  "root_functional_changes_during_parse": [],
+  "gpu_after_fix_run": false,
+  "one_case_runner": {
+    "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\run_procedural_once.py",
+    "sha256": "45ede00938942f0722bbcc0b68f97b22e22cbf0624f6db41c574a30079336ece",
+    "ast_parsed": true,
+    "executed": false,
+    "next_command": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\run_procedural_once.py",
+      "--run-gpu",
+      "--lease-confirmed"
+    ],
+    "requires_root_gpu_lease": true,
+    "scope": "One procedural private-desktop process only; no native cases."
+  },
+  "limits": [
+    "No runtime file changed; this corrects and strengthens only the fixture/harness.",
+    "No corrected procedural/native GPU pass is claimed.",
+    "review.patch is informational normalized text; full bytes and hashes are authoritative."
+  ]
+}

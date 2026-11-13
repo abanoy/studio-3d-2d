@@ -1,0 +1,156 @@
+{
+  "format": "has_sfm_first_actual_conversion_isolation_failure_1",
+  "root_revision": "2c7320fa5195245fc2bd65ee50a031dbd9daad2a",
+  "actual_driver": "d8749db85f324f799740c2802a77e7ec6d8640f0752312fe7ecfdf34cee2d127",
+  "input_lock_sha256": "04f512123be32356b637b67fd83b78dda8a842469c4a367739d02e482b4f51c6",
+  "attempted_cases": 1,
+  "accepted_cases": 0,
+  "remaining_cases_unrun": 13,
+  "first_case": "multi_skin_glove/default-no-appearance",
+  "driver_exit": 1,
+  "private_wrapper_exit": 2,
+  "failing_condition": "No owned graphical window was verified on the private desktop",
+  "blender_actual_observation": {
+    "parent_prepared_marker": true,
+    "worker_ready_marker": true,
+    "report_counts": {
+      "meshes": 1,
+      "textures": 2,
+      "bones": 66,
+      "static_lights": 0
+    },
+    "glb": {
+      "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+      "bytes": 836088,
+      "mtime_ns": 1794544823594739500
+    },
+    "parameter_material_statuses": {
+      "models/touhou/tamo/Nitori edit/Gloves": "PBR approximation",
+      "models/touhou/tamo/Nitori edit/Gloves glow": "PBR approximation"
+    },
+    "resolved_dependencies": 10,
+    "missing_requests": [
+      "materials/Gloves glowg.vmt",
+      "materials/Gloves gloww.vmt",
+      "materials/Glovesg.vmt",
+      "materials/Glovesw.vmt"
+    ]
+  },
+  "acceptance_limit": "Native worker emitted a bundle, but the driver correctly stopped before metadata/GLB case validation because the background no-window route lacked child desktop placement proof. No fourteen-conversion, rendering, app or native-fidelity pass.",
+  "private_receipt": {
+    "format": "studio_private_desktop_1",
+    "desktop": "HAS_Test_3f31517f3c164671a2bb8631e3b1360a",
+    "desktop_switch_requested": false,
+    "private_window_seen": false,
+    "child_desktop_confirmed": false,
+    "maximum_owned_windows": 0,
+    "foreground_child_observed": false,
+    "exit": 2,
+    "child_pid": 7892,
+    "error": "No owned graphical window was verified on the private desktop",
+    "job_closed": true,
+    "desktop_closed": true,
+    "seconds": 3.126
+  },
+  "recorded_owned_process_exit_observations": [
+    {
+      "pid": 7892,
+      "observed": "not_running",
+      "context": "approved host read-only Get-Process after wrapper completion"
+    },
+    {
+      "pid": 21288,
+      "observed": "not_running",
+      "context": "approved host read-only Get-Process after wrapper completion"
+    }
+  ],
+  "lease_released": true,
+  "protected_inputs_sources_runtimes_unchanged": true,
+  "driver_worker_root_or_lock_changes": false,
+  "retry_or_fix_performed": false,
+  "private_art_uploaded": false,
+  "automatic_cleanup": false,
+  "evidence": {
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/verification.json": {
+      "sha256": "231d305722d719e9353a6d80ba4a2551d1029f0257bea502f8c6326c36c48675",
+      "bytes": 1256,
+      "mtime_ns": 1794544824984616800
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/command.json": {
+      "sha256": "1d754e9a6e1d419850440078c754df08be46e4f42d6ba10204229d1d0877ce45",
+      "bytes": 5470,
+      "mtime_ns": 1794544820762439600
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/exit.json": {
+      "sha256": "06914e16ef0dca5762b4302014d41a176315b9cd3862e78dd423c87a02cf3ea8",
+      "bytes": 49,
+      "mtime_ns": 1794544823987106700
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/verification.json": {
+      "sha256": "986b2153943ff662dc0dfdb1709246305b4b62d14089cf87f79b4d250f318fd1",
+      "bytes": 360,
+      "mtime_ns": 1794544823997122100
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/process.log": {
+      "sha256": "8a3823ee347b9679c434f720628bd5895ddf70abad5e559ce59bd046d318685b",
+      "bytes": 276,
+      "mtime_ns": 1794544823915151500
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/private-receipt.json": {
+      "sha256": "1c234cd45acaa7120b75901f5ffd86a62ccefec2efe4fba5664510e48013ba61",
+      "bytes": 465,
+      "mtime_ns": 1794544823931624700
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/bundle/conversion-request.json": {
+      "sha256": "dcca31e630d7d8f5f49a19c2dbea581abf9804cf39c061464d23dc7b457d4733",
+      "bytes": 5603,
+      "mtime_ns": 1794544821099941700
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/bundle/conversion.log": {
+      "sha256": "e8464d3270393c596d24ff5e04543e302fdc1be4ff5931b6b55850923d3ca9f2",
+      "bytes": 8822,
+      "mtime_ns": 1794544823730727900
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/bundle/worker.json": {
+      "sha256": "e4f4a75c083183d10892de24b28a1f34ff5e9ffcebe856dc0f6dbebec90496ab",
+      "bytes": 22,
+      "mtime_ns": 1794544821108961000
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/bundle/scene.glb": {
+      "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+      "bytes": 836088,
+      "mtime_ns": 1794544823594739500
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/bundle/parameters.json": {
+      "sha256": "7ad12688627f0b1a1335b553f2404c31921753a4238ee8f94c44c215a4570f5a",
+      "bytes": 8268,
+      "mtime_ns": 1794544823594739500
+    },
+    "output/sfm-next-cases-20261112/conversion-run-1794544819819957800/01-multi_skin_glove-default-no-appearance/bundle/dependencies.json": {
+      "sha256": "b3e3a7c1cd3edec4d9983daa62617965ec6d55281dde567e6ac0799a919c9f47",
+      "bytes": 3692,
+      "mtime_ns": 1794544823595738700
+    },
+    "output/sfm-next-cases-20261112/reviewed2-actual-conversions-time.json": {
+      "sha256": "43f22ebecce2109b717af280bb8630b5f0bb6e7c76e9773d7d860830f320ce7b",
+      "bytes": 153,
+      "mtime_ns": 1794544825061461500
+    },
+    "output/sfm-next-cases-20261112/reviewed2-actual-conversions.log": {
+      "sha256": "03e0f76c342c84ea0ec7b7b131d8fc7d9bac9aa7d2f3d26104f74478cbd60704",
+      "bytes": 1108,
+      "mtime_ns": 1794544825023956500
+    },
+    "output/sfm-next-cases-20261112/conversion-inputs-reviewed2.json": {
+      "sha256": "04f512123be32356b637b67fd83b78dda8a842469c4a367739d02e482b4f51c6",
+      "bytes": 744826,
+      "mtime_ns": 1794544634031574000
+    },
+    "output/sfm-next-cases-20261112/source/conversion_driver.py": {
+      "sha256": "d8749db85f324f799740c2802a77e7ec6d8640f0752312fe7ecfdf34cee2d127",
+      "bytes": 42973,
+      "mtime_ns": 1794544035249975400
+    }
+  },
+  "suggested_next_investigation": "Review an output-only background child self-desktop attestation; keep production graphical receipt requirements unchanged. Do not retry or weaken proof without root review."
+}

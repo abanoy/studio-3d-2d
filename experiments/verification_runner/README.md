@@ -19,3 +19,14 @@ records pose/history comparisons and stops before later recording/movie tests.
 Its child exit1 is expected diagnostic evidence, not a passed case. The current
 corrected test will intentionally fail its old-source replacement guard. Normal
 app and default test execution never load this reference.
+
+`run_remaining_scopes_20261112.py` is an output-only scoped coordinator. Copy it
+into an owned checkout's output folder before invoking; it derives that root and
+reads the canonical AST for the36wrappers after contactphysics. Default mode only
+lists them. Explicit execution uses existing unchanged wrappers and preserves
+fresh copied reports/source hashes. It never creates a full verification.json or
+claims a canonical aggregate. The first run at2c passed19wrappers, then caught
+onion's stale central report despite its actual37app/movie checks passing.
+Preserve that failure and the corrected wrapper proof; continue only the16
+unrun wrappers before a later final full run. The earlier UTF8 preflight draft
+error is retained locally and never ran graphics.

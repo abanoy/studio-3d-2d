@@ -1,0 +1,48 @@
+{
+  "format": "has_wind_production_port_candidate_handoff_1",
+  "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-production-port-20261112",
+  "source_only": true,
+  "actual_port": false,
+  "source_head_at_copy": "2c7320fa5195245fc2bd65ee50a031dbd9daad2a",
+  "head_at_handoff": "2c7320fa5195245fc2bd65ee50a031dbd9daad2a",
+  "nine_runtime_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+  "overlay_counts": {
+    "runtime": 9,
+    "headless_units": 3,
+    "gpu_tests": 4
+  },
+  "baseline_audit": "baseline-compatibility.json",
+  "runtime_divergences": 0,
+  "raw_git_byte_identical_existing_runtime": 2,
+  "eol_only_existing_runtime": 5,
+  "new_runtime_and_test_paths_absent_in_main": true,
+  "source_copy_preservation_interval": {
+    "main_functional_files": 934,
+    "hash_size_mtime_unchanged": true,
+    "head_unchanged": true
+  },
+  "root_changes_after_copy_observed": [
+    "tests/verify_onion.py"
+  ],
+  "root_change_context": "Root separately authorized/fixed the onion report publication after its suffix stopped; this task edited no main files. Reaudit current HEAD and target guards before actual port. Preserve every newer test/report correction.",
+  "historical_evidence": {
+    "headless": 94,
+    "gpu": 830,
+    "current_gpu_proof": "reference/GPU-RUN-HANDOFF.json",
+    "peer_fix": "reference/peer-fixture-fix.json",
+    "old_checkpoints": "retrieval-chain.json"
+  },
+  "driver_status": "Only the unchanged prototype driver and a bounded adaptation plan are supplied. No main driver or canonical integration is implemented.",
+  "ui_wording": "UI_WORDING_REVIEW.md contains optional suggestions only; exact830-tested source wording is unchanged.",
+  "open": "Pending helper-before-Apply preview and permanent per-group exclusions; existing human/device/clean-install/native-fidelity acceptance gates.",
+  "no_gpu_blender_or_application_run_for_this_candidate": true,
+  "private_art_payloads_included": false,
+  "documents": [
+    "README.md",
+    "INTEGRATION_PLAN.md",
+    "DRIVER_ADAPTATION.md",
+    "REGRESSION_CHECKLIST.md",
+    "UI_WORDING_REVIEW.md"
+  ],
+  "main_mutations_by_this_task": false
+}
