@@ -1,0 +1,141 @@
+{
+  "format": "has_encoder_existing_output_fix_checkpoint_1",
+  "date": "2026-11-13",
+  "base_commit": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "source_mode": "working main with6reviewed source/test changes",
+  "full_aggregate_passed": false,
+  "failed_canonical": {
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 3028,
+      "process_started": "2026-11-13T06:42:41.5616553Z",
+      "started_utc": "2026-11-13T06:42:41.8759656Z",
+      "status": "failed",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T014241546",
+      "source_commit": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "e65cd66168a6148a8d521e16f46cf02f380ffe9bb93c33e0895b48af5c8e9a49",
+      "suite_exit": 1,
+      "source_unchanged": true,
+      "finished_utc": "2026-11-13T07:28:25.9753384Z"
+    },
+    "functional_files": 947,
+    "source_unchanged": true,
+    "pass_lines_before_final_media_failure": 101,
+    "cause": "FinalAACassert inspected oldsilent spike movie after bothfixed-folderFFmpeg-n calls refusedoverwrite butreturned0. All functional wrappers passed; final tone media and later tail checks were unrun in this run.",
+    "saved_artifacts": "experiments/encoder_output_guard_20261113/failed-canonical"
+  },
+  "product_fix": [
+    "Clearfinished_path at attemptstart",
+    "Refuse preexisting movie/directory before launch or logwrite",
+    "Reject nonempty-loglevelerror diagnostics as well asnonzeroexit/missingoutput"
+  ],
+  "test_fix": [
+    "Eachdefault run ownsfresh silent/failure/tone directories",
+    "Separate tone movie preservesoriginalAAC/onset/RMSassertions",
+    "Extra silent-spike stream check",
+    "Sharedsamefinalmediafunction default/scoped; scopeddoesnotwriteglobalaggregate"
+  ],
+  "focused_failures": {
+    "engine_checks": 5,
+    "failures": 0,
+    "headless": true,
+    "real_ffmpeg": true,
+    "frame_count": 48,
+    "original_and_cancelled_frames_unchanged": true,
+    "frame_sha256": "648a378cf1a6dac441105b61a6fee47f792600a225e20bd86be8ad95c408f4df",
+    "separate_retry_diagnostic": true,
+    "cancelled_process_cleared": true,
+    "existing_output_log_preserved": true,
+    "stale_finished_path_cleared": true,
+    "actual_nonzero_exit37_retained": true,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\export-failures\\1794555217293151300"
+  },
+  "old_counterfactual": {
+    "format": "has_encoder_existing_output_old_counterfactual_1",
+    "source": "preserved3aencoder, currentstrengthenedexport_failurestest",
+    "exit": 1,
+    "expected_failure_observed": true,
+    "ffmpeg_refusal_zero_confirmed": true,
+    "root_runtime_not_replaced": true,
+    "headless": true,
+    "gpu_used": false,
+    "source_hashes": {
+      "src/encoder.gd": "97f395195de388ca4bf74ac1e1ac844d7e6436109589a66be8178e31fdec7cd9",
+      "tests/export_failures.gd": "a5bb5ac704fc2caedc529d6231e1e35044870d545d325170f30e8d2498fd0571",
+      "run.py": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1",
+      "project.godot": "4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30"
+    },
+    "log_sha256": "c2a9103fe4cc52946864557178b35275c2dcf37ecee291686fe2f47320cd7e56",
+    "encoder_log_sha256": "14d328b18ff8e93aa63841c3b9fcf3cf3af42cd3cd5a3289a36e358ad9ec196e"
+  },
+  "fixed_scoped_media": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\encoder-existing-output-20261113\\focused-main-1794555379315184000\\verification.json",
+    "sha256": "f13056b88d2b2bceb8d82d2285ec6d6c32fdd0c5cb8edea0e2de874640bb3e0d",
+    "movie_cases": 21,
+    "fresh_movies": 2,
+    "retained_prior_workflow_movies": 19,
+    "tone_onset_seconds": 1.0,
+    "editor_audio": {
+      "onset_seconds": 1.0,
+      "rms_at_1_1s": 5658.299233592635,
+      "audio_driver": "WASAPI"
+    },
+    "private_receipts": [
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\spikes_c619bc32f1184c6d9f588b5dd3ac37e6.json",
+        "sha256": "cd0182af01fa004587e2f18d313647953bb49fcd1bcb504e493449fb59c5d8c6",
+        "value": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_95564431468f41dfb2952a302a93a69a",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 17048,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 5.835
+        }
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\audio_spike_12f3fd5ab37c46558e72a179e3a3935e.json",
+        "sha256": "21fe2e9ecba507583fd7b959a52a24096d74bb162b0e97e6634e225a1d9b3c83",
+        "value": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_94d2a7b17dbf4ec8a18708ebb73dad67",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 8220,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 1.647
+        }
+      }
+    ],
+    "functional_source_unchanged": true,
+    "scope": "Nineteenstandardloopmovies+2posedmovies; onlysilent/tone newlyencoded. Notfullaggregate."
+  },
+  "launch_refusal": {
+    "receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\spikes_c49cf9e652cf4ce2a7c5fce3362b6e61.json",
+    "reason": "Restricted context CreateDesktop errno5; no childwindow/process test. Retained before hostcontext fresh run.",
+    "visible_fallback_used": false
+  },
+  "review": "Independent read-only review found no blocker. Rawpartialexit37case validatesGodotprocesspollingdirectly, notsubstituteEncoder.encode.",
+  "source_research": "OlderFFmpegAVERROR_EXIT->0 pathway matcheslocalactualrefusal; officialGodot4.6codeandactualexit37do notshowlostnonzeroexit.",
+  "art_or_media_uploaded": false,
+  "cleanup_performed": false,
+  "next": "Publish/remoteverify, thenfreshfullcanonical atstablefinalsource. Requiredartist/device/clean-installgatesstayopen."
+}

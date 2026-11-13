@@ -15,7 +15,8 @@ func check(ok: bool, text: String) -> void:
 		failures += 1
 
 func run() -> void:
-	var output := ProjectSettings.globalize_path("res://output/spikes")
+	var arguments:=OS.get_cmdline_user_args()
+	var output: String=arguments[0] if not arguments.is_empty() else ProjectSettings.globalize_path("res://output/spikes/run_"+str(ResourceUID.create_id()))
 	DirAccess.make_dir_recursive_absolute(output)
 	var fixture := output.path_join("room.glb")
 	check(SceneIO.make_fixture(fixture) == OK, "create original GLB fixture")

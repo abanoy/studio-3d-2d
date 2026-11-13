@@ -1,0 +1,169 @@
+{
+  "format": "has_sfm_derived_probe_v2_source_packet_1",
+  "status": "SOURCE_FROZEN_CPU39_PASS_ENGINE_UNRUN",
+  "observed_root_head_at_freeze": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "root_head_is_execution_authorization": false,
+  "source_files": 5,
+  "cpu_tests": 39,
+  "cpu_failures": 0,
+  "cpu_errors": 0,
+  "actual_pass_receipt": {
+    "path": "cpu-checks-1794554378207188200.json",
+    "bytes": 3830,
+    "sha256": "5bb8e9db945da88d2b36bc59c5e46c940fe5cfb42f87071ae2ee2f95f345b066"
+  },
+  "initial_cpu_failure_retained": {
+    "path": "cpu-checks-1794554362230830500.json",
+    "bytes": 3805,
+    "sha256": "0330cee3ba6184625aa49ea50b0eb1dc1bca8d6a20d872311131a0352594246d"
+  },
+  "old_sources_preserved": [
+    {
+      "location": "archived",
+      "name": "app_probe.gd",
+      "bytes": 17986,
+      "sha256": "2e7fc498e333dc85a4b69b8943358541e6196a19e1581b6d827f52837af5fa08",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "old_output",
+      "name": "app_probe.gd",
+      "bytes": 17986,
+      "sha256": "2e7fc498e333dc85a4b69b8943358541e6196a19e1581b6d827f52837af5fa08",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "archived",
+      "name": "glb_reference.py",
+      "bytes": 18544,
+      "sha256": "b951b6e760933fbd7f745c50422ad4197467873ea79b45fc2daebaa7e6065ae3",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "old_output",
+      "name": "glb_reference.py",
+      "bytes": 18544,
+      "sha256": "b951b6e760933fbd7f745c50422ad4197467873ea79b45fc2daebaa7e6065ae3",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "archived",
+      "name": "probe_driver.py",
+      "bytes": 22717,
+      "sha256": "505d85ee4be89f15c66f34f74c4026a6d5672fac79bee03104ba8fd5d731f420",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "old_output",
+      "name": "probe_driver.py",
+      "bytes": 22717,
+      "sha256": "505d85ee4be89f15c66f34f74c4026a6d5672fac79bee03104ba8fd5d731f420",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "archived",
+      "name": "raw_probe.gd",
+      "bytes": 14677,
+      "sha256": "209b70197ee7769238add7d9ac47453da3a66dd6d5e28d0f6b47e4f3cb34add6",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "old_output",
+      "name": "raw_probe.gd",
+      "bytes": 14677,
+      "sha256": "209b70197ee7769238add7d9ac47453da3a66dd6d5e28d0f6b47e4f3cb34add6",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "archived",
+      "name": "test_probe_cpu.py",
+      "bytes": 11921,
+      "sha256": "801260f4fbebd4f789ebe2ba92f2f7449e5dc974d4bd8bf34d55b8c80783de26",
+      "unchanged_from_copied_baseline": true
+    },
+    {
+      "location": "old_output",
+      "name": "test_probe_cpu.py",
+      "bytes": 11921,
+      "sha256": "801260f4fbebd4f789ebe2ba92f2f7449e5dc974d4bd8bf34d55b8c80783de26",
+      "unchanged_from_copied_baseline": true
+    }
+  ],
+  "files": [
+    {
+      "path": "source/app_probe.gd",
+      "bytes": 18659,
+      "sha256": "a5e17ee27d554475daf21fc68688e59f7baf6bdf5aa46b127f16b500f02f1675"
+    },
+    {
+      "path": "source/glb_reference.py",
+      "bytes": 19570,
+      "sha256": "659f0b19b7d9f735e3051c3c43a55b91acc7307d54a3a63a0e5543ea7a9f8f9c"
+    },
+    {
+      "path": "source/probe_driver.py",
+      "bytes": 25969,
+      "sha256": "e164251b61781f9040e07194e5dc674598af69474b9fd397a175a598b82f18bf"
+    },
+    {
+      "path": "source/raw_probe.gd",
+      "bytes": 14870,
+      "sha256": "37dd07c238e5a492974886718973d1e02b4e64c2e552d149de23c35661b86d10"
+    },
+    {
+      "path": "source/test_probe_cpu.py",
+      "bytes": 22554,
+      "sha256": "55c2d6a869e9052eecb5be25632664c6fff881fbc04ea4de560cb150867bd233"
+    },
+    {
+      "path": "cpu-checks-1794554362230830500.json",
+      "bytes": 3805,
+      "sha256": "0330cee3ba6184625aa49ea50b0eb1dc1bca8d6a20d872311131a0352594246d"
+    },
+    {
+      "path": "cpu-checks-1794554378207188200.json",
+      "bytes": 3830,
+      "sha256": "5bb8e9db945da88d2b36bc59c5e46c940fe5cfb42f87071ae2ee2f95f345b066"
+    },
+    {
+      "path": "COPIED-BASELINE.json",
+      "bytes": 1049,
+      "sha256": "a9531e9946e0d6ee073d3da93ccd880306fb7e2c13383f4eaa24ddc3ce187418"
+    },
+    {
+      "path": "CPU-FIRST-FAILURE.md",
+      "bytes": 523,
+      "sha256": "e101fdff48bba8a6b52fd96c130b1bbfff86f757722893f023da235ea5dff748"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4353,
+      "sha256": "1c902e35d02aa60454e09a4c0fa8745cb352b3e28a765d8ed7767fd7bb48398f"
+    },
+    {
+      "path": "POSE-CONTRACT.md",
+      "bytes": 2684,
+      "sha256": "a0cfd49cf188bd04dfe5e1fc8889e683f372f926cc942b91c8889d160dfef298"
+    },
+    {
+      "path": "review/INDEPENDENT-REVIEW.md",
+      "bytes": 577,
+      "sha256": "00c0ad3ab17d11ff240e4146f6e831f1ab346025da2e9b432151bd61beb1d4b2"
+    },
+    {
+      "path": "review/SOURCE-DIFF.patch",
+      "bytes": 28242,
+      "sha256": "be1ad1811b10af7a05d11c7fd6b5a18dd93b87f5e40c1ba685225261f59f8901"
+    }
+  ],
+  "scope": {
+    "prepare": "UNRUN",
+    "godot_parse": "UNRUN",
+    "gpu": "UNRUN",
+    "app": "UNRUN",
+    "native_fidelity": "UNTESTED"
+  },
+  "reviewer": "/root/sfm_next_cases/conversion_driver_review",
+  "failed_fixtures_retained": true,
+  "originals_or_main_source_edits": false
+}

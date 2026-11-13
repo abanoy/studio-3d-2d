@@ -1,0 +1,77 @@
+{
+  "format": "has_wind_preview_controller_handoff_1",
+  "scope": "Bounded output-only preview-purpose CPU controller, not Godot/UI/render acceptance",
+  "main_head_to_preserve": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "source": "candidate/tools/wind_preview_controller.py",
+  "copied_prior_sources_unchanged": [
+    "candidate/tools/wind_helper_preview.py",
+    "candidate/tools/wind_preview_owned.py",
+    "candidate/tools/wind_preview_worker.py"
+  ],
+  "tests": {
+    "format": "has_wind_preview_controller_cpu_tests_1",
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-draft-controller-20261113\\cpu-results\\c1c6eb2b16064b85b01ea84a326671fe",
+    "real_hidden_windows_python_processes": true,
+    "godot_started": false,
+    "gpu_used": false,
+    "native_converter_started": false,
+    "main_or_prior_packet_modified": false
+  },
+  "counts": {
+    "retained_exact_process_observations": 26,
+    "controller_outcomes": 13,
+    "worker_outcomes": 10
+  },
+  "proof": "cpu-process-receipts.json",
+  "transport": "Bounded ASCII LF JSON start/poll/cancel/close, session, sequence, generation+nonce; separate bounded IO threads; parent retained handle/EOF guards",
+  "process_model": "Explicit declared host identity -> Python controller -> one Job-owned Python CPU worker",
+  "actual_Godot_hosting": false,
+  "lifetime_observations": [
+    "Abrupt controller termination preassignment ends exact gated worker with no candidate",
+    "Abrupt controller termination after exact Job membership, completed start and closed stdin ends sleeping worker through Job close",
+    "Declared host termination ends controller and closes child Job without poll",
+    "EOF with prepared or active worker invalidates and closes",
+    "Unserviced stdout backpressure cannot retain child ownership",
+    "Host loss across controlled slow source/receipt checks prevents launch/prepared exposure"
+  ],
+  "review": {
+    "agent": "/root/godot_shutdown_symbols/controller_protocol_review",
+    "scope": "Independent read-only source/design review, no executions or edits",
+    "concrete_fix": "Recheck host/EOF after slow validation, inside start gate and immediately before prepared exposure",
+    "harness_fix": "Register observer handles before query; close in finally and retain registration on failed CloseHandle",
+    "final_review": "No remaining concrete controller blocker reported"
+  },
+  "retained_runs": [
+    "cpu-tests-initial.json",
+    "cpu-tests-harness-failure.json",
+    "cpu-tests-before-observer-review.json",
+    "cpu-tests.json"
+  ],
+  "failed_expansion_reason": "Harness polled without pacing and exhausted fixed command budget before delayed hook; closed pipe OSError22 was not handled during send/cleanup. Fixed harness, no controller predicate or budget relaxation.",
+  "unchanged_prior_index_sha256": "5d58310894369a2bc58fbc47bda72f1f9c8c4332e18e574b071ccab769fe6d32",
+  "main_modified": false,
+  "prior_packet_modified": false,
+  "git_commands": false,
+  "gpu_used": false,
+  "godot_started": false,
+  "native_converter_started": false,
+  "limitations": [
+    "Declared host PID+creation is an authorized identity, not OS-parent proof",
+    "No Godot Node/native controller ownership adoption or real pipe API wiring",
+    "Host checks guard service/admission boundaries; indefinitely blocked filesystem system calls are not preempted",
+    "No actual hidden model import, imported binding snapshots, preview physics/visibility/canvas or Apply/Undo wiring",
+    "No real-model or renderer acceptance; trusted local code/integrity scope only"
+  ],
+  "next_bounded_increment": "Actual Godot Node CPU fixture bridge plus native host/controller handle+Job ownership, before any hidden model import or simulation",
+  "documents": [
+    "README.md",
+    "TRANSPORT.md",
+    "GODOT_NODE_BRIDGE_PLAN.md"
+  ],
+  "publication": "FILE_INDEX.json plus indexed files only. Exclude generated cpu-results GLBs/jobs."
+}

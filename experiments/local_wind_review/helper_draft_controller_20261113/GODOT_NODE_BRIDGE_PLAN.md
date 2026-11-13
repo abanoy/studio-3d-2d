@@ -1,0 +1,25 @@
+# Next bounded increment: actual Godot Node host
+
+No GDScript bridge is implemented or tested in this packet. The next increment should first connect this controller using synthetic CPU fixtures, without model import or simulation. Preserve the current `src/wind_review.gd` guards/canvas cleanup, `src/secondary_helper_editor.gd` Apply/Undo path and the unrelated `src/world_selection.gd` request-lifetime fix.
+
+## Ownership before a valid start
+
+Godot 4.6 documents `OS.execute_with_pipe(path,args,false)` with nonblocking `stdio` and separate `stderr` FileAccess pipes plus a PID. It explicitly says the child is independent and survives Godot termination. Those pipes are usable transport, but the returned PID alone does not provide the retained native handle or host creation FILETIME used by this CPU candidate. See the [primary API documentation](https://docs.godotengine.org/en/4.6/classes/class_os.html#class-os-method-execute-with-pipe).
+
+Use a small Windows native ownership bridge rather than introducing a general process service. It must expose the current Godot process's exact PID/creation identity and retain an exact controller handle with query/synchronize/termination rights. One reviewable approach is: launch the approved controller with the pipe API; receive its dedicated `ready` native owner identity; open and verify that exact controller incarnation; assign it to a non-inherited kill-on-close host Job; and only then permit the Node to send a valid start. If it exits/reuses the PID before adoption, identity verification fails and no start is sent. Termination thereafter uses only the retained verified handle/owned Job, never a new PID lookup.
+
+The host Job must permit the controller plus its one worker (at least two active processes); a host limit of one would prevent this process tree. The worker retains its own nested active-process-limit-one Job. Verify Job nesting/assignment, pipe inheritance and host/process teardown on the real supported Windows runtime rather than assuming it from this Python-host evidence. If assignment or ownership cannot be proven, close the pipe without starting work and report preview preparation unavailable. Do not alter existing authoring or installed Python configuration as a workaround.
+
+## Node responsibilities
+
+Create one dedicated Node, conceptually `HelperPreviewController`, owning the controller handle/Job, pipe objects, bounded input/output byte queues, session nonce, next sequence, current ticket/context and a callback generation. Its `_process` services bounded nonblocking chunks from both streams and checks FileAccess errors. Partial reads/writes must retain only bounded unsent bytes; use explicit LF framing and the same maxima. Never use a blocking read on the UI thread. A stale controller event or ticket cannot target a newer helper window or actor.
+
+The Node sends start only after source proposals and the current original actor snapshot are complete and native controller ownership is adopted. Poll carries the current context. Helper edit/checked-set change/close, revision/frame/source/shape/binding change, save/scene replacement, export, navigation policy changes and Node tree exit synchronously invalidate the Node ticket before any queued event may become visible. Send cancel/close when transport is healthy, then close pipes on timeout or EOF. On app shutdown, native kill-on-close ownership is the final bound; an unacknowledged close is not considered a clean controller exit.
+
+First verify real Node/controller CPU fixtures: ready/start/poll/cancel/close, partial line delivery and writes, both streams drained, stale events across helper replacement, unchanged source, blocked or closed pipes, Node removal, Godot exit/crash, controller exit/crash, native identity mismatch/assignment failure, and all native handles/Jobs closed. Retain exact PID/creation and closure receipts separately from any renderer evidence. This step requires explicit runtime/Node source authorization after the canonical GPU/source freeze is released.
+
+## Only after CPU host acceptance
+
+Add a separate non-mutating helper preview path. The current helper `open()` freezes physics, so do not route its existing authoring workflow through this controller without redesigning that boundary. Capture original actor/root IDs, revision/frame, source and authored/shape/binding snapshots read-only; reject incompatible live motion rather than stopping it silently.
+
+After the controller's trusted prepared result, import the candidate hidden into a fresh owned root and obtain actual Godot source/candidate node-to-bone bindings and complete base transforms. Use the previous protocol's `imported_binding_map` gate. Only after those predicates pass should isolated local-wind candidate simulation replace the original visible representation. Stop/error/close restores visibility and original state and clears all canvas hooks. Apply remains the separately guarded existing authoring/install operation with Undo. None of these UI/import/render behaviors is validated by this packet.

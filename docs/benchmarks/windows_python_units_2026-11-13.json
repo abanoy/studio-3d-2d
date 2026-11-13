@@ -1,0 +1,215 @@
+{
+  "format": "has_windows_python_units_2026_11_13_1",
+  "source_commit": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit": 0,
+  "tests": 504,
+  "executed_passes": 460,
+  "skipped": 44,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 38.7,
+  "log": {
+    "path": "output/python-units-20261113T0714/unittest.log",
+    "bytes": 72744,
+    "sha256": "b7519f33b33942f54215978ff15fa0ffa8b2219617961529f15f90fe8877eb7a"
+  },
+  "explicit_skips": [
+    {
+      "test": "test_actual_worker_kill_preserves_a_valid_committed_generation (test_directory_commit.DirectoryCommitTests.test_actual_worker_kill_preserves_a_valid_committed_generation)",
+      "reason": "'Actual worker SIGKILL boundaries; native Windows gate remains'"
+    },
+    {
+      "test": "test_hardlinked_backup_replacement_preserves_original_inode (test_directory_commit.DirectoryCommitTests.test_hardlinked_backup_replacement_preserves_original_inode)",
+      "reason": "'Owned hard-link fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_hardlinked_candidate_refuses (test_directory_commit.DirectoryCommitTests.test_hardlinked_candidate_refuses)",
+      "reason": "'Owned hard-link fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_real_competing_process_refuses_then_retries_after_sigkill (test_directory_commit.DirectoryCommitTests.test_real_competing_process_refuses_then_retries_after_sigkill)",
+      "reason": "'Actual process overlap and SIGKILL fixture; Windows gate remains'"
+    },
+    {
+      "test": "test_symlinked_destinations_never_change_original (test_directory_commit.DirectoryCommitTests.test_symlinked_destinations_never_change_original)",
+      "reason": "'Owned link fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_two_real_prepared_writers_commit_only_one_starting_generation (test_directory_commit.DirectoryCommitTests.test_two_real_prepared_writers_commit_only_one_starting_generation)",
+      "reason": "'Actual two-worker fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_unsupported_directory_sync_is_explicit_and_does_not_break_save (test_directory_commit.DirectoryCommitTests.test_unsupported_directory_sync_is_explicit_and_does_not_break_save)",
+      "reason": "'POSIX directory-sync fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_every_declared_file_and_created_parent_is_synced (test_directory_payloads.DirectoryPayloadTests.test_every_declared_file_and_created_parent_is_synced)",
+      "reason": "'POSIX payload/directory fd sync; Windows gate remains'"
+    },
+    {
+      "test": "test_linked_managed_file_or_parent_never_touches_external_original (test_directory_payloads.DirectoryPayloadTests.test_linked_managed_file_or_parent_never_touches_external_original)",
+      "reason": "'Owned symlink fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_payload_sync_failure_happens_before_either_manifest_changes (test_directory_payloads.DirectoryPayloadTests.test_payload_sync_failure_happens_before_either_manifest_changes)",
+      "reason": "'POSIX fsync injection; native Windows gate remains'"
+    },
+    {
+      "test": "test_readonly_sync_of_hardlinked_payload_preserves_source_bytes_and_mtime (test_directory_payloads.DirectoryPayloadTests.test_readonly_sync_of_hardlinked_payload_preserves_source_bytes_and_mtime)",
+      "reason": "'Owned hard-link fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_snapshot_status_symlink_refuses_linked_status (test_has_project.HasTests.test_snapshot_status_symlink_refuses_linked_status)",
+      "reason": "'Windows symlink fixture needs SeCreateSymbolicLinkPrivilege or Developer Mode; refusal remains unverified here'"
+    },
+    {
+      "test": "test_snapshot_status_symlink_refuses_linked_status (test_has_project.HasTests.test_snapshot_status_symlink_refuses_linked_status)",
+      "reason": "'Windows symlink fixture needs SeCreateSymbolicLinkPrivilege or Developer Mode; refusal remains unverified here'"
+    },
+    {
+      "test": "test_actual_sigkill_before_backup_and_final_replace_preserves_saves (test_has_save_faults.SaveFaultTests.test_actual_sigkill_before_backup_and_final_replace_preserves_saves)",
+      "reason": "'Actual SIGKILL boundary requires POSIX; Windows termination remains an external platform gate'"
+    },
+    {
+      "test": "test_hard_linked_legacy_backup_temporary_preserves_source (test_has_save_faults.SaveFaultTests.test_hard_linked_legacy_backup_temporary_preserves_source)",
+      "reason": "'Owned hard-link fixture; Windows native gate remains'"
+    },
+    {
+      "test": "test_linked_or_hardlinked_lock_cannot_modify_original (test_has_save_faults.SaveFaultTests.test_linked_or_hardlinked_lock_cannot_modify_original)",
+      "reason": "'Owned lock-link fixtures; native Windows gate remains'"
+    },
+    {
+      "test": "test_linked_save_destinations_preserve_original_and_saved_files (test_has_save_faults.SaveFaultTests.test_linked_save_destinations_preserve_original_and_saved_files)",
+      "reason": "'Owned symbolic-link fixture; Windows reparse gate remains'"
+    },
+    {
+      "test": "test_live_writer_refuses_overlap_and_os_releases_after_exit_or_sigkill (test_has_save_faults.SaveFaultTests.test_live_writer_refuses_overlap_and_os_releases_after_exit_or_sigkill)",
+      "reason": "'Actual process lock/kill fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_linked_managed_sidecar_folder_refuses_before_emitting_external_files (test_has_sync.HasSyncTests.test_linked_managed_sidecar_folder_refuses_before_emitting_external_files)",
+      "reason": "'Owned sidecar link fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_new_archive_parents_are_synced (test_has_sync.HasSyncTests.test_new_archive_parents_are_synced)",
+      "reason": "'POSIX directory fd sync; native Windows gate remains'"
+    },
+    {
+      "test": "test_owned_externalized_sidecar_and_directory_are_synced (test_has_sync.HasSyncTests.test_owned_externalized_sidecar_and_directory_are_synced)",
+      "reason": "'POSIX sidecar fd sync; native Windows gate remains'"
+    },
+    {
+      "test": "test_all_created_private_parents_are_synced (test_metadata_commit.MetadataCommitTests.test_all_created_private_parents_are_synced)",
+      "reason": "'POSIX parent fd sync fixture; Windows gate remains'"
+    },
+    {
+      "test": "test_hardlinked_final_preserves_external_inode (test_metadata_commit.MetadataCommitTests.test_hardlinked_final_preserves_external_inode)",
+      "reason": "'Owned hard-link fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_hardlinked_temporary_refuses (test_metadata_commit.MetadataCommitTests.test_hardlinked_temporary_refuses)",
+      "reason": "'Owned hard-link fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_linked_final_temporary_or_legacy_temp_preserves_original (test_metadata_commit.MetadataCommitTests.test_linked_final_temporary_or_legacy_temp_preserves_original)",
+      "reason": "'Owned symlink fixture; native Windows gate remains'"
+    },
+    {
+      "test": "test_all_explicit_private_wrappers_use_the_guard (test_private_display.PrivateDisplayTests.test_all_explicit_private_wrappers_use_the_guard)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_changed_display_fails_closed (test_private_display.PrivateDisplayTests.test_changed_display_fails_closed)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_competing_engine_driver_refuses (test_private_display.PrivateDisplayTests.test_competing_engine_driver_refuses)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_explicit_local_selection (test_private_display.PrivateDisplayTests.test_explicit_local_selection)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_gui_pins_before_user_arguments (test_private_display.PrivateDisplayTests.test_gui_pins_before_user_arguments)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_headless_cannot_be_overridden_by_graphics (test_private_display.PrivateDisplayTests.test_headless_cannot_be_overridden_by_graphics)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_headless_does_not_need_display (test_private_display.PrivateDisplayTests.test_headless_does_not_need_display)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_headless_extra_is_preserved (test_private_display.PrivateDisplayTests.test_headless_extra_is_preserved)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_invalid_selection_changes_no_state (test_private_display.PrivateDisplayTests.test_invalid_selection_changes_no_state)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_nonlinux_selection_refuses (test_private_display.PrivateDisplayTests.test_nonlinux_selection_refuses)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_normal_launcher_unchanged (test_private_display.PrivateDisplayTests.test_normal_launcher_unchanged)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_normal_startup_scene_is_pinned (test_private_display.PrivateDisplayTests.test_normal_startup_scene_is_pinned)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_pathlike_startup_argument_is_supported (test_private_display.PrivateDisplayTests.test_pathlike_startup_argument_is_supported)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_unavailable_x11_refuses_before_command_launch (test_private_display.PrivateDisplayTests.test_unavailable_x11_refuses_before_command_launch)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_wayland_fallback_is_confined (test_private_display.PrivateDisplayTests.test_wayland_fallback_is_confined)",
+      "reason": "'Private X11 transport is Linux-specific'"
+    },
+    {
+      "test": "test_real_owned_child_alive_then_exited (test_recovery_processes.LinuxProcParsingTests.test_real_owned_child_alive_then_exited)",
+      "reason": "'Linux /proc integration'"
+    },
+    {
+      "test": "test_linked_registry_and_lock_refuse (test_recovery_quota.QuotaTests.test_linked_registry_and_lock_refuse)",
+      "reason": "'Symbolic links unavailable'"
+    },
+    {
+      "test": "test_ambiguous_names_refuse_even_exact_spelling (test_source_case.SourceCaseTests.test_ambiguous_names_refuse_even_exact_spelling)",
+      "reason": "'Filesystem is case-insensitive'"
+    },
+    {
+      "test": "test_external_symlink_is_not_a_dependency (test_source_case.SourceCaseTests.test_external_symlink_is_not_a_dependency)",
+      "reason": "\"Symbolic links unavailable: [WinError 1314] A required privilege is not held by the client: 'C:\\\\\\\\Users\\\\\\\\noble\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Packages\\\\\\\\sandbox.{eef009df-7724-4e1e-a39f-84cd87ad3588}\\\\\\\\AC\\\\\\\\Temp\\\\\\\\tmpf36ij91e-external' -> 'C:\\\\\\\\Users\\\\\\\\noble\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Packages\\\\\\\\sandbox.{eef009df-7724-4e1e-a39f-84cd87ad3588}\\\\\\\\AC\\\\\\\\Temp\\\\\\\\tmpf36ij91e\\\\\\\\link.vtf'\""
+    }
+  ],
+  "source_freeze": {
+    "scope": "Compared the canonical starting947-file functional map with current files after CPU completion; no separate unittest-start snapshot was taken. The full canonical run is independently recorded.",
+    "files": 947,
+    "unchanged_at_unit_completion": true,
+    "canonical_source_before_sha256": "b24a91a56181039af3af10a11f904677f2cb2163a4eb905c7151dc1c995f4698"
+  },
+  "graphics_or_converter_started_by_this_suite": false,
+  "full_canonical_pass": false,
+  "external_acceptance_closed": false
+}

@@ -1,0 +1,95 @@
+{
+  "format": "has_native_geometry_archive_candidate_manifest_1",
+  "status": "FROZEN_FOR_ROOT_REVIEW",
+  "source_files": 8,
+  "native_assets_or_decoded_geometry_payloads": false,
+  "tests": 30,
+  "actual_cases": 12,
+  "accepted_whole_base_maps": 7,
+  "accepted_whole_triangle_maps": 3,
+  "unresolved_nitori_topology_cases": 4,
+  "unresolved_tools_maps": 5,
+  "files_excluding_manifest": [
+    {
+      "path": "cpu.log",
+      "bytes": 3964,
+      "sha256": "9033adb5bcce1a1fa9c74d4ed48a3bcac596de1c7fea5df9b37bdce13f133b78"
+    },
+    {
+      "path": "fixture-binding.json",
+      "bytes": 7385,
+      "sha256": "09acb3f17b0461d27276f8ebb4f8141a6ded17f61696c63bd2a44ecbc9c3fc85"
+    },
+    {
+      "path": "next-representatives.json",
+      "bytes": 4982,
+      "sha256": "c0bfc2b8cae2330b9163276cc054f07c4d464bbf2b9a7dcf82ed0620a301269e"
+    },
+    {
+      "path": "NEXT-REPRESENTATIVES.md",
+      "bytes": 3732,
+      "sha256": "7e8fa764ea681ec64e7dd7bfe37300b1fb42e1e3e98cf1aea378745c1f7ab493"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6830,
+      "sha256": "65bf875ab86ce5e85d116477231a2dbf3cfbd97ca0c78485287980baa30e2f12"
+    },
+    {
+      "path": "results.json",
+      "bytes": 169070,
+      "sha256": "1afb559e7b5e955234ef4b8298bc880501e5f5fdd61791c93a8da617878ee5f6"
+    },
+    {
+      "path": "review/FORMAT-BOUNDS.md",
+      "bytes": 12750,
+      "sha256": "7fd764e5d5b18403b59e6d304e45d6e8ef1855db357344700eb7d83b33351db4"
+    },
+    {
+      "path": "source/compare_cases.py",
+      "bytes": 11936,
+      "sha256": "681a3a4733b10e8f4ea2e7db6896f4235a97529e11abff9352fd57fde59bf9ae"
+    },
+    {
+      "path": "source/compare_mesh.py",
+      "bytes": 5341,
+      "sha256": "44bc95dc9228e24e21b1a980d0207077627e918cb1757bfa108f7f904f722c48"
+    },
+    {
+      "path": "source/diagnose_tools.py",
+      "bytes": 3688,
+      "sha256": "93dad4fadabf66ad4d377a40a8186a6a8511c7d46d2ea98555b4a43d7b9b59c4"
+    },
+    {
+      "path": "source/glb_reference.py",
+      "bytes": 18544,
+      "sha256": "b951b6e760933fbd7f745c50422ad4197467873ea79b45fc2daebaa7e6065ae3"
+    },
+    {
+      "path": "source/inspect_cases.py",
+      "bytes": 7055,
+      "sha256": "722e6ad2d1e9939580f866fde7d0c7e05ded5c28246ef3c6e3883e3f5aff974f"
+    },
+    {
+      "path": "source/native_reader.py",
+      "bytes": 16139,
+      "sha256": "74cf7a210f006faaa8eda07ffe3f51ea105b4025d9fa6277c40f30b253dc92f6"
+    },
+    {
+      "path": "source/test_compare_mesh.py",
+      "bytes": 2385,
+      "sha256": "66f59910e91c4131be9ded5bb01e130c5c0b61b7159ded2a66244aee3dae170b"
+    },
+    {
+      "path": "source/test_native_reader.py",
+      "bytes": 7719,
+      "sha256": "b795fd0772d4a507346c8887e6a221acff59a185f9552a78ccfcfd1cc9cbb756"
+    },
+    {
+      "path": "source-checkpoint.json",
+      "bytes": 1982,
+      "sha256": "add33b9d6daaf02edfa24ef92c7b0671693a46a771591fa3402620d32f7728e8"
+    }
+  ],
+  "main_git_or_gpu_changes": false
+}

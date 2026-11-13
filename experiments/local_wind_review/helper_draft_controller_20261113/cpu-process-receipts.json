@@ -1,0 +1,3273 @@
+{
+  "format": "has_wind_preview_controller_process_receipts_1",
+  "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-draft-controller-20261113\\cpu-results\\c1c6eb2b16064b85b01ea84a326671fe",
+  "testcases": [
+    {
+      "test": "test_changed_context_after_prepared_invalidates_cached_result",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\1207a3b1c0",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 2388,
+            "created_100ns": "134390286309198937"
+          },
+          "observed": {
+            "pid": 2388,
+            "created_100ns": "134390286309198937"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\1207a3b1c0\\host-a07b75\\controller-outcome.json",
+          "sha256": "67e6cae4fafc44a3abbfcd5559dcee681978247fa9130a4aee874ab9e13df04a",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 2,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 3,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 4,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 5,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 6,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 7,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 8,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 9,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 10,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 11,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 12,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 13,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 14,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 15,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 16,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 17,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 18,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 19,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 20,
+                "ticket": {
+                  "generation": 2,
+                  "nonce": null
+                }
+              },
+              {
+                "op": "close",
+                "outcome": "handled",
+                "seq": 21,
+                "ticket": {
+                  "generation": 2,
+                  "nonce": null
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286309198937",
+              "pid": 2388
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": true,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host closed",
+            "renderer_acceptance": false,
+            "session": "883ae9042fc147a89a71ac020b6e1fec",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 2,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286310778497",
+              "generation": 1,
+              "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8",
+              "pid": 26544
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\1207a3b1c0\\host-a07b75\\6467a4ce6ce845bb9ebe7be233f46e17\\owned-outcome.json",
+          "sha256": "0110e801f44d12332f04bdad5bd8287db3e629a3bcf04f7268085982787a417c",
+          "value": {
+            "error": "",
+            "exit": 0,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286310778497",
+              "generation": 1,
+              "nonce": "a77c5e88f0f64d6eab06bdf834d7e8f8",
+              "pid": 26544
+            },
+            "pipe_bytes": [
+              1029,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "prepared_hidden"
+          }
+        }
+      ],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_eof_while_worker_not_reading_stdin_closes_job",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\202d0fbc40",
+      "observations": [
+        {
+          "label": "controller command EOF closes Job",
+          "owner": {
+            "pid": 25660,
+            "created_100ns": "134390286331603316"
+          },
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "signaled": true,
+          "observed": {
+            "pid": 25660,
+            "created_100ns": "134390286331603316"
+          },
+          "exit_code_u32": 3221225786,
+          "observer_handle_closed": true
+        },
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 3428,
+            "created_100ns": "134390286329824175"
+          },
+          "observed": {
+            "pid": 3428,
+            "created_100ns": "134390286329824175"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\202d0fbc40\\host-bf5825\\controller-outcome.json",
+          "sha256": "957fcdd6ffbf47bceec867070a4b9fd3d0d839833f3b35061cebd304c869b0b8",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "6dee30130d824452bb9731ca851e65c1"
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286329824175",
+              "pid": 3428
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": false,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host input EOF",
+            "renderer_acceptance": false,
+            "session": "0a653d732f0f45269cd4bcdcdc5b9ca8",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 2,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286331603316",
+              "generation": 1,
+              "nonce": "6dee30130d824452bb9731ca851e65c1",
+              "pid": 25660
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\202d0fbc40\\host-bf5825\\d9446d6a9f204f7cbf9ddf4ab2c57010\\owned-outcome.json",
+          "sha256": "b361b354a8216a8474132a2c53a83efa3da9cef13e2cad150096df3d30c9b20d",
+          "value": {
+            "error": "owner closed",
+            "exit": 3221225786,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286331603316",
+              "generation": 1,
+              "nonce": "6dee30130d824452bb9731ca851e65c1",
+              "pid": 25660
+            },
+            "pipe_bytes": [
+              1029,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "cancelled"
+          }
+        }
+      ],
+      "controlled_test_markers": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\202d0fbc40\\assigned.json",
+          "sha256": "6413b104e2232996d54649590b3a5ae121c8f4ae1de59d2c4d079dfa87e5a1f4",
+          "value": {
+            "child": {
+              "pid": 25660,
+              "created_100ns": "134390286331603316"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-draft-controller-20261113\\cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\202d0fbc40\\host-bf5825\\d9446d6a9f204f7cbf9ddf4ab2c57010"
+          }
+        },
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\202d0fbc40\\host-bf5825\\d9446d6a9f204f7cbf9ddf4ab2c57010\\awake.json",
+          "sha256": "2d4084a50d6752ea7be6e5fa6ad14c0b33db179eb870bba31661a9801a88b1fc",
+          "value": {
+            "no_more_stdin_reads": true
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_abrupt_controller_death_after_assignment_kills_nonreading_worker",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2175a9cf79",
+      "observations": [
+        {
+          "label": "kill-on-last-Job-close after exact controller termination",
+          "owner": {
+            "pid": 8680,
+            "created_100ns": "134390286304019246"
+          },
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "signaled": true,
+          "observed": {
+            "pid": 8680,
+            "created_100ns": "134390286304019246"
+          },
+          "exit_code_u32": 0,
+          "observer_handle_closed": true
+        },
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 26316,
+            "created_100ns": "134390286302353195"
+          },
+          "observed": {
+            "pid": 26316,
+            "created_100ns": "134390286302353195"
+          },
+          "signaled": true,
+          "exit_code_u32": 1,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [],
+      "worker_outcomes": [],
+      "controlled_test_markers": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2175a9cf79\\assigned.json",
+          "sha256": "c4bf545e57a3ba2197b49ed9435fe5add24a8db51b0fc2aa841b3ba7f3d22116",
+          "value": {
+            "child": {
+              "pid": 8680,
+              "created_100ns": "134390286304019246"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-draft-controller-20261113\\cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2175a9cf79\\host-20d45b\\705fd088d53845c8b377ff93bfe0c0fb"
+          }
+        },
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2175a9cf79\\host-20d45b\\705fd088d53845c8b377ff93bfe0c0fb\\awake.json",
+          "sha256": "2d4084a50d6752ea7be6e5fa6ad14c0b33db179eb870bba31661a9801a88b1fc",
+          "value": {
+            "no_more_stdin_reads": true
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_unread_output_backpressure_still_closes_owned_child",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2b4bdce2b0",
+      "observations": [
+        {
+          "label": "output backpressure closes owned Job",
+          "owner": {
+            "pid": 11084,
+            "created_100ns": "134390286357910284"
+          },
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "signaled": true,
+          "observed": {
+            "pid": 11084,
+            "created_100ns": "134390286357910284"
+          },
+          "exit_code_u32": 3221225786,
+          "observer_handle_closed": true
+        },
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 24696,
+            "created_100ns": "134390286356275008"
+          },
+          "observed": {
+            "pid": 24696,
+            "created_100ns": "134390286356275008"
+          },
+          "signaled": true,
+          "exit_code_u32": 2,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": [
+            "[Errno 22] Invalid argument"
+          ]
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2b4bdce2b0\\host-4e9f92\\controller-outcome.json",
+          "sha256": "7e76ba0159dcf43fd096f36d52435e204c42f8ebce0751b7001fceb6f3605470",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 2,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 3,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 4,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 5,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 6,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 7,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 8,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 9,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 10,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 11,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 12,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 13,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 14,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 15,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 16,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 17,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 18,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              },
+              {
+                "error": "Full: ",
+                "outcome": "refused",
+                "seq": 19,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "5c3cf55081694a4e8e873e80003748c0"
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286356275008",
+              "pid": 24696
+            },
+            "exit": 2,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": false,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "Full: ",
+            "renderer_acceptance": false,
+            "session": "4f3f9c632d82417b8fe093c3d4273e3d",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 2,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286357910284",
+              "generation": 1,
+              "nonce": "5c3cf55081694a4e8e873e80003748c0",
+              "pid": 11084
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2b4bdce2b0\\host-4e9f92\\1e441af255624c58afe77168fe30face\\owned-outcome.json",
+          "sha256": "6cf8237024be60c20868a9a5ffc969b21347f345ea6e92b65eac70e79d5636ec",
+          "value": {
+            "error": "owner closed",
+            "exit": 3221225786,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286357910284",
+              "generation": 1,
+              "nonce": "5c3cf55081694a4e8e873e80003748c0",
+              "pid": 11084
+            },
+            "pipe_bytes": [
+              1029,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "cancelled"
+          }
+        }
+      ],
+      "controlled_test_markers": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2b4bdce2b0\\assigned.json",
+          "sha256": "471c05e0374378a1b8c3027064427af9ca0d224303dc2ce11e782a2c14cac3ee",
+          "value": {
+            "child": {
+              "pid": 11084,
+              "created_100ns": "134390286357910284"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-draft-controller-20261113\\cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2b4bdce2b0\\host-4e9f92\\1e441af255624c58afe77168fe30face"
+          }
+        },
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\2b4bdce2b0\\host-4e9f92\\1e441af255624c58afe77168fe30face\\awake.json",
+          "sha256": "2d4084a50d6752ea7be6e5fa6ad14c0b33db179eb870bba31661a9801a88b1fc",
+          "value": {
+            "no_more_stdin_reads": true
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_oversized_unterminated_frame_closes_without_start",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\431c77cf14",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 8712,
+            "created_100ns": "134390286341823836"
+          },
+          "observed": {
+            "pid": 8712,
+            "created_100ns": "134390286341823836"
+          },
+          "signaled": true,
+          "exit_code_u32": 2,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\431c77cf14\\host-1d2c08\\controller-outcome.json",
+          "sha256": "c56ec884f75ac87c6f75f79777ce1cb55c90885801099e2c3cead11637b31c64",
+          "value": {
+            "commands": [],
+            "controller": {
+              "created_100ns": "134390286341823836",
+              "pid": 8712
+            },
+            "exit": 2,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": false,
+            "phase": "stopped",
+            "prepared_exposed": false,
+            "process_handle_closed": false,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "transport error: ValueError: Command frame exceeds1MiB",
+            "renderer_acceptance": false,
+            "session": "2aec69b90963479da89571be6d80200f",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0,
+              "nonce": null
+            },
+            "worker_owner": null,
+            "worker_started": false
+          }
+        }
+      ],
+      "worker_outcomes": [],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_poll_cancel_invalid_start_before_start_create_no_job",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\4db3baa663",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 7092,
+            "created_100ns": "134390286343815976"
+          },
+          "observed": {
+            "pid": 7092,
+            "created_100ns": "134390286343815976"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\4db3baa663\\host-7d5bd2\\controller-outcome.json",
+          "sha256": "98a9a49b7ed4ef026f9e409171c99b3eb3a3d662fdd476e2665bb301b3cda578",
+          "value": {
+            "commands": [
+              {
+                "error": "ValueError: No started draft to poll",
+                "outcome": "refused",
+                "seq": 1,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              },
+              {
+                "error": "ValueError: No started draft to cancel",
+                "outcome": "refused",
+                "seq": 2,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              },
+              {
+                "error": "ValueError: Choose one focused request or all checked setup members",
+                "outcome": "refused",
+                "seq": 3,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              },
+              {
+                "op": "close",
+                "outcome": "handled",
+                "seq": 4,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286343815976",
+              "pid": 7092
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": false,
+            "phase": "stopped",
+            "prepared_exposed": false,
+            "process_handle_closed": false,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host closed",
+            "renderer_acceptance": false,
+            "session": "7946136ecdc54c809de9d56f81867c87",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0,
+              "nonce": null
+            },
+            "worker_owner": null,
+            "worker_started": false
+          }
+        }
+      ],
+      "worker_outcomes": [],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_replay_and_stale_cancel_do_not_affect_new_generation",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\5365fc4650",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 17356,
+            "created_100ns": "134390286345426144"
+          },
+          "observed": {
+            "pid": 17356,
+            "created_100ns": "134390286345426144"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\5365fc4650\\host-5890f9\\controller-outcome.json",
+          "sha256": "271b22177bb66607b4d8d03f465c1143cd766620215988d245db702fa60f56ea",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e67e8af027984b7b8478338e613ba51b"
+                }
+              },
+              {
+                "op": "cancel",
+                "outcome": "handled",
+                "seq": 2,
+                "ticket": {
+                  "generation": 2,
+                  "nonce": null
+                }
+              },
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 3,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "error": "ValueError: Stale draft generation/nonce; current ticket unchanged",
+                "outcome": "refused",
+                "seq": 4,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "error": "ValueError: Replay/out-of-order command sequence",
+                "outcome": "refused",
+                "seq": 4,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 5,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 6,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 7,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 8,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 9,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 10,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 11,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 12,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 13,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 14,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 15,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 16,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 17,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 18,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 19,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 20,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 21,
+                "ticket": {
+                  "generation": 3,
+                  "nonce": "3fa81815a9c24537bdfc0e62039cfb29"
+                }
+              },
+              {
+                "op": "close",
+                "outcome": "handled",
+                "seq": 22,
+                "ticket": {
+                  "generation": 4,
+                  "nonce": null
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286345426144",
+              "pid": 17356
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": true,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host closed",
+            "renderer_acceptance": false,
+            "session": "ca5ee48a1f434380b8db753a0d3bb583",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 4,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286347379553",
+              "generation": 3,
+              "nonce": "3fa81815a9c24537bdfc0e62039cfb29",
+              "pid": 12588
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\5365fc4650\\host-5890f9\\07b12c87f3624eb387788ce908e112d4\\owned-outcome.json",
+          "sha256": "640346701b104c7a5a0bdc614b8aed347e7e57cb7bc716905cfa63e9bba993de",
+          "value": {
+            "error": "",
+            "exit": 0,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286347379553",
+              "generation": 3,
+              "nonce": "3fa81815a9c24537bdfc0e62039cfb29",
+              "pid": 12588
+            },
+            "pipe_bytes": [
+              1029,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "prepared_hidden"
+          }
+        },
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\5365fc4650\\host-5890f9\\f0e7c5b3861d4fa5b6bb88c174b7ee15\\owned-outcome.json",
+          "sha256": "77709561661c1c36f79eb52a2f1ea7334e00e9d82a343e0172d3e36d8dec7023",
+          "value": {
+            "error": "owner closed",
+            "exit": 3221225786,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286346867466",
+              "generation": 1,
+              "nonce": "e67e8af027984b7b8478338e613ba51b",
+              "pid": 27580
+            },
+            "pipe_bytes": [
+              0,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "cancelled"
+          }
+        }
+      ],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_host_loss_during_receipt_check_never_exposes_prepared",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\65fe79bf8d",
+      "observations": [
+        {
+          "label": "declared host",
+          "owner": {
+            "pid": 19672,
+            "created_100ns": "134390286334456660"
+          },
+          "observed": {
+            "pid": 19672,
+            "created_100ns": "134390286334456660"
+          },
+          "signaled": true,
+          "exit_code_u32": 1,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        },
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 13376,
+            "created_100ns": "134390286334498183"
+          },
+          "observed": {
+            "pid": 13376,
+            "created_100ns": "134390286334498183"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\65fe79bf8d\\host-ccac1a\\controller-outcome.json",
+          "sha256": "4eda27f44b83ee61dc76460ec3c019826039ac02d9acdf0c3caec5b31c3c69cd",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 2,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 3,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 4,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 5,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 6,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 7,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 8,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 9,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 10,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 11,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 12,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 13,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 14,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "27d970163fbc4d5d894c37e900e9f960"
+                }
+              },
+              {
+                "error": "RuntimeError: host process ended",
+                "outcome": "refused",
+                "seq": 15,
+                "ticket": {
+                  "generation": 2,
+                  "nonce": null
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286334498183",
+              "pid": 13376
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286334456660",
+              "pid": 19672
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": false,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host process ended",
+            "renderer_acceptance": false,
+            "session": "e70f20e36b6b4f389f41ec4541efc2f3",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 2,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286336402944",
+              "generation": 1,
+              "nonce": "27d970163fbc4d5d894c37e900e9f960",
+              "pid": 26584
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\65fe79bf8d\\host-ccac1a\\fe9391b42f874035b64a19d341803a6e\\owned-outcome.json",
+          "sha256": "fad34bfd2b292f1f03f1c348324d2323ca5d835d03a252bd26cd3f37494ff1b6",
+          "value": {
+            "error": "",
+            "exit": 0,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286336402944",
+              "generation": 1,
+              "nonce": "27d970163fbc4d5d894c37e900e9f960",
+              "pid": 26584
+            },
+            "pipe_bytes": [
+              1029,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "prepared_hidden"
+          }
+        }
+      ],
+      "controlled_test_markers": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\65fe79bf8d\\receipt-block.json",
+          "sha256": "e7a847e654cf06ac521e781b219b69c8c705cad68f2103246517e60689f88bef",
+          "value": {
+            "blocked": true
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_wrong_parent_incarnation_refuses_before_ready_or_child",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\695587985b",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 20336,
+            "created_100ns": "134390286365911773"
+          },
+          "observed": {
+            "pid": 20336,
+            "created_100ns": "134390286365911773"
+          },
+          "signaled": true,
+          "exit_code_u32": 2,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [],
+      "worker_outcomes": [],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_controller_and_python_pin_mismatch_refuse_before_start",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\7b17fb1e48",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 24700,
+            "created_100ns": "134390286318230787"
+          },
+          "observed": {
+            "pid": 24700,
+            "created_100ns": "134390286318230787"
+          },
+          "signaled": true,
+          "exit_code_u32": 2,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        },
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 18680,
+            "created_100ns": "134390286319381587"
+          },
+          "observed": {
+            "pid": 18680,
+            "created_100ns": "134390286319381587"
+          },
+          "signaled": true,
+          "exit_code_u32": 2,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [],
+      "worker_outcomes": [],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_eof_after_prepared_synchronously_invalidates_and_closes",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\84e1a47d1a",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 25412,
+            "created_100ns": "134390286325226929"
+          },
+          "observed": {
+            "pid": 25412,
+            "created_100ns": "134390286325226929"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\84e1a47d1a\\host-f65c16\\controller-outcome.json",
+          "sha256": "5dcbef083193b08b55562f5024f8fa1e4f8670c7cd13525ca7870b5c98ed2954",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 2,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 3,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 4,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 5,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 6,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 7,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 8,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 9,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 10,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 11,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 12,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 13,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 14,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 15,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 16,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 17,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 18,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 19,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "f19772d90a38422cb0ecad2deafbf40c"
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286325226929",
+              "pid": 25412
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": true,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host input EOF",
+            "renderer_acceptance": false,
+            "session": "d13078717ac34a6482508ad54e76c39d",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 2,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286326793110",
+              "generation": 1,
+              "nonce": "f19772d90a38422cb0ecad2deafbf40c",
+              "pid": 12612
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\84e1a47d1a\\host-f65c16\\74a7acc2b8e64d65bbf69f8e960778a1\\owned-outcome.json",
+          "sha256": "50f0c86117c4085f46c50c0b8b4a46ec23b2ae41f45cbcfdb98ab973ceb533d0",
+          "value": {
+            "error": "",
+            "exit": 0,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286326793110",
+              "generation": 1,
+              "nonce": "f19772d90a38422cb0ecad2deafbf40c",
+              "pid": 12612
+            },
+            "pipe_bytes": [
+              1029,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "prepared_hidden"
+          }
+        }
+      ],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_strict_framing_types_and_foreign_session_cannot_start",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\a15668ef5e",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 15284,
+            "created_100ns": "134390286354689646"
+          },
+          "observed": {
+            "pid": 15284,
+            "created_100ns": "134390286354689646"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\a15668ef5e\\host-29bb3d\\controller-outcome.json",
+          "sha256": "a4cba45f466e8276023139fd184b92ab293aebec19ec168729d1183bb2ea56b7",
+          "value": {
+            "commands": [
+              {
+                "error": "ValueError: Duplicate JSON key",
+                "outcome": "refused",
+                "seq": 0,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              },
+              {
+                "error": "ValueError: Nonfinite JSON constant",
+                "outcome": "refused",
+                "seq": 0,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              },
+              {
+                "error": "UnicodeDecodeError: 'ascii' codec can't decode byte 0xff in position 0: ordinal not in range(128)",
+                "outcome": "refused",
+                "seq": 0,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              },
+              {
+                "error": "ValueError: Replay/out-of-order command sequence",
+                "outcome": "refused",
+                "seq": 0,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              },
+              {
+                "error": "ValueError: Foreign controller session or format",
+                "outcome": "refused",
+                "seq": 0,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              },
+              {
+                "op": "close",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286354689646",
+              "pid": 15284
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": false,
+            "phase": "stopped",
+            "prepared_exposed": false,
+            "process_handle_closed": false,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host closed",
+            "renderer_acceptance": false,
+            "session": "eaba859adf274206b132a0844434bd1d",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0,
+              "nonce": null
+            },
+            "worker_owner": null,
+            "worker_started": false
+          }
+        }
+      ],
+      "worker_outcomes": [],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_declared_host_death_closes_live_job_without_poll",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\ad6934b3e3",
+      "observations": [
+        {
+          "label": "declared host lease ended",
+          "owner": {
+            "pid": 28268,
+            "created_100ns": "134390286322707368"
+          },
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "signaled": true,
+          "observed": {
+            "pid": 28268,
+            "created_100ns": "134390286322707368"
+          },
+          "exit_code_u32": 3221225786,
+          "observer_handle_closed": true
+        },
+        {
+          "label": "declared host",
+          "owner": {
+            "pid": 27284,
+            "created_100ns": "134390286320718504"
+          },
+          "observed": {
+            "pid": 27284,
+            "created_100ns": "134390286320718504"
+          },
+          "signaled": true,
+          "exit_code_u32": 1,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        },
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 26876,
+            "created_100ns": "134390286320802194"
+          },
+          "observed": {
+            "pid": 26876,
+            "created_100ns": "134390286320802194"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\ad6934b3e3\\host-85c16f\\controller-outcome.json",
+          "sha256": "def89eee072712827d2f4c996517ed36b5e50dbdaf4f7da2cd55032ee1c249f8",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "fa45282478774ebaa9e6dadc9a66c057"
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286320802194",
+              "pid": 26876
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286320718504",
+              "pid": 27284
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": false,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host process ended",
+            "renderer_acceptance": false,
+            "session": "c8d298c4c2764b6d8e9007993dd4a841",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 2,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286322707368",
+              "generation": 1,
+              "nonce": "fa45282478774ebaa9e6dadc9a66c057",
+              "pid": 28268
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\ad6934b3e3\\host-85c16f\\bf8e9ca41a72451ca3ec26fd2a72ec6c\\owned-outcome.json",
+          "sha256": "a2a38645b6a42b1a57feed473cf25880c9a8e48eee8ef8302756ea7683f5d176",
+          "value": {
+            "error": "owner closed",
+            "exit": 3221225786,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286322707368",
+              "generation": 1,
+              "nonce": "fa45282478774ebaa9e6dadc9a66c057",
+              "pid": 28268
+            },
+            "pipe_bytes": [
+              1029,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "cancelled"
+          }
+        }
+      ],
+      "controlled_test_markers": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\ad6934b3e3\\assigned.json",
+          "sha256": "ef51f02db7d4c807d26be0c5ea468961ed1b6a8cd3875a0afcaa14e3606cf219",
+          "value": {
+            "child": {
+              "pid": 28268,
+              "created_100ns": "134390286322707368"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-draft-controller-20261113\\cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\ad6934b3e3\\host-85c16f\\bf8e9ca41a72451ca3ec26fd2a72ec6c"
+          }
+        },
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\ad6934b3e3\\host-85c16f\\bf8e9ca41a72451ca3ec26fd2a72ec6c\\awake.json",
+          "sha256": "2d4084a50d6752ea7be6e5fa6ad14c0b33db179eb870bba31661a9801a88b1fc",
+          "value": {
+            "no_more_stdin_reads": true
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_host_loss_during_start_prevalidation_never_launches_worker",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\b2ae081337",
+      "observations": [
+        {
+          "label": "declared host",
+          "owner": {
+            "pid": 5084,
+            "created_100ns": "134390286339742319"
+          },
+          "observed": {
+            "pid": 5084,
+            "created_100ns": "134390286339742319"
+          },
+          "signaled": true,
+          "exit_code_u32": 1,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        },
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 11980,
+            "created_100ns": "134390286339795932"
+          },
+          "observed": {
+            "pid": 11980,
+            "created_100ns": "134390286339795932"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\b2ae081337\\host-a43feb\\controller-outcome.json",
+          "sha256": "5eab66135074d4c45f6928283bdf123e73ceb2637428d009d9d7caee431cdaf2",
+          "value": {
+            "commands": [
+              {
+                "error": "RuntimeError: host process ended",
+                "outcome": "refused",
+                "seq": 1,
+                "ticket": {
+                  "generation": 0,
+                  "nonce": null
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286339795932",
+              "pid": 11980
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286339742319",
+              "pid": 5084
+            },
+            "host_handle_closed": true,
+            "job_closed": false,
+            "phase": "stopped",
+            "prepared_exposed": false,
+            "process_handle_closed": false,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host process ended",
+            "renderer_acceptance": false,
+            "session": "76d3e17108ca49ce9db0f5eefd6f4f8b",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0,
+              "nonce": null
+            },
+            "worker_owner": null,
+            "worker_started": false
+          }
+        }
+      ],
+      "worker_outcomes": [],
+      "controlled_test_markers": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\b2ae081337\\hash-block.json",
+          "sha256": "e7a847e654cf06ac521e781b219b69c8c705cad68f2103246517e60689f88bef",
+          "value": {
+            "blocked": true
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_changed_receipt_after_prepared_is_refused",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\bf8a083862",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 28260,
+            "created_100ns": "134390286313603584"
+          },
+          "observed": {
+            "pid": 28260,
+            "created_100ns": "134390286313603584"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\bf8a083862\\host-bd9c38\\controller-outcome.json",
+          "sha256": "6ec9455aa65b0cb25d401a5b1364f2098b9192ace21d803ab6f815ff6dc1f164",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 2,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 3,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 4,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 5,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 6,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 7,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 8,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 9,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 10,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 11,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 12,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 13,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 14,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 15,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 16,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 17,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 18,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 19,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 20,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "e11e57e789f24673bd922b2752573929"
+                }
+              },
+              {
+                "error": "ValueError: Published receipt changed after trusted worker completion",
+                "outcome": "refused",
+                "seq": 21,
+                "ticket": {
+                  "generation": 2,
+                  "nonce": null
+                }
+              },
+              {
+                "op": "close",
+                "outcome": "handled",
+                "seq": 22,
+                "ticket": {
+                  "generation": 2,
+                  "nonce": null
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286313603584",
+              "pid": 28260
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": true,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host closed",
+            "renderer_acceptance": false,
+            "session": "77f0c67c6efc40e1bf7a073254d6e7b0",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 2,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286315097720",
+              "generation": 1,
+              "nonce": "e11e57e789f24673bd922b2752573929",
+              "pid": 9400
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\bf8a083862\\host-bd9c38\\c2eb220a336d408bab1e18d67786660e\\owned-outcome.json",
+          "sha256": "7b5e8564b6b39f8fed9189b8972429c9a04f2cfec1c9af8956e683f704ef4501",
+          "value": {
+            "error": "",
+            "exit": 0,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286315097720",
+              "generation": 1,
+              "nonce": "e11e57e789f24673bd922b2752573929",
+              "pid": 9400
+            },
+            "pipe_bytes": [
+              1028,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "prepared_hidden"
+          }
+        }
+      ],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_start_poll_prepared_and_close_invalidates_without_apply",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\eaf6708612",
+      "observations": [
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 25972,
+            "created_100ns": "134390286350113317"
+          },
+          "observed": {
+            "pid": 25972,
+            "created_100ns": "134390286350113317"
+          },
+          "signaled": true,
+          "exit_code_u32": 0,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\eaf6708612\\host-64e681\\controller-outcome.json",
+          "sha256": "c528d52ccffa03a713a1c8d1664cb2ad3a69c3d1cca589a8fc4ce791659e0f15",
+          "value": {
+            "commands": [
+              {
+                "op": "start",
+                "outcome": "handled",
+                "seq": 1,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 2,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 3,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 4,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 5,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 6,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 7,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 8,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 9,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 10,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 11,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 12,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 13,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 14,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 15,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 16,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 17,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 18,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 19,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "poll",
+                "outcome": "handled",
+                "seq": 20,
+                "ticket": {
+                  "generation": 1,
+                  "nonce": "df0cf1e55514422389b8cc08e937713a"
+                }
+              },
+              {
+                "op": "close",
+                "outcome": "handled",
+                "seq": 21,
+                "ticket": {
+                  "generation": 2,
+                  "nonce": null
+                }
+              }
+            ],
+            "controller": {
+              "created_100ns": "134390286350113317",
+              "pid": 25972
+            },
+            "exit": 0,
+            "format": "has_wind_preview_controller_outcome_1",
+            "godot_started": false,
+            "host": {
+              "created_100ns": "134390286300496934",
+              "pid": 26220
+            },
+            "host_handle_closed": true,
+            "job_closed": true,
+            "phase": "stopped",
+            "prepared_exposed": true,
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "reason": "host closed",
+            "renderer_acceptance": false,
+            "session": "d9d655e0a9414c0ebd98f400441902a9",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "03b98f32fc122ec9c7a5f306dcd550859321f8c1d887cc11a31981ee014ade0c",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 2,
+              "nonce": null
+            },
+            "worker_owner": {
+              "created_100ns": "134390286351709017",
+              "generation": 1,
+              "nonce": "df0cf1e55514422389b8cc08e937713a",
+              "pid": 7372
+            },
+            "worker_started": true
+          }
+        }
+      ],
+      "worker_outcomes": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\eaf6708612\\host-64e681\\22e0c9c89945472a8da910aa27b57611\\owned-outcome.json",
+          "sha256": "7e6d65eabc63bcd7aa6bfc8beab1ffe4ca6e29d66c45af588a2bc2fe9332c614",
+          "value": {
+            "error": "",
+            "exit": 0,
+            "format": "has_wind_owned_outcome_1",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390286351709017",
+              "generation": 1,
+              "nonce": "df0cf1e55514422389b8cc08e937713a",
+              "pid": 7372
+            },
+            "pipe_bytes": [
+              1028,
+              0
+            ],
+            "pipe_eof": [
+              true,
+              true
+            ],
+            "pipe_overflow": [
+              false,
+              false
+            ],
+            "process_handle_closed": true,
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "render_admitted": false,
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "state": "prepared_hidden"
+          }
+        }
+      ],
+      "controlled_test_markers": []
+    },
+    {
+      "test": "test_abrupt_controller_death_before_assignment_gives_worker_eof",
+      "folder": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\f10a662997",
+      "observations": [
+        {
+          "label": "preassignment EOF after exact controller termination",
+          "owner": {
+            "pid": 20336,
+            "created_100ns": "134390286308102205"
+          },
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "signaled": true,
+          "observed": {
+            "pid": 20336,
+            "created_100ns": "134390286308102205"
+          },
+          "exit_code_u32": 1,
+          "observer_handle_closed": true
+        },
+        {
+          "label": "controller",
+          "owner": {
+            "pid": 27404,
+            "created_100ns": "134390286306286684"
+          },
+          "observed": {
+            "pid": 27404,
+            "created_100ns": "134390286306286684"
+          },
+          "signaled": true,
+          "exit_code_u32": 1,
+          "observer": {
+            "pid": 26220,
+            "created_100ns": "134390286300496934"
+          },
+          "generic_pid_termination": false,
+          "observer_handle_closed": true,
+          "pipe_close_diagnostics": []
+        }
+      ],
+      "controller_outcomes": [],
+      "worker_outcomes": [],
+      "controlled_test_markers": [
+        {
+          "path": "cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\f10a662997\\gated.json",
+          "sha256": "2b130434b388a3d550016bfa21554fe83013d214391286b3b71b2ccfc3d821b0",
+          "value": {
+            "child": {
+              "pid": 20336,
+              "created_100ns": "134390286308102205"
+            },
+            "assigned": false,
+            "gate_sent": false,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-draft-controller-20261113\\cpu-results\\c1c6eb2b16064b85b01ea84a326671fe\\f10a662997\\host-746073\\7aab328368bf48af888920711ed29ced"
+          }
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "tests": 17,
+    "retained_process_observations": 26,
+    "controller_outcomes": 13,
+    "worker_outcomes": 10
+  },
+  "all_retained_observations_exact_signaled_closed": true,
+  "all_published_worker_and_controller_cleanup_receipts_closed": true,
+  "abrupt_controllers_have_no_final_controller_receipt": "Expected: exact retained observer receipts prove termination instead",
+  "generic_pid_termination": false,
+  "godot_started": false,
+  "renderer_acceptance": false
+}

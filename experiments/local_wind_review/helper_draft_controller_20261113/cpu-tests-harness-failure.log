@@ -1,0 +1,56 @@
+test_abrupt_controller_death_after_assignment_kills_nonreading_worker (__main__.Controllers.test_abrupt_controller_death_after_assignment_kills_nonreading_worker) ... ok
+test_abrupt_controller_death_before_assignment_gives_worker_eof (__main__.Controllers.test_abrupt_controller_death_before_assignment_gives_worker_eof) ... ok
+test_changed_context_after_prepared_invalidates_cached_result (__main__.Controllers.test_changed_context_after_prepared_invalidates_cached_result) ... ok
+test_changed_receipt_after_prepared_is_refused (__main__.Controllers.test_changed_receipt_after_prepared_is_refused) ... ok
+test_controller_and_python_pin_mismatch_refuse_before_start (__main__.Controllers.test_controller_and_python_pin_mismatch_refuse_before_start) ... ok
+test_declared_host_death_closes_live_job_without_poll (__main__.Controllers.test_declared_host_death_closes_live_job_without_poll) ... ok
+test_eof_after_prepared_synchronously_invalidates_and_closes (__main__.Controllers.test_eof_after_prepared_synchronously_invalidates_and_closes) ... ok
+test_eof_while_worker_not_reading_stdin_closes_job (__main__.Controllers.test_eof_while_worker_not_reading_stdin_closes_job) ... ok
+test_host_loss_during_receipt_check_never_exposes_prepared (__main__.Controllers.test_host_loss_during_receipt_check_never_exposes_prepared) ... FAIL
+test_host_loss_during_start_prevalidation_never_launches_worker (__main__.Controllers.test_host_loss_during_start_prevalidation_never_launches_worker) ... ok
+test_oversized_unterminated_frame_closes_without_start (__main__.Controllers.test_oversized_unterminated_frame_closes_without_start) ... ok
+test_poll_cancel_invalid_start_before_start_create_no_job (__main__.Controllers.test_poll_cancel_invalid_start_before_start_create_no_job) ... ok
+test_replay_and_stale_cancel_do_not_affect_new_generation (__main__.Controllers.test_replay_and_stale_cancel_do_not_affect_new_generation) ... ok
+test_start_poll_prepared_and_close_invalidates_without_apply (__main__.Controllers.test_start_poll_prepared_and_close_invalidates_without_apply) ... ok
+test_strict_framing_types_and_foreign_session_cannot_start (__main__.Controllers.test_strict_framing_types_and_foreign_session_cannot_start) ... ok
+test_unread_output_backpressure_still_closes_owned_child (__main__.Controllers.test_unread_output_backpressure_still_closes_owned_child) ... ERROR
+test_unread_output_backpressure_still_closes_owned_child (__main__.Controllers.test_unread_output_backpressure_still_closes_owned_child) ... ERROR
+test_wrong_parent_incarnation_refuses_before_ready_or_child (__main__.Controllers.test_wrong_parent_incarnation_refuses_before_ready_or_child) ... ok
+
+======================================================================
+ERROR: test_unread_output_backpressure_still_closes_owned_child (__main__.Controllers.test_unread_output_backpressure_still_closes_owned_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-controller-20261113\tests\test_controller.py", line 277, in test_unread_output_backpressure_still_closes_owned_child
+    try:self.send('poll',context=self.context)
+        ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-controller-20261113\tests\test_controller.py", line 142, in send
+    self.process.stdin.write(P.encoded(value)); self.process.stdin.flush(); return value
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~^^
+OSError: [Errno 22] Invalid argument
+
+======================================================================
+ERROR: test_unread_output_backpressure_still_closes_owned_child (__main__.Controllers.test_unread_output_backpressure_still_closes_owned_child)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-controller-20261113\tests\test_controller.py", line 92, in cleanup
+    if pipe and not pipe.closed: pipe.close()
+                                 ~~~~~~~~~~^^
+OSError: [Errno 22] Invalid argument
+
+======================================================================
+FAIL: test_host_loss_during_receipt_check_never_exposes_prepared (__main__.Controllers.test_host_loss_during_receipt_check_never_exposes_prepared)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-controller-20261113\tests\test_controller.py", line 330, in test_host_loss_during_receipt_check_never_exposes_prepared
+    self.marker(marker);host.kill();host.wait(timeout=4);release.write_text('release');self.process.wait(timeout=4)
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-controller-20261113\tests\test_controller.py", line 168, in marker
+    self.fail('Owned observation marker watchdog')
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Owned observation marker watchdog
+
+----------------------------------------------------------------------
+Ran 17 tests in 15.075s
+
+FAILED (failures=1, errors=2)

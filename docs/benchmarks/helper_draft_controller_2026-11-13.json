@@ -1,0 +1,38 @@
+{
+  "format": "has_wind_helper_controller_cpu_checkpoint_1",
+  "date": "2026-11-13",
+  "source_context": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "main_ported": false,
+  "cpu_tests": 17,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "exact_signaled_closed_observations": 26,
+  "controller_outcomes": 13,
+  "worker_cleanup_outcomes": 10,
+  "index": {
+    "path": "experiments/local_wind_review/helper_draft_controller_20261113/FILE_INDEX.json",
+    "sha256": "b7e84e5d0ab061396c5621cf20c75555aab91f4663bd38110bfdaad64a85c971"
+  },
+  "handoff": {
+    "path": "experiments/local_wind_review/helper_draft_controller_20261113/HANDOFF.json",
+    "sha256": "8b4270fd628d8c39137cb540f0e1dd116eb2b0b1071208f951c0a9ca3c1dbdf5"
+  },
+  "root_checks": "All26owner==observed/PID+creation/signaled/closed observer records; all3copied candidate sources byte-identical to prior packet.",
+  "review": "Independent read-only review found host-loss race across slow validation/admission; bounded rechecks and negative controls added, then rereviewed.",
+  "scope": [
+    "Explicit declared hostPID+creation, notOSparentproof",
+    "Pythoncontroller with bounded ASCIIline protocol and oneJobownedchild",
+    "EOF, hostloss, stdoutbackpressure, pre/postassignment abruptcontrollerdeath tested",
+    "Postassignment termination observed even whenOSchildexit0; never successadmission"
+  ],
+  "not_implemented": [
+    "ActualGodotNode/execute_with_pipe/nativeownership adoption",
+    "Actualhiddenmodel/binding import",
+    "HelperUI/windphysics/visibility/recovery/Apply integration"
+  ],
+  "retained_failed_expansion": "Harness command budget exhaustion and closedpipeOSError22 retained; harness paced and cleanup fixed, no controller guard/budget relaxed.",
+  "godot_or_gpu_started": false,
+  "native_assets_used": false,
+  "next": "ActualGodot Node CPUfixture bridge with retained host/controller ownership, before model import orsimulation."
+}

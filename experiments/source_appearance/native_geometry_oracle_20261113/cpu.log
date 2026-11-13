@@ -1,0 +1,35 @@
+test_absent_vtx_is_not_triangle_pass (test_compare_mesh.CompareTests.test_absent_vtx_is_not_triangle_pass) ... ok
+test_handcomputed_reindex_winding_and_duplicate_triangles (test_compare_mesh.CompareTests.test_handcomputed_reindex_winding_and_duplicate_triangles) ... ok
+test_joint_identity_and_weight_mismatch_not_hidden (test_compare_mesh.CompareTests.test_joint_identity_and_weight_mismatch_not_hidden) ... ok
+test_opposite_winding_not_fitted (test_compare_mesh.CompareTests.test_opposite_winding_not_fitted) ... ok
+test_preservation_gate_refuses_each_changed_or_missing_state (test_compare_mesh.CompareTests.test_preservation_gate_refuses_each_changed_or_missing_state) ... ok
+test_uv_seam_mismatch_not_collapsed (test_compare_mesh.CompareTests.test_uv_seam_mismatch_not_collapsed) ... ok
+test_explicit_adapter_transform_uv_and_winding (test_native_reader.NativeReaderTests.test_explicit_adapter_transform_uv_and_winding) ... ok
+test_hand_computed_complete_native_triangle_and_fixup_origins (test_native_reader.NativeReaderTests.test_hand_computed_complete_native_triangle_and_fixup_origins) ... ok
+test_mdl_bone_cycle_rejected (test_native_reader.NativeReaderTests.test_mdl_bone_cycle_rejected) ... ok
+test_mdl_declared_length_rejected (test_native_reader.NativeReaderTests.test_mdl_declared_length_rejected) ... ok
+test_mdl_mesh_wrong_parent_rejected (test_native_reader.NativeReaderTests.test_mdl_mesh_wrong_parent_rejected) ... ok
+test_mdl_unaligned_vvd_byte_origin_rejected (test_native_reader.NativeReaderTests.test_mdl_unaligned_vvd_byte_origin_rejected) ... ok
+test_mdl_wrong_version_rejected (test_native_reader.NativeReaderTests.test_mdl_wrong_version_rejected) ... ok
+test_native_reader_imports_no_converter_or_native_module (test_native_reader.NativeReaderTests.test_native_reader_imports_no_converter_or_native_module) ... ok
+test_nonfinite_normal_rejected (test_native_reader.NativeReaderTests.test_nonfinite_normal_rejected) ... ok
+test_nonunit_native_normal_observed_not_format_rejected (test_native_reader.NativeReaderTests.test_nonunit_native_normal_observed_not_format_rejected) ... ok
+test_strip_vertex_offset_not_added_to_group_indices (test_native_reader.NativeReaderTests.test_strip_vertex_offset_not_added_to_group_indices) ... ok
+test_vtx_bad_checksum_rejected (test_native_reader.NativeReaderTests.test_vtx_bad_checksum_rejected) ... ok
+test_vtx_overlapping_strip_index_range_rejected (test_native_reader.NativeReaderTests.test_vtx_overlapping_strip_index_range_rejected) ... ok
+test_vtx_restart_or_bad_group_index_rejected (test_native_reader.NativeReaderTests.test_vtx_restart_or_bad_group_index_rejected) ... ok
+test_vtx_strip_or_quad_flag_rejected (test_native_reader.NativeReaderTests.test_vtx_strip_or_quad_flag_rejected) ... ok
+test_vtx_table_truncation_rejected (test_native_reader.NativeReaderTests.test_vtx_table_truncation_rejected) ... ok
+test_vtx_wrong_original_mesh_vertex_rejected (test_native_reader.NativeReaderTests.test_vtx_wrong_original_mesh_vertex_rejected) ... ok
+test_vvd_bad_checksum_rejected (test_native_reader.NativeReaderTests.test_vvd_bad_checksum_rejected) ... ok
+test_vvd_bad_native_bone_index_rejected (test_native_reader.NativeReaderTests.test_vvd_bad_native_bone_index_rejected) ... ok
+test_vvd_fixup_gap_or_overlap_rejected (test_native_reader.NativeReaderTests.test_vvd_fixup_gap_or_overlap_rejected) ... ok
+test_vvd_fixup_outside_table_rejected (test_native_reader.NativeReaderTests.test_vvd_fixup_outside_table_rejected) ... ok
+test_vvd_nonfinite_uv_rejected (test_native_reader.NativeReaderTests.test_vvd_nonfinite_uv_rejected) ... ok
+test_vvd_nonunit_weights_rejected (test_native_reader.NativeReaderTests.test_vvd_nonunit_weights_rejected) ... ok
+test_vvd_offset_overrun_rejected (test_native_reader.NativeReaderTests.test_vvd_offset_overrun_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.005s
+
+OK

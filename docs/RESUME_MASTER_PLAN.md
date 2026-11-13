@@ -103,8 +103,10 @@ transport and a persistent per-request eligibility flag prevent stale Apply.
 Final 26 CPU/5 state/34 app, 38 combined native, 30 single/33 composition,
 20+31 picker and unchanged 39/14/59/35 helper checks pass; source freeze covers
 193 runtime/backend files. [Evidence](benchmarks/secondary_batch_setup_2026-11-12.json).
-Local-blow preview, per-item wind exclusions and further refinement remain open;
-setup membership is distinct from persistent simulation/blow membership.
+Local-blow preview for already declared groups is now implemented in main (see
+the November 13 integration below). Previewing proposed helper setups before
+Apply, permanent per-item exclusions and further refinement remain open. Setup
+membership stays distinct from temporary and persistent wind membership.
 
 1. **Deformation remains after switching Hair & Cloth off.** A configured joint
    deforms correctly while enabled, but the deformation stays after disabling
@@ -464,6 +466,22 @@ unverified. Native viewer executables were never launched. Research is saved in
 flags, patch MDL versions or expose owner preferences just to produce screenshots.
 
 
+### Default suite and encoder correction — November 13
+
+The full run at3a6f94f passed all functional groups, then failed final AAC
+verification: silent/tone tests reused an old movie, and FFmpeg's overwrite
+refusal returned0. The encoder incorrectly accepted that stale file. All947
+functional hashes and HEAD remained exact. Preserve this as a failed aggregate.
+
+The product now refuses existing outputs before launch/log writes, clears stale
+success and rejects error-level diagnostics even at exit0. Fresh separate silent,
+tone and failure fixtures retain the original AAC/onset/RMS checks and add a
+silent-spike check. Five focused failure checks pass; the preserved old encoder
+fails the new existing-output check. Scoped media verification passes21movies
+(two fresh,19retained), exact1.0second onsets and unchanged audio-level bounds.
+This is not a full aggregate; rerun the default from the next stable checkpoint.
+[Details and source](encoder_existing_output_fix_2026-11-13.md).
+
 ### Main local-wind integration — November 13
 
 Local wind review is now integrated into main source and scoped-verified:
@@ -481,14 +499,62 @@ This first phase previews already declared groups; proposed helper drafts before
 Apply and permanent exclusions remain unfinished. Earlier prototype-only entries
 below describe their historical checkpoints.
 
-A bounded SFM derived render/adoption probe is source-ready with29CPU controls
-and historical headless parsing. It joins native names/parents to the actual
+The next helper-before-Apply step has a separate, unported protocol foundation:
+21 CPU tests use the current helper builders on self-authored geometry. It binds
+each reviewed request to its complete hidden candidate and retained source-node,
+skin and bind transforms, rejects stale/cancelled results, and requires a receipt
+digest delivered separately by a trusted successful worker. Independent review
+found and corrected report association and receipt-trust gaps. No worker transport,
+actual Godot binding snapshot, helper-window UI or wind simulation is implemented
+by this packet. Restore its indexed compact source from
+`experiments/local_wind_review/helper_draft_protocol_20261113`; generated test
+geometry stays out of Git. The next increment is an owned preview-purpose worker
+adapter, followed by actual hidden import and binding checks.
+
+The separate owned-worker increment now passes16real hidden Windows CPU tests.
+One Python controller holds one child by its exact native process handle and
+creation identity, assigns a kill-on-close Job before releasing the start gate,
+drains bounded stdout/stderr and accepts its separate completion only after
+exit0 and cleanup. Root checked24final closed-Job/process-handle receipts. A
+foreign imported worker identity gap was corrected after root review; the old
+path-length harness failure and intermediate result remain. This is not a
+Godot-owned controller or helper UI: abrupt controller-death tests, the Node
+bridge, complete imported bindings and actual preview simulation remain separate.
+Source/evidence: `experiments/local_wind_review/helper_draft_owned_worker_20261113`.
+
+The next Python controller packet passes17hidden Windows CPU tests, including
+EOF/host loss, unread output and abrupt controller death before/after Job
+assignment. Root checked26exact signaled/closed process observations and the
+three unchanged prior sources. Independent review corrected a host-loss race
+across slow validation. This uses an explicitly declared host identity; actual
+Godot Node/pipe/native ownership and model import are still absent. Source and
+the concrete Node bridge plan are in
+`experiments/local_wind_review/helper_draft_controller_20261113`.
+
+A bounded SFM derived render/adoption probe has a newer v2 source packet with
+39CPU controls and independent source review. Four harness corrections pin the
+pack/unpack Python runtime, make final preservation failures fail the run, require
+positive content on the same app captures, and compose imported pose rotation
+with the delta while retaining translation/scale. The older29-check packet and
+its headless parsing remain historical evidence. The probe joins native names/parents to the actual
 Blender joint palette, supports sparse morphs, and independently decodes the
 Tools/box/hand control geometry. GPU/app/HAS/native-fidelity results remain
-unrun. Its five source files and compact receipts are saved in
-`experiments/source_appearance/derived_probe_candidate_20261113`; private point
-arrays/manifests/bundles are excluded. Fresh exact final-commit preparation and
+unrun. The newer source, CPU receipts and reviewed diff are saved in
+`experiments/source_appearance/derived_probe_candidate_v2_20261113`; private point
+arrays/manifests/bundles are excluded. Fresh schema2 exact final-commit preparation and
 a released graphics lease are required after the Wind checkpoint.
+
+An independent stdlib native-geometry reader now adds bounded evidence for those
+twelve bundles, following 30 synthetic controls: seven complete base position/UV/
+named-weight maps and three complete oriented-triangle maps match. Across 28
+mesh comparisons, 23 base maps and 15 triangle maps match. Nitori topology stays
+unrun because its VTX layout is unsupported by this first reader. Five Tools
+cases retain two unresolved near-coincident native correspondences; raw normal
+differences and 15 native zero normals are recorded separately. No transform was
+fitted, native IDs were not guessed, and flex/shader/jiggle fidelity remains open.
+All original/stage/bundle identities stayed exact. Source, compact results and
+the next Junko/Mima/Kanako representatives are recoverable from
+`experiments/source_appearance/native_geometry_oracle_20261113`.
 
 ### Latest software correction — November 13
 
@@ -573,9 +639,11 @@ application source and the review snapshot were unchanged. See
 [replay contract](owner_review_validation.md). This is runnable-review evidence,
 not artist approval, a clean installation or six new movies.
 
-The wind and Source appearance overlays are **not installed in the normal app**.
-Wind's pending-helper integration and permanent inclusion settings,
-and Source runtime/animated skin/bodygroup switching remain separate work.
+At that six-project review checkpoint, neither overlay was in its frozen review
+app. Main now includes the phase1 Wind integration described above; this older
+review copy remains unchanged. Wind's pending-helper integration and permanent
+inclusion settings, and Source runtime/animated skin/bodygroup switching remain
+separate work.
 Do not claim native jiggle/assembly fidelity or accept the features from CPU
 tests alone. Their plans, exact source and limitations are recoverable from Git.
 

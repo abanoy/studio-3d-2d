@@ -28,6 +28,10 @@ def run(args, timeout=120, **kwargs):
 def main():
     output = ROOT / "output"
     output.mkdir(exist_ok=True)
+    spike = output / "canonical-spikes" / str(time.time_ns())
+    spike.mkdir(parents=True, exist_ok=False)
+    encoder_failures = spike / "failure-cases"
+    encoder_failures.mkdir()
     results = {}
     native_fixture_log = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_native_fixture_plans.py'])
     (output / 'native-fixture-plans-unit.log').write_text(native_fixture_log, encoding='utf-8')
@@ -115,6 +119,8 @@ def main():
              ("physics_recording_unit", "tests/physics_recording_unit.gd", True, "PHYSICS_RECORDING_UNIT "),
              ("physics_recording", "tests/physics_recording_smoke.gd", False, "PHYSICS_RECORDING ")]
     launch_args = {
+        "spikes": ["--", str(spike)],
+        "export_failures": ["--", str(encoder_failures), str(spike)],
         "editor": ["--", "--smoke"],
         "ui": ["--", "--ui-smoke"],
         "audio_editor": ["--", "--audio-smoke"],
@@ -419,22 +425,34 @@ def main():
     (output / 'first-movie-suite.log').write_text(first_log, encoding='utf-8')
     results['first_movie'] = json.loads((output / 'first-movie-verification.json').read_text(encoding='utf-8'))
     print('PASS beginner import-to-movie course, live physics, visual hints, optional Save and actual MP4 completion')
+    verify_media(output, spike, results)
+    (output / "verification.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
+    print(json.dumps(results, indent=2))
+
+
+def verify_media(output, spike, results):
+    """Check this run's fresh spike fixtures and the supplied workflow reports."""
     ffmpeg = os.environ.get("HYBRID_FFMPEG", shutil.which("ffmpeg") or r"C:\Program Files\ffmpeg\bin\ffmpeg.exe")
     ffprobe = str(Path(ffmpeg).with_name("ffprobe.exe" if os.name == "nt" else "ffprobe"))
     # Spike B fixture: 48kHz, exact silence until frame 24, then a 0.2s 1kHz tone.
-    spike = output / "spikes"
+    tone_folder = spike / "tone"
+    tone_folder.mkdir(exist_ok=False)
+    for frame in sorted(spike.glob("frame_*.png")):
+        shutil.copy2(frame, tone_folder / frame.name)
+    assert len(list(tone_folder.glob("frame_*.png"))) == 48
     samples = array.array("h", (int(16000 * math.sin(2 * math.pi * 1000 * n / 48000))
                                if 48000 <= n < 57600 else 0 for n in range(96000)))
     if sys.byteorder != "little":
         samples.byteswap()
-    tone = spike / "known tone.wav"
+    tone = tone_folder / "known tone.wav"
     with wave.open(str(tone), "wb") as wav:
         wav.setparams((1, 2, 48000, 0, "NONE", "not compressed"))
         wav.writeframes(samples.tobytes())
     # Also exercises the application's encoder adapter with audio, independently of editor Stage 2.
-    run(command("tests/audio_spike.gd"))
+    run(command("tests/audio_spike.gd", extra=["--", str(tone_folder)]))
     for name, movie in [("silent", Path(json.loads((output / "editor-smoke/result.json").read_text())["export"]) / "movie.mp4"),
-                        ("tone", spike / "movie.mp4"),
+                        ("spike_silent", spike / "movie.mp4"),
+                        ("tone", tone_folder / "movie.mp4"),
                         ("editor_audio", Path(json.loads((output / "audio-editor/result.json").read_text())["export"]) / "movie.mp4"),
                         ("autokey", Path(json.loads((output / "autokey-result.json").read_text())["movie"])),
                         ("new_scene", Path(json.loads((output / "new-scene-result.json").read_text())["movie"])),
@@ -457,11 +475,12 @@ def main():
         assert video["width"] == 1920 and video["height"] == 1080 and video["r_frame_rate"] == "24/1"
         assert abs(float(metadata["format"]["duration"]) - 2) < 0.01
         if name in ("tone", "editor_audio", "world_workflow", "animation_clips", "visibility", "animated_channels", "limb_ik", "physics_props", "physics_recording"):
-            assert any(s["codec_name"] == "aac" for s in metadata["streams"])
+            assert any(s["codec_name"] == "aac" for s in metadata["streams"]), (name, "expected AAC audio")
         else:
-            assert not any(s["codec_type"] == "audio" for s in metadata["streams"])
+            assert not any(s["codec_type"] == "audio" for s in metadata["streams"]), (name, "expected silent movie")
         (output / f"{name}-ffprobe.json").write_text(json.dumps(metadata, indent=2))
         results[name + "_video"] = {"frames": 48, "fps": "24/1", "duration": metadata["format"]["duration"]}
+        print("PASS encoded movie:", name)
     pose_report = json.loads((output / "pose-smoke/result.json").read_text(encoding="utf-8"))
     for index, movie in enumerate(pose_report["movies"]):
         metadata = json.loads(run([ffprobe, "-v", "error", "-count_frames", "-show_streams", "-show_format", "-of", "json", movie]))
@@ -472,8 +491,8 @@ def main():
         results[f"posed_model_video_{index}"] = {"frames": 48, "fps": "24/1", "duration": metadata["format"]["duration"]}
     results["pose_checks"] = pose_report["checks"]
     results["actual_mmd_tested"] = pose_report["actual_mmd_tested"]
-    decoded = spike / "decoded.wav"
-    run([ffmpeg, "-v", "error", "-y", "-i", str(spike / "movie.mp4"), "-vn", "-c:a", "pcm_s16le", str(decoded)])
+    decoded = tone_folder / "decoded.wav"
+    run([ffmpeg, "-v", "error", "-y", "-i", str(tone_folder / "movie.mp4"), "-vn", "-c:a", "pcm_s16le", str(decoded)])
     with wave.open(str(decoded), "rb") as wav:
         pcm = array.array("h", wav.readframes(wav.getnframes()))
         if sys.byteorder != "little": pcm.byteswap()
@@ -503,8 +522,8 @@ def main():
                                "audio_driver": editor_report["audio_driver"]}
     results["representative_png_sha256"] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                                            for p in [spike / "frame_000001.png", spike / "frame_000025.png", spike / "frame_000048.png"]}
-    (output / "verification.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
-    print(json.dumps(results, indent=2))
+    results["spike_fixture"] = {"folder": str(spike), "tone_folder": str(tone_folder),
+                                "silent_movie": str(spike / "movie.mp4"), "tone_movie": str(tone_folder / "movie.mp4")}
 
 
 if __name__ == "__main__":

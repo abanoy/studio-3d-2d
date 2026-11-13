@@ -1,0 +1,101 @@
+{
+  "retrieved_date": "2026-11-13",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.6-stable/platform/windows/os_windows.cpp",
+      "symbols": {
+        "execute_with_pipe": [
+          1198,
+          1315
+        ],
+        "is_process_running": [
+          1517,
+          1540
+        ],
+        "get_process_exit_code": [
+          1542,
+          1566
+        ],
+        "kill": [
+          1491,
+          1511
+        ]
+      },
+      "claim": "Pipe process handle is retained in process_map; polling caches exact DWORD; no nonzero-to-zero conversion."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.6-stable/platform/windows/os_windows.h",
+      "lines": [
+        157,
+        164
+      ],
+      "claim": "ProcessInfo defaults is_running=true and exit_code=-1."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.6-stable/core/core_bind.cpp",
+      "lines": [
+        [
+          379,
+          385
+        ],
+        [
+          421,
+          427
+        ]
+      ],
+      "claim": "GDScript binding forwards execute_with_pipe/poll/exit to platform OS."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.6-stable/drivers/windows/file_access_windows_pipe.cpp",
+      "lines": [
+        [
+          35,
+          50
+        ],
+        [
+          74,
+          84
+        ],
+        [
+          97,
+          119
+        ]
+      ],
+      "claim": "Pipe object holds IO handles/read state, not process exit status."
+    },
+    {
+      "url": "https://docs.godotengine.org/en/4.6/classes/class_os.html#class-os-method-get-process-exit-code",
+      "claim": "Documented finished-child exit code; -1 for unknown/still running."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess",
+      "claim": "GetExitCodeProcess success BOOL differs from output exit DWORD; STILL_ACTIVE=259."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.1.1/fftools/ffmpeg_opt.c",
+      "lines": [
+        682,
+        705
+      ],
+      "claim": "Existing-output refusal returns AVERROR_EXIT for the exact observed diagnostic."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/n7.1.1/fftools/ffmpeg.c",
+      "lines": [
+        934,
+        942
+      ],
+      "claim": "Main maps AVERROR_EXIT to exit0."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/fftools/ffmpeg_opt.c",
+      "lines": [
+        782,
+        805
+      ],
+      "claim": "Current master returns AVERROR(EEXIST) instead; must distinguish version."
+    }
+  ],
+  "exact_installed_ffmpeg_commit_fetch": "43be8d0728 raw/GitHub/API routes cache-miss or inaccessible; not matched to source",
+  "runtime_status": "UNRUN"
+}

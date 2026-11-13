@@ -1,0 +1,52 @@
+{
+  "format": "has_native_geometry_source_freeze_1",
+  "root_head": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "source": [
+    {
+      "path": "source/compare_cases.py",
+      "bytes": 11936,
+      "sha256": "681a3a4733b10e8f4ea2e7db6896f4235a97529e11abff9352fd57fde59bf9ae"
+    },
+    {
+      "path": "source/compare_mesh.py",
+      "bytes": 5341,
+      "sha256": "44bc95dc9228e24e21b1a980d0207077627e918cb1757bfa108f7f904f722c48"
+    },
+    {
+      "path": "source/diagnose_tools.py",
+      "bytes": 3688,
+      "sha256": "93dad4fadabf66ad4d377a40a8186a6a8511c7d46d2ea98555b4a43d7b9b59c4"
+    },
+    {
+      "path": "source/glb_reference.py",
+      "bytes": 18544,
+      "sha256": "b951b6e760933fbd7f745c50422ad4197467873ea79b45fc2daebaa7e6065ae3"
+    },
+    {
+      "path": "source/inspect_cases.py",
+      "bytes": 7055,
+      "sha256": "722e6ad2d1e9939580f866fde7d0c7e05ded5c28246ef3c6e3883e3f5aff974f"
+    },
+    {
+      "path": "source/native_reader.py",
+      "bytes": 16139,
+      "sha256": "74cf7a210f006faaa8eda07ffe3f51ea105b4025d9fa6277c40f30b253dc92f6"
+    },
+    {
+      "path": "source/test_compare_mesh.py",
+      "bytes": 2385,
+      "sha256": "66f59910e91c4131be9ded5bb01e130c5c0b61b7159ded2a66244aee3dae170b"
+    },
+    {
+      "path": "source/test_native_reader.py",
+      "bytes": 7719,
+      "sha256": "b795fd0772d4a507346c8887e6a221acff59a185f9552a78ccfcfd1cc9cbb756"
+    }
+  ],
+  "results_sha256": "1afb559e7b5e955234ef4b8298bc880501e5f5fdd61791c93a8da617878ee5f6",
+  "actual_comparison_sha256": "61c3478b9396bd822dc5cff07868c3c5e653ec038191c0c34bbc573ae8cb3e74",
+  "review": "Independent read-only source review identified preservation exit-status gap; fixed and negatively tested; final re-review found no new concrete blocker in this bounded scope.",
+  "source_is_frozen_after_final_actual_cpu_comparison": true,
+  "native_runtime_gpu_main_git_writes": false,
+  "private_payloads_included": false
+}
