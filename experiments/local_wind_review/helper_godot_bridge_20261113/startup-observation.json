@@ -1,0 +1,10 @@
+{
+  "format": "has_wind_bridge_startup_observation_1",
+  "scope": "Initial direct headless check-only invocation, before retained observer harness",
+  "observed_error": "Could not create directory: user://logs",
+  "observed_engine_crash": "CrashHandlerException: Program crashed with signal 11",
+  "fixture_or_controller_executed": false,
+  "native_exit_not_established_by_direct_shell_return": true,
+  "correction": "Use explicit absolute owned --log-file and retained Popen stdout/stderr plus script-error checks; do not treat a shell/header or exit0 alone as compile success",
+  "main_project_or_gpu_launched": false
+}

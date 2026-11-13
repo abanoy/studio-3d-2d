@@ -1,0 +1,113 @@
+{
+  "format": "has_sfm_derived_v2_actual_attempts_1",
+  "date": "2026-11-13",
+  "source_commit": "e9cc7cfb20266b4863bde134bcb30457547a343d",
+  "accepted_actual_runs": 0,
+  "attempts": [
+    {
+      "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794555713647050600-5718442689ac488f931dce81ca1c3101",
+      "status": "FAILED_RETAIN_ALL_EVIDENCE",
+      "final_preservation_passed": true,
+      "verification_sha256": "c28c22014c16da62feaf8953841794523a278aa4f74d8f88a3822e3ddfd83cc7",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_59bc337931d2461aa593b52d7765435e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 2,
+        "child_pid": 2716,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 180.829
+      },
+      "receipt_sha256": "4bb7309c0dcd84f4957f612531796b8900a28ca103a3724f30b6bb9e09a32cb4"
+    },
+    {
+      "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba",
+      "status": "FAILED_RETAIN_ALL_EVIDENCE",
+      "final_preservation_passed": true,
+      "verification_sha256": "7f2cb4a9144ee3b9b46fca01a33f18aee406b6b2c1dd0f68eb4dab20a325b154",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0682aef2e37245a2ad17c4593e63cd72",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 26176,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.583
+      },
+      "receipt_sha256": "5db099dbf240258e4d22e0965605ac73bd381bfe2227f56b194373ed5efc6be4"
+    }
+  ],
+  "first_failure": "Root passed a relative manifest argument; source-copy engine cwd could not find it, so JSONloadfailed beforeimports; watchdogexit2. Newattempt used the printed absolute path.",
+  "second_writer": {
+    "checks": 311,
+    "failures": 1,
+    "failure_labels": [
+      "FAIL nitori-skin-0 writer same captured image contains significant scene content"
+    ],
+    "raw_captures": [
+      "nitori-skin-0-rest",
+      "nitori-skin-1-rest",
+      "nitori-skin-2-rest",
+      "keiki-tools-0.0",
+      "keiki-tools-0.5",
+      "keiki-tools-1.0",
+      "keiki-000-pose",
+      "nitori-skin-0-pose"
+    ],
+    "raw_geometry_comparisons": 24,
+    "max_derived_reference_point_error": 6.003679686727992e-07,
+    "unchanged_tolerance": 0.0002,
+    "app_checks": 88,
+    "app_failures": 1,
+    "completed_app_cases": [
+      "keiki-000"
+    ],
+    "fresh_reader": "UNRUN",
+    "new_movies": "UNRUN",
+    "exact_verbose_packed_notice_count": 406,
+    "other_engine_errors": [],
+    "nitori_three_skin_capture_hashes": {
+      "nitori-skin-0-rest": "4e7d9987ddb728b61e12ce3457a1efab87e0834dd48bd81008c9afc25d4569ab",
+      "nitori-skin-1-rest": "4e7d9987ddb728b61e12ce3457a1efab87e0834dd48bd81008c9afc25d4569ab",
+      "nitori-skin-2-rest": "4e7d9987ddb728b61e12ce3457a1efab87e0834dd48bd81008c9afc25d4569ab"
+    },
+    "keiki_tools_capture_hashes": {
+      "keiki-tools-0.0": "002b647d3faebdecff7f28af9c20f2b8cbfb392b69f13fa1c6789e5bb8358ec3",
+      "keiki-tools-0.5": "98b519346e1c3a8e9e6b8cc6898ad437830841fa9ed1984f905d25dbf2db80db",
+      "keiki-tools-1.0": "27a8d806dba623614aeb6d12fc41e8576ea4467b52789ba3845aeb3773d40b28"
+    }
+  },
+  "diagnosis": {
+    "app_writer_background_rgba": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "default_unshaded_rgb_significant_samples": 9,
+    "same_raw_studio_capture_rgb_samples": 732,
+    "sample_step": 4,
+    "contrast_threshold": 0.02,
+    "minimum_exclusive": 100,
+    "reason": "Blackgloves plus retainedopaqueglowagainstblackunshadeddefault; plannedv3choosesordinaryStudio light beforebaseline, no visibilitypredicatechange.",
+    "layout": "All12actualGLBs have1distinctvertexattributeaccessor perbasevertexview; absentstride permitted byKhronos. V3 adds completeboundedrole/sparse/layoutproof ratherthanbroadwarningwaiver.",
+    "sources": [
+      "https://github.com/godotengine/godot/blob/4.6-stable/modules/gltf/structures/gltf_accessor.cpp#L641",
+      "https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/Specification.adoc#buffers-and-buffer-views"
+    ]
+  },
+  "native_fidelity": "Notcertified: genuineNitorihairbumpmissing; nativeadditive/Phong/envmap/warp/shader/jiggle outsideprobe. Derivedgeometrymatch isnotnativefidelity.",
+  "main_source_modified": false,
+  "private_art_uploaded": false,
+  "next": "Reviewv3CPU/source;freshprepare/currentexactHEAD andserialactualGPU;retainbothfailuresandallrawlogs."
+}

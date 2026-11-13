@@ -531,6 +531,16 @@ Godot Node/pipe/native ownership and model import are still absent. Source and
 the concrete Node bridge plan are in
 `experiments/local_wind_review/helper_draft_controller_20261113`.
 
+An isolated real Godot Node bridge now passes12headless Windows tests, including
+Node removal, normal/abrupt host exit, controller death and blocked-service
+watchdog cleanup. Root checked30exact process/closed-observer records. The
+exclusive mapped-process release drops two Godot native handles; a repeated
+release drops none. This is the pinned Windows backend's retained-handle branch,
+with a once-only ownership flag, not a generic PID lookup. Initial parse/name and
+expected-failure-wait harness failures remain. Production host bootstrap,
+larger-message handling, hidden model bindings and helper-window simulation
+remain unfinished. Source: `experiments/local_wind_review/helper_godot_bridge_20261113`.
+
 A bounded SFM derived render/adoption probe has a newer v2 source packet with
 39CPU controls and independent source review. Four harness corrections pin the
 pack/unpack Python runtime, make final preservation failures fail the run, require
@@ -543,6 +553,38 @@ unrun. The newer source, CPU receipts and reviewed diff are saved in
 `experiments/source_appearance/derived_probe_candidate_v2_20261113`; private point
 arrays/manifests/bundles are excluded. Fresh schema2 exact final-commit preparation and
 a released graphics lease are required after the Wind checkpoint.
+
+**Later actual v2 outcome:** the first launch used a relative manifest path and
+stopped before import; the corrected absolute-path attempt ran311writer checks
+with one failure. All eight raw captures and24derived point comparisons match
+(maximum6.004e-7, unchanged2e-4bound), but Nitori's black gloves/opaque glow in
+the default black unshaded project produced only9significant samples. Keiki's
+writer passed; the fresh reader remained unrun. Three Nitori skins rendered
+alike under that retained glow limitation. Neither attempt is accepted.
+
+V3 now passes57CPU controls and independent review. It chooses normal Studio
+light before the import baseline, retains the exact visibility/replay predicates,
+normalizes manifest paths, and binds/rechecks a standard-based layout proof.
+Only one exact Godot `print_verbose` packed-layout notice can then be classified;
+all406old lines remain recorded, and every other warning/error still fails.
+All12actual layouts pass the bounded read-only proof. V3 graphics are still
+unrun. Source: `experiments/source_appearance/derived_probe_candidate_v3_20261113`;
+[actual failed attempts](benchmarks/sfm_derived_v2_actual_attempts_2026-11-13.json).
+
+### Separate current review — November 13
+
+`output/owner-review-current-20261113` now has exact committed source e9cc7cf,
+its own preference/recovery profile, six checksum/CRC-verified copied projects,
+launchers and the [updated guide](owner_review_package_2026-11-13.md). Normal
+Home/Simple startup and all six ordinary packed replays pass129checks with clean
+private desktop receipts and exact source/package/harness preservation. It adds
+main phase1 wind review and the encoder correction to the older review's runtime.
+The first checker preparation omitted the expected fresh package metadata and
+stopped before GPU; that failure and staging receipt remain, followed by a fresh
+full package readback and successful new replay. Earlier review/recovery and the
+installed Studio remain unchanged. No owner participation prompt was issued.
+These are runnable-review checks, not artist, learner, device, clean-install or
+six new movie observations. [Evidence](benchmarks/owner_review_current_six_2026-11-13.json).
 
 An independent stdlib native-geometry reader now adds bounded evidence for those
 twelve bundles, following 30 synthetic controls: seven complete base position/UV/

@@ -1,0 +1,296 @@
+{
+  "format": "has_sfm_derived_failed_attempt_compact_1",
+  "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba",
+  "full_engine_log_sha256": "7046dd95b355a20255880ba90624caccd5610c83a28d863029342e80114b3c51",
+  "all_raw_local_evidence_retained": true,
+  "warning_lines": {
+    "WARNING: glTF import: Buffer view byte stride should be declared for vertex attributes. Assuming packed data and reading anyway.": 406
+  },
+  "shader_or_native_fidelity_claimed": false,
+  "result_sha256": "88e02a8ea88f27b32ac23df646f6c6974ca4370821a46d64689b51adf8686e4e",
+  "checks": 311,
+  "failures": 1,
+  "raw_captures": [
+    "nitori-skin-0-rest",
+    "nitori-skin-1-rest",
+    "nitori-skin-2-rest",
+    "keiki-tools-0.0",
+    "keiki-tools-0.5",
+    "keiki-tools-1.0",
+    "keiki-000-pose",
+    "nitori-skin-0-pose"
+  ],
+  "geometry": [
+    {
+      "case": "nitori-skin-0-rest",
+      "point_tolerance_world_units": 0.0002,
+      "primitives": [
+        {
+          "engine_points_sha256": "ee6e06e9aae1c1de75d631d7b1c231ad6661be81a8022b2f45c5301e8208c595",
+          "engine_used_vertex_records": 3339,
+          "material": "models/touhou/tamo/Nitori edit/Gloves",
+          "reference_used_vertex_records": 3339,
+          "source_name": "gloves.dmx",
+          "source_node": 66.0,
+          "symmetric_max_nearest_error": 3.039309603991569e-07
+        },
+        {
+          "engine_points_sha256": "ee6e06e9aae1c1de75d631d7b1c231ad6661be81a8022b2f45c5301e8208c595",
+          "engine_used_vertex_records": 3339,
+          "material": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "reference_used_vertex_records": 3339,
+          "source_name": "gloves.dmx",
+          "source_node": 66.0,
+          "symmetric_max_nearest_error": 3.039309603991569e-07
+        }
+      ]
+    },
+    {
+      "case": "nitori-skin-1-rest",
+      "point_tolerance_world_units": 0.0002,
+      "primitives": [
+        {
+          "engine_points_sha256": "ee6e06e9aae1c1de75d631d7b1c231ad6661be81a8022b2f45c5301e8208c595",
+          "engine_used_vertex_records": 3339,
+          "material": "Glovesg",
+          "reference_used_vertex_records": 3339,
+          "source_name": "gloves.dmx",
+          "source_node": 66.0,
+          "symmetric_max_nearest_error": 3.039309603991569e-07
+        },
+        {
+          "engine_points_sha256": "ee6e06e9aae1c1de75d631d7b1c231ad6661be81a8022b2f45c5301e8208c595",
+          "engine_used_vertex_records": 3339,
+          "material": "Gloves glowg",
+          "reference_used_vertex_records": 3339,
+          "source_name": "gloves.dmx",
+          "source_node": 66.0,
+          "symmetric_max_nearest_error": 3.039309603991569e-07
+        }
+      ]
+    },
+    {
+      "case": "nitori-skin-2-rest",
+      "point_tolerance_world_units": 0.0002,
+      "primitives": [
+        {
+          "engine_points_sha256": "ee6e06e9aae1c1de75d631d7b1c231ad6661be81a8022b2f45c5301e8208c595",
+          "engine_used_vertex_records": 3339,
+          "material": "Glovesw",
+          "reference_used_vertex_records": 3339,
+          "source_name": "gloves.dmx",
+          "source_node": 66.0,
+          "symmetric_max_nearest_error": 3.039309603991569e-07
+        },
+        {
+          "engine_points_sha256": "ee6e06e9aae1c1de75d631d7b1c231ad6661be81a8022b2f45c5301e8208c595",
+          "engine_used_vertex_records": 3339,
+          "material": "Gloves gloww",
+          "reference_used_vertex_records": 3339,
+          "source_name": "gloves.dmx",
+          "source_node": 66.0,
+          "symmetric_max_nearest_error": 3.039309603991569e-07
+        }
+      ]
+    },
+    {
+      "case": "keiki-tools-0.0",
+      "point_tolerance_world_units": 0.0002,
+      "primitives": [
+        {
+          "engine_points_sha256": "3435636ace1ac6c762204d6d9b665e44aaa213154603450ae8a377ec73c454b9",
+          "engine_used_vertex_records": 38,
+          "material": "box",
+          "reference_used_vertex_records": 38,
+          "source_name": "box.smd",
+          "source_node": 31.0,
+          "symmetric_max_nearest_error": 6.006850128414953e-08
+        },
+        {
+          "engine_points_sha256": "7e278eb95fd0f774f6eed7677449e1e9cae8a5c27d0d3f930824707b2d13b282",
+          "engine_used_vertex_records": 1570,
+          "material": "blush",
+          "reference_used_vertex_records": 1570,
+          "source_name": "flame.smd",
+          "source_node": 32.0,
+          "symmetric_max_nearest_error": 6.705522537231445e-08
+        },
+        {
+          "engine_points_sha256": "0c2e9d0730a65729f387e2c1190aa57540a5cfb258933719790b779131118418",
+          "engine_used_vertex_records": 8,
+          "material": "excl mark",
+          "reference_used_vertex_records": 8,
+          "source_name": "flame.smd",
+          "source_node": 32.0,
+          "symmetric_max_nearest_error": 0.0
+        },
+        {
+          "engine_points_sha256": "bcc80575e0b5626583b63a4d351197c7799e3c135637f7f7ec1b3b458ebd2414",
+          "engine_used_vertex_records": 1180,
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "reference_used_vertex_records": 1180,
+          "source_name": "tools.dmx",
+          "source_node": 33.0,
+          "symmetric_max_nearest_error": 6.669466756648035e-08
+        }
+      ]
+    },
+    {
+      "case": "keiki-tools-0.5",
+      "point_tolerance_world_units": 0.0002,
+      "primitives": [
+        {
+          "engine_points_sha256": "3435636ace1ac6c762204d6d9b665e44aaa213154603450ae8a377ec73c454b9",
+          "engine_used_vertex_records": 38,
+          "material": "box",
+          "reference_used_vertex_records": 38,
+          "source_name": "box.smd",
+          "source_node": 31.0,
+          "symmetric_max_nearest_error": 6.006850128414953e-08
+        },
+        {
+          "engine_points_sha256": "7e278eb95fd0f774f6eed7677449e1e9cae8a5c27d0d3f930824707b2d13b282",
+          "engine_used_vertex_records": 1570,
+          "material": "blush",
+          "reference_used_vertex_records": 1570,
+          "source_name": "flame.smd",
+          "source_node": 32.0,
+          "symmetric_max_nearest_error": 6.705522537231445e-08
+        },
+        {
+          "engine_points_sha256": "0c2e9d0730a65729f387e2c1190aa57540a5cfb258933719790b779131118418",
+          "engine_used_vertex_records": 8,
+          "material": "excl mark",
+          "reference_used_vertex_records": 8,
+          "source_name": "flame.smd",
+          "source_node": 32.0,
+          "symmetric_max_nearest_error": 0.0
+        },
+        {
+          "engine_points_sha256": "01388fc561e06ef46fdf977926b59c8c85c92b1805aa5ab62a20febd37822e9e",
+          "engine_used_vertex_records": 1180,
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "reference_used_vertex_records": 1180,
+          "source_name": "tools.dmx",
+          "source_node": 33.0,
+          "symmetric_max_nearest_error": 1.2341607202870364e-07
+        }
+      ]
+    },
+    {
+      "case": "keiki-tools-1.0",
+      "point_tolerance_world_units": 0.0002,
+      "primitives": [
+        {
+          "engine_points_sha256": "3435636ace1ac6c762204d6d9b665e44aaa213154603450ae8a377ec73c454b9",
+          "engine_used_vertex_records": 38,
+          "material": "box",
+          "reference_used_vertex_records": 38,
+          "source_name": "box.smd",
+          "source_node": 31.0,
+          "symmetric_max_nearest_error": 6.006850128414953e-08
+        },
+        {
+          "engine_points_sha256": "7e278eb95fd0f774f6eed7677449e1e9cae8a5c27d0d3f930824707b2d13b282",
+          "engine_used_vertex_records": 1570,
+          "material": "blush",
+          "reference_used_vertex_records": 1570,
+          "source_name": "flame.smd",
+          "source_node": 32.0,
+          "symmetric_max_nearest_error": 6.705522537231445e-08
+        },
+        {
+          "engine_points_sha256": "0c2e9d0730a65729f387e2c1190aa57540a5cfb258933719790b779131118418",
+          "engine_used_vertex_records": 8,
+          "material": "excl mark",
+          "reference_used_vertex_records": 8,
+          "source_name": "flame.smd",
+          "source_node": 32.0,
+          "symmetric_max_nearest_error": 0.0
+        },
+        {
+          "engine_points_sha256": "5b783d104e7576dce1d82a1b8ad30e20a808e5b55ab2ee0278ad84d29fe68d88",
+          "engine_used_vertex_records": 1180,
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "reference_used_vertex_records": 1180,
+          "source_name": "tools.dmx",
+          "source_node": 33.0,
+          "symmetric_max_nearest_error": 7.149704117637157e-08
+        }
+      ]
+    },
+    {
+      "case": "keiki-000-pose",
+      "point_tolerance_world_units": 0.0002,
+      "primitives": [
+        {
+          "engine_points_sha256": "9b058867b16e03a47ea4a72a2ba06089c716c0836c15cf03a82771e0043ec620",
+          "engine_used_vertex_records": 38,
+          "material": "box",
+          "reference_used_vertex_records": 38,
+          "source_name": "box.smd",
+          "source_node": 31.0,
+          "symmetric_max_nearest_error": 6.664001972467304e-08
+        },
+        {
+          "engine_points_sha256": "7e278eb95fd0f774f6eed7677449e1e9cae8a5c27d0d3f930824707b2d13b282",
+          "engine_used_vertex_records": 1570,
+          "material": "blush",
+          "reference_used_vertex_records": 1570,
+          "source_name": "flame.smd",
+          "source_node": 32.0,
+          "symmetric_max_nearest_error": 6.705522537231445e-08
+        },
+        {
+          "engine_points_sha256": "0c2e9d0730a65729f387e2c1190aa57540a5cfb258933719790b779131118418",
+          "engine_used_vertex_records": 8,
+          "material": "excl mark",
+          "reference_used_vertex_records": 8,
+          "source_name": "flame.smd",
+          "source_node": 32.0,
+          "symmetric_max_nearest_error": 0.0
+        },
+        {
+          "engine_points_sha256": "bcc80575e0b5626583b63a4d351197c7799e3c135637f7f7ec1b3b458ebd2414",
+          "engine_used_vertex_records": 1180,
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "reference_used_vertex_records": 1180,
+          "source_name": "tools.dmx",
+          "source_node": 33.0,
+          "symmetric_max_nearest_error": 6.669466756648035e-08
+        }
+      ]
+    },
+    {
+      "case": "nitori-skin-0-pose",
+      "point_tolerance_world_units": 0.0002,
+      "primitives": [
+        {
+          "engine_points_sha256": "f6a504e8f3b6735b9855d8e5bcbae4bb48e7224e1b63ced06b3e0a7d490a0c34",
+          "engine_used_vertex_records": 3339,
+          "material": "models/touhou/tamo/Nitori edit/Gloves",
+          "reference_used_vertex_records": 3339,
+          "source_name": "gloves.dmx",
+          "source_node": 66.0,
+          "symmetric_max_nearest_error": 6.003679686727992e-07
+        },
+        {
+          "engine_points_sha256": "f6a504e8f3b6735b9855d8e5bcbae4bb48e7224e1b63ced06b3e0a7d490a0c34",
+          "engine_used_vertex_records": 3339,
+          "material": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "reference_used_vertex_records": 3339,
+          "source_name": "gloves.dmx",
+          "source_node": 66.0,
+          "symmetric_max_nearest_error": 6.003679686727992e-07
+        }
+      ]
+    }
+  ],
+  "app_summary": {
+    "checks": 88,
+    "failures": 1,
+    "completed_cases": [
+      "keiki-000"
+    ]
+  }
+}

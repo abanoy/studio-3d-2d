@@ -1,0 +1,62 @@
+{
+  "format": "has_wind_godot_bridge_cpu_checkpoint_1",
+  "date": "2026-11-13",
+  "context_commit": "e9cc7cfb20266b4863bde134bcb30457547a343d",
+  "main_ported": false,
+  "actual_isolated_headless_godot": true,
+  "cpu_tests": 12,
+  "failures": 0,
+  "errors": 0,
+  "retained_processes": 30,
+  "root_record_checks": "All30observerhandlesclosed/no genericPIDtermination; allreportedobservedPID+creation identities matchowner.",
+  "mapped_release_handle_counts": {
+    "before": 266,
+    "after": 264,
+    "repeated": 264,
+    "delta": 2,
+    "repeated_delta": 0,
+    "first": {
+      "attempted": true,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    },
+    "second": {
+      "attempted": false,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    }
+  },
+  "index": {
+    "path": "experiments/local_wind_review/helper_godot_bridge_20261113/FILE_INDEX.json",
+    "sha256": "f49c8c7a45e582e64eaffc60cc2ba2b75174ec6556b3830b6e099e2891eab108"
+  },
+  "ownership_invariant": [
+    "Only own successful execute_with_pipe return reserves mapentry",
+    "Pinned exactWindowsGodotbackend; exclusive Node owner",
+    "Reservation consumed before exactlyoneOS.kill, cacheexitbefore, neverretryevenFAILED",
+    "WindowsretainedhandlepreventsPIDreuse; knownmapbranchusesretainedhandle, no genericPIDfallback",
+    "IndependentwatchdoghandlesabruptGodotdeath and blockedcontroller service; ownJob closes on ownprocess exit"
+  ],
+  "production_bootstrap_implemented": false,
+  "limits": [
+    "External observer-provided exacthostconfig is fixture-only; futuretrustedPythonready hostimagehashbootstrap remainsdesign",
+    "2048byte one-outstanding command cap; universal stalled-peer nonblocking/largeframe transport notproven",
+    "No actual hidden modelimport/binding snapshots/helperUI/physics/visibility/canvas/Apply/Undo acceptance",
+    "Ownershipproof depends on exactWindowsprocess-map source and exclusive single-use entry; no expansion to arbitraryPIDs/backends",
+    "Watchdogtrustedruntimeboundary starts after validated parentlease/transport; not an adversarial filesystem or interpreter isolation guarantee"
+  ],
+  "preserved_failures": [
+    "startup-observation.json",
+    "cpu-tests-fixture-parse-failure.json",
+    "cpu-tests-fixture-parse-failure.log",
+    "retained-check-only-native-name-failure.log",
+    "cpu-tests-expected-failure-wait.json",
+    "cpu-tests-expected-failure-wait.log"
+  ],
+  "failure_corrections": "Corrected fixture lambda syntax and nativeNode ready signal name collision; a direct shell return was not compileproof. Corrected harness wait for alreadyexpectednegative bridgefailure; no resource/admission predicates relaxed.",
+  "gpu_or_model_conversion_started": false,
+  "owner_runtime_or_main_modified": false,
+  "next": "Review and test production hostbootstrap + mainappCPUfixture integration under released source lease, before hidden model import/binding and isolated preview simulation"
+}

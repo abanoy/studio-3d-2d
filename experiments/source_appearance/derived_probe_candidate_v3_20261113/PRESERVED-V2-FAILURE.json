@@ -1,0 +1,33 @@
+{
+  "status": "FAILED_V2_WRITER_NOT_ACCEPTED",
+  "run_folder_local_only": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba",
+  "checks": 311,
+  "failures": 1,
+  "app_cases": [
+    "keiki-000"
+  ],
+  "failed_predicates": [
+    "FAIL nitori-skin-0 writer same captured image contains significant scene content"
+  ],
+  "raw_capture_cases": [
+    "nitori-skin-0-rest",
+    "nitori-skin-1-rest",
+    "nitori-skin-2-rest",
+    "keiki-tools-0.0",
+    "keiki-tools-0.5",
+    "keiki-tools-1.0",
+    "keiki-000-pose",
+    "nitori-skin-0-pose"
+  ],
+  "maximum_raw_world_error": 6.003679686727992e-07,
+  "old_raw_tolerance_unchanged": 0.0002,
+  "retrospective_exact_verbose_count": 406,
+  "retrospective_classification_does_not_accept_old_run": true,
+  "root_reported_same_image_nitori_significant_samples": 9,
+  "required_same_image_significant_samples_exclusive": 100,
+  "threshold_unchanged": 0.02,
+  "default_app_context": "New unshaded black background; as-supplied gloves-only component and coincident opaque black glow",
+  "relative_path_attempt_local_only": "output/sfm-static-appearance-probe-20261113-v2/runs/1794555713647050600-5718442689ac488f931dce81ca1c3101",
+  "v3_prepare_parse_gpu_app": "UNRUN",
+  "native_fidelity": "UNTESTED"
+}
