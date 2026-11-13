@@ -1,5 +1,6 @@
 """Isolated Blender worker. SourceIO decodes resources; this adapter emits standard PBR/GLB."""
 import hashlib
+import source_appearance
 import importlib.util
 import json
 import os
@@ -203,19 +204,23 @@ def model_options(scale):
     return options
 
 
-def load_model(path, buffer, scale, parent=None, skin=0):
+def load_model(path, buffer, scale, parent=None, skin=0, appearance=None):
     container = import_model(TinyPath(str(path)), buffer, cm, model_options(scale), SteamAppId.GARRYS_MOD)
     put_into_collections(container, Path(str(path)).stem)
     from SourceIO.blender_bindings.shared.skins import set_model_skin
-    set_model_skin(container, skin)
-    active = set()
-    for variants in container.bodygroups.values():
-        if variants and variants[0] is not None:
-            active.add(variants[0])
-    for obj in container.objects:
-        if container.bodygroups and obj not in active:
-            obj.hide_render = True
-            obj.hide_set(True)
+    if appearance is not None:
+        container.has_selected_appearance = source_appearance.apply(container, appearance, set_model_skin)
+    else:
+        # Preserve the original default and BSP-prop path byte-for-byte in meaning.
+        set_model_skin(container, skin)
+        active = set()
+        for variants in container.bodygroups.values():
+            if variants and variants[0] is not None:
+                active.add(variants[0])
+        for obj in container.objects:
+            if container.bodygroups and obj not in active:
+                obj.hide_render = True
+                obj.hide_set(True)
     if parent:
         if container.armature:
             container.armature.parent = parent
@@ -230,7 +235,10 @@ native_parameters = {}
 props_loaded = 0
 suggested_view = None
 if source.suffix.lower() == ".mdl":
-    container = load_model(source, FileBuffer(TinyPath(str(source))), request["scale"])
+    appearance = request.get("appearance")
+    if appearance is not None:
+        appearance = source_appearance.bind(appearance, request["sha256"], source)
+    container = load_model(source, FileBuffer(TinyPath(str(source))), request["scale"], appearance=appearance)
     mdl = getattr(container, "mdl", None)
     native_physics = CaseResolver(source.parent).find(source.with_suffix(".phy").name)
     if native_physics:
@@ -245,9 +253,14 @@ if source.suffix.lower() == ".mdl":
         "flex_controllers": [asdict(c) for c in mdl.flex_controllers if is_dataclass(c)] if mdl else [],
         "selected_skin": 0, "selected_bodygroup_indices": {k: 0 for k in container.bodygroups},
         "eyeballs": [asdict(eye) for part in mdl.body_parts for model in part.models for eye in model.eyeballs] if mdl else []}
+    if appearance is not None:
+        native_parameters.update(container.has_selected_appearance)
+        native_parameters["appearance_request"] = appearance
     if native_physics:
         native_parameters["source_physics"]={"file":native_physics.name,"sha256":physics_sha,"bytes":native_physics.stat().st_size,"applied":False}
 else:
+    if request.get("appearance") is not None:
+        raise ValueError("Appearance choices apply only to one MDL model, not a BSP map")
     from SourceIO.blender_bindings.source1.bsp.import_bsp import import_bsp
     from SourceIO.blender_bindings.source1.bsp.entities.abstract_entity_handlers import AbstractEntityHandler
     original_brush_loader = AbstractEntityHandler._load_brush_model
@@ -437,7 +450,7 @@ report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_
           "suggested_view": suggested_view,
           "materials": material_report, "warnings": warnings,
           "limits": ["PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
-                     "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
+                     "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching" if request.get("appearance") is not None else "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
                      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"],
           "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images) + lightmap_report["atlases"],
                      "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE"), "static_lights": len(map_lights)}}

@@ -1,0 +1,46 @@
+{
+  "format": "has_source_static_choices_main_progress_1",
+  "date": "2026-11-13",
+  "base_commit": "489215fcbfb69acde05d4a1341cc872cc69a9132",
+  "state": "working main; native integration in progress",
+  "foundation": {
+    "checks": 167,
+    "reports": {
+      "catalogue": 53,
+      "appearance_io": 29,
+      "headless_controls": 65,
+      "actual_private_app": 20
+    },
+    "verification": "output/source-choice-foundation/1794611267662690800/verification.json",
+    "passed": true,
+    "native_conversion": false
+  },
+  "new_native_cases": "Fresh Nitori/Keiki plus Junko/Mima/Kanako staging and driver being prepared; no pass yet",
+  "source_sha256": {
+    "src/source_import.gd": "4cacfc7e86adad5e8e78872439500f0e2a922a6e022dc48d268c5b4cd3686a47",
+    "src/source_choice_dialog.gd": "84bd816615fe0ac10c857606f21db89040544e0b52dd2cdda1089f177e9dda2d",
+    "tools/source_appearance.py": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+    "tools/source_mdl_choices.py": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+    "tools/source_choice_io.py": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+    "tools/prepare_source.py": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+    "tools/blender_source_bridge.py": "dfef09700405e96e289b92bc2b5e98d897f9fcdc86fce54be7f649a7b161372b"
+  },
+  "process_primary_sources": [
+    "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/platform/windows/os_windows.cpp",
+    "https://docs.godotengine.org/en/4.6/classes/class_os.html#class-os-method-execute-with-pipe"
+  ],
+  "limits": [
+    "Static new-import appearance only; existing objects are not reconverted",
+    "Optional metadata process ownership currently bound to pinned Windows4.6 engine; default import stays available elsewhere",
+    "No Source native jiggle/flex/shader/assembly fidelity claim",
+    "Previous12071fe full pass predates this working-source feature port"
+  ],
+  "formal_counts_unchanged": {
+    "acceptance": 55,
+    "acceptance_total": 62,
+    "implementation": 52,
+    "implementation_total": 54
+  },
+  "foundation_packet": "experiments/source_appearance/main_foundation_20261113",
+  "foundation_packet_index_sha256": "408fb5dd176e323a2e18a4b9d4731c70d1c6b778bfd73878414a27a60d90aab6"
+}

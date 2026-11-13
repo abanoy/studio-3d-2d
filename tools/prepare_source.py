@@ -11,6 +11,7 @@ import time
 import lzma
 
 from asset_audit import digest, inspect
+import source_appearance
 from source_archive import stage_archive, resource_path
 from source_paths import DEFAULT_GMOD, DEFAULT_WORKSHOP
 from source_installation import conversion_context
@@ -20,6 +21,14 @@ from source_content import vpk_index, vpk_read, mount_paths
 PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
 ROOT = Path(__file__).resolve().parent.parent
 status_path = None
+metadata_mode = False
+
+
+def write_status(payload):
+    # Metadata inspection must never overwrite an owner input or an earlier
+    # result, including error paths. Default conversion status semantics stay.
+    with status_path.open("x" if metadata_mode else "w", encoding="utf-8") as stream:
+        json.dump(payload, stream)
 
 
 def conversion_failure(log_path, returncode):
@@ -39,11 +48,13 @@ def conversion_failure(log_path, returncode):
 
 
 def main():
-    global status_path
+    global status_path, metadata_mode
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("source", type=Path)
     p.add_argument("--output", type=Path)
     p.add_argument("--catalog", action="store_true", help="List importable archive members as JSON without extraction")
+    p.add_argument("--appearance", type=Path, help="Source-bound static MDL appearance request")
+    p.add_argument("--appearance-catalogue", action="store_true", help="Read bounded MDL49 appearance metadata only; no extraction or conversion")
     p.add_argument("--status-file", type=Path)
     p.add_argument("--cancel-file", type=Path)
     p.add_argument("--member", help="Explicit models/...mdl or maps/...bsp within an archive")
@@ -57,7 +68,20 @@ def main():
     p.add_argument("--scale", type=float, default=0.01905)
     args = p.parse_args()
     status_path = args.status_file
+    metadata_mode = args.appearance_catalogue
     source = args.source.resolve(strict=True)
+    if args.appearance_catalogue:
+        if args.catalog or args.appearance:
+            raise ValueError("Choose one metadata mode without an appearance request")
+        from source_choice_io import inspect_choices
+        result = inspect_choices(source, args.member or "")
+        if status_path:
+            if status_path.exists():
+                raise ValueError("Metadata result already exists")
+            write_status({"ok": True, "catalogue": result})
+        else:
+            print(json.dumps(result))
+        return 0
     if args.catalog:
         if source.suffix.lower() == ".vpk":
             entries = vpk_index(source)
@@ -94,6 +118,7 @@ def main():
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     sha = digest(source)
+    appearance = source_appearance.load(args.appearance, sha) if args.appearance else None
     staging = None
     case_resolved_sidecars = {}
     if source.suffix.lower() == ".vpk":
@@ -138,6 +163,8 @@ def main():
         mounts = [native, content_root]
     else:
         raise ValueError("Choose MDL, BSP, GMA or a legacy LZMA .bin; VMF is not supported")
+    if appearance is not None:
+        appearance = source_appearance.bind(appearance, sha, asset)
     for provider in discovered["providers"]:
         if provider["path"] in settings.get("overrides", {}): provider["enabled"] = settings["overrides"][provider["path"]] and provider["present"]
     if args.mount_plan:
@@ -158,6 +185,8 @@ def main():
                "workshop_root": str(args.workshop.resolve()),
                "source_member": args.member, "mount_discovery": discovered,
                "scale": args.scale, "mounts": list(dict.fromkeys(map(str, mounts)))}
+    if appearance is not None:
+        request["appearance"] = appearance
     req = output / "conversion-request.json"
     req.write_text(json.dumps(request, indent=2), encoding="utf-8")
     env = os.environ.copy()
@@ -190,7 +219,7 @@ def main():
     print("Prepared:", output / "scene.glb", flush=True)
     print("Retain this entire bundle. Load scene.glb with Add model (MDL) or Scene (BSP).")
     if status_path:
-        status_path.write_text(json.dumps({"ok": True, "glb": str(output / "scene.glb")}), encoding="utf-8")
+        write_status({"ok": True, "glb": str(output / "scene.glb")})
     return 0
 
 
@@ -199,6 +228,9 @@ if __name__ == "__main__":
         raise SystemExit(main())
     except (OSError, ValueError, RuntimeError, lzma.LZMAError, subprocess.SubprocessError) as error:
         if status_path:
-            status_path.write_text(json.dumps({"ok": False, "error": str(error)}), encoding="utf-8")
+            try:
+                write_status({"ok": False, "error": str(error)})
+            except OSError as status_error:
+                print("Cannot write preparation result: " + str(status_error), file=sys.stderr)
         print(error, file=sys.stderr)
         raise SystemExit(1)

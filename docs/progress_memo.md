@@ -14357,3 +14357,28 @@ lighting and Discovery plans remain separate. See the exact seven stable IDs in
 docs/benchmarks/windows_external_boundary_2026-11-13.json. Preserve protected
 private review/recovery and the new external review; do not remove the checkout
 wholesale or rerun unchanged software solely because old prose said next.
+
+
+## 2026-11-13 — Owner directed independent SFM feature implementation
+
+Owner explicitly said to continue the other SFM models and extra features while
+busy, without allowing the remaining manual checks to stop that work. The earlier
+external acceptance boundary remains historically accurate; it is not permission
+to halt this newly authorized feature work or ask for owner participation.
+
+Working main now contains the static Source skin/bodygroup selector and bounded
+MDL49 catalogue/request/worker port. Fresh Python53+29 and headless controls65
+pass. Actual private-app UI20 checks pass with real metadata processes, canonical
+integer selections, default omission, all-hidden guard, cancel/refusal and exact
+existing project/history/final pixels. Metadata ownership uses the pinned Windows
+execute_with_pipe retained process-map entry, consumed once after pipes close.
+Already-exited children return FAILED from TerminateProcess but the pinned engine
+still removes the map entry and closes both handles; cancellation returnsOK. This
+is recorded transparently, not converted into a fabricated all-OK result.
+
+The integrated167-check foundation passes and is registered in default verification.
+Actual native conversions/adoption/persistence and fresh Junko/Mima/Kanako cases
+are next; prior14 prototype conversions do not pass the new chooser. The supplied
+models, originals, private reviews and installed tools remain protected. Formal
+55/62acceptance and52/54implementation counts are unchanged. No manual review prompt,
+new tool installation, Steam write or private-art upload occurred.

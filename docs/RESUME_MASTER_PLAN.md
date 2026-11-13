@@ -1,7 +1,15 @@
 # HAS — consolidated master reference for resuming work
 
-**Updated November 13, 2026. Independent software verification is complete at
-this checkpoint; remaining acceptance requires external observations.**
+**Updated November 13, 2026. The owner directed continued SFM extra-feature work
+while busy. Manual acceptance checks do not stop this implementation work.**
+
+Current increment: import-time Source skins and bodygroups are now in working main
+source. Fresh scoped checks pass 53 parser + 29 appearance/IO + 65 headless control
++ 20 actual private-app metadata checks. The new 167-check foundation is registered
+in default verification. Real native conversion/adoption and wider-model cases are
+being prepared next; these scoped results are not a new full-suite pass. Native
+jiggle, shader fidelity, facial semantics and assembly remain distinct features.
+
 
 The fresh full Windows suite at `12071fe182a17d17e2a1547c7dbb97f6aa4dd160`
 **passed** in 46m20s with all 968 functional files and HEAD unchanged: 36 core
@@ -26,10 +34,12 @@ Formal counts remain **55/62 acceptance and 52/54 implementation**. The outstand
 seven IDs require actual native-artist comparisons, a timed novice, a learner,
 physical tablet/audio observations and a clean offline Windows installation.
 The owner remains busy: do not ask for participation until they grant it.
-The current acceptance goal now waits on those demonstrated external prerequisites;
-do not repeat completed software runs merely to keep it active.
+The earlier acceptance-only checkpoint reached those external prerequisites.
+The owner then explicitly expanded the work to the broader SFM models and their
+extra features; continue that work independently without participation prompts.
 [Exact remaining conditions](benchmarks/windows_external_boundary_2026-11-13.json).
-Broader SFM features, lighting and Discovery remain separate planned work.
+Broader SFM implementation is now underway; lighting and Discovery retain their
+separate plans. The prior full pass below predates this new feature increment.
 
 Latest integration: [loose-part wind before Apply](helper_setup_wind_preview.md)
 is now in main source. Final working-source checks pass 208 CPU + 305 private graphics

@@ -1,0 +1,68 @@
+{
+  "format": "has_source_choice_gd_domain_review_1",
+  "production_files": [
+    "src/source_choice_dialog.gd",
+    "src/source_import.gd"
+  ],
+  "test_file": "tests/source_choice_unit.gd",
+  "blocking_findings": [],
+  "tested_source": {
+    "src/source_choice_dialog.gd": {
+      "bytes": 10440,
+      "sha256": "0e6b156e3a5de566af48fa235efb8a237fd3856fa920d0786b9767982a1d1530"
+    },
+    "src/source_import.gd": {
+      "bytes": 17381,
+      "sha256": "4cacfc7e86adad5e8e78872439500f0e2a922a6e022dc48d268c5b4cd3686a47"
+    },
+    "tests/source_choice_unit.gd": {
+      "bytes": 22607,
+      "sha256": "777d8cd1540227cc76df980492829b53209030a8c85e0b8b868308eccf69f548"
+    },
+    "run.py": {
+      "bytes": 8148,
+      "sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1"
+    }
+  },
+  "source_preserved": true,
+  "latest_actual_report": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choice-unit-headless-20261113\\attempt-1794610914457263000-e7acbe14\\verification.json",
+  "checks": 65,
+  "failures": 0,
+  "headless_exit": 0,
+  "engine_console_error_markers": [],
+  "earlier_actual_attempt": {
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choice-unit-headless-20261113\\attempt-1794610880103270000-71f87bb7",
+    "status": "passed; distinct earlier test bytes; existing same-member predicate subsequently strengthened without changing total count"
+  },
+  "independent_review_findings": [
+    "Default omission is preserved both by opt-out/untouched controls and the actual preparation argument boundary. An invalid explicit all-blank selection cannot fall through to default import.",
+    "Native JSON floating-point identities become integer OptionButton metadata, canonical string bodypart keys and integer choices. Display text does not define hidden geometry.",
+    "Original and native MDL hashes are validated for UI catalogue shape and transported unchanged. Conversion Python remains authoritative for actual source/native checksums and geometry correspondence.",
+    "Unique result addresses, selected member, worker generation, visibility and timeout/close invalidation prevent late status from publishing. The strengthened same-member check observes unchanged catalogue and control count, not only bookkeeping.",
+    "Native-worker HANDLE/pipe logic is not executed by this fake-worker test. Main code narrows metadata process ownership to the pinned Windows engine mapping; actual process creation/drain/release behavior requires its own bounded integration evidence.",
+    "The current Source import adopted-GLB success path remains unchanged; this test does not claim actual app/Undo/HAS/render adoption or native fidelity."
+  ],
+  "coverage": [
+    "constructed opt-in UI and skin/bodypart controls",
+    "default omission at checkbox/reset/map/legacy-container/worker-args boundaries",
+    "all-blank guarded confirmation and at-least-one-visible recovery",
+    "numeric native identities and source/native hash transport",
+    "same/different-member late completion, generation/member reset",
+    "exact timeout threshold, cancel, close and repeated teardown ownership",
+    "bounded/error/nonzero-exit metadata refusal",
+    "captured frame/placement and unchanged fake document/world/history/redo/dirty values",
+    "actual request-file serialization with a refused fake preparation spawn"
+  ],
+  "not_claimed": [
+    "native metadata parsing or conversion",
+    "actual OS metadata process ownership",
+    "GPU/visible input",
+    "real existing-app adoption/history persistence",
+    "native shader/geometry correspondence",
+    "artist/device/install acceptance"
+  ],
+  "production_mutations_by_this_agent": false,
+  "test_runner": "output/source-choice-unit-headless-20261113/run_unit.py",
+  "no_graphics_or_native_conversion": true,
+  "documentation_read_scope": "AGENTS plus relevant governing specification/addendum/audit sections and current history were consulted; long 1.7MB historical logs were searched in full and relevant portions read, not every historical line."
+}

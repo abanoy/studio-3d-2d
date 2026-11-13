@@ -1,0 +1,91 @@
+{
+  "format": "studio_source_appearance_main_python_port_1",
+  "base_head": "489215fcbfb69acde05d4a1341cc872cc69a9132",
+  "functional_baseline": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+  "frozen_source_index_sha256": "f0581e73a5b3f3091abe523293fbc30ff0edadf1de0c3be95e3a7da7d2aa0fc5",
+  "main_before": {
+    "tools/prepare_source.py": {
+      "sha256": "7cfa9a8edc59ce15890e2b9fc8acea5522e86b4baa25607a917d4c4ee9525ab1",
+      "bytes": 12057,
+      "mtime_ns": 1794447912634089100
+    },
+    "tools/blender_source_bridge.py": {
+      "sha256": "cc664c77a140f4103626946cea0e57b13e0cfdf3bf464ab28712225ca5838738",
+      "bytes": 24298,
+      "mtime_ns": 1794447912620054900
+    },
+    "tools/asset_audit.py": {
+      "sha256": "f91daebf1a7f7351b04d1018fd87f629a85460c4a67c540db7e7f7697a0eebeb",
+      "bytes": 10171,
+      "mtime_ns": 1794447912617551300
+    },
+    "tools/source_archive.py": {
+      "sha256": "a7c659ea8653136ed740d99508aaa07b2e33c7ddd64093e272739c49661a1c48",
+      "bytes": 4493,
+      "mtime_ns": 1794447912645316500
+    },
+    "tools/source_content.py": {
+      "sha256": "7ee3f3b2556322dd4a3c22ce5a358e3d6733c4722fb71444e4077ea5ddf140b1",
+      "bytes": 17070,
+      "mtime_ns": 1794447912649839200
+    },
+    "tools/source_paths.py": {
+      "sha256": "8b174b8de9c2b7db108152b62c8c7a72992bf101e35decafe778f38318c02071",
+      "bytes": 1129,
+      "mtime_ns": 1794447912651846000
+    },
+    "tools/source_installation.py": {
+      "sha256": "10cddc7e1da7b68b97e24e3d5c5d3a87ead25a2a4595cbf9c7d61bbf0bcbd6d2",
+      "bytes": 5867,
+      "mtime_ns": 1794447912650851900
+    },
+    "tools/source_case.py": {
+      "sha256": "63094142f40cc13fb7877a317667bf596910a1df6dfc3796c0c9b4a88db795c2",
+      "bytes": 2512,
+      "mtime_ns": 1794447912648331200
+    }
+  },
+  "main_after": {
+    "tools/source_appearance.py": {
+      "sha256": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+      "bytes": 8468,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_mdl_choices.py": {
+      "sha256": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+      "bytes": 13104,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/source_choice_io.py": {
+      "sha256": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+      "bytes": 5646,
+      "mtime_ns": 1794610640901270800
+    },
+    "tools/prepare_source.py": {
+      "sha256": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+      "bytes": 13626,
+      "mtime_ns": 1794610640902281900
+    },
+    "tools/blender_source_bridge.py": {
+      "sha256": "dfef09700405e96e289b92bc2b5e98d897f9fcdc86fce54be7f649a7b161372b",
+      "bytes": 25278,
+      "mtime_ns": 1794610640902281900
+    },
+    "tests/test_source_mdl_choices.py": {
+      "sha256": "1f6eebb3282c8d172069de429919b5c45e084205d61e899980f10fa7e82daf2d",
+      "bytes": 19569,
+      "mtime_ns": 1794610640902281900
+    },
+    "tests/test_source_appearance.py": {
+      "sha256": "16f36dbcc2433c074551ab4f27ff11c2107cafe4a48c6557c7aee42fd2602ea3",
+      "bytes": 23780,
+      "mtime_ns": 1794610640903279100
+    }
+  },
+  "frozen_experiment_preserved": true,
+  "shared_importer_dependencies_preserved": true,
+  "python_tests": "UNRUN; awaiting coordinated source freeze",
+  "native_conversion_graphics_original_extraction": "UNRUN",
+  "git_mutation": false,
+  "test_adaptation": "Fresh main/output paths; authored fixtures from sibling test module; draft GD source-string assertion replaced with strict JSON request numeric-identity behavior. Actual GD/UI coverage is root-owned."
+}

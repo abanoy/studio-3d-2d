@@ -74,6 +74,18 @@ func python() -> String:
 	var override := OS.get_environment("HYBRID_PYTHON")
 	return override if not override.is_empty() else "python"
 
+func inspect_source_members(path: String) -> Dictionary:
+	var output: Array=[]
+	var code:=OS.execute(python(),[ProjectSettings.globalize_path("res://tools/prepare_source.py"),path,"--catalog"],output,true,false)
+	var text:="".join(output)
+	return {"code":code,"data":JSON.parse_string(text),"text":text}
+
+func make_appearance_ui() -> Node:
+	return preload("res://src/source_choice_dialog.gd").new()
+
+func _spawn_preparation(args: PackedStringArray) -> int:
+	return OS.create_process(python(),args,false)
+
 func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void:
 	if pid > 0 or app.exporting: return
 	if app.height_review and app.height_review.pending:app.message("Finish the pending height review first.");return
@@ -88,9 +100,10 @@ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void
 		return
 	app.stop()
 	var catalog: Array = []
-	var script := ProjectSettings.globalize_path("res://tools/prepare_source.py")
-	var code := OS.execute(python(), [script, path, "--catalog"], catalog, true, false)
-	var data = JSON.parse_string("".join(catalog))
+	var inspected := inspect_source_members(path)
+	var code: int = inspected.code
+	var data = inspected.data
+	catalog.append(str(inspected.text))
 	if code != 0 or not data is Dictionary:
 		app.message("Cannot inspect Source file. Python is required. " + "".join(catalog).left(400))
 		return
@@ -101,6 +114,7 @@ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void
 	var dialog := ConfirmationDialog.new()
 	dialog.title = "Import Source model" if as_model else "Import Source map"
 	dialog.ok_button_text = "Prepare and import"
+	dialog.dialog_hide_on_ok = false
 	var scroll := ScrollContainer.new()
 	scroll.custom_minimum_size = Vector2(720, minf(480, maxf(240, app.get_viewport_rect().size.y - 180)))
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
@@ -113,6 +127,11 @@ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void
 	members.custom_minimum_size.x = 580
 	for member in choices: members.add_item(str(member))
 	box.add_child(members)
+	var appearance_ui = null
+	if as_model:
+		appearance_ui = make_appearance_ui()
+		dialog.add_child(appearance_ui)
+		appearance_ui.attach(dialog, box, path, members, python())
 	var text: Label = app.label(box, "Converts locally with Blender / SourceIO into the same standard GLB used by MMD.\nTextures are approximate. No game scripts run. Your current scene changes only after success.\nNative copies, parameters, editable Blender file and warnings stay in output/compatibility.")
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	app.label(box, "Standalone models and maps do not require a game installation. Installed content folders are optional for browsing or resolving missing dependencies. Studio supplies neither games nor add-ons.").autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -132,11 +151,14 @@ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void
 	box.add_child(content)
 	app.add_child(dialog)
 	dialog.confirmed.connect(func():
+		if appearance_ui != null and not appearance_ui.selection_valid(): return
+		var appearance: Dictionary = appearance_ui.request() if appearance_ui != null else {}
 		gmod_root = game_field.text.strip_edges()
 		workshop_root = workshop_field.text.strip_edges()
 		if save_paths() != OK: app.message("Cannot save Source folder preferences."); dialog.queue_free(); return
 		dialog.hide()
-		launch(path, str(choices[members.selected]), as_model, scale.value, content.text.strip_edges(),null,"","Y",at_frame,placement)
+		if appearance_ui != null: appearance_ui.invalidate()
+		launch(path, str(choices[members.selected]), as_model, scale.value, content.text.strip_edges(),null,"","Y",at_frame,placement,appearance)
 		dialog.queue_free())
 	dialog.canceled.connect(dialog.queue_free)
 	dialog.popup_centered(Vector2i(760, 560))
@@ -156,7 +178,7 @@ func generic_dialog(path: String, as_model: bool, at_frame := 0, placement := {}
 	dialog.confirmed.connect(func(): dialog.hide(); launch(path, "", as_model, scale.value, "", null, root.text.strip_edges(), "Y" if up.selected == 0 else "Z",at_frame,placement); dialog.queue_free())
 	dialog.canceled.connect(dialog.queue_free); dialog.popup_centered(Vector2i(760, 360))
 
-func launch(path: String, member: String, as_model: bool, scale: float, content := "", dependency_mounts = null, asset_root := "", obj_up := "Y", at_frame := 0, placement := {}) -> void:
+func launch(path: String, member: String, as_model: bool, scale: float, content := "", dependency_mounts = null, asset_root := "", obj_up := "Y", at_frame := 0, placement := {}, appearance := {}) -> void:
 	if app.height_review and app.height_review.pending:app.message("Finish the pending height review first.");return
 	if pid > 0: return
 	generic = path.get_extension().to_lower() in ["fbx", "obj", "gltf"]
@@ -186,8 +208,19 @@ func launch(path: String, member: String, as_model: bool, scale: float, content 
 		if settings == null: app.message("Cannot write dependency settings."); return
 		settings.store_string(JSON.stringify({"extra": extra_roots, "overrides": mount_overrides})); settings.close()
 		args.append_array(["--mount-settings", folder + "-mount-settings.json"])
+	if not appearance.is_empty():
+		if generic or not native_family.is_empty() or not as_model:
+			app.message("Appearance choices apply only to one Source model."); return
+		var appearance_path := folder + "-appearance.json"
+		var appearance_json := JSON.stringify(appearance)
+		if appearance_json.to_utf8_buffer().size() > 64 * 1024:
+			app.message("Appearance request is too large."); return
+		var appearance_file := FileAccess.open(appearance_path, FileAccess.WRITE)
+		if appearance_file == null: app.message("Cannot write the appearance request."); return
+		appearance_file.store_string(appearance_json); appearance_file.close()
+		args.append_array(["--appearance", appearance_path])
 	if not content.is_empty(): args.append_array(["--content", content])
-	pid = OS.create_process(python(), args, false)
+	pid = _spawn_preparation(args)
 	if pid < 0: app.message("Cannot start local asset preparation. Check the installed Python path."); return
 	progress = Window.new()
 	progress.title = "Importing model" if actor else "Importing environment"

@@ -224,6 +224,17 @@ def main():
     print('PASS captured snapshot launch order, live save frames, failed thread startup, cancellation and offline cold reads')
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')
 
+    source_choice_started = time.time_ns()
+    source_choice_folder = spike / 'source-choices'
+    source_choice_log = run([sys.executable, '-B', 'tests/verify_source_choice_foundation.py', '--output', str(source_choice_folder)], timeout=350)
+    (output / 'source-choice-foundation-suite.log').write_text(source_choice_log, encoding='utf-8')
+    source_choice_path = source_choice_folder / 'verification.json'
+    source_choice_result = json.loads(source_choice_path.read_bytes())
+    assert source_choice_path.stat().st_mtime_ns >= source_choice_started and source_choice_result['format'] == 'has_source_choice_foundation_1' and source_choice_result['passed'] is True and source_choice_result['checks'] == 167 and source_choice_result['source_unchanged'] is True, source_choice_result
+    assert source_choice_result['native_conversion'] is False, source_choice_result
+    results['source_choice_foundation'] = source_choice_result
+    print('PASS Source skin/part identities, default omission, all-hidden refusal, async controls and owned metadata cleanup')
+
     shortcuts_log = run([sys.executable, '-u', 'tests/verify_shortcuts.py'], timeout=500)
     (output / 'shortcuts-suite.log').write_text(shortcuts_log, encoding='utf-8')
     results['shortcuts'] = json.loads((output / 'shortcuts-verification.json').read_text(encoding='utf-8'))
