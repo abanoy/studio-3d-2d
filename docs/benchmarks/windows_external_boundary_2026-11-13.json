@@ -1,0 +1,66 @@
+{
+  "format": "has_windows_independent_acceptance_boundary_1",
+  "date": "2026-11-13",
+  "saved_results_commit": "e4860f1b616068858d3a816d9cb852bb5464a9b0",
+  "tested_functional_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+  "full_pass_report": "docs/benchmarks/windows_canonical_post_save_order_2026-11-13.json",
+  "review_report": "docs/benchmarks/windows_owner_review_relocated_2026-11-13.json",
+  "cleanup_report": "docs/benchmarks/windows_post_save_cleanup_2026-11-13.json",
+  "independent_required_software_checkpoint": "Completed: full default suite, relocated six-project review, source/runtime/package preservation, exact duplicate cleanup and remote verification",
+  "formal_acceptance": {
+    "verified": 55,
+    "total": 62,
+    "implementation": 52,
+    "implementation_total": 54
+  },
+  "remaining": [
+    {
+      "id": "IMPORT-02",
+      "title": "Native ecosystem coverage",
+      "acceptance_status": "external_blocked",
+      "remaining": "Native inputs are now available and the combined Windows supported-profile route passes. Remaining external prerequisite: artist/source-appearance comparison against the actual native originals using docs/windows_acceptance_followup.md. Roadmap formats/full native shader-simulator reproduction remain optional or explicit unsupported limits; no known independent software defect is being handed off."
+    },
+    {
+      "id": "IMPORT-03",
+      "title": "Native fidelity and dependency reporting",
+      "acceptance_status": "external_blocked",
+      "remaining": "Native dependencies, original preservation, bounded materials/props/lightmaps and exact portable cold replay now have Windows evidence. Obtain actual source-appearance/artist comparison for supported geometry/material/rig behavior. Preserve the explicitly reported partial lightmap/native-shader/physics limits; do not infer original visual fidelity solely from self-replay hashes."
+    },
+    {
+      "id": "ACCEPT-A",
+      "title": "Five-minute novice finished animation",
+      "acceptance_status": "external_blocked",
+      "remaining": "Windows native21+6 software and core drawing/audio checks now pass. A real novice still must perform the eight-step timed exercise, actual Explorer drop/input and original independent drawing/sound workflow; record time, assistance, confusing controls and audible synchronization. Automation is not novice evidence."
+    },
+    {
+      "id": "ACCEPT-B",
+      "title": "Cross-ecosystem native scene",
+      "acceptance_status": "external_blocked",
+      "remaining": "The combined Windows native software route now passes19+5checks, cold exact Lit/Unshaded replay and actual MP4 with all five original street atlases. Actual artist comparison to supported original source appearance remains required. The automated overlapping large-environment fixture is not a composed or approved artistic scene."
+    },
+    {
+      "id": "ACCEPT-E",
+      "title": "Beginner tutorial acceptance",
+      "acceptance_status": "external_blocked",
+      "remaining": "Windows software course/first-movie cases now pass. A real learner still needs to observe grading, clarity, a genuine10-30second stuck hint, full Previous/Continue-Fresh and optional normal Save. Record actual observations using docs/windows_acceptance_followup.md."
+    },
+    {
+      "id": "ACCEPT-TABLET",
+      "title": "Physical drawing and audio-device acceptance",
+      "acceptance_status": "external_blocked",
+      "remaining": "Actual tablet/driver/GPU stroke and pressure latency/comfort plus listening to target audio output remain unobserved. Software event routing and decoded-media faults can still be fixed in cloud. A local Codex worker cannot replace physical hardware and human observation."
+    },
+    {
+      "id": "ACCEPT-INSTALL",
+      "title": "Clean Windows installation",
+      "acceptance_status": "external_blocked",
+      "remaining": "A clean supported Windows environment must install/launch offline, import a sample, save/reopen and export with detected encoder. Cloud clean-source launch/setup evidence is separately scoped. An already configured local development PC is not a clean-install result."
+    }
+  ],
+  "owner_participation": "Owner remains busy and explicitly requested no test/review interruptions; do not ask until participation is granted",
+  "historical_backup_inputs": "Owner says the checksum-bound older development-source ZIPs are dead; do not request again or substitute",
+  "optional_work": "Broader supplied SFM skin/bodygroup/flex/jiggle/shader/assembly features, lighting and Discovery retain their own plans/drafts; they do not extend the mandatory acceptance checklist",
+  "resume_condition": "Owner grants required observation time, actual device/clean Windows environment becomes available, or a new concrete independent software defect is reported",
+  "private_retention": "Session checkout retained for protected previous review/recovery and private working deliverables; new review outside checkout at C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe",
+  "full_product_complete": false
+}

@@ -4326,3 +4326,19 @@ Formal acceptance remains55/62, implementation52/54. Remaining seven IDs require
 actual native artist comparison, a timed novice, learner feedback, physical tablet/
 audio observation and a clean offline Windows install exercise. The owner remains
 busy: no participation prompt was issued or observation invented.
+
+
+## 2026-11-13 — Independent acceptance boundary saved
+
+Results checkpoint e4860f1b616068858d3a816d9cb852bb5464a9b0 is pushed/fetched,
+ls-remote and raw progress/evidence verified. The tested functional source is
+12071fe; no application change followed its complete Windows pass and relocated
+129-check review. Required independent work at this checkpoint is complete.
+The same seven artist/novice/learner/device/clean-install prerequisites have
+remained external through prior goal turns and remain unobserved. The owner is
+busy and has not granted participation; no new prompt is appropriate. Record
+this as the external acceptance boundary, not product completion. Broader SFM,
+lighting and Discovery plans remain separate. See the exact seven stable IDs in
+docs/benchmarks/windows_external_boundary_2026-11-13.json. Preserve protected
+private review/recovery and the new external review; do not remove the checkout
+wholesale or rerun unchanged software solely because old prose said next.

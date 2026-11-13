@@ -1,6 +1,7 @@
 # HAS — consolidated master reference for resuming work
 
-**Updated November 13, 2026. The owner explicitly resumed work; the goal is ACTIVE.**
+**Updated November 13, 2026. Independent software verification is complete at
+this checkpoint; remaining acceptance requires external observations.**
 
 The fresh full Windows suite at `12071fe182a17d17e2a1547c7dbb97f6aa4dd160`
 **passed** in 46m20s with all 968 functional files and HEAD unchanged: 36 core
@@ -25,6 +26,9 @@ Formal counts remain **55/62 acceptance and 52/54 implementation**. The outstand
 seven IDs require actual native-artist comparisons, a timed novice, a learner,
 physical tablet/audio observations and a clean offline Windows installation.
 The owner remains busy: do not ask for participation until they grant it.
+The current acceptance goal now waits on those demonstrated external prerequisites;
+do not repeat completed software runs merely to keep it active.
+[Exact remaining conditions](benchmarks/windows_external_boundary_2026-11-13.json).
 Broader SFM features, lighting and Discovery remain separate planned work.
 
 Latest integration: [loose-part wind before Apply](helper_setup_wind_preview.md)
