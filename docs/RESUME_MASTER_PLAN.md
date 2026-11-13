@@ -455,8 +455,27 @@ world edit41, SceneView12830+102 and drawing selection12+35+3 with the original
 pixel, persistence and movie predicates. Initial harness type errors and a
 rejected bound-callback candidate(28/5) remain recorded. The regression is now
 in the default suite. [Fix/evidence](selection_readback_shutdown_2026-11-13.md).
-Continue nine later wrappers, phase1 Wind integration and a final full suite;
-existing human/device/native/clean-install gates remain open.
+The later nine-wrapper replay below passes; phase1 Wind integration and a final
+full suite remain. Existing human/device/native/clean-install gates stay open.
+
+### Later scoped continuation — November 13
+
+All nine wrappers after drawing selection now pass at exact0f8f7a0: drawing
+transforms; recovery identity/startup/history/schedule/preview; Home; tutorials;
+and first movie. The356.97-second hidden run kept936functional files andHEAD
+unchanged. Thirty-one separately referenced private receipts were independently
+rechecked; abrupt-exit semantics remain explicit. First movie passes79writer+
+8freshContinue checks, actual H264/AAC and decoded cue onset. This is scoped
+coverage, not a full default aggregate. [Evidence](benchmarks/remaining_last_nine_scopes_2026-11-13.json).
+
+The phase1 Wind main-driver proposal now has15imported-code CPU gate tests,
+explicit main-root/startup guards, checksum-bound native-input manifest and exact
+rebuild recipes. It is source-only and unported. The original830GPU assertions
+are preserved;12new guards make842expected main checks. Fresh six-file native
+fixture copies are staged without changing accepted bundles. The19compact
+proposal files are saved under
+`experiments/local_wind_review/main_driver_proposal_20261113`; generated shadows
+and private model payloads are excluded. Implement and verify the main port next.
 
 Formal ledger remains **55/62 acceptance groups verified** and **52/54 required
 implementation groups implemented**. Seven open acceptance IDs:
@@ -575,8 +594,9 @@ through layers, then caught an old central onion summary. The actual fresh onion
 wrapper passed37 checks/movie, but wrote only its per-case result. The reporting
 fix publishes identical UTF8 per-case/central bytes after all unchanged assertions;
 a fresh37-check replay passes. No app code changed. All16 later report channels
-are statically correct but their wrappers remain unrun. Continue those16, then
-run the final full aggregate; neither this suffix nor prior partial runs count
+were statically correct but unrun at that checkpoint. Subsequent six passes,
+the corrected drawing-selection lifecycle and all later nine are recorded above.
+Run the final full aggregate; neither this suffix nor prior partial runs count
 as a complete aggregate. [Onion provenance evidence](benchmarks/onion_fresh_summary_2026-11-12.json).
 
 ### What the last application fix actually established

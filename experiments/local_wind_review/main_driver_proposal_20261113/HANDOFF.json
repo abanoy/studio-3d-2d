@@ -1,0 +1,90 @@
+{
+  "format": "has_wind_main_driver_proposal_handoff_1",
+  "status": "frozen output-only phase1 proposal; not installed or run on main",
+  "source_head_observed": "0f8f7a0067214ba4359f7d3367cc8cddbe516f3a",
+  "published_source_packet": "experiments/local_wind_review/production_port_candidate_20261112",
+  "retained_source_packet": "output/wind-review-production-port-20261112",
+  "runtime_scope": "Already declared secondary-group temporary local wind preview only",
+  "proposed_files": [
+    "proposed/tests/verify_wind_review.py",
+    "proposed/tests/wind_review_port_files.json",
+    "proposed/tests/native_fixture_plans.wind_review.append.py",
+    "proposed/tests/wind_review_gpu_common.gd"
+  ],
+  "append_resolver_not_replace_existing_module": true,
+  "original_gpu_case_assertions_unchanged": 830,
+  "new_root_startup_guards_per_case": 2,
+  "expected_main_gpu_total": 842,
+  "headless_counts": [
+    51,
+    14,
+    29
+  ],
+  "gpu_case_order": [
+    "procedural",
+    "vrm0",
+    "vrm1",
+    "backhair",
+    "lifecycle",
+    "primary"
+  ],
+  "expected_main_case_counts": [
+    62,
+    47,
+    47,
+    49,
+    546,
+    91
+  ],
+  "actual_cpu_tests": {
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "passed": true,
+    "report": "cpu-tests.json",
+    "log": "cpu-tests.log"
+  },
+  "cpu_execution_scope": "Imported proposed code in output-only shadow; GPU/native process boundaries mocked and synthetic fixtures labelled; actual approved prepared metadata read only",
+  "static_validation": {
+    "report": "validation.json",
+    "python_ast": true,
+    "reviewed_port_files": 16,
+    "published_retained_packet_matches": 44,
+    "ribbon_request_identity_confirmed": true
+  },
+  "retained_failed_trial": [
+    "cpu-tests-expanded-fixture-failure.json",
+    "cpu-tests-expanded-fixture-failure.log"
+  ],
+  "failed_trial_explanation": "Expanded CPU test used a synthetic folder outside the real driver output family; guard correctly refused; only test fixture location corrected",
+  "production_driver_native_resolution": "Explicit output/wind-review-inputs.json or HYBRID_NATIVE_FIXTURES root; source and parameters pins fixed in resolver; no cache/prototype fallback",
+  "parent_staged_inputs_context": {
+    "reported_by_parent": true,
+    "manifest": "output/wind-review-inputs.json",
+    "manifest_sha256": "293c6827f3b2312ee7a56062290ec0281990a8fd0609c238a1419236a4ad5fb8",
+    "fresh_input_folder": "output/wind-main-fixtures-1794548724013390200",
+    "six_copied_inputs": true,
+    "original_bundles_unchanged_reported": true
+  },
+  "preserve_current_selection_fix": "src/world_selection.gd is absent from wind overlay; never replace it with any prototype copy",
+  "no_main_or_prototype_mutations": true,
+  "godot_or_gpu_run_by_this_task": false,
+  "native_worker_run_by_this_task": false,
+  "gdscript_parsing_run": false,
+  "private_model_audio_image_payloads_included": false,
+  "phase2_helper_before_apply": "future separate work; not implemented here",
+  "remaining_validation": [
+    "Actual main port with fresh source-baseline audit",
+    "Headless94, app/four-script syntax checks",
+    "Actual serial six-job842 main GPU gate with clean receipts",
+    "Packet integration regression checklist and stable final canonical"
+  ],
+  "documents": [
+    "README.md",
+    "REBUILD_INPUTS.md",
+    "common-adaptation.patch"
+  ],
+  "file_index": "FILE_INDEX.json",
+  "do_not_publish_generated_shadow": "Exclude validation/cpu-shadow-* and synthetic reports; compact source/evidence only"
+}

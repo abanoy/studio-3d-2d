@@ -54,7 +54,9 @@ use private desktops; the original test is shared. The new wrapper is registered
 in `tests/verify.py`.
 
 The preceding suffix passed six wrappers, then stopped at drawing selection.
-Nine later wrappers and the complete default aggregate still need fresh runs.
+At that fix checkpoint, nine later wrappers and the complete default aggregate
+still needed fresh runs. The later [nine-wrapper replay](benchmarks/remaining_last_nine_scopes_2026-11-13.json)
+now passes at0f8f7a0; the complete default aggregate remains pending.
 This scoped fix does not close native fidelity, artist/device or clean-install
 acceptance. The ledger remains 55/62 accepted and 52/54 implemented.
 

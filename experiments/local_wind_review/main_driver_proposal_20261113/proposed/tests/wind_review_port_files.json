@@ -1,0 +1,102 @@
+{
+  "format": "has_wind_review_main_port_files_1",
+  "source_packet": "experiments/local_wind_review/production_port_candidate_20261112",
+  "files": [
+    {
+      "path": "src/app.gd",
+      "sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+      "lf_sha256": "6a232f502f967068006cdd2ca26be2f70cd94f7419428354ab9f8e5cc1d787a8",
+      "category": "runtime"
+    },
+    {
+      "path": "src/has_project.gd",
+      "sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+      "lf_sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+      "lf_sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "lf_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "category": "runtime"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+      "lf_sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+      "category": "runtime"
+    },
+    {
+      "path": "src/renderer.gd",
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "lf_sha256": "1c29ed28eff20cece320fd9e6c3e1491770c5604831e11ce4694ede34267677a",
+      "category": "runtime"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "lf_sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+      "lf_sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review_groups.gd",
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "lf_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "category": "runtime"
+    },
+    {
+      "path": "tests/wind_review_unit.gd",
+      "sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+      "lf_sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_hooks_unit.gd",
+      "sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+      "lf_sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_review_unit.gd",
+      "sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+      "lf_sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_gpu_common.gd",
+      "sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "lf_sha256": "77c9f7a3893c131c73fce6a2d8782c8ccaa1a71f6c7a0cb62e7ae4906976a6b0",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_motion.gd",
+      "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "lf_sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_lifecycle.gd",
+      "sha256": "bb36e9166040cb0f72fc08382948c1923268dbc636770e4b2ef11fe30ff8a814",
+      "lf_sha256": "bb36e9166040cb0f72fc08382948c1923268dbc636770e4b2ef11fe30ff8a814",
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_primary.gd",
+      "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "lf_sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "category": "gpu_test"
+    }
+  ]
+}
