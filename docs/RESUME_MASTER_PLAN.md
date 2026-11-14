@@ -3,6 +3,11 @@
 **Paused November 13, 2026 at the owner's request. Do not resume implementation,
 tests or participation requests until the owner resumes.**
 
+**November 14 documentation update:** the owner asks for PMX physics capability
+clarity, a future PMX-like reconstruction assistant during standardization and
+old-test GitHub archiving for disk saving. The goal remains paused. See section 14
+and the November 14 additions in the [pickup](NEXT_SESSION_PLAN_2026-11-13_SFM.md).
+
 The latest f380 complete retry was **USER-CANCELLED / INCOMPLETE**, after
 41m47.124s. It passed the prior helper guard and later contact/selection/motion/
 drawing scopes before the owner called the day. All1008functional hashes/HEAD
@@ -1371,3 +1376,51 @@ The initial compilation was documentation only; the owner subsequently resumed
 work. This reference does not certify acceptance or current input availability,
 grant participation time, or authorize replacing installations or private-art
 redistribution. Update actual results incrementally as resumed work is verified.
+
+## 14. PMX physics, inferred standard rigs and old-test archiving — November 14
+
+Current support and format potential are different. HAS imports PMD/PMX mesh,
+skeleton/skin and exportable morphs, retains native sources and an editable
+Blender intermediate, and offers its own compatible spring/helper workflow.
+That workflow can reuse weighted hair/clothing chains or create reviewed
+helpers, respond to fans, record motion and restore the authored pose on Off.
+The runtime secondary adapter reads VRM spring metadata and HAS helper metadata;
+it does not consume PMX rigid bodies/joints. Native PMX mass/damping/friction,
+collision masks, body modes, joint frames/limits/springs and PMX 2.1 soft-body
+simulation are not currently reproduced. Generated body proxies use HAS rules;
+generated helper additions cannot currently author native collision groups.
+Retained upstream MMD properties are archival, not proof of a live native solver.
+The portable HAS package manages the GLB/report, not the full editable Blender
+snapshot or the original physics tables; preservation in staging does not imply
+standalone portable preservation of native PMX physics declarations.
+No new tests or native-fidelity observations were made for this code review.
+
+The owner's reconstruction idea is recorded as future scope. Preserve authored
+PMX and other native physics first, then express bodies/colliders/joints/springs
+in the existing HAS model contract with per-element imported/translated/inferred/
+artist-edited provenance. For a lossy MDL, surviving mesh/weights/hierarchy/
+symmetry/material boundaries and native jiggle data can guide a plausible
+hair/skirt/ribbon rig. Missing values are estimates, not uniquely recoverable
+original parameters. Distinguish bone-driven approximations from full fabric
+simulation and make unsupported effects clear.
+
+The proposed assistant previews editable part/chain/collider/preset suggestions,
+allows inclusion/exclusion and temporary wind, and applies a derived setup with
+one Undo while preserving originals and authored work. Start with deterministic
+rules; a trained estimator/ranker is optional future research with suitable
+ground truth, uncertainty checks and an offline fallback. HAS currently has no
+trained reconstruction component; imports do not train it. This note does not
+implement a solver, train a model, introduce a file extension or promise PMX
+export. Exact reference behavior, loss cases, stability/restoration and portable
+preview/export need separate actual verification after resume.
+
+Old tests are queued for GitHub archiving as disk-saving housekeeping on resume:
+inventory and deduplicate, commit missing code/reproduction and compact raw
+pass/fail/skip/interrupted evidence, push, verify remote contents/retrieval, then
+remove only proven unused session-owned disposable paths. Lossless compressed
+metadata uses raw hashes and an index. Private art/native assets/full geometry/
+coordinate oracles/HAS/media/recovery are retained or privately backed up, not
+automatically published. Existing current fixtures, useful runs, originals,
+shared tools and reviews remain protected. No upload of old test outputs,
+deletion, test or product/runtime change was performed by this documentation
+update. Full details and concrete validation/cleanup gates are in the pickup.

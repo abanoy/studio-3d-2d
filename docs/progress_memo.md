@@ -14752,3 +14752,28 @@ native_source_coordinates_2026-11-13.json and source_jiggle_runtime_plan.md.
 At04:51:33UTC the owner called the day. Exact identity-bound Python13300 and its owned test tree were terminated onrequest; PS21696 then wrote rawfailed/exit-1, source_unchangedtrue. All1008functional files/HEADf380 match. Authoritative04:52:54 proof finds both original identities absent and no owned runtime commands. PCnotshutdown. The2507.124359second run is USER_CANCELLED_INCOMPLETE, neverPASS/newsoftwarefailure; prior208CPU/266GPU and latercontact/selection/motion/drawing passes remain partial. Final media/recovery completion is unverified; oldglobalverification remainsstale. EarlierEE/c4d failures remainFAILED.
 
 Saved source-reviewed unrun publication/review-builder/168replay/41588headless/exclusive-read preparations and independentaudits under experiments/owner_pause_20261114; privateoracles/nativeart/HAS/GLB/media/fullSDK remainLOCAL. No builder/probe/cleanup executed, no installedapp ororiginal changed. docs/NEXT_SESSION_PLAN_2026-11-13_SFM.md gives freshfull/review/physics pickup. Currentf380/full040946 PASS-gated templates are ineligible afterpause; generate reviewed successors onresumption. Formal55/62 and52/54 unchanged. No work resumes ormanualprompts untilownerresumes.
+
+
+## 2026-11-14 — PMX capability review and pickup additions while paused
+
+At the owner's request, read-only source review distinguishes retained native
+PMX/MMD properties from live HAS support. HAS uses its own compatible hair/
+clothing spring helpers and structural body proxies; no source-bound native
+PMX rigid-body/joint interpreter or PMX 2.1 soft-body simulation is implemented.
+The portable GLB/report package does not retain the full native physics tables.
+Historical generic physics tests do not establish native PMX motion fidelity.
+
+The pickup and master plan now record a proposed source-independent physics
+representation and editable reconstruction assistant for lossy models. Preserve
+real declarations first; distinguish imported, translated, inferred and artist-
+edited data. HAS has no trained reconstruction model today. Deterministic rules
+and presets precede any optional learned estimator; plausible inferred behavior
+cannot establish recovery of an author's exact lost parameters.
+
+Old test code and compact evidence are queued for GitHub archiving on resume:
+inventory/deduplicate, push and verify remote retrieval before exact disposable
+output cleanup. Preserve failed/interrupted/unrun results and private assets.
+No old test outputs were uploaded and no cleanup, tests, app runs, training or
+product changes occurred in this documentation update. Goal remains paused;
+formal scores remain 55/62 acceptance and 52/54 implementation. See
+docs/NEXT_SESSION_PLAN_2026-11-13_SFM.md and docs/RESUME_MASTER_PLAN.md.
