@@ -22,18 +22,25 @@ close without foreground exposure or a desktop switch.
 The earlier normal-launch helper import failure and thin-tool negative-AABB
 failure remain preserved. Both concrete fixes are now covered, including 20
 bounds checks and 43 placement/movie checks registered in default verification.
-The complete default Windows suite is next; the earlier full pass below predates
-this feature and is not a substitute.
+The fresh complete default Windows suite **passes at `9f6f531`** in 46m27s:
+982 functional files and HEAD unchanged, 36 core groups, 156 result entries and
+21 final movie checks. Both decoded audio onsets are 1.0 seconds. All 192 private
+jobs are closed: 191 exit 0 and one expected Krita cancellation exit 2. Exact
+process identities and the independently audited evidence packet verify closure.
+[Complete SFM Windows pass](benchmarks/windows_canonical_sfm_2026-11-13.json).
+This supersedes the older full-run results below for the static SFM increment.
 
 Separate next-feature research now reads all 49 Junko hair jiggle rules directly
 from the SHA-bound native file: 1,421 finite float32 values, all flags 0x31, with
 independent row/bit checks. This is an inert raw-metadata proposal only. Studio
 does not yet retain or simulate those values, and native binding remains unproved.
 [Values and limits](benchmarks/sfm_native_jiggle_values_2026-11-13.json).
-The [reviewed minimal metadata plan](../experiments/source_appearance/native_jiggle_main_plan_20261113/PLAN.md)
-is also saved with authored CPU checks. Port it after the current static feature's
-full verification; real Junko report admission and saved-project tests remain unrun.
-The earlier full suite below predates this feature. Native jiggle,
+The [current reviewed candidates](../experiments/source_appearance/next_sfm_candidates_20261114/PLAN.md)
+preserve the amended metadata adapter (25 CPU checks), independent selected-MDL
+capture/recheck (18 + 9 CPU checks), completed-worker handle cleanup (53 authored
+runtime checks, still unrun), and ordinary Keiki/Mima shape UI cases (unrun).
+Port these after saving the full-pass checkpoint. Actual Junko report admission,
+saved-project tests and native simulation/binding remain unrun. Native jiggle,
 shader fidelity, facial semantics and assembly remain distinct features.
 
 
@@ -1246,7 +1253,7 @@ be established. [Plan](benchmarks/sfm_v2_code_cleanup_plan_2026-11-13.json),
    separate. Research/phase Discovery and lighting requirements deliberately;
    broad future roadmap work must not hide a newly failing ordinary control.
 4. The complete default suite and final media/audio checks are completed at
-   `12071fe`, with source/HEAD frozen. Preserve earlier failures/skips separately.
+   `9f6f531`, including the new SFM controls, with source/HEAD unchanged. Preserve earlier failures/skips separately.
    Rerun when later functional changes, a new failure or an unresolved concern
    justifies it; do not repeat this completed run merely because old prose says next.
 5. The separate current runnable review is completed at

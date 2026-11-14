@@ -1,0 +1,75 @@
+--- old-context/src/source_import.gd
++++ source/src/source_import.gd
+@@ -102,7 +102,6 @@
+ 	if not _preparation_map_reserved: return
+ 	var owned := _preparation_map_pid
+ 	if owned <= 0 or OS.is_process_running(owned): return
+-	if OS.get_process_exit_code(owned) == -1: return
+ 	# A completed mapped child may report FAILED from TerminateProcess while
+ 	# still erasing its entry and closing both handles. Consume once; never retry.
+ 	_preparation_map_reserved = false
+--- old-context/tests/source_import_owner_unit.gd
++++ source/tests/source_import_owner_unit.gd
+@@ -91,8 +91,8 @@
+ 	var ended: bool=await wait_child(owned)
+ 	if not ended:
+ 		check(false,"authored child reaches terminal state: "+mode);cleanup_failed_fixture(importer,owned);app.free();return
+-	var expected_exit:=0 if mode=="normal" else (2 if mode=="cancel" else 1)
+-	check(OS.get_process_exit_code(owned)==expected_exit and not OS.is_process_running(owned) and OS.get_process_exit_code(owned)==expected_exit,"completed exit remains cached before owner release: "+mode)
++	var expected_exit: int={"normal":0,"refusal":1,"cancel":2,"exit_minus_one":-1}[mode]
++	check(OS.get_process_exit_code(owned)==expected_exit and not OS.is_process_running(owned) and OS.get_process_exit_code(owned)==expected_exit,("controlled negative exit reports the ambiguous -1 sentinel: " if expected_exit==-1 else "completed exit remains cached before owner release: ")+mode)
+ 	if teardown:
+ 		app.free()
+ 		check(external_audit.release_calls==1 and external_audit.cached_exit_at_release==[expected_exit] and OS.get_process_exit_code(owned)==-1,"completed teardown consumes the exact map entry once")
+@@ -101,7 +101,7 @@
+ 		if bypass:
+ 			check(external_audit.release_calls==0 and OS.get_process_exit_code(owned)==expected_exit,"mock override without reservation does not consume a test-owned map entry")
+ 		else:
+-			check(external_audit.release_calls==1 and external_audit.cached_exit_at_release==[expected_exit] and OS.get_process_exit_code(owned)==-1,"terminal polling releases mapped HANDLE entry before dropping PID: "+mode)
++			check(external_audit.release_calls==1 and external_audit.cached_exit_at_release==[expected_exit] and external_audit.release_returns.size()==1 and external_audit.release_returns[0] in [OK,FAILED] and OS.get_process_exit_code(owned)==-1,("negative-exit reservation takes the real mapped release once; getter alone is ambiguous: " if expected_exit==-1 else "terminal polling removes the observed cached map entry: ")+mode)
+ 		check(importer.pid==-1 and not importer._preparation_map_reserved and importer._preparation_map_pid==-1,"terminal component has no stale reservation: "+mode)
+ 		check(app.pose_editor.additions.size()==(1 if mode=="normal" else 0) and app.document==document,"existing completion/refusal/cancel adoption contract is unchanged: "+mode)
+ 		importer._process(0.0);importer._release_completed_preparation();importer._release_completed_preparation()
+@@ -113,13 +113,13 @@
+ 			check(OS.get_process_exit_code(owned)==-1,"test cleans its own unreserved-child negative control")
+ 		app.free()
+ 		check(external_audit.release_calls==(0 if bypass else 1),"completed node teardown does not release twice: "+mode)
+-	cases.append({"mode":mode,"owned_pid":owned,"folder":output_folder,"expected_exit":expected_exit,"bypass_base_creator":bypass,"completed_teardown":teardown,"checks":checks-start_checks,"failures":failures-start_failures,"release_audit":external_audit.duplicate(true)})
++	cases.append({"mode":mode,"owned_pid":owned,"folder":output_folder,"expected_exit":expected_exit,"getter_proves_map_disappearance":expected_exit!=-1 and not bypass,"bypass_base_creator":bypass,"completed_teardown":teardown,"checks":checks-start_checks,"failures":failures-start_failures,"release_audit":external_audit.duplicate(true)})
+ 
+ func run() -> void:
+ 	if OS.get_name()!="Windows" or str(Engine.get_version_info().get("hash",""))!="89cea143987d564363e15d207438530651d943ac" or OS.get_environment("HYBRID_PYTHON").is_empty():
+ 		push_error("This unrun fixture requires pinned Windows Godot and explicit approved HYBRID_PYTHON");quit(2);return
+ 	var source:=ProjectSettings.globalize_path("res://src/source_import.gd");var before:=FileAccess.get_sha256(source)
+-	for mode in ["normal","refusal","cancel"]:await completed_case(mode)
++	for mode in ["normal","refusal","cancel","exit_minus_one"]:await completed_case(mode)
+ 	await completed_case("normal",true)
+ 	await completed_case("normal",false,true)
+ 	var pair:=make_pair("normal");var app: AppDouble=pair[0];var importer: ImportDouble=pair[1]
+@@ -128,5 +128,5 @@
+ 	check(importer.pid==-1 and not importer._preparation_map_reserved and importer._preparation_map_pid==-1 and importer.audit.release_calls==0,"failed mock spawn never claims or releases a map entry")
+ 	app.free();await process_frame
+ 	check(FileAccess.get_sha256(source)==before,"ownership fixture leaves production source bytes unchanged")
+-	print("SOURCE_IMPORT_OWNER "+JSON.stringify({"checks":checks,"failures":failures,"cases":cases,"source_sha256":before,"authored_single_process_Python_only":true,"native_converter_or_GPU":false}))
++	print("SOURCE_IMPORT_OWNER "+JSON.stringify({"checks":checks,"failures":failures,"cases":cases,"source_sha256":before,"authored_single_process_Python_only":true,"native_converter_or_GPU":false,"negative_exit_getter_limitation":"-1 before and after does not independently prove map disappearance; sole creator/reservation/real release and pinned implementation are required"}))
+ 	quit(0 if failures==0 else 1)
+--- old-context/tests/source_import_owner_worker.py
++++ source/tests/source_import_owner_worker.py
+@@ -7,7 +7,7 @@
+ p.add_argument('--cancel-file',required=True,type=Path)
+ p.add_argument('--gate-file',required=True,type=Path)
+ p.add_argument('--folder',required=True,type=Path)
+-p.add_argument('--mode',choices=('normal','refusal','cancel'),required=True)
++p.add_argument('--mode',choices=('normal','refusal','cancel','exit_minus_one'),required=True)
+ args=p.parse_args()
+ folder=args.folder.resolve()
+ assert all(path.resolve().parent==folder.parent for path in (args.status_file,args.cancel_file,args.gate_file))
+@@ -19,7 +19,7 @@
+  if args.mode=='cancel' and args.cancel_file.exists():
+   code=2;value={'ok':False,'error':'Authored preparation cancelled'};break
+  if args.mode!='cancel' and args.gate_file.exists():
+-  code=0 if args.mode=='normal' else 1
++  code=0 if args.mode=='normal' else (-1 if args.mode=='exit_minus_one' else 1)
+   value={'ok':True,'glb':str(folder/'status-only.glb')} if code==0 else {'ok':False,'error':'Authored preparation refused'}
+   break
+  time.sleep(.01)

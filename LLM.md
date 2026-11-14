@@ -4508,3 +4508,42 @@ including newly registered Source-choice foundation and thin-placement wrapper.
 The earlier12071fe full pass predates these changes and is not reused as a new
 pass. Busy owner participation is not requested; manual gates do not stop this
 independent SFM feature work.
+
+
+## 2026-11-13 — Complete Windows pass includes the new SFM controls
+
+The fresh complete default run at9f6f531538156fc34e3652bc81da8a608e379156
+PASSED in2787.2334936seconds (46m27s). All982functional source entries and HEAD
+match before/after. There are36core process groups,156result entries and21final
+movie checks; both decoded audio onsets are1.0second, and the WASAPI editor RMS
+is5658.299233592635. The registered Source-choice foundation167, bootstrap2,
+resource writer6pass/1explicit symlink-privilege skip, placement43plus20headless,
+wind845, helper208CPU/266graphics, background save114 and body24+72 all pass in
+this same complete run. It is not a composition of earlier scoped reports.
+
+Fresh metadata audit binds178root receipts and192unique physical private jobs:
+191exit0 plus the explicitly expected Krita cancellation exit2. All are fresh,
+private and closed,13inline receipt occurrences match physical bytes, and no
+reference or unexpected failure is missing. Root host queries find exact PS3136
+and Python8188 absent using full creation timestamps; no owned Godot/Blender/
+FFmpeg commands remain and no process was killed. CIM's microsecond truncation
+is documented separately from the exact process timestamp. Root released the
+graphics lease only after the source/receipt/host proof gates passed.
+
+Lossless compact metadata/source/logs and all raw receipts are saved in
+experiments/windows_canonical_sfm_20261113, with explicit deduplication aliases.
+Native artwork, models, HAS/GLB, images/audio/video and runtime binaries remain
+local. The earlier12071fe full pass and failed attempts remain historical.
+The1348actual SFM workflow checks remain separately bound to their8dfunctional
+source, unchanged through this full9f checkpoint. Formal55/62 and52/54 stay fixed;
+no artist, novice, learner, physical-device or clean-install result is invented.
+
+The next concrete source candidates are preserved in next_sfm_candidates_20261114:
+completed-import Windows map cleanup (53authored runtime checks stillUNRUN),
+amended inactive jiggle metadata25CPU, selected-MDL capture18+9CPU, and ordinary
+Keiki/Mima shape UI plans (UNRUN). The historical exit-code sentinel guard is
+rejected before production: legitimate Windows exit0xFFFFFFFF appears as-1.
+The sole creator reservation, not that sentinel, proves exactly-once mapped
+cleanup. Native hair simulation/binding is not implemented. Continue these
+independent increments after saving this verified checkpoint; the busy owner's
+manual acceptance conditions do not stop this work or justify another prompt.

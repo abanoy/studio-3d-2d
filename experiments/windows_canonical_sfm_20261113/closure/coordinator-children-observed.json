@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-11-14T01:08:55.5000140Z",
+  "format": "has_owned_canonical_child_identity_observation_1",
+  "coordinator_creation_utc_exact": "2026-11-14T00:28:03.4147954Z",
+  "coordinator_creation_utc_cim": "2026-11-14T00:28:03.4147950Z",
+  "children": [
+    {
+      "creation_utc_exact": "2026-11-14T00:28:03.5169387Z",
+      "command": "\\??\\C:\\windows\\system32\\conhost.exe 0x4",
+      "executable": "C:\\windows\\system32\\conhost.exe",
+      "name": "conhost.exe",
+      "pid": 10268,
+      "creation_utc_cim": "2026-11-14T00:28:03.5169380Z",
+      "parent_pid": 3136
+    },
+    {
+      "creation_utc_exact": "2026-11-14T00:28:04.1593199Z",
+      "command": "\"C:\\Program Files\\Python313\\python.exe\" -u tests/verify.py",
+      "executable": "C:\\Program Files\\Python313\\python.exe",
+      "name": "python.exe",
+      "pid": 8188,
+      "creation_utc_cim": "2026-11-14T00:28:04.1593190Z",
+      "parent_pid": 3136
+    }
+  ],
+  "read_only": true,
+  "precision_note": "CIM truncates creation to microseconds; Get-Process exact100ns start matches launch",
+  "coordinator_pid": 3136
+}

@@ -1,0 +1,53 @@
+--- old-context/src/source_import.gd
++++ source/src/source_import.gd
+@@ -8,6 +8,9 @@
+ var mount_overrides := {}
+ var app
+ var pid := -1
++const PREPARATION_PROCESS_ENGINE := "89cea143987d564363e15d207438530651d943ac"
++var _preparation_map_pid := -1
++var _preparation_map_reserved := false
+ var folder := ""
+ var result_path := ""
+ var cancel_path := ""
+@@ -84,7 +87,31 @@
+ 	return preload("res://src/source_choice_dialog.gd").new()
+ 
+ func _spawn_preparation(args: PackedStringArray) -> int:
+-	return OS.create_process(python(),args,false)
++	var created := OS.create_process(python(),args,false)
++	# Only this actual creator reserves the pinned Windows process-map entry.
++	# Test overrides which bypass it must not claim ownership of their fake PID.
++	if created > 0 and OS.get_name() == "Windows" and str(Engine.get_version_info().get("hash", "")) == PREPARATION_PROCESS_ENGINE:
++		_preparation_map_pid = created
++		_preparation_map_reserved = true
++	return created
++
++func _release_preparation_map_entry(owned: int) -> Error:
++	return OS.kill(owned)
++
++func _release_completed_preparation() -> void:
++	if not _preparation_map_reserved: return
++	var owned := _preparation_map_pid
++	if owned <= 0 or OS.is_process_running(owned): return
++	if OS.get_process_exit_code(owned) == -1: return
++	# A completed mapped child may report FAILED from TerminateProcess while
++	# still erasing its entry and closing both handles. Consume once; never retry.
++	_preparation_map_reserved = false
++	_preparation_map_pid = -1
++	_release_preparation_map_entry(owned)
++
++func _exit_tree() -> void:
++	# A live preparer retains its cooperative cancellation/child-cleanup path.
++	_release_completed_preparation()
+ 
+ func start(path: String, as_model: bool, at_frame := 0, placement := {}) -> void:
+ 	if pid > 0 or app.exporting: return
+@@ -251,6 +278,7 @@
+ 
+ func _process(_delta: float) -> void:
+ 	if pid <= 0 or OS.is_process_running(pid): return
++	_release_completed_preparation()
+ 	pid = -1
+ 	if is_instance_valid(progress): progress.hide(); progress.queue_free()
+ 	var result = JSON.parse_string(FileAccess.get_file_as_string(result_path)) if FileAccess.file_exists(result_path) else null

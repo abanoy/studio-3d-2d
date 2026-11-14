@@ -1,0 +1,48 @@
+{
+  "format": "has_source_import_process_ownership_readonly_audit_1",
+  "finding": "Completed preparation mapping is not explicitly released before SourceImport discards pid",
+  "scope": "Session-lifetime retained handles, not a demonstrated live-process/native-workflow failure",
+  "engine_revision": "89cea143987d564363e15d207438530651d943ac",
+  "primary_source": "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/platform/windows/os_windows.cpp#L1449-L1566",
+  "reviewed_primary_functions": {
+    "create_process": [
+      1449,
+      1489
+    ],
+    "kill": [
+      1491,
+      1510
+    ],
+    "is_process_running": [
+      1517,
+      1540
+    ],
+    "get_process_exit_code": [
+      1542,
+      1565
+    ]
+  },
+  "local_sources": {
+    "src/source_import.gd": {
+      "bytes": 17381,
+      "sha256": "4cacfc7e86adad5e8e78872439500f0e2a922a6e022dc48d268c5b4cd3686a47"
+    },
+    "src/source_choice_dialog.gd": {
+      "bytes": 10435,
+      "sha256": "84bd816615fe0ac10c857606f21db89040544e0b52dd2cdda1089f177e9dda2d"
+    },
+    "src/app.gd": {
+      "bytes": 147447,
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+    },
+    "tools/prepare_source.py": {
+      "bytes": 13626,
+      "sha256": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e"
+    }
+  },
+  "runtime_or_WinAPI_probe": false,
+  "source_or_Git_mutation": false,
+  "future_test_plan": "REVIEW.md",
+  "normal_WM_close": "Cooperative cancel then wait via pid; no ordinary-close orphan reproduced",
+  "direct_teardown": "No importer teardown hook/quit guard; uncovered path, no runtime repro"
+}

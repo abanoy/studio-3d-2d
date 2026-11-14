@@ -55,6 +55,12 @@
           "path": "docs/benchmarks/windows_canonical_full_2026-11-13.json",
           "commit": "9897f86019dfb8499d0ee30f6560580fac7bb8da",
           "scope": "FreshcompleteconfiguredWindowsdefault:36core/alllaterregisteredwrappers,21finalmovies,bothdecodedaudioonsets1.0seconds/editorRMS5658.299,947functionalhashesandHEADexact;174freshrootprivatejobsclosedexit0/noFGswitch. Cleanofflineinstall, human/device/nativeartistacceptance notinferred. Pendinghelperoverlay notinthismainrevision."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+          "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+          "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
         }
       ],
       "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
@@ -378,6 +384,12 @@
           "kind": "test_result",
           "path": "docs/benchmarks/sfm_static_native_app_2026-11-13.json",
           "scope": "Exact functional8d4fde0 working-source snapshots:Core14+Wider11 actualapp1348checks,22nativeconversions/3GUIrefusals,44freshsource-offlinepacked+linkedopens,88derivedframejoins,2H264AAC1080p24movies/onset1.0000417/RMS8487.65.24cleanprivatejobs,8/8preservationbothruns,3279whole-root source/nsmtime/HEAD andruntime maps exactlysame,629independentmetadatajoins. SixrepresentativeMDLs only; no nativeSource shader/jiggle/controller/assembly/artist fidelity acceptance. Fullcanonicalnewfeaturepending; oldfailedattemptsretained; statusesunchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+          "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+          "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
         }
       ],
       "remaining": "Native inputs are now available and the combined Windows supported-profile route passes. Remaining external prerequisite: artist/source-appearance comparison against the actual native originals using docs/windows_acceptance_followup.md. Roadmap formats/full native shader-simulator reproduction remain optional or explicit unsupported limits; no known independent software defect is being handed off.",
@@ -496,6 +508,12 @@
           "kind": "test_result",
           "path": "docs/benchmarks/sfm_derived_render_app_actual_2026-11-13.json",
           "scope": "Exact4fa v3 passes328writer+60freshreader checks:12preparedbundles,8rawcaptures/24derivedpoint comparisons, twoordinarypreparedGLBimports withUndoRedo/namednumericposes/normalpackedHAS/exactofflinecoldpixels; allsevenpreservationgates andbothprivatedesktopclosures pass. Tools0/.5/1usesrawenginechannels, notappshapeUI. Newmovies/nativeSourcefidelity andnewstaticvariantworker/chooser mainport remainunrun/unimplemented; wider82MDLfeatureinventory separate. Priorv2failuresretained; statusunchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+          "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+          "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
         }
       ],
       "remaining": "Native dependencies, original preservation, bounded materials/props/lightmaps and exact portable cold replay now have Windows evidence. Obtain actual source-appearance/artist comparison for supported geometry/material/rig behavior. Preserve the explicitly reported partial lightmap/native-shader/physics limits; do not infer original visual fidelity solely from self-replay hashes.",
@@ -2575,7 +2593,7 @@
       "implementation": "implemented",
       "verification": "verified",
       "acceptance_status": "verified",
-      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10\u201330seconds without taking over.",
+      "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over.",
       "evidence": [
         {
           "kind": "source",
@@ -3185,7 +3203,7 @@
       ],
       "title": "Advanced selection, lasso/painted masks, glow, multiple palettes and proportion tools",
       "status": "conditional_refinement",
-      "rule": "Some are already implemented; pursue remaining refinements after stages1\u20134 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
+      "rule": "Some are already implemented; pursue remaining refinements after stages1–4 acceptance and measured owner pain. Shadow-or-glow is already satisfied by shadow; do not count both as mandatory."
     },
     {
       "id": "O-RENDER",
@@ -3295,7 +3313,7 @@
       "prevents": [
         "ACCEPT-INSTALL"
       ],
-      "independent_work": "Fresh configured-Windows full default at9897f86 passes all36core groups, every laterregisteredwrapper,21finalmoviechecks andbothdecoded1.0secondaudioonsets, with947functionalhashes/HEADexact. Exact19-layerhecatia is suppliedandpasses32writer+5cold; notmissing. Thisisnotcleanofflineinstallationorhuman/deviceacceptance. Historicalchecksum-boundreaderbackups remainunavailable byownerreport; do notsubstitute orrequestagain. Evidence:docs/benchmarks/windows_canonical_full_2026-11-13.json. Latest integration1236fullfailedatVRM0linkedSave childcreation afterbothwindmatricespass;post-ordering scopedbackground/body checks pass. That1236failureprecededthefresh12071fecompletefullpass; see docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json. Fresh post-save-order default at12071fe passes36core,154resultentries,21movies,both1.0saudioonsets and968sourcehashes/HEADexact; new external private review passes129replays with8closedjobs andprotectedpackages/runtimes unchanged. See docs/benchmarks/windows_canonical_post_save_order_2026-11-13.json. Configured-PC evidence does not certify clean offline installation."
+      "independent_work": "Fresh configured-Windows full default at9897f86 passes all36core groups, every laterregisteredwrapper,21finalmoviechecks andbothdecoded1.0secondaudioonsets, with947functionalhashes/HEADexact. Exact19-layerhecatia is suppliedandpasses32writer+5cold; notmissing. Thisisnotcleanofflineinstallationorhuman/deviceacceptance. Historicalchecksum-boundreaderbackups remainunavailable byownerreport; do notsubstitute orrequestagain. Evidence:docs/benchmarks/windows_canonical_full_2026-11-13.json. Latest integration1236fullfailedatVRM0linkedSave childcreation afterbothwindmatricespass;post-ordering scopedbackground/body checks pass. That1236failureprecededthefresh12071fecompletefullpass; see docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json. Fresh post-save-order default at12071fe passes36core,154resultentries,21movies,both1.0saudioonsets and968sourcehashes/HEADexact; new external private review passes129replays with8closedjobs andprotectedpackages/runtimes unchanged. See docs/benchmarks/windows_canonical_post_save_order_2026-11-13.json. Configured-PC evidence does not certify clean offline installation. Latest static-SFM full default at 9f6f531 also passes: 982 unchanged functional files/HEAD, 156 results, 21 movies and 192 closed private jobs. See docs/benchmarks/windows_canonical_sfm_2026-11-13.json. No change to external prerequisites or formal scoring."
     },
     {
       "id": "B-NATIVE",

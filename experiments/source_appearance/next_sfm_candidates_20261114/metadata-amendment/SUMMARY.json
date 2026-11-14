@@ -1,0 +1,48 @@
+{
+  "format": "has_jiggle_minimal_three_refusal_amendment_ready_1",
+  "production_or_Git_mutation": false,
+  "source_context": "output-only amendment to historical saved minimal plan",
+  "new_signature": "plan_report(base_report, inspection, newline=\"\\n\", *, expected_native_mdl_sha256=None)",
+  "bridge_seam4": "plan_report(report, inspection, newline=os.linesep, expected_native_mdl_sha256=frozen_native_sha)",
+  "expected_context_source": "Independently frozen staged selected-MDL bytes/SHA/size/nsmtime from before SourceIO, rechecked before publication; never copied from metadata",
+  "old_context_before": {
+    "source_jiggle_metadata.py": "f49d4ab9051e69d16a5ce0adb699b5698d6bfbb9147a69050014a11295e33ffe",
+    "source_jiggle_values.py": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+    "test_source_jiggle_metadata.py": "d1bd584cdb61841f2e18e969792bbd9bdbd2f59534ea5c175fcbbace54c4d262",
+    "authored_fixture.py": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a"
+  },
+  "old_context_after": {
+    "source_jiggle_metadata.py": "f49d4ab9051e69d16a5ce0adb699b5698d6bfbb9147a69050014a11295e33ffe",
+    "source_jiggle_values.py": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+    "test_source_jiggle_metadata.py": "d1bd584cdb61841f2e18e969792bbd9bdbd2f59534ea5c175fcbbace54c4d262",
+    "authored_fixture.py": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a"
+  },
+  "new_source": {
+    "authored_fixture.py": {
+      "bytes": 2311,
+      "sha256": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a"
+    },
+    "source_jiggle_metadata.py": {
+      "bytes": 16843,
+      "sha256": "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056"
+    },
+    "source_jiggle_values.py": {
+      "bytes": 7713,
+      "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e"
+    },
+    "test_source_jiggle_metadata.py": {
+      "bytes": 15811,
+      "sha256": "cf777f3f63e4266d2180c46213ac256db4146f4c19c4e001c1173e892f594d93"
+    }
+  },
+  "CPU_report": "cpu-launch-1794616502760574900\\verification.json",
+  "checks": 25,
+  "original_tests_API_updated": 22,
+  "new_refusal_test_methods": 3,
+  "failures": 0,
+  "errors": 0,
+  "source_unchanged_during_CPU": true,
+  "runtime_import_or_launch": false,
+  "native_Junko_full_report_fit_adoption_save": "UNRUN",
+  "no_rule_BSP_bytes_and_128KiB_256KiB_1MiB_contracts": "unchanged"
+}
