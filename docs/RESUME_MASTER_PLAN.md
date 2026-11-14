@@ -13,9 +13,20 @@ These worker results do not certify app adoption or native visual fidelity.
 The first actual Studio import then exposed a separate startup bug: the new
 appearance helper was imported before Blender's script-local tools path existed.
 The failed private run is retained. The narrow import-order fix passes two
-isolated-host CPU methods and the affected 167-check foundation. A fresh full
-app matrix is next, including normal Add/Undo/Redo, packed/linked cold reopening
-and a movie. The earlier full suite below predates this feature. Native jiggle,
+isolated-host CPU methods and the affected 167-check foundation. The next actual
+app writer completed all 14 cases and 393 assertions without assertion failures,
+but the strict wrapper correctly failed four negative-AABB errors when placing
+thin Keiki tools. Its readers and movie did not run. The bounded per-axis placement
+fix now passes 20 headless bounds checks and 43 private app/movie checks and is
+registered in default verification. Fresh clean SFM app matrices remain next, including normal
+Add/Undo/Redo, packed/linked cold reopening and a movie.
+
+Separate next-feature research now reads all 49 Junko hair jiggle rules directly
+from the SHA-bound native file: 1,421 finite float32 values, all flags 0x31, with
+independent row/bit checks. This is an inert raw-metadata proposal only. Studio
+does not yet retain or simulate those values, and native binding remains unproved.
+[Values and limits](benchmarks/sfm_native_jiggle_values_2026-11-13.json).
+The earlier full suite below predates this feature. Native jiggle,
 shader fidelity, facial semantics and assembly remain distinct features.
 
 

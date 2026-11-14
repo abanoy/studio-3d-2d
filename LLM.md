@@ -4423,3 +4423,45 @@ Fresh actualappCore14/Wider11, cold Undo/HAS/movie checks and complete default
 Windows verification are next. Native shader/flex/jiggle/assembly fidelity and
 manual acceptance stay distinct. Formal55/62 and52/54 remain unchanged; owner
 participation is not requested and does not stop continued SFM implementation.
+
+
+## 2026-11-13 — Thin Source accessories expose placement bounds; native jiggle values read
+
+Source/helper checkpoint1caeb44b12e9ebf2db944c769810010975f5abaa was pushed,
+fetched, ls-remote and seven raw progress/source files verified. Fresh actual
+Studio Core14 then completed393writer assertions with0assertion failures and
+strictresultbindingtrue, including normal imported metadata, native box-joint
+posing, Undo/Redo and packed/linked Save. The whole attempt still FAILED four
+negative-AABB engine errors at import_placement.gd112 for thin Keiki tool variants.
+No cold readers or movie ran. Source/runtime/original/copy/snapshot identities
+stayed exact; private exit0/Job/desktop closed and root found no owned workers.
+That strict failure is preserved;393assertions are not substituted for a pass.
+
+The placement fix caps inward clearance per axis at half available extent,
+preserving center and nonnegative bounds without expanding them. Both actor.01
+and wall.02 paths use it. Actual thin/planar actor/wall queries plus ordinary/
+collapsed bounds pass20headless checks. Existing private placement passes43checks
+(20newbounds+23original, including3available prepared GMod checks) and a fresh
+48frame1080p24 H264 movie. All981functional files remain exact during testing.
+An initial restricted-context CreateDesktop denial before child launch is retained
+separately; the identical private route passes in the approved host context, with
+no visible fallback. Verifier now retains prelaunch console/receipt errors instead
+of masking them with missing engine.log, and checks both engine logs/closure.
+The placement wrapper is newly registered in default verification with fresh
+output and strictbounds/movie/source gates; that registration is AST-checked but
+the whole default run remains pending. Evidence:main_thin_placement_fix_20261113.
+
+Parallel output-only next-feature work reads all49Junko hair type5rules directly
+from its SHA-bound37644byte MDL49. All1421float32 values and raw bits are finite
+and independently match; allflags0x31,17rules stiffness100/32rules50. Authored26
+controls, independent26+2refusals and24actual crosschecks pass;1153protectedfiles
+are exact. The67525byte inert proposal fits its own128KiB budget, but full adjacent
+256KiB report admission is UNTESTED. No Studio integration, solver, binding, unit
+mapping or full140byte/BOING claim. Evidence:native_jiggle_values_20261113.
+
+Fresh SFM actualappCore14/Wider11 and complete default Windows verification are
+next. Wider82MDL/71distinct definitions remain in scope beyond these six current
+models; native shader/flex/jiggle/assembly and artist fidelity remain separate.
+Formal55/62 and52/54 unchanged. Busy owner participation is not requested and
+does not stop independent feature work. Originals/installed Studio/tools/recovery
+stay protected, and no native artwork or media is uploaded.

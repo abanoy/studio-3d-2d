@@ -6,6 +6,12 @@ const Storage=preload("res://src/storage.gd")
 var checks:=0
 var failures:=0
 
+class BoundsRenderer extends Node:
+	var world_runtime: Dictionary={"instances":{}}
+	var environment_scene: Node3D
+	var model
+	func scene_bounds(node: Node3D) -> AABB:return node.global_transform*Placement.local_bounds(node)
+
 func _initialize() -> void:
 	create_timer(100).timeout.connect(func():push_error("Placement watchdog expired");quit(2))
 	call_deferred("run")
@@ -22,8 +28,67 @@ func wait_job(job) -> void:
 	while job.pid>0:await process_frame
 	await settled()
 
+func bounds_fixture(path: String, planar: bool) -> Error:
+	var scene:=Node3D.new();var mesh:=MeshInstance3D.new()
+	if planar:
+		var quad:=QuadMesh.new();quad.size=Vector2(2,2);mesh.mesh=quad
+	else:
+		var box:=BoxMesh.new();box.size=Vector3(0.005,2,0.03);mesh.mesh=box
+	scene.add_child(mesh);mesh.owner=scene
+	var document:=GLTFDocument.new();var state:=GLTFState.new();var error:=document.append_from_scene(scene,state)
+	if error==OK:error=document.write_to_filesystem(state,path)
+	scene.free();return error
+
+func occupied_renderer(wall: bool) -> BoundsRenderer:
+	var renderer:=BoundsRenderer.new();root.add_child(renderer)
+	var obstacle:=Node3D.new();renderer.add_child(obstacle)
+	var mesh:=MeshInstance3D.new();obstacle.add_child(mesh)
+	if wall:
+		# A slanted vertical triangle whose AABB contains all nearby candidates.
+		# Placement deliberately uses wall triangle bounds, not a full mesh solver.
+		var vertices:=PackedVector3Array([Vector3(-20,-20,-20),Vector3(20,-20,20),Vector3(0,20,0)])
+		var normal: Vector3=(vertices[1]-vertices[0]).cross(vertices[2]-vertices[0]).normalized()
+		var arrays: Array=[];arrays.resize(Mesh.ARRAY_MAX);arrays[Mesh.ARRAY_VERTEX]=vertices
+		arrays[Mesh.ARRAY_NORMAL]=PackedVector3Array([normal,normal,normal]);arrays[Mesh.ARRAY_INDEX]=PackedInt32Array([0,1,2])
+		var resource:=ArrayMesh.new();resource.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays);mesh.mesh=resource
+	else:
+		var box:=BoxMesh.new();box.size=Vector3(40,40,40);mesh.mesh=box
+	renderer.world_runtime.instances["occupied"]={"root":obstacle,"data":{"kind":"environment" if wall else "model"}}
+	return renderer
+
+func bounds_checks(folder: String) -> Dictionary:
+	var first:=checks;var before_failures:=failures
+	var normal:=AABB(Vector3(-1,-1.5,-2),Vector3(2,3,4))
+	var mixed:=AABB(Vector3(0.25,-0.5,1),Vector3(0.005,2,0.03))
+	var planar:=AABB(Vector3.ZERO,Vector3(2,0,3))
+	var line:=AABB(Vector3(0,-1,0),Vector3(0,2,0));var point:=AABB(Vector3.ZERO,Vector3.ZERO)
+	var occupied:=AABB(Vector3(-10,-10,-10),Vector3(20,20,20))
+	for margin in [0.01,0.02]:
+		check(Placement.overlap_inset(normal,margin)==normal.grow(-margin),"normal clearance matches the established inset: "+str(margin))
+		var thin:=Placement.overlap_inset(mixed,margin)
+		check(thin.size.x==0 and thin.size.y>=0 and thin.size.z>=0 and thin.size.x<=mixed.size.x and thin.size.y<=mixed.size.y and thin.size.z<=mixed.size.z,"thin per-axis inset stays nonnegative without expansion: "+str(margin))
+		check(thin.get_center().is_equal_approx(mixed.get_center()) and is_equal_approx(thin.size.y,2-2*margin) and is_equal_approx(thin.size.z,maxf(0,0.03-2*margin)),"thin clearance preserves center and requested thick-axis margins: "+str(margin))
+		for box in [planar,line,point]:
+			var inset: AABB=Placement.overlap_inset(box,margin)
+			check(inset.size.x>=0 and inset.size.y>=0 and inset.size.z>=0 and inset.get_center().is_equal_approx(box.get_center()) and inset.intersects(occupied),"collapsed bounds still detect strictly occupied space: "+str(margin)+" / "+str(box.size))
+	check(Placement.overlap_inset(mixed,0)==mixed and Placement.overlap_inset(mixed,-0.1)==mixed,"zero or negative clearance never expands the imported bounds")
+	check(not Placement.overlap_inset(AABB(Vector3(10,0,0),Vector3.ZERO),0.02).intersects(occupied),"boundary-only contact retains the existing open intersection semantics")
+	var context:={"camera":Transform3D(Basis.IDENTITY,Vector3(0,1,5)),"fov":70.0,"aspect":16.0/9.0}
+	for is_planar in [false,true]:
+		var path:=folder.path_join("planar.glb" if is_planar else "thin.glb")
+		check(bounds_fixture(path,is_planar)==OK,"authored thin/planar GLB fixture writes without native conversion")
+		for wall in [false,true]:
+			var renderer:=occupied_renderer(wall)
+			var result: Dictionary=Placement.plan(renderer,path,context)
+			check(not result.has("error") and result.get("attempts")==9 and result.get("overlap",false) and int(result.get("triangles",-1))==(1 if wall else 0),"thin/planar candidate search retains occupied "+("wall" if wall else "actor")+" fallback: "+str(is_planar))
+			renderer.free()
+	return {"checks":checks-first,"failures":failures-before_failures,"thin_planar_actual_plan":true}
+
 func run() -> void:
 	var folder:=ProjectSettings.globalize_path("res://output/import-placement/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
+	var bounds: Dictionary=bounds_checks(folder)
+	if "--bounds-only" in OS.get_cmdline_user_args():
+		print("IMPORT_PLACEMENT_BOUNDS "+JSON.stringify(bounds));quit(0 if failures==0 else 1);return
 	var map:=folder.path_join("room.glb");var asset:=folder.path_join("actor.glb");SceneIO.make_fixture(map);SceneIO.make_pose_fixture(asset)
 	var original:=FileAccess.get_sha256(asset)
 	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
@@ -47,7 +112,7 @@ func run() -> void:
 	check(one.data.pose_keys.is_empty(),"import placement is a static root choice, not an implicit animation key")
 	var first_data: Dictionary=one.data.duplicate(true)
 	app.import_actions.add(asset,true,0);var second: String=app.last_import_id;var two: RefCounted=app.renderer.active_model();var second_bounds: AABB=app.renderer.scene_bounds(two.root)
-	check(not first_bounds.grow(-0.01).intersects(second_bounds) and two.data.metadata.initial_placement.attempts>1,"nearby candidate search avoids an existing actor")
+	check(not Placement.overlap_inset(first_bounds,0.01).intersects(second_bounds) and two.data.metadata.initial_placement.attempts>1,"nearby candidate search avoids an existing actor")
 	check(app.renderer.world_runtime.instance(first).data==first_data,"new placement does not move existing actor")
 	app.undo();app.redo()
 	check(app.renderer.world_runtime.instance(second).data==two.data,"Undo/Redo restores the chosen root placement exactly")
@@ -105,6 +170,6 @@ func run() -> void:
 			var native_after: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 			check(native_before.get_data()!=native_after.get_data(),"actor placed in actual GMod map contributes rendered pixels without reframing")
 			native_after.save_png(folder.path_join("native-placement.png"))
-	var result:={"checks":checks,"failures":failures,"folder":folder,"project":project,"movie":movie,"authored_import_microseconds":elapsed,"native_query_ms":native_ms,"native_support":native_support}
+	var result:={"checks":checks,"failures":failures,"bounds":bounds,"folder":folder,"project":project,"movie":movie,"authored_import_microseconds":elapsed,"native_query_ms":native_ms,"native_support":native_support}
 	var file:=FileAccess.open("res://output/import-placement-result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result));file.close()
 	print("IMPORT_PLACEMENT "+JSON.stringify(result));app.free();quit(0 if failures==0 else 1)

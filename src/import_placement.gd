@@ -3,6 +3,13 @@ extends RefCounted
 const SceneIO=preload("res://src/scene3d.gd")
 const TRIANGLE_BUDGET:=50000
 
+static func overlap_inset(bounds: AABB, margin: float) -> AABB:
+	# Collision clearance must not turn thin/planar imported bounds inside out.
+	# Collapse an exhausted axis at its original center; never inflate it again.
+	var inward:=Vector3.ONE*maxf(0.0,margin)
+	inward=inward.min(bounds.size*0.5)
+	return AABB(bounds.position+inward,(bounds.size-inward*2.0).max(Vector3.ZERO))
+
 static func local_bounds(node: Node, parent:=Transform3D.IDENTITY) -> AABB:
 	var transform: Transform3D=parent*node.transform if node is Node3D else parent
 	var bounds: AABB=transform*preload("res://src/source_shape.gd").mesh_bounds(node) if node is MeshInstance3D and node.mesh else AABB()
@@ -109,10 +116,10 @@ static func plan(renderer: Node, source: String, context: Dictionary, use_shape=
 			position=seed-bounds.get_center();placed=AABB(bounds.position+position,bounds.size);support="view"
 		var overlap:=false
 		for obstacle in obstacles:
-			if placed.grow(-0.01).intersects(obstacle):overlap=true;break
+			if overlap_inset(placed,0.01).intersects(obstacle):overlap=true;break
 		if not overlap:
 			for triangle in triangles:
-				if not triangle.horizontal and placed.grow(-0.02).intersects(triangle.box.grow(0.005)):overlap=true;break
+				if not triangle.horizontal and overlap_inset(placed,0.02).intersects(triangle.box.grow(0.005)):overlap=true;break
 		var candidate:={"position":position,"support":support,"attempts":attempts,"overlap":overlap,"triangles":used,"skipped_surfaces":skipped}
 		if fallback.is_empty():fallback=candidate
 		# Keep searching nearby floor-supported positions before choosing the

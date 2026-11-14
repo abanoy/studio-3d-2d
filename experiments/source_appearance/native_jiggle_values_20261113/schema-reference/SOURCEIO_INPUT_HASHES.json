@@ -1,0 +1,61 @@
+{
+  "format": "has_source_jiggle_schema_readonly_sources_1",
+  "scope": "Source text and existing parsed JSON inspection only; no native/runtime imports, parsing, extraction, converters, Godot or graphics",
+  "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+  "local_sources": [
+    {
+      "path": "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/library/models/mdl/structs/jiggle_bone.py",
+      "initial_read_sha256": "a06cd6e0234fd29894c702003015fad7d0601839572b4fe3dbbfb4b9b082feec",
+      "final_read_sha256": "a06cd6e0234fd29894c702003015fad7d0601839572b4fe3dbbfb4b9b082feec",
+      "bytes": 2503,
+      "final_mtime_utc_ticks": 639298845446707578,
+      "unchanged_sha256": true
+    },
+    {
+      "path": "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647/library/models/mdl/structs/bone.py",
+      "initial_read_sha256": "a61a3e0378e7b2d2d070f2b9ef138b78516db4a9830144cd6a6d907295b7d085",
+      "final_read_sha256": "a61a3e0378e7b2d2d070f2b9ef138b78516db4a9830144cd6a6d907295b7d085",
+      "bytes": 8415,
+      "final_mtime_utc_ticks": 639298845446640866,
+      "unchanged_sha256": true
+    },
+    {
+      "path": "output/sfm-broader-native-cases-20261113/WIDER_FAMILIES.json",
+      "initial_read_sha256": "43525a380a88cd7ec60420476b27cea1a0a9ec83ed948cb39841c38a438aba48",
+      "final_read_sha256": "43525a380a88cd7ec60420476b27cea1a0a9ec83ed948cb39841c38a438aba48",
+      "bytes": 892052,
+      "final_mtime_utc_ticks": 639302090445043702,
+      "unchanged_sha256": true
+    },
+    {
+      "path": "docs/benchmarks/sfm_native_feature_inventory_2026-11-12.json",
+      "initial_read_sha256": "a9a01c7f370ff1fc3b72875d4a72c4567399521510b01fe155478e3ecd85d4f2",
+      "final_read_sha256": "a9a01c7f370ff1fc3b72875d4a72c4567399521510b01fe155478e3ecd85d4f2",
+      "bytes": 76097,
+      "final_mtime_utc_ticks": 639301168258788232,
+      "unchanged_sha256": true
+    }
+  ],
+  "all_read_hashes_unchanged": true,
+  "official_primary_sources": [
+    {
+      "url": "https://github.com/ValveSoftware/source-sdk-2013/blob/master/src/public/studio.h",
+      "raw_url": "https://raw.githubusercontent.com/ValveSoftware/source-sdk-2013/master/src/public/studio.h",
+      "accessed_date": "2026-11-13",
+      "scope": "Official procedural kinds, flags, struct fields and explicit radians; master is not an immutable revision pin"
+    },
+    {
+      "url": "https://github.com/ValveSoftware/source-sdk-2013/blob/master/src/public/jigglebones.cpp",
+      "raw_url": "https://raw.githubusercontent.com/ValveSoftware/source-sdk-2013/master/src/public/jigglebones.cpp",
+      "accessed_date": "2026-11-13",
+      "scope": "Official runtime field use, coordinate axis and dimensional inference; no implementation was executed"
+    },
+    {
+      "url": "https://github.com/ValveSoftware/source-sdk-2013/blob/master/src/public/jigglebones.h",
+      "accessed_date": "2026-11-13",
+      "scope": "Official separation of per-instance dynamic state"
+    }
+  ],
+  "native_fidelity_accepted": false,
+  "runtime_adapter_implemented": false
+}

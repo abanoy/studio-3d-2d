@@ -1,0 +1,57 @@
+{
+  "format": "has_native_app_thin_placement_failure_1",
+  "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794614326121645900-aa121fca",
+  "source_revision": "1caeb44b12e9ebf2db944c769810010975f5abaa",
+  "passed": false,
+  "writer_assertions": 393,
+  "writer_assertion_failures": 0,
+  "writer_completed_cases": 14,
+  "strict_result_binding": true,
+  "worker_exit": 0,
+  "engine_error_markers": [
+    "ERROR: AABB size is negative, this is not supported. Use AABB.abs() to get an AABB with a positive size.",
+    "ERROR: AABB size is negative, this is not supported. Use AABB.abs() to get an AABB with a positive size.",
+    "ERROR: AABB size is negative, this is not supported. Use AABB.abs() to get an AABB with a positive size.",
+    "ERROR: AABB size is negative, this is not supported. Use AABB.abs() to get an AABB with a positive size."
+  ],
+  "reason": "Negative grown AABB for thin Keiki tools at import_placement.gd112; strict wrapper failed before offline readers",
+  "private_receipt": {
+    "format": "studio_private_desktop_1",
+    "desktop": "HAS_Test_8fced34406ce44338a4aeab66f415672",
+    "desktop_switch_requested": false,
+    "private_window_seen": true,
+    "child_desktop_confirmed": true,
+    "maximum_owned_windows": 9,
+    "foreground_child_observed": false,
+    "exit": 0,
+    "child_pid": 11904,
+    "job_closed": true,
+    "desktop_closed": true,
+    "seconds": 73.842
+  },
+  "verification_raw_sha256": "dab004e7d94afd7eb83e1a7f31aa7e15a6b695f5dd7037b8bae661f4bb339e12",
+  "verification_raw_bytes": 855905,
+  "preservation": {
+    "main_sources_and_head": true,
+    "approved_runtimes": true,
+    "manifest": true,
+    "original_families": true,
+    "owned_native_copies": true,
+    "snapshot_sources": true,
+    "conversion_metadata": false,
+    "saved_packages_and_linked_assets": false
+  },
+  "not_reached": [
+    "conversion metadata archival",
+    "package before-reader inventory",
+    "offline transitions",
+    "cold readers",
+    "movie"
+  ],
+  "scope": "No false pass from393assertions; nativeinputs/runtime/main/snapshot/copies exact. Fullcase run remains failed.",
+  "date": "2026-11-13",
+  "evidence": "experiments/source_appearance/main_native_app_thin_failure_20261113",
+  "evidence_index_sha256": "d28c4547c1e52f15fafb9f85cb5a609d6a68e84ada1112674dd21c96f5998792",
+  "fix_state": "Bounded per-axis fix passes headless20/private43/movie; actual SFM app retry still pending",
+  "fix_report": "docs/benchmarks/sfm_thin_placement_fix_2026-11-13.json"
+}

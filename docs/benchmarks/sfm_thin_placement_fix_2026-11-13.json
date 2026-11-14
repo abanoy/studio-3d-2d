@@ -1,0 +1,45 @@
+{
+  "format": "has_sfm_thin_placement_fix_1",
+  "date": "2026-11-13",
+  "base_commit": "1caeb44b12e9ebf2db944c769810010975f5abaa",
+  "failure_report": "docs/benchmarks/sfm_native_app_thin_placement_2026-11-13.json",
+  "change": "Cap inward overlap clearance per axis at half available extent. Thin/planar axes collapse at original center without reversal or expansion; normal margins unchanged. Apply both .01 actor and .02 wall paths.",
+  "source_sha256": {
+    "src/import_placement.gd": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad",
+    "tests/import_placement_smoke.gd": "edd16440e1a17fe1e3d896c899eb79992b8ea9adc02ca7e4a6170ef6359400d4",
+    "tests/verify_import_placement.py": "612ac366d2da3a68418a8c390edbccad980edab0763ed634f02b4afc87d02d25",
+    "tests/verify.py": "5babe1ba3c25a76a5fa5795273754518a17bf1baaad9310d396f3613b6272808"
+  },
+  "focused_headless": {
+    "passed": true,
+    "checks": 20,
+    "engine_markers": [],
+    "actual_thin_planar_plan_calls": true
+  },
+  "private_wrapper": {
+    "passed": true,
+    "headless_checks": 20,
+    "app_checks": 43,
+    "app_bounds_checks": 20,
+    "original_checks": 23,
+    "prepared_GMod_checks": 3,
+    "video": {
+      "codec": "h264",
+      "width": 1920,
+      "height": 1080,
+      "fps": "24/1",
+      "frames": 48,
+      "duration_seconds": 2.0
+    },
+    "source_files_preserved": 981,
+    "private_exit": 0,
+    "job_and_desktop_closed": true
+  },
+  "prechild_private_desktop_denial": "Retained separately; same private wrapper then passed in approved host context; no visible fallback",
+  "default_registration": "Existing placement wrapper now registered with fresh output,20bounds/source/private/movie gates; Python AST passed, full default pending",
+  "actual_SFM_app_retry": "pending fresh Core14 then Wider11 after this fix",
+  "full_default_suite": "pending coherent feature checkpoint",
+  "evidence": "experiments/source_appearance/main_thin_placement_fix_20261113",
+  "evidence_index_sha256": "045dc5d145534b170786689cf14875d599b5bea2265c25bab2717ec7c8ecc2bc",
+  "formal_counts_unchanged": true
+}

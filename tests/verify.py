@@ -235,6 +235,19 @@ def main():
     results['source_choice_foundation'] = source_choice_result
     print('PASS Source skin/part identities, default omission, all-hidden refusal, async controls and owned metadata cleanup')
 
+    placement_started = time.time_ns()
+    placement_folder = spike / 'import-placement'
+    placement_log = run([sys.executable, '-u', 'tests/verify_import_placement.py', '--output', str(placement_folder)], timeout=240)
+    (output / 'import-placement-suite.log').write_text(placement_log, encoding='utf-8')
+    placement_path = placement_folder / 'verification.json'
+    placement_result = json.loads(placement_path.read_bytes())
+    assert placement_path.stat().st_mtime_ns >= placement_started and placement_result['failures'] == 0 and placement_result['checks'] >= 40, placement_result
+    assert placement_result['headless_bounds'] == placement_result['bounds'] == {'checks': 20, 'failures': 0, 'thin_planar_actual_plan': True}, placement_result
+    assert placement_result['source_sha256'] and placement_result['video'] == {'codec': 'h264', 'size': [1920, 1080], 'fps': '24/1', 'frames': 48, 'duration': '2.000000'}, placement_result
+    if os.name == 'nt': assert len(placement_result['private_receipts']) == 1, placement_result
+    results['import_placement'] = placement_result
+    print('PASS normal and thin/planar placement, occupied-space fallback, Undo/HAS and preview/movie agreement')
+
     shortcuts_log = run([sys.executable, '-u', 'tests/verify_shortcuts.py'], timeout=500)
     (output / 'shortcuts-suite.log').write_text(shortcuts_log, encoding='utf-8')
     results['shortcuts'] = json.loads((output / 'shortcuts-verification.json').read_text(encoding='utf-8'))

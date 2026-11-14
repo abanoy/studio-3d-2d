@@ -1,0 +1,188 @@
+diff --git a/src/import_placement.gd b/src/import_placement.gd
+index 3d09022..d82bc47 100644
+--- a/src/import_placement.gd
++++ b/src/import_placement.gd
+@@ -3,6 +3,13 @@ extends RefCounted
+ const SceneIO=preload("res://src/scene3d.gd")
+ const TRIANGLE_BUDGET:=50000
+ 
++static func overlap_inset(bounds: AABB, margin: float) -> AABB:
++	# Collision clearance must not turn thin/planar imported bounds inside out.
++	# Collapse an exhausted axis at its original center; never inflate it again.
++	var inward:=Vector3.ONE*maxf(0.0,margin)
++	inward=inward.min(bounds.size*0.5)
++	return AABB(bounds.position+inward,(bounds.size-inward*2.0).max(Vector3.ZERO))
++
+ static func local_bounds(node: Node, parent:=Transform3D.IDENTITY) -> AABB:
+ 	var transform: Transform3D=parent*node.transform if node is Node3D else parent
+ 	var bounds: AABB=transform*preload("res://src/source_shape.gd").mesh_bounds(node) if node is MeshInstance3D and node.mesh else AABB()
+@@ -109,10 +116,10 @@ static func plan(renderer: Node, source: String, context: Dictionary, use_shape=
+ 			position=seed-bounds.get_center();placed=AABB(bounds.position+position,bounds.size);support="view"
+ 		var overlap:=false
+ 		for obstacle in obstacles:
+-			if placed.grow(-0.01).intersects(obstacle):overlap=true;break
++			if overlap_inset(placed,0.01).intersects(obstacle):overlap=true;break
+ 		if not overlap:
+ 			for triangle in triangles:
+-				if not triangle.horizontal and placed.grow(-0.02).intersects(triangle.box.grow(0.005)):overlap=true;break
++				if not triangle.horizontal and overlap_inset(placed,0.02).intersects(triangle.box.grow(0.005)):overlap=true;break
+ 		var candidate:={"position":position,"support":support,"attempts":attempts,"overlap":overlap,"triangles":used,"skipped_surfaces":skipped}
+ 		if fallback.is_empty():fallback=candidate
+ 		# Keep searching nearby floor-supported positions before choosing the
+diff --git a/tests/import_placement_smoke.gd b/tests/import_placement_smoke.gd
+index 92c47c5..5a44652 100644
+--- a/tests/import_placement_smoke.gd
++++ b/tests/import_placement_smoke.gd
+@@ -6,6 +6,12 @@ const Storage=preload("res://src/storage.gd")
+ var checks:=0
+ var failures:=0
+ 
++class BoundsRenderer extends Node:
++	var world_runtime: Dictionary={"instances":{}}
++	var environment_scene: Node3D
++	var model
++	func scene_bounds(node: Node3D) -> AABB:return node.global_transform*Placement.local_bounds(node)
++
+ func _initialize() -> void:
+ 	create_timer(100).timeout.connect(func():push_error("Placement watchdog expired");quit(2))
+ 	call_deferred("run")
+@@ -22,8 +28,67 @@ func wait_job(job) -> void:
+ 	while job.pid>0:await process_frame
+ 	await settled()
+ 
++func bounds_fixture(path: String, planar: bool) -> Error:
++	var scene:=Node3D.new();var mesh:=MeshInstance3D.new()
++	if planar:
++		var quad:=QuadMesh.new();quad.size=Vector2(2,2);mesh.mesh=quad
++	else:
++		var box:=BoxMesh.new();box.size=Vector3(0.005,2,0.03);mesh.mesh=box
++	scene.add_child(mesh);mesh.owner=scene
++	var document:=GLTFDocument.new();var state:=GLTFState.new();var error:=document.append_from_scene(scene,state)
++	if error==OK:error=document.write_to_filesystem(state,path)
++	scene.free();return error
++
++func occupied_renderer(wall: bool) -> BoundsRenderer:
++	var renderer:=BoundsRenderer.new();root.add_child(renderer)
++	var obstacle:=Node3D.new();renderer.add_child(obstacle)
++	var mesh:=MeshInstance3D.new();obstacle.add_child(mesh)
++	if wall:
++		# A slanted vertical triangle whose AABB contains all nearby candidates.
++		# Placement deliberately uses wall triangle bounds, not a full mesh solver.
++		var vertices:=PackedVector3Array([Vector3(-20,-20,-20),Vector3(20,-20,20),Vector3(0,20,0)])
++		var normal: Vector3=(vertices[1]-vertices[0]).cross(vertices[2]-vertices[0]).normalized()
++		var arrays: Array=[];arrays.resize(Mesh.ARRAY_MAX);arrays[Mesh.ARRAY_VERTEX]=vertices
++		arrays[Mesh.ARRAY_NORMAL]=PackedVector3Array([normal,normal,normal]);arrays[Mesh.ARRAY_INDEX]=PackedInt32Array([0,1,2])
++		var resource:=ArrayMesh.new();resource.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES,arrays);mesh.mesh=resource
++	else:
++		var box:=BoxMesh.new();box.size=Vector3(40,40,40);mesh.mesh=box
++	renderer.world_runtime.instances["occupied"]={"root":obstacle,"data":{"kind":"environment" if wall else "model"}}
++	return renderer
++
++func bounds_checks(folder: String) -> Dictionary:
++	var first:=checks;var before_failures:=failures
++	var normal:=AABB(Vector3(-1,-1.5,-2),Vector3(2,3,4))
++	var mixed:=AABB(Vector3(0.25,-0.5,1),Vector3(0.005,2,0.03))
++	var planar:=AABB(Vector3.ZERO,Vector3(2,0,3))
++	var line:=AABB(Vector3(0,-1,0),Vector3(0,2,0));var point:=AABB(Vector3.ZERO,Vector3.ZERO)
++	var occupied:=AABB(Vector3(-10,-10,-10),Vector3(20,20,20))
++	for margin in [0.01,0.02]:
++		check(Placement.overlap_inset(normal,margin)==normal.grow(-margin),"normal clearance matches the established inset: "+str(margin))
++		var thin:=Placement.overlap_inset(mixed,margin)
++		check(thin.size.x==0 and thin.size.y>=0 and thin.size.z>=0 and thin.size.x<=mixed.size.x and thin.size.y<=mixed.size.y and thin.size.z<=mixed.size.z,"thin per-axis inset stays nonnegative without expansion: "+str(margin))
++		check(thin.get_center().is_equal_approx(mixed.get_center()) and is_equal_approx(thin.size.y,2-2*margin) and is_equal_approx(thin.size.z,maxf(0,0.03-2*margin)),"thin clearance preserves center and requested thick-axis margins: "+str(margin))
++		for box in [planar,line,point]:
++			var inset: AABB=Placement.overlap_inset(box,margin)
++			check(inset.size.x>=0 and inset.size.y>=0 and inset.size.z>=0 and inset.get_center().is_equal_approx(box.get_center()) and inset.intersects(occupied),"collapsed bounds still detect strictly occupied space: "+str(margin)+" / "+str(box.size))
++	check(Placement.overlap_inset(mixed,0)==mixed and Placement.overlap_inset(mixed,-0.1)==mixed,"zero or negative clearance never expands the imported bounds")
++	check(not Placement.overlap_inset(AABB(Vector3(10,0,0),Vector3.ZERO),0.02).intersects(occupied),"boundary-only contact retains the existing open intersection semantics")
++	var context:={"camera":Transform3D(Basis.IDENTITY,Vector3(0,1,5)),"fov":70.0,"aspect":16.0/9.0}
++	for is_planar in [false,true]:
++		var path:=folder.path_join("planar.glb" if is_planar else "thin.glb")
++		check(bounds_fixture(path,is_planar)==OK,"authored thin/planar GLB fixture writes without native conversion")
++		for wall in [false,true]:
++			var renderer:=occupied_renderer(wall)
++			var result: Dictionary=Placement.plan(renderer,path,context)
++			check(not result.has("error") and result.get("attempts")==9 and result.get("overlap",false) and int(result.get("triangles",-1))==(1 if wall else 0),"thin/planar candidate search retains occupied "+("wall" if wall else "actor")+" fallback: "+str(is_planar))
++			renderer.free()
++	return {"checks":checks-first,"failures":failures-before_failures,"thin_planar_actual_plan":true}
++
+ func run() -> void:
+ 	var folder:=ProjectSettings.globalize_path("res://output/import-placement/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
++	var bounds: Dictionary=bounds_checks(folder)
++	if "--bounds-only" in OS.get_cmdline_user_args():
++		print("IMPORT_PLACEMENT_BOUNDS "+JSON.stringify(bounds));quit(0 if failures==0 else 1);return
+ 	var map:=folder.path_join("room.glb");var asset:=folder.path_join("actor.glb");SceneIO.make_fixture(map);SceneIO.make_pose_fixture(asset)
+ 	var original:=FileAccess.get_sha256(asset)
+ 	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
+@@ -47,7 +112,7 @@ func run() -> void:
+ 	check(one.data.pose_keys.is_empty(),"import placement is a static root choice, not an implicit animation key")
+ 	var first_data: Dictionary=one.data.duplicate(true)
+ 	app.import_actions.add(asset,true,0);var second: String=app.last_import_id;var two: RefCounted=app.renderer.active_model();var second_bounds: AABB=app.renderer.scene_bounds(two.root)
+-	check(not first_bounds.grow(-0.01).intersects(second_bounds) and two.data.metadata.initial_placement.attempts>1,"nearby candidate search avoids an existing actor")
++	check(not Placement.overlap_inset(first_bounds,0.01).intersects(second_bounds) and two.data.metadata.initial_placement.attempts>1,"nearby candidate search avoids an existing actor")
+ 	check(app.renderer.world_runtime.instance(first).data==first_data,"new placement does not move existing actor")
+ 	app.undo();app.redo()
+ 	check(app.renderer.world_runtime.instance(second).data==two.data,"Undo/Redo restores the chosen root placement exactly")
+@@ -105,6 +170,6 @@ func run() -> void:
+ 			var native_after: Image=await app.renderer.capture(app.keys,app.layers,0,true)
+ 			check(native_before.get_data()!=native_after.get_data(),"actor placed in actual GMod map contributes rendered pixels without reframing")
+ 			native_after.save_png(folder.path_join("native-placement.png"))
+-	var result:={"checks":checks,"failures":failures,"folder":folder,"project":project,"movie":movie,"authored_import_microseconds":elapsed,"native_query_ms":native_ms,"native_support":native_support}
++	var result:={"checks":checks,"failures":failures,"bounds":bounds,"folder":folder,"project":project,"movie":movie,"authored_import_microseconds":elapsed,"native_query_ms":native_ms,"native_support":native_support}
+ 	var file:=FileAccess.open("res://output/import-placement-result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result));file.close()
+ 	print("IMPORT_PLACEMENT "+JSON.stringify(result));app.free();quit(0 if failures==0 else 1)
+diff --git a/tests/verify_import_placement.py b/tests/verify_import_placement.py
+index e03f763..1f7ae59 100644
+--- a/tests/verify_import_placement.py
++++ b/tests/verify_import_placement.py
+@@ -16,7 +16,7 @@ def command(script=None,headless=False,extra=()):
+ def desktop_receipt(args):
+     if os.name=='nt' and '--receipt' in args:
+         path=Path(args[args.index('--receipt')+1]);r=json.loads(path.read_bytes())
+-        assert r['exit']==0 and r['child_desktop_confirmed'] and not r['foreground_child_observed'] and r['job_closed'] and r['desktop_closed'];RECEIPTS.append(str(path))
++        assert r['exit']==0 and r['private_window_seen'] and r['child_desktop_confirmed'] and not r['foreground_child_observed'] and not r['desktop_switch_requested'] and r['job_closed'] and r['desktop_closed'];RECEIPTS.append(str(path))
+ 
+ 
+ 
+@@ -30,12 +30,29 @@ def main():
+     frozen={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for part in ['src','tests','tools','examples','data'] for p in (ROOT/part).rglob('*') if p.is_file() and p.suffix!='.pyc' and '__pycache__' not in p.parts}
+     ffmpeg=os.environ.get('HYBRID_FFMPEG','ffmpeg');ffprobe=str(Path(ffmpeg).with_name('ffprobe.exe' if os.name=='nt' else 'ffprobe'))
+ 
+-    args=command('tests/import_placement_smoke.gd');p=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=110)
++    bad=('ERROR:','SCRIPT ERROR','SHADER ERROR','FAIL ','ObjectDB instances leaked','another exclusive child')
++    bounds_args=command('tests/import_placement_smoke.gd',headless=True,extra=['--log-file',str(EVIDENCE/'bounds-engine.log'),'--','--bounds-only'])
++    bounds_process=subprocess.run(bounds_args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=35)
++    bounds_text=bounds_process.stdout+bounds_process.stderr
++    (EVIDENCE/'bounds-console.log').write_text(bounds_text,encoding='utf-8')
++    bounds_engine=(EVIDENCE/'bounds-engine.log').read_text(encoding='utf-8',errors='replace')
++    assert bounds_process.returncode==0 and not any(s in bounds_text+bounds_engine for s in bad),bounds_text+bounds_engine
++    bounds=json.loads(next(line[len('IMPORT_PLACEMENT_BOUNDS '):] for line in bounds_text.splitlines() if line.startswith('IMPORT_PLACEMENT_BOUNDS ')))
++    assert bounds['checks']==20 and bounds['failures']==0 and bounds['thin_planar_actual_plan']
++    args=command('tests/import_placement_smoke.gd',extra=['--log-file',str(EVIDENCE/'engine.log')])
++    (EVIDENCE/'private-command.json').write_text(json.dumps(args,indent=2)+'\n',encoding='utf-8')
++    p=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=110)
+     text=p.stdout+p.stderr
+     (ROOT/'output/import-placement-verification.log').write_text(text,encoding='utf-8')
+-    if p.returncode or '"failures":0' not in text or any(s in text for s in ('ERROR:','SCRIPT ERROR','SHADER ERROR','FAIL ','ObjectDB instances leaked','another exclusive child')):raise RuntimeError(text)
+-    desktop_receipt(args)
+     (EVIDENCE/'console.log').write_text(text,encoding='utf-8')
++    engine=(EVIDENCE/'engine.log').read_text(encoding='utf-8',errors='replace') if (EVIDENCE/'engine.log').exists() else ''
++    receipt={}
++    if os.name=='nt' and '--receipt' in args:
++        path=Path(args[args.index('--receipt')+1])
++        if path.is_file():
++            receipt=json.loads(path.read_bytes());(EVIDENCE/'private-desktop.json').write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8')
++    if p.returncode or not (EVIDENCE/'engine.log').exists() or '"failures":0' not in text or any(s in text+engine for s in bad):raise RuntimeError(text+engine+'\n'+json.dumps(receipt))
++    desktop_receipt(args)
+     report=json.loads((ROOT/'output/import-placement-result.json').read_text(encoding='utf-8'))
+     p=subprocess.run([ffprobe,'-v','error','-count_frames','-show_streams','-show_format','-of','json',report['movie']],capture_output=True,text=True,check=True)
+     probe=json.loads(p.stdout);video=next(s for s in probe['streams'] if s['codec_type']=='video')
+@@ -43,7 +60,7 @@ def main():
+     assert abs(float(probe['format']['duration'])-2)<.001
+     report['video']={'codec':'h264','size':[1920,1080],'fps':'24/1','frames':48,'duration':'2.000000'}
+     assert all(hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==sha for path,sha in frozen.items())
+-    report.update(source_sha256=frozen,isolated_display=options.isolated_display,private_receipts=RECEIPTS,scope='Original authored world and rig fixtures; native coverage only for explicitly available prepared samples, never inferred from generated fixtures.')
++    report.update(source_sha256=frozen,headless_bounds=bounds,isolated_display=options.isolated_display,private_receipts=RECEIPTS,scope='Original authored world and rig fixtures plus actual thin/planar placement bounds; native coverage only for explicitly available prepared samples, never inferred from generated fixtures.')
+     (EVIDENCE/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
+     (ROOT/'output/import-placement-verification.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+     print(json.dumps({k:v for k,v in report.items() if k!='source_sha256'},indent=2))

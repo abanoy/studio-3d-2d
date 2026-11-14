@@ -1,0 +1,29 @@
+{
+  "reviewer": "independent jiggle layout reviewer",
+  "checks": 26,
+  "failures": 0,
+  "errors": 0,
+  "test_artifact_side_effect_suppressed": [
+    {
+      "line": 16,
+      "kind": "OUT assignment"
+    },
+    {
+      "line": 16,
+      "kind": "OUT.mkdir"
+    }
+  ],
+  "extra_checks": {
+    "partial_overlap_rejected": true,
+    "misaligned_payload_rejected": true,
+    "direct_actual_parse_matches_independent_byte_audit": true
+  },
+  "direct_actual_row_count": 49,
+  "direct_actual_mismatches": [],
+  "sources_unchanged": true,
+  "source_sha256": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-jiggle-values-20261113\\source\\jiggle_values.py": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-jiggle-values-20261113\\source\\test_jiggle_values.py": "103ba4b2343c2998c051f6c619f9e69819f2282dca2a7a8ee848ef9cb78c2ca3"
+  },
+  "scope": "In-memory authored fixtures and inert stdlib decoder only; no SourceIO/GPU/native runtime import"
+}

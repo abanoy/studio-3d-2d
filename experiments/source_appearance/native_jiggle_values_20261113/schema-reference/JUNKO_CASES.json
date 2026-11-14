@@ -1,0 +1,467 @@
+{
+  "format": "has_source_jiggle_named_cases_prep_1",
+  "metadata_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\WIDER_FAMILIES.json",
+  "metadata_sha256": "43525a380a88cd7ec60420476b27cea1a0a9ec83ed948cb39841c38a438aba48",
+  "model_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\junko_v25\\models\\touhou\\tamo\\junko hair.mdl",
+  "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+  "native_mdl_bytes": 37644,
+  "historical_native_join": "Exact freshly read selectedMDL SHA+archive name; expected metadata only, not runtime/fidelity acceptance",
+  "mdl_version": 49,
+  "bone_count": 69,
+  "jiggle_declaration_count": 49,
+  "selected_named_cases": [
+    {
+      "role": "single native procedural leaf under HairParent; first bounded binding/restore case",
+      "bone": {
+        "index": 8,
+        "name": "FrontHair1",
+        "parent": 7,
+        "flags": 1284
+      },
+      "procedure_declaration": {
+        "index": 8,
+        "name": "FrontHair1",
+        "type": 5,
+        "type_name": "JIGGLE",
+        "rule_parsed": true
+      },
+      "actual_jiggle_parameter_values_available_in_saved_metadata": false
+    },
+    {
+      "role": "parent procedural side branch, paired with child18",
+      "bone": {
+        "index": 17,
+        "name": "Side1Steps-1_L",
+        "parent": 7,
+        "flags": 1284
+      },
+      "procedure_declaration": {
+        "index": 17,
+        "name": "Side1Steps-1_L",
+        "type": 5,
+        "type_name": "JIGGLE",
+        "rule_parsed": true
+      },
+      "actual_jiggle_parameter_values_available_in_saved_metadata": false
+    },
+    {
+      "role": "child procedural rule; tests topological parent/child evaluation rather than one reused chain setting",
+      "bone": {
+        "index": 18,
+        "name": "Side2Steps-1_L",
+        "parent": 17,
+        "flags": 1284
+      },
+      "procedure_declaration": {
+        "index": 18,
+        "name": "Side2Steps-1_L",
+        "type": 5,
+        "type_name": "JIGGLE",
+        "rule_parsed": true
+      },
+      "actual_jiggle_parameter_values_available_in_saved_metadata": false
+    },
+    {
+      "role": "procedural child under nonprocedural25, paired with27",
+      "bone": {
+        "index": 26,
+        "name": "2Steps-1_L",
+        "parent": 25,
+        "flags": 1284
+      },
+      "procedure_declaration": {
+        "index": 26,
+        "name": "2Steps-1_L",
+        "type": 5,
+        "type_name": "JIGGLE",
+        "rule_parsed": true
+      },
+      "actual_jiggle_parameter_values_available_in_saved_metadata": false
+    },
+    {
+      "role": "second procedural level under26",
+      "bone": {
+        "index": 27,
+        "name": "3Steps-1_L",
+        "parent": 26,
+        "flags": 1284
+      },
+      "procedure_declaration": {
+        "index": 27,
+        "name": "3Steps-1_L",
+        "type": 5,
+        "type_name": "JIGGLE",
+        "rule_parsed": true
+      },
+      "actual_jiggle_parameter_values_available_in_saved_metadata": false
+    },
+    {
+      "role": "separate gathered-hair branch with native parent59",
+      "bone": {
+        "index": 60,
+        "name": "Gathering1_L",
+        "parent": 59,
+        "flags": 1284
+      },
+      "procedure_declaration": {
+        "index": 60,
+        "name": "Gathering1_L",
+        "type": 5,
+        "type_name": "JIGGLE",
+        "rule_parsed": true
+      },
+      "actual_jiggle_parameter_values_available_in_saved_metadata": false
+    }
+  ],
+  "all_declarations": [
+    {
+      "index": 8,
+      "name": "FrontHair1",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 9,
+      "name": "FrontHair2",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 10,
+      "name": "FrontHair3",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 11,
+      "name": "FrontHair4",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 12,
+      "name": "FrontHair5",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 13,
+      "name": "FrontHair6",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 14,
+      "name": "FrontHair7",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 15,
+      "name": "FrontHair8",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 16,
+      "name": "FrontHair9",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 17,
+      "name": "Side1Steps-1_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 18,
+      "name": "Side2Steps-1_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 19,
+      "name": "Side1Steps-1_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 20,
+      "name": "Side2Steps-1_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 21,
+      "name": "Side1Steps-2_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 22,
+      "name": "Side1Steps-2_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 23,
+      "name": "Side1Steps-3_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 24,
+      "name": "Side1Steps-3_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 26,
+      "name": "2Steps-1_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 27,
+      "name": "3Steps-1_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 29,
+      "name": "2Steps-1_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 30,
+      "name": "3Steps-1_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 32,
+      "name": "MiddleCenter2Steps-2",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 33,
+      "name": "MiddleCenter3Steps-2",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 35,
+      "name": "2Steps-3_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 36,
+      "name": "3Steps-3_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 37,
+      "name": "4Steps-3_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 39,
+      "name": "2Steps-3_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 40,
+      "name": "3Steps-3_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 41,
+      "name": "4Steps-3_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 43,
+      "name": "MiddleCenter2Steps-4",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 44,
+      "name": "MiddleCenter3Steps-4",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 45,
+      "name": "MiddleCenter4Steps-4",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 47,
+      "name": "2Steps-5_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 48,
+      "name": "3Steps-5_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 49,
+      "name": "4Steps-5_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 51,
+      "name": "2Steps-5_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 52,
+      "name": "3Steps-5_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 53,
+      "name": "4Steps-5_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 55,
+      "name": "MiddleCenter2Steps-6",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 56,
+      "name": "MiddleCenter3Steps-6",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 57,
+      "name": "MiddleCenter4Steps-6",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 60,
+      "name": "Gathering1_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 61,
+      "name": "Gathering2_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 62,
+      "name": "Gathering3_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 63,
+      "name": "Gathering4_L",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 65,
+      "name": "Gathering1_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 66,
+      "name": "Gathering2_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 67,
+      "name": "Gathering3_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    },
+    {
+      "index": 68,
+      "name": "Gathering4_R",
+      "type": 5,
+      "type_name": "JIGGLE",
+      "rule_parsed": true
+    }
+  ],
+  "limits": [
+    "Procedure declaration type5 is not a jiggle flag bitmask. Raw bone flags are also distinct from JiggleRule flags.",
+    "Bone flag0x400 is vertex-LOD0 usage of a bone OR its child; it is not proof that a native index is a uniquely bound rotating skin bone.",
+    "Saved metadata confirms rule_parsed but deliberately contains none of the29JiggleRule parameter floats. No flexible/rigid/constraint classification or parameter range is inferred.",
+    "No raw native parse, SourceIO runtime import, conversion, simulation or graphical test was run for this prep."
+  ]
+}
