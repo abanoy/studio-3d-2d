@@ -3,6 +3,19 @@
 **Updated November 13, 2026. The owner directed continued SFM extra-feature work
 while busy. Manual acceptance checks do not stop this implementation work.**
 
+Newest full run at ee81e864 is **FAILED**, after31m17s: a Windows WASAPI
+output-device invalidation tripped the strict engine-error gate in the silent
+native selection test, despite67geometric checks/0domain failures. All996source
+entries and HEAD match. An unchanged-code/default-driver repeat passes67/0.
+That geometric wrapper now explicitly uses and asserts Dummy; its fresh67/0
+pass preserves every error, geometry and receipt check. Dedicated Windows audio
+tests remain unchanged. A new full run is required; no scoped result substitutes
+for it. [Failure and bounded correction](benchmarks/windows_silent_selection_audio_2026-11-13.json).
+
+The [native binding candidate](../experiments/source_appearance/native_crosswalk_candidate_20261114/PLAN.md)
+now has47authored CPU controls and independent source review. It is output-only;
+actual Blender/Junko export, HAS binding and native simulation remain unrun.
+
 Current increment: import-time Source skins and bodygroups are implemented. The
 167-check foundation passes and is registered in default verification. At exact
 `cf7a805`, fresh main-worker Core14 and Wider11 both pass: 22 native conversions

@@ -1,0 +1,35 @@
+{
+  "format": "has_windows_silent_selection_audio_fix_1",
+  "date": "2026-11-13",
+  "baseline_commit": "ee81e8648c0b038279da1e01de878e0fc3c79590",
+  "failed_full_run": "output/windows-canonical-inert-20261114T014831592",
+  "full_status": "FAILED; new full required",
+  "functional_source_and_head_unchanged_in_failure": 996,
+  "failure": "WASAPI GetBufferSize error and output_device invalidation rejected by strict engine-log gate",
+  "cause": "Not established; no device/user/new-code attribution inferred",
+  "failed_domain_checks": 67,
+  "failed_domain_failures": 0,
+  "failed_engine_exit": 0,
+  "unchanged_default_repeat": {
+    "checks": 67,
+    "failures": 0,
+    "exit": 0,
+    "source_and_head_unchanged": true
+  },
+  "explicit_silent_repeat": {
+    "checks": 67,
+    "failures": 0,
+    "actual_audio_driver": "Dummy",
+    "strict_error_gate_retained": true
+  },
+  "dedicated_default_audio_tests": "Unchanged; actual driver must be inspected before claiming WASAPI coverage",
+  "evidence": "experiments/windows_inert_audio_interruption_20261114",
+  "evidence_index_sha256": "d474c83540f551f273a97d93d45b03483f1f987d72c8e701dcc49ae44d7e2dfa",
+  "native_crosswalk_candidate": "experiments/source_appearance/native_crosswalk_candidate_20261114/PLAN.md",
+  "limits": [
+    "Application audio behavior is unchanged",
+    "No full PASS is composed from scopes",
+    "Native binding candidate47CPU only; actual native/Blender/HAS/simulation UNRUN",
+    "Formal55/62 and52/54 unchanged"
+  ]
+}

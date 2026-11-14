@@ -1,0 +1,152 @@
+{
+  "format": "has_contact_selection_audio_scope_readonly_1",
+  "created_utc": "2026-11-14T02:26:33.717267+00:00",
+  "verdict": "GO for a narrowly scoped explicit Dummy driver for this silent geometric regression, with driver admission and unchanged strict engine-error gate; original canonical run remains FAILED",
+  "read_only": true,
+  "runtimes_launched": false,
+  "tests_executed": false,
+  "process_queries_performed": false,
+  "source_edits_performed": false,
+  "canonical_run": "windows-canonical-inert-20261114T014831592",
+  "canonical_source_commit": "ee81e8648c0b038279da1e01de878e0fc3c79590",
+  "observations": [
+    {
+      "source": "tests/verify_contact_selection.py:8-13",
+      "finding": "Opens the persistence writer packed HAS fixture. Current launch has no audio-driver override. Rejects any ERROR:, FAIL, leak, transient-exclusive-child string; then checks failures zero, five native reports and closed private desktop/job."
+    },
+    {
+      "source": "tests/contact_selection_smoke.gd:114-149,151-167",
+      "finding": "67 domain checks cover five independently posed native rigs, CPU vertex bounds, selection silhouette, inherited visibility/ghosts, frame-selected enclosure, editor pixels, reverse seeking, preserved world/history/camera keys and excluded final-render selection. No AudioServer/audio_player/toggle_play/audio-clock assertion occurs."
+    },
+    {
+      "source": "tests/contact_persistence_smoke.gd:78-89; src/app.gd:1828-1854,2636-2642",
+      "finding": "The combined reference packed HAS includes PCM WAV audio; selection opens it for native model data but performs no playback. Each selection model case calls new_project, whose reset stops playback and clears audio_clip/rebuilds audio before restoring geometry."
+    },
+    {
+      "source": "output/contact-selection/1794622745880357700/engine.log:71-75",
+      "finding": "CONTACT_SELECTION result checks67/failures0/five native reports precedes WASAPI GetBufferSize error at audio_driver_wasapi.cpp:778 and current output_device invalidated warning at :849 in the captured stdout+stderr log. Streams were concatenated, so adjacency is capture ordering rather than proven wall-clock chronology."
+    },
+    {
+      "source": "output/windows-canonical-inert-20261114T014831592/state.json",
+      "finding": "Canonical status failed, suite_exit1, source_unchanged true, finished2026-11-14T02:19:49.3858833Z. Host receipt confirms exact coordinator/Python absent, no owned runtime matches, no process killed."
+    },
+    {
+      "source": "tests/verify.py:94-95,126-127,399-402; tests/audio_editor_smoke.gd:75-110,171; tests/multi_audio_smoke.gd:71-82,106",
+      "finding": "Dedicated audio_editor remains default-driver, captures actual bus samples for non-Dummy driver and tests live audio clock; separate audio_dummy explicitly pins Dummy and tests fallback. Multi-audio default-driver also captures bus data and tests clock. These tests intentionally allow an explicit Dummy branch, so assert/report actual WASAPI before describing an audio result as a WASAPI pass."
+    },
+    {
+      "source": "output/windows-canonical-inert-20261114T014831592/canonical.log:10; output/audio-editor/result.json",
+      "finding": "This failed full run log records PASS audio_editor; current audio-editor result reports checks25/failures0/audio_driver WASAPI. Later multi_audio was not reached by the failed full run."
+    }
+  ],
+  "cause_qualification": "Observed failure is the strict engine ERROR gate rejecting a WASAPI output-device invalidation, while selection domain assertions and engine quit succeeded. Logs do not identify why the endpoint became invalid; do not claim a specific device/unplug/shutdown cause or retroactively relabel the run PASS.",
+  "minimal_proposed_change_not_applied": {
+    "launch": "command('tests/contact_selection_smoke.gd', extra=['--audio-driver','Dummy','--',str(folder),reference])",
+    "admission": "Inside the selection smoke, require AudioServer.get_driver_name()==Dummy and write audio_driver into result.json; Python independently requires r[audio_driver]==Dummy. Prefer a separate environment/admission assertion or named ledger so historical 67 geometry checks remain comparable.",
+    "silence_proof": "Optionally expose/require not app.playing and not app.audio_player.playing during the selection run. Do not remove reference audio merely to make the run pass.",
+    "unchanged_checks": [
+      "All67 geometry checks and five native reports",
+      "Strict rejection of every ERROR:/FAIL/leak/transient-exclusive-child occurrence",
+      "Private desktop receipt identity/closure/foreground constraints",
+      "Default-driver audio_editor/multi_audio and separate explicit audio_dummy coverage"
+    ],
+    "validation_after_parent_authorization": [
+      "Preserve original failed canonical log/state/source and exact host closure proof",
+      "Complete same-code unchanged default-WASAPI isolated retry first, recording actual result and receipt",
+      "After patch freeze, run exact selection with Dummy and confirm driver admission,67/0, five reports, clean strict log, closed private receipt and source hashes",
+      "Keep default-driver audio tests unchanged; require actual WASAPI plus captured-sample/live-clock evidence before making a WASAPI claim",
+      "Use a new full canonical run on the new checkpoint for overall PASS; retry evidence does not make the original failed canonical complete"
+    ]
+  },
+  "evidence": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\verify_contact_selection.py",
+      "bytes": 1452,
+      "sha256": "175427cec9aab26a12393a92b9a58bd075fe127e51ea8b8b209ab61d21c730ec",
+      "historical": true,
+      "hash_provenance": "initial pre-patch read, independently equal to preserved failed source-before; length reconstructed from exact Git blob or LF-to-CRLF matching that hash"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\contact_selection_smoke.gd",
+      "bytes": 15530,
+      "sha256": "6181cec154a3a05c69424eda4f99bb342c4ae73ab0c253c12beee98b6160279b",
+      "historical": true,
+      "hash_provenance": "initial pre-patch read, independently equal to preserved failed source-before; length reconstructed from exact Git blob or LF-to-CRLF matching that hash"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\audio_editor_smoke.gd",
+      "bytes": 9817,
+      "sha256": "829521931cc21231e5a71f27125bed758b2be34fb4cb57c7e80d7fccca77a500"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\multi_audio_smoke.gd",
+      "bytes": 14351,
+      "sha256": "0f2edf63d5fed9f5418c226a43e2f4d31dec9d77d992059a26aaf6c67e135104"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\verify.py",
+      "bytes": 53105,
+      "sha256": "459b90eeeae9d5523654c07fcbb3de27dad0e889943f46947333e8eb5a65437a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\app.gd",
+      "bytes": 147447,
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\run.py",
+      "bytes": 8148,
+      "sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-selection\\1794622745880357700\\engine.log",
+      "bytes": 12120,
+      "sha256": "827b0666eee3470d443075861c83cc16b61e836f70ec3d1d70d762f0d3d19842"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-selection\\1794622745880357700\\result.json",
+      "bytes": 4999,
+      "sha256": "6b72f6981766917164635ffff14bb09943edb00497c28d31282d19dc5e746bbb"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-inert-20261114T014831592\\state.json",
+      "bytes": 820,
+      "sha256": "e4db56616c755514aa0edc19368b9245dddfdb4cb1807ee8c3b3a0c9b30d0d5a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-inert-20261114T014831592\\authoritative-host-terminal.json",
+      "bytes": 881,
+      "sha256": "82ee8bbcf801307aaa025857fdd343326b8d298dce36894831be6b69bc38a336"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-inert-20261114T014831592\\authoritative-host-termination.json",
+      "bytes": 723,
+      "sha256": "0b5e2621b6204a5d4e689a201fe53d6bb763b30418d89359dc120aa2f9fc5891"
+    }
+  ],
+  "source_observation_qualification": "The selection code scope was read and hashes captured before the parent applied its patch. Report serialization raced with that patch and initially rehashed the then-current files. The corrected evidence rows are explicitly historical pre-patch observations bound to immutable failed source-before and Git ee81e864, not current dirty source hashes.",
+  "historical_selection_source_binding": {
+    "source_before_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-inert-20261114T014831592\\source-before.json",
+    "source_before_file_sha256": "69b6a98fe46ed4770e6aa4814d37aac3fe3f8a5084049a7a8c665ddcd5f613c2",
+    "bindings": [
+      {
+        "relative_path": "tests/verify_contact_selection.py",
+        "observed_pre_patch_sha256": "175427cec9aab26a12393a92b9a58bd075fe127e51ea8b8b209ab61d21c730ec",
+        "preserved_failed_source_before_sha256": "175427cec9aab26a12393a92b9a58bd075fe127e51ea8b8b209ab61d21c730ec",
+        "git_commit": "ee81e8648c0b038279da1e01de878e0fc3c79590",
+        "git_blob_sha256": "2e93b98611d2a6835cf5d37a2b9d6c4506f342de7fca3c7694632199de7b400d",
+        "git_blob_raw_equal": false,
+        "git_blob_LF_to_CRLF_matches": true
+      },
+      {
+        "relative_path": "tests/contact_selection_smoke.gd",
+        "observed_pre_patch_sha256": "6181cec154a3a05c69424eda4f99bb342c4ae73ab0c253c12beee98b6160279b",
+        "preserved_failed_source_before_sha256": "6181cec154a3a05c69424eda4f99bb342c4ae73ab0c253c12beee98b6160279b",
+        "git_commit": "ee81e8648c0b038279da1e01de878e0fc3c79590",
+        "git_blob_sha256": "6181cec154a3a05c69424eda4f99bb342c4ae73ab0c253c12beee98b6160279b",
+        "git_blob_raw_equal": true,
+        "git_blob_LF_to_CRLF_matches": false
+      }
+    ]
+  }
+}

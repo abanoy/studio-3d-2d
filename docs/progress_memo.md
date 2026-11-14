@@ -14607,3 +14607,31 @@ art/HAS/GLB/media/runtime binaries stay local. Formal55/62 and52/54 unchanged.
 Complete default verification is next for this new source. The subsequent native
 increment must prove an export/runtime binding crosswalk and rest/unit relation
 before implementing any Source solver; source_jiggle_runtime_plan.md records it.
+
+
+## 2026-11-13 — Preserve audio-device full failure; isolate silent selection from hardware
+
+Complete ee81e864 default FAILED after31m17s in verify_contact_selection.py.
+All996functional hashes/HEAD match. Its engine exits0 with67geometric checks/
+0domain failures on5native models, but the strict error gate rejects WASAPI
+GetBufferSize error/current output_device invalidation. Cause is not established;
+stdout/stderr are concatenated, so their printed order is not a shutdown cause.
+The raw failed log/source maps/private receipt/host closure are retained. Exact
+PS2124/Python19828 creations are absent, no owned runtime remains and no process
+was killed. A first closing-helper guard refused due to PowerShell JSON DateTime
+coercion; explicit-DateKindString fixed that metadata-only helper before proof.
+
+An unchanged-source/default-driver repeat passes67/0. The selected correction
+changes only this geometric wrapper to explicit Dummy and reports/asserts the
+actual driver; fresh67/0 passes with a closed private job. Every geometry and
+strict ERROR check remains. Dedicated audio_editor/multi_audio stay unchanged;
+the failed full's earlier audio_editor actually reportsWASAPI25/0, while later
+multi_audio was not reached. New full verification is required, not composed
+from the successful scopes. Formal55/62 and52/54 unchanged.
+
+Separate output-only native crosswalk code now passes47authored CPU controls
+and independent source review; the historical30draft, initial canonical-key
+failure and scene/mesh/container review gaps remain preserved. This is new
+binding code, not actual runtime/native simulation. ActualBlender/Junko69joint
+qualification, HAS binding, persistence and solver remainUNRUN. The concrete
+next-step packet and source_jiggle_runtime_plan.md preserve the continuation.

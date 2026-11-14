@@ -1,0 +1,27 @@
+{
+  "format": "has_crosswalk_baseline_method_preservation_1",
+  "old_tests": 30,
+  "amended_tests": 47,
+  "original_30_method_ASTs_unchanged": true,
+  "original_packet_module_sha256": "1287d04e15bd7d8ee20b6eea137b820c68849aa7df2d2daf22502ccb0f213b81",
+  "original_packet_test_sha256": "72d2dcfce34890b16f1062de835f236291a89b114912a87b2e8d874192d03913",
+  "new_methods": [
+    "test_changed_selected_scene_or_missing_scene_container_refuses_final_GLB",
+    "test_duplicate_JSON_truncated_BIN_unknown_and_unaligned_chunks_refuse",
+    "test_invalid_selected_indices_and_root_domains_refuse",
+    "test_missing_preflight_or_later_callback_registration_refuses",
+    "test_nonselected_scene_does_not_make_mesh_or_joints_reachable",
+    "test_optional_aligned_BIN_is_admitted_to_exact_EOF",
+    "test_preflight_latches_independent_export_callbacks_before_proof",
+    "test_preflight_refuses_other_extension_before_identity_collection",
+    "test_removed_or_changed_scene_roots_refuse_final_GLB",
+    "test_removed_or_replaced_final_mesh_definition_refuses",
+    "test_rest_mutation_during_export_cannot_hide_behind_post_export_restoration",
+    "test_scene_snapshot_survives_later_root_list_mutation",
+    "test_selected_scene_one_is_admitted_without_assuming_scene_zero",
+    "test_target_mesh_must_resolve_and_have_skin_attributes",
+    "test_trailing_one_to_seven_bytes_refuse_even_when_header_length_matches",
+    "test_two_pass_nested_empty_pruning_matches_pinned_policy",
+    "test_unreachable_node_cycle_refuses_whole_scene_proof"
+  ]
+}

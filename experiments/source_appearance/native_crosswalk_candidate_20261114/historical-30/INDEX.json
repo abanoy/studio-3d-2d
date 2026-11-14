@@ -1,0 +1,66 @@
+{
+  "format": "has_source_export_crosswalk_output_only_packet_1",
+  "created_utc": "2026-11-14T02:04:31.0861285Z",
+  "status": "OUTPUT_ONLY_AUTHORED_CPU_PASSED_ACTUAL_RUNTIME_UNRUN",
+  "files": [
+    {
+      "path": "source_jiggle_crosswalk.py",
+      "bytes": 21287,
+      "sha256": "1287d04e15bd7d8ee20b6eea137b820c68849aa7df2d2daf22502ccb0f213b81"
+    },
+    {
+      "path": "test_crosswalk_cpu.py",
+      "bytes": 18806,
+      "sha256": "72d2dcfce34890b16f1062de835f236291a89b114912a87b2e8d874192d03913"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11485,
+      "sha256": "8e6c17f3398886122acc62b8f0fbb8eb27627e1a26cbbfe86f05e41af00f0446"
+    },
+    {
+      "path": "SOURCE_AUDIT.json",
+      "bytes": 6135,
+      "sha256": "9ffea91f876e2e0a1494cd0535b15aa8ada8c1c2cb526be8aa9b95ec96f36549"
+    },
+    {
+      "path": "cpu-attempt1.log",
+      "bytes": 31531,
+      "sha256": "2653cca9bfabd58d97711bcfc3d367e7751a74a4e9c0bd2adbd5fa464183b988"
+    },
+    {
+      "path": "cpu-attempt2.log",
+      "bytes": 4620,
+      "sha256": "ffcd6f49b7d1bcf62de30a8e7f64c8c1f525d17a27db9c0c142859796b75b212"
+    }
+  ],
+  "index_excludes_itself": true,
+  "candidate_code_frozen_after_cpu_attempt2": true,
+  "cpu": {
+    "runtime": "C:\\Program Files\\Python313\\python.exe",
+    "arguments": [
+      "-B",
+      "test_crosswalk_cpu.py"
+    ],
+    "tests": 30,
+    "failures": 0,
+    "errors": 0,
+    "passed_log": "cpu-attempt2.log",
+    "retained_failed_attempt": {
+      "log": "cpu-attempt1.log",
+      "tests": 30,
+      "errors": 14,
+      "cause": "Evidence source-pin dictionary insertion order changed on recheck",
+      "correction": "Canonical sort_keys=True JSON encoding"
+    }
+  },
+  "native_profile": {
+    "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "native_bones": 69,
+    "actual_profile_run": "UNRUN",
+    "cpu_profile": "Self-authored three-bone bytes and host mocks"
+  },
+  "no_media": true,
+  "product_source_docs_HEAD_or_installed_files_changed": false,
+  "actual_Blender_SourceIO_Junko_bridge_app_adoption_persistence_runtime_binding_solver": "UNRUN"
+}

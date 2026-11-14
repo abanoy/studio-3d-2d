@@ -1,0 +1,80 @@
+{
+  "format": "has_source_export_crosswalk_scene_amendment_packet_1",
+  "created_utc": "2026-11-14T02:16:40.7486242Z",
+  "status": "OUTPUT_ONLY_REVIEWED_47_AUTHORED_CPU_PASSED_ACTUAL_RUNTIME_UNRUN",
+  "files": [
+    {
+      "path": "source_jiggle_crosswalk.py",
+      "bytes": 28925,
+      "sha256": "718e5a6390e4406e7da77c966667a915de06d9d9e56a1072f92db93fcd03a770"
+    },
+    {
+      "path": "test_crosswalk_cpu.py",
+      "bytes": 28177,
+      "sha256": "8ce47ea03aca37798822790b5755dc101cb41a4a7738637d2de3d208e82f0488"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6549,
+      "sha256": "bfc01f9c8768db06d7df48d86d6cb0fb84ab3782d170279b32bb6bcf9d2502e3"
+    },
+    {
+      "path": "REVIEW.md",
+      "bytes": 1260,
+      "sha256": "7e8c7970bbd02fc0738cb5c4f4c2c3008938ac6a2d277ca821b99f9a5609a212"
+    },
+    {
+      "path": "SOURCE_AUDIT.json",
+      "bytes": 6135,
+      "sha256": "9ffea91f876e2e0a1494cd0535b15aa8ada8c1c2cb526be8aa9b95ec96f36549"
+    },
+    {
+      "path": "BASELINE_METHODS.json",
+      "bytes": 1566,
+      "sha256": "8a4150d0372810649e41284ddf399acbd443d1d4901546572b12a4a93300a3cd"
+    },
+    {
+      "path": "cpu-attempt1.log",
+      "bytes": 7284,
+      "sha256": "9dd47a3f086ad5a7a7463db12500e989726d0d0192ca9cef3e535b7ff2e04325"
+    }
+  ],
+  "index_excludes_itself": true,
+  "frozen_module_sha256": "718e5a6390e4406e7da77c966667a915de06d9d9e56a1072f92db93fcd03a770",
+  "frozen_test_sha256": "8ce47ea03aca37798822790b5755dc101cb41a4a7738637d2de3d208e82f0488",
+  "original_packet": {
+    "path": "output/source-jiggle-crosswalk-draft/20261114T0155",
+    "module_sha256": "1287d04e15bd7d8ee20b6eea137b820c68849aa7df2d2daf22502ccb0f213b81",
+    "test_sha256": "72d2dcfce34890b16f1062de835f236291a89b114912a87b2e8d874192d03913",
+    "preserved": true,
+    "prior_failed_attempt": "Original packet cpu-attempt1.log retains30tests/14canonicalization errors",
+    "prior_passed_attempt": "Original packet cpu-attempt2.log retains30tests/0errors"
+  },
+  "cpu": {
+    "runtime": "C:\\Program Files\\Python313\\python.exe",
+    "arguments": [
+      "-B",
+      "test_crosswalk_cpu.py"
+    ],
+    "attempt": 1,
+    "tests": 47,
+    "failures": 0,
+    "errors": 0,
+    "log": "cpu-attempt1.log",
+    "old_30_method_ASTs_preserved": true,
+    "new_methods": 17
+  },
+  "independent_review": {
+    "agent": "/root/full_packet_audit",
+    "record": "REVIEW.md",
+    "source_inspection": "No further blocking authored-code finding at reviewed hashes",
+    "test_execution_by_reviewer": false
+  },
+  "actual_Blender_SourceIO_Junko_bridge_app_adoption_persistence_runtime_binding_solver": "UNRUN",
+  "bounded_scene_support": "1..128 selected-scene graph semantics; authored-only qualification",
+  "native_values_have_priority_over_optional_crosswalk": true,
+  "final_nested_report_budget_bytes": 262144,
+  "proof_standalone_budget_bytes": 131072,
+  "no_media": true,
+  "product_source_docs_HEAD_or_installed_files_changed": false
+}

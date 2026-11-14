@@ -61,6 +61,11 @@
           "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
           "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
           "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_silent_selection_audio_2026-11-13.json",
+          "scope": "Fresh ee full FAILED on WASAPI invalidated endpoint during silent geometry;996source+HEADexact. Unchanged defaultdriver67/0 and explicitreportedDummy67/0 pass; strictgates and dedicatedaudio tests retained. Newfullrequired; no completion/scoring change."
         }
       ],
       "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
