@@ -8,6 +8,10 @@ clarity, a future PMX-like reconstruction assistant during standardization and
 old-test GitHub archiving for disk saving. The goal remains paused. See section 14
 and the November 14 additions in the [pickup](NEXT_SESSION_PLAN_2026-11-13_SFM.md).
 
+The owner's additional standardization direction is in section 15: one native
+HAS model representation for every source family, enriched beyond source-format
+round-trip limits, with roughly 200 capability/repair checks as a design target.
+
 The latest f380 complete retry was **USER-CANCELLED / INCOMPLETE**, after
 41m47.124s. It passed the prior helper guard and later contact/selection/motion/
 drawing scopes before the owner called the day. All1008functional hashes/HEAD
@@ -1424,3 +1428,42 @@ automatically published. Existing current fixtures, useful runs, originals,
 shared tools and reviews remain protected. No upload of old test outputs,
 deletion, test or product/runtime change was performed by this documentation
 update. Full details and concrete validation/cleanup gates are in the pickup.
+
+## 15. Universal HAS model standard and capability/repair checks — November 14
+
+All imported model families must converge on HAS's own designated representation,
+consistent with the governing voice addendum sections 3.4–3.5. Use and evolve the
+existing HAS model contract; this does not select a new extension. Preserve and
+extend useful data, including physics and part/material swaps, without reducing
+every model to the least capable source format. Enriched HAS data need not map
+back faithfully into the original PMX/MDL/VRM/etc. Original sources remain intact.
+
+Plan a common inspect/preserve/translate/repair-or-reconstruct/validate/save path
+with roughly 200 meaningful, versioned capability/integrity checks. This is a
+catalog design target, not 200 implemented checks or 200 mandatory passes for
+every model. Record applicability, evidence, initial result, attempted repair
+and validated outcome. Distinguish PASS, REPAIRED_PASS, NEEDS_REVIEW, FAIL,
+UNSUPPORTED, UNTESTED and NOT_APPLICABLE; classify blocking integrity failures
+separately from optional or approximated capabilities. Cover geometry/materials,
+dependency completeness, units/axes/IDs, rigs/weights, morphs/expressions, swaps,
+physics, animation, provenance, resource limits, Undo and portable save/read/render.
+Keep provenance, runtime support and actual validation evidence separate; metadata
+retention is not functional support. This proposed catalog does not replace the
+existing formal acceptance checklist or alter its counts and results.
+
+Different source families need different adapters and fixtures for that same
+contract. MDL may require more reconstruction in some areas; PMX and VRM may
+provide authored declarations to preserve, but actual content and current adapter
+fidelity decide the work. GMA contains assets rather than defining model physics;
+check embedded models with their own profiles. Retain native declarations even
+when runtime interpretation is unsupported, with losses and estimates explicit.
+Try proven safe repairs; review uncertain joints/weights/physics/swaps before an
+Undoable Apply. Never invent simulation features for a static prop to fill boxes.
+
+Keep source round-trip limits distinct from HAS version compatibility. Plan
+explicit schema migrations and required capabilities, including clear refusal
+by older readers when essential enriched data cannot be understood. Preserve
+existing project semantics rather than silently dropping data or gratuitously
+breaking readers. Detailed scope and fixture gates are in the current pickup and
+the future-direction note in standard_model.md. Implementation remains paused;
+no new importer, schema, repair engine or 200-item validator is claimed.

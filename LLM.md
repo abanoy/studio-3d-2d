@@ -4762,3 +4762,26 @@ No old test outputs were uploaded and no cleanup, tests, app runs, training or
 product changes occurred in this documentation update. Goal remains paused;
 formal scores remain 55/62 acceptance and 52/54 implementation. See
 docs/NEXT_SESSION_PLAN_2026-11-13_SFM.md and docs/RESUME_MASTER_PLAN.md.
+
+
+## 2026-11-14 — Record universal HAS standardization and capability audit target
+
+The owner clarifies that every imported source family must become HAS-owned
+model data, potentially enriched with reconstructed information and component
+swaps that cannot map back into the source format. The current pickup, master
+section 15 and standard_model.md now record this direction within the existing
+model/portable .has contract, consistent with the voice addendum. No separate
+extension or backward-export promise was introduced.
+
+A roughly 200-item capability/integrity catalog is a design target, not an
+implemented test count or a change to formal acceptance IDs/scores. Plan honest
+applicability, provenance, runtime support and run-bound evidence; try supported
+repairs and review uncertain reconstruction, then validate each result. MDL,
+PMX and VRM need source-specific fixtures feeding one HAS contract; GMA contains
+models/dependencies rather than defining its own model physics. Actual surviving
+content determines reconstruction effort. Record explicit HAS schema migrations
+and reader refusals for essential new data without silently dropping information.
+
+Read-only source/document review and documentation changes only. No tests, app,
+training, importer/schema implementation, old-test upload or cleanup occurred.
+Goal stays paused; formal 55/62 acceptance and 52/54 implementation are unchanged.

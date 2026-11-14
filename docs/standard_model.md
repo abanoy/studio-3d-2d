@@ -5,6 +5,36 @@ Native adapters prepare data for that loader; the pose editor never branches on
 PMD, PMX, MDL or an add-on name. Maps, characters and groups use independent
 instances in one HAS world, with shared geometry storage and separate poses.
 
+## Future standardization direction — owner clarification, November 14, 2026
+
+This is a recorded development target; it does not describe new implemented
+support. Every imported source family must converge on HAS's own native model
+representation. Evolve the current GLB/model metadata and portable HAS contract,
+consistent with voice addendum sections 3.4–3.5; no new extension is selected here.
+Preserved native features, reconstructed physics and part/material swaps can
+make a HAS asset richer than its input. Faithful export back to the source format
+is not required, and original source assets remain intact.
+
+The planned pipeline inspects/preserves, translates, attempts supported repairs
+or reviewed reconstruction, validates and saves a versioned HAS asset/report.
+Target roughly 200 meaningful capability/integrity checks with stable IDs,
+applicability and evidence. Keep original failures, proposed fixes and validated
+outcomes distinct. Report PASS, REPAIRED_PASS, NEEDS_REVIEW, FAIL, UNSUPPORTED,
+UNTESTED or NOT_APPLICABLE honestly; the exact catalog remains to be designed.
+Missing optional physics on a static prop is not a failed character requirement.
+Inferred rigs/weights/physics need editable review and explicit Apply/Undo.
+
+Source-specific MDL, PMX and VRM adapters/fixtures feed this same contract. Work
+depends on surviving content and adapter fidelity, not just extension; GMA is
+an archive whose contained models/dependencies need their own checks. Preserve
+authored declarations before estimating replacements, and disclose unsupported
+behavior. Plan explicit HAS schema migrations and reader capability checks;
+older readers may reject essential new data rather than silently lose it. This
+does not authorize gratuitous breaks to existing project semantics.
+
+See the [current pickup](NEXT_SESSION_PLAN_2026-11-13_SFM.md) and
+[master reference, section 15](RESUME_MASTER_PLAN.md) for scope and validation.
+
 Optional `metadata.source_shape` (`studio_source_shape_1`, boolean `enabled`)
 selects declared imported default morph weights. New UI imports enable it; absent
 means the prior neutral behavior for old projects. Advanced provides one-step

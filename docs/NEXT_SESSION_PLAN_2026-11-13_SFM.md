@@ -7,6 +7,10 @@ they resume. The PC remains on; owned automated processes are stopped.
 review and these pickup additions. This authorizes documentation, not resuming
 implementation, tests, training, review builds or cleanup.
 
+**Additional November 14 owner direction:** every source family must converge
+on HAS's own designated model representation. See the standardization and
+capability-checklist plan below; it is planned work, not a newly shipped importer.
+
 ## Completed and pushed
 
 - Application checkpointc4d7674: normal conversion retains a bounded inactive
@@ -238,3 +242,76 @@ generating avoidable duplicate test snapshots, while respecting active leases.
 5. The already-audited two old roots remain conditional candidates, not approved
    deletions. Resolve their pending nonuse/access check and qualification gates;
    do not broaden scope to the checkout, owner assets, prior reviews or recovery.
+
+## November 14 — One HAS model standard and a repair/checklist pipeline
+
+Owner direction: regardless of incoming file type, models must enter HAS's own
+designated representation. Enrichment, reconstructed data and part/material
+swaps can exceed what the source supports. Compatibility back to the original
+format is not required. This reinforces the voice addendum sections 3.4–3.5;
+extend the existing HAS model/portable contract, rather than inventing a second
+model system or a new file extension. The present GLB-plus-HAS-metadata route is
+an implementation boundary to evolve, not proof that all native data is retained.
+
+Proposed import sequence: inspect source and dependencies → preserve original
+declarations → translate into the common HAS model → propose bounded repairs/
+reconstruction → validate the result → save the versioned HAS asset and report.
+Source-specific adapters end at the same contract; downstream posing, swaps,
+physics, animation, saving and rendering should use HAS model capabilities.
+Unsupported/malformed input must produce an explicit result, not silently bypass
+normalization or claim that every binary file is already importable.
+
+Build a versioned checklist targeting roughly 200 meaningful capability/integrity
+checks; the owner's number expresses breadth, not an implemented check count or
+an obligation to invent 200 passing assertions. Define stable check IDs, severity,
+applicability, evidence and repair options before locking the catalog. Cover:
+
+- Geometry/topology, normals, UVs, textures, materials and dependency completeness.
+- Units, coordinate frames, root transforms, hierarchy and stable identities.
+- Bones, skin weights, joint bindings, IK/constraints and rest/posed deformation.
+- Expressions/morphs, material changes, skins/bodygroups and component swaps.
+- Hair/cloth/body physics, colliders, attachments, limits and motion ownership.
+- Animation/control semantics, provenance, unsupported native declarations,
+  bounds/resource limits, Undo, save/cold-open, portability and render agreement.
+
+Each asset receives an honest per-check result such as PASS, REPAIRED_PASS,
+NEEDS_REVIEW, FAIL, UNSUPPORTED, UNTESTED or NOT_APPLICABLE. Keep raw original
+results plus repair proposals and validated outcomes. Do not count missing or
+untested features as passed. A static prop should not acquire a fake skeleton or
+cloth rig merely to satisfy character checks. Define blocking integrity failures
+separately from optional capabilities and disclosed approximations.
+
+Keep provenance (imported/translated/inferred/artist-edited), support
+(functional/retained-only/omitted/refused/not applicable) and validation evidence
+(proposed/unrun/passed/failed/skipped/interrupted) as separate report dimensions.
+Bind evidence to the asset profile, source revision and actual run. The planned
+catalog does not replace existing acceptance IDs, formal scores or capability
+groups, and a retained-only declaration does not count as working behavior.
+
+Use available authored information first. MDL may require more reconstruction
+for some capabilities; PMX/VRM may already declare relevant rigs/physics, but
+actual content and adapter fidelity determine effort, not extension alone.
+GMA is a container: inspect/extract its embedded assets and dependencies, then
+apply the relevant contained-model profile. Keep Source flex/bodygroup/jiggle,
+MMD morph/IK/body/joint and VRM expression/spring cases as distinct fixtures for
+the same HAS capability contract. Preserve source-specific information even
+where HAS cannot yet evaluate it, with unsupported behavior clearly reported.
+
+Try safe deterministic repairs where their correctness is established. Proposed
+reconstructed joints, weights, physics or ambiguous swaps need editable review,
+confidence/provenance and explicit Apply/Undo; they must not masquerade as
+recovered source data. Failed or impossible reconstruction stays visible.
+Original assets and authored HAS work remain protected.
+
+Distinguish source-format round-trip from HAS schema compatibility. Enriched HAS
+models need not export back faithfully. New HAS schema versions should have
+explicit migrations and required-capability declarations; older HAS readers may
+refuse unsupported enriched models instead of silently discarding essential
+data. Do not gratuitously break existing HAS projects or silently downgrade them.
+Verify source preservation, semantic mappings, each repair and cold save/open
+against source-specific fixtures when work resumes. No checklist, repair engine,
+schema change or new import support was implemented by this documentation update.
+
+Existing contract anchors: src/model.gd; docs/world_format.md;
+docs/asset_packages.md; docs/has_format.md. Existing independent model/map
+packages already use the `.has` container; do not imply they require a new format.
