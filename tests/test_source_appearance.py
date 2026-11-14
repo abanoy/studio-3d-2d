@@ -366,6 +366,7 @@ def main():
     # exact Python port and shared importer dependencies, not an incidental tree.
     protected = [OVERLAY / "tools" / name for name in (
         "source_appearance.py", "source_mdl_choices.py", "source_choice_io.py",
+        "source_jiggle_values.py", "source_jiggle_metadata.py", "source_mdl_snapshot.py",
         "prepare_source.py", "blender_source_bridge.py", "asset_audit.py",
         "source_archive.py", "source_content.py", "source_case.py", "source_paths.py",
         "source_installation.py", "source_texture.py", "source_eyes.py", "source_lights.py", "source_lightmaps.py")]
@@ -379,7 +380,7 @@ def main():
     report = {"format": "studio_source_appearance_cpu_1", "passed": result.wasSuccessful() and preserved,
               "tests": result.testsRun, "failures": len(result.failures), "errors": len(result.errors),
               "source_preserved": preserved, "sources": before, "run": str(RUN), "main_python_port": True,
-              "preservation_scope": "Seven main Python port files plus ten shared importer dependencies; unrelated GDScript tests excluded",
+              "preservation_scope": "Main appearance/jiggle Python modules and shared importer dependencies; unrelated GDScript tests excluded",
               "runtime_scope": "Python authored fixtures and mocked subprocesses only; no Godot/Blender/conversion/GPU/native reads"}
     (RUN / "result.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({key: report[key] for key in ("passed", "tests", "failures", "errors", "source_preserved", "run")}))

@@ -235,6 +235,20 @@ def main():
     results['source_choice_foundation'] = source_choice_result
     print('PASS Source skin/part identities, default omission, all-hidden refusal, async controls and owned metadata cleanup')
 
+    if os.name == 'nt':
+        owner_started = time.time_ns()
+        owner_folder = spike / 'source-import-owner'
+        owner_log = run([sys.executable, '-B', 'tests/verify_source_import_owner.py', '--output', str(owner_folder)], timeout=60)
+        (output / 'source-import-owner-suite.log').write_text(owner_log, encoding='utf-8')
+        owner_path = owner_folder / 'verification.json'
+        owner_result = json.loads(owner_path.read_bytes())
+        assert owner_path.stat().st_mtime_ns >= owner_started and owner_result['passed'] and owner_result['source_unchanged'], owner_result
+        assert owner_result['headless'] and not owner_result['native_conversion'] and owner_result['result']['checks'] == 53 and owner_result['result']['failures'] == 0, owner_result
+        results['source_import_owner'] = owner_result
+        print('PASS completed import handle release, refusal/cancel, negative exit and sole-creator boundaries')
+    else:
+        results['source_import_owner'] = {'skipped':True, 'reason':'Pinned Windows process-map control; no portable implementation claim.'}
+
     placement_started = time.time_ns()
     placement_folder = spike / 'import-placement'
     placement_log = run([sys.executable, '-u', 'tests/verify_import_placement.py', '--output', str(placement_folder)], timeout=240)

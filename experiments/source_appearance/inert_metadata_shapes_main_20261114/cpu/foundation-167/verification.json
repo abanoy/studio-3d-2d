@@ -1,0 +1,383 @@
+{
+  "format": "has_source_choice_foundation_1",
+  "passed": true,
+  "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choice-foundation\\1794619917761906500",
+  "checks": 167,
+  "reports": {
+    "catalogue": {
+      "format": "studio_mdl_choices_synthetic_proof_1",
+      "tests": 53,
+      "failures": 0,
+      "errors": 0,
+      "started_ns": 1794619917849166200,
+      "finished_ns": 1794619917870588500,
+      "source_before": {
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_mdl_choices.py": {
+          "sha256": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+          "bytes": 13104,
+          "mtime_ns": 1794610640901270800
+        },
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\test_source_mdl_choices.py": {
+          "sha256": "1f6eebb3282c8d172069de429919b5c45e084205d61e899980f10fa7e82daf2d",
+          "bytes": 19569,
+          "mtime_ns": 1794610640902281900
+        }
+      },
+      "source_after": {
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_mdl_choices.py": {
+          "sha256": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+          "bytes": 13104,
+          "mtime_ns": 1794610640901270800
+        },
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\test_source_mdl_choices.py": {
+          "sha256": "1f6eebb3282c8d172069de429919b5c45e084205d61e899980f10fa7e82daf2d",
+          "bytes": 19569,
+          "mtime_ns": 1794610640902281900
+        }
+      },
+      "source_preserved": true,
+      "actual_native_inputs_read": false,
+      "actual_models_tested": 0,
+      "scope": "hand-authored synthetic common-prefix/table controls only",
+      "passed": true
+    },
+    "appearance": {
+      "format": "studio_source_appearance_cpu_1",
+      "passed": true,
+      "tests": 29,
+      "failures": 0,
+      "errors": 0,
+      "source_preserved": true,
+      "sources": {
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_appearance.py": [
+          "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+          8468,
+          1794610640901270800
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_mdl_choices.py": [
+          "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+          13104,
+          1794610640901270800
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_choice_io.py": [
+          "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+          5646,
+          1794610640901270800
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_jiggle_values.py": [
+          "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+          7713,
+          1794615421450684500
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_jiggle_metadata.py": [
+          "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056",
+          16843,
+          1794616485712749900
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_mdl_snapshot.py": [
+          "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be",
+          5043,
+          1794618093165047700
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\prepare_source.py": [
+          "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+          13626,
+          1794610640902281900
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\blender_source_bridge.py": [
+          "0943f7f8cee26115db31b8040248fa1693f77caee845e91eddf9ee89c289fe57",
+          27798,
+          1794619682744175400
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\asset_audit.py": [
+          "f91daebf1a7f7351b04d1018fd87f629a85460c4a67c540db7e7f7697a0eebeb",
+          10171,
+          1794447912617551300
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_archive.py": [
+          "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
+          5628,
+          1794612594606500700
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_content.py": [
+          "7ee3f3b2556322dd4a3c22ce5a358e3d6733c4722fb71444e4077ea5ddf140b1",
+          17070,
+          1794447912649839200
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_case.py": [
+          "63094142f40cc13fb7877a317667bf596910a1df6dfc3796c0c9b4a88db795c2",
+          2512,
+          1794447912648331200
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_paths.py": [
+          "8b174b8de9c2b7db108152b62c8c7a72992bf101e35decafe778f38318c02071",
+          1129,
+          1794447912651846000
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_installation.py": [
+          "10cddc7e1da7b68b97e24e3d5c5d3a87ead25a2a4595cbf9c7d61bbf0bcbd6d2",
+          5867,
+          1794447912650851900
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_texture.py": [
+          "2bd5abbbc113670674cc7e5e86af86360e9f41ef07f7abced702a58d508c0cf5",
+          612,
+          1794447912652851600
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_eyes.py": [
+          "139274445c6817831bf4389b30370ff50209d4a646534a4fd7e7d2355b4702de",
+          2876,
+          1794447912649839200
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_lights.py": [
+          "703ee9eb35f417b699fc5677f79173657e5e5f2860f17a6bfc2b30a1dad798f1",
+          4522,
+          1794447912651846000
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_lightmaps.py": [
+          "5c24783cb9e7fbad316ace461652c92a00190b76f9b8bfd00cdd6ee216de5573",
+          13369,
+          1794447912650851900
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\test_source_appearance.py": [
+          "444fbe09c894f55ca3ce8c84f6dc06e02ee290d347b4ddde17a8a1abebf63dbc",
+          24540,
+          1794619838486437100
+        ],
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\test_source_mdl_choices.py": [
+          "1f6eebb3282c8d172069de429919b5c45e084205d61e899980f10fa7e82daf2d",
+          19569,
+          1794610640902281900
+        ]
+      },
+      "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-cpu\\runs\\1794619918085246600-cpu",
+      "main_python_port": true,
+      "preservation_scope": "Main appearance/jiggle Python modules and shared importer dependencies; unrelated GDScript tests excluded",
+      "runtime_scope": "Python authored fixtures and mocked subprocesses only; no Godot/Blender/conversion/GPU/native reads"
+    },
+    "resource_write": {
+      "tests": 7,
+      "passed": 6,
+      "skipped": 1,
+      "long_path_proofs": [
+        {
+          "format": "has_source_resource_long_path_1",
+          "platform": "win32",
+          "logical_path_characters": 373,
+          "relative": "materials/touhou/keiki/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-3/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-4/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-5/haniyashin chisels texture \u2014 \u3042.vtf",
+          "normal_returned_path": true,
+          "exact_layout": true,
+          "payload": {
+            "bytes": 4379,
+            "mtime_ns": 1600000000333333300,
+            "sha256": "be2e53842cc481e0ad4ac5e5807c66a173ff68964d2fb4fc1d482d3053eddedc"
+          },
+          "exclusive_refusal_preserved": true
+        }
+      ],
+      "scope": "Filesystem resource cache writer; Windows symlink privilege may leave that single exercise explicitly skipped"
+    },
+    "bridge_bootstrap": {
+      "tests": 2,
+      "passed": 2,
+      "scope": "Actual bridge prefix resolves appearance, inactive jiggle and capture modules in an isolated Python host plus negative control; Blender/SourceIO host APIs are stubbed, no conversion"
+    },
+    "jiggle_cpu": {
+      "format": "has_source_jiggle_cpu_1",
+      "passed": true,
+      "checks": 66,
+      "reports": {
+        "metadata": {
+          "checks": 25,
+          "passed": true,
+          "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choice-foundation\\1794619917761906500\\jiggle-cpu\\metadata.log"
+        },
+        "capture": {
+          "checks": 18,
+          "passed": true,
+          "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choice-foundation\\1794619917761906500\\jiggle-cpu\\capture.log"
+        },
+        "capture_review": {
+          "checks": 9,
+          "passed": true,
+          "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choice-foundation\\1794619917761906500\\jiggle-cpu\\capture_review.log"
+        },
+        "bridge": {
+          "checks": 14,
+          "passed": true,
+          "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choice-foundation\\1794619917761906500\\jiggle-cpu\\bridge.log"
+        }
+      },
+      "source_unchanged": true,
+      "source_identity": {
+        "tools/blender_source_bridge.py": {
+          "bytes": 27798,
+          "mtime_ns": 1794619682744175400,
+          "sha256": "0943f7f8cee26115db31b8040248fa1693f77caee845e91eddf9ee89c289fe57"
+        },
+        "tools/source_jiggle_values.py": {
+          "bytes": 7713,
+          "mtime_ns": 1794615421450684500,
+          "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e"
+        },
+        "tools/source_jiggle_metadata.py": {
+          "bytes": 16843,
+          "mtime_ns": 1794616485712749900,
+          "sha256": "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056"
+        },
+        "tools/source_mdl_snapshot.py": {
+          "bytes": 5043,
+          "mtime_ns": 1794618093165047700,
+          "sha256": "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be"
+        },
+        "tests/source_jiggle_fixtures.py": {
+          "bytes": 2311,
+          "mtime_ns": 1794615421467526900,
+          "sha256": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a"
+        },
+        "tests/verify_source_jiggle_cpu.py": {
+          "bytes": 3208,
+          "mtime_ns": 1794619813121855900,
+          "sha256": "6ee067795ef8159f6489243705543e434085fe814cdeeeef5b88710e0c3c92e7"
+        },
+        "tests/test_source_jiggle_metadata.py": {
+          "bytes": 14533,
+          "mtime_ns": 1794619697988460400,
+          "sha256": "74ec152e4901547db16b4c309533f6acb01b247d1f0fec7b9bbcbd5a918ef284"
+        },
+        "tests/test_source_mdl_snapshot.py": {
+          "bytes": 8716,
+          "mtime_ns": 1794619675079255000,
+          "sha256": "14dcb8cdddecb05abf8e792a48ebe69a11fa06da4945b1f20f745588431cf199"
+        },
+        "tests/test_source_mdl_snapshot_review.py": {
+          "bytes": 6081,
+          "mtime_ns": 1794619675079255000,
+          "sha256": "90ed4129eb4c61e85b1064f459d7827ba7b46c2fb97cb8f7ac06dff763b20ef9"
+        },
+        "tests/test_source_jiggle_bridge.py": {
+          "bytes": 13896,
+          "mtime_ns": 1794619858159353500,
+          "sha256": "59a36847b69593c5c8ec98e989fffc1280e058994f0b77b39b24c8ad51a6f8ff"
+        }
+      },
+      "native_conversion": false,
+      "graphics": false,
+      "scope": "Authored MDL bytes/files, exact final report bytes, CPU bridge seams and observed file races only",
+      "actual_Junko_full_report_adoption_persistence": "UNRUN_requires_fresh_native_and_app_verification"
+    },
+    "unit": {
+      "actual_app_adoption": false,
+      "checks": 65,
+      "constructed_controls": true,
+      "failures": 0,
+      "graphics": false,
+      "headless": true,
+      "metadata_worker": "authored fake; no OS child",
+      "native_conversion": false,
+      "preparation": "actual args/file seam with refused fake spawn",
+      "scope": "Static chooser controls, native identities/default omission, generation/cancel/timeout ownership and import argument boundary; no native conversion or artist fidelity claim"
+    },
+    "ui": {
+      "format": "has_source_choices_ui_actual_1",
+      "result": {
+        "actual_app": true,
+        "actual_metadata_children": [
+          {
+            "exit": 0,
+            "frames": 5,
+            "phase": "success",
+            "pid": 10168,
+            "release_calls": 1,
+            "release_result": 1
+          },
+          {
+            "phase": "cancel",
+            "pid": 22552,
+            "release_calls": 1,
+            "release_result": 0
+          },
+          {
+            "exit": 1,
+            "phase": "refusal",
+            "pid": 23180,
+            "release_calls": 1,
+            "release_result": 1
+          }
+        ],
+        "checks": 20,
+        "failures": 0,
+        "native_conversion": false,
+        "render_and_project_preserved": true
+      },
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\source_choices_smoke_e0663581219f4b23abd1350b3a76f977.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_bf46d92756774bb79172638bae558e49",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 20232,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.509
+      },
+      "source_sha256": {
+        "src/source_import.gd": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d",
+        "src/source_choice_dialog.gd": "84bd816615fe0ac10c857606f21db89040544e0b52dd2cdda1089f177e9dda2d",
+        "tools/prepare_source.py": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+        "tools/source_appearance.py": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+        "tools/source_mdl_choices.py": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+        "tools/source_choice_io.py": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+        "tools/source_jiggle_values.py": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+        "tools/source_jiggle_metadata.py": "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056",
+        "tools/source_mdl_snapshot.py": "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be",
+        "tools/blender_source_bridge.py": "0943f7f8cee26115db31b8040248fa1693f77caee845e91eddf9ee89c289fe57",
+        "tests/source_choices_smoke.gd": "92d5c09ff20d200d2ab1b939ff8eb30dc8b8df057f0727c1eed8882ada42a117",
+        "tests\\verify_source_choices.py": "67b70c2a58e9a667a93890262a5ff064825952f56b0f38b8fb8abd9e14af994d"
+      },
+      "source_unchanged": true,
+      "originals": {
+        "choices.mdl": "2512a0a98f2ef563195d712d2dae9fb70fbc857cf786c0ca2e0c21c220a7a4fd",
+        "bad.mdl": "e7311ae853d324d79344165c556f64ab190e8fd443e73c8ddfdc1415ec4bd6d3"
+      },
+      "originals_unchanged": true,
+      "scope": "Actual main app/dialog and real metadata Python processes; hand-authored tables only; native conversion/adoption remain separate"
+    }
+  },
+  "source_unchanged": true,
+  "source_sha256": {
+    "src/source_import.gd": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d",
+    "src/source_choice_dialog.gd": "84bd816615fe0ac10c857606f21db89040544e0b52dd2cdda1089f177e9dda2d",
+    "tools/source_appearance.py": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+    "tools/source_mdl_choices.py": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+    "tools/source_choice_io.py": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+    "tools/source_archive.py": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
+    "tools/source_jiggle_values.py": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+    "tools/source_jiggle_metadata.py": "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056",
+    "tools/source_mdl_snapshot.py": "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be",
+    "tools/prepare_source.py": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+    "tools/blender_source_bridge.py": "0943f7f8cee26115db31b8040248fa1693f77caee845e91eddf9ee89c289fe57",
+    "tests/test_source_mdl_choices.py": "1f6eebb3282c8d172069de429919b5c45e084205d61e899980f10fa7e82daf2d",
+    "tests/test_source_appearance.py": "444fbe09c894f55ca3ce8c84f6dc06e02ee290d347b4ddde17a8a1abebf63dbc",
+    "tests/test_source_resource_write.py": "d3b2e3a5f338a6c0e2b92a993b810cfc6526a03c8cd31c7fef85bd45597aa823",
+    "tests/test_source_bridge_bootstrap.py": "8d8482f411ebd6f8843c8cd831c50f29c0e8a6d9b8be995fa5e53425d05be5ab",
+    "tests/test_source_jiggle_metadata.py": "74ec152e4901547db16b4c309533f6acb01b247d1f0fec7b9bbcbd5a918ef284",
+    "tests/test_source_mdl_snapshot.py": "14dcb8cdddecb05abf8e792a48ebe69a11fa06da4945b1f20f745588431cf199",
+    "tests/test_source_mdl_snapshot_review.py": "90ed4129eb4c61e85b1064f459d7827ba7b46c2fb97cb8f7ac06dff763b20ef9",
+    "tests/test_source_jiggle_bridge.py": "59a36847b69593c5c8ec98e989fffc1280e058994f0b77b39b24c8ad51a6f8ff",
+    "tests/source_jiggle_fixtures.py": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a",
+    "tests/verify_source_jiggle_cpu.py": "6ee067795ef8159f6489243705543e434085fe814cdeeeef5b88710e0c3c92e7",
+    "tests/source_choice_unit.gd": "777d8cd1540227cc76df980492829b53209030a8c85e0b8b868308eccf69f548",
+    "tests/source_choices_smoke.gd": "92d5c09ff20d200d2ab1b939ff8eb30dc8b8df057f0727c1eed8882ada42a117",
+    "tests/verify_source_choices.py": "67b70c2a58e9a667a93890262a5ff064825952f56b0f38b8fb8abd9e14af994d",
+    "tests\\verify_source_choice_foundation.py": "d8602145bea6a78114c136d5aeb6b8d7d8b0ac0bdb57a0644a9b06c400b0431d",
+    "run.py": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1"
+  },
+  "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\source_choices_smoke_e0663581219f4b23abd1350b3a76f977.json",
+  "native_conversion": false,
+  "scope": "167 foundation checks (53 native-table +29 appearance/IO +65 headless +20 private-app), plus resource_write, bridge_bootstrap and inactive jiggle_cpu methods/skips reported separately; real native conversion/adoption separate"
+}

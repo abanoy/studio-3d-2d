@@ -25,6 +25,8 @@ sys.modules["SourceIO"] = module
 spec.loader.exec_module(module)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import source_appearance
+import source_jiggle_metadata
+import source_mdl_snapshot
 from asset_audit import gma_index, AssetError
 from source_archive import resource_path, write_resource
 from source_texture import blender_rgba
@@ -45,6 +47,40 @@ from SourceIO.blender_bindings.models.common import put_into_collections
 from SourceIO.blender_bindings.operators.import_settings_base import ModelOptions, Source1BSPSettings
 from SourceIO.library.source1.vmt import VMT
 from SourceIO.library.source1.vtf import load_texture
+
+
+def publish_parameters(report, selected_mdl_capture, jiggle_inspection):
+    """Publish exact inert metadata, or retain the existing parameter writer."""
+    if isinstance(selected_mdl_capture, source_mdl_snapshot.NotInspected):
+        # No native identity was captured. Keep the original report and record
+        # only this bounded optional-read reason in the existing worker log.
+        note = {"format": source_jiggle_metadata.FORMAT, "status": "not_inspected",
+                "reason": selected_mdl_capture.reason,
+                "original_source_sha256": report["source_sha256"],
+                "applied": False, "runtime_support": "not_implemented",
+                "binding_status": "unattempted", "retained_rule_count": 0,
+                "candidate_state": "not_formed"}
+        note_bytes = json.dumps(note, ensure_ascii=True, separators=(",", ":"), allow_nan=False).encode("utf-8")
+        if len(note_bytes) > source_jiggle_metadata.STATUS_LIMIT:
+            raise ValueError("Optional selected-MDL inspection note exceeds4KiB")
+        print("STUDIO_SOURCE_JIGGLE_OMITTED", note_bytes.decode("utf-8"), flush=True)
+    elif selected_mdl_capture is not None:
+        # Both identity exception types deliberately escape: an observed source
+        # change is never an optional metadata/layout/budget fallback.
+        source_mdl_snapshot.recheck_selected_mdl(selected_mdl_capture)
+        planned = source_jiggle_metadata.plan_report(
+            report, jiggle_inspection, newline=os.linesep,
+            expected_native_mdl_sha256=selected_mdl_capture.native_sha256)
+        if planned["note_bytes"] is not None:
+            print("STUDIO_SOURCE_JIGGLE_OMITTED", planned["note_bytes"].decode("utf-8").rstrip("\n"), flush=True)
+        if planned["report_bytes"] is not None:
+            # The plan already measured the actual final LF/Windows CRLF bytes.
+            # A text writer here would translate the CRLF a second time.
+            (out / "parameters.json").write_bytes(planned["report_bytes"])
+            return planned["report"]
+    (out / "parameters.json").write_text(json.dumps(report, ensure_ascii=True, indent=2), encoding="utf-8")
+    return report
+
 
 dependencies, missing, warnings = {}, set(), []
 mount_warnings = []
@@ -229,9 +265,12 @@ def load_model(path, buffer, scale, parent=None, skin=0, appearance=None):
 
 source = Path(request["source"])
 native_parameters = {}
+selected_mdl_capture = None
+jiggle_inspection = {"state": "none"}
 props_loaded = 0
 suggested_view = None
 if source.suffix.lower() == ".mdl":
+    selected_mdl_capture = source_mdl_snapshot.capture_selected_mdl(str(source))
     appearance = request.get("appearance")
     if appearance is not None:
         appearance = source_appearance.bind(appearance, request["sha256"], source)
@@ -255,6 +294,10 @@ if source.suffix.lower() == ".mdl":
         native_parameters["appearance_request"] = appearance
     if native_physics:
         native_parameters["source_physics"]={"file":native_physics.name,"sha256":physics_sha,"bytes":native_physics.stat().st_size,"applied":False}
+    if isinstance(selected_mdl_capture, source_mdl_snapshot.MdlCapture):
+        jiggle_inspection = source_jiggle_metadata.inspect(
+            selected_mdl_capture.raw, request["sha256"], selected_mdl_capture.native_sha256,
+            native_parameters["bones"], request["scale"])
 else:
     if request.get("appearance") is not None:
         raise ValueError("Appearance choices apply only to one MDL model, not a BSP map")
@@ -451,6 +494,6 @@ report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_
                      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"],
           "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images) + lightmap_report["atlases"],
                      "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE"), "static_lights": len(map_lights)}}
-(out / "parameters.json").write_text(json.dumps(report, ensure_ascii=True, indent=2), encoding="utf-8")
+report = publish_parameters(report, selected_mdl_capture, jiggle_inspection)
 (out / "dependencies.json").write_text(json.dumps({"resolved": list(dependencies.values()), "missing_requests": sorted(missing)}, indent=2), encoding="utf-8")
 print("STUDIO_SOURCE_READY", json.dumps(report["counts"]), flush=True)

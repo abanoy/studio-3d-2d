@@ -1,0 +1,115 @@
+{
+  "bodygroups": [
+    {
+      "choices": [
+        {
+          "display_name": "hair.smd",
+          "index": 0.0,
+          "name": "hair.smd",
+          "raw_name_sha256": "c71ae5152cff9f2e51c5342374f07ee93f8c7e57284f00b59ea2673bd1e1b7c3",
+          "true_blank": false,
+          "vertex_count": 8011.0
+        }
+      ],
+      "display_name": "reference",
+      "index": 0.0,
+      "name": "reference",
+      "native_base": 1.0,
+      "raw_name_sha256": "52367a6622b19f08825e915fad80c542ad4f4c34dbcebad9f5007994b3e39208"
+    },
+    {
+      "choices": [
+        {
+          "display_name": "Hat.smd",
+          "index": 0.0,
+          "name": "Hat.smd",
+          "raw_name_sha256": "07e44f3b45d957a3ffa6409fff87739a4efcb33b8912d69f8d16d30ba23c5d53",
+          "true_blank": false,
+          "vertex_count": 1650.0
+        },
+        {
+          "display_name": "Choice 2 (empty name)",
+          "index": 1.0,
+          "name": "",
+          "raw_name_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "true_blank": true,
+          "vertex_count": 0.0
+        }
+      ],
+      "display_name": "Hat",
+      "index": 1.0,
+      "name": "Hat",
+      "native_base": 1.0,
+      "raw_name_sha256": "dc34efd49ed738bf4500db367292164166989cb15773026e9e185b78292bbc89"
+    }
+  ],
+  "catalogue_sha256": "41a859895b048309405dcd02ccf68a6fecd60206fc8a963fc40a9645b774554e",
+  "format": "studio_source_mdl_choices_1",
+  "materials": [
+    {
+      "display_name": "Hair back",
+      "index": 0.0,
+      "name": "Hair back",
+      "raw_name_sha256": "7cb0c7c60b380045db03c6049f6537904dd543c1fe0c3661352e25626c31879a"
+    },
+    {
+      "display_name": "Hair front",
+      "index": 1.0,
+      "name": "Hair front",
+      "raw_name_sha256": "30466d9632901fdc9abf7fd6a555f12340588a516c523dd306cb4a68e2ec8ebc"
+    },
+    {
+      "display_name": "Hat",
+      "index": 2.0,
+      "name": "Hat",
+      "raw_name_sha256": "dc34efd49ed738bf4500db367292164166989cb15773026e9e185b78292bbc89"
+    },
+    {
+      "display_name": "pom",
+      "index": 3.0,
+      "name": "pom",
+      "raw_name_sha256": "60c24224bbc16801180850bc99d8f099e79aaf26ddaac8fedaab553ecce43f20"
+    }
+  ],
+  "name_encoding": "latin-1 (reversible byte mapping; author encoding unverified)",
+  "native_checksum": 804168914.0,
+  "native_mdl_bytes": 37644.0,
+  "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+  "native_version": 49.0,
+  "original_source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+  "scope": {
+    "converted_object_correspondence_verified": false,
+    "excluded": [
+      "geometry",
+      "bones",
+      "mesh material-column correspondence",
+      "flex evaluation",
+      "native shaders",
+      "jiggle",
+      "animation"
+    ],
+    "inspected_header_prefix_bytes": 240.0,
+    "kind": "mdl49_static_table_metadata_only",
+    "native_fidelity_verified": false,
+    "resources_verified": false
+  },
+  "selected_member": "junko hair.mdl",
+  "skin_reference_count": 4.0,
+  "skins": [
+    {
+      "index": 0.0,
+      "material_indices": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "material_names": [
+        "Hair back",
+        "Hair front",
+        "Hat",
+        "pom"
+      ]
+    }
+  ]
+}

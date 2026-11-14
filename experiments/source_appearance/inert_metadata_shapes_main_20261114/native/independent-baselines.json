@@ -1,0 +1,32 @@
+{
+  "format": "has_sfm_extra_native_baselines_1",
+  "passed": true,
+  "glb_joins": [
+    {
+      "name": "keiki_tools_chisels-groups-000",
+      "exact_glb_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+      "matches_prior_actual_app": true
+    },
+    {
+      "name": "junko_hair-default-no-appearance",
+      "exact_glb_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+      "matches_prior_actual_app": true
+    },
+    {
+      "name": "multi_skin_glove-default-no-appearance",
+      "exact_glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+      "matches_prior_actual_app": true
+    }
+  ],
+  "no_rule_report": {
+    "only_different_field": "original_source",
+    "reason": "Each actual test uses a new owned input alias.",
+    "exact_legacy_writer_bytes_after_that_explicit_relocation": true,
+    "prior_sha256": "f9f4775488c41c847cedd00a0b6b17390a69712b6144fbf9c892a9a62b61be4f",
+    "fresh_sha256": "2e7a52c1151eaf9c3bbff1c69d9473b86e62234b246ba157fc923a1a32b33a34"
+  },
+  "limits": [
+    "Fresh Mima head did not use its older derived GLB as an exact baseline. Its native source, target tuples and actual geometry/control transport are checked separately.",
+    "These three GLB joins are derived-output equivalence, not original Source shader or artist fidelity."
+  ]
+}

@@ -1,0 +1,56 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS authored normal actual child starts
+PASS only actual base creator reserves its mapped child: normal
+PASS completion helper leaves a live gated preparer untouched: normal
+PASS completed exit remains cached before owner release: normal
+PASS terminal polling removes the observed cached map entry: normal
+PASS terminal component has no stale reservation: normal
+PASS existing completion/refusal/cancel adoption contract is unchanged: normal
+PASS repeated polling/helper calls cannot retry a consumed reservation: normal
+PASS completed node teardown does not release twice: normal
+PASS authored refusal actual child starts
+PASS only actual base creator reserves its mapped child: refusal
+PASS completion helper leaves a live gated preparer untouched: refusal
+PASS completed exit remains cached before owner release: refusal
+PASS terminal polling removes the observed cached map entry: refusal
+PASS terminal component has no stale reservation: refusal
+PASS existing completion/refusal/cancel adoption contract is unchanged: refusal
+PASS repeated polling/helper calls cannot retry a consumed reservation: refusal
+PASS completed node teardown does not release twice: refusal
+PASS authored cancel actual child starts
+PASS only actual base creator reserves its mapped child: cancel
+PASS completion helper leaves a live gated preparer untouched: cancel
+PASS completed exit remains cached before owner release: cancel
+PASS terminal polling removes the observed cached map entry: cancel
+PASS terminal component has no stale reservation: cancel
+PASS existing completion/refusal/cancel adoption contract is unchanged: cancel
+PASS repeated polling/helper calls cannot retry a consumed reservation: cancel
+PASS completed node teardown does not release twice: cancel
+PASS authored exit_minus_one actual child starts
+PASS only actual base creator reserves its mapped child: exit_minus_one
+PASS completion helper leaves a live gated preparer untouched: exit_minus_one
+PASS controlled negative exit reports the ambiguous -1 sentinel: exit_minus_one
+PASS negative-exit reservation takes the real mapped release once; getter alone is ambiguous: exit_minus_one
+PASS terminal component has no stale reservation: exit_minus_one
+PASS existing completion/refusal/cancel adoption contract is unchanged: exit_minus_one
+PASS repeated polling/helper calls cannot retry a consumed reservation: exit_minus_one
+PASS completed node teardown does not release twice: exit_minus_one
+PASS authored normal actual child starts
+PASS only actual base creator reserves its mapped child: normal
+PASS completion helper leaves a live gated preparer untouched: normal
+PASS completed exit remains cached before owner release: normal
+PASS mock override without reservation does not consume a test-owned map entry
+PASS terminal component has no stale reservation: normal
+PASS existing completion/refusal/cancel adoption contract is unchanged: normal
+PASS repeated polling/helper calls cannot retry a consumed reservation: normal
+PASS test cleans its own unreserved-child negative control
+PASS completed node teardown does not release twice: normal
+PASS authored normal actual child starts
+PASS only actual base creator reserves its mapped child: normal
+PASS completion helper leaves a live gated preparer untouched: normal
+PASS completed exit remains cached before owner release: normal
+PASS completed teardown consumes the exact map entry once
+PASS failed mock spawn never claims or releases a map entry
+PASS ownership fixture leaves production source bytes unchanged
+SOURCE_IMPORT_OWNER {"authored_single_process_Python_only":true,"cases":[{"bypass_base_creator":false,"checks":9,"completed_teardown":false,"expected_exit":0,"failures":0,"folder":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619698-866-385241","getter_proves_map_disappearance":true,"mode":"normal","owned_pid":18228,"release_audit":{"cached_exit_at_release":[0],"release_calls":1,"release_returns":[1]}},{"bypass_base_creator":false,"checks":9,"completed_teardown":false,"expected_exit":1,"failures":0,"folder":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619698-945-463839","getter_proves_map_disappearance":true,"mode":"refusal","owned_pid":27356,"release_audit":{"cached_exit_at_release":[1],"release_calls":1,"release_returns":[1]}},{"bypass_base_creator":false,"checks":9,"completed_teardown":false,"expected_exit":2,"failures":0,"folder":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619699-012-530873","getter_proves_map_disappearance":true,"mode":"cancel","owned_pid":26104,"release_audit":{"cached_exit_at_release":[2],"release_calls":1,"release_returns":[1]}},{"bypass_base_creator":false,"checks":9,"completed_teardown":false,"expected_exit":-1,"failures":0,"folder":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619699-081-600404","getter_proves_map_disappearance":false,"mode":"exit_minus_one","owned_pid":5100,"release_audit":{"cached_exit_at_release":[-1],"release_calls":1,"release_returns":[1]}},{"bypass_base_creator":true,"checks":10,"completed_teardown":false,"expected_exit":0,"failures":0,"folder":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619699-148-666208","getter_proves_map_disappearance":false,"mode":"normal","owned_pid":3228,"release_audit":{"cached_exit_at_release":[],"release_calls":0,"release_returns":[]}},{"bypass_base_creator":false,"checks":5,"completed_teardown":true,"expected_exit":0,"failures":0,"folder":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619699-215-733890","getter_proves_map_disappearance":true,"mode":"normal","owned_pid":18280,"release_audit":{"cached_exit_at_release":[0],"release_calls":1,"release_returns":[1]}}],"checks":53,"failures":0,"native_converter_or_GPU":false,"negative_exit_getter_limitation":"-1 before and after does not independently prove map disappearance; sole creator/reservation/real release and pinned implementation are required","source_sha256":"2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d"}

@@ -6,6 +6,7 @@ const Timeline = preload("res://src/timeline.gd")
 const Drawing = preload("res://src/drawing.gd")
 const Storage = preload("res://src/storage.gd")
 const Audio = preload("res://src/audio_track.gd")
+const ShapeUI = preload("res://tests/native_shape_ui.gd")
 var app
 var job: Dictionary
 var checks := 0
@@ -15,6 +16,8 @@ var rows: Array = []
 var read_modes: Array = []
 var movie := ""
 var job_path := ""
+var named_ledger: Dictionary = {}
+var named_prefix := ""
 
 func _initialize() -> void: call_deferred("run")
 
@@ -24,6 +27,43 @@ func check(ok: bool, label: String) -> bool:
 	return ok
 
 func normal(value: Variant) -> Variant: return JSON.parse_string(JSON.stringify(value, "", true, true))
+
+func named_check(ok: bool, name: String) -> bool:
+	var key := named_prefix + "/" + name
+	if named_ledger.has(key): ok = false
+	named_ledger[key] = ok; print(("PASS " if ok else "FAIL ") + "named " + key)
+	if not ok: failures += 1
+	return ok
+
+func case_named(label: String) -> Dictionary:
+	var result := {}
+	for key in named_ledger:
+		if str(key).begins_with(label + "/"): result[key] = named_ledger[key]
+	return result
+
+func authored_body(id: String) -> Dictionary:
+	var target := actor(id)
+	return normal({"pose": target.data.get("pose", {}), "keys": target.authored_keys(), "bones": target.order})
+
+func jiggle_observation(expected: Dictionary, id: String, parameters: Dictionary, phase: String) -> void:
+	app.world_selection.select_entity(id); app.physics_editor.sync()
+	var target := actor(id); var native: Dictionary = parameters.get("native_parameters", {})
+	var rules: int = int(expected.rules); var metadata: Variant = native.get("source_jiggle")
+	var identity: bool = target.data.metadata.get("native_parameters", {}) == parameters and parameters.get("source_sha256", "") == expected.source_sha256
+	if rules > 0:
+		identity = identity and metadata is Dictionary and metadata.get("original_source_sha256") == expected.source_sha256 and metadata.get("native_mdl_sha256") == expected.source_sha256
+	named_check(identity, "jiggle." + phase + ".report_identity")
+	var inert: bool = not native.has("source_jiggle") if rules == 0 else metadata is Dictionary
+	if rules > 0 and inert:
+		inert = metadata.get("format") == "studio_source_jiggle_metadata_1" and metadata.get("status") == "retained_inert" and metadata.get("runtime_support") == "not_implemented" and metadata.get("binding_status") == "unattempted" and metadata.get("applied") == false and metadata.get("full_native_rule_layout_verified") == false and int(metadata.get("declared_jiggle_rule_count", -1)) == rules and metadata.get("rules") is Array
+		if inert:
+			inert = metadata.rules.size() == rules
+			for row in metadata.rules:
+				if not row is Dictionary or row.get("applied") != false or row.get("binding_status") != "unattempted" or int(row.get("native_procedure_type", -1)) != 5: inert = false
+	named_check(inert, "jiggle." + phase + ".inactive_rules")
+	var physics = app.physics_editor
+	named_check(not physics.is_running() and physics.pending.is_empty() and physics.import_starts.is_empty() and not physics.recording.active and not physics.hair_toggle.button_pressed and not physics.toggle.button_pressed and target.live_pose == null and target.live_world_transform == null, "jiggle." + phase + ".no_simulation")
+	named_check(authored_body(id) == expected.authored_body, "jiggle." + phase + ".authored_body")
 
 func settled() -> void:
 	for _i in range(4): await process_frame
@@ -143,6 +183,7 @@ func pose_native(item: Dictionary, id: String, peer: String, parameters: Diction
 
 func writer_case(item: Dictionary) -> Dictionary:
 	var label: String = item.name; var case_folder: String = item.folder; var first_check := checks; var first_failure := failures
+	named_prefix = label
 	if not check(app.new_project(), label + " ordinary New starts an independent authored scene"): return {}
 	var placement: Dictionary = app.import_actions.placement(); placement.physics_on_import = false; placement.review_height = false
 	if not check(app.pose_editor.add_model(ProjectSettings.globalize_path("res://examples/tutorials/Practice figure.glb"), 0, placement).is_empty(), label + " retains an independently added Practice figure peer"): return {}
@@ -197,6 +238,10 @@ func writer_case(item: Dictionary) -> Dictionary:
 	var conversion = JSON.parse_string(FileAccess.get_file_as_string(bundle.path_join("conversion-request.json")))
 	if not check(parameters is Dictionary and conversion is Dictionary and imported.data.metadata.get("native_parameters", {}) == parameters and FileAccess.get_sha256(imported.data.source) == FileAccess.get_sha256(bundle.path_join("scene.glb")), label + " adopted actor retains the actual converter report and GLB checksum"): return {}
 	var native: Dictionary = parameters.get("native_parameters", {}); var named := {}; var numeric := {}
+	var jiggle_expected := {}
+	if item.has("expected_jiggle_rules"):
+		jiggle_expected = {"rules": int(item.expected_jiggle_rules), "source_sha256": FileAccess.get_sha256(item.source), "authored_body": authored_body(id)}
+		jiggle_observation(jiggle_expected, id, parameters, "adoption")
 	for group in catalogue.bodygroups:
 		var key := str(int(group.index)); var value := int(item.bodygroups.get(key, 0)) if item.use_override else 0
 		named[str(group.name)] = value; numeric[key] = value
@@ -206,8 +251,10 @@ func writer_case(item: Dictionary) -> Dictionary:
 		check(normal(native.get("selected_native_bodygroup_indices", {})) == normal(numeric) and normal(native.appearance_request) == normal(selected) and normal(conversion.appearance) == normal(selected), label + " explicit native integer selection survives widget, worker and renderer report")
 	var adopted: Dictionary = normal(World.portable(app.current_world())); app.undo(); await settled()
 	check(actor(id) == null and normal(World.portable(app.current_world())) == before_world and app.history.size() == history and protected_state(peer) == before, label + " one Undo removes only the newly converted actor")
+	if not jiggle_expected.is_empty(): named_check(actor(id) == null, "jiggle.undo_actor_absent")
 	app.redo(); await settled(); imported = actor(id)
 	if not check(imported != null and normal(World.portable(app.current_world())) == adopted and protected_state(peer) == before and app.history.size() == history + 1, label + " Redo restores exact native metadata and leaves the original authored work intact"): return {}
+	if not jiggle_expected.is_empty(): jiggle_observation(jiggle_expected, id, parameters, "redo")
 	var mesh_names := active_mesh_names(imported.data.source); var runtime_mesh_names: Array = []; var morph_names: Array = []
 	for mesh in imported.root.find_children("*", "MeshInstance3D", true, false):
 		runtime_mesh_names.append(str(mesh.name))
@@ -223,10 +270,19 @@ func writer_case(item: Dictionary) -> Dictionary:
 		imported = actor(id)
 	app.world_selection.select_entity(id); app.pose_editor.frame_model(); camera = app.renderer.camera
 	app.keys = [Timeline.key(0, camera.position, camera.quaternion, camera.fov), Timeline.key(47, camera.position + Vector3(0.15, 0, 0), camera.quaternion, camera.fov)]
+	var shape_expected := {}
+	if job.get("shape_ui", false) and item.has("shape_ui"):
+		var shape_ui := ShapeUI.new(); shape_ui.app = app
+		shape_ui.record = func(ok: bool, name: String) -> bool: return named_check(ok, "shape_ui." + name)
+		shape_expected = await shape_ui.writer(item.shape_ui, id, func(): return protected_state(peer), parameters, case_folder)
+		if shape_expected.is_empty(): return {}
+		imported = actor(id)
 	var pictures := {}; pictures["0"] = await picture(case_folder.path_join("writer-0.png"), 0); pictures["24"] = await picture(case_folder.path_join("writer-24.png"), 24)
 	var expected := {"format": "has_source_choices_native_expected_1", "name": label, "object_id": id, "peer_id": peer,
 		"portable_world": normal(World.portable(app.current_world())), "protected": protected_state(peer), "parameters": parameters,
 		"glb_sha256": imported.data.sha256, "pictures": pictures, "projects": {}, "input_source": item.source, "bundle": bundle}
+	if not shape_expected.is_empty(): expected["shape_ui"] = shape_expected
+	if not jiggle_expected.is_empty(): expected["jiggle"] = jiggle_expected
 	for mode in ["packed", "linked"]:
 		if mode == "linked":
 			# Normal linked saving deliberately keeps external originals. Reopen the
@@ -244,21 +300,25 @@ func writer_case(item: Dictionary) -> Dictionary:
 			if not check(cached and app.source_import.pid < 0 and app.has_project.origins.is_empty() and app.has_project.path == expected.projects.packed.path and rebound.data.metadata.get("native_parameters", {}) == parameters
 				and normal(World.portable(app.current_world())) == expected.portable_world and protected_state(peer) == expected.protected,
 				label + " ordinary packed Open rebinds exact world, report, drawing, audio and keys to the isolated writer cache before linked Save"): return {}
+			if not jiggle_expected.is_empty(): jiggle_observation(jiggle_expected, id, parameters, "packed_open_cached")
 		var path: String = case_folder.path_join(mode + ".has")
 		if not await operation("pack", func(): app.has_project.save_file(path, mode)): return {}
 		check(app.has_project.path == path and not app.dirty and protected_state(peer) == expected.protected and normal(World.portable(app.current_world())) == expected.portable_world, label + " " + mode + " normal Save preserves the complete authored scene")
+		if not jiggle_expected.is_empty(): jiggle_observation(jiggle_expected, id, parameters, mode + "_save")
 		expected.projects[mode] = {"path": path, "sha256": FileAccess.get_sha256(path)}
 	write_json(case_folder.path_join("expected.json"), expected)
 	var result := {"name": label, "checks": checks - first_check, "failures": failures - first_failure, "passed": failures == first_failure,
 		"all_blank_refused": false, "conversion_started": true, "converter_pid": converter_pid, "metadata_pid": metadata_pid, "metadata_frames": frames, "metadata_worker": metadata_worker,
 		"bundle": bundle, "parameters": bundle.path_join("parameters.json"), "conversion_request": bundle.path_join("conversion-request.json"), "expected": case_folder.path_join("expected.json"),
 		"meshes": mesh_names, "runtime_mesh_names": runtime_mesh_names, "morphs": morph_names, "completed_phases": ["metadata", "controls", "conversion", "adoption", "undo", "redo", "reference_0", "reference_24", "packed_save", "packed_open_cached", "linked_save"]}
+	result["named_checks"] = case_named(label)
 	write_json(case_folder.path_join("writer-result.json"), result); return result
 
 func reader() -> void:
 	var expected: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(job.expected)); var id: String = expected.object_id; var peer: String = expected.peer_id
 	check(not FileAccess.file_exists(expected.input_source) and not DirAccess.dir_exists_absolute(expected.bundle), "owned original native input and prepared converter bundle are offline for this fresh reader")
 	for mode in ["packed", "linked"]:
+		named_prefix = str(expected.name) + "/" + mode
 		var first_check := checks; var first_failure := failures
 		app.new_project(); app.has_project.cache_root = str(job.folder).path_join(mode + "-cache")
 		check(not DirAccess.dir_exists_absolute(app.has_project.cache_root), mode + " reader cache is absent before ordinary Open")
@@ -272,10 +332,15 @@ func reader() -> void:
 		var runtime_path: String = ProjectSettings.globalize_path(imported.data.source).replace("\\", "/").to_lower()
 		var cache_path: String = ProjectSettings.globalize_path(app.has_project.cache_root).replace("\\", "/").to_lower()
 		check(runtime_path.begins_with(cache_path + "/") and app.source_import.pid < 0 and app.history.is_empty() and app.redo_history.is_empty() and not app.dirty, mode + " fresh cache supplies runtime geometry without reconversion or history edits")
+		if expected.has("jiggle"): jiggle_observation(expected.jiggle, id, expected.parameters, "cold_open")
 		for frame in [0, 24]:
 			var captured := await picture(str(job.folder).path_join(mode + "-" + str(frame) + ".png"), frame)
 			check(not captured.is_empty() and captured.pixel_sha256 == expected.pictures[str(frame)].pixel_sha256, mode + " cold derived frame " + str(frame) + " exactly matches the writer reference")
 		check(FileAccess.get_sha256(saved.path) == saved.sha256, mode + " Open leaves the saved package unchanged")
+		if expected.has("shape_ui"):
+			var shape_ui := ShapeUI.new(); shape_ui.app = app
+			shape_ui.record = func(ok: bool, name: String) -> bool: return named_check(ok, "shape_ui." + name)
+			await shape_ui.reader(expected.shape_ui, id, protected_state(peer) == expected.protected, job.folder, mode)
 		read_modes.append({"mode": mode, "checks": checks - first_check, "failures": failures - first_failure, "frames": [0, 24], "project_sha256": saved.sha256, "passed": failures == first_failure})
 	if job.get("export_movie", false):
 		for i in range(app.output_size.item_count):
@@ -303,6 +368,7 @@ func run() -> void:
 			if row.is_empty() or not row.get("passed", false): break
 	else: await reader()
 	var result := {"format": "has_source_choices_native_app_result_1", "mode": job.mode, "checks": checks, "failures": failures, "cases": rows, "reader_modes": read_modes, "movie": movie,
+		"named_checks": named_ledger, "native_simulation_claimed": false,
 		"project_root": ProjectSettings.globalize_path("res://"), "job_path": job_path, "job_sha256": FileAccess.get_sha256(job_path),
 		"source_manifest_sha256": job.source_manifest_sha256, "source_revision": job.source_revision,
 		"actual_source_dialog": job.mode == "writer", "actual_native_conversion": job.mode == "writer", "actual_app": true, "derived_pixels_only": true,

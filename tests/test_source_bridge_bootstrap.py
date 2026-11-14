@@ -11,6 +11,8 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 BRIDGE = ROOT / "tools/blender_source_bridge.py"
 APPEARANCE = ROOT / "tools/source_appearance.py"
+JIGGLE_MODULES = [ROOT / "tools" / name for name in (
+    "source_jiggle_metadata.py", "source_jiggle_values.py", "source_mdl_snapshot.py")]
 
 # The prefix is cut at the next local dependency, before any SourceIO library,
 # Blender API or worker function is used. It still executes the actual request,
@@ -48,6 +50,13 @@ try:
                   appearance_sha256=hashlib.sha256(Path(module.__file__).read_bytes()).hexdigest(),
                   validated_request=checked, no_bpy=os.environ.get("NO_BPY"),
                   dont_write_bytecode=sys.dont_write_bytecode)
+    jiggle = namespace["source_jiggle_metadata"]
+    capture = namespace["source_mdl_snapshot"]
+    result["jiggle_modules"] = {name: {"file": str(Path(value.__file__).resolve()),
+        "sha256": hashlib.sha256(Path(value.__file__).read_bytes()).hexdigest()}
+        for name, value in (("source_jiggle_metadata", jiggle),
+                            ("source_jiggle_values", jiggle.Raw),
+                            ("source_mdl_snapshot", capture))}
 except BaseException as error:
     result.update(ok=False, error_type=type(error).__name__,
                   error_name=getattr(error, "name", None), error=str(error))
@@ -66,7 +75,7 @@ def identity(path):
 
 class SourceBridgeBootstrapTests(unittest.TestCase):
     def probe(self, mode):
-        before = {path: identity(path) for path in [BRIDGE, APPEARANCE]}
+        before = {path: identity(path) for path in [BRIDGE, APPEARANCE, *JIGGLE_MODULES]}
         with tempfile.TemporaryDirectory(prefix="has-source-bootstrap-") as temporary:
             root = Path(temporary).resolve()
             host = root / "sourceio-host-stub"
@@ -92,6 +101,9 @@ class SourceBridgeBootstrapTests(unittest.TestCase):
         self.assertTrue(result["ok"], result)
         self.assertEqual(Path(result["appearance_file"]), APPEARANCE.resolve())
         self.assertEqual(result["appearance_sha256"], identity(APPEARANCE)[2])
+        for path in JIGGLE_MODULES:
+            self.assertEqual(result["jiggle_modules"][path.stem],
+                             {"file": str(path.resolve()), "sha256": identity(path)[2]})
         self.assertEqual(result["validated_request"]["skin"], 1)
         self.assertEqual(result["validated_request"]["bodygroups"], {"0": 0, "1": 1})
         self.assertTrue(result["sourceio_stub_loaded"])

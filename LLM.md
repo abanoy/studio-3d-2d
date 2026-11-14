@@ -4547,3 +4547,48 @@ The sole creator reservation, not that sentinel, proves exactly-once mapped
 cleanup. Native hair simulation/binding is not implemented. Continue these
 independent increments after saving this verified checkpoint; the busy owner's
 manual acceptance conditions do not stop this work or justify another prompt.
+
+
+## 2026-11-13 — Exact inactive Source jiggle retention and ordinary SFM shape controls
+
+Ported independently captured/rechecked selected-MDL identity and bounded inert
+jiggle metadata into the normal Blender bridge. Local helper imports follow the
+tools path bootstrap. Original/container and selected-native SHA domains remain
+distinct. Complete values are retained within128KiB metadata and256KiB actual
+nested Windows report budgets, otherwise wholly omitted with a bounded reason.
+No-rule/BSP legacy writer branches remain; identity violations are not optional
+fallbacks. Native binding, dynamics and automatic Hair&clothes remain absent.
+
+Fixed pinned Windows completed-import map retention using a sole-creator
+reservation consumed before exactly one mapped release. No sentinel guard,
+retry, rawPID fallback or live-child teardown change. Actual harmless-child
+normal/refusal/cancel/negative-exit/unreserved/teardown controls pass53; the
+negative -1 getter alone is explicitly not independent map-disappearance proof.
+Source foundation167 plus metadata/capture/bridge66, bootstrap2 and resource
+6pass/1explicit symlink privilege skip pass. Initial CPU wrapper count14vs13
+failure is retained; the corrected66 includes the identity-error escape test.
+
+Actual fresh four-model run at main working-source snapshot eb089488 passes
+117writer+124reader static checks and154separately named feature checks:
+96ordinary shape checks for Keiki Tools and three Mima head targets,58inactive
+jiggle/no-rule checks. All4136source/hash/size/nsmtime/HEAD records and eight
+preservation gates match; five private jobs close. Four fresh readers perform
+eight packed/linked Opens,16base plus4shape exactframe joins, and one48frame
+1080p24H264/AAC movie with decoded onset1.0000416666666667/RMS8487.65214677082.
+No source aliases/bundles/caches are online for cold reads; linked assets remain.
+
+Independent actual-report joins match all49Junko rules/1421float32 values:
+67269compactmetadata bytes,137044nestedreport bytes. Keiki,JunkoHair and Nitori
+GLBs equal earlier actual baselines. Nitori report differs only in the explicitly
+new original_source alias and recovers exact legacy writer bytes after that
+single relocation. Mima's fresh native conversion exposes143derived targets;
+three exact tuples are exercised, not all156native descriptors or controllers.
+Root host proof finds exact10132 creation identity absent, no matching owned
+runtime remains and no process was killed. No installed Studio/tools/originals
+were replaced and no owner participation prompt occurred.
+
+Compact metadata/source/logs are in inert_metadata_shapes_main_20261114; native
+art/HAS/GLB/media/runtime binaries stay local. Formal55/62 and52/54 unchanged.
+Complete default verification is next for this new source. The subsequent native
+increment must prove an export/runtime binding crosswalk and rest/unit relation
+before implementing any Source solver; source_jiggle_runtime_plan.md records it.

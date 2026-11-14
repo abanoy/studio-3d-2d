@@ -1,0 +1,143 @@
+{
+  "format": "has_source_import_owner_1",
+  "passed": true,
+  "exit": 0,
+  "result": {
+    "authored_single_process_Python_only": true,
+    "cases": [
+      {
+        "bypass_base_creator": false,
+        "checks": 9,
+        "completed_teardown": false,
+        "expected_exit": 0,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619698-866-385241",
+        "getter_proves_map_disappearance": true,
+        "mode": "normal",
+        "owned_pid": 18228,
+        "release_audit": {
+          "cached_exit_at_release": [
+            0
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      },
+      {
+        "bypass_base_creator": false,
+        "checks": 9,
+        "completed_teardown": false,
+        "expected_exit": 1,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619698-945-463839",
+        "getter_proves_map_disappearance": true,
+        "mode": "refusal",
+        "owned_pid": 27356,
+        "release_audit": {
+          "cached_exit_at_release": [
+            1
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      },
+      {
+        "bypass_base_creator": false,
+        "checks": 9,
+        "completed_teardown": false,
+        "expected_exit": 2,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619699-012-530873",
+        "getter_proves_map_disappearance": true,
+        "mode": "cancel",
+        "owned_pid": 26104,
+        "release_audit": {
+          "cached_exit_at_release": [
+            2
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      },
+      {
+        "bypass_base_creator": false,
+        "checks": 9,
+        "completed_teardown": false,
+        "expected_exit": -1,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619699-081-600404",
+        "getter_proves_map_disappearance": false,
+        "mode": "exit_minus_one",
+        "owned_pid": 5100,
+        "release_audit": {
+          "cached_exit_at_release": [
+            -1
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      },
+      {
+        "bypass_base_creator": true,
+        "checks": 10,
+        "completed_teardown": false,
+        "expected_exit": 0,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619699-148-666208",
+        "getter_proves_map_disappearance": false,
+        "mode": "normal",
+        "owned_pid": 3228,
+        "release_audit": {
+          "cached_exit_at_release": [],
+          "release_calls": 0,
+          "release_returns": []
+        }
+      },
+      {
+        "bypass_base_creator": false,
+        "checks": 5,
+        "completed_teardown": true,
+        "expected_exit": 0,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794619699-215-733890",
+        "getter_proves_map_disappearance": true,
+        "mode": "normal",
+        "owned_pid": 18280,
+        "release_audit": {
+          "cached_exit_at_release": [
+            0
+          ],
+          "release_calls": 1,
+          "release_returns": [
+            1
+          ]
+        }
+      }
+    ],
+    "checks": 53,
+    "failures": 0,
+    "native_converter_or_GPU": false,
+    "negative_exit_getter_limitation": "-1 before and after does not independently prove map disappearance; sole creator/reservation/real release and pinned implementation are required",
+    "source_sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d"
+  },
+  "source_unchanged": true,
+  "source_sha256": {
+    "src/source_import.gd": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d",
+    "tests/source_import_owner_unit.gd": "257459016a9cb83f0b65acfbc5b2bb706e4334cebbcb33a7fa9b42c059a5ac9e",
+    "tests/source_import_owner_worker.py": "f8f0ff129ab8e75d919388a23bcbea300747de056d6a34c9638fcb3fd5fa594c",
+    "tests/verify_source_import_owner.py": "840e506aed498a7bdd6b509f32b72651ebc06b4b948e6b22283a3ce89c9ec7bd",
+    "run.py": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1"
+  },
+  "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-import-owner\\1794619698293093600",
+  "headless": true,
+  "native_conversion": false,
+  "scope": "Actual harmless Python children and completed Windows map entries; app/pose doubles. No native conversion, rendering, live-child teardown or native fidelity claim."
+}

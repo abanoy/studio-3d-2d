@@ -32,6 +32,12 @@ from source_installation import conversion_context
 PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
 BAD = ("ERROR:", "FAIL ", "SCRIPT ERROR", "SHADER ERROR", "ObjectDB instances leaked",
        "unclaimed string names", "Pages in use exist at exit", "resources still in use")
+SHAPE_WRITER_COMMON = ("available", "catalogue", "protected_state", "defaults_off", "off_undo", "off_redo")
+SHAPE_WRITER_TARGET = ("binding", "key_0", "key_24", "middle", "geometry", "undo", "redo", "no_op",
+                       "reset", "reset_undo", "reset_redo", "reset_final_undo")
+SHAPE_READER_COMMON = ("catalogue", "authored_values", "defaults_off", "protected_state", "middle_pixels")
+JIGGLE_PHASES = ("adoption", "redo", "packed_save", "packed_open_cached", "linked_save")
+JIGGLE_CHECKS = ("report_identity", "inactive_rules", "no_simulation", "authored_body")
 
 
 def write(path, value):
@@ -107,7 +113,7 @@ def read_manifest(path):
         row = {key: value[key] for key in ["name", "member", "skin", "bodygroups", "use_override", "expect_all_blank"]}
         row.update(source=str(source), resource_root=str(resource_root), key=f"{index + 1:02d}-" + re.sub(r"[^A-Za-z0-9_-]+", "-", value["name"]).strip("-")[:48],
                    appearance_expected=value["use_override"] and (value["skin"] != 0 or any(groups.values())))
-        for optional in ["pose_native_bone_index", "expected_meshes", "expected_morphs"]:
+        for optional in ["pose_native_bone_index", "expected_meshes", "expected_morphs", "shape_ui", "expected_jiggle_rules"]:
             if optional in value:
                 row[optional] = value[optional]
         if "pose_native_bone_index" in row and (type(row["pose_native_bone_index"]) is not int or not 0 <= row["pose_native_bone_index"] < 4096):
@@ -115,7 +121,23 @@ def read_manifest(path):
         for optional in ["expected_meshes", "expected_morphs"]:
             if optional in row and (not isinstance(row[optional], list) or len(row[optional]) > 64 or any(not isinstance(x, dict) or not isinstance(x.get("name"), str) or not x["name"] or type(x.get("present")) is not bool for x in row[optional])):
                 raise ValueError("Optional native-derived presence checks need exact names and boolean expectations")
-        if row["expect_all_blank"] and any(key in row for key in ["pose_native_bone_index", "expected_meshes", "expected_morphs"]):
+        if "expected_jiggle_rules" in row and (type(row["expected_jiggle_rules"]) is not int or not 0 <= row["expected_jiggle_rules"] <= 256):
+            raise ValueError("Optional inert jiggle expectation must be a bounded exact rule count")
+        if "shape_ui" in row:
+            controls = row["shape_ui"]
+            if not isinstance(controls, list) or not 1 <= len(controls) <= 3:
+                raise ValueError("Shape UI cases need one to three exact native-derived bindings")
+            for control in controls:
+                if (not isinstance(control, dict) or set(control) != {"node", "index", "name", "area", "target_count"}
+                        or type(control["node"]) is not int or not 0 <= control["node"] < 100000
+                        or type(control["index"]) is not int or type(control["target_count"]) is not int
+                        or not 0 <= control["index"] < control["target_count"] <= 2048
+                        or not isinstance(control["name"], str) or not 1 <= len(control["name"]) <= 200
+                        or not isinstance(control["area"], str) or control["area"] not in {"Eyes", "Brows", "Mouth", "Accessories", "Other"}):
+                    raise ValueError("Shape UI bindings require exact source node, target index/name/count and an ordinary area")
+            if len({(control["node"], control["index"]) for control in controls}) != len(controls):
+                raise ValueError("Shape UI bindings must be distinct")
+        if row["expect_all_blank"] and any(key in row for key in ["pose_native_bone_index", "expected_meshes", "expected_morphs", "shape_ui", "expected_jiggle_rules"]):
             raise ValueError("Refused cases cannot claim unrun adopted geometry/pose checks")
         cases.append(row)
         roots.setdefault(resource_root, None)
@@ -139,6 +161,29 @@ def case_checks(row):
     return 25 + groups + int(row["appearance_expected"]) + len(row.get("expected_meshes", [])) + len(row.get("expected_morphs", [])) + (8 if "pose_native_bone_index" in row else 0)
 
 
+def named_checks(row, shape_ui=False, reader=False):
+    """Separate opt-in feature names; never add these to historical static totals."""
+    result = []
+    phases = ("packed", "linked") if reader else (None,)
+    for mode in phases:
+        prefix = row["name"] + ("/" + mode if mode else "") + "/"
+        if shape_ui and "shape_ui" in row:
+            common = SHAPE_READER_COMMON if reader else SHAPE_WRITER_COMMON
+            result.extend(prefix + "shape_ui." + name for name in common)
+            targets = ("binding", "middle") if reader else SHAPE_WRITER_TARGET
+            result.extend(prefix + f"shape_ui.target_{index}." + name for index in range(len(row["shape_ui"])) for name in targets)
+        if "expected_jiggle_rules" in row:
+            jiggle_phases = ("cold_open",) if reader else JIGGLE_PHASES
+            result.extend(prefix + "jiggle." + phase + "." + name for phase in jiggle_phases for name in JIGGLE_CHECKS)
+            if not reader:
+                result.append(prefix + "jiggle.undo_actor_absent")
+    return result
+
+
+def named_binding(actual, expected):
+    return isinstance(actual, dict) and set(actual) == set(expected) and all(value is True for value in actual.values())
+
+
 def result_binding(result, request, path, studio):
     if not isinstance(result, dict) or result.get("format") != "has_source_choices_native_app_result_1" or result.get("mode") != request["mode"] or result.get("failures") != 0:
         return False
@@ -150,9 +195,14 @@ def result_binding(result, request, path, studio):
         actual = result.get("cases", [])
         if len(actual) != len(request["cases"]) or result.get("checks") != 1 + sum(case_checks(row) for row in request["cases"]):
             return False
+        all_named = [name for row in request["cases"] for name in named_checks(row, request.get("shape_ui", False))]
+        if not named_binding(result.get("named_checks", {}), all_named):
+            return False
         for observed, expected in zip(actual, request["cases"]):
             phases = ["metadata", "controls", "all_blank_refusal"] if expected["expect_all_blank"] else ["metadata", "controls", "conversion", "adoption", "undo", "redo", "reference_0", "reference_24", "packed_save", "packed_open_cached", "linked_save"]
             if observed.get("name") != expected["name"] or observed.get("checks") != case_checks(expected) or observed.get("failures") != 0 or observed.get("passed") is not True or observed.get("all_blank_refused") != expected["expect_all_blank"] or observed.get("conversion_started") != (not expected["expect_all_blank"]) or observed.get("completed_phases") != phases:
+                return False
+            if not named_binding(observed.get("named_checks", {}), named_checks(expected, request.get("shape_ui", False))):
                 return False
             if not expected["expect_all_blank"]:
                 bundle = Path(observed.get("bundle", "")).resolve()
@@ -164,6 +214,7 @@ def result_binding(result, request, path, studio):
         return result.get("actual_source_dialog") is True and result.get("actual_native_conversion") is True
     modes = result.get("reader_modes", [])
     return (result.get("checks") == (34 if request.get("export_movie") else 30)
+            and named_binding(result.get("named_checks", {}), request.get("expected_named_checks", []))
             and [row.get("mode") for row in modes] == ["packed", "linked"]
             and all(row.get("checks") == 14 and row.get("failures") == 0 and row.get("passed") is True and row.get("frames") == [0, 24] for row in modes)
             and result.get("actual_source_dialog") is False and result.get("actual_native_conversion") is False
@@ -261,11 +312,14 @@ def main():
     parser.add_argument("--inputs-manifest", type=Path, required=True)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--lease-confirmed", action="store_true", help="Only after the root coordinator grants the exclusive graphical lease")
+    parser.add_argument("--shape-ui", action="store_true", help="Exercise admitted native-derived ordinary shape controls; report named checks separately")
     opt = parser.parse_args()
     if os.name != "nt" or not opt.lease_confirmed:
         parser.error("This native Windows test requires an explicit exclusive private-desktop lease")
     manifest = opt.inputs_manifest.resolve(strict=True)
     cases, roots = read_manifest(manifest)
+    if opt.shape_ui != any("shape_ui" in row for row in cases):
+        raise ValueError("Use --shape-ui exactly when the manifest admits shape_ui controls")
     folder = (opt.output or ROOT / "output/source-choices-native" / (str(time.time_ns()) + "-" + uuid.uuid4().hex[:8])).resolve()
     if not folder.is_relative_to((ROOT / "output").resolve()) or folder == (ROOT / "output").resolve() or folder.exists():
         raise ValueError("Use a fresh, strictly owned checkout/output directory")
@@ -290,6 +344,10 @@ def main():
         write(folder / "source-before.json", source_before); write(folder / "runtimes-before.json", runtime_before); write(folder / "originals-before.json", originals)
         write(folder / "input-manifest.json", json.loads(manifest.read_bytes())); write(folder / "runtime-environment.json", {k: environment[k] for k in environment if k.startswith("HYBRID_")})
         write(folder / "manifest-admission.json", {"format": "has_source_choices_native_fresh_admission_1", "schema": "Only declared case control fields and explicit resource_root are admitted. Extra supplied original SHA/resource-lock fields are preserved in input-manifest.json but are not treated as historical pins.", "fresh_full_resource_tree_hashes": "originals-before.json", "per_case_expected_checks": {row["name"]: case_checks(row) for row in cases}, "writer_expected_checks": 1 + sum(case_checks(row) for row in cases), "reader_expected_checks": {"without_movie": 30, "with_movie": 34}})
+        write(folder / "named-check-admission.json", {"format": "has_source_choices_native_named_admission_1", "shape_ui": opt.shape_ui,
+              "writer": {row["name"]: named_checks(row, opt.shape_ui) for row in cases},
+              "readers": {row["name"]: named_checks(row, opt.shape_ui, reader=True) for row in cases if not row["expect_all_blank"]},
+              "historical_static_counts_unchanged": True, "native_simulation_claimed": False})
         for original_root, inventory in originals.items():
             if len(inventory) > 10000 or sum(x["bytes"] for x in inventory.values()) > 2 * 1024**3:
                 raise ValueError("Native family exceeds the explicitly bounded copy budget")
@@ -326,7 +384,7 @@ def main():
             stream.writeframes(b"".join(int(12000 * math.sin(2 * math.pi * 1000 * i / 48000)).to_bytes(2, "little", signed=True) for i in range(24000)))
         spec = importlib.util.spec_from_file_location("source_choices_native_run_" + uuid.uuid4().hex, studio / "run.py")
         module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
-        writer = launch(module, studio, folder / "writer", dict(mode="writer", cases=cases, tone=str(tone), absent_gmod=str(absent_gmod), absent_workshop=str(absent_workshop), watchdog_seconds=660 * len(cases) + 120, **source_binding), environment)
+        writer = launch(module, studio, folder / "writer", dict(mode="writer", cases=cases, tone=str(tone), absent_gmod=str(absent_gmod), absent_workshop=str(absent_workshop), shape_ui=opt.shape_ui, watchdog_seconds=660 * len(cases) + 120, **source_binding), environment)
         if len(writer["result"]["cases"]) != len(cases) or any(not row.get("passed") for row in writer["result"]["cases"]):
             raise RuntimeError("Writer did not complete every requested native case")
         converted = [row for row in writer["result"]["cases"] if row.get("conversion_started")]
@@ -365,7 +423,9 @@ def main():
                 raise ValueError("Offline move escaped the fresh owned run")
             path.rename(offline); moved.append((path, offline))
         for index, row in enumerate(converted):
-            request = dict(mode="reader", expected=row["expected"], export_movie=index == 0, watchdog_seconds=240, **source_binding)
+            planned = next(case for case in cases if case["name"] == row["name"])
+            request = dict(mode="reader", expected=row["expected"], export_movie=index == 0, watchdog_seconds=240,
+                           expected_named_checks=named_checks(planned, opt.shape_ui, reader=True), **source_binding)
             reader = launch(module, studio, folder / "readers" / f"{index + 1:02d}", request, environment)
             readers.append(reader)
             if index == 0:
@@ -423,6 +483,9 @@ def main():
                       folder=str(folder), passed=not errors and all(gates.values()) and writer is not None and len(readers) == len([r for r in writer["result"]["cases"] if r.get("conversion_started")]) and media is not None,
                       errors=errors, preservation=gates, writer=writer, readers=readers, movie=media, receipts=receipts,
                       original_families=originals, conversion_metadata=conversion_metadata, scope="Actual import-time static Source UI/conversion, Add/Undo/Redo, packed+linked cold persistence and one movie. Derived pixels only; no native Source shader/jiggle/assembly/artist fidelity claim.")
+        result["named_checks"] = {"writer": writer["result"].get("named_checks", {}) if writer else {},
+                                  "readers": [reader["result"].get("named_checks", {}) for reader in readers],
+                                  "historical_static_counts_unchanged": True, "native_simulation_claimed": False}
         write(folder / "verification.json", result)
     print(json.dumps(dict(folder=str(folder), passed=result["passed"], preservation=result["preservation"], errors=result["errors"], writer_checks=writer["result"]["checks"] if writer else None, reader_count=len(readers)), ensure_ascii=True))
     return 0 if result["passed"] else 1

@@ -1,0 +1,159 @@
+{
+  "format": "has_source_appearance_native_cases_1",
+  "cases": [
+    {
+      "name": "keiki_tools_chisels-groups-000",
+      "family": "keiki_tools_chisels",
+      "variant": "groups-000",
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\keiki_tools_chisels\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "member": "keiki haniyashin chisels.mdl",
+      "source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\keiki_tools_chisels\\keiki by tamo",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "resource_manifest": "CORE_FAMILIES.json",
+      "resource_count": 66,
+      "resource_bytes": 47183776,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": true
+        },
+        {
+          "name": "box.smd",
+          "present": true
+        },
+        {
+          "name": "flame.smd",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": true
+        }
+      ],
+      "shape_ui": [
+        {
+          "node": 33,
+          "index": 0,
+          "name": "Tools",
+          "area": "Accessories",
+          "target_count": 1
+        }
+      ]
+    },
+    {
+      "name": "mima_head-ordinary-shape-ui",
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\mima\\mima\\models\\koikatsu\\touhou\\mima head.mdl",
+      "source_sha256": "b0b128f994dd9939aa5e1978431fcc3afeec84d56ee1f14b0efec96999909224",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\mima\\mima",
+      "member": "mima head.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "expected_meshes": [
+        {
+          "name": "hair.smd",
+          "present": true
+        },
+        {
+          "name": "hat.smd",
+          "present": true
+        },
+        {
+          "name": "Mima_dmx.dmx",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "ah 1",
+          "present": true
+        },
+        {
+          "name": "ah 2",
+          "present": true
+        },
+        {
+          "name": "EEEE",
+          "present": true
+        }
+      ],
+      "shape_ui": [
+        {
+          "node": 231,
+          "index": 0,
+          "name": "ah 1",
+          "area": "Mouth",
+          "target_count": 143
+        },
+        {
+          "node": 231,
+          "index": 1,
+          "name": "ah 2",
+          "area": "Mouth",
+          "target_count": 143
+        },
+        {
+          "node": 231,
+          "index": 31,
+          "name": "EEEE",
+          "area": "Mouth",
+          "target_count": 143
+        }
+      ]
+    },
+    {
+      "name": "junko_hair-default-no-appearance",
+      "family": "junko_v25",
+      "model": "junko_hair",
+      "variant": "default-no-appearance",
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\junko_v25\\models\\touhou\\tamo\\junko hair.mdl",
+      "source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "member": "junko hair.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\junko_v25",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0
+      },
+      "use_override": false,
+      "expect_all_blank": false,
+      "resource_manifest": "WIDER_FAMILIES.json",
+      "appearance_request": null,
+      "expected_jiggle_rules": 49
+    },
+    {
+      "name": "multi_skin_glove-default-no-appearance",
+      "family": "multi_skin_glove",
+      "variant": "default-no-appearance",
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "member": "kawashiro nitori tanktop glove.mdl",
+      "source_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0
+      },
+      "use_override": false,
+      "expect_all_blank": false,
+      "resource_manifest": "CORE_FAMILIES.json",
+      "resource_count": 230,
+      "resource_bytes": 134276708,
+      "expected_jiggle_rules": 0
+    }
+  ]
+}

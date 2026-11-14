@@ -390,6 +390,11 @@
           "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
           "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
           "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_inert_metadata_shapes_main_2026-11-13.json",
+          "scope": "New main-working-source snapshot at eb089488: actual4native workflows,241static+154named checks,8cold Opens/20exactframejoins,1movie,8preservationgates/5privatejobs; inactive Junko49rules/1421rawfloatjoins. No native dynamics/controller/shader or original artist fidelity inferred."
         }
       ],
       "remaining": "Native inputs are now available and the combined Windows supported-profile route passes. Remaining external prerequisite: artist/source-appearance comparison against the actual native originals using docs/windows_acceptance_followup.md. Roadmap formats/full native shader-simulator reproduction remain optional or explicit unsupported limits; no known independent software defect is being handed off.",
@@ -514,6 +519,11 @@
           "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
           "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
           "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_inert_metadata_shapes_main_2026-11-13.json",
+          "scope": "New main-working-source snapshot at eb089488: actual4native workflows,241static+154named checks,8cold Opens/20exactframejoins,1movie,8preservationgates/5privatejobs; inactive Junko49rules/1421rawfloatjoins. No native dynamics/controller/shader or original artist fidelity inferred."
         }
       ],
       "remaining": "Native dependencies, original preservation, bounded materials/props/lightmaps and exact portable cold replay now have Windows evidence. Obtain actual source-appearance/artist comparison for supported geometry/material/rig behavior. Preserve the explicitly reported partial lightmap/native-shader/physics limits; do not infer original visual fidelity solely from self-replay hashes.",

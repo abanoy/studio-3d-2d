@@ -30,18 +30,32 @@ process identities and the independently audited evidence packet verify closure.
 [Complete SFM Windows pass](benchmarks/windows_canonical_sfm_2026-11-13.json).
 This supersedes the older full-run results below for the static SFM increment.
 
-Separate next-feature research now reads all 49 Junko hair jiggle rules directly
-from the SHA-bound native file: 1,421 finite float32 values, all flags 0x31, with
-independent row/bit checks. This is an inert raw-metadata proposal only. Studio
-does not yet retain or simulate those values, and native binding remains unproved.
-[Values and limits](benchmarks/sfm_native_jiggle_values_2026-11-13.json).
-The [current reviewed candidates](../experiments/source_appearance/next_sfm_candidates_20261114/PLAN.md)
-preserve the amended metadata adapter (25 CPU checks), independent selected-MDL
-capture/recheck (18 + 9 CPU checks), completed-worker handle cleanup (53 authored
-runtime checks, still unrun), and ordinary Keiki/Mima shape UI cases (unrun).
-Port these after saving the full-pass checkpoint. Actual Junko report admission,
-saved-project tests and native simulation/binding remain unrun. Native jiggle,
-shader fidelity, facial semantics and assembly remain distinct features.
+The newer scoped increment now retains all49 Junko hair jiggle rules as exact,
+inactive optional metadata. Independent byte checks match1421float32 values;
+67269compact metadata bytes fit the137044-byte nested report. The selected MDL
+is captured independently before SourceIO and rechecked before publication. A
+report-budget refusal retains no partial rules. No native binding or simulation
+is enabled by this metadata.
+
+Fresh actual four-model workflows pass117writer+124reader static checks and154
+separately named checks (96shape,58inactive-jiggle): Keiki Tools, three Mima head
+expressions, Junko hair and a Nitori no-rule baseline. Ordinary Amount/Apply,
+linear interpolation, Undo/Redo/reset and imported-default Off survive eight
+packed/linked cold Opens with20exact frame joins. All4136source/hash/size/time/
+HEAD entries and eight preservation gates match; all five private jobs close.
+The48-frame1080p24H264/AAC movie has onset1.0000416667seconds. Three existing
+GLBs remain byte-identical. Completed-import mapped-handle cleanup also passes53
+actual harmless-child checks; the foundation167 plus66CPU controls pass.
+[Current scoped evidence](benchmarks/sfm_inert_metadata_shapes_main_2026-11-13.json).
+The complete default suite for this newer increment is next; the9f full above
+certifies the preceding static feature. Preserve these distinct source contexts.
+
+The concrete next native feature is the [binding and runtime plan](source_jiggle_runtime_plan.md).
+It requires an explicit native→Blender→glTF→HAS joint crosswalk and measured rest/
+unit correspondence before adapting native dynamics. The reviewed candidate
+packet remains historical design evidence; its cleanup/metadata/shape actions
+have now been ported and exercised. Shader/controller/assembly fidelity and
+artist review remain separate features or observations.
 
 
 The fresh full Windows suite at `12071fe182a17d17e2a1547c7dbb97f6aa4dd160`

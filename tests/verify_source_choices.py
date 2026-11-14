@@ -13,7 +13,7 @@ def main():
  folder=(opt.output or ROOT/'output/source-choices-ui'/str(time.time_ns())).resolve();assert folder.is_relative_to((ROOT/'output').resolve()) and not folder.exists();folder.mkdir(parents=True)
  raw,_=fixture(groups=[(b'tools',[(b'blank',7),(b'',0)]),(b'hat',[(b'hat',11),(b'',0)])]);(folder/'choices.mdl').write_bytes(raw);(folder/'bad.mdl').write_bytes(b'IDST broken native input')
  originals={n:sha(folder/n) for n in ['choices.mdl','bad.mdl']}
- names=['src/source_import.gd','src/source_choice_dialog.gd','tools/prepare_source.py','tools/source_appearance.py','tools/source_mdl_choices.py','tools/source_choice_io.py','tools/blender_source_bridge.py','tests/source_choices_smoke.gd',str(Path(__file__).relative_to(ROOT))]
+ names=['src/source_import.gd','src/source_choice_dialog.gd','tools/prepare_source.py','tools/source_appearance.py','tools/source_mdl_choices.py','tools/source_choice_io.py','tools/source_jiggle_values.py','tools/source_jiggle_metadata.py','tools/source_mdl_snapshot.py','tools/blender_source_bridge.py','tests/source_choices_smoke.gd',str(Path(__file__).relative_to(ROOT))]
  frozen={n:sha(ROOT/n) for n in names};(folder/'source-before.json').write_text(json.dumps(frozen,indent=2)+'\n',encoding='utf-8')
  args=command('tests/source_choices_smoke.gd',extra=['--audio-driver','Dummy','--log-file',str(folder/'engine.log'),'--',str(folder)])
  (folder/'command.json').write_text(json.dumps(args,indent=2)+'\n',encoding='utf-8')
