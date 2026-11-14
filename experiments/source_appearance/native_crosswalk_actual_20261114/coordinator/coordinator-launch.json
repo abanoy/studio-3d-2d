@@ -1,0 +1,23 @@
+{
+  "format": "has_root_crosswalk_qualification_launch_1",
+  "input_lock_sha256": "afbd05bf636d3eb58df13e815547f2dbfef5c51ec4d74993c05f8082bcbb40d1",
+  "source_commit": "80a1e557512902b29b5fb95b3152bb4284fdf55e",
+  "authoritative_owned_runtime_commands_absent_before_launch": true,
+  "arguments": [
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\driver\\run_prepared.py",
+    "--lock",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\fresh-input-lock.json",
+    "--lock-sha256",
+    "afbd05bf636d3eb58df13e815547f2dbfef5c51ec4d74993c05f8082bcbb40d1",
+    "--run-conversion",
+    "--lease-confirmed"
+  ],
+  "task": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240",
+  "launcher_sha256": "6371488bf4b47de86958456511ecf2d333dffe35fd905e7db0acc221a7f3eabb",
+  "scope": "Exactly one Junko diagnostic overlay; no main/app/solver port",
+  "creation_utc": "2026-11-14T02:41:59.9764261Z",
+  "pid": 20108,
+  "exclusive_native_lease": true
+}

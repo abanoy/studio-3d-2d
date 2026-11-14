@@ -1,0 +1,42 @@
+{
+  "native": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\overlay\\tools\\prepare_source.py",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\junko_v25\\models\\touhou\\tamo\\junko hair.mdl",
+    "--output",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\bundle",
+    "--sourceio",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "--blender",
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+    "--mount-plan",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\empty-mount-plan.json",
+    "--gmod",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\absent-gmod",
+    "--workshop",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\absent-workshop"
+  ],
+  "private": [
+    "C:\\Program Files\\Python313\\pythonw.exe",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\private_desktop.py",
+    "--receipt",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\private-receipt.json",
+    "--timeout",
+    "700",
+    "--cancel-file",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\cancel.flag",
+    "--",
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\driver\\background_python_bootstrap.py",
+    "--headless",
+    "--request",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\background-request.json",
+    "--request-sha256",
+    "9fa9239bad0f3803447adb95b686fae5795bbd5f8132a31347c1e18bdf887486"
+  ],
+  "request_sha256": "9fa9239bad0f3803447adb95b686fae5795bbd5f8132a31347c1e18bdf887486"
+}

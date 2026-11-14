@@ -13,8 +13,13 @@ tests remain unchanged. A new full run is required; no scoped result substitutes
 for it. [Failure and bounded correction](benchmarks/windows_silent_selection_audio_2026-11-13.json).
 
 The [native binding candidate](../experiments/source_appearance/native_crosswalk_candidate_20261114/PLAN.md)
-now has47authored CPU controls and independent source review. It is output-only;
-actual Blender/Junko export, HAS binding and native simulation remain unrun.
+has47authored CPU controls and now passes an actual restricted Junko export:
+all69bone links,483raw restword joins and1421jiggle floats; GLB bytes and decoded
+geometry/materials are unchanged, all1886locks and996main files are preserved.
+[Actual export proof](benchmarks/native_crosswalk_actual_2026-11-13.json).
+This remains a diagnostic overlay: main integration, HAS runtime binding,
+portable adoption and native simulation are unrun. Full native rest/fingerprint
+data remains private locally; compact numeric joins/hashes/errors are saved.
 
 Current increment: import-time Source skins and bodygroups are implemented. The
 167-check foundation passes and is registered in default verification. At exact

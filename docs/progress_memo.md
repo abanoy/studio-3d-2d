@@ -14635,3 +14635,32 @@ failure and scene/mesh/container review gaps remain preserved. This is new
 binding code, not actual runtime/native simulation. ActualBlender/Junko69joint
 qualification, HAS binding, persistence and solver remainUNRUN. The concrete
 next-step packet and source_jiggle_runtime_plan.md preserve the continuation.
+
+
+## 2026-11-13 — Actual Junko native-to-export bone crosswalk passes
+
+At main80a1e557 with a separately owned diagnostic overlay, the exact supplied
+Junko hair MDL passes all69native→Blender→glTF joint bindings,483raw restword
+joins and1421jiggle floats. Independent source/audit pins all1886files plus996
+main functional entries/currentHEAD and exact tree memberships. Maximum rest
+matrix error5.668355022803162e-6 meets2e-5. Raw2322644-byte GLB equals the protected
+baseline;2meshes/4primitives, all material/texture/image/skin/morph fingerprints
+match; scene0 has72reachable nodes/1skin. Production parameters are unaugmented;
+entire native_parameters match, whole report differs only original_source path.
+
+Fresh task/lock/worker26source-map and7Python/13Blender role lists use current
+code, not historical hashes. Dual Python/Blender WinAPI self-attestation and exact
+nonce/parent/PID/creation chain pass; original headless monitor flags remainfalse
+and are not relabelled as GPU proof. Exact coordinator20108 creation is absent;
+no owned runtime remains and no process was killed. Preflight check succeeded;
+a parallel host guard first saw that nonlaunch preflight and refused, then the
+sequential launch guard saw none. No native run or input was retried/reused.
+
+Compact code/metadata/logs/counts/numeric joins/hash/errors are saved in
+native_crosswalk_actual_20261114. Full69-bone rest arrays and detailed fingerprints
+stayLOCAL with private model bundles, with hashes/paths/reproduction recorded.
+No main integration/HAS binding/portable adoption/native Source solver is claimed.
+Next compact report admission and exact has_source_bones runtime join precede
+helper use. Native dynamics/tip-axis/unit/wind/lifecycle work stays in the saved
+runtime plan. The earlier full audio-device failure remains FAILED; fresh full
+default verification is still required after the silent-selection correction.

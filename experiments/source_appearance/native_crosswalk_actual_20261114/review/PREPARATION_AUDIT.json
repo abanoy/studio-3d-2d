@@ -1,0 +1,80 @@
+{
+  "format": "has_crosswalk_preparation_independent_readonly_audit_1",
+  "created_utc": "2026-11-14T02:38:15.391555+00:00",
+  "verdict": "GO_PREPARATION_ONLY",
+  "native_execution_approved": false,
+  "native_qualification": "UNRUN",
+  "root_source_revision": "80a1e557512902b29b5fb95b3152bb4284fdf55e",
+  "functional_sources": 996,
+  "functional_git_HEAD_diff_or_untracked": [],
+  "reviewed_files": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-crosswalk-qualification-draft\\20261114T0240\\prepare_qualification.py",
+      "bytes": 14906,
+      "sha256": "2d0e3eacb248debccbc856c6822715bf2b0e6925440e60a33d140a6b320f60e2"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-crosswalk-qualification-draft\\20261114T0240\\qualification_support.py",
+      "bytes": 7773,
+      "sha256": "4f5a40937d63dc6913105f65a597d8f4b8d36431123c97562473ea31d46bf650"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-crosswalk-qualification-draft\\20261114T0240\\run_prepared.py",
+      "bytes": 9421,
+      "sha256": "2f796032dd15a1aeef7fea00c3eab45091be913e890c4944f974aff332ce046d"
+    }
+  ],
+  "read_only_auditor": {
+    "draft_modules_imported_or_executed": false,
+    "products_or_native_apps_launched": false,
+    "process_queries_performed": false,
+    "source_or_docs_or_HEAD_modified": false,
+    "AST_only": true
+  },
+  "preparation_command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-crosswalk-qualification-draft\\20261114T0240\\prepare_qualification.py",
+    "--main",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+    "--output",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240",
+    "--input-stage",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\junko_v25",
+    "--mdl",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\junko_v25\\models\\touhou\\tamo\\junko hair.mdl",
+    "--baseline-bundle",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620244-469-42871294",
+    "--expected-root-revision",
+    "80a1e557512902b29b5fb95b3152bb4284fdf55e",
+    "--prepare-only"
+  ],
+  "preparation_output_must_be_absent": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240",
+  "checks": [
+    "Preparation imports standard library only; subprocesses are read-only Git queries; no product/native module import or process launch occurs in preparation.",
+    "Output must be a fresh direct ROOT/output/crosswalk-qualification-[A-Za-z0-9_]+ task; no deletion/move/installation/source write; existing original/baseline/runtime/executable paths are read/hash references.",
+    "Exact reviewed80 HEAD, git diff HEAD and untracked functional checks; full996 canonical file identities and membership; source/dependency/candidate anchors fail closed.",
+    "Exact Junko original SHA, standalone selected MDL,49 retained metadata rows,69 bones,.01905 scale,no appearance request; actual GLB baseline path verified, not compact metadata-only folder.",
+    "Candidate crosswalk source pinned to718e5a6390e4406e7da77c966667a915de06d9d9e56a1072f92db93fcd03a770; full SourceIO/exporter/input/baseline/executable/source overlay/driver identities frozen and membership checked.",
+    "Driver TASK/CHECKOUT path derivation is correct for a direct output task; overlay PROTOTYPE and all WORKER_SHA rebuilt; private_desktop source required; Python7 and Blender13 expected imported-role modules include5 new helpers.",
+    "Runner defaults to preflight only; actual conversion requires both --run-conversion and --lease-confirmed on Windows; exactly one fresh Junko case and exactly one intercepted Blender command.",
+    "Private route starts actual installed Python/pythonw and Blender with background/factory-startup/disable-autoexec/offline flags, CREATE_NO_WINDOW and no visible fallback; parent-owned cancellation/job closure is retained.",
+    "Fresh nonce/root/lock/request/source and executable SHA bindings; independent Python and Blender WinAPI self-desktop/station/PID/100ns creation+parent-chain attestations; fresh proof times, completed imports, original private receipt, no foreground/switch,closed job/desktop required.",
+    "Diagnostic hook registration is temporary/owned; actual exporter Gltf/Node/Skin/Scene/Mesh types and pinned constructor origin observed;69-native-parent/rest/bone crosswalk and selected-scene finalGLB reconciliation plus strict chunk/schema limits inherited from reviewed47-control candidate.",
+    "Final one-case runner independently validates49/1421 native float32 values, compares decoded baseline geometry/skin/rest/morph/material/image fingerprints, and rechecks all locked identities/membership in finally; no HAS adoption or solver claim."
+  ],
+  "resolved_findings": [
+    "Expanded main protection from extension subset to full996 canonical catalogue and membership.",
+    "Changed worktree-only diff guard to git diff HEAD so staged changes are covered.",
+    "Added driver/overlay membership preservation.",
+    "Confirmed actual baseline bundle path; compact metadata folder has no scene.glb."
+  ],
+  "remaining_admission_before_actual_native": [
+    "Root reviews materialized fresh-input-lock.json, source996 map, generated bridge/driver diffs, executable/runtime/input/candidate pin identities and background source/role catalogue.",
+    "Bind any actual runner invocation to exact freshly emitted lock SHA and explicit exclusive native lease.",
+    "Use fresh task/case; retain every partial result and original receipt on failure; no automatic cleanup.",
+    "No actual Blender hook/native crosswalk/exporter/GLB or HAS result is implied by this code review."
+  ],
+  "packaging_status": "README/INDEX still pending at audit time; GO is bound to exact3 reviewed script hashes and command above. Packaging can be checked separately without native launch."
+}
