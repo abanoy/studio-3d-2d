@@ -3,7 +3,16 @@
 **Updated November 13, 2026. The owner directed continued SFM extra-feature work
 while busy. Manual acceptance checks do not stop this implementation work.**
 
-Newest full run at ee81e864 is **FAILED**, after31m17s: a Windows WASAPI
+Newest full run at c4d7674 is **FAILED**, after840.186023seconds: the older
+helper-preview provenance manifest refuses the changed helper-editor bytes.
+It stops before0CPU checks, snapshot creation or graphics. All1008functional
+files/HEAD match. The dependency is present in main. Independent review and
+a two-test provenance update now pass208CPU/266GPU plus120driver-domain checks.
+Production code and assertions stay unchanged. Another complete run is next.
+The exact coordinators are closed without kills; no stale full result is used.
+[Current full refusal](benchmarks/windows_helper_review_guard_2026-11-13.json).
+
+The previous full run at ee81e864 is **FAILED**, after31m17s: a Windows WASAPI
 output-device invalidation tripped the strict engine-error gate in the silent
 native selection test, despite67geometric checks/0domain failures. All996source
 entries and HEAD match. An unchanged-code/default-driver repeat passes67/0.
@@ -27,6 +36,12 @@ exporter sources and five private jobs pass. Foundation167, jiggle66,
 crosswalk77 and headless79+17 pass separately. Native dynamics remains
 unimplemented; full native rest/fingerprint data remains private locally.
 [Current main binding/helper evidence](benchmarks/sfm_source_bone_binding_main_2026-11-13.json).
+Independent rest/neutral-skin measurements now cover69bones,49native-Ztips,
+69inverse binds and9661vertices at the single qualified conversion scale.
+The common(+X,+Z,-Y) map left-multiplies the native joint matrix. The first
+conjugation hypothesis and native-normal comparison fail and remain recorded;
+normal fidelity is unqualified. HAS posed/two-scale transport and dynamics
+remainUNRUN. [Coordinate evidence and limits](benchmarks/native_source_coordinates_2026-11-13.json).
 
 Current increment: import-time Source skins and bodygroups are implemented. The
 167-check foundation passes and is registered in default verification. At exact

@@ -1,0 +1,37 @@
+{
+  "format": "has_helper_preview_provenance_reproduction_1",
+  "working_directory": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+  "commands": [
+    {
+      "scope": "cpu208",
+      "command": "& \"C:\\Program Files\\Python313\\python.exe\" -B -u tests/verify_helper_preview.py --mode cpu --allow-working-source",
+      "context": "Windows host; approved pinned interpreter",
+      "exit": 0
+    },
+    {
+      "scope": "graphical266_attempt1",
+      "command": "& \"C:\\Program Files\\Python313\\python.exe\" -B -u tests/verify_helper_preview.py --mode graphical --lease-confirmed --allow-working-source",
+      "context": "Restricted context; CreateDesktop denied before engine launch",
+      "exit": 1,
+      "checks": 0
+    },
+    {
+      "scope": "graphical266_attempt2",
+      "command": "& \"C:\\Program Files\\Python313\\python.exe\" -B -u tests/verify_helper_preview.py --mode graphical --lease-confirmed --allow-working-source",
+      "context": "Approved host context using require_escalated under root exclusive graphics lease",
+      "exit": 0,
+      "checks": 266
+    }
+  ],
+  "source_context": "main_working_source_snapshot",
+  "head": "c4d767489a43a7e8e38c5251be07814b1795d1a9",
+  "working_source_paths": [
+    "tests/helper_preview_port_files.json",
+    "tests/verify_helper_preview.py"
+  ],
+  "allow_checkout_eol": false,
+  "native_requested": false,
+  "private_display_required": true,
+  "visible_fallback": false,
+  "lease": "Granted by root before graphical launch, retained through retry and released only after terminal PASS/Popen reaping and both Job/desktop closure receipts."
+}

@@ -1,0 +1,22 @@
+{
+  "format": "has_reviewed_provenance_two_file_delta_1",
+  "baseline": "c4d767489a43a7e8e38c5251be07814b1795d1a9",
+  "changes": [
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "failed_full_raw_sha256": "ce051baaef5ed7600a93269869f3075ecec88cbf922399abb08bb542e094bd3c",
+      "reviewed_retry_raw_sha256": "0446c44d503a6605155ed0553f70ba0462a0cb64a29b25dda7c39ca81717c0cf",
+      "changed": true
+    },
+    {
+      "path": "tests/verify_helper_preview.py",
+      "failed_full_raw_sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+      "reviewed_retry_raw_sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50",
+      "changed": true
+    }
+  ],
+  "production_source_changes": [],
+  "other_canonical_source_hashes_identical": 1006,
+  "source_count": 1008,
+  "scope": "Only reviewed manifest and verifier explicit dependency list changed. No predicate/count/error/private-launch/preservation relaxation."
+}

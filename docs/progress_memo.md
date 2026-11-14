@@ -14695,3 +14695,53 @@ bits remain exact. Compact evidence and current limits are in
 sfm_source_bone_binding_main_2026-11-13.json. Fresh complete default verification
 is NEXT. The earlier full WASAPI failure remains FAILED. Formal55/62 and52/54
 are unchanged; no owner participation prompt or installed-app replacement.
+
+
+## 2026-11-13 — Preserve full helper-source review refusal
+
+Fresh complete c4d7674 default FAILED after840.186023seconds. All1008functional
+files/HEAD are unchanged. verify_helper_preview CPU stops at its intentional
+reviewed-source hash guard for src/secondary_helper_editor.gd:0checks, no
+snapshot or graphical attempt. The dependency exists; copy_snapshot includes
+all functional files, so this is a stale review record rather than an observed
+missing-module load. Native fourcase241static/294named PASS remains separate.
+The old output/verification.json is stale and not admitted as a new full result.
+
+Exact PS10812 and Python23624 creations are absent at03:55:07.2558360Z; no owned
+runtime command remains and no process was killed. Raw log/maps/host closure,
+prior reviewed manifest/driver and root receipt time-window subset are saved
+under windows_binding_review_guard_20261114. Independent review of the optional
+consumer/resolver dependency precedes a provenance-only update,208CPU/266GPU
+and a new coherent full run. No assertions or prior failures are waived, no
+review package is built using this failed run, and formal55/62/52/54 remain.
+
+
+## 2026-11-13 — Refresh reviewed helper provenance; keep full refusal distinct
+
+Independent review accepts the c4d optional native-joint preference and read-only
+resolver. Only tests/helper_preview_port_files.json and its verifier change:
+the helper/editor and verifier review hashes are refreshed, resolver dependency
+is explicit,22other reviewed rows and wind16 stay unchanged. No production
+source, behavior or assertions change. Same CPU208(11+128+69) and privateGPU266
+(221+45) pass on identical1009-file helper snapshots (canonical1008 plus
+dependencies.json); all preservation and retained-Popen/private closure gates
+pass. A first restricted-context CreateDesktop Errno5 attempt stops before the
+engine/0checks and staysFAILED with false monitor fields. Exact approved-host
+retry passes; no visible fallback or auto-review rejection occurred.
+
+Compact37-payload evidence is helper_preview_review_refresh_20261114. Fullc4d
+remainsFAILED, the old global verification is stale, and a fresh coherent full
+run is required. The prior fourcase native app's production bytes are unchanged;
+two reviewed test-only differences are disclosed rather than relabelling its
+source matrix. Formal scores and external acceptance stay unchanged.
+
+Independent stdlib work also measures Junko's native→glTF rest/neutral skin:
+69bones/49native-Ztips/69inverse binds/9661VVDvertices, with common(+X,+Z,-Y)
+left transformation and2e-5position/matrix gates. The conjugation hypothesis
+and first2e-5normal-fidelity gate fail and remain recorded; maximum normal
+difference0.0012165467 is unqualified. Duplicate vertex attributes prevent a
+unique native vertex identity claim. Generic helpers remain their documented
+separate behavior. Native Source dynamics/HAS posed transport/two source scales
+areUNRUN. Official immutable SDK reference provenance is saved, full source
+staysLOCAL and unexecuted; no production full-layout flag changes. See
+native_source_coordinates_2026-11-13.json and source_jiggle_runtime_plan.md.

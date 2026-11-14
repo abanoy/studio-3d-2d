@@ -30,8 +30,14 @@
     },
     {
       "path": "src/secondary_helper_editor.gd",
-      "sha256": "b3541073b274e85871a581eeebaecc3cea7baf0da296571cd8240313a32efb93",
-      "lf_sha256": "b3541073b274e85871a581eeebaecc3cea7baf0da296571cd8240313a32efb93",
+      "sha256": "3d63e9ee8bf96c60b234a9cfb0c14bc73f90a34bc601f0fd3e7373d373ef5c63",
+      "lf_sha256": "3d63e9ee8bf96c60b234a9cfb0c14bc73f90a34bc601f0fd3e7373d373ef5c63",
+      "category": "runtime"
+    },
+    {
+      "path": "src/source_bone_bindings.gd",
+      "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54",
+      "lf_sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54",
       "category": "runtime"
     },
     {
@@ -144,8 +150,8 @@
     },
     {
       "path": "tests/verify_helper_preview.py",
-      "sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
-      "lf_sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+      "sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50",
+      "lf_sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50",
       "category": "test"
     },
     {
@@ -155,5 +161,14 @@
       "category": "test"
     }
   ],
-  "test_driver_scope": "Exact current-main source snapshots without overlays; labeled working-source checks require explicit opt-in. CPU defaults208; graphical defaults266 (original199+4UI+17popup endpoint+1long-job launch). Optional native adds23CPU/39graphical. Actual results recorded separately."
+  "test_driver_scope": "Exact current-main source snapshots without overlays; labeled working-source checks require explicit opt-in. CPU defaults208; graphical defaults266 (original199+4UI+17popup endpoint+1long-job launch). Optional native adds23CPU/39graphical. Actual results recorded separately.",
+  "native_binding_integration_revision": {
+    "source_baseline": "c4d767489a43a7e8e38c5251be07814b1795d1a9",
+    "changed_runtime_row": "src/secondary_helper_editor.gd",
+    "added_runtime_dependency": "src/source_bone_bindings.gd",
+    "driver_change": "Require the new preload in RUNTIME_FILES and in this reviewed manifest; exact byte checks remain enabled.",
+    "scope": "Read-only native identity validation may prefer a verified existing-joint preview in Simple mode. Unsupported or absent crosswalks keep existing choices. Explicit Apply, manual choices and Advanced mode remain available; native simulation is not implemented.",
+    "source_review_evidence": "output/helper-preview-provenance-review-20261114/SOURCE_REVIEW.json",
+    "test_scope": "Preserve the original CPU208 and graphical266 assertions. Fresh results are recorded separately; this manifest does not claim a test pass."
+  }
 }

@@ -33,6 +33,18 @@ these declarations include26 rule roots, rather than one continuous chain.
 
 ## 2. Prove rest coordinates, units and neutral deformation
 
+The restricted independent native→glTF rest/neutral subset is now measured:
+69rest/parent joins,49native-Ztips,69inverse binds and9661VVDvertices across
+two meshes/four primitives. At conversion scale0.01905, the common axis map
+is(+X,+Z,-Y) and G=C*N; conjugation is refuted. Native forward stays joint-localZ.
+Position/weight/UV-compatible multiset coverage preserves neutral skinning;
+duplicate attributes prevent unique native vertex identity claims. The first
+2e-5normal-fidelity gate failed and remains unqualified (maximum0.0012165467).
+No native-normal/artist fidelity or changed generic-helper behavior is claimed.
+See [measurements](benchmarks/native_source_coordinates_2026-11-13.json).
+The actual HAS posed/world/two-scale checks below remain next; two root scales
+and two conversion scales are separate qualifications.
+
 Record native local position/quaternion, Blender rest matrices, exported joint
 transforms/inverse-bind matrices and imported HAS base poses. Establish the
 actual transform between these domains and any per-bone rest-basis correction.
@@ -58,6 +70,14 @@ units, and compare a bounded0x31 implementation against independent numerical
 traces. Begin with one rule, then the two parent/child cases, then all49. Resolve
 procedural-parent ordering explicitly. Keep mutable state per actor instance
 and preserve retained raw metadata unchanged.
+
+Reference inspection is now pinned to Valve SDK commit
+019e91ccd650a34745934c65cdbbe89ffcc44ede; exact public blob hashes are saved.
+Full SDK source stays local and unexecuted. It uses native localZ forward,
+tip mass as downward acceleration and bypasses along-axis spring terms while
+length constraint is active. Its frame-rate fallback is not yet a HAS clock
+policy. This is a reference candidate, not proof of the artist's closed SFM/GMod
+client behavior. No production solver or full-layout flag is enabled.
 
 Reuse the scratch skeleton/FK contract in [secondary_spring.gd](../src/secondary_spring.gd)
 and transient authored/body overlays in [secondary_live.gd](../src/secondary_live.gd).

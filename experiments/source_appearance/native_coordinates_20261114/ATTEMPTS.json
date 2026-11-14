@@ -1,0 +1,44 @@
+{
+  "format": "has_coordinate_proof_attempt_history_1",
+  "native_coordinate_arrays_saved_or_published": false,
+  "attempts": [
+    {
+      "id": "header-summary-probe",
+      "result": "FAILED_BEFORE_PROOF",
+      "error": "A header-summary JSON probe included a bytes magic field; serialization refused. Corrected probe decoded only that magic label. No input modified."
+    },
+    {
+      "id": "conjugation-hypothesis",
+      "source": "attempt1_conjugation_hypothesis.py",
+      "result": "REFUTED_BY_ACTUAL_REST_DATA",
+      "error": "ValueError: common conjugation failed",
+      "maximum_conjugation_matrix_error": 1.2890509487254034,
+      "corrected_relation": "G = C * N_scaled_native; per-bone right correction is identity within recorded float error."
+    },
+    {
+      "id": "VVD-optional-normal-threshold",
+      "source": "attempt2_left_conversion_vvd_threshold.py",
+      "result": "FAILED_ANCILLARY_NORMAL_THRESHOLD",
+      "error": "ValueError: no native VVD counterpart for exported vertex",
+      "first_vertex_position_error": 5.819742970364871e-08,
+      "first_vertex_weight_error": 0.0,
+      "first_vertex_UV_error": 0.0,
+      "first_vertex_normal_error": 2.786211533158178e-05,
+      "reason_for_revision": "Required coordinate/skin proof matches native position, weights and UV. It separately measures normals without claiming native normal fidelity; the initial2e-5 normal gate was not a requested acceptance criterion. Required position/weight/neutral-skin gates were retained.",
+      "maximum_normal_difference_final": 0.00121654672362075
+    },
+    {
+      "id": "final-independent-stdlib",
+      "source": "prove_coordinates_stdlib.py",
+      "log": "final-run.log",
+      "result": "PASSED_GLTF_REST_ONLY",
+      "scope": "GLTF rest/neutral only; HAS pose axes and two-scale qualification UNRUN."
+    }
+  ],
+  "negative_controls": {
+    "wrong_unscaled_native_translation_max_distance": 63.539613006009745,
+    "cyclically_wrong_native_node_join_max_matrix_error": 1.9999034350515479,
+    "transposed_inverse_bind_max_closure_error": 1.9954317423964354,
+    "all_refuse_at_tolerance": true
+  }
+}

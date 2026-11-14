@@ -1,0 +1,241 @@
+{
+  "format": "has_canonical_binding_guard_failure_1",
+  "status": "FAILED_FULL_DEFAULT",
+  "source_commit": "c4d767489a43a7e8e38c5251be07814b1795d1a9",
+  "started_utc": "2026-11-14T03:39:24.0082826Z",
+  "finished_utc": "2026-11-14T03:53:24.1943058Z",
+  "elapsed_seconds": 840.186023,
+  "functional_sources": 1008,
+  "source_and_head_unchanged": true,
+  "failed_command": "tests/verify_helper_preview.py --mode cpu --allow-checkout-eol",
+  "failure": "RuntimeError: Unreviewed helper main bytes: src/secondary_helper_editor.gd",
+  "checks": 0,
+  "graphics_attempted_by_failed_wrapper": false,
+  "snapshot_created_by_failed_wrapper": false,
+  "cause": "Intentional reviewed-source guard still pins the prior helper-editor bytes. Snapshot copying includes all functional sources; the dependency was present in main.",
+  "next": "Independently review current optional native-joint consumer and explicit resolver dependency, update affected provenance manifests without weakening checks, rerun208CPU/266GPU, then a fresh full default.",
+  "root_private_receipts_in_time_window": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\animated_channels_smoke_0dcf0f84a710491e94b5f387803fd714.json",
+      "sha256": "2b2e8b8046d2b952dbd6bf4f98890646b90f9c8bb326574369d75ecba02c285c",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\animation_clips_smoke_93be2accd6734319bd071c2ef37b8d48.json",
+      "sha256": "c64248c10d09e2cf1f5a0e0c01ac3df7748785e2a3bf492760cc5e2d5841f935",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\autokey_smoke_a02b3b25e1954791aea6ef1abc67694a.json",
+      "sha256": "680d48316b36aea73eb92f237d0afdbbf78bb00d01e8a8db21d6064ed26ae3be",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\bone_labels_smoke_bee22479f5584dee9298d4e0e84e9f04.json",
+      "sha256": "93a7f8e00c6569848897eb56a4f25ada0ac414b71b98213df03456f7eaf9f1dd",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\export_failures_359facf409554c2fa33f992967a3affc.json",
+      "sha256": "35985e2c7b1676caaa3828491e935ae0a955923409f9cd6acd4a6c41d86db503",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\fan_flutter_smoke_aad2787312644e7a8a381c334e22edb0.json",
+      "sha256": "ac5c23e61709b36851dd8d4312ee96957335218f061fc0eaa473a020e8c0fec3",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\fan_motion_smoke_08d4d7536767496c8f9291fc771bc666.json",
+      "sha256": "b67f97179b1cfead33e1cb5fbc86d345901866f9b0acb10905a6067ee78742c5",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\krita_import_smoke_4505e1c6fb754604b828c26c0050f45f.json",
+      "sha256": "0458cdb56dd61c1d531a1cfe00902ec6bc4ed7c66e2fd76656d1ba6c64bd851f",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\krita_import_smoke_efac814c5fe242b2b970c74213633128.json",
+      "sha256": "2f63c710e086968b34d58778f4cfeffa71f381383b05946e6e46c96dd656ab6f",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\limb_ik_smoke_b8ac6927f24c41db9f28037f2544de2c.json",
+      "sha256": "795fa3e1f06657e06ea2ff4bb9063d2d3aec6c179dfd021ac4f77bd166c60372",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\new_scene_smoke_37430dc9d22e45e08031fefa8dc717e2.json",
+      "sha256": "d3b71b7ceec1cd3e76af2963a59e884053ab31c2098052e6d58fdc1f7c91b1cc",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\object_timing_smoke_30b51f96308241f28be1c40372bf7e7f.json",
+      "sha256": "ffedf863b426f233e08ee597ff5709661f2d508439f945e3660165de788188e8",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\physics_contacts_smoke_da4c404c56494baebe252379028dae11.json",
+      "sha256": "4182bf343aae9cd25a82756435feda3a862e9ae906f6b2e73983c4674f09b317",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\physics_props_smoke_c7de87c0da7643cfb289fa3bb2a0fea3.json",
+      "sha256": "c8fd7c25442f9659a86735c11ed3038cde87d322e6df3414106625d98a62dfa3",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\physics_recording_smoke_12c2fd379e2246289afcf3b5c25973b6.json",
+      "sha256": "7cddd58600e725ef1403cd35774ef73983d8ecba04d9752b4dd438198a369cb8",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\physics_smoke_daa347f77ee14faeb25b02a9d7fb3f79.json",
+      "sha256": "4ceb5e6281904ed8fb8c863423de1235c71a24801f3068cfdaf29999c403aae5",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\pose_library_native_30ec7206615c482fba3e89794c886d08.json",
+      "sha256": "a09bafb3b56f04200bd55efb5901afbc6a5326f7d270203eeb1ae0b8f7a0fb00",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\pose_library_smoke_2c2a2b2659124260a12dec88cc62b610.json",
+      "sha256": "238473eacdd44ab2282c80487ffc3b6335b8b2b685534b859016ac842dc0dc82",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\pose_library_smoke_59c89fd0c3e44832b06383cf40621ee1.json",
+      "sha256": "9c12cd49588136654991503141a3dd2f32f19626d29fa534e5ffba22cb26b073",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\rotation_gizmo_smoke_05622ba367f242818b6c9f4ccc8167e5.json",
+      "sha256": "c036d90d22611d00a092f4a7f195b3c794097d2518f4608d92fac4f9c92025c0",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\rotation_gizmo_smoke_10e7ef86ba334b19978ba6c14ecd5044.json",
+      "sha256": "dfd0b1b26ef075c6eba9f61ab057ad0d184de66a9c1102009ce5ecec91f48625",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\scene_view_smoke_3cbc52cab4db454ba4d6180ad72d0692.json",
+      "sha256": "1b2a15a5f46b8e236d6e34e866e6afefd2b88f34abd4603c9826fad0f8acb896",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_motion_smoke_403bb94162854cd28a852805e59d8307.json",
+      "sha256": "a2b81158820becd0d479b32c30d9136039b99cbb4022b95c1ba55a6ee2b0ee9d",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\spikes_7c24aa2f1d704357b0cff34c623fc396.json",
+      "sha256": "915f5d11c8ca964b5202d77844b229976bc5fee2a4b7359fc942fcf34a2e8175",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_04af99d60b1447119f7595bbb585866d.json",
+      "sha256": "764defca27def99cefdc4f8d46097bd456ef7d14b613b94dbd1bf81a432fe262",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_0755cedd48d0447f8275da31cf57e5d4.json",
+      "sha256": "28b68b3e38c2c28f309a7b8bf2b800636d2831d21928e3b35a57993dbb29f2e4",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_0a9a6edf08c14c65abbb03da357ee3b2.json",
+      "sha256": "27eba435ae7a32452fe60ffe4d0e3c095f2365dd787e42be1857bb8bc6ad7652",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_6a711598f4664ab09ea92d776c600c20.json",
+      "sha256": "33352c8269ccd1b6588ad8d7f7924e24b574e5cfcaecb69cb39817cd29de7fd6",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_95106a38563b41c8b12b9e384d2a55b7.json",
+      "sha256": "15d59087ff7bd38868b09c34c0d004f23b63de33e8e56dd5d6f6def5f54f18fb",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_a99e9e11c7d64382af3729179782efce.json",
+      "sha256": "06404ad69b7388776733e2fbc4387b9520142fcb5c41a52f42c285e55137222f",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_aa73b2af34d647cfbd8cbd46ca9953f5.json",
+      "sha256": "4d69cc59def357f0ab2baa36436a4cceec8e78eb1d54faacb75e1e5ad2446ce1",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\visibility_smoke_4a509bc0e91249db909c9bcf31cc19d5.json",
+      "sha256": "097b743d449bd15c4ae8f40ac0cea72854dbb925591f74d65ac52046c8d9ff5b",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_controls_smoke_8f1602796b2241ec8f09099a2f39a3ee.json",
+      "sha256": "9ab96ed9d9659bfb2908c0a84ec7d0c326e82dd67c382522f9ff776c9105e1ea",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_docking_smoke_7f83b1e067fc4602aabd58a10433d363.json",
+      "sha256": "49d41d3f3b7185f6def95972e98a9a667eb6a97e5403981b59b1745f17716084",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_docking_smoke_df0242b9b9234f2ba6512211cc3833f5.json",
+      "sha256": "737db7ebb9d9d71efcba657c87c36f84ea3814cd965074ddaffe99857faeeeb4",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_nested_smoke_1d97b8b0588d44baab10bb6e85e8c09b.json",
+      "sha256": "32bf9247f91a3d2c563a11a5fe1b0d00a753e376e9de17f54fd99f8fd4b522b6",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_nested_smoke_2c5eb81f71834ed1b0522b6af0d3c908.json",
+      "sha256": "a9d2353584f7e663189362bd4fc38c55b57addcb7ca293fcf974d483dabc4421",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_resize_smoke_0df0d4a1d3904fb39775466c81ba76c3.json",
+      "sha256": "7095f74f705ef68d487201aaadf8ad47055a67f0de47982a50ea4b39a00c62a4",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_document_smoke_812f9c8c54e8458fbbb09e44f551de0d.json",
+      "sha256": "e7e0b48cc202c86500e31484e8b0de7d53fd81cf7992d8b3e6aee4668d85455c",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_edit_smoke_adb5c82436284e9c8a435794ee64bfd5.json",
+      "sha256": "dc4f7642e232c580d4c783cb803c20e66798760a740526159ad2491661799bf4",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_runtime_smoke_bae44e5e877d4a68a362278b67043d9c.json",
+      "sha256": "9b5f650b258873814a20a0c3a94346eaa13f7102bfd45d5b19726a23cbad2a3c",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_selection_smoke_edaba7f08aba4a058a0fa9a4dd3d7deb.json",
+      "sha256": "7c21132abab7c1156fe943b3761a572c40b21be45c3b1e4d6d847ad3b1d9dcc3",
+      "exit": 0
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_workflow_smoke_da7e68b6716b4986b748d2de7904d015.json",
+      "sha256": "405251e4c299e06a8fbaebf247e949f3788ceb240050fde9415a3caa0138c6f4",
+      "exit": 0
+    }
+  ],
+  "receipt_scope": "Root output/private-desktop only; not presented as the total including nested test snapshots.",
+  "host_closed": true,
+  "processes_killed": false,
+  "canonical_log_sha256": "c9734056492c7c89899d004b3491571408abf0f0aa3fbf5fba48058560df3130",
+  "stale_full_verification": "output/verification.json predates this run; not admitted as its full result.",
+  "native_scope": "The separate fourcase native workflow passed; it does not substitute for this failed complete run.",
+  "limits": "No full PASS, native solver, artist/human/device/install completion or cleanup authorization inferred."
+}
