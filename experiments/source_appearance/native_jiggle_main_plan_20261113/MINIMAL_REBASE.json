@@ -1,0 +1,14 @@
+{
+  "format": "has_minimal_inert_jiggle_rebase_1",
+  "historical_sidecar_adapter_sha256": "cb23555165c23ebde1d6f5e2d9f685739584a8796ab0fc912cd41c83e6108409",
+  "verified_raw_reader_sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+  "changes": [
+    "Keep raw decoder/inert identity checks",
+    "Remove every external sidecar/confirmation API",
+    "Retained source identity checked BEFORE all budget fallback",
+    "Inline exactmetadata or explicitwhole-branch omission with candidate digest/counts",
+    "Log-only bounded status if no report headroom; sourceMDL/bundle remains truth"
+  ],
+  "production_changed": false,
+  "native_conversion_fit_tested": false
+}

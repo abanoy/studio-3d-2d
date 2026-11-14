@@ -1,0 +1,15 @@
+[
+  "C:\\Program Files\\ffmpeg\\bin\\ffmpeg.exe",
+  "-v",
+  "error",
+  "-i",
+  "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\readers\\01/render_1794615580_6993951_0/movie.mp4",
+  "-vn",
+  "-ac",
+  "1",
+  "-ar",
+  "48000",
+  "-c:a",
+  "pcm_s16le",
+  "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\readers\\01\\decoded.wav"
+]

@@ -1,0 +1,56 @@
+{
+  "format": "independent_jiggle_adapter_initial_review_1",
+  "authored_tests": 25,
+  "failures": 0,
+  "errors": 0,
+  "top_level_test_output_side_effect_removed_lines": [
+    16,
+    16
+  ],
+  "extra_observations": {
+    "integrity_mismatch_over_budget": {
+      "raised_identity_error": false,
+      "fallback_reason": "baseline_report_over_budget"
+    },
+    "integrity_mismatch_nonfinite_base": {
+      "raised_identity_error": false,
+      "fallback_reason": "baseline_unserializable"
+    },
+    "malformed_receipt_none": {
+      "exception": "AttributeError",
+      "message": "'NoneType' object has no attribute 'get'"
+    },
+    "malformed_receipt_bool": {
+      "exception": "AttributeError",
+      "message": "'bool' object has no attribute 'get'"
+    },
+    "malformed_receipt_list": {
+      "exception": "AttributeError",
+      "message": "'list' object has no attribute 'get'"
+    },
+    "metadata_cap_plus_0": {
+      "standalone_bytes": 131072,
+      "state": "embedded",
+      "reason": null
+    },
+    "metadata_cap_plus_1": {
+      "standalone_bytes": 131073,
+      "state": "status_in_report",
+      "reason": "metadata_budget"
+    }
+  },
+  "actionable_cases": [
+    "integrity_mismatch_over_budget",
+    "integrity_mismatch_nonfinite_base",
+    "malformed_receipt_none",
+    "malformed_receipt_bool",
+    "malformed_receipt_list"
+  ],
+  "source_sha256": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\source_jiggle_metadata.py": "b6153f4c75e8d8f374d7bced75bab1e12d1e1fbf2eb17f5ea0675f8d8f35e4b7",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\source_jiggle_values.py": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\test_source_jiggle_metadata.py": "f34031ca636da24772406f6ca51bc763512754937eb585653d0a28b34d759aa6"
+  },
+  "sources_unchanged": true,
+  "actual_Junko_or_runtime_executed": false
+}

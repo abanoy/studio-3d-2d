@@ -1,0 +1,48 @@
+{
+  "format": "independent_minimal_jiggle_review_index_1",
+  "passed": true,
+  "actionable_defects": [],
+  "authored_tests": 22,
+  "extra_checks": 16,
+  "reviewed_source_sha256": {
+    "authored_fixture.py": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a",
+    "source_jiggle_metadata.py": "f49d4ab9051e69d16a5ce0adb699b5698d6bfbb9147a69050014a11295e33ffe",
+    "source_jiggle_values.py": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+    "test_source_jiggle_metadata.py": "d1bd584cdb61841f2e18e969792bbd9bdbd2f59534ea5c175fcbbace54c4d262"
+  },
+  "files": {
+    "adapter-review-initial-tests.txt": {
+      "sha256": "bd65bfaf0ebc6554a64b71cb0d34a38af6f5a240dce2b015844b1301deb9d510",
+      "bytes": 3985
+    },
+    "adapter-review-initial.json": {
+      "sha256": "e8cf3c913275ce96fdf4281f254292f250f1c337029106f98882e35546d4922f",
+      "bytes": 2162
+    },
+    "budget-facts.json": {
+      "sha256": "a8de073905f0e025d2d9653ae54c414dbffa6a157aa5fea22efcad55567ac6c2",
+      "bytes": 1822
+    },
+    "historical-sidecar-review.md": {
+      "sha256": "1cd5f03d8983d8d8188cfa5df91b46930f8fba4b4bd88bc07b2b7b56d3f03bd4",
+      "bytes": 1780
+    },
+    "minimal-adapter-review-checks.json": {
+      "sha256": "7963f199e0a6905065c453cb1e00223b803582e6f3646a0d592e6def3e44a758",
+      "bytes": 15968
+    },
+    "minimal-adapter-review-tests.txt": {
+      "sha256": "a6151cb6e15bee61e8a5447844c0356312a99e9c438ae66b20410be963ef692a",
+      "bytes": 3800
+    },
+    "MINIMAL_FINAL_REVIEW.md": {
+      "sha256": "6488c8db0f6198f090836a5cedf4167caeae6b31cee5910a65521711d4f0340b",
+      "bytes": 3094
+    },
+    "publication-budget-review.md": {
+      "sha256": "b69ae2f4c5b25b3786300754921f7409e5d27f61e0875bc758dde37d5d640430",
+      "bytes": 7971
+    }
+  },
+  "scope": "Minimal inline-or-omission only; prior sidecar artifacts are historical; actual Junko fit/adoption and project save remain unrun"
+}

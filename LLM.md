@@ -4465,3 +4465,46 @@ models; native shader/flex/jiggle/assembly and artist fidelity remain separate.
 Formal55/62 and52/54 unchanged. Busy owner participation is not requested and
 does not stop independent feature work. Originals/installed Studio/tools/recovery
 stay protected, and no native artwork or media is uploaded.
+
+
+## 2026-11-13 — Actual SFM static-choice workflows and cold movies pass
+
+At the saved and remotely verified functional checkpoint8d4fde001258f501602bd94bd80d925683062f15,
+both fresh actual Studio matrices pass. Core14 has393writer and364reader checks;
+Wider11 has287writer and304reader checks. Total1348. The real import dialog and
+SourceIO conversions cover Nitori gloves, Keiki tools/box/flame, Junko main/hair,
+Mima body and Kanako props:22conversions and3GUI all-hidden refusals. Defaults
+omit appearance overrides. Ordinary Add/Undo/Redo preserves independent peer,
+drawing, sound and camera state; Keiki's native box joint is posed normally and
+its Tools target/selected mesh presence is retained without claiming controller
+semantics. Static choices remain fixed for the new import, not runtime switches.
+
+All22fresh readers open packed and linked projects after run-owned native inputs,
+prepared bundles/imports, writer cache and tone are offline:44cold opens with88
+exact derived frame joins at0/24. Both exported48frame1080p24 H264/AAC movies pass
+decoded onset1.0000416667seconds and RMS8487.6521. All8preservation gates pass in
+both runs. The3279whole-root source/hash/size/nsmtime/HEAD maps and runtime maps
+are exactly equal across phases. All24actual private receipts have exit0, seen/
+confirmed private windows, no foreground or desktop switch, and closed Jobs/
+desktops. Root host queries find both exact coordinators/owned workers absent.
+Independent metadata audit verifies629joins. No source, runtime or original was
+changed to obtain the pass. Earlier helper-startup and negative-AABB attempts
+remain failed; earlier25worker-only passes are distinct evidence, not this app run.
+
+Compact source/JSON/logs and lossless metadata gzip are retained in
+main_native_app_actual_20261113. No models, textures, GLBs, HAS packages, PNGs,
+audio, movies or runtime binaries are uploaded. The broader supplied82headers/
+71distinct definitions remain in scope; sixMDLs are representative coverage.
+Native Source shader/jiggle/controller/assembly and artist fidelity remain open.
+Nitori's known missing hairbump/opaque-glow approximation is not repaired by
+manufacturing skin differences. Formal55/62 and52/54 remain unchanged.
+
+The next native-jiggle retention proposal is saved separately as reviewed
+output-only minimal-source,22authored plus independent22+16checks. It has exact
+inactive inline metadata or explicit bounded omission, not a sidecar API or
+physics activation. Real Junko full report/adoption/persistence is still UNRUN.
+The existing full default suite must now run on the coherent static feature,
+including newly registered Source-choice foundation and thin-placement wrapper.
+The earlier12071fe full pass predates these changes and is not reused as a new
+pass. Busy owner participation is not requested; manual gates do not stop this
+independent SFM feature work.

@@ -10,22 +10,29 @@ and three expected all-hidden refusals across Nitori, Keiki, Junko main/hair,
 Mima body and Kanako props. Original inputs and pinned tools remain unchanged.
 These worker results do not certify app adoption or native visual fidelity.
 
-The first actual Studio import then exposed a separate startup bug: the new
-appearance helper was imported before Blender's script-local tools path existed.
-The failed private run is retained. The narrow import-order fix passes two
-isolated-host CPU methods and the affected 167-check foundation. The next actual
-app writer completed all 14 cases and 393 assertions without assertion failures,
-but the strict wrapper correctly failed four negative-AABB errors when placing
-thin Keiki tools. Its readers and movie did not run. The bounded per-axis placement
-fix now passes 20 headless bounds checks and 43 private app/movie checks and is
-registered in default verification. Fresh clean SFM app matrices remain next, including normal
-Add/Undo/Redo, packed/linked cold reopening and a movie.
+Both actual Studio matrices now **pass at `8d4fde0`**: 1,348 checks, 22 real
+conversions, three GUI all-hidden refusals, 44 fresh packed/linked opens and two
+1080p24 H264/AAC movies. Native inputs and conversion caches are offline during
+the cold opens; 88 frame comparisons match the independent writer references.
+All eight preservation gates pass in both runs. Their 3,279 source/hash/size/
+timestamp/HEAD records and tool records match exactly, and all 24 private jobs
+close without foreground exposure or a desktop switch.
+[Actual app evidence and limits](benchmarks/sfm_static_native_app_2026-11-13.json).
+
+The earlier normal-launch helper import failure and thin-tool negative-AABB
+failure remain preserved. Both concrete fixes are now covered, including 20
+bounds checks and 43 placement/movie checks registered in default verification.
+The complete default Windows suite is next; the earlier full pass below predates
+this feature and is not a substitute.
 
 Separate next-feature research now reads all 49 Junko hair jiggle rules directly
 from the SHA-bound native file: 1,421 finite float32 values, all flags 0x31, with
 independent row/bit checks. This is an inert raw-metadata proposal only. Studio
 does not yet retain or simulate those values, and native binding remains unproved.
 [Values and limits](benchmarks/sfm_native_jiggle_values_2026-11-13.json).
+The [reviewed minimal metadata plan](../experiments/source_appearance/native_jiggle_main_plan_20261113/PLAN.md)
+is also saved with authored CPU checks. Port it after the current static feature's
+full verification; real Junko report admission and saved-project tests remain unrun.
 The earlier full suite below predates this feature. Native jiggle,
 shader fidelity, facial semantics and assembly remain distinct features.
 

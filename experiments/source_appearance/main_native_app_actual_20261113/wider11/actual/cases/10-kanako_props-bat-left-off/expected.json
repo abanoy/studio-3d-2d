@@ -1,0 +1,987 @@
+{
+  "bundle": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/output/compatibility/source-1794615564-56-94315583",
+  "format": "has_source_choices_native_expected_1",
+  "glb_sha256": "34e06092215c34628fc4b8075bcfbed05a3e27fe82425acf415bc084f82da73a",
+  "input_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-03\\models\\touhou\\tamo\\kanako yasaka props.mdl",
+  "name": "kanako_props-bat-left-off",
+  "object_id": "5958373916274443162",
+  "parameters": {
+    "adapter": "studio_source_1",
+    "axes": "Source Z-up to glTF Y-up via Blender exporter",
+    "case_resolved_sidecars": {
+      "kanako yasaka props.dx80.vtx": "Kanako Yasaka props.dx80.vtx",
+      "kanako yasaka props.sw.vtx": "Kanako Yasaka props.sw.vtx"
+    },
+    "counts": {
+      "bones": 43.0,
+      "meshes": 3.0,
+      "static_lights": 0.0,
+      "textures": 2.0
+    },
+    "limits": [
+      "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+      "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+    ],
+    "materials": [
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\Kanako Yasaka\\question.vtf",
+        "material": "models/touhou/tamo/Kanako Yasaka/Bat",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/kanako yasaka/bat.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\Kanako Yasaka\\dress.vtf",
+        "material": "models/touhou/tamo/Kanako Yasaka/paper",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/kanako yasaka/paper.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\Kanako Yasaka\\dress.vtf",
+        "material": "models/touhou/tamo/Kanako Yasaka/Pillar",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/kanako yasaka/pillar.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\Kanako Yasaka\\dress.vtf",
+        "material": "models/touhou/tamo/Kanako Yasaka/Rope_Back",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/kanako yasaka/rope_back.vmt"
+      }
+    ],
+    "mount_warnings": [],
+    "native_parameters": {
+      "appearance_request": {
+        "bodygroups": {
+          "0": 1.0,
+          "1": 0.0,
+          "2": 0.0,
+          "3": 0.0
+        },
+        "format": "studio_source_appearance_request_1",
+        "native_mdl_sha256": "ad9e57ed473eecd8df75068def4b74a51954b0b4617070c8b552b1a5a98d7759",
+        "skin": 0.0,
+        "source_sha256": "ad9e57ed473eecd8df75068def4b74a51954b0b4617070c8b552b1a5a98d7759"
+      },
+      "bodygroups": {
+        "Bat L": [
+          "Bat L.dmx",
+          null
+        ],
+        "Bat R": [
+          "Bat R.dmx",
+          null
+        ],
+        "Pillars": [
+          "Pillars.dmx",
+          null
+        ],
+        "Rope": [
+          "Rope.dmx",
+          null
+        ]
+      },
+      "bones": [
+        {
+          "name": "Waist",
+          "parent": -1.0
+        },
+        {
+          "name": "LowerBodyP",
+          "parent": 0.0
+        },
+        {
+          "name": "bip_pelvis",
+          "parent": 1.0
+        },
+        {
+          "name": "bip_spine_0",
+          "parent": 2.0
+        },
+        {
+          "name": "bip_spine_1",
+          "parent": 3.0
+        },
+        {
+          "name": "Sacred Shrine Rope_Parent",
+          "parent": 4.0
+        },
+        {
+          "name": "Sacred Shrine Rope",
+          "parent": 5.0
+        },
+        {
+          "name": "Paper1-1_L",
+          "parent": 6.0
+        },
+        {
+          "name": "Paper1-2_L",
+          "parent": 7.0
+        },
+        {
+          "name": "Paper2-1_L",
+          "parent": 6.0
+        },
+        {
+          "name": "Paper2-2_L",
+          "parent": 9.0
+        },
+        {
+          "name": "Paper3-1_L",
+          "parent": 6.0
+        },
+        {
+          "name": "Paper3-2_L",
+          "parent": 11.0
+        },
+        {
+          "name": "Paper1-1_R",
+          "parent": 6.0
+        },
+        {
+          "name": "Paper1-2_R",
+          "parent": 13.0
+        },
+        {
+          "name": "Paper2-1_R",
+          "parent": 6.0
+        },
+        {
+          "name": "Paper2-2_R",
+          "parent": 15.0
+        },
+        {
+          "name": "Paper3-1_R",
+          "parent": 6.0
+        },
+        {
+          "name": "Paper3-2_R",
+          "parent": 17.0
+        },
+        {
+          "name": "ShoulderP_L",
+          "parent": 4.0
+        },
+        {
+          "name": "bip_collar_L",
+          "parent": 19.0
+        },
+        {
+          "name": "bip_upperArm_L",
+          "parent": 20.0
+        },
+        {
+          "name": "bip_lowerArm_L",
+          "parent": 21.0
+        },
+        {
+          "name": "bip_hand_L",
+          "parent": 22.0
+        },
+        {
+          "name": "ChildHmmRod_L",
+          "parent": 23.0
+        },
+        {
+          "name": "ShoulderP_R",
+          "parent": 4.0
+        },
+        {
+          "name": "bip_collar_R",
+          "parent": 25.0
+        },
+        {
+          "name": "bip_upperArm_R",
+          "parent": 26.0
+        },
+        {
+          "name": "bip_lowerArm_R",
+          "parent": 27.0
+        },
+        {
+          "name": "bip_hand_R",
+          "parent": 28.0
+        },
+        {
+          "name": "ChildHmmRod_R",
+          "parent": 29.0
+        },
+        {
+          "name": "Pillar1_L",
+          "parent": 6.0
+        },
+        {
+          "name": "Pillar2_L",
+          "parent": 6.0
+        },
+        {
+          "name": "Pillar1_R",
+          "parent": 6.0
+        },
+        {
+          "name": "Pillar2_R",
+          "parent": 6.0
+        },
+        {
+          "name": "Pillar1Paper-1_L",
+          "parent": 6.0
+        },
+        {
+          "name": "Pillar1Paper-2_L",
+          "parent": 35.0
+        },
+        {
+          "name": "Pillar2Paper-1_L",
+          "parent": 6.0
+        },
+        {
+          "name": "Pillar2Paper-2_L",
+          "parent": 37.0
+        },
+        {
+          "name": "Pillar1Paper-1_R",
+          "parent": 6.0
+        },
+        {
+          "name": "Pillar1Paper-2_R",
+          "parent": 39.0
+        },
+        {
+          "name": "Pillar2Paper-1_R",
+          "parent": 6.0
+        },
+        {
+          "name": "Pillar2Paper-2_R",
+          "parent": 41.0
+        }
+      ],
+      "eyeballs": [],
+      "flex_controllers": [],
+      "flex_names": [],
+      "native_appearance_choices": {
+        "bodygroups": [
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "Bat L.dmx",
+                "vertices": 203.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 0.0,
+            "name": "Bat L"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "Bat R.dmx",
+                "vertices": 203.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 1.0,
+            "name": "Bat R"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "Pillars.dmx",
+                "vertices": 3632.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 2.0,
+            "name": "Pillars"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "Rope.dmx",
+                "vertices": 1738.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 3.0,
+            "name": "Rope"
+          }
+        ],
+        "default_skin_has_native_slot_identity": true,
+        "skin_groups": [
+          [
+            "models/touhou/tamo/Kanako Yasaka/paper",
+            "models/touhou/tamo/Kanako Yasaka/Rope_Back",
+            "models/touhou/tamo/Kanako Yasaka/Bat",
+            "models/touhou/tamo/Kanako Yasaka/Pillar"
+          ]
+        ]
+      },
+      "selected_bodygroup_indices": {
+        "Bat L": 1.0,
+        "Bat R": 0.0,
+        "Pillars": 0.0,
+        "Rope": 0.0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0
+      },
+      "selected_skin": 0.0,
+      "skin_groups": [
+        [
+          "models/touhou/tamo/Kanako Yasaka/paper",
+          "models/touhou/tamo/Kanako Yasaka/Rope_Back",
+          "models/touhou/tamo/Kanako Yasaka/Bat",
+          "models/touhou/tamo/Kanako Yasaka/Pillar"
+        ]
+      ]
+    },
+    "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-03\\models\\touhou\\tamo\\kanako yasaka props.mdl",
+    "scale": 0.01905,
+    "source_file": "kanako yasaka props.mdl",
+    "source_member": null,
+    "source_profile": "standalone",
+    "source_sha256": "ad9e57ed473eecd8df75068def4b74a51954b0b4617070c8b552b1a5a98d7759",
+    "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "sourceio_version": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "standard": "studio_model_1",
+    "suggested_view": null,
+    "warnings": []
+  },
+  "peer_id": "486255918479860734",
+  "pictures": {
+    "0": {
+      "height": 1080,
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\10-kanako_props-bat-left-off/writer-0.png",
+      "pixel_sha256": "0441443c2157defabf749b98d9879d380a03cb637d32f0477cb543d43b924e92",
+      "width": 1920
+    },
+    "24": {
+      "height": 1080,
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\10-kanako_props-bat-left-off/writer-24.png",
+      "pixel_sha256": "619b02c742799b1e6dd8ead433feef86f17e1067c962c24fec8b317afb763f46",
+      "width": 1920
+    }
+  },
+  "portable_world": {
+    "format": "studio_world_1",
+    "objects": [
+      {
+        "draft_frame": 0.0,
+        "format": "studio_model_1",
+        "id": "486255918479860734",
+        "kind": "model",
+        "metadata": {
+          "import_source": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/examples/tutorials/Practice figure.glb",
+          "initial_placement": {
+            "attempts": 5.0,
+            "overlap": false,
+            "skipped_surfaces": 0.0,
+            "support": "grid",
+            "triangles": 0.0
+          },
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "name": "Practice figure.glb",
+        "parent_id": "",
+        "path": "assets/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb",
+        "pose": {
+
+        },
+        "pose_keys": [],
+        "position": [
+          2.5319032669067383,
+          -0.04999996349215507,
+          3.3666162490844727
+        ],
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+        "start_frame": 0.0,
+        "visible": true
+      },
+      {
+        "draft_frame": 0.0,
+        "format": "studio_model_1",
+        "id": "5958373916274443162",
+        "kind": "model",
+        "metadata": {
+          "external_bundle": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\compatibility\\source-1794615564-56-94315583",
+          "import_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\compatibility\\source-1794615564-56-94315583\\scene.glb",
+          "initial_placement": {
+            "attempts": 9.0,
+            "overlap": false,
+            "skipped_surfaces": 0.0,
+            "support": "grid",
+            "triangles": 0.0
+          },
+          "native_parameters": {
+            "adapter": "studio_source_1",
+            "axes": "Source Z-up to glTF Y-up via Blender exporter",
+            "case_resolved_sidecars": {
+              "kanako yasaka props.dx80.vtx": "Kanako Yasaka props.dx80.vtx",
+              "kanako yasaka props.sw.vtx": "Kanako Yasaka props.sw.vtx"
+            },
+            "counts": {
+              "bones": 43.0,
+              "meshes": 3.0,
+              "static_lights": 0.0,
+              "textures": 2.0
+            },
+            "limits": [
+              "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+              "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+              "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+            ],
+            "materials": [
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\Kanako Yasaka\\question.vtf",
+                "material": "models/touhou/tamo/Kanako Yasaka/Bat",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/kanako yasaka/bat.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\Kanako Yasaka\\dress.vtf",
+                "material": "models/touhou/tamo/Kanako Yasaka/paper",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/kanako yasaka/paper.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\Kanako Yasaka\\dress.vtf",
+                "material": "models/touhou/tamo/Kanako Yasaka/Pillar",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/kanako yasaka/pillar.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\Kanako Yasaka\\dress.vtf",
+                "material": "models/touhou/tamo/Kanako Yasaka/Rope_Back",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/kanako yasaka/rope_back.vmt"
+              }
+            ],
+            "mount_warnings": [],
+            "native_parameters": {
+              "appearance_request": {
+                "bodygroups": {
+                  "0": 1.0,
+                  "1": 0.0,
+                  "2": 0.0,
+                  "3": 0.0
+                },
+                "format": "studio_source_appearance_request_1",
+                "native_mdl_sha256": "ad9e57ed473eecd8df75068def4b74a51954b0b4617070c8b552b1a5a98d7759",
+                "skin": 0.0,
+                "source_sha256": "ad9e57ed473eecd8df75068def4b74a51954b0b4617070c8b552b1a5a98d7759"
+              },
+              "bodygroups": {
+                "Bat L": [
+                  "Bat L.dmx",
+                  null
+                ],
+                "Bat R": [
+                  "Bat R.dmx",
+                  null
+                ],
+                "Pillars": [
+                  "Pillars.dmx",
+                  null
+                ],
+                "Rope": [
+                  "Rope.dmx",
+                  null
+                ]
+              },
+              "bones": [
+                {
+                  "name": "Waist",
+                  "parent": -1.0
+                },
+                {
+                  "name": "LowerBodyP",
+                  "parent": 0.0
+                },
+                {
+                  "name": "bip_pelvis",
+                  "parent": 1.0
+                },
+                {
+                  "name": "bip_spine_0",
+                  "parent": 2.0
+                },
+                {
+                  "name": "bip_spine_1",
+                  "parent": 3.0
+                },
+                {
+                  "name": "Sacred Shrine Rope_Parent",
+                  "parent": 4.0
+                },
+                {
+                  "name": "Sacred Shrine Rope",
+                  "parent": 5.0
+                },
+                {
+                  "name": "Paper1-1_L",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Paper1-2_L",
+                  "parent": 7.0
+                },
+                {
+                  "name": "Paper2-1_L",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Paper2-2_L",
+                  "parent": 9.0
+                },
+                {
+                  "name": "Paper3-1_L",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Paper3-2_L",
+                  "parent": 11.0
+                },
+                {
+                  "name": "Paper1-1_R",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Paper1-2_R",
+                  "parent": 13.0
+                },
+                {
+                  "name": "Paper2-1_R",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Paper2-2_R",
+                  "parent": 15.0
+                },
+                {
+                  "name": "Paper3-1_R",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Paper3-2_R",
+                  "parent": 17.0
+                },
+                {
+                  "name": "ShoulderP_L",
+                  "parent": 4.0
+                },
+                {
+                  "name": "bip_collar_L",
+                  "parent": 19.0
+                },
+                {
+                  "name": "bip_upperArm_L",
+                  "parent": 20.0
+                },
+                {
+                  "name": "bip_lowerArm_L",
+                  "parent": 21.0
+                },
+                {
+                  "name": "bip_hand_L",
+                  "parent": 22.0
+                },
+                {
+                  "name": "ChildHmmRod_L",
+                  "parent": 23.0
+                },
+                {
+                  "name": "ShoulderP_R",
+                  "parent": 4.0
+                },
+                {
+                  "name": "bip_collar_R",
+                  "parent": 25.0
+                },
+                {
+                  "name": "bip_upperArm_R",
+                  "parent": 26.0
+                },
+                {
+                  "name": "bip_lowerArm_R",
+                  "parent": 27.0
+                },
+                {
+                  "name": "bip_hand_R",
+                  "parent": 28.0
+                },
+                {
+                  "name": "ChildHmmRod_R",
+                  "parent": 29.0
+                },
+                {
+                  "name": "Pillar1_L",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Pillar2_L",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Pillar1_R",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Pillar2_R",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Pillar1Paper-1_L",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Pillar1Paper-2_L",
+                  "parent": 35.0
+                },
+                {
+                  "name": "Pillar2Paper-1_L",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Pillar2Paper-2_L",
+                  "parent": 37.0
+                },
+                {
+                  "name": "Pillar1Paper-1_R",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Pillar1Paper-2_R",
+                  "parent": 39.0
+                },
+                {
+                  "name": "Pillar2Paper-1_R",
+                  "parent": 6.0
+                },
+                {
+                  "name": "Pillar2Paper-2_R",
+                  "parent": 41.0
+                }
+              ],
+              "eyeballs": [],
+              "flex_controllers": [],
+              "flex_names": [],
+              "native_appearance_choices": {
+                "bodygroups": [
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "Bat L.dmx",
+                        "vertices": 203.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 0.0,
+                    "name": "Bat L"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "Bat R.dmx",
+                        "vertices": 203.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 1.0,
+                    "name": "Bat R"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "Pillars.dmx",
+                        "vertices": 3632.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 2.0,
+                    "name": "Pillars"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "Rope.dmx",
+                        "vertices": 1738.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 3.0,
+                    "name": "Rope"
+                  }
+                ],
+                "default_skin_has_native_slot_identity": true,
+                "skin_groups": [
+                  [
+                    "models/touhou/tamo/Kanako Yasaka/paper",
+                    "models/touhou/tamo/Kanako Yasaka/Rope_Back",
+                    "models/touhou/tamo/Kanako Yasaka/Bat",
+                    "models/touhou/tamo/Kanako Yasaka/Pillar"
+                  ]
+                ]
+              },
+              "selected_bodygroup_indices": {
+                "Bat L": 1.0,
+                "Bat R": 0.0,
+                "Pillars": 0.0,
+                "Rope": 0.0
+              },
+              "selected_native_bodygroup_indices": {
+                "0": 1.0,
+                "1": 0.0,
+                "2": 0.0,
+                "3": 0.0
+              },
+              "selected_skin": 0.0,
+              "skin_groups": [
+                [
+                  "models/touhou/tamo/Kanako Yasaka/paper",
+                  "models/touhou/tamo/Kanako Yasaka/Rope_Back",
+                  "models/touhou/tamo/Kanako Yasaka/Bat",
+                  "models/touhou/tamo/Kanako Yasaka/Pillar"
+                ]
+              ]
+            },
+            "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-03\\models\\touhou\\tamo\\kanako yasaka props.mdl",
+            "scale": 0.01905,
+            "source_file": "kanako yasaka props.mdl",
+            "source_member": null,
+            "source_profile": "standalone",
+            "source_sha256": "ad9e57ed473eecd8df75068def4b74a51954b0b4617070c8b552b1a5a98d7759",
+            "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+            "sourceio_version": [
+              5.0,
+              5.0,
+              5.0
+            ],
+            "standard": "studio_model_1",
+            "suggested_view": null,
+            "warnings": []
+          },
+          "note": "Keep full native preparation bundle; only GLB and this supplied report are managed here. Native fidelity is not implied.",
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "name": "kanako yasaka props.mdl",
+        "parent_id": "",
+        "path": "assets/34e06092215c34628fc4b8075bcfbed05a3e27fe82425acf415bc084f82da73a.glb",
+        "pose": {
+
+        },
+        "pose_keys": [],
+        "position": [
+          1.3731262683868408,
+          -0.5851259827613831,
+          4.528275012969971
+        ],
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "34e06092215c34628fc4b8075bcfbed05a3e27fe82425acf415bc084f82da73a",
+        "start_frame": 0.0,
+        "visible": true
+      }
+    ]
+  },
+  "projects": {
+    "linked": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\10-kanako_props-bat-left-off/linked.has",
+      "sha256": "42beb45f77640c15a8a1fc8893922c6ba5843fff31243f26cab088af665ac101"
+    },
+    "packed": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\10-kanako_props-bat-left-off/packed.has",
+      "sha256": "dc5095322dc69e7ad3d50a1fa3e8e0db9d6b29649a8cb6a5fd657d84af61362e"
+    }
+  },
+  "protected": {
+    "audio": {
+      "gain_db": 0.0,
+      "id": "3556617851467161910",
+      "muted": false,
+      "path": "assets/5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9.wav",
+      "sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+      "source_in_sample": 0.0,
+      "source_name": "tone.wav",
+      "start_frame": 24.0
+    },
+    "keys": [
+      {
+        "fov": 60.0,
+        "frame": 0.0,
+        "interpolation": "ease",
+        "position": [
+          2.236945867538452,
+          1.0169906616210938,
+          7.251567840576172
+        ],
+        "rotation_xyzw": [
+          -0.0918360948562622,
+          0.16681498289108276,
+          0.01560715120285749,
+          0.98157799243927
+        ]
+      },
+      {
+        "fov": 60.0,
+        "frame": 47.0,
+        "interpolation": "ease",
+        "position": [
+          2.386945962905884,
+          1.0169906616210938,
+          7.251567840576172
+        ],
+        "rotation_xyzw": [
+          -0.0918360948562622,
+          0.16681498289108276,
+          0.01560715120285749,
+          0.98157799243927
+        ]
+      }
+    ],
+    "paint": "2cf71f483fe4f2a80232ee60a1d864334914876f40cb083511413a7de238a333",
+    "pcm": "39ed1e1355a24d405a11af9cfb2a97b315a835f1636f52ac0130b93c6a0c9ae0",
+    "peer": {
+      "draft_frame": 0.0,
+      "format": "studio_model_1",
+      "id": "486255918479860734",
+      "kind": "model",
+      "metadata": {
+        "import_source": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/examples/tutorials/Practice figure.glb",
+        "initial_placement": {
+          "attempts": 5.0,
+          "overlap": false,
+          "skipped_surfaces": 0.0,
+          "support": "grid",
+          "triangles": 0.0
+        },
+        "source_shape": {
+          "enabled": true,
+          "format": "studio_source_shape_1"
+        }
+      },
+      "name": "Practice figure.glb",
+      "parent_id": "",
+      "path": "assets/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb",
+      "pose": {
+
+      },
+      "pose_keys": [],
+      "position": [
+        2.5319032669067383,
+        -0.04999996349215507,
+        3.3666162490844727
+      ],
+      "reference_only": false,
+      "rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 1.0,
+      "sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+      "start_frame": 0.0,
+      "visible": true
+    },
+    "video": {
+      "duration_frames": 48.0,
+      "fps_den": 1.0,
+      "fps_num": 24.0,
+      "height": 1080.0,
+      "lighting_mode": "studio",
+      "visibility_fade_ms": 300.0,
+      "width": 1920.0,
+      "world_background": "black"
+    }
+  }
+}

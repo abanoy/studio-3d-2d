@@ -1,0 +1,5 @@
+Actual static Source appearance integration passed on source8d4fde0:25cases,22conversions and3all-blank GUI refusals;680writer+668cold-reader checks;24clean private jobs. Both phases used exactly the same3279source-file/hash/nsmtime/HEAD map and approved-runtime map. Independent read-only metadata audits passed629joins, including88rawPNG byte-equality joins to original writer references and recomputed audio onset/RMS.
+
+Bothmovies are48-frame1920×1080 H264 at24fps withAAC; onset1.0000416666666667s. No media or native/runtime payload is included. Each child AUDIT.json records all raw-file hashes, portable actor/reference metadata and exact receipts. Files above64KiB are losslessly deterministic gzip; raw size/SHA256 is retained. Child and outer indices cover every other payload file.
+
+The earlier25worker-only cases, previous failed app attempts, and pending later canonical default run remain separate. This proves static import-time choices and derived editor/persistence/render transport; native shader, procedural jiggle, controller, assembly and artist fidelity remain outside this claim.

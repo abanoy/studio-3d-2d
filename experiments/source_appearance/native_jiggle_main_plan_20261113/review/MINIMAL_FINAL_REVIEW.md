@@ -1,0 +1,15 @@
+# Final minimal-adapter independent review: PASS
+
+No actionable defects were found in the frozen minimal inline-or-omission adapter. This review applies to `minimal-source/source_jiggle_metadata.py` SHA256 `f49d4ab9051e69d16a5ce0adb699b5698d6bfbb9147a69050014a11295e33ffe`. The copied raw reader remains exactly `3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e`.
+
+The22 authored CPU tests passed independently with zero failures/errors. An additional16 reviewer checks passed, including exact standalone metadata131072-byte admission versus131073-byte whole-branch omission, retained/unavailable identity checks before over-budget or nonfinite baseline fallbacks, independent LF/Windows CRLF legacy-writer equivalence, no BOM/final newline/double CR, opaque no-JIGGLE/BSP baseline preservation, exact262144-byte baseline preservation when status has no room, absent sidecar/confirmation API, and unchanged raw-reader identity.
+
+The historical source-context priority defect is corrected: retained original/native catalogue/scale identity is validated before serialization and budget fallbacks. Unsupported-context original-source mismatch also remains a distinct integrity error. The historical receipt issue is removed with the superseded sidecar API. Historical source/test findings remain in their original review artifacts.
+
+The new producer keeps complete inert metadata only when its compact UTF-8 serialization (including one LF) is at most131072 bytes and the whole nested pretty report serialization is at most262144 bytes. Report measurement uses the finalized caller-selected LF or Windows CRLF bytes. Otherwise it retains zero numeric rules and emits bounded explicit omission status, with original/native digests, complete metadata candidate digest/byte count when formed, rule/bone counts, and separately named full-report candidate bytes when evaluated. If status cannot fit, it returns the exact baseline writer/report and a bounded JSON log note. No truncated rules or candidate artifacts are published.
+
+All22 protected source/main-consumer files and prior evidence files retained identical SHA256, size and mtime before/after this review. Writes were confined to this review directory. The independent test runner only suppressed the test module's top-level output-folder creation; fixture and test bodies were unchanged.
+
+This is source and authored-CPU evidence only. No actual Junko import/conversion, full actual report-fit test, Godot adoption, native/runtime/SourceIO/GPU execution or project-save roundtrip was performed. The whole-project1MiB metadata limit remains independent. Future bridge integration must call only for the selected MDL, preserve its original/native byte guards, import after the existing tools sys.path setup, use the exact returned report bytes or unchanged legacy writer, and log omission notes. No joint binding, physics, Hair & clothes activation or simulation is authorized or implied.
+
+Frozen proof: `minimal-adapter-review-checks.json`, `minimal-adapter-review-tests.txt`, and `MINIMAL_REVIEW_INDEX.json`.

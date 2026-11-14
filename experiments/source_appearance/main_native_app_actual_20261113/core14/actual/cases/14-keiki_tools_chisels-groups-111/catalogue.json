@@ -1,0 +1,148 @@
+{
+  "bodygroups": [
+    {
+      "choices": [
+        {
+          "display_name": "tools.dmx",
+          "index": 0.0,
+          "name": "tools.dmx",
+          "raw_name_sha256": "b51c11c83d0b6f2d0e38bbc01c8f5ce769ae4aa9a85a8df500b2a00e4d8147c7",
+          "true_blank": false,
+          "vertex_count": 1180.0
+        },
+        {
+          "display_name": "Choice 2 (empty name)",
+          "index": 1.0,
+          "name": "",
+          "raw_name_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "true_blank": true,
+          "vertex_count": 0.0
+        }
+      ],
+      "display_name": "tools",
+      "index": 0.0,
+      "name": "tools",
+      "native_base": 1.0,
+      "raw_name_sha256": "f9d35d43770d39092a663e665e82ae1d84a9e0da3d0d10c407acada6a40cd281"
+    },
+    {
+      "choices": [
+        {
+          "display_name": "box.smd",
+          "index": 0.0,
+          "name": "box.smd",
+          "raw_name_sha256": "a01031062c7812c2fcb79a367be8e7a1fc37fc0d81bb1f6e5bb913ba0e6f94af",
+          "true_blank": false,
+          "vertex_count": 38.0
+        },
+        {
+          "display_name": "Choice 2 (empty name)",
+          "index": 1.0,
+          "name": "",
+          "raw_name_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "true_blank": true,
+          "vertex_count": 0.0
+        }
+      ],
+      "display_name": "box",
+      "index": 1.0,
+      "name": "box",
+      "native_base": 2.0,
+      "raw_name_sha256": "26f8567f2569182294c3fa5b9f9cb2270b554eef628b4c149cf82a42888ff4ae"
+    },
+    {
+      "choices": [
+        {
+          "display_name": "flame.smd",
+          "index": 0.0,
+          "name": "flame.smd",
+          "raw_name_sha256": "ef8cf79674076f7791dd5aaca643eab3831ea470d796102a1817809b32ce184b",
+          "true_blank": false,
+          "vertex_count": 1479.0
+        },
+        {
+          "display_name": "Choice 2 (empty name)",
+          "index": 1.0,
+          "name": "",
+          "raw_name_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "true_blank": true,
+          "vertex_count": 0.0
+        }
+      ],
+      "display_name": "flame",
+      "index": 2.0,
+      "name": "flame",
+      "native_base": 4.0,
+      "raw_name_sha256": "bd9dc5f78dac9fad83a604327bf29bf368b8921f8cedfb3d3673efbe1f4eb449"
+    }
+  ],
+  "catalogue_sha256": "048094d452dab6c79103f27d89f37396ce82ba597af08fe2f60a93a7285cac3e",
+  "format": "studio_source_mdl_choices_1",
+  "materials": [
+    {
+      "display_name": "models/touhou/tamo/Keiki Haniyashin/props",
+      "index": 0.0,
+      "name": "models/touhou/tamo/Keiki Haniyashin/props",
+      "raw_name_sha256": "05dc8662e540589906b990b01ac61cce91061970235421a8b00aec2a16b77903"
+    },
+    {
+      "display_name": "box",
+      "index": 1.0,
+      "name": "box",
+      "raw_name_sha256": "26f8567f2569182294c3fa5b9f9cb2270b554eef628b4c149cf82a42888ff4ae"
+    },
+    {
+      "display_name": "blush",
+      "index": 2.0,
+      "name": "blush",
+      "raw_name_sha256": "13de8a510f336bb84a78f1d444d49dc1571d0831e93ed53b963e26855bf6e187"
+    },
+    {
+      "display_name": "excl mark",
+      "index": 3.0,
+      "name": "excl mark",
+      "raw_name_sha256": "c78d300bb4d95145950c651333a64ec3fff9abf7f0aa77cdbe5b9b2d8f0b86ab"
+    }
+  ],
+  "name_encoding": "latin-1 (reversible byte mapping; author encoding unverified)",
+  "native_checksum": 575012459.0,
+  "native_mdl_bytes": 33608.0,
+  "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+  "native_version": 49.0,
+  "original_source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+  "scope": {
+    "converted_object_correspondence_verified": false,
+    "excluded": [
+      "geometry",
+      "bones",
+      "mesh material-column correspondence",
+      "flex evaluation",
+      "native shaders",
+      "jiggle",
+      "animation"
+    ],
+    "inspected_header_prefix_bytes": 240.0,
+    "kind": "mdl49_static_table_metadata_only",
+    "native_fidelity_verified": false,
+    "resources_verified": false
+  },
+  "selected_member": "keiki haniyashin chisels.mdl",
+  "skin_reference_count": 4.0,
+  "skins": [
+    {
+      "index": 0.0,
+      "material_indices": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "material_names": [
+        "models/touhou/tamo/Keiki Haniyashin/props",
+        "box",
+        "blush",
+        "excl mark"
+      ]
+    }
+  ]
+}

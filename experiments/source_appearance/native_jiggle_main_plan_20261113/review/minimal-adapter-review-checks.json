@@ -1,0 +1,297 @@
+{
+  "format": "independent_minimal_jiggle_adapter_review_1",
+  "passed": true,
+  "authored_tests": 22,
+  "failures": 0,
+  "errors": 0,
+  "extra_checks": {
+    "standalone_metadata_limit_plus_0": true,
+    "standalone_metadata_limit_plus_1": true,
+    "identity_priority_over_budget": true,
+    "identity_priority_nonfinite_base": true,
+    "unavailable_identity_priority_over_budget": true,
+    "legacy_LF_byte_equality": true,
+    "no_BOM_or_trailing_newline_LF": true,
+    "legacy_CRLF_byte_equality": true,
+    "no_BOM_or_trailing_newline_CRLF": true,
+    "CRLF_no_double_CR": true,
+    "no_jiggle_baseline_writer_and_bytes_unchanged": true,
+    "bsp_baseline_writer_and_bytes_unchanged": true,
+    "no_headroom_preserves262144_base_and_bounded_log": true,
+    "no_sidecar_API_or_outputs": true,
+    "no_SourceIO_bpy_Godot_modules": true,
+    "copied_reader_hash_exact": true
+  },
+  "extra_check_count": 16,
+  "metadata_boundary_observations": {
+    "standalone_metadata_limit_plus_0": {
+      "bytes": 131072,
+      "state": "embedded",
+      "omission": null
+    },
+    "standalone_metadata_limit_plus_1": {
+      "bytes": 131073,
+      "state": "omitted_status_inline",
+      "omission": {
+        "format": "studio_source_jiggle_metadata_1",
+        "status": "omitted",
+        "reason": "metadata_budget",
+        "detail": "Complete jiggle metadata exceeds128KiB; no partial rules are retained.",
+        "applied": false,
+        "runtime_support": "not_implemented",
+        "binding_status": "unattempted",
+        "original_source_sha256": "12a7804f4c76c2db3ea926ba6313225010e9449f14d1804cd36a32c6b873f030",
+        "native_mdl_sha256": "0407b3c1e0256cf8415440a01b86721f4a87f1bd2d3900001198c202b511d412",
+        "metadata_candidate_sha256": "7142a8e201ab5e1590b635ee2316e6fbe98c49f789da0a22479c6023e2211a0d",
+        "metadata_candidate_bytes": 131073,
+        "rule_count": 2,
+        "native_bone_count": 3,
+        "retained_rule_count": 0,
+        "source_of_truth": "retained_native_mdl_and_preparation_bundle",
+        "candidate_state": "formed_not_retained"
+      }
+    }
+  },
+  "test_output_folder_side_effect_suppressed": [
+    {
+      "line": 17,
+      "kind": "OUT assignment"
+    },
+    {
+      "line": 17,
+      "kind": "OUT.mkdir"
+    }
+  ],
+  "protected_sources_and_prior_evidence_unchanged": true,
+  "protected_file_count": 22,
+  "protected_before_after": {
+    "before": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\source_jiggle_metadata.py": {
+        "sha256": "cb23555165c23ebde1d6f5e2d9f685739584a8796ab0fc912cd41c83e6108409",
+        "bytes": 16101,
+        "mtime_ns": 1794615266313884100
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\source_jiggle_values.py": {
+        "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+        "bytes": 7713,
+        "mtime_ns": 1794614172230374400
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\test_source_jiggle_metadata.py": {
+        "sha256": "3c91c0b46347ce7cd1d59f1327aa99e4ad07c8d391b293e6b53addeb58946db2",
+        "bytes": 16099,
+        "mtime_ns": 1794615266513006600
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-source\\authored_fixture.py": {
+        "sha256": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a",
+        "bytes": 2311,
+        "mtime_ns": 1794615421467526900
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-source\\source_jiggle_metadata.py": {
+        "sha256": "f49d4ab9051e69d16a5ce0adb699b5698d6bfbb9147a69050014a11295e33ffe",
+        "bytes": 16042,
+        "mtime_ns": 1794615421463687000
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-source\\source_jiggle_values.py": {
+        "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+        "bytes": 7713,
+        "mtime_ns": 1794615421450684500
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-source\\test_source_jiggle_metadata.py": {
+        "sha256": "d1bd584cdb61841f2e18e969792bbd9bdbd2f59534ea5c175fcbbace54c4d262",
+        "bytes": 12462,
+        "mtime_ns": 1794615484013833700
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\adapter-review-initial-tests.txt": {
+        "sha256": "bd65bfaf0ebc6554a64b71cb0d34a38af6f5a240dce2b015844b1301deb9d510",
+        "bytes": 3985,
+        "mtime_ns": 1794615248952170500
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\adapter-review-initial.json": {
+        "sha256": "e8cf3c913275ce96fdf4281f254292f250f1c337029106f98882e35546d4922f",
+        "bytes": 2162,
+        "mtime_ns": 1794615248952170500
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\budget-facts.json": {
+        "sha256": "a8de073905f0e025d2d9653ae54c414dbffa6a157aa5fea22efcad55567ac6c2",
+        "bytes": 1822,
+        "mtime_ns": 1794614926440646000
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\historical-sidecar-review.md": {
+        "sha256": "1cd5f03d8983d8d8188cfa5df91b46930f8fba4b4bd88bc07b2b7b56d3f03bd4",
+        "bytes": 1780,
+        "mtime_ns": 1794615368318904200
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\publication-budget-review.md": {
+        "sha256": "b69ae2f4c5b25b3786300754921f7409e5d27f61e0875bc758dde37d5d640430",
+        "bytes": 7971,
+        "mtime_ns": 1794614926441653200
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\cpu-1794615138714466800\\verification.json": {
+        "sha256": "925e222a3414c340311cd7e79564a134737505425fa75d79b9a3a014df00d2e7",
+        "bytes": 1173,
+        "mtime_ns": 1794615138743320700
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-cpu-1794615484594165400\\verification.json": {
+        "sha256": "1fafb0550705a2795c02776cb420219ab7b06e291ee4f3b328042924553f1b84",
+        "bytes": 1498,
+        "mtime_ns": 1794615484620235200
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\blender_source_bridge.py": {
+        "sha256": "18eebda3d5f44be35f12e1e7d8a17b6f13cbd21bda59331a2565cda85111e53e",
+        "bytes": 25105,
+        "mtime_ns": 1794613966866818800
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\pose_editor.gd": {
+        "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+        "bytes": 48374,
+        "mtime_ns": 1794595716980511400
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\has_project.py": {
+        "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+        "bytes": 36736,
+        "mtime_ns": 1794447912627061700
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\contact_editor.gd": {
+        "sha256": "5706704bfc3a2d61f228c9ca1ae3216534fef0aa00855cbf3bfc5eb2dd59f124",
+        "bytes": 13703,
+        "mtime_ns": 1794447912297336000
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\source_import.gd": {
+        "sha256": "4cacfc7e86adad5e8e78872439500f0e2a922a6e022dc48d268c5b4cd3686a47",
+        "bytes": 17381,
+        "mtime_ns": 1794610713626896900
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\prepare_source.py": {
+        "sha256": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+        "bytes": 13626,
+        "mtime_ns": 1794610640902281900
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_appearance.py": {
+        "sha256": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+        "bytes": 8468,
+        "mtime_ns": 1794610640901270800
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\has_snapshot_writer.gd": {
+        "sha256": "61400dfcf743cf4bd1e0d99e3aec7e1c74f05d61108cfa64cf7afe3f7613111f",
+        "bytes": 5630,
+        "mtime_ns": 1794603190321421500
+      }
+    },
+    "after": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\source_jiggle_metadata.py": {
+        "sha256": "cb23555165c23ebde1d6f5e2d9f685739584a8796ab0fc912cd41c83e6108409",
+        "bytes": 16101,
+        "mtime_ns": 1794615266313884100
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\source_jiggle_values.py": {
+        "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+        "bytes": 7713,
+        "mtime_ns": 1794614172230374400
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\source\\test_source_jiggle_metadata.py": {
+        "sha256": "3c91c0b46347ce7cd1d59f1327aa99e4ad07c8d391b293e6b53addeb58946db2",
+        "bytes": 16099,
+        "mtime_ns": 1794615266513006600
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-source\\authored_fixture.py": {
+        "sha256": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a",
+        "bytes": 2311,
+        "mtime_ns": 1794615421467526900
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-source\\source_jiggle_metadata.py": {
+        "sha256": "f49d4ab9051e69d16a5ce0adb699b5698d6bfbb9147a69050014a11295e33ffe",
+        "bytes": 16042,
+        "mtime_ns": 1794615421463687000
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-source\\source_jiggle_values.py": {
+        "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+        "bytes": 7713,
+        "mtime_ns": 1794615421450684500
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-source\\test_source_jiggle_metadata.py": {
+        "sha256": "d1bd584cdb61841f2e18e969792bbd9bdbd2f59534ea5c175fcbbace54c4d262",
+        "bytes": 12462,
+        "mtime_ns": 1794615484013833700
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\adapter-review-initial-tests.txt": {
+        "sha256": "bd65bfaf0ebc6554a64b71cb0d34a38af6f5a240dce2b015844b1301deb9d510",
+        "bytes": 3985,
+        "mtime_ns": 1794615248952170500
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\adapter-review-initial.json": {
+        "sha256": "e8cf3c913275ce96fdf4281f254292f250f1c337029106f98882e35546d4922f",
+        "bytes": 2162,
+        "mtime_ns": 1794615248952170500
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\budget-facts.json": {
+        "sha256": "a8de073905f0e025d2d9653ae54c414dbffa6a157aa5fea22efcad55567ac6c2",
+        "bytes": 1822,
+        "mtime_ns": 1794614926440646000
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\historical-sidecar-review.md": {
+        "sha256": "1cd5f03d8983d8d8188cfa5df91b46930f8fba4b4bd88bc07b2b7b56d3f03bd4",
+        "bytes": 1780,
+        "mtime_ns": 1794615368318904200
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\review\\publication-budget-review.md": {
+        "sha256": "b69ae2f4c5b25b3786300754921f7409e5d27f61e0875bc758dde37d5d640430",
+        "bytes": 7971,
+        "mtime_ns": 1794614926441653200
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\cpu-1794615138714466800\\verification.json": {
+        "sha256": "925e222a3414c340311cd7e79564a134737505425fa75d79b9a3a014df00d2e7",
+        "bytes": 1173,
+        "mtime_ns": 1794615138743320700
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-jiggle-main-plan-20261113\\minimal-cpu-1794615484594165400\\verification.json": {
+        "sha256": "1fafb0550705a2795c02776cb420219ab7b06e291ee4f3b328042924553f1b84",
+        "bytes": 1498,
+        "mtime_ns": 1794615484620235200
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\blender_source_bridge.py": {
+        "sha256": "18eebda3d5f44be35f12e1e7d8a17b6f13cbd21bda59331a2565cda85111e53e",
+        "bytes": 25105,
+        "mtime_ns": 1794613966866818800
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\pose_editor.gd": {
+        "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+        "bytes": 48374,
+        "mtime_ns": 1794595716980511400
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\has_project.py": {
+        "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+        "bytes": 36736,
+        "mtime_ns": 1794447912627061700
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\contact_editor.gd": {
+        "sha256": "5706704bfc3a2d61f228c9ca1ae3216534fef0aa00855cbf3bfc5eb2dd59f124",
+        "bytes": 13703,
+        "mtime_ns": 1794447912297336000
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\source_import.gd": {
+        "sha256": "4cacfc7e86adad5e8e78872439500f0e2a922a6e022dc48d268c5b4cd3686a47",
+        "bytes": 17381,
+        "mtime_ns": 1794610713626896900
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\prepare_source.py": {
+        "sha256": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+        "bytes": 13626,
+        "mtime_ns": 1794610640902281900
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_appearance.py": {
+        "sha256": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+        "bytes": 8468,
+        "mtime_ns": 1794610640901270800
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\has_snapshot_writer.gd": {
+        "sha256": "61400dfcf743cf4bd1e0d99e3aec7e1c74f05d61108cfa64cf7afe3f7613111f",
+        "bytes": 5630,
+        "mtime_ns": 1794603190321421500
+      }
+    }
+  },
+  "actual_Junko_full_report_fit_adoption": "UNRUN_requires_fresh_conversion",
+  "native_SourceIO_runtime_converter_GPU_import_or_launch": false,
+  "project_1MiB_roundtrip": "Not exercised; remains independent whole-project limit",
+  "actionable_defects": []
+}

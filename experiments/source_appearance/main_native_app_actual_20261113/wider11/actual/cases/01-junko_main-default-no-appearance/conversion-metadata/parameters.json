@@ -1,0 +1,2158 @@
+{
+  "adapter": "studio_source_1",
+  "standard": "studio_model_1",
+  "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-01\\models\\touhou\\tamo\\junko.mdl",
+  "source_file": "junko.mdl",
+  "source_member": null,
+  "case_resolved_sidecars": {
+    "junko.dx80.vtx": "Junko.dx80.vtx",
+    "junko.sw.vtx": "Junko.sw.vtx"
+  },
+  "source_profile": "standalone",
+  "source_sha256": "d916863f801d0894009fad43c587ae630bf05556f484ebae4803734bd15c8af7",
+  "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+  "sourceio_version": [
+    5,
+    5,
+    5
+  ],
+  "scale": 0.01905,
+  "axes": "Source Z-up to glTF Y-up via Blender exporter",
+  "native_parameters": {
+    "bones": [
+      {
+        "name": "ParentNode",
+        "parent": -1
+      },
+      {
+        "name": "bip_pelvis",
+        "parent": 0
+      },
+      {
+        "name": "Belly",
+        "parent": 1
+      },
+      {
+        "name": "OhInside(MorphFor)",
+        "parent": 2
+      },
+      {
+        "name": "WaistC_L",
+        "parent": 1
+      },
+      {
+        "name": "bip_hip_L",
+        "parent": 4
+      },
+      {
+        "name": "bip_knee_L",
+        "parent": 5
+      },
+      {
+        "name": "bip_foot_L",
+        "parent": 6
+      },
+      {
+        "name": "AnkleD_L",
+        "parent": 7
+      },
+      {
+        "name": "ToeTipEX_L",
+        "parent": 7
+      },
+      {
+        "name": "AnkleAux_L",
+        "parent": 7
+      },
+      {
+        "name": "KneeD_L",
+        "parent": 6
+      },
+      {
+        "name": "LineageChangeShape_L",
+        "parent": 11
+      },
+      {
+        "name": "KneeSDEF_L",
+        "parent": 5
+      },
+      {
+        "name": "PeachesSDEF_L",
+        "parent": 5
+      },
+      {
+        "name": "PeachesTwistNothing_L",
+        "parent": 5
+      },
+      {
+        "name": "PeachesTwistAttachmentGiving(*0.4)_L",
+        "parent": 15
+      },
+      {
+        "name": "ButtSDEF_L",
+        "parent": 16
+      },
+      {
+        "name": "WaistC_R",
+        "parent": 1
+      },
+      {
+        "name": "bip_hip_R",
+        "parent": 18
+      },
+      {
+        "name": "bip_knee_R",
+        "parent": 19
+      },
+      {
+        "name": "bip_foot_R",
+        "parent": 20
+      },
+      {
+        "name": "AnkleD_R",
+        "parent": 21
+      },
+      {
+        "name": "ToeTipEX_R",
+        "parent": 21
+      },
+      {
+        "name": "AnkleAux_R",
+        "parent": 21
+      },
+      {
+        "name": "KneeD_R",
+        "parent": 20
+      },
+      {
+        "name": "LineageChangeShape_R",
+        "parent": 25
+      },
+      {
+        "name": "KneeSDEF_R",
+        "parent": 19
+      },
+      {
+        "name": "PeachesSDEF_R",
+        "parent": 19
+      },
+      {
+        "name": "PeachesTwistNothing_R",
+        "parent": 19
+      },
+      {
+        "name": "PeachesTwistAttachmentGiving(*0.4)_R",
+        "parent": 29
+      },
+      {
+        "name": "ButtSDEF_R",
+        "parent": 30
+      },
+      {
+        "name": "bip_spine_0",
+        "parent": 1
+      },
+      {
+        "name": "bip_spine_1",
+        "parent": 32
+      },
+      {
+        "name": "bip_neck",
+        "parent": 33
+      },
+      {
+        "name": "bip_head",
+        "parent": 34
+      },
+      {
+        "name": "AttentionTipsParent",
+        "parent": 35
+      },
+      {
+        "name": "Head+(Weight)",
+        "parent": 36
+      },
+      {
+        "name": "bip_Eye_L",
+        "parent": 37
+      },
+      {
+        "name": "Pupil_L",
+        "parent": 38
+      },
+      {
+        "name": "EyeLight1_L",
+        "parent": 39
+      },
+      {
+        "name": "EyeLight2_L",
+        "parent": 39
+      },
+      {
+        "name": "bip_Eye_R",
+        "parent": 37
+      },
+      {
+        "name": "Pupil_R",
+        "parent": 42
+      },
+      {
+        "name": "EyeLight1_R",
+        "parent": 43
+      },
+      {
+        "name": "EyeLight2_R",
+        "parent": 43
+      },
+      {
+        "name": "ExpressionsForBoneAllParent",
+        "parent": 37
+      },
+      {
+        "name": "EyebrowStrand_L",
+        "parent": 46
+      },
+      {
+        "name": "EyebrowStrand2_L",
+        "parent": 47
+      },
+      {
+        "name": "EyebrowStrand_R",
+        "parent": 46
+      },
+      {
+        "name": "EyebrowStrand2_R",
+        "parent": 49
+      },
+      {
+        "name": "Eyelid Line_L",
+        "parent": 46
+      },
+      {
+        "name": "Eyelid Line_R",
+        "parent": 46
+      },
+      {
+        "name": "Pine TreeStrand_L",
+        "parent": 46
+      },
+      {
+        "name": "Pine TreeStrand_R",
+        "parent": 46
+      },
+      {
+        "name": "MouthLocationLocation",
+        "parent": 46
+      },
+      {
+        "name": "TeethParent",
+        "parent": 55
+      },
+      {
+        "name": "UpperTeethMove",
+        "parent": 56
+      },
+      {
+        "name": "UpperTeeth",
+        "parent": 57
+      },
+      {
+        "name": "LowerTeethMove",
+        "parent": 56
+      },
+      {
+        "name": "LowerTeeth",
+        "parent": 59
+      },
+      {
+        "name": "TongueMove",
+        "parent": 55
+      },
+      {
+        "name": "TongueRotation",
+        "parent": 61
+      },
+      {
+        "name": "NoseLocationLocation",
+        "parent": 46
+      },
+      {
+        "name": "bip_collar_L",
+        "parent": 33
+      },
+      {
+        "name": "bip_upperArm_L",
+        "parent": 64
+      },
+      {
+        "name": "ArmD_L",
+        "parent": 65
+      },
+      {
+        "name": "ArmTwistD_L",
+        "parent": 66
+      },
+      {
+        "name": "ArmSDEF_L",
+        "parent": 67
+      },
+      {
+        "name": "ElbowChangeShapeAux_L",
+        "parent": 65
+      },
+      {
+        "name": "bip_lowerArm_L",
+        "parent": 65
+      },
+      {
+        "name": "ElbowTwistNothing_L",
+        "parent": 70
+      },
+      {
+        "name": "bip_hand_L",
+        "parent": 70
+      },
+      {
+        "name": "Hand+ElbowTwist_L",
+        "parent": 72
+      },
+      {
+        "name": "Thumb0Expand1_L",
+        "parent": 72
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger0",
+        "parent": 74
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger01",
+        "parent": 75
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger02",
+        "parent": 76
+      },
+      {
+        "name": "IndexFinger1Expand1_L",
+        "parent": 72
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger1",
+        "parent": 78
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger11",
+        "parent": 79
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger12",
+        "parent": 80
+      },
+      {
+        "name": "MiddleFinger1Expand1_L",
+        "parent": 72
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger2",
+        "parent": 82
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger21",
+        "parent": 83
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger22",
+        "parent": 84
+      },
+      {
+        "name": "RingFinger1Expand1_L",
+        "parent": 72
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger3",
+        "parent": 86
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger31",
+        "parent": 87
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger32",
+        "parent": 88
+      },
+      {
+        "name": "LittleFinger1Expand1_L",
+        "parent": 72
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger4",
+        "parent": 90
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger41",
+        "parent": 91
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger42",
+        "parent": 92
+      },
+      {
+        "name": "HandSDEF_L",
+        "parent": 70
+      },
+      {
+        "name": "WristAux_L",
+        "parent": 70
+      },
+      {
+        "name": "ArmTwistNothing_L",
+        "parent": 65
+      },
+      {
+        "name": "ShoulderTwistNothing_L",
+        "parent": 64
+      },
+      {
+        "name": "ShoulderAux_L",
+        "parent": 64
+      },
+      {
+        "name": "bip_collar_R",
+        "parent": 33
+      },
+      {
+        "name": "bip_upperArm_R",
+        "parent": 99
+      },
+      {
+        "name": "bip_lowerArm_R",
+        "parent": 100
+      },
+      {
+        "name": "bip_hand_R",
+        "parent": 101
+      },
+      {
+        "name": "Hand+ElbowTwist_R",
+        "parent": 102
+      },
+      {
+        "name": "Thumb0Expand1_R",
+        "parent": 102
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger0",
+        "parent": 104
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger01",
+        "parent": 105
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger02",
+        "parent": 106
+      },
+      {
+        "name": "IndexFinger1Expand1_R",
+        "parent": 102
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger1",
+        "parent": 108
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger11",
+        "parent": 109
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger12",
+        "parent": 110
+      },
+      {
+        "name": "MiddleFinger1Expand1_R",
+        "parent": 102
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger2",
+        "parent": 112
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger21",
+        "parent": 113
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger22",
+        "parent": 114
+      },
+      {
+        "name": "RingFinger1Expand1_R",
+        "parent": 102
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger3",
+        "parent": 116
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger31",
+        "parent": 117
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger32",
+        "parent": 118
+      },
+      {
+        "name": "LittleFinger1Expand1_R",
+        "parent": 102
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger4",
+        "parent": 120
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger41",
+        "parent": 121
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger42",
+        "parent": 122
+      },
+      {
+        "name": "WristAux_R",
+        "parent": 101
+      },
+      {
+        "name": "HandSDEF_R",
+        "parent": 101
+      },
+      {
+        "name": "ElbowTwistNothing_R",
+        "parent": 101
+      },
+      {
+        "name": "ArmD_R",
+        "parent": 100
+      },
+      {
+        "name": "ArmTwistD_R",
+        "parent": 127
+      },
+      {
+        "name": "ArmSDEF_R",
+        "parent": 128
+      },
+      {
+        "name": "ElbowChangeShapeAux_R",
+        "parent": 100
+      },
+      {
+        "name": "ArmTwistNothing_R",
+        "parent": 100
+      },
+      {
+        "name": "ShoulderTwistNothing_R",
+        "parent": 99
+      },
+      {
+        "name": "ShoulderAux_R",
+        "parent": 99
+      },
+      {
+        "name": "BreastRigidBodyParent",
+        "parent": 33
+      },
+      {
+        "name": "BreastShakeAdjustment_UpperLower_L",
+        "parent": 134
+      },
+      {
+        "name": "LeftBreastShakeAdjustment__L_R",
+        "parent": 135
+      },
+      {
+        "name": "BreastXRotationAdjustment_L",
+        "parent": 136
+      },
+      {
+        "name": "BreastYRotationAdjustment_L",
+        "parent": 137
+      },
+      {
+        "name": "BreastWeight_L",
+        "parent": 138
+      },
+      {
+        "name": "BreastShakeAdjustment_UpperLower_R",
+        "parent": 134
+      },
+      {
+        "name": "RightBreastShakeAdjustment__L_R",
+        "parent": 140
+      },
+      {
+        "name": "BreastXRotationAdjustment_R",
+        "parent": 141
+      },
+      {
+        "name": "BreastYRotationAdjustment_R",
+        "parent": 142
+      },
+      {
+        "name": "BreastWeight_R",
+        "parent": 143
+      }
+    ],
+    "bodygroups": {
+      "reference": [
+        "Base dmx.dmx"
+      ],
+      "Belt": [
+        "Belt.dmx",
+        null
+      ]
+    },
+    "skin_groups": [
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "models/touhou/tamo/junko/Eye",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "models/touhou/tamo/junko/HachuEye",
+        "models/touhou/tamo/junko/Leg invis",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/arm invis",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye2",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye2",
+        "models/touhou/tamo/junko/Leg invis",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/arm invis",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye3",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye3",
+        "models/touhou/tamo/junko/Leg invis",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/arm invis",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye4",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Leg invis",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/arm invis",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "models/touhou/tamo/junko/Eye",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "models/touhou/tamo/junko/HachuEye",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/arm invis",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye2",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye2",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/arm invis",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye3",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye3",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/arm invis",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye4",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/arm invis",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "models/touhou/tamo/junko/Eye",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "models/touhou/tamo/junko/HachuEye",
+        "models/touhou/tamo/junko/Leg invis",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye2",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye2",
+        "models/touhou/tamo/junko/Leg invis",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye3",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye3",
+        "models/touhou/tamo/junko/Leg invis",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye4",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Leg invis",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "models/touhou/tamo/junko/Eye",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "models/touhou/tamo/junko/HachuEye",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye2",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye2",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye3",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye3",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ],
+      [
+        "models/touhou/tamo/junko/Scerla",
+        "eye4",
+        "models/touhou/tamo/junko/EyeHighlight",
+        "models/touhou/tamo/junko/Mouth",
+        "models/touhou/tamo/junko/Face",
+        "models/touhou/tamo/junko/Eyebrow",
+        "models/touhou/tamo/junko/Eyelash",
+        "models/touhou/tamo/junko/Maskara",
+        "models/touhou/tamo/junko/tears",
+        "models/touhou/tamo/junko/Blush",
+        "models/touhou/tamo/junko/Gloom",
+        "models/touhou/tamo/junko/Exp",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Body",
+        "models/touhou/tamo/junko/Stockings Waist",
+        "models/touhou/tamo/junko/Pants",
+        "models/touhou/tamo/junko/Paste",
+        "eye2",
+        "HachuEye2",
+        "eye3",
+        "HachuEye3",
+        "eye4",
+        "HachuEye4",
+        "models/touhou/tamo/junko/Props"
+      ]
+    ],
+    "flex_names": [
+      "Serious",
+      "Anger",
+      "Sadness",
+      "Sad",
+      "Cheerful",
+      "Sooner",
+      "Eyebrow anger mark",
+      "Eyebrow Wide",
+      "Eyebrow Thin",
+      "Eyebrow Angry Wide",
+      "Eyebrow Angry Wide 2",
+      "Pain",
+      "Eyeline Erasure",
+      "Blink",
+      "Blink Happy",
+      "Blink Happy2",
+      "Wink",
+      "Wink Right",
+      "Wink 2",
+      "Wink 2 Right",
+      "Thin Eye",
+      "Stare Eye",
+      "Raise lower Lid",
+      "Glaring",
+      "Spread",
+      "Eye Butt\u00e2\u0086\u0093",
+      "Eye Butt\u00e2\u0086\u0091",
+      "Eye Location Location\u00e2\u0086\u0091",
+      "Eye Location Location\u00e2\u0086\u0093",
+      "Eye Interval Gap in",
+      "Eye Interval Gap out",
+      "Eye StrandX0.95",
+      "Eye StrandX1.05",
+      "Eyelid Line\u00e2\u0086\u0093",
+      "Eyelid Line Remove",
+      "Circle Eye (Use skins to change)",
+      "Insanity",
+      "HL remove",
+      "HL big",
+      "Eye Light Change Shape",
+      "HL 2",
+      "Pupil",
+      "Eye Strand Wide",
+      "Spark",
+      "Heart",
+      "Fire",
+      "Ah",
+      "Ch",
+      "U",
+      "E",
+      "Oh",
+      "Ah2",
+      "Ch2",
+      "U2",
+      "E2",
+      "Oh2",
+      "Wa",
+      "Square",
+      "Square.001",
+      "Rabbit",
+      "Rabbit open",
+      "Rabbit open 2",
+      "Hmm",
+      "Straight mouth",
+      "Mmm",
+      "Triangle",
+      "Triangle open",
+      "Triangle happy",
+      "VV",
+      "Ohh",
+      "Smirk",
+      "Huff",
+      "Smile open",
+      "Smile",
+      "Grinning",
+      "Wow",
+      "Dumb",
+      "puff cheeks",
+      "Mouth Wide",
+      "Mouth Shrink",
+      "Heart Mouth",
+      "Mouth wo Gathering",
+      "Teeth Remove",
+      "Teeth Change",
+      "Mouth up",
+      "Mouth down",
+      "Nose up",
+      "JawV",
+      "Lips",
+      "Lips open",
+      "Vag slight open",
+      "Vag slight open 2",
+      "Vag open",
+      "Vag open 2",
+      "Vag open 3",
+      "Vag close",
+      "Clit",
+      "Clit 2",
+      "Pants clip stocking fix",
+      "Remove Pants",
+      "Remove Stocking",
+      "Remove Pasties upper",
+      "Remove Paste lower",
+      "Blush",
+      "Blush2",
+      "Tears",
+      "Sorrow",
+      "Nipple perk",
+      "Breast Big",
+      "Breast Small",
+      "Breasts Natural",
+      "Thick legs 2",
+      "Thick legs",
+      "Butt in",
+      "Pregnant",
+      "Question mark"
+    ],
+    "flex_controllers": [
+      {
+        "group": "Serious",
+        "name": "Serious",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Anger",
+        "name": "Anger",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Sadness",
+        "name": "Sadness",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Sad",
+        "name": "Sad",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Cheerful",
+        "name": "Cheerful",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Sooner",
+        "name": "Sooner",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eyebrow anger mark",
+        "name": "Eyebrow anger mark",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eyebrow Wide",
+        "name": "Eyebrow Wide",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eyebrow Thin",
+        "name": "Eyebrow Thin",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eyebrow Angry Wide",
+        "name": "Eyebrow Angry Wide",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eyebrow Angry Wide 2",
+        "name": "Eyebrow Angry Wide 2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Pain",
+        "name": "Pain",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eyeline Erasure",
+        "name": "Eyeline Erasure",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Blink",
+        "name": "Blink",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Blink Happy",
+        "name": "Blink Happy",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Blink Happy2",
+        "name": "Blink Happy2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Wink",
+        "name": "Wink",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Wink Right",
+        "name": "Wink Right",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Wink 2",
+        "name": "Wink 2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Wink 2 Right",
+        "name": "Wink 2 Right",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Thin Eye",
+        "name": "Thin Eye",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Stare Eye",
+        "name": "Stare Eye",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Raise lower Lid",
+        "name": "Raise lower Lid",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Glaring",
+        "name": "Glaring",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Spread",
+        "name": "Spread",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye Butt\u00e2\u0086\u0093",
+        "name": "Eye Butt\u00e2\u0086\u0093",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye Butt\u00e2\u0086\u0091",
+        "name": "Eye Butt\u00e2\u0086\u0091",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye Location Location\u00e2\u0086\u0091",
+        "name": "Eye Location Location\u00e2\u0086\u0091",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye Location Location\u00e2\u0086\u0093",
+        "name": "Eye Location Location\u00e2\u0086\u0093",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye Interval Gap in",
+        "name": "Eye Interval Gap in",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye Interval Gap out",
+        "name": "Eye Interval Gap out",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye StrandX0.95",
+        "name": "Eye StrandX0.95",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye StrandX1.05",
+        "name": "Eye StrandX1.05",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eyelid Line\u00e2\u0086\u0093",
+        "name": "Eyelid Line\u00e2\u0086\u0093",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eyelid Line Remove",
+        "name": "Eyelid Line Remove",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Circle Eye (Use skins to change)",
+        "name": "Circle Eye (Use skins to change)",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Insanity",
+        "name": "Insanity",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "HL remove",
+        "name": "HL remove",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "HL big",
+        "name": "HL big",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye Light Change Shape",
+        "name": "Eye Light Change Shape",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "HL 2",
+        "name": "HL 2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Pupil",
+        "name": "Pupil",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Eye Strand Wide",
+        "name": "Eye Strand Wide",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Spark",
+        "name": "Spark",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Heart",
+        "name": "Heart",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Fire",
+        "name": "Fire",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Ah",
+        "name": "Ah",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Ch",
+        "name": "Ch",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "U",
+        "name": "U",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "E",
+        "name": "E",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Oh",
+        "name": "Oh",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Ah2",
+        "name": "Ah2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Ch2",
+        "name": "Ch2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "U2",
+        "name": "U2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "E2",
+        "name": "E2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Oh2",
+        "name": "Oh2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Wa",
+        "name": "Wa",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Square",
+        "name": "Square",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Square.001",
+        "name": "Square.001",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Rabbit",
+        "name": "Rabbit",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Rabbit open",
+        "name": "Rabbit open",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Rabbit open 2",
+        "name": "Rabbit open 2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Hmm",
+        "name": "Hmm",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Straight mouth",
+        "name": "Straight mouth",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Mmm",
+        "name": "Mmm",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Triangle",
+        "name": "Triangle",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Triangle open",
+        "name": "Triangle open",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Triangle happy",
+        "name": "Triangle happy",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "VV",
+        "name": "VV",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Ohh",
+        "name": "Ohh",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Smirk",
+        "name": "Smirk",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Huff",
+        "name": "Huff",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Smile open",
+        "name": "Smile open",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Smile",
+        "name": "Smile",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Grinning",
+        "name": "Grinning",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Wow",
+        "name": "Wow",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Dumb",
+        "name": "Dumb",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "puff cheeks",
+        "name": "puff cheeks",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Mouth Wide",
+        "name": "Mouth Wide",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Mouth Shrink",
+        "name": "Mouth Shrink",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Heart Mouth",
+        "name": "Heart Mouth",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Mouth wo Gathering",
+        "name": "Mouth wo Gathering",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Teeth Remove",
+        "name": "Teeth Remove",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Teeth Change",
+        "name": "Teeth Change",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Mouth up",
+        "name": "Mouth up",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Mouth down",
+        "name": "Mouth down",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Nose up",
+        "name": "Nose up",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "JawV",
+        "name": "JawV",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Lips",
+        "name": "Lips",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Lips open",
+        "name": "Lips open",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Vag slight open",
+        "name": "Vag slight open",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Vag slight open 2",
+        "name": "Vag slight open 2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Vag open",
+        "name": "Vag open",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Vag open 2",
+        "name": "Vag open 2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Vag open 3",
+        "name": "Vag open 3",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Vag close",
+        "name": "Vag close",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Clit",
+        "name": "Clit",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Clit 2",
+        "name": "Clit 2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Pants clip stocking fix",
+        "name": "Pants clip stocking fix",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Remove Pants",
+        "name": "Remove Pants",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Remove Stocking",
+        "name": "Remove Stocking",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Remove Pasties upper",
+        "name": "Remove Pasties upper",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Remove Paste lower",
+        "name": "Remove Paste lower",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Blush",
+        "name": "Blush",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Blush2",
+        "name": "Blush2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Tears",
+        "name": "Tears",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Sorrow",
+        "name": "Sorrow",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Nipple perk",
+        "name": "Nipple perk",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Breast Big",
+        "name": "Breast Big",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Breast Small",
+        "name": "Breast Small",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Breasts Natural",
+        "name": "Breasts Natural",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Thick legs 2",
+        "name": "Thick legs 2",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Thick legs",
+        "name": "Thick legs",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Butt in",
+        "name": "Butt in",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Pregnant",
+        "name": "Pregnant",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      },
+      {
+        "group": "Question mark",
+        "name": "Question mark",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      }
+    ],
+    "selected_skin": 0,
+    "selected_bodygroup_indices": {
+      "reference": 0,
+      "Belt": 0
+    },
+    "eyeballs": []
+  },
+  "mount_warnings": [],
+  "suggested_view": null,
+  "materials": [
+    {
+      "material": "models/touhou/tamo/junko/Exp",
+      "vmt": "materials/models/touhou/tamo/junko/exp.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\Junko\\exp.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/tears",
+      "vmt": "materials/models/touhou/tamo/junko/tears.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\face.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Body",
+      "vmt": "materials/models/touhou/tamo/junko/body.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\body.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Paste",
+      "vmt": "materials/models/touhou/tamo/junko/paste.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\charm.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Scerla",
+      "vmt": "materials/models/touhou/tamo/junko/scerla.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\Junko\\face.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Props",
+      "vmt": "materials/models/touhou/tamo/junko/props.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\props.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Gloom",
+      "vmt": "materials/models/touhou/tamo/junko/gloom.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\blush.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Face",
+      "vmt": "materials/models/touhou/tamo/junko/face.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\face.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Maskara",
+      "vmt": "materials/models/touhou/tamo/junko/maskara.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\face.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Leg invis",
+      "vmt": "materials/models/touhou/tamo/junko/leg invis.vmt",
+      "shader": "unlitgeneric",
+      "base_texture": "materials/trans.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Pants",
+      "vmt": "materials/models/touhou/tamo/junko/pants.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\pants.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/EyeHighlight",
+      "vmt": "materials/models/touhou/tamo/junko/eyehighlight.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\nitori edit\\eye1.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Mouth",
+      "vmt": "materials/models/touhou/tamo/junko/mouth.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\face.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Eyelash",
+      "vmt": "materials/models/touhou/tamo/junko/eyelash.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\face.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Blush",
+      "vmt": "materials/models/touhou/tamo/junko/blush.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\blush.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Stockings Waist",
+      "vmt": "materials/models/touhou/tamo/junko/stockings waist.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\dress.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Eye",
+      "vmt": "materials/models/touhou/tamo/junko/eye.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\eye.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/Eyebrow",
+      "vmt": "materials/models/touhou/tamo/junko/eyebrow.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\junko\\face.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/HachuEye",
+      "vmt": "materials/models/touhou/tamo/junko/hachueye.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\yamashiro takane\\exp1.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "models/touhou/tamo/junko/arm invis",
+      "vmt": "materials/models/touhou/tamo/junko/arm invis.vmt",
+      "shader": "unlitgeneric",
+      "base_texture": "materials/trans.vtf",
+      "status": "PBR approximation"
+    }
+  ],
+  "warnings": [],
+  "limits": [
+    "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+    "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
+    "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+  ],
+  "counts": {
+    "meshes": 2,
+    "textures": 13,
+    "bones": 145,
+    "static_lights": 0
+  }
+}

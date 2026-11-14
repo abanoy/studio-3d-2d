@@ -1,0 +1,89 @@
+{
+  "format": "has_source_choices_native_app_combined_actual_1",
+  "source_revision": "8d4fde001258f501602bd94bd80d925683062f15",
+  "source_context": "main_working_source_snapshot",
+  "full_source_and_mtime_and_HEAD_exact_across_runs": true,
+  "approved_runtime_maps_exact_across_runs": true,
+  "source_files": 3279,
+  "actual_native_cases": 25,
+  "converted_cases": 22,
+  "all_blank_GUI_refusals": 3,
+  "writer_checks": 680,
+  "cold_reader_checks": 668,
+  "total_actual_app_checks": 1348,
+  "fresh_cold_readers": 22,
+  "clean_private_jobs": 24,
+  "metadata_audit_joins": 629,
+  "exact_cold_frame_PNG_joins": 88,
+  "derived_movies": [
+    {
+      "phase": "core14",
+      "movie_sha256": "524a2b703b9f7d531f50e3983eca2ca23055cc7b89157b4c5dc740d17ba6833b",
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "frames": 48,
+        "fps": "24/1",
+        "duration_seconds": 2.0
+      },
+      "aac": true,
+      "onset_seconds": 1.0000416666666667,
+      "rms_at_1_1s": 8487.65214677082
+    },
+    {
+      "phase": "wider11",
+      "movie_sha256": "ff5c3985e682ebe2e422a4ee950250cc1a3af91d1e10f27824c6e2a42064566b",
+      "video": {
+        "codec": "h264",
+        "width": 1920,
+        "height": 1080,
+        "frames": 48,
+        "fps": "24/1",
+        "duration_seconds": 2.0
+      },
+      "aac": true,
+      "onset_seconds": 1.0000416666666667,
+      "rms_at_1_1s": 8487.65214677082
+    }
+  ],
+  "per_phase": [
+    {
+      "name": "core14",
+      "aggregate_sha256": "d2a7a9acc9b39c0b3aacbe1d27822ff450b54ccf3d6d141f6af95899dae9c54b",
+      "writer_checks": 393,
+      "reader_checks": 364,
+      "private_jobs": 13,
+      "audit_assertions": 355,
+      "packet_index_sha256": "6b516fd440a5c919e3a712c6e0140161d40207b2d50c3dac29208a67846f8445"
+    },
+    {
+      "name": "wider11",
+      "aggregate_sha256": "b423dbdd7e39c21f8d407a99dabe674c1513974ef3f00b01222158ca41667815",
+      "writer_checks": 287,
+      "reader_checks": 304,
+      "private_jobs": 11,
+      "audit_assertions": 274,
+      "packet_index_sha256": "fdeb16e0ffce815abdb27a1cb67d8a7da340afc573ae9a10ce1d4950521242ec"
+    }
+  ],
+  "scope": "Actual static skin/bodygroup UI choices and real SourceIO conversion; ordinary Add/Undo/Redo with protected peer/draw/audio/camera state; packed open then linked save; owned native inputs/caches offline for every fresh reader; exact derived frame/package/report joins; two audio-gated movies. Keiki mesh/Tools morph identity and the admitted normal bone23 pose are covered. No native Source shader/jiggle/controller/assembly/artist fidelity claim.",
+  "separate_evidence": "Earlier25background worker-only cases and the failed bootstrap/thin-AABB app attempts are separate preserved checkpoints, not merged into this app pass. The complete canonical default run after8d4fde0 is still pending.",
+  "metadata_builder_attempt": "One output-only builder attempt referenced a nonexistent optional source filename, before producing an audit/index. Partial metadata is retained at sibling core14-attempt1-metadata-script-failure; the allowlist was corrected to source_installation.py. No product/runtime test was run or affected.",
+  "publication_payload_rule": "Only text source/JSON/metadata/logs and deterministic gzip of them. No model/GLB/HAS/PNG/audio/movie/runtime payloads.",
+  "date": "2026-11-13",
+  "evidence": "experiments/source_appearance/main_native_app_actual_20261113",
+  "evidence_index_sha256": "4be9c24cbd516bd18c161b6450034244f02fddbccdcb31e516132118e452444b",
+  "completed_features": [
+    "Import-time static native skin/bodypart selections in the ordinary Source dialog",
+    "Default omission, disabled all-hidden confirmation and no worker/world edit on refused choices",
+    "Ordinary Add/Undo/Redo with independent peer/drawing/audio/camera preserved",
+    "Keiki mesh/Tools-target presence and normal authored bone23 edit",
+    "Packed and linked save, fresh source-offline Open and exact derived frame replay",
+    "Two 48-frame1080p24 H264/AAC movies with decoded onset/level gates"
+  ],
+  "full_default_suite": "Still pending after this feature port; earlier12071fe complete pass predates it",
+  "native_worker_evidence": "docs/benchmarks/sfm_static_native_workers_2026-11-13.json",
+  "native_jiggle_next": "docs/benchmarks/sfm_jiggle_metadata_main_plan_2026-11-13.json",
+  "formal_counts_unchanged": true
+}

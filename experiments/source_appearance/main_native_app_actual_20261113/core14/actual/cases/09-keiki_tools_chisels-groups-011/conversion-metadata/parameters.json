@@ -1,0 +1,314 @@
+{
+  "adapter": "studio_source_1",
+  "standard": "studio_model_1",
+  "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+  "source_file": "keiki haniyashin chisels.mdl",
+  "source_member": null,
+  "case_resolved_sidecars": {},
+  "source_profile": "standalone",
+  "source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+  "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+  "sourceio_version": [
+    5,
+    5,
+    5
+  ],
+  "scale": 0.01905,
+  "axes": "Source Z-up to glTF Y-up via Blender exporter",
+  "native_parameters": {
+    "bones": [
+      {
+        "name": "ParentNode",
+        "parent": -1
+      },
+      {
+        "name": "Waist",
+        "parent": 0
+      },
+      {
+        "name": "bip_pelvis",
+        "parent": 1
+      },
+      {
+        "name": "bip_spine_0",
+        "parent": 2
+      },
+      {
+        "name": "bip_spine_1",
+        "parent": 3
+      },
+      {
+        "name": "bip_collar_L",
+        "parent": 4
+      },
+      {
+        "name": "bip_upperArm_L",
+        "parent": 5
+      },
+      {
+        "name": "bip_lowerArm_L",
+        "parent": 6
+      },
+      {
+        "name": "bip_hand_L",
+        "parent": 7
+      },
+      {
+        "name": "\u00e5\u00bd\u00ab\u00e5\u0088\u00bb\u00e5\u0088\u0080Parent_L",
+        "parent": 8
+      },
+      {
+        "name": "\u00e5\u00b9\u00b3\u00e5\u0088\u0080",
+        "parent": 9
+      },
+      {
+        "name": "SmallCircle\u00e5\u0088\u0080",
+        "parent": 9
+      },
+      {
+        "name": "Change\u00e5\u00bd\u00a2Circle\u00e5\u0088\u0080",
+        "parent": 9
+      },
+      {
+        "name": "Change\u00e5\u00bd\u00a2\u00e4\u00b8\u0089Horn\u00e5\u0088\u0080",
+        "parent": 9
+      },
+      {
+        "name": "bip_collar_R",
+        "parent": 4
+      },
+      {
+        "name": "bip_upperArm_R",
+        "parent": 14
+      },
+      {
+        "name": "bip_lowerArm_R",
+        "parent": 15
+      },
+      {
+        "name": "bip_hand_R",
+        "parent": 16
+      },
+      {
+        "name": "\u00e5\u00bd\u00ab\u00e5\u0088\u00bb\u00e5\u0088\u0080Parent_R",
+        "parent": 17
+      },
+      {
+        "name": "\u00e4\u00b8\u0089Horn\u00e5\u0088\u0080",
+        "parent": 18
+      },
+      {
+        "name": "Change\u00e5\u00bd\u00a2SmallCircle\u00e5\u0088\u0080",
+        "parent": 18
+      },
+      {
+        "name": "Circle\u00e5\u0088\u0080",
+        "parent": 18
+      },
+      {
+        "name": "Small\u00e5\u0088\u0080",
+        "parent": 18
+      },
+      {
+        "name": "box",
+        "parent": 2
+      },
+      {
+        "name": "bip_neck",
+        "parent": 4
+      },
+      {
+        "name": "bip_head",
+        "parent": 24
+      },
+      {
+        "name": "bip_Face",
+        "parent": 25
+      },
+      {
+        "name": "Expressions\u00e7\u0094\u00a8Bone\u00e5\u0085\u00a8Parent",
+        "parent": 26
+      },
+      {
+        "name": "\u00e3\u0081\u00be\u00e3\u0081\u00a4Strand_L",
+        "parent": 27
+      },
+      {
+        "name": "\u00e3\u0081\u00be\u00e3\u0081\u00a4Strand_R",
+        "parent": 27
+      },
+      {
+        "name": "Flame",
+        "parent": 0
+      }
+    ],
+    "bodygroups": {
+      "tools": [
+        "tools.dmx",
+        null
+      ],
+      "box": [
+        "box.smd",
+        null
+      ],
+      "flame": [
+        "flame.smd",
+        null
+      ]
+    },
+    "skin_groups": [
+      [
+        "models/touhou/tamo/Keiki Haniyashin/props",
+        "box",
+        "blush",
+        "excl mark"
+      ]
+    ],
+    "flex_names": [
+      "Tools"
+    ],
+    "flex_controllers": [
+      {
+        "group": "Tools",
+        "name": "Tools",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      }
+    ],
+    "selected_skin": 0,
+    "selected_bodygroup_indices": {
+      "tools": 0,
+      "box": 1,
+      "flame": 1
+    },
+    "eyeballs": [],
+    "selected_native_bodygroup_indices": {
+      "0": 0,
+      "1": 1,
+      "2": 1
+    },
+    "native_appearance_choices": {
+      "skin_groups": [
+        [
+          "models/touhou/tamo/Keiki Haniyashin/props",
+          "box",
+          "blush",
+          "excl mark"
+        ]
+      ],
+      "bodygroups": [
+        {
+          "index": 0,
+          "name": "tools",
+          "choices": [
+            {
+              "index": 0,
+              "name": "tools.dmx",
+              "vertices": 1180,
+              "blank": false
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "blank": true
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "name": "box",
+          "choices": [
+            {
+              "index": 0,
+              "name": "box.smd",
+              "vertices": 38,
+              "blank": false
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "blank": true
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "name": "flame",
+          "choices": [
+            {
+              "index": 0,
+              "name": "flame.smd",
+              "vertices": 1479,
+              "blank": false
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "blank": true
+            }
+          ]
+        }
+      ],
+      "default_skin_has_native_slot_identity": true
+    },
+    "appearance_request": {
+      "bodygroups": {
+        "0": 0,
+        "1": 1,
+        "2": 1
+      },
+      "format": "studio_source_appearance_request_1",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "skin": 0,
+      "source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff"
+    }
+  },
+  "mount_warnings": [],
+  "suggested_view": null,
+  "materials": [
+    {
+      "material": "models/touhou/tamo/Keiki Haniyashin/props",
+      "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "excl mark",
+      "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "box",
+      "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "blush",
+      "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+      "status": "PBR approximation"
+    }
+  ],
+  "warnings": [],
+  "limits": [
+    "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+    "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+    "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+  ],
+  "counts": {
+    "meshes": 1,
+    "textures": 4,
+    "bones": 31,
+    "static_lights": 0
+  }
+}

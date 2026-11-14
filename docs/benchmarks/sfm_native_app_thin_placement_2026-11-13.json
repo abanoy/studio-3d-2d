@@ -52,6 +52,7 @@
   "date": "2026-11-13",
   "evidence": "experiments/source_appearance/main_native_app_thin_failure_20261113",
   "evidence_index_sha256": "d28c4547c1e52f15fafb9f85cb5a609d6a68e84ada1112674dd21c96f5998792",
-  "fix_state": "Bounded per-axis fix passes headless20/private43/movie; actual SFM app retry still pending",
-  "fix_report": "docs/benchmarks/sfm_thin_placement_fix_2026-11-13.json"
+  "fix_state": "Separate fix passes20headless/43placement then both actualSFMmatrices1348checks at8d4fde0; this earlier attempt staysFAILED",
+  "fix_report": "docs/benchmarks/sfm_thin_placement_fix_2026-11-13.json",
+  "actual_app_report": "docs/benchmarks/sfm_static_native_app_2026-11-13.json"
 }

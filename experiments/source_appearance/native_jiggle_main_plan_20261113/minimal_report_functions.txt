@@ -1,0 +1,76 @@
+def candidate_fingerprint(metadata):
+    raw = _compact(metadata)
+    return {"metadata_candidate_sha256": hashlib.sha256(raw).hexdigest(), "metadata_candidate_bytes": len(raw),
+        "rule_count": len(metadata["rules"]), "native_bone_count": metadata["native_bone_count"]}
+
+def _context(metadata):
+    return {"original_source_sha256": metadata["original_source_sha256"], "native_mdl_sha256": metadata["native_mdl_sha256"],
+        **candidate_fingerprint(metadata)}
+
+def _validated_identity(base, metadata):
+    if type(base) is not dict or type(base.get("native_parameters")) is not dict or KEY in base["native_parameters"]:
+        raise ValueError("Expected the original unaugmented native report")
+    _inert(metadata, base["native_parameters"].get("bones"))
+    if base.get("source_sha256") != metadata["original_source_sha256"] or hashlib.sha256(_compact(base["native_parameters"].get("bones"))).hexdigest() != metadata["native_bone_catalogue_sha256"] or type(base.get("scale")) not in (int, float) or base["scale"] != metadata["source_scale"]:
+        raise SourceIdentityError("Metadata belongs to a different original/native catalogue or conversion scale")
+
+def plan_report(base_report, inspection, newline="\n"):
+    """Inline exact values or explicitly omit whole optional branch, never clamp.
+
+    report_bytes=None means use the exact original writer/report. Omission notes
+    are bounded JSON for the existing conversion log, not a sidecar/portable asset.
+    Original/native source checks precede every optional serialization/budget gate.
+    """
+    base = copy.deepcopy(base_report)
+    state = inspection.get("state")
+    if state == "none":
+        return {"state": "unchanged", "report": base, "report_bytes": None, "note_bytes": None, "omission": None}
+    if state == "retained":
+        metadata = copy.deepcopy(inspection["metadata"])
+        _validated_identity(base, metadata)
+        context = _context(metadata)
+    elif state == "unavailable":
+        status = copy.deepcopy(inspection["status"])
+        if type(status) is not dict or status.get("reason") not in {"layout_unsupported", "native_inventory_mismatch", "metadata_value_budget", "metadata_budget"} or status.get("format") != FORMAT or status.get("applied") is not False or status.get("runtime_support") != "not_implemented" or status.get("binding_status") != "unattempted" or not _sha(status.get("original_source_sha256")) or not _sha(status.get("native_mdl_sha256")):
+            raise ValueError("Invalid optional metadata inspection status")
+        if type(base) is not dict or base.get("source_sha256") != status["original_source_sha256"]:
+            raise SourceIdentityError("Unavailable jiggle status belongs to a different original source")
+        context = {key: status[key] for key in ("original_source_sha256", "native_mdl_sha256", "metadata_candidate_sha256", "metadata_candidate_bytes", "rule_count", "native_bone_count", "declared_jiggle_rule_count") if key in status}
+    else:
+        raise ValueError("Unexpected optional metadata inspection state")
+    try:
+        base_bytes = report_bytes(base, newline)
+    except (ValueError, TypeError, OverflowError):
+        return _omit(base, _status("baseline_unserializable", context), newline, baseline_unusable=True)
+    if len(base_bytes) > REPORT_LIMIT:
+        return _omit(base, _status("baseline_report_over_budget", context), newline, baseline_unusable=True)
+    if type(base.get("native_parameters")) is not dict or KEY in base["native_parameters"]:
+        raise ValueError("Expected original unaugmented native report")
+    if state == "unavailable": return _omit(base, status, newline)
+    if context["metadata_candidate_bytes"] > METADATA_LIMIT:
+        return _omit(base, _status("metadata_budget", context), newline)
+    candidate = copy.deepcopy(base); candidate["native_parameters"][KEY] = metadata
+    encoded = report_bytes(candidate, newline)
+    if len(encoded) <= REPORT_LIMIT:
+        return {"state": "embedded", "report": candidate, "report_bytes": encoded, "note_bytes": None, "omission": None}
+    context["full_report_candidate_bytes"] = len(encoded)
+    context["full_report_line_ending"] = "CRLF" if newline == "\r\n" else "LF"
+    return _omit(base, _status("report_budget", context), newline)
+
+def _omit(base, status, newline, baseline_unusable=False):
+    status = copy.deepcopy(status)
+    status["status"] = "omitted"
+    status["retained_rule_count"] = 0
+    status["source_of_truth"] = "retained_native_mdl_and_preparation_bundle"
+    status["metadata_candidate_sha256"] = status.get("metadata_candidate_sha256")
+    status["metadata_candidate_bytes"] = status.get("metadata_candidate_bytes")
+    status["candidate_state"] = "formed_not_retained" if status["metadata_candidate_sha256"] else "not_formed"
+    note = _compact(status)
+    if len(note) > STATUS_LIMIT: raise ValueError("Omission status exceeds4KiB")
+    candidate = copy.deepcopy(base); encoded = None
+    if not baseline_unusable:
+        candidate["native_parameters"][KEY] = copy.deepcopy(status)
+        attempt = report_bytes(candidate, newline)
+        if len(attempt) <= REPORT_LIMIT: encoded = attempt
+    return {"state": "omitted_status_inline" if encoded is not None else "omitted_log_only", "report": candidate if encoded is not None else copy.deepcopy(base),
+        "report_bytes": encoded, "note_bytes": note, "omission": status}

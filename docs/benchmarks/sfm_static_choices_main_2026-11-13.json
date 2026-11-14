@@ -2,7 +2,7 @@
   "format": "has_source_static_choices_main_progress_1",
   "date": "2026-11-13",
   "base_commit": "489215fcbfb69acde05d4a1341cc872cc69a9132",
-  "state": "Worker25pass; bootstrapfixed167foundation; second actualapp FAILED negative-AABB engine gate despite393assertions0fail. Per-axis fix passes20headless/43private/movie, actualappretry pending.",
+  "state": "Import-time static choices now pass25nativeworker cases and both actualapp matrices1348checks at8d4fde0; fullcanonical next",
   "foundation": {
     "checks": 167,
     "reports": {
@@ -24,7 +24,8 @@
     "tools/source_choice_io.py": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
     "tools/prepare_source.py": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
     "tools/blender_source_bridge.py": "18eebda3d5f44be35f12e1e7d8a17b6f13cbd21bda59331a2565cda85111e53e",
-    "tools/source_archive.py": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131"
+    "tools/source_archive.py": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
+    "src/import_placement.gd": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad"
   },
   "process_primary_sources": [
     "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/platform/windows/os_windows.cpp",
@@ -109,7 +110,7 @@
       "bootstrap_passed": 2,
       "report": "output/source-choice-foundation/1794614172469403400/verification.json"
     },
-    "actual_app_retry": "pending fresh current-source Core14 then Wider11",
+    "actual_app_retry": "Both actual matrices later pass at8d4fde0 after separate placement fix; historical bootstrap/placement attempts remain failed",
     "full_default_suite": "not yet run after this feature port",
     "native_app_harness": "authored/parse checked; ordinary packed Open before linked Save;393core writer and287wider writer anticipated, not passed",
     "evidence": "experiments/source_appearance/main_bridge_bootstrap_fix_20261113",
@@ -173,5 +174,6 @@
     "fix_state": "Bounded per-axis inward margin is being implemented/tested; no successful retry yet"
   },
   "next_native_feature_values": "docs/benchmarks/sfm_native_jiggle_values_2026-11-13.json",
-  "thin_placement_fix": "docs/benchmarks/sfm_thin_placement_fix_2026-11-13.json"
+  "thin_placement_fix": "docs/benchmarks/sfm_thin_placement_fix_2026-11-13.json",
+  "actual_app_pass": "docs/benchmarks/sfm_static_native_app_2026-11-13.json"
 }

@@ -1,0 +1,1081 @@
+{
+  "bundle": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/output/compatibility/source-1794615529-101-58857108",
+  "format": "has_source_choices_native_expected_1",
+  "glb_sha256": "ac79aef9a4a86aca41edda93ad17579d38b46fe6da35663265b3d5a501d6ef6f",
+  "input_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-01\\models\\touhou\\tamo\\junko hair.mdl",
+  "name": "junko_hair-hat-off",
+  "object_id": "6393149745194354151",
+  "parameters": {
+    "adapter": "studio_source_1",
+    "axes": "Source Z-up to glTF Y-up via Blender exporter",
+    "case_resolved_sidecars": {
+      "junko hair.dx80.vtx": "Junko hair.dx80.vtx",
+      "junko hair.sw.vtx": "Junko hair.sw.vtx"
+    },
+    "counts": {
+      "bones": 69.0,
+      "meshes": 1.0,
+      "static_lights": 0.0,
+      "textures": 2.0
+    },
+    "limits": [
+      "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+      "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+    ],
+    "materials": [
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\junko\\hair.vtf",
+        "material": "Hair back",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/junko/hair back.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\junko\\dress.vtf",
+        "material": "pom",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/junko/pom.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\junko\\hair.vtf",
+        "material": "Hair front",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/junko/hair front.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\junko\\dress.vtf",
+        "material": "Hat",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/junko/hat.vmt"
+      }
+    ],
+    "mount_warnings": [],
+    "native_parameters": {
+      "appearance_request": {
+        "bodygroups": {
+          "0": 0.0,
+          "1": 1.0
+        },
+        "format": "studio_source_appearance_request_1",
+        "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+        "skin": 0.0,
+        "source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+      },
+      "bodygroups": {
+        "Hat": [
+          "Hat.smd",
+          null
+        ],
+        "reference": [
+          "hair.smd"
+        ]
+      },
+      "bones": [
+        {
+          "name": "ParentNode",
+          "parent": -1.0
+        },
+        {
+          "name": "bip_pelvis",
+          "parent": 0.0
+        },
+        {
+          "name": "bip_spine_0",
+          "parent": 1.0
+        },
+        {
+          "name": "bip_spine_1",
+          "parent": 2.0
+        },
+        {
+          "name": "bip_neck",
+          "parent": 3.0
+        },
+        {
+          "name": "bip_head",
+          "parent": 4.0
+        },
+        {
+          "name": "Head++(HairParent)",
+          "parent": 5.0
+        },
+        {
+          "name": "HairParent",
+          "parent": 6.0
+        },
+        {
+          "name": "FrontHair1",
+          "parent": 7.0
+        },
+        {
+          "name": "FrontHair2",
+          "parent": 7.0
+        },
+        {
+          "name": "FrontHair3",
+          "parent": 7.0
+        },
+        {
+          "name": "FrontHair4",
+          "parent": 7.0
+        },
+        {
+          "name": "FrontHair5",
+          "parent": 7.0
+        },
+        {
+          "name": "FrontHair6",
+          "parent": 7.0
+        },
+        {
+          "name": "FrontHair7",
+          "parent": 7.0
+        },
+        {
+          "name": "FrontHair8",
+          "parent": 7.0
+        },
+        {
+          "name": "FrontHair9",
+          "parent": 7.0
+        },
+        {
+          "name": "Side1Steps-1_L",
+          "parent": 7.0
+        },
+        {
+          "name": "Side2Steps-1_L",
+          "parent": 17.0
+        },
+        {
+          "name": "Side1Steps-1_R",
+          "parent": 7.0
+        },
+        {
+          "name": "Side2Steps-1_R",
+          "parent": 19.0
+        },
+        {
+          "name": "Side1Steps-2_L",
+          "parent": 7.0
+        },
+        {
+          "name": "Side1Steps-2_R",
+          "parent": 7.0
+        },
+        {
+          "name": "Side1Steps-3_L",
+          "parent": 7.0
+        },
+        {
+          "name": "Side1Steps-3_R",
+          "parent": 7.0
+        },
+        {
+          "name": "1Steps-1_L",
+          "parent": 7.0
+        },
+        {
+          "name": "2Steps-1_L",
+          "parent": 25.0
+        },
+        {
+          "name": "3Steps-1_L",
+          "parent": 26.0
+        },
+        {
+          "name": "1Steps-1_R",
+          "parent": 7.0
+        },
+        {
+          "name": "2Steps-1_R",
+          "parent": 28.0
+        },
+        {
+          "name": "3Steps-1_R",
+          "parent": 29.0
+        },
+        {
+          "name": "MiddleCenter1Steps-2",
+          "parent": 7.0
+        },
+        {
+          "name": "MiddleCenter2Steps-2",
+          "parent": 31.0
+        },
+        {
+          "name": "MiddleCenter3Steps-2",
+          "parent": 32.0
+        },
+        {
+          "name": "1Steps-3_L",
+          "parent": 7.0
+        },
+        {
+          "name": "2Steps-3_L",
+          "parent": 34.0
+        },
+        {
+          "name": "3Steps-3_L",
+          "parent": 35.0
+        },
+        {
+          "name": "4Steps-3_L",
+          "parent": 36.0
+        },
+        {
+          "name": "1Steps-3_R",
+          "parent": 7.0
+        },
+        {
+          "name": "2Steps-3_R",
+          "parent": 38.0
+        },
+        {
+          "name": "3Steps-3_R",
+          "parent": 39.0
+        },
+        {
+          "name": "4Steps-3_R",
+          "parent": 40.0
+        },
+        {
+          "name": "MiddleCenter1Steps-4",
+          "parent": 7.0
+        },
+        {
+          "name": "MiddleCenter2Steps-4",
+          "parent": 42.0
+        },
+        {
+          "name": "MiddleCenter3Steps-4",
+          "parent": 43.0
+        },
+        {
+          "name": "MiddleCenter4Steps-4",
+          "parent": 44.0
+        },
+        {
+          "name": "1Steps-5_L",
+          "parent": 7.0
+        },
+        {
+          "name": "2Steps-5_L",
+          "parent": 46.0
+        },
+        {
+          "name": "3Steps-5_L",
+          "parent": 47.0
+        },
+        {
+          "name": "4Steps-5_L",
+          "parent": 48.0
+        },
+        {
+          "name": "1Steps-5_R",
+          "parent": 7.0
+        },
+        {
+          "name": "2Steps-5_R",
+          "parent": 50.0
+        },
+        {
+          "name": "3Steps-5_R",
+          "parent": 51.0
+        },
+        {
+          "name": "4Steps-5_R",
+          "parent": 52.0
+        },
+        {
+          "name": "MiddleCenter1Steps-6",
+          "parent": 7.0
+        },
+        {
+          "name": "MiddleCenter2Steps-6",
+          "parent": 54.0
+        },
+        {
+          "name": "MiddleCenter3Steps-6",
+          "parent": 55.0
+        },
+        {
+          "name": "MiddleCenter4Steps-6",
+          "parent": 56.0
+        },
+        {
+          "name": "Hat",
+          "parent": 6.0
+        },
+        {
+          "name": "bip_Gathering_L",
+          "parent": 58.0
+        },
+        {
+          "name": "Gathering1_L",
+          "parent": 59.0
+        },
+        {
+          "name": "Gathering2_L",
+          "parent": 60.0
+        },
+        {
+          "name": "Gathering3_L",
+          "parent": 61.0
+        },
+        {
+          "name": "Gathering4_L",
+          "parent": 62.0
+        },
+        {
+          "name": "bip_Gathering_R",
+          "parent": 58.0
+        },
+        {
+          "name": "Gathering1_R",
+          "parent": 64.0
+        },
+        {
+          "name": "Gathering2_R",
+          "parent": 65.0
+        },
+        {
+          "name": "Gathering3_R",
+          "parent": 66.0
+        },
+        {
+          "name": "Gathering4_R",
+          "parent": 67.0
+        }
+      ],
+      "eyeballs": [],
+      "flex_controllers": [],
+      "flex_names": [],
+      "native_appearance_choices": {
+        "bodygroups": [
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "hair.smd",
+                "vertices": 8011.0
+              }
+            ],
+            "index": 0.0,
+            "name": "reference"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "Hat.smd",
+                "vertices": 1650.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 1.0,
+            "name": "Hat"
+          }
+        ],
+        "default_skin_has_native_slot_identity": true,
+        "skin_groups": [
+          [
+            "Hair back",
+            "Hair front",
+            "Hat",
+            "pom"
+          ]
+        ]
+      },
+      "selected_bodygroup_indices": {
+        "Hat": 1.0,
+        "reference": 0.0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0.0,
+        "1": 1.0
+      },
+      "selected_skin": 0.0,
+      "skin_groups": [
+        [
+          "Hair back",
+          "Hair front",
+          "Hat",
+          "pom"
+        ]
+      ]
+    },
+    "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-01\\models\\touhou\\tamo\\junko hair.mdl",
+    "scale": 0.01905,
+    "source_file": "junko hair.mdl",
+    "source_member": null,
+    "source_profile": "standalone",
+    "source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "sourceio_version": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "standard": "studio_model_1",
+    "suggested_view": null,
+    "warnings": []
+  },
+  "peer_id": "1210404809329636788",
+  "pictures": {
+    "0": {
+      "height": 1080,
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\05-junko_hair-hat-off/writer-0.png",
+      "pixel_sha256": "fa8e0019470a809a8afaeaa4ed8fe5d86f1352fca8625e1b32ceaca4f9777a86",
+      "width": 1920
+    },
+    "24": {
+      "height": 1080,
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\05-junko_hair-hat-off/writer-24.png",
+      "pixel_sha256": "aa9bb7b55a19df94c0cae52af2cd951e037a6b170ad8259ea49bdcfefd2d03f4",
+      "width": 1920
+    }
+  },
+  "portable_world": {
+    "format": "studio_world_1",
+    "objects": [
+      {
+        "draft_frame": 0.0,
+        "format": "studio_model_1",
+        "id": "1210404809329636788",
+        "kind": "model",
+        "metadata": {
+          "import_source": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/examples/tutorials/Practice figure.glb",
+          "initial_placement": {
+            "attempts": 5.0,
+            "overlap": false,
+            "skipped_surfaces": 0.0,
+            "support": "grid",
+            "triangles": 0.0
+          },
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "name": "Practice figure.glb",
+        "parent_id": "",
+        "path": "assets/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb",
+        "pose": {
+
+        },
+        "pose_keys": [],
+        "position": [
+          2.5319032669067383,
+          -0.04999996349215507,
+          3.3666162490844727
+        ],
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+        "start_frame": 0.0,
+        "visible": true
+      },
+      {
+        "draft_frame": 0.0,
+        "format": "studio_model_1",
+        "id": "6393149745194354151",
+        "kind": "model",
+        "metadata": {
+          "external_bundle": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\compatibility\\source-1794615529-101-58857108",
+          "import_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\compatibility\\source-1794615529-101-58857108\\scene.glb",
+          "initial_placement": {
+            "attempts": 5.0,
+            "overlap": false,
+            "skipped_surfaces": 0.0,
+            "support": "grid",
+            "triangles": 0.0
+          },
+          "native_parameters": {
+            "adapter": "studio_source_1",
+            "axes": "Source Z-up to glTF Y-up via Blender exporter",
+            "case_resolved_sidecars": {
+              "junko hair.dx80.vtx": "Junko hair.dx80.vtx",
+              "junko hair.sw.vtx": "Junko hair.sw.vtx"
+            },
+            "counts": {
+              "bones": 69.0,
+              "meshes": 1.0,
+              "static_lights": 0.0,
+              "textures": 2.0
+            },
+            "limits": [
+              "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+              "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+              "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+            ],
+            "materials": [
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\junko\\hair.vtf",
+                "material": "Hair back",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/junko/hair back.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\junko\\dress.vtf",
+                "material": "pom",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/junko/pom.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\junko\\hair.vtf",
+                "material": "Hair front",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/junko/hair front.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\junko\\dress.vtf",
+                "material": "Hat",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/junko/hat.vmt"
+              }
+            ],
+            "mount_warnings": [],
+            "native_parameters": {
+              "appearance_request": {
+                "bodygroups": {
+                  "0": 0.0,
+                  "1": 1.0
+                },
+                "format": "studio_source_appearance_request_1",
+                "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+                "skin": 0.0,
+                "source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+              },
+              "bodygroups": {
+                "Hat": [
+                  "Hat.smd",
+                  null
+                ],
+                "reference": [
+                  "hair.smd"
+                ]
+              },
+              "bones": [
+                {
+                  "name": "ParentNode",
+                  "parent": -1.0
+                },
+                {
+                  "name": "bip_pelvis",
+                  "parent": 0.0
+                },
+                {
+                  "name": "bip_spine_0",
+                  "parent": 1.0
+                },
+                {
+                  "name": "bip_spine_1",
+                  "parent": 2.0
+                },
+                {
+                  "name": "bip_neck",
+                  "parent": 3.0
+                },
+                {
+                  "name": "bip_head",
+                  "parent": 4.0
+                },
+                {
+                  "name": "Head++(HairParent)",
+                  "parent": 5.0
+                },
+                {
+                  "name": "HairParent",
+                  "parent": 6.0
+                },
+                {
+                  "name": "FrontHair1",
+                  "parent": 7.0
+                },
+                {
+                  "name": "FrontHair2",
+                  "parent": 7.0
+                },
+                {
+                  "name": "FrontHair3",
+                  "parent": 7.0
+                },
+                {
+                  "name": "FrontHair4",
+                  "parent": 7.0
+                },
+                {
+                  "name": "FrontHair5",
+                  "parent": 7.0
+                },
+                {
+                  "name": "FrontHair6",
+                  "parent": 7.0
+                },
+                {
+                  "name": "FrontHair7",
+                  "parent": 7.0
+                },
+                {
+                  "name": "FrontHair8",
+                  "parent": 7.0
+                },
+                {
+                  "name": "FrontHair9",
+                  "parent": 7.0
+                },
+                {
+                  "name": "Side1Steps-1_L",
+                  "parent": 7.0
+                },
+                {
+                  "name": "Side2Steps-1_L",
+                  "parent": 17.0
+                },
+                {
+                  "name": "Side1Steps-1_R",
+                  "parent": 7.0
+                },
+                {
+                  "name": "Side2Steps-1_R",
+                  "parent": 19.0
+                },
+                {
+                  "name": "Side1Steps-2_L",
+                  "parent": 7.0
+                },
+                {
+                  "name": "Side1Steps-2_R",
+                  "parent": 7.0
+                },
+                {
+                  "name": "Side1Steps-3_L",
+                  "parent": 7.0
+                },
+                {
+                  "name": "Side1Steps-3_R",
+                  "parent": 7.0
+                },
+                {
+                  "name": "1Steps-1_L",
+                  "parent": 7.0
+                },
+                {
+                  "name": "2Steps-1_L",
+                  "parent": 25.0
+                },
+                {
+                  "name": "3Steps-1_L",
+                  "parent": 26.0
+                },
+                {
+                  "name": "1Steps-1_R",
+                  "parent": 7.0
+                },
+                {
+                  "name": "2Steps-1_R",
+                  "parent": 28.0
+                },
+                {
+                  "name": "3Steps-1_R",
+                  "parent": 29.0
+                },
+                {
+                  "name": "MiddleCenter1Steps-2",
+                  "parent": 7.0
+                },
+                {
+                  "name": "MiddleCenter2Steps-2",
+                  "parent": 31.0
+                },
+                {
+                  "name": "MiddleCenter3Steps-2",
+                  "parent": 32.0
+                },
+                {
+                  "name": "1Steps-3_L",
+                  "parent": 7.0
+                },
+                {
+                  "name": "2Steps-3_L",
+                  "parent": 34.0
+                },
+                {
+                  "name": "3Steps-3_L",
+                  "parent": 35.0
+                },
+                {
+                  "name": "4Steps-3_L",
+                  "parent": 36.0
+                },
+                {
+                  "name": "1Steps-3_R",
+                  "parent": 7.0
+                },
+                {
+                  "name": "2Steps-3_R",
+                  "parent": 38.0
+                },
+                {
+                  "name": "3Steps-3_R",
+                  "parent": 39.0
+                },
+                {
+                  "name": "4Steps-3_R",
+                  "parent": 40.0
+                },
+                {
+                  "name": "MiddleCenter1Steps-4",
+                  "parent": 7.0
+                },
+                {
+                  "name": "MiddleCenter2Steps-4",
+                  "parent": 42.0
+                },
+                {
+                  "name": "MiddleCenter3Steps-4",
+                  "parent": 43.0
+                },
+                {
+                  "name": "MiddleCenter4Steps-4",
+                  "parent": 44.0
+                },
+                {
+                  "name": "1Steps-5_L",
+                  "parent": 7.0
+                },
+                {
+                  "name": "2Steps-5_L",
+                  "parent": 46.0
+                },
+                {
+                  "name": "3Steps-5_L",
+                  "parent": 47.0
+                },
+                {
+                  "name": "4Steps-5_L",
+                  "parent": 48.0
+                },
+                {
+                  "name": "1Steps-5_R",
+                  "parent": 7.0
+                },
+                {
+                  "name": "2Steps-5_R",
+                  "parent": 50.0
+                },
+                {
+                  "name": "3Steps-5_R",
+                  "parent": 51.0
+                },
+                {
+                  "name": "4Steps-5_R",
+                  "parent": 52.0
+                },
+                {
+                  "name": "MiddleCenter1Steps-6",
+                  "parent": 7.0
+                },
+                {
+                  "name": "MiddleCenter2Steps-6",
+                  "parent": 54.0
+                },
+                {
+                  "name": "MiddleCenter3Steps-6",
+                  "parent": 55.0
+                },
+                {
+                  "name": "MiddleCenter4Steps-6",
+                  "parent": 56.0
+                },
+                {
+                  "name": "Hat",
+                  "parent": 6.0
+                },
+                {
+                  "name": "bip_Gathering_L",
+                  "parent": 58.0
+                },
+                {
+                  "name": "Gathering1_L",
+                  "parent": 59.0
+                },
+                {
+                  "name": "Gathering2_L",
+                  "parent": 60.0
+                },
+                {
+                  "name": "Gathering3_L",
+                  "parent": 61.0
+                },
+                {
+                  "name": "Gathering4_L",
+                  "parent": 62.0
+                },
+                {
+                  "name": "bip_Gathering_R",
+                  "parent": 58.0
+                },
+                {
+                  "name": "Gathering1_R",
+                  "parent": 64.0
+                },
+                {
+                  "name": "Gathering2_R",
+                  "parent": 65.0
+                },
+                {
+                  "name": "Gathering3_R",
+                  "parent": 66.0
+                },
+                {
+                  "name": "Gathering4_R",
+                  "parent": 67.0
+                }
+              ],
+              "eyeballs": [],
+              "flex_controllers": [],
+              "flex_names": [],
+              "native_appearance_choices": {
+                "bodygroups": [
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "hair.smd",
+                        "vertices": 8011.0
+                      }
+                    ],
+                    "index": 0.0,
+                    "name": "reference"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "Hat.smd",
+                        "vertices": 1650.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 1.0,
+                    "name": "Hat"
+                  }
+                ],
+                "default_skin_has_native_slot_identity": true,
+                "skin_groups": [
+                  [
+                    "Hair back",
+                    "Hair front",
+                    "Hat",
+                    "pom"
+                  ]
+                ]
+              },
+              "selected_bodygroup_indices": {
+                "Hat": 1.0,
+                "reference": 0.0
+              },
+              "selected_native_bodygroup_indices": {
+                "0": 0.0,
+                "1": 1.0
+              },
+              "selected_skin": 0.0,
+              "skin_groups": [
+                [
+                  "Hair back",
+                  "Hair front",
+                  "Hat",
+                  "pom"
+                ]
+              ]
+            },
+            "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-01\\models\\touhou\\tamo\\junko hair.mdl",
+            "scale": 0.01905,
+            "source_file": "junko hair.mdl",
+            "source_member": null,
+            "source_profile": "standalone",
+            "source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+            "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+            "sourceio_version": [
+              5.0,
+              5.0,
+              5.0
+            ],
+            "standard": "studio_model_1",
+            "suggested_view": null,
+            "warnings": []
+          },
+          "note": "Keep full native preparation bundle; only GLB and this supplied report are managed here. Native fidelity is not implied.",
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "name": "junko hair.mdl",
+        "parent_id": "",
+        "path": "assets/ac79aef9a4a86aca41edda93ad17579d38b46fe6da35663265b3d5a501d6ef6f.glb",
+        "pose": {
+
+        },
+        "pose_keys": [],
+        "position": [
+          3.4622762203216553,
+          -0.5100980401039124,
+          4.698507308959961
+        ],
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "ac79aef9a4a86aca41edda93ad17579d38b46fe6da35663265b3d5a501d6ef6f",
+        "start_frame": 0.0,
+        "visible": true
+      }
+    ]
+  },
+  "projects": {
+    "linked": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\05-junko_hair-hat-off/linked.has",
+      "sha256": "098ce7c510746a4b1212721c392b07945bd6c8ac544678db5b2d68dfe3051e15"
+    },
+    "packed": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\05-junko_hair-hat-off/packed.has",
+      "sha256": "ec497e47cd9f2a0d668a7dab8584cf6726424b32060907a7015ea005cdeba615"
+    }
+  },
+  "protected": {
+    "audio": {
+      "gain_db": 0.0,
+      "id": "666391707482254653",
+      "muted": false,
+      "path": "assets/5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9.wav",
+      "sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+      "source_in_sample": 0.0,
+      "source_name": "tone.wav",
+      "start_frame": 24.0
+    },
+    "keys": [
+      {
+        "fov": 60.0,
+        "frame": 0.0,
+        "interpolation": "ease",
+        "position": [
+          3.8187832832336426,
+          0.5696587562561035,
+          5.634960651397705
+        ],
+        "rotation_xyzw": [
+          -0.091836079955101,
+          0.16681496798992157,
+          0.01560714747756719,
+          0.98157799243927
+        ]
+      },
+      {
+        "fov": 60.0,
+        "frame": 47.0,
+        "interpolation": "ease",
+        "position": [
+          3.968783378601074,
+          0.5696587562561035,
+          5.634960651397705
+        ],
+        "rotation_xyzw": [
+          -0.091836079955101,
+          0.16681496798992157,
+          0.01560714747756719,
+          0.98157799243927
+        ]
+      }
+    ],
+    "paint": "2cf71f483fe4f2a80232ee60a1d864334914876f40cb083511413a7de238a333",
+    "pcm": "39ed1e1355a24d405a11af9cfb2a97b315a835f1636f52ac0130b93c6a0c9ae0",
+    "peer": {
+      "draft_frame": 0.0,
+      "format": "studio_model_1",
+      "id": "1210404809329636788",
+      "kind": "model",
+      "metadata": {
+        "import_source": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/examples/tutorials/Practice figure.glb",
+        "initial_placement": {
+          "attempts": 5.0,
+          "overlap": false,
+          "skipped_surfaces": 0.0,
+          "support": "grid",
+          "triangles": 0.0
+        },
+        "source_shape": {
+          "enabled": true,
+          "format": "studio_source_shape_1"
+        }
+      },
+      "name": "Practice figure.glb",
+      "parent_id": "",
+      "path": "assets/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb",
+      "pose": {
+
+      },
+      "pose_keys": [],
+      "position": [
+        2.5319032669067383,
+        -0.04999996349215507,
+        3.3666162490844727
+      ],
+      "reference_only": false,
+      "rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 1.0,
+      "sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+      "start_frame": 0.0,
+      "visible": true
+    },
+    "video": {
+      "duration_frames": 48.0,
+      "fps_den": 1.0,
+      "fps_num": 24.0,
+      "height": 1080.0,
+      "lighting_mode": "studio",
+      "visibility_fade_ms": 300.0,
+      "width": 1920.0,
+      "world_background": "black"
+    }
+  }
+}
