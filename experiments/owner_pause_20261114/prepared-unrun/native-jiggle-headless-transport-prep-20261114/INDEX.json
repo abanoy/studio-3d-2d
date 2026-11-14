@@ -1,0 +1,68 @@
+{
+  "format": "has_frozen_headless_transport_preparation_index_1",
+  "prepared_only": true,
+  "CPU_preparer_only_executed": true,
+  "Python_driver": "AST_PARSED_ONLY_NOT_IMPORTED_OR_EXECUTED",
+  "Godot_script": "UNPARSED_UNRUN",
+  "no_runtime_lease": true,
+  "source_files": {
+    "oracle_math.py": {
+      "bytes": 1601,
+      "sha256": "ad808eaba866c7bb9f103cd6dd36e78e5965d5d7332694cea2653f4abddca922"
+    },
+    "prepare_private_oracle.py": {
+      "bytes": 8167,
+      "sha256": "8054849f04f0821edb56788d622f45211c340c502df241991af6d8e5fb551095"
+    },
+    "run_headless_transport.py": {
+      "bytes": 11255,
+      "sha256": "d73cb09783471cbecf8cc10c3803fa8bc190fdab7f2326672d50f323e06cbcf7"
+    },
+    "headless_transport.gd": {
+      "bytes": 9156,
+      "sha256": "bc0130f64048249b4c658e9b880c345f9156dc4cf0d380fd03fb3886929eb002"
+    }
+  },
+  "support_files": {
+    "PUBLIC_PREPARATION.json": {
+      "bytes": 1325,
+      "sha256": "c9e401fdc6d85b069574aebc278c040d6810ea6e1b9701c5080c5d6f6b91be47"
+    },
+    "PLAN.json": {
+      "bytes": 3754,
+      "sha256": "46a5ade249ad96ac36cb7ef560b10f6ce45b446a81720f43c22ac0f142d10e8f"
+    },
+    "ATTEMPTS.json": {
+      "bytes": 1180,
+      "sha256": "34aa61c3c11945eb1843ba4df595a064acf203d814084b9b4d840db5c5465423"
+    },
+    "ROOT_LEASE_TEMPLATE.json": {
+      "bytes": 602,
+      "sha256": "828b9695dd47c56c833ebc2a02658c7f17c25a0bbd0ad99183107da397e63816"
+    }
+  },
+  "local_private_only": {
+    "preparation_folder": "private-preparation-20261114T042943Z",
+    "private_oracle": {
+      "bytes": 4932243,
+      "sha256": "4065a47ed7da9a53d18f42e326d668d82060028301cd691864b1e92ea9dcdfe4",
+      "publish": false
+    },
+    "input_lock": {
+      "bytes": 47902,
+      "sha256": "d3043cd22d98d8b8dbb2fac9c0a11596ba8644bf19f3b82dcc8c6aaef98ff76b",
+      "pinned_files": 211,
+      "publish": false
+    }
+  },
+  "proposed_checks": 41588,
+  "configurations": 220,
+  "source_conversion_scales_qualified": [
+    0.01905
+  ],
+  "uniform_model_root_scales_to_measure": [
+    1.0,
+    2.0
+  ],
+  "new_Solver_or_main_changes": false
+}

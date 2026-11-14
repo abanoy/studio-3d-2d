@@ -1,7 +1,21 @@
 # HAS — consolidated master reference for resuming work
 
-**Updated November 13, 2026. The owner directed continued SFM extra-feature work
-while busy. Manual acceptance checks do not stop this implementation work.**
+**Paused November 13, 2026 at the owner's request. Do not resume implementation,
+tests or participation requests until the owner resumes.**
+
+The latest f380 complete retry was **USER-CANCELLED / INCOMPLETE**, after
+41m47.124s. It passed the prior helper guard and later contact/selection/motion/
+drawing scopes before the owner called the day. All1008functional hashes/HEAD
+match. The exact owned Python/test tree was terminated on request; both exact
+coordinator identities and owned runtime commands are absent. The PC was not
+shut down. Raw runner status remainsfailed/exit-1; this is not a new observed
+software failure or a full PASS. Final media/recovery completion is unverified.
+[Pause receipt](benchmarks/windows_owner_pause_2026-11-13.json).
+
+[Concrete pickup](NEXT_SESSION_PLAN_2026-11-13_SFM.md) records accomplished work,
+prepared/unrun review and pose probes, private retained files and the next fresh
+full run. The new review is not built. All old full-PASS recipes pinned to the
+interrupted run are ineligible and need reviewed successors after resumption.
 
 Newest full run at c4d7674 is **FAILED**, after840.186023seconds: the older
 helper-preview provenance manifest refuses the changed helper-editor bytes.

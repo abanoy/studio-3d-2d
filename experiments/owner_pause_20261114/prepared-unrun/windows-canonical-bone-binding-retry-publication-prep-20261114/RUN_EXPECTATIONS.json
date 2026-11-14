@@ -1,0 +1,60 @@
+{
+  "format": "has_canonical_bone_binding_publication_expectations_1",
+  "source_commit": "f380729cb170682068017b0d4c29b5f8425cdd14",
+  "run_name": "windows-canonical-bone-binding-20261114T040946652",
+  "functional_source_entries": 1008,
+  "source_before_sha256": "c32bf85ae7ca164e83951a0ce0a35c24f817ff0cb54b39c0f6200f2102b06a87",
+  "launch_sha256": "fd2f0a82e345802f4ef68521a70d57ef38ecac74902376812e07b5a3ac5a3566",
+  "children_observation_sha256": "5bf60c1d485679d9ba3c7ec8df3f22c4c26baadd50f9c91f19915dc357d4418e",
+  "children_observation_format": "has_canonical_live_child_observation_1",
+  "expected_result_entries": 157,
+  "expected_core_process_groups": 36,
+  "expected_root_movie_count": 21,
+  "coordinator_pid": 21696,
+  "coordinator_creation_utc": "2026-11-14T04:09:46.6709962Z",
+  "python_pid": 13300,
+  "python_creation_utc": "2026-11-14T04:09:47.1713373Z",
+  "suite_python_command": "\"C:\\Program Files\\Python313\\python.exe\" -u tests/verify.py",
+  "foundation_checks": 167,
+  "separate_jiggle_cpu_checks": 66,
+  "separate_crosswalk_cpu_checks": 77,
+  "separate_bone_bindings_headless_checks": 96,
+  "separate_source_import_owner_checks": 53,
+  "result_registry_sha256": "1507bc49b1daaef464e0af9c2c20f2d91aa4690b46d0490f3c1b0afffb95936f",
+  "scoped_native_packet": "output/sfm-bone-bindings-publication-20261114",
+  "scoped_native_packet_index_sha256": "f3cf7c165ded61e28e3dc909a66dce28f2d8b6f098bd9e2052614ca731038c3b",
+  "scoped_native_payload_files": 159,
+  "scoped_native_payload_bytes": 2257455,
+  "receipt_counts": "Discover only at terminal. Headless79+17 creates no private graphics receipt; exactly one source-registered Krita cancellation exit2 is admissible.",
+  "prepared_while_running": true,
+  "executed_against_running_run": false,
+  "prior_failed_EE_run_status": "FAILED_permanent_not_combined",
+  "workspace_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+  "prior_failed_c4d_run_status": "FAILED_permanent_not_combined",
+  "reviewed_provenance_delta": {
+    "packet": "experiments/helper_preview_review_refresh_20261114",
+    "INDEX_sha256": "f9889c708461025a371068e7b8fe6acdf0345bb103a1ffdd8f3e4e4a4c42acb0",
+    "payload_files": 37,
+    "payload_bytes": 127758,
+    "source_baseline": "c4d767489a43a7e8e38c5251be07814b1795d1a9",
+    "canonical_source_files": 1008,
+    "byte_equal_files": 1006,
+    "permitted_changes": [
+      {
+        "path": "tests/helper_preview_port_files.json",
+        "failed_full_raw_sha256": "ce051baaef5ed7600a93269869f3075ecec88cbf922399abb08bb542e094bd3c",
+        "reviewed_retry_raw_sha256": "0446c44d503a6605155ed0553f70ba0462a0cb64a29b25dda7c39ca81717c0cf",
+        "changed": true
+      },
+      {
+        "path": "tests/verify_helper_preview.py",
+        "failed_full_raw_sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+        "reviewed_retry_raw_sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50",
+        "changed": true
+      }
+    ],
+    "scoped_source_revision": "7477ed32dc5c43324783f76736164553bb4a79c5",
+    "claim": "Scoped native4 run remains a distinct working-source run. All canonical app/runtime/harness files match; only these two reviewed default provenance-test files differ. No full native fidelity or native solver claim."
+  },
+  "helper_additional_TOP_dependencies_sha256": "85f257c778a7635996e4677371d928123412a32db82ca9578cc5b1561593999f"
+}

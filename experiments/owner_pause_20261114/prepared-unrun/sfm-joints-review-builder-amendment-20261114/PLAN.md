@@ -1,0 +1,13 @@
+# SFM joints review builder amendment — UNRUN
+
+This output-only successor preserves the original preparation in `output/sfm-joints-review-builder-prep-20261114`. Its script SHA256 is `64e200262d4337f83440fc7a24516cbf165bf9c959190cafae7fcc247f611fb2`; its INDEX and README remain unchanged. `PRIOR-PACKET.json` records every prior file's bytes and hash before this successor was created.
+
+The new builder admits only commit `f380729cb170682068017b0d4c29b5f8425cdd14`, complete run `output/windows-canonical-bone-binding-20261114T040946652` and that run's exact authoritative host-termination path. The run must be passed, source-unchanged and authoritatively closed. These gates run before any review-folder creation. Current HEAD must still equal that commit, with no dirty or untracked functional sources. No earlier failed complete run is eligible.
+
+`--allow-checkout-eol` now admits CRLF/LF equivalence only for the validator's exact known text suffixes plus five explicit text paths: `tests/blank`, `tests/krita_fixture/has_fixture.desktop`, `tools/docker/sourceio_metadata.Dockerfile`, `tools/docker/sourceio_worker.Dockerfile` and `tools/krita-runtime.Dockerfile`. Every other file must be byte-identical to its committed Git blob. Existing source-context evidence independently checked all 1,008 functional files: 216 byte-identical, 790 text-only line-ending differences and exactly the two declared test-guard changes. Actual binary content already matched; this amendment tightens future admission.
+
+The actual four-case verification receives its full frozen bytes/mtime/hash identity check before and after JSON reading. The new build report also records exact builder-code, input-lock and README-template identities; those files are rechecked at the end. The matching validator successor requires that provenance and rechecks it after startup validation.
+
+The copied-MDL table remains in the owner README. The source-copy wording now accurately refers to the SourceIO folder under `Dependencies`, and the builder's final README sentence points to the table. There remain exactly five entry BATs. No sources, previous review, installed Studio, shared tools, profiles or recovery folders are overwritten or deleted. The default copy includes the unchanged 495 native-family files totaling451,266,730 bytes and 574 local SourceIO files.
+
+This script has only been AST-parsed and source-reviewed. Neither builder version, the validator, an application nor a native conversion has been executed for this preparation. Root must review the new INDEX and grant filesystem preparation only after the eligible full run closes; final-location graphics validation remains a separate private lease. The exact future command is in `command-f380.json`.

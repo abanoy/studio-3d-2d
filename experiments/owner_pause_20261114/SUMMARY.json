@@ -1,0 +1,302 @@
+{
+  "format": "has_owner_requested_pause_20261114_1",
+  "status": "PAUSED_BY_OWNER",
+  "source_commit": "f380729cb170682068017b0d4c29b5f8425cdd14",
+  "full_verification": "USER_CANCELLED_INCOMPLETE_NOT_PASS",
+  "raw_runner_status": "failed",
+  "raw_runner_exit": -1,
+  "elapsed_seconds": 2507.124359,
+  "functional_sources": 1008,
+  "source_and_head_unchanged": true,
+  "owned_coordinator_and_python_absent": true,
+  "owned_runtime_commands_absent": true,
+  "owned_test_tree_terminated_on_owner_request": true,
+  "computer_shutdown": false,
+  "new_full_software_failure_observed": false,
+  "partial_log_sha256": "8cf82fb44a018b1a8bd9d185c74bd8005cff83f433e77506f35da35524d1fc8f",
+  "partial_progress": "Fresh run passed prior helper guard208CPU/266GPU and later contact/selection/transform/viewport/motion/drawing checks before owner pause; final audio/media/recovery completion not certified.",
+  "preserve_failures": "Earlier EE audio full and c4d review-guard full remain FAILED.",
+  "unrun_preparations": [
+    {
+      "folder": "windows-canonical-bone-binding-retry-publication-prep-20261114",
+      "files": [
+        {
+          "name": "audit_receipts.py",
+          "sha256": "93f0e12555627a4d82ed7b64a912a585023232659511f441ea442fffb5a53056",
+          "bytes": 13347
+        },
+        {
+          "name": "build_consolidated_packet.py",
+          "sha256": "bc08fead5ff745522e7dd4c83d14f4d4e244c09aca9218db36e551ee10d68d9c",
+          "bytes": 14553
+        },
+        {
+          "name": "finalize_receipt_index.py",
+          "sha256": "3f4c6e585fa5568356a35c0ca10d0074884c6e86a8d4ca52001c7dbca9776f1f",
+          "bytes": 4434
+        },
+        {
+          "name": "ORIGINS.json",
+          "sha256": "d00bdb0e2fd37c2376251a9dd239386430de43c6771f0bb98e9014f2ef8846d8",
+          "bytes": 5177
+        },
+        {
+          "name": "preflight_terminal.py",
+          "sha256": "8bf6866c05b9fcb5102a311f29ee893776b55a9877931a366e4f2dc256f2f036",
+          "bytes": 4717
+        },
+        {
+          "name": "publication_gates.py",
+          "sha256": "be806cab19dfa38beb54286a7acd1b05d142ecd085cced3ca98a21f091ba0852",
+          "bytes": 18620
+        },
+        {
+          "name": "README.md",
+          "sha256": "83936603bc7bc7dc5cbdb2d5fba4424e2f9dfec8635c5e949f2f0978487da84f",
+          "bytes": 6207
+        },
+        {
+          "name": "RECIPE_INDEX.json",
+          "sha256": "34a7af4bf9d620d71dfd528049886ff027507653f2d72ca41e91e448fc08c784",
+          "bytes": 2175
+        },
+        {
+          "name": "RESULT_REGISTRY.json",
+          "sha256": "1507bc49b1daaef464e0af9c2c20f2d91aa4690b46d0490f3c1b0afffb95936f",
+          "bytes": 6348
+        },
+        {
+          "name": "RUN_EXPECTATIONS.json",
+          "sha256": "2a857e16acb23915e31c56aaf90b466f268e9796922a6bed7f2de0b5dc24d8a3",
+          "bytes": 3479
+        },
+        {
+          "name": "STATIC_REVIEW.json",
+          "sha256": "5dfc844dbeca2184cf46dd62324f707dd7ada0451f127727f847e5d2b3fd2e3a",
+          "bytes": 3485
+        },
+        {
+          "name": "summarize_canonical.py",
+          "sha256": "23bdefc1f31b2c6f129d34705868e23b22655a6c741be950f2eab3286a28b505",
+          "bytes": 31077
+        }
+      ],
+      "execution": "UNRUN and pinned prior-full context is INELIGIBLE after owner cancellation"
+    },
+    {
+      "folder": "sfm-joints-review-builder-amendment-20261114",
+      "files": [
+        {
+          "name": "build_after_full.py",
+          "sha256": "38f144a2625b4a84acdda0334d537fc5994b7b9bfb3c959f7e44aed0dd3f2df9",
+          "bytes": 19750
+        },
+        {
+          "name": "command-f380.json",
+          "sha256": "63b3131801e6cbd196230abf50779e35437df1feae29f6ea38bbc320df59271e",
+          "bytes": 1082
+        },
+        {
+          "name": "INDEX.json",
+          "sha256": "cefa454ff3edf8a9ec1674a985528c5d9c18c651a829334dc788282bb556f285",
+          "bytes": 2131
+        },
+        {
+          "name": "input-lock.json",
+          "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6",
+          "bytes": 263448
+        },
+        {
+          "name": "PLAN.md",
+          "sha256": "27a2792895c2077d35ebc0fdb90dc21b8685f2b51a5c169724733ae5b58dfc5a",
+          "bytes": 2752
+        },
+        {
+          "name": "PRIOR-PACKET.json",
+          "sha256": "368a9df3001119b6280c7032960a7c7e89d1d83fc13ff3261e5afab314890c43",
+          "bytes": 1306
+        },
+        {
+          "name": "README.template.md",
+          "sha256": "d89ff18ddc0804b3c7a57cdc26991486c853ef809aed3bcffb17eb23fbfead21",
+          "bytes": 3345
+        }
+      ],
+      "execution": "UNRUN and pinned prior-full context is INELIGIBLE after owner cancellation"
+    },
+    {
+      "folder": "sfm-joints-final-validator-amendment-20261114",
+      "files": [
+        {
+          "name": "AMENDMENT.md",
+          "sha256": "1475e5bac26a704e1413078d83892b9c76f633d04ed575f9e85b38a856d10ca2",
+          "bytes": 1581
+        },
+        {
+          "name": "COUNT_SOURCE_AUDIT.json",
+          "sha256": "7a03242af04ae3cceec01af49dadfaf7257a592ad384bc3521eac231207ca011",
+          "bytes": 828
+        },
+        {
+          "name": "INDEX.json",
+          "sha256": "a07b8ae042a48a996b7153a4728c8db925e963d99a2f294a52e93e5aeaa146c9",
+          "bytes": 3655
+        },
+        {
+          "name": "PLAN.md",
+          "sha256": "31e22e62f17292f4dae54371cc58b5f8d2e4d6455094870c106178852e6e5ddd",
+          "bytes": 5978
+        },
+        {
+          "name": "PRIOR-PACKET.json",
+          "sha256": "c560e04db1ed742db77339451da5556b971c368ac57d34df4fe7d9687b7c12be",
+          "bytes": 1743
+        },
+        {
+          "name": "reference-lock.json",
+          "sha256": "e5dbbbd1cc21d143fc9c6d56996b6aec97b1b0f9167f334c274a77d246ab9413",
+          "bytes": 7704
+        },
+        {
+          "name": "release-context.json",
+          "sha256": "0dcc06d59997c721931b84b712389ed2312605c34710be5eb664e68dd7605fda",
+          "bytes": 856
+        },
+        {
+          "name": "replay.gd",
+          "sha256": "5ece753368df789832a2886dd8abbe18b696951c1b1411475b61bf7d245ec697",
+          "bytes": 18001
+        },
+        {
+          "name": "SOURCE_CONTEXT_AUDIT.json",
+          "sha256": "9fbc432cb7d9ce9277a931507d0b3b8d7321cd86223301aa56b42411d444083f",
+          "bytes": 1780
+        },
+        {
+          "name": "validate_after_full.py",
+          "sha256": "84dfe1d32f4f82eecd961c5fdccffe00dfbef22750d73b3d8d79b3ace9619f1f",
+          "bytes": 23916
+        }
+      ],
+      "execution": "UNRUN and pinned prior-full context is INELIGIBLE after owner cancellation"
+    },
+    {
+      "folder": "sfm-joints-review-independent-audit-20261114",
+      "files": [
+        {
+          "name": "AMENDMENT_AUDIT.json",
+          "sha256": "eb8c88b91878eca822c855030c707b2926a570ff9cc8c68faaa8c502dc672b02",
+          "bytes": 3843
+        },
+        {
+          "name": "INITIAL_AUDIT.json",
+          "sha256": "27850bbd0c9f6bfc45213468974c73804d4989ff4db97fc51136eae50a612a7d",
+          "bytes": 4412
+        }
+      ],
+      "execution": "UNRUN and pinned prior-full context is INELIGIBLE after owner cancellation"
+    },
+    {
+      "folder": "native-jiggle-headless-transport-prep-20261114",
+      "files": [
+        {
+          "name": "ATTEMPTS.json",
+          "sha256": "34aa61c3c11945eb1843ba4df595a064acf203d814084b9b4d840db5c5465423",
+          "bytes": 1180
+        },
+        {
+          "name": "headless_transport.gd",
+          "sha256": "bc0130f64048249b4c658e9b880c345f9156dc4cf0d380fd03fb3886929eb002",
+          "bytes": 9156
+        },
+        {
+          "name": "INDEX.json",
+          "sha256": "274461475b18dd272f5929d8201ed30fae3bf15b4ff4bc474cc6bfbde569e390",
+          "bytes": 2155
+        },
+        {
+          "name": "oracle_math.py",
+          "sha256": "ad808eaba866c7bb9f103cd6dd36e78e5965d5d7332694cea2653f4abddca922",
+          "bytes": 1601
+        },
+        {
+          "name": "PLAN.json",
+          "sha256": "46a5ade249ad96ac36cb7ef560b10f6ce45b446a81720f43c22ac0f142d10e8f",
+          "bytes": 3754
+        },
+        {
+          "name": "prepare_private_oracle.py",
+          "sha256": "8054849f04f0821edb56788d622f45211c340c502df241991af6d8e5fb551095",
+          "bytes": 8167
+        },
+        {
+          "name": "PUBLIC_PREPARATION.json",
+          "sha256": "c9e401fdc6d85b069574aebc278c040d6810ea6e1b9701c5080c5d6f6b91be47",
+          "bytes": 1325
+        },
+        {
+          "name": "ROOT_LEASE_TEMPLATE.json",
+          "sha256": "828b9695dd47c56c833ebc2a02658c7f17c25a0bbd0ad99183107da397e63816",
+          "bytes": 602
+        },
+        {
+          "name": "run_headless_transport-attempt2-ast-rejected.py",
+          "sha256": "e93ca41f920c9c58496b60a1cb279047d6a6ada306d2ab1a6a8ee26ac8e9441b",
+          "bytes": 11165
+        },
+        {
+          "name": "run_headless_transport.py",
+          "sha256": "d73cb09783471cbecf8cc10c3803fa8bc190fdab7f2326672d50f323e06cbcf7",
+          "bytes": 11255
+        }
+      ],
+      "execution": "UNRUN and pinned prior-full context is INELIGIBLE after owner cancellation"
+    },
+    {
+      "folder": "native-jiggle-headless-independent-audit-20261114",
+      "files": [
+        {
+          "name": "SOURCE_LOCK_AUDIT.json",
+          "sha256": "e3343269d3919ffc70bfac80e53b8ac8fcfe9fc7abf10306da95013fe5e9d0bb",
+          "bytes": 4749
+        }
+      ],
+      "execution": "UNRUN and pinned prior-full context is INELIGIBLE after owner cancellation"
+    },
+    {
+      "folder": "old-native-exclusive-read-prep-20261114",
+      "files": [
+        {
+          "name": "INDEX.json",
+          "sha256": "378f8b9da63fa52c056a65a8dca5d43dc1a70e3843ceba6ff14bad848db269a8",
+          "bytes": 1815
+        },
+        {
+          "name": "probe_after_release.py",
+          "sha256": "d418a00ac8f722fccae905c3707c96599eadf68b254542b326012396fed63550",
+          "bytes": 14404
+        },
+        {
+          "name": "README.md",
+          "sha256": "75adbed658ff18fe2312c009d378b4e36a27dfdb8fac4158a2b180aea6029c9b",
+          "bytes": 4603
+        },
+        {
+          "name": "root-release.template.json",
+          "sha256": "ca8e29e84bb9731f25e4ec975fd51837ae76f0c43490a1ffd47ead5afe144612",
+          "bytes": 770
+        }
+      ],
+      "execution": "UNRUN and pinned prior-full context is INELIGIBLE after owner cancellation"
+    }
+  ],
+  "review_package_built": false,
+  "proposed_final_review_checks": 168,
+  "proposed_headless_transport_checks": 41588,
+  "native_Source_solver_implemented": false,
+  "formal_acceptance": "55/62 unchanged",
+  "implementation": "52/54 unchanged",
+  "cleanup": "NONE; all originals/stages/shared tools/current useful runs/reviews/recovery/private oracles retained",
+  "private_storage": "Full native artwork, GLB/HAS/media, full rest/fingerprints, native oracle/private-preparation INPUT_LOCK and complete SDK source remain local; no private data copied into this packet.",
+  "resume": "Owner must resume. Fetch latest main/read master+history. Start fresh complete Windows run with current exact context; do not admit paused f380 run or execute its PASS-gated recipes. Regenerate/review successors for actual future commit/run/host proof, then build/replay review and optionally run headless transport."
+}

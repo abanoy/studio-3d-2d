@@ -71,6 +71,11 @@
           "kind": "test_result",
           "path": "docs/benchmarks/windows_helper_review_guard_2026-11-13.json",
           "scope": "New c4d complete default FAILED after14m0.186s at intentional helper-reviewed-source guard, before0CPU/graphics/snapshot;1008functional sources/HEAD unchanged and exact coordinators closed. Provenance review/scoped208+266 and fresh full required; old full PASS not substituted."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_owner_pause_2026-11-13.json",
+          "scope": "Owner stopped f380 complete run after41m47.124s;1008functional files/HEAD unchanged. Prior helper208/266 and later scopes pass before cancellation; final complete/media/recovery result unverified. Exact owned tree terminated onrequest, noownedruntime remains, PCnotshutdown. This is USER_CANCELLED_INCOMPLETE, not PASS or a new observed software failure."
         }
       ],
       "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",

@@ -1,0 +1,23 @@
+{
+  "format": "has_headless_transport_preparation_history_1",
+  "runtime_or_Godot_or_driver_executed": false,
+  "preparations": [
+    {
+      "folder": "private-preparation-20261114T042809Z",
+      "status": "SUPERSEDED_UNRUN",
+      "reason": "Driver acceptance was tightened to derive counts from the locked oracle rather than unpinned public metadata."
+    },
+    {
+      "folder": "private-preparation-20261114T042920Z",
+      "status": "AST_REJECTED_UNRUN",
+      "reason": "Identifier replacement merged tokens expected_configurationsand/expected_checksand. AST caught syntax failure before any driver/engine launch; CPU-only preparer still ran because the shell continued. Rejected driver source retained. The preparer now AST-checks all3Python sources before creating a new oracle."
+    },
+    {
+      "folder": "private-preparation-20261114T042943Z",
+      "status": "CURRENT_AST_CHECKED_UNRUN",
+      "reason": "Corrected driver/preparer sources; no Godot parser or runtime acceptance implied."
+    }
+  ],
+  "rejected_source": "run_headless_transport-attempt2-ast-rejected.py",
+  "private_oracle_fingerprint_identical_across_preparations": true
+}

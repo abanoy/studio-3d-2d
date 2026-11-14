@@ -1,0 +1,61 @@
+{
+  "format": "has_independent_headless_transport_source_lock_audit_1",
+  "verdict": "GO_FOR_FUTURE_ROOT_LEASE_GATED_PARSE_AND_RUN; current full remains active/ineligible",
+  "source_commit": "f380729cb170682068017b0d4c29b5f8425cdd14",
+  "required_full_run": "output/windows-canonical-bone-binding-20261114T040946652",
+  "packet_INDEX_sha256": "274461475b18dd272f5929d8201ed30fae3bf15b4ff4bc474cc6bfbde569e390",
+  "source_support_payloads_verified": 8,
+  "private_lock_sha256": "d3043cd22d98d8b8dbb2fac9c0a11596ba8644bf19f3b82dcc8c6aaef98ff76b",
+  "private_oracle_sha256": "4065a47ed7da9a53d18f42e326d668d82060028301cd691864b1e92ea9dcdfe4",
+  "private_oracle_bytes": 4932243,
+  "private_pin_count": 211,
+  "pinned_bytes": 181825491,
+  "all211_size_mtime_sha_and_nonreparse_checks_passed": true,
+  "app_source_hashes_joined_to_immutable_full_source_before": 200,
+  "src_files": 197,
+  "source_entrypoints": 3,
+  "Python_AST_scripts": 3,
+  "candidate_modules_imported_or_executed": false,
+  "Godot_parse_or_run": false,
+  "process_queries_or_mutations": false,
+  "private_coordinates_or_lock_copied": false,
+  "proposed_measurements": {
+    "pose_cases": 55,
+    "root_cases": 4,
+    "configurations": 220,
+    "pose_global_transform_comparisons": 15180,
+    "rest_global_transform_comparisons": 15180,
+    "native_local_Z_tip_comparisons": 10780,
+    "reset_checks": 440,
+    "baseline_checks": 8,
+    "total": 41588,
+    "source_conversion_scale": 0.01905,
+    "uniform_model_root_scales": [
+      1.0,
+      2.0
+    ]
+  },
+  "math_source_review": [
+    "Oracle reads raw native MDL v49 locals at bone216-byte records pos32/quaternion44 and parent+4; native rule type5/rule-relative pointer yields original length at prefix+4. MDL/GLB identity is fixed.",
+    "Oracle composes independent row-major quaternion/TRS native FK and explicit leftC conversion, then separate authored rootW. It never reads Godot or GLB rest matrices and does not call application pose code.",
+    "Signed XYZ controls on5actuators, parent17/26 local translations and paired parent-child rotations exercise rotation order, hierarchy propagation, root translation/rotation and uniform root scaling.",
+    "Translation offsets are parent-local HAS model units; root scales1/2 are distinct from the single .01905 source conversion scale. No conversion-scale sweep is implied.",
+    "Actual Model.apply uses base origin+position and base rotation*delta quaternion, then its normal root transform. Probe oracle matches that declared operation while deriving every native rest from raw input.",
+    "Each configuration compares all69 pose/global and69 immutable rest transforms plus49 native-localZ tips. Rest references repeat across55 poses per root as an immutability control; no independent-statistics count is claimed.",
+    "Neutral reset compares actor data, authored keys, root transform, immutable base/rest and all69 poses exactly. No live simulation state is admitted. No full Studio app, Undo history or world-document controller is instantiated; PoseEditor is constructed only for the actual pure definition method."
+  ],
+  "failure_source_review": [
+    "Driver requires explicit execution flag, approved Python/engine, exact211pin SHA/mtime/size, root lease bound to INPUT_LOCK SHA, exact passedf380 full/source-before-after and raw-bound authoritative host closure before even parser invocation.",
+    "Separate parse/run phases use real headless Dummy engine and retainedPopen with bounded watchdog/timeout, strict stdout/stderr/engine error/leak gates and owned-only termination on failure.",
+    "Fresh output and result identity/count/reset contract refuse stale artifacts; complete locked inputs/HEAD/lease/full proof are rechecked after execution. Failed outputs are retained.",
+    "GDScript declaration review found no obvious Variant inference parser blocker; actual Godot parsing remains mandatory."
+  ],
+  "qualification_limits": [
+    "All41588 comparisons and220 configurations are proposed and UNRUN. Source/lock GO is not a runtime pass.",
+    "No posed skin vertices, rendered geometry, GUI/world-document loading, parenting a world object, native save/persistence, dynamics, Source solver values or artist/native fidelity is qualified.",
+    "Only source conversion.01905 and proposed model root scales1/2 are in scope.",
+    "Native localZ tip transport is a geometric axis/length test, not a native jiggle solver translation.",
+    "PRIVATE_ORACLE and INPUT_LOCK stay LOCAL and outside Git/public packets. Public review retains counts/hashes/max errors only.",
+    "Full terminalPASS plus actual root lease and unchanged input identities remain required before any parse/run."
+  ]
+}
