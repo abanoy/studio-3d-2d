@@ -4785,3 +4785,22 @@ and reader refusals for essential new data without silently dropping information
 Read-only source/document review and documentation changes only. No tests, app,
 training, importer/schema implementation, old-test upload or cleanup occurred.
 Goal stays paused; formal 55/62 acceptance and 52/54 implementation are unchanged.
+
+
+## 2026-11-14 — Record six-foot human baseline at HAS scale 1
+
+The owner sets six feet (1.8288 m) as the target height at user-facing HAS scale 1
+for complete standard-proportion human imports, regardless of native source
+height. The pickup, master section 16, standard-model and height/scale guides
+record this future standardization rule. Preserve uniform proportions, source
+measurements and provenance; keep source conversion, normalization and relative
+artist scale separate while retaining metre-based world units.
+
+Read-only review confirms today's six-foot review is opt-in/off each launch and
+changes ordinary root scale from visible neutral extent. It does not yet provide
+a canonical six-foot asset at scale 1. Plan an import basis/derived asset with
+appropriate complete-human measurement, component alignment and physics/skin/
+save validation. Partial parts, props/maps and uncertain/nonstandard figures
+must not be blindly fitted; existing HAS scenes and authored contacts remain
+intact. No implementation, new tests, app runs or cleanup occurred. Goal remains
+paused; formal acceptance 55/62 and implementation 52/54 are unchanged.

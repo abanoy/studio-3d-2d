@@ -1,5 +1,14 @@
 # Optional character height review - development
 
+**November 14, 2026 owner direction — planned:** complete standard-proportion
+human imports should target six feet (1.8288 m) at user-facing HAS scale 1.
+This is a normalized asset reference, separate from source units and the artist's
+relative scale. The opt-in root-scaling implementation below does not yet provide
+that baseline/default. World units remain metres. Preserve proportions and
+originals; partial models, props/maps and uncertain/nonstandard figures require
+appropriate separate handling. See the current pickup's six-foot baseline plan
+and RESUME_MASTER_PLAN.md section 16; no behavior changed with this note.
+
 Enable **Options > Offer character height matching on model import**. It starts
 off every launch. Off means no extra height analysis or adjustment. The choice
 survives New/Open during that launch and travels with the import request through

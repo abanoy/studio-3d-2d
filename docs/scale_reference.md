@@ -1,5 +1,12 @@
 # Optional human/map size reference
 
+**November 14, 2026 clarification — future target:** standard-proportion complete
+human models should import toward six feet (1.8288 m) at user-facing HAS scale 1.
+Keep source units/normalization separate from relative scale and retain metre
+world units. This supersedes the unsettled default policy in the historical
+discussion below; the current opt-in implementation remains unchanged. See
+height_import.md and the current pickup for the implementation gap and exclusions.
+
 Development now offers [opt-in character height review](height_import.md) before
 placement and physics. It uses uniform root scale and an explicit keep-original
 choice. Partial models and uncertain proportions are protected. The audit below

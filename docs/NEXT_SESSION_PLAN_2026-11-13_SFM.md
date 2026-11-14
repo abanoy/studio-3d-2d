@@ -11,6 +11,9 @@ implementation, tests, training, review builds or cleanup.
 on HAS's own designated model representation. See the standardization and
 capability-checklist plan below; it is planned work, not a newly shipped importer.
 
+The owner also defines the human reference: 6 feet (1.8288 m) at HAS user scale 1,
+targeted during import of complete standard-proportion human models. See below.
+
 ## Completed and pushed
 
 - Application checkpointc4d7674: normal conversion retains a bounded inactive
@@ -315,3 +318,42 @@ schema change or new import support was implemented by this documentation update
 Existing contract anchors: src/model.gd; docs/world_format.md;
 docs/asset_packages.md; docs/has_format.md. Existing independent model/map
 packages already use the `.has` container; do not imply they require a new format.
+
+## November 14 — Six-foot human baseline at HAS scale 1
+
+Owner direction: attempt to normalize complete models with standard human
+proportions to **6 feet = 1.8288 metres at user-facing HAS scale 1** on import.
+Different native source heights/units must not make scale 1 mean a different
+reference height for otherwise standard human models. Relative scale remains
+editable: 0.5 is 3 feet, 1 is 6 feet, 2 is 12 feet for that normalized reference.
+Keep metre-based world units; do not redefine one world unit as six feet.
+
+Current code already has SIX_FEET=1.8288 and an opt-in height review, off by
+default each launch (src/character_height.gd; src/import_height_review.gd;
+src/app.gd). It measures visible neutral extent, including hats/hair/shoes, and
+sets ordinary root scale to original_scale * target / measured_height. This
+does not yet establish the requested default import target or a normalized
+asset whose artist-facing scale starts at 1. Existing scoped results in
+docs/height_import.md remain historical; no new tests ran for this clarification.
+
+After resume, make this a source-independent standardization check. Separate
+source-unit conversion, normalization factor and artist-relative scale, with
+source hash, original dimensions and measurement/provenance retained. Choose
+an import basis or derived-asset representation only after checking existing
+GLB, skin/inverse-bind, root/parent, physics and save contracts. Do not simply
+reset the current numeric root scale to 1 or double-apply the old fit factor.
+
+Use a reliable complete neutral human reference, account for body orientation
+and accessories, and use uniform scaling without stretching body proportions.
+Do not infer body height solely from the highest hat/hair/wing or fit a separate
+head/skirt/prop/map to six feet. Preserve intentionally unusual proportions and
+leave uncertain cases explicit. Matched components must share the parent model's
+normalization basis. Existing models, animations, foot/contact anchors, peers,
+cameras, drawings and audio must not be retroactively resized.
+
+Validate complete ordinary humans from different source families/heights at
+scale 1; relative-scale changes; stylized/partial/map exclusions; parent/root
+transforms; colliders/springs/fans and attachment alignment; Undo/Redo; packed/
+linked save and cold Open/relink without fitting twice; and preview/export
+agreement. This is planned work only: no default, schema, scale behavior or
+existing artwork changed during the documentation update.

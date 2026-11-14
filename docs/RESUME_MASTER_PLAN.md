@@ -11,6 +11,8 @@ and the November 14 additions in the [pickup](NEXT_SESSION_PLAN_2026-11-13_SFM.m
 The owner's additional standardization direction is in section 15: one native
 HAS model representation for every source family, enriched beyond source-format
 round-trip limits, with roughly 200 capability/repair checks as a design target.
+Section 16 records the next clarification: standard human imports should target
+six feet (1.8288 m) at HAS user scale 1, independently of original source size.
 
 The latest f380 complete retry was **USER-CANCELLED / INCOMPLETE**, after
 41m47.124s. It passed the prior helper guard and later contact/selection/motion/
@@ -1467,3 +1469,23 @@ existing project semantics rather than silently dropping data or gratuitously
 breaking readers. Detailed scope and fixture gates are in the current pickup and
 the future-direction note in standard_model.md. Implementation remains paused;
 no new importer, schema, repair engine or 200-item validator is claimed.
+
+## 16. Standard human reference: six feet at HAS scale 1 — November 14
+
+The owner defines 6 feet (exactly 1.8288 metres) as user-facing HAS scale 1 for
+complete standard-proportion human models, to be targeted during import across
+source families and original heights. Apply a uniform normalization, retaining
+proportions, source dimensions and provenance. Relative scale remains editable;
+0.5/1/2 correspond to 3/6/12 feet for the normalized reference. World units remain
+metres; unit conversion, normalization and artist-relative scale are separate.
+
+The existing height review is opt-in/off by default and changes ordinary root
+scale using visible neutral extent. It does not yet implement this scale-1
+baseline. Plan an import-basis/derived-asset representation that preserves skin,
+root/parent, helper/body physics and save semantics; never merely reset numeric
+scale or fit again on Open. Account for neutral orientation and accessories;
+separate parts, props, maps and uncertain/nonstandard figures are not blindly
+normalized as complete humans. Keep matched component scales consistent and
+preserve existing scenes, authored animation and contact anchors. Detailed code
+gap and future fixture gates are in the current pickup and height_import.md.
+No runtime changes or new verification occurred; development remains paused.

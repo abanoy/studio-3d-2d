@@ -35,6 +35,23 @@ does not authorize gratuitous breaks to existing project semantics.
 See the [current pickup](NEXT_SESSION_PLAN_2026-11-13_SFM.md) and
 [master reference, section 15](RESUME_MASTER_PLAN.md) for scope and validation.
 
+### Planned human scale reference — owner clarification, November 14, 2026
+
+A complete model with standard human proportions should target **6 feet
+(1.8288 metres) at user-facing HAS scale 1** during standardization/import,
+regardless of its source units or original size. Scale 0.5 then means half that
+reference height, scale 2 twice it. Preserve proportions with uniform scaling.
+Keep source-unit conversion and the normalization factor separate from the
+artist's relative scale; one world unit remains one metre, not six feet.
+
+This is a new target, not current default behavior. The existing opt-in height
+review changes the model root scale and does not establish a normalized asset
+with user-facing scale 1. Preserve its provenance and existing project behavior
+when implementing the new baseline. Account for neutral body height, orientation
+and accessories; separate parts, props, maps and uncertain/nonstandard figures
+must not be blindly fitted as complete humans. See height_import.md and the
+current pickup for the gap and implementation/validation plan.
+
 Optional `metadata.source_shape` (`studio_source_shape_1`, boolean `enabled`)
 selects declared imported default morph weights. New UI imports enable it; absent
 means the prior neutral behavior for old projects. Advanced provides one-step
