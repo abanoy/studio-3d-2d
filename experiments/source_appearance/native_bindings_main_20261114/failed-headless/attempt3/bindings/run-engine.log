@@ -1,0 +1,80 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS independent golden authored GLB bytes
+PASS independent malformed chunk golden bytes
+PASS complete69/49 with reversed actor order -> bound_inactive/
+PASS complete69/49 with reversed actor order preserves data, source, mapping and actual rest/pose
+PASS integral JSON numbers normalized -> bound_inactive/
+PASS integral JSON numbers normalized preserves data, source, mapping and actual rest/pose
+PASS posed actor remains a read-only binding -> bound_inactive/
+PASS posed actor remains a read-only binding preserves data, source, mapping and actual rest/pose
+FAIL actual JSON negative-zero parameter keeps float32 provenance -> unavailable/jiggle_float_word
+PASS actual JSON negative-zero parameter keeps float32 provenance preserves data, source, mapping and actual rest/pose
+PASS legacy retained metadata without crosswalk -> none/no_crosswalk
+PASS legacy retained metadata without crosswalk preserves data, source, mapping and actual rest/pose
+PASS omitted unsupported crosswalk -> none/unsupported_crosswalk
+PASS omitted unsupported crosswalk preserves data, source, mapping and actual rest/pose
+PASS crosswalk applied requires actual false bool -> unavailable/crosswalk_inactive_contract
+PASS crosswalk applied requires actual false bool preserves data, source, mapping and actual rest/pose
+PASS native simulation requires actual false bool -> unavailable/crosswalk_inactive_contract
+PASS native simulation requires actual false bool preserves data, source, mapping and actual rest/pose
+PASS jiggle applied requires actual false bool -> unavailable/jiggle_inactive_contract
+PASS jiggle applied requires actual false bool preserves data, source, mapping and actual rest/pose
+PASS layout verification requires actual false bool -> unavailable/jiggle_inactive_contract
+PASS layout verification requires actual false bool preserves data, source, mapping and actual rest/pose
+PASS rule applied requires actual false bool -> unavailable/jiggle_rule_contract
+PASS rule applied requires actual false bool preserves data, source, mapping and actual rest/pose
+PASS rest admission matches producer profile -> unavailable/crosswalk_rest_metric
+PASS rest admission matches producer profile preserves data, source, mapping and actual rest/pose
+PASS wrong actor GLB SHA -> unavailable/actor_source_identity
+PASS wrong actor GLB SHA preserves data, source, mapping and actual rest/pose
+PASS wrong proof SHA -> unavailable/crosswalk_proof_sha256
+PASS wrong proof SHA preserves data, source, mapping and actual rest/pose
+PASS wrong native MDL SHA -> unavailable/crosswalk_domain
+PASS wrong native MDL SHA preserves data, source, mapping and actual rest/pose
+PASS changed original-source identity -> unavailable/native_identity
+PASS changed original-source identity preserves data, source, mapping and actual rest/pose
+PASS missing native row -> unavailable/crosswalk_domain
+PASS missing native row preserves data, source, mapping and actual rest/pose
+PASS duplicate native index -> unavailable/crosswalk_duplicate
+PASS duplicate native index preserves data, source, mapping and actual rest/pose
+PASS duplicate glTF node -> unavailable/crosswalk_duplicate
+PASS duplicate glTF node preserves data, source, mapping and actual rest/pose
+PASS fractional source selector -> unavailable/crosswalk_row
+PASS fractional source selector preserves data, source, mapping and actual rest/pose
+PASS bool source selector -> unavailable/crosswalk_row
+PASS bool source selector preserves data, source, mapping and actual rest/pose
+PASS unpublished rest-array metadata rejected -> unavailable/crosswalk_unknown_field
+PASS unpublished rest-array metadata rejected preserves data, source, mapping and actual rest/pose
+PASS wrong skin slot with independently valid proof hash -> unavailable/source_skin_membership
+PASS wrong skin slot with independently valid proof hash preserves data, source, mapping and actual rest/pose
+PASS selected-scene drift -> unavailable/selected_scene
+PASS selected-scene drift preserves data, source, mapping and actual rest/pose
+PASS extra GLB chunk with coherent source and proof hashes -> unavailable/source_glb_chunks
+PASS extra GLB chunk with coherent source and proof hashes preserves data, source, mapping and actual rest/pose
+PASS missing importer source node -> unavailable/importer_map_count
+PASS missing importer source node preserves data, source, mapping and actual rest/pose
+PASS importer does not guess numeric string keys -> unavailable/importer_map_domain
+PASS importer does not guess numeric string keys preserves data, source, mapping and actual rest/pose
+PASS duplicate importer HAS ID -> unavailable/importer_id_duplicate_or_missing
+PASS duplicate importer HAS ID preserves data, source, mapping and actual rest/pose
+PASS wrong live bone index -> unavailable/live_bone_index
+PASS wrong live bone index preserves data, source, mapping and actual rest/pose
+PASS wrong live name -> unavailable/live_bone_identity
+PASS wrong live name preserves data, source, mapping and actual rest/pose
+PASS wrong actual parent -> unavailable/live_parent
+PASS wrong actual parent preserves data, source, mapping and actual rest/pose
+PASS duplicate jiggle owner -> unavailable/jiggle_owner
+PASS duplicate jiggle owner preserves data, source, mapping and actual rest/pose
+PASS jiggle float differs from exact words -> unavailable/jiggle_float_word
+PASS jiggle float differs from exact words preserves data, source, mapping and actual rest/pose
+PASS jiggle prefix hash drift -> unavailable/jiggle_prefix_sha256
+PASS jiggle prefix hash drift preserves data, source, mapping and actual rest/pose
+PASS coherent changed jiggle words fail outer wire binding -> unavailable/jiggle_wire_sha256
+PASS coherent changed jiggle words fail outer wire binding preserves data, source, mapping and actual rest/pose
+PASS retained rule cannot claim applied -> unavailable/jiggle_rule_contract
+PASS retained rule cannot claim applied preserves data, source, mapping and actual rest/pose
+PASS fresh complete resolution remains current
+PASS replacement root refuses retained runtime bindings
+PASS actual foreign Skeleton ownership refuses
+SOURCE_BONE_BINDINGS {"checks":77,"failures":1,"fixture_glb_sha256":"39637fa34e53c81708329ab963659e8100a285a92e25a22a92ab5e708c0154c1","format":"has_source_bone_bindings_authored_controls_1","golden_jiggle_wire_sha256":"ffe01c326a8ba54a57974f8257f716cffe1ea6c6f6e36cb73da0780e1ddc30c4","golden_proof_sha256":"3f7f4ab5c1ec58f6c987de24ebb907ae5e8e0427fa8f7e109418fcae5fd6307b","native_conversion":false,"native_simulation":false,"source_profile_claim_is_authored_fixture_only":true}

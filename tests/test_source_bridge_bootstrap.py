@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 BRIDGE = ROOT / "tools/blender_source_bridge.py"
 APPEARANCE = ROOT / "tools/source_appearance.py"
 JIGGLE_MODULES = [ROOT / "tools" / name for name in (
-    "source_jiggle_metadata.py", "source_jiggle_values.py", "source_mdl_snapshot.py")]
+    "source_jiggle_metadata.py", "source_jiggle_values.py", "source_mdl_snapshot.py",
+    "source_jiggle_crosswalk.py", "source_bone_metadata.py", "source_bone_export.py")]
 
 # The prefix is cut at the next local dependency, before any SourceIO library,
 # Blender API or worker function is used. It still executes the actual request,
@@ -52,11 +53,15 @@ try:
                   dont_write_bytecode=sys.dont_write_bytecode)
     jiggle = namespace["source_jiggle_metadata"]
     capture = namespace["source_mdl_snapshot"]
+    crosswalk = namespace["source_bone_export"]
     result["jiggle_modules"] = {name: {"file": str(Path(value.__file__).resolve()),
         "sha256": hashlib.sha256(Path(value.__file__).read_bytes()).hexdigest()}
         for name, value in (("source_jiggle_metadata", jiggle),
                             ("source_jiggle_values", jiggle.Raw),
-                            ("source_mdl_snapshot", capture))}
+                            ("source_mdl_snapshot", capture),
+                            ("source_jiggle_crosswalk", crosswalk.C),
+                            ("source_bone_metadata", crosswalk.M),
+                            ("source_bone_export", crosswalk))}
 except BaseException as error:
     result.update(ok=False, error_type=type(error).__name__,
                   error_name=getattr(error, "name", None), error=str(error))

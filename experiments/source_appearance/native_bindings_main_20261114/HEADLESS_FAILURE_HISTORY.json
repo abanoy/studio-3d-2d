@@ -1,0 +1,6 @@
+{
+  "attempt1": "wire Variant inference parse failure; dependent errors/owned headless timeout; remains FAILED",
+  "attempt2": "77/1: negative-zero control targeted yaw_damping(field3), not actual signed-zero pitch_damping(field5); snapshot also dereferenced intentionally invalid index69; remains FAILED",
+  "attempt3": "77/1 from the same wrong fixture field; snapshot errors fixed; remains FAILED",
+  "corrected_evidence": "Root corrected pitch_damping. Direct probe proves parsing -0.0 preserves0x80000000; JSON writing, including full_precision, normalizes+0. Zero-only compatibility preserves the original provenance word/prefix/wire SHA. Final79binding+17helper pass recorded independently in foundation."
+}

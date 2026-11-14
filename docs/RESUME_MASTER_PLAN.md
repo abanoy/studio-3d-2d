@@ -17,9 +17,16 @@ has47authored CPU controls and now passes an actual restricted Junko export:
 all69bone links,483raw restword joins and1421jiggle floats; GLB bytes and decoded
 geometry/materials are unchanged, all1886locks and996main files are preserved.
 [Actual export proof](benchmarks/native_crosswalk_actual_2026-11-13.json).
-This remains a diagnostic overlay: main integration, HAS runtime binding,
-portable adoption and native simulation are unrun. Full native rest/fingerprint
-data remains private locally; compact numeric joins/hashes/errors are saved.
+That diagnostic remains historical. Its qualified crosswalk is now ported to
+the normal bounded report and actual HAS skeleton binding for the exact Junko
+default profile. Simple loose-part review prefers two verified existing hair
+chains and offers explicit Enable these existing joints. Four normal native
+workflows pass241static+294named checks, eight packed/linked cold Opens,20exact
+frame joins and one1080p24movie. All eight preservation gates,120installed
+exporter sources and five private jobs pass. Foundation167, jiggle66,
+crosswalk77 and headless79+17 pass separately. Native dynamics remains
+unimplemented; full native rest/fingerprint data remains private locally.
+[Current main binding/helper evidence](benchmarks/sfm_source_bone_binding_main_2026-11-13.json).
 
 Current increment: import-time Source skins and bodygroups are implemented. The
 167-check foundation passes and is registered in default verification. At exact
@@ -68,9 +75,9 @@ actual harmless-child checks; the foundation167 plus66CPU controls pass.
 The complete default suite for this newer increment is next; the9f full above
 certifies the preceding static feature. Preserve these distinct source contexts.
 
-The concrete next native feature is the [binding and runtime plan](source_jiggle_runtime_plan.md).
-It requires an explicit native→Blender→glTF→HAS joint crosswalk and measured rest/
-unit correspondence before adapting native dynamics. The reviewed candidate
+The concrete next native feature follows the [runtime plan](source_jiggle_runtime_plan.md).
+The restricted native→Blender→glTF→HAS crosswalk is proven. Tip-axis/rest/unit
+correspondence and independent dynamics traces precede a native solver. The reviewed candidate
 packet remains historical design evidence; its cleanup/metadata/shape actions
 have now been ported and exercised. Shader/controller/assembly fidelity and
 artist review remain separate features or observations.

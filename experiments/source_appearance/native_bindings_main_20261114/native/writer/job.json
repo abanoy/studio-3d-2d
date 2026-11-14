@@ -1,0 +1,202 @@
+{
+  "mode": "writer",
+  "cases": [
+    {
+      "name": "keiki_tools_chisels-groups-000",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\inputs\\family-01\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\inputs\\family-01",
+      "key": "01-keiki_tools_chisels-groups-000",
+      "appearance_expected": false,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": true
+        },
+        {
+          "name": "box.smd",
+          "present": true
+        },
+        {
+          "name": "flame.smd",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": true
+        }
+      ],
+      "shape_ui": [
+        {
+          "node": 33,
+          "index": 0,
+          "name": "Tools",
+          "area": "Accessories",
+          "target_count": 1
+        }
+      ],
+      "expected_source_bone_bindings": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\cases\\01-keiki_tools_chisels-groups-000",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "mima_head-ordinary-shape-ui",
+      "member": "mima head.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\inputs\\family-02\\models\\koikatsu\\touhou\\mima head.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\inputs\\family-02",
+      "key": "02-mima_head-ordinary-shape-ui",
+      "appearance_expected": false,
+      "expected_meshes": [
+        {
+          "name": "hair.smd",
+          "present": true
+        },
+        {
+          "name": "hat.smd",
+          "present": true
+        },
+        {
+          "name": "Mima_dmx.dmx",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "ah 1",
+          "present": true
+        },
+        {
+          "name": "ah 2",
+          "present": true
+        },
+        {
+          "name": "EEEE",
+          "present": true
+        }
+      ],
+      "shape_ui": [
+        {
+          "node": 231,
+          "index": 0,
+          "name": "ah 1",
+          "area": "Mouth",
+          "target_count": 143
+        },
+        {
+          "node": 231,
+          "index": 1,
+          "name": "ah 2",
+          "area": "Mouth",
+          "target_count": 143
+        },
+        {
+          "node": 231,
+          "index": 31,
+          "name": "EEEE",
+          "area": "Mouth",
+          "target_count": 143
+        }
+      ],
+      "expected_source_bone_bindings": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\cases\\02-mima_head-ordinary-shape-ui",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "junko_hair-default-no-appearance",
+      "member": "junko hair.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0
+      },
+      "use_override": false,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\inputs\\family-03\\models\\touhou\\tamo\\junko hair.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\inputs\\family-03",
+      "key": "03-junko_hair-default-no-appearance",
+      "appearance_expected": false,
+      "expected_jiggle_rules": 49,
+      "expected_source_bone_bindings": 69,
+      "native_helper_preview": true,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\cases\\03-junko_hair-default-no-appearance",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "multi_skin_glove-default-no-appearance",
+      "member": "kawashiro nitori tanktop glove.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0
+      },
+      "use_override": false,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\inputs\\family-04\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\inputs\\family-04",
+      "key": "04-multi_skin_glove-default-no-appearance",
+      "appearance_expected": false,
+      "expected_jiggle_rules": 0,
+      "expected_source_bone_bindings": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\cases\\04-multi_skin_glove-default-no-appearance",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    }
+  ],
+  "tone": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\tone.wav",
+  "absent_gmod": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\absent-game",
+  "absent_workshop": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\absent-workshop",
+  "shape_ui": true,
+  "watchdog_seconds": 2760,
+  "source_manifest_sha256": "25e01367fd15fe42e884c1ad8ec91c0308ccd5ec35d06eec6bee6f34610d2d03",
+  "source_revision": "7477ed32dc5c43324783f76736164553bb4a79c5",
+  "format": "has_source_choices_native_job_1",
+  "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\writer"
+}

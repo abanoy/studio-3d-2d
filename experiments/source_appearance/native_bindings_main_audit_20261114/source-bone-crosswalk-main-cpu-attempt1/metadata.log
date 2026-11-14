@@ -1,0 +1,145 @@
+test_actual_final_nested_windows_budget_accepts_exact_limit (test_source_bone_metadata.BoneMetadataTests.test_actual_final_nested_windows_budget_accepts_exact_limit) ... FAIL
+test_ascii_wire_has_fixed_header_sha_order_and_no_float_fields (test_source_bone_metadata.BoneMetadataTests.test_ascii_wire_has_fixed_header_sha_order_and_no_float_fields) ... ERROR
+test_compact_projection_complete_inactive_and_excludes_all_private_arrays (test_source_bone_metadata.BoneMetadataTests.test_compact_projection_complete_inactive_and_excludes_all_private_arrays) ... ERROR
+test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) ... 
+  test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C400>) ... FAIL
+  test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C2C0>) ... FAIL
+  test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C360>) ... FAIL
+  test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C680>) ... FAIL
+  test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C4A0>) ... FAIL
+test_identity_failure_precedes_every_optional_size_or_missing_jiggle_gate (test_source_bone_metadata.BoneMetadataTests.test_identity_failure_precedes_every_optional_size_or_missing_jiggle_gate) ... ok
+test_jiggle_not_embedded_preserves_exact_plan_without_status_branch (test_source_bone_metadata.BoneMetadataTests.test_jiggle_not_embedded_preserves_exact_plan_without_status_branch) ... ok
+test_max_error_nonfinite_over_profile_and_applied_state_omit (test_source_bone_metadata.BoneMetadataTests.test_max_error_nonfinite_over_profile_and_applied_state_omit) ... ok
+test_one_byte_over_keeps_existing_jiggle_priority_and_exact_bytes (test_source_bone_metadata.BoneMetadataTests.test_one_byte_over_keeps_existing_jiggle_priority_and_exact_bytes) ... ERROR
+test_real_bridge_publication_writes_only_measured_combined_bytes (test_source_bone_metadata.BoneMetadataTests.test_real_bridge_publication_writes_only_measured_combined_bytes) ... FAIL
+test_source_scale_parent_and_jiggle_named_value_mismatch_refuse_complete_proof (test_source_bone_metadata.BoneMetadataTests.test_source_scale_parent_and_jiggle_named_value_mismatch_refuse_complete_proof) ... ERROR
+test_wire_is_row_and_membership_order_independent_but_binds_nodes_and_words (test_source_bone_metadata.BoneMetadataTests.test_wire_is_row_and_membership_order_independent_but_binds_nodes_and_words) ... ERROR
+
+======================================================================
+ERROR: test_ascii_wire_has_fixed_header_sha_order_and_no_float_fields (test_source_bone_metadata.BoneMetadataTests.test_ascii_wire_has_fixed_header_sha_order_and_no_float_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 80, in test_ascii_wire_has_fixed_header_sha_order_and_no_float_fields
+    metadata = self.plan()["report"]["native_parameters"][M.KEY]
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'source_export_crosswalk'
+
+======================================================================
+ERROR: test_compact_projection_complete_inactive_and_excludes_all_private_arrays (test_source_bone_metadata.BoneMetadataTests.test_compact_projection_complete_inactive_and_excludes_all_private_arrays)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 64, in test_compact_projection_complete_inactive_and_excludes_all_private_arrays
+    result = self.plan(); metadata = result["report"]["native_parameters"][M.KEY]
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'source_export_crosswalk'
+
+======================================================================
+ERROR: test_one_byte_over_keeps_existing_jiggle_priority_and_exact_bytes (test_source_bone_metadata.BoneMetadataTests.test_one_byte_over_keeps_existing_jiggle_priority_and_exact_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 142, in test_one_byte_over_keeps_existing_jiggle_priority_and_exact_bytes
+    self.assertEqual(result["report"]["native_parameters"][J.KEY]["rules"], self.value.inspection["metadata"]["rules"])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'rules'
+
+======================================================================
+ERROR: test_source_scale_parent_and_jiggle_named_value_mismatch_refuse_complete_proof (test_source_bone_metadata.BoneMetadataTests.test_source_scale_parent_and_jiggle_named_value_mismatch_refuse_complete_proof)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 164, in test_source_scale_parent_and_jiggle_named_value_mismatch_refuse_complete_proof
+    rule = plan["report"]["native_parameters"][J.KEY]["rules"][0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'rules'
+
+======================================================================
+ERROR: test_wire_is_row_and_membership_order_independent_but_binds_nodes_and_words (test_source_bone_metadata.BoneMetadataTests.test_wire_is_row_and_membership_order_independent_but_binds_nodes_and_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 92, in test_wire_is_row_and_membership_order_independent_but_binds_nodes_and_words
+    metadata = self.plan()["report"]["native_parameters"][M.KEY]
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+KeyError: 'source_export_crosswalk'
+
+======================================================================
+FAIL: test_actual_final_nested_windows_budget_accepts_exact_limit (test_source_bone_metadata.BoneMetadataTests.test_actual_final_nested_windows_budget_accepts_exact_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 132, in test_actual_final_nested_windows_budget_accepts_exact_limit
+    self.assertIn(M.KEY, result["report"]["native_parameters"])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'source_export_crosswalk' not found in {'bones': [{'name': 'bone000_xxxx', 'parent': -1}, {'name': 'bone001_xxxx', 'parent': 0}, {'name': 'bone002_xxxx', 'parent': 0}, {'name': 'bone003_xxxx', 'parent': 0}, {'name': 'bone004_xxxx', 'parent': 0}, {'name': 'bone005_xxxx', 'parent': 0}, {'name': 'bone006_xxxx', 'parent': 0}, {'name': 'bone007_xxxx', 'parent': 0}, {'name': 'bone008_xxxx', 'parent': 0}, {'name': 'bone009_xxxx', 'parent': 0}, {'name': 'bone010_xxxx', 'parent': 0}, {'name': 'bone011_xxxx', 'parent': 0}, {'name': 'bone012_xxxx', 'parent': 0}, {'name': 'bone013_xxxx', 'parent': 0}, {'name': 'bone014_xxxx', 'parent': 0}, {'name': 'bone015_xxxx', 'parent': 0}, {'name': 'bone016_xxxx', 'parent': 0}, {'name': 'bone017_xxxx', 'parent': 0}, {'name': 'bone018_xxxx', 'parent': 0}, {'name': 'bone019_xxxx', 'parent': 0}, {'name': 'bone020_xxxx', 'parent': 0}, {'name': 'bone021_xxxx', 'parent': 0}, {'name': 'bone022_xxxx', 'parent': 0}, {'name': 'bone023_xxxx', 'parent': 0}, {'name': 'bone024_xxxx', 'parent': 0}, {'name': 'bone025_xxxx', 'parent': 0}, {'name': 'bone026_xxxx', 'parent': 0}, {'name': 'bone027_xxxx', 'parent': 0}, {'name': 'bone028_xxxx', 'parent': 0}, {'name': 'bone029_xxxx', 'parent': 0}, {'name': 'bone030_xxxx', 'parent': 0}, {'name': 'bone031_xxxx', 'parent': 0}, {'name': 'bone032_xxxx', 'parent': 0}, {'name': 'bone033_xxxx', 'parent': 0}, {'name': 'bone034_xxxx', 'parent': 0}, {'name': 'bone035_xxxx', 'parent': 0}, {'name': 'bone036_xxxx', 'parent': 0}, {'name': 'bone037_xxxx', 'parent': 0}, {'name': 'bone038_xxxx', 'parent': 0}, {'name': 'bone039_xxxx', 'parent': 0}, {'name': 'bone040_xxxx', 'parent': 0}, {'name': 'bone041_xxxx', 'parent': 0}, {'name': 'bone042_xxxx', 'parent': 0}, {'name': 'bone043_xxxx', 'parent': 0}, {'name': 'bone044_xxxx', 'parent': 0}, {'name': 'bone045_xxxx', 'parent': 0}, {'name': 'bone046_xxxx', 'parent': 0}, {'name': 'bone047_xxxx', 'parent': 0}, {'name': 'bone048_xxxx', 'parent': 0}, {'name': 'bone049_xxxx', 'parent': 0}, {'name': 'bone050_xxxx', 'parent': 0}, {'name': 'bone051_xxxx', 'parent': 0}, {'name': 'bone052_xxxx', 'parent': 0}, {'name': 'bone053_xxxx', 'parent': 0}, {'name': 'bone054_xxxx', 'parent': 0}, {'name': 'bone055_xxxx', 'parent': 0}, {'name': 'bone056_xxxx', 'parent': 0}, {'name': 'bone057_xxxx', 'parent': 0}, {'name': 'bone058_xxxx', 'parent': 0}, {'name': 'bone059_xxxx', 'parent': 0}, {'name': 'bone060_xxxx', 'parent': 0}, {'name': 'bone061_xxxx', 'parent': 0}, {'name': 'bone062_xxxx', 'parent': 0}, {'name': 'bone063_xxxx', 'parent': 0}, {'name': 'bone064_xxxx', 'parent': 0}, {'name': 'bone065_xxxx', 'parent': 0}, {'name': 'bone066_xxxx', 'parent': 0}, {'name': 'bone067_xxxx', 'parent': 0}, {'name': 'bone068_xxxx', 'parent': 0}], 'selected_skin': 0, 'source_jiggle': {'format': 'studio_source_jiggle_metadata_1', 'status': 'omitted', 'reason': 'layout_unsupported', 'detail': 'Optional native jiggle layout could not be retained.', 'applied': False, 'runtime_support': 'not_implemented', 'binding_status': 'unattempted', 'original_source_sha256': '12a7804f4c76c2db3ea926ba6313225010e9449f14d1804cd36a32c6b873f030', 'native_mdl_sha256': '790815a98dfffa6392844692f2cc7cc2aaaaa4bddd47d3455b7718cb55d622c9', 'native_bone_count': 69, 'declared_jiggle_rule_count': 49, 'retained_rule_count': 0, 'source_of_truth': 'retained_native_mdl_and_preparation_bundle', 'metadata_candidate_sha256': None, 'metadata_candidate_bytes': None, 'candidate_state': 'not_formed'}}
+
+======================================================================
+FAIL: test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C400>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 116, in test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof
+    self.assertEqual(json.loads(result["crosswalk_note_bytes"])["reason"], "proof_unavailable")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'jiggle_not_retained' != 'proof_unavailable'
+- jiggle_not_retained
++ proof_unavailable
+
+
+======================================================================
+FAIL: test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C2C0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 116, in test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof
+    self.assertEqual(json.loads(result["crosswalk_note_bytes"])["reason"], "proof_unavailable")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'jiggle_not_retained' != 'proof_unavailable'
+- jiggle_not_retained
++ proof_unavailable
+
+
+======================================================================
+FAIL: test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C360>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 116, in test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof
+    self.assertEqual(json.loads(result["crosswalk_note_bytes"])["reason"], "proof_unavailable")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'jiggle_not_retained' != 'proof_unavailable'
+- jiggle_not_retained
++ proof_unavailable
+
+
+======================================================================
+FAIL: test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C680>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 116, in test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof
+    self.assertEqual(json.loads(result["crosswalk_note_bytes"])["reason"], "proof_unavailable")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'jiggle_not_retained' != 'proof_unavailable'
+- jiggle_not_retained
++ proof_unavailable
+
+
+======================================================================
+FAIL: test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof (test_source_bone_metadata.BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof) (action=<function BoneMetadataTests.test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof.<locals>.<lambda> at 0x00000277B3A0C4A0>)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 116, in test_duplicate_missing_alias_and_unbounded_names_omit_whole_proof
+    self.assertEqual(json.loads(result["crosswalk_note_bytes"])["reason"], "proof_unavailable")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'jiggle_not_retained' != 'proof_unavailable'
+- jiggle_not_retained
++ proof_unavailable
+
+
+======================================================================
+FAIL: test_real_bridge_publication_writes_only_measured_combined_bytes (test_source_bone_metadata.BoneMetadataTests.test_real_bridge_publication_writes_only_measured_combined_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_metadata.py", line 184, in test_real_bridge_publication_writes_only_measured_combined_bytes
+    self.assertEqual(text.getvalue(), "")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'STUDIO_SOURCE_CROSSWALK_OMITTED {"applied[852 chars]"}\n' != ''
+Diff is 900 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.048s
+
+FAILED (failures=7, errors=5)

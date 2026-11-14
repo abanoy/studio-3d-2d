@@ -1,0 +1,66 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fresh ordinary app starts at the required full-HD48-frame canvas
+PASS owned original native input and prepared converter bundle are offline for this fresh reader
+PASS packed reader cache is absent before ordinary Open
+PASS packed source HAS bytes match the writer
+PASS normal HAS unpack succeeds and drains snapshot/loader/packer state
+PASS packed cold Open restores both converted actor and pre-existing peer
+PASS packed cold Open restores exact native report, drawing pixels, audio PCM, keys and authored world
+PASS packed cold actor retains exact converter report and GLB bytes
+PASS packed fresh cache supplies runtime geometry without reconversion or history edits
+PASS named junko_hair-default-no-appearance/packed/jiggle.cold_open.report_identity
+PASS named junko_hair-default-no-appearance/packed/jiggle.cold_open.inactive_rules
+PASS named junko_hair-default-no-appearance/packed/jiggle.cold_open.no_simulation
+PASS named junko_hair-default-no-appearance/packed/jiggle.cold_open.authored_body
+PASS named junko_hair-default-no-appearance/packed/source_binding.cold_open.report_identity
+PASS named junko_hair-default-no-appearance/packed/source_binding.cold_open.runtime_bindings
+PASS named junko_hair-default-no-appearance/packed/source_binding.cold_open.no_mutation
+PASS named junko_hair-default-no-appearance/packed/source_binding.cold_open.no_simulation
+PASS named junko_hair-default-no-appearance/packed/native_helper.available
+PASS named junko_hair-default-no-appearance/packed/native_helper.native_current
+PASS named junko_hair-default-no-appearance/packed/native_helper.suggested
+PASS named junko_hair-default-no-appearance/packed/native_helper.existing_mode
+PASS named junko_hair-default-no-appearance/packed/native_helper.weights_unchanged
+PASS named junko_hair-default-no-appearance/packed/native_helper.cancelled
+PASS named junko_hair-default-no-appearance/packed/native_helper.protected_state
+PASS named junko_hair-default-no-appearance/packed/native_helper.no_simulation
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS packed cold derived frame 0 exactly matches the writer reference
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS packed cold derived frame 24 exactly matches the writer reference
+PASS packed Open leaves the saved package unchanged
+PASS linked reader cache is absent before ordinary Open
+PASS linked source HAS bytes match the writer
+PASS normal HAS unpack succeeds and drains snapshot/loader/packer state
+PASS linked cold Open restores both converted actor and pre-existing peer
+PASS linked cold Open restores exact native report, drawing pixels, audio PCM, keys and authored world
+PASS linked cold actor retains exact converter report and GLB bytes
+PASS linked fresh cache supplies runtime geometry without reconversion or history edits
+PASS named junko_hair-default-no-appearance/linked/jiggle.cold_open.report_identity
+PASS named junko_hair-default-no-appearance/linked/jiggle.cold_open.inactive_rules
+PASS named junko_hair-default-no-appearance/linked/jiggle.cold_open.no_simulation
+PASS named junko_hair-default-no-appearance/linked/jiggle.cold_open.authored_body
+PASS named junko_hair-default-no-appearance/linked/source_binding.cold_open.report_identity
+PASS named junko_hair-default-no-appearance/linked/source_binding.cold_open.runtime_bindings
+PASS named junko_hair-default-no-appearance/linked/source_binding.cold_open.no_mutation
+PASS named junko_hair-default-no-appearance/linked/source_binding.cold_open.no_simulation
+PASS named junko_hair-default-no-appearance/linked/native_helper.available
+PASS named junko_hair-default-no-appearance/linked/native_helper.native_current
+PASS named junko_hair-default-no-appearance/linked/native_helper.suggested
+PASS named junko_hair-default-no-appearance/linked/native_helper.existing_mode
+PASS named junko_hair-default-no-appearance/linked/native_helper.weights_unchanged
+PASS named junko_hair-default-no-appearance/linked/native_helper.cancelled
+PASS named junko_hair-default-no-appearance/linked/native_helper.protected_state
+PASS named junko_hair-default-no-appearance/linked/native_helper.no_simulation
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS linked cold derived frame 0 exactly matches the writer reference
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS linked cold derived frame 24 exactly matches the writer reference
+PASS linked Open leaves the saved package unchanged
+SOURCE_CHOICES_NATIVE {"actual_app":true,"actual_native_conversion":false,"actual_source_dialog":false,"cases":[],"checks":30,"derived_pixels_only":true,"failures":0,"format":"has_source_choices_native_app_result_1","job_path":"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\readers\\03\\job.json","job_sha256":"ee8b995707ed42d1e1c04b0fe4e7574b02f2dfd3ac84e6fd02fbb825760d1e55","mode":"reader","movie":"","named_checks":{"junko_hair-default-no-appearance/linked/jiggle.cold_open.authored_body":true,"junko_hair-default-no-appearance/linked/jiggle.cold_open.inactive_rules":true,"junko_hair-default-no-appearance/linked/jiggle.cold_open.no_simulation":true,"junko_hair-default-no-appearance/linked/jiggle.cold_open.report_identity":true,"junko_hair-default-no-appearance/linked/native_helper.available":true,"junko_hair-default-no-appearance/linked/native_helper.cancelled":true,"junko_hair-default-no-appearance/linked/native_helper.existing_mode":true,"junko_hair-default-no-appearance/linked/native_helper.native_current":true,"junko_hair-default-no-appearance/linked/native_helper.no_simulation":true,"junko_hair-default-no-appearance/linked/native_helper.protected_state":true,"junko_hair-default-no-appearance/linked/native_helper.suggested":true,"junko_hair-default-no-appearance/linked/native_helper.weights_unchanged":true,"junko_hair-default-no-appearance/linked/source_binding.cold_open.no_mutation":true,"junko_hair-default-no-appearance/linked/source_binding.cold_open.no_simulation":true,"junko_hair-default-no-appearance/linked/source_binding.cold_open.report_identity":true,"junko_hair-default-no-appearance/linked/source_binding.cold_open.runtime_bindings":true,"junko_hair-default-no-appearance/packed/jiggle.cold_open.authored_body":true,"junko_hair-default-no-appearance/packed/jiggle.cold_open.inactive_rules":true,"junko_hair-default-no-appearance/packed/jiggle.cold_open.no_simulation":true,"junko_hair-default-no-appearance/packed/jiggle.cold_open.report_identity":true,"junko_hair-default-no-appearance/packed/native_helper.available":true,"junko_hair-default-no-appearance/packed/native_helper.cancelled":true,"junko_hair-default-no-appearance/packed/native_helper.existing_mode":true,"junko_hair-default-no-appearance/packed/native_helper.native_current":true,"junko_hair-default-no-appearance/packed/native_helper.no_simulation":true,"junko_hair-default-no-appearance/packed/native_helper.protected_state":true,"junko_hair-default-no-appearance/packed/native_helper.suggested":true,"junko_hair-default-no-appearance/packed/native_helper.weights_unchanged":true,"junko_hair-default-no-appearance/packed/source_binding.cold_open.no_mutation":true,"junko_hair-default-no-appearance/packed/source_binding.cold_open.no_simulation":true,"junko_hair-default-no-appearance/packed/source_binding.cold_open.report_identity":true,"junko_hair-default-no-appearance/packed/source_binding.cold_open.runtime_bindings":true},"native_simulation_claimed":false,"project_root":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-bone-bindings-native-launch-20261114T033026205/run/Studio/","reader_modes":[{"checks":14,"failures":0,"frames":[0,24],"mode":"packed","passed":true,"project_sha256":"4564e1f7d8e6a9708df64c93522806030bf34193510a34ab1c5b3dd8b138b242"},{"checks":14,"failures":0,"frames":[0,24],"mode":"linked","passed":true,"project_sha256":"25e03c5f1d635b9e8b78667a575a4b0d33d095cda6e7caf05ea2c6fd01d33a65"}],"scope":"Static Source import choices and ordinary actor/history/HAS/cold-render transport. No original Source shader, jiggle, assembly or artist fidelity claim.","source_manifest_sha256":"25e01367fd15fe42e884c1ad8ec91c0308ccd5ec35d06eec6bee6f34610d2d03","source_revision":"7477ed32dc5c43324783f76736164553bb4a79c5"}

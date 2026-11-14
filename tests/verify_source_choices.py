@@ -14,6 +14,7 @@ def main():
  raw,_=fixture(groups=[(b'tools',[(b'blank',7),(b'',0)]),(b'hat',[(b'hat',11),(b'',0)])]);(folder/'choices.mdl').write_bytes(raw);(folder/'bad.mdl').write_bytes(b'IDST broken native input')
  originals={n:sha(folder/n) for n in ['choices.mdl','bad.mdl']}
  names=['src/source_import.gd','src/source_choice_dialog.gd','tools/prepare_source.py','tools/source_appearance.py','tools/source_mdl_choices.py','tools/source_choice_io.py','tools/source_jiggle_values.py','tools/source_jiggle_metadata.py','tools/source_mdl_snapshot.py','tools/blender_source_bridge.py','tests/source_choices_smoke.gd',str(Path(__file__).relative_to(ROOT))]
+ names += ['tools/source_jiggle_crosswalk.py','tools/source_bone_metadata.py','tools/source_bone_export.py']
  frozen={n:sha(ROOT/n) for n in names};(folder/'source-before.json').write_text(json.dumps(frozen,indent=2)+'\n',encoding='utf-8')
  args=command('tests/source_choices_smoke.gd',extra=['--audio-driver','Dummy','--log-file',str(folder/'engine.log'),'--',str(folder)])
  (folder/'command.json').write_text(json.dumps(args,indent=2)+'\n',encoding='utf-8')

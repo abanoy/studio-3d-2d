@@ -14664,3 +14664,34 @@ Next compact report admission and exact has_source_bones runtime join precede
 helper use. Native dynamics/tip-axis/unit/wind/lifecycle work stays in the saved
 runtime plan. The earlier full audio-device failure remains FAILED; fresh full
 default verification is still required after the silent-selection correction.
+
+
+## 2026-11-13 — Normal Junko joint crosswalk and Simple hair suggestion pass
+
+The diagnostic crosswalk is now ported to the normal bounded report for the
+exact Junko/default standalone profile. Its159684-byte report retains all49
+rules/1421rawfloat words plus69exported joint identities. The read-only HAS
+resolver checks the actual GLB, importer map, skeleton IDs/indices and parents.
+Simple loose-part review prioritizes two verified imported hair chains and
+offers Enable these existing joints; explicit Apply remains required. Original
+Source coefficients stay inactive and no native dynamics solver is claimed.
+
+Fresh four-model main-working-source workflow at7477 passes117writer+124reader
+static checks plus194writer/100reader named checks. Junko review/cancel passes
+in the writer and both cold modes without altering weights/scene/physics. Eight
+packed/linked cold Opens retain20exact frame joins and one48-frame1080p24
+H264/AAC movie. All preservation gates,120installed exporter source identities
+and current main/HEAD match; all five private jobs close. Exact coordinator27676
+creation is absent at03:33:14.8600147Z; no runtime remains and none was killed.
+Independent stdlib audit reproduces rawbit/ASCII-wire joins and unchanged
+Junko/Keiki/Nitori GLBs. Full rest/fingerprint data remainsLOCAL.
+
+Affected foundation167, jiggle66, Pythoncrosswalk77, headless79+17 and bootstrap2
+pass; the one Windows symlink-privilege skip remains explicit. Prior authored
+fixture/parser/test-harness failures are preserved. The negative-zero fixture
+initially changed the wrong field; a separate probe then proved JSON writing
+normalizes signed zero. Only numeric zero signs are tolerated; prefix/raw wire
+bits remain exact. Compact evidence and current limits are in
+sfm_source_bone_binding_main_2026-11-13.json. Fresh complete default verification
+is NEXT. The earlier full WASAPI failure remains FAILED. Formal55/62 and52/54
+are unchanged; no owner participation prompt or installed-app replacement.

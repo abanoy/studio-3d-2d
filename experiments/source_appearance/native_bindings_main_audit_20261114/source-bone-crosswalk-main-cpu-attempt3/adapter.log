@@ -1,0 +1,38 @@
+test_actual_factory_alias_origin_and_container_object_are_separate_gates (test_source_bone_export.BoneExportTests.test_actual_factory_alias_origin_and_container_object_are_separate_gates) ... FAIL
+test_capture_identity_change_precedes_optional_scale_refusal (test_source_bone_export.BoneExportTests.test_capture_identity_change_precedes_optional_scale_refusal) ... ok
+test_constructor_identity_errors_are_never_optional (test_source_bone_export.BoneExportTests.test_constructor_identity_errors_are_never_optional) ... ok
+test_declared_sourceio_revision_must_match_qualified_profile (test_source_bone_export.BoneExportTests.test_declared_sourceio_revision_must_match_qualified_profile) ... ok
+test_final_glb_mutation_after_observation_is_fatal (test_source_bone_export.BoneExportTests.test_final_glb_mutation_after_observation_is_fatal) ... ok
+test_final_source_recheck_cannot_escape_through_proof_omission (test_source_bone_export.BoneExportTests.test_final_source_recheck_cannot_escape_through_proof_omission) ... ok
+test_initial_pin_or_proof_refusal_is_bounded_optional (test_source_bone_export.BoneExportTests.test_initial_pin_or_proof_refusal_is_bounded_optional) ... ok
+test_missing_late_hook_omits_proof_and_never_writes_any_file (test_source_bone_export.BoneExportTests.test_missing_late_hook_omits_proof_and_never_writes_any_file) ... ok
+test_other_mdl_no_rule_or_bsp_never_loads_runtime_or_installs_hooks (test_source_bone_export.BoneExportTests.test_other_mdl_no_rule_or_bsp_never_loads_runtime_or_installs_hooks) ... ok
+test_owned_registration_calls_export_once_with_explicit_safe_kwargs (test_source_bone_export.BoneExportTests.test_owned_registration_calls_export_once_with_explicit_safe_kwargs) ... ok
+test_pin_initial_mismatch_refuses_and_matching_capture_rechecks (test_source_bone_export.BoneExportTests.test_pin_initial_mismatch_refuses_and_matching_capture_rechecks) ... ok
+test_plain_exporter_flat_classes_pass_and_unknown_classes_latch (test_source_bone_export.BoneExportTests.test_plain_exporter_flat_classes_pass_and_unknown_classes_latch) ... ok
+test_qualified_default_prepares_once_and_appearance_archive_scale_omit (test_source_bone_export.BoneExportTests.test_qualified_default_prepares_once_and_appearance_archive_scale_omit) ... ok
+test_real_export_failure_escapes_without_retry_and_registration_is_removed (test_source_bone_export.BoneExportTests.test_real_export_failure_escapes_without_retry_and_registration_is_removed) ... ok
+test_registration_owner_change_omits_without_repeating_export (test_source_bone_export.BoneExportTests.test_registration_owner_change_omits_without_repeating_export) ... ok
+test_same_capture_and_original_context_required_before_report_omission (test_source_bone_export.BoneExportTests.test_same_capture_and_original_context_required_before_report_omission) ... ok
+test_same_size_mtime_pin_mutation_is_fatal_and_missing_pin_is_fatal (test_source_bone_export.BoneExportTests.test_same_size_mtime_pin_mutation_is_fatal_and_missing_pin_is_fatal) ... ok
+test_unavailable_registration_calls_original_export_exactly_once (test_source_bone_export.BoneExportTests.test_unavailable_registration_calls_original_export_exactly_once) ... ok
+
+======================================================================
+FAIL: test_actual_factory_alias_origin_and_container_object_are_separate_gates (test_source_bone_export.BoneExportTests.test_actual_factory_alias_origin_and_container_object_are_separate_gates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\test_source_bone_export.py", line 172, in test_actual_factory_alias_origin_and_container_object_are_separate_gates
+    self.assertEqual(prover.call_args.args[:4], (self.capture.raw, self.capture.native_sha256, mdl, container.armature))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Tuples differ: (b'IDST1\x00\x00\x00\x00\x00\x00\x00\x00\x00[4729 chars]CB0>) != (b'authored capture, not a native asset', 'b[138 chars]B10>)
+
+First differing element 0:
+b'IDST1\x00\x00\x00\x00\x00\x00\x00\x00\x00[4161 chars]\x00'
+b'authored capture, not a native asset'
+
+Diff is 6073 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.066s
+
+FAILED (failures=1)

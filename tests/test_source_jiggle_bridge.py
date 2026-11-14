@@ -242,7 +242,8 @@ class SourceJiggleBridgeTests(unittest.TestCase):
         self.assertFalse((self.out / "parameters.json").exists())
 
     def test_actual_final_publication_assignment_uses_the_frozen_context(self):
-        self.namespace.update(report=self.base, selected_mdl_capture=self.capture, jiggle_inspection=self.inspection)
+        self.namespace.update(report=self.base, selected_mdl_capture=self.capture, jiggle_inspection=self.inspection,
+                              crosswalk_inspection=None)
         execute([PUBLICATION], self.namespace)
         retained = self.namespace["report"]["native_parameters"][M.KEY]
         self.assertEqual(retained["native_mdl_sha256"], hashlib.sha256(self.raw).hexdigest())

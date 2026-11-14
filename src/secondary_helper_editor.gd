@@ -4,6 +4,7 @@ const Model=preload("res://src/model.gd")
 const Storage=preload("res://src/storage.gd")
 const Labels=preload("res://src/bone_labels.gd")
 const PendingPreview=preload("res://src/pending_helper_preview.gd")
+const NativeBindings=preload("res://src/source_bone_bindings.gd")
 var pending_preview: Node
 var try_wind: CheckButton
 var wind_status: Label
@@ -61,6 +62,10 @@ var restore_list_focus:=false
 var source_stamp:=0
 var inclusion_navigation:=false
 var preview_ready:=false
+var native_resolution: NativeBindings.Resolution
+var native_joint_nodes: Dictionary={}
+var native_parent_nodes: Dictionary={}
+var native_current:=false
 
 func setup(parent: Node) -> void:
 	pending_preview=PendingPreview.new();pending_preview.app=app;pending_preview.editor=self;add_child(pending_preview)
@@ -83,6 +88,8 @@ func open(prefer_hair_clothing:=false) -> void:
 	if is_instance_valid(app.local_wind_review):app.local_wind_review.close()
 	close();prefer_loose=prefer_hair_clothing;app.stop();app.pose_editor.finish_drag();app.finish_stroke()
 	target_id=current.data.id;source=ProjectSettings.globalize_path(current.data.source);revision=app.recovery_revision
+	native_resolution=NativeBindings.resolve(current)
+	refresh_native_joints()
 	source_stamp=FileAccess.get_modified_time(source)
 	before_world=app.current_world().duplicate(true)
 	request={"source_sha256":current.data.sha256,"segments":3}
@@ -188,6 +195,7 @@ func _process(_delta: float) -> void:
 	if is_instance_valid(try_wind):try_wind.disabled=pid>0 or point_review_after>0 or not preview_ready
 
 func completed(value: Dictionary) -> void:
+	if stage in ["inspect","preview","review"]:refresh_native_joints()
 	parts.mouse_filter=Control.MOUSE_FILTER_STOP;parts.focus_mode=Control.FOCUS_ALL
 	for spin in fields:spin.editable=true
 	if stage=="inspect":
@@ -241,6 +249,7 @@ func completed(value: Dictionary) -> void:
 			var names: Array=[]
 			for name in value.existing_chain.joint_names:names.append(str(name).replace("_"," ").capitalize())
 			info.text="Review: "+", ".join(names)+" and the pale endpoint. This moves "+str(value.affected_regions.size())+" connected regions ("+str(int(value.affected_vertices))+" weighted vertices). Orange shows all shared regions. Original weights and poses are kept; Undo removes this setup."
+			if native_current and native_existing_chain(value.region,native_joint_nodes,native_parent_nodes):info.text="Imported hair joints. "+info.text
 		cache_included(value);refresh_inclusions()
 		if restore_list_focus and not app.navigating:parts.grab_focus()
 		restore_list_focus=false
@@ -253,6 +262,7 @@ func completed(value: Dictionary) -> void:
 func region_priority(row: Dictionary) -> int:
 	var weighted: bool=float(row.get("anchor_min_weight",0))>=0.01
 	var result: int=(2 if row.suggested else 0)+(1 if weighted else 0)
+	if not app.advanced_mode and native_current and native_existing_chain(row,native_joint_nodes,native_parent_nodes):return result+8
 	# Source labels only choose the initial preview; every region stays selectable
 	# and generation still requires the artist's explicit reviewed Apply.
 	if prefer_loose and weighted:
@@ -260,6 +270,32 @@ func region_priority(row: Dictionary) -> int:
 		for word in ["hair","ribbon","skirt","cloth","cape","sleeve"]:
 			if word in hint:return result+4
 	return result
+
+func refresh_native_joints() -> void:
+	native_current=false;native_joint_nodes.clear();native_parent_nodes.clear()
+	if native_resolution==null or native_resolution.status!="bound_inactive":return
+	var current: RefCounted=actor()
+	if current==null or not NativeBindings.current(current,native_resolution):return
+	var by_index:={}
+	for binding in native_resolution.bindings:by_index[binding.native_index]=binding.gltf_node_index
+	for binding in native_resolution.bindings:
+		native_parent_nodes[binding.gltf_node_index]=-1 if binding.native_parent_index<0 else by_index[binding.native_parent_index]
+	for node in native_resolution.rule_owner_nodes:native_joint_nodes[node]=true
+	native_current=true
+
+static func native_existing_chain(row: Dictionary,joint_nodes: Dictionary,parents: Dictionary) -> bool:
+	var proposal=row.get("existing_chain")
+	if not proposal is Dictionary or not Model.integer(proposal.get("center_node"),0,100000) or not proposal.get("joint_nodes") is Array:return false
+	var center:=int(proposal.center_node)
+	# A static attachment remains pinned; only verified native rule owners rotate.
+	if not parents.has(center) or joint_nodes.has(center) or proposal.joint_nodes.is_empty() or proposal.joint_nodes.size()>64:return false
+	var seen:={center:true};var previous:=center
+	for value in proposal.joint_nodes:
+		if not Model.integer(value,0,100000):return false
+		var node:=int(value)
+		if seen.has(node) or not joint_nodes.has(node) or not parents.has(node) or not Model.integer(parents[node],-1,100000) or int(parents[node])!=previous:return false
+		seen[node]=true;previous=node
+	return true
 
 func region_key(row: Dictionary) -> String:
 	return "%d:%d:%d"%[int(row.node),int(row.primitive),int(row.component)]
@@ -376,7 +412,9 @@ func existing_mode(enabled: bool) -> void:
 	queue_changed();launch(preview_operation())
 
 func smart_existing(value: Dictionary) -> bool:
-	if app.advanced_mode or mode_choice!="auto" or patch_toggle.button_pressed or value.get("mode","")=="existing_joints" or value.get("can_apply",false) or not value.get("region",{}).has("existing_chain"):return false
+	if app.advanced_mode or mode_choice!="auto" or patch_toggle.button_pressed or value.get("mode","")=="existing_joints" or not value.get("region",{}).has("existing_chain"):return false
+	if native_current and native_existing_chain(value.region,native_joint_nodes,native_parent_nodes):return true
+	if value.get("can_apply",false):return false
 	var current: RefCounted=actor()
 	if not current:return false
 	var bindings: Dictionary=current.root.get_meta("has_source_bones",{})
@@ -635,6 +673,7 @@ func close() -> void:
 	pid=-1;clear_preview()
 	if is_instance_valid(window):window.hide();window.queue_free()
 	window=null;preview={};assessment={};request={};fields.clear();target_id="";prefer_loose=false
+	native_resolution=null;native_current=false;native_joint_nodes.clear();native_parent_nodes.clear()
 
 func try_pending_preview(enabled: bool) -> void:
 	if enabled:pending_preview.start()

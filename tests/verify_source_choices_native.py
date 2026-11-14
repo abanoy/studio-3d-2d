@@ -28,6 +28,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "tools"))
 from build_owner_review_snapshot import freeze_source
 from source_installation import conversion_context
+from source_bone_export import EXPORTER_ROOT
 
 PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
 BAD = ("ERROR:", "FAIL ", "SCRIPT ERROR", "SHADER ERROR", "ObjectDB instances leaked",
@@ -38,6 +39,8 @@ SHAPE_WRITER_TARGET = ("binding", "key_0", "key_24", "middle", "geometry", "undo
 SHAPE_READER_COMMON = ("catalogue", "authored_values", "defaults_off", "protected_state", "middle_pixels")
 JIGGLE_PHASES = ("adoption", "redo", "packed_save", "packed_open_cached", "linked_save")
 JIGGLE_CHECKS = ("report_identity", "inactive_rules", "no_simulation", "authored_body")
+BINDING_CHECKS = ("report_identity", "runtime_bindings", "no_mutation", "no_simulation")
+NATIVE_HELPER_CHECKS = ("available", "native_current", "suggested", "existing_mode", "weights_unchanged", "cancelled", "protected_state", "no_simulation")
 
 
 def write(path, value):
@@ -83,8 +86,17 @@ def runtime_state(environment):
              "godot": Path(environment["HYBRID_GODOT"]), "blender": Path(environment["HYBRID_SOURCE_BLENDER"]),
              "ffmpeg": Path(environment["HYBRID_FFMPEG"]),
              "ffprobe": Path(environment["HYBRID_FFMPEG"]).with_name("ffprobe.exe")}
+    exporter = {}
+    for path in sorted(EXPORTER_ROOT.rglob("*")):
+        if path.is_symlink():
+            raise ValueError("Exporter source tree cannot contain symlinks")
+        if path.is_file() and path.suffix != ".pyc" and "__pycache__" not in path.parts:
+            exporter[path.relative_to(EXPORTER_ROOT).as_posix()] = stamp(path)
+    if not exporter:
+        raise RuntimeError("Approved installed exporter source tree is absent")
     return {"executables": {name: {"path": str(path.resolve(strict=True)), **stamp(path)} for name, path in paths.items()},
-            "sourceio_root": environment["HYBRID_SOURCEIO"], "sourceio_files": tree(environment["HYBRID_SOURCEIO"])}
+            "sourceio_root": environment["HYBRID_SOURCEIO"], "sourceio_files": tree(environment["HYBRID_SOURCEIO"]),
+            "blender_exporter_root": str(EXPORTER_ROOT), "blender_exporter_noncache_sources": exporter}
 
 
 def read_manifest(path):
@@ -113,7 +125,7 @@ def read_manifest(path):
         row = {key: value[key] for key in ["name", "member", "skin", "bodygroups", "use_override", "expect_all_blank"]}
         row.update(source=str(source), resource_root=str(resource_root), key=f"{index + 1:02d}-" + re.sub(r"[^A-Za-z0-9_-]+", "-", value["name"]).strip("-")[:48],
                    appearance_expected=value["use_override"] and (value["skin"] != 0 or any(groups.values())))
-        for optional in ["pose_native_bone_index", "expected_meshes", "expected_morphs", "shape_ui", "expected_jiggle_rules"]:
+        for optional in ["pose_native_bone_index", "expected_meshes", "expected_morphs", "shape_ui", "expected_jiggle_rules", "expected_source_bone_bindings", "native_helper_preview"]:
             if optional in value:
                 row[optional] = value[optional]
         if "pose_native_bone_index" in row and (type(row["pose_native_bone_index"]) is not int or not 0 <= row["pose_native_bone_index"] < 4096):
@@ -123,6 +135,10 @@ def read_manifest(path):
                 raise ValueError("Optional native-derived presence checks need exact names and boolean expectations")
         if "expected_jiggle_rules" in row and (type(row["expected_jiggle_rules"]) is not int or not 0 <= row["expected_jiggle_rules"] <= 256):
             raise ValueError("Optional inert jiggle expectation must be a bounded exact rule count")
+        if "expected_source_bone_bindings" in row and (type(row["expected_source_bone_bindings"]) is not int or row["expected_source_bone_bindings"] not in {0, 69}):
+            raise ValueError("Optional source binding expectation must be zero or the admitted 69-bone profile")
+        if "native_helper_preview" in row and (type(row["native_helper_preview"]) is not bool or row["native_helper_preview"] is not True or row.get("expected_source_bone_bindings") != 69):
+            raise ValueError("Optional native helper review requires the explicit admitted bound profile")
         if "shape_ui" in row:
             controls = row["shape_ui"]
             if not isinstance(controls, list) or not 1 <= len(controls) <= 3:
@@ -137,7 +153,7 @@ def read_manifest(path):
                     raise ValueError("Shape UI bindings require exact source node, target index/name/count and an ordinary area")
             if len({(control["node"], control["index"]) for control in controls}) != len(controls):
                 raise ValueError("Shape UI bindings must be distinct")
-        if row["expect_all_blank"] and any(key in row for key in ["pose_native_bone_index", "expected_meshes", "expected_morphs", "shape_ui", "expected_jiggle_rules"]):
+        if row["expect_all_blank"] and any(key in row for key in ["pose_native_bone_index", "expected_meshes", "expected_morphs", "shape_ui", "expected_jiggle_rules", "expected_source_bone_bindings", "native_helper_preview"]):
             raise ValueError("Refused cases cannot claim unrun adopted geometry/pose checks")
         cases.append(row)
         roots.setdefault(resource_root, None)
@@ -177,6 +193,13 @@ def named_checks(row, shape_ui=False, reader=False):
             result.extend(prefix + "jiggle." + phase + "." + name for phase in jiggle_phases for name in JIGGLE_CHECKS)
             if not reader:
                 result.append(prefix + "jiggle.undo_actor_absent")
+        if "expected_source_bone_bindings" in row:
+            binding_phases = ("cold_open",) if reader else JIGGLE_PHASES
+            result.extend(prefix + "source_binding." + phase + "." + name for phase in binding_phases for name in BINDING_CHECKS)
+            if not reader:
+                result.append(prefix + "source_binding.undo_actor_absent")
+        if row.get("native_helper_preview"):
+            result.extend(prefix + "native_helper." + name for name in NATIVE_HELPER_CHECKS)
     return result
 
 

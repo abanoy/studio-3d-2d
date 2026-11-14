@@ -1,0 +1,90 @@
+{
+  "format": "has_source_bone_crosswalk_cpu_1",
+  "passed": true,
+  "checks": 77,
+  "reports": {
+    "collector": {
+      "checks": 47,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-foundation-20261114-attempt1\\crosswalk-cpu\\collector.log"
+    },
+    "metadata": {
+      "checks": 11,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-foundation-20261114-attempt1\\crosswalk-cpu\\metadata.log"
+    },
+    "adapter": {
+      "checks": 19,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-foundation-20261114-attempt1\\crosswalk-cpu\\adapter.log"
+    }
+  },
+  "source_unchanged": true,
+  "source_identity": {
+    "tools/blender_source_bridge.py": {
+      "bytes": 29255,
+      "mtime_ns": 1794625266994209600,
+      "sha256": "c794df555f7872e11d4c341b0ffed2507f371f892b67b715e185105d40026dea"
+    },
+    "tools/source_jiggle_crosswalk.py": {
+      "bytes": 29012,
+      "mtime_ns": 1794625159065376200,
+      "sha256": "c384cbfe912170d5107995c60ac5bcf033ad6061a14ff29d06599898fcfaf646"
+    },
+    "tools/source_bone_metadata.py": {
+      "bytes": 10554,
+      "mtime_ns": 1794625514421817700,
+      "sha256": "6392cbc2607c7c4c74213a7345b3fc2a1d30aa7e49d35dd8a77e32721690de78"
+    },
+    "tools/source_bone_export.py": {
+      "bytes": 10017,
+      "mtime_ns": 1794625613982895700,
+      "sha256": "0516b52ad2188ed59472a8ca4a13413caba550cb4478ff4cf29f5c70bfde37b6"
+    },
+    "tools/source_jiggle_metadata.py": {
+      "bytes": 16843,
+      "mtime_ns": 1794616485712749900,
+      "sha256": "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056"
+    },
+    "tools/source_jiggle_values.py": {
+      "bytes": 7713,
+      "mtime_ns": 1794615421450684500,
+      "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e"
+    },
+    "tools/source_mdl_snapshot.py": {
+      "bytes": 5043,
+      "mtime_ns": 1794618093165047700,
+      "sha256": "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be"
+    },
+    "tests/source_jiggle_fixtures.py": {
+      "bytes": 2311,
+      "mtime_ns": 1794615421467526900,
+      "sha256": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a"
+    },
+    "tests/verify_source_bone_crosswalk_cpu.py": {
+      "bytes": 3144,
+      "mtime_ns": 1794625614364141900,
+      "sha256": "f093a1d589dffef9a57aafb32aa0281f0d7d102289a0b192bbaf3179eb49dad6"
+    },
+    "tests/test_source_jiggle_crosswalk.py": {
+      "bytes": 28248,
+      "mtime_ns": 1794625159259688900,
+      "sha256": "110d48ef19ee7ec6bd4a792354ac4017644bb57fe890bd1049942be863312a67"
+    },
+    "tests/test_source_bone_metadata.py": {
+      "bytes": 11858,
+      "mtime_ns": 1794625447997986600,
+      "sha256": "849c0f738317b285ab5cd72e4957cc88265911e3e8c0f32defa2034b9e662249"
+    },
+    "tests/test_source_bone_export.py": {
+      "bytes": 14028,
+      "mtime_ns": 1794625614176981200,
+      "sha256": "f270e008136ea0447bf81ba024d5c319ff50015bde0d1f58b7f0fc7bbbef47df"
+    }
+  },
+  "native_conversion": false,
+  "graphics": false,
+  "actual_main_bridge_adoption_persistence": "UNRUN_requires_fresh_native_and_app_verification",
+  "native_solver": "not_implemented",
+  "scope": "Authored bytes/RNA mocks, integer wires, whole nested CRLF budget and file identity races"
+}

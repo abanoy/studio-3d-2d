@@ -27,6 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import source_appearance
 import source_jiggle_metadata
 import source_mdl_snapshot
+import source_bone_export
 from asset_audit import gma_index, AssetError
 from source_archive import resource_path, write_resource
 from source_texture import blender_rgba
@@ -49,7 +50,7 @@ from SourceIO.library.source1.vmt import VMT
 from SourceIO.library.source1.vtf import load_texture
 
 
-def publish_parameters(report, selected_mdl_capture, jiggle_inspection):
+def publish_parameters(report, selected_mdl_capture, jiggle_inspection, crosswalk_inspection=None):
     """Publish exact inert metadata, or retain the existing parameter writer."""
     if isinstance(selected_mdl_capture, source_mdl_snapshot.NotInspected):
         # No native identity was captured. Keep the original report and record
@@ -71,6 +72,11 @@ def publish_parameters(report, selected_mdl_capture, jiggle_inspection):
         planned = source_jiggle_metadata.plan_report(
             report, jiggle_inspection, newline=os.linesep,
             expected_native_mdl_sha256=selected_mdl_capture.native_sha256)
+        if crosswalk_inspection is not None:
+            planned = source_bone_export.augment_plan(planned, crosswalk_inspection, selected_mdl_capture,
+                                                      report["source_sha256"], os.linesep)
+            if planned["crosswalk_note_bytes"] is not None:
+                print("STUDIO_SOURCE_CROSSWALK_OMITTED", planned["crosswalk_note_bytes"].decode("utf-8"), flush=True)
         if planned["note_bytes"] is not None:
             print("STUDIO_SOURCE_JIGGLE_OMITTED", planned["note_bytes"].decode("utf-8").rstrip("\n"), flush=True)
         if planned["report_bytes"] is not None:
@@ -383,6 +389,9 @@ images = {}
 decoded_texture_bytes = 0
 material_report = []
 bpy.context.view_layer.update()
+crosswalk_observation, crosswalk_reason = source_bone_export.prepare(
+    request, selected_mdl_capture, mdl if source.suffix.lower() == ".mdl" else None,
+    container if source.suffix.lower() == ".mdl" else None, bpy, jiggle_inspection)
 used_materials = {slot.material for obj in bpy.context.scene.objects if obj.type == "MESH" for slot in obj.material_slots if slot.material}
 for material in used_materials:
     native_name = material.get("source1_material", material.get("full_path", material.name))
@@ -475,10 +484,20 @@ for obj in bpy.context.scene.objects:
         exported.append(obj)
 if not any(o.type == "MESH" and len(o.data.polygons) for o in exported):
     raise ValueError("No renderable geometry imported")
-bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", use_selection=True,
-                          export_animations=False, export_cameras=False, export_lights=True,
-                          export_extras=False, export_yup=True, export_image_format="AUTO")
+if crosswalk_observation is None:
+    bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", use_selection=True,
+                              export_animations=False, export_cameras=False, export_lights=True,
+                              export_extras=False, export_yup=True, export_image_format="AUTO")
+else:
+    crosswalk_observation.export(bpy.ops.export_scene.gltf, {
+        "filepath": str(out / "scene.glb"), "export_format": "GLB", "use_selection": True,
+        "export_animations": False, "export_cameras": False, "export_lights": True,
+        "export_extras": False, "export_yup": True, "export_image_format": "AUTO"})
 tag_lightmap_glb(out / "scene.glb", lightmap_report["materials"])
+crosswalk_inspection = None
+if crosswalk_observation is not None or crosswalk_reason is not None:
+    crosswalk_inspection = {"observation": crosswalk_observation, "reason": crosswalk_reason,
+                            "observed": crosswalk_observation.complete(out / "scene.glb") if crosswalk_observation is not None else None}
 report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_source": request["original_source"],
           "source_file": source.name, "source_member": request.get("source_member"),
           "case_resolved_sidecars": request.get("case_resolved_sidecars", {}),
@@ -494,6 +513,6 @@ report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_
                      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"],
           "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images) + lightmap_report["atlases"],
                      "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE"), "static_lights": len(map_lights)}}
-report = publish_parameters(report, selected_mdl_capture, jiggle_inspection)
+report = publish_parameters(report, selected_mdl_capture, jiggle_inspection, crosswalk_inspection)
 (out / "dependencies.json").write_text(json.dumps({"resolved": list(dependencies.values()), "missing_requests": sorted(missing)}, indent=2), encoding="utf-8")
 print("STUDIO_SOURCE_READY", json.dumps(report["counts"]), flush=True)

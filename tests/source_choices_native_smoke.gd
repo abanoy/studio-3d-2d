@@ -7,6 +7,7 @@ const Drawing = preload("res://src/drawing.gd")
 const Storage = preload("res://src/storage.gd")
 const Audio = preload("res://src/audio_track.gd")
 const ShapeUI = preload("res://tests/native_shape_ui.gd")
+const NativeUI = preload("res://tests/native_source_binding_ui.gd")
 var app
 var job: Dictionary
 var checks := 0
@@ -44,6 +45,16 @@ func case_named(label: String) -> Dictionary:
 func authored_body(id: String) -> Dictionary:
 	var target := actor(id)
 	return normal({"pose": target.data.get("pose", {}), "keys": target.authored_keys(), "bones": target.order})
+
+func binding_observation(expected: Dictionary, id: String, parameters: Dictionary, phase: String) -> void:
+	var observer := NativeUI.new(); observer.app = app
+	observer.record = func(ok: bool, name: String) -> bool: return named_check(ok, name)
+	observer.observe(expected, actor(id), parameters, phase)
+
+func native_helper_observation(id: String, peer: String) -> void:
+	var observer := NativeUI.new(); observer.app = app
+	observer.record = func(ok: bool, name: String) -> bool: return named_check(ok, name)
+	await observer.helper(id, func(): return protected_state(peer))
 
 func jiggle_observation(expected: Dictionary, id: String, parameters: Dictionary, phase: String) -> void:
 	app.world_selection.select_entity(id); app.physics_editor.sync()
@@ -242,6 +253,10 @@ func writer_case(item: Dictionary) -> Dictionary:
 	if item.has("expected_jiggle_rules"):
 		jiggle_expected = {"rules": int(item.expected_jiggle_rules), "source_sha256": FileAccess.get_sha256(item.source), "authored_body": authored_body(id)}
 		jiggle_observation(jiggle_expected, id, parameters, "adoption")
+	var binding_expected := {}
+	if item.has("expected_source_bone_bindings"):
+		binding_expected = {"count": int(item.expected_source_bone_bindings), "source_sha256": FileAccess.get_sha256(item.source), "proof_sha256": native.get("source_export_crosswalk", {}).get("proof_sha256", "")}
+		binding_observation(binding_expected, id, parameters, "adoption")
 	for group in catalogue.bodygroups:
 		var key := str(int(group.index)); var value := int(item.bodygroups.get(key, 0)) if item.use_override else 0
 		named[str(group.name)] = value; numeric[key] = value
@@ -252,9 +267,12 @@ func writer_case(item: Dictionary) -> Dictionary:
 	var adopted: Dictionary = normal(World.portable(app.current_world())); app.undo(); await settled()
 	check(actor(id) == null and normal(World.portable(app.current_world())) == before_world and app.history.size() == history and protected_state(peer) == before, label + " one Undo removes only the newly converted actor")
 	if not jiggle_expected.is_empty(): named_check(actor(id) == null, "jiggle.undo_actor_absent")
+	if not binding_expected.is_empty(): named_check(actor(id) == null, "source_binding.undo_actor_absent")
 	app.redo(); await settled(); imported = actor(id)
 	if not check(imported != null and normal(World.portable(app.current_world())) == adopted and protected_state(peer) == before and app.history.size() == history + 1, label + " Redo restores exact native metadata and leaves the original authored work intact"): return {}
 	if not jiggle_expected.is_empty(): jiggle_observation(jiggle_expected, id, parameters, "redo")
+	if not binding_expected.is_empty(): binding_observation(binding_expected, id, parameters, "redo")
+	if item.get("native_helper_preview", false): await native_helper_observation(id, peer)
 	var mesh_names := active_mesh_names(imported.data.source); var runtime_mesh_names: Array = []; var morph_names: Array = []
 	for mesh in imported.root.find_children("*", "MeshInstance3D", true, false):
 		runtime_mesh_names.append(str(mesh.name))
@@ -283,6 +301,8 @@ func writer_case(item: Dictionary) -> Dictionary:
 		"glb_sha256": imported.data.sha256, "pictures": pictures, "projects": {}, "input_source": item.source, "bundle": bundle}
 	if not shape_expected.is_empty(): expected["shape_ui"] = shape_expected
 	if not jiggle_expected.is_empty(): expected["jiggle"] = jiggle_expected
+	if not binding_expected.is_empty(): expected["source_binding"] = binding_expected
+	if item.get("native_helper_preview", false): expected["native_helper_preview"] = true
 	for mode in ["packed", "linked"]:
 		if mode == "linked":
 			# Normal linked saving deliberately keeps external originals. Reopen the
@@ -301,10 +321,12 @@ func writer_case(item: Dictionary) -> Dictionary:
 				and normal(World.portable(app.current_world())) == expected.portable_world and protected_state(peer) == expected.protected,
 				label + " ordinary packed Open rebinds exact world, report, drawing, audio and keys to the isolated writer cache before linked Save"): return {}
 			if not jiggle_expected.is_empty(): jiggle_observation(jiggle_expected, id, parameters, "packed_open_cached")
+			if not binding_expected.is_empty(): binding_observation(binding_expected, id, parameters, "packed_open_cached")
 		var path: String = case_folder.path_join(mode + ".has")
 		if not await operation("pack", func(): app.has_project.save_file(path, mode)): return {}
 		check(app.has_project.path == path and not app.dirty and protected_state(peer) == expected.protected and normal(World.portable(app.current_world())) == expected.portable_world, label + " " + mode + " normal Save preserves the complete authored scene")
 		if not jiggle_expected.is_empty(): jiggle_observation(jiggle_expected, id, parameters, mode + "_save")
+		if not binding_expected.is_empty(): binding_observation(binding_expected, id, parameters, mode + "_save")
 		expected.projects[mode] = {"path": path, "sha256": FileAccess.get_sha256(path)}
 	write_json(case_folder.path_join("expected.json"), expected)
 	var result := {"name": label, "checks": checks - first_check, "failures": failures - first_failure, "passed": failures == first_failure,
@@ -333,6 +355,8 @@ func reader() -> void:
 		var cache_path: String = ProjectSettings.globalize_path(app.has_project.cache_root).replace("\\", "/").to_lower()
 		check(runtime_path.begins_with(cache_path + "/") and app.source_import.pid < 0 and app.history.is_empty() and app.redo_history.is_empty() and not app.dirty, mode + " fresh cache supplies runtime geometry without reconversion or history edits")
 		if expected.has("jiggle"): jiggle_observation(expected.jiggle, id, expected.parameters, "cold_open")
+		if expected.has("source_binding"): binding_observation(expected.source_binding, id, expected.parameters, "cold_open")
+		if expected.get("native_helper_preview", false): await native_helper_observation(id, peer)
 		for frame in [0, 24]:
 			var captured := await picture(str(job.folder).path_join(mode + "-" + str(frame) + ".png"), frame)
 			check(not captured.is_empty() and captured.pixel_sha256 == expected.pictures[str(frame)].pixel_sha256, mode + " cold derived frame " + str(frame) + " exactly matches the writer reference")

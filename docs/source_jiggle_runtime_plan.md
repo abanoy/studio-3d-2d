@@ -1,13 +1,17 @@
 # Source jiggle: next runtime increment
 
-Current behavior is exact inactive metadata retention. Junko hair's 49 rules and
-1,421 float32 values survive normal import, Undo/Redo and packed/linked cold
-reopening. Nothing consumes those values as a native solver yet. See the
-[scoped results](benchmarks/sfm_inert_metadata_shapes_main_2026-11-13.json).
+Current behavior includes exact inactive metadata retention and a qualified
+native→Blender→glTF→HAS identity bridge for the exact Junko hair/default profile.
+All69 bones/49 rule owners survive ordinary import, Undo/Redo and packed/linked
+cold reopening. Simple loose-part review prioritizes two verified existing hair
+chains and offers explicit Enable these existing joints without replacing
+weights. Source coefficients remain inactive; native dynamics is still next.
+See the [current scoped results](benchmarks/sfm_source_bone_binding_main_2026-11-13.json).
 
 ## 1. Prove the export and runtime binding
 
-Produce a ledger for all 69 native bones and the 49 rule owners. Join native
+Completed for the restricted SHA/default0.01905/standalone profile: a ledger for
+all69 native bones and49 rule owners joins native
 MDL SHA/index/parent to the actual Blender bone, exported glTF joint-node index
 and skin membership, GLB SHA, HAS bone ID and skeleton index. Keep those numeric
 domains separate. Reject missing, duplicate, reordered or wrong-parent joins.
@@ -20,8 +24,10 @@ Do not assume native order equals exported joint order.
 
 Existing [scene import](../src/scene3d.gd) records glTF node to HAS bone ID in
 `has_source_bones`; [model bindings](../src/model.gd) record the actual skeleton,
-bone index, generated name, path and base pose. Native index to exported joint
-is the missing link. Start with native8 FrontHair1; then17→18 Side1Steps-1_L→
+bone index, generated name, path and base pose. The normal report and
+[read-only resolver](../src/source_bone_bindings.gd) now verify that link. Broader
+profiles remain unqualified. For the next dynamics increment, start with
+native8 FrontHair1; then17→18 Side1Steps-1_L→
 Side2Steps-1_L; then26→27 2Steps-1_L→3Steps-1_L. Preserve the actual hierarchy:
 these declarations include26 rule roots, rather than one continuous chain.
 

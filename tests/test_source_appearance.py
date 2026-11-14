@@ -367,6 +367,7 @@ def main():
     protected = [OVERLAY / "tools" / name for name in (
         "source_appearance.py", "source_mdl_choices.py", "source_choice_io.py",
         "source_jiggle_values.py", "source_jiggle_metadata.py", "source_mdl_snapshot.py",
+        "source_jiggle_crosswalk.py", "source_bone_metadata.py", "source_bone_export.py",
         "prepare_source.py", "blender_source_bridge.py", "asset_audit.py",
         "source_archive.py", "source_content.py", "source_case.py", "source_paths.py",
         "source_installation.py", "source_texture.py", "source_eyes.py", "source_lights.py", "source_lightmaps.py")]
