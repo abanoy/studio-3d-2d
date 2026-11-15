@@ -242,6 +242,7 @@ const DISPLAY_PREFS := "user://display.cfg"
 var display_prefs_path:=DISPLAY_PREFS
 const UI_PERCENT := [100,125,150,175]
 var display_dialog: AcceptDialog
+var header_box: StyleBoxTexture
 var keyboard_shortcuts: Node
 var camera_transform_editor: Node
 var scene_view: Node
@@ -255,13 +256,19 @@ func initialize_display() -> void:
 		# Desktop zoom is explicit: resizing a window must not magnify a 1400x900 UI.
 		get_window().content_scale_size=Vector2i.ZERO
 	var percent := 100
+	# Neon Pro port: [display] theme = neon (default) / light / dark. Older files only have
+	# dark=true for the classic dark skin. Reading never writes the file.
+	var theme_style := "neon"
 	if prefs.load(display_prefs_path)==OK:
 		var saved = prefs.get_value("display","percent",percent)
 		if saved in UI_PERCENT: percent = int(saved)
-		StudioTheme.dark = bool(prefs.get_value("display","dark",false))
+		var saved_theme = prefs.get_value("display","theme","")
+		if saved_theme in StudioTheme.STYLES: theme_style = saved_theme
+		elif bool(prefs.get_value("display","dark",false)): theme_style = "dark"
 		keyboard_nav = bool(prefs.get_value("display","keyboard_nav",false))
 		var scheme=prefs.get_value("navigation","scheme","fly")
 		if scheme in ["fly","orbit"]:navigation_scheme=scheme
+	StudioTheme.set_style(theme_style)
 	get_window().content_scale_factor = percent / 100.0
 
 func save_display_preference(section_name: String,key_name: String,value) -> void:
@@ -275,16 +282,30 @@ func toggle_fullscreen() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if full else DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func back_gradient() -> Texture2D:
+	if StudioTheme.is_neon(): return StudioTheme.svg_texture('<rect width="64" height="64" fill="%s"/>' % StudioTheme.hex(StudioTheme.BG), 64, 64)
 	return StudioTheme.svg_texture('<defs><linearGradient id="back" x2="0" y2="1"><stop stop-color="#%s"/><stop offset="1" stop-color="#%s"/></linearGradient></defs><rect width="64" height="64" fill="url(#back)"/>' % [StudioTheme.tone_hex("f4f7fb"), StudioTheme.tone_hex("dce5ee")], 64, 64)
 
-func apply_dark(on: bool) -> void:
-	# Redesign: opt-in dark theme (Settings, Advanced). Re-tones the theme and background only;
-	# the drawing paper, renders and saved projects are unchanged.
-	StudioTheme.dark = on
+func header_texture() -> Texture2D:
+	if StudioTheme.is_neon(): return StudioTheme.svg_texture('<rect width="64" height="64" fill="%s"/>' % StudioTheme.hex(StudioTheme.BAR), 64, 64)
+	return StudioTheme.svg_texture('<defs><linearGradient id="header" x2="0" y2="1"><stop stop-color="#b6e1ff"/><stop offset="0.35" stop-color="#78b5e3"/><stop offset="1" stop-color="#3979b1"/></linearGradient></defs><rect width="64" height="64" fill="url(#header)"/>', 64, 64)
+
+func apply_header_style() -> void:
+	# Header background and title colours follow the interface theme (classic: blue gradient).
+	if header_box == null: return
+	header_box.texture = header_texture()
+	var neon := StudioTheme.is_neon()
+	if title_label: title_label.add_theme_color_override("font_color", StudioTheme.TEXT if neon else Color("102e4d"))
+	if workspace_label: workspace_label.add_theme_color_override("font_color", StudioTheme.TEXT2 if neon else Color("102e4d"))
+
+func apply_theme_style(style_name: String) -> void:
+	# Neon Pro port: Settings (Advanced) "Interface theme". Rebuilds the theme, background, header,
+	# viewport surround, hint and toast; the drawing paper, renders and saved projects are unchanged.
+	StudioTheme.set_style(style_name)
 	theme = StudioTheme.make_theme()
 	get_window().theme = theme
 	if back_texture: back_texture.texture = back_gradient()
-	if canvas: canvas.queue_redraw()
+	apply_header_style()
+	if canvas: canvas.refresh_surround(); canvas.queue_redraw()
 	if timeline: timeline.queue_redraw()
 	if empty_hint: (empty_hint.get_theme_stylebox("panel") as StyleBoxFlat).bg_color = StudioTheme.tone(Color(0.93, 0.96, 0.99, 0.92))
 	refresh_status_style()
@@ -339,10 +360,12 @@ func show_display_settings() -> void:
 	button(box,"Keyboard shortcuts…",keyboard_shortcuts.open)
 	var access:=VBoxContainer.new();box.add_child(advanced(access))
 	access.visible=advanced_mode
-	var dark_check:=CheckBox.new();dark_check.text="Dark theme";access.add_child(dark_check)
-	dark_check.tooltip_text="Dark studio interface. Drawing paper and your movie are not affected."
-	dark_check.button_pressed=StudioTheme.dark
-	dark_check.toggled.connect(func(on): apply_dark(on);save_display_preference("display","dark",on))
+	label(access,"Interface theme")
+	var theme_choice:=OptionButton.new();access.add_child(theme_choice)
+	for theme_name in ["Midnight Neon","Classic light","Classic dark"]: theme_choice.add_item(theme_name)
+	theme_choice.select(StudioTheme.STYLES.find(StudioTheme.style))
+	theme_choice.tooltip_text="Studio interface colours. Drawing paper and your movie are not affected. Some icons change after the next start."
+	theme_choice.item_selected.connect(func(index: int): apply_theme_style(StudioTheme.STYLES[index]);save_display_preference("display","theme",StudioTheme.STYLES[index]))
 	var keyboard_check:=CheckBox.new();keyboard_check.text="Keyboard navigation";access.add_child(keyboard_check)
 	keyboard_check.tooltip_text="Tab / Shift+Tab move between buttons with a visible outline; Enter presses. Playback keys keep working."
 	keyboard_check.button_pressed=keyboard_nav
@@ -363,7 +386,7 @@ func _ready() -> void:
 	initialize_display()
 	keyboard_shortcuts=preload("res://src/shortcut_editor.gd").new();add_child(keyboard_shortcuts);keyboard_shortcuts.setup(self)
 	get_window().title = "Hybrid Animation Studio"
-	DisplayServer.set_icon(StudioTheme.icon("scene").get_image())
+	DisplayServer.set_icon(StudioTheme.app_icon())
 	get_tree().auto_accept_quit = false
 	keys = [Timeline.key(0, Vector3(-1.5, 2, 5), Quaternion.IDENTITY, 60), Timeline.key(48, Vector3(1.5, 1.6, 3), Quaternion(Vector3.UP, -0.15), 52)]
 	for title in ["Rough", "Ink"]:
@@ -659,7 +682,8 @@ func build_ui() -> void:
 	workspace_scroll.add_child(shell)
 	var title_panel := PanelContainer.new()
 	var header_style := StyleBoxTexture.new()
-	header_style.texture = StudioTheme.svg_texture('<defs><linearGradient id="header" x2="0" y2="1"><stop stop-color="#b6e1ff"/><stop offset="0.35" stop-color="#78b5e3"/><stop offset="1" stop-color="#3979b1"/></linearGradient></defs><rect width="64" height="64" fill="url(#header)"/>', 64, 64)
+	header_box = header_style
+	header_style.texture = header_texture()
 	header_style.content_margin_left = 14
 	header_style.content_margin_right = 14
 	header_style.content_margin_top = 10
@@ -679,6 +703,7 @@ func build_ui() -> void:
 	advanced(icon_button(title_row,"Home","scene",func():home.open_home(),"New, Open and recent projects; your current scene stays intact"))
 	workspace_label = label(title_row, "Simple workspace")
 	workspace_label.add_theme_color_override("font_color", Color("102e4d"))
+	apply_header_style()
 	advanced_toggle = button(title_row, "Advanced", func(): set_advanced(advanced_toggle.button_pressed))
 	advanced_toggle.toggle_mode = true
 	advanced_toggle.tooltip_text = "Show detailed controls. Your scene, drawings, audio and settings keep working in either mode."

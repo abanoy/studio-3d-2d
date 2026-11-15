@@ -4826,3 +4826,17 @@ hint added beside main's scene_view. canvas_view.scene_contains() got a 0.01 px 
 tolerance (32-bit round trip rejected an exact-edge camera drag at the redesign's canvas
 size). Linux xvfb: main and merged branch both pass ui, editor, pose, world_selection,
 recovery_write, recovery; scene_view_unit passes. Windows verify.py not run.
+
+## 2026-11-15 UTC — Neon Pro port step 1: Midnight Neon theme foundation (Claude, claude/studio-redesign)
+
+The owner approved a new look: the Iridescent Pro layout with the Midnight Neon theme. Step 1 of 9:
+StudioTheme gains `style` (neon default; light = the classic skin unchanged; dark = the classic
+re-tone), neon tokens, a precomputed oklch gradient, SVG neon rings, fills and switches rendered at
+2x with a size override, a neon make_theme() branch with type variations for later steps, and
+24-unit line icons from the mock's paths (classic styles keep the glossy icons). Settings (Advanced)
+"Interface theme" dropdown saved as [display] theme only when changed (an old dark=true still opens
+in classic dark). The canvas letterbox and header use neon colours. Layout, visibility and texts
+are unchanged. Geist is not bundled: SystemFont fallbacks (Inter on Linux). The selection colour is
+pale blue because workspace_controls requires #163854 selected text. Linux xvfb: ui, editor, pose,
+world_selection, recovery_write and recovery pass, plus the extra UI smokes (see
+docs/REDESIGN-PORT.md). Windows verify.py was not run.

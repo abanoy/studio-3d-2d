@@ -74,3 +74,56 @@ Merged (merge commit, no rebase) 164 main commits. Conflicts in `src/app.gd` wer
 
 Results 2026-11-15 (Linux xvfb): main f0dd57a and the merged branch both PASS ui, editor, pose, world_selection,
 recovery_write, recovery.
+
+## Neon Pro port (2026-11-15): Iridescent Pro layout + Midnight Neon theme
+The owner approved a new look ("neon pro"): the Iridescent Pro layout with the Midnight Neon theme,
+using mock images of Simple Draw, Camera and Pose at 1440x900. It is ported in nine steps on this branch. Simple mode follows
+the mock; Advanced keeps every control, restyled. Codex behaviour wins wherever it conflicts.
+
+### Step 1: theme foundation (`src/studio_theme.gd`, `src/app.gd`, `src/canvas_view.gd`)
+- `StudioTheme.style` = `"neon"` (default), `"light"` (the classic skin exactly as before), `"dark"`
+  (classic re-toned by `tone()`, the old opt-in dark theme). `set_style()` keeps `StudioTheme.dark` in step.
+- Tokens as constants (`BG #08090C`, `BAR #0C0D11`, `PANEL`, `RAISE`, `HOVER`, `LINE/LINE2/LINE3`,
+  `TEXT/TEXT2/TEXT3`, `BLUE`, `PINK`, `MID`, `FOCUS`, `STAGE`, `ON_NEON`) plus the semantic colours
+  `DRAWING #4DA3FF`, `CAMERA #FF5FAE`, `MODEL #A98BFF`, `SAVED`, `PROBLEM`, `WARNING`. `NEON_STOPS` is the
+  mock's oklch gradient precomputed as five sRGB stops, because SVG cannot interpolate in oklch.
+- In neon, `tone()` maps legacy light neutrals to neon surfaces: v>0.9 goes to BAR, v>0.8 to PANEL,
+  mid greys to LINE2 and dark text to TEXT. `surface()` draws a flat rounded box with the same content
+  margins. Untouched callers therefore go dark automatically (home screen, source browser/import,
+  progress, movement path, tutorials, timeline cel boxes).
+- Helpers: `flat()`, `neon_ring()`, `neon_fill()` (StyleBoxTexture from in-code SVG, rendered at 2x with
+  `ImageTexture.set_size_override`, so 1.5 px rings are crisp while sizes and margins stay logical),
+  `kbd_box()`, `focus_box()`, `switch_icon()`, `check_icon()`, `slider_styles()`, `font()`, `mono()`,
+  `label_variation()`.
+- `make_theme()` neon branch: 13 px UI font; outline Button/OptionButton/MenuButton; type variations
+  `GhostButton`, `PrimaryButton`, `NeonButton`, `TabButton`, `RailTile`, `ToolButton` and labels `RailLabel`,
+  `CaptionLabel`, `MonoLabel`, `KbdLabel` for the later steps. Also: dark fields, BAR panels/dialogs/
+  embedded windows, popups and tooltips with shadows, raised list/tree selection, neon switch
+  CheckButtons and CheckBoxes, a neon slider fill with a white grabber, hairline separators, thin
+  scrollbars, tabs with a neon underline, invisible split grabbers (the drag area and separation are
+  unchanged) and a violet focus ring with a pink glow.
+- Icons: `icon(kind, color := TEXT2, size := 16)` returns 24-unit line icons (stroke 1.7) drawn from
+  the mock's inline SVG paths, cached by kind, colour and size. Old `icon(kind)` calls still work.
+  Classic styles keep the glossy icons. The window icon (`app_icon()`) stays glossy in every style.
+- Settings (Advanced part): the "Dark theme" checkbox is replaced by the "Interface theme" dropdown
+  (Midnight Neon / Classic light / Classic dark), saved as `[display] theme` only when the user picks a
+  theme. A file with no `theme` key and the old `dark=true` opens in Classic dark. `apply_theme_style()`
+  rebuilds the theme, background, header colours, canvas surround, hint and toast. Icons that already
+  exist change after the next start (the tooltip says so).
+- The header uses a flat BAR with light title text in neon. The two-row layout is unchanged until step 2.
+  The canvas letterbox is `STAGE` in neon and the classic grey otherwise.
+
+Deviations (step 1):
+- **Font:** the mock's Geist / Geist Mono are not bundled, and downloading fonts is not allowed. `SystemFont` fallbacks:
+  Geist, Inter, Segoe UI Variable Text, Segoe UI, Helvetica Neue, Arial, DejaVu Sans (UI) and Geist Mono,
+  JetBrains Mono, Cascadia Mono, Consolas, DejaVu Sans Mono (mono). The Linux test box renders Inter and
+  JetBrains Mono. Windows usually gets Segoe UI and Cascadia Mono or Consolas.
+- **Text selection:** `tests/workspace_controls_smoke.gd` requires selected field text to be `#163854`,
+  so the selection colour is a pale neon blue `#B9D7FF` (8.2:1) instead of the mock's translucent blue.
+- **Glows:** each glow is one shadow colour (StyleBoxFlat cannot stack shadows). The switch-knob glow is
+  a radial gradient drawn in the SVG.
+- **Not yet restyled:** the timeline drawing code stays light until step 6, and its cel boxes already
+  use the dark `surface()`. Header layout is step 2, viewport overlays step 4, inspector cards step 5.
+- **Contrast:** TEXT3 `#8C93A3` is 6.3:1 on BAR, 5.65:1 on RAISE, 5.28:1 on HOVER and 4.97:1 on the
+  outline-button hover fill. TEXT2 is at least 7.9:1 and TEXT at least 14:1. `#07080B` on the neon fill
+  is at least 5.8:1.

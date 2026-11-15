@@ -56,13 +56,19 @@ var review_pointer:=Callable()
 var review_box:=Rect2()
 var review_box_visible:=false
 var resolution := Vector2(1920, 1080)
+var surround_rect: ColorRect
+const StudioTheme = preload("res://src/studio_theme.gd")
+
+func refresh_surround() -> void:
+	# Letterbox around the film: neon stage #05060A, classic grey-blue otherwise (editor only).
+	if surround_rect: surround_rect.color = StudioTheme.STAGE if StudioTheme.is_neon() else Color("7e8f9e")
 
 func _ready() -> void:
 	clip_contents = true
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	focus_mode = Control.FOCUS_ALL
 	resized.connect(queue_redraw)
-	var surround:=ColorRect.new();surround.color=Color("7e8f9e");surround.mouse_filter=Control.MOUSE_FILTER_IGNORE;surround.show_behind_parent=true;add_child(surround);surround.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var surround:=ColorRect.new();surround_rect=surround;refresh_surround();surround.mouse_filter=Control.MOUSE_FILTER_IGNORE;surround.show_behind_parent=true;add_child(surround);surround.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	scene_background=preload("res://src/canvas_raster.gd").new();scene_background.show_behind_parent=true;add_child(scene_background)
 	frame_clip=Control.new();frame_clip.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.clip_contents=true;add_child(frame_clip)
 	frame_overlay=FrameOverlay.new();frame_overlay.canvas_view=self;frame_overlay.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.add_child(frame_overlay)
