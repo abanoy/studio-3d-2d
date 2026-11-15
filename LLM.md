@@ -4840,3 +4840,16 @@ are unchanged. Geist is not bundled: SystemFont fallbacks (Inter on Linux). The 
 pale blue because workspace_controls requires #163854 selected text. Linux xvfb: ui, editor, pose,
 world_selection, recovery_write and recovery pass, plus the extra UI smokes (see
 docs/REDESIGN-PORT.md). Windows verify.py was not run.
+
+## 2026-11-15 UTC — Neon Pro port step 2: header bar (Claude, claude/studio-redesign)
+
+The header is now one 56 px neon bar, following the mock. It holds the brand mark, the project
+name over a real save line (Saved, Unsaved changes, Not saved yet, or "Saved N min ago" only after
+a save seen in this session), ghost New / Open / Save, an Add menu, the Draw / Camera / Pose tabs
+centred in an overlay group (still the same `mode_tabs` driving `pick_mode`), the Advanced switch
+(a CheckButton with the same pressed wiring), More, a Settings gear and the neon Export movie button
+with its MP4 chip. Advanced adds a wrapping row with all its extra buttons. `fit_header()` measures
+the groups and makes buttons icon-only, drops the chip and makes the tabs icon-only only as far as a
+narrow window needs, so the bar fits 1200 px without horizontal scrolling. The window title, menu
+items, shortcut decoration and Advanced button set are unchanged. Linux xvfb results are in
+docs/REDESIGN-PORT.md. Windows verify.py was not run.

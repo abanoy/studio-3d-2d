@@ -149,6 +149,18 @@ static func neon_fill(radius := 8.0, wide := true) -> StyleBoxTexture:
 	var w := maxi(128, h) if wide else h
 	return _neon_box('<defs>%s</defs><rect width="%d" height="%d" rx="%s" fill="url(#neon)"/>' % [neon_defs(), w, h, radius], w, h, radius + 2)
 
+static func brand_mark() -> Texture2D:
+	# Header brand mark, 28 px: 1.5 px neon ring (radius 9) on the bar colour around a 14 px white
+	# glyph at (5.5, 5.5) with its bottom-right corner cut (the mock's clip-path polygon).
+	# Classic styles keep the glossy scene icon.
+	if style != "neon": return classic_icon("scene")
+	var body := '<defs>%s</defs><rect x="0.75" y="0.75" width="26.5" height="26.5" rx="8.25" fill="%s" stroke="url(#neon)" stroke-width="1.5"/><path d="M8.5 5.5H16.5A3 3 0 0 1 19.5 8.5V13.2L13.2 19.5H8.5A3 3 0 0 1 5.5 16.5V8.5A3 3 0 0 1 8.5 5.5Z" fill="%s"/>' % [neon_defs(), hex(BAR), hex(TEXT)]
+	return svg_texture(body, 28, 28, 2.0)
+
+static func neon_line(width := 44) -> Texture2D:
+	# 2 px horizontal neon bar (active tab underline); stretch it to any width.
+	return svg_texture('<defs>%s</defs><rect width="%d" height="2" rx="1" fill="url(#neon)"/>' % [neon_defs(), width], width, 2, 2.0)
+
 static func kbd_box() -> StyleBoxFlat:
 	# 18 px keycap chip (with the 11 px mono font): #13151B, 1 px #2C303B, radius 5.
 	return flat(KBD, LINE2, 5, 1, Vector4(5, 1, 5, 1))

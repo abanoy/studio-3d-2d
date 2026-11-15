@@ -243,6 +243,23 @@ var display_prefs_path:=DISPLAY_PREFS
 const UI_PERCENT := [100,125,150,175]
 var display_dialog: AcceptDialog
 var header_box: StyleBoxTexture
+# Neon Pro step 2: header bar parts (see build_ui, fit_header, refresh_title).
+var header_row: HBoxContainer
+var header_spacer: Control
+var header_tabs: HBoxContainer
+var header_tab_overlay: CenterContainer
+var header_tab_frame: PanelContainer
+var header_project: VBoxContainer
+var header_mark: TextureRect
+var header_compact: Array[Button] = []
+var header_level := -1
+var header_saved_at := -1
+var header_was_dirty := false
+var header_dots := {}
+var save_dot: Panel
+var save_label: Label
+var export_button: Button
+var export_chip: Label
 var keyboard_shortcuts: Node
 var camera_transform_editor: Node
 var scene_view: Node
@@ -286,16 +303,24 @@ func back_gradient() -> Texture2D:
 	return StudioTheme.svg_texture('<defs><linearGradient id="back" x2="0" y2="1"><stop stop-color="#%s"/><stop offset="1" stop-color="#%s"/></linearGradient></defs><rect width="64" height="64" fill="url(#back)"/>' % [StudioTheme.tone_hex("f4f7fb"), StudioTheme.tone_hex("dce5ee")], 64, 64)
 
 func header_texture() -> Texture2D:
-	if StudioTheme.is_neon(): return StudioTheme.svg_texture('<rect width="64" height="64" fill="%s"/>' % StudioTheme.hex(StudioTheme.BAR), 64, 64)
+	# Neon: flat #0C0D11 bar with a 1 px #22252E bottom hairline (kept unstretched by texture_margin_bottom).
+	if StudioTheme.is_neon(): return StudioTheme.svg_texture('<rect width="64" height="64" fill="%s"/><rect y="63" width="64" height="1" fill="%s"/>' % [StudioTheme.hex(StudioTheme.BAR), StudioTheme.hex(StudioTheme.LINE)], 64, 64)
 	return StudioTheme.svg_texture('<defs><linearGradient id="header" x2="0" y2="1"><stop stop-color="#b6e1ff"/><stop offset="0.35" stop-color="#78b5e3"/><stop offset="1" stop-color="#3979b1"/></linearGradient></defs><rect width="64" height="64" fill="url(#header)"/>', 64, 64)
 
 func apply_header_style() -> void:
-	# Header background and title colours follow the interface theme (classic: blue gradient).
+	# Header background and text colours follow the interface theme (classic: blue gradient).
+	# Neon Pro step 2: neon bar padding is 0 12; classic keeps its old padding.
 	if header_box == null: return
-	header_box.texture = header_texture()
 	var neon := StudioTheme.is_neon()
+	header_box.texture = header_texture()
+	header_box.texture_margin_bottom = 1 if neon else 0
+	header_box.content_margin_left = 12 if neon else 14
+	header_box.content_margin_right = 12 if neon else 14
+	header_box.content_margin_top = 0 if neon else 6
+	header_box.content_margin_bottom = 0 if neon else 6
 	if title_label: title_label.add_theme_color_override("font_color", StudioTheme.TEXT if neon else Color("102e4d"))
-	if workspace_label: workspace_label.add_theme_color_override("font_color", StudioTheme.TEXT2 if neon else Color("102e4d"))
+	if save_label: save_label.add_theme_color_override("font_color", StudioTheme.TEXT2 if neon else Color("102e4d"))
+	if workspace_label: workspace_label.add_theme_color_override("font_color", StudioTheme.TEXT3 if neon else Color("102e4d"))
 
 func apply_theme_style(style_name: String) -> void:
 	# Neon Pro port: Settings (Advanced) "Interface theme". Rebuilds the theme, background, header,
@@ -514,19 +539,231 @@ func icon_button(parent: Node, text: String, kind: String, action: Callable, hin
 	control.tooltip_text = hint if not hint.is_empty() else text
 	return control
 
-func nav_button(parent: Node, text: String, kind: String, action: Callable, hint := "") -> Button:
-	# Top-bar button: icon above a short label, transparent until hovered (see style_nav).
-	return style_nav(icon_button(parent, text, kind, action, hint))
+func header_button(parent: Node, text: String, kind: String, action: Callable, hint := "") -> Button:
+	# Neon Pro step 2: top-bar button with a 16 px icon left of a short label (see style_header).
+	return style_header(icon_button(parent, text, kind, action, hint), kind)
+
+func override_button_boxes(control: Button, normal: StyleBox, hover: StyleBox, pressed: StyleBox, disabled: StyleBox) -> void:
+	for suffix in ["", "_mirrored"]:
+		control.add_theme_stylebox_override("normal" + suffix, normal)
+		control.add_theme_stylebox_override("hover" + suffix, hover)
+		control.add_theme_stylebox_override("pressed" + suffix, pressed)
+		control.add_theme_stylebox_override("hover_pressed" + suffix, pressed)
+		control.add_theme_stylebox_override("disabled" + suffix, disabled)
+
+func override_button_colors(control: Button, normal: Color, hover: Color, pressed: Color) -> void:
+	# Text and icon share one colour per state (icons are drawn white and tinted).
+	for prefix in ["font_", "icon_"]:
+		control.add_theme_color_override(prefix + ("normal_color" if prefix == "icon_" else "color"), normal)
+		control.add_theme_color_override(prefix + "focus_color", normal)
+		control.add_theme_color_override(prefix + "hover_color", hover)
+		control.add_theme_color_override(prefix + "pressed_color", pressed)
+		control.add_theme_color_override(prefix + "hover_pressed_color", pressed)
+		control.add_theme_color_override(prefix + "disabled_color", StudioTheme.TEXT3)
+
+func style_header(control: Button, kind: String, chevron := false) -> Button:
+	# Neon Pro step 2: ghost header button: h40, pad 0 12, r8, gap 8, 13/500 #B4BAC7 and a 16 px icon
+	# in the same colour; hover #1D2029 with #F4F6FA. Menus get a 12 px #8C93A3 chevron on the right.
+	# Buttons with a label join header_compact so fit_header() can show them icon-only.
+	control.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	if not control.text.is_empty():
+		control.set_meta("label", control.text)
+		header_compact.append(control)
+	if not StudioTheme.is_neon(): return style_nav(control)
+	control.custom_minimum_size.y = 40
+	control.icon = StudioTheme.icon(kind, Color.WHITE, 16)
+	control.add_theme_constant_override("icon_max_width", 16)
+	control.add_theme_constant_override("h_separation", 8)
+	control.add_theme_font_override("font", StudioTheme.font(500))
+	control.add_theme_font_size_override("font_size", 13)
+	var pad := Vector4(12, 0, 30 if chevron else 12, 0)
+	var clear := StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, pad)
+	override_button_boxes(control, clear, StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 8, 0, pad), StudioTheme.flat(StudioTheme.RAISE, Color.TRANSPARENT, 8, 0, pad), clear)
+	override_button_colors(control, StudioTheme.TEXT2, StudioTheme.TEXT, Color.WHITE)
+	if chevron:
+		var arrow := TextureRect.new()
+		arrow.texture = StudioTheme.icon("chevron", StudioTheme.TEXT3, 12)
+		arrow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		control.add_child(arrow)
+		arrow.set_anchors_preset(Control.PRESET_CENTER_RIGHT)
+		arrow.offset_left = -24; arrow.offset_right = -12; arrow.offset_top = -6; arrow.offset_bottom = 6
+	return control
+
+func header_divider(parent: Node) -> Control:
+	# 1x24 #2C303B hairline with 4 px on each side.
+	var holder := MarginContainer.new()
+	holder.add_theme_constant_override("margin_left", 4)
+	holder.add_theme_constant_override("margin_right", 4)
+	holder.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var line := ColorRect.new()
+	line.color = StudioTheme.LINE2 if StudioTheme.is_neon() else Color(1, 1, 1, 0.35)
+	line.custom_minimum_size = Vector2(1, 24)
+	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	holder.add_child(line)
+	parent.add_child(holder)
+	return holder
+
+func style_tab(control: Button, kind: String) -> void:
+	# Neon Pro step 2: Draw / Camera / Pose tab, 104x40, r7. Active: #171A21 + 1 px #2C303B, 13/600
+	# white with a white icon and a 2 px neon underline (inset 30, 3 from the bottom) with a pink glow;
+	# inactive: transparent, 13/500 #8C93A3. The icon+label group is centred by equal padding.
+	control.set_meta("label", control.text)
+	control.custom_minimum_size = Vector2(104, 40)
+	control.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	if not StudioTheme.is_neon(): return
+	control.icon = StudioTheme.icon(kind, Color.WHITE, 16)
+	control.add_theme_constant_override("icon_max_width", 16)
+	control.add_theme_constant_override("h_separation", 8)
+	control.add_theme_font_size_override("font_size", 13)
+	var content := StudioTheme.font(600).get_string_size(control.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x + 24
+	var side := maxf(8.0, floorf((104.0 - content) / 2.0))
+	control.set_meta("pad", side)
+	var pad := Vector4(side, 0, side, 0)
+	var boxes := [StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 7, 0, pad), StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 7, 0, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE2, 7, 1, pad)]
+	control.set_meta("boxes", boxes)
+	override_button_boxes(control, boxes[0], boxes[1], boxes[2], boxes[0])
+	override_button_colors(control, StudioTheme.TEXT3, StudioTheme.TEXT, Color.WHITE)
+	var underline := Control.new()
+	underline.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	control.add_child(underline)
+	underline.anchor_left = 0; underline.anchor_right = 1; underline.anchor_top = 1; underline.anchor_bottom = 1
+	underline.offset_left = 30; underline.offset_right = -30; underline.offset_top = -5; underline.offset_bottom = -3
+	var glow := Panel.new()
+	glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	glow.add_theme_stylebox_override("panel", StudioTheme.flat(Color(1, 0.239, 0.604, 0), Color.TRANSPARENT, 1, 0, Vector4(0, 0, 0, 0), Color(1, 0.239, 0.604, 0.55), 5))
+	underline.add_child(glow)
+	glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var line := TextureRect.new()
+	line.texture = StudioTheme.neon_line()
+	line.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	line.stretch_mode = TextureRect.STRETCH_SCALE
+	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	underline.add_child(line)
+	line.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	underline.visible = false
+	control.set_meta("underline", underline)
+
+func set_tab_compact(tab: Button, compact: bool) -> void:
+	var text: String = "" if compact else str(tab.get_meta("label", tab.text))
+	if tab.text == text: return
+	tab.text = text
+	tab.custom_minimum_size.x = 44 if compact else 104
+	var side: float = 14.0 if compact else float(tab.get_meta("pad", 12.0))
+	for box in tab.get_meta("boxes", []):
+		box.content_margin_left = side
+		box.content_margin_right = side
+	var underline = tab.get_meta("underline", null)
+	if underline:
+		underline.offset_left = 12 if compact else 30
+		underline.offset_right = -12 if compact else -30
+
+func refresh_mode_tabs() -> void:
+	# The mode dropdown stays the source of truth; tabs only mirror it.
+	for i in mode_tabs.size():
+		var on := mode.selected == i
+		var tab := mode_tabs[i]
+		if tab.button_pressed != on: tab.set_pressed_no_signal(on)
+		var underline = tab.get_meta("underline", null)
+		if underline and underline.visible != on: underline.visible = on
+		if StudioTheme.is_neon(): tab.add_theme_font_override("font", StudioTheme.font(600 if on else 500))
+
+func style_export(control: Button) -> void:
+	# Neon Pro step 2: Export movie: h40, pad 0 10 0 14, r8, neon fill, 14/600 #07080B with a dark
+	# icon, an MP4 chip (mono 11/600 #07080B on rgba(255,255,255,.24), r5, h20, pad 0 6) and a pink
+	# glow from a decorative panel drawn behind the button.
+	control.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	if not StudioTheme.is_neon():
+		style_accent(style_nav(control))
+		return
+	control.theme_type_variation = "NeonButton"
+	control.custom_minimum_size.y = 40
+	control.icon = StudioTheme.icon("export", StudioTheme.ON_NEON, 16)
+	control.add_theme_constant_override("icon_max_width", 16)
+	control.add_theme_constant_override("h_separation", 8)
+	var glow := Panel.new()
+	glow.show_behind_parent = true
+	glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	glow.add_theme_stylebox_override("panel", StudioTheme.flat(Color(1, 0.239, 0.604, 0), Color.TRANSPARENT, 8, 0, Vector4(0, 0, 0, 0), Color(1, 0.239, 0.604, 0.45), 8, Vector2(0, 6)))
+	control.add_child(glow)
+	glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	export_chip = Label.new()
+	export_chip.text = "MP4"
+	export_chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	export_chip.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	export_chip.custom_minimum_size.y = 20
+	export_chip.add_theme_font_override("font", StudioTheme.mono(600))
+	export_chip.add_theme_font_size_override("font_size", 11)
+	export_chip.add_theme_color_override("font_color", StudioTheme.ON_NEON)
+	export_chip.add_theme_stylebox_override("normal", StudioTheme.flat(Color(1, 1, 1, 0.24), Color.TRANSPARENT, 5, 0, Vector4(6, 0, 6, 0)))
+	control.add_child(export_chip)
+	export_chip.set_anchors_and_offsets_preset(Control.PRESET_CENTER_RIGHT, Control.PRESET_MODE_MINSIZE, 10)
+	var right := 10.0 + export_chip.get_combined_minimum_size().x + 10.0
+	var normal := StudioTheme.neon_fill(8.0)
+	var hover := StudioTheme.neon_fill(8.0)
+	hover.modulate_color = Color(1.08, 1.08, 1.08)
+	var disabled := StudioTheme.neon_fill(8.0)
+	disabled.modulate_color = Color(1, 1, 1, 0.55)
+	for box in [normal, hover, disabled]:
+		box.content_margin_left = 14; box.content_margin_right = right; box.content_margin_top = 0; box.content_margin_bottom = 0
+	control.set_meta("boxes", [normal, hover, disabled])
+	override_button_boxes(control, normal, hover, normal, disabled)
+
+func header_fits() -> bool:
+	# True when the left and right groups clear the centred tab group by 8 px (or simply fit when
+	# the tabs are hidden, as in Advanced).
+	var width := header_row.size.x
+	var gap := float(header_row.get_theme_constant("separation"))
+	var left := 0.0
+	var right := 0.0
+	var after := false
+	for child in header_row.get_children():
+		if child == header_spacer:
+			after = true
+			continue
+		if not (child as Control).visible: continue
+		var used: float = (child as Control).get_combined_minimum_size().x + gap
+		if after: right += used
+		else: left += used
+	if header_tab_overlay == null or not header_tab_overlay.visible: return left + right <= width
+	var side := (width - header_tab_frame.get_combined_minimum_size().x) / 2.0
+	return left + 8.0 <= side and right + 8.0 <= side
+
+func set_header_level(level: int) -> void:
+	if level == header_level: return
+	header_level = level
+	for control in header_compact:
+		var text: String = str(control.get_meta("label")) if level < 1 else ""
+		if control.text != text: control.text = text
+	if export_chip and export_button.has_meta("boxes"):
+		if export_chip.visible != (level < 2): export_chip.visible = level < 2
+		var right := 10.0 + (export_chip.get_combined_minimum_size().x + 10.0 if level < 2 else 0.0)
+		for box in export_button.get_meta("boxes"): box.content_margin_right = right
+		export_button.update_minimum_size()
+	for tab in mode_tabs: set_tab_compact(tab, level >= 3)
+	if header_project and header_project.visible != (level < 4): header_project.visible = level < 4
+
+func fit_header() -> void:
+	# Neon Pro step 2: the centred tabs are an overlay, so the bar never adds horizontal scrolling.
+	# When a side group would run under the tabs, step down until it fits: 1 ghost buttons go
+	# icon-only, 2 Export drops the MP4 chip, 3 tabs go icon-only, 4 the project name/save line
+	# hides (the brand mark's tooltip keeps the name). Tooltips keep every button name.
+	if header_row == null or header_row.size.x <= 0: return
+	for level in 5:
+		set_header_level(level)
+		if level == 4 or header_fits(): return
 
 func style_nav(control: Button) -> Button:
-	control.custom_minimum_size = Vector2(80, 56)
-	control.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	control.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP
-	control.add_theme_constant_override("icon_max_width", 28)
+	# Classic styles: transparent top-bar button (icon left of the label) that lights up on hover.
+	control.custom_minimum_size.y = 40
+	control.add_theme_constant_override("icon_max_width", 22)
 	control.add_theme_font_size_override("font_size", 13)
 	var normal := StyleBoxFlat.new()
 	normal.bg_color = Color.TRANSPARENT
-	normal.set_content_margin_all(6)
+	normal.content_margin_left = 10
+	normal.content_margin_right = 10
+	normal.content_margin_top = 4
+	normal.content_margin_bottom = 4
 	normal.set_corner_radius_all(6)
 	var hover: StyleBoxFlat = normal.duplicate()
 	hover.bg_color = Color(1, 1, 1, 0.2)
@@ -565,7 +802,7 @@ func menu_button(parent: Node, text: String, kind: String, items: Array, hint :=
 	for i in items.size(): popup.add_item(items[i][0], i)
 	popup.id_pressed.connect(func(id): items[id][1].call())
 	parent.add_child(m)
-	style_nav(m)
+	style_header(m, kind, true)
 	return m
 
 func pick_mode(index: int) -> void:
@@ -626,7 +863,7 @@ func refresh_workspace() -> void:
 		canvas.tooltip_text=canvas.tooltip_text.replace("Ctrl + left: free fly","Ctrl + left: orbit")+" • Orbit: Ctrl+left • Pan: Ctrl+right • Dolly: Ctrl+wheel"
 	for control in advanced_controls: control.visible = advanced_mode
 	for control in simple_controls: control.visible = not advanced_mode
-	for i in mode_tabs.size(): mode_tabs[i].set_pressed_no_signal(mode.selected == i)
+	refresh_mode_tabs()
 	if physics_bar: physics_bar.visible = advanced_mode or mode.selected == 2
 	refresh_tool_strip()
 	if camera_strip: camera_strip.visible = not advanced_mode and mode.selected == 1
@@ -640,6 +877,7 @@ func refresh_workspace() -> void:
 	inspector_scroll.scroll_vertical = 0
 	if pose_editor:pose_editor.refresh_values()
 	if scene_view:scene_view.sync()
+	fit_header()
 
 func style_accent(control: Button) -> void:
 	# Redesign: Export movie gets a light pill on hover so the main action stands out.
@@ -652,11 +890,47 @@ func style_accent(control: Button) -> void:
 	control.add_theme_stylebox_override("hover", accent)
 
 func refresh_title() -> void:
-	# Redesign: header shows the project name and an unsaved dot (the window title stays the studio name).
+	# Neon Pro step 2: the bar shows the project name (or "Untitled") over a save line; the window
+	# title stays "Hybrid Animation Studio". "Saved N min ago" only counts from a save seen in this
+	# session (dirty turning false while the recovery status reports the save); nothing is invented.
 	if title_label == null: return
-	var shown := project_folder.get_file() if not project_folder.is_empty() else "Untitled"
-	var text := "%s%s  —  Hybrid Animation Studio" % [shown, " •" if dirty else ""]
-	if title_label.text != text: title_label.text = text
+	var named: bool = has_project != null and not has_project.path.is_empty()
+	var shown: String = has_project.path.get_file().get_basename() if named else project_folder.get_file() if not project_folder.is_empty() else "Untitled"
+	named = named or not project_folder.is_empty()
+	var report := recovery_status.text if recovery_status else ""
+	if header_was_dirty and not dirty:
+		header_saved_at = Time.get_ticks_msec() if report in ["Project saved", "Saved; recovery copy retained"] else -1
+	header_was_dirty = dirty
+	var state := "new"
+	var line := "Not saved yet"
+	if dirty:
+		state = "dirty"; line = "Unsaved changes"
+	elif header_saved_at >= 0:
+		state = "saved"
+		var minutes := int((Time.get_ticks_msec() - header_saved_at) / 60000.0)
+		line = "Saved just now" if minutes < 1 else "Saved %d min ago" % minutes if minutes < 60 else "Saved %d h ago" % int(minutes / 60.0)
+	elif named:
+		state = "saved"; line = "Saved"
+	var changed := false
+	if title_label.text != shown:
+		title_label.text = shown
+		header_mark.tooltip_text = shown
+		changed = true
+	if save_label.text != line:
+		save_label.text = line
+		save_dot.add_theme_stylebox_override("panel", save_dot_style(state))
+		changed = true
+	if header_project.tooltip_text != report: header_project.tooltip_text = report
+	if changed: fit_header()
+
+func save_dot_style(state: String) -> StyleBoxFlat:
+	# 6 px dot: mint with a soft glow when saved, amber when there are unsaved changes, grey when the
+	# project has never been saved.
+	if not header_dots.has(state):
+		var colour: Color = {"saved": StudioTheme.SAVED, "dirty": StudioTheme.WARNING}.get(state, StudioTheme.TEXT3)
+		var glow := Color(colour, 0.7) if state == "saved" else Color.TRANSPARENT
+		header_dots[state] = StudioTheme.flat(colour, Color.TRANSPARENT, 3, 0, Vector4(0, 0, 0, 0), glow, 3 if state == "saved" else 0)
+	return header_dots[state]
 
 func pick_scene_file() -> void:
 	choose_file("Import 3D environment", ["*.has", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.bsp", "*.gma", "*.bin"], func(path):import_actions.add(path,false,0), source_import.default_browse_dir())
@@ -683,67 +957,147 @@ func build_ui() -> void:
 	var title_panel := PanelContainer.new()
 	var header_style := StyleBoxTexture.new()
 	header_box = header_style
-	header_style.texture = header_texture()
-	header_style.content_margin_left = 14
-	header_style.content_margin_right = 14
-	header_style.content_margin_top = 10
-	header_style.content_margin_bottom = 6
 	title_panel.add_theme_stylebox_override("panel", header_style)
 	shell.add_child(title_panel)
+	# Neon Pro step 2: one 56 px bar: brand mark + project name/save line, ghost New / Open / Save,
+	# Add, centred Draw / Camera / Pose (an overlay, see below), Advanced switch, More, Settings and
+	# Export movie. Advanced adds a wrapping row with its extra buttons under it.
 	var header_column := VBoxContainer.new()
-	header_column.add_theme_constant_override("separation", 4)
+	header_column.add_theme_constant_override("separation", 0)
 	title_panel.add_child(header_column)
 	var title_row := HBoxContainer.new()
+	header_row = title_row
+	title_row.custom_minimum_size.y = 56
+	title_row.add_theme_constant_override("separation", 4)
 	header_column.add_child(title_row)
-	var title := label(title_row, "Hybrid Animation Studio")
-	title_label = title
-	title.add_theme_color_override("font_color", Color("102e4d"))
-	title.add_theme_font_size_override("font_size", 20)
-	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	advanced(icon_button(title_row,"Home","scene",func():home.open_home(),"New, Open and recent projects; your current scene stays intact"))
-	workspace_label = label(title_row, "Simple workspace")
-	workspace_label.add_theme_color_override("font_color", Color("102e4d"))
+	var brand_margin := MarginContainer.new()
+	brand_margin.add_theme_constant_override("margin_right", 8)
+	brand_margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	title_row.add_child(brand_margin)
+	var brand := HBoxContainer.new()
+	brand.add_theme_constant_override("separation", 12)
+	brand.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	brand_margin.add_child(brand)
+	header_mark = TextureRect.new()
+	header_mark.texture = StudioTheme.brand_mark()
+	header_mark.custom_minimum_size = Vector2(28, 28)
+	header_mark.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	header_mark.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	header_mark.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	header_mark.tooltip_text = "Untitled"
+	brand.add_child(header_mark)
+	header_project = VBoxContainer.new()
+	header_project.alignment = BoxContainer.ALIGNMENT_CENTER
+	header_project.add_theme_constant_override("separation", 1)
+	header_project.mouse_filter = Control.MOUSE_FILTER_PASS
+	brand.add_child(header_project)
+	title_label = label(header_project, "Untitled")
+	title_label.add_theme_font_override("font", StudioTheme.font(600))
+	title_label.add_theme_font_size_override("font_size", 14)
+	var save_line := HBoxContainer.new()
+	save_line.add_theme_constant_override("separation", 6)
+	save_line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	header_project.add_child(save_line)
+	save_dot = Panel.new()
+	save_dot.custom_minimum_size = Vector2(6, 6)
+	save_dot.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	save_dot.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	save_dot.add_theme_stylebox_override("panel", save_dot_style("new"))
+	save_line.add_child(save_dot)
+	save_label = label(save_line, "Not saved yet")
+	save_label.add_theme_font_size_override("font_size", 12)
 	apply_header_style()
-	advanced_toggle = button(title_row, "Advanced", func(): set_advanced(advanced_toggle.button_pressed))
-	advanced_toggle.toggle_mode = true
-	advanced_toggle.tooltip_text = "Show detailed controls. Your scene, drawings, audio and settings keep working in either mode."
-	# Redesign: the nav toolbar wraps so Advanced keeps every button at 1200 px.
-	var toolbar := HFlowContainer.new()
-	header_column.add_child(toolbar)
-	nav_button(toolbar, "New", "scene", new_dialog, "Start an empty world • unsaved edits are protected by a confirmation")
-	nav_button(toolbar, "Open", "folder", open_dialog, "Open an editable project")
-	keyboard_shortcuts.decorate(nav_button(toolbar, "Save", "save", save),"save","Save project")
-	advanced(nav_button(toolbar, "Recover", "undo", show_recovery, "Review retained recovery checkpoints"))
-	advanced(nav_button(toolbar, "Save as…", "save", save_as))
-	advanced(nav_button(toolbar, "Open folder…", "open", func():
-		var action := func(): choose_directory("Open legacy project directory", open_project)
-		if dirty: confirm_action("Discard unsaved edits and open another project?", action)
-		else: action.call()))
-	advanced(nav_button(toolbar, "Sample room", "scene", demo_dialog, "Open the original camera/drawing example as a new unsaved project"))
-	advanced(nav_button(toolbar, "Add scene", "scene", pick_scene_file, "Add a 3D environment: GLB, glTF, FBX, OBJ, MMD or an installed Source map"))
-	advanced(nav_button(toolbar, "Add model", "scene", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment"))
-	advanced(nav_button(toolbar, "Installed", "folder", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts"))
-	advanced(nav_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead"))
-	simple_only(menu_button(toolbar, "Add", "add", [
+	header_divider(title_row)
+	header_button(title_row, "New", "new", new_dialog, "Start an empty world • unsaved edits are protected by a confirmation")
+	header_button(title_row, "Open", "open", open_dialog, "Open an editable project")
+	keyboard_shortcuts.decorate(header_button(title_row, "Save", "save", save),"save","Save project")
+	simple_only(header_divider(title_row))
+	simple_only(menu_button(title_row, "Add", "add", [
 		["3D scene or map…", pick_scene_file],
 		["Poseable model…", func(): pose_editor.import_dialog()],
 		["Installed content…", func(): source_browser.open()],
 		["Audio (WAV, MP3, Ogg)…", func(): choose_audio_at_playhead()]],
 		"Add a scene, a model, installed content or audio"))
-	var spacer := Control.new()
-	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	toolbar.add_child(spacer)
-	style_accent(nav_button(toolbar, "Export movie", "export", export_dialog, "Export MP4 beside your saved HAS project, with a recoverable PNG frame sequence"))
-	advanced(button(title_row,"Options",show_project_options)).tooltip_text="Project settings, including visibility fades. Saved with this HAS project."
-	button(title_row,"Settings",show_display_settings).tooltip_text="Interface scale and fullscreen (F11). Advanced also offers orbit camera controls."
-	advanced(nav_button(toolbar, "About", "help", show_notices, "Credits and open source notices"))
-	simple_only(menu_button(toolbar, "More", "help", [
+	header_spacer = Control.new()
+	header_spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	header_spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	title_row.add_child(header_spacer)
+	# The Advanced switch stays a Button (CheckButton) whose pressed signal reads button_pressed.
+	var switch := CheckButton.new()
+	advanced_toggle = switch
+	switch.text = "Advanced"
+	switch.focus_mode = Control.FOCUS_NONE
+	switch.pressed.connect(func(): set_advanced(advanced_toggle.button_pressed))
+	switch.tooltip_text = "Show detailed controls. Your scene, drawings, audio and settings keep working in either mode."
+	switch.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	title_row.add_child(switch)
+	if StudioTheme.is_neon():
+		switch.custom_minimum_size.y = 40
+		switch.add_theme_font_override("font", StudioTheme.font(500))
+		switch.add_theme_font_size_override("font_size", 13)
+		switch.add_theme_constant_override("h_separation", 10)
+		var switch_pad := Vector4(12, 0, 12, 0)
+		var switch_clear := StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, switch_pad)
+		var switch_hover := StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 8, 0, switch_pad)
+		override_button_boxes(switch, switch_clear, switch_hover, switch_clear, switch_clear)
+		switch.add_theme_stylebox_override("hover_pressed", switch_hover)
+		switch.add_theme_stylebox_override("hover_pressed_mirrored", switch_hover)
+		for state in ["font_color", "font_focus_color", "font_pressed_color"]: switch.add_theme_color_override(state, StudioTheme.TEXT2)
+		for state in ["font_hover_color", "font_hover_pressed_color"]: switch.add_theme_color_override(state, StudioTheme.TEXT)
+	simple_only(menu_button(title_row, "More", "more", [
 		["Home screen…", func(): home.open_home()],
 		["Recover…", func(): show_recovery()],
 		["Project options…", func(): show_project_options()],
 		["Interface size and fullscreen…", func(): show_display_settings()],
 		["Keyboard shortcuts…", func(): keyboard_shortcuts.open()],
 		["About and credits", func(): show_notices()]], "Home screen, recovery, project options, shortcuts and credits"))
+	header_button(title_row, "", "settings", show_display_settings, "Settings: interface scale and fullscreen (F11). Advanced also offers orbit camera controls.").custom_minimum_size.x = 40
+	header_divider(title_row)
+	export_button = icon_button(title_row, "Export movie", "export", export_dialog, "Export MP4 beside your saved HAS project, with a recoverable PNG frame sequence")
+	style_export(export_button)
+	# Advanced: every extra file/scene/help button, as ghost icon+label buttons that wrap.
+	var advanced_row := MarginContainer.new()
+	advanced_row.add_theme_constant_override("margin_bottom", 4)
+	header_column.add_child(advanced_row)
+	advanced(advanced_row)
+	var toolbar := HFlowContainer.new()
+	toolbar.add_theme_constant_override("h_separation", 4)
+	toolbar.add_theme_constant_override("v_separation", 4)
+	advanced_row.add_child(toolbar)
+	workspace_label = label(toolbar, "Simple workspace")
+	workspace_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	workspace_label.custom_minimum_size.y = 40
+	workspace_label.add_theme_font_size_override("font_size", 12)
+	apply_header_style()
+	header_button(toolbar,"Home","scene",func():home.open_home(),"New, Open and recent projects; your current scene stays intact")
+	header_button(toolbar, "Recover", "reset", show_recovery, "Review retained recovery checkpoints")
+	header_button(toolbar, "Save as…", "save", save_as)
+	header_button(toolbar, "Open folder…", "folder", func():
+		var action := func(): choose_directory("Open legacy project directory", open_project)
+		if dirty: confirm_action("Discard unsaved edits and open another project?", action)
+		else: action.call())
+	header_button(toolbar, "Sample room", "building", demo_dialog, "Open the original camera/drawing example as a new unsaved project")
+	header_button(toolbar, "Add scene", "scene", pick_scene_file, "Add a 3D environment: GLB, glTF, FBX, OBJ, MMD or an installed Source map")
+	header_button(toolbar, "Add model", "figure", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment")
+	header_button(toolbar, "Installed", "open", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts")
+	header_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead")
+	header_button(toolbar,"Options","grid",show_project_options,"Project settings, including visibility fades. Saved with this HAS project.")
+	header_button(toolbar, "About", "help", show_notices, "Credits and open source notices")
+	# The Advanced row keeps its labels (it wraps instead); only main-row buttons go icon-only.
+	header_compact.assign(header_compact.filter(func(control): return control.get_parent() == title_row))
+	# Centre: Draw / Camera / Pose tab group as a full-width overlay that ignores the mouse, so it is
+	# centred on the window and never adds to the bar's minimum width (the tabs are built below).
+	header_tab_overlay = CenterContainer.new()
+	header_tab_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	title_panel.add_child(header_tab_overlay)
+	simple_only(header_tab_overlay)
+	header_tab_frame = PanelContainer.new()
+	header_tab_frame.add_theme_stylebox_override("panel", StudioTheme.flat(Color("0f1015"), StudioTheme.LINE, 10, 1, Vector4(4, 4, 4, 4)) if StudioTheme.is_neon() else StyleBoxEmpty.new())
+	header_tab_overlay.add_child(header_tab_frame)
+	header_tabs = HBoxContainer.new()
+	header_tabs.add_theme_constant_override("separation", 2)
+	header_tab_frame.add_child(header_tabs)
+	title_row.resized.connect(fit_header)
 	var margin := MarginContainer.new()
 	margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	for side in ["left", "right", "top", "bottom"]:
@@ -777,13 +1131,14 @@ func build_ui() -> void:
 	view_toolbar.add_child(mode)
 	advanced(mode)
 	# Redesign: Simple shows Draw / Camera / Pose tabs instead of the dropdown.
+	# Neon Pro step 2: the tabs live in the header's centred group (header_tabs).
 	var tab_group := ButtonGroup.new()
 	for tab in [["Draw", "draw"], ["Camera", "camera"], ["Pose", "figure"]]:
 		var index := mode_tabs.size()
-		var t := icon_button(view_toolbar, tab[0], tab[1], func(): pick_mode(index), tab[0] + " mode")
+		var t := icon_button(header_tabs, tab[0], tab[1], func(): pick_mode(index), tab[0] + " mode")
 		t.toggle_mode = true
 		t.button_group = tab_group
-		t.custom_minimum_size = Vector2(96, 36)
+		style_tab(t, tab[1])
 		mode_tabs.append(t)
 		simple_only(t)
 	lighting_choice=OptionButton.new()

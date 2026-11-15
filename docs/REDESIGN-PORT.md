@@ -127,3 +127,52 @@ Deviations (step 1):
 - **Contrast:** TEXT3 `#8C93A3` is 6.3:1 on BAR, 5.65:1 on RAISE, 5.28:1 on HOVER and 4.97:1 on the
   outline-button hover fill. TEXT2 is at least 7.9:1 and TEXT at least 14:1. `#07080B` on the neon fill
   is at least 5.8:1.
+
+### Step 2: header bar (`src/app.gd`, `src/studio_theme.gd`)
+- One 56 px bar (`#0C0D11`, 1 px `#22252E` bottom hairline, padding 0 12, gap 4) replaces the two-row
+  header. Neon drops the blue gradient. Classic styles keep the gradient and get white-text buttons.
+- Left: a 28 px brand mark (`StudioTheme.brand_mark()`: neon ring, radius 9, white glyph with its corner cut).
+  Next to it, `title_label` shows only the project name: the `.has` file name, else the folder name,
+  else "Untitled". The window title stays "Hybrid Animation Studio". Under the name is a 12 px save
+  line with a 6 px dot: mint with a glow and "Saved" for an opened or saved project, amber "Unsaved
+  changes" when `dirty`, grey "Not saved yet" for a project that has never been saved. "Saved just
+  now / N min ago" counts only from a save seen in this session, which `refresh_title()` detects as
+  `dirty` turning false while `recovery_status` reports "Project saved" or "Saved; recovery copy
+  retained". The tooltip is the recovery status text. Then a divider and ghost New / Open / Save
+  (h40, 16 px line icons; Save keeps its shortcut decoration), a divider, and the Add menu with a
+  chevron. The menu items are unchanged.
+- Centre: the existing Draw / Camera / Pose `mode_tabs` are built into `header_tabs`, a group panel
+  (`#0F1015`, 1 px `#22252E`, r10, pad 3) in a full-width `CenterContainer` overlay with
+  `MOUSE_FILTER_IGNORE`. The group is centred on the window and never adds to the bar's minimum
+  width. Each tab is 104x40 with r7. The active tab has a `#171A21` fill, a 1 px `#2C303B` border,
+  13/600 white text and a 2 px neon underline with a pink glow. Inactive tabs show 13/500 `#8C93A3`
+  text. The tabs still call `pick_mode()`, stay `simple_only`, and `refresh_mode_tabs()` re-syncs
+  them from `mode`.
+- Right: `advanced_toggle` is now a `CheckButton` "Advanced" with the neon switch. Its `pressed`
+  signal still calls `set_advanced(advanced_toggle.button_pressed)`, and the tooltip and
+  `set_pressed_no_signal` are unchanged. More is a ghost menu with a chevron and unchanged items.
+  Settings is a 40x40 gear button, visible in both modes, with the tooltip "Settings: …". After a
+  divider comes Export movie: neon fill, 14/600 `#07080B` text, a dark icon, a mono "MP4" chip, and a
+  pink glow from a `show_behind_parent` panel.
+- Advanced: the same bar plus a wrapping row with every Advanced button: Home, Recover, Save as…,
+  Open folder…, Sample room, Add scene, Add model, Installed, Add audio, Options and About. They are
+  ghost buttons with icons and labels. "Advanced workspace" (`workspace_label`) appears as a 12 px
+  caption at the start of that row.
+- `fit_header()` runs on resize, on title changes and after `refresh_workspace()`. It measures
+  the groups and steps down only as far as needed for them to clear the centred tabs: (1) New, Open,
+  Save, Add and More go icon-only, (2) Export drops the MP4 chip, (3) the tabs go icon-only, (4) the
+  project name and save line hide. The brand mark's tooltip keeps the name, and every button keeps
+  its tooltip. Measured under xvfb: level 0 at 1440 px, level 2 at 1200 px (Advanced switch ends at
+  x 927), level 3 at 1100 and 1000 px. There is no horizontal scroll at any of these widths.
+
+Deviations (step 2):
+- **Settings gear:** the mock has no Settings button. It stays visible in both modes, as the plan
+  asks, because Advanced has no More menu and Settings was always on the bar before.
+- **Glows:** the mock's Export glow is two shadows with negative spread. Here it is one pink shadow
+  (alpha .45, size 8, offset 0 6). The tab underline glow is pink only.
+- **Fit thresholds:** the plan's fixed breakpoints (1320 px for icon-only buttons, 1100 px for tabs)
+  became measured steps, because the project name and the save text change the width.
+- **Classic styles:** they use the same new layout, with the gradient bar and white text. Theme
+  overrides chosen at start-up (icons and button colours) change after the next start, as for step 1.
+- **Contrast:** TEXT2 on the bar is 9.98:1 (8.36:1 on hover). Inactive tab text is 6.17:1 on
+  `#0F1015`. `#07080B` on the neon fill is at least 5.9:1.
