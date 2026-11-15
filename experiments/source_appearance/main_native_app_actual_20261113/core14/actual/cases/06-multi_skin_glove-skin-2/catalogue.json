@@ -1,0 +1,152 @@
+{
+  "bodygroups": [
+    {
+      "choices": [
+        {
+          "display_name": "gloves.dmx",
+          "index": 0.0,
+          "name": "gloves.dmx",
+          "raw_name_sha256": "bcd8c2638b0a54f1105935546956a5be4f70c55e2a7eff333b3666fc414ef279",
+          "true_blank": false,
+          "vertex_count": 6544.0
+        },
+        {
+          "display_name": "Choice 2 (empty name)",
+          "index": 1.0,
+          "name": "",
+          "raw_name_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "true_blank": true,
+          "vertex_count": 0.0
+        }
+      ],
+      "display_name": "glove",
+      "index": 0.0,
+      "name": "glove",
+      "native_base": 1.0,
+      "raw_name_sha256": "4bc529d33e80672d2c818851c8974428eddab767b45ce0e948d36e93218ed45d"
+    }
+  ],
+  "catalogue_sha256": "cae9fd811e588dbf13b02f80302c46d12ab970647c8e2720cbe1eb7683d71734",
+  "format": "studio_source_mdl_choices_1",
+  "materials": [
+    {
+      "display_name": "models/touhou/tamo/Nitori edit/Gloves",
+      "index": 0.0,
+      "name": "models/touhou/tamo/Nitori edit/Gloves",
+      "raw_name_sha256": "5e251b32e0ef4c459b4695c97bae5c0089317c500f94e76e601624a77b000d77"
+    },
+    {
+      "display_name": "models/touhou/tamo/Nitori edit/Gloves glow",
+      "index": 1.0,
+      "name": "models/touhou/tamo/Nitori edit/Gloves glow",
+      "raw_name_sha256": "8c4ccd9b27868854c072f71b1192a813d2277935455c913abfe275e16e80a1dc"
+    },
+    {
+      "display_name": "Glovesg",
+      "index": 2.0,
+      "name": "Glovesg",
+      "raw_name_sha256": "986c43ba8003a111bb73732ba32e68ef34f43da99fed9b7a0f85dbf0a0e393de"
+    },
+    {
+      "display_name": "Gloves glowg",
+      "index": 3.0,
+      "name": "Gloves glowg",
+      "raw_name_sha256": "f5ef9a48be63358fb32626fb6d21a8c60ff97e6a3e277ffe8c12f1338f3c2e85"
+    },
+    {
+      "display_name": "Glovesw",
+      "index": 4.0,
+      "name": "Glovesw",
+      "raw_name_sha256": "105881f43ded5e5f8b032bfd241e9c651227b6138a2244ce67bb4e68b6f11b42"
+    },
+    {
+      "display_name": "Gloves gloww",
+      "index": 5.0,
+      "name": "Gloves gloww",
+      "raw_name_sha256": "78b9cb1a95d27c30d9805b079dbc01af0da5e87b27c929d64fccc2f3c16da782"
+    }
+  ],
+  "name_encoding": "latin-1 (reversible byte mapping; author encoding unverified)",
+  "native_checksum": 2174951634.0,
+  "native_mdl_bytes": 116280.0,
+  "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+  "native_version": 49.0,
+  "original_source_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+  "scope": {
+    "converted_object_correspondence_verified": false,
+    "excluded": [
+      "geometry",
+      "bones",
+      "mesh material-column correspondence",
+      "flex evaluation",
+      "native shaders",
+      "jiggle",
+      "animation"
+    ],
+    "inspected_header_prefix_bytes": 240.0,
+    "kind": "mdl49_static_table_metadata_only",
+    "native_fidelity_verified": false,
+    "resources_verified": false
+  },
+  "selected_member": "kawashiro nitori tanktop glove.mdl",
+  "skin_reference_count": 6.0,
+  "skins": [
+    {
+      "index": 0.0,
+      "material_indices": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      "material_names": [
+        "models/touhou/tamo/Nitori edit/Gloves",
+        "models/touhou/tamo/Nitori edit/Gloves glow",
+        "Glovesg",
+        "Gloves glowg",
+        "Glovesw",
+        "Gloves gloww"
+      ]
+    },
+    {
+      "index": 1.0,
+      "material_indices": [
+        2.0,
+        3.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      "material_names": [
+        "Glovesg",
+        "Gloves glowg",
+        "Glovesg",
+        "Gloves glowg",
+        "Glovesw",
+        "Gloves gloww"
+      ]
+    },
+    {
+      "index": 2.0,
+      "material_indices": [
+        4.0,
+        5.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ],
+      "material_names": [
+        "Glovesw",
+        "Gloves gloww",
+        "Glovesg",
+        "Gloves glowg",
+        "Glovesw",
+        "Gloves gloww"
+      ]
+    }
+  ]
+}

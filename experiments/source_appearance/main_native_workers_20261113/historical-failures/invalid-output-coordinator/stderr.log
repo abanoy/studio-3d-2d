@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\sfm-native-main-rebind-20261113\core-source\background_conversion_driver.py", line 598, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\sfm-native-main-rebind-20261113\core-source\background_conversion_driver.py", line 484, in main
+    S.require(run.parent == TASK and re.fullmatch(r"conversion-run-[A-Za-z0-9_]+", run.name) and not run.exists(), "Execution/preflight output must be a fresh direct conversion-run child")
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\sfm-native-main-rebind-20261113\core-source\stage_resources.py", line 38, in require
+    raise ValueError(message)
+ValueError: Execution/preflight output must be a fresh direct conversion-run child

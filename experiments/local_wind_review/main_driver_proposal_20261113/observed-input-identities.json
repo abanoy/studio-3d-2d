@@ -1,0 +1,71 @@
+{
+  "scope": "Read-only observation of approved current prepared bundles; these paths are not future driver defaults.",
+  "future_relative_layout": {
+    "format": "has_wind_review_inputs_1",
+    "inputs": {
+      "vrm0": {
+        "source": "wind-native/vrm0/scene.glb",
+        "parameters": "wind-native/vrm0/parameters.json"
+      },
+      "vrm1": {
+        "source": "wind-native/vrm1/scene.glb",
+        "parameters": "wind-native/vrm1/parameters.json"
+      },
+      "backhair": {
+        "source": "wind-native/ribbon/scene.glb",
+        "parameters": "wind-native/ribbon/parameters.json"
+      }
+    }
+  },
+  "fixture_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output",
+  "manifest": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-main-driver-20261113\\validation\\observed-manifest.json",
+  "manifest_identity": {
+    "sha256": "1b383696e775fcb4198f27af875cd6a43d3f3d8fe397d2671d8257a6370ff5d8",
+    "bytes": 622,
+    "mtime_ns": 1794548702719405100
+  },
+  "inputs": {
+    "vrm0": {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448093-218-23395070\\scene.glb",
+      "parameters": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448093-218-23395070\\parameters.json",
+      "source_identity": {
+        "sha256": "3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56",
+        "bytes": 18630996,
+        "mtime_ns": 1794448093357726200
+      },
+      "parameters_identity": {
+        "sha256": "0f8f746ca68a821acaf9e502b6895a2f2798d8d1d2bd62569d78deea652fc0ef",
+        "bytes": 10130,
+        "mtime_ns": 1794448093358725400
+      }
+    },
+    "vrm1": {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448091-467-21644406\\scene.glb",
+      "parameters": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448091-467-21644406\\parameters.json",
+      "source_identity": {
+        "sha256": "a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062",
+        "bytes": 18633340,
+        "mtime_ns": 1794448091627224100
+      },
+      "parameters_identity": {
+        "sha256": "21f11bfb2c606fd13fa21e2d4cdbe130555918b52f92ff6030598b10ce680372",
+        "bytes": 10855,
+        "mtime_ns": 1794448091628224200
+      }
+    },
+    "backhair": {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-composition\\1794516017604605200\\input\\scene.glb",
+      "parameters": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-composition\\1794516017604605200\\input\\parameters.json",
+      "source_identity": {
+        "sha256": "4d62236d5c34468ea1f91c43089d6ce3c193be27b8460d53ea8d91d2238ab7b5",
+        "bytes": 7273728,
+        "mtime_ns": 1794448224429503700
+      },
+      "parameters_identity": {
+        "sha256": "f4e1850d9f4fa9359a72d43f3c945aaf61a1bd726538b025da31c4fa5f8071ba",
+        "bytes": 28797,
+        "mtime_ns": 1794448157924587200
+      }
+    }
+  }
+}

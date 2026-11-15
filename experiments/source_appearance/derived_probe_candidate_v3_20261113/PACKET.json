@@ -1,0 +1,207 @@
+{
+  "format": "has_sfm_derived_probe_v3_source_packet_1",
+  "status": "SOURCE_FROZEN_CPU57_PASS_NO_V3_RUNTIME",
+  "observed_root_head_at_freeze": "e9cc7cfb20266b4863bde134bcb30457547a343d",
+  "root_head_is_execution_authorization": false,
+  "schema": "has_sfm_derived_probe_candidate_3",
+  "source_files": 5,
+  "cpu_tests": 57,
+  "cpu_failures": 0,
+  "cpu_errors": 0,
+  "cpu_receipt": {
+    "path": "cpu-checks-1794556889502051700.json",
+    "bytes": 3830,
+    "sha256": "300a0087c4e7643180986378457961dc41e9fcd86fcf642ce9010353a71d7dde"
+  },
+  "actual_derived_layouts_proved_read_only": 12,
+  "v2_actual_status": "FAILED_RETAINED_311_CHECKS_1_FAILURE",
+  "old_sources_preserved": [
+    {
+      "scope": "v2 source",
+      "name": "app_probe.gd",
+      "bytes": 18659,
+      "sha256": "a5e17ee27d554475daf21fc68688e59f7baf6bdf5aa46b127f16b500f02f1675",
+      "unchanged": true
+    },
+    {
+      "scope": "v2 source",
+      "name": "glb_reference.py",
+      "bytes": 19570,
+      "sha256": "659f0b19b7d9f735e3051c3c43a55b91acc7307d54a3a63a0e5543ea7a9f8f9c",
+      "unchanged": true
+    },
+    {
+      "scope": "v2 source",
+      "name": "probe_driver.py",
+      "bytes": 25969,
+      "sha256": "e164251b61781f9040e07194e5dc674598af69474b9fd397a175a598b82f18bf",
+      "unchanged": true
+    },
+    {
+      "scope": "v2 source",
+      "name": "raw_probe.gd",
+      "bytes": 14870,
+      "sha256": "37dd07c238e5a492974886718973d1e02b4e64c2e552d149de23c35661b86d10",
+      "unchanged": true
+    },
+    {
+      "scope": "v2 source",
+      "name": "test_probe_cpu.py",
+      "bytes": 22554,
+      "sha256": "55c2d6a869e9052eecb5be25632664c6fff881fbc04ea4de560cb150867bd233",
+      "unchanged": true
+    },
+    {
+      "scope": "archived original",
+      "name": "app_probe.gd",
+      "bytes": 17986,
+      "sha256": "2e7fc498e333dc85a4b69b8943358541e6196a19e1581b6d827f52837af5fa08",
+      "unchanged": true
+    },
+    {
+      "scope": "archived original",
+      "name": "glb_reference.py",
+      "bytes": 18544,
+      "sha256": "b951b6e760933fbd7f745c50422ad4197467873ea79b45fc2daebaa7e6065ae3",
+      "unchanged": true
+    },
+    {
+      "scope": "archived original",
+      "name": "probe_driver.py",
+      "bytes": 22717,
+      "sha256": "505d85ee4be89f15c66f34f74c4026a6d5672fac79bee03104ba8fd5d731f420",
+      "unchanged": true
+    },
+    {
+      "scope": "archived original",
+      "name": "raw_probe.gd",
+      "bytes": 14677,
+      "sha256": "209b70197ee7769238add7d9ac47453da3a66dd6d5e28d0f6b47e4f3cb34add6",
+      "unchanged": true
+    },
+    {
+      "scope": "archived original",
+      "name": "test_probe_cpu.py",
+      "bytes": 11921,
+      "sha256": "801260f4fbebd4f789ebe2ba92f2f7449e5dc974d4bd8bf34d55b8c80783de26",
+      "unchanged": true
+    },
+    {
+      "scope": "old original output",
+      "name": "app_probe.gd",
+      "bytes": 17986,
+      "sha256": "2e7fc498e333dc85a4b69b8943358541e6196a19e1581b6d827f52837af5fa08",
+      "unchanged": true
+    },
+    {
+      "scope": "old original output",
+      "name": "glb_reference.py",
+      "bytes": 18544,
+      "sha256": "b951b6e760933fbd7f745c50422ad4197467873ea79b45fc2daebaa7e6065ae3",
+      "unchanged": true
+    },
+    {
+      "scope": "old original output",
+      "name": "probe_driver.py",
+      "bytes": 22717,
+      "sha256": "505d85ee4be89f15c66f34f74c4026a6d5672fac79bee03104ba8fd5d731f420",
+      "unchanged": true
+    },
+    {
+      "scope": "old original output",
+      "name": "raw_probe.gd",
+      "bytes": 14677,
+      "sha256": "209b70197ee7769238add7d9ac47453da3a66dd6d5e28d0f6b47e4f3cb34add6",
+      "unchanged": true
+    },
+    {
+      "scope": "old original output",
+      "name": "test_probe_cpu.py",
+      "bytes": 11921,
+      "sha256": "801260f4fbebd4f789ebe2ba92f2f7449e5dc974d4bd8bf34d55b8c80783de26",
+      "unchanged": true
+    }
+  ],
+  "files": [
+    {
+      "path": "source/app_probe.gd",
+      "bytes": 20218,
+      "sha256": "74104cb0fb8d7b445a6d63b9735d5f6ad420f491ae35755cba784bd53f7492dd"
+    },
+    {
+      "path": "source/glb_reference.py",
+      "bytes": 28472,
+      "sha256": "32fe4ebd4f3e5e3d35317b2e53930d772eb43b6db12111a997d6564d090d20b2"
+    },
+    {
+      "path": "source/probe_driver.py",
+      "bytes": 28874,
+      "sha256": "6adb7ed194ed7594348082839e6d4e97be682d824eaf58ead1993d439e649181"
+    },
+    {
+      "path": "source/raw_probe.gd",
+      "bytes": 15665,
+      "sha256": "5defd11daeb7d278738f7d625134581203a9d7b022c1f2533ced0d8c4683ca48"
+    },
+    {
+      "path": "source/test_probe_cpu.py",
+      "bytes": 32515,
+      "sha256": "ee2d85e55eb2f2c693d7e33e959713f7b3df13d7febf06eae2a929c680f1dbae"
+    },
+    {
+      "path": "cpu-checks-1794556889502051700.json",
+      "bytes": 3830,
+      "sha256": "300a0087c4e7643180986378457961dc41e9fcd86fcf642ce9010353a71d7dde"
+    },
+    {
+      "path": "COPIED-V2-BASELINE.json",
+      "bytes": 938,
+      "sha256": "1cdf69dbddfb5cd7e31ac00940cf14dfd742245d3e341ab87b58767f990196d5"
+    },
+    {
+      "path": "ACTUAL12-LAYOUT-PROOF.json",
+      "bytes": 88185,
+      "sha256": "6dcb7a50e6e36505b6e7a952c0b9894b04f5adf21ba448e7b8b79515f1e61472"
+    },
+    {
+      "path": "PRESERVED-V2-FAILURE.json",
+      "bytes": 1360,
+      "sha256": "7c40e3ad894909dca31ddff89a8a8a54ea3d57babe6dca3b7cb20967d272c4c4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6101,
+      "sha256": "473728dc184cc64ef806c40369e082ef5d29f7b7c1f91b8b048c843a9cb956e9"
+    },
+    {
+      "path": "PRIMARY-SOURCES.json",
+      "bytes": 1540,
+      "sha256": "871e0b272212c160dc93aa5804a213ac31c9379b0f9fde0dfcbb728810739c9f"
+    },
+    {
+      "path": "review/INDEPENDENT-REVIEW.md",
+      "bytes": 632,
+      "sha256": "49922234d5aebd9b1ed8139ccb2568233cdf7cc704579197b0bb7df76a6ffc83"
+    },
+    {
+      "path": "review/inspect_retained.py",
+      "bytes": 3161,
+      "sha256": "bfd20f7740395ef5c33e2ceb6d98751bd3055c71174d3a461f78798ed5808d78"
+    },
+    {
+      "path": "review/V2-TO-V3.patch",
+      "bytes": 33717,
+      "sha256": "3cfe34e24ba703f3506abb576d707d526eadf07ebf177ca8f9e686d2b1115e84"
+    }
+  ],
+  "reviewer": "/root/sfm_next_cases/v3_layout_review",
+  "scope": {
+    "v3_prepare": "UNRUN",
+    "godot_parse": "UNRUN",
+    "v3_gpu": "UNRUN",
+    "v3_app": "UNRUN",
+    "native_fidelity": "UNTESTED"
+  },
+  "main_or_asset_edits": false,
+  "raw_models_geometry_images_in_packet": false
+}

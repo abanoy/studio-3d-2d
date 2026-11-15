@@ -56,10 +56,25 @@ static func stable_opaque_order(materials: Array) -> bool:
 	for material in materials:
 		if not material is BaseMaterial3D:continue
 		if material.render_priority!=0 or material.next_pass!=null:return false
-		if material.transparency==BaseMaterial3D.TRANSPARENCY_DISABLED and not material in opaque:opaque.append(material)
+		# Alpha-scissor writes opaque depth too. Its equal-depth fragments need the
+		# same source order; blended/hash/prepass transparency keeps its own sorting.
+		if material.transparency in [BaseMaterial3D.TRANSPARENCY_DISABLED,BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR] and not material in opaque:opaque.append(material)
 	if opaque.size()>256:return false
 	for i in range(opaque.size()):opaque[i].render_priority=-128+i
 	return true
+
+static func required_extensions_error(data: Dictionary) -> String:
+	var required=data.get("extensionsRequired",[])
+	if not required is Array:return "Invalid required-feature declaration in 3D asset."
+	var supported:=GLTFDocument.get_supported_gltf_extensions()
+	var unsupported: Array[String]=[]
+	for entry in required:
+		if not entry is String or entry.is_empty():return "Invalid required-feature declaration in 3D asset."
+		if not entry in supported and not entry in unsupported:unsupported.append(entry)
+	if unsupported.is_empty():return ""
+	var names: Array[String]=[]
+	for entry in unsupported.slice(0,6):names.append(entry.left(128))
+	return "Unsupported required features: %s%s. Choose a compatible export." % [", ".join(names)," (+%d more)" % (unsupported.size()-6) if unsupported.size()>6 else ""]
 
 static func load_glb(path: String) -> Dictionary:
 	if path.get_extension().to_lower() != "glb":
@@ -82,6 +97,8 @@ static func load_glb(path: String) -> Dictionary:
 	var data = parser.data
 	if not data is Dictionary:
 		return {"error": "Invalid GLB JSON."}
+	var required_error:=required_extensions_error(data)
+	if not required_error.is_empty():return {"error":required_error}
 	for group in [data.get("buffers", []), data.get("images", [])]:
 		if not group is Array:
 			return {"error": "Invalid GLB resource list."}
@@ -97,6 +114,28 @@ static func load_glb(path: String) -> Dictionary:
 		return {"error": "GLB importer failed: %s" % error_string(error)}
 	var shapes=preload("res://src/source_shape.gd")
 	shapes.mark(state)
+	# Godot4.6 ignores emissiveTexture.texCoord when building BaseMaterial3D.
+	# Restore the declared standard channel on each scene-owned imported material.
+	var imported: Array=state.get_materials();var definitions=data.get("materials",[])
+	if definitions is Array:
+		for i in range(mini(imported.size(),definitions.size())):
+			if not imported[i] is BaseMaterial3D or not definitions[i] is Dictionary:continue
+			var texture=definitions[i].get("emissiveTexture",{})
+			if not texture is Dictionary:continue
+			var channel=texture.get("texCoord",0)
+			var transform=texture.get("extensions",{}).get("KHR_texture_transform",{}) if texture.get("extensions",{}) is Dictionary else {}
+			if transform is Dictionary:channel=transform.get("texCoord",channel)
+			if (channel is int or channel is float) and (channel==0 or channel==1):imported[i].emission_on_uv2=channel==1
+			# KHR_materials_specular zero means no dielectric reflection. Godot's
+			# importer otherwise keeps its default0.5, adding light to baked surfaces.
+			var extensions=definitions[i].get("extensions",{})
+			var specular=extensions.get("KHR_materials_specular",{}) if extensions is Dictionary else {}
+			if specular is Dictionary and specular.get("specularFactor",1)==0:imported[i].metallic_specular=0
+			var extras=definitions[i].get("extras",{})
+			if extras is Dictionary and extras.get("has_static_source_lightmap")=="studio_source_lightmaps_1":
+				var base: BaseMaterial3D=imported[i].duplicate();base.emission_enabled=false
+				imported[i].set_meta("has_baked_lightmap_base",base)
+				var color: Color=imported[i].albedo_color;imported[i].albedo_color=Color(0,0,0,color.a)
 	stable_opaque_order(state.get_materials())
 	var scene := doc.generate_scene(state)
 	if scene == null:

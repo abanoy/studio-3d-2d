@@ -1,0 +1,181 @@
+{
+  "format": "has_source_static_choices_main_progress_1",
+  "date": "2026-11-13",
+  "base_commit": "489215fcbfb69acde05d4a1341cc872cc69a9132",
+  "state": "Static new-import choices implemented:25worker cases,1348actualappchecks and freshcompleteWindowscanonicalPASS9f6f531",
+  "foundation": {
+    "checks": 167,
+    "reports": {
+      "catalogue": 53,
+      "appearance_io": 29,
+      "headless_controls": 65,
+      "actual_private_app": 20
+    },
+    "verification": "output/source-choice-foundation/1794611267662690800/verification.json",
+    "passed": true,
+    "native_conversion": false
+  },
+  "new_native_cases": "25 worker cases pass:22 conversions+3expected all-hidden refusals across six native MDLs; actual app adoption not yet passed",
+  "source_sha256": {
+    "src/source_import.gd": "4cacfc7e86adad5e8e78872439500f0e2a922a6e022dc48d268c5b4cd3686a47",
+    "src/source_choice_dialog.gd": "84bd816615fe0ac10c857606f21db89040544e0b52dd2cdda1089f177e9dda2d",
+    "tools/source_appearance.py": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+    "tools/source_mdl_choices.py": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+    "tools/source_choice_io.py": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+    "tools/prepare_source.py": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+    "tools/blender_source_bridge.py": "18eebda3d5f44be35f12e1e7d8a17b6f13cbd21bda59331a2565cda85111e53e",
+    "tools/source_archive.py": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
+    "src/import_placement.gd": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad"
+  },
+  "process_primary_sources": [
+    "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/platform/windows/os_windows.cpp",
+    "https://docs.godotengine.org/en/4.6/classes/class_os.html#class-os-method-execute-with-pipe"
+  ],
+  "limits": [
+    "Static new-import appearance only; existing objects are not reconverted",
+    "Optional metadata process ownership currently bound to pinned Windows4.6 engine; default import stays available elsewhere",
+    "No Source native jiggle/flex/shader/assembly fidelity claim",
+    "Previous12071fe full pass predates this working-source feature port"
+  ],
+  "formal_counts_unchanged": {
+    "acceptance": 55,
+    "acceptance_total": 62,
+    "implementation": 52,
+    "implementation_total": 54
+  },
+  "foundation_packet": "experiments/source_appearance/main_foundation_20261113",
+  "foundation_packet_index_sha256": "408fb5dd176e323a2e18a4b9d4731c70d1c6b778bfd73878414a27a60d90aab6",
+  "native_core_attempt": {
+    "status": "failed",
+    "positive_before_failure": 1,
+    "failed_case": "Keiki default WinError206 cache path",
+    "report": "docs/benchmarks/sfm_resource_path_fix_2026-11-13.json"
+  },
+  "foundation_after_resource_fix": {
+    "passed": true,
+    "checks": 167,
+    "resource_methods": 7,
+    "resource_passed": 6,
+    "resource_skipped": 1
+  },
+  "native_core_retry": {
+    "passed": true,
+    "cases": 14,
+    "source_revision": "cf7a805dd6ec76890da048ff28aa0080757e7c34",
+    "run": "output/sfm-native-main-rebind-20261113/conversion-run-1794613497806249400"
+  },
+  "native_wider": {
+    "passed": true,
+    "cases": 11,
+    "source_revision": "cf7a805dd6ec76890da048ff28aa0080757e7c34",
+    "run": "output/sfm-native-main-rebind-20261113/conversion-run-1794613615624323200"
+  },
+  "actual_app_first_attempt": {
+    "passed": false,
+    "run": "output/source-choices-native/1794613879951143500-cbada71e",
+    "failure": "Blender line3 could not import source_appearance before local helper path setup",
+    "source_runtime_original_input_snapshot_preserved": true,
+    "private_exit": 1,
+    "job_and_desktop_closed": true,
+    "authoritative_coordinator_and_owned_workers_absent": true,
+    "retry": "pending narrow bootstrap fix"
+  },
+  "native_worker_evidence": "experiments/source_appearance/main_native_workers_20261113",
+  "native_worker_index_sha256": "6864ea1745e7847aec8281f9b7eb91e2dc003d473abf2c1bf190b09e638436a1",
+  "bootstrap_fix": {
+    "format": "has_source_bridge_bootstrap_fix_1",
+    "date": "2026-11-13",
+    "base_commit": "cf7a805dd6ec76890da048ff28aa0080757e7c34",
+    "failed_actual_app_run": "output/source-choices-native/1794613879951143500-cbada71e",
+    "failure_preserved": true,
+    "change": "Import source_appearance after the existing script-local sys.path setup, alongside the other local helpers",
+    "source_sha256": {
+      "tools/blender_source_bridge.py": "18eebda3d5f44be35f12e1e7d8a17b6f13cbd21bda59331a2565cda85111e53e",
+      "tests/test_source_bridge_bootstrap.py": "01e7a37bb84e8012d6ca778758aa8e88fe6c2958480cb8f8b2a932cc33828599",
+      "tests/verify_source_choice_foundation.py": "5e3f613c9abb8b695b3ff2224c3145b1da4dc5e5dfc63cbc34d26d16d38c10f0",
+      "tests/source_choices_native_smoke.gd": "ef897adebd49d6322b6fa0f357bd0b8e83a97540beb36d521f4c6ec3b3fd2e48",
+      "tests/verify_source_choices_native.py": "1a3cfd3a81d03aeaeeb0e515b3cc548a7832c931596d046168f1002d3c8190a1"
+    },
+    "cpu_bootstrap": {
+      "methods": 2,
+      "passed": 2,
+      "native_conversion": false,
+      "host_APIs_stubbed": true
+    },
+    "foundation": {
+      "passed": true,
+      "checks": 167,
+      "resource_passed": 6,
+      "resource_skipped": 1,
+      "bootstrap_passed": 2,
+      "report": "output/source-choice-foundation/1794614172469403400/verification.json"
+    },
+    "actual_app_retry": "Both actual matrices later pass at8d4fde0 after separate placement fix; historical bootstrap/placement attempts remain failed",
+    "full_default_suite": "not yet run after this feature port",
+    "native_app_harness": "authored/parse checked; ordinary packed Open before linked Save;393core writer and287wider writer anticipated, not passed",
+    "evidence": "experiments/source_appearance/main_bridge_bootstrap_fix_20261113",
+    "evidence_index_sha256": "d7e1bb648832d7863bfaaee48ecd7b131ede39042c1cce04df8ce5f18f80a0b0",
+    "formal_counts_unchanged": true
+  },
+  "actual_app_after_bootstrap_fix": {
+    "format": "has_native_app_thin_placement_failure_1",
+    "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794614326121645900-aa121fca",
+    "source_revision": "1caeb44b12e9ebf2db944c769810010975f5abaa",
+    "passed": false,
+    "writer_assertions": 393,
+    "writer_assertion_failures": 0,
+    "writer_completed_cases": 14,
+    "strict_result_binding": true,
+    "worker_exit": 0,
+    "engine_error_markers": [
+      "ERROR: AABB size is negative, this is not supported. Use AABB.abs() to get an AABB with a positive size.",
+      "ERROR: AABB size is negative, this is not supported. Use AABB.abs() to get an AABB with a positive size.",
+      "ERROR: AABB size is negative, this is not supported. Use AABB.abs() to get an AABB with a positive size.",
+      "ERROR: AABB size is negative, this is not supported. Use AABB.abs() to get an AABB with a positive size."
+    ],
+    "reason": "Negative grown AABB for thin Keiki tools at import_placement.gd112; strict wrapper failed before offline readers",
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_8fced34406ce44338a4aeab66f415672",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 11904,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 73.842
+    },
+    "verification_raw_sha256": "dab004e7d94afd7eb83e1a7f31aa7e15a6b695f5dd7037b8bae661f4bb339e12",
+    "verification_raw_bytes": 855905,
+    "preservation": {
+      "main_sources_and_head": true,
+      "approved_runtimes": true,
+      "manifest": true,
+      "original_families": true,
+      "owned_native_copies": true,
+      "snapshot_sources": true,
+      "conversion_metadata": false,
+      "saved_packages_and_linked_assets": false
+    },
+    "not_reached": [
+      "conversion metadata archival",
+      "package before-reader inventory",
+      "offline transitions",
+      "cold readers",
+      "movie"
+    ],
+    "scope": "No false pass from393assertions; nativeinputs/runtime/main/snapshot/copies exact. Fullcase run remains failed.",
+    "date": "2026-11-13",
+    "evidence": "experiments/source_appearance/main_native_app_thin_failure_20261113",
+    "evidence_index_sha256": "d28c4547c1e52f15fafb9f85cb5a609d6a68e84ada1112674dd21c96f5998792",
+    "fix_state": "Bounded per-axis inward margin is being implemented/tested; no successful retry yet"
+  },
+  "next_native_feature_values": "docs/benchmarks/sfm_native_jiggle_values_2026-11-13.json",
+  "thin_placement_fix": "docs/benchmarks/sfm_thin_placement_fix_2026-11-13.json",
+  "actual_app_pass": "docs/benchmarks/sfm_static_native_app_2026-11-13.json",
+  "full_default_suite": "Fresh9f6f531 complete Windows run PASSED46m27s;982source+HEADunchanged,156resultentries,21movies,192closedprivatejobs",
+  "full_default_report": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json"
+}

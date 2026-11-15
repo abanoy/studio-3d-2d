@@ -9,6 +9,7 @@ var entries: Dictionary={}
 var adaptive_entries: Dictionary={}
 var adaptive_cache=Cache.new()
 var cold_cels:=false
+var cancel_path:=""
 var reads:=0
 var png_decodes:=0
 var hits:=0
@@ -35,6 +36,7 @@ func record(entry: Dictionary) -> Dictionary:
 	var adopted:=Owner.from_image(entry.image.duplicate(),adaptive_cache)
 	return adopted if adopted.has("error") else {"raster_owner":adopted.owner}
 func _read(path: String,width: int,height: int,expected,require_pixels: bool,adaptive: bool,file_sha: String="") -> Dictionary:
+	if not cancel_path.is_empty() and FileAccess.file_exists(cancel_path):return {"error":"Project opening cancelled. Previous project preserved."}
 	var file:=FileAccess.open(path,FileAccess.READ)
 	if file==null:return {"error":"Cel missing or exceeds 32 MiB."}
 	var length:=file.get_length()

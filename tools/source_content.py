@@ -139,8 +139,8 @@ def assets(provider,include_particles=False):
 
 
 def libraries(game_root):
-    base = Path(game_root).resolve().parents[2]
-    roots = [base]
+    game = Path(game_root).resolve()
+    roots = [game.parents[2]] if len(game.parents)>2 else []
     try:
         import winreg
         with winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Valve\Steam") as key:
@@ -179,7 +179,7 @@ def discover(game_root, workshop_root, extra=()):
                     folder(sub, label + " / " + sub.name, origin, enabled)
     folder(content, "Garry's Mod / loose", "game")
     for name in ("sourceengine", "platform"): folder(game_root / name, name, "game")
-    workshop_locations = [Path(workshop_root)] + [Path(library) / "steamapps/workshop/content/4000" for library in steam_libraries]
+    workshop_locations = ([] if str(workshop_root) in ("", ".") else [Path(workshop_root)]) + [Path(library) / "steamapps/workshop/content/4000" for library in steam_libraries]
     directories = list(dict.fromkeys([content / "addons", content / "cache/workshop", content / "workshop", *workshop_locations]))
     for directory in directories:
         if not directory.is_dir(): continue

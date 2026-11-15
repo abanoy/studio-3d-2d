@@ -1,0 +1,34 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fresh ordinary app starts at the required full-HD48-frame canvas
+PASS owned original native input and prepared converter bundle are offline for this fresh reader
+PASS packed reader cache is absent before ordinary Open
+PASS packed source HAS bytes match the writer
+PASS normal HAS unpack succeeds and drains snapshot/loader/packer state
+PASS packed cold Open restores both converted actor and pre-existing peer
+PASS packed cold Open restores exact native report, drawing pixels, audio PCM, keys and authored world
+PASS packed cold actor retains exact converter report and GLB bytes
+PASS packed fresh cache supplies runtime geometry without reconversion or history edits
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS packed cold derived frame 0 exactly matches the writer reference
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS packed cold derived frame 24 exactly matches the writer reference
+PASS packed Open leaves the saved package unchanged
+PASS linked reader cache is absent before ordinary Open
+PASS linked source HAS bytes match the writer
+PASS normal HAS unpack succeeds and drains snapshot/loader/packer state
+PASS linked cold Open restores both converted actor and pre-existing peer
+PASS linked cold Open restores exact native report, drawing pixels, audio PCM, keys and authored world
+PASS linked cold actor retains exact converter report and GLB bytes
+PASS linked fresh cache supplies runtime geometry without reconversion or history edits
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS linked cold derived frame 0 exactly matches the writer reference
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS linked cold derived frame 24 exactly matches the writer reference
+PASS linked Open leaves the saved package unchanged
+SOURCE_CHOICES_NATIVE {"actual_app":true,"actual_native_conversion":false,"actual_source_dialog":false,"cases":[],"checks":30,"derived_pixels_only":true,"failures":0,"format":"has_source_choices_native_app_result_1","job_path":"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\readers\\03\\job.json","job_sha256":"1cd6b8565caa75d5961ade3ffd511318b4d0f27d045d5f5b821dae154357c11b","mode":"reader","movie":"","project_root":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615194930984000-ae0e0967/Studio/","reader_modes":[{"checks":14,"failures":0,"frames":[0,24],"mode":"packed","passed":true,"project_sha256":"038231334e3c5091f7a2ca9254894384926d35cd344ab1dc5f81ea02b43ab983"},{"checks":14,"failures":0,"frames":[0,24],"mode":"linked","passed":true,"project_sha256":"f676a97d7887986f955b37581f2e75024b4ad39175d0ceab23013b2a5af23beb"}],"scope":"Static Source import choices and ordinary actor/history/HAS/cold-render transport. No original Source shader, jiggle, assembly or artist fidelity claim.","source_manifest_sha256":"e937f2f7e7e460d8ea1ebdf405987d03f992a6c6c5cf3cbbefcb1a3acc7ea903","source_revision":"8d4fde001258f501602bd94bd80d925683062f15"}

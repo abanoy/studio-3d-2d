@@ -1,0 +1,151 @@
+{
+  "format": "has_contact_editor_raster_api_1",
+  "date": "2026-11-11",
+  "failure": "Old test directly accessed cel.image after ordinary create_cel now returns a raster owner. Script aborted and its watchdog exited2; private job/desktop closed without foreground child.",
+  "repair": "Pin editable pixels through Drawing.edit_image and read reopened pixels through Drawing.image. Keep original exact byte/pixel assertions, add explicit editable-access assertion and fail immediately on edit error.",
+  "result": {
+    "checks": 34,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-editor\\1794452571053250900",
+    "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-editor\\1794452571053250900/render_1794452578_6872579_0/movie.mp4",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\contact_editor_smoke_55163a6c22f84f8e9712fc31b440babf.json"
+  },
+  "private_desktop": {
+    "format": "studio_private_desktop_1",
+    "desktop": "HAS_Test_9fab44bc7b9d4cb09440424a70124c34",
+    "desktop_switch_requested": false,
+    "private_window_seen": true,
+    "child_desktop_confirmed": true,
+    "maximum_owned_windows": 9,
+    "foreground_child_observed": false,
+    "exit": 0,
+    "child_pid": 29032,
+    "job_closed": true,
+    "desktop_closed": true,
+    "seconds": 12.419
+  },
+  "preceding_scoped_cases": [
+    {
+      "name": "expression_presets",
+      "args": [
+        "tests/verify_expression_presets.py"
+      ],
+      "exit": 0,
+      "seconds": 26.442,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\expression_presets.log",
+      "log_sha256": "04b4b948a8152ed151508db695e2cf88cac8a4ddfb21649a9888ce0463e8e436"
+    },
+    {
+      "name": "mmd_groups",
+      "args": [
+        "tests/verify_mmd_groups.py"
+      ],
+      "exit": 0,
+      "seconds": 22.81,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\mmd_groups.log",
+      "log_sha256": "aab9e9301d9bcadcfe17974e76b98acca1bf34afb07ab3a200b2a5b0501027eb"
+    },
+    {
+      "name": "lighting",
+      "args": [
+        "tests/verify_lighting.py"
+      ],
+      "exit": 0,
+      "seconds": 22.433,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\lighting.log",
+      "log_sha256": "1bea128e09ecb28f5cabe8465c1dfea918443cc743788d2f4eadcd15fa82cce1"
+    },
+    {
+      "name": "live_appearance",
+      "args": [
+        "tests/verify_live_appearance.py"
+      ],
+      "exit": 0,
+      "seconds": 11.934,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\live_appearance.log",
+      "log_sha256": "5e2a28328f6d392af609a4009978627eaf76de985edf20f1a70b83e2ce53e06d"
+    },
+    {
+      "name": "import_physics",
+      "args": [
+        "tests/verify_import_physics.py"
+      ],
+      "exit": 0,
+      "seconds": 30.181,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\import_physics.log",
+      "log_sha256": "45d88bae5771d3edb28fa3dfe1f9d60c1a853c8056af4e9b64fb1c638da2daf4"
+    },
+    {
+      "name": "pose_bounds",
+      "args": [
+        "tests/verify_pose_bounds.py"
+      ],
+      "exit": 0,
+      "seconds": 26.59,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\pose_bounds.log",
+      "log_sha256": "d668030b46eab2195a18150aa9fce0e63416f7ed1d3697ea60e4987521d8f989"
+    },
+    {
+      "name": "camera_range",
+      "args": [
+        "tests/verify_camera_range.py"
+      ],
+      "exit": 0,
+      "seconds": 36.473,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\camera_range.log",
+      "log_sha256": "85ed15bd46e21267c257a71d83a017ec9408b825a58e7910a60c5a8b3396dba3"
+    },
+    {
+      "name": "color_sampler",
+      "args": [
+        "tests/verify_color_sampler.py"
+      ],
+      "exit": 0,
+      "seconds": 21.403,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\color_sampler.log",
+      "log_sha256": "04faf31e4c73f88e7f60b16b2905b7c9b902cb5e0a6838d05e97b3d8bf333f79"
+    },
+    {
+      "name": "foot_hold",
+      "args": [
+        "tests/verify_foot_hold.py"
+      ],
+      "exit": 0,
+      "seconds": 18.515,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\foot_hold.log",
+      "log_sha256": "4201774406dd234de3307756b1f3be812bf85f67199563e70a38bf8cb3eac475"
+    },
+    {
+      "name": "foot_contacts",
+      "args": [
+        "tests/verify_foot_contacts.py"
+      ],
+      "exit": 0,
+      "seconds": 10.713,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\foot_contacts.log",
+      "log_sha256": "e72a807cab3a921459467dbbb1d8eda31e022bbe3e8f4d2393bd36a09820f337"
+    },
+    {
+      "name": "contact_animation",
+      "args": [
+        "tests/verify_contact_animation.py"
+      ],
+      "exit": 0,
+      "seconds": 22.121,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\contact_animation.log",
+      "log_sha256": "90effb8cd0fa09e6fdb0f9a36152f7dbbfe89769f004ad022719eba748c53aa4"
+    },
+    {
+      "name": "contact_editor",
+      "args": [
+        "tests/verify_contact_editor.py"
+      ],
+      "exit": 1,
+      "seconds": 114.037,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794452161183955100\\contact_editor.log",
+      "log_sha256": "f48867124273f66919ecb49059a3f089f892e3bd277eca13cf38b05c8906bda1"
+    }
+  ],
+  "original_failed_log_sha256": "f48867124273f66919ecb49059a3f089f892e3bd277eca13cf38b05c8906bda1",
+  "limits": "No application source/tolerance changed. Audit found the same stale direct cel field in additional contact/motion/audio tests; port those fixtures and run them next. No full aggregate, human or physical acceptance claim."
+}

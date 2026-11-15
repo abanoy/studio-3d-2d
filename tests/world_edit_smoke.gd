@@ -48,8 +48,9 @@ func run() -> void:
 	var data:=Storage.load_project(runtime_report.snapshot)
 	if data.has("error"):push_error(data.error);quit(1);return
 	var folder:=ProjectSettings.globalize_path("res://output/world-edit/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
+	app.scene_view.set_setup(false,false)
 	app.video=data.video;app.keys=data.camera_keys;app.layers=data.layers;app.frame=24;app.active_layer=0
 	check(app.renderer.install_world(app.renderer.prepare_world(data.world,48),24),"install prepared multi-object world in real app shell")
 	app.mode.select(1);app.change_mode(1);app.set_frame(24);app.renderer.evaluate(app.keys,24);await settled()
@@ -61,6 +62,11 @@ func run() -> void:
 	var point: Vector2=await mask_point(selection,"actor-0")
 	await click(app,point)
 	check(point.x>0 and selection.selected=="actor-0" and app.renderer.active_model()==runtime.instance("actor-0") and app.mode.selected==2 and camera.transform.is_equal_approx(camera_before),"routed click selects the correct shared-asset actor without moving camera")
+	# Isolate the editor outline from existing green gizmos/UI on the same frame.
+	selection.set_process(false);selection.outline.hide();await settled()
+	var crop:=Rect2i(app.canvas.get_global_rect());var plain_green:=green_pixels(root.get_texture().get_image().get_region(crop))
+	selection.outline.show();await settled();var outlined_green:=green_pixels(root.get_texture().get_image().get_region(crop));selection.set_process(true)
+	check(outlined_green>plain_green,"selected object has an actual green GPU outline independent of its gizmos")
 	var left: RefCounted=runtime.instance("actor-0");var right: RefCounted=runtime.instance("actor-1");var arm: String=left.order[1]
 	var left_before: Dictionary=left.data.duplicate(true);var right_before: Dictionary=right.data.duplicate(true)
 	editor.tree_items[arm].select(0);editor.operation.select(0);editor.refresh_values();editor.fields[2].value=25;editor.apply_numeric()
@@ -79,7 +85,7 @@ func run() -> void:
 	var invalid:=left_after.duplicate(true);invalid.pose["missing bone"]=Model.identity()
 	check(not editor.restore_state(invalid,false).is_empty() and left.data==left_after and right.data==right_before,"invalid stored bone edit preserves target and peers")
 	selection.items["map-1"].select(0);await settled()
-	check(app.renderer.active_model()==runtime.instance("map-1") and editor.selected=="@root" and editor.handles.size()==3,"map root gets same direct transform controls as models")
+	check(app.renderer.active_model()==runtime.instance("map-1") and editor.selected=="@root" and editor.handles.filter(func(handle):return not handle.get("view",false)).size()==3,"map root gets same direct transform controls as models")
 	editor.operation.select(1);editor.refresh_values();var old_map: Dictionary=runtime.instance("map-1").data.duplicate(true)
 	var peer_origin: Vector3=left.root.global_position;var child_origin: Vector3=right.root.global_position
 	editor.fields[0].value=5;editor.fields[1].value=1;editor.fields[2].value=-1;editor.apply_numeric()
@@ -140,6 +146,14 @@ func run() -> void:
 	check(not app.exporting and not editor.scale_apply.disabled and app.renderer.active_instance_id=="actor-1","export restores active world controls and selection")
 	root.get_texture().get_image().save_png(folder.path_join("editor.png"))
 	var original_world: Dictionary=app.renderer.world_state();var rig_source: String=left.data.source
+	var far_before: Dictionary=app.renderer.world_state().duplicate(true);var far_shots: Array=app.keys.duplicate(true)
+	selection.select_entity("map-1");editor.operation.select(1);editor.refresh_values();editor.fields[0].value=5000;editor.apply_numeric()
+	selection.clear();selection.items["map-1"].select(0);await settled()
+	var distant: RefCounted=app.renderer.world_runtime.instance("map-1");var far_origin: Vector3=distant.root.global_position
+	check(selection.selected=="map-1" and app.renderer.active_model()==distant and far_origin.length()>1000,"hierarchy finds an actual far-away map by its stable ID")
+	selection.frame_selected();await settled();var far_bounds: AABB=app.renderer.scene_bounds(distant.root)
+	check(camera.global_position.distance_to(far_origin)<100 and camera.is_position_in_frustum(far_bounds.get_center()) and app.keys==far_shots,"Frame selected brings the distant map into view without authoring a shot")
+	app.undo();check(app.renderer.world_state()==far_before,"one Undo restores the original complete world after the distant-map root edit")
 	# All64 palette IDs must resolve from real rendered pixels, including nonprimary colors.
 	var many:=World.empty()
 	for i in range(64):

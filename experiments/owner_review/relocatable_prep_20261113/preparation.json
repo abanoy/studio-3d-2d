@@ -1,0 +1,278 @@
+{
+  "format": "has_updated_owner_review_preparation_1",
+  "prepared_only": true,
+  "new_review_built": false,
+  "new_replay_run": false,
+  "planned_source_commit": "1236796865e677b150a2d7e2add20f2aac5325fe",
+  "canonical_run": "output/canonical-owned-20261113T200642700",
+  "canonical_coordinator_pid": 9056,
+  "canonical_creation_utc": "2026-11-13T20:06:42.7232189Z",
+  "exclusive_graphics_lease_active_at_preparation": true,
+  "protected_review": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-current-20261113",
+  "protected_old_review_commit": "e9cc7cfb20266b4863bde134bcb30457547a343d",
+  "packages": [
+    {
+      "name": "Avatar.has",
+      "sha256": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77",
+      "bytes": 12420758,
+      "mtime_ns": 1794287872566871900,
+      "schema": 4,
+      "objects": [
+        {
+          "name": "AvatarSample_A.vrm",
+          "kind": "model",
+          "sha256": "91fc4ae30aee77f2a9bc617b0c4bde0e19d83c84e805c46b3c3e6c9f34e30072"
+        }
+      ],
+      "origin": null,
+      "evidence": null
+    },
+    {
+      "name": "Flatgrass.has",
+      "sha256": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e",
+      "bytes": 19038132,
+      "mtime_ns": 1794287868587985700,
+      "schema": 4,
+      "objects": [
+        {
+          "name": "gm_flatgrass.bsp",
+          "kind": "environment",
+          "sha256": "3b81c80d065d1ac922a7c7728d9b5d3a04d0428ce627eea597aed87c7ef21a46"
+        }
+      ],
+      "origin": null,
+      "evidence": null
+    },
+    {
+      "name": "Street.has",
+      "sha256": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5",
+      "bytes": 1441988,
+      "mtime_ns": 1794287874573256400,
+      "schema": 4,
+      "objects": [
+        {
+          "name": "street01_android.pmx",
+          "kind": "environment",
+          "sha256": "7c69a286eaf80db381f045bc7c249def346e69b2f9e48927cbe0d53eaa0055c2"
+        }
+      ],
+      "origin": null,
+      "evidence": null
+    },
+    {
+      "name": "Reimu helpers.has",
+      "sha256": "766f3bc365f851cdd2428b64f26773ca55fe31e173376ffae05b1e04b60cd4d7",
+      "bytes": 5350043,
+      "mtime_ns": 1794448384588537600,
+      "schema": 4,
+      "objects": [
+        {
+          "name": "reimu_hakurei_bikini.mdl",
+          "kind": "model",
+          "sha256": "4d62236d5c34468ea1f91c43089d6ce3c193be27b8460d53ea8d91d2238ab7b5"
+        },
+        {
+          "name": "Fan",
+          "kind": "model",
+          "sha256": "5757566d797aa722a0c2c2d3cb9ca7ddf7216d90e1b935a8f507693ad88f8fd3"
+        }
+      ],
+      "origin": null,
+      "evidence": null
+    },
+    {
+      "name": "Back hair demo.has",
+      "sha256": "95fad71369deb9f98a506d9718ff2a802283f64971deecd918f47821fd8635d4",
+      "bytes": 5346123,
+      "mtime_ns": 1794517211410550600,
+      "schema": 4,
+      "objects": [
+        {
+          "name": "reimu_hakurei_bikini.mdl",
+          "kind": "model",
+          "sha256": "d7036490ef624c8f517766ecd16937496a1322f62b7d90902ff4d72f266f3ace"
+        },
+        {
+          "name": "Fan",
+          "kind": "model",
+          "sha256": "bc2bd695f49fa5b99fe3a95231946536f3cb595adf8a7bf26575d234351963ab"
+        }
+      ],
+      "origin": "Synthetic native regression demo with ribbon plus existing Back hair, not an owner-authored recorded take",
+      "evidence": "output/secondary-existing-native/1794517194923739900/verification.json"
+    },
+    {
+      "name": "Mima head expressions.has",
+      "sha256": "94a46183c7ee895b7c94b92d827e572f267b53b58e410a3b854d05c32e175d4a",
+      "bytes": 3238410,
+      "mtime_ns": 1794458826052428300,
+      "schema": 4,
+      "objects": [
+        {
+          "name": "mima head.mdl",
+          "kind": "model",
+          "sha256": "e9b21ab5f1171b21d0a7d3e3f83e5341f6b297516d09582e49c0283dfe10d8da"
+        }
+      ],
+      "origin": "Automated Mima head shape-catalogue demo,143preparedtargets; headonly, notwhole-character/skin/bodygroup-switching acceptance",
+      "evidence": "output/shape-catalog/1794458805975296200/result.json"
+    }
+  ],
+  "total_package_bytes": 46835454,
+  "protected_files": {
+    "Avatar.has": {
+      "sha256": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77",
+      "bytes": 12420758,
+      "mtime_ns": 1794287872566871900
+    },
+    "Back hair demo.has": {
+      "sha256": "95fad71369deb9f98a506d9718ff2a802283f64971deecd918f47821fd8635d4",
+      "bytes": 5346123,
+      "mtime_ns": 1794517211410550600
+    },
+    "Flatgrass.has": {
+      "sha256": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e",
+      "bytes": 19038132,
+      "mtime_ns": 1794287868587985700
+    },
+    "Mima head expressions.has": {
+      "sha256": "94a46183c7ee895b7c94b92d827e572f267b53b58e410a3b854d05c32e175d4a",
+      "bytes": 3238410,
+      "mtime_ns": 1794458826052428300
+    },
+    "Open Avatar.bat": {
+      "sha256": "cd1bfff086b808859dda0c1ae57a81c6652135c9b50d27d1cb59af9cae108de7",
+      "bytes": 268,
+      "mtime_ns": 1794556646525232500
+    },
+    "Open Back hair demo.bat": {
+      "sha256": "dbf8df01560c652a5bc15366a241a7860b478ce4351f4186d314e53821402c01",
+      "bytes": 276,
+      "mtime_ns": 1794556646526745500
+    },
+    "Open Flatgrass.bat": {
+      "sha256": "47453550ff113d86d9a2e605e6a86afe5f0e96f8413bfc681277fa416f35a44c",
+      "bytes": 271,
+      "mtime_ns": 1794556646524261300
+    },
+    "Open Mima head expressions.bat": {
+      "sha256": "799efb0c34b68840fd97cfb6e51137d3c907af81435b08ed485e0c9461852fc2",
+      "bytes": 283,
+      "mtime_ns": 1794556646527271200
+    },
+    "Open Reimu helpers.bat": {
+      "sha256": "06b0dc4c69ef47b735faf19f962be2c89173d1b4cf182654286166c0e794ae75",
+      "bytes": 275,
+      "mtime_ns": 1794556646525232500
+    },
+    "Open Street.bat": {
+      "sha256": "57058aefa42c491f4d5905b44af26efc194f4ede64c0be61c3e5b55048dcb8d7",
+      "bytes": 268,
+      "mtime_ns": 1794556646525232500
+    },
+    "project-copies.json": {
+      "sha256": "6e8f59bbd21df8f93e4d875b6ca0138bca1f2efb74ef072ae33dc6858f0f6f8d",
+      "bytes": 1330,
+      "mtime_ns": 1794556733690085400
+    },
+    "project-package-verification.json": {
+      "sha256": "7013e9341c856238013e5e59bb03cb2d55eb9e596923e04de4d6d2cdc5320cce",
+      "bytes": 4461,
+      "mtime_ns": 1794556733691586600
+    },
+    "README.md": {
+      "sha256": "b33310591ece2daa40fd88df8a575ac09dc2aab53611aa0c9028a9e3b8a6b0fa",
+      "bytes": 3691,
+      "mtime_ns": 1794557127184514600
+    },
+    "Reimu helpers.has": {
+      "sha256": "766f3bc365f851cdd2428b64f26773ca55fe31e173376ffae05b1e04b60cd4d7",
+      "bytes": 5350043,
+      "mtime_ns": 1794448384588537600
+    },
+    "source-snapshot-startup.json": {
+      "sha256": "e2439aecdcfe820e8b5060dfab19cd7c4aa8391d951162161c9701ec0eaaa407",
+      "bytes": 194,
+      "mtime_ns": 1794556636925452200
+    },
+    "source-snapshot-verification.json": {
+      "sha256": "231724573f527830ec80678a3c3ca04d798251c868c63df7f4022856b2030fe4",
+      "bytes": 205713,
+      "mtime_ns": 1794556646529821400
+    },
+    "Start review.bat": {
+      "sha256": "34b796f3a24e846bd0ad207b3013b940256081dad2693613414e2a133ec89e4b",
+      "bytes": 250,
+      "mtime_ns": 1794556646528286000
+    },
+    "Street.has": {
+      "sha256": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5",
+      "bytes": 1441988,
+      "mtime_ns": 1794287874573256400
+    }
+  },
+  "inspected_implementation_files": {
+    "tools/build_owner_review_snapshot.py": {
+      "sha256": "7c9487ad1d3c5a6c31f66df9f5b7b73effe9c4668e2a6601dff8196dd87a21f9",
+      "bytes": 7771,
+      "mtime_ns": 1794542239631751100
+    },
+    "tools/verify_owner_review.py": {
+      "sha256": "3311880608febf7ecc4ec45d393e631cd18e0cf0fa91ba4c8ff35888ab54dcca",
+      "bytes": 20108,
+      "mtime_ns": 1794541742382268500
+    },
+    "tests/owner_review_replay.gd": {
+      "sha256": "f4a168af04bbb748178322492a9f826e027567b30eeba5d5e29bae2e9578fd6c",
+      "bytes": 11650,
+      "mtime_ns": 1794541798847520300
+    },
+    "tests/current_candidate_startup.gd": {
+      "sha256": "4d5328345321d0a1f9f0208d3772ba26bc5b48a297f9e0bc842008fe2525b35e",
+      "bytes": 1345,
+      "mtime_ns": 1794447912417972400
+    },
+    "tests/current_candidate_startup.tscn": {
+      "sha256": "39051740b5a1376429f31e32269fa1de40e2032ac324f0605f4828bf3497832d",
+      "bytes": 196,
+      "mtime_ns": 1794447912417972400
+    },
+    "run.py": {
+      "sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1",
+      "bytes": 8148,
+      "mtime_ns": 1794447912272305300
+    },
+    "launch.pyw": {
+      "sha256": "a88be21992803526ae0bff8ce506426a5265b8cf89496cb1337d90082da83730",
+      "bytes": 765,
+      "mtime_ns": 1794447911998642900
+    }
+  },
+  "source_mode": "Future exact Git revision snapshot, never a working-tree overlay",
+  "expected_replay_checks": 129,
+  "expected_replay_processes": 6,
+  "expected_normal_home_processes": 1,
+  "retention": "Older review/Studio, installed Studio, shared runtimes and private packages remain protected. New copy uses a new profile and separate validation caches.",
+  "sourceio_files": 574,
+  "sourceio_bytes": 27985786,
+  "sourceio_index": {
+    "bytes": 115221,
+    "mtime_ns": 1794601123416575000,
+    "sha256": "2686197f281b226bc459d066fc7adc90c07281a17bd947e595154306ae4801c5"
+  },
+  "old_studio_files": 1725,
+  "old_studio_source_index": {
+    "bytes": 339327,
+    "mtime_ns": 1794601138582526500,
+    "sha256": "92863aeb129a79297a4d1ae2ba24bf117693413511eaa05a0a865c32942c7838"
+  },
+  "planned_external_final": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261113-1236796",
+  "final_replay_scope": "After release only: actual external final copy, unchanged committed GDScript + comparison contract, separate fresh validation paths; main verifier guards remain intact.",
+  "expected_stage_home_processes": 1,
+  "expected_final_home_processes": 1,
+  "expected_private_desktop_processes_total": 8,
+  "independent_static_review": "audit/review.md",
+  "eol_admission_review": "audit-eol/addendum.md",
+  "explicit_checkout_eol_required": true,
+  "independent_review_finding_resolved": "Aggregate all-six final-package hash/size/nsmtime preservation across the complete replay run is now required."
+}

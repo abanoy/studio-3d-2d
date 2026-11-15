@@ -1,0 +1,105 @@
+{
+  "format": "has_sfm_bounded_native_resource_and_vmt_receipt_1",
+  "checkout_head_observed": "4fee0a9f25dca5c265966c7433e21a7ccd0c3bf9",
+  "source_application_or_HEAD_edits": false,
+  "plan_sha256": "4a747c6bc883af7e69ca448a0d7ac60f76f14b78550682647f683449cd1d2aaf",
+  "staged_files": 296,
+  "staged_bytes": 181460484,
+  "elapsed_seconds": 18.9617853,
+  "all_staged_original_tool_plan_sources_sha_size_mtime_preserved": true,
+  "original_archives": {
+    "C:\\a\\dump\\New folder\\Takane_and_Nitori_tanktop.rar": {
+      "sha256": "d17cc0856fdff11dbb201e3f1fd91562f4600a0e0a6b575f0ed2a8d4566519d9",
+      "bytes": 30322874,
+      "mtime_ns": 1793569679766047300
+    },
+    "C:\\a\\dump\\New folder\\Keiki.rar": {
+      "sha256": "8f624a9f79bb3787fdd799a74bdfa48a67d4659092d202ac5e3e315d26c613d4",
+      "bytes": 9157279,
+      "mtime_ns": 1793569377292382800
+    }
+  },
+  "cases": [
+    {
+      "case": "multi_skin_glove",
+      "vmts": 6,
+      "observed_reference_edges": 28,
+      "resolved_edges": 25,
+      "missing_edges": 3,
+      "unique_missing_references": [
+        "materials/hairbump.vtf"
+      ],
+      "native_observed_file_references_complete": false,
+      "supported_bridge_base_inputs_complete": true,
+      "diagnostics": [],
+      "shaders": [
+        "VertexlitGeneric"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "vmts": 4,
+      "observed_reference_edges": 16,
+      "resolved_edges": 16,
+      "missing_edges": 0,
+      "unique_missing_references": [],
+      "native_observed_file_references_complete": true,
+      "supported_bridge_base_inputs_complete": true,
+      "diagnostics": [],
+      "shaders": [
+        "VertexlitGeneric"
+      ]
+    }
+  ],
+  "cpu_checks": 34,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "actual_7z_preflight_and_per_member_extraction": true,
+  "blender_gpu_network_steam_or_installed_writes": false,
+  "private_art_uploaded": false,
+  "evidence": {
+    "preflight": {
+      "path": "output/sfm-next-cases-20261112/runs/preflight-1794542745973314000/verification.json",
+      "sha256": "c8f3baf6e4bc6578756fb559c00a2215d2805b9c218cc86aaca7ba30e7254d8a",
+      "bytes": 4115,
+      "mtime_ns": 1794542746145646200
+    },
+    "staging": {
+      "path": "output/sfm-next-cases-20261112/runs/execute-1794542752822327800/verification.json",
+      "sha256": "b154de1fe7c95e4e6396a8bf7ba925fcbc2835cc9b716f36d7259fe83ddcab5d",
+      "bytes": 181652,
+      "mtime_ns": 1794542771494006100
+    },
+    "vmt_closure": {
+      "path": "output/sfm-next-cases-20261112/runs/vmt-closure-1794542959743314500/verification.json",
+      "sha256": "371ea6ac8e0261ef875d7bc8c14eb32385a12e5f18558ea20d7ed1ade869b842",
+      "bytes": 263306,
+      "mtime_ns": 1794542959748049600
+    },
+    "stager_cpu": {
+      "path": "output/sfm-next-cases-20261112/cpu-tests-1794542645160595500/verification.json",
+      "sha256": "d521da4c51db872fb08964f4db8779326f07f6605fa2e7db539c3c4fe87a7c74",
+      "bytes": 377,
+      "mtime_ns": 1794542645759565600
+    },
+    "vmt_cpu": {
+      "path": "output/sfm-next-cases-20261112/vmt-cpu-tests-1794542948233374500/verification.json",
+      "sha256": "849c4472ce34e8d28ae1dc9f4dae209f8d4593269948d7effcc92c812a278543",
+      "bytes": 343,
+      "mtime_ns": 1794542948333242300
+    },
+    "time": {
+      "path": "output/sfm-next-cases-20261112/real-staging-time.json",
+      "sha256": "9fbba8cca19c6c12469b55fde16a7194eec6ad2d3c6b58fb69d9dfbc40afb9bb",
+      "bytes": 154,
+      "mtime_ns": 1794542771585991200
+    }
+  },
+  "limits": [
+    "No VTF decode or model conversion/export, material-slot/mesh/rig/morph/render evidence.",
+    "Nitori native observed file closure incomplete:3edges request one absent materials/hairbump.vtf; no replacement or installed fallback.",
+    "Basic bridge base-texture closure is present; native bump/envmap/Phong/warp/shader fidelity remains unsupported/unproven.",
+    "App selector/adoption, Undo/HAS/fresh-offline/movie, runtime variants, native jiggle/assembly and human acceptance remain pending."
+  ]
+}

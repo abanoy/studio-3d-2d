@@ -48,6 +48,13 @@ func run() -> void:
 	if "--turn" in OS.get_cmdline_user_args():
 		route=Paths.Components.put_component(route,0,"rotation_xyzw",[0,0,0,1],"ease",48).data;route=Paths.Components.put_component(route,48,"rotation_xyzw",[0,sin(.1),0,cos(.1)],"ease",48).data
 	check(app.pose_editor.restore_state(route).is_empty(),"normal Reset pose and authored path preserve neutral starting keys")
+	if "--grouped" in OS.get_cmdline_user_args():
+		var world: Dictionary=app.current_world();var group_file:=folder.path_join("source-group.glb");check(preload("res://src/scene3d.gd").make_empty(group_file)==OK,"original empty group fixture created")
+		var parent: Dictionary=preload("res://src/world_document.gd").object(group_file,"group","Stationary parent");parent.id="walking-static-parent";parent.position=[.25,0,.125];parent.rotation_xyzw=[0,sin(.15),0,cos(.15)];parent.scale=1.1
+		world.objects[0].parent_id=parent.id;world.objects.append(parent)
+		var actor_id: String=actor.data.id;var group_error: String=app.restore_world(world);check(group_error.is_empty(),"ordinary world restore installs translated yawed uniformly scaled parent: "+group_error)
+		app.world_selection.select_entity(actor_id);actor=rig()
+
 	app.renderer.camera.position=Vector3(2,1.4,4);app.renderer.camera.look_at(Vector3(0,.9,.3),Vector3.UP);app.keys=[Timeline.from_camera(0,app.renderer.camera,"ease"),Timeline.from_camera(48,app.renderer.camera,"ease")]
 	var art:=Drawing.blank(1920,1080);art.fill_rect(Rect2i(170,180,70,50),Color(0,1,1,.6));Drawing.insert(app.layers[1],0,48,art);app.changed();app.set_frame(0);await settled()
 	var editor=app.pose_editor.movement_path;var before: Dictionary=actor.data.duplicate(true);var history: int=app.history.size();var before_frame: int=app.frame;var view: Dictionary=app.renderer.view_state();var shots: Array=app.keys.duplicate(true);var art_sha:=Storage.image_hash(art)

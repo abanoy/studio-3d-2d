@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import contextlib
 import struct
 import subprocess
 import sys
@@ -10,7 +11,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
-from source_content import kv_read, child, value, vpk_index, vpk_read, discover, assets, mount_paths
+from source_content import kv_read, child, value, vpk_index, vpk_read, discover, assets, mount_paths, libraries
 from source_paths import DEFAULT_WORKSHOP
 from asset_audit import AssetError
 
@@ -33,6 +34,18 @@ class ContentTests(unittest.TestCase):
         game = Path(tmp) / "Steam/steamapps/common/GarrysMod"
         (game / "garrysmod/cfg").mkdir(parents=True)
         return game
+
+    def test_shallow_game_root_has_no_assumed_steam_ancestor(self):
+        self.assertEqual(libraries(Path.cwd().anchor),[])
+        with tempfile.TemporaryDirectory() as directory:
+            result=discover(Path.cwd().anchor,Path(directory)/'absent')
+        self.assertEqual(result['libraries'],[])
+
+    def test_blank_workshop_does_not_discover_current_project_packages(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);game=self.root(root);project=root/'project';project.mkdir();(project/'unrelated.gma').write_bytes(b'fixture')
+            with contextlib.chdir(project):result=discover(game,Path('.'))
+            self.assertFalse(any(p['path']==str(project/'unrelated.gma') for p in result['providers']))
 
     def test_vpk1_embedded_preload_crc(self):
         with tempfile.TemporaryDirectory() as tmp:

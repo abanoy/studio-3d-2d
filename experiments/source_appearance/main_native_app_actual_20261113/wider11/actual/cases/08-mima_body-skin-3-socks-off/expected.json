@@ -1,0 +1,2287 @@
+{
+  "bundle": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/output/compatibility/source-1794615549-368-79124817",
+  "format": "has_source_choices_native_expected_1",
+  "glb_sha256": "b681267f03bdb7ba747873181cef818490fa45dca9378b43bf7b6639f6271ee6",
+  "input_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-02\\models\\koikatsu\\touhou\\mima body.mdl",
+  "name": "mima_body-skin-3-socks-off",
+  "object_id": "1905964974063585196",
+  "parameters": {
+    "adapter": "studio_source_1",
+    "axes": "Source Z-up to glTF Y-up via Blender exporter",
+    "case_resolved_sidecars": {
+
+    },
+    "counts": {
+      "bones": 175.0,
+      "meshes": 3.0,
+      "static_lights": 0.0,
+      "textures": 5.0
+    },
+    "limits": [
+      "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+      "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+    ],
+    "materials": [
+      {
+        "base_texture": "materials/models\\koikatsu\\touhou\\mima\\swimsuit.vtf",
+        "material": "swimsuit2",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/koikatsu/touhou/mima/swimsuit2.vmt"
+      },
+      {
+        "base_texture": "materials/models\\koikatsu\\touhou\\mima\\nipples 2.vtf",
+        "material": "nipples",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/koikatsu/touhou/mima/nipples.vmt"
+      },
+      {
+        "base_texture": "materials/models\\koikatsu\\touhou\\mima\\socks.vtf",
+        "material": "socks",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/koikatsu/touhou/mima/socks.vmt"
+      },
+      {
+        "base_texture": "materials/models\\koikatsu\\touhou\\mima\\swimsuit.vtf",
+        "material": "swimsuit1",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/koikatsu/touhou/mima/swimsuit1.vmt"
+      },
+      {
+        "base_texture": "materials/models\\koikatsu\\touhou\\mima\\body.vtf",
+        "material": "body",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/koikatsu/touhou/mima/body.vmt"
+      },
+      {
+        "base_texture": "materials/models\\koikatsu\\touhou\\mima\\vag.vtf",
+        "material": "models/koikatsu/touhou/mima/privates",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/koikatsu/touhou/mima/privates.vmt"
+      }
+    ],
+    "mount_warnings": [],
+    "native_parameters": {
+      "appearance_request": {
+        "bodygroups": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 1.0,
+          "3": 0.0
+        },
+        "format": "studio_source_appearance_request_1",
+        "native_mdl_sha256": "771c194ecf6da69210824d7a99afb9de110c68ccbc708e60b4ad6143ee400dda",
+        "skin": 3.0,
+        "source_sha256": "771c194ecf6da69210824d7a99afb9de110c68ccbc708e60b4ad6143ee400dda"
+      },
+      "bodygroups": {
+        "Socks": [
+          "Socks.smd",
+          null
+        ],
+        "body": [
+          "body split.smd"
+        ],
+        "swimsuit": [
+          "swimsuit.smd",
+          "swimsuit1.smd",
+          "swimsuit2.smd",
+          "swimsuit3.smd",
+          null
+        ],
+        "vag": [
+          "body vag.dmx"
+        ]
+      },
+      "bones": [
+        {
+          "name": "ParentNode",
+          "parent": -1.0
+        },
+        {
+          "name": "Center",
+          "parent": 0.0
+        },
+        {
+          "name": "BodyTop",
+          "parent": 1.0
+        },
+        {
+          "name": "p_cf_body_bone",
+          "parent": 2.0
+        },
+        {
+          "name": "cf_j_root",
+          "parent": 3.0
+        },
+        {
+          "name": "cf_n_height",
+          "parent": 4.0
+        },
+        {
+          "name": "cf_j_hips",
+          "parent": 5.0
+        },
+        {
+          "name": "bip_pelvis",
+          "parent": 6.0
+        },
+        {
+          "name": "bip_spine_0",
+          "parent": 7.0
+        },
+        {
+          "name": "bip_spine_1",
+          "parent": 8.0
+        },
+        {
+          "name": "bip_spine_2",
+          "parent": 9.0
+        },
+        {
+          "name": "cf_d_bust00",
+          "parent": 10.0
+        },
+        {
+          "name": "cf_s_bust00_L",
+          "parent": 11.0
+        },
+        {
+          "name": "cf_d_bust01_L",
+          "parent": 12.0
+        },
+        {
+          "name": "cf_j_bust01_L",
+          "parent": 13.0
+        },
+        {
+          "name": "cf_d_bust02_L",
+          "parent": 14.0
+        },
+        {
+          "name": "bip_breast_L",
+          "parent": 15.0
+        },
+        {
+          "name": "cf_d_bust03_L",
+          "parent": 16.0
+        },
+        {
+          "name": "cf_j_bust03_L",
+          "parent": 17.0
+        },
+        {
+          "name": "cf_d_bnip01_L",
+          "parent": 18.0
+        },
+        {
+          "name": "cf_j_bnip02root_L",
+          "parent": 19.0
+        },
+        {
+          "name": "cf_s_bnip02_L",
+          "parent": 20.0
+        },
+        {
+          "name": "cf_j_bnip02_L",
+          "parent": 21.0
+        },
+        {
+          "name": "cf_s_bnip025_L",
+          "parent": 20.0
+        },
+        {
+          "name": "cf_s_bnip01_L",
+          "parent": 19.0
+        },
+        {
+          "name": "cf_s_bust03_L",
+          "parent": 18.0
+        },
+        {
+          "name": "cf_s_bust02_L",
+          "parent": 16.0
+        },
+        {
+          "name": "cf_s_bust01_L",
+          "parent": 14.0
+        },
+        {
+          "name": "cf_s_bust00_R",
+          "parent": 11.0
+        },
+        {
+          "name": "cf_d_bust01_R",
+          "parent": 28.0
+        },
+        {
+          "name": "cf_j_bust01_R",
+          "parent": 29.0
+        },
+        {
+          "name": "cf_d_bust02_R",
+          "parent": 30.0
+        },
+        {
+          "name": "bip_breast_R",
+          "parent": 31.0
+        },
+        {
+          "name": "cf_d_bust03_R",
+          "parent": 32.0
+        },
+        {
+          "name": "cf_j_bust03_R",
+          "parent": 33.0
+        },
+        {
+          "name": "cf_d_bnip01_R",
+          "parent": 34.0
+        },
+        {
+          "name": "cf_j_bnip02root_R",
+          "parent": 35.0
+        },
+        {
+          "name": "cf_s_bnip02_R",
+          "parent": 36.0
+        },
+        {
+          "name": "cf_j_bnip02_R",
+          "parent": 37.0
+        },
+        {
+          "name": "cf_s_bnip025_R",
+          "parent": 36.0
+        },
+        {
+          "name": "cf_s_bnip01_R",
+          "parent": 35.0
+        },
+        {
+          "name": "cf_s_bust03_R",
+          "parent": 34.0
+        },
+        {
+          "name": "cf_s_bust02_R",
+          "parent": 32.0
+        },
+        {
+          "name": "cf_s_bust01_R",
+          "parent": 30.0
+        },
+        {
+          "name": "bip_collar_L",
+          "parent": 10.0
+        },
+        {
+          "name": "Shoulder_L",
+          "parent": 44.0
+        },
+        {
+          "name": "cf_s_shoulder02_L",
+          "parent": 45.0
+        },
+        {
+          "name": "bip_upperArm_L",
+          "parent": 44.0
+        },
+        {
+          "name": "cf_d_arm01_L",
+          "parent": 47.0
+        },
+        {
+          "name": "cf_s_arm01_L",
+          "parent": 48.0
+        },
+        {
+          "name": "cf_d_arm02_L",
+          "parent": 47.0
+        },
+        {
+          "name": "cf_s_arm02_L",
+          "parent": 50.0
+        },
+        {
+          "name": "cf_d_arm03_L",
+          "parent": 47.0
+        },
+        {
+          "name": "cf_s_arm03_L",
+          "parent": 52.0
+        },
+        {
+          "name": "bip_lowerArm_L",
+          "parent": 47.0
+        },
+        {
+          "name": "cf_d_forearm02_L",
+          "parent": 54.0
+        },
+        {
+          "name": "cf_s_forearm02_L",
+          "parent": 55.0
+        },
+        {
+          "name": "cf_d_wrist_L",
+          "parent": 54.0
+        },
+        {
+          "name": "cf_s_wrist_L",
+          "parent": 57.0
+        },
+        {
+          "name": "cf_d_hand_L",
+          "parent": 58.0
+        },
+        {
+          "name": "bip_hand_L",
+          "parent": 54.0
+        },
+        {
+          "name": "cf_s_hand_L",
+          "parent": 60.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger1",
+          "parent": 61.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger11",
+          "parent": 62.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger12",
+          "parent": 63.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger4",
+          "parent": 61.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger41",
+          "parent": 65.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger42",
+          "parent": 66.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger2",
+          "parent": 61.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger21",
+          "parent": 68.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger22",
+          "parent": 69.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger3",
+          "parent": 61.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger31",
+          "parent": 71.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger32",
+          "parent": 72.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger0",
+          "parent": 61.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger01",
+          "parent": 74.0
+        },
+        {
+          "name": "ValveBiped.Bip01_L_Finger02",
+          "parent": 75.0
+        },
+        {
+          "name": "cf_s_elbo_L",
+          "parent": 54.0
+        },
+        {
+          "name": "cf_s_forearm01_L",
+          "parent": 54.0
+        },
+        {
+          "name": "cf_s_elboback_L",
+          "parent": 78.0
+        },
+        {
+          "name": "bip_collar_R",
+          "parent": 10.0
+        },
+        {
+          "name": "Shoulder_R",
+          "parent": 80.0
+        },
+        {
+          "name": "cf_s_shoulder02_R",
+          "parent": 81.0
+        },
+        {
+          "name": "bip_upperArm_R",
+          "parent": 80.0
+        },
+        {
+          "name": "cf_d_arm01_R",
+          "parent": 83.0
+        },
+        {
+          "name": "cf_s_arm01_R",
+          "parent": 84.0
+        },
+        {
+          "name": "cf_d_arm02_R",
+          "parent": 83.0
+        },
+        {
+          "name": "cf_s_arm02_R",
+          "parent": 86.0
+        },
+        {
+          "name": "cf_d_arm03_R",
+          "parent": 83.0
+        },
+        {
+          "name": "cf_s_arm03_R",
+          "parent": 88.0
+        },
+        {
+          "name": "bip_lowerArm_R",
+          "parent": 83.0
+        },
+        {
+          "name": "cf_d_forearm02_R",
+          "parent": 90.0
+        },
+        {
+          "name": "cf_s_forearm02_R",
+          "parent": 91.0
+        },
+        {
+          "name": "cf_d_wrist_R",
+          "parent": 90.0
+        },
+        {
+          "name": "cf_s_wrist_R",
+          "parent": 93.0
+        },
+        {
+          "name": "cf_d_hand_R",
+          "parent": 94.0
+        },
+        {
+          "name": "bip_hand_R",
+          "parent": 90.0
+        },
+        {
+          "name": "cf_s_hand_R",
+          "parent": 96.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger1",
+          "parent": 97.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger11",
+          "parent": 98.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger12",
+          "parent": 99.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger4",
+          "parent": 97.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger41",
+          "parent": 101.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger42",
+          "parent": 102.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger2",
+          "parent": 97.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger21",
+          "parent": 104.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger22",
+          "parent": 105.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger3",
+          "parent": 97.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger31",
+          "parent": 107.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger32",
+          "parent": 108.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger0",
+          "parent": 97.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger01",
+          "parent": 110.0
+        },
+        {
+          "name": "ValveBiped.Bip01_R_Finger02",
+          "parent": 111.0
+        },
+        {
+          "name": "cf_s_elbo_R",
+          "parent": 90.0
+        },
+        {
+          "name": "cf_s_forearm01_R",
+          "parent": 90.0
+        },
+        {
+          "name": "cf_s_elboback_R",
+          "parent": 114.0
+        },
+        {
+          "name": "bip_neck",
+          "parent": 10.0
+        },
+        {
+          "name": "bip_head",
+          "parent": 116.0
+        },
+        {
+          "name": "cf_s_head",
+          "parent": 117.0
+        },
+        {
+          "name": "cf_s_neck",
+          "parent": 116.0
+        },
+        {
+          "name": "cf_s_spine03",
+          "parent": 10.0
+        },
+        {
+          "name": "cf_s_spine02",
+          "parent": 9.0
+        },
+        {
+          "name": "cf_s_spine01",
+          "parent": 8.0
+        },
+        {
+          "name": "cf_j_waist02",
+          "parent": 7.0
+        },
+        {
+          "name": "cf_d_siri_L",
+          "parent": 123.0
+        },
+        {
+          "name": "cf_d_siri01_L",
+          "parent": 124.0
+        },
+        {
+          "name": "bip_butt_L",
+          "parent": 125.0
+        },
+        {
+          "name": "cf_s_siri_L",
+          "parent": 126.0
+        },
+        {
+          "name": "cf_d_ana",
+          "parent": 123.0
+        },
+        {
+          "name": "cf_j_ana",
+          "parent": 128.0
+        },
+        {
+          "name": "cf_s_ana",
+          "parent": 129.0
+        },
+        {
+          "name": "cf_d_kokan",
+          "parent": 123.0
+        },
+        {
+          "name": "cf_j_kokan",
+          "parent": 131.0
+        },
+        {
+          "name": "cf_d_siri_R",
+          "parent": 123.0
+        },
+        {
+          "name": "cf_d_siri01_R",
+          "parent": 133.0
+        },
+        {
+          "name": "bip_butt_R",
+          "parent": 134.0
+        },
+        {
+          "name": "cf_s_siri_R",
+          "parent": 135.0
+        },
+        {
+          "name": "bip_hip_L",
+          "parent": 123.0
+        },
+        {
+          "name": "cf_d_thigh01_L",
+          "parent": 137.0
+        },
+        {
+          "name": "cf_s_thigh01_L",
+          "parent": 138.0
+        },
+        {
+          "name": "cf_d_thigh02_L",
+          "parent": 137.0
+        },
+        {
+          "name": "cf_s_thigh02_L",
+          "parent": 140.0
+        },
+        {
+          "name": "cf_d_thigh03_L",
+          "parent": 137.0
+        },
+        {
+          "name": "cf_s_thigh03_L",
+          "parent": 142.0
+        },
+        {
+          "name": "bip_knee_L",
+          "parent": 137.0
+        },
+        {
+          "name": "cf_d_kneeF_L",
+          "parent": 144.0
+        },
+        {
+          "name": "cf_d_leg02_L",
+          "parent": 144.0
+        },
+        {
+          "name": "cf_s_leg02_L",
+          "parent": 146.0
+        },
+        {
+          "name": "cf_d_leg03_L",
+          "parent": 144.0
+        },
+        {
+          "name": "cf_s_leg03_L",
+          "parent": 148.0
+        },
+        {
+          "name": "bip_foot_L",
+          "parent": 144.0
+        },
+        {
+          "name": "cf_j_toes_L",
+          "parent": 150.0
+        },
+        {
+          "name": "cf_s_leg01_L",
+          "parent": 144.0
+        },
+        {
+          "name": "cf_s_kneeB_L",
+          "parent": 152.0
+        },
+        {
+          "name": "bip_hip_R",
+          "parent": 123.0
+        },
+        {
+          "name": "cf_d_thigh01_R",
+          "parent": 154.0
+        },
+        {
+          "name": "cf_s_thigh01_R",
+          "parent": 155.0
+        },
+        {
+          "name": "cf_d_thigh02_R",
+          "parent": 154.0
+        },
+        {
+          "name": "cf_s_thigh02_R",
+          "parent": 157.0
+        },
+        {
+          "name": "cf_d_thigh03_R",
+          "parent": 154.0
+        },
+        {
+          "name": "cf_s_thigh03_R",
+          "parent": 159.0
+        },
+        {
+          "name": "bip_knee_R",
+          "parent": 154.0
+        },
+        {
+          "name": "cf_d_kneeF_R",
+          "parent": 161.0
+        },
+        {
+          "name": "cf_d_leg02_R",
+          "parent": 161.0
+        },
+        {
+          "name": "cf_s_leg02_R",
+          "parent": 163.0
+        },
+        {
+          "name": "cf_d_leg03_R",
+          "parent": 161.0
+        },
+        {
+          "name": "cf_s_leg03_R",
+          "parent": 165.0
+        },
+        {
+          "name": "bip_foot_R",
+          "parent": 161.0
+        },
+        {
+          "name": "cf_j_toes_R",
+          "parent": 167.0
+        },
+        {
+          "name": "cf_s_leg01_R",
+          "parent": 161.0
+        },
+        {
+          "name": "cf_s_kneeB_R",
+          "parent": 169.0
+        },
+        {
+          "name": "cf_s_waist02",
+          "parent": 123.0
+        },
+        {
+          "name": "cf_s_leg_L",
+          "parent": 171.0
+        },
+        {
+          "name": "cf_s_leg_R",
+          "parent": 171.0
+        },
+        {
+          "name": "cf_s_waist01",
+          "parent": 7.0
+        }
+      ],
+      "eyeballs": [],
+      "flex_controllers": [
+        {
+          "group": "open V",
+          "local_to_global": -1.0,
+          "max": 1.0,
+          "min": 0.0,
+          "name": "open V"
+        },
+        {
+          "group": "push V",
+          "local_to_global": -1.0,
+          "max": 1.0,
+          "min": 0.0,
+          "name": "push V"
+        },
+        {
+          "group": "Anus",
+          "local_to_global": -1.0,
+          "max": 1.0,
+          "min": 0.0,
+          "name": "Anus"
+        }
+      ],
+      "flex_names": [
+        "open V",
+        "push V",
+        "Anus"
+      ],
+      "native_appearance_choices": {
+        "bodygroups": [
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "body split.smd",
+                "vertices": 9085.0
+              }
+            ],
+            "index": 0.0,
+            "name": "body"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "body vag.dmx",
+                "vertices": 1329.0
+              }
+            ],
+            "index": 1.0,
+            "name": "vag"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "Socks.smd",
+                "vertices": 2896.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 2.0,
+            "name": "Socks"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "swimsuit.smd",
+                "vertices": 2787.0
+              },
+              {
+                "blank": false,
+                "index": 1.0,
+                "name": "swimsuit1.smd",
+                "vertices": 1784.0
+              },
+              {
+                "blank": false,
+                "index": 2.0,
+                "name": "swimsuit2.smd",
+                "vertices": 2779.0
+              },
+              {
+                "blank": false,
+                "index": 3.0,
+                "name": "swimsuit3.smd",
+                "vertices": 1776.0
+              },
+              {
+                "blank": true,
+                "index": 4.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 3.0,
+            "name": "swimsuit"
+          }
+        ],
+        "default_skin_has_native_slot_identity": true,
+        "skin_groups": [
+          [
+            "body",
+            "bodyhidden",
+            "hnipples",
+            "models/koikatsu/touhou/mima/privates",
+            "swimsuit2hidden",
+            "swimsuit2",
+            "nipples",
+            "socks",
+            "swimsuit1"
+          ],
+          [
+            "body",
+            "bodyhidden",
+            "hnipples",
+            "models/koikatsu/touhou/mima/privates",
+            "swimsuit2",
+            "swimsuit2",
+            "nipples",
+            "socks",
+            "swimsuit1"
+          ],
+          [
+            "body",
+            "body",
+            "hnipples",
+            "models/koikatsu/touhou/mima/privates",
+            "swimsuit2",
+            "swimsuit2",
+            "nipples",
+            "socks",
+            "swimsuit1"
+          ],
+          [
+            "body",
+            "body",
+            "nipples",
+            "models/koikatsu/touhou/mima/privates",
+            "swimsuit2",
+            "swimsuit2",
+            "nipples",
+            "socks",
+            "swimsuit1"
+          ]
+        ]
+      },
+      "selected_bodygroup_indices": {
+        "Socks": 1.0,
+        "body": 0.0,
+        "swimsuit": 0.0,
+        "vag": 0.0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 1.0,
+        "3": 0.0
+      },
+      "selected_skin": 3.0,
+      "skin_groups": [
+        [
+          "body",
+          "bodyhidden",
+          "hnipples",
+          "models/koikatsu/touhou/mima/privates",
+          "swimsuit2hidden",
+          "swimsuit2",
+          "nipples",
+          "socks",
+          "swimsuit1"
+        ],
+        [
+          "body",
+          "bodyhidden",
+          "hnipples",
+          "models/koikatsu/touhou/mima/privates",
+          "swimsuit2",
+          "swimsuit2",
+          "nipples",
+          "socks",
+          "swimsuit1"
+        ],
+        [
+          "body",
+          "body",
+          "hnipples",
+          "models/koikatsu/touhou/mima/privates",
+          "swimsuit2",
+          "swimsuit2",
+          "nipples",
+          "socks",
+          "swimsuit1"
+        ],
+        [
+          "body",
+          "body",
+          "nipples",
+          "models/koikatsu/touhou/mima/privates",
+          "swimsuit2",
+          "swimsuit2",
+          "nipples",
+          "socks",
+          "swimsuit1"
+        ]
+      ]
+    },
+    "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-02\\models\\koikatsu\\touhou\\mima body.mdl",
+    "scale": 0.01905,
+    "source_file": "mima body.mdl",
+    "source_member": null,
+    "source_profile": "standalone",
+    "source_sha256": "771c194ecf6da69210824d7a99afb9de110c68ccbc708e60b4ad6143ee400dda",
+    "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "sourceio_version": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "standard": "studio_model_1",
+    "suggested_view": null,
+    "warnings": []
+  },
+  "peer_id": "4011543367460661768",
+  "pictures": {
+    "0": {
+      "height": 1080,
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\08-mima_body-skin-3-socks-off/writer-0.png",
+      "pixel_sha256": "00156a7163dc877487bc525920a1a66b7a3f81316f5dd08374eafa3649bc5cbf",
+      "width": 1920
+    },
+    "24": {
+      "height": 1080,
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\08-mima_body-skin-3-socks-off/writer-24.png",
+      "pixel_sha256": "f26b1405ddcf8a4928eeec072f18f1bda145751668fb4b1fae77bb2637a13ce7",
+      "width": 1920
+    }
+  },
+  "portable_world": {
+    "format": "studio_world_1",
+    "objects": [
+      {
+        "draft_frame": 0.0,
+        "format": "studio_model_1",
+        "id": "4011543367460661768",
+        "kind": "model",
+        "metadata": {
+          "import_source": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/examples/tutorials/Practice figure.glb",
+          "initial_placement": {
+            "attempts": 5.0,
+            "overlap": false,
+            "skipped_surfaces": 0.0,
+            "support": "grid",
+            "triangles": 0.0
+          },
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "name": "Practice figure.glb",
+        "parent_id": "",
+        "path": "assets/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb",
+        "pose": {
+
+        },
+        "pose_keys": [],
+        "position": [
+          2.5319032669067383,
+          -0.04999996349215507,
+          3.3666162490844727
+        ],
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+        "start_frame": 0.0,
+        "visible": true
+      },
+      {
+        "draft_frame": 0.0,
+        "format": "studio_model_1",
+        "id": "1905964974063585196",
+        "kind": "model",
+        "metadata": {
+          "external_bundle": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\compatibility\\source-1794615549-368-79124817",
+          "import_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\compatibility\\source-1794615549-368-79124817\\scene.glb",
+          "initial_placement": {
+            "attempts": 5.0,
+            "overlap": false,
+            "skipped_surfaces": 0.0,
+            "support": "grid",
+            "triangles": 0.0
+          },
+          "native_parameters": {
+            "adapter": "studio_source_1",
+            "axes": "Source Z-up to glTF Y-up via Blender exporter",
+            "case_resolved_sidecars": {
+
+            },
+            "counts": {
+              "bones": 175.0,
+              "meshes": 3.0,
+              "static_lights": 0.0,
+              "textures": 5.0
+            },
+            "limits": [
+              "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+              "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+              "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+            ],
+            "materials": [
+              {
+                "base_texture": "materials/models\\koikatsu\\touhou\\mima\\swimsuit.vtf",
+                "material": "swimsuit2",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/koikatsu/touhou/mima/swimsuit2.vmt"
+              },
+              {
+                "base_texture": "materials/models\\koikatsu\\touhou\\mima\\nipples 2.vtf",
+                "material": "nipples",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/koikatsu/touhou/mima/nipples.vmt"
+              },
+              {
+                "base_texture": "materials/models\\koikatsu\\touhou\\mima\\socks.vtf",
+                "material": "socks",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/koikatsu/touhou/mima/socks.vmt"
+              },
+              {
+                "base_texture": "materials/models\\koikatsu\\touhou\\mima\\swimsuit.vtf",
+                "material": "swimsuit1",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/koikatsu/touhou/mima/swimsuit1.vmt"
+              },
+              {
+                "base_texture": "materials/models\\koikatsu\\touhou\\mima\\body.vtf",
+                "material": "body",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/koikatsu/touhou/mima/body.vmt"
+              },
+              {
+                "base_texture": "materials/models\\koikatsu\\touhou\\mima\\vag.vtf",
+                "material": "models/koikatsu/touhou/mima/privates",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/koikatsu/touhou/mima/privates.vmt"
+              }
+            ],
+            "mount_warnings": [],
+            "native_parameters": {
+              "appearance_request": {
+                "bodygroups": {
+                  "0": 0.0,
+                  "1": 0.0,
+                  "2": 1.0,
+                  "3": 0.0
+                },
+                "format": "studio_source_appearance_request_1",
+                "native_mdl_sha256": "771c194ecf6da69210824d7a99afb9de110c68ccbc708e60b4ad6143ee400dda",
+                "skin": 3.0,
+                "source_sha256": "771c194ecf6da69210824d7a99afb9de110c68ccbc708e60b4ad6143ee400dda"
+              },
+              "bodygroups": {
+                "Socks": [
+                  "Socks.smd",
+                  null
+                ],
+                "body": [
+                  "body split.smd"
+                ],
+                "swimsuit": [
+                  "swimsuit.smd",
+                  "swimsuit1.smd",
+                  "swimsuit2.smd",
+                  "swimsuit3.smd",
+                  null
+                ],
+                "vag": [
+                  "body vag.dmx"
+                ]
+              },
+              "bones": [
+                {
+                  "name": "ParentNode",
+                  "parent": -1.0
+                },
+                {
+                  "name": "Center",
+                  "parent": 0.0
+                },
+                {
+                  "name": "BodyTop",
+                  "parent": 1.0
+                },
+                {
+                  "name": "p_cf_body_bone",
+                  "parent": 2.0
+                },
+                {
+                  "name": "cf_j_root",
+                  "parent": 3.0
+                },
+                {
+                  "name": "cf_n_height",
+                  "parent": 4.0
+                },
+                {
+                  "name": "cf_j_hips",
+                  "parent": 5.0
+                },
+                {
+                  "name": "bip_pelvis",
+                  "parent": 6.0
+                },
+                {
+                  "name": "bip_spine_0",
+                  "parent": 7.0
+                },
+                {
+                  "name": "bip_spine_1",
+                  "parent": 8.0
+                },
+                {
+                  "name": "bip_spine_2",
+                  "parent": 9.0
+                },
+                {
+                  "name": "cf_d_bust00",
+                  "parent": 10.0
+                },
+                {
+                  "name": "cf_s_bust00_L",
+                  "parent": 11.0
+                },
+                {
+                  "name": "cf_d_bust01_L",
+                  "parent": 12.0
+                },
+                {
+                  "name": "cf_j_bust01_L",
+                  "parent": 13.0
+                },
+                {
+                  "name": "cf_d_bust02_L",
+                  "parent": 14.0
+                },
+                {
+                  "name": "bip_breast_L",
+                  "parent": 15.0
+                },
+                {
+                  "name": "cf_d_bust03_L",
+                  "parent": 16.0
+                },
+                {
+                  "name": "cf_j_bust03_L",
+                  "parent": 17.0
+                },
+                {
+                  "name": "cf_d_bnip01_L",
+                  "parent": 18.0
+                },
+                {
+                  "name": "cf_j_bnip02root_L",
+                  "parent": 19.0
+                },
+                {
+                  "name": "cf_s_bnip02_L",
+                  "parent": 20.0
+                },
+                {
+                  "name": "cf_j_bnip02_L",
+                  "parent": 21.0
+                },
+                {
+                  "name": "cf_s_bnip025_L",
+                  "parent": 20.0
+                },
+                {
+                  "name": "cf_s_bnip01_L",
+                  "parent": 19.0
+                },
+                {
+                  "name": "cf_s_bust03_L",
+                  "parent": 18.0
+                },
+                {
+                  "name": "cf_s_bust02_L",
+                  "parent": 16.0
+                },
+                {
+                  "name": "cf_s_bust01_L",
+                  "parent": 14.0
+                },
+                {
+                  "name": "cf_s_bust00_R",
+                  "parent": 11.0
+                },
+                {
+                  "name": "cf_d_bust01_R",
+                  "parent": 28.0
+                },
+                {
+                  "name": "cf_j_bust01_R",
+                  "parent": 29.0
+                },
+                {
+                  "name": "cf_d_bust02_R",
+                  "parent": 30.0
+                },
+                {
+                  "name": "bip_breast_R",
+                  "parent": 31.0
+                },
+                {
+                  "name": "cf_d_bust03_R",
+                  "parent": 32.0
+                },
+                {
+                  "name": "cf_j_bust03_R",
+                  "parent": 33.0
+                },
+                {
+                  "name": "cf_d_bnip01_R",
+                  "parent": 34.0
+                },
+                {
+                  "name": "cf_j_bnip02root_R",
+                  "parent": 35.0
+                },
+                {
+                  "name": "cf_s_bnip02_R",
+                  "parent": 36.0
+                },
+                {
+                  "name": "cf_j_bnip02_R",
+                  "parent": 37.0
+                },
+                {
+                  "name": "cf_s_bnip025_R",
+                  "parent": 36.0
+                },
+                {
+                  "name": "cf_s_bnip01_R",
+                  "parent": 35.0
+                },
+                {
+                  "name": "cf_s_bust03_R",
+                  "parent": 34.0
+                },
+                {
+                  "name": "cf_s_bust02_R",
+                  "parent": 32.0
+                },
+                {
+                  "name": "cf_s_bust01_R",
+                  "parent": 30.0
+                },
+                {
+                  "name": "bip_collar_L",
+                  "parent": 10.0
+                },
+                {
+                  "name": "Shoulder_L",
+                  "parent": 44.0
+                },
+                {
+                  "name": "cf_s_shoulder02_L",
+                  "parent": 45.0
+                },
+                {
+                  "name": "bip_upperArm_L",
+                  "parent": 44.0
+                },
+                {
+                  "name": "cf_d_arm01_L",
+                  "parent": 47.0
+                },
+                {
+                  "name": "cf_s_arm01_L",
+                  "parent": 48.0
+                },
+                {
+                  "name": "cf_d_arm02_L",
+                  "parent": 47.0
+                },
+                {
+                  "name": "cf_s_arm02_L",
+                  "parent": 50.0
+                },
+                {
+                  "name": "cf_d_arm03_L",
+                  "parent": 47.0
+                },
+                {
+                  "name": "cf_s_arm03_L",
+                  "parent": 52.0
+                },
+                {
+                  "name": "bip_lowerArm_L",
+                  "parent": 47.0
+                },
+                {
+                  "name": "cf_d_forearm02_L",
+                  "parent": 54.0
+                },
+                {
+                  "name": "cf_s_forearm02_L",
+                  "parent": 55.0
+                },
+                {
+                  "name": "cf_d_wrist_L",
+                  "parent": 54.0
+                },
+                {
+                  "name": "cf_s_wrist_L",
+                  "parent": 57.0
+                },
+                {
+                  "name": "cf_d_hand_L",
+                  "parent": 58.0
+                },
+                {
+                  "name": "bip_hand_L",
+                  "parent": 54.0
+                },
+                {
+                  "name": "cf_s_hand_L",
+                  "parent": 60.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger1",
+                  "parent": 61.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger11",
+                  "parent": 62.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger12",
+                  "parent": 63.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger4",
+                  "parent": 61.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger41",
+                  "parent": 65.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger42",
+                  "parent": 66.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger2",
+                  "parent": 61.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger21",
+                  "parent": 68.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger22",
+                  "parent": 69.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger3",
+                  "parent": 61.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger31",
+                  "parent": 71.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger32",
+                  "parent": 72.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger0",
+                  "parent": 61.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger01",
+                  "parent": 74.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_L_Finger02",
+                  "parent": 75.0
+                },
+                {
+                  "name": "cf_s_elbo_L",
+                  "parent": 54.0
+                },
+                {
+                  "name": "cf_s_forearm01_L",
+                  "parent": 54.0
+                },
+                {
+                  "name": "cf_s_elboback_L",
+                  "parent": 78.0
+                },
+                {
+                  "name": "bip_collar_R",
+                  "parent": 10.0
+                },
+                {
+                  "name": "Shoulder_R",
+                  "parent": 80.0
+                },
+                {
+                  "name": "cf_s_shoulder02_R",
+                  "parent": 81.0
+                },
+                {
+                  "name": "bip_upperArm_R",
+                  "parent": 80.0
+                },
+                {
+                  "name": "cf_d_arm01_R",
+                  "parent": 83.0
+                },
+                {
+                  "name": "cf_s_arm01_R",
+                  "parent": 84.0
+                },
+                {
+                  "name": "cf_d_arm02_R",
+                  "parent": 83.0
+                },
+                {
+                  "name": "cf_s_arm02_R",
+                  "parent": 86.0
+                },
+                {
+                  "name": "cf_d_arm03_R",
+                  "parent": 83.0
+                },
+                {
+                  "name": "cf_s_arm03_R",
+                  "parent": 88.0
+                },
+                {
+                  "name": "bip_lowerArm_R",
+                  "parent": 83.0
+                },
+                {
+                  "name": "cf_d_forearm02_R",
+                  "parent": 90.0
+                },
+                {
+                  "name": "cf_s_forearm02_R",
+                  "parent": 91.0
+                },
+                {
+                  "name": "cf_d_wrist_R",
+                  "parent": 90.0
+                },
+                {
+                  "name": "cf_s_wrist_R",
+                  "parent": 93.0
+                },
+                {
+                  "name": "cf_d_hand_R",
+                  "parent": 94.0
+                },
+                {
+                  "name": "bip_hand_R",
+                  "parent": 90.0
+                },
+                {
+                  "name": "cf_s_hand_R",
+                  "parent": 96.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger1",
+                  "parent": 97.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger11",
+                  "parent": 98.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger12",
+                  "parent": 99.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger4",
+                  "parent": 97.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger41",
+                  "parent": 101.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger42",
+                  "parent": 102.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger2",
+                  "parent": 97.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger21",
+                  "parent": 104.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger22",
+                  "parent": 105.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger3",
+                  "parent": 97.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger31",
+                  "parent": 107.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger32",
+                  "parent": 108.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger0",
+                  "parent": 97.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger01",
+                  "parent": 110.0
+                },
+                {
+                  "name": "ValveBiped.Bip01_R_Finger02",
+                  "parent": 111.0
+                },
+                {
+                  "name": "cf_s_elbo_R",
+                  "parent": 90.0
+                },
+                {
+                  "name": "cf_s_forearm01_R",
+                  "parent": 90.0
+                },
+                {
+                  "name": "cf_s_elboback_R",
+                  "parent": 114.0
+                },
+                {
+                  "name": "bip_neck",
+                  "parent": 10.0
+                },
+                {
+                  "name": "bip_head",
+                  "parent": 116.0
+                },
+                {
+                  "name": "cf_s_head",
+                  "parent": 117.0
+                },
+                {
+                  "name": "cf_s_neck",
+                  "parent": 116.0
+                },
+                {
+                  "name": "cf_s_spine03",
+                  "parent": 10.0
+                },
+                {
+                  "name": "cf_s_spine02",
+                  "parent": 9.0
+                },
+                {
+                  "name": "cf_s_spine01",
+                  "parent": 8.0
+                },
+                {
+                  "name": "cf_j_waist02",
+                  "parent": 7.0
+                },
+                {
+                  "name": "cf_d_siri_L",
+                  "parent": 123.0
+                },
+                {
+                  "name": "cf_d_siri01_L",
+                  "parent": 124.0
+                },
+                {
+                  "name": "bip_butt_L",
+                  "parent": 125.0
+                },
+                {
+                  "name": "cf_s_siri_L",
+                  "parent": 126.0
+                },
+                {
+                  "name": "cf_d_ana",
+                  "parent": 123.0
+                },
+                {
+                  "name": "cf_j_ana",
+                  "parent": 128.0
+                },
+                {
+                  "name": "cf_s_ana",
+                  "parent": 129.0
+                },
+                {
+                  "name": "cf_d_kokan",
+                  "parent": 123.0
+                },
+                {
+                  "name": "cf_j_kokan",
+                  "parent": 131.0
+                },
+                {
+                  "name": "cf_d_siri_R",
+                  "parent": 123.0
+                },
+                {
+                  "name": "cf_d_siri01_R",
+                  "parent": 133.0
+                },
+                {
+                  "name": "bip_butt_R",
+                  "parent": 134.0
+                },
+                {
+                  "name": "cf_s_siri_R",
+                  "parent": 135.0
+                },
+                {
+                  "name": "bip_hip_L",
+                  "parent": 123.0
+                },
+                {
+                  "name": "cf_d_thigh01_L",
+                  "parent": 137.0
+                },
+                {
+                  "name": "cf_s_thigh01_L",
+                  "parent": 138.0
+                },
+                {
+                  "name": "cf_d_thigh02_L",
+                  "parent": 137.0
+                },
+                {
+                  "name": "cf_s_thigh02_L",
+                  "parent": 140.0
+                },
+                {
+                  "name": "cf_d_thigh03_L",
+                  "parent": 137.0
+                },
+                {
+                  "name": "cf_s_thigh03_L",
+                  "parent": 142.0
+                },
+                {
+                  "name": "bip_knee_L",
+                  "parent": 137.0
+                },
+                {
+                  "name": "cf_d_kneeF_L",
+                  "parent": 144.0
+                },
+                {
+                  "name": "cf_d_leg02_L",
+                  "parent": 144.0
+                },
+                {
+                  "name": "cf_s_leg02_L",
+                  "parent": 146.0
+                },
+                {
+                  "name": "cf_d_leg03_L",
+                  "parent": 144.0
+                },
+                {
+                  "name": "cf_s_leg03_L",
+                  "parent": 148.0
+                },
+                {
+                  "name": "bip_foot_L",
+                  "parent": 144.0
+                },
+                {
+                  "name": "cf_j_toes_L",
+                  "parent": 150.0
+                },
+                {
+                  "name": "cf_s_leg01_L",
+                  "parent": 144.0
+                },
+                {
+                  "name": "cf_s_kneeB_L",
+                  "parent": 152.0
+                },
+                {
+                  "name": "bip_hip_R",
+                  "parent": 123.0
+                },
+                {
+                  "name": "cf_d_thigh01_R",
+                  "parent": 154.0
+                },
+                {
+                  "name": "cf_s_thigh01_R",
+                  "parent": 155.0
+                },
+                {
+                  "name": "cf_d_thigh02_R",
+                  "parent": 154.0
+                },
+                {
+                  "name": "cf_s_thigh02_R",
+                  "parent": 157.0
+                },
+                {
+                  "name": "cf_d_thigh03_R",
+                  "parent": 154.0
+                },
+                {
+                  "name": "cf_s_thigh03_R",
+                  "parent": 159.0
+                },
+                {
+                  "name": "bip_knee_R",
+                  "parent": 154.0
+                },
+                {
+                  "name": "cf_d_kneeF_R",
+                  "parent": 161.0
+                },
+                {
+                  "name": "cf_d_leg02_R",
+                  "parent": 161.0
+                },
+                {
+                  "name": "cf_s_leg02_R",
+                  "parent": 163.0
+                },
+                {
+                  "name": "cf_d_leg03_R",
+                  "parent": 161.0
+                },
+                {
+                  "name": "cf_s_leg03_R",
+                  "parent": 165.0
+                },
+                {
+                  "name": "bip_foot_R",
+                  "parent": 161.0
+                },
+                {
+                  "name": "cf_j_toes_R",
+                  "parent": 167.0
+                },
+                {
+                  "name": "cf_s_leg01_R",
+                  "parent": 161.0
+                },
+                {
+                  "name": "cf_s_kneeB_R",
+                  "parent": 169.0
+                },
+                {
+                  "name": "cf_s_waist02",
+                  "parent": 123.0
+                },
+                {
+                  "name": "cf_s_leg_L",
+                  "parent": 171.0
+                },
+                {
+                  "name": "cf_s_leg_R",
+                  "parent": 171.0
+                },
+                {
+                  "name": "cf_s_waist01",
+                  "parent": 7.0
+                }
+              ],
+              "eyeballs": [],
+              "flex_controllers": [
+                {
+                  "group": "open V",
+                  "local_to_global": -1.0,
+                  "max": 1.0,
+                  "min": 0.0,
+                  "name": "open V"
+                },
+                {
+                  "group": "push V",
+                  "local_to_global": -1.0,
+                  "max": 1.0,
+                  "min": 0.0,
+                  "name": "push V"
+                },
+                {
+                  "group": "Anus",
+                  "local_to_global": -1.0,
+                  "max": 1.0,
+                  "min": 0.0,
+                  "name": "Anus"
+                }
+              ],
+              "flex_names": [
+                "open V",
+                "push V",
+                "Anus"
+              ],
+              "native_appearance_choices": {
+                "bodygroups": [
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "body split.smd",
+                        "vertices": 9085.0
+                      }
+                    ],
+                    "index": 0.0,
+                    "name": "body"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "body vag.dmx",
+                        "vertices": 1329.0
+                      }
+                    ],
+                    "index": 1.0,
+                    "name": "vag"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "Socks.smd",
+                        "vertices": 2896.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 2.0,
+                    "name": "Socks"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "swimsuit.smd",
+                        "vertices": 2787.0
+                      },
+                      {
+                        "blank": false,
+                        "index": 1.0,
+                        "name": "swimsuit1.smd",
+                        "vertices": 1784.0
+                      },
+                      {
+                        "blank": false,
+                        "index": 2.0,
+                        "name": "swimsuit2.smd",
+                        "vertices": 2779.0
+                      },
+                      {
+                        "blank": false,
+                        "index": 3.0,
+                        "name": "swimsuit3.smd",
+                        "vertices": 1776.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 4.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 3.0,
+                    "name": "swimsuit"
+                  }
+                ],
+                "default_skin_has_native_slot_identity": true,
+                "skin_groups": [
+                  [
+                    "body",
+                    "bodyhidden",
+                    "hnipples",
+                    "models/koikatsu/touhou/mima/privates",
+                    "swimsuit2hidden",
+                    "swimsuit2",
+                    "nipples",
+                    "socks",
+                    "swimsuit1"
+                  ],
+                  [
+                    "body",
+                    "bodyhidden",
+                    "hnipples",
+                    "models/koikatsu/touhou/mima/privates",
+                    "swimsuit2",
+                    "swimsuit2",
+                    "nipples",
+                    "socks",
+                    "swimsuit1"
+                  ],
+                  [
+                    "body",
+                    "body",
+                    "hnipples",
+                    "models/koikatsu/touhou/mima/privates",
+                    "swimsuit2",
+                    "swimsuit2",
+                    "nipples",
+                    "socks",
+                    "swimsuit1"
+                  ],
+                  [
+                    "body",
+                    "body",
+                    "nipples",
+                    "models/koikatsu/touhou/mima/privates",
+                    "swimsuit2",
+                    "swimsuit2",
+                    "nipples",
+                    "socks",
+                    "swimsuit1"
+                  ]
+                ]
+              },
+              "selected_bodygroup_indices": {
+                "Socks": 1.0,
+                "body": 0.0,
+                "swimsuit": 0.0,
+                "vag": 0.0
+              },
+              "selected_native_bodygroup_indices": {
+                "0": 0.0,
+                "1": 0.0,
+                "2": 1.0,
+                "3": 0.0
+              },
+              "selected_skin": 3.0,
+              "skin_groups": [
+                [
+                  "body",
+                  "bodyhidden",
+                  "hnipples",
+                  "models/koikatsu/touhou/mima/privates",
+                  "swimsuit2hidden",
+                  "swimsuit2",
+                  "nipples",
+                  "socks",
+                  "swimsuit1"
+                ],
+                [
+                  "body",
+                  "bodyhidden",
+                  "hnipples",
+                  "models/koikatsu/touhou/mima/privates",
+                  "swimsuit2",
+                  "swimsuit2",
+                  "nipples",
+                  "socks",
+                  "swimsuit1"
+                ],
+                [
+                  "body",
+                  "body",
+                  "hnipples",
+                  "models/koikatsu/touhou/mima/privates",
+                  "swimsuit2",
+                  "swimsuit2",
+                  "nipples",
+                  "socks",
+                  "swimsuit1"
+                ],
+                [
+                  "body",
+                  "body",
+                  "nipples",
+                  "models/koikatsu/touhou/mima/privates",
+                  "swimsuit2",
+                  "swimsuit2",
+                  "nipples",
+                  "socks",
+                  "swimsuit1"
+                ]
+              ]
+            },
+            "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\inputs\\family-02\\models\\koikatsu\\touhou\\mima body.mdl",
+            "scale": 0.01905,
+            "source_file": "mima body.mdl",
+            "source_member": null,
+            "source_profile": "standalone",
+            "source_sha256": "771c194ecf6da69210824d7a99afb9de110c68ccbc708e60b4ad6143ee400dda",
+            "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+            "sourceio_version": [
+              5.0,
+              5.0,
+              5.0
+            ],
+            "standard": "studio_model_1",
+            "suggested_view": null,
+            "warnings": []
+          },
+          "note": "Keep full native preparation bundle; only GLB and this supplied report are managed here. Native fidelity is not implied.",
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "name": "mima body.mdl",
+        "parent_id": "",
+        "path": "assets/b681267f03bdb7ba747873181cef818490fa45dca9378b43bf7b6639f6271ee6.glb",
+        "pose": {
+
+        },
+        "pose_keys": [],
+        "position": [
+          3.0821495056152344,
+          -0.01149838790297508,
+          4.118035793304443
+        ],
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "b681267f03bdb7ba747873181cef818490fa45dca9378b43bf7b6639f6271ee6",
+        "start_frame": 0.0,
+        "visible": true
+      }
+    ]
+  },
+  "projects": {
+    "linked": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\08-mima_body-skin-3-socks-off/linked.has",
+      "sha256": "90fd3d4023c72882809a9d737289239d8449beb9bbc90af0e64a1a3fe30cfaf6"
+    },
+    "packed": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\cases\\08-mima_body-skin-3-socks-off/packed.has",
+      "sha256": "f46d308d4a45916b221f84f2f93e4a9d592345af4a9713f8fb2ae1756e0afc2a"
+    }
+  },
+  "protected": {
+    "audio": {
+      "gain_db": 0.0,
+      "id": "1887643786414478624",
+      "muted": false,
+      "path": "assets/5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9.wav",
+      "sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+      "source_in_sample": 0.0,
+      "source_name": "tone.wav",
+      "start_frame": 24.0
+    },
+    "keys": [
+      {
+        "fov": 60.0,
+        "frame": 0.0,
+        "interpolation": "ease",
+        "position": [
+          3.702410697937012,
+          0.9514554738998412,
+          5.881709098815918
+        ],
+        "rotation_xyzw": [
+          -0.091836079955101,
+          0.16681496798992157,
+          0.01560714840888977,
+          0.98157799243927
+        ]
+      },
+      {
+        "fov": 60.0,
+        "frame": 47.0,
+        "interpolation": "ease",
+        "position": [
+          3.8524107933044434,
+          0.9514554738998412,
+          5.881709098815918
+        ],
+        "rotation_xyzw": [
+          -0.091836079955101,
+          0.16681496798992157,
+          0.01560714840888977,
+          0.98157799243927
+        ]
+      }
+    ],
+    "paint": "2cf71f483fe4f2a80232ee60a1d864334914876f40cb083511413a7de238a333",
+    "pcm": "39ed1e1355a24d405a11af9cfb2a97b315a835f1636f52ac0130b93c6a0c9ae0",
+    "peer": {
+      "draft_frame": 0.0,
+      "format": "studio_model_1",
+      "id": "4011543367460661768",
+      "kind": "model",
+      "metadata": {
+        "import_source": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615438168999800-42f0686d/Studio/examples/tutorials/Practice figure.glb",
+        "initial_placement": {
+          "attempts": 5.0,
+          "overlap": false,
+          "skipped_surfaces": 0.0,
+          "support": "grid",
+          "triangles": 0.0
+        },
+        "source_shape": {
+          "enabled": true,
+          "format": "studio_source_shape_1"
+        }
+      },
+      "name": "Practice figure.glb",
+      "parent_id": "",
+      "path": "assets/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb",
+      "pose": {
+
+      },
+      "pose_keys": [],
+      "position": [
+        2.5319032669067383,
+        -0.04999996349215507,
+        3.3666162490844727
+      ],
+      "reference_only": false,
+      "rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 1.0,
+      "sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+      "start_frame": 0.0,
+      "visible": true
+    },
+    "video": {
+      "duration_frames": 48.0,
+      "fps_den": 1.0,
+      "fps_num": 24.0,
+      "height": 1080.0,
+      "lighting_mode": "studio",
+      "visibility_fade_ms": 300.0,
+      "width": 1920.0,
+      "world_background": "black"
+    }
+  }
+}

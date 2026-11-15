@@ -1,0 +1,77 @@
+{
+  "format": "has_output_only_headless_transport_plan_1",
+  "status": "READY_FOR_ROOT_SOURCE_REVIEW_NOT_FOR_LAUNCH",
+  "current_preparation": "private-preparation-20261114T042943Z",
+  "root_runtime_lease_granted": false,
+  "Godot_parser_or_runtime_executed": false,
+  "Python_driver_imported_or_executed": false,
+  "CPU_only_preparer_executed": true,
+  "main_source_writes": false,
+  "HEAD": "f380729cb170682068017b0d4c29b5f8425cdd14",
+  "obsolete_c4d_context_admitted": false,
+  "qualified_full_revision": "f380729cb170682068017b0d4c29b5f8425cdd14",
+  "qualified_full_run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261114T040946652",
+  "requirements_before_even_parser_launch": [
+    "f380 canonical terminal passed, suite_exit0 and source_unchanged true",
+    "Exact authoritative root host termination proof/raw observation bound to that full run",
+    "Root grants headless-only/no-other-runtime lease bound to this exact INPUT_LOCK SHA",
+    "HEAD and all211 exact app/script/native/runtime/oracle identities still match input lock",
+    "Current200 app files still match passed-full source catalogue"
+  ],
+  "actual_apis": [
+    "pose_editor.definition",
+    "scene3d.load_glb",
+    "model.inventory",
+    "model.check_bindings",
+    "source_bone_bindings.resolve",
+    "model.apply",
+    "model.bone_transform",
+    "Skeleton3D.get_bone_rest/get_bone_pose/get_bone_global_rest"
+  ],
+  "measurements_proposed": {
+    "pose_cases": 55,
+    "root_cases": 4,
+    "configurations": 220,
+    "global_pose_transforms": 15180,
+    "global_rest_transforms": 15180,
+    "native_Z_tips": 10780,
+    "checks_expected": 41588,
+    "native_actuators": [
+      8,
+      17,
+      18,
+      26,
+      27
+    ],
+    "native_parent_child_pairs": [
+      [
+        17,
+        18
+      ],
+      [
+        26,
+        27
+      ]
+    ],
+    "pose_controls": "Signed XYZ rotations on all5actuators, signed XYZ local translations on parents17/26, paired parent-child XYZ rotations",
+    "root_controls": "Identity and authored translated/rotated roots, each at uniform model scales1and2",
+    "conversion_source_scale": 0.01905,
+    "other_conversion_scales": "UNRUN",
+    "posed_vertex_skin_render": "UNRUN; this candidate qualifies skeleton/rest/FK/tip transport only",
+    "full_Studio_world_document_or_project_save": "UNRUN by this direct actual standard Model/SceneIO probe"
+  },
+  "root_execute_template": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-jiggle-headless-transport-prep-20261114\\run_headless_transport.py",
+    "--input-lock",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-jiggle-headless-transport-prep-20261114\\private-preparation-20261114T042943Z\\INPUT_LOCK.json",
+    "--root-lease",
+    "ROOT_SUPPLIES_GRANTED_EXACT_LEASE_JSON",
+    "--output",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-jiggle-headless-transport-prep-20261114\\runtime-post-full-UNIQUE",
+    "--execute-headless-after-full"
+  ],
+  "result_policy": "Future parse/run phases record separate stdout/stderr/engine logs and retained Popen closure, exact counts/status/resets plus locked-input/full-gate preservation. Failed evidence is retained; no cleanup.",
+  "private_artifact_policy": "PRIVATE_ORACLE contains native-derived matrices and tips; keep every private-preparation folder LOCAL. Do not publish it or its input lock with private absolute paths. Public preparation, source scripts and compact hashes/counts only may be reviewed separately."
+}

@@ -1,0 +1,63 @@
+{
+  "format": "has_wind_owned_worker_handoff_1",
+  "scope": "Output-only phase2 CPU worker candidate, not main/UI feature acceptance",
+  "main_head_to_preserve": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "controller_model": "One Python controller, one Job-owned Python CPU child; no Godot hosting or app bridge yet",
+  "passed_tests": 16,
+  "test_report": "cpu-tests.json",
+  "exact_native_ownership_receipts": "cpu-owned-receipts.json",
+  "candidate_sources": [
+    "candidate/tools/wind_preview_owned.py",
+    "candidate/tools/wind_preview_worker.py",
+    "candidate/tools/wind_helper_preview.py"
+  ],
+  "prior_protocol_sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+  "prior_index_sha256": "702ee95a498330330b200c3ad0880780a7a03938c035f71d909dd07b96e44f74",
+  "prior_all_indexed_files_verified_unchanged": true,
+  "review": {
+    "reviewer": "parent /root read full adapter/worker and existing helper dependency headers",
+    "finding": "Foreign imported worker identity was not checked before use",
+    "resolution": "Reject foreign worker/protocol module paths at constructor entry before any helper call; imported-code CPU negative control passed",
+    "followup_lifecycle_note": "Adapter close after success does not invalidate prepared DraftLease; future Node must synchronously invalidate on helper close/edit/save/context change"
+  },
+  "retained_runs": [
+    {
+      "report": "cpu-tests-failed-path.json",
+      "result": "14 pass / 1 harness error, CreateProcess cwd path limit, WinError267; no OS policy changes"
+    },
+    {
+      "report": "cpu-tests-before-import-review.json",
+      "result": "15 pass / 0 errors before narrow import review correction"
+    },
+    {
+      "report": "cpu-tests.json",
+      "result": "Final 16 pass / 0 errors, exact indexed candidate"
+    }
+  ],
+  "main_source_modified": false,
+  "previous_packet_modified": false,
+  "git_commands": false,
+  "godot_started": false,
+  "gpu_used": false,
+  "blender_or_native_converter_started": false,
+  "real_hidden_windows_python_children": true,
+  "bounded_buffers": {
+    "stdout_bytes": 16384,
+    "stderr_bytes": 262144,
+    "overflow": "drain/discard then fail closed"
+  },
+  "gaps": [
+    "Godot-owned controller lifetime and actual pipe/Node integration",
+    "Abrupt controller death experiments before/after Job assignment",
+    "Actual Godot hidden import and source/candidate binding snapshots",
+    "Isolated preview simulation and original pose/physics/visibility preservation",
+    "Canvas/selection/recovery/context lifecycle and separately guarded Apply/Undo",
+    "Real native model and rendered acceptance"
+  ],
+  "next_step": "Implement a bounded preview-purpose Python controller entry and Godot Node transport/lifetime bridge with CPU fixture tests; preserve phase1 guards and world-selection fix; then actual hidden import binding gates",
+  "documents": [
+    "README.md",
+    "INTEGRATION_SEAMS.md"
+  ],
+  "publication": "Only FILE_INDEX.json and its indexed files. Exclude generated cpu-results synthetic GLBs/jobs."
+}

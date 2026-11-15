@@ -1,0 +1,194 @@
+{
+  "format": "has_wind_review_private_gpu_1",
+  "mode": "graphical",
+  "runtime_source_sha256": {
+    "src/app.gd": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+    "src/has_project.gd": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+    "src/physics_editor.gd": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+    "src/physics_recording.gd": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+    "src/pose_editor.gd": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+    "src/renderer.gd": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+    "src/secondary_spring.gd": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+    "src/wind_review.gd": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+    "src/wind_review_groups.gd": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7"
+  },
+  "test_sha256": {
+    "tests/wind_review_gpu_common.gd": "313e5022e96faa9545b01b73e1ae40fafda66cb3f11643868d47305127d8ffd3",
+    "tests/wind_review_gpu_motion.gd": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+    "tests/wind_review_gpu_lifecycle.gd": "bb36e9166040cb0f72fc08382948c1923268dbc636770e4b2ef11fe30ff8a814",
+    "tests/wind_review_gpu_primary.gd": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759"
+  },
+  "parse": [
+    {
+      "script": "tests/wind_review_gpu_common.gd",
+      "exit": 0,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\wind_review_gpu_common-parse.log",
+      "command": [
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio\\output\\wind_review_gpu_common-engine.log",
+        "--headless",
+        "--script",
+        "tests/wind_review_gpu_common.gd",
+        "--check-only",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\wind_review_gpu_common-parse-engine.log",
+        "--"
+      ],
+      "gpu": false
+    },
+    {
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\wind_review_gpu_motion-parse.log",
+      "command": [
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio\\output\\wind_review_gpu_motion-engine.log",
+        "--headless",
+        "--script",
+        "tests/wind_review_gpu_motion.gd",
+        "--check-only",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\wind_review_gpu_motion-parse-engine.log",
+        "--"
+      ],
+      "gpu": false
+    },
+    {
+      "script": "tests/wind_review_gpu_lifecycle.gd",
+      "exit": 0,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\wind_review_gpu_lifecycle-parse.log",
+      "command": [
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio\\output\\wind_review_gpu_lifecycle-engine.log",
+        "--headless",
+        "--script",
+        "tests/wind_review_gpu_lifecycle.gd",
+        "--check-only",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\wind_review_gpu_lifecycle-parse-engine.log",
+        "--"
+      ],
+      "gpu": false
+    },
+    {
+      "script": "tests/wind_review_gpu_primary.gd",
+      "exit": 0,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\wind_review_gpu_primary-parse.log",
+      "command": [
+        "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+        "--path",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio\\output\\wind_review_gpu_primary-engine.log",
+        "--headless",
+        "--script",
+        "tests/wind_review_gpu_primary.gd",
+        "--check-only",
+        "--log-file",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\wind_review_gpu_primary-parse-engine.log",
+        "--"
+      ],
+      "gpu": false
+    }
+  ],
+  "results": [
+    {
+      "mode": "procedural",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 60,
+      "failures": 0,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\procedural\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "vrm0",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 45,
+      "failures": 0,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\vrm0\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "vrm1",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 45,
+      "failures": 0,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\vrm1\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "backhair",
+      "script": "tests/wind_review_gpu_motion.gd",
+      "exit": 0,
+      "checks": 47,
+      "failures": 0,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\backhair\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "lifecycle",
+      "script": "tests/wind_review_gpu_lifecycle.gd",
+      "exit": 0,
+      "checks": 544,
+      "failures": 0,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\lifecycle\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "mode": "primary",
+      "script": "tests/wind_review_gpu_primary.gd",
+      "exit": 0,
+      "checks": 89,
+      "failures": 0,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\primary\\private-receipt.json",
+      "clean_isolation": true,
+      "error_markers": [],
+      "passed": true
+    }
+  ],
+  "runtime_unchanged": true,
+  "all_prototype_sources_hash_size_mtime_unchanged": true,
+  "native_originals_unchanged": true,
+  "active_root_functional_changes_during_check": [],
+  "historical_root_baseline_differences": [
+    "tests/camera_range_smoke.gd",
+    "tests/contact_animation_smoke.gd",
+    "tests/contact_editor_smoke.gd",
+    "tests/contact_physics_smoke.gd",
+    "tests/contact_selection_smoke.gd",
+    "tests/foot_contacts_smoke.gd",
+    "tests/live_appearance_smoke.gd",
+    "tests/verify_contact_selection.py",
+    "tools/build_owner_review_snapshot.py"
+  ],
+  "gpu_used": true,
+  "private_art_uploaded": false,
+  "scope": "Session-only declared-chain local preview. Pending helper-setup preview, permanent group authoring, native jiggle equivalence, owner/device acceptance and all original regression suites remain separate. No movie renders; lifecycle uses real PNG export only.",
+  "passed": true
+}

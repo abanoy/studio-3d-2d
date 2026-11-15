@@ -1,0 +1,231 @@
+{
+  "format": "has_windows_canonical_sfm_pass_20261113_1",
+  "date": "2026-11-13",
+  "source_commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+  "status": "PASSED_FULL_DEFAULT",
+  "exit": 0,
+  "started_utc": "2026-11-14T00:28:03.8902310Z",
+  "finished_utc": "2026-11-14T01:14:31.1237246Z",
+  "seconds": 2787.2334936,
+  "duration_rounded": "46m27s",
+  "functional_source_files": 982,
+  "source_and_head_unchanged": true,
+  "core_groups": 36,
+  "result_keys": 156,
+  "final_movies": 21,
+  "decoded_tone_onset_seconds": 1.0,
+  "decoded_editor_audio": {
+    "onset_seconds": 1.0,
+    "rms_at_1_1s": 5658.299233592635,
+    "audio_driver": "WASAPI"
+  },
+  "source_choice_foundation": {
+    "checks": 167,
+    "split": {
+      "catalogue": 53,
+      "appearance": 29,
+      "unit": 65,
+      "ui": 20
+    },
+    "resource_write_methods": {
+      "tests": 7,
+      "passed": 6,
+      "skipped": 1,
+      "long_path_proofs": [
+        {
+          "format": "has_source_resource_long_path_1",
+          "platform": "win32",
+          "logical_path_characters": 373,
+          "relative": "materials/touhou/keiki/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-3/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-4/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-5/haniyashin chisels texture \u2014 \u3042.vtf",
+          "normal_returned_path": true,
+          "exact_layout": true,
+          "payload": {
+            "bytes": 4379,
+            "mtime_ns": 1600000000333333300,
+            "sha256": "be2e53842cc481e0ad4ac5e5807c66a173ff68964d2fb4fc1d482d3053eddedc"
+          },
+          "exclusive_refusal_preserved": true
+        }
+      ],
+      "scope": "Filesystem resource cache writer; Windows symlink privilege may leave that single exercise explicitly skipped"
+    },
+    "bridge_bootstrap_methods": {
+      "tests": 2,
+      "passed": 2,
+      "scope": "Actual bridge prefix in an isolated Python host plus negative control; Blender/SourceIO host APIs are stubbed, no conversion"
+    }
+  },
+  "import_placement": {
+    "graphical_checks": 43,
+    "headless_bounds": {
+      "checks": 20,
+      "failures": 0,
+      "thin_planar_actual_plan": true
+    },
+    "separate_named_scoped_sum": 63,
+    "video": {
+      "codec": "h264",
+      "size": [
+        1920,
+        1080
+      ],
+      "fps": "24/1",
+      "frames": 48,
+      "duration": "2.000000"
+    }
+  },
+  "wind": {
+    "checks": 845,
+    "cases": 6,
+    "passed": true
+  },
+  "helper_preview": {
+    "helper_preview_cpu": {
+      "mode": "cpu",
+      "source_context": "main_source_snapshot",
+      "overlay_files": 0,
+      "native_requested": false,
+      "native_inputs_checked": false,
+      "native_fidelity": false,
+      "gpu_used": false,
+      "checks": 208,
+      "passed": true,
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "rows": [
+        {
+          "label": "transport",
+          "checks": 11,
+          "expected_checks": 11,
+          "passed": true,
+          "result_source_context_bound": true
+        },
+        {
+          "label": "adapter",
+          "checks": 128,
+          "expected_checks": 128,
+          "passed": true,
+          "result_source_context_bound": true
+        },
+        {
+          "label": "host",
+          "checks": 69,
+          "expected_checks": 69,
+          "passed": true,
+          "result_source_context_bound": true
+        }
+      ]
+    },
+    "helper_preview_graphical": {
+      "mode": "graphical",
+      "source_context": "main_source_snapshot",
+      "overlay_files": 0,
+      "native_requested": false,
+      "native_inputs_checked": false,
+      "native_fidelity": false,
+      "gpu_used": true,
+      "checks": 266,
+      "passed": true,
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "rows": [
+        {
+          "label": "focused",
+          "checks": 221,
+          "expected_checks": 221,
+          "passed": true,
+          "result_source_context_bound": true
+        },
+        {
+          "label": "peers",
+          "checks": 45,
+          "expected_checks": 45,
+          "passed": true,
+          "result_source_context_bound": true
+        }
+      ]
+    }
+  },
+  "background_save_reports": {
+    "domain": {
+      "checks": 10,
+      "failures": 0
+    },
+    "ordering": {
+      "checks": 32,
+      "failures": 0
+    },
+    "test_has_project.py": {
+      "checks": 31,
+      "failures": 0
+    },
+    "test_has_save_faults.py": {
+      "checks": 16,
+      "failures": 0
+    },
+    "writer": {
+      "checks": 20,
+      "failures": 0
+    },
+    "reader": {
+      "checks": 5,
+      "failures": 0
+    }
+  },
+  "body_animation_reports": {
+    "BODY_ANIMATION_UNIT": {
+      "checks": 24,
+      "failures": 0
+    },
+    "BODY_ANIMATION": {
+      "checks": 72,
+      "failures": 0
+    }
+  },
+  "actual_mmd_tested": true,
+  "private_graphics": {
+    "fresh_root_receipts": 178,
+    "unique_receipts": 192,
+    "exit_0": 191,
+    "expected_krita_cancel_exit_2": 1,
+    "all_private_closed": true,
+    "unexpected_failures": 0,
+    "missing_references": 0,
+    "inline_exact_physical_matches": true
+  },
+  "verification_sha256": "c4a6ed4542e83eadd10d25ead3e53b0aff5ce473f1e011c5d56075f2cc0f66d7",
+  "evidence": "experiments/windows_canonical_sfm_20261113",
+  "evidence_index_sha256": "02d86122a2fd2687951c9f0d71decb53856840dcea2c01be1b2e0d6c0c3f6c79",
+  "source_native_app_report": "docs/benchmarks/sfm_static_native_app_2026-11-13.json",
+  "next_candidates": "experiments/source_appearance/next_sfm_candidates_20261114/PLAN.md",
+  "limits": [
+    "Configured Windows development PC; no clean offline install or human/device observation inferred",
+    "Six native MDLs are representative; broader71distinct definitions and native shader/controller/jiggle/assembly remain separate",
+    "Source-proven import-worker mapped-handle retention is a next cleanup increment; no live-child/workflow failure is claimed",
+    "No private model/media/runtime payload published"
+  ],
+  "formal_counts_unchanged": {
+    "acceptance": 55,
+    "acceptance_total": 62,
+    "implementation": 52,
+    "implementation_total": 54
+  }
+}

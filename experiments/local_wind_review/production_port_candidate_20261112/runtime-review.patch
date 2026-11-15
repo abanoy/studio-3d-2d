@@ -1,0 +1,684 @@
+--- main/src/app.gd
++++ candidate/src/app.gd
+@@ -203,6 +203,8 @@
+ var audio_trim_editor: Node
+ var audio_fade_editor: Node
+ var physics_editor: Node
++var local_wind_review: Node
++var local_wind_generation:=0
+ var source_import: Node
+ var source_browser: Node
+ var clip_editor: Node
+@@ -948,8 +950,15 @@
+ 	active_layer=clampi(active_layer,0,layers.size()-1);layer_choice.select(active_layer);refresh_layer()
+ 	if layer_editor:layer_editor.refresh()
+ 
++func stop_local_wind(reason: String) -> void:
++	if is_instance_valid(local_wind_review):local_wind_review.stop_preview(reason)
++
++func local_wind_active() -> bool:
++	return is_instance_valid(local_wind_review) and local_wind_review.phase in ["warming","running"]
++
+ func set_frame(value: int) -> void:
+ 	if exporting: return
++	if value!=frame:stop_local_wind("Frame changed")
+ 	if drawing_selection_editor and value!=frame:drawing_selection_editor.cancel()
+ 	if fill_editor and value!=frame:fill_editor.cancel()
+ 	if physics_editor and physics_editor.recording and physics_editor.recording.active and not physics_editor.recording.advancing:
+@@ -1025,6 +1034,7 @@
+ 
+ func toggle_play() -> void:
+ 	if exporting: return
++	stop_local_wind("Playback")
+ 	physics_editor.freeze_all();physics_editor.clear_previews()
+ 	finish_stroke()
+ 	if playing:
+@@ -1549,6 +1559,7 @@
+ 	else: message(renderer.last_framing.get("error","No renderable mesh to frame."))
+ 
+ func _input(event: InputEvent) -> void:
++	if local_wind_review and local_wind_review.global_event(event):get_viewport().set_input_as_handled();return
+ 	if keyboard_shortcuts and keyboard_shortcuts.capture(event):get_viewport().set_input_as_handled();return
+ 	if timeline and timeline.cel_gesture_active():
+ 		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE or event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:timeline.cancel_cel();get_viewport().set_input_as_handled();return
+@@ -1704,6 +1715,7 @@
+ 	else:scene_name.text="Scene: "+source.get_file()+" • %d × %d" % [video.width,video.height]
+ 
+ func restore_world(document: Dictionary) -> String:
++	stop_local_wind("World changed")
+ 	if sequence_editor:
+ 		var why: String=sequence_editor.scene_error(document)
+ 		if not why.is_empty():message(why);return why
+@@ -1808,6 +1820,7 @@
+ 
+ func reset_document(path: String, sample := false) -> bool:
+ 	if exporting or source_import.pid > 0: return false
++	stop_local_wind("Document changed")
+ 	var prepared: Dictionary=renderer.prepare_legacy(path) if sample else renderer.prepare_world(WorldDocument.empty(),48)
+ 	if prepared.has("error"):message(prepared.error);return false
+ 	if tutorials:tutorials.document_changing()
+@@ -1861,6 +1874,7 @@
+ 
+ func save() -> void:
+ 	if exporting: return
++	stop_local_wind("Save")
+ 	if not physics_editor.freeze_all():return
+ 	finish_stroke()
+ 	pose_editor.finish_drag()
+@@ -2040,6 +2054,7 @@
+ 
+ func export_frames(parent: String,images_only: bool,drawings_only: bool) -> String:
+ 	if exporting: return "Export already running."
++	stop_local_wind("Export")
+ 	var delivery:=selected_output_size()
+ 	var size_error:=OutputSize.error(delivery)
+ 	if not size_error.is_empty():message(size_error);return size_error
+@@ -2368,17 +2383,22 @@
+ 	finish_recovery_preview.call_deferred(result.folder,result.digest,int(request.frame),int(request.revision),request.view)
+ 
+ func finish_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
++	if local_wind_active():return
+ 	if not renderer.begin_native_readback():return
+-	recovery_native_requests.append({"folder":folder,"digest":digest,"at":at,"revision":revision,"view":view})
++	recovery_native_requests.append({"folder":folder,"digest":digest,"at":at,"revision":revision,"view":view,"wind_generation":local_wind_generation})
+ 	if not renderer.native_frame_ready.is_connected(complete_recovery_previews):renderer.native_frame_ready.connect(complete_recovery_previews,CONNECT_ONE_SHOT)
+ 
+ func complete_recovery_previews() -> void:
+ 	var requests: Array=recovery_native_requests;recovery_native_requests=[]
+-	for request in requests:complete_recovery_preview(request.folder,request.digest,request.at,request.revision,request.view)
+-
+-func complete_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
++	for request in requests:complete_recovery_preview(request.folder,request.digest,request.at,request.revision,request.view,int(request.wind_generation))
++
++func complete_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary,wind_generation:=-1) -> void:
+ 	var current: bool=is_inside_tree() and renderer.native_view_available() and folder==recovery_root.path_join(recovery_session) and recovery_revision==revision and frame==at and renderer.view_state()==view
+ 	current=current and not (playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.is_running() or has_dialog(self))
++	current=current and not local_wind_active()
++	# Queued production requests always carry their start epoch. The five-argument
++	# direct endpoint stays compatible with existing focused callers/tests.
++	current=current and (wind_generation<0 or wind_generation==local_wind_generation)
+ 	current=current and not (recovery_writer.busy() or recovery_preview.busy())
+ 	# Release even a detached/stale request, without reading obsolete GPU pixels.
+ 	var image: Image=renderer.finish_native_readback(current)
+--- main/src/has_project.gd
++++ candidate/src/has_project.gd
+@@ -58,6 +58,7 @@
+ 
+ func save_file(selected: String, mode: String) -> void:
+ 	if app.exporting or app.source_import.pid > 0: return
++	app.stop_local_wind("Save")
+ 	if selected.get_extension().to_lower() != "has": selected += ".has"
+ 	if builtin(selected):app.message("Choose a personal project file; the included practice scene stays unchanged.");return
+ 	if not app.physics_editor.freeze_all():return
+@@ -69,6 +70,7 @@
+ 
+ func save_asset(selected: String) -> void:
+ 	if app.exporting or app.source_import.pid>0:return
++	app.stop_local_wind("Save asset")
+ 	if selected.get_extension().to_lower()!="has":selected+=".has"
+ 	if builtin(selected):app.message("Choose a personal asset package file.");return
+ 	var target:=ProjectSettings.globalize_path(selected).simplify_path()
+@@ -99,6 +101,7 @@
+ 	start({"action":"unpack", "path":selected, "folder":base.path_join("open_%d_%d" % [OS.get_process_id(), Time.get_ticks_usec()]), "relinks":relinks,"as_copy":as_copy})
+ 
+ func start(request: Dictionary,snapshot_state: Dictionary={}) -> void:
++	app.stop_local_wind("Project operation")
+ 	app.stop(); app.release_mouse()
+ 	var base := ProjectSettings.globalize_path(cache_root)
+ 	DirAccess.make_dir_recursive_absolute(base)
+--- main/src/physics_editor.gd
++++ candidate/src/physics_editor.gd
+@@ -9,6 +9,7 @@
+ const Airflow=preload("res://src/airflow.gd")
+ const FanEditor=preload("res://src/fan_editor.gd")
+ const HelperEditor=preload("res://src/secondary_helper_editor.gd")
++const WindReview=preload("res://src/wind_review.gd")
+ const ContactRanges=preload("res://src/contact_ranges.gd")
+ var recording
+ var app
+@@ -38,6 +39,7 @@
+ 	recording=Recording.new();recording.editor=self;add_child(recording);recording.setup(parent)
+ 	fan_editor=FanEditor.new();fan_editor.app=app;fan_editor.setup(parent)
+ 	helper_editor=HelperEditor.new();helper_editor.app=app;add_child(helper_editor);helper_editor.setup(parent)
++	app.local_wind_review=WindReview.new();app.local_wind_review.app=app;add_child(app.local_wind_review);app.local_wind_review.setup(parent)
+ 	app.renderer.assets_changed.connect(clear)
+ 
+ func active(id: String) -> bool:return simulations.has(id)
+--- main/src/physics_recording.gd
++++ candidate/src/physics_recording.gd
+@@ -115,6 +115,7 @@
+ 
+ func start() -> bool:
+ 	var app=editor.app
++	app.stop_local_wind("Record")
+ 	last_error="";last_end_reason="";last_bytes=0;max_sample_ms=0
+ 	if active or app.exporting:return false
+ 	var reason:=start_reason()
+--- main/src/pose_editor.gd
++++ candidate/src/pose_editor.gd
+@@ -647,6 +647,7 @@
+ 	# Deselect, mode changes and behind-camera targets return before the normal
+ 	# redraw below. Clear their cached visible geometry in the same frame.
+ 	if had_helpers:app.canvas.queue_redraw()
++	if app.local_wind_review and app.local_wind_review.phase in ["warming","running"]:return
+ 	if contacts.viewport.active and contacts.viewport.draw():return
+ 	if app.mode.selected != 2 or not active_rig(): return
+ 	if app.physics_editor and app.physics_editor.active(active_rig().data.id):return
+--- main/src/renderer.gd
++++ candidate/src/renderer.gd
+@@ -36,6 +36,8 @@
+ var sequence_instance:=false
+ var sequence_runtime: Node
+ var sequence_owner:=""
++var before_final_capture:=Callable()
++var before_asset_replace:=Callable()
+ 
+ func setup(width := 1920, height := 1080) -> void:
+ 	viewport = SubViewport.new()
+@@ -101,6 +103,7 @@
+ 	var result := SceneIO.load_glb(path)
+ 	if result.has("error"):
+ 		return result.error
++	if before_asset_replace.is_valid():before_asset_replace.call()
+ 	if environment_scene != null:
+ 		world.remove_child(environment_scene)
+ 		environment_scene.queue_free()
+@@ -123,6 +126,7 @@
+ 	return {"scene":scene.scene,"model":actor.model}
+ 
+ func clear_assets() -> void:
++	if before_asset_replace.is_valid():before_asset_replace.call()
+ 	legacy_materials=null
+ 	if world_runtime:world_runtime.dispose();world_runtime=null
+ 	active_instance_id=""
+@@ -217,6 +221,7 @@
+ 
+ func install_model(prepared: Dictionary) -> bool:
+ 	if world_runtime:return false
++	if before_asset_replace.is_valid():before_asset_replace.call()
+ 	if model:
+ 		world.remove_child(model.root)
+ 		model.root.queue_free()
+@@ -301,6 +306,7 @@
+ 	return null if image==null or image.is_empty() else image
+ 
+ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
++	if final and before_final_capture.is_valid():before_final_capture.call()
+ 	last_capture_error=""
+ 	if not native_view_available():last_capture_error="Native render view is unavailable.";return null
+ 	evaluate(keys, frame)
+--- main/src/secondary_spring.gd
++++ candidate/src/secondary_spring.gd
+@@ -10,12 +10,13 @@
+ var colliders: Array=[]
+ var error:=""
+ 
+-static func create(rig: RefCounted) -> Dictionary:
+-	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{})
++static func construct(rig: RefCounted,private_definition: Dictionary={},host_owner: Node=null) -> Dictionary:
++	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{}) if private_definition.is_empty() else private_definition
+ 	if not definition.get("error","").is_empty():return {"error":definition.error}
+ 	if definition.get("chains",[]).is_empty():return {"error":"This model has no declared secondary chains."}
+ 	var runner=new();runner.actor=rig;runner.host=Node3D.new();runner.host.name="SecondaryMotionScratch"
+-	rig.root.get_tree().root.add_child(runner.host)
++	var owner: Node=host_owner if is_instance_valid(host_owner) else rig.root.get_tree().root
++	owner.add_child(runner.host)
+ 	for c in definition.colliders:
+ 		if not IK.regular(Definition.binding_transform(rig,c.binding).basis):runner.dispose();return {"error":"Secondary colliders need positive uniform scale."}
+ 		var node: SpringBoneCollision3D
+@@ -70,6 +71,12 @@
+ 	runner.colliders.clear()
+ 	if not runner.error.is_empty():runner.dispose();return {"error":runner.error}
+ 	runner.update_colliders()
++	return {"runner":runner}
++
++static func create(rig: RefCounted) -> Dictionary:
++	var result:=construct(rig)
++	if result.has("error"):return result
++	var runner: RefCounted=result.runner
+ 	# Spring joint configuration commits through engine deferred calls. Complete
+ 	# those before tick zero, otherwise the first tight loop has no initialized
+ 	# Verlet state and behavior depends on when a render happens to run.
+--- main/src/wind_review.gd
++++ candidate/src/wind_review.gd
+@@ -0,0 +1,291 @@
++extends Node
++# Session-only local wind. The source actor and its physics remain borrowed,
++# read-only inputs; all simulation state belongs to the disposable candidate.
++const Model=preload("res://src/model.gd")
++const Groups=preload("res://src/wind_review_groups.gd")
++const Spring=preload("res://src/secondary_spring.gd")
++const Secondary=preload("res://src/secondary_live.gd")
++const Airflow=preload("res://src/airflow.gd")
++const Definition=preload("res://src/secondary_rig.gd")
++var app
++var button: Button
++var window: Window
++var parts: ItemList
++var wind_check: CheckButton
++var master: CheckButton
++var strength: SpinBox
++var direction: OptionButton
++var status: Label
++var detail: Label
++var target_id:=""
++var root_id:=0
++var source_sha:=""
++var source_modified:=0
++var revision:=-1
++var opened_frame:=-1
++var original_data: Dictionary={}
++var catalog: Dictionary={}
++var focused:=-1
++var wind_ids: Dictionary={}
++var changing:=false
++var phase:="stopped"
++var settling:=0
++var candidate: RefCounted
++var simulation: RefCounted
++var private_space: SubViewport
++var hidden: Dictionary={}
++var previous_pointer:=Callable()
++var pointer_pending:=false
++var wind_direction:=Vector3.LEFT
++var catalogue_notice:=""
++
++func setup(parent: Node) -> void:
++	process_physics_priority=10
++	button=app.button(parent,"Review local wind…",open)
++	button.tooltip_text="Try wind on checked declared hair/clothing groups in the main view. Scene settings and animation remain unchanged."
++	app.renderer.before_final_capture=Callable(self,"stop_for_capture")
++	app.renderer.before_asset_replace=Callable(self,"stop_for_asset")
++	app.renderer.assets_changed.connect(close)
++
++func actor() -> RefCounted:
++	return app.renderer.world_runtime.instance(target_id) if app.renderer.world_runtime else app.renderer.model
++
++func available() -> bool:
++	var current: RefCounted=app.renderer.active_model()
++	return current!=null and not app.renderer.capturing_final and not app.playing and not app.exporting and not app.physics_editor.recording.active and not app.pose_editor.dragging and not app.drawing and app.source_import.pid<=0 and app.has_project.pid<=0 and not is_instance_valid(app.physics_editor.helper_editor.window) and current.root.get_meta("has_secondary_rig",{}).get("error","").is_empty() and not current.root.get_meta("has_secondary_rig",{}).get("chains",[]).is_empty()
++
++func context_valid() -> bool:
++	var source: RefCounted=actor()
++	return is_instance_valid(window) and window.visible and app.is_inside_tree() and source!=null and source==app.renderer.active_model() and is_instance_valid(source.root) and source.root.get_instance_id()==root_id and source.data.sha256==source_sha and FileAccess.get_modified_time(source.data.source)==source_modified and source.data==original_data and source.root.get_meta("has_secondary_rig",{})==catalog.get("definition",{}) and app.recovery_revision==revision and app.frame==opened_frame and not app.renderer.capturing_final and not app.playing and not app.exporting and not app.physics_editor.recording.active
++
++func other_roots(source: RefCounted) -> Array:
++	var result: Array=[]
++	if app.renderer.world_runtime:
++		for current in app.renderer.world_runtime.instances.values():
++			if current!=source:result.append(current.root)
++	return result
++
++func open() -> void:
++	if is_instance_valid(window) or not available():return
++	var source: RefCounted=app.renderer.active_model();target_id=source.data.id;root_id=source.root.get_instance_id();source_sha=source.data.sha256;revision=app.recovery_revision;opened_frame=app.frame;original_data=source.data.duplicate(true)
++	if FileAccess.get_sha256(source.data.source)!=source_sha:return
++	source_modified=FileAccess.get_modified_time(source.data.source)
++	var definition: Dictionary=source.root.get_meta("has_secondary_rig",{});var parent_ids:=Groups.parents(source)
++	var linked:=Groups.vertex_links(source,definition.chains,parent_ids,other_roots(source));var links: Array=linked.get("links",[]);catalogue_notice=""
++	if not linked.get("error","").is_empty():
++		# Unknown weights cannot support a promise of independent exclusion.
++		for i in range(1,definition.chains.size()):links.append([0,i])
++		catalogue_notice="These joints are linked for this try-out because the weights could not be separated safely."
++	catalog=Groups.build(definition,source_sha,parent_ids,links)
++	if not catalog.get("error","").is_empty():app.message(catalog.error);return
++	wind_ids.clear();focused=-1
++	window=Window.new();window.title="Try local wind";window.theme=app.theme;window.close_requested.connect(close);window.window_input.connect(window_input);app.add_child(window)
++	var panel:=PanelContainer.new();window.add_child(panel);panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
++	var column:=VBoxContainer.new();panel.add_child(column)
++	app.label(column,"Choose which motion groups to try. Clicking a row changes the focus; checks stay separate.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
++	parts=ItemList.new();parts.custom_minimum_size=Vector2(410,150);column.add_child(parts);parts.item_selected.connect(focus_group);parts.gui_input.connect(list_input)
++	for i in range(catalog.groups.size()):parts.add_item(group_label(catalog.groups[i],i))
++	wind_check=CheckButton.new();wind_check.text="Try wind on this group";wind_check.toggled.connect(check_group);column.add_child(wind_check)
++	detail=app.label(column,"");detail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
++	var options:=HBoxContainer.new();column.add_child(options);app.label(options,"Strength")
++	strength=SpinBox.new();strength.min_value=0;strength.max_value=50;strength.step=1;strength.value=6;options.add_child(strength);strength.value_changed.connect(func(_value):restart())
++	direction=OptionButton.new();options.add_child(direction)
++	for label in ["From right","From left","From front","From behind"]:direction.add_item(label)
++	direction.item_selected.connect(func(_index):restart())
++	master=CheckButton.new();master.text="Try a local blow";master.toggled.connect(change_preview);column.add_child(master)
++	status=app.label(column,"");status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
++	app.button(column,"Close",close)
++	window.popup_centered(Vector2i(450,460));window.position+=Vector2i(maxi(0,int((app.get_viewport_rect().size.x-window.size.x)/2)-12),0)
++	if not catalog.groups.is_empty():parts.select(0);focus_group(0)
++	refresh()
++
++func group_label(group: Dictionary,index: int) -> String:
++	var names: Array=[]
++	for name in group.names:
++		var value: String=str(name)
++		if value.begins_with("__HAS_"):value="Configured loose part"
++		if not value in names:names.append(value)
++	return ", ".join(names).left(100)+" · group "+str(index+1)+(" (linked)" if group.linked else "")
++
++func focus_group(index: int) -> void:
++	if index<0 or index>=catalog.get("groups",[]).size():return
++	focused=index;refresh()
++
++func check_group(enabled: bool) -> void:
++	if changing or focused<0:return
++	var id: String=catalog.groups[focused].id
++	if enabled:wind_ids[id]=true
++	else:wind_ids.erase(id)
++	refresh();restart()
++
++func list_input(event: InputEvent) -> void:
++	if event is InputEventKey and event.pressed and not event.echo and event.keycode==KEY_SPACE and parts.has_focus() and not app.navigating and focused>=0:
++		wind_check.button_pressed=not wind_check.button_pressed;parts.accept_event()
++
++func refresh() -> void:
++	if not is_instance_valid(window):return
++	changing=true;wind_check.set_pressed_no_signal(focused>=0 and wind_ids.has(catalog.groups[focused].id));changing=false
++	wind_check.disabled=focused<0;master.disabled=wind_ids.is_empty()
++	for i in range(catalog.groups.size()):parts.set_item_text(i,("✓ " if wind_ids.has(catalog.groups[i].id) else "")+group_label(catalog.groups[i],i))
++	detail.text="This linked group tries "+str(catalog.groups[focused].chain_indices.size())+" chains together. Weighted regions and descendant joints can move together; individual surface exclusion needs different weights." if focused>=0 and catalog.groups[focused].linked else "One declared joint chain. Its weighted regions move together; recorded motion is kept."
++	if not catalogue_notice.is_empty():detail.text+=" "+catalogue_notice
++	status.text=str(wind_ids.size())+" motion group"+("s" if wind_ids.size()!=1 else "")+" checked · "+("preparing" if phase=="warming" else "local try-out running" if phase=="running" else "scene settings unchanged")
++
++func change_preview(enabled: bool) -> void:
++	if changing:return
++	if enabled:begin_preview()
++	else:stop_preview("Stopped")
++
++func restart() -> void:
++	if not is_instance_valid(master) or not master.button_pressed:return
++	stop_preview("Restarting",false)
++	if wind_ids.is_empty():master.set_pressed_no_signal(false);refresh();return
++	begin_preview()
++
++func body_ids(source: RefCounted) -> Dictionary:
++	var simulation=app.physics_editor.simulations.get(source.data.id)
++	if simulation is Secondary:simulation=simulation.primary
++	return simulation.bodies if simulation else {}
++
++func baseline_pose(source: RefCounted) -> Dictionary:
++	var result: Dictionary={};var authored: Dictionary=source.sample(app.frame,app.mode.selected==2);var driven:=body_ids(source);var rotating_ids:={}
++	for chain in catalog.definition.chains:
++		for joint in Groups.rotating(chain):rotating_ids[joint.binding.id]=true
++	for id in source.order:
++		var info: Dictionary=source.bones[id];var current: Transform3D=info.skeleton.get_bone_pose(info.index);var p: Vector3=current.origin-info.base.origin;var q: Quaternion=(info.base.basis.get_rotation_quaternion().inverse()*current.basis.get_rotation_quaternion()).normalized()
++		result[id]={"position":[p.x,p.y,p.z],"rotation_xyzw":[q.x,q.y,q.z,q.w]}
++		# Never bake original live hair offsets into the try-out's rest pose.
++		if rotating_ids.has(id) and not driven.has(id):result[id]=authored.get(id,Model.identity()).duplicate(true)
++	return result
++
++func shape_snapshot(source: RefCounted) -> Dictionary:
++	var overrides:={};var snapshot: Dictionary=Model.Shape.snapshot(source.root)
++	for node in snapshot:
++		var weights: Array=snapshot[node];var values:={}
++		for i in range(weights.size()):values[str(i)]=weights[i]
++		overrides[str(node)]=values
++	return {"format":"studio_source_shape_2","enabled":false,"overrides":overrides}
++
++func begin_preview() -> void:
++	if not context_valid() or wind_ids.is_empty():stop_preview("Review no longer matches this model");return
++	var source: RefCounted=actor();var filtered:=Groups.filter(catalog,wind_ids.keys())
++	if not filtered.get("error","").is_empty():fail(filtered.error);return
++	var driven:=body_ids(source)
++	for chain in filtered.chains:
++		for joint in Groups.rotating(chain):
++			if driven.has(joint.binding.id):fail("This group also drives a body joint. Pause this model's body Physics before trying it.");return
++	if FileAccess.get_sha256(source.data.source)!=source_sha:fail("The model source changed. Open wind review again.");return
++	var data:=Model.definition(source.data.source);data.pose=baseline_pose(source);data.draft_frame=app.frame;data.metadata={"source_shape":shape_snapshot(source)}
++	if data.sha256!=source_sha:fail("The model source changed. Open wind review again.");return
++	var prepared: Dictionary=app.renderer.prepare_model(data,app.video)
++	if prepared.has("error"):fail(prepared.error);return
++	if FileAccess.get_sha256(source.data.source)!=source_sha:prepared.model.root.free();fail("The model source changed during preparation.");return
++	# A queued recovery frame must stay invalid even if this try-out stops before
++	# native-frame dispatch. Mark the interval before any temporary mesh is visible.
++	app.local_wind_generation+=1
++	candidate=prepared.model;app.renderer.world.add_child(candidate.root);app.renderer.disable_cameras(candidate.root)
++	candidate.live_pose=data.pose.duplicate(true);candidate.live_world_transform=source.root.global_transform;candidate.apply(app.frame,false,false,app.video,source.evaluated_opacity)
++	private_space=SubViewport.new();private_space.name="LocalWindPrivateSpace";private_space.own_world_3d=true;private_space.render_target_update_mode=SubViewport.UPDATE_DISABLED;add_child(private_space)
++	var result:=Spring.construct(candidate,filtered,private_space)
++	if result.has("error"):fail(result.error);return
++	simulation=Secondary.new();simulation.rig=candidate;simulation.runner=result.runner;simulation.initial_pose=data.pose.duplicate(true);simulation.latest=data.pose.duplicate(true);simulation.initial_world=source.root.global_transform
++	var camera: Camera3D=app.renderer.camera
++	wind_direction=([-camera.global_basis.x,camera.global_basis.x,-camera.global_basis.z,camera.global_basis.z][direction.selected] as Vector3).normalized()
++	for mesh in Groups.mesh_nodes(source.root,other_roots(source)):hidden[mesh]=mesh.visible;mesh.visible=false
++	previous_pointer=app.canvas.review_pointer;app.canvas.review_pointer=Callable(self,"pointer")
++	app.canvas.pose_lines=[];app.canvas.pose_joints=[];app.canvas.queue_redraw()
++	phase="warming";settling=2;schedule_warmup();refresh()
++
++func schedule_warmup() -> void:
++	if RenderingServer.frame_post_draw.is_connected(warm_frame):RenderingServer.frame_post_draw.disconnect(warm_frame)
++	RenderingServer.frame_post_draw.connect(warm_frame,CONNECT_ONE_SHOT)
++
++func warm_frame() -> void:
++	if RenderingServer.frame_post_draw.is_connected(warm_frame):RenderingServer.frame_post_draw.disconnect(warm_frame)
++	if not context_valid() or not candidate or not is_instance_valid(candidate.root):stop_preview("Cancelled");return
++	settling-=1
++	if settling>0:schedule_warmup();return
++	phase="running";simulation.start();refresh()
++
++func local_field() -> Dictionary:
++	var center:=Vector3.ZERO;var count:=0;var radius:=.5
++	for chain in simulation.runner.chains:center+=Definition.binding_transform(candidate,chain.source.joints[0].binding).origin;count+=1
++	center/=maxi(count,1)
++	for chain in simulation.runner.chains:radius=maxf(radius,center.distance_to(Definition.binding_transform(candidate,chain.source.joints[0].binding).origin)+.5)
++	return {"transform":Transform3D(Basis(Quaternion(Vector3.BACK,wind_direction)),center-wind_direction*1.5-Vector3(0,.85,0)),"settings":{"format":Airflow.FORMAT,"enabled":true,"speed":strength.value,"radius":minf(radius,1000.),"reach":6.}}
++
++func _physics_process(delta: float) -> void:
++	if phase!="running":return
++	if not context_valid():stop_preview("Review changed");return
++	var source: RefCounted=actor();simulation.initial_pose=baseline_pose(source);simulation.initial_world=source.root.global_transform
++	var error: String=simulation.advance(minf(delta,1./60.),app.frame,float(app.frame),false,[local_field()],null)
++	if not error.is_empty():fail(error)
++
++func _process(_delta: float) -> void:
++	if not is_instance_valid(button):return
++	button.disabled=not available() or is_instance_valid(window)
++	if is_instance_valid(window) and not context_valid():close()
++
++func pointer(event: InputEventMouse,point: Vector2) -> bool:
++	if phase not in ["warming","running"]:return false
++	if not pointer_pending and not app.canvas.scene_contains(point):return false
++	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and (not event.ctrl_pressed or pointer_pending):
++		if event.pressed:pointer_pending=true;app.canvas.grab_focus();app.world_selection.input(event,point)
++		elif pointer_pending:
++			pointer_pending=false
++			if app.navigating:app.world_selection.input(event,point)
++			else:app.world_selection.cancel_gesture(true)
++		return true
++	if pointer_pending:app.world_selection.input(event,point);return true
++	return false
++
++func global_event(event: InputEvent) -> bool:
++	if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE and is_instance_valid(window):
++		if phase!="stopped":stop_preview("Stopped")
++		else:close()
++		app.release_mouse()
++		return true
++	if pointer_pending and event is InputEventMouse:
++		var local: Vector2=app.canvas.get_global_transform_with_canvas().affine_inverse()*event.position
++		var rect: Rect2=app.canvas.image_rect()
++		return pointer(event,(local-rect.position)/rect.size*Vector2(app.video.width,app.video.height))
++	return false
++
++func window_input(event: InputEvent) -> void:
++	if global_event(event):window.set_input_as_handled()
++
++func stop_for_capture() -> void:stop_preview("Final render")
++func stop_for_asset() -> void:stop_preview("Asset replacement")
++
++func stop_preview(_reason: String="Stopped",uncheck:=true) -> void:
++	if RenderingServer.frame_post_draw.is_connected(warm_frame):RenderingServer.frame_post_draw.disconnect(warm_frame)
++	phase="stopped";settling=0
++	if pointer_pending and is_instance_valid(app.world_selection):app.world_selection.cancel_gesture(true)
++	pointer_pending=false
++	if is_instance_valid(app.canvas) and app.canvas.review_pointer==Callable(self,"pointer"):app.canvas.review_pointer=previous_pointer
++	previous_pointer=Callable()
++	if simulation:simulation.dispose();simulation=null
++	if candidate and is_instance_valid(candidate.root):candidate.root.visible=false;candidate.root.queue_free()
++	candidate=null
++	if is_instance_valid(private_space):private_space.world_3d=null;private_space.queue_free()
++	private_space=null
++	for mesh in hidden:
++		if is_instance_valid(mesh):mesh.visible=hidden[mesh]
++	hidden.clear()
++	if is_instance_valid(master) and uncheck:master.set_pressed_no_signal(false)
++	if app.is_inside_tree() and is_instance_valid(app.pose_editor):app.pose_editor.update_gizmo()
++	refresh()
++
++func fail(message: String) -> void:
++	stop_preview(message)
++	if is_instance_valid(status):status.text=message
++
++func close() -> void:
++	stop_preview("Closed")
++	if is_instance_valid(window):window.hide();window.queue_free()
++	window=null;wind_ids.clear();catalog={};focused=-1
++
++func _exit_tree() -> void:
++	if is_instance_valid(app.renderer) and app.renderer.before_final_capture==Callable(self,"stop_for_capture"):app.renderer.before_final_capture=Callable()
++	if is_instance_valid(app.renderer) and app.renderer.before_asset_replace==Callable(self,"stop_for_asset"):app.renderer.before_asset_replace=Callable()
++	close()
+--- main/src/wind_review_groups.gd
++++ candidate/src/wind_review_groups.gd
+@@ -0,0 +1,146 @@
++extends RefCounted
++# Session identities use the source and actual bindings, never display names.
++static func rotating(chain: Dictionary) -> Array:
++	var joints: Array=chain.get("joints",[])
++	return joints if float(chain.get("end_extension",0))>0 else joints.slice(0,maxi(0,joints.size()-1))
++
++static func chain_id(chain: Dictionary,sha: String) -> String:
++	var identity: Array=[]
++	for joint in chain.get("joints",[]):
++		var item: Dictionary=joint.duplicate(true);identity.append(item)
++	return JSON.stringify({"source":sha,"joints":identity,"center":chain.get("center",{}),"end_extension":chain.get("end_extension",0)},"",true,true).sha256_text()
++
++static func parents(actor: RefCounted) -> Dictionary:
++	var result:={}
++	for id in actor.order:result[id]=actor.parent_id(id)
++	return result
++
++static func mesh_nodes(root: Node,excluded: Array=[]) -> Array:
++	var result: Array=[];var pending: Array=[root]
++	while not pending.is_empty():
++		var node: Node=pending.pop_back()
++		if node!=root and node in excluded:continue
++		if node is MeshInstance3D and node.mesh:result.append(node)
++		pending.append_array(node.get_children())
++	return result
++
++static func influences(id: String,owner: Dictionary,parent_ids: Dictionary) -> Array:
++	var found: Array=[];var seen:={};var at:=id
++	while not at.is_empty() and at!="@root" and not seen.has(at) and seen.size()<512:
++		seen[at]=true
++		if owner.has(at) and not owner[at] in found:found.append(owner[at])
++		at=parent_ids.get(at,"")
++	return found
++
++static func vertex_links(actor: RefCounted,chains: Array,parent_ids: Dictionary,excluded: Array=[]) -> Dictionary:
++	var owner:={};var links:={};var total:=0
++	for i in range(chains.size()):
++		for joint in rotating(chains[i]):owner[str(joint.binding.id)]=i
++	for mesh in mesh_nodes(actor.root,excluded):
++		if not mesh.skin:continue
++		var skeleton=mesh.get_node_or_null(mesh.skeleton)
++		if not skeleton is Skeleton3D:return {"error":"A weighted surface has no live skeleton."}
++		var ids: Array=[]
++		for i in range(mesh.skin.get_bind_count()):
++			var name: String=mesh.skin.get_bind_name(i);var bone: int=skeleton.find_bone(name) if not name.is_empty() else mesh.skin.get_bind_bone(i)
++			if bone<0 or bone>=skeleton.get_bone_count():return {"error":"A weighted surface has an unresolved bone."}
++			ids.append(str(actor.root.get_path_to(skeleton))+"::"+str(skeleton.get_bone_name(bone)))
++		for surface in range(mesh.mesh.get_surface_count()):
++			var arrays: Array=mesh.mesh.surface_get_arrays(surface)
++			var points=arrays[Mesh.ARRAY_VERTEX];var bones=arrays[Mesh.ARRAY_BONES];var weights=arrays[Mesh.ARRAY_WEIGHTS]
++			if points==null or bones==null or weights==null:continue
++			total+=points.size()
++			if total>500000:return {"error":"Weight review exceeds500kvertices."}
++			if points.is_empty() or bones.size()!=weights.size() or bones.size() not in [points.size()*4,points.size()*8]:return {"error":"A weighted surface needs a narrower influence review."}
++			var slots: int=bones.size()/points.size()
++			for v in range(points.size()):
++				var touched: Array=[]
++				for slot in range(slots):
++					var offset:=v*slots+slot
++					if float(weights[offset])<=0:continue
++					var bind:=int(bones[offset])
++					if bind<0 or bind>=ids.size():return {"error":"A weighted surface has an invalid influence."}
++					for index in influences(ids[bind],owner,parent_ids):
++						if not index in touched:touched.append(index)
++				for a in touched:
++					for b in touched:
++						if a<b:links["%d:%d"%[a,b]]=[a,b]
++	return {"error":"","links":links.values(),"vertices":total}
++
++static func root_of(tree: Array,index: int) -> int:
++	while tree[index]!=index:index=tree[index]
++	return index
++
++static func join(tree: Array,a: int,b: int) -> void:
++	var aa:=root_of(tree,a);var bb:=root_of(tree,b)
++	tree[maxi(aa,bb)]=mini(aa,bb)
++
++static func valid_chain(chain,collider_count: int) -> bool:
++	if not chain is Dictionary or not chain.get("joints") is Array or chain.joints.is_empty() or chain.joints.size()>512 or not chain.get("center") is Dictionary or not chain.get("colliders") is Array:return false
++	var extension=chain.get("end_extension")
++	if not (extension is int or extension is float) or not is_finite(extension) or extension<0:return false
++	for index in chain.colliders:
++		if not index is int or index<0 or index>=collider_count:return false
++	for joint in chain.joints:
++		if not joint is Dictionary or not joint.get("binding") is Dictionary:return false
++		var binding: Dictionary=joint.binding
++		if not binding.get("kind") in ["bone","node","offset"]:return false
++		if binding.kind in ["bone","offset"] and (not binding.get("id") is String or binding.id.is_empty()):return false
++		if binding.kind=="node" and (not binding.get("path") is String or binding.path.is_empty()):return false
++		for key in ["stiffness","drag","gravity","radius"]:
++			var value=joint.get(key)
++			if not (value is int or value is float) or not is_finite(value):return false
++		if not joint.get("gravity_direction") is Array or joint.gravity_direction.size()!=3:return false
++		for value in joint.gravity_direction:
++			if not (value is int or value is float) or not is_finite(value):return false
++	return true
++
++static func build(definition: Dictionary,sha: String,parent_ids: Dictionary={},links: Array=[]) -> Dictionary:
++	if sha.length()!=64 or not sha.is_valid_hex_number(false) or not definition.get("error","").is_empty() or not definition.get("chains") is Array or not definition.get("colliders") is Array or definition.chains.size()>128:return {"error":"No validated motion groups are available."}
++	var chains: Array=definition.chains;var tree: Array=[];var ids: Array=[];var owner:={};var seen:={}
++	for i in range(chains.size()):
++		if not valid_chain(chains[i],definition.colliders.size()) or rotating(chains[i]).is_empty():return {"error":"A motion group has no valid rotating joints."}
++		var id:=chain_id(chains[i],sha)
++		if seen.has(id):return {"error":"Repeated motion group identity."}
++		seen[id]=true;ids.append(id);tree.append(i)
++		for joint in rotating(chains[i]):
++			var binding=joint.get("binding",{})
++			if binding.get("kind","")!="bone" or str(binding.get("id","")).is_empty() or owner.has(binding.id):return {"error":"Motion groups need unique validated rotating bones."}
++			owner[binding.id]=i
++			if owner.size()>512:return {"error":"Motion review exceeds512 rotating joints."}
++	for i in range(chains.size()):
++		for joint in rotating(chains[i]):
++			for other in influences(str(joint.binding.id),owner,parent_ids):join(tree,i,int(other))
++	for pair in links:
++		if not pair is Array or pair.size()!=2 or not pair[0] is int or not pair[1] is int or pair[0]<0 or pair[0]>=chains.size() or pair[1]<0 or pair[1]>=chains.size():return {"error":"Invalid linked motion groups."}
++		join(tree,pair[0],pair[1])
++	var members:={}
++	for i in range(chains.size()):
++		var key:=root_of(tree,i)
++		if not members.has(key):members[key]=[]
++		members[key].append(i)
++	var groups: Array=[]
++	for indices in members.values():
++		var keys: Array=[];var bones: Array=[];var names: Array=[]
++		for index in indices:
++			keys.append(ids[index]);names.append(str(chains[index].get("name","Spring")))
++			for joint in rotating(chains[index]):bones.append(str(joint.binding.id))
++		keys.sort()
++		groups.append({"id":JSON.stringify(keys).sha256_text(),"chain_indices":indices,"chain_ids":keys,"rotating_ids":bones,"names":names,"linked":indices.size()>1})
++	return {"error":"","source_sha256":sha,"groups":groups,"chain_ids":ids,"definition":definition.duplicate(true)}
++
++static func filter(catalog: Dictionary,selected: Array) -> Dictionary:
++	if not catalog.get("error","").is_empty() or not catalog.has("definition"):return {"error":"Motion review is unavailable."}
++	if catalog.get("chain_ids",[]).size()!=catalog.definition.chains.size():return {"error":"Motion review changed."}
++	for i in range(catalog.definition.chains.size()):
++		if not valid_chain(catalog.definition.chains[i],catalog.definition.colliders.size()) or chain_id(catalog.definition.chains[i],catalog.source_sha256)!=catalog.chain_ids[i]:return {"error":"Motion review changed."}
++	var available:={};var indices:={};var seen:={}
++	for group in catalog.groups:available[group.id]=group
++	for id in selected:
++		if not id is String or not available.has(id) or seen.has(id):return {"error":"The checked motion groups no longer match this source."}
++		seen[id]=true
++		for index in available[id].chain_indices:indices[int(index)]=true
++	var result: Dictionary=catalog.definition.duplicate(true);result.chains=[]
++	for i in range(catalog.definition.chains.size()):
++		if indices.has(i):result.chains.append(catalog.definition.chains[i].duplicate(true))
++	return result

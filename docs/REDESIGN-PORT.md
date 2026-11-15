@@ -59,3 +59,18 @@ only. Logs go to `output/<test>-stdout.log`; tests rewrite tracked files in `out
 
 Results 2026-11-07: baseline main b0dab90 and this branch both PASS ui, editor, pose,
 world_selection, recovery_write, recovery. Not run here: the rest of verify.py, Windows.
+
+## Merge with main f0dd57a (2026-11-15)
+Merged (merge commit, no rebase) 164 main commits. Conflicts in `src/app.gd` were resolved in main's favour:
+- **Add scene** uses main's `import_actions.add` path and file filters; `pick_scene_file()` now calls exactly that,
+  so the Simple Add menu and the Advanced button behave identically.
+- **View and physics rows** keep main's `ScrollContainer`s (`ViewControlsScroll`, `PhysicsControlsScroll`)
+  instead of the redesign's `HFlowContainer`s; `physics_bar` is now the physics scroll strip.
+- The empty-state hint sits beside main's new `scene_view` setup.
+- `src/canvas_view.gd` `scene_contains()` gained a 0.01 px tolerance: with the redesign's header the canvas is
+  928x392 in the editor smoke, and a pointer at the canvas's exact left edge round-tripped (32-bit Vector2) to
+  -0.00001 px, so the camera drag was rejected (`tests/app_smoke.gd` "captured drag continues outside canvas
+  bounds"). Real off-scene clicks are still rejected; `tests/scene_view_unit.gd` passes (12830 checks).
+
+Results 2026-11-15 (Linux xvfb): main f0dd57a and the merged branch both PASS ui, editor, pose, world_selection,
+recovery_write, recovery.

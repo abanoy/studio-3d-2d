@@ -110,7 +110,7 @@ func run() -> void:
 	if plans.size()!=5:app.free();quit(1);return
 	var reports:=[]
 	for plan in plans:reports.append(await case_for(plan))
-	app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(app.layers[1].cels[0].image,Vector2(40,40),Vector2(130,40),8,Color.CYAN,false);app.changed();app.set_frame(12);app.world_selection.select_entity("child");app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
+	app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(preload("res://src/drawing.gd").edit_image(app.layers[1].cels[0]).image,Vector2(40,40),Vector2(130,40),8,Color.CYAN,false);app.changed();app.set_frame(12);app.world_selection.select_entity("child");app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
 	var expected: Dictionary=actor("child").sample(12);var path:=folder.path_join("rotated-scaled-contacts.has");app.has_project.save_file(path,"packed");await job();app.new_project();app.has_project.open_file(path);await job();app.set_frame(12)
 	check(actor("child").sample(12)==expected and peak()<.0002,"packed HAS reopens exact native pose under rotated/scaled nested ancestors")
 	var reference: Image=await app.renderer.capture(app.keys,app.layers,12,true);reference.save_png(folder.path_join("transform-frame.png"));var error: String=await app.export_movie(folder)

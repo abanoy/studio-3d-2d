@@ -1,6 +1,7 @@
 extends Node
 const AudioTrack = preload("res://src/audio_track.gd")
 const Storage = preload("res://src/storage.gd")
+const Drawing = preload("res://src/drawing.gd")
 var failures := 0
 var checks := 0
 
@@ -47,7 +48,7 @@ func run(app) -> void:
 		app.paint_segment(point)
 	pen.pressed = false
 	app.canvas_input(pen, Vector2(1060, 650))
-	check(app.layers[1].cels[0].image.get_pixel(960, 430).a > 0.9, "held character drawing remains independent above animated room")
+	check(Drawing.image(app.layers[1].cels[0]).get_pixel(960, 430).a > 0.9, "held character drawing remains independent above animated room")
 	check(app.import_audio(fixture).is_empty(), "import real PCM16 WAV at 44.1 kHz")
 	app.audio_start.value = 24
 	app.audio_gain.value = -6

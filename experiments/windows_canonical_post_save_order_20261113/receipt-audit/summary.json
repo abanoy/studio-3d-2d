@@ -1,0 +1,184 @@
+{
+  "canonical": {
+    "format": "has_canonical_metadata_receipt_audit_1",
+    "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+    "run_directory": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019",
+    "state": {
+      "format": "has_owned_canonical_run_1",
+      "pid": 6548,
+      "process_started": "2026-11-13T21:12:16.0315845Z",
+      "started_utc": "2026-11-13T21:12:16.4001044Z",
+      "status": "passed",
+      "checkout": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+      "run_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\canonical-owned-20261113T211216019",
+      "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+      "python": "C:\\Program Files\\Python313\\python.exe",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-u",
+        "tests/verify.py"
+      ],
+      "script_sha256": "6856faad316cc7188abb46a558aea3e0c08e2d409fedf173bf3b55a9a89c6bfa",
+      "suite_exit": 0,
+      "source_unchanged": true,
+      "finished_utc": "2026-11-13T21:58:36.3690200Z"
+    },
+    "interval_start_ns": 1794604336400104400,
+    "interval_end_ns": 1794607116369020000,
+    "elapsed_seconds": 2779.9689156,
+    "source_before_after_equal": true,
+    "functional_source_entries": 968,
+    "full_result_top_level_entries": 154,
+    "fresh_root_receipt_files": 176,
+    "fresh_root_all_exit_0": true,
+    "fresh_root_all_private_closed": true,
+    "unique_receipt_files": 190,
+    "unique_desktops": 190,
+    "nested_receipt_files_outside_root": 14,
+    "success_exit_0_files": 189,
+    "expected_krita_cancel_exit_2_files": 1,
+    "all_receipts_private_closed": true,
+    "all_receipts_fresh_for_run": true,
+    "inline_occurrences": 11,
+    "inline_unique_desktops": 9,
+    "all_inline_exact_physical_matches": true,
+    "actual_report_documents_read": 22,
+    "non_receipt_filename_matches": 0,
+    "missing_referenced_receipts": 0,
+    "unexpected_failures": [],
+    "passed": true,
+    "release_file_created": false
+  },
+  "helper_cpu": {
+    "checks": 208,
+    "passed": true,
+    "source_context": "main_source_snapshot",
+    "revision": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+    "preservation": {
+      "main_sources": true,
+      "runtimes": true,
+      "head": true,
+      "native_originals": true,
+      "staged_native_inputs": true,
+      "published_requests": true,
+      "snapshot_sources": true,
+      "snapshot_extras": true,
+      "fixtures": true
+    }
+  },
+  "helper_graphical": {
+    "checks": 266,
+    "passed": true,
+    "source_context": "main_source_snapshot",
+    "revision": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+    "native_requested": false,
+    "preservation": {
+      "main_sources": true,
+      "runtimes": true,
+      "head": true,
+      "native_originals": true,
+      "staged_native_inputs": true,
+      "published_requests": true,
+      "snapshot_sources": true,
+      "snapshot_extras": true,
+      "fixtures": true
+    },
+    "child_counts": [
+      {
+        "label": "focused",
+        "checks": 221,
+        "failures": 0
+      },
+      {
+        "label": "peers",
+        "checks": 45,
+        "failures": 0
+      }
+    ]
+  },
+  "background_save": {
+    "reports": {
+      "domain": {
+        "checks": 10,
+        "failures": 0
+      },
+      "ordering": {
+        "actual_thread_and_capture": true,
+        "checks": 32,
+        "failures": 0,
+        "gpu": false,
+        "persistence": "observed inert persist override; existing Storage/app acceptance separate"
+      },
+      "test_has_project.py": {
+        "checks": 31,
+        "failures": 0
+      },
+      "test_has_save_faults.py": {
+        "checks": 16,
+        "failures": 0
+      },
+      "writer": {
+        "capture_ms": 0.131,
+        "checks": 20,
+        "failures": 0,
+        "held_call_ms": 8,
+        "worker_ms": 173.387
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      }
+    },
+    "manual_files_unchanged_in_reader": true,
+    "owned_source_and_writer_cache_offline": true,
+    "frozen_functional_sources": true,
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\has_background_save_smoke_ebd844a660044fdeb86c402331d308ff.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\has_background_save_smoke_9d5343767fcb4dda9920c5abec5f47f4.json"
+    ],
+    "scope": "Actual detached manual snapshot, ready-gated packer, cancel/fault/newer-edit/stale-document/close/teardown/backup safety and packed/linked cold audio+pixels; large workload and broader compatibility separate."
+  },
+  "body_animation": {
+    "checks": 72,
+    "failures": 0,
+    "native_fixture_count": 5,
+    "normal_editor_integration": true,
+    "video": {
+      "width": 1920,
+      "height": 1080,
+      "avg_frame_rate": "24/1",
+      "nb_frames": "48"
+    },
+    "scope": "Authored independent skinned branches and explicitly available native plans; original fixture does not certify native-format fidelity."
+  },
+  "counts_inventory": {
+    "check_count_records": 230,
+    "nonzero_failure_fields": [],
+    "error_marker_array_count": 11,
+    "nonempty_error_marker_arrays": [],
+    "passed_false_fields": []
+  },
+  "host_termination": {
+    "format": "has_canonical_authoritative_host_termination_1",
+    "observed_utc": "2026-11-13T21:59:39.3144749Z",
+    "canonical_run": "canonical-owned-20261113T211216019",
+    "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+    "coordinator_pid": 6548,
+    "expected_creation_utc": "2026-11-13T21:12:16.0315845Z",
+    "coordinator_matches": null,
+    "owned_runtime_matches": null,
+    "coordinator_absent": true,
+    "owned_runtime_command_matches_absent": true,
+    "query_context": "Authoritative approved Windows host CIM; exact checkout command boundary; no unrelated process was killed or excluded from the captured inventory",
+    "current_probe_pid": 10128
+  },
+  "desktop_enumeration": {
+    "format": "has_after_canonical_desktop_enumeration_1",
+    "observed_utc": "2026-11-13T21:59:59.592826+00:00",
+    "enumeration_succeeded": true,
+    "desktop_names": [
+      "Default"
+    ],
+    "remaining_HAS_test_desktops": []
+  }
+}

@@ -1,0 +1,1540 @@
+{
+  "format": "has_motion_remaining_scope_1",
+  "date": "2026-11-11",
+  "test_ports": [
+    {
+      "file": "tests/motion_animation_read.gd",
+      "editable_accesses": 0,
+      "read_accesses": 1,
+      "before_sha256": "d400e30b7492236d8e104326caa5e50f5d81b5197cc53afdd48b78549fcd88f1",
+      "after_sha256": "84b9a12ec5bccc32162c02cf201afc864f5c468b0315b45cc2d6c8a982b552a5"
+    },
+    {
+      "file": "tests/motion_assist_native.gd",
+      "editable_accesses": 1,
+      "read_accesses": 3,
+      "before_sha256": "7ff617fa51238752662e5ee322391b7fa6f506e9923bc377efddf3d85fa47492",
+      "after_sha256": "e271aa5d62772b67a7f37be54e6e31c6caa6fe2f7f0393875cd2081d7f52aeb7"
+    },
+    {
+      "file": "tests/motion_animation_smoke.gd",
+      "editable_accesses": 0,
+      "read_accesses": 3,
+      "before_sha256": "b490d672b767dcf9142d8723a092dbdfca9723eba7164f9dfaa5f770f9e960dd",
+      "after_sha256": "356679d6edc06b2a825e18a0f2b28e0d345654c680bfa923d2b0cffeabb17f29"
+    },
+    {
+      "file": "tests/movement_path_native.gd",
+      "editable_accesses": 0,
+      "read_accesses": 2,
+      "before_sha256": "1515d5af0274a3dfb7b6d54eb36e4150994e883da07be5fe590f093afb3d448b",
+      "after_sha256": "9901cadc960cb24f1b4195645e8458ebb7a5dcd9257a01f9a967d081336071ce"
+    }
+  ],
+  "completed_scoped_phase": {
+    "scope": "Scoped remaining independent commands only; not a full canonical aggregate pass",
+    "source_commit": "89d7625eaced9657b8c05822bb2a804e37f50824",
+    "cases": [
+      {
+        "name": "project_duration",
+        "args": [
+          "tests/verify_project_duration.py"
+        ],
+        "exit": 0,
+        "seconds": 24.576,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\project_duration.log",
+        "log_sha256": "db34b57207cfc92bd96118eecc1f6ee528e6bb4410dbff01b7832c6ddcadb0e3"
+      },
+      {
+        "name": "motion_assist",
+        "args": [
+          "tests/verify_motion_assist.py"
+        ],
+        "exit": 0,
+        "seconds": 0.41,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\motion_assist.log",
+        "log_sha256": "8ae967a69bfbd73c977df8d0a6b0114855dd9b18f5ae68c5e9439689fe3cf2fb"
+      },
+      {
+        "name": "motion_assist_tracks",
+        "args": [
+          "tests/verify_motion_assist_tracks.py"
+        ],
+        "exit": 0,
+        "seconds": 0.683,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\motion_assist_tracks.log",
+        "log_sha256": "57b18d7a1eea1f4276e048ea78c8485a83f669f6f0d5d8aee023ec581bb14a03"
+      },
+      {
+        "name": "motion_assist_native",
+        "args": [
+          "tests/verify_motion_assist_native.py"
+        ],
+        "exit": 0,
+        "seconds": 28.865,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\motion_assist_native.log",
+        "log_sha256": "5ceb0d475893d4e1a9b3d3a06ac7a3463afc7fdf93cb689757142de53ece355c"
+      },
+      {
+        "name": "motion_animation",
+        "args": [
+          "tests/verify_motion_animation.py"
+        ],
+        "exit": 0,
+        "seconds": 0.591,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\motion_animation.log",
+        "log_sha256": "eac58d3fce77d8d90426e1dcf10b74bb61331b934b729e23e7526adaac5dfcd1"
+      },
+      {
+        "name": "motion_animation_app",
+        "args": [
+          "tests/verify_motion_animation_app.py"
+        ],
+        "exit": 0,
+        "seconds": 32.337,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\motion_animation_app.log",
+        "log_sha256": "3c5cc4c09262d98f38dc842a1d5ab4fdb5fd789199d5fadf84774861210e1934"
+      },
+      {
+        "name": "opacity",
+        "args": [
+          "tests/verify_opacity.py"
+        ],
+        "exit": 0,
+        "seconds": 17.782,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\opacity.log",
+        "log_sha256": "5ac08f9a628b1bae216391cf4467fdb11a3374b6507362ed53eef83b8efbbfb3"
+      },
+      {
+        "name": "brush_opacity",
+        "args": [
+          "tests/verify_brush_opacity.py"
+        ],
+        "exit": 0,
+        "seconds": 12.906,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\brush_opacity.log",
+        "log_sha256": "07717d14bfcef29a31385cf106da592abb7d107f0b6b4bd795e636f0d42d4983"
+      },
+      {
+        "name": "brush_pressure",
+        "args": [
+          "tests/verify_brush_pressure.py"
+        ],
+        "exit": 0,
+        "seconds": 13.927,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\brush_pressure.log",
+        "log_sha256": "0f60cb8f143356d726dfb03f6e7084bf8469aaee1ebe29f94de67fe4cd516ebc"
+      },
+      {
+        "name": "layers",
+        "args": [
+          "tests/verify_layers.py"
+        ],
+        "exit": 0,
+        "seconds": 16.686,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\layers.log",
+        "log_sha256": "29f55cb2e6eb31670d9660742cd2ff4e89b5566d6e354ccd38c191e63361b046"
+      },
+      {
+        "name": "onion",
+        "args": [
+          "tests/verify_onion.py"
+        ],
+        "exit": 0,
+        "seconds": 17.959,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\onion.log",
+        "log_sha256": "b695b5dee95ed5042898da6a738d5d581c86c0918af23d3940ed06da1f51a48c"
+      },
+      {
+        "name": "fill",
+        "args": [
+          "tests/verify_fill.py"
+        ],
+        "exit": 0,
+        "seconds": 34.799,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\fill.log",
+        "log_sha256": "409c737b418394d475238bfca390035695ffcfefed87977c1f9df0301c17849b"
+      },
+      {
+        "name": "fill_gaps",
+        "args": [
+          "tests/verify_fill_gaps.py"
+        ],
+        "exit": 0,
+        "seconds": 44.315,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\fill_gaps.log",
+        "log_sha256": "006b9d53dddc0e5d2e4c5ab2e078d9733aa30a81926b0ea7ede53b597ad1db30"
+      },
+      {
+        "name": "fill_expand",
+        "args": [
+          "tests/verify_fill_expand.py"
+        ],
+        "exit": 0,
+        "seconds": 28.3,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\fill_expand.log",
+        "log_sha256": "6b8130e1829bb58986b518b632545ea30c4ae189460c6e24a4c5068f524f0fdd"
+      },
+      {
+        "name": "fill_connections",
+        "args": [
+          "tests/verify_fill_connections.py"
+        ],
+        "exit": 0,
+        "seconds": 28.323,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\fill_connections.log",
+        "log_sha256": "024dd71f4e02b52f738d696335caf43226dfc4cba43a388059e62d7f7ab6f745"
+      },
+      {
+        "name": "palette",
+        "args": [
+          "tests/verify_palette.py"
+        ],
+        "exit": 0,
+        "seconds": 36.07,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\palette.log",
+        "log_sha256": "bb5f54882047debaef645d680cd3ec23337d3f0904035e29b2e11099bbf93630"
+      },
+      {
+        "name": "drawing_history",
+        "args": [
+          "tests/verify_drawing_history.py"
+        ],
+        "exit": 0,
+        "seconds": 13.389,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\drawing_history.log",
+        "log_sha256": "1d75f5ab54c587fabdb57dc505f3f3cfb819d58e0dd5c07a512f899732fd261d"
+      },
+      {
+        "name": "drawing_selection",
+        "args": [
+          "tests/verify_drawing_selection.py"
+        ],
+        "exit": 0,
+        "seconds": 16.225,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\drawing_selection.log",
+        "log_sha256": "a337f72fe31385e14a6ae42e7f7bd65675cf28494e2c37a2d9a1bebc2cc841b5"
+      },
+      {
+        "name": "drawing_transform",
+        "args": [
+          "tests/verify_drawing_transform.py"
+        ],
+        "exit": 0,
+        "seconds": 24.448,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\drawing_transform.log",
+        "log_sha256": "5230b42dee443d626bc32ae51ab906149c3cce921c63049a29871904eb395b1c"
+      },
+      {
+        "name": "recovery_identity",
+        "args": [
+          "tests/verify_recovery_identity.py"
+        ],
+        "exit": 0,
+        "seconds": 1.834,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\recovery_identity.log",
+        "log_sha256": "245827afae0ac026f88a8e24064b94fe71b8ab69b0def5ba930f081a4243db7f"
+      },
+      {
+        "name": "recovery_startup",
+        "args": [
+          "tests/verify_recovery_startup.py"
+        ],
+        "exit": 0,
+        "seconds": 105.888,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\recovery_startup.log",
+        "log_sha256": "46dd9e8cbf948bf69502ddb0ab86b6364da951c35447a81f62e7cd340070eac2"
+      },
+      {
+        "name": "recovery_history",
+        "args": [
+          "tests/verify_recovery_history.py"
+        ],
+        "exit": 0,
+        "seconds": 115.077,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\recovery_history.log",
+        "log_sha256": "25df5822e8eca1024154a270d1e4b56191083f95d68554c538f6b0b2d423da55"
+      },
+      {
+        "name": "recovery_schedule",
+        "args": [
+          "tests/verify_recovery_schedule.py"
+        ],
+        "exit": 0,
+        "seconds": 21.434,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\recovery_schedule.log",
+        "log_sha256": "d56a1db2457bb09221c3464c07762152a127388772a3abfa7b47b4444c5d37f6"
+      },
+      {
+        "name": "recovery_preview",
+        "args": [
+          "tests/verify_recovery_preview.py"
+        ],
+        "exit": 0,
+        "seconds": 9.819,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\recovery_preview.log",
+        "log_sha256": "38f57ad41ae41c1e7d2548d5ec5f15112d140bcc271dc75e0ae25d3b8c54051d"
+      },
+      {
+        "name": "home",
+        "args": [
+          "tests/verify_home.py"
+        ],
+        "exit": 0,
+        "seconds": 17.809,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\home.log",
+        "log_sha256": "4d897d0156a4f1334291d2e7bd1dbccf48a1fc640f220da566294e739fb50068"
+      },
+      {
+        "name": "tutorials",
+        "args": [
+          "tests/verify_tutorials.py"
+        ],
+        "exit": 0,
+        "seconds": 27.528,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\tutorials.log",
+        "log_sha256": "5f4fd8bbaeaca44eb73e369013fc5b6898cdc38afd589bfbfd86f17b5c64668e"
+      },
+      {
+        "name": "first_movie",
+        "args": [
+          "tests/verify_first_movie.py"
+        ],
+        "exit": 0,
+        "seconds": 41.508,
+        "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600\\first_movie.log",
+        "log_sha256": "842e2edfb33dbf615250e7ea174f61ced26ca00adff0428de9d77cb8f781eac4"
+      }
+    ],
+    "complete": true,
+    "start": "project_duration",
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remaining-suites\\1794454819637711600"
+  },
+  "targeted_reports": {
+    "motion-assist-native-verification.json": {
+      "checks": 163,
+      "failures": 0,
+      "native_reports": [
+        {
+          "checks": 32,
+          "failures": 0
+        },
+        {
+          "checks": 32,
+          "failures": 0
+        },
+        {
+          "checks": 32,
+          "failures": 0
+        },
+        {
+          "checks": 32,
+          "failures": 0
+        },
+        {
+          "checks": 33,
+          "failures": 0
+        }
+      ]
+    },
+    "motion-animation-app-verification.json": {
+      "checks": 129,
+      "failures": 0,
+      "native_reports": [
+        {
+          "checks": 25,
+          "failures": 0
+        },
+        {
+          "checks": 25,
+          "failures": 0
+        },
+        {
+          "checks": 25,
+          "failures": 0
+        },
+        {
+          "checks": 25,
+          "failures": 0
+        },
+        {
+          "checks": 25,
+          "failures": 0
+        }
+      ],
+      "reader": {
+        "checks": 4,
+        "failures": 0
+      }
+    },
+    "native-path-components-verification.json": {
+      "checks": 121,
+      "failures": 0,
+      "source_unchanged": true,
+      "functional_unchanged": true,
+      "ok": true,
+      "native_reports": [
+        {
+          "checks": 24,
+          "failures": 0
+        },
+        {
+          "checks": 24,
+          "failures": 0
+        },
+        {
+          "checks": 24,
+          "failures": 0
+        },
+        {
+          "checks": 24,
+          "failures": 0
+        },
+        {
+          "checks": 24,
+          "failures": 0
+        }
+      ]
+    },
+    "orbit-navigation-verification.json": {
+      "checks": 52,
+      "failures": 0,
+      "native_checks_unrun": false,
+      "reports": {
+        "writer": {
+          "checks": 52,
+          "failures": 0,
+          "native_checks_unrun": false
+        },
+        "reader": {
+          "checks": 2,
+          "failures": 0
+        }
+      }
+    },
+    "fan-flutter-verification.json": {
+      "checks": 15,
+      "failures": 0,
+      "native_input": true,
+      "source_and_originals_unchanged": true
+    },
+    "timeline-navigation": {
+      "functional_unchanged": true,
+      "reports": {
+        "unit": {
+          "checks": 42,
+          "failures": 0
+        },
+        "app": {
+          "checks": 35,
+          "failures": 0
+        },
+        "workspace": {
+          "checks": 48,
+          "failures": 0
+        },
+        "channels": {
+          "checks": 47,
+          "failures": 0
+        }
+      }
+    }
+  },
+  "private_desktops": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_abcd6d6e03a549d4a8277e6bd48dffa1",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 3696,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 17.376
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_e903b733701a47349b74afeaf669685d",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 1192,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 15.4
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_a546b653a11944d188fca9e63eb1f5c4",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 36552,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.476
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_7ca99ebf70a84050aeb099671c8b5383",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 13304,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 27.319
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_3a9e538f74f24ff5a9c7ca9234377d15",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 32380,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 28.546
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_f10fe6e0aeb04ffda27fedbf04cacff7",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 33884,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 30.832
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_b79add7438ec4387a1e3c0835ff661db",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 8336,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.4
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_6d067b5d192b4aa386b20de28418c290",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 34612,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 2.64
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_64d05b16338541eb93f7437b5c92dffc",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 33296,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.556
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_7ed9323ebef14c9b97ddce4069a24e63",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 27504,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.483
+    }
+  ],
+  "camera_native_fixture": {
+    "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\pose-smoke\\miku-project",
+    "packed": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\camera-input\\native-miku.has",
+    "sha256": "ec8aa98e0ff1345ad952b6d328dc30260ee7f1210c32e892a61de1595fd11131",
+    "source_unchanged": true,
+    "model_selection": "Exact native Miku record retained; unrelated procedural fixture objects omitted only from the owned navigation input."
+  },
+  "cleanup": {
+    "remote_verified_commit": "89d7625eaced9657b8c05822bb2a804e37f50824",
+    "files": [
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000001.png",
+        "bytes": 21865,
+        "sha256": "a481881c9fd74d5b68b266dfc85b81e0ff72e3a1c944ea8a2533dba88695918b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000002.png",
+        "bytes": 21680,
+        "sha256": "050d26f38b486bf26c69a6d6148a33e72b056d24e84aa25dcd546ae5db7a3f69"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000003.png",
+        "bytes": 21860,
+        "sha256": "b1038c5b442887e99142a2912e651fc67c6796558c3c1a4a5c34873990ea0574"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000004.png",
+        "bytes": 21989,
+        "sha256": "f797043c1aa4441b20303a041728e530a51ed0a10a9564ef1b8429882925dfcc"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000005.png",
+        "bytes": 21804,
+        "sha256": "d6b5116bc286a136e96b1160c0e6a04f710c985ebca605ff7f7511dbc5259f7f"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000006.png",
+        "bytes": 21846,
+        "sha256": "baa7ac8d46c860882636e02a9add3386ad48a8e0addbb5c31953ef61d4fdb331"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000007.png",
+        "bytes": 21670,
+        "sha256": "8a10470da31886bef60db8abf8657c49678285aef7753c4cfd75759a01482828"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000008.png",
+        "bytes": 21861,
+        "sha256": "ceba803145d5506d84d0f41254ed940fb269885452a44e81148b208acc067c07"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000009.png",
+        "bytes": 21694,
+        "sha256": "07471234f406dbf44ca9affce1ef91aa197b03c81f12084824f8f9e24a1fca63"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000010.png",
+        "bytes": 21535,
+        "sha256": "f79add3a90e851ad322a22423ad8d3a58c565c1a96cceea0b2edf139408dcb7e"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000011.png",
+        "bytes": 21811,
+        "sha256": "87375b9bf51eaf79a3d687a48170e1fe52bcf8ca9077cdfd4d3dcf1e250244bb"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000012.png",
+        "bytes": 21484,
+        "sha256": "3c52a3e8f99fd7099b078647cf8ea678b1c0e45fb1005474547df56a89183265"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000013.png",
+        "bytes": 21450,
+        "sha256": "a60bd7b11b3afa7258565e5755578ec695e207a2c254bc47db741440bb452e08"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000014.png",
+        "bytes": 21465,
+        "sha256": "80bebb5faa9612b9a725a1b6758560189f7ea3c6412ac9b125e7486a5625ce15"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000015.png",
+        "bytes": 21422,
+        "sha256": "6413b225ea5e4393b062b85461d41be5f097089ca5304055ed09e6d6b4842fe1"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000016.png",
+        "bytes": 21511,
+        "sha256": "37fb46bbeb89744fc1a0739147e069447cda5f7e717994c4dcdaa8382210555b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000017.png",
+        "bytes": 21389,
+        "sha256": "d238016b31bfcd464c92340ed910b77b587dfb9d3aef4e9cb8cc5b7820bc2317"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000018.png",
+        "bytes": 21549,
+        "sha256": "9f8e8180ee5198b155f4f4bc9d8e6dcf760111d214289f15a4cf81f11ac607a6"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000019.png",
+        "bytes": 21248,
+        "sha256": "914c40dc06ca1dd4576c83b7dfd9535a62ad5f8a63e95e3de57fdcd2a606e306"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000020.png",
+        "bytes": 21356,
+        "sha256": "37f5a1e0cfe8d65a39eb702f0d5860b9b8cccb3983fbe7c8f262fb07f7d8c1af"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000021.png",
+        "bytes": 21394,
+        "sha256": "cc659679493340d5d4d1492bee634bc426db2f5c0da2f935f3f20c5abc073041"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000022.png",
+        "bytes": 21360,
+        "sha256": "5e2fbca45b3c2d0d4348dc211458dd3a80f7aa8b8f73e724875798d359b10150"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000023.png",
+        "bytes": 21475,
+        "sha256": "ca859d7b2b24a415f8adb49b5f3852d862648077903b40af7e66eadad88d6eff"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000024.png",
+        "bytes": 21461,
+        "sha256": "ec7cd2d010d2f9f09f1996c1cb099ecc06178be7371a021f5524516de31c2e41"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000026.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000027.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000028.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000029.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000030.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000031.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000032.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000033.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000034.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000035.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000036.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000037.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000038.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000039.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000040.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000041.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000042.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000043.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000044.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000045.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000046.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000047.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453264_36915359_0\\frame_000048.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000001.png",
+        "bytes": 21865,
+        "sha256": "a481881c9fd74d5b68b266dfc85b81e0ff72e3a1c944ea8a2533dba88695918b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000002.png",
+        "bytes": 21680,
+        "sha256": "050d26f38b486bf26c69a6d6148a33e72b056d24e84aa25dcd546ae5db7a3f69"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000003.png",
+        "bytes": 21860,
+        "sha256": "b1038c5b442887e99142a2912e651fc67c6796558c3c1a4a5c34873990ea0574"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000004.png",
+        "bytes": 21989,
+        "sha256": "f797043c1aa4441b20303a041728e530a51ed0a10a9564ef1b8429882925dfcc"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000005.png",
+        "bytes": 21804,
+        "sha256": "d6b5116bc286a136e96b1160c0e6a04f710c985ebca605ff7f7511dbc5259f7f"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000006.png",
+        "bytes": 21846,
+        "sha256": "baa7ac8d46c860882636e02a9add3386ad48a8e0addbb5c31953ef61d4fdb331"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000007.png",
+        "bytes": 21670,
+        "sha256": "8a10470da31886bef60db8abf8657c49678285aef7753c4cfd75759a01482828"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000008.png",
+        "bytes": 21861,
+        "sha256": "ceba803145d5506d84d0f41254ed940fb269885452a44e81148b208acc067c07"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000009.png",
+        "bytes": 21694,
+        "sha256": "07471234f406dbf44ca9affce1ef91aa197b03c81f12084824f8f9e24a1fca63"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000010.png",
+        "bytes": 21535,
+        "sha256": "f79add3a90e851ad322a22423ad8d3a58c565c1a96cceea0b2edf139408dcb7e"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000011.png",
+        "bytes": 21811,
+        "sha256": "87375b9bf51eaf79a3d687a48170e1fe52bcf8ca9077cdfd4d3dcf1e250244bb"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000012.png",
+        "bytes": 21484,
+        "sha256": "3c52a3e8f99fd7099b078647cf8ea678b1c0e45fb1005474547df56a89183265"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000013.png",
+        "bytes": 21450,
+        "sha256": "a60bd7b11b3afa7258565e5755578ec695e207a2c254bc47db741440bb452e08"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000014.png",
+        "bytes": 21465,
+        "sha256": "80bebb5faa9612b9a725a1b6758560189f7ea3c6412ac9b125e7486a5625ce15"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000015.png",
+        "bytes": 21422,
+        "sha256": "6413b225ea5e4393b062b85461d41be5f097089ca5304055ed09e6d6b4842fe1"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000016.png",
+        "bytes": 21511,
+        "sha256": "37fb46bbeb89744fc1a0739147e069447cda5f7e717994c4dcdaa8382210555b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000017.png",
+        "bytes": 21389,
+        "sha256": "d238016b31bfcd464c92340ed910b77b587dfb9d3aef4e9cb8cc5b7820bc2317"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000018.png",
+        "bytes": 21549,
+        "sha256": "9f8e8180ee5198b155f4f4bc9d8e6dcf760111d214289f15a4cf81f11ac607a6"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000019.png",
+        "bytes": 21248,
+        "sha256": "914c40dc06ca1dd4576c83b7dfd9535a62ad5f8a63e95e3de57fdcd2a606e306"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000020.png",
+        "bytes": 21356,
+        "sha256": "37f5a1e0cfe8d65a39eb702f0d5860b9b8cccb3983fbe7c8f262fb07f7d8c1af"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000021.png",
+        "bytes": 21394,
+        "sha256": "cc659679493340d5d4d1492bee634bc426db2f5c0da2f935f3f20c5abc073041"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000022.png",
+        "bytes": 21360,
+        "sha256": "5e2fbca45b3c2d0d4348dc211458dd3a80f7aa8b8f73e724875798d359b10150"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000023.png",
+        "bytes": 21475,
+        "sha256": "ca859d7b2b24a415f8adb49b5f3852d862648077903b40af7e66eadad88d6eff"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000024.png",
+        "bytes": 21461,
+        "sha256": "ec7cd2d010d2f9f09f1996c1cb099ecc06178be7371a021f5524516de31c2e41"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000026.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000027.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000028.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000029.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000030.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000031.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000032.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000033.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000034.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000035.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000036.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000037.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000038.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000039.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000040.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000041.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000042.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000043.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000044.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000045.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000046.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000047.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453287_15128215_0\\frame_000048.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000001.png",
+        "bytes": 21865,
+        "sha256": "a481881c9fd74d5b68b266dfc85b81e0ff72e3a1c944ea8a2533dba88695918b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000002.png",
+        "bytes": 21680,
+        "sha256": "050d26f38b486bf26c69a6d6148a33e72b056d24e84aa25dcd546ae5db7a3f69"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000003.png",
+        "bytes": 21860,
+        "sha256": "b1038c5b442887e99142a2912e651fc67c6796558c3c1a4a5c34873990ea0574"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000004.png",
+        "bytes": 21989,
+        "sha256": "f797043c1aa4441b20303a041728e530a51ed0a10a9564ef1b8429882925dfcc"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000005.png",
+        "bytes": 21804,
+        "sha256": "d6b5116bc286a136e96b1160c0e6a04f710c985ebca605ff7f7511dbc5259f7f"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000006.png",
+        "bytes": 21846,
+        "sha256": "baa7ac8d46c860882636e02a9add3386ad48a8e0addbb5c31953ef61d4fdb331"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000007.png",
+        "bytes": 21670,
+        "sha256": "8a10470da31886bef60db8abf8657c49678285aef7753c4cfd75759a01482828"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000008.png",
+        "bytes": 21861,
+        "sha256": "ceba803145d5506d84d0f41254ed940fb269885452a44e81148b208acc067c07"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000009.png",
+        "bytes": 21694,
+        "sha256": "07471234f406dbf44ca9affce1ef91aa197b03c81f12084824f8f9e24a1fca63"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000010.png",
+        "bytes": 21535,
+        "sha256": "f79add3a90e851ad322a22423ad8d3a58c565c1a96cceea0b2edf139408dcb7e"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000011.png",
+        "bytes": 21811,
+        "sha256": "87375b9bf51eaf79a3d687a48170e1fe52bcf8ca9077cdfd4d3dcf1e250244bb"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000012.png",
+        "bytes": 21484,
+        "sha256": "3c52a3e8f99fd7099b078647cf8ea678b1c0e45fb1005474547df56a89183265"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000013.png",
+        "bytes": 21450,
+        "sha256": "a60bd7b11b3afa7258565e5755578ec695e207a2c254bc47db741440bb452e08"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000014.png",
+        "bytes": 21465,
+        "sha256": "80bebb5faa9612b9a725a1b6758560189f7ea3c6412ac9b125e7486a5625ce15"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000015.png",
+        "bytes": 21422,
+        "sha256": "6413b225ea5e4393b062b85461d41be5f097089ca5304055ed09e6d6b4842fe1"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000016.png",
+        "bytes": 21511,
+        "sha256": "37fb46bbeb89744fc1a0739147e069447cda5f7e717994c4dcdaa8382210555b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000017.png",
+        "bytes": 21389,
+        "sha256": "d238016b31bfcd464c92340ed910b77b587dfb9d3aef4e9cb8cc5b7820bc2317"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000018.png",
+        "bytes": 21549,
+        "sha256": "9f8e8180ee5198b155f4f4bc9d8e6dcf760111d214289f15a4cf81f11ac607a6"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000019.png",
+        "bytes": 21248,
+        "sha256": "914c40dc06ca1dd4576c83b7dfd9535a62ad5f8a63e95e3de57fdcd2a606e306"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000020.png",
+        "bytes": 21356,
+        "sha256": "37f5a1e0cfe8d65a39eb702f0d5860b9b8cccb3983fbe7c8f262fb07f7d8c1af"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000021.png",
+        "bytes": 21394,
+        "sha256": "cc659679493340d5d4d1492bee634bc426db2f5c0da2f935f3f20c5abc073041"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000022.png",
+        "bytes": 21360,
+        "sha256": "5e2fbca45b3c2d0d4348dc211458dd3a80f7aa8b8f73e724875798d359b10150"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000023.png",
+        "bytes": 21475,
+        "sha256": "ca859d7b2b24a415f8adb49b5f3852d862648077903b40af7e66eadad88d6eff"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000024.png",
+        "bytes": 21461,
+        "sha256": "ec7cd2d010d2f9f09f1996c1cb099ecc06178be7371a021f5524516de31c2e41"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000026.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000027.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000028.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000029.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000030.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000031.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000032.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000033.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000034.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000035.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000036.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000037.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000038.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000039.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000040.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000041.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000042.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000043.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000044.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000045.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000046.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000047.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453403_15387360_0\\frame_000048.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000001.png",
+        "bytes": 21865,
+        "sha256": "a481881c9fd74d5b68b266dfc85b81e0ff72e3a1c944ea8a2533dba88695918b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000002.png",
+        "bytes": 21680,
+        "sha256": "050d26f38b486bf26c69a6d6148a33e72b056d24e84aa25dcd546ae5db7a3f69"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000003.png",
+        "bytes": 21860,
+        "sha256": "b1038c5b442887e99142a2912e651fc67c6796558c3c1a4a5c34873990ea0574"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000004.png",
+        "bytes": 21989,
+        "sha256": "f797043c1aa4441b20303a041728e530a51ed0a10a9564ef1b8429882925dfcc"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000005.png",
+        "bytes": 21804,
+        "sha256": "d6b5116bc286a136e96b1160c0e6a04f710c985ebca605ff7f7511dbc5259f7f"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000006.png",
+        "bytes": 21846,
+        "sha256": "baa7ac8d46c860882636e02a9add3386ad48a8e0addbb5c31953ef61d4fdb331"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000007.png",
+        "bytes": 21670,
+        "sha256": "8a10470da31886bef60db8abf8657c49678285aef7753c4cfd75759a01482828"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000008.png",
+        "bytes": 21861,
+        "sha256": "ceba803145d5506d84d0f41254ed940fb269885452a44e81148b208acc067c07"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000009.png",
+        "bytes": 21694,
+        "sha256": "07471234f406dbf44ca9affce1ef91aa197b03c81f12084824f8f9e24a1fca63"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000010.png",
+        "bytes": 21535,
+        "sha256": "f79add3a90e851ad322a22423ad8d3a58c565c1a96cceea0b2edf139408dcb7e"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000011.png",
+        "bytes": 21811,
+        "sha256": "87375b9bf51eaf79a3d687a48170e1fe52bcf8ca9077cdfd4d3dcf1e250244bb"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000012.png",
+        "bytes": 21484,
+        "sha256": "3c52a3e8f99fd7099b078647cf8ea678b1c0e45fb1005474547df56a89183265"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000013.png",
+        "bytes": 21450,
+        "sha256": "a60bd7b11b3afa7258565e5755578ec695e207a2c254bc47db741440bb452e08"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000014.png",
+        "bytes": 21465,
+        "sha256": "80bebb5faa9612b9a725a1b6758560189f7ea3c6412ac9b125e7486a5625ce15"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000015.png",
+        "bytes": 21422,
+        "sha256": "6413b225ea5e4393b062b85461d41be5f097089ca5304055ed09e6d6b4842fe1"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000016.png",
+        "bytes": 21511,
+        "sha256": "37fb46bbeb89744fc1a0739147e069447cda5f7e717994c4dcdaa8382210555b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000017.png",
+        "bytes": 21389,
+        "sha256": "d238016b31bfcd464c92340ed910b77b587dfb9d3aef4e9cb8cc5b7820bc2317"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000018.png",
+        "bytes": 21549,
+        "sha256": "9f8e8180ee5198b155f4f4bc9d8e6dcf760111d214289f15a4cf81f11ac607a6"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000019.png",
+        "bytes": 21248,
+        "sha256": "914c40dc06ca1dd4576c83b7dfd9535a62ad5f8a63e95e3de57fdcd2a606e306"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000020.png",
+        "bytes": 21356,
+        "sha256": "37f5a1e0cfe8d65a39eb702f0d5860b9b8cccb3983fbe7c8f262fb07f7d8c1af"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000021.png",
+        "bytes": 21394,
+        "sha256": "cc659679493340d5d4d1492bee634bc426db2f5c0da2f935f3f20c5abc073041"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000022.png",
+        "bytes": 21360,
+        "sha256": "5e2fbca45b3c2d0d4348dc211458dd3a80f7aa8b8f73e724875798d359b10150"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000023.png",
+        "bytes": 21475,
+        "sha256": "ca859d7b2b24a415f8adb49b5f3852d862648077903b40af7e66eadad88d6eff"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000024.png",
+        "bytes": 21461,
+        "sha256": "ec7cd2d010d2f9f09f1996c1cb099ecc06178be7371a021f5524516de31c2e41"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000026.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000027.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000028.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000029.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000030.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000031.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000032.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000033.png",
+        "bytes": 21785,
+        "sha256": "a044c5b7fef9b9103fd2dfd21014388a7cd7ce13b250313538d95dbdc8b2d11b"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000034.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000035.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000036.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000037.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000038.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000039.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000040.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000041.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000042.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000043.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000044.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000045.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000046.png",
+        "bytes": 19109,
+        "sha256": "76ab2cfc37459f0a66d497f3c4cb19221b04e34138624b9cda3bcddde8bbf385"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000047.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\multi-audio\\1794453222223627400\\render_1794453524_31620557_0\\frame_000048.png",
+        "bytes": 21383,
+        "sha256": "36a323cc715cd4801ee71aa30f62058394eba6738c12dc56e40d4bd0908abaf2"
+      }
+    ],
+    "bytes": 3990200,
+    "preserved": "All four movies, frame25/reference images, source packages, failed logs/JSON, current successful suite outputs and private owner review/recovery."
+  },
+  "limits": "27remaining wrappers pass as a scoped sequence; this is not a full canonical aggregate. Native camera52+2 checks cover requested warp coordinates, not actual physical cursor return. Native fan15checks are not artist approval. Full canonical run and latest source-only review snapshot next."
+}

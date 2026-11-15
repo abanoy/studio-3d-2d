@@ -6,6 +6,13 @@ for an atomic, checked readiness packet before reading the completed snapshot.
 The existing positive process ID, modal progress window, Cancel action, verified
 archive publication, compare-and-swap and backup behavior remain in use.
 
+The Windows launch-order hardening now separates `prepare()` from `launch()`.
+Preparation captures the same detached state before child creation; the snapshot
+filesystem thread starts after the real Python packer exists. The packer still
+waits for checked readiness. A thread startup failure cancels that waiting child
+and follows the normal single failure/completion path, preserving the prior save
+and newer dirty edits. The old `start()` API remains available.
+
 The worker owns its raster cache and never receives live scene nodes, owners or
 renderer state. Later edits stay dirty; saving an older document cannot attach its
 identity to a new document. Cancellation and shutdown drain current file work.
@@ -48,3 +55,34 @@ Run `tests/verify_has_background_save.py`, `tests/verify_has_background_large.py
 `tests/verify_project_reference.py` and `tests/verify_recovery_writer.py` with an
 explicitly isolated display and fresh absolute output directory. See the
 [recorded evidence](benchmarks/background_manual_saves_2026-11-07.json).
+
+## November 13 Windows checks
+
+Current main passes the original 10 writer-domain predicates, 32 new staged-capture
+controls, 31 Python HAS and 16 save-fault cases, 20 actual writer checks (17 original
+plus three launch-order/failure checks) and five cold-reader checks. Two private
+desktop jobs exit zero and close cleanly. The actual held save returns in 9 ms;
+this small fixture is separate from the historical 400-drawing measurements above.
+Native body animation also passes its original 24 units and 72 app checks across
+five native profiles plus the authored fixture, including packed/linked persistence
+and a real 48-frame 1080p24 movie.
+
+The full run at `1236796` remains **failed**: Windows refused the final VRM0 linked
+save-helper creation. An unchanged focused retry passed. The engine message does
+not expose the precise Windows error; a 240-child directory-churn probe also did
+not reproduce it. This ordering change removes an avoidable overlap with our own
+snapshot thread; it does not establish the original failure's cause or serialize
+every other filesystem thread. The next full runner explicitly selects the already
+approved absolute Python runtime. See [actual results and retained failures](benchmarks/windows_snapshot_launch_order_2026-11-13.json).
+
+
+## Complete Windows verification after launch ordering
+
+The fresh default suite at `12071fe` passes with 968 source files/HEAD unchanged.
+Its background-save reports pass 10 + 32 + 31 + 16 + 20 + 5 checks, including
+real child-before-thread ordering, failed-thread cancellation/drain, dirty edits,
+backups and offline cold reads. The held Save call was 8ms on the small fixture;
+this is not a new large-workload bound. The original native body route also passes
+24 unit + 72 app checks within that complete run. The earlier full failure and
+unknown Windows cause remain preserved separately. See
+[the full result](benchmarks/windows_canonical_post_save_order_2026-11-13.json).

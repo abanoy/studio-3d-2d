@@ -1,0 +1,313 @@
+{
+  "format": "has_import_placement_inset_actual_1",
+  "context": "uncommitted working source on 1caeb44b12e9ebf2db944c769810010975f5abaa; not a committed full-suite pass",
+  "source_files": 981,
+  "final_private_checks": 43,
+  "final_private_failures": 0,
+  "bounds_checks": 20,
+  "original_checks": 23,
+  "prepared_native_map_checks_in_original": 3,
+  "movie": {
+    "codec": "h264",
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": "24/1",
+    "frames": 48,
+    "duration": "2.000000"
+  },
+  "source_preserved": true,
+  "engine_error_leak_markers": [],
+  "private_child_pid": 6304,
+  "private_exit": 0,
+  "private_job_desktop_closed": true,
+  "pre_child_failure": {
+    "exit": 2,
+    "reason": "restricted context CreateDesktop access denied; no child created; first verifier masked this with missing engine.log",
+    "preserved": true
+  },
+  "scope": "Per-axis non-inverting AABB clearance for actor and wall candidate rejection; normal support/view/Undo/HAS/movie regressions retained. Does not establish native Source shader/jiggle fidelity or resolve the pending native app matrix.",
+  "payloads": "source and metadata only; no original native inputs, media, GLB/HAS, or runtime copies",
+  "records": [
+    {
+      "path": "source/src/import_placement.gd",
+      "codec": "identity",
+      "bytes": 8534,
+      "sha256": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad",
+      "raw_bytes": 8534,
+      "raw_sha256": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\import_placement.gd"
+    },
+    {
+      "path": "source/tests/import_placement_smoke.gd",
+      "codec": "identity",
+      "bytes": 14988,
+      "sha256": "edd16440e1a17fe1e3d896c899eb79992b8ea9adc02ca7e4a6170ef6359400d4",
+      "raw_bytes": 14988,
+      "raw_sha256": "edd16440e1a17fe1e3d896c899eb79992b8ea9adc02ca7e4a6170ef6359400d4",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\import_placement_smoke.gd"
+    },
+    {
+      "path": "source/tests/verify_import_placement.py",
+      "codec": "identity",
+      "bytes": 5400,
+      "sha256": "612ac366d2da3a68418a8c390edbccad980edab0763ed634f02b4afc87d02d25",
+      "raw_bytes": 5400,
+      "raw_sha256": "612ac366d2da3a68418a8c390edbccad980edab0763ed634f02b4afc87d02d25",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\verify_import_placement.py"
+    },
+    {
+      "path": "coordinator/execute.py",
+      "codec": "identity",
+      "bytes": 4060,
+      "sha256": "c578f5e73ee994499763646f05295df335f8d0b8450f5505665fa3f5113f51f9",
+      "raw_bytes": 4060,
+      "raw_sha256": "c578f5e73ee994499763646f05295df335f8d0b8450f5505665fa3f5113f51f9",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\execute.py"
+    },
+    {
+      "path": "coordinator/build_packet.py",
+      "codec": "identity",
+      "bytes": 5144,
+      "sha256": "66c05d0bcfe0ca96d07e3757fffcffd686e1050ee39cfa7be5cb2d5fcab7d772",
+      "raw_bytes": 5144,
+      "raw_sha256": "66c05d0bcfe0ca96d07e3757fffcffd686e1050ee39cfa7be5cb2d5fcab7d772",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\build_packet.py"
+    },
+    {
+      "path": "actual/earlier_headless_before_failure_reporting_refinement/console.log",
+      "codec": "identity",
+      "bytes": 1648,
+      "sha256": "19f09e5ffc08ba612a5944236fdbb535a8db8f71fadb601452040cc0d2c53b79",
+      "raw_bytes": 1648,
+      "raw_sha256": "19f09e5ffc08ba612a5944236fdbb535a8db8f71fadb601452040cc0d2c53b79",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\headless-1794614880788286000\\console.log"
+    },
+    {
+      "path": "actual/earlier_headless_before_failure_reporting_refinement/engine.log",
+      "codec": "identity",
+      "bytes": 1625,
+      "sha256": "06e12cba4250515bbd7d3c33952cabb2bb7cc5b54ae09d3134ea5d20a078408e",
+      "raw_bytes": 1625,
+      "raw_sha256": "06e12cba4250515bbd7d3c33952cabb2bb7cc5b54ae09d3134ea5d20a078408e",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\headless-1794614880788286000\\engine.log"
+    },
+    {
+      "path": "actual/earlier_headless_before_failure_reporting_refinement/invocation.json",
+      "codec": "identity",
+      "bytes": 778,
+      "sha256": "e9723249967bc35a674ccfe2bd85fb29da81233638b7e341091cf52ac74a8e76",
+      "raw_bytes": 778,
+      "raw_sha256": "e9723249967bc35a674ccfe2bd85fb29da81233638b7e341091cf52ac74a8e76",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\headless-1794614880788286000\\invocation.json"
+    },
+    {
+      "path": "actual/earlier_headless_before_failure_reporting_refinement/result.json",
+      "codec": "identity",
+      "bytes": 386,
+      "sha256": "0ee7c4f0d6a23271e7e5c51c082736f7925ed096f94464a76f9efd981be5eaa6",
+      "raw_bytes": 386,
+      "raw_sha256": "0ee7c4f0d6a23271e7e5c51c082736f7925ed096f94464a76f9efd981be5eaa6",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\headless-1794614880788286000\\result.json"
+    },
+    {
+      "path": "actual/earlier_headless_before_failure_reporting_refinement/source-after.json.gz",
+      "codec": "gzip",
+      "bytes": 50981,
+      "sha256": "6181446012fd21f13b63be74d59f836277fbb8792be7d35d3d034a4e449efd87",
+      "raw_bytes": 142243,
+      "raw_sha256": "89486b76ae15d48be149282ac1a065c356366e76d8c7eb20230a09cbaf4a5189",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\headless-1794614880788286000\\source-after.json"
+    },
+    {
+      "path": "actual/earlier_headless_before_failure_reporting_refinement/source-before.json.gz",
+      "codec": "gzip",
+      "bytes": 50981,
+      "sha256": "6181446012fd21f13b63be74d59f836277fbb8792be7d35d3d034a4e449efd87",
+      "raw_bytes": 142243,
+      "raw_sha256": "89486b76ae15d48be149282ac1a065c356366e76d8c7eb20230a09cbaf4a5189",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\headless-1794614880788286000\\source-before.json"
+    },
+    {
+      "path": "actual/restricted_context_pre_child_failure/console.log",
+      "codec": "identity",
+      "bytes": 1327,
+      "sha256": "d185655bcf4bfc6a3a9f4065d3d958d64f168fb8dbad4fc9a7024c80fc9df78e",
+      "raw_bytes": 1327,
+      "raw_sha256": "d185655bcf4bfc6a3a9f4065d3d958d64f168fb8dbad4fc9a7024c80fc9df78e",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614887307076000\\console.log"
+    },
+    {
+      "path": "actual/restricted_context_pre_child_failure/invocation.json",
+      "codec": "identity",
+      "bytes": 552,
+      "sha256": "77b5e580d9ef1f78acfebecaa535b2d86c069d5c75b928f6423551542eb1be22",
+      "raw_bytes": 552,
+      "raw_sha256": "77b5e580d9ef1f78acfebecaa535b2d86c069d5c75b928f6423551542eb1be22",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614887307076000\\invocation.json"
+    },
+    {
+      "path": "actual/restricted_context_pre_child_failure/result.json",
+      "codec": "identity",
+      "bytes": 1761,
+      "sha256": "d6d553c2a6b96fbe0012696d9f5b5f8510617099ce384be798cb00c207e466e8",
+      "raw_bytes": 1761,
+      "raw_sha256": "d6d553c2a6b96fbe0012696d9f5b5f8510617099ce384be798cb00c207e466e8",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614887307076000\\result.json"
+    },
+    {
+      "path": "actual/restricted_context_pre_child_failure/source-after.json.gz",
+      "codec": "gzip",
+      "bytes": 50981,
+      "sha256": "6181446012fd21f13b63be74d59f836277fbb8792be7d35d3d034a4e449efd87",
+      "raw_bytes": 142243,
+      "raw_sha256": "89486b76ae15d48be149282ac1a065c356366e76d8c7eb20230a09cbaf4a5189",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614887307076000\\source-after.json"
+    },
+    {
+      "path": "actual/restricted_context_pre_child_failure/source-before.json.gz",
+      "codec": "gzip",
+      "bytes": 50981,
+      "sha256": "6181446012fd21f13b63be74d59f836277fbb8792be7d35d3d034a4e449efd87",
+      "raw_bytes": 142243,
+      "raw_sha256": "89486b76ae15d48be149282ac1a065c356366e76d8c7eb20230a09cbaf4a5189",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614887307076000\\source-before.json"
+    },
+    {
+      "path": "actual/restricted_context_pre_child_failure/wrapper/bounds-console.log",
+      "codec": "identity",
+      "bytes": 1648,
+      "sha256": "19f09e5ffc08ba612a5944236fdbb535a8db8f71fadb601452040cc0d2c53b79",
+      "raw_bytes": 1648,
+      "raw_sha256": "19f09e5ffc08ba612a5944236fdbb535a8db8f71fadb601452040cc0d2c53b79",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614887307076000\\wrapper\\bounds-console.log"
+    },
+    {
+      "path": "actual/restricted_context_pre_child_failure/wrapper/bounds-engine.log",
+      "codec": "identity",
+      "bytes": 1625,
+      "sha256": "06e12cba4250515bbd7d3c33952cabb2bb7cc5b54ae09d3134ea5d20a078408e",
+      "raw_bytes": 1625,
+      "raw_sha256": "06e12cba4250515bbd7d3c33952cabb2bb7cc5b54ae09d3134ea5d20a078408e",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614887307076000\\wrapper\\bounds-engine.log"
+    },
+    {
+      "path": "actual/final_host_private_pass/console.log",
+      "codec": "identity",
+      "bytes": 1305,
+      "sha256": "bf84e70299257d1639335157cf241337947a9897339a1a01323a8434c7d22ef8",
+      "raw_bytes": 1305,
+      "raw_sha256": "bf84e70299257d1639335157cf241337947a9897339a1a01323a8434c7d22ef8",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\console.log"
+    },
+    {
+      "path": "actual/final_host_private_pass/invocation.json",
+      "codec": "identity",
+      "bytes": 552,
+      "sha256": "bd23b068701d23011834cb453e3e628662c29abaa167f3ab1369ef1d6f5cb098",
+      "raw_bytes": 552,
+      "raw_sha256": "bd23b068701d23011834cb453e3e628662c29abaa167f3ab1369ef1d6f5cb098",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\invocation.json"
+    },
+    {
+      "path": "actual/final_host_private_pass/result.json.gz",
+      "codec": "gzip",
+      "bytes": 46952,
+      "sha256": "8335c889db72b7f1e78198322b158b1cd8a76d4921dfa5ef211d70c2df539707",
+      "raw_bytes": 107256,
+      "raw_sha256": "17b0c5ede7316cf2f96365a71cf30d597c25cf4c9968f884dd9802278cfcd86e",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\result.json"
+    },
+    {
+      "path": "actual/final_host_private_pass/source-after.json.gz",
+      "codec": "gzip",
+      "bytes": 50982,
+      "sha256": "d69ad2d650a31973fd1087d59a07ce448f2ae87a1c69699a34a4b93b643d4313",
+      "raw_bytes": 142243,
+      "raw_sha256": "4ba66de94b5b153fa36472debe2a8ac017d9eb84d238983e8d58e31126323ba4",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\source-after.json"
+    },
+    {
+      "path": "actual/final_host_private_pass/source-before.json.gz",
+      "codec": "gzip",
+      "bytes": 50982,
+      "sha256": "d69ad2d650a31973fd1087d59a07ce448f2ae87a1c69699a34a4b93b643d4313",
+      "raw_bytes": 142243,
+      "raw_sha256": "4ba66de94b5b153fa36472debe2a8ac017d9eb84d238983e8d58e31126323ba4",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\source-before.json"
+    },
+    {
+      "path": "actual/final_host_private_pass/wrapper/bounds-console.log",
+      "codec": "identity",
+      "bytes": 1648,
+      "sha256": "19f09e5ffc08ba612a5944236fdbb535a8db8f71fadb601452040cc0d2c53b79",
+      "raw_bytes": 1648,
+      "raw_sha256": "19f09e5ffc08ba612a5944236fdbb535a8db8f71fadb601452040cc0d2c53b79",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\wrapper\\bounds-console.log"
+    },
+    {
+      "path": "actual/final_host_private_pass/wrapper/bounds-engine.log",
+      "codec": "identity",
+      "bytes": 1625,
+      "sha256": "06e12cba4250515bbd7d3c33952cabb2bb7cc5b54ae09d3134ea5d20a078408e",
+      "raw_bytes": 1625,
+      "raw_sha256": "06e12cba4250515bbd7d3c33952cabb2bb7cc5b54ae09d3134ea5d20a078408e",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\wrapper\\bounds-engine.log"
+    },
+    {
+      "path": "actual/final_host_private_pass/wrapper/console.log",
+      "codec": "identity",
+      "bytes": 3737,
+      "sha256": "47a3be546ccd77215e3c0fae89310233e6a85945c1e045f9888e4b528bf5884c",
+      "raw_bytes": 3737,
+      "raw_sha256": "47a3be546ccd77215e3c0fae89310233e6a85945c1e045f9888e4b528bf5884c",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\wrapper\\console.log"
+    },
+    {
+      "path": "actual/final_host_private_pass/wrapper/engine.log",
+      "codec": "identity",
+      "bytes": 3690,
+      "sha256": "a527c29e4cbddbb3b34c96e721a6b512eead383f48aa021948aed8296a09c187",
+      "raw_bytes": 3690,
+      "raw_sha256": "a527c29e4cbddbb3b34c96e721a6b512eead383f48aa021948aed8296a09c187",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\wrapper\\engine.log"
+    },
+    {
+      "path": "actual/final_host_private_pass/wrapper/private-command.json",
+      "codec": "identity",
+      "bytes": 840,
+      "sha256": "48de6caf31f8366b984854d9e4847b66d0102f4627404aba589d39db484b805a",
+      "raw_bytes": 840,
+      "raw_sha256": "48de6caf31f8366b984854d9e4847b66d0102f4627404aba589d39db484b805a",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\wrapper\\private-command.json"
+    },
+    {
+      "path": "actual/final_host_private_pass/wrapper/private-desktop.json",
+      "codec": "identity",
+      "bytes": 389,
+      "sha256": "809317bd4095385d73142c55c117dfe63158bdc7a94ced29272d823f9720aa31",
+      "raw_bytes": 389,
+      "raw_sha256": "809317bd4095385d73142c55c117dfe63158bdc7a94ced29272d823f9720aa31",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\wrapper\\private-desktop.json"
+    },
+    {
+      "path": "actual/final_host_private_pass/wrapper/verification.json.gz",
+      "codec": "gzip",
+      "bytes": 46693,
+      "sha256": "f4c6b4225233b567bd285123849ff24c796c9ed0765d86e9fa1e44dc0d6ce8dd",
+      "raw_bytes": 104879,
+      "raw_sha256": "fd1dfd49c39be92cff30c2ed0585169700dada9cf8187c2a59916f722be2d05f",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\import-placement-inset-20261114\\private-1794614922339824800\\wrapper\\verification.json"
+    },
+    {
+      "path": "actual/restricted_context_pre_child_failure/denied-private-desktop.json",
+      "codec": "identity",
+      "bytes": 367,
+      "sha256": "6e803bbb29234616b23e56b76bf6ef36600cac0721eedf8b06ca6b71668eb188",
+      "raw_bytes": 367,
+      "raw_sha256": "6e803bbb29234616b23e56b76bf6ef36600cac0721eedf8b06ca6b71668eb188",
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\import_placement_smoke_b97151feb7c648ca8c2e43a051794370.json"
+    }
+  ]
+}

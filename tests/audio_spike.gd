@@ -5,7 +5,12 @@ func _initialize() -> void:
 	call_deferred("run")
 
 func run() -> void:
-	var folder := ProjectSettings.globalize_path("res://output/spikes")
+	var arguments:=OS.get_cmdline_user_args()
+	if arguments.is_empty():
+		print("FAIL audio spike requires its own fresh frame/audio folder")
+		quit(2)
+		return
+	var folder: String=arguments[0]
 	var ffmpeg := OS.get_environment("HYBRID_FFMPEG")
 	if ffmpeg.is_empty(): ffmpeg = "C:/Program Files/ffmpeg/bin/ffmpeg.exe"
 	var encoder := Encoder.new()

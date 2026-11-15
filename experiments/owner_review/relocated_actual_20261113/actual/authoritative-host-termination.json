@@ -1,0 +1,19 @@
+{
+  "format": "has_relocated_review_authoritative_host_termination_1",
+  "observed_utc": "2026-11-13T22:09:14.8565099Z",
+  "coordinator_pid": 9548,
+  "expected_creation_utc": "2026-11-13T22:05:49.1745134Z",
+  "coordinator_absent": true,
+  "owned_runtime_command_matches_absent": false,
+  "owned_matches": {
+    "ProcessId": 2144,
+    "Name": "pwsh.exe",
+    "CreationDate": "2026-11-13T17:09:11.894954-05:00",
+    "CommandLine": "\"C:\\Program Files\\WindowsApps\\OpenAI.CodexPrimaryRuntime.v26-1112-611-0_26.1112.611.0_x64__3k8sg7r9htsxt\\dependencies\\native\\powershell\\pwsh.exe\" -Command \"try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}\n@'\nfrom pathlib import Path\nimport json\nE=Path('output/owner-review-final-validation-12071fe-1794607570195742200');S=Path('output/owner-review-stage-12071fe-1794607570195742200');F=Path('C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe')\nfor p in [S/'source-snapshot-verification.json',F/'source-snapshot-verification.json',E/'source-before.json',E/'final-package-before.json',E/'harness-before.json']:\n v=json.loads(p.read_bytes()); print('FILE',str(p),'KEYS',list(v))\n for k,x in v.items():\n  if not isinstance(x,(dict,list)) or k in ['home_probe','home_launch','startup','receipt','startup_receipt','runtime']:\n   print(' ',k,str(x)[:1500])\nprint('CORRECTION-related',[(p.name,p.stat().st_size) for p in Path('output').glob('*guide*') if p.is_file()])\np=Path('output/helper-review-package-prep-20261113/execute_after_full.py')\nfor i,l in enumerate(p.read_text(encoding='utf-8').splitlines(),1):\n if 'README' in l or ('sourceio' in l and ('json' in l or 'manifest' in l)): print(i,l)\n'@ | & 'C:\\Program Files\\Python313\\python.exe' -B -\""
+  },
+  "query": "Authoritative Windows host CIM, exact checkout and final-review command boundaries; current probe only excluded",
+  "probe_pid": 25632,
+  "no_process_killed": true,
+  "review_source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+  "review_state_sha256": "bd9a716edee4536356c0dff4f1a7bff10cc0b0650f5875052c83bcd2ce515e46"
+}

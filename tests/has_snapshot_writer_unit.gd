@@ -14,7 +14,8 @@ func check(ok: bool,label: String) -> void:
 	if not ok:failures+=1
 func _initialize() -> void:call_deferred("run")
 func run() -> void:
-	var folder: String=OS.get_cmdline_user_args()[0];DirAccess.make_dir_recursive_absolute(folder)
+	# Source/reference addresses use Godot's canonical forward-slash spelling.
+	var folder: String=OS.get_cmdline_user_args()[0].replace("\\","/");DirAccess.make_dir_recursive_absolute(folder)
 	var image:=Drawing.blank(960,540);image.fill(Color.RED);var layers: Array=[{"id":"layer","name":"Ink","visible":true,"cels":[]}];Drawing.insert(layers[0],0,48,image)
 	var project: Dictionary={"video":{"width":960,"height":540,"fps_num":24,"fps_den":1,"duration_frames":48},"camera_keys":[preload("res://src/timeline.gd").key(0,Vector3(0,1,3),Quaternion.IDENTITY,60)],"layers":layers,"world":preload("res://src/world_document.gd").empty(),"audio":{},"editor":{"frame":0}}
 	var request: Dictionary={"folder":folder.path_join("snapshot"),"ready":folder.path_join("job-snapshot.json"),"cancel":folder.path_join("cancel"),"origins":{}}

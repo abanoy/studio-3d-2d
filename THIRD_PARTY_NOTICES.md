@@ -37,8 +37,9 @@ retain the engine's full dependency notices.
 
 ## FFmpeg/ffprobe (external processes)
 
-FFmpeg is copyright its contributors. The installed build enables GPL and version3
-components, including libx264. No FFmpeg executable, DLL or codec library is bundled.
+FFmpeg is copyright its contributors. License and codec options depend on the
+separately installed build; tested builds include GPL-enabled libx264. No FFmpeg
+executable, DLL or codec library is bundled.
 See https://ffmpeg.org/legal.html and the exact installed binary's -L/-buildconf
 information before redistribution. This notice does not relicense that binary.
 

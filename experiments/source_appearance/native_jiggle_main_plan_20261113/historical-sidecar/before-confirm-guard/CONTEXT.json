@@ -1,0 +1,9 @@
+{
+  "prior_cpu": "cpu-1794615138714466800/verification.json",
+  "prior_cpu_passed": 25,
+  "source_sha256": {
+    "source_jiggle_metadata.py": "b6153f4c75e8d8f374d7bced75bab1e12d1e1fbf2eb17f5ea0675f8d8f35e4b7",
+    "test_source_jiggle_metadata.py": "f34031ca636da24772406f6ca51bc763512754937eb585653d0a28b34d759aa6"
+  },
+  "reason": "Tighten external pending publication API to withhold all public report/status bytes until exact artifact receipt; prior results retained as historicalAPI evidence."
+}

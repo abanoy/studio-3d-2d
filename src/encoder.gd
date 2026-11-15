@@ -25,11 +25,14 @@ func cancel() -> void:
 		OS.kill(process_id)
 
 func encode(tree: SceneTree, ffmpeg: String, folder: String, video: Dictionary, audio := "",retry:=false) -> String:
+	finished_path=""
 	var why:=profile_error(profile)
 	if not why.is_empty():return why
 	var selected: Dictionary=PROFILES[profile]
 	var output_path := folder.path_join("movie-%d.mp4" % Time.get_ticks_usec() if retry else "movie.mp4")
 	var log_path:=output_path.get_basename()+".log" if retry else folder.path_join("encoder.log")
+	if FileAccess.file_exists(output_path) or DirAccess.dir_exists_absolute(output_path):
+		return "Movie destination already exists. The existing movie, log and rendered frames were preserved. Retry encoding creates a separate movie."
 	var args := PackedStringArray(["-hide_banner", "-nostdin", "-n", "-loglevel", "error", "-framerate", "%d/%d" % [video.fps_num, video.fps_den], "-i", folder.path_join("frame_%06d.png")])
 	if not audio.is_empty():
 		args.append_array(["-i", audio])
@@ -48,12 +51,14 @@ func encode(tree: SceneTree, ffmpeg: String, folder: String, video: Dictionary, 
 		return reason
 	process_id = process.pid
 	log_text = "Profile: %s\nArguments: %s\n" % [profile,str(args)]
+	var error_output:=""
 	# OS.kill reaps the owned Unix child. Querying that PID again can produce
 	# ECHILD in Godot; cancellation already establishes this attempt's outcome.
 	while not cancelled and OS.is_process_running(process_id):
-		log_text += process.stderr.get_buffer(8192).get_string_from_utf8()
+		error_output += process.stderr.get_buffer(8192).get_string_from_utf8()
 		await tree.process_frame
-	log_text += process.stderr.get_buffer(65536).get_string_from_utf8()
+	error_output += process.stderr.get_buffer(65536).get_string_from_utf8()
+	log_text += error_output
 	var code := -1 if cancelled else OS.get_process_exit_code(process_id)
 	process_id = -1
 	var log_file := FileAccess.open(log_path, FileAccess.WRITE)
@@ -62,7 +67,9 @@ func encode(tree: SceneTree, ffmpeg: String, folder: String, video: Dictionary, 
 		log_file.flush();log_file.close()
 	if cancelled:
 		return "Export cancelled. Frames and log kept in " + folder
-	if code != 0 or not FileAccess.file_exists(output_path):
+	# FFmpeg can return0 for AVERROR_EXIT, including its -n overwrite refusal.
+	# With -loglevel error, diagnostics cannot certify a completed movie.
+	if code != 0 or not error_output.strip_edges().is_empty() or not FileAccess.file_exists(output_path):
 		return "FFmpeg failed (exit %d). See %s\n%s" % [code, log_path, log_text.right(1000)]
 	finished_path=output_path
 	return ""

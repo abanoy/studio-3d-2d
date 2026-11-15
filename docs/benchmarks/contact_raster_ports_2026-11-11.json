@@ -1,0 +1,522 @@
+{
+  "format": "has_contact_raster_api_ports_1",
+  "date": "2026-11-11",
+  "test_changes": [
+    {
+      "file": "tests/contact_identity_smoke.gd",
+      "editable_accesses": 1,
+      "read_accesses": 0,
+      "before_sha256": "45604739ba29ce6aeecba69cc27c48a2c83b25279b553cf73cdae211f4c2e863",
+      "after_sha256": "43d5334c9b11bb7a6194d0db7ad871886fd573aa62eaca5655e65ba00e3537d0"
+    },
+    {
+      "file": "tests/contact_correction_smoke.gd",
+      "editable_accesses": 1,
+      "read_accesses": 0,
+      "before_sha256": "18e0d4d67270f4e88f02d06907f8267e6219ff43daa1820a0f6890d5d0cfbfbd",
+      "after_sha256": "19d7c6918d8cce8123ab97e887caa0d7b9ddf20901c6e406a7dc286e61fe31e7"
+    },
+    {
+      "file": "tests/contact_parent_smoke.gd",
+      "editable_accesses": 1,
+      "read_accesses": 0,
+      "before_sha256": "a9335d32617ca24cb42cb5077f0f0dbefdb79433438f45c11c8080cda7a4d37d",
+      "after_sha256": "e0a0997fb3d2521acdff684d99b09e43473321f015e9cbaf959459961342b916"
+    },
+    {
+      "file": "tests/contact_persistence_read.gd",
+      "editable_accesses": 0,
+      "read_accesses": 1,
+      "before_sha256": "c66988b8e984e7ce1e9b436481de1d7fcb0b662e5acfaa810d9651873f616839",
+      "after_sha256": "e861a97e2aa004bd1a4d50b11736a4322a5a8fb86805007c48273533ca90a7c2"
+    },
+    {
+      "file": "tests/contact_persistence_smoke.gd",
+      "editable_accesses": 1,
+      "read_accesses": 1,
+      "before_sha256": "ede76980f2601d32833bf9b6b1443e078c4ad1689ee126df1ab92cf83549b4ab",
+      "after_sha256": "4490bd0f93ea61e0c94542050e576c116eb3727f0cc337a574626757deaf510d"
+    },
+    {
+      "file": "tests/contact_physics_smoke.gd",
+      "editable_accesses": 1,
+      "read_accesses": 0,
+      "before_sha256": "ce855ca66c9fb8c81de1d51cda871cefc65c066494638e3a9333a63f33ebf722",
+      "after_sha256": "11aa6b19b8e81518245fa7162a1b4b1a35fc5c55b88ec21095abe514b82d7047"
+    },
+    {
+      "file": "tests/contact_transform_smoke.gd",
+      "editable_accesses": 1,
+      "read_accesses": 0,
+      "before_sha256": "d44d76ef252d08f2e5a4f37c23c4a52a8259884f4b6a3916af29fa838d6bb570",
+      "after_sha256": "5f72811f0914c2e147ff5db7b28b964fa7979b48a6edb13385625c8f33cdfae2"
+    },
+    {
+      "file": "tests/contact_viewport_read.gd",
+      "editable_accesses": 0,
+      "read_accesses": 1,
+      "before_sha256": "6974a379ea369966163059a6130b2e9520e9b878574b29c3568938fcaac662e3",
+      "after_sha256": "13053e90aff72f35c2621cbc1420b6178aafdb99d33ad0e6fb06fe1edbce94b9"
+    },
+    {
+      "file": "tests/contact_viewport_smoke.gd",
+      "editable_accesses": 1,
+      "read_accesses": 1,
+      "before_sha256": "d1b0f26bc10c180b00c2663796201c081bd8e67e15a99d70c1bfd31ef135e1ce",
+      "after_sha256": "6a0d23a3585871db59186b31c8efa032140ff53948aeec5cc3c9099db1fa7825"
+    }
+  ],
+  "scope": "All12contact suites plus2component variants pass, including prior34check editor repair. Actual five-native packed/linked/recovery/lesson replay, exact independent paint bytes, movie checks and current viewport controls retained.",
+  "results": {
+    "contact-animation-verification.json": {
+      "checks": 44,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-animation\\1794452390388310300"
+    },
+    "contact-editor-verification.json": {
+      "checks": 34,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-editor\\1794452571053250900"
+    },
+    "contact-clipboard-verification.json": {
+      "checks": 27,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-clipboard\\1794452741288339000"
+    },
+    "contact-physics-verification.json": {
+      "checks": 48,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-physics\\1794452766024438100"
+    },
+    "contact-parent-verification.json": {
+      "checks": 20,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-parent\\1794452816134659300"
+    },
+    "contact-correction-verification.json": {
+      "checks": 36,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-correction\\1794452827592901500"
+    },
+    "contact-persistence-verification.json": {
+      "audio_onset_seconds": 1.0000416666666667,
+      "writer": {
+        "checks": 26,
+        "failures": 0,
+        "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-persistence\\1794452849372519600"
+      },
+      "readers": {
+        "linked": {
+          "checks": 8,
+          "failures": 0
+        },
+        "packed": {
+          "checks": 9,
+          "failures": 0
+        },
+        "recovery": {
+          "checks": 8,
+          "failures": 0
+        },
+        "lesson": {
+          "checks": 9,
+          "failures": 0
+        }
+      }
+    },
+    "contact-bindings-verification.json": {
+      "checks": 36,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-bindings\\1794452933128171300"
+    },
+    "contact-identity-verification.json": {
+      "checks": 76,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-identity\\1794452958277594500",
+      "native_reports": [
+        {
+          "checks": 16,
+          "failures": 0
+        },
+        {
+          "checks": 14,
+          "failures": 0
+        },
+        {
+          "checks": 14,
+          "failures": 0
+        },
+        {
+          "checks": 14,
+          "failures": 0
+        },
+        {
+          "checks": 14,
+          "failures": 0
+        }
+      ],
+      "reopen": {
+        "checks": 4,
+        "failures": 0
+      }
+    },
+    "contact-selection-verification.json": {
+      "checks": 67,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-selection\\1794453017678984000"
+    },
+    "contact-transform-verification.json": {
+      "checks": 129,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-transform\\1794453072511437800",
+      "native_reports": [
+        {
+          "checks": 25,
+          "failures": 0
+        },
+        {
+          "checks": 25,
+          "failures": 0
+        },
+        {
+          "checks": 25,
+          "failures": 0
+        },
+        {
+          "checks": 25,
+          "failures": 0
+        },
+        {
+          "checks": 25,
+          "failures": 0
+        }
+      ]
+    },
+    "contact-viewport-verification.json": {
+      "checks": 174,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\contact-viewport\\1794453143354958500",
+      "native_reports": [
+        {
+          "checks": 33,
+          "failures": 0
+        },
+        {
+          "checks": 33,
+          "failures": 0
+        },
+        {
+          "checks": 33,
+          "failures": 0
+        },
+        {
+          "checks": 33,
+          "failures": 0
+        },
+        {
+          "checks": 33,
+          "failures": 0
+        }
+      ],
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      }
+    },
+    "component-contact-clipboard-verification.json": {
+      "checks": 30,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\component-contact-clipboard\\1794452753587566600"
+    },
+    "component-contact-physics-verification.json": {
+      "checks": 50,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\component-contact-physics\\1794452788447567000"
+    }
+  },
+  "private_desktops": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_2cfdebe61f89417995224dd732890d66",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 26180,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 21.698
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_97768bb92d28452f908c4b6240e331e1",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 2520,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 24.679
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_333cced575184fa5bf4e76b1e49b80a9",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 12744,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 11.814
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_3495c04c51c848ccbc2c861b4f3e1071",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 24660,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 11.642
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_2f4fcc1ae20a44c7a9ab7d9ba8fe6697",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 24496,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 21.132
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_9fab44bc7b9d4cb09440424a70124c34",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 29032,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.419
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_676350b12a3f4115ac637565b1b021ae",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 30416,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 51.974
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_0d4b4139e85e419c8eed44f2c3466851",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 20916,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 6.55
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_cf91e8d64c5e44929eae0b89988c5125",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 29588,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.878
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_7267e03fbffd4024abaa9f8604f3e85f",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 31128,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 31.559
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_9c1ad1e03b2c43cfa25f13b8ca0b09a1",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 21564,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 26.987
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_7bf60fcd3739478ab2aed1f53b034bf9",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 27112,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 21.793
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_4510ef8280ac4c39951a5a7c6e3c0140",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 5556,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 54.363
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_98540e98f2a0427f8a581b4a861eb91f",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 31340,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 70.14
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_13a412c103b945c396f5f75e5bec58d4",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 25872,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 6.738
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_1cfafdb1139d4117ae56f2b0b3531c68",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 28436,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 70.967
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_1762c576e78347debb2776f049808531",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 15088,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 18.545
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_0f42a11ea1a34c549f7e25765177b69b",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 17404,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.853
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_54ee6aa1b3404e5788df8692aa6e2b05",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 27916,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.299
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_cefaba5ccf7349689e7cae2d3b3c6019",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 9400,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.491
+    }
+  ],
+  "app_source_changed": false,
+  "tolerances_changed": false,
+  "remaining": "Motion, movement-path and multi-audio fixture ports remain unverified until their own commands pass. Scoped remaining sequence continues. Full canonical aggregate and human/device/clean-install acceptance remain unpassed."
+}

@@ -1,0 +1,85 @@
+{
+  "format": "has_sfm_source_bone_binding_main_1",
+  "date": "2026-11-13",
+  "baseline_commit": "7477ed32dc5c43324783f76736164553bb4a79c5",
+  "source_context": "main_working_source_snapshot",
+  "status": "PASSED_SCOPED_CPU_NATIVE_APP_AND_COLD_REOPEN",
+  "profile": "Exact Junko hair MDL/default0.01905/standalone/no appearance/pinned SourceIO and Blender exporter only",
+  "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+  "changes": [
+    "Normal conversion retains a bounded inactive native-to-glTF crosswalk",
+    "Read-only HAS resolver checks actual importer IDs, skeleton indices and parents for69bones/49ruleowners",
+    "Simple loose-part review prioritizes two validated imported hair chains and explicitly offers existing joints",
+    "Review/cancel leaves source weights, authored scene and live physics unchanged"
+  ],
+  "cpu": {
+    "foundation": 167,
+    "jiggle": 66,
+    "crosswalk": 77,
+    "headless_bindings": 79,
+    "headless_helper_choices": 17,
+    "bootstrap": 2,
+    "resource_passed": 6,
+    "resource_explicit_skipped": 1
+  },
+  "native": {
+    "cases": 4,
+    "writer_static_checks": 117,
+    "reader_static_checks": 124,
+    "named_writer_checks": 194,
+    "named_reader_checks": 100,
+    "cold_opens": 8,
+    "base_exact_frame_joins": 16,
+    "extra_shape_frame_joins": 4,
+    "private_jobs": 5,
+    "preservation": {
+      "main_sources_and_head": true,
+      "approved_runtimes": true,
+      "manifest": true,
+      "original_families": true,
+      "owned_native_copies": true,
+      "snapshot_sources": true,
+      "conversion_metadata": true,
+      "saved_packages_and_linked_assets": true
+    },
+    "all_current_main_files": 4409,
+    "installed_exporter_noncache_sources": 120,
+    "junko_imported_bones": 69,
+    "native_rule_owners": 49,
+    "native_float32_joins": 1421,
+    "actual_nested_report_bytes": 159684,
+    "simple_eligible_native_chains": 2,
+    "actual_helper_checks": 24,
+    "native_simulation": false
+  },
+  "movie": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24/1",
+    "frames": 48,
+    "audio": "AAC",
+    "onset_seconds": 1.0000416666666667,
+    "rms_at_1_1s": 8487.65214677082
+  },
+  "actual_independent_audit_sha256": "a3143d1f748527e346cec3b7e93e7987b020875874742e3c41d419cf1876bf85",
+  "verification_sha256": "10ee4a984c9e54b1acf37d79d5013a10780abe98416b8350f3edf3ee37277c4b",
+  "authoritative_host_terminal_sha256": "4d321d81fa731d2ab2cd69340d309f7fcbb3c928dd2b8dd7e042503912d7ee78",
+  "evidence": "experiments/source_appearance/native_bindings_main_20261114",
+  "full_default": "NEXT_required; previous failed audio-device full remains FAILED",
+  "limitations": [
+    "Native Source dynamics/tip-axis/unit/fan/lifecycle solver work remains unimplemented",
+    "Other models and unsupported profiles keep prior export/helper behavior; no automatic physics or source-weight replacement",
+    "Native artist fidelity/human/device/install acceptance remain separate; formal55/62 and52/54 unchanged",
+    "Full native rest coordinates/fingerprints and private native/HAS/GLB/media remain local"
+  ],
+  "failures_preserved": [
+    "GDS attempt1 Variant inference plus bounded headless timeout",
+    "Attempts2-3 authored snapshot and wrong negative-zero field fixture defects; current fix uses pitch_damping",
+    "Independent probe proves parsing preserves signed zero; JSON writing normalizes it, so only zero-sign numeric comparison admits both while raw prefix/wire bits remain exact",
+    "Python candidate fixture and mock-call assertion failures retained separately; later77 pass does not erase them"
+  ],
+  "evidence_index_sha256": "f3cf7c165ded61e28e3dc909a66dce28f2d8b6f098bd9e2052614ca731038c3b",
+  "audit_supplement": "experiments/source_appearance/native_bindings_main_audit_20261114",
+  "audit_supplement_index_sha256": "b4e5bcd6f6c32cd932a714ba43b68f0bd28080144459c466c1804c909453af71"
+}

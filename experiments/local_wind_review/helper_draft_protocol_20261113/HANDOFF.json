@@ -1,0 +1,76 @@
+{
+  "format": "has_wind_helper_draft_protocol_handoff_1",
+  "status": "partial output-only candidate, frozen for review; not ported",
+  "phase": "helper-before-Apply protocol foundation only",
+  "baseline_context": "eb7c069af72220c26471e7ceaf8b8055c40e6268",
+  "candidate": "candidate/tools/wind_helper_preview.py",
+  "test": "tests/test_preview_protocol.py",
+  "tests": {
+    "cpu": 21,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "report": "cpu-tests.json",
+    "log": "cpu-tests.log",
+    "actual_current_builders_in_process": true,
+    "fixtures": "tiny self-authored geometry and VRM0/1-style declarations only"
+  },
+  "implemented": [
+    "Preview-only one/batch envelope with source identity and raw request bytes",
+    "Generation/nonce and hidden-only lifecycle; no install/Apply/Undo path",
+    "Current complete helper composer with retained node/TRS/parent/skin/inverse-bind/declaration proof",
+    "Request/actual-candidate-chain report association independent of list order",
+    "Full receipt byte hash in separate trusted completion token",
+    "Late/context/source/request/candidate/proof/report/path/completion rejection"
+  ],
+  "review": {
+    "independent_read_only": true,
+    "first_findings": [
+      "Editable receipt fields lacked a trusted completed-receipt hash",
+      "Reports were paired by list position without actual-chain validation"
+    ],
+    "bounded_fixes_and_negative_controls_added": true,
+    "reviewer_reread_no_new_blocker": true,
+    "reviewer_ran_no_programs": true
+  },
+  "not_implemented": [
+    "Owned worker process/exit0 trusted completion transport",
+    "GDScript Node-owned draft context/ticket and UI hosting",
+    "Non-freezing helper Open/Apply-live-physics refusal",
+    "Actual Godot import/binding snapshot completeness and source-check roundtrip",
+    "Derived group catalogue and original/body baseline transfer",
+    "Canvas/pointer/visibility/recovery/final-capture lifecycle wiring",
+    "Main-view simulation and all graphical/native acceptance"
+  ],
+  "trusted_boundary": "Completion must come from the owned successful worker result/pipe, never by rehashing the same editable receipt; no hostile-controller authentication claim",
+  "retained_failed_fixture": [
+    "cpu-shared-fixture-failure.json",
+    "cpu-shared-fixture-failure.log"
+  ],
+  "failure_reason": "Disconnected authored patch was tip-only, not a full shared linear-chain proposal; fixture corrected to all chain influences, no backend predicates relaxed",
+  "main_or_existing_prototype_modified": false,
+  "git_commands_by_this_phase2_task": false,
+  "godot_started": false,
+  "gpu_used": false,
+  "external_worker_started": false,
+  "blender_or_native_conversion_started": false,
+  "private_native_inputs_used": false,
+  "phase1_guards_and_canvas_cleanup_preserved": true,
+  "documents": [
+    "README.md",
+    "INTEGRATION_DESIGN.md"
+  ],
+  "source_dependencies": "source-input-identities.json",
+  "publication": "Compact indexed files only. Exclude all cpu-results generated GLBs/private synthetic jobs.",
+  "next_increment": "Read-only helper context and owned preview-purpose worker adapter, then actual hidden import/binding gates; renderer/GUI work only after canonical lease/source freeze release.",
+  "parent_later_context": {
+    "reported_by_parent": true,
+    "newer_head_to_preserve": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+    "scope": "Separate native-picking layout QA repair, no production change reported",
+    "canonical_folder": "output/canonical-owned-20261113T014241546",
+    "canonical_pid": 3028,
+    "canonical_process_creation_utc": "2026-11-13T06:42:41.5616553Z",
+    "main_head_gpu_freeze_continues": true
+  }
+}

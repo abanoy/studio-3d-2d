@@ -1,0 +1,12 @@
+{
+  "scope": "Only audit prose was clarified after an empty warning list; no actual report, source, check, receipt, artifact, or assertion changed.",
+  "before": {
+    "AUDIT.json": "17f89e39c47197d96549b423192dbd0c913aebb8053edea4d73a801cfe118c4f",
+    "README.md": "89a3e07e05118505795dda14ce3a625d4b77c535b9ec32c357778edb093227d6"
+  },
+  "after": {
+    "AUDIT.json": "8f2f5bef561eadafa3e0428a54e12d2db96146800d019b05fe689f4c2c0b2e8c",
+    "README.md": "4d3187b3fec6fef9681d841c811298eb7d9e0a9bd76c3433a8dc2201bda2d1aa"
+  },
+  "actual_executed_coordinator": "core14/coordinator/audit_and_packet.py remains the exact executed version"
+}

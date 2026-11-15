@@ -5,7 +5,7 @@ func wait_job() -> void:
 	await settled()
 func native_case(plan: Dictionary) -> Dictionary:
 	var start:=checks;var first:=failures;var actor:=setup(plan);var id:=arm(actor);var original: Dictionary=actor.data.duplicate(true)
-	app.mode.select(2);app.change_mode(2);app.set_advanced(false);app.world_selection.select_entity("actor");app.set_frame(10);app.pose_editor.frame_model();app.keys=[T.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)];var shots: Array=app.keys.duplicate(true);var history: int=app.history.size();var paint: PackedByteArray=app.layers[1].cels[0].image.get_data()
+	app.mode.select(2);app.change_mode(2);app.set_advanced(false);app.world_selection.select_entity("actor");app.set_frame(10);app.pose_editor.frame_model();app.keys=[T.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)];var shots: Array=app.keys.duplicate(true);var history: int=app.history.size();var paint: PackedByteArray=preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data()
 	var baseline:=[];var roots:=[]
 	for half in range(97):baseline.append(actor.sample(float(half)/2));roots.append(actor.sample_transform(float(half)/2))
 	var ui=app.pose_editor.motion;check(ui.button.is_visible_in_tree() and not ui.button.disabled,"motion control is available in Simple: "+plan.name)
@@ -45,7 +45,7 @@ func native_case(plan: Dictionary) -> Dictionary:
 	for half in range(97):off_exact=off_exact and actor.sample(float(half)/2)==baseline[half] and actor.sample_transform(float(half)/2)==roots[half]
 	check(not actor.motion_enabled() and off_exact,"saved Off restores original native pose and root motion exactly: "+plan.name)
 	app.undo();check(actor.data==enabled_data and actor.motion_enabled(),"Undo Off restores the assisted model: "+plan.name)
-	check(app.keys==shots and app.layers[1].cels[0].image.get_data()==paint,"native motion editing preserves explicit shots and independent paint: "+plan.name)
+	check(app.keys==shots and preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data()==paint,"native motion editing preserves explicit shots and independent paint: "+plan.name)
 	return {"name":plan.name,"bones":actor.order.size(),"checks":checks-start,"failures":failures-first,"foot_error":peak}
 func run() -> void:
 	var args:=OS.get_cmdline_user_args();folder=args[0];app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache");app.has_project.open_file(args[1]);await wait_job();var plans:=[];var hashes:={}
@@ -58,7 +58,7 @@ func run() -> void:
 	check(FileAccess.file_exists(path),"normal packed HAS saves assistance intent and editable controls")
 	var poses:=[]
 	for half in range(97):poses.append(JSON.stringify(actor.sample(float(half)/2),"",true,true).sha256_text())
-	var expected: Dictionary=World.portable(app.current_world());var layer_sha: String=app.layers[1].cels[0].image.get_data().hex_encode().sha256_text()
+	var expected: Dictionary=World.portable(app.current_world());var layer_sha: String=preload("res://src/drawing.gd").image(app.layers[1].cels[0]).get_data().hex_encode().sha256_text()
 	var reference: Image=await app.renderer.capture(app.keys,app.layers,10,true);reference.save_png(folder.path_join("saved-frame.png"));var error: String=await app.export_movie(folder)
 	check(error.is_empty() and reference.get_data()==Image.load_from_file(app.last_export_folder.path_join("frame_000011.png")).get_data(),"normal final-render assistance and editable cyan paint match the exported MP4 frame exactly")
 	var unchanged:=true

@@ -1,0 +1,173 @@
+{
+  "format": "has_hair_disable_restoration_1",
+  "date": "2026-11-12",
+  "base_commit": "08295464a063c63d0602475e59958528ee443785",
+  "cause": "Hair toggle off called body Freeze, persisting live spring pose as an authored draft/history command.",
+  "change": "Disable only secondary offsets, restore authored/current-frame pose, retain existing body solver and prevent cancelled setup from disposing its borrowed primary. Active Record keeps its existing explicit commit path.",
+  "counterfactual": {
+    "baseline": {
+      "source_sha256": "be9e5a9e7ce16129269ebcc7b26900bab798970ce80a62d955db32f5797e1744",
+      "exit": 1,
+      "result": {
+        "checks": 8,
+        "failures": 4,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/hair-disable/run_877016"
+      },
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0bc155e2f0e140adbb94d4d92d8dad0b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 1,
+        "child_pid": 20372,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.053
+      },
+      "failed_checks": [
+        "FAIL Hair & clothes off restores exact authored data and adds no freeze draft or history",
+        "FAIL Hair & clothes off restores the visible manual pose rather than rest or simulated sway",
+        "FAIL Hair & clothes off restores exact authored data and adds no freeze draft or history",
+        "FAIL Hair & clothes off restores the visible manual pose rather than rest or simulated sway"
+      ]
+    },
+    "candidate": {
+      "source_sha256": "84a3904ac85a0fbd2d04bf353710707ec73733622ceb3aa5f25023f59ca9329f",
+      "exit": 0,
+      "result": {
+        "checks": 8,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/hair-disable/run_781294"
+      },
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_977ca9fd510e43378b0c39b67de63200",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 5112,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.046
+      },
+      "failed_checks": []
+    }
+  },
+  "final_focus": {
+    "checks": 8,
+    "failures": 0
+  },
+  "fan_native_recording": {
+    "checks": 63,
+    "failures": 0,
+    "originals": {
+      "C:\\a\\dump\\AvatarSample_A.vrm": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3",
+      "C:\\a\\dump\\AvatarSample_Avrm0.vrm": "f7b4573b241b3e91c7c5f58bed342133a4e5f7e0c1125e1cedc49723ace9b288"
+    },
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "nb_read_frames": "48",
+      "r_frame_rate": "24/1",
+      "duration": "2.000000"
+    },
+    "metrics": {
+      "AvatarSample_A": {
+        "chains": 12,
+        "maximum_step_radians": 0.0261955708265305,
+        "raw_maximum_step_radians": 0.316468119621277
+      },
+      "AvatarSample_Avrm0": {
+        "chains": 12,
+        "maximum_step_radians": 0.0261955708265305,
+        "raw_maximum_step_radians": 0.387541145086288
+      },
+      "anchor_max_step": 0.00250005722045898,
+      "authored_step_radians": 0.00276213674806058
+    }
+  },
+  "import_physics": {
+    "checks": 41,
+    "failures": 0,
+    "native_models": 5,
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "48",
+      "duration": "2.000000"
+    }
+  },
+  "private_receipts": {
+    "fan": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_a638f82b00c548388bb3c7267ac3a31b",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 10964,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 34.894
+    },
+    "focused": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_a4dbbf68ef4f412a99091938e54cb5c4",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 17952,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.98
+    },
+    "import_physics": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_61cf6e2944f24548a78e27379b067451",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 23928,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 24.1
+    }
+  },
+  "working_source_sha256": {
+    "src/physics_editor.gd": "281ddee3e7a4ede8833e688e31d0320cbed685cf86f47f26b833490f13633160",
+    "src/secondary_live.gd": "a68115d26b62c6e0211aaef3bedc9ba2330742e23dd63092d303330eb944523e",
+    "tests/fan_motion_smoke.gd": "600d30acd5de4a10d67e81a4303254798a3840d08b08a54191f71f02a4437546",
+    "tests/hair_disable_smoke.gd": "a396bdafe11a099ab325c5afa39cf2b58e87ff6fee53f9d5aa80b919639e4290",
+    "tests/verify_hair_disable.py": "09ea17ca0dd2796d407be8cd950786dad29b3b382b95ebcb56df4669853b3f39",
+    "src/pose_editor.gd": "bbf6aeef9309bb89eb8b252ee1d1e0d439fa8d3d143da8856aadb6cf4f0afa21",
+    "src/canvas_view.gd": "9b1baf4d51f3c977450a7fa9ed719de1ef45e93091faef65282e55b24ddef859",
+    "src/secondary_helper_editor.gd": "8cf171687a18b112a31f25a4fd53923fe05ab30a27cb003061974fde7d31a006",
+    "tools/secondary_helpers.py": "94c6581c6af006b75001dd5046c59743b268532ec7d8edf6f8e99c4d730e7a77"
+  },
+  "test_contract_change": "The old fan test explicitly expected Hair off to freeze/add history. Replaced that expectation per owner correction, preserving ordinary fan Undo/Redo and body Freeze. Kept old-contract failure and original before observation.",
+  "initial_test_corrections": [
+    "Initial added fixture lacked airflow; final comparator uses an actual fan and non-rest draft plus recorded keys.",
+    "Old Freeze rebuilt the world instance; the oracle now re-resolves it before comparing visible bones. Initial harness errors retained in logs."
+  ],
+  "scope": "Configured Windows/private GPU software. Other independent source changes are present in working hashes; no complete aggregate or owner/native-fidelity/device approval is claimed.",
+  "pending": "Back hair and selection refinements, camera-facing ring, broader framing/lighting/Discovery and full canonical aggregate remain separate work.",
+  "acceptance_verified": 55,
+  "acceptance_total": 62
+}

@@ -1,0 +1,55 @@
+test_assignment_failure_sends_no_start_and_reaps_child (__main__.OwnedCPUWorker.test_assignment_failure_sends_no_start_and_reaps_child) ... ok
+test_buffered_valid_completion_then_hang_is_cancelled (__main__.OwnedCPUWorker.test_buffered_valid_completion_then_hang_is_cancelled) ... ok
+test_cancellation_uses_exact_current_owner_and_never_admits (__main__.OwnedCPUWorker.test_cancellation_uses_exact_current_owner_and_never_admits) ... ok
+test_context_change_cancels_owned_child (__main__.OwnedCPUWorker.test_context_change_cancels_owned_child) ... ok
+test_job_close_failure_refuses_admission_and_can_finish_cleanup (__main__.OwnedCPUWorker.test_job_close_failure_refuses_admission_and_can_finish_cleanup) ... ok
+test_late_old_generation_and_stale_cancel_do_not_affect_replacement (__main__.OwnedCPUWorker.test_late_old_generation_and_stale_cancel_do_not_affect_replacement) ... ERROR
+test_one_process_job_blocks_descendant_launch (__main__.OwnedCPUWorker.test_one_process_job_blocks_descendant_launch) ... ok
+test_python_fingerprint_drift_before_admission_is_refused (__main__.OwnedCPUWorker.test_python_fingerprint_drift_before_admission_is_refused) ... ok
+test_real_child_exit_pipe_identity_and_hidden_candidate (__main__.OwnedCPUWorker.test_real_child_exit_pipe_identity_and_hidden_candidate) ... ok
+test_receipt_change_after_worker_publication_is_refused (__main__.OwnedCPUWorker.test_receipt_change_after_worker_publication_is_refused) ... ok
+test_source_hash_drift_before_admission_is_refused (__main__.OwnedCPUWorker.test_source_hash_drift_before_admission_is_refused) ... ok
+test_source_stamp_change_after_worker_completion_is_refused (__main__.OwnedCPUWorker.test_source_stamp_change_after_worker_completion_is_refused) ... ok
+test_stdout_framing_identity_and_both_pipe_caps_fail_closed (__main__.OwnedCPUWorker.test_stdout_framing_identity_and_both_pipe_caps_fail_closed) ... ok
+test_timeout_of_gated_worker_closes_job (__main__.OwnedCPUWorker.test_timeout_of_gated_worker_closes_job) ... ok
+test_valid_completion_then_nonzero_exit_cannot_admit (__main__.OwnedCPUWorker.test_valid_completion_then_nonzero_exit_cannot_admit) ... ok
+
+======================================================================
+ERROR: test_late_old_generation_and_stale_cancel_do_not_affect_replacement (__main__.OwnedCPUWorker.test_late_old_generation_and_stale_cancel_do_not_affect_replacement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-prototype-20261113-next\tests\test_owned_worker.py", line 115, in test_late_old_generation_and_stale_cancel_do_not_affect_replacement
+    old_owner = self.adapter.start(self.token)
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-prototype-20261113-next\candidate\tools\wind_preview_owned.py", line 173, in start
+    self.process = subprocess.Popen(self.command(token['job']), cwd=token['job'],
+                   ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        creationflags=subprocess.CREATE_NO_WINDOW)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\subprocess.py", line 1036, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\subprocess.py", line 1548, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+NotADirectoryError: [WinError 267] The directory name is invalid
+
+----------------------------------------------------------------------
+Ran 15 tests in 5.952s
+
+FAILED (errors=1)

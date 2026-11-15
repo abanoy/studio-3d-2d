@@ -1,0 +1,39 @@
+{
+  "format": "has_wind_helper_owned_cpu_checkpoint_1",
+  "date": "2026-11-13",
+  "context_commit": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "main_runtime_ported": false,
+  "cpu_tests": 16,
+  "failures": 0,
+  "errors": 0,
+  "native_owned_receipts": 24,
+  "controller_model": "One Python controller plus one Job-owned Python CPU child; not Godot-hosted",
+  "index": {
+    "path": "experiments/local_wind_review/helper_draft_owned_worker_20261113/FILE_INDEX.json",
+    "bytes": 2651,
+    "sha256": "5d58310894369a2bc58fbc47bda72f1f9c8c4332e18e574b071ccab769fe6d32"
+  },
+  "handoff": {
+    "path": "experiments/local_wind_review/helper_draft_owned_worker_20261113/HANDOFF.json",
+    "bytes": 3127,
+    "sha256": "f179abbd7e373ba0e70f2c165549b50954ab021afb28de7aa84172ff125fa3ea"
+  },
+  "ownership_receipts": {
+    "path": "experiments/local_wind_review/helper_draft_owned_worker_20261113/cpu-owned-receipts.json",
+    "bytes": 57558,
+    "sha256": "18a963452331d502ec5896b44f3ce82473eff188712329a0637fa40b603de188"
+  },
+  "root_review": "Full adapter/worker read; foreign imported worker-path gap corrected with constructor negative control. Prepared lease invalidation remains future Node responsibility.",
+  "retained_failed_harness": "Initial14pass/1WinError267cwdlength error; shortened self-authored test directories, no OS policy change. Intermediate15pass receipt retained.",
+  "missing": [
+    "Godot-owned controller/pipe bridge",
+    "Abrupt controller death experiments",
+    "Actual hidden Godot binding snapshots",
+    "Helper-window wind/physics/visibility/recovery/Apply integration",
+    "Real native/graphics/artist acceptance"
+  ],
+  "previous_protocol_all_indexed_files_unchanged": true,
+  "gpu_or_converter_started": false,
+  "private_assets_uploaded": false,
+  "pickup": "Restore indexed relative layout under output/wind-helper-draft-prototype-20261113-next before running tests; keep current approved Python3.13/Godot4.6 boundaries. Do not run archived source directly."
+}

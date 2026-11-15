@@ -1,0 +1,55 @@
+{
+  "format": "has_independent_extra_native_run_audit_1",
+  "verdict": "GO",
+  "canonical_run": "sfm-extra-native-launch-20261114T013526736",
+  "source_context": "main_working_source_snapshot",
+  "source_commit": "eb089488c35346e448a73523f7681f83f9137dcf",
+  "errors": [],
+  "verified_counts": {
+    "main_source_files": 4136,
+    "runtime_executables": 6,
+    "sourceio_files": 574,
+    "original_family_files": 495,
+    "owned_native_files": 495,
+    "snapshot_files": 4137,
+    "packages_sidecars": 20,
+    "conversion_metadata": 24
+  },
+  "verification_sha256": "0563715c0616c8ec8abc743df5430abb0e19b4fa41b6cbd455104e9292044547",
+  "summary_sha256": "960d2de578b9e17b4aeb3cfc37a624888c712c87dc9ec6b0fedb837804ee18e7",
+  "static_writer": 117,
+  "static_readers": 124,
+  "named_writer": 102,
+  "named_readers": 52,
+  "named_categories": {
+    "jiggle": 58,
+    "shape": 96
+  },
+  "private_jobs": 5,
+  "cold_opens": 8,
+  "host_terminal_bound": true,
+  "exact_png_joins": 22,
+  "comparison": "CRC-valid same-header decompressed filtered RGBA8 PNG scanlines are byte-identical; sufficient for exact pixel equality",
+  "movie_onset_seconds": 1.0000416666666667,
+  "movie_rms": 8487.65214677082,
+  "native_jiggle_joins": [
+    {
+      "rules": 49,
+      "float32_joins": 1421,
+      "metadata_bytes": 67269,
+      "report_bytes": 137044,
+      "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+    },
+    {
+      "rules": 0,
+      "float32_joins": 0,
+      "metadata_bytes": 0,
+      "report_bytes": 8267,
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32"
+    }
+  ],
+  "all_eight_preservation_gates_verified": true,
+  "product_tests_or_runtimes_launched": false,
+  "process_enumeration_or_kills_performed": false,
+  "scope": "Independent read-only hashes, recorded process/result/closure bindings, exact PNG/audio verification and original binary MDL-prefix joins. Inactive metadata transport and standard derived shape UI; no native simulation, controller/shader/assembly/artist-fidelity or manual acceptance claim."
+}

@@ -28,7 +28,21 @@ def run(args, timeout=120, **kwargs):
 def main():
     output = ROOT / "output"
     output.mkdir(exist_ok=True)
+    spike = output / "canonical-spikes" / str(time.time_ns())
+    spike.mkdir(parents=True, exist_ok=False)
+    encoder_failures = spike / "failure-cases"
+    encoder_failures.mkdir()
     results = {}
+    native_fixture_log = run([sys.executable, '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_native_fixture_plans.py'])
+    (output / 'native-fixture-plans-unit.log').write_text(native_fixture_log, encoding='utf-8')
+    results['native_fixture_plans'] = {'exit': 0}
+    snapshot_log = run([sys.executable, 'tests/test_owner_review_snapshot.py'])
+    (output / 'owner-review-snapshot-unit.log').write_text(snapshot_log, encoding='utf-8')
+    results['owner_review_snapshot'] = {'exit': 0}
+    if os.name == 'nt':
+        metadata_log = run([sys.executable, '-u', 'tests/verify_private_metadata_windows.py'])
+        (output / 'private-metadata-windows-suite.log').write_text(metadata_log, encoding='utf-8')
+        results['private_metadata_windows'] = json.loads((output / 'private-metadata-windows-verification.json').read_bytes())
     krita_inventory_log = run([sys.executable, 'tests/test_krita_assets.py'])
     (output / 'krita-inventory-unit.log').write_text(krita_inventory_log, encoding='utf-8')
     results['krita_inventory'] = {'exit': 0}
@@ -71,7 +85,8 @@ def main():
     tests = [("unit", "tests/unit.gd", True, "UNIT 24 checks; failures=0"),
              ("motion_parts", "tests/motion_parts_unit.gd", True, 'MOTION_PARTS {"checks":40,"failures":0}'),
              ("motion_helper_edits", "tests/motion_helper_edits_unit.gd", True, 'MOTION_HELPER_EDITS_UNIT {"checks":16,"failures":0}'),
-             ("opaque_order", "tests/opaque_order_unit.gd", True, 'OPAQUE_ORDER {"checks":6,"failures":0}'),
+             ("opaque_order", "tests/opaque_order_unit.gd", True, 'OPAQUE_ORDER {"checks":9,"failures":0}'),
+             ("required_extensions", "tests/required_extensions_unit.gd", True, 'REQUIRED_EXTENSIONS {"checks":9,"failures":0}'),
              ("contact_bend", "tests/contact_bend_unit.gd", True, 'CONTACT_BEND {"checks":16,"failures":0}'),
              ("spikes", "tests/spikes.gd", False, "SPIKES failures=0"),
              ("editor", None, False, '"failures":0'),
@@ -104,6 +119,8 @@ def main():
              ("physics_recording_unit", "tests/physics_recording_unit.gd", True, "PHYSICS_RECORDING_UNIT "),
              ("physics_recording", "tests/physics_recording_smoke.gd", False, "PHYSICS_RECORDING ")]
     launch_args = {
+        "spikes": ["--", str(spike)],
+        "export_failures": ["--", str(encoder_failures), str(spike)],
         "editor": ["--", "--smoke"],
         "ui": ["--", "--ui-smoke"],
         "audio_editor": ["--", "--audio-smoke"],
@@ -129,7 +146,121 @@ def main():
     workspace_log = run([sys.executable, '-u', 'tests/verify_workspace_controls.py'], timeout=310)
     (output / 'workspace-controls-suite.log').write_text(workspace_log, encoding='utf-8')
     results['workspace_controls'] = json.loads((output / 'workspace-controls-verification.json').read_text(encoding='utf-8'))
+    run([sys.executable, '-u', 'tests/verify_workspace_resize.py'], timeout=310)
+    results['workspace_resize'] = json.loads((output / 'workspace-resize-verification.json').read_text(encoding='utf-8'))
+    run([sys.executable, '-u', 'tests/verify_workspace_docking.py'], timeout=350)
+    results['workspace_docking'] = json.loads((output / 'workspace-docking-verification.json').read_text(encoding='utf-8'))
+    run([sys.executable, '-u', 'tests/verify_workspace_nested.py'], timeout=350)
+    results['workspace_nested'] = json.loads((output / 'workspace-nested-verification.json').read_text(encoding='utf-8'))
+    rotation_log = run([sys.executable, '-u', 'tests/verify_rotation_gizmo.py'], timeout=160)
+    (output / 'rotation-gizmo-suite.log').write_text(rotation_log, encoding='utf-8')
+    results['rotation_gizmo'] = json.loads((output / 'rotation-gizmo-verification.json').read_bytes())
+    scene_view_log = run([sys.executable, '-u', 'tests/verify_scene_view.py'], timeout=300)
+    (output / 'scene-view-suite.log').write_text(scene_view_log, encoding='utf-8')
+    results['scene_view'] = json.loads((output / 'scene-view-verification.json').read_bytes())
+    readback_log = run([sys.executable, '-u', 'tests/verify_native_readback_lifecycle.py'], timeout=350)
+    (output / 'native-readback-lifecycle-suite.log').write_text(readback_log, encoding='utf-8')
+    readback_result = json.loads((output / 'native-readback-lifecycle-latest.json').read_bytes())
+    results['native_readback_lifecycle'] = {k: readback_result[k] for k in ['revision','source_mode','folder','exit','result','unchanged_source','receipt']}
+    pick_teardown_log = run([sys.executable, '-u', 'tests/verify_world_selection_teardown.py'], timeout=180)
+    (output / 'world-selection-teardown-suite.log').write_text(pick_teardown_log, encoding='utf-8')
+    pick_teardown_result = json.loads((output / 'world-selection-teardown-latest.json').read_bytes())
+    results['world_selection_teardown'] = {k: pick_teardown_result[k] for k in ['revision','source_mode','folder','result','unchanged_source','process']}
+    run([sys.executable, '-u', 'tests/verify_fan_flutter.py'], timeout=250)
+    results['fan_flutter'] = json.loads((output / 'fan-flutter-verification.json').read_text(encoding='utf-8'))
+    wind_started = time.time_ns()
+    wind_log = run([sys.executable, '-u', 'tests/verify_wind_review.py', '--mode', 'graphical', '--lease-confirmed', '--allow-checkout-eol'], timeout=2600)
+    (output / 'wind-review-suite.log').write_text(wind_log, encoding='utf-8')
+    wind_lines = [line[len('WIND_REVIEW_MAIN '):] for line in wind_log.splitlines() if line.startswith('WIND_REVIEW_MAIN ')]
+    assert len(wind_lines) == 1, wind_log
+    wind_status = json.loads(wind_lines[0])
+    wind_path = Path(wind_status['verification']).resolve(strict=True)
+    assert wind_path.is_relative_to((output / 'wind-review').resolve()) and wind_path.stat().st_mtime_ns >= wind_started, wind_status
+    wind_result = json.loads(wind_path.read_bytes())
+    assert wind_result['mode'] == 'graphical' and wind_result['gpu_used'] is True and wind_result['passed'] is True, wind_result
+    assert [case['mode'] for case in wind_result['results']] == ['procedural', 'vrm0', 'vrm1', 'backhair', 'lifecycle', 'primary'] and all(case['passed'] for case in wind_result['results']), wind_result
+    assert wind_result['all_functional_sources_hash_size_mtime_unchanged'] and wind_result['native_inputs_checked'] and wind_result['native_prepared_inputs_unchanged'], wind_result
+    results['wind_review'] = {key: wind_result[key] for key in ['mode', 'passed', 'folder', 'revision_before', 'results', 'gpu_used', 'all_functional_sources_hash_size_mtime_unchanged', 'native_prepared_inputs_unchanged']}
+    pending_driver_log = run([sys.executable, '-B', 'tests/test_helper_preview_driver.py'], timeout=120)
+    (output / 'helper-preview-driver-unit.log').write_text(pending_driver_log, encoding='utf-8')
+    results['helper_preview_driver'] = {'exit': 0}
+    for helper_mode, expected_cases, expected_total in [
+        ('cpu', [('transport', 11), ('adapter', 128), ('host', 69)], 208),
+        ('graphical', [('focused', 221), ('peers', 45)], 266),
+    ]:
+        helper_started = time.time_ns()
+        helper_args = [sys.executable, '-u', 'tests/verify_helper_preview.py', '--mode', helper_mode, '--allow-checkout-eol']
+        if helper_mode == 'graphical': helper_args.append('--lease-confirmed')
+        pending_log = run(helper_args, timeout=750)
+        (output / ('helper-preview-' + helper_mode + '-suite.log')).write_text(pending_log, encoding='utf-8')
+        pending_lines = [line[len('HELPER_PREVIEW_MAIN '):] for line in pending_log.splitlines() if line.startswith('HELPER_PREVIEW_MAIN ')]
+        assert len(pending_lines) == 1, pending_log
+        pending_status = json.loads(pending_lines[0])
+        pending_path = Path(pending_status['verification']).resolve(strict=True)
+        assert pending_path.name == 'verification.json' and pending_path.is_relative_to((output / 'helper-preview').resolve()) and pending_path.stat().st_mtime_ns >= helper_started, pending_status
+        pending_result = json.loads(pending_path.read_bytes())
+        assert pending_status['passed'] is True and pending_result['format'] == 'has_helper_preview_main_verification_1' and pending_result['passed'] is True, pending_result
+        assert pending_result['mode'] == helper_mode and pending_result['source_context'] == 'main_source_snapshot' and pending_result['overlay_files'] == 0, pending_result
+        assert Path(pending_result['main_root']).resolve() == ROOT.resolve() and Path(pending_result['actual_res_root']).resolve() == pending_path.parent / 'Studio', pending_result
+        assert pending_result['native_requested'] is False and pending_result['native_inputs_checked'] is False and pending_result['native_fidelity'] is False, pending_result
+        assert [(case['label'], case['checks']) for case in pending_result['results']] == expected_cases and pending_result['checks'] == expected_total and all(case['passed'] is True for case in pending_result['results']), pending_result
+        assert set(pending_result['preservation']) == {'main_sources', 'runtimes', 'head', 'native_originals', 'staged_native_inputs', 'published_requests', 'snapshot_sources', 'snapshot_extras', 'fixtures'} and all(value is True for value in pending_result['preservation'].values()), pending_result
+        assert pending_result['gpu_used'] is (helper_mode == 'graphical'), pending_result
+        if helper_mode == 'graphical': assert all(case['clean_private_receipt'] is True for case in pending_result['results']), pending_result
+        results['helper_preview_' + helper_mode] = pending_result
+    print('PASS pending helper wind before Apply, temporary group checks, popup Escape and exact source restoration')
+    manual_folder = spike / 'has-background'
+    manual_log = run([sys.executable, '-u', 'tests/verify_has_background_save.py', '--output', str(manual_folder)], timeout=600)
+    (output / 'has-background-suite.log').write_text(manual_log, encoding='utf-8')
+    manual_result = json.loads((manual_folder / 'verification.json').read_bytes())
+    assert set(manual_result['reports']) == {'domain', 'ordering', 'test_has_project.py', 'test_has_save_faults.py', 'writer', 'reader'} and all(row['checks'] > 0 and row['failures'] == 0 for row in manual_result['reports'].values()), manual_result
+    assert manual_result['reports']['ordering']['checks'] == 32 and manual_result['reports']['writer']['checks'] == 20, manual_result
+    assert manual_result['frozen_functional_sources'] and manual_result['manual_files_unchanged_in_reader'] and manual_result['owned_source_and_writer_cache_offline'], manual_result
+    assert len(manual_result['private_receipts']) == 2, manual_result
+    for receipt_name in manual_result['private_receipts']:
+        receipt = json.loads(Path(receipt_name).read_bytes())
+        assert receipt['exit'] == 0 and receipt['child_desktop_confirmed'] and not receipt['foreground_child_observed'] and receipt['job_closed'] and receipt['desktop_closed'], receipt
+    results['has_background_save'] = {key: manual_result[key] for key in ['reports', 'manual_files_unchanged_in_reader', 'owned_source_and_writer_cache_offline', 'frozen_functional_sources', 'private_receipts', 'scope']}
+    print('PASS captured snapshot launch order, live save frames, failed thread startup, cancellation and offline cold reads')
     print('PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text')
+
+    source_choice_started = time.time_ns()
+    source_choice_folder = spike / 'source-choices'
+    source_choice_log = run([sys.executable, '-B', 'tests/verify_source_choice_foundation.py', '--output', str(source_choice_folder)], timeout=350)
+    (output / 'source-choice-foundation-suite.log').write_text(source_choice_log, encoding='utf-8')
+    source_choice_path = source_choice_folder / 'verification.json'
+    source_choice_result = json.loads(source_choice_path.read_bytes())
+    assert source_choice_path.stat().st_mtime_ns >= source_choice_started and source_choice_result['format'] == 'has_source_choice_foundation_1' and source_choice_result['passed'] is True and source_choice_result['checks'] == 167 and source_choice_result['source_unchanged'] is True, source_choice_result
+    assert source_choice_result['native_conversion'] is False, source_choice_result
+    results['source_choice_foundation'] = source_choice_result
+    print('PASS Source skin/part identities, default omission, all-hidden refusal, async controls and owned metadata cleanup')
+
+    if os.name == 'nt':
+        owner_started = time.time_ns()
+        owner_folder = spike / 'source-import-owner'
+        owner_log = run([sys.executable, '-B', 'tests/verify_source_import_owner.py', '--output', str(owner_folder)], timeout=60)
+        (output / 'source-import-owner-suite.log').write_text(owner_log, encoding='utf-8')
+        owner_path = owner_folder / 'verification.json'
+        owner_result = json.loads(owner_path.read_bytes())
+        assert owner_path.stat().st_mtime_ns >= owner_started and owner_result['passed'] and owner_result['source_unchanged'], owner_result
+        assert owner_result['headless'] and not owner_result['native_conversion'] and owner_result['result']['checks'] == 53 and owner_result['result']['failures'] == 0, owner_result
+        results['source_import_owner'] = owner_result
+        print('PASS completed import handle release, refusal/cancel, negative exit and sole-creator boundaries')
+    else:
+        results['source_import_owner'] = {'skipped':True, 'reason':'Pinned Windows process-map control; no portable implementation claim.'}
+
+    placement_started = time.time_ns()
+    placement_folder = spike / 'import-placement'
+    placement_log = run([sys.executable, '-u', 'tests/verify_import_placement.py', '--output', str(placement_folder)], timeout=240)
+    (output / 'import-placement-suite.log').write_text(placement_log, encoding='utf-8')
+    placement_path = placement_folder / 'verification.json'
+    placement_result = json.loads(placement_path.read_bytes())
+    assert placement_path.stat().st_mtime_ns >= placement_started and placement_result['failures'] == 0 and placement_result['checks'] >= 40, placement_result
+    assert placement_result['headless_bounds'] == placement_result['bounds'] == {'checks': 20, 'failures': 0, 'thin_planar_actual_plan': True}, placement_result
+    assert placement_result['source_sha256'] and placement_result['video'] == {'codec': 'h264', 'size': [1920, 1080], 'fps': '24/1', 'frames': 48, 'duration': '2.000000'}, placement_result
+    if os.name == 'nt': assert len(placement_result['private_receipts']) == 1, placement_result
+    results['import_placement'] = placement_result
+    print('PASS normal and thin/planar placement, occupied-space fallback, Undo/HAS and preview/movie agreement')
 
     shortcuts_log = run([sys.executable, '-u', 'tests/verify_shortcuts.py'], timeout=500)
     (output / 'shortcuts-suite.log').write_text(shortcuts_log, encoding='utf-8')
@@ -146,6 +277,12 @@ def main():
     helper_log = run([sys.executable, '-u', 'tests/verify_secondary_helpers.py'], timeout=600)
     (output / 'secondary-helpers-suite.log').write_text(helper_log, encoding='utf-8')
     results['secondary_helpers'] = json.loads((output / 'secondary-helpers-verification.json').read_text(encoding='utf-8'))
+    picking_log = run([sys.executable, '-u', 'tests/verify_secondary_picking.py'], timeout=240)
+    (output / 'secondary-picking-suite.log').write_text(picking_log, encoding='utf-8')
+    results['secondary_picking'] = {'exit': 0}
+    batch_log = run([sys.executable, '-u', 'tests/verify_secondary_batch.py'], timeout=350)
+    (output / 'secondary-batch-suite.log').write_text(batch_log, encoding='utf-8')
+    results['secondary_batch'] = {'exit': 0}
     print('PASS reviewed weighted helpers, native bindings, HAS and movie')
     morph_log = run([sys.executable, '-u', 'tests/verify_helper_morphs.py'])
     (output / 'helper-morphs-suite.log').write_text(morph_log, encoding='utf-8')
@@ -367,22 +504,34 @@ def main():
     (output / 'first-movie-suite.log').write_text(first_log, encoding='utf-8')
     results['first_movie'] = json.loads((output / 'first-movie-verification.json').read_text(encoding='utf-8'))
     print('PASS beginner import-to-movie course, live physics, visual hints, optional Save and actual MP4 completion')
+    verify_media(output, spike, results)
+    (output / "verification.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
+    print(json.dumps(results, indent=2))
+
+
+def verify_media(output, spike, results):
+    """Check this run's fresh spike fixtures and the supplied workflow reports."""
     ffmpeg = os.environ.get("HYBRID_FFMPEG", shutil.which("ffmpeg") or r"C:\Program Files\ffmpeg\bin\ffmpeg.exe")
     ffprobe = str(Path(ffmpeg).with_name("ffprobe.exe" if os.name == "nt" else "ffprobe"))
     # Spike B fixture: 48kHz, exact silence until frame 24, then a 0.2s 1kHz tone.
-    spike = output / "spikes"
+    tone_folder = spike / "tone"
+    tone_folder.mkdir(exist_ok=False)
+    for frame in sorted(spike.glob("frame_*.png")):
+        shutil.copy2(frame, tone_folder / frame.name)
+    assert len(list(tone_folder.glob("frame_*.png"))) == 48
     samples = array.array("h", (int(16000 * math.sin(2 * math.pi * 1000 * n / 48000))
                                if 48000 <= n < 57600 else 0 for n in range(96000)))
     if sys.byteorder != "little":
         samples.byteswap()
-    tone = spike / "known tone.wav"
+    tone = tone_folder / "known tone.wav"
     with wave.open(str(tone), "wb") as wav:
         wav.setparams((1, 2, 48000, 0, "NONE", "not compressed"))
         wav.writeframes(samples.tobytes())
     # Also exercises the application's encoder adapter with audio, independently of editor Stage 2.
-    run(command("tests/audio_spike.gd"))
+    run(command("tests/audio_spike.gd", extra=["--", str(tone_folder)]))
     for name, movie in [("silent", Path(json.loads((output / "editor-smoke/result.json").read_text())["export"]) / "movie.mp4"),
-                        ("tone", spike / "movie.mp4"),
+                        ("spike_silent", spike / "movie.mp4"),
+                        ("tone", tone_folder / "movie.mp4"),
                         ("editor_audio", Path(json.loads((output / "audio-editor/result.json").read_text())["export"]) / "movie.mp4"),
                         ("autokey", Path(json.loads((output / "autokey-result.json").read_text())["movie"])),
                         ("new_scene", Path(json.loads((output / "new-scene-result.json").read_text())["movie"])),
@@ -405,11 +554,12 @@ def main():
         assert video["width"] == 1920 and video["height"] == 1080 and video["r_frame_rate"] == "24/1"
         assert abs(float(metadata["format"]["duration"]) - 2) < 0.01
         if name in ("tone", "editor_audio", "world_workflow", "animation_clips", "visibility", "animated_channels", "limb_ik", "physics_props", "physics_recording"):
-            assert any(s["codec_name"] == "aac" for s in metadata["streams"])
+            assert any(s["codec_name"] == "aac" for s in metadata["streams"]), (name, "expected AAC audio")
         else:
-            assert not any(s["codec_type"] == "audio" for s in metadata["streams"])
+            assert not any(s["codec_type"] == "audio" for s in metadata["streams"]), (name, "expected silent movie")
         (output / f"{name}-ffprobe.json").write_text(json.dumps(metadata, indent=2))
         results[name + "_video"] = {"frames": 48, "fps": "24/1", "duration": metadata["format"]["duration"]}
+        print("PASS encoded movie:", name)
     pose_report = json.loads((output / "pose-smoke/result.json").read_text(encoding="utf-8"))
     for index, movie in enumerate(pose_report["movies"]):
         metadata = json.loads(run([ffprobe, "-v", "error", "-count_frames", "-show_streams", "-show_format", "-of", "json", movie]))
@@ -420,8 +570,8 @@ def main():
         results[f"posed_model_video_{index}"] = {"frames": 48, "fps": "24/1", "duration": metadata["format"]["duration"]}
     results["pose_checks"] = pose_report["checks"]
     results["actual_mmd_tested"] = pose_report["actual_mmd_tested"]
-    decoded = spike / "decoded.wav"
-    run([ffmpeg, "-v", "error", "-y", "-i", str(spike / "movie.mp4"), "-vn", "-c:a", "pcm_s16le", str(decoded)])
+    decoded = tone_folder / "decoded.wav"
+    run([ffmpeg, "-v", "error", "-y", "-i", str(tone_folder / "movie.mp4"), "-vn", "-c:a", "pcm_s16le", str(decoded)])
     with wave.open(str(decoded), "rb") as wav:
         pcm = array.array("h", wav.readframes(wav.getnframes()))
         if sys.byteorder != "little": pcm.byteswap()
@@ -451,8 +601,8 @@ def main():
                                "audio_driver": editor_report["audio_driver"]}
     results["representative_png_sha256"] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
                                            for p in [spike / "frame_000001.png", spike / "frame_000025.png", spike / "frame_000048.png"]}
-    (output / "verification.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
-    print(json.dumps(results, indent=2))
+    results["spike_fixture"] = {"folder": str(spike), "tone_folder": str(tone_folder),
+                                "silent_movie": str(spike / "movie.mp4"), "tone_movie": str(tone_folder / "movie.mp4")}
 
 
 if __name__ == "__main__":

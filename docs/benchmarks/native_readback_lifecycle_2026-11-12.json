@@ -1,0 +1,1108 @@
+{
+  "format": "has_native_readback_lifecycle_2",
+  "date": "2026-11-12",
+  "problem": "Pending native readback waits could outlive detached/freed owners: body checks passed but engine teardown leaked FunctionStates/StringNames or crashed 0xC0000005.",
+  "final_fix": "A RefCounted NativeFrameNotification owns ready; renderer exposes it as a Signal property. Dispatcher, capture and exit keep strong local references, so a resumed caller can immediately free Studio while signal emission remains valid. Teardown marks closing and clears counters before notifying, with no renderer access after emission.",
+  "change_scope": {
+    "runtime": [
+      "src/app.gd",
+      "src/renderer.gd"
+    ],
+    "tests": [
+      "tests/native_readback_lifecycle_smoke.gd",
+      "tests/verify_native_readback_lifecycle.py",
+      "tests/scene_view_smoke.gd"
+    ],
+    "critical_source_sha256": {
+      "src/app.gd": "101195638a0915dd83d7d77969e1627ca04df163cfe52c41837f75d0c3779b5b",
+      "src/renderer.gd": "06306b032ad2db5fe18c3a542cb1301f1d9fc2647c1e72f7b47d104c1e6b3346",
+      "tests/native_readback_lifecycle_smoke.gd": "f8d9f73f5d823f4cb4431968bed96892e528d3b61aeaad3418b7e951247c5381",
+      "tests/verify_native_readback_lifecycle.py": "dd4b6065b78c216e996334d1a46dbe1d745a905f98d6c3c8abc1f05edd419727",
+      "tests/scene_view_smoke.gd": "6e221bfce96ebd878ddbdc4c6ef8b3f8c237e76e053bbedafbc6b354fed4eeea"
+    },
+    "snapshot_context": {
+      "source_mode": "working_tree",
+      "revision_label": "3efe01a754903fc6faa4b52607f5da6e4f19218e",
+      "runtime_files": 188,
+      "runtime_manifest_sha256": "206fc0d229da41c7db3ced5d0c9a4009879c8e7034bdb883cc1cd76f94b44301",
+      "note": "The frozen working-source context includes an unpublished batch helper. Only app/renderer/lifecycle tests and the existing scene test API port are this increment. Present whole-tree equality and batch-feature validation are not claimed."
+    }
+  },
+  "final_v4": {
+    "verification": {
+      "path": "output/readback-v4-main/1794520812167354300/lifecycle-verification.json",
+      "sha256": "8ed6e52f98355d331c20ca3ec73af2b6913df40b1b1b24765f84312223ccbbe5"
+    },
+    "result": {
+      "cases": [
+        {
+          "case": "focus-free",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "focus-queue_free",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "focus-remove_from_tree",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "setup-free",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "setup-queue_free",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "setup-remove_from_tree",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "renderer-free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "renderer-queue_free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "capture-free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "capture-queue_free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "capture-remove_from_tree",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "capture-close-app-focus",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "capture-close-app-setup",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        }
+      ],
+      "checks": 58,
+      "failures": 0,
+      "initial_nodes": 1,
+      "initial_orphans": 0,
+      "positive_native_size": "(1920, 1080)"
+    },
+    "exit": 0,
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_ced95fb1ee484ba5af8b0e84ad4d8463",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 24436,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.578
+    },
+    "normal_startup": {
+      "empty": true,
+      "home_visible": true,
+      "profile": "C:/Users/noble/AppData/Roaming/HAS Readback Safety 1794520813183738000",
+      "recovery": {
+        "attempts": [],
+        "cancelled": false,
+        "restored": false
+      },
+      "simple": true
+    },
+    "startup_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_29beee4062164b3d944db1d520da4f23",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 11020,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.023
+    },
+    "source_unchanged_in_owned_snapshot": true,
+    "clean_no_objectdb_or_unclaimed_string_names": true
+  },
+  "scene_regression": {
+    "verification": {
+      "path": "output/readback-v4-main/1794520812167354300/scene-verification.json",
+      "sha256": "79cbe342f4365cad3d46a0302f93205ffe26f315d5cbec10653aea48369b980c"
+    },
+    "unit": {
+      "cases": 144,
+      "checks": 12830,
+      "failures": 0,
+      "maximum_projection_error_pixels": 0.00013647876039613038,
+      "maximum_ray_error": 2.327635826304686e-07,
+      "outside_native_samples": 4860,
+      "world_samples": 34992
+    },
+    "app": {
+      "cases": [
+        {
+          "extent": "(1200.0, 360.0)",
+          "green_outline_pixels": 612,
+          "guide_pixels": 7920,
+          "outside_guide_pixels": 0,
+          "roll": 0.0
+        },
+        {
+          "extent": "(1200.0, 360.0)",
+          "green_outline_pixels": 700,
+          "guide_pixels": 7920,
+          "outside_guide_pixels": 0,
+          "roll": 0.4
+        },
+        {
+          "extent": "(480.0, 760.0)",
+          "green_outline_pixels": 502,
+          "guide_pixels": 6856,
+          "outside_guide_pixels": 0,
+          "roll": 0.0
+        },
+        {
+          "extent": "(480.0, 760.0)",
+          "green_outline_pixels": 604,
+          "guide_pixels": 6856,
+          "outside_guide_pixels": 0,
+          "roll": 0.4
+        }
+      ],
+      "checks": 102,
+      "failures": 0,
+      "native_size": "(1920, 1080)",
+      "source_sha256": "62fe84028876da5e1d02d49d4fbb6291c37322a855f4b7ffa6360952a1d3c0ac",
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_c3536cc16e664b4fac907415204c0cf2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 2412,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.824
+      },
+      "private_receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\scene_view_smoke_bdf762d5e5944fb6bfa556d913a64667.json"
+    }
+  },
+  "later_whole_helper_regression": {
+    "checks": {
+      "main": 39,
+      "native": 14,
+      "multi": 59,
+      "patch": 35
+    },
+    "failures": 0,
+    "context": {
+      "path": "output/secondary-helpers/run_1794520935817114700/source-context.json",
+      "sha256": "bd2cf9d96b94b02a9b59a470801f6d1421cc4f6af42ecb5bf750ba4812a28311"
+    },
+    "log": {
+      "path": "output/secondary-batch-final-original-helpers-20261112.log",
+      "sha256": "14e501bc0fc88de8cc8c91b7333776dba89b9240d40d6831620380d3f839ed94"
+    },
+    "private_receipts": {
+      "secondary_helpers_smoke": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_helpers_smoke_605c90e47c0c47abb81149f8150d0803.json",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_324907d87f39404ab38ab50dd4d0a604",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 6888,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 16.18
+        }
+      },
+      "secondary_helpers_native": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_helpers_native_adcbac039e5b4fd1bcf67648a5b5c4f5.json",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_ce1837914a304260959df392e92533db",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 24444,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 6.292
+        }
+      },
+      "secondary_helpers_multi": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_helpers_multi_d13f8092145b477b8d683a089086fe53.json",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_8a8f1f8c8c66475cb47f2272ee70e627",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 17280,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 20.705
+        }
+      },
+      "secondary_helpers_patch": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_helpers_patch_22660d1ad620474c8c4a1d9365597130.json",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_ecc323888b59467d858ccb0e2fd819f7",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 19160,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 16.909
+        }
+      }
+    },
+    "note": "Final renderer is identical; the separate unpublished helper preview-valid fix resolves the earlier disconnected-patch failure. The old wrapper preserves every original assertion; its own source-freeze limitation is recorded in source-context."
+  },
+  "v3_emitter_failure": {
+    "status": "scoped50 passed but failed unchanged broader helper39 teardown",
+    "original_failure_log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-batch-original-helpers-20261112.log",
+    "original_audit": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-batch\\1794520217055447700\\original-helper-teardown-failure.json",
+    "superseded_handoff": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-readback-v3-scoped-handoff.json"
+  },
+  "v3_exact_immediate_free_counterfactuals": [
+    {
+      "verification": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-readback-lifecycle\\1794520506647727000\\verification.json",
+      "runtime_overlay": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\readback-node-emitter-v3",
+      "oracle_sha256": "f8d9f73f5d823f4cb4431968bed96892e528d3b61aeaad3418b7e951247c5381",
+      "body_checks": 10,
+      "body_failures": 0,
+      "emitter_errors": 2,
+      "child_exit": 0,
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_51362bbfadfc4b9d8b9020c97a3cafe7",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12764,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.704
+      }
+    }
+  ],
+  "earlier_scoped_v3_and_baseline_evidence": {
+    "format": "has_native_readback_lifecycle_1",
+    "date": "2026-11-12",
+    "problem": "Pending native readback waits could outlive detached/freed owners: body checks passed but engine teardown leaked FunctionStates/StringNames or crashed 0xC0000005.",
+    "fix": "Use owner-bound one-shot draw notification and begin/finish scopes; recovery queues callbacks, capture awaits its own renderer signal. Renderer exit marks closing, resolves pending waits before destruction, clears counters; stale/closed recovery never reads pixels and closed capture returns null.",
+    "change_scope": {
+      "runtime": [
+        "src/app.gd",
+        "src/renderer.gd"
+      ],
+      "tests": [
+        "tests/native_readback_lifecycle_smoke.gd",
+        "tests/verify_native_readback_lifecycle.py"
+      ],
+      "critical_source_sha256": {
+        "src/app.gd": "101195638a0915dd83d7d77969e1627ca04df163cfe52c41837f75d0c3779b5b",
+        "src/renderer.gd": "7982a52ea30bbbd57d31e182ae23050da7442766b123a5838029752edade0979",
+        "tests/native_readback_lifecycle_smoke.gd": "19bee643871fc8095ff7c5e4abedd97f79a6f78105677f698e05eaef26d80240",
+        "tests/verify_native_readback_lifecycle.py": "e0077bf54ef027629009ed0da2b4a1d632e2834c9411f96fb9d7bdb7c21b7caa"
+      },
+      "frozen_snapshot_context": {
+        "source_mode": "working_tree",
+        "revision_label": "297ac619f0b05f897959e9f38d5b36493b6b9594",
+        "runtime_files": 188,
+        "canonical_runtime_manifest_sha256": "5411316c442bee27e52094ede9afcadf223fadd6cf8cf8dc2a306ac88eb80d81",
+        "unpublished_batch_helper_context": {
+          "src/secondary_helper_editor.gd": "9c73a7a9e4b422fc7a25fdb6be544c63299afb5b5c22d6933b82983c975dd3e7"
+        },
+        "note": "Frozen 188 files include a concurrent unpublished batch-helper draft. Only app/renderer/readback tests are this increment. Present whole-tree equality and batch-feature validation are not claimed; critical owned files alone were checked for this record."
+      }
+    },
+    "final_default": {
+      "verification": {
+        "path": "output/native-readback-lifecycle/1794519635389990600/verification.json",
+        "sha256": "588bfc3eb74f85f327fa44f8e2f676a02a6d8d49d271e7a6d1b61b0ae3aaa059"
+      },
+      "checks": 50,
+      "failures": 0,
+      "cases": [
+        {
+          "case": "focus-free",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "focus-queue_free",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "focus-remove_from_tree",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "setup-free",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "setup-queue_free",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "setup-remove_from_tree",
+          "nodes": 1,
+          "obsolete_writer_calls": 0,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "renderer-free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "renderer-queue_free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "capture-free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "capture-queue_free",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        },
+        {
+          "case": "capture-remove_from_tree",
+          "nodes": 1,
+          "orphans": 0,
+          "signal_connections": 0
+        }
+      ],
+      "positive_native_gpu_size": [
+        1920,
+        1080
+      ],
+      "child_exit": 0,
+      "leaked_function_states": 0,
+      "objectdb_leak_warning": false,
+      "unclaimed_string_names": [],
+      "exercise_receipt": {
+        "path": "output/native-readback-lifecycle/1794519635389990600/shipped-source/output/private-desktop/native_readback_lifecycle_smoke_3f418ae6dd494ead977b9f636db8fdf7.json",
+        "sha256": "ff8ca943a248291b99a2b68387900b14c65eaa14f9479cebbc7f9a335f75f81e",
+        "child_exit": 0,
+        "private_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "startup_receipt": {
+        "path": "output/native-readback-lifecycle/1794519635389990600/shipped-source/output/private-desktop/studio_1426fb64262f43d8bbec36dd7407c68d.json",
+        "sha256": "eded72af839e3748a1eaf5571dde66001b920c002ff379e894c485a74e867697",
+        "child_exit": 0,
+        "private_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "startup": {
+        "empty": true,
+        "home_visible": true,
+        "simple": true,
+        "recovery": {
+          "attempts": [],
+          "cancelled": false,
+          "restored": false
+        }
+      },
+      "snapshot_source_unchanged_during_run": true,
+      "reused_completed_proof_in_final_wrapper": true
+    },
+    "matched_comparison": {
+      "same_oracle": true,
+      "oracle_sha256": "19bee643871fc8095ff7c5e4abedd97f79a6f78105677f698e05eaef26d80240",
+      "checks_per_run": 46,
+      "baseline": {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519720433512700/verification.json",
+          "sha256": "8a34ad62d1838ca496f4621a96f8ce9595c98c6d6ee144228a2c6c21bffb7a98"
+        },
+        "source_mode": "git_revision",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "critical_runtime_sha256": {
+          "src/app.gd": "3991f00070c410a17c857785a5341e6fb8ec24fd8a688a8048a5e787c1f02ef2",
+          "src/renderer.gd": "e3096ab3e31064f2620089328940276679e9a6cff8397fd67257a1ddd6b75f01"
+        },
+        "body_checks": 46,
+        "body_failures": 0,
+        "child_exit": 3221225477,
+        "leaked_function_states": 6,
+        "objectdb_leak_warning": true,
+        "unclaimed_string_names": [
+          {
+            "name": "frame_post_draw",
+            "references": 3
+          },
+          {
+            "name": "readback_native",
+            "references": 6
+          },
+          {
+            "name": "completed",
+            "references": 8
+          }
+        ],
+        "exercise_receipt": {
+          "path": "output/native-readback-lifecycle/1794519720433512700/shipped-source/output/private-desktop/native_readback_lifecycle_smoke_04b4d947ca8d46f480f52dfbd4c2f7f5.json",
+          "sha256": "65db5b3a6d03a3b656593d162d907f6854b40f83469b864f29c8e8d0f887ccd9",
+          "child_exit": 3221225477,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        "startup_receipt": {
+          "path": "output/native-readback-lifecycle/1794519720433512700/shipped-source/output/private-desktop/studio_54559040fa394d10a1a8c2afd1afe3be.json",
+          "sha256": "fe798438f6bdc853132f93042781741e9e4162e4555225b150858cc13c4b1bed",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      },
+      "fixed": {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519700574817300/verification.json",
+          "sha256": "89407872f4b194f127b8edad9f9f21efa4af18d00d30019eaf2ddb1fae34a545"
+        },
+        "source_mode": "working_tree",
+        "revision_label": "297ac619f0b05f897959e9f38d5b36493b6b9594",
+        "critical_runtime_sha256": {
+          "src/app.gd": "101195638a0915dd83d7d77969e1627ca04df163cfe52c41837f75d0c3779b5b",
+          "src/renderer.gd": "7982a52ea30bbbd57d31e182ae23050da7442766b123a5838029752edade0979"
+        },
+        "body_checks": 46,
+        "body_failures": 0,
+        "child_exit": 0,
+        "leaked_function_states": 0,
+        "objectdb_leak_warning": false,
+        "unclaimed_string_names": [],
+        "exercise_receipt": {
+          "path": "output/native-readback-lifecycle/1794519700574817300/shipped-source/output/private-desktop/native_readback_lifecycle_smoke_8a7298a0ceac448c8c8b3cf7b025a7c0.json",
+          "sha256": "f3001eda7acb614824ce93428dd1d002246c0c8b0831aad2383bfd90bedb788e",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        "startup_receipt": {
+          "path": "output/native-readback-lifecycle/1794519700574817300/shipped-source/output/private-desktop/studio_f01906aef96b4a679c7ae46f3cf20acf.json",
+          "sha256": "04c0689c166e4cc5b4116b23f6b3e34afe125fdd0bd80136d8831aeea0609896",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      },
+      "note": "Both bodies report 46 checks / 0 failures; baseline fails actual teardown with 6 leaked FunctionStates and exit 0xC0000005. The final default 50-check run is separate and is not summed into this pair.",
+      "candidate_overlay_support": {
+        "baseline_revision": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlaid_files": [
+          "src/app.gd",
+          "src/renderer.gd"
+        ],
+        "critical_bytes_identical_to_final": true,
+        "candidate_oracle_sha256": "a92d63bad2401d129e0494de8925859b66cae5fb413702995e0b833e0ab61e91",
+        "checks": 46,
+        "child_exit": 0,
+        "note": "Candidate overlay used an earlier oracle hash, retained separately from the final same-oracle pair."
+      }
+    },
+    "candidate_outcomes": {
+      "candidate1": "Direct singleton awaits removed FunctionState leaks but retained frame_post_draw StringNames and crashed during cleanup (0xC0000005).",
+      "candidate2": "Owner-bound forwarding exited 0 and removed ObjectDB leaks, but verbose output retained 2 native_frame_ready StringName references; rejected.",
+      "candidate3": "Resolving owner-bound waits during renderer exit produced exit 0 with no ObjectDB or StringName leaks and 46/46 checks; critical runtime files were ported byte-identically."
+    },
+    "retained_attempts": [
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794518904450251700/verification.json",
+          "sha256": "a6d60ccf42eff7b9fc75f685e0247fb41fb906ea5d6685eaa2c2cef2426d5670"
+        },
+        "source_mode": "git_revision (first wrapper version; explicit7c49)",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlay": null,
+        "oracle_sha256": "b4c5e2546ff28c4d4efcad75ab16bf5a1e708f27cb9df2e78d55aa5f86299309",
+        "body_checks": 40,
+        "body_failures": 0,
+        "child_exit": 3221225477,
+        "child_exit_hex": "0xc0000005",
+        "leaked_function_states": 0,
+        "objectdb_leak_warning": true,
+        "unclaimed_string_names": [],
+        "snapshot_source_unchanged_during_run": true
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794518972504964900/verification.json",
+          "sha256": "a39bc49b763b71c84be5d9ecaee4c68b6630145ab85e0e1cac8b9d7441b8c515"
+        },
+        "source_mode": "git_revision",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlay": null,
+        "oracle_sha256": "b4c5e2546ff28c4d4efcad75ab16bf5a1e708f27cb9df2e78d55aa5f86299309",
+        "body_checks": 40,
+        "body_failures": 0,
+        "child_exit": 3221225477,
+        "child_exit_hex": "0xc0000005",
+        "leaked_function_states": 4,
+        "objectdb_leak_warning": true,
+        "unclaimed_string_names": [
+          {
+            "name": "frame_post_draw",
+            "references": 3
+          },
+          {
+            "name": "readback_native",
+            "references": 4
+          },
+          {
+            "name": "completed",
+            "references": 6
+          }
+        ],
+        "snapshot_source_unchanged_during_run": true
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519038987472200/verification.json",
+          "sha256": "0e902ea40494f7a0fe52bf694f76c1d9912f4d6c39dd356b455306eb2146445d"
+        },
+        "source_mode": "git_revision",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlay": null,
+        "oracle_sha256": "7f76006015f48ca4c5bf9efcac867ee4a96fd4dec94651bdeca032e1a5afca4f",
+        "body_checks": 7,
+        "body_failures": 0,
+        "child_exit": 3221225477,
+        "child_exit_hex": "0xc0000005",
+        "leaked_function_states": 1,
+        "objectdb_leak_warning": true,
+        "unclaimed_string_names": [
+          {
+            "name": "readback_native",
+            "references": 1
+          },
+          {
+            "name": "completed",
+            "references": 3
+          }
+        ],
+        "snapshot_source_unchanged_during_run": true
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519164817658300/verification.json",
+          "sha256": "8ce94f847e423794b2edee8b0498ef07e5756cc3d630381819b9096289eb0c3e"
+        },
+        "source_mode": "git_revision",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlay": null,
+        "oracle_sha256": "43b4fff6c33d6ad754f97bf2cb9cacddcc1aea21840ba151a0e81d7d5009c531",
+        "body_checks": 5,
+        "body_failures": 0,
+        "child_exit": 0,
+        "child_exit_hex": "0x0",
+        "leaked_function_states": 1,
+        "objectdb_leak_warning": true,
+        "unclaimed_string_names": [
+          {
+            "name": "readback_native",
+            "references": 1
+          },
+          {
+            "name": "completed",
+            "references": 3
+          }
+        ],
+        "snapshot_source_unchanged_during_run": true
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519222461088800/verification.json",
+          "sha256": "6a8732ae4c3bb468af53b885422684bd815a49d55ad3821a8a1a77038021559d"
+        },
+        "source_mode": "git_revision_plus_explicit_runtime_overlay",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlay": "native-readback-candidate",
+        "oracle_sha256": "a92d63bad2401d129e0494de8925859b66cae5fb413702995e0b833e0ab61e91",
+        "body_checks": 46,
+        "body_failures": 0,
+        "child_exit": 3221225477,
+        "child_exit_hex": "0xc0000005",
+        "leaked_function_states": 0,
+        "objectdb_leak_warning": false,
+        "unclaimed_string_names": [
+          {
+            "name": "frame_post_draw",
+            "references": 7
+          }
+        ],
+        "snapshot_source_unchanged_during_run": true,
+        "critical_runtime_sha256": {
+          "src/app.gd": "ccac75451e923519de42ad1d242595d6f0e1b1b503ad2d9e4653946a2cf78751",
+          "src/renderer.gd": "f3a6bb9593fc3052445e874ed29d7ee476f29adde88ed73dfd5b8419df0531d3"
+        }
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519379862095400/verification.json",
+          "sha256": "6a6d1f17b724278828906083399f3186f08c655c0e23272f880a4f55377cde14"
+        },
+        "source_mode": "git_revision_plus_explicit_runtime_overlay",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlay": "native-readback-candidate-v2",
+        "oracle_sha256": "a92d63bad2401d129e0494de8925859b66cae5fb413702995e0b833e0ab61e91",
+        "body_checks": 46,
+        "body_failures": 0,
+        "child_exit": 0,
+        "child_exit_hex": "0x0",
+        "leaked_function_states": 0,
+        "objectdb_leak_warning": false,
+        "unclaimed_string_names": [
+          {
+            "name": "native_frame_ready",
+            "references": 2
+          }
+        ],
+        "snapshot_source_unchanged_during_run": true,
+        "critical_runtime_sha256": {
+          "src/app.gd": "49df22a7aec8a23e013fb84d9ba5f4e0d05465febac187874da26e77839f7d2c",
+          "src/renderer.gd": "2b5c7fc7aeb4c431522ef3607ea26bbd2b91f08f9a4754812f81a54f0c0940c2"
+        }
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519479391580800/verification.json",
+          "sha256": "13cee61686730cd25173210f450a71605efa967c27c51b369ddc426b56e6a11c"
+        },
+        "source_mode": "git_revision_plus_explicit_runtime_overlay",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlay": "native-readback-candidate-v3",
+        "oracle_sha256": "a92d63bad2401d129e0494de8925859b66cae5fb413702995e0b833e0ab61e91",
+        "body_checks": 46,
+        "body_failures": 0,
+        "child_exit": 0,
+        "child_exit_hex": "0x0",
+        "leaked_function_states": 0,
+        "objectdb_leak_warning": false,
+        "unclaimed_string_names": [],
+        "snapshot_source_unchanged_during_run": true,
+        "critical_runtime_sha256": {
+          "src/app.gd": "101195638a0915dd83d7d77969e1627ca04df163cfe52c41837f75d0c3779b5b",
+          "src/renderer.gd": "7982a52ea30bbbd57d31e182ae23050da7442766b123a5838029752edade0979"
+        }
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519635389990600/verification.json",
+          "sha256": "588bfc3eb74f85f327fa44f8e2f676a02a6d8d49d271e7a6d1b61b0ae3aaa059"
+        },
+        "source_mode": "working_tree",
+        "revision_label": "297ac619f0b05f897959e9f38d5b36493b6b9594",
+        "overlay": null,
+        "oracle_sha256": "19bee643871fc8095ff7c5e4abedd97f79a6f78105677f698e05eaef26d80240",
+        "body_checks": 50,
+        "body_failures": 0,
+        "child_exit": 0,
+        "child_exit_hex": "0x0",
+        "leaked_function_states": 0,
+        "objectdb_leak_warning": false,
+        "unclaimed_string_names": [],
+        "snapshot_source_unchanged_during_run": true
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519700574817300/verification.json",
+          "sha256": "89407872f4b194f127b8edad9f9f21efa4af18d00d30019eaf2ddb1fae34a545"
+        },
+        "source_mode": "working_tree",
+        "revision_label": "297ac619f0b05f897959e9f38d5b36493b6b9594",
+        "overlay": null,
+        "oracle_sha256": "19bee643871fc8095ff7c5e4abedd97f79a6f78105677f698e05eaef26d80240",
+        "body_checks": 46,
+        "body_failures": 0,
+        "child_exit": 0,
+        "child_exit_hex": "0x0",
+        "leaked_function_states": 0,
+        "objectdb_leak_warning": false,
+        "unclaimed_string_names": [],
+        "snapshot_source_unchanged_during_run": true
+      },
+      {
+        "verification": {
+          "path": "output/native-readback-lifecycle/1794519720433512700/verification.json",
+          "sha256": "8a34ad62d1838ca496f4621a96f8ce9595c98c6d6ee144228a2c6c21bffb7a98"
+        },
+        "source_mode": "git_revision",
+        "revision_label": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+        "overlay": null,
+        "oracle_sha256": "19bee643871fc8095ff7c5e4abedd97f79a6f78105677f698e05eaef26d80240",
+        "body_checks": 46,
+        "body_failures": 0,
+        "child_exit": 3221225477,
+        "child_exit_hex": "0xc0000005",
+        "leaked_function_states": 6,
+        "objectdb_leak_warning": true,
+        "unclaimed_string_names": [
+          {
+            "name": "frame_post_draw",
+            "references": 3
+          },
+          {
+            "name": "readback_native",
+            "references": 6
+          },
+          {
+            "name": "completed",
+            "references": 8
+          }
+        ],
+        "snapshot_source_unchanged_during_run": true
+      }
+    ],
+    "regressions": {
+      "scene_view": {
+        "exit": 0,
+        "log": {
+          "path": "output/readback-final/1794519700507913900/scene-view.log",
+          "sha256": "818b1564f779a3ec0b5f9c2a8b9066b8318bc3afb8a6d8b34385261e31dc3eef"
+        },
+        "unit": {
+          "cases": 144,
+          "checks": 12830,
+          "failures": 0,
+          "maximum_projection_error_pixels": 0.00013647876039613038,
+          "maximum_ray_error": 2.327635826304686e-07,
+          "outside_native_samples": 4860,
+          "world_samples": 34992
+        },
+        "app_checks": 102,
+        "app_failures": 0,
+        "native_size": "(1920, 1080)",
+        "frozen188runtime_hashes_match_primary": true,
+        "test_source_sha256": {
+          "tests/verify_scene_view.py": "e98eb9bb6bd44ca72586ba27155abbab1d61fc1adc02319af0c7514ab1e5739e",
+          "tests/scene_view_unit.gd": "78639224a5f9be51bb177e87a8889c79c69a2202ecee2db3c86fc6b11f793185",
+          "tests/scene_view_smoke.gd": "6e221bfce96ebd878ddbdc4c6ef8b3f8c237e76e053bbedafbc6b354fed4eeea"
+        }
+      },
+      "recovery": {
+        "exit": 0,
+        "log": {
+          "path": "output/readback-final/1794519700507913900/recovery.log",
+          "sha256": "0cdd22cef4150253ba0964ba75239240ac7540c5024e8f98527e626955f7c9ce"
+        },
+        "checks": {
+          "snapshot": 9,
+          "writer-unit": 14,
+          "app": 13,
+          "preview": 25,
+          "schedule": 41
+        },
+        "failures": {
+          "snapshot": 0,
+          "writer-unit": 0,
+          "app": 0,
+          "preview": 0,
+          "schedule": 0
+        },
+        "source_sha256": {
+          "src/app.gd": "101195638a0915dd83d7d77969e1627ca04df163cfe52c41837f75d0c3779b5b",
+          "src/recovery_writer.gd": "d6babe05548856f376cf8f6bd3868d1a688b2e0d487555461d27fe19d238501c",
+          "src/recovery_snapshot.gd": "4e96159b50d22cde4537794e4350f11dbd49bff04f3664455a98ad9c50a5e5ea",
+          "src/recovery.gd": "01168f2f624670323bdfccdcfc2e32e38ed90a3b2ae64927e4726cafb62235eb",
+          "tests/recovery_wait.gd": "a8074aae0214bd02628306285e18ee0367d96beaa4fad0d162111f52c73f5de2"
+        }
+      },
+      "first_movie": {
+        "exit": 0,
+        "log": {
+          "path": "output/readback-final/1794519700507913900/first-movie.log",
+          "sha256": "ac6738a1eb84be6267d90b7cb1fc5cb25d61ec7d2fafd9c503d1ec5a9a2a65d3"
+        },
+        "writer_checks": 79,
+        "reader_checks": 8,
+        "failures": 0,
+        "movie": {
+          "path": "output/first-movie/1794519795462302200/render_1794519816_20835737_0/movie.mp4",
+          "sha256": "0b5e017a95e4c105130e15d3d6bc3775a413709f9e2d9453f1798629f750e943"
+        },
+        "video": {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "24/1",
+          "nb_read_frames": "48",
+          "duration": "2.000000",
+          "pix_fmt": "yuv420p"
+        },
+        "audio": {
+          "codec": "aac",
+          "decoded_rate_hz": 48000,
+          "cue_onset_sample": 80043,
+          "expected_onset_sample": 80000,
+          "allowed_error_samples": 240,
+          "note": "Successful wrapper asserts AAC and decoded onset. This is encoded timing, not physical audible sync, device playback latency or listening acceptance."
+        },
+        "preserved_original_tutorial_assets": 6,
+        "verifier_sha256": "9437f9ef5d90cd130069a765979bbea7b8affbaead2886bfae1f61f07d69e463"
+      },
+      "private_receipts": [
+        {
+          "path": "output/private-desktop/scene_view_smoke_7b3ebd2a4af6470da22371cd43c72fb7.json",
+          "sha256": "7696b5204f99964379cea972f4327940873aefc505b006427819449fd315d43a",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "path": "output/private-desktop/recovery_writer_smoke_78979e0236f1448491ccc3920f9f49b9.json",
+          "sha256": "970f7cf91f0c2f69ec3af10bd0f15551ee1baf837a9a90292b646947dc23916e",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "path": "output/private-desktop/recovery_preview_smoke_0935bd83196b4b9aad443637a2f6eb50.json",
+          "sha256": "596d9f99b744e27d3702a49d137c30aebd9444e7e07b8cc283dfbd436dea6106",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "path": "output/private-desktop/recovery_schedule_smoke_965f03ae500146d19718ce82e8fc531c.json",
+          "sha256": "d167f2d617e5b63d355ef2c9146f18369b81acae9f84ff13b24d9f92047dabb4",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "path": "output/private-desktop/first_movie_smoke_5dbe1c332d1640ec9e0cb2ec0718e8e5.json",
+          "sha256": "6c1d45660e790d15c3a1e3d77c8a506bd975e9720063cdc17c2ef208f23f6627",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        },
+        {
+          "path": "output/private-desktop/first_movie_smoke_1e3143ee10fd4d0ab8bc722abd9f0431.json",
+          "sha256": "6dcff04937e0083862efb87b5118e3c5da698189f0de688fb365b370328e96d1",
+          "child_exit": 0,
+          "private_desktop_confirmed": true,
+          "foreground_child_observed": false,
+          "job_closed": true,
+          "desktop_closed": true
+        }
+      ]
+    },
+    "shipped_builder_startup": {
+      "revision": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+      "source_mode": "git_revision",
+      "startup": {
+        "empty": true,
+        "home_visible": true,
+        "simple": true,
+        "recovery": {
+          "attempts": [],
+          "cancelled": false,
+          "restored": false
+        }
+      },
+      "startup_source_sha256": {
+        "tests/current_candidate_startup.gd": "4dd321809758c8c6571e4c8df8491b8e99ad1247388e01f2fb43cb071318dbe3",
+        "tests/current_candidate_startup.tscn": "d96d0c748c4d9a3276b8c725b93b5a955c12cbaaa6b49a1e74d87e0245dee3e2"
+      },
+      "receipt": {
+        "path": "output/native-readback-lifecycle/1794519720433512700/shipped-source/output/private-desktop/studio_54559040fa394d10a1a8c2afd1afe3be.json",
+        "sha256": "fe798438f6bdc853132f93042781741e9e4162e4555225b150858cc13c4b1bed",
+        "child_exit": 0,
+        "private_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "note": "Ordinary empty Home/Simple startup observed in a separate private process; no installed-app replacement or clean-PC claim."
+    },
+    "isolation": {
+      "retained_lifecycle_runs": 10,
+      "all_private_desktops_confirmed": true,
+      "foreground_child_observed": false,
+      "all_jobs_and_desktops_closed": true,
+      "all_normal_startup_exits_zero": true,
+      "clean_regression_receipts": 6
+    },
+    "reproduction": {
+      "final": [
+        "python",
+        "tests/verify_native_readback_lifecycle.py"
+      ],
+      "baseline_revision": "7c49fc3693f990a345a315cc9220600db0d90bb9",
+      "matched_case_names": [
+        "focus-free",
+        "focus-queue_free",
+        "focus-remove_from_tree",
+        "setup-free",
+        "setup-queue_free",
+        "setup-remove_from_tree",
+        "renderer-free",
+        "renderer-queue_free",
+        "capture-free",
+        "capture-queue_free"
+      ],
+      "matched_case_note": "Pass these 10 names with repeated --case flags for both current and --revision baseline. The final 50-check default adds capture-remove_from_tree without changing the shared oracle.",
+      "sources": [
+        {
+          "path": "output/native-readback-v3-scoped-handoff.json",
+          "sha256": "3e5608fc6d6a4c5b5d2f08c29084ba2d420a6286ed60ea6287803bc64ff3a081"
+        },
+        {
+          "path": "output/readback-final-verification.json",
+          "sha256": "efada192408a236a8c15324440d320487450c748b43464fec70f68ff8124ccb3"
+        }
+      ]
+    },
+    "limits": [
+      "No full canonical aggregate, clean-PC installation, physical-device or artist acceptance claim.",
+      "No private native artwork or owner-review projects copied or changed; no installed Studio update.",
+      "Supporting SceneView/recovery/movie checks do not establish arbitrary native format/render fidelity or long-run GPU reliability.",
+      "Private process isolation/closure apply to the actual retained runs; failed child exits remain explicit."
+    ],
+    "status": "Superseded v3: scoped50 and matched46 were clean, then original helper immediate-free teardown exposed the renderer-owned signal emitter lifetime error. These are historical observations, not final v4 claims."
+  },
+  "reproduction": {
+    "final": "python tests/verify_native_readback_lifecycle.py",
+    "baseline": "Explicit --revision 7c49fc3693f990a345a315cc9220600db0d90bb9 reproduces the shipped-source cancellation failure; pass the historical matched10case names for the recorded46 comparison.",
+    "default_source": "Copies current working source to an isolated snapshot; --revision is reserved for explicit committed comparisons.",
+    "handoff": {
+      "path": "output/native-readback-implementation-handoff.json",
+      "sha256": "35fa4e91e72e464ffd1d2f30c574aa75915c643f220f5502da41764e1e601f96"
+    }
+  },
+  "limits": [
+    "No full canonical aggregate, native fidelity, long-run GPU, artist/device or clean-PC acceptance.",
+    "Earlier movie/recovery metrics are retained in their scoped v3 context; final v4 separately passes58lifecycle, SceneView and the complete unchanged helper/media wrapper.",
+    "The frame counter coalesces readbacks, not concurrent scene evaluation; ordinary export awaits captures sequentially.",
+    "Installed Studio, owner reviews/recovery and original assets are untouched; no private art uploaded."
+  ],
+  "v3_emitter_failure_reproduction": {
+    "format": "has_emitter_counterfactual_patch_1",
+    "fixed_renderer_sha256": "06306b032ad2db5fe18c3a542cb1301f1d9fc2647c1e72f7b47d104c1e6b3346",
+    "node_emitter_v3_sha256": "7982a52ea30bbbd57d31e182ae23050da7442766b123a5838029752edade0979",
+    "patch": "tests/fixtures/readback_node_emitter_v3.patch",
+    "patch_sha256": "dade3c810feaa4b7368a5f7f96f808dfbc369d30cffbe9a3bb91772245beed92",
+    "bytes": 2334,
+    "applied_in_owned_temporary_repository_only": true,
+    "exact_counterfactual_bytes_reconstructed": true,
+    "usage": "Apply this fixture patch to a disposable checkout of this increment, then use that directory as the explicit --overlay-runtime with --revision 7c49fc3 and the two capture-close-app case flags. Never apply to the working installation or owner review."
+  }
+}

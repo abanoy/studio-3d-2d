@@ -1,0 +1,199 @@
+{
+  "format": "has_crosswalk_materialized_lock_independent_readonly_audit_1",
+  "created_utc": "2026-11-14T02:41:22.466743+00:00",
+  "verdict": "GO_NONLAUNCH_PREFLIGHT_THEN_ROOT_SINGLE_JUNKO_LEASE",
+  "blocking_findings": [],
+  "native_execution_or_qualification_observed": false,
+  "native_qualification": "UNRUN",
+  "source_revision": "80a1e557512902b29b5fb95b3152bb4284fdf55e",
+  "task": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240",
+  "lock": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\fresh-input-lock.json",
+    "sha256": "afbd05bf636d3eb58df13e815547f2dbfef5c51ec4d74993c05f8082bcbb40d1",
+    "bytes": 822744
+  },
+  "read_only_auditor": {
+    "draft_or_generated_modules_imported_or_executed": false,
+    "products_or_native_apps_launched": false,
+    "process_queries_performed": false,
+    "source_docs_HEAD_or_materialized_task_modified": false,
+    "checks": "stdlib file reads/hashes/AST and read-only Git queries only"
+  },
+  "control_proof": {
+    "locked_file_count": 1886,
+    "locked_total_file_bytes": 189104438,
+    "independently_checked_hash_size_mtime_count": 1886,
+    "mismatches": [],
+    "link_or_reparse_findings": [],
+    "functional_main_sources": 996,
+    "main_membership_exact": true,
+    "HEAD_current80_exact": true,
+    "functional_git_diff_HEAD_clean": true,
+    "native_members": {
+      "count": 79,
+      "bytes": 30135859,
+      "membership_exact": true
+    },
+    "SourceIO_members": {
+      "count": 574,
+      "bytes": 27985786,
+      "membership_exact": true
+    },
+    "baseline_members": {
+      "count": 20,
+      "bytes": 12114859,
+      "membership_exact": true
+    },
+    "installed_exporter_members": {
+      "count": 120,
+      "bytes": 1799152,
+      "membership_exact": true
+    },
+    "driver_members": {
+      "count": 6,
+      "bytes": 73152,
+      "membership_exact": true
+    },
+    "overlay_members": {
+      "count": 81,
+      "bytes": 746754,
+      "membership_exact": true
+    },
+    "private_launcher_source_exact": true,
+    "empty_mount_plan_exact": true,
+    "native_case_preexisting": false
+  },
+  "assembly_proof": {
+    "unchanged_main_tool_copies_byte_exact": 77,
+    "modified_main_tool_copy": "blender_source_bridge.py",
+    "bridge_diff_scope": [
+      "qualification_support import",
+      "crosswalk_qualification None initialization",
+      "actual mdl/container Qualification construction",
+      "owned export context and strict pinned operator options",
+      "final post-tag GLB completion check"
+    ],
+    "unchanged_protocol_byte_exact": [
+      "background_python_bootstrap.py",
+      "background_blender_observer.py",
+      "win_desktop_attestation.py"
+    ],
+    "background_route_other_AST_exact": true,
+    "background_route_rebound_assignments": [
+      "PROTOTYPE",
+      "INPUT_STAGE",
+      "WORKER_SHA",
+      "NATIVE_MODULES",
+      "REQUIRED_SOURCES"
+    ],
+    "stage_resources_only_diff": "initial source_archive import path CHECKOUT/tools -> TASK/overlay/tools",
+    "independent_geometry_verifier_function_AST_exact": true,
+    "background_source_catalogue_exact": 26,
+    "WORKER_SHA_exact_count": 20,
+    "actual_import_role_counts": {
+      "python": 7,
+      "blender": 13
+    },
+    "candidate_source_sha256": "718e5a6390e4406e7da77c966667a915de06d9d9e56a1072f92db93fcd03a770",
+    "candidate_SourceIO_source_pins_exact": 4,
+    "candidate_exporter_source_pins_exact": 10
+  },
+  "one_case": {
+    "native_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\junko_v25\\models\\touhou\\tamo\\junko hair.mdl",
+    "original_native_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "native_bones": 69,
+    "retained_jiggle_rules": 49,
+    "scale": 0.01905,
+    "appearance_request": false,
+    "baseline": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620244-469-42871294",
+    "baseline_report_sha256": "9529eb22da96958a5a2cba36a890a8db18e12a7c3bd8bd8890ea299ae8e80dc1",
+    "baseline_report_bytes": 137044,
+    "baseline_scene_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d"
+  },
+  "executable_pins": {
+    "C:\\Program Files\\Python313\\python.exe": {
+      "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+      "bytes": 105840,
+      "mtime_ns": 1733277492000000000
+    },
+    "C:\\Program Files\\Python313\\pythonw.exe": {
+      "sha256": "2bea4fc941b7d9436afa1be8cb46551c0694deed23b3fec87b969054238be099",
+      "bytes": 104304,
+      "mtime_ns": 1733277492000000000
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe": {
+      "sha256": "1e6624af112b3c936f4b038b025ebd2bf00ae72c4b62881a6787166d71c58fa5",
+      "bytes": 108687824,
+      "mtime_ns": 1779176446000000000
+    }
+  },
+  "nonlaunch_preflight_command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\driver\\run_prepared.py",
+    "--lock",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\fresh-input-lock.json",
+    "--lock-sha256",
+    "afbd05bf636d3eb58df13e815547f2dbfef5c51ec4d74993c05f8082bcbb40d1"
+  ],
+  "nonlaunch_preflight_scope": "Module imports resolve only local protocol helpers/stdlib, no product import. check() hashes frozen files/memberships and reads HEAD; without --run-conversion return occurs before case creation, WinAPI capture or any process launch. Python -B prevents bytecode writes.",
+  "actual_native_command_if_root_claims_lease": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\driver\\run_prepared.py",
+    "--lock",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\fresh-input-lock.json",
+    "--lock-sha256",
+    "afbd05bf636d3eb58df13e815547f2dbfef5c51ec4d74993c05f8082bcbb40d1",
+    "--run-conversion",
+    "--lease-confirmed"
+  ],
+  "actual_native_scope": "Exactly one new case-junko-default and one intercepted Blender launch through unchanged private desktop utility; both fresh Python/Blender self-attestations, nonce/root/lock/request/source/executable/parent+creation joins and closed original private receipt remain mandatory. Generated command disables installed GMod/workshop inputs via absent owned paths and an empty mount plan; isolated config/temp directories remain under owned case.",
+  "actual_qualification_expected_not_observed": [
+    "69 exact native-to-Blender-to-finalGLB rows and full selected-scene reachability",
+    "49 rules /1421 independent raw float32 joins in ordinary inert native metadata",
+    "Decoded geometry/skin/rest/morph/material/texture/image baseline equality; raw GLB SHA recorded independently",
+    "All1886 file identities and all source/input/runtime/baseline/overlay/driver memberships plus HEAD rechecked in finally",
+    "No production metadata augmentation, HAS adoption or native solver claim"
+  ],
+  "nonblocking_documentation_finding": "Draft README uses crosswalk-qualification-80a1-junko-v1; that suffix is rejected by preparation regex and differs from the actual materialized0240 task. Use commands in this audit for this lock. Sent to author; no materialized script or lock change is needed.",
+  "reviewed_generated_files": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\driver\\run_prepared.py",
+      "bytes": 9421,
+      "sha256": "2f796032dd15a1aeef7fea00c3eab45091be913e890c4944f974aff332ce046d"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\driver\\background_route.py",
+      "bytes": 28870,
+      "sha256": "7a111269dfc9e18255b78bc18f9c0d558bb048536d36ffac501b16dff843a8b2"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\driver\\stage_resources.py",
+      "bytes": 20839,
+      "sha256": "56e3098de1f2a8c098f5009dc73b47352f8e6fdcd6657c622dff6be76f494620"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\overlay\\tools\\blender_source_bridge.py",
+      "bytes": 28011,
+      "sha256": "c8735ddba7981b5354d4a6c96f4ac249b025df36b711f10354524c3de11d831f"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\overlay\\tools\\qualification_support.py",
+      "bytes": 7773,
+      "sha256": "4f5a40937d63dc6913105f65a597d8f4b8d36431123c97562473ea31d46bf650"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\overlay\\tools\\source_jiggle_crosswalk.py",
+      "bytes": 28925,
+      "sha256": "718e5a6390e4406e7da77c966667a915de06d9d9e56a1072f92db93fcd03a770"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\overlay\\tools\\qualification_fingerprints.py",
+      "bytes": 8549,
+      "sha256": "56f41db455134cdfe99965b2459d6365e8100687d9dd8975160c47c57677717b"
+    }
+  ]
+}

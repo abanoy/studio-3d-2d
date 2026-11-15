@@ -1,0 +1,12 @@
+{
+  "format": "has_owner_review_guide_utf8_correction_1",
+  "observed_utc": "2026-11-13T22:08:33.568799+00:00",
+  "target": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261113-12071fe\\README.md",
+  "template_sha256": "d355b272697844be25c115a204ca9867926c2a6b7cc959db259a361f90898278",
+  "before_sha256": "4416d657581c7c30365c68f1517897d4172d979475ce437b669ae340ebb7f622",
+  "after_sha256": "158421eb0cdb3e86696f968176409fe53f1101faf5eeb079b5e211e3c53ddb4f",
+  "before_bytes": 3626,
+  "after_bytes": 3578,
+  "reason": "Coordinator used locale-default read_text for UTF8 template; explicit UTF8 repair of final guide only after successful replay. Frozen coordinator/harness and Studio/project/runtime bytes unchanged.",
+  "future_recipe": "Read README.template.md with encoding=utf-8 before replacing tokens and writing UTF8"
+}

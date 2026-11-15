@@ -4,7 +4,10 @@
   "baseline_date": "2026-11-06",
   "goal": {
     "path": "docs/goals/complete-has.md",
-    "sha256": "288eb24e230d25cb342e78d45cc4878144424d334aff4d64946adad8f5a7a5f6"
+    "sha256": "1675a4562fb601522e6ee06e9438c6d3e62598e2ebc04746d6270b2517d6e0c9",
+    "previous_path": "docs/goals/complete-has-before-2026-11-09.md",
+    "previous_sha256": "288eb24e230d25cb342e78d45cc4878144424d334aff4d64946adad8f5a7a5f6",
+    "updated": "2026-11-09; owner explicitly supplied revised cloud acceptance objective"
   },
   "source_documents": [
     "CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md",
@@ -29,8 +32,8 @@
       ],
       "title": "Pinned offline development workflow",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "A clean supported setup launches pinned Godot and detects Python/FFmpeg without a cloud application dependency.",
       "evidence": [
         {
@@ -40,9 +43,42 @@
         {
           "kind": "recorded_report",
           "path": "docs/cloud_source_recovery.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/clean_source_launch_current_2026-11-07.json",
+          "commit": "49b15665aa8ba3a2b1234ba4b24514096ef63a62",
+          "scope": "Clean source-only launch excluding output/.godot/.git, fresh XDG and isolated stdlib-only Python driver:43 actual UI checks and48-frame1080p24H264 movie with pinned local Godot/Python/FFmpeg. Existing system runtimes reused; target Windows installer remains ACCEPT-INSTALL."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_full_2026-11-13.json",
+          "commit": "9897f86019dfb8499d0ee30f6560580fac7bb8da",
+          "scope": "FreshcompleteconfiguredWindowsdefault:36core/alllaterregisteredwrappers,21finalmovies,bothdecodedaudioonsets1.0seconds/editorRMS5658.299,947functionalhashesandHEADexact;174freshrootprivatejobsclosedexit0/noFGswitch. Cleanofflineinstall, human/device/nativeartistacceptance notinferred. Pendinghelperoverlay notinthismainrevision."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+          "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+          "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_silent_selection_audio_2026-11-13.json",
+          "scope": "Fresh ee full FAILED on WASAPI invalidated endpoint during silent geometry;996source+HEADexact. Unchanged defaultdriver67/0 and explicitreportedDummy67/0 pass; strictgates and dedicatedaudio tests retained. Newfullrequired; no completion/scoring change."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_helper_review_guard_2026-11-13.json",
+          "scope": "New c4d complete default FAILED after14m0.186s at intentional helper-reviewed-source guard, before0CPU/graphics/snapshot;1008functional sources/HEAD unchanged and exact coordinators closed. Provenance review/scoped208+266 and fresh full required; old full PASS not substituted."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_owner_pause_2026-11-13.json",
+          "scope": "Owner stopped f380 complete run after41m47.124s;1008functional files/HEAD unchanged. Prior helper208/266 and later scopes pass before cancellation; final complete/media/recovery result unverified. Exact owned tree terminated onrequest, noownedruntime remains, PCnotshutdown. This is USER_CANCELLED_INCOMPLETE, not PASS or a new observed software failure."
         }
       ],
-      "remaining": "Clean Windows installation is a separate acceptance gate.",
+      "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -54,8 +90,8 @@
       ],
       "title": "Simple and Advanced share one document",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Switching UI detail preserves scene, timeline, camera, effective parameters and output; common tasks remain usable in Simple.",
       "evidence": [
         {
@@ -65,9 +101,33 @@
         {
           "kind": "recorded_report",
           "path": "docs/voice_addendum_audit.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/responsive_workspace_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/core_interface_2026-11-07.json",
+          "commit": "a43a0945564d25780089dad7c2bdfbf2bfcc5411",
+          "scope": "Actual Simple/Advanced button interactions preserve temporary camera, frame, Undo, hidden FOV/interpolation and audio gain/trim, source/cel bytes and exact final pixels; responsive workspace and ordinary recording/package regressions cover common tasks. Physical/novice/Windows gates remain separate."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/workspace_docking_2026-11-10.json",
+          "scope": "Owner-driven scene sizing, true100percent, tabbed docking/native windows and World width repair. Exact document/Undo/render preservation; no native artist approval or new closure."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/nested_docks_fan_flutter_2026-11-10.json",
+          "scope": "Owner-requested nested docking, cursor/Ctrl follow-up and fan aiming/flutter software evidence; latest human review pending, no acceptance-score change."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_resume_2026-11-11.json"
         }
       ],
-      "remaining": "Full routed workflow and novice observation remain.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable. Owner review confirms scale and docking usability, with visual refinement and latest World fill recheck pending; this does not change the shared-document acceptance condition.",
       "external_dependencies": []
     },
     {
@@ -78,8 +138,8 @@
       ],
       "title": "Home, recent projects and tutorials",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Home opens New, Tutorials and real recent projects with available thumbnails and actionable missing-file feedback.",
       "evidence": [
         {
@@ -89,9 +149,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/home.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/core_interface_2026-11-07.json",
+          "commit": "a43a0945564d25780089dad7c2bdfbf2bfcc5411",
+          "scope": "46current Home/startup checks cover New/Open/Tutorials/recent paths, committed preview thumbnails, missing-file handling, source hashes and ordinary startup with/without pending recovery."
         }
       ],
-      "remaining": "Fresh complete Home interaction acceptance remains.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -103,8 +169,8 @@
       ],
       "title": "Empty world and editor grid",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "New starts black with a fading white floor grid, no selected object, bottom timeline and hierarchy; the grid is excluded from final output.",
       "evidence": [
         {
@@ -114,9 +180,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/voice_addendum_audit.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/core_interface_2026-11-07.json",
+          "commit": "a43a0945564d25780089dad7c2bdfbf2bfcc5411",
+          "scope": "20current default-scene checks cover empty black startup, no placeholder/selected actor, timeline/hierarchy, fading editor grid excluded from final output, background persistence/invalid-setting refusal and real48frame1080p24H264 export."
         }
       ],
-      "remaining": "Fresh routed empty-world/export gate remains.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -128,8 +200,8 @@
       ],
       "title": "Navigation, focus and shortcut routing",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Fly controls, stepping, Space and remapped shortcuts respect text focus/drawing mode and release capture on Escape/focus loss; alternate navigation stays optional.",
       "evidence": [
         {
@@ -139,9 +211,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/keyboard_shortcuts.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/navigation_current_2026-11-07.json",
+          "commit": "19834f040a55b17243d801e5dd029ccb44bed559",
+          "scope": "43 current engine-event/editor/fresh-reader checks: default fly movement and Shift/diagonal bounds, Space/stepping, numeric text focus, Draw mode, Escape/focus release, optional orbit/pan/dolly, personal preferences and exact shot preservation; committed core_interface shortcut suite additionally covers remapped commands. Native rig orbit explicitly unrun."
         }
       ],
-      "remaining": "Physical Windows device and complete routed focus matrix remain.",
+      "remaining": "Required software navigation/input condition verified with committed current receipts; physical comfort/Windows/native fidelity remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -154,8 +232,8 @@
       ],
       "title": "Common-format import and immutable sources",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Supported common files import into editable HAS world objects with dependency errors; drop uses frame0 and timeline import uses its chosen frame without modifying originals.",
       "evidence": [
         {
@@ -165,9 +243,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/common_import.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "52 current common-format app checks+9Python tests: actual linked/embedded FBX/glTF and OBJ/MTL preparation, rigs/textures/scale, dependency error/retry/cancel preservation, exact Undo/packed/movie and asynchronous frame40 intent across playhead5/refused second request/Save/New/Open."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "17 drop/timeline intent checks: window drop handler, frame0 versus chosen timeline frame24, no partial multi-file request, exact23/24 presence boundary/save/movie and original GLB integrity. Physical Explorer drag and native ecosystems remain separate."
         }
       ],
-      "remaining": "Full current common-format dependency/fault matrix and physical Explorer drop remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -179,8 +269,8 @@
       ],
       "title": "Native ecosystem coverage",
       "implementation": "partial",
-      "verification": "incomplete",
-      "acceptance_status": "open",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
       "acceptance": "Source model/map containers, MMD model/motion/pose and VRM profiles have documented supported features, safe adapters and representative native acceptance evidence.",
       "evidence": [
         {
@@ -190,9 +280,154 @@
         {
           "kind": "recorded_report",
           "path": "docs/native_test_inputs.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/source_entity_lights_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/source_brush_lightmaps_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sfm_uploaded_samples_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sourceio_worker_runtime_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/standalone_source_samples_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
+          "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
+          "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_vrm_2026-11-09.json",
+          "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
+          "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+          "commit": "38a72ee6aa65c0fec311613fa197b7417c1eda84",
+          "scope": "Controlled GPU allocation probes reproduce legacy cutout image variation with bit-exact camera/root/all-bone transforms; copy-only control fails to stabilize and stable source order removes variation. Current9contract/16allocation-state/37native writer/16fresh cold/28expression-spring/31lighting checks pass. Original test assertions and historical failed hashes remain; new fixed-version writer/cold replay is exact on all four models without added tolerance. Native originals unchanged and actual24/48frame1080p24H264 movies probed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/native_profile_acceptance_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows native BSP/VRM/complete PMX route passes19writer+5exact cold checks with2map roots,1of1native prop,12textures,two static lights and29bounded baked-lightmap faces. Five original street atlases are present and embedded. Transit CRC5entries identifies its BSP; its64light-bound refusal has5actual app preservation checks. Prior Source/MMD/VRM evidence remains scoped; artist comparison to original native appearance is still unobserved."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_resume_2026-11-11.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_six_projects_2026-11-12.json",
+          "scope": "Six protected existing native review packages open through ordinary recovery/Home and Python unpack/threaded load in fresh private Windows processes from committed source c6782d2; 129 checks pass. Saved metadata, native Setup/Focus pixels, source/package/harness hashes and strict owned-cache containment stay exact. Runnable review only: no artist, novice, device, clean-install or six-movie acceptance; counts/status unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_native_resource_staging_2026-11-12.json",
+          "scope": "Exact296resources/181460484bytes staged from two supplied RARs;34CPUchecks and actual10VMT closure. Keiki16refs resolve; Nitori25/28 with one missing hairbump resource referenced3times. Both base-texture sets present; originals exact. Staging/metadata only, not selected Blender exports, app adoption, native shader/jiggle/assembly or artist acceptance."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_static_appearance_actual_2026-11-13.json",
+          "scope": "Frozen unshipped Source worker passes14actual static cases(12bundles/2expected allblank refusals), native skin/bodygroup indices, derived rig/rest/morph structure and owned dependency checks. Dual Python/Blender background desktop/process attestation and exact source/original preservation pass; old graphical exit2 stays rejected. Native shader/deformation/render fidelity, app adoption/Undo/HAS/movie, runtime variants and broader82MDLextra features remain unrun/unimplemented. No acceptance status changed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_native_geometry_oracle_2026-11-13.json",
+          "scope": "Independent stdlib native MDL49/VVD4/legacyVTX7 reader:30synthetic controls,12derived bundles,7whole base maps/3whole triangle maps match;23/28mesh base maps and15oriented triangle multiplicities. Four Nitori topology cases remain unrun;five Tools maps unresolved. No fitted transform/guessed native identity; original/stage/bundle preservation exact. Native normal/flex/shader/jiggle/GPU/app/artist fidelity remains separate; no acceptance status changes."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_current_six_2026-11-13.json",
+          "scope": "Separate exacte9committed review:normalHome/Simple startup plus129checks acrosssixordinarypacked replays; freshCRC/payloadSHA, source/package/harness preservation andcleanprivate receipts. Oldreview/installation/recovery unchanged. Runnable reviewonly; notartist/novice/device/cleaninstall orsixnewmovies."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_derived_render_app_actual_2026-11-13.json",
+          "scope": "Exact4fa v3 passes328writer+60freshreader checks:12preparedbundles,8rawcaptures/24derivedpoint comparisons, twoordinarypreparedGLBimports withUndoRedo/namednumericposes/normalpackedHAS/exactofflinecoldpixels; allsevenpreservationgates andbothprivatedesktopclosures pass. Tools0/.5/1usesrawenginechannels, notappshapeUI. Newmovies/nativeSourcefidelity andnewstaticvariantworker/chooser mainport remainunrun/unimplemented; wider82MDLfeatureinventory separate. Priorv2failuresretained; statusunchanged."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "experiments/source_appearance/static_choice_main_plan_20261113/PLAN.md",
+          "scope": "Read-only concrete import-time skin/bodygroup chooser port plan and broaderJunko/Mima/Kanako feature matrix;17source/prototype/evidence identities preserved. No implementation, conversion, graphics or nativefidelity acceptance from this plan."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_static_native_workers_2026-11-13.json",
+          "scope": "New owner-directed static-choice main work:167 foundation checks pass; exactcf7a805 freshCore14+Wider11 workers pass25cases=22nativeconversions+3expectedall-hiddenrefusals acrosssixMDLs. Source/runtime/native preservation and25dualprivate attestations pass. Firstactualappimport separatelyFAILED because source_appearance imported before localhelperpathsetup; narrowstartupfix awaits freshappretry. No app/artist/nativejiggle/shader/assembly acceptance or formalstatus change from workerchecks."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_thin_placement_fix_2026-11-13.json",
+          "scope": "Helperbootstrapfixed2CPU+167foundation. NextactualCore14writer393assertions0fail stillFAILED fournegative-AABBplacementengineerrors; no readers/movie from thatattempt. Per-axisinsetfix passes20headless/43privateplacement+1080p24movie,981filesunchanged/cleanprivateclosure. FreshactualSFMappmatrix andfullcanonicalpending; priorfailedattempt retained. Formalstatusesunchanged."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sfm_native_jiggle_values_2026-11-13.json",
+          "scope": "Output-only exactJunkoHair49rules/1421finitefloat32values, independentrawbitrow agreement and1153protectedfilesexact.67525byteinertproposalonly; no Studiointegration/binding/solver/full140byteBOINGlayout or adjacent256KiBreportadmission acceptance."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_static_native_app_2026-11-13.json",
+          "scope": "Exact functional8d4fde0 working-source snapshots:Core14+Wider11 actualapp1348checks,22nativeconversions/3GUIrefusals,44freshsource-offlinepacked+linkedopens,88derivedframejoins,2H264AAC1080p24movies/onset1.0000417/RMS8487.65.24cleanprivatejobs,8/8preservationbothruns,3279whole-root source/nsmtime/HEAD andruntime maps exactlysame,629independentmetadatajoins. SixrepresentativeMDLs only; no nativeSource shader/jiggle/controller/assembly/artist fidelity acceptance. Fullcanonicalnewfeaturepending; oldfailedattemptsretained; statusesunchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+          "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+          "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_inert_metadata_shapes_main_2026-11-13.json",
+          "scope": "New main-working-source snapshot at eb089488: actual4native workflows,241static+154named checks,8cold Opens/20exactframejoins,1movie,8preservationgates/5privatejobs; inactive Junko49rules/1421rawfloatjoins. No native dynamics/controller/shader or original artist fidelity inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_crosswalk_actual_2026-11-13.json",
+          "scope": "Restricted actualJunko diagnostic overlay at80:69native/Blender/glTF joins,483restwords/1421jigglevalues; rawGLB+decodedstatebaselineequal;1886lockedfiles/996mainsourcespreserved. No main/HAS/nativeSolver/artistfidelity claim."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_source_bone_binding_main_2026-11-13.json",
+          "scope": "Main-working snapshot at7477: restricted Junko69bone/49owner runtime binding and Simple existing-hair suggestion; four actual native workflows241static+294named checks,8cold Opens/20exactframejoins/1movie/5privatejobs and8preservation gates. Native Source solver/artistfidelity not claimed; fresh complete default still required."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_source_coordinates_2026-11-13.json",
+          "scope": "Independent exact-input stdlib native/glTF rest/neutral subset69bones/49tips/69IBMs/9661VVDvertices; position/skin contract only. First conjugation and2e-5normal comparisons fail and remain recorded; normals unqualified. HAS poses/two conversion scales/native dynamics/artist fidelity not inferred."
         }
       ],
-      "remaining": "Approved complete native fixtures and associated tools are required; extension recognition alone is insufficient.",
+      "remaining": "Native inputs are now available and the combined Windows supported-profile route passes. Remaining external prerequisite: artist/source-appearance comparison against the actual native originals using docs/windows_acceptance_followup.md. Roadmap formats/full native shader-simulator reproduction remain optional or explicit unsupported limits; no known independent software defect is being handed off.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -207,8 +442,8 @@
       ],
       "title": "Native fidelity and dependency reporting",
       "implementation": "partial",
-      "verification": "incomplete",
-      "acceptance_status": "open",
+      "verification": "external_required",
+      "acceptance_status": "external_blocked",
       "acceptance": "Imported data uses the canonical HAS representation and cached preparations. For each supported profile verify geometry, materials, hierarchy, rig/morph/animation and supported physics/lightmaps; unsupported properties get actionable diagnostics.",
       "evidence": [
         {
@@ -218,9 +453,110 @@
         {
           "kind": "recorded_report",
           "path": "docs/source_import.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/source_entity_lights_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/source_brush_lightmaps_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sfm_uploaded_samples_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/sourceio_worker_runtime_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/standalone_source_samples_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/supplied_source_corpus_2026-11-08.json",
+          "commit": "96bf4a34287246ae29a7675b406b045764277ca3",
+          "scope": "All82suppliedMDLs convert offline without a game installation; all82ordinary Add model imports preserve bones and standalone ancestry and produce verified full-resolution pixels (328checks).22archives/2089extracted hashes remain exact; three conversions report actual missing Momoyo/Nitori dependencies. Nine full-character pose/contact/cold cases are separately scoped. Approved complete BSP/MMD/VRM fixtures/dependencies and target/artist fidelity observations remain missing; this does not certify all skins/bodygroups/morphs/cloth/nativeSourcePhysics or82pose/physics/HAS/movie cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_mmd_gma_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Current native Source82model corpus plus new GMA/13renderable PMD-PMX conversions and93app checks cover direct imports, native pose/motion review/apply, UndoRedo, geometry, portable source/cache-offline exact pixels, generated HAS physics/freeze and movies.85Source and98focused parser/addon/save tests pass; all32new original inputs remain exact. Fixed bundled addon dependency loading, empty model false success, native Linux pose/motion launcher, empty installation discovery and Source.physics omission reporting. Complete BSP and VRM native profiles remain unrun; temp.gma exceeds32MiBtransfer and street PMX needs five named atlas PNG files. Native shading/simulation/artist and target fidelity stay scoped, not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_vrm_2026-11-09.json",
+          "commit": "60b84de13900a9e3138a99003575494a9ae3392e",
+          "scope": "Four newly supplied native VRM0/1 files now pass actual worker ingress (9 checks), posing/UndoRedo/HAS/movie (37), expression/spring startup and steps (28), and generated HAS body physics/freeze (16). Fresh conversion-bundle/writer-cache-offline replay preserves exact authored body, metadata, camera and embedded GLB checksum on all four. The strict reader retains two one-pixel raster-hash failures; neither was waived. Original uploads and full embedded BIN/source definitions remain unchanged. A real 24-frame 1080p/24 H264 movie was decoded against its posed preview (51.23 dB PSNR). Sakuya terminal-helper spring startup is fixed; 8 safety, 28 Python and 35 spring regression checks pass. This supersedes the earlier missing-VRM prerequisite without claiming full native fidelity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+          "commit": "38a72ee6aa65c0fec311613fa197b7417c1eda84",
+          "scope": "Controlled GPU allocation probes reproduce legacy cutout image variation with bit-exact camera/root/all-bone transforms; copy-only control fails to stabilize and stable source order removes variation. Current9contract/16allocation-state/37native writer/16fresh cold/28expression-spring/31lighting checks pass. Original test assertions and historical failed hashes remain; new fixed-version writer/cold replay is exact on all four models without added tolerance. Native originals unchanged and actual24/48frame1080p24H264 movies probed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/native_profile_acceptance_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Native original SHA/mtime, named atlas hashes, rig pose, map-root UndoRedo, full packed native metadata/camera and exact Lit/Unshaded pixels survive owned source/conversion/import/writer-cache-offline cold replay. Actual MP4 input agrees with preview. Atlas-capacity/displacement/downsampling/native shading/physics limits remain explicit. Source-appearance/artist fidelity comparison remains external."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_six_projects_2026-11-12.json",
+          "scope": "Six protected existing native review packages open through ordinary recovery/Home and Python unpack/threaded load in fresh private Windows processes from committed source c6782d2; 129 checks pass. Saved metadata, native Setup/Focus pixels, source/package/harness hashes and strict owned-cache containment stay exact. Runnable review only: no artist, novice, device, clean-install or six-movie acceptance; counts/status unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_native_resource_staging_2026-11-12.json",
+          "scope": "Exact296resources/181460484bytes staged from two supplied RARs;34CPUchecks and actual10VMT closure. Keiki16refs resolve; Nitori25/28 with one missing hairbump resource referenced3times. Both base-texture sets present; originals exact. Staging/metadata only, not selected Blender exports, app adoption, native shader/jiggle/assembly or artist acceptance."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_static_appearance_actual_2026-11-13.json",
+          "scope": "Frozen unshipped Source worker passes14actual static cases(12bundles/2expected allblank refusals), native skin/bodygroup indices, derived rig/rest/morph structure and owned dependency checks. Dual Python/Blender background desktop/process attestation and exact source/original preservation pass; old graphical exit2 stays rejected. Native shader/deformation/render fidelity, app adoption/Undo/HAS/movie, runtime variants and broader82MDLextra features remain unrun/unimplemented. No acceptance status changed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_native_geometry_oracle_2026-11-13.json",
+          "scope": "Independent stdlib native MDL49/VVD4/legacyVTX7 reader:30synthetic controls,12derived bundles,7whole base maps/3whole triangle maps match;23/28mesh base maps and15oriented triangle multiplicities. Four Nitori topology cases remain unrun;five Tools maps unresolved. No fitted transform/guessed native identity; original/stage/bundle preservation exact. Native normal/flex/shader/jiggle/GPU/app/artist fidelity remains separate; no acceptance status changes."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_current_six_2026-11-13.json",
+          "scope": "Separate exacte9committed review:normalHome/Simple startup plus129checks acrosssixordinarypacked replays; freshCRC/payloadSHA, source/package/harness preservation andcleanprivate receipts. Oldreview/installation/recovery unchanged. Runnable reviewonly; notartist/novice/device/cleaninstall orsixnewmovies."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_derived_render_app_actual_2026-11-13.json",
+          "scope": "Exact4fa v3 passes328writer+60freshreader checks:12preparedbundles,8rawcaptures/24derivedpoint comparisons, twoordinarypreparedGLBimports withUndoRedo/namednumericposes/normalpackedHAS/exactofflinecoldpixels; allsevenpreservationgates andbothprivatedesktopclosures pass. Tools0/.5/1usesrawenginechannels, notappshapeUI. Newmovies/nativeSourcefidelity andnewstaticvariantworker/chooser mainport remainunrun/unimplemented; wider82MDLfeatureinventory separate. Priorv2failuresretained; statusunchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+          "commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+          "scope": "Fresh complete configured-Windows default including static Source import choices: 36 core groups, 156 results, 21 movies, both audio onsets 1.0s; 982 functional files and HEAD unchanged; 192 private jobs closed (191 exit 0, one expected Krita cancel exit 2). Six representative native MDLs separately pass 1348 actual-app checks. Native hair simulation, original artist fidelity, human/device observations and clean offline installation are not inferred."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sfm_inert_metadata_shapes_main_2026-11-13.json",
+          "scope": "New main-working-source snapshot at eb089488: actual4native workflows,241static+154named checks,8cold Opens/20exactframejoins,1movie,8preservationgates/5privatejobs; inactive Junko49rules/1421rawfloatjoins. No native dynamics/controller/shader or original artist fidelity inferred."
         }
       ],
-      "remaining": "Broader native material, inherited-transform, rig/cloth, prop/lightmap fidelity remains; retain original sources.",
+      "remaining": "Native dependencies, original preservation, bounded materials/props/lightmaps and exact portable cold replay now have Windows evidence. Obtain actual source-appearance/artist comparison for supported geometry/material/rig behavior. Preserve the explicitly reported partial lightmap/native-shader/physics limits; do not infer original visual fidelity solely from self-replay hashes.",
       "external_dependencies": [
         "B-NATIVE"
       ]
@@ -233,8 +569,8 @@
       ],
       "title": "Visible spawn and bounded grounding",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Models spawn visibly near the captured view, attempt support/overlap avoidance with bounded candidates, and remain findable on fallback; maps are not treated as tiny humanoids.",
       "evidence": [
         {
@@ -244,9 +580,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/height_import.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_current_2026-11-07.json",
+          "commit": "5b71c8601c680fa89d3bb24b43fd48db52c91042",
+          "scope": "20 current placement checks: captured distant camera, translated support floor, complete frustum fit, bounded nine-candidate overlap refusal/fallback, aerial visible fallback, exact Undo/packed/movie and original source. Original maps retain map-root behavior; no native map fidelity claim."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "Actual OBJ environment retains chosen scale/up-axis, full authored bounds and coexists with independent imported models rather than being normalized as a humanoid."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/scenario_a_2026-11-09.json",
+          "commit": "2cfdd583a6610d939277adf67069f17deebda8f4",
+          "scope": "All eight section17.A software steps pass21writer+6fresh-process checks using the supplied native VRM1, actual canvas model/bone/gizmo interaction, frame0/frame4 auto-keys, exact packed scene/camera and cold frame0/2/4pixels, conversion/cache offline, and actual24frame1080p24H264. Fixed premature floating fallback;20existing translated-floor/overlap/aerial-placement regressions pass. Native GMod branch is explicitly not tested. Real Windows novice timing, actual OS drag/physical input and subjective usability remain unrun; no acceptance status is promoted."
         }
       ],
-      "remaining": "Native bounds/orientation/scale and large-world acceptance remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -258,8 +612,8 @@
       ],
       "title": "Multiple maps, parenting and hierarchy",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Several maps/models/groups coexist, roots move whole maps, hierarchy finds distant objects, and parenting/saving preserve transforms.",
       "evidence": [
         {
@@ -269,9 +623,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/architecture.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_current_2026-11-07.json",
+          "commit": "5b71c8601c680fa89d3bb24b43fd48db52c91042",
+          "scope": "Current actual two-map/two-rig/group hierarchy, parent transforms and complete map-root edits, stable-ID Undo, ordinary Add/New/recovery and exact packed/linked/movie evidence."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "31 current world-editor checks include hierarchy lookup of map5000units away, actual temporary Frame selected, unchanged shot keys and exact one-step world Undo; packed/linked readers match exactly."
         }
       ],
-      "remaining": "Very large worlds and broader native hierarchy verification remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -283,8 +649,8 @@
       ],
       "title": "Selection, bones and hidden-object editing",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Selection shows an editor-only green outline, accessible bones and decided hold-Alt reveal; hidden-parent selection remains editable without changing output visibility.",
       "evidence": [
         {
@@ -294,9 +660,31 @@
         {
           "kind": "recorded_report",
           "path": "docs/visibility.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "Actual positive green GPU outline measured separately from gizmos, zero wrong-object green,64GPU object picks, accessible active bones and hidden-parent ghost selection/posing excluded from final output."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/navigation_current_2026-11-07.json",
+          "commit": "19834f040a55b17243d801e5dd029ccb44bed559",
+          "scope": "Actual Alt press/release reveals/hides skeleton while optional orbit is active; escape/focus and source/key isolation remain verified within43current navigation checks."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/selection_readback_shutdown_2026-11-13.json",
+          "scope": "Pending scene-pick shutdown fix: unique owned frame receivers preserve serial/view guards and release camera snapshots on close. New28private lifecycle checks pass; exactold2904same-test4passing footer still nativeAV3221225477 and is rejected. Final unchanged selection41/worldedit41/SceneView12830+102/drawing12+35+3 pass. Failed suffix, harness and callback candidates retained; fullaggregate and human/native/device/cleaninstall gates remain separate."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_selection_displayed_layout_2026-11-13.json",
+          "scope": "Fresh eb7canonical native MMD pick hit correct production stale-size rejection: canvas581.3333x327to595.5555x335 during synthetic deselect/mode relayout. Test-only displayed-frame settle preserves all41predicates and unchanged picker. Fresh MMD/GMod/SFM41/0clean private replay; failed947source-exact full run and later unrun groups retained. No fullaggregate/nativeartist/device closure."
         }
       ],
-      "remaining": "Complete routed selection/context priority and native bone-binding acceptance remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -308,8 +696,8 @@
       ],
       "title": "Direct posing and automatic manual keys",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Root and bone edits key the intended object/part at the exact playhead, Undo restores them, and unrigged assets degrade gracefully.",
       "evidence": [
         {
@@ -319,9 +707,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/body_pose_library.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/world_import_edge_cases_2026-11-07.json",
+          "commit": "70fabe4002568d5f2b2b704ec49bf3335e314bc3",
+          "scope": "Current world editor auto-keys map roots and bones at frame24, stable target IDs survive selection switches, one-step drag/Undo/Redo, rotated/scaled parent transforms, unrigged map root controls and invalid bone transaction preservation."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/common_import_current_2026-11-07.json",
+          "commit": "f983edaabba3042f4af88c0bccb71a8c5bb2afbf",
+          "scope": "Common-format imported skin visibly deforms through ordinary pose controls and exact Undo; source geometry/rigs and authored shot remain preserved. Native fidelity and unusual ecosystem rigs are not inferred."
         }
       ],
-      "remaining": "Native transform/rig acceptance and full direct-manipulation ergonomics remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem fidelity, actual physical input/Explorer drag, artist and Windows observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -331,9 +731,9 @@
         "ADD5.3"
       ],
       "title": "Rig-aware IK and foot constraints",
-      "implementation": "partial",
-      "verification": "incomplete",
-      "acceptance_status": "open",
+      "implementation": "implemented",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Supported hand/limb IK and planted-foot/root edits preserve reachable targets; unusual or missing rigs refuse safely.",
       "evidence": [
         {
@@ -343,9 +743,23 @@
         {
           "kind": "recorded_report",
           "path": "docs/foot_contacts.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/helper_limb_ik_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/required_motion_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_motion_current_2026-11-07.json",
+          "commit": "687a4eec73f056624b6bdbc207927562b9d8e516",
+          "scope": "Current original helper/direct rig checks cover actual hand dragging, planted-foot/root crouch, Undo/Redo, recovery, cold packed replay and exact exported frames; default limb/fallback evidence separately recorded. Native profile fidelity and physical/artist/Windows gates remain separate."
         }
       ],
-      "remaining": "Broader native rig chains and whole-body goal handling remain.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem, Windows, physical-device and artist observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -399,8 +813,8 @@
       ],
       "title": "Reusable body poses",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Named thumbnail poses support use, rename, duplicate, removal and compatible native pose sharing without overwriting source rigs.",
       "evidence": [
         {
@@ -410,9 +824,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/body_pose_library.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/body_pose_library_current_2026-11-07.json",
+          "commit": "8464b96fc338c37a97f159a8d0406da785ff018d",
+          "scope": "41 actual named-thumbnail library UI/cold-reader checks: capture/use/rename/duplicate/remove, native HAS pose-library sharing, exact compatible rig bindings, wrong-rig refusal, packed/linked/recovery, ordinary keys/Undo and source/camera/drawing/movie preservation. Original rig; no automatic cross-rig retargeting or ecosystem fidelity claim."
         }
       ],
-      "remaining": "Native fixture breadth and artist acceptance remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -424,8 +844,8 @@
       ],
       "title": "Sparse interpolation and per-channel editing",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Hold/linear/ease and supported Advanced curves preserve authored endpoints, independent parameters and camera cuts during seek/save/export.",
       "evidence": [
         {
@@ -435,9 +855,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/motion_animation.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/body_pose_library_current_2026-11-07.json",
+          "commit": "8464b96fc338c37a97f159a8d0406da785ff018d",
+          "scope": "38 current normal per-bone editing checks preserve untouched root/peer half-frame curves, authoritative endpoints, split/move/source-time clipboard, packed/linked/recovery and exact movie inputs."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/root_components_current_2026-11-07.json",
+          "commit": "31e32e49ff0f1b384840b78ab9ea812d281da1db",
+          "scope": "320 headless checks cover supported hold/linear/ease, root parameter independence, source-time clips, keys/authoring/deletion/recording and reverse/boundary sampling. Two native-plan suites explicitly skipped; this domain evidence is paired with normal UI/render receipts, not treated as standalone UI certification."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/camera_current_2026-11-07.json",
+          "commit": "590d914060ee0d075ac6861f45cf589fc80aa885",
+          "scope": "117 current numeric/projection/timeline scenario checks cover camera interpolation, exact adjacent-frame cuts and persistence/seek/render agreement. No unresolved multi-view or general per-axis curve graph requirement added."
         }
       ],
-      "remaining": "Complete supported-channel regression and artistic motion preference evaluation remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -448,8 +886,8 @@
       ],
       "title": "Reversible Motion Assist",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "A simple assist control offers editable, disableable corrections without silently replacing authored poses; supported parts/helpers have explicit bounds.",
       "evidence": [
         {
@@ -471,9 +909,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/motion_animation.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/motion_feeling_original_current_2026-11-07.json",
+          "commit": "31e32e49ff0f1b384840b78ab9ea812d281da1db",
+          "scope": "27 actual original-rig UI/cold-reader and23domain checks: Simple trial/Cancel/Apply, Advanced per-part zero and helper phase/amount correction changes actual intermediates, every main endpoint exact, Off/Undo/Redo, reverse exact read-only sampling, source/cache-offline packed replay and exact movie. Planted-contact/native/artist/physical acceptance remains separate."
         }
       ],
-      "remaining": "Bounded reversible Motion feeling, per-part/helper correction and saved evaluation are implemented. Owner intensity/style preference, broader native/physics/clip/lesson acceptance and long-rig performance remain unverified. Full-body inference beyond this contract is not silently promoted from potential assistance examples into a new mandatory feature.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, planted-contact/native rigs, artist feel, physical inputs and Windows target observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -483,9 +927,9 @@
         "ADD5.5"
       ],
       "title": "Reusable paths with locomotion assistance",
-      "implementation": "partial",
-      "verification": "incomplete",
-      "acceptance_status": "open",
+      "implementation": "implemented",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Reusable editable paths/clips can drive a character, with a visible reversible locomotion suggestion and correction workflow.",
       "evidence": [
         {
@@ -531,9 +975,23 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/authored_turn_walking_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/grouped_walking_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/required_motion_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_motion_current_2026-11-07.json",
+          "commit": "687a4eec73f056624b6bdbc207927562b9d8e516",
+          "scope": "Current grouped walking checks cover reusable edited path settings, staged reversible suggestion, authored turns/bends, one-step Undo/Redo, manual correction persistence, recovery, source/cache-offline cold replay and exact exported frames. General terrain and multi-view inference remain outside the decided contract."
         }
       ],
-      "remaining": "Optional saved/correctable walking supports bounded straight routes, forward-progressing flat bends and smooth explicitly authored upright yaw. Staged preview/cancel, Undo/Redo, recovery, packed cold Open, exact five-frame pose replay and two-frame export agreement have scoped cloud evidence. Automatic facing, sustained pivots, general rig/terrain/grouped-parent coverage and native/artist acceptance remain incomplete.",
+      "remaining": "Required bounded software condition verified with committed current receipts. Native ecosystem, Windows, physical-device and artist observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -546,8 +1004,8 @@
       ],
       "title": "Shot camera authoring and cuts",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Temporary navigation is separate from explicit shot keys; numeric transforms/FOV, interpolation and adjacent-frame cuts persist and render at exact frames.",
       "evidence": [
         {
@@ -557,9 +1015,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/numeric_camera.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/camera_current_2026-11-07.json",
+          "commit": "590d914060ee0d075ac6861f45cf589fc80aa885",
+          "scope": "117 current checks across numeric camera, projection and seven-step timeline scenario: temporary navigation separate from explicit keys, typed transforms/FOV/ranges, interpolation, adjacent-frame cuts, Undo/Redo, packed/linked/recovery and exact real export frames. Original fixtures; native/Windows/device/artist gates remain separate."
         }
       ],
-      "remaining": "Complete routed camera matrix and Windows input acceptance remain.",
+      "remaining": "Required software camera condition verified by current committed receipts. Native fidelity, physical controls/artist comfort and Windows target acceptance remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -571,8 +1035,8 @@
       ],
       "title": "One rational frame domain",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Camera, poses, drawings, media and sound use integer frames and rational rates; seek/preview/export agree and timing edits protect existing content.",
       "evidence": [
         {
@@ -582,9 +1046,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/project_timing.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/project_timing_current_2026-11-07.json",
+          "commit": "b7302bd3270d3b93f78240562cde01c096af813f",
+          "scope": "54current exact rational presets/custom/invalid/over-budget/recording/no-op/Undo and frame/source/audio/world/camera isolation checks; actual24000/1001H264AAC48frames2.002s/onset48048samples, exactpreview/render and4fresh packed/linked/recovery/lesson readers. Checksum-bound historical-reader fixture explicitly unavailable; its assertion retained, skipped and not certified."
         }
       ],
-      "remaining": "Full rate/domain regression remains; output dimensions have their own requirement.",
+      "remaining": "Required current rational-time software condition verified alongside current camera/body/cel/import/audio/movie receipts. Specific absent historical-reader compatibility fixture remains explicitly unverified; native/Windows/device observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -595,8 +1065,8 @@
       ],
       "title": "Collapsed tracks and animated subtracks",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Objects begin collapsed, expansion shows animated parts, and selecting parts focuses their channels without exposing inactive rig clutter by default.",
       "evidence": [
         {
@@ -606,9 +1076,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/motion_animation.md"
+        },
+        {
+          "kind": "test_result",
+          "commit": "1307cb0c8d83c4858eb98e71261f4c799dff59a3",
+          "path": "docs/benchmarks/timeline_current_2026-11-07.json",
+          "scope": "156 current domain/navigation/workspace/channel checks: Simple starts collapsed per object; routed disclosure shows only authored root/parts/visibility, part keys focus correct bone/frame through filtered inspectors, fixed labels/zoom/pan remain usable, no authored/history/camera changes, packed/linked/recovery/lesson and actual movie."
         }
       ],
-      "remaining": "Large-project track density and full routed coverage remain.",
+      "remaining": "Required bounded software condition verified. Native/artist/device/Windows acceptance remains separate; unresolved ripple/cross-track choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -620,8 +1096,8 @@
       ],
       "title": "Structural clip and drawing edits",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Move/cut/copy/paste/split retain relative animation or independent cel pixels and have correct Undo; frame3000-to0 is supported.",
       "evidence": [
         {
@@ -631,9 +1107,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/drawing_clipboard.md"
+        },
+        {
+          "kind": "test_result",
+          "commit": "1307cb0c8d83c4858eb98e71261f4c799dff59a3",
+          "path": "docs/benchmarks/timeline_current_2026-11-07.json",
+          "scope": "61 current original body/component frame3000-to0 writer/cold/actualSIGKILLstartup checks: relative motion, exact independent ink/audio/camera, sources/cache offline and manualHAS unchanged."
+        },
+        {
+          "kind": "test_result",
+          "commit": "c4ad3fe581aac144cf81a17168bfc98dbf2ab796",
+          "path": "docs/benchmarks/cel_clipboard_current_2026-11-07.json",
+          "scope": "205 current cel clipboard/history checks: independent copy/cut/paste/split pixels and correct bounded Undo, live physics identity untouched, cold packed and exact movie."
+        },
+        {
+          "kind": "test_result",
+          "commit": "8d74c1a7d42aa532f9c86e69552d7f73dca22ce7",
+          "path": "docs/benchmarks/cel_timing_current_2026-11-07.json",
+          "scope": "161 current cel timing/history/domain/live/cold/startup checks plus60second1080p24H264AAC media; editable child/parent clips and independent pixel/identity/Undo/source preservation. Unresolved ripple/cross-track semantics remain OPEN."
         }
       ],
-      "remaining": "Retain bounded current contracts; do not silently decide unresolved ripple/cross-track semantics.",
+      "remaining": "Required bounded software condition verified. Native/artist/device/Windows acceptance remains separate; unresolved ripple/cross-track choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -645,8 +1139,8 @@
       ],
       "title": "Timeline navigation and waveforms",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Zoom/pan/seek share a ruler and frame mapping, labels stay fixed, scroll-to-playhead works and sound waveforms remain aligned.",
       "evidence": [
         {
@@ -656,9 +1150,19 @@
         {
           "kind": "recorded_report",
           "path": "docs/sparse_audio.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/responsive_workspace_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/responsive_workspace_2026-11-07.json",
+          "commit": "024e91ea3c59e5b150557e02ec33e3435b995ea9",
+          "scope": "42domain+34actual timeline checks verify shared zoom/pan/seek mapping, fixed labels, late neighboring-frame targets, scroll-to-playhead, waveform selection/drag/trim and floating/parent-child view resets;46workspace+34channel/media checks preserve output and accessibility."
         }
       ],
-      "remaining": "Dense-project responsiveness and physical input acceptance remain.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -671,8 +1175,8 @@
       ],
       "title": "Presence, persistent visibility and gaps",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Late introduction is absent beforehand; later clips do not override an explicit OFF; parent visibility, held/bridged gaps and global300ms/zero fades remain deterministic.",
       "evidence": [
         {
@@ -682,9 +1186,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/visibility.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_media_visibility_current_2026-11-07.json",
+          "commit": "d657472648825ff41021be96e2ff7f3648901936",
+          "scope": "47 current post-Solo actual visibility checks: late presence, persistent OFF across later pieces, parent inheritance, held/bridged gaps, default300ms/zero fade, packed/recovery and exact preview/movie with synchronized AAC. Optional native fixtures explicitly skipped."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/camera_current_2026-11-07.json",
+          "commit": "590d914060ee0d075ac6861f45cf589fc80aa885",
+          "scope": "Current all-seven-step scenarioC verifies late introduction, moved/split clips, held gaps and explicit OFF together with source-offline cold replay and exact movie/cuts."
         }
       ],
-      "remaining": "Full native scenarioC and artist acceptance remain; extra per-key fades are not silently required.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, physical audible/device synchronization, subjective artist review and Windows observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -697,8 +1213,8 @@
       ],
       "title": "Independent RGBA layers",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Rough/Ink/Flats/Effects, order/visibility/opacity and painting remain independent from the world/camera and reproduce after saving and export.",
       "evidence": [
         {
@@ -708,9 +1224,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/drawing_layers.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/layers_current_2026-11-07.json",
+          "commit": "b4083f25124d37387c71478edd74563167393a70",
+          "scope": "53 current actual layer and retention checks: four editable layers, names/order/visibility/opacity, original paint/source/world/camera independence, useful Undo/Redo, packed/recovery and exact real movie."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/fill_current_2026-11-07.json",
+          "commit": "efa099d818e7fb6649625acb7bcff0f535754edb",
+          "scope": "Current actual Simple Flats creation and independent Ink/Flats painting, layer composition, unchanged source/world/camera and exact save/render evidence within207fill checks."
         }
       ],
-      "remaining": "Routed complete-layer acceptance remains; preserve current documented limits.",
+      "remaining": "Required bounded software condition verified by current committed receipts. Native/Windows/physical/artist acceptance and whole-process/GPU measurements remain separate where applicable.",
       "external_dependencies": []
     },
     {
@@ -722,8 +1250,8 @@
       ],
       "title": "Editable held cels",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Blank/copy/delete/move/resize/split exposures obey end-exclusive boundaries and preserve independent editable pixels, Undo and persistence.",
       "evidence": [
         {
@@ -733,9 +1261,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/drawing_clipboard.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/cel_clipboard_current_2026-11-07.json",
+          "commit": "c4ad3fe581aac144cf81a17168bfc98dbf2ab796",
+          "scope": "205 current blank/copy/delete/cut/paste/split, independent editable pixels, bounded patches, exact Undo/Redo, live-physics isolation, cold packed and real movie checks."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/cel_timing_current_2026-11-07.json",
+          "commit": "8d74c1a7d42aa532f9c86e69552d7f73dca22ce7",
+          "scope": "161 current end-exclusive exposure/move/resize/history/nested-owner checks, actual1440frame movie with exact selected pixels, packed/linked cold readers and forced-exit startup recovery."
         }
       ],
-      "remaining": "Held-cel structural implementation is present; dense storage now has scoped400drawing evidence in MEM-02. Full routed exposure/structural acceptance still needs closure; no longer describe dense storage as absent.",
+      "remaining": "Required software condition verified by current committed receipts. Native/device/artist/Windows observations and any future distribution authorization remain separate where applicable.",
       "external_dependencies": []
     },
     {
@@ -747,8 +1287,8 @@
       ],
       "title": "Brush, eraser and pressure",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Output-coordinate strokes, opacity, erasing and supported pressure events remain correct under zoom/pan and Undo.",
       "evidence": [
         {
@@ -758,9 +1298,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/brush_pressure.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/brush_current_2026-11-07.json",
+          "commit": "83da652d896c82ffe37d8fdd34a885caea203930",
+          "scope": "75 current unit/editor/cold-reader checks plus independent taper alpha reference: routed output-coordinate strokes under zoom/pan, opacity/eraser and synthetic pressure events, limit refusal, release/cancel/focus cleanup, exact Undo/Redo/packed paint and shared real export pixels. Physical tablet and latency explicitly untested."
         }
       ],
-      "remaining": "Physical Windows tablet behavior/latency remains externally unverified; no universal Ink/Wintab claim.",
+      "remaining": "Required bounded software brush condition verified. Actual tablet/driver/GPU latency, physical pressure feel and audible-device acceptance remain external under ACCEPT-TABLET.",
       "external_dependencies": []
     },
     {
@@ -772,8 +1318,8 @@
       ],
       "title": "Safe fill and line-edge handling",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Iterative fill supports tolerance, connectivity, visible-ink sampling, gap preview and border growth; application is undoable and never edits invisible peers or the scene.",
       "evidence": [
         {
@@ -783,9 +1329,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/fill_connections.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/fill_current_2026-11-07.json",
+          "commit": "efa099d818e7fb6649625acb7bcff0f535754edb",
+          "scope": "207 current flood/tolerance/connectivity/gap-preview/border-growth unit/editor/cold-reader checks and independent per-pixel oracles. One-step bounded Undo/Redo, hidden-peer/ink/world/source preservation, packed/linked/recovery, exact real movie inputs and worker UI/cancel/stale-context/teardown behavior. Original art fixtures."
         }
       ],
-      "remaining": "Broader anti-aliased artistic-quality evaluation remains.",
+      "remaining": "Required bounded software fill condition verified; physical artist/device observations remain separate.",
       "external_dependencies": []
     },
     {
@@ -796,8 +1348,8 @@
       ],
       "title": "Palette and color sampling",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "The artist can keep/select project colors and sample the intended drawing/composite without modifying reference media.",
       "evidence": [
         {
@@ -807,9 +1359,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/project_palette.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/color_current_2026-11-07.json",
+          "commit": "a92406b163902148875e7d3f03731bef5b3809ee",
+          "scope": "80 current domain/editor/cold-reader checks,3container tests and16cross-runtime validation cases: project swatches, intended drawing/composite sampling, reference/source preservation, packed/linked/folder/recovery/lesson and exact movie output."
         }
       ],
-      "remaining": "Full current routed color/guide regression remains.",
+      "remaining": "Required bounded software condition verified by current committed receipts. Native/Windows/physical/artist acceptance and whole-process/GPU measurements remain separate where applicable.",
       "external_dependencies": []
     },
     {
@@ -821,8 +1379,8 @@
       ],
       "title": "Onion skin and comparison guides",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Previous/next drawings can be compared with editor-only ghosts; guides never leak into stored art or final output.",
       "evidence": [
         {
@@ -832,9 +1390,20 @@
         {
           "kind": "recorded_report",
           "path": "docs/onion_skin.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/onion_current_2026-11-07.json",
+          "commit": "203773fdac831c2c7a5c56bb75f5e323dda6983f",
+          "scope": "37 actual current editor/GPU checks: nearest previous/next drawings, hold/zoom/pan and active-layer isolation, keyed opacity, resource release/invalidation, exact artwork after packed/recovery and guide-free actual MP4 input. Original fixtures; no physical or artist certification."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/onion_fresh_summary_2026-11-12.json",
+          "scope": "Existing37app/persistence/48frameH264 checks pass; test-wrapper fix publishes identical fresh per-case and canonical summaries after all unchanged assertions. No app change. Scoped suffix19passed before stale-summary guard; remaining16unrun and fullaggregate stillincomplete."
         }
       ],
-      "remaining": "Physical drawing comfort and artist feedback remain.",
+      "remaining": "Required software onion comparison and output-isolation condition verified. Artist/device observations remain separate.",
       "external_dependencies": []
     },
     {
@@ -846,8 +1415,8 @@
       ],
       "title": "Bounded usable drawing history",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Meaningful pixel/cel edits have measured bounded useful Undo/Redo without full-frame snapshots for every stroke or resetting independent live physics.",
       "evidence": [
         {
@@ -953,9 +1522,44 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/background_manual_saves_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_project_open_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/recovery_blob_retention_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/recovery_quota_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/cel_clipboard_current_2026-11-07.json",
+          "commit": "c4ad3fe581aac144cf81a17168bfc98dbf2ab796",
+          "scope": "205 current clipboard/history checks including actual pixel edits and exact Undo/Redo, bounded cel patches and preserved identity/generation/body positions of independent running physics."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/cel_timing_current_2026-11-07.json",
+          "commit": "8d74c1a7d42aa532f9c86e69552d7f73dca22ce7",
+          "scope": "48 timing edits charge24576bytes, duration-only command512bytes, exact image identity and parent/child Undo/Redo within161current timing/persistence/recovery checks."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/layers_current_2026-11-07.json",
+          "commit": "b4083f25124d37387c71478edd74563167393a70",
+          "scope": "Current12cold-drawing layer deletion charges9802retained raster bytes, preserves preceding useful brush Undo and restores exact art; ordinary layer/media checks pass. History has64MiB soft/128entry policy with one large command retained; registered raster admission separate. No whole-process/GPU/transient or physical-device bound claimed."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json",
+          "scope": "Windows main snapshot launch-order hardening:10legacy+32newdomain,31HAS/16faultPython,20actualwriter(original17+3),5offlinecoldreader andoriginal24unit/72nativebodyappchecks pass with source preservation andclosedprivate jobs. Immutablecapture precedesrealpacker; ownfilesystemThread followsit; forcedThreadstartupfailure cancels/drainsonechild/emitsonefailurewithoutchangingpriorgoodtarget/newdirtyedits. Prior1236fullremainsfailed; originalWindowsCreateProcesscauseunknown;240launchCWDprobe notreproduced. No new400drawing/physicalstorage/device/completeaggregate claim."
         }
       ],
-      "remaining": "Ordinary and actual400prepared-video editing/history/cold/crash/media have scoped evidence. Manual HAS PNG staging now runs on a detached worker: final400 Save call21ms/capture3.851ms, total80.022s with1898appframes and all400cold pixel hashes exact; previous target/backup/cancel/revision/context/recovery regressions pass. Registered34.7MB and separateGodotprocess HWM501.7MB do not establish whole-app/GPU bounds. InitialOpen responsiveness, long-session retention/cleanup/concurrent quota, native-device acceptance and >32preparednativeKrita input remain separate.",
+      "remaining": "Required bounded software condition verified by current committed receipts. Native/Windows/physical/artist acceptance and whole-process/GPU measurements remain separate where applicable.",
       "external_dependencies": []
     },
     {
@@ -968,8 +1572,8 @@
       ],
       "title": "Cold-cel storage and larger projects",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Cold unique drawings can be compressed/lazily loaded with measured bounded active/history caches, source integrity and reliable large-project seek/save/export.",
       "evidence": [
         {
@@ -1171,9 +1775,56 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/background_manual_saves_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_project_open_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/recovery_blob_retention_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/recovery_quota_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/large_prepared_video_2026-11-07.json",
+          "commit": "c4900bddaeae38e6c8ddaff563550dec853d35ef",
+          "scope": "Actual400unique original preparedvideo drawings normalized1080p with bounded registered owned/decoded accounting, cancellable ingress, editable brush/Undo, exact cold/recovery/movie proof. No noisy400frame or nativeKrita claim."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/background_manual_saves_2026-11-07.json",
+          "commit": "b0dab90d5e5543d8e985a8acd6ebed185112bccf",
+          "scope": "Actual400drawing detached PNG staging and save:21ms call/3.851ms capture,1898responsive app frames, all400cold pixel hashes exact; cancel/revision/context/readback/backup safety."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "Current400drawing background Open after latest fix:25.068sworker/96.891msmaininstall/468responsiveframes, exact registered owners/pixels, Cancel/newer-edit/corrupt/New protections."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/layers_current_2026-11-07.json",
+          "commit": "b4083f25124d37387c71478edd74563167393a70",
+          "scope": "Current53layer/retention checks include12cold drawings retaining9802compressed bytes with99,532,800decoded reservation and useful older brush Undo; separate decoded authority reservations."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/recovery_current_2026-11-07.json",
+          "commit": "961e38d797f768c84bd961341f288a0f089f4aef",
+          "scope": "Current327checks cover25changing generations with bounded retained CAS payloads, shared512MiB cross-process quota, crash-incarnation reclamation and unknown/live/corrupt/link preservation. Arbitrary orphan cleanup and process/GPU memory are outside this registered authority guarantee."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json",
+          "scope": "Windows main snapshot launch-order hardening:10legacy+32newdomain,31HAS/16faultPython,20actualwriter(original17+3),5offlinecoldreader andoriginal24unit/72nativebodyappchecks pass with source preservation andclosedprivate jobs. Immutablecapture precedesrealpacker; ownfilesystemThread followsit; forcedThreadstartupfailure cancels/drainsonechild/emitsonefailurewithoutchangingpriorgoodtarget/newdirtyedits. Prior1236fullremainsfailed; originalWindowsCreateProcesscauseunknown;240launchCWDprobe notreproduced. No new400drawing/physicalstorage/device/completeaggregate claim."
         }
       ],
-      "remaining": "Ordinary and actual400prepared-video editing/history/cold/crash/media have scoped evidence. Manual HAS PNG staging now runs on a detached worker: final400 Save call21ms/capture3.851ms, total80.022s with1898appframes and all400cold pixel hashes exact; previous target/backup/cancel/revision/context/recovery regressions pass. Registered34.7MB and separateGodotprocess HWM501.7MB do not establish whole-app/GPU bounds. InitialOpen responsiveness, long-session retention/cleanup/concurrent quota, native-device acceptance and >32preparednativeKrita input remain separate.",
+      "remaining": "Required bounded registered raster/cache/history/storage condition verified. Whole-process/GPU/audio limits, arbitrary orphan cleanup, noisy400frame/nativeKrita breadth, subjective long-session/device performance and Windows observations remain unverified separate scopes.",
       "external_dependencies": []
     },
     {
@@ -1185,8 +1836,8 @@
       ],
       "title": "Sound import and editing",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "WAV and supported MP3/Ogg clips have independent timing, trim/gain/fades/mute/solo and survive packed/linked saves without source mutation.",
       "evidence": [
         {
@@ -1196,9 +1847,29 @@
         {
           "kind": "recorded_report",
           "path": "docs/multiple_audio.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/audio_solo_current_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_solo_current_2026-11-07.json",
+          "commit": "119c3a6a0564cf980a7afd698ba48b1424987984",
+          "scope": "Required Solo implemented and verified with38domain/25cross-runtime/22writer/22cold-reader checks plus30HAS tests: multiple solos, mute authoritative, gain/fade/end-trim coexistence, scene-local nested semantics, one-step Undo/Redo, strict version5 packed/linked/recovery and source/cache-offline exact PCM/decoded AAC."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_media_visibility_current_2026-11-07.json",
+          "commit": "d657472648825ff41021be96e2ff7f3648901936",
+          "scope": "Actual current WAV/MP3/Ogg preparation/import, captured request frame, source-preserving cancel/stale/missing decoder/bad input/overlong refusal and retry, exact Undo/packed/linked, normalized PCM and independent decoded stereo AAC levels/offsets."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_metadata_separator_fix_2026-11-11.json"
         }
       ],
-      "remaining": "Full current media fault/relink matrix remains.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, physical audible/device synchronization, subjective artist review and Windows observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -1210,8 +1881,8 @@
       ],
       "title": "Preview clock and exact audio export",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Playback uses the shared time authority and exported mixed sound has verified offsets and duration at rational rates, including nested sound without duplication and silent projects.",
       "evidence": [
         {
@@ -1221,9 +1892,32 @@
         {
           "kind": "recorded_report",
           "path": "docs/sparse_audio.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_solo_current_2026-11-07.json",
+          "commit": "119c3a6a0564cf980a7afd698ba48b1424987984",
+          "scope": "Current43sparse/multi/nested domain checks include24fps and30000/1001, offsets/loops without duplication, exact PCM after packed/linked/recovery/lesson, actual fade levels and silence in decoded AAC; Solo uses the same scene-composed preview/export bytes."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_media_visibility_current_2026-11-07.json",
+          "commit": "d657472648825ff41021be96e2ff7f3648901936",
+          "scope": "Actual AudioStreamPlayer bus capture and explicit Dummy-driver fallback, exact reopened mix, independent WAV/MP3/stereoOgg offsets and absent early/wrong-channel leakage in AAC. Engine capture is explicitly not a physical audio-device measurement."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/settings_matrix_2026-11-07.json",
+          "commit": "56bb6ea7c8bce5d43a644f2ca84c23953491d364",
+          "scope": "Committed current project settings/rational-rate matrix verifies actual encoded media and alignment across supported rates/sizes; hardware/subjective listening remains under the separate physical gate."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/encoder_existing_output_fix_2026-11-13.json",
+          "scope": "Full3acanonical passes allfunctionalwrappers but fails finalAAC onstale silent movie; retainedfailed,947sourcehashes/HEADexact. Product refusesexistingoutput/logwrites, clearsstalesuccess andrejectserrorlevelstderr evenexit0; fivefocusedfailurechecks pass andoldencodercounterfactualfails. New separatefreshsilent/tone fixtures retainAAC/onset/RMS andaddsilentstreamcheck. Scoped21movies(2fresh19retained) pass, twoactualonsets1.0s, RMS5658.30, two cleanprivategraphicsreceipts; notfullaggregate orphysicalaudiosync."
         }
       ],
-      "remaining": "Physical output-device sync/latency and complete fault matrix remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native ecosystem breadth, physical audible/device synchronization, subjective artist review and Windows observations remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -1235,8 +1929,8 @@
       ],
       "title": "Live physics, freeze and reset",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Compatible bodies default to enabled physics when supported, simulate/grab/throw, freeze in the current pose when disabled and offer reset; simulation alone authors no take.",
       "evidence": [
         {
@@ -1246,9 +1940,39 @@
         {
           "kind": "recorded_report",
           "path": "docs/physics_recording.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/live_physics_current_2026-11-07.json",
+          "commit": "ed10572ce4bfbc7b0680dcd0ab7c28d67ea3d91b",
+          "scope": "101 actual original-fixture checks: compatible interactive imports default on, queued cancellation and live peers preserved; Jolt120Hz fall/contact/grab and release retains actual drag velocity, freeze without keys, Simple context Reset pose exact Undo/Redo, solid prop/ragdoll collisions, packed reopen and exact48-frame1080p24H264 movies. Optional native fixtures explicitly absent."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_contact_distance_fix_2026-11-11.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/contact_hair_off_contract_2026-11-12.json",
+          "scope": "Corrects obsolete Hair OFF freeze-history test after owner-requested authored restoration. Exact-old-assert diagnostic: all91bone poses/data/world/history/redo/dirty exact; Undo removed prior fan edit. Test-only stronger contract51ordinary+53component checks passes with unchanged contact/body/Record/HAS/48frame1080p24H264 predicates. App source unchanged. Failed4fee full run retained; no aggregate or artist/device closure."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/wind_review_gpu_matrix_2026-11-12.json",
+          "scope": "Isolated unshipped phase1 wind prototype only: sixactualprivateGPUcases830/0 with preserved data/source/native bytes and clean receipts. No normal-app port, pendinghelper-before-Apply/permanentinclusion, fullregressions, nativejiggle or artist/device acceptance claimed; ledgerstatus unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/local_wind_main_2026-11-13.json",
+          "scope": "Main local-wind phase1 passes94units+845privateGPU checks and8existing integration wrappers, with948source/input identities preserved. Temporary candidate/solver, source/body/prop ownership, final PNG exclusion and Local/World start-cancel scope pass. Canvas-first teardown error preserved and fixed with3new checks. Pending helper-before-Apply/permanent exclusions, fullaggregate and human/native/device/cleaninstall gates remain separate."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/helper_pending_preview_main_2026-11-13.json",
+          "scope": "Main pending-helper-before-Apply port: exact working-main snapshots pass208CPU+305privategraphics (221focused/lifecycle,45actualmovingpeer/posed-morphedchild,39nativeBackhair), plus120no-subprocess driver controls andsixexistingmainworkflowwrappers. Allsource/runtime/HEAD/fixture/request/nativegates pass; threeprivatejobscloseexit0. PopupEscape,viewport-bounded680dialog,firstcheckedfocus,uncrowdedpre-windsetup andactual268-character-joblaunch included. Original207/1Win267 and219/1test-path failuresretained. Permanentexclusions/nativeSourcejiggle/artist/device/cleaninstall remainseparate; post-port committed fullaggregate pending."
         }
       ],
-      "remaining": "Native joints/cloth/helper fidelity and artist/device acceptance remain.",
+      "remaining": "Required bounded software condition verified. Native joints/cloth/helper fidelity and artist/device/Windows acceptance remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -1261,8 +1985,8 @@
       ],
       "title": "Explicit Local and World capture",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Visible explicit recording captures only selected Local bodies or all relevant World bodies; committed motion reproduces in seek/save/export and cancellation is safe.",
       "evidence": [
         {
@@ -1272,9 +1996,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/physics_recording.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/responsive_workspace_2026-11-07.json",
+          "commit": "024e91ea3c59e5b150557e02ec33e3435b995ea9",
+          "scope": "17recording-domain+48actual-app checks verify explicit selected Local/relevant World capture, contacts, velocity, safe cancellation, Undo/persistence/replay and real48frame1080p24H264/AAC with1.0000417s audio onset. Native ecosystem/physical target scenario gates remain separate; compression algorithm remains optional."
         }
       ],
-      "remaining": "Native cross-ecosystem scenarioD acceptance remains; compression algorithm is a separate suggestion.",
+      "remaining": "Required software condition verified by committed scoped evidence. Native ecosystem, Windows, physical-device and novice/artist acceptance remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -1285,8 +2015,8 @@
       ],
       "title": "Unshaded and lit presentation",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Unshaded is usable for posing; Lit uses supported scene lighting and retained compatible map lighting, with safe navigation and persisted output settings.",
       "evidence": [
         {
@@ -1296,9 +2026,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/tutorials.md"
+        },
+        {
+          "kind": "test_result",
+          "commit": "6b7e509bbd5b399442ad01393e444298272bbb65",
+          "path": "docs/benchmarks/lighting_video_encoder_current_2026-11-07.json",
+          "scope": "27actual current Lit/Unshaded controls, instance-owned material copies/texture identity/cutout alpha/fades, actual authored light versus dark scene, no injected studio lamp, unchanged camera/world, Undo, legacy fallback, Simple/Advanced identical pixels, packed/linked/recovery and exact final movie."
+        },
+        {
+          "kind": "test_result",
+          "commit": "deb3cacd63530fab7b8bd8577b041d1dca11964d",
+          "path": "docs/benchmarks/source_brush_lightmaps_2026-11-07.json",
+          "scope": "21bounded original static style0LDR brush lightmap contract/Blender/Studio/persistence/movie checks, preserves UV/base-color and Unshaded/Lit semantics. Unsupported HDR/styled/displacement lighting explicitly diagnosed; full installed-host BSP fidelity remains IMPORT-02/03."
+        },
+        {
+          "kind": "test_result",
+          "commit": "d44cf75f5d736606cd02a410f887a8f270cb964c",
+          "path": "docs/benchmarks/source_entity_lights_2026-11-07.json",
+          "scope": "Original supported static Source point/spot/sun planner and actual Blender/Studio/persistence/media proof; dynamic/off/unsupported entities explicitly diagnosed."
         }
       ],
-      "remaining": "Native materials/lightmaps and target GPU quality remain.",
+      "remaining": "Required bounded lighting software condition verified. Full native materials/lightmaps, target GPU/Windows quality and artist/device observations remain separate gates.",
       "external_dependencies": []
     },
     {
@@ -1310,8 +2058,8 @@
       ],
       "title": "Editable nested sequence assets",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Shared editable child scenes support local/parent mapping, offset/loop/placement/opacity, recursive audio and cache invalidation; cycles are rejected and parents update.",
       "evidence": [
         {
@@ -1321,9 +2069,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/editable_sequences.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sequences_compositing_current_2026-11-07.json",
+          "commit": "16c84be4c191967f05a1e2aead200eab4a3f151b",
+          "scope": "225 current editable sequence graph/audio/storage/runtime/editor/cold/startup checks: shared child edits update parents, local/parent mapping/offset/loop/placement/opacity, recursive sound and cache invalidation, cycles refused, packed sources/cache offline, actual forced-exit recovery and exact movie."
         }
       ],
-      "remaining": "Large-project budgets and native/artist acceptance remain.",
+      "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -1335,8 +2089,8 @@
       ],
       "title": "Alpha media and chroma compositing",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Bounded imported alpha/Krita/video artwork becomes editable transparent holds; chroma tolerance/softness/spill and originals are preserved through preview/save/export.",
       "evidence": [
         {
@@ -1346,9 +2100,25 @@
         {
           "kind": "recorded_report",
           "path": "docs/video_import.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/krita_boundary_current_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/native_krita_acceptance_2026-11-08.json",
+          "commit": "2df1ee0d556115b5bbcbedfeb11ad91b80d3036c",
+          "scope": "Bounded alpha/chroma software is verified with the existing400prepared-video and separate alpha/chroma cases plus current real native Krita54app/41parser-preparation checks,40distinct native frames, exact original RGBA, layer-policy/Cancel, independent edit/UndoRedo, adaptive recovery, packed/linked source-and-cache-offline cold pixels and48frame1080p24H264. ICC/native layer editing/native audio and subjective artist/Windows/device certification stay outside this software closure in their explicit gates."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/large_prepared_video_2026-11-07.json",
+          "commit": "c4900bddaeae38e6c8ddaff563550dec853d35ef",
+          "scope": "Recorded current-session400unique-alpha-cel ingress/edit/recovery/cold/movie case and separate alpha/chroma27writer+7reader regression. NativeKrita gap is closed by the new real-native receipt; this is not physical/artist/Windows certification."
         }
       ],
-      "remaining": "Long/dense video workflow and artistic key quality remain; do not promise native layered video editing.",
+      "remaining": "Bounded alpha/chroma software is verified with the existing400prepared-video and separate alpha/chroma cases plus current real native Krita54app/41parser-preparation checks,40distinct native frames, exact original RGBA, layer-policy/Cancel, independent edit/UndoRedo, adaptive recovery, packed/linked source-and-cache-offline cold pixels and48frame1080p24H264. ICC/native layer editing/native audio and subjective artist/Windows/device certification stay outside this software closure in their explicit gates.",
       "external_dependencies": []
     },
     {
@@ -1359,8 +2129,8 @@
       ],
       "title": "Placed overlays and simple2D effects",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Multiple editable character/clip overlays support keyed transform/opacity placement and a simple2D shadow or glow without modifying the background.",
       "evidence": [
         {
@@ -1370,9 +2140,15 @@
         {
           "kind": "recorded_report",
           "path": "docs/sequence_shadows.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/sequences_compositing_current_2026-11-07.json",
+          "commit": "16c84be4c191967f05a1e2aead200eab4a3f151b",
+          "scope": "Current editable sequence placement and keyed opacity plus29shadow/glow and36mask checks: transparent alpha, crop/invert, copy/split/Undo, unchanged original art/background/camera/nested sound, packed/linked/recovery/cold reads and actual exact movie export. Required shadow-or-glow condition satisfied."
         }
       ],
-      "remaining": "Shadow satisfies the stated shadow-or-glow choice; general painted/lasso masks and glow are conditional refinement, not mandatory duplication.",
+      "remaining": "Required bounded software condition verified. Target Windows installation, native fidelity, artist and physical-device review remain separate gates where applicable.",
       "external_dependencies": []
     },
     {
@@ -1385,8 +2161,8 @@
       ],
       "title": "Portable HAS and optional linked assets",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Default packed HAS retains editable world/rig/camera/cels/audio/settings and reopens with sources unavailable; linked saves offer actionable missing-file location.",
       "evidence": [
         {
@@ -1396,9 +2172,33 @@
         {
           "kind": "recorded_report",
           "path": "docs/cloud_source_recovery.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/has_linked_relocation_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "26current app+30container checks: real packed/source-offline project and actual3checksum-bound linked-asset relink prompts/filepickers, remembered paths/backup, cancelled/corrupt safety, unsaved recovery and independent movie sound."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/body_pose_library_current_2026-11-07.json",
+          "commit": "8464b96fc338c37a97f159a8d0406da785ff018d",
+          "scope": "Current38normal body-animation and41pose-library checks retain editable rig/root/part/source-time motion and pose data through packed/linked/recovery/cold/movie paths."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/audio_solo_current_2026-11-07.json",
+          "commit": "119c3a6a0564cf980a7afd698ba48b1424987984",
+          "scope": "Current strict-version Solo/gain/fade/trim, exact independent audio/art and packed/linked/recovery/source-cache-offline PCM/decodedAAC roundtrips."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "Current400drawing cold background Open preserves exact registered owners/pixels and refuses Cancel/newer-edit/corrupt/New transactions."
         }
       ],
-      "remaining": "Broader native dependency/relink/fault acceptance remains.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -1409,9 +2209,9 @@
         "ADD11.3"
       ],
       "title": "Independent native model/map sharing",
-      "implementation": "missing",
-      "verification": "incomplete",
-      "acceptance_status": "decision_blocked",
+      "implementation": "implemented",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "An individual native model or map can be packaged, imported and reused independently with dependencies/provenance preserved, without external-format exporting.",
       "evidence": [
         {
@@ -1421,12 +2221,28 @@
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
+        },
+        {
+          "kind": "source",
+          "path": "src/asset_package.gd"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/asset_packages.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/asset_packages_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/asset_packages_2026-11-07.json",
+          "commit": "bdc5cbaae7496891a2f2a8adae9bcb88a33a9a27",
+          "scope": "Existing portable HAS variation chosen by owner; independent model/map and embedded GLB/provenance/authored controls, actual UI export/import, new identity, one Undo, source/cache-offline fresh reader, exact real media input, negative role/timing/header/current-scene protection; 74checks plus76save and70reference/crash/media regressions. Native ecosystem fidelity and Windows acceptance excluded."
         }
       ],
-      "remaining": "Owner decision on existing-HAS container variation versus separate native packaging is still OPEN; no extension has been invented.",
-      "external_dependencies": [
-        "D-PACKAGING"
-      ]
+      "remaining": "Independent canonical HAS model/map packaging acceptance is verified for the committed original-fixture software contract. Native ecosystem fidelity and Windows execution remain under their own requirements.",
+      "external_dependencies": []
     },
     {
       "id": "STORE-03",
@@ -1480,9 +2296,9 @@
         "ADD11.5"
       ],
       "title": "Validated atomic save and fault safety",
-      "implementation": "partial",
-      "verification": "incomplete",
-      "acceptance_status": "open",
+      "implementation": "implemented",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Corrupt/unsafe/missing assets and failed/interrupted writes cannot replace the sole valid project or escape its folder; backup/readback/integrity faults are exercised.",
       "evidence": [
         {
@@ -1584,9 +2400,24 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/directory_rollback_2026-11-06.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/atomic_safety_current_2026-11-08.json",
+          "commit": "444dac90b3700ee387d219eef28547eacc5dd73f",
+          "scope": "Bounded atomic-save/readback/backup/unsafe-path/payload/integrity/interruption software contract verified by current86Python save-safety cases,173Godot private metadata/journal/recovery checks,26rollback checks and five real commit/competing-writer/lost-status runs plus actual pre-promotion kill. MD9 explicitly requires fsync/rename where supported; unconditional Windows directory flushing was an extra gate. Unsupported directory sync still reports false. Windows crash/installer/scenario execution and physical storage/power-loss are separate unrun target gates, not certified by this closure."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_metadata_separator_fix_2026-11-11.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json",
+          "scope": "Windows main snapshot launch-order hardening:10legacy+32newdomain,31HAS/16faultPython,20actualwriter(original17+3),5offlinecoldreader andoriginal24unit/72nativebodyappchecks pass with source preservation andclosedprivate jobs. Immutablecapture precedesrealpacker; ownfilesystemThread followsit; forcedThreadstartupfailure cancels/drainsonechild/emitsonefailurewithoutchangingpriorgoodtarget/newdirtyedits. Prior1236fullremainsfailed; originalWindowsCreateProcesscauseunknown;240launchCWDprobe notreproduced. No new400drawing/physicalstorage/device/completeaggregate claim."
         }
       ],
-      "remaining": "Supporting POSIX durability and atomic/CAS/readback/backup safety have scoped actual fault evidence. tools/save_sync.py deliberately reports directory sync unsupported on Windows; target directory durability/fault coverage and physical power-loss acceptance remain incomplete. Do not count POSIX evidence as Windows durability.",
+      "remaining": "Bounded atomic-save/readback/backup/unsafe-path/payload/integrity/interruption software contract verified by current86Python save-safety cases,173Godot private metadata/journal/recovery checks,26rollback checks and five real commit/competing-writer/lost-status runs plus actual pre-promotion kill. MD9 explicitly requires fsync/rename where supported; unconditional Windows directory flushing was an extra gate. Unsupported directory sync still reports false. Windows crash/installer/scenario execution and physical storage/power-loss are separate unrun target gates, not certified by this closure.",
       "external_dependencies": []
     },
     {
@@ -1597,8 +2428,8 @@
       ],
       "title": "Quiet time/action autosave",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Default minute or meaningful-action protection waits for safe interaction state, retains failed work for retry, and protects active lesson-only changes without dirtying saved scene content.",
       "evidence": [
         {
@@ -1628,9 +2459,37 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/background_manual_saves_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/background_project_open_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/recovery_blob_retention_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/recovery_quota_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/recovery_current_2026-11-07.json",
+          "commit": "961e38d797f768c84bd961341f288a0f089f4aef",
+          "scope": "Current327check recovery suite includes natural timer, completed-action thresholds, safe gesture deferral, failure/retry and background ownership without consuming newer edits."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/lesson_protection_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "147current lesson protection checks include clean-scene lesson-only autosave, actualSIGKILL and normal startup with writer cache offline; manualHAS and included assets unchanged."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/benchmarks/windows_metadata_separator_fix_2026-11-11.json"
         }
       ],
-      "remaining": "Background checkpoints and manual HAS snapshots pass detached ownership, cancel, revision/context, save-race, preview and scheduling regressions. Long-session/device latency and resource acceptance remain; lesson Previous/Continue serialization is still separate.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -1641,8 +2500,8 @@
       ],
       "title": "Bounded journal and Advanced history",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Bounded recoverable states expose timestamps and low-resolution viewport thumbnails in Advanced without endless full-project copies.",
       "evidence": [
         {
@@ -1660,9 +2519,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "91current journal/Advanced history checks:12retained timestamped states with real low-resolution thumbnails, smaller-window usability, selected older paint preview, unsaved-edit confirmation, exact world/camera/drawing restoration, cold deep/index fallback."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/recovery_current_2026-11-07.json",
+          "commit": "961e38d797f768c84bd961341f288a0f089f4aef",
+          "scope": "Current327check recovery evidence includes25changing generations with bounded retained payload retirement, shared512MiB quota, real parallel clients, unknown/live-owner preservation and responsive detached previews."
         }
       ],
-      "remaining": "Shared-asset cleanup, concurrent sessions and measured long-session behavior remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -1674,8 +2545,8 @@
       ],
       "title": "Automatic newest-valid recovery",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "An actual abruptly terminated session restores the newest completely valid state, falls back through corrupt entries and never overwrites the last manual HAS.",
       "evidence": [
         {
@@ -1693,9 +2564,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/background_checkpoints_2026-11-07.json"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/recovery_current_2026-11-07.json",
+          "commit": "961e38d797f768c84bd961341f288a0f089f4aef",
+          "scope": "147actual normal-startup checks across15cases after joinedSIGKILL writer: newest valid state, corrupt JSON/missing assets/audio/binding/all-invalid fallback and live/unknown/reusedPID identity safeguards; manualHAS unchanged."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "Three fresh normal-startup cases independently restore newest history and deep/index-corrupt fallback; exact older state and preserved manualHAS."
         }
       ],
-      "remaining": "Native Windows/hardware fault gate remains; Linux procedural cases are scoped evidence.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -1748,8 +2631,8 @@
       ],
       "title": "Interactive teacher and quiet hints",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Real scene-state grading advances completed tasks, rejects unrelated actions and quietly offers a useful visual hint after10–30seconds without taking over.",
       "evidence": [
         {
@@ -1759,9 +2642,21 @@
         {
           "kind": "recorded_report",
           "path": "docs/tutorials.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/tutorial_grading_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "57current actual lesson-state grading/Previous/freshContinue checks. Unrelated or temporary state cannot complete recorded tasks; real15second hint logic exercised at simulated16seconds without taking control."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/course_output_current_2026-11-07.json",
+          "commit": "4b6bdd6bdc092508918bd8308b70d13105b9c1eb",
+          "scope": "57current beginner-course writer/freshContinue checks include visual control/bone highlights with no edits or input interception and observed normal import/physics/pose/drawing/timedcue/playback/save/movie tasks."
         }
       ],
-      "remaining": "Richer demonstrations and beginner observation remain; demonstration depth is not a substitute for state grading.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -1773,8 +2668,8 @@
       ],
       "title": "Whole-scene Previous and resumed practice",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Previous restores the complete step scene; Continue/Fresh preserve separate sessions and observations; optional personal Save and crash reattachment keep newer protected practice state.",
       "evidence": [
         {
@@ -1784,9 +2679,27 @@
         {
           "kind": "recorded_report",
           "path": "docs/lesson_recovery.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/tutorial_grading_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "57current checks include complete Previous scene/editor restoration, independent session choices and exact fresh Continue with unsaved copy identity."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/lesson_protection_current_2026-11-07.json",
+          "commit": "9e8ae5958cddbc264822ff5d32c80cd8adcbde6e",
+          "scope": "147current protection checks exercise lesson-only edits without dirtying manual scene, actualSIGKILL/cache-offline startup reattachment, newer protected state and corrupt/foreign/checksum-bound fallback cases."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/course_output_current_2026-11-07.json",
+          "commit": "4b6bdd6bdc092508918bd8308b70d13105b9c1eb",
+          "scope": "Current beginner-course fresh Continue preserves scene/step and permits optional personal Save or unsaved practice destination-picked movie export. Skip remains OPEN."
         }
       ],
-      "remaining": "Retention/concurrent-writer/local-history robustness and Windows/artist acceptance remain; Skip stays OPEN.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -1798,8 +2711,8 @@
       ],
       "title": "Simple MP4 and image output",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Default output is playable H264/AAC1080p24 beside the saved HAS, with exact frame count, silent-video support and complete/transparent PNG alternatives.",
       "evidence": [
         {
@@ -1809,9 +2722,38 @@
         {
           "kind": "recorded_report",
           "path": "docs/png_export.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/course_output_current_2026-11-07.json",
+          "commit": "4b6bdd6bdc092508918bd8308b70d13105b9c1eb",
+          "scope": "Current normal beginner movie and named delivery-profile tests verify default playable1080p24H264AAC, exact48frames, saved/unsaved destination flows, independently decoded synchronized cue, original compositor inputs and preserved manualHAS."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "56current output-size/settings/writer/cold checks verify complete and transparent alpha PNG alternatives, dimensions, exact source pixels, manualHAS unchanged and captured retry settings."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/clean_source_launch_current_2026-11-07.json",
+          "commit": "49b15665aa8ba3a2b1234ba4b24514096ef63a62",
+          "scope": "43current clean-source normal core checks include real silent48frame1080p24H264 movie with fresh user data and no existing output/cache."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/encoder_existing_output_fix_2026-11-13.json",
+          "scope": "Full3acanonical passes allfunctionalwrappers but fails finalAAC onstale silent movie; retainedfailed,947sourcehashes/HEADexact. Product refusesexistingoutput/logwrites, clearsstalesuccess andrejectserrorlevelstderr evenexit0; fivefocusedfailurechecks pass andoldencodercounterfactualfails. New separatefreshsilent/tone fixtures retainAAC/onset/RMS andaddsilentstreamcheck. Scoped21movies(2fresh19retained) pass, twoactualonsets1.0s, RMS5658.30, two cleanprivategraphicsreceipts; notfullaggregate orphysicalaudiosync."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_full_2026-11-13.json",
+          "commit": "9897f86019dfb8499d0ee30f6560580fac7bb8da",
+          "scope": "FreshcompleteconfiguredWindowsdefault:36core/alllaterregisteredwrappers,21finalmovies,bothdecodedaudioonsets1.0seconds/editorRMS5658.299,947functionalhashesandHEADexact;174freshrootprivatejobsclosedexit0/noFGswitch. Cleanofflineinstall, human/device/nativeartistacceptance notinferred. Pendinghelperoverlay notinthismainrevision."
         }
       ],
-      "remaining": "Full target-device and encoder-build acceptance remain.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -1892,8 +2834,8 @@
       ],
       "title": "Export progress, cancellation and recovery",
       "implementation": "implemented",
-      "verification": "scoped_evidence",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Missing codecs/tools, failures and cancellation report truthfully, preserve recoverable frames/logs and never claim success or overwrite project assets.",
       "evidence": [
         {
@@ -1903,9 +2845,32 @@
         {
           "kind": "recorded_report",
           "path": "docs/export_failures.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/lighting_video_encoder_current_2026-11-07.json",
+          "commit": "6b7e509bbd5b399442ad01393e444298272bbb65",
+          "scope": "Actual encoder failure/missing-tool/owned-process cancellation keeps48original PNG frames and separate retry diagnostics; failed encode produces no claimed movie."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/course_output_current_2026-11-07.json",
+          "commit": "4b6bdd6bdc092508918bd8308b70d13105b9c1eb",
+          "scope": "Current actual export/profile failure/cancellation/retry checks identify missing frame/mixed audio/unavailable encoder, retain logs and finished movie, restore editor controls and preserve manualHAS."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/history_output_open_current_2026-11-07.json",
+          "commit": "a2d3bcd8cb671fdb7782791ed324678612b21e3e",
+          "scope": "Current output settings are captured across retry; cold source art and complete/transparent output stay exact. Physical disk/device/Windows faults are separate unverified target observations."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/encoder_existing_output_fix_2026-11-13.json",
+          "scope": "Full3acanonical passes allfunctionalwrappers but fails finalAAC onstale silent movie; retainedfailed,947sourcehashes/HEADexact. Product refusesexistingoutput/logwrites, clearsstalesuccess andrejectserrorlevelstderr evenexit0; fivefocusedfailurechecks pass andoldencodercounterfactualfails. New separatefreshsilent/tone fixtures retainAAC/onset/RMS andaddsilentstreamcheck. Scoped21movies(2fresh19retained) pass, twoactualonsets1.0s, RMS5658.30, two cleanprivategraphicsreceipts; notfullaggregate orphysicalaudiosync."
         }
       ],
-      "remaining": "Complete disk-full/device/encoder/platform fault matrix remains.",
+      "remaining": "Required bounded software condition verified by committed current receipts. Native fidelity, subjective beginner/artist review, Windows installation/durability and physical-device observations remain separate gates where applicable. Unresolved optional choices remain OPEN.",
       "external_dependencies": []
     },
     {
@@ -1918,8 +2883,8 @@
       ],
       "title": "Notices and honest provenance",
       "implementation": "implemented",
-      "verification": "historical_only",
-      "acceptance_status": "open",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Dependency notices and source attribution remain available, unknown asset rights are not fabricated, and no downloaded art or unauthorized distribution is introduced.",
       "evidence": [
         {
@@ -1929,9 +2894,15 @@
         {
           "kind": "recorded_report",
           "path": "THIRD_PARTY_NOTICES.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/notices_current_2026-11-07.json",
+          "commit": "0a2180c21ba7b92c75ad9ddefad300eb5f2e5f55",
+          "scope": "8 actual Simple/Advanced About UI checks, unchanged scene/history, installed-tool build-neutral attribution, matching dependency records and read-only private2089-member versus Git hash audit. No rights fabricated or binaries/native art redistributed; application distribution licensing remains outside authorized work."
         }
       ],
-      "remaining": "App/public distribution licensing decision remains outside current deployment authorization.",
+      "remaining": "Required software condition verified by current committed receipts. Native/device/artist/Windows observations and any future distribution authorization remain separate where applicable.",
       "external_dependencies": []
     },
     {
@@ -1951,11 +2922,41 @@
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/acceptance_handoff_review.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/scenario_a_2026-11-09.json",
+          "commit": "2cfdd583a6610d939277adf67069f17deebda8f4",
+          "scope": "All eight section17.A software steps pass21writer+6fresh-process checks using the supplied native VRM1, actual canvas model/bone/gizmo interaction, frame0/frame4 auto-keys, exact packed scene/camera and cold frame0/2/4pixels, conversion/cache offline, and actual24frame1080p24H264. Fixed premature floating fallback;20existing translated-floor/overlap/aerial-placement regressions pass. Native GMod branch is explicitly not tested. Real Windows novice timing, actual OS drag/physical input and subjective usability remain unrun; no acceptance status is promoted."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+          "commit": "90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f",
+          "scope": "Required-feature preflight names actual unsupported engine requirements and compatible-export action without stripping flags or rejecting optional metadata.9units+5actual native refusal/preservation,7Source-MMD and9VRM worker checks pass;28Python regressions pass. Reusable private scenarioA wrapper passes21writer+6cold checks with exact packed values/pixels, original SHA/mtime and actual24frame1080p24H264. Canonical runner has current9opaque+9required units. Full Windows/physical/novice acceptance and native BSP remain unrun."
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/local_acceptance_handoff.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows21writer+6cold exact native VRM scenarioA checks and1080p24H264 pass in f77c90a receipt. Core36groups now pass, including actual drawing and WASAPI/Dummy capture. Native refusal/source/cold safeguards remain exact. Human novice timing, actual Explorer drop and original drawing/sound usability still need observations."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_six_projects_2026-11-12.json",
+          "scope": "Six protected existing native review packages open through ordinary recovery/Home and Python unpack/threaded load in fresh private Windows processes from committed source c6782d2; 129 checks pass. Saved metadata, native Setup/Focus pixels, source/package/harness hashes and strict owned-cache containment stay exact. Runnable review only: no artist, novice, device, clean-install or six-movie acceptance; counts/status unchanged."
         }
       ],
-      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "remaining": "Windows native21+6 software and core drawing/audio checks now pass. A real novice still must perform the eight-step timed exercise, actual Explorer drop/input and original independent drawing/sound workflow; record time, assistance, confusing controls and audible synchronization. Automation is not novice evidence.",
       "external_dependencies": [
-        "B-WINDOWS",
         "B-ARTIST"
       ]
     },
@@ -1974,12 +2975,30 @@
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/acceptance_handoff_review.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/local_acceptance_handoff.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows19writer+5cold checks combine2independent BSP roots, posed native VRM and complete textured street PMX. Actual prop/material/bounded lightmap reports, root UndoRedo, exact scene/camera/Lit-Unshaded pixels, source/import/cache-offline packed reopen, original preservation and24frame1080p24H264 pass. Artist supported-source appearance comparison remains distinct; automated overlapping-environment arrangement is not artistic approval."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/owner_review_six_projects_2026-11-12.json",
+          "scope": "Six protected existing native review packages open through ordinary recovery/Home and Python unpack/threaded load in fresh private Windows processes from committed source c6782d2; 129 checks pass. Saved metadata, native Setup/Focus pixels, source/package/harness hashes and strict owned-cache containment stay exact. Runnable review only: no artist, novice, device, clean-install or six-movie acceptance; counts/status unchanged."
         }
       ],
-      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "remaining": "The combined Windows native software route now passes19+5checks, cold exact Lit/Unshaded replay and actual MP4 with all five original street atlases. Actual artist comparison to supported original source appearance remains required. The automated overlapping large-environment fixture is not a composed or approved artistic scene.",
       "external_dependencies": [
-        "B-NATIVE",
-        "B-WINDOWS"
+        "B-NATIVE"
       ]
     },
     {
@@ -1990,8 +3009,8 @@
       ],
       "title": "Full timeline/presence/visibility scenario",
       "implementation": "not_applicable",
-      "verification": "external_required",
-      "acceptance_status": "external_blocked",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "The complete decided scenarioC passes routed interaction and final rendering, including late presence, relative clip moves, split gaps, persistent OFF, hidden selection and adjacent cuts.",
       "evidence": [
         {
@@ -2001,12 +3020,24 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/scenario_c_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/acceptance_handoff_review.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/local_acceptance_handoff.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows all7routed scenarioC steps pass25writer+6cold checks,128frame1080p24H264AAC and decoded48kHz onset sample48001, exact pixels/state, source/cache-offline reopen and unchanged manualHAS. Private-desktop child/foreground/job/desktop receipts pass. Subsequent36coregroups also pass. Native fidelity remains separately scoped."
         }
       ],
-      "remaining": "All seven routed software steps pass25app+6fresh-process checks on original generated maps/rig, with source/cache offline, exact packed pixels and128frame1080p24H264AAC/sample48001timing. Final Windows target execution remains the named external gate. Native fidelity is still required separately under IMPORT-02/03 and ACCEPT-B.",
-      "external_dependencies": [
-        "B-WINDOWS"
-      ]
+      "remaining": "Required seven-step Windows software scenario verified by committed fresh31routed/cold checks, exact media/state/pixels and valid private-desktop receipts. Physical input, native fidelity and clean setup remain separate requirements.",
+      "external_dependencies": []
     },
     {
       "id": "ACCEPT-D",
@@ -2016,8 +3047,8 @@
       ],
       "title": "Physics capture scenario",
       "implementation": "not_applicable",
-      "verification": "external_required",
-      "acceptance_status": "external_blocked",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "A compatible ragdoll freezes/resets and explicit Local/World captures reproduce selected/impacted-body motion through preview, persistence and MP4, with measured ordinary-take responsiveness.",
       "evidence": [
         {
@@ -2027,12 +3058,29 @@
         {
           "kind": "recorded_report",
           "path": "docs/benchmarks/scenario_d_2026-11-07.json"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/acceptance_handoff_review.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/local_acceptance_handoff.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows all6mechanical scenarioD steps pass28writer+4cold checks with15World/12Local contacts. Local201281B/World239294B,46frames each; max sample2.376/2.446ms and max frame gap43.074/40.970ms. Actual H264AAC, exact recorded replay and original/manual/source/cache preservation pass, with private-desktop receipts. No physical artist comfort or universal native physics claim."
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/contact_hair_off_contract_2026-11-12.json",
+          "scope": "Corrects obsolete Hair OFF freeze-history test after owner-requested authored restoration. Exact-old-assert diagnostic: all91bone poses/data/world/history/redo/dirty exact; Undo removed prior fan edit. Test-only stronger contract51ordinary+53component checks passes with unchanged contact/body/Record/HAS/48frame1080p24H264 predicates. App source unchanged. Failed4fee full run retained; no aggregate or artist/device closure."
         }
       ],
-      "remaining": "All six mechanical cloud software steps pass28app+4fresh-reader checks with the original17bone humanoid and three props. Actual Local10/World5contacts,49exact reverse sample states,230715BactualWorldmanifest(238963Bbudgetestimate), H264AAC and source/manual preservation pass. Final Windows target gate remains; native joint/cloth fidelity and physical artist comfort are separate requirements.",
-      "external_dependencies": [
-        "B-WINDOWS"
-      ]
+      "remaining": "Required six-step Windows mechanical scenario verified by committed fresh32routed/cold checks, actual contacts/recording responsiveness and exact media/state with valid isolation receipts. Artist comfort and universal native physics remain separate.",
+      "external_dependencies": []
     },
     {
       "id": "ACCEPT-E",
@@ -2049,12 +3097,25 @@
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/acceptance_handoff_review.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/local_acceptance_handoff.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows tutorial and first-movie wrappers pass real grading/Previous/Continue-Fresh/save/movie routes with private-desktop receipts and decoded cue timing. Real learner clarity/usefulness and an actual10-30second stuck interval remain unobserved."
         }
       ],
-      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "remaining": "Windows software course/first-movie cases now pass. A real learner still needs to observe grading, clarity, a genuine10-30second stuck hint, full Previous/Continue-Fresh and optional normal Save. Record actual observations using docs/windows_acceptance_followup.md.",
       "external_dependencies": [
-        "B-ARTIST",
-        "B-WINDOWS"
+        "B-ARTIST"
       ]
     },
     {
@@ -2066,19 +3127,31 @@
       ],
       "title": "Target-platform crash recovery acceptance",
       "implementation": "not_applicable",
-      "verification": "external_required",
-      "acceptance_status": "external_blocked",
+      "verification": "verified",
+      "acceptance_status": "verified",
       "acceptance": "Abrupt native target-platform exits recover newest valid state/older fallback with timestamps/thumbnails and unchanged manual HAS; interrupted and storage-failure cases are exercised.",
       "evidence": [
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/acceptance_handoff_review.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/local_acceptance_handoff.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_native_acceptance_2026-11-09.json",
+          "commit": "5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0",
+          "scope": "Fresh Windows41schedule,147normal-startup,22history+33journal+36history-cold checks pass with actual abrupt owned-writer exit, native owner-handle proof, latest/older/deep fallback, timestamps/previews and unchanged manualHAS. Background10domain+17writer+5cold plus31HAS/16fault tests pass; current457Python run has413passes/44explicit skips including POSIX/symlink prerequisites. Actual Windows injected ENOSPC/permission/replace/readback failure preservation is covered; no physical power-loss or symlink-privilege certification."
         }
       ],
-      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
-      "external_dependencies": [
-        "B-WINDOWS"
-      ]
+      "remaining": "Required Windows abrupt-exit/restart/fallback/history/background scheduling and injected storage-failure preservation conditions pass with process ownership, original/manual hashes, exact restore and private-desktop receipts. Physical power-loss durability is not claimed or added as an unconditional gate.",
+      "external_dependencies": []
     },
     {
       "id": "ACCEPT-TABLET",
@@ -2097,9 +3170,17 @@
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/acceptance_handoff_review.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/local_acceptance_handoff.md"
         }
       ],
-      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "remaining": "Actual tablet/driver/GPU stroke and pressure latency/comfort plus listening to target audio output remain unobserved. Software event routing and decoded-media faults can still be fixed in cloud. A local Codex worker cannot replace physical hardware and human observation.",
       "external_dependencies": [
         "B-TABLET",
         "B-WINDOWS",
@@ -2122,9 +3203,23 @@
         {
           "kind": "recorded_report",
           "path": "docs/requirements_cloud_2026-11-05.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/acceptance_handoff_review.md"
+        },
+        {
+          "kind": "recorded_report",
+          "path": "docs/local_acceptance_handoff.md"
+        },
+        {
+          "kind": "test_result",
+          "path": "docs/benchmarks/windows_canonical_full_2026-11-13.json",
+          "commit": "9897f86019dfb8499d0ee30f6560580fac7bb8da",
+          "scope": "FreshcompleteconfiguredWindowsdefault:36core/alllaterregisteredwrappers,21finalmovies,bothdecodedaudioonsets1.0seconds/editorRMS5658.299,947functionalhashesandHEADexact;174freshrootprivatejobsclosedexit0/noFGswitch. Cleanofflineinstall, human/device/nativeartistacceptance notinferred. Pendinghelperoverlay notinthismainrevision."
         }
       ],
-      "remaining": "Procedural/cloud subsets are evidence only; complete independent software work before declaring the overall goal blocked.",
+      "remaining": "A clean supported Windows environment must install/launch offline, import a sample, save/reopen and export with detected encoder. Cloud clean-source launch/setup evidence is separately scoped. An already configured local development PC is not a clean-install result.",
       "external_dependencies": [
         "B-WINDOWS"
       ]
@@ -2188,11 +3283,11 @@
         "ADD18"
       ],
       "title": "Independent native package contract",
-      "status": "open",
+      "status": "resolved",
       "needed_for": [
         "STORE-02"
       ],
-      "question": "Choose a compatible variation of the existing HAS container or a separate native package/extension contract; do not invent an extension or add third-party exporters."
+      "question": "Owner explicitly chose: Reuse the existing .has container (2026-11-07). Implemented as a validated independent model/map variation of portable HAS."
     },
     {
       "id": "D-CLIPS",
@@ -2254,28 +3349,21 @@
   "external_blockers": [
     {
       "id": "B-WINDOWS",
-      "prerequisite": "A usable approved Windows10/11 execution environment with the pinned engine and compatible encoder/GPU context.",
+      "prerequisite": "An approved clean supported Windows10/11 offline PC/VM setup, distinct from the now-tested configured development PC.",
       "prevents": [
-        "ACCEPT-A",
-        "ACCEPT-B",
-        "ACCEPT-C",
-        "ACCEPT-D",
-        "ACCEPT-E",
-        "ACCEPT-F",
-        "ACCEPT-TABLET",
         "ACCEPT-INSTALL"
       ],
-      "independent_work": "Portable implementation, procedural GUI/export/recovery tests and owned-directory fault tests remain actionable."
+      "independent_work": "Fresh configured-Windows full default at9897f86 passes all36core groups, every laterregisteredwrapper,21finalmoviechecks andbothdecoded1.0secondaudioonsets, with947functionalhashes/HEADexact. Exact19-layerhecatia is suppliedandpasses32writer+5cold; notmissing. Thisisnotcleanofflineinstallationorhuman/deviceacceptance. Historicalchecksum-boundreaderbackups remainunavailable byownerreport; do notsubstitute orrequestagain. Evidence:docs/benchmarks/windows_canonical_full_2026-11-13.json. Latest integration1236fullfailedatVRM0linkedSave childcreation afterbothwindmatricespass;post-ordering scopedbackground/body checks pass. That1236failureprecededthefresh12071fecompletefullpass; see docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json. Fresh post-save-order default at12071fe passes36core,154resultentries,21movies,both1.0saudioonsets and968sourcehashes/HEADexact; new external private review passes129replays with8closedjobs andprotectedpackages/runtimes unchanged. See docs/benchmarks/windows_canonical_post_save_order_2026-11-13.json. Configured-PC evidence does not certify clean offline installation. Latest static-SFM full default at 9f6f531 also passes: 982 unchanged functional files/HEAD, 156 results, 21 movies and 192 closed private jobs. See docs/benchmarks/windows_canonical_sfm_2026-11-13.json. No change to external prerequisites or formal scoring."
     },
     {
       "id": "B-NATIVE",
-      "prerequisite": "Owner-approved complete native fixtures/dependencies: Source/GMod/SFM model/map/material/prop/lightmap cases, VRM profiles, and MMD model/pose/motion cases with permitted local use.",
+      "prerequisite": "Actual artist/source-appearance comparison against approved native originals for supported geometry/material/rig/lighting behavior. Native BSPs, installed Steam dependencies, VRMs and all five street atlas PNGs are now available and have scoped Windows software evidence.",
       "prevents": [
         "IMPORT-02",
         "IMPORT-03",
         "ACCEPT-B"
       ],
-      "independent_work": "Common-format and procedural validation can continue; it does not establish native material/rig/cloth fidelity."
+      "independent_work": "Combined native Windows19writer+5cold checks, real MP4,1of1native prop,12textures,two lights,29bounded baked faces and exact portable Lit/Unshaded replay pass. Transit CRC/index and5actual named-refusal/preservation checks pass. No missing-map/atlas or untested-Windows blanket blocker remains; unsupported bounds and self-replay versus original-fidelity distinction are explicit."
     },
     {
       "id": "B-TABLET",
@@ -2283,7 +3371,7 @@
       "prevents": [
         "ACCEPT-TABLET"
       ],
-      "independent_work": "Synthetic pressure packets, coordinate mapping, deterministic pixels and decoded audio alignment can be tested in cloud."
+      "independent_work": "ConfiguredWindows software nowchecks syntheticpressure/coordinate mapping, independent raster references anddecodedWASAPI-exportaudioalignment in thefull default. Actualphysicaltablet latency/comfort andaudibledevice synchronization remainunobserved."
     },
     {
       "id": "B-ARTIST",
@@ -2293,7 +3381,7 @@
         "ACCEPT-E",
         "ACCEPT-TABLET"
       ],
-      "independent_work": "Implement missing required capabilities and run objective automation first."
+      "independent_work": "Windows software routes and media have scoped passes; actual novice/learner/artistic observations remain pending. Owner explicitly requests no further review interruptions unless they grant otherwise (2026-11-11). Keep docs/windows_acceptance_followup.md ready without repeated prompts. Automated timing and scripted events are not substitutes."
     }
   ],
   "source_section_index": {
@@ -2562,44 +3650,39 @@
   ],
   "next_actions": [
     {
-      "requirement": "ACCEPT-C",
-      "priority": 2,
-      "action": "Complete seven-step cloud case is recorded; finalWindows target gate remains. Do not repeat completed cloud case while independent engineering remains."
-    },
-    {
-      "requirement": "ACCEPT-D",
-      "priority": 2,
-      "action": "Complete mechanical cloud case is recorded; finalWindows target gate remains. Do not repeat completed cloud case while independent engineering remains."
-    },
-    {
-      "requirement": "REC-01",
       "priority": 1,
-      "action": "Background manualHAS snapshots now pass final400/core/nested/recovery suites. Next address initialOpen responsiveness with private CPU loading and main-thread adoption; preserve cold ownership, document transaction, cancellation, linked/source integrity and preview agreement. Then audit long-session cleanup/retention/concurrent quota; physical/native acceptance remains separate."
+      "requirement": "IMPORT-02",
+      "action": "Native inputs are now available and the combined Windows supported-profile route passes. Remaining external prerequisite: artist/source-appearance comparison against the actual native originals using docs/windows_acceptance_followup.md. Roadmap formats/full native shader-simulator reproduction remain optional or explicit unsupported limits; no known independent software defect is being handed off."
     },
     {
-      "requirement": "MEM-02",
       "priority": 1,
-      "action": "Background manualHAS snapshots now pass final400/core/nested/recovery suites. Next address initialOpen responsiveness with private CPU loading and main-thread adoption; preserve cold ownership, document transaction, cancellation, linked/source integrity and preview agreement. Then audit long-session cleanup/retention/concurrent quota; physical/native acceptance remains separate."
-    },
-    {
-      "requirement": "MEM-01",
-      "priority": 1,
-      "action": "Background manualHAS snapshots now pass final400/core/nested/recovery suites. Next address initialOpen responsiveness with private CPU loading and main-thread adoption; preserve cold ownership, document transaction, cancellation, linked/source integrity and preview agreement. Then audit long-session cleanup/retention/concurrent quota; physical/native acceptance remains separate."
-    },
-    {
-      "requirement": "STORE-04",
-      "priority": 1,
-      "action": "Supporting POSIX sync and rollback payload validity are verified in scoped fixtures. Retain explicit native Windows and physical power-loss gates; audit the next independently actionable requirement."
-    },
-    {
-      "requirement": "MOTION-03",
-      "priority": 2,
-      "action": "Bounded saved walking supports flat bends and explicit smooth upright yaw with cold/export/Undo proof. Generalterrain/grouped/native-rig/artist coverage remains; optional multi-view inference details stay OPEN."
-    },
-    {
       "requirement": "IMPORT-03",
+      "action": "Native dependencies, original preservation, bounded materials/props/lightmaps and exact portable cold replay now have Windows evidence. Obtain actual source-appearance/artist comparison for supported geometry/material/rig behavior. Preserve the explicitly reported partial lightmap/native-shader/physics limits; do not infer original visual fidelity solely from self-replay hashes."
+    },
+    {
       "priority": 2,
-      "action": "Define per-profile native fidelity acceptance and use approved fixtures when available; report unsupported capabilities honestly."
+      "requirement": "ACCEPT-A",
+      "action": "Windows native21+6 software and core drawing/audio checks now pass. A real novice still must perform the eight-step timed exercise, actual Explorer drop/input and original independent drawing/sound workflow; record time, assistance, confusing controls and audible synchronization. Automation is not novice evidence."
+    },
+    {
+      "priority": 2,
+      "requirement": "ACCEPT-B",
+      "action": "The combined Windows native software route now passes19+5checks, cold exact Lit/Unshaded replay and actual MP4 with all five original street atlases. Actual artist comparison to supported original source appearance remains required. The automated overlapping large-environment fixture is not a composed or approved artistic scene."
+    },
+    {
+      "priority": 2,
+      "requirement": "ACCEPT-E",
+      "action": "Windows software course/first-movie cases now pass. A real learner still needs to observe grading, clarity, a genuine10-30second stuck hint, full Previous/Continue-Fresh and optional normal Save. Record actual observations using docs/windows_acceptance_followup.md."
+    },
+    {
+      "priority": 2,
+      "requirement": "ACCEPT-TABLET",
+      "action": "Actual target tablet/driver/GPU1080p latency/pressure/comfort and audible sync observation; use the exact exercise in docs/windows_acceptance_followup.md."
+    },
+    {
+      "priority": 2,
+      "requirement": "ACCEPT-INSTALL",
+      "action": "Provide an approved clean supported Windows10/11 offline setup with documented prerequisites; do not replace owner tools or call this configured PC a clean installation."
     }
   ],
   "acceptance_scenario_index": {

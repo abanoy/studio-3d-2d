@@ -1,0 +1,57 @@
+{
+  "format": "has_source_resource_write_cpu_verification_1",
+  "passed": true,
+  "resource_write_exit": 0,
+  "archive_regression_exit": 0,
+  "source_unchanged": true,
+  "actual_windows_long_path": {
+    "format": "has_source_resource_long_path_1",
+    "platform": "win32",
+    "logical_path_characters": 382,
+    "relative": "materials/touhou/keiki/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-3/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-4/haniyashin chisels texture — あ.vtf",
+    "normal_returned_path": true,
+    "exact_layout": true,
+    "payload": {
+      "bytes": 4379,
+      "mtime_ns": 1600000000333333300,
+      "sha256": "be2e53842cc481e0ad4ac5e5807c66a173ff68964d2fb4fc1d482d3053eddedc"
+    },
+    "exclusive_refusal_preserved": true
+  },
+  "commands": [
+    [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_source_resource_write.py",
+      "-v"
+    ],
+    [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_source_archive.py",
+      "-v"
+    ]
+  ],
+  "logs": {
+    "resource": "393765cfaa41d75e94925821988ebaabfe95280090256c77fb6372964def15b0",
+    "archive": "4178de460d066f051864c25f5f00c5e615a9221125351f91152dcaadc623ab8b"
+  },
+  "runtime_unchanged": true,
+  "resource_write_tests": 7,
+  "resource_write_passed": 6,
+  "resource_write_skipped": 1,
+  "skipped_scope": "Real directory-symlink escape test only; Windows denied symlink creation with WinError 1314. No symlink escape pass claimed.",
+  "archive_regression_tests": 8
+}

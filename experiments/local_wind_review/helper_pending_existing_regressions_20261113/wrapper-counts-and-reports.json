@@ -1,0 +1,231 @@
+[
+  {
+    "label": "secondary_helpers",
+    "terminal_exit": 0,
+    "source_context": "literal main_working_source",
+    "reports_equal_to_captured_stdout": true,
+    "stdout_log": {
+      "bytes": 6953,
+      "mtime_ns": 1794599836104529300,
+      "sha256": "ae862f17fb16e983ef6615ebf5fef577061e18c3916ac71b986d8f8cbdb2230f"
+    },
+    "actual_report": {
+      "path": "output/secondary-helpers-verification.json",
+      "bytes": 2440,
+      "mtime_ns": 1794599836093018300,
+      "sha256": "71959217f22d81523f25b9d838788acead3e2d17e38548d395d71658e85c14cf"
+    },
+    "result_counts": [
+      {
+        "path": ".",
+        "checks": 39,
+        "failures": 0,
+        "cases": null
+      },
+      {
+        "path": "native",
+        "checks": 14,
+        "failures": 0,
+        "cases": null
+      },
+      {
+        "path": "multi",
+        "checks": 59,
+        "failures": 0,
+        "cases": null
+      },
+      {
+        "path": "patch",
+        "checks": 35,
+        "failures": 0,
+        "cases": null
+      }
+    ],
+    "python_tests": [
+      {
+        "tests": 20,
+        "seconds": 0.566
+      },
+      {
+        "tests": 9,
+        "seconds": 0.151
+      }
+    ],
+    "private_receipts": 4,
+    "scanned_logs": 12,
+    "bad_markers": []
+  },
+  {
+    "label": "secondary_existing_ribbon",
+    "terminal_exit": 0,
+    "source_context": "literal main_working_source",
+    "reports_equal_to_captured_stdout": true,
+    "stdout_log": {
+      "bytes": 1878,
+      "mtime_ns": 1794599856500296700,
+      "sha256": "aca98c17eee1b4b29d26fc34dd542a7368113318acd5adb62a5d11561111e192"
+    },
+    "actual_report": {
+      "path": "output/secondary-existing-native/1794599836189597900/verification.json",
+      "bytes": 1878,
+      "mtime_ns": 1794599856490780800,
+      "sha256": "aca98c17eee1b4b29d26fc34dd542a7368113318acd5adb62a5d11561111e192"
+    },
+    "result_counts": [
+      {
+        "path": "result",
+        "checks": 33,
+        "failures": 0,
+        "cases": null
+      }
+    ],
+    "python_tests": [],
+    "private_receipts": 1,
+    "scanned_logs": 4,
+    "bad_markers": []
+  },
+  {
+    "label": "secondary_picking",
+    "terminal_exit": 0,
+    "source_context": "literal main_working_source",
+    "reports_equal_to_captured_stdout": true,
+    "stdout_log": {
+      "bytes": 1260,
+      "mtime_ns": 1794599866731355300,
+      "sha256": "7338fa192bb0e1512d81cd3aa3d27c471c4b8a4034bf7abda9025482b26bb5e7"
+    },
+    "actual_report": {
+      "path": "output/secondary-picking/1794599856603950600/verification.json",
+      "bytes": 1132,
+      "mtime_ns": 1794599866722353700,
+      "sha256": "179f41e87bdad7f63a2235518d5e944c1aa82513cc313991f6dc01f8b88faf79"
+    },
+    "result_counts": [
+      {
+        "path": "unit.result",
+        "checks": 20,
+        "failures": 0,
+        "cases": null
+      },
+      {
+        "path": "smoke.result",
+        "checks": 31,
+        "failures": 0,
+        "cases": null
+      }
+    ],
+    "python_tests": [],
+    "private_receipts": 1,
+    "scanned_logs": 5,
+    "bad_markers": []
+  },
+  {
+    "label": "secondary_batch",
+    "terminal_exit": 0,
+    "source_context": "literal main_working_source",
+    "reports_equal_to_captured_stdout": true,
+    "stdout_log": {
+      "bytes": 6043,
+      "mtime_ns": 1794599887777422500,
+      "sha256": "4bb587a85fc15313f142f6cf13c2e4255ad9cfa8af10322df4c0306429c62249"
+    },
+    "actual_report": {
+      "path": "output/secondary-batch/1794599868082134100/verification.json",
+      "bytes": 1837,
+      "mtime_ns": 1794599887766423800,
+      "sha256": "17926fd9e7d16e2fdf40aaf074c1f92f91c53411dcdb678eadc3201dd91b393f"
+    },
+    "result_counts": [
+      {
+        "path": "unit",
+        "checks": 5,
+        "failures": 0,
+        "cases": null
+      },
+      {
+        "path": "result",
+        "checks": 34,
+        "failures": 0,
+        "cases": null
+      }
+    ],
+    "python_tests": [
+      {
+        "tests": 26,
+        "seconds": 1.071
+      }
+    ],
+    "private_receipts": 1,
+    "scanned_logs": 6,
+    "bad_markers": []
+  },
+  {
+    "label": "helper_morphs",
+    "terminal_exit": 0,
+    "source_context": "literal main_working_source",
+    "reports_equal_to_captured_stdout": true,
+    "stdout_log": {
+      "bytes": 2709,
+      "mtime_ns": 1794599894936583700,
+      "sha256": "b84fca121cc7b643d8039d65dd23158199abbe4f50dd09b1d8487a514a62a085"
+    },
+    "actual_report": {
+      "path": "output/helper-morphs-verification.json",
+      "bytes": 1187,
+      "mtime_ns": 1794599894927571800,
+      "sha256": "e2863efb08741d3d5e4004a8ed3a94f4f8496e0958a3ef5b2af40e5fdc7f1dcf"
+    },
+    "result_counts": [
+      {
+        "path": ".",
+        "checks": 32,
+        "failures": 0,
+        "cases": null
+      }
+    ],
+    "python_tests": [
+      {
+        "tests": 10,
+        "seconds": 0.336
+      }
+    ],
+    "private_receipts": 1,
+    "scanned_logs": 3,
+    "bad_markers": []
+  },
+  {
+    "label": "scene_view",
+    "terminal_exit": 0,
+    "source_context": "literal main_working_source",
+    "reports_equal_to_captured_stdout": true,
+    "stdout_log": {
+      "bytes": 21844,
+      "mtime_ns": 1794599907373642900,
+      "sha256": "391b295f286500dd0246d0190f2e76a7194d4d0b7de70dce3c72179d390eec46"
+    },
+    "actual_report": {
+      "path": "output/scene-view-verification.json",
+      "bytes": 21844,
+      "mtime_ns": 1794599907366659000,
+      "sha256": "391b295f286500dd0246d0190f2e76a7194d4d0b7de70dce3c72179d390eec46"
+    },
+    "result_counts": [
+      {
+        "path": "scene_view_unit",
+        "checks": 12830,
+        "failures": 0,
+        "cases": 144
+      },
+      {
+        "path": "scene_view_smoke",
+        "checks": 102,
+        "failures": 0,
+        "cases": null
+      }
+    ],
+    "python_tests": [],
+    "private_receipts": 1,
+    "scanned_logs": 5,
+    "bad_markers": []
+  }
+]

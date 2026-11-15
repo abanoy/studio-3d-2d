@@ -69,3 +69,5 @@ all native assets, tablet hardware, arbitrary GPUs or a clean Windows installati
 Primary reference: [Godot4.6 Camera3D](https://docs.godotengine.org/en/4.6/classes/class_camera3d.html)
 documents the camera's near/far culling boundaries and aspect/FOV relationship.
 HAS's legacy far2000 is its own renderer default, distinct from Godot's default.
+
+Cloud rerun (2026-11-07): use `--isolated-display :109 --output /absolute/new/evidence-folder` with the pre-provisioned private X display. Linux has no shared-display fallback; Windows retains desktop receipts. Current numeric camera passed37checks and independent9matrix cases (maximum error3.50e-7); projection suite passed49checks. Both produced48frame1080p24H264 with exact preview/input pixels. No prepared native fixtures were available in these runs; uploaded raw SFM archives do not count as prepared imports.

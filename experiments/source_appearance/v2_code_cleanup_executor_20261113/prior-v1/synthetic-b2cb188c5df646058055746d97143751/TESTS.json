@@ -1,0 +1,192 @@
+{
+  "deletes_moves_kills_or_git_mutation": false,
+  "format": "has_sfm_v2_cleanup_synthetic_controls_1",
+  "fixture_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-v2-code-cleanup-executor-20261113\\synthetic-b2cb188c5df646058055746d97143751",
+  "production_execute_invoked": false,
+  "passed": true,
+  "tests": 31,
+  "exact_production_nonuse_and_remote_publication": "UNRUN_BY_SYNTHETIC_TESTS",
+  "fixture_retained": true,
+  "test_source_sha256": "07ebdd9ad310db529a5f28d23a396da66b6f1ac42f3ae8590b087a8a25bc9147",
+  "results": [
+    {
+      "expected_refusal": false,
+      "name": "safe-relative",
+      "passed": true
+    },
+    {
+      "expected_refusal": false,
+      "name": "synthetic-valid-file-identity",
+      "passed": true
+    },
+    {
+      "expected_refusal": false,
+      "name": "long-literal-file-native-identity",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe Windows path component.",
+      "name": "unsafe-relative-../escape.py",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe Windows path component.",
+      "name": "unsafe-relative-src/../escape.py",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe relative path.",
+      "name": "unsafe-relative-/absolute.py",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe relative path.",
+      "name": "unsafe-relative-C:/absolute.py",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe relative path.",
+      "name": "unsafe-relative-src\\escape.py",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe Windows path component.",
+      "name": "unsafe-relative-src/alias.",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe Windows path component.",
+      "name": "unsafe-relative-src/alias ",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe Windows path component.",
+      "name": "unsafe-relative-src/NUL.py",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe relative path.",
+      "name": "unsafe-relative-src/file.py:stream",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unsafe relative path.",
+      "name": "unsafe-relative-src/*.py",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Absolute/relative file path mismatch.",
+      "name": "absolute-relative-membership-escape",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Retained runtime/generated/private path cannot be deleted.",
+      "name": "retained-output-never-candidate",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "File size/nsmtime changed: C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-v2-code-cleanup-executor-20261113\\synthetic-b2cb188c5df646058055746d97143751\\authored.txt",
+      "name": "changed-size",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "File size/nsmtime changed: C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-v2-code-cleanup-executor-20261113\\synthetic-b2cb188c5df646058055746d97143751\\authored.txt",
+      "name": "changed-nanosecond-stamp",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Exact SHA256 gate failed.",
+      "name": "actual-mutated-file-sha",
+      "passed": true
+    },
+    {
+      "expected_refusal": false,
+      "name": "equal-membership",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unexpected or missing tree membership: synthetic extra",
+      "name": "unlisted-file-membership",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Unexpected or missing tree membership: synthetic missing",
+      "name": "missing-file-membership",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Duplicate/case-alias membership entry.",
+      "name": "case-alias-membership",
+      "passed": true
+    },
+    {
+      "expected_refusal": false,
+      "name": "clear-nonuse-result",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Process nonuse gate refused: observed use or an inaccessible live owned/runtime process.",
+      "name": "observed-process-use",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Process nonuse gate refused: observed use or an inaccessible live owned/runtime process.",
+      "name": "inaccessible-owned-runtime",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Exact SHA256 gate failed.",
+      "name": "wrong-published-executor-sha",
+      "passed": true
+    },
+    {
+      "expected_refusal": false,
+      "name": "exact-native-owner-and-full-creation",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Exception calling \"OwnerIdentity\" with \"2\" argument(s): \"PID changed between WMI snapshot and retained native owner handle.\"",
+      "name": "native-owner-snapshot-creation-mismatch",
+      "passed": true
+    },
+    {
+      "expected_refusal": false,
+      "name": "exact-own-process-native-cwd",
+      "passed": true
+    },
+    {
+      "expected_refusal": true,
+      "reason": "Exception calling \"CurrentDirectory\" with \"2\" argument(s): \"PID creation identity changed; retained-handle read refused.\"",
+      "name": "native-pid-creation-mismatch",
+      "passed": true
+    },
+    {
+      "expected_refusal": false,
+      "name": "single-literal-remove-operation-static",
+      "passed": true
+    }
+  ],
+  "executor_sha256": "41d0b54881bc5e339885e56010487defa903f9890eb445daaf168e70571b8931"
+}

@@ -1,0 +1,162 @@
+{
+  "format": "has_native_source_oracle_research_checkpoint_1",
+  "status": "RESEARCH_PROPOSAL_ONLY",
+  "root_head_before_and_after": "eb7c069af72220c26471e7ceaf8b8055c40e6268",
+  "source": {
+    "path": "source/inspect_installed.ps1",
+    "bytes": 5879,
+    "sha256": "03963b248c8703c838d28b9175d9edde44853bb712bd6c3a5ea7914002aff8c0"
+  },
+  "inventory": {
+    "path": "inventory-1794550956748.json",
+    "bytes": 32704,
+    "sha256": "f1d5da3c4fff245179a64a14d7e7c6cb46ab7dd1818d2d12b5ae4e319d7d4f6b"
+  },
+  "proposal": {
+    "path": "PROPOSAL.md",
+    "bytes": 8466,
+    "sha256": "8bcc24809ec4170c936a581fc3c120c28a916fea6e917713679cc5a9124e47ac"
+  },
+  "independent_primary_research": {
+    "path": "review/VALVE-NATIVE-ORACLE.md",
+    "bytes": 11726,
+    "sha256": "a20cb59c91b404f37650802b5cb76c30bd961581c4ec84a899934e38b3193efd"
+  },
+  "selected_existing_installed_files": 42,
+  "all_selected_files_unchanged_during_reads": true,
+  "entire_steam_tree_write_monitor_claimed": false,
+  "viewers": [
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\bin\\hlmv.exe",
+      "pe_architecture": "x86",
+      "file_version": null,
+      "sha256": "313d4333131f15c751fce9ea5919ff59f6a9b3e4f0c5426a5d05751fa1f655e0"
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\hlmv.exe",
+      "pe_architecture": "x86",
+      "file_version": "2026.09.16",
+      "sha256": "a5668ee91b6996826632fea061fd43f176e227d56c8fc0e964f4936b2486f6e2"
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod\\bin\\win64\\hlmv.exe",
+      "pe_architecture": "x64",
+      "file_version": "2026.09.16",
+      "sha256": "68ab93356be69724408feafea194afe4705333fb88031e292557584e76182ae3"
+    }
+  ],
+  "shipped_mdl_header_versions": [
+    49,
+    49
+  ],
+  "shipped_mdl_read_scope": "Only first eight bytes, no geometry decoded/copied; compatibility lead, not viewer-load proof",
+  "native_tools_controller_evidence": {
+    "repository_path": "docs/benchmarks/sfm_native_feature_inventory_2026-11-12.json",
+    "sha256": "a9a01c7f370ff1fc3b72875d4a72c4567399521510b01fe155478e3ecd85d4f2",
+    "exact_native_record": {
+      "archive": "Keiki.rar",
+      "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.mdl",
+      "sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "version": 49,
+      "bodygroups": [
+        {
+          "index": 0,
+          "name": "tools",
+          "choices": [
+            {
+              "index": 0,
+              "name": "tools.dmx",
+              "vertices": 1180,
+              "meshes": 1,
+              "blank": false,
+              "mesh_flex_records": 1
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "meshes": 0,
+              "blank": true,
+              "mesh_flex_records": 0
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "name": "box",
+          "choices": [
+            {
+              "index": 0,
+              "name": "box.smd",
+              "vertices": 38,
+              "meshes": 1,
+              "blank": false,
+              "mesh_flex_records": 0
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "meshes": 0,
+              "blank": true,
+              "mesh_flex_records": 0
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "name": "flame",
+          "choices": [
+            {
+              "index": 0,
+              "name": "flame.smd",
+              "vertices": 1479,
+              "meshes": 2,
+              "blank": false,
+              "mesh_flex_records": 0
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "meshes": 0,
+              "blank": true,
+              "mesh_flex_records": 0
+            }
+          ]
+        }
+      ],
+      "skin_family_count": 1,
+      "distinct_skin_families": 1,
+      "bone_count": 31,
+      "procedural_bones": 0,
+      "tools_controllers": [
+        {
+          "index": 0,
+          "name": "Tools",
+          "group": "Tools",
+          "min": 0.0,
+          "max": 1.0
+        }
+      ],
+      "tools_rule_bindings": [
+        {
+          "target_descriptor": 0,
+          "target_name": "Tools",
+          "fetch1_controller": 0
+        }
+      ]
+    }
+  },
+  "local_primary_template_confirms_game_argument": true,
+  "verified_hlmv_capture_or_skin_bodygroup_flex_cli": false,
+  "public_sdk_model_version": 48,
+  "installed_viewer_mdl49_compatibility": "UNRUN_UNVERIFIED",
+  "planned_native_matrix_states": 12,
+  "native_bone_weight_fidelity": "UNTESTED_REQUIRES_SEPARATE_NATIVE_BONE_POSE_OR_NUMERICAL_REFERENCE",
+  "viewer_game_compiler_model_runtime_launched": false,
+  "gpu_lease_taken": false,
+  "downloads_extraction_installation_registry_steam_writes": false,
+  "main_git_or_source_changes_by_this_task": false,
+  "scope_note": "Installed metadata and official primary-source research only. Root canonical retains graphics lease. Private desktop is not a separate profile or registry hive."
+}

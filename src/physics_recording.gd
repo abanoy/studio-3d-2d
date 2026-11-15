@@ -115,6 +115,7 @@ func start_reason() -> String:
 
 func start() -> bool:
 	var app=editor.app
+	app.stop_local_wind("Record")
 	last_error="";last_end_reason="";last_bytes=0;max_sample_ms=0
 	if active or app.exporting:return false
 	var reason:=start_reason()

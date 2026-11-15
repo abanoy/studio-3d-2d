@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 import array
 import hashlib
@@ -10,7 +11,7 @@ import time
 import wave
 
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tools'))
-from run import command
+from run import command,configure_private_display
 from prepare_audio import prepare
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -26,7 +27,12 @@ def tone(path,freq,amplitude=12000,seconds=.5,right=None):
     with wave.open(str(path),'wb') as out:out.setparams((len(channels),2,44100,0,'NONE','not compressed'));out.writeframes(samples.tobytes())
 
 if __name__=='__main__':
-    folder=ROOT/'output/compressed-audio'/str(time.time_ns());folder.mkdir(parents=True)
+    parser=argparse.ArgumentParser();parser.add_argument('--isolated-display');parser.add_argument('--output',type=Path);options=parser.parse_args()
+    if os.name!='nt':
+        if sys.platform!='linux' or not options.isolated_display:parser.error('Explicit private display required; no shared fallback')
+        configure_private_display(options.isolated_display)
+    folder=(options.output or ROOT/'output/compressed-audio'/str(time.time_ns())).resolve();folder.mkdir(parents=True,exist_ok=False)
+    frozen={str(p.relative_to(ROOT)):sha(p) for part in ['src','tests','tools','examples','data'] for p in (ROOT/part).rglob('*') if p.is_file() and p.suffix!='.pyc' and '__pycache__' not in p.parts}
     ffmpeg=os.environ.get('HYBRID_FFMPEG',r'C:\Program Files\ffmpeg\bin\ffmpeg.exe')
     tone(folder/'base.wav',400,6000);tone(folder/'voice.wav',1000);tone(folder/'effect.wav',1500,8000,right=(1800,4000))
     for name,source,codec in [('Voice — тест.mp3','voice.wav','libmp3lame'),('Effect.ogg','effect.wav','libvorbis')]:
@@ -49,12 +55,14 @@ if __name__=='__main__':
     except ValueError as error:assert 'up to60seconds' in str(error);errors['overlong']=str(error)
     else:raise AssertionError('Long sound must not be silently truncated')
     assert not (out/'audio.wav').exists() and sha(long)==long_original
-    args=command('tests/compressed_audio_smoke.gd',extra=['--',str(folder)])
+    args=command('tests/compressed_audio_smoke.gd',extra=(["--audio-driver","Dummy"] if os.name!="nt" else [])+['--',str(folder)])
     log=run(args,folder/'app.log');assert b'COMPRESSED_AUDIO ' in log
-    receipt=Path(args[args.index('--receipt')+1]);desktop=json.loads(receipt.read_bytes())
-    assert desktop['exit']==0 and desktop['child_desktop_confirmed'] and not desktop['foreground_child_observed'] and desktop['job_closed'] and desktop['desktop_closed']
+    receipt=None
+    if os.name=='nt':
+        receipt=Path(args[args.index('--receipt')+1]);desktop=json.loads(receipt.read_bytes())
+        assert desktop['exit']==0 and desktop['child_desktop_confirmed'] and not desktop['foreground_child_observed'] and desktop['job_closed'] and desktop['desktop_closed']
     report=json.loads((folder/'app-result.json').read_bytes())
-    probe=str(Path(ffmpeg).with_name('ffprobe.exe'))
+    probe=str(Path(ffmpeg).with_name('ffprobe.exe' if os.name=='nt' else 'ffprobe'))
     media=json.loads(run([probe,'-v','error','-count_frames','-show_streams','-show_format','-of','json',report['movie']],folder/'ffprobe.json'))
     video=next(s for s in media['streams'] if s['codec_type']=='video');audio=next(s for s in media['streams'] if s['codec_type']=='audio')
     assert (video['codec_name'],video['width'],video['height'],video['r_frame_rate'],video['nb_read_frames'])==('h264',1920,1080,'24/1','48')
@@ -71,6 +79,9 @@ if __name__=='__main__':
     assert 3200<levels['ogg_right']<4800 and levels['ogg_right_leak']<100,levels
     assert max(map(abs,samples[round(1.7*48000)*2:round(1.8*48000)*2]))<10
     assert originals=={name:sha(folder/name) for name in originals}
-    report.update(folder=str(folder),private_receipt=str(receipt),original_inputs_unchanged=True,refusals=errors,decoded_magnitudes=levels)
+    report.update(folder=str(folder),private_receipt=str(receipt) if receipt else None,original_inputs_unchanged=True,refusals=errors,decoded_magnitudes=levels)
+    assert all(sha(ROOT/path)==digest for path,digest in frozen.items())
+    report.update(source_sha256=frozen,isolated_display=options.isolated_display,scope='Original generated WAV/MP3/Ogg, actual decode/import/cancel/refusal/retry/Undo/persistence and independently decoded AAC. Physical audio hardware and Windows target remain untested.')
+    (folder/'verification.json').write_text(json.dumps(report,indent=2)+'\n')
     (ROOT/'output/compressed-audio-verification.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
-    print('PASS MP3/Ogg normalization, picker/placement, cancel/failure/retry, Undo, packed/linked HAS, hardware/fallback playback and H264/AAC movie')
+    print('PASS MP3/Ogg normalization, picker/placement, cancel/failure/retry, Undo, packed/linked HAS, logical preview/fallback playback (no physical device certification) and H264/AAC movie')

@@ -1,0 +1,47 @@
+{
+  "format": "has_helper_draft_protocol_checkpoint_1",
+  "date": "2026-11-13",
+  "context_commit": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "main_runtime_ported": false,
+  "cpu_tests": 21,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "actual_current_helper_builders_used": true,
+  "fixtures": "Tiny self-authored geometry plus VRM0/1-style declarations; no actual native art",
+  "candidate": {
+    "path": "experiments/local_wind_review/helper_draft_protocol_20261113/candidate/tools/wind_helper_preview.py",
+    "bytes": 22479,
+    "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+  },
+  "archive": {
+    "path": "experiments/local_wind_review/helper_draft_protocol_20261113/ARCHIVE.json",
+    "bytes": 2536,
+    "sha256": "f5147ea533d017f268de9f24793cc3bedd25831a9677d8798ea7080fe3e5255a"
+  },
+  "index": {
+    "path": "experiments/local_wind_review/helper_draft_protocol_20261113/FILE_INDEX.json",
+    "bytes": 1817,
+    "sha256": "702ee95a498330330b200c3ad0880780a7a03938c035f71d909dd07b96e44f74"
+  },
+  "handoff": {
+    "path": "experiments/local_wind_review/helper_draft_protocol_20261113/HANDOFF.json",
+    "bytes": 3787,
+    "sha256": "a6ba26f841947529ca34c3e3f29b654a5cc4616d9919ef666cba614c9021463a"
+  },
+  "limitations": [
+    "No owned worker completion transport in this packet",
+    "No Node-owned helper context/controller",
+    "No actual Godot import/binding snapshot or main-view preview",
+    "No helper-before-Apply UI or permanent exclusions"
+  ],
+  "review_corrections": [
+    "Receipt digest must arrive through separate trusted completion",
+    "Report-to-request association validated by actual candidate source-node chain, not report order"
+  ],
+  "cpu_failed_fixture_retained": true,
+  "gpu_started": false,
+  "native_converter_started": false,
+  "private_assets_uploaded": false,
+  "next_increment": "Owned preview-purpose CPU worker adapter, then actual hidden import and complete binding validation. The later adapter candidate is separate and not included here."
+}

@@ -1,0 +1,452 @@
+{
+  "format": "has_windows_acceptance_resume_1",
+  "date": "2026-11-10 America/New_York",
+  "starting_commit": "9b29615a625a44f33bac396b29614102e0c08edc",
+  "session_owned_checkout": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110",
+  "backup_search": {
+    "starting_commit": "9b29615a625a44f33bac396b29614102e0c08edc",
+    "session_owned_checkout": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110",
+    "historical_hecatia_sha256": "fff3599293023f41f05eb27c9d51d2af45d01493b8618c5da51067f3449ff758",
+    "historical_layer_expectation": 19,
+    "candidate_path": "C:\\a\\dump\\hecatia.kra~",
+    "candidate_sha256": "31ae124b6449c8aa34186dcf9d277225bf3a499d70e1715fe9032062ad79240b",
+    "candidate_bytes": 29499976,
+    "candidate_mtime_ns": 1753732263690180000,
+    "candidate_layers": 18,
+    "candidate_is_historical_fixture": false,
+    "candidate_modified": false,
+    "search_roots": [
+      "C:/a/dump",
+      "C:/a/kra",
+      "C:/Users/noble/Downloads",
+      "C:/Users/noble/Desktop",
+      "C:/Users/noble/Documents"
+    ],
+    "conclusion": "Only named backup found in searched roots; hash and layer count differ. No replacement or relaxed historical assertion used."
+  },
+  "supplied_original": {
+    "source": "C:\\a\\Programming\\HAS\\hecatia.kra",
+    "sha256": "fff3599293023f41f05eb27c9d51d2af45d01493b8618c5da51067f3449ff758",
+    "bytes": 30113347,
+    "mtime_ns": 1766950662000000000,
+    "layers": 19,
+    "staged": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-fixtures\\hecatia.kra",
+    "unchanged_after_tests": true
+  },
+  "historical_krita": {
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\krita-import\\1794287936749438100",
+    "reports": {
+      "writer": {
+        "cancelled_job": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/krita-imports/12808-29026650",
+        "checks": 32,
+        "failures": 0,
+        "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\krita-import\\1794287936749438100/render_1794287958_21854326_0/movie.mp4",
+        "native_job": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/krita-imports/12808-2819248"
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0
+      }
+    },
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\krita_import_smoke_a759a25c33fe45a48d4b5d2a848d382a.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\krita_import_smoke_03a9f5e75bac4f8aaf4a167877448e25.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\krita-imports\\12808-2819248\\prepared\\private-desktop.json"
+    ],
+    "cancelled_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\krita-imports\\12808-29026650\\prepared\\private-desktop.json",
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1088,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 4,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "1504020",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "nb_read_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.33.100 libx264"
+      }
+    },
+    "portable_imported_pixels": true,
+    "source_sha256": "fff3599293023f41f05eb27c9d51d2af45d01493b8618c5da51067f3449ff758",
+    "source_unchanged": true
+  },
+  "fresh_first_movie": {
+    "results": [
+      {
+        "checks": 79,
+        "failures": 0,
+        "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\first-movie\\1794287724376846700",
+        "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\first-movie\\1794287724376846700/render_1794287751_26445215_0/movie.mp4"
+      },
+      {
+        "checks": 8,
+        "failures": 0
+      }
+    ],
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\first_movie_smoke_cec413496b624cab95f09780ac2e509b.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\first_movie_smoke_c8c7326dd93a40849f0498d007e7394e.json"
+    ],
+    "originals": {
+      "first-movie.has": "8c2689d1e8ae8f1d424d72900273dd656cf871ee1c725bcbe8198aa9f6be7fc6",
+      "manifest.json": "aba9741b5f9633c2321d89be8cc50bb40163b0d3e7c9dbe788d3be68130e066d",
+      "Practice cue.wav": "35252cc25a1d09b33ef80de04a26e3cd294025b4f4277cefae1142a5c31787ac",
+      "Practice figure.glb": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+      "Practice room.glb": "713fd2929bc87af672ca2f129ba4ecea3de84480cc088ff2ba2ff29a816f76ad",
+      "practice.has": "050e2afe0b04e79d65b5c62a3a3db875421d9af6fed4e825498182b846f7ec61"
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1088,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 4,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "435620",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "nb_read_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.33.100 libx264"
+      }
+    },
+    "cue_onset_sample": 80043,
+    "isolated_display": null
+  },
+  "owner_review_pack": {
+    "format": "has_owner_review_pack_1",
+    "source_commit": "9b29615a625a44f33bac396b29614102e0c08edc",
+    "projects": {
+      "Flatgrass": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Flatgrass.has",
+        "sha256": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e"
+      },
+      "Avatar": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Avatar.has",
+        "sha256": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77"
+      },
+      "Street": {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Street.has",
+        "sha256": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5"
+      }
+    },
+    "writer": {
+      "checks": 7,
+      "failures": 0,
+      "mode": "writer",
+      "observations": [
+        {
+          "name": "Flatgrass",
+          "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review/Flatgrass.has",
+          "sha256": "3b81c80d065d1ac922a7c7728d9b5d3a04d0428ce627eea597aed87c7ef21a46",
+          "source": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/imports/3b81c80d065d1ac922a7c7728d9b5d3a04d0428ce627eea597aed87c7ef21a46.glb"
+        },
+        {
+          "name": "Avatar",
+          "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review/Avatar.has",
+          "sha256": "91fc4ae30aee77f2a9bc617b0c4bde0e19d83c84e805c46b3c3e6c9f34e30072",
+          "source": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/imports/91fc4ae30aee77f2a9bc617b0c4bde0e19d83c84e805c46b3c3e6c9f34e30072.glb"
+        },
+        {
+          "name": "Street",
+          "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review/Street.has",
+          "sha256": "7c69a286eaf80db381f045bc7c249def346e69b2f9e48927cbe0d53eaa0055c2",
+          "source": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/imports/7c69a286eaf80db381f045bc7c249def346e69b2f9e48927cbe0d53eaa0055c2.glb"
+        }
+      ]
+    },
+    "reader": {
+      "checks": 12,
+      "failures": 0,
+      "mode": "reader",
+      "observations": []
+    },
+    "private_receipts": [
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\build_owner_review_f3700c41388a47fe99a39cbdcaa4b7d5.json",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_faf91d43519a4a59858ffdebf404e9a8",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 28452,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 12.352
+        }
+      },
+      {
+        "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\build_owner_review_b0095aee70cc498da702b9316f0fd5fb.json",
+        "receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_30751acdc3ee4ad9974b25dd86fb38c9",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 29100,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 7.116
+        }
+      }
+    ],
+    "cold_source_managed_import_and_writer_cache_withheld": true,
+    "scope": "Runnable isolated native projects for actual owner review; exact self-replay is not artist/source-fidelity approval."
+  },
+  "aggregate_attempt": {
+    "log": "Traceback (most recent call last):\n  File \"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\tests\\verify.py\", line 460, in <module>\n    main()\n    ~~~~^^\n  File \"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\tests\\verify.py\", line 59, in main\n    log = run([sys.executable, '-u', 'tests/' + wrapper], timeout=300)\n  File \"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\tests\\verify.py\", line 24, in run\n    raise RuntimeError(f\"Exit {result.returncode}: {args}\\n{result.stdout}\\n{result.stderr}\")\nRuntimeError: Exit 1: ['C:\\\\Program Files\\\\Python313\\\\python.exe', '-u', 'tests/verify_pose_library_native.py']\n\nTraceback (most recent call last):\n  File \"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\tests\\verify_pose_library_native.py\", line 21, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\tests\\verify_pose_library_native.py\", line 8, in main\n    p=normal/relative;document=json.loads((p/'project.json').read_bytes());row=document.get('model') or next(x for x in document['world']['objects'] if x['kind']=='model');source=p/row['path'];assert source.is_file();plans.append({'label':label,'source':str(source)})\n                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_abc.py\", line 625, in read_bytes\n    with self.open(mode='rb') as f:\n         ~~~~~~~~~^^^^^^^^^^^\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_local.py\", line 537, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\prototypes\\\\studio-3d-2d\\\\output\\\\source-smoke\\\\source-project\\\\project.json'\n\n",
+    "scope": "Full aggregate requested; historical Krita case now passes32+5. Next stop is native pose wrapper reading absent old installed output/source-smoke/source-project/project.json. Rebuild isolated native prerequisites next; no full pass or acceptance promotion."
+  },
+  "retention": "Keep this isolated checkout and output/owner-review projects while actual reviewer participation is pending. Private KRA/HAS/GLB/images/movies stay outside Git. Original hecatia.kra and model/Steam/tool files are protected. No installed Studio update or new shared runtime installation.",
+  "next_work": [
+    "Rebuild native test fixtures from approved originals and route legacy fixture consumers to isolated paths.",
+    "Continue canonical aggregate without weakening original assertions.",
+    "Guide actual native appearance, novice/learner/tablet/audio and clean setup exercises using runnable review."
+  ],
+  "private_receipts": [
+    {
+      "path": "output\\private-desktop\\build_owner_review_b0095aee70cc498da702b9316f0fd5fb.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_30751acdc3ee4ad9974b25dd86fb38c9",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 29100,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.116
+      }
+    },
+    {
+      "path": "output\\private-desktop\\build_owner_review_f3700c41388a47fe99a39cbdcaa4b7d5.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_faf91d43519a4a59858ffdebf404e9a8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 28452,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 12.352
+      }
+    },
+    {
+      "path": "output\\private-desktop\\first_movie_smoke_c8c7326dd93a40849f0498d007e7394e.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_64bf63be3f684203b485ab4662398456",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 17656,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.832
+      }
+    },
+    {
+      "path": "output\\private-desktop\\first_movie_smoke_cec413496b624cab95f09780ac2e509b.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5ebd41500f694cd9a81a7f09cc40b49f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 27616,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 37.555
+      }
+    },
+    {
+      "path": "output\\private-desktop\\krita_import_smoke_03a9f5e75bac4f8aaf4a167877448e25.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_8eef4441dba949acb7d76185ab1b45b8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 29540,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.25
+      }
+    },
+    {
+      "path": "output\\private-desktop\\krita_import_smoke_a759a25c33fe45a48d4b5d2a848d382a.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0f36e4e0d3504c41955d904fed6e7592",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 12808,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 33.568
+      }
+    },
+    {
+      "path": "output\\private-desktop\\pose_library_smoke_4def0305d68441cd8cfd0680aea5d918.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_6662751375bf4e58b680b6bad44b8de8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25756,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 3.682
+      }
+    },
+    {
+      "path": "output\\private-desktop\\pose_library_smoke_7cb6f359c4bb412f9682edfcee157351.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_09775774fd5948bea22002418aced16f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 28620,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 12.691
+      }
+    }
+  ]
+}

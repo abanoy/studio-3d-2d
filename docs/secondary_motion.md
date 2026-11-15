@@ -8,6 +8,70 @@ This is required development scope. Existing-chain fan motion is now usable as
 described below; a first reviewed weighted-helper setup is also implemented.
 Unskinned models and a complete garment/region editor remain unfinished.
 
+### Parts already weighted to several native joints
+
+Loose-part review offers **Use existing joints** for a validated linear native
+chain when no single new-helper attachment can cover the selected vertices.
+Review the orange shared regions and named chain, then choose **Enable these
+existing joints**. The attachment and native joint positions are read-only in
+this mode; small-patch isolation is unavailable because shared joints can move
+other regions too. Ordinary weighted-helper generation remains a separate path.
+
+This keeps original weights, skin, mesh/material data, binary buffers and poses.
+The derived GLB adds an unweighted terminal endpoint and declares the existing
+chain for simulation; the original file is preserved. Existing springs/helper
+history remain intact. Setup is Undoable and portable. New node, combined spring
+and coordinate bounds refuse oversized derivations before creating output.
+
+Actual Bikini Reimu Back hair spans Head plus back_hair1/2/3 and had no eligible
+single attachment. Its reviewed chain affects3connected regions/1369weighted
+vertices. Pristine26checks and existing-ribbon composition29checks pass, with
+exact posed pixels, real fan movement, off restoration, Undo/Redo, packed reopen
+and24frame1080p24H264. The composition test seeds history from the actual ribbon
+report; it is not a test of the owner's private recorded project. See
+[evidence](benchmarks/back_hair_existing_joints_2026-11-12.json). Per-item wind
+inclusion and a local-blow preview remain separate work.
+
+### Scene-click selection and simpler chain review
+
+While reviewing loose parts, click a visible part to suggest its connected region.
+Orange outlines and the list show the guess; choose another list item to correct
+it. Picking uses source bounds transformed by the current attachment joint, so it
+is approximate rather than exact skinned-surface or occlusion selection. Dragging
+still navigates, Ctrl retains camera controls, and Escape/focus loss cancels a
+pending click. Clicking an already configured area clears the previous Apply
+proposal and lets smaller-patch review start on that same component.
+
+Simple now automatically reviews a validated existing chain when all ordinary
+weighted attachments are unavailable. It still requires explicit Apply and shows
+the shared affected areas. Unchecking **Use existing joints** is respected until
+the selected part changes; Advanced and patch mode retain their explicit choices.
+Reviewing, picking and correcting do not edit model data, keys or Undo history.
+Actual native pristine30/ribbon-composed33 and focused20unit/25interaction checks
+pass; see [selection evidence](benchmarks/secondary_part_picking_2026-11-12.json).
+
+### Set up several reviewed parts together
+
+Focus a part through the list or a scene click, refine its attachment/patch, then
+check **Include in setup**. Repeat for other parts. Clicking a row changes the
+precise focus; it does not change membership. Checked requests retain their own
+corrections when revisited. Space toggles the visible check while the list has
+focus. The count and **Needs review** markers show which plans are ready.
+
+**Set up N checked parts** prepares one complete candidate and applies one edit.
+Undo/Redo restores/removes the whole setup; individual helper reports persist
+in packed HAS. Invalid/conflicting parts, changed sources or failed imports keep
+the current scene. Native shared-chain rows are one linked group: their affected
+areas move together, and unchecking one alias removes that whole group. This
+does not promise independent vertex exclusion from shared native joints.
+
+With nothing checked, the original single-part action remains available. A failed
+preview cannot reactivate Apply through a later navigation/membership refresh.
+Request transport preserves corrected numeric controls at full precision.
+Setup membership lasts for the current review; committed joints remain in the
+derived asset. This is not a local-wind preview or per-group simulation filter.
+See [batch evidence](benchmarks/secondary_batch_setup_2026-11-12.json).
+
 ## Evidence and existing representation
 
 Read-only inspection of the actual supplied VRMs confirms:
@@ -127,8 +191,9 @@ no third-party implementation copied, installed or redistributed.
 
 Add and aim a fan first, then select a model with supported declared chains and
 enable **Hair & clothes** in Simple. Its body stays posed. Enable **Physics** too for a ragdoll with secondary
-motion; either activation order works. A missing/unsupported descriptor disables
-Hair & clothes with an explanation. Import activation remains manual.
+motion; either activation order works. A malformed/unsupported descriptor disables
+Hair & clothes with an explanation. A skinned model without declared chains
+offers reviewed helper setup instead. Import activation remains manual.
 
 **Add fan** creates an original selectable standard model. Move and rotate it with
 ordinary root handles; its blue arrow points along the blowing direction (+Z).
@@ -155,8 +220,14 @@ Secondary-only recording follows authored root/bone motion at120Hz, using fracti
 sampling between integer authored frames. Project addresses and saved keys remain
 integer/rational. Live unrecorded preview holds the activation pose/root.
 
-Turning either active toggle OFF freezes the **whole combined pose**, stops both
-solvers and supplies one Undo. Seek/play/save/export use the established stop/commit
+Turning **Hair & clothes OFF** removes live secondary offsets and restores the
+authored/current-frame pose, keeping manual drafts and recorded animation. It
+does not author a freeze draft or add an Undo command. An existing body solver
+continues running; cancelling unfinished hair setup preserves that borrowed body.
+Turning **Physics OFF** still freezes the whole combined pose, stops both solvers
+and supplies one Undo. If Record is active, switching off hair finishes the take
+through the established recording stop/commit path.
+Seek/play/save/export use the established stop/commit
 barriers; New invalidates deferred setup. Static frozen poses save normally;
 animated frozen drafts resume authored motion on scrub/reopen unless recorded.
 Explicit Record is the reliable way to preserve moving hair. Cancel discards the
@@ -196,6 +267,30 @@ a weighted attachment. Simple uses body-part names; Advanced exposes original
 names and editable joint positions. Cancel keeps the original. **Add joints to
 this part** creates a new immutable standard GLB revision as one Undo step.
 Use Hair & clothes and an ordinary fan, then Local/World Record to retain motion.
+
+**Hair & clothes** also opens this review when a skinned model has no declared
+secondary chains. The toggle stays off until joints have been reviewed and added;
+turn it on again to start simulation. Existing declared chains use the ordinary
+simulation path. Source material labels identify the parts in the list. Opening
+from Hair & clothes favors a usable hair/ribbon/clothing-labelled initial preview;
+this hint does not classify surfaces or apply weights automatically. Every usable
+region remains selectable and Apply is explicit.
+
+For the supplied Bikini Reimu player model (`reimu_hakurei_bikini.mdl`), select
+the model, turn on Hair & clothes, and review **Hair Acce** attached to the left
+hair ribbon. Add joints, then turn Hair & clothes on again. Add/aim an ordinary
+fan and press Record to keep the motion. The tested region has244vertices and
+13pinned seam vertices; one Apply adds4weighted joints to the77-bone source.
+Other connected hair surfaces lack a common weighted attachment and need manual
+patch/attachment refinement. This is a reviewed part setup, not full automatic
+hair/cloth rigging. The original GMA and converted source are preserved.
+
+`tests/verify_reimu_helpers.py --prepared-source <scene.glb>` repeats the actual
+native setup, Cancel, Undo/Redo, fan-off/on, Local Record, packed Save/cold Open
+and24-frame1080p24H264 export. Keep the conversion's `parameters.json` sibling.
+On Linux add `--isolated-display :N` for a provisioned private display; Windows
+uses the existing hidden desktop launcher. Private models are not in Git.
+See `docs/benchmarks/reimu_missing_helpers_2026-11-10.json` for scoped results.
 
 The longest local extent and nearest-anchor cross-section estimate the attachment
 edge. All vertices within a3percent cross-section band seed geodesic distances;

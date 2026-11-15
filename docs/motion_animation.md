@@ -161,3 +161,5 @@ review interface for stale edits across clip operations remain unfinished.
 The Yukari study exercised an arm overshoot at phase .75 and amount .30, verified
 Undo/Redo, packed Open, fresh-process regenerated motion and a normal two-second
 1080p24 MP4. The Advanced list currently displays at most 256 helpers.
+
+Current cloud software evidence (2026-11-07): `tests/verify_motion_feeling_original.py --isolated-display :109 --output /absolute/new/folder` exercises actual Simple trial/Apply/Cancel, Advanced per-part zero and editable helper phase/amount, Off and Undo/Redo on an original two-branch skinned rig. Helper correction changes evaluated intermediate motion, while every main endpoint stays exact.27UI/cold-reader plus23domain checks pass, with source and writer cache offline, exact persisted reverse samples and48frame1080p24H264. This does not certify native planted contacts, artist feel, physical inputs or change the owner Windows installation. See `benchmarks/motion_feeling_original_current_2026-11-07.json`.

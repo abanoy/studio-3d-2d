@@ -1,0 +1,333 @@
+{
+  "format": "has_native_cdmaterials_owned_vmt_resolution_1",
+  "models": [
+    {
+      "case": "multi_skin_glove",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "native_cd_material_paths": [
+        "models\\touhou\\tamo\\Nitori edit\\",
+        ""
+      ],
+      "resolution_algorithm_source": "blender_bindings/models/materials.py:resolve_model_material; bare name first, then nonempty relative native CDMaterials paths, materials/<candidate>.vmt; first existence match; casefold dedup",
+      "materials": [
+        {
+          "material_table_index": 0,
+          "native_name": "models/touhou/tamo/Nitori edit/Gloves",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/models/touhou/tamo/Nitori edit/Gloves.vmt",
+              "owned_exists": true,
+              "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves.vmt",
+              "vmt_sha256": "1e1afa18250001156e68e98cf7f054d8096e153d2a69307802384f6ce3f80933",
+              "vmt_bytes": 517
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Nitori edit/models/touhou/tamo/Nitori edit/Gloves.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Nitori edit/Gloves.vmt",
+            "owned_exists": true,
+            "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves.vmt",
+            "vmt_sha256": "1e1afa18250001156e68e98cf7f054d8096e153d2a69307802384f6ce3f80933",
+            "vmt_bytes": 517
+          }
+        },
+        {
+          "material_table_index": 1,
+          "native_name": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/models/touhou/tamo/Nitori edit/Gloves glow.vmt",
+              "owned_exists": true,
+              "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+              "vmt_sha256": "b2fb3224f8ff9acc5d7defa7f6bdd673e6fa9a7ddf60e41330419a9994b1a053",
+              "vmt_bytes": 655
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Nitori edit/models/touhou/tamo/Nitori edit/Gloves glow.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Nitori edit/Gloves glow.vmt",
+            "owned_exists": true,
+            "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+            "vmt_sha256": "b2fb3224f8ff9acc5d7defa7f6bdd673e6fa9a7ddf60e41330419a9994b1a053",
+            "vmt_bytes": 655
+          }
+        },
+        {
+          "material_table_index": 2,
+          "native_name": "Glovesg",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/Glovesg.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Nitori edit/Glovesg.vmt",
+              "owned_exists": true,
+              "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesg.vmt",
+              "vmt_sha256": "577983146eba9bd9fabcb0ec2984f6f2586b1a6f6a2921ed3f5dc07879ab5099",
+              "vmt_bytes": 594
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Nitori edit/Glovesg.vmt",
+            "owned_exists": true,
+            "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesg.vmt",
+            "vmt_sha256": "577983146eba9bd9fabcb0ec2984f6f2586b1a6f6a2921ed3f5dc07879ab5099",
+            "vmt_bytes": 594
+          }
+        },
+        {
+          "material_table_index": 3,
+          "native_name": "Gloves glowg",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/Gloves glowg.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Nitori edit/Gloves glowg.vmt",
+              "owned_exists": true,
+              "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+              "vmt_sha256": "f8fc918a97ad2c070235d0256d44b5a9824fa0a3eb85ca01437a3ea4da58b509",
+              "vmt_bytes": 656
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Nitori edit/Gloves glowg.vmt",
+            "owned_exists": true,
+            "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+            "vmt_sha256": "f8fc918a97ad2c070235d0256d44b5a9824fa0a3eb85ca01437a3ea4da58b509",
+            "vmt_bytes": 656
+          }
+        },
+        {
+          "material_table_index": 4,
+          "native_name": "Glovesw",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/Glovesw.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Nitori edit/Glovesw.vmt",
+              "owned_exists": true,
+              "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesw.vmt",
+              "vmt_sha256": "63f0fc9d17279f9a378696a4e55bf265e430f9fb9d4182a454a69f8b51806688",
+              "vmt_bytes": 518
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Nitori edit/Glovesw.vmt",
+            "owned_exists": true,
+            "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesw.vmt",
+            "vmt_sha256": "63f0fc9d17279f9a378696a4e55bf265e430f9fb9d4182a454a69f8b51806688",
+            "vmt_bytes": 518
+          }
+        },
+        {
+          "material_table_index": 5,
+          "native_name": "Gloves gloww",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/Gloves gloww.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Nitori edit/Gloves gloww.vmt",
+              "owned_exists": true,
+              "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+              "vmt_sha256": "229118ac40ea604d0c3c5a6c45623b63f5c91e968834967731917532f5be6ac5",
+              "vmt_bytes": 650
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Nitori edit/Gloves gloww.vmt",
+            "owned_exists": true,
+            "owned_member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+            "vmt_sha256": "229118ac40ea604d0c3c5a6c45623b63f5c91e968834967731917532f5be6ac5",
+            "vmt_bytes": 650
+          }
+        }
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "native_cd_material_paths": [
+        "models\\touhou\\tamo\\Keiki Haniyashin\\",
+        ""
+      ],
+      "resolution_algorithm_source": "blender_bindings/models/materials.py:resolve_model_material; bare name first, then nonempty relative native CDMaterials paths, materials/<candidate>.vmt; first existence match; casefold dedup",
+      "materials": [
+        {
+          "material_table_index": 0,
+          "native_name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/props.vmt",
+              "owned_exists": true,
+              "owned_member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+              "vmt_sha256": "939474d130f3688a9ab815f4e06566f607f8cdc7540f8950b89b086a194182c7",
+              "vmt_bytes": 521
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/models/touhou/tamo/Keiki Haniyashin/props.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/props.vmt",
+            "owned_exists": true,
+            "owned_member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "vmt_sha256": "939474d130f3688a9ab815f4e06566f607f8cdc7540f8950b89b086a194182c7",
+            "vmt_bytes": 521
+          }
+        },
+        {
+          "material_table_index": 1,
+          "native_name": "box",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/box.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+              "owned_exists": true,
+              "owned_member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+              "vmt_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+              "vmt_bytes": 517
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/box.vmt",
+            "owned_exists": true,
+            "owned_member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "vmt_sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+            "vmt_bytes": 517
+          }
+        },
+        {
+          "material_table_index": 2,
+          "native_name": "blush",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/blush.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+              "owned_exists": true,
+              "owned_member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+              "vmt_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+              "vmt_bytes": 516
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/blush.vmt",
+            "owned_exists": true,
+            "owned_member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "vmt_sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+            "vmt_bytes": 516
+          }
+        },
+        {
+          "material_table_index": 3,
+          "native_name": "excl mark",
+          "ordered_unique_candidates": [
+            {
+              "candidate": "materials/excl mark.vmt",
+              "owned_exists": false,
+              "owned_member": null
+            },
+            {
+              "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+              "owned_exists": true,
+              "owned_member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+              "vmt_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+              "vmt_bytes": 513
+            }
+          ],
+          "first_resolved_owned_vmt": {
+            "candidate": "materials/models/touhou/tamo/Keiki Haniyashin/excl mark.vmt",
+            "owned_exists": true,
+            "owned_member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "vmt_sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+            "vmt_bytes": 513
+          }
+        }
+      ]
+    }
+  ],
+  "all_original_mdl_reader_runtime_and_vmt_inputs_unchanged": true,
+  "algorithm_source_sha256": "d0ef0bb1fa338d59b481fd1e12f607feab66606b21ab5d3be53233e734602979",
+  "owned_vmt_before_after_unchanged": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori\\materials\\models\\touhou\\tamo\\nitori edit\\gloves.vmt": {
+      "sha256": "1e1afa18250001156e68e98cf7f054d8096e153d2a69307802384f6ce3f80933",
+      "bytes": 517,
+      "mtime_ns": 1794542755927515400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori\\materials\\models\\touhou\\tamo\\nitori edit\\gloves glow.vmt": {
+      "sha256": "b2fb3224f8ff9acc5d7defa7f6bdd673e6fa9a7ddf60e41330419a9994b1a053",
+      "bytes": 655,
+      "mtime_ns": 1794542755776779000
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori\\materials\\models\\touhou\\tamo\\nitori edit\\glovesg.vmt": {
+      "sha256": "577983146eba9bd9fabcb0ec2984f6f2586b1a6f6a2921ed3f5dc07879ab5099",
+      "bytes": 594,
+      "mtime_ns": 1794542756044571300
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori\\materials\\models\\touhou\\tamo\\nitori edit\\gloves glowg.vmt": {
+      "sha256": "f8fc918a97ad2c070235d0256d44b5a9824fa0a3eb85ca01437a3ea4da58b509",
+      "bytes": 656,
+      "mtime_ns": 1794542755826086400
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori\\materials\\models\\touhou\\tamo\\nitori edit\\glovesw.vmt": {
+      "sha256": "63f0fc9d17279f9a378696a4e55bf265e430f9fb9d4182a454a69f8b51806688",
+      "bytes": 518,
+      "mtime_ns": 1794542756151614500
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori\\materials\\models\\touhou\\tamo\\nitori edit\\gloves gloww.vmt": {
+      "sha256": "229118ac40ea604d0c3c5a6c45623b63f5c91e968834967731917532f5be6ac5",
+      "bytes": 650,
+      "mtime_ns": 1794542755876953100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\keiki_tools_chisels\\keiki by tamo\\materials\\models\\touhou\\tamo\\keiki haniyashin\\props.vmt": {
+      "sha256": "939474d130f3688a9ab815f4e06566f607f8cdc7540f8950b89b086a194182c7",
+      "bytes": 521,
+      "mtime_ns": 1794542768893494000
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\keiki_tools_chisels\\keiki by tamo\\materials\\models\\touhou\\tamo\\keiki haniyashin\\box.vmt": {
+      "sha256": "f3597aec6ef2bbfa630c32319d9d7bfe330fe979215101d376c100094f666f55",
+      "bytes": 517,
+      "mtime_ns": 1794542766441813100
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\keiki_tools_chisels\\keiki by tamo\\materials\\models\\touhou\\tamo\\keiki haniyashin\\blush.vmt": {
+      "sha256": "318cfdd4b1a4df5cf796b39ca6d70f6db0e9bfd3840fdc677b60716d3988a1eb",
+      "bytes": 516,
+      "mtime_ns": 1794542766248213600
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\keiki_tools_chisels\\keiki by tamo\\materials\\models\\touhou\\tamo\\keiki haniyashin\\excl mark.vmt": {
+      "sha256": "ffe7f85dbb4d45c120d82b6f861494c0c98ac8b821ddfd4172838a66a6f2dd40",
+      "bytes": 513,
+      "mtime_ns": 1794542766917784800
+    }
+  },
+  "no_external_or_installed_resolution": true,
+  "native_reader_only_no_model_import_shader_or_texture_decode": true
+}

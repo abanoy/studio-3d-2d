@@ -1,0 +1,46 @@
+{
+  "format": "has_helper_imported_binding_gate_checkpoint_1",
+  "date": "2026-11-13",
+  "context_commit": "4fa5efc175c0da53fcd61087e9685c89f4614db3",
+  "main_ported": false,
+  "cpu_tests": 22,
+  "failures": 0,
+  "actual_headless_children": 8,
+  "actual_complete_source_node_coverage": [
+    100,
+    110,
+    103
+  ],
+  "actual_backhair_candidate_nodes": 104,
+  "retained_backhair_bindings": 103,
+  "synthetic_transfer_pairs": 2,
+  "independently_asserted_static_shape_weights": [
+    0.25,
+    0.5
+  ],
+  "preservation_gates": 65,
+  "all_preservation_gates_pass": true,
+  "indexed_files": 11,
+  "total_files_including_index": 12,
+  "total_bytes_including_index": 220146,
+  "index": {
+    "path": "experiments/local_wind_review/helper_imported_binding_gate_20261113/FILE_INDEX.json",
+    "sha256": "f185fc5122a0b3a63b7f2d1e2fd656e39147a598e937617e847f3b7831046bc4"
+  },
+  "complete_observations": {
+    "gzip_sha256": "38e1e40391e6d3bf748a34b7bd13f315c67702859f4676e54e2c188bd0ae71db",
+    "raw_sha256": "8cb4a1858fbbcc475c0989cf2fc971595ea9d516c62d657c6386ced117e69445",
+    "raw_bytes": 844639
+  },
+  "initial_vs_strengthened": "Initial15CPU/import positives are retained; review found missing independent morph assertions, offset descriptor check, strict unexpected failure exit and final publication/preservation handling. Finalisolatedv2 adds meaningful negatives/timeout/publication controls; final22CPU and8imports pass. Intentionalnegative controls are not product failures.",
+  "vrm_derived_helper": "VRM0/1 original native declarations/import complete, but no usable new-helper proposal in bounded first64regions; not derived-supported.",
+  "backhair_alias": "Actual staged ribbon/backhair alias, not a separate new native original or owner-recorded take.",
+  "limits": [
+    "No hidden main-view/UI/wind simulation acceptance",
+    "No live-body/contact interoperability",
+    "No live animated shape or arbitrary deformed authored-pose transfer proof",
+    "No native fidelity/artist acceptance",
+    "No raw native assets or decoded vertex geometry in packet"
+  ],
+  "next": "Integrate reviewed owned CPU host then actual hidden full binding gate and explicit pose/shape transfer before any candidate is displayed; preserve separate authoring Apply contract."
+}

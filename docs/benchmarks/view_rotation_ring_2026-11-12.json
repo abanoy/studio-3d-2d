@@ -1,0 +1,535 @@
+{
+  "format": "has_camera_relative_rotation_ring_1",
+  "date": "2026-11-12",
+  "base_commit": "be9b1ae61073ab0a7c57e92fe2ebba84831f046c",
+  "change": "Pale outer camera-normal ring for root/skinned-bone rotation in Local and World space. View ring dims/refuses pose drags when any axis lock is active, retaining normal RGB handles and Move behavior.",
+  "focused": {
+    "cases": [
+      {
+        "axis": 0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 6
+      },
+      {
+        "axis": 0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.0001220703125,
+        "quadrant": 18
+      },
+      {
+        "axis": 0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 30
+      },
+      {
+        "axis": 0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.00013647876039613,
+        "quadrant": 42
+      },
+      {
+        "axis": 1,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 6
+      },
+      {
+        "axis": 1,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 18
+      },
+      {
+        "axis": 1,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.0001220703125,
+        "quadrant": 30
+      },
+      {
+        "axis": 1,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 42
+      },
+      {
+        "axis": 2,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.000110032691736706,
+        "quadrant": 6
+      },
+      {
+        "axis": 2,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 6.82393801980652e-05,
+        "quadrant": 18
+      },
+      {
+        "axis": 2,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 30
+      },
+      {
+        "axis": 2,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 42
+      },
+      {
+        "axis": 0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.00013647876039613,
+        "quadrant": 6
+      },
+      {
+        "axis": 0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.0001220703125,
+        "quadrant": 18
+      },
+      {
+        "axis": 0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 30
+      },
+      {
+        "axis": 0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.00013647876039613,
+        "quadrant": 42
+      },
+      {
+        "axis": 1,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 6
+      },
+      {
+        "axis": 1,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 18
+      },
+      {
+        "axis": 1,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.0001220703125,
+        "quadrant": 30
+      },
+      {
+        "axis": 1,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 42
+      },
+      {
+        "axis": 2,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.000110032691736706,
+        "quadrant": 6
+      },
+      {
+        "axis": 2,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.82393801980652e-05,
+        "quadrant": 18
+      },
+      {
+        "axis": 2,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.103515625e-05,
+        "quadrant": 30
+      },
+      {
+        "axis": 2,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 8.63167442730628e-05,
+        "quadrant": 42
+      }
+    ],
+    "checks": 309,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\rotation-gizmo\\1794516382670019500",
+    "view_cases": [
+      {
+        "circle_error": 8.392333984375e-05,
+        "direction": -1.0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.0,
+        "selected": "@root",
+        "space": 0
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": 1.0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.0,
+        "selected": "@root",
+        "space": 0
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": -1.0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 9.1552734375e-05,
+        "selected": "@root",
+        "space": 1
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": 1.0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.0,
+        "selected": "@root",
+        "space": 1
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": -1.0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.000172633488546126,
+        "selected": "Skeleton3D::arm",
+        "space": 0
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": 1.0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.000193010113434866,
+        "selected": "Skeleton3D::arm",
+        "space": 0
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": -1.0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.000172633488546126,
+        "selected": "Skeleton3D::arm",
+        "space": 1
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": 1.0,
+        "eye": "(3.0, 2.2, 4.0)",
+        "pixel_error": 0.000193010113434866,
+        "selected": "Skeleton3D::arm",
+        "space": 1
+      },
+      {
+        "circle_error": 8.392333984375e-05,
+        "direction": -1.0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 6.103515625e-05,
+        "selected": "@root",
+        "space": 0
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": 1.0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.0,
+        "selected": "@root",
+        "space": 0
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": -1.0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 9.1552734375e-05,
+        "selected": "@root",
+        "space": 1
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": 1.0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.0,
+        "selected": "@root",
+        "space": 1
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": -1.0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.000172633488546126,
+        "selected": "Skeleton3D::arm",
+        "space": 0
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": 1.0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.000193010113434866,
+        "selected": "Skeleton3D::arm",
+        "space": 0
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": -1.0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.000172633488546126,
+        "selected": "Skeleton3D::arm",
+        "space": 1
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": 1.0,
+        "eye": "(-3.0, 1.7, -4.0)",
+        "pixel_error": 0.000193010113434866,
+        "selected": "Skeleton3D::arm",
+        "space": 1
+      },
+      {
+        "circle_error": 0.00011444091796875,
+        "direction": -1.0,
+        "eye": "(1.0, 3.0, 2.0)",
+        "pixel_error": 6.103515625e-05,
+        "selected": "@root",
+        "space": 0
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": 1.0,
+        "eye": "(1.0, 3.0, 2.0)",
+        "pixel_error": 0.0,
+        "selected": "@root",
+        "space": 0
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": -1.0,
+        "eye": "(1.0, 3.0, 2.0)",
+        "pixel_error": 9.1552734375e-05,
+        "selected": "@root",
+        "space": 1
+      },
+      {
+        "circle_error": 0.0001220703125,
+        "direction": 1.0,
+        "eye": "(1.0, 3.0, 2.0)",
+        "pixel_error": 0.0,
+        "selected": "@root",
+        "space": 1
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": -1.0,
+        "eye": "(1.0, 3.0, 2.0)",
+        "pixel_error": 0.000172633488546126,
+        "selected": "Skeleton3D::arm",
+        "space": 0
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": 1.0,
+        "eye": "(1.0, 3.0, 2.0)",
+        "pixel_error": 0.000193010113434866,
+        "selected": "Skeleton3D::arm",
+        "space": 0
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": -1.0,
+        "eye": "(1.0, 3.0, 2.0)",
+        "pixel_error": 0.000172633488546126,
+        "selected": "Skeleton3D::arm",
+        "space": 1
+      },
+      {
+        "circle_error": 9.918212890625e-05,
+        "direction": 1.0,
+        "eye": "(1.0, 3.0, 2.0)",
+        "pixel_error": 0.000193010113434866,
+        "selected": "Skeleton3D::arm",
+        "space": 1
+      }
+    ],
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_9f44e7244d4a42f6b65eccef06585af2",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 9092,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.708
+    },
+    "cold": {
+      "checks": 4,
+      "failures": 0,
+      "json_scalar_tolerance": 1e-12
+    },
+    "cold_private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_2aac5ff451b14d8da950a263b4ff3300",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 3600,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.219
+    },
+    "source_sha256": {
+      "src\\pose_editor.gd": "9baa6aa0a9b0632455bfc8c0f85536599207638eb04e785871342e8c576cf782",
+      "src\\canvas_view.gd": "9b1baf4d51f3c977450a7fa9ed719de1ef45e93091faef65282e55b24ddef859",
+      "tests\\rotation_gizmo_smoke.gd": "31c33b317512b9d184f69b9528627b99bfadfb207f38e540e3320f6e894c5ff9"
+    }
+  },
+  "original_regressions": {
+    "source_sha256": {
+      "src/pose_editor.gd": "9baa6aa0a9b0632455bfc8c0f85536599207638eb04e785871342e8c576cf782",
+      "src/canvas_view.gd": "9b1baf4d51f3c977450a7fa9ed719de1ef45e93091faef65282e55b24ddef859",
+      "tests/pose_smoke.gd": "f2f84fa89a1700d7bd2aa0cd585931b317fba8cd8f351a6df9e5e9a6d8d452d5",
+      "tests/world_selection_smoke.gd": "d5971fb3321d9ebe68ac955dbe11aa6ddf3473122ae9498cb79fda92f867971c",
+      "tests/world_edit_smoke.gd": "6bafbfa0b8bf00036bcfa7f9c312755d576f134e986ff9c277fcb7791662e7d8"
+    },
+    "tests": [
+      {
+        "label": "pose",
+        "report": {
+          "actual_mmd_tested": true,
+          "checks": 45,
+          "failures": 0,
+          "movies": [
+            "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/pose-smoke/render_1794516312_4157764_0/movie.mp4",
+            "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/pose-smoke/render_1794516317_9180650_0/movie.mp4"
+          ]
+        },
+        "private_receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_aa8e3f5429c74c9c914ee76336430ec1",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 21896,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 15.061
+        },
+        "elapsed_seconds": 15.111712600000828
+      },
+      {
+        "label": "world-selection",
+        "report": {
+          "checks": 41,
+          "failures": 0,
+          "final_changed_channels": 0,
+          "final_mean_delta": 0.0,
+          "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-selection/run_760973",
+          "native_projects": [
+            "pose-smoke/miku-project",
+            "source-smoke/source-project",
+            "sfm-smoke/project"
+          ]
+        },
+        "private_receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_1bc266d8ddce4171985ed376dfb8ca96",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 18032,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 9.412
+        },
+        "elapsed_seconds": 9.465334999998959
+      },
+      {
+        "label": "world-edit",
+        "report": {
+          "checks": 41,
+          "failures": 0,
+          "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1011120",
+          "linked_project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1011120/linked-edited.has",
+          "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1011120/render_1794516338_5528659_0/movie.mp4",
+          "native_project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1011120/native-edited.has",
+          "native_projects": [
+            "pose-smoke/miku-project",
+            "source-smoke/source-project",
+            "sfm-smoke/project"
+          ],
+          "palette_picks": 64,
+          "project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1011120/edited.has",
+          "unselected_green_pixels": 0
+        },
+        "private_receipt": {
+          "format": "studio_private_desktop_1",
+          "desktop": "HAS_Test_a8546e6fd89f484188e5e3641c188e84",
+          "desktop_switch_requested": false,
+          "private_window_seen": true,
+          "child_desktop_confirmed": true,
+          "maximum_owned_windows": 9,
+          "foreground_child_observed": false,
+          "exit": 0,
+          "child_pid": 20056,
+          "job_closed": true,
+          "desktop_closed": true,
+          "seconds": 22.721
+        },
+        "elapsed_seconds": 22.770215599999574
+      }
+    ]
+  },
+  "independent_movie_checks": [
+    {
+      "label": "pose",
+      "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/pose-smoke/render_1794516312_4157764_0/movie.mp4",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "48"
+      },
+      "duration": "2.000000",
+      "audio_codecs": []
+    },
+    {
+      "label": "pose",
+      "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/pose-smoke/render_1794516317_9180650_0/movie.mp4",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "48"
+      },
+      "duration": "2.000000",
+      "audio_codecs": []
+    },
+    {
+      "label": "world-edit",
+      "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/world-edit/run_1011120/render_1794516338_5528659_0/movie.mp4",
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "48"
+      },
+      "duration": "2.000000",
+      "audio_codecs": []
+    }
+  ],
+  "test_ports": "Existing three-handle assertions now explicitly require exactly3RGB handles via !view filter; new view-handle behavior is independently tested, not substituted for RGB checks.",
+  "initial_failed_oracles": "Two new cold-reader expectations lost JSON precision/compared neighboring doubles. Retained failed logs; expected JSON now full precision and new cold comparison requires exact structure with1e-12 numeric tolerance. No historical oracle or production pose behavior relaxed.",
+  "scope": "24original projected RGB cases and24view cases across root/child, signed gestures, three camera views including roll, Local/World, snap/locks/history/cancel/auto-key/packed reopen; five final private receipts. No physical cursor/artist/native appearance or full canonical aggregate acceptance claimed."
+}

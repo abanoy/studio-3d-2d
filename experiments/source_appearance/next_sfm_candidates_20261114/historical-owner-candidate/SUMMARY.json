@@ -1,0 +1,29 @@
+{
+  "format": "has_source_import_owner_unrun_candidate_ready_1",
+  "production_source_unchanged": true,
+  "production_sha256": "4cacfc7e86adad5e8e78872439500f0e2a922a6e022dc48d268c5b4cd3686a47",
+  "scope": "Routine completion/cancelled completion only; completed-only teardown; live preparers untouched",
+  "candidate_source": {
+    "src/source_import.gd": {
+      "bytes": 18671,
+      "sha256": "f120651e97977363f198149632ee08af3b0701753e0790c8e02a78d353dcba98"
+    },
+    "tests/source_import_owner_unit.gd": {
+      "bytes": 8387,
+      "sha256": "972082d3bfcc310e6dc70ffb9e2294c0c9e51df3a1d46411da9f550e5e486df9"
+    },
+    "tests/source_import_owner_worker.py": {
+      "bytes": 1404,
+      "sha256": "32c062bff8457672baff6a919f5e3d4264ffdf9454d5bbf6e821c9d51ecad2b3"
+    }
+  },
+  "Godot_parse": "UNRUN",
+  "headless_process_fixture": "UNRUN_until_canonical_lease_ends",
+  "worker_execution": "UNRUN",
+  "Python_AST_only": "PASS",
+  "planned_fixture_checks_not_actual": 44,
+  "actual_fixture_checks": null,
+  "production_docs_HEAD_or_runtime_mutation": false,
+  "native_converter_or_GPU": false,
+  "primary_ownership_reference": "https://github.com/godotengine/godot/blob/89cea143987d564363e15d207438530651d943ac/platform/windows/os_windows.cpp#L1449-L1566"
+}

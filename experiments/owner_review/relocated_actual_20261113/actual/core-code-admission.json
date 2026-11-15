@@ -1,0 +1,36 @@
+{
+  "explicit_checkout_eol": true,
+  "files": [
+    {
+      "path": "tools/build_owner_review_snapshot.py",
+      "working_sha256": "7c9487ad1d3c5a6c31f66df9f5b7b73effe9c4668e2a6601dff8196dd87a21f9",
+      "git_sha256": "0944c7801fe39f2009d48b54882dcc8782d90aa0652ce14d08dc6873840d4d85",
+      "admission": "explicit --allow-checkout-eol; CRLF-to-LF only; no file is normalized"
+    },
+    {
+      "path": "tools/verify_owner_review.py",
+      "working_sha256": "3311880608febf7ecc4ec45d393e631cd18e0cf0fa91ba4c8ff35888ab54dcca",
+      "git_sha256": "3311880608febf7ecc4ec45d393e631cd18e0cf0fa91ba4c8ff35888ab54dcca",
+      "admission": "exact bytes"
+    },
+    {
+      "path": "tests/owner_review_replay.gd",
+      "working_sha256": "f4a168af04bbb748178322492a9f826e027567b30eeba5d5e29bae2e9578fd6c",
+      "git_sha256": "f4a168af04bbb748178322492a9f826e027567b30eeba5d5e29bae2e9578fd6c",
+      "admission": "exact bytes"
+    },
+    {
+      "path": "tests/current_candidate_startup.gd",
+      "working_sha256": "4d5328345321d0a1f9f0208d3772ba26bc5b48a297f9e0bc842008fe2525b35e",
+      "git_sha256": "4dd321809758c8c6571e4c8df8491b8e99ad1247388e01f2fb43cb071318dbe3",
+      "admission": "explicit --allow-checkout-eol; CRLF-to-LF only; no file is normalized"
+    },
+    {
+      "path": "tests/current_candidate_startup.tscn",
+      "working_sha256": "39051740b5a1376429f31e32269fa1de40e2032ac324f0605f4828bf3497832d",
+      "git_sha256": "d96d0c748c4d9a3276b8c725b93b5a955c12cbaaa6b49a1e74d87e0245dee3e2",
+      "admission": "explicit --allow-checkout-eol; CRLF-to-LF only; no file is normalized"
+    }
+  ],
+  "final_source": "Exact committed Git blobs, not normalized working files"
+}

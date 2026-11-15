@@ -1,0 +1,95 @@
+--- before/tests/wind_review_gpu_common.gd
++++ after/tests/wind_review_gpu_common.gd
+@@ -66,8 +66,12 @@
+ 	var data:=Model.definition(path)
+ 	data.position[1]=float(request.get("raise_y",0.))
+ 	if not str(request.get("parameters","")).is_empty():data.metadata.native_parameters=JSON.parse_string(FileAccess.get_file_as_string(request.parameters))
+-	check(app.append_object(data,"model").is_empty(),"ordinary world adoption loads the declared source")
+-	var actor: RefCounted=app.renderer.active_model()
++	var adoption_error: String=app.append_object(data,"model")
++	metrics["source_adoption_error"]=adoption_error
++	check(adoption_error.is_empty(),"ordinary world adoption loads the declared source")
++	if not adoption_error.is_empty():print("WIND_SOURCE_ADOPTION_ERROR "+adoption_error);return null
++	var actor: RefCounted=app.renderer.world_runtime.instance(data.id)
++	check(actor!=null and actor==app.renderer.active_model() and app.last_import_id==data.id,"the adopted source is its own requested object identity")
+ 	if actor==null:return null
+ 	var declared: Dictionary=actor.root.get_meta("has_secondary_rig",{})
+ 	check(declared.get("error","").is_empty() and not declared.get("chains",[]).is_empty(),"source has usable declared secondary chains")
+@@ -76,7 +80,12 @@
+ 		recorded_exclusion_binding=id
+ 		var a:=Model.identity();var b:=Model.identity();var qa:=Quaternion(Vector3.FORWARD,.22);var qb:=Quaternion(Vector3.FORWARD,-.31)
+ 		a.rotation_xyzw=[qa.x,qa.y,qa.z,qa.w];b.rotation_xyzw=[qb.x,qb.y,qb.z,qb.w]
+-		actor.data.pose_keys=[{"frame":0,"pose":{id:a},"transform":Model.Clips.transform(actor.data),"interpolation":"linear"},{"frame":24,"pose":{id:b},"transform":Model.Clips.transform(actor.data),"interpolation":"linear"}];actor.data.draft_frame=-1
++		# A valid draft at frame0 does not mask the recorded sample at frame12.
++		# Negative draft frames are not valid authored world records.
++		actor.data.pose_keys=[{"frame":0,"pose":{id:a},"transform":Model.Clips.transform(actor.data),"interpolation":"linear"},{"frame":24,"pose":{id:b},"transform":Model.Clips.transform(actor.data),"interpolation":"linear"}];actor.data.draft_frame=0
++		var fixture_error:=Model.validate(actor.data,int(app.video.duration_frames))
++		check(fixture_error.is_empty(),"the recorded exclusion fixture remains a valid authored model record")
++		if not fixture_error.is_empty():print("WIND_RECORDED_FIXTURE_ERROR "+fixture_error);return null
+ 		app.set_frame(12)
+ 	app.world_selection.select_entity(actor.data.id,false);app.mode.select(2);app.change_mode(2);app.pose_editor.frame_model()
+ 	var camera: Camera3D=app.renderer.camera
+--- before/tests/wind_review_gpu_motion.gd
++++ after/tests/wind_review_gpu_motion.gd
+@@ -54,9 +54,28 @@
+ 	var source_id: String=source.data.id;var peer: RefCounted
+ 	if request.mode=="procedural":
+ 		var box:=folder.path_join("independent-child.glb");check(box_asset(box)==OK,"create an owned independently parented peer")
+-		var data:=Model.definition(box);data.parent_id=source_id;data.position=[-.7,.5,0]
+-		check(app.append_object(data,"model").is_empty(),"world installs a separate model parented under the source")
+-		peer=app.renderer.active_model();source=app.renderer.world_runtime.instance(source_id);app.world_selection.select_entity(source_id,false)
++		var data:=Model.definition(box);data.position=[-.7,.5,0]
++		var peer_id: String=data.id;var adoption_error: String=app.append_object(data,"model")
++		metrics["peer_adoption_error"]=adoption_error
++		check(adoption_error.is_empty(),"ordinary Add model accepts the separate peer fixture")
++		if not adoption_error.is_empty():
++			print("WIND_PEER_ADOPTION_ERROR "+adoption_error);check(false,"world installs a separate model parented under the source");await finish("WIND_REVIEW_GPU_MOTION");return
++		source=app.renderer.world_runtime.instance(source_id);peer=app.renderer.world_runtime.instance(peer_id)
++		check(source!=null and peer!=null and peer!=source and peer_id!=source_id and peer==app.renderer.active_model(),"the peer is a real distinct adopted object rather than the prior active source")
++		if source==null or peer==null or peer==source:await finish("WIND_REVIEW_GPU_MOTION");return
++		# Add model deliberately creates standalone objects. Use the supported
++		# world-document install route to prepare this parented test fixture.
++		var parented: Dictionary=app.current_world().duplicate(true)
++		for row in parented.objects:
++			if row.id==peer_id:row.parent_id=source_id
++		var parent_error: String=app.restore_world(parented)
++		metrics["peer_parent_install_error"]=parent_error
++		if not parent_error.is_empty():print("WIND_PEER_PARENT_INSTALL_ERROR "+parent_error)
++		source=app.renderer.world_runtime.instance(source_id);peer=app.renderer.world_runtime.instance(peer_id)
++		var parented_ok: bool=parent_error.is_empty() and source!=null and peer!=null and peer!=source and peer.data.id==peer_id and peer.data.parent_id==source_id and peer.root.get_parent()==source.root
++		check(parented_ok,"world installs a separate model parented under the source")
++		if not parented_ok:await finish("WIND_REVIEW_GPU_MOTION");return
++		app.world_selection.select_entity(source_id,false)
+ 	await add_media();var before:=document_state();var view: Dictionary=app.renderer.view_state();var original_meshes:=owned_source_meshes(source)
+ 	var visibility: Dictionary={}
+ 	for mesh in original_meshes:visibility[mesh]=mesh.visible
+@@ -98,7 +117,9 @@
+ 	if opposite.has("error"):check(false,opposite.error)
+ 	else:check(strong.mean_camera_x_force*opposite.mean_camera_x_force<0 and strong.late_force_variation>0.00001,"the real airflow reverses with direction and varies over time")
+ 	check(document_matches(before) and app.renderer.view_state()==view,"all wind checks preserve authored data, keys, paint, audio, history, dirty state and shot view")
+-	if peer:check(peer.root.is_visible_in_tree() and app.renderer.world_runtime.instance(peer.data.id)==peer,"temporary hiding preserves the independently parented peer")
++	if peer:
++		var peer_meshes:=owned_source_meshes(peer)
++		check(peer!=source and peer.data.id!=source_id and peer.data.parent_id==source_id and peer.root.get_parent()==source.root and peer.root.is_visible_in_tree() and not peer_meshes.is_empty() and peer_meshes.all(func(mesh):return mesh.is_visible_in_tree()) and app.renderer.world_runtime.instance(peer.data.id)==peer,"temporary hiding preserves the independently parented peer")
+ 	review.window.close_requested.emit();await settled()
+ 	check(visibility.keys().all(func(mesh):return mesh.visible==visibility[mesh]),"closing restores each owned mesh's original visibility")
+ 	check(document_matches(before) and app.renderer.native_readbacks==0,"closing leaves the original document and readback balance exact")
+--- before/tests/wind_review_gpu_primary.gd
++++ after/tests/wind_review_gpu_primary.gd
+@@ -26,9 +26,14 @@
+ 		var source_id: String=source.data.id;var box:=folder.path_join("peer-box.glb")
+ 		if not FileAccess.file_exists(box):check(box_asset(box)==OK,"create an owned solid peer")
+ 		var data:=Model.definition(box);data.position=[1.2,3.8,0]
+-		check(app.append_object(data,"model").is_empty(),"ordinary world adoption installs an independent peer prop")
+-		var peer: RefCounted=app.renderer.active_model();var peer_id: String=peer.data.id
++		var peer_error: String=app.append_object(data,"model")
++		metrics[("running" if running else "warming")+"_peer_adoption_error"]=peer_error
++		check(peer_error.is_empty(),"ordinary world adoption installs an independent peer prop")
++		if not peer_error.is_empty():print("WIND_PRIMARY_PEER_ADOPTION_ERROR "+peer_error);await finish("WIND_REVIEW_GPU_PRIMARY");return
++		var peer: RefCounted=app.renderer.world_runtime.instance(data.id);var peer_id: String=data.id
+ 		source=app.renderer.world_runtime.instance(source_id)
++		check(source!=null and peer!=null and peer!=source and peer_id!=source_id and peer==app.renderer.active_model(),"the physics peer is its own distinct adopted object")
++		if source==null or peer==null or peer==source:await finish("WIND_REVIEW_GPU_PRIMARY");return
+ 		await add_media();app.world_selection.select_entity(source_id,false);app.mode.select(2);app.change_mode(2)
+ 		app.physics_editor.toggle.button_pressed=true;await settled()
+ 		app.world_selection.select_entity(peer_id,false);app.physics_editor.toggle.button_pressed=true;await settled()

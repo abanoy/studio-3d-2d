@@ -1,0 +1,17 @@
+{
+  "mode": "private",
+  "passed": false,
+  "start": "2026-11-14T00:08:07.545598+00:00",
+  "exit": 1,
+  "bad_markers": {
+    "wrapper\\bounds-engine.log": []
+  },
+  "console_bad_markers": [],
+  "exception": {
+    "type": "AssertionError",
+    "message": "Traceback (most recent call last):\n  File \"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\verify_import_placement.py\", line 62, in <module>\n    if __name__=='__main__':main()\n                            ~~~~^^\n  File \"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\verify_import_placement.py\", line 45, in main\n    engine=(EVIDENCE/'engine.log').read_text(encoding='utf-8',errors='replace')\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_local.py\", line 546, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_abc.py\", line 632, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python313\\Lib\\pathlib\\_local.py\", line 537, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\a\\\\Programming\\\\cloudflare\\\\has-acceptance-session-20261111\\\\output\\\\import-placement-inset-20261114\\\\private-1794614887307076000\\\\wrapper\\\\engine.log'\n"
+  },
+  "finish": "2026-11-14T00:08:08.703257+00:00",
+  "source_unchanged": true,
+  "source_files": 981
+}

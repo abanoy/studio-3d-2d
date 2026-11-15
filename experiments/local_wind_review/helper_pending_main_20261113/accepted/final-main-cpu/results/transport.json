@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "missing explicit work root refuses",
+    "relative work root refuses",
+    "owned root equal to work root refuses",
+    "owned root outside work root refuses",
+    "worker command pins absolute approved executable and isolated mode",
+    "worker command separates code root from writable profile work root",
+    "configuration alone launches nothing and publishes no worker root",
+    "changed approved runtime digest refuses before launch",
+    "lexical traversal cannot escape owned family",
+    "owned nested fixed candidate path remains inside explicit work family",
+    "all main transport sources and approved runtime preserved exactly"
+  ],
+  "failures": [],
+  "preservation": true,
+  "controller_launches": 0,
+  "model_imports": 0,
+  "gpu": false,
+  "mode": "transport",
+  "source_context": "main_working_source_snapshot",
+  "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+  "project_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\helper-preview\\cpu-1794599514381327300-8ae7d73e\\Studio",
+  "source_manifest_sha256": "ccb6b34d9358f0eb8385c5d904fe20c731a61dfe404ee2db860b94540f4ccd2b",
+  "main_revision": "223a322bfcf3c075d013d0441323fd6b61f9d5cf"
+}

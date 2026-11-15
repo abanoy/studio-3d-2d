@@ -1,0 +1,308 @@
+{
+  "format": "has_source_bone_readonly_real_data_audit_1",
+  "passed": true,
+  "root_revision": "7477ed32dc5c43324783f76736164553bb4a79c5",
+  "source_context": "current_main_working_source_readonly_not_actual_main_conversion",
+  "APIs_executed_CPU_only": [
+    "source_bone_metadata.plan_report",
+    "source_bone_metadata.compact_metadata",
+    "source_bone_metadata.jiggle_wire_sha256",
+    "source_bone_metadata.proof_wire_bytes",
+    "source_jiggle_crosswalk.final_glb_json",
+    "secondary_helpers.inspect",
+    "secondary_helpers.preview",
+    "verify_source_jiggle_native_report.verify",
+    "struct.unpack_from(<7I,nativeBone+32)"
+  ],
+  "producer": {
+    "projected_report_bytes": 159676,
+    "budget_bytes": 262144,
+    "headroom_bytes": 102468,
+    "compact_crosswalk_bytes": 11433,
+    "native_rows": 69,
+    "native_rest_word_joins": 483,
+    "GLB_joint_name_parent_joins": 69,
+    "skin_slot_joins": 69,
+    "glb_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "jiggle_wire_sha256": "34230c89c7cda4417a0f142b375f26fbb5cf15a7faf4d98b5424acd0bec621c2",
+    "proof_sha256": "f8ba0c579bc4ca193ddd7e35f8d5c712eb47980f150e33abce7d35bb2d3b9a12",
+    "max_rest_matrix_error": 5.668355022803162e-06,
+    "native_values_unchanged": true
+  },
+  "simple_helper_CPU": {
+    "regions": 75,
+    "skipped": 0,
+    "native_eligible_chains": 2,
+    "selected_region": 5,
+    "selected_tuple": {
+      "node": 69,
+      "primitive": 0,
+      "component": 5
+    },
+    "selected_native_eligible": true,
+    "initial_weighted_can_apply": false,
+    "existing_mode": "existing_joints",
+    "existing_can_apply": true,
+    "existing_rotating_joint_count": 2,
+    "affected_regions": 2,
+    "affected_vertices": 184
+  },
+  "independent_native_value_joins": [
+    {
+      "format": "has_source_jiggle_native_report_join_1",
+      "passed": true,
+      "status": "retained_inert",
+      "rules": 49,
+      "native_bones": 69,
+      "exact_numeric_float32_joins": 1421,
+      "metadata_compact_bytes": 67269,
+      "actual_report_bytes": 137044,
+      "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "original_source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "report_sha256": "9529eb22da96958a5a2cba36a890a8db18e12a7c3bd8bd8890ea299ae8e80dc1",
+      "inputs_preserved": true,
+      "native_simulation": false,
+      "scope": "Actual report joined to immutable native prefixes and prior independent extraction; no runtime binding, solver or artist-fidelity claim."
+    },
+    {
+      "format": "has_source_jiggle_native_report_join_1",
+      "passed": true,
+      "status": "none",
+      "rules": 0,
+      "native_bones": 66,
+      "exact_numeric_float32_joins": 0,
+      "metadata_compact_bytes": 0,
+      "actual_report_bytes": 8267,
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "original_source_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "report_sha256": "2e7a52c1151eaf9c3bbff1c69d9473b86e62234b246ba157fc923a1a32b33a34",
+      "inputs_preserved": true,
+      "native_simulation": false,
+      "scope": "Actual report joined to immutable native prefixes and prior independent extraction; no runtime binding, solver or artist-fidelity claim."
+    }
+  ],
+  "file_identities": {
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\blender_source_bridge.py": {
+      "bytes": 29255,
+      "mtime_ns": 1794625266994209600,
+      "sha256": "c794df555f7872e11d4c341b0ffed2507f371f892b67b715e185105d40026dea"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_jiggle_crosswalk.py": {
+      "bytes": 29012,
+      "mtime_ns": 1794625159065376200,
+      "sha256": "c384cbfe912170d5107995c60ac5bcf033ad6061a14ff29d06599898fcfaf646"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_bone_metadata.py": {
+      "bytes": 10554,
+      "mtime_ns": 1794625514421817700,
+      "sha256": "6392cbc2607c7c4c74213a7345b3fc2a1d30aa7e49d35dd8a77e32721690de78"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_bone_export.py": {
+      "bytes": 10017,
+      "mtime_ns": 1794625613982895700,
+      "sha256": "0516b52ad2188ed59472a8ca4a13413caba550cb4478ff4cf29f5c70bfde37b6"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_jiggle_metadata.py": {
+      "bytes": 16843,
+      "mtime_ns": 1794616485712749900,
+      "sha256": "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_jiggle_values.py": {
+      "bytes": 7713,
+      "mtime_ns": 1794615421450684500,
+      "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\source_mdl_snapshot.py": {
+      "bytes": 5043,
+      "mtime_ns": 1794618093165047700,
+      "sha256": "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\secondary_helpers.py": {
+      "bytes": 49822,
+      "mtime_ns": 1794515885366137800,
+      "sha256": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tools\\prepare_source.py": {
+      "bytes": 13626,
+      "mtime_ns": 1794610640902281900,
+      "sha256": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\source_bone_bindings.gd": {
+      "bytes": 24681,
+      "mtime_ns": 1794626288412450500,
+      "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\secondary_helper_editor.gd": {
+      "bytes": 45029,
+      "mtime_ns": 1794626087731919200,
+      "sha256": "3d63e9ee8bf96c60b234a9cfb0c14bc73f90a34bc601f0fd3e7373d373ef5c63"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\scene3d.gd": {
+      "bytes": 11042,
+      "mtime_ns": 1794447912346173400,
+      "sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\src\\model.gd": {
+      "bytes": 28593,
+      "mtime_ns": 1794447912319865600,
+      "sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\native_source_binding_ui.gd": {
+      "bytes": 5078,
+      "mtime_ns": 1794626844695838300,
+      "sha256": "973755c5adf2d4cba384f44961d6a4760edf65a41df29eeb032aa70a555bc8be"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\source_choices_native_smoke.gd": {
+      "bytes": 34687,
+      "mtime_ns": 1794626783934860600,
+      "sha256": "670b986908bd2d624d97487d16b0ddc82d11c2aaedccf65a7efaea000740327f"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\verify_source_choices_native.py": {
+      "bytes": 37545,
+      "mtime_ns": 1794626784107001700,
+      "sha256": "0e7aae344e6489f0c6de820e12dff3ac465eaa3cb5b6e7eb206de5dd2f6fa290"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\tests\\verify_source_jiggle_native_report.py": {
+      "bytes": 6749,
+      "mtime_ns": 1794619987672224500,
+      "sha256": "18cc3c4f436ce8da9e3b2b43ccc50b3d728479472fae45610aebbda518463699"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-bone-binding-readonly-review-20261114T0328\\review_readonly.py": {
+      "bytes": 9770,
+      "mtime_ns": 1794626974349413900,
+      "sha256": "1b02cfdea124fc7b6b17fd9f9c1422bd882ca9d7e109e7c326073a446b0383e3"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\diagnostics\\crosswalk-proof.json": {
+      "bytes": 70416,
+      "mtime_ns": 1794624124194248600,
+      "sha256": "43f21333ba2bba49bdd8d084ed00bf3c07635293c393310e9faa252d15986741"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-inputs-20261114.json": {
+      "bytes": 5427,
+      "mtime_ns": 1794626890088763600,
+      "sha256": "f41595de1db83c90aca99fea3c74661bfa97b2eefc6cddf2520155bc49fe9c3f"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620244-469-42871294\\native\\junko hair.mdl": {
+      "bytes": 37644,
+      "mtime_ns": 1794620244628928900,
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\inputs\\family-03\\models\\touhou\\tamo\\junko hair.mdl": {
+      "bytes": 37644,
+      "mtime_ns": 1794612150515796600,
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\native_jiggle_values_20261113\\actual\\RAW_VALUES.json": {
+      "bytes": 108266,
+      "mtime_ns": 1794614281236681100,
+      "sha256": "e9665ad604b10932ea6ea7398acafe39ed224dc3be8e37ff287be3786a06dfc6"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620244-469-42871294\\scene.glb": {
+      "bytes": 2322644,
+      "mtime_ns": 1794620247238668200,
+      "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620244-469-42871294\\parameters.json": {
+      "bytes": 137044,
+      "mtime_ns": 1794620247244698300,
+      "sha256": "9529eb22da96958a5a2cba36a890a8db18e12a7c3bd8bd8890ea299ae8e80dc1"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620244-469-42871294\\conversion-request.json": {
+      "bytes": 5575,
+      "mtime_ns": 1794620244634086500,
+      "sha256": "fca5f0dc206dbc2f0fbdcb5fdec1d5a4b4ac97d6eeec29b43836fcd4e7b60b6b"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620251-605-50007182\\scene.glb": {
+      "bytes": 836088,
+      "mtime_ns": 1794620253953121200,
+      "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620251-605-50007182\\parameters.json": {
+      "bytes": 8267,
+      "mtime_ns": 1794620253954106500,
+      "sha256": "2e7a52c1151eaf9c3bbff1c69d9473b86e62234b246ba157fc923a1a32b33a34"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-launch-20261114T013526736\\run\\Studio\\output\\compatibility\\source-1794620251-605-50007182\\conversion-request.json": {
+      "bytes": 5527,
+      "mtime_ns": 1794620251769827900,
+      "sha256": "80f241eb23937df79249be187141c0940f39a90eaa82020194e86dd77687f371"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647\\blender_bindings\\models\\mdl44\\import_mdl.py": {
+      "bytes": 17032,
+      "mtime_ns": 1794287744496956200,
+      "sha256": "080b91589e0fec462e3eea4b55793aec41399ff95f6d9f2d561d5cda9dddada8"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647\\blender_bindings\\models\\mdl49\\import_mdl.py": {
+      "bytes": 12880,
+      "mtime_ns": 1794287744500475000,
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647\\library\\models\\mdl\\v49\\mdl_file.py": {
+      "bytes": 5436,
+      "mtime_ns": 1794287744690944000,
+      "sha256": "a30f5fae981dedff47de4ce56152b876acd734bbb03e0df59ec9d320351f10ed"
+    },
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647\\library\\models\\mdl\\structs\\bone.py": {
+      "bytes": 8415,
+      "mtime_ns": 1794287744664086600,
+      "sha256": "a61a3e0378e7b2d2d070f2b9ef138b78516db4a9830144cd6a6d907295b7d085"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\__init__.py": {
+      "bytes": 86793,
+      "mtime_ns": 1778876294000000000,
+      "sha256": "dddd7d2362b937f34a5d4a1978259317720a9bc647bb3b4dc113f9d5c38cbf56"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\joints.py": {
+      "bytes": 4155,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "af59a7d9bc077cdc945fe0a7ee3f14a053a087d0b30b5aacbd47902c5ca1d410"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\nodes.py": {
+      "bytes": 25757,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "6c77f1ec3f13bd4636ca72f766429abc9cd4353ff218fdb088db1e41f184b7c3"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\skins.py": {
+      "bytes": 5546,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "a78da3934beab9c6edbafe7dea2b3bcee36a7299e6064e12bf93d3243c09ca89"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\tree.py": {
+      "bytes": 47175,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "3276867329b2ad11f4d0d2cede54e537c93cd9c0eb32a6c9386d22c548fe73eb"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\exporter.py": {
+      "bytes": 22418,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "49c1e0174a65efd6d411b906cd154b6b04502c4840c9b31a7bfac87e0888f242"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\blender\\exp\\export.py": {
+      "bytes": 16639,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "d6ae39bf861fc3db7662bc8e7063aadfbe116b8a5de81b40ba027a679f8435a8"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\io\\exp\\user_extensions.py": {
+      "bytes": 715,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "25d27cebbfce855dd5ac34928582ac5ab7f0e84d9a1d1862492ba3b82f523186"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\io\\exp\\export.py": {
+      "bytes": 3407,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "3831bcad523bfe12bc970c0491203a06b2859a2c52df55a4bfcde570d832df6c"
+    },
+    "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\scripts\\addons_core\\io_scene_gltf2\\io\\com\\gltf2_io.py": {
+      "bytes": 56366,
+      "mtime_ns": 1770449626000000000,
+      "sha256": "d0bad0c89e40c0975ed9e435656151e353240134011f69602e473e0a5f1592f4"
+    }
+  },
+  "inputs_preserved": true,
+  "actual_main_native_conversion": "UNRUN",
+  "actual_HAS_binding": "UNRUN",
+  "actual_Simple_helper_UI": "UNRUN",
+  "native_solver": "not_implemented",
+  "publication": "Counts, hashes, numeric joins only; no rest/mesh arrays or media",
+  "preservation_boundary": "Native harness maps Blender executable and SourceIOtree; full installed exporter tree needs external fresh guard beyond producer14criticalpins"
+}

@@ -15,6 +15,11 @@ func check(ok: bool,text: String) -> void:
 func settled() -> void:
 	for i in range(4):await process_frame
 	await RenderingServer.frame_post_draw
+func native_pixels() -> Image:
+	if not app.renderer.begin_native_readback():return null
+	var notification=app.renderer.native_frame_notification
+	await notification.ready
+	return app.renderer.finish_native_readback()
 func active(data: Dictionary,frame: int) -> bool:return not Ranges.Contact.Contacts.active(data.get("animation_clips",[]),frame).is_empty()
 func root_value(y: float) -> Dictionary:return {"position":[0,y,0],"rotation_xyzw":[0,0,0,1],"scale":1.}
 func choose_range(first: int,last: int) -> void:
@@ -91,7 +96,7 @@ func run() -> void:
 			if key.frame==24:key.value.position[1]=10.
 	editor.restore_state(bad,false);app.set_frame(0);history=app.history.size();before=current().data.duplicate(true);await choose_range(0,48);dialog.plant_button.pressed.emit()
 	check(current().data==before and app.history.size()==history and dialog.window.visible and dialog.note.text.contains("Frame"),"range validation refuses an unreachable future pose without partial data or Undo")
-	dialog.window.hide();editor.restore_state(planted,false);app.set_frame(12);await settled();var scene: Image=app.renderer.viewport.get_texture().get_image();scene.save_png(folder.path_join("planted-ui.png"))
+	dialog.window.hide();editor.restore_state(planted,false);app.set_frame(12);await settled();var scene: Image=await native_pixels();scene.save_png(folder.path_join("planted-ui.png"))
 	await choose_range(12,18);await settled();dialog.window.get_texture().get_image().save_png(folder.path_join("range-window.png"))
 	check(dialog.window.size.x<=root.size.x and dialog.window.size.y<=root.size.y,"range window fits the actual application")
 	dialog.window.hide();var bad_pin: Dictionary=current().data.duplicate(true)
@@ -119,13 +124,18 @@ func run() -> void:
 	# The UI-authored record survives actual HAS worker save/open, with editable paint.
 	app.mode.select(0);app.change_mode(0);app.create_cel(false)
 	var drawing=preload("res://src/drawing.gd");var cel: Dictionary=drawing.cel_at(app.layers[1],app.frame)
-	drawing.stroke(cel.image,Vector2(80,70),Vector2(170,70),4,Color.CYAN,false);app.changed();var pixels: PackedByteArray=cel.image.get_data()
+	var editable: Dictionary=drawing.edit_image(cel)
+	check(not editable.has("error"),"ordinary cel exposes editable pixels through its raster owner")
+	if editable.has("error"):app.free();quit(1);return
+	var paint: Image=editable.image
+	drawing.stroke(paint,Vector2(80,70),Vector2(170,70),4,Color.CYAN,false);app.changed();var pixels: PackedByteArray=paint.get_data()
 	var saved:=folder.path_join("ui-contacts.has");app.has_project.save_file(saved,"packed")
 	while app.has_project.pid>0:await process_frame
 	var id: String=current().data.id;app.new_project();app.has_project.open_file(saved)
 	while app.has_project.pid>0:await process_frame
 	app.world_selection.select_entity(id);app.set_frame(12)
-	check(current().data.format==Model.CONTACT_FORMAT and active(current().data,12) and drawing.cel_at(app.layers[1],12).image.get_data()==pixels,"real UI contact range reopens with independent editable drawing")
+	var reopened_paint: Image=drawing.image(drawing.cel_at(app.layers[1],12))
+	check(current().data.format==Model.CONTACT_FORMAT and active(current().data,12) and reopened_paint!=null and reopened_paint.get_data()==pixels,"real UI contact range reopens with independent editable drawing")
 	var preview: Image=await app.renderer.capture(app.keys,app.layers,12,true);var export_error: String=await app.export_movie(folder)
 	check(export_error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000013.png")).get_data()==preview.get_data(),"UI-authored contact range and paint match actual movie frames exactly")
 	var movie: String=app.last_export_folder.path_join("movie.mp4")

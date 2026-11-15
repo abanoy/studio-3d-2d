@@ -1,0 +1,39 @@
+test_actor_root_frame_revision_shape_and_binding_context_changes_refuse (__main__.PreviewProtocol.test_actor_root_frame_revision_shape_and_binding_context_changes_refuse) ... ok
+test_all_included_setups_build_with_independent_operation_identities (__main__.PreviewProtocol.test_all_included_setups_build_with_independent_operation_identities) ... ok
+test_authored_vrm0_and_vrm1_style_declarations_survive_new_setup (__main__.PreviewProtocol.test_authored_vrm0_and_vrm1_style_declarations_survive_new_setup) ... ok
+test_cancellation_rejects_late_completed_candidate_without_deleting_it (__main__.PreviewProtocol.test_cancellation_rejects_late_completed_candidate_without_deleting_it) ... ok
+test_candidate_or_binding_file_changes_after_publication_are_refused (__main__.PreviewProtocol.test_candidate_or_binding_file_changes_after_publication_are_refused) ... ok
+test_changed_operation_mapping_and_traversal_receipts_refuse (__main__.PreviewProtocol.test_changed_operation_mapping_and_traversal_receipts_refuse) ... ok
+test_exact_request_bytes_not_only_equivalent_json_are_bound (__main__.PreviewProtocol.test_exact_request_bytes_not_only_equivalent_json_are_bound) ... ok
+test_imported_binding_predicate_uses_source_nodes_and_rejects_alias_or_rest_change (__main__.PreviewProtocol.test_imported_binding_predicate_uses_source_nodes_and_rejects_alias_or_rest_change) ... ok
+test_old_receipt_cannot_replace_new_generation (__main__.PreviewProtocol.test_old_receipt_cannot_replace_new_generation) ... ok
+test_real_second_builder_failure_publishes_no_partial_candidate (__main__.PreviewProtocol.test_real_second_builder_failure_publishes_no_partial_candidate) ... ok
+test_retained_transform_and_skin_reordering_are_refused (__main__.PreviewProtocol.test_retained_transform_and_skin_reordering_are_refused) ... ok
+test_reused_job_and_boundary_escape_are_refused (__main__.PreviewProtocol.test_reused_job_and_boundary_escape_are_refused) ... ok
+test_shared_existing_joints_deduplicate_by_chain_not_display_rows (__main__.PreviewProtocol.test_shared_existing_joints_deduplicate_by_chain_not_display_rows) ... ERROR
+test_single_precise_controls_prepare_without_install_or_apply (__main__.PreviewProtocol.test_single_precise_controls_prepare_without_install_or_apply) ... ok
+test_source_mtime_only_change_after_worker_is_refused (__main__.PreviewProtocol.test_source_mtime_only_change_after_worker_is_refused) ... ok
+test_stale_source_before_worker_never_publishes (__main__.PreviewProtocol.test_stale_source_before_worker_never_publishes) ... ok
+test_unreviewed_different_shapes_and_apply_purpose_are_refused (__main__.PreviewProtocol.test_unreviewed_different_shapes_and_apply_purpose_are_refused) ... ok
+
+======================================================================
+ERROR: test_shared_existing_joints_deduplicate_by_chain_not_display_rows (__main__.PreviewProtocol.test_shared_existing_joints_deduplicate_by_chain_not_display_rows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-prototype-20261113\tests\test_preview_protocol.py", line 87, in test_shared_existing_joints_deduplicate_by_chain_not_display_rows
+    receipt = P.build_candidate(token['job'], self.owned); lease.accept(self.context)
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-draft-prototype-20261113\candidate\tools\wind_helper_preview.py", line 198, in build_candidate
+    plan = batch.plan(source, setup)
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tools\secondary_helpers_batch.py", line 85, in plan
+    view = review(glb.source, item)
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tools\secondary_helpers_batch.py", line 45, in review
+    view = helpers.preview(source, request)
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tools\secondary_helpers.py", line 526, in preview
+    if not proposal: raise ValueError('This part has no available unconfigured linear joint chain')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: This part has no available unconfigured linear joint chain
+
+----------------------------------------------------------------------
+Ran 17 tests in 2.278s
+
+FAILED (errors=1)

@@ -20,4 +20,11 @@ func _initialize() -> void:
  for i in range(257):rows.append(StandardMaterial3D.new())
  check(not SceneIO.stable_opaque_order(rows) and rows.all(func(m):return m.render_priority==0),"overflow leaves whole set unchanged")
  check(SceneIO.stable_opaque_order([]),"empty scenes supported")
+ var cutout:=StandardMaterial3D.new();cutout.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR;cutout.alpha_scissor_threshold=0.3
+ var solid:=StandardMaterial3D.new();var hash_alpha:=StandardMaterial3D.new();hash_alpha.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA_HASH
+ var prepass:=StandardMaterial3D.new();prepass.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA_DEPTH_PRE_PASS
+ check(SceneIO.stable_opaque_order([cutout,glass,solid,cutout,hash_alpha,prepass]) and cutout.render_priority==-128 and solid.render_priority==-127,"cutout and solid depth ties share stable source order with deduplicated references")
+ check(cutout.transparency==BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR and is_equal_approx(cutout.alpha_scissor_threshold,0.3) and glass.render_priority==0 and hash_alpha.render_priority==0 and prepass.render_priority==0,"cutout coverage and other transparency sorting remain unchanged")
+ var explicit_cutout:=StandardMaterial3D.new();explicit_cutout.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR;explicit_cutout.render_priority=9
+ check(not SceneIO.stable_opaque_order([neutral,explicit_cutout]) and neutral.render_priority==0 and explicit_cutout.render_priority==9,"explicit cutout priority preserves complete material-set contract")
  print("OPAQUE_ORDER "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

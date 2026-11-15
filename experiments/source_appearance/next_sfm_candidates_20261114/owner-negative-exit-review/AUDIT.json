@@ -1,0 +1,14 @@
+{
+  "format": "has_source_import_owner_negative_exit_readonly_review_1",
+  "decision": "Remove sentinel guard before port; frozen unrun candidate unchanged",
+  "frozen_candidate_index_sha256": "f7374de647d6029b02b0d1054fdaeb53f9eb5b3a6120f82c1b9d91eece0414b0",
+  "candidate_files_verified_unchanged": 10,
+  "guard_line": 105,
+  "effect": "Reservation retained, public pid dropped; next import allowed and overwrites old private reservation, leaking old entry",
+  "blocks_next_import": false,
+  "future_change": "Remove only cached exit==-1 guard; keep sole actual creator/pinned engine/reservation/exited child/exactly-once release invariant",
+  "proposed_owned_child_case": "Authored gated Python SystemExit(-1) refusal; actual runtime test UNRUN",
+  "negative_exit_getter_alone_proves_map_disappearance": false,
+  "runtime_or_WinAPI_probe": false,
+  "main_docs_HEAD_or_frozen_candidate_mutation": false
+}

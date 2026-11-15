@@ -1,0 +1,85 @@
+{
+  "format": "has_canonical_sfm_summary_packet_1",
+  "source_commit": "9f6f531538156fc34e3652bc81da8a608e379156",
+  "payload_files": 11,
+  "payload_bytes": 1890611,
+  "gzip_originals": {
+    "verification.json.gz": {
+      "bytes": 2236976,
+      "sha256": "c4a6ed4542e83eadd10d25ead3e53b0aff5ce473f1e011c5d56075f2cc0f66d7"
+    },
+    "canonical/source-before.json.gz": {
+      "bytes": 102992,
+      "sha256": "6d1328c4e5104f4d6ce381de6f564da6ed16b150fb2d6f5657f72fcb4b65b4ea"
+    },
+    "canonical/source-after.json.gz": {
+      "bytes": 102992,
+      "sha256": "6d1328c4e5104f4d6ce381de6f564da6ed16b150fb2d6f5657f72fcb4b65b4ea"
+    },
+    "canonical/canonical.log.gz": {
+      "bytes": 2244417,
+      "sha256": "fba2271cc6e6f412df65861f03df4522da11ccbe516a68159d3b5ec878e9f5fa"
+    },
+    "closure/receipt-inventory.json.gz": {
+      "bytes": 341179,
+      "sha256": "5a34a23fc83b84754313c929141248011b631ac119169a9b985662a84b63b158"
+    }
+  },
+  "files": [
+    {
+      "path": "canonical/state.json",
+      "bytes": 818,
+      "sha256": "1f4347763c0dedb3c3e3957e3217d8f8e2815c6b7c629364b04704a91393decf"
+    },
+    {
+      "path": "canonical/launch.json",
+      "bytes": 1051,
+      "sha256": "0cb03a740a613f88bea5f883411f5b2765063b8dca08ddb86a09ae528c51c53c"
+    },
+    {
+      "path": "closure/host-proof.json",
+      "bytes": 720,
+      "sha256": "5ef6b6a7e61f3a43d58ba3ae7a216b1eeb54d0247376677b1520c416e32b660c"
+    },
+    {
+      "path": "canonical/pass-markers.txt",
+      "bytes": 7315,
+      "sha256": "beac01d068111192e7a077324013bcc6e70dcf9323c48bd20f5fc714b82c437c"
+    },
+    {
+      "path": "recipe/summarize_canonical.py",
+      "bytes": 19927,
+      "sha256": "cdc261248bcb4370eab1869e67e916fdb63c76ddb3e07cce2472e65ff63f39bb"
+    },
+    {
+      "path": "verification.json.gz",
+      "bytes": 845279,
+      "sha256": "86dad0235a5cac82bcbfecfbab3a0371a01c2d0868a6a2fd5b6dbdd8657462ac"
+    },
+    {
+      "path": "canonical/source-before.json.gz",
+      "bytes": 46238,
+      "sha256": "516983d0df869f829674e5a2942bebb4f607f3a17ab69ca14f54d9b4a15bedd3"
+    },
+    {
+      "path": "canonical/source-after.json.gz",
+      "bytes": 46238,
+      "sha256": "516983d0df869f829674e5a2942bebb4f607f3a17ab69ca14f54d9b4a15bedd3"
+    },
+    {
+      "path": "canonical/canonical.log.gz",
+      "bytes": 847828,
+      "sha256": "ab027365e0fba6fd7791d5a887de6104c66fec1b88be9360f27375eded79305f"
+    },
+    {
+      "path": "closure/receipt-inventory.json.gz",
+      "bytes": 30113,
+      "sha256": "9219c1cd5cf843a656dfb8f97970bebfaa4a492d5fa335dd57fa90c64821e07e"
+    },
+    {
+      "path": "SUMMARY.json",
+      "bytes": 45084,
+      "sha256": "1cd247e085e4e70aec067d9e48d4278c84cce7705c05c3f650e8a1113f3f61d2"
+    }
+  ]
+}

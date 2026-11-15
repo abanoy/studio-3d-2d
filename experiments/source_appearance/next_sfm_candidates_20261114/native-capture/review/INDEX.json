@@ -1,0 +1,37 @@
+{
+  "format": "has_selected_mdl_capture_independent_review_1",
+  "scope": "OUTPUT_ONLY_SOURCE_REVIEW_AUTHORED_CPU",
+  "review_result": "NO_BLOCKING_ISSUE_FOUND",
+  "reviewed_module_sha256": "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be",
+  "independent_unittest_cases_passed": 9,
+  "independent_unittest_failures": 0,
+  "independent_unittest_errors": 0,
+  "independent_unittest_exit_code": 0,
+  "native_inputs_used": false,
+  "app_converter_gpu_runs": false,
+  "main_integration_and_real_native_report_fit": "UNRUN",
+  "payload_files": 4,
+  "payload_bytes": 11028,
+  "files": [
+    {
+      "path": "REVIEW.md",
+      "bytes": 3393,
+      "sha256": "cc6625de1882d5b8bc8dc123d53a72aaf9e9fdfb884cce4c69dbeb9f53a85f17"
+    },
+    {
+      "path": "cpu-review.log",
+      "bytes": 1431,
+      "sha256": "517601b3c8b0439908f69b4ab774ce606b488b63dca315f0151b6360a4305867"
+    },
+    {
+      "path": "test_snapshot_review.py",
+      "bytes": 5910,
+      "sha256": "a251336362b3875b21263906a7b4226e1c432cd063f53110a431535b3cac5b79"
+    },
+    {
+      "path": "source-sha256.log",
+      "bytes": 294,
+      "sha256": "fb2e7be2a5eec66afa34ce2a65567666fe2417c6f071531df52f1421862d9f09"
+    }
+  ]
+}

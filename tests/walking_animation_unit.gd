@@ -56,6 +56,29 @@ func run() -> void:
 	actor.data=document.duplicate(true);actor.apply(0);var existing_camera:=Camera3D.new();root.add_child(existing_camera);existing_camera.current=true;var old_camera=root.get_camera_3d();state=Walk.capture_state(actor);var count:=root.get_child_count();var world:=World.empty();world.objects=[document]
 	var prepared:=Runtime.prepare(world,48);check(not prepared.has("error") and prepared.runtime.root.get_parent()==null and root.get_child_count()==count and root.get_camera_3d()==old_camera and Walk.capture_state(actor)==state,"detached world preflight uses private viewport without changing old scene/camera")
 	if not prepared.has("error"):prepared.runtime.dispose()
+	var parent:=World.object(source,"group","Stationary parent");parent.id="walking-parent";parent.position=[.25,0,.125];parent.rotation_xyzw=[0,sin(.15),0,cos(.15)];parent.scale=1.1;parent.reference_only=true
+	var outer:=World.object(source,"group","Outer parent");outer.id="walking-outer";outer.position=[-.125,0,.25];outer.rotation_xyzw=[0,sin(-.05),0,cos(-.05)];outer.scale=.9;outer.reference_only=true;parent.parent_id=outer.id
+	var child:=document.duplicate(true);child.parent_id=parent.id;world.objects=[child,parent,outer]
+	var grouped:=Runtime.prepare(world,48,actor.motion_video)
+	check(not grouped.has("error"),"child-before-parent nested translated yawed uniformly scaled walking world preflights")
+	if not grouped.has("error"):
+		var runtime: RefCounted=grouped.runtime;root.add_child(runtime.root);var walker: RefCounted=runtime.instances[child.id];var all_feet:=true;var maximum:=0.
+		for half in range(97):
+			var group_frame:=float(half)/2.;runtime.evaluate(int(group_frame),true,"",actor.motion_video)
+			var plan: RefCounted=walker.motion_plan();var generated: Dictionary=plan.walking.sample(group_frame,plan.walking_amount)
+			if generated.has("error"):all_feet=false;continue
+			var transform: Dictionary=generated.transform;walker.root.transform=Transform3D(Basis(Model.Timeline.quaternion(transform.rotation_xyzw)).scaled(Vector3.ONE*transform.scale),Model.Timeline.vector(transform.position))*walker.base_root;Walk.Feet.apply_pose(walker,generated.pose)
+			for foot in generated.targets:
+				var distance: float=walker.bone_transform(foot.ids[2]).origin.distance_to(Model.Timeline.vector(foot.position));maximum=maxf(maximum,distance);all_feet=all_feet and distance<.0002
+		check(all_feet and runtime.evaluation_error.is_empty(),"all97nested-parent world-space foot samples remain within0.2mm: "+str(maximum))
+		runtime.dispose()
+	var moved: Dictionary=Walk.Paths.change(parent,0,Vector3(.25,0,.125),48).data;moved=Walk.Paths.change(moved,48,Vector3(.25,0,.225),48).data;world.objects=[child,moved,outer]
+	var moving:=Runtime.prepare(world,48,actor.motion_video);check(moving.has("error") and "stationary" in str(moving.get("error","")),"animated parent root refuses during detached preparation")
+	var assisted:=parent.duplicate(true);assisted=Motion.configure(assisted,true,.5,48).data;world.objects=[child,assisted,outer]
+	var assisting:=Runtime.prepare(world,48,actor.motion_video);check(assisting.has("error") and "parent groups" in str(assisting.get("error","")),"ancestor procedural assistance refuses before child walking is installed")
+	var tilted:=parent.duplicate(true);tilted.rotation_xyzw=[sin(.1),0,0,cos(.1)];world.objects=[child,tilted,outer]
+	var sloped:=Runtime.prepare(world,48,actor.motion_video);check(sloped.has("error") and "upright" in str(sloped.get("error","")),"tilted static parent refuses unsupported ground inference")
+	check(root.get_child_count()==count and root.get_camera_3d()==old_camera and actor.data==document,"grouped preflight success and refusals leave installed world/camera unchanged")
 	var leg: String=actor.contact_legs()[0].ids[0];var keyed: Dictionary=Walk.Paths.Components.put_bones(document,24,{leg:Model.identity()},"ease",48).data;world.objects=[keyed];var rejected:=Runtime.prepare(world,48)
 	check(rejected.has("error") and root.get_child_count()==count and root.get_camera_3d()==old_camera and actor.data==document,"unsupported saved walking rejects before old world replacement")
 	check(FileAccess.get_sha256(source)==sha,"canonical walking validation/evaluation never changes original GLB")

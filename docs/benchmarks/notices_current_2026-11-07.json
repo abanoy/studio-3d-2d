@@ -1,0 +1,26 @@
+{
+  "checks": 8,
+  "failures": 0,
+  "format": "has_notices_current_1",
+  "date": "2026-11-07 UTC",
+  "isolated_display": ":109",
+  "scope": "Actual About clicks in Simple/Advanced; attribution/tool/asset wording and unchanged document/history. Static repository/sample audit; no licensing or redistribution authorization granted.",
+  "source_sha256": {
+    "src/app.gd": "65ddc21e2d9667c63b53beffeb518d2a351e45e4fe76dbdab58572c34faec84c",
+    "THIRD_PARTY_NOTICES.md": "6b228713e192eb6c2c6dffc72ee06e0d673aa6323a34f7dfc86848c864a0be08",
+    "docs/licenses.md": "d8fd2e565632ac0dfba2e8f9bf537f5399ca92f8ee743611e040492d0fe0f634",
+    "src/storage.gd": "24f4c5b6869285261d46669a94d31e2a48e2dab763af115ec4e786f234cde365"
+  },
+  "ui_probe_source": "extends \"res://tests/shortcut_editor_smoke.gd\"\nfunc named_button(node: Node,text: String) -> Button:\n\tif node is Button and node.text==text:return node\n\tfor child in node.get_children():\n\t\tvar found:=named_button(child,text)\n\t\tif found:return found\n\treturn null\nfunc run() -> void:\n\tvar folder: String=OS.get_cmdline_user_args()[0]\n\tapp=load(\"res://main.tscn\").instantiate();app.display_prefs_path=folder.path_join(\"prefs.cfg\");app.recovery_root=folder.path_join(\"recovery\");app.recent_path=folder.path_join(\"recent.json\");root.add_child(app);await settle();app.home.hide();app.autosave_enabled.button_pressed=false\n\tvar keys: Array=app.keys.duplicate(true);var world: Dictionary=app.current_world().duplicate(true);var history: int=app.history.size();var dirty: bool=app.dirty\n\tfor advanced in [false,true]:\n\t\tapp.set_advanced(advanced);await settle();var entry:=named_button(app,\"About\")\n\t\tcheck(entry!=null and entry.is_visible_in_tree(),\"About is available at current UI detail\")\n\t\tawait click(entry);var dialog: AcceptDialog\n\t\tfor child in app.get_children():\n\t\t\tif child is AcceptDialog and child.title==\"Credits / open source notices\":dialog=child\n\t\tcheck(dialog!=null and dialog.visible,\"actual About click opens notices\")\n\t\tcheck(dialog.dialog_text.contains(\"Godot Engine 4.6\") and dialog.dialog_text.contains(\"MIT\") and dialog.dialog_text.contains(\"godotengine.org/license/\") and dialog.dialog_text.contains(\"ffmpeg.org/legal.html\") and dialog.dialog_text.contains(\"License and codec options depend on the installed build\") and dialog.dialog_text.contains(\"Imported asset rights must be verified\"),\"visible notices preserve attribution without inventing tool or asset licenses\")\n\t\tawait click(dialog.get_ok_button());await settle()\n\t\tcheck(app.keys==keys and app.current_world()==world and app.history.size()==history and app.dirty==dirty,\"notices leave the current scene and history unchanged\")\n\tprint(\"NOTICES_CURRENT \",JSON.stringify({\"checks\":checks,\"failures\":failures}));app.free();quit(0 if failures==0 else 1)\n",
+  "private_asset_members": 2089,
+  "private_asset_hashes_found_in_git": [],
+  "current_cloud_versions": {
+    "godot": "4.6.stable.official.89cea1439",
+    "python": "3.12.14",
+    "ffmpeg": "7.1.5-0+deb13u1",
+    "ffmpeg_enable_gpl": true,
+    "ffmpeg_enable_version3": false,
+    "blender": "4.3.2"
+  },
+  "limits": "App distribution license undecided; no installer/release/binary/native asset redistribution performed. Source attribution retained; unknown imported rights remain unknown."
+}

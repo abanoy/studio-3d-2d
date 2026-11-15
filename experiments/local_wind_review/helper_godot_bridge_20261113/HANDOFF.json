@@ -1,0 +1,98 @@
+{
+  "format": "has_wind_godot_bridge_handoff_1",
+  "scope": "Actual isolated GDScriptNode/Pythoncontroller/CPUchild bridge, not main/UI/model/render acceptance",
+  "tests": {
+    "format": "has_wind_godot_bridge_cpu_tests_1",
+    "tests": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590",
+    "real_windows_godot_headless": true,
+    "godot_binary": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+    "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+    "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+    "gpu_used": false,
+    "main_project_launched": false,
+    "native_model_or_converter_started": false,
+    "prior_packets_modified": false,
+    "scope": "Isolated Node/controller/CPU child lifecycle only"
+  },
+  "retained_process_count": 30,
+  "process_kinds": {
+    "external Popen Godot handle": 12,
+    "Godot-created controller": 9,
+    "Job-owned nonreading CPU worker": 8,
+    "malformed-ready controller": 1
+  },
+  "mapped_release_handle_counts": {
+    "before": 266,
+    "after": 264,
+    "repeated": 264,
+    "delta": 2,
+    "repeated_delta": 0,
+    "first": {
+      "attempted": true,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    },
+    "second": {
+      "attempted": false,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    }
+  },
+  "actual_node_sources": [
+    "isolated/helper_preview_bridge.gd",
+    "isolated/fixture.gd",
+    "isolated/project.godot"
+  ],
+  "new_controller": "candidate/tools/wind_preview_controller.py",
+  "new_controller_delta": "Independent exact-host/EOF watchdog exits only itself74 if service cannot close within0.75s; startup reserves no child beforevalidstart; started event also bindsrequestSHA",
+  "ownership_invariant": [
+    "Only own successful execute_with_pipe return reserves mapentry",
+    "Pinned exactWindowsGodotbackend; exclusive Node owner",
+    "Reservation consumed before exactlyoneOS.kill, cacheexitbefore, neverretryevenFAILED",
+    "WindowsretainedhandlepreventsPIDreuse; knownmapbranchusesretainedhandle, no genericPIDfallback",
+    "IndependentwatchdoghandlesabruptGodotdeath and blockedcontroller service; ownJob closes on ownprocess exit"
+  ],
+  "proof": "cpu-process-receipts.json",
+  "review": "Independent read-only primary/API and Node/controller source review; no runtimes or edits byreviewer",
+  "preserved_failures": [
+    "startup-observation.json",
+    "cpu-tests-fixture-parse-failure.json",
+    "cpu-tests-fixture-parse-failure.log",
+    "retained-check-only-native-name-failure.log",
+    "cpu-tests-expected-failure-wait.json",
+    "cpu-tests-expected-failure-wait.log"
+  ],
+  "retained_check_only": "retained-check-only.json",
+  "failure_corrections": "Corrected fixture lambda syntax and nativeNode ready signal name collision; a direct shell return was not compileproof. Corrected harness wait for alreadyexpectednegative bridgefailure; no resource/admission predicates relaxed.",
+  "main_head_to_preserve": "e9cc7cfb20266b4863bde134bcb30457547a343d",
+  "prior_index_sha256": "b7e84e5d0ab061396c5621cf20c75555aab91f4663bd38110bfdaad64a85c971",
+  "prior_all19indexed_files_unchanged": true,
+  "main_project_launched": false,
+  "main_source_or_HEAD_modified": false,
+  "git_commands": false,
+  "gpu_used": false,
+  "native_model_or_converter_started": false,
+  "new_tools_installed": false,
+  "production_bootstrap_implemented": false,
+  "limits": [
+    "External observer-provided exacthostconfig is fixture-only; futuretrustedPythonready hostimagehashbootstrap remainsdesign",
+    "2048byte one-outstanding command cap; universal stalled-peer nonblocking/largeframe transport notproven",
+    "No actual hidden modelimport/binding snapshots/helperUI/physics/visibility/canvas/Apply/Undo acceptance",
+    "Ownershipproof depends on exactWindowsprocess-map source and exclusive single-use entry; no expansion to arbitraryPIDs/backends",
+    "Watchdogtrustedruntimeboundary starts after validated parentlease/transport; not an adversarial filesystem or interpreter isolation guarantee"
+  ],
+  "next_step": "Review and test production hostbootstrap + mainappCPUfixture integration under released source lease, before hidden model import/binding and isolated preview simulation",
+  "documents": [
+    "README.md",
+    "NEXT_INTEGRATION.md",
+    "PRIMARY_EVIDENCE.json"
+  ],
+  "publication": "Only FILE_INDEX.json and indexed files; exclude cpu-results generated GLBs/jobs/wrappers and .godot cache"
+}

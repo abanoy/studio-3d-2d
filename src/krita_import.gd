@@ -35,7 +35,7 @@ func setup(owner_app) -> void:
 	app=owner_app
 	launch=app.button(app.drawing_section,"Import Krita artwork…",choose)
 	app.drawing_section.move_child(launch,app.layer_editor.launch.get_index()+1)
-	launch.tooltip_text="Review a local KRA and add rendered artwork as one new editable drawing layer. Installed Krita is required."
+	launch.tooltip_text="Review a local KRA and add rendered artwork as one new editable drawing layer. A configured Krita renderer is required."
 
 func worker_script() -> String:return "res://tools/prepare_krita.py"
 func worker_arguments(args: Array) -> Array:return args
@@ -125,7 +125,15 @@ func _process(_delta: float) -> void:
 		if decoded.size()==candidate.holds.size():show_preview()
 	if phase=="candidate" and is_instance_valid(preview):preview.get_ok_button().disabled=external_busy()
 
+func container_image() -> String:
+	if OS.get_name()!="Linux":return ""
+	var value:=OS.get_environment("HYBRID_KRITA_CONTAINER_IMAGE")
+	if value.length()!=71 or not value.begins_with("sha256:"):return ""
+	for character in value.substr(7):
+		if not character in "0123456789abcdef":return ""
+	return value
 func krita() -> String:
+	if not container_image().is_empty():return "/usr/bin/krita"
 	var prefs:=ConfigFile.new();prefs.load(app.display_prefs_path)
 	for path in [OS.get_environment("HYBRID_KRITA"),str(prefs.get_value("tools","krita","")),"C:/Program Files/Krita (x64)/bin/krita.exe","C:/Program Files/Krita/bin/krita.exe"]:
 		if FileAccess.file_exists(path) and path.get_file().to_lower()=="krita.exe":return path
@@ -137,7 +145,7 @@ func locate() -> void:
 		if prefs.save(app.display_prefs_path)!=OK:app.message("Cannot save the Krita location.");return
 		if is_instance_valid(review):update_tools())
 func update_tools() -> void:
-	tools_label.text="Installed Krita found." if not krita().is_empty() else "Locate installed Krita to prepare this file."
+	tools_label.text="Krita renderer is configured." if not krita().is_empty() else "Locate installed Krita to prepare this file."
 	review.get_ok_button().disabled=not inventory.get("render_supported",false) or krita().is_empty()
 func show_layers() -> void:
 	phase="layers";review=ConfirmationDialog.new();review.title="Review Krita artwork";review.exclusive=false;review.unresizable=false;review.get_ok_button().text="Prepare preview";app.add_child(review)
@@ -145,7 +153,7 @@ func show_layers() -> void:
 	info=Label.new();info.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;info.custom_minimum_size.x=500;box.add_child(info)
 	info.text="%s · %s × %s\nRender the chosen layers together into one new drawing layer, starting at frame %d. Source audio and native layer editing stay in Krita." % [source.get_file(),inventory.get("width",0),inventory.get("height",0),at]
 	if not inventory.get("render_supported",false):info.text+="\n"+str(inventory.get("limitations",[]))
-	if not inventory.get("animated",false):still=app.spin(box,"Still exposure (frames)",1,int(video.duration_frames)-at,int(video.duration_frames)-at)
+	if not inventory.get("animated",false):still=app.spin(box,"Still exposure (frames)",1,mini(240,int(video.duration_frames)-at),mini(240,int(video.duration_frames)-at))
 	else:still=null
 	var reveal:=CheckButton.new();reveal.text="Choose source layers…";box.add_child(reveal)
 	var scroll:=ScrollContainer.new();scroll.custom_minimum_size=Vector2(500,220);box.add_child(scroll)
@@ -164,6 +172,7 @@ func prepare() -> void:
 		if choices[id].check.button_pressed!=choices[id].original:overrides[id]=choices[id].check.button_pressed
 	if still:still.apply()
 	request={"source":source,"source_sha256":inventory.get("source_sha256"),"output":job.path_join("prepared"),"cancel":job.path_join("cancel"),"result":job.path_join("result.json"),"krita":krita(),"ffmpeg":app.encoder_path.text,"width":video.width,"height":video.height,"fps_num":video.fps_num,"fps_den":video.fps_den,"available_frames":mini(240,int(video.duration_frames)-at),"max_cels":slots(),"still_duration_frames":int(still.value) if still else 1,"layer_visibility":overrides}
+	if not container_image().is_empty():request["container_image"]=container_image()
 	var file:=FileAccess.open(job.path_join("request.json"),FileAccess.WRITE)
 	if not file:fail("Cannot write artwork preparation request.");return
 	file.store_string(JSON.stringify(request));file.close();review.hide();phase="prepare";response=request.result;last_stage="";start([job.path_join("request.json")],"Rendering selected layers…")

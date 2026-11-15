@@ -44,3 +44,5 @@ keyboard/artist comfort and clean-PC acceptance remain separate.
 
 Primary references: Godot4.6 [Node3D rotation conventions](https://docs.godotengine.org/en/4.6/classes/class_node3d.html#class-node3d-property-rotation)
 and [Basis Euler conversion](https://docs.godotengine.org/en/4.6/classes/class_basis.html#class-basis-method-from-euler).
+
+Cloud rerun (2026-11-07): use `--isolated-display :109 --output /absolute/new/evidence-folder` with the pre-provisioned private X display. Linux has no shared-display fallback; Windows retains desktop receipts. Current numeric camera passed37checks and independent9matrix cases (maximum error3.50e-7); projection suite passed49checks. Both produced48frame1080p24H264 with exact preview/input pixels. No prepared native fixtures were available in these runs; uploaded raw SFM archives do not count as prepared imports.

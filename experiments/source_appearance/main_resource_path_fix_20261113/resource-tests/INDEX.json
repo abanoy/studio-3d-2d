@@ -1,0 +1,52 @@
+{
+  "format": "has_source_resource_write_evidence_index_1",
+  "passed": true,
+  "files": [
+    {
+      "path": "archive-regression.log",
+      "bytes": 1133,
+      "sha256": "4178de460d066f051864c25f5f00c5e615a9221125351f91152dcaadc623ab8b"
+    },
+    {
+      "path": "python-after.json",
+      "bytes": 203,
+      "sha256": "0054ce25b92bfca171d13977460e68b3f577303f56904d0e482cc0460b5f0e1f"
+    },
+    {
+      "path": "python.json",
+      "bytes": 203,
+      "sha256": "0054ce25b92bfca171d13977460e68b3f577303f56904d0e482cc0460b5f0e1f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1571,
+      "sha256": "2c55ec76f27b1ce10d2396090de1958997af5c4ed065eea390b6638b1fbf2865"
+    },
+    {
+      "path": "resource-write.log",
+      "bytes": 2472,
+      "sha256": "393765cfaa41d75e94925821988ebaabfe95280090256c77fb6372964def15b0"
+    },
+    {
+      "path": "source-after.json",
+      "bytes": 756,
+      "sha256": "1200289ff89ea2ab1dce5cb465a92a2125afaaf3f0a04ada65dd274534623e60"
+    },
+    {
+      "path": "source-before.json",
+      "bytes": 756,
+      "sha256": "1200289ff89ea2ab1dce5cb465a92a2125afaaf3f0a04ada65dd274534623e60"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1798,
+      "sha256": "4cf8020a172251d3263a9a3a91aaae9ed8df83adae820da825ced0a62029d466"
+    }
+  ],
+  "source_context": "Frozen current working helper and tests; CPU-only evidence, no native-conversion pass",
+  "source_sha256": {
+    "helper": "44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131",
+    "new_test": "d3b2e3a5f338a6c0e2b92a993b810cfc6526a03c8cd31c7fef85bd45597aa823",
+    "existing_archive_test": "442bce99d4d187823e4c81fd6f74b1f55bea909c95fb66c6d8bda540aae44867"
+  }
+}

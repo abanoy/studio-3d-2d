@@ -1,0 +1,467 @@
+--- v2/source/app_probe.gd
++++ v3/source/app_probe.gd
+@@ -113,6 +113,7 @@
+ 	if not _check(not FileAccess.file_exists(target),key+" "+mode+" PNG path is fresh"):return {}
+ 	if not _check(image.save_png(target)==OK,key+" "+mode+" native PNG saves"):return {}
+ 	_check(_app.renderer.native_readbacks==0,key+" "+mode+" capture releases its readback")
++	if not _check(str(_app.video.get("lighting_mode",""))=="studio" and _app.renderer.last_lighting=="studio" and _app.renderer.studio_light.visible,key+" "+mode+" capture uses the explicit ordinary Studio light"):return {}
+ 	var content:=_content_observation(image)
+ 	if not _check(int(content.significant_content_samples)>100,key+" "+mode+" same captured image contains significant scene content"):return {}
+ 	return {"content":content,"pixel_sha256":Pixels.digest_bytes(image.get_data()),"width":image.get_width(),"height":image.get_height(),"format":int(image.get_format()),"png":target,"png_sha256":FileAccess.get_sha256(target)}
+@@ -124,6 +125,14 @@
+ 	if not _check(FileAccess.file_exists(original) and FileAccess.get_sha256(original)==item.glb_sha256,key+" writer has its checksum-bound prepared GLB"):return {}
+ 	if not _check(JSON.parse_string(FileAccess.get_file_as_string(parameter_path))==item.parameters,key+" writer has the matching adjacent report"):return {}
+ 	if not _check(_app.new_project() and _app.current_world().objects.is_empty(),key+" starts an ordinary empty project"):return {}
++	# This component fixture is gloves-only with an opaque black glow overlay.
++	# Keep the failed unshaded v2 evidence; use the ordinary Studio light setting.
++	if not _check(str(_app.video.get("lighting_mode",""))=="unshaded",key+" New retains its documented default unshaded mode"):return {}
++	if not _check(_app.lighting_choice.item_count==3 and _app.lighting_choice.get_item_text(2)=="Studio light",key+" ordinary lighting choice exposes Studio light at index2"):return {}
++	var lighting_history: int=_app.history.size()
++	_app.lighting_choice.select(2);_app.change_lighting(2);await _settled()
++	if not _check(str(_app.video.get("lighting_mode",""))=="studio" and _app.lighting_choice.selected==2 and _app.renderer.last_lighting=="studio" and _app.renderer.studio_light.visible,key+" ordinary Studio light reaches video, selector and live renderer"):return {}
++	if not _check(_app.history.size()==lighting_history+1 and _app.history[-1].type=="video",key+" Studio light is its own ordinary video Undo step before the import baseline"):return {}
+ 	var before: Dictionary=World.portable(_app.current_world())
+ 	var cameras: Array=_app.keys.duplicate(true)
+ 	var count: int=_app.history.size()
+@@ -206,6 +215,7 @@
+ 	_check(_normal(_binding_rows(actor))==expected.bindings and _normal(actor.authored_keys())==expected.authored_keys,key+" packed Open restores exact bindings and authored pose keys")
+ 	_check(_normal(_transform(actor.root.global_transform))==expected.root_transform and _normal(_bone_transforms(actor))==expected.bone_transforms,key+" packed Open restores exact root and bone transforms")
+ 	_check(_normal(_app.keys)==expected.camera_keys and _normal(_app.video)==expected.video and _app.frame==int(expected.frame),key+" packed Open restores shot/video/frame")
++	_check(expected.video.get("lighting_mode","")=="studio" and _app.video.get("lighting_mode","")=="studio" and _app.lighting_choice.selected==2 and _app.renderer.last_lighting=="studio" and _app.renderer.studio_light.visible,key+" packed reader retains the writer's explicit Studio light setting")
+ 	_check(_app.has_project.path==expected.project and _app.has_project.storage_mode=="packed" and not _app.dirty and _app.history.is_empty() and _app.redo_history.is_empty() and _app.world_selection.selected.is_empty(),key+" fresh packed Open is clean with empty history and selection")
+ 	var source_path:=_path(actor.data.source)
+ 	var cache_path:=_path(_app.has_project.cache_root)
+--- v2/source/glb_reference.py
++++ v3/source/glb_reference.py
+@@ -230,6 +230,112 @@
+         self._accessors[index] = values
+         return values
+ 
++    def layout_proof(self):
++        """Bounded independent glTF byte-layout proof, not full glTF certification.
++
++        Role joins are derived from declarations, never inferred from target hints.
++        This proof permits one packed vertex accessor/view; shared vertex views
++        require explicit stride. Sparse payloads remain a separate packed role.
++        """
++        d = self.data
++        require(not d.get("extensionsUsed"), "Extension-defined layout is outside bounded proof")
++        accessors, views = d.get("accessors", []), d.get("bufferViews", [])
++        require(0 < len(accessors) <= 2000 and 0 < len(views) <= 4000, "Layout table budget")
++        roles = {i: set() for i in range(len(accessors))}
++        semantics = {i: [] for i in range(len(accessors))}
++        def use(index, role, semantic=None):
++            require(type(index) is int and index in roles, "Layout accessor reference")
++            roles[index].add(role)
++            if semantic is not None:semantics[index].append(semantic)
++        for mesh in d.get("meshes", []):
++            for primitive in mesh.get("primitives", []):
++                for semantic, index in primitive.get("attributes", {}).items():use(index, "vertex", (semantic, False))
++                for target in primitive.get("targets", []):
++                    for semantic, index in target.items():use(index, "vertex", (semantic, True))
++                if "indices" in primitive:use(primitive["indices"], "index")
++        for skin in d.get("skins", []):
++            if "inverseBindMatrices" in skin:use(skin["inverseBindMatrices"], "inverse_bind")
++        for animation in d.get("animations", []):
++            for sampler in animation.get("samplers", []):
++                use(sampler["input"], "animation");use(sampler["output"], "animation")
++        consumers = {i: [] for i in range(len(views))}
++        def consume(view_index, role, accessor=None):
++            self.view(view_index)
++            consumers[view_index].append({"role": role, "accessor": accessor})
++        for image in d.get("images", []):
++            require("bufferView" in image and "uri" not in image, "Layout expects embedded images")
++            consume(image["bufferView"], "image")
++        sizes = {5120: 1, 5121: 1, 5122: 2, 5123: 2, 5125: 4, 5126: 4}
++        elements = {"SCALAR": 1, "VEC2": 2, "VEC3": 3, "VEC4": 4, "MAT4": 16}
++        sparse_count = 0
++        for index, a in enumerate(accessors):
++            require(isinstance(a, dict) and type(a.get("componentType")) is int and a["componentType"] in sizes
++                    and a.get("type") in elements, "Unsupported accessor packing")
++            component = sizes[a["componentType"]];element = component*elements[a["type"]]
++            require(a["type"] != "MAT4" or a["componentType"] == 5126, "Unsupported matrix component packing")
++            require(type(a.get("count")) is int and 0 < a["count"] <= 200000, "Layout accessor count")
++            start = a.get("byteOffset", 0)
++            require(type(start) is int and start >= 0 and start % component == 0, "Accessor component alignment")
++            require(type(a.get("normalized", False)) is bool and not (a.get("normalized", False) and a["componentType"] in (5125, 5126)), "Accessor normalization")
++            role = roles[index] or {"unused_accessor"}
++            require(len(role) == 1, "Accessor mixed roles")
++            role = next(iter(role))
++            if role == "index":require(a["type"] == "SCALAR" and a["componentType"] in (5121, 5123, 5125) and not a.get("normalized", False), "Index accessor format")
++            if role == "inverse_bind":require(a["type"] == "MAT4" and a["componentType"] == 5126, "Inverse bind format")
++            for semantic, morph in semantics[index]:
++                kind, ctype, normalized = a["type"], a["componentType"], a.get("normalized", False)
++                if semantic in ("POSITION", "NORMAL") or (morph and semantic == "TANGENT"):
++                    valid = kind == "VEC3" and ctype == 5126 and not normalized
++                elif semantic == "TANGENT" and not morph:valid = kind == "VEC4" and ctype == 5126 and not normalized
++                elif semantic.startswith("JOINTS_") and not morph:valid = kind == "VEC4" and ctype in (5121, 5123) and not normalized
++                elif semantic.startswith("WEIGHTS_") and not morph:valid = kind == "VEC4" and ((ctype == 5126 and not normalized) or (ctype in (5121, 5123) and normalized))
++                elif semantic.startswith("TEXCOORD_") and not morph:valid = kind == "VEC2" and ((ctype == 5126 and not normalized) or (ctype in (5121, 5123) and normalized))
++                elif semantic.startswith("COLOR_") and not morph:valid = kind in ("VEC3", "VEC4") and ((ctype == 5126 and not normalized) or (ctype in (5121, 5123) and normalized))
++                else:valid = False
++                require(valid, "Unsupported or invalid vertex semantic format")
++            if "bufferView" in a:
++                raw, view = self.view(a["bufferView"]);consume(a["bufferView"], role, index)
++                stride = view.get("byteStride", element)
++                require(type(stride) is int and stride >= element and stride % component == 0
++                        and start+(a["count"]-1)*stride+element <= len(raw), "Layout accessor bounds/stride")
++                require((view.get("byteOffset", 0)+start) % component == 0, "Absolute accessor component alignment")
++                if role == "vertex":require(start % 4 == 0 and (view.get("byteOffset", 0)+start) % 4 == 0 and stride % 4 == 0, "Vertex four-byte element alignment")
++            else:require(start == 0, "Implicit accessor offset")
++            if "sparse" in a:
++                sparse_count += 1;sparse = a["sparse"]
++                require(isinstance(sparse, dict) and type(sparse.get("count")) is int and 0 < sparse["count"] <= a["count"], "Sparse declaration/count")
++                require(isinstance(sparse.get("indices"), dict) and isinstance(sparse.get("values"), dict), "Sparse payload declarations")
++                for name, sparse_role in (("indices", "sparse_indices"), ("values", "sparse_values")):
++                    part = sparse[name]
++                    width = component if name == "values" else sizes.get(part.get("componentType"), 0)
++                    require(name != "indices" or type(part.get("componentType")) is int and part["componentType"] in (5121, 5123, 5125), "Sparse index component")
++                    raw, view = self.view(part.get("bufferView"));consume(part["bufferView"], sparse_role, index)
++                    offset = part.get("byteOffset", 0);item_size = element if name == "values" else width
++                    require(type(offset) is int and offset >= 0 and offset % width == 0 and (view.get("byteOffset", 0)+offset) % width == 0, "Sparse component alignment")
++                    require("byteStride" not in view and "target" not in view and offset+sparse["count"]*item_size <= len(raw), "Sparse packed role/bounds")
++        rows = []
++        for index, entries in consumers.items():
++            raw, view = self.view(index)
++            require(len(raw) > 0, "Empty buffer view")
++            view_roles = {row["role"] for row in entries}
++            require(len(view_roles) <= 1, "Buffer view mixed roles")
++            role = next(iter(view_roles)) if view_roles else "unused_view"
++            ids = sorted({row["accessor"] for row in entries if row["accessor"] is not None})
++            if "target" in view:
++                require(type(view["target"]) is int and ((role == "vertex" and view["target"] == 34962) or (role == "index" and view["target"] == 34963)), "Buffer view target/role mismatch")
++            if "byteStride" in view:
++                stride = view["byteStride"]
++                require(role == "vertex" and type(stride) is int and 4 <= stride <= 252 and stride % 4 == 0 and stride <= len(raw), "Declared stride role/range/alignment")
++            if role == "vertex" and len(ids) > 1:require("byteStride" in view, "Shared vertex accessors require explicit stride")
++            rows.append({"view": index, "role": role, "accessors": ids, "byte_offset": view.get("byteOffset", 0), "byte_length": len(raw),
++                         "byte_stride": view.get("byteStride"), "target": view.get("target")})
++        # Reuse the independently bounds/finite/sparse-order checked stdlib decoder.
++        for index in range(len(accessors)):self.accessor(index)
++        return {"format": "has_independent_gltf_layout_1", "passed": True, "glb_sha256": self.raw_sha,
++                "accessors": len(accessors), "buffer_views": len(views), "sparse_accessors": sparse_count,
++                "packed_vertex_views": sum(row["role"] == "vertex" and row["byte_stride"] is None for row in rows), "views": rows,
++                "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"}
++
+     def globals(self, pose_node=None, pose_quaternion=None):
+         memo, visiting = {}, set()
+         def get(i):
+--- v2/source/probe_driver.py
++++ v3/source/probe_driver.py
+@@ -11,6 +11,7 @@
+ import json
+ import math
+ import os
++import re
+ from pathlib import Path
+ import shutil
+ import stat
+@@ -39,6 +40,46 @@
+ BAD_LOG = ("ERROR:", "WARNING:", "FAIL ", "ObjectDB instances leaked", "Leaked instance:",
+            "unclaimed string names at exit", "Orphan StringName:", "Pages in use exist at exit")
+ 
++PACKED_VERTEX_VERBOSE_LINE = "WARNING: glTF import: Buffer view byte stride should be declared for vertex attributes. Assuming packed data and reading anyway."
++PACKED_VERTEX_SOURCE = "https://raw.githubusercontent.com/godotengine/godot/4.6-stable/modules/gltf/structures/gltf_accessor.cpp"
++
++
++def normalize_manifest_argument(path):
++    return Path(os.path.abspath(os.fspath(path)))
++
++
++def classify_log(log, layout_proofs_verified):
++    """Classify one exact verbose line only after fresh independent input proof."""
++    accepted, rejected = [], []
++    for number, line in enumerate(log.splitlines(), 1):
++        if layout_proofs_verified is True and line == PACKED_VERTEX_VERBOSE_LINE:
++            accepted.append(number)
++            continue
++        markers = [marker for marker in BAD_LOG if marker in line]
++        if re.search(r"\b(?:warning|error)\s*:", line, re.IGNORECASE) and not markers:
++            markers.append("UNCLASSIFIED_WARNING_OR_ERROR")
++        if markers:rejected.append({"line_number": number, "line": line, "markers": markers})
++    return {"classified_packed_vertex_verbose": {"exact_line": PACKED_VERTEX_VERBOSE_LINE,
++             "count": len(accepted), "line_numbers": accepted, "primary_source": PACKED_VERTEX_SOURCE,
++             "independent_layouts_verified": layout_proofs_verified is True},
++            "rejected_lines": rejected, "forbidden_log_markers": sorted({m for row in rejected for m in row["markers"]}),
++            "raw_log_modified": False}
++
++
++def verify_layout_proofs(m, offline=False):
++    folder = Path(m["run_folder"]) / ("inputs.offline" if offline else "inputs")
++    rows = []
++    require(len(m["cases"]) == 12, "Layout proof case count")
++    for case in m["cases"]:
++        path = owned(folder / case["key"] / "scene.glb")
++        raw = path.read_bytes()
++        require(sha(raw) == case["glb_sha256"], "Layout input hash differs")
++        proof = GLB(raw).layout_proof()
++        require(proof == case["independent_layout"], "Independent GLB layout proof differs")
++        rows.append({"case": case["key"], "glb_sha256": proof["glb_sha256"],
++                     "layout_proof_sha256": sha(json.dumps(proof, sort_keys=True, separators=(",", ":")).encode())})
++    return {"passed": True, "cases": rows, "inputs_offline": offline}
++
+ 
+ def no_reparse(path):
+     path = Path(path).absolute()
+@@ -118,7 +159,7 @@
+     require(head() == expected_revision, "Root HEAD differs from reviewed preparation checkpoint")
+     require(not working_source or bool(working_context), "Working-source preparation requires its explicit reviewed context")
+     no_reparse(TASK)
+-    require(TASK == ROOT / "output/sfm-static-appearance-probe-20261113-v2", "Unexpected dedicated layout")
++    require(TASK == ROOT / "output/sfm-static-appearance-probe-20261113-v3", "Unexpected dedicated layout")
+     proof = read_json(RESULTS)
+     require(stamp(RESULTS)["sha256"] == RESULTS_SHA, "Exact retained fourteen-case proof hash differs")
+     require(proof["passed_cases"] == 14 and proof["successful_bundles"] == 12 and proof["failed_cases"] == 0,
+@@ -128,7 +169,7 @@
+     folder.mkdir(parents=True, exist_ok=False)
+     protected = [stamp(RESULTS), stamp(NATIVE_REVIEW), stamp(ROOT / "tools/build_owner_review_snapshot.py"),
+                  stamp(PYTHON), stamp(PYTHONW), stamp(GODOT), *(stamp(TASK / "source" / name) for name in CODE)]
+-    manifest = {"format": "has_sfm_derived_probe_candidate_2", "status": "PREPARED_NOT_RUN",
++    manifest = {"format": "has_sfm_derived_probe_candidate_3", "status": "PREPARED_NOT_RUN",
+                 "run_folder": str(folder), "root": str(ROOT), "root_revision": expected_revision,
+                 "source_mode": "working_tree_at_git_base" if working_source else "exact_git_revision",
+                 "working_context": working_context if working_source else None,
+@@ -183,7 +224,7 @@
+                                   "bones": len(native_bones), "pose_bone_name": bone_name,
+                                   "pose_native_index": native_index, "pose_source_node": bindings[native_index]["source_node"],
+                                   "native_to_actual_glb_bindings": bindings,
+-                                  "materials": material_rows(glb), "primitives": summary})
++                                  "materials": material_rows(glb), "primitives": summary, "independent_layout": glb.layout_proof()})
+     for key in ("nitori-skin-0", "nitori-skin-1", "nitori-skin-2"):
+         manifest["render_cases"].append({"key": key+"-rest", "case": key})
+     for weight in (0., .5, 1.):
+@@ -251,7 +292,7 @@
+     path = owned(path)
+     require(stamp(path)["sha256"] == expected_sha, "Manifest hash mismatch")
+     m = read_json(path)
+-    require(m["format"] == "has_sfm_derived_probe_candidate_2" and m["root"] == str(ROOT)
++    require(m["format"] == "has_sfm_derived_probe_candidate_3" and m["root"] == str(ROOT)
+             and Path(m["run_folder"]) == path.parent, "Manifest identity/layout mismatch")
+     require(head() == m["root_revision"], "Root HEAD changed; prepare a fresh candidate")
+     require(root_functional() == m["root_functional"], "Root functional files changed; prepare a fresh candidate")
+@@ -271,6 +312,7 @@
+             require(all(actual[k] == identity[k] for k in ("bytes", "sha256", "mtime_ns")), "Owned input changed")
+     for project in m["projects"].values():
+         require(source_members(Path(project["path"])) == project["files"], "Frozen private source membership/hash changed")
++    verify_layout_proofs(m, offline=offline)
+     return m
+ 
+ 
+@@ -340,10 +382,16 @@
+     (output / "process.log").write_text(log, encoding="utf-8")
+     receipt = {} if parse_only else read_json(Path(command[command.index("--receipt")+1]))
+     result = {} if parse_only else read_json(output / "result.json")
++    try:
++        layout_verification = verify_layout_proofs(m, offline=mode == "reader")
++    except Exception as error:
++        layout_verification = {"passed": False, "error": type(error).__name__+": "+str(error)}
++    log_classification = classify_log(log, layout_verification["passed"])
+     observation = {"exit": completed.returncode, "parse_only": parse_only, "receipt": receipt, "result": result,
+-                   "forbidden_log_markers": [s for s in BAD_LOG if s in log]}
++                   "layout_verification": layout_verification, "log_classification": log_classification,
++                   "forbidden_log_markers": log_classification["forbidden_log_markers"]}
+     write_new(output / "execution.json", observation)
+-    require(completed.returncode == 0 and not observation["forbidden_log_markers"], "Engine/probe failed; retain all evidence")
++    require(completed.returncode == 0 and layout_verification["passed"] and not observation["forbidden_log_markers"], "Engine/probe failed; retain all evidence")
+     if not parse_only:
+         require(strict_private(receipt, completed.returncode), "Private graphical isolation did not pass")
+         require(result.get("mode") == mode and result.get("nonce") == m["nonce"] and result.get("failures") == 0
+@@ -404,6 +452,7 @@
+     p.add_argument("--run-gpu", action="store_true")
+     p.add_argument("--lease-confirmed", action="store_true")
+     args = p.parse_args()
++    if args.manifest is not None:args.manifest = normalize_manifest_argument(args.manifest)
+     require(not (args.parse_only and args.run_gpu), "Choose parse or actual graphics")
+     if args.prepare:
+         require(args.expected_root_revision and not any((args.manifest, args.run_gpu, args.parse_only, args.lease_confirmed)),
+--- v2/source/raw_probe.gd
++++ v3/source/raw_probe.gd
+@@ -227,8 +227,15 @@
+ 	viewport.free();viewport=null
+ 
+ func run() -> void:
+-	var args:=OS.get_cmdline_user_args();var manifest: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(args[0]));var folder: String=args[1];var mode: String=args[2]
+-	check(mode in ["writer","reader"],"candidate has an explicit writer/reader mode")
++	var args:=OS.get_cmdline_user_args()
++	if args.size()!=3:check(false,"candidate needs exactly manifest, output and mode arguments");quit(2);return
++	if not str(args[0]).is_absolute_path() or not FileAccess.file_exists(args[0]):check(false,"candidate manifest must exist at an absolute path");quit(2);return
++	if not str(args[1]).is_absolute_path() or not DirAccess.dir_exists_absolute(args[1]):check(false,"candidate output must be an existing absolute directory");quit(2);return
++	var parsed=JSON.parse_string(FileAccess.get_file_as_string(args[0]))
++	if not parsed is Dictionary or parsed.get("format","")!="has_sfm_derived_probe_candidate_3" or not parsed.has_all(["nonce","cases","render_cases","derived_reference"]):check(false,"candidate manifest has its complete v3 identity");quit(2);return
++	var manifest: Dictionary=parsed;var folder: String=args[1];var mode: String=args[2]
++	if not mode in ["writer","reader"]:check(false,"candidate has an explicit writer/reader mode");quit(2);return
++	check(true,"candidate has an explicit writer/reader mode")
+ 	if mode=="writer":await raw_cases(manifest,folder)
+ 	var probe:=AppProbe.new();var app_result: Dictionary=await probe.run(self,manifest,folder,mode)
+ 	checks+=int(app_result.checks);failures+=int(app_result.failures)
+--- v2/source/test_probe_cpu.py
++++ v3/source/test_probe_cpu.py
+@@ -253,6 +253,103 @@
+         with self.assertRaises(ValueError):R.png_rgba(png(1, 1, b"\0\0\0\0\xff")+b"extra")
+ 
+ 
++def interleaved_fixture():
++    data, raw = fixture()
++    normal = copy.deepcopy(data["accessors"][0]);normal["byteOffset"] = 12
++    data["accessors"].append(normal)
++    data["meshes"][0]["primitives"][0]["attributes"]["NORMAL"] = len(data["accessors"])-1
++    extra = b"".join(struct.pack("<6f", *position, 0., 0., 1.) for position in ((1., 0., 0.), (0., 1., 0.), (0., 0., 0.)))
++    data["bufferViews"][0] = {"buffer": 0, "byteOffset": len(raw), "byteLength": len(extra), "byteStride": 24, "target": 34962}
++    raw += extra;data["buffers"][0]["byteLength"] = len(raw)
++    return data, raw
++
++
++class LayoutControls(unittest.TestCase):
++    def test_unique_packed_vertex_views_are_independently_proved(self):
++        data, raw = fixture();proof = R.GLB(glb_document(data, raw)).layout_proof()
++        self.assertTrue(proof["passed"]);self.assertEqual(proof["packed_vertex_views"], 4)
++        self.assertEqual(proof["sparse_accessors"], 0)
++        self.assertEqual([v["role"] for v in proof["views"]], ["vertex", "vertex", "vertex", "vertex", "index", "inverse_bind"])
++
++    def test_sparse_packed_payload_and_sorted_indices_are_proved(self):
++        data, raw = sparse_fixture();proof = R.GLB(glb_document(data, raw)).layout_proof()
++        self.assertEqual(proof["sparse_accessors"], 1)
++        self.assertEqual([v["role"] for v in proof["views"]][-2:], ["sparse_indices", "sparse_values"])
++        for indices in ((0, 0), (0, 3)):
++            data, raw = sparse_fixture(indices)
++            with self.assertRaises(ValueError):R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_valid_explicit_interleaved_stride_proved(self):
++        data, raw = interleaved_fixture();proof = R.GLB(glb_document(data, raw)).layout_proof()
++        self.assertEqual(proof["views"][0]["byte_stride"], 24)
++        self.assertEqual(proof["views"][0]["accessors"], [0, 6])
++        self.assertEqual(R.GLB(glb_document(data, raw)).accessor(0)[0], (1., 0., 0.))
++
++    def test_shared_distinct_vertex_accessors_without_stride_refused(self):
++        data, raw = fixture();data["accessors"].append(copy.deepcopy(data["accessors"][0]))
++        data["meshes"][0]["primitives"][0]["attributes"]["NORMAL"] = 6
++        with self.assertRaisesRegex(ValueError, "Shared vertex accessors require explicit stride"):
++            R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_invalid_stride_type_range_alignment_and_element_size_refused(self):
++        for stride in (0, 3, 6, 8, 256, True, "12"):
++            with self.subTest(stride=stride):
++                data, raw = fixture();data["bufferViews"][0]["byteStride"] = stride
++                with self.assertRaises(ValueError):R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_stride_on_nonvertex_role_refused(self):
++        data, raw = fixture();data["bufferViews"][5]["byteStride"] = 64
++        with self.assertRaisesRegex(ValueError, "Declared stride role"):
++            R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_mixed_vertex_and_nonvertex_buffer_view_refused(self):
++        data, raw = fixture();data["skins"][0]["inverseBindMatrices"] = 0
++        with self.assertRaises(ValueError):R.GLB(glb_document(data, raw)).layout_proof()
++        data, raw = fixture();data["images"] = [{"bufferView": 0, "mimeType": "image/png"}]
++        with self.assertRaisesRegex(ValueError, "Buffer view mixed roles"):
++            R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_sparse_views_forbid_both_stride_and_target(self):
++        for member in (-2, -1):
++            for key, value in (("byteStride", 4), ("target", 34962)):
++                with self.subTest(member=member, key=key):
++                    data, raw = sparse_fixture();data["bufferViews"][member][key] = value
++                    with self.assertRaisesRegex(ValueError, "Sparse packed role/bounds"):
++                        R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_sparse_and_dense_component_alignment_refused(self):
++        data, raw = sparse_fixture();data["accessors"][0]["sparse"]["values"]["byteOffset"] = 1
++        with self.assertRaisesRegex(ValueError, "Sparse component alignment"):
++            R.GLB(glb_document(data, raw)).layout_proof()
++        data, raw = fixture();data["accessors"][0]["byteOffset"] = 2
++        with self.assertRaisesRegex(ValueError, "Accessor component alignment"):
++            R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_vertex_element_stride_must_be_four_aligned(self):
++        data, raw = fixture();a=data["accessors"][2];a["componentType"]=5121;a["type"]="VEC3"
++        with self.assertRaises(ValueError):R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_optional_target_must_match_actual_role(self):
++        for view, target in ((0, 34963), (4, 34962), (5, 34962)):
++            with self.subTest(view=view):
++                data, raw = fixture();data["bufferViews"][view]["target"] = target
++                with self.assertRaisesRegex(ValueError, "target/role mismatch"):
++                    R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_unsupported_binary_extension_and_matrix_packing_refused(self):
++        data, raw = fixture();data["extensionsUsed"] = ["future_binary_layout"]
++        with self.assertRaisesRegex(ValueError, "Extension-defined layout"):
++            R.GLB(glb_document(data, raw)).layout_proof()
++        data, raw = fixture();data["accessors"][5]["componentType"] = 5123
++        with self.assertRaisesRegex(ValueError, "matrix component packing"):
++            R.GLB(glb_document(data, raw)).layout_proof()
++
++    def test_proof_refuses_payload_extent_overrun(self):
++        data, raw = fixture();data["bufferViews"][0]["byteLength"] -= 1
++        with self.assertRaisesRegex(ValueError, "Layout accessor bounds"):
++            R.GLB(glb_document(data, raw)).layout_proof()
++
++
+ class DriverControls(unittest.TestCase):
+     @classmethod
+     def setUpClass(cls):
+@@ -365,6 +462,64 @@
+                 if key == "missing_protected":
+                     self.assertIn("ValueError: Required file missing:", next(iter(result["gates"]["protected_originals_runtimes_candidate"]["files"].values()))["error"])
+ 
++    def test_exact_verbose_line_classified_only_after_layout_proof(self):
++        line = D.PACKED_VERTEX_VERBOSE_LINE
++        log = "ordinary log\n"+line+"\n"+line+"\n"
++        result = D.classify_log(log, True)
++        self.assertEqual(result["classified_packed_vertex_verbose"]["count"], 2)
++        self.assertEqual(result["classified_packed_vertex_verbose"]["line_numbers"], [2, 3])
++        self.assertFalse(result["forbidden_log_markers"]);self.assertFalse(result["raw_log_modified"])
++        for unproved in (False, None, 1):
++            self.assertTrue(D.classify_log(log, unproved)["forbidden_log_markers"])
++
++    def test_warning_lookalikes_and_other_failures_are_not_classified(self):
++        line = D.PACKED_VERTEX_VERBOSE_LINE
++        for bad in (" "+line, line+" ", line+" extra", line.replace("packed", "unsafe"), line.lower(),
++                    "WARNING: other import warning", "ERROR: importer refused", "warning: lowercase", "FAIL predicate", "ObjectDB instances leaked"):
++            with self.subTest(bad=bad):
++                result = D.classify_log(bad, True)
++                self.assertTrue(result["forbidden_log_markers"])
++                self.assertEqual(result["classified_packed_vertex_verbose"]["count"], 0)
++        self.assertTrue(D.classify_log(line+"\nWARNING: a second diagnostic", True)["forbidden_log_markers"])
++
++    def test_layout_proof_rechecked_against_actual_bytes_and_manifest(self):
++        data, raw = fixture();raw = glb_document(data, raw);proof = R.GLB(raw).layout_proof()
++        folder = self.folder / "layout-inputs";cases=[]
++        for index in range(12):
++            key="case-"+str(index);target=folder / "inputs" / key;target.mkdir(parents=True)
++            (target / "scene.glb").write_bytes(raw)
++            cases.append({"key":key,"glb_sha256":R.sha(raw),"independent_layout":copy.deepcopy(proof)})
++        m={"run_folder":str(folder),"cases":cases}
++        self.assertTrue(D.verify_layout_proofs(m)["passed"])
++        m["cases"][4]["independent_layout"]["packed_vertex_views"] += 1
++        with self.assertRaisesRegex(ValueError, "layout proof differs"):D.verify_layout_proofs(m)
++        m["cases"][4]["independent_layout"] = copy.deepcopy(proof)
++        (folder / "inputs/case-4/scene.glb").write_bytes(raw+b"changed")
++        with self.assertRaisesRegex(ValueError, "input hash differs"):D.verify_layout_proofs(m)
++
++    def test_relative_manifest_is_normalized_before_first_preflight(self):
++        relative = Path("output") / D.TASK.name / "cpu-fixtures/manifest.json"
++        actual = D.normalize_manifest_argument(relative)
++        self.assertTrue(actual.is_absolute());self.assertEqual(actual, Path(os.path.abspath(relative)))
++        source=(D.TASK / "source/probe_driver.py").read_text()
++        self.assertLess(source.index("args.manifest = normalize_manifest_argument(args.manifest)"), source.index("m = preflight(args.manifest"))
++        self.assertNotEqual(str(actual), str(relative))  # Old relative forwarding is distinguishable.
++        with self.assertRaises(ValueError):D.owned(D.normalize_manifest_argument(D.TASK / ".." / "outside.json"))
++
++    def test_studio_lighting_is_ordinary_and_precedes_import_history_baseline(self):
++        source=(D.TASK / "source/app_probe.gd").read_text()
++        writer=source.split("func _writer(",1)[1].split("func _reader(",1)[0]
++        self.assertLess(writer.index("_app.new_project()"),writer.index("_app.lighting_choice.select(2);_app.change_lighting(2)"))
++        self.assertLess(writer.index("_app.change_lighting(2)"),writer.index("var before: Dictionary=World.portable"))
++        self.assertIn('"lighting_mode","")=="studio"',source)
++        self.assertIn("_app.renderer.studio_light.visible",source)
++        self.assertIn('expected.video.get("lighting_mode","")=="studio"',source)
++        self.assertIn("_normal(_app.video)==expected.video",source)
++        self.assertIn("int(content.significant_content_samples)>100",source)
++        raw=(D.TASK / "source/raw_probe.gd").read_text()
++        self.assertIn("const TOLERANCE:=0.0002",raw)
++        self.assertLess(raw.index("if args.size()!=3"),raw.index("FileAccess.file_exists(args[0])"))
++
+     def test_private_isolation_fails_closed_for_every_required_field(self):
+         good = {"exit": 0, "child_desktop_confirmed": True, "foreground_child_observed": False,
+                 "job_closed": True, "desktop_closed": True}

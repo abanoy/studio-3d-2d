@@ -1,0 +1,101 @@
+{
+  "format": "has_unshipped_wind_checkpoint_1",
+  "base_commit": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "files": {
+    "overlay/src/app.gd": {
+      "sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+      "bytes": 146668
+    },
+    "overlay/src/has_project.gd": {
+      "sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+      "bytes": 14515
+    },
+    "overlay/src/physics_editor.gd": {
+      "sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+      "bytes": 22236
+    },
+    "overlay/src/physics_recording.gd": {
+      "sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "bytes": 19381
+    },
+    "overlay/src/pose_editor.gd": {
+      "sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+      "bytes": 48421
+    },
+    "overlay/src/renderer.gd": {
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "bytes": 15232
+    },
+    "overlay/src/secondary_spring.gd": {
+      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "bytes": 9592
+    },
+    "overlay/src/wind_review.gd": {
+      "sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+      "bytes": 17875
+    },
+    "overlay/src/wind_review_groups.gd": {
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "bytes": 8617
+    },
+    "overlay/tests/wind_review_unit.gd": {
+      "sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+      "bytes": 16726
+    },
+    "overlay/tests/wind_review_hooks_unit.gd": {
+      "sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+      "bytes": 6527
+    },
+    "overlay/tests/wind_review_review_unit.gd": {
+      "sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+      "bytes": 9660
+    },
+    "overlay/tests/wind_review_gpu_common.gd": {
+      "sha256": "cc308e65dd7b7234ec5ee6c03d766505750124cd0f5902a4a5d1838672376ff7",
+      "bytes": 9694
+    },
+    "overlay/tests/wind_review_gpu_motion.gd": {
+      "sha256": "9aa3555c29068e94071c9b9139325b17c2b1d8a98a36a3116f007202058ff0f4",
+      "bytes": 8182
+    },
+    "overlay/tests/wind_review_gpu_lifecycle.gd": {
+      "sha256": "bb36e9166040cb0f72fc08382948c1923268dbc636770e4b2ef11fe30ff8a814",
+      "bytes": 11999
+    },
+    "overlay/tests/wind_review_gpu_primary.gd": {
+      "sha256": "170966b5365aa60ad822c315a0b3841d92793f95b82af91b8b4465a063f26277",
+      "bytes": 6047
+    },
+    "reference/PLAN.md": {
+      "sha256": "d0edda3588e73c3d1beb5916b107a2fee69d9c4f45cf78291565626c7239b02d",
+      "bytes": 4275
+    },
+    "reference/PLAN-PHASE2.md": {
+      "sha256": "57970b9ff312c451e068d75947b8e5c009a0a464558f1bbede772029276c7a27",
+      "bytes": 9938
+    },
+    "reference/GPU-PLAN.md": {
+      "sha256": "9273a8198f3f6a7859208b696c385a1e310fe9c5a29969b3372e29978f5b9f93",
+      "bytes": 7043
+    },
+    "reference/REVIEW.md": {
+      "sha256": "9f1cc86c22032cb01353886e2baefcb102a5b7cb38ddc2eea1e594ab0de03a87",
+      "bytes": 8126
+    },
+    "reference/verify_gpu.py": {
+      "sha256": "c046b1cec6cc3465594dadcd5afd48a93f6b84b392e18e491df433b32d228c73",
+      "bytes": 13440
+    }
+  },
+  "status": "Not installed in the active application; no graphical body has run.",
+  "headless_checks": 94,
+  "headless_failures": 0,
+  "same_oracle_old_source": {
+    "checks": 29,
+    "failures": 21
+  },
+  "gpu_harness_scripts_parsed": 4,
+  "gpu_jobs_unrun": 6,
+  "limits": "Headless state/callback/scope checks only; fake renderer deliberately records whether pixels would be read. No actual GPU pixels, Windows cursor movement, native displayed motion, movie or owner acceptance.",
+  "source_scope": "Source code and metadata only; no native art or project payloads."
+}

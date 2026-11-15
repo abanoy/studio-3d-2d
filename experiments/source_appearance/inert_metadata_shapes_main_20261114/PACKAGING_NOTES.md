@@ -1,0 +1,1 @@
+The first publication recipe refused the top-level private tone.wav because the metadata allowlist correctly rejected audio; no product or native test failed. The partial output/sfm-extra-main-publication-20261114 folder remains local. The corrected v2 recipe filters top-level inputs before retaining them and includes no media.

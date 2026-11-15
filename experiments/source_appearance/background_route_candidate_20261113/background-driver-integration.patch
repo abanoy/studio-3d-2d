@@ -1,0 +1,154 @@
+--- frozen-d8749db/conversion_driver.py
++++ candidate/background_conversion_driver.py
+@@ -1,4 +1,4 @@
+-"""Serial, output-only native appearance verification. Default is preflight.
++"""Explicit background conversion candidate with dual self-attestation. Default is preflight.
+ 
+ Real conversion requires root-reviewed input lock, --run-conversions and
+ --lease-confirmed. No app/GPU rendering, adoption, network or installation.
+@@ -17,6 +17,7 @@
+ sys.dont_write_bytecode = True
+ import stage_resources as S
+ import secondary_helpers as H
++import background_route as BG
+ 
+ TASK, ROOT = S.TASK, S.CHECKOUT
+ PROTOTYPE = ROOT / "output/source-appearance-prototype/Studio"
+@@ -179,9 +180,8 @@
+             "--workshop", str(case / "absent-workshop")]
+     if row["request"]:
+         args += ["--appearance", row["request"]]
+-    private = [str(PYTHONW), str(PRIVATE), "--receipt", str(case / "private-receipt.json"),
+-               "--timeout", "700", "--cancel-file", str(case / "cancel.flag"), "--", *args]
+-    return case, bundle, args, private
++    # A fresh nonce/control hash is materialized by BG.prepare only on execution.
++    return case, bundle, args, None
+ 
+ 
+ def verify_conversion_request(bundle, row, case):
+@@ -397,15 +397,9 @@
+             "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."}
+ 
+ 
+-def private_ok(receipt, expected_exit):
+-    S.require(receipt.get("format") == "studio_private_desktop_1" and receipt.get("exit") == expected_exit
+-              and receipt.get("child_desktop_confirmed") and not receipt.get("foreground_child_observed", True)
+-              and receipt.get("job_closed") and receipt.get("desktop_closed") and not receipt.get("error")
+-              and not receipt.get("desktop_switch_requested", True), "Private child/process-tree receipt is not clean")
+-
+-
+-def refused(code, receipt, bundle, log):
+-    private_ok(receipt, 1)
++def refused(code, receipt, bundle, log, isolation):
++    S.require(isolation.get("passed") and isolation.get("expected_worker_exit") == 1 and receipt.get("exit") == 1,
++              "Expected refusal lacks verified dual background attestation")
+     worker_log = bundle / "conversion.log"
+     S.require(code == 1 and worker_log.is_file() and worker_log.stat().st_size <= 32 * 1024 * 1024, "Expected refusal process/log absent")
+     text = worker_log.read_text(encoding="utf-8", errors="replace")
+@@ -450,11 +444,17 @@
+         source = PROTOTYPE / name
+         files[str(source)] = S.identity(source)
+         S.require(files[str(source)]["sha256"] == digest, "Prototype worker differs from frozen reviewed source")
++    for source in BG.REQUIRED_SOURCES:
++        files[source] = S.identity(Path(source))
++    for source in [TASK / "source/test_background_route.py", TASK / "source/test_background_driver.py"]:
++        files[str(source)] = S.identity(source)
++    background_sources = BG.source_observation({source: files[source]["sha256"] for source in BG.REQUIRED_SOURCES})
+     members = sorted(Path(source).relative_to(TASK / "stage").as_posix() for source in files if Path(source).is_relative_to(TASK / "stage"))
+     S.require(len(members) == 296, "Exact staged inventory required")
+     verify_stage_members(TASK / "stage", members)
+-    lock = {"format": "has_sfm_serial_conversion_input_lock_2", "root_revision": revision, "files": files,
+-            "staged_members": members,
++    lock = {"format": "has_sfm_serial_conversion_input_lock_3", "root_revision": revision, "files": files,
++            "staged_members": members, "background_sources": background_sources,
++            "background_protocol": "independent Python and Blender WinAPI self-attestation; original private receipt remains unchanged",
+             "root_functional": functional(ROOT), "prototype_functional": functional(PROTOTYPE), "sourceio_tree": runtime_tree(SOURCEIO),
+             "schedule": rows, "cases": plan["cases"], "native": expected_native,
+             "native_closure": {row["case"]: row for row in closure["cases"]},
+@@ -464,37 +464,14 @@
+ 
+ 
+ def check_lock(lock):
+-    S.require(lock["format"] == "has_sfm_serial_conversion_input_lock_2", "Input-lock schema changed; prepare a fresh reviewed lock")
++    S.require(lock["format"] == "has_sfm_serial_conversion_input_lock_3", "Input-lock schema changed; prepare a fresh reviewed lock")
+     S.require(head() == lock["root_revision"], "Root revision changed")
+     verify_stage_members(TASK / "stage", lock["staged_members"])
++    BG.source_observation(lock["background_sources"])
+     changes = [source for source, value in lock["files"].items() if S.identity(Path(source)) != value]
+     S.require(not changes, "Protected input/tool/source changed: " + str(changes[:3]))
+     S.require(functional(ROOT) == lock["root_functional"] and functional(PROTOTYPE) == lock["prototype_functional"]
+               and runtime_tree(SOURCEIO) == lock["sourceio_tree"], "Functional source/pinned runtime tree changed")
+-
+-
+-def run_child(args, case, bundle, environment):
+-    S.require(os.name == "nt", "Conversion execution requires approved Windows private desktop")
+-    with (case / "process.log").open("x", encoding="utf-8") as log:
+-        process = subprocess.Popen(args, cwd=PROTOTYPE, env=environment, stdin=subprocess.DEVNULL,
+-                                   stdout=log, stderr=subprocess.STDOUT, creationflags=subprocess.CREATE_NO_WINDOW)
+-        start = time.monotonic()
+-        try:
+-            while process.poll() is None:
+-                excessive = any(path.exists() and path.stat().st_size > maximum for path, maximum in
+-                                [(case / "process.log", 16 * 1024 * 1024), (bundle / "conversion.log", 32 * 1024 * 1024)])
+-                if excessive or time.monotonic() - start > 720:
+-                    (case / "cancel.flag").write_text("Owned driver timeout/log budget; cancel this private job only.\n")
+-                    try: process.wait(timeout=15)
+-                    except subprocess.TimeoutExpired: process.kill(); process.wait(timeout=5)
+-                    raise ValueError("Owned converter exceeded time/log budget; partial evidence retained")
+-                time.sleep(.1)
+-            return process.returncode, time.monotonic() - start
+-        finally:
+-            if process.poll() is None:
+-                (case / "cancel.flag").write_text("Owned driver stopping; cancel this private job only.\n")
+-                try: process.wait(timeout=10)
+-                except subprocess.TimeoutExpired: process.kill(); process.wait(timeout=5)
+ 
+ 
+ def main(argv=None):
+@@ -525,9 +502,10 @@
+     rows = lock["schedule"]
+     S.require([(row["case"], row["variant"]) for row in rows] == ORDER, "Frozen schedule differs")
+     candidate = [{"case": row["case"], "variant": row["variant"], "expected_success": row["expected_success"],
+-                  "native_command": commands(row, index, run)[2], "private_command": commands(row, index, run)[3]} for index, row in enumerate(rows)]
++                  "native_command": commands(row, index, run)[2], "private_command": None,
++                  "background_protocol": "Fresh per-case nonce/control materializes only on explicit execution; dual independent self-attestation required."} for index, row in enumerate(rows)]
+     S.save(run / "candidate-commands.json", candidate)
+-    report = {"format": "has_sfm_serial_native_conversion_1", "input_lock": str(lock_path), "lock_sha256": options.lock_sha256,
++    report = {"format": "has_sfm_serial_native_conversion_background_1", "input_lock": str(lock_path), "lock_sha256": options.lock_sha256,
+               "root_revision": lock["root_revision"], "mode": "execute" if options.run_conversions else "preflight-only",
+               "results": [], "all_fourteen_passed": False, "run": str(run), "passed": False,
+               "app_gpu_render_or_native_fidelity_acceptance": False, "automatic_cleanup": False}
+@@ -552,23 +530,29 @@
+                     path = case_folder / relative
+                     path.mkdir(exist_ok=True)
+                     environment[name] = str(path)
++                launch = BG.prepare(case_folder, native_args, lock["files"], lock["root_revision"], options.lock_sha256, BG.Win.capture_self())
++                private_args = launch["private_command"]
+                 S.save(case_folder / "command.json", {"native": native_args, "private_wrapper": private_args,
++                                                       "background_request_sha256": launch["request_sha256"],
+                                                        "owned_environment": {key: value for key, value in environment.items() if value.startswith(str(case_folder))},
+                                                        "creationflags": "CREATE_NO_WINDOW outer launcher; private wrapper creates suspended CREATE_NO_WINDOW child and kill-on-close job"})
+-                code, seconds = run_child(private_args, case_folder, bundle, environment)
++                code, seconds = BG.run_outer(launch, case_folder, bundle, environment, lease_confirmed=options.lease_confirmed)
+                 S.save(case_folder / "exit.json", {"exit": code, "seconds": seconds})
+                 log = (case_folder / "process.log").read_text(encoding="utf-8", errors="replace")
+                 receipt = read_json(case_folder / "private-receipt.json")
++                isolation = BG.verify_case(case_folder, launch, 0 if row["expected_success"] else 1, BG.Win.system_filetime())
++                S.save(case_folder / "background-isolation-verification.json", isolation)
+                 case = cases[row["case"]]
+                 _, mounts = verify_conversion_request(bundle, row, case)
+                 result = {"case": row["case"], "variant": row["variant"], "expected_success": row["expected_success"], "exit": code,
+-                          "seconds": seconds, "folder": str(case_folder), "passed": False}
++                          "seconds": seconds, "folder": str(case_folder), "passed": False,
++                          "background_isolation_receipt": S.identity(case_folder / "background-isolation-verification.json")}
+                 if not row["expected_success"]:
+-                    refused(code, receipt, bundle, log)
++                    refused(code, receipt, bundle, log, isolation)
+                     result["explicit_all_blank_refusal"] = True
+                 else:
+                     S.require(code == 0 and "Prepared:" in log, "Native conversion failed or completion marker absent")
+-                    private_ok(receipt, 0)
++                    S.require(isolation["passed"] and isolation["expected_worker_exit"] == 0, "Background isolation did not verify")
+                     parameters = read_json(bundle / "parameters.json")
+                     native = lock["native"][row["case"]]
+                     active = verify_parameters(parameters, row, case, native)

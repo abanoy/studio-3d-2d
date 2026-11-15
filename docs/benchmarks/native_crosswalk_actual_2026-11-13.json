@@ -1,0 +1,54 @@
+{
+  "format": "has_native_crosswalk_actual_qualification_1",
+  "date": "2026-11-13",
+  "source_commit": "80a1e557512902b29b5fb95b3152bb4284fdf55e",
+  "source_context": "diagnostic_overlay_not_main_port",
+  "status": "PASSED_ACTUAL_HEADLESS_BLENDER_EXPORT",
+  "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+  "native_bones": 69,
+  "native_rest_float32_words": 483,
+  "jiggle_float32_values": 1421,
+  "maximum_rest_matrix_error": 5.668355022803162e-06,
+  "matrix_admission_bound": 2e-05,
+  "raw_GLB_bytes_equal": true,
+  "GLB_bytes": 2322644,
+  "meshes": 2,
+  "primitives": 4,
+  "scene_nodes_reachable": 72,
+  "skins": 1,
+  "locked_files": 1886,
+  "functional_main_sources": 996,
+  "protected_inputs_and_runtime_preserved": true,
+  "production_parameters_augmented": false,
+  "dual_background_attestation": true,
+  "graphical_monitor_flags": "Retained false; CPU background protocol is the actual isolation proof",
+  "evidence": "experiments/source_appearance/native_crosswalk_actual_20261114",
+  "evidence_index_sha256": "efc4d4b0685245d899b3621057c3b37c7038c616b15f6e635cd8021e953f433d",
+  "private_diagnostics": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\diagnostics\\crosswalk-proof.json",
+      "bytes": 70416,
+      "sha256": "43f21333ba2bba49bdd8d084ed00bf3c07635293c393310e9faa252d15986741",
+      "retained_local": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\current-fingerprints.json",
+      "bytes": 958006,
+      "sha256": "f43c53b85006d098eaec3c19db33fdedae20ba82c3a0022e245cbda3f8a7ebec",
+      "retained_local": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\crosswalk-qualification-20261114T0240\\case-junko-default\\baseline-fingerprints.json",
+      "bytes": 958006,
+      "sha256": "f43c53b85006d098eaec3c19db33fdedae20ba82c3a0022e245cbda3f8a7ebec",
+      "retained_local": true
+    }
+  ],
+  "next": "Port compact crosswalk to bounded normal report and resolve exact glTF-node to HAS joint IDs; then validate neutral/posed state and ordinary helper workflow",
+  "limits": [
+    "Restricted SHA/factory/exporter-pinned Junko case; no generic all-model claim",
+    "Main integration, HAS binding, app/cold replay and native solver UNRUN",
+    "Full default retry remains required after audio-independent selection fix",
+    "No raw rig/mesh/media/runtime payload published; source/input originals protected"
+  ]
+}

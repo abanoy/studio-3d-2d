@@ -45,7 +45,7 @@ func pixels(a: Image,b: Image) -> Dictionary:
 func run() -> void:
 	var folder:=ProjectSettings.globalize_path("res://output/physics/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
 	var asset:=folder.path_join("arm.glb");Fixture.create(asset);var digest:=FileAccess.get_sha256(asset)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache");app.load_demo_room()
 	var data:=Model.definition(asset);data.position=[0,3,0];app.append_object(data,"model")
 	var actor: RefCounted=app.renderer.active_model();var id: String=actor.data.id;var physics=app.physics_editor
@@ -130,8 +130,12 @@ func run() -> void:
 	var bend: float=absf(simulation.pose()[actor.order[1]].rotation_xyzw[3])
 	print("GRAB_BEND ",JSON.stringify({"peak_change_degrees":rad_to_deg(2*acos(clampf(peak_bend,0,1))),"end_offset_degrees":rad_to_deg(2*acos(clampf(bend,0,1)))}))
 	check(peak_bend<cos(deg_to_rad(5)*0.5),"live dragging bends an articulated joint by more than five degrees")
+	app.canvas_input(motion,point+Vector2(180,-160))
+	for i in range(12):await physics_frame
+	var throwing_velocity: Vector3=grabbed_body.linear_velocity
 	var release:=InputEventMouseButton.new();release.button_index=MOUSE_BUTTON_LEFT;release.pressed=false;release.position=Vector2(-30,-30)
 	app._input(release);check(not physics.grabbing() and physics.grab_joint==null and physics.active(id),"release outside the viewport removes the grab constraint while live physics continues")
+	check(throwing_velocity.length()>0.1 and grabbed_body.linear_velocity.is_equal_approx(throwing_velocity),"release retains actual drag velocity to throw without keying the model")
 	point=app.renderer.camera.unproject_position(grabbed_body.global_position);app.canvas_input(press,point);await settled()
 	var held_before_escape: bool=physics.grabbing()
 	var escape:=InputEventKey.new();escape.keycode=KEY_ESCAPE;escape.pressed=true;app._input(escape)
@@ -225,9 +229,25 @@ func run() -> void:
 		vrm_samples.append(name)
 	var no_rig:=Model.new()
 	check(PhysicsRig.create(no_rig).has("error"),"unrigged props get an actionable fallback rather than an invalid ragdoll")
+	actor=app.renderer.active_model()
 	var sk: Skeleton3D=actor.bones[actor.order[0]].skeleton;var previous_scale:=sk.scale;var children:=sk.get_child_count();var unchanged: Dictionary=actor.data.duplicate(true)
 	sk.scale=Vector3(1,2,1);var unsupported:=PhysicsRig.create(actor);sk.scale=previous_scale
 	check(unsupported.has("error") and sk.get_child_count()==children and actor.data==unchanged,"unsupported skeleton scale fails without adding bodies or changing authored data")
+	app.new_project();app.load_demo_room()
+	var reset_data:=Model.definition(asset);reset_data.position=[0,3,0];app.append_object(reset_data,"model")
+	actor=app.renderer.active_model();var reset_id: String=actor.data.id
+	physics.toggle.button_pressed=true;await settled()
+	for i in range(90):await physics_frame
+	physics.toggle.button_pressed=false;await settled()
+	app.pose_editor.auto_key.button_pressed=false
+	var frozen_reset: Dictionary=actor.data.duplicate(true);var reset_shots: Array=app.keys.duplicate(true);var reset_history: int=app.history.size()
+	check(not frozen_reset.pose.is_empty() and frozen_reset.pose_keys.is_empty(),"context reset starts from a real frozen unrecorded ragdoll")
+	app.world_selection.context_action(1);await settled();actor=app.renderer.world_runtime.instance(reset_id)
+	check(actor.data.pose.is_empty() and actor.data.pose_keys.is_empty() and not physics.is_running() and app.history.size()==reset_history+1,"Simple object context Reset pose restores rest pose as one undoable action without recording")
+	app.undo();await settled();actor=app.renderer.world_runtime.instance(reset_id)
+	check(actor.data==frozen_reset and app.keys==reset_shots,"Undo context reset restores the exact frozen pose and leaves camera keys unchanged")
+	app.redo();await settled();actor=app.renderer.world_runtime.instance(reset_id)
+	check(actor.data.pose.is_empty() and actor.data.pose_keys.is_empty() and FileAccess.get_sha256(asset)==digest,"Redo context reset preserves original rig and creates no motion take")
 	var result:={"checks":checks,"failures":failures,"folder":folder,"movie":movie,"project":project,"floor_min":low,"floor_max":high,"skin_min":mesh_low,"reimport_pixels":rebuilt,"native_samples":native_samples,"native_metrics":native_metrics,"vrm_samples":vrm_samples,"wall_z":closest}
 	var file:=FileAccess.open("res://output/physics-result.json",FileAccess.WRITE);file.store_string(JSON.stringify(result));file.close()
 	print("PHYSICS_SMOKE "+JSON.stringify(result));app.free();quit(0 if failures==0 else 1)

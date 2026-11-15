@@ -1,0 +1,23 @@
+{
+  "format": "has_source_choices_native_fresh_admission_1",
+  "schema": "Only declared case control fields and explicit resource_root are admitted. Extra supplied original SHA/resource-lock fields are preserved in input-manifest.json but are not treated as historical pins.",
+  "fresh_full_resource_tree_hashes": "originals-before.json",
+  "per_case_expected_checks": {
+    "junko_main-default-no-appearance": 25,
+    "junko_main-skin-15": 28,
+    "junko_main-skin-15-belt-off": 28,
+    "junko_hair-default-no-appearance": 25,
+    "junko_hair-hat-off": 28,
+    "mima_body-default-no-appearance": 25,
+    "mima_body-skin-3": 30,
+    "mima_body-skin-3-socks-off": 30,
+    "kanako_props-default-no-appearance": 25,
+    "kanako_props-bat-left-off": 30,
+    "kanako_props-all-blank-refusal": 12
+  },
+  "writer_expected_checks": 287,
+  "reader_expected_checks": {
+    "without_movie": 30,
+    "with_movie": 34
+  }
+}

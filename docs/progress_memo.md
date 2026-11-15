@@ -13276,3 +13276,1546 @@ Curated background_manual_saves receipt/docs/ledger updated;48/54implemented and
 Automation repetition was stopped using goal control per saved goal; owner
 explicitly requested continue working, so resumed actual verification/documentation.
 Next initialOpen responsiveness with transactional main-thread adoption.
+
+
+## 2026-11-07 UTC — private CPU loading for ordinary HAS Open
+
+Open now joins private low-priority manifest/dependency/PNG/audio loading before
+main-thread transactional scene installation. Same decoder/installer for direct
+directory/recovery; original schemas/ownership/linked/backup/practice semantics
+preserved. Cancel checks between cels/stages, session/owner/revision stale guards,
+shutdownjoin, separate600sdecode/120sextraction. Actual400Open12checks pass:23.888s
+total/23.098sworker/111.254msinstall/793appframes/maxgap177.728ms;400pixelhashes and
+exactGPU137 match independent saved fixture. Cancel/corrupt/newer-edit/New preserve
+current identity/content/source. SeparateGodotRSS469.9MB/HWM472.7MB notwholeRAM.
+Save76/nestedreference70/settings49 regressions pass with packed/linked/offline
+readers, realcrash/normalstartup and48/61frameH264AAC outputs. Editor parse attempt
+scanned generated assets; stopped only owned editor, removed its528untrackedUIDs;
+directscript parse/app checks passed. No incidental outputs committed. Receipt
+background_project_open_2026-11-07.json/docs/checklist updated. Scores unchanged.
+Owner reiterated implementation completion priority; next safe cache lifecycle
+while retaining source dependencies/liveprocess data and original resource guards.
+
+
+## 2026-11-07 UTC — helper-bearing semantic limb IK
+
+Removed direct-parent-only restriction on mapped arm/leg joints: up to8fixed
+helpers per segment retain authored local transforms while solved semantic joints
+convert through actual parents. Same-skeleton/topology/regular-scale checks and
+direct-chain arithmetic remain. No helper keys, anatomy or twist inference added.
+Actual helper/direct fixtures35checks each pass fourlimbtargets/orientation/helper
+identity, handgizmoUndoRedo, rootcrouch/twofeet/UndoRedo, visible skin deformation,
+sourceoffline packed exactFK/GPU, backgroundcheckpoint and48frame1080p24H264 exact
+input. Shared43check walking evaluator passes straight/bend/turn tolerances.
+Fixture failures retained: imported skeleton rename, missing current-frame draft,
+defaultcamera1ulp JSONroundtrip, outofview default importplacement. Fixed fixture
+via skeleton-type lookup/normaldraft/exactauthoredcamera/actualnumericoriginPose;
+no tolerances weakened. Receipt helper_limb_ik_2026-11-07.json. POSE03 stillpartial
+for broadernative/wholebody coverage; no native or artist completion claimed.
+User prioritizes implementation completion. Next reassess required partial gaps
+against actual decided scope, avoiding optional feature expansion or repeated tests.
+
+
+## 2026-11-07 UTC — preserve static Source entity lights
+
+Source bridge previously excluded all LIGHT objects and GLB light export. New
+bounded pure planner and real Blender emitter preserve static point/spot/sun
+origins/directions/linearcolors/scale as GLB punctual lights, with approximate
+intensity/attenuation. Off/style/unsupported diagnostics, malformed/range/64light
+refusal, no entity programs or gameplay execution. Full original entities and
+prepared inventory retained; game installation preflight unchanged.
+Nine Python planner tests and9actual private Studio checks pass after realBlender
+4.3.2export; GLB axes/colors/types/cones checked, Lit/Unshaded/Undo/sourceoffline
+packed/recovery/independentcel/exact48frame1080p24H264 input verified. Optional
+Draco missing; ordinary uncompressedGLB succeeds. Initialharness Image inference
+parse fixed explicitly; no assertions weakened. Full nativeBSP/SourceIO/GMod
+fixture remains unrun; bakedlightmap/ambientHDR/nativephotometry unsupported.
+Receipt source_entity_lights_2026-11-07.json and docs/ledger updated, partialnative
+coverage remains honest. Owner packaging decision requested asynchronously while
+independent implementation proceeds; no format choice imposed.
+
+
+## 2026-11-07 UTC — reclaim expired proven-owned recovery blobs
+
+Capture prior retained payload inventory, commit project+journal, then retire only
+formerly referenced content-addressed files absent from both catalog roots and
+current/backup generations. Check process owner, all referenced metadata/hashes,
+path safety and stable new metadata; skip corruption/foreign/link/unknown cases.
+No arbitrary orphan sweep or other-session deletion. Cleanup stays in ordinary
+serialized checkpoint worker; failed deletion cannot invalidate valid publication.
+25changing pixel/geometry generations retain13PNG/13GLB with all retained states
+opening and25originals exact.37retention+33journal checks pass incl actualsymlink,
+unknownhashfiles, corruptbackup, foreignowner, escapes, nested/audio/effect/refroots.
+96background writer/app/preview/schedule and70nestedreference/realcrash/cold/startup/
+lesson/media checks pass. Receipt recovery_blob_retention_2026-11-07.json. Existing
+512MiBroot limit retained; globalorphan/concurrentwhole-rootquota remain separate.
+BaselineMarkdown stale2closures corrected to current4; scores48/54and4/62unchanged.
+Next remaining decided implementation gaps; packaging choice awaits owner reply.
+
+
+## 2026-11-07 UTC — independent model/map sharing in existing HAS
+
+Owner explicitly chose reuse of the existing .has container. Implemented portable
+independent model/map packages with strict purpose/header/inventory validation,
+background export/import, Simple World save action and ordinary Add model/Add scene
+picker routes. New independent object identity, one Undo, exact authored timing,
+dependencies/native provenance preserved; scene paint/camera/settings/identity and
+dirty/recovery state unchanged. Refuse current-scene overwrite, grouped roots,
+wrong roles, ordinary scene import and incompatible animated timing before append.
+74package checks pass with actual UI, source/cache-offline fresh reader and real
+48frame1080p24H264. Ordinary background save76checks and nested reference70checks
+(including real crash/cold startup/media) pass on private displays. Development
+fixture hash/Array inference failures corrected before final runs; final receipts
+have no script errors. Original canonical fixtures do not certify broader native
+ecosystem fidelity or Windows. docs/asset_packages.md and evidence receipt added.
+STORE-02 implemented, D-PACKAGING resolved; coverage49/54(90.74%), formal4/62
+(6.45%) pending committed full-condition review. Goal remains finish implementation.
+
+
+## 2026-11-07 UTC — independent package acceptance review
+
+Reviewed STORE-02 against committed bdc5cbaae7496891a2f2a8adae9bcb88a33a9a27 evidence: canonical HAS model
+and map independently package/import/reuse with dependencies/provenance, no external
+exporter.74checks plus76save/70reference regressions satisfy this software condition.
+Formal closure5/62(8.06%); implementation49/54(90.74%). Broader native fidelity and
+Windows target acceptance remain separate open gates; no fixture equivalence claimed.
+
+
+## 2026-11-07 UTC — walking under stationary parent hierarchies
+
+Removed blanket grouped-character refusal. Validate complete stationary authored
+ancestor roots with procedural parent assistance off; establish authored transforms
+before detached world preflight. Supports nested translated/yawed/positive-uniform
+parents; animated/tilted/assisted ancestors refuse before installation. Existing
+source/binding/parent-change guards remain.97nested-parent world-space samples
+pass unchanged0.2mm threshold(max0.000177715m), with negative parent fixtures and
+old world/camera unchanged. Grouped and ordinary bent/turning end-to-end suites
+pass staged UI/Undo/Redo/recovery/source+group+cache-offline fresh Open/exact real
+48frame1080p24H264. Development fixture initially reused invalid animated parent
+record; replaced with original empty group. Test variable shadowing fixed and
+half-frame oracle corrected to apply floating evaluator output (Model.apply takes
+integer frames); no accuracy tolerance weakened. Evidence grouped_walking receipt.
+MOTION-03 remains partial for broader terrain/native coverage; scores unchanged.
+
+
+## 2026-11-07 UTC — cross-process recovery budget reservations
+
+Reserve against the shared512MiB root before checkpoint writes, with short OS-lock
+admission/release and persistent PID+incarnation reservations spanning the actual
+Godot worker. Count actual bytes plus outstanding full reservations, bounded
+registry publication and conservative PNG overhead; fallback uses measured encoded
+bytes. Release after success/failure; reclaim only proven exited/reused owner
+incarnations. Unknown owners remain protected; no payload/source/session deletion.
+Corrupt/linked/unknown-identity/helper failures refuse safely. Limit unchanged.
+180quota/retention/journal/background writer/app/preview/schedule checks pass, plus
+70nested reference/real abrupt exit/cold startup/lesson/real48frame1080p24H264AAC.
+Initial JSON CLI quoting fixed with Base64, symlink test fixture skip corrected,
+wrapper marker typo corrected; final8Python tests have no skips or failures.
+Receipt recovery_quota_2026-11-07.json. Source files and manual saves unchanged.
+Whole-process/GPU/device/Windows/physical-power-loss and global orphan cleanup
+remain separate. Coverage49/54(90.74%); formal5/62(8.06%), no score promotion.
+Next reassess remaining required feature coverage against actual MD/addendum wording,
+then address independent native engineering; do not invent optional requirements.
+
+
+## 2026-11-07 UTC — exact required IK/path implementation review
+
+ADD5.3 requires default supported hand/limb IK and appropriate root/foot holds with
+graceful fallback; general full-body IK is not mandated. ADD5.5 requires reusable
+editable paths/clips and visible reversible correction, while multi-view inference
+details remain OPEN. Existing staged walking/parent/clip code supplies that bounded
+contract; terrain/automatic facing/generalfullbody are not extra mandatory gates.
+Fresh31check default IK actual app suite passes gizmo/autokey/Undo/Redo/Cancel/
+unsupported rigs/scales/parents/source/HAS/48frame1080p24H264AAC; onset1.0000417s.
+No optional native fixtures available, explicitly skipped; not native certification.
+Portable test harness now supports explicit private display and configured media
+tools, freezes functional source hashes and validates Windows private receipt.
+Prior committed70helper/direct app checks include crouch and offline/recovery/media;
+grouped/ungrouped walking suites supply actual staged/persistence/cold/media proof.
+Required-motion review corrects POSE-03/MOTION-03 to implemented/scoped_evidence.
+Coverage51/54(94.44%); formal5/62(8.06%) pending committed acceptance review.
+Native profiles/fidelity and Windows durability remain the3partial engineering groups.
+
+
+## 2026-11-07 UTC — bounded static Source brush lightmap preservation
+
+Capture exact pinned-decoder face identities/projections and bake static LDR RGBExp32
+with native base texture into padded portable emission atlases. Preserve original
+base texture via fresh-GLB material tags; existing Unshaded/Lit control switches
+base/baked appearances with instance-local material copies. Restore glTF emission
+UV1 and explicit zero specular that Godot4.6 ignores; no original assets modified.
+Caps16384capturedfaces/512pixels perface/2048atlas and existing512MiBdecoded budget.
+Report downsampling/overflow/ambiguity/styles/unsupported surfaces. No HDR-only,
+styled/displacement/bump-direction/native-photometry claim or native host bypass.
+21Python/app checks pass via original decoded records/exact production boundary,
+realBlender4.3.2/UV1/strength/base texture/color orientation/light independence/
+modeUndo/offlineHAS/provenance/recovery/exact48frame1080p24H264.47visibility/fade
+and18entity-light regression checks pass with unchanged final SceneIO/opacity.
+Initial UV1, JSON numeric membership, specular and black Unshaded appearance failures
+were diagnosed/fixed; final assertions retained. Optional Draco unavailable,
+uncompressed GLB valid. Receipt source_brush_lightmaps_2026-11-07.json.
+Owner supplied22SFM archives:82MDL49 headers and native parser reads succeed with
+valid bone hierarchies, all present geometry sidecar checksums match. Rawarchives
+and extracted assets remain private/outsideGit. Full SFM/GMod installed-host
+preflight still refuses (no outputcreated); native app/BSP fidelity not claimed.
+Next finish supplied-sample dependency/sidecar diagnostics and exact prerequisites.
+
+
+## 2026-11-07 UTC — supplied SFM corpus and Linux case-sensitive resource fix
+
+Owner supplied22archives. Private safe inventory/extraction retained all originals,
+never ran auxiliary scripts, and kept all assets outsideGit.82MDL49 files parse
+with valid parent hierarchies (3–234bones);401unique VTF payloads decode,1044VMT
+files parse, all22archive/2089extracted hashes remain exact. PinnedSourceIO archive
+cd44e1d... verified against every extracted decoder file. Nativepylib requires
+GLIBC2.43 while host2.41; offline read-only nonroot Docker metadata runtime solves
+codec inspection without upgradinghost or patchingbinary. SourceIO full app
+preflight still rejects absent installed SFM/GMod before output creation.
+Initial exact-case audit appeared to miss2geometry sets; checksum search proved
+case differences, not missing art.24aliases now resolve all82matching geometry sets.
+Implemented bounded read-only case lookup in loose provider and sidecar staging;
+refuse ambiguous names/escapes/excessive indexes, preserve original sidecar names
+in report while managed copies match selectedMDL basename.78Source unit checks
+pass incl8case cases. Reviewable private-corpus probes/runner and pinned-base
+metadata Dockerfile added; no native binaries or art committed.
+Native material lookup audit initially failed to normalize trailingWindows
+backslashes; corrected probe before final frozen run.80models find all VMTs;
+Reisen`,`slot and MomoyoBaby remain unresolved;38standalone texture references
+need dependencies;4circleVMT missing braces recover atEOF. These remain distinct
+from decoder success. No geometry conversion/app posing/HAS/native movie claim.
+Receipt sfm_uploaded_samples_2026-11-07.json and B-NATIVE prerequisites updated.
+Owner asked asynchronously for an existing recognized cloud installation path;
+independent work continues. Implementation51/54 and formal5/62 unchanged.
+
+
+## 2026-11-07 UTC — responsive World/toolbars keep timeline and footer reachable
+
+Open timeline acceptance run reproduced default1200x760 workspace overflow:
+timeline bottom902 beyond logical900. World minimum height accumulated hierarchy
+actions; fixed logical viewport also hid physical compact sizing. Add scrollable
+World body without replacing live controls; observe physical window size and UI
+scale, keep view/physics rows horizontally scrollable, compact canvas reserve and
+caption. First correction passed original window but125percent footer bottom801
+exceeded720; measured minimums drove final toolbar/minimum correction.
+Original assertion unchanged. Added same-aspect1120x720,125percent1400x900, full
+footer bounds, fully visible World action after scroll and exact final pixel checks.
+156timeline/workspace/channels,65recording and74asset-package regressions pass,
+including realH264/AAC and source/Undo/cold persistence checks in their scopes.
+CurrentIKhelper/direct70checks and reusablepath70checks also passed during the
+requirement review before this presentation correction. Optional native app
+cases remain skipped behind their actual installed-host/fixture prerequisites.
+Receipt responsive_workspace_2026-11-07.json; no project/settings schema change.
+Next resume exact open acceptance review and independent required work; no overall
+completion claim or changes to51/54implementation and5/62formal closure.
+
+
+## 2026-11-07 UTC — current core interface/Home/keyboard acceptance evidence
+
+Portable Home/shortcuts wrappers retain original assertions and Windows desktop
+receipts; explicitLinux private display, Dummy audio, frozen sources and compact
+console reports added. Startupfixture literal slash-n corrected to actual scene
+newlines. InitialHome ALSA-device error failed strict wrapper; device-free final
+run is clean.46Home/startup and94keyboard/preference checks pass. New core runner
+executes existing defaultNew20 and Simple/Advanced23routed checks unchanged,
+validates real48frame1080p24H264 and originalvoice/frozen source hashes.
+UI preserves hiddenFOV/interpolation/audio gain/trim/cels/source and exactpixels;
+Home covers recent thumbnails/missingpaths/normalstartup/recovery; keyboard covers
+focus/capture/remap/freshprefs/invalidprefs/personalkeysabsentHAS. No physical
+audio/input/GPU/Windows/novice/native fidelity claim. Coreinterface receipt added.
+Next audit full software conditions against these committed receipts; native
+installed-host question remains pending while independent work continues.
+
+
+## 2026-11-07 UTC — five complete software acceptance closures
+
+Reviewed exact current conditions and committed receipts: UI-01/UI-02/WORLD-01
+close from a43a094 coreinterface/Home evidence; TIME-04 and PHYS-02 close from
+024e91e timeline/workspace/recording evidence. Explicit camera/hiddenparameter/
+pixel preservation, Home paths/previews/startup, empty black world/grid/final
+export, ruler/track/waveform mapping and explicit Local/World record/replay/cancel
+conditions are covered. Native/Windows/device/novice gates are not promoted.
+Formal10/62(16.13%); implementation51/54(94.44%) unchanged. Final responsive-UI
+IK/crouch and grouped locomotion gates now running; no premature closures.
+
+2026-11-07 UTC: Current isolated-display final-layout IK and grouped walking suites passed176 checks total, zero failures, real1080p24H264 exports and cold portable replay. Frozen source hashes independently matched. Committed raw receipts in required_motion_current benchmark; native/Windows/device/artist coverage not claimed.
+
+2026-11-07 UTC: POSE-03 and MOTION-03 bounded software acceptance verified by committed current176-check receipt 687a4eec73f056624b6bdbc207927562b9d8e516. Formal closure12/62 (19.35%); implementation51/54 (94.44%) unchanged. Native profile/device/artist/Windows gates retained.
+
+2026-11-07 UTC: Ported numeric-camera and camera-range wrappers to explicit private Linux display, preserving Windows receipts and existing assertions, adding frozen-source guards and per-run proofs. Current37numeric/49projection/31scenarioC checks passed, including adjacent cuts, explicit-key Undo/Redo, packed/linked/recovery, exact authored pixels, source/cache-offline cold replay,1080p24H264/AAC and audio onset48001/48000s. Zero native fixtures; no native/target-device certification. Updated stale audit prose to match authoritative3partial/12verified counts.
+
+2026-11-07 UTC: CAMERA-01 software acceptance verified using current117-check receipt at 590d914060ee0d075ac6861f45cf589fc80aa885. Formal13/62 (20.97%); implementation51/54 unchanged.
+
+2026-11-07 UTC: Portable orbit/navigation verifier now requires explicit private Linux display and explicit original-only scope or native project; Windows native assertions/desktop receipts preserved. Expanded engine-event checks cover default W/E, diagonal normalization, Shift speed, held-key focus-loss release, Space, stepping, numeric focus and Draw capture guards. Final41writer+2fresh-preference-reader checks pass, exact original shot pixels and packed replay; native checks explicitly unrun. Initial harness Windows flag and buffered synthetic input issues corrected without product/assertion changes.
+
+2026-11-07 UTC: NAV-01 software acceptance verified using committed43-check current receipt 19834f040a55b17243d801e5dd029ccb44bed559 plus current remapped-shortcut evidence. Formal14/62 (22.58%); implementation51/54 unchanged.
+
+2026-11-07 UTC: Current opacity suite passed and pressure suite initially failed4cascading assertions because its admission fixture still filled32cels. Updated fixture to actual DrawingLimits.MAX_CELS (400) across project, keeping exact refusal/cleanup/history assertions. Full final opacity and pressure unit/editor/cold-reader/independent-oracle/1080p24H264 suites pass, unchanged frozen application sources, source/shot/world/paint preservation. Physical tablet/latency not tested.
+
+2026-11-07 UTC: DRAW-03 bounded software acceptance verified by75current brush checks at 83da652d896c82ffe37d8fdd34a885caea203930; physical-tablet gate unchanged. Formal15/62 (24.19%), implementation51/54 unchanged.
+
+2026-11-07 UTC: Current onion-skin software suite passed37checks on isolated display110: actual GPU ghosts/zoom/pan, hidden/empty layers, held-neighbor caching and invalidation, opacity uniforms, playback/New resource release, packed/recovery exact art and final37-check H264 export exclusion. Source hashes match frozen concurrent current fill run.
+
+2026-11-07 UTC: DRAW-06 software acceptance verified by committed37-check current onion GPU/persistence/media receipt203773f. Formal16/62 (25.81%); implementation51/54 unchanged.
+
+2026-11-07 UTC: Current four fill suites passed207 checks total: flood/tolerance, connectivity, gap closure and border growth, independent per-pixel oracles, exact Undo/Redo/source/world/ink preservation, packed/linked/recovery/cold readers and real1080p24H264. Ported wrappers require explicit privateLinux display; Windows receipts unchanged; source freeze and per-run receipts added. Growth test originally expected obsolete whole-layer cels history: now asserts bounded cel_patch with empty before/one after while retaining exact pixels/one-step Undo. No product behavior or numeric thresholds weakened.
+
+2026-11-07 UTC: DRAW-04 verified with current207-check fill receipt efa099d818e7fb6649625acb7bcff0f535754edb. Audited formal17/62 (27.42%); implementation51/54 (94.44%) unchanged. Updated previously verified audit rows to actual receipt scope instead of stale generic open-condition wording; no new product claim.
+
+2026-11-07 UTC: Full current cel timing suite passed161checks, actual1440frame60s1080p24H264/AAC (render226.51s on cloud), onset2688001/48000s, exact selected preview/export frames, parent/child holds/history, packed/linked cold readers, actual SIGKILL startup recovery, original source/manual HAS unchanged. Updated obsolete test raw image fields to Drawing.image while retaining exact object identity/RGBA assertions. Initial script failure and two interrupted diagnostic reruns are not passes; final3 completed all checks with frozen sources. Windows and physical power loss remain untested.
+
+2026-11-07 UTC: Corrected About FFmpeg wording: current cloud7.1.5 enablesGPL/libx264 but not version3 flag; old Windows build information no longer presented as universal. About retains Godot/encoder links and unknown imported rights. Both actual UI-mode About clicks passed8checks without scene/history changes; app syntax clean. Updated cloud dependency/private-owner-sample records; compared2089sample member hashes with tracked files and found none. No license selected, native assets/binaries distributed or releases published.
+
+2026-11-07 UTC: Current cel clipboard/history suite passed205checks: blank/copy/delete/cut/paste/split, independent edited RGBA, exact Undo/Redo, bounded cel patches, real running physics identity/generation untouched by drawing history, cold packed replay and exact real1080p24H264 movie inputs. Frozen source hashes unchanged. Together with161long timing checks, supplies full bounded drawing-exposure software evidence.
+
+2026-11-07 UTC: DRAW-02 verified by committed205clipboard+161timing checks; NOTICES-01 verified by actual8About UI checks and private-asset/Git/current-tool notice audit. Formal19/62 (30.65%), implementation51/54 unchanged. No future distribution license or external target acceptance invented.
+
+2026-11-07 UTC: Current layer suite passed53checks (13retention+40ordinary): four-layer editing/order/visibility/opacity, exact useful structural and older brush Undo, packed/recovery and48frame1080p24H264. Twelve cold drawings retain9802bytes versus99,532,800decoded reservation; deletion charges9802bytes and preserves preceding brush history. These are retained registered pixel bytes, not total process/GPU memory. Frozen current sources matched concurrent palette receipt.
+
+2026-11-07 UTC: Current palette and color sampler suites pass actual UI/pixels, cross-runtime16validation cases, container3tests, packed/linked/folder/recovery/lesson cold readers, reference/source preservation and exact real1080p24H264. Ported wrappers require explicit isolated Linux display, retain Windows desktop assertions and add source freezes/local receipts. No artist/color-device calibration claimed.
+
+2026-11-07 UTC: DRAW-01/DRAW-05/MEM-01 bounded software conditions verified by current committed layer/color/clipboard/timing evidence, retaining explicit memory policy/exclusions and target-device/native gates. Formal22/62 (35.48%); implementation51/54 (94.44%) unchanged.
+
+2026-11-07 UTC: Current authored world/runtime/editor/workflow/placement suites pass104checks total,64GPU color picks, exact zero-difference packed/linked readers, multi-map/model/group parenting and stable-ID Undo, ordinaryAdd/New/recovery/MP4/audio, bounded support/overlap placement. Native fixtures explicitly absent/skipped. Ported3wrappers to explicit privateLinux display and current encoder; preserved Windows receipts, added full source freezes/per-run logs. Test fixtures isolate preferences and dismiss Home before editor input; direct runtime encoder now honors configured FFmpeg with Windows fallback. Initial old Windows-path encode failure not counted as pass.
+
+2026-11-07 UTC: Current original common import suites passed44generic+17timing+9Python tests, with actual isolated Blender4.3.2 FBX/glTF/OBJ conversions, texture/skin posing, exact Undo/packed/movie and preserved all source/dependency bytes. Blender optional Draco library remains unavailable; uncompressed fixture exports work. Timing fixture now right-clicks object row by row_y rather than obsolete40px cel-row coordinate; original assertions unchanged. Added positive GPU outline differential independent of gizmos;28world-edit checks pass with64picks, zero wrong-object green, exact packed/linked readers. Native and physical Explorer drag explicitly unrun.
+
+2026-11-07 UTC: Added real asynchronous common-format FBX intent test: frame40 survives playhead5, second import refusal, old-object preservation, exact39/40presence and ordinarySave/New/Open. Complete generic suite52checks+9Python pass. Added far-map hierarchy selection/framing at5000localunits, preserved shot keys and exact one-step world Undo:31world-editor checks pass including positiveGPUoutline/64picks/exactcold readers. Independent body-curve diagnostic28unit+15GPU checks pass; explicitly not normal-editor curve authoring certification. No native plans available.
+
+2026-11-07 UTC: IMPORT-01/IMPORT-04/WORLD-02/POSE-01/POSE-02 bounded software acceptance verified with current committed common-format/async intent/world hierarchy/positive GPU outline/Alt/pose/Undo/persistence evidence. Native profile and target physical/Windows gates retained. Formal27/62 (43.55%), implementation51/54 (94.44%) unchanged.
+
+2026-11-07 UTC: Current normal independent body21unit+17app checks pass, distinct from earlier43-check internal diagnostic: actual normal per-bone auto-key/edit/delete/Undo, exact untouched peer/root half frames, clip sharing, packed/linked/recovery/movie. Pose library35writer+6cold-reader checks pass actual thumbnail/use/rename/duplicate/remove/native HAS library sharing/wrong-rig refusal and source/drawing/key preservation. Ported wrappers preserve private Windows receipts, require explicit privateLinux display, own failed child termination and frozen source checks. Corrected earlier import receipt prose to actual23/24GLB boundary; asyncFBX39/40 evidence remains separate.
+
+2026-11-07 UTC: New explicitly original-rig normal motion UI suite passes22writer+5source/cache-offline cold-reader checks and23shared-domain checks. Actual trial/Cancel/Apply, per-part zero, helperphase/amount changes actual intermediates, exact main endpoints, Off/Undo/Redo, reverse half-frame/data invariance, original/camera/drawing preservation and exact real1080p24H264. Initial click harness sampled pre-layout coordinates; final waits for visible layout and keeps all exact assertions. Root-component regression320checks pass in16suites;2native-plan suites explicitly skipped. No native planted-contact, artist, physical or Windows certification.
+
+2026-11-07 UTC: POSE-05/MOTION-01/MOTION-02 bounded software acceptance verified by committed current normal UI/persistence/render and explicit domain evidence; internal body-curve diagnostic is not promoted as standalone normal-editor proof. Native/plant/artist/physical/Windows gates retained. Formal30/62 (48.39%); implementation51/54 (94.44%) unchanged.
+
+2026-11-07 UTC: Found required MDstage2 mute/solo was only partially implemented despite old AUDIO-01 implementation label. Added actual Simple Solo checkbox, authored Undo/Redo, shared scene-local clip mixing and nested suppression (child Solo local), mute authoritative, multiple solos, optional boolean in strict studio_audio_5 with unchanged old-format defaults and no HAS container change.38domain+25cross-runtime+22writer+22cold-reader checks and30HAS tests pass; original sources/manualHAS unchanged, packed/recovery originalaudio+writer cache offline, decoded1080p24H264/AAC isolated voice5955 amplitude and peer/child<1. Existing43domain sparse/nested/fade and actual cold-reader/decoded-level regression passes. Initial test-only type inference fixed; no failed check counted. Native/physical/Windows acceptance not claimed; currentMP3/Ogg next.
+
+2026-11-07 UTC: Current compressed audio suite passes originalWAV/MP3/Ogg actual normalization, captured-frame picker, cancel/stale/bad-input/missing-codec/62s-overlong refusal/retry, exact Undo/packed/linked/PCM/pixels and actual1080p24H264/AAC. Independent spectral levels verify WAV5953, MP311310, Ogg8030left/3996right and wrong-time/channel leakage<1. Dummy driver and engine-only capture are explicitly not physical audio hardware. Post-Solo visibility47checks pass persistentOFF, late/parent visibility/fades/save/recovery and exactmovie/audio1.00004s onset; optional native fixtures skipped. Ported compressed wrapper keeps Windows receipts, requires privateLinux display, current FFprobe and frozen source guards.
+
+2026-11-07 UTC: AUDIO-01/AUDIO-02/VIS-01 bounded software acceptance verified after actual missingSolo implementation and current compressed/WAV/nested/rational/mix/persistence/decodedAAC/visibility evidence. Physical audio and Windows gates remain open; engineDummy capture is not hardware certification. Formal33/62 (53.23%), implementation51/54 (94.44%) unchanged.
+
+2026-11-07 UTC: Current sequence/compositing225+29shadow/glow+36mask checks pass (290total), exact source art/parent/camera preservation, editable child/copy/split/Undo, audio/offset/loop/cache invalidation/cycle refusal, source-offline coldHAS, actualSIGKILL/startup mask recovery, unchanged manualHAS and real1080p24H264/AAC. Shadow fixture initially used obsolete raw image field; updated access and explicit touch for directly painted owner fixture, keeping all alpha/pixel assertions. Mask cold-reader accessor updated likewise. Native/artist/physical/Windows gates remain separate.
+
+2026-11-07: Clean source-only cloud launch from commit 16c84be, excluding output/.godot/.git, fresh XDG and Python -I -S, passed all 43 core UI checks and actual 48-frame 1080p24 H.264 export. Fixed verifier fixture mkdir to create the missing output parent; no production change. Evidence: docs/benchmarks/clean_source_launch_current_2026-11-07.json. Existing pinned runtimes reused; this is not Windows installer certification. Saved only reusable start_skill in onboarding draft; unrelated configuration preserved, not published.
+
+2026-11-07: Formally closed ENV-01, SEQ-01 and COMP-02 from committed fresh clean-launch and290sequence/compositing receipts (49b1566/16c84be). Acceptance36/62=58.06%; implementation51/54=94.44%, separate metrics. Windows/native/artist/device gates remain. No new behavioral pass claimed by checklist validation.
+
+2026-11-07: Live physics current101checks pass:41ragdoll including actual drag-velocity throw/context reset exact UndoRedo,35rigid prop/contacts/freeze/save/export,29default-on compatible imports/queued cancellation/peer preservation/explicitRecord. Ported mandatory private-display Linux wrappers, retained Windows receipts and exact movie assertions; private prefs/Home setup. Fixed stale actor test reference after scene rebuild; initial failure excluded. No production change, no native fixtures or hardware/Windows certification. Evidence docs/benchmarks/live_physics_current_2026-11-07.json.
+
+2026-11-07: PHYS-01 formally verified from ed10572 current101check receipt. Acceptance37/62=59.68%, implementation51/54=94.44%; separate equally weighted checklist metrics. Native/device/artist/Windows gates remain.
+
+2026-11-07: Current timeline217checks pass:156navigation/workspace/animated channels and61frame3000-to0body/component writer/cold/actualSIGKILLstartup. Source/cache unavailable on read, exact independent ink/audio/camera and manualHAS unchanged; actual movie. Source snapshot unchanged throughout; no native/artist/device/Windows claim. Receipt docs/benchmarks/timeline_current_2026-11-07.json.
+
+2026-11-07: TIME-02/TIME-03 formally closed from committed current217timeline,205celclipboard and161celtiming receipts. Acceptance39/62=62.90%; implementation51/54=94.44%, separate checklist metrics. Ripple/cross-track choices remain OPEN; native/artist/device/Windows gates retained.
+
+2026-11-07: Lighting/video/encoder current64checks passed:27realLit/Unshaded/materialisolation/alpha/persistence/movie,34editablevideo writer/cold withsourceoffline,3actualencoderfailure/missingtool/cancel with48exactrecoverableframes/separateretrylogs. Lighting wrapper ported to mandatory private Linux display and retainedWindows receipt; fixture privateprefs/Home. NativeBSP/Krita/physicaldisk/device/Windows not certified. Receipt docs/benchmarks/lighting_video_encoder_current_2026-11-07.json.
+
+2026-11-07: LIGHT-01 formally verified by current27check lighting receipt6b7e509 and previously executed bounded original Source lightmap/entity receipts deb3cac/d44cf75. Acceptance40/62=64.52%, implementation51/54=94.44%, separate metrics. Full installed-host native BSP/material/fidelity/targetGPU/Windows/artist/device gates retained.
+
+2026-11-07: Current327recovery checks pass:180quota/retention/detachedwriter/backgroundpreview/scheduling plus147normalstartupchecks across15cases after actualSIGKILL. Natural timer/action thresholds, failed retry, responsive editing/playback, corruption/missingassets/deepfallback and live/unknown/reusedPID identity protections; exactmanualHAS/source/movie/audio. Receipt docs/benchmarks/recovery_current_2026-11-07.json. Advanced picker and lesson-specific tests handled separately; noWindows/physicalpowerloss certification.
+
+2026-11-07: Current beginner-course/output-profile suites passed107checks, actual scene-state grading/visual hints/normal imports/physics/keys/drawing/sound/preview/HAS/movie and freshContinue/unsaved export; profile pixels/audio and failure/cancel/retry preservemanualHAS/finishedmovie. Current receipt docs/benchmarks/course_output_current_2026-11-07.json. No beginner observation/device/native/Windows certification.
+
+2026-11-07: Lesson protection current147checks passed across clean-scene autosave/failure/actualSIGKILLstartup and lesson context recovery/corrupt/fallback/foreign/session cases; originalincludedassets/manualHAS unchanged, writercacheoffline. Receipt docs/benchmarks/lesson_protection_current_2026-11-07.json. Separate HAS relink run failed: investigating backgroundopen missingmetadata loss, not claiming that run passed.
+
+2026-11-07: Fixed real HAS background-open regression: failed worker result had its missing-assets metadata discarded before locate_missing(), suppressing relink prompts. Preserve unsuccessful worker dictionaries; refuse only successful unpack when cancelled/document changed. Actual26HASapp+30container checks pass, including3checksum-bound relink prompts/pickers/backup/rememberedpaths, corrupt/cancel/current-project safety, recoveryunsavedcopy/movie. Current57tutorial grading/quiet16secondhint/Previous/freshContinue checks also pass. Receipts has_linked_relocation_current_2026-11-07.json/tutorial_grading_current_2026-11-07.json; priorfailedHASrun excluded. Large background-open regression inprogress separately.
+
+2026-11-07: Current159history/output/open checks pass:91journal/Advancedactualpicker/timestampedthumbnail/confirmation/exactolderstate/threecolddeepfallback,56delivery/completealphaPNG/coldsource/retrysettings,12actual400drawingbackgroundOpen afterrelinkfix including Cancel/neweredits/corrupt/New. 400Openworker25068.497ms/maininstall96.891ms/468responsiveframes/maxgap199.177ms; processRAM separate. History driver now supports mandatoryprivateLinuxdisplay with joinedownedwriter/exitedprobe; WindowsSYNCHRONIZEguard preserved. Source fixture privateprefs/Home. Receipt docs/benchmarks/history_output_open_current_2026-11-07.json.
+
+2026-11-07: Formally closed REC-01/02/03, COURSE-02/03, STORE-01 and OUTPUT-01/03 using current committed live, cold, forced-exit and decoded-media evidence. Acceptance is48/62 (77.42%); implementation remains51/54 (94.44%), separate equal-group checklist metrics. Native fidelity, Windows durability/installer, beginner/artist and physical-device gates remain. Optional Skip and unresolved ripple/cross-track choices stay OPEN. Checklist validation is not a fresh execution of every suite.
+
+2026-11-07: MEM-02 formally closed for its required bounded registered raster/cache/history/storage condition using actually executed400drawing prepared-video, detached save/currentOpen, current layer retention and quota/retirement receipts. Whole-process/GPU/audio memory, arbitrary orphan cleanup, noisy400frame/nativeKrita breadth and subjective long-session/device/Windows scopes remain explicitly unverified. Acceptance49/62=79.03%, implementation51/54=94.44%; separate checklist metrics.
+
+2026-11-07: Current rational project timing passed54checks: exact presets/custom/invalid/recording/no-op/Undo, unchanged frame addresses/source audio/world/camera, real24000/1001H264AAC48frames2.002s and onset48048samples, exactpreview/export and4fresh packed/linked/recovery/lesson readers. Portable wrapper requires private Linux display and retains Windows receipts. Explicit --current-only omits only unavailable checksum-bound previous-reader fixture; original historical assertion/default checksum remain, skip recorded and not claimed passed. Receipt docs/benchmarks/project_timing_current_2026-11-07.json.38Krita parser/preparation Python tests also passed, without native Krita execution.
+
+2026-11-07: TIME-01 formally verified for current rational-time behavior from b7302bd54check receipt and existing current camera/body/cel/import/audio/movie evidence. The unavailable checksum-bound historical-reader check remains explicitly unverified and was not counted. Acceptance50/62=80.65%; implementation51/54=94.44%, separate checklist metrics. Four groups remain open: IMPORT-02/03, COMP-01 and STORE-04, with8external gates retained. Compatible full SourceIO worker preparation continues before declaring any remaining blocker final.
+
+2026-11-07: Prepared and verified a compatible local Blender5.2.2/GLIBC2.43/NumPy2.4.6 runtime for the unchanged pinned SourceIO codec. Full Blender bindings imported; original skinned/morph-animated GLB exported;8independent accessor checks passed and574SourceIO files matched the pinned archive. Final probe was offline, non-root, read-only except owned output/tmp, and had no Python tracebacks. Optional Draco/MeshOptimizer libraries are absent; uncompressed export works. Corrected missing Debian cattr/requests dependencies and temporary config paths. No owner assets were mounted or converted and no installed-host guard was bypassed. Reproducible commands and exact image/package receipts are in docs/sourceio_worker_runtime.md and docs/benchmarks/sourceio_worker_runtime_2026-11-07.json. Initial build/probe diagnostics were excluded from successful final evidence.
+
+2026-11-07: Recorded the exact remaining external prerequisites in docs/cloud_remaining_prerequisites.md and updated open ledger rows/dependency mappings. Current status remains51/54implementation,50/62acceptance,4open and8external gates. SFM samples are present; no genuine cloud-accessible installed SFM/GMod host answer has arrived. Approved native Krita/BSP/MMD/VRM and target Windows/physical/artist prerequisites remain. Independent cloud verification and compatible SourceIO runtime preparation are completed; no product-completion claim. Saved only reusable start_skill in the onboarding draft, preserving other configuration; publication remains separate.
+
+2026-11-07 (America/New_York): Owner clarified that a game installation is needed only to browse its installed content or obtain dependencies from it; supplied standalone models must not require one. This supersedes the earlier blanket installed-host interpretation. Added conversion_context for direct file imports while keeping installed browsing strict. Invalid optional game configuration now produces a dependency-discovery warning rather than rejecting unrelated owner assets; absent installed providers are not mounted. Updated the import dialog, Source preflight tests, current prerequisites and reusable startup draft.
+
+Actual supplied Ran, Reimu V2 and Chen now convert through the production Source adapter in the offline compatible worker, without SFM/GMod. Their native rigs retain163/220/186bones.83Source checks and49real app checks pass: native arm pose/clip-backed keys, exact Undo/Redo, actual render differences, normal packed HAS, fresh conversion-bundle/cache-offline exact pixels, live HAS ragdoll floor/contact/freeze without recording, and a real24frame1080p24H264 posed Ran movie. All22archives and2089extracted native file hashes are unchanged; supplied scripts were not executed. Added a reproducible optional Linux container launcher and the private-fixture app smoke. Two failed reader attempts exposed fixture assumptions about selected objects and legacy pose_keys; corrected to explicit restored-object selection/current authored_keys without loosening pixel, bone or persistence assertions. These diagnostics are excluded from passes.
+
+Evidence: docs/benchmarks/standalone_source_samples_2026-11-07.json. Only these3models have actual app evidence; broader82model/material/variant/cloth and native Source physics/IK/sequence fidelity remain unverified. Compatible HAS ragdolls are not claimed to preserve Source physics. Other native fixture profiles, Windows durability and target artist/device gates remain separate. No overall completion percentage was promoted. Startup draft saved without publication; private owner assets remain outside Git and the owner's PC was untouched.
+
+2026-11-08: Continued the primary implementation goal instead of stopping after a completed subtask. Eight more supplied native packages convert; six complete character rigs pass54pose/writer and18cold exact-pixel checks. Found reproducible Keiki ragdoll penetration (collision surface -86.9mm under the actual0m floor). Raising positional iterations worsened it and was reverted. Earlier predictive contacts at0.1m fix the measured case while retaining120Hz/four positional iterations and2mm penetration slop. All9tested native rigs now keep actual server collision surfaces within15mm;41original ragdoll/grab/throw/reset and35prop/impact/freeze/save/movie checks pass. Strengthened native smoke with actual collision-surface measurement; did not loosen assertions. Two additional component models have conversion proof only. Receipt docs/benchmarks/native_diversity_contact_2026-11-08.json. Native shaders/variants/cloth/SourcePhysics and target hardware remain separate. Continuing into real native Krita acceptance with an original40frame document authored/rendered by Krita5.3.4.1; its isolated backend is in development, not yet claimed complete.
+
+
+### 2026-11-08 America/New_York — supplied Source corpus ingress
+
+Completed the remaining71offlineSourceIO conversions, for82/82suppliedMDLs without a game installation. Actual normal Add model imports preserve all converted native bones, standalone ancestry and manual pose mode (246checks); all82full-resolution rendered PNGs pass exact nonuniform-pixel checks. The first low-resolution/palette assertion falsely rejected a two-color rosary and two thin dark glove patches; a discarded alpha assumption was also invalid. Both failures remain private evidence, and the current exact full-image assertion is separately executed. Source archives22/22and extracted files2089/2089retain their original hashes. Three conversions explicitly report missing Momoyo material/Nitori texture dependencies; they use the declared gray fallback. No owner scripts executed or assets redistributed. Receipt: docs/benchmarks/supplied_source_corpus_2026-11-08.json; tests/source_corpus_smoke.gd. This establishes ingress/render breadth, not82pose/physics/portable-save/movie cases or artist fidelity. Nine native full-character pose/contact/cold cases remain separately scoped. Continuing native Krita renderer work; this milestone does not finish the goal.
+
+
+### 2026-11-08 America/New_York — real native Krita acceptance
+
+Added an explicit optional Linux private Krita container renderer selected by immutable HYBRID_KRITA_CONTAINER_IMAGE. It mounts only the reviewed source read-only and owned output, uses offline/read-only/capability/memory/CPU/PID limits, confirms Xvfb readiness through displayfd, and runs only the trusted HAS native-export extension in its temporary profile. Each real native frame is synchronized and exported through Krita’s API; native close then normal quit avoids the retained CLI/export/Qt-shutdown failures. Cancellation/timeout remove the labeled owned container and reap the launcher; Windows desktop receipts remain distinct. No visible fallback, owner installation, original modification, document scripts or asset redistribution. Reproducible original fixture author uses real Krita:40unique transparent frames at24fps. Native RGBA pixels match every original frame exactly. Final main-app54checks pass:40holds, source layer override/opaque candidate/Cancel, alpha and flat color, independent edit, UndoRedo, recovery, source/worker/writer-cache-offline packed and linked cold exact pixels,48frame1080p24H264movie, stale revision/source/New cancellation and actual native-child cancellation receipt.41parser/preparation tests pass; static1frame, missing image, cancellation and timeout worker probes pass. Still exposure review now matches its240frame worker limit (parse checked; no400frame still UI claim). Receipt docs/benchmarks/native_krita_acceptance_2026-11-08.json retains failures and exact source/log hashes. No ICC/owner artwork/native-layer-editing/native-audio/artist/Windows/tablet certification. Continuing checklist and external-prerequisite reconciliation; not a whole-product completion claim.
+
+
+### 2026-11-08 America/New_York — formal native-alpha closure and external gates
+
+Closed bounded COMP-01 against committed2df1ee0 native Krita54app/41parser-preparation, original40frame full-RGBA and real48frame1080p24H264 receipts, together with committed c4900bd400alpha-video/chroma evidence. Native Source82converter/328app-ingress-pixel evidence is committed96bf4a3; IMPORT-02/03stay partial for missing complete approved BSP/MMD/VRM profiles/dependencies and target/artist fidelity. The ledger remains62stable IDs/54implementation groups:51implemented(94.44%),51acceptance closures(82.26%), three open capability conditions and eight external gates. No combined completion or release-readiness percentage. Remaining target Windows directory durability/installer/scenario and actual novice/artist/tablet/audio observations are named in docs/cloud_remaining_prerequisites.md. Goal/source hashes remain unchanged; native source art stays private. The cloud setup start-skill draft was saved with current exact runtime/receipts, preserving other configuration; it still requires user review/publication and was not published. Corrected the generated checklist’s stale packaging-decision prose: existing HAS reuse was already decided. No new permission or packaging decision requested.
+
+
+### 2026-11-08 America/New_York — supplied MMD/GMA and actual native motion
+
+Inspected/staged32new owner files privately; hashes unchanged.13renderable PMD/PMX models convert through pinned MMD Tools4.5.14/Blender4.3.2. Fixed factory-startup loading of addon-declared pure Python wheel data (OpenCC), bounded extraction/path checks, false success for bone-only PMD, Linux CREATE_NO_WINDOW crash in native VPD/VMD worker, shallow/empty optional game-path discovery crash and blank-workshop scanning of the current project. Added Source-only HYBRID_SOURCE_BLENDER override so compatible SourceIO Docker and MMD/generic/pose Blender coexist in one actual app session. Native Source.phy provenance/warnings now explicitly distinguish original collision/constraints from generated HAS physics. Current93actual app checks pass: Miku/KAITO/Luka pose/UndoRedo/packed exact source/cache-offline cold replay/physics-freeze; street PMX scene/overlay/packed cold/movie; real MMD Tools VPD/VMD review/apply/UndoRedo/playback/HAS; GMA selected actor posed/cold/physics with archived source-physics fingerprint; and actual Source+MMD+PMX native import coexisting. Two24frame1080p24H264movies are probed.85Source tests and98focused addon/parser/save-safety tests pass. Original bone-only false-success, missing OpenCC, native Linux launcher and empty-path failures retained in private logs. Receipts docs/benchmarks/native_mmd_gma_2026-11-08.json and docs/benchmarks/atomic_safety_current_2026-11-08.json; docs/native_mmd_runtime.md. No owner scripts executed, art redistributed, target Windows/device/artist certification or native Source/MMD simulation reproduction claimed. Street five named atlas files remain missing from file attachments; temp.gma exceeds32MiBtransfer. Complete BSP/VRM native evidence remains pending. Continuing the exact save-safety acceptance review; no whole-goal completion claim.
+
+
+### 2026-11-08 America/New_York — exact save-safety contract and remaining native inputs
+
+Formal STORE-04 review preserves its original acceptance text. MD9 explicitly says temp file plus fsync/rename where supported; SAFE-01 requires explicit recovery instead of crash/data loss; ADD11.5 is suggested safety guidance. The previous unconditional Windows directory-flush gate exceeded that bounded software condition. Current committed444dac9 receipt executes86Python save-safety cases,173Godot metadata/journal/recovery checks,26rollback checks, five real commit/concurrent/lost-status runs and an actual pre-promotion kill. Unsupported directory sync remains false and native Windows/physical storage is NOT certified. STORE-04 is implemented/verified for that source contract; Windows F/installer/scenario/device gates remain blocked. Current ledger52/54implemented(96.30%),52/62acceptance closures(83.87%); two native-profile conditions remain open and eight external gates blocked. No overall completion or release-readiness percentage. Complete BSP/VRM native input and the street five named atlas files remain missing; temp.gma transfer exceeds32MiB. The new MMD/Source/GMA93app,85Source and98focused cases are committed and do not erase missing-profile/artist/target tests. Cloud activation and saved start-skill draft now configure separate MMD/Source Blender runtime paths; draft remains unpublished, other configuration preserved. Continuing is contingent on the specific missing native inputs/target observations, not on another packaging decision or installed game.
+
+2026-11-09: Exercised the four new owner-supplied VRMs (VRM0/1) without VRoid, Blender or a game installation. Fixed real Sakuya spring startup: empty unweighted terminal helpers preserve their actual offsets as endpoints; geometry/camera/extension/collider-bearing leaves are excluded, and skin leaves retain virtual tails. Current8endpoint safety/28Python/35spring regression checks pass; all4native import workers,37pose-save-movie,28expression-spring and16generated HAS physics checks pass. Fresh conversion-bundle/writer-cache-offline cold replay preserves exact authored body/metadata/camera/GLB checksum for all4. The original strict reader retains2failed raster hashes: Avatar1 and Marisa each differ at1RGBpixel; exact assertions were not weakened. Full-precision expected JSON fixed test-only numeric mismatches. Original files and full embedded BIN/source definitions remain exact; actual24frame1080p24H264 has51.23dB decoded-preview PSNR. Receipt docs/benchmarks/native_vrm_2026-11-09.json; private art remains outside Git. Complete BSP/map, five street atlases, target/device/artist acceptance and unsupported native shading/behavior remain open.
+
+2026-11-09: Added the committed 60b84de13900a9e3138a99003575494a9ae3392e VRM receipt to IMPORT-02/03 and the per-item audit. Removed the resolved missing-VRM-file prerequisite from current blockers/next actions; historical receipts remain intact. Preserved both one-pixel exact-raster failures, native approximation warnings and open complete-BSP/dependency/target/artist gates. No completion statuses or denominators changed: implementation52/54 (96.30%), acceptance52/62 (83.87%).
+
+2026-11-09: Re-reviewed actual addendum17.A-F acceptance text, Windows-first source contract, test sources and committed receipts before proposing any local handoff. Found exact scenarioA freeform eight-step combined software evidence still missing despite component and guided first-movie coverage. Made that the next cloud acceptance action; did not claim all independent work exhausted. Missing BSP/dependencies and the two unresolved VRM raster assertions are not local-only blockers. Windows target execution, clean-install testing and real novice/device/audio observations remain specific external gates; a local worker cannot substitute for people/hardware. Added docs/acceptance_handoff_review.md and replaced generic remaining-work text for external gates. No status/percentage changed and no old test was represented as newly run.
+
+2026-11-09: Completed the newly identified exact section17.A cloud software case on supplied native VRM1:21writer+6fresh-reader checks pass with exact native scene/camera and frame0/2/4pixels, conversion folder/writer cache offline and real24frame1080p24H264. Actual canvas model/bone/gizmo input and frame0/frame4auto-key are exercised, no Record. Found/fixed real premature floating placement: center view fallback previously returned before nearby grounded candidates; candidate5now has floor minimum y=0 rather than floating about2.43m. Existing20placement regressions pass, including translated floor/overlap/aerial fallback. Optional native GMod branch remains not tested; original map absent. Initial harness Home/selection setup and unequal JSON parse cycles are documented; independent packed world/camera decimal values are exact, and no equality/pixel assertion was relaxed. Receipt docs/benchmarks/scenario_a_2026-11-09.json. ACCEPT-A still requires actual Windows novice timing/input observation; missing BSP/dependencies, prior two VRM one-pixel raster failures and physical/human gates are not claimed resolved or handed off wholesale.
+
+2026-11-09: Linked scenarioA software and placement evidence to actual committed 2cfdd583a6610d939277adf67069f17deebda8f4 under ACCEPT-A/IMPORT-04 and per-item audit. This adds current evidence without claiming novice/Windows acceptance or changing audited52/54 implementation and52/62acceptance counts.
+
+2026-11-09: Investigated retained VRM cold raster failures with controlled GPU material allocation. Both avatars produced multiple hashes despite bit-exact camera/root/all-bone transforms; copy-only control still varied. Alpha-scissor materials were omitted from the existing stable opaque source ordering. Including cutouts fixes current reproducibility while preserving blended/hash/prepass sorting, coverage, explicit priority/multipass and bounds.9contract units,16exact allocation/state checks,37native writer+16fresh cold,28expression/spring and31lighting/material/fade/persistence checks pass.24/48frame1080p24H264 movies probed; originals and original native-smoke test unchanged. Historical source-order oracles retain3failed hashes (one pixel each on Avatar1/Avatar0/Marisa); new fixed-version writer/cold reader is exact on all4models, with no tolerance or assertion weakening. Receipt docs/benchmarks/vrm_cutout_order_2026-11-09.json. Revised owner goal is stored with prior bytes archived. Native profile review continues: an unknown required glTF extension currently surfaces only generic Parse error to the user, despite precise engine logs. No global completion/handoff claimed.
+
+2026-11-09: Native profile review reproduced unsupported required glTF feature refusal surfacing only generic Parse error in app. Shared loader now checks actual engine-supported extensions before import-state allocation and names missing required features with compatible-export action; optional extensions remain optional, required flags are never stripped.9unit+5actual native refusal/preservation checks,7Source-MMD and9VRM worker cases pass;28VRM/helper Python regressions pass. Added reproducible private tests/verify_scenario_a.py: current21writer+6fresh-reader checks pass with exact packed decimal values/pixels and24frame1080p24H264; stages/withholds only owned copies and preserves original SHA/mtime/manualHAS. Canonical runner opaque count updated6to9 and required-feature9 registered; both actual headless runner calls pass. Full Windows aggregate remains unrun. Receipt docs/benchmarks/required_feature_diagnostics_2026-11-09.json. Initial new test passed Drawing.touch a Dictionary and did not execute; corrected to Image and retained failed log. No source asset or owner installation changed.
+
+2026-11-09: Completed current native-profile/acceptance-before-handoff review. Linked cutout 38a72ee6aa65c0fec311613fa197b7417c1eda84 and required-feature 90ab1b30bd9b80814ddaac3bbdd213ec0b5e6b3f receipts to stable IMPORT-02/03 and scenarioA evidence; no status or denominator promoted. Prepared docs/local_acceptance_handoff.md with exact Windows/private-wrapper commands, expected evidence and A-F/device/clean-install observations. Actual uploaded-file inventory has no BSP/temp.gma or five named street atlas PNGs; temp.gma transfer exceeded32MiB and contents remain unknown. Missing map inputs can resume in cloud; Windows kernel/device/novice/artist results need their named external prerequisites. Current code fixes and new wrapper are verified; no further independent defect was identified in this scoped review. Full Windows aggregate and physical/human acceptance remain unrun. Goal remains versioned in cloud/GitHub, with prior goal bytes archived.
+
+2026-11-09: Owner requested small files to start local Windows Codex, then explicitly required every new completed source/progress/finding to be pushed to the repo, retrieved from it later, and disposable local copies removed to preserve space. Added docs/handoff/windows/{START_HERE.md,WINDOWS_CODEX_GOAL.md,SESSION_STATE.json,MANIFEST.json,.gitattributes} and docs/handoff/HAS-Windows-Codex-Handoff.zip (7009bytes; SHA25651796ad6548e75c4400f3630b5abc9646d9aef71f3d4b1e1eb48358a8dec2051). Packet directs latest-main retrieval, isolated Windows work, actual remaining acceptance, and push/verify/cleanup per increment plus safe final session-checkout removal. Owner originals, existing install/shared runtimes and unbacked final deliverables remain protected; private art is not uploaded for cleanup. Verified archive CRC, exact member hashes, safe member paths and required instructions; removed only the owned temporary extraction directory. Updated the main handoff with the owner rule. No application code or acceptance status changed; no Windows execution claimed.
+
+
+### 2026-11-09 America/New_York — fresh isolated Windows acceptance checkpoint
+
+Retrieved latest main 59a1c4e969995089fdfc0e93b4e5766311bb5591 into session-owned C:/a/Programming/cloudflare/has-windows-session-20261109; owner installation/originals preserved. Reused Python3.13.1/Godot4.6stable/FFmpeg and Intel Arc140V. Fresh scenario A21+6, C25+6, D28+4, tutorials, first movie, recovery schedule41, abrupt normal-startup and recovery-history wrappers pass on private Windows desktops, with actual movie/AAC decoding, cold replay, source/manual-file preservation and embedded isolation receipts. docs/benchmarks/windows_acceptance_2026-11-09.json contains actual scoped reports, failures and runtime hashes; no human/tablet/listening/clean-OS certification.
+
+Found core.autocrlf changes checksum-bound goal/addendum bytes on fresh Windows clones. Added targeted LF attributes and restored exact committed bytes; checker passes without changing provenance hashes. Full aggregate first stopped on WinError1314 creating a symlink fixture. Split independent address check from linked-status case; only this specific missing Windows privilege is explicitly skipped, retaining linked-status assertions and all other errors. Drawing-origin suite now35tests with1explicit skip. Aggregate retry stops on absent historical hecatia.kra; unchanged native/pixel assertions retained, no invented replacement.
+
+Owner then supplied native original paths and authorized read-only installed Steam content plus temporary pinned SourceIO runtime. SourceIO archive matches recorded SHA256; existing Blender/MMD Tools reused. Native map/street work continues in owned output/windows-native; private artwork is not committed. Every finished increment is pushed/verified before disposable cleanup; this checkout remains needed for pending native work. No acceptance counts promoted in this initial receipt checkpoint.
+
+
+### 2026-11-09 America/New_York — native Windows cases and runnable regression fixes
+
+Native scenario B now passes19writer+5cold checks on installed GMod Flatgrass, supplied native AvatarSample_A and complete street01 PMX. Actual Source preparation retains1of1prop,12textures,two lights and29supported baked brush-lightmap faces; skipped/downsampled lighting stays explicit. Two map roots move independently with exact UndoRedo. Native pose/PMX placement, full atlas dependencies, exact packed world/camera, Lit/Unshaded pixels with staged inputs/conversion/import/writer caches withheld and24frame1080p24H264 pass. Original SHA/mtime preserved. Visually inspected actual composite; overlapping environment fixture is not artistic composition or original-fidelity approval. Temp GMA CRC verifies5entries including Transit BSP; first legacy BIN index identifies Shrine. No art/GLB/HAS/movie is pushed.
+
+Fixed reproducible Windows NTFS stale-name cache lookup while preserving path/ambiguity/budget checks. Corrected raw unsafe ZIP fixture construction and validated orig_filename before Windows ZIP-reader normalization. Initial454tests had2failures; first fixture repair retained1failure; current457tests pass with44explicit skips (413executed passes). Bounded native Source failure now surfaces worker reason/action. New3diagnostic units and5actual app Transit refusal/preservation checks pass; original generic error and first CRLF-unit failure retained. Existing64light bound remains. Fixed two old test API assumptions: background reference fixture uses canonical Godot slash spelling, audio smoke reads raster-owner cels through Drawing.image without changing exact assertions. Background10domain+17writer+5cold and31HAS/16fault tests pass; skips are recorded separately in the full Python log.
+
+All36unchanged canonical core blocks pass through private Windows desktops, including real WASAPI bus capture, Dummy fallback, GPU/editor/UI, timeline/visibility/IK/secondary/physics. Saved exact AST driver in receipt; this partial core run is NOT a full aggregate pass. Full aggregate still requires absent historical hecatia.kra/eight-cel fixture; no replacement or tolerance. First Windows receipt incorrectly called that fixture checksum-bound; wrapper has no fixedSHAassertion, corrected here and in receipt. Native/general artist, actual novice/learner/tablet/listening and clean supported offline Windows setup remain external. Exact exercises are in docs/windows_acceptance_followup.md.
+
+Remote f77c90acd27f567db42840573bb601ea4d65c85b verified before removing8exact finished session-owned run directories (104.062MiB); paths/bytes/removal receipts are embedded in docs/benchmarks/windows_native_acceptance_2026-11-09.json. Session checkout, pending native outputs and disposable SourceIO retained until the next verified checkpoint. Owner originals, Steam installations, installed Studio/shared runtimes preserved. Current native/code/failure/progress evidence saved for retrieval from repository, not PC caches.
+
+
+### 2026-11-09 America/New_York — acceptance reconciliation and verified cleanup
+
+Audited exact stable acceptance conditions against pushed Windows receipts f77c90a and5ac9fe9. Closed ACCEPT-C,D,F for fresh target routed mechanics/media, actual abrupt owned-process recovery/history/background scheduling and injected Windows storage failure preservation. Ledger/audit/overview validate with55of62acceptance closures; implementation remains52of54. IMPORT-02/03 and native scenarioB retain actual artist/source-appearance comparison, rather than treating self-replay image equality as fidelity to originals. Native input/atlas and generic Windows-environment absence are resolved; noviceA,learnerE,physical tablet/audio and clean supported offline setup are named remaining external observations. Source requirement text,62stable IDs,optional/OPEN distinctions and all historical failures stay unchanged. Exact exercises and unsupported lighting bounds are in docs/windows_acceptance_followup.md. Full historical aggregate remains unpassed at absent hecatia.kra; all36canonical core groups and413Python passes/44explicit skips are scoped correctly.
+
+Fetched remote5ac9fe9e49e67f5bd348aa2a07b7d5720acaaba0 and verified native evidence/source tree bytes before removing the exact completed native staging,generated projects/media and approved disposable SourceIO directory/archive. Together with the first verified cleanup,1255.623MiBof test staging was removed;14exact targets and checks are recorded in docs/benchmarks/windows_session_cleanup_2026-11-09.json. Fresh checkout-index with core.autocrlf=true preserves all four committed governing/goal document hashes.
+
+No independent reproducible software failure remains from these executed cases. Remaining seven conditions require actual external people/device/clean-environment observations; no product-completion claim. Final retrieval anchor is the commit containing this ledger/history/cleanup-plan checkpoint. After push and remote tree verification,restore only disposable generated tracked outputs/bytecode,require no dirty or unpushed source,confirm owned tests finished,then remove C:/a/Programming/cloudflare/has-windows-session-20261109 from its parent directory. All new source/tests/findings/compact failed evidence are recoverable from GitHub; later sessions retrieve them there. Original private models/projects/Steam content,installed Studio/shared runtimes and HAS pickup packet are protected. No unbacked requested final deliverable remains; generated HAS/movies were disposable test artifacts.
+
+
+### 2026-11-10 America/New_York — original Krita recovered and concrete owner review
+
+Retrieved9b29615into isolated C:/a/Programming/cloudflare/has-acceptance-session-20261110. Read current ledger/handoff/followup and governing context;55/62acceptance unchanged. Found only18layer hecatia.kra~ backup SHA31ae124b... in targeted original directories, distinct from historical19layer SHAfff3599293023f41f05eb27c9d51d2af45d01493b8618c5da51067f3449ff758 recorded in prior history. Owner then supplied exact original at C:/a/Programming/HAS/hecatia.kra. Read-only SHA/mtime checked, staged owned copy. Added HYBRID_HECATIA_KRA override to historical verifier, with exact known SHA guard and source preservation check; all existing19layer/8cel/native-background/pixel/cancel assertions retained. Actual historical32writer+5cold checks pass with installed native Krita/private receipts and48frame1080p24H264. Full aggregate next stops at missing legacy installed source-project fixture in native pose wrapper; rebuilding isolated native prerequisites is actionable next work, not a new external blocker.
+
+Fresh first-movie79+8checks and decoded cue timing pass in this new checkout. Recreated previously approved pinned disposable SourceIO archive with exact SHA; reused installed Blender/MMD Tools and original model/Steam inputs. Added tools/build_owner_review.py/.gd: separate Flatgrass,Avatar,Street packed HAS projects and owner-clickable launchers.7writer+12cold checks pass with prepared GLBs,managed imports and writer cache withheld,exact Lit/Unshaded pixels/metadata/camera and embedded asset checksums. Viewed actual native overview images; no overlapping environments in these reviewer scenes. Review media/private source remains outside Git; self-replay is not artist fidelity approval. Owner participation pending; retain this exact checkout and review projects. No new acceptance closure or full aggregate claim. Compact evidence in docs/benchmarks/windows_acceptance_resume_2026-11-10.json; source/tests/progress pushed before disposable cleanup.
+
+
+### 2026-11-10 — owner screenshot: scene dock cannot grow
+
+Owner review exposed a real layout failure at3440x1440: the Timeline forced367logical pixels and left208for the scene; downward+200offset produced no growth. Timeline now keeps the same live controls inside a scrollable body with138minimum, defaults to234high, and fills width. Ordinary --open-project launches use persistent workspace preferences instead of PID-specific automation preferences.
+
+Actual routed mouse drags on the native Avatar packed project pass28checks at3440x1440,1400x900 and1200x760. Scene default341grows to437logical pixels at the first two sizes; smaller case368to464. Same pose/camera/Undo/control identities and exact render pixels survive. Existing workspace regression passes48checks, including125percent scale and scrolling the complete ruler into view. Compact bounds assertions now observe the scroll viewport plus actual ruler reachability rather than requiring internally scrollable content to fit all at once. Intermediate failed defaults, narrow content and former unscrollable-bounds assertions are preserved in compact evidence.
+
+Updated only the session review source workspace_layout.gd after backup; all three review project hashes unchanged, running owner UI/profile/recovery untouched. Owner must save/close/reopen to load the change; usability and native artist approval remain pending. Full aggregate was deliberately interrupted at owned automated physics child before source edits; isolation receipt confirms job/desktop closed. Not a full aggregate pass. Ledger55/62unchanged. See docs/benchmarks/scene_workspace_resize_2026-11-10.json. Retain review source/projects while observations are pending.
+
+
+### 2026-11-10 — native aggregate prerequisites rebuilt
+
+Removed current-native fixture consumers' dependence on installed Studio output: default fixture root is this checkout/output, with explicit HYBRID_NATIVE_FIXTURES override. HYBRID_NATIVE_INPUTS resolves supplied raw VRMs. Historical compatibility archive/oracle inputs remain separate. Actual native import passes 43 app checks, exact packed pixels and 48-frame H264, preserving all raw models/textures. Normal app Add model and managed Save recreate required MMD/GMod/SFM projects with 126/77/83 bones and native metadata; original native pose suite passes 24 assertions over four rigs. Source-only owner snapshot gets its own output and profile; startup Home/New/Tutorial verifies on a private desktop. No installed application was replaced. Reproduction is in docs/windows_aggregate_fixtures.md; compact actual receipts in docs/benchmarks/native_fixture_rebuild_2026-11-10.json. Full aggregate still requires completion after the owner-reported layout repair. Owner recheck confirms divider moves but still needs work; clarification pending. Ledger remains 55/62. Retain native prepared fixtures and private review projects until pending cases finish.
+
+
+### 2026-11-10 — owner requests true 100 percent interface
+
+Owner confirms divider now moves but requests more scene space and Windows-like 100 percent, retaining enlarged sizing as an option. Found fixed1400x900 canvas stretching silently magnified the UI with window size despite100percent label. Native desktop now disables that baseline stretch; explicit100/125/150/175 preferences still work and persist, default100. Browser CSS sizing unchanged. Native Avatar real mouse-drag suite31checks passes; scene at3440x1440 is881pixels high by default and977compressed, versus original208logical/~333physical. Existing workspace48checks pass, including compact windows,125percent and exact render pixels. Navigation41writer+2cold checks pass including saved125percent preference and unchanged unrelated preferences; this navigation run explicitly uses included original rig, not native-navigation acceptance. Four private receipts all isolate graphics and close jobs/desktops.
+
+Updated only session review app.gd after backup and unchanged-project hashes. Owner instructed save/close/reopen and Settings → Interface scale →100percent; confirmation pending. No running owner window/profile/recovery or installed Studio altered. Evidence docs/benchmarks/true_desktop_scale_2026-11-10.json. Full aggregate not yet rerun after source change;55/62acceptance unchanged.
+
+
+### 2026-11-10 — draggable tabs, native floating docks and World clipping
+
+Owner confirmed true 100 percent scale is good, then requested movable tabs, snapping and separate windows; World still appeared stuck. Added four edge targets, body-drop tab groups, actual tab-label dragging, native nonblocking floating windows and wider resize dividers. Personal layout v2 persists groups, selected tabs, split sizes and automatically saved floating geometry; v1 preferences migrate and malformed duplicate layouts leave controls unchanged. Owner says docking works but is visually rough, and supplied a close-up showing narrow World contents under a widened header. World content now fills the dock; reset/reload no longer overwrites anchors of panels that remain in their TabContainer. Tabs inherit Studio styling and the drop highlight is softer and rounded.
+
+Final source passes 17 writer + 4 cold docking checks, 31 actual Avatar resize checks, and timeline suite 42 domain + 35 app + 48 workspace + 47 channel checks, including all three actual MMD/GMod/SFM rigs, native binding preservation, recovery pixels and 48-frame 1080p H264. Six private graphical receipts confirm hidden desktop placement, no foreground child and closed job/desktop. Exact pose, camera, Undo, node identities, private source hashes and render pixels remain unchanged. Inspected widened World image: full tree and action widths, readable model name.
+
+Preserved intermediate failures: wrong window-input mapping, tab scrolling at insufficient minimum width, serialized numeric-type comparison, out-of-view timeline test gestures and minimum-sized panels after reset. Detailed timeline tests now expand with the real divider, and channel tests scroll the full interactive area into view before routed clicks; original motion/Undo/native/recovery/movie assertions are retained. Included-only resize now explicitly asserts successful actual rig import using full placement. Full aggregate deliberately stopped at owned world_selection child before docking edits; isolation receipt confirms cleanup. No full aggregate pass claimed.
+
+Updated only session review workspace source after backup; all three private project hashes unchanged, owner window/profile/recovery and normal installation untouched. Save/close/reopen requested for latest clipping fix. Latest comfort and artist/native appearance feedback remain pending. Ledger stays 55/62 acceptance, 52/54 implementation. Reproduction and compact failed/success evidence: docs/benchmarks/workspace_docking_2026-11-10.json. Retain this session checkout and review projects while actual observations remain open.
+
+
+### 2026-11-10 — verified workspace checkpoint cleanup
+
+Pushed and fetched bd5727bda3e8bf9345e6d62943c8f6fc97a5f34d; remote source, docking evidence and ledger match. Removed only 17 earlier session-owned numeric docking/resize test directories (123881173 bytes), after validating absolute paths under this checkout/output and rejecting linked targets. Kept latest successful artifacts and all raw failed logs, owner review source/private projects/profile/recovery, native aggregate fixtures and approved temporary SourceIO for remaining tests. Original assets, Steam content, normal Studio and shared tools untouched. Exact targets are in docs/benchmarks/workspace_intermediate_cleanup_2026-11-10.json. Full aggregate and actual appearance/device/learner/novice/clean-environment observations remain pending; retain this active checkout.
+
+
+### 2026-11-10 — Ctrl precision flight and cursor return
+
+Owner confirmed World clipping is fixed, then requested nested dock splits, temporary Ctrl slow camera movement, return of the cursor to its original position after camera navigation, and investigation of hair response to a fan. Camera increment: Ctrl holds WASD at 0.75 units/s (normal3, Shift8); release restores normal/still-held Shift speed without ending the gesture. First button-down cursor position survives delayed selection-to-flight and extra held buttons; last release/Escape requests return through Viewport.warp_mouse so interface scale is respected. Focus loss releases without warping the other application's cursor.
+
+Actual native Miku navigation passes 52 writer + 2 cold checks, unchanged native/project/source data, exact authored camera/model/Undo/render invariants and two closed private desktop receipts. Cursor tests assert requested restore coordinates, multi-button/escape/repeated-release/focus behavior; actual physical cursor return still needs owner feedback on the normal desktop. First run used91-bone Avatar where unchanged wrapper requires >100-bone Miku, failing that fixture guard despite passing camera checks; repacked the actual126-bone current MMD prerequisite and reran unchanged guard. Review copy app/world-selection sources backed up and updated without touching running windows, projects, profile or recovery.
+
+Full aggregate was deliberately interrupted in owned audio child before nested-dock work; its job/desktop closed. Nested split implementation and native fan/flutter investigation remain active; no full aggregate or new acceptance closure claimed. Missing historical legacy source ZIPs are also identified under old installation checkpoints; recover exact historical oracle provenance rather than silently replace or weaken when aggregate reaches those wrappers. Evidence docs/benchmarks/camera_input_refinement_2026-11-10.json.
+
+
+### 2026-11-10 — nested docks and fan aiming/flutter, shutdown handoff
+
+Owner confirmed left clipping fixed and requested recursive dock arrangements, temporary Ctrl speed, original cursor return, and active fan/hair motion. Camera checkpoint is c3ea990. Docking now supports recursive horizontal/vertical split groups within all four edges: broad proportional outer-quarter split targets, center tabs, floating native windows and exact remembered nested homes. v3 layout preserves trees/offsets/selection and migrates v1/v2. All live controls and scene data remain intact.
+
+Read-only staged actual owner recovery shows12native secondary chains and Hips Y=-80.360916, below the fan: no chain receives air at strengths3/12/50. Correctly aimed old steady force settles almost completely. New Aim at hair is one Undo, respects fan scale and keeps character pose; Add fan targets the selected model, with explicit reach feedback. Deterministic fixed-step gusts produce ongoing motion, stronger response with strength, zero added flutter at0/missed stream, and existing angular/force limits. No owner pose is reset.
+
+Clean final passes: native15 + original15flutter/aim/Undo/scale/determinism checks, existing49fan checks including raw VRM0/1, Record/HAS and48frame1080p24H264; nested native13writer+5cold; v1/v2 migration/docking18writer+4cold; native Avatar resize31. The recursive layout's prior timeline42+35+48+47 and unchanged camera52+2 checks also pass, explicitly scoped before final isolated gust-gain/drop-zone refinements. All13private receipts validate isolation and cleanup. Full aggregate is not passed: deliberately stopped again for owner nested-dock request; four historical legacy-source ZIPs are absent at old install paths and need exact historical oracle recovery, not weaker hashes.
+
+Updated six session review sources after backups, including new dock_tree.gd; all private project hashes unchanged, owner window/profile/recovery and installed Studio untouched. Latest source needs restart; owner has not reviewed nested/fan behavior or actual OS cursor return. Owner now explicitly requests shutdown wrap-up and a concrete Markdown pickup plan. Preserve the active checkout, private review projects/recovery and owned native fan reproduction input; private art must not be uploaded or cleaned without a safe backup. Compact evidence: docs/benchmarks/nested_docks_fan_flutter_2026-11-10.json. Acceptance55/62 and implementation52/54 unchanged.
+
+
+### 2026-11-10 — owner shutdown pause and concrete pickup plan
+
+Owner explicitly requests shutdown wrap-up. Implementation checkpoint5ab8c3911e7eba294e56bb6caaeb387ae41d4fd7 is pushed and remotely verified; all latest review sources are updated after backups. Saved docs/NEXT_SESSION_PLAN_2026-11-10.md with implemented versus missing/limited features, optional/OPEN distinctions, concrete next commands and completion criteria, exact historical oracle gap, actual human/device gates, and protected private recovery/retention paths. Restored existing progress-memo prefix line endings without changing prior content. No full aggregate or artist/physical completion claim. Preserve this checkout because private review/recovery and reproduction inputs remain pending; pause the active goal at the owner's explicit request.
+
+
+### 2026-11-10 — Bikini Reimu missing-rig entry repaired in cloud
+
+Owner explicitly requested the missing Rig Helper implementation for the supplied Bikini Reimu GMA. Reproduced the stale disabled Hair & clothes control on the actual77-bone player model:2/4 baseline assertions failed while the existing Set up loose parts generator was already present. Hair & clothes now offers that reviewed weighted-generation flow when declared springs are absent, leaves the toggle off during review, preserves malformed-descriptor refusal, and retains ordinary existing-chain simulation. Bounded source material labels and an initial hair/ribbon/clothing preview hint make the actual hair_acce ribbon discoverable; the selection scrolls into view. Apply still requires explicit review, creates an immutable asset as one Undo, and then instructs the user to enable simulation.
+
+Final actual native test passes22 writer +7 fresh-reader checks: Cancel,244-vertex/13-pinned seam region,4new joints (77to81), original IDs/native metadata/keys retained, exact data Undo/Redo, neutral bind difference4channels (mean4.82253e-7), fan-off/on geometry and0.31069rad generated-joint difference, no unrecorded keys,25-key Local Record, independent cel, packed Save, exact replay pixels and actual24-frame1080p24H264. New reader uses its own embedded cache with private staged source offline. Original GMA, GLB and parameters hashes/mtimes are preserved. Backend30tests and existing helper39/multi-chain59/patch35 checks pass; three48-frame1080p24 movies verified, AAC onset1.0000417s in smoke/patch.
+
+Preserved intermediate compile and oracle failures. Linux cancellation tests now check actual /proc existence after Godot reaps a killed worker, retaining the same worker-exit assertions and Windows behavior. Multi-chain storage oracle now parses only the pre-JSON writer side once; previously reparsing the already-loaded tiny floats introduced an extra conversion. Independent Python checks prove exact original decimal values in all plain/VRM0/VRM1 packed clips; no epsilon or source-pose changes. Fresh Reimu keys normalize only integer timeline frames before exact packed comparison.
+
+Synchronized shared Windows checkpoint7c823c2 before final native/regression tests, preserving new nested docking and fan/flutter. This focused cloud fix does not claim Windows execution, installed Studio changes, full automatic hair/cloth generation, full aggregate or new artist/device acceptance. Ledger remains52/54 implementation,55/62 acceptance. Reproduce with tests/verify_reimu_helpers.py and the private converted player GLB plus parameters.json. Compact before/after evidence, original hashes and failed-run identities: docs/benchmarks/reimu_missing_helpers_2026-11-10.json. Push and verify source/results before exact owned disposable cleanup; retain originals, active checkout and latest private packed example.
+
+
+### 2026-11-10 — verified Reimu helper checkpoint cleanup
+
+Pushed and fetched e36370d47b934d7db29c681cf125689e88c94421; remote main source, tests and compact Reimu evidence match exactly. Removed only enumerated task-owned render frames, staged inputs, extracted test caches and generated fixture folders (184617332 bytes reclaimed including compression). Retained the original GMA/GLB/parameters, active checkout, latest private packed Reimu example, review/cold/recorded images and compact results. The two large intermediate compile-failure logs are retained losslessly as SHA256-verified gzip files. No owner installation, Windows review project, original artwork or unrelated process was changed. Exact targets: docs/benchmarks/reimu_helper_cleanup_2026-11-10.json. Future workers must fetch the pushed source/results; private art is not redistributed.
+
+
+### 2026-11-11 — fresh Windows native and Reimu helper verification
+
+Resumed from the shutdown plan in a fresh full-history checkout at remote08427750. Preserved yesterday's private review, recovery and installation. Fresh actual native import passes43checks with a48frame1080p24H264 export; prepared native MMD126/GMod77/SFM83bone projects all retain metadata. Reused the approved pinned SourceIO runtime after archive-hash verification; the exact19layer hecatia original was staged read-only.
+
+Actual Bikini Reimu player passes22writer+7coldreader checks on Windows: reviewed244vertex ribbon, Cancel/Apply, Undo/Redo, fan deformation,25recorded keys, exact packed keys/provenance/pixels with staged source offline, and24frame1080p24H264. First run passed writer and6/7reader assertions; the cache comparison mixed Windows/Godot separators. The test now normalizes paths, requires a strict cache descendant and checks the embedded file's actual SHA256. Both graphical private-desktop receipts are now asserted by the wrapper. No application behavior or comparison tolerance changed. Original prepared inputs retain hashes/mtimes.
+
+Owner states historical November4backups are dead and explicitly requests continued independent work without review interruptions. Record those exact historical oracles as unavailable; do not substitute a different version or claim those checks passed. Artist comfort, physical cursor behavior and other human/device gates remain pending. Full aggregate next; no aggregate pass claimed. Ledger55/62acceptance and52/54implementation unchanged. Compact evidence: docs/benchmarks/windows_resume_2026-11-11.json. Commit/push and remote-verify this increment before any disposable cleanup; retain private owner work.
+
+
+### 2026-11-11 — compact timeline routed-click prerequisite
+
+Fresh canonical Windows run passed Krita32+5, native pose library24 and core groups through world_workflow, then stopped at object_timing:35/36 assertions passed, but the64th-row routed click missed. Inspected before/after screenshots: the inner track viewport was clipped below the compact outer Timeline scroll, so the old test routed its click outside the visible area. The test now uses ordinary outer ensure_control_visible before the row gesture and adds strict viewport/point bounds assertions. All original app interactions, data and pixel assertions remain.
+
+Clean isolated rerun passes38checks, actual MMD/GMod/SFM timing and portable reopen, zero changed preview/export channels, actual48frame1080p24H264, and closed hidden desktop/no foreground child. No app source or numeric tolerance changed. Additional Windows helper backend20tests pass. First failed result/log remain local and compact failed/success measurements are saved in docs/benchmarks/timeline_viewport_2026-11-11.json. Full aggregate remains unpassed and will restart after this pushed checkpoint. Ledger55/62acceptance,52/54implementation unchanged. Owner requests no further review interruptions; unavailable historical backups remain explicitly unavailable.
+
+
+### 2026-11-11 — current cold-review source inventory
+
+The cold-review wrapper's source inventory depended on a dead November4duration ZIP and omitted new scripts such as dock_tree.gd. Default inventory now comes from the current checkout's Git file list, excluding generated output, engine caches and Python bytecode, as already used by the separate review builder. Explicit checksum-bound checkpoint inventories remain available. Current app script inclusion, safe relative paths and minimum complete inventory checks remain enforced. An inventory-only option reports hashes without claiming runtime acceptance.
+
+Observed1243current source files including nested docking. Explicit complete inventory matches exact hashes; wrong ZIP checksum, unsafe traversal path and omission of dock_tree.gd each refuse. These are inventory-only checks. Separate historical audio/storage readers and exact SHA guards are unchanged, unavailable and not certified; full cold-review runtime remains unpassed. Corrected stale ledger blocker wording: exact19layer hecatia is present and passes32+5, while current full canonical rerun is still in progress. No acceptance count change. Owner's no-review-prompt instruction recorded. Evidence: docs/benchmarks/current_review_inventory_2026-11-11.json.
+
+
+### 2026-11-11 — fresh36core groups passed, broader suite continuing
+
+Canonical rerun after350b85d passes all36core groups, including actual native three-rig timing/pose, animated channels, secondary/fan motion, physics56, contacts, props35 and recorded physics. Earlier native Krita32writer+5cold and native pose-library24checks also pass. Exact raw results/private-desktop checks and timings are recorded in docs/benchmarks/windows_core_resume_2026-11-11.json. All graphical core receipts confirm private placement, no foreground child and closed job/desktop. Core application source remains08427750; only cold-review inventory tooling/docs were changed independently during the run.
+
+The broader canonical workspace/helper/shape/contact/drawing/recovery/course and final movie-analysis steps are still running: do not call this a full aggregate pass. Ledger55/62acceptance and52/54implementation unchanged. Owner review stays pending without prompts. After remote-verifying127363f, removed exactly three owned synthetic inventory ZIPs (502596bytes); exact paths/hashes are in this receipt. Original artwork, yesterday's review/recovery, installation, current native fixtures and pending deliverables remain retained.
+
+
+### 2026-11-11 — rebuilt missing actual Mima catalogue prerequisite
+
+Broader canonical run passed workspace48, resize31, docking/migration, nested splits, fan flutter, shortcuts, numeric camera, reviewed helpers and source/base/animated shapes, then stopped before catalogue execution: the tracked sfm-face-pilot report referenced an absent old-worktree GLB. Located unchanged original C:\a\dump\New folder\mima.rar, exactb0a4b19a archiveSHA. Rebuilt only115recorded resource members (236825494bytes), each matching the retained SHA manifest; no addon scripts or unrelated models extracted. Existing7-Zip and approved pinned SourceIO/factory Blender used. Original hash/mtime unchanged.
+
+Added tests/prepare_mima_fixture.py as the reproducible source recipe, with original-checksum and safe new-owned-output guards. Two independent preparations produce identical current e9b21ab5 GLB:229bones,3meshes,13images,143facial targets. Historical GLB b57798a0 differs and is not falsely claimed byte-identical. Wrong source identity refuses before staging; existing destination refuses. Actual catalogue rerun passes34units+130writer+5cold with all seven original/native plans, exact metadata/source checks and actual48frame1080p24H264; both graphical receipts closed/private/no foreground. No catalogue test or tolerance changed.
+
+Staged exact fresh Miku/street bundles at the older pose/render tests' expected owned aliases. Previous canonical pose37checks explicitly skipped its optional native Miku branch; the three native rigs passed separate suites, but that skip is not a native pose-smoke pass. Next canonical run will exercise the actual branch. Compact failure/provenance/results: docs/benchmarks/mima_fixture_restore_2026-11-11.json. All36core results remain scoped; no full aggregate or human acceptance claim. Ledger55/62acceptance,52/54implementation unchanged. Keep private current fixtures/review and yesterday's recovery; do not upload art.
+
+
+### 2026-11-11 — separate current review ready without owner interruption
+
+Built fresh source-only owner-review/Studio from remotely retrieved9b64a62, with a unique profile and no development import/output cache copied. Actual private normal startup confirms Home visible, Simple, empty world and no recovery auto-adoption; its job/desktop closed with no foreground child. All frozen source hashes match. Four packed private projects (Avatar/Flatgrass/Street/new Reimu helpers) retain source/copy SHA256; launcher files are ready for later owner use. No visible app launch, review question, installed Studio replacement or old review/profile/recovery modification. Exact entry paths and retention: docs/windows_review_2026-11-11.md; compact startup/source/project evidence: docs/benchmarks/owner_review_resume_2026-11-11.json.
+
+After verifying9b64a62 remotely, removed only the first duplicate Mima staging tree:115files/236825494bytes, every SHA matched the retained independently staged copy before deletion, resolved containment checked and all reparse/link targets refused. Kept both prepared GLBs, failed/success reports/images/movies, the current115-resource stage, original RAR and every owner review/recovery file. Exact deletion inventory in this receipt. Canonical suite restarted with rebuilt native Mima and Miku/street aliases; still in progress and not a full aggregate pass. No acceptance status promotion or human observations invented.
+
+
+### 2026-11-11 — portable native fixture provenance and restored recorded coverage
+
+Canonical run with native Miku passed45pose checks/all36core and all wrappers through shape study, then stopped before comparison: the tracked historical height-audit report referenced a deleted plans.json. Shared native_fixture_plans now resolves current catalogue inputs against saved fixture assets by actual SHA256, preserving their exact root rotation/metadata and refusing changed/missing/escaped declared assets. Historical audit reports remain unchanged; no historical observation is relabelled current. Five input/provenance unit guards pass and are now included in canonical verification.
+
+Controlled audit also exposed our fresh Scout prerequisite missing the established manual90degree root rotation from sfm_render_smoke.gd. Initial height query was complete but sideways; corrected only owned Scout fixture via ordinary numeric Rotate, preserving actual GLB SHA a04bf725. prepare_native_projects accepts explicit root_rotation_degrees and reports the saved quaternion. Height tests now explicitly require this reviewed Scout to be upright. Corrected reruns: comparison94+2teardown+4draft checks/all6native models; height105+4cold+9actual native ingress/all6native models, now upright Scout. Body wrappers previously read a hardcoded old installation and silently omitted recorded fixtures; now they use current core recording and require its declared model count. Curves31unit+60GPU and ordinary body24unit+72GPU pass, including all3actual recorded rigs at97half-frames.
+
+Fresh read-only installed Flatgrass conversion retains original4dfd95ec BSP hash; new3b81c80d GLB drives actual native map-calibration writer/cold/movie checks, all pass. Replaced only the owned stale Source test-input pointer with an explicitly prepared-only record; preserved its historical report separately. No Source UI integration pass is invented. All targeted private receipts confirm hidden placement, no foreground child and job/desktop closure. Exact counts, before/after Scout assessments and source identities: docs/benchmarks/portable_native_inputs_2026-11-11.json. No app source or tolerance changed; full aggregate remains unpassed, other independent suites next. Ledger55/62acceptance and52/54implementation unchanged. Owner review stays deferred without prompts.
+
+
+### 2026-11-11 — contact editor fixture uses current drawing ownership
+
+Remaining scoped sequence passes11wrappers: expression presets, MMD groups, lighting/live appearance/import physics, pose bounds, camera range, color sampler, foot hold/contacts and contact animation. Contact editor then reached its final paint/save exercise and aborted on direct cel.image: normal create_cel now uses a raster owner. Its110second watchdog exited2 and private job/desktop closed without foreground child. Earlier actual contact control assertions passed; no product failure is inferred from the fixture field error.
+
+Changed only contact_editor_smoke to obtain editable pixels through Drawing.edit_image and reopened pixels through Drawing.image. Added an explicit successful-edit assertion/fail-fast path, retained exact independent pixel bytes and movie-frame equality. Clean actual UI/HAS/H264 rerun passes34checks, all original contact/Undo/live-physics guards plus independent paint and48frame1080p24movie; private receipt passes. Compact failed/success and preceding scoped results: docs/benchmarks/contact_editor_raster_api_2026-11-11.json. Audit found the same stale direct field in other contact/motion/audio fixtures; port and execute those next. No app source/tolerance changed, full aggregate remains unpassed and ledger55/62acceptance/52/54implementation unchanged. Owner remains uninterrupted by questions.
+
+
+### 2026-11-11 — complete contact regression set on current raster API
+
+Ported only stale direct app cel.image accesses in contact fixtures to Drawing.edit_image for painting and Drawing.image for reading. Kept every original stroke, exact RGBA/hash/preview/movie assertion, data comparison and tolerance. All12contact suites and both clipboard/physics component variants pass: animation/editor, clipboard/physics, parenting/correction, actual five-native persistence with4fresh readers, bindings/identity/selection/transform and real viewport dragging/cold replay. All collected private graphical receipts confirm hidden desktop/no foreground child/closed job and desktop. No app source change.
+
+Exact test-file changes, per-suite counts and receipts: docs/benchmarks/contact_raster_ports_2026-11-11.json. Source-test API migration is verified for these contact files only; corresponding motion/movement-path/audio ports are still pending their own commands and are deliberately not committed as passed here. Remaining sequence has moved into multi-audio and scene duration. Full canonical aggregate remains unpassed; ledger55/62acceptance and52/54implementation unchanged. Owner review remains deferred without prompts. Keep raw initial field-error/watchdog evidence and current native fixtures/private review.
+
+
+### 2026-11-11 — Windows mixed-separator metadata writes repaired
+
+Multi-audio writer26checks, exact cold native/world/paint/PCM and H264 export passed, but packed reader's duplicate-ID assertion failed. Diagnostics prove no invalid project was accepted: Recovery.write_json returned “Metadata write escapes its owned folder,” the seed IDs stayed distinct, and the unchanged valid manifest reopened. Actual production defect was atomic_metadata.path_error comparing Windows/Godot path spellings inconsistently. Normalize slash spellings only on Windows before existing containment/link checks; preserve POSIX behavior and all size/readback/fresh-inode/Python commit guards.
+
+Added actual Windows regression:13passes for five separator/trailing-root variants, outside/traversal/other-drive/owner and size refusal, real hard-link replacement preserving its source, and real managed-junction refusal preserving an outside-owned sentinel. Two symbolic-link cases remain explicitly unavailable (WinError1314); no privilege/config change requested. Python metadata suite8passes/4skips. Existing headless regressions pass save-worker12, journal33, lesson43, lesson-loading6, identity47; Linux-specific link/permission suite explicitly skipped. New Windows fixture first had a compile-only type inference error, corrected before runtime evidence.
+
+Strengthened multi-audio reader oracle: require successful seed commit and actual duplicate IDs read back before original duplicate-refusal/unchanged-mix assertion. Full fresh multi-audio rerun passes26writer,7packed,6linked,5recovery,5lesson; exact clip/source/PCM/native/camera/paint and zero changed cold pixels retained. Both48frame1080p24H264AAC movies meet analytic levels/onset0.2500417s; all private graphical receipts closed/no foreground child. Also ported its stale direct cel.image reads through the current Drawing API. Source originals and both packed/linked packages remain hash-exact. Evidence: docs/benchmarks/windows_metadata_separator_fix_2026-11-11.json. Ledger55/62acceptance and52/54implementation unchanged. Remaining motion/movement-path fixture ports still need execution; full canonical run and updated review source follow. Owner review remains deferred without prompts.
+
+
+### 2026-11-11 — remaining scoped sequence and recent interaction checks pass
+
+All27remaining wrappers from scene duration through first movie pass after the Windows metadata fix: motion assist/tracks/native/animation/app, opacity/brush/pressure/layers/onion/fill variants/palette, drawing history/selection/transform, recovery identity/startup/history/scheduling/preview, Home/tutorials/first movie. This scoped sequence is not a full canonical aggregate. Source hashes stayed unchanged during the sequence. Earlier contact and multi-audio phases have their separate pushed receipts.
+
+Verified remaining four raster-access test ports (motion assist/native animation reader+writer/movement-path) through actual commands: native path121checks/all5native rigs; camera52writer+2cold on owned Miku-only package; timeline42domain+35app+48workspace+47channels with native rigs, HAS/recovery and48frame1080p24H264; native fan15 on a read-only copied retained owner reproduction input. Native input hashes/mtimes and source stay unchanged. All collected graphical receipts private/no foreground child/closed job+desktop. Physical cursor return and artist fan/dock comfort remain unobserved, without further owner prompts.
+
+After remote-verifying89d7625, removed188superseded diagnostic PNG sequence files (3990200bytes) from exactly four failed multi-audio renders; kept all four movies, frame25/reference images, failed logs/JSON/packages and current successful outputs. Exact inventory and actual command/results: docs/benchmarks/motion_remaining_scope_2026-11-11.json. Next: prepare latest isolated review source, then run the entire canonical default suite with all prerequisites. Full aggregate and human/device/clean-install gates remain unpassed; ledger55/62acceptance and52/54implementation unchanged. Protect both review checkouts and old owner recovery.
+
+
+### 2026-11-11 — latest separate review includes verified Windows fix
+
+Added an owned-output argument to the source snapshot builder so a new review never overwrites an existing Studio; optional Reimu helpers launcher now follows the three standard private examples. Fresh owner-review-current/Studio copies runtime from remotely verifiedbd097691, including atomic_metadata's Windows separator repair, plus this small builder patch. Normal private Home startup passes in a fresh unique profile: Simple/empty/no recovery adoption; job/desktop closed, no foreground child. Exact frozen source hashes and all four private project-copy hashes match. Builder refuses both outside-output target and existing old Studio without changing it. No installed tool/Studio or either earlier review/profile/recovery changed. Paths and scope updated in docs/windows_review_2026-11-11.md; evidence docs/benchmarks/current_review_ready_2026-11-11.json. Owner remains busy and no review prompt is issued.
+
+All targeted source/test repairs and remaining scoped feature commands are now saved and verified; start the full canonical default suite with exact KRA, native aliases/current provenance and pinned runtimes. No aggregate pass claimed yet. Current configured-PC software evidence does not certify native artist comfort, physical cursor/tablet/audio observations or clean offline installation. Ledger55/62acceptance and52/54implementation unchanged; keep pending private deliverables.
+
+### 2026-11-11 — native joint regression fixed without extra collision exclusions
+
+The first complete canonical rerun reached physics_contacts and failed its original 5 mm Scout end-strain assertion at6.97mm with the correctly upright native fixture. Keep this failure and the failed eight-position-iteration comparison(6.88mm). Twenty velocity iterations passed, but returning speculative contact distance from0.1m to the documented Godot4.6 standard0.02m also passed without increasing iteration counts. Selected0.02m; retained120Hz/four position/ten default velocity iterations/2mm penetration slop, CCD and all runtime collision rules. No sideways Scout workaround, self-collision disable or new pair exclusion. Contact reports now include per-joint strain and actual settings; optional focused Scout diagnostics leave default full assertions unchanged.
+
+Actual full contact comparisons:76checks0fail in disposable candidate and two independent main-checkout repeats; Scout2.60mm, all six ordinary cases under5mm, authored/Scout below one quarter of legacy strain. Normal physics56checks/all3native falls/fast-wall CCD, props35checks/live ragdoll contacts/portable HAS, recording17unit+62app/allnative/no skips pass. Three48frame1080p24H264 movies verified; props/recording include AAC, recording analytic onset1.0000417s and source audio unchanged. All relevant private desktop receipts confirm hidden child/no foreground/closed job+desktop. First restricted host launch could not start graphical child(exit2); repeated in approved execution context, with no visible fallback. Evidence docs/benchmarks/windows_contact_distance_fix_2026-11-11.json includes failed/successful settings and receipts.
+
+Ledger remains55/62 acceptance and52/54 implementation. Full canonical aggregate must now rerun from this stable source; earlier complete run remains failed and scoped composition is not an aggregate pass. Latest separate owner review still has previous physics setting until refreshed after remote verification. Preserve all existing reviews/recovery and original assets. Owner is busy: no participation prompts; dead historical backups remain unavailable without substitution. Push/remote-verify this increment before exact disposable cleanup.
+
+### 2026-11-11 — owner-requested work pause; PC left running
+
+Owner clarified: pause agent work, do not shut down the PC. No shutdown command was sent. Stopped only the exact verified canonical suite PID36200 and its owned children36420/26956/15696. The full default run from02631f9 passed the formerly failing76contact checks, normal physics/props/recording, workspace resize+docking+nested arrangements, flutter/shortcuts/camera, helpers/morphs, shapes/studies, expressions/MMD groups, height and map calibration. Interrupted during subsequent body curves; aggregate remains unpassed. Original failure and all scoped evidence retained; later phases are not a new full pass. Numerical pickup receipt docs/benchmarks/windows_pause_2026-11-11.json and concrete plan docs/NEXT_SESSION_PLAN_2026-11-11.md.
+
+After remote-verifying02631f9, removed only disposable physics-solver-probe/Studio(1409files/349432050bytes); retained all raw candidate/baseline/comparison JSON/logs and source snapshot in its parent. Four38MB private project copies are staged in output/owner-review-verified, but no runnable new Studio was built there. Existing owner-review-current remains runnable with the earlier physics setting; its source must be refreshed after final aggregate validation. All old review/recovery/native inputs and installed apps/tools retained. Compact contact benchmark now explicitly records failed candidate's eight position iterations. Ledger55/62acceptance,52/54implementation unchanged. No owner review prompts. Resume only upon owner request; first finish canonical aggregate, then prepare latest separate review and save/remote-verify evidence before exact cleanup.
+
+### 2026-11-12 — hair/accessories feedback recorded; work remains paused
+
+Owner explicitly requested recording only, not resuming implementation. Deferred report: some parts cannot be added to joints, specifically Bikini Reimu's Back hair; retain precise single-item refinement and correctable automatic guesses; allow local-blow preview to identify and exclude unwanted responding parts; infer/select an intended part by clicking it in the 3D view; support multiple-item selection; make the Simple-mode flow less jarring while preserving the useful Advanced workflow. No cause was diagnosed and no code, app launches or tests were undertaken. Details and deferred reproduction/validation steps: docs/hair_accessories_feedback_2026-11-12.md, linked from the pickup plan. Goal remains paused; aggregate incomplete and ledger counts unchanged. Do not request owner participation or resume work until explicitly asked.
+
+### 2026-11-12 — rotation-ring requests recorded; pause retained
+
+Owner added two requests to the paused-work feedback: invert the affected RGB rotation ring's direction, at least the top ring; add an always-camera-facing relative rotation ring for left/right turning from the camera view, citing SMH/SFM. Recorded in docs/rotation_gizmo_feedback_2026-11-12.md and linked in the pickup plan. View-axis clockwise/counterclockwise rotation is the recorded implementation interpretation, not an already verified design. Exact affected axis/view/cause remain uninvestigated; do not blindly invert all axes. No code, application launches or tests performed. Existing hair/accessories requests, paused goal, incomplete aggregate, ledger counts and no-participation-prompt instruction remain unchanged. Implement only after an explicit resume.
+
+### 2026-11-12 — Hair & Cloth toggle-off restoration bug recorded
+
+Owner reports a configured/enabled joint deforms as intended while Hair & Cloth is on, but the deformation persists after switching the feature off instead of returning. Added this separate defect and deferred reproduction checks to docs/hair_accessories_feedback_2026-11-12.md and the pickup plan. On resume, investigate removal of live offsets with restoration of the appropriate authored/current-frame pose, preserving manual edits, configured joints, explicitly recorded keys and other live physics; no cause or fix is established. No code changes, app launches or tests. Work remains paused and existing aggregate/ledger status unchanged.
+
+### 2026-11-12 — scene framing, gizmo bounds and resolution feedback recorded
+
+Paused-work recording only. Owner wants full-area scene setup with optional focused camera/output framing; suggests a3by3composition grid. Screenshot visibly places RGB rotation rings outside the white focused panel on its left; cause uninvestigated. Owner requests1080pdefault plus selectable preset/custom output resolutions such as4K, and floats timeline-changing resolution as an exploratory Advanced idea, not a settled design or added acceptance gate. Details, future checks and distinction between scene view/framing/output dimensions: docs/viewport_framing_feedback_2026-11-12.md, linked in the pickup plan. Clipboard screenshot preserved unchanged in private output/owner-feedback-20261112/viewport-camera-frame.png(60256bytes,SHA256255c5b3fc02ef2765e8fab5ffd32c68498b3ccf3ed778ee21c2814995c38434d); do not upload or clean this unbacked evidence with disposable outputs. No code, application launches, reproduction tests or ledger changes. Work remains paused; resume only on explicit request, without owner testing prompts.
+
+### 2026-11-12 — single-camera preference clarified; pause unchanged
+
+Owner clarified that the current arrangement could suit multi-camera use but personally prefers a single-camera view. Recorded in docs/viewport_framing_feedback_2026-11-12.md and the pickup plan: favor one main camera view with optional framing/scene-setup controls; multi-camera arrangements remain optional ideas, not an assumed implemented feature or the ordinary workflow. Documentation only; no code, app launches, tests or goal resumption.
+
+### 2026-11-12 — future lighting and model illumination direction recorded
+
+Owner requests eventual GMod/MMD/Raycast-style lighting and Advanced Light Entities controls, asking how far an RTX-like appearance can go without RTX. Clarified core goal: bounced/reflected illumination should affect items and character models as well as map geometry. Read-only research of supplied Steam and Xenthio/garrys-mod-rtx-remixed references, its linked SourcePT successor, Ray-MMD and Godot4.6 primary docs recorded in docs/lighting_feedback_2026-11-12.md, linked from pickup plan and lighting overview. Current GMod RTX README is deprecated/points to SourcePT; it lists material conversion, skinning and Remix integration, not a portable non-RTX fallback. Godot probes can light moving models from baked GI; dynamic GI/SSR options have differing limits and require an optional Forward+ path beyond current HAS Compatibility configuration. No RTX-parity/FPS or already-implemented claims. Preserve explicit model-receiving versus contributing distinction and Raycasting/Ray-MMD ambiguity. No code, app launches, installs or tests; goal remains paused, deferred bugs/aggregate/ledger unchanged.
+
+### 2026-11-12 — render-time lighting quality and model-browser ideas recorded
+
+Owner emphasizes final video rendering can spend longer per frame despite laggy real-time lighting; records flat/simple/GMod-like/MMD-like/RTX-like appearance choices while unsure about an SFM default. Updated lighting feedback to separate scene-render quality, preview speed and encoder compression, retaining the existing PNG/timing/output-size contracts. Owner also proposes keyword-based online model listings across SFMLabs/BowlRoll/Steam Workshop, source labels/optional square thumbnails, default-browser links and contextual retrieval notices with Do not show this again, plus local directory discovery. GMod/Steam wording is a proposed example, not a verified universal prerequisite. Records SFM-like selection-triggered local model previews and concern that conversion/corrupt files could destabilize Studio; proposed separate cancellable bounded conversion, debouncing, validated caching and unchanged-scene failure behavior remain future design/validation goals. Details docs/model_browser_feedback_2026-11-12.md; pickup plan linked. No implementation, online provider requests, downloads, app launches or tests; work stays paused and aggregate/ledger unchanged.
+
+### 2026-11-12 — international model catalogue, query variants and badges recorded
+
+Owner clarifies future model-browser work must research resources broadly, including non-English communities, building a source-directory catalogue beyond the initial three examples. Added client-bundled aliases/original scripts/romanizations and case, character-width, spacing/punctuation/format variants; preserve exact original queries, use provider-specific syntax with bounded separate variant searches where appropriate, rank/deduplicate without collapsing different models. Downloadable/Preview/Password are evidence-based, possibly overlapping badges; distinguish image/3D/preview-only meanings, offered download pages versus actual retrieved files and unknown metadata versus unavailable assets. Passwords/source identities are not normalized as search text. Details in docs/model_browser_feedback_2026-11-12.md and pickup plan. This is deferred research/design documentation only: no provider discovery requests, account access, downloads, implementation, app launches or tests. Work remains paused and existing aggregate/ledger unchanged.
+
+### 2026-11-12 — initial discovery feed and keyword-expansion examples recorded
+
+Owner clarifies two browser flows: initial diverse/discoverable feed of approximately100model listings, another approximately100appended on bottom scroll; top search bar activates targeted keyword/alias variations. Exact example Hatsune Miku -> Hatsune Miku/Hatsune/Miku/Miku Hatsune, with Miku/Hatsune keywords independent of order. Added distinction between strong full/reordered-name matches and broader individual words, combined feed versus per-provider counts, metadata listings versus asset downloads, and future pagination/query reset/stale-response checks. Details docs/model_browser_feedback_2026-11-12.md and pickup plan. No provider queries, downloads, implementation, app launches or tests; pause, incomplete aggregate and ledger unchanged.
+
+### 2026-11-12 — separate website and model-type filters recorded
+
+Owner explicitly requests recording only: model browser should narrow by website/source and by model type/ecosystem such as MMD, SFM, VRM or GMod, with website filtering a separate control. Added independent/combinable filters to docs/model_browser_feedback_2026-11-12.md and pickup plan, applying to discovery, keyword searches and scroll batches. Preserve source-versus-compatibility distinction, All/clear choices and future filter-change pagination checks. No implementation, provider queries, app launches or tests. Goal remains paused; aggregate and ledger unchanged.
+
+### 2026-11-12 — model-browser design remix contributed; implementation paused
+
+Owner invited assistant contributions to the browser idea. Created docs/model_browser_concept_2026-11-12.md, linked from original feedback and pickup plan, with explicit separation between existing owner requirements and optional assistant proposals. Proposed shared Discover/On this PC/Saved flow, locally saved shortlist plus Locate downloaded file bridge, visible/correctable Also searched variants, access-versus-local-readiness distinctions, preserved online title/thumbnail default-browser actions, one selected local preview with honest prior-preview/loading states, diverse stable pagination and graceful per-source failures. No automatic asset downloads, cloud accounts or scene mutations proposed. Suggested additions are not new mandatory acceptance gates. Design documentation only; no provider search, app launch, implementation or tests. Goal remains paused; unfinished aggregate and ledger unchanged.
+
+### 2026-11-12 — Discovery tab organizing idea clarified
+
+Owner identifies the browser as a Discovery tab covering local and online models with proper labels. Updated the concept's earlier three-entry-point sketch to one Discovery umbrella with Local/location and Online/website provenance; existing search/type/site filtering and explicit optional network use remain. Saved as an internal optional filter is an assistant proposal, not blanket owner approval of all additions. Linked clarification in original feedback and pickup plan. Documentation only; no code, online model requests, app launches or tests. Goal stays paused and existing verification/ledger status unchanged.
+
+### 2026-11-12 — sound discovery recorded as secondary optional extension
+
+Owner suggests eventually expanding Discovery to sounds using the same principle: research directory websites, retain their provider list, then browse/search the listings. Recorded in model-browser concept, original feedback and pickup plan as a later optional Local/Online category, explicitly secondary to models and not a new prerequisite or acceptance gate. No sound-site research, downloads, playback, implementation, app launches or tests. Work remains paused; existing audio editing, incomplete aggregate and ledger unchanged.
+
+### 2026-11-12 — all chat requests consolidated into one resume master
+
+Owner asked for one large Markdown reference covering previous requests. Created docs/RESUME_MASTER_PLAN.md with inline consolidation of earlier scene-space/UI-scale/World clipping/docking/camera/fan requests and their exact observed versus software-tested state; unresolved Hair & Cloth/Back hair/selection/local-blow issues; rotation and viewport/framing/resolution; lighting/shared model illumination and slower final rendering; complete Discovery requirements, multilingual variants, filters/batches/badges/previews, optional assistant proposals and secondary sounds. Includes paused goal/no-PC-shutdown/no-participation-prompt rules, incomplete full aggregate and scoped fixes, seven external acceptance IDs, original inputs/archive names, approved tools, private review/recovery/screenshot protection, cleanup facts and concrete resume order. Original detailed notes remain provenance; both older pickup plans now point to the master, with explicit stale November10 owner-review/dead-backup directions superseded. This is documentation compilation only, not resumed implementation or a new app/provider/input verification. Ledger55/62acceptance and52/54implementation unchanged.
+
+### 2026-11-12 — resumed; Hair & clothes off restores authored pose
+
+Owner explicitly resumed work (goal active); human participation/no-interruption limit persists. Found direct cause: Hair off called body Freeze, persisting simulated sway into draft/history. New secondary-only disable removes live offsets, preserves authored/current-frame pose and explicit recorded keys, retains the same active body solver and avoids disposing borrowed bodies when deferred hair setup is cancelled. Body Physics off still freezes; active Record keeps its established commit path. Updated tooltip/current secondary docs and master state.
+
+Meaningful private before/after: identical fan-driven non-rest draft/recorded-key oracle gives8checks/4failures on original controller versus8/0 on candidate. Final source passes63fan (both actual native VRMs, body peers/pending cancel, Record/HAS and exact movie),8focused and41import-physics checks with5native models. Movie metadata48frames1080p24H264 and native source hashes preserved; all relevant private receipts exit0/confirmed hidden/no foreground/closed job+desktop. Old fan assertion intentionally required Freeze; changed that contract per owner correction and retained failure, with normal fan Undo/Redo verified. Initial test lacked airflow and held stale instance after old Freeze rebuild; tightened the oracle, kept raw failed logs. Evidence docs/benchmarks/hair_disable_restoration_2026-11-12.json includes counterfactual, final receipts and exact working-source hashes (independent rotation/Backhair changes also present in shared tree). No full aggregate/artist/device acceptance claimed. Ledger55/62 and52/54 unchanged; continue Back hair/UI/control work and canonical suite. Installed Studio and private reviews/recovery untouched.
+
+### 2026-11-12 — projected rotation direction and focused overlay bounds repaired
+
+RGB ring drag now follows signed camera-ray/axis-plane angles with continuous wrap and edge-on tangent fallback, replacing the camera-independent screen diagonal. Off-frame presses cannot start invisible handle drags; ongoing outside motion/global release remain supported. Pose/joint/helper overlays render through an image-sized clipping parent, preserving drawing/navigation coordinates. Added focused tests and canonical wrapper integration.
+
+Actual private focused run131checks0fail includes24axis/quadrant/camera-side projected model-reference arc comparisons (<0.001px endpoint error), Undo/cancel/wrap/edge-on/global release and independent actual overlay clipping pixels. Owned same-test counterfactual restoring only old pose_editor/canvas sources gives131checks27failures, all24arcs plus wrap/off-frame-handle/clipping; worst old projected error34.96px. No missing-helper/parser errors; both isolation receipts validate expected exit/no foreground/closed job+desktop. Source/test hashes, failed assertions and results saved in docs/benchmarks/rotation_gizmo_fix_2026-11-12.json. Both Godot4.6 parsers pass. Historical CRLF canvas style retained; use CR-aware whitespace check. Camera-facing fourth ring and broad framing remain pending; no owner/device approval or full aggregate claim. Keep stable acceptance counts; active work continues to native Back hair/other requested controls. Installed app/owner projects untouched.
+
+### 2026-11-12 — native Back hair can use its reviewed existing joints
+
+The supplied player Back hair80/1/5 blends Head and back_hair1/2/3; old backend02631f9 legitimately had can_applyfalse/zeroeligible single anchors. Added explicit Use existing joints review for validated linear native chains, disclosing all3shared regions/1369affectedvertices, keeping native positions/weights/skin/binary/mesh/materials/animations unchanged and appending one unweighted endpoint. Ordinary generation/coverage guards remain; node100000/spring512/finitecoordinate refusals added. Existing mode cannot promise patch-only isolation, so coordinates/smallpatch are disabled with clear scope. Derived setup/history remains Undoable/portable.
+
+CPU9new+20old+10morph pass; newCPU file integrated in canonical helper wrapper. Actual native pristine26 and genuine existing-ribbon composition29 checks pass: exact0changed non-rest posed pixels, visible fan deformation, offrestoration, Undo/Redo, packed reopen and24frame1080p24H264. Composite source guard pins actual derived SHA4d62236...ab7b5 and validated embedded original4b23...source/ribbonprovenance; prior chain/history preserved. This does not test owner's private recorded take. Original regressions39helper+14native+59multi+35patch and22ribbonwriter+7cold pass with real48/24frame movies and decoded audio where expected. Originals' hashes/mtimes unchanged; private receipts validate. First native trial's fan occluded camera and failed visible-change oracle; retained failure, corrected controlled sightline without relaxing assertions. Full evidence/sourcehashes/reproduction paths docs/benchmarks/back_hair_existing_joints_2026-11-12.json. Direct picking/multi/local-blow exclusions remain open; no full aggregate/artist/device acceptance, ledger unchanged. Continue view-relative ring, Simple part selection and canonical suite; installed app and private owner projects untouched.
+
+### 2026-11-12 — camera-facing relative rotation ring added
+
+Pale outer ring follows the camera and turns root/skinned-bone poses relative to the current view in Local/World modes. Existing signed angle/wrap math retained. Any XYZ lock dims/disables the view ring rather than bypassing locked components; Move remains unchanged and tooltips explain. Existing3RGB test assertions preserved by explicit !view filter; added independent view-case coverage.
+
+Actual private309writer+4cold-reader checks pass (24originalRGB+24view cases, signed gestures,3camera orientations including roll, root/child, bothspaces, locks/snap/history/cancel/auto-key/packed save). Original pose45actualMiku, world-selection41 andworld-edit41all3native pass; three48frame1080p24H264/2s movies independently probed. Five isolation receipts validate0/hidden/no foreground/closed. Two initial new reader-oracle failures retained: fullprecision JSON plus exactstructure/1e-12 scalar comparison accommodates adjacent parsed doubles; production behavior and old historical oracles unchanged. Evidence docs/benchmarks/view_rotation_ring_2026-11-12.json. No human/device/artist/fullaggregate claim, ledger unchanged. Continue directpart UI refinement, scene-view work and fullcanonical. Installed app/reviews and originals remain untouched.
+
+### 2026-11-12 — international Discovery catalogue recorded; counterfactual cleanup
+
+Added research-only data/discovery_sources.json and docs/discovery_source_catalogue_2026-11-12.md, linked from original feedback/master: 12 researched entries plus requested/unverified SFMLab, covering Japanese/Chinese/Russian/international directories. Stable IDs/families, primary URLs, capability/auth states, metadata uncertainty and access failures recorded; all live_tested=false. No working adapters/UI, credentials, asset/thumbnail downloads or compatibility claims. Poly Haven is only a proposed first metadata adapter. JSON shape/counts and local references checked. Ledger55/62acceptance,52/54implementation unchanged; ongoing helper/scene work remains separate.
+
+Cleanup after remote12f5d61 verification: exact disposable output/rotation-counterfactual/1794515417597023600/Studio removed (1284files,17967128bytes). Parent failed/fixed experiment/log/receipt retained and compact evidence recoverable from Git; no owner art used there. Other source/review/recovery/native inputs retained. Continue current source increments and canonical suite without participation prompts.
+
+### 2026-11-12 — exact-commit review snapshots isolated from ongoing edits
+
+Review builder optional --revision now copies exact committed regular Git blobs, never concurrent working/staged/untracked/deleted files, while preserving original default mode. Manifest distinguishes source mode/commit/hashes; existing Studio refuses overwrite, startup/private profile validation unchanged. Seven CPU tests pass (including twelve unsafe Windows path/case variants and a concurrent destination race) and are registered canonically. Actual614dc34 source probe1282files/17635298bytes matches independent length-prefixed Gitblob IDs; working helper edit/output/cache excluded. Initial per-file-Git verification deliberately interrupted as inefficient, same oracle retained with batch tree/hash check; both copies pending verified cleanup. Compact evidence docs/benchmarks/committed_review_snapshot_2026-11-12.json. No new app-startup, owner-review or fullaggregate claim; stable ledger unchanged. Continue verified picker publication and full-scene editor work.
+
+### 2026-11-12 — loose-part scene picking and Simple chain choice verified
+
+Added approximate nearest source-bound picking through current joint transforms, inspectable list correction and preserved navigation/cancel/global-release/patch routing. Configured-part clicks clear stale Apply and keep patch focus. Simple auto-reviews valid existing joints only when all ordinary attachments unavailable; explicit Apply/shared-scope disclosure/manual uncheck/Advanced preserved. Review makes no authored asset/pose/key/history edit.
+
+Private20unit+25interaction pass; actual native pristine30/ribbon-composed33 with zero bind-pixel differences and fan/off/Undo/packed/movie pass. Original helper39/native14/multi59/patch35 andCPU20+9 pass; media/timing and originals preserved.189 runtime files immutable, seven valid private receipts. New draft test's mistaken middle-navigation expectation fixed to verify unchanged Pose paper pan and Camera navigation; retained failed21/1trial. Evidence docs/benchmarks/secondary_part_picking_2026-11-12.json. Canonical wrapper added; no full aggregate/artist/device closure, ledger unchanged. Multiselect/local-blow still pending, scene view bounds adaptation separate.
+
+Post-remote ba8b126 cleanup removed exact three owned review-source-probe Studio copies (IDs1794517257538945800/1794517337164562200/1794517497981228200), each1282files17635298bytes,total3846files52905894bytes; parent proof/logs retained. No private assets/owner reviews/recovery removed. Continue scene view/atomic multiselect.
+
+### 2026-11-12 — disposable frames cleaned after remote evidence verification
+
+Verified remotee82580d and each evidence ancestor/blob before removing576exact interior PNGs/23442386bytes from16completed hair/helper render attempts. Validated every path/hash/size/non-reparse parent and retained movie/reference before any removal; post-checked all16movies and representative/compared frames. No project/WAV/input/metadata/log/receipt/review/recovery/tool removed; unpublished SceneView outputs excluded and two weakly bound older attempts held. Receipt docs/benchmarks/generated_frame_cleanup_2026-11-12.json records exact attempt/frame numbers; old PNG folders intentionally sparse, fresh test reruns create new sequences. Product/aggregate/ledger unchanged. Continue current source work without owner prompts.
+
+### 2026-11-12 — full-area setup, optional frame/grid and native picking repaired
+
+Scene/Pose now default to full-area single Scene Setup with optional Camera focus, Frame and3x3 guides; personal preferences preserve Draw/camera/project/output. Shared-world editor camera maps virtual native pixels; central scene bounds/adaptive mask allow visible off-frame posing/part picking while Focus clips and Draw sampling stays native. Fresh readback handles capture/recovery with unused pass suspended. Centered perspective supported; other projections Focus fallback, output4K/custom/timeline separate.
+
+Final12830unit/144configs+102app pass with exact native output/zero exterior guide changes;9groups share188runtime hashes: actualMiku45, three-native selection41/edit41, rotation309+4, picker20+31, drawing/bounds/recovery. Five independent1080p24/48frame/H264 movies. Earlier adjacent workspace48/color44 preceded final translation guard repair, recorded honestly. Found/fixed real stale cached rings after deselect and false queued-pick rejection during inspector translation; added precise regressions, kept old native assertions/Setup stale-resize checks and failed evidence. Initial recovery fixture correction is a test-only issue. Docs/evidence scene_view.md and benchmarks/scene_view_2026-11-12.json; canonical wrapper added. No full aggregate/artist/device/lighting/resolution/performance closure; ledger unchanged. User reminded us of richer SFM archive models: reviewing actual feature inventory separately from default conversion success. Continue multiselect/local preview/current review and canonical, no owner test prompts.
+
+### 2026-11-12 — richer supplied SFM feature map and original identity audit
+
+Recorded user's reminder in master as independent coverage work, added sfm_extra_features_2026-11-12.md +benchmarks/sfm_extra_feature_inventory_2026-11-12.json. Fresh22archive originalSHA/size/mtime preservation confirmed twice, including root portable audit. Historical82default conversions/71uniqueMDL hashes distinguished from older20/66/59research and untested extra controls. Mima positively proves hair/hat blank groups,82controllers/156descriptors/143face targets/229bones, only1skin family. KeikiTools, Shinki/Junko assembly and genuinely multi-skin/sequence/procedural cases identified honestly; default GLB skin/bodygroups and disabled native animation are explicit limits. No app/GPU/native decode/extraction/network/feature acceptance in this inventory. New portable identity-only audit refuses changed inputs/existing output, source originals untouched. Metadata-only committed; no raw art/deltas. Approved bounded native MDL-only inventory now underway separately. Product counts and fullaggregate unchanged; continue batch/teardown/corpus/canonical without owner prompts.
+
+### 2026-11-12 — actual82-file SFM metadata and portable full reproduction pass
+
+Fresh pinned nativeMDL49 metadata:82/82parse,71distinct definitions, all22original archiveidentities preserved.28files/27distinct have different skins;55/46declare nativeJIGGLE.3203singleFETCH1 rules/0..1controllers;288groups489choices188realzero-geometry blanks. Positive Nitori3skins/KeikiTools/Junko16skins+hair49jiggle+matchednames cases; Mimahead1skin/body4. One-frameheaders and zeroevent/IK/poseparam/include/attachment records provide no movingsequence positive. Native metadata does not implement skin/bodygroup/nativejiggle/bone-merge fidelity.
+
+Native inventory doc/compactJSON and two portable researchtools added. Root executed promotedprobe plusfullportable22archive/82MDL pipeline successfully; all native records exactlymatch finalresearchmetadata-v2, originals unchanged. Initialemptylink-guard and27/55serializerfailure retained; correctednumericMDLproceduraltype extractionleavespinnedruntime unchanged. Raw62.8MBMDLs/detailed4.18MBmetadata stayprivate; no3Dcoordinates/art/deltas committed. ExistingBundledPython only, noBlenderapp/GPU/install/network/scripts. Hashes/reproduction/limits explicit. Ledger/fullaggregate/owner-gates unchanged; continue batch/capture/canonical.
+
+### 2026-11-12 — duplicate native definition staging removed; retained current copy
+
+Post-remote0af5d417 identity/containment/no-reparse validation removed exactold82MDLs/62843920bytes stage only; retained all82identical privateportable-stage files for continued SFM tests, original22archives and detailed/failed metadata/logs/manifests. Receipt and native-doc/master retained-path updates committed. Receipt writer Boolean syntax was corrected after deletion, retained files rehashed and no delete repeated. No original/unique private artwork removed. Readbackfix still pending original-helper immediate-free emitter issue; scoped50passes are not promoted to fullclosure. Continue sourcefix/batch/canonical.
+
+### 2026-11-12 — native readback cancellation/emitter cleanup verified
+
+FinalRenderer uses locally retained RefCounted frame notification plusclose/drain scopes; recoverycallbacks skipobsolete pixels/writes and closedcapture returnsnull. Shipped7c49 matched46bodyoracle leaked6FunctionStates/crashedcleanup; intermediatev3 scoped50 passed but oldhelper39 immediateawaitcapture→app.free exposed emitterfreederror. Preservedv1AV/v2StringNames/v3failure, replacedNodeemitter; final58 +SceneView12830/102 and unchanged39/14/59/35 helper suites pass. Newcanonical wrapper freezescurrentworking source, explicitrevisiononlycounterfactual; exactsource/receipts/startups/failureboundaries in benchmarks/native_readback_lifecycle_2026-11-12.json. Tests/fixtures/readback_node_emitter_v3.patch reconstructs exactoldrenderer incheckedownedmini repo; originalassertions intact. v3movie/recoveryearlierchecks retainedhistorically, nofalsefinalrerunclaim. Batchhelperdraft remainsseparate.
+
+CPU matrix504run/460pass/44skip/0fail-error; skip-only45method audit identifiesall44actualreasons withoutordinarypassreruns. At-time24batchCPUcases included, later26separate; evidence benchmarks/python_units_2026-11-12.json. Fullaggregate/ledger/ownerdevicegates unchanged. Continue batch/localpreview/canonical/currentreview, no participationquestions.
+
+### 2026-11-12 — multi-part reviewed helper setup and stale eligibility fixed
+
+Singlefocus plusIncludeinsetup checks preserveper-part corrections andexplicitcount/status; actualWindowSpace routing; sharednativegroupslinked/disclosed. Oneboundedcandidate/oneUndo edit, source+shapeidentity/conflict/resource/finalchecksum/freshnessguard and fullfailureatomicity. Emptysetretainsoldsinglepath.26CPU/5state/34GUI, native38+30+33, picker20/31 andoriginal39/14/59/35 passonsame193hashes; ninevalidprivatereceipts, sevenprobedmovies/264frames/threeverifiedAACcues, originalspreserved. Fullprecisionrequesttransportdemonstratedbyexact98765.43210987654; cameraoracleusesexistingcanonicalJSONcontract, oldassertionsunchanged. Persistentpreviewvalidity fixesrealstaleApply afterrejecteddisconnectedpatch;fivecases+old35pass. Benchmarks/secondary_batch_setup_2026-11-12.json recordsfailures/limits. Canonical/docs/masterupdated. Localblow/per-itemwindexclusionstillopen, noaggregate/ledgerclosure.
+
+Counterfactualpatch gets exact-byte/nonwhitespace-dataattribute; priorGitnormalizationcorrected, stagedblobmatchesrecordedfixtureSHA. No productionsource/assertionweakening. Continuelocalblowdesign/canonical/currentreviewwithoutownerprompts.
+
+
+### 2026-11-12 — fresh native QA frames, independent frozen selection reference, preserved experiments
+
+Three canonical85fa attempts retained: first single Python pack launch failed(two downstream body-curve checks; unchanged31unit+60GPU replay passes), second interrupted1073807364 before helper completion, third dedicated hidden21minute run failed live appearance32/4 after core36/contact76/workspace/helper/shapes/body/lighting passed. Third932functional hashes+commit identical before/after. No fullaggregate claimed and launch rootcause remainsunrecorded.
+
+SceneSetup suspends native viewport; oldtests sampled stale black buffers. Non-evaluating native readbacks preserve manually hidden/solved/live states: live38, camera60(five natives; old59/1), foot74(five natives; old73/1) pass unchanged colour/error/difference predicates. Contact diagnostics44/34 retain movie checks and fresh PNGs. Selection oldfixedreference67/40; displayedcamera/extent67/1 found one VRM0hair pixel from CPUbake/GPUskin edge coverage. Alpha/camera/surface controls isolate it; pixelcentre0.00009437px fromedge, internal arithmeticunproven. Original-source geometry with separate frozen skeletons passes67/0 in private probe and normalwrapper; all40pose snapshots exact, CPUbaked vertices/bounds and zerooutside1pixel predicate retained. Wrong transform757/missinghair87/stalepose320/wrongalpha5990 rejected; old960ref rejected, restore0/0. Rawfailures retained; no productrenderer/picker changes. Evidence benchmarks/resumed_canonical_qa_2026-11-12.json and selection_raster_reference_2026-11-12.md.
+
+Saved source-only unshipped experiments: wind94headless(old29oracle21fail), fourGPU scriptsparse only; Source appearance21CPU/twoMDLhashbindings with native material-column refusal limits; reviewchecker25CPU/parse. All actual newgraphics/Blender/app/replay validation remainsunrun; overlays neverloadednormalapp. Plans/source/hashes/limits nowexperiments/ forGitpickup, noart. SFM firstappearanceplan isimport-timechoice beforeadoption, notruntimevariants. Completebenchmark rerun/currentreview preparation next; ownerbusy/noparticipationprompts. Stableledger55/62,52/54; physical/artist/learner/cleaninstall gates notinvented.
+
+Published prospective exactindividual-file cleanup metadata(16875files/224835913bytes in13oldreadbackcopies). Afterremoteverification revalidatepath/hash/Gitrecipe/no-process-use thenremoveonlylistedrecoverablefiles, retaining104uniquesource-treefiles/142parentevidencefiles andbothcanonical/futurecopies. No cleanup inthischeckpoint; originals/reviews/recovery/runtime/prototypesprotected. Compressedplan metadata containsnoart. Dedicatedcoordinator source preserved; do not infer processliveness fromstatefile alone.
+
+### 2026-11-12 — six native review projects replayed from committed source
+
+Built the separate review at output/owner-review-verified/Studio from exact Git c6782d2 with a unique HAS Owner Acceptance profile; ordinary Home/New/Simple startup passed on a private Windows desktop. All six protected packages (Avatar, Flatgrass, Street, Reimu helpers, Back hair demo, Mima head expressions) now pass 129 checks in fresh private processes using ordinary recovery/Home startup and the real Python unpack/threaded-load transaction. Exact portable saved metadata, original raster checksums where present, owned resolved cache containment, native dimensions, identical Setup/Focus native pixels, unedited history and balanced readbacks pass. All source/package/harness hashes, sizes and timestamps remain unchanged. Six isolation receipts have exit0, confirmed child desktops, no foreground child, closed jobs/desktops.
+
+The first six-process checker attempt failed two assumptions per case: --script deliberately suppresses normal Home/recovery, and slash-only cache checks mishandled Windows separators. Preserved every failed case/log and source baseline; corrected only the checker to an external scene/Node harness waiting for actual startup_recovery_finished, plus normalized and independently resolved strict cache checks. Home and saved-state/pixel assertions remain. Corrected checker has 22 CPU/parse checks; new runtime replay passes. Source tools/verify_owner_review.py, tests/owner_review_replay.gd and docs/owner_review_validation.md are now ordinary repository files. Compact evidence: docs/benchmarks/owner_review_six_projects_2026-11-12.json. No production app change.
+
+This proves runnable review loading and preservation, not artist/native fidelity, novice/device feedback, real-time performance, a clean installation or six new movies. Back hair remains a synthetic helper demo; Mima remains head-only with 143 prepared targets. Local Wind Review and static Source appearance remain unshipped experiments. Wider supplied SFM feature coverage is explicitly retained: Nitori skins, Keiki tools/bodygroups, facial controls and declared native jiggle are separate native cases, never inferred from default conversions. Ledger stays 55/62 accepted and 52/54 implemented. Full corrected canonical next; no participation prompts while the owner is unavailable.
+
+Final review now also has an exact-byte guide and the missing Mima launcher, copied only to absent destinations after six-case verification. Guide is saved as docs/owner_review_package_2026-11-12.md; builder now regenerates the optional Mima launcher when that package exists. Seven snapshot-builder unit cases pass (invalid-revision diagnostic expected). No launcher or installed app was automatically opened on the owner desktop. Native artwork/recovery remain protected locally.
+
+### 2026-11-12 — contact Hair OFF contract, native SFM fixtures and exact cleanup
+
+Full canonical4fee0a9 ran23minutes at identical934functional hashes/HEAD and failed contactphysics48/1 after core/contact/workspace/helpers/shapes/body/lighting/liveappearance/camera/foot and contactanimation/editor/clipboard passed. The sole failure expected HairOFF to author a freeze Undo entry, superseded by the owner's restoration request. Exact-old diagnostic confirms91native bone poses, full data/world/history/redo/dirty exact afterOFF; its oldUndo removed the priorfanaddition, Redo restores it. Corrected test strengthens full-state/pose/no-offset checks and deliberate priorfanUndoRedo while keeping all body/contact/Record/HAS/movie assertions andlimits. Ordinary51/component53 pass with two48frame1080p24H264 movies, actual endpoint errors5.96e-8/1.53e-7m below unchanged0.0002m. No production change. Benchmarks/contact_hair_off_contract_2026-11-12.json. Fullaggregate remains incomplete; continue suffix, then finalfullrun.
+
+Broader SFM preparation: exact296resources/181460484bytes staged from Nitori/Keiki originals in18.96seconds.34CPUcontrols pass; tenactualVMTs showKeiki16refsallresolved, Nitori25/28 with one missingmaterials/hairbump.vtf repeated3times. All supportedbase textures present; no substitution/Steamfallback and no nativePhong/envmap/warp/glow claim. Original/tool/source/stage stamps exact. Source/allowlists/requests/receipts and prepared serialconversiondriver21CPU (bind/rest/stage-membership negative controls) archived underexperiments/source_appearance/native_resources. No Blender/app/render/variantacceptance; freshschema2lock atstableHEAD next. Oldschema1preflight/code/metadata lock retainedhistorically. Keep181MBprivate stage forpendingconversions, neverGit.
+
+First isolatedWindGPU attempt stops on procedural fixtureadoption56/1; its separatepeer was not established and couldbeconfusedwithsource. No native/lifecycle/primary jobsran. All runtime/prototype/root/nativeoriginal hashes/stamps remainexact. Strengthened testoracles and oldfailure retained; actualappenderror diagnosis pending. No featureport or graphicalacceptance. Benchmarkwind_review_first_gpu_2026-11-12.json.
+
+After remote4feeverification, nativePowerShell deleted exact16875Git-reconstructible/cache files224835913bytes in13olderreadback snapshots. No directories or unlistedpaths removed. Runner androot rehashed all104unique sourcefiles+142parentevidencefiles and verified allplannedpathsabsent/journalexact;35processscans had noobservedtargetuse/unknownownedruntimes, with5exactprotectedhelperexceptions and explicit non-universalownership/CWD/handle limits. Originals/art/reviews/recovery/runtimes/pendingprototypes and2oldcanonical/futurecopies untouched. Source andactual receipt saved; oldtrees intentionallysparse. Stableledger stays55/62,52/54; ownerbusy,no participationprompts.
+
+### 2026-11-12 into November13 — Wind830, fresh onion provenance and remaining scope
+
+Frozen Wind prototype passes all6actual private-GPU cases: procedural60,VRM045,VRM145,derivedBackhair47,lifecycle544,primary89;830total/0failures. Six exit0/private-confirmed/noforeground/closed receipts, exact runtime/source/native/root preservation. Two real48frame1080p PNG exports exclude candidate atframe1; no newmovie. Primary20bodies and independentprop continue, alignment1.1176e-8; Local1/World2 Record target/cancel checks pass. Preserved first56/1fixture failure: draft_frame-1invalid, appendnewobjectclearsparent; fixedfixture usesvaliddraft0, explicitparentedworldadoption, distinctID/rootchecks and loggederrors. No productionruntimechange. Exact16file portcandidate, retrievalchain, baseline7runtime audit(2rawsame/5EOLonly) and regression/UI notes saved source-only; phase1 remainsunshipped, pendinghelper-before-Apply/permanentsettings and normalregressions remainopen.
+
+Scoped suffix2c ran19existing wrappers successfully throughlayers, then stopped atfreshnessguard foronion. Actualonion37/0 and H264 passed, but wrapperonlywrote itspercase summary whilecanonicalreadoldcentralNov12file. Test-wrapper-only fix serializesonce and publishesidenticalUTF8percase+central afterallunchangedchecks; fresh37/0 replay/movie/private receiptpasses. All16laterreportchannels staticallycorrect; thosewrappers stillunrun.934functionalbefore/after andHEADexactforfailedscopedrun. No fullaggregateclaim. Source-only scopedcoordinator saved; finalfullrun stillneeded.
+
+First realNitori no-requestBpy produced836088BGLB(1mesh/2textures/66bones), butprivatewrapperexit2couldnotconfirmwindow/childdesktop forbackgroundprocess. Accepted0of14,13unrun; no nativefidelity orvariantpass. Exactfailedlogs/bundle/lock preserved, bothownedPIDsended, allprotectedinputs/source/runtimeexact. Separatebackgroundcandidate usesexplicitheadless bootstrap plusindependentPython/BlenderWinAPIselfattestation andstrictfreshnonce/source/PID/creation/import-origin checks; productionprivatehelper/originaldriver/fourworkers unchanged.44CPUcontrols/read-onlyDefaultdesktopprobe pass, independentreviewclear; actualprivateattestation andrerunremainunrun. Neednew schema3lock atstableHEAD. Allsource/proofs inexperiments andbenchmarks, noart. Ledgerstill55/62,52/54; noownerparticipationprompts.
+
+### 2026-11-13 — pending scene-pick teardown releases camera snapshots
+
+Suffix2904 passed six later wrappers then drawingselection printed35/0 but the nativechild crashed0xC0000005; reader/ninefollowingwrappers unrun. Unchanged replay and footer-only verbose diagnostics reproduceit: picking1, oneframe_post_draw FunctionState, no rendererreadbacks/physics/projectworkers/revealcallbacks. ExistinglocalCDB+exactbinaryRTTI/disassembly identifies leakedVariant BucketMedium allocator reporting throughglobalerror mutex; exactlyoneBasis/Transform3D allocation, ownerunrecoverablefrommissingheap, prior mutexdestructionnotproven. SceneView pick_state retainsoneTransform3D in directawait. No enginereplacement/download/dumpupload.
+
+Replacedpicker coroutinewithuniqueRefCountedrequestreceiversownedbyselectionNode, weakownerlinks, self-lifetimeguard, existingserial/view/navigation/contextchecks and explicitexitdisconnect/clear. Firstbatchedcandidatepassedoriginalchecksbut reviewfoundreentrancyedge. Boundcallbackcandidate28/5 caughtpinned4.6 receivercomparisonignoringboundpayload; finaluniqueobjects28/0. Newfocusedtestfirstcleansnapshotcaughtweakrefinferenceerrors; explicittypesonlyfixedtest. Exactold2904counterfactualsamefinaltest4/0footerstillleaksandnativeexit3221225477; wrapperrejects. Failedsource/logs/receiptsretained.
+
+Finalsourcepassesunchangedworldselection41/worldedit41, SceneView12830+102, drawingselection12unit+35writer+3coldreader with192independentcases andunchanged48frame1080p24H264/persistence/pixelpredicates. Initialrootmislaunchadded--demo-roomtoemptytest,fivefailurespreserved; exactcanonicalargsrerunpasses. Newfour-lifetimeteardownwrapperregistereddefaultsuite. Compactbenchmarkselection_readback_shutdown_2026-11-13.json andsource-onlyresearch/diagnosticrecipesinexperiments; privatenativeassets/dumpnotGit. Fullaggregateunpassed; ninewrappers, Windphase1port andbroaderSFMapp/fidelityremain. Ledger55/62,52/54unchanged; ownerbusy,noparticipationprompts, originals/installedStudio/oldreviews/recoveryprotected.
+
+### 2026-11-13 — fourteen actual SFM appearance cases and broader feature plan
+
+At exact2904f3f, the frozen background worker completed14/14 serial cases in82.71seconds:12derived bundles and2expected empty-geometry refusals. This includes Nitori's three skins and Keiki's seven visible tools/box/flame combinations, ordinary/default baselines and both genuine all-blank cases. Independent Python and Blender desktop/process/creation/code/import attestations pass. The original graphical monitor flags remain false and unmodified; the earlier exit2 is still rejected. All42owned process instances ended, jobs/desktops closed, and343protected/934root/934prototype/574SourceIO/296stage files stayed unchanged. Conversion lease released.
+
+Published exact13executed source files, request/staging recipes, actual81KBresults/37KBdependency observations, compressed historical lock and compact metadata. No native art/bundles/dumps were uploaded. Scope is static conversion and derived binding/rest/morph preservation, not native visual fidelity or normal app selection/adoption. Original material-column mapping confirms Nitori's coincident base/glow geometry; the image namedblack has greys0/40/120, and native additive/Phong/envmap/warp/bump behavior is not preserved. Its missing hairbump remains explicit. Keiki's Tools morph and box joint are documented for a bounded rendered/app probe.
+
+The owner's wider SFM reminder is retained in the master and next-probe plan:82MDL49files/71distinct definitions, skins, bodygroups, facial/nonfacial controls, accessories, native jiggle and assembly need separate scoped coverage. Two models do not certify every extra feature. Main Source runtime/UI remains unported; GPU/native deformation, Undo/HAS/movie, animated variants and human/device/clean-install gates remain open. Evidence:sfm_static_appearance_actual_2026-11-13.json; source:experiments/source_appearance/actual_windows_20261113. Selection crash fix9818950 was pushed and fetched/remote-verified before this increment. Ledger remains55/62accepted,52/54implemented; no owner prompts or cleanup.
+
+### 2026-11-13 — nine remaining scoped groups and main Wind driver preparation
+
+The nine canonical wrappers after drawing selection pass at exact0f8f7a0 in356.97seconds: drawing transforms; recovery identity/startup/history/schedule/preview; Home; tutorials; and first movie. The hidden coordinator's936functional file map andHEAD remain exact before/after. Terminal receipt, nine stdout passes, empty stderr and authoritative PID+creation audit establish completion; a separate coordinator exit code was not captured. Root rechecked31referenced clean private receipts. First movie79+8 includes actual media and decoded cue. Source/evidence:remaining_last_nine_scopes_2026-11-13.json. This is not a full aggregate or learner/device observation.
+
+Prepared, but did not port, a main Wind verifier with15imported-code CPU tests and16synthetic matrix scenarios. Exact native resolver rejects missing/changed/path-escape inputs; explicit mode/lease/root/receipt/completeness/source/HEAD gates pass their controls. Original830GPU assertions are retained, with12added main-root/startup guards for842expected checks. A failed CPU fixture outside the permitted output family remains recorded; only its test destination changed. Exact input mappings, native rebuild/ribbon request recipes and19compact files are archived under experiments/local_wind_review/main_driver_proposal_20261113. Six native files were copied into fresh protected wind-main-fixtures with exact hashes/sizes/timestamps and original-bundle preservation; no art uploaded. No main Wind runtime/GPU claim. Integrate only16reviewed overlay paths next, preserve selection9818950, run affected regressions and stable full default suite. Ledger55/62,52/54 unchanged; owner participation still deferred.
+
+### 2026-11-13 — main local wind passes845 and existing workflow regressions
+
+Integrated only the reviewed16-file Wind overlay plus its explicit main driver, checksum-bound native resolver and canonical registration. Preserved selection9818950 and all newer QA fixes. Actual main matrix passes94units/fiveparsechecks and845private graphics checks:62procedural,47VRM0,47VRM1,49derivedBackhair,549lifecycle,91primary. All948functional hashes/sizes/mtimes and native sources remain exact; six clean private receipts confirm main-root execution. Two48frame1080p PNG exports exclude the candidate. Source/body/prop ownership, Local/World start-cancel targets and queued recovery admission are scoped software proof, not a new wind movie, persisted recovery-worker, native-jiggle or physical observation.
+
+Initial842matrix passed, but existing SceneView102/0 logged pose_lines access after canvas.free then app.free. The integration run correctly stopped; contact wrappers were unrun. Valid-canvas redraw guard fixes the actual route. Same shared5checks with preserved oldWind controller log the error; corrected controller is clean. Added3dormant canvas-first lifetime assertions, preserved all original830predicates and12main-root/startup guards. Corrected full matrix845/0 plus all8existing wrappers pass: native readback, selection teardown, helpers, part picking, batch, SceneView, ordinary51/component53contactphysics. Before/after948functional/HEAD exact. Failed source/logs and comparison remain; no assertions weakened. Evidence:local_wind_main_2026-11-13.json.
+
+Main now exposes Review local wind for already declared groups. Pending single/batch helper drafts beforeApply, permanent exclusions and generated-group naming refinement remain separate. Wider SFM source-only probe adds29CPU controls, sparse morph support and exact native-name/parent to Blender-palette joins; actual CPU derived displacements have1180/38/2214moved records forTools/box/hand. Its GPU/app/HAS/nativefidelity exercise remains unrun; historical working-at2a snapshots predate the Windguard and must be recreated from final committed source. Five source files/compact receipts are archived without native point arrays/assets. Ledger55/62,52/54 unchanged. Publish/remoteverify this source, then full canonical; no owner prompts, installation replacement or private-art upload.
+
+### 2026-11-13 — fresh native fixture selection targets the displayed layout
+
+Full launch under oldpowershell.exe stopped before tests because Get-FileHash was unavailable; metadata/logs retained. The unchanged coordinator under existingPowerShell7.6.9 ran exacteb7c069 and failed world_selection on the freshly regenerated MMD fixture. Its947functional hashes/HEAD stayed exact; all later full groups were unrun. Source unchanged is not an aggregate pass.
+
+Output-only diagnostic reproduces: visibleMiku/validnativearm, correctIDpixel, same serial54, no play/export/navigation/button conflict, but saved581.3333x327 became595.5555x335 during deferred deselect/mode relayout. Product correctly rejects stale view. Native test now awaits its existing frame/presentation helper after deselect, just as generic coverage already does. Original41predicates and production resize/projection guards untouched; fresh MMD/GMod/SFM41/0clean private replay passes, final pixels0difference. No production change or arbitrary tolerance. Failed full/watchdog/diagnostic retained. Evidence:native_selection_displayed_layout_2026-11-13.json. Commit/remoteverify, then fresh full run with knownworkinghost.
+
+Independent read-only native-oracle research found SFMx86HLMV and GModx86/x64HLMV;42selected installed files stayed exact, two shippedSFMheaders areMDL49. Official currentSDKheader48 does not certify these builds. Valve2005/2007 releases confirm historicalHLMVsource delivery, but matching implementation was unavailable in bounded official/local paths. Exact capture/controls/profile/registry redirection and arbitraryboneposing remain unverified. No executables/registry/Steam changes or native rendering. Compact inspection source/inventory/primary links are saved under experiments/source_appearance/native_oracle_research_20261113. No private assets uploaded or owner participation requested. Ledger55/62,52/54 unchanged.
+
+### 2026-11-13 — independent native geometry, helper draft protocol and refreshed Python suite
+
+Independent stdlib MDL49/VVD4/legacyVTX7 oracle passes30synthetic CPU controls, then compares all12Nitori/Keiki bundles without importing the converter/SourceIO/Blender/NumPy/engine. Seven complete base position/UV/named-weight maps and three complete oriented-triangle maps match; across28mesh comparisons,23base maps and15triangle maps match. Four Nitori topology cases stay unrun at an unsupported VTX layout. Five Tools maps retain two near-coincident native-class ambiguities;15native zero normals and other normal differences remain separate. Fixed documented transform/winding/UV adapter, no fitted transform/guessed identity. Native flex/shader/jiggle/hardware-palette and app/GPU/artist fidelity remain open. Original archives,296stage resources,twelve bundles/reports and source/HEAD stay exact. Source,compact169KBresults,fixture pins and exact Junko/Mima/Kanako next representatives archived under experiments/source_appearance/native_geometry_oracle_20261113; no raw native geometry/assets. Root's first archive membership check refused uppercase manifest spelling before writing; corrected to observed lowercase filename, then all17files/286528bytes hash-verified. Evidence:sfm_native_geometry_oracle_2026-11-13.json.
+
+Separate helper-before-Apply foundation passes21CPU tests through actual current helper builders on tiny self-authored fixtures. Hidden candidate envelope retains original nodes/TRS/parent/skin/inverse binds, maps reports by request/actual chain, rejects stale/cancelled/tampered candidates and requires separate trusted completion digest. Independent review corrected editable-receipt trust and positional report association; negative controls and reread included. Archive12compact files/80531bytes under experiments/local_wind_review/helper_draft_protocol_20261113; generated synthetic GLBs/jobs excluded. This packet has no worker transport, Godot controller/binding snapshot, UI or simulation acceptance. Worker adapter and proposed-helper preview remain subsequent work. Evidence:helper_draft_protocol_2026-11-13.json.
+
+Fresh Python unittest discovery passes504tests in38.700seconds:460executed successes and44explicit platform skips,0failures/errors. Existing947-file canonical starting functional map/HEAD3a6f94f remain exact after unit completion; no separate unittest-start map was taken. Evidence:windows_python_units_2026-11-13.json retains all skipped names/reasons. Full graphics canonical remains running at this entry; no aggregate pass claimed. Six private review packages were copied exactly into a new separate output/owner-review-current-20261113 for later source build/replay, without changing the earlier review/installation. Ledger remains55/62accepted,52/54implemented and validated; no owner participation prompts, tool installation, art upload or cleanup.
+
+### 2026-11-13 — owned helper CPU worker and corrected derived SFM probe v2
+
+Separate output-only helper worker adapter passes16real hidden Windows CPU tests. One Python controller holds one child through its exact retained process handle/PID/creation identity, assigns a one-process kill-on-close Job before stdin start, drains capped stdout/stderr and accepts the independently piped receipt digest only after native exit0/EOF/source-generation checks and closed Job/handle. Root read the full adapter/worker, found an unchecked foreign worker-module path, and reviewed the corrected constructor guard/negative control; root also checked all24final ownership/closed-handle receipts and diagnostic caps. Initial15-case run had14pass/1WinError267testcwdlength error; short hashed authored-test directories fix that fixture without OS policy changes. Intermediate15pass retained. Archive16compact files/151716bytes under experiments/local_wind_review/helper_draft_owned_worker_20261113, prior21-testpacketunchanged. No Godot-owned controller/Node bridge, abrupt controller-death experiment, actual binding import, helper UI or simulation is certified. Prepared lease invalidation remains future Node responsibility. Evidence:helper_draft_owned_worker_2026-11-13.json.
+
+Independent read-only audit found four defects in the unrun derived SFM harness: inherited/bare pack-unpack Python, final preservation flags not enforcing failure, equal blank app images possible, and raw pose delta replacing imported local rotation. New output-only v2 pins/stamps approved runtimes, independently retains and rejects failed final gates, checks significant content on the same images, and uses imported rotation*delta with unchanged position/scale plus independent T*Rbase*Rdelta*S reference.39CPU controls pass, including negative preservation/blank/runtime and nonidentity/nonuniform transform cases; source hashes/stamps exact. First39-case run had38pass/1wrongexpectedexception; the existing required-file ValueError guard is retained and expected correctly. Independent reread found no new blocker. All10old archived/outputsourcecopies preserved. Archive14compact files/152042bytes under experiments/source_appearance/derived_probe_candidate_v2_20261113. No v2 preparation, Godot parsing/GPU, actual Add/Undo/HAS or native fidelity result. Evidence:sfm_derived_probe_v2_prepared_2026-11-13.json. Main functional source/HEAD3a6f94f remain frozen for the ongoing full canonical. Ledger55/62accepted,52/54implemented unchanged; no owner prompts, installation changes, art upload or cleanup.
+
+### 2026-11-13 — helper controller17 and real stale movie false-success correction
+
+Output-only preview controller passes17hidden Windows CPU tests, including generation/context changes, EOF/host loss, unread output, and abrupt controller death before/after owned Job assignment. Root checks26exactPID+creation/signaled/closed observer records and three byte-identical prior candidate sources.13controller/10worker cleanup outcomes retained. Independent review corrected host-loss races across slow validation/admission. Initial12pass and expanded harness command-budget/closedpipe failure retained; harness pacing/cleanup corrected without relaxing controller predicates.20compact indexed files archived under experiments/local_wind_review/helper_draft_controller_20261113. Explicit declared-host identity is not OS-parent proof; actual Godot Node/native ownership, imported bindings, helper UI/wind/Apply remain unimplemented. Evidence:helper_draft_controller_2026-11-13.json.
+
+Full canonical3a6f94f ran46minutes, allfunctionalgroups passed, then finalAACassert failed on tone. All947functional hashes/HEAD exact. Spike silent/tone fixtures both reused output/spikes/movie.mp4, modifiedNovember12. FFmpeg-n refusedoverwrite yet returned0; Encoder acceptedzero+existingfile, printedPASS, and tailcorrectlyrejectedmissingAAC. OfficialolderFFmpegAVERROR_EXIT->0matchesactualrefusal; exactinstalledsourcecommitunavailable, no Godotnonzero-suppressionclaim. ActualcontrolledPythonpartialfileexit37 remains37 acrossrepeatedGodotpolls. Failedfullsource/log/state, pre-fix6sources, oldcounterfactual and primaryresearch are preserved under experiments/encoder_output_guard_20261113; no MP4/PNG/art uploaded.
+
+Encoder now clearsfinished_path beforeearlyreturns, refusesexistingfile/directory beforeprocess/logwrite, and rejects-loglevelerrordiagnostics evenexit0. Default suite owns fresh silent/failure/tone destinations, retainsoriginalAAC/onset/RMS assertions, adds silent-spike verification, and shares finalmedia code withoutwritingpartialaggregate. Strengthenedfailurewrapper5checks pass; isolatedoldencoder failsnewexistingoutputcheck withactualrefusalExit0. Scopedmedia checks21movies(2freshsilent/tone,19retainedworkflow) pass withboth1.0sonsets/editorRMS5658.30. Two cleanprivateGPUreceipts andfunctional947sourcepreservation. Firstrestrictedgraphics attempt refusedCreateDesktoperrno5 beforetest; retainedreceipt, no visiblefallback. Newhostcontextfresh runpasses. Independent six-file read-only review foundnoblocker; raw37testprovespollingdirectly, notsubstituteEncoder.encode. Evidence:encoder_existing_output_fix_2026-11-13.json. Fullaggregate stillFAILED/unrepeated, notclosedbycomposition. Publish/remoteverify thisincrement, thenfreshstable full; nativeSFMGPUprobe/currentreview and actualGodothelperbridge remain next. Ledger55/62accepted,52/54implemented unchanged; noownerprompts/install/artupload/cleanup.
+
+### 2026-11-13 — current six-project review, actual SFM refusals and isolated Godot helper bridge
+
+Separate owner-review-current-20261113 freezes exacte9cc7cf Git source with a unique preference/recovery profile, six47MBprivate package copies and launchers. Fresh ordinaryHome/Simple startup passes; six ordinary packed replays pass129checks(21/21/21/23/22/21). Root rechecks allsixclean private receipts and source/package/harness preservation. Initial checker preparation omitted required package preflight and used a staging receipt object instead of the expected six-row list; failedbeforeGPU, staging receipt retained. Fresh allpayloadCRC/SHA+original/copy hash/size/nsmtime checks supplied correct manifests, then newrunpasses. Root's first readonlycount assumed integer but actualchecksarelist; correctedwithoutmutation. Updatedguide docs/owner_review_package_2026-11-13.md copiedexactlytoabsentREADME. Priorreview/installation/recoveryunchanged; noownerprompts orartist/device/cleaninstall/newmovieclaims. Evidence:owner_review_current_six_2026-11-13.json.
+
+SFMv2 actualtwofailures retained. First rootrelative-manifest invocation couldnotresolve in private source-copy cwd; JSONfailedbeforeimports, watchdogexit2, allmodelchecks unrun. Freshabsoluteattempt ran311writerchecks/1failure; alldesktopjobsclosed and originals/runtimes/root/private sources preserved. All8rawcaptures/24derivedpointcomparisons match(max6.0036796867e-7, unchanged2e-4bound); Tools0/.5/1,box andhandpixelschange. ThreeNitoriskinsrenderidenticallybehindretainedopaqueglow. NitoriordinaryNew/unshaded/black capture yields9samples againstunchanged>100/.02contentpredicate; Keikiwritercompletes butreaderunrun.406identicalverbosepackednotices alsofailoldstrictloggate. ActualrunremainsFAILED, notconvertedtoacceptancebyretrospectiveclassification. Evidence:sfm_derived_v2_actual_attempts_2026-11-13.json; privateimages/geometrykeptlocal.
+
+Newsource-onlyv3 passes57CPUcontrols andindependentreview. ChoosesordinaryStudio light beforeimportbaseline withvideo/history/live-light guards; no visibility/pixel/geometrytolerance relaxed. Independentlybinds/recomputes bounded accessor/view/stride/sparse/role proofs againstexactcurrentGLBbytes; all12layouts passreadonly. PinnedGodotGLTFAccessor.cpp usesprint_verbose for missingstrideevenvalidsingle-accessorpackedviews; Khronosspecpermits thatlayout. Onlyoneexactfullline classified aftervalidproofs, rawcount/lines retained; otherwarning/error/lookalikes refuse. Absolute CLI normalization/earlyGDScriptguards fixoperatorpath failure. Archive15compact files underexperiments/source_appearance/derived_probe_candidate_v3_20261113; source5andmetadataonly, all15oldv2/archive/outputsourcecopiesunchanged. V3prepare/engine/GPU/appstillUNRUN. Evidence:sfm_derived_probe_v3_prepared_2026-11-13.json. Freshschema3prepareatnextstableHEAD next.
+
+ActualisolatedGodotNode bridge passes12retained-Popen headlessWindowsCPUtests,30exactprocess/observerclosurerecords rootchecked. Handles266->264 onexclusiveone-shotmappedOS.killrelease, repeatstays264; cachedexit0/alreadyexitedFAILED doesnotretryorfallback. PinnedGodotprocess-map retainedhandle branch plusMicrosoftPIDlifetime source establishownership; notgenericPIDlookup. EOF/Nodefree/treeexit/normal+abruptGodot/controllerdeath andblockedservicewatchdogselfexit74 closeworkerJob. Initialfixtureparse/native-readysignal-name andexpectednegativewait harness failures retained; earlierdirectshellGUIexe returnwasnotcompileproof. Correctedactualsource/harnesspasses andindependentreview; prior17packetunchanged.25compact files underexperiments/local_wind_review/helper_godot_bridge_20261113. Externalobserverhostconfig isfixtureonly; productionbootstrap,2048byteframelimit,modelbinding/UI/physics/visibility/Applyremainopen. Evidence:helper_godot_bridge_2026-11-13.json. Mainfunctionalcodeunchangedsincee9; ledger55/62accepted,52/54implemented unchanged. No toolsinstalled, artuploaded, ownerprompts orcleanup. Full defaultstillneedsfreshpost-encoder rerun; do notsumscopedworkintofullpass.
+
+
+### 2026-11-13 — actual derived SFM replay and helper-preview foundations
+
+At exact 4fa5efc, SFM v3 passes 328 writer and 60 fresh-reader checks. Twelve prepared Nitori/Keiki bundles retain derived materials/images/bindings; eight captures and 24 point comparisons match the independent derived reference (maximum 6.004e-7, unchanged 2e-4 bound). Ordinary prepared-GLB import Undo/Redo, named numeric pose Undo/Redo, normal packed saving and source-offline fresh reopening pass, with exact writer/reader pixels and positive content on those same images. All seven preservation gates and both private-desktop closures pass. Root reread both HAS CRC/payload inventories. The two v2 failures remain failed. Tools 0/0.5/1 is a raw-engine channel exercise, not app shape UI. No new movie or native Source shader/flex/jiggle/topology/normal fidelity is certified; Nitori's retained opaque glow still obscures skin differences, and its missing hair bump is explicit. The static-variant worker/chooser remains unported. Evidence and compact logs are saved in sfm_derived_render_app_actual_2026-11-13.json and experiments/source_appearance/derived_probe_actual_v3_20261113. The wider 82-MDL feature inventory and Junko/Mima/Kanako next representatives remain separate.
+
+The unported production helper bootstrap passes 18 actual headless Godot tests with 45 exact process/handle observations. Normal host identity no longer comes from observer configuration. Checksum-bound owned files carry 12,934-byte Unicode-heavy submissions while controls stay within 2,048 bytes (actual maximum 849). Mapped release closes two native handles once, zero on repetition. Initial 16-pass/two harness-assumption failures are retained. Source/evidence: experiments/local_wind_review/helper_production_bootstrap_20261113 and helper_production_bootstrap_2026-11-13.json.
+
+The separate imported-binding gate passes 22 CPU tests and eight headless imports with 65 preservation gates. Actual VRM0/VRM1/Back hair-alias source-node coverage is complete at 100/110/103; a 103-to-104 endpoint candidate preserves all original bindings, base transforms and bone-parent joins. Two synthetic transfer pairs independently check 0.25/0.5 shape weights. VRM0/1 produced no usable new-helper proposal in the bounded first 64 regions, so derived-helper support is explicitly unproved. Source/evidence: experiments/local_wind_review/helper_imported_binding_gate_20261113 and helper_imported_binding_gate_2026-11-13.json. This is foundation only; before-Apply helper UI, display, simulation and live-body integration remain unported.
+
+A conservative cleanup plan identifies 4,308 exact Git-e9 code files (33,607,832 bytes) in four historical SFM v2 source copies. All 2,613 generated/private/custom/unlisted files remain excluded. No deletion occurred. A later read-only executor preflight matched all files but refused 13 uninspectable process identities; independent review found two additional safety gaps in that unexecuted candidate, now being corrected in a separate version. Preserve these copies rather than bypass process uncertainty. The plan is saved in experiments/source_appearance/v2_code_cleanup_plan_20261113. Main functional code remains unchanged since e9cc7cf. The full default suite still needs a fresh post-encoder run; scoped results do not replace it. Ledger remains 55/62 accepted and 52/54 implemented. No owner prompts, tool installs, artwork uploads or cleanup.
+
+
+### 2026-11-13 — complete default Windows pass and before-Apply preview candidate
+
+The fresh exact9897f86 default passes in2635.835seconds: all36core groups, all later registered wrappers and21final movie checks. Both decoded audio onsets are1.0second; editor WASAPI-export RMS5658.299 satisfies unchanged bounds. All947functional file hashes and HEAD match before/after. Root rechecks174fresh root private receipts and126referenced paths: all inspected jobs close with exit0, confirmed private children, no foreground or desktop switch. Authoritative host query finds the exact coordinator22992 and known child14800 absent. This is one fresh complete run after the encoder fix, not composed scoped results. The earlier3a failed full remains preserved. Original19-layerhecatia is used; source/media/raw artwork stays local. Compact results, source maps, actual markers and closure evidence are in experiments/windows_canonical_20261113 and windows_canonical_full_2026-11-13.json. Human/device/source-appearance/clean-install gates remain external; formal55/62 and52/54 unchanged.
+
+A separate unported helper editor now prepares reviewed drafts without freezing independent peers. Its actual hidden adapter151, editor host57, display candidate69 and transport11 checks pass in their separate scopes. Independent review found and fixed actual physical-bone aliases, ordinary runtime-parent observation and paused relative transforms, stale reviewed expression handling, source/child ownership and gizmo suppression. Temp imports have an isolated nonrendering world, trusted completion SHA, copied input snapshots and owned process cleanup. Apply remains a separate one-Undo edit and conservatively refuses any live peer before build and late installation. Exact successful source packets and initial parse/harness/watchdog/native shutdown failures are retained.
+
+The display prototype then passes199private graphics checks: same-candidate50,607image bytes change with0.178849rad helper motion; Off restores exact original native pixels, poses, visibility, refinement overlays and pointer. Save/final capture/seek/Close/New/Record refusal, startup and observed worker-stage cancellation pass. Additional45checks preserve a real moving prop and a separately registered posed/morphed skinned child during preparation, wind and Stop; normal Apply/late-install refusal preserves the live solver. The first45behavior result remains rejected because an unused native test file changed during that run; the new fully frozen45run passes. Actual retained Backhair-alias39checks select region80/1/1 and original joints11/10/9, add endpoint103, preserve all original binary/mesh/skin/morph/material data, move those actual weighted joints and135,966same-candidate image bytes, then restore exact native pixels. Its first parse failed a missing bool annotation; source/logs retained. These do not certify original Source shader/jiggle fidelity, new movies, main integration or artist observations. Three accepted private jobs close cleanly; all source/overlay/harness/runtime/HEAD gates pass. Sources/results/recipes are recoverable in helper_pending_display_candidate_20261113, helper_pending_gpu_actual_20261113 and helper_pending_gpu_extended_20261113; benchmarks distinguish every scope. Main functional code remains unchanged since e9. Publish this checkpoint before reviewed main integration and affected regressions.
+
+The corrected cleanup executor passes35controls and two fresh-process forged/resident-native-type refusals. Root's actual default read-only preflight verifies4,308exact code files and2,613retained files, all membership and retention checks, then conservatively refuses199unknown process identities. No deletion, PID exceptions or process kills occurred. The original unexecuted v1 packet is unchanged; two reviewed safety defects are documented and corrected in v2. Exact scripts/compact evidence are saved under experiments/source_appearance/v2_code_cleanup_executor_20261113. Retain those old source copies while nonuse cannot be established. No tools installed, owner prompts issued or artwork uploaded; owner installation, originals, earlier reviews and recovery remain protected.
+
+
+## 2026-11-13 — Pending helper wind integrated into main
+
+The reviewed pending-helper preview now runs before Apply, for focused and checked
+batch setups. Temporary wind checks, row focus and Apply membership remain separate.
+The original paused pose/expression and independently moving objects are preserved.
+Apply and late installation refuse live motion. Save, seek, Record, final capture,
+scene replacement and close invalidate the candidate. No installed Studio or
+protected owner review/recovery was replaced.
+
+Final exact working-main snapshots pass 208 CPU checks (11 transport, 128 synthetic
+imported-binding, 69 actual editor), 305 private graphics checks (221 focused,
+45 moving-peer/posed-morphed child, 39 native Back hair), six-script preparation
+and 120 driver-domain controls without subprocesses. Six existing literal-main
+wrappers pass: helpers, native existing ribbon, picking, batch, morphs and SceneView.
+Every final 24-file binding matches actual main bytes, all nine preservation gates
+pass, and three successful graphical jobs close with exit zero without foreground
+placement or switching. Same-candidate motion changes 50,607 image bytes; native
+Back hair changes 135,966 bytes and a real weighted bone by 0.035293456 radians.
+Off restores exact original poses/pixels. These are software/API results.
+
+Review found popup Escape could not reach app._input. The popup now forwards key
+events through Window.window_input. A separate probe proves Viewport.push_input
+does not emit that signal, so the regression honestly exercises the window signal
+endpoint. The window has a viewport-bounded 680-pixel default, focuses an actually
+checked group, and hides unused wind controls before preparation.
+
+Two attempts remain failed. First, 207/1 skipped 11 popup endpoint predicates when
+Windows CreateProcess rejected a 260-character job cwd (Win267). A minimal approved
+Python child reads the same 273-character request from the checked 194-character
+work root; an extended job prefix still fails. Worker cwd now uses the explicit
+work root; absolute job paths, isolated Python, Job assignment and the start gate
+remain unchanged. A real 268-character job regression is included. Second, 219/1
+passed that launch and Escape restoration but my new guard compared equivalent
+slash spellings literally. Separator normalization retains the same requirement;
+final 221 focused checks pass, including two additional visibility checks.
+
+The older Phase1 matrix also passes 94 units and 845 graphics before the popup fix.
+Its 16-file manifest records four shared runtime revisions and three coherent
+unit-double updates without changing the 51/14/29 predicates. New canonical
+registration requires fresh typed CPU208/default graphics266 reports and all nine
+preservation gates; native39 is explicit. The genuine earlier full pass at9897f86
+predates this integration. Next: push this scoped checkpoint, verify it, freeze
+functional source for a fresh complete default, then build a separate owner review
+without participation prompts.
+
+Metadata-only evidence: experiments/local_wind_review/helper_pending_main_20261113,
+141 indexed files / 1,536,200 bytes, INDEX SHA256
+721f914ec0d75d05a4d243eefe10fcbca832103763b8d6c7851bae0d2c0d7a53.
+No artwork, models, projects or media are in that packet. The concrete read-only
+static SFM skin/bodygroup port plan and Junko/Mima/Kanako matrix preserve the wider
+collection reminder without claiming a chooser, assembly or native jiggle port.
+Formal counts remain 55/62 acceptance and 52/54 implementation.
+
+
+## 2026-11-13 — Failed full saved; project worker ordering hardened
+
+Checkpoint1236796865e677b150a2d7e2add20f2aac5325fe was pushed/fetched/ls-remote
+verified. The new full run at output/canonical-owned-20261113T200642700 finished
+FAILED after24m01s, exit1, with all967functional hashes/HEAD unchanged. All36core
+and both wind matrices passed, but BodyAnimation72/1 failed on the finalVRM0
+linkedSave: OS.create_process returned-1 for the Python HAS worker. Prior good
+packed/native inputs stay protected. Do not use the older output/verification.json
+as this failed run's result; the suite never reached its final write.
+
+An unchanged fresh bare-Python focused retry passed24units+72app checks, five native
+profiles plus authored, and48frame1080p24H264. Memory was healthy; no HAS desktops
+remained. The pinned engine message omits GetLastError, so the Windows cause is
+unknown. A real240child absolute-Python headless probe with concurrent directory
+churn, including390-character paths, did NOT reproduce the failure. Preserve
+that negative finding; neither PATH nor CWD is proven as the original cause.
+
+Main now captures detached state with HasSnapshotWriter.prepare, creates the
+actual Python packer, then starts its own filesystem Thread with launch. Legacy
+start still delegates prepare/launch. Request/child failures discard prepared
+state; Thread startup failure after child creation publishes cancellation and
+retains normal pid/progress/exporting ownership until one failed completion.
+This removes an avoidable overlap with our own directory-writing thread. Other
+filesystem threads may still overlap; no universal Windows-race fix is claimed.
+
+Actual main tests pass10legacy writer +32new staged-capture controls,31HAS/16fault
+Python,20writer(original17+3) and5offline cold-reader checks. New real-app checks
+observe a live packer before snapshot launch and force Thread startup failure,
+proving cancellation/drain/singlecompletion/priorgoodfile/dirtyedit preservation.
+The held Save returns in9ms on this small fixture; no new400drawing claim.
+Original24/72native body checks and48frame1080p24movie pass after the change.
+Three graphical jobs closeexit0, and Phase1's94units plus parse preparation pass.
+
+Default verification now registers that whole background-save wrapper, including
+the32new controls, with fresh owned output and private-receipt checks. Its driver
+also pins HYBRID_PYTHON to the already approved absolutePython313 for the next
+canonical run. This is explicit runtime selection, not proof of the old failure's
+cause. One shared HasProject manifest row is updated; old94/845predicates stay.
+
+Retained evidence: experiments/has_snapshot_ordering/{canonical_failure_20261113,
+cwd_probe_20261113,candidate_20261113,main_actual_20261113}; benchmark
+docs/benchmarks/windows_snapshot_launch_order_2026-11-13.json. Candidate harness
+failures stay separate from32/0 and actual app acceptance. No artwork/media upload.
+
+The broader SFM static-choice output-only draft also has82authored Python checks
+and a source review, saved under experiments/source_appearance/static_choice_draft_20261113.
+Its Godot/UI/native conversion/graphics are unparsed/unrun, not main behavior.
+Updated review preparation remains gated on a future passed full+released lease;
+no owner prompt, installation change or review replacement occurred. Formal
+ledger remains55/62acceptance and52/54implementation. Next: commit/push/verify this
+scoped hardening, freeze source and run a completely fresh full default.
+
+
+## 2026-11-13 — Complete Windows pass and relocated private review
+
+Tested source12071fe182a17d17e2a1547c7dbb97f6aa4dd160 was pushed, fetched and
+remote/raw-progress verified before this run. A single fresh default suite ran
+21:12:16–21:58:36 UTC (46m20s), exit0, with all968 functional files/HEAD unchanged.
+It passed36core groups,154result entries,21final movies and both decoded1.0second
+audio onsets. WASAPI editor RMS5658.299233592635 stays inside the original gate.
+Within this same run: wind845, pending-helper CPU208/graphics266, background-save
+114 across six reports and native body24unit+72app checks pass. The optional
+native extension of pending-helper preview was not requested; the earlier
+standalone39native checks remain their own evidence. Counts are scoped rather
+than a fabricated deduplicated grand total.
+
+Receipt audit verifies176fresh root exit0 receipts and190distinct physical
+receipts/desktops overall:189exit0 plus one intentionally cancelled Krita converter
+exit2, explicitly required by tests/verify_krita_import.py:17. All190 are private,
+closed, fresh and without foreground exposure/switch. All inline receipts match
+physical records. The authoritative host found the coordinator/owned runtimes
+absent and only Default desktop. Root recorded a hash-bound release before the
+separate review graphics lease. The earlier1236796 full remains FAILED; the exact
+Windows launch cause is still unknown, and the240child directory-churn probe did
+not reproduce it. This later pass does not prove causality.
+
+A new private delivery at C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe
+passed stage Home, final Home and129unchanged replay checks across six projects:
+eight isolated exit0 jobs. All source, six package, frozen harness, original
+SourceIO and approved-runtime preservation checks pass. A574file approved SourceIO
+copy including LICENSE lives in its Dependencies folder; final BAT paths use it
+relatively instead of the disposable checkout. No install/download or installed
+Studio replacement occurred. The final guide alone received explicit UTF8 decoding
+after a locale-default template read produced mojibake; before/after evidence and
+an unapplied one-line future coordinator patch are preserved. No Studio/HAS bytes
+changed for that correction. A preliminary host query saw a known read-only audit
+shell; it was preserved, allowed to exit, and the later final absence check passed.
+
+Published metadata/source packets: experiments/windows_canonical_post_save_order_20261113
+(34files/2190529bytes), experiments/owner_review/relocated_actual_20261113
+(119files/1114487bytes), and experiments/has_snapshot_ordering/post_port_audits_20261113.
+Full report metadata is losslessly compressed; no native art, models, projects,
+images, videos or runtime payloads are uploaded. Current benchmark documents bind
+exact indexes, raw report hashes, counts, limits and retention paths.
+
+Root then removed exactly88source/metadata publication-copy files (498427bytes)
+under three literal owned roots, already backed by remotely verified12071fe.
+The reviewed executor used fresh authoritative process proof and a fsynced ordered
+journal; no recursive operation or directory removal occurred. Independent final
+checks confirm all106Git backups and18excluded logs exact. The old broad SFM
+cleanup199unknown-owner refusal was not bypassed. The session checkout is retained
+because earlier private review/recovery and working deliverables remain protected;
+whole-checkout removal is unsafe. The new final review is outside that checkout.
+
+The master now marks completed full/review steps and preserves earlier chronology.
+The wider SFM collection remains in the feature matrix/plan, with the82check static
+chooser draft still unshipped and Godot/UI/native conversion unrun. Native skins,
+bodygroups, flex, jiggle, shaders and assembly are distinct scopes. Optional wider
+features, lighting and Discovery are not new mandatory acceptance prerequisites.
+Formal acceptance remains55/62, implementation52/54. Remaining seven IDs require
+actual native artist comparison, a timed novice, learner feedback, physical tablet/
+audio observation and a clean offline Windows install exercise. The owner remains
+busy: no participation prompt was issued or observation invented.
+
+
+## 2026-11-13 — Independent acceptance boundary saved
+
+Results checkpoint e4860f1b616068858d3a816d9cb852bb5464a9b0 is pushed/fetched,
+ls-remote and raw progress/evidence verified. The tested functional source is
+12071fe; no application change followed its complete Windows pass and relocated
+129-check review. Required independent work at this checkpoint is complete.
+The same seven artist/novice/learner/device/clean-install prerequisites have
+remained external through prior goal turns and remain unobserved. The owner is
+busy and has not granted participation; no new prompt is appropriate. Record
+this as the external acceptance boundary, not product completion. Broader SFM,
+lighting and Discovery plans remain separate. See the exact seven stable IDs in
+docs/benchmarks/windows_external_boundary_2026-11-13.json. Preserve protected
+private review/recovery and the new external review; do not remove the checkout
+wholesale or rerun unchanged software solely because old prose said next.
+
+
+## 2026-11-13 — Owner directed independent SFM feature implementation
+
+Owner explicitly said to continue the other SFM models and extra features while
+busy, without allowing the remaining manual checks to stop that work. The earlier
+external acceptance boundary remains historically accurate; it is not permission
+to halt this newly authorized feature work or ask for owner participation.
+
+Working main now contains the static Source skin/bodygroup selector and bounded
+MDL49 catalogue/request/worker port. Fresh Python53+29 and headless controls65
+pass. Actual private-app UI20 checks pass with real metadata processes, canonical
+integer selections, default omission, all-hidden guard, cancel/refusal and exact
+existing project/history/final pixels. Metadata ownership uses the pinned Windows
+execute_with_pipe retained process-map entry, consumed once after pipes close.
+Already-exited children return FAILED from TerminateProcess but the pinned engine
+still removes the map entry and closes both handles; cancellation returnsOK. This
+is recorded transparently, not converted into a fabricated all-OK result.
+
+The integrated167-check foundation passes and is registered in default verification.
+Actual native conversions/adoption/persistence and fresh Junko/Mima/Kanako cases
+are next; prior14 prototype conversions do not pass the new chooser. The supplied
+models, originals, private reviews and installed tools remain protected. Formal
+55/62acceptance and52/54implementation counts are unchanged. No manual review prompt,
+new tool installation, Steam write or private-art upload occurred.
+
+
+## 2026-11-13 — Native static-choice retry exposed a Windows cache-path defect
+
+Foundation76f89e82af583001af8cd16260b441555feb2fe2 was pushed/fetched/remote
+verified. The fresh core14 main-worker run passed Nitori default, then stopped at
+Keiki default: Blender's bundled Python raised WinError206 while creating a long
+resolved-native material directory. The complete attempt remains FAILED; all
+source/runtime/original/staged/request identities stayed exact, both background
+Jobs/desktops closed, and root authoritatively released the failed lease. No
+wider converter was launched. Fresh wider265resource staging completed separately.
+
+The bounded fix adds source_archive.write_resource: same logical relative-path
+validation/hierarchy, Windows extended-length IO only,128MiB perresource bound and
+exclusive cache write. Bridge still returns original MemoryBuffer bytes. Focused
+writer tests run7methods:6pass plus explicit directory-symlink privilege skip
+(WinError1314). Mandatory382char/4379byte Windows path and old archive8cases pass.
+The integrated167 foundation passes again, with extra writer6pass/1skip recorded
+separately; its independent long-path fixture is373chars. This is not a universal
+Windows long-path or process-CWD guarantee. Native retries require a new committed
+source/lock/lease; no new native aggregate is claimed. Failure/source evidence is
+in experiments/source_appearance/main_resource_path_fix_20261113. Manual checks
+remain separate and do not stop the owner's newly directed SFM feature work.
+
+
+## 2026-11-13 — Wider native static choices pass; actual app exposes helper bootstrap
+
+At exactcf7a805, fresh main Core14+Wider11 worker batches pass25cases:22successful
+conversions and3expected all-hidden refusals across Nitori, Keiki, Junko main/hair,
+Mima body and Kanako props. All25dual private self-attestations and job/desktop
+closures pass; both coordinator leases are authoritatively closed. Original561
+staged resources,574SourceIO files,17scoped Python files and locks remain exact.
+Actual Keiki archival copy261UTF16units/513bytes matches its declared provider.
+The priorWin206 failure and rejected rootoutput-name attempt remain separate.
+Compact code/protocol/log/metadata evidence is in main_native_workers_20261113;
+no native art, GLB, image, video or runtime binary is uploaded.
+
+The first actual Studio Core14 writer then FAILED on first default Nitori import:
+source_appearance was imported before Blender's script-local tools path existed.
+The background protocol preloaded modules, so its25worker passes did not cover
+this launch condition. The failed writer/private exit1 is retained; source,
+runtime, native original/copy and snapshot identities stayed exact, private Job/
+desktop closed, and authoritative host query found no owned workers remaining.
+
+The narrow fix relocates that import into the existing local-helper section.
+Two meaningful isolated-host CPU bootstrap methods pass, including the historical
+early-import negative control. Blender/SourceIO host APIs are stubbed there;
+no conversion is claimed. The affected fresh foundation passes167checks again,
+plus separately reported bootstrap2/2 and resource6pass/1symlink-privilege skip.
+The actual native app harness is parsed but its matrix is still unpassed; its
+linked-save preparation now normally opens packed HAS before Save linked so
+stable .assets sidecars, rather than soon-offline originals, are referenced.
+Fresh actualappCore14/Wider11, cold Undo/HAS/movie checks and complete default
+Windows verification are next. Native shader/flex/jiggle/assembly fidelity and
+manual acceptance stay distinct. Formal55/62 and52/54 remain unchanged; owner
+participation is not requested and does not stop continued SFM implementation.
+
+
+## 2026-11-13 — Thin Source accessories expose placement bounds; native jiggle values read
+
+Source/helper checkpoint1caeb44b12e9ebf2db944c769810010975f5abaa was pushed,
+fetched, ls-remote and seven raw progress/source files verified. Fresh actual
+Studio Core14 then completed393writer assertions with0assertion failures and
+strictresultbindingtrue, including normal imported metadata, native box-joint
+posing, Undo/Redo and packed/linked Save. The whole attempt still FAILED four
+negative-AABB engine errors at import_placement.gd112 for thin Keiki tool variants.
+No cold readers or movie ran. Source/runtime/original/copy/snapshot identities
+stayed exact; private exit0/Job/desktop closed and root found no owned workers.
+That strict failure is preserved;393assertions are not substituted for a pass.
+
+The placement fix caps inward clearance per axis at half available extent,
+preserving center and nonnegative bounds without expanding them. Both actor.01
+and wall.02 paths use it. Actual thin/planar actor/wall queries plus ordinary/
+collapsed bounds pass20headless checks. Existing private placement passes43checks
+(20newbounds+23original, including3available prepared GMod checks) and a fresh
+48frame1080p24 H264 movie. All981functional files remain exact during testing.
+An initial restricted-context CreateDesktop denial before child launch is retained
+separately; the identical private route passes in the approved host context, with
+no visible fallback. Verifier now retains prelaunch console/receipt errors instead
+of masking them with missing engine.log, and checks both engine logs/closure.
+The placement wrapper is newly registered in default verification with fresh
+output and strictbounds/movie/source gates; that registration is AST-checked but
+the whole default run remains pending. Evidence:main_thin_placement_fix_20261113.
+
+Parallel output-only next-feature work reads all49Junko hair type5rules directly
+from its SHA-bound37644byte MDL49. All1421float32 values and raw bits are finite
+and independently match; allflags0x31,17rules stiffness100/32rules50. Authored26
+controls, independent26+2refusals and24actual crosschecks pass;1153protectedfiles
+are exact. The67525byte inert proposal fits its own128KiB budget, but full adjacent
+256KiB report admission is UNTESTED. No Studio integration, solver, binding, unit
+mapping or full140byte/BOING claim. Evidence:native_jiggle_values_20261113.
+
+Fresh SFM actualappCore14/Wider11 and complete default Windows verification are
+next. Wider82MDL/71distinct definitions remain in scope beyond these six current
+models; native shader/flex/jiggle/assembly and artist fidelity remain separate.
+Formal55/62 and52/54 unchanged. Busy owner participation is not requested and
+does not stop independent feature work. Originals/installed Studio/tools/recovery
+stay protected, and no native artwork or media is uploaded.
+
+
+## 2026-11-13 — Actual SFM static-choice workflows and cold movies pass
+
+At the saved and remotely verified functional checkpoint8d4fde001258f501602bd94bd80d925683062f15,
+both fresh actual Studio matrices pass. Core14 has393writer and364reader checks;
+Wider11 has287writer and304reader checks. Total1348. The real import dialog and
+SourceIO conversions cover Nitori gloves, Keiki tools/box/flame, Junko main/hair,
+Mima body and Kanako props:22conversions and3GUI all-hidden refusals. Defaults
+omit appearance overrides. Ordinary Add/Undo/Redo preserves independent peer,
+drawing, sound and camera state; Keiki's native box joint is posed normally and
+its Tools target/selected mesh presence is retained without claiming controller
+semantics. Static choices remain fixed for the new import, not runtime switches.
+
+All22fresh readers open packed and linked projects after run-owned native inputs,
+prepared bundles/imports, writer cache and tone are offline:44cold opens with88
+exact derived frame joins at0/24. Both exported48frame1080p24 H264/AAC movies pass
+decoded onset1.0000416667seconds and RMS8487.6521. All8preservation gates pass in
+both runs. The3279whole-root source/hash/size/nsmtime/HEAD maps and runtime maps
+are exactly equal across phases. All24actual private receipts have exit0, seen/
+confirmed private windows, no foreground or desktop switch, and closed Jobs/
+desktops. Root host queries find both exact coordinators/owned workers absent.
+Independent metadata audit verifies629joins. No source, runtime or original was
+changed to obtain the pass. Earlier helper-startup and negative-AABB attempts
+remain failed; earlier25worker-only passes are distinct evidence, not this app run.
+
+Compact source/JSON/logs and lossless metadata gzip are retained in
+main_native_app_actual_20261113. No models, textures, GLBs, HAS packages, PNGs,
+audio, movies or runtime binaries are uploaded. The broader supplied82headers/
+71distinct definitions remain in scope; sixMDLs are representative coverage.
+Native Source shader/jiggle/controller/assembly and artist fidelity remain open.
+Nitori's known missing hairbump/opaque-glow approximation is not repaired by
+manufacturing skin differences. Formal55/62 and52/54 remain unchanged.
+
+The next native-jiggle retention proposal is saved separately as reviewed
+output-only minimal-source,22authored plus independent22+16checks. It has exact
+inactive inline metadata or explicit bounded omission, not a sidecar API or
+physics activation. Real Junko full report/adoption/persistence is still UNRUN.
+The existing full default suite must now run on the coherent static feature,
+including newly registered Source-choice foundation and thin-placement wrapper.
+The earlier12071fe full pass predates these changes and is not reused as a new
+pass. Busy owner participation is not requested; manual gates do not stop this
+independent SFM feature work.
+
+
+## 2026-11-13 — Complete Windows pass includes the new SFM controls
+
+The fresh complete default run at9f6f531538156fc34e3652bc81da8a608e379156
+PASSED in2787.2334936seconds (46m27s). All982functional source entries and HEAD
+match before/after. There are36core process groups,156result entries and21final
+movie checks; both decoded audio onsets are1.0second, and the WASAPI editor RMS
+is5658.299233592635. The registered Source-choice foundation167, bootstrap2,
+resource writer6pass/1explicit symlink-privilege skip, placement43plus20headless,
+wind845, helper208CPU/266graphics, background save114 and body24+72 all pass in
+this same complete run. It is not a composition of earlier scoped reports.
+
+Fresh metadata audit binds178root receipts and192unique physical private jobs:
+191exit0 plus the explicitly expected Krita cancellation exit2. All are fresh,
+private and closed,13inline receipt occurrences match physical bytes, and no
+reference or unexpected failure is missing. Root host queries find exact PS3136
+and Python8188 absent using full creation timestamps; no owned Godot/Blender/
+FFmpeg commands remain and no process was killed. CIM's microsecond truncation
+is documented separately from the exact process timestamp. Root released the
+graphics lease only after the source/receipt/host proof gates passed.
+
+Lossless compact metadata/source/logs and all raw receipts are saved in
+experiments/windows_canonical_sfm_20261113, with explicit deduplication aliases.
+Native artwork, models, HAS/GLB, images/audio/video and runtime binaries remain
+local. The earlier12071fe full pass and failed attempts remain historical.
+The1348actual SFM workflow checks remain separately bound to their8dfunctional
+source, unchanged through this full9f checkpoint. Formal55/62 and52/54 stay fixed;
+no artist, novice, learner, physical-device or clean-install result is invented.
+
+The next concrete source candidates are preserved in next_sfm_candidates_20261114:
+completed-import Windows map cleanup (53authored runtime checks stillUNRUN),
+amended inactive jiggle metadata25CPU, selected-MDL capture18+9CPU, and ordinary
+Keiki/Mima shape UI plans (UNRUN). The historical exit-code sentinel guard is
+rejected before production: legitimate Windows exit0xFFFFFFFF appears as-1.
+The sole creator reservation, not that sentinel, proves exactly-once mapped
+cleanup. Native hair simulation/binding is not implemented. Continue these
+independent increments after saving this verified checkpoint; the busy owner's
+manual acceptance conditions do not stop this work or justify another prompt.
+
+
+## 2026-11-13 — Exact inactive Source jiggle retention and ordinary SFM shape controls
+
+Ported independently captured/rechecked selected-MDL identity and bounded inert
+jiggle metadata into the normal Blender bridge. Local helper imports follow the
+tools path bootstrap. Original/container and selected-native SHA domains remain
+distinct. Complete values are retained within128KiB metadata and256KiB actual
+nested Windows report budgets, otherwise wholly omitted with a bounded reason.
+No-rule/BSP legacy writer branches remain; identity violations are not optional
+fallbacks. Native binding, dynamics and automatic Hair&clothes remain absent.
+
+Fixed pinned Windows completed-import map retention using a sole-creator
+reservation consumed before exactly one mapped release. No sentinel guard,
+retry, rawPID fallback or live-child teardown change. Actual harmless-child
+normal/refusal/cancel/negative-exit/unreserved/teardown controls pass53; the
+negative -1 getter alone is explicitly not independent map-disappearance proof.
+Source foundation167 plus metadata/capture/bridge66, bootstrap2 and resource
+6pass/1explicit symlink privilege skip pass. Initial CPU wrapper count14vs13
+failure is retained; the corrected66 includes the identity-error escape test.
+
+Actual fresh four-model run at main working-source snapshot eb089488 passes
+117writer+124reader static checks and154separately named feature checks:
+96ordinary shape checks for Keiki Tools and three Mima head targets,58inactive
+jiggle/no-rule checks. All4136source/hash/size/nsmtime/HEAD records and eight
+preservation gates match; five private jobs close. Four fresh readers perform
+eight packed/linked Opens,16base plus4shape exactframe joins, and one48frame
+1080p24H264/AAC movie with decoded onset1.0000416666666667/RMS8487.65214677082.
+No source aliases/bundles/caches are online for cold reads; linked assets remain.
+
+Independent actual-report joins match all49Junko rules/1421float32 values:
+67269compactmetadata bytes,137044nestedreport bytes. Keiki,JunkoHair and Nitori
+GLBs equal earlier actual baselines. Nitori report differs only in the explicitly
+new original_source alias and recovers exact legacy writer bytes after that
+single relocation. Mima's fresh native conversion exposes143derived targets;
+three exact tuples are exercised, not all156native descriptors or controllers.
+Root host proof finds exact10132 creation identity absent, no matching owned
+runtime remains and no process was killed. No installed Studio/tools/originals
+were replaced and no owner participation prompt occurred.
+
+Compact metadata/source/logs are in inert_metadata_shapes_main_20261114; native
+art/HAS/GLB/media/runtime binaries stay local. Formal55/62 and52/54 unchanged.
+Complete default verification is next for this new source. The subsequent native
+increment must prove an export/runtime binding crosswalk and rest/unit relation
+before implementing any Source solver; source_jiggle_runtime_plan.md records it.
+
+
+## 2026-11-13 — Preserve audio-device full failure; isolate silent selection from hardware
+
+Complete ee81e864 default FAILED after31m17s in verify_contact_selection.py.
+All996functional hashes/HEAD match. Its engine exits0 with67geometric checks/
+0domain failures on5native models, but the strict error gate rejects WASAPI
+GetBufferSize error/current output_device invalidation. Cause is not established;
+stdout/stderr are concatenated, so their printed order is not a shutdown cause.
+The raw failed log/source maps/private receipt/host closure are retained. Exact
+PS2124/Python19828 creations are absent, no owned runtime remains and no process
+was killed. A first closing-helper guard refused due to PowerShell JSON DateTime
+coercion; explicit-DateKindString fixed that metadata-only helper before proof.
+
+An unchanged-source/default-driver repeat passes67/0. The selected correction
+changes only this geometric wrapper to explicit Dummy and reports/asserts the
+actual driver; fresh67/0 passes with a closed private job. Every geometry and
+strict ERROR check remains. Dedicated audio_editor/multi_audio stay unchanged;
+the failed full's earlier audio_editor actually reportsWASAPI25/0, while later
+multi_audio was not reached. New full verification is required, not composed
+from the successful scopes. Formal55/62 and52/54 unchanged.
+
+Separate output-only native crosswalk code now passes47authored CPU controls
+and independent source review; the historical30draft, initial canonical-key
+failure and scene/mesh/container review gaps remain preserved. This is new
+binding code, not actual runtime/native simulation. ActualBlender/Junko69joint
+qualification, HAS binding, persistence and solver remainUNRUN. The concrete
+next-step packet and source_jiggle_runtime_plan.md preserve the continuation.
+
+
+## 2026-11-13 — Actual Junko native-to-export bone crosswalk passes
+
+At main80a1e557 with a separately owned diagnostic overlay, the exact supplied
+Junko hair MDL passes all69native→Blender→glTF joint bindings,483raw restword
+joins and1421jiggle floats. Independent source/audit pins all1886files plus996
+main functional entries/currentHEAD and exact tree memberships. Maximum rest
+matrix error5.668355022803162e-6 meets2e-5. Raw2322644-byte GLB equals the protected
+baseline;2meshes/4primitives, all material/texture/image/skin/morph fingerprints
+match; scene0 has72reachable nodes/1skin. Production parameters are unaugmented;
+entire native_parameters match, whole report differs only original_source path.
+
+Fresh task/lock/worker26source-map and7Python/13Blender role lists use current
+code, not historical hashes. Dual Python/Blender WinAPI self-attestation and exact
+nonce/parent/PID/creation chain pass; original headless monitor flags remainfalse
+and are not relabelled as GPU proof. Exact coordinator20108 creation is absent;
+no owned runtime remains and no process was killed. Preflight check succeeded;
+a parallel host guard first saw that nonlaunch preflight and refused, then the
+sequential launch guard saw none. No native run or input was retried/reused.
+
+Compact code/metadata/logs/counts/numeric joins/hash/errors are saved in
+native_crosswalk_actual_20261114. Full69-bone rest arrays and detailed fingerprints
+stayLOCAL with private model bundles, with hashes/paths/reproduction recorded.
+No main integration/HAS binding/portable adoption/native Source solver is claimed.
+Next compact report admission and exact has_source_bones runtime join precede
+helper use. Native dynamics/tip-axis/unit/wind/lifecycle work stays in the saved
+runtime plan. The earlier full audio-device failure remains FAILED; fresh full
+default verification is still required after the silent-selection correction.
+
+
+## 2026-11-13 — Normal Junko joint crosswalk and Simple hair suggestion pass
+
+The diagnostic crosswalk is now ported to the normal bounded report for the
+exact Junko/default standalone profile. Its159684-byte report retains all49
+rules/1421rawfloat words plus69exported joint identities. The read-only HAS
+resolver checks the actual GLB, importer map, skeleton IDs/indices and parents.
+Simple loose-part review prioritizes two verified imported hair chains and
+offers Enable these existing joints; explicit Apply remains required. Original
+Source coefficients stay inactive and no native dynamics solver is claimed.
+
+Fresh four-model main-working-source workflow at7477 passes117writer+124reader
+static checks plus194writer/100reader named checks. Junko review/cancel passes
+in the writer and both cold modes without altering weights/scene/physics. Eight
+packed/linked cold Opens retain20exact frame joins and one48-frame1080p24
+H264/AAC movie. All preservation gates,120installed exporter source identities
+and current main/HEAD match; all five private jobs close. Exact coordinator27676
+creation is absent at03:33:14.8600147Z; no runtime remains and none was killed.
+Independent stdlib audit reproduces rawbit/ASCII-wire joins and unchanged
+Junko/Keiki/Nitori GLBs. Full rest/fingerprint data remainsLOCAL.
+
+Affected foundation167, jiggle66, Pythoncrosswalk77, headless79+17 and bootstrap2
+pass; the one Windows symlink-privilege skip remains explicit. Prior authored
+fixture/parser/test-harness failures are preserved. The negative-zero fixture
+initially changed the wrong field; a separate probe then proved JSON writing
+normalizes signed zero. Only numeric zero signs are tolerated; prefix/raw wire
+bits remain exact. Compact evidence and current limits are in
+sfm_source_bone_binding_main_2026-11-13.json. Fresh complete default verification
+is NEXT. The earlier full WASAPI failure remains FAILED. Formal55/62 and52/54
+are unchanged; no owner participation prompt or installed-app replacement.
+
+
+## 2026-11-13 — Preserve full helper-source review refusal
+
+Fresh complete c4d7674 default FAILED after840.186023seconds. All1008functional
+files/HEAD are unchanged. verify_helper_preview CPU stops at its intentional
+reviewed-source hash guard for src/secondary_helper_editor.gd:0checks, no
+snapshot or graphical attempt. The dependency exists; copy_snapshot includes
+all functional files, so this is a stale review record rather than an observed
+missing-module load. Native fourcase241static/294named PASS remains separate.
+The old output/verification.json is stale and not admitted as a new full result.
+
+Exact PS10812 and Python23624 creations are absent at03:55:07.2558360Z; no owned
+runtime command remains and no process was killed. Raw log/maps/host closure,
+prior reviewed manifest/driver and root receipt time-window subset are saved
+under windows_binding_review_guard_20261114. Independent review of the optional
+consumer/resolver dependency precedes a provenance-only update,208CPU/266GPU
+and a new coherent full run. No assertions or prior failures are waived, no
+review package is built using this failed run, and formal55/62/52/54 remain.
+
+
+## 2026-11-13 — Refresh reviewed helper provenance; keep full refusal distinct
+
+Independent review accepts the c4d optional native-joint preference and read-only
+resolver. Only tests/helper_preview_port_files.json and its verifier change:
+the helper/editor and verifier review hashes are refreshed, resolver dependency
+is explicit,22other reviewed rows and wind16 stay unchanged. No production
+source, behavior or assertions change. Same CPU208(11+128+69) and privateGPU266
+(221+45) pass on identical1009-file helper snapshots (canonical1008 plus
+dependencies.json); all preservation and retained-Popen/private closure gates
+pass. A first restricted-context CreateDesktop Errno5 attempt stops before the
+engine/0checks and staysFAILED with false monitor fields. Exact approved-host
+retry passes; no visible fallback or auto-review rejection occurred.
+
+Compact37-payload evidence is helper_preview_review_refresh_20261114. Fullc4d
+remainsFAILED, the old global verification is stale, and a fresh coherent full
+run is required. The prior fourcase native app's production bytes are unchanged;
+two reviewed test-only differences are disclosed rather than relabelling its
+source matrix. Formal scores and external acceptance stay unchanged.
+
+Independent stdlib work also measures Junko's native→glTF rest/neutral skin:
+69bones/49native-Ztips/69inverse binds/9661VVDvertices, with common(+X,+Z,-Y)
+left transformation and2e-5position/matrix gates. The conjugation hypothesis
+and first2e-5normal-fidelity gate fail and remain recorded; maximum normal
+difference0.0012165467 is unqualified. Duplicate vertex attributes prevent a
+unique native vertex identity claim. Generic helpers remain their documented
+separate behavior. Native Source dynamics/HAS posed transport/two source scales
+areUNRUN. Official immutable SDK reference provenance is saved, full source
+staysLOCAL and unexecuted; no production full-layout flag changes. See
+native_source_coordinates_2026-11-13.json and source_jiggle_runtime_plan.md.
+
+
+## 2026-11-13 — Owner requested pause; preserve incomplete full and preparations
+
+At04:51:33UTC the owner called the day. Exact identity-bound Python13300 and its owned test tree were terminated onrequest; PS21696 then wrote rawfailed/exit-1, source_unchangedtrue. All1008functional files/HEADf380 match. Authoritative04:52:54 proof finds both original identities absent and no owned runtime commands. PCnotshutdown. The2507.124359second run is USER_CANCELLED_INCOMPLETE, neverPASS/newsoftwarefailure; prior208CPU/266GPU and latercontact/selection/motion/drawing passes remain partial. Final media/recovery completion is unverified; oldglobalverification remainsstale. EarlierEE/c4d failures remainFAILED.
+
+Saved source-reviewed unrun publication/review-builder/168replay/41588headless/exclusive-read preparations and independentaudits under experiments/owner_pause_20261114; privateoracles/nativeart/HAS/GLB/media/fullSDK remainLOCAL. No builder/probe/cleanup executed, no installedapp ororiginal changed. docs/NEXT_SESSION_PLAN_2026-11-13_SFM.md gives freshfull/review/physics pickup. Currentf380/full040946 PASS-gated templates are ineligible afterpause; generate reviewed successors onresumption. Formal55/62 and52/54 unchanged. No work resumes ormanualprompts untilownerresumes.
+
+
+## 2026-11-14 — PMX capability review and pickup additions while paused
+
+At the owner's request, read-only source review distinguishes retained native
+PMX/MMD properties from live HAS support. HAS uses its own compatible hair/
+clothing spring helpers and structural body proxies; no source-bound native
+PMX rigid-body/joint interpreter or PMX 2.1 soft-body simulation is implemented.
+The portable GLB/report package does not retain the full native physics tables.
+Historical generic physics tests do not establish native PMX motion fidelity.
+
+The pickup and master plan now record a proposed source-independent physics
+representation and editable reconstruction assistant for lossy models. Preserve
+real declarations first; distinguish imported, translated, inferred and artist-
+edited data. HAS has no trained reconstruction model today. Deterministic rules
+and presets precede any optional learned estimator; plausible inferred behavior
+cannot establish recovery of an author's exact lost parameters.
+
+Old test code and compact evidence are queued for GitHub archiving on resume:
+inventory/deduplicate, push and verify remote retrieval before exact disposable
+output cleanup. Preserve failed/interrupted/unrun results and private assets.
+No old test outputs were uploaded and no cleanup, tests, app runs, training or
+product changes occurred in this documentation update. Goal remains paused;
+formal scores remain 55/62 acceptance and 52/54 implementation. See
+docs/NEXT_SESSION_PLAN_2026-11-13_SFM.md and docs/RESUME_MASTER_PLAN.md.
+
+
+## 2026-11-14 — Record universal HAS standardization and capability audit target
+
+The owner clarifies that every imported source family must become HAS-owned
+model data, potentially enriched with reconstructed information and component
+swaps that cannot map back into the source format. The current pickup, master
+section 15 and standard_model.md now record this direction within the existing
+model/portable .has contract, consistent with the voice addendum. No separate
+extension or backward-export promise was introduced.
+
+A roughly 200-item capability/integrity catalog is a design target, not an
+implemented test count or a change to formal acceptance IDs/scores. Plan honest
+applicability, provenance, runtime support and run-bound evidence; try supported
+repairs and review uncertain reconstruction, then validate each result. MDL,
+PMX and VRM need source-specific fixtures feeding one HAS contract; GMA contains
+models/dependencies rather than defining its own model physics. Actual surviving
+content determines reconstruction effort. Record explicit HAS schema migrations
+and reader refusals for essential new data without silently dropping information.
+
+Read-only source/document review and documentation changes only. No tests, app,
+training, importer/schema implementation, old-test upload or cleanup occurred.
+Goal stays paused; formal 55/62 acceptance and 52/54 implementation are unchanged.
+
+
+## 2026-11-14 — Record six-foot human baseline at HAS scale 1
+
+The owner sets six feet (1.8288 m) as the target height at user-facing HAS scale 1
+for complete standard-proportion human imports, regardless of native source
+height. The pickup, master section 16, standard-model and height/scale guides
+record this future standardization rule. Preserve uniform proportions, source
+measurements and provenance; keep source conversion, normalization and relative
+artist scale separate while retaining metre-based world units.
+
+Read-only review confirms today's six-foot review is opt-in/off each launch and
+changes ordinary root scale from visible neutral extent. It does not yet provide
+a canonical six-foot asset at scale 1. Plan an import basis/derived asset with
+appropriate complete-human measurement, component alignment and physics/skin/
+save validation. Partial parts, props/maps and uncertain/nonstandard figures
+must not be blindly fitted; existing HAS scenes and authored contacts remain
+intact. No implementation, new tests, app runs or cleanup occurred. Goal remains
+paused; formal acceptance 55/62 and implementation 52/54 are unchanged.

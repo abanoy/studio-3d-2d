@@ -1,0 +1,31 @@
+{
+  "source_files": 1243,
+  "cases": [
+    {
+      "case": "complete",
+      "expected_success": true,
+      "exit": 0
+    },
+    {
+      "case": "missing-dock",
+      "expected_success": false,
+      "exit": 1
+    },
+    {
+      "case": "unsafe",
+      "expected_success": false,
+      "exit": 1
+    },
+    {
+      "case": "wrong-sha256",
+      "expected_success": false,
+      "exit": 1
+    }
+  ],
+  "scope": "Inventory only; no cold runtime or historical-reader acceptance",
+  "new_dock_included": true,
+  "date": "2026-11-11",
+  "default_source": "Current Git checkout inventory, with generated output/engine caches/bytecode excluded",
+  "historical_oracles": "All independent audio/storage historical-reader SHA256 guards and runtime checks retained. Owner reports original backups unavailable.",
+  "full_review_pass": false
+}

@@ -1,0 +1,91 @@
+{
+  "format": "has_windows_relocated_private_review_1",
+  "date": "2026-11-13",
+  "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+  "final": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261113-12071fe",
+  "status": "passed",
+  "project_count": 6,
+  "checks": 129,
+  "private_jobs": 8,
+  "projects": [
+    {
+      "name": "Avatar.has",
+      "checks": 21,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Flatgrass.has",
+      "checks": 21,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Street.has",
+      "checks": 21,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Reimu helpers.has",
+      "checks": 23,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Back hair demo.has",
+      "checks": 22,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Mima head expressions.has",
+      "checks": 21,
+      "failures": 0,
+      "passed": true
+    }
+  ],
+  "preservation": {
+    "protected_old_review_unchanged": true,
+    "protected_old_studio_source_unchanged": true,
+    "all_final_packages_unchanged": true,
+    "harness_unchanged": true,
+    "original_sourceio_unchanged": true,
+    "approved_runtimes_unchanged": true,
+    "final_source_unchanged": true,
+    "final_sourceio_exact": true
+  },
+  "approved_SourceIO": "Existing fe24260b97ac03b899d9b5d4f0fd7b34772f3647 copy with LICENSE and exact file index in final Dependencies; no new install or download",
+  "normal_startups": [
+    "stage Home/Simple",
+    "final Home/Simple"
+  ],
+  "guide_only_utf8_correction": {
+    "format": "has_owner_review_guide_utf8_correction_1",
+    "observed_utc": "2026-11-13T22:08:33.568799+00:00",
+    "target": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261113-12071fe\\README.md",
+    "template_sha256": "d355b272697844be25c115a204ca9867926c2a6b7cc959db259a361f90898278",
+    "before_sha256": "4416d657581c7c30365c68f1517897d4172d979475ce437b669ae340ebb7f622",
+    "after_sha256": "158421eb0cdb3e86696f968176409fe53f1101faf5eeb079b5e211e3c53ddb4f",
+    "before_bytes": 3626,
+    "after_bytes": 3578,
+    "reason": "Coordinator used locale-default read_text for UTF8 template; explicit UTF8 repair of final guide only after successful replay. Frozen coordinator/harness and Studio/project/runtime bytes unchanged.",
+    "future_recipe": "Read README.template.md with encoding=utf-8 before replacing tokens and writing UTF8"
+  },
+  "source_and_packages_changed_by_guide_correction": false,
+  "final_process_and_desktop_proof": "All owned review processes absent; only Default desktop, authoritative host at22:09:55Z",
+  "preliminary_process_probe": "Read-only audit shell PID2144 observed then exited; no kill or assertion bypass; original preliminary proof retained",
+  "archive": "experiments/owner_review/relocated_actual_20261113",
+  "archive_index_sha256": "31167788a5b83944ef735a9f334c7fae171c3f2b3ec4241b51dedc19b7ba5dd9",
+  "archive_files": 119,
+  "archive_bytes": 1114487,
+  "private_art_or_runtime_payload_uploaded": false,
+  "installation_replaced": false,
+  "human_device_install_acceptance": false,
+  "protected_checkout_retained": "Earlier review/recovery and private working outputs remain protected; new final review is outside the disposable checkout",
+  "limits": [
+    "Mima package is head-only; Back hair demo contains synthetic test setup",
+    "Full native Source shader, flex, jiggle, assembly and skin/bodygroup chooser coverage remains separately recorded",
+    "Approved Python, Godot and FFmpeg remain external existing-PC dependencies; this is not clean offline install acceptance"
+  ]
+}

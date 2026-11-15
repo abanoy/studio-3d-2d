@@ -1,0 +1,332 @@
+{
+  "format": "has_secondary_part_picking_1",
+  "date": "2026-11-12",
+  "runtime_base_commit": "12f5d612f2c748b5ed4dc46878291251ffb836de",
+  "changes": [
+    "Best-effort scene-click selection from source bounds transformed by current source joint, nearest depth with smaller-volume tie break; list correction remains available",
+    "Simple automatically reviews a validated existing native chain only when every ordinary weighted attachment is unavailable; manual uncheck, patch mode and Advanced remain explicit",
+    "Clicks on already configured areas clear stale Apply proposals and preserve the clicked area for patch correction; click/drag/cancel/focus and camera gestures remain separate"
+  ],
+  "algorithm_limits": "Approximate source region bounds, not exact skinned-surface/occlusion picking. It may guess another connected region; the list and orange review expose correction. No multi-selection or local-blow inclusion is implemented by this increment.",
+  "source_sha256": {
+    "src/secondary_helper_editor.gd": "2e0a2a8073fbbc053c10171119ec9ffddafb71668c91dfe6eb80a7b53588a3f0",
+    "tests/secondary_pick_unit.gd": "50a2f0f1b87dc27d121e22f16779d04132e26f5cc6e455a6ad62cb0ccae6890c",
+    "tests/secondary_pick_smoke.gd": "dd5057ebd90df7a6ca71821a4e15d4d6401a11c0b4948bccd268fc18414ff409",
+    "tests/verify_secondary_picking.py": "822f821e36a9e6bc55b282e149c03cb0ea292f3e814df097c795d3dd040cc405",
+    "tests/secondary_existing_native_smoke.gd": "9bd692b736f8564fd6a26b564f09e057c098541cfc614e3a8b2289c182b3975a"
+  },
+  "immutable_runtime_files": 189,
+  "immutable_runtime_manifest_sha256": "22bcae0694c5031ccca86df78fb23bc201ce459fc7e8ca0ab8e0910cdd079a2d",
+  "focused": {
+    "unit": {
+      "result": {
+        "checks": 20,
+        "failures": 0
+      },
+      "private_receipt": null
+    },
+    "smoke": {
+      "result": {
+        "checks": 25,
+        "failures": 0,
+        "initial_history": 1,
+        "original_pose": {},
+        "posed_pose": {
+          "Rig/Skeleton3D::Head": {
+            "position": [
+              0.6,
+              0.1,
+              0
+            ],
+            "rotation_xyzw": [
+              0.0,
+              0.159318208694458,
+              0.0,
+              0.9872272610664368
+            ]
+          }
+        },
+        "source_sha256": "4d4ddc8b1414d149d44d881c60270113eb70ea3bec0995c6b817c002f1b20316"
+      },
+      "private_receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1483f85a18264f4b81d2edb1f6410fc1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 4844,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.369
+      }
+    }
+  },
+  "native_pristine": {
+    "result": {
+      "bind_difference": {
+        "changed": 0,
+        "mean": 0.0
+      },
+      "checks": 30,
+      "derived": "b51797502ad1338cf1b1b615d2a975d37c510b19d6c96acd43a1c8c5b91f4862",
+      "failures": 0,
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-existing-native\\1794517163929412800/render_1794517181_17255274_0/movie.mp4",
+      "wind_radians": 0.03544178977608681
+    },
+    "originals": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\reimu-helpers\\1794448369022219400\\input\\scene.glb": {
+        "sha256": "4b23dbf5dfc402a08871d392143efa687dc10b869fc9344aa3f565099947e1f2",
+        "mtime_ns": 1794448157922062600,
+        "bytes": 7217520
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\reimu-helpers\\1794448369022219400\\input\\parameters.json": {
+        "sha256": "f4e1850d9f4fa9359a72d43f3c945aaf61a1bd726538b025da31c4fa5f8071ba",
+        "mtime_ns": 1794448157924587200,
+        "bytes": 28797
+      }
+    },
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_95d92a52670943e988a6cc9b8077c22f",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 15116,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 20.623
+    },
+    "with_ribbon": false,
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "24",
+      "duration": "1.000000"
+    },
+    "scope": "Actual prepared native player Back hair; same-process packed reopen, not a cold-machine or artist fidelity certification"
+  },
+  "native_ribbon_composition": {
+    "result": {
+      "bind_difference": {
+        "changed": 0,
+        "mean": 0.0
+      },
+      "checks": 33,
+      "derived": "d7036490ef624c8f517766ecd16937496a1322f62b7d90902ff4d72f266f3ace",
+      "failures": 0,
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-existing-native\\1794517194923739900/render_1794517212_17271207_0/movie.mp4",
+      "wind_radians": 0.038866076618433
+    },
+    "originals": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-composition\\1794516017604605200\\input\\scene.glb": {
+        "sha256": "4d62236d5c34468ea1f91c43089d6ce3c193be27b8460d53ea8d91d2238ab7b5",
+        "mtime_ns": 1794448224429503700,
+        "bytes": 7273728
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\back-hair-composition\\1794516017604605200\\input\\parameters.json": {
+        "sha256": "f4e1850d9f4fa9359a72d43f3c945aaf61a1bd726538b025da31c4fa5f8071ba",
+        "mtime_ns": 1794448157924587200,
+        "bytes": 28797
+      }
+    },
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_a52cc85ea467442f98cf8be5eb501d27",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 24580,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 20.437
+    },
+    "with_ribbon": true,
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "24",
+      "duration": "1.000000"
+    },
+    "scope": "Actual prepared native player Back hair; same-process packed reopen, not a cold-machine or artist fidelity certification"
+  },
+  "original_helper_regressions": {
+    "bind_difference": {
+      "changed": 12,
+      "mean": 0.000217013888888889
+    },
+    "checks": 39,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794517219786678200",
+    "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794517219786678200/render_1794517230_10368295_0/movie.mp4",
+    "sway_radians": 0.305608451366425,
+    "audio_onset_seconds": 1.0000416666666667,
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "nb_read_frames": "48",
+      "r_frame_rate": "24/1",
+      "duration": "2.000000"
+    },
+    "source_sha256": "4d4ddc8b1414d149d44d881c60270113eb70ea3bec0995c6b817c002f1b20316",
+    "native": {
+      "checks": 14,
+      "failures": 0,
+      "metrics": {
+        "gmod": {
+          "bind_difference": {
+            "changed": 4,
+            "mean": 4.82253086419753e-07
+          },
+          "deformation": {
+            "changed": 1335,
+            "mean": 0.0260615596064815
+          },
+          "original_bones": 77
+        },
+        "mmd": {
+          "bind_difference": {
+            "changed": 0,
+            "mean": 0.0
+          },
+          "deformation": {
+            "changed": 351,
+            "mean": 0.00548828125
+          },
+          "original_bones": 126
+        }
+      },
+      "assessment_counts": {
+        "mmd": {
+          "regions": 89,
+          "suggested": 2,
+          "skipped": 0,
+          "truncated": false
+        },
+        "gmod": {
+          "regions": 163,
+          "suggested": 2,
+          "skipped": 0,
+          "truncated": false
+        },
+        "sfm": {
+          "regions": 32,
+          "suggested": 0,
+          "skipped": 0,
+          "truncated": false
+        }
+      }
+    },
+    "multi": {
+      "checks": 59,
+      "failures": 0,
+      "movies": [
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794517219786678200/render_1794517257_7367250_0/movie.mp4"
+      ]
+    },
+    "patch": {
+      "checks": 35,
+      "failures": 0,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794517219786678200",
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794517219786678200/render_1794517287_13898207_0/movie.mp4",
+      "audio_onset_seconds": 1.0000416666666667
+    }
+  },
+  "original_helper_private_receipts": {
+    "secondary_helpers_smoke": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_helpers_smoke_69526629afa5442f887e99c0b48a296b.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_866d9278b9d847e9be23771574b595d8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 1936,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 18.256
+      }
+    },
+    "secondary_helpers_native": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_helpers_native_65590f32c0f64329ac18343ed291b7d4.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f12ccf2f2bb145b780777f1ac3987c0e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 4328,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 8.173
+      }
+    },
+    "secondary_helpers_multi": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_helpers_multi_c0f95d3fb18a4849acbd78a06a68aafe.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_eca507c439f549e3bd05df0a1373aab4",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 18244,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 23.382
+      }
+    },
+    "secondary_helpers_patch": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_helpers_patch_8467151345974c75890c7d87062b60ea.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_09b08adcf28947e999a5bb94a15315bc",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 7424,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 20.739
+      }
+    }
+  },
+  "commands": [
+    "python tests/verify_secondary_picking.py",
+    "python tests/verify_secondary_existing.py --prepared-source <pristine-native/scene.glb>",
+    "python tests/verify_secondary_existing.py --prepared-source <ribbon-derived/scene.glb> --with-ribbon",
+    "python tests/verify_secondary_helpers.py"
+  ],
+  "failed_trial": {
+    "path": "output/secondary-picking/1794517074092231200",
+    "checks": 21,
+    "failures": 1,
+    "reason": "New test incorrectly expected Pose-mode middle drag to navigate the camera; baseline Pose pans the canvas. Final test explicitly verifies baseline Pose pan and Camera-mode middle navigation. No production change or old assertion was relaxed for that correction."
+  },
+  "scope": "Software interaction/native helper regressions only; no human fidelity/device/clean setup/full aggregate acceptance. Installed app, original assets and private owner projects untouched.",
+  "next": "Full-area scene setup will extend these bounds through a central scene_contains API; multiple reviewed plans and per-item local-blow preview remain separate work."
+}

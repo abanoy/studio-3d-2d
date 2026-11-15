@@ -1,6 +1,13 @@
 extends Node
 # Editor-only ID rendering shares meshes/skins, never source materials or save data.
 const MASK_LAYER := 1 << 19
+class PickRequest extends RefCounted:
+	var receiver: WeakRef
+	var data: Dictionary
+	func complete() -> void:
+		var keep_alive: RefCounted=self
+		var target=receiver.get_ref()
+		if target:target.complete_pick(keep_alive)
 var app
 var tree: Tree
 var items := {}
@@ -15,9 +22,11 @@ var outline_material: ShaderMaterial
 var menu: PopupMenu
 var pending_button := 0
 var pending_motion := Vector2.ZERO
+var pending_cursor := Vector2.ZERO
 var serial := 0
 var updating_tree := false
 var picking := 0
+var pick_requests: Dictionary = {}
 var colors := {}
 var boundaries := {}
 
@@ -34,6 +43,7 @@ func setup(parent: Node) -> void:
 		if not updating_tree and item and item.get_metadata(0) is String: select_entity(item.get_metadata(0)))
 	parent.add_child(tree)
 	app.button(parent,"Frame selected",frame_selected).tooltip_text = "Find the selected map or model without changing shot keys."
+	app.button(parent,"Save asset .has...",func():preload("res://src/asset_package.gd").export_dialog(app)).tooltip_text="Package the selected independent model or map with its editable controls and embedded dependencies."
 	app.button(parent,"Size map…",func():app.map_calibration.open()).tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
 	app.label(parent,"Click an object to select.\nRight-click empty space\nto deselect.").add_theme_font_size_override("font_size",12)
 
@@ -167,8 +177,10 @@ func _process(_delta: float) -> void:
 	if pending_button!=0:
 		for key in [KEY_W,KEY_A,KEY_S,KEY_D,KEY_Q,KEY_E]:
 			if Input.is_physical_key_pressed(key):
-				app.camera_button(pending_button,true);cancel_gesture();break
-	var current: Camera3D = app.renderer.camera
+				app.camera_button(pending_button,true,false,pending_cursor);cancel_gesture();break
+	var current: Camera3D = app.scene_view.display_camera()
+	var extent: Vector2i=app.scene_view.viewport.size if app.canvas.scene_setup else app.renderer.viewport.size/2
+	if viewport.size!=extent:viewport.size=extent
 	camera.transform = current.transform; camera.fov = current.fov
 	camera.near = current.near; camera.far = current.far; camera.keep_aspect = current.keep_aspect
 	camera.projection = current.projection; camera.size = current.size
@@ -194,7 +206,7 @@ func _process(_delta: float) -> void:
 			for material in entry.materials+entry.ghost_materials:material.set_shader_parameter("object_color",color)
 			entry.color=color
 		for i in range(entry.original.get_blend_shape_count()): entry.copy.set_blend_shape_value(i,entry.original.get_blend_shape_value(i))
-	outline.position = app.canvas.image_rect().position; outline.size = app.canvas.image_rect().size
+	outline.position = app.canvas.scene_rect().position; outline.size = app.canvas.scene_rect().size
 	outline.visible = not selected.is_empty() and not app.exporting
 	if outline.visible:
 		outline_material.set_shader_parameter("object_color",color_for(selected))
@@ -255,8 +267,8 @@ func input(event: InputEvent, point: Vector2) -> void:
 			if index==MOUSE_BUTTON_MIDDLE or event.ctrl_pressed or app.navigating:
 				cancel_gesture(); app.camera_button(index,true,event.ctrl_pressed)
 			elif pending_button!=0 and pending_button!=index:
-				app.camera_button(pending_button,true); app.camera_button(index,true); cancel_gesture()
-			else: pending_button=index; pending_motion=Vector2.ZERO
+				app.camera_button(pending_button,true,false,pending_cursor); app.camera_button(index,true); cancel_gesture()
+			else: pending_button=index; pending_motion=Vector2.ZERO;pending_cursor=app.get_viewport().get_mouse_position()
 		else:
 			if pending_button==index:
 				cancel_gesture(); choose_at(point,index==MOUSE_BUTTON_RIGHT)
@@ -265,19 +277,30 @@ func input(event: InputEvent, point: Vector2) -> void:
 		if pending_button!=0:
 			pending_motion+=event.relative
 			if pending_motion.length()>=4:
-				var delta := pending_motion; app.camera_button(pending_button,true); cancel_gesture(); app.camera_motion(delta)
+				var delta := pending_motion; app.camera_button(pending_button,true,false,pending_cursor); cancel_gesture(); app.camera_motion(delta)
 		elif app.navigating: app.camera_motion(event.relative)
 
 func choose_at(point: Vector2, context := false) -> void:
 	serial += 1; var request := serial
-	if not Rect2(0,0,app.video.width,app.video.height).has_point(point): return
+	if not app.canvas.scene_contains(point): return
 	picking += 1
 	_process(0); viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
-	await RenderingServer.frame_post_draw
-	picking -= 1
-	if request!=serial or app.exporting or app.playing or app.navigating or pending_button!=0 or app.mode.selected==0: return
+	# Keep each frame wait owned by this Node. A suspended coroutine otherwise
+	# retains its camera Transform3D after its selection owner is freed. Separate
+	# receivers keep picks requested during an emission on the next frame; bound
+	# arguments alone do not give signal connections distinct identities in 4.6.
+	var pending:=PickRequest.new();pending.receiver=weakref(self)
+	pending.data={"serial":request,"view":app.scene_view.pick_state(),"uv":app.canvas.scene_uv(point),"point":point,"context":context}
+	pick_requests[request]=pending
+	RenderingServer.frame_post_draw.connect(pending.complete,CONNECT_ONE_SHOT)
+
+func complete_pick(pending: RefCounted) -> void:
+	var request: Dictionary=pending.data
+	pick_requests.erase(request.serial);picking=pick_requests.size()
+	if request.serial!=serial or request.view!=app.scene_view.pick_state() or app.exporting or app.playing or app.navigating or pending_button!=0 or app.mode.selected==0: return
+	var uv: Vector2=request.uv
 	var image := viewport.get_texture().get_image()
-	var pixel := image.get_pixel(clampi(int(point.x/2),0,959),clampi(int(point.y/2),0,539))
+	var pixel := image.get_pixel(clampi(int(uv.x*image.get_width()),0,image.get_width()-1),clampi(int(uv.y*image.get_height()),0,image.get_height()-1))
 	var kind := ""
 	var nearest:=0.015
 	var rgb:=Vector3(pixel.r,pixel.g,pixel.b)
@@ -285,16 +308,22 @@ func choose_at(point: Vector2, context := false) -> void:
 		var distance:=rgb.distance_squared_to(color_for(id))
 		if distance<nearest:nearest=distance;kind=id
 	select_entity(kind)
-	if context and not kind.is_empty():
+	if request.context and not kind.is_empty():
 		menu.clear(); menu.add_item("Frame selected",0)
 		if selected_rig() and (kind=="model" or app.renderer.world_runtime):
 			menu.add_item("Reset pose",1)
 			menu.add_item("Hide object" if selected_rig().visible_at(app.frame) else "Show object",2)
 		menu.add_separator(); menu.add_item("Deselect",3)
 		var rect: Rect2 = app.canvas.image_rect()
-		var position: Vector2 = app.canvas.global_position+rect.position+point/Vector2(app.video.width,app.video.height)*rect.size
+		var position: Vector2 = app.canvas.global_position+rect.position+request.point/Vector2(app.video.width,app.video.height)*rect.size
 		menu.position = app.get_window().position+Vector2i(position)
 		menu.popup()
+
+func _exit_tree() -> void:
+	serial+=1
+	for pending in pick_requests.values():
+		if RenderingServer.frame_post_draw.is_connected(pending.complete):RenderingServer.frame_post_draw.disconnect(pending.complete)
+	pick_requests.clear();picking=0
 
 func context_action(id: int) -> void:
 	menu.hide()

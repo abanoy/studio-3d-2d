@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Required future canonical release fields; not a release receipt",
+  "type": "object",
+  "required": [
+    "format", "released", "canonical_run", "source_commit", "coordinator_pid",
+    "coordinator_creation_utc", "coordinator_and_known_children_absent_authoritative_host_query",
+    "fresh_root_private_receipts", "fresh_root_receipts_all_exit0_closed_no_foreground_no_switch",
+    "all_referenced_nested_private_receipts_exit0_closed", "canonical_state_sha256", "released_utc"
+  ],
+  "properties": {
+    "format": { "const": "has_canonical_graphics_lease_released_1" },
+    "released": { "const": true },
+    "canonical_run": { "const": "canonical-owned-20261113T211216019" },
+    "source_commit": { "const": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160" },
+    "coordinator_pid": { "const": 6548 },
+    "coordinator_creation_utc": { "const": "2026-11-13T21:12:16.0315845Z" },
+    "coordinator_and_known_children_absent_authoritative_host_query": { "const": true },
+    "fresh_root_private_receipts": { "type": "integer", "minimum": 1 },
+    "fresh_root_receipts_all_exit0_closed_no_foreground_no_switch": { "const": true },
+    "all_referenced_nested_private_receipts_exit0_closed": { "const": true },
+    "canonical_state_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "released_utc": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": true
+}

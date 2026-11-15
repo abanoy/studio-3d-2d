@@ -1,0 +1,243 @@
+--- old-context/source_jiggle_metadata.py
++++ source/source_jiggle_metadata.py
+@@ -28,6 +28,11 @@
+ class SourceIdentityError(ValueError): pass
+ 
+ def _sha(value): return isinstance(value, str) and re.fullmatch("[0-9a-f]{64}", value) is not None
++
++def _name_in_budget(value):
++    if type(value) is not str: return False
++    try: return len(value.encode("utf-8")) <= 256
++    except UnicodeError: return False
+ 
+ def _compact(value): return json.dumps(value, ensure_ascii=True, separators=(",", ":"), allow_nan=False).encode("utf-8") + b"\n"
+ 
+@@ -66,7 +71,7 @@
+         return {"state": "unavailable", "status": _status("layout_unsupported", context)}
+     expected = [{"name": row["name"], "parent": row["parent"]} for row in parsed["bones"]]
+     valid_bones = type(native_bones) is list and len(native_bones) == count and all(type(row) is dict and set(row) == {"name", "parent"}
+-        and type(row["name"]) is str and len(row["name"].encode("utf-8")) <= 256 and type(row["parent"]) is int for row in native_bones)
++        and _name_in_budget(row["name"]) and type(row["parent"]) is int for row in native_bones)
+     if not valid_bones or native_bones != expected:
+         return {"state": "unavailable", "status": _status("native_inventory_mismatch", context)}
+     if type(source_scale) not in (int, float) or not math.isfinite(source_scale) or not 0 < source_scale <= 1e6 or any(row["fields_above_proposed_abs1e6_budget"] for row in parsed["rules"]):
+@@ -94,6 +99,8 @@
+         raise ValueError("Only the exact inert/unbound metadata state is admitted")
+     if not _sha(metadata.get("original_source_sha256")) or not _sha(metadata.get("native_mdl_sha256")) or type(metadata.get("native_bone_count")) is not int or not 1 <= metadata["native_bone_count"] <= Raw.MAX_BONES or metadata.get("native_version") != 49 or type(metadata.get("native_version")) is not int or metadata.get("parsed_layout") != LAYOUT or metadata.get("layout_reader_sha256") != READER_SHA256 or metadata.get("sourceio_revision") != SOURCEIO_REVISION:
+         raise ValueError("Invalid native metadata identity domain")
++    if type(metadata.get("source_scale")) not in (int, float) or not math.isfinite(metadata["source_scale"]) or not 0 < metadata["source_scale"] <= 1e6:
++        raise ValueError("Invalid finite numeric native metadata scale")
+     if type(native_bones) is not list or len(native_bones) != metadata["native_bone_count"]: raise ValueError("Native bone catalogue domain differs")
+     rules = metadata.get("rules")
+     if type(rules) is not list or not 1 <= len(rules) <= Raw.MAX_RULES: raise ValueError("Invalid rule count")
+@@ -103,7 +110,7 @@
+         if type(index) is not int or index in seen or not 0 <= index < metadata["native_bone_count"] or type(parent) is not int or not -1 <= parent < metadata["native_bone_count"] or parent == index or row.get("native_procedure_type") != 5 or type(row.get("native_procedure_type")) is not int or row.get("applied") is not False or row.get("binding_status") != "unattempted":
+             raise ValueError("Invalid rule identity/inert binding")
+         seen.add(index)
+-        if native_bones[index] != {"name": row.get("native_bone_name"), "parent": parent} or type(row.get("native_bone_name")) is not str or len(row["native_bone_name"].encode("utf-8")) > 256:
++        if native_bones[index] != {"name": row.get("native_bone_name"), "parent": parent} or not _name_in_budget(row.get("native_bone_name")):
+             raise ValueError("Native rule index/name/parent differs")
+         for field in ("native_bone_flags", "raw_rule_flags", "unknown_rule_flag_bits"):
+             if type(row.get(field)) is not int or not 0 <= row[field] <= 0xFFFFFFFF: raise ValueError("Invalid uint32 flags")
+@@ -140,12 +147,15 @@
+     if base.get("source_sha256") != metadata["original_source_sha256"] or hashlib.sha256(_compact(base["native_parameters"].get("bones"))).hexdigest() != metadata["native_bone_catalogue_sha256"] or type(base.get("scale")) not in (int, float) or base["scale"] != metadata["source_scale"]:
+         raise SourceIdentityError("Metadata belongs to a different original/native catalogue or conversion scale")
+ 
+-def plan_report(base_report, inspection, newline="\n"):
++def plan_report(base_report, inspection, newline="\n", *, expected_native_mdl_sha256=None):
+     """Inline exact values or explicitly omit whole optional branch, never clamp.
+ 
+     report_bytes=None means use the exact original writer/report. Omission notes
+     are bounded JSON for the existing conversion log, not a sidecar/portable asset.
+     Original/native source checks precede every optional serialization/budget gate.
++    Nonempty inspections require expected_native_mdl_sha256 from the caller's
++    independently frozen selected-MDL context, never from inspection metadata.
++    No-rule/BSP no-op state publishes no new data and keeps its original writer.
+     """
+     base = copy.deepcopy(base_report)
+     state = inspection.get("state")
+@@ -164,6 +174,8 @@
+         context = {key: status[key] for key in ("original_source_sha256", "native_mdl_sha256", "metadata_candidate_sha256", "metadata_candidate_bytes", "rule_count", "native_bone_count", "declared_jiggle_rule_count") if key in status}
+     else:
+         raise ValueError("Unexpected optional metadata inspection state")
++    if not _sha(expected_native_mdl_sha256) or context["native_mdl_sha256"] != expected_native_mdl_sha256:
++        raise SourceIdentityError("Jiggle inspection differs from independently frozen selected-MDL identity")
+     try:
+         base_bytes = report_bytes(base, newline)
+     except (ValueError, TypeError, OverflowError):
+--- old-context/test_source_jiggle_metadata.py
++++ source/test_source_jiggle_metadata.py
+@@ -22,6 +22,13 @@
+     def setUp(self):
+         self.raw, self.bones = authored(); self.base = base_report(self.bones); self.attempt = inspect(self.raw, self.bones)
+ 
++    def plan(self, baseline, attempt, newline="\n", *, native_raw=None):
++        # Expected identity comes from this fixture's frozen input bytes, not
++        # from a field in the candidate metadata being tested.
++        raw = self.raw if native_raw is None else native_raw
++        expected = hashlib.sha256(raw).hexdigest()
++        return M.plan_report(baseline, attempt, newline, expected_native_mdl_sha256=expected)
++
+     def test_inert_values_prefix_words_and_distinct_namespaces(self):
+         meta = self.attempt["metadata"]; row = meta["rules"][0]
+         self.assertEqual(self.attempt["state"], "retained")
+@@ -34,7 +41,7 @@
+     def test_original_container_and_native_mdl_hashes_remain_distinct(self):
+         meta = self.attempt["metadata"]
+         self.assertNotEqual(meta["original_source_sha256"], meta["native_mdl_sha256"])
+-        self.assertEqual(M.plan_report(self.base, self.attempt)["state"], "embedded")
++        self.assertEqual(self.plan(self.base, self.attempt)["state"], "embedded")
+ 
+     def test_invalid_original_or_changed_native_sha_is_integrity_error(self):
+         for original, native in ((True, hashlib.sha256(self.raw).hexdigest()), ("A" * 64, hashlib.sha256(self.raw).hexdigest()), (ORIGINAL, "0" * 64)):
+@@ -43,16 +50,16 @@
+     def test_mismatched_identity_is_checked_before_overbudget_or_invalid_base(self):
+         for baseline in (padded(self.base, M.REPORT_LIMIT + 1), {**copy.deepcopy(self.base), "existing_bad": float("nan")}):
+             baseline["source_sha256"] = "0" * 64
+-            with self.assertRaises(M.SourceIdentityError): M.plan_report(baseline, self.attempt, "\r\n")
++            with self.assertRaises(M.SourceIdentityError): self.plan(baseline, self.attempt, "\r\n")
+ 
+     def test_changed_native_catalogue_or_conversion_scale_cannot_be_relabelled(self):
+         for change in (lambda b: b["native_parameters"]["bones"][1].update(name="other"), lambda b: b.update(scale=1.0)):
+             base = copy.deepcopy(self.base); change(base)
+-            with self.assertRaises(ValueError): M.plan_report(base, self.attempt)
++            with self.assertRaises(ValueError): self.plan(base, self.attempt)
+ 
+     def test_no_jiggle_keeps_exact_legacy_writer_without_status(self):
+         raw, bones = authored(jiggle=False); baseline = base_report(bones)
+-        result = M.plan_report(baseline, inspect(raw, bones), "\r\n")
++        result = self.plan(baseline, inspect(raw, bones), "\r\n", native_raw=raw)
+         self.assertEqual(result["state"], "unchanged"); self.assertEqual(result["report"], baseline)
+         self.assertIsNone(result["report_bytes"]); self.assertIsNone(result["note_bytes"]); self.assertIsNone(result["omission"])
+ 
+@@ -63,7 +70,7 @@
+ 
+     def test_unsupported_layout_is_explicit_optional_omission(self):
+         raw = bytearray(self.raw); struct.pack_into("<i", raw, 4, 48)
+-        result = M.plan_report(self.base, inspect(bytes(raw), self.bones))
++        result = self.plan(self.base, inspect(bytes(raw), self.bones), native_raw=bytes(raw))
+         self.assertEqual(result["omission"]["reason"], "layout_unsupported")
+         self.assertEqual(result["omission"]["candidate_state"], "not_formed")
+         self.assertIsNone(result["omission"]["metadata_candidate_sha256"])
+@@ -72,7 +79,7 @@
+     def test_source_context_mismatch_in_unavailable_status_is_integrity_error(self):
+         raw = bytearray(self.raw); struct.pack_into("<i", raw, 4, 48)
+         unavailable = inspect(bytes(raw), self.bones); baseline = copy.deepcopy(self.base); baseline["source_sha256"] = "0" * 64
+-        with self.assertRaises(M.SourceIdentityError): M.plan_report(baseline, unavailable)
++        with self.assertRaises(M.SourceIdentityError): self.plan(baseline, unavailable, native_raw=bytes(raw))
+ 
+     def test_parent_bool_or_wrong_parent_disables_optional_branch(self):
+         for parent in (False, 1):
+@@ -95,7 +102,7 @@
+ 
+     def test_inputs_are_not_mutated(self):
+         before = copy.deepcopy((self.base, self.attempt, self.bones))
+-        M.plan_report(self.base, self.attempt, "\r\n")
++        self.plan(self.base, self.attempt, "\r\n")
+         self.assertEqual((self.base, self.attempt, self.bones), before)
+ 
+     def test_windows_serialization_matches_textio_translation_exactly(self):
+@@ -105,13 +112,13 @@
+ 
+     def test_final_nested_report_inclusive256KiB_boundary(self):
+         baseline = padded(self.base, M.REPORT_LIMIT, self.attempt["metadata"])
+-        result = M.plan_report(baseline, self.attempt, "\r\n")
++        result = self.plan(baseline, self.attempt, "\r\n")
+         self.assertEqual(result["state"], "embedded"); self.assertEqual(len(result["report_bytes"]), 262144)
+         self.assertEqual(result["report_bytes"], legacy_bytes(result["report"]))
+ 
+     def test_one_byte_over_report_cap_omits_entire_metadata_with_exact_digest_counts(self):
+         baseline = padded(self.base, M.REPORT_LIMIT + 1, self.attempt["metadata"])
+-        result = M.plan_report(baseline, self.attempt, "\r\n"); status = result["omission"]
++        result = self.plan(baseline, self.attempt, "\r\n"); status = result["omission"]
+         candidate = json.dumps(self.attempt["metadata"], ensure_ascii=True, separators=(",", ":"), allow_nan=False).encode() + b"\n"
+         self.assertEqual(result["state"], "omitted_status_inline")
+         self.assertLessEqual(len(result["report_bytes"]), 262144)
+@@ -123,7 +130,7 @@
+ 
+     def test_no_status_headroom_keeps_original_bytes_and_bounded_log_reason(self):
+         baseline = padded(self.base, M.REPORT_LIMIT)
+-        result = M.plan_report(baseline, self.attempt, "\r\n")
++        result = self.plan(baseline, self.attempt, "\r\n")
+         self.assertEqual(result["state"], "omitted_log_only"); self.assertEqual(result["report"], baseline)
+         self.assertIsNone(result["report_bytes"]); self.assertNotIn(M.KEY, result["report"]["native_parameters"])
+         self.assertLessEqual(len(result["note_bytes"]), 4096)
+@@ -131,11 +138,11 @@
+ 
+     def test_preexisting_oversize_or_invalid_report_is_not_compacted_or_sanitized(self):
+         large = padded(self.base, M.REPORT_LIMIT + 1)
+-        result = M.plan_report(large, self.attempt, "\r\n")
++        result = self.plan(large, self.attempt, "\r\n")
+         self.assertIsNone(result["report_bytes"]); self.assertEqual(result["report"], large)
+         self.assertEqual(result["omission"]["reason"], "baseline_report_over_budget")
+         invalid = copy.deepcopy(self.base); invalid["bad"] = float("nan")
+-        result = M.plan_report(invalid, self.attempt)
++        result = self.plan(invalid, self.attempt)
+         self.assertIsNone(result["report_bytes"]); self.assertEqual(result["omission"]["reason"], "baseline_unserializable")
+ 
+     def test_metadata128KiB_overflow_reports_candidate_not_partial_rules(self):
+@@ -143,7 +150,7 @@
+         attempt = inspect(raw, bones); status = attempt["status"]
+         self.assertEqual(status["reason"], "metadata_budget"); self.assertGreater(status["metadata_candidate_bytes"], 131072)
+         self.assertEqual(status["rule_count"], 128); self.assertRegex(status["metadata_candidate_sha256"], "^[0-9a-f]{64}$")
+-        result = M.plan_report(base_report(bones), attempt)
++        result = self.plan(base_report(bones), attempt, native_raw=raw)
+         self.assertEqual(result["omission"]["retained_rule_count"], 0); self.assertNotIn("rules", result["report"]["native_parameters"][M.KEY])
+ 
+     def test_rule_count_overflow_is_explicit_without_a_truncated_candidate(self):
+@@ -156,14 +163,53 @@
+             lambda m: m["rules"][0].update(native_bone_index=True), lambda m: m["rules"][0]["parameters"].update(length=True),
+             lambda m: m["rules"][0]["parameters"].update(length=float("nan")), lambda m: m["rules"][0]["binary_provenance"].update(prefix_sha256="0" * 64)):
+             attempt = copy.deepcopy(self.attempt); mutate(attempt["metadata"])
+-            with self.assertRaises(ValueError): M.plan_report(self.base, attempt)
++            with self.assertRaises(ValueError): self.plan(self.base, attempt)
+ 
+     def test_no_sidecar_or_confirmation_API_and_no_physics_mutation_fields(self):
+         self.assertFalse(hasattr(M, "confirm_artifacts")); self.assertFalse(hasattr(M, "METADATA_FILE"))
+-        result = M.plan_report(self.base, self.attempt)
++        result = self.plan(self.base, self.attempt)
+         self.assertNotIn("artifacts", result)
+         self.assertEqual(set(result["report"]["native_parameters"]) - set(self.base["native_parameters"]), {M.KEY})
+         self.assertFalse(any(name == "SourceIO" or name.startswith("SourceIO.") or name == "bpy" for name in sys.modules))
++
++
++    def test_surrogate_imported_name_is_explicit_optional_inventory_mismatch(self):
++        bones = copy.deepcopy(self.bones); bones[0]["name"] = "bad\ud800"
++        before = copy.deepcopy(bones)
++        attempt = inspect(self.raw, bones)
++        self.assertEqual((attempt["state"], attempt["status"]["reason"]), ("unavailable", "native_inventory_mismatch"))
++        self.assertNotIn("metadata", attempt); self.assertEqual(bones, before)
++        result = self.plan(self.base, attempt)
++        self.assertEqual(result["state"], "omitted_status_inline")
++        self.assertEqual(result["omission"]["retained_rule_count"], 0)
++        self.assertEqual(result["report"]["native_parameters"]["bones"], self.bones)
++
++    def test_publication_requires_independently_frozen_native_sha_before_fallback(self):
++        expected = hashlib.sha256(self.raw).hexdigest()
++        poisoned = copy.deepcopy(self.attempt); poisoned["metadata"]["native_mdl_sha256"] = "0" * 64
++        for baseline in (self.base, padded(self.base, M.REPORT_LIMIT + 1), {**copy.deepcopy(self.base), "bad": float("nan")}):
++            with self.assertRaises(M.SourceIdentityError):
++                M.plan_report(baseline, poisoned, expected_native_mdl_sha256=expected)
++        for context in (None, "0" * 64, True):
++            with self.assertRaises(M.SourceIdentityError):
++                M.plan_report(self.base, self.attempt, expected_native_mdl_sha256=context)
++        raw = bytearray(self.raw); struct.pack_into("<i", raw, 4, 48)
++        raw = bytes(raw); expected_unavailable = hashlib.sha256(raw).hexdigest()
++        unavailable = inspect(raw, self.bones)
++        unavailable["status"]["native_mdl_sha256"] = "0" * 64
++        with self.assertRaises(M.SourceIdentityError):
++            M.plan_report(padded(self.base, M.REPORT_LIMIT + 1), unavailable, expected_native_mdl_sha256=expected_unavailable)
++        # Altering only the inspection cannot alter this trusted caller value.
++        self.assertEqual(expected, hashlib.sha256(self.raw).hexdigest())
++
++    def test_metadata_scale_rejects_bool_nonfinite_and_invalid_numeric_values(self):
++        baseline = copy.deepcopy(self.base); baseline["scale"] = 1.0
++        attempt = M.inspect(self.raw, ORIGINAL, hashlib.sha256(self.raw).hexdigest(), self.bones, 1.0)
++        self.assertEqual(self.plan(baseline, attempt)["state"], "embedded")
++        for value in (True, False, float("nan"), float("inf"), 0.0, -1.0, 1000001.0):
++            poisoned = copy.deepcopy(attempt); poisoned["metadata"]["source_scale"] = value
++            for base in (baseline, padded(baseline, M.REPORT_LIMIT + 1)):
++                with self.assertRaises(ValueError): self.plan(base, poisoned)
+ 
+ if __name__ == "__main__":
+     paths = (Path(__file__), Path(M.__file__), Path(M.Raw.__file__), Path(__file__).with_name("authored_fixture.py"))

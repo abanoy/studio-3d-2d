@@ -1,0 +1,153 @@
+{
+  "format": "has_helper_preview_provenance_correction_compact_1",
+  "verdict": "GO: reviewed provenance correction; affected defaultCPU208/privateGPU266 PASS",
+  "canonical_full_status": "c4d76748 full remains FAILED; these scoped checks do not constitute full canonical PASS",
+  "source_baseline": "c4d767489a43a7e8e38c5251be07814b1795d1a9",
+  "source_context": "main_working_source_snapshot",
+  "source_changes": [
+    "tests/helper_preview_port_files.json",
+    "tests/verify_helper_preview.py"
+  ],
+  "production_sources_modified": false,
+  "reviewed_rows": 25,
+  "unchanged_reviewed_rows": 22,
+  "explicit_runtime_dependency": "src/source_bone_bindings.gd",
+  "canonical_functional_source_files": 1008,
+  "helper_source_files": 1009,
+  "helper_additional_TOP": "dependencies.json",
+  "source_manifest_sha256": "f65e5d2078a64b5b14eb9da7c5e058ed5ba3585d291b2fbf263a6b1cec6fb893",
+  "source_maps_equal_cpu_failed_graphical_retry": true,
+  "checks": {
+    "cpu": 208,
+    "transport": 11,
+    "adapter": 128,
+    "host": 69,
+    "graphical": 266,
+    "focused": 221,
+    "peers": 45
+  },
+  "runtime_receipts": [
+    {
+      "label": "focused",
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_d59ed58225884235a62a315a7876deec",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 6700,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 67.582,
+      "retained_Popen_reaped": true
+    },
+    {
+      "label": "peers",
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_ae645ad1fdd644f7a760638fc3fc31b5",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 27560,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 7.598,
+      "retained_Popen_reaped": true
+    }
+  ],
+  "preservation": {
+    "cpu": {
+      "main_sources": true,
+      "runtimes": true,
+      "head": true,
+      "native_originals": true,
+      "staged_native_inputs": true,
+      "published_requests": true,
+      "snapshot_sources": true,
+      "snapshot_extras": true,
+      "fixtures": true
+    },
+    "graphical_restricted_failed_before_engine": {
+      "main_sources": true,
+      "runtimes": true,
+      "head": true,
+      "native_originals": true,
+      "staged_native_inputs": true,
+      "published_requests": true,
+      "snapshot_sources": true,
+      "snapshot_extras": true,
+      "fixtures": true
+    },
+    "graphical": {
+      "main_sources": true,
+      "runtimes": true,
+      "head": true,
+      "native_originals": true,
+      "staged_native_inputs": true,
+      "published_requests": true,
+      "snapshot_sources": true,
+      "snapshot_extras": true,
+      "fixtures": true
+    }
+  },
+  "verification": {
+    "cpu": {
+      "path": "output/helper-preview/cpu-1794628851800126500-d46318c4/verification.json",
+      "sha256": "dee584a96b6034f17700925530e36514d350ffbb78de3cbc7f3103829b956081",
+      "bytes": 4805,
+      "passed": true,
+      "checks": 208
+    },
+    "graphical_restricted_failed_before_engine": {
+      "path": "output/helper-preview/graphical-1794628922623187000-f692950a/verification.json",
+      "sha256": "bd7a322b5d446341a3a8493b8ece43b49c5f16279dc8f3a82539e041a54e7058",
+      "bytes": 4518,
+      "passed": false,
+      "checks": 0
+    },
+    "graphical": {
+      "path": "output/helper-preview/graphical-1794628976906464600-06931345/verification.json",
+      "sha256": "e6a1d9f2877c0118728f9f42a85690f34d057f23d01629c4c1e70727b5d44a8e",
+      "bytes": 5370,
+      "passed": true,
+      "checks": 266
+    }
+  },
+  "restricted_attempt": {
+    "status": "FAILED_BEFORE_ENGINE",
+    "reason": "Windows restricted context denied CreateDesktop before any engine/window creation.",
+    "checks": 0,
+    "focused": "unlaunched",
+    "peers": "unrun",
+    "original_monitor_fields_preserved": true,
+    "auto_review_rejection": false
+  },
+  "claims": {
+    "native_inputs_requested": false,
+    "native_fidelity": false,
+    "native_solver": false,
+    "full_canonical_pass": false,
+    "source_overlay_files": 0
+  },
+  "frozen_assigned_files": {
+    "tests/helper_preview_port_files.json": {
+      "bytes": 8371,
+      "sha256": "0446c44d503a6605155ed0553f70ba0462a0cb64a29b25dda7c39ca81717c0cf"
+    },
+    "tests/verify_helper_preview.py": {
+      "bytes": 23887,
+      "sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50"
+    }
+  },
+  "notes": [
+    "No test predicates, expected counts, strict stdout/engine markers, raw SHA gate, preservation gate or private-launch gate were weakened.",
+    "CPU/GPU source includes the same exact two uncommitted provenance test changes; production c4d helper/resolver bytes are unchanged.",
+    "Old scoped4native packet remains valid for its recorded working source. A future whole-source join must disclose these two test-only differences (1006 exact canonical files +2 reviewed changes) or use fresh coherent evidence.",
+    "All source copies, fixtures, raw reports and prior failed attempts remain in their original output folders. No GLB/HAS/media/native coordinates/expected fixtures/runtime binaries are included."
+  ]
+}

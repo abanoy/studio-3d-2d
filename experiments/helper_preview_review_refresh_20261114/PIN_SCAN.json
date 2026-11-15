@@ -1,0 +1,30 @@
+{
+  "format": "has_helper_preview_current_default_pin_scan_1",
+  "scope": [
+    "tests/**/*.py",
+    "tests/**/*.json",
+    "tests/**/*.gd",
+    "tools/**/*.py",
+    "tools/**/*.json",
+    "tools/**/*.gd",
+    "data/**/*.json"
+  ],
+  "matches": [
+    "tests\\helper_preview_port_files.json:152:      \"path\": \"tests/verify_helper_preview.py\",",
+    "tests\\helper_preview_port_files.json:153:      \"sha256\": \"118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50\",",
+    "tests\\helper_preview_port_files.json:154:      \"lf_sha256\": \"118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50\",",
+    "tests\\test_helper_preview_driver.py:22:DRIVER = SOURCE.with_name('verify_helper_preview.py')",
+    "tests\\test_helper_preview_driver.py:85:        write(root / 'tests/helper_preview_port_files.json', doc)",
+    "tests\\verify.py:192:        helper_args = [sys.executable, '-u', 'tests/verify_helper_preview.py', '--mode', helper_mode, '--allow-checkout-eol']",
+    "tests\\verify_helper_preview.py:18:TEST_FILES=['tests/'+n for n in ['helper_preview_gpu_common.gd','helper_preview_gpu.gd','helper_preview_gpu_peers.gd','helper_preview_gpu_native.gd','helper_preview_integration_cpu.gd','wind_helper_candidate_cpu.gd','helper_preview_fixtures.py','helper_preview_transport_cpu.py','verify_helper_preview.py','test_helper_preview_driver.py']]",
+    "tests\\verify_helper_preview.py:63:    root=Path(root);p=owned(root/'tests/helper_preview_port_files.json',root)"
+  ],
+  "old_changed_file_hash_matches": [],
+  "conclusion": "No other current default guard pins either changed file raw SHA. The only current fixed driver SHA is its updated reviewed manifest row. verify.py invokes this verifier; test_helper_preview_driver.py loads the adjacent verifier dynamically. Wind historical16 manifest has neither helper editor nor source_bone_bindings. Historical experiments contain preserved old records and remain unchanged.",
+  "wind": {
+    "path": "tests/wind_review_port_files.json",
+    "files": 16,
+    "sha256": "c9e8a9443b49617d53d3a70dc9c2ef286a81c1aedf4af850bf70eb5c4aeb6ca8"
+  },
+  "source_guards_unchanged": true
+}

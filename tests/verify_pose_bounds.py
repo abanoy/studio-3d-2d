@@ -1,5 +1,6 @@
 """Current skin/morph framing versus independent engine snapshots, all GPU work hidden."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import hashlib,json,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));sys.path.insert(0,str(ROOT/'tests'))
 from run import command
@@ -8,7 +9,7 @@ def main():
     folder=ROOT/'output/pose-bounds'/str(time.time_ns());folder.mkdir(parents=True)
     originals=prepare(folder);plans=[{'label':'Shaped','source':str(folder/'shape.glb')}]
     plans+=json.loads((folder/'native-plans.json').read_text(encoding='utf-8'))
-    native=Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output\native-import-verification.json')
+    native=(fixture_output()/'native-import-verification.json')
     if native.is_file():
         for bundle in json.loads(native.read_text(encoding='utf-8')).get('bundles',[]):
             bundle=Path(bundle);report=json.loads((bundle/'parameters.json').read_text(encoding='utf-8'))

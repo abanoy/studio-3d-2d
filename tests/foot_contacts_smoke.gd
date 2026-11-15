@@ -19,6 +19,13 @@ func check(value: bool, message: String) -> void:
 func settled() -> void:
 	for i in range(3):await process_frame
 	await RenderingServer.frame_post_draw
+func native_pixels() -> Image:
+	# Keep the manually solved skeleton intact; a capture() world evaluation
+	# would replace the very pose under comparison. Setup suspends this viewport.
+	if not app.renderer.begin_native_readback():return null
+	var notification=app.renderer.native_frame_notification
+	await notification.ready
+	return app.renderer.finish_native_readback()
 func maximum_error(rig, segment: Dictionary) -> float:
 	var error:=0.
 	for foot in segment.feet:error=maxf(error,rig.bone_transform(foot.ids[2]).origin.distance_to(T.vector(foot.position)))
@@ -81,7 +88,7 @@ func experiment(rig, label: String) -> Dictionary:
 
 func run() -> void:
 	folder=OS.get_cmdline_user_args()[0];DirAccess.make_dir_recursive_absolute(folder)
-	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
+	app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.display_prefs_path=folder.path_join("display.cfg");app.recent_path=folder.path_join("recent.json");root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
 	var asset:=folder.path_join("figure.glb");preload("res://src/tutorial_assets.gd").figure(asset);var sha:=FileAccess.get_sha256(asset)
 	app.pose_editor.add_model(asset);var rig: RefCounted=app.renderer.active_model();app.pose_editor.frame_model();var authored:=experiment(rig,"original")
 	if authored.is_empty():app.free();quit(1);return
@@ -107,8 +114,9 @@ func run() -> void:
 	right.erase("foot_contacts");check(Contacts.active([left,right],25).is_empty(),"an explicit unplanted piece releases the contact")
 	# Render an actual midpoint with the same scene/world, no project or camera mutation.
 	rig.apply(0,false,false,app.video);var before: Dictionary=rig.data.duplicate(true);var pose: Dictionary=rig.sample(0);rig.root.position.y-=.1
-	Contacts.apply_pose(rig,pose);await settled();var free: Image=app.renderer.viewport.get_texture().get_image();free.save_png(folder.path_join("free-midpoint.png"))
-	Contacts.resolve(rig,pose,track.segments[0]);await settled();var planted: Image=app.renderer.viewport.get_texture().get_image();planted.save_png(folder.path_join("planted-midpoint.png"))
+	Contacts.apply_pose(rig,pose);await settled();var free: Image=await native_pixels();free.save_png(folder.path_join("free-midpoint.png"))
+	Contacts.resolve(rig,pose,track.segments[0]);await settled();var planted: Image=await native_pixels();planted.save_png(folder.path_join("planted-midpoint.png"))
+	check(free!=null and planted!=null and free.get_size()==Vector2i(1920,1080) and planted.get_size()==free.get_size() and app.renderer.native_readbacks==0,"manual free/planted native frames complete with balanced readback scopes")
 	var visible:=0;var changed:=0
 	for y in range(0,1080,3):
 		for x in range(0,1920,3):

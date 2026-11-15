@@ -332,7 +332,7 @@ static func raster_reserve(data) -> int:
 			if layer is Dictionary and layer.get("cels") is Array:bytes+=layer.cels.size()*dimensions.x*dimensions.y*4
 	return bytes
 
-static func load_project(folder: String, manifest_name := "project.json",cold_cels:=false,cold_min_bytes:=0) -> Dictionary:
+static func load_project(folder: String, manifest_name := "project.json",cold_cels:=false,cold_min_bytes:=0,cancel_path: String="") -> Dictionary:
 	if manifest_name not in ["project.json", "project.backup.json"] and not Journal.valid_manifest(folder,manifest_name): return {"error": "Unsupported or changed recovery manifest."}
 	var manifest_path := folder.path_join(manifest_name)
 	if not FileAccess.file_exists(manifest_path):
@@ -343,13 +343,14 @@ static func load_project(folder: String, manifest_name := "project.json",cold_ce
 	var parser := JSON.new()
 	if parser.parse(file.get_as_text()) != OK:
 		return {"error": "Corrupt JSON manifest: " + parser.get_error_message()}
-	var rasters:=RasterReader.new();rasters.cold_cels=cold_cels and (cold_min_bytes==0 or raster_reserve(parser.data)>cold_min_bytes)
+	var rasters:=RasterReader.new();rasters.cancel_path=cancel_path;rasters.cold_cels=cold_cels and (cold_min_bytes==0 or raster_reserve(parser.data)>cold_min_bytes)
 	var loaded:=decode_project(parser.data,folder,false,rasters)
 	if not loaded.has("error") and rasters.cold_cels:loaded["raster_cache"]=rasters.adaptive_cache
 	return loaded
 
 static func decode_project(data,folder: String,extended:=false,rasters=null) -> Dictionary:
 	if rasters==null:rasters=RasterReader.new()
+	if not rasters.cancel_path.is_empty() and FileAccess.file_exists(rasters.cancel_path):return {"error":"Project opening cancelled. Previous project preserved."}
 	if data is Dictionary:
 		if not DrawingLimits.error(data.get("layers"),data.get("sequence_graph",{})).is_empty():return {"error":"Project drawing limit exceeded or invalid drawing tracks."}
 		if not rasters.cold_cels and raster_reserve(data)>preload("res://src/cel_raster_snapshot_cache.gd").DEFAULT_OWNER_LIMIT:return {"error":"This project requires adaptive raster loading; eager decoding would exceed its memory budget."}

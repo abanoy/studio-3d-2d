@@ -1,0 +1,45 @@
+{
+  "commit": "1236796865e677b150a2d7e2add20f2aac5325fe",
+  "fetched": "1236796865e677b150a2d7e2add20f2aac5325fe",
+  "advertised_main": "1236796865e677b150a2d7e2add20f2aac5325fe",
+  "raw_progress_bytes_verified": true,
+  "progress_files": {
+    "docs/RESUME_MASTER_PLAN.md": {
+      "bytes": 80492,
+      "raw_sha256": "8a61e6b1bde36a87373238e74f55731b04116d704233ba7b243c67e59407ed6d"
+    },
+    "docs/benchmarks/helper_pending_preview_main_2026-11-13.json": {
+      "bytes": 18177,
+      "raw_sha256": "d5e3b8d5ef192acd8b4b3eecee76e610f97830a603cbe41ab6b35d9ed03f856c"
+    },
+    "docs/completion_checklist.json": {
+      "bytes": 175623,
+      "raw_sha256": "e5da14e2d07ea514c27363ba6c8ec9f4aabf78b06c9f88f1a225ec173e370033"
+    },
+    "docs/progress_memo.md": {
+      "bytes": 1263935,
+      "raw_sha256": "456b18f3aee13c34b10abe346658b0aa17f10da68c718be994fd0b268379070c"
+    },
+    "LLM.md": {
+      "bytes": 411482,
+      "raw_sha256": "365366d2a036c909dd4e54b3e370931e04455b886dc08af6da23ee115319bcc7"
+    },
+    "tests/helper_preview_port_files.json": {
+      "bytes": 7210,
+      "raw_sha256": "bb063020810fb6fc0b278d1820e579aa44ca1f6edb7047652d3a20877ccc38bb"
+    },
+    "experiments/local_wind_review/helper_pending_main_20261113/INDEX.json": {
+      "bytes": 24879,
+      "raw_sha256": "721f914ec0d75d05a4d243eefe10fcbca832103763b8d6c7851bae0d2c0d7a53"
+    },
+    "experiments/local_wind_review/helper_pending_existing_regressions_20261113/INDEX.json": {
+      "bytes": 5044,
+      "raw_sha256": "2f1e9782228474828d9a4333e2620aa13848ae45035d4ee8f19113b528b94a53"
+    },
+    "experiments/source_appearance/static_choice_main_plan_20261113/FILE_INDEX.json": {
+      "bytes": 767,
+      "raw_sha256": "ebcbe61b8de1abbdaa9f2a4f6c162a6b97cd0535b6a3ecb6a763b877062b85de"
+    }
+  },
+  "supersedes": "helper-preview-main-remote-verified.json progress digest values; that earlier helper stripped trailing whitespace before hashing, while commit identity verification was valid"
+}

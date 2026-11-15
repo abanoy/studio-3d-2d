@@ -1,0 +1,90 @@
+{
+  "format": "has_windows_codex_pickup_1",
+  "prepared_date": "2026-11-09",
+  "repository": "https://github.com/abanoy/studio-3d-2d",
+  "branch": "main",
+  "verified_cloud_handoff_commit": "3f7a09cdccd7bde9b0d41ac817fb3079fb34a078",
+  "snapshot_only": true,
+  "resume_rule": "Retrieve latest main and current ledger/history first; preserve newer and concurrent work. This packet is not the application source.",
+  "windows_working_directory": null,
+  "working_directory_rule": "Choose a session-created isolated local checkout/worktree; preserve the installed Studio and existing dirty checkout.",
+  "read_first": [
+    "AGENTS.md",
+    "CODEX_CUSTOM_ANIMATION_STUDIO_SPEC.md",
+    "docs/design/HAS_2026-10-29_Voice_Design_Addendum_for_Codex.md",
+    "LLM.md",
+    "docs/progress_memo.md",
+    "docs/local_acceptance_handoff.md",
+    "docs/completion_checklist.json",
+    "docs/native_profile_acceptance_review.md"
+  ],
+  "cloud_fixes": [
+    "Grounded placement tries nearby supported positions before floating fallback.",
+    "Alpha-scissor depth ties use stable source order; current fixed-version cold replay is exact on all four VRMs. Historical tie-winner reference failures are preserved.",
+    "Unsupported required format features are named; native refusal preserves existing world/camera/drawing/Undo."
+  ],
+  "evidence": [
+    "docs/benchmarks/scenario_a_2026-11-09.json",
+    "docs/benchmarks/vrm_cutout_order_2026-11-09.json",
+    "docs/benchmarks/required_feature_diagnostics_2026-11-09.json",
+    "docs/benchmarks/cloud_acceptance_remaining_2026-11-09.json"
+  ],
+  "checklist_snapshot": {
+    "implementation_groups": 54,
+    "implemented": 52,
+    "acceptance_conditions": 62,
+    "acceptance_closed": 52,
+    "release_completion_claimed": false
+  },
+  "unclosed_requirement_ids": [
+    "IMPORT-02",
+    "IMPORT-03",
+    "ACCEPT-A",
+    "ACCEPT-B",
+    "ACCEPT-C",
+    "ACCEPT-D",
+    "ACCEPT-E",
+    "ACCEPT-F",
+    "ACCEPT-TABLET",
+    "ACCEPT-INSTALL"
+  ],
+  "external_prerequisites": {
+    "native": "Complete approved Source BSP and available material/prop/lightmap dependencies; temp.gma contents unknown after cloud transfer limit. Inspect originals read-only.",
+    "street_textures": [
+      "atlas03_street_d.png",
+      "atlas02_street_d.png",
+      "atlas03_props_d.png",
+      "atlas02_props_d.png",
+      "atlas09_props_d.png"
+    ],
+    "target": "Actual supported Windows10/11 execution and clean offline setup with documented runtime prerequisites.",
+    "observations": "Actual novice/learner timing and clarity, tablet/driver/GPU latency/comfort, audible sync and artist observation."
+  },
+  "known_vrm_fixture": {
+    "name": "AvatarSample_A.vrm",
+    "sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3",
+    "included_in_packet": false
+  },
+  "first_automated_commands": [
+    "python tools/check_completion.py",
+    "python tests/verify.py",
+    "python tests/verify_scenario_a.py --native <approved-original-vrm-path>",
+    "python tests/verify_scenario_c.py",
+    "python tests/verify_scenario_d.py",
+    "python tests/verify_tutorials.py",
+    "python tests/verify_first_movie.py",
+    "python tests/verify_recovery_schedule.py",
+    "python tests/verify_recovery_startup.py",
+    "python tests/verify_recovery_history.py"
+  ],
+  "graphical_automation": "run.command private Windows desktop only; require valid isolation receipts.",
+  "repository_progress_policy": {
+    "completed_work_must_be_committed_and_pushed": true,
+    "verify_remote_before_cleanup": true,
+    "later_resume_by_clone_fetch_or_download_from_repo": true,
+    "remove_completed_task_disposable_local_files_after_verification": true,
+    "remove_session_owned_checkout_at_assignment_end_when_safe": true,
+    "preserve_originals_existing_install_shared_tools_and_unbacked_deliverables": true,
+    "private_art_may_not_be_uploaded_for_cleanup": true
+  }
+}

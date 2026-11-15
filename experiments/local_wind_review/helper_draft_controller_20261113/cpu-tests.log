@@ -1,0 +1,22 @@
+test_abrupt_controller_death_after_assignment_kills_nonreading_worker (__main__.Controllers.test_abrupt_controller_death_after_assignment_kills_nonreading_worker) ... ok
+test_abrupt_controller_death_before_assignment_gives_worker_eof (__main__.Controllers.test_abrupt_controller_death_before_assignment_gives_worker_eof) ... ok
+test_changed_context_after_prepared_invalidates_cached_result (__main__.Controllers.test_changed_context_after_prepared_invalidates_cached_result) ... ok
+test_changed_receipt_after_prepared_is_refused (__main__.Controllers.test_changed_receipt_after_prepared_is_refused) ... ok
+test_controller_and_python_pin_mismatch_refuse_before_start (__main__.Controllers.test_controller_and_python_pin_mismatch_refuse_before_start) ... ok
+test_declared_host_death_closes_live_job_without_poll (__main__.Controllers.test_declared_host_death_closes_live_job_without_poll) ... ok
+test_eof_after_prepared_synchronously_invalidates_and_closes (__main__.Controllers.test_eof_after_prepared_synchronously_invalidates_and_closes) ... ok
+test_eof_while_worker_not_reading_stdin_closes_job (__main__.Controllers.test_eof_while_worker_not_reading_stdin_closes_job) ... ok
+test_host_loss_during_receipt_check_never_exposes_prepared (__main__.Controllers.test_host_loss_during_receipt_check_never_exposes_prepared) ... ok
+test_host_loss_during_start_prevalidation_never_launches_worker (__main__.Controllers.test_host_loss_during_start_prevalidation_never_launches_worker) ... ok
+test_oversized_unterminated_frame_closes_without_start (__main__.Controllers.test_oversized_unterminated_frame_closes_without_start) ... ok
+test_poll_cancel_invalid_start_before_start_create_no_job (__main__.Controllers.test_poll_cancel_invalid_start_before_start_create_no_job) ... ok
+test_replay_and_stale_cancel_do_not_affect_new_generation (__main__.Controllers.test_replay_and_stale_cancel_do_not_affect_new_generation) ... ok
+test_start_poll_prepared_and_close_invalidates_without_apply (__main__.Controllers.test_start_poll_prepared_and_close_invalidates_without_apply) ... ok
+test_strict_framing_types_and_foreign_session_cannot_start (__main__.Controllers.test_strict_framing_types_and_foreign_session_cannot_start) ... ok
+test_unread_output_backpressure_still_closes_owned_child (__main__.Controllers.test_unread_output_backpressure_still_closes_owned_child) ... ok
+test_wrong_parent_incarnation_refuses_before_ready_or_child (__main__.Controllers.test_wrong_parent_incarnation_refuses_before_ready_or_child) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 6.493s
+
+OK

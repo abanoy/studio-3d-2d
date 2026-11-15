@@ -1,0 +1,69 @@
+{
+  "format": "has_source_choices_ui_actual_1",
+  "result": {
+    "actual_app": true,
+    "actual_metadata_children": [
+      {
+        "exit": 0,
+        "frames": 5,
+        "phase": "success",
+        "pid": 10168,
+        "release_calls": 1,
+        "release_result": 1
+      },
+      {
+        "phase": "cancel",
+        "pid": 22552,
+        "release_calls": 1,
+        "release_result": 0
+      },
+      {
+        "exit": 1,
+        "phase": "refusal",
+        "pid": 23180,
+        "release_calls": 1,
+        "release_result": 1
+      }
+    ],
+    "checks": 20,
+    "failures": 0,
+    "native_conversion": false,
+    "render_and_project_preserved": true
+  },
+  "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\source_choices_smoke_e0663581219f4b23abd1350b3a76f977.json",
+  "receipt": {
+    "format": "studio_private_desktop_1",
+    "desktop": "HAS_Test_bf46d92756774bb79172638bae558e49",
+    "desktop_switch_requested": false,
+    "private_window_seen": true,
+    "child_desktop_confirmed": true,
+    "maximum_owned_windows": 9,
+    "foreground_child_observed": false,
+    "exit": 0,
+    "child_pid": 20232,
+    "job_closed": true,
+    "desktop_closed": true,
+    "seconds": 4.509
+  },
+  "source_sha256": {
+    "src/source_import.gd": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d",
+    "src/source_choice_dialog.gd": "84bd816615fe0ac10c857606f21db89040544e0b52dd2cdda1089f177e9dda2d",
+    "tools/prepare_source.py": "2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e",
+    "tools/source_appearance.py": "97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b",
+    "tools/source_mdl_choices.py": "a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555",
+    "tools/source_choice_io.py": "7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640",
+    "tools/source_jiggle_values.py": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e",
+    "tools/source_jiggle_metadata.py": "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056",
+    "tools/source_mdl_snapshot.py": "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be",
+    "tools/blender_source_bridge.py": "0943f7f8cee26115db31b8040248fa1693f77caee845e91eddf9ee89c289fe57",
+    "tests/source_choices_smoke.gd": "92d5c09ff20d200d2ab1b939ff8eb30dc8b8df057f0727c1eed8882ada42a117",
+    "tests\\verify_source_choices.py": "67b70c2a58e9a667a93890262a5ff064825952f56b0f38b8fb8abd9e14af994d"
+  },
+  "source_unchanged": true,
+  "originals": {
+    "choices.mdl": "2512a0a98f2ef563195d712d2dae9fb70fbc857cf786c0ca2e0c21c220a7a4fd",
+    "bad.mdl": "e7311ae853d324d79344165c556f64ab190e8fd443e73c8ddfdc1415ec4bd6d3"
+  },
+  "originals_unchanged": true,
+  "scope": "Actual main app/dialog and real metadata Python processes; hand-authored tables only; native conversion/adoption remain separate"
+}

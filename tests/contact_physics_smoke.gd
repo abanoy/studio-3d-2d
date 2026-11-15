@@ -136,9 +136,13 @@ func run() -> void:
 		var before:=plant(native_id)
 		var native_foot: Dictionary=Contacts.active(before.animation_clips,0).feet[0];var knee_target: Vector3=rig(native_id).bone_transform(native_foot.ids[0]).origin+Vector3(0,0,-.4)
 		before=preload("res://src/contact_correction.gd").edit(before,0,49,0,{"pole":[knee_target.x,knee_target.y,knee_target.z]},48).data;app.renderer.world_runtime.restore_instance(native_id,before)
+		var prior_fan_world: Dictionary=app.current_world().duplicate(true)
 		var airflow=preload("res://src/airflow.gd");var fan_path:=folder.path_join("fan.glb");airflow.create_asset(fan_path)
 		var fan:=Model.definition(fan_path);fan.position=[0,.5,-1];fan.metadata["airflow"]=airflow.defaults();fan.metadata.airflow.speed=30.;fan.metadata.airflow.radius=10.;app.append_object(fan,"model")
 		app.set_frame(6);app.world_selection.select_entity(native_id);physics=app.physics_editor;history=app.history.size()
+		var hair_world: Dictionary=app.current_world().duplicate(true);var hair_history: Array=app.history.duplicate(true);var hair_redo: Array=app.redo_history.duplicate(true);var hair_dirty: bool=app.dirty;var hair_bones: Dictionary={}
+		for bone_id in rig(native_id).order:
+			var info: Dictionary=rig(native_id).bones[bone_id];hair_bones[bone_id]=info.skeleton.get_bone_pose(info.index)
 		physics.hair_toggle.button_pressed=true
 		while physics.pending.has(native_id):await process_frame
 		await settled();check(physics.active(native_id) and not physics.body_active(native_id),"real native VRM Hair & clothes starts with the feet still planted")
@@ -147,8 +151,14 @@ func run() -> void:
 		for i in range(40):await physics_frame
 		check(angular_change(start_pose,live.pose(),hair_ids)>.001,"the real fan drives measurable native hair motion while the body remains planted")
 		physics.hair_toggle.button_pressed=false;await settled()
-		check(rig(native_id).data.animation_clips==before.animation_clips and pinned(rig(native_id).data,6) and rig(native_id).evaluation_error.is_empty(),"secondary-only OFF freezes hair without releasing authored feet")
-		app.undo();check(rig(native_id).data==before and app.history.size()==history,"hair freeze and exact contact restoration remain one Undo")
+		check(rig(native_id).data.animation_clips==before.animation_clips and pinned(rig(native_id).data,6) and rig(native_id).evaluation_error.is_empty(),"secondary-only OFF restores authored hair without releasing authored feet")
+		check(not physics.active(native_id) and rig(native_id).data==before and app.current_world()==hair_world and app.history==hair_history and app.redo_history==hair_redo and app.dirty==hair_dirty,"hair OFF preserves complete authored state and adds no phantom history edit")
+		var restored_bones:=true
+		for bone_id in rig(native_id).order:
+			var info: Dictionary=rig(native_id).bones[bone_id];restored_bones=restored_bones and info.skeleton.get_bone_pose(info.index)==hair_bones[bone_id]
+		check(restored_bones and rig(native_id).live_pose==null and rig(native_id).live_world_transform==null and rig(native_id).preview_pose.is_empty() and rig(native_id).preview_transform.is_empty(),"hair OFF restores every original native bone pose and clears live offsets")
+		app.undo();check(rig(native_id).data==before and app.current_world()==prior_fan_world and app.history.size()==history-1,"hair OFF leaves the prior fan-add Undo entry intact with exact contacts")
+		app.redo();check(app.current_world()==hair_world and app.history==hair_history and app.redo_history==hair_redo,"prior fan Redo restores the exact world and history after hair OFF")
 		app.set_frame(6);physics.hair_toggle.button_pressed=true
 		while physics.pending.has(native_id):await process_frame
 		await settled();var record=physics.recording;record.scope.select(0);check(record.start(),"secondary-only Local Record starts normally")
@@ -182,7 +192,7 @@ func run() -> void:
 			if not rig(native_id).evaluation_error.is_empty():reach_errors[at]={"error":rig(native_id).evaluation_error,"before_pose":prior_model.sample_body(at),"after_pose":rig(native_id).sample_body(at),"before_root":prior_model.sample_transform(at),"after_root":rig(native_id).sample_transform(at)}
 		var diagnosis:=FileAccess.open(folder.path_join("reach-diagnostic.json"),FileAccess.WRITE);diagnosis.store_string(JSON.stringify(reach_errors,"",true,true));diagnosis.close()
 		check(reach_errors.is_empty(),"combined take preserves reachable authored contacts at every outside frame")
-		app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(app.layers[1].cels[0].image,Vector2(40,40),Vector2(130,40),8,Color.CYAN,false);app.changed()
+		app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(preload("res://src/drawing.gd").edit_image(app.layers[1].cels[0]).image,Vector2(40,40),Vector2(130,40),8,Color.CYAN,false);app.changed()
 		app.set_frame(14);app.world_selection.select_entity(native_id);app.pose_editor.frame_model();app.keys=[Model.Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
 		var has_path:=folder.path_join("contact-physics.has");app.has_project.save_file(has_path,"packed")
 		while app.has_project.pid>0:await process_frame

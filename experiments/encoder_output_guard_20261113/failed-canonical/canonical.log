@@ -1,0 +1,109 @@
+PASS unit: 0.501s
+PASS motion_parts: 1.059s
+PASS motion_helper_edits: 0.314s
+PASS opaque_order: 0.317s
+PASS required_extensions: 0.322s
+PASS contact_bend: 0.244s
+PASS spikes: 5.407s
+PASS editor: 8.835s
+PASS export_failures: 1.176s
+PASS audio_editor: 9.162s
+PASS audio_dummy: 3.654s
+PASS ui: 4.273s
+PASS recovery_write: 6.974s
+PASS recovery: 4.352s
+PASS pose: 15.337s
+PASS autokey: 11.116s
+PASS new_scene: 8.74s
+PASS world_selection: 10.133s
+PASS world_document: 4.825s
+PASS world_runtime: 11.159s
+PASS world_edit: 23.43s
+PASS world_workflow: 11.789s
+PASS object_timing: 19.044s
+PASS bone_labels: 4.674s
+PASS animation_clips_unit: 0.418s
+PASS animation_clips: 22.301s
+PASS visibility: 18.485s
+PASS animated_channels: 17.616s
+PASS limb_ik: 24.808s
+PASS secondary_motion: 9.267s
+PASS fan_motion: 18.303s
+PASS physics: 40.18s
+PASS physics_contacts: 82.209s
+PASS physics_props: 20.97s
+PASS physics_recording_unit: 0.506s
+PASS physics_recording: 39.719s
+PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text
+PASS personal keyboard remapping, native capture, conflict guards, text safety and fresh preferences
+PASS numeric temporary camera view, explicit keys, stale draft guards, cold HAS and exact movie
+PASS reviewed weighted helpers, native bindings, HAS and movie
+PASS experimental shape-aware helper geometry and real GPU comparison
+PASS imported shapes, old appearance compatibility, review, HAS and movie
+PASS editable base shapes, native channels, transactional Undo, HAS and movie
+PASS animated shapes, native GPU, blocks, clipboard, helper capture, recovery and movie
+PASS control area estimates, manual organization, native identity, Undo, HAS and movie
+PASS cancellable neutral deform study, explicit adoption, Undo, native identity, HAS and movie
+PASS isolated neutral/deformed views, exact document isolation and pending-readback teardown
+PASS embedded compound expression poses, native VRM bindings, Undo, HAS and movie
+PASS native PMX compound/nested expressions through shared editable deform keys
+PASS optional height review, partial/proportion guards, native physics, HAS and movie
+PASS known-distance map picking, isolated size preview, anchor, Undo, HAS and movie
+PASS independent body foundation and native GPU comparison
+PASS normal independent body editing, native HAS, history, recovery and direct movie sampling
+PASS project lighting, source materials, fades, native rigs, HAS and direct movie
+PASS live hair retains project lighting and inherited parent fades
+PASS interactive default physics, live body/hair peers, native rigs, Record and portable movie
+PASS current skin and morph framing, live physics, native rigs and explicit shot isolation
+PASS shot projection isolation, legacy cameras, native references, portable HAS and movie
+PASS guide-free color sampling, native skin pixels, stale requests, safe teardown and portable movie
+PASS body posing with held feet, native rigs, atomic Undo, portable HAS and movie; continuous playback contacts remain open
+PASS continuous-contact foundation; versioned integration is checked separately below
+PASS contact animation: native shared-model integration
+PASS contact editor: native shared-model integration
+PASS contact clipboard: native shared-model integration
+PASS contact physics: native shared-model integration
+PASS contact parent: native shared-model integration
+PASS contact correction: native shared-model integration
+PASS contact persistence: native shared-model integration
+PASS contact bindings: native shared-model integration
+PASS contact identity: native shared-model integration
+PASS contact selection: native shared-model integration
+PASS contact transform: native shared-model integration
+PASS contact viewport: native shared-model integration
+PASS independent multi-clip sound, master clock, native HAS/recovery/lesson and measured movie mix
+PASS scene length, protected shortening, exact audio Undo and fresh project readers
+PASS motion assist: derived assistance and authoritative controls
+PASS motion tracks: derived assistance and authoritative controls
+PASS motion native_preview: derived assistance and authoritative controls
+PASS motion model: derived assistance and authoritative controls
+PASS motion editor: derived assistance and authoritative controls
+PASS non-destructive layer opacity, dirty-region cache, native saves/recovery and movie
+PASS even translucent strokes, gentle eraser, pixel Undo, cold HAS and exact movie
+PASS native pressure-size input, independent taper reference, cold HAS and exact movie
+PASS editable drawing layer order, names, removal, undo, portable recovery and movie
+PASS editor-only onion guides, exposure selection, texture cache, GPU stacking and portable movie
+PASS independent drawing fill, real background worker, spill preview, undo and portable movie
+PASS virtual gap closing, independent morphology oracle, preview/Undo, cold HAS and exact movie
+PASS previewed under-ink fill growth, independent pixel oracle, Undo, cold HAS and exact movie
+PASS selectable edge/corner fill, exhaustive independent graph oracle, cold HAS and movie
+PASS named project swatches, exact color reuse, Undo, cold HAS/recovery/lesson and movie
+PASS independent drawing Undo/Redo preserves live ragdolls, overlay, cold HAS and movie
+PASS independent raster selection/move/copy, live physics, guarded input, cold HAS and movie
+PASS guarded drawing resize/free rotation, premultiplied reference, live physics, cold HAS and movie
+PASS exact Windows owner identity, reused PID decisions and legacy recovery protection
+PASS abrupt exit, normal newest-valid startup, fallback, native data and preserved manual HAS
+PASS bounded recovery journal, idle previews, Advanced restore and deep native fallback
+PASS completed-edit and minute recovery schedules, idle timer, retry and manual save protection
+PASS background preview work, responsive editing/playback, queued checkpoints and joined teardown
+PASS Home, real recent HAS workflows, safe cancellation, thumbnails and inherited startup priority
+PASS first interactive chapters, original practice scene, whole-state Previous and fresh-process Continue
+PASS beginner import-to-movie course, live physics, visual hints, optional Save and actual MP4 completion
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify.py", line 511, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify.py", line 460, in main
+    assert any(s["codec_name"] == "aac" for s in metadata["streams"])
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

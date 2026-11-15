@@ -1,0 +1,255 @@
+{
+  "format": "has_reimu_missing_helpers_1",
+  "date": "2026-11-10",
+  "base_commit": "7c823c21a3610eba0c5007a483e8f2cb63240b46",
+  "scope": "Repair missing-chain Hair & clothes entry into existing reviewed weighted helper generation; actual supplied Bikini Reimu player model, not automatic full hair/cloth rigging.",
+  "environment": {
+    "os": "Linux cloud",
+    "godot": "4.6.stable.official.89cea1439 standard",
+    "renderer": "Compatibility OpenGL llvmpipe Mesa25.0.7",
+    "display": ":117 task-owned Xorg; X11 pinned, private runtime, no visible owner desktop fallback",
+    "audio": "Dummy",
+    "ffmpeg": "7.1.5 GPL libx264",
+    "windows_execution_claimed": false
+  },
+  "source": {
+    "gma_sha256": "66442ce25e36ca4a8dbccbe0c321278d4d2afbbd5603495d470ad366f869a88b",
+    "gma_bytes": 33358229,
+    "member": "models/player/reimu_hakurei_bikini.mdl",
+    "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "prepared_originals": {
+      "/workspace/studio-3d-2d/output/compatibility/source-1794258451-10683-1772790/scene.glb": {
+        "sha256": "f7717417649231f9baeadbcb810b266d4d59ca0008332e5170019b519b9b8b80",
+        "bytes": 7303064,
+        "mtime_ns": 1794258462039631024
+      },
+      "/workspace/studio-3d-2d/output/compatibility/source-1794258451-10683-1772790/parameters.json": {
+        "sha256": "98b48b10da1f240be621b2d750c4274d758aa00d92bce8715beb5d11b666a2dd",
+        "bytes": 26751,
+        "mtime_ns": 1794258462042642820
+      }
+    },
+    "originals_preserved": true
+  },
+  "before": {
+    "bones": 77,
+    "checks": 4,
+    "failures": 2,
+    "hair_disabled": true,
+    "setup_button_disabled": false,
+    "tooltip": "This model has no declared secondary chains. Missing-rig helper generation is not implemented yet."
+  },
+  "after": {
+    "writer": {
+      "bind_difference": {
+        "changed_channels": 4,
+        "mean": 4.822530864197531e-07
+      },
+      "checks": 22,
+      "failures": 0,
+      "force": 0.35999998450279236,
+      "mode": "writer",
+      "movie": "/workspace/has-handoff-audit/reimu-helpers-2026-11-10/final-ui/render_1794294982_18498461_0/movie.mp4",
+      "region": {
+        "already_rigged": false,
+        "anchor_min_weight": 1.0,
+        "anchor_name": "hair_ribbon_left",
+        "anchor_node": 51.0,
+        "assessment": "Geometry/weights suggest a strand or panel; review attachment and stiffness. Length cannot establish looseness.",
+        "attachment_method": "nearest-anchor cross-section within3percent of longest local extent",
+        "attachment_vertices": 13.0,
+        "boundary_edges": 120.0,
+        "bounds_in_anchor": [
+          [
+            -0.00104862151860674,
+            -0.02452463013434336,
+            -0.06301741279464745
+          ],
+          [
+            0.05314322484046352,
+            0.04052056159585682,
+            0.07841503560127983
+          ]
+        ],
+        "component": 2.0,
+        "elongation": 2.1743720732282945,
+        "existing_joint_near_free_region": false,
+        "length_in_anchor_units": 0.0999664108029498,
+        "length_relative_to_rig": 0.0719768975636318,
+        "material_name": "hair_acce",
+        "node": 92.0,
+        "primitive": 0.0,
+        "suggested": true,
+        "vertices": 244.0
+      },
+      "wind_radians": 0.3106948137283325
+    },
+    "reader": {
+      "checks": 7,
+      "failures": 0,
+      "mode": "reader"
+    },
+    "originals": {
+      "/workspace/studio-3d-2d/output/compatibility/source-1794258451-10683-1772790/scene.glb": {
+        "sha256": "f7717417649231f9baeadbcb810b266d4d59ca0008332e5170019b519b9b8b80",
+        "bytes": 7303064,
+        "mtime_ns": 1794258462039631024
+      },
+      "/workspace/studio-3d-2d/output/compatibility/source-1794258451-10683-1772790/parameters.json": {
+        "sha256": "98b48b10da1f240be621b2d750c4274d758aa00d92bce8715beb5d11b666a2dd",
+        "bytes": 26751,
+        "mtime_ns": 1794258462042642820
+      }
+    },
+    "packed_keys_exact": true,
+    "private_source_offline_for_reader": true,
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "nb_read_frames": "24",
+      "r_frame_rate": "24/1",
+      "duration": "1.000000"
+    }
+  },
+  "backend": {
+    "command": "python -m unittest tests.test_secondary_helpers tests.test_helper_morphs",
+    "tests": 30,
+    "failures": 0
+  },
+  "regressions": {
+    "smoke": {
+      "bind_difference": {
+        "changed": 12,
+        "mean": 0.000217013888888889
+      },
+      "checks": 39,
+      "failures": 0,
+      "folder": "/workspace/has-handoff-audit/reimu-helpers-2026-11-10/regressions-final",
+      "movie": "/workspace/has-handoff-audit/reimu-helpers-2026-11-10/regressions-final/render_1794294879_8529822_0/movie.mp4",
+      "sway_radians": 0.310675710439682
+    },
+    "multi": {
+      "checks": 59,
+      "failures": 0,
+      "movies": [
+        "/workspace/has-handoff-audit/reimu-helpers-2026-11-10/regressions-final/render_1794294893_5540782_0/movie.mp4"
+      ]
+    },
+    "patch": {
+      "checks": 35,
+      "failures": 0,
+      "folder": "/workspace/has-handoff-audit/reimu-helpers-2026-11-10/regressions-final",
+      "movie": "/workspace/has-handoff-audit/reimu-helpers-2026-11-10/regressions-final/render_1794294917_9486847_0/movie.mp4"
+    }
+  },
+  "regression_encoder": {
+    "smoke": {
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "48",
+        "r_frame_rate": "24/1",
+        "duration": "2.000000"
+      },
+      "audio_onset_seconds": 1.0000416666666667
+    },
+    "multi": {
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "48",
+        "r_frame_rate": "24/1",
+        "duration": "2.000000"
+      }
+    },
+    "patch": {
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "48",
+        "r_frame_rate": "24/1",
+        "duration": "2.000000"
+      },
+      "audio_onset_seconds": 1.0000416666666667
+    }
+  },
+  "independent_packed_clip_values_equal_original_writer": {
+    "regressions-clean": {
+      "plain": true,
+      "v0": true,
+      "v1": true
+    },
+    "regressions-final": {
+      "plain": true,
+      "v0": true,
+      "v1": true
+    }
+  },
+  "intermediate_failures": [
+    "First source increment used inferred bool from Variant; direct source compilation diagnosed it. Explicit bool fixed; partial-app process stopped by verified owned PID. Final source check-only passes.",
+    "Initial cold oracle mixed JSON float frames and projected integer frames, and reserialized parsed small pose values. Actual stored decimals equal original writer values. Final reader compares exact packed pose decimals with integer timeline frame projection, plus exact provenance/checksum/pixels. No epsilon introduced.",
+    "Initial helper smoke had39 passing behavior checks but strict log gate failed on2 Godot ECHILD diagnostics caused by querying a worker already reaped by OS.kill. Linux-only /proc existence check retains actual worker-exit assertions; Windows process query unchanged. Clean rerun39/39.",
+    "Multi-chain baseline59 checks had3 storage-oracle failures; exact packed clip values match original writer in all plain/VRM0/VRM1 files. Previously the already-loaded clip underwent an extra JSON parse compared to the writer oracle. Match one parse on each side; no pose rounding/tolerance; clean rerun59/59."
+  ],
+  "limits": [
+    "Only reviewed244-vertex hair_acce region with13 pinned seam vertices is generated here:77 original bones plus4 helpers.",
+    "Other mixed-weight hair needs manual region/attachment refinement; no automatic whole-hair, cloth collision or generated full-body rig claim.",
+    "Full aggregate, artist fidelity, physical tablet/audio, learner/novice and clean Windows acceptance are not completed by this focused fix; ledger remains52/54 implementation and55/62 acceptance."
+  ],
+  "commands": [
+    "python tests/verify_reimu_helpers.py --prepared-source <native-scene.glb> --isolated-display :117 --output <new-private-folder>",
+    "Existing secondary_helpers_smoke.gd, secondary_helpers_multi.gd, secondary_helpers_patch.gd with authored original fixtures via run.command; private driver/raw logs retained under audit root."
+  ],
+  "private_audit_root": "/workspace/has-handoff-audit/reimu-helpers-2026-11-10",
+  "raw_log_identities": {
+    "before/app.log": {
+      "bytes": 853,
+      "sha256": "67b8d4e7ad5824b7987cdcf839827ecbbe243c4020edd9ba9c18c511676cceab"
+    },
+    "after-01/app.log": {
+      "bytes": 16121920,
+      "sha256": "55172870196f0a7b24a2157f149553de0e16099482b182ef88dedbd3b5ab2c39"
+    },
+    "after-02/app.log": {
+      "bytes": 3154,
+      "sha256": "5fb59d15a966215cdc0938948184f5c0f83ef8e8fa68df04c70dfc05b20da7aa"
+    },
+    "after-02/reader.log": {
+      "bytes": 790,
+      "sha256": "8e80e33f6785411ad1a4bbdf44e09e1797f297530c80ffb0d9f0114c023a9fab"
+    },
+    "regressions/smoke.log": {
+      "bytes": 4114,
+      "sha256": "47063a13f6ca2f7df9c6b434812c6eca3a9df6895a24664e203fd6446a6fd9b5"
+    },
+    "regressions-clean/multi.log": {
+      "bytes": 4892,
+      "sha256": "734ffdf346bd0933e6cdb6d97a9acb894de416db84d4bf59f5be3ed319195c24"
+    },
+    "regressions-final/smoke.log": {
+      "bytes": 3573,
+      "sha256": "64c7644914db9f952f6516dfa58ee7231101be71e71d7f03bee8305da7837c29"
+    },
+    "regressions-final/multi.log": {
+      "bytes": 4889,
+      "sha256": "c069225f9f803727c9fd95dc7b1a3f1be3a9d7e994211b9eef26409008bda8a1"
+    },
+    "regressions-final/patch.log": {
+      "bytes": 2931,
+      "sha256": "6fccffd88010de78c60301fd4200414cca68a8ef21514aeb6dcc03611c71427f"
+    },
+    "final-ui/writer.log": {
+      "bytes": 3154,
+      "sha256": "e2180423cf689491ed3f5e5c2aab01d11c75180e09ce509ea0754e05a2f19530"
+    },
+    "final-ui/reader.log": {
+      "bytes": 855,
+      "sha256": "cb27926a42735dc2e38dc5c0b2692b43a652d24c0090d86ba3ca452d2dac1f45"
+    }
+  },
+  "repository_policy": "Push source/tests/compact evidence without force, verify remote, then clean only completed owned disposable outputs. Preserve original private assets, active checkout, failed diagnostic evidence and latest private packed example; art/media are not committed."
+}

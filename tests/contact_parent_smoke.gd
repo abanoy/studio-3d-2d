@@ -59,7 +59,7 @@ func run() -> void:
 	editor.input(motion,point+editor.drag_screen_axis.normalized()*10./editor.drag_units*editor.drag_pixels)
 	check(actor(group.id).data==preview and error_at(child.id)<.0002,"invalid ancestor drag keeps its last valid preview and both pinned feet")
 	editor.finish_drag(true);check(actor(group.id).data==valid,"Escape restores the exact ancestor baseline")
-	app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(app.layers[1].cels[0].image,Vector2(30,50),Vector2(140,50),8,Color.CYAN,false);app.changed()
+	app.set_frame(0);app.create_cel(false);preload("res://src/drawing.gd").stroke(preload("res://src/drawing.gd").edit_image(app.layers[1].cels[0]).image,Vector2(30,50),Vector2(140,50),8,Color.CYAN,false);app.changed()
 	app.set_frame(12);app.world_selection.select_entity(child.id);editor.frame_model();app.keys=[T.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
 	var expected: Dictionary=actor(child.id).sample(12);var has_path:=folder.path_join("parented-contacts.has");app.has_project.save_file(has_path,"packed")
 	while app.has_project.pid>0:await process_frame

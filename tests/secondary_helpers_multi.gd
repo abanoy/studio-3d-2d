@@ -76,11 +76,14 @@ func sample(app,source: String,label: String,folder: String) -> void:
 	var initial: Image=await app.renderer.capture(app.keys,app.layers,0,true);var blowing: Image=await app.renderer.capture(app.keys,app.layers,24,true)
 	check(visible_change(initial.get_region(Rect2i(500,100,350,900)),blowing.get_region(Rect2i(500,100,350,900))) and visible_change(initial.get_region(Rect2i(1045,100,350,900)),blowing.get_region(Rect2i(1045,100,350,900))),"both separate weighted panels visibly animate in the recorded frames: "+label)
 	var saved: Dictionary=actor.data.duplicate(true);var project: String=folder.path_join(label+"-multi.has");app.has_project.save_file(project,"packed");await wait_job(app.has_project)
+	# saved is pre-JSON; the reopened document has already been parsed once.
+	# Parse only the writer oracle, avoiding an extra lossy tiny-float roundtrip.
+	var expected_clips=JSON.parse_string(JSON.stringify(saved.animation_clips,"",true,true))
 	var diagnostic:=FileAccess.open(folder.path_join(label+"-before-save.json"),FileAccess.WRITE);diagnostic.store_string(JSON.stringify(saved,"",true,true));diagnostic.close()
 	app.new_project();app.has_project.open_file(project);await wait_job(app.has_project);actor=app.renderer.world_runtime.instance(id);def=actor.root.get_meta("has_secondary_rig")
 	diagnostic=FileAccess.open(folder.path_join(label+"-after-save.json"),FileAccess.WRITE);diagnostic.store_string(JSON.stringify(actor.data,"",true,true));diagnostic.close()
-	print("MULTI_BODY_STORAGE "+JSON.stringify({"label":label,"rig_error":def.error,"chains":def.chains.size(),"expected_chains":n+2,"history":actor.data.metadata.generated_helper_history.size(),"same_keys":Support.same_keys(actor.data,saved),"same_stored_clips":JSON.parse_string(JSON.stringify(actor.data.animation_clips,"",true,true))==JSON.parse_string(JSON.stringify(saved.animation_clips,"",true,true))}))
-	check(def.error.is_empty() and def.chains.size()==n+2 and Support.same_keys(actor.data,saved) and JSON.parse_string(JSON.stringify(actor.data.animation_clips,"",true,true))==JSON.parse_string(JSON.stringify(saved.animation_clips,"",true,true)) and actor.data.metadata.generated_helper_history.size()==2,"packed HAS retains all native/generated chains, history and exact recorded controls: "+label)
+	print("MULTI_BODY_STORAGE "+JSON.stringify({"label":label,"rig_error":def.error,"chains":def.chains.size(),"expected_chains":n+2,"history":actor.data.metadata.generated_helper_history.size(),"same_keys":Support.same_keys(actor.data,saved),"same_stored_clips":actor.data.animation_clips==expected_clips}))
+	check(def.error.is_empty() and def.chains.size()==n+2 and Support.same_keys(actor.data,saved) and actor.data.animation_clips==expected_clips and actor.data.metadata.generated_helper_history.size()==2,"packed HAS retains all native/generated chains, history and exact recorded controls: "+label)
 	var image: Image=await app.renderer.capture(app.keys,app.layers,24,true);image.save_png(folder.path_join(label+"-multi.png"));app.set_frame(5);app.set_frame(40);app.set_frame(24)
 	check((await app.renderer.capture(app.keys,app.layers,24,true)).get_data()==image.get_data(),"combined recorded motion seeks deterministically: "+label)
 	if label=="plain":

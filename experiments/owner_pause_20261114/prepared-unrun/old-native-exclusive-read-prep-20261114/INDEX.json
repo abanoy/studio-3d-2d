@@ -1,0 +1,48 @@
+{
+  "format": "has_old_native_exclusive_read_preparation_1",
+  "prepared_only": true,
+  "Python_AST_parsed": true,
+  "candidate_imported": false,
+  "Windows_API_called": false,
+  "candidate_root_tree_checks_run": false,
+  "probe_executed": false,
+  "runtime_or_control_processes_launched": false,
+  "candidate_or_owner_files_changed": false,
+  "deletions": false,
+  "cleanup_authorized": false,
+  "root_count": 2,
+  "exact_files": 9307,
+  "bytes": 1442187088,
+  "directory_descendants": 1537,
+  "prior_verdict": "RETAIN_FOR_NOW unchanged",
+  "review": "Independent read-only source review found no blocking type/handle/identity/safety issue; actual Windows execution remains UNRUN",
+  "files": {
+    "probe_after_release.py": {
+      "bytes": 14404,
+      "sha256": "d418a00ac8f722fccae905c3707c96599eadf68b254542b326012396fed63550"
+    },
+    "README.md": {
+      "bytes": 4603,
+      "sha256": "75adbed658ff18fe2312c009d378b4e36a27dfdb8fac4158a2b180aea6029c9b"
+    },
+    "root-release.template.json": {
+      "bytes": 770,
+      "sha256": "ca8e29e84bb9731f25e4ec975fd51837ae76f0c43490a1ffd47ead5afe144612"
+    }
+  },
+  "prior_proofs": {
+    "FINAL_AUDIT.json": {
+      "bytes": 10398,
+      "sha256": "1002daf4b501843091f3abd4ba8918365951903c048e0ba5cd5ed9136707c7c1"
+    },
+    "core14-fresh-inventory.json": {
+      "bytes": 1699274,
+      "sha256": "846d0015644af0b8fca2eebed64c247dc6cee3a95c03240133ccd0c70fd9f20c"
+    },
+    "wider11-fresh-inventory.json": {
+      "bytes": 1659153,
+      "sha256": "0d5fbd84a774958d53ac6d7f8f1065e319b0d6c8e1ab413a73febf31b73dee29"
+    }
+  },
+  "condition": "Root only after full terminalPASS/final-review closure/publication+remoteverification. Root-release flags are operator attestations, not independent prerequisite or nonuse proof. No automatic deletion decision."
+}

@@ -58,3 +58,7 @@ unchanged full verifier remains blocked in a Windows-only native Krita harness
 on Linux, separately from these targeted passes. The final close-after-manual-Save
 guard was added after the400/native/nested runs and passes the final96-check
 suite; the receipt distinguishes those source snapshots.
+
+
+Successful checkpoint publication now also retires only formerly referenced
+expired blobs; see [recovery payload retention](recovery_blob_retention.md).

@@ -1,0 +1,59 @@
+{
+  "format": "has_sfm_native_resource_source_checkpoint_1",
+  "files_sha256": {
+    "source/README.md": "5acd8ba6cce8cea97feec21961a1562c3538f1d1f5396a4654ac7063327e8c6b",
+    "source/stage_resources.py": "f00be8c033d0b30faaf7e7727ee398d03341a8fb117e71ddc6ff72d252af39b5",
+    "source/test_stage_resources.py": "30bd31fe90516d1544e6f79ea6487f84a21de05fc47d0e8fa6bc3ce0d4d6828c",
+    "source/test_vmt_closure.py": "70aa86f4680aa03da5e4442b3f6618159ee63464204cbf04bf5e003e60ecfa80",
+    "source/vmt_closure.py": "c06c279de5b29239879c9ad019f91b9b5cbef22bc564f3d63ec7c600530e22b6",
+    "PLAN.md": "0cbcf5e93ea147c47dfca0cb9acd81337eec134f7270b8a467afdc9faf4f11e1",
+    "plan.json": "4a747c6bc883af7e69ca448a0d7ac60f76f14b78550682647f683449cd1d2aaf",
+    "empty-mount-plan.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "commands-for-owned-stage.json": "bc3f1df45d7a960788633bcf7bf81f439b274624854620af626f6a4eb356d108",
+    "NATIVE-RESULTS.md": "a7fa9d0f844ac3e607b08be057018852ba75582898166014ef17ec9b288c5f79",
+    "compact-results.json": "309ccbf2b831e72a2da79daba27915ea13f50aa86a84eaa4ec2485728e692f49",
+    "NATIVE-STAGING-HANDOFF.json": "8c1bd8c6c2ff901998f9a8ce52c9433baa45b0fa1ce074f4fd985039373324ff",
+    "request-binding-checks.json": "6775278abe578937c0f61fe42b8c14849d17d9c3cededa958ad84a1191c3b53c",
+    "requests/keiki_tools_chisels-groups-000.json": "a1492e9dfd40057e812b963dccd9914985713ea6ba7f84e3f195ca47745e0091",
+    "requests/keiki_tools_chisels-groups-001.json": "25e73b1b58db1a216a53784a89da7295836daff172625df45ca1e972ba3914f0",
+    "requests/keiki_tools_chisels-groups-010.json": "08e654cf66c49d44450a64d0c13f657531cabe9287af2cb0515edc7fb317a108",
+    "requests/keiki_tools_chisels-groups-011.json": "65305bfdb8ec11c27eb074866f789b5dda282d66342a26bfb40ceebef3729fa1",
+    "requests/keiki_tools_chisels-groups-100.json": "0ce2ef9a511bb86bea494895165fe4cf740829cefcdfedcf656ca298f80674a6",
+    "requests/keiki_tools_chisels-groups-101.json": "e2463922a7a8394502955284a1f24c396add1a801080aa905e0714ef8cd92ef1",
+    "requests/keiki_tools_chisels-groups-110.json": "7ca08af6fc9c32ca39b235052791467088cb6849c8ec662444ec1d5be39bcd6f",
+    "requests/keiki_tools_chisels-groups-111.json": "b226cc3d759154121dcc7e272f2d505ba602edddc0353cc063c09399c2116aca",
+    "requests/multi_skin_glove-all-blank-refusal.json": "45edd9a457c3be0c356b108494acacb501ee819228539ce6f8885b3546e118a5",
+    "requests/multi_skin_glove-skin-0.json": "efbd95360a2d01e34a2bedb099355231295ebed03cfaef11fe2c8faf21432d42",
+    "requests/multi_skin_glove-skin-1.json": "ea9b1748f4e88c332b041c462f65281cf0f778552e0f8f4c41c261ec50f9084a",
+    "requests/multi_skin_glove-skin-2.json": "75795f0aa2e167052b626b452f35f65dbd82fe3dfe1a550a87558e03daf959c0"
+  },
+  "source_only": true,
+  "native_payload_included": false,
+  "working_output_layout": "output/sfm-next-cases-20261112",
+  "reuse": "Recreate this tree under a new owned output layout and review machine-specific paths/identity stamps/plan SHA before invoking. Retain exact original archive hashes/member identities; do not bypass guards.",
+  "conversion_driver": "Prepared separately and not yet included in this staging checkpoint.",
+  "later_conversion_driver": {
+    "source_files": {
+      "source/conversion_driver.py": {
+        "sha256": "d8749db85f324f799740c2802a77e7ec6d8640f0752312fe7ecfdf34cee2d127",
+        "bytes": 42973,
+        "mtime_ns": 1794544035249975400
+      },
+      "source/test_conversion_driver.py": {
+        "sha256": "2a511ec237cef0ecfb43d583a0ec68a722bda1f462d85c800350d9de6e71e151",
+        "bytes": 18952,
+        "mtime_ns": 1794544035456427000
+      },
+      "CONVERSION-DRIVER.md": {
+        "sha256": "0981f3cdab14a3f7d35faad25c2a4bc7635b84b664c99fe40e079af62a9370d5",
+        "bytes": 8017,
+        "mtime_ns": 1794544145092804900
+      }
+    },
+    "cpu_checks": 21,
+    "native_conversions_run": false,
+    "fresh_schema2_lock_pending": true,
+    "old_schema1_preflight_historical_only": true,
+    "source_under_root_experiments_never_loaded_by_app": true
+  }
+}

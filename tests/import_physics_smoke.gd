@@ -28,7 +28,7 @@ func run() -> void:
 	var unsupported:=folder.path_join("unsupported.glb");SceneIO.make_pose_fixture(unsupported)
 	var hair_asset:=folder.path_join("hair.glb");SecondaryFixture.create(hair_asset)
 	var hash:=FileAccess.get_sha256(asset)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	var physics=app.physics_editor
 	check(not app.advanced_mode and not physics.is_running(),"empty Simple startup contains no spontaneous simulation")

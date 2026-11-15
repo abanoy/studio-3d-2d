@@ -15,6 +15,10 @@ func settled() -> void:
 func wait_job(job) -> void:
 	while job.pid>0:await process_frame
 	await settled()
+func worker_running(pid: int) -> bool:
+	# A killed Unix child is already reaped; don't ask Godot to wait on it again.
+	if OS.get_name()=="Linux":return FileAccess.file_exists("/proc/%d/stat"%pid)
+	return OS.is_process_running(pid)
 func indices_equal(values: Array,first: int,last: int) -> bool:
 	if values.size()!=last-first:return false
 	for i in range(values.size()):
@@ -115,7 +119,7 @@ func run() -> void:
 		check((await app.renderer.capture(app.keys,app.layers,24,true)).get_data()==reference.get_data(),"recorded patch motion seeks deterministically")
 		var error: String=await app.export_movie(folder);check(error.is_empty() and Image.load_from_file(app.last_export_folder.path_join("frame_000025.png")).get_data()==reference.get_data(),"recorded patch motion exports with exact reopened preview pixels");movie=app.last_export_folder.path_join("movie.mp4")
 		app.world_selection.select_entity(id,false);helper.button.pressed.emit();var worker: int=helper.pid;app.audio_player.volume_db=-80;app.toggle_play();await settled();app.stop()
-		check(not is_instance_valid(helper.window) and not app.canvas.review_pointer.is_valid() and not OS.is_process_running(worker),"starting playback cancels review and its owned worker")
+		check(not is_instance_valid(helper.window) and not app.canvas.review_pointer.is_valid() and not worker_running(worker),"starting playback cancels review and its owned worker")
 		app.world_selection.select_entity(id,false);helper.button.pressed.emit();await wait_job(helper);var current_sha: String=app.renderer.active_model().data.sha256
 		app.physics_editor.hair_toggle.button_pressed=true
 		while app.physics_editor.pending.has(id):await process_frame

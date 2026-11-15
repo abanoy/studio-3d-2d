@@ -1,0 +1,859 @@
+{
+  "bundle": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615194930984000-ae0e0967/Studio/output/compatibility/source-1794615294-572-67321151",
+  "format": "has_source_choices_native_expected_1",
+  "glb_sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+  "input_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+  "name": "keiki_tools_chisels-groups-110",
+  "object_id": "738783918883663606",
+  "parameters": {
+    "adapter": "studio_source_1",
+    "axes": "Source Z-up to glTF Y-up via Blender exporter",
+    "case_resolved_sidecars": {
+
+    },
+    "counts": {
+      "bones": 31.0,
+      "meshes": 1.0,
+      "static_lights": 0.0,
+      "textures": 4.0
+    },
+    "limits": [
+      "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+      "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+    ],
+    "materials": [
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+        "material": "models/touhou/tamo/Keiki Haniyashin/props",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+        "material": "excl mark",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+        "material": "box",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt"
+      },
+      {
+        "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+        "material": "blush",
+        "shader": "vertexlitgeneric",
+        "status": "PBR approximation",
+        "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt"
+      }
+    ],
+    "mount_warnings": [],
+    "native_parameters": {
+      "appearance_request": {
+        "bodygroups": {
+          "0": 1.0,
+          "1": 1.0,
+          "2": 0.0
+        },
+        "format": "studio_source_appearance_request_1",
+        "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+        "skin": 0.0,
+        "source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff"
+      },
+      "bodygroups": {
+        "box": [
+          "box.smd",
+          null
+        ],
+        "flame": [
+          "flame.smd",
+          null
+        ],
+        "tools": [
+          "tools.dmx",
+          null
+        ]
+      },
+      "bones": [
+        {
+          "name": "ParentNode",
+          "parent": -1.0
+        },
+        {
+          "name": "Waist",
+          "parent": 0.0
+        },
+        {
+          "name": "bip_pelvis",
+          "parent": 1.0
+        },
+        {
+          "name": "bip_spine_0",
+          "parent": 2.0
+        },
+        {
+          "name": "bip_spine_1",
+          "parent": 3.0
+        },
+        {
+          "name": "bip_collar_L",
+          "parent": 4.0
+        },
+        {
+          "name": "bip_upperArm_L",
+          "parent": 5.0
+        },
+        {
+          "name": "bip_lowerArm_L",
+          "parent": 6.0
+        },
+        {
+          "name": "bip_hand_L",
+          "parent": 7.0
+        },
+        {
+          "name": "å½«å»åParent_L",
+          "parent": 8.0
+        },
+        {
+          "name": "å¹³å",
+          "parent": 9.0
+        },
+        {
+          "name": "SmallCircleå",
+          "parent": 9.0
+        },
+        {
+          "name": "Changeå½¢Circleå",
+          "parent": 9.0
+        },
+        {
+          "name": "Changeå½¢ä¸Hornå",
+          "parent": 9.0
+        },
+        {
+          "name": "bip_collar_R",
+          "parent": 4.0
+        },
+        {
+          "name": "bip_upperArm_R",
+          "parent": 14.0
+        },
+        {
+          "name": "bip_lowerArm_R",
+          "parent": 15.0
+        },
+        {
+          "name": "bip_hand_R",
+          "parent": 16.0
+        },
+        {
+          "name": "å½«å»åParent_R",
+          "parent": 17.0
+        },
+        {
+          "name": "ä¸Hornå",
+          "parent": 18.0
+        },
+        {
+          "name": "Changeå½¢SmallCircleå",
+          "parent": 18.0
+        },
+        {
+          "name": "Circleå",
+          "parent": 18.0
+        },
+        {
+          "name": "Smallå",
+          "parent": 18.0
+        },
+        {
+          "name": "box",
+          "parent": 2.0
+        },
+        {
+          "name": "bip_neck",
+          "parent": 4.0
+        },
+        {
+          "name": "bip_head",
+          "parent": 24.0
+        },
+        {
+          "name": "bip_Face",
+          "parent": 25.0
+        },
+        {
+          "name": "Expressionsç¨Boneå¨Parent",
+          "parent": 26.0
+        },
+        {
+          "name": "ã¾ã¤Strand_L",
+          "parent": 27.0
+        },
+        {
+          "name": "ã¾ã¤Strand_R",
+          "parent": 27.0
+        },
+        {
+          "name": "Flame",
+          "parent": 0.0
+        }
+      ],
+      "eyeballs": [],
+      "flex_controllers": [
+        {
+          "group": "Tools",
+          "local_to_global": -1.0,
+          "max": 1.0,
+          "min": 0.0,
+          "name": "Tools"
+        }
+      ],
+      "flex_names": [
+        "Tools"
+      ],
+      "native_appearance_choices": {
+        "bodygroups": [
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "tools.dmx",
+                "vertices": 1180.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 0.0,
+            "name": "tools"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "box.smd",
+                "vertices": 38.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 1.0,
+            "name": "box"
+          },
+          {
+            "choices": [
+              {
+                "blank": false,
+                "index": 0.0,
+                "name": "flame.smd",
+                "vertices": 1479.0
+              },
+              {
+                "blank": true,
+                "index": 1.0,
+                "name": "blank",
+                "vertices": 0.0
+              }
+            ],
+            "index": 2.0,
+            "name": "flame"
+          }
+        ],
+        "default_skin_has_native_slot_identity": true,
+        "skin_groups": [
+          [
+            "models/touhou/tamo/Keiki Haniyashin/props",
+            "box",
+            "blush",
+            "excl mark"
+          ]
+        ]
+      },
+      "selected_bodygroup_indices": {
+        "box": 1.0,
+        "flame": 0.0,
+        "tools": 1.0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.0
+      },
+      "selected_skin": 0.0,
+      "skin_groups": [
+        [
+          "models/touhou/tamo/Keiki Haniyashin/props",
+          "box",
+          "blush",
+          "excl mark"
+        ]
+      ]
+    },
+    "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+    "scale": 0.01905,
+    "source_file": "keiki haniyashin chisels.mdl",
+    "source_member": null,
+    "source_profile": "standalone",
+    "source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+    "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "sourceio_version": [
+      5.0,
+      5.0,
+      5.0
+    ],
+    "standard": "studio_model_1",
+    "suggested_view": null,
+    "warnings": []
+  },
+  "peer_id": "8162681695379586236",
+  "pictures": {
+    "0": {
+      "height": 1080,
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\12-keiki_tools_chisels-groups-110/writer-0.png",
+      "pixel_sha256": "2b859a3dc51024e9927f0e38792b196bad0546689c99ca17fb665411d14b5d49",
+      "width": 1920
+    },
+    "24": {
+      "height": 1080,
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\12-keiki_tools_chisels-groups-110/writer-24.png",
+      "pixel_sha256": "c3bdf1e3d88517b5a523e876c2e9f06434dfce5159c67d6ba7a18ae7ef70a2f5",
+      "width": 1920
+    }
+  },
+  "portable_world": {
+    "format": "studio_world_1",
+    "objects": [
+      {
+        "draft_frame": 0.0,
+        "format": "studio_model_1",
+        "id": "8162681695379586236",
+        "kind": "model",
+        "metadata": {
+          "import_source": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615194930984000-ae0e0967/Studio/examples/tutorials/Practice figure.glb",
+          "initial_placement": {
+            "attempts": 5.0,
+            "overlap": false,
+            "skipped_surfaces": 0.0,
+            "support": "grid",
+            "triangles": 0.0
+          },
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "name": "Practice figure.glb",
+        "parent_id": "",
+        "path": "assets/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb",
+        "pose": {
+
+        },
+        "pose_keys": [],
+        "position": [
+          2.5319032669067383,
+          -0.04999996349215507,
+          3.3666162490844727
+        ],
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+        "start_frame": 0.0,
+        "visible": true
+      },
+      {
+        "draft_frame": 0.0,
+        "format": "studio_model_1",
+        "id": "738783918883663606",
+        "kind": "model",
+        "metadata": {
+          "external_bundle": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\compatibility\\source-1794615294-572-67321151",
+          "import_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\compatibility\\source-1794615294-572-67321151\\scene.glb",
+          "initial_placement": {
+            "attempts": 5.0,
+            "overlap": false,
+            "skipped_surfaces": 0.0,
+            "support": "grid",
+            "triangles": 0.0
+          },
+          "native_parameters": {
+            "adapter": "studio_source_1",
+            "axes": "Source Z-up to glTF Y-up via Blender exporter",
+            "case_resolved_sidecars": {
+
+            },
+            "counts": {
+              "bones": 31.0,
+              "meshes": 1.0,
+              "static_lights": 0.0,
+              "textures": 4.0
+            },
+            "limits": [
+              "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+              "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+              "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+            ],
+            "materials": [
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+                "material": "models/touhou/tamo/Keiki Haniyashin/props",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+                "material": "excl mark",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+                "material": "box",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt"
+              },
+              {
+                "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+                "material": "blush",
+                "shader": "vertexlitgeneric",
+                "status": "PBR approximation",
+                "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt"
+              }
+            ],
+            "mount_warnings": [],
+            "native_parameters": {
+              "appearance_request": {
+                "bodygroups": {
+                  "0": 1.0,
+                  "1": 1.0,
+                  "2": 0.0
+                },
+                "format": "studio_source_appearance_request_1",
+                "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+                "skin": 0.0,
+                "source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff"
+              },
+              "bodygroups": {
+                "box": [
+                  "box.smd",
+                  null
+                ],
+                "flame": [
+                  "flame.smd",
+                  null
+                ],
+                "tools": [
+                  "tools.dmx",
+                  null
+                ]
+              },
+              "bones": [
+                {
+                  "name": "ParentNode",
+                  "parent": -1.0
+                },
+                {
+                  "name": "Waist",
+                  "parent": 0.0
+                },
+                {
+                  "name": "bip_pelvis",
+                  "parent": 1.0
+                },
+                {
+                  "name": "bip_spine_0",
+                  "parent": 2.0
+                },
+                {
+                  "name": "bip_spine_1",
+                  "parent": 3.0
+                },
+                {
+                  "name": "bip_collar_L",
+                  "parent": 4.0
+                },
+                {
+                  "name": "bip_upperArm_L",
+                  "parent": 5.0
+                },
+                {
+                  "name": "bip_lowerArm_L",
+                  "parent": 6.0
+                },
+                {
+                  "name": "bip_hand_L",
+                  "parent": 7.0
+                },
+                {
+                  "name": "å½«å»åParent_L",
+                  "parent": 8.0
+                },
+                {
+                  "name": "å¹³å",
+                  "parent": 9.0
+                },
+                {
+                  "name": "SmallCircleå",
+                  "parent": 9.0
+                },
+                {
+                  "name": "Changeå½¢Circleå",
+                  "parent": 9.0
+                },
+                {
+                  "name": "Changeå½¢ä¸Hornå",
+                  "parent": 9.0
+                },
+                {
+                  "name": "bip_collar_R",
+                  "parent": 4.0
+                },
+                {
+                  "name": "bip_upperArm_R",
+                  "parent": 14.0
+                },
+                {
+                  "name": "bip_lowerArm_R",
+                  "parent": 15.0
+                },
+                {
+                  "name": "bip_hand_R",
+                  "parent": 16.0
+                },
+                {
+                  "name": "å½«å»åParent_R",
+                  "parent": 17.0
+                },
+                {
+                  "name": "ä¸Hornå",
+                  "parent": 18.0
+                },
+                {
+                  "name": "Changeå½¢SmallCircleå",
+                  "parent": 18.0
+                },
+                {
+                  "name": "Circleå",
+                  "parent": 18.0
+                },
+                {
+                  "name": "Smallå",
+                  "parent": 18.0
+                },
+                {
+                  "name": "box",
+                  "parent": 2.0
+                },
+                {
+                  "name": "bip_neck",
+                  "parent": 4.0
+                },
+                {
+                  "name": "bip_head",
+                  "parent": 24.0
+                },
+                {
+                  "name": "bip_Face",
+                  "parent": 25.0
+                },
+                {
+                  "name": "Expressionsç¨Boneå¨Parent",
+                  "parent": 26.0
+                },
+                {
+                  "name": "ã¾ã¤Strand_L",
+                  "parent": 27.0
+                },
+                {
+                  "name": "ã¾ã¤Strand_R",
+                  "parent": 27.0
+                },
+                {
+                  "name": "Flame",
+                  "parent": 0.0
+                }
+              ],
+              "eyeballs": [],
+              "flex_controllers": [
+                {
+                  "group": "Tools",
+                  "local_to_global": -1.0,
+                  "max": 1.0,
+                  "min": 0.0,
+                  "name": "Tools"
+                }
+              ],
+              "flex_names": [
+                "Tools"
+              ],
+              "native_appearance_choices": {
+                "bodygroups": [
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "tools.dmx",
+                        "vertices": 1180.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 0.0,
+                    "name": "tools"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "box.smd",
+                        "vertices": 38.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 1.0,
+                    "name": "box"
+                  },
+                  {
+                    "choices": [
+                      {
+                        "blank": false,
+                        "index": 0.0,
+                        "name": "flame.smd",
+                        "vertices": 1479.0
+                      },
+                      {
+                        "blank": true,
+                        "index": 1.0,
+                        "name": "blank",
+                        "vertices": 0.0
+                      }
+                    ],
+                    "index": 2.0,
+                    "name": "flame"
+                  }
+                ],
+                "default_skin_has_native_slot_identity": true,
+                "skin_groups": [
+                  [
+                    "models/touhou/tamo/Keiki Haniyashin/props",
+                    "box",
+                    "blush",
+                    "excl mark"
+                  ]
+                ]
+              },
+              "selected_bodygroup_indices": {
+                "box": 1.0,
+                "flame": 0.0,
+                "tools": 1.0
+              },
+              "selected_native_bodygroup_indices": {
+                "0": 1.0,
+                "1": 1.0,
+                "2": 0.0
+              },
+              "selected_skin": 0.0,
+              "skin_groups": [
+                [
+                  "models/touhou/tamo/Keiki Haniyashin/props",
+                  "box",
+                  "blush",
+                  "excl mark"
+                ]
+              ]
+            },
+            "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+            "scale": 0.01905,
+            "source_file": "keiki haniyashin chisels.mdl",
+            "source_member": null,
+            "source_profile": "standalone",
+            "source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+            "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+            "sourceio_version": [
+              5.0,
+              5.0,
+              5.0
+            ],
+            "standard": "studio_model_1",
+            "suggested_view": null,
+            "warnings": []
+          },
+          "note": "Keep full native preparation bundle; only GLB and this supplied report are managed here. Native fidelity is not implied.",
+          "source_shape": {
+            "enabled": true,
+            "format": "studio_source_shape_1"
+          }
+        },
+        "name": "keiki haniyashin chisels.mdl",
+        "parent_id": "",
+        "path": "assets/4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b.glb",
+        "pose": {
+
+        },
+        "pose_keys": [],
+        "position": [
+          2.9228692054748535,
+          -0.04055195674300194,
+          3.8606770038604736
+        ],
+        "reference_only": false,
+        "rotation_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "scale": 1.0,
+        "sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+        "start_frame": 0.0,
+        "visible": true
+      }
+    ]
+  },
+  "projects": {
+    "linked": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\12-keiki_tools_chisels-groups-110/linked.has",
+      "sha256": "fa4e3cabe9def98ac0a5ebfc30d857d029b8c2c7c6fd13885694b48d0ff7c7a3"
+    },
+    "packed": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\12-keiki_tools_chisels-groups-110/packed.has",
+      "sha256": "ec6bfa9a79bb933e707d339545ced008e4b10e921f48e2de67eba200814252e8"
+    }
+  },
+  "protected": {
+    "audio": {
+      "gain_db": 0.0,
+      "id": "1044818846529769691",
+      "muted": false,
+      "path": "assets/5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9.wav",
+      "sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+      "source_in_sample": 0.0,
+      "source_name": "tone.wav",
+      "start_frame": 24.0
+    },
+    "keys": [
+      {
+        "fov": 60.0,
+        "frame": 0.0,
+        "interpolation": "ease",
+        "position": [
+          3.663018703460694,
+          1.123363733291626,
+          6.011871337890625
+        ],
+        "rotation_xyzw": [
+          -0.09183606505393982,
+          0.16681499779224396,
+          0.01560714934021234,
+          0.98157799243927
+        ]
+      },
+      {
+        "fov": 60.0,
+        "frame": 47.0,
+        "interpolation": "ease",
+        "position": [
+          3.813018798828125,
+          1.123363733291626,
+          6.011871337890625
+        ],
+        "rotation_xyzw": [
+          -0.09183606505393982,
+          0.16681499779224396,
+          0.01560714934021234,
+          0.98157799243927
+        ]
+      }
+    ],
+    "paint": "2cf71f483fe4f2a80232ee60a1d864334914876f40cb083511413a7de238a333",
+    "pcm": "39ed1e1355a24d405a11af9cfb2a97b315a835f1636f52ac0130b93c6a0c9ae0",
+    "peer": {
+      "draft_frame": 0.0,
+      "format": "studio_model_1",
+      "id": "8162681695379586236",
+      "kind": "model",
+      "metadata": {
+        "import_source": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/source-choices-native/1794615194930984000-ae0e0967/Studio/examples/tutorials/Practice figure.glb",
+        "initial_placement": {
+          "attempts": 5.0,
+          "overlap": false,
+          "skipped_surfaces": 0.0,
+          "support": "grid",
+          "triangles": 0.0
+        },
+        "source_shape": {
+          "enabled": true,
+          "format": "studio_source_shape_1"
+        }
+      },
+      "name": "Practice figure.glb",
+      "parent_id": "",
+      "path": "assets/99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23.glb",
+      "pose": {
+
+      },
+      "pose_keys": [],
+      "position": [
+        2.5319032669067383,
+        -0.04999996349215507,
+        3.3666162490844727
+      ],
+      "reference_only": false,
+      "rotation_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": 1.0,
+      "sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+      "start_frame": 0.0,
+      "visible": true
+    },
+    "video": {
+      "duration_frames": 48.0,
+      "fps_den": 1.0,
+      "fps_num": 24.0,
+      "height": 1080.0,
+      "lighting_mode": "studio",
+      "visibility_fade_ms": 300.0,
+      "width": 1920.0,
+      "world_background": "black"
+    }
+  }
+}

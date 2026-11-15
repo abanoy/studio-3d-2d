@@ -1,0 +1,11 @@
+Actual relocated owner review: metadata/source-only publication candidate.
+
+Committed code baseline 12071fe; final external folder `C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe`. The actual coordinator passed all six replay cases, 129 checks, all eight preservation flags, and eight private-desktop jobs (stage Home, final Home, six replays). Source, six HAS package and frozen harness before/after metadata match exactly. Both Home probes were empty, visible and Simple. This is automatic runnable-package evidence; artist/device/install acceptance remains separate.
+
+The final README alone was repaired after the successful replay because the frozen coordinator decoded its UTF-8 template using the Windows locale. The exact original guide, repaired final guide, template, raw hashes and correction record are retained. The one-line UTF-8 proposal is recorded only as a patch; the original frozen coordinator was not edited, and no Studio, HAS or harness bytes changed for this repair.
+
+Exact actual verification, admissions, commands/logs, per-case assertions, startup proofs, eight physical receipts, package/source before-after metadata, SourceIO file index and final BAT source are retained. No PNG, HAS project, native model, texture or runtime payload is copied. Gzip records are deterministic with mtime 0; RAW_FILE_CATALOG preserves both compressed and raw byte lengths/SHA256 so decompression restores exact source metadata.
+
+The preliminary host query briefly observed this audit's read-only metadata shell, not the review coordinator or a graphics process. Root will provide separate final authoritative host/desktop evidence after metadata preparation ends. The final authoritative host record at 22:09:55Z confirms coordinator 9548 absent and no owned runtime matches; desktop enumeration succeeded with only Default. The preliminary false absence flag remains unmodified and is explicitly classified in SUMMARY.json. No process was killed.
+
+`SUMMARY-awaiting-host.json` and `RAW_FILE_CATALOG-awaiting-host.json` retain the pre-host preparation checkpoint. The authoritative final documents are SUMMARY.json, RAW_FILE_CATALOG.json and INDEX.json. Every compressed raw stream was recovered and matched to its original SHA256 before indexing.

@@ -1,0 +1,83 @@
+{
+  "bind_difference": {
+    "changed": 12,
+    "mean": 0.000217013888888889
+  },
+  "checks": 39,
+  "failures": 0,
+  "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794599771244252100",
+  "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794599771244252100/render_1794599781_10566578_0/movie.mp4",
+  "sway_radians": 0.303969025611877,
+  "audio_onset_seconds": 1.0000416666666667,
+  "video": {
+    "codec_name": "h264",
+    "width": 1920,
+    "height": 1080,
+    "nb_read_frames": "48",
+    "r_frame_rate": "24/1",
+    "duration": "2.000000"
+  },
+  "source_sha256": "4d4ddc8b1414d149d44d881c60270113eb70ea3bec0995c6b817c002f1b20316",
+  "native": {
+    "checks": 14,
+    "failures": 0,
+    "metrics": {
+      "gmod": {
+        "bind_difference": {
+          "changed": 4,
+          "mean": 4.82253086419753e-07
+        },
+        "deformation": {
+          "changed": 1335,
+          "mean": 0.0260615596064815
+        },
+        "original_bones": 77
+      },
+      "mmd": {
+        "bind_difference": {
+          "changed": 0,
+          "mean": 0.0
+        },
+        "deformation": {
+          "changed": 351,
+          "mean": 0.00548828125
+        },
+        "original_bones": 126
+      }
+    },
+    "assessment_counts": {
+      "mmd": {
+        "regions": 89,
+        "suggested": 2,
+        "skipped": 0,
+        "truncated": false
+      },
+      "gmod": {
+        "regions": 163,
+        "suggested": 2,
+        "skipped": 0,
+        "truncated": false
+      },
+      "sfm": {
+        "regions": 32,
+        "suggested": 0,
+        "skipped": 0,
+        "truncated": false
+      }
+    }
+  },
+  "multi": {
+    "checks": 59,
+    "failures": 0,
+    "movies": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794599771244252100/render_1794599805_7124295_0/movie.mp4"
+    ]
+  },
+  "patch": {
+    "checks": 35,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794599771244252100",
+    "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\secondary-helpers\\run_1794599771244252100/render_1794599830_11540485_0/movie.mp4",
+    "audio_onset_seconds": 1.0000416666666667
+  }
+}

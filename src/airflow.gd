@@ -46,6 +46,25 @@ static func force(fields: Array,point: Vector3) -> Vector3:
 	var result:=Vector3.ZERO
 	for fan in fields:result+=field(fan.transform,fan.settings,point)*0.03
 	return result.limit_length(3.0)
+static func unsteady_force(fields: Array,point: Vector3,seconds: float) -> Vector3:
+	# Fixed simulation time and spatial phase keep recording/replay deterministic.
+	# A fan has a mean direction with small gusts and cross-flow, not a static bend.
+	if not is_finite(seconds) or not point.is_finite():return Vector3.ZERO
+	var result:=Vector3.ZERO;var time:=fmod(maxf(seconds,0),3600.)
+	for fan in fields:
+		var mean:=field(fan.transform,fan.settings,point)*.03
+		if mean.length_squared()<.0000000001:continue
+		var direction:=mean.normalized();var side:=direction.cross(Vector3.UP)
+		if side.length_squared()<.001:side=direction.cross(Vector3.RIGHT)
+		side=side.normalized();var lift:=side.cross(direction).normalized()
+		var phase: float=point.dot(Vector3(13.1,7.7,11.3))+fan.transform.origin.dot(Vector3(.4,.7,1.1))
+		var rate:=1.+float(fan.settings.speed)*.02;var clock:=time*TAU*rate
+		var flutter:=clampf(float(fan.settings.speed)/6.,.1,1.5)
+		var pulse:=.18*sin(clock*.95+phase)+.08*sin(clock*2.7+phase*.71)
+		var lateral:=.16*sin(clock*2.+phase*.83)+.08*sin(clock*4.3+phase*1.27)
+		var vertical:=.12*sin(clock*1.7+phase*1.13)
+		result+=mean*(1.+pulse*flutter)+(side*lateral+lift*vertical)*mean.length()*flutter*(.8+float(fan.settings.speed)*.02)
+	return result.limit_length(3.)
 static func create_asset(path: String) -> Error:
 	var SceneIO=load("res://src/scene3d.gd")
 	var root:=Node3D.new();root.name="HASOriginalFan"

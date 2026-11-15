@@ -1,0 +1,63 @@
+{
+  "format": "has_windows_helper_review_guard_1",
+  "date": "2026-11-13",
+  "source_commit": "c4d767489a43a7e8e38c5251be07814b1795d1a9",
+  "full_status": "FAILED",
+  "elapsed_seconds": 840.186023,
+  "functional_sources": 1008,
+  "source_and_head_unchanged": true,
+  "failure": "RuntimeError: Unreviewed helper main bytes: src/secondary_helper_editor.gd",
+  "wrapper_checks": 0,
+  "wrapper_graphics_attempted": false,
+  "wrapper_snapshot_created": false,
+  "cause": "Intentional reviewed-source guard still pins the prior helper-editor bytes. Snapshot copying includes all functional sources; the dependency was present in main.",
+  "exact_owned_coordinators_closed": true,
+  "no_process_killed": true,
+  "evidence": "experiments/windows_binding_review_guard_20261114",
+  "evidence_index_sha256": "62b4bf3f5f270e19aba08eb4a077bcfb1b189bf738644feaf446278334605b1e",
+  "reviewed_provenance_update": {
+    "status": "PASSED_SCOPED_CPU_AND_GPU",
+    "production_source_changes": false,
+    "files": [
+      "tests/helper_preview_port_files.json",
+      "tests/verify_helper_preview.py"
+    ],
+    "reviewed_rows": 25,
+    "old_rows_unchanged": 22,
+    "new_runtime_dependency": "src/source_bone_bindings.gd",
+    "CPU_checks": 208,
+    "graphical_checks": 266,
+    "CPU_case_checks": [
+      11,
+      128,
+      69
+    ],
+    "GPU_case_checks": [
+      221,
+      45
+    ],
+    "source_snapshot_files": 1009,
+    "canonical_functional_files": 1008,
+    "extra_snapshot_entry": "dependencies.json",
+    "CPU_GPU_source_digest": "f65e5d2078a64b5b14eb9da7c5e058ed5ba3585d291b2fbf263a6b1cec6fb893",
+    "all_preservation_gates": true,
+    "all_retained_Popen_reaped": true,
+    "strict_graphical_receipts_closed": true,
+    "first_graphical_attempt": "FAILED_BEFORE_ENGINE restricted-context CreateDesktop Errno5;0checks, false monitor fields preserved; approved-host exact retry266 passes; no visible fallback or auto-review rejection",
+    "no_other_stale_default_pins": true,
+    "wind16_manifest_unchanged": true,
+    "evidence": "experiments/helper_preview_review_refresh_20261114",
+    "evidence_index_sha256": "f9889c708461025a371068e7b8fe6acdf0345bb103a1ffdd8f3e4e4a4c42acb0"
+  },
+  "fresh_full_retry": "REQUIRED_after_scoped_provenance_fix; stale output/verification.json not admitted",
+  "formal_scores_unchanged": true,
+  "native_solver_implemented": false,
+  "driver_domain": {
+    "checks": 120,
+    "source_preserved": true,
+    "runtime_processes": 0,
+    "expected_refusals_preserved": true,
+    "evidence": "experiments/helper_preview_review_refresh_domain_20261114",
+    "evidence_index_sha256": "821e6d100566aaffbf9d173f4435e3f89d788b57df4e352010ba1dbd54e23eba"
+  }
+}

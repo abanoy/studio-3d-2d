@@ -1,0 +1,764 @@
+{
+  "format": "has_remaining_last_nine_scopes_1",
+  "date": "2026-11-13",
+  "full_aggregate": false,
+  "state": {
+    "format": "has_canonical_suffix_scopes_1",
+    "full_aggregate": false,
+    "runner_sha256": "04b7561d66090235795e5c09f6215889ab353823971c638ddc757ef3a6aed99d",
+    "status": "passed_scopes_only",
+    "pid": 3720,
+    "started_ns": 1794548623394377800,
+    "source_commit": "0f8f7a0067214ba4359f7d3367cc8cddbe516f3a",
+    "source_files": 936,
+    "original_scope_count": 36,
+    "selected_after": "drawing_selection",
+    "requested_scopes": 9,
+    "results": [
+      {
+        "name": "drawing_transform",
+        "script": "tests/verify_drawing_transform.py",
+        "report": "drawing-transform-verification.json",
+        "timeout": 600,
+        "exit": 0,
+        "elapsed_s": 25.7142379,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\01-drawing_transform",
+        "passed": true,
+        "report_sha256": "6c2f34b1249ba588e7baf28be59d1fb99105421fec701d60010c874ecceb48b3"
+      },
+      {
+        "name": "recovery_identity",
+        "script": "tests/verify_recovery_identity.py",
+        "report": "recovery-identity-verification.json",
+        "timeout": 90,
+        "exit": 0,
+        "elapsed_s": 1.8339964,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\02-recovery_identity",
+        "passed": true,
+        "report_sha256": "0262363f3ba8c1072cccc555b42530201acd4892934773e155b8de8e0727cb1e"
+      },
+      {
+        "name": "recovery_startup",
+        "script": "tests/verify_recovery_startup.py",
+        "report": "recovery-startup-verification.json",
+        "timeout": 300,
+        "exit": 0,
+        "elapsed_s": 103.3361834,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\03-recovery_startup",
+        "passed": true,
+        "report_sha256": "8a22459ea28c9ae8326885f36c5e3624a35fc78909a457ed1544cc1c691ad811"
+      },
+      {
+        "name": "recovery_history",
+        "script": "tests/verify_recovery_history.py",
+        "report": "recovery-history-verification.json",
+        "timeout": 300,
+        "exit": 0,
+        "elapsed_s": 110.4207313,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\04-recovery_history",
+        "passed": true,
+        "report_sha256": "f1a974415380eb5e8cd215c118d80b8a402a594fe77f283d54f361b4e5c065f1"
+      },
+      {
+        "name": "recovery_schedule",
+        "script": "tests/verify_recovery_schedule.py",
+        "report": "recovery-schedule-verification.json",
+        "timeout": 180,
+        "exit": 0,
+        "elapsed_s": 20.4497847,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\05-recovery_schedule",
+        "passed": true,
+        "report_sha256": "2066cd58970da714c418a5949dc6644f89d90c05f3a96d2700224a6f0c1492aa"
+      },
+      {
+        "name": "recovery_preview",
+        "script": "tests/verify_recovery_preview.py",
+        "report": "recovery-preview-verification.json",
+        "timeout": 180,
+        "exit": 0,
+        "elapsed_s": 10.1935544,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\06-recovery_preview",
+        "passed": true,
+        "report_sha256": "a0e249f4c6bbd91e4ac2a42ed13a219ec64c45c1642449ac5ad96378d967bb1d"
+      },
+      {
+        "name": "home",
+        "script": "tests/verify_home.py",
+        "report": "home-verification.json",
+        "timeout": 240,
+        "exit": 0,
+        "elapsed_s": 18.7982975,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\07-home",
+        "passed": true,
+        "report_sha256": "c24aff84c4eea8ad00883e7d6a25d5f77ed992fd1e5a149c53fca144ecd014b0"
+      },
+      {
+        "name": "tutorials",
+        "script": "tests/verify_tutorials.py",
+        "report": "tutorials-verification.json",
+        "timeout": 260,
+        "exit": 0,
+        "elapsed_s": 23.8185199,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\08-tutorials",
+        "passed": true,
+        "report_sha256": "fad8247373a870090a1ed98579c33cbaceaad2a419365f556bcefcfe9231b75c"
+      },
+      {
+        "name": "first_movie",
+        "script": "tests/verify_first_movie.py",
+        "report": "first-movie-verification.json",
+        "timeout": 300,
+        "exit": 0,
+        "elapsed_s": 42.1299125,
+        "case": "output\\remaining-scopes-last9-20261113T004343184\\09-first_movie",
+        "passed": true,
+        "report_sha256": "5412d400223d6dc96aefd47cb46a67faa956285cfeeb9526f62efeaa2555dedc"
+      }
+    ],
+    "all_requested_scopes_passed": true,
+    "source_unchanged": true,
+    "finished_ns": 1794548980366160600
+  },
+  "state_sha256": "80fa57f522e0721ba1b9ab034cb50be303a14ac24de209160c92ece21a648371",
+  "source_before_sha256": "82c24ac2d6d11d2d6d1bc4ae17b67df763156368b5f669941a0fb7994008e149",
+  "source_after_sha256": "82c24ac2d6d11d2d6d1bc4ae17b67df763156368b5f669941a0fb7994008e149",
+  "exact_source_maps_equal": true,
+  "elapsed_seconds": 356.9717828,
+  "coordinator": {
+    "pid": 3720,
+    "creation_utc": "2026-11-13T05:43:43.1971537Z",
+    "authoritative_host_check_after_terminal_receipt": "No same PID remained; parent-child query also empty.",
+    "separately_captured_exit_code": null,
+    "stdout_pass_lines": 9,
+    "stderr_bytes": 0
+  },
+  "reports": [
+    {
+      "name": "drawing_transform",
+      "report_sha256": "6c2f34b1249ba588e7baf28be59d1fb99105421fec701d60010c874ecceb48b3",
+      "count_fields": [
+        {
+          "at": "$",
+          "checks": 34,
+          "failures": 0
+        },
+        {
+          "at": ".results[0]",
+          "checks": 11,
+          "failures": 0
+        },
+        {
+          "at": ".results[1]",
+          "checks": 34,
+          "failures": 0
+        },
+        {
+          "at": ".results[2]",
+          "checks": 3,
+          "failures": 0
+        },
+        {
+          "at": ".domain",
+          "checks": 11,
+          "failures": 0
+        }
+      ],
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\drawing-transform\\1794548623468910500/render_1794548639_15426015_0/movie.mp4",
+      "video": null,
+      "audio_onset": null,
+      "native_models": null,
+      "writer_abrupt_exit_verified": null
+    },
+    {
+      "name": "recovery_identity",
+      "report_sha256": "0262363f3ba8c1072cccc555b42530201acd4892934773e155b8de8e0727cb1e",
+      "count_fields": [
+        {
+          "at": "$",
+          "checks": 47,
+          "failures": 0
+        }
+      ],
+      "movie": null,
+      "video": null,
+      "audio_onset": null,
+      "native_models": null,
+      "writer_abrupt_exit_verified": null
+    },
+    {
+      "name": "recovery_startup",
+      "report_sha256": "8a22459ea28c9ae8326885f36c5e3624a35fc78909a457ed1544cc1c691ad811",
+      "count_fields": [
+        {
+          "at": "$",
+          "checks": 147,
+          "failures": 0
+        },
+        {
+          "at": ".cases[0]",
+          "checks": 13,
+          "failures": 0
+        },
+        {
+          "at": ".cases[1]",
+          "checks": 12,
+          "failures": 0
+        },
+        {
+          "at": ".cases[2]",
+          "checks": 12,
+          "failures": 0
+        },
+        {
+          "at": ".cases[3]",
+          "checks": 12,
+          "failures": 0
+        },
+        {
+          "at": ".cases[4]",
+          "checks": 12,
+          "failures": 0
+        },
+        {
+          "at": ".cases[5]",
+          "checks": 7,
+          "failures": 0
+        },
+        {
+          "at": ".cases[6]",
+          "checks": 7,
+          "failures": 0
+        },
+        {
+          "at": ".cases[7]",
+          "checks": 7,
+          "failures": 0
+        },
+        {
+          "at": ".cases[8]",
+          "checks": 13,
+          "failures": 0
+        },
+        {
+          "at": ".cases[9]",
+          "checks": 7,
+          "failures": 0
+        },
+        {
+          "at": ".cases[10]",
+          "checks": 12,
+          "failures": 0
+        },
+        {
+          "at": ".cases[11]",
+          "checks": 7,
+          "failures": 0
+        },
+        {
+          "at": ".cases[12]",
+          "checks": 7,
+          "failures": 0
+        },
+        {
+          "at": ".cases[13]",
+          "checks": 12,
+          "failures": 0
+        },
+        {
+          "at": ".cases[14]",
+          "checks": 7,
+          "failures": 0
+        }
+      ],
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\recovery-startup\\1794548651043634900/render_1794548674_5975093_0/movie.mp4",
+      "video": null,
+      "audio_onset": 1.0000416666666667,
+      "native_models": 5,
+      "writer_abrupt_exit_verified": true
+    },
+    {
+      "name": "recovery_history",
+      "report_sha256": "f1a974415380eb5e8cd215c118d80b8a402a594fe77f283d54f361b4e5c065f1",
+      "count_fields": [
+        {
+          "at": "$",
+          "checks": 27,
+          "failures": 0
+        },
+        {
+          "at": ".startup_cases[0]",
+          "checks": 12,
+          "failures": 0
+        },
+        {
+          "at": ".startup_cases[1]",
+          "checks": 12,
+          "failures": 0
+        },
+        {
+          "at": ".startup_cases[2]",
+          "checks": 12,
+          "failures": 0
+        }
+      ],
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\recovery-history\\1794548754387704100/render_1794548829_57474376_0/movie.mp4",
+      "video": null,
+      "audio_onset": 1.0000416666666667,
+      "native_models": 5,
+      "writer_abrupt_exit_verified": null
+    },
+    {
+      "name": "recovery_schedule",
+      "report_sha256": "2066cd58970da714c418a5949dc6644f89d90c05f3a96d2700224a6f0c1492aa",
+      "count_fields": [
+        {
+          "at": "$",
+          "checks": 41,
+          "failures": 0
+        }
+      ],
+      "movie": null,
+      "video": null,
+      "audio_onset": null,
+      "native_models": null,
+      "writer_abrupt_exit_verified": null
+    },
+    {
+      "name": "recovery_preview",
+      "report_sha256": "a0e249f4c6bbd91e4ac2a42ed13a219ec64c45c1642449ac5ad96378d967bb1d",
+      "count_fields": [
+        {
+          "at": "$",
+          "checks": 25,
+          "failures": 0
+        }
+      ],
+      "movie": null,
+      "video": null,
+      "audio_onset": null,
+      "native_models": null,
+      "writer_abrupt_exit_verified": null
+    },
+    {
+      "name": "home",
+      "report_sha256": "c24aff84c4eea8ad00883e7d6a25d5f77ed992fd1e5a149c53fca144ecd014b0",
+      "count_fields": [
+        {
+          "at": "$",
+          "checks": 34,
+          "failures": 0
+        },
+        {
+          "at": ".startup[0]",
+          "checks": 6,
+          "failures": 0
+        },
+        {
+          "at": ".startup[1]",
+          "checks": 6,
+          "failures": 0
+        }
+      ],
+      "movie": null,
+      "video": null,
+      "audio_onset": null,
+      "native_models": null,
+      "writer_abrupt_exit_verified": null
+    },
+    {
+      "name": "tutorials",
+      "report_sha256": "fad8247373a870090a1ed98579c33cbaceaad2a419365f556bcefcfe9231b75c",
+      "count_fields": [
+        {
+          "at": ".results[0]",
+          "checks": 52,
+          "failures": 0
+        },
+        {
+          "at": ".results[1]",
+          "checks": 5,
+          "failures": 0
+        }
+      ],
+      "movie": null,
+      "video": {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "48"
+      },
+      "audio_onset": null,
+      "native_models": null,
+      "writer_abrupt_exit_verified": null
+    },
+    {
+      "name": "first_movie",
+      "report_sha256": "5412d400223d6dc96aefd47cb46a67faa956285cfeeb9526f62efeaa2555dedc",
+      "count_fields": [
+        {
+          "at": ".results[0]",
+          "checks": 79,
+          "failures": 0
+        },
+        {
+          "at": ".results[1]",
+          "checks": 8,
+          "failures": 0
+        }
+      ],
+      "movie": null,
+      "video": {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1920,
+        "height": 1080,
+        "coded_width": 1920,
+        "coded_height": 1088,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 40,
+        "color_range": "tv",
+        "color_transfer": "iec61966-2-1",
+        "color_primaries": "bt709",
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 4,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/12288",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 24576,
+        "duration": "2.000000",
+        "bit_rate": "435620",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "48",
+        "nb_read_frames": "48",
+        "extradata_size": 50,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]",
+          "encoder": "Lavc61.33.100 libx264"
+        }
+      },
+      "audio_onset": 80043,
+      "native_models": null,
+      "writer_abrupt_exit_verified": null
+    }
+  ],
+  "observed_clean_private_receipts": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\drawing_transform_smoke_3324add17ff54981977418554c67b7a0.json",
+      "sha256": "84b9459449acd5dd21e47b9027221d05366e45a1c4443b703ffb8b196550ce59",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\drawing_transform_smoke_6c71480586f4407e8bd3822bc6ad27c0.json",
+      "sha256": "db5e2d3d74dd07ed61010187f068616377165d165705e91d656e111d65e1e83f",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\first_movie_smoke_366bc8d2428a4177aa6ee9d392796f3d.json",
+      "sha256": "d8e3b22f0ae0d8e8be38aba08c3ce3ce094c7079f31a457ce79e478b5b4d2d4e",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\first_movie_smoke_819a49d3525c4cbc9d84cdd9033001f7.json",
+      "sha256": "ba4dd9d17ac9ad49165c8a9a52eb2159449e351e8188d6e3c38a733263e50a78",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\home_smoke_77c24a45a75a471e8a178035b95f750c.json",
+      "sha256": "14a2b0348445def5ed6e267fefe7a81df1659dc2be96770c1a7d15da5643f248",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\recovery_history_smoke_9047e690c32641099ece626205a092be.json",
+      "sha256": "b09c2db05dd05c357b18a0a69d06e89fef190cd5b0e50d9e6e452d45b29aa840",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\recovery_preview_smoke_cd3271b40bc840b78092d0cc9e0113be.json",
+      "sha256": "31c78f556c761572b73b4a041be631b2185d66348cc823cd57f93f0cdc8cfe39",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\recovery_schedule_smoke_75a11f47106e4b9ead354d002ca6d70c.json",
+      "sha256": "ed674e21b83772b77fdd65d1903b6a73bb1b50f42cf6616a97203ae657450cb3",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\recovery_startup_writer_d453bcf37fc64615b205866cd61e9709.json",
+      "sha256": "4e911bdc7395a2d3c0c80ebb90134149aee6481b4ba0be921a194b9b9e30c3aa",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_002200d73ad04a7f96a84bafa6da50ba.json",
+      "sha256": "1b0ec9cdbe429f3f33143ec16b41f73fd1bf41c842dadf9e27b8e23bf2a2b6c8",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_085f74496a434429b47bdb079f331ecb.json",
+      "sha256": "5399ef4b4b179708e434aac7bf72462a559eec329a7163bb2e5507661942fbc6",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_0b886d36d91748ea8ff72635ed105fbd.json",
+      "sha256": "1aafc2848f13643e9fdad089f0aaf8b3e60f2be66cac3336ae8c8ab1e670e5d7",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_0eb7a4daba5441829a97a9f2df9d1f42.json",
+      "sha256": "ea61f73f2deeb336f566dd84619688a431132c97e3ad14c17693bdec12955df2",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_29089030f3374f3790f22f5bcca5a70e.json",
+      "sha256": "19500a04088d5ebc47e849fff0fe0f9954ad32a6aeb45c3a84bef979cfba8a4c",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_2a7af85d384e4aa9870679e004c0f07e.json",
+      "sha256": "e29c7612c336c583fe74c03d207225aba0db04d57c52382bdd6b45cc07d68910",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_3431c3077e8d4c4dab5f46c3cc522503.json",
+      "sha256": "61801cc4a06f735e18c07ae6a08bf5a00a2088faa5b92acaa007ae7f4cfcaa21",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_3678bde19f4d45c0b77cadc3db1128c0.json",
+      "sha256": "82bbfad51f597f4e9ce21a70570c465352263614a38e8f029f1a9b0669d14a15",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_4d1113df7c624c6fbb2552e0f4a06536.json",
+      "sha256": "f451cb261e8f1617ca0a7a6e00461bb4cd242bb286afd7aebda328eb85543309",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_5031f5ca520f4a39b6e092ed04189c70.json",
+      "sha256": "91600ce95dbf50d1e8dea9be08905088bdec0fed3bb181879487df3415b47f0b",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_55461849302f472fafe1c22ad7b7755b.json",
+      "sha256": "1e352b8e1d84a0badd8064423a70f1b31e8db24cbb71b6b4c287579d7331282c",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_847de19e57264d6eaa31f6709002961d.json",
+      "sha256": "3694da6cadcabe480192a09c02216abd338395ecfcc63b1699831857d4843502",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_88adb94bafc24188b3e0a92a74ef472c.json",
+      "sha256": "26e3b7145d58a75076ce507939ac118f2f0937d583aabe5368e5530d0d78c17d",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_97eb2dfc265a499fb0176d7982805592.json",
+      "sha256": "5c8a924d50d427ed78179d56a6aa201b2914eab8a245b8b93c8947ec2d142c26",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_9915cec44d494a208cd808d4282d91db.json",
+      "sha256": "6187e776bcd8ff8730a5e3146fc5f49fea2817a2a75eeb5e6f8b1d7c42506b1b",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_a0e333b3524b45d6aafdf3489241d855.json",
+      "sha256": "bebfb8824afb306758fc8d317dc825e64d6e5d703dde3d800587d90046aaf24a",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_bc05e9650970410a83d133891cdf8361.json",
+      "sha256": "5ecbbfc4d0d5a0d2313fafb1f73940c10b13411ba31283ef565a5b8f18f2c19c",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_c5f3fc3403aa4aeeb103d170d777a6ee.json",
+      "sha256": "60f2fc12d114f54d7e8e3c48f06990711ae7dfc0b5c2b5c6d788071a2c7039be",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_e11077ea0a3549b6a2614d25582864ee.json",
+      "sha256": "ea1e79644e9e7717ef61b1ccd0ff78510f2d9d35628c2a4f6f57f388d82a7298",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_fc2e2205df554be2877974410ab8209f.json",
+      "sha256": "691a73ff3e09edddb7eb168a60ada65b5e8152447a165505dcddc81bf811792c",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\tutorial_smoke_1038f13120594cc2a185e6e6050e0d88.json",
+      "sha256": "83df1d129942e47430ab1ea44f565d27658709af38b8652ed7a0eabb5390d043",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\tutorial_smoke_ca424632cd3044da9f7a5b35cc3ea450.json",
+      "sha256": "feda44e16fa96138061359b6fc4d79bfaa64cd4a6d7cf2cbc166a768178d090d",
+      "exit": 0,
+      "child_desktop_confirmed": true,
+      "foreground_child_observed": false,
+      "job_closed": true,
+      "desktop_closed": true
+    }
+  ],
+  "scope": "Nine canonical wrappers after drawing_selection only. Previous six passes and failed seventh remain at2904; corrected picker tests are separate. This does not compose into a successful full aggregate. No human/learner/device/clean-install claim.",
+  "next": "Integrate phase1 local wind with its checked driver and reconstructible native prerequisites; run focused existing regressions and full default suite from stable final source.",
+  "ledger_status_unchanged": "55/62 acceptance;52/54 implementation"
+}

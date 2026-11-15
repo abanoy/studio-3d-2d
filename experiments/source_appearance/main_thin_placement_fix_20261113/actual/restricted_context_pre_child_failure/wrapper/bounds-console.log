@@ -1,0 +1,23 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+PASS normal clearance matches the established inset: 0.01
+PASS thin per-axis inset stays nonnegative without expansion: 0.01
+PASS thin clearance preserves center and requested thick-axis margins: 0.01
+PASS collapsed bounds still detect strictly occupied space: 0.01 / (2.0, 0.0, 3.0)
+PASS collapsed bounds still detect strictly occupied space: 0.01 / (0.0, 2.0, 0.0)
+PASS collapsed bounds still detect strictly occupied space: 0.01 / (0.0, 0.0, 0.0)
+PASS normal clearance matches the established inset: 0.02
+PASS thin per-axis inset stays nonnegative without expansion: 0.02
+PASS thin clearance preserves center and requested thick-axis margins: 0.02
+PASS collapsed bounds still detect strictly occupied space: 0.02 / (2.0, 0.0, 3.0)
+PASS collapsed bounds still detect strictly occupied space: 0.02 / (0.0, 2.0, 0.0)
+PASS collapsed bounds still detect strictly occupied space: 0.02 / (0.0, 0.0, 0.0)
+PASS zero or negative clearance never expands the imported bounds
+PASS boundary-only contact retains the existing open intersection semantics
+PASS authored thin/planar GLB fixture writes without native conversion
+PASS thin/planar candidate search retains occupied actor fallback: false
+PASS thin/planar candidate search retains occupied wall fallback: false
+PASS authored thin/planar GLB fixture writes without native conversion
+PASS thin/planar candidate search retains occupied actor fallback: true
+PASS thin/planar candidate search retains occupied wall fallback: true
+IMPORT_PLACEMENT_BOUNDS {"checks":20,"failures":0,"thin_planar_actual_plan":true}

@@ -40,7 +40,7 @@ func run() -> void:
 	check(Fixture.create(asset)==OK,"authored independent skin branches export a real test GLB")
 	var plans: Array=[{"label":"Authored","source":asset,"metadata":{},"left":"left","right":"right"}]
 	plans.append_array(JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("native-plans.json"))))
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	var metrics:={};var movie:=""
 	for plan in plans:

@@ -1,0 +1,1463 @@
+{
+  "format": "has_wind_owned_cpu_receipts_1",
+  "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-draft-prototype-20261113-next\\cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5",
+  "test_count": 16,
+  "recorded_job_count": 24,
+  "records": [
+    {
+      "test": "test_cancellation_uses_exact_current_owner_and_never_admits",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\006c16fb24e6\\jobs\\e9f94431a594447680cf0e74f0517d50",
+      "outcome": {
+        "error": "cancelled",
+        "exit": 3221225786,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279881739820",
+          "generation": 1,
+          "nonce": "938ce67b96ad424ea8ac744f3957648b",
+          "pid": 26688
+        },
+        "pipe_bytes": [
+          0,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "cancelled"
+      },
+      "outcome_sha256": "8f5ed2a86eda6445b9512d4fdbb4f4f24f9a04bc79fbaf126ddfb55134ee6d1a",
+      "launch_sha256": "6225a0cae0e135301fa296eec759d44bbd3852add626f33bfd4fa053bc50b593",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_receipt_change_after_worker_publication_is_refused",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\2549b6984f62\\jobs\\f4c097aea40e4c2eabcd86f87d9c49bd",
+      "outcome": {
+        "error": "ValueError: Published receipt changed after trusted worker completion",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279899509833",
+          "generation": 1,
+          "nonce": "52a9117a81204f77b0b6824dbcc5156c",
+          "pid": 25592
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "57123ddeaf4632662ee03f03cbff4ff58ef0c659e07f7f4ccec2c62cd95a7777",
+      "launch_sha256": "457ab8930dba46a042f3dc9c9e1b2e07f05335eadf915ce97334887c62f582ef",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "ce3930784c651797463836289f322f611b6bcec5abf8eaf06243dfccfd8986a3"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_real_child_exit_pipe_identity_and_hidden_candidate",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\360c448f32f9\\jobs\\c98156eb254141168292c602efb81e61",
+      "outcome": {
+        "error": "",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279896320942",
+          "generation": 1,
+          "nonce": "fbdb569262b04b81a30c5341a6d806a2",
+          "pid": 21312
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "prepared_hidden"
+      },
+      "outcome_sha256": "ca5f14af00e861dfe1fa5e70d83ba97c5d7a73e5ae8f961ff817f1eab1ad8c04",
+      "launch_sha256": "68b051a76b96845bcd29ec022f323dc0f8fe993954a224fbacd0dd7dcaceefab",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "8b62dbfc00fdcad030414a0305f2482169d4f55df95931ce337cb13f67401914"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_late_old_generation_and_stale_cancel_do_not_affect_replacement",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\563830d9410e\\jobs\\7c5c2e6c767c4235a07aa847e43877f7",
+      "outcome": {
+        "error": "draft generation changed",
+        "exit": 3221225786,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279886593414",
+          "generation": 1,
+          "nonce": "d752b1c0598942ce9782bad3df86aace",
+          "pid": 4788
+        },
+        "pipe_bytes": [
+          0,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "cancelled"
+      },
+      "outcome_sha256": "c68256b0d99a3c6f071e9dba7ea56f355297a65664ad0ed9951d0168681c3da6",
+      "launch_sha256": "ec539a5f3622d4647e54b4029e6c330c5779443b081b5023fab3fe66d70cd36a",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_late_old_generation_and_stale_cancel_do_not_affect_replacement",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\563830d9410e\\jobs\\dc26251cc5334ba1b72509f0735bad2b",
+      "outcome": {
+        "error": "",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279887064480",
+          "generation": 2,
+          "nonce": "9a999f1ea8474106a848ccbb68b1d50c",
+          "pid": 27504
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "prepared_hidden"
+      },
+      "outcome_sha256": "6d91b47d15b035f9f86dba359ddb865952085f08b8dd4b57a34abcb7a0b8c7fd",
+      "launch_sha256": "3950e46d65f8850c580f82f5842f5ed8bf820ad9a52e9b8d89c3785776f63c46",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "74a1b4bd3ef20ae34fe045ef5d171a3b7c058930e635ed05c502d8adcf451ec2"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_assignment_failure_sends_no_start_and_reaps_child",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\61576cd7ca65\\jobs\\5fcf191decb842baae1aa6c3d4856e0a",
+      "outcome": {
+        "error": "Owned worker launch failed",
+        "exit": 2,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279877206817",
+          "generation": 1,
+          "nonce": "65529533e6c84e31a28b7ea23646e444",
+          "pid": 21892
+        },
+        "pipe_bytes": [
+          0,
+          72
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "b3b1fdee979fd39dbcc240344b98afb343c2403eb231737fb8c17c3cf4417182",
+      "launch_sha256": null,
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 72,
+          "sha256": "362bf9daa6f029306447b094a65d997620633c946dc42ee4e9c3623dfc30c66e"
+        }
+      ]
+    },
+    {
+      "test": "test_source_stamp_change_after_worker_completion_is_refused",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\88244db8abcc\\jobs\\5720c13f52ec4a55860f745484ccb53d",
+      "outcome": {
+        "error": "ValueError: The original actor/draft/source changed before import",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279906459146",
+          "generation": 1,
+          "nonce": "e9410985d8174484a4dbdb994b8f76af",
+          "pid": 27316
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "6bc9be5402e3404ac18b46882fec9b91e2253ab37fb117366575f9fca1a95f49",
+      "launch_sha256": "c2ce41be5c63ece90f0b9e08451f01bcb7df260be1f712e4e90a6edf15a2ea43",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "8444b6b9350ccb5f0d0ff60523441965c465470110e78fa75c3cc56ebf43bf4f"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_valid_completion_then_nonzero_exit_cannot_admit",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\8df653e683a7\\jobs\\08e7b25d9ae844d5bac3d61d282bef6f",
+      "outcome": {
+        "error": "RuntimeError: Owned CPU worker exited 7",
+        "exit": 7,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279932828623",
+          "generation": 1,
+          "nonce": "3f57d9fa1fb4487e92b96ebfb2f270a5",
+          "pid": 26556
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "2b8f540ed23f716b9b8d6d6296456aa162fef279e0338a66a0150cdae8c54098",
+      "launch_sha256": "1ca8d893ff3f8e02a4974915e685e486106021eca9d5f3f2827404c9a3d33305",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "8ed7d93b181639905c4325f2eae891e41372e165e2f894b7ffa5d984848c05fe"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_job_close_failure_refuses_admission_and_can_finish_cleanup",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\9684744b4e6b\\jobs\\8aabb605c225421585bb8744ceaa615f",
+      "outcome": {
+        "error": "RuntimeError: CPU close failure",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": false,
+        "owner": {
+          "created_100ns": "134390279883466701",
+          "generation": 1,
+          "nonce": "21c72b9df2f34226b458b7a94d2d8ce8",
+          "pid": 25452
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "80e325c40f3dfaf1fc45bfcd6e4b2d52c2d537f4c443ba1f42fed2e89d8d7ebd",
+      "launch_sha256": "9ab1aadcee93fba815fe15ca70f3379ece834fff25d2432ab0e026b5979c3a4e",
+      "cleanup_after_failure": {
+        "error": "RuntimeError: CPU close failure",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279883466701",
+          "generation": 1,
+          "nonce": "21c72b9df2f34226b458b7a94d2d8ce8",
+          "pid": 25452
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "cleanup_after_failure_sha256": "b1e569b224bb942460f506d4901aa12c5c3e225644a73bba9287b75f71ea56f2",
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "ea28094dd105bb4299cb1fb10ba3a796d01abd0dddd6cdf3aef669a026a2a82a"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_buffered_valid_completion_then_hang_is_cancelled",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\a31fbdf9f87c\\jobs\\9ad4903f17c24fdaa8f1ecddf21502f5",
+      "outcome": {
+        "error": "cancel after buffered completion",
+        "exit": 3221225786,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279878771119",
+          "generation": 1,
+          "nonce": "d1c9460b5ec74655bfcb40929c324697",
+          "pid": 18744
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "cancelled"
+      },
+      "outcome_sha256": "0c5e15a6491c78e0aaa3cf99be3828abcc5fa84595bbe02ff0dcbd142bca9144",
+      "launch_sha256": "a6d0b4f382ff2bf7806b8a682085fb6acd0188d8516b1e0281e509baceaa7736",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "6fbfe32f647124b09af60f32d91c88b07b9c1f252839321100cf675358cae3fc"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_context_change_cancels_owned_child",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\ae78cf0f7424\\jobs\\c2e81bb6ce28496783875c420be7b0a8",
+      "outcome": {
+        "error": "original context changed",
+        "exit": 3221225786,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279882447162",
+          "generation": 1,
+          "nonce": "84c8b01ee00c4475991faca202d690da",
+          "pid": 15272
+        },
+        "pipe_bytes": [
+          0,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "cancelled"
+      },
+      "outcome_sha256": "3e9c4dddbcf19d7b1bef1f1a1b3f1c8ac7ac75de75974b8ed7a44300c63d9c1d",
+      "launch_sha256": "182f37542f7de7f37b022e8f3ddc77e41a2b840300810954d9e39cd347f3f41f",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_timeout_of_gated_worker_closes_job",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\bd740eefa955\\jobs\\5997d6a86559429eb891be6a8722d1e7",
+      "outcome": {
+        "error": "owned worker timed out",
+        "exit": 3221225786,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279931539726",
+          "generation": 1,
+          "nonce": "d868b20b04d1499c89e6d97649657332",
+          "pid": 13292
+        },
+        "pipe_bytes": [
+          0,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "cancelled"
+      },
+      "outcome_sha256": "f164f889b0b238a420b357b415d454b9baf546aff5e9d8855e0d6b5b4a558820",
+      "launch_sha256": "92ae8c8da7989096e5ecbf7fc4ddc0cfd600b6759962eed9caf93606409961d4",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_source_hash_drift_before_admission_is_refused",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\dd3d243d11eb\\jobs\\d1b38f8f6bf6497182e5bb06a766759d",
+      "outcome": {
+        "error": "ValueError: Launch-bound worker/protocol source changed before admission",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279903163153",
+          "generation": 1,
+          "nonce": "66e8115dff414af99a46e8e1fd1c17a4",
+          "pid": 25480
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "f95722ab682169c6c4a01e4d244a74de8056a1b700c4882de7f2ce7da5ab3957",
+      "launch_sha256": "4f74cd70ac80dd3c14532407657c3e81a4b3a771ba0db15d66840806fe441150",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "2cf54a8a5f857141a303818021966b2aebb266df87b4d79895ea83422c692c42"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\181f6f9c0f064d439c69aab7277626bd",
+      "outcome": {
+        "error": "ValueError: Expected exactly one bounded completion frame and EOF",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279911193799",
+          "generation": 2,
+          "nonce": "013960970d164bb196bd309ccedc3f6e",
+          "pid": 13128
+        },
+        "pipe_bytes": [
+          2058,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "98f6216e3bf654f1b78d460a21ab83f415d304720be43a74c99eb632830c0083",
+      "launch_sha256": "dc64cae9894cd519092d5736f6b8c7bc8c54345053240b8a12d78832c4bf0cbf",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 2058,
+          "sha256": "b133d45d17080146bcf56cca1c515e55a8e8b7d01c7eac3e5e4f2540650079be"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\1e9c9e0ce97d4094a6ea88b80655a60e",
+      "outcome": {
+        "error": "RuntimeError: Owned worker produced unexpected diagnostics",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279928930498",
+          "generation": 18,
+          "nonce": "1a6d37783c7a40e6a5200f0ce5eba965",
+          "pid": 24076
+        },
+        "pipe_bytes": [
+          1030,
+          23
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "9312f3e882b71cb8ee11984c7e420ae1413ff4e8645ec1e9b463dc58b9aa9188",
+      "launch_sha256": "9c3216b26d96d5584c84785ff8d9ed790e21a5da239b6d24382e7b9bc11e1fcc",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1030,
+          "sha256": "ec7d9613149385b227c0736f2af857900a28a5fbdd9ff48704abda0818b207c8"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 23,
+          "sha256": "21a86354f30f51141e2dfa2159225bcdd7bbd1b23949705be08cdd929861261d"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\2e69eff4099b4d489e7c609b556f880f",
+      "outcome": {
+        "error": "owned completion pipe limit/error",
+        "exit": 3221225786,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279927574829",
+          "generation": 16,
+          "nonce": "851c507bd1ee4537832541f735bbb9df",
+          "pid": 27368
+        },
+        "pipe_bytes": [
+          0,
+          300000
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          true
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "cancelled"
+      },
+      "outcome_sha256": "c0cec95c01881834137983e6e2f5f6d6e81009e044f9b208a83a3559de1cad0d",
+      "launch_sha256": "c802488e47a53384285d0febc9592d2bd0eac1ae50ad263756cac0dbca1620e2",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 262144,
+          "sha256": "ce025cafda7f72a18470aa22f1649d4d3bcba46d50da01a878e6191704844c89"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\387ffa80ed954ea88307485925a7956f",
+      "outcome": {
+        "error": "ValueError: Expected exactly one bounded completion frame and EOF",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279916555520",
+          "generation": 6,
+          "nonce": "095f8038ee804cea9c1f3a73e691b26d",
+          "pid": 13352
+        },
+        "pipe_bytes": [
+          1030,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "e07ea77d7bab5e237129a82f10dff78bc09bd3500a06bd5558b36c9ed30f1693",
+      "launch_sha256": "708152621377e240c377448fc02167cd9e439fd49343e69d09bd73a867b4336a",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1030,
+          "sha256": "edd6704269e2aebf60198fc934bfd55a567cd7099aa14d2453e528d51de46b74"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\39ad1671b13a4e5eb4ade3a5d6cbf1d0",
+      "outcome": {
+        "error": "ValueError: Completion has a foreign child incarnation/source identity",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279921549383",
+          "generation": 10,
+          "nonce": "3964ae618d474219bcb3fa89336dea00",
+          "pid": 11464
+        },
+        "pipe_bytes": [
+          1013,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "c4befb83cbf53e4ed8e5b875923f0525dc0a1254728030787ef7257cf54581f2",
+      "launch_sha256": "873947e5f32e4a557ad239afe30dbe8852e76fbbafd2f8fbfa99768cef4a479e",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1013,
+          "sha256": "841854b4cff84a413249f1c5db97bd7f20e11075e6027ea11785261046415076"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\3c6b332a6e5147219b71b24b4a93e958",
+      "outcome": {
+        "error": "ValueError: Completion has a foreign child incarnation/source identity",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279919053060",
+          "generation": 8,
+          "nonce": "a361158b3e0b4e2ca35f439d6ca7ed32",
+          "pid": 26320
+        },
+        "pipe_bytes": [
+          1029,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "c1850a7e62c48b2de36393fc2461142ccc29779e6413d379117363bb1a35da7e",
+      "launch_sha256": "9957afd75782ca05ece8f62defc354d6dcfcf0f1cb03734adeb7b7f3370b307b",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1029,
+          "sha256": "24c7004140eddec25dfe8641497f0130ef19e191f0fe4f94e50034a799faa0ee"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\b08686ab65e641f4b91229d6f3bf7fa7",
+      "outcome": {
+        "error": "ValueError: Completion belongs to a late/different draft generation",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279923921287",
+          "generation": 12,
+          "nonce": "4beb0b7b24f4449c9788d76900a196ef",
+          "pid": 10388
+        },
+        "pipe_bytes": [
+          1030,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "15d703f87482cadda19df4a8b994472ddba9702af95e40a7a8cbfa473d50dbe4",
+      "launch_sha256": "956f0ebb66d8c2bf5698f284695de9904315aa0fc0ae9c7f65392e9b497aac4b",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1030,
+          "sha256": "588922221d640fa7ab4b5a7f76b45ceef758d983810ac18781081eaa579aa8a3"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\b96ff2fbf6c7437f920e44c08efb3503",
+      "outcome": {
+        "error": "owned completion pipe limit/error",
+        "exit": 3221225786,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279926308578",
+          "generation": 14,
+          "nonce": "18a9a9b5a3d445f2ae310845dff7402b",
+          "pid": 24196
+        },
+        "pipe_bytes": [
+          20000,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          true,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "cancelled"
+      },
+      "outcome_sha256": "2ac6f31c8fe32ec3348bd3944bb33fe79384c0919afc2eac2b65ca010b6510f1",
+      "launch_sha256": "6f6742019ccbfd1746477e57ca68d35669f75a474fd7f5f69e37e2022cd58a68",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 16384,
+          "sha256": "f26cdf9615da78694cf00f85a5f15c2ca7919654d28d73ac42763a44f39cbca3"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_stdout_framing_identity_and_both_pipe_caps_fail_closed",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e4ef5f5646a2\\jobs\\c56264ad3f2f44f9af40cd7218cb4235",
+      "outcome": {
+        "error": "ValueError: Expected exactly one bounded completion frame and EOF",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279913976179",
+          "generation": 4,
+          "nonce": "39d62b8a07f64d438ad83fc8e217f196",
+          "pid": 784
+        },
+        "pipe_bytes": [
+          1035,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "f4c5c7ca80a66662f8685ffde2220ee16e0cf86fe817c3c9d8872444261f289c",
+      "launch_sha256": "3269c818ddea5d87aafddb4095f7d641aea88a65bae2bca34f2d3d52d1599003",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1035,
+          "sha256": "bc8fe8ef9f116c5e3d362fa531ae0379834e002f27f7c4e4a5342a2efc888337"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_python_fingerprint_drift_before_admission_is_refused",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\e63ffe540e56\\jobs\\f6f45dbc49a5423fa61ba208c0a456f0",
+      "outcome": {
+        "error": "ValueError: Approved Python fingerprint changed before admission",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279893510567",
+          "generation": 1,
+          "nonce": "d085c6b31232466482624aecd9123164",
+          "pid": 2708
+        },
+        "pipe_bytes": [
+          1028,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "failed"
+      },
+      "outcome_sha256": "7dd24f631cd34daa89c32555e41e0aba5cc3e245399ae978625566c2125b97d2",
+      "launch_sha256": "f3d0ab651e22d944c8011488bd659cacc23972222fb8c7f61f990409a973ec7b",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1028,
+          "sha256": "ebf359292527a53b1ee8c53e2a9c1f27855a8f0cecc1343a02f4a4a2dece5a9d"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "test": "test_one_process_job_blocks_descendant_launch",
+      "job": "cpu-results\\dd5634eaf9d34978b13c53a76b5c1cd5\\fa3e1e85a412\\jobs\\eb82b5789eaf4d8292b5b3e9e3938eda",
+      "outcome": {
+        "error": "",
+        "exit": 0,
+        "format": "has_wind_owned_outcome_1",
+        "job_closed": true,
+        "owner": {
+          "created_100ns": "134390279890079620",
+          "generation": 1,
+          "nonce": "b34a7240d40f4a6fa554170dc519b47e",
+          "pid": 3200
+        },
+        "pipe_bytes": [
+          1028,
+          0
+        ],
+        "pipe_eof": [
+          true,
+          true
+        ],
+        "pipe_overflow": [
+          false,
+          false
+        ],
+        "process_handle_closed": true,
+        "python": {
+          "path": "C:\\Program Files\\Python313\\python.exe",
+          "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+        },
+        "render_admitted": false,
+        "source_sha256": {
+          "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+          "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+          "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+          "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+          "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+          "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+        },
+        "state": "prepared_hidden"
+      },
+      "outcome_sha256": "a11c82e065cf7576c3cf2f3236036d8e03a88b5cff5d043585a7f0c9b6d17d1c",
+      "launch_sha256": "df22b94880f8e0fb90d831183e6f7c32910967a764f5f7002bca362b1feefbc9",
+      "cleanup_after_failure": null,
+      "cleanup_after_failure_sha256": null,
+      "bounded_logs": [
+        {
+          "name": "owned-stdout.log",
+          "bytes": 1028,
+          "sha256": "9d450e7c37783deac0d6c71037b4d1ea92000d0fa7e1fb9140aff130eb2b71aa"
+        },
+        {
+          "name": "owned-stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "scope": "Synthetic CPU fixtures only; no renderer acceptance"
+}

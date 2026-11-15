@@ -1,0 +1,87 @@
+{
+  "format": "has_junko_raw_jiggle_numeric_packet_summary_1",
+  "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+  "native_mdl_bytes": 37644,
+  "native_version": 49,
+  "bones": 69,
+  "rules": 49,
+  "finite_float32_values": 1421,
+  "bone_table": {
+    "offset": 664,
+    "stride": 216,
+    "end": 15568
+  },
+  "observed120byte_prefix_span": [
+    15568,
+    21448
+  ],
+  "pointers_monotonic_in_bone_order": false,
+  "rule_flags_all": {
+    "uint32": 49,
+    "hex": "0x00000031",
+    "known_mask": 127,
+    "unknown_bits": 0,
+    "pinned_reader_names": [
+      "IS_FLEXIBLE",
+      "HAS_ANGLE_CONSTRAINT",
+      "HAS_LENGTH_CONSTRAINT"
+    ]
+  },
+  "float32_groups": [
+    {
+      "rules": 17,
+      "yaw_stiffness": 100,
+      "pitch_stiffness": 100
+    },
+    {
+      "rules": 32,
+      "yaw_stiffness": 50,
+      "pitch_stiffness": 50
+    }
+  ],
+  "other27fields_same_across_all_rules": true,
+  "raw_values_file": {
+    "sha256": "e9665ad604b10932ea6ea7398acafe39ed224dc3be8e37ff287be3786a06dfc6",
+    "bytes": 108266,
+    "mtime_ns": 1794614281236681100
+  },
+  "inert_proposal_file": {
+    "sha256": "80cf4e1d210f630bad7792049eec95ee02752300136a445bdb8dca7e2a13c949",
+    "bytes": 67525,
+    "mtime_ns": 1794614281247687800
+  },
+  "cpu_authored": {
+    "checks": 26,
+    "failures": 0
+  },
+  "independent_review": {
+    "checks_actual": 24,
+    "row_discrepancies": 0,
+    "independent_authored_checks": 26,
+    "additional_refusals": 2
+  },
+  "native_resource_files_preserved": 561,
+  "original_archives_preserved": 5,
+  "sourceio_source_files_preserved": 574,
+  "all_protected_files_preserved": 1153,
+  "independent_protected_bytes_rehashed": 580637628,
+  "runtime_support": "not_implemented",
+  "applied": false,
+  "binding_status": "unattempted",
+  "full_native_rule_layout_verified": false,
+  "proposed_metadata128KiB_budget_met": true,
+  "proposed_metadata_bytes": 67525,
+  "adjacent_full256KiBreport_admission": "UNTESTED",
+  "SourceIO_import_runtime_mutation_converters_GPU_original_writes": false,
+  "limits": [
+    "Pinned reader120byte prefix and exact raw native offsets only; fullrule extension/BOING/other MDL layouts unproven.",
+    "Reader's afterbone names/payloads,nonnegativeoffset,unique-name128rule/4096bone limits are narrow admission policies,not universalnativeformat facts.",
+    "All values preserved; no unit conversion, clamp, runtimebinding, physics mapping, simulation or UI integration.",
+    "SourceIO Bone constructor and pitch field ordering discrepancies are documented,not fixed in approvedruntime."
+  ],
+  "schema_reference": "Historical read-only design packet, copied exact with its originalINDEX renamedSCHEMA_CONTEXT_INDEX; outerINDEX binds all copied files",
+  "date": "2026-11-13",
+  "implementation": "Output-only raw extraction and inert schema; not integrated into Studio",
+  "evidence": "experiments/source_appearance/native_jiggle_values_20261113",
+  "evidence_index_sha256": "1e15e74410cd8d7726bbfc17ce983ee4d658537981b1e5e90e5a931dfd8c9084"
+}

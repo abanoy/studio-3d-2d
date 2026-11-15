@@ -1,0 +1,121 @@
+--- before/tests/wind_review_gpu_common.gd
++++ after/tests/wind_review_gpu_common.gd
+@@ -15,6 +15,7 @@
+ var checks:=0
+ var failures:=0
+ var metrics: Dictionary={}
++var recorded_exclusion_binding:=""
+ 
+ func _initialize() -> void:
+ 	create_timer(300).timeout.connect(func():push_error("Private wind review GPU watchdog");quit(2))
+@@ -40,6 +41,7 @@
+ 	await settled()
+ 
+ func fresh_app(label: String) -> void:
++	recorded_exclusion_binding=""
+ 	app=load("res://main.tscn").instantiate()
+ 	app.recovery_root=folder.path_join(label+"-recovery");app.recent_path=folder.path_join(label+"-recent.json");app.display_prefs_path=folder.path_join(label+"-display.cfg")
+ 	root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
+@@ -71,6 +73,7 @@
+ 	check(declared.get("error","").is_empty() and not declared.get("chains",[]).is_empty(),"source has usable declared secondary chains")
+ 	if recorded_exclusion and declared.get("chains",[]).size()>1:
+ 		var id: String=declared.chains[1].joints[0].binding.id
++		recorded_exclusion_binding=id
+ 		var a:=Model.identity();var b:=Model.identity();var qa:=Quaternion(Vector3.FORWARD,.22);var qb:=Quaternion(Vector3.FORWARD,-.31)
+ 		a.rotation_xyzw=[qa.x,qa.y,qa.z,qa.w];b.rotation_xyzw=[qb.x,qb.y,qb.z,qb.w]
+ 		actor.data.pose_keys=[{"frame":0,"pose":{id:a},"transform":Model.Clips.transform(actor.data),"interpolation":"linear"},{"frame":24,"pose":{id:b},"transform":Model.Clips.transform(actor.data),"interpolation":"linear"}];actor.data.draft_frame=-1
+@@ -125,18 +128,39 @@
+ 
+ func begin_review(running:=true) -> bool:
+ 	var review=app.local_wind_review
++	var source: RefCounted=app.renderer.active_model()
++	var expected_meshes:=owned_source_meshes(source)
++	check(not expected_meshes.is_empty(),"the source has a nonempty independently inventoried owned mesh set")
+ 	review.master.button_pressed=true
+ 	check(review.phase=="warming" and review.candidate!=null,"actual Try a local blow creates one warming candidate")
+ 	if review.candidate==null:return false
+-	var source: RefCounted=app.renderer.active_model()
+ 	check(review.candidate!=source and review.candidate.root.get_parent()==app.renderer.world and not app.renderer.world_runtime.instances.has(review.candidate.data.id),"candidate appears in the existing world without entering the authored model registry")
+ 	check(review.hidden.keys().all(func(mesh):return not mesh.visible),"only the original owned meshes are hidden while the candidate is shown")
++	check(mesh_id_set(review.hidden.keys())==mesh_id_set(expected_meshes) and expected_meshes.all(func(mesh):return not mesh.visible),"the recorded hidden set exactly matches every independently inventoried source mesh")
+ 	check(review.simulation.primary==null and review.private_space.find_world_3d().space!=source.root.get_world_3d().space,"temporary solver has no borrowed primary and owns a separate physics space")
+ 	if running:
+ 		await settled()
+ 		check(review.phase=="running","owned native-frame warm-up reaches running")
+ 		return review.phase=="running"
+ 	return review.phase=="warming"
++
++func owned_source_meshes(source: RefCounted) -> Array:
++	# Independent test inventory: never take the product's hidden list or its
++	# Groups.mesh_nodes result as proof that it found every owned source mesh.
++	var excluded: Array=[];var found: Array=[];var pending: Array=[source.root]
++	for current in app.renderer.world_runtime.instances.values():
++		if current!=source:excluded.append(current.root)
++	while not pending.is_empty():
++		var node: Node=pending.pop_back()
++		if node!=source.root and node in excluded:continue
++		if node is MeshInstance3D and node.mesh:found.append(node)
++		pending.append_array(node.get_children())
++	return found
++
++func mesh_id_set(meshes: Array) -> Dictionary:
++	var result: Dictionary={}
++	for mesh in meshes:result[mesh.get_instance_id()]=true
++	return result
+ 
+ func selected_ids() -> Array:
+ 	var result: Array=[]
+--- before/tests/wind_review_gpu_motion.gd
++++ after/tests/wind_review_gpu_motion.gd
+@@ -9,12 +9,20 @@
+ 	var ids:=selected_ids();var excluded: Array=[]
+ 	for group in review.catalog.groups:
+ 		if not review.wind_ids.has(group.id):excluded.append_array(group.rotating_ids)
+-	var baseline: Dictionary=review.baseline_pose(source);var reference: Dictionary={};var prior: Dictionary={};var late_range:=0.;var maximum_step:=0.;var stable:=true;var samples: Array=[];var force_samples: Array=[];var sum_axis:=0.
++	# The expected excluded pose comes from the authored animation, independently
++	# of WindReview.baseline_pose (which is itself under test).
++	var authored: Dictionary=source.sample(app.frame,true);var expected_excluded: Dictionary={}
++	for id in excluded:expected_excluded[id]=authored.get(id,Model.identity()).duplicate(true)
++	if request.mode=="procedural":
++		var recorded: Dictionary=expected_excluded.get(recorded_exclusion_binding,Model.identity())
++		var expected_rotation:=Quaternion(Vector3.FORWARD,-.045)
++		check(recorded_exclusion_binding in excluded and Timeline.quaternion(recorded.rotation_xyzw).angle_to(expected_rotation)<.00001 and Timeline.quaternion(recorded.rotation_xyzw).angle_to(Quaternion.IDENTITY)>.02,"the unchecked procedural skirt independently samples its known nonzero recorded half-way pose")
++	var reference: Dictionary={};var prior: Dictionary={};var late_range:=0.;var maximum_step:=0.;var stable:=true;var samples: Array=[];var force_samples: Array=[];var sum_axis:=0.
+ 	for tick in range(ticks):
+ 		review._physics_process(1./120.)
+ 		if review.phase!="running":return {"error":"try-out stopped during stepping"}
+ 		var current: Dictionary=review.simulation.latest
+-		for id in excluded:stable=stable and current.get(id,Model.identity())==baseline.get(id,Model.identity())
++		for id in excluded:stable=stable and current.has(id) and current[id]==expected_excluded[id]
+ 		if not prior.is_empty():maximum_step=maxf(maximum_step,angle(prior,current,ids))
+ 		prior=current.duplicate(true)
+ 		var chain: Dictionary=review.simulation.runner.chains[0];var point:=Definition.binding_transform(review.candidate,chain.source.joints[0].binding).origin
+@@ -49,7 +57,7 @@
+ 		var data:=Model.definition(box);data.parent_id=source_id;data.position=[-.7,.5,0]
+ 		check(app.append_object(data,"model").is_empty(),"world installs a separate model parented under the source")
+ 		peer=app.renderer.active_model();source=app.renderer.world_runtime.instance(source_id);app.world_selection.select_entity(source_id,false)
+-	await add_media();var before:=document_state();var view: Dictionary=app.renderer.view_state();var original_meshes:=Groups.mesh_nodes(source.root,[peer.root] if peer else [])
++	await add_media();var before:=document_state();var view: Dictionary=app.renderer.view_state();var original_meshes:=owned_source_meshes(source)
+ 	var visibility: Dictionary={}
+ 	for mesh in original_meshes:visibility[mesh]=mesh.visible
+ 	if not await open_review():await finish("WIND_REVIEW_GPU_MOTION");return
+--- before/tests/wind_review_gpu_primary.gd
++++ after/tests/wind_review_gpu_primary.gd
+@@ -54,9 +54,17 @@
+ 		check(document_matches(before) and app.renderer.world_runtime.instance(source_id).root==original_root and app.renderer.world_runtime.instance(peer_id).root==original_peer_root,"ongoing preview preserves authored content, media, roots and history")
+ 		review.window.close_requested.emit();await settled()
+ 		check(app.physics_editor.simulations[source_id]==primary and app.physics_editor.simulations[peer_id]==prop and body_identities(primary)==primary_ids and prop.body==prop_node,"closing only the try-out leaves both real simulations alive and identical")
++		check(primary.running and prop.running and not prop_node.freeze,"both original simulations retain their running state after close")
++		# Give each existing real body a known motion after the close observation.
++		# This does not restart a simulator or unfreeze a body; it prevents a
++		# legitimately settled fixture from vacuously testing only its moving peer.
++		for body in primary.bodies.values():body.linear_velocity+=Vector3(.2,.6,0)
++		prop_node.linear_velocity+=Vector3(.7,.6,0)
+ 		var continued:=body_positions(primary);var peer_continued:=prop_node.global_position
+ 		for i in range(8):await physics_frame
+ 		check(movement(continued,primary)>.00001 or prop_node.global_position.distance_to(peer_continued)>.00001,"normal motion continues after the owned candidate is gone")
++		check(movement(continued,primary)>.00001,"the original primary itself moves after the owned candidate is gone")
++		check(prop_node.global_position.distance_to(peer_continued)>.00001,"the independent original prop itself moves after the owned candidate is gone")
+ 		if not await open_review() or not await begin_review(running):await finish("WIND_REVIEW_GPU_PRIMARY");return
+ 		var temporary: WeakRef=weakref(review.candidate.root);var record=app.physics_editor.recording;record.scope.select(0 if running else 1)
+ 		check(record.start() and record.active,"real Local/World Record starts from existing physics after cancelling the try-out")

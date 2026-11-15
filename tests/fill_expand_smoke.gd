@@ -69,7 +69,7 @@ func run() -> void:
 	await click_control(button("Cancel",app.fill_editor.preview_row));var cancelled: Image=await app.renderer.capture(app.keys,app.layers,0,true)
 	check(before.get_data()==cancelled.get_data() and Drawing.cel_at(app.layers[1],0).is_empty(),"Cancel preserves artwork and candidate preview stays outside the final renderer")
 	click(Vector2(800,450));await wait_fill();await click_control(button("Apply fill",app.fill_editor.preview_row));cel=Drawing.cel_at(app.layers[1],0);var flats: Image=Drawing.image(cel);var first:=Storage.image_hash(flats)
-	check(app.history.size()==history+1 and app.history[-1].type=="cels" and flats.get_pixel(701,450)==Color.CYAN and flats.get_pixel(700,450).a==0,"real Apply grows beneath the translucent edge without going beyond the chosen radius")
+	check(app.history.size()==history+1 and app.history[-1].type=="cel_patch" and app.history[-1].before.is_empty() and app.history[-1].after.size()==1 and flats.get_pixel(701,450)==Color.CYAN and flats.get_pixel(700,450).a==0,"real Apply grows beneath the translucent edge without going beyond the chosen radius")
 	var composite:=Drawing.composite(app.layers,0,1920,1080);var edge:=composite.get_pixel(701,450)
 	check(edge.a8==255 and edge.r8==0 and edge.g8>=165 and edge.g8<=167 and edge.b8>=165 and edge.b8<=167,"color beneath translucent ink removes the transparent seam without recoloring ink")
 	app.undo();check(Drawing.cel_at(app.layers[1],0).is_empty(),"new grown cel has one complete Undo");app.redo();flats=Drawing.image(Drawing.cel_at(app.layers[1],0));check(Storage.image_hash(flats)==first,"new-cel Redo restores exact growth pixels")

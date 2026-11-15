@@ -1,0 +1,16 @@
+
+C:\a\tools\Godot\Godot_v4.6-stable_win64.exe:	file format coff-x86-64
+
+Disassembly of section .text:
+
+0000000140002ce0 <NoHotPatch>:
+1437f8880: 48 8d 0d f9 26 bd 06        	leaq	0x6bd26f9(%rip), %rcx   # 0x14a3caf80
+1437f8887: 48 ff 25 82 78 ce 06        	jmpq	*0x6ce7882(%rip)        # 0x14a4e0110
+1437f888e: 66 90                       	nop
+1437f8890: 48 8d 0d e9 26 bd 06        	leaq	0x6bd26e9(%rip), %rcx   # 0x14a3caf80
+1437f8897: 48 ff 25 92 78 ce 06        	jmpq	*0x6ce7892(%rip)        # 0x14a4e0130
+1437f889e: 66 90                       	nop
+1437f88a0: 48 8d 0d d9 26 bd 06        	leaq	0x6bd26d9(%rip), %rcx   # 0x14a3caf80
+1437f88a7: 48 ff 25 ca 7b ce 06        	jmpq	*0x6ce7bca(%rip)        # 0x14a4e0478
+1437f88ae: 90                          	nop
+1437f88af: 90                          	nop

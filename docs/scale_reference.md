@@ -1,5 +1,12 @@
 # Optional human/map size reference
 
+**November 14, 2026 clarification — future target:** standard-proportion complete
+human models should import toward six feet (1.8288 m) at user-facing HAS scale 1.
+Keep source units/normalization separate from relative scale and retain metre
+world units. This supersedes the unsettled default policy in the historical
+discussion below; the current opt-in implementation remains unchanged. See
+height_import.md and the current pickup for the implementation gap and exclusions.
+
 Development now offers [opt-in character height review](height_import.md) before
 placement and physics. It uses uniform root scale and an explicit keep-original
 choice. Partial models and uncertain proportions are protected. The audit below
@@ -7,6 +14,15 @@ remains historical; the new guide records current code and verification. Map
 calibration is now available for static unattached maps through
 [known-distance map sizing](map_calibration.md). Animated/attached map resizing,
 contact reanchoring and existing animated-model resizing remain unfinished.
+
+Windows continuation, 2026-11-11: current tests resolve root orientation and
+metadata from checksum-matched saved native fixtures rather than the historical
+audit's deleted plan directory. The fresh HWM Scout prerequisite must use the
+ordinary 90-degree root rotation already demonstrated by `sfm_render_smoke.gd`;
+pass `root_rotation_degrees: [90, 0, 0]` to `prepare_native_projects.gd` for that
+specific fixture. This is fixture setup, not automatic reorientation of every
+Source asset. The height test explicitly checks the reviewed Scout is upright.
+Historical audit values and reports remain historical observations.
 
 On2026-11-01 the owner requested consistent size across imported humanoids, while
 preserving intentionally unusual proportions. Provide an optional human-height

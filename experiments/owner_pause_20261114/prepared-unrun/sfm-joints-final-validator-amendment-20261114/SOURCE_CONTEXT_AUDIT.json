@@ -1,0 +1,38 @@
+{
+  "format": "has_final_SFM_review_preparation_source_context_1",
+  "prepared_only": true,
+  "application_or_candidate_execution": false,
+  "source_commit": "f380729cb170682068017b0d4c29b5f8425cdd14",
+  "native_verification_sha256": "10ee4a984c9e54b1acf37d79d5013a10780abe98416b8350f3edf3ee37277c4b",
+  "functional_members": 1008,
+  "membership_equal_after_existing_snapshot_cache_exclusions": true,
+  "byte_equal": 216,
+  "text_CRLF_LF_equal": 790,
+  "exact_nonstandard_text_paths": [
+    "tests/blank",
+    "tests/krita_fixture/has_fixture.desktop",
+    "tools/docker/sourceio_metadata.Dockerfile",
+    "tools/docker/sourceio_worker.Dockerfile",
+    "tools/krita-runtime.Dockerfile"
+  ],
+  "explicit_test_only_content_differences": [
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "actual_native_sha256": "ce051baaef5ed7600a93269869f3075ecec88cbf922399abb08bb542e094bd3c",
+      "final_git_blob_sha256": "0446c44d503a6605155ed0553f70ba0462a0cb64a29b25dda7c39ca81717c0cf"
+    },
+    {
+      "path": "tests/verify_helper_preview.py",
+      "actual_native_sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+      "final_git_blob_sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50"
+    }
+  ],
+  "native_catalogue_sha256": "539f11dc6e0dd1b7c080604a79947b5c86483a8b68739db6e6f336c9ea6ead76",
+  "final_git_blob_catalogue_sha256": "1590cfa9089c42f7e3d5f72d420f70ec763acae3002c433e3d7a2d89cb76ba15",
+  "validator_python": {
+    "bytes": 23491,
+    "sha256": "694bbf4d571258c8d31cfeef3dcc731bf6780ba6976724e746b3f7f69624d8c1",
+    "AST": "parsed_only_not_imported_or_executed"
+  },
+  "full_run_and_GDScript_status": "Full run remains active/not eligible; GDScript UNPARSED/UNRUN; builder/validator/native/GPU UNRUN"
+}

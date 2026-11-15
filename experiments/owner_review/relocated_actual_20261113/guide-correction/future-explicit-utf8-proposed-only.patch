@@ -1,0 +1,11 @@
+--- a/output/helper-review-package-prep-20261113/execute_after_full.py
++++ b/output/helper-review-package-prep-20261113/execute_after_full.py
+@@ -211,7 +211,7 @@
+             lines=['@echo off','setlocal','set "HYBRID_PYTHON='+str(PYTHON)+'"','set "HYBRID_GODOT='+str(GODOT)+'"','set "HYBRID_FFMPEG='+str(FFMPEG)+'"','set "HYBRID_SOURCEIO=%~dp0Dependencies\\'+SOURCEIO.name+'"','start "" "'+str(PYTHONW)+'" "%~dp0Studio\\launch.pyw" "%~dp0'+row['name']+'"']
+             (final/('Open '+Path(row['name']).stem+'.bat')).write_bytes(('\r\n'.join(lines)+'\r\n').encode('utf-8'))
+         lines=lines[:-1]+['start "" "'+str(PYTHONW)+'" "%~dp0Studio\\launch.pyw"'];(final/'Start review.bat').write_bytes(('\r\n'.join(lines)+'\r\n').encode('utf-8'))
+-        guide=(BASE/'README.template.md').read_text().replace('{{REVISION}}',opt.revision).replace('{{CHECKS}}','129');(final/'README.md').write_text(guide,encoding='utf-8')
++        guide=(BASE/'README.template.md').read_text(encoding='utf-8').replace('{{REVISION}}',opt.revision).replace('{{CHECKS}}','129');(final/'README.md').write_text(guide,encoding='utf-8')
+         state['status']='passed';state['passed']=True
+     except Exception as exc:error=type(exc).__name__+': '+str(exc);state['status']='failed';state['passed']=False
+     finally:

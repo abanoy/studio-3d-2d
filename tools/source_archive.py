@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import lzma
+import os
 import struct
 import zlib
 
@@ -18,6 +19,32 @@ def resource_path(name):
         if part.rstrip(" .") != part or part.split(".")[0].upper() in WINDOWS_DEVICES or any(ord(c) < 32 for c in part):
             raise AssetError("Unsafe Windows resource name")
     return name
+
+
+
+def write_resource(root, name, data):
+    """Cache one resolved resource without weakening its logical path boundary.
+
+    Blender's bundled Python may not opt into Windows long paths. Use extended
+    syntax only for filesystem IO; source lookup/provenance keep the same names.
+    A fresh cache entry must never overwrite an earlier file.
+    """
+    if not isinstance(data, (bytes, bytearray)) or len(data) > 128 * 1024 * 1024:
+        raise AssetError("Resolved resource exceeds its byte budget")
+    root = Path(root).resolve()
+    target = (root / resource_path(name)).resolve()
+    try:
+        target.relative_to(root)
+    except ValueError as error:
+        raise AssetError("Resolved resource escaped its cache root") from error
+    io_name = str(target)
+    if os.name == "nt" and not io_name.startswith("\\\\?\\"):
+        io_name = "\\\\?\\UNC\\" + io_name[2:] if io_name.startswith("\\\\") else "\\\\?\\" + io_name
+    io_path = Path(io_name)
+    io_path.parent.mkdir(parents=True, exist_ok=True)
+    with io_path.open("xb") as stream:
+        stream.write(data)
+    return target
 
 
 def unpack_legacy(source, target):

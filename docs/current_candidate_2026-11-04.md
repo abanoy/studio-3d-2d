@@ -1,10 +1,18 @@
 # Current runnable Studio review
 
 `tests/verify_current_candidate.py` freezes the current explicit source inventory
-from an explicit checksum-verified checkpoint inventory plus the review tests/docs. It creates cold
+from the current Git checkout inventory, excluding output, engine caches and Python
+bytecode. An explicit `--checkpoint` and checksum can still select a checkpoint
+inventory. Every current app script must be included. `--inventory-only` reports
+hashes without running or certifying any review. It creates cold
 folders with spaces and Unicode names, moves them before their first launch,
 and copies no developer imports, `.godot`, output, recovery or recent history.
 Only declared packed HAS/manifest/reference data transfer for native cases.
+
+The separate checksum-bound previous audio/storage readers remain required by
+their compatibility checks. The owner reports those historical backups are no
+longer available (2026-11-11). Using the current source inventory does not supply
+them or certify a full cold review; their original checks remain unchanged.
 
 The review uses the installed Godot4.6 standard, Python and FFmpeg; it is a
 runnable source copy, not a new installer or a bundled runtime. Normal installed

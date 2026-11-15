@@ -34,7 +34,7 @@ func run() -> void:
 	if not app.renderer.world_runtime or app.renderer.world_runtime.instances.size()!=7:
 		check(false,"complete five-native/group/map world exists: "+app.status.text);get_tree().quit(1);return
 	await settled();check(same(World.portable(app.current_world()),expected.world),"all portable native/parent/body/contact/visibility data survives "+mode)
-	check(same(app.video,expected.video) and same(app.keys,expected.keys) and Storage.image_hash(app.layers[1].cels[0].image)==expected.paint,"camera/video and independent editable RGBA survive "+mode)
+	check(same(app.video,expected.video) and same(app.keys,expected.keys) and Storage.image_hash(preload("res://src/drawing.gd").image(app.layers[1].cels[0]))==expected.paint,"camera/video and independent editable RGBA survive "+mode)
 	check(app.audio_clip.source.sha256==expected.audio.sha256 and app.audio_clip.start_frame==expected.audio.start_frame and app.audio_clip.gain_db==expected.audio.gain_db,"actual audio bytes and synchronization settings survive "+mode)
 	var exact:=true;var errors:=0
 	for id in expected.ids:

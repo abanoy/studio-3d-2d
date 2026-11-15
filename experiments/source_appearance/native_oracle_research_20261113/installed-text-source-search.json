@@ -1,0 +1,22 @@
+{
+  "format": "has_bounded_installed_viewer_text_source_search_1",
+  "scope": "Only source-like filenames under the two already installed Source game directories; no archive extraction, no binary launch and no whole-PC absence claim",
+  "command": [
+    "rg",
+    "--files",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\GarrysMod",
+    "-g",
+    "*.cpp",
+    "-g",
+    "*.c",
+    "-g",
+    "*.h"
+  ],
+  "rg_exit": 0,
+  "source_like_files_enumerated": 216,
+  "matched_viewer_source_like_names": [],
+  "stderr": "",
+  "when_ns": 1794551400384430200,
+  "source_archives_inspected": false
+}

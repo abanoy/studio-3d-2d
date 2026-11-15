@@ -1,0 +1,28 @@
+{
+  "format": "has_sfm_derived_probe_v2_preparation_checkpoint_1",
+  "date": "2026-11-13",
+  "context_commit": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "main_runtime_modified": false,
+  "cpu_checks": 39,
+  "cpu_failures": 0,
+  "cpu_errors": 0,
+  "packet": {
+    "path": "experiments/source_appearance/derived_probe_candidate_v2_20261113/PACKET.json",
+    "sha256": "7383803ac48e1b3cc65921e2318a0bd7c4075f4f880cb302656daa2169a9c6fa",
+    "bytes": 5357
+  },
+  "changes": [
+    "Pin approved Python and Godot across ordinary pack/unpack",
+    "Independent final preservation gates retain failure and enforce nonzero",
+    "Same writer/reader image must contain significant positive scene content",
+    "Imported local pose rotation times delta, retaining position/scale; independent T*Rbase*Rdelta*S reference"
+  ],
+  "all_old_10_source_copies_preserved": true,
+  "independent_review": "Source-only no additional blocker",
+  "failed_cpu_fixture_retained": "First39-case run had38pass/1wrongexpectedexception; corrected test to existing ValueError guard, no guard weakened",
+  "prepare_ran": false,
+  "godot_parse_or_gpu_ran": false,
+  "app_undo_has_results": "UNRUN",
+  "native_fidelity": "UNTESTED_BY_THIS_DERIVED_HARNESS",
+  "next": "Fresh schema2 preparation at exact approved finalHEAD after current canonical graphics lease ends; no oldmanifest reuse."
+}

@@ -1,0 +1,231 @@
+{
+  "format": "has_windows_resume_1",
+  "date": "2026-11-11 America/New_York",
+  "starting_commit": "08427750dc37b67e65553f882c4880217484362f",
+  "reimu": {
+    "writer": {
+      "bind_difference": {
+        "changed_channels": 4,
+        "mean": 4.822530864197531e-07
+      },
+      "checks": 22,
+      "failures": 0,
+      "force": 0.35999998450279236,
+      "mode": "writer",
+      "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\reimu-helpers\\1794448369022219400/render_1794448384_15734138_0/movie.mp4",
+      "region": {
+        "already_rigged": false,
+        "anchor_min_weight": 1.0,
+        "anchor_name": "hair_ribbon_left",
+        "anchor_node": 14.0,
+        "assessment": "Geometry/weights suggest a strand or panel; review attachment and stiffness. Length cannot establish looseness.",
+        "attachment_method": "nearest-anchor cross-section within3percent of longest local extent",
+        "attachment_vertices": 13.0,
+        "boundary_edges": 120.0,
+        "bounds_in_anchor": [
+          [
+            -0.00104862151860674,
+            -0.02452463013434336,
+            -0.06301741279464745
+          ],
+          [
+            0.05314322484046352,
+            0.04052056159585682,
+            0.07841503560127983
+          ]
+        ],
+        "component": 2.0,
+        "elongation": 2.1743720732282945,
+        "existing_joint_near_free_region": false,
+        "length_in_anchor_units": 0.0999664108029498,
+        "length_relative_to_rig": 0.0719768975636318,
+        "material_name": "hair_acce",
+        "node": 85.0,
+        "primitive": 0.0,
+        "suggested": true,
+        "vertices": 244.0
+      },
+      "wind_radians": 0.2800441384315491
+    },
+    "reader": {
+      "checks": 7,
+      "failures": 0,
+      "mode": "reader"
+    },
+    "originals": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\acceptance-native-inputs\\reimu-player\\scene.glb": {
+        "sha256": "4b23dbf5dfc402a08871d392143efa687dc10b869fc9344aa3f565099947e1f2",
+        "bytes": 7217520,
+        "mtime_ns": 1794448157922062600
+      },
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\acceptance-native-inputs\\reimu-player\\parameters.json": {
+        "sha256": "f4e1850d9f4fa9359a72d43f3c945aaf61a1bd726538b025da31c4fa5f8071ba",
+        "bytes": 28797,
+        "mtime_ns": 1794448157924587200
+      }
+    },
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\reimu_helpers_smoke_3287290375044991939577e56eaa7b45.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\reimu_helpers_smoke_0e9cfec35589466cad5f974007e8b3b4.json"
+    ],
+    "packed_keys_exact": true,
+    "private_source_offline_for_reader": true,
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "nb_read_frames": "24",
+      "r_frame_rate": "24/1",
+      "duration": "1.000000"
+    }
+  },
+  "private_desktops": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_beebe94bd48042d3ae4f064da2f883b8",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 30420,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 18.674
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_fd9d90a8244642cdbc037e338bee18ed",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 26908,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.595
+    }
+  ],
+  "initial_failure": {
+    "writer_checks": 22,
+    "reader_checks": 7,
+    "reader_failures": 1,
+    "cause": "Windows separators differed in cache prefix comparison; exact keys, provenance and replay pixels passed.",
+    "log": {
+      "path": "output/resume-reimu-helpers.log",
+      "sha256": "9c561b5f1fdc788d0f5c131950d11bcbde5b6ec0ff7404323ce41922ebd67625",
+      "bytes": 671
+    }
+  },
+  "repair": "Normalize both paths, require a strict cache descendant and check the actual embedded file SHA256. Windows wrapper now asserts both private-desktop receipts.",
+  "native_import": {
+    "bundles": [
+      "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794448074-759-4936706",
+      "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794448085-512-15689586",
+      "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794448091-467-21644406",
+      "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/compatibility/source-1794448093-218-23395070"
+    ],
+    "checks": 43,
+    "failures": 0,
+    "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-import/run_1221440",
+    "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-import/run_1221440/render_1794448100_30691434_0/movie.mp4",
+    "packed_pixels": {
+      "channels": 0,
+      "mean": 0.0
+    },
+    "project": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-import/run_1221440/native.has",
+    "original_inputs_unchanged": true,
+    "input_paths": [
+      "C:\\a\\tools\\mmd64\\UserFile\\Model\\Miku_Hatsune.pmd",
+      "C:\\a\\tools\\mmd64\\UserFile\\Model\\environments pack 03 (FFA)\\street01_android\\street01_android.pmx",
+      "C:\\a\\dump\\AvatarSample_A.vrm",
+      "C:\\a\\dump\\AvatarSample_Avrm0.vrm"
+    ],
+    "video": {
+      "codec": "h264",
+      "size": [
+        1920,
+        1080
+      ],
+      "fps": "24/1",
+      "frames": 48,
+      "duration": "2.000000"
+    }
+  },
+  "native_projects": {
+    "failures": 0,
+    "results": [
+      {
+        "bones": 126,
+        "label": "MMD",
+        "native_metadata": true,
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\pose-smoke\\miku-project",
+        "saved": true,
+        "source_sha256": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a"
+      },
+      {
+        "bones": 77,
+        "label": "GMod",
+        "native_metadata": true,
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-smoke\\source-project",
+        "saved": true,
+        "source_sha256": "41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089"
+      },
+      {
+        "bones": 83,
+        "label": "SFM",
+        "native_metadata": true,
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-smoke\\project",
+        "saved": true,
+        "source_sha256": "a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac"
+      }
+    ]
+  },
+  "native_project_desktop": {
+    "format": "studio_private_desktop_1",
+    "desktop": "HAS_Test_5006418dd2a24dfb87d4f26e75c72986",
+    "desktop_switch_requested": false,
+    "private_window_seen": true,
+    "child_desktop_confirmed": true,
+    "maximum_owned_windows": 9,
+    "foreground_child_observed": false,
+    "exit": 0,
+    "child_pid": 21448,
+    "job_closed": true,
+    "desktop_closed": true,
+    "seconds": 7.973
+  },
+  "originals_and_runtime": {
+    "starting_commit": "08427750dc37b67e65553f882c4880217484362f",
+    "session_owned_checkout": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+    "retained_review_checkout_untouched": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110",
+    "hecatia_original": {
+      "path": "C:\\a\\Programming\\HAS\\hecatia.kra",
+      "sha256": "fff3599293023f41f05eb27c9d51d2af45d01493b8618c5da51067f3449ff758",
+      "mtime_ns": 1766950662000000000
+    },
+    "sourceio_revision": "sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+    "approved_archive_sha256": "cd44e1d053ac853c5d1628da9faa27a594337ebacb3587744dfa5d60758623de",
+    "sourceio_runtime": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
+  },
+  "historical_oracles": {
+    "status": "unavailable",
+    "owner_response": "They're dead.",
+    "date": "2026-11-11",
+    "substitutions": false,
+    "impact": "Pinned historical-reader checks remain unavailable; current-version tests do not close them."
+  },
+  "owner_review": {
+    "status": "pending",
+    "owner_instruction": "Continue without further review prompts unless owner grants otherwise."
+  },
+  "limits": [
+    "No full aggregate pass claimed.",
+    "No artist, physical cursor, tablet or clean-install acceptance claimed.",
+    "No installed Studio, original assets, old review project or recovery changed.",
+    "Ledger remains 55/62 acceptance and 52/54 implementation."
+  ]
+}

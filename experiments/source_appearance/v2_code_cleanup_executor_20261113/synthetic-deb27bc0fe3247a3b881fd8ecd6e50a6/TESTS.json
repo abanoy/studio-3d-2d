@@ -1,0 +1,213 @@
+{
+  "tests": 35,
+  "fixture_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-v2-code-cleanup-executor-20261113-v2\\synthetic-deb27bc0fe3247a3b881fd8ecd6e50a6",
+  "passed": true,
+  "exact_production_nonuse_and_remote_publication": "UNRUN_BY_SYNTHETIC_TESTS",
+  "test_source_sha256": "b192d944d118d61e247473420e97a985eeeaf4ad5d3ef7cf18ab47ebf6262848",
+  "fixture_retained": true,
+  "production_execute_invoked": false,
+  "executor_sha256": "282c16991d37fcd5233869fcf32562d379fe30da76f31f15710f0b70fc205a38",
+  "deletes_moves_kills_or_git_mutation": false,
+  "results": [
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "safe-relative"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "synthetic-valid-file-identity"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "long-literal-file-native-identity"
+    },
+    {
+      "reason": "Unsafe Windows path component.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-../escape.py"
+    },
+    {
+      "reason": "Unsafe Windows path component.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-src/../escape.py"
+    },
+    {
+      "reason": "Unsafe relative path.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-/absolute.py"
+    },
+    {
+      "reason": "Unsafe relative path.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-C:/absolute.py"
+    },
+    {
+      "reason": "Unsafe relative path.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-src\\escape.py"
+    },
+    {
+      "reason": "Unsafe Windows path component.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-src/alias."
+    },
+    {
+      "reason": "Unsafe Windows path component.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-src/alias "
+    },
+    {
+      "reason": "Unsafe Windows path component.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-src/NUL.py"
+    },
+    {
+      "reason": "Unsafe relative path.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-src/file.py:stream"
+    },
+    {
+      "reason": "Unsafe relative path.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unsafe-relative-src/*.py"
+    },
+    {
+      "reason": "Absolute/relative file path mismatch.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "absolute-relative-membership-escape"
+    },
+    {
+      "reason": "Retained runtime/generated/private path cannot be deleted.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "retained-output-never-candidate"
+    },
+    {
+      "reason": "File size/nsmtime changed: C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-v2-code-cleanup-executor-20261113-v2\\synthetic-deb27bc0fe3247a3b881fd8ecd6e50a6\\authored.txt",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "changed-size"
+    },
+    {
+      "reason": "File size/nsmtime changed: C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-v2-code-cleanup-executor-20261113-v2\\synthetic-deb27bc0fe3247a3b881fd8ecd6e50a6\\authored.txt",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "changed-nanosecond-stamp"
+    },
+    {
+      "reason": "Exact SHA256 gate failed.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "actual-mutated-file-sha"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "equal-membership"
+    },
+    {
+      "reason": "Unexpected or missing tree membership: synthetic extra",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "unlisted-file-membership"
+    },
+    {
+      "reason": "Unexpected or missing tree membership: synthetic missing",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "missing-file-membership"
+    },
+    {
+      "reason": "Duplicate/case-alias membership entry.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "case-alias-membership"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "clear-nonuse-result"
+    },
+    {
+      "reason": "Process nonuse gate refused: observed use or an inaccessible live owned/runtime process.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "observed-process-use"
+    },
+    {
+      "reason": "Process nonuse gate refused: observed use or an inaccessible live owned/runtime process.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "inaccessible-owned-runtime"
+    },
+    {
+      "reason": "Exact SHA256 gate failed.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "wrong-published-executor-sha"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "exact-native-owner-and-full-creation"
+    },
+    {
+      "reason": "Exception calling \"OwnerIdentity\" with \"2\" argument(s): \"PID changed between WMI snapshot and retained native owner handle.\"",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "native-owner-snapshot-creation-mismatch"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "exact-own-process-native-cwd"
+    },
+    {
+      "reason": "Exception calling \"CurrentDirectory\" with \"2\" argument(s): \"PID creation identity changed; retained-handle read refused.\"",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "native-pid-creation-mismatch"
+    },
+    {
+      "reason": "Process nonuse gate refused: observed use or an inaccessible live owned/runtime process.",
+      "expected_refusal": true,
+      "passed": true,
+      "name": "different-session-unresolved-owner-is-blocker"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "different-session-unresolved-owner-classified-unknown"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "preloaded-native-refused-Forged"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "preloaded-native-refused-LegitimateReuse"
+    },
+    {
+      "expected_refusal": false,
+      "passed": true,
+      "name": "single-literal-remove-operation-static"
+    }
+  ],
+  "format": "has_sfm_v2_cleanup_synthetic_controls_1"
+}

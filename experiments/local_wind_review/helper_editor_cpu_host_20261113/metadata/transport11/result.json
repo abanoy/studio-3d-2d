@@ -1,0 +1,20 @@
+{
+  "checks": [
+    "missing explicit work root refuses",
+    "relative work root refuses",
+    "owned root equal to work root refuses",
+    "owned root outside work root refuses",
+    "worker command pins absolute approved executable and isolated mode",
+    "worker command separates code root from writable profile work root",
+    "configuration alone launches nothing and publishes no worker root",
+    "changed approved runtime digest refuses before launch",
+    "lexical traversal cannot escape owned family",
+    "owned nested fixed candidate path remains inside explicit work family",
+    "all transport sources and approved runtime preserved exactly"
+  ],
+  "failures": [],
+  "preservation": true,
+  "controller_launches": 0,
+  "model_imports": 0,
+  "gpu": false
+}

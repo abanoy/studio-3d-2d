@@ -1,0 +1,461 @@
+--- archived/source/app_probe.gd
++++ v2/source/app_probe.gd
+@@ -96,6 +96,15 @@
+ 	stream.close()
+ 	return _check(ok,"evidence file writes: "+path.get_file())
+ 
++func _content_observation(image: Image) -> Dictionary:
++	var background:=image.get_pixel(0,0)
++	var changed:=0
++	for y in range(0,image.get_height(),4):
++		for x in range(0,image.get_width(),4):
++			var sample:=image.get_pixel(x,y)
++			if maxf(absf(sample.r-background.r),maxf(absf(sample.g-background.g),absf(sample.b-background.b)))>.02:changed+=1
++	return {"significant_content_samples":changed,"sample_step":4,"rgb_contrast_threshold":.02,"required_samples_exclusive":100}
++
+ func _capture(key: String,folder: String,mode: String) -> Dictionary:
+ 	var image: Image=await _app.renderer.capture(_app.keys,_app.layers,_app.frame,true)
+ 	if not _check(image!=null and not image.is_empty(),key+" "+mode+" native capture is readable"):return {}
+@@ -104,7 +113,9 @@
+ 	if not _check(not FileAccess.file_exists(target),key+" "+mode+" PNG path is fresh"):return {}
+ 	if not _check(image.save_png(target)==OK,key+" "+mode+" native PNG saves"):return {}
+ 	_check(_app.renderer.native_readbacks==0,key+" "+mode+" capture releases its readback")
+-	return {"pixel_sha256":Pixels.digest_bytes(image.get_data()),"width":image.get_width(),"height":image.get_height(),"format":int(image.get_format()),"png":target,"png_sha256":FileAccess.get_sha256(target)}
++	var content:=_content_observation(image)
++	if not _check(int(content.significant_content_samples)>100,key+" "+mode+" same captured image contains significant scene content"):return {}
++	return {"content":content,"pixel_sha256":Pixels.digest_bytes(image.get_data()),"width":image.get_width(),"height":image.get_height(),"format":int(image.get_format()),"png":target,"png_sha256":FileAccess.get_sha256(target)}
+ 
+ func _writer(key: String,item: Dictionary,folder: String) -> Dictionary:
+ 	var original:=str(item.input_glb)
+--- archived/source/glb_reference.py
++++ v2/source/glb_reference.py
+@@ -41,22 +41,37 @@
+             2*x*z-2*y*w, 2*y*z+2*x*w, 1-2*x*x-2*y*y, 0., 0., 0., 0., 1.)
+ 
+ 
+-def local(node):
++def local(node, rotation_delta=None):
+     if "matrix" in node:
++        require(rotation_delta is None, "Pose of matrix node requires unproved TRS decomposition")
+         require(not any(k in node for k in ("translation", "rotation", "scale")), "Mixed matrix/TRS")
+         a = node["matrix"]
+         require(len(a) == 16, "Matrix length")
+         return tuple(a[c*4+r] for r in range(4) for c in range(4))
+-    result = list(rotation(node.get("rotation", [0., 0., 0., 1.])))
++    base_rotation = rotation(node.get("rotation", [0., 0., 0., 1.]))
++    # Skeleton3D pose rotations are absolute local channels: T * R_base * R_delta * S.
++    result = list(base_rotation if rotation_delta is None else mul(base_rotation, rotation(rotation_delta)))
+     scale = node.get("scale", [1., 1., 1.])
+     translation = node.get("translation", [0., 0., 0.])
+     require(len(scale) == len(translation) == 3, "TRS dimensions")
++    if rotation_delta is not None:
++        require(all(math.isfinite(x) and x > 0. for x in scale), "Posed scale decomposition must be positive/nonzero")
+     for r in range(3):
+         for c in range(3):
+             result[r*4+c] *= scale[c]
+         result[r*4+3] = translation[r]
+     require(all(math.isfinite(x) for x in result), "Nonfinite transform")
+     return tuple(result)
++
++
++def significant_content_rgba(width, height, rgba, step=4, contrast=.02):
++    """Independent same-image blank-frame control; no scene-fidelity claim."""
++    require(width > 0 and height > 0 and len(rgba) == width*height*4, "RGBA dimensions")
++    background = rgba[:3]
++    changed = sum(max(abs(rgba[(y*width+x)*4+c]-background[c]) for c in range(3))/255. > contrast
++                  for y in range(0, height, step) for x in range(0, width, step))
++    return {"significant_content_samples": changed, "sample_step": step,
++            "rgb_contrast_threshold": contrast, "required_samples_exclusive": 100}
+ 
+ 
+ def png_rgba(raw):
+@@ -222,9 +237,7 @@
+                 return memo[i]
+             require(i not in visiting, "Node hierarchy cycle")
+             visiting.add(i)
+-            matrix = local(self.data["nodes"][i])
+-            if i == pose_node:
+-                matrix = mul(matrix, rotation(pose_quaternion))
++            matrix = local(self.data["nodes"][i], pose_quaternion if i == pose_node else None)
+             memo[i] = mul(get(self.parents[i]), matrix) if i in self.parents else matrix
+             visiting.remove(i)
+             return memo[i]
+--- archived/source/probe_driver.py
++++ v2/source/probe_driver.py
+@@ -5,6 +5,7 @@
+ """
+ from __future__ import annotations
+ import argparse
++from contextlib import contextmanager
+ import hashlib
+ import importlib.util
+ import json
+@@ -27,6 +28,7 @@
+ RESULTS = ROOT / "output/sfm-next-cases-20261112/BACKGROUND3-ACTUAL-RESULTS.json"
+ RESULTS_SHA = "8bfa2071c9cc6846c9972d53ce93ce433fd8b46293b9155409fcef00f8f97478"
+ NATIVE_REVIEW = ROOT / "experiments/source_appearance/actual_windows_20261113/metadata/next_probe_compact.json"
++PYTHON = Path(r"C:\Program Files\Python313\python.exe")
+ PYTHONW = Path(r"C:\Program Files\Python313\pythonw.exe")
+ GODOT = Path(r"C:\a\tools\Godot\Godot_v4.6-stable_win64.exe")
+ HARNESS = ("raw_probe.gd", "app_probe.gd")
+@@ -116,7 +118,7 @@
+     require(head() == expected_revision, "Root HEAD differs from reviewed preparation checkpoint")
+     require(not working_source or bool(working_context), "Working-source preparation requires its explicit reviewed context")
+     no_reparse(TASK)
+-    require(TASK == ROOT / "output/sfm-static-appearance-probe-20261113", "Unexpected dedicated layout")
++    require(TASK == ROOT / "output/sfm-static-appearance-probe-20261113-v2", "Unexpected dedicated layout")
+     proof = read_json(RESULTS)
+     require(stamp(RESULTS)["sha256"] == RESULTS_SHA, "Exact retained fourteen-case proof hash differs")
+     require(proof["passed_cases"] == 14 and proof["successful_bundles"] == 12 and proof["failed_cases"] == 0,
+@@ -125,8 +127,8 @@
+     folder = owned(TASK / "runs" / token)
+     folder.mkdir(parents=True, exist_ok=False)
+     protected = [stamp(RESULTS), stamp(NATIVE_REVIEW), stamp(ROOT / "tools/build_owner_review_snapshot.py"),
+-                 stamp(PYTHONW), stamp(GODOT), *(stamp(TASK / "source" / name) for name in CODE)]
+-    manifest = {"format": "has_sfm_derived_probe_candidate_1", "status": "PREPARED_NOT_RUN",
++                 stamp(PYTHON), stamp(PYTHONW), stamp(GODOT), *(stamp(TASK / "source" / name) for name in CODE)]
++    manifest = {"format": "has_sfm_derived_probe_candidate_2", "status": "PREPARED_NOT_RUN",
+                 "run_folder": str(folder), "root": str(ROOT), "root_revision": expected_revision,
+                 "source_mode": "working_tree_at_git_base" if working_source else "exact_git_revision",
+                 "working_context": working_context if working_source else None,
+@@ -249,7 +251,7 @@
+     path = owned(path)
+     require(stamp(path)["sha256"] == expected_sha, "Manifest hash mismatch")
+     m = read_json(path)
+-    require(m["format"] == "has_sfm_derived_probe_candidate_1" and m["root"] == str(ROOT)
++    require(m["format"] == "has_sfm_derived_probe_candidate_2" and m["root"] == str(ROOT)
+             and Path(m["run_folder"]) == path.parent, "Manifest identity/layout mismatch")
+     require(head() == m["root_revision"], "Root HEAD changed; prepare a fresh candidate")
+     require(root_functional() == m["root_functional"], "Root functional files changed; prepare a fresh candidate")
+@@ -278,11 +280,27 @@
+             and receipt.get("desktop_closed") is True)
+ 
+ 
+-def captured_process(command, project, output, timeout):
++@contextmanager
++def pinned_runtime_environment():
++    """Bind the runner and its pack/unpack child to approved executables only."""
++    overrides = {"HYBRID_PYTHON": str(PYTHON), "HYBRID_GODOT": str(GODOT)}
++    previous = {key: os.environ.get(key) for key in overrides}
++    try:
++        os.environ.update(overrides)
++        yield os.environ.copy()
++    finally:
++        for key, value in previous.items():
++            if value is None:
++                os.environ.pop(key, None)
++            else:
++                os.environ[key] = value
++
++
++def captured_process(command, project, output, timeout, env=None):
+     started = time.monotonic()
+     try:
+         return subprocess.run(command, cwd=project, capture_output=True, text=True, encoding="utf-8", errors="replace",
+-                              timeout=timeout, creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
++                              timeout=timeout, env=env, creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0)
+     except subprocess.TimeoutExpired as error:
+         def decoded(value):
+             return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else value or ""
+@@ -298,7 +316,6 @@
+ def launch(m, manifest_path, mode, parse_only=False):
+     project = Path(m["projects"][mode]["path"])
+     runner = load_module("sfm_probe_run_"+mode, project / "run.py")
+-    os.environ["HYBRID_GODOT"] = str(GODOT)
+     output = Path(m["run_folder"]) / mode
+     output.mkdir(exist_ok=False)
+     extra = ["--verbose", "--log-file", str(output / "engine.log")]
+@@ -306,14 +323,19 @@
+         extra.append("--check-only")
+     else:
+         extra += ["--", str(manifest_path), str(output), mode]
+-    command = runner.command("tests/sfm_probe_raw_probe.gd", headless=parse_only, extra=extra)
+-    if not parse_only:
+-        require(command[0] == str(PYTHONW) and "--receipt" in command and "--headless" not in command,
+-                "Expected approved private graphical wrapper")
+-        require(Path(command[1]) == project / "tools/private_desktop.py" and str(GODOT) in command,
+-                "Unexpected private helper/runtime")
+-    write_new(output / "command.json", command)
+-    completed = captured_process(command, project, output, 210)
++    with pinned_runtime_environment() as child_environment:
++        command = runner.command("tests/sfm_probe_raw_probe.gd", headless=parse_only, extra=extra)
++        if not parse_only:
++            require(command[0] == str(PYTHONW) and "--receipt" in command and "--headless" not in command,
++                    "Expected approved private graphical wrapper")
++            require(Path(command[1]) == project / "tools/private_desktop.py" and str(GODOT) in command,
++                    "Unexpected private helper/runtime")
++        write_new(output / "runtime-environment.json", {
++            "overrides": {key: child_environment[key] for key in ("HYBRID_PYTHON", "HYBRID_GODOT")},
++            "approved_executables": [stamp(PYTHON), stamp(PYTHONW), stamp(GODOT)],
++            "other_environment_values_recorded": False})
++        write_new(output / "command.json", command)
++        completed = captured_process(command, project, output, 210, env=child_environment)
+     log = completed.stdout+completed.stderr
+     (output / "process.log").write_text(log, encoding="utf-8")
+     receipt = {} if parse_only else read_json(Path(command[command.index("--receipt")+1]))
+@@ -330,6 +352,44 @@
+             require(result.get("raw_captures") == [c["key"] for c in m["render_cases"]], "Capture membership differs")
+         require(result.get("app_cases") == ["nitori-skin-0", "keiki-000"], "App-case membership differs")
+     return observation
++
++
++def final_preservation(m, manifest_path, manifest_sha, offline):
++    """Inspect every class even when an earlier class is missing or changed."""
++    gates = {}
++    def inspect(name, predicate):
++        try:
++            gates[name] = {"passed": bool(predicate())}
++        except Exception as error:
++            gates[name] = {"passed": False, "error": type(error).__name__+": "+str(error)}
++    protected = {}
++    for index, record in enumerate(m["protected"]):
++        name = str(index)+":"+record["path"]
++        try:
++            protected[name] = {"passed": unchanged(record)}
++        except Exception as error:
++            protected[name] = {"passed": False, "error": type(error).__name__+": "+str(error)}
++    gates["protected_originals_runtimes_candidate"] = {"passed": all(r["passed"] for r in protected.values()), "files": protected}
++    inspect("root_head", lambda: head() == m["root_revision"])
++    inspect("root_functional", lambda: root_functional() == m["root_functional"])
++    inspect("derived_reference", lambda: unchanged(m["derived_reference"]))
++    for mode in ("writer", "reader"):
++        inspect("private_source_"+mode, lambda mode=mode:
++                source_members(Path(m["projects"][mode]["path"])) == m["projects"][mode]["files"])
++    # Recheck the exact manifest, input members/stamps, context and all other gates.
++    inspect("full_context_and_owned_inputs", lambda: preflight(manifest_path, manifest_sha, offline=offline) == m)
++    return {"passed": all(gate["passed"] for gate in gates.values()), "inputs_offline": offline, "gates": gates}
++
++
++def retain_and_require_preservation(receipt_path, outcome, verification):
++    outcome["final_preservation"] = verification
++    outcome["protected_originals_unchanged"] = verification["gates"]["protected_originals_runtimes_candidate"]["passed"]
++    outcome["root_functional_unchanged"] = verification["gates"]["root_functional"]["passed"]
++    if not verification["passed"]:
++        outcome["status_before_final_preservation"] = outcome["status"]
++        outcome["status"] = "FAILED_PRESERVATION_RETAIN_ALL"
++    write_new(receipt_path, outcome)
++    require(verification["passed"], "Final preservation/context failed; receipt and all evidence retained")
+ 
+ 
+ def main():
+@@ -361,6 +421,7 @@
+     outcome = {"mode": "parse_only" if args.parse_only else "actual_gpu", "status": "STARTED", "nonce": m["nonce"]}
+     receipt_path = Path(m["run_folder"]) / ("parse-verification.json" if args.parse_only else "actual-verification.json")
+     require(not receipt_path.exists(), "Run already has an execution receipt; prepare fresh")
++    offline = False
+     try:
+         outcome["writer"] = launch(m, args.manifest, "writer", args.parse_only)
+         preflight(args.manifest, args.manifest_sha256)
+@@ -369,6 +430,7 @@
+             target = owned(Path(m["run_folder"]) / "inputs.offline")
+             require(source.is_dir() and not target.exists(), "Fresh owned offline transition required")
+             source.rename(target)  # Only this run's fully checked owned copies; originals never move.
++            offline = True
+             preflight(args.manifest, args.manifest_sha256, offline=True)
+             outcome["reader"] = launch(m, args.manifest, "reader")
+             preflight(args.manifest, args.manifest_sha256, offline=True)
+@@ -378,9 +440,8 @@
+         outcome["error"] = str(error)
+         raise
+     finally:
+-        outcome["protected_originals_unchanged"] = all(unchanged(s) for s in m["protected"])
+-        outcome["root_functional_unchanged"] = root_functional() == m["root_functional"]
+-        write_new(receipt_path, outcome)
++        verification = final_preservation(m, args.manifest, args.manifest_sha256, offline)
++        retain_and_require_preservation(receipt_path, outcome, verification)
+     print(json.dumps({"status": outcome["status"], "receipt": str(receipt_path)}))
+ 
+ 
+--- archived/source/raw_probe.gd
++++ v2/source/raw_probe.gd
+@@ -144,7 +144,12 @@
+ 	var skeleton: Skeleton3D=scene.get_node(binding.substr(0,split))
+ 	var index:=skeleton.find_bone(binding.substr(split+2))
+ 	check(index>=0,"pose retains exact source bone identifier")
+-	if index>=0:skeleton.set_bone_pose_rotation(index,Quaternion(float(quaternion[0]),float(quaternion[1]),float(quaternion[2]),float(quaternion[3])));skeleton.force_update_all_bone_transforms()
++	if index>=0:
++		# Godot 4 poses are absolute local channels. Preserve imported base rotation.
++		var base_rotation:=skeleton.get_bone_pose_rotation(index)
++		var delta:=Quaternion(float(quaternion[0]),float(quaternion[1]),float(quaternion[2]),float(quaternion[3]))
++		skeleton.set_bone_pose_rotation(index,(base_rotation*delta).normalized())
++		skeleton.force_update_all_bone_transforms()
+ 
+ func setup_view() -> void:
+ 	viewport=SubViewport.new();viewport.size=Vector2i(1920,1080);viewport.own_world_3d=true;viewport.render_target_update_mode=SubViewport.UPDATE_ALWAYS
+--- archived/source/test_probe_cpu.py
++++ v2/source/test_probe_cpu.py
+@@ -3,6 +3,8 @@
+ import hashlib
+ import json
+ import math
++import os
++import sys
+ from pathlib import Path
+ import struct
+ import time
+@@ -97,6 +99,71 @@
+         for actual, expected in zip(p, [2.5, 4., 4.]):
+             self.assertAlmostEqual(actual, expected)
+ 
++    def test_nonidentity_imported_rotation_composes_delta_before_scale(self):
++        self.data["nodes"][1]["rotation"] = [0., 0., math.sqrt(.5), math.sqrt(.5)]
++        delta = [math.sqrt(.5), 0., 0., math.sqrt(.5)]
++        g = R.GLB(glb_document(self.data, self.binary))
++        # Root translation + joint translation + Rz90 * Rx90 * (1,0,0).
++        actual = g.positions(0., 1, delta)[0]["positions"][0]
++        for a, expected in zip(actual, [3., 4., 4.]):self.assertAlmostEqual(a, expected)
++        # Replacing imported Rz90 by delta alone yields the wrong (4,3,4).
++        direct = copy.deepcopy(self.data);direct["nodes"][1]["rotation"] = delta
++        wrong = R.GLB(glb_document(direct, self.binary)).positions()[0]["positions"][0]
++        self.assertGreater(math.dist(actual, wrong), 1.)
++        self.data["nodes"][1]["scale"] = [2., 3., 4.]
++        scaled = R.GLB(glb_document(self.data, self.binary)).positions(0., 1, delta)[0]["positions"]
++        for actual, expected in zip(scaled[:2], ([3., 5., 4.], [3., 3., 7.])):
++            for a, e in zip(actual, expected):self.assertAlmostEqual(a, e)
++        wrong_matrix = R.mul(R.local(self.data["nodes"][1]), R.rotation(delta))
++        # T*R*S*delta incorrectly rotates through the original Z scale.
++        wrong_point = R.point(R.mul(R.local(self.data["nodes"][0]), wrong_matrix), [0., 1., 0.])
++        self.assertAlmostEqual(wrong_point[2], 8.)
++        self.assertGreater(math.dist(scaled[1], wrong_point), .99)
++
++    def test_pose_matrix_target_refused_without_decomposition(self):
++        self.data["nodes"][1] = {"name": "joint", "matrix": list(R.IDENTITY)}
++        g = R.GLB(glb_document(self.data, self.binary))
++        g.positions()
++        with self.assertRaisesRegex(ValueError, "unproved TRS decomposition"):
++            g.positions(0., 1, [0., 0., 0., 1.])
++
++    def test_pose_reflected_or_singular_scale_refused(self):
++        for scale in ([-1., 1., 1.], [0., 1., 1.]):
++            self.data["nodes"][1]["scale"] = scale
++            with self.assertRaisesRegex(ValueError, "scale decomposition"):
++                R.GLB(glb_document(self.data, self.binary)).positions(0., 1, [0., 0., 0., 1.])
++
++    def test_raw_pose_source_retains_imported_rotation_channel(self):
++        source = (D.TASK / "source/raw_probe.gd").read_text()
++        self.assertIn("var base_rotation:=skeleton.get_bone_pose_rotation(index)", source)
++        self.assertIn("set_bone_pose_rotation(index,(base_rotation*delta).normalized())", source)
++        self.assertNotIn("set_bone_pose_rotation(index,Quaternion(", source)
++
++    def test_same_image_positive_content_rejects_blank_and_dithering(self):
++        width = height = 128
++        blank = bytearray([40, 50, 60, 255]*(width*height))
++        self.assertEqual(R.significant_content_rgba(width, height, blank)["significant_content_samples"], 0)
++        noise = blank.copy()
++        for y in range(4, 100, 4):
++            for x in range(4, 100, 4):noise[(y*width+x)*4] += 1
++        self.assertEqual(R.significant_content_rgba(width, height, noise)["significant_content_samples"], 0)
++        for y in range(4, 100, 4):
++            for x in range(4, 100, 4):noise[(y*width+x)*4] += 5
++        content = R.significant_content_rgba(width, height, noise)
++        self.assertGreater(content["significant_content_samples"], content["required_samples_exclusive"])
++
++    def test_app_capture_checks_its_existing_image_without_second_capture(self):
++        source = (D.TASK / "source/app_probe.gd").read_text()
++        body = source.split("func _capture(", 1)[1].split("func _writer(", 1)[0]
++        self.assertEqual(body.count("renderer.capture("), 1)
++        self.assertIn("var content:=_content_observation(image)", body)
++        self.assertIn("int(content.significant_content_samples)>100", body)
++        self.assertIn('return {"content":content,', body)
++        helper = source.split("func _content_observation(", 1)[1].split("func _capture(", 1)[0]
++        self.assertIn("range(0,image.get_height(),4)", helper)
++        self.assertIn("range(0,image.get_width(),4)", helper)
++        self.assertIn(")>.02:changed+=1", helper)
++
+     def test_half_morph_is_linear_and_pose_does_not_mutate_base(self):
+         g = R.GLB(glb_document(self.data, self.binary))
+         a, b, c = (g.positions(w)[0]["positions"] for w in (0, .5, 1))
+@@ -228,6 +295,75 @@
+         record = json.loads((output / "execution.json").read_bytes())
+         self.assertEqual(record["status"], "TIMEOUT_UNACCEPTED_RETAIN_ALL")
+         self.assertFalse(record["retry_attempted"])
++
++    def test_pinned_interpreters_override_and_restore_inherited_environment(self):
++        with patch.dict(os.environ, {"HYBRID_PYTHON": "unapproved-python", "HYBRID_GODOT": "unapproved-engine"}):
++            with D.pinned_runtime_environment() as child:
++                self.assertEqual(child["HYBRID_PYTHON"], str(D.PYTHON))
++                self.assertEqual(child["HYBRID_GODOT"], str(D.GODOT))
++                self.assertEqual(os.environ["HYBRID_PYTHON"], str(D.PYTHON))
++                self.assertNotEqual(child["HYBRID_PYTHON"], "unapproved-python")
++            self.assertEqual(os.environ["HYBRID_PYTHON"], "unapproved-python")
++            self.assertEqual(os.environ["HYBRID_GODOT"], "unapproved-engine")
++        with patch.dict(os.environ, clear=True):
++            with self.assertRaisesRegex(RuntimeError, "mock child failure"):
++                with D.pinned_runtime_environment():raise RuntimeError("mock child failure")
++            self.assertNotIn("HYBRID_PYTHON", os.environ)
++            self.assertNotIn("HYBRID_GODOT", os.environ)
++
++    def test_captured_child_receives_explicit_pinned_python_environment(self):
++        with D.pinned_runtime_environment() as child:
++            with patch.object(D.subprocess, "run", return_value=object()) as mocked:
++                D.captured_process(["not-a-runtime"], self.folder, self.folder, 1, env=child)
++        self.assertEqual(mocked.call_args.kwargs["env"]["HYBRID_PYTHON"], str(D.PYTHON))
++        source = (D.TASK / "source/probe_driver.py").read_text()
++        self.assertIn("stamp(PYTHON), stamp(PYTHONW), stamp(GODOT)", source)
++        self.assertIn("env=child_environment", source)
++
++    def preservation_fixture(self, key):
++        folder = self.folder / key;folder.mkdir()
++        protected = folder / "protected.txt";protected.write_text("unchanged")
++        reference = folder / "reference.json";reference.write_text("{}")
++        projects = {}
++        for mode in ("writer", "reader"):
++            project = folder / mode;project.mkdir();(project / "source.gd").write_text("frozen")
++            projects[mode] = {"path": str(project), "files": D.source_members(project)}
++        return folder, {"protected": [D.stamp(protected)], "root_revision": "a"*40,
++                        "root_functional": {"fixture": True}, "derived_reference": D.stamp(reference), "projects": projects}
++
++    def test_final_pass_receipt_retained_with_all_preservation_gates(self):
++        folder, manifest = self.preservation_fixture("preserved")
++        with patch.object(D, "head", return_value="a"*40), patch.object(D, "root_functional", return_value={"fixture": True}), patch.object(D, "preflight", return_value=manifest):
++            result = D.final_preservation(manifest, folder / "manifest.json", "b"*64, True)
++        self.assertTrue(result["passed"]);self.assertTrue(result["inputs_offline"])
++        outcome = {"status": "DERIVED_RENDER_APP_PASS_NOT_NATIVE_FIDELITY"}
++        path = folder / "receipt.json";D.retain_and_require_preservation(path, outcome, result)
++        self.assertEqual(json.loads(path.read_bytes())["status"], outcome["status"])
++
++    def test_every_false_or_missing_final_gate_retains_failure_and_refuses_success(self):
++        scenarios = ("changed_protected", "missing_protected", "head", "functional", "reference", "writer", "reader", "context")
++        for key in scenarios:
++            with self.subTest(key=key):
++                folder, manifest = self.preservation_fixture(key)
++                if key == "changed_protected":(folder / "protected.txt").write_text("changed")
++                if key == "missing_protected":(folder / "protected.txt").unlink()  # Owned synthetic file only.
++                if key == "reference":(folder / "reference.json").write_text("changed")
++                if key in ("writer", "reader"):(folder / key / "unexpected.gd").write_text("injected")
++                context_error = ValueError("stale manifest or owned inputs") if key == "context" else None
++                with patch.object(D, "head", return_value="c"*40 if key == "head" else "a"*40), patch.object(D, "root_functional", return_value={} if key == "functional" else {"fixture": True}), patch.object(D, "preflight", return_value=manifest, side_effect=context_error):
++                    result = D.final_preservation(manifest, folder / "manifest.json", "b"*64, False)
++                self.assertFalse(result["passed"])
++                self.assertIn("private_source_reader", result["gates"])  # Missing early inputs do not suppress later checks.
++                outcome = {"status": "DERIVED_RENDER_APP_PASS_NOT_NATIVE_FIDELITY", "error": "earlier evidence remains"}
++                path = folder / "receipt.json"
++                with self.assertRaisesRegex(ValueError, "receipt and all evidence retained"):
++                    D.retain_and_require_preservation(path, outcome, result)
++                retained = json.loads(path.read_bytes())
++                self.assertEqual(retained["status"], "FAILED_PRESERVATION_RETAIN_ALL")
++                self.assertEqual(retained["status_before_final_preservation"], "DERIVED_RENDER_APP_PASS_NOT_NATIVE_FIDELITY")
++                self.assertEqual(retained["error"], "earlier evidence remains")
++                if key == "missing_protected":
++                    self.assertIn("ValueError: Required file missing:", next(iter(result["gates"]["protected_originals_runtimes_candidate"]["files"].values()))["error"])
+ 
+     def test_private_isolation_fails_closed_for_every_required_field(self):
+         good = {"exit": 0, "child_desktop_confirmed": True, "foreground_child_observed": False,
+@@ -245,4 +381,16 @@
+ 
+ 
+ if __name__ == "__main__":
+-    unittest.main(verbosity=2)
++    before = {name: D.stamp(D.TASK / "source" / name) for name in D.CODE}
++    suite = unittest.defaultTestLoader.loadTestsFromModule(sys.modules[__name__])
++    result = unittest.TextTestRunner(verbosity=2).run(suite)
++    after = {name: D.stamp(D.TASK / "source" / name) for name in D.CODE}
++    source_preserved = before == after
++    receipt = {"scope": "Synthetic stdlib CPU/reference/source-contract checks only; no preparation or engines",
++               "tests": result.testsRun, "failures": len(result.failures), "errors": len(result.errors),
++               "failure_details": [{"test": str(test), "traceback": detail} for test, detail in result.failures+result.errors],
++               "source_preserved": source_preserved, "source_before": before, "source_after": after,
++               "all_failed_evidence_retained": True, "fixture_folder": str(DriverControls.folder),
++               "gpu": "UNRUN", "app": "UNRUN", "native_fidelity": "UNTESTED"}
++    D.write_new(D.TASK / ("cpu-checks-"+str(time.time_ns())+".json"), receipt)
++    raise SystemExit(0 if result.wasSuccessful() and source_preserved else 1)

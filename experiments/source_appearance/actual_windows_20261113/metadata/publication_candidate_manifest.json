@@ -1,0 +1,243 @@
+{
+  "format": "has_sfm_publication_candidate_manifest_1",
+  "status": "READY_FOR_ROOT_REVIEW",
+  "actual_root_revision": "2904f3f18e4211f95ddd385953219b2e5460aee9",
+  "actual_cases_passed": 14,
+  "successful_private_bundles": 12,
+  "exact_expected_refusals": 2,
+  "source_copies": 13,
+  "payloads_included": false,
+  "root_tracked_or_git_edits_by_this_agent": false,
+  "further_graphics_or_native_runtime_launched": false,
+  "gpu_conversion_lease": "RELEASED",
+  "candidate_files_excluding_manifest": 45,
+  "bytes_excluding_manifest": null,
+  "manifest_self_hash": "Recorded externally in handoff; excluded here to avoid recursive hash",
+  "files": [
+    {
+      "path": "docs/benchmarks/sfm_static_appearance_actual_2026-11-13.json",
+      "bytes": 18381,
+      "sha256": "eb29aa02f9e20ea81ba3aa417f7e6c8b6814440159405810700a8545f9725a86"
+    },
+    {
+      "path": "docs/sfm_static_appearance_actual_2026-11-13.md",
+      "bytes": 6532,
+      "sha256": "546048e8c881e57a9657aee1f433c7ce46c230640bac71badf99d86dfe92c3cf"
+    },
+    {
+      "path": "docs/sfm_static_appearance_next_probe_2026-11-13.md",
+      "bytes": 7662,
+      "sha256": "474a32434eead5577f1552db33d1111ebe71edeb4957de969f7ca976cf4dc4a9"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/commands-for-owned-stage.json",
+      "bytes": 24811,
+      "sha256": "bc3f1df45d7a960788633bcf7bf81f439b274624854620af626f6a4eb356d108"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/empty-mount-plan.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/plan.json",
+      "bytes": 88901,
+      "sha256": "4a747c6bc883af7e69ca448a0d7ac60f76f14b78550682647f683449cd1d2aaf"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/keiki_tools_chisels-groups-000.json",
+      "bytes": 313,
+      "sha256": "a1492e9dfd40057e812b963dccd9914985713ea6ba7f84e3f195ca47745e0091"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/keiki_tools_chisels-groups-001.json",
+      "bytes": 313,
+      "sha256": "25e73b1b58db1a216a53784a89da7295836daff172625df45ca1e972ba3914f0"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/keiki_tools_chisels-groups-010.json",
+      "bytes": 313,
+      "sha256": "08e654cf66c49d44450a64d0c13f657531cabe9287af2cb0515edc7fb317a108"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/keiki_tools_chisels-groups-011.json",
+      "bytes": 313,
+      "sha256": "65305bfdb8ec11c27eb074866f789b5dda282d66342a26bfb40ceebef3729fa1"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/keiki_tools_chisels-groups-100.json",
+      "bytes": 313,
+      "sha256": "0ce2ef9a511bb86bea494895165fe4cf740829cefcdfedcf656ca298f80674a6"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/keiki_tools_chisels-groups-101.json",
+      "bytes": 313,
+      "sha256": "e2463922a7a8394502955284a1f24c396add1a801080aa905e0714ef8cd92ef1"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/keiki_tools_chisels-groups-110.json",
+      "bytes": 313,
+      "sha256": "7ca08af6fc9c32ca39b235052791467088cb6849c8ec662444ec1d5be39bcd6f"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/keiki_tools_chisels-groups-111.json",
+      "bytes": 313,
+      "sha256": "b226cc3d759154121dcc7e272f2d505ba602edddc0353cc063c09399c2116aca"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/multi_skin_glove-all-blank-refusal.json",
+      "bytes": 287,
+      "sha256": "45edd9a457c3be0c356b108494acacb501ee819228539ce6f8885b3546e118a5"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/multi_skin_glove-skin-0.json",
+      "bytes": 287,
+      "sha256": "efbd95360a2d01e34a2bedb099355231295ebed03cfaef11fe2c8faf21432d42"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/multi_skin_glove-skin-1.json",
+      "bytes": 287,
+      "sha256": "ea9b1748f4e88c332b041c462f65281cf0f778552e0f8f4c41c261ec50f9084a"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/fixture/requests/multi_skin_glove-skin-2.json",
+      "bytes": 287,
+      "sha256": "75795f0aa2e167052b626b452f35f65dbd82fe3dfe1a550a87558e03daf959c0"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/actual_handoff.json",
+      "bytes": 4497,
+      "sha256": "87c705038235faa98234ef67645134381c69f6194a35a642596958b4ff5ed626"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/actual_results.json",
+      "bytes": 81183,
+      "sha256": "8bfa2071c9cc6846c9972d53ce93ce433fd8b46293b9155409fcef00f8f97478"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/dependency_and_morph_observations.json",
+      "bytes": 36830,
+      "sha256": "55daf3969fd2afa29771acbe389d2a6e2ac4a650574aae9da4eb5466f3533bc9"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/glow_png_observation.json",
+      "bytes": 698,
+      "sha256": "95e439ba34d6a92b67f522fedb572d823cb7456a2002bd9552dae7d30514f38b"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/historical-input-lock3.json.gz",
+      "bytes": 164601,
+      "sha256": "ed5162bb27d6e32f94a642af82125152f9ad312045e2b468f54f02791a1e6d62"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/native_columns_compact.json",
+      "bytes": 11951,
+      "sha256": "1ea61ee9e7ca7db081ab6ef9b38acf178c7e50b8d19212e8be26377b7f668554"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/native_material_search_paths.json",
+      "bytes": 16457,
+      "sha256": "0d6c1ff02b00cda828485ef587d945d647f029fe288250b5f614d1d651dfe319"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/next_probe_compact.json",
+      "bytes": 30894,
+      "sha256": "a789db1aa328509da6362ef98268269fd3e8cfe24c8a9f5f81a5ffbd122acde4"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/metadata/owned_process_exit_observations.json",
+      "bytes": 10632,
+      "sha256": "7157bb72ca5a46508e6706e8bf41ae0cc9b8e53287300b119deb938a18233758"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/README.md",
+      "bytes": 6621,
+      "sha256": "d4f15bb618e238d0d01e3457b157e1b5fb32a76654c5861b75d9a41f614fb0b3"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source-checkpoint.json",
+      "bytes": 2815,
+      "sha256": "f36f9aac76e1ff7f9deddc4740c087e33eed4ef109c30f1e053739a16161a7e9"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/background_blender_observer.py",
+      "bytes": 3127,
+      "sha256": "c02d4ac4fcde7d6a4cd5218d83f782c03876a75f3a77910de978c352ade67854"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/background_conversion_driver.py",
+      "bytes": 42556,
+      "sha256": "08a63f739f21cdb019468b3b274ecc1772fb942695320dfd20d2b1826c120587"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/background_python_bootstrap.py",
+      "bytes": 4717,
+      "sha256": "d65bdc1edba89f7a2cda7edbd3e99a07ac1f6e25f58f0020bc3b11a4e53e67bf"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/background_route.py",
+      "bytes": 24721,
+      "sha256": "94c30dab411043c1308379003c06babd0be3bba09a86654cb8ac56541510565b"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/conversion_driver.py",
+      "bytes": 42973,
+      "sha256": "d8749db85f324f799740c2802a77e7ec6d8640f0752312fe7ecfdf34cee2d127"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/stage_resources.py",
+      "bytes": 20835,
+      "sha256": "f00be8c033d0b30faaf7e7727ee398d03341a8fb117e71ddc6ff72d252af39b5"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/test_background_driver.py",
+      "bytes": 4403,
+      "sha256": "1a29776af7de8611aa261f92a5705e64c018b8a39e37299e8e8cc2e95ee1b454"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/test_background_route.py",
+      "bytes": 15357,
+      "sha256": "6b77aab3e30df344452c7bea2b1939f99dd38f5ca85d89539a042cb20117ba8b"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/test_conversion_driver.py",
+      "bytes": 18952,
+      "sha256": "2a511ec237cef0ecfb43d583a0ec68a722bda1f462d85c800350d9de6e71e151"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/test_stage_resources.py",
+      "bytes": 11409,
+      "sha256": "30bd31fe90516d1544e6f79ea6487f84a21de05fc47d0e8fa6bc3ce0d4d6828c"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/test_vmt_closure.py",
+      "bytes": 6082,
+      "sha256": "70aa86f4680aa03da5e4442b3f6618159ee63464204cbf04bf5e003e60ecfa80"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/vmt_closure.py",
+      "bytes": 14101,
+      "sha256": "c06c279de5b29239879c9ad019f91b9b5cbef22bc564f3d63ec7c600530e22b6"
+    },
+    {
+      "path": "experiments/source_appearance/actual_windows_20261113/source/win_desktop_attestation.py",
+      "bytes": 6178,
+      "sha256": "67a07d2666d927fb9ffb2d2d2432c0bc60cda5f1d3d3e4a02363511b7fd6d2d3"
+    },
+    {
+      "path": "experiments/source_appearance/README.md",
+      "bytes": 3250,
+      "sha256": "9b42d27cda1bc33f03ce6c958d6872d4e7ff6f5a550a349482ed7a8d43658400"
+    },
+    {
+      "path": "INDEX.md",
+      "bytes": 1972,
+      "sha256": "165c67cb0399c1125d2c40679d765dea646abb5aeccce0dfba16b4ac7b0671b8"
+    },
+    {
+      "path": "publication-checks.json",
+      "bytes": 4835,
+      "sha256": "99e5e4d44ededac962705656a6d887c861250471f83c2699a6d702a93ce67bf1"
+    }
+  ]
+}

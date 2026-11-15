@@ -1,0 +1,156 @@
+PASS unit: 0.472s
+PASS motion_parts: 0.936s
+PASS motion_helper_edits: 0.291s
+PASS opaque_order: 0.289s
+PASS required_extensions: 0.288s
+PASS contact_bend: 0.194s
+PASS spikes: 5.901s
+PASS editor: 8.693s
+PASS export_failures: 1.219s
+PASS audio_editor: 8.833s
+PASS audio_dummy: 3.639s
+PASS ui: 4.392s
+PASS recovery_write: 6.252s
+PASS recovery: 4.032s
+PASS pose: 15.338s
+PASS autokey: 10.796s
+PASS new_scene: 8.336s
+PASS world_selection: 9.927s
+PASS world_document: 4.383s
+PASS world_runtime: 10.858s
+PASS world_edit: 22.689s
+PASS world_workflow: 10.928s
+PASS object_timing: 19.749s
+PASS bone_labels: 4.75s
+PASS animation_clips_unit: 0.384s
+PASS animation_clips: 22.191s
+PASS visibility: 18.134s
+PASS animated_channels: 17.185s
+PASS limb_ik: 25.185s
+PASS secondary_motion: 9.398s
+PASS fan_motion: 18.443s
+PASS physics: 40.325s
+PASS physics_contacts: 82.149s
+PASS physics_props: 20.986s
+PASS physics_recording_unit: 0.477s
+PASS physics_recording: 39.691s
+PASS pending helper wind before Apply, temporary group checks, popup Escape and exact source restoration
+PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text
+PASS personal keyboard remapping, native capture, conflict guards, text safety and fresh preferences
+PASS numeric temporary camera view, explicit keys, stale draft guards, cold HAS and exact movie
+PASS reviewed weighted helpers, native bindings, HAS and movie
+PASS experimental shape-aware helper geometry and real GPU comparison
+PASS imported shapes, old appearance compatibility, review, HAS and movie
+PASS editable base shapes, native channels, transactional Undo, HAS and movie
+PASS animated shapes, native GPU, blocks, clipboard, helper capture, recovery and movie
+PASS control area estimates, manual organization, native identity, Undo, HAS and movie
+PASS cancellable neutral deform study, explicit adoption, Undo, native identity, HAS and movie
+PASS isolated neutral/deformed views, exact document isolation and pending-readback teardown
+PASS embedded compound expression poses, native VRM bindings, Undo, HAS and movie
+PASS native PMX compound/nested expressions through shared editable deform keys
+PASS optional height review, partial/proportion guards, native physics, HAS and movie
+PASS known-distance map picking, isolated size preview, anchor, Undo, HAS and movie
+PASS independent body foundation and native GPU comparison
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify.py", line 558, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify.py", line 284, in main
+    body_animation_log = run([sys.executable, '-u', 'tests/verify_body_animation.py'], timeout=240)
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify.py", line 24, in run
+    raise RuntimeError(f"Exit {result.returncode}: {args}\n{result.stdout}\n{result.stderr}")
+RuntimeError: Exit 1: ['C:\\Program Files\\Python313\\python.exe', '-u', 'tests/verify_body_animation.py']
+
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify_body_animation.py", line 61, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify_body_animation.py", line 45, in main
+    if p.returncode or marker not in log or '"failures":0' not in log or any(s in log for s in ('ERROR:','FAIL ','ObjectDB instances leaked')):raise RuntimeError(log)
+                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS standard native arm IDs bind in the normal editor: Authored
+PASS normal numeric pose edit auto-keys model6 in one Undo: Authored
+PASS normal bone edit preserves all peer/root half-frame samples: Authored
+PASS expanded normal timeline shows independent native part frames: Authored
+PASS Undo restores the original legacy model and easing: Authored
+PASS Redo restores editable independent controls: Authored
+PASS normal Delete selected part removes only its key: Authored
+PASS Undo restores just-deleted native part controls: Authored
+PASS normal independent editing preserves metadata, rig and source geometry: Authored
+PASS normal split/move preserves independent source-time poses
+PASS model6 clipboard promotes a legacy destination and preserves source motion over a different base
+PASS pasting independent motion retains the receiving base outside its piece
+LEGACY_BODY_CLIPBOARD {"actual":{"position":[0.0,0.0,0.0],"rotation_xyzw":[0.0,0.0,-0.198669329285622,0.9800665974617]},"error":"","expected":{"position":[0.0,0.0,0.0],"rotation_xyzw":[0.0,0.0,-0.198669329285622,0.9800665974617]},"frames":[15,19,30]}
+PASS legacy snapshot clipboard remains editable when pasted onto model6
+PASS normal packed HAS retains editable native body controls: Authored
+PASS normal linked HAS retains editable native body controls: Authored
+PASS normal recovery accepts the complete model6 project
+PASS normal final export directly samples independent controls with exact preview and drawing
+PASS standard native arm IDs bind in the normal editor: MMD
+PASS normal numeric pose edit auto-keys model6 in one Undo: MMD
+PASS normal bone edit preserves all peer/root half-frame samples: MMD
+PASS expanded normal timeline shows independent native part frames: MMD
+PASS Undo restores the original legacy model and easing: MMD
+PASS Redo restores editable independent controls: MMD
+PASS normal Delete selected part removes only its key: MMD
+PASS Undo restores just-deleted native part controls: MMD
+PASS normal independent editing preserves metadata, rig and source geometry: MMD
+PASS normal packed HAS retains editable native body controls: MMD
+PASS normal linked HAS retains editable native body controls: MMD
+PASS standard native arm IDs bind in the normal editor: GMod
+PASS normal numeric pose edit auto-keys model6 in one Undo: GMod
+PASS normal bone edit preserves all peer/root half-frame samples: GMod
+PASS expanded normal timeline shows independent native part frames: GMod
+PASS Undo restores the original legacy model and easing: GMod
+PASS Redo restores editable independent controls: GMod
+PASS normal Delete selected part removes only its key: GMod
+PASS Undo restores just-deleted native part controls: GMod
+PASS normal independent editing preserves metadata, rig and source geometry: GMod
+PASS normal packed HAS retains editable native body controls: GMod
+PASS normal linked HAS retains editable native body controls: GMod
+PASS standard native arm IDs bind in the normal editor: SFM
+PASS normal numeric pose edit auto-keys model6 in one Undo: SFM
+PASS normal bone edit preserves all peer/root half-frame samples: SFM
+PASS expanded normal timeline shows independent native part frames: SFM
+PASS Undo restores the original legacy model and easing: SFM
+PASS Redo restores editable independent controls: SFM
+PASS normal Delete selected part removes only its key: SFM
+PASS Undo restores just-deleted native part controls: SFM
+PASS normal independent editing preserves metadata, rig and source geometry: SFM
+PASS normal packed HAS retains editable native body controls: SFM
+PASS normal linked HAS retains editable native body controls: SFM
+PASS standard native arm IDs bind in the normal editor: VRM1
+PASS normal numeric pose edit auto-keys model6 in one Undo: VRM1
+PASS normal bone edit preserves all peer/root half-frame samples: VRM1
+PASS expanded normal timeline shows independent native part frames: VRM1
+PASS Undo restores the original legacy model and easing: VRM1
+PASS Redo restores editable independent controls: VRM1
+PASS normal Delete selected part removes only its key: VRM1
+PASS Undo restores just-deleted native part controls: VRM1
+PASS normal independent editing preserves metadata, rig and source geometry: VRM1
+PASS normal packed HAS retains editable native body controls: VRM1
+PASS normal linked HAS retains editable native body controls: VRM1
+PASS standard native arm IDs bind in the normal editor: VRM0
+PASS normal numeric pose edit auto-keys model6 in one Undo: VRM0
+PASS normal bone edit preserves all peer/root half-frame samples: VRM0
+PASS expanded normal timeline shows independent native part frames: VRM0
+PASS Undo restores the original legacy model and easing: VRM0
+PASS Redo restores editable independent controls: VRM0
+PASS normal Delete selected part removes only its key: VRM0
+PASS Undo restores just-deleted native part controls: VRM0
+PASS normal independent editing preserves metadata, rig and source geometry: VRM0
+PASS normal packed HAS retains editable native body controls: VRM0
+FAIL normal linked HAS retains editable native body controls: VRM0
+BODY_ANIMATION {"checks":72,"failures":1,"metrics":{"Authored":{"parts":2,"source_sha256":"35561aeacec90c4dbec5cf8a2a1af13b91586e325602bc467319648fd89fa80b","warm_pose_root_usec":37.66},"GMod":{"parts":77,"source_sha256":"41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089","warm_pose_root_usec":37.29},"MMD":{"parts":126,"source_sha256":"b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a","warm_pose_root_usec":36.61},"SFM":{"parts":83,"source_sha256":"a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac","warm_pose_root_usec":37.75},"VRM0":{"parts":91,"source_sha256":"3caa50b76d0f481bb7ee66daeb6ebe7485aefb966140321b599ca60d9d464b56","warm_pose_root_usec":35.29},"VRM1":{"parts":91,"source_sha256":"a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062","warm_pose_root_usec":36.8}},"movie":"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\body-animation\\1794601810122122300/render_1794601817_6097706_0/movie.mp4","normal_editor_integration":true}
+ERROR: Could not create child process: python C:/a/Programming/cloudflare/has-acceptance-session-20261111/tools/has_project.py C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\body-animation\1794601810122122300/cache/job_8872_31810880.json
+   at: create_process (platform/windows/os_windows.cpp:1590)
+   GDScript backtrace (most recent call first):
+       [0] start (res://src/has_project.gd:123)
+       [1] save_file (res://src/has_project.gd:69)
+       [2] run (res://tests/body_animation_smoke.gd:89)
+       [3] settled (res://tests/body_animation_smoke.gd:17)
+
+

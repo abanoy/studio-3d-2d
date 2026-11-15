@@ -1,0 +1,2158 @@
+{
+  "format": "has_sfm_next_native_case_plan_1",
+  "status": "planning and request-schema/hash-binding only; no conversion/adoption implementation or native support result",
+  "prototype_base_commit": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "published_checkpoint_commit": "c6782d2f0f7b6ebbe868214ceb975e42afd129dd",
+  "cases": [
+    {
+      "case": "multi_skin_glove",
+      "archive": {
+        "archive": "Takane_and_Nitori_tanktop.rar",
+        "path": "C:\\a\\dump\\New folder\\Takane_and_Nitori_tanktop.rar",
+        "bytes": 30322874,
+        "mtime_ns": 1793569679766047300,
+        "sha256": "d17cc0856fdff11dbb201e3f1fd91562f4600a0e0a6b575f0ed2a8d4566519d9",
+        "index_entries": 300,
+        "staged_models": 10
+      },
+      "native_member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.mdl",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "future_staged_input": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\stage\\Takane and Nitori\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "retained_mdl": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-inventory\\portable-root-639301165838922272\\stage\\10\\Takane and Nitori\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "actual_metadata": {
+        "archive": "Takane_and_Nitori_tanktop.rar",
+        "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.mdl",
+        "sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+        "version": 49,
+        "bodygroups": [
+          {
+            "index": 0,
+            "name": "glove",
+            "choices": [
+              {
+                "index": 0,
+                "name": "gloves.dmx",
+                "vertices": 6544,
+                "meshes": 2,
+                "blank": false,
+                "mesh_flex_records": 2
+              },
+              {
+                "index": 1,
+                "name": "blank",
+                "vertices": 0,
+                "meshes": 0,
+                "blank": true,
+                "mesh_flex_records": 0
+              }
+            ]
+          }
+        ],
+        "skin_family_count": 3,
+        "distinct_skin_families": 3,
+        "bone_count": 66,
+        "procedural_bones": 0,
+        "skin_groups": [
+          [
+            "models/touhou/tamo/Nitori edit/Gloves",
+            "models/touhou/tamo/Nitori edit/Gloves glow",
+            "Glovesg",
+            "Gloves glowg",
+            "Glovesw",
+            "Gloves gloww"
+          ],
+          [
+            "Glovesg",
+            "Gloves glowg",
+            "Glovesg",
+            "Gloves glowg",
+            "Glovesw",
+            "Gloves gloww"
+          ],
+          [
+            "Glovesw",
+            "Gloves gloww",
+            "Glovesg",
+            "Gloves glowg",
+            "Glovesw",
+            "Gloves gloww"
+          ]
+        ]
+      },
+      "skin_table": [
+        [
+          "models/touhou/tamo/Nitori edit/Gloves",
+          "models/touhou/tamo/Nitori edit/Gloves glow",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ],
+        [
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ],
+        [
+          "Glovesw",
+          "Gloves gloww",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ]
+      ],
+      "model_allowlist": [
+        {
+          "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.dx80.vtx",
+          "bytes": 134546,
+          "crc32": "8F05E500"
+        },
+        {
+          "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.dx90.vtx",
+          "bytes": 127716,
+          "crc32": "329F60D8"
+        },
+        {
+          "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.mdl",
+          "bytes": 116280,
+          "crc32": "3CD52CD1"
+        },
+        {
+          "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.sw.vtx",
+          "bytes": 126916,
+          "crc32": "A60DE007"
+        },
+        {
+          "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.vvd",
+          "bytes": 418880,
+          "crc32": "706E9AF3"
+        }
+      ],
+      "material_allowlist": [
+        {
+          "member": "Takane and Nitori/materials/black.vtf",
+          "bytes": 96,
+          "crc32": "A6133625"
+        },
+        {
+          "member": "Takane and Nitori/materials/bump.vtf",
+          "bytes": 136,
+          "crc32": "214B8694"
+        },
+        {
+          "member": "Takane and Nitori/materials/exp.vtf",
+          "bytes": 22080,
+          "crc32": "37C8BF87"
+        },
+        {
+          "member": "Takane and Nitori/materials/flat.vtf",
+          "bytes": 136,
+          "crc32": "214B8694"
+        },
+        {
+          "member": "Takane and Nitori/materials/green.vtf",
+          "bytes": 349732,
+          "crc32": "4B2835CD"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/envmaps/env white.vtf",
+          "bytes": 4816,
+          "crc32": "37F72DDF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/kemot44/overwatch/heroes/suport_texture/test2/phongwarp.vtf",
+          "bytes": 103,
+          "crc32": "D5316805"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/kemot44/overwatch/heroes/suport_texture/test2/shared/whitecube.vtf",
+          "bytes": 24784,
+          "crc32": "ECD6694E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/shared/n_flat.vtf",
+          "bytes": 452,
+          "crc32": "C66573C4"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/number359/nitori/bag2.vtf",
+          "bytes": 4194528,
+          "crc32": "90EF60AB"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/number359/nitori/hair2.vtf",
+          "bytes": 4194528,
+          "crc32": "D5394F53"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/shader/face_shader.vtf",
+          "bytes": 4208,
+          "crc32": "7465FA25"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/shader/face_shader3.vtf",
+          "bytes": 16512,
+          "crc32": "C4AA553C"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/shader/toon_hair.vtf",
+          "bytes": 16525,
+          "crc32": "C61AAD4E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/backpack.vmt",
+          "bytes": 516,
+          "crc32": "BD51553C"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/backpack.vtf",
+          "bytes": 1048784,
+          "crc32": "D3B9806E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/blush.vmt",
+          "bytes": 499,
+          "crc32": "1B6BC3FA"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/body.vmt",
+          "bytes": 511,
+          "crc32": "8A775E09"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/card border.vmt",
+          "bytes": 521,
+          "crc32": "4157BE3A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/card.vmt",
+          "bytes": 515,
+          "crc32": "41E15D1A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/ch.vmt",
+          "bytes": 499,
+          "crc32": "73FD0957"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/chest.vmt",
+          "bytes": 518,
+          "crc32": "AC8B5836"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/clothes_body.vmt",
+          "bytes": 513,
+          "crc32": "9F2E2550"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/dress.vtf",
+          "bytes": 4194512,
+          "crc32": "2C4D77EF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/dress2.vtf",
+          "bytes": 4194512,
+          "crc32": "6350ADD8"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/dress3.vtf",
+          "bytes": 4194512,
+          "crc32": "E09294AF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/dress4.vtf",
+          "bytes": 4194512,
+          "crc32": "BCA74583"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/exp1.vmt",
+          "bytes": 513,
+          "crc32": "57AAFA05"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye.vmt",
+          "bytes": 508,
+          "crc32": "35F7C95A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye1.vtf",
+          "bytes": 4194512,
+          "crc32": "8A02948D"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye2.vmt",
+          "bytes": 508,
+          "crc32": "7F6C5A3C"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye2.vtf",
+          "bytes": 4194512,
+          "crc32": "ED6D5BD6"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye3.vmt",
+          "bytes": 508,
+          "crc32": "C8CC3F46"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye3.vtf",
+          "bytes": 4194512,
+          "crc32": "6FB702CD"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye4.vmt",
+          "bytes": 508,
+          "crc32": "784F09A2"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye4.vtf",
+          "bytes": 4194512,
+          "crc32": "4C34FAC6"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eye5.vmt",
+          "bytes": 478,
+          "crc32": "EAEC753A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eyejoon.vtf",
+          "bytes": 1048784,
+          "crc32": "8D3EF22B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/eyelash.vmt",
+          "bytes": 508,
+          "crc32": "CEC69899"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/face.vmt",
+          "bytes": 510,
+          "crc32": "E4ABB932"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/face.vtf",
+          "bytes": 4194512,
+          "crc32": "42E9B88F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/face2.vtf",
+          "bytes": 4194512,
+          "crc32": "E9BFD469"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/face3.vtf",
+          "bytes": 4194512,
+          "crc32": "983926F8"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/facet.vmt",
+          "bytes": 590,
+          "crc32": "752F9BE6"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/facet.vtf",
+          "bytes": 4194512,
+          "crc32": "5ECAC0F7"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/fronthair v2 env1.vmt",
+          "bytes": 640,
+          "crc32": "981F1E5E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/fronthair v2 env2.vmt",
+          "bytes": 362,
+          "crc32": "E0CF9CDC"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/fronthair v2.vmt",
+          "bytes": 453,
+          "crc32": "D8ABBFC9"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloom.vmt",
+          "bytes": 499,
+          "crc32": "1B6BC3FA"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "bytes": 655,
+          "crc32": "5E54A876"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "bytes": 656,
+          "crc32": "0727914B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "bytes": 650,
+          "crc32": "1A2E7B0A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves.vmt",
+          "bytes": 517,
+          "crc32": "B8DE6DC4"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves.vtf",
+          "bytes": 1048784,
+          "crc32": "D066E4B5"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesg.vmt",
+          "bytes": 594,
+          "crc32": "CD8D146A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesg.vtf",
+          "bytes": 1048784,
+          "crc32": "A4DAF001"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesw.vmt",
+          "bytes": 518,
+          "crc32": "4BF65C5A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesw.vtf",
+          "bytes": 1048784,
+          "crc32": "B5DB85DB"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hachueye.vmt",
+          "bytes": 501,
+          "crc32": "96F3DFBF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hachueye2.vmt",
+          "bytes": 506,
+          "crc32": "E815D713"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hachueye3.vmt",
+          "bytes": 506,
+          "crc32": "880D568F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hachueye4.vmt",
+          "bytes": 506,
+          "crc32": "7337D41A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hair v2 env1.vmt",
+          "bytes": 638,
+          "crc32": "8C07B997"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hair v2 env2.vmt",
+          "bytes": 360,
+          "crc32": "CAF51F76"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hair v2.vmt",
+          "bytes": 451,
+          "crc32": "4DA7A7C7"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hair.vmt",
+          "bytes": 534,
+          "crc32": "4AAAA744"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hairdecoration.vmt",
+          "bytes": 467,
+          "crc32": "B2EE07E6"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/Hair_Transparent.vmt",
+          "bytes": 534,
+          "crc32": "4AAAA744"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/hat.vmt",
+          "bytes": 575,
+          "crc32": "CAF48450"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/key.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/lips.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/mouth.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/pants.vmt",
+          "bytes": 513,
+          "crc32": "7D160F4B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/pants.vtf",
+          "bytes": 1048784,
+          "crc32": "D420B4F4"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/privates.vmt",
+          "bytes": 512,
+          "crc32": "DD9AAE2F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/privates.vtf",
+          "bytes": 262352,
+          "crc32": "5171F8E2"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/question mark.vmt",
+          "bytes": 513,
+          "crc32": "6CD03E7E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/scerla.vmt",
+          "bytes": 514,
+          "crc32": "04BDD12B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/shoes.vmt",
+          "bytes": 513,
+          "crc32": "6EA1ADF2"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/shoes.vtf",
+          "bytes": 262352,
+          "crc32": "47CEB5D8"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/shoes2.vtf",
+          "bytes": 262352,
+          "crc32": "91694A81"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/short normal.vtf",
+          "bytes": 4194512,
+          "crc32": "526D57D9"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/short.vmt",
+          "bytes": 549,
+          "crc32": "7871BB97"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/short.vtf",
+          "bytes": 4194512,
+          "crc32": "9832100C"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/short2.vtf",
+          "bytes": 4194512,
+          "crc32": "B4A894D4"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/skirt g.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/skirt_camo.vmt",
+          "bytes": 514,
+          "crc32": "891CD98D"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/skirt_white.vmt",
+          "bytes": 513,
+          "crc32": "9F2E2550"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/spandex.vmt",
+          "bytes": 518,
+          "crc32": "0C6E87EB"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/strap back.vmt",
+          "bytes": 520,
+          "crc32": "F80E6194"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/strap front.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/swimsuit name.vmt",
+          "bytes": 522,
+          "crc32": "D7635045"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/swimsuit name.vtf",
+          "bytes": 262352,
+          "crc32": "94C1ACBB"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/swimsuit.vmt",
+          "bytes": 524,
+          "crc32": "617BEF7B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/tanktop.vmt",
+          "bytes": 518,
+          "crc32": "AC8B5836"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/teeth.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/tongue.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/TT Blush 2.vmt",
+          "bytes": 514,
+          "crc32": "F6CFBC43"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/TT Blush 2.vtf",
+          "bytes": 262352,
+          "crc32": "B036FFC8"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/TT Blush.vmt",
+          "bytes": 512,
+          "crc32": "CB58C1BF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/TT Blush.vtf",
+          "bytes": 262352,
+          "crc32": "1685D156"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/tt pants.vmt",
+          "bytes": 516,
+          "crc32": "B963FE8B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/tt pants.vtf",
+          "bytes": 262352,
+          "crc32": "4C15DBFF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/weapon name.vmt",
+          "bytes": 513,
+          "crc32": "6CD03E7E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/weapon.vmt",
+          "bytes": 517,
+          "crc32": "B1D3FCD7"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/backpack.vmt",
+          "bytes": 521,
+          "crc32": "56F61D62"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/backpack.vtf",
+          "bytes": 1048784,
+          "crc32": "1B4B306E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/blush.vmt",
+          "bytes": 499,
+          "crc32": "1B6BC3FA"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/body.vmt",
+          "bytes": 513,
+          "crc32": "F9FEBD9C"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/body.vtf",
+          "bytes": 4194512,
+          "crc32": "D9C37E0F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/card border.vmt",
+          "bytes": 521,
+          "crc32": "4157BE3A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/card frame.vtf",
+          "bytes": 262352,
+          "crc32": "4838D6DE"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/card.vmt",
+          "bytes": 515,
+          "crc32": "41E15D1A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/card.vtf",
+          "bytes": 262352,
+          "crc32": "4BFE2715"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/ch.vmt",
+          "bytes": 499,
+          "crc32": "73FD0957"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/chest.vmt",
+          "bytes": 518,
+          "crc32": "AC8B5836"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/chest.vtf",
+          "bytes": 1048784,
+          "crc32": "F569BEB7"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/clothes_body.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/dress.vtf",
+          "bytes": 4194512,
+          "crc32": "853A0D09"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/etc4.vtf",
+          "bytes": 4194512,
+          "crc32": "7170ADAE"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/exp1.vmt",
+          "bytes": 513,
+          "crc32": "57AAFA05"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/exp1.vtf",
+          "bytes": 1048784,
+          "crc32": "8AA72088"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/exp2.vtf",
+          "bytes": 1048784,
+          "crc32": "C5FA5ECC"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/exp3.vtf",
+          "bytes": 65744,
+          "crc32": "E8D74114"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eye.vmt",
+          "bytes": 512,
+          "crc32": "7ABB3330"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eye.vtf",
+          "bytes": 4194512,
+          "crc32": "B39206BF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eye2.vmt",
+          "bytes": 513,
+          "crc32": "C40746E9"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eye2.vtf",
+          "bytes": 4194512,
+          "crc32": "DA0AA920"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eye3.vmt",
+          "bytes": 513,
+          "crc32": "73A72393"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eye3.vtf",
+          "bytes": 4194512,
+          "crc32": "63AF62E4"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eye4.vmt",
+          "bytes": 513,
+          "crc32": "C3241577"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eye4.vtf",
+          "bytes": 4194512,
+          "crc32": "D1A99CB2"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/eyelash.vmt",
+          "bytes": 513,
+          "crc32": "3CA7BEE5"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/face.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/face.vtf",
+          "bytes": 4194512,
+          "crc32": "EEFE3BE8"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/gloom.vmt",
+          "bytes": 499,
+          "crc32": "1B6BC3FA"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hachueye.vmt",
+          "bytes": 501,
+          "crc32": "96F3DFBF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hachueye2.vmt",
+          "bytes": 506,
+          "crc32": "E815D713"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hachueye2.vtf",
+          "bytes": 1048784,
+          "crc32": "E3DA8D70"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hachueye3.vmt",
+          "bytes": 506,
+          "crc32": "880D568F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hachueye3.vtf",
+          "bytes": 1048784,
+          "crc32": "B9ECB072"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hachueye4.vmt",
+          "bytes": 506,
+          "crc32": "7337D41A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hachueye4.vtf",
+          "bytes": 1048784,
+          "crc32": "5B101AA5"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hair.vmt",
+          "bytes": 534,
+          "crc32": "4AAAA744"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hair.vtf",
+          "bytes": 4194512,
+          "crc32": "006B4B50"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hairbump.vtf",
+          "bytes": 4194512,
+          "crc32": "5109DFDF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/Hair_Transparent.vmt",
+          "bytes": 534,
+          "crc32": "4AAAA744"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hat.vmt",
+          "bytes": 514,
+          "crc32": "6D00D80E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/hat.vtf",
+          "bytes": 1048784,
+          "crc32": "A5CBE08B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/key.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/lips.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/mouth.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/pants.vmt",
+          "bytes": 518,
+          "crc32": "ABF2D04F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/pants.vtf",
+          "bytes": 1048784,
+          "crc32": "2D5AE44F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/privates.vmt",
+          "bytes": 508,
+          "crc32": "A6780513"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/Question mark.vmt",
+          "bytes": 513,
+          "crc32": "6CD03E7E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/scerla.vmt",
+          "bytes": 514,
+          "crc32": "04BDD12B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/shoes.vmt",
+          "bytes": 518,
+          "crc32": "B84572F6"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/shoes.vtf",
+          "bytes": 262352,
+          "crc32": "4104111D"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/skirt_camo.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/skirt_white.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/spandex.vmt",
+          "bytes": 580,
+          "crc32": "3B9D4B49"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/strap back.vmt",
+          "bytes": 520,
+          "crc32": "F80E6194"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/strap front.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/Swimsuit name.vmt",
+          "bytes": 527,
+          "crc32": "663A18CF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/Swimsuit name.vtf",
+          "bytes": 87616,
+          "crc32": "63593497"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/swimsuit.vmt",
+          "bytes": 524,
+          "crc32": "617BEF7B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/swimsuit.vtf",
+          "bytes": 1048784,
+          "crc32": "B790A971"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/backpack.vmt",
+          "bytes": 521,
+          "crc32": "56F61D62"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/blush.vmt",
+          "bytes": 499,
+          "crc32": "1B6BC3FA"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/body.vmt",
+          "bytes": 513,
+          "crc32": "F9FEBD9C"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/card border.vmt",
+          "bytes": 521,
+          "crc32": "4157BE3A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/card.vmt",
+          "bytes": 515,
+          "crc32": "41E15D1A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/ch.vmt",
+          "bytes": 499,
+          "crc32": "73FD0957"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/chest.vmt",
+          "bytes": 654,
+          "crc32": "C8EAECFD"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/clothes_body.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/exp1.vmt",
+          "bytes": 513,
+          "crc32": "57AAFA05"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/eye.vmt",
+          "bytes": 512,
+          "crc32": "7ABB3330"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/eye2.vmt",
+          "bytes": 513,
+          "crc32": "C40746E9"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/eye3.vmt",
+          "bytes": 513,
+          "crc32": "73A72393"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/eye4.vmt",
+          "bytes": 513,
+          "crc32": "C3241577"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/eye5.vmt",
+          "bytes": 478,
+          "crc32": "EAEC753A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/eyelash.vmt",
+          "bytes": 513,
+          "crc32": "3CA7BEE5"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/face.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/facet.vmt",
+          "bytes": 511,
+          "crc32": "F7198825"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/gloom.vmt",
+          "bytes": 499,
+          "crc32": "1B6BC3FA"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/hachueye.vmt",
+          "bytes": 501,
+          "crc32": "96F3DFBF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/hachueye2.vmt",
+          "bytes": 506,
+          "crc32": "E815D713"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/hachueye3.vmt",
+          "bytes": 506,
+          "crc32": "880D568F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/hachueye4.vmt",
+          "bytes": 506,
+          "crc32": "7337D41A"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/hair.vmt",
+          "bytes": 534,
+          "crc32": "4AAAA744"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/Hair_Transparent.vmt",
+          "bytes": 534,
+          "crc32": "4AAAA744"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/hat.vmt",
+          "bytes": 514,
+          "crc32": "6D00D80E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/key.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/lips.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/mouth.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/pants.vmt",
+          "bytes": 518,
+          "crc32": "ABF2D04F"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/privates.vmt",
+          "bytes": 508,
+          "crc32": "A6780513"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/Question mark.vmt",
+          "bytes": 513,
+          "crc32": "6CD03E7E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/scerla.vmt",
+          "bytes": 514,
+          "crc32": "04BDD12B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/shoes.vmt",
+          "bytes": 518,
+          "crc32": "B84572F6"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/short.vmt",
+          "bytes": 549,
+          "crc32": "7871BB97"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/skirt_camo.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/skirt_white.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/spandex.vmt",
+          "bytes": 580,
+          "crc32": "3B9D4B49"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/strap back.vmt",
+          "bytes": 520,
+          "crc32": "F80E6194"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/strap front.vmt",
+          "bytes": 518,
+          "crc32": "49CAFA54"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/Swimsuit name.vmt",
+          "bytes": 527,
+          "crc32": "663A18CF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/swimsuit.vmt",
+          "bytes": 524,
+          "crc32": "617BEF7B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/tanktop.vmt",
+          "bytes": 654,
+          "crc32": "C8EAECFD"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/teeth.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/tongue.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/TT Blush 2.vmt",
+          "bytes": 514,
+          "crc32": "F6CFBC43"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/TT Blush.vmt",
+          "bytes": 512,
+          "crc32": "CB58C1BF"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/tt pants.vmt",
+          "bytes": 516,
+          "crc32": "B963FE8B"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/weapon name.vmt",
+          "bytes": 513,
+          "crc32": "6CD03E7E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tanktop/weapon.vmt",
+          "bytes": 517,
+          "crc32": "B1D3FCD7"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/teeth.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/tongue.vmt",
+          "bytes": 515,
+          "crc32": "B52CF854"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/weapon name.vmt",
+          "bytes": 513,
+          "crc32": "6CD03E7E"
+        },
+        {
+          "member": "Takane and Nitori/materials/models/touhou/tamo/yamashiro takane/weapon.vmt",
+          "bytes": 517,
+          "crc32": "B1D3FCD7"
+        },
+        {
+          "member": "Takane and Nitori/materials/normal.vtf",
+          "bytes": 22052,
+          "crc32": "5785DEA7"
+        },
+        {
+          "member": "Takane and Nitori/materials/red.vtf",
+          "bytes": 1248,
+          "crc32": "00D23E3C"
+        },
+        {
+          "member": "Takane and Nitori/materials/trans.vmt",
+          "bytes": 86,
+          "crc32": "77D867AA"
+        },
+        {
+          "member": "Takane and Nitori/materials/trans.vtf",
+          "bytes": 120,
+          "crc32": "C6AC635E"
+        }
+      ],
+      "all_materials_option_files": 225,
+      "all_materials_option_bytes": 133352370,
+      "model_files": 5,
+      "model_bytes": 924338,
+      "bounded_all_resource_total_bytes": 134276708,
+      "vmt_candidates": [
+        {
+          "native_material": "Gloves glowg",
+          "indexed_vmt_candidates": [
+            {
+              "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+              "bytes": 656,
+              "crc32": "0727914B"
+            }
+          ],
+          "uniquely_indexed": true
+        },
+        {
+          "native_material": "Gloves gloww",
+          "indexed_vmt_candidates": [
+            {
+              "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+              "bytes": 650,
+              "crc32": "1A2E7B0A"
+            }
+          ],
+          "uniquely_indexed": true
+        },
+        {
+          "native_material": "Glovesg",
+          "indexed_vmt_candidates": [
+            {
+              "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesg.vmt",
+              "bytes": 594,
+              "crc32": "CD8D146A"
+            }
+          ],
+          "uniquely_indexed": true
+        },
+        {
+          "native_material": "Glovesw",
+          "indexed_vmt_candidates": [
+            {
+              "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/glovesw.vmt",
+              "bytes": 518,
+              "crc32": "4BF65C5A"
+            }
+          ],
+          "uniquely_indexed": true
+        },
+        {
+          "native_material": "models/touhou/tamo/Nitori edit/Gloves",
+          "indexed_vmt_candidates": [
+            {
+              "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves.vmt",
+              "bytes": 517,
+              "crc32": "B8DE6DC4"
+            }
+          ],
+          "uniquely_indexed": true
+        },
+        {
+          "native_material": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "indexed_vmt_candidates": [
+            {
+              "member": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+              "bytes": 655,
+              "crc32": "5E54A876"
+            }
+          ],
+          "uniquely_indexed": true
+        }
+      ],
+      "dependency_status": "Existing archive index only. No extraction; reading selected VMT references and actual conversion dependency closure remain UNRUN. An explicit complete-material allowlist is included as a bounded staging option, not proof every referenced dependency resolves."
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "archive": {
+        "archive": "Keiki.rar",
+        "path": "C:\\a\\dump\\New folder\\Keiki.rar",
+        "bytes": 9157279,
+        "mtime_ns": 1793569377292382800,
+        "sha256": "8f624a9f79bb3787fdd799a74bdfa48a67d4659092d202ac5e3e315d26c613d4",
+        "index_entries": 86,
+        "staged_models": 3
+      },
+      "native_member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.mdl",
+      "native_mdl_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "future_staged_input": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "retained_mdl": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-extra-native-inventory\\portable-root-639301165838922272\\stage\\11\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "actual_metadata": {
+        "archive": "Keiki.rar",
+        "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.mdl",
+        "sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+        "version": 49,
+        "bodygroups": [
+          {
+            "index": 0,
+            "name": "tools",
+            "choices": [
+              {
+                "index": 0,
+                "name": "tools.dmx",
+                "vertices": 1180,
+                "meshes": 1,
+                "blank": false,
+                "mesh_flex_records": 1
+              },
+              {
+                "index": 1,
+                "name": "blank",
+                "vertices": 0,
+                "meshes": 0,
+                "blank": true,
+                "mesh_flex_records": 0
+              }
+            ]
+          },
+          {
+            "index": 1,
+            "name": "box",
+            "choices": [
+              {
+                "index": 0,
+                "name": "box.smd",
+                "vertices": 38,
+                "meshes": 1,
+                "blank": false,
+                "mesh_flex_records": 0
+              },
+              {
+                "index": 1,
+                "name": "blank",
+                "vertices": 0,
+                "meshes": 0,
+                "blank": true,
+                "mesh_flex_records": 0
+              }
+            ]
+          },
+          {
+            "index": 2,
+            "name": "flame",
+            "choices": [
+              {
+                "index": 0,
+                "name": "flame.smd",
+                "vertices": 1479,
+                "meshes": 2,
+                "blank": false,
+                "mesh_flex_records": 0
+              },
+              {
+                "index": 1,
+                "name": "blank",
+                "vertices": 0,
+                "meshes": 0,
+                "blank": true,
+                "mesh_flex_records": 0
+              }
+            ]
+          }
+        ],
+        "skin_family_count": 1,
+        "distinct_skin_families": 1,
+        "bone_count": 31,
+        "procedural_bones": 0,
+        "tools_controllers": [
+          {
+            "index": 0,
+            "name": "Tools",
+            "group": "Tools",
+            "min": 0.0,
+            "max": 1.0
+          }
+        ],
+        "tools_rule_bindings": [
+          {
+            "target_descriptor": 0,
+            "target_name": "Tools",
+            "fetch1_controller": 0
+          }
+        ]
+      },
+      "skin_table": [
+        [
+          "models/touhou/tamo/Keiki Haniyashin/props",
+          "box",
+          "blush",
+          "excl mark"
+        ]
+      ],
+      "model_allowlist": [
+        {
+          "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.dx80.vtx",
+          "bytes": 52802,
+          "crc32": "7154EC2D"
+        },
+        {
+          "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.dx90.vtx",
+          "bytes": 52557,
+          "crc32": "9635FD08"
+        },
+        {
+          "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.mdl",
+          "bytes": 33608,
+          "crc32": "4754D7A0"
+        },
+        {
+          "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.sw.vtx",
+          "bytes": 52453,
+          "crc32": "2926019C"
+        },
+        {
+          "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.vvd",
+          "bytes": 172672,
+          "crc32": "50B9D183"
+        }
+      ],
+      "material_allowlist": [
+        {
+          "member": "keiki by tamo/materials/exp.vtf",
+          "bytes": 22080,
+          "crc32": "37C8BF87"
+        },
+        {
+          "member": "keiki by tamo/materials/green.vtf",
+          "bytes": 349732,
+          "crc32": "4B2835CD"
+        },
+        {
+          "member": "keiki by tamo/materials/hairbump.vtf",
+          "bytes": 1048800,
+          "crc32": "9C807ED8"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/shader/face_shader.vtf",
+          "bytes": 4208,
+          "crc32": "7465FA25"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/backhair.vmt",
+          "bytes": 534,
+          "crc32": "8D3545E0"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+          "bytes": 516,
+          "crc32": "5ADDA16E"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/body.vmt",
+          "bytes": 515,
+          "crc32": "0621C3B9"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/body.vtf",
+          "bytes": 4194512,
+          "crc32": "1DA6E30B"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+          "bytes": 517,
+          "crc32": "F9FD254D"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/box.vtf",
+          "bytes": 262352,
+          "crc32": "B031A516"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/breastbelt.vmt",
+          "bytes": 524,
+          "crc32": "9FE74C87"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/chistle.vtf",
+          "bytes": 1048784,
+          "crc32": "0A2E02E4"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/coat green.vtf",
+          "bytes": 4194512,
+          "crc32": "A1091D4E"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/coat.vmt",
+          "bytes": 526,
+          "crc32": "8E1BE995"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/coatgreen.vmt",
+          "bytes": 524,
+          "crc32": "9FE74C87"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/effects.vmt",
+          "bytes": 513,
+          "crc32": "7429EDDB"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+          "bytes": 513,
+          "crc32": "116F9823"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/exp.vmt",
+          "bytes": 510,
+          "crc32": "0054CECC"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/exp.vtf",
+          "bytes": 1048784,
+          "crc32": "C42BE2CD"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/exp2.vmt",
+          "bytes": 511,
+          "crc32": "E03A8C73"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/exp2.vtf",
+          "bytes": 1048784,
+          "crc32": "BA5F0DBE"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/exp3.vmt",
+          "bytes": 511,
+          "crc32": "6E6B9663"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/exp3.vtf",
+          "bytes": 1048784,
+          "crc32": "731E8E81"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/exp4.vmt",
+          "bytes": 511,
+          "crc32": "733EDC91"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/exp4.vtf",
+          "bytes": 1048784,
+          "crc32": "7B9CD8CC"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/expressions.vmt",
+          "bytes": 519,
+          "crc32": "CF615627"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye lash.vmt",
+          "bytes": 517,
+          "crc32": "520236BD"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye.vmt",
+          "bytes": 514,
+          "crc32": "44878465"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye.vtf",
+          "bytes": 1048784,
+          "crc32": "C69084C6"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye2.vmt",
+          "bytes": 515,
+          "crc32": "C932F32D"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye2.vtf",
+          "bytes": 1048784,
+          "crc32": "5C48E818"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye3.vmt",
+          "bytes": 515,
+          "crc32": "213A4026"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye3.vtf",
+          "bytes": 1048784,
+          "crc32": "B6F83813"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye4.vmt",
+          "bytes": 515,
+          "crc32": "D49253D4"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eye4.vtf",
+          "bytes": 1048784,
+          "crc32": "26895BCE"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/eyes exp.vtf",
+          "bytes": 1048784,
+          "crc32": "C5FA5ECC"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/face.vmt",
+          "bytes": 515,
+          "crc32": "2944B681"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/face.vtf",
+          "bytes": 4194512,
+          "crc32": "4A11F0C6"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/finger edge.vmt",
+          "bytes": 515,
+          "crc32": "0621C3B9"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/fronthair.vmt",
+          "bytes": 534,
+          "crc32": "8D3545E0"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/hair.vtf",
+          "bytes": 4194512,
+          "crc32": "D1DA1E26"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/hat.vmt",
+          "bytes": 517,
+          "crc32": "3C9543DA"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/hat.vtf",
+          "bytes": 1048784,
+          "crc32": "6011303A"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/jacket.vmt",
+          "bytes": 524,
+          "crc32": "9FE74C87"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/NeckAccessory.vmt",
+          "bytes": 527,
+          "crc32": "49896534"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/NeckAccessory.vtf",
+          "bytes": 1048784,
+          "crc32": "FEEABDED"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/nose line.vmt",
+          "bytes": 513,
+          "crc32": "7429EDDB"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/pants.vmt",
+          "bytes": 519,
+          "crc32": "8D1A4B77"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/pants.vtf",
+          "bytes": 1048784,
+          "crc32": "B446F36A"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+          "bytes": 521,
+          "crc32": "ED892C57"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/skirt.vmt",
+          "bytes": 526,
+          "crc32": "1AF6DEFA"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/skirtgreen.vmt",
+          "bytes": 524,
+          "crc32": "9FE74C87"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/sorrow.vtf",
+          "bytes": 1048784,
+          "crc32": "388C9700"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/straps.vtf",
+          "bytes": 1048784,
+          "crc32": "259349C7"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/teeth.vmt",
+          "bytes": 517,
+          "crc32": "520236BD"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/text.vtf",
+          "bytes": 4194512,
+          "crc32": "DEC8C159"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/waistbelt.vmt",
+          "bytes": 524,
+          "crc32": "9FE74C87"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/wraps shoes.vmt",
+          "bytes": 520,
+          "crc32": "C8527401"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/yellow dress.vtf",
+          "bytes": 4194512,
+          "crc32": "E08BB231"
+        },
+        {
+          "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/yellow skirt.vtf",
+          "bytes": 4194512,
+          "crc32": "5D212B04"
+        },
+        {
+          "member": "keiki by tamo/materials/normal.vtf",
+          "bytes": 22052,
+          "crc32": "5785DEA7"
+        }
+      ],
+      "all_materials_option_files": 61,
+      "all_materials_option_bytes": 46819684,
+      "model_files": 5,
+      "model_bytes": 364092,
+      "bounded_all_resource_total_bytes": 47183776,
+      "vmt_candidates": [
+        {
+          "native_material": "blush",
+          "indexed_vmt_candidates": [
+            {
+              "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+              "bytes": 516,
+              "crc32": "5ADDA16E"
+            }
+          ],
+          "uniquely_indexed": true
+        },
+        {
+          "native_material": "box",
+          "indexed_vmt_candidates": [
+            {
+              "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+              "bytes": 517,
+              "crc32": "F9FD254D"
+            }
+          ],
+          "uniquely_indexed": true
+        },
+        {
+          "native_material": "excl mark",
+          "indexed_vmt_candidates": [
+            {
+              "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+              "bytes": 513,
+              "crc32": "116F9823"
+            }
+          ],
+          "uniquely_indexed": true
+        },
+        {
+          "native_material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "indexed_vmt_candidates": [
+            {
+              "member": "keiki by tamo/materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+              "bytes": 521,
+              "crc32": "ED892C57"
+            }
+          ],
+          "uniquely_indexed": true
+        }
+      ],
+      "dependency_status": "Existing archive index only. No extraction; reading selected VMT references and actual conversion dependency closure remain UNRUN. An explicit complete-material allowlist is included as a bounded staging option, not proof every referenced dependency resolves."
+    }
+  ],
+  "commands": [
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-0",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\multi_skin_glove-skin-0.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\stage\\Takane and Nitori\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\multi_skin_glove-skin-0.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\conversions\\skin-0",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-1",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\multi_skin_glove-skin-1.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\stage\\Takane and Nitori\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\multi_skin_glove-skin-1.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\conversions\\skin-1",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-2",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\multi_skin_glove-skin-2.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\stage\\Takane and Nitori\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\multi_skin_glove-skin-2.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\conversions\\skin-2",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "all-blank-refusal",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": false,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\multi_skin_glove-all-blank-refusal.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\stage\\Takane and Nitori\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\multi_skin_glove-all-blank-refusal.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\conversions\\all-blank-refusal",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "default-no-appearance",
+      "prerequisite": "Same staging prerequisites; compare existing default semantics without appearance request",
+      "expected_prepare_success": true,
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\stage\\Takane and Nitori\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\multi_skin_glove\\conversions\\default-no-appearance",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-000",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-000.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-000.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\groups-000",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-001",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-001.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-001.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\groups-001",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-010",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-010.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-010.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\groups-010",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-011",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-011.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-011.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\groups-011",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-100",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-100.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-100.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\groups-100",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-101",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-101.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-101.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\groups-101",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-110",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": true,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-110.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-110.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\groups-110",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-111",
+      "prerequisite": "NOT RUNNABLE UNTIL exact full-resource staging and current-source/runtime checks complete; root owns graphics/Blender lease",
+      "expected_prepare_success": false,
+      "request": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-111.json",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--appearance",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\requests\\keiki_tools_chisels-groups-111.json",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\groups-111",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "default-no-appearance",
+      "prerequisite": "Same staging prerequisites; compare existing default semantics without appearance request",
+      "expected_prepare_success": true,
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-prototype\\Studio\\tools\\prepare_source.py",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\stage\\keiki by tamo\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+        "--output",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-appearance-native-next\\keiki_tools_chisels\\conversions\\default-no-appearance",
+        "--sourceio",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+        "--blender",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe",
+        "--mount-plan",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\empty-mount-plan.json"
+      ]
+    }
+  ],
+  "loose_mdl_request_binding": "prepare_source does not accept RAR/ZIP. On separately staged loose-MDL route, source_sha256 and native_mdl_sha256 both equal selected MDL bytes; original archive SHA/member/staging recipe stay external provenance. Never use the RAR SHA for this loose-MDL request.",
+  "mount_rule": "empty explicit mount plan suppresses appending discovered game mounts; loose route still mounts its own copied sidecars and the staged models/ sibling content root. Require every resolved provider under owned staged roots; do not allow installed fallback to hide dependencies.",
+  "closure_rule": "Allowlist model sidecars plus either parsed transitive VMT/VTF closure, or all indexed material resources as bounded staging option. Re-read archive index; reject changed CRC/size, unsafe/duplicate/link/encrypted entries, non-resource suffixes and any scripts. Verify SHA/size/mtime before and after. Index presence alone is not resolved dependency evidence.",
+  "not_run": [
+    "RAR extraction or any payload staging",
+    "VMT contents/reference closure",
+    "Blender import/material slots/export",
+    "GPU/native pixel comparisons",
+    "app selector/adoption/Undo/HAS/movie"
+  ],
+  "native_procedural_scope": "Both candidates declare zero procedural bones; cannot certify native jiggle. Use separately scoped Junko hair later.",
+  "private_art_included": false
+}

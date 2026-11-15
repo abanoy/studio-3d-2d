@@ -1,0 +1,104 @@
+{
+  "format": "has_sfm_inert_metadata_shapes_main_1",
+  "date": "2026-11-13",
+  "source_context": "main_working_source_snapshot",
+  "baseline_commit": "eb089488c35346e448a73523f7681f83f9137dcf",
+  "status": "PASSED_SCOPED_CPU_AND_ACTUAL_NATIVE_APP",
+  "completed_import_cleanup": {
+    "actual_headless_checks": 53,
+    "live_child_teardown": "not_changed_or_claimed",
+    "negative_exit_getter": "ambiguous -1; sole-creator reservation and pinned Windows implementation establish exactly-once mapped release"
+  },
+  "cpu": {
+    "source_foundation": 167,
+    "inactive_metadata_capture_bridge": 66,
+    "bootstrap": 2,
+    "resource_write_passed": 6,
+    "resource_write_explicit_symlink_privilege_skip": 1
+  },
+  "native": {
+    "actual_joins": [
+      {
+        "format": "has_source_jiggle_native_report_join_1",
+        "passed": true,
+        "status": "retained_inert",
+        "rules": 49,
+        "native_bones": 69,
+        "exact_numeric_float32_joins": 1421,
+        "metadata_compact_bytes": 67269,
+        "actual_report_bytes": 137044,
+        "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+        "original_source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+        "report_sha256": "9529eb22da96958a5a2cba36a890a8db18e12a7c3bd8bd8890ea299ae8e80dc1",
+        "inputs_preserved": true,
+        "native_simulation": false,
+        "scope": "Actual report joined to immutable native prefixes and prior independent extraction; no runtime binding, solver or artist-fidelity claim."
+      },
+      {
+        "format": "has_source_jiggle_native_report_join_1",
+        "passed": true,
+        "status": "none",
+        "rules": 0,
+        "native_bones": 66,
+        "exact_numeric_float32_joins": 0,
+        "metadata_compact_bytes": 0,
+        "actual_report_bytes": 8267,
+        "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+        "original_source_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+        "report_sha256": "2e7a52c1151eaf9c3bbff1c69d9473b86e62234b246ba157fc923a1a32b33a34",
+        "inputs_preserved": true,
+        "native_simulation": false,
+        "scope": "Actual report joined to immutable native prefixes and prior independent extraction; no runtime binding, solver or artist-fidelity claim."
+      }
+    ],
+    "source_files": 4136,
+    "writer_checks": 117,
+    "reader_checks": 124,
+    "named_writer": 102,
+    "named_readers": 52,
+    "private_jobs": 5,
+    "preserved": {
+      "main_sources_and_head": true,
+      "approved_runtimes": true,
+      "manifest": true,
+      "original_families": true,
+      "owned_native_copies": true,
+      "snapshot_sources": true,
+      "conversion_metadata": true,
+      "saved_packages_and_linked_assets": true
+    },
+    "passed": true,
+    "cold_project_opens": 8,
+    "base_exact_frame_joins": 16,
+    "extra_exact_shape_frame_joins": 4,
+    "families": 4,
+    "family_files": 495,
+    "native_simulation": false
+  },
+  "movie": {
+    "codec": "h264",
+    "size": [
+      1920,
+      1080
+    ],
+    "fps": "24/1",
+    "frames": 48,
+    "seconds": 2.0,
+    "audio": "AAC",
+    "decoded_onset_seconds": 1.0000416666666667,
+    "rms_at_1_1s": 8487.65214677082
+  },
+  "verification_sha256": "0563715c0616c8ec8abc743df5430abb0e19b4fa41b6cbd455104e9292044547",
+  "evidence": "experiments/source_appearance/inert_metadata_shapes_main_20261114",
+  "evidence_index_sha256": "422f6c6b754645f371617cb1dfecb41c049a93a0199c8d928e8640c541db189d",
+  "full_default_verification": "NEXT_required_for_this_new_increment; prior9f full covers static choices",
+  "full_previous_report": "docs/benchmarks/windows_canonical_sfm_2026-11-13.json",
+  "limits": [
+    "Native rules are retained inactive; no export crosswalk, runtime binding or Source solver is implemented",
+    "Native Source shader/controller/assembly fidelity and actual artist review remain separate",
+    "Fresh Mima head is tested through three exact derived target tuples; all143targets/native156descriptors are not exhaustively exercised",
+    "No private art/media/runtime payload is committed",
+    "Formal acceptance55/62 and implementation52/54 remain unchanged"
+  ],
+  "next": "Prove Junko native-to-export/runtime binding and rest/unit correspondence before implementing a native dynamics subset; see docs/source_jiggle_runtime_plan.md"
+}

@@ -24,10 +24,17 @@ module = importlib.util.module_from_spec(spec)
 sys.modules["SourceIO"] = module
 spec.loader.exec_module(module)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import source_appearance
+import source_jiggle_metadata
+import source_mdl_snapshot
+import source_bone_export
 from asset_audit import gma_index, AssetError
-from source_archive import resource_path
+from source_archive import resource_path, write_resource
 from source_texture import blender_rgba
+from source_case import CaseResolver
 from source_eyes import plan as neutral_eye_plan
+from source_lights import plan as light_plan, create as create_lights
+from source_lightmaps import capture as capture_lightmaps, bake as bake_lightmaps, tag_glb as tag_lightmap_glb
 
 from SourceIO.library.utils import TinyPath, FileBuffer, MemoryBuffer
 from SourceIO.library.shared.app_id import SteamAppId
@@ -42,8 +49,49 @@ from SourceIO.blender_bindings.operators.import_settings_base import ModelOption
 from SourceIO.library.source1.vmt import VMT
 from SourceIO.library.source1.vtf import load_texture
 
+
+def publish_parameters(report, selected_mdl_capture, jiggle_inspection, crosswalk_inspection=None):
+    """Publish exact inert metadata, or retain the existing parameter writer."""
+    if isinstance(selected_mdl_capture, source_mdl_snapshot.NotInspected):
+        # No native identity was captured. Keep the original report and record
+        # only this bounded optional-read reason in the existing worker log.
+        note = {"format": source_jiggle_metadata.FORMAT, "status": "not_inspected",
+                "reason": selected_mdl_capture.reason,
+                "original_source_sha256": report["source_sha256"],
+                "applied": False, "runtime_support": "not_implemented",
+                "binding_status": "unattempted", "retained_rule_count": 0,
+                "candidate_state": "not_formed"}
+        note_bytes = json.dumps(note, ensure_ascii=True, separators=(",", ":"), allow_nan=False).encode("utf-8")
+        if len(note_bytes) > source_jiggle_metadata.STATUS_LIMIT:
+            raise ValueError("Optional selected-MDL inspection note exceeds4KiB")
+        print("STUDIO_SOURCE_JIGGLE_OMITTED", note_bytes.decode("utf-8"), flush=True)
+    elif selected_mdl_capture is not None:
+        # Both identity exception types deliberately escape: an observed source
+        # change is never an optional metadata/layout/budget fallback.
+        source_mdl_snapshot.recheck_selected_mdl(selected_mdl_capture)
+        planned = source_jiggle_metadata.plan_report(
+            report, jiggle_inspection, newline=os.linesep,
+            expected_native_mdl_sha256=selected_mdl_capture.native_sha256)
+        if crosswalk_inspection is not None:
+            planned = source_bone_export.augment_plan(planned, crosswalk_inspection, selected_mdl_capture,
+                                                      report["source_sha256"], os.linesep)
+            if planned["crosswalk_note_bytes"] is not None:
+                print("STUDIO_SOURCE_CROSSWALK_OMITTED", planned["crosswalk_note_bytes"].decode("utf-8"), flush=True)
+        if planned["note_bytes"] is not None:
+            print("STUDIO_SOURCE_JIGGLE_OMITTED", planned["note_bytes"].decode("utf-8").rstrip("\n"), flush=True)
+        if planned["report_bytes"] is not None:
+            # The plan already measured the actual final LF/Windows CRLF bytes.
+            # A text writer here would translate the CRLF a second time.
+            (out / "parameters.json").write_bytes(planned["report_bytes"])
+            return planned["report"]
+    (out / "parameters.json").write_text(json.dumps(report, ensure_ascii=True, indent=2), encoding="utf-8")
+    return report
+
+
 dependencies, missing, warnings = {}, set(), []
 mount_warnings = []
+map_lights = []
+lightmap_jobs, lightmap_cache = [], {}
 failed_lookups = set()
 dependency_bytes = 0
 mounts = [Path(p).resolve() for p in request["mounts"]]
@@ -77,10 +125,10 @@ class DirectFiles(LooseFilesContentProvider):
     def find_file(self, filepath):
         name = relative_name(filepath)
         base = Path(str(self.root)).resolve()
-        path = (base / name).resolve()
-        if not path.is_relative_to(base):
-            raise ValueError("Content mount escape")
-        return FileBuffer(TinyPath(str(path))) if path.is_file() else None
+        if not hasattr(self, "_studio_case_resolver"):
+            self._studio_case_resolver = CaseResolver(base)
+        path = self._studio_case_resolver.find(name)
+        return FileBuffer(TinyPath(str(path))) if path is not None else None
 
     def check(self, filepath):
         buffer = self.find_file(filepath)
@@ -170,10 +218,7 @@ def find_file(value, *args, **kwargs):
                 dependency_bytes += len(blob)
                 if dependency_bytes > 512 * 1024 * 1024:
                     raise ValueError("Resolved native dependencies exceed 512 MiB")
-                native_copy = (out / "resolved-native" / name).resolve()
-                native_copy.relative_to(out / "resolved-native")
-                native_copy.parent.mkdir(parents=True, exist_ok=True)
-                native_copy.write_bytes(blob)
+                write_resource(out / "resolved-native", name, blob)
                 dependencies[key] = {"path": name, "provider": str(provider.filepath), "bytes": len(blob),
                                      "sha256": hashlib.sha256(blob).hexdigest()}
             return VTXBuffer(blob) if name.lower().endswith(".vtx") else MemoryBuffer(blob)
@@ -198,19 +243,23 @@ def model_options(scale):
     return options
 
 
-def load_model(path, buffer, scale, parent=None, skin=0):
+def load_model(path, buffer, scale, parent=None, skin=0, appearance=None):
     container = import_model(TinyPath(str(path)), buffer, cm, model_options(scale), SteamAppId.GARRYS_MOD)
     put_into_collections(container, Path(str(path)).stem)
     from SourceIO.blender_bindings.shared.skins import set_model_skin
-    set_model_skin(container, skin)
-    active = set()
-    for variants in container.bodygroups.values():
-        if variants and variants[0] is not None:
-            active.add(variants[0])
-    for obj in container.objects:
-        if container.bodygroups and obj not in active:
-            obj.hide_render = True
-            obj.hide_set(True)
+    if appearance is not None:
+        container.has_selected_appearance = source_appearance.apply(container, appearance, set_model_skin)
+    else:
+        # Preserve the original default and BSP-prop path byte-for-byte in meaning.
+        set_model_skin(container, skin)
+        active = set()
+        for variants in container.bodygroups.values():
+            if variants and variants[0] is not None:
+                active.add(variants[0])
+        for obj in container.objects:
+            if container.bodygroups and obj not in active:
+                obj.hide_render = True
+                obj.hide_set(True)
     if parent:
         if container.armature:
             container.armature.parent = parent
@@ -222,11 +271,22 @@ def load_model(path, buffer, scale, parent=None, skin=0):
 
 source = Path(request["source"])
 native_parameters = {}
+selected_mdl_capture = None
+jiggle_inspection = {"state": "none"}
 props_loaded = 0
 suggested_view = None
 if source.suffix.lower() == ".mdl":
-    container = load_model(source, FileBuffer(TinyPath(str(source))), request["scale"])
+    selected_mdl_capture = source_mdl_snapshot.capture_selected_mdl(str(source))
+    appearance = request.get("appearance")
+    if appearance is not None:
+        appearance = source_appearance.bind(appearance, request["sha256"], source)
+    container = load_model(source, FileBuffer(TinyPath(str(source))), request["scale"], appearance=appearance)
     mdl = getattr(container, "mdl", None)
+    native_physics = CaseResolver(source.parent).find(source.with_suffix(".phy").name)
+    if native_physics:
+        with native_physics.open("rb") as stream:
+            physics_sha=hashlib.file_digest(stream,"sha256").hexdigest()
+        warnings.append("Source physics file retained in the preparation folder, but its collision shapes and constraints are not reproduced. HAS Physics uses its own generated bodies.")
     native_parameters = {
         "bones": [{"name": b.name, "parent": b.parent_id} for b in mdl.bones] if mdl else [],
         "bodygroups": {k: [o.name if o else None for o in v] for k, v in container.bodygroups.items()},
@@ -235,9 +295,28 @@ if source.suffix.lower() == ".mdl":
         "flex_controllers": [asdict(c) for c in mdl.flex_controllers if is_dataclass(c)] if mdl else [],
         "selected_skin": 0, "selected_bodygroup_indices": {k: 0 for k in container.bodygroups},
         "eyeballs": [asdict(eye) for part in mdl.body_parts for model in part.models for eye in model.eyeballs] if mdl else []}
+    if appearance is not None:
+        native_parameters.update(container.has_selected_appearance)
+        native_parameters["appearance_request"] = appearance
+    if native_physics:
+        native_parameters["source_physics"]={"file":native_physics.name,"sha256":physics_sha,"bytes":native_physics.stat().st_size,"applied":False}
+    if isinstance(selected_mdl_capture, source_mdl_snapshot.MdlCapture):
+        jiggle_inspection = source_jiggle_metadata.inspect(
+            selected_mdl_capture.raw, request["sha256"], selected_mdl_capture.native_sha256,
+            native_parameters["bones"], request["scale"])
 else:
+    if request.get("appearance") is not None:
+        raise ValueError("Appearance choices apply only to one MDL model, not a BSP map")
     from SourceIO.blender_bindings.source1.bsp.import_bsp import import_bsp
     from SourceIO.blender_bindings.source1.bsp.entities.abstract_entity_handlers import AbstractEntityHandler
+    original_brush_loader = AbstractEntityHandler._load_brush_model
+    def lightmapped_brush(self, model_id, model_name):
+        obj = original_brush_loader(self, model_id, model_name)
+        try: lightmap_jobs.append(capture_lightmaps(self, model_id, obj, lightmap_cache))
+        except (ValueError, IndexError, KeyError, AttributeError, ArithmeticError, struct.error) as error:
+            warnings.append(model_name + ": baked lighting unavailable: " + str(error))
+        return obj
+    AbstractEntityHandler._load_brush_model = lightmapped_brush
     original_handler = AbstractEntityHandler.handle_entity
     def geometry_entity(self, entity):
         classname = entity.get("classname", "")
@@ -260,6 +339,11 @@ else:
     for text in bpy.data.texts:
         if not text.name.endswith("_entities.json"): continue
         entities = json.loads(text.as_string())
+        planned_lights = light_plan(entities, request["scale"])
+        create_lights(bpy, planned_lights)
+        map_lights.extend(planned_lights["lights"])
+        if len(map_lights)>64:raise ValueError("Source map exceeds64supported static lights")
+        warnings.extend(planned_lights["warnings"])
         (out / "entities.json").write_text(json.dumps(entities, indent=2), encoding="utf-8")
         for entity in entities:
             if not entity.get("classname", "").startswith("info_player_"): continue
@@ -298,13 +382,16 @@ else:
             props_loaded += 1
         except Exception as error:
             warnings.append("Prop failed: " + str(path) + ": " + str(error))
-    native_parameters = {"props_found": len(placeholders), "props_loaded": props_loaded, "removed_tool_faces": removed_tool_faces}
+    native_parameters = {"props_found": len(placeholders), "props_loaded": props_loaded, "removed_tool_faces": removed_tool_faces, "static_entity_lights": map_lights}
 
 
 images = {}
 decoded_texture_bytes = 0
 material_report = []
 bpy.context.view_layer.update()
+crosswalk_observation, crosswalk_reason = source_bone_export.prepare(
+    request, selected_mdl_capture, mdl if source.suffix.lower() == ".mdl" else None,
+    container if source.suffix.lower() == ".mdl" else None, bpy, jiggle_inspection)
 used_materials = {slot.material for obj in bpy.context.scene.objects if obj.type == "MESH" for slot in obj.material_slots if slot.material}
 for material in used_materials:
     native_name = material.get("source1_material", material.get("full_path", material.name))
@@ -377,22 +464,43 @@ for material in used_materials:
         warnings.append(native_name + ": " + str(error))
     material_report.append(row)
 
+lightmap_report = bake_lightmaps(bpy, lightmap_jobs, 512 * 1024 * 1024 - decoded_texture_bytes)
+decoded_texture_bytes += lightmap_report["decoded_bytes"]
+if lightmap_report["downsampled_faces"]:
+    warnings.append("Baked lightmap textures were reduced to the512pixel-per-face bound on%d surfaces." % lightmap_report["downsampled_faces"])
+if lightmap_report["skipped"]:
+    warnings.append("Some Source brush lighting was not baked: " + json.dumps(lightmap_report["skipped"], sort_keys=True))
+if lightmap_jobs:
+    native_parameters["static_brush_lightmaps"] = lightmap_report
+
 # Save the complete native intermediate; GLB exports only active mesh variants and rigs.
 bpy.context.view_layer.update()
 bpy.ops.wm.save_as_mainfile(filepath=str(out / "editable.blend"))
 bpy.ops.object.select_all(action="DESELECT")
 exported = []
 for obj in bpy.context.scene.objects:
-    if obj.type in {"MESH", "ARMATURE", "EMPTY"} and not obj.hide_render and not obj.hide_get():
+    if obj.type in {"MESH", "ARMATURE", "EMPTY", "LIGHT"} and not obj.hide_render and not obj.hide_get():
         obj.select_set(True)
         exported.append(obj)
 if not any(o.type == "MESH" and len(o.data.polygons) for o in exported):
     raise ValueError("No renderable geometry imported")
-bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", use_selection=True,
-                          export_animations=False, export_cameras=False, export_lights=False,
-                          export_extras=False, export_yup=True, export_image_format="AUTO")
+if crosswalk_observation is None:
+    bpy.ops.export_scene.gltf(filepath=str(out / "scene.glb"), export_format="GLB", use_selection=True,
+                              export_animations=False, export_cameras=False, export_lights=True,
+                              export_extras=False, export_yup=True, export_image_format="AUTO")
+else:
+    crosswalk_observation.export(bpy.ops.export_scene.gltf, {
+        "filepath": str(out / "scene.glb"), "export_format": "GLB", "use_selection": True,
+        "export_animations": False, "export_cameras": False, "export_lights": True,
+        "export_extras": False, "export_yup": True, "export_image_format": "AUTO"})
+tag_lightmap_glb(out / "scene.glb", lightmap_report["materials"])
+crosswalk_inspection = None
+if crosswalk_observation is not None or crosswalk_reason is not None:
+    crosswalk_inspection = {"observation": crosswalk_observation, "reason": crosswalk_reason,
+                            "observed": crosswalk_observation.complete(out / "scene.glb") if crosswalk_observation is not None else None}
 report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_source": request["original_source"],
           "source_file": source.name, "source_member": request.get("source_member"),
+          "case_resolved_sidecars": request.get("case_resolved_sidecars", {}),
           "source_profile": request.get("source_profile", "gmod"),
           "source_sha256": request["sha256"], "sourceio_revision": request["sourceio_revision"],
           "sourceio_version": list(module.bl_info["version"]), "scale": request["scale"],
@@ -400,11 +508,11 @@ report = {"adapter": "studio_source_1", "standard": "studio_model_1", "original_
           "mount_warnings": mount_warnings,
           "suggested_view": suggested_view,
           "materials": material_report, "warnings": warnings,
-          "limits": ["PBR approximation; no Source shader/proxy execution, baked lightmaps or 3D skybox",
-                     "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
+          "limits": ["PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+                     "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching" if request.get("appearance") is not None else "Default skin/bodygroup only in GLB; all imported variants retained in editable.blend",
                      "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"],
-          "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images),
-                     "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE")}}
-(out / "parameters.json").write_text(json.dumps(report, ensure_ascii=True, indent=2), encoding="utf-8")
+          "counts": {"meshes": sum(o.type == "MESH" for o in exported), "textures": len(images) + lightmap_report["atlases"],
+                     "bones": sum(len(o.data.bones) for o in exported if o.type == "ARMATURE"), "static_lights": len(map_lights)}}
+report = publish_parameters(report, selected_mdl_capture, jiggle_inspection, crosswalk_inspection)
 (out / "dependencies.json").write_text(json.dumps({"resolved": list(dependencies.values()), "missing_requests": sorted(missing)}, indent=2), encoding="utf-8")
 print("STUDIO_SOURCE_READY", json.dumps(report["counts"]), flush=True)

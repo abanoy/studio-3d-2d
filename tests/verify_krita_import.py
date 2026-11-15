@@ -1,11 +1,13 @@
 """Real hidden in-app native preparation, adoption, cold save and MP4 proof."""
 from pathlib import Path
-import json,subprocess,sys,time,zipfile
+import hashlib,json,os,subprocess,sys,time,zipfile
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
 from run import command
 def main():
+    source=Path(os.environ.get('HYBRID_HECATIA_KRA','C:/a/Programming/cloudflare/prototypes/artist-animation-assistant/samples/hecatia.kra')).resolve(strict=True)
+    before=(hashlib.sha256(source.read_bytes()).hexdigest(),source.stat().st_mtime_ns)
+    assert before[0]=='fff3599293023f41f05eb27c9d51d2af45d01493b8618c5da51067f3449ff758','This historical verifier requires the original 19-layer Hecatia fixture; use HYBRID_HECATIA_KRA to select its unchanged local copy.'
     folder=ROOT/'output/krita-import'/str(time.time_ns());folder.mkdir(parents=True);reports={};receipts=[]
-    source=Path('C:/a/Programming/cloudflare/prototypes/artist-animation-assistant/samples/hecatia.kra')
     for label,extra in [('writer',[str(folder),str(source)]),('reader',[str(folder),'--read'])]:
         args=command('tests/krita_import_smoke.gd',extra=['--',*extra]);p=subprocess.run(args,cwd=ROOT,capture_output=True,timeout=205,creationflags=subprocess.CREATE_NO_WINDOW);raw=p.stdout+p.stderr;(folder/(label+'.log')).write_bytes(raw)
         assert p.returncode==0 and b'KRITA_IMPORT_' in raw and not any(s in raw for s in [b'SCRIPT ERROR',b'SHADER ERROR',b'FAIL ',b'ObjectDB instances leaked']),raw.decode('utf-8',errors='replace')
@@ -18,5 +20,6 @@ def main():
         with zipfile.ZipFile(folder/name) as z:
             manifest=json.loads(z.read('project.json'));origin=manifest['layers'][2]['origin'];assert origin['name']=='hecatia.kra' and 'path' not in origin and len(manifest['layers'][2]['cels'])==8
             assert all(c['path'] in z.namelist() for c in manifest['layers'][2]['cels'])
-    result={'folder':str(folder),'reports':reports,'private_receipts':receipts,'cancelled_receipt':str(stopped),'video':video,'portable_imported_pixels':True};(ROOT/'output/krita-import-verification.json').write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps({k:v for k,v in result.items() if k!='video'},indent=2))
+    assert (hashlib.sha256(source.read_bytes()).hexdigest(),source.stat().st_mtime_ns)==before
+    result={'folder':str(folder),'reports':reports,'private_receipts':receipts,'cancelled_receipt':str(stopped),'video':video,'portable_imported_pixels':True,'source_sha256':before[0],'source_unchanged':True};(ROOT/'output/krita-import-verification.json').write_text(json.dumps(result,indent=2),encoding='utf-8');print(json.dumps({k:v for k,v in result.items() if k!='video'},indent=2))
 if __name__=='__main__':main()

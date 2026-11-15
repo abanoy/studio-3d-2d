@@ -1,0 +1,61 @@
+PASS candidate has an explicit writer/reader mode
+PASS app probe mode is writer or reader
+PASS manifest supplies exact app case nitori-skin-0
+PASS nitori-skin-0 starts with no pending operation
+PASS nitori-skin-0 reader finds writer evidence
+PASS nitori-skin-0 writer evidence has its exact case identity
+PASS nitori-skin-0 original owned GLB alias is unavailable to the fresh reader
+PASS nitori-skin-0 packed HAS bytes match the writer
+PASS nitori-skin-0 reader resets through ordinary New
+PASS normal HAS unpack emits successful completion and drains its workers
+PASS nitori-skin-0 packed Open restores the saved object identity
+PASS nitori-skin-0 reopened retains exact managed GLB bytes
+PASS nitori-skin-0 reopened retains the entire adjacent parameter report
+PASS nitori-skin-0 reopened report retains the recorded native bone count
+PASS nitori-skin-0 reopened binds every native bone name once; runtime helper count is recorded separately
+PASS nitori-skin-0 packed Open restores exact portable actor data and metadata
+PASS nitori-skin-0 packed Open restores exact bindings and authored pose keys
+PASS nitori-skin-0 packed Open restores exact root and bone transforms
+PASS nitori-skin-0 packed Open restores shot/video/frame
+PASS nitori-skin-0 packed reader retains the writer's explicit Studio light setting
+PASS nitori-skin-0 fresh packed Open is clean with empty history and selection
+PASS nitori-skin-0 runtime asset comes from fresh unpack cache without conversion
+PASS nitori-skin-0 reader native capture is readable
+PASS nitori-skin-0 reader PNG path is fresh
+PASS nitori-skin-0 reader native PNG saves
+PASS nitori-skin-0 reader capture releases its readback
+PASS nitori-skin-0 reader capture uses the explicit ordinary Studio light
+PASS nitori-skin-0 reader same captured image contains significant scene content
+PASS nitori-skin-0 fresh packed render preserves exact writer pixels
+PASS nitori-skin-0 reader preserves the packed file bytes
+PASS manifest supplies exact app case keiki-000
+PASS keiki-000 starts with no pending operation
+PASS keiki-000 reader finds writer evidence
+PASS keiki-000 writer evidence has its exact case identity
+PASS keiki-000 original owned GLB alias is unavailable to the fresh reader
+PASS keiki-000 packed HAS bytes match the writer
+PASS keiki-000 reader resets through ordinary New
+PASS normal HAS unpack emits successful completion and drains its workers
+PASS keiki-000 packed Open restores the saved object identity
+PASS keiki-000 reopened retains exact managed GLB bytes
+PASS keiki-000 reopened retains the entire adjacent parameter report
+PASS keiki-000 reopened report retains the recorded native bone count
+PASS keiki-000 reopened binds every native bone name once; runtime helper count is recorded separately
+PASS keiki-000 packed Open restores exact portable actor data and metadata
+PASS keiki-000 packed Open restores exact bindings and authored pose keys
+PASS keiki-000 packed Open restores exact root and bone transforms
+PASS keiki-000 packed Open restores shot/video/frame
+PASS keiki-000 packed reader retains the writer's explicit Studio light setting
+PASS keiki-000 fresh packed Open is clean with empty history and selection
+PASS keiki-000 runtime asset comes from fresh unpack cache without conversion
+PASS keiki-000 reader native capture is readable
+PASS keiki-000 reader PNG path is fresh
+PASS keiki-000 reader native PNG saves
+PASS keiki-000 reader capture releases its readback
+PASS keiki-000 reader capture uses the explicit ordinary Studio light
+PASS keiki-000 reader same captured image contains significant scene content
+PASS keiki-000 fresh packed render preserves exact writer pixels
+PASS keiki-000 reader preserves the packed file bytes
+PASS app probe drains only its owned project workers before teardown
+PASS app probe has no retained native readback at teardown
+SFM_DERIVED_PROBE {"checks":60,"failures":0,"mode":"reader","nonce":"1794557737001097300-90ebeaa43b5e48d584496a609cd3c203"}

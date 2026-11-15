@@ -1,0 +1,65 @@
+{
+  "format": "has_wind_helper_draft_archive_1",
+  "context_commit": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "restoration": "Recreate output/wind-helper-draft-prototype-20261113 from this archive, retaining the relative layout. Run tests/test_preview_protocol.py from the checkout. Source dependencies are checksum-bound in source-input-identities.json. Do not run the test directly from experiments: its owned output family is part of its containment policy.",
+  "files": [
+    {
+      "path": "candidate/tools/wind_helper_preview.py",
+      "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+      "bytes": 22479
+    },
+    {
+      "path": "cpu-shared-fixture-failure.json",
+      "sha256": "f5f2636448cb9b23c2abcd887d02808628c904e73c43bfb8a5a160644e0a03db",
+      "bytes": 706
+    },
+    {
+      "path": "cpu-shared-fixture-failure.log",
+      "sha256": "a2240a4481881880ea458c37f66ade474b0980b1784232d56df3982f1868a33f",
+      "bytes": 4433
+    },
+    {
+      "path": "cpu-tests.json",
+      "sha256": "1cb065b3a091041b0f355ca5bc102e92a323feb0f6bd0381584e4da43a03b2c2",
+      "bytes": 705
+    },
+    {
+      "path": "cpu-tests.log",
+      "sha256": "2b7e47934b4d1491d7ee87e738da96c0560e3c3a6a9cabbdbcb3e69472b777e9",
+      "bytes": 3533
+    },
+    {
+      "path": "HANDOFF.json",
+      "sha256": "a6ba26f841947529ca34c3e3f29b654a5cc4616d9919ef666cba614c9021463a",
+      "bytes": 3787
+    },
+    {
+      "path": "INTEGRATION_DESIGN.md",
+      "sha256": "ba5a239a0cc2ab3ecf9ec1df9ef27c36963697caefdc14452ed4c4b304739cb4",
+      "bytes": 11940
+    },
+    {
+      "path": "README.md",
+      "sha256": "8d82d589a24e124281f5ddb808104dbe7beb0052183fbdc4d876ff260a1ecd25",
+      "bytes": 6946
+    },
+    {
+      "path": "source-input-identities.json",
+      "sha256": "b244e8ba12d1af6511192cd1a8b1c832edcdfa9991ad777a3c960ecbcb8b1c93",
+      "bytes": 3042
+    },
+    {
+      "path": "tests/test_preview_protocol.py",
+      "sha256": "3dcbe9e586b07e8ff06106b9ca3e71b2b67712d678acd7a48d087d7c9f6440b3",
+      "bytes": 18607
+    }
+  ],
+  "indexed_file_count": 10,
+  "index_sha256": "702ee95a498330330b200c3ad0880780a7a03938c035f71d909dd07b96e44f74",
+  "scope": "CPU protocol foundation only; worker transport, Godot controller, actual binding snapshots and helper-window wind remain unimplemented here.",
+  "excluded": [
+    "cpu-results generated GLBs and jobs"
+  ],
+  "main_functional_source_modified": false,
+  "gpu_used_by_archive": false
+}

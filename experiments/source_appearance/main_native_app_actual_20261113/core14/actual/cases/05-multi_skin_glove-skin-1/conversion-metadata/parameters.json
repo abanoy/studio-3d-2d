@@ -1,0 +1,426 @@
+{
+  "adapter": "studio_source_1",
+  "standard": "studio_model_1",
+  "original_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+  "source_file": "kawashiro nitori tanktop glove.mdl",
+  "source_member": null,
+  "case_resolved_sidecars": {},
+  "source_profile": "standalone",
+  "source_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+  "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+  "sourceio_version": [
+    5,
+    5,
+    5
+  ],
+  "scale": 0.01905,
+  "axes": "Source Z-up to glTF Y-up via Blender exporter",
+  "native_parameters": {
+    "bones": [
+      {
+        "name": "Waist",
+        "parent": -1
+      },
+      {
+        "name": "bip_pelvis",
+        "parent": 0
+      },
+      {
+        "name": "bip_spine_0",
+        "parent": 1
+      },
+      {
+        "name": "bip_spine_1",
+        "parent": 2
+      },
+      {
+        "name": "bip_collar_L",
+        "parent": 3
+      },
+      {
+        "name": "bip_upperArm_L",
+        "parent": 4
+      },
+      {
+        "name": "bip_lowerArm_L",
+        "parent": 5
+      },
+      {
+        "name": "ElbowTwistNothing_L",
+        "parent": 6
+      },
+      {
+        "name": "bip_hand_L",
+        "parent": 6
+      },
+      {
+        "name": "WristAux2_L",
+        "parent": 8
+      },
+      {
+        "name": "Thumb0Expand1_L",
+        "parent": 8
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger0",
+        "parent": 10
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger01",
+        "parent": 11
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger02",
+        "parent": 12
+      },
+      {
+        "name": "IndexFinger1Expand1_L",
+        "parent": 8
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger1",
+        "parent": 14
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger11",
+        "parent": 15
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger12",
+        "parent": 16
+      },
+      {
+        "name": "MiddleFinger1Expand1_L",
+        "parent": 8
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger2",
+        "parent": 18
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger21",
+        "parent": 19
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger22",
+        "parent": 20
+      },
+      {
+        "name": "RingFinger1Expand1_L",
+        "parent": 8
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger3",
+        "parent": 22
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger31",
+        "parent": 23
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger32",
+        "parent": 24
+      },
+      {
+        "name": "LittleFinger1Expand1_L",
+        "parent": 8
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger4",
+        "parent": 26
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger41",
+        "parent": 27
+      },
+      {
+        "name": "ValveBiped.Bip01_L_Finger42",
+        "parent": 28
+      },
+      {
+        "name": "bip_card_1",
+        "parent": 8
+      },
+      {
+        "name": "bip_card_2",
+        "parent": 8
+      },
+      {
+        "name": "bip_card_3",
+        "parent": 8
+      },
+      {
+        "name": "Hand+ElbowTwist_L",
+        "parent": 6
+      },
+      {
+        "name": "HandSDEF_L",
+        "parent": 33
+      },
+      {
+        "name": "WristAux1_L",
+        "parent": 6
+      },
+      {
+        "name": "bip_collar_R",
+        "parent": 3
+      },
+      {
+        "name": "bip_upperArm_R",
+        "parent": 36
+      },
+      {
+        "name": "bip_lowerArm_R",
+        "parent": 37
+      },
+      {
+        "name": "ElbowTwistNothing_R",
+        "parent": 38
+      },
+      {
+        "name": "bip_hand_R",
+        "parent": 38
+      },
+      {
+        "name": "Thumb0Expand1_R",
+        "parent": 40
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger0",
+        "parent": 41
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger01",
+        "parent": 42
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger02",
+        "parent": 43
+      },
+      {
+        "name": "IndexFinger1Expand1_R",
+        "parent": 40
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger1",
+        "parent": 45
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger11",
+        "parent": 46
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger12",
+        "parent": 47
+      },
+      {
+        "name": "MiddleFinger1Expand1_R",
+        "parent": 40
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger2",
+        "parent": 49
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger21",
+        "parent": 50
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger22",
+        "parent": 51
+      },
+      {
+        "name": "RingFinger1Expand1_R",
+        "parent": 40
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger3",
+        "parent": 53
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger31",
+        "parent": 54
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger32",
+        "parent": 55
+      },
+      {
+        "name": "LittleFinger1Expand1_R",
+        "parent": 40
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger4",
+        "parent": 57
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger41",
+        "parent": 58
+      },
+      {
+        "name": "ValveBiped.Bip01_R_Finger42",
+        "parent": 59
+      },
+      {
+        "name": "bip_weapon",
+        "parent": 40
+      },
+      {
+        "name": "WristAux2_R",
+        "parent": 40
+      },
+      {
+        "name": "WristAux1_R",
+        "parent": 38
+      },
+      {
+        "name": "Hand+ElbowTwist_R",
+        "parent": 38
+      },
+      {
+        "name": "HandSDEF_R",
+        "parent": 64
+      }
+    ],
+    "bodygroups": {
+      "glove": [
+        "gloves.dmx",
+        null
+      ]
+    },
+    "skin_groups": [
+      [
+        "models/touhou/tamo/Nitori edit/Gloves",
+        "models/touhou/tamo/Nitori edit/Gloves glow",
+        "Glovesg",
+        "Gloves glowg",
+        "Glovesw",
+        "Gloves gloww"
+      ],
+      [
+        "Glovesg",
+        "Gloves glowg",
+        "Glovesg",
+        "Gloves glowg",
+        "Glovesw",
+        "Gloves gloww"
+      ],
+      [
+        "Glovesw",
+        "Gloves gloww",
+        "Glovesg",
+        "Gloves glowg",
+        "Glovesw",
+        "Gloves gloww"
+      ]
+    ],
+    "flex_names": [
+      "Ah"
+    ],
+    "flex_controllers": [
+      {
+        "group": "Ah",
+        "name": "Ah",
+        "local_to_global": -1,
+        "min": 0.0,
+        "max": 1.0
+      }
+    ],
+    "selected_skin": 1,
+    "selected_bodygroup_indices": {
+      "glove": 0
+    },
+    "eyeballs": [],
+    "selected_native_bodygroup_indices": {
+      "0": 0
+    },
+    "native_appearance_choices": {
+      "skin_groups": [
+        [
+          "models/touhou/tamo/Nitori edit/Gloves",
+          "models/touhou/tamo/Nitori edit/Gloves glow",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ],
+        [
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ],
+        [
+          "Glovesw",
+          "Gloves gloww",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ]
+      ],
+      "bodygroups": [
+        {
+          "index": 0,
+          "name": "glove",
+          "choices": [
+            {
+              "index": 0,
+              "name": "gloves.dmx",
+              "vertices": 6544,
+              "blank": false
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "blank": true
+            }
+          ]
+        }
+      ],
+      "default_skin_has_native_slot_identity": true
+    },
+    "appearance_request": {
+      "bodygroups": {
+        "0": 0
+      },
+      "format": "studio_source_appearance_request_1",
+      "native_mdl_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "skin": 1,
+      "source_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32"
+    }
+  },
+  "mount_warnings": [],
+  "suggested_view": null,
+  "materials": [
+    {
+      "material": "Glovesg",
+      "vmt": "materials/models/touhou/tamo/nitori edit/glovesg.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\glovesg.vtf",
+      "status": "PBR approximation"
+    },
+    {
+      "material": "Gloves glowg",
+      "vmt": "materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+      "shader": "vertexlitgeneric",
+      "base_texture": "materials/black.vtf",
+      "status": "PBR approximation"
+    }
+  ],
+  "warnings": [],
+  "limits": [
+    "PBR approximation; bounded static LDR brush lightmaps; no HDR-only/styled/displacement lighting, Source shader/proxy execution or 3D skybox",
+    "One selected static skin/bodygroup appearance in GLB; all imported variants retained in editable.blend; no runtime variant switching",
+    "No Source physics, IK, gameplay, native sequence playback or lossless roundtrip"
+  ],
+  "counts": {
+    "meshes": 1,
+    "textures": 2,
+    "bones": 66,
+    "static_lights": 0
+  }
+}

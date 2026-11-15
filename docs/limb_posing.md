@@ -38,3 +38,20 @@ orientation, undo/cancel, unsupported rigs/scales, parents, packed HAS and synch
 drawing/WAV/movie. Optional private Miku, Reimu, Scout and owner VRM0/1 samples are
 tested when available with source hashes preserved. Physical mouse feel and all rigs
 are not certified by those checks.
+
+Mapped limbs now also accept up to eight intervening helper/twist joints per
+semantic segment. Their existing local transforms remain authored and unchanged;
+solved semantic joints are converted through their actual parents. This does not
+distribute twist or infer extra anatomy. Cross-skeleton, ambiguous mapped joints
+and unsupported scales still refuse. Direct three-joint evaluation retains its
+original calculation path.
+
+The isolated helper/direct fixtures each pass35actual app checks, including four
+limb targets, preserved helper transforms, real hand gizmo Undo/Redo, a two-foot
+crouch, visible skin deformation, source-offline packed Open, exact FK replay,
+background checkpointing and exact preview/export input. Both real48frame1080p24
+H264 movies pass media inspection. The43-check straight/bend/authored-turn walking
+evaluator regression passes unchanged tolerances. See
+[recorded evidence](benchmarks/helper_limb_ik_2026-11-07.json) and
+`tests/verify_helper_limb.py`. Native fixtures and artist/device evaluation remain
+separate prerequisites.

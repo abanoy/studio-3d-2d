@@ -1,6 +1,11 @@
 extends Node
 signal assets_changed
 signal view_changed
+class NativeFrameNotification extends RefCounted:
+	signal ready
+var native_frame_notification:=NativeFrameNotification.new()
+var native_frame_ready: Signal:
+	get:return native_frame_notification.ready
 const SceneIO = preload("res://src/scene3d.gd")
 const Timeline = preload("res://src/timeline.gd")
 const Drawing = preload("res://src/drawing.gd")
@@ -19,6 +24,8 @@ var active_instance_id := ""
 var editor_grid: MeshInstance3D
 var empty_environment := true
 var capturing_final := false
+var native_readbacks:=0
+var native_view_closing:=false
 var world_environment: WorldEnvironment
 var video_settings: Dictionary={}
 var studio_light: DirectionalLight3D
@@ -29,6 +36,8 @@ var last_capture_error:=""
 var sequence_instance:=false
 var sequence_runtime: Node
 var sequence_owner:=""
+var before_final_capture:=Callable()
+var before_asset_replace:=Callable()
 
 func setup(width := 1920, height := 1080) -> void:
 	viewport = SubViewport.new()
@@ -94,6 +103,7 @@ func import_scene(path: String) -> String:
 	var result := SceneIO.load_glb(path)
 	if result.has("error"):
 		return result.error
+	if before_asset_replace.is_valid():before_asset_replace.call()
 	if environment_scene != null:
 		world.remove_child(environment_scene)
 		environment_scene.queue_free()
@@ -116,6 +126,7 @@ func prepare_legacy(path: String, data: Dictionary = {},incoming_video: Dictiona
 	return {"scene":scene.scene,"model":actor.model}
 
 func clear_assets() -> void:
+	if before_asset_replace.is_valid():before_asset_replace.call()
 	legacy_materials=null
 	if world_runtime:world_runtime.dispose();world_runtime=null
 	active_instance_id=""
@@ -210,6 +221,7 @@ func prepare_model(data: Dictionary,incoming_video: Dictionary={}) -> Dictionary
 
 func install_model(prepared: Dictionary) -> bool:
 	if world_runtime:return false
+	if before_asset_replace.is_valid():before_asset_replace.call()
 	if model:
 		world.remove_child(model.root)
 		model.root.queue_free()
@@ -256,8 +268,47 @@ func restore_view(value: Dictionary) -> void:
 	camera.transform=value.transform;camera.fov=value.fov;camera.near=value.near;camera.far=value.far
 	view_changed.emit()
 
+func _enter_tree() -> void:native_view_closing=false
+
+func _exit_tree() -> void:
+	native_view_closing=true
+	if RenderingServer.frame_post_draw.is_connected(dispatch_native_frame):RenderingServer.frame_post_draw.disconnect(dispatch_native_frame)
+	# Complete owner-bound waits while the renderer still exists. Cancellation
+	# during destruction otherwise retains coroutine/signal-name references.
+	var notification:=native_frame_notification
+	var pending:=native_readbacks>0;native_readbacks=0
+	if pending:notification.ready.emit()
+
+func native_view_available() -> bool:
+	return not native_view_closing and is_inside_tree() and is_instance_valid(viewport) and viewport.is_inside_tree()
+
+func begin_native_readback() -> bool:
+	# A caller owns one frame wait directly. Nesting cancelled coroutine waits
+	# retains Godot FunctionState objects when both caller and renderer close.
+	if not native_view_available():return false
+	native_readbacks+=1;viewport.render_target_update_mode=SubViewport.UPDATE_ALWAYS
+	if not RenderingServer.frame_post_draw.is_connected(dispatch_native_frame):RenderingServer.frame_post_draw.connect(dispatch_native_frame,CONNECT_ONE_SHOT)
+	return true
+
+func dispatch_native_frame() -> void:
+	# Disconnect before notifying callers, so a callback may request a later frame.
+	if RenderingServer.frame_post_draw.is_connected(dispatch_native_frame):RenderingServer.frame_post_draw.disconnect(dispatch_native_frame)
+	# A resumed capture caller may free this renderer before emission returns.
+	# Keep the RefCounted signal owner alive independently of that Node.
+	var notification:=native_frame_notification
+	notification.ready.emit()
+
+func finish_native_readback(read_pixels:=true) -> Image:
+	if native_readbacks<=0:return null
+	native_readbacks-=1
+	if not read_pixels or not native_view_available():return null
+	var image:=viewport.get_texture().get_image()
+	return null if image==null or image.is_empty() else image
+
 func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
+	if final and before_final_capture.is_valid():before_final_capture.call()
 	last_capture_error=""
+	if not native_view_available():last_capture_error="Native render view is unavailable.";return null
 	evaluate(keys, frame)
 	if world_runtime:world_runtime.evaluate(frame,final,"",video_settings)
 	elif model: model.apply(frame, false, final,video_settings)
@@ -271,12 +322,16 @@ func capture(keys: Array, layers: Array, frame: int, final := false) -> Image:
 			return null
 	capturing_final = final
 	editor_grid.visible = empty_environment and not final and not sequence_instance
-	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
-	await RenderingServer.frame_post_draw
-	var image := viewport.get_texture().get_image()
-	if world_runtime:world_runtime.evaluate(frame,false,"",video_settings)
+	if not begin_native_readback():
+		capturing_final=false;editor_grid.visible=empty_environment and not sequence_instance
+		last_capture_error="Native render view is unavailable.";return null
+	var notification:=native_frame_notification
+	await notification.ready
+	var image: Image=finish_native_readback()
+	if native_view_available() and world_runtime:world_runtime.evaluate(frame,false,"",video_settings)
 	capturing_final = false
 	editor_grid.visible = empty_environment and not sequence_instance
+	if image==null:last_capture_error="Native render view closed before this frame completed.";return null
 	image.convert(Image.FORMAT_RGBA8)
 	if sequence_instance:image=preload("res://src/sequence_pixels.gd").straight(image)
 	if sequence_runtime:

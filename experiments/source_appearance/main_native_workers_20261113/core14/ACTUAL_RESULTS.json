@@ -1,0 +1,1757 @@
+{
+  "format": "has_main_source_static_appearance_core14_actual_1",
+  "root_revision": "cf7a805dd6ec76890da048ff28aa0080757e7c34",
+  "raw_aggregate": {
+    "local_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-native-main-rebind-20261113\\conversion-run-1794613497806249400\\verification.json",
+    "sha256": "fd0ba6b83b8bb68a277bb41d31c56687af9009702da3c75d46ef30b9167687f7",
+    "bytes": 5728624,
+    "mtime_ns": 1794613555895587300
+  },
+  "results": [
+    {
+      "index": 1,
+      "case": "multi_skin_glove",
+      "variant": "default-no-appearance",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.117871500002366,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_01fa8444cb61495daa71285372b787b5",
+        "window_station": "WinSta0",
+        "python_pid": 15436,
+        "blender_pid": 12580,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "glove": 0
+      },
+      "selected_native_bodygroups": null,
+      "explicit_catalogue": false,
+      "skin_families": 3,
+      "native_bones": 66,
+      "glb": {
+        "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "bytes": 836088
+      },
+      "meshes": [
+        {
+          "name": "gloves.dmx",
+          "primitives": [
+            {
+              "vertices": 3339,
+              "indices": 16608,
+              "target_names": [
+                "Ah"
+              ],
+              "geometry_skin_morph_sha256": "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+              "material": 0,
+              "nonzero_position_morph_vertices": [
+                2751
+              ]
+            },
+            {
+              "vertices": 3339,
+              "indices": 16608,
+              "target_names": [
+                "Ah"
+              ],
+              "geometry_skin_morph_sha256": "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+              "material": 1,
+              "nonzero_position_morph_vertices": [
+                2751
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "models/touhou/tamo/Nitori edit/Gloves",
+          "embedded_base_image_sha256": "31d7d4e9fdfc3e377b836fdc33362c4a0e076af0ccf3807941cb1b786b56f0e0"
+        },
+        {
+          "index": 1,
+          "name": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "embedded_base_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/Gloves glowg.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Gloves gloww.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Glovesg.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Glovesw.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "models/touhou/tamo/Nitori edit/Gloves",
+            "vmt": "materials/models/touhou/tamo/nitori edit/gloves.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\gloves.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "models/touhou/tamo/Nitori edit/Gloves glow",
+            "vmt": "materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/black.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [],
+        "native_preflight_missing_references": [
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          },
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          },
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          }
+        ],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 2,
+      "case": "keiki_tools_chisels",
+      "variant": "default-no-appearance",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.1212783999981184,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_c68dbf95898748a19874969820947ca6",
+        "window_station": "WinSta0",
+        "python_pid": 14396,
+        "blender_pid": 24124,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 0,
+        "flame": 0
+      },
+      "selected_native_bodygroups": null,
+      "explicit_catalogue": false,
+      "skin_families": 1,
+      "native_bones": 31,
+      "glb": {
+        "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "bytes": 933756
+      },
+      "meshes": [
+        {
+          "name": "box.smd",
+          "primitives": [
+            {
+              "vertices": 38,
+              "indices": 132,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691",
+              "material": 0,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        },
+        {
+          "name": "flame.smd",
+          "primitives": [
+            {
+              "vertices": 1570,
+              "indices": 8358,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+              "material": 1,
+              "nonzero_position_morph_vertices": []
+            },
+            {
+              "vertices": 8,
+              "indices": 12,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9",
+              "material": 2,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        },
+        {
+          "name": "tools.dmx",
+          "primitives": [
+            {
+              "vertices": 1180,
+              "indices": 5340,
+              "target_names": [
+                "Tools"
+              ],
+              "geometry_skin_morph_sha256": "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c",
+              "material": 3,
+              "nonzero_position_morph_vertices": [
+                1180
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        },
+        {
+          "index": 1,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 2,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        },
+        {
+          "index": 3,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/blush.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/box.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/excl mark.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "blush",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "box",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "excl mark",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "models/touhou/tamo/Keiki Haniyashin/props",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [],
+        "native_preflight_missing_references": [],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 3,
+      "case": "multi_skin_glove",
+      "variant": "skin-0",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.321853999997984,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_b5136a279f6f479bb6a7633f3cc2cb0b",
+        "window_station": "WinSta0",
+        "python_pid": 19644,
+        "blender_pid": 19412,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "glove": 0
+      },
+      "selected_native_bodygroups": {
+        "0": 0
+      },
+      "explicit_catalogue": true,
+      "skin_families": 3,
+      "native_bones": 66,
+      "glb": {
+        "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "bytes": 836088
+      },
+      "meshes": [
+        {
+          "name": "gloves.dmx",
+          "primitives": [
+            {
+              "vertices": 3339,
+              "indices": 16608,
+              "target_names": [
+                "Ah"
+              ],
+              "geometry_skin_morph_sha256": "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+              "material": 0,
+              "nonzero_position_morph_vertices": [
+                2751
+              ]
+            },
+            {
+              "vertices": 3339,
+              "indices": 16608,
+              "target_names": [
+                "Ah"
+              ],
+              "geometry_skin_morph_sha256": "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+              "material": 1,
+              "nonzero_position_morph_vertices": [
+                2751
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "models/touhou/tamo/Nitori edit/Gloves",
+          "embedded_base_image_sha256": "31d7d4e9fdfc3e377b836fdc33362c4a0e076af0ccf3807941cb1b786b56f0e0"
+        },
+        {
+          "index": 1,
+          "name": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "embedded_base_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/Gloves glowg.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Gloves gloww.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Glovesg.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Glovesw.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "models/touhou/tamo/Nitori edit/Gloves",
+            "vmt": "materials/models/touhou/tamo/nitori edit/gloves.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\gloves.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "models/touhou/tamo/Nitori edit/Gloves glow",
+            "vmt": "materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/black.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [],
+        "native_preflight_missing_references": [
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          },
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          },
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          }
+        ],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 4,
+      "case": "keiki_tools_chisels",
+      "variant": "groups-000",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.121843999997509,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_257bffa421104c119556245f73220b20",
+        "window_station": "WinSta0",
+        "python_pid": 25592,
+        "blender_pid": 22572,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 0,
+        "flame": 0
+      },
+      "selected_native_bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "explicit_catalogue": true,
+      "skin_families": 1,
+      "native_bones": 31,
+      "glb": {
+        "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "bytes": 933756
+      },
+      "meshes": [
+        {
+          "name": "box.smd",
+          "primitives": [
+            {
+              "vertices": 38,
+              "indices": 132,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691",
+              "material": 0,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        },
+        {
+          "name": "flame.smd",
+          "primitives": [
+            {
+              "vertices": 1570,
+              "indices": 8358,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+              "material": 1,
+              "nonzero_position_morph_vertices": []
+            },
+            {
+              "vertices": 8,
+              "indices": 12,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9",
+              "material": 2,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        },
+        {
+          "name": "tools.dmx",
+          "primitives": [
+            {
+              "vertices": 1180,
+              "indices": 5340,
+              "target_names": [
+                "Tools"
+              ],
+              "geometry_skin_morph_sha256": "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c",
+              "material": 3,
+              "nonzero_position_morph_vertices": [
+                1180
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        },
+        {
+          "index": 1,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 2,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        },
+        {
+          "index": 3,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/blush.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/box.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/excl mark.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "blush",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "box",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "excl mark",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "models/touhou/tamo/Keiki Haniyashin/props",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [],
+        "native_preflight_missing_references": [],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 5,
+      "case": "multi_skin_glove",
+      "variant": "skin-1",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.121160200000304,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_8b9dda9326b742048761bccd78872aaf",
+        "window_station": "WinSta0",
+        "python_pid": 9432,
+        "blender_pid": 2460,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 1,
+      "selected_named_bodygroups": {
+        "glove": 0
+      },
+      "selected_native_bodygroups": {
+        "0": 0
+      },
+      "explicit_catalogue": true,
+      "skin_families": 3,
+      "native_bones": 66,
+      "glb": {
+        "sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a",
+        "bytes": 792548
+      },
+      "meshes": [
+        {
+          "name": "gloves.dmx",
+          "primitives": [
+            {
+              "vertices": 3339,
+              "indices": 16608,
+              "target_names": [
+                "Ah"
+              ],
+              "geometry_skin_morph_sha256": "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+              "material": 0,
+              "nonzero_position_morph_vertices": [
+                2751
+              ]
+            },
+            {
+              "vertices": 3339,
+              "indices": 16608,
+              "target_names": [
+                "Ah"
+              ],
+              "geometry_skin_morph_sha256": "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+              "material": 1,
+              "nonzero_position_morph_vertices": [
+                2751
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "Glovesg",
+          "embedded_base_image_sha256": "12adf37b798a1a1bd578be6cd0c0ccc9ffed60ef56e2bc46b0af8a11db63450d"
+        },
+        {
+          "index": 1,
+          "name": "Gloves glowg",
+          "embedded_base_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/Gloves glowg.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Gloves gloww.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Glovesg.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Glovesw.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "Gloves glowg",
+            "vmt": "materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/black.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "Glovesg",
+            "vmt": "materials/models/touhou/tamo/nitori edit/glovesg.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\glovesg.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [],
+        "native_preflight_missing_references": [
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          },
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          },
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          }
+        ],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 6,
+      "case": "multi_skin_glove",
+      "variant": "skin-2",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.119577699999354,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_7e3eeb94ac064797881a4cc0e4d66c94",
+        "window_station": "WinSta0",
+        "python_pid": 22888,
+        "blender_pid": 7216,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 2,
+      "selected_named_bodygroups": {
+        "glove": 0
+      },
+      "selected_native_bodygroups": {
+        "0": 0
+      },
+      "explicit_catalogue": true,
+      "skin_families": 3,
+      "native_bones": 66,
+      "glb": {
+        "sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0",
+        "bytes": 793036
+      },
+      "meshes": [
+        {
+          "name": "gloves.dmx",
+          "primitives": [
+            {
+              "vertices": 3339,
+              "indices": 16608,
+              "target_names": [
+                "Ah"
+              ],
+              "geometry_skin_morph_sha256": "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+              "material": 0,
+              "nonzero_position_morph_vertices": [
+                2751
+              ]
+            },
+            {
+              "vertices": 3339,
+              "indices": 16608,
+              "target_names": [
+                "Ah"
+              ],
+              "geometry_skin_morph_sha256": "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+              "material": 1,
+              "nonzero_position_morph_vertices": [
+                2751
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "Glovesw",
+          "embedded_base_image_sha256": "3aebcbfee0fccf84b574ac499be502bf3ac1d4a199cc11186f1617651c1b828e"
+        },
+        {
+          "index": 1,
+          "name": "Gloves gloww",
+          "embedded_base_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/Gloves glowg.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Gloves gloww.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Glovesg.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/Glovesw.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "Gloves gloww",
+            "vmt": "materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/black.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "Glovesw",
+            "vmt": "materials/models/touhou/tamo/nitori edit/glovesw.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\glovesw.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [],
+        "native_preflight_missing_references": [
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          },
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          },
+          {
+            "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+            "key": "$bumpmap",
+            "value": "hairbump",
+            "kind": "texture",
+            "reference": "materials/hairbump.vtf",
+            "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+            "resolved": false,
+            "engine_generated": false,
+            "supported_bridge_input": false
+          }
+        ],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 7,
+      "case": "keiki_tools_chisels",
+      "variant": "groups-001",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.1211292000007234,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_53ab359e09b94f62898432ad458a477e",
+        "window_station": "WinSta0",
+        "python_pid": 144,
+        "blender_pid": 17324,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 0,
+        "flame": 1
+      },
+      "selected_native_bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 1
+      },
+      "explicit_catalogue": true,
+      "skin_families": 1,
+      "native_bones": 31,
+      "glb": {
+        "sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82",
+        "bytes": 328448
+      },
+      "meshes": [
+        {
+          "name": "box.smd",
+          "primitives": [
+            {
+              "vertices": 38,
+              "indices": 132,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691",
+              "material": 0,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        },
+        {
+          "name": "tools.dmx",
+          "primitives": [
+            {
+              "vertices": 1180,
+              "indices": 5340,
+              "target_names": [
+                "Tools"
+              ],
+              "geometry_skin_morph_sha256": "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c",
+              "material": 1,
+              "nonzero_position_morph_vertices": [
+                1180
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        },
+        {
+          "index": 1,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/blush.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/box.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/excl mark.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "box",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "models/touhou/tamo/Keiki Haniyashin/props",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [
+          {
+            "material": "blush",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "excl mark",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "native_preflight_missing_references": [],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 8,
+      "case": "keiki_tools_chisels",
+      "variant": "groups-010",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.11977399999887,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_7afff12ba88b4b3ca25921efba584cae",
+        "window_station": "WinSta0",
+        "python_pid": 18192,
+        "blender_pid": 24292,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 1,
+        "flame": 0
+      },
+      "selected_native_bodygroups": {
+        "0": 0,
+        "1": 1,
+        "2": 0
+      },
+      "explicit_catalogue": true,
+      "skin_families": 1,
+      "native_bones": 31,
+      "glb": {
+        "sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a",
+        "bytes": 851824
+      },
+      "meshes": [
+        {
+          "name": "flame.smd",
+          "primitives": [
+            {
+              "vertices": 1570,
+              "indices": 8358,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+              "material": 0,
+              "nonzero_position_morph_vertices": []
+            },
+            {
+              "vertices": 8,
+              "indices": 12,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9",
+              "material": 1,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        },
+        {
+          "name": "tools.dmx",
+          "primitives": [
+            {
+              "vertices": 1180,
+              "indices": 5340,
+              "target_names": [
+                "Tools"
+              ],
+              "geometry_skin_morph_sha256": "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c",
+              "material": 2,
+              "nonzero_position_morph_vertices": [
+                1180
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 1,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        },
+        {
+          "index": 2,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/blush.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/box.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/excl mark.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "blush",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "excl mark",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "models/touhou/tamo/Keiki Haniyashin/props",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [
+          {
+            "material": "box",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "native_preflight_missing_references": [],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 9,
+      "case": "keiki_tools_chisels",
+      "variant": "groups-011",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.120366800001648,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_08eadae441a14096aad84497bd827da0",
+        "window_station": "WinSta0",
+        "python_pid": 14176,
+        "blender_pid": 11652,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 1,
+        "flame": 1
+      },
+      "selected_native_bodygroups": {
+        "0": 0,
+        "1": 1,
+        "2": 1
+      },
+      "explicit_catalogue": true,
+      "skin_families": 1,
+      "native_bones": 31,
+      "glb": {
+        "sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0",
+        "bytes": 246516
+      },
+      "meshes": [
+        {
+          "name": "tools.dmx",
+          "primitives": [
+            {
+              "vertices": 1180,
+              "indices": 5340,
+              "target_names": [
+                "Tools"
+              ],
+              "geometry_skin_morph_sha256": "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c",
+              "material": 0,
+              "nonzero_position_morph_vertices": [
+                1180
+              ]
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/blush.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/box.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/excl mark.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "models/touhou/tamo/Keiki Haniyashin/props",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [
+          {
+            "material": "excl mark",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "box",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "blush",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "native_preflight_missing_references": [],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 10,
+      "case": "keiki_tools_chisels",
+      "variant": "groups-100",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.121978700000909,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_e3bf385a558545bea7008bf86d27540b",
+        "window_station": "WinSta0",
+        "python_pid": 6488,
+        "blender_pid": 13380,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 1,
+        "box": 0,
+        "flame": 0
+      },
+      "selected_native_bodygroups": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "explicit_catalogue": true,
+      "skin_families": 1,
+      "native_bones": 31,
+      "glb": {
+        "sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3",
+        "bytes": 696656
+      },
+      "meshes": [
+        {
+          "name": "box.smd",
+          "primitives": [
+            {
+              "vertices": 38,
+              "indices": 132,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691",
+              "material": 0,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        },
+        {
+          "name": "flame.smd",
+          "primitives": [
+            {
+              "vertices": 1570,
+              "indices": 8358,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+              "material": 1,
+              "nonzero_position_morph_vertices": []
+            },
+            {
+              "vertices": 8,
+              "indices": 12,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9",
+              "material": 2,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        },
+        {
+          "index": 1,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 2,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/blush.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/box.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/excl mark.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "blush",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "box",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "excl mark",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [
+          {
+            "material": "models/touhou/tamo/Keiki Haniyashin/props",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "native_preflight_missing_references": [],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 11,
+      "case": "keiki_tools_chisels",
+      "variant": "groups-101",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.121744600000966,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_4eb48441b94043819babf5ea64ec8890",
+        "window_station": "WinSta0",
+        "python_pid": 9472,
+        "blender_pid": 24428,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 1,
+        "box": 0,
+        "flame": 1
+      },
+      "selected_native_bodygroups": {
+        "0": 1,
+        "1": 0,
+        "2": 1
+      },
+      "explicit_catalogue": true,
+      "skin_families": 1,
+      "native_bones": 31,
+      "glb": {
+        "sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40",
+        "bytes": 91356
+      },
+      "meshes": [
+        {
+          "name": "box.smd",
+          "primitives": [
+            {
+              "vertices": 38,
+              "indices": 132,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691",
+              "material": 0,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/blush.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/box.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/excl mark.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "box",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [
+          {
+            "material": "models/touhou/tamo/Keiki Haniyashin/props",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "blush",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "excl mark",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "native_preflight_missing_references": [],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 12,
+      "case": "keiki_tools_chisels",
+      "variant": "groups-110",
+      "expected_success": true,
+      "exit": 0,
+      "seconds": 3.121084599999449,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_34911aca5fe64aa9aeb3770144ec0c06",
+        "window_station": "WinSta0",
+        "python_pid": 16196,
+        "blender_pid": 22844,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 1,
+        "box": 1,
+        "flame": 0
+      },
+      "selected_native_bodygroups": {
+        "0": 1,
+        "1": 1,
+        "2": 0
+      },
+      "explicit_catalogue": true,
+      "skin_families": 1,
+      "native_bones": 31,
+      "glb": {
+        "sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+        "bytes": 614724
+      },
+      "meshes": [
+        {
+          "name": "flame.smd",
+          "primitives": [
+            {
+              "vertices": 1570,
+              "indices": 8358,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+              "material": 0,
+              "nonzero_position_morph_vertices": []
+            },
+            {
+              "vertices": 8,
+              "indices": 12,
+              "target_names": [],
+              "geometry_skin_morph_sha256": "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9",
+              "material": 1,
+              "nonzero_position_morph_vertices": []
+            }
+          ]
+        }
+      ],
+      "active_materials": [
+        {
+          "index": 0,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 1,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        }
+      ],
+      "dependency_classification": {
+        "resolved_count": 10,
+        "all_resolved_providers_owned": true,
+        "actual_missing_requests": [
+          {
+            "path": "materials/blush.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/box.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          },
+          {
+            "path": "materials/excl mark.vmt",
+            "classification": "optional lookup probe or unclassified request"
+          }
+        ],
+        "active_materials": [
+          {
+            "material": "blush",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "excl mark",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "inactive_materials": [
+          {
+            "material": "models/touhou/tamo/Keiki Haniyashin/props",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+            "status": "PBR approximation"
+          },
+          {
+            "material": "box",
+            "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+            "shader": "vertexlitgeneric",
+            "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+            "status": "PBR approximation"
+          }
+        ],
+        "native_preflight_missing_references": [],
+        "scope": "Actual converter requests and active/inactive PBR inputs; native unsupported map gaps remain separately reported."
+      }
+    },
+    {
+      "index": 13,
+      "case": "multi_skin_glove",
+      "variant": "all-blank-refusal",
+      "expected_success": false,
+      "exit": 1,
+      "seconds": 2.718615999998292,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_fcc6a28f72ff4d61a7b8743336a32a03",
+        "window_station": "WinSta0",
+        "python_pid": 5988,
+        "blender_pid": 26076,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "explicit_all_blank_refusal": true
+    },
+    {
+      "index": 14,
+      "case": "keiki_tools_chisels",
+      "variant": "groups-111",
+      "expected_success": false,
+      "exit": 1,
+      "seconds": 2.7179517000004125,
+      "passed": true,
+      "isolation": {
+        "desktop": "HAS_Test_6b714165175746a8be5189dd1495b6d0",
+        "window_station": "WinSta0",
+        "python_pid": 25544,
+        "blender_pid": 13400,
+        "private_monitor_child_desktop_confirmed": false,
+        "independent_python_and_blender_self_attestation": true,
+        "original_private_receipt_edited": false
+      },
+      "explicit_all_blank_refusal": true
+    }
+  ],
+  "passed_cases": 14,
+  "successful_bundles": 12,
+  "expected_allblank_refusals": 2,
+  "independent_dual_attestation_cases": 14,
+  "all_private_jobs_desktops_closed": true,
+  "release": {
+    "coordinator_pid": 15400,
+    "verification_sha256": "fd0ba6b83b8bb68a277bb41d31c56687af9009702da3c75d46ef30b9167687f7",
+    "coordinator_and_owned_graphics_absent": true,
+    "coordinator_creation_utc": "2026-11-13T23:44:57.2710029Z",
+    "format": "has_root_native_conversion_lease_release_1",
+    "lease_released": true,
+    "checked_utc": "2026-11-13T23:46:25.5279200Z",
+    "all_14_case_isolation_verified": true,
+    "no_process_killed": true,
+    "source_and_lock_preserved": true
+  },
+  "protected_inputs_preserved": true,
+  "artifact_payloads_copied": false,
+  "limits": [
+    "Actual main worker metadata/structure/dependency acceptance only; no app/GPU or independent native fidelity claim.",
+    "Nitori native missinghairbump and additiveglow approximation retained.",
+    "Original Win206 failure and invalid explicit-output coordinator attempt remain preserved failures."
+  ]
+}

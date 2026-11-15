@@ -1,0 +1,2635 @@
+{
+  "format": "has_sfm_native_extra_feature_inventory_1",
+  "date": "2026-11-12",
+  "scope": "Native MDL metadata inventory, not native feature behavior, rendered fidelity, bone merge or application acceptance. Full per-model bone lists, skin tables, descriptors and rules remain private research output; only counts and selected concrete cases are retained here.",
+  "archives": 22,
+  "actual_versions": {
+    "49": 82
+  },
+  "staged_definition_bytes": 62843920,
+  "all_definition_hashes_match_historical_corpus": true,
+  "including_duplicate_files": {
+    "definitions": 82,
+    "bones": 10862,
+    "bodygroups": 288,
+    "bodygroup_choices": 489,
+    "zero_vertex_blank_choices": 188,
+    "controllers": 3203,
+    "descriptors": 3902,
+    "rules": 3203,
+    "models_with_differing_skin_families": 28,
+    "models_with_procedural_bones": 55,
+    "procedural_bones": 2655,
+    "attachments": 0,
+    "sequence_records": 82,
+    "animation_headers": 82,
+    "multi_frame_animation_models": 0,
+    "ik_chain_models": 0,
+    "pose_parameter_models": 0,
+    "include_model_references": 0
+  },
+  "distinct_definition_hashes": {
+    "definitions": 71,
+    "bones": 9497,
+    "bodygroups": 243,
+    "bodygroup_choices": 412,
+    "zero_vertex_blank_choices": 157,
+    "controllers": 2991,
+    "descriptors": 3690,
+    "rules": 2991,
+    "models_with_differing_skin_families": 27,
+    "models_with_procedural_bones": 46,
+    "procedural_bones": 1905,
+    "attachments": 0,
+    "sequence_records": 71,
+    "animation_headers": 71,
+    "multi_frame_animation_models": 0,
+    "ik_chain_models": 0,
+    "pose_parameter_models": 0,
+    "include_model_references": 0
+  },
+  "procedural_type_counts_including_duplicates": {
+    "JIGGLE": 2655
+  },
+  "rule_operation_counts_including_duplicates": {
+    "FETCH1": 3203
+  },
+  "all_rules_single_fetch1": true,
+  "controller_declared_ranges": [
+    {
+      "min": 0.0,
+      "max": 1.0,
+      "count": 3203
+    }
+  ],
+  "stereo_ui_records": 0,
+  "sequence_event_records": 0,
+  "models": [
+    {
+      "archive": "SFM-Reisen_Udongein_3a9qsw1.rar",
+      "member": "models/DevilsCry/touhou/reisen.mdl",
+      "sha256": "f4eac0de8cdeabadbdf8ce0d56d45a305c31b171a1fc3a9f50415a6748325c6e",
+      "version": 49,
+      "bones": 204,
+      "bodygroups": 8,
+      "choices": 15,
+      "zero_vertex_blank_choices": 6,
+      "skin_families": 2,
+      "distinct_skin_families": 2,
+      "controllers": 35,
+      "descriptors": 35,
+      "rules": 35,
+      "procedural_bones": 64,
+      "sequence_names": [
+        "idle"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm.zip",
+      "member": "models/touhou/tamo/junko.mdl",
+      "sha256": "10dab6acf864678e8b500ea59494511bcc9518a7a3f174dc7c62a9f3302b3c03",
+      "version": 49,
+      "bones": 145,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 8,
+      "distinct_skin_families": 8,
+      "controllers": 115,
+      "descriptors": 115,
+      "rules": 115,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm.zip",
+      "member": "models/touhou/tamo/junko char mask.mdl",
+      "sha256": "8cb588d2e45268c79d83632cae4e0545d953025c9ea48a3bf42a1975a74db0f2",
+      "version": 49,
+      "bones": 19,
+      "bodygroups": 1,
+      "choices": 2,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm.zip",
+      "member": "models/touhou/tamo/junko dress.mdl",
+      "sha256": "696b3950792f8c0cbdd20980ec541d7dca72de383daffecea181e36e5b964a7f",
+      "version": 49,
+      "bones": 112,
+      "bodygroups": 3,
+      "choices": 5,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 14,
+      "descriptors": 14,
+      "rules": 14,
+      "procedural_bones": 28,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm.zip",
+      "member": "models/touhou/tamo/junko hair.mdl",
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "version": 49,
+      "bones": 69,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 49,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm.zip",
+      "member": "models/touhou/tamo/junko miniskirt.mdl",
+      "sha256": "55d13238fe67c4ead4ac6c2cb6c4ac43d7f2275d722021af5ce030e93cf1745d",
+      "version": 49,
+      "bones": 136,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 6,
+      "descriptors": 6,
+      "rules": 6,
+      "procedural_bones": 102,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm.zip",
+      "member": "models/touhou/tamo/junko skirt.mdl",
+      "sha256": "b753091a9e32e84cb81ae182df0b6c7c341feb0e51e5b2e190eccff2f92b397b",
+      "version": 49,
+      "bones": 136,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 7,
+      "descriptors": 7,
+      "rules": 7,
+      "procedural_bones": 102,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "SFM-Young_Ran_Yakumo_3YWxQCa.rar",
+      "member": "models/DevilsCry/touhou/youngran.mdl",
+      "sha256": "c4d6f1c9ca833a1e78ff94f5afbd952addf07a78a85aa042ee0b0c195e61b384",
+      "version": 49,
+      "bones": 123,
+      "bodygroups": 4,
+      "choices": 4,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 52,
+      "descriptors": 52,
+      "rules": 52,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "idle"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri catsuit base.mdl",
+      "sha256": "02731f8c5e544215c8f23cf5f3351bd761b7cad0ffe88dfc46a29e44f908f955",
+      "version": 49,
+      "bones": 169,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 3,
+      "distinct_skin_families": 3,
+      "controllers": 86,
+      "descriptors": 85,
+      "rules": 86,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri catsuit..mdl",
+      "sha256": "026f720bcfff55e08d44fc917cf99f9cf388345cac10ae31cec692d68e74775b",
+      "version": 49,
+      "bones": 103,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 5,
+      "descriptors": 5,
+      "rules": 5,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri hair.mdl",
+      "sha256": "2602285a3e3d63f4ee53951d8929a57c5bcffea86b3a6cee39e69d1df3babd18",
+      "version": 49,
+      "bones": 116,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri rosary.mdl",
+      "sha256": "7820d5371ed846dd7d2c35774943fe9912a139bf31b9095ea27ceb69493c3686",
+      "version": 49,
+      "bones": 3,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri_default base.mdl",
+      "sha256": "6b794680389931f6e50ceba8dba51344f8f5cc51bb2cd42597b249a43a162783",
+      "version": 49,
+      "bones": 169,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 3,
+      "distinct_skin_families": 3,
+      "controllers": 86,
+      "descriptors": 85,
+      "rules": 86,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri_default dress.mdl",
+      "sha256": "caacdc039d8c2abfab40f08572fd258e8a00daf47df912925b204f45b8837ec5",
+      "version": 49,
+      "bones": 97,
+      "bodygroups": 4,
+      "choices": 8,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 9,
+      "descriptors": 9,
+      "rules": 9,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri_default skirt.mdl",
+      "sha256": "36b5859e04493a35f0576a38f8f9850644686c44df2bf7f76c3e962696e95df0",
+      "version": 49,
+      "bones": 166,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri_default v1.mdl",
+      "sha256": "4e0b6f0114d23c6e144a7570e3bc48affa38d1a46d598b1092fe456b811d7ac9",
+      "version": 49,
+      "bones": 172,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 86,
+      "descriptors": 86,
+      "rules": 86,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_Byakuren.rar",
+      "member": "Hijiri Byakuren/models/touhou/tamo/byakuren hijiri_default.mdl",
+      "sha256": "9901e6d70f8ab6ae963f706664a2e366039bd1db93e5c4ed0614cd5cd30677b0",
+      "version": 49,
+      "bones": 172,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 86,
+      "descriptors": 86,
+      "rules": 86,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "shinki.rar",
+      "member": "shinki/models/koikatsu/touhou/shinki body.mdl",
+      "sha256": "6f617ec8941f3eb22cf80752396d6d9cf18ed08a328776c351826bd3a1849502",
+      "version": 49,
+      "bones": 209,
+      "bodygroups": 7,
+      "choices": 12,
+      "zero_vertex_blank_choices": 5,
+      "skin_families": 6,
+      "distinct_skin_families": 6,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "shinki.rar",
+      "member": "shinki/models/koikatsu/touhou/shinki hair.mdl",
+      "sha256": "c5fb43805a6a42a944b4c81dfd0a37ab10e78c79ea205f2f17924a765cb739d0",
+      "version": 49,
+      "bones": 80,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "shinki.rar",
+      "member": "shinki/models/koikatsu/touhou/shinki skirt.mdl",
+      "sha256": "e22c1b6a0bde0a538ea0768c558ad3426ab84c97b9b1d302315c38dee5130ecb",
+      "version": 49,
+      "bones": 66,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "shinki.rar",
+      "member": "shinki/models/koikatsu/touhou/shinki wings mmd.mdl",
+      "sha256": "e9ebca80cd5971ce16568769a0111cabb032c9a2d9c4328170dd8d4e6ae854f6",
+      "version": 49,
+      "bones": 34,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "shinki.rar",
+      "member": "shinki/models/koikatsu/touhou/shinki.mdl",
+      "sha256": "7a63d27d958f5e8c7baa7a60a212513e8d8ff6b266ee685675b74803af969e48",
+      "version": 49,
+      "bones": 81,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 81,
+      "descriptors": 578,
+      "rules": 81,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "mima.rar",
+      "member": "mima/models/koikatsu/touhou/mima body.mdl",
+      "sha256": "771c194ecf6da69210824d7a99afb9de110c68ccbc708e60b4ad6143ee400dda",
+      "version": 49,
+      "bones": 175,
+      "bodygroups": 4,
+      "choices": 9,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 3,
+      "descriptors": 3,
+      "rules": 3,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "mima.rar",
+      "member": "mima/models/koikatsu/touhou/mima dress.mdl",
+      "sha256": "0ff555f35633b4d9e25f77a07e3493a3c46e85ca3001e1350626f820a11331eb",
+      "version": 49,
+      "bones": 169,
+      "bodygroups": 4,
+      "choices": 8,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "mima.rar",
+      "member": "mima/models/koikatsu/touhou/mima head.mdl",
+      "sha256": "b0b128f994dd9939aa5e1978431fcc3afeec84d56ee1f14b0efec96999909224",
+      "version": 49,
+      "bones": 229,
+      "bodygroups": 3,
+      "choices": 5,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 82,
+      "descriptors": 156,
+      "rules": 82,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "aa.rar",
+      "member": "Cirno Mister Orzo v3.1 edit/models/mmd/mister_orzo/touhou/cirno props v3.mdl",
+      "sha256": "3c376e4ce566ca5aef6e140d96f6254ea431fc4e6af9ced22f7d5e1a31e29d40",
+      "version": 49,
+      "bones": 91,
+      "bodygroups": 4,
+      "choices": 9,
+      "zero_vertex_blank_choices": 3,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 3,
+      "descriptors": 3,
+      "rules": 3,
+      "procedural_bones": 52,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "aa.rar",
+      "member": "Cirno Mister Orzo v3.1 edit/models/mmd/mister_orzo/touhou/cirno props.mdl",
+      "sha256": "803916215e462106799686a3099ded62d5c03d1338f16e8b377f931c5486e14d",
+      "version": 49,
+      "bones": 90,
+      "bodygroups": 4,
+      "choices": 8,
+      "zero_vertex_blank_choices": 3,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 52,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "aa.rar",
+      "member": "Cirno Mister Orzo v3.1 edit/models/mmd/mister_orzo/touhou/cirno v3.mdl",
+      "sha256": "640abe4595193e4697147ab87b8c817ab01f8d9bbaea1583afdf21d358123918",
+      "version": 49,
+      "bones": 105,
+      "bodygroups": 11,
+      "choices": 21,
+      "zero_vertex_blank_choices": 10,
+      "skin_families": 6,
+      "distinct_skin_families": 6,
+      "controllers": 91,
+      "descriptors": 91,
+      "rules": 91,
+      "procedural_bones": 23,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "aa.rar",
+      "member": "Cirno Mister Orzo v3.1 edit/models/mmd/mister_orzo/touhou/cirno.mdl",
+      "sha256": "16d11ed883ee31e13079f98ebd4eb27fef1576d24e9ced806e49eec0ecec6963",
+      "version": 49,
+      "bones": 98,
+      "bodygroups": 9,
+      "choices": 17,
+      "zero_vertex_blank_choices": 8,
+      "skin_families": 6,
+      "distinct_skin_families": 6,
+      "controllers": 87,
+      "descriptors": 87,
+      "rules": 87,
+      "procedural_bones": 23,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "SFM-Chen.rar",
+      "member": "models/DevilsCry/touhou/chen.mdl",
+      "sha256": "998ff915ee9ca5a14794892ef6cf3cd131c3c61ef30f55055efe241282b0bcb2",
+      "version": 49,
+      "bones": 186,
+      "bodygroups": 11,
+      "choices": 21,
+      "zero_vertex_blank_choices": 10,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 73,
+      "descriptors": 73,
+      "rules": 73,
+      "procedural_bones": 30,
+      "sequence_names": [
+        "idle"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "chimata_and_momoyo.rar",
+      "member": "chimata and momoyo/models/touhou/tamo/chimata tenkyu skirt.mdl",
+      "sha256": "f8f17abe2979a3c0fb8e5a378731ccf35d0330c0ba7475798b34cd3706d8a3f9",
+      "version": 49,
+      "bones": 132,
+      "bodygroups": 2,
+      "choices": 4,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 68,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "chimata_and_momoyo.rar",
+      "member": "chimata and momoyo/models/touhou/tamo/chimata tenkyu.mdl",
+      "sha256": "c89f0db547d1779aae7d7ded17f2f4257edb950938b40f28fd131dfbb4d5c9d8",
+      "version": 49,
+      "bones": 194,
+      "bodygroups": 4,
+      "choices": 6,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 123,
+      "descriptors": 123,
+      "rules": 123,
+      "procedural_bones": 14,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "chimata_and_momoyo.rar",
+      "member": "chimata and momoyo/models/touhou/tamo/momoyo himemushi skirt.mdl",
+      "sha256": "e9396f56a830726c8b4d74a28207403e96384f579aa58548d3e6e225c92de2ca",
+      "version": 49,
+      "bones": 205,
+      "bodygroups": 2,
+      "choices": 4,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 134,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "chimata_and_momoyo.rar",
+      "member": "chimata and momoyo/models/touhou/tamo/momoyo himemushi.mdl",
+      "sha256": "e3e168ee644b5f05e6f80d2d51b30cd419d3581213c6d21a980ad8460fb22e92",
+      "version": 49,
+      "bones": 234,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 121,
+      "descriptors": 121,
+      "rules": 121,
+      "procedural_bones": 62,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "SFM-Reimu_Hakurei_gYGjX5u.rar",
+      "member": "models/DevilsCry/touhou/reimu.mdl",
+      "sha256": "7e2512e57f868669fd210524693de82850cae600711c2cd6baf66238a3eccb17",
+      "version": 49,
+      "bones": 220,
+      "bodygroups": 4,
+      "choices": 7,
+      "zero_vertex_blank_choices": 3,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 47,
+      "descriptors": 47,
+      "rules": 47,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "idle"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori skirt.mdl",
+      "sha256": "fae34e28c3a6ee6c82055c3e513b1fe8a55a066afaf2f9344bef1a944a3b2bab",
+      "version": 49,
+      "bones": 105,
+      "bodygroups": 8,
+      "choices": 17,
+      "zero_vertex_blank_choices": 8,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 3,
+      "descriptors": 3,
+      "rules": 3,
+      "procedural_bones": 60,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop blush.mdl",
+      "sha256": "c587fcf93be869860c9269ae95fc752ac0be0022bbd6dcf84d48d9e8577505fa",
+      "version": 49,
+      "bones": 9,
+      "bodygroups": 2,
+      "choices": 4,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 87,
+      "descriptors": 87,
+      "rules": 87,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.mdl",
+      "sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "version": 49,
+      "bones": 66,
+      "bodygroups": 1,
+      "choices": 2,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 3,
+      "distinct_skin_families": 3,
+      "controllers": 1,
+      "descriptors": 1,
+      "rules": 1,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop.mdl",
+      "sha256": "108c66b37cbf3f8a9e7f8865a7f409f964aaa16dfa94e8e9b9455a0f91948654",
+      "version": 49,
+      "bones": 163,
+      "bodygroups": 3,
+      "choices": 4,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 5,
+      "distinct_skin_families": 5,
+      "controllers": 128,
+      "descriptors": 128,
+      "rules": 128,
+      "procedural_bones": 4,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori.mdl",
+      "sha256": "738ec18133fafc9a8a7ef43c07b4ba572eeb00a61baa48f805ee5fb8cb3ffa65",
+      "version": 49,
+      "bones": 163,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 127,
+      "descriptors": 127,
+      "rules": 127,
+      "procedural_bones": 4,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/yamashiro takane box.mdl",
+      "sha256": "86827f63c22dd438b73e798135047c2bb67b13201269d626d423f06820f10b62",
+      "version": 49,
+      "bones": 4,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 3,
+      "descriptors": 3,
+      "rules": 3,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/yamashiro takane clipless.mdl",
+      "sha256": "50589616f16296fed937f3b2e1a7b5412bda0b54afed38feafaedc060ff3fd41",
+      "version": 49,
+      "bones": 163,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 124,
+      "descriptors": 124,
+      "rules": 124,
+      "procedural_bones": 4,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/yamashiro takane skirt.mdl",
+      "sha256": "399e6537fffa2d3502885ff93bbe5f9a1b1abfbf0c1fb149416f6a4d0658f0d5",
+      "version": 49,
+      "bones": 126,
+      "bodygroups": 5,
+      "choices": 11,
+      "zero_vertex_blank_choices": 5,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 80,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/yamashiro takane tanktop.mdl",
+      "sha256": "ca7a110af418b0d30428f16e1008722c8a1eecfca912a95cc24f83fa1b3c42d8",
+      "version": 49,
+      "bones": 163,
+      "bodygroups": 3,
+      "choices": 4,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 5,
+      "distinct_skin_families": 5,
+      "controllers": 128,
+      "descriptors": 128,
+      "rules": 128,
+      "procedural_bones": 4,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/yamashiro takane.mdl",
+      "sha256": "3410636bc4505bd8a9197fb0eb5c1728beb8e49cbeeb66d4a6a95ca0073b71e5",
+      "version": 49,
+      "bones": 163,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 126,
+      "descriptors": 126,
+      "rules": 126,
+      "procedural_bones": 4,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Keiki.rar",
+      "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.mdl",
+      "sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "version": 49,
+      "bones": 31,
+      "bodygroups": 3,
+      "choices": 6,
+      "zero_vertex_blank_choices": 3,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 1,
+      "descriptors": 1,
+      "rules": 1,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Keiki.rar",
+      "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin props.mdl",
+      "sha256": "dfc0ef80df99053903a9abb5100b0078def51f00cc73f794c4897fdb9f6b2fe3",
+      "version": 49,
+      "bones": 231,
+      "bodygroups": 7,
+      "choices": 14,
+      "zero_vertex_blank_choices": 7,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 5,
+      "descriptors": 5,
+      "rules": 5,
+      "procedural_bones": 152,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Keiki.rar",
+      "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin.mdl",
+      "sha256": "f164d311c7e2967fbf2e1bac316cffd32b638f45ea9849d3140cab84fcdd9a7a",
+      "version": 49,
+      "bones": 212,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 128,
+      "descriptors": 128,
+      "rules": 128,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Bunny_suit_Patchi.rar",
+      "member": "Bunny suit Patchi/models/touhou/pojipozio/bunny outfit props.mdl",
+      "sha256": "b47dcbeca641bd87b38bc6530d86758a7c4f69e6a0c708e1495b18bac4edfed2",
+      "version": 49,
+      "bones": 87,
+      "bodygroups": 6,
+      "choices": 9,
+      "zero_vertex_blank_choices": 3,
+      "skin_families": 11,
+      "distinct_skin_families": 10,
+      "controllers": 35,
+      "descriptors": 35,
+      "rules": 35,
+      "procedural_bones": 5,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Bunny_suit_Patchi.rar",
+      "member": "Bunny suit Patchi/models/touhou/pojipozio/patchouli knowledge hair.mdl",
+      "sha256": "0e824548a702034c55befca47333d484c10c4119dadc7f68fa99f50b1f323caa",
+      "version": 49,
+      "bones": 61,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 42,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Bunny_suit_Patchi.rar",
+      "member": "Bunny suit Patchi/models/touhou/pojipozio/patchouli knowledge outfit props.mdl",
+      "sha256": "c5232a57ea6e4b056fa8bf0063435d8352cd258ace0da4017865b405a8802bcc",
+      "version": 49,
+      "bones": 87,
+      "bodygroups": 6,
+      "choices": 9,
+      "zero_vertex_blank_choices": 3,
+      "skin_families": 11,
+      "distinct_skin_families": 10,
+      "controllers": 35,
+      "descriptors": 35,
+      "rules": 35,
+      "procedural_bones": 5,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Bunny_suit_Patchi.rar",
+      "member": "Bunny suit Patchi/models/touhou/pojipozio/patchouli knowledge props no jig.mdl",
+      "sha256": "a50e16aad2fe6495b583dc087df9e4f27119f9213ce09aab93507c49fd2a795f",
+      "version": 49,
+      "bones": 202,
+      "bodygroups": 6,
+      "choices": 10,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 16,
+      "descriptors": 16,
+      "rules": 16,
+      "procedural_bones": 102,
+      "sequence_names": [
+        "body dmx"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Bunny_suit_Patchi.rar",
+      "member": "Bunny suit Patchi/models/touhou/pojipozio/patchouli knowledge props.mdl",
+      "sha256": "aed366f80353260611d100ce22797c4c2d93f95c8f5f9468ae6635cb9ac1a0ef",
+      "version": 49,
+      "bones": 202,
+      "bodygroups": 6,
+      "choices": 10,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 16,
+      "descriptors": 16,
+      "rules": 16,
+      "procedural_bones": 109,
+      "sequence_names": [
+        "body dmx"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Bunny_suit_Patchi.rar",
+      "member": "Bunny suit Patchi/models/touhou/pojipozio/patchouli knowledge.mdl",
+      "sha256": "02d61ff432b79066a343a3b2f01f51a9ba6cdd7822d3eac92902507b01558ad4",
+      "version": 49,
+      "bones": 9,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 46,
+      "descriptors": 46,
+      "rules": 46,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "face"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Patchouli_knowledge.rar",
+      "member": "Patchouli knowledge/models/touhou/pojipozio/patchouli knowledge props no jig.mdl",
+      "sha256": "a50e16aad2fe6495b583dc087df9e4f27119f9213ce09aab93507c49fd2a795f",
+      "version": 49,
+      "bones": 202,
+      "bodygroups": 6,
+      "choices": 10,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 16,
+      "descriptors": 16,
+      "rules": 16,
+      "procedural_bones": 102,
+      "sequence_names": [
+        "body dmx"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Patchouli_knowledge.rar",
+      "member": "Patchouli knowledge/models/touhou/pojipozio/patchouli knowledge props.mdl",
+      "sha256": "aed366f80353260611d100ce22797c4c2d93f95c8f5f9468ae6635cb9ac1a0ef",
+      "version": 49,
+      "bones": 202,
+      "bodygroups": 6,
+      "choices": 10,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 16,
+      "descriptors": 16,
+      "rules": 16,
+      "procedural_bones": 109,
+      "sequence_names": [
+        "body dmx"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Patchouli_knowledge.rar",
+      "member": "Patchouli knowledge/models/touhou/pojipozio/patchouli knowledge.mdl",
+      "sha256": "391de51f5651584a1b8a7dc2b031852562a4755dd617aee83b9846c3bf3fadf9",
+      "version": 49,
+      "bones": 9,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 46,
+      "descriptors": 46,
+      "rules": 46,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "Head"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "momiji_inubashiri.rar",
+      "member": "momiji inubashiri/models/koikatsu/touhou/momiji body test.mdl",
+      "sha256": "39612c2dde971ac58ef85b5d5aecc7c1fd4630ca807786243990881796bb78c1",
+      "version": 49,
+      "bones": 225,
+      "bodygroups": 9,
+      "choices": 17,
+      "zero_vertex_blank_choices": 7,
+      "skin_families": 5,
+      "distinct_skin_families": 5,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "momiji_inubashiri.rar",
+      "member": "momiji inubashiri/models/koikatsu/touhou/momiji body.mdl",
+      "sha256": "9c86f64a71c1582c8003eec099732d2d4fdc0310c9412cfb45469151a30b41a3",
+      "version": 49,
+      "bones": 225,
+      "bodygroups": 8,
+      "choices": 16,
+      "zero_vertex_blank_choices": 7,
+      "skin_families": 5,
+      "distinct_skin_families": 5,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "momiji_inubashiri.rar",
+      "member": "momiji inubashiri/models/koikatsu/touhou/momiji head.mdl",
+      "sha256": "1a71406f4aba4592c0792ec55c674535661c3c60cfe832012a84dacaee174c88",
+      "version": 49,
+      "bones": 114,
+      "bodygroups": 3,
+      "choices": 5,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 70,
+      "descriptors": 199,
+      "rules": 70,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Cirno_Mister_Orzo_v2.1_edit.rar",
+      "member": "Cirno Mister Orzo v2.1 edit/models/mmd/mister_orzo/touhou/cirno props.mdl",
+      "sha256": "803916215e462106799686a3099ded62d5c03d1338f16e8b377f931c5486e14d",
+      "version": 49,
+      "bones": 90,
+      "bodygroups": 4,
+      "choices": 8,
+      "zero_vertex_blank_choices": 3,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 52,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Cirno_Mister_Orzo_v2.1_edit.rar",
+      "member": "Cirno Mister Orzo v2.1 edit/models/mmd/mister_orzo/touhou/cirno.mdl",
+      "sha256": "16d11ed883ee31e13079f98ebd4eb27fef1576d24e9ced806e49eec0ecec6963",
+      "version": 49,
+      "bones": 98,
+      "bodygroups": 9,
+      "choices": 17,
+      "zero_vertex_blank_choices": 8,
+      "skin_families": 6,
+      "distinct_skin_families": 6,
+      "controllers": 87,
+      "descriptors": 87,
+      "rules": 87,
+      "procedural_bones": 23,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Patchouli_knowledge_fix.rar",
+      "member": "Patchouli knowledge/models/touhou/pojipozio/patchouli knowledge props no jig.mdl",
+      "sha256": "a50e16aad2fe6495b583dc087df9e4f27119f9213ce09aab93507c49fd2a795f",
+      "version": 49,
+      "bones": 202,
+      "bodygroups": 6,
+      "choices": 10,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 16,
+      "descriptors": 16,
+      "rules": 16,
+      "procedural_bones": 102,
+      "sequence_names": [
+        "body dmx"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Patchouli_knowledge_fix.rar",
+      "member": "Patchouli knowledge/models/touhou/pojipozio/patchouli knowledge props.mdl",
+      "sha256": "aed366f80353260611d100ce22797c4c2d93f95c8f5f9468ae6635cb9ac1a0ef",
+      "version": 49,
+      "bones": 202,
+      "bodygroups": 6,
+      "choices": 10,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 16,
+      "descriptors": 16,
+      "rules": 16,
+      "procedural_bones": 109,
+      "sequence_names": [
+        "body dmx"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Patchouli_knowledge_fix.rar",
+      "member": "Patchouli knowledge/models/touhou/pojipozio/patchouli knowledge.mdl",
+      "sha256": "02d61ff432b79066a343a3b2f01f51a9ba6cdd7822d3eac92902507b01558ad4",
+      "version": 49,
+      "bones": 9,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 46,
+      "descriptors": 46,
+      "rules": 46,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "face"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "SFM-Ran_Yakumo.rar",
+      "member": "models/DevilsCry/touhou/ran.mdl",
+      "sha256": "3b8c8d3d79a2969a3ec4621fac895727fe35619e71a884d625b06954af57dc21",
+      "version": 49,
+      "bones": 163,
+      "bodygroups": 7,
+      "choices": 10,
+      "zero_vertex_blank_choices": 3,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 49,
+      "descriptors": 49,
+      "rules": 49,
+      "procedural_bones": 63,
+      "sequence_names": [
+        "idle"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_v2.rar",
+      "member": "hijiri v2/models/touhou/tamo/byakuren hijiri biker v2.mdl",
+      "sha256": "2f94dd46af32bf1f17e8f93e6d25e23cf4694c1458d2e7363869e24694b5829b",
+      "version": 49,
+      "bones": 186,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 8,
+      "distinct_skin_families": 8,
+      "controllers": 93,
+      "descriptors": 93,
+      "rules": 93,
+      "procedural_bones": 6,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_v2.rar",
+      "member": "hijiri v2/models/touhou/tamo/byakuren hijiri fighter v2.mdl",
+      "sha256": "edf86a38e849e1cbde7b6d8d68c84423681399ad31f5d9edeb49ac89b261702b",
+      "version": 49,
+      "bones": 151,
+      "bodygroups": 4,
+      "choices": 8,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 17,
+      "descriptors": 17,
+      "rules": 17,
+      "procedural_bones": 30,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_v2.rar",
+      "member": "hijiri v2/models/touhou/tamo/byakuren hijiri hair v2.mdl",
+      "sha256": "03ae197670fa6b6f23d461f4ecb448c44ed1733aa4671dd8e28631d1f385ba29",
+      "version": 49,
+      "bones": 116,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 83,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_v2.rar",
+      "member": "hijiri v2/models/touhou/tamo/byakuren hijiri skirt short v2.mdl",
+      "sha256": "1ed44cf0b142282c6aed389c346f2a29484f937cb1a1435ae91891364c1d46a1",
+      "version": 49,
+      "bones": 166,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 1,
+      "descriptors": 2,
+      "rules": 1,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_v2.rar",
+      "member": "hijiri v2/models/touhou/tamo/byakuren hijiri skirt v2.mdl",
+      "sha256": "88fc67a61192204776e570b89c9b3b07f851493ad6d1a8d61d966be1461326c0",
+      "version": 49,
+      "bones": 166,
+      "bodygroups": 1,
+      "choices": 1,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 2,
+      "descriptors": 2,
+      "rules": 2,
+      "procedural_bones": 140,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Hijiri_v2.rar",
+      "member": "hijiri v2/models/touhou/tamo/byakuren hijiri v2.mdl",
+      "sha256": "ea6938b779e3d4c2380843f1b7905bccd3c2fcae8fbee20500cfee1c4cfaae86",
+      "version": 49,
+      "bones": 182,
+      "bodygroups": 2,
+      "choices": 2,
+      "zero_vertex_blank_choices": 0,
+      "skin_families": 8,
+      "distinct_skin_families": 8,
+      "controllers": 92,
+      "descriptors": 92,
+      "rules": 92,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Kanako_Yasaka_DVebPRD.zip",
+      "member": "models/touhou/tamo/kanako yasaka skirt.mdl",
+      "sha256": "3c0ce898e7822e3843b0eb2ddbc9c7fdad07325c59396f0a2dcea6379de4c5e7",
+      "version": 49,
+      "bones": 121,
+      "bodygroups": 2,
+      "choices": 4,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 8,
+      "descriptors": 8,
+      "rules": 8,
+      "procedural_bones": 79,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Kanako_Yasaka_DVebPRD.zip",
+      "member": "models/touhou/tamo/kanako yasaka props.mdl",
+      "sha256": "ad9e57ed473eecd8df75068def4b74a51954b0b4617070c8b552b1a5a98d7759",
+      "version": 49,
+      "bones": 43,
+      "bodygroups": 4,
+      "choices": 8,
+      "zero_vertex_blank_choices": 4,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 20,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Kanako_Yasaka_DVebPRD.zip",
+      "member": "models/touhou/tamo/kanako yasaka.mdl",
+      "sha256": "40d4dd138c24af12f4ea3c0a3b3d5404e23bf2925943f8cebdf0d4b16b851a65",
+      "version": 49,
+      "bones": 197,
+      "bodygroups": 3,
+      "choices": 4,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 4,
+      "distinct_skin_families": 4,
+      "controllers": 116,
+      "descriptors": 116,
+      "rules": 116,
+      "procedural_bones": 22,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "SFM-Reimu_Hakurei_V2.rar",
+      "member": "models/DevilsCry/touhou/reimu_v2.mdl",
+      "sha256": "72cb7710ab4ecefe07773319734459c2745b967d44c8f8b0163e3482fa6ebe86",
+      "version": 49,
+      "bones": 220,
+      "bodygroups": 8,
+      "choices": 16,
+      "zero_vertex_blank_choices": 7,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 48,
+      "descriptors": 48,
+      "rules": 48,
+      "procedural_bones": 38,
+      "sequence_names": [
+        "idle"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm_v25.zip",
+      "member": "models/touhou/tamo/junko.mdl",
+      "sha256": "d916863f801d0894009fad43c587ae630bf05556f484ebae4803734bd15c8af7",
+      "version": 49,
+      "bones": 145,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 16,
+      "distinct_skin_families": 16,
+      "controllers": 116,
+      "descriptors": 116,
+      "rules": 116,
+      "procedural_bones": 2,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm_v25.zip",
+      "member": "models/touhou/tamo/junko char mask.mdl",
+      "sha256": "8cb588d2e45268c79d83632cae4e0545d953025c9ea48a3bf42a1975a74db0f2",
+      "version": 49,
+      "bones": 19,
+      "bodygroups": 1,
+      "choices": 2,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 0,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm_v25.zip",
+      "member": "models/touhou/tamo/junko dress.mdl",
+      "sha256": "be03e608fc7fc0316a5441e65d01cef355e076b4eff17dd5b57fbf4defb35fdf",
+      "version": 49,
+      "bones": 112,
+      "bodygroups": 3,
+      "choices": 5,
+      "zero_vertex_blank_choices": 2,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 12,
+      "descriptors": 12,
+      "rules": 12,
+      "procedural_bones": 28,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm_v25.zip",
+      "member": "models/touhou/tamo/junko hair.mdl",
+      "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "version": 49,
+      "bones": 69,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 0,
+      "descriptors": 0,
+      "rules": 0,
+      "procedural_bones": 49,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm_v25.zip",
+      "member": "models/touhou/tamo/junko miniskirt.mdl",
+      "sha256": "55d13238fe67c4ead4ac6c2cb6c4ac43d7f2275d722021af5ce030e93cf1745d",
+      "version": 49,
+      "bones": 136,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 6,
+      "descriptors": 6,
+      "rules": 6,
+      "procedural_bones": 102,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    },
+    {
+      "archive": "Junko_Tamo_sfm_v25.zip",
+      "member": "models/touhou/tamo/junko skirt.mdl",
+      "sha256": "b753091a9e32e84cb81ae182df0b6c7c341feb0e51e5b2e190eccff2f92b397b",
+      "version": 49,
+      "bones": 136,
+      "bodygroups": 2,
+      "choices": 3,
+      "zero_vertex_blank_choices": 1,
+      "skin_families": 1,
+      "distinct_skin_families": 1,
+      "controllers": 7,
+      "descriptors": 7,
+      "rules": 7,
+      "procedural_bones": 102,
+      "sequence_names": [
+        "ref"
+      ],
+      "animation_frame_counts": [
+        1
+      ],
+      "attachments": 0,
+      "ik_chains": 0,
+      "pose_parameters": 0,
+      "include_models": 0
+    }
+  ],
+  "next_cases": {
+    "multi_skin_glove": {
+      "archive": "Takane_and_Nitori_tanktop.rar",
+      "member": "Takane and Nitori/models/touhou/tamo/nitori edit/kawashiro nitori tanktop glove.mdl",
+      "sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+      "version": 49,
+      "bodygroups": [
+        {
+          "index": 0,
+          "name": "glove",
+          "choices": [
+            {
+              "index": 0,
+              "name": "gloves.dmx",
+              "vertices": 6544,
+              "meshes": 2,
+              "blank": false,
+              "mesh_flex_records": 2
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "meshes": 0,
+              "blank": true,
+              "mesh_flex_records": 0
+            }
+          ]
+        }
+      ],
+      "skin_family_count": 3,
+      "distinct_skin_families": 3,
+      "bone_count": 66,
+      "procedural_bones": 0,
+      "skin_groups": [
+        [
+          "models/touhou/tamo/Nitori edit/Gloves",
+          "models/touhou/tamo/Nitori edit/Gloves glow",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ],
+        [
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ],
+        [
+          "Glovesw",
+          "Gloves gloww",
+          "Glovesg",
+          "Gloves glowg",
+          "Glovesw",
+          "Gloves gloww"
+        ]
+      ]
+    },
+    "keiki_tools_main": {
+      "archive": "Keiki.rar",
+      "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin.mdl",
+      "sha256": "f164d311c7e2967fbf2e1bac316cffd32b638f45ea9849d3140cab84fcdd9a7a",
+      "version": 49,
+      "bodygroups": [
+        {
+          "index": 0,
+          "name": "reference",
+          "choices": [
+            {
+              "index": 0,
+              "name": "base.dmx",
+              "vertices": 21843,
+              "meshes": 19,
+              "blank": false,
+              "mesh_flex_records": 324
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "name": "clamped1",
+          "choices": [
+            {
+              "index": 0,
+              "name": "blank",
+              "vertices": 14521,
+              "meshes": 19,
+              "blank": false,
+              "mesh_flex_records": 29
+            }
+          ]
+        }
+      ],
+      "skin_family_count": 4,
+      "distinct_skin_families": 4,
+      "bone_count": 212,
+      "procedural_bones": 2,
+      "tools_controllers": [
+        {
+          "index": 121,
+          "name": "Tools",
+          "group": "Tools",
+          "min": 0.0,
+          "max": 1.0
+        }
+      ],
+      "tools_rule_bindings": [
+        {
+          "target_descriptor": 121,
+          "target_name": "Tools",
+          "fetch1_controller": 121
+        }
+      ]
+    },
+    "keiki_tools_chisels": {
+      "archive": "Keiki.rar",
+      "member": "keiki by tamo/models/touhou/tamo/keiki haniyashin chisels.mdl",
+      "sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+      "version": 49,
+      "bodygroups": [
+        {
+          "index": 0,
+          "name": "tools",
+          "choices": [
+            {
+              "index": 0,
+              "name": "tools.dmx",
+              "vertices": 1180,
+              "meshes": 1,
+              "blank": false,
+              "mesh_flex_records": 1
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "meshes": 0,
+              "blank": true,
+              "mesh_flex_records": 0
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "name": "box",
+          "choices": [
+            {
+              "index": 0,
+              "name": "box.smd",
+              "vertices": 38,
+              "meshes": 1,
+              "blank": false,
+              "mesh_flex_records": 0
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "meshes": 0,
+              "blank": true,
+              "mesh_flex_records": 0
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "name": "flame",
+          "choices": [
+            {
+              "index": 0,
+              "name": "flame.smd",
+              "vertices": 1479,
+              "meshes": 2,
+              "blank": false,
+              "mesh_flex_records": 0
+            },
+            {
+              "index": 1,
+              "name": "blank",
+              "vertices": 0,
+              "meshes": 0,
+              "blank": true,
+              "mesh_flex_records": 0
+            }
+          ]
+        }
+      ],
+      "skin_family_count": 1,
+      "distinct_skin_families": 1,
+      "bone_count": 31,
+      "procedural_bones": 0,
+      "tools_controllers": [
+        {
+          "index": 0,
+          "name": "Tools",
+          "group": "Tools",
+          "min": 0.0,
+          "max": 1.0
+        }
+      ],
+      "tools_rule_bindings": [
+        {
+          "target_descriptor": 0,
+          "target_name": "Tools",
+          "fetch1_controller": 0
+        }
+      ]
+    },
+    "junko_main_hair_assembly": {
+      "base": {
+        "archive": "Junko_Tamo_sfm_v25.zip",
+        "member": "models/touhou/tamo/junko.mdl",
+        "sha256": "d916863f801d0894009fad43c587ae630bf05556f484ebae4803734bd15c8af7",
+        "version": 49,
+        "bodygroups": [
+          {
+            "index": 0,
+            "name": "reference",
+            "choices": [
+              {
+                "index": 0,
+                "name": "Base dmx.dmx",
+                "vertices": 18232,
+                "meshes": 19,
+                "blank": false,
+                "mesh_flex_records": 380
+              }
+            ]
+          },
+          {
+            "index": 1,
+            "name": "Belt",
+            "choices": [
+              {
+                "index": 0,
+                "name": "Belt.dmx",
+                "vertices": 297,
+                "meshes": 1,
+                "blank": false,
+                "mesh_flex_records": 0
+              },
+              {
+                "index": 1,
+                "name": "blank",
+                "vertices": 0,
+                "meshes": 0,
+                "blank": true,
+                "mesh_flex_records": 0
+              }
+            ]
+          }
+        ],
+        "skin_family_count": 16,
+        "distinct_skin_families": 16,
+        "bone_count": 145,
+        "procedural_bones": 2
+      },
+      "hair": {
+        "archive": "Junko_Tamo_sfm_v25.zip",
+        "member": "models/touhou/tamo/junko hair.mdl",
+        "sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+        "version": 49,
+        "bodygroups": [
+          {
+            "index": 0,
+            "name": "reference",
+            "choices": [
+              {
+                "index": 0,
+                "name": "hair.smd",
+                "vertices": 8011,
+                "meshes": 2,
+                "blank": false,
+                "mesh_flex_records": 0
+              }
+            ]
+          },
+          {
+            "index": 1,
+            "name": "Hat",
+            "choices": [
+              {
+                "index": 0,
+                "name": "Hat.smd",
+                "vertices": 1650,
+                "meshes": 2,
+                "blank": false,
+                "mesh_flex_records": 0
+              },
+              {
+                "index": 1,
+                "name": "blank",
+                "vertices": 0,
+                "meshes": 0,
+                "blank": true,
+                "mesh_flex_records": 0
+              }
+            ]
+          }
+        ],
+        "skin_family_count": 1,
+        "distinct_skin_families": 1,
+        "bone_count": 69,
+        "procedural_bones": 49
+      },
+      "common_names": [
+        "ParentNode",
+        "bip_head",
+        "bip_neck",
+        "bip_pelvis",
+        "bip_spine_0",
+        "bip_spine_1"
+      ],
+      "parent_name_conflicts": [],
+      "scope": "Hierarchy/name comparison only; rest transforms, bind matrices, skin alignment and bone-merge behavior untested."
+    }
+  },
+  "cautions": [
+    "Bodygroup name blank is not proof of absent geometry; a Keiki choice called blank has14521vertices.",
+    "Bunny outfit props have11skin rows but only10distinct index remaps; preserve both counts.",
+    "All inspected animation headers are one frame; native sequence playback has no positive motion example in this corpus.",
+    "Native JIGGLE declarations do not prove HAS reproduces their constraints or solver.",
+    "Compound/signed/stereo controller coverage still requires Scout or another independently selected corpus."
+  ],
+  "preservation": {
+    "original_archives": 22,
+    "sha256_bytes_mtime_unchanged_from_initial_review": true,
+    "staged_mdl_sha256_verified": 82,
+    "only_mdl_payloads_staged": true,
+    "model_scripts_executed": false,
+    "textures_or_sidecars_extracted": false,
+    "app_gpu_render": false,
+    "network": false
+  },
+  "research_runtime": {
+    "seven_zip": "C:\\Program Files\\7-Zip\\7z.exe",
+    "seven_zip_sha256": "e2ca3ec168ae9c0b4115cd4fe220145ea9b2dc4b6fc79d765e91f415b34d00de",
+    "python": "C:\\Program Files\\Blender Foundation\\Blender 5.1\\5.1\\python\\bin\\python.exe",
+    "python_sha256": "af4f5e1e3b5efb618fc496ccacb9b527aaa834e6a48e6c17d824f207bbafea7e",
+    "sourceio": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\dependencies\\sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
+  },
+  "procedural_type_source": "Native MDL49 bone-record uint32 at offset164, matching the pinned Bone.from_buffer layout; its type-labelled object attribute is not used as an integer.",
+  "evidence": [
+    {
+      "path": "output/sfm-extra-native-inventory/1794519206301446900/staging.json",
+      "sha256": "1ce815d1955de5150e15c26f6ed15e95a07c17e235d52eb7d8519d469867a51f"
+    },
+    {
+      "path": "output/sfm-extra-native-inventory/1794519206301446900/metadata-v2.json",
+      "sha256": "0cdec3ae27e19f662f3a79a2a85de49ed701b6d96bc656c69cd7307bf6ca1e14"
+    },
+    {
+      "path": "output/sfm-extra-native-inventory/1794519206301446900/native-parser-v2.log",
+      "sha256": "d67b76d365d0168ba528e3b5202ff25cccdc6a9406698dd042d069460b0b881f"
+    },
+    {
+      "path": "output/sfm-extra-feature-review-20261112/run_native_inventory.py",
+      "sha256": "cb1ee14cd358dd62a3e16930c547b2c60d70e2c3211709607cc3c066a208f75d"
+    },
+    {
+      "path": "output/sfm-extra-feature-review-20261112/native_metadata_probe.py",
+      "sha256": "eb0d0e8c97592c1aed35f03646fda76bd3cdf6418804bf15b702319d217e545b"
+    },
+    {
+      "path": "output/sfm-extra-feature-review-20261112/summarize_native_inventory.py",
+      "sha256": "81026c1d4f6975249c281c6b15a1f807819ca04be35d13b54bf19ecebdc1f387"
+    }
+  ],
+  "retained_initial_attempts": [
+    {
+      "folder": "output/sfm-extra-native-inventory/1794519185745244300",
+      "failure": "Research guard treated empty 7-Zip Symbolic Link/Hard Link fields as real links; corrected to reject nonempty link targets while retaining encryption/path/stream/link refusals."
+    },
+    {
+      "path": "output/sfm-extra-native-inventory/1794519206301446900/metadata.json",
+      "parsed": 27,
+      "errors": 55,
+      "failure": "Research serializer assumed pinned Bone.procedural_rule_type was an integer; this runtime places JiggleRule objects there. Corrected by retaining the native numeric field independently; runtime unchanged."
+    }
+  ],
+  "documentation": "docs/sfm_native_feature_inventory_2026-11-12.md",
+  "historical_identity_inventory": "docs/benchmarks/sfm_extra_feature_inventory_2026-11-12.json",
+  "reproduction": {
+    "audit": "tools/audit_sfm_native_metadata.py",
+    "probe": "tools/sfm_native_metadata_probe.py",
+    "arguments": [
+      "--archive-root",
+      "--seven-zip",
+      "--python",
+      "--sourceio",
+      "--output"
+    ],
+    "new_output_inside_checkout_required": true,
+    "original_22_archive_identities_required": true,
+    "all_82_definition_hashes_checked": true,
+    "actual_mdl_version_checked": true,
+    "supported_version": 49,
+    "reader_layout_hashes_checked": true,
+    "native_runtime_modified": false,
+    "source_sha256": {
+      "tools/audit_sfm_native_metadata.py": "f7bfd241ca44210a4963422dbfe6e664e1ecb93d79b2f978299705a72f19cfcc",
+      "tools/sfm_native_metadata_probe.py": "3f82794fbeac2801c84af23c5138d6466b556ac1517f28701eb79f39ab3c8f29"
+    },
+    "verification": "Root executed both the portable probe on retained MDLs and the complete portable archive-staging/native-parse CLI. Both parsed82/82 with zero errors/refusals; every native model record exactly matches the final research metadata-v2.json. All22archive identities remained unchanged. Initial metadata.json is the intentionally retained27/55serialization failure, not the successful comparison reference.",
+    "portable_end_to_end": {
+      "receipt": "output/sfm-extra-native-inventory/portable-root-639301165838922272/receipt.json",
+      "receipt_sha256": "8c4309024d14c02c3f8f778e408183cd1673e32332ec9eb98c69006b1acd3848",
+      "metadata_sha256": "bffa1a955c41f679506aa6d7a69195098addc67891f41415092cf241f4b80271",
+      "summary": {
+        "definitions": 82,
+        "distinct_sha256": 71,
+        "parsed": 82,
+        "errors": 0,
+        "refused_versions": 0,
+        "multi_skin_models": 28,
+        "models_with_procedural_bones": 55
+      },
+      "all_native_records_exactly_match_final_research": true,
+      "original_archive_sha256_bytes_mtime_unchanged": true,
+      "only_mdl_payloads_staged": true,
+      "staged_definition_bytes": 62843920,
+      "app_gpu_render": false,
+      "network": false,
+      "source_sha256": {
+        "tools/audit_sfm_native_metadata.py": "f7bfd241ca44210a4963422dbfe6e664e1ecb93d79b2f978299705a72f19cfcc",
+        "tools/sfm_native_metadata_probe.py": "3f82794fbeac2801c84af23c5138d6466b556ac1517f28701eb79f39ab3c8f29",
+        "tools/source_archive.py": "a7c659ea8653136ed740d99508aaa07b2e33c7ddd64093e272739c49661a1c48",
+        "tools/asset_audit.py": "f91daebf1a7f7351b04d1018fd87f629a85460c4a67c540db7e7f7697a0eebeb"
+      }
+    }
+  }
+}

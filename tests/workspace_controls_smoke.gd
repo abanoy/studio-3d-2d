@@ -37,6 +37,9 @@ func run() -> void:
 	pen.pressed=false;pen.position=ink.position;app.canvas._gui_input(pen)
 	check(Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixel(120,80).a>0,"actual canvas coordinates still paint an independent visible Ink cel")
 	app.mode.select(2);app.change_mode(2);await settled()
+	# This fixture asserts the retained Focus paper-pan behavior. Setup camera
+	# navigation has its own independent scene_view_smoke interaction checks.
+	app.scene_view.set_setup(false,false)
 	var id: String=app.world_selection.selected;var world: Dictionary=World.portable(app.current_world());var shots: Array=app.keys.duplicate(true);var view: Dictionary=app.renderer.view_state();var history: int=app.history.size();var operation: int=app.pose_editor.operation.selected
 	middle(true);middle(false);await settled()
 	check(app.pose_editor.operation.selected==1-operation and app.world_selection.selected==id,"middle click cycles Rotate/Move without deselecting the model")
@@ -92,7 +95,7 @@ func run() -> void:
 	ws.vertical.split_offset-=70;ws.horizontal.split_offset+=35;ws.right_split.split_offset-=25;await settled()
 	check(app.canvas.size.x>0 and app.timeline.size.x>0 and ws.vertical.get_child_count()==2,"real workspace splitters resize the live view and panels")
 	ws.dock("world","right");await settled()
-	check(ws.locations.right=="world" and ws.locations.left=="properties" and ws.panels.world.get_parent()==ws.slots.right,"docking swaps panels instead of losing an occupied panel")
+	check(ws.locations.right=="world" and ws.locations.left=="properties" and ws.panels.world.get_parent()==ws.tabs.right,"docking swaps panels instead of losing an occupied panel")
 	# Real heading press/motion/release through the main viewport input router.
 	var handle: Control=ws.panels.timeline.get_child(0).get_child(0)
 	var press_at:=handle.get_global_rect().get_center();var drop_at: Vector2=ws.slots.left.get_global_rect().get_center()
@@ -100,12 +103,13 @@ func run() -> void:
 	var press:=InputEventMouseButton.new();press.button_index=MOUSE_BUTTON_LEFT;press.pressed=true;press.position=press_at;root.push_input(press,true);await settled()
 	var motion:=InputEventMouseMotion.new();motion.position=drop_at;motion.relative=drop_at-press_at;motion.button_mask=MOUSE_BUTTON_MASK_LEFT;root.push_input(motion,true);await settled()
 	press.pressed=false;press.position=drop_at;root.push_input(press,true);await settled()
-	check(ws.locations.left=="timeline" and ws.locations.bottom=="properties","dragging a panel heading docks it at the chosen occupied region")
+	print("AFTER_HEADING_DRAG ",JSON.stringify(ws.state()))
+	check("timeline" in ws.groups.left and "properties" in ws.groups.left and ws.tabs.left.get_child_count()==2,"dragging a panel heading onto another panel creates selectable tabs")
 	ws.float_panel("properties");await settled()
 	check(ws.floating.has("properties") and not ws.floating.properties.exclusive and not app.has_dialog(app),"floating Properties is a movable, non-blocking tool window")
 	var floating: Window=ws.floating.properties;var size_before: Vector2i=floating.size;floating.size+=Vector2i(60,30);floating.position+=Vector2i(25,20);await settled()
 	check(floating.size!=size_before and not floating.unresizable,"floating gadget can resize and reposition")
-	floating.close_requested.emit();await settled();check(not ws.floating.has("properties") and ws.panels.properties.get_parent()==ws.slots.bottom,"closing a floating panel docks it back rather than removing controls")
+	floating.close_requested.emit();await settled();check(not ws.floating.has("properties") and ws.panels.properties.get_parent()==ws.tabs.left,"closing a floating panel docks it back rather than removing controls")
 	check(app.canvas.get_instance_id()==canvas_id and app.timeline.get_instance_id()==timeline_id and app.controls.get_instance_id()==controls_id,"layout operations preserve exact live canvas, timeline and inspector nodes")
 	check(same(World.portable(app.current_world()),state) and app.keys==shots and app.renderer.view_state()==view and app.history.size()==history,"layout moves leave scene, authored keys, view and Undo history unchanged")
 	var image: Image=await app.renderer.capture(app.keys,app.layers,0,true)
@@ -115,7 +119,9 @@ func run() -> void:
 	ws.timer.stop();ws.load_layout();await settled();check(ws.locations==saved.slots,"saved docking preferences reload without a project-format change")
 	ws.reset();await settled();app.get_window().size=Vector2i(1200,760);await settled()
 	var visible: Rect2=root.get_visible_rect();var screen: Image=root.get_texture().get_image()
-	check(app.canvas.get_global_rect().end.x<=visible.end.x and app.timeline.get_parent().get_global_rect().end.y<=visible.end.y and screen.get_width()<=app.get_window().size.x and screen.get_height()<=app.get_window().size.y,"default resizable layout remains accessible in logical and physical bounds at1200x760")
+	var timeline_scroll: ScrollContainer=ws.panels.timeline.get_node("TimelineContentScroll")
+	print("WORKSPACE_BOUNDS ",JSON.stringify({"window":str(app.get_window().size),"visible":str(visible),"canvas":str(app.canvas.get_global_rect()),"timeline":str(app.timeline.get_parent().get_global_rect()),"footer":str(app.status.get_parent().get_global_rect())}))
+	check(app.canvas.get_global_rect().end.x<=visible.end.x and timeline_scroll.get_global_rect().end.y<=visible.end.y and screen.get_width()<=app.get_window().size.x and screen.get_height()<=app.get_window().size.y,"default resizable layout remains accessible in logical and physical bounds at1200x760")
 	app.mode.select(0);app.change_mode(0);app.color.color=Color.MAGENTA;await settled()
 	var mapped_rect: Rect2 = app.canvas.image_rect()
 	for pixel in [Vector2i(960,540),Vector2i(480,810),Vector2i(1440,270)]:
@@ -126,6 +132,19 @@ func run() -> void:
 			root.push_input(touch,true);await settled()
 		var ink_pixel: Color = Drawing.image(Drawing.cel_at(app.layers[1],0)).get_pixelv(pixel)
 		check(ink_pixel.r>0.9 and ink_pixel.b>0.9 and ink_pixel.g<0.1 and ink_pixel.a>0.9,"resized workspace routes viewport pointer to Ink pixel "+str(pixel))
+	var expected: Image=await app.renderer.capture(app.keys,app.layers,0,true)
+	for window_case in [{"size":Vector2i(1120,720),"scale":1.},{"size":Vector2i(1400,900),"scale":1.25}]:
+		app.get_window().content_scale_factor=window_case.scale;app.get_window().size=window_case.size;await settled()
+		var area: Rect2=root.get_visible_rect();var footer: Rect2=app.status.get_parent().get_global_rect()
+		check(app.canvas.get_global_rect().end.x<=area.end.x and timeline_scroll.get_global_rect().end.y<=area.end.y and footer.end.y<=area.end.y and footer.end.x<=area.end.x,"same-aspect resize and125percent interface keep camera timeline and footer reachable: "+str(window_case))
+		timeline_scroll.ensure_control_visible(app.timeline.get_parent());await settled()
+		check(timeline_scroll.get_global_rect().encloses(app.timeline.get_parent().get_global_rect()),"compressed Timeline scrolls its complete interactive ruler into view")
+		var scroll: ScrollContainer=ws.panels.world.get_node("WorldContentScroll");var asset_actions: Array=app.find_children("*","Button",true,false).filter(func(node):return node.text=="Save asset .has...")
+		check(asset_actions.size()==1 and scroll.is_visible_in_tree(),"compact World retains asset action inside a scrollable dock")
+		if asset_actions.size()==1:
+			scroll.ensure_control_visible(asset_actions[0]);await settled();check(scroll.get_global_rect().encloses(asset_actions[0].get_global_rect()),"World action can be brought into the visible dock without changing layout")
+		check((await app.renderer.capture(app.keys,app.layers,0,true)).get_data()==expected.get_data(),"responsive dock and interface scale preserve exact final3D/2D output")
+	app.get_window().content_scale_factor=1.;app.get_window().size=Vector2i(1200,760);await settled()
 	root.get_texture().get_image().save_png(folder.path_join("workspace-1200.png"));app.get_window().size=Vector2i(1400,900);await settled();root.get_texture().get_image().save_png(folder.path_join("workspace.png"))
 	var file:=FileAccess.open(folder.path_join("result.json"),FileAccess.WRITE);file.store_string(JSON.stringify({"checks":checks,"failures":failures}));file.close();app.free();await process_frame
 	print("WORKSPACE_CONTROLS "+JSON.stringify({"checks":checks,"failures":failures}));quit(0 if failures==0 else 1)

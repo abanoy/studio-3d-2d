@@ -1,0 +1,7 @@
+# Failed full run and bounded silent-selection harness correction
+
+The full ee81e864 run FAILED in31m17s at native selection. All996functional source entries and HEAD matched; the engine completed67geometric checks on5native models with0domain failures and exit0, but the strict error-log gate correctly rejected a WASAPI GetBufferSize error/current output-device invalidation. Its exact coordinator/Python identities are absent, the failed selection private job closed, and no process was killed. Cause is not established; concatenated stdout/stderr ordering is not a shutdown timestamp.
+
+An unchanged-source/default-driver repeat passes67/0. The corrected geometric wrapper explicitly selects Dummy and asserts the GDS-reported actual driver; its fresh private run passes67/0. No ERROR filter, geometry comparison or receipt gate was relaxed. Dedicated default-driver audio_editor/multi_audio tests remain untouched; the earlier audio_editor run actually reportedWASAPI25/0, but later multi_audio was not reached by the failed full run. Actual physical/audible acceptance is not inferred. A fresh full run is required on the new checkpoint.
+
+The first host-closing helper guard refused before writing because PowerShell7.6 parsed JSON timestamps as DateTime. Explicit-DateKindString preserves exact strings before the successful authoritative host query. No process termination occurred. The failedfull's output/verification.json was stale and was never admitted as a result. Large native/model/HAS/image/audio/video/runtime payloads remain local.

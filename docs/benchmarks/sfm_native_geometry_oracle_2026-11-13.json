@@ -1,0 +1,74 @@
+{
+  "format": "has_sfm_native_geometry_oracle_checkpoint_1",
+  "date": "2026-11-13",
+  "source_commit": "3a6f94f9b40d587d529bfcba9139a58ad615ab78",
+  "status": "PARTIAL_NATIVE_ORACLE_WITH_EXPLICIT_UNRESOLVED_CASES",
+  "synthetic_cpu_checks": 30,
+  "synthetic_failures": 0,
+  "whole_cases": {
+    "total": 12,
+    "complete_base_attribute_map": 7,
+    "supported_native_triangle_match": 3,
+    "nitori_triangle_unrun": 4,
+    "tools_map_unresolved": 5
+  },
+  "mesh_comparisons": {
+    "total": 28,
+    "unambiguous_base_maps": 23,
+    "attributed_oriented_triangle_matches": 15,
+    "derived_rows_without_any_native_candidate": 0,
+    "maximum_matched_errors": {
+      "position": 5.213955561580597e-07,
+      "uv": 0.0,
+      "weight": 1.1920928955078125e-07,
+      "nearest_possible_raw_normal": 0.9999999999999999
+    }
+  },
+  "adapter_contract": {
+    "position": "(Source.x, Source.z, -Source.y) * .01905; no fitted transform",
+    "uv": "Source UV unchanged after documented importer/exporter double V flip",
+    "triangle": "Reverse each native VTX triple, preserve cyclic rotation and multiplicity; no orientation fitting",
+    "weights": "Native VVD global bone indices joined by exact MDL names/parents to actual GLB palette",
+    "normals": "Raw native directions recorded separately; no normal equivalence is implied by position/UV/weight match"
+  },
+  "tolerances": {
+    "position_m": 2e-06,
+    "uv": 2e-06,
+    "named_vvd_weight": 2e-06
+  },
+  "preservation": {
+    "all296stage_resources": true,
+    "two_original_archives": true,
+    "twelve_glbs_matching_parameter_reports_and_verifications": true,
+    "source_and_head": true
+  },
+  "results": {
+    "path": "experiments/source_appearance/native_geometry_oracle_20261113/results.json",
+    "bytes": 169070,
+    "sha256": "1afb559e7b5e955234ef4b8298bc880501e5f5fdd61791c93a8da617878ee5f6"
+  },
+  "archive_manifest": {
+    "path": "experiments/source_appearance/native_geometry_oracle_20261113/manifest.json",
+    "bytes": 3026,
+    "sha256": "24f91d5f1ff2163da404363c59cea7109277fef2540712b5bcc9b3bbe3990314"
+  },
+  "source_checkpoint": {
+    "path": "experiments/source_appearance/native_geometry_oracle_20261113/source-checkpoint.json",
+    "bytes": 1982,
+    "sha256": "add33b9d6daaf02edfa24ef92c7b0671693a46a771591fa3402620d32f7728e8"
+  },
+  "next_representatives": {
+    "path": "experiments/source_appearance/native_geometry_oracle_20261113/next-representatives.json",
+    "bytes": 4982,
+    "sha256": "c0bfc2b8cae2330b9163276cc054f07c4d464bbf2b9a7dcf82ed0620a301269e"
+  },
+  "raw_native_geometry_uploaded": false,
+  "engine_or_converter_started": false,
+  "limits": [
+    "Nitori legacy VTX layout unsupported; four topology checks unrun",
+    "Two near-coincident Tools correspondences unresolved in five bundles",
+    "Native normals/flex/shader/jiggle/hardware-palette rendering are not certified",
+    "Derived app/GPU/HAS and artist comparison remain separate"
+  ],
+  "archive_copy_note": "The first root membership check refused uppercase MANIFEST.json versus the actual lowercase manifest.json before any archive destination was created. Repeated exact membership/hash/byte checks with the observed filename copied all17files; no result or source changed."
+}

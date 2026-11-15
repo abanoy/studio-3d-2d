@@ -1,0 +1,159 @@
+{
+  "format": "has_atomic_safety_current_1",
+  "date": "2026-11-08 America/New_York",
+  "requirements_review": {
+    "sections": [
+      "MD9",
+      "MD10.SAFE-01",
+      "ADD11.5"
+    ],
+    "md9": "save to temporary file + fsync/rename where supported; back up previous manifest",
+    "safe01": "Explicit error / recovery, not crash or data loss",
+    "add11_5": "Avoid silently overwriting the only good copy if packaging fails.",
+    "correction": "Unconditional native Windows directory-fsync/power-loss certification was an extra gate attached to the bounded software condition. This review preserves the original acceptance text and the explicit Windows/device scenario gates."
+  },
+  "python_cases": {
+    "save_and_payload_safety": 86,
+    "failures": 0,
+    "combined_command_cases": 98,
+    "other_cases": 12
+  },
+  "godot": {
+    "directory-commit-current": {
+      "reports": {
+        "initial": {
+          "error": "",
+          "frame": 0.0,
+          "load_error": ""
+        },
+        "blocked": {
+          "error": "Another save is writing this project file. Wait for it to finish, then save again.",
+          "frame": 0.0,
+          "load_error": ""
+        },
+        "retry": {
+          "error": "",
+          "frame": 2.0,
+          "load_error": ""
+        },
+        "stale": {
+          "error": "Another save changed this project. Current saved generation preserved; save again to retry.",
+          "frame": 7.0,
+          "load_error": ""
+        },
+        "competing_generation": "Real worker committed frame7 between Godot preparation and its original worker; frame3 refused.",
+        "lost-status": {
+          "error": "Save worker ended without status. Check the configured Python and saved file before retrying.",
+          "frame": 9.0,
+          "load_error": ""
+        }
+      },
+      "folder": "/workspace/has-handoff-audit/mmd-native-2026-11-08/directory-commit-current",
+      "scope": "Actual headless Godot/worker exclusion and optimistic generation check; not physical power-loss or hostile filesystem mutation certification.",
+      "source_sha256": {
+        "src/storage.gd": "24f4c5b6869285261d46669a94d31e2a48e2dab763af115ec4e786f234cde365",
+        "tools/directory_commit.py": "4977ec89e5947b77bf13d963c71b3584085c8089e6b841663b07931cb5dd4bd3",
+        "tools/has_project.py": "44c0f8da797048c5bd18e22e69ccdc1d0898ddb6aa3435c4a2271a1b336478b8",
+        "tests/directory_commit_smoke.gd": "b6941a84c72220ba2883675bd89c4f9044c15108615752a2594fbe98e05da29a",
+        "tests/verify_directory_commit.py": "e61fe0e0c542ec8365f45eedd6e0375ecf2c4d0b26c03bfad008af9f7b0ad560"
+      }
+    },
+    "directory-rollback-current": {
+      "reports": {
+        "unit": {
+          "checks": 26,
+          "failures": 0,
+          "scope": "owned metadata/asset/pixel rollback integrity; not native-rig or physical power-loss certification"
+        },
+        "actual_interruption": {
+          "result": {
+            "error": "Save worker ended without status. Check the configured Python and saved file before retrying.",
+            "frame": 0.0,
+            "load_error": ""
+          },
+          "worker_killed_before_primary_promotion": true,
+          "original_primary_and_good_backup_unchanged": true,
+          "good_backup_loaded_by_actual_godot": true,
+          "verified_candidate_retained": true,
+          "original_source_unchanged": true
+        }
+      },
+      "folder": "/workspace/has-handoff-audit/mmd-native-2026-11-08/directory-rollback-current",
+      "source_sha256": {
+        "src/storage.gd": "24f4c5b6869285261d46669a94d31e2a48e2dab763af115ec4e786f234cde365",
+        "src/project_payload_guard.gd": "6bd277060a2a9fbb4dc5a3f05d9626b895474155b7ba53288aa734159e27b642",
+        "src/cel_png_verifier.gd": "bd81aa21005b6ff67f31883547a4be08a6f07fec93e3fa092c9394d18b2ad238",
+        "tests/directory_rollback_unit.gd": "2edd013f5619bde30b02f4b9ae6aa37d061f4c70078c75fc2ae78b2c5e8b07e9",
+        "tests/directory_rollback_prepare.gd": "2bbf2d3b433959573feed81af30a2d82a345dc10d7e733c58502d806c11045a1",
+        "tests/directory_commit_smoke.gd": "b6941a84c72220ba2883675bd89c4f9044c15108615752a2594fbe98e05da29a",
+        "tests/verify_directory_rollback.py": "22aca13247e21334a4c272b4cff7cfc0f1e80e353cd7c742434afb9306ebc08a"
+      }
+    },
+    "private-metadata-current": {
+      "reports": {
+        "save_worker_unit": {
+          "checks": 12,
+          "failures": 0
+        },
+        "private_metadata_unit": {
+          "checks": 32,
+          "failures": 0,
+          "scope": "owned Linux metadata links/hardlinks/permissions; no Windows/power-loss/concurrent-writer certification"
+        },
+        "recovery_journal_unit": {
+          "checks": 33,
+          "failures": 0,
+          "folder": "/workspace/studio-3d-2d/output/recovery-journal-unit/363395"
+        },
+        "lesson_recovery_unit": {
+          "checks": 43,
+          "failures": 0
+        },
+        "lesson_snapshot_loading_unit": {
+          "checks": 6,
+          "failures": 0,
+          "scope": "bounded UI metadata and single normal-Open delegation; actual project/asset recovery verified separately"
+        },
+        "recovery_identity_unit": {
+          "checks": 47,
+          "failures": 0,
+          "owner": {
+            "linux_start": "9e600605-2356-4189-9cc8-94127b9a994c:3876466",
+            "pid": 80532
+          }
+        }
+      },
+      "folder": "/workspace/has-handoff-audit/mmd-native-2026-11-08/private-metadata-current",
+      "scope": "Headless metadata safety; graphical crash/reopen workflows run separately. No power-loss or hostile concurrent filesystem race certification.",
+      "source_sha256": {
+        "src/save_worker.gd": "038a5e769bb7ca72234f1c902127b7cbc6b14595dc559611ef7544b9cc2705e0",
+        "tools/save_sync.py": "df3e6de75d0cbbd6f2db37151e558fee6be07a777e551116be25678da7dd2283",
+        "tools/metadata_commit.py": "7ec18f77f526ddeb9ce7a96dddef107626e21ec5346e1099c45d472610c0ee82",
+        "src/atomic_metadata.gd": "3f4c10cdb5f8e9a42c91130a37216a8c4d639dcdcf4ad60d1b3309e2b20c1535",
+        "src/recovery.gd": "f9efb9e0f925ab6e4720de90b82ba6a482b866681a85dad650187bd3966310f9",
+        "src/recovery_journal.gd": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa",
+        "src/lesson_store.gd": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260",
+        "tests/lesson_snapshot_loading_unit.gd": "66327ba81edcf96a1b23a34ee1ab14aacb89a1f7893de5b02df5ad3c44bcae68",
+        "tests/private_metadata_unit.gd": "79b8620dbc72aedf14b32f16c9b1c50aa0ffff7dfb4b4b0d9433f965ba92fb64",
+        "tests/verify_private_metadata.py": "299e26905f7dfdc0baf2f3332a71585d0ccd0c0c1f2775777cf97b7236c1b80d"
+      }
+    }
+  },
+  "scope": "Current controlled file/payload/readback/backup/CAS/unsafe-path/disk-full/abrupt-process-termination software evidence on POSIX, including actual Godot workers, corrupt-primary/backup rollback and lost post-commit status. Unsupported directory sync still reports false, actual sync errors still fail. No Windows kernel, physical power-loss, physical storage or clean installer certification.",
+  "windows_execution": false,
+  "physical_power_loss": false,
+  "source_sha256": {
+    "tools/save_sync.py": "df3e6de75d0cbbd6f2db37151e558fee6be07a777e551116be25678da7dd2283",
+    "tools/has_project.py": "44c0f8da797048c5bd18e22e69ccdc1d0898ddb6aa3435c4a2271a1b336478b8",
+    "tools/directory_commit.py": "4977ec89e5947b77bf13d963c71b3584085c8089e6b841663b07931cb5dd4bd3",
+    "tools/metadata_commit.py": "7ec18f77f526ddeb9ce7a96dddef107626e21ec5346e1099c45d472610c0ee82",
+    "tools/directory_payloads.py": "be3f17ed3f43b37adf22426073fc71d35c20977ada6a269dfe3003efbb4dbb02",
+    "src/storage.gd": "24f4c5b6869285261d46669a94d31e2a48e2dab763af115ec4e786f234cde365",
+    "src/project_payload_guard.gd": "6bd277060a2a9fbb4dc5a3f05d9626b895474155b7ba53288aa734159e27b642",
+    "tests/test_has_save_faults.py": "c20d26fe40fb6491c1e9db24a3763b30e388cf6eaef362b8e8cc30bd4c33dcb9",
+    "tests/test_has_project.py": "0a43b2ef8ace4a49487a73c7177bb3ef21d4ba4b12aace8a86d2ee1400f66121",
+    "tests/test_directory_commit.py": "9f6186dbeac07f25351885e01bbc177b8bed6f47e36b2c4d7fc252570d48706b",
+    "tests/test_directory_payloads.py": "60e7e4243e5ccb9bc353b75e99bd3f91c70148a85e67e823441c3199b6979ab6",
+    "tests/test_metadata_commit.py": "e6ab121291c4cdb366c9abb571ec8ff8425002bf5fa36c663a683e5f39f5c9b2"
+  }
+}

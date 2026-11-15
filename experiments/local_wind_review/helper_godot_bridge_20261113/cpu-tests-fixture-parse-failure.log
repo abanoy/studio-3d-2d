@@ -1,0 +1,278 @@
+test_abrupt_godot_death_ends_controller_and_worker (__main__.GodotBridge.test_abrupt_godot_death_ends_controller_and_worker) ... FAIL
+test_controller_death_ends_worker_and_node_detects_exit (__main__.GodotBridge.test_controller_death_ends_worker_and_node_detects_exit) ... FAIL
+test_createprocess_empty_return_never_reserves_process_map_entry (__main__.GodotBridge.test_createprocess_empty_return_never_reserves_process_map_entry) ... FAIL
+test_malformed_nested_ready_fails_closed_without_worker_start (__main__.GodotBridge.test_malformed_nested_ready_fails_closed_without_worker_start) ... FAIL
+test_mapped_release_closes_two_godot_handles_exactly_once (__main__.GodotBridge.test_mapped_release_closes_two_godot_handles_exactly_once) ... FAIL
+test_missing_runtime_never_reserves_process_map_entry (__main__.GodotBridge.test_missing_runtime_never_reserves_process_map_entry) ... FAIL
+test_node_free_ends_controller_and_owned_live_worker (__main__.GodotBridge.test_node_free_ends_controller_and_owned_live_worker) ... FAIL
+test_node_tree_exit_ends_controller_and_owned_live_worker (__main__.GodotBridge.test_node_tree_exit_ends_controller_and_owned_live_worker) ... FAIL
+test_normal_godot_tree_shutdown_ends_controller_and_worker (__main__.GodotBridge.test_normal_godot_tree_shutdown_ends_controller_and_worker) ... FAIL
+test_real_node_normal_prepared_transport_and_unicode_context (__main__.GodotBridge.test_real_node_normal_prepared_transport_and_unicode_context) ... FAIL
+test_unknown_matching_poll_event_releases_controller_and_worker (__main__.GodotBridge.test_unknown_matching_poll_event_releases_controller_and_worker) ... FAIL
+test_watchdog_forces_only_self_after_host_loss_during_blocked_service (__main__.GodotBridge.test_watchdog_forces_only_self_after_host_loss_during_blocked_service) ... FAIL
+
+======================================================================
+FAIL: test_abrupt_godot_death_ends_controller_and_worker (__main__.GodotBridge.test_abrupt_godot_death_ends_controller_and_worker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 403, in test_abrupt_godot_death_ends_controller_and_worker
+    self.live_worker()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 309, in live_worker
+    self.launch(self.sleeping_worker_wrapper(block_poll, emit_unknown))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\f793208ea9\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_controller_death_ends_worker_and_node_detects_exit (__main__.GodotBridge.test_controller_death_ends_worker_and_node_detects_exit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 411, in test_controller_death_ends_worker_and_node_detects_exit
+    self.live_worker()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 309, in live_worker
+    self.launch(self.sleeping_worker_wrapper(block_poll, emit_unknown))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\dca54c1aa5\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_createprocess_empty_return_never_reserves_process_map_entry (__main__.GodotBridge.test_createprocess_empty_return_never_reserves_process_map_entry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 482, in test_createprocess_empty_return_never_reserves_process_map_entry
+    failure = self.wait_json(self.root / 'bridge-failure.json')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\595357f84f\bridge-failure.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_malformed_nested_ready_fails_closed_without_worker_start (__main__.GodotBridge.test_malformed_nested_ready_fails_closed_without_worker_start)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 498, in test_malformed_nested_ready_fails_closed_without_worker_start
+    exact = self.wait_json(marker)
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\663b987eb6\uncorrupted-owner.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_mapped_release_closes_two_godot_handles_exactly_once (__main__.GodotBridge.test_mapped_release_closes_two_godot_handles_exactly_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 431, in test_mapped_release_closes_two_godot_handles_exactly_once
+    self.live_worker()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 309, in live_worker
+    self.launch(self.sleeping_worker_wrapper(block_poll, emit_unknown))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\05a619fb2e\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_missing_runtime_never_reserves_process_map_entry (__main__.GodotBridge.test_missing_runtime_never_reserves_process_map_entry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 467, in test_missing_runtime_never_reserves_process_map_entry
+    failure = self.wait_json(self.root / 'bridge-failure.json')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\9b0cdbd3b4\bridge-failure.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_node_free_ends_controller_and_owned_live_worker (__main__.GodotBridge.test_node_free_ends_controller_and_owned_live_worker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 378, in test_node_free_ends_controller_and_owned_live_worker
+    self.live_worker()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 309, in live_worker
+    self.launch(self.sleeping_worker_wrapper(block_poll, emit_unknown))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\de943bac6c\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_node_tree_exit_ends_controller_and_owned_live_worker (__main__.GodotBridge.test_node_tree_exit_ends_controller_and_owned_live_worker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 387, in test_node_tree_exit_ends_controller_and_owned_live_worker
+    self.live_worker()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 309, in live_worker
+    self.launch(self.sleeping_worker_wrapper(block_poll, emit_unknown))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\2b69dc3bf7\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_normal_godot_tree_shutdown_ends_controller_and_worker (__main__.GodotBridge.test_normal_godot_tree_shutdown_ends_controller_and_worker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 397, in test_normal_godot_tree_shutdown_ends_controller_and_worker
+    self.live_worker()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 309, in live_worker
+    self.launch(self.sleeping_worker_wrapper(block_poll, emit_unknown))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\c09c2cb856\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_real_node_normal_prepared_transport_and_unicode_context (__main__.GodotBridge.test_real_node_normal_prepared_transport_and_unicode_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 359, in test_real_node_normal_prepared_transport_and_unicode_context
+    self.launch()
+    ~~~~~~~~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\a2b7753ba8\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_unknown_matching_poll_event_releases_controller_and_worker (__main__.GodotBridge.test_unknown_matching_poll_event_releases_controller_and_worker)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 512, in test_unknown_matching_poll_event_releases_controller_and_worker
+    self.live_worker(emit_unknown=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 309, in live_worker
+    self.launch(self.sleeping_worker_wrapper(block_poll, emit_unknown))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\bc596677c4\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+======================================================================
+FAIL: test_watchdog_forces_only_self_after_host_loss_during_blocked_service (__main__.GodotBridge.test_watchdog_forces_only_self_after_host_loss_during_blocked_service)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 420, in test_watchdog_forces_only_self_after_host_loss_during_blocked_service
+    self.live_worker(block_poll=True)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 309, in live_worker
+    self.launch(self.sleeping_worker_wrapper(block_poll, emit_unknown))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 241, in launch
+    ready = self.event('ready')
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 248, in event
+    value = self.wait_json(self.root / ('event-%03d.json' % self.event_number))
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\tests\test_godot_bridge.py", line 200, in wait_json
+    self.fail('Fixture evidence watchdog: ' + str(path) + '\n' + bytes(self.stderr).decode('utf-8', 'replace'))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fixture evidence watchdog: C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\wind-helper-godot-bridge-20261113\cpu-results\20ec5be512ca4e2c86b2e33adae9a2c8\2fd82849a5\event-001.json
+SCRIPT ERROR: Parse Error: Expected newline after ";" at the end of lambda declaration.
+   at: GDScript::reload (res://fixture.gd:29)
+ERROR: Failed to load script "res://fixture.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 73.689s
+
+FAILED (failures=12)

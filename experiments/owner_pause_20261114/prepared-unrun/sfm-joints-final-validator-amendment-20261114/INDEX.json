@@ -1,0 +1,97 @@
+{
+  "format": "has_final_SFM_review_validator_preparation_1",
+  "prepared_only": true,
+  "validator_executed": false,
+  "graphics_launched": false,
+  "Python_AST_parsed": true,
+  "GDScript_parse_and_runtime": "UNRUN",
+  "production_scripts_unchanged": true,
+  "no_controller_replacement_or_shim": true,
+  "frozen_base_SHA256": "f4a168af04bbb748178322492a9f826e027567b30eeba5d5e29bae2e9578fd6c",
+  "unchanged_base_methods": [
+    "startup_completed",
+    "normalized_path",
+    "check",
+    "settled",
+    "write_json",
+    "state",
+    "camera_state",
+    "image_info",
+    "canvas_image"
+  ],
+  "proposed_checks": {
+    "Keiki": 41,
+    "Mima": 43,
+    "Junko": 46,
+    "Nitori": 38,
+    "total": 168
+  },
+  "c4d_full_status": "FAILED_source_SHA_preflight; never eligible for builder/validator",
+  "requires_next_passed_full_revision_and_root_lease": true,
+  "files": {
+    "AMENDMENT.md": {
+      "bytes": 1581,
+      "sha256": "1475e5bac26a704e1413078d83892b9c76f633d04ed575f9e85b38a856d10ca2"
+    },
+    "COUNT_SOURCE_AUDIT.json": {
+      "bytes": 828,
+      "sha256": "7a03242af04ae3cceec01af49dadfaf7257a592ad384bc3521eac231207ca011"
+    },
+    "PLAN.md": {
+      "bytes": 5978,
+      "sha256": "31e22e62f17292f4dae54371cc58b5f8d2e4d6455094870c106178852e6e5ddd"
+    },
+    "PRIOR-PACKET.json": {
+      "bytes": 1743,
+      "sha256": "c560e04db1ed742db77339451da5556b971c368ac57d34df4fe7d9687b7c12be"
+    },
+    "reference-lock.json": {
+      "bytes": 7704,
+      "sha256": "e5dbbbd1cc21d143fc9c6d56996b6aec97b1b0f9167f334c274a77d246ab9413"
+    },
+    "release-context.json": {
+      "bytes": 856,
+      "sha256": "0dcc06d59997c721931b84b712389ed2312605c34710be5eb664e68dd7605fda"
+    },
+    "replay.gd": {
+      "bytes": 18001,
+      "sha256": "5ece753368df789832a2886dd8abbe18b696951c1b1411475b61bf7d245ec697"
+    },
+    "replay.patch": {
+      "bytes": 9020,
+      "sha256": "55d5f257f178e83a9d713e2a6ce4f29faefeace95ed237d0f90599cc40054fad"
+    },
+    "SOURCE_CONTEXT_AUDIT.json": {
+      "bytes": 1780,
+      "sha256": "9fbc432cb7d9ce9277a931507d0b3b8d7321cd86223301aa56b42411d444083f"
+    },
+    "validate_after_full.py": {
+      "bytes": 23916,
+      "sha256": "84dfe1d32f4f82eecd961c5fdccffe00dfbef22750d73b3d8d79b3ace9619f1f"
+    }
+  },
+  "required_source_commit": "f380729cb170682068017b0d4c29b5f8425cdd14",
+  "required_full_run": "output/windows-canonical-bone-binding-20261114T040946652",
+  "native_verification_identity_gap": "Fixed: exact frozen builder lock before+after JSON read and all preservation gates required",
+  "reference_input_identity_count": 21,
+  "test_only_followups": [
+    "tests/helper_preview_port_files.json",
+    "tests/verify_helper_preview.py"
+  ],
+  "source_lineage_gate": "Exact functional membership; non-admitted content byte-equal or explicit text-only CRLF/LF equivalence; only declared2 test guards exempt",
+  "source_context_audit": {
+    "functional_members": 1008,
+    "byte_equal": 216,
+    "text_CRLF_LF_equal": 790,
+    "test_only_differences": 2,
+    "retained_first_attempt_failure": true
+  },
+  "amendment": true,
+  "prior_frozen_packet_preserved": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-joints-final-validator-prep-20261114",
+  "prior_index_sha256": "e0e97a6d9e73de8755025221ce81c6cca66935ba31146b56814d8110b87fcb89",
+  "root_review": "pending_readonly_successor_review",
+  "builder_packet": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-joints-review-builder-amendment-20261114",
+  "strict_native_readbacks_at_finish_integer_zero": true,
+  "original_reference_lock_unchanged": true,
+  "GDScript_identical_to_prior": true
+}

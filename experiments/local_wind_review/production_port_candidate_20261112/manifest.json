@@ -1,0 +1,261 @@
+{
+  "format": "has_wind_output_only_production_candidate_1",
+  "candidate_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-production-port-20261112",
+  "root_head": "2c7320fa5195245fc2bd65ee50a031dbd9daad2a",
+  "prototype_source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+  "prototype_base": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "runtime_files": 9,
+  "headless_unit_files": 3,
+  "gpu_test_files": 4,
+  "overlay_files": [
+    {
+      "path": "src/app.gd",
+      "candidate_path": "overlay/src/app.gd",
+      "sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+      "bytes": 146668,
+      "mtime_ns": 1794537929058501000,
+      "category": "runtime"
+    },
+    {
+      "path": "src/has_project.gd",
+      "candidate_path": "overlay/src/has_project.gd",
+      "sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+      "bytes": 14515,
+      "mtime_ns": 1794537929060013600,
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "candidate_path": "overlay/src/physics_editor.gd",
+      "sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+      "bytes": 22236,
+      "mtime_ns": 1794537929061030300,
+      "category": "runtime"
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "candidate_path": "overlay/src/physics_recording.gd",
+      "sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "bytes": 19381,
+      "mtime_ns": 1794537929061030300,
+      "category": "runtime"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "candidate_path": "overlay/src/pose_editor.gd",
+      "sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+      "bytes": 48421,
+      "mtime_ns": 1794537929062029100,
+      "category": "runtime"
+    },
+    {
+      "path": "src/renderer.gd",
+      "candidate_path": "overlay/src/renderer.gd",
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "bytes": 15232,
+      "mtime_ns": 1794537929062029100,
+      "category": "runtime"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "candidate_path": "overlay/src/secondary_spring.gd",
+      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "bytes": 9592,
+      "mtime_ns": 1794537929063024800,
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "candidate_path": "overlay/src/wind_review.gd",
+      "sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+      "bytes": 17875,
+      "mtime_ns": 1794537929063024800,
+      "category": "runtime"
+    },
+    {
+      "path": "src/wind_review_groups.gd",
+      "candidate_path": "overlay/src/wind_review_groups.gd",
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "bytes": 8617,
+      "mtime_ns": 1794537929064035500,
+      "category": "runtime"
+    },
+    {
+      "path": "tests/wind_review_unit.gd",
+      "candidate_path": "overlay/tests/wind_review_unit.gd",
+      "sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+      "bytes": 16726,
+      "mtime_ns": 1794537929064035500,
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_hooks_unit.gd",
+      "candidate_path": "overlay/tests/wind_review_hooks_unit.gd",
+      "sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+      "bytes": 6527,
+      "mtime_ns": 1794537929065028200,
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_review_unit.gd",
+      "candidate_path": "overlay/tests/wind_review_review_unit.gd",
+      "sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+      "bytes": 9660,
+      "mtime_ns": 1794537922650979300,
+      "category": "headless_unit"
+    },
+    {
+      "path": "tests/wind_review_gpu_common.gd",
+      "candidate_path": "overlay/tests/wind_review_gpu_common.gd",
+      "sha256": "313e5022e96faa9545b01b73e1ae40fafda66cb3f11643868d47305127d8ffd3",
+      "bytes": 11726,
+      "mtime_ns": 1794544501587156100,
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_motion.gd",
+      "candidate_path": "overlay/tests/wind_review_gpu_motion.gd",
+      "sha256": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+      "bytes": 10705,
+      "mtime_ns": 1794544501825757400,
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_lifecycle.gd",
+      "candidate_path": "overlay/tests/wind_review_gpu_lifecycle.gd",
+      "sha256": "bb36e9166040cb0f72fc08382948c1923268dbc636770e4b2ef11fe30ff8a814",
+      "bytes": 11999,
+      "mtime_ns": 1794539349717667500,
+      "category": "gpu_test"
+    },
+    {
+      "path": "tests/wind_review_gpu_primary.gd",
+      "candidate_path": "overlay/tests/wind_review_gpu_primary.gd",
+      "sha256": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759",
+      "bytes": 7321,
+      "mtime_ns": 1794544502054229500,
+      "category": "gpu_test"
+    }
+  ],
+  "reference_files": {
+    "runtime-review-reviewfixed.json": {
+      "sha256": "52d6ceb5af8cc036f936f8a45c01cd36da3c9a00bc173f0915e5d374289a7d10",
+      "bytes": 4349,
+      "mtime_ns": 1794538021549643700,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\runtime-review-reviewfixed.json",
+      "candidate_path": "reference/runtime-review-reviewfixed.json"
+    },
+    "headless-reviewfix-verification.json": {
+      "sha256": "816de74108d3a6f40cea58dffce30a8bffe862ce95eaafd02b2038938b064150",
+      "bytes": 7158,
+      "mtime_ns": 1794537992632300900,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\headless-reviewfix-verification.json",
+      "candidate_path": "reference/headless-reviewfix-verification.json"
+    },
+    "GPU-RUN-HANDOFF.json": {
+      "sha256": "cf2592d117e6a0aa578baa4b83df71f6202a793e539db24ef9d04147fc93b6b1",
+      "bytes": 20779,
+      "mtime_ns": 1794544852244114800,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\GPU-RUN-HANDOFF.json",
+      "candidate_path": "reference/GPU-RUN-HANDOFF.json"
+    },
+    "gpu-verification.json": {
+      "sha256": "c6684d1ac68161ba63457c124124ab17f5de0def5fec67a04bd86dea2c9927a7",
+      "bytes": 9705,
+      "mtime_ns": 1794544766858282400,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\verification.json",
+      "candidate_path": "reference/gpu-verification.json"
+    },
+    "oracle-strengthening.json": {
+      "sha256": "ebdb83097d3cb3122b54d96a5807969e1de9ae101d52d4174b9fb63cc93780f2",
+      "bytes": 4672,
+      "mtime_ns": 1794542928989592100,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-oracle-strengthening\\strengthening.json",
+      "candidate_path": "reference/oracle-strengthening.json"
+    },
+    "peer-fixture-fix.json": {
+      "sha256": "89030123613ecd0dd6591eb7c1b788884b8fa7175e53253b78bfb965e3fa4100",
+      "bytes": 6009,
+      "mtime_ns": 1794544629815204600,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\fixture-fix.json",
+      "candidate_path": "reference/peer-fixture-fix.json"
+    },
+    "peer-fixture-review.patch": {
+      "sha256": "d2d0e3fa0f9782a54a934b620b9f88e7848a001b291f32150fdbff04e3a31223",
+      "bytes": 8481,
+      "mtime_ns": 1794544629813202800,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\review.patch",
+      "candidate_path": "reference/peer-fixture-review.patch"
+    },
+    "peer-metadata-preflight.json": {
+      "sha256": "e35c10c425c5b7cce4a8217b23ed183e619dbb53e0aa2507e9824e20a4939966",
+      "bytes": 507,
+      "mtime_ns": 1794544457058310400,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\metadata-preflight.json",
+      "candidate_path": "reference/peer-metadata-preflight.json"
+    },
+    "verify_gpu_prototype.py": {
+      "sha256": "c046b1cec6cc3465594dadcd5afd48a93f6b84b392e18e491df433b32d228c73",
+      "bytes": 13440,
+      "mtime_ns": 1794539349951873200,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\verify_gpu.py",
+      "candidate_path": "reference/verify_gpu_prototype.py"
+    },
+    "PLAN-PHASE2.md": {
+      "sha256": "57970b9ff312c451e068d75947b8e5c009a0a464558f1bbede772029276c7a27",
+      "bytes": 9938,
+      "mtime_ns": 1794523853371060300,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\PLAN-PHASE2.md",
+      "candidate_path": "reference/PLAN-PHASE2.md"
+    },
+    "peer-metadata-preflight.gd": {
+      "sha256": "dc78cd44e87a68df5b46959ad0cbe40a7a00252dd9c947d2b2a48caa428764ae",
+      "bytes": 1333,
+      "mtime_ns": 1794544456521693000,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\metadata_preflight.gd",
+      "candidate_path": "reference/peer-metadata-preflight.gd"
+    },
+    "peer-fixture-before.json": {
+      "sha256": "c6a0048575a37d58aee36effbdc980724353c87e934ad8276e63f1ba1aeea66c",
+      "bytes": 3329,
+      "mtime_ns": 1794544433159829700,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\before.json",
+      "candidate_path": "reference/peer-fixture-before.json"
+    },
+    "optional-run-procedural-once.py": {
+      "sha256": "45ede00938942f0722bbcc0b68f97b22e22cbf0624f6db41c574a30079336ece",
+      "bytes": 4471,
+      "mtime_ns": 1794544580839223100,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\run_procedural_once.py",
+      "candidate_path": "reference/optional-run-procedural-once.py"
+    },
+    "oracle-strengthening-before.json": {
+      "sha256": "5f0b1c430b2617b221e72c597dc290fef3ec1cae69dea046fad734c6b1f68d18",
+      "bytes": 2371,
+      "mtime_ns": 1794542876017115500,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-oracle-strengthening\\before.json",
+      "candidate_path": "reference/oracle-strengthening-before.json"
+    }
+  },
+  "all_main_functional_files_hash_size_mtime_unchanged": true,
+  "main_functional_files_checked": 934,
+  "head_unchanged": true,
+  "prototype_and_reference_sources_unchanged": true,
+  "existing_main_runtime_code_matches85fa": true,
+  "raw_identical_runtime_count": 2,
+  "eol_only_runtime_count": 5,
+  "new_runtime_paths_absent_in_main": 2,
+  "new_test_paths_absent_in_main": 7,
+  "actual_main_port": false,
+  "candidate_executed": false,
+  "gpu_or_blender_run_for_preparation": false,
+  "private_art_payloads_included": false,
+  "historical_evidence": {
+    "headless_checks": 94,
+    "gpu_checks": 830,
+    "gpu_failed_first_procedural_checks": 56,
+    "gpu_failed_first_procedural_failures": 1,
+    "root_test_correction": "Current contact_physics no-phantom Hair OFF/history/actual-bone restoration test is preserved, not replaced by prototype tests."
+  },
+  "patch_note": "runtime-review.patch normalizes LF solely for review; exact overlay bytes and recorded SHA256 are authoritative. Do not blindly apply a text patch to mixed-EOL files."
+}

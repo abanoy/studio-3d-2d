@@ -1,0 +1,232 @@
+{
+  "format": "has_vrm_cutout_order_1",
+  "date": "2026-11-09",
+  "private_evidence_root": "/workspace/has-handoff-audit/vrm-raster-2026-11-09",
+  "problem": "Current native VRM cold-reopen probes retained two one-pixel image failures even though authored data and model hashes were exact.",
+  "cause": "Overlapping alpha-scissor materials tied in depth. The shared loader assigned stable source-order priorities only to TRANSPARENCY_DISABLED materials, leaving cutout materials tied at priority0 and dependent on GPU resource allocation.",
+  "controlled_experiment": {
+    "bits-legacy": {
+      "Avatar1": {
+        "unique_pixel_hashes": 2,
+        "all_transform_bits_identical": true,
+        "image_hashes": [
+          "96f469fd7ffd3f6f0b4cda5064e757f7727116558f1963393c325002b27b32d7",
+          "181340f95e83886882f528586862af869eb9303e247cbed8904e69a4339cbf5a",
+          "96f469fd7ffd3f6f0b4cda5064e757f7727116558f1963393c325002b27b32d7",
+          "96f469fd7ffd3f6f0b4cda5064e757f7727116558f1963393c325002b27b32d7",
+          "181340f95e83886882f528586862af869eb9303e247cbed8904e69a4339cbf5a"
+        ]
+      },
+      "Marisa": {
+        "unique_pixel_hashes": 2,
+        "all_transform_bits_identical": true,
+        "image_hashes": [
+          "aad733f2cf36b65a9fe6ff6b0e931571e5bdccba506e56c37fa895e2844c7f85",
+          "7e3c3a307194f4d3a6176acc04a5779a6ccbf14c0eef774c56e21049a2f0ef56",
+          "7e3c3a307194f4d3a6176acc04a5779a6ccbf14c0eef774c56e21049a2f0ef56",
+          "aad733f2cf36b65a9fe6ff6b0e931571e5bdccba506e56c37fa895e2844c7f85",
+          "7e3c3a307194f4d3a6176acc04a5779a6ccbf14c0eef774c56e21049a2f0ef56"
+        ]
+      }
+    },
+    "bits-default": {
+      "Avatar1": {
+        "unique_pixel_hashes": 1,
+        "all_transform_bits_identical": true,
+        "image_hashes": [
+          "96f469fd7ffd3f6f0b4cda5064e757f7727116558f1963393c325002b27b32d7",
+          "96f469fd7ffd3f6f0b4cda5064e757f7727116558f1963393c325002b27b32d7",
+          "96f469fd7ffd3f6f0b4cda5064e757f7727116558f1963393c325002b27b32d7",
+          "96f469fd7ffd3f6f0b4cda5064e757f7727116558f1963393c325002b27b32d7",
+          "96f469fd7ffd3f6f0b4cda5064e757f7727116558f1963393c325002b27b32d7"
+        ]
+      },
+      "Marisa": {
+        "unique_pixel_hashes": 1,
+        "all_transform_bits_identical": true,
+        "image_hashes": [
+          "aad733f2cf36b65a9fe6ff6b0e931571e5bdccba506e56c37fa895e2844c7f85",
+          "aad733f2cf36b65a9fe6ff6b0e931571e5bdccba506e56c37fa895e2844c7f85",
+          "aad733f2cf36b65a9fe6ff6b0e931571e5bdccba506e56c37fa895e2844c7f85",
+          "aad733f2cf36b65a9fe6ff6b0e931571e5bdccba506e56c37fa895e2844c7f85",
+          "aad733f2cf36b65a9fe6ff6b0e931571e5bdccba506e56c37fa895e2844c7f85"
+        ]
+      }
+    }
+  },
+  "copy_control": "Duplicating materials while keeping priorities unchanged still gave multiple image hashes for both avatars. Explicit ordering removed variation.",
+  "bit_exact_state": "Controlled legacy and fixed runs snapshot var_to_bytes for camera/root and every native bone base/global transform. All five rebuild snapshots for each avatar are bit-identical while legacy image hashes vary.",
+  "fix": "Include alpha-scissor materials in the existing stable opaque source-order ranking. Keep coverage, texture pixels, non-cutout transparency sorting, explicit priorities, multipass contracts and256material bound unchanged. Original native GLB/VRM bytes are not rewritten.",
+  "checks": {
+    "opaque_cutout_contract_unit": {
+      "checks": 9,
+      "failures": 0
+    },
+    "allocation_perturbation_product": {
+      "checks": 16,
+      "failures": 0,
+      "renders": 10,
+      "models": 2
+    },
+    "legacy_transform_control": {
+      "checks": 8,
+      "failures": 0,
+      "image_variation_expected_and_observed": true
+    },
+    "current_native_writer": {
+      "checks": 37,
+      "failures": 0,
+      "mode": "writer",
+      "observations": [
+        {
+          "movie": "/workspace/has-handoff-audit/vrm-raster-2026-11-09/current-native/render_1794258032_8154502_0/movie.mp4",
+          "name": "Avatar1"
+        }
+      ]
+    },
+    "current_native_cold_reader": {
+      "checks": 16,
+      "failures": 0,
+      "mode": "reader",
+      "observations": []
+    },
+    "current_native_expressions_springs": {
+      "checks": 28,
+      "failures": 0,
+      "models": [
+        {
+          "chains": 36,
+          "expressions": 18,
+          "name": "Sakuya",
+          "spring_error": ""
+        },
+        {
+          "chains": 12,
+          "expressions": 14,
+          "name": "Avatar1",
+          "spring_error": ""
+        },
+        {
+          "chains": 12,
+          "expressions": 14,
+          "name": "Avatar0",
+          "spring_error": ""
+        },
+        {
+          "chains": 46,
+          "expressions": 14,
+          "name": "Marisa",
+          "spring_error": ""
+        }
+      ]
+    },
+    "lighting_material_fade_persistence": {
+      "checks": 31,
+      "failures": 0,
+      "folder": "/workspace/has-handoff-audit/vrm-raster-2026-11-09/lighting",
+      "movie": "/workspace/has-handoff-audit/vrm-raster-2026-11-09/lighting/render_1794258067_6160942_0/movie.mp4"
+    }
+  },
+  "current_cold_scope": "All four native models, new fixed-version writer and fresh reader, with native conversion folders/private input copies/writer cache unavailable. Every existing exact pose, metadata, camera, checksum and pixel assertion passes.",
+  "historical_assertions": {
+    "original_test_script_unchanged": true,
+    "original_receipt_unchanged": true,
+    "old_oracles_preserved": true,
+    "replay_after_fix": {
+      "checks": 16,
+      "failures": 3,
+      "mode": "reader",
+      "observations": []
+    },
+    "pixel_changes_from_historical_images": {
+      "Sakuya": {
+        "changed_pixels": 0,
+        "changed_channels": 0,
+        "maximum_channel_delta": 0
+      },
+      "Avatar1": {
+        "changed_pixels": 1,
+        "changed_channels": 3,
+        "maximum_channel_delta": 18
+      },
+      "Avatar0": {
+        "changed_pixels": 1,
+        "changed_channels": 3,
+        "maximum_channel_delta": 18
+      },
+      "Marisa": {
+        "changed_pixels": 1,
+        "changed_channels": 3,
+        "maximum_channel_delta": 28
+      }
+    },
+    "interpretation": "Historical snapshots captured arbitrary allocation-dependent tie winners. Fixed source order differs at one pixel on Avatar1, Avatar0 and Marisa; Sakuya remains exact. The three old-reference hash failures are retained. New fixed-version writer/cold replay passes exact equality without adding tolerance. Historical observations are not relabeled as passes."
+  },
+  "acceptance_contract_review": "Original specification sections7/10 permit documented image tolerance for renderer/driver differences. This was a same-renderer ordering defect that could be fixed, not a reason to relax assertions. The current bounded reproducibility condition passes exactly. Full native shader/cloth or cross-driver pixel identity is not certified.",
+  "original_inputs": [
+    {
+      "name": "Sakuya_Izayoi.vrm",
+      "sha256": "0b54d177c506fab587e6404b1d970aecfd3d52ff02a004f18fa41670380562dd",
+      "unchanged": true
+    },
+    {
+      "name": "AvatarSample_A.vrm",
+      "sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3",
+      "unchanged": true
+    },
+    {
+      "name": "AvatarSample_Avrm0.vrm",
+      "sha256": "f7b4573b241b3e91c7c5f58bed342133a4e5f7e0c1125e1cedc49723ace9b288",
+      "unchanged": true
+    },
+    {
+      "name": "Marisa touhou fantasykaleidoscope.vrm",
+      "sha256": "c9cd1372d223cd33b39a1257aac86814f8c79652c3ab784a631ebf570c7cd758",
+      "unchanged": true
+    }
+  ],
+  "movies": [
+    {
+      "path": "/workspace/has-handoff-audit/vrm-raster-2026-11-09/current-native/render_1794258032_8154502_0/movie.mp4",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "24"
+    },
+    {
+      "path": "/workspace/has-handoff-audit/vrm-raster-2026-11-09/lighting/render_1794258067_6160942_0/movie.mp4",
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "24/1",
+      "nb_read_frames": "48"
+    }
+  ],
+  "source_sha256": {
+    "src/scene3d.gd": "775fcaa163b689f7d8ec48af095da166972b2a662e574e64aff358736202fc1a",
+    "tests/opaque_order_unit.gd": "2e0c9320aae62a7590503cec8045d6b8962c771fb02d2da55a59d0ee56e09062",
+    "tests/vrm_raster_probe.gd": "f891ef3e494aca926028f6487962f37b8f804b56bb225ed0ccea839bbe9ddc14",
+    "tests/vrm_native_smoke.gd": "7f21309debc39b667e8f876c7b355a95ec79cedd0e52a4efc7d9c1f92f359b04",
+    "tests/lighting_smoke.gd": "5c4fe0c3f38064a0bce4cc76bbd2b3c5ab9cc6f286798faa8622cb195856e36f",
+    "tools/prepare_vrm.py": "b0e432484617c61f911b98ef729fedfff746f24960b1e4296535d9bcd59593df"
+  },
+  "logs_sha256": {
+    "default/app.log": "f7ef0ee1790b5ace01a22733fbc5977860ea203386716234afc478a630913b3f",
+    "copy/app.log": "ffcb7a84425eb19403d7121a05f23119aa39414e420175d6ff1498aa072f9cbe",
+    "order/app.log": "c07028a1a37cf9d9b7368400bc220ade34b1dc1c7e034bf178983525fcf7a452",
+    "bits-legacy/app.log": "e469ac28cd1fc576646cc043d38c00d81eebf73ac56da77e9fa87c28dfb872bf",
+    "bits-default/app.log": "9beadabb366c1076fedd9b11f5df1d3e2b3be1b78a26e343514475e8a12e836a",
+    "current-native/writer.log": "36500b49818d0a6c56b87106a84fe7f870578f20a986921faa7d689a5f9b6f90",
+    "current-native/reader.log": "4872f064eaabdeef9d693b171ea9e1df0133c9a2f323ba028565bcb654296819",
+    "current-features/features.log": "94d7af48d6d712acdfc0790b2670a977998cebccee9e4b1411289985b0c03d82",
+    "lighting/lighting.log": "1d9abbcf93ac0d3168ca161dc3bb5363bb1938d633f9b8cb7db5f673918829e9",
+    "old-oracles/reader.log": "c2e5779d46173fa557611242b73e74727b8bc6784fbf6929db56d75ed9f6f7b9",
+    "opaque-order-unit.log": "7c860884319ed6c3d83bf602831c94df1e28ee5a915f72df9543a93de87d49fc"
+  },
+  "remaining": [
+    "The supported native profile audit is continuing; a read-only probe found unknown required glTF extensions return a generic parse error to the user despite a precise engine log.",
+    "Actual BSP/map/dependencies and the five named street atlas files remain unavailable.",
+    "Windows/physical-device/novice/artist acceptance remains unrun."
+  ]
+}

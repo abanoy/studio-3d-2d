@@ -23,7 +23,7 @@ func wait_job(job) -> void:
 func run() -> void:
 	var folder:=ProjectSettings.globalize_path("res://output/import-timing/run_%d" % Time.get_ticks_usec());DirAccess.make_dir_recursive_absolute(folder)
 	var asset:=folder.path_join("actor.glb");SceneIO.make_pose_fixture(asset);var original:=FileAccess.get_sha256(asset)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg");root.add_child(app);await settled();app.home.hide()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	var point: Vector2=app.canvas.get_global_rect().get_center()
 	var screen_point: Vector2=app.canvas.get_screen_transform()*(app.canvas.size/2)
@@ -46,7 +46,7 @@ func run() -> void:
 	check(app.renderer.world_state()==before,"drop outside viewport cannot import")
 	app.import_actions.drop(PackedStringArray([folder.path_join("no.png")]),point)
 	check(app.renderer.world_state()==before and "supported" in app.status.text,"unsupported drop preserves world with useful message")
-	var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_RIGHT;event.pressed=true;event.position=Vector2(app.timeline.x(24),40)
+	var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_RIGHT;event.pressed=true;event.position=Vector2(app.timeline.x(24),app.timeline.row_y(0)+10)
 	app.timeline._gui_input(event);await settled()
 	check(app.timeline.import_menu.visible and app.frame==32 and not app.timeline.dragging,"timeline right-click opens import menu without scrubbing or starting a drag")
 	app.timeline.import_menu.id_pressed.emit(0);await settled()

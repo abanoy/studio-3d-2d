@@ -1,0 +1,118 @@
+{
+  "format": "has_existing_regression_private_admission_1",
+  "selection": "root output/private-desktop file mtime_ns within each exact coordinator row start..end",
+  "receipt_count": 9,
+  "unique_desktops": 9,
+  "all_closed_private_exit0": true,
+  "separate_from_helper305_desktops": true,
+  "records": [
+    {
+      "wrapper": "secondary_helpers",
+      "source": "output/private-desktop/secondary_helpers_multi_54c95635981a478d97d447a51ba4679b.json",
+      "bytes": 388,
+      "mtime_ns": 1794599818885283200,
+      "sha256": "b7f2fe1edb755ea444c2af42d1b46ea6fb9d0af0cf46f1c01fbad81f63f7ad1c",
+      "interval_start_ns": 1794599770268612500,
+      "interval_end_ns": 1794599836105685100,
+      "desktop": "HAS_Test_851ce97bbbc648e4a8a8edec3c2b1290",
+      "child_pid": 17288,
+      "clean_exit0_private_closed": true
+    },
+    {
+      "wrapper": "secondary_helpers",
+      "source": "output/private-desktop/secondary_helpers_native_f148d455198d4908ad87bd58d95910f5.json",
+      "bytes": 386,
+      "mtime_ns": 1794599797733732300,
+      "sha256": "4955be9dcf18a28a3bf890695fc6d52af3380959cbdc901db2e9b2de77a74ffb",
+      "interval_start_ns": 1794599770268612500,
+      "interval_end_ns": 1794599836105685100,
+      "desktop": "HAS_Test_02112aa827fd4c4b87fddf12cd5752f8",
+      "child_pid": 3820,
+      "clean_exit0_private_closed": true
+    },
+    {
+      "wrapper": "secondary_helpers",
+      "source": "output/private-desktop/secondary_helpers_patch_18cf70b04ddc4c2ba04ef3ae3202a8af.json",
+      "bytes": 388,
+      "mtime_ns": 1794599835972557800,
+      "sha256": "9023bc69afcba9a565dbd8f2cf9b45411250f970a508fdf7ffeee83f83fa2a6b",
+      "interval_start_ns": 1794599770268612500,
+      "interval_end_ns": 1794599836105685100,
+      "desktop": "HAS_Test_977799a5be0a4284b141aa0ee2e0087d",
+      "child_pid": 25720,
+      "clean_exit0_private_closed": true
+    },
+    {
+      "wrapper": "secondary_helpers",
+      "source": "output/private-desktop/secondary_helpers_smoke_d1d4f3ddfb1647199e6f65f36f0883f9.json",
+      "bytes": 388,
+      "mtime_ns": 1794599788678876900,
+      "sha256": "84dd63a9676a0e68c55462a07d6b54e2fca4de5caeec3a8c8bcb0d944f19be47",
+      "interval_start_ns": 1794599770268612500,
+      "interval_end_ns": 1794599836105685100,
+      "desktop": "HAS_Test_a94a48abc5754adea67ba377e27fd190",
+      "child_pid": 26968,
+      "clean_exit0_private_closed": true
+    },
+    {
+      "wrapper": "secondary_existing_ribbon",
+      "source": "output/private-desktop/secondary_existing_native_smoke_f7405d6294f24dd6916002bb3b16b9c0.json",
+      "bytes": 388,
+      "mtime_ns": 1794599856394450500,
+      "sha256": "021e2e57439eaa83f2028731107d413b82718698a78ecd64111bfa792982ddb8",
+      "interval_start_ns": 1794599836111677200,
+      "interval_end_ns": 1794599856500868300,
+      "desktop": "HAS_Test_39a513f3e5094c2ca4deaf5b10912bed",
+      "child_pid": 14900,
+      "clean_exit0_private_closed": true
+    },
+    {
+      "wrapper": "secondary_picking",
+      "source": "output/private-desktop/secondary_pick_smoke_4f69cf26fc734b12902a200ec8d57735.json",
+      "bytes": 387,
+      "mtime_ns": 1794599866693184600,
+      "sha256": "a77b3f7c77bac821d142800646d03fc6f56e10c75b224db28b0e9a629cc0390b",
+      "interval_start_ns": 1794599856506864400,
+      "interval_end_ns": 1794599866731640800,
+      "desktop": "HAS_Test_69e1ce606d0d4fa6aa9feff3e5fa65c5",
+      "child_pid": 16756,
+      "clean_exit0_private_closed": true
+    },
+    {
+      "wrapper": "secondary_batch",
+      "source": "output/private-desktop/secondary_batch_smoke_175d158ea9ae41fda3ba8953f1c6bd5f.json",
+      "bytes": 388,
+      "mtime_ns": 1794599887623990800,
+      "sha256": "74d76872e8c6e50ab63f6e2e14534708f807ba4eacb6eda743ebef74266f7a58",
+      "interval_start_ns": 1794599866737964100,
+      "interval_end_ns": 1794599887778083400,
+      "desktop": "HAS_Test_2fd563a73c9a400bbf3d14acb526d732",
+      "child_pid": 22544,
+      "clean_exit0_private_closed": true
+    },
+    {
+      "wrapper": "helper_morphs",
+      "source": "output/private-desktop/helper_morphs_render_1b53f452df03409096f9e90350482ab8.json",
+      "bytes": 385,
+      "mtime_ns": 1794599894913887200,
+      "sha256": "5e8eac021d446ad564203a6335615e0ff0bfbc0266147cd75e0d2603b71fb801",
+      "interval_start_ns": 1794599887784661000,
+      "interval_end_ns": 1794599894936764100,
+      "desktop": "HAS_Test_5e3171f14a304baf93fd1887259ca594",
+      "child_pid": 1444,
+      "clean_exit0_private_closed": true
+    },
+    {
+      "wrapper": "scene_view",
+      "source": "output/private-desktop/scene_view_smoke_c7acd371c01f42e78768a4f0d73e5b1e.json",
+      "bytes": 388,
+      "mtime_ns": 1794599907345095600,
+      "sha256": "0e210ca659210789a336deaa843dcf356fb4275bbbab58263d3a0ce3eba0e7ac",
+      "interval_start_ns": 1794599894943157800,
+      "interval_end_ns": 1794599907374268300,
+      "desktop": "HAS_Test_a962948fe3b34593bde365fc344d06c4",
+      "child_pid": 26980,
+      "clean_exit0_private_closed": true
+    }
+  ]
+}

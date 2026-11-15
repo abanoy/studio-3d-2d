@@ -1,0 +1,139 @@
+{
+  "format": "has_sfm_native_staging_handoff_1",
+  "status": "Authorized exact extraction and actual read-only VMT closure complete, with explicit Nitori native dependency gap. No conversion/render acceptance.",
+  "source_files": {
+    "source/README.md": {
+      "sha256": "5acd8ba6cce8cea97feec21961a1562c3538f1d1f5396a4654ac7063327e8c6b",
+      "bytes": 4419,
+      "mtime_ns": 1794543004408238400
+    },
+    "source/stage_resources.py": {
+      "sha256": "f00be8c033d0b30faaf7e7727ee398d03341a8fb117e71ddc6ff72d252af39b5",
+      "bytes": 20835,
+      "mtime_ns": 1794542635451293100
+    },
+    "source/test_stage_resources.py": {
+      "sha256": "30bd31fe90516d1544e6f79ea6487f84a21de05fc47d0e8fa6bc3ce0d4d6828c",
+      "bytes": 11409,
+      "mtime_ns": 1794542635678024600
+    },
+    "source/test_vmt_closure.py": {
+      "sha256": "70aa86f4680aa03da5e4442b3f6618159ee63464204cbf04bf5e003e60ecfa80",
+      "bytes": 6082,
+      "mtime_ns": 1794542934271388600
+    },
+    "source/vmt_closure.py": {
+      "sha256": "c06c279de5b29239879c9ad019f91b9b5cbef22bc564f3d63ec7c600530e22b6",
+      "bytes": 14101,
+      "mtime_ns": 1794542934031813000
+    }
+  },
+  "results_files": {
+    "NATIVE-RESULTS.md": {
+      "sha256": "a7fa9d0f844ac3e607b08be057018852ba75582898166014ef17ec9b288c5f79",
+      "bytes": 4106,
+      "mtime_ns": 1794543004682442400
+    },
+    "compact-results.json": {
+      "sha256": "309ccbf2b831e72a2da79daba27915ea13f50aa86a84eaa4ec2485728e692f49",
+      "bytes": 4140,
+      "mtime_ns": 1794543033557439400
+    },
+    "commands-for-owned-stage.json": {
+      "sha256": "bc3f1df45d7a960788633bcf7bf81f439b274624854620af626f6a4eb356d108",
+      "bytes": 24811,
+      "mtime_ns": 1794542667166493000
+    }
+  },
+  "evidence": {
+    "preflight": {
+      "path": "output/sfm-next-cases-20261112/runs/preflight-1794542745973314000/verification.json",
+      "sha256": "c8f3baf6e4bc6578756fb559c00a2215d2805b9c218cc86aaca7ba30e7254d8a",
+      "bytes": 4115,
+      "mtime_ns": 1794542746145646200
+    },
+    "staging": {
+      "path": "output/sfm-next-cases-20261112/runs/execute-1794542752822327800/verification.json",
+      "sha256": "b154de1fe7c95e4e6396a8bf7ba925fcbc2835cc9b716f36d7259fe83ddcab5d",
+      "bytes": 181652,
+      "mtime_ns": 1794542771494006100
+    },
+    "vmt_closure": {
+      "path": "output/sfm-next-cases-20261112/runs/vmt-closure-1794542959743314500/verification.json",
+      "sha256": "371ea6ac8e0261ef875d7bc8c14eb32385a12e5f18558ea20d7ed1ade869b842",
+      "bytes": 263306,
+      "mtime_ns": 1794542959748049600
+    },
+    "stager_cpu": {
+      "path": "output/sfm-next-cases-20261112/cpu-tests-1794542645160595500/verification.json",
+      "sha256": "d521da4c51db872fb08964f4db8779326f07f6605fa2e7db539c3c4fe87a7c74",
+      "bytes": 377,
+      "mtime_ns": 1794542645759565600
+    },
+    "vmt_cpu": {
+      "path": "output/sfm-next-cases-20261112/vmt-cpu-tests-1794542948233374500/verification.json",
+      "sha256": "849c4472ce34e8d28ae1dc9f4dae209f8d4593269948d7effcc92c812a278543",
+      "bytes": 343,
+      "mtime_ns": 1794542948333242300
+    },
+    "time": {
+      "path": "output/sfm-next-cases-20261112/real-staging-time.json",
+      "sha256": "9fbba8cca19c6c12469b55fde16a7194eec6ad2d3c6b58fb69d9dfbc40afb9bb",
+      "bytes": 154,
+      "mtime_ns": 1794542771585991200
+    }
+  },
+  "native_case_summary": [
+    {
+      "case": "multi_skin_glove",
+      "vmts": 6,
+      "observed_reference_edges": 28,
+      "resolved_edges": 25,
+      "missing_edges": 3,
+      "unique_missing_references": [
+        "materials/hairbump.vtf"
+      ],
+      "native_observed_file_references_complete": false,
+      "supported_bridge_base_inputs_complete": true,
+      "diagnostics": [],
+      "shaders": [
+        "VertexlitGeneric"
+      ]
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "vmts": 4,
+      "observed_reference_edges": 16,
+      "resolved_edges": 16,
+      "missing_edges": 0,
+      "unique_missing_references": [],
+      "native_observed_file_references_complete": true,
+      "supported_bridge_base_inputs_complete": true,
+      "diagnostics": [],
+      "shaders": [
+        "VertexlitGeneric"
+      ]
+    }
+  ],
+  "cpu_checks": 34,
+  "actual_staging": {
+    "files": 296,
+    "bytes": 181460484,
+    "elapsed_seconds": 18.9617853
+  },
+  "vmt_actual_command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\source\\vmt_closure.py",
+    "--staging-receipt",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\runs\\execute-1794542752822327800\\verification.json",
+    "--receipt-sha256",
+    "b154de1fe7c95e4e6396a8bf7ba925fcbc2835cc9b716f36d7259fe83ddcab5d"
+  ],
+  "protected_payloads": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage",
+  "cleanup_performed": false,
+  "future_converter_commands": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\commands-for-owned-stage.json",
+  "future_converter_commands_executed": false,
+  "publication_scope": "Source and compact metadata only. Do not commit native VMT/VTF/MDL/VVD/VTX payloads or private model art. No source/HEAD changes while canonical running."
+}

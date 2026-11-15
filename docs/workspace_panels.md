@@ -132,3 +132,50 @@ This fresh-folder result does not certify a clean Windows PC or artist comfort.
 
 The saved runnable location is in `output/workspace-review-checkpoint.json`.
 Normal installed Model7 Studio and the frozen web preview remain separate.
+
+## Responsive dock bounds
+
+The World body now scrolls when its hierarchy/actions exceed the available dock.
+The same live controls remain in place, including independent asset packaging.
+View and physics controls stay on horizontally scrollable rows instead of forcing
+minimum window width or additional tall rows. Focused controls scroll into view.
+Compact sizing observes physical window changes even when Godot keeps a fixed
+logical viewport. The extra scene caption is hidden in compact mode; scene data
+and final output remain unchanged.
+
+The original1200x760 accessibility check exposed an overflow and remains intact.
+The final suite also checks same-aspect1120x720,125percent at1400x900, both footer
+bounds, reachable World actions and identical final pixels.156timeline/workspace/
+channel checks pass, plus65Local/World recording and74asset-package regressions.
+These include real movies, audio, Undo and source-offline packed replay where
+applicable. Native/physical-device/Windows acceptance remains separate. See
+[the evidence receipt](benchmarks/responsive_workspace_2026-11-07.json).
+
+
+## Scene and Timeline height
+
+Drag the horizontal divider immediately above the Timeline title downward to enlarge the scene, or upward for more tracks. The Timeline body scrolls when compressed; its controls remain live and retain their full available width. A new/reset workspace starts with a234logical-pixel Timeline. The title menu's Reset workspace also restores sensible Properties width. Normal project launches save the layout between sessions.
+
+The owner screenshot exposed the previous367pixel Timeline minimum. Real mouse-drag regressions now cover the native Avatar at3440x1440 and two smaller sizes, plus125percent interface scale. Exact pose/camera/Undo state and render pixels remain unchanged. See [verification](benchmarks/scene_workspace_resize_2026-11-10.json).
+
+
+Desktop Settings → Interface scale now uses actual window pixels:100percent no longer grows automatically when maximizing onto a large screen.125,150and175percent remain optional and persist when selected. Existing saved scale choices are respected. At3440x1440 the native Avatar test scene now has881pixels of default height, expandable to977; UI scaling does not alter movie output or camera framing. See [true-scale verification](benchmarks/true_desktop_scale_2026-11-10.json).
+
+
+## Docking and tabs — 2026-11-10
+
+Drag a panel title or its actual tab label to a highlighted left, right, top or bottom edge to dock. Drop onto another panel to form a selectable tab group. Drop into open scene space to detach a separate native Windows tool window; its position and size save automatically. Drag its panel title back onto a main-window target to redock. Closing a detached window returns the panel to its remembered dock. Esc cancels a drag.
+
+The title's ▾ menu offers all four dock edges, Tab with another panel, Float panel and Reset workspace. Edge docking into an occupied dock exchanges a panel; body drops group panels as tabs. The scene remains in the main window. Resize separators have a larger grab area. World tree and actions fill the selected width, including after reset/reload. Existing three-dock layout files migrate to v2; preferences stay separate from project content.
+
+Fresh verification: 21 docking/cold checks, 31 native Avatar resize checks, and 172 timeline/domain/workspace/native-channel checks, with actual H264 and unchanged output pixels. The original compact-pointer test failures are retained, and tests now bring scrollable controls into view before interacting. See [docking evidence](benchmarks/workspace_docking_2026-11-10.json). Owner confirms docking works but requested visual refinement; latest World clipping fix awaits their recheck.
+
+
+Camera movement: hold Ctrl during WASD flight for quarter-speed precision; release it to restore normal speed, or Shift speed if Shift is still held. Ending capture returns the cursor to its first-button position. Additional buttons do not replace that position; switching apps releases capture without moving the other app's pointer. The original fly/orbit entry controls remain. [Camera verification](benchmarks/camera_input_refinement_2026-11-10.json) distinguishes restore requests tested on a private desktop from the pending physical cursor observation.
+
+
+## Nested arrangements and fan feedback
+
+Dock groups can now split recursively. Drop in a panel group's outer quarter to split left/right/above/below; drop in its center to make tabs. For two top docks, first dock Timeline above the scene, then drag World into the right quarter of Timeline. A further drop can split one of those groups vertically. Dividers resize each split. Floating a group member collapses its unused visual column; closing its window returns it to the same nested home. Layout v3 migrates prior v1/v2 files.
+
+Fan controls now show whether air reaches active hair/clothing chains. **Aim at hair** repositions/aims the selected fan toward the last selected eligible model, preserving scale and offering one Undo. **Add fan** aims at the selected model when it has declared secondary joints. Gusts use fixed simulation time and stay bounded; a missed stream or zero speed adds no flutter. Hair needs Hair & clothes enabled; body Physics is independent. No automatic floor or pose reset is added. See [native and regression evidence](benchmarks/nested_docks_fan_flutter_2026-11-10.json).

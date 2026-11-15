@@ -1,0 +1,3737 @@
+{
+  "format": "has_wind_godot_bridge_receipts_1",
+  "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590",
+  "test_count": 12,
+  "retained_process_count": 30,
+  "process_kinds": {
+    "external Popen Godot handle": 12,
+    "Godot-created controller": 9,
+    "Job-owned nonreading CPU worker": 8,
+    "malformed-ready controller": 1
+  },
+  "all_final_exact_signaled_observer_handles_closed": true,
+  "mapped_release_handle_counts": {
+    "before": 266,
+    "after": 264,
+    "repeated": 264,
+    "delta": 2,
+    "repeated_delta": 0,
+    "first": {
+      "attempted": true,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    },
+    "second": {
+      "attempted": false,
+      "cached_exit": 0,
+      "release_calls": 1,
+      "result": 1
+    }
+  },
+  "cases": [
+    {
+      "test": "test_mapped_release_closes_two_godot_handles_exactly_once",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 20652,
+              "created_100ns": "134390302540156882"
+            },
+            "observed": {
+              "pid": 20652,
+              "created_100ns": "134390302540156882"
+            },
+            "signaled": true,
+            "returncode": 0,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 11520,
+              "created_100ns": "134390302541590318"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "EOF before mapped release",
+                "owner": {
+                  "pid": 11520,
+                  "created_100ns": "134390302541590318"
+                },
+                "observed": {
+                  "pid": 11520,
+                  "created_100ns": "134390302541590318"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 0.03768800000034389
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 11520,
+                  "created_100ns": "134390302541590318"
+                },
+                "observed": {
+                  "pid": 11520,
+                  "created_100ns": "134390302541590318"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 9.399998816661537e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          },
+          {
+            "owner": {
+              "pid": 26280,
+              "created_100ns": "134390302543366414"
+            },
+            "label": "Job-owned nonreading CPU worker",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "alive before lifecycle action",
+                "owner": {
+                  "pid": 26280,
+                  "created_100ns": "134390302543366414"
+                },
+                "observed": {
+                  "pid": 26280,
+                  "created_100ns": "134390302543366414"
+                },
+                "signaled": false,
+                "exit_code_u32": 259,
+                "wait_elapsed_seconds": 9.60000033956021e-06
+              },
+              {
+                "label": "EOF closes worker before mapped release",
+                "owner": {
+                  "pid": 26280,
+                  "created_100ns": "134390302543366414"
+                },
+                "observed": {
+                  "pid": 26280,
+                  "created_100ns": "134390302543366414"
+                },
+                "signaled": true,
+                "exit_code_u32": 3221225786,
+                "wait_elapsed_seconds": 1.8599999748403206e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 26280,
+                  "created_100ns": "134390302543366414"
+                },
+                "observed": {
+                  "pid": 26280,
+                  "created_100ns": "134390302543366414"
+                },
+                "signaled": true,
+                "exit_code_u32": 3221225786,
+                "wait_elapsed_seconds": 2.550000135670416e-05
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-001.json",
+          "sha256": "99f9be09b1f13eb5f0bf849df6519cf72059131a69ed3f909a583f23b58f6a31",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-002.json",
+          "sha256": "d0dfad521576fc722164db4005960eeba6f2c5a3789b5493eff487a4fe7bd31b",
+          "value": {
+            "op": "pause_node",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-003.json",
+          "sha256": "e5cb6219e2774927523b2546fef425f49e09583778aafce3a62ebe8ba0759bb7",
+          "value": {
+            "op": "close_pipes",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-004.json",
+          "sha256": "da1cb1ea1043e5ba8655345882c2c0c5483b3222098bc0fd2db0252b64a6b216",
+          "value": {
+            "op": "release",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-005.json",
+          "sha256": "da1cb1ea1043e5ba8655345882c2c0c5483b3222098bc0fd2db0252b64a6b216",
+          "value": {
+            "op": "release",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-006.json",
+          "sha256": "b17ddb41fff7ed98affcf847d6917be2f09ad0318d78bcf6c256953d1d0d4113",
+          "value": {
+            "op": "late_event",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-007.json",
+          "sha256": "73f4e3c83a01e07a988d995a7b21523c2cefd942131f3c877552f051104aaef8",
+          "value": {
+            "op": "free",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-008.json",
+          "sha256": "73f4e3c83a01e07a988d995a7b21523c2cefd942131f3c877552f051104aaef8",
+          "value": {
+            "op": "free",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\action-009.json",
+          "sha256": "f7fadb43e5c0d71118cef2f71b8826ec38042188c9f287e7a4fc79d1542c991c",
+          "value": {
+            "op": "quit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\assigned.json",
+          "sha256": "b238be60e973f559936e864f05621879321022620d054dce7333d2266d272cd4",
+          "value": {
+            "child": {
+              "pid": 26280,
+              "created_100ns": "134390302543366414"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\controller-jobs\\a2f4718c047a42f491cafeec868640bf"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\event-001.json",
+          "sha256": "87c6d029f52ce520eea134ea634cc5659de9612aa634ac1db9b93048afee8c36",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302541590318",
+              "pid": 11520.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302540156882",
+              "pid": 20652.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "b6c237d9c1004b9281192e74dd38cc80",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\event-002.json",
+          "sha256": "25ecb2fe1f5f3dd6ea3779ab7f46aece3180a3e4c6e2846b16d682488e611f03",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\controller-jobs\\a2f4718c047a42f491cafeec868640bf",
+            "owner": {
+              "created_100ns": "134390302543366414",
+              "generation": 1.0,
+              "nonce": "1e3c664d4634435c9f8fb9f68003ec2f",
+              "pid": 26280.0
+            },
+            "phase": "building",
+            "request_file_sha256": "9260f281f46cfb536a290f51a1b1f3fa2bd65d14bc4a4c2eb77a7f09d9ee8957",
+            "seq": 1.0,
+            "session": "b6c237d9c1004b9281192e74dd38cc80",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "1e3c664d4634435c9f8fb9f68003ec2f"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\host-ready.json",
+          "sha256": "0f5bd82b51ee5b0514d5409be00050085ec05bd50fce322d7b27a2b593050d34",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 20652
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\late-event.json",
+          "sha256": "a19fba125ba7f53c6b92e74c93cbcf0f5e981e1c6f5937ab8cb6826666f5d10d",
+          "value": {
+            "admitted": false,
+            "release_calls": 1
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\launch-record.json",
+          "sha256": "678a4b5bf13bbc4feea28bd8636996d8f357290e8764b32e5554edc978f3e90f",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 20652,
+              "created_100ns": "134390302540156882"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\controller-jobs",
+              "host": {
+                "pid": 20652,
+                "created_100ns": "134390302540156882"
+              },
+              "session": "b6c237d9c1004b9281192e74dd38cc80",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\controller-wrapper.py",
+              "launcher_sha256": "c14a0ede47194ca855c44be3430e505cfd195fbe8fe206ba7ef6648a17aa189f"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\mapped-release-counts.json",
+          "sha256": "762bd0b78d0ada0e535dd4f80f35e2742dc7bcbf73ec2ce6b13aacb148ad53c1",
+          "value": {
+            "before": 266,
+            "after": 264,
+            "repeated": 264,
+            "delta": 2,
+            "repeated_delta": 0,
+            "first": {
+              "attempted": true,
+              "cached_exit": 0,
+              "release_calls": 1,
+              "result": 1
+            },
+            "second": {
+              "attempted": false,
+              "cached_exit": 0,
+              "release_calls": 1,
+              "result": 1
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\node-freed.json",
+          "sha256": "4e57a4747419025dfadc1a78d973cb4c7b3f0005fc9b3532beb19820341b9f30",
+          "value": {
+            "freed": true,
+            "host_pid": 20652
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\node-paused.json",
+          "sha256": "66908b57b5b353bacc1d5eb1716bcc4c9c5bfb141c622180bbfc51d2fec68f35",
+          "value": {
+            "disabled": true
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\pipes-closed.json",
+          "sha256": "2d9f478e59bd4b74110fc76f1bf841886087b657f9302d71cc9541c48f815540",
+          "value": {
+            "stopped": true
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\release-004.json",
+          "sha256": "328661e1ef933a08db9702f57e8b702e15edb428982501b6a35ca5ca7e39fd87",
+          "value": {
+            "attempted": true,
+            "cached_exit": 0,
+            "release_calls": 1,
+            "result": 1
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\release-005.json",
+          "sha256": "a82c9f18b319fc149507a332d4c7c076a9f2cc1a6405220ee1c75031333064fc",
+          "value": {
+            "attempted": false,
+            "cached_exit": 0,
+            "release_calls": 1,
+            "result": 1
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\05a619fb2e\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_node_tree_exit_ends_controller_and_owned_live_worker",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 26416,
+              "created_100ns": "134390302562738317"
+            },
+            "observed": {
+              "pid": 26416,
+              "created_100ns": "134390302562738317"
+            },
+            "signaled": true,
+            "returncode": 0,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 27312,
+              "created_100ns": "134390302564250977"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "Node tree exit closes controller",
+                "owner": {
+                  "pid": 27312,
+                  "created_100ns": "134390302564250977"
+                },
+                "observed": {
+                  "pid": 27312,
+                  "created_100ns": "134390302564250977"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 3.51999988197349e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 27312,
+                  "created_100ns": "134390302564250977"
+                },
+                "observed": {
+                  "pid": 27312,
+                  "created_100ns": "134390302564250977"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 1.1199997970834374e-05
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          },
+          {
+            "owner": {
+              "pid": 25844,
+              "created_100ns": "134390302566379169"
+            },
+            "label": "Job-owned nonreading CPU worker",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "alive before lifecycle action",
+                "owner": {
+                  "pid": 25844,
+                  "created_100ns": "134390302566379169"
+                },
+                "observed": {
+                  "pid": 25844,
+                  "created_100ns": "134390302566379169"
+                },
+                "signaled": false,
+                "exit_code_u32": 259,
+                "wait_elapsed_seconds": 1.1000000085914508e-05
+              },
+              {
+                "label": "Node tree exit closes worker Job",
+                "owner": {
+                  "pid": 25844,
+                  "created_100ns": "134390302566379169"
+                },
+                "observed": {
+                  "pid": 25844,
+                  "created_100ns": "134390302566379169"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 7.799997547408566e-06
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 25844,
+                  "created_100ns": "134390302566379169"
+                },
+                "observed": {
+                  "pid": 25844,
+                  "created_100ns": "134390302566379169"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 8.900002285372466e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\action-001.json",
+          "sha256": "b1e71e3e6b46eb133554ac7b75f163589d28cab3c6327c9ec860dbc4b5b0c9fb",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\action-002.json",
+          "sha256": "117794429d52e54d232b1e56f94a652ba91e7dc537a12dff7e2530ced0a6244a",
+          "value": {
+            "op": "tree_exit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\action-003.json",
+          "sha256": "f7fadb43e5c0d71118cef2f71b8826ec38042188c9f287e7a4fc79d1542c991c",
+          "value": {
+            "op": "quit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\assigned.json",
+          "sha256": "f848a2e23c0cefe77e1a514ec667b3735b66407b2323c1a23bdeb39bfe489d82",
+          "value": {
+            "child": {
+              "pid": 25844,
+              "created_100ns": "134390302566379169"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\controller-jobs\\0c5ec1b47b17429aa9e8d57df2f8d3a3"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\event-001.json",
+          "sha256": "bf3faf64ee3c1a26a386d47de534052cff93942f972de8da7f3cc65ebd4dcde7",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302564250977",
+              "pid": 27312.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302562738317",
+              "pid": 26416.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "5301680204c2405786af15be56204be9",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\event-002.json",
+          "sha256": "d87488327e8d16ae43a088e9b4d2fb125d3f3f4ddcb434173d531db4471267d7",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\controller-jobs\\0c5ec1b47b17429aa9e8d57df2f8d3a3",
+            "owner": {
+              "created_100ns": "134390302566379169",
+              "generation": 1.0,
+              "nonce": "bdc840a3fb124f5294ff1d82b4146fa9",
+              "pid": 25844.0
+            },
+            "phase": "building",
+            "request_file_sha256": "679d547b0d39988c5dbc0b4b97487958625b4715f9fa5d292ff16e1826ceea71",
+            "seq": 1.0,
+            "session": "5301680204c2405786af15be56204be9",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "bdc840a3fb124f5294ff1d82b4146fa9"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\host-ready.json",
+          "sha256": "66c0ccf38be19c7d75e14fb43ca295404ed0ccb023b482daacfee8cbad16b5cf",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 26416
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\launch-record.json",
+          "sha256": "bd9e5fbf7b178ffa68353057b0e5a205de86850211a2fda5e297e7adf3b3a4ff",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 26416,
+              "created_100ns": "134390302562738317"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\controller-jobs",
+              "host": {
+                "pid": 26416,
+                "created_100ns": "134390302562738317"
+              },
+              "session": "5301680204c2405786af15be56204be9",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\controller-wrapper.py",
+              "launcher_sha256": "d2d29c88fb6ae68de982d1cfd44295dd6052a92cf7f45aad7e11253c7c9cc248"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\node-left-tree.json",
+          "sha256": "deb5454840fec9caea6efbce0a18a97310952215c5a3116f650c383a0ae055fa",
+          "value": {
+            "inside": false,
+            "release_calls": 1,
+            "stopped": true
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2b69dc3bf7\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_watchdog_forces_only_self_after_host_loss_during_blocked_service",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 27996,
+              "created_100ns": "134390302593478964"
+            },
+            "observed": {
+              "pid": 27996,
+              "created_100ns": "134390302593478964"
+            },
+            "signaled": true,
+            "returncode": 1,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 22024,
+              "created_100ns": "134390302594945276"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "independent watchdog exits blocked controller",
+                "owner": {
+                  "pid": 22024,
+                  "created_100ns": "134390302594945276"
+                },
+                "observed": {
+                  "pid": 22024,
+                  "created_100ns": "134390302594945276"
+                },
+                "signaled": true,
+                "exit_code_u32": 74,
+                "wait_elapsed_seconds": 0.7549636000003375
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 22024,
+                  "created_100ns": "134390302594945276"
+                },
+                "observed": {
+                  "pid": 22024,
+                  "created_100ns": "134390302594945276"
+                },
+                "signaled": true,
+                "exit_code_u32": 74,
+                "wait_elapsed_seconds": 8.099999831756577e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          },
+          {
+            "owner": {
+              "pid": 26688,
+              "created_100ns": "134390302596751826"
+            },
+            "label": "Job-owned nonreading CPU worker",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "alive before lifecycle action",
+                "owner": {
+                  "pid": 26688,
+                  "created_100ns": "134390302596751826"
+                },
+                "observed": {
+                  "pid": 26688,
+                  "created_100ns": "134390302596751826"
+                },
+                "signaled": false,
+                "exit_code_u32": 259,
+                "wait_elapsed_seconds": 2.479999966453761e-05
+              },
+              {
+                "label": "self-exit closes blocked controller Job",
+                "owner": {
+                  "pid": 26688,
+                  "created_100ns": "134390302596751826"
+                },
+                "observed": {
+                  "pid": 26688,
+                  "created_100ns": "134390302596751826"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 0.0014551999993273057
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 26688,
+                  "created_100ns": "134390302596751826"
+                },
+                "observed": {
+                  "pid": 26688,
+                  "created_100ns": "134390302596751826"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 6.599999323952943e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\action-001.json",
+          "sha256": "580d8f3f7fc86f231b3f46a9797020793dfaf8a9ee75df259919a9a4b43623d9",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\action-002.json",
+          "sha256": "e196a4bcb90501a147063b555f89d4c96c1a2d96fde16711154ace9d36640022",
+          "value": {
+            "op": "poll",
+            "fields": {
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\assigned.json",
+          "sha256": "d13d0c0a5742cc302441fdaee6d033f325fcc37e2c7437f99e86be544df702f5",
+          "value": {
+            "child": {
+              "pid": 26688,
+              "created_100ns": "134390302596751826"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\controller-jobs\\56f7c097b25f4a4babb67fabaf671dda"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\event-001.json",
+          "sha256": "731ee375e9f218d7ada76503f8f6d20405b872afc805ef38d01d8fd61c4f109f",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302594945276",
+              "pid": 22024.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302593478964",
+              "pid": 27996.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "8a4cdc311aad483b9599f42d15aa97ed",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\event-002.json",
+          "sha256": "07b053192de7d7d7d2ef0c8244994237de009c74591d3027b13c2a291cc1c8a9",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\controller-jobs\\56f7c097b25f4a4babb67fabaf671dda",
+            "owner": {
+              "created_100ns": "134390302596751826",
+              "generation": 1.0,
+              "nonce": "7fb5d836d723401f8fe760ad9523d5d7",
+              "pid": 26688.0
+            },
+            "phase": "building",
+            "request_file_sha256": "2085cbdef0a62804dd6836ac9e064c4665cd7233d5d634043f43f790950c21b0",
+            "seq": 1.0,
+            "session": "8a4cdc311aad483b9599f42d15aa97ed",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "7fb5d836d723401f8fe760ad9523d5d7"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\host-ready.json",
+          "sha256": "c79d68b55a6a79899f1cee8b754c65940e1fe5bd73bf7bbd7d8067109a97e9ba",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 27996
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\launch-record.json",
+          "sha256": "330ad70c40f96662ca254a2591fb8b6f210926e68ddb852f93553eb632106a25",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 27996,
+              "created_100ns": "134390302593478964"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\controller-jobs",
+              "host": {
+                "pid": 27996,
+                "created_100ns": "134390302593478964"
+              },
+              "session": "8a4cdc311aad483b9599f42d15aa97ed",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\controller-wrapper.py",
+              "launcher_sha256": "635a96193fba950b738ed11c31bb99241628da13db3636105a946b157fe4ff9f"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\send-002.json",
+          "sha256": "9aaa1dbacdedd94bd24937b894984d62954fea28dd45f36733a766bc0012e488",
+          "value": {
+            "error": "",
+            "op": "poll"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\2fd82849a5\\service-blocked.json",
+          "sha256": "e7a847e654cf06ac521e781b219b69c8c705cad68f2103246517e60689f88bef",
+          "value": {
+            "blocked": true
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_createprocess_empty_return_never_reserves_process_map_entry",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\595357f84f",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 5960,
+              "created_100ns": "134390302531014755"
+            },
+            "observed": {
+              "pid": 5960,
+              "created_100ns": "134390302531014755"
+            },
+            "signaled": true,
+            "returncode": 2,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\595357f84f\\bridge-failure.json",
+          "sha256": "8a46439a0d4e7fd6ad854e7c4c53e40cc2ea50dcb33d22701e2cfc523087cdbb",
+          "value": {
+            "reason": "Controller did not start",
+            "release": {
+              "attempted": false,
+              "cached_exit": -1,
+              "release_calls": 0,
+              "result": 0
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\595357f84f\\host-ready.json",
+          "sha256": "817b9f9aad946a418c6eae13d9ad6b4a3c54cd10caa2cfa565f9fbc7a536dbd5",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 5960
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\595357f84f\\launch-record.json",
+          "sha256": "0f618f7422f95dddb9ee23fd9a192add63d585b2a650b4dc099677d2be02dde9",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\595357f84f\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\595357f84f"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 5960,
+              "created_100ns": "134390302531014755"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\595357f84f\\controller-jobs",
+              "host": {
+                "pid": 5960,
+                "created_100ns": "134390302531014755"
+              },
+              "session": "3f2223104ba14100b994bc9b9a5cc77c",
+              "python": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\595357f84f\\not-executable.exe",
+              "python_sha256": "d879447726811dae478dfcb8eb3f2e7aa10eea638147b0fdc5b69dad109f901b",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "launcher_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_malformed_nested_ready_fails_closed_without_worker_start",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 20012,
+              "created_100ns": "134390302534658314"
+            },
+            "observed": {
+              "pid": 20012,
+              "created_100ns": "134390302534658314"
+            },
+            "signaled": true,
+            "returncode": 0,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 7072,
+              "created_100ns": "134390302536109385"
+            },
+            "label": "malformed-ready controller",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "malformed nested ready releases controller",
+                "owner": {
+                  "pid": 7072,
+                  "created_100ns": "134390302536109385"
+                },
+                "observed": {
+                  "pid": 7072,
+                  "created_100ns": "134390302536109385"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 4.579999949783087e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 7072,
+                  "created_100ns": "134390302536109385"
+                },
+                "observed": {
+                  "pid": 7072,
+                  "created_100ns": "134390302536109385"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 1.1200001608813182e-05
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\action-001.json",
+          "sha256": "da1cb1ea1043e5ba8655345882c2c0c5483b3222098bc0fd2db0252b64a6b216",
+          "value": {
+            "op": "release",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\action-002.json",
+          "sha256": "f7fadb43e5c0d71118cef2f71b8826ec38042188c9f287e7a4fc79d1542c991c",
+          "value": {
+            "op": "quit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\bridge-failure.json",
+          "sha256": "02ebe81652e6b1658e63e89d6874c5ff50b18565140297da2c0576dbb171d8fe",
+          "value": {
+            "reason": "Incomplete controller ready identity"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\host-ready.json",
+          "sha256": "4ca92cdc212fd9199c669e0b3fb9afcc8ec485ee3ed2d4a45e276d82aab29c97",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 20012
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\launch-record.json",
+          "sha256": "09179b69e4d78d347f63e3f02ee9c607af3d8e3d45fd91f4b20ce1208601a1d2",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 20012,
+              "created_100ns": "134390302534658314"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\controller-jobs",
+              "host": {
+                "pid": 20012,
+                "created_100ns": "134390302534658314"
+              },
+              "session": "4f2d3e51f4254e1fabf78f251e9875ec",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\controller-wrapper.py",
+              "launcher_sha256": "fb2f072270a78a0c3d4a18577f89558f5a9c012de1ab46f46d7991a08a2242ed"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\release-001.json",
+          "sha256": "1bb76f671f3b32c1fc641578c630a34195048ae5920081ecb9c08e334b76bf7a",
+          "value": {
+            "attempted": false,
+            "cached_exit": -1,
+            "release_calls": 1,
+            "result": 0
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\663b987eb6\\uncorrupted-owner.json",
+          "sha256": "d9d3db014148208527be2f77e0b4a446f9dc67908464e0f0322144e9f05ebd1c",
+          "value": {
+            "pid": 7072,
+            "created_100ns": "134390302536109385"
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_missing_runtime_never_reserves_process_map_entry",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\9b0cdbd3b4",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 25708,
+              "created_100ns": "134390302551150082"
+            },
+            "observed": {
+              "pid": 25708,
+              "created_100ns": "134390302551150082"
+            },
+            "signaled": true,
+            "returncode": 2,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\9b0cdbd3b4\\bridge-failure.json",
+          "sha256": "618df92402640dae02079996c602a076a2e703eb245fa40546fc73cf6338640a",
+          "value": {
+            "reason": "Approved runtime/source fingerprint differs",
+            "release": {
+              "attempted": false,
+              "cached_exit": -1,
+              "release_calls": 0,
+              "result": 0
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\9b0cdbd3b4\\host-ready.json",
+          "sha256": "15f3f5c6c00c961dd2126d8d91ac9308b17e6fe475be4e1805bd016a6a4e2dc6",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 25708
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\9b0cdbd3b4\\launch-record.json",
+          "sha256": "38dbd378fb7676c614948446464d26637e9d4c8a69fe3efb607bfb399eea9fc1",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\9b0cdbd3b4\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\9b0cdbd3b4"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 25708,
+              "created_100ns": "134390302551150082"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\9b0cdbd3b4\\controller-jobs",
+              "host": {
+                "pid": 25708,
+                "created_100ns": "134390302551150082"
+              },
+              "session": "d98a03ed638341d9b8124168e94a9677",
+              "python": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\9b0cdbd3b4\\absent-python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "launcher_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_real_node_normal_prepared_transport_and_unicode_context",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 19524,
+              "created_100ns": "134390302577634626"
+            },
+            "observed": {
+              "pid": 19524,
+              "created_100ns": "134390302577634626"
+            },
+            "signaled": true,
+            "returncode": 0,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 24524,
+              "created_100ns": "134390302579093199"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "controller closed after Node command",
+                "owner": {
+                  "pid": 24524,
+                  "created_100ns": "134390302579093199"
+                },
+                "observed": {
+                  "pid": 24524,
+                  "created_100ns": "134390302579093199"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 3.8300000596791506e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 24524,
+                  "created_100ns": "134390302579093199"
+                },
+                "observed": {
+                  "pid": 24524,
+                  "created_100ns": "134390302579093199"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 9.899998985929415e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-001.json",
+          "sha256": "0717913439f2cb96f797fb70deca299bc84fe3ebd7fb88fe8b8ada47ab1548be",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-002.json",
+          "sha256": "e196a4bcb90501a147063b555f89d4c96c1a2d96fde16711154ace9d36640022",
+          "value": {
+            "op": "poll",
+            "fields": {
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-003.json",
+          "sha256": "e196a4bcb90501a147063b555f89d4c96c1a2d96fde16711154ace9d36640022",
+          "value": {
+            "op": "poll",
+            "fields": {
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-004.json",
+          "sha256": "e196a4bcb90501a147063b555f89d4c96c1a2d96fde16711154ace9d36640022",
+          "value": {
+            "op": "poll",
+            "fields": {
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-005.json",
+          "sha256": "e196a4bcb90501a147063b555f89d4c96c1a2d96fde16711154ace9d36640022",
+          "value": {
+            "op": "poll",
+            "fields": {
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-006.json",
+          "sha256": "e196a4bcb90501a147063b555f89d4c96c1a2d96fde16711154ace9d36640022",
+          "value": {
+            "op": "poll",
+            "fields": {
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-007.json",
+          "sha256": "e196a4bcb90501a147063b555f89d4c96c1a2d96fde16711154ace9d36640022",
+          "value": {
+            "op": "poll",
+            "fields": {
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-008.json",
+          "sha256": "7efbef3973ff6401d09150b6e7bb24ed70cea98ba0162ae7e9d77917a9f8a0bf",
+          "value": {
+            "op": "close",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-009.json",
+          "sha256": "73f4e3c83a01e07a988d995a7b21523c2cefd942131f3c877552f051104aaef8",
+          "value": {
+            "op": "free",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\action-010.json",
+          "sha256": "f7fadb43e5c0d71118cef2f71b8826ec38042188c9f287e7a4fc79d1542c991c",
+          "value": {
+            "op": "quit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-001.json",
+          "sha256": "413fd6bcb35674247ff67059ebce3d8a61b8fcb6fff7fd13bb5a4cdb73b1c3a5",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302579093199",
+              "pid": 24524.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302577634626",
+              "pid": 19524.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-002.json",
+          "sha256": "dfbcc9fd1b38e6123eca20f62463c39ed0fe357339da579e999405f8f8b5902b",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\controller-jobs\\69c3eebb17064e7295deeeb8fccf4594",
+            "owner": {
+              "created_100ns": "134390302580783719",
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75",
+              "pid": 8648.0
+            },
+            "phase": "building",
+            "request_file_sha256": "f972b7d5c7e9986a779fd1f55309b2fc6d5763058795cfc050dffdf4cca0cba9",
+            "seq": 1.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-003.json",
+          "sha256": "fa85492d5f1ca175e5ec1f3eda399756a065cc07be7ebb38a00ff20002b15417",
+          "value": {
+            "event": "running",
+            "format": "has_wind_preview_controller_event_1",
+            "owner": {
+              "created_100ns": "134390302580783719",
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75",
+              "pid": 8648.0
+            },
+            "phase": "building",
+            "seq": 2.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-004.json",
+          "sha256": "ff09c4dc0ca09f6caa5a013ab5f4d82cc35b73f0585c917edfffc29fd69dbf84",
+          "value": {
+            "event": "running",
+            "format": "has_wind_preview_controller_event_1",
+            "owner": {
+              "created_100ns": "134390302580783719",
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75",
+              "pid": 8648.0
+            },
+            "phase": "building",
+            "seq": 3.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-005.json",
+          "sha256": "4bd92143e24ffc876c6137b78d6eb8fc4de3620fc06eb49b36bbe92b4f359641",
+          "value": {
+            "event": "running",
+            "format": "has_wind_preview_controller_event_1",
+            "owner": {
+              "created_100ns": "134390302580783719",
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75",
+              "pid": 8648.0
+            },
+            "phase": "building",
+            "seq": 4.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-006.json",
+          "sha256": "3642c362f5a1e0a8886a15f7cffcf901653188869a12272e15f619535172d327",
+          "value": {
+            "event": "running",
+            "format": "has_wind_preview_controller_event_1",
+            "owner": {
+              "created_100ns": "134390302580783719",
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75",
+              "pid": 8648.0
+            },
+            "phase": "building",
+            "seq": 5.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-007.json",
+          "sha256": "024fedcd7faabb887f32159764b227891528d5e5d89d4f6d4b911fb3314547d7",
+          "value": {
+            "event": "running",
+            "format": "has_wind_preview_controller_event_1",
+            "owner": {
+              "created_100ns": "134390302580783719",
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75",
+              "pid": 8648.0
+            },
+            "phase": "building",
+            "seq": 6.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-008.json",
+          "sha256": "7bc77c787e79ef19a451e84557a9f8b5e40a0a38becad824521c3d36a10044ae",
+          "value": {
+            "completion": {
+              "format": "has_wind_helper_preview_1",
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75",
+              "receipt_sha256": "3ba51c469e55622d2a3c31f45ff0d36551f052d743620555398e0e74f1f668f3",
+              "request_file_sha256": "f972b7d5c7e9986a779fd1f55309b2fc6d5763058795cfc050dffdf4cca0cba9"
+            },
+            "event": "prepared",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\controller-jobs\\69c3eebb17064e7295deeeb8fccf4594",
+            "job_closed": true,
+            "owner": {
+              "created_100ns": "134390302580783719",
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75",
+              "pid": 8648.0
+            },
+            "phase": "prepared_hidden",
+            "process_handle_closed": true,
+            "seq": 7.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "3f2f8edf871b45d789b449628b6a5d75"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\event-009.json",
+          "sha256": "ee800d0fc8ee74bb76dde2a7ed6e52568112d654fd9fac56fc31d548ed42d8b0",
+          "value": {
+            "event": "closed",
+            "format": "has_wind_preview_controller_event_1",
+            "phase": "stopped",
+            "seq": 8.0,
+            "session": "4f5562a964d445e188e174ed4353eccf",
+            "ticket": {
+              "generation": 2.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\host-ready.json",
+          "sha256": "155a437a04b095b53f1d0f2e8d3f1e44380b1a032cb805bc35b595bf20ae7564",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 19524
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\launch-record.json",
+          "sha256": "6c419924240d02464388b4a988a6ddd9b0aaab8bbda93fe39e7c9b96c4a36c4a",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 19524,
+              "created_100ns": "134390302577634626"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\controller-jobs",
+              "host": {
+                "pid": 19524,
+                "created_100ns": "134390302577634626"
+              },
+              "session": "4f5562a964d445e188e174ed4353eccf",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "launcher_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\node-ended.json",
+          "sha256": "afcb5de449167a45dca0d930bd8c789bc4bf6fb7f0075e11f4aec0923fbe4439",
+          "value": {
+            "exit": 0
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\node-freed.json",
+          "sha256": "ab982cdea4cf30fb7441faa61c86c2ccb749d1dc8e897a1ca1ab0aa118eef955",
+          "value": {
+            "freed": true,
+            "host_pid": 19524
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\send-002.json",
+          "sha256": "9aaa1dbacdedd94bd24937b894984d62954fea28dd45f36733a766bc0012e488",
+          "value": {
+            "error": "",
+            "op": "poll"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\send-003.json",
+          "sha256": "9aaa1dbacdedd94bd24937b894984d62954fea28dd45f36733a766bc0012e488",
+          "value": {
+            "error": "",
+            "op": "poll"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\send-004.json",
+          "sha256": "9aaa1dbacdedd94bd24937b894984d62954fea28dd45f36733a766bc0012e488",
+          "value": {
+            "error": "",
+            "op": "poll"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\send-005.json",
+          "sha256": "9aaa1dbacdedd94bd24937b894984d62954fea28dd45f36733a766bc0012e488",
+          "value": {
+            "error": "",
+            "op": "poll"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\send-006.json",
+          "sha256": "9aaa1dbacdedd94bd24937b894984d62954fea28dd45f36733a766bc0012e488",
+          "value": {
+            "error": "",
+            "op": "poll"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\send-007.json",
+          "sha256": "9aaa1dbacdedd94bd24937b894984d62954fea28dd45f36733a766bc0012e488",
+          "value": {
+            "error": "",
+            "op": "poll"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\a2b7753ba8\\send-008.json",
+          "sha256": "451af9f53006470f39f488dd93c035fb707fac756d21161f1f8be9a2304867f2",
+          "value": {
+            "error": "",
+            "op": "close"
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_unknown_matching_poll_event_releases_controller_and_worker",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 5564,
+              "created_100ns": "134390302586021747"
+            },
+            "observed": {
+              "pid": 5564,
+              "created_100ns": "134390302586021747"
+            },
+            "signaled": true,
+            "returncode": 0,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 12320,
+              "created_100ns": "134390302587519618"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "unknown matching-sequence event releases controller",
+                "owner": {
+                  "pid": 12320,
+                  "created_100ns": "134390302587519618"
+                },
+                "observed": {
+                  "pid": 12320,
+                  "created_100ns": "134390302587519618"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 3.6699999327538535e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 12320,
+                  "created_100ns": "134390302587519618"
+                },
+                "observed": {
+                  "pid": 12320,
+                  "created_100ns": "134390302587519618"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 1.0399999155197293e-05
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          },
+          {
+            "owner": {
+              "pid": 16132,
+              "created_100ns": "134390302589472507"
+            },
+            "label": "Job-owned nonreading CPU worker",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "alive before lifecycle action",
+                "owner": {
+                  "pid": 16132,
+                  "created_100ns": "134390302589472507"
+                },
+                "observed": {
+                  "pid": 16132,
+                  "created_100ns": "134390302589472507"
+                },
+                "signaled": false,
+                "exit_code_u32": 259,
+                "wait_elapsed_seconds": 9.60000033956021e-06
+              },
+              {
+                "label": "unknown event closes owned worker Job",
+                "owner": {
+                  "pid": 16132,
+                  "created_100ns": "134390302589472507"
+                },
+                "observed": {
+                  "pid": 16132,
+                  "created_100ns": "134390302589472507"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 0.0004415000003064051
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 16132,
+                  "created_100ns": "134390302589472507"
+                },
+                "observed": {
+                  "pid": 16132,
+                  "created_100ns": "134390302589472507"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 7.700000423938036e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\action-001.json",
+          "sha256": "059e2253831ad0ad26ef4da3d3d73559ac76897c80307c37ec286e1d4dcd4638",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\action-002.json",
+          "sha256": "e196a4bcb90501a147063b555f89d4c96c1a2d96fde16711154ace9d36640022",
+          "value": {
+            "op": "poll",
+            "fields": {
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              }
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\action-003.json",
+          "sha256": "da1cb1ea1043e5ba8655345882c2c0c5483b3222098bc0fd2db0252b64a6b216",
+          "value": {
+            "op": "release",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\action-004.json",
+          "sha256": "f7fadb43e5c0d71118cef2f71b8826ec38042188c9f287e7a4fc79d1542c991c",
+          "value": {
+            "op": "quit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\assigned.json",
+          "sha256": "4f776bf23a196b0e830ab4a05840bac298ea6a9c051a9c35f34877ba16f8e04e",
+          "value": {
+            "child": {
+              "pid": 16132,
+              "created_100ns": "134390302589472507"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\controller-jobs\\bda8a2cee5f145a796a8b592c02508d1"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\bridge-failure.json",
+          "sha256": "0d9b58cfb8ba6fc0095dd290bc2ecd1511e270935f92aa6afb3b2b7951e27b96",
+          "value": {
+            "reason": "Unknown controller event"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\event-001.json",
+          "sha256": "6418a71321caab3f13cc1eea46e6a0c4ffd7bfe15ad635a9139a6b98ae35a1e4",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302587519618",
+              "pid": 12320.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302586021747",
+              "pid": 5564.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "1d494fcf01b04567b0039668d457ad46",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\event-002.json",
+          "sha256": "5b42bad94ef578f952f21bf47b60d5b8c6de15fd8c77f7c97d65c27bb7b1caf0",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\controller-jobs\\bda8a2cee5f145a796a8b592c02508d1",
+            "owner": {
+              "created_100ns": "134390302589472507",
+              "generation": 1.0,
+              "nonce": "99663cd4c35441a98f73a4a14720acaa",
+              "pid": 16132.0
+            },
+            "phase": "building",
+            "request_file_sha256": "0ecac59a0feb30428e048f9011ceb44522df6e4bb20a609967472444693d8590",
+            "seq": 1.0,
+            "session": "1d494fcf01b04567b0039668d457ad46",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "99663cd4c35441a98f73a4a14720acaa"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\host-ready.json",
+          "sha256": "5d091440f5bf937949788568b75d885c3b67a22d9171b8a0d52062611cdc47cc",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 5564
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\launch-record.json",
+          "sha256": "682144ef16b3adffb38e4f83303eae98ed80e0620558d5c3bbda5513be7b09b8",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 5564,
+              "created_100ns": "134390302586021747"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\controller-jobs",
+              "host": {
+                "pid": 5564,
+                "created_100ns": "134390302586021747"
+              },
+              "session": "1d494fcf01b04567b0039668d457ad46",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\controller-wrapper.py",
+              "launcher_sha256": "00a582b415dd552099d034048c51a0c44b24a2b644e8530c26c35b043e31444b"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\release-003.json",
+          "sha256": "1bb76f671f3b32c1fc641578c630a34195048ae5920081ecb9c08e334b76bf7a",
+          "value": {
+            "attempted": false,
+            "cached_exit": -1,
+            "release_calls": 1,
+            "result": 0
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\bc596677c4\\send-002.json",
+          "sha256": "9aaa1dbacdedd94bd24937b894984d62954fea28dd45f36733a766bc0012e488",
+          "value": {
+            "error": "",
+            "op": "poll"
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_normal_godot_tree_shutdown_ends_controller_and_worker",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 3832,
+              "created_100ns": "134390302570212166"
+            },
+            "observed": {
+              "pid": 3832,
+              "created_100ns": "134390302570212166"
+            },
+            "signaled": true,
+            "returncode": 0,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 27944,
+              "created_100ns": "134390302571612277"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "normal Godot tree shutdown",
+                "owner": {
+                  "pid": 27944,
+                  "created_100ns": "134390302571612277"
+                },
+                "observed": {
+                  "pid": 27944,
+                  "created_100ns": "134390302571612277"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 7.159999950090423e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 27944,
+                  "created_100ns": "134390302571612277"
+                },
+                "observed": {
+                  "pid": 27944,
+                  "created_100ns": "134390302571612277"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 8.400002116104588e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          },
+          {
+            "owner": {
+              "pid": 26060,
+              "created_100ns": "134390302573376787"
+            },
+            "label": "Job-owned nonreading CPU worker",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "alive before lifecycle action",
+                "owner": {
+                  "pid": 26060,
+                  "created_100ns": "134390302573376787"
+                },
+                "observed": {
+                  "pid": 26060,
+                  "created_100ns": "134390302573376787"
+                },
+                "signaled": false,
+                "exit_code_u32": 259,
+                "wait_elapsed_seconds": 9.60000033956021e-06
+              },
+              {
+                "label": "normal Godot shutdown releases worker Job",
+                "owner": {
+                  "pid": 26060,
+                  "created_100ns": "134390302573376787"
+                },
+                "observed": {
+                  "pid": 26060,
+                  "created_100ns": "134390302573376787"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 2.6300000172341242e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 26060,
+                  "created_100ns": "134390302573376787"
+                },
+                "observed": {
+                  "pid": 26060,
+                  "created_100ns": "134390302573376787"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 1.0300002031726763e-05
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\action-001.json",
+          "sha256": "c50ff4a41c35de105e66a7780e439c8e6f5ecb755db2c8e0de44094f0dc98cd4",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\action-002.json",
+          "sha256": "f7fadb43e5c0d71118cef2f71b8826ec38042188c9f287e7a4fc79d1542c991c",
+          "value": {
+            "op": "quit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\assigned.json",
+          "sha256": "83260ac5e24a29359bce81fcad7a09833a3452c437622ce02311061ba39735ff",
+          "value": {
+            "child": {
+              "pid": 26060,
+              "created_100ns": "134390302573376787"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\controller-jobs\\6c2d992baae04204aec0d915e0828b01"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\event-001.json",
+          "sha256": "29c2266f4450eb4fe82546902880c401cbd9bd168c06774e38e6c52b1f69c069",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302571612277",
+              "pid": 27944.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302570212166",
+              "pid": 3832.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "9ba2aab6558742018a359e2f7ccd1bda",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\event-002.json",
+          "sha256": "035aac3c5107ded8112117eb097d769eceb05b4f07d2e6b6a5532391ac221e15",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\controller-jobs\\6c2d992baae04204aec0d915e0828b01",
+            "owner": {
+              "created_100ns": "134390302573376787",
+              "generation": 1.0,
+              "nonce": "62a92fece6814816b4dfafe323260311",
+              "pid": 26060.0
+            },
+            "phase": "building",
+            "request_file_sha256": "bfdccd392c4c8dd145f7729fce586936d724e9659cf92896cbb44de495dc65cd",
+            "seq": 1.0,
+            "session": "9ba2aab6558742018a359e2f7ccd1bda",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "62a92fece6814816b4dfafe323260311"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\host-ready.json",
+          "sha256": "21ebc451d270a3d999e178cdf8df8d56de0aef34c46850ce8b8f9110e53ce9ff",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 3832
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\launch-record.json",
+          "sha256": "91f086a7dac44b733df8b42da937cd71781a44724f2629fff6373648b1871f17",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 3832,
+              "created_100ns": "134390302570212166"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\controller-jobs",
+              "host": {
+                "pid": 3832,
+                "created_100ns": "134390302570212166"
+              },
+              "session": "9ba2aab6558742018a359e2f7ccd1bda",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\controller-wrapper.py",
+              "launcher_sha256": "2622b508b37d77de2b07bc2a0d85a357981d22b4b860cc0a44b1ef61fb67c5ad"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\c09c2cb856\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_controller_death_ends_worker_and_node_detects_exit",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 9536,
+              "created_100ns": "134390302523625812"
+            },
+            "observed": {
+              "pid": 9536,
+              "created_100ns": "134390302523625812"
+            },
+            "signaled": true,
+            "returncode": 0,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 21440,
+              "created_100ns": "134390302525148162"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "exact retained controller termination",
+                "owner": {
+                  "pid": 21440,
+                  "created_100ns": "134390302525148162"
+                },
+                "observed": {
+                  "pid": 21440,
+                  "created_100ns": "134390302525148162"
+                },
+                "signaled": true,
+                "exit_code_u32": 93,
+                "wait_elapsed_seconds": 0.0033852999986265786
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 21440,
+                  "created_100ns": "134390302525148162"
+                },
+                "observed": {
+                  "pid": 21440,
+                  "created_100ns": "134390302525148162"
+                },
+                "signaled": true,
+                "exit_code_u32": 93,
+                "wait_elapsed_seconds": 1.1000000085914508e-05
+              }
+            ],
+            "observer_handle_closed": true,
+            "terminated_through_retained_verified_handle": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          },
+          {
+            "owner": {
+              "pid": 23648,
+              "created_100ns": "134390302526945586"
+            },
+            "label": "Job-owned nonreading CPU worker",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "alive before lifecycle action",
+                "owner": {
+                  "pid": 23648,
+                  "created_100ns": "134390302526945586"
+                },
+                "observed": {
+                  "pid": 23648,
+                  "created_100ns": "134390302526945586"
+                },
+                "signaled": false,
+                "exit_code_u32": 259,
+                "wait_elapsed_seconds": 1.1500000255182385e-05
+              },
+              {
+                "label": "controller death closes worker Job",
+                "owner": {
+                  "pid": 23648,
+                  "created_100ns": "134390302526945586"
+                },
+                "observed": {
+                  "pid": 23648,
+                  "created_100ns": "134390302526945586"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 0.002115100000082748
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 23648,
+                  "created_100ns": "134390302526945586"
+                },
+                "observed": {
+                  "pid": 23648,
+                  "created_100ns": "134390302526945586"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 8.700000762473792e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\action-001.json",
+          "sha256": "083c8563531c1ba90a73e2258d5a32d895bfac7f5d105ed7d1f1fed40bcacb2d",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\action-002.json",
+          "sha256": "f7fadb43e5c0d71118cef2f71b8826ec38042188c9f287e7a4fc79d1542c991c",
+          "value": {
+            "op": "quit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\assigned.json",
+          "sha256": "325068b267dd3175a43d55c8f8526555f4408e0792cd655ddd3d4938406ab678",
+          "value": {
+            "child": {
+              "pid": 23648,
+              "created_100ns": "134390302526945586"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\controller-jobs\\b34eea0d901a4f98a22c7e4be76e590a"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\bridge-failure.json",
+          "sha256": "fa3741eab4bf45eb7271f0cb6d3249c58a1dc95ef1cc45e1a82f32f06c10f22a",
+          "value": {
+            "reason": "Controller ended with exit 93"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\event-001.json",
+          "sha256": "bfdb8998dbc702bddb88476d8d4bc7ef006659d0f782453e1db99184d6533424",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302525148162",
+              "pid": 21440.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302523625812",
+              "pid": 9536.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "f9fcae7f6c774e44807a7b57d09e87fa",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\event-002.json",
+          "sha256": "8b57dd54b04325b7b5d5ce55984b85218a1a3413bc046ec32dbaf551f62c0bdd",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\controller-jobs\\b34eea0d901a4f98a22c7e4be76e590a",
+            "owner": {
+              "created_100ns": "134390302526945586",
+              "generation": 1.0,
+              "nonce": "932ef7b5155e4ffa8c74b77bf6d13901",
+              "pid": 23648.0
+            },
+            "phase": "building",
+            "request_file_sha256": "21d78c21b8179ce3cc539ffc5b40665d4b4a005dc0351a0dc975f9db671c301a",
+            "seq": 1.0,
+            "session": "f9fcae7f6c774e44807a7b57d09e87fa",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "932ef7b5155e4ffa8c74b77bf6d13901"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\host-ready.json",
+          "sha256": "6e6d2695385fc25ac99040cd9b775b4969e725fe3d469dcc63e2c6aaf7711f08",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 9536
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\launch-record.json",
+          "sha256": "84d6b5c64339901b917fed9891750c4a85b94a9dacee6cf0511c21fa09fadd69",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 9536,
+              "created_100ns": "134390302523625812"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\controller-jobs",
+              "host": {
+                "pid": 9536,
+                "created_100ns": "134390302523625812"
+              },
+              "session": "f9fcae7f6c774e44807a7b57d09e87fa",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\controller-wrapper.py",
+              "launcher_sha256": "f34a7e69220a560a18fa40442f292a95926034b87f6026656a284ee1c9239485"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\dca54c1aa5\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_node_free_ends_controller_and_owned_live_worker",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 20472,
+              "created_100ns": "134390302555139437"
+            },
+            "observed": {
+              "pid": 20472,
+              "created_100ns": "134390302555139437"
+            },
+            "signaled": true,
+            "returncode": 0,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 25288,
+              "created_100ns": "134390302556765513"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "Node free closes controller ownership",
+                "owner": {
+                  "pid": 25288,
+                  "created_100ns": "134390302556765513"
+                },
+                "observed": {
+                  "pid": 25288,
+                  "created_100ns": "134390302556765513"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 5.7100001868093386e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 25288,
+                  "created_100ns": "134390302556765513"
+                },
+                "observed": {
+                  "pid": 25288,
+                  "created_100ns": "134390302556765513"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 1.2299999070819467e-05
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          },
+          {
+            "owner": {
+              "pid": 23756,
+              "created_100ns": "134390302558756729"
+            },
+            "label": "Job-owned nonreading CPU worker",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "alive before lifecycle action",
+                "owner": {
+                  "pid": 23756,
+                  "created_100ns": "134390302558756729"
+                },
+                "observed": {
+                  "pid": 23756,
+                  "created_100ns": "134390302558756729"
+                },
+                "signaled": false,
+                "exit_code_u32": 259,
+                "wait_elapsed_seconds": 9.499999578110874e-06
+              },
+              {
+                "label": "Node free closes worker Job",
+                "owner": {
+                  "pid": 23756,
+                  "created_100ns": "134390302558756729"
+                },
+                "observed": {
+                  "pid": 23756,
+                  "created_100ns": "134390302558756729"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 1.1099997209385037e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 23756,
+                  "created_100ns": "134390302558756729"
+                },
+                "observed": {
+                  "pid": 23756,
+                  "created_100ns": "134390302558756729"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 7.99999907030724e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\action-001.json",
+          "sha256": "0562d89e750a357eaa65140e1bb2ce232ba8c1896cec06651339b4b6d4790263",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\action-002.json",
+          "sha256": "73f4e3c83a01e07a988d995a7b21523c2cefd942131f3c877552f051104aaef8",
+          "value": {
+            "op": "free",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\action-003.json",
+          "sha256": "f7fadb43e5c0d71118cef2f71b8826ec38042188c9f287e7a4fc79d1542c991c",
+          "value": {
+            "op": "quit",
+            "fields": {}
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\assigned.json",
+          "sha256": "b6f76e526c6e4c9389f649c138f8a2ecc269ce63f5301fb86f574c224d1a9404",
+          "value": {
+            "child": {
+              "pid": 23756,
+              "created_100ns": "134390302558756729"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\controller-jobs\\750049c36f4745118ca4169a6a71de80"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\event-001.json",
+          "sha256": "cc89c9a001c85df4f5e9e4f3e6e9261513665c76949f130eb7c5b2fd9a025a96",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302556765513",
+              "pid": 25288.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302555139437",
+              "pid": 20472.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "0a2226dc72354e46ba4d5b82be6acd43",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\event-002.json",
+          "sha256": "a4b8c9dc7fdaa033a90a1a9fc5afc68bdd569da48a2469704f7bf2bb05fcdcab",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\controller-jobs\\750049c36f4745118ca4169a6a71de80",
+            "owner": {
+              "created_100ns": "134390302558756729",
+              "generation": 1.0,
+              "nonce": "c2eb36501555404a904e5602693a58a7",
+              "pid": 23756.0
+            },
+            "phase": "building",
+            "request_file_sha256": "5f8c1f9246951d4e1ccd96aa422744c1514ffbc5adb3efa84183bc863359e9af",
+            "seq": 1.0,
+            "session": "0a2226dc72354e46ba4d5b82be6acd43",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "c2eb36501555404a904e5602693a58a7"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\host-ready.json",
+          "sha256": "29fbf6df4973d4744aa91a8ba0a803ae13a6076195ef3ea3e5ba4781aad0df69",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 20472
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\launch-record.json",
+          "sha256": "ef9e6ed5c46c1ec2e78e936e719f66ed218112c8f61e442026d379046e8f62a8",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 20472,
+              "created_100ns": "134390302555139437"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\controller-jobs",
+              "host": {
+                "pid": 20472,
+                "created_100ns": "134390302555139437"
+              },
+              "session": "0a2226dc72354e46ba4d5b82be6acd43",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\controller-wrapper.py",
+              "launcher_sha256": "2a6c976df2487aa5eda55245337cf94e01e53b66ea8aab8464d409864fcf8f24"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\node-freed.json",
+          "sha256": "7661e4a449cd4bc9b62b0de6c6e10013479147702f8bbacc49ff09dc280b9aa0",
+          "value": {
+            "freed": true,
+            "host_pid": 20472
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\de943bac6c\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        }
+      ]
+    },
+    {
+      "test": "test_abrupt_godot_death_ends_controller_and_worker",
+      "folder": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9",
+      "observer_receipts": {
+        "records": [
+          {
+            "label": "external Popen Godot handle",
+            "owner": {
+              "pid": 28248,
+              "created_100ns": "134390302515963439"
+            },
+            "observed": {
+              "pid": 28248,
+              "created_100ns": "134390302515963439"
+            },
+            "signaled": true,
+            "returncode": 1,
+            "generic_pid_termination": false,
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "headless_only": true,
+            "observer_handle_closed": true
+          },
+          {
+            "owner": {
+              "pid": 25704,
+              "created_100ns": "134390302517900361"
+            },
+            "label": "Godot-created controller",
+            "may_terminate": true,
+            "observations": [
+              {
+                "label": "abrupt exact Godot death",
+                "owner": {
+                  "pid": 25704,
+                  "created_100ns": "134390302517900361"
+                },
+                "observed": {
+                  "pid": 25704,
+                  "created_100ns": "134390302517900361"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 0.031401699998241384
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 25704,
+                  "created_100ns": "134390302517900361"
+                },
+                "observed": {
+                  "pid": 25704,
+                  "created_100ns": "134390302517900361"
+                },
+                "signaled": true,
+                "exit_code_u32": 0,
+                "wait_elapsed_seconds": 6.70000008540228e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          },
+          {
+            "owner": {
+              "pid": 3748,
+              "created_100ns": "134390302520110313"
+            },
+            "label": "Job-owned nonreading CPU worker",
+            "may_terminate": false,
+            "observations": [
+              {
+                "label": "alive before lifecycle action",
+                "owner": {
+                  "pid": 3748,
+                  "created_100ns": "134390302520110313"
+                },
+                "observed": {
+                  "pid": 3748,
+                  "created_100ns": "134390302520110313"
+                },
+                "signaled": false,
+                "exit_code_u32": 259,
+                "wait_elapsed_seconds": 1.4000001101521775e-05
+              },
+              {
+                "label": "abrupt Godot death releases controller Job",
+                "owner": {
+                  "pid": 3748,
+                  "created_100ns": "134390302520110313"
+                },
+                "observed": {
+                  "pid": 3748,
+                  "created_100ns": "134390302520110313"
+                },
+                "signaled": true,
+                "exit_code_u32": 3221225786,
+                "wait_elapsed_seconds": 1.080000220099464e-05
+              },
+              {
+                "label": "final cleanup observation",
+                "owner": {
+                  "pid": 3748,
+                  "created_100ns": "134390302520110313"
+                },
+                "observed": {
+                  "pid": 3748,
+                  "created_100ns": "134390302520110313"
+                },
+                "signaled": true,
+                "exit_code_u32": 3221225786,
+                "wait_elapsed_seconds": 5.900001269765198e-06
+              }
+            ],
+            "observer_handle_closed": true,
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "generic_pid_termination": false
+          }
+        ],
+        "all_observer_handles_closed": true,
+        "errors": [],
+        "generic_pid_termination": false
+      },
+      "evidence": [
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\action-001.json",
+          "sha256": "23badaa8d735f697e5dac03e8784324eba096cc3c610a2f11cc3aeee046b1912",
+          "value": {
+            "op": "start",
+            "fields": {
+              "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\source.glb",
+              "items": [
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 0,
+                  "anchor_node": 2,
+                  "segments": 3
+                },
+                {
+                  "source_sha256": "a82a177ae7d7d6c6ba2f5b84a0769c378daa3db8504b648bac8716c21bf81b4d",
+                  "reviewed": true,
+                  "node": 3,
+                  "primitive": 1,
+                  "component": 1,
+                  "anchor_node": 2,
+                  "segments": 3
+                }
+              ],
+              "context": {
+                "actor_id": "CPU-\u65e5\u672c\u8a9e",
+                "root_instance_id": "9223372036854775809",
+                "revision": "8",
+                "frame": "12",
+                "authored_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "shape_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                "bindings_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+              },
+              "mode": "included-batch"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\assigned.json",
+          "sha256": "6d31424372871a85ccb64acb36c1fc935d422ffac56d53d7c8fcd02f81015a6b",
+          "value": {
+            "child": {
+              "pid": 3748,
+              "created_100ns": "134390302520110313"
+            },
+            "assigned": true,
+            "inside_exact_job": true,
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\controller-jobs\\7b4b05807cc940e191c03a38bb252310"
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\event-001.json",
+          "sha256": "289bba2e0f07934b27b51bedacac71cd185147ef5d3ebcf9e138dcad9a8aec03",
+          "value": {
+            "controller": {
+              "created_100ns": "134390302517900361",
+              "pid": 25704.0
+            },
+            "event": "ready",
+            "format": "has_wind_preview_controller_event_1",
+            "host": {
+              "created_100ns": "134390302515963439",
+              "pid": 28248.0
+            },
+            "phase": "stopped",
+            "python": {
+              "path": "C:\\Program Files\\Python313\\python.exe",
+              "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+            },
+            "seq": 0.0,
+            "session": "eb909b23358c476aa554c67256273e77",
+            "source_sha256": {
+              "adapter": "411d86d6a32ec95009563a4267916637b46eddd083f453623f65c1bec806cffc",
+              "batch": "32fc9c42e3f25442bf5a5518cc29bdf4df9245fd35a65a6bd519570d92f417a2",
+              "controller": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "helpers": "dc5ff2353bbc3759b8464eb52f4de30996b09d07392534b26da1d5af5e376fe6",
+              "native_job_layout": "9788e7fde42de7bce022589c86146eaa93deb142ef368aa37a05259ec3047628",
+              "protocol": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+              "worker": "a5fb9a79f5ca26867942818c0dee92e6b49a16a4b258b2d5c89ab3781679159d"
+            },
+            "ticket": {
+              "generation": 0.0,
+              "nonce": null
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\event-002.json",
+          "sha256": "8d8d6c4c0d2fe304d21b556801ef08f6fd0bd66a88f6e4cd717904140f4d397d",
+          "value": {
+            "event": "started",
+            "format": "has_wind_preview_controller_event_1",
+            "job": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\controller-jobs\\7b4b05807cc940e191c03a38bb252310",
+            "owner": {
+              "created_100ns": "134390302520110313",
+              "generation": 1.0,
+              "nonce": "0d33dfcb37d24cb7a7bc4575b9c06e39",
+              "pid": 3748.0
+            },
+            "phase": "building",
+            "request_file_sha256": "bc91771747e725c5b0c206b2c345344d3e7fcb79ab6debeb348ec38a02a65fff",
+            "seq": 1.0,
+            "session": "eb909b23358c476aa554c67256273e77",
+            "ticket": {
+              "generation": 1.0,
+              "nonce": "0d33dfcb37d24cb7a7bc4575b9c06e39"
+            }
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\host-ready.json",
+          "sha256": "76645a20eb5d609a29b7596afbd2b66c9960de23faaef0fb60a20fd561dd50cc",
+          "value": {
+            "display_server": "headless",
+            "engine_hash": "89cea143987d564363e15d207438530651d943ac",
+            "pid": 28248
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\launch-record.json",
+          "sha256": "ecd8808a0a8b9a5ecc56763f655da101021fa3e088bf6dcbd3550ccfb7fb6849",
+          "value": {
+            "args": [
+              "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+              "--headless",
+              "--path",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\isolated",
+              "--script",
+              "res://fixture.gd",
+              "--log-file",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\engine.log",
+              "--",
+              "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9"
+            ],
+            "godot_sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+            "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+            "host": {
+              "pid": 28248,
+              "created_100ns": "134390302515963439"
+            },
+            "observer": {
+              "pid": 25976,
+              "created_100ns": "134390302513619822"
+            },
+            "config": {
+              "main_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+              "owned_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\controller-jobs",
+              "host": {
+                "pid": 28248,
+                "created_100ns": "134390302515963439"
+              },
+              "session": "eb909b23358c476aa554c67256273e77",
+              "python": "C:\\Program Files\\Python313\\python.exe",
+              "python_sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+              "controller": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\candidate\\tools\\wind_preview_controller.py",
+              "controller_sha256": "5fa50c1269e7aa4d1aa84cfb09a072188d1adb41206553734a7605ad067d13f2",
+              "launcher": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-helper-godot-bridge-20261113\\cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\controller-wrapper.py",
+              "launcher_sha256": "26c7e36f26f127cf331c33b5c59b05b953e881fe25fbebcaa1ca1fbed08798a7"
+            },
+            "headless_only": true,
+            "main_project_launched": false
+          }
+        },
+        {
+          "path": "cpu-results\\d6148a9deffb4811875f48fae8c3e590\\f793208ea9\\send-001.json",
+          "sha256": "3a1556dba183c4014f1edf845ee1293662d0a3a998e895b54dec2bc11b85a1c8",
+          "value": {
+            "error": "",
+            "op": "start"
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Headless isolated CPU process/transport only; no main model import or renderer acceptance"
+}

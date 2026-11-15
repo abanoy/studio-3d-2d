@@ -15,16 +15,24 @@ def read(path):return json.loads(Path(path).read_bytes())
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--checkpoint',type=Path,default=Path('C:/a/Programming/cloudflare/prototypes/studio-3d-2d/output/checkpoints/2026-11-04-145211-project-duration/development-source.zip'))
+    parser.add_argument('--checkpoint',type=Path,help='Optional checksum-bound source inventory; defaults to the current Git checkout inventory')
     parser.add_argument('--checkpoint-sha256',default='b38d7aae02db1b79f3a293968d9a4817d50282a46676d9b9188920ab2be65ca5')
+    parser.add_argument('--inventory-only',action='store_true',help='Report frozen source hashes without running or certifying cold review')
     options=parser.parse_args();prior=options.checkpoint
-    assert sha(prior)==options.checkpoint_sha256
-    with zipfile.ZipFile(prior) as z:names=z.namelist()
+    if prior is not None:
+        assert sha(prior)==options.checkpoint_sha256
+        with zipfile.ZipFile(prior) as z:names=z.namelist()
+    else:
+        names=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','-z'],cwd=ROOT).decode('utf-8').split('\0')
+        names=[n for n in names if n and Path(n).parts[0] not in ('output','.godot','.git','__pycache__') and '__pycache__' not in Path(n).parts and not n.endswith('.pyc')]
     names=sorted(set(names+['tests/current_candidate_smoke.gd','tests/current_candidate_startup.gd','tests/current_candidate_startup.tscn','tests/verify_current_candidate.py','docs/current_candidate_2026-11-04.md']))
     assert len(names)>=593 and all(not Path(n).is_absolute() and '..' not in Path(n).parts and Path(n).parts[0] not in ('output','.godot','.git') for n in names)
     required={str(p.relative_to(ROOT)).replace('\\','/') for p in (ROOT/'src').rglob('*.gd')}
     assert required.issubset(names),'The checkpoint inventory omits current app scripts. Pass the latest checkpoint and its SHA256 explicitly.'
     source={n:(ROOT/n).read_bytes() for n in names};hashes={n:hashlib.sha256(b).hexdigest() for n,b in source.items()}
+    if options.inventory_only:
+        print(json.dumps({'scope':'source inventory only; no runtime or historical-reader acceptance','files':len(source),'source_hashes':hashes},indent=2))
+        return
     token=str(time.time_ns());folder=ROOT/'output/current-candidate'/token;folder.mkdir(parents=True)
     (folder/'source-inputs.json').write_text(json.dumps(hashes,indent=2),encoding='utf-8')
     receipts=[];steps=[];cases=[];originals={}

@@ -1,0 +1,230 @@
+{
+  "camera_after": {
+    "basis": [
+      -0.9999998807907104,
+      8.881784197001252e-16,
+      8.742276236262114e-08,
+      8.698888720459763e-09,
+      0.9950371980667114,
+      0.09950368851423264,
+      -8.698890496816603e-08,
+      0.09950368851423264,
+      -0.9950370788574219
+    ],
+    "far": 2000.0,
+    "fov": 48.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      -0.009341632947325706,
+      1.185570478439331,
+      -1.5680147409439087
+    ]
+  },
+  "camera_before": {
+    "basis": [
+      -0.9999998807907104,
+      8.881784197001252e-16,
+      8.742276236262114e-08,
+      8.698888720459763e-09,
+      0.9950371980667114,
+      0.09950368851423264,
+      -8.698890496816603e-08,
+      0.09950368851423264,
+      -0.9950370788574219
+    ],
+    "far": 2000.0,
+    "fov": 48.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      -0.009341632947325706,
+      1.185570478439331,
+      -1.5680147409439087
+    ]
+  },
+  "canvas_extent": [
+    928.0,
+    335.0
+  ],
+  "checks": [
+    {
+      "label": "replay uses ordinary scene startup without testing flags",
+      "ok": true
+    },
+    {
+      "label": "ordinary automatic recovery completes without restoring or cancelling the fresh scene",
+      "ok": true
+    },
+    {
+      "label": "fresh process starts empty at Home",
+      "ok": true
+    },
+    {
+      "label": "per-project recent/display paths start absent",
+      "ok": true
+    },
+    {
+      "label": "normal .has open started its Python worker",
+      "ok": true
+    },
+    {
+      "label": "normal open operation completed successfully",
+      "ok": true
+    },
+    {
+      "label": "worker and project loader finished before replay",
+      "ok": true
+    },
+    {
+      "label": "normal open retains packed package identity",
+      "ok": true
+    },
+    {
+      "label": "unpacked runtime assets stay in the fresh owned cache",
+      "ok": true
+    },
+    {
+      "label": "open installs an unedited project with empty Undo history",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object reimu_hakurei_bikini.mdl",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object Fan",
+      "ok": true
+    },
+    {
+      "label": "normal load starts in Scene / camera mode",
+      "ok": true
+    },
+    {
+      "label": "Setup uses the full available scene area",
+      "ok": true
+    },
+    {
+      "label": "Setup canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup captures and saves the actual native output size",
+      "ok": true
+    },
+    {
+      "label": "native saved camera capture contains nonuniform nonblack scene pixels",
+      "ok": true
+    },
+    {
+      "label": "Focus restores the output-shaped scene area",
+      "ok": true
+    },
+    {
+      "label": "Focus canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup and Focus preserve and save identical native render pixels",
+      "ok": true
+    },
+    {
+      "label": "view toggles and captures preserve all project state and shot camera",
+      "ok": true
+    },
+    {
+      "label": "replay ends unedited with no retained readback",
+      "ok": true
+    }
+  ],
+  "failures": 0,
+  "focus_image": {
+    "distinct_sampled_colors": 594,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 12640,
+    "pixel_sha256": "9e4bc12b7d50dd6402d82630fea83446865e5a27ee14c780da44aa852acb5c6e",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/05-back-hair-demo/focus.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "format": "has_owner_review_replay_1",
+  "install_ms": 229.041,
+  "load_worker_ms": 36.105,
+  "native_focus": {
+    "distinct_sampled_colors": 439,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 1289,
+    "pixel_sha256": "156c0eec67f1684d4e520ae15d67d0898af97212b1deaec85efdac2f8e275c99",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/05-back-hair-demo/native-focus.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "native_readbacks_at_finish": 0,
+  "native_setup": {
+    "distinct_sampled_colors": 439,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 1289,
+    "pixel_sha256": "156c0eec67f1684d4e520ae15d67d0898af97212b1deaec85efdac2f8e275c99",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/05-back-hair-demo/native-setup.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "normal_startup": {
+    "empty": true,
+    "home_visible": true,
+    "result": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "signal_seen": true,
+    "simple": true
+  },
+  "normalized_cache_root": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/05-back-hair-demo/has-cache",
+  "normalized_project_folder": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/05-back-hair-demo/has-cache/open_10028_2337566",
+  "open_ms": 605,
+  "package": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Back hair demo.has",
+  "process_id": 10028,
+  "profile": "C:/Users/noble/AppData/Roaming/HAS Owner Acceptance 1794607573296736500",
+  "project_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\05-back-hair-demo\\has-cache\\open_10028_2337566",
+  "project_root": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Studio/",
+  "rasters": [],
+  "runtime_objects": [
+    {
+      "asset_sha256": "d7036490ef624c8f517766ecd16937496a1322f62b7d90902ff4d72f266f3ace",
+      "bones": 81,
+      "id": "1337469824801068624",
+      "name": "reimu_hakurei_bikini.mdl",
+      "stored_sha256": "d7036490ef624c8f517766ecd16937496a1322f62b7d90902ff4d72f266f3ace",
+      "visible": true
+    },
+    {
+      "asset_sha256": "bc2bd695f49fa5b99fe3a95231946536f3cb595adf8a7bf26575d234351963ab",
+      "bones": 0,
+      "id": "4158583393637091267",
+      "name": "Fan",
+      "stored_sha256": "bc2bd695f49fa5b99fe3a95231946536f3cb595adf8a7bf26575d234351963ab",
+      "visible": true
+    }
+  ],
+  "setup_extent": [
+    928.0,
+    335.0
+  ],
+  "setup_image": {
+    "distinct_sampled_colors": 482,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 4147,
+    "pixel_sha256": "161df1b88fe42f11771c06e95d86c7407be0a50992536740d9c98bc5971622fd",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/05-back-hair-demo/setup.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "worker_pid": 13316
+}

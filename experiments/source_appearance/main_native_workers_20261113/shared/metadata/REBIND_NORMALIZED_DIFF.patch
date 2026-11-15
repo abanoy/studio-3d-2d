@@ -1,0 +1,70 @@
+--- historical/source/background_route.py
++++ core-source/background_route.py
+@@ -32,7 +32,7 @@
+ BRIDGE = PROTOTYPE / "tools/blender_source_bridge.py"
+ BOOTSTRAP = HERE / "background_python_bootstrap.py"
+ OBSERVER = HERE / "background_blender_observer.py"
+-WORKER_SHA = {str(ROOT / name): value for name, value in {'tools/prepare_source.py': '2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e', 'tools/blender_source_bridge.py': 'dfef09700405e96e289b92bc2b5e98d897f9fcdc86fce54be7f649a7b161372b', 'tools/source_appearance.py': '97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b', 'tools/source_mdl_choices.py': 'a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555', 'tools/source_choice_io.py': '7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640'}.items()}
++WORKER_SHA = {str(ROOT / name): value for name, value in {'tools/prepare_source.py': '2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e', 'tools/blender_source_bridge.py': 'e885074a2cb8c21976b25429e9c09c43c976eca760b835bc4b295fcac6185f4d', 'tools/source_appearance.py': '97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b', 'tools/source_mdl_choices.py': 'a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555', 'tools/source_choice_io.py': '7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640', 'tools/source_archive.py': '44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131'}.items()}
+ 
+ NATIVE_MODULES = {"python": {"asset_audit", "source_archive", "source_paths", "source_installation", "source_case", "source_content", "source_appearance"},
+                   "blender": {"asset_audit", "source_archive", "source_texture", "source_case", "source_eyes", "source_lights", "source_lightmaps", "source_appearance"}}
+--- historical/source/background_conversion_driver.py
++++ core-source/background_conversion_driver.py
+@@ -28,7 +28,7 @@
+ BLENDER = Path(r"C:\Program Files\Blender Foundation\Blender 5.1\blender.exe")
+ PRIVATE = ROOT / "tools/private_desktop.py"
+ PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
+-WORKERS = {'tools/prepare_source.py': '2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e', 'tools/blender_source_bridge.py': 'dfef09700405e96e289b92bc2b5e98d897f9fcdc86fce54be7f649a7b161372b', 'tools/source_appearance.py': '97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b', 'tools/source_mdl_choices.py': 'a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555', 'tools/source_choice_io.py': '7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640'}
++WORKERS = {'tools/prepare_source.py': '2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e', 'tools/blender_source_bridge.py': 'e885074a2cb8c21976b25429e9c09c43c976eca760b835bc4b295fcac6185f4d', 'tools/source_appearance.py': '97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b', 'tools/source_mdl_choices.py': 'a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555', 'tools/source_choice_io.py': '7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640', 'tools/source_archive.py': '44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131'}
+ 
+ ORDER = [("multi_skin_glove", "default-no-appearance"), ("keiki_tools_chisels", "default-no-appearance"),
+          ("multi_skin_glove", "skin-0"), ("keiki_tools_chisels", "groups-000"),
+--- historical/wider-source/background_route.py
++++ wider-source/background_route.py
+@@ -22,7 +22,7 @@
+ HERE = Path(__file__).absolute().parent
+ TASK, ROOT = S.TASK, S.CHECKOUT
+ PROTOTYPE = ROOT  # Actual current main worker, not a prototype copy.
+-INPUT_STAGE = TASK / "stage"
++INPUT_STAGE = ROOT / "output/sfm-broader-native-cases-20261113/stage"
+ PYTHON = Path(r"C:\Program Files\Python313\python.exe")
+ PYTHONW = Path(r"C:\Program Files\Python313\pythonw.exe")
+ BLENDER = Path(r"C:\Program Files\Blender Foundation\Blender 5.1\blender.exe")
+@@ -32,7 +32,7 @@
+ BRIDGE = PROTOTYPE / "tools/blender_source_bridge.py"
+ BOOTSTRAP = HERE / "background_python_bootstrap.py"
+ OBSERVER = HERE / "background_blender_observer.py"
+-WORKER_SHA = {str(ROOT / name): value for name, value in {'tools/prepare_source.py': '2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e', 'tools/blender_source_bridge.py': 'dfef09700405e96e289b92bc2b5e98d897f9fcdc86fce54be7f649a7b161372b', 'tools/source_appearance.py': '97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b', 'tools/source_mdl_choices.py': 'a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555', 'tools/source_choice_io.py': '7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640'}.items()}
++WORKER_SHA = {str(ROOT / name): value for name, value in {'tools/prepare_source.py': '2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e', 'tools/blender_source_bridge.py': 'e885074a2cb8c21976b25429e9c09c43c976eca760b835bc4b295fcac6185f4d', 'tools/source_appearance.py': '97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b', 'tools/source_mdl_choices.py': 'a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555', 'tools/source_choice_io.py': '7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640', 'tools/source_archive.py': '44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131'}.items()}
+ 
+ NATIVE_MODULES = {"python": {"asset_audit", "source_archive", "source_paths", "source_installation", "source_case", "source_content", "source_appearance"},
+                   "blender": {"asset_audit", "source_archive", "source_texture", "source_case", "source_eyes", "source_lights", "source_lightmaps", "source_appearance"}}
+--- historical/wider-source/background_conversion_driver.py
++++ wider-source/background_conversion_driver.py
+@@ -21,14 +21,14 @@
+ 
+ TASK, ROOT = S.TASK, S.CHECKOUT
+ PROTOTYPE = ROOT  # Actual current main worker, not a prototype copy.
+-INPUT_STAGE = TASK / "stage"
++INPUT_STAGE = ROOT / "output/sfm-broader-native-cases-20261113/stage"
+ SOURCEIO = ROOT / "output/dependencies/sourceio-fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
+ PYTHON = Path(r"C:\Program Files\Python313\python.exe")
+ PYTHONW = Path(r"C:\Program Files\Python313\pythonw.exe")
+ BLENDER = Path(r"C:\Program Files\Blender Foundation\Blender 5.1\blender.exe")
+ PRIVATE = ROOT / "tools/private_desktop.py"
+ PIN = "fe24260b97ac03b899d9b5d4f0fd7b34772f3647"
+-WORKERS = {'tools/prepare_source.py': '2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e', 'tools/blender_source_bridge.py': 'dfef09700405e96e289b92bc2b5e98d897f9fcdc86fce54be7f649a7b161372b', 'tools/source_appearance.py': '97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b', 'tools/source_mdl_choices.py': 'a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555', 'tools/source_choice_io.py': '7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640'}
++WORKERS = {'tools/prepare_source.py': '2d23571e8bbcfe8c5cbde98bce006282c991f7c2e08670215bc552dc69b3c23e', 'tools/blender_source_bridge.py': 'e885074a2cb8c21976b25429e9c09c43c976eca760b835bc4b295fcac6185f4d', 'tools/source_appearance.py': '97b54184b92b391feb55f91c9308a89821574dd16f1f292318c13ed07a521f7b', 'tools/source_mdl_choices.py': 'a0f5e551ba9e2e38e3a92ca1d824a09311bf4ec4979a0d9947c128d15666e555', 'tools/source_choice_io.py': '7d193d4e29389f27483ce3670ce240433af526bd8e186b6851a581fb22e70640', 'tools/source_archive.py': '44fc9c9ca6d3b81aa34d72634f3a23d57624d0e96c57599f3c03b9e7af4cc131'}
+ 
+ ORDER = [('junko_main', 'default-no-appearance'), ('junko_main', 'skin-15'), ('junko_main', 'skin-15-belt-off'), ('junko_hair', 'default-no-appearance'), ('junko_hair', 'hat-off'), ('mima_body', 'default-no-appearance'), ('mima_body', 'skin-3'), ('mima_body', 'skin-3-socks-off'), ('kanako_props', 'default-no-appearance'), ('kanako_props', 'bat-left-off'), ('kanako_props', 'all-blank-refusal')]
+ 
+@@ -393,7 +393,7 @@
+     S.require(path.parent == TASK and re.fullmatch(r"conversion-inputs-wide[A-Za-z0-9_]+\.json", path.name) and not path.exists(), "Choose a fresh direct wider conversion-inputs lock")
+     S.require(re.fullmatch("[0-9a-f]{40}", revision or "") and head() == revision, "Bind exact current main checkpoint")
+     resources = read_json(TASK / "RESOURCE_PLAN.json", 8 * 1024 * 1024)
+-    staged_path = TASK / "runs/wider-execute-1794612147814048100/verification.json"
++    staged_path = TASK / "inputs/wider-staging.json"
+     staged = read_json(staged_path, 8 * 1024 * 1024)
+     S.require(staged["passed"] and staged["staged_files"] == 265 and staged["staged_bytes"] == 287669903, "Fresh wider staging receipt differs")
+     families = read_json(TASK / "WIDER_FAMILIES.json", 8 * 1024 * 1024)["families"]

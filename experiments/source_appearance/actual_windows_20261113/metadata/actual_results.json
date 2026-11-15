@@ -1,0 +1,2256 @@
+{
+  "format": "has_sfm_static_appearance_fourteen_actual_1",
+  "root_revision": "2904f3f18e4211f95ddd385953219b2e5460aee9",
+  "input_lock": {
+    "path": "output/sfm-next-cases-20261112/conversion-inputs-background3.json",
+    "sha256": "9a3d65108148a2e41eebb6a2dabfd556541aff27affe1cc48e4c099e21e00521",
+    "bytes": 753668,
+    "mtime_ns": 1794546409371005900
+  },
+  "driver": {
+    "path": "output/sfm-next-cases-20261112/source/background_conversion_driver.py",
+    "sha256": "08a63f739f21cdb019468b3b274ecc1772fb942695320dfd20d2b1826c120587",
+    "bytes": 42556,
+    "mtime_ns": 1794545617878294500
+  },
+  "actual_run": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800",
+  "aggregate_verification": {
+    "sha256": "2a3c720629396efdfc3e6c20f3280e47568f287d51621a94518431b6288ce89e",
+    "bytes": 5728506,
+    "mtime_ns": 1794546555250521400
+  },
+  "passed_cases": 14,
+  "successful_bundles": 12,
+  "explicit_expected_allblank_refusals": 2,
+  "failed_cases": 0,
+  "unrun_cases": 0,
+  "unique_private_desktops": 14,
+  "original_monitor_confirmed_cases": 0,
+  "independent_python_and_blender_self_attestation_cases": 14,
+  "all_private_jobs_and_desktops_closed": true,
+  "recorded_process_instances": 42,
+  "owned_process_instances_still_running": 0,
+  "lease_released": true,
+  "root_prototype_runtime_original_stage_requests_and_lock_preserved_during_actual_run": true,
+  "protected_flat_files": 343,
+  "root_functional_files": 934,
+  "prototype_functional_files": 934,
+  "sourceio_files": 574,
+  "exact_staged_members": 296,
+  "time": {
+    "started_utc": "2026-11-13T05:07:52.5985585Z",
+    "finished_utc": "2026-11-13T05:09:15.3048646Z",
+    "elapsed_seconds": 82.7094904,
+    "exit": 0
+  },
+  "cases": [
+    {
+      "case": "multi_skin_glove",
+      "variant": "default-no-appearance",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 4.023816599999918,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "b3f002bd421aa7e5f1560d2a6615234cfce3f475ef5c38bd0bdbf9c1791c0b3d",
+          "bytes": 387,
+          "mtime_ns": 1794546478899119200
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_2a55f20031104229aebfb7539b994e20",
+        "window_station": "WinSta0",
+        "python_pid": 4808,
+        "blender_pid": 13476,
+        "python_thread": 10256,
+        "blender_thread": 25528,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "c47a4ccf2984e94be470ca7f5fef87f90950cbc0d1fbb07591360bca819a5058",
+          "bytes": 2011,
+          "mtime_ns": 1794546479015157100
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/01-multi_skin_glove-default-no-appearance/verification.json",
+        "sha256": "9420ef5a2649ee03b84f6a86af9986a58d31d974e14738fcd9b5d32aaad3cfe0",
+        "bytes": 507947,
+        "mtime_ns": 1794546479172822000
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "glove": 0
+      },
+      "selected_native_bodygroup_indices": null,
+      "explicit_native_catalogue_present": false,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 1,
+        "textures": 2,
+        "bones": 66,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "bytes": 836088,
+        "mtime_ns": 1794546478557127100
+      },
+      "selected_glb_meshes": [
+        "gloves.dmx"
+      ],
+      "native_joints_bound": 66,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": false,
+      "mesh_primitive_fingerprints": {
+        "gloves.dmx": [
+          "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+          "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87"
+        ]
+      },
+      "mesh_target_names": {
+        "gloves.dmx": [
+          [
+            "Ah"
+          ],
+          [
+            "Ah"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "models/touhou/tamo/Nitori edit/Gloves",
+          "vmt": "materials/models/touhou/tamo/nitori edit/gloves.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\gloves.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "vmt": "materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/black.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "models/touhou/tamo/Nitori edit/Gloves",
+          "embedded_base_image_sha256": "31d7d4e9fdfc3e377b836fdc33362c4a0e076af0ccf3807941cb1b786b56f0e0"
+        },
+        {
+          "index": 1,
+          "name": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "embedded_base_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20"
+        }
+      ],
+      "inactive_material_statuses": [],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/Gloves glowg.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Gloves gloww.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Glovesg.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Glovesw.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        }
+      ],
+      "parameters": {
+        "sha256": "7ad12688627f0b1a1335b553f2404c31921753a4238ee8f94c44c215a4570f5a",
+        "bytes": 8268,
+        "mtime_ns": 1794546478558134700
+      },
+      "dependencies": {
+        "sha256": "85656216845c46341da8f846d9dece67c7d9f8d7c13f765df759d70cfec95988",
+        "bytes": 3692,
+        "mtime_ns": 1794546478559128000
+      },
+      "structure_receipt": {
+        "sha256": "33d79eebe444c40247d412182489d084af8195722b155ccee9ee8ef522bb4f14",
+        "bytes": 472898,
+        "mtime_ns": 1794546479159308800
+      },
+      "dependency_classification_receipt": {
+        "sha256": "ffe0f1bc82dc95ae71e5350b0b7fd54431ee35737e1643449078c9ac71decacd",
+        "bytes": 2568,
+        "mtime_ns": 1794546479160310800
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "default-no-appearance",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 3.823414099999354,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "b70b0e3c4d1ee13f0c66a1cdeca00775bacbd783a88e526dbbfd494190115b17",
+          "bytes": 387,
+          "mtime_ns": 1794546484272020500
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_9a43ce3221b64bbeb29b5330619974da",
+        "window_station": "WinSta0",
+        "python_pid": 788,
+        "blender_pid": 24924,
+        "python_thread": 11740,
+        "blender_thread": 15112,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "36cc96a8fb92efa15267abad11aa57ea9feb9697912525828b28fcb77759c09e",
+          "bytes": 2010,
+          "mtime_ns": 1794546484405747900
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/02-keiki_tools_chisels-default-no-appearance/verification.json",
+        "sha256": "bda8dcc0c92070bdcef4326994edc9a24303c7a51f9446ba6ab9f2e21a7bf104",
+        "bytes": 607597,
+        "mtime_ns": 1794546484514512600
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 0,
+        "flame": 0
+      },
+      "selected_native_bodygroup_indices": null,
+      "explicit_native_catalogue_present": false,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 3,
+        "textures": 4,
+        "bones": 31,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "bytes": 933756,
+        "mtime_ns": 1794546483933042500
+      },
+      "selected_glb_meshes": [
+        "box.smd",
+        "flame.smd",
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": false,
+      "mesh_primitive_fingerprints": {
+        "box.smd": [
+          "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+        ],
+        "flame.smd": [
+          "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+          "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+        ],
+        "tools.dmx": [
+          "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+        ]
+      },
+      "mesh_target_names": {
+        "box.smd": [
+          []
+        ],
+        "flame.smd": [
+          [],
+          []
+        ],
+        "tools.dmx": [
+          [
+            "Tools"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "blush",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "box",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "excl mark",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        },
+        {
+          "index": 1,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 2,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        },
+        {
+          "index": 3,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "inactive_material_statuses": [],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/blush.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/box.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/excl mark.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [],
+      "parameters": {
+        "sha256": "38f38905687b1ca72d94792de1c7286a954c97111145253819b8803397d0924e",
+        "bytes": 5874,
+        "mtime_ns": 1794546483934532500
+      },
+      "dependencies": {
+        "sha256": "d1b19b2b798b878833ab3f5d02062c7a99ebd52425ec5b1a171995c6bfa8a3a1",
+        "bytes": 3692,
+        "mtime_ns": 1794546483935539000
+      },
+      "structure_receipt": {
+        "sha256": "3bde9bac713f5f12be3eae339bb187a01a32a1ca075331a11e48e891681f8f68",
+        "bytes": 565939,
+        "mtime_ns": 1794546484500003200
+      },
+      "dependency_classification_receipt": {
+        "sha256": "6a97b38a4bce7adf9ce1cedfab0680a97da566de50cae7a93a2365054a304de5",
+        "bytes": 1815,
+        "mtime_ns": 1794546484500003200
+      }
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-0",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 3.6204828999998426,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "a22ffa307bdc0c8512308c3197d72c502b133ed122b6df83fdb8e4f316171ed7",
+          "bytes": 389,
+          "mtime_ns": 1794546489349560900
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_3eeca920c8a44a8cac8ee349d593c2e4",
+        "window_station": "WinSta0",
+        "python_pid": 19504,
+        "blender_pid": 8020,
+        "python_thread": 24736,
+        "blender_thread": 10032,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "e54da36bf6e952510339e7aa6f83c8d47f69f0f61cc09b5689e317979f569234",
+          "bytes": 2011,
+          "mtime_ns": 1794546489463568400
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/03-multi_skin_glove-skin-0/verification.json",
+        "sha256": "e1fd181c030400fa2c079bfa244ead3963551f749bfe2ea13fb3b7ba026d0c12",
+        "bytes": 507918,
+        "mtime_ns": 1794546489614864500
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "glove": 0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 1,
+        "textures": 2,
+        "bones": 66,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "bytes": 836088,
+        "mtime_ns": 1794546489037134700
+      },
+      "selected_glb_meshes": [
+        "gloves.dmx"
+      ],
+      "native_joints_bound": 66,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "gloves.dmx": [
+          "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+          "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87"
+        ]
+      },
+      "mesh_target_names": {
+        "gloves.dmx": [
+          [
+            "Ah"
+          ],
+          [
+            "Ah"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "models/touhou/tamo/Nitori edit/Gloves",
+          "vmt": "materials/models/touhou/tamo/nitori edit/gloves.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\gloves.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "vmt": "materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/black.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "models/touhou/tamo/Nitori edit/Gloves",
+          "embedded_base_image_sha256": "31d7d4e9fdfc3e377b836fdc33362c4a0e076af0ccf3807941cb1b786b56f0e0"
+        },
+        {
+          "index": 1,
+          "name": "models/touhou/tamo/Nitori edit/Gloves glow",
+          "embedded_base_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20"
+        }
+      ],
+      "inactive_material_statuses": [],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/Gloves glowg.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Gloves gloww.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Glovesg.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Glovesw.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        }
+      ],
+      "parameters": {
+        "sha256": "679f4286f9daa41c306632b8987f7e20f866c5596eee5b842b7554d8d7a68074",
+        "bytes": 9874,
+        "mtime_ns": 1794546489038138500
+      },
+      "dependencies": {
+        "sha256": "d6f82acd48531d9fab66958fb2272e93ae9e9050d3182cddd3b8a015356f5e2f",
+        "bytes": 3662,
+        "mtime_ns": 1794546489039137500
+      },
+      "structure_receipt": {
+        "sha256": "33d79eebe444c40247d412182489d084af8195722b155ccee9ee8ef522bb4f14",
+        "bytes": 472898,
+        "mtime_ns": 1794546489599328000
+      },
+      "dependency_classification_receipt": {
+        "sha256": "ffe0f1bc82dc95ae71e5350b0b7fd54431ee35737e1643449078c9ac71decacd",
+        "bytes": 2568,
+        "mtime_ns": 1794546489601331600
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-000",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 3.8251586000005773,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "8efdcd95fa03c2be6b2b4d6fa4a3684dc1f5d7818f3819a2887b5c049a15159d",
+          "bytes": 389,
+          "mtime_ns": 1794546494697692900
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_5f8d769b2ba04c57aeccad0f73bb3fa1",
+        "window_station": "WinSta0",
+        "python_pid": 16540,
+        "blender_pid": 10280,
+        "python_thread": 25488,
+        "blender_thread": 22804,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "37c25af44cfab6872095a367fbafae0f647689aaee0035793e854498d5c10442",
+          "bytes": 2012,
+          "mtime_ns": 1794546494841983400
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/04-keiki_tools_chisels-groups-000/verification.json",
+        "sha256": "d427ec30bad5dadee0e2cfb379cb5bcd27c1331d104ff1404cf26437498a36cb",
+        "bytes": 607576,
+        "mtime_ns": 1794546494961247300
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 0,
+        "flame": 0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 3,
+        "textures": 4,
+        "bones": 31,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "bytes": 933756,
+        "mtime_ns": 1794546494375024300
+      },
+      "selected_glb_meshes": [
+        "box.smd",
+        "flame.smd",
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "box.smd": [
+          "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+        ],
+        "flame.smd": [
+          "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+          "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+        ],
+        "tools.dmx": [
+          "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+        ]
+      },
+      "mesh_target_names": {
+        "box.smd": [
+          []
+        ],
+        "flame.smd": [
+          [],
+          []
+        ],
+        "tools.dmx": [
+          [
+            "Tools"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "blush",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "box",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "excl mark",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        },
+        {
+          "index": 1,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 2,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        },
+        {
+          "index": 3,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "inactive_material_statuses": [],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/blush.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/box.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/excl mark.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [],
+      "parameters": {
+        "sha256": "da47d99fb4b670b870ae8d5db33836639025b8eb50a25ba6389ede406b8e6994",
+        "bytes": 7942,
+        "mtime_ns": 1794546494376008100
+      },
+      "dependencies": {
+        "sha256": "f13fa958e2bebbe241f101c6f50dc88af4eced8bf10346b4ca27e64f6fd64ba1",
+        "bytes": 3670,
+        "mtime_ns": 1794546494378014200
+      },
+      "structure_receipt": {
+        "sha256": "3bde9bac713f5f12be3eae339bb187a01a32a1ca075331a11e48e891681f8f68",
+        "bytes": 565939,
+        "mtime_ns": 1794546494944217100
+      },
+      "dependency_classification_receipt": {
+        "sha256": "6a97b38a4bce7adf9ce1cedfab0680a97da566de50cae7a93a2365054a304de5",
+        "bytes": 1815,
+        "mtime_ns": 1794546494945216700
+      }
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-1",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 3.823204500000429,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "e15d9567b6e6b9feda54978d02b92a36fa153cb6f1c276185bf33381f5e61e1f",
+          "bytes": 389,
+          "mtime_ns": 1794546499987666600
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_7b673a0f5bbc4b608116b1307f4e8f1e",
+        "window_station": "WinSta0",
+        "python_pid": 22108,
+        "blender_pid": 1616,
+        "python_thread": 24196,
+        "blender_thread": 24408,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "b6b7cc64f09d49136cab4da7b55861c9b29206ec92fbd98847d3ceb75384dc5e",
+          "bytes": 2011,
+          "mtime_ns": 1794546500129076500
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/05-multi_skin_glove-skin-1/verification.json",
+        "sha256": "880d6f773316dcae4814f824e8706900d9d4a24ce9bb382240fcd4567fb6e53c",
+        "bytes": 507800,
+        "mtime_ns": 1794546500282679800
+      },
+      "selected_skin": 1,
+      "selected_named_bodygroups": {
+        "glove": 0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 1,
+        "textures": 2,
+        "bones": 66,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a",
+        "bytes": 792548,
+        "mtime_ns": 1794546499549042000
+      },
+      "selected_glb_meshes": [
+        "gloves.dmx"
+      ],
+      "native_joints_bound": 66,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "gloves.dmx": [
+          "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+          "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87"
+        ]
+      },
+      "mesh_target_names": {
+        "gloves.dmx": [
+          [
+            "Ah"
+          ],
+          [
+            "Ah"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "Gloves glowg",
+          "vmt": "materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/black.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "Glovesg",
+          "vmt": "materials/models/touhou/tamo/nitori edit/glovesg.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\glovesg.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "Glovesg",
+          "embedded_base_image_sha256": "12adf37b798a1a1bd578be6cd0c0ccc9ffed60ef56e2bc46b0af8a11db63450d"
+        },
+        {
+          "index": 1,
+          "name": "Gloves glowg",
+          "embedded_base_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20"
+        }
+      ],
+      "inactive_material_statuses": [],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/Gloves glowg.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Gloves gloww.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Glovesg.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Glovesw.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        }
+      ],
+      "parameters": {
+        "sha256": "2536e1fce54c022b01f538d78f19f9f01827142850b7281cd433ee2aa410cdcc",
+        "bytes": 9817,
+        "mtime_ns": 1794546499550034400
+      },
+      "dependencies": {
+        "sha256": "8254501e7a32ed705b481acf0bfcd245e4093881fcf42dd9caead30f3b3ee5b4",
+        "bytes": 3663,
+        "mtime_ns": 1794546499550034400
+      },
+      "structure_receipt": {
+        "sha256": "18a1e27f56d9d47570f43961dc74504918a11bc0de1f407234a9de7dc90637ed",
+        "bytes": 472838,
+        "mtime_ns": 1794546500269667900
+      },
+      "dependency_classification_receipt": {
+        "sha256": "d3f8de75b4b207511f7ff58bba13550be5b5756d5baf381a897e960ef2239074",
+        "bytes": 2511,
+        "mtime_ns": 1794546500270679300
+      }
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-2",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 3.8244610000001558,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "a2e595dd90ba26d73d612687347795c89715705641481b5f02d01a7760d0efa2",
+          "bytes": 389,
+          "mtime_ns": 1794546505266200700
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_bb36d3d07dd6495cb06d05e18093b8c8",
+        "window_station": "WinSta0",
+        "python_pid": 20296,
+        "blender_pid": 10256,
+        "python_thread": 3048,
+        "blender_thread": 2084,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "025ea1047281e575fbc33138483a6cf0bd1b8fbf8e02e6af87b556ae3350e696",
+          "bytes": 2012,
+          "mtime_ns": 1794546505381993500
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/06-multi_skin_glove-skin-2/verification.json",
+        "sha256": "662f101d725918030372d37a03c5c2aefcde04c8d8414e282008d7cd11509262",
+        "bytes": 507801,
+        "mtime_ns": 1794546505537831700
+      },
+      "selected_skin": 2,
+      "selected_named_bodygroups": {
+        "glove": 0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 1,
+        "textures": 2,
+        "bones": 66,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0",
+        "bytes": 793036,
+        "mtime_ns": 1794546504826366600
+      },
+      "selected_glb_meshes": [
+        "gloves.dmx"
+      ],
+      "native_joints_bound": 66,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "gloves.dmx": [
+          "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87",
+          "45d0d23bb40208d85582239a0cb0c4695be21fe806e92829dd05c4c269f0bd87"
+        ]
+      },
+      "mesh_target_names": {
+        "gloves.dmx": [
+          [
+            "Ah"
+          ],
+          [
+            "Ah"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "Gloves gloww",
+          "vmt": "materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/black.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "Glovesw",
+          "vmt": "materials/models/touhou/tamo/nitori edit/glovesw.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\Nitori edit\\glovesw.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "Glovesw",
+          "embedded_base_image_sha256": "3aebcbfee0fccf84b574ac499be502bf3ac1d4a199cc11186f1617651c1b828e"
+        },
+        {
+          "index": 1,
+          "name": "Gloves gloww",
+          "embedded_base_image_sha256": "4c5961510a1be436170e2b35ff2fdfa621e227058b3106f166e0f07032304a20"
+        }
+      ],
+      "inactive_material_statuses": [],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/Gloves glowg.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Gloves gloww.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Glovesg.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/Glovesw.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glowg.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves gloww.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        },
+        {
+          "from": "Takane and Nitori/materials/models/touhou/tamo/nitori edit/gloves glow.vmt",
+          "key": "$bumpmap",
+          "value": "hairbump",
+          "kind": "texture",
+          "reference": "materials/hairbump.vtf",
+          "owned_member": "Takane and Nitori/materials/hairbump.vtf",
+          "resolved": false,
+          "engine_generated": false,
+          "supported_bridge_input": false
+        }
+      ],
+      "parameters": {
+        "sha256": "b90f3ac07d8f2d96a40ba40f2b45738dfd51ee3eef5d06ca42ab3b9391376fb0",
+        "bytes": 9817,
+        "mtime_ns": 1794546504827361100
+      },
+      "dependencies": {
+        "sha256": "262253e969f673ad7b87a4bf1b8c5d0527c7f654734525ccb62194d5faba5f38",
+        "bytes": 3663,
+        "mtime_ns": 1794546504827361100
+      },
+      "structure_receipt": {
+        "sha256": "4da277ec545dbfa52a99cc46bc688d7f49a92beda9075a206f194bf2f8a2b417",
+        "bytes": 472838,
+        "mtime_ns": 1794546505523295700
+      },
+      "dependency_classification_receipt": {
+        "sha256": "2f91977b17cb2335545952a58f9bfebd97e665ba6ff1063259572767f2eba815",
+        "bytes": 2511,
+        "mtime_ns": 1794546505524279900
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-001",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 3.820211799999015,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "becd7d253febf3ca698098fc8d7e57bd0f47754bec70552e5a18e867cb81e8b9",
+          "bytes": 389,
+          "mtime_ns": 1794546510541486800
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_0d2e22473fdc4f229ffa3a413e1e5a84",
+        "window_station": "WinSta0",
+        "python_pid": 22952,
+        "blender_pid": 6304,
+        "python_thread": 13440,
+        "blender_thread": 17132,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "a6923a9d062c99bcd057511ac15c2c1c7959d7c6c048863c9619ff1af27ea444",
+          "bytes": 2011,
+          "mtime_ns": 1794546510674963800
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/07-keiki_tools_chisels-groups-001/verification.json",
+        "sha256": "154efe407ec0493b12165816632d595439e6db87124c9a7ec0d803bbcc01dfe8",
+        "bytes": 406201,
+        "mtime_ns": 1794546510764864100
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 0,
+        "flame": 1
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0,
+        "1": 0,
+        "2": 1
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 2,
+        "textures": 4,
+        "bones": 31,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82",
+        "bytes": 328448,
+        "mtime_ns": 1794546510190733400
+      },
+      "selected_glb_meshes": [
+        "box.smd",
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "box.smd": [
+          "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+        ],
+        "tools.dmx": [
+          "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+        ]
+      },
+      "mesh_target_names": {
+        "box.smd": [
+          []
+        ],
+        "tools.dmx": [
+          [
+            "Tools"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "box",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        },
+        {
+          "index": 1,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "inactive_material_statuses": [
+        {
+          "material": "excl mark",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "blush",
+          "status": "PBR approximation"
+        }
+      ],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/blush.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/box.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/excl mark.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [],
+      "parameters": {
+        "sha256": "b180a511236d3b6f4078c03a451aa4d0e512eb36f43568a412d6f9e4d2975367",
+        "bytes": 7942,
+        "mtime_ns": 1794546510191874200
+      },
+      "dependencies": {
+        "sha256": "fc12bb9c15b63c0884acfd5f89ec1eea9f4cfe87cefca370ec95012455ca015f",
+        "bytes": 3670,
+        "mtime_ns": 1794546510191874200
+      },
+      "structure_receipt": {
+        "sha256": "cbb5cdcd4f975ec4fe72ebbad6cc75f82a5dfa072e2a62ba1da7d06199e2f0f7",
+        "bytes": 377491,
+        "mtime_ns": 1794546510750355000
+      },
+      "dependency_classification_receipt": {
+        "sha256": "1fafcd895f35edffdee8da11b5713a4b63fa45615b48fb7f4615a4050fd84896",
+        "bytes": 1817,
+        "mtime_ns": 1794546510751364500
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-010",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 4.030275600000095,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "0ffd575a3f66d4b8069ce4857600a4902378a0af166073a93563cd2c8ef9982f",
+          "bytes": 389,
+          "mtime_ns": 1794546516177499300
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_7bffac81e2c44267918efe072c6d5323",
+        "window_station": "WinSta0",
+        "python_pid": 24884,
+        "blender_pid": 24968,
+        "python_thread": 3476,
+        "blender_thread": 24912,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "20d0757a791ad1121814d5ecdca1754a0565c1a42a640e4124598a35bf6030c7",
+          "bytes": 2012,
+          "mtime_ns": 1794546516291401600
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/08-keiki_tools_chisels-groups-010/verification.json",
+        "sha256": "bde1dedcecbd7322b0577f79ee020628601be610cfc515dfae8756140b6ed9cd",
+        "bytes": 406679,
+        "mtime_ns": 1794546516426864100
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 1,
+        "flame": 0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0,
+        "1": 1,
+        "2": 0
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 2,
+        "textures": 4,
+        "bones": 31,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a",
+        "bytes": 851824,
+        "mtime_ns": 1794546515745805500
+      },
+      "selected_glb_meshes": [
+        "flame.smd",
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "flame.smd": [
+          "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+          "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+        ],
+        "tools.dmx": [
+          "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+        ]
+      },
+      "mesh_target_names": {
+        "flame.smd": [
+          [],
+          []
+        ],
+        "tools.dmx": [
+          [
+            "Tools"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "blush",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "excl mark",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 1,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        },
+        {
+          "index": 2,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "inactive_material_statuses": [
+        {
+          "material": "box",
+          "status": "PBR approximation"
+        }
+      ],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/blush.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/box.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/excl mark.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [],
+      "parameters": {
+        "sha256": "d6bc33be2beb7bc8cde074e6b36de5d3431d9fdaf903238de395af38e1d96b52",
+        "bytes": 7942,
+        "mtime_ns": 1794546515748806200
+      },
+      "dependencies": {
+        "sha256": "0243d2be453cb31f1d646b36c6185ab0ec8ab87c7a553c8d91fc62a6bd9dcec2",
+        "bytes": 3670,
+        "mtime_ns": 1794546515749805200
+      },
+      "structure_receipt": {
+        "sha256": "934ba722d21e49399da0f6db9ccd5f5dc198af62d86e05a6ba54ffe711ab84dc",
+        "bytes": 377943,
+        "mtime_ns": 1794546516411269100
+      },
+      "dependency_classification_receipt": {
+        "sha256": "e213abdba5d5815d338a76a841f48b16a9d204eb255683f1d2642f403d5950de",
+        "bytes": 1817,
+        "mtime_ns": 1794546516413266700
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-011",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 4.228931600000578,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "4ddb57cc3607b1de0c93aa4a657d2614c5e5e44d98570a2d0e0e19cf21ea6a9b",
+          "bytes": 388,
+          "mtime_ns": 1794546522670827100
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_0405b2fcb1f945aa912c7d6a1cdb8328",
+        "window_station": "WinSta0",
+        "python_pid": 4608,
+        "blender_pid": 23872,
+        "python_thread": 6756,
+        "blender_thread": 7536,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "df4e686b6b6a2b352c83c2c2b1ee3336c2cda70a5e18b4cb91ca79a5a388711c",
+          "bytes": 2011,
+          "mtime_ns": 1794546522792790300
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/09-keiki_tools_chisels-groups-011/verification.json",
+        "sha256": "e97be3eb2d7e74c1264c4077db450edb762de9e6a4a6e766eec424d4b82f3a96",
+        "bytes": 205301,
+        "mtime_ns": 1794546522881025900
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 0,
+        "box": 1,
+        "flame": 1
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 0,
+        "1": 1,
+        "2": 1
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 1,
+        "textures": 4,
+        "bones": 31,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0",
+        "bytes": 246516,
+        "mtime_ns": 1794546522157649200
+      },
+      "selected_glb_meshes": [
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "tools.dmx": [
+          "fa1ee83b26621a28b76928c3f092f8086bef3f1d5d514d2ef5fd09be4d24945c"
+        ]
+      },
+      "mesh_target_names": {
+        "tools.dmx": [
+          [
+            "Tools"
+          ]
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/props.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\chistle.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "models/touhou/tamo/Keiki Haniyashin/props",
+          "embedded_base_image_sha256": "5df1b403ad4fb344145de635530f83aefc3360a6e443f7d4d9d027965c58ec2f"
+        }
+      ],
+      "inactive_material_statuses": [
+        {
+          "material": "excl mark",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "box",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "blush",
+          "status": "PBR approximation"
+        }
+      ],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/blush.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/box.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/excl mark.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [],
+      "parameters": {
+        "sha256": "e6fe19e84d557c3cb4bce333ae5cc205fcf3d69961b6c921a738da5461baa5fc",
+        "bytes": 7942,
+        "mtime_ns": 1794546522159162300
+      },
+      "dependencies": {
+        "sha256": "fc6ddcfd174b29468e18fca09980a812cffe5cd546b41638621d0ee30bc0334a",
+        "bytes": 3670,
+        "mtime_ns": 1794546522160168600
+      },
+      "structure_receipt": {
+        "sha256": "054c6aef5559fb913c75f6b27a135008e62cd0b758ab0df3fb59c0d691f2db00",
+        "bytes": 189495,
+        "mtime_ns": 1794546522872033100
+      },
+      "dependency_classification_receipt": {
+        "sha256": "1cd350d12745418c4b8f5748eee8f1bf4403e0443f4c144a26ed73f92ba1cf20",
+        "bytes": 1817,
+        "mtime_ns": 1794546522873031900
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-100",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 4.026539200000116,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "d930735f8ef3265ac53053f05e99879fa36955fce33ef277e302f0be81109d4f",
+          "bytes": 388,
+          "mtime_ns": 1794546528792692700
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_d7826b77f5fd45189b830e48c56a6f5c",
+        "window_station": "WinSta0",
+        "python_pid": 3652,
+        "blender_pid": 16664,
+        "python_thread": 2132,
+        "blender_thread": 4792,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "9f069bf217bf0cc6fc4c4e2d06bff4e8ecaa2d268496b752fc903febea54bf50",
+          "bytes": 2011,
+          "mtime_ns": 1794546528924728700
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/10-keiki_tools_chisels-groups-100/verification.json",
+        "sha256": "5863eb97dd69652183b7648d45c5c616ddce7f01b622993f13f37eb5d612e266",
+        "bytes": 406540,
+        "mtime_ns": 1794546529074044700
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 1,
+        "box": 0,
+        "flame": 0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 2,
+        "textures": 4,
+        "bones": 31,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3",
+        "bytes": 696656,
+        "mtime_ns": 1794546528436988300
+      },
+      "selected_glb_meshes": [
+        "box.smd",
+        "flame.smd"
+      ],
+      "native_joints_bound": 31,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "box.smd": [
+          "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+        ],
+        "flame.smd": [
+          "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+          "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+        ]
+      },
+      "mesh_target_names": {
+        "box.smd": [
+          []
+        ],
+        "flame.smd": [
+          [],
+          []
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "blush",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "box",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "excl mark",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        },
+        {
+          "index": 1,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 2,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        }
+      ],
+      "inactive_material_statuses": [
+        {
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "status": "PBR approximation"
+        }
+      ],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/blush.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/box.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/excl mark.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [],
+      "parameters": {
+        "sha256": "431fc3c33de597b49b9dde95a93d57a718904b45b91830ba98acff7ac369804c",
+        "bytes": 7942,
+        "mtime_ns": 1794546528439017700
+      },
+      "dependencies": {
+        "sha256": "d4371f6f0787f600538f2602d75fd2998e5a4906d16472ad35d0672ed993be20",
+        "bytes": 3670,
+        "mtime_ns": 1794546528439995300
+      },
+      "structure_receipt": {
+        "sha256": "40cc59688827c8f74068335e6b2050998a409f89742fb1da7e8bfb6c0d240aa5",
+        "bytes": 377816,
+        "mtime_ns": 1794546529058439700
+      },
+      "dependency_classification_receipt": {
+        "sha256": "cc3963b1c1eae7ea54116c8b398e61e2fb66c7dc40b50c4a03751cf3eebb43b1",
+        "bytes": 1817,
+        "mtime_ns": 1794546529061436900
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-101",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 4.027507899998454,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "fa56220f61c3834cf36246b08a00b38804f56fdbddafe04b7b8556d654a0263c",
+          "bytes": 389,
+          "mtime_ns": 1794546535048805100
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_b83def7cbf0b4a3bacd3f56286c9cfa0",
+        "window_station": "WinSta0",
+        "python_pid": 23844,
+        "blender_pid": 9228,
+        "python_thread": 1980,
+        "blender_thread": 21356,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "0cbd96ddce510d3caf9ce8eba04acbcfeb1bb6804900a4f0a351072fc8c765ee",
+          "bytes": 2011,
+          "mtime_ns": 1794546535149689100
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/11-keiki_tools_chisels-groups-101/verification.json",
+        "sha256": "31b77030697a270285271656a1b4b1e58cb8b88316c30d5bf3f39c3920811866",
+        "bytes": 205161,
+        "mtime_ns": 1794546535219897000
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 1,
+        "box": 0,
+        "flame": 1
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 1,
+        "1": 0,
+        "2": 1
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 1,
+        "textures": 4,
+        "bones": 31,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40",
+        "bytes": 91356,
+        "mtime_ns": 1794546534682069800
+      },
+      "selected_glb_meshes": [
+        "box.smd"
+      ],
+      "native_joints_bound": 31,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "box.smd": [
+          "eb49d4ec9024a98dfbaf2a1890099d670dd37a6044f07a5c3ff8285b9a875691"
+        ]
+      },
+      "mesh_target_names": {
+        "box.smd": [
+          []
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "box",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/box.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\box.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "box",
+          "embedded_base_image_sha256": "db5243b5073bd6b8b9ebff434431d790970abcb3efee05d8750d43fc486935b3"
+        }
+      ],
+      "inactive_material_statuses": [
+        {
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "excl mark",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "blush",
+          "status": "PBR approximation"
+        }
+      ],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/blush.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/box.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/excl mark.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [],
+      "parameters": {
+        "sha256": "7735bd57a1bee5e4b529b93ec0c5b406819235ede2f9c639ef8053a56d55b6b6",
+        "bytes": 7942,
+        "mtime_ns": 1794546534684078000
+      },
+      "dependencies": {
+        "sha256": "85ac04d06f18e5e569c136b18ce3dd1a7944cbba17d1c18159ba84444a214906",
+        "bytes": 3670,
+        "mtime_ns": 1794546534685079900
+      },
+      "structure_receipt": {
+        "sha256": "f99c9602a53bc4150808e8b171e6cb971f0977b891769bf591b9fc7fb39f4034",
+        "bytes": 189367,
+        "mtime_ns": 1794546535210375700
+      },
+      "dependency_classification_receipt": {
+        "sha256": "24178ccb39672d7b66a7a9cdec6afd7c491dee1386c5dc31dca9817964994915",
+        "bytes": 1817,
+        "mtime_ns": 1794546535212877300
+      }
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-110",
+      "expected_success": true,
+      "passed": true,
+      "exit": 0,
+      "seconds": 4.0286379999997735,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "23a0bd1421d12523b43962c77e9ccb66d675ae807c5bcf45fafa635f4a93c7e1",
+          "bytes": 388,
+          "mtime_ns": 1794546541189317000
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_02eefe1ab946424eab58cb758ac4547d",
+        "window_station": "WinSta0",
+        "python_pid": 5560,
+        "blender_pid": 19136,
+        "python_thread": 23796,
+        "blender_thread": 15444,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "cb7fad4f76468d62fe91c91690e59a0f71808ff2a75623c6602d2b494f5e9cd6",
+          "bytes": 2011,
+          "mtime_ns": 1794546541307060600
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/12-keiki_tools_chisels-groups-110/verification.json",
+        "sha256": "c76f41c906c3320b2b8eee4dad9d8c33cb0633352ba6cb831796fc718ca6802a",
+        "bytes": 205641,
+        "mtime_ns": 1794546541402962300
+      },
+      "selected_skin": 0,
+      "selected_named_bodygroups": {
+        "tools": 1,
+        "box": 1,
+        "flame": 0
+      },
+      "selected_native_bodygroup_indices": {
+        "0": 1,
+        "1": 1,
+        "2": 0
+      },
+      "explicit_native_catalogue_present": true,
+      "native_metadata_catalogue_verified_by_driver": true,
+      "report_counts": {
+        "meshes": 1,
+        "textures": 4,
+        "bones": 31,
+        "static_lights": 0
+      },
+      "glb": {
+        "sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+        "bytes": 614724,
+        "mtime_ns": 1794546540795812500
+      },
+      "selected_glb_meshes": [
+        "flame.smd"
+      ],
+      "native_joints_bound": 31,
+      "geometry_binding_rest_morph_defaults_preserved_against_baseline": true,
+      "mesh_primitive_fingerprints": {
+        "flame.smd": [
+          "fe1b435f788da473377f9706cf948c5d5952b79989ac39e81342422f2c15f12c",
+          "5a95f142fca1ebd34ab5eb48f6a089f719a70c38a57596eced9e5ea3bf555cc9"
+        ]
+      },
+      "mesh_target_names": {
+        "flame.smd": [
+          [],
+          []
+        ]
+      },
+      "active_materials": [
+        {
+          "material": "blush",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/blush.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\sorrow.vtf",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "excl mark",
+          "vmt": "materials/models/touhou/tamo/keiki haniyashin/excl mark.vmt",
+          "shader": "vertexlitgeneric",
+          "base_texture": "materials/models\\touhou\\tamo\\keiki haniyashin\\text.vtf",
+          "status": "PBR approximation"
+        }
+      ],
+      "embedded_glb_active_materials": [
+        {
+          "index": 0,
+          "name": "blush",
+          "embedded_base_image_sha256": "6116bd90ee7128bb49524ac1fd668f0d4f45252304e18a18e7b84c78e041f603"
+        },
+        {
+          "index": 1,
+          "name": "excl mark",
+          "embedded_base_image_sha256": "7d6df9880f92a6b1ba02078a94e286a755ce9474ed60949bca6bfc1f6cf41080"
+        }
+      ],
+      "inactive_material_statuses": [
+        {
+          "material": "models/touhou/tamo/Keiki Haniyashin/props",
+          "status": "PBR approximation"
+        },
+        {
+          "material": "box",
+          "status": "PBR approximation"
+        }
+      ],
+      "resolved_dependencies": 10,
+      "all_resolved_providers_owned": true,
+      "actual_missing_requests": [
+        {
+          "path": "materials/blush.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/box.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        },
+        {
+          "path": "materials/excl mark.vmt",
+          "classification": "optional lookup probe or unclassified request"
+        }
+      ],
+      "native_preflight_missing_references": [],
+      "parameters": {
+        "sha256": "5c0db45bd6f776ca9b293cd460b311e227de79150b01c8301c79e08f993227fc",
+        "bytes": 7942,
+        "mtime_ns": 1794546540797327400
+      },
+      "dependencies": {
+        "sha256": "10c5cbb51631f3bd36e56df4d62b87c3da9a022cbc0200e40881a63bff03ad8a",
+        "bytes": 3670,
+        "mtime_ns": 1794546540799333500
+      },
+      "structure_receipt": {
+        "sha256": "e8eb336a36575e35e9cfbb7a918c7756eed5d5a7528f3bbce7b993c1e91a0240",
+        "bytes": 189820,
+        "mtime_ns": 1794546541393964500
+      },
+      "dependency_classification_receipt": {
+        "sha256": "d169e2c75e9eb9823e1dbfa924737a2ca36fcee1e130f65e7be2648f23d61fe1",
+        "bytes": 1817,
+        "mtime_ns": 1794546541394963300
+      }
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "all-blank-refusal",
+      "expected_success": false,
+      "passed": true,
+      "exit": 1,
+      "seconds": 3.7251658999994106,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "ac1c88801a78efed48f2683294fbcf105b6fc7eacb730a37535442f844208728",
+          "bytes": 389,
+          "mtime_ns": 1794546547152331000
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_b2b48ad4409b4108a24b6b006205508a",
+        "window_station": "WinSta0",
+        "python_pid": 16540,
+        "blender_pid": 15448,
+        "python_thread": 13888,
+        "blender_thread": 7788,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "54f1cc44bfeeab24d960191f63f77d3109427c5613786b960046ccbee0cbc3cc",
+          "bytes": 2012,
+          "mtime_ns": 1794546547343246500
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/13-multi_skin_glove-all-blank-refusal/verification.json",
+        "sha256": "858e26577ce84757864798c6c74556a678c44b7b410dc78f1f66fa180706ffd0",
+        "bytes": 563,
+        "mtime_ns": 1794546547357761800
+      },
+      "explicit_all_blank_refusal": true,
+      "exact_reason_in_both_logs": true,
+      "successful_glb_absent": true,
+      "successful_parameters_absent": true,
+      "native_metadata_or_glb_positive_assertions": "Not applicable to deliberate no-geometry refusal."
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-111",
+      "expected_success": false,
+      "passed": true,
+      "exit": 1,
+      "seconds": 3.6248637000007875,
+      "private": {
+        "original_monitor_child_desktop_confirmed": false,
+        "private_window_seen": false,
+        "job_closed": true,
+        "desktop_closed": true,
+        "foreground_child_observed": false,
+        "receipt": {
+          "sha256": "e0761bb636b9d4867f5978a9ad5ab14719385d020d845ce6ae6fb03f9f477f4c",
+          "bytes": 389,
+          "mtime_ns": 1794546553030547400
+        }
+      },
+      "independent_isolation": {
+        "desktop": "HAS_Test_94980a3801064fb9bcbc3aff36e0cca9",
+        "window_station": "WinSta0",
+        "python_pid": 24408,
+        "blender_pid": 1896,
+        "python_thread": 2300,
+        "blender_thread": 2184,
+        "both_attested_desktop_equal_fresh_private_receipt": true,
+        "nonce_request_source_creation_parent_and_file_freshness_validated": true,
+        "python_native_imports": 7,
+        "blender_native_imports": 8,
+        "receipt": {
+          "sha256": "c8d6a2c074d0c892cd818a4f4f8db2ebb80c8ddd8872dd628a3025ca93c8050b",
+          "bytes": 2011,
+          "mtime_ns": 1794546553135678400
+        }
+      },
+      "verification": {
+        "path": "output/sfm-next-cases-20261112/conversion-run-1794546473806155800/14-keiki_tools_chisels-groups-111/verification.json",
+        "sha256": "0b458fc9fc51bba813bdc20beaff990bfd5cea943a38e1e3ad9496b0db1820a6",
+        "bytes": 555,
+        "mtime_ns": 1794546553149714000
+      },
+      "explicit_all_blank_refusal": true,
+      "exact_reason_in_both_logs": true,
+      "successful_glb_absent": true,
+      "successful_parameters_absent": true,
+      "native_metadata_or_glb_positive_assertions": "Not applicable to deliberate no-geometry refusal."
+    }
+  ],
+  "retained_first_exit2_failure": "output/sfm-next-cases-20261112/FIRST-ACTUAL-CONVERSION-FAILURE.json",
+  "old_failure_now_accepted": false,
+  "private_art_uploaded": false,
+  "cleanup_performed": false,
+  "scope": "Actual frozen worker static MDL import/export, exact native report/catalogue/selection, embedded GLB structure and retained geometry/skin/bind/rest/default-morph fingerprints, owned dependency checks and independent dual private-desktop proof. No render/app/native-fidelity acceptance.",
+  "limits": [
+    "Nitori has3native references to one missing materials/hairbump.vtf. Basic bridge base inputs resolve; no replacement or installed fallback.",
+    "Native bump/envmap/Phong/warp/glow equivalence and independent native vertex/weight/morph deformation equivalence remain unproved.",
+    "Actual GPU pixels/poses, application choices/adoption, Undo/Redo, linked/packed/fresh-offline HAS and movies remain unrun or unimplemented.",
+    "Runtime or animated skins/bodygroups, native jiggle/assembly and actual owner/device acceptance remain separate."
+  ]
+}

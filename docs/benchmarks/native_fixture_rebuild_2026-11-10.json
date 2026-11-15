@@ -1,0 +1,148 @@
+{
+  "format": "has_native_fixture_rebuild_1",
+  "date": "2026-11-10",
+  "native_import": {
+    "bundles": [
+      "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/compatibility/source-1794288130-551-2309267",
+      "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/compatibility/source-1794288134-742-6498805",
+      "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/compatibility/source-1794288140-165-11922186",
+      "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/compatibility/source-1794288141-742-13499327"
+    ],
+    "checks": 43,
+    "failures": 0,
+    "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/native-import/run_481985",
+    "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/native-import/run_481985/render_1794288147_19624414_0/movie.mp4",
+    "packed_pixels": {
+      "channels": 0,
+      "mean": 0.0
+    },
+    "project": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/native-import/run_481985/native.has",
+    "original_inputs_unchanged": true,
+    "input_paths": [
+      "C:\\a\\tools\\mmd64\\UserFile\\Model\\Miku_Hatsune.pmd",
+      "C:\\a\\tools\\mmd64\\UserFile\\Model\\environments pack 03 (FFA)\\street01_android\\street01_android.pmx",
+      "C:\\a\\dump\\AvatarSample_A.vrm",
+      "C:\\a\\dump\\AvatarSample_Avrm0.vrm"
+    ],
+    "video": {
+      "codec": "h264",
+      "size": [
+        1920,
+        1080
+      ],
+      "fps": "24/1",
+      "frames": 48,
+      "duration": "2.000000"
+    }
+  },
+  "native_pose": {
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\body-pose-native\\1794288379774775600",
+    "report": {
+      "cases": [
+        {
+          "bones": 126,
+          "label": "MMD",
+          "library_bytes": 8536,
+          "selected": "Miku_Hatsune/Miku_Hatsune_arm/Skeleton3D::\u5de6\u8155",
+          "source_sha256": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a"
+        },
+        {
+          "bones": 77,
+          "label": "GMod",
+          "library_bytes": 7316,
+          "selected": "reimu_hakurei_bikini_ragdoll_ARM/Skeleton3D::ValveBiped.Bip01_L_UpperArm",
+          "source_sha256": "41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089"
+        },
+        {
+          "bones": 83,
+          "label": "SFM",
+          "library_bytes": 4685,
+          "selected": "scout_ARM/Skeleton3D::bip_upperArm_L",
+          "source_sha256": "a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac"
+        },
+        {
+          "bones": 91,
+          "label": "VRM1.0",
+          "library_bytes": 5917,
+          "selected": "HASAvatarRoot0/Skeleton3D::J_Bip_L_UpperArm",
+          "source_sha256": "a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062"
+        }
+      ],
+      "checks": 24,
+      "failures": 0
+    },
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\pose_library_native_1cbe3e5aca8f43f390a52e07c1cd8b57.json",
+    "source_hashes": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\compatibility\\source-1794288130-551-2309267\\scene.glb": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\source-smoke\\source-project\\assets\\41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089.glb": "41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\sfm-smoke\\project\\assets\\a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac.glb": "a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\compatibility\\source-1794288140-165-11922186\\scene.glb": "a0b095f399e0f7f95c88b91d12e74f8d1816052c1552b9d2dd758ceed8a6b062"
+    },
+    "source_unchanged": true
+  },
+  "preparation": {
+    "failures": 0,
+    "results": [
+      {
+        "bones": 126,
+        "label": "MMD",
+        "native_metadata": true,
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\pose-smoke\\miku-project",
+        "saved": true,
+        "source_sha256": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a"
+      },
+      {
+        "bones": 77,
+        "label": "GMod",
+        "native_metadata": true,
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\source-smoke\\source-project",
+        "saved": true,
+        "source_sha256": "41ea9646c599e1ccaf4afa4e426289998c2117b831da18be8a4b0d8633767089"
+      },
+      {
+        "bones": 83,
+        "label": "SFM",
+        "native_metadata": true,
+        "project": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\sfm-smoke\\project",
+        "saved": true,
+        "source_sha256": "a04bf7258fa848885732a87b773d59b190885b26660050b499941616e856c7ac"
+      }
+    ]
+  },
+  "source_snapshot": {
+    "format": "has_owner_review_source_snapshot_1",
+    "target": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Studio",
+    "source_commit": "04023817ce9952ad43d072d25f3090640d918a74",
+    "profile": "HAS Owner Acceptance 1794288455684140000",
+    "normal_startup": {
+      "empty": true,
+      "home_visible": true,
+      "profile": "C:/Users/noble/AppData/Roaming/HAS Owner Acceptance 1794288455684140000",
+      "recovery": {
+        "attempts": [],
+        "cancelled": false,
+        "restored": false
+      },
+      "simple": true
+    },
+    "private_receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_7b79140f59924af2952f75e08d7d7494",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 28352,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.853
+    },
+    "no_development_cache_copied": true,
+    "automated_tests_separate_from_owner_output_and_preferences": true,
+    "installation_replaced": false,
+    "retention": "Keep this review source/project folder while actual owner observations are pending. Private review artwork is not uploaded."
+  },
+  "scope": "Actual prerequisites rebuilt from originals. No new aggregate or native artist-appearance acceptance claim. Old installed cache remains untouched."
+}

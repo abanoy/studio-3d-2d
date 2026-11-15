@@ -1,0 +1,303 @@
+{
+  "format": "has_relocated_owner_review_publication_candidate_1",
+  "source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+  "final_review": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261113-12071fe",
+  "actual_status": "passed",
+  "passed": true,
+  "checks": 129,
+  "case_counts": [
+    {
+      "name": "Avatar.has",
+      "checks": 21,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Flatgrass.has",
+      "checks": 21,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Street.has",
+      "checks": 21,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Reimu helpers.has",
+      "checks": 23,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Back hair demo.has",
+      "checks": 22,
+      "failures": 0,
+      "passed": true
+    },
+    {
+      "name": "Mima head expressions.has",
+      "checks": 21,
+      "failures": 0,
+      "passed": true
+    }
+  ],
+  "preservation_flags": {
+    "protected_old_review_unchanged": true,
+    "protected_old_studio_source_unchanged": true,
+    "all_final_packages_unchanged": true,
+    "harness_unchanged": true,
+    "original_sourceio_unchanged": true,
+    "approved_runtimes_unchanged": true,
+    "final_source_unchanged": true,
+    "final_sourceio_exact": true
+  },
+  "source_before_after_equal": true,
+  "recorded_final_source_entries": 2331,
+  "packages_before_after_equal": true,
+  "harness_before_after_equal": true,
+  "private_jobs": [
+    {
+      "label": "stage-home",
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-stage-12071fe-1794607570195742200\\Studio\\output\\private-desktop\\studio_5658786d9bf4470498260953bed4d0fa.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_386c27dcfbf24f849fc2e11777e95d90",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8252,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.396
+      },
+      "passed": true,
+      "matches_inline_exactly": true
+    },
+    {
+      "label": "final-home",
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\home\\private-receipt.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f063afe31d2440d5b1211d705fd1f8a6",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 18156,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 2.623
+      },
+      "passed": true,
+      "matches_inline_exactly": true
+    },
+    {
+      "label": "final-1",
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\01-avatar\\private-receipt.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_3d04de360cf44a97a48d4ff393530c91",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25308,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.674
+      },
+      "passed": true,
+      "matches_inline_exactly": true
+    },
+    {
+      "label": "final-2",
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\02-flatgrass\\private-receipt.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b62763e00e8445509867f5657b73ebae",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 1964,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 5.101
+      },
+      "passed": true,
+      "matches_inline_exactly": true
+    },
+    {
+      "label": "final-3",
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\03-street\\private-receipt.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1e576ba072bd41dd8e3c28c11cf9cb55",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 8268,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.137
+      },
+      "passed": true,
+      "matches_inline_exactly": true
+    },
+    {
+      "label": "final-4",
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\04-reimu-helpers\\private-receipt.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2671d58130ec448a8acf335aae64d0e7",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 22888,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.442
+      },
+      "passed": true,
+      "matches_inline_exactly": true
+    },
+    {
+      "label": "final-5",
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\05-back-hair-demo\\private-receipt.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f2261ddd7bc74369bf9eaee3c9d0d408",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 10028,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.424
+      },
+      "passed": true,
+      "matches_inline_exactly": true
+    },
+    {
+      "label": "final-6",
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\06-mima-head-expressions\\private-receipt.json",
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_143f0d05b573457f82670bbbb86bf508",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 25400,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.794
+      },
+      "passed": true,
+      "matches_inline_exactly": true
+    }
+  ],
+  "all_8_private_exit0_closed_exact_inline": true,
+  "stage_home": {
+    "empty": true,
+    "home_visible": true,
+    "profile": "C:/Users/noble/AppData/Roaming/HAS Owner Acceptance 1794607573296736500",
+    "recovery": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "simple": true
+  },
+  "final_home": {
+    "empty": true,
+    "home_visible": true,
+    "profile": "C:/Users/noble/AppData/Roaming/HAS Owner Acceptance 1794607573296736500",
+    "recovery": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "simple": true
+  },
+  "guide_correction": {
+    "format": "has_owner_review_guide_utf8_correction_1",
+    "observed_utc": "2026-11-13T22:08:33.568799+00:00",
+    "target": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261113-12071fe\\README.md",
+    "template_sha256": "d355b272697844be25c115a204ca9867926c2a6b7cc959db259a361f90898278",
+    "before_sha256": "4416d657581c7c30365c68f1517897d4172d979475ce437b669ae340ebb7f622",
+    "after_sha256": "158421eb0cdb3e86696f968176409fe53f1101faf5eeb079b5e211e3c53ddb4f",
+    "before_bytes": 3626,
+    "after_bytes": 3578,
+    "reason": "Coordinator used locale-default read_text for UTF8 template; explicit UTF8 repair of final guide only after successful replay. Frozen coordinator/harness and Studio/project/runtime bytes unchanged.",
+    "future_recipe": "Read README.template.md with encoding=utf-8 before replacing tokens and writing UTF8"
+  },
+  "final_guide_hash_matches_correction": true,
+  "before_guide_hash_matches_correction": true,
+  "future_utf8_patch_applied": false,
+  "frozen_coordinator_sha256": "d5c17e97d67bf91250229d9f62bfe9aaefe922057c148a362e4fdc706ba4fadd",
+  "terminal_host_evidence": {
+    "final_host": {
+      "format": "has_relocated_review_authoritative_host_termination_1",
+      "observed_utc": "2026-11-13T22:09:55.5007939Z",
+      "coordinator_pid": 9548,
+      "expected_creation_utc": "2026-11-13T22:05:49.1745134Z",
+      "coordinator_absent": true,
+      "owned_runtime_command_matches_absent": true,
+      "owned_matches": [],
+      "query": "Authoritative Windows host CIM, exact checkout and final-review command boundaries; current probe only excluded",
+      "probe_pid": 24860,
+      "no_process_killed": true,
+      "review_source_commit": "12071fe182a17d17e2a1547c7dbb97f6aa4dd160",
+      "review_state_sha256": "bd9a716edee4536356c0dff4f1a7bff10cc0b0650f5875052c83bcd2ce515e46",
+      "preliminary_match": "Prior PID2144 was a known read-only metadata shell, preserved in preliminary proof; no runtime was killed or ignored"
+    },
+    "desktop_enumeration": {
+      "format": "has_after_relocated_review_desktops_1",
+      "observed_utc": "2026-11-13T22:09:55.570522+00:00",
+      "enumeration_succeeded": true,
+      "desktop_names": [
+        "Default"
+      ],
+      "remaining_HAS_test_desktops": []
+    },
+    "state_sha256_matches_final_host": true,
+    "final_host_absence_passed": true,
+    "desktop_absence_passed": true,
+    "preliminary_match": {
+      "pid": 2144,
+      "classification": "known read-only metadata shell from this audit, not review runtime",
+      "exact_command_identification_passed": true,
+      "original_preliminary_owned_absence_flag_preserved": false,
+      "source_record": "host/authoritative-host-termination.json",
+      "no_process_killed": true
+    }
+  },
+  "private_art_media_runtime_payload_copied": false,
+  "installation_replaced": false,
+  "artist_device_install_acceptance": false,
+  "passed_actual_metadata_predicates": true,
+  "complete_publication_metadata_passed": true
+}

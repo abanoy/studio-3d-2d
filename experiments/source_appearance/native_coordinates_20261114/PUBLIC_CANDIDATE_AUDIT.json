@@ -1,0 +1,703 @@
+{
+  "format": "has_independent_native_glTF_coordinate_proof_1",
+  "status": "PASSED_GLTF_REST_ONLY",
+  "checked_utc": "2026-11-14T03:57:59Z",
+  "inputs": {
+    "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "glb_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "parameters_sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed",
+    "native_vvd_sha256": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0",
+    "native_vvd_checksum_matches_mdl": true,
+    "source_scale": 0.01905,
+    "source_sdk_commit": "019e91ccd650a34745934c65cdbbe89ffcc44ede",
+    "reference_files": [
+      {
+        "file": "jigglebones.cpp",
+        "sha256": "a3f319258a21498bfa6467bef641446d66ecd5497b9dc8a949b1f08b87d7027e"
+      },
+      {
+        "file": "jigglebones.h",
+        "sha256": "4e859d919b71f62bfee8fd9554e41b25c5b0ef8447d400c932f411340b296c1f"
+      }
+    ]
+  },
+  "scope": {
+    "stdlib_only": true,
+    "production_parser_imports": false,
+    "native_runtime_or_apps_launched": false,
+    "main_files_changed": false,
+    "dynamics_implemented": false,
+    "HAS_world_or_runtime_pose_binding": "UNRUN",
+    "plus_minus_XYZ_pose_transport": "UNRUN",
+    "two_source_scales": "UNRUN",
+    "native_solver": "NOT_IMPLEMENTED",
+    "native_arrays_published": false
+  },
+  "counts": {
+    "native_bones": 69,
+    "native_jiggle_rules": 49,
+    "gltf_nodes": 72,
+    "skins": 1,
+    "meshes": 2,
+    "primitives": 4,
+    "native_VVD_vertices": 9661,
+    "exported_vertices": 9661,
+    "source_vertices_consumed_exactly_once": 9661,
+    "multiple_compatible_position_weight_UV_candidates": 4
+  },
+  "coordinate_conversion": {
+    "proper_axis_candidates": 24,
+    "unique_candidates_with_translation_error_below_tolerance": 1,
+    "axis_map": [
+      "+X",
+      "+Z",
+      "-Y"
+    ],
+    "global_position_max_distance": 6.696817031520043e-07,
+    "next_best_proper_position_max_distance": 0.313830472335378,
+    "best_reflected_position_max_distance": 0.31849156468872286,
+    "complete_joint_basis_relation": "G_glTF = C * N_scaled_native, within recorded error",
+    "conjugated_rest_max_matrix_error": 1.2890509487254034,
+    "simple_left_multiply_only_max_matrix_error": 4.173043786220854e-06,
+    "right_basis_correction_vs_identity_max_error": 4.5951724004789085e-06,
+    "per_bone_extra_correction_required_at_tolerance": false,
+    "conjugation_hypothesis": "REFUTED; retained as failed diagnostic hypothesis",
+    "tolerance": 2e-05
+  },
+  "matrix_domain": {
+    "negative_determinants": 0,
+    "global_determinant_min": 0.9999943375667649,
+    "global_determinant_max": 1.0000014901161614,
+    "maximum_unit_column_error": 4.595169581289582e-06,
+    "maximum_nonuniform_column_ratio": 1.0000043658376347,
+    "maximum_column_dot": 1.458829820277785e-07,
+    "nonrigid_reflection_shear_negative_controls_passed": true
+  },
+  "skin": {
+    "inverse_bind_closure_max_matrix_error": 2.2477332930204152e-06,
+    "independent_native_inverse_bind_max_matrix_error": 4.9179071215377235e-06,
+    "weight_sum_max_error": 9.685754776000977e-08,
+    "neutral_GLTF_weighted_max_distance": 5.19737674063321e-07,
+    "neutral_native_rest_weighted_max_distance": 1.2651226911779034e-06,
+    "native_vs_GLTF_weighted_max_distance": 9.661037908726419e-07,
+    "native_VVD_scaled_axis_position_max_distance": 7.488293390250572e-08,
+    "native_VVD_to_GLTF_weight_max_error": 1.1920928955078125e-07,
+    "native_VVD_to_GLTF_normal_max_distance": 0.00121654672362075,
+    "normal_fidelity_acceptance": "NOT_CLAIMED; measured differences are separate from position/weight and neutral-skin qualification",
+    "native_VVD_UV_agreement_allowing_V_flip_max_distance": 0.0,
+    "primitive_counts_and_errors": [
+      {
+        "mesh_node_index": 69,
+        "mesh_index": 0,
+        "primitive_index": 0,
+        "vertex_count": 7223,
+        "neutral_weighted_max_distance": 5.19737674063321e-07
+      },
+      {
+        "mesh_node_index": 69,
+        "mesh_index": 0,
+        "primitive_index": 1,
+        "vertex_count": 788,
+        "neutral_weighted_max_distance": 2.0782439758161886e-07
+      },
+      {
+        "mesh_node_index": 70,
+        "mesh_index": 1,
+        "primitive_index": 0,
+        "vertex_count": 342,
+        "neutral_weighted_max_distance": 9.856719866890645e-08
+      },
+      {
+        "mesh_node_index": 70,
+        "mesh_index": 1,
+        "primitive_index": 1,
+        "vertex_count": 1308,
+        "neutral_weighted_max_distance": 2.549172979375795e-07
+      }
+    ]
+  },
+  "native_tip_direction": {
+    "SDK_forward_column": 2,
+    "rule_count_checked": 49,
+    "native_local_Z_tip_world_max_distance": 1.7673001010114771e-06,
+    "existing_generic_helper_behavior": "UNCHANGED; this measurement supplies future native-specific axis evidence only",
+    "GLTF_joint_local_positive_Y_vs_native_forward_max_angle_degrees": 90.00013812612983,
+    "GLTF_joint_local_positive_Z_vs_native_forward_max_angle_degrees": 0.00026959516754976987,
+    "GLTF_joint_local_positive_Y_wrong_axis_min_angle_degrees": 89.99985774766493,
+    "next_native_child_segment_pairs": 23,
+    "rules_without_native_children": 26,
+    "next_child_segment_vs_native_Z_min_angle_degrees": 0.44200567522174905,
+    "next_child_segment_vs_native_Z_max_angle_degrees": 102.69704305281931,
+    "interpretation": "In this exact GLTF rest export local +Z corresponds to native local +Z; local +Y differs by approximately90degrees. Next-child directions were measured separately; no arbitrary tail or HAS runtime axis is inferred."
+  },
+  "numeric_negative_controls": {
+    "wrong_unscaled_native_translation_max_distance": 63.539613006009745,
+    "cyclically_wrong_native_node_join_max_matrix_error": 1.9999034350515479,
+    "transposed_inverse_bind_max_closure_error": 1.9954317423964354,
+    "all_refuse_at_tolerance": true
+  },
+  "before_after_input_hashes_equal": true,
+  "selected_scene_reachable_nodes": 72,
+  "numeric_native_parent_joins_verified": 69,
+  "node_matrix_encodings": 0,
+  "numeric_index_joins": [
+    {
+      "native_index": 0,
+      "gltf_node_index": 68,
+      "skin_index": 0,
+      "joint_slot": 0,
+      "rest_max_error": 8.694546796994361e-08,
+      "inverse_bind_closure_max_error": 5.960475002453336e-08
+    },
+    {
+      "native_index": 1,
+      "gltf_node_index": 67,
+      "skin_index": 0,
+      "joint_slot": 1,
+      "rest_max_error": 6.594713503754734e-08,
+      "inverse_bind_closure_max_error": 9.114304687200554e-08
+    },
+    {
+      "native_index": 2,
+      "gltf_node_index": 66,
+      "skin_index": 0,
+      "joint_slot": 2,
+      "rest_max_error": 1.3150282410050174e-07,
+      "inverse_bind_closure_max_error": 6.791209059719321e-08
+    },
+    {
+      "native_index": 3,
+      "gltf_node_index": 65,
+      "skin_index": 0,
+      "joint_slot": 3,
+      "rest_max_error": 2.576593370884339e-07,
+      "inverse_bind_closure_max_error": 1.54576586350319e-07
+    },
+    {
+      "native_index": 4,
+      "gltf_node_index": 64,
+      "skin_index": 0,
+      "joint_slot": 4,
+      "rest_max_error": 2.6664255678432447e-07,
+      "inverse_bind_closure_max_error": 1.656890792485352e-07
+    },
+    {
+      "native_index": 5,
+      "gltf_node_index": 63,
+      "skin_index": 0,
+      "joint_slot": 5,
+      "rest_max_error": 3.2658734197866537e-07,
+      "inverse_bind_closure_max_error": 1.731173115046949e-07
+    },
+    {
+      "native_index": 6,
+      "gltf_node_index": 62,
+      "skin_index": 0,
+      "joint_slot": 6,
+      "rest_max_error": 1.9357140498832415e-06,
+      "inverse_bind_closure_max_error": 1.7439440259470543e-07
+    },
+    {
+      "native_index": 7,
+      "gltf_node_index": 50,
+      "skin_index": 0,
+      "joint_slot": 7,
+      "rest_max_error": 1.6722563234358723e-06,
+      "inverse_bind_closure_max_error": 1.8476926855193199e-07
+    },
+    {
+      "native_index": 8,
+      "gltf_node_index": 0,
+      "skin_index": 0,
+      "joint_slot": 8,
+      "rest_max_error": 4.085871345482772e-06,
+      "inverse_bind_closure_max_error": 1.5727151748308466e-06
+    },
+    {
+      "native_index": 9,
+      "gltf_node_index": 1,
+      "skin_index": 0,
+      "joint_slot": 9,
+      "rest_max_error": 1.5192486599868715e-06,
+      "inverse_bind_closure_max_error": 2.644557373088219e-07
+    },
+    {
+      "native_index": 10,
+      "gltf_node_index": 2,
+      "skin_index": 0,
+      "joint_slot": 10,
+      "rest_max_error": 1.8897455935848462e-06,
+      "inverse_bind_closure_max_error": 1.6782083806475556e-07
+    },
+    {
+      "native_index": 11,
+      "gltf_node_index": 3,
+      "skin_index": 0,
+      "joint_slot": 11,
+      "rest_max_error": 1.7994909411456206e-06,
+      "inverse_bind_closure_max_error": 2.193762043134484e-07
+    },
+    {
+      "native_index": 12,
+      "gltf_node_index": 4,
+      "skin_index": 0,
+      "joint_slot": 12,
+      "rest_max_error": 2.385203029642291e-06,
+      "inverse_bind_closure_max_error": 7.411578169854577e-07
+    },
+    {
+      "native_index": 13,
+      "gltf_node_index": 5,
+      "skin_index": 0,
+      "joint_slot": 13,
+      "rest_max_error": 2.118269373644656e-06,
+      "inverse_bind_closure_max_error": 4.4398174625648323e-07
+    },
+    {
+      "native_index": 14,
+      "gltf_node_index": 6,
+      "skin_index": 0,
+      "joint_slot": 14,
+      "rest_max_error": 2.525474794068394e-06,
+      "inverse_bind_closure_max_error": 4.688638914826515e-07
+    },
+    {
+      "native_index": 15,
+      "gltf_node_index": 7,
+      "skin_index": 0,
+      "joint_slot": 15,
+      "rest_max_error": 1.3187996925345669e-06,
+      "inverse_bind_closure_max_error": 2.801941547461717e-07
+    },
+    {
+      "native_index": 16,
+      "gltf_node_index": 8,
+      "skin_index": 0,
+      "joint_slot": 16,
+      "rest_max_error": 4.085871345482772e-06,
+      "inverse_bind_closure_max_error": 1.5727151748308466e-06
+    },
+    {
+      "native_index": 17,
+      "gltf_node_index": 10,
+      "skin_index": 0,
+      "joint_slot": 17,
+      "rest_max_error": 1.2274901333708677e-06,
+      "inverse_bind_closure_max_error": 2.812229602383587e-07
+    },
+    {
+      "native_index": 18,
+      "gltf_node_index": 9,
+      "skin_index": 0,
+      "joint_slot": 18,
+      "rest_max_error": 9.029658844250665e-07,
+      "inverse_bind_closure_max_error": 2.843941414171214e-07
+    },
+    {
+      "native_index": 19,
+      "gltf_node_index": 12,
+      "skin_index": 0,
+      "joint_slot": 19,
+      "rest_max_error": 1.2274901333708677e-06,
+      "inverse_bind_closure_max_error": 2.812229602383587e-07
+    },
+    {
+      "native_index": 20,
+      "gltf_node_index": 11,
+      "skin_index": 0,
+      "joint_slot": 20,
+      "rest_max_error": 9.029658844250665e-07,
+      "inverse_bind_closure_max_error": 2.843941414171214e-07
+    },
+    {
+      "native_index": 21,
+      "gltf_node_index": 13,
+      "skin_index": 0,
+      "joint_slot": 21,
+      "rest_max_error": 3.284196710112708e-06,
+      "inverse_bind_closure_max_error": 2.2477332930204152e-06
+    },
+    {
+      "native_index": 22,
+      "gltf_node_index": 14,
+      "skin_index": 0,
+      "joint_slot": 22,
+      "rest_max_error": 3.284196710112708e-06,
+      "inverse_bind_closure_max_error": 2.2477332930204152e-06
+    },
+    {
+      "native_index": 23,
+      "gltf_node_index": 15,
+      "skin_index": 0,
+      "joint_slot": 23,
+      "rest_max_error": 2.3718322765819977e-06,
+      "inverse_bind_closure_max_error": 1.591149427493388e-07
+    },
+    {
+      "native_index": 24,
+      "gltf_node_index": 16,
+      "skin_index": 0,
+      "joint_slot": 24,
+      "rest_max_error": 2.3718322765819977e-06,
+      "inverse_bind_closure_max_error": 1.591149427493388e-07
+    },
+    {
+      "native_index": 25,
+      "gltf_node_index": 19,
+      "skin_index": 0,
+      "joint_slot": 25,
+      "rest_max_error": 2.681839421925236e-06,
+      "inverse_bind_closure_max_error": 8.289047607051847e-07
+    },
+    {
+      "native_index": 26,
+      "gltf_node_index": 18,
+      "skin_index": 0,
+      "joint_slot": 26,
+      "rest_max_error": 2.973083277124644e-06,
+      "inverse_bind_closure_max_error": 8.271412726967853e-07
+    },
+    {
+      "native_index": 27,
+      "gltf_node_index": 17,
+      "skin_index": 0,
+      "joint_slot": 27,
+      "rest_max_error": 3.140355619268842e-06,
+      "inverse_bind_closure_max_error": 8.289244538828289e-07
+    },
+    {
+      "native_index": 28,
+      "gltf_node_index": 22,
+      "skin_index": 0,
+      "joint_slot": 28,
+      "rest_max_error": 2.681839421925236e-06,
+      "inverse_bind_closure_max_error": 8.289047607051847e-07
+    },
+    {
+      "native_index": 29,
+      "gltf_node_index": 21,
+      "skin_index": 0,
+      "joint_slot": 29,
+      "rest_max_error": 2.973083277124644e-06,
+      "inverse_bind_closure_max_error": 8.271412726967853e-07
+    },
+    {
+      "native_index": 30,
+      "gltf_node_index": 20,
+      "skin_index": 0,
+      "joint_slot": 30,
+      "rest_max_error": 3.140355619268842e-06,
+      "inverse_bind_closure_max_error": 8.289244538828289e-07
+    },
+    {
+      "native_index": 31,
+      "gltf_node_index": 25,
+      "skin_index": 0,
+      "joint_slot": 31,
+      "rest_max_error": 1.3546971082689652e-06,
+      "inverse_bind_closure_max_error": 3.279123577948351e-07
+    },
+    {
+      "native_index": 32,
+      "gltf_node_index": 24,
+      "skin_index": 0,
+      "joint_slot": 32,
+      "rest_max_error": 1.7173550918014868e-06,
+      "inverse_bind_closure_max_error": 3.5852668078817373e-07
+    },
+    {
+      "native_index": 33,
+      "gltf_node_index": 23,
+      "skin_index": 0,
+      "joint_slot": 33,
+      "rest_max_error": 2.2752905541878476e-06,
+      "inverse_bind_closure_max_error": 3.3716648717430076e-07
+    },
+    {
+      "native_index": 34,
+      "gltf_node_index": 29,
+      "skin_index": 0,
+      "joint_slot": 34,
+      "rest_max_error": 1.846631832336243e-06,
+      "inverse_bind_closure_max_error": 3.8179050965148065e-07
+    },
+    {
+      "native_index": 35,
+      "gltf_node_index": 28,
+      "skin_index": 0,
+      "joint_slot": 35,
+      "rest_max_error": 1.7941006653088287e-06,
+      "inverse_bind_closure_max_error": 4.268268806693898e-07
+    },
+    {
+      "native_index": 36,
+      "gltf_node_index": 27,
+      "skin_index": 0,
+      "joint_slot": 36,
+      "rest_max_error": 1.4216177894321724e-06,
+      "inverse_bind_closure_max_error": 3.6814751716747474e-07
+    },
+    {
+      "native_index": 37,
+      "gltf_node_index": 26,
+      "skin_index": 0,
+      "joint_slot": 37,
+      "rest_max_error": 1.9128537784296462e-06,
+      "inverse_bind_closure_max_error": 3.574921924945351e-07
+    },
+    {
+      "native_index": 38,
+      "gltf_node_index": 33,
+      "skin_index": 0,
+      "joint_slot": 38,
+      "rest_max_error": 1.846631832336243e-06,
+      "inverse_bind_closure_max_error": 3.8179050965148065e-07
+    },
+    {
+      "native_index": 39,
+      "gltf_node_index": 32,
+      "skin_index": 0,
+      "joint_slot": 39,
+      "rest_max_error": 1.7941006653088287e-06,
+      "inverse_bind_closure_max_error": 4.268268806693898e-07
+    },
+    {
+      "native_index": 40,
+      "gltf_node_index": 31,
+      "skin_index": 0,
+      "joint_slot": 40,
+      "rest_max_error": 1.4216177894321724e-06,
+      "inverse_bind_closure_max_error": 3.6814751716747474e-07
+    },
+    {
+      "native_index": 41,
+      "gltf_node_index": 30,
+      "skin_index": 0,
+      "joint_slot": 41,
+      "rest_max_error": 1.9128537784296462e-06,
+      "inverse_bind_closure_max_error": 3.574921924945351e-07
+    },
+    {
+      "native_index": 42,
+      "gltf_node_index": 37,
+      "skin_index": 0,
+      "joint_slot": 42,
+      "rest_max_error": 2.4933599487297897e-06,
+      "inverse_bind_closure_max_error": 5.566221693842355e-07
+    },
+    {
+      "native_index": 43,
+      "gltf_node_index": 36,
+      "skin_index": 0,
+      "joint_slot": 43,
+      "rest_max_error": 2.7313601881351346e-06,
+      "inverse_bind_closure_max_error": 5.734062532708473e-07
+    },
+    {
+      "native_index": 44,
+      "gltf_node_index": 35,
+      "skin_index": 0,
+      "joint_slot": 44,
+      "rest_max_error": 2.752957575458126e-06,
+      "inverse_bind_closure_max_error": 5.856001695225821e-07
+    },
+    {
+      "native_index": 45,
+      "gltf_node_index": 34,
+      "skin_index": 0,
+      "joint_slot": 45,
+      "rest_max_error": 2.84080066825787e-06,
+      "inverse_bind_closure_max_error": 5.980013346451596e-07
+    },
+    {
+      "native_index": 46,
+      "gltf_node_index": 41,
+      "skin_index": 0,
+      "joint_slot": 46,
+      "rest_max_error": 1.6897881823241256e-06,
+      "inverse_bind_closure_max_error": 6.798726258222532e-07
+    },
+    {
+      "native_index": 47,
+      "gltf_node_index": 40,
+      "skin_index": 0,
+      "joint_slot": 47,
+      "rest_max_error": 1.079067211806617e-06,
+      "inverse_bind_closure_max_error": 6.785684079149701e-07
+    },
+    {
+      "native_index": 48,
+      "gltf_node_index": 39,
+      "skin_index": 0,
+      "joint_slot": 48,
+      "rest_max_error": 9.215454715993943e-07,
+      "inverse_bind_closure_max_error": 6.603548317815622e-07
+    },
+    {
+      "native_index": 49,
+      "gltf_node_index": 38,
+      "skin_index": 0,
+      "joint_slot": 49,
+      "rest_max_error": 1.2204895323275622e-06,
+      "inverse_bind_closure_max_error": 6.467652703540105e-07
+    },
+    {
+      "native_index": 50,
+      "gltf_node_index": 45,
+      "skin_index": 0,
+      "joint_slot": 50,
+      "rest_max_error": 1.6897881823241256e-06,
+      "inverse_bind_closure_max_error": 6.798726258222532e-07
+    },
+    {
+      "native_index": 51,
+      "gltf_node_index": 44,
+      "skin_index": 0,
+      "joint_slot": 51,
+      "rest_max_error": 1.079067211806617e-06,
+      "inverse_bind_closure_max_error": 6.785684079149701e-07
+    },
+    {
+      "native_index": 52,
+      "gltf_node_index": 43,
+      "skin_index": 0,
+      "joint_slot": 52,
+      "rest_max_error": 9.215454715993943e-07,
+      "inverse_bind_closure_max_error": 6.603548317815622e-07
+    },
+    {
+      "native_index": 53,
+      "gltf_node_index": 42,
+      "skin_index": 0,
+      "joint_slot": 53,
+      "rest_max_error": 1.2204895323275622e-06,
+      "inverse_bind_closure_max_error": 6.467652703540105e-07
+    },
+    {
+      "native_index": 54,
+      "gltf_node_index": 49,
+      "skin_index": 0,
+      "joint_slot": 54,
+      "rest_max_error": 2.628511924451793e-06,
+      "inverse_bind_closure_max_error": 3.2849153920253005e-07
+    },
+    {
+      "native_index": 55,
+      "gltf_node_index": 48,
+      "skin_index": 0,
+      "joint_slot": 55,
+      "rest_max_error": 2.783040745968357e-06,
+      "inverse_bind_closure_max_error": 3.245361891966725e-07
+    },
+    {
+      "native_index": 56,
+      "gltf_node_index": 47,
+      "skin_index": 0,
+      "joint_slot": 56,
+      "rest_max_error": 2.357930634133698e-06,
+      "inverse_bind_closure_max_error": 3.6367711064855257e-07
+    },
+    {
+      "native_index": 57,
+      "gltf_node_index": 46,
+      "skin_index": 0,
+      "joint_slot": 57,
+      "rest_max_error": 2.132365921170276e-06,
+      "inverse_bind_closure_max_error": 3.526757390570623e-07
+    },
+    {
+      "native_index": 58,
+      "gltf_node_index": 61,
+      "skin_index": 0,
+      "joint_slot": 58,
+      "rest_max_error": 1.6722563234358723e-06,
+      "inverse_bind_closure_max_error": 1.8476926855193199e-07
+    },
+    {
+      "native_index": 59,
+      "gltf_node_index": 55,
+      "skin_index": 0,
+      "joint_slot": 59,
+      "rest_max_error": 1.6722417715241947e-06,
+      "inverse_bind_closure_max_error": 1.8476926832988738e-07
+    },
+    {
+      "native_index": 60,
+      "gltf_node_index": 54,
+      "skin_index": 0,
+      "joint_slot": 60,
+      "rest_max_error": 1.913664280876054e-06,
+      "inverse_bind_closure_max_error": 1.9287866190361266e-07
+    },
+    {
+      "native_index": 61,
+      "gltf_node_index": 53,
+      "skin_index": 0,
+      "joint_slot": 61,
+      "rest_max_error": 4.011146875437105e-06,
+      "inverse_bind_closure_max_error": 3.6295858996408356e-07
+    },
+    {
+      "native_index": 62,
+      "gltf_node_index": 52,
+      "skin_index": 0,
+      "joint_slot": 62,
+      "rest_max_error": 1.1486150479312826e-06,
+      "inverse_bind_closure_max_error": 3.428908535869408e-07
+    },
+    {
+      "native_index": 63,
+      "gltf_node_index": 51,
+      "skin_index": 0,
+      "joint_slot": 63,
+      "rest_max_error": 1.1389306198081317e-06,
+      "inverse_bind_closure_max_error": 4.064260512216745e-07
+    },
+    {
+      "native_index": 64,
+      "gltf_node_index": 60,
+      "skin_index": 0,
+      "joint_slot": 64,
+      "rest_max_error": 1.6722417715241947e-06,
+      "inverse_bind_closure_max_error": 1.8476926832988738e-07
+    },
+    {
+      "native_index": 65,
+      "gltf_node_index": 59,
+      "skin_index": 0,
+      "joint_slot": 65,
+      "rest_max_error": 1.882862255053741e-06,
+      "inverse_bind_closure_max_error": 2.1340696682720095e-07
+    },
+    {
+      "native_index": 66,
+      "gltf_node_index": 58,
+      "skin_index": 0,
+      "joint_slot": 66,
+      "rest_max_error": 4.173043786220854e-06,
+      "inverse_bind_closure_max_error": 2.2667093344579985e-07
+    },
+    {
+      "native_index": 67,
+      "gltf_node_index": 57,
+      "skin_index": 0,
+      "joint_slot": 67,
+      "rest_max_error": 2.0454121159863003e-06,
+      "inverse_bind_closure_max_error": 2.1541773777383474e-07
+    },
+    {
+      "native_index": 68,
+      "gltf_node_index": 56,
+      "skin_index": 0,
+      "joint_slot": 68,
+      "rest_max_error": 2.120316068797423e-06,
+      "inverse_bind_closure_max_error": 2.168750870664129e-07
+    }
+  ],
+  "limitations": [
+    "This is exact-input GLTF rest and neutral-skin qualification, not actual HAS world/skeleton/posed transport.",
+    "One tested source scale. Independent plus/minus XYZ pose and two-scale app qualification remains UNRUN.",
+    "VVD transport uses complete position/weight/UV-compatible multiset coverage with nearest-normal tie breaking; repeated attributes are not claimed unique native vertex identities. Normal fidelity remains separate.",
+    "No native rule dynamics, feedback, stability, render/native artist fidelity or solver acceptance."
+  ]
+}

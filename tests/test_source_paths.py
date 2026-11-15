@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 import subprocess
 import sys
@@ -44,16 +45,22 @@ class SourcePathTests(unittest.TestCase):
             (game / "garrysmod/garrysmod_dir.vpk").unlink()
             with self.assertRaisesRegex(ValueError, "incomplete"): require_gmod(game)
 
-    def test_cli_blocks_before_converter_or_output(self):
+    def test_cli_external_file_reaches_converter_without_game(self):
         with tempfile.TemporaryDirectory() as tmp:
-            source = Path(tmp) / "test.mdl"; source.write_bytes(b"IDST")
+            source = Path(tmp) / "own-model.mdl"; source.write_bytes(b"IDST")
             output = Path(tmp) / "prepared"
+            addon = Path(tmp) / "sourceio"; (addon / "library/utils/pylib").mkdir(parents=True)
             result = subprocess.run([sys.executable, str(ROOT / "tools/prepare_source.py"), str(source),
-                                     "--gmod", str(Path(tmp) / "missing-game"), "--output", str(output)],
+                                     "--gmod", str(Path(tmp) / "missing-game"), "--sourceio", str(addon),
+                                     "--blender", sys.executable, "--output", str(output)],
                                     capture_output=True, text=True, timeout=15)
             self.assertEqual(result.returncode, 1)
-            self.assertIn("must already be installed", result.stderr)
-            self.assertFalse(output.exists())
+            self.assertNotIn("must already be installed", result.stderr)
+            self.assertIn("Conversion failed", result.stderr)
+            request = json.loads((output / "conversion-request.json").read_text())
+            self.assertEqual(request['source_profile'], 'standalone')
+            self.assertEqual(request['gmod_installation'], '')
+            self.assertEqual(source.read_bytes(), b'IDST')
 
 
 if __name__ == "__main__": unittest.main()

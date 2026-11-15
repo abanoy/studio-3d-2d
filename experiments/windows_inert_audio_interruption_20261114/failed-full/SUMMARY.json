@@ -1,0 +1,28 @@
+{
+  "format": "has_canonical_inert_failed_audio_device_1",
+  "status": "FAILED_FULL_DEFAULT",
+  "source_commit": "ee81e8648c0b038279da1e01de878e0fc3c79590",
+  "source_and_head_unchanged": true,
+  "functional_sources": 996,
+  "started_utc": "2026-11-14T01:48:31.9526269Z",
+  "finished_utc": "2026-11-14T02:19:49.3858833Z",
+  "failed_command": "tests/verify_contact_selection.py",
+  "domain_checks": 67,
+  "domain_failures": 0,
+  "native_models": 5,
+  "engine_exit": 0,
+  "failure": "Strict engine-log gate rejected WASAPI GetBufferSize error and current output_device invalidation.",
+  "cause": "Not yet established; no device-change or new-code cause inferred.",
+  "private_receipts": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\contact_selection_smoke_d2a83d2463b046b58d688cc183b34d70.json",
+      "sha256": "5bbe817cf1a3f945953b5dbda28d1c83fe2b421a0337cee1e52f56886580e641"
+    }
+  ],
+  "exact_host_identities_absent": true,
+  "no_process_killed": true,
+  "canonical_log_sha256": "3c1e365a5b1181af29aee6b7742bea9e4c7ef8c5c233a1c13553ca797940182e",
+  "stale_full_verification": "output/verification.json predates this failed run; not admitted as its result.",
+  "next": "Repeat affected test on unchanged source with original WASAPI; inspect audio scope before changing driver.",
+  "closure_script_note": "First helper guard refused because PowerShell7.6 auto-parsed JSON timestamps as DateTime. No proof written then. Explicit -DateKind String preserved exact strings before successful host observation."
+}

@@ -1,0 +1,1376 @@
+{
+  "format": "has_helper_main_compact_evidence_1",
+  "cases": [
+    {
+      "id": "phase1-before-popup-fix",
+      "kind": "phase1",
+      "folder": "output/wind-review/graphical-1794598242958272700",
+      "scope": "Original Phase1 845 graphical plus 94 headless checks on actual working main BEFORE popup fix. Separate from new pending-helper preview.",
+      "status": "passed",
+      "checks": 845,
+      "headless_checks": 94,
+      "source_context": "actual main with uncommitted pending-helper edits BEFORE popup fix; not a committed-source pass",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/wind-review/graphical-1794598242958272700/source-before.json",
+            "entries": 959,
+            "bytes": 175350,
+            "sha256": "1e7fa749848ab1d0c8a2619f27868c077d6d3e7e0ada93584e0e2f1c1b92f673",
+            "mtime_ns": 1794598243060816700
+          },
+          "after": {
+            "path": "output/wind-review/graphical-1794598242958272700/source-after.json",
+            "entries": 959,
+            "bytes": 175350,
+            "sha256": "1e7fa749848ab1d0c8a2619f27868c077d6d3e7e0ada93584e0e2f1c1b92f673",
+            "mtime_ns": 1794598359587925100
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 959,
+        "sha256_inventory": "cced54a1321784de2d15070a2ca2062229af3dac8452186a6e04cadb62c950c0",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300
+          },
+          "src/physics_editor.gd": {
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400
+          },
+          "src/pose_editor.gd": {
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400
+          },
+          "src/secondary_helper_editor.gd": {
+            "sha256": "3d22c621176b245d14dc89d9aae4ba8d7f6545afa7bd51f37c517fa7377071ab",
+            "bytes": 42270,
+            "mtime_ns": 1794597939986387900
+          },
+          "src/wind_review.gd": {
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400
+          },
+          "src/pending_helper_preview.gd": {
+            "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca",
+            "bytes": 16979,
+            "mtime_ns": 1794597940162560600
+          },
+          "src/pending_helper_wind_player.gd": {
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900
+          },
+          "src/wind_helper_bridge.gd": {
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200
+          },
+          "src/wind_helper_runtime.gd": {
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000
+          },
+          "src/wind_helper_candidate.gd": {
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600
+          },
+          "tools/wind_helper_preview.py": {
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46",
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700
+          },
+          "tools/wind_preview_controller.py": {
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac",
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600
+          },
+          "tools/wind_preview_owned.py": {
+            "sha256": "812852ed626b10042ae464de1d65cc6ac8eff158e0c60a1522575d3387d1b294",
+            "bytes": 20640,
+            "mtime_ns": 1794595716990514800
+          },
+          "tools/wind_preview_worker.py": {
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414",
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits."
+      },
+      "private_receipts": [
+        {
+          "path": "output/wind-review/graphical-1794598242958272700/procedural/private-receipt.json",
+          "desktop": "HAS_Test_4b1dd0f3b0814f9a9c818c501506f04e",
+          "child_pid": 20440,
+          "seconds": 6.709,
+          "native_exit": 0,
+          "clean": true
+        },
+        {
+          "path": "output/wind-review/graphical-1794598242958272700/vrm0/private-receipt.json",
+          "desktop": "HAS_Test_90a4aa5040fc4a3695723a9436cca66b",
+          "child_pid": 20092,
+          "seconds": 10.95,
+          "native_exit": 0,
+          "clean": true
+        },
+        {
+          "path": "output/wind-review/graphical-1794598242958272700/vrm1/private-receipt.json",
+          "desktop": "HAS_Test_8214d68444094aeeaf98f1e2e75aa816",
+          "child_pid": 25448,
+          "seconds": 11.058,
+          "native_exit": 0,
+          "clean": true
+        },
+        {
+          "path": "output/wind-review/graphical-1794598242958272700/backhair/private-receipt.json",
+          "desktop": "HAS_Test_45dffbca36c24884a9635ec93ce1ae45",
+          "child_pid": 1632,
+          "seconds": 8.819,
+          "native_exit": 0,
+          "clean": true
+        },
+        {
+          "path": "output/wind-review/graphical-1794598242958272700/lifecycle/private-receipt.json",
+          "desktop": "HAS_Test_64df5e4895ff4ef588814e243c1c1d1a",
+          "child_pid": 1500,
+          "seconds": 54.969,
+          "native_exit": 0,
+          "clean": true
+        },
+        {
+          "path": "output/wind-review/graphical-1794598242958272700/primary/private-receipt.json",
+          "desktop": "HAS_Test_cee627d809f440e2a62b026ad4b4aa3b",
+          "child_pid": 4204,
+          "seconds": 14.36,
+          "native_exit": 0,
+          "clean": true
+        }
+      ]
+    },
+    {
+      "id": "main-prepare",
+      "kind": "helper",
+      "folder": "output/helper-preview/prepare-1794598882353432000-3276c603",
+      "scope": "Six approved headless syntax checks of the exact working-main snapshot; no graphical launch.",
+      "status": "passed",
+      "checks": 0,
+      "mode": "prepare",
+      "native_requested": false,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/prepare-1794598882353432000-3276c603/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794598883654990500
+          },
+          "after": {
+            "path": "output/helper-preview/prepare-1794598882353432000-3276c603/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794598902276165500
+          },
+          "snapshot": {
+            "path": "output/helper-preview/prepare-1794598882353432000-3276c603/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794598895916129000
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "924320116ac3e3a786527251c4ddf50a0c7dbb5d75181c362dbd9fe6aae2bdc4",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42528,
+            "mtime_ns": 1794598384628598100,
+            "sha256": "aa5b046c85efd845e66e395cd488223cfee6e197d678641c9b9582b9c5aab50b"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 16979,
+            "mtime_ns": 1794597940162560600,
+            "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20640,
+            "mtime_ns": 1794595716990514800,
+            "sha256": "812852ed626b10042ae464de1d65cc6ac8eff158e0c60a1522575d3387d1b294"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": []
+    },
+    {
+      "id": "main-driver-domain",
+      "kind": "domain",
+      "folder": "output/helper-preview-driver-domain/1794598882494022700-68dd61bb",
+      "expected_terminal_pass": true,
+      "checks": 120,
+      "failures": 0,
+      "scope": "120 pure mocked driver-domain predicates; no actual runtime process or product/GPU pass.",
+      "status": "passed",
+      "source_context": "Pure mocked no-runtime domain controls; not a product or GPU pass."
+    },
+    {
+      "id": "main-cpu",
+      "kind": "helper",
+      "folder": "output/helper-preview/cpu-1794598908611293300-caa7ba1f",
+      "scope": "208 actual headless checks: transport11, synthetic imported-binding adapter128 and real editor hosting69; all nine preservation gates true.",
+      "status": "passed",
+      "checks": 208,
+      "mode": "cpu",
+      "native_requested": false,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/cpu-1794598908611293300-caa7ba1f/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794598909667842500
+          },
+          "after": {
+            "path": "output/helper-preview/cpu-1794598908611293300-caa7ba1f/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794598941533463800
+          },
+          "snapshot": {
+            "path": "output/helper-preview/cpu-1794598908611293300-caa7ba1f/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794598921562573800
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "924320116ac3e3a786527251c4ddf50a0c7dbb5d75181c362dbd9fe6aae2bdc4",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42528,
+            "mtime_ns": 1794598384628598100,
+            "sha256": "aa5b046c85efd845e66e395cd488223cfee6e197d678641c9b9582b9c5aab50b"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 16979,
+            "mtime_ns": 1794597940162560600,
+            "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20640,
+            "mtime_ns": 1794595716990514800,
+            "sha256": "812852ed626b10042ae464de1d65cc6ac8eff158e0c60a1522575d3387d1b294"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": []
+    },
+    {
+      "id": "main-graphical-long-cwd-failure",
+      "kind": "helper",
+      "folder": "output/helper-preview/graphical-1794598970889753100-ae1dbcb8",
+      "scope": "FAILED actual focused popup-Escape endpoint attempt: 207 executed checks, one failure and 11 endpoint predicates not reached after owned worker CreateProcess cwd hit Win267. All nine preservation gates remained true; private job/desktop closed, native exit1. This remains failed and is not replaced by a later retry.",
+      "status": "failed",
+      "checks": 207,
+      "mode": "graphical",
+      "native_requested": false,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/graphical-1794598970889753100-ae1dbcb8/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794598971335278100
+          },
+          "after": {
+            "path": "output/helper-preview/graphical-1794598970889753100-ae1dbcb8/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794599044597865700
+          },
+          "snapshot": {
+            "path": "output/helper-preview/graphical-1794598970889753100-ae1dbcb8/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794598980013235900
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "924320116ac3e3a786527251c4ddf50a0c7dbb5d75181c362dbd9fe6aae2bdc4",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42528,
+            "mtime_ns": 1794598384628598100,
+            "sha256": "aa5b046c85efd845e66e395cd488223cfee6e197d678641c9b9582b9c5aab50b"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 16979,
+            "mtime_ns": 1794597940162560600,
+            "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20640,
+            "mtime_ns": 1794595716990514800,
+            "sha256": "812852ed626b10042ae464de1d65cc6ac8eff158e0c60a1522575d3387d1b294"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": [
+        {
+          "path": "output/helper-preview/graphical-1794598970889753100-ae1dbcb8/Studio/output/helper-preview-qa/focused/private-receipt.json",
+          "desktop": "HAS_Test_3ce3c4ee0a874942acfa774184571561",
+          "child_pid": 18540,
+          "seconds": 63.76,
+          "native_exit": 1,
+          "clean": true
+        }
+      ]
+    },
+    {
+      "id": "main-native-cpu-before-cwd-fix",
+      "kind": "helper",
+      "folder": "output/helper-preview/cpu-1794599078614288100-6cf19ea3",
+      "scope": "231 actual headless checks BEFORE cwd fix: transport11, adapter151 including separately validated retained native Backhair23, and actual editor hosting69. This retains its original source context and does not certify the later cwd revision.",
+      "status": "passed",
+      "checks": 231,
+      "mode": "cpu",
+      "native_requested": true,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/cpu-1794599078614288100-6cf19ea3/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794599079744868600
+          },
+          "after": {
+            "path": "output/helper-preview/cpu-1794599078614288100-6cf19ea3/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794599120127472400
+          },
+          "snapshot": {
+            "path": "output/helper-preview/cpu-1794599078614288100-6cf19ea3/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "d69474f1fae0086296d5628eda6dc9385fb51327d977d0c3c98f6cd1641264e9",
+            "mtime_ns": 1794599095384445400
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "924320116ac3e3a786527251c4ddf50a0c7dbb5d75181c362dbd9fe6aae2bdc4",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42528,
+            "mtime_ns": 1794598384628598100,
+            "sha256": "aa5b046c85efd845e66e395cd488223cfee6e197d678641c9b9582b9c5aab50b"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 16979,
+            "mtime_ns": 1794597940162560600,
+            "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20640,
+            "mtime_ns": 1794595716990514800,
+            "sha256": "812852ed626b10042ae464de1d65cc6ac8eff158e0c60a1522575d3387d1b294"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": []
+    },
+    {
+      "id": "main-cpu-after-cwd-before-ui",
+      "kind": "helper",
+      "folder": "output/helper-preview/cpu-1794599287215415200-9aff0f5e",
+      "scope": "208 actual CPU checks after the worker cwd fix and before the later conditional-controls UI revision. Preserved as a distinct source-bound observation.",
+      "status": "passed",
+      "checks": 208,
+      "mode": "cpu",
+      "native_requested": false,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/cpu-1794599287215415200-9aff0f5e/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "550128c61cc00f2e3322257939cf62b596c97ca43a0729693903098c70f345c7",
+            "mtime_ns": 1794599288329062900
+          },
+          "after": {
+            "path": "output/helper-preview/cpu-1794599287215415200-9aff0f5e/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "550128c61cc00f2e3322257939cf62b596c97ca43a0729693903098c70f345c7",
+            "mtime_ns": 1794599321823712700
+          },
+          "snapshot": {
+            "path": "output/helper-preview/cpu-1794599287215415200-9aff0f5e/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "550128c61cc00f2e3322257939cf62b596c97ca43a0729693903098c70f345c7",
+            "mtime_ns": 1794599299836774600
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "672339dbbd7db65f7821bcd393d9995f9be2d3c70a3b666358a9ab5fd0b78ed9",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42528,
+            "mtime_ns": 1794598384628598100,
+            "sha256": "aa5b046c85efd845e66e395cd488223cfee6e197d678641c9b9582b9c5aab50b"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 16979,
+            "mtime_ns": 1794597940162560600,
+            "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20828,
+            "mtime_ns": 1794599225987732000,
+            "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": []
+    },
+    {
+      "id": "main-graphical-slash-guard-failure",
+      "kind": "helper",
+      "folder": "output/helper-preview/graphical-1794599304309599100-20ce72d0",
+      "scope": "FAILED actual focused219/1. The long268-character worker job succeeded and popup Stop/pixel restoration predicates passed; the new cwd proof predicate compared equivalent slash spellings literally. Retain as failed despite later path-normalization correction. All nine preservation gates remained true.",
+      "status": "failed",
+      "checks": 219,
+      "mode": "graphical",
+      "native_requested": true,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/graphical-1794599304309599100-20ce72d0/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "550128c61cc00f2e3322257939cf62b596c97ca43a0729693903098c70f345c7",
+            "mtime_ns": 1794599304844724200
+          },
+          "after": {
+            "path": "output/helper-preview/graphical-1794599304309599100-20ce72d0/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "550128c61cc00f2e3322257939cf62b596c97ca43a0729693903098c70f345c7",
+            "mtime_ns": 1794599384238679100
+          },
+          "snapshot": {
+            "path": "output/helper-preview/graphical-1794599304309599100-20ce72d0/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "550128c61cc00f2e3322257939cf62b596c97ca43a0729693903098c70f345c7",
+            "mtime_ns": 1794599318010013900
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "672339dbbd7db65f7821bcd393d9995f9be2d3c70a3b666358a9ab5fd0b78ed9",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42528,
+            "mtime_ns": 1794598384628598100,
+            "sha256": "aa5b046c85efd845e66e395cd488223cfee6e197d678641c9b9582b9c5aab50b"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 16979,
+            "mtime_ns": 1794597940162560600,
+            "sha256": "d0b87407e486062acef3f68f71de25921340d74a59cb8d2b7a28be65e1db05ca"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20828,
+            "mtime_ns": 1794599225987732000,
+            "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": [
+        {
+          "path": "output/helper-preview/graphical-1794599304309599100-20ce72d0/Studio/output/helper-preview-qa/focused/private-receipt.json",
+          "desktop": "HAS_Test_4412ddf21a1d4929ba06fd5c72f0d4ac",
+          "child_pid": 14784,
+          "seconds": 65.332,
+          "native_exit": 1,
+          "clean": true
+        }
+      ]
+    },
+    {
+      "id": "final-main-prepare",
+      "kind": "helper",
+      "folder": "output/helper-preview/prepare-1794599472068354400-3b5efcbd",
+      "scope": "FINAL cwd/UI revision: six actual approved headless syntax checks on exact working-main source; no graphical launch.",
+      "status": "passed",
+      "checks": 0,
+      "mode": "prepare",
+      "native_requested": false,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/prepare-1794599472068354400-3b5efcbd/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599473367508700
+          },
+          "after": {
+            "path": "output/helper-preview/prepare-1794599472068354400-3b5efcbd/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599491815483000
+          },
+          "snapshot": {
+            "path": "output/helper-preview/prepare-1794599472068354400-3b5efcbd/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599485538953500
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "cc9d6fc8a69dea13e3ea969e50ca2a7382eb740c468ffacb62a3ba829c0ada8e",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42555,
+            "mtime_ns": 1794599429128592800,
+            "sha256": "b3541073b274e85871a581eeebaecc3cea7baf0da296571cd8240313a32efb93"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 17176,
+            "mtime_ns": 1794599429288488900,
+            "sha256": "f4ced1db5c123a7d7f6e8395ceba9dcb6aa65f6f19d27244d3cd3ea73694ac7e"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20828,
+            "mtime_ns": 1794599225987732000,
+            "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": []
+    },
+    {
+      "id": "final-main-driver-domain",
+      "kind": "domain",
+      "folder": "output/helper-preview-driver-domain/1794599472205709600-da313665",
+      "expected_terminal_pass": true,
+      "checks": 120,
+      "failures": 0,
+      "scope": "FINAL revision actual120 mocked driver-domain predicates; no product/runtime process or GPU acceptance.",
+      "status": "passed",
+      "source_context": "Pure mocked no-runtime domain controls; not a product or GPU pass."
+    },
+    {
+      "id": "final-main-cpu",
+      "kind": "helper",
+      "folder": "output/helper-preview/cpu-1794599514381327300-8ae7d73e",
+      "scope": "FINAL cwd/UI revision actual208 headless predicates (transport11, synthetic imported-binding adapter128, real editor69); all nine preservation gates true.",
+      "status": "passed",
+      "checks": 208,
+      "mode": "cpu",
+      "native_requested": false,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/cpu-1794599514381327300-8ae7d73e/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599515467438500
+          },
+          "after": {
+            "path": "output/helper-preview/cpu-1794599514381327300-8ae7d73e/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599550091062200
+          },
+          "snapshot": {
+            "path": "output/helper-preview/cpu-1794599514381327300-8ae7d73e/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599528478239700
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "cc9d6fc8a69dea13e3ea969e50ca2a7382eb740c468ffacb62a3ba829c0ada8e",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42555,
+            "mtime_ns": 1794599429128592800,
+            "sha256": "b3541073b274e85871a581eeebaecc3cea7baf0da296571cd8240313a32efb93"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 17176,
+            "mtime_ns": 1794599429288488900,
+            "sha256": "f4ced1db5c123a7d7f6e8395ceba9dcb6aa65f6f19d27244d3cd3ea73694ac7e"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20828,
+            "mtime_ns": 1794599225987732000,
+            "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": []
+    },
+    {
+      "id": "final-main-graphical-native",
+      "kind": "helper",
+      "folder": "output/helper-preview/graphical-1794599542182978200-657f180d",
+      "scope": "FINAL cwd/UI revision actual305 private graphical predicates: focused221, independent peers45, separately validated retained native Backhair39. Three clean exit0 private desktops; all nine preservation gates true. Working-main/no-overlay evidence, not original Source shader/jiggle/artist fidelity.",
+      "status": "passed",
+      "checks": 305,
+      "mode": "graphical",
+      "native_requested": true,
+      "source_context": "main_working_source_snapshot",
+      "head": "223a322bfcf3c075d013d0441323fd6b61f9d5cf",
+      "preservation": {
+        "main_sources": true,
+        "runtimes": true,
+        "head": true,
+        "native_originals": true,
+        "staged_native_inputs": true,
+        "published_requests": true,
+        "snapshot_sources": true,
+        "snapshot_extras": true,
+        "fixtures": true
+      },
+      "source_scope": {
+        "capture_records": {
+          "before": {
+            "path": "output/helper-preview/graphical-1794599542182978200-657f180d/main-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599542667919700
+          },
+          "after": {
+            "path": "output/helper-preview/graphical-1794599542182978200-657f180d/main-source-after.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599647573298400
+          },
+          "snapshot": {
+            "path": "output/helper-preview/graphical-1794599542182978200-657f180d/snapshot-source-before.json",
+            "entries": 968,
+            "bytes": 177050,
+            "sha256": "4f30546a1a13be25dd7459bf1f8c4ea3faac3188676260affb3ffa0e81637f4a",
+            "mtime_ns": 1794599555795905000
+          }
+        },
+        "before_after_exact": true,
+        "functional_file_count": 968,
+        "sha256_inventory": "cc9d6fc8a69dea13e3ea969e50ca2a7382eb740c468ffacb62a3ba829c0ada8e",
+        "selected_runtime_files": {
+          "src/app.gd": {
+            "bytes": 147447,
+            "mtime_ns": 1794598040770010300,
+            "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+          },
+          "src/physics_editor.gd": {
+            "bytes": 22395,
+            "mtime_ns": 1794595716979509400,
+            "sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471"
+          },
+          "src/pose_editor.gd": {
+            "bytes": 48374,
+            "mtime_ns": 1794595716980511400,
+            "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+          },
+          "src/secondary_helper_editor.gd": {
+            "bytes": 42555,
+            "mtime_ns": 1794599429128592800,
+            "sha256": "b3541073b274e85871a581eeebaecc3cea7baf0da296571cd8240313a32efb93"
+          },
+          "src/wind_review.gd": {
+            "bytes": 17923,
+            "mtime_ns": 1794595716985518400,
+            "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+          },
+          "src/pending_helper_preview.gd": {
+            "bytes": 17176,
+            "mtime_ns": 1794599429288488900,
+            "sha256": "f4ced1db5c123a7d7f6e8395ceba9dcb6aa65f6f19d27244d3cd3ea73694ac7e"
+          },
+          "src/pending_helper_wind_player.gd": {
+            "bytes": 8476,
+            "mtime_ns": 1794595716978508900,
+            "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+          },
+          "src/wind_helper_bridge.gd": {
+            "bytes": 16539,
+            "mtime_ns": 1794595716982511200,
+            "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+          },
+          "src/wind_helper_runtime.gd": {
+            "bytes": 2746,
+            "mtime_ns": 1794595716984511000,
+            "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+          },
+          "src/wind_helper_candidate.gd": {
+            "bytes": 25396,
+            "mtime_ns": 1794595716983512600,
+            "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+          },
+          "tools/wind_helper_preview.py": {
+            "bytes": 22479,
+            "mtime_ns": 1794595716988514700,
+            "sha256": "1d9111aee40fcd4e976ac487d6ec8e6266382ae1b49cb5410aee398d89a00c46"
+          },
+          "tools/wind_preview_controller.py": {
+            "bytes": 25768,
+            "mtime_ns": 1794595716989510600,
+            "sha256": "704af38d6ea4211b4fd28513056ea242caa0962a550a14cfab035232ec9809ac"
+          },
+          "tools/wind_preview_owned.py": {
+            "bytes": 20828,
+            "mtime_ns": 1794599225987732000,
+            "sha256": "c4f23230721f0a5b23505e7c9e29a0e34a6ea3123f0fc231c6e83039a031900f"
+          },
+          "tools/wind_preview_worker.py": {
+            "bytes": 5784,
+            "mtime_ns": 1794595716991513500,
+            "sha256": "826eff55575237710d026eee6ce533013a9dde46766de13929f928f4828b3414"
+          }
+        },
+        "status": "Captured working-main bytes; this does not certify that HEAD alone contains these edits.",
+        "snapshot_before_equals_main_before": true
+      },
+      "private_receipts": [
+        {
+          "path": "output/helper-preview/graphical-1794599542182978200-657f180d/Studio/output/helper-preview-qa/focused/private-receipt.json",
+          "desktop": "HAS_Test_c08ed842702e4f34b96393b6870d3d78",
+          "child_pid": 12740,
+          "seconds": 65.781,
+          "native_exit": 0,
+          "clean": true
+        },
+        {
+          "path": "output/helper-preview/graphical-1794599542182978200-657f180d/Studio/output/helper-preview-qa/native/private-receipt.json",
+          "desktop": "HAS_Test_ae0ad9ab81ee404e8818e2956cfce80f",
+          "child_pid": 8764,
+          "seconds": 17.418,
+          "native_exit": 0,
+          "clean": true
+        },
+        {
+          "path": "output/helper-preview/graphical-1794599542182978200-657f180d/Studio/output/helper-preview-qa/peers/private-receipt.json",
+          "desktop": "HAS_Test_1bac16aeabac423aa55e29b61ba9ff80",
+          "child_pid": 25768,
+          "seconds": 7.476,
+          "native_exit": 0,
+          "clean": true
+        }
+      ]
+    }
+  ],
+  "pending_cases": [
+    "new committed-source full default aggregate",
+    "six additional existing regression wrappers retained in a separate later checkpoint"
+  ],
+  "initial_driver_candidate_source_index": {
+    "path": "output/helper-preview-main-driver-20261113/SOURCE_INDEX.json",
+    "sha256": "937ef24763200832ccf2fe2cc6996f3d5c8ade5b818d117aea0753f82a1bdd74",
+    "scope": "Initial frozen ten-file driver candidate before root cwd/UI refinements; later main source is bound separately by actual run inventories and24 reviewed-file bindings."
+  },
+  "captured_context": "Actual tests on explicit working-main bytes. No blanket committed-source or full-default pass is inferred.",
+  "private_receipt_count": 11,
+  "unique_private_desktops": 11,
+  "all_listed_private_receipts_clean": true,
+  "private_art_or_media_copied": false,
+  "main_source_or_Git_edited": false,
+  "failed_attempt_policy": "Failed runs, if listed, remain under failed/. Published prototype failures from earlier checkpoints remain distinct.",
+  "formal_acceptance": "No change to human, device, native artist-fidelity or clean-install acceptance is inferred."
+}

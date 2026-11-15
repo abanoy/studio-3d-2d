@@ -98,7 +98,7 @@ func run(app) -> void:
 	editor.refresh_values()
 	editor.apply_frame()
 	editor.update_gizmo()
-	check(editor.handles.size() == 3 and not app.canvas.pose_joints.is_empty(), "real projected skeleton and three colored rotation handles exist")
+	check(editor.handles.filter(func(handle):return not handle.get("view",false)).size() == 3 and not app.canvas.pose_joints.is_empty(), "real projected skeleton and three colored rotation handles exist")
 	var hip := bone(rig, "hip")
 	for joint in editor.joints:
 		if joint.id == hip:

@@ -1,0 +1,103 @@
+{
+  "format": "has_wind_review_private_overlay_2",
+  "base_commit": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "prototype": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\Studio",
+  "frozen_for_review": true,
+  "runtime_files": {
+    "src/app.gd": {
+      "base_sha256": "101195638a0915dd83d7d77969e1627ca04df163cfe52c41837f75d0c3779b5b",
+      "prototype_sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+      "added_lines": 24,
+      "removed_lines": 4,
+      "crcrlf_count": 0
+    },
+    "src/has_project.gd": {
+      "base_sha256": "3beb99054bb028460f7e967876b004214a62b4571ccd055d8324da0747a62070",
+      "prototype_sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+      "added_lines": 3,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    },
+    "src/physics_editor.gd": {
+      "base_sha256": "989228ccd29f6fb22911deb6273d442fd8e96185396275caa619cc61f2e12621",
+      "prototype_sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+      "added_lines": 2,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    },
+    "src/physics_recording.gd": {
+      "base_sha256": "d4a5ff4c8fd55eb9f9abfe01cd08907a87d24030b1a166ccddd9c4bff396f51c",
+      "prototype_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "added_lines": 1,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    },
+    "src/pose_editor.gd": {
+      "base_sha256": "a73b450fb7aad5a63d3e20019f8108f51de57cb0cd4f400b87cb4db8972a5eeb",
+      "prototype_sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+      "added_lines": 1,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    },
+    "src/renderer.gd": {
+      "base_sha256": "06306b032ad2db5fe18c3a542cb1301f1d9fc2647c1e72f7b47d104c1e6b3346",
+      "prototype_sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "added_lines": 6,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    },
+    "src/secondary_spring.gd": {
+      "base_sha256": "3dd64644c4562af65d883ed073eeff715e9d0f8c190b1bc483edbd2e0fd13b23",
+      "prototype_sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "added_lines": 10,
+      "removed_lines": 3,
+      "crcrlf_count": 0
+    },
+    "src/wind_review.gd": {
+      "base_sha256": null,
+      "prototype_sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+      "added_lines": 291,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    },
+    "src/wind_review_groups.gd": {
+      "base_sha256": null,
+      "prototype_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "added_lines": 146,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    }
+  },
+  "test_files": {
+    "tests/wind_review_unit.gd": {
+      "base_sha256": null,
+      "prototype_sha256": "9f4042d1ef165e530b8123809d46382fe8cb6d503ce334573f01256ac90c1f55",
+      "added_lines": 188,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    },
+    "tests/wind_review_hooks_unit.gd": {
+      "base_sha256": null,
+      "prototype_sha256": "64f589345d488ee084f44af45b032a736aa67ae6cc20c22bb1345c293fc4dc15",
+      "added_lines": 98,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    },
+    "tests/wind_review_review_unit.gd": {
+      "base_sha256": null,
+      "prototype_sha256": "60b4fa482563efba6893f294b83c539963172bcf0e4d160ead1fe68fe67f58b5",
+      "added_lines": 117,
+      "removed_lines": 0,
+      "crcrlf_count": 0
+    }
+  },
+  "headless_proof": "headless-reviewfix-verification.json",
+  "counterfactual_proof": "audit-counterfactual.json",
+  "review": "REVIEW.md",
+  "patch_sha256": "ebf12903ef7cf9efcfd93460f8b665ecc5d91c37b6702283ab4e6e367b8696a9",
+  "patch_note": "Review diff normalizes CRLF to LF on both sides; raw actual source hashes are recorded. It is not a claimed exact-byte application proof.",
+  "root_functional_files_checked": 924,
+  "root_functional_changes": [],
+  "scope": "Private phase1 candidate only; not ported, no GPU/native-motion/movie/physical-cursor/owner acceptance. Old eleven files and original review preserved in before-review-fixes.",
+  "gpu_used": false
+}

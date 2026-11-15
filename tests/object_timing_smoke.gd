@@ -116,11 +116,18 @@ func run() -> void:
 	for i in range(64):
 		var row:=World.object(asset,"model","Actor %02d" % i);document.objects.append(row)
 	check(app.restore_world(document).is_empty(),"full64-object world still installs with timeline lanes")
-	await settled();var scroll: ScrollContainer=timeline.get_parent();scroll.scroll_vertical=2000;await settled()
+	await settled();var scroll: ScrollContainer=timeline.get_parent()
+	# Scene-first layouts can scroll the whole Timeline dock. Reveal its track
+	# viewport before routing a click; scrolling only the rows leaves it clipped.
+	var dock_scroll: ScrollContainer=app.workspace_layout.panels.timeline.get_node("TimelineContentScroll")
+	dock_scroll.ensure_control_visible(scroll);await settled()
+	scroll.scroll_vertical=2000;await settled()
+	check(dock_scroll.get_global_rect().encloses(scroll.get_global_rect()),"compressed Timeline exposes the complete track viewport before row input")
 	check(timeline.object_rows.size()==64 and scroll.size.y<230 and scroll.get_v_scroll_bar().visible and app.canvas.size.y>100,"64rows scroll inside a bounded timeline without consuming the viewport")
 	check(app.timeline_ruler.is_visible_in_tree() and app.timeline_ruler.global_position.y<scroll.global_position.y and absf(app.timeline_ruler.size.x-timeline.size.x)<0.1,"frame ruler/camera lane remain pinned and column-aligned after row scrolling")
 	var last: Dictionary=timeline.object_rows[-1]
 	var event:=InputEventMouseButton.new();event.button_index=MOUSE_BUTTON_LEFT;event.pressed=true;event.position=timeline.get_global_transform()*Vector2(40,timeline.row_y(63)+12)
+	check(scroll.get_global_rect().has_point(event.position),"last object row click lies inside the visible scrolled track viewport")
 	app.get_viewport().push_input(event,true);await settled();event.pressed=false;app.get_viewport().push_input(event,true);await settled()
 	check(app.renderer.active_instance_id==last.id and app.timeline.selected_id==last.id,"routed click selects the scrolled last object's row and pose target")
 	root.get_texture().get_image().save_png(folder.path_join("timeline-64.png"))

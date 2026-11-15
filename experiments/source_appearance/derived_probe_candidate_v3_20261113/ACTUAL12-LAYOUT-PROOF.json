@@ -1,0 +1,3117 @@
+{
+  "scope": "Read-only actual derived GLB byte layouts, no model runtimes/preparation",
+  "cases": [
+    {
+      "case": "nitori-default",
+      "input_glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "accessors": 16,
+        "buffer_views": 22,
+        "sparse_accessors": 4,
+        "packed_vertex_views": 10,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 40068,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 80136,
+            "byte_length": 26712,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 106848,
+            "byte_length": 13356,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 120204,
+            "byte_length": 53424,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 173628,
+            "byte_length": 33216,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 206844,
+            "byte_length": 291676,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "sparse_indices",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 498520,
+            "byte_length": 5502,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 8,
+            "role": "sparse_values",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 504024,
+            "byte_length": 33012,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 9,
+            "role": "sparse_indices",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 537036,
+            "byte_length": 4366,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 10,
+            "role": "sparse_values",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 541404,
+            "byte_length": 26196,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 567600,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 607668,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 13,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 647736,
+            "byte_length": 26712,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 14,
+            "role": "vertex",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 674448,
+            "byte_length": 13356,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 687804,
+            "byte_length": 53424,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 741228,
+            "byte_length": 273,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 17,
+            "role": "sparse_indices",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 741504,
+            "byte_length": 5502,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 18,
+            "role": "sparse_values",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 747008,
+            "byte_length": 33012,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 19,
+            "role": "sparse_indices",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 780020,
+            "byte_length": 4366,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 20,
+            "role": "sparse_values",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 784388,
+            "byte_length": 26196,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 21,
+            "role": "inverse_bind",
+            "accessors": [
+              15
+            ],
+            "byte_offset": 810584,
+            "byte_length": 4224,
+            "byte_stride": null,
+            "target": null
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "keiki-default",
+      "input_glb_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "accessors": 27,
+        "buffer_views": 31,
+        "sparse_accessors": 0,
+        "packed_vertex_views": 22,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 456,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 912,
+            "byte_length": 304,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 1216,
+            "byte_length": 152,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 1368,
+            "byte_length": 608,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 1976,
+            "byte_length": 264,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 2240,
+            "byte_length": 78292,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "inverse_bind",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 80532,
+            "byte_length": 1984,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 8,
+            "role": "vertex",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 82516,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 9,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 101356,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 10,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 120196,
+            "byte_length": 12560,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 132756,
+            "byte_length": 6280,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "vertex",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 139036,
+            "byte_length": 25120,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 13,
+            "role": "index",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 164156,
+            "byte_length": 16716,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 14,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 180872,
+            "byte_length": 33264,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 214136,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "vertex",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 214232,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 17,
+            "role": "vertex",
+            "accessors": [
+              15
+            ],
+            "byte_offset": 214328,
+            "byte_length": 64,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 18,
+            "role": "vertex",
+            "accessors": [
+              16
+            ],
+            "byte_offset": 214392,
+            "byte_length": 32,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 19,
+            "role": "vertex",
+            "accessors": [
+              17
+            ],
+            "byte_offset": 214424,
+            "byte_length": 128,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 20,
+            "role": "index",
+            "accessors": [
+              18
+            ],
+            "byte_offset": 214552,
+            "byte_length": 24,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 21,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 214576,
+            "byte_length": 470481,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 22,
+            "role": "vertex",
+            "accessors": [
+              19
+            ],
+            "byte_offset": 685060,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 23,
+            "role": "vertex",
+            "accessors": [
+              20
+            ],
+            "byte_offset": 699220,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 24,
+            "role": "vertex",
+            "accessors": [
+              21
+            ],
+            "byte_offset": 713380,
+            "byte_length": 9440,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 25,
+            "role": "vertex",
+            "accessors": [
+              22
+            ],
+            "byte_offset": 722820,
+            "byte_length": 4720,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 26,
+            "role": "vertex",
+            "accessors": [
+              23
+            ],
+            "byte_offset": 727540,
+            "byte_length": 18880,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 27,
+            "role": "index",
+            "accessors": [
+              24
+            ],
+            "byte_offset": 746420,
+            "byte_length": 10680,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 28,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 757100,
+            "byte_length": 134754,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 29,
+            "role": "vertex",
+            "accessors": [
+              25
+            ],
+            "byte_offset": 891856,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 30,
+            "role": "vertex",
+            "accessors": [
+              26
+            ],
+            "byte_offset": 906016,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "nitori-skin-0",
+      "input_glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "accessors": 16,
+        "buffer_views": 22,
+        "sparse_accessors": 4,
+        "packed_vertex_views": 10,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 40068,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 80136,
+            "byte_length": 26712,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 106848,
+            "byte_length": 13356,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 120204,
+            "byte_length": 53424,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 173628,
+            "byte_length": 33216,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 206844,
+            "byte_length": 291676,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "sparse_indices",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 498520,
+            "byte_length": 5502,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 8,
+            "role": "sparse_values",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 504024,
+            "byte_length": 33012,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 9,
+            "role": "sparse_indices",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 537036,
+            "byte_length": 4366,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 10,
+            "role": "sparse_values",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 541404,
+            "byte_length": 26196,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 567600,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 607668,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 13,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 647736,
+            "byte_length": 26712,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 14,
+            "role": "vertex",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 674448,
+            "byte_length": 13356,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 687804,
+            "byte_length": 53424,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 741228,
+            "byte_length": 273,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 17,
+            "role": "sparse_indices",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 741504,
+            "byte_length": 5502,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 18,
+            "role": "sparse_values",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 747008,
+            "byte_length": 33012,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 19,
+            "role": "sparse_indices",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 780020,
+            "byte_length": 4366,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 20,
+            "role": "sparse_values",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 784388,
+            "byte_length": 26196,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 21,
+            "role": "inverse_bind",
+            "accessors": [
+              15
+            ],
+            "byte_offset": 810584,
+            "byte_length": 4224,
+            "byte_stride": null,
+            "target": null
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "keiki-000",
+      "input_glb_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "accessors": 27,
+        "buffer_views": 31,
+        "sparse_accessors": 0,
+        "packed_vertex_views": 22,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 456,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 912,
+            "byte_length": 304,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 1216,
+            "byte_length": 152,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 1368,
+            "byte_length": 608,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 1976,
+            "byte_length": 264,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 2240,
+            "byte_length": 78292,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "inverse_bind",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 80532,
+            "byte_length": 1984,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 8,
+            "role": "vertex",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 82516,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 9,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 101356,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 10,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 120196,
+            "byte_length": 12560,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 132756,
+            "byte_length": 6280,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "vertex",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 139036,
+            "byte_length": 25120,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 13,
+            "role": "index",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 164156,
+            "byte_length": 16716,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 14,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 180872,
+            "byte_length": 33264,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 214136,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "vertex",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 214232,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 17,
+            "role": "vertex",
+            "accessors": [
+              15
+            ],
+            "byte_offset": 214328,
+            "byte_length": 64,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 18,
+            "role": "vertex",
+            "accessors": [
+              16
+            ],
+            "byte_offset": 214392,
+            "byte_length": 32,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 19,
+            "role": "vertex",
+            "accessors": [
+              17
+            ],
+            "byte_offset": 214424,
+            "byte_length": 128,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 20,
+            "role": "index",
+            "accessors": [
+              18
+            ],
+            "byte_offset": 214552,
+            "byte_length": 24,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 21,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 214576,
+            "byte_length": 470481,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 22,
+            "role": "vertex",
+            "accessors": [
+              19
+            ],
+            "byte_offset": 685060,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 23,
+            "role": "vertex",
+            "accessors": [
+              20
+            ],
+            "byte_offset": 699220,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 24,
+            "role": "vertex",
+            "accessors": [
+              21
+            ],
+            "byte_offset": 713380,
+            "byte_length": 9440,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 25,
+            "role": "vertex",
+            "accessors": [
+              22
+            ],
+            "byte_offset": 722820,
+            "byte_length": 4720,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 26,
+            "role": "vertex",
+            "accessors": [
+              23
+            ],
+            "byte_offset": 727540,
+            "byte_length": 18880,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 27,
+            "role": "index",
+            "accessors": [
+              24
+            ],
+            "byte_offset": 746420,
+            "byte_length": 10680,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 28,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 757100,
+            "byte_length": 134754,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 29,
+            "role": "vertex",
+            "accessors": [
+              25
+            ],
+            "byte_offset": 891856,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 30,
+            "role": "vertex",
+            "accessors": [
+              26
+            ],
+            "byte_offset": 906016,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "nitori-skin-1",
+      "input_glb_sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a",
+        "accessors": 16,
+        "buffer_views": 22,
+        "sparse_accessors": 4,
+        "packed_vertex_views": 10,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 40068,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 80136,
+            "byte_length": 26712,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 106848,
+            "byte_length": 13356,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 120204,
+            "byte_length": 53424,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 173628,
+            "byte_length": 33216,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 206844,
+            "byte_length": 248194,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "sparse_indices",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 455040,
+            "byte_length": 5502,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 8,
+            "role": "sparse_values",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 460544,
+            "byte_length": 33012,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 9,
+            "role": "sparse_indices",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 493556,
+            "byte_length": 4366,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 10,
+            "role": "sparse_values",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 497924,
+            "byte_length": 26196,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 524120,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 564188,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 13,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 604256,
+            "byte_length": 26712,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 14,
+            "role": "vertex",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 630968,
+            "byte_length": 13356,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 644324,
+            "byte_length": 53424,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 697748,
+            "byte_length": 273,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 17,
+            "role": "sparse_indices",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 698024,
+            "byte_length": 5502,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 18,
+            "role": "sparse_values",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 703528,
+            "byte_length": 33012,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 19,
+            "role": "sparse_indices",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 736540,
+            "byte_length": 4366,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 20,
+            "role": "sparse_values",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 740908,
+            "byte_length": 26196,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 21,
+            "role": "inverse_bind",
+            "accessors": [
+              15
+            ],
+            "byte_offset": 767104,
+            "byte_length": 4224,
+            "byte_stride": null,
+            "target": null
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "nitori-skin-2",
+      "input_glb_sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0",
+        "accessors": 16,
+        "buffer_views": 22,
+        "sparse_accessors": 4,
+        "packed_vertex_views": 10,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 40068,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 80136,
+            "byte_length": 26712,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 106848,
+            "byte_length": 13356,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 120204,
+            "byte_length": 53424,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 173628,
+            "byte_length": 33216,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 206844,
+            "byte_length": 248683,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "sparse_indices",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 455528,
+            "byte_length": 5502,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 8,
+            "role": "sparse_values",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 461032,
+            "byte_length": 33012,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 9,
+            "role": "sparse_indices",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 494044,
+            "byte_length": 4366,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 10,
+            "role": "sparse_values",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 498412,
+            "byte_length": 26196,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 524608,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 564676,
+            "byte_length": 40068,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 13,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 604744,
+            "byte_length": 26712,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 14,
+            "role": "vertex",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 631456,
+            "byte_length": 13356,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 644812,
+            "byte_length": 53424,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 698236,
+            "byte_length": 273,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 17,
+            "role": "sparse_indices",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 698512,
+            "byte_length": 5502,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 18,
+            "role": "sparse_values",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 704016,
+            "byte_length": 33012,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 19,
+            "role": "sparse_indices",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 737028,
+            "byte_length": 4366,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 20,
+            "role": "sparse_values",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 741396,
+            "byte_length": 26196,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 21,
+            "role": "inverse_bind",
+            "accessors": [
+              15
+            ],
+            "byte_offset": 767592,
+            "byte_length": 4224,
+            "byte_stride": null,
+            "target": null
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "keiki-001",
+      "input_glb_sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82",
+        "accessors": 15,
+        "buffer_views": 17,
+        "sparse_accessors": 0,
+        "packed_vertex_views": 12,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 456,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 912,
+            "byte_length": 304,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 1216,
+            "byte_length": 152,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 1368,
+            "byte_length": 608,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 1976,
+            "byte_length": 264,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 2240,
+            "byte_length": 78292,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "inverse_bind",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 80532,
+            "byte_length": 1984,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 8,
+            "role": "vertex",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 82516,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 9,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 96676,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 10,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 110836,
+            "byte_length": 9440,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 120276,
+            "byte_length": 4720,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "vertex",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 124996,
+            "byte_length": 18880,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 13,
+            "role": "index",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 143876,
+            "byte_length": 10680,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 14,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 154556,
+            "byte_length": 134754,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 289312,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "vertex",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 303472,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "keiki-010",
+      "input_glb_sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a",
+        "accessors": 21,
+        "buffer_views": 24,
+        "sparse_accessors": 0,
+        "packed_vertex_views": 17,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 18840,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 37680,
+            "byte_length": 12560,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 50240,
+            "byte_length": 6280,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 56520,
+            "byte_length": 25120,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 81640,
+            "byte_length": 16716,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 98356,
+            "byte_length": 33264,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "vertex",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 131620,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 8,
+            "role": "vertex",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 131716,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 9,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 131812,
+            "byte_length": 64,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 10,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 131876,
+            "byte_length": 32,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 131908,
+            "byte_length": 128,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "index",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 132036,
+            "byte_length": 24,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 13,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 132060,
+            "byte_length": 470481,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 14,
+            "role": "inverse_bind",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 602544,
+            "byte_length": 1984,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 604528,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "vertex",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 618688,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 17,
+            "role": "vertex",
+            "accessors": [
+              15
+            ],
+            "byte_offset": 632848,
+            "byte_length": 9440,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 18,
+            "role": "vertex",
+            "accessors": [
+              16
+            ],
+            "byte_offset": 642288,
+            "byte_length": 4720,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 19,
+            "role": "vertex",
+            "accessors": [
+              17
+            ],
+            "byte_offset": 647008,
+            "byte_length": 18880,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 20,
+            "role": "index",
+            "accessors": [
+              18
+            ],
+            "byte_offset": 665888,
+            "byte_length": 10680,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 21,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 676568,
+            "byte_length": 134754,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 22,
+            "role": "vertex",
+            "accessors": [
+              19
+            ],
+            "byte_offset": 811324,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 23,
+            "role": "vertex",
+            "accessors": [
+              20
+            ],
+            "byte_offset": 825484,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "keiki-011",
+      "input_glb_sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0",
+        "accessors": 9,
+        "buffer_views": 10,
+        "sparse_accessors": 0,
+        "packed_vertex_views": 7,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 14160,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 28320,
+            "byte_length": 9440,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 37760,
+            "byte_length": 4720,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 42480,
+            "byte_length": 18880,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 61360,
+            "byte_length": 10680,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 72040,
+            "byte_length": 134754,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "vertex",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 206796,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 8,
+            "role": "vertex",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 220956,
+            "byte_length": 14160,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 9,
+            "role": "inverse_bind",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 235116,
+            "byte_length": 1984,
+            "byte_stride": null,
+            "target": null
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "keiki-100",
+      "input_glb_sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3",
+        "accessors": 19,
+        "buffer_views": 22,
+        "sparse_accessors": 0,
+        "packed_vertex_views": 15,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 456,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 912,
+            "byte_length": 304,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 1216,
+            "byte_length": 152,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 1368,
+            "byte_length": 608,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 1976,
+            "byte_length": 264,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 2240,
+            "byte_length": 78292,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "inverse_bind",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 80532,
+            "byte_length": 1984,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 8,
+            "role": "vertex",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 82516,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 9,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 101356,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 10,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 120196,
+            "byte_length": 12560,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 132756,
+            "byte_length": 6280,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "vertex",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 139036,
+            "byte_length": 25120,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 13,
+            "role": "index",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 164156,
+            "byte_length": 16716,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 14,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 180872,
+            "byte_length": 33264,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 15,
+            "role": "vertex",
+            "accessors": [
+              13
+            ],
+            "byte_offset": 214136,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 16,
+            "role": "vertex",
+            "accessors": [
+              14
+            ],
+            "byte_offset": 214232,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 17,
+            "role": "vertex",
+            "accessors": [
+              15
+            ],
+            "byte_offset": 214328,
+            "byte_length": 64,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 18,
+            "role": "vertex",
+            "accessors": [
+              16
+            ],
+            "byte_offset": 214392,
+            "byte_length": 32,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 19,
+            "role": "vertex",
+            "accessors": [
+              17
+            ],
+            "byte_offset": 214424,
+            "byte_length": 128,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 20,
+            "role": "index",
+            "accessors": [
+              18
+            ],
+            "byte_offset": 214552,
+            "byte_length": 24,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 21,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 214576,
+            "byte_length": 470481,
+            "byte_stride": null,
+            "target": null
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "keiki-101",
+      "input_glb_sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40",
+        "accessors": 7,
+        "buffer_views": 8,
+        "sparse_accessors": 0,
+        "packed_vertex_views": 5,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 456,
+            "byte_length": 456,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 912,
+            "byte_length": 304,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 1216,
+            "byte_length": 152,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 1368,
+            "byte_length": 608,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 1976,
+            "byte_length": 264,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 2240,
+            "byte_length": 78292,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "inverse_bind",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 80532,
+            "byte_length": 1984,
+            "byte_stride": null,
+            "target": null
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    },
+    {
+      "case": "keiki-110",
+      "input_glb_sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+      "independent_layout": {
+        "format": "has_independent_gltf_layout_1",
+        "passed": true,
+        "glb_sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+        "accessors": 13,
+        "buffer_views": 15,
+        "sparse_accessors": 0,
+        "packed_vertex_views": 10,
+        "views": [
+          {
+            "view": 0,
+            "role": "vertex",
+            "accessors": [
+              0
+            ],
+            "byte_offset": 0,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 1,
+            "role": "vertex",
+            "accessors": [
+              1
+            ],
+            "byte_offset": 18840,
+            "byte_length": 18840,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 2,
+            "role": "vertex",
+            "accessors": [
+              2
+            ],
+            "byte_offset": 37680,
+            "byte_length": 12560,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 3,
+            "role": "vertex",
+            "accessors": [
+              3
+            ],
+            "byte_offset": 50240,
+            "byte_length": 6280,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 4,
+            "role": "vertex",
+            "accessors": [
+              4
+            ],
+            "byte_offset": 56520,
+            "byte_length": 25120,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 5,
+            "role": "index",
+            "accessors": [
+              5
+            ],
+            "byte_offset": 81640,
+            "byte_length": 16716,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 6,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 98356,
+            "byte_length": 33264,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 7,
+            "role": "vertex",
+            "accessors": [
+              6
+            ],
+            "byte_offset": 131620,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 8,
+            "role": "vertex",
+            "accessors": [
+              7
+            ],
+            "byte_offset": 131716,
+            "byte_length": 96,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 9,
+            "role": "vertex",
+            "accessors": [
+              8
+            ],
+            "byte_offset": 131812,
+            "byte_length": 64,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 10,
+            "role": "vertex",
+            "accessors": [
+              9
+            ],
+            "byte_offset": 131876,
+            "byte_length": 32,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 11,
+            "role": "vertex",
+            "accessors": [
+              10
+            ],
+            "byte_offset": 131908,
+            "byte_length": 128,
+            "byte_stride": null,
+            "target": 34962
+          },
+          {
+            "view": 12,
+            "role": "index",
+            "accessors": [
+              11
+            ],
+            "byte_offset": 132036,
+            "byte_length": 24,
+            "byte_stride": null,
+            "target": 34963
+          },
+          {
+            "view": 13,
+            "role": "image",
+            "accessors": [],
+            "byte_offset": 132060,
+            "byte_length": 470481,
+            "byte_stride": null,
+            "target": null
+          },
+          {
+            "view": 14,
+            "role": "inverse_bind",
+            "accessors": [
+              12
+            ],
+            "byte_offset": 602544,
+            "byte_length": 1984,
+            "byte_stride": null,
+            "target": null
+          }
+        ],
+        "scope": "Bounded role/alignment/packed/stride/sparse layout only; not complete glTF or native fidelity certification"
+      }
+    }
+  ],
+  "all12_passed": true,
+  "inputs_and_source_unchanged": true,
+  "protected_before": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\manifest.json",
+      "bytes": 1010365,
+      "mtime_ns": 1794556041817464100,
+      "sha256": "4415d700af063d27841f36fc1b1203b23803ccf6fb1539bb53279f71f29d985b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\actual-verification.json",
+      "bytes": 14612,
+      "mtime_ns": 1794556125660870600,
+      "sha256": "7f2cb4a9144ee3b9b46fca01a33f18aee406b6b2c1dd0f68eb4dab20a325b154"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\writer\\result.json",
+      "bytes": 25374,
+      "mtime_ns": 1794556120574932100,
+      "sha256": "88e02a8ea88f27b32ac23df646f6c6974ca4370821a46d64689b51adf8686e4e"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\writer\\execution.json",
+      "bytes": 41120,
+      "mtime_ns": 1794556120902699900,
+      "sha256": "8cefb18452adaac49e805e50f45b1265d58debd162534c8826296aaa43103968"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\writer\\process.log",
+      "bytes": 86475,
+      "mtime_ns": 1794556120895677300,
+      "sha256": "4fa70e5dec1a8b4403ec48dd5721fd0ba07680d21353b7c5c703acafcf1fbe4a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\nitori-default\\scene.glb",
+      "bytes": 836088,
+      "mtime_ns": 1794556018477474700,
+      "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-default\\scene.glb",
+      "bytes": 933756,
+      "mtime_ns": 1794556019554812400,
+      "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\nitori-skin-0\\scene.glb",
+      "bytes": 836088,
+      "mtime_ns": 1794556021322729500,
+      "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-000\\scene.glb",
+      "bytes": 933756,
+      "mtime_ns": 1794556022527711300,
+      "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\nitori-skin-1\\scene.glb",
+      "bytes": 792548,
+      "mtime_ns": 1794556024256328200,
+      "sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\nitori-skin-2\\scene.glb",
+      "bytes": 793036,
+      "mtime_ns": 1794556025504506000,
+      "sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-001\\scene.glb",
+      "bytes": 328448,
+      "mtime_ns": 1794556026821947800,
+      "sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-010\\scene.glb",
+      "bytes": 851824,
+      "mtime_ns": 1794556027215729300,
+      "sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-011\\scene.glb",
+      "bytes": 246516,
+      "mtime_ns": 1794556028727429200,
+      "sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-100\\scene.glb",
+      "bytes": 696656,
+      "mtime_ns": 1794556029052719800,
+      "sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-101\\scene.glb",
+      "bytes": 91356,
+      "mtime_ns": 1794556030421960800,
+      "sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-110\\scene.glb",
+      "bytes": 614724,
+      "mtime_ns": 1794556030535466600,
+      "sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\probe_driver.py",
+      "bytes": 28874,
+      "mtime_ns": 1794556818984428800,
+      "sha256": "6adb7ed194ed7594348082839e6d4e97be682d824eaf58ead1993d439e649181"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\glb_reference.py",
+      "bytes": 28472,
+      "mtime_ns": 1794556737526109300,
+      "sha256": "32fe4ebd4f3e5e3d35317b2e53930d772eb43b6db12111a997d6564d090d20b2"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\test_probe_cpu.py",
+      "bytes": 32515,
+      "mtime_ns": 1794556888371725000,
+      "sha256": "ee2d85e55eb2f2c693d7e33e959713f7b3df13d7febf06eae2a929c680f1dbae"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\raw_probe.gd",
+      "bytes": 15665,
+      "mtime_ns": 1794556818998010300,
+      "sha256": "5defd11daeb7d278738f7d625134581203a9d7b022c1f2533ced0d8c4683ca48"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\app_probe.gd",
+      "bytes": 20218,
+      "mtime_ns": 1794556818985940200,
+      "sha256": "74104cb0fb8d7b445a6d63b9735d5f6ad420f491ae35755cba784bd53f7492dd"
+    }
+  ],
+  "protected_after": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\manifest.json",
+      "bytes": 1010365,
+      "mtime_ns": 1794556041817464100,
+      "sha256": "4415d700af063d27841f36fc1b1203b23803ccf6fb1539bb53279f71f29d985b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\actual-verification.json",
+      "bytes": 14612,
+      "mtime_ns": 1794556125660870600,
+      "sha256": "7f2cb4a9144ee3b9b46fca01a33f18aee406b6b2c1dd0f68eb4dab20a325b154"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\writer\\result.json",
+      "bytes": 25374,
+      "mtime_ns": 1794556120574932100,
+      "sha256": "88e02a8ea88f27b32ac23df646f6c6974ca4370821a46d64689b51adf8686e4e"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\writer\\execution.json",
+      "bytes": 41120,
+      "mtime_ns": 1794556120902699900,
+      "sha256": "8cefb18452adaac49e805e50f45b1265d58debd162534c8826296aaa43103968"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\writer\\process.log",
+      "bytes": 86475,
+      "mtime_ns": 1794556120895677300,
+      "sha256": "4fa70e5dec1a8b4403ec48dd5721fd0ba07680d21353b7c5c703acafcf1fbe4a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\nitori-default\\scene.glb",
+      "bytes": 836088,
+      "mtime_ns": 1794556018477474700,
+      "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-default\\scene.glb",
+      "bytes": 933756,
+      "mtime_ns": 1794556019554812400,
+      "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\nitori-skin-0\\scene.glb",
+      "bytes": 836088,
+      "mtime_ns": 1794556021322729500,
+      "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-000\\scene.glb",
+      "bytes": 933756,
+      "mtime_ns": 1794556022527711300,
+      "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\nitori-skin-1\\scene.glb",
+      "bytes": 792548,
+      "mtime_ns": 1794556024256328200,
+      "sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\nitori-skin-2\\scene.glb",
+      "bytes": 793036,
+      "mtime_ns": 1794556025504506000,
+      "sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-001\\scene.glb",
+      "bytes": 328448,
+      "mtime_ns": 1794556026821947800,
+      "sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-010\\scene.glb",
+      "bytes": 851824,
+      "mtime_ns": 1794556027215729300,
+      "sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-011\\scene.glb",
+      "bytes": 246516,
+      "mtime_ns": 1794556028727429200,
+      "sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-100\\scene.glb",
+      "bytes": 696656,
+      "mtime_ns": 1794556029052719800,
+      "sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-101\\scene.glb",
+      "bytes": 91356,
+      "mtime_ns": 1794556030421960800,
+      "sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v2\\runs\\1794556016763092400-40301e3c9fe24f5a9c7441715f6268ba\\inputs\\keiki-110\\scene.glb",
+      "bytes": 614724,
+      "mtime_ns": 1794556030535466600,
+      "sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\probe_driver.py",
+      "bytes": 28874,
+      "mtime_ns": 1794556818984428800,
+      "sha256": "6adb7ed194ed7594348082839e6d4e97be682d824eaf58ead1993d439e649181"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\glb_reference.py",
+      "bytes": 28472,
+      "mtime_ns": 1794556737526109300,
+      "sha256": "32fe4ebd4f3e5e3d35317b2e53930d772eb43b6db12111a997d6564d090d20b2"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\test_probe_cpu.py",
+      "bytes": 32515,
+      "mtime_ns": 1794556888371725000,
+      "sha256": "ee2d85e55eb2f2c693d7e33e959713f7b3df13d7febf06eae2a929c680f1dbae"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\raw_probe.gd",
+      "bytes": 15665,
+      "mtime_ns": 1794556818998010300,
+      "sha256": "5defd11daeb7d278738f7d625134581203a9d7b022c1f2533ced0d8c4683ca48"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-static-appearance-probe-20261113-v3\\source\\app_probe.gd",
+      "bytes": 20218,
+      "mtime_ns": 1794556818985940200,
+      "sha256": "74104cb0fb8d7b445a6d63b9735d5f6ad420f491ae35755cba784bd53f7492dd"
+    }
+  ]
+}

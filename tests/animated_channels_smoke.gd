@@ -74,6 +74,9 @@ func run() -> void:
 	editor.frame_model();app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,60)];app.set_frame(4)
 	var before: Dictionary=rig.data.duplicate(true);var history: int=app.history.size();var camera: Transform3D=app.renderer.camera.transform
 	check(not app.advanced_mode and timeline.visual_rows.size()==2 and timeline.expanded.is_empty(),"Simple starts with one collapsed row per object")
+	var timeline_dock: ScrollContainer=app.workspace_layout.panels.timeline.get_node("TimelineContentScroll")
+	timeline_dock.ensure_control_visible(timeline.get_parent());await settled()
+	check(timeline_dock.get_global_rect().encloses(timeline.get_parent().get_global_rect()),"compressed Timeline scrolls complete channel editing area into view")
 	await click(app,Vector2(9,timeline.row_y(0)+12),MOUSE_BUTTON_LEFT,true)
 	check(timeline.expanded.get(id,false) and timeline.visual_rows.size()==5 and timeline.channel_y(id,arm)>=0,"routed disclosure click expands only animated channels")
 	check(rig.data==before and app.history.size()==history and app.renderer.camera.transform==camera,"expanding rows changes no animation, history or temporary view")

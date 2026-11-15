@@ -1,0 +1,88 @@
+{
+  "format": "has_retry_publication_static_preflight_1",
+  "verdict": "PREPARATION_ONLY_AST_PASS_NOT_TERMINAL_PERMISSION",
+  "source_commit": "f380729cb170682068017b0d4c29b5f8425cdd14",
+  "run_name": "windows-canonical-bone-binding-20261114T040946652",
+  "source_registry_derivation": {
+    "verifier_sha256": "459b90eeeae9d5523654c07fcbb3de27dad0e889943f46947333e8eb5a65437a",
+    "constant_result_keys": 77,
+    "literal_core_rows": 36,
+    "body_pose_wrappers": 2,
+    "helper_modes": 2,
+    "contact_suites": 12,
+    "component_contact_branches": 2,
+    "motion_suites": 5,
+    "literal_root_movie_rows": 19,
+    "required_posed_movie_rows": 2,
+    "derived_exact_keys": 157,
+    "matches_frozen_registry": true
+  },
+  "recipes": [
+    {
+      "path": "audit_receipts.py",
+      "bytes": 13347,
+      "sha256": "93f0e12555627a4d82ed7b64a912a585023232659511f441ea442fffb5a53056",
+      "AST": "PASS",
+      "imported_or_executed": false
+    },
+    {
+      "path": "build_consolidated_packet.py",
+      "bytes": 14553,
+      "sha256": "bc08fead5ff745522e7dd4c83d14f4d4e244c09aca9218db36e551ee10d68d9c",
+      "AST": "PASS",
+      "imported_or_executed": false
+    },
+    {
+      "path": "finalize_receipt_index.py",
+      "bytes": 4434,
+      "sha256": "3f4c6e585fa5568356a35c0ca10d0074884c6e86a8d4ca52001c7dbca9776f1f",
+      "AST": "PASS",
+      "imported_or_executed": false
+    },
+    {
+      "path": "preflight_terminal.py",
+      "bytes": 4717,
+      "sha256": "8bf6866c05b9fcb5102a311f29ee893776b55a9877931a366e4f2dc256f2f036",
+      "AST": "PASS",
+      "imported_or_executed": false
+    },
+    {
+      "path": "publication_gates.py",
+      "bytes": 18620,
+      "sha256": "be806cab19dfa38beb54286a7acd1b05d142ecd085cced3ca98a21f091ba0852",
+      "AST": "PASS",
+      "imported_or_executed": false
+    },
+    {
+      "path": "summarize_canonical.py",
+      "bytes": 31077,
+      "sha256": "23bdefc1f31b2c6f129d34705868e23b22655a6c741be950f2eab3286a28b505",
+      "AST": "PASS",
+      "imported_or_executed": false
+    }
+  ],
+  "no_recipe_import_execution": true,
+  "products_runtimes_native_headless_or_GPU_launched": false,
+  "process_enumeration_or_kills": false,
+  "current_running_results_state_log_receipts_read": false,
+  "immutable_current_inputs_read": [
+    "source-before.json",
+    "launch.json",
+    "coordinator-children-observed.json"
+  ],
+  "terminal_qualification_UNRUN": [
+    "preflight_terminal.py",
+    "audit_receipts.py",
+    "summarize_canonical.py",
+    "finalize_receipt_index.py",
+    "build_consolidated_packet.py"
+  ],
+  "assumptions": [
+    "Root must explicitly authorize terminal execution and provide fresh raw+flat host SHA values after actual terminal PASS.",
+    "Result keys157/core36/movie21 are exact named source-derived expectations; actual terminal registry must match.",
+    "Private receipt totals are observed at terminal; exactly one source-registered Krita cancellation exit2 is expected and remains a cancellation.",
+    "OldEE and c4d full failures remain permanent, distinct from this fresh retry.",
+    "Scoped native4 evidence remains at its recorded7477 working matrix;1006 source hashes join exactly plus only the two pinned reviewed provenance-test differences.",
+    "Foundation167, jiggleCPU66, crosswalkCPU77, headless96 and owner53 remain separate scopes; no deduplicated aggregate count or native solver/fidelity claim."
+  ]
+}

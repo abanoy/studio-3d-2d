@@ -4,17 +4,19 @@ const MAX_SECONDS := 60
 const FORMAT := "studio_audio_2"
 const TRIM_FORMAT := "studio_audio_3"
 const FADE_FORMAT := "studio_audio_4"
-const EXTRA_FIELDS := ["source_out_sample","fade_in_ms","fade_out_ms"]
+const SOLO_FORMAT := "studio_audio_5"
+const EXTRA_FIELDS := ["source_out_sample","fade_in_ms","fade_out_ms","solo"]
 const MAX_CLIPS := 16
 const MAX_PCM := 64 * 1024 * 1024
 const WAVEFORM_BINS:=8192
 
 static func clips(audio: Dictionary) -> Array:
 	if audio.is_empty(): return []
-	return audio.clips if audio.get("format") in [FORMAT,TRIM_FORMAT,FADE_FORMAT] and audio.get("clips") is Array else [audio]
+	return audio.clips if audio.get("format") in [FORMAT,TRIM_FORMAT,FADE_FORMAT,SOLO_FORMAT] and audio.get("clips") is Array else [audio]
 
 static func document(rows: Array) -> Dictionary:
 	if rows.is_empty(): return {}
+	if rows.any(func(clip):return clip.has("solo")):return {"format":SOLO_FORMAT,"clips":rows}
 	if rows.any(func(clip):return clip.has("fade_in_ms") or clip.has("fade_out_ms")):return {"format":FADE_FORMAT,"clips":rows}
 	if rows.any(func(clip):return clip.has("source_out_sample")):return {"format":TRIM_FORMAT,"clips":rows}
 	return rows[0] if rows.size() == 1 else {"format":FORMAT,"clips":rows}
@@ -30,16 +32,20 @@ static func metadata(audio: Dictionary) -> Dictionary:
 static func layout_error(audio: Dictionary) -> String:
 	if audio.is_empty(): return ""
 	if audio.has("format") or audio.has("clips"):
-		if not audio.get("format") in [FORMAT,TRIM_FORMAT,FADE_FORMAT] or audio.size() != 2 or not audio.get("clips") is Array or audio.clips.is_empty() or audio.clips.size() > MAX_CLIPS:
+		if not audio.get("format") in [FORMAT,TRIM_FORMAT,FADE_FORMAT,SOLO_FORMAT] or audio.size() != 2 or not audio.get("clips") is Array or audio.clips.is_empty() or audio.clips.size() > MAX_CLIPS:
 			return "Unsupported audio collection or more than16 clips."
 	var ids := {}
 	for clip in clips(audio):
-		if clip is Dictionary and clip.has("source_out_sample") and not audio.get("format") in [TRIM_FORMAT,FADE_FORMAT]:return "Audio end trims require the version3 audio collection."
-		if clip is Dictionary and (clip.has("fade_in_ms") or clip.has("fade_out_ms")) and audio.get("format")!=FADE_FORMAT:return "Sound fades require the version4 audio collection."
+		if clip is Dictionary and clip.has("source_out_sample") and not audio.get("format") in [TRIM_FORMAT,FADE_FORMAT,SOLO_FORMAT]:return "Audio end trims require the version3 audio collection."
+		if clip is Dictionary and (clip.has("fade_in_ms") or clip.has("fade_out_ms")) and not audio.get("format") in [FADE_FORMAT,SOLO_FORMAT]:return "Sound fades require the version4 audio collection."
+		if clip is Dictionary and clip.has("solo") and (audio.get("format")!=SOLO_FORMAT or not clip.solo is bool):return "Solo requires a boolean in the version5 audio collection."
 		if not clip is Dictionary or not clip.get("id") is String or clip.id.is_empty() or clip.id.length() > 128 or ids.has(clip.id):
 			return "Invalid or duplicate audio clip identity."
 		ids[clip.id] = true
 	return ""
+
+static func has_solo(audio: Dictionary) -> bool:
+	return clips(audio).any(func(clip):return clip is Dictionary and clip.get("solo",false)==true)
 
 static func source_end(clip: Dictionary) -> int:
 	return int(clip.get("source_out_sample",clip.get("source",{}).get("frames",0)))
@@ -77,6 +83,7 @@ static func clip_error(clip: Dictionary, video: Dictionary) -> String:
 		var value=clip[field]
 		if not (value is int or value is float) or not is_finite(float(value)) or value!=floor(value) or value<1 or value>60000:return "Sound fades must be whole milliseconds from1 to60000; omit a fade to disable it."
 	if not clip.get("muted") is bool: return "Invalid audio mute value."
+	if clip.has("solo") and not clip.solo is bool:return "Invalid audio solo value."
 	for field in ["start_frame","source_in_sample","gain_db"]:
 		var value = clip.get(field)
 		if not (value is int or value is float) or not is_finite(float(value)): return "Invalid audio timing/gain."
@@ -135,10 +142,11 @@ static func mix_document(audio: Dictionary, video: Dictionary) -> Dictionary:
 	var sum := PackedFloat64Array(); sum.resize(count * 2); sum.fill(0)
 	var per_clip := [];var per_clip_levels:=[]
 	var active: Array[Vector2i]=[]
+	var soloing:=has_solo(audio)
 	for clip in rows:
 		var peaks := PackedFloat32Array(); peaks.resize(256); peaks.fill(0)
 		var fine:=PackedFloat32Array();fine.resize(WAVEFORM_BINS);fine.fill(0)
-		if not clip.muted:
+		if not clip.muted and (not soloing or clip.get("solo",false)):
 			var source: Dictionary = clip.source
 			var start := sample_index(clip.start_frame,video)
 			var gain := db_to_linear(clip.gain_db)

@@ -1,0 +1,27 @@
+--- a/tests/wind_review_gpu_common.gd
++++ b/tests/wind_review_gpu_common.gd
+@@ -26,6 +26,13 @@
+ func setup_request() -> void:
+ 	request=JSON.parse_string(FileAccess.get_file_as_string(OS.get_cmdline_user_args()[0]))
+ 	folder=request.folder
++	var actual:=ProjectSettings.globalize_path("res://").replace("\\","/").simplify_path().trim_suffix("/")
++	var expected:=str(request.get("project_root","")).replace("\\","/").simplify_path().trim_suffix("/")
++	metrics["project_root"]=actual
++	check(not expected.is_empty() and (actual.to_lower()==expected.to_lower() if OS.get_name()=="Windows" else actual==expected),"the actual res root is the requested main checkout")
++	var initial_layout:=ProjectSettings.globalize_path("res://output/test-preferences/workspace-%d.json" % OS.get_process_id())
++	metrics["fresh_startup_workspace"]=not FileAccess.file_exists(initial_layout)
++	check(metrics.fresh_startup_workspace,"startup cannot reuse an earlier process workspace")
+ 	root.size=Vector2i(1800,1100)
+ 
+ func check(ok: bool,label: String) -> void:
+@@ -44,8 +51,9 @@
+ 	recorded_exclusion_binding=""
+ 	app=load("res://main.tscn").instantiate()
+ 	app.recovery_root=folder.path_join(label+"-recovery");app.recent_path=folder.path_join(label+"-recent.json");app.display_prefs_path=folder.path_join(label+"-display.cfg")
+-	root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false
++	root.add_child(app)
+ 	app.has_project.cache_root=folder.path_join(label+"-cache");app.workspace_layout.path=folder.path_join(label+"-layout.json")
++	await settled();app.home.hide();app.autosave_enabled.button_pressed=false
+ 	app.mode.select(2);app.change_mode(2);app.scene_view.set_setup(true,false)
+ 
+ func source_path() -> String:

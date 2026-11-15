@@ -1,0 +1,591 @@
+{
+  "format": "has_nested_docks_fan_flutter_1",
+  "date": "2026-11-10",
+  "owner_requests": [
+    "Recursive split arrangements such as two docks across the top.",
+    "Fan should move loose hair continuously with stronger response at larger strength.",
+    "Owner confirmed previous left clipping repair is fixed."
+  ],
+  "implementation": [
+    "Recursive horizontal/vertical split tree inside all four main dock areas; center drop tabs, outer-quarter drops split, open-space drop creates native window. Empty visual branches collapse; floating panels retain their exact nested home.",
+    "Version3 persists nested trees, tabs, selected tabs, split offsets and floating geometry. Version1 and2 migrate without replacing live editor controls.",
+    "Fans can Aim at hair in one Undo; Add fan aims at the selected model. Height/rotation and existing fan scale are respected. Reach feedback explains missed streams.",
+    "Hair gets deterministic fixed-step gusts and crossflow, bounded by existing force/rotation limits. Zero speed and missed streams add no flutter. Body physics remains independent."
+  ],
+  "native_fan_finding": {
+    "copied_owner_project_sha256": "bd4c7b3371d62908f9cf276c5f6b274c45117a47dc6741a30faca95a375968c6",
+    "hips_translation_y": -80.36091613769531,
+    "chains": 12,
+    "original_placement_chains_reached": 0,
+    "steady_aimed_late_motion_degrees": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        3.0,
+        0.0395646811852521
+      ],
+      [
+        12.0,
+        0.0559529096807445
+      ],
+      [
+        50.0,
+        0.0395646811852521
+      ]
+    ],
+    "owner_pose_reset": false
+  },
+  "native_flutter": {
+    "checks": 15,
+    "failures": 0,
+    "metrics": {
+      "gentle": {
+        "chains": 12,
+        "direction_reversals": 23,
+        "late_range_degrees": 8.58160420623399,
+        "max_step_degrees": 0.449369564717657,
+        "speed": 3.0
+      },
+      "repeat": {
+        "chains": 12,
+        "direction_reversals": 23,
+        "late_range_degrees": 8.58160420623399,
+        "max_step_degrees": 0.449369564717657,
+        "speed": 3.0
+      },
+      "strong": {
+        "chains": 12,
+        "direction_reversals": 21,
+        "late_range_degrees": 26.9817368255028,
+        "max_step_degrees": 1.50298035209696,
+        "speed": 12.0
+      },
+      "zero": {
+        "chains": 12,
+        "direction_reversals": 0,
+        "late_range_degrees": 0.0,
+        "max_step_degrees": 0.0,
+        "speed": 0.0
+      }
+    },
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\fan-flutter\\1794293420703355600",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\fan_flutter_smoke_8e52c9d2d534481899314ace330cb43a.json",
+    "native_input": true,
+    "source_and_originals_unchanged": true
+  },
+  "included_flutter": {
+    "checks": 15,
+    "failures": 0,
+    "metrics": {
+      "gentle": {
+        "chains": 2,
+        "direction_reversals": 8,
+        "late_range_degrees": 0.672603465486388,
+        "max_step_degrees": 0.0395646811852521,
+        "speed": 3.0
+      },
+      "repeat": {
+        "chains": 2,
+        "direction_reversals": 8,
+        "late_range_degrees": 0.672603465486388,
+        "max_step_degrees": 0.0395646811852521,
+        "speed": 3.0
+      },
+      "strong": {
+        "chains": 2,
+        "direction_reversals": 10,
+        "late_range_degrees": 4.86856353614014,
+        "max_step_degrees": 0.268340976975597,
+        "speed": 12.0
+      },
+      "zero": {
+        "chains": 2,
+        "direction_reversals": 0,
+        "late_range_degrees": 0.0,
+        "max_step_degrees": 0.0,
+        "speed": 0.0
+      }
+    },
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\fan-flutter\\1794293437136767300",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\fan_flutter_smoke_ae421cd1ed36464d850521554e3a87b4.json",
+    "native_input": false,
+    "source_and_originals_unchanged": true
+  },
+  "existing_fan_native_recording": {
+    "checks": 49,
+    "failures": 0,
+    "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/fan-motion/run_529830",
+    "metrics": {
+      "AvatarSample_A": {
+        "chains": 12,
+        "maximum_step_radians": 0.0261955708265305,
+        "raw_maximum_step_radians": 0.316468119621277
+      },
+      "AvatarSample_Avrm0": {
+        "chains": 12,
+        "maximum_step_radians": 0.0261955708265305,
+        "raw_maximum_step_radians": 0.387541145086288
+      },
+      "anchor_max_step": 0.00250005722045898,
+      "authored_step_radians": 0.00276213674806058
+    },
+    "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/fan-motion/run_529830/render_1794293451_7178051_0/movie.mp4",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\fan_motion_smoke_57243c25f96544148c250f9e3c4f574a.json",
+    "originals": {
+      "C:\\a\\dump\\AvatarSample_A.vrm": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3",
+      "C:\\a\\dump\\AvatarSample_Avrm0.vrm": "f7b4573b241b3e91c7c5f58bed342133a4e5f7e0c1125e1cedc49723ace9b288"
+    },
+    "video": {
+      "codec_name": "h264",
+      "width": 1920,
+      "height": 1080,
+      "nb_read_frames": "48",
+      "r_frame_rate": "24/1",
+      "duration": "2.000000"
+    }
+  },
+  "nested_native_docking": {
+    "reports": {
+      "writer": {
+        "checks": 13,
+        "failures": 0,
+        "reader": false
+      },
+      "reader": {
+        "checks": 5,
+        "failures": 0,
+        "reader": true
+      }
+    },
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_nested_smoke_d5a22d1bdb4444f8baa62f644088f48b.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_nested_smoke_5ac8442bd37b4cff95de713809fa4c8a.json"
+    ],
+    "source_unchanged": true,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-nested\\1794293517961684400"
+  },
+  "v1_v2_migration_and_docking": {
+    "reports": {
+      "writer": {
+        "checks": 18,
+        "failures": 0,
+        "reader": false
+      },
+      "reader": {
+        "checks": 4,
+        "failures": 0,
+        "reader": true
+      }
+    },
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_docking_smoke_68a260fd99a544288f47ea7b2fd00b0f.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_docking_smoke_a81eab7b6fe04ce9a913b79f88dcc3ed.json"
+    ],
+    "source_unchanged": true,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-docking\\1794293537810350600"
+  },
+  "native_avatar_resize": {
+    "checks": 31,
+    "failures": 0,
+    "measurements": [
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 979.0,
+        "canvas_before": 883.0,
+        "window": "(3440, 1440)"
+      },
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 439.0,
+        "canvas_before": 343.0,
+        "window": "(1400, 900)"
+      },
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 318.0,
+        "canvas_before": 222.0,
+        "window": "(1200, 760)"
+      }
+    ],
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-resize\\1794293556082974700",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_resize_smoke_db467abb273242a1a6291305f51f2bb2.json",
+    "functional_unchanged": true
+  },
+  "earlier_same_recursive_layout_timeline": {
+    "reports": {
+      "unit": {
+        "checks": 42,
+        "failures": 0
+      },
+      "app": {
+        "checks": 35,
+        "failures": 0
+      },
+      "workspace": {
+        "checks": 48,
+        "failures": 0
+      },
+      "channels": {
+        "checks": 47,
+        "failures": 0,
+        "folder": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/animated-channels/run_692230",
+        "movie": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/animated-channels/run_692230/render_1794293340_7240702_0/movie.mp4",
+        "native_samples": [
+          "pose-smoke/miku-project",
+          "source-smoke/source-project",
+          "sfm-smoke/project"
+        ],
+        "project": "C:/a/Programming/cloudflare/has-acceptance-session-20261110/output/animated-channels/run_692230/channels.has",
+        "recovery_pixels": {
+          "channels": 0,
+          "close": true,
+          "mean": 0.0
+        }
+      }
+    },
+    "video": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1920,
+      "height": 1080,
+      "coded_width": 1920,
+      "coded_height": 1080,
+      "has_b_frames": 2,
+      "pix_fmt": "yuv420p",
+      "level": 40,
+      "color_range": "tv",
+      "color_transfer": "iec61966-2-1",
+      "color_primaries": "bt709",
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 24576,
+      "duration": "2.000000",
+      "bit_rate": "155472",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "48",
+      "extradata_size": 50,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.33.100 libx264"
+      }
+    },
+    "optional_native_skips": [],
+    "functional_unchanged": true,
+    "source_audio_unchanged": true,
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\timeline_navigation_smoke_39da1d4120a84ae1bf223e9bed6f92d1.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_controls_smoke_f67d18133d254b13bf2d495f855eed0e.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\animated_channels_smoke_1e8fdabde8c04b3a94d6f50c192a18fe.json"
+    ],
+    "isolated_display": null,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\timeline-navigation\\1794293308921291400"
+  },
+  "earlier_same_camera_code": {
+    "checks": 52,
+    "failures": 0,
+    "native_checks_unrun": false,
+    "prefs": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794293350797554800/display.cfg",
+    "reports": {
+      "writer": {
+        "checks": 52,
+        "failures": 0,
+        "native_checks_unrun": false,
+        "prefs": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794293350797554800/display.cfg"
+      },
+      "reader": {
+        "checks": 2,
+        "failures": 0
+      }
+    },
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794293350797554800",
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\orbit_navigation_smoke_545f0b6246684c69b72a63495cc97c1e.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\orbit_navigation_smoke_4a76390559f54964a13c7be322617bc6.json"
+    ],
+    "native_project_unchanged": true,
+    "isolated_display": null,
+    "scope": "Includes provided prepared native model"
+  },
+  "scope_note": "Final native/included flutter and existing fan49 run after final gust tuning; final nested/migration/resize run after proportional drop zones. Timeline and camera checks precede those isolated fan-gain/drop-hit refinements; do not represent these as a completed full aggregate.",
+  "private_receipts": {
+    "fan_flutter_smoke_8e52c9d2d534481899314ace330cb43a.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_2c0044fcb1ba4f3da973b32bfcb2a419",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 29292,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 15.967
+    },
+    "fan_flutter_smoke_ae421cd1ed36464d850521554e3a87b4.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_3a7c04f2e98c44f5827f9c3e8b6c78bc",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 7020,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 7.053
+    },
+    "fan_motion_smoke_57243c25f96544148c250f9e3c4f574a.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_139fc4df495f4ebd9a954ab23bccc419",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 26888,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 31.737
+    },
+    "workspace_nested_smoke_d5a22d1bdb4444f8baa62f644088f48b.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_51c3290071cf4360b9dbefd2e1200f6f",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 20440,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 14.672
+    },
+    "workspace_nested_smoke_5ac8442bd37b4cff95de713809fa4c8a.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_26415d7ebbe1402d975fc0c2442f96a5",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 11428,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.638
+    },
+    "workspace_docking_smoke_68a260fd99a544288f47ea7b2fd00b0f.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_64de6af2678a49fb9b9096c231e5bb48",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 28736,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 13.916
+    },
+    "workspace_docking_smoke_a81eab7b6fe04ce9a913b79f88dcc3ed.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_6fd097a2307044ad8861f745002fb105",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 29660,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.874
+    },
+    "workspace_resize_smoke_db467abb273242a1a6291305f51f2bb2.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_08a44ad373b44cd293d2e3fbc597a2a1",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 17732,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 13.619
+    },
+    "orbit_navigation_smoke_545f0b6246684c69b72a63495cc97c1e.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_32ddb254699d4a52a2eb52c4d89257f9",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 17764,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.122
+    },
+    "orbit_navigation_smoke_4a76390559f54964a13c7be322617bc6.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_bcad05d61b1d4857a15033e096431301",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 19116,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 2.451
+    },
+    "timeline_navigation_smoke_39da1d4120a84ae1bf223e9bed6f92d1.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_64d29fb8a6834a5b8f6bb9dfef828aac",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 1440,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 10.733
+    },
+    "workspace_controls_smoke_f67d18133d254b13bf2d495f855eed0e.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_6e364fb34d4c4495b30c061fe7446794",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 10,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 25868,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.488
+    },
+    "animated_channels_smoke_1e8fdabde8c04b3a94d6f50c192a18fe.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_8d05094456e047e6b0724632ecdc7376",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 29808,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 17.388
+    }
+  },
+  "source_hashes": {
+    "src\\dock_tree.gd": "9e730db5a1794cbf166084856238a7e19459ad0ab65a0ba70aef0a51b253984f",
+    "src\\workspace_layout.gd": "3eab0ccdad322a6072537fd1b8eed1f4e1f14d4bee850e16779ea869f39fb334",
+    "src\\airflow.gd": "d6bb934440095553f70300609da70eb198c7ca1d45aae0403f0a6e749ad2b7b7",
+    "src\\secondary_live.gd": "6d245d5ece2d9c636fe433758cefc1a10413b93ef510ad2fbabe1813058022e0",
+    "src\\fan_editor.gd": "b6d13d58d71c2b846926260f844135210e711822e562a69dc19657df20f93297",
+    "src\\physics_editor.gd": "e75269b044f21f09a7113fd8b16a28db5cf1e9d41264eccdc6013b637649254c"
+  },
+  "review_update": {
+    "format": "has_nested_fan_review_update_1",
+    "files": {
+      "dock_tree.gd": {
+        "previous_sha256": null,
+        "sha256": "9e730db5a1794cbf166084856238a7e19459ad0ab65a0ba70aef0a51b253984f"
+      },
+      "airflow.gd": {
+        "previous_sha256": "3048d2f94beeb8530b29c06603b6ad0a5ae664cd58486d95b2b680c2cce2df63",
+        "sha256": "d6bb934440095553f70300609da70eb198c7ca1d45aae0403f0a6e749ad2b7b7"
+      },
+      "secondary_live.gd": {
+        "previous_sha256": "742e53c6029ed7307cc8340637e6ecf9341da0c10f70dc008b2ec5e20893f073",
+        "sha256": "6d245d5ece2d9c636fe433758cefc1a10413b93ef510ad2fbabe1813058022e0"
+      },
+      "fan_editor.gd": {
+        "previous_sha256": "6bd6aafcc1d5f40c5601a9a5ba43435545e226aeb882ae3825bb9e79a38efd16",
+        "sha256": "b6d13d58d71c2b846926260f844135210e711822e562a69dc19657df20f93297"
+      },
+      "physics_editor.gd": {
+        "previous_sha256": "5fac2ee46ec285c6bff58986f96a57b1e9d355a1a51e307b6837b9c0c08b83b8",
+        "sha256": "e75269b044f21f09a7113fd8b16a28db5cf1e9d41264eccdc6013b637649254c"
+      },
+      "workspace_layout.gd": {
+        "previous_sha256": "edc5ef1fe5bdb87b8f9c044a7c31fd4d90f70989720b49f210414674e22450a9",
+        "sha256": "3eab0ccdad322a6072537fd1b8eed1f4e1f14d4bee850e16779ea869f39fb334"
+      }
+    },
+    "project_hashes_before_and_after": {
+      "Avatar.has": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77",
+      "Flatgrass.has": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e",
+      "Street.has": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5"
+    },
+    "running_owner_window_profile_recovery_and_installation_untouched": true,
+    "restart_required": true,
+    "time_ns": 1794293699810317000
+  },
+  "failed_intermediates": [
+    "Initial fan scratch probe disposed active solver during app.free; fixed probe cleanup and preserved failed log.",
+    "New airflow/fan prototype had type inference/is-preload compile errors; fixed and stopped only invalid owned private probe before fresh measurements.",
+    "First native flutter test called nonexistent test-only pose_editor.sync and used stale actor after Add fan. Corrected helper/ref resolution; error-free reruns required.",
+    "Default gust too small on original stiff fixture at0.338degrees; increased actual gust gain, retaining >0.5degree and stronger-response assertions. Native gentle/strong remain bounded and reproducible."
+  ],
+  "remaining": [
+    "Owner has not reviewed latest recursive split or fan update yet.",
+    "Physical OS cursor return still needs desktop observation.",
+    "Full aggregate remains incomplete; historical legacy oracle ZIPs absent at old install paths.",
+    "55/62 acceptance unchanged; native artist, novice, learner, physical tablet/audio and clean offline installation observations remain open."
+  ],
+  "shutdown": "Owner explicitly requests wrap-up and a concrete Markdown pickup plan; preserve private review projects, live recovery and staged native reproduction input."
+}

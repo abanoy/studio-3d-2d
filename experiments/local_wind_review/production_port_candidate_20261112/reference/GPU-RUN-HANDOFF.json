@@ -1,0 +1,558 @@
+{
+  "format": "has_wind_gpu_matrix_final_handoff_1",
+  "root_head_at_run": "2c7320fa5195245fc2bd65ee50a031dbd9daad2a",
+  "prototype_base": "85fa482b3ef1ed752e8a97191b5ea7b235cea7aa",
+  "run_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-u",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\verify_gpu.py",
+    "--run-gpu",
+    "--lease-confirmed"
+  ],
+  "exit": 0,
+  "passed": true,
+  "total_checks": 830,
+  "cases": [
+    {
+      "mode": "procedural",
+      "checks": 60,
+      "failures": 0,
+      "exit": 0,
+      "receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "receipt_sha256": "335e1a7d5afd19b54768c6facf7d500ff39cbded7fdc103c9bbce3eeab65ef21",
+      "result_sha256": "9cd91b709ffab2ba4cd90ab4a4954307d1190d33947c90d4bf1005996dae185e",
+      "metrics": {
+        "changed_native_bytes": 214947,
+        "groups": [
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          }
+        ],
+        "independent_exclusion_available": true,
+        "opposite": {
+          "direction": 1,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 2,
+          "late_force_variation": 0.2249833047389984,
+          "late_range_degrees": 7.213900659847605,
+          "maximum_step_degrees": 0.5112900853814362,
+          "mean_camera_x_force": 0.35989663218458495,
+          "reversals": 10,
+          "selected_rotators": 3,
+          "speed": 12.0,
+          "ticks": 1200
+        },
+        "peer_adoption_error": "",
+        "peer_parent_install_error": "",
+        "source_adoption_error": "",
+        "strong": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 2,
+          "late_force_variation": 0.2245045006275177,
+          "late_range_degrees": 6.056150725245063,
+          "maximum_step_degrees": 0.609093378375847,
+          "mean_camera_x_force": -0.35997745729982855,
+          "reversals": 10,
+          "selected_rotators": 3,
+          "speed": 12.0,
+          "ticks": 1200
+        },
+        "weak": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 2,
+          "late_force_variation": 0.02247343212366104,
+          "late_range_degrees": 0.5733490774584662,
+          "maximum_step_degrees": 0.14265252956010954,
+          "mean_camera_x_force": -0.08999221770713726,
+          "reversals": 8,
+          "selected_rotators": 3,
+          "speed": 3.0,
+          "ticks": 1200
+        },
+        "wind_control_angle": 0.3137471079826355,
+        "zero": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 2,
+          "late_force_variation": 0.0,
+          "late_range_degrees": 0.0,
+          "maximum_step_degrees": 0.0,
+          "mean_camera_x_force": 0.0,
+          "reversals": 0,
+          "selected_rotators": 3,
+          "speed": 0.0,
+          "ticks": 1200
+        }
+      }
+    },
+    {
+      "mode": "vrm0",
+      "checks": 45,
+      "failures": 0,
+      "exit": 0,
+      "receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "receipt_sha256": "ca280f15c9df7e072993f76ec61b4b404983269474f69ba18b0ad428673f9bd5",
+      "result_sha256": "664e783f35f9634d85ceec4531a7f805f4c5b5be3537c09666c6e83f15b32bc1",
+      "metrics": {
+        "changed_native_bytes": 18640,
+        "groups": [
+          {
+            "chains": 4,
+            "linked": true,
+            "rotators": 8
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          }
+        ],
+        "independent_exclusion_available": true,
+        "opposite": {
+          "direction": 1,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.2042476385831833,
+          "late_range_degrees": 17.79475331633675,
+          "maximum_step_degrees": 1.5008956502962207,
+          "mean_camera_x_force": 0.36179769091929,
+          "reversals": 21,
+          "selected_rotators": 8,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "source_adoption_error": "",
+        "strong": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.20855137705802917,
+          "late_range_degrees": 18.588725241310296,
+          "maximum_step_degrees": 1.501417092550669,
+          "mean_camera_x_force": -0.36198179541776576,
+          "reversals": 21,
+          "selected_rotators": 8,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "weak": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.021273870021104813,
+          "late_range_degrees": 2.1484917121579286,
+          "maximum_step_degrees": 1.1909117836834233,
+          "mean_camera_x_force": -0.08996883362221221,
+          "reversals": 18,
+          "selected_rotators": 8,
+          "speed": 3.0,
+          "ticks": 480
+        },
+        "wind_control_angle": 0.7665599584579468,
+        "zero": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.0,
+          "late_range_degrees": 0.055952909680744456,
+          "maximum_step_degrees": 0.5774299554049902,
+          "mean_camera_x_force": 0.0,
+          "reversals": 10,
+          "selected_rotators": 8,
+          "speed": 0.0,
+          "ticks": 480
+        }
+      }
+    },
+    {
+      "mode": "vrm1",
+      "checks": 45,
+      "failures": 0,
+      "exit": 0,
+      "receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "receipt_sha256": "e86f2a8f5fb533793426eaec3b6089d89ec3a88e5039889c82171acc97d1e980",
+      "result_sha256": "fb6b218035ddfd0727bb29b4d9fe0d7e0fc12300a2ea3de8f4a4b400bf5bc5e1",
+      "metrics": {
+        "changed_native_bytes": 18639,
+        "groups": [
+          {
+            "chains": 4,
+            "linked": true,
+            "rotators": 8
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 2
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 4
+          }
+        ],
+        "independent_exclusion_available": true,
+        "opposite": {
+          "direction": 1,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.20424768328666687,
+          "late_range_degrees": 18.46279704358277,
+          "maximum_step_degrees": 1.501417092550669,
+          "mean_camera_x_force": 0.36179769234731796,
+          "reversals": 21,
+          "selected_rotators": 8,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "source_adoption_error": "",
+        "strong": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.20855151116847992,
+          "late_range_degrees": 17.88522600208274,
+          "maximum_step_degrees": 1.501417092550669,
+          "mean_camera_x_force": -0.361981798397998,
+          "reversals": 21,
+          "selected_rotators": 8,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "weak": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.02127387560904026,
+          "late_range_degrees": 2.1637416035838632,
+          "maximum_step_degrees": 1.096465315222662,
+          "mean_camera_x_force": -0.08996883265984555,
+          "reversals": 18,
+          "selected_rotators": 8,
+          "speed": 3.0,
+          "ticks": 480
+        },
+        "wind_control_angle": 0.7687281966209412,
+        "zero": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 26,
+          "late_force_variation": 0.0,
+          "late_range_degrees": 0.06852804166478502,
+          "maximum_step_degrees": 0.5774299554049902,
+          "mean_camera_x_force": 0.0,
+          "reversals": 10,
+          "selected_rotators": 8,
+          "speed": 0.0,
+          "ticks": 480
+        }
+      }
+    },
+    {
+      "mode": "backhair",
+      "checks": 47,
+      "failures": 0,
+      "exit": 0,
+      "receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "receipt_sha256": "57189c78ff9e7fc93d15b8c65b4cd4cf796a398ca5377c006acc198000d6baed",
+      "result_sha256": "f36648beb531a5bf700f4f777084a460b6c55c3f8bcbeee6df76bb65566c3c5e",
+      "metrics": {
+        "changed_native_bytes": 13265,
+        "groups": [
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          },
+          {
+            "chains": 1,
+            "linked": false,
+            "rotators": 3
+          }
+        ],
+        "independent_exclusion_available": true,
+        "opposite": {
+          "direction": 1,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 3,
+          "late_force_variation": 0.27582359313964844,
+          "late_range_degrees": 12.998588504738272,
+          "maximum_step_degrees": 1.1288257910148305,
+          "mean_camera_x_force": 0.3563187071122229,
+          "reversals": 9,
+          "selected_rotators": 3,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "source_adoption_error": "",
+        "strong": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 3,
+          "late_force_variation": 0.2775365710258484,
+          "late_range_degrees": 3.880501967503752,
+          "maximum_step_degrees": 0.32864938623226714,
+          "mean_camera_x_force": -0.3562274103363355,
+          "reversals": 14,
+          "selected_rotators": 3,
+          "speed": 12.0,
+          "ticks": 480
+        },
+        "weak": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 3,
+          "late_force_variation": 0.017506562173366547,
+          "late_range_degrees": 0.41116911710256954,
+          "maximum_step_degrees": 0.055952909680744456,
+          "mean_camera_x_force": -0.09013491466951867,
+          "reversals": 10,
+          "selected_rotators": 3,
+          "speed": 3.0,
+          "ticks": 480
+        },
+        "wind_control_angle": 0.1118384301662445,
+        "zero": {
+          "direction": 0,
+          "excluded_channels_exact": true,
+          "excluded_rotators": 3,
+          "late_force_variation": 0.0,
+          "late_range_degrees": 0.0,
+          "maximum_step_degrees": 0.0,
+          "mean_camera_x_force": 0.0,
+          "reversals": 0,
+          "selected_rotators": 3,
+          "speed": 0.0,
+          "ticks": 480
+        }
+      }
+    },
+    {
+      "mode": "lifecycle",
+      "checks": 544,
+      "failures": 0,
+      "exit": 0,
+      "receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "receipt_sha256": "09b52790886990ea113472ec89be5dc71b67be905ce98c9936fda2aacc4f04cd",
+      "result_sha256": "2c9e97449ed59e73541b5d13673338e9a671614cee2412a859ea7f5f0c4c86c0",
+      "metrics": {
+        "running-export-frames": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/wind-review-prototype/1794522438324373800/gpu-verification/1794544655566553700/lifecycle/images_1794544722_24709778_0",
+        "source_adoption_error": "",
+        "warming-export-frames": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/wind-review-prototype/1794522438324373800/gpu-verification/1794544655566553700/lifecycle/images_1794544705_7386896_0"
+      }
+    },
+    {
+      "mode": "primary",
+      "checks": 89,
+      "failures": 0,
+      "exit": 0,
+      "receipt": {
+        "exit": 0,
+        "child_desktop_confirmed": true,
+        "foreground_child_observed": false,
+        "job_closed": true,
+        "desktop_closed": true
+      },
+      "receipt_sha256": "e4f6eeb66de0edb7fcacbe52604fac8750039abcd9db8b864708cfc70ab62fbc",
+      "result_sha256": "24e1d3d977251fa335da4b3249b854be0f3cb491e1d48314ca815f2f2054f140",
+      "metrics": {
+        "running": {
+          "candidate_body_alignment": 1.1175870895385742e-08,
+          "native_body_count": 20,
+          "record_scope": "local",
+          "record_target_count": 1
+        },
+        "running_peer_adoption_error": "",
+        "source_adoption_error": "",
+        "warming": {
+          "candidate_body_alignment": 1.1175870895385742e-08,
+          "native_body_count": 20,
+          "record_scope": "world",
+          "record_target_count": 2
+        },
+        "warming_peer_adoption_error": ""
+      }
+    }
+  ],
+  "runtime_source_sha256": {
+    "src/app.gd": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+    "src/has_project.gd": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+    "src/physics_editor.gd": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+    "src/physics_recording.gd": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+    "src/pose_editor.gd": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+    "src/renderer.gd": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+    "src/secondary_spring.gd": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+    "src/wind_review.gd": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+    "src/wind_review_groups.gd": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7"
+  },
+  "test_sha256": {
+    "tests/wind_review_gpu_common.gd": "313e5022e96faa9545b01b73e1ae40fafda66cb3f11643868d47305127d8ffd3",
+    "tests/wind_review_gpu_motion.gd": "fd4300da3b282a4d1534f5628e9ed5b1c103f801ffe07c4738f9cd330547c7e3",
+    "tests/wind_review_gpu_lifecycle.gd": "bb36e9166040cb0f72fc08382948c1923268dbc636770e4b2ef11fe30ff8a814",
+    "tests/wind_review_gpu_primary.gd": "fb2bde2494609215495d59cddae89a7552be93c88307b9f344247d09986b4759"
+  },
+  "verification_sha256": "c6684d1ac68161ba63457c124124ab17f5de0def5fec67a04bd86dea2c9927a7",
+  "runtime_unchanged": true,
+  "all_prototype_source_hash_size_mtime_unchanged": true,
+  "native_originals_unchanged": true,
+  "root_functional_changes_during_run": [],
+  "png_exports": [
+    {
+      "label": "running-export-frames",
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\lifecycle\\images_1794544722_24709778_0",
+      "frames": 48,
+      "size": [
+        1920,
+        1080
+      ],
+      "first_frame_sha256": "db526720b5ffbdfc92c63620227b7c8d2ed2895b146f31a3a71f00b72b693a86",
+      "scope": "Actual PNG sequence; frame1 exact native-original comparison is asserted in lifecycle. No movie encoded."
+    },
+    {
+      "label": "warming-export-frames",
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544655566553700\\lifecycle\\images_1794544705_7386896_0",
+      "frames": 48,
+      "size": [
+        1920,
+        1080
+      ],
+      "first_frame_sha256": "db526720b5ffbdfc92c63620227b7c8d2ed2895b146f31a3a71f00b72b693a86",
+      "scope": "Actual PNG sequence; frame1 exact native-original comparison is asserted in lifecycle. No movie encoded."
+    }
+  ],
+  "first_failed_run": {
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-verification\\1794544174461270100",
+    "procedural_checks": 56,
+    "failures": 1,
+    "native_cases_unrun": 5,
+    "fault": "Invalid draft_frame=-1 prevented adoption; Add model also deliberately resets parent_id, and the old later peer check could alias the source. Preserved full old harness, logs, PNGs and metadata.",
+    "correction_handoff": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-peer-fixture-fix\\fixture-fix.json"
+  },
+  "changed_harness_scope": [
+    "common: valid recorded-fixture draft0; log/refuse source adoption failure and bind requested source ID.",
+    "motion: log/refuse peer adoption failure; require distinct requested peer; install parented world through app.restore_world and assert authored+Node ancestry; require real peer meshes visible.",
+    "primary: log/refuse peer adoption failure and require distinct requested peer ID instead of blindly using active_model."
+  ],
+  "previous_oracle_strengthening": "before-gpu-oracle-strengthening/strengthening.json retains prior source and independent-hidden/nonzero-excluded/both-physics checks.",
+  "optional_one_case_runner": {
+    "source": "before-gpu-peer-fixture-fix/run_procedural_once.py",
+    "executed": false,
+    "ast_parsed_only": true
+  },
+  "scope_limits": [
+    "This is isolated prototype phase1 declared-chain local preview, not a production port or full canonical pass.",
+    "No pending-helper-before-Apply preview or permanent per-group authored inclusion setting implemented.",
+    "No native JIGGLE/assembly equivalence, artist-fidelity, physical cursor/device comfort, novice/learner or clean-install acceptance.",
+    "Motion stepping uses the real spring runner with deterministic fixed ticks; lifecycle/primary use actual app callbacks/engine body physics.",
+    "Recovery probes validate real queued GPU readback admission/pixels/counter behavior using a small in-memory downstream preview sink; they do not rerun the persisted recovery-worker suite.",
+    "No new movie render; lifecycle exported two48-frame full-HD PNG sequences and compared frame1 exactly. Original movie/helper/physics/readback regressions remain required before a port."
+  ],
+  "private_art_uploaded": false,
+  "gpu_lease_released_to_root": true
+}

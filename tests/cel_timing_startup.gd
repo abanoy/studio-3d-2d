@@ -1,4 +1,5 @@
 extends Node
+const Drawing=preload("res://src/drawing.gd")
 const Storage=preload("res://src/storage.gd")
 var checks:=0
 var failures:=0
@@ -18,7 +19,7 @@ func recovered(result: Dictionary) -> void:
 	check(result.restored and app.dirty and app.has_project.path.is_empty() and not app.home.visible,"normal startup restores moved exposures after actual SIGKILL before Home")
 	var layer: Dictionary=app.cel_timing.layer_by_id(expected.layer)
 	check(layer.cels[0].id==expected.a and layer.cels[0].start==1300 and layer.cels[0].duration==24 and layer.cels[1].start==1376,"recovery retains full parent exposure identity/ranges")
-	check(Storage.image_hash(layer.cels[0].image)==expected.pixels and signature(app.audio_mix.pcm)==expected.pcm,"recovery restores exact original RGBA and independent sound")
+	check(Storage.image_hash(Drawing.image(layer.cels[0]))==expected.pixels and signature(app.audio_mix.pcm)==expected.pcm,"recovery restores exact original RGBA and independent sound")
 	var child: Dictionary=app.sequence_editor.asset(expected.child).scene
 	check(child.layers[1].cels[0].start==80 and child.layers[1].cels[0].duration==48 and child.layers[1].opacity==.35,"recovery retains independently moved child exposure and layer opacity")
 	check(app.frame==1304 and app.frame_box.value==1304 and app.video.duration_frames==1440 and app.timeline_navigation.span==0,"recovery restores requested late playhead with correctly bounded frame control")

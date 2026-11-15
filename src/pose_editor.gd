@@ -34,6 +34,9 @@ var drag_world := Transform3D.IDENTITY
 var drag_screen_axis := Vector2.ZERO
 var drag_pixels := 80.0
 var drag_units := 1.0
+var drag_ring_start := Vector3.ZERO
+var drag_ring_previous := 0.0
+var drag_ring_angle := 0.0
 var import_control: Button
 var scale_apply: Button
 var auto_key: CheckButton
@@ -92,6 +95,7 @@ func setup(owner_app, parent: Node) -> void:
 	operation = OptionButton.new()
 	operation.add_item("Rotate")
 	operation.add_item("Move")
+	operation.tooltip_text="Rotate with a colored axis ring, or use the outer pale ring to turn relative to your view. Unlock all axes to use the outer ring."
 	operation.item_selected.connect(func(_index): refresh_values())
 	panel.add_child(operation)
 	space = OptionButton.new()
@@ -124,6 +128,7 @@ func setup(owner_app, parent: Node) -> void:
 	for axis in ["X", "Y", "Z"]:
 		var lock := CheckBox.new()
 		lock.text = "Lock " + axis
+		lock.tooltip_text="Keep this axis locked. The camera-facing rotation ring is available when all axes are unlocked."
 		lock_row.add_child(lock)
 		locks.append(lock)
 	scale_field = app.advanced_spin(panel, "Model uniform scale", 0.001, 10000, 1)
@@ -177,7 +182,7 @@ func sync_enabled(node: Node = panel) -> void:
 		sync_enabled(child)
 
 func import_dialog() -> void:
-	app.choose_file("Add 3D model", ["*.glb", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.vrm", "*.mdl", "*.gma", "*.bin"], func(path):app.import_actions.add(path,true,0), app.source_import.default_browse_dir())
+	app.choose_file("Add 3D model", ["*.has", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.vrm", "*.mdl", "*.gma", "*.bin"], func(path):app.import_actions.add(path,true,0), app.source_import.default_browse_dir())
 
 func remove_dialog() -> void:
 	if not active_rig():return
@@ -635,9 +640,14 @@ func frame_model() -> void:
 	else:app.message(app.renderer.last_framing.get("error","No mesh geometry to frame."))
 
 func update_gizmo() -> void:
+	var had_helpers: bool=not app.canvas.pose_lines.is_empty() or not app.canvas.pose_joints.is_empty()
 	app.canvas.pose_lines = []
 	app.canvas.pose_joints = []
 	handles.clear(); joints.clear()
+	# Deselect, mode changes and behind-camera targets return before the normal
+	# redraw below. Clear their cached visible geometry in the same frame.
+	if had_helpers:app.canvas.queue_redraw()
+	if app.local_wind_display_active():return
 	if contacts.viewport.active and contacts.viewport.draw():return
 	if app.mode.selected != 2 or not active_rig(): return
 	if app.physics_editor and app.physics_editor.active(active_rig().data.id):return
@@ -674,21 +684,39 @@ func update_gizmo() -> void:
 		for i in range(points.size() - 1):
 			app.canvas.pose_lines.append({"a": points[i], "b": points[i + 1], "color": colors[axis]})
 		handles.append({"axis": direction, "points": points, "world": transform, "units": radius})
+	if operation.selected==0:
+		# View-relative rotation is independent of Local/World axis display. A
+		# separate outer ring keeps its target clear of the three RGB ellipses.
+		var unlocked: bool=locks.all(func(lock):return not lock.button_pressed)
+		var view_radius:=radius*(90./70.)
+		var points: Array[Vector2]=[]
+		for i in range(65):
+			var angle:=TAU*i/64.
+			var radial: Vector3=(camera.global_basis.x*cos(angle)+camera.global_basis.y*sin(angle))*view_radius
+			points.append(camera.unproject_position(transform.origin+radial))
+		var color:=Color("e4eaf0") if unlocked else Color(0.65,0.68,0.72,0.4)
+		for i in range(points.size()-1):app.canvas.pose_lines.append({"a":points[i],"b":points[i+1],"color":color})
+		handles.append({"axis":camera.global_basis.z.normalized(),"points":points,"world":transform,"units":view_radius,"view":true,"enabled":unlocked})
 	app.canvas.queue_redraw()
 
 func input(event: InputEvent, point: Vector2) -> void:
 	if not active_rig(): return
+	# Scene bounds follow Setup/Focus presentation. Continuing gestures still
+	# receive motion/release globally, but no invisible handle starts here.
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not app.canvas.scene_contains(point):return
 	if contacts.viewport.active:contacts.viewport.input(event,point);return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed: finish_drag(); return
 		var threshold: float = 10.0 * app.video.width / maxf(1, app.canvas.image_rect().size.x)
 		var best := threshold
 		var hit := {}
+		var hit_segment:=0
 		for handle in handles:
 			for i in range(handle.points.size() - 1):
 				var distance: float = point.distance_to(Geometry2D.get_closest_point_to_segment(point, handle.points[i], handle.points[i + 1]))
-				if distance < best: best = distance; hit = handle
+				if distance < best: best = distance; hit = handle;hit_segment=i
 		if not hit.is_empty():
+			if not hit.get("enabled",true):return
 			var contact_error:=contact_edit_error()
 			if not contact_error.is_empty():app.message(contact_error);return
 			var joints_plan:=joint_plan()
@@ -701,8 +729,14 @@ func input(event: InputEvent, point: Vector2) -> void:
 			drag_chain=LimbIK.chain(active_rig(),selected) if limb_ik.button_pressed and operation.selected==1 and drag_joints.is_empty() else {}
 			drag_before = before
 			drag_start = point; drag_axis = hit.axis; drag_world = hit.world; drag_units = hit.units
-			drag_screen_axis = hit.points[-1] - hit.points[0] if operation.selected == 1 else Vector2(1, -1)
+			drag_screen_axis = hit.points[-1] - hit.points[0] if operation.selected == 1 else hit.points[hit_segment+1]-hit.points[hit_segment]
 			drag_pixels = maxf(1, drag_screen_axis.length())
+			if operation.selected==0:
+				# Ray/plane angles follow the actual ring and camera. The projected
+				# tangent is a usable fallback when its plane is viewed edge-on.
+				drag_pixels=maxf(1,drag_screen_axis.length()/ (TAU/(hit.points.size()-1)))
+				drag_ring_start=ring_vector(point)
+				drag_ring_previous=0.;drag_ring_angle=0.
 			return
 		for joint in joints:
 			if point.distance_to(joint.point) < best:
@@ -722,7 +756,7 @@ func input(event: InputEvent, point: Vector2) -> void:
 		var position := Timeline.vector(value.position)
 		var rotation := Timeline.quaternion(value.rotation_xyzw)
 		if operation.selected == 0:
-			var angle := (point - drag_start).dot(Vector2(1, -1)) * 0.01
+			var angle:=ring_angle(point)
 			if snap.button_pressed: angle = snappedf(angle, deg_to_rad(15))
 			if selected == "@root":
 				var axis:=drag_axis
@@ -771,6 +805,25 @@ func input(event: InputEvent, point: Vector2) -> void:
 			var error:=FootHold.solve(active_rig(),drag_feet,apply_frame)
 			if not error.is_empty():active_rig().data=last_valid;apply_frame();app.message(error)
 		refresh_values()
+
+func ring_vector(point: Vector2) -> Vector3:
+	var camera: Camera3D=app.renderer.camera
+	var direction:=camera.project_ray_normal(point)
+	if absf(direction.dot(drag_axis))<0.08:return Vector3.ZERO
+	var intersection=Plane(drag_axis.normalized(),drag_world.origin).intersects_ray(camera.project_ray_origin(point),direction)
+	if intersection==null:return Vector3.ZERO
+	var radial: Vector3=intersection-drag_world.origin
+	return radial.normalized() if radial.length_squared()>0.00000001 else Vector3.ZERO
+
+func ring_angle(point: Vector2) -> float:
+	if drag_ring_start!=Vector3.ZERO:
+		var radial:=ring_vector(point)
+		if radial==Vector3.ZERO:return drag_ring_angle
+		var principal:=atan2(drag_axis.dot(drag_ring_start.cross(radial)),drag_ring_start.dot(radial))
+		drag_ring_angle+=wrapf(principal-drag_ring_previous,-PI,PI)
+		drag_ring_previous=principal
+		return drag_ring_angle
+	return (point-drag_start).dot(drag_screen_axis.normalized())/drag_pixels
 
 func finish_drag(cancel := false) -> void:
 	if contacts and contacts.viewport and contacts.viewport.dragging:contacts.viewport.finish(cancel);return

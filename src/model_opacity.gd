@@ -55,7 +55,8 @@ func set_appearance(alpha: float,flat: bool) -> void:
 func duplicate_material(mesh: MeshInstance3D, surface: int, source: Material) -> void:
 	# Runtime GLB imports supply BaseMaterial3D. Do not silently replace arbitrary shaders.
 	if source and not source is BaseMaterial3D:return
-	var material: BaseMaterial3D=source.duplicate() if source else StandardMaterial3D.new()
+	var appearance: Material=source.get_meta("has_baked_lightmap_base",source) if source and unshaded else source
+	var material: BaseMaterial3D=appearance.duplicate() if appearance else StandardMaterial3D.new()
 	var original: Material=mesh.material_override if surface<0 else mesh.get_surface_override_material(surface)
 	originals.append({"mesh":mesh,"surface":surface,"material":original})
 	var color:=material.albedo_color

@@ -1,0 +1,32 @@
+{
+  "format": "has_snapshot_ordering_readonly_review_1",
+  "baseline": "1236796865e677b150a2d7e2add20f2aac5325fe",
+  "source_files": {
+    "src/has_snapshot_writer.gd": {
+      "bytes": 5630,
+      "sha256": "61400dfcf743cf4bd1e0d99e3aec7e1c74f05d61108cfa64cf7afe3f7613111f"
+    },
+    "src/has_project.gd": {
+      "bytes": 15268,
+      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032"
+    }
+  },
+  "source_or_Git_edited": false,
+  "runtime_or_Godot_launched": false,
+  "clear_blocking_findings": [],
+  "reviewed_facts": [
+    "prepare() preserves Frozen.capture main-thread detachment, deep-copies the request and retains one pending capture; a second prepare is refused.",
+    "launch() consumes the prepared capture once and starts the filesystem Thread after OS.create_process has returned a positive pid.",
+    "A failed Thread.start drops the consumed capture and thread reference, records _snapshot_error, writes cancellation and retains normal pid/exporting/progress polling until child exit.",
+    "Python pack() awaits snapshot_ready and cancellation before target directory/lock/manifest operations, so unpublished capture is not packaged.",
+    "The existing _process failure branch sets pid=-1 and exporting=false before emitting one failed completion; it does not clear dirty or adopt a failed save identity.",
+    "finish() discards unlaunched prepared references and joins any started Thread; exit discards prepared data and cancels/joins the busy writer.",
+    "Legacy start(project,request) remains prepare()+launch(), preserving its previous combined operation contract."
+  ],
+  "limits": [
+    "This removes only the HAS snapshot writer filesystem overlap with this process-creation call. Recovery writer/preview threads can remain concurrent; this is not a global CWD serialization fix.",
+    "The original Windows launch error and GetLastError were not captured. The original unchanged focused pass and negative churn reproduction are separate observations, not causal proof.",
+    "Ownership here means the existing pid-based HasProject lifecycle. No new native retained-handle/incarnation guarantee is established by this patch.",
+    "Producer authored32/0 uses real Frozen capture/adoption and Thread with inert persist. Actual app/Storage/packer integration remains for root to execute, including Thread-start failure, immutable snapshot and single false completion."
+  ]
+}

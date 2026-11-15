@@ -33,15 +33,15 @@ func directory_picker(app) -> FileDialog:
 	return null
 
 func run() -> void:
-	var folder := ProjectSettings.globalize_path("res://output/has-smoke/run_%d" % Time.get_ticks_usec())
+	var folder: String = OS.get_cmdline_user_args()[0] if not OS.get_cmdline_user_args().is_empty() else ProjectSettings.globalize_path("res://output/has-smoke/run_%d" % Time.get_ticks_usec())
 	var app = load("res://main.tscn").instantiate()
-	app.recovery_root = folder.path_join("recovery")
-	root.add_child(app); await process_frame
+	app.recovery_root = folder.path_join("recovery");app.recent_path=folder.path_join("recents.json");app.display_prefs_path=folder.path_join("prefs.cfg")
+	root.add_child(app); await process_frame;app.home.hide()
 	var input := folder.path_join("inputs"); DirAccess.make_dir_recursive_absolute(input)
 	var source := input.path_join("room.glb"); SceneIO.make_fixture(source); app.load_scene(source)
 	var rig := input.path_join("rig.glb"); SceneIO.make_pose_fixture(rig); app.pose_editor.add_model(rig)
 	var audio := input.path_join("voice.wav")
-	DirAccess.copy_absolute(ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav"), audio)
+	DirAccess.copy_absolute(folder.path_join("voice.wav") if not OS.get_cmdline_user_args().is_empty() else ProjectSettings.globalize_path("res://output/fixtures/voice — тест.wav"), audio)
 	check(app.import_audio(audio).is_empty(), "fixture has independent scene, rig and audio assets")
 	app.audio_clip.start_frame = 24; app.audio_clip.gain_db = -6; app.rebuild_audio()
 	app.pose_editor.frame_model()

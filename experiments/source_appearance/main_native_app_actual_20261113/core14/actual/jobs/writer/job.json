@@ -1,0 +1,528 @@
+{
+  "mode": "writer",
+  "cases": [
+    {
+      "name": "multi_skin_glove-default-no-appearance",
+      "member": "kawashiro nitori tanktop glove.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0
+      },
+      "use_override": false,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01",
+      "key": "01-multi_skin_glove-default-no-appearance",
+      "appearance_expected": false,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\01-multi_skin_glove-default-no-appearance",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-default-no-appearance",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "use_override": false,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "02-keiki_tools_chisels-default-no-appearance",
+      "appearance_expected": false,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": true
+        },
+        {
+          "name": "box.smd",
+          "present": true
+        },
+        {
+          "name": "flame.smd",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": true
+        }
+      ],
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\02-keiki_tools_chisels-default-no-appearance",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "multi_skin_glove-skin-0",
+      "member": "kawashiro nitori tanktop glove.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01",
+      "key": "03-multi_skin_glove-skin-0",
+      "appearance_expected": false,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\03-multi_skin_glove-skin-0",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-groups-000",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "04-keiki_tools_chisels-groups-000",
+      "appearance_expected": false,
+      "pose_native_bone_index": 23,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": true
+        },
+        {
+          "name": "box.smd",
+          "present": true
+        },
+        {
+          "name": "flame.smd",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": true
+        }
+      ],
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\04-keiki_tools_chisels-groups-000",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "multi_skin_glove-skin-1",
+      "member": "kawashiro nitori tanktop glove.mdl",
+      "skin": 1,
+      "bodygroups": {
+        "0": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01",
+      "key": "05-multi_skin_glove-skin-1",
+      "appearance_expected": true,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\05-multi_skin_glove-skin-1",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "multi_skin_glove-skin-2",
+      "member": "kawashiro nitori tanktop glove.mdl",
+      "skin": 2,
+      "bodygroups": {
+        "0": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01",
+      "key": "06-multi_skin_glove-skin-2",
+      "appearance_expected": true,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\06-multi_skin_glove-skin-2",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-groups-001",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 0,
+        "2": 1
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "07-keiki_tools_chisels-groups-001",
+      "appearance_expected": true,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": true
+        },
+        {
+          "name": "box.smd",
+          "present": true
+        },
+        {
+          "name": "flame.smd",
+          "present": false
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": true
+        }
+      ],
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\07-keiki_tools_chisels-groups-001",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-groups-010",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 1,
+        "2": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "08-keiki_tools_chisels-groups-010",
+      "appearance_expected": true,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": true
+        },
+        {
+          "name": "box.smd",
+          "present": false
+        },
+        {
+          "name": "flame.smd",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": true
+        }
+      ],
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\08-keiki_tools_chisels-groups-010",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-groups-011",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 0,
+        "1": 1,
+        "2": 1
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "09-keiki_tools_chisels-groups-011",
+      "appearance_expected": true,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": true
+        },
+        {
+          "name": "box.smd",
+          "present": false
+        },
+        {
+          "name": "flame.smd",
+          "present": false
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": true
+        }
+      ],
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\09-keiki_tools_chisels-groups-011",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-groups-100",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "10-keiki_tools_chisels-groups-100",
+      "appearance_expected": true,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": false
+        },
+        {
+          "name": "box.smd",
+          "present": true
+        },
+        {
+          "name": "flame.smd",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": false
+        }
+      ],
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\10-keiki_tools_chisels-groups-100",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-groups-101",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 1,
+        "1": 0,
+        "2": 1
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "11-keiki_tools_chisels-groups-101",
+      "appearance_expected": true,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": false
+        },
+        {
+          "name": "box.smd",
+          "present": true
+        },
+        {
+          "name": "flame.smd",
+          "present": false
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": false
+        }
+      ],
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\11-keiki_tools_chisels-groups-101",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-groups-110",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 1,
+        "1": 1,
+        "2": 0
+      },
+      "use_override": true,
+      "expect_all_blank": false,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "12-keiki_tools_chisels-groups-110",
+      "appearance_expected": true,
+      "expected_meshes": [
+        {
+          "name": "tools.dmx",
+          "present": false
+        },
+        {
+          "name": "box.smd",
+          "present": false
+        },
+        {
+          "name": "flame.smd",
+          "present": true
+        }
+      ],
+      "expected_morphs": [
+        {
+          "name": "Tools",
+          "present": false
+        }
+      ],
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\12-keiki_tools_chisels-groups-110",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "multi_skin_glove-all-blank-refusal",
+      "member": "kawashiro nitori tanktop glove.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 1
+      },
+      "use_override": true,
+      "expect_all_blank": true,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01\\models\\touhou\\tamo\\nitori edit\\kawashiro nitori tanktop glove.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-01",
+      "key": "13-multi_skin_glove-all-blank-refusal",
+      "appearance_expected": true,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\13-multi_skin_glove-all-blank-refusal",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    },
+    {
+      "name": "keiki_tools_chisels-groups-111",
+      "member": "keiki haniyashin chisels.mdl",
+      "skin": 0,
+      "bodygroups": {
+        "0": 1,
+        "1": 1,
+        "2": 1
+      },
+      "use_override": true,
+      "expect_all_blank": true,
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02\\models\\touhou\\tamo\\keiki haniyashin chisels.mdl",
+      "resource_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\inputs\\family-02",
+      "key": "14-keiki_tools_chisels-groups-111",
+      "appearance_expected": true,
+      "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\cases\\14-keiki_tools_chisels-groups-111",
+      "mount_overrides": {
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\usermod": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\tf": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\left4dead2_movies": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\hl2": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\workshop": false,
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\SourceFilmmaker\\game\\platform": false
+      }
+    }
+  ],
+  "tone": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\tone.wav",
+  "absent_gmod": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\absent-game",
+  "absent_workshop": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\absent-workshop",
+  "watchdog_seconds": 9360,
+  "source_manifest_sha256": "e937f2f7e7e460d8ea1ebdf405987d03f992a6c6c5cf3cbbefcb1a3acc7ea903",
+  "source_revision": "8d4fde001258f501602bd94bd80d925683062f15",
+  "format": "has_source_choices_native_job_1",
+  "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\writer"
+}

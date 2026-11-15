@@ -43,6 +43,7 @@ func run() -> void:
 	DirAccess.make_dir_recursive_absolute(folder)
 	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app)
 	await settled()
+	app.scene_view.set_setup(false,false)
 	var selection=app.world_selection
 	check(selection.selected.is_empty() and selection.items.is_empty() and selection.tree.get_selected()==null,"empty world hierarchy opens without a selection")
 	var fixture:=folder.path_join("rig.glb");SceneIO.make_pose_fixture(fixture)
@@ -77,7 +78,7 @@ func run() -> void:
 	var alt:=InputEventKey.new();alt.keycode=KEY_ALT;alt.pressed=true;app._input(alt);app.pose_editor.update_gizmo()
 	check(app.pose_editor.reveal_bones and app.canvas.pose_joints.size()==2,"holding Alt reveals full joint structure")
 	alt.pressed=false;app._input(alt);app.pose_editor.update_gizmo()
-	check(not app.pose_editor.reveal_bones and app.canvas.pose_joints.size()<2 and app.pose_editor.handles.size()==3,"releasing Alt hides full skeleton while selected handles remain")
+	check(not app.pose_editor.reveal_bones and app.canvas.pose_joints.size()<2 and app.pose_editor.handles.filter(func(handle):return not handle.get("view",false)).size()==3,"releasing Alt hides full skeleton while selected handles remain")
 	var free_before:=JSON.stringify(rig.data)
 	var handle_point: Vector2=app.pose_editor.handles[0].points[0]
 	var free_event:=InputEventMouseButton.new();free_event.button_index=MOUSE_BUTTON_LEFT;free_event.pressed=true;free_event.ctrl_pressed=true
@@ -152,6 +153,9 @@ func run() -> void:
 		Support.select_rig(app);model_key=Support.key(app,Support.rig(app));app.pose_editor.frame_model();await settled()
 		var native_mask: Image=selection.viewport.get_texture().get_image()
 		var native_point:=id_point(native_mask,selection.color_for(model_key));selection.select_entity("")
+		# Deselect changes the inspector and canvas extent. Click the next displayed
+		# layout, as the generic fixture does, rather than queuing a stale-view pick.
+		await settled()
 		await click(app,native_point)
 		check(native_point.x>=0 and selection.selected==model_key,"GPU picking selects actual native skinned model: "+str(sample.path))
 		var native_id: String=""

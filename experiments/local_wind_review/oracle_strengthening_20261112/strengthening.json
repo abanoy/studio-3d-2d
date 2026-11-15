@@ -1,0 +1,95 @@
+{
+  "format": "has_wind_gpu_oracle_strengthening_1",
+  "runtime_source_modified": false,
+  "runtime_files_hash_size_mtime_unchanged": {
+    "src/app.gd": {
+      "sha256": "8c15cc3f8aa62a4b7775da3e5668303e75bf50bc055ea434417249f2daa61a89",
+      "bytes": 146668,
+      "mtime_ns": 1794537929058501000
+    },
+    "src/has_project.gd": {
+      "sha256": "bf57d21afe3769ad893af21c828a2a82e960b61a054c0c5a49f387f0930cdf8a",
+      "bytes": 14515,
+      "mtime_ns": 1794537929060013600
+    },
+    "src/physics_editor.gd": {
+      "sha256": "2c628619030f1424f0d8ee72266be1347077609bd45e3f5403609ef459b2c8f0",
+      "bytes": 22236,
+      "mtime_ns": 1794537929061030300
+    },
+    "src/physics_recording.gd": {
+      "sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "bytes": 19381,
+      "mtime_ns": 1794537929061030300
+    },
+    "src/pose_editor.gd": {
+      "sha256": "400aef41d863a5509b8774f8b266797a71ff7bd602439c6438aca025615ed236",
+      "bytes": 48421,
+      "mtime_ns": 1794537929062029100
+    },
+    "src/renderer.gd": {
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "bytes": 15232,
+      "mtime_ns": 1794537929062029100
+    },
+    "src/secondary_spring.gd": {
+      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "bytes": 9592,
+      "mtime_ns": 1794537929063024800
+    },
+    "src/wind_review.gd": {
+      "sha256": "7ad908e900d90e3c89c7aef22abf9a0d653ed29b4f8308ce6e38846664ff0ff9",
+      "bytes": 17875,
+      "mtime_ns": 1794537929063024800
+    },
+    "src/wind_review_groups.gd": {
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "bytes": 8617,
+      "mtime_ns": 1794537929064035500
+    }
+  },
+  "changed_tests": {
+    "tests/wind_review_gpu_common.gd": {
+      "sha256": "1c80e67423c470ca1f3dfefdcf8bbc8e412a6b3d79dd5cc3a63ff20ee8ce3651",
+      "bytes": 10951,
+      "mtime_ns": 1794542876360772600,
+      "old_sha256": "cc308e65dd7b7234ec5ee6c03d766505750124cd0f5902a4a5d1838672376ff7"
+    },
+    "tests/wind_review_gpu_motion.gd": {
+      "sha256": "9c2acb78832621a55bd528b16674a024122822b510040e218e9b3aba36851a76",
+      "bytes": 8903,
+      "mtime_ns": 1794542876635413600,
+      "old_sha256": "9aa3555c29068e94071c9b9139325b17c2b1d8a98a36a3116f007202058ff0f4"
+    },
+    "tests/wind_review_gpu_primary.gd": {
+      "sha256": "e5dea67892670d756916776852a33f026c630c21ab8d1c6fc0ce61f8c1ea31cd",
+      "bytes": 6794,
+      "mtime_ns": 1794542876902237900,
+      "old_sha256": "170966b5365aa60ad822c315a0b3841d92793f95b82af91b8b4465a063f26277"
+    }
+  },
+  "old_test_source_preserved_in": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\before-gpu-oracle-strengthening",
+  "parse_proof": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\wind-review-prototype\\1794522438324373800\\gpu-preparation\\1794542894612507700\\verification.json",
+  "parse_proof_sha256": "61b2184819922ac62d0aae7d39ed7180ac218446f2833b00219ed0f7661dc5e0",
+  "parse_checks": 4,
+  "parse_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "root_functional_changes_during_parse": [],
+  "native_originals_unchanged": true,
+  "gpu_bodies_run": false,
+  "runtime_or_gpu_pass_claimed": false,
+  "changes": [
+    "Independently inventory the nonempty source-owned mesh set, excluding separate authored model roots; assert exact hidden-set identities and every expected mesh hidden. Existing hidden-list and post-close restore assertions retained.",
+    "Compare every excluded rotating channel exactly against the ordinary authored source sample, not WindReview.baseline_pose. Procedural fixture additionally requires the independently known nonzero -0.045-radian halfway skirt pose and actual retained channel presence.",
+    "Keep original after-close OR motion check and add both running-state proof and separate primary/prop motion checks. A controlled velocity nudge on existing bodies after observing close prevents an already settled fixture; no simulator restart/unfreeze occurs."
+  ],
+  "notes": [
+    "All original numeric bounds and prior assertions retained. Excluded expected-state provenance is stronger; it no longer calls the product baseline method.",
+    "Four approved Godot headless --check-only parses passed. No new smoke body, native rendering, motion, teardown, record or exported pixels was executed.",
+    "review.patch is a normalized informational text diff; full before/after bytes and SHA256 are authoritative."
+  ]
+}

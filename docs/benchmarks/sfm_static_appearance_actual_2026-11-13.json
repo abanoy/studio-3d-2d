@@ -1,0 +1,489 @@
+{
+  "format": "has_sfm_static_appearance_windows_actual_2026_11_13_1",
+  "root_revision_at_run": "2904f3f18e4211f95ddd385953219b2e5460aee9",
+  "actual_driver_sha256": "08a63f739f21cdb019468b3b274ecc1772fb942695320dfd20d2b1826c120587",
+  "input_lock_sha256": "9a3d65108148a2e41eebb6a2dabfd556541aff27affe1cc48e4c099e21e00521",
+  "actual_run_verification_sha256": "2a3c720629396efdfc3e6c20f3280e47568f287d51621a94518431b6288ce89e",
+  "actual_results": {
+    "passed_cases": 14,
+    "successful_bundles": 12,
+    "expected_allblank_refusals": 2,
+    "failed_cases": 0,
+    "unrun_cases": 0,
+    "elapsed_seconds": 82.7094904,
+    "unique_private_desktops": 14,
+    "dual_python_blender_self_attestation_cases": 14,
+    "original_monitor_confirmed_cases": 0,
+    "old_monitor_flags_edited": false,
+    "all_private_jobs_desktops_closed": true,
+    "recorded_owned_process_instances": 42,
+    "owned_instances_still_running": 0,
+    "conversion_lease_released": true,
+    "protected_flat_files": 343,
+    "root_functional_files": 934,
+    "prototype_functional_files": 934,
+    "sourceio_files": 574,
+    "exact_staged_members": 296,
+    "originals_sources_runtime_stage_requests_lock_unchanged_during_run": true
+  },
+  "cpu_route_controls": {
+    "route": 22,
+    "candidate_driver": 22,
+    "retained_guards_inside_candidate": 18,
+    "total_for_this_background_increment": 44,
+    "failures_errors_skips": 0,
+    "scope": "Synthetic/metadata controls plus a separate ownDefaultdesktop observation; actual14private cases supply runtime placement proof."
+  },
+  "scope": "Unshipped frozen import-time worker; actual static conversion/catalogue/indices/embedded GLB/bind-rest-morph preservation and owned dependencies. Not production UI, render, native shader/deformation fidelity or owner acceptance.",
+  "cases": [
+    {
+      "case": "multi_skin_glove",
+      "variant": "default-no-appearance",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 4.023816599999918,
+      "glb": {
+        "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "bytes": 836088,
+        "mtime_ns": 1794546478557127100
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": null,
+      "selected_glb_meshes": [
+        "gloves.dmx"
+      ],
+      "native_joints_bound": 66,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "b3f002bd421aa7e5f1560d2a6615234cfce3f475ef5c38bd0bdbf9c1791c0b3d",
+      "dual_attestation_receipt_sha256": "c47a4ccf2984e94be470ca7f5fef87f90950cbc0d1fbb07591360bca819a5058",
+      "case_verification_sha256": "9420ef5a2649ee03b84f6a86af9986a58d31d974e14738fcd9b5d32aaad3cfe0"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "default-no-appearance",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 3.823414099999354,
+      "glb": {
+        "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "bytes": 933756,
+        "mtime_ns": 1794546483933042500
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": null,
+      "selected_glb_meshes": [
+        "box.smd",
+        "flame.smd",
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "b70b0e3c4d1ee13f0c66a1cdeca00775bacbd783a88e526dbbfd494190115b17",
+      "dual_attestation_receipt_sha256": "36cc96a8fb92efa15267abad11aa57ea9feb9697912525828b28fcb77759c09e",
+      "case_verification_sha256": "bda8dcc0c92070bdcef4326994edc9a24303c7a51f9446ba6ab9f2e21a7bf104"
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-0",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 3.6204828999998426,
+      "glb": {
+        "sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+        "bytes": 836088,
+        "mtime_ns": 1794546489037134700
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": {
+        "0": 0
+      },
+      "selected_glb_meshes": [
+        "gloves.dmx"
+      ],
+      "native_joints_bound": 66,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "a22ffa307bdc0c8512308c3197d72c502b133ed122b6df83fdb8e4f316171ed7",
+      "dual_attestation_receipt_sha256": "e54da36bf6e952510339e7aa6f83c8d47f69f0f61cc09b5689e317979f569234",
+      "case_verification_sha256": "e1fd181c030400fa2c079bfa244ead3963551f749bfe2ea13fb3b7ba026d0c12"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-000",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 3.8251586000005773,
+      "glb": {
+        "sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+        "bytes": 933756,
+        "mtime_ns": 1794546494375024300
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": {
+        "0": 0,
+        "1": 0,
+        "2": 0
+      },
+      "selected_glb_meshes": [
+        "box.smd",
+        "flame.smd",
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "8efdcd95fa03c2be6b2b4d6fa4a3684dc1f5d7818f3819a2887b5c049a15159d",
+      "dual_attestation_receipt_sha256": "37c25af44cfab6872095a367fbafae0f647689aaee0035793e854498d5c10442",
+      "case_verification_sha256": "d427ec30bad5dadee0e2cfb379cb5bcd27c1331d104ff1404cf26437498a36cb"
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-1",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 3.823204500000429,
+      "glb": {
+        "sha256": "9eef8ff4894ce9fcb0fb64ad43b3ad4adf5d1e15452be44f477d71bbbb474d9a",
+        "bytes": 792548,
+        "mtime_ns": 1794546499549042000
+      },
+      "selected_skin": 1,
+      "selected_native_bodygroup_indices": {
+        "0": 0
+      },
+      "selected_glb_meshes": [
+        "gloves.dmx"
+      ],
+      "native_joints_bound": 66,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "e15d9567b6e6b9feda54978d02b92a36fa153cb6f1c276185bf33381f5e61e1f",
+      "dual_attestation_receipt_sha256": "b6b7cc64f09d49136cab4da7b55861c9b29206ec92fbd98847d3ceb75384dc5e",
+      "case_verification_sha256": "880d6f773316dcae4814f824e8706900d9d4a24ce9bb382240fcd4567fb6e53c"
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "skin-2",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 3.8244610000001558,
+      "glb": {
+        "sha256": "6d52a5aa8e4f59b9f83b195b833962aa6f8cb4d2714ba3aabe5253664d4533d0",
+        "bytes": 793036,
+        "mtime_ns": 1794546504826366600
+      },
+      "selected_skin": 2,
+      "selected_native_bodygroup_indices": {
+        "0": 0
+      },
+      "selected_glb_meshes": [
+        "gloves.dmx"
+      ],
+      "native_joints_bound": 66,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "a2e595dd90ba26d73d612687347795c89715705641481b5f02d01a7760d0efa2",
+      "dual_attestation_receipt_sha256": "025ea1047281e575fbc33138483a6cf0bd1b8fbf8e02e6af87b556ae3350e696",
+      "case_verification_sha256": "662f101d725918030372d37a03c5c2aefcde04c8d8414e282008d7cd11509262"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-001",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 3.820211799999015,
+      "glb": {
+        "sha256": "c637be9facc5c7a1a98dadd93bae29e62f80eb366b68f3ce441c0b00e3f4ac82",
+        "bytes": 328448,
+        "mtime_ns": 1794546510190733400
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": {
+        "0": 0,
+        "1": 0,
+        "2": 1
+      },
+      "selected_glb_meshes": [
+        "box.smd",
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "becd7d253febf3ca698098fc8d7e57bd0f47754bec70552e5a18e867cb81e8b9",
+      "dual_attestation_receipt_sha256": "a6923a9d062c99bcd057511ac15c2c1c7959d7c6c048863c9619ff1af27ea444",
+      "case_verification_sha256": "154efe407ec0493b12165816632d595439e6db87124c9a7ec0d803bbcc01dfe8"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-010",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 4.030275600000095,
+      "glb": {
+        "sha256": "5c32b5f3c34816a5504e79bc5b3d5881784c913cb637647f6e477a9d71b6ce9a",
+        "bytes": 851824,
+        "mtime_ns": 1794546515745805500
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": {
+        "0": 0,
+        "1": 1,
+        "2": 0
+      },
+      "selected_glb_meshes": [
+        "flame.smd",
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "0ffd575a3f66d4b8069ce4857600a4902378a0af166073a93563cd2c8ef9982f",
+      "dual_attestation_receipt_sha256": "20d0757a791ad1121814d5ecdca1754a0565c1a42a640e4124598a35bf6030c7",
+      "case_verification_sha256": "bde1dedcecbd7322b0577f79ee020628601be610cfc515dfae8756140b6ed9cd"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-011",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 4.228931600000578,
+      "glb": {
+        "sha256": "6b43d106aeb701aaee7b4e3cb1347898556d309ed910079327c1797c3856d5e0",
+        "bytes": 246516,
+        "mtime_ns": 1794546522157649200
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": {
+        "0": 0,
+        "1": 1,
+        "2": 1
+      },
+      "selected_glb_meshes": [
+        "tools.dmx"
+      ],
+      "native_joints_bound": 31,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "4ddb57cc3607b1de0c93aa4a657d2614c5e5e44d98570a2d0e0e19cf21ea6a9b",
+      "dual_attestation_receipt_sha256": "df4e686b6b6a2b352c83c2c2b1ee3336c2cda70a5e18b4cb91ca79a5a388711c",
+      "case_verification_sha256": "e97be3eb2d7e74c1264c4077db450edb762de9e6a4a6e766eec424d4b82f3a96"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-100",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 4.026539200000116,
+      "glb": {
+        "sha256": "1835bb0d88198197575dde4f6e5711805017711b02e3cef91d4e0d927f8b00f3",
+        "bytes": 696656,
+        "mtime_ns": 1794546528436988300
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "selected_glb_meshes": [
+        "box.smd",
+        "flame.smd"
+      ],
+      "native_joints_bound": 31,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "d930735f8ef3265ac53053f05e99879fa36955fce33ef277e302f0be81109d4f",
+      "dual_attestation_receipt_sha256": "9f069bf217bf0cc6fc4c4e2d06bff4e8ecaa2d268496b752fc903febea54bf50",
+      "case_verification_sha256": "5863eb97dd69652183b7648d45c5c616ddce7f01b622993f13f37eb5d612e266"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-101",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 4.027507899998454,
+      "glb": {
+        "sha256": "cee525c7411484200aa7d73d6da34e21b5ef666fb1b964554b5537eaab232c40",
+        "bytes": 91356,
+        "mtime_ns": 1794546534682069800
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": {
+        "0": 1,
+        "1": 0,
+        "2": 1
+      },
+      "selected_glb_meshes": [
+        "box.smd"
+      ],
+      "native_joints_bound": 31,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "fa56220f61c3834cf36246b08a00b38804f56fdbddafe04b7b8556d654a0263c",
+      "dual_attestation_receipt_sha256": "0cbd96ddce510d3caf9ce8eba04acbcfeb1bb6804900a4f0a351072fc8c765ee",
+      "case_verification_sha256": "31b77030697a270285271656a1b4b1e58cb8b88316c30d5bf3f39c3920811866"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-110",
+      "expected_success": true,
+      "exit": 0,
+      "passed": true,
+      "seconds": 4.0286379999997735,
+      "glb": {
+        "sha256": "4ccc1e352747988a789831d43d965cd6912ee292418fd1ec2b54fbc3f04ec95b",
+        "bytes": 614724,
+        "mtime_ns": 1794546540795812500
+      },
+      "selected_skin": 0,
+      "selected_native_bodygroup_indices": {
+        "0": 1,
+        "1": 1,
+        "2": 0
+      },
+      "selected_glb_meshes": [
+        "flame.smd"
+      ],
+      "native_joints_bound": 31,
+      "explicit_all_blank_refusal": false,
+      "private_receipt_sha256": "23a0bd1421d12523b43962c77e9ccb66d675ae807c5bcf45fafa635f4a93c7e1",
+      "dual_attestation_receipt_sha256": "cb7fad4f76468d62fe91c91690e59a0f71808ff2a75623c6602d2b494f5e9cd6",
+      "case_verification_sha256": "c76f41c906c3320b2b8eee4dad9d8c33cb0633352ba6cb831796fc718ca6802a"
+    },
+    {
+      "case": "multi_skin_glove",
+      "variant": "all-blank-refusal",
+      "expected_success": false,
+      "exit": 1,
+      "passed": true,
+      "seconds": 3.7251658999994106,
+      "glb": null,
+      "selected_skin": null,
+      "selected_native_bodygroup_indices": null,
+      "selected_glb_meshes": null,
+      "native_joints_bound": null,
+      "explicit_all_blank_refusal": true,
+      "private_receipt_sha256": "ac1c88801a78efed48f2683294fbcf105b6fc7eacb730a37535442f844208728",
+      "dual_attestation_receipt_sha256": "54f1cc44bfeeab24d960191f63f77d3109427c5613786b960046ccbee0cbc3cc",
+      "case_verification_sha256": "858e26577ce84757864798c6c74556a678c44b7b410dc78f1f66fa180706ffd0"
+    },
+    {
+      "case": "keiki_tools_chisels",
+      "variant": "groups-111",
+      "expected_success": false,
+      "exit": 1,
+      "passed": true,
+      "seconds": 3.6248637000007875,
+      "glb": null,
+      "selected_skin": null,
+      "selected_native_bodygroup_indices": null,
+      "selected_glb_meshes": null,
+      "native_joints_bound": null,
+      "explicit_all_blank_refusal": true,
+      "private_receipt_sha256": "e0761bb636b9d4867f5978a9ad5ab14719385d020d845ce6ae6fb03f9f477f4c",
+      "dual_attestation_receipt_sha256": "c8d6a2c074d0c892cd818a4f4f8db2ebb80c8ddd8872dd628a3025ca93c8050b",
+      "case_verification_sha256": "0b458fc9fc51bba813bdc20beaff990bfd5cea943a38e1e3ad9496b0db1820a6"
+    }
+  ],
+  "broader_supplied_sfm_inventory": {
+    "archives": 22,
+    "mdl_files": 82,
+    "distinct_native_definitions": 71,
+    "mdl_version": 49,
+    "bodygroups": {
+      "all_files": 288,
+      "distinct_definitions": 243
+    },
+    "bodygroup_choices": {
+      "all_files": 489,
+      "distinct_definitions": 412
+    },
+    "zero_vertex_blanks": {
+      "all_files": 188,
+      "distinct_definitions": 157
+    },
+    "controllers_and_rules": {
+      "all_files": 3203,
+      "distinct_definitions": 2991
+    },
+    "flex_descriptors": {
+      "all_files": 3902,
+      "distinct_definitions": 3690
+    },
+    "files_with_differing_skin_families": 28,
+    "distinct_definitions_with_differing_skin_families": 27,
+    "files_with_jiggle_declarations": 55,
+    "distinct_definitions_with_jiggle_declarations": 46,
+    "jiggle_bones": {
+      "all_files": 2655,
+      "distinct_definitions": 1905
+    },
+    "observed_controller_rule_scope": "All observed rules FETCH1; controller ranges0..1; no stereo UI records.",
+    "observed_sequence_scope": "Every inspected definition has one local sequence/one one-frame animation header; no positive moving-native-sequence example from this corpus.",
+    "reference": "docs/benchmarks/sfm_native_feature_inventory_2026-11-12.json",
+    "interpretation": "Inventory proves presence, not native runtime/animated variant, shader, jiggle, assembly or all82feature acceptance."
+  },
+  "next_probe": {
+    "status": "Read-only plan only; no new graphics/adoption run.",
+    "document": "docs/sfm_static_appearance_next_probe_2026-11-13.md",
+    "metadata": "experiments/source_appearance/actual_windows_20261113/metadata/next_probe_compact.json",
+    "native_nitori_columns": [
+      0,
+      1
+    ],
+    "skin_family_material_ids": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "keiki_tools_target_nonzero_records": 1180,
+    "keiki_tools_target_present_bits": [
+      "000",
+      "001",
+      "010",
+      "011"
+    ],
+    "keiki_tools_target_absent_bits": [
+      "100",
+      "101",
+      "110"
+    ],
+    "nitori_hand8_subtree_used_records": 2214,
+    "nitori_hand8_unaffected_records": 4464,
+    "keiki_box23_rigid_used_records": 38,
+    "additive_overlay_limit": "Coincident base/glow geometry, ordinaryPBR with omittedalphaMode/emissive, nativeadditive=1; actual4x4opaquePNGgreys0/40/120. No promised visual equivalence.",
+    "genuinely_missing_native_resource": "Nitori materials/hairbump.vtf;1active+2inactive catalogue edges toonefile perselectedskin; no substitution."
+  },
+  "metadata_references": {
+    "actual": "experiments/source_appearance/actual_windows_20261113/metadata/actual_results.json",
+    "dependencies": "experiments/source_appearance/actual_windows_20261113/metadata/dependency_and_morph_observations.json",
+    "native_columns": "experiments/source_appearance/actual_windows_20261113/metadata/native_columns_compact.json",
+    "native_resolution": "experiments/source_appearance/actual_windows_20261113/metadata/native_material_search_paths.json"
+  },
+  "older_failure_preserved": {
+    "private_wrapper_exit": 2,
+    "accepted_cases": 0,
+    "receipt_reference": "docs/benchmarks/sfm_first_conversion_isolation_2026-11-12.json",
+    "now_reinterpreted_as_clean": false
+  },
+  "private_art_payload_included": false,
+  "cleanup_performed": false,
+  "remaining_gaps": [
+    "Nitori has3native references to one missing materials/hairbump.vtf. Basic bridge base inputs resolve; no replacement or installed fallback.",
+    "Native bump/envmap/Phong/warp/glow equivalence and independent native vertex/weight/morph deformation equivalence remain unproved.",
+    "Actual GPU pixels/poses, application choices/adoption, Undo/Redo, linked/packed/fresh-offline HAS and movies remain unrun or unimplemented.",
+    "Runtime or animated skins/bodygroups, native jiggle/assembly and actual owner/device acceptance remain separate."
+  ]
+}

@@ -1,5 +1,6 @@
 """Backend generation + real weighted deformation/fan/Record/HAS/MP4 experiment."""
 from pathlib import Path
+from native_fixture_root import fixture_output
 import array
 import hashlib
 import json
@@ -17,7 +18,7 @@ import secondary_helpers as H
 
 def native_checks(folder):
     plans = []; originals = {}; assessments = {}
-    base = Path(r'C:\a\Programming\cloudflare\prototypes\studio-3d-2d\output')
+    base = fixture_output()
     # Explicit test regions exercise native bindings/skin, not a claim that these
     # automatically identified surfaces are physically loose clothing.
     for label, relative, name in [('mmd', 'pose-smoke/miku-project', 'Miku_Hatsune.pmd'),
@@ -54,6 +55,7 @@ def native_checks(folder):
 
 def main():
     subprocess.run([sys.executable, '-X', 'utf8', 'tests/test_secondary_helpers.py'], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, '-X', 'utf8', 'tests/test_secondary_existing_joints.py'], cwd=ROOT, check=True)
     folder = ROOT / 'output' / 'secondary-helpers' / ('run_' + str(time.time_ns())); folder.mkdir(parents=True)
     original = folder / 'original.glb'; g = fixture(original); before = (original.read_bytes(), original.stat().st_mtime_ns)
     derived = H.build(original, folder / 'derived', request(g))

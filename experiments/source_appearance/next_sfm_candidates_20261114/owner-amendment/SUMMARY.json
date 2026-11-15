@@ -1,0 +1,42 @@
+{
+  "format": "has_source_import_owner_negative_exit_amendment_unrun_1",
+  "prior_packets": {
+    "old_candidate": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-import-owner-candidate-20261114",
+      "index_sha256": "f7374de647d6029b02b0d1054fdaeb53f9eb5b3a6120f82c1b9d91eece0414b0",
+      "verified_unchanged": true
+    },
+    "sentinel_review": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-import-owner-negative-exit-review-20261114",
+      "index_sha256": "6998441afb2f16eee43b93fa5dd9dcf8a482eade92192a16f3ad5509ef92510d",
+      "verified_unchanged": true
+    }
+  },
+  "production_unchanged": true,
+  "production_sha256": "4cacfc7e86adad5e8e78872439500f0e2a922a6e022dc48d268c5b4cd3686a47",
+  "product_overlay_change": "Exactly one complete sentinel-guard line removed byte-for-byte; no other SourceImport bytes changed from previous draft",
+  "source": {
+    "src/source_import.gd": {
+      "bytes": 18620,
+      "sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d"
+    },
+    "tests/source_import_owner_unit.gd": {
+      "bytes": 8962,
+      "sha256": "257459016a9cb83f0b65acfbc5b2bb706e4334cebbcb33a7fa9b42c059a5ac9e"
+    },
+    "tests/source_import_owner_worker.py": {
+      "bytes": 1462,
+      "sha256": "f8f0ff129ab8e75d919388a23bcbea300747de056d6a34c9638fcb3fd5fa594c"
+    }
+  },
+  "planned_checks_not_actual": 53,
+  "prior_planned_checks": 44,
+  "new_owned_exit_minus_one_case_checks": 9,
+  "actual_checks": null,
+  "Python_AST": "PASS",
+  "Godot_parse": "UNRUN",
+  "headless_or_worker_execution": "UNRUN_until_canonical_lease_ends",
+  "native_converter_or_GPU": false,
+  "main_docs_HEAD_or_runtime_mutation": false,
+  "negative_exit_proof_limit": "Cached getter -1 is ambiguous; do not claim absence from that value alone.0/1/2 controls establish query transition; exact known-map source and sole reservation support one handle release."
+}

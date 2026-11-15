@@ -1,4 +1,5 @@
 extends SceneTree
+const DrawingLimits=preload("res://src/drawing_limits.gd")
 const Drawing=preload("res://src/drawing.gd")
 const Storage=preload("res://src/storage.gd")
 const World=preload("res://src/world_document.gd")
@@ -50,9 +51,9 @@ func run() -> void:
 	button(Vector2(300,400),true);app.undo();check(not app.drawing and Drawing.cel_at(app.layers[1],24).is_empty() and blank.get_pixel(300,250).a==0 and Input.use_accumulated_input==initial_accumulated,"Undo while waiting ends the pending tablet gesture and undoes the previous real edit")
 	app.redo();check(blank.get_pixel(300,250).a>.99,"Redo still restores the preceding mouse stroke after pending tablet cancellation")
 	var retained: Array=app.layers[1].cels.duplicate()
-	for i in range(31):app.layers[1].cels.append({"id":"capacity-"+str(i),"start":0,"duration":1,"image":blank})
+	for i in range(DrawingLimits.MAX_CELS-app.sequence_editor.used("cels")):app.layers[1].cels.append({"id":"capacity-"+str(i),"start":0,"duration":1,"image":blank})
 	button(Vector2(300,400),true);pressure(Vector2(300,400),.5)
-	check(not app.drawing and Drawing.cel_at(app.layers[1],24).is_empty() and app.history.size()==history and Input.use_accumulated_input==initial_accumulated and app.status.text.contains("32"),"lazy cel allocation refuses the cel limit without leaking state or hiding its error")
+	check(not app.drawing and Drawing.cel_at(app.layers[1],24).is_empty() and app.history.size()==history and Input.use_accumulated_input==initial_accumulated and app.status.text.contains(str(DrawingLimits.MAX_CELS)),"lazy cel allocation refuses the cel limit without leaking state or hiding its error")
 	app.layers[1].cels=retained;button(Vector2(300,400),true);app.set_frame(0)
 	check(not app.drawing and Input.use_accumulated_input==initial_accumulated and Drawing.cel_at(app.layers[1],24).is_empty(),"changing frames finishes a waiting gesture without inventing artwork")
 	app.set_frame(24);view=app.renderer.view_state()

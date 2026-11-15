@@ -1,0 +1,64 @@
+{
+  "format": "has_helper_preview_main_verifier_readonly_audit_1",
+  "review_type": "static source review only; no product/runtime tests executed by auditor",
+  "reviewed_source_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\helper-preview-main-driver-20261113\\source\\tests",
+  "source_files": {
+    "verify_helper_preview.py": {
+      "sha256": "a78a227d03d2dd1960eaa96df275f9cfda2b99c6c9944f9f6f6abd4b88a76c09",
+      "bytes": 23864
+    },
+    "helper_preview_fixtures.py": {
+      "sha256": "b019dace70e6c0c1d18c872ba9b92ebfdba09ce7605005e742f56612c7bf29f3",
+      "bytes": 15607
+    },
+    "helper_preview_gpu_common.gd": {
+      "sha256": "9f6adb3ce974e3b21a1982808285c8a5b9a7edc879e5a086180f2efb9cda3bc9",
+      "bytes": 13007
+    },
+    "helper_preview_gpu.gd": {
+      "sha256": "07a27d3c9c7bd245f271ce207f0558464a8e5596107423b50367137ec19a810e",
+      "bytes": 13964
+    },
+    "helper_preview_gpu_peers.gd": {
+      "sha256": "e7acd248bcc0a989e454553815c747aaa2ca85dda2ef86f04e270b0ef5219f4f",
+      "bytes": 10833
+    },
+    "helper_preview_gpu_native.gd": {
+      "sha256": "83b15369e130364e425804dfa3af5b5b11612b03085a3da86b261b1ba7982fc8",
+      "bytes": 12702
+    },
+    "helper_preview_integration_cpu.gd": {
+      "sha256": "d7ef435c3c4e34d24fc675f293aa96d8eb72d50dc8a26a33b69a518af9e9ef72",
+      "bytes": 17814
+    },
+    "wind_helper_candidate_cpu.gd": {
+      "sha256": "bd2fac67850fb63cee46a35c9e7390b401756933499b5273a803714b3c24e22b",
+      "bytes": 10779
+    },
+    "helper_preview_transport_cpu.py": {
+      "sha256": "556209a85c45e907a520074c983810bf42dbdccd9c4615c15e2dbc9855988f17",
+      "bytes": 4452
+    }
+  },
+  "clear_unresolved_blockers": [],
+  "addressed_findings": [
+    "Result mode/source context/main root/project root/source manifest digest/main revision are compared against trusted expected values; CPU harnesses echo corresponding binding fields.",
+    "Published host/GPU requests have exact before/after identities.",
+    "Staged native GLB/parameters copies have independent preservation records alongside protected originals.",
+    "Finally dictionaries are initialized; failure preservation reports no longer reference an unbound extras dictionary.",
+    "Transport/prepare retain explicit timeout and reaped-process gates; every nested engine.log under a job target is scanned for bad markers.",
+    "Functional snapshot after fixture preparation must equal the exact captured main source manifest before execution."
+  ],
+  "positive_scope": [
+    "Main source snapshot uses no overlay, unique profile, explicit working-source admission and approved runtime pins.",
+    "Synthetic fixture default is five authored adapter cases (expected128); optional retained native case contributes23. Counts are planned expectations, not fresh test passes.",
+    "Graphical commands use staged run.command and verify actual snapshot path, approved engine, private launcher/pythonw and one owned receipt.",
+    "GPU popup Escape regression uses Window.window_input.emit, an API signal boundary; it is not a physical-key-input claim."
+  ],
+  "limitations": [
+    "Canonical consumer integration is root-owned and not part of this audit.",
+    "The new domain-test source was not independently reviewed here; its execution/results belong to the producing agent.",
+    "Actual CPU208/GPU263 and optional native runs remain to be executed and verified by root.",
+    "This audit applies only to the listed hashes; later source changes need their own review/test evidence."
+  ]
+}

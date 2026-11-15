@@ -1,0 +1,218 @@
+{
+  "camera_after": {
+    "basis": [
+      0.9438583850860596,
+      -1.862645149230957e-09,
+      -0.330350399017334,
+      -0.061278536915779114,
+      0.9826450943946838,
+      -0.1750815510749817,
+      0.3246172070503235,
+      0.18549558520317078,
+      0.9274777770042419
+    ],
+    "far": 2000.0,
+    "fov": 60.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      0.7822929620742798,
+      1.2260832786560059,
+      2.227156162261963
+    ]
+  },
+  "camera_before": {
+    "basis": [
+      0.9438583850860596,
+      -1.862645149230957e-09,
+      -0.330350399017334,
+      -0.061278536915779114,
+      0.9826450943946838,
+      -0.1750815510749817,
+      0.3246172070503235,
+      0.18549558520317078,
+      0.9274777770042419
+    ],
+    "far": 2000.0,
+    "fov": 60.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      0.7822929620742798,
+      1.2260832786560059,
+      2.227156162261963
+    ]
+  },
+  "canvas_extent": [
+    928.0,
+    335.0
+  ],
+  "checks": [
+    {
+      "label": "replay uses ordinary scene startup without testing flags",
+      "ok": true
+    },
+    {
+      "label": "ordinary automatic recovery completes without restoring or cancelling the fresh scene",
+      "ok": true
+    },
+    {
+      "label": "fresh process starts empty at Home",
+      "ok": true
+    },
+    {
+      "label": "per-project recent/display paths start absent",
+      "ok": true
+    },
+    {
+      "label": "normal .has open started its Python worker",
+      "ok": true
+    },
+    {
+      "label": "normal open operation completed successfully",
+      "ok": true
+    },
+    {
+      "label": "worker and project loader finished before replay",
+      "ok": true
+    },
+    {
+      "label": "normal open retains packed package identity",
+      "ok": true
+    },
+    {
+      "label": "unpacked runtime assets stay in the fresh owned cache",
+      "ok": true
+    },
+    {
+      "label": "open installs an unedited project with empty Undo history",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object AvatarSample_A.vrm",
+      "ok": true
+    },
+    {
+      "label": "normal load starts in Scene / camera mode",
+      "ok": true
+    },
+    {
+      "label": "Setup uses the full available scene area",
+      "ok": true
+    },
+    {
+      "label": "Setup canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup captures and saves the actual native output size",
+      "ok": true
+    },
+    {
+      "label": "native saved camera capture contains nonuniform nonblack scene pixels",
+      "ok": true
+    },
+    {
+      "label": "Focus restores the output-shaped scene area",
+      "ok": true
+    },
+    {
+      "label": "Focus canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup and Focus preserve and save identical native render pixels",
+      "ok": true
+    },
+    {
+      "label": "view toggles and captures preserve all project state and shot camera",
+      "ok": true
+    },
+    {
+      "label": "replay ends unedited with no retained readback",
+      "ok": true
+    }
+  ],
+  "failures": 0,
+  "focus_image": {
+    "distinct_sampled_colors": 416,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 11884,
+    "pixel_sha256": "86db68212436a1ce9b4070c64ded60f113b0d1984b83771198180c89c1d999f1",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/01-avatar/focus.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "format": "has_owner_review_replay_1",
+  "install_ms": 454.37,
+  "load_worker_ms": 57.529,
+  "native_focus": {
+    "distinct_sampled_colors": 363,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 580,
+    "pixel_sha256": "58f834e8a4f0ccdcc7ea9d0e6d17e85e55ead6566d2a2af4510a995a3f986670",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/01-avatar/native-focus.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "native_readbacks_at_finish": 0,
+  "native_setup": {
+    "distinct_sampled_colors": 363,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 580,
+    "pixel_sha256": "58f834e8a4f0ccdcc7ea9d0e6d17e85e55ead6566d2a2af4510a995a3f986670",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/01-avatar/native-setup.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "normal_startup": {
+    "empty": true,
+    "home_visible": true,
+    "result": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "signal_seen": true,
+    "simple": true
+  },
+  "normalized_cache_root": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/01-avatar/has-cache",
+  "normalized_project_folder": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/01-avatar/has-cache/open_25308_2388819",
+  "open_ms": 884,
+  "package": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Avatar.has",
+  "process_id": 25308,
+  "profile": "C:/Users/noble/AppData/Roaming/HAS Owner Acceptance 1794607573296736500",
+  "project_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\owner-review-final-validation-12071fe-1794607570195742200\\01-avatar\\has-cache\\open_25308_2388819",
+  "project_root": "C:/a/Programming/cloudflare/HAS-Review-20261113-12071fe/Studio/",
+  "rasters": [],
+  "runtime_objects": [
+    {
+      "asset_sha256": "91fc4ae30aee77f2a9bc617b0c4bde0e19d83c84e805c46b3c3e6c9f34e30072",
+      "bones": 91,
+      "id": "236273034727119494",
+      "name": "AvatarSample_A.vrm",
+      "stored_sha256": "91fc4ae30aee77f2a9bc617b0c4bde0e19d83c84e805c46b3c3e6c9f34e30072",
+      "visible": true
+    }
+  ],
+  "setup_extent": [
+    928.0,
+    335.0
+  ],
+  "setup_image": {
+    "distinct_sampled_colors": 374,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 611,
+    "pixel_sha256": "ca012e50a47c87bb78a9381540b44ad01d6731d1d8ce8e9389678c536e517c7f",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/owner-review-final-validation-12071fe-1794607570195742200/01-avatar/setup.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "worker_pid": 22816
+}

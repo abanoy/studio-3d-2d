@@ -193,7 +193,7 @@ def members(manifest,extended_ok=False):
     if not isinstance(audio,dict): raise HasError('Invalid audio metadata')
     if 'format' in audio or 'clips' in audio:
         rows=audio.get('clips')
-        if audio.get('format') not in ('studio_audio_2','studio_audio_3','studio_audio_4') or set(audio)!={'format','clips'} or not isinstance(rows,list) or not 1<=len(rows)<=16:
+        if audio.get('format') not in ('studio_audio_2','studio_audio_3','studio_audio_4','studio_audio_5') or set(audio)!={'format','clips'} or not isinstance(rows,list) or not 1<=len(rows)<=16:
             raise HasError('Unsupported audio collection or more than16 clips')
     else: rows=[audio] if audio else []
     identities=set()
@@ -202,10 +202,10 @@ def members(manifest,extended_ok=False):
         for field in ('fade_in_ms','fade_out_ms'):
             if field not in row: continue
             value=row[field]
-            if audio.get('format')!='studio_audio_4' or type(value) not in (int,float) or not math.isfinite(value) or value!=int(value) or not 1<=value<=60000:raise HasError('Invalid or unversioned sound fade')
+            if audio.get('format') not in ('studio_audio_4','studio_audio_5') or type(value) not in (int,float) or not math.isfinite(value) or value!=int(value) or not 1<=value<=60000:raise HasError('Invalid or unversioned sound fade')
         if 'source_out_sample' in row:
             end=row['source_out_sample'];start=row.get('source_in_sample')
-            if audio.get('format') not in ('studio_audio_3','studio_audio_4') or type(end) not in (int,float) or not math.isfinite(end) or end!=int(end) or not 0<end<=60*96000 or type(start) not in (int,float) or not math.isfinite(start) or end<=start:
+            if audio.get('format') not in ('studio_audio_3','studio_audio_4','studio_audio_5') or type(end) not in (int,float) or not math.isfinite(end) or end!=int(end) or not 0<end<=60*96000 or type(start) not in (int,float) or not math.isfinite(start) or end<=start:
                 raise HasError('Invalid or unversioned audio end trim')
         identity=row.get('id')
         if not isinstance(identity,str) or not 1<=len(identity)<=128 or identity in identities: raise HasError('Invalid or duplicate audio identity')
@@ -215,6 +215,7 @@ def members(manifest,extended_ok=False):
             value=row.get(field)
             if type(value) not in (int,float) or not math.isfinite(value) or not low<=value<=high or (field!='gain_db' and value!=int(value)): raise HasError('Invalid audio timing/gain')
         if not isinstance(row.get('muted'),bool): raise HasError('Invalid audio mute value')
+        if 'solo' in row and (audio.get('format')!='studio_audio_5' or type(row['solo']) is not bool): raise HasError('Invalid or unversioned audio solo value')
         slots.append(('audio',row))
     assets = {}
     for slot,row in slots:
@@ -352,6 +353,18 @@ def await_snapshot(request):
         time.sleep(.025)
 
 
+def asset_package(value, manifest):
+    if value is None:
+        return None
+    if not isinstance(value,dict) or set(value)!={'format','kind','name'} or value.get('format')!='studio_asset_package_1' or value.get('kind') not in ('model','environment') or not isinstance(value.get('name'),str) or not 1<=len(value['name'])<=200:
+        raise HasError('Invalid HAS asset package identity')
+    world=manifest.get('world',{})
+    rows=world.get('objects') if isinstance(world,dict) else None
+    if not isinstance(rows,list) or len(rows)!=1 or rows[0].get('kind')!=value['kind'] or rows[0].get('parent_id') or rows[0].get('name')!=value['name'] or world.get('effects') or manifest.get('layers') or manifest.get('audio') or manifest.get('sequence_graph') or manifest.get('reference_sheet'):
+        raise HasError('A HAS asset package must contain exactly one independent model or map')
+    return value
+
+
 def pack(request):
     request=await_snapshot(request)
     chosen=Path(request['path']).expanduser();target=chosen.parent.resolve()/chosen.name
@@ -379,6 +392,7 @@ def _pack_locked(request):
     if mode not in ('packed', 'linked'): raise HasError('Choose packed or linked storage')
     project_blob = (folder/'project.json').read_bytes()
     manifest = read_json(project_blob); assets, cels = members(manifest)
+    package = asset_package(request.get('asset_package'),manifest)
     payload = [{'path':'project.json','sha256':hashlib.sha256(project_blob).hexdigest(),'bytes':len(project_blob)}]
     records = []
     total = len(project_blob)
@@ -414,6 +428,7 @@ def _pack_locked(request):
             records.append(row)
         else: payload.append(row)
     header = {'format':'hybrid_animation_studio','version':1,'storage':mode,'assets':records,'payload':payload}
+    if package is not None:header['asset_package']=package
     header_blob = json_bytes(header)
     if len(header_blob) > MAX_META: raise HasError('HAS metadata exceeds 1 MiB')
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -442,9 +457,11 @@ def _pack_locked(request):
                 bounded = target.stat().st_size<=MAX_TOTAL and len(info)<=MAX_FILES and sum(e.file_size for e in info)<=MAX_TOTAL and old.getinfo('has.json').file_size<=MAX_META and all(e.compress_type in (zipfile.ZIP_STORED,zipfile.ZIP_DEFLATED) and not e.flag_bits & 1 for e in info)
                 valid=False
                 if bounded:
-                    old_header_blob=old.read('has.json');header=read_json(old_header_blob);members(read_json(old.read('project.json')))
+                    old_header_blob=old.read('has.json');header=read_json(old_header_blob);old_manifest=read_json(old.read('project.json'));members(old_manifest)
                     valid=header.get('format')=='hybrid_animation_studio' and header.get('version')==1 and header.get('storage') in ('packed','linked')
-                    if valid:verify_written_archive(target,old_header_blob,header['payload'],request)
+                    if valid:
+                        asset_package(header.get('asset_package'),old_manifest)
+                        verify_written_archive(target,old_header_blob,header['payload'],request)
         except (OSError,ValueError,KeyError,TypeError,EOFError,zlib.error,zipfile.BadZipFile,RuntimeError): valid = False
         if valid:
             backup = Path(str(target)+'.backup')
@@ -474,6 +491,7 @@ def unpack(request):
         header = read_json(archive.read('has.json')); blob = archive.read('project.json'); manifest = read_json(blob)
         if header.get('format') != 'hybrid_animation_studio' or header.get('version') != 1 or header.get('storage') not in ('packed','linked'): raise HasError('Unsupported HAS container version')
         assets,cels = members(manifest)
+        package=asset_package(header.get('asset_package'),manifest)
         payload = header['payload']; records = header['assets']
         if not isinstance(payload,list) or not isinstance(records,list) or len(payload)+len(records)>MAX_FILES: raise HasError('Invalid HAS inventory')
         index={safe(row['path']):row for row in records}
@@ -514,7 +532,7 @@ def unpack(request):
         for name,ref in linked.items():
             checked_copy(ref,folder/name,index[name]['sha256'],request)
             origins[str((folder/name).resolve())]=str(ref)
-    return {'ok':True,'folder':str(folder),'storage':header['storage'],'origins':origins}
+    return {'ok':True,'folder':str(folder),'storage':header['storage'],'origins':origins,**({'asset_package':package} if package is not None else {})}
 
 
 def main():

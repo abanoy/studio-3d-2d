@@ -2,8 +2,8 @@ extends Node
 # User import intent stays attached to each request across asynchronous preparation.
 var app
 var offer_height:=false
-const MODEL_FILTERS=["*.glb","*.gltf","*.fbx","*.obj","*.pmd","*.pmx","*.vrm","*.mdl","*.gma","*.bin"]
-const MAP_FILTERS=["*.glb","*.gltf","*.fbx","*.obj","*.pmd","*.pmx","*.bsp","*.gma","*.bin"]
+const MODEL_FILTERS=["*.has","*.glb","*.gltf","*.fbx","*.obj","*.pmd","*.pmx","*.vrm","*.mdl","*.gma","*.bin"]
+const MAP_FILTERS=["*.has","*.glb","*.gltf","*.fbx","*.obj","*.pmd","*.pmx","*.bsp","*.gma","*.bin"]
 
 func canvas_point(screen_point: Vector2) -> Vector2:
 	return app.canvas.get_global_transform()*(app.canvas.get_screen_transform().affine_inverse()*screen_point)
@@ -30,6 +30,7 @@ func add(path: String, actor: bool, at_frame: int) -> void:
 	if busy():app.message("Finish the current import or dialog first.");return
 	if at_frame<0 or at_frame>=app.video.duration_frames:app.message("Import frame is outside this project.");return
 	app.stop()
+	if path.get_extension().to_lower()=="has":app.has_project.import_asset(path,"model" if actor else "environment",at_frame);return
 	var error: String=app.pose_editor.add_model(path,at_frame,placement()) if actor else app.load_scene(path,at_frame)
 	if not error.is_empty():app.message(error)
 
@@ -39,7 +40,7 @@ func drop(files: PackedStringArray, point: Vector2) -> void:
 	if busy():app.message("Finish the current import or dialog first.");return
 	if files.size()!=1:app.message("Drop one file at a time. No files were added.");return
 	var path:=files[0];var extension:=path.get_extension().to_lower()
-	if not extension in ["glb","gltf","fbx","obj","pmd","pmx","vrm","mdl","bsp","gma","bin"]:
+	if not extension in ["has","glb","gltf","fbx","obj","pmd","pmx","vrm","mdl","bsp","gma","bin"]:
 		app.message("This file is not a supported 3D import. Use Add model or Add scene for supported types.");return
 	app.stop();app.finish_stroke();app.pose_editor.finish_drag();app.release_mouse()
 	if extension in ["mdl","vrm","pmd"]:add(path,true,0);return

@@ -1,0 +1,60 @@
+{
+  "format": "has_final_SFM_review_independent_preexecution_audit_1",
+  "scope": "Read-only source/metadata and Python AST only; no candidate import/execution, GDS parse, product/runtime/process call, native conversion or graphics.",
+  "reviewed_frozen_packets": [
+    {
+      "folder": "output\\sfm-joints-review-builder-prep-20261114",
+      "INDEX_sha256": "7b9d4185a6248f48f4c4117b3960c194833b52d0c92e5ec89f906d0d4c5958fe",
+      "payload_count": 7,
+      "payload_bytes": 294551,
+      "all_payloads_match": true
+    },
+    {
+      "folder": "output\\sfm-joints-final-validator-prep-20261114",
+      "INDEX_sha256": "e0e97a6d9e73de8755025221ce81c6cca66935ba31146b56814d8110b87fcb89",
+      "payload_count": 10,
+      "payload_bytes": 69844,
+      "all_payloads_match": true
+    }
+  ],
+  "initial_verdict": "AMENDMENT_REQUIRED_BEFORE_BUILDER_EXECUTION",
+  "source_context": "Main f380 full040946652 still active; no current full state/results/logs/receipts inspected.",
+  "findings": [
+    {
+      "path": "output/sfm-joints-review-builder-prep-20261114/build_after_full.py",
+      "line": 216,
+      "priority": 1,
+      "finding": "--allow-checkout-eol admits CRLF/LF equivalence for binary files too. Current audit observed no corrupt binary; the executable policy should require byte equality for binaries.",
+      "action": "Preserve frozen packet and create output-only amendment using validator text suffix allowlist plus exactly5 named nonstandard text paths."
+    },
+    {
+      "path": "output/sfm-joints-review-builder-prep-20261114/build_after_full.py",
+      "line": 182,
+      "priority": 2,
+      "finding": "Builder command is pinned but executable accepts any current revision and matching passed folder. Validator independently pins f380 and exact040946652.",
+      "action": "Root requested output-only builder amendment to enforce exact proposed revision/run."
+    },
+    {
+      "path": "output/sfm-joints-final-validator-prep-20261114/validate_after_full.py",
+      "line": 136,
+      "priority": 2,
+      "finding": "result_ok does not require recorded native_readbacks_at_finish==0 after final_extras captures. Existing base check occurs before final_extras.",
+      "action": "Require final recorded zero in admission; preserve proposed168 check count."
+    }
+  ],
+  "positive_source_review": [
+    "All writes are fresh review/evidence/generated directories; no delete/move/install/download or old-review cleanup calls.",
+    "Builder exclusively reserves the exact sibling destination, copies exact committed Git blobs, exact574-file localSourceIO, exact495-file native families and four pinned packed projects; packed members receive SHA/CRC readback.",
+    "Validator uses ordinary external .tscn startup and frozen final run.command private route, strict stdout/stderr/engine markers, owned Popen and private Job/desktop closure; no production controller replacement or shim.",
+    "Existing mutable recovery/recent/display/HAS/reference/source/workspace paths are redirected through actual seams; generated new-review output/.godot files are inventoried and retained.",
+    "Native verification is identity-checked before and after read;21 metadata/private-image references are pinned; full production/native harness membership and text-only lineage gates are explicit.",
+    "Copied chooser catalogue contains no original absolute path, so its copied same-nameMDL SHA/native catalogue equality is coherent.",
+    "Proposed count168 is consistent: base23 per case plus extras18/20/23/15 =41/43/46/38. Exact named additions use existing source binding/helper observers and ordinary shape controls; user Apply remains separate."
+  ],
+  "qualification_limits": [
+    "GDScript parse/runtime, final-path startup,168actual checks and real private receipts remain UNRUN.",
+    "Final Git snapshot lineage is216 byte-equal files +790 text CRLF/LF equivalences +2 reviewed provenance-test differences; binaries must stay exact. This differs from current-working full/source raw-hash join1006+2.",
+    "No native Source dynamics, native solver, clean-install portability, owner artist fidelity or manual acceptance pass is claimed.",
+    "Builder gate currently relies on exact command/root terminal authorization for release scheduling; root strict full publication preflight and actual release remain prerequisites."
+  ]
+}

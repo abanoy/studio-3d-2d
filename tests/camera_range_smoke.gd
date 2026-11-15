@@ -15,6 +15,13 @@ func check(value: bool,label: String) -> void:
 func settled() -> void:
 	for i in range(3):await process_frame
 	await RenderingServer.frame_post_draw
+func native_pixels(renderer) -> Image:
+	# Preserve manual visibility and the temporary camera; capture() would
+	# reevaluate the world. Setup may have suspended the native viewport.
+	if not renderer.begin_native_readback():return null
+	var notification=renderer.native_frame_notification
+	await notification.ready
+	return renderer.finish_native_readback()
 func wait_job(job) -> void:
 	while job.pid>0:await process_frame
 	await settled()
@@ -36,7 +43,7 @@ func run() -> void:
 	var folder: String=OS.get_cmdline_user_args()[0];var asset:=folder.path_join("distant.glb");var limb:=folder.path_join("limb.glb")
 	check(fixture(asset)==OK and Fixture.create(limb)==OK,"original far-scene and small reference fixtures created")
 	var source_hash:=FileAccess.get_sha256(asset);var limb_hash:=FileAccess.get_sha256(limb)
-	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");root.add_child(app);await settled()
+	var app=load("res://main.tscn").instantiate();app.recovery_root=folder.path_join("recovery");app.display_prefs_path=folder.path_join("display.cfg");app.recent_path=folder.path_join("recent.json");root.add_child(app);await settled()
 	app.autosave_enabled.button_pressed=false;app.has_project.cache_root=folder.path_join("cache")
 	check(app.append_object(Model.definition(asset),"environment").is_empty(),"far scene loads through the standard world contract")
 	var small:=Model.definition(limb);small.position=[20,0,-30];check(app.append_object(small,"model").is_empty(),"nearby pose reference loads independently")
@@ -128,8 +135,9 @@ func run() -> void:
 	app.import_actions.add(limb,true,0);app.physics_editor.change(false)
 	var imported: RefCounted=app.renderer.active_model();var box: AABB=app.renderer.scene_bounds(imported.root)
 	check(context.near==100 and context.far==2000 and Placement.in_view(box,context) and app.renderer.camera.near==100 and app.renderer.camera.far==2000 and app.keys==old_keys,"interactive import respects the captured near plane without changing the view or shot")
-	await settled();var shown: Image=app.renderer.viewport.get_texture().get_image();shown.save_png(folder.path_join("near-placement.png"))
-	imported.root.hide();await settled();var hidden: Image=app.renderer.viewport.get_texture().get_image();imported.root.show()
+	await settled();var shown: Image=await native_pixels(app.renderer);shown.save_png(folder.path_join("near-placement.png"))
+	imported.root.hide();await settled();var hidden: Image=await native_pixels(app.renderer);imported.root.show()
+	check(shown!=null and hidden!=null and shown.get_size()==Vector2i(1920,1080) and hidden.get_size()==shown.get_size() and app.renderer.native_readbacks==0,"native near-plane samples complete with balanced readback scopes")
 	check(shown.get_data()!=hidden.get_data(),"model placed beyond a custom near plane produces actual visible pixels")
 	app.renderer.camera.near=100;app.renderer.camera.far=100.01;var objects: Dictionary=app.renderer.world_state();var view: Dictionary=app.renderer.view_state()
 	app.import_actions.add(limb,true,0)

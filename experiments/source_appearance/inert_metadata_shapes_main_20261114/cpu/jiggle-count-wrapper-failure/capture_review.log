@@ -1,0 +1,14 @@
+test_close_failure_is_integrity_error (test_source_mdl_snapshot_review.IndependentReviewTests.test_close_failure_is_integrity_error) ... ok
+test_first_fstat_identity_mismatch_does_not_read (test_source_mdl_snapshot_review.IndependentReviewTests.test_first_fstat_identity_mismatch_does_not_read) ... ok
+test_initial_stat_permission_is_bounded_not_inspected (test_source_mdl_snapshot_review.IndependentReviewTests.test_initial_stat_permission_is_bounded_not_inspected) ... ok
+test_open_permission_followed_by_stat_permission_is_integrity_error (test_source_mdl_snapshot_review.IndependentReviewTests.test_open_permission_followed_by_stat_permission_is_integrity_error) ... ok
+test_open_permission_requires_second_identical_path_stat (test_source_mdl_snapshot_review.IndependentReviewTests.test_open_permission_requires_second_identical_path_stat) ... ok
+test_open_permission_with_real_changed_mtime_is_integrity_error (test_source_mdl_snapshot_review.IndependentReviewTests.test_open_permission_with_real_changed_mtime_is_integrity_error) ... ok
+test_read_limit_and_immutable_result (test_source_mdl_snapshot_review.IndependentReviewTests.test_read_limit_and_immutable_result) ... ok
+test_real_mtime_change_after_read_is_integrity_error (test_source_mdl_snapshot_review.IndependentReviewTests.test_real_mtime_change_after_read_is_integrity_error) ... ok
+test_recheck_stat_and_read_errors_are_integrity_errors (test_source_mdl_snapshot_review.IndependentReviewTests.test_recheck_stat_and_read_errors_are_integrity_errors) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.018s
+
+OK

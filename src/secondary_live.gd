@@ -51,7 +51,7 @@ func advance(delta: float,frame: int,time: float,recording: bool,fields: Array,r
 	var wind: Array=[]
 	for i in range(runner.chains.size()):
 		var chain: Dictionary=runner.chains[i];var point:=Definition.binding_transform(rig,chain.source.joints[0].binding).origin
-		var wanted:=Airflow.force(fields,point)
+		var wanted:=Airflow.unsteady_force(fields,point,age)
 		if forces.size()<=i:forces.append(Vector3.ZERO)
 		forces[i]=forces[i].lerp(wanted,1.0-exp(-delta/0.15));wind.append(forces[i])
 	var result: Dictionary=runner.step(delta,Vector3.ZERO,wind)
@@ -81,6 +81,10 @@ func root_transform(_frame: int,_editing: bool) -> Dictionary:
 	return {"position":[local.origin.x,local.origin.y,local.origin.z],"rotation_xyzw":[q.x,q.y,q.z,q.w],"scale":local.basis.get_scale().x}
 func capture_pose() -> Dictionary:return latest.duplicate(true)
 func pose() -> Dictionary:return latest.duplicate(true)
+func detach_primary() -> RefCounted:
+	var body: RefCounted=primary
+	primary=null;bodies={}
+	return body
 func stop() -> Dictionary:
 	var result:=pose();running=false
 	if primary:primary.stop()

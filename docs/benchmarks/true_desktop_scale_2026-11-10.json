@@ -1,0 +1,143 @@
+{
+  "format": "has_true_desktop_scale_1",
+  "date": "2026-11-10",
+  "owner_followup": "It moves, but still needs work. More space; Zoom should be closer to Windows 100 percent, with larger sizing left as an option.",
+  "cause": "Fixed 1400x900 canvas-items baseline automatically magnified desktop UI as the window grew even when Interface scale said100percent.",
+  "change": "Desktop content_scale_size is zero so selected zoom scales actual window pixels. New preference default100; explicitly saved100/125/150/175 choices remain. Browser CSS sizing unchanged.",
+  "source_sha256": "ca2a9f2f3e1278525dc3a4d2e6e501c72c82bdcdaefa2d9781ecd37efe10b637",
+  "native_resize": {
+    "checks": 31,
+    "failures": 0,
+    "measurements": [
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 977.0,
+        "canvas_before": 881.0,
+        "window": "(3440, 1440)"
+      },
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 437.0,
+        "canvas_before": 341.0,
+        "window": "(1400, 900)"
+      },
+      {
+        "bottom_minimum": 138.0,
+        "canvas_after": 316.0,
+        "canvas_before": 220.0,
+        "window": "(1200, 760)"
+      }
+    ],
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-resize\\1794289679793920800",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_resize_smoke_1ee659f16ef14e81bbdf4a1fa9fced30.json",
+    "functional_unchanged": true
+  },
+  "workspace_controls": {
+    "checks": 48,
+    "failures": 0,
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\workspace-controls\\1794289693839525900",
+    "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\workspace_controls_smoke_cfce795195124b949af35c012d008536.json",
+    "functional_unchanged": true
+  },
+  "navigation_and_saved_scale": {
+    "checks": 41,
+    "failures": 0,
+    "native_checks_unrun": true,
+    "prefs": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794289706695846500/display.cfg",
+    "reports": {
+      "writer": {
+        "checks": 41,
+        "failures": 0,
+        "native_checks_unrun": true,
+        "prefs": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794289706695846500/display.cfg"
+      },
+      "reader": {
+        "checks": 2,
+        "failures": 0
+      }
+    },
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\orbit-navigation\\1794289706695846500",
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\orbit_navigation_smoke_717bb2ddc6a248daaa217d40bba04c7f.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\private-desktop\\orbit_navigation_smoke_92c7cd36b3654e7fb520c8c13983a680.json"
+    ],
+    "native_project_unchanged": null,
+    "isolated_display": null,
+    "scope": "Original fixture software navigation only; native checks explicitly unrun"
+  },
+  "private_receipts": {
+    "workspace_resize_smoke_1ee659f16ef14e81bbdf4a1fa9fced30.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_f210a8b498294e67a5a20aa976ef7b3f",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 12528,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 13.636
+    },
+    "workspace_controls_smoke_cfce795195124b949af35c012d008536.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_8b3c095b819a4342a8a41fc14008ebf3",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 28236,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 12.439
+    },
+    "orbit_navigation_smoke_717bb2ddc6a248daaa217d40bba04c7f.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_8604c73e2245410db3c991edf4d41c19",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 29620,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 3.908
+    },
+    "orbit_navigation_smoke_92c7cd36b3654e7fb520c8c13983a680.json": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_28038fbfbc0d40558d9a3f5ab8d08be2",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 25788,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 2.634
+    }
+  },
+  "review_update": {
+    "format": "has_owner_review_scale_update_1",
+    "time_ns": 1794289730816245600,
+    "source_sha256": "ca2a9f2f3e1278525dc3a4d2e6e501c72c82bdcdaefa2d9781ecd37efe10b637",
+    "prior_source_sha256": "d3ff8ef459628ec88cf498bcf43d8f2dfb05f3c0f567a6dbedc1dfff35bfb2c7",
+    "projects_before_and_after": {
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Avatar.has": "4e96fe2cf4a7a006e659cf717d5ff0654af1ab3b121a9b18a1c1d00b82b3cf77",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Flatgrass.has": "5b119cae562c0dfad7beb576f4f28a5c7c163b9c29ed30c322f7cfb97f77ac4e",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261110\\output\\owner-review\\Street.has": "496744f7bbc6dde6d138cbbaaf72418eb73f44e2deadf791127b56b531dc6eb5"
+    },
+    "changed_only_session_review_source": true,
+    "restart_required": true,
+    "normal_installation_profile_recovery_and_running_window_untouched": true
+  },
+  "owner_confirmation": "Pending after restart; artist appearance still unapproved.",
+  "full_aggregate": "Not yet rerun after this source change.",
+  "acceptance": "55/62 unchanged"
+}

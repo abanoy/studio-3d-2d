@@ -1,0 +1,121 @@
+{
+  "format": "has_scenario_a_1",
+  "date": "2026-11-09",
+  "private_evidence_root": "/workspace/has-handoff-audit/scenario-a-2026-11-09",
+  "source_scenario": "docs/design/HAS_2026-10-29_Voice_Design_Addendum_for_Codex.md section17.A",
+  "reports": {
+    "writer": {
+      "checks": 21,
+      "conversion_folder": "/workspace/studio-3d-2d/output/compatibility/source-1794246460-99265-2159104",
+      "failures": 0,
+      "mode": "writer",
+      "movie": "/workspace/has-handoff-audit/scenario-a-2026-11-09/run-03/render_1794246467_8734796_0/movie.mp4",
+      "source_sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3"
+    },
+    "cold_reader": {
+      "checks": 6,
+      "failures": 0,
+      "mode": "reader"
+    },
+    "placement_regression": {
+      "authored_import_microseconds": 9012,
+      "checks": 20,
+      "failures": 0,
+      "folder": "/workspace/studio-3d-2d/output/import-placement/run_531021",
+      "movie": "/workspace/studio-3d-2d/output/import-placement/run_531021/render_1794246526_2453324_0/movie.mp4",
+      "native_query_ms": -1.0,
+      "native_support": "not tested",
+      "project": "/workspace/studio-3d-2d/output/import-placement/run_531021/placed.has",
+      "video": {
+        "codec": "h264",
+        "size": [
+          1920,
+          1080
+        ],
+        "fps": "24/1",
+        "frames": 48,
+        "duration": "2.000000"
+      },
+      "isolated_display": ":115",
+      "private_receipts": [],
+      "scope": "Original authored world and rig fixtures; native coverage only for explicitly available prepared samples, never inferred from generated fixtures."
+    }
+  },
+  "fix": {
+    "before": "The first centered candidate was not in view on the ground, so placement made it a visible floating fallback and immediately accepted it. Later nearby grounded candidates were never tried. The actual default-camera VRM route floated at roughly2.43m.",
+    "after": "Search remaining bounded candidates for a free, visible grounded placement before returning the floating fallback. The native Avatar1 now uses grid support on candidate5, with minimum mesh bound y=0. Existing translated-floor, overlap and aerial fallback cases pass.",
+    "bounded_candidates": 9
+  },
+  "steps": [
+    "Production Home entry, New and Tutorials; script-driven app startup intentionally suppresses automatic Home/recovery, so the production Home method is called explicitly. Existing ordinary-startup observer tests remain separate.",
+    "Actual Simple New opens black empty scene, visible editor grid and timeline, nothing selected.",
+    "The production drop handler receives the original supplied VRM; native asynchronous worker imports and places it visibly on ground before manual framing. Import limitations are retained and acknowledged. Physics is turned off and the actual Reset pose action is used for manual posing.",
+    "Actual canvas model click enables outline; ordinary Frame selected enlarges it for posing. An Alt input event reveals the native rig and a canvas bone click selects the exact humanoid upper arm.",
+    "Two actual projected rotation-gizmo gestures auto-key frames0and4, one Undo entry each, without Record or changed camera keys.",
+    "Distinct endpoints and intermediate native samples/images, plus actual Play, show motion. Optional assist controls do not become an extra mandatory gate.",
+    "Normal packed Save, project close/New and normal Open preserve exact authored scene/camera. A separate new-process reader runs with conversion folder, writer-cache and private input copies renamed offline.",
+    "Actual24frame1920x1080/24H264 exports beside the HAS; interpolated PNG render input exactly equals preview."
+  ],
+  "cold_reopen": {
+    "checks": 6,
+    "failures": 0,
+    "exact_state": true,
+    "exact_pixels_at_frames": [
+      0,
+      2,
+      4
+    ],
+    "isolation": "The new reader process has no conversion folder or writer cache. Original uploaded attachments remain intact, but the packed project resolves its embedded GLB without them."
+  },
+  "packed_decimal_value_proof": {
+    "all_world_decimal_values_exact": true,
+    "all_camera_decimal_values_exact": true
+  },
+  "movie": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_read_frames": "24"
+      }
+    ]
+  },
+  "original": {
+    "name": "AvatarSample_A.vrm",
+    "sha256": "14d2b2c751e2d6b7739471b961d71b7b16ca28089c04d9465b9c71a113033ee3",
+    "unchanged": true
+  },
+  "retained_failures": {
+    "run-01/writer.log": "Reproduced floating placement. Initial harness also forgot intentional script-startup suppression of Home and attempted selection while still in Pose at tiny scale; corrected production Home entry, Scene model picking and ordinary Frame selected before bone picking. These harness fixes did not change product assertions.",
+    "run-02/writer.log": "All route checks except exact reopen passed after placement fix. The state comparison incorrectly gave actual loaded values two JSON parses versus one for oracle. Independent Python inspection proves all packed world/camera decimal values exact. Matching one parse per side retains exact equality and passes; no numeric/pixel tolerance was introduced."
+  },
+  "unrun": [
+    "An actual novice completing the scenario in five minutes; test elapsed time is not novice time.",
+    "Windows10/11 target interaction, graphics, install and physical input/audio observations.",
+    "Combined Source BSP/VRM/PMX scenarioB still needs a complete BSP and dependencies.",
+    "The prior native VRM receipt retains two one-pixel strict raster-hash failures in other poses/scenes. This exact scenario passes its three cold hashes and does not resolve or waive those older failures.",
+    "The optional native GMod placement branch in the existing regression did not run: its prior map fixture is absent. The regression reports native_support=not tested."
+  ],
+  "runtime": {
+    "godot": "4.6.stable.official.89cea1439",
+    "display": "private Xorg :115 through run.command",
+    "renderer": "Compatibility OpenGL/Mesa llvmpipe",
+    "ffmpeg": "7.1.5 GPL/libx264"
+  },
+  "source_sha256": {
+    "src/import_placement.gd": "837f9189b0cb67d778dd0d425679d9d08fdceb8ac10f3fee647e9420bcdd3bc9",
+    "tests/scenario_a_smoke.gd": "e6969e8270f4bdae29dd866709d49d98dabd713ed8578d319cb57b60d5fbea2e",
+    "tests/import_placement_smoke.gd": "324b47f34a92c9d5a489a04122e71b23995a504ba6a19b25340ebad6ebae01d6",
+    "tests/verify_import_placement.py": "badffd7a0f94f42f0c2333c998c4a4d30adeaa72bac55e3c069543870f2faf22"
+  },
+  "logs_sha256": {
+    "/workspace/has-handoff-audit/scenario-a-2026-11-09/run-03/writer.log": "cae4f6a47521d8515981cb75fa5b611e201d7ed4e77d42251a782a0edf95a409",
+    "/workspace/has-handoff-audit/scenario-a-2026-11-09/run-03/reader.log": "6383852c58b42d7a48a6ec07b3543bfa4f58f0c877742786ed10fd5ca9e29ed6",
+    "/workspace/has-handoff-audit/scenario-a-2026-11-09/placement-regression/console.log": "6517abf52d454bb1b1ac53ff1e59ac66543bafad2cfd5e635d14090d77c8e9f5"
+  },
+  "scope": "Exact eight-step section17.A software route, using supplied native VRM, real canvas selection/gizmos and normal drop/import/save/open/movie handlers. Programmatic app events, not OS Explorer drag simulation or human usability certification.21writer+6cold checks and20existing placement regressions pass; formal ACCEPT-A stays open for actual Windows novice observation."
+}

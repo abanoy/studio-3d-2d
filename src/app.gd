@@ -2,6 +2,7 @@ extends Control
 const DrawingLimits=preload("res://src/drawing_limits.gd")
 signal movie_export_finished(folder: String,success: bool)
 signal startup_recovery_finished(result: Dictionary)
+signal camera_cursor_return_requested(position: Vector2)
 const Timeline = preload("res://src/timeline.gd")
 const Drawing = preload("res://src/drawing.gd")
 const PixelHistory=preload("res://src/cel_pixel_history.gd")
@@ -57,6 +58,8 @@ var drawing := false
 var navigating := false
 var camera_buttons := 0
 var camera_free := false
+var camera_cursor_origin := Vector2.ZERO
+var camera_cursor_restore_pending := false
 var navigation_scheme:="fly"
 var orbit_control=preload("res://src/orbit_navigation.gd").new()
 var navigation_choices: OptionButton
@@ -148,6 +151,7 @@ var audio_start: SpinBox
 var audio_trim: SpinBox
 var audio_gain: SpinBox
 var audio_mute: CheckButton
+var audio_solo: CheckButton
 var audio_choice: OptionButton
 var advanced_mode := false
 var advanced_toggle: Button
@@ -201,6 +205,7 @@ var last_recovery_capture_ms:=0.0
 var last_recovery_worker_ms:=0.0
 var recovery_preview=RecoveryPreview.new()
 var recovery_preview_result: Dictionary={}
+var recovery_native_requests: Array=[]
 var recovery_checkpoint_requested:=false
 var recovered_from := ""
 var startup_recovery_result: Dictionary={}
@@ -214,6 +219,10 @@ var sequence_editor: Node
 var audio_trim_editor: Node
 var audio_fade_editor: Node
 var physics_editor: Node
+var local_wind_review: Node
+var local_wind_generation:=0
+var helper_preview_runtime_path:=""
+var helper_preview_work_root:=""
 var source_import: Node
 var source_browser: Node
 var clip_editor: Node
@@ -235,15 +244,17 @@ const UI_PERCENT := [100,125,150,175]
 var display_dialog: AcceptDialog
 var keyboard_shortcuts: Node
 var camera_transform_editor: Node
+var scene_view: Node
 
 func initialize_display() -> void:
 	var prefs := ConfigFile.new()
-	var screen := DisplayServer.screen_get_size().min(get_window().size)
 	if OS.has_feature("web"):
-		screen = Vector2i(JavaScriptBridge.eval("window.innerWidth"), JavaScriptBridge.eval("window.innerHeight"))
 		resize_web_display()
 		get_window().size_changed.connect(resize_web_display)
-	var percent := 150 if screen.x >= 2400 and screen.y >= 1300 else 125 if screen.x >= 1800 and screen.y >= 1000 else 100
+	else:
+		# Desktop zoom is explicit: resizing a window must not magnify a 1400x900 UI.
+		get_window().content_scale_size=Vector2i.ZERO
+	var percent := 100
 	if prefs.load(display_prefs_path)==OK:
 		var saved = prefs.get_value("display","percent",percent)
 		if saved in UI_PERCENT: percent = int(saved)
@@ -605,6 +616,7 @@ func refresh_workspace() -> void:
 	workspace_label.text = "Advanced workspace" if advanced_mode else "Simple workspace"
 	inspector_scroll.scroll_vertical = 0
 	if pose_editor:pose_editor.refresh_values()
+	if scene_view:scene_view.sync()
 
 func style_accent(control: Button) -> void:
 	# Redesign: Export movie gets a light pill on hover so the main action stands out.
@@ -624,7 +636,7 @@ func refresh_title() -> void:
 	if title_label.text != text: title_label.text = text
 
 func pick_scene_file() -> void:
-	choose_file("Import 3D environment", ["*.glb", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.bsp", "*.gma", "*.bin"], load_scene, source_import.default_browse_dir())
+	choose_file("Import 3D environment", ["*.has", "*.gltf", "*.fbx", "*.obj", "*.pmd", "*.pmx", "*.bsp", "*.gma", "*.bin"], func(path):import_actions.add(path,false,0), source_import.default_browse_dir())
 
 func build_ui() -> void:
 	theme = StudioTheme.make_theme()
@@ -725,8 +737,11 @@ func build_ui() -> void:
 	var center := VBoxContainer.new()
 	center.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	middle.add_child(center)
-	var view_toolbar := HFlowContainer.new()
-	center.add_child(view_toolbar)
+	var view_strip:=ScrollContainer.new();view_strip.name="ViewControlsScroll";view_strip.follow_focus=true
+	view_strip.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO;view_strip.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	center.add_child(view_strip)
+	var view_toolbar := HBoxContainer.new()
+	view_strip.add_child(view_toolbar)
 	mode = OptionButton.new()
 	mode.add_icon_item(StudioTheme.icon("draw"), "Draw")
 	mode.add_icon_item(StudioTheme.icon("camera"), "Scene / camera")
@@ -772,7 +787,10 @@ func build_ui() -> void:
 	button(view_toolbar, "Frame scene", frame_3d_scene).tooltip_text = "Fit the 3D asset in the temporary editor camera; shot keys stay unchanged."
 	undo_button = keyboard_shortcuts.decorate(icon_button(view_toolbar, "Undo", "undo", undo),"undo","Undo") as Button
 	redo_button = keyboard_shortcuts.decorate(icon_button(view_toolbar, "Redo", "redo", redo),"redo","Redo") as Button
-	var physics_toolbar:=HFlowContainer.new();center.add_child(physics_toolbar);physics_bar=physics_toolbar
+	var physics_strip:=ScrollContainer.new();physics_strip.name="PhysicsControlsScroll";physics_strip.follow_focus=true
+	physics_strip.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO;physics_strip.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	center.add_child(physics_strip);physics_bar=physics_strip
+	var physics_toolbar:=HBoxContainer.new();physics_strip.add_child(physics_toolbar)
 	physics_editor.setup(physics_toolbar)
 	canvas = CanvasView.new()
 	canvas.custom_minimum_size = Vector2(400, 180)
@@ -799,6 +817,7 @@ func build_ui() -> void:
 	empty_hint.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
 	empty_hint.position.y = 24
 	empty_hint.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	scene_view=preload("res://src/scene_view.gd").new();add_child(scene_view);scene_view.setup(self,view_toolbar)
 	scene_name = label(center, "")
 	scene_name.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	var scroll := ScrollContainer.new()
@@ -900,6 +919,15 @@ Draw returns to the animated shot.")
 			audio_clip.muted = value
 			commit_audio(before))
 	audio_section.add_child(audio_mute)
+	audio_solo=CheckButton.new();audio_solo.text="Solo audio clip"
+	audio_solo.tooltip_text="Hear only soloed sound clips in this scene, including export. Mute still silences a soloed clip."
+	audio_solo.toggled.connect(func(value):
+		if exporting or audio_clip.is_empty():return
+		var before:=audio_document().duplicate(true)
+		if value:audio_clip["solo"]=true
+		else:audio_clip.erase("solo")
+		commit_audio(before))
+	audio_section.add_child(audio_solo)
 	button(audio_section,"Shorten sound…",func():audio_trim_editor.open())
 	button(audio_section,"Fade sound…",func():audio_fade_editor.open())
 	button(audio_section, "Remove audio clip", remove_audio)
@@ -1010,11 +1038,14 @@ Draw returns to the animated shot.")
 	workspace_layout=preload("res://src/workspace_layout.gd").new();add_child(workspace_layout)
 	workspace_layout.setup(self,column,middle,hierarchy,scroll,transport,ruler_holder,timeline_scroll)
 	var fit_panels := func():
-		var compact := get_viewport_rect().size.y < 800
+		var usable_height:=minf(get_viewport_rect().size.y,float(get_window().size.y)/get_window().content_scale_factor)
+		var compact := usable_height < 800
 		world_selection.tree.custom_minimum_size.y = 80 if compact else 150
 		timeline_scroll.custom_minimum_size.y = 84 if compact else 144
-		canvas.custom_minimum_size.y = 140 if compact else 180
+		canvas.custom_minimum_size.y = 90 if compact else 180
+		scene_name.visible=not compact
 	resized.connect(fit_panels)
+	get_window().size_changed.connect(fit_panels)
 	fit_panels.call()
 
 func default_ffmpeg() -> String:
@@ -1075,6 +1106,7 @@ func refresh_empty_hint() -> void:
 	if empty_hint.visible != show_hint: empty_hint.visible = show_hint
 
 func changed() -> void:
+	stop_local_wind("Document edited")
 	if drawing_selection_editor:drawing_selection_editor.cancel()
 	recovery_revision += 1
 	dirty = true
@@ -1166,8 +1198,19 @@ func refresh_layer_choices() -> void:
 	active_layer=clampi(active_layer,0,layers.size()-1);layer_choice.select(active_layer);refresh_layer()
 	if layer_editor:layer_editor.refresh()
 
+func stop_local_wind(reason: String) -> void:
+	if is_instance_valid(local_wind_review):local_wind_review.stop_preview(reason)
+	if is_instance_valid(physics_editor) and is_instance_valid(physics_editor.helper_editor):physics_editor.helper_editor.stop_pending_preview(reason)
+
+func local_wind_display_active() -> bool:
+	return (is_instance_valid(local_wind_review) and local_wind_review.phase in ["warming","running"]) or (is_instance_valid(physics_editor) and is_instance_valid(physics_editor.helper_editor) and is_instance_valid(physics_editor.helper_editor.pending_preview) and physics_editor.helper_editor.pending_preview.display_active())
+
+func local_wind_active() -> bool:
+	return (is_instance_valid(local_wind_review) and local_wind_review.phase in ["warming","running"]) or (is_instance_valid(physics_editor) and is_instance_valid(physics_editor.helper_editor) and physics_editor.helper_editor.pending_preview_active())
+
 func set_frame(value: int) -> void:
 	if exporting: return
+	if value!=frame:stop_local_wind("Frame changed")
 	if drawing_selection_editor and value!=frame:drawing_selection_editor.cancel()
 	if fill_editor and value!=frame:fill_editor.cancel()
 	if physics_editor and physics_editor.recording and physics_editor.recording.active and not physics_editor.recording.advancing:
@@ -1243,6 +1286,7 @@ func step(amount: int) -> void:
 
 func toggle_play() -> void:
 	if exporting: return
+	stop_local_wind("Playback")
 	physics_editor.freeze_all();physics_editor.clear_previews()
 	finish_stroke()
 	if playing:
@@ -1327,7 +1371,6 @@ func _process(delta: float) -> void:
 	trim_idle_rasters()
 	poll_recovery_preview()
 	if recovery_checkpoint_requested and not recovery_writer.busy() and not recovery_preview.busy():autosave_tick(true)
-	pose_editor.update_gizmo()
 	play_button.text = "Pause" if playing else "Play"
 	refresh_empty_hint()
 	refresh_title()
@@ -1342,7 +1385,9 @@ func _process(delta: float) -> void:
 		elif next != frame: set_frame(next)
 	if navigating and not exporting and not orbit_control.active:
 		var motion := Vector3(float(Input.is_physical_key_pressed(KEY_D)) - float(Input.is_physical_key_pressed(KEY_A)), float(Input.is_physical_key_pressed(KEY_E)) - float(Input.is_physical_key_pressed(KEY_Q)), float(Input.is_physical_key_pressed(KEY_S)) - float(Input.is_physical_key_pressed(KEY_W)))
-		renderer.camera.position += renderer.camera.basis * motion.limit_length() * delta * (8 if Input.is_key_pressed(KEY_SHIFT) else 3)
+		var fly_speed := .75 if Input.is_key_pressed(KEY_CTRL) else 8.0 if Input.is_key_pressed(KEY_SHIFT) else 3.0
+		renderer.camera.position += renderer.camera.basis * motion.limit_length() * delta * fly_speed
+	pose_editor.update_gizmo()
 	if overlay_dirty:
 		var start := Time.get_ticks_usec()
 		var sampled: Dictionary=drawing_overlay_cache.sample(layers,frame,video.width,video.height,recovery_revision)
@@ -1363,6 +1408,9 @@ func _process(delta: float) -> void:
 func canvas_input(event: InputEvent, point: Vector2) -> void:
 	if home and home.visible:return
 	if exporting or playing: return
+	# Only new editing presses are bounded. Captured camera motion, active drags,
+	# releases and cancellation must continue after leaving the displayed scene.
+	if mode.selected in [1,2] and event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed and not event.ctrl_pressed and not canvas.scene_contains(point):return
 	if not raster_preview_error.is_empty():message(raster_preview_error+" Reopen a valid drawing before editing.");return
 	if mode.selected in [1,2] and navigation_scheme=="orbit" and event is InputEventMouseButton and event.pressed and event.ctrl_pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
 		var active: bool=orbit_control.active;var action: String=orbit_control.action
@@ -1700,18 +1748,22 @@ func delete_key() -> void:
 	changed()
 	set_frame(frame)
 
-func camera_button(index: int, pressed: bool, ctrl := false) -> void:
+func camera_button(index: int, pressed: bool, ctrl := false, cursor_origin:=Vector2(INF,INF)) -> void:
 	if index not in [MOUSE_BUTTON_LEFT, MOUSE_BUTTON_RIGHT, MOUSE_BUTTON_MIDDLE]: return
 	if index == MOUSE_BUTTON_LEFT: camera_free = pressed and ctrl
 	if pressed and ctrl and navigation_scheme=="orbit" and index in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT] and camera_buttons==0:
 		if not orbit_control.begin(renderer.camera,orbit_pivot(),"orbit" if index==MOUSE_BUTTON_LEFT else "pan"):
 			camera_free=false;message("Frame the selected object before orbiting this close.");return
+	if pressed and camera_buttons==0:
+		camera_cursor_origin=cursor_origin if cursor_origin.is_finite() else get_viewport().get_mouse_position()
+		camera_cursor_restore_pending=true
 	var flag := 1 << (index - 1)
 	if pressed: camera_buttons |= flag
 	else: camera_buttons &= ~flag
 	navigating = camera_buttons != 0
-	if not navigating:orbit_control.end()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if navigating else Input.MOUSE_MODE_VISIBLE
+	if navigating:Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	else:
+		orbit_control.end();finish_camera_capture()
 
 func camera_motion(relative: Vector2) -> void:
 	var camera: Camera3D = renderer.camera
@@ -1731,7 +1783,14 @@ func camera_motion(relative: Vector2) -> void:
 	elif camera_buttons & MOUSE_BUTTON_MASK_LEFT:
 		camera.position += (-camera.basis.x * relative.x + camera.basis.y * relative.y) * speed
 
-func release_mouse() -> void:
+func finish_camera_capture(restore_cursor:=true) -> void:
+	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+	var pending:=camera_cursor_restore_pending;camera_cursor_restore_pending=false
+	if pending and restore_cursor:
+		var point:=camera_cursor_origin.clamp(Vector2.ZERO,get_viewport_rect().size-Vector2.ONE)
+		get_viewport().warp_mouse(point);camera_cursor_return_requested.emit(point)
+
+func release_mouse(restore_cursor:=true) -> void:
 	orbit_control.end()
 	if canvas:canvas.cancel_middle()
 	if physics_editor:physics_editor.release_grab()
@@ -1739,7 +1798,7 @@ func release_mouse() -> void:
 	camera_free = false
 	camera_buttons = 0
 	navigating = false
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	finish_camera_capture(restore_cursor)
 
 func orbit_pivot() -> Vector3:
 	var node=world_selection.entity_root(world_selection.selected) if world_selection else null
@@ -1757,6 +1816,7 @@ func frame_3d_scene() -> void:
 	else: message(renderer.last_framing.get("error","No renderable mesh to frame."))
 
 func _input(event: InputEvent) -> void:
+	if local_wind_review and local_wind_review.global_event(event):get_viewport().set_input_as_handled();return
 	if keyboard_shortcuts and keyboard_shortcuts.capture(event):get_viewport().set_input_as_handled();return
 	# Redesign keyboard navigation: a focused button must not swallow studio shortcuts (Space, arrows, Home/End...).
 	if keyboard_nav and event is InputEventKey and event.pressed and not event.keycode in [KEY_TAB, KEY_ENTER, KEY_KP_ENTER] and get_viewport().gui_get_focus_owner() is BaseButton:
@@ -1918,6 +1978,7 @@ func refresh_scene_name() -> void:
 	else:scene_name.text="Scene: "+source.get_file()+" • %d × %d" % [video.width,video.height]
 
 func restore_world(document: Dictionary) -> String:
+	stop_local_wind("World changed")
 	if sequence_editor:
 		var why: String=sequence_editor.scene_error(document)
 		if not why.is_empty():message(why);return why
@@ -2022,6 +2083,7 @@ func demo_dialog() -> void:
 
 func reset_document(path: String, sample := false) -> bool:
 	if exporting or source_import.pid > 0: return false
+	stop_local_wind("Document changed")
 	var prepared: Dictionary=renderer.prepare_legacy(path) if sample else renderer.prepare_world(WorldDocument.empty(),48)
 	if prepared.has("error"):message(prepared.error);return false
 	if tutorials:tutorials.document_changing()
@@ -2075,6 +2137,7 @@ func load_demo_room() -> bool:
 
 func save() -> void:
 	if exporting: return
+	stop_local_wind("Save")
 	if not physics_editor.freeze_all():return
 	finish_stroke()
 	pose_editor.finish_drag()
@@ -2105,6 +2168,12 @@ func open_project(folder: String, manifest_name := "project.json",report_error :
 	open_project_error=""
 	if exporting:open_project_error="Cannot open a project during export.";return false
 	var data := Storage.load_project(folder, manifest_name,cold_cel_loading,cold_cel_min_bytes)
+	return install_project_data(data,folder,report_error)
+
+func install_project_data(data: Dictionary,folder: String,report_error := true) -> bool:
+	# Worker loading ends before this main-thread transaction prepares scene nodes.
+	open_project_error=""
+	if exporting:open_project_error="Cannot open a project during export.";return false
 	if data.has("error"):
 		open_project_error=data.error
 		if report_error:message(open_project_error)
@@ -2248,6 +2317,7 @@ func selected_output_size() -> String:
 
 func export_frames(parent: String,images_only: bool,drawings_only: bool) -> String:
 	if exporting: return "Export already running."
+	stop_local_wind("Export")
 	var delivery:=selected_output_size()
 	var size_error:=OutputSize.error(delivery)
 	if not size_error.is_empty():message(size_error);return size_error
@@ -2416,7 +2486,7 @@ func show_notices() -> void:
 	var dialog := AcceptDialog.new()
 	dialog.title = "Credits / open source notices"
 	dialog.exclusive=false
-	dialog.dialog_text = "Godot Engine 4.6 — MIT\nCopyright (c) 2014-present Godot Engine contributors.\nCopyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.\nhttps://godotengine.org/license/\n\nFFmpeg is invoked as your separately installed executable.\nThis installed build enables GPL/version3; no binary is bundled.\nhttps://ffmpeg.org/legal.html\n\nRoom fixture: original procedural geometry; no downloaded models.\nApplication license: owner decision pending.\nFull records: THIRD_PARTY_NOTICES.md and docs/licenses.md."
+	dialog.dialog_text = "Godot Engine 4.6 — MIT\nCopyright (c) 2014-present Godot Engine contributors.\nCopyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.\nhttps://godotengine.org/license/\n\nFFmpeg is invoked as your separately installed executable.\nLicense and codec options depend on the installed build; no binary is bundled.\nhttps://ffmpeg.org/legal.html\n\nRoom fixture: original procedural geometry. Imported asset rights must be verified.\nApplication license: owner decision pending.\nFull records: THIRD_PARTY_NOTICES.md and docs/licenses.md."
 	add_child(dialog)
 	dialog.confirmed.connect(dialog.queue_free)
 	dialog.popup_centered(Vector2i(720, 430))
@@ -2444,7 +2514,7 @@ func _notification(what: int) -> void:
 		if physics_editor and physics_editor.helper_editor:physics_editor.helper_editor.cancel_patch_drag()
 		if pose_editor: pose_editor.reveal_bones = false; pose_editor.finish_drag()
 		finish_stroke()
-		release_mouse()
+		release_mouse(false)
 		if canvas: canvas.panning = false
 		if canvas: canvas.cancel_middle()
 		if timeline: timeline.dragging = false;timeline.cancel_audio();timeline.cancel_cel();timeline.finish_move(true);timeline.queue_redraw()
@@ -2576,13 +2646,27 @@ func poll_recovery_checkpoint() -> void:
 	finish_recovery_preview.call_deferred(result.folder,result.digest,int(request.frame),int(request.revision),request.view)
 
 func finish_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary) -> void:
-	await RenderingServer.frame_post_draw
-	if not is_inside_tree() or folder!=recovery_root.path_join(recovery_session) or recovery_revision!=revision or frame!=at or renderer.view_state()!=view:return
-	if playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.is_running() or has_dialog(self):return
-	if recovery_writer.busy() or recovery_preview.busy():return
+	if local_wind_active():return
+	if not renderer.begin_native_readback():return
+	recovery_native_requests.append({"folder":folder,"digest":digest,"at":at,"revision":revision,"view":view,"wind_generation":local_wind_generation})
+	if not renderer.native_frame_ready.is_connected(complete_recovery_previews):renderer.native_frame_ready.connect(complete_recovery_previews,CONNECT_ONE_SHOT)
+
+func complete_recovery_previews() -> void:
+	var requests: Array=recovery_native_requests;recovery_native_requests=[]
+	for request in requests:complete_recovery_preview(request.folder,request.digest,request.at,request.revision,request.view,int(request.wind_generation))
+
+func complete_recovery_preview(folder: String,digest: String,at: int,revision: int,view: Dictionary,wind_generation:=-1) -> void:
+	var current: bool=is_inside_tree() and renderer.native_view_available() and folder==recovery_root.path_join(recovery_session) and recovery_revision==revision and frame==at and renderer.view_state()==view
+	current=current and not (playing or exporting or drawing or navigating or pose_editor.dragging or physics_editor.is_running() or has_dialog(self))
+	current=current and not local_wind_active()
+	# Queued production requests always carry their start epoch. The five-argument
+	# direct endpoint stays compatible with existing focused callers/tests.
+	current=current and (wind_generation<0 or wind_generation==local_wind_generation)
+	current=current and not (recovery_writer.busy() or recovery_preview.busy())
+	# Release even a detached/stale request, without reading obsolete GPU pixels.
+	var image: Image=renderer.finish_native_readback(current)
+	if not current or image==null:return
 	var started:=Time.get_ticks_usec()
-	var image: Image=renderer.viewport.get_texture().get_image()
-	if not image or image.is_empty():return
 	var overlays: Array=[]
 	if canvas.sequence_overlay:overlays.append(canvas.sequence_overlay.get_image().duplicate())
 	for layer in layers:
@@ -2826,6 +2910,7 @@ func refresh_audio_controls() -> void:
 	if audio_clip.is_empty():
 		audio_info.text = "No audio clip"
 		audio_mute.set_pressed_no_signal(false)
+		audio_solo.set_pressed_no_signal(false)
 		audio_start.value = 0
 		audio_trim.value = 0
 		audio_gain.value = 0
@@ -2835,6 +2920,7 @@ func refresh_audio_controls() -> void:
 		audio_trim.value = float(audio_clip.source_in_sample) * 1000 / audio_clip.source.rate
 		audio_gain.value = audio_clip.gain_db
 		audio_mute.set_pressed_no_signal(audio_clip.muted)
+		audio_solo.set_pressed_no_signal(audio_clip.get("solo",false))
 		if audio_mix.get("clipped_samples",0) > 0: audio_info.text += "\nSounds overlap too loudly. Lower clip gain in Advanced."
 
 func commit_audio(before: Dictionary, before_selection: String="") -> void:

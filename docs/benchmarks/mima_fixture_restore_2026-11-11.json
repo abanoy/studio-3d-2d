@@ -1,0 +1,99 @@
+{
+  "format": "has_windows_mima_fixture_restore_1",
+  "date": "2026-11-11",
+  "failure": "Canonical run stopped before catalogue execution: tracked pilot report pointed into an absent old checkout. No catalogue assertion was dropped.",
+  "source": "C:\\a\\dump\\New folder\\mima.rar",
+  "source_sha256": "b0a4b19afc4cf8d8a17351848e11cf4738fa0a7436d58699a66a4c4be501a50a",
+  "source_mtime_ns": 1793569319638254800,
+  "resource_files": 115,
+  "staged_bytes": 236825494,
+  "all_recorded_resource_sha256_match": true,
+  "original_unchanged": true,
+  "prepared": {
+    "historical_sha256": "b57798a042749d9bcb945b0319e8ea89a889baa86b1366ca3edde0a9c2509fe7",
+    "current_sha256": "e9b21ab5f1171b21d0a7d3e3f83e5341f6b297516d09582e49c0283dfe10d8da",
+    "bytes": 7830992,
+    "bones": 229,
+    "meshes": 3,
+    "images": 13,
+    "facial_targets": 143,
+    "two_independent_current_conversions_identical": true,
+    "historical_byte_equivalence_claimed": false
+  },
+  "reproduce": "python tests/prepare_mima_fixture.py --archive \"C:\\a\\dump\\New folder\\mima.rar\" --output output/new-mima-fixture",
+  "test": "python tests/verify_shape_catalog.py",
+  "catalogue": {
+    "checks": 130,
+    "failures": 0,
+    "movie": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\shape-catalog\\1794450081268274300/render_1794450105_23519686_0/movie.mp4",
+    "plans": [
+      "Authored fixture",
+      "MMD",
+      "GMod",
+      "SFM",
+      "VRM1.0",
+      "VRM0.x",
+      "Supplied Mima"
+    ],
+    "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\shape-catalog\\1794450081268274300",
+    "unit_checks": 34,
+    "private_receipts": [
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\shape_catalog_smoke_8aab23bc17f24a51a7e5c9f6ba48e25c.json",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\shape_catalog_smoke_7de254e5e1854cb3839498af0c24e0f1.json"
+    ],
+    "reader": {
+      "checks": 5,
+      "failures": 0
+    },
+    "native_fixtures_optional": true
+  },
+  "private_desktops": [
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_1eecb5ab032d4f49a78e6f5120d39fe9",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 21292,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 28.173
+    },
+    {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_7678963eda0d45c2b837074ac4d68ae7",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 19508,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.785
+    }
+  ],
+  "safety_checks": {
+    "wrong_source_checksum_refused_before_staging": true,
+    "existing_destination_refused": true
+  },
+  "other_native_alias_staging": [
+    {
+      "from": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448074-759-4936706",
+      "to": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\miku-tested",
+      "files": 18,
+      "scene_sha256": "b0a78fd482908e72099ad970649849bc0cd392e6e50585efade1175f45dece9a"
+    },
+    {
+      "from": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\source-1794448085-512-15689586",
+      "to": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\compatibility\\street-tested",
+      "files": 22,
+      "scene_sha256": "7c69a286eaf80db381f045bc7c249def346e69b2f9e48927cbe0d53eaa0055c2"
+    }
+  ],
+  "remaining": "Main canonical suite will restart with these native prerequisites. Earlier37-check pose branch explicitly skipped native Miku; staged alias enables its real native branch for the next run. No full aggregate or artist acceptance claim."
+}

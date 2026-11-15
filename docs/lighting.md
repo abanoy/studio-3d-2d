@@ -1,5 +1,10 @@
 # Project lighting
 
+Future owner lighting requests and read-only reference research are recorded in
+[lighting_feedback_2026-11-12.md](lighting_feedback_2026-11-12.md), especially
+shared indirect lighting on models and props. That roadmap is deferred while
+work is paused and does not extend the implemented modes described here.
+
 The small lighting menu beside the Scene/Draw/Pose selector is available in Simple.
 
 - **Unshaded** is the default for a new empty project. It shows base colors and
@@ -68,3 +73,8 @@ alter source materials. It does not add animated live-parent opacity evaluation.
 in Unshaded/Lit/Studio, a half-faded parent, normal Add peer restart and both available
 VRM samples. It checks visible rendered color, settings, authored-data/shot/view
 isolation and original file hashes. See the latest progress entry for actual results.
+
+
+Source preparation now emits approximate static point/spot/sun entity lights;
+see [implementation and limits](source_import.md#static-source-entity-lights).
+Baked BSP lightmaps and full native lighting fidelity remain open.

@@ -1,0 +1,39 @@
+{
+  "format": "has_wind_godot_bridge_primary_evidence_1",
+  "exact_engine_commit": "89cea143987d564363e15d207438530651d943ac",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/89cea1439/platform/windows/os_windows.cpp",
+      "supports": "execute_with_pipe HANDLE_LIST and process_map insertion; known-map kill branch mutex/removal/retainedHANDLE termination and unconditional process/thread close; absent-entry generic fallback must never be reached"
+    },
+    {
+      "url": "https://devblogs.microsoft.com/oldnewthing/20110107-00/?p=11803/",
+      "supports": "A retained process handle keeps the process object and PID from reuse"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess",
+      "supports": "Termination is asynchronous; already terminated process returns access denied, so FAILED does not justify retry"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.6-stable/drivers/windows/file_access_windows_pipe.cpp",
+      "supports": "close shuts both pipe directions; failed/short store_buffer cannot safely be retried; nonblocking-state setup return ignored"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.6-stable/drivers/windows/file_access_windows_pipe.h",
+      "supports": "eof_reached alwaysfalse and flush no-op on this backend"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/89cea1439/core/io/file_access.cpp",
+      "supports": "GDScript-visible store_buffer is bool"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/89cea1439/core/io/json.cpp",
+      "supports": "JSON numeric tokens parse as double; explicit validated integer normalization is required"
+    },
+    {
+      "url": "https://docs.godotengine.org/en/4.6/classes/class_os.html#class-os-method-execute-with-pipe",
+      "supports": "Nonblocking pipe API is available but the created process survives Godot without explicit lifetime handling"
+    }
+  ],
+  "review": "Read-only primary-source research by controller_protocol_review; actual ownership/resource outcome established separately by12headlessCPUtests"
+}
