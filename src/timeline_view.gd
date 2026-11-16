@@ -448,12 +448,17 @@ func neon_box(key: String) -> StyleBox:
 		var none:=Vector4(-1,-1,-1,-1)
 		match key:
 			"cel":neon_boxes[key]=StudioTheme.flat(Color(0.18,0.549,1,0.16),Color(0.314,0.627,1,0.55),4,1)
-			"cel_held":neon_boxes[key]=StudioTheme.flat(Color(0.18,0.549,1,0.28),Color("6fb2ff"),4,1,none,Color(0.18,0.549,1,0.45),6)
+			# Opaque (rgba(46,140,255,.28) precomposited on #0C0D11): a StyleBoxFlat shadow is drawn under
+			# the whole box and would show through a translucent fill, unlike a CSS box-shadow.
+			"cel_held":neon_boxes[key]=StudioTheme.flat(Color("193961"),Color("6fb2ff"),4,1,none,Color(0.18,0.549,1,0.45),6)
 			"cel_hidden":neon_boxes[key]=StudioTheme.flat(Color(0.549,0.576,0.639,0.10),Color(0.549,0.576,0.639,0.35),4,1)
 			"cel_move":neon_boxes[key]=StudioTheme.flat(Color.TRANSPARENT,Color("6fb2ff"),4,2)
 			"cel_move_bad":neon_boxes[key]=StudioTheme.flat(Color.TRANSPARENT,StudioTheme.PROBLEM,4,2)
 			"clip":neon_boxes[key]=StudioTheme.flat(Color(0.18,0.549,1,0.08),Color(0.314,0.627,1,0.30),4,1)
 			"clip_selected":neon_boxes[key]=StudioTheme.flat(Color(0.18,0.549,1,0.14),Color("6fb2ff"),4,1)
+			# Model lanes are violet (the legend's "Model keys"); blue stays for drawings.
+			"object":neon_boxes[key]=StudioTheme.flat(Color(0.663,0.545,1,0.08),Color(0.663,0.545,1,0.30),4,1)
+			"object_selected":neon_boxes[key]=StudioTheme.flat(Color(0.663,0.545,1,0.14),Color("a98bff"),4,1)
 			"clip_invalid":neon_boxes[key]=StudioTheme.flat(Color(1,0.353,0.478,0.12),StudioTheme.PROBLEM,4,1)
 			"audio":neon_boxes[key]=StudioTheme.flat(Color(0.239,0.863,0.592,0.12),Color.TRANSPARENT,4,0)
 			"audio_selected":neon_boxes[key]=StudioTheme.flat(Color(0.239,0.863,0.592,0.12),StudioTheme.SAVED,4,1)
@@ -519,7 +524,7 @@ func neon_draw() -> void:
 	if not hide_header:
 		draw_rect(Rect2(0,0,LEFT,1),StudioTheme.LINE);draw_rect(Rect2(0,23,LEFT,1),StudioTheme.LINE)
 		var on_camera:=focus_lane=="camera"
-		neon_lane(24,28,"Camera","%d key%s" % [keys.size(),"" if keys.size()==1 else "s"],StudioTheme.CAMERA,on_camera,0,StudioTheme.TEXT,on_camera,CAMERA_BAND,Color("ffd6ea"),"bar_glow_camera")
+		neon_lane(24,28,"Camera",str(keys.size()),StudioTheme.CAMERA,on_camera,0,StudioTheme.TEXT,on_camera,CAMERA_BAND,Color("ffd6ea"),"bar_glow_camera")
 	if header_only:
 		draw_rect(Rect2(LEFT-1,0,1,size.y),StudioTheme.LINE)
 		if picture:picture.queue_redraw()
@@ -576,6 +581,7 @@ func neon_ticks(painter: Control) -> void:
 		if major/n*pixels>=9 and (ruler_seconds or int(major)%n==0):parts=n;break
 	var minor:=major/parts;var half:=int(parts*0.5)
 	var font:=StudioTheme.mono(400)
+	var tag:=tag_rect()
 	for i in range(floori(visible_start()/minor),ceili((visible_start()+visible_span())/minor)+1):
 		var at:=i*minor
 		if at>duration+0.001:break
@@ -583,7 +589,11 @@ func neon_ticks(painter: Control) -> void:
 		if i%parts==0:tall=14;color=StudioTheme.LINE3
 		elif parts%2==0 and i%parts==half:tall=8;color=StudioTheme.LINE2
 		painter.draw_rect(Rect2(px,23-tall,1,tall),color)
-		if i%parts==0:painter.draw_string(font,Vector2(px+5,4+font.get_ascent(11)),"%d s" % roundi(floori(float(i)/parts)*seconds) if ruler_seconds else str(roundi(at)),HORIZONTAL_ALIGNMENT_LEFT,-1,11,StudioTheme.TEXT3)
+		if i%parts==0:
+			var text:="%d s" % roundi(floori(float(i)/parts)*seconds) if ruler_seconds else str(roundi(at))
+			# A label the playhead tag would half cover is skipped whole (no stray "s" beside the tag).
+			if tag.has_area() and Rect2(px+5,4,font.get_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,-1,11).x,font.get_height(11)).intersects(tag):continue
+			painter.draw_string(font,Vector2(px+5,4+font.get_ascent(11)),text,HORIZONTAL_ALIGNMENT_LEFT,-1,11,StudioTheme.TEXT3)
 
 func neon_playhead(painter: Control,top: float,bottom: float,from: Color,to: Color) -> void:
 	# 2 px vertical neon line with a soft glow (wider translucent quads).
@@ -591,6 +601,13 @@ func neon_playhead(painter: Control,top: float,bottom: float,from: Color,to: Col
 	for spec in [[10.0,0.08],[5.0,0.2],[2.0,1.0]]:
 		var half: float=spec[0]/2.0;var alpha: float=spec[1]
 		painter.draw_polygon(PackedVector2Array([Vector2(px-half,top),Vector2(px+half,top),Vector2(px+half,bottom),Vector2(px-half,bottom)]),PackedColorArray([Color(from,alpha),Color(from,alpha),Color(to,alpha),Color(to,alpha)]))
+
+func tag_rect() -> Rect2:
+	# Where neon_tag() draws the playhead's frame tag (empty when the playhead is out of view).
+	var px:=x(frame)
+	if hide_header or px<LEFT-1 or px>size.x-15:return Rect2()
+	var width:=StudioTheme.mono(600).get_string_size(str(frame),HORIZONTAL_ALIGNMENT_LEFT,-1,11).x+16
+	return Rect2(clampf(px-width/2.0,LEFT,maxf(LEFT,size.x-16-width)),0,width,22)
 
 func neon_tag(painter: Control) -> void:
 	# r6 neon frame tag at the top of the ruler: mono 11/600 #07080B frame number.
@@ -628,10 +645,13 @@ func neon_content(painter: Control) -> void:
 			var piece_keys:=false
 			for piece in data.animation_clips:
 				var offset:=moving_delta if moving_id==data.id and moving_piece==piece.id else delta
-				painter.draw_style_box(neon_box("clip_invalid" if moving_id==data.id and moving_piece==piece.id and not moving_valid else "clip_selected" if selected else "clip"),piece_rect(piece,i,offset))
 				var frames: Array=[]
 				for key in piece.keys:
 					if key.frame>=piece.source_in and key.frame<piece.source_in+piece.length:frames.append(float(int(piece.start)+int(key.frame)-int(piece.source_in)+offset))
+				# A one-frame piece with no keys draws no stub box (the violet presence band shows the model).
+				var moving_this: bool=moving_id==data.id and moving_piece==piece.id
+				if moving_this or int(piece.length)>1 or not frames.is_empty() or not row_keys.get(data.id,[]).is_empty():
+					painter.draw_style_box(neon_box("clip_invalid" if moving_this and not moving_valid else "object_selected" if selected else "object"),piece_rect(piece,i,offset))
 				neon_keys(painter,frames,y+12,StudioTheme.MODEL,model_line,6)
 				piece_keys=piece_keys or not frames.is_empty()
 			# Body rigs keep their keys per channel, not in piece.keys: show the authored key frames
@@ -648,7 +668,9 @@ func neon_content(painter: Control) -> void:
 					frames.append(float(at)+(moving_delta if inside else delta))
 				neon_keys(painter,frames,y+12,StudioTheme.MODEL,model_line,6)
 		else:
-			painter.draw_style_box(neon_box("clip_selected" if selected else "clip"),block_rect(data,i,delta))
+			var bounds:=ObjectTiming.span(data)
+			if moving_id==data.id or not data.pose_keys.is_empty() or bounds.y>bounds.x:
+				painter.draw_style_box(neon_box("object_selected" if selected else "object"),block_rect(data,i,delta))
 			neon_keys(painter,data.pose_keys.map(func(key):return float(int(key.frame)+delta)),y+12,StudioTheme.MODEL,model_line,6)
 		for key in data.get("visibility_keys",[]):
 			painter.draw_circle(Vector2(x(int(key.frame)),y+21),3,StudioTheme.SAVED if key.visible else StudioTheme.PROBLEM)

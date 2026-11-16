@@ -810,3 +810,60 @@ scratchpad). Simple mode at 1440x900 now gives a camera frame of about 975x548 (
   toggle, to keep saved layouts untouched. The Pose actions are not pinned to the bottom (blocks
   follow them in Simple). In Pose at 1440 px the Codex pill sits in the footer, so the "Handles"
   legend hides.
+
+### Review 2 fixes (`src/app.gd`, `src/workspace_layout.gd`, `src/timeline_view.gd`, `src/studio_theme.gd`, `src/world_selection.gd`, `src/timeline_navigation.gd`, `src/sequence_editor.gd`, `src/pose_editor.gd`)
+- **Grab strip overlay:** in neon Simple the docked Properties / Timeline grab strip is now 10 px and
+  overlays the top padding of its content (panel separation `-STRIP_HEIGHT`, header `z_index` 1), so
+  the inspector and the transport row start right under the bar (Pen card 56-120 as in the mock).
+  Godot picks controls by tree order, not z_index, so `workspace_layout.strip_input()` (from `_input`)
+  routes a left press inside the strip to the same heading drag, and hover draws a 2 px `#363B48`
+  line on the panel's top edge. A splitter's drag area wins where it overlaps the strip (it reaches
+  4 px into the panel). The strip is 10 px rather than 6 so the handle's centre stays outside that
+  drag area (workspace_controls presses the handle centre, timeline_navigation the divider centre).
+  The strip takes the top 4 px of the transport buttons' click area. Advanced, classic and floating
+  docks are unchanged.
+- **Splitters:** the no-grabber icon is a zero-size `PlaceholderTexture2D`, so docks meet with no
+  2 px `#08090C` seam; `get_drag_area_control()` still gives the drag strip.
+- **Top bar:** Export movie's glow is a soft 6 px pink shadow on a panel inset 6 px plus a fainter
+  blue one inset 8 px (no hard band at the bar edge). The gear (Settings) is Advanced-only in neon;
+  Simple reaches the same dialog through More > "Interface size and fullscreen…" (classic keeps it).
+- **Header save line:** the last save time is forgotten when the shown project changes (path or
+  folder), so New / Open no longer inherit "Saved N min ago" from the previous project.
+- **Interface theme:** Classic light <-> Classic dark still switch live. A switch to or from Midnight
+  Neon is saved and applies at the next start (the neon panels, pills and cards are built at start-up,
+  so a live switch left low-contrast mixes). The tooltip and a status message say so.
+- **Stage footer:** left (caption, at most 170 px) and right (Codex view pill + legend) are reserved
+  separately. The toast is centred when that fits, otherwise it sits in the free gap. When it still
+  cannot fit, the grey part wraps to a second line (only when two lines hold it; narrower stays one
+  cut line with the tooltip). The legend first drops its title ("Handles" / "Onion skin"), then hides.
+  In neon Simple the Codex dropdown chips use a 5 px pad and the view toolbar a 2 px gap. At
+  1440x900 Pose shows the full hint and "○ Joint ◉ Selected" (the "Handles" title is dropped there).
+- **Camera pill:** Save key uses a new 18 px filled pink diamond with a dark plus (`key-solid`,
+  classic alias `key`).
+- **Timeline:** the held drawing block is an opaque `#193961` fill (the StyleBoxFlat shadow drew
+  under the translucent fill). Model lanes use violet boxes (`object`, `object_selected`); a
+  one-frame object or piece without keys draws no stub box (the presence band shows it). The Camera
+  lane count is a bare number like the model lanes; drawing layers keep "N drawings" as in the mock.
+  A ruler label the playhead tag would half cover is skipped whole (`tag_rect()`).
+- **Transport row (Simple):** the "Frames a–b" caption is Advanced-only, the pan scrollbar shows
+  once the view is zoomed in (always in Advanced), the root "Main scene" crumb is hidden in neon
+  Simple (shown inside a sequence and in Advanced), and the toolbar buttons (Sequences…) are ghost
+  buttons. The Frame field, Sequences… and − + Fit stay visible.
+- **Focus lane:** the scroll-to-lane step runs again after the Simple / Advanced switch and when the
+  lane area resizes, and it measures the part of the lanes the dock's own scroll actually shows, so
+  Advanced at 1440x900 shows the Ink lane being drawn on.
+- **Inspector:** "Brush opacity (%)" sits above its row (Advanced). Stroke smoothing has the Opacity
+  treatment (label, neon slider, flat "N px" value; same SpinBox, still Advanced-only). The Layer
+  switch reads "Show" (tooltip "Show this layer"). Advanced recovery status has a 12 px right inset.
+- **World rail (Simple):** Save asset and Size map are 40 px icon-only tiles under Frame (names in
+  the tooltip; button texts and visibility unchanged). Advanced shows their captions.
+- **Pose:** `model_keyed()` caches key frames by model data identity (no per-frame deep copy).
+- **Declined:** the full-height World rail beside the timeline (dock tree nesting and saved-layout
+  shape, items 8 / 18). Collapsing Pose's Keys and helpers / Bones / Visibility / More behind one
+  disclosure in Simple (item 15): Codex smokes require those controls visible in Simple (for example
+  "motion control is available in Simple", the contacts lesson marker, shape_button). Hiding the
+  Sequences toolbar and Frame field in Simple (item 17): they stay visible where Codex shows them.
+- **Deviation kept (item 28):** Codex's simulation row (Physics, Hair & clothes, physics recording,
+  fans / local wind, loose parts) is hidden in neon Simple unless a simulation or recording runs;
+  Pose mirrors Physics / Hair & clothes. Recording, fans, wind and loose parts are reached in
+  Advanced. Showing the row in Simple shrinks the frame and turns the tool pill icon-only.

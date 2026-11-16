@@ -264,6 +264,7 @@ var header_mark: TextureRect
 var header_compact: Array[Button] = []
 var header_level := -1
 var header_saved_at := -1
+var header_identity := "" # project shown in the bar; a change forgets the last save time
 var header_was_dirty := false
 var header_dots := {}
 var save_dot: Panel
@@ -464,8 +465,14 @@ func show_display_settings() -> void:
 	var theme_choice:=OptionButton.new();access.add_child(theme_choice)
 	for theme_name in ["Midnight Neon","Classic light","Classic dark"]: theme_choice.add_item(theme_name)
 	theme_choice.select(StudioTheme.STYLES.find(StudioTheme.style))
-	theme_choice.tooltip_text="Studio interface colours. Drawing paper and your movie are not affected. Some icons change after the next start."
-	theme_choice.item_selected.connect(func(index: int): apply_theme_style(StudioTheme.STYLES[index]);save_display_preference("display","theme",StudioTheme.STYLES[index]))
+	theme_choice.tooltip_text="Studio interface colours. Drawing paper and your movie are not affected. Switching to or from Midnight Neon applies the next time the studio starts."
+	theme_choice.item_selected.connect(func(index: int):
+		# Neon panels, pills and cards are built for neon at start-up, so only Classic light <-> dark
+		# switches live; a change to or from neon is saved and applies at the next start.
+		var target: String = StudioTheme.STYLES[index]
+		save_display_preference("display","theme",target)
+		if (target == "neon") != StudioTheme.is_neon(): message("The new interface theme applies the next time the studio starts.")
+		else: apply_theme_style(target))
 	var keyboard_check:=CheckBox.new();keyboard_check.text="Keyboard navigation";access.add_child(keyboard_check)
 	keyboard_check.tooltip_text="Tab / Shift+Tab move between buttons with a visible outline; Enter presses. Playback keys keep working."
 	keyboard_check.button_pressed=keyboard_nav
@@ -760,12 +767,17 @@ func style_export(control: Button) -> void:
 	control.icon = StudioTheme.icon("export", StudioTheme.ON_NEON, 16)
 	control.add_theme_constant_override("icon_max_width", 16)
 	control.add_theme_constant_override("h_separation", 8)
-	var glow := Panel.new()
-	glow.show_behind_parent = true
-	glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	glow.add_theme_stylebox_override("panel", StudioTheme.flat(Color(1, 0.239, 0.604, 0), Color.TRANSPARENT, 8, 0, Vector4(0, 0, 0, 0), Color(1, 0.239, 0.604, 0.45), 8, Vector2(0, 6)))
-	control.add_child(glow)
-	glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	# Mock: 0 6px 22px -6px pink at 65 % plus a wider blue one. A soft 6 px pink shadow on a panel
+	# inset 6 px (the negative spread) fades out above the bar's edge; a fainter blue panel inset 8 px.
+	for spec in [[Color(0.18, 0.549, 1, 0.25), 8.0, 8], [Color(1, 0.239, 0.604, 0.32), 6.0, 6]]:
+		var glow := Panel.new()
+		glow.show_behind_parent = true
+		glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		glow.add_theme_stylebox_override("panel", StudioTheme.flat(Color(spec[0], 0), Color.TRANSPARENT, 8, 0, Vector4.ZERO, spec[0], spec[2], Vector2(0, 2)))
+		control.add_child(glow)
+		glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		glow.offset_left = spec[1]
+		glow.offset_right = -spec[1]
 	export_chip = Label.new()
 	export_chip.text = "MP4"
 	export_chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -1010,8 +1022,8 @@ func style_save_key(control: Button) -> void:
 	control.theme_type_variation = "PrimaryButton"
 	control.custom_minimum_size = Vector2(0, 40)
 	control.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	control.icon = StudioTheme.icon("diamond", StudioTheme.CAMERA, 16)
-	control.add_theme_constant_override("icon_max_width", 16)
+	control.icon = StudioTheme.icon("key-solid", StudioTheme.CAMERA, 18)
+	control.add_theme_constant_override("icon_max_width", 18)
 	control.add_theme_constant_override("h_separation", 8)
 	var pad := Vector4(12, 0, 16, 0)
 	override_button_boxes(control, StudioTheme.flat(Color("1a1d25"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, pad))
@@ -1124,6 +1136,14 @@ func set_codex_compact(on: bool) -> void:
 	if codex_compact == on or lighting_choice == null: return
 	codex_compact = on
 	compact_option(lighting_choice, on, ["sky"])
+	# Icon-only chips stay 32 px tall with a tighter pad and gap, so the pill leaves room for the
+	# stage footer's Pose legend (Advanced keeps the labelled chips and their padding).
+	var chip_pad := Vector4(5 if on else 10, 0, 5 if on else 10, 0)
+	for control in [lighting_choice, scene_view.choice if scene_view else null]:
+		if control == null: continue
+		override_button_boxes(control, StudioTheme.flat(StudioTheme.FIELD, StudioTheme.LINE2, 8, 1, chip_pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, chip_pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE2, 8, 1, chip_pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, chip_pad))
+		control.add_theme_constant_override("h_separation", 2 if on else 4)
+	if lighting_choice.get_parent() is BoxContainer: lighting_choice.get_parent().add_theme_constant_override("separation", 2 if on else 4)
 	if frame_scene_button:
 		frame_scene_button.text = "" if on else "Frame scene"
 		frame_scene_button.icon = StudioTheme.icon("frame-target", Color.WHITE, 16) if on else null
@@ -1484,6 +1504,7 @@ func fit_stage_footer() -> void:
 	var caption_w := StudioTheme.font(400).get_string_size(caption.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 12).x + 24
 	var legend_w := 0.0
 	legend.visible = legend_wanted
+	legend_title.visible = true
 	if legend_wanted: legend_w = legend.get_combined_minimum_size().x
 	var x := 0.0
 	var w := 0.0
@@ -1494,14 +1515,37 @@ func fit_stage_footer() -> void:
 	else:
 		var want := toast_natural_width()
 		var tools_w := footer_tools.get_combined_minimum_size().x if footer_tools and footer_tools.get_child_count() > 0 else 0.0
-		var side := maxf(legend_w + (tools_w + 12.0 if tools_w > 0 and legend_wanted else tools_w), minf(caption_w, 170.0))
-		if legend_wanted and width - side * 2 - 24 < minf(want, 260.0):
-			legend.visible = false
-			legend_w = 0.0
-			side = maxf(tools_w, minf(caption_w, 170.0))
-		w = clampf(want, 0.0, maxf(0.0, width - side * 2 - 24))
+		# Left and right are reserved separately: the caption (at most 170 px) on the left, the Codex
+		# view pill and the legend on the right. Centred under the frame when that fits; otherwise the
+		# toast sits in the free gap between them; the legend hides only when the toast would be cut.
+		var left := minf(caption_w, 170.0)
+		var right := legend_w + (tools_w + 12.0 if tools_w > 0 and legend_wanted else tools_w)
+		if legend_wanted and width - left - right - 24 < want:
+			# First drop the legend's title ("Handles" / "Onion skin"), then the whole legend.
+			var title_w := legend_title.get_combined_minimum_size().x + float(legend.get_theme_constant("separation"))
+			if legend_title.visible and width - left - (right - title_w) - 24 >= want:
+				legend_title.visible = false
+				legend_w -= title_w
+				right -= title_w
+			else:
+				legend.visible = false
+				legend_w = 0.0
+				right = tools_w
+		var gap := maxf(0.0, width - left - right - 24)
+		w = clampf(want, 0.0, gap)
 		x = floorf((width - w) / 2.0)
+		if x < left + 12 or x + w > width - right - 12: x = left + 12 + floorf((gap - w) / 2.0)
 		caption_w = maxf(0.0, x - 12)
+		# Still too narrow: wrap the grey part to a second line instead of cutting it with "..." when two
+		# lines hold it; narrower than that it stays one cut line (the full text is in the tooltip).
+		var rest_w := ceilf(StudioTheme.font(400).get_string_size(toast_rest.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x)
+		var rest_room := w - (want - rest_w)
+		var wrap := w < want - 0.5 and rest_room >= 80.0 and rest_room * 2.0 >= rest_w + 24.0
+		toast_rest.max_lines_visible = 2
+		var wrap_mode := TextServer.AUTOWRAP_WORD_SMART if wrap else TextServer.AUTOWRAP_OFF
+		if toast_rest.autowrap_mode != wrap_mode:
+			toast_rest.autowrap_mode = wrap_mode
+			toast_rest.text_overrun_behavior = TextServer.OVERRUN_NO_TRIMMING if wrap else TextServer.OVERRUN_TRIM_ELLIPSIS
 		var lead_w := ceilf(StudioTheme.font(600).get_string_size(toast_lead.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x)
 		toast_lead.custom_minimum_size.x = clampf(lead_w, 0.0, maxf(0.0, w - 60))
 	footer_left.custom_minimum_size.x = caption_w
@@ -1916,10 +1960,23 @@ func build_brush_block(children: Array) -> void:
 	if opacity_caption is Label:
 		advanced(move_to(opacity_caption, block))
 		opacity_caption.theme_type_variation = "CaptionLabel"
-	move_to(brush_smoothing.get_parent(), block)  # Advanced-only row
-	# Its caption matches the other Advanced captions in the card (12 px #B4BAC7).
-	for child in brush_smoothing.get_parent().get_children():
+		block.move_child(opacity_caption, opacity_row.get_index())  # above its row, like the radius caption
+	var smoothing_holder: Control = brush_smoothing.get_parent()
+	move_to(smoothing_holder, block)  # Advanced-only row
+	# Its caption matches the other Advanced captions in the card (12 px #B4BAC7); the SpinBox gets the
+	# Opacity treatment (label, neon slider, flat "N px" value) and stays the same control.
+	for child in smoothing_holder.get_children():
 		if child is Label: child.theme_type_variation = "CaptionLabel"
+	var smoothing_row := HBoxContainer.new()
+	smoothing_row.add_theme_constant_override("separation", 10)
+	smoothing_holder.add_child(smoothing_row)
+	overlay_label(smoothing_row, "Smoothing", StudioTheme.TEXT2, 12, 600).custom_minimum_size.x = 52
+	var smoothing_slider := bound_slider(smoothing_row, brush_smoothing)
+	smoothing_slider.custom_minimum_size.y = 32
+	smoothing_slider.step = brush_smoothing.step
+	move_to(brush_smoothing, smoothing_row)
+	style_value_field(brush_smoothing, "px")
+	brush_smoothing.custom_minimum_size.x = 56
 	draw_inspector["brush_dot"] = dot
 
 func style_layer_picker() -> void:
@@ -1955,6 +2012,8 @@ func build_layer_block() -> void:
 	var rows := VBoxContainer.new()
 	rows.add_theme_constant_override("separation", 0)
 	block.add_child(rows)
+	layer_visibility.text = "Show"  # mock copy; the full meaning stays in the tooltip
+	layer_visibility.tooltip_text = "Show this layer"
 	rows.add_child(style_switch_row(layer_visibility, "eye"))
 	var onion: CheckButton = onion_editor.enabled
 	rows.add_child(style_switch_row(onion, "onion", 44, true))
@@ -2597,6 +2656,8 @@ func compact_timeline_rows() -> void:
 		# The legend is a Simple aid (Advanced shows Codex's longer readout, so the row stays one line).
 		var legend := transport.get_node_or_null("TimelineLegend")
 		if legend: simple_only(legend)
+		# "Frames a–b" repeats the readout in Simple; Advanced keeps Codex's range caption.
+		advanced(timeline_navigation.caption)
 		# Codex's sequence strip followed the toolbar; it now opens right under the transport row.
 		var strip: Control = sequence_editor.strip_scroll
 		if strip and strip.get_parent() == timeline_ruler.get_parent().get_parent(): strip.get_parent().move_child(strip, transport.get_index() + 1)
@@ -2604,9 +2665,15 @@ func compact_timeline_rows() -> void:
 	toolbar.add_theme_constant_override("v_separation", 0)
 	for child in toolbar.get_children():
 		if child is Button:
-			style_outline(child, "", 28)
+			# Ghost like − + Fit beside it, so Sequences… is not the brightest thing in the row.
+			child.custom_minimum_size.y = 28
+			child.add_theme_font_override("font", StudioTheme.font(500))
 			child.add_theme_font_size_override("font_size", 12)
 			child.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+			var ghost_pad := Vector4(8, 0, 8, 0)
+			var ghost_clear := StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 6, 0, ghost_pad)
+			override_button_boxes(child, ghost_clear, StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 6, 0, ghost_pad), StudioTheme.flat(StudioTheme.RAISE, Color.TRANSPARENT, 6, 0, ghost_pad), ghost_clear)
+			override_button_colors(child, StudioTheme.TEXT2, StudioTheme.TEXT, Color.WHITE)
 		elif child is Label:
 			child.add_theme_font_size_override("font_size", 12)
 			child.add_theme_color_override("font_color", StudioTheme.TEXT3)
@@ -2672,7 +2739,19 @@ func sync_timeline_focus() -> void:
 	# once, when it becomes the focus; the user's own scrolling is left alone afterwards.
 	var focus_key := "%s|%d|%s" % [lane, active_layer, timeline.selected_id]
 	var lanes := timeline.get_parent() as ScrollContainer
-	if focus_key != timeline_focus_key and lanes and lanes.is_visible_in_tree() and lanes.size.y >= 20.0:
+	if lanes and not lanes.has_meta("focus_hooked"):
+		lanes.set_meta("focus_hooked", true)
+		lanes.resized.connect(func(): timeline_focus_key = "")  # new layout: bring the lane into view again
+	# Visible part of the lane area: the dock's own scroll can clip the bottom of the lanes too.
+	var view_top := 0.0
+	var view_h := lanes.size.y if lanes else 0.0
+	var dock_scroll: Control = workspace_layout.panels.timeline.get_node_or_null("TimelineContentScroll") if workspace_layout and workspace_layout.panels.has("timeline") else null
+	if lanes and dock_scroll:
+		var clip := lanes.get_global_rect().intersection(dock_scroll.get_global_rect())
+		if clip.size.y > 0.0:
+			view_top = clip.position.y - lanes.get_global_rect().position.y
+			view_h = clip.size.y
+	if focus_key != timeline_focus_key and lanes and lanes.is_visible_in_tree() and view_h >= 20.0:
 		timeline_focus_key = focus_key
 		var top := -1.0
 		var tall := 30.0
@@ -2680,8 +2759,8 @@ func sync_timeline_focus() -> void:
 		elif lane == "model":
 			for i in timeline.object_rows.size():
 				if timeline.object_rows[i].id == timeline.selected_id: top = timeline.row_y(i); tall = 26.0; break
-		if top >= 0.0 and (top < lanes.scroll_vertical or top + tall > lanes.scroll_vertical + lanes.size.y):
-			var target := int(maxf(0.0, top + tall - lanes.size.y))
+		if top >= 0.0 and (top < lanes.scroll_vertical + view_top or top + tall > lanes.scroll_vertical + view_top + view_h):
+			var target := int(maxf(0.0, top + tall - view_top - view_h))
 			# The lanes cull rows by scroll position when drawn, so redraw after scrolling.
 			(func(): lanes.scroll_vertical = target; timeline.queue_redraw()).call_deferred()
 	if timeline_ruler.focus_lane != lane:
@@ -2696,6 +2775,10 @@ func set_advanced(enabled: bool) -> void:
 	if timeline:timeline.set_label_mode(enabled)
 	if timeline_ruler and timeline_ruler.ruler_seconds == enabled: timeline_ruler.ruler_seconds = not enabled; timeline_ruler.queue_redraw()
 	if transport_info: refresh_transport_text()
+	timeline_focus_key = ""  # the taller Advanced chrome can push the edited lane out of view
+	if sequence_editor: sequence_editor.refresh()  # neon Simple hides the root "Main scene" crumb
+	if timeline_navigation and timeline_navigation.scrollbar: timeline_navigation.update_controls()
+	if world_selection and world_selection.has_method("refresh_actions"): world_selection.refresh_actions()
 	# Neon: docked panels show their title bar only in Advanced (a thin grab strip in Simple).
 	if workspace_layout and workspace_layout.horizontal:
 		for id in workspace_layout.panels: workspace_layout.style_header(id)
@@ -2740,6 +2823,8 @@ func refresh_physics_bar() -> void:
 	# Codex's simulation strip: always in Advanced (and in classic Simple, as before). Neon Simple shows
 	# it only while a simulation or recording runs, so the switches that stop it never disappear;
 	# otherwise Pose's inspector mirrors Physics / Hair & clothes and the stage keeps one pill row.
+	# The strip's recording, fans / wind and loose-parts controls are Advanced-only in neon Simple
+	# (documented in docs/REDESIGN-PORT.md; showing the row shrinks the frame and the tool pill).
 	if physics_bar == null: return
 	var show: bool = advanced_mode or stage_overlay == null or physics_live()
 	if physics_bar.visible != show: physics_bar.visible = show
@@ -2762,6 +2847,10 @@ func refresh_title() -> void:
 	var named: bool = has_project != null and not has_project.path.is_empty()
 	var shown: String = has_project.path.get_file().get_basename() if named else project_folder.get_file() if not project_folder.is_empty() else "Untitled"
 	named = named or not project_folder.is_empty()
+	var identity: String = (has_project.path if has_project != null else "") + "|" + project_folder
+	if identity != header_identity:
+		header_identity = identity
+		header_saved_at = -1
 	var report := recovery_status.text if recovery_status else ""
 	if header_was_dirty and not dirty:
 		header_saved_at = Time.get_ticks_msec() if report in ["Project saved", "Saved; recovery copy retained"] else -1
@@ -2770,7 +2859,7 @@ func refresh_title() -> void:
 	var line := "Not saved yet"
 	if dirty:
 		state = "dirty"; line = "Unsaved changes"
-	elif header_saved_at >= 0:
+	elif header_saved_at >= 0 and named:
 		state = "saved"
 		var minutes := int((Time.get_ticks_msec() - header_saved_at) / 60000.0)
 		line = "Saved just now" if minutes < 1 else "Saved %d min ago" % minutes if minutes < 60 else "Saved %d h ago" % int(minutes / 60.0)
@@ -2916,7 +3005,10 @@ func build_ui() -> void:
 		["Interface size and fullscreen…", func(): show_display_settings()],
 		["Keyboard shortcuts…", func(): keyboard_shortcuts.open()],
 		["About and credits", func(): show_notices()]], "Home screen, recovery, project options, shortcuts and credits"))
-	header_button(title_row, "" if StudioTheme.is_neon() else "Settings", "settings", show_display_settings, "Settings: interface scale and fullscreen (F11). Advanced also offers orbit camera controls.").custom_minimum_size.x = 40
+	var gear := header_button(title_row, "" if StudioTheme.is_neon() else "Settings", "settings", show_display_settings, "Settings: interface scale and fullscreen (F11). Advanced also offers orbit camera controls.")
+	gear.custom_minimum_size.x = 40
+	# Neon Simple: More > "Interface size and fullscreen…" is the one way in (the mock has no gear).
+	if StudioTheme.is_neon(): advanced(gear)
 	header_divider(title_row)
 	export_button = icon_button(title_row, "Export movie", "export", export_dialog, "Export MP4 beside your saved HAS project, with a recoverable PNG frame sequence")
 	style_export(export_button)
@@ -3503,6 +3595,10 @@ func style_app_footer() -> void:
 		debug_label.remove_theme_font_size_override("font_size")
 		debug_label.remove_theme_color_override("font_color")
 	if recovery_status and toast: recovery_status.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	if recovery_status:
+		# Same 12 px inset from the window edge as the debug band on the left.
+		if StudioTheme.is_neon(): recovery_status.add_theme_stylebox_override("normal", StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 0, 0, Vector4(0, 0, 12, 0)))
+		else: recovery_status.remove_theme_stylebox_override("normal")
 	if app_footer: app_footer.queue_redraw()
 
 func draw_app_footer() -> void:

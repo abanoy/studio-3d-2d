@@ -121,6 +121,10 @@ func style_action(control: Button, kind: String, tile: bool) -> void:
 	if face: face.visible = tile and neon
 	if not (tile and neon): return
 	control.icon = null
+	# Neon Simple: Save asset / Size map (rail meta with a short name) are 40 px icon-only tiles under
+	# Frame, which keeps its caption as in the mock; names stay in the tooltip, texts are unchanged.
+	var rail_meta: Array = control.get_meta("rail", [])
+	var icon_only: bool = rail_meta.size() > 2 and app != null and not app.advanced_mode
 	for name in ["font_color","font_hover_color","font_pressed_color","font_hover_pressed_color","font_focus_color","font_disabled_color"]:
 		control.add_theme_color_override(name,Color.TRANSPARENT)
 	if face == null:
@@ -144,9 +148,16 @@ func style_action(control: Button, kind: String, tile: bool) -> void:
 	caption.text = str(rail[2]) if rail.size() > 2 else control.text
 	if rail.size() > 2 and not control.tooltip_text.begins_with(control.text): control.tooltip_text = control.text + "\n" + control.tooltip_text
 	caption.add_theme_font_override("font",StudioTheme.font(500))
+	caption.visible = not icon_only
 	var lines := StudioTheme.font(500).get_multiline_string_size(caption.text,HORIZONTAL_ALIGNMENT_CENTER,48,11,-1,TextServer.BREAK_MANDATORY|TextServer.BREAK_WORD_BOUND).y
-	control.custom_minimum_size.y = maxf(56,ceilf(12+18+5+lines))
+	control.custom_minimum_size.y = 40.0 if icon_only else maxf(56,ceilf(12+18+5+lines))
 	tile_face_color(control,false)
+
+func refresh_actions() -> void:
+	# Simple / Advanced switch: restyle the Frame / Save asset / Size map tiles (captions follow the mode).
+	for control in actions:
+		var meta: Array = control.get_meta("rail", [])
+		if meta.size() > 1: style_action(control,meta[1],rail_mode)
 
 func tile_face_color(control: Button, hover: bool) -> void:
 	var face := control.get_node_or_null("TileFace")

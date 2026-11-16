@@ -3,10 +3,10 @@ extends Node
 const FORMAT := "studio_workspace_3"
 const DEFAULT := {"left":"world","right":"properties","bottom":"timeline","top":""}
 const DEFAULT_VERTICAL_OFFSET := -234
-# Neon Pro: the Timeline dock opens about 166 px tall (6 px grab strip + 52 transport + 52 ruler and
-# Camera lane + 56 lanes), like the mock's 160 px timeline; classic keeps -234.
+# Neon Pro: the Timeline dock opens about 166 px tall (52 transport + 52 ruler and Camera lane + lanes;
+# the grab strip overlays the transport's top padding), like the mock's 160 px timeline; classic keeps -234.
 const NEON_VERTICAL_OFFSET := -166
-const STRIP_HEIGHT := 6.0
+const STRIP_HEIGHT := 10.0 # neon Simple grab zone, overlaid on the panel content's top padding
 const EDGES := ["left","right","bottom","top"]
 var app
 var vertical: VSplitContainer
@@ -36,6 +36,7 @@ const RAIL_LIMIT := 140.0
 const LIST_WIDTH := 232.0
 var world_rail := false
 var world_unfold: Button
+var strip_hot := "" # neon Simple: the panel whose overlaid grab strip is under the mouse
 
 func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarchy: Control, inspector: Control, transport: Control, ruler: Control, tracks: Control) -> void:
 	app=owner_app
@@ -176,6 +177,7 @@ func style_header(id: String) -> void:
 		handle.text="⋮⋮  "+str(panel.name);handle.clip_text=false;handle.alignment=HORIZONTAL_ALIGNMENT_LEFT;menu.text="▾";menu.icon=null;menu.custom_minimum_size=Vector2.ZERO
 		menu.visible=true;menu.modulate.a=1.0;handle.custom_minimum_size.y=0
 		header.custom_minimum_size.y=0;header.add_theme_constant_override("separation",2);panel.remove_theme_constant_override("separation")
+		header.z_index=0
 		return
 	handle.text=str(panel.name).to_upper();handle.clip_text=true
 	handle.add_theme_font_override("font",StudioTheme.label_variation());handle.add_theme_font_size_override("font_size",11)
@@ -183,6 +185,8 @@ func style_header(id: String) -> void:
 	menu.text="";menu.icon=StudioTheme.icon("chevron",Color.WHITE,12);menu.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER
 	menu.add_theme_constant_override("icon_max_width",12);ghost_colors(menu,StudioTheme.TEXT3,StudioTheme.TEXT)
 	header.add_theme_constant_override("separation",0);panel.add_theme_constant_override("separation",0)
+	header.z_index=0
+	if strip_hot==id:strip_hot=""
 	var rail:=id=="world" and world_rail
 	handle.alignment=HORIZONTAL_ALIGNMENT_CENTER if rail else HORIZONTAL_ALIGNMENT_LEFT
 	handle.size_flags_vertical=Control.SIZE_SHRINK_END if rail else Control.SIZE_FILL
@@ -194,13 +198,17 @@ func style_header(id: String) -> void:
 		header.custom_minimum_size.y=78;header.add_theme_constant_override("separation",-12)
 		ghost_boxes(handle,Vector4(0,8,0,8));ghost_boxes(menu,Vector4(0,8,0,0),StudioTheme.HOVER);menu.custom_minimum_size=Vector2(12,48)
 	elif strip_header(id):
-		# Neon Simple, docked: no PROPERTIES / TIMELINE title bar (the mock has none). A 6 px grab strip
+		# Neon Simple, docked: no PROPERTIES / TIMELINE title bar (the mock has none). A 10 px grab strip
 		# keeps the drag handle (panels[id].get_child(0).get_child(0)) visible and clickable; its
 		# tooltip still explains docking, and Advanced / floating panels get the full header back.
 		handle.text="";handle.custom_minimum_size.y=STRIP_HEIGHT;handle.add_theme_font_size_override("font_size",1)
 		header.custom_minimum_size.y=STRIP_HEIGHT
 		ghost_boxes(handle,Vector4(0,0,0,0),StudioTheme.HOVER);ghost_boxes(menu,Vector4(0,0,0,0),StudioTheme.HOVER)
 		menu.visible=false
+		# The strip overlays the top 10 px (padding) of the content instead of pushing it down (mock alignment:
+		# the inspector and the timeline start right under the bar). Godot picks controls by tree
+		# order, not z_index, so strip_input() routes presses and hover there to the handle.
+		panel.add_theme_constant_override("separation",-int(STRIP_HEIGHT));header.z_index=1
 	else:
 		header.custom_minimum_size.y=28
 		ghost_boxes(handle,Vector4(12,0,4,0));ghost_boxes(menu,Vector4(6,0,6,0),StudioTheme.HOVER);menu.custom_minimum_size=Vector2(28,0)
@@ -269,7 +277,7 @@ func unfold_world() -> void:
 
 func draw_header(id: String,header: Control) -> void:
 	if not StudioTheme.is_neon():return
-	header.draw_rect(Rect2(Vector2.ZERO,header.size),StudioTheme.BAR)
+	if not strip_header(id):header.draw_rect(Rect2(Vector2.ZERO,header.size),StudioTheme.BAR)
 	if not (id=="world" and world_rail) and not strip_header(id):header.draw_rect(Rect2(0,header.size.y-1,header.size.x,1),StudioTheme.LINE)
 	if id=="timeline":header.draw_rect(Rect2(0,0,header.size.x,1),StudioTheme.LINE2) # Neon Pro step 6: mock top edge
 
@@ -293,7 +301,35 @@ func header_input(id: String,event: InputEvent) -> void:
 	elif event is InputEventMouse and panels[id].get_window()!=app.get_window():route_drag(event,panels[id].get_window(),true)
 
 func _input(event: InputEvent) -> void:
-	if not drag_id.is_empty():route_drag(event,app.get_window())
+	if not drag_id.is_empty():route_drag(event,app.get_window());return
+	if event is InputEventMouse:strip_input(event)
+
+func strip_input(event: InputEventMouse) -> void:
+	# Neon Simple: a docked panel's 10 px grab strip lies over its content's top edge, where the content
+	# would get the mouse first. Hovering lights the strip; a left press there starts the same heading
+	# drag as header_input(). Nothing changes for Advanced, classic styles or floating panels.
+	var hot:=""
+	if app and not app.has_dialog(app):
+		for id in panels:
+			if not strip_header(id):continue
+			var handle: Control=panels[id].get_child(0).get_child(0)
+			if handle.is_visible_in_tree() and handle.get_global_rect().has_point(event.position):hot=id;break
+	# A splitter's drag area wins where it overlaps the strip (it reaches a few px into the panel).
+	if not hot.is_empty():
+		var splits: Array=[vertical,top_split,horizontal,right_split]+vertical.find_children("DockSplit*","SplitContainer",true,false)
+		for split in splits:
+			if is_instance_valid(split) and split.is_visible_in_tree() and split.get_drag_area_control().get_global_rect().has_point(event.position):hot="";break
+	if hot!=strip_hot:
+		for id in [strip_hot,hot]:
+			if id.is_empty() or not panels.has(id):continue
+			# Hover: a 2 px line along the panel's top edge (the strip itself stays see-through).
+			var lit:=StudioTheme.flat(Color.TRANSPARENT,StudioTheme.LINE3 if id==hot else Color.TRANSPARENT,0,0,Vector4.ZERO)
+			lit.border_width_top=2 if id==hot else 0
+			for suffix in ["","_mirrored"]:(panels[id].get_child(0).get_child(0) as Button).add_theme_stylebox_override("normal"+suffix,lit)
+		strip_hot=hot
+	if not hot.is_empty() and event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed:
+		drag_id=hot;drag_start=event.position;dragged=false
+		get_viewport().set_input_as_handled()
 
 func route_drag(event: InputEvent,window: Window,in_gui:=false) -> void:
 	if drag_id.is_empty():return

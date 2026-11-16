@@ -62,6 +62,9 @@ func update_controls() -> void:
 	zoom_out.disabled=controls_busy or span<=0
 	fit.disabled=controls_busy or span<=0
 	scrollbar.mouse_filter=Control.MOUSE_FILTER_IGNORE if controls_busy else Control.MOUSE_FILTER_STOP
+	# Neon Simple: the pan track appears once there is something to pan (zoomed in); Advanced keeps it.
+	var pan_shown: bool=span>0 or app.advanced_mode or not preload("res://src/studio_theme.gd").is_neon()
+	if scrollbar.visible!=pan_shown:scrollbar.visible=pan_shown
 func _process(_delta: float) -> void:
 	if scrollbar and busy()!=controls_busy:update_controls()
 func sync() -> void:

@@ -571,8 +571,11 @@ static func make_neon_theme() -> Theme:
 		result.set_color("drop_mark_color", type, BLUE)
 	result.set_stylebox("panel", "TabContainer", flat(BAR, LINE, 0, 1))
 	result.set_stylebox("tabbar_background", "TabContainer", flat(BAR, Color.TRANSPARENT, 0, 0))
-	# Splitters keep their drag area (separation unchanged) but draw no grabber dots.
-	var none := ImageTexture.create_from_image(Image.create_empty(2, 2, false, Image.FORMAT_RGBA8))
+	# Splitters keep their drag area (separation unchanged) but draw no grabber dots. A zero-size
+	# texture: SplitContainer separation is max(theme separation, grabber size), so even a 2x2 empty
+	# image left 2 px seams between the docks; get_drag_area_control() still gives a 6 px drag strip.
+	var none := PlaceholderTexture2D.new()
+	none.size = Vector2.ZERO
 	for type in ["HSplitContainer", "VSplitContainer", "SplitContainer"]:
 		for item in ["grabber", "h_grabber", "v_grabber"]:
 			result.set_icon(item, type, none)
@@ -691,6 +694,7 @@ const LINE_ICONS := {
 	"minus": '<path d="M5 12h14"/>',
 	"diamond": '<path d="M12 3.5 20.5 12 12 20.5 3.5 12z"/>',
 	"key": '<path d="M12 3.5 20.5 12 12 20.5 3.5 12z"/><path d="M12 9v6M9 12h6"/>',
+	"key-solid": '<path d="M12 3.5 20.5 12 12 20.5 3.5 12z" fill="currentColor"/><path d="M12 9v6M9 12h6" stroke="#07080B" stroke-width="2"/>',
 	"mouse": '<rect x="6.5" y="3" width="11" height="18" rx="5.5"/><path d="M12 7v3"/>',
 	"help": '<circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6"/><circle cx="12" cy="17.2" r="0.6" fill="currentColor"/>',
 	"check": '<path d="m5 12 5 5 9-10"/>',
@@ -737,7 +741,7 @@ static func app_icon() -> Image:
 
 # Neon-only icon names the header and pills ask for, mapped to the closest glossy classic icon so
 # Classic light / dark keep distinct pictures instead of the "help" fallback.
-const CLASSIC_ALIASES := {"new": "scene", "open": "folder", "reset": "undo", "building": "scene", "grid": "scene", "settings": "scene", "more": "folder", "select": "cel", "diamond": "key", "minus": "add", "home": "scene", "package": "folder"}
+const CLASSIC_ALIASES := {"new": "scene", "open": "folder", "reset": "undo", "building": "scene", "grid": "scene", "settings": "scene", "more": "folder", "select": "cel", "diamond": "key", "key-solid": "key", "minus": "add", "home": "scene", "package": "folder"}
 
 static func classic_icon(kind: String) -> Texture2D:
 	kind = CLASSIC_ALIASES.get(kind, kind)

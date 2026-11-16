@@ -5017,3 +5017,19 @@ timeline_navigation_smoke fails the same way on the previous commit). Windows ve
 - Fixes: toast re-show after fade, theme switch for early windows, classic icon aliases and the
   Settings label, camera key row restyle and view-row refit only on change, keycaps after rebinding.
 - Details, declined items and remaining deviations: docs/REDESIGN-PORT.md "Review 1 fixes".
+
+## Neon Pro port: review 2 fixes (claude/studio-redesign)
+Implemented and checked on Linux xvfb (ui, editor, pose, world_selection, recovery_write and recovery
+pass; workspace_controls 48/0, workspace_docking, workspace_nested, asset_package, brush_opacity,
+palette, layers, onion and stroke_stabilizer pass; color_sampler keeps its 3 baseline failures;
+timeline_navigation_smoke has the same single fixture failure as the previous commit). Windows
+verify.py was not run.
+- Simple grab strips overlay the content top (10 px, input routed in workspace_layout.strip_input);
+  zero-size splitter grabber (no seams); softer Export glow; gear Advanced-only in neon.
+- Stage footer reserves left/right separately, wraps a long toast to two lines, drops the legend
+  title before the legend; compact Codex chips; filled Save key icon.
+- Timeline: opaque held block, violet model boxes, no one-frame stubs, bare Camera count, ruler label
+  under the tag skipped; Simple transport row hides the range caption, empty pan bar and root crumb.
+- Header save time resets per project; neon <-> classic theme switch applies after restart.
+- Details, declined items (8/18, 15, 17) and the kept simulation-row deviation: docs/REDESIGN-PORT.md
+  "Review 2 fixes".

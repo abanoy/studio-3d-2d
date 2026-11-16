@@ -68,6 +68,7 @@ var help_label: Label
 var neon := {}  # neon only: Pose panel cards and the values they last showed
 var physics_mirror: CheckButton # neon Simple: mirrors app.physics_editor.toggle (Motion block)
 var hair_mirror: CheckButton # neon Simple: mirrors app.physics_editor.hair_toggle (Motion block)
+var keyed_frames := [null, []] # neon: [model data, its authored key frames] for model_keyed()
 
 func active_rig() -> RefCounted:
 	return app.renderer.active_model()
@@ -1096,9 +1097,13 @@ func model_keyed(rig) -> bool:
 	# the playhead on its timeline lane. (Auto-key stores only the changed channels, so a per-joint
 	# answer would need new key semantics; the chip reports what the timeline shows.)
 	if rig == null or not rig.has_method("authored_keys"): return false
-	for key in rig.authored_keys():
-		if int(key.get("frame", -1)) == app.frame: return true
-	return false
+	# authored_keys() deep-copies every key of a body model, and this runs per frame during playback:
+	# cache the key frames by data identity (model data is replaced, never mutated, on key edits / Undo).
+	if not is_same(keyed_frames[0], rig.data):
+		var frames := []
+		for key in rig.authored_keys(): frames.append(int(key.get("frame", -1)))
+		keyed_frames = [rig.data, frames]
+	return app.frame in keyed_frames[1]
 
 func refresh_neon_inspector() -> void:
 	# Per frame from app._process, cheap: writes only when a shown value changes.
