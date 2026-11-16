@@ -181,6 +181,18 @@ static func diamond(color: Color, size := 10) -> Texture2D:
 	var h := size / 2.0
 	return _cached("diamond|%s|%d" % [color.to_html(), size], '<path d="M%s 0.6 %s %s %s %s 0.6 %sz" fill="%s" fill-opacity="%s"/>' % [h, size - 0.6, h, h, size - 0.6, h, hex(color), color.a], size, size)
 
+static func key_glow(color: Color, ring: Color, size := 12, box := 22) -> Texture2D:
+	# Current key: the diamond with a 2 px ring in the row colour and a soft glow behind it
+	# (CSS box-shadow: 0 0 0 2px <row>, 0 0 8px <colour> at .7). Drawn centred in a box x box texture.
+	var h := box / 2.0
+	var r := size / 2.0 - 0.6
+	var o := r + 2.0
+	var body := '<defs><radialGradient id="g"><stop offset="0.3" stop-color="%s" stop-opacity="0.7"/><stop offset="1" stop-color="%s" stop-opacity="0"/></radialGradient></defs>' % [hex(color), hex(color)]
+	body += '<circle cx="%s" cy="%s" r="%s" fill="url(#g)"/>' % [h, h, h]
+	body += '<path d="M%s %s %s %s %s %s %s %sz" fill="%s"/>' % [h, h - o, h + o, h, h, h + o, h - o, h, hex(ring)]
+	body += '<path d="M%s %s %s %s %s %s %s %sz" fill="%s"/>' % [h, h - r, h + r, h, h, h + r, h - r, h, hex(color)]
+	return _cached("keyglow|%s|%s|%d|%d" % [color.to_html(), ring.to_html(), size, box], body, box, box)
+
 static func ring_icon(color: Color, size := 10, width := 2.0) -> Texture2D:
 	# Hollow legend ring (onion Before/After, pose Joint): 2 px border, box-sizing border-box.
 	var h := size / 2.0

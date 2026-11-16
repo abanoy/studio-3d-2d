@@ -4928,3 +4928,23 @@ mint audio and a neon playhead with a frame tag. Geometry, hit tests, gestures, 
 drawing needs mirroring in the neon pair). Deviations (lane order kept, extra toolbar row, dock header,
 four buttons + Frame field, frame 0 at the label edge, no fake clip names) are in
 docs/REDESIGN-PORT.md. Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 7: inspector Camera panel (Claude, claude/studio-redesign)
+
+In neon, `build_camera_inspector()` rearranges `camera_section` at start-up (after
+`camera_transform_editor` adds its panel) into the mock's cards by moving Codex's controls; none is
+replaced. A "Movie camera" header card. "Camera keys" with one 44 px row per key: diamond, placeholder
+tile, "Frame N" and "S.SS s · start/end". The row at the playhead is raised, and a "Just saved" chip
+marks the key `insert_key()` stored last (`last_saved_key`, session-only, never saved). A click runs
+`stop(); set_frame()`. Lens: Wide / Normal / Close presets of 24 / 35 / 60 mm, applied through
+`fov.value` with `lens_fov()`, the inverse of step 4's `lens_mm()`, so the caption, the meta and the
+presets agree. In Advanced only, a Field of view slider is bound to `fov`. A Framing guides switch
+calls `scene_view.set_guides(on, on)`. Save camera key [K] is a PrimaryButton with Codex's hint, and
+Delete key is Advanced. Next comes a "How camera keys work" help card, then "Camera details"
+(Advanced: mouse-controls text, Numeric camera view…, near/far, interpolation). In neon the
+mouse-controls text is Advanced-only inline; Simple reads it in the "Mouse and keys" popover. Shared
+helpers `neon_tile()`, `inspector_header()`, `inspector_card()` and `style_primary()` were factored
+out (the Draw panel is pixel-identical), plus `StudioTheme.key_glow()`. Key storage, interpolation,
+fov semantics and `scene_view.gd` are unchanged, and classic styles keep the old card. Deviations
+(Advanced-only FOV slider, mm-based presets, placeholder thumbnails, Save key and hint kept in the
+panel) and Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.

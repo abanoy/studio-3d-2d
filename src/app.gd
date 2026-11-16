@@ -288,6 +288,9 @@ var camera_hint: Control
 var camera_help_button: Button
 var pose_help_button: Button
 var camera_help_label: Label
+var camera_key_button: Button  # "Save camera key [K]" in the Camera panel
+var camera_delete_button: Button
+var camera_hint_label: Label
 var help_popup: PopupPanel
 var help_popup_title: Label
 var help_popup_body: Label
@@ -510,6 +513,7 @@ func _ready() -> void:
 	drawing_selection_editor=preload("res://src/drawing_selection_editor.gd").new();drawing_selection_editor.app=self;add_child(drawing_selection_editor);drawing_selection_editor.setup(drawing_section)
 	if StudioTheme.is_neon(): build_draw_inspector()
 	camera_transform_editor=preload("res://src/camera_transform_editor.gd").new();add_child(camera_transform_editor);camera_transform_editor.setup(self)
+	if StudioTheme.is_neon(): build_camera_inspector()
 	sequence_editor=preload("res://src/sequence_editor.gd").new();add_child(sequence_editor);sequence_editor.setup(self)
 	if StudioTheme.is_neon(): compact_timeline_rows()
 	keyboard_shortcuts.refresh_labels()
@@ -1643,22 +1647,7 @@ func build_tool_card() -> void:
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 12)
 	card.add_child(row)
-	var glow := PanelContainer.new()
-	glow.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.TOOL_INNER, Color.TRANSPARENT, 8, 0, Vector4(0, 0, 0, 0), Color(0.482, 0.361, 1, 0.4), 7))
-	glow.custom_minimum_size = Vector2(36, 36)
-	glow.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-	glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	row.add_child(glow)
-	var tile := PanelContainer.new()
-	var ring := StudioTheme.neon_ring(8.0, 1.0, StudioTheme.TOOL_INNER, false)
-	ring.set_content_margin_all(0)
-	tile.add_theme_stylebox_override("panel", ring)
-	tile.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	glow.add_child(tile)
-	var image := TextureRect.new()
-	image.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
-	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	tile.add_child(image)
+	var image := neon_tile(row, null, 36, StudioTheme.TOOL_INNER, 1.0, true)
 	var text := VBoxContainer.new()
 	text.add_theme_constant_override("separation", 2)
 	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -1848,44 +1837,11 @@ func build_layer_block() -> void:
 	draw_inspector["layer_count"] = -1
 
 func build_next_card() -> void:
-	# margin 0 16 14, pad 12 14, r10, #111318, 1 px #2C303B: 28 px neon-ring arrow tile, title 13/600,
-	# body 12 #B4BAC7 (line height ~1.45). Same conditions as refresh_empty_hint(); hidden otherwise.
-	var holder := MarginContainer.new()
-	for side in ["left", "right"]: holder.add_theme_constant_override("margin_" + side, 16)
-	holder.add_theme_constant_override("margin_top", 14)
-	holder.add_theme_constant_override("margin_bottom", 14)
-	holder.visible = false
-	drawing_section.add_child(holder)
-	var card := PanelContainer.new()
-	card.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.PANEL, StudioTheme.LINE2, 10, 1, Vector4(14, 12, 14, 12)))
-	holder.add_child(card)
-	var row := HBoxContainer.new()
-	row.add_theme_constant_override("separation", 12)
-	card.add_child(row)
-	var tile := PanelContainer.new()
-	var ring := StudioTheme.neon_ring(8.0, 1.5, StudioTheme.PANEL, false)
-	ring.set_content_margin_all(0)
-	tile.add_theme_stylebox_override("panel", ring)
-	tile.custom_minimum_size = Vector2(28, 28)
-	tile.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-	row.add_child(tile)
-	var arrow := TextureRect.new()
-	arrow.texture = StudioTheme.icon("arrow-right", Color.WHITE, 14)
-	arrow.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
-	tile.add_child(arrow)
-	var text := VBoxContainer.new()
-	text.add_theme_constant_override("separation", 4)
-	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	row.add_child(text)
-	var title := overlay_label(text, "", StudioTheme.TEXT, 13, 600)
-	var body := overlay_label(text, "", StudioTheme.TEXT2, 12)
-	for l in [title, body]:
-		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		l.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-		l.custom_minimum_size.x = 120
-	body.add_theme_constant_override("line_spacing", 3)
-	draw_inspector.merge({"next": holder, "next_title": title, "next_body": body})
+	# The shared inspector card (arrow tile) under the Layer section. Same conditions as
+	# refresh_empty_hint(); hidden otherwise.
+	var card := inspector_card(drawing_section, "arrow-right")
+	card.holder.visible = false
+	draw_inspector.merge({"next": card.holder, "next_title": card.title, "next_body": card.body})
 
 func draw_next_step() -> Array:
 	# Mirrors refresh_empty_hint(): Simple Draw only, not while playing or exporting.
@@ -1906,20 +1862,7 @@ func build_new_drawing_block() -> void:
 	drawing_section.add_child(panel)
 	panel.add_child(block)
 	move_to(new_drawing_button, block)
-	new_drawing_button.theme_type_variation = "PrimaryButton"
-	new_drawing_button.custom_minimum_size.y = 44
-	# Icon + label centred as one group (a Button icon would stick to the left edge): the label is
-	# shifted 12 px right by the padding and the icon sits 8 px before it.
-	new_drawing_button.icon = null
-	var pad := Vector4(36, 0, 12, 0)
-	override_button_boxes(new_drawing_button, StudioTheme.flat(Color("1a1d25"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, pad))
-	var plus := TextureRect.new()
-	plus.texture = StudioTheme.icon("cel", Color.WHITE, 16)
-	plus.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	new_drawing_button.add_child(plus)
-	var text_width := StudioTheme.font(600).get_string_size(new_drawing_button.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
-	plus.set_anchors_preset(Control.PRESET_CENTER)
-	plus.offset_left = -text_width / 2.0 - 12; plus.offset_right = plus.offset_left + 16; plus.offset_top = -8; plus.offset_bottom = 8
+	style_primary(new_drawing_button, "cel")
 	move_to(copy_drawing_button, block)
 	style_outline(copy_drawing_button)
 	for control in [exposure.get_parent(), exposure_button, delete_cel_button]: move_to(control, block)
@@ -1999,6 +1942,399 @@ func refresh_draw_inspector() -> void:
 		if d.next_title.text != next[0]: d.next_title.text = next[0]
 		if d.next_body.text != next[1]: d.next_body.text = next[1]
 		if not d.next.visible: d.next.visible = true
+
+# ---- Neon Pro step 7: right inspector, Camera panel ---------------------------------------
+# Built once at start-up in the neon style, after camera_transform_editor has added its panel.
+# Codex's controls are moved and restyled, never replaced: fov, camera_near, camera_far,
+# interpolation, the Save camera key / Delete key buttons, the mouse-controls text and the numeric
+# camera panel keep their types, values, signals and Simple/Advanced visibility. The key list, lens
+# presets and guides switch only read app state and act through the existing paths (set_frame,
+# fov.value, scene_view.set_guides). Classic styles keep the old single "Camera" card.
+
+# Lens presets as full-frame focal lengths, so the meta and the stage caption (lens_mm()) read the
+# preset exactly: Wide 24 mm, Normal 35 mm, Close 60 mm. lens_fov() turns one into the camera FOV.
+const LENS_PRESETS := [["Wide", 24.0], ["Normal", 35.0], ["Close", 60.0]]
+var camera_inspector := {}  # neon only: Camera panel nodes and the values they last showed
+# Session-only UI note for the "Just saved" chip: a copy of the key insert_key() stored last. Never
+# saved; undo removes the key, so the chip goes with it.
+var last_saved_key := {}
+
+func neon_tile(parent: Node, texture: Texture2D, size: int, inner: Color, ring_width: float, glow: bool, align := Control.SIZE_SHRINK_CENTER) -> TextureRect:
+	# Neon-ring icon tile, r8: the header tiles (36 px, 1 px ring, violet glow) and the card tiles
+	# (28 px, 1.5 px ring, no glow). Returns the icon so callers can swap it.
+	var holder: Node = parent
+	var outer: Control = null
+	if glow:
+		var glow_panel := PanelContainer.new()
+		glow_panel.add_theme_stylebox_override("panel", StudioTheme.flat(inner, Color.TRANSPARENT, 8, 0, Vector4(0, 0, 0, 0), Color(0.482, 0.361, 1, 0.4), 7))
+		glow_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		parent.add_child(glow_panel)
+		holder = glow_panel
+		outer = glow_panel
+	var tile := PanelContainer.new()
+	var ring := StudioTheme.neon_ring(8.0, ring_width, inner, false)
+	ring.set_content_margin_all(0)
+	tile.add_theme_stylebox_override("panel", ring)
+	tile.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	holder.add_child(tile)
+	if outer == null: outer = tile
+	outer.custom_minimum_size = Vector2(size, size)
+	outer.size_flags_vertical = align
+	var image := TextureRect.new()
+	image.texture = texture
+	image.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	tile.add_child(image)
+	return image
+
+func inspector_header(parent: Node, kind: String, title: String, subtitle: String) -> Array:
+	# 64 px header card: 36 px neon tile with a white icon, title 15/600, subtitle 12 #B4BAC7.
+	# Returns [title Label, subtitle Label].
+	var card := PanelContainer.new()
+	card.add_theme_stylebox_override("panel", inspector_box(Vector4(16, 0, 16, 0)))
+	card.custom_minimum_size.y = 64
+	parent.add_child(card)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 12)
+	card.add_child(row)
+	neon_tile(row, StudioTheme.icon(kind, Color.WHITE, 18), 36, StudioTheme.TOOL_INNER, 1.0, true)
+	var text := VBoxContainer.new()
+	text.add_theme_constant_override("separation", 2)
+	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	text.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	text.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(text)
+	return [overlay_label(text, title, StudioTheme.TEXT, 15, 600), overlay_label(text, subtitle, StudioTheme.TEXT2, 12)]
+
+func inspector_card(parent: Node, kind: String) -> Dictionary:
+	# margin 14 16, pad 12 14, r10, #111318, 1 px #2C303B: 28 px neon-ring tile, title 13/600, body 12
+	# #B4BAC7 (line height ~1.45). Used by the Draw "Next" card and the Camera help card.
+	var holder := MarginContainer.new()
+	for side in ["left", "right"]: holder.add_theme_constant_override("margin_" + side, 16)
+	holder.add_theme_constant_override("margin_top", 14)
+	holder.add_theme_constant_override("margin_bottom", 14)
+	parent.add_child(holder)
+	var card := PanelContainer.new()
+	card.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.PANEL, StudioTheme.LINE2, 10, 1, Vector4(14, 12, 14, 12)))
+	holder.add_child(card)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 12)
+	card.add_child(row)
+	neon_tile(row, StudioTheme.icon(kind, Color.WHITE, 14 if kind == "arrow-right" else 16), 28, StudioTheme.PANEL, 1.5, false, Control.SIZE_SHRINK_BEGIN)
+	var text := VBoxContainer.new()
+	text.add_theme_constant_override("separation", 4)
+	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	row.add_child(text)
+	var title := overlay_label(text, "", StudioTheme.TEXT, 13, 600)
+	var body := overlay_label(text, "", StudioTheme.TEXT2, 12)
+	for l in [title, body]:
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		l.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+		l.custom_minimum_size.x = 120
+	body.add_theme_constant_override("line_spacing", 3)
+	return {"holder": holder, "title": title, "body": body}
+
+func style_primary(control: Button, kind: String) -> TextureRect:
+	# Full-width PrimaryButton h44 (14/600 white) with the icon and label centred as one group (a
+	# Button icon would stick to the left edge): the label is shifted 12 px right by the padding and
+	# the icon sits 8 px before it. center_primary_icon() re-centres it after a text change.
+	control.theme_type_variation = "PrimaryButton"
+	control.custom_minimum_size.y = 44
+	control.icon = null
+	var pad := Vector4(36, 0, 12, 0)
+	override_button_boxes(control, StudioTheme.flat(Color("1a1d25"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, pad))
+	var image := TextureRect.new()
+	image.texture = StudioTheme.icon(kind, Color.WHITE, 16)
+	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	control.add_child(image)
+	image.set_anchors_preset(Control.PRESET_CENTER)
+	center_primary_icon(control, image)
+	return image
+
+func center_primary_icon(control: Button, image: TextureRect) -> void:
+	var text_width := StudioTheme.font(600).get_string_size(control.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
+	image.offset_left = -text_width / 2.0 - 12; image.offset_right = image.offset_left + 16; image.offset_top = -8; image.offset_bottom = 8
+	image.set_meta("text", control.text)
+
+func lens_fov(mm: float) -> float:
+	# Inverse of lens_mm(): the camera FOV (Godot's fov: vertical unless KEEP_WIDTH) that reads mm
+	# on a 36 mm-wide full-frame sensor at the project's aspect.
+	var cam: Camera3D = renderer.camera
+	var aspect := float(video.width) / maxf(1.0, float(video.height))
+	var horizontal := 18.0 / maxf(mm, 0.001)
+	var half := horizontal if cam.keep_aspect == Camera3D.KEEP_WIDTH else horizontal / aspect
+	return rad_to_deg(2.0 * atan(half))
+
+func lens_preset_value(mm: float) -> float:
+	# The value fov would hold for a preset (clamped and snapped like the SpinBox does).
+	return snappedf(clampf(lens_fov(mm), fov.min_value, fov.max_value), fov.step if fov.step > 0 else 0.0)
+
+func apply_lens(mm: float) -> void:
+	# Through fov.value and its existing value_changed path, which applies only in Camera mode.
+	if exporting: return
+	if not fov.editable: message("Switch to Camera to change the lens."); return
+	fov.value = lens_preset_value(mm)
+
+func go_to_camera_key(target: int) -> void:
+	if exporting: return
+	stop()
+	set_frame(target)
+
+func lens_button_boxes(control: Button, selected: bool) -> void:
+	var pad := Vector4(6, 0, 6, 0)
+	var normal := StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE2, 7, 1, pad) if selected else StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 7, 0, pad)
+	var hover := normal if selected else StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 7, 0, pad)
+	override_button_boxes(control, normal, hover, normal, StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 7, 0, pad))
+	control.add_theme_font_override("font", StudioTheme.font(600 if selected else 500))
+	var ink := Color.WHITE if selected else StudioTheme.TEXT2
+	for state in ["font_color", "font_focus_color", "font_pressed_color", "font_hover_pressed_color"]: control.add_theme_color_override(state, ink)
+	control.add_theme_color_override("font_hover_color", Color.WHITE)
+	control.add_theme_color_override("font_disabled_color", StudioTheme.TEXT3)
+
+func build_camera_keys_block(parent: Node) -> void:
+	# "Camera keys" + "N keys"; one 44 px row per key (rebuilt only when the keys change).
+	var block := inspector_block(parent, "Camera keys")
+	block.add_theme_constant_override("separation", 12)
+	var rows := VBoxContainer.new()
+	rows.add_theme_constant_override("separation", 2)
+	block.add_child(rows)
+	camera_inspector.merge({"keys_meta": section_meta(block), "key_rows": rows, "keys_sig": "", "rows": [], "row_frame": -2})
+
+func camera_key_row(parent: Node, key_frame: int, detail: String, saved: bool) -> Dictionary:
+	# 44 px, r8, pad 0 10 0 8, gap 10: 9 px pink diamond, 48x27 placeholder tile (no renders),
+	# "Frame N" 13/500 over "S.SS s" 12 #B4BAC7, optional "Just saved" chip. Click: go to the key.
+	var row := Button.new()
+	row.focus_mode = Control.FOCUS_NONE
+	row.custom_minimum_size.y = 44
+	row.tooltip_text = "Go to camera key at frame %d" % key_frame
+	row.pressed.connect(go_to_camera_key.bind(key_frame))
+	parent.add_child(row)
+	var line := HBoxContainer.new()
+	line.add_theme_constant_override("separation", 10)
+	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(line)
+	line.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	line.offset_left = 8; line.offset_right = -10
+	var diamond := TextureRect.new()
+	diamond.texture = StudioTheme.diamond(StudioTheme.CAMERA, 12)
+	diamond.expand_mode = TextureRect.EXPAND_IGNORE_SIZE  # the glow texture is wider than the slot
+	diamond.custom_minimum_size = Vector2(15, 22)
+	diamond.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	diamond.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	diamond.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	line.add_child(diamond)
+	var thumb := PanelContainer.new()
+	thumb.add_theme_stylebox_override("panel", StudioTheme.flat(Color("121638"), StudioTheme.LINE3, 4, 1, Vector4(0, 0, 0, 0)))
+	thumb.custom_minimum_size = Vector2(48, 27)
+	thumb.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	thumb.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	line.add_child(thumb)
+	var lens := TextureRect.new()
+	lens.texture = StudioTheme.icon("camera", StudioTheme.TEXT3, 14)
+	lens.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	lens.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	thumb.add_child(lens)
+	var text := VBoxContainer.new()
+	text.add_theme_constant_override("separation", 1)
+	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	text.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	text.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	line.add_child(text)
+	var name_label := overlay_label(text, "Frame %d" % key_frame, StudioTheme.TEXT, 13, 500)
+	overlay_label(text, detail, StudioTheme.TEXT2, 12)
+	if saved:
+		var chip := overlay_label(line, "Just saved", Color("ffd6ea"), 11, 600)
+		chip.add_theme_stylebox_override("normal", StudioTheme.flat(Color(1, 0.373, 0.682, 0.16), Color(1, 0.373, 0.682, 0.45), 5, 1, Vector4(7, 0, 7, 0)))
+		chip.custom_minimum_size.y = 20
+		chip.tooltip_text = "The camera key you saved last"
+	return {"frame": key_frame, "button": row, "name": name_label, "diamond": diamond}
+
+func style_camera_key_row(entry: Dictionary, current: bool) -> void:
+	var pad := Vector4(0, 0, 0, 0)
+	var normal := StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE2, 8, 1, pad) if current else StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, pad)
+	var hover := normal if current else StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 8, 0, pad)
+	override_button_boxes(entry.button, normal, hover, hover, normal)
+	entry.name.add_theme_font_override("font", StudioTheme.font(600 if current else 500))
+	entry.name.add_theme_color_override("font_color", Color.WHITE if current else StudioTheme.TEXT)
+	entry.diamond.texture = StudioTheme.key_glow(StudioTheme.CAMERA, StudioTheme.RAISE) if current else StudioTheme.diamond(StudioTheme.CAMERA, 12)
+
+func rebuild_camera_key_rows(frames: Array, saved_frame: int) -> void:
+	var c := camera_inspector
+	for child in c.key_rows.get_children():
+		c.key_rows.remove_child(child)
+		child.queue_free()
+	c.rows = []
+	for i in range(frames.size()):
+		var value: int = frames[i]
+		var seconds := float(value) * float(video.fps_den) / maxf(1.0, float(video.fps_num))
+		var detail := "%.2f s" % seconds
+		if i == 0: detail += " · start"
+		elif i == frames.size() - 1: detail += " · end"
+		c.rows.append(camera_key_row(c.key_rows, value, detail, value == saved_frame))
+	c.keys_meta.text = "%d key%s" % [frames.size(), "" if frames.size() == 1 else "s"]
+	c.row_frame = -2
+
+func build_lens_block(parent: Node) -> void:
+	# "Lens" + "NN mm" (lens_mm(), like the stage caption); Wide / Normal / Close segmented control
+	# (group pad 3, r10, #0F1015, 1 px #22252E). Advanced adds "Field of view": the fov SpinBox as a
+	# flat "54 °" value with a neon slider bound to it (fov stays Advanced-only, ui_smoke).
+	var block := inspector_block(parent, "Lens")
+	block.add_theme_constant_override("separation", 12)
+	section_meta(block).add_theme_color_override("font_color", StudioTheme.TEXT2)
+	var group := PanelContainer.new()
+	group.add_theme_stylebox_override("panel", StudioTheme.flat(Color("0f1015"), StudioTheme.LINE, 10, 1, Vector4(3, 3, 3, 3)))
+	block.add_child(group)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 2)
+	group.add_child(row)
+	var buttons: Array = []
+	for preset in LENS_PRESETS:
+		var choice := Button.new()
+		choice.text = preset[0]
+		choice.focus_mode = Control.FOCUS_NONE
+		choice.custom_minimum_size.y = 40
+		choice.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		choice.add_theme_font_size_override("font_size", 13)
+		choice.tooltip_text = "%s lens: %d mm. Changes the view until you save a camera key." % [preset[0], preset[1]]
+		choice.pressed.connect(apply_lens.bind(preset[1]))
+		lens_button_boxes(choice, false)
+		row.add_child(choice)
+		buttons.append(choice)
+	var fov_block := VBoxContainer.new()
+	fov_block.add_theme_constant_override("separation", 4)
+	block.add_child(advanced(fov_block))
+	fov_block.visible = advanced_mode
+	var head := HBoxContainer.new()
+	head.custom_minimum_size.y = 20
+	fov_block.add_child(head)
+	overlay_label(head, "Field of view", StudioTheme.TEXT2, 12, 600).size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var fov_row: Node = fov.get_parent()
+	move_to(fov, head)
+	style_value_field(fov, "°")
+	var slider := bound_slider(fov_block, fov)
+	slider.step = fov.step if fov.step > 0 else 1
+	slider.custom_minimum_size.y = 32
+	move_to(fov_row, fov_block)  # Codex's "Editor camera FOV" caption (Advanced row)
+	for caption in fov_row.get_children():
+		if caption is Label: caption.theme_type_variation = "CaptionLabel"
+	camera_inspector.merge({"lens_meta": section_meta(block), "lens_buttons": buttons, "lens_sig": "", "fov_slider": slider})
+
+func build_guides_block(parent: Node) -> void:
+	# Switch row h44 (grid icon, "Framing guides" / "Thirds and safe area"): both scene guides at
+	# once through scene_view.set_guides(); synced from its frame_enabled and grid_enabled.
+	var block := inspector_block(parent, "")
+	var guides := CheckButton.new()
+	guides.text = "Framing guides"
+	guides.focus_mode = Control.FOCUS_NONE
+	guides.tooltip_text = "Show the camera frame and the rule-of-thirds grid on the picture (also Frame and 3×3 above the picture)."
+	guides.toggled.connect(func(on):
+		if scene_view: scene_view.set_guides(on, on))
+	block.add_child(style_switch_row(guides, "grid", 44, true))
+	var sub := overlay_label(guides, "Thirds and safe area", StudioTheme.TEXT2, 12)
+	sub.position = Vector2(34, 23)
+	camera_inspector["guides"] = guides
+
+func build_camera_save_block(parent: Node) -> void:
+	# Save camera key [K] stays in the panel (Codex) as the 44 px PrimaryButton, with Codex's hint
+	# under it; Delete key (Advanced) follows as an outline button.
+	var panel := PanelContainer.new()
+	panel.add_theme_stylebox_override("panel", inspector_box(Vector4(16, 16, 16, 18)))
+	parent.add_child(panel)
+	var block := VBoxContainer.new()
+	block.add_theme_constant_override("separation", 10)
+	panel.add_child(block)
+	move_to(camera_key_button, block)
+	var image := style_primary(camera_key_button, "key")
+	move_to(camera_hint_label, block)
+	camera_hint_label.theme_type_variation = "CaptionLabel"
+	camera_hint_label.add_theme_color_override("font_color", StudioTheme.TEXT2)
+	camera_hint_label.add_theme_font_size_override("font_size", 12)
+	camera_hint_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	camera_hint_label.add_theme_constant_override("line_spacing", 3)
+	camera_hint_label.text = camera_hint_label.text.replace("\r", "")  # CRLF source: one break per line
+	move_to(camera_delete_button, block)
+	style_outline(camera_delete_button, "eraser")
+	camera_inspector["key_icon"] = image
+
+func build_camera_inspector() -> void:
+	# Re-arranges camera_section into the mock's cards. Anything not placed explicitly (a control a
+	# later Codex change adds) lands in "Camera details" in its original order.
+	var children: Array = camera_section.get_children()
+	var heading: Node = children[0]
+	heading.visible = false
+	var outer: PanelContainer = camera_section.get_parent()
+	outer.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.BAR, Color.TRANSPARENT, 0, 0, Vector4(0, 0, 0, 0)))
+	camera_section.add_theme_constant_override("separation", 0)
+	inspector_header(camera_section, "camera", "Movie camera", "What the movie will show")
+	build_camera_keys_block(camera_section)
+	build_lens_block(camera_section)
+	build_guides_block(camera_section)
+	build_camera_save_block(camera_section)
+	var help := inspector_card(camera_section, "path")
+	help.holder.add_theme_constant_override("margin_bottom", 16)
+	help.title.text = "How camera keys work"
+	help.body.text = "Each key remembers a view. The camera glides between them."
+	# Mouse controls: Simple reads them in the "Mouse and keys" popover over the picture
+	# (camera_help_button shows this label's text); Advanced keeps them inline here.
+	var details := inspector_block(camera_section, "Camera details")
+	move_to(advanced(camera_help_label), details)
+	camera_help_label.visible = advanced_mode
+	camera_help_label.add_theme_font_size_override("font_size", 12)
+	camera_help_label.text = camera_help_label.text.replace("\r", "")
+	camera_help_label.add_theme_constant_override("line_spacing", 3)
+	camera_help_label.add_theme_color_override("font_color", StudioTheme.TEXT2)
+	for child in children:
+		if child != heading and is_instance_valid(child) and child.get_parent() == camera_section: move_to(child, details)
+	for child in details.get_children():
+		if child is Button: style_outline(child)
+		elif child is VBoxContainer:
+			for inner in child.get_children():
+				if inner is Button: style_outline(inner)
+	camera_inspector["details"] = details.get_parent()
+	camera_inspector["details_box"] = details
+	refresh_camera_inspector()
+
+func refresh_camera_inspector() -> void:
+	# Per frame, cheap: rows rebuild only when the keys change; other writes only when a shown
+	# value changes.
+	if camera_inspector.is_empty() or not camera_section.is_visible_in_tree(): return
+	var c := camera_inspector
+	var frames: Array = []
+	for key in keys: frames.append(int(key.frame))
+	frames.sort()
+	var saved_frame := -1
+	if not last_saved_key.is_empty():
+		for key in keys:
+			if key == last_saved_key: saved_frame = int(key.frame)
+	var signature := "%s|%d|%d/%d" % [frames, saved_frame, video.fps_num, video.fps_den]
+	if c.keys_sig != signature:
+		c.keys_sig = signature
+		rebuild_camera_key_rows(frames, saved_frame)
+	if c.row_frame != frame:
+		c.row_frame = frame
+		for entry in c.rows: style_camera_key_row(entry, entry.frame == frame)
+	var editable: bool = fov.editable
+	var selected := -1
+	for i in range(LENS_PRESETS.size()):
+		if absf(fov.value - lens_preset_value(LENS_PRESETS[i][1])) < 0.001: selected = i
+	var mm := "%d mm" % roundi(lens_mm())
+	var lens_signature := "%d|%s|%s" % [selected, editable, mm]
+	if c.lens_sig != lens_signature:
+		c.lens_sig = lens_signature
+		c.lens_meta.text = mm
+		for i in range(c.lens_buttons.size()):
+			lens_button_boxes(c.lens_buttons[i], i == selected)
+			c.lens_buttons[i].disabled = not editable
+		c.fov_slider.editable = editable
+	if scene_view:
+		var on: bool = scene_view.frame_enabled and scene_view.grid_enabled
+		if c.guides.button_pressed != on: c.guides.set_pressed_no_signal(on)
+	if c.key_icon.get_meta("text", "") != camera_key_button.text: center_primary_icon(camera_key_button, c.key_icon)
+	var any := false
+	for child in c.details_box.get_children():
+		if child != c.details_box.get_meta("heading", null) and child.visible: any = true
+	if c.details.visible != any: c.details.visible = any
 
 # ---- Neon Pro step 6: timeline transport ---------------------------------------------------
 func transport_block(transport: HFlowContainer) -> HBoxContainer:
@@ -2738,9 +3074,9 @@ Shift: faster • Esc: release mouse")
 	advanced(label(camera_section, "Camera interpolation"))
 	camera_section.add_child(interpolation)
 	advanced(interpolation)
-	keyboard_shortcuts.decorate(icon_button(camera_section, "Save camera key [K]", "key", key_dialog),"camera","Store this view at the current frame. Replacing an existing key asks first.","Save camera key")
-	advanced(button(camera_section, "Delete key at this frame", delete_key))
-	label(camera_section, "Move freely, then save a key.
+	camera_key_button = keyboard_shortcuts.decorate(icon_button(camera_section, "Save camera key [K]", "key", key_dialog),"camera","Store this view at the current frame. Replacing an existing key asks first.","Save camera key")
+	camera_delete_button = advanced(button(camera_section, "Delete key at this frame", delete_key))
+	camera_hint_label = label(camera_section, "Move freely, then save a key.
 Draw returns to the animated shot.")
 	pose_editor.setup(self, controls)
 	audio_section = section(controls, "Audio", "audio")
@@ -3248,6 +3584,7 @@ func _process(delta: float) -> void:
 	refresh_tool_strip() # tool can change without a signal (shortcuts, color sampler)
 	refresh_badges()
 	refresh_draw_inspector()
+	refresh_camera_inspector()
 	if playing:
 		var seconds := preview_seconds()
 		preview_sample_seconds=seconds
@@ -3609,6 +3946,8 @@ func insert_key() -> void:
 	if not error.is_empty():message(error);return
 	var before := keys.duplicate(true)
 	Timeline.put_key(keys,value)
+	for key in keys: # Neon "Just saved" chip (session-only UI note, never stored)
+		if int(key.frame) == frame: last_saved_key = key.duplicate(true)
 	push_history({"type": "keys", "before": before, "after": keys.duplicate(true)})
 	changed()
 	message("Camera key saved at frame %d." % frame)

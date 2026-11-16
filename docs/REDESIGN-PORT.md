@@ -494,3 +494,88 @@ Deviations (step 6):
 - **Contrast:** `#B9D7FF` on a drawing block is 10.9:1, `#DCEBFF` on the held block 10.9:1, `#BFF5DD`
   on audio 13.1:1, `#8C93A3` ruler labels on `#0C0D11` 6.3:1, `#8C93A3` on a hidden layer's block
   5.6:1, `#07080B` on the neon tag 5.9-6.0:1, white on the active lane 15.5:1.
+
+### Step 7: inspector Camera panel (`src/app.gd`, `src/studio_theme.gd`)
+- **How it is built:** `build_camera_inspector()` runs once at start-up in neon, after
+  `camera_transform_editor` has added its panel to `camera_section`. It moves Codex's controls into
+  the mock's cards and restyles them. Nothing is replaced: `fov`, `camera_near`, `camera_far`,
+  `interpolation`, Save camera key, Delete key, the mouse-controls text, the hint and the numeric
+  camera panel keep their types, values, signals and Simple/Advanced visibility. A control the build
+  does not know about (a later Codex addition) lands in "Camera details" in its original order.
+  `refresh_camera_inspector()` runs each frame from `_process`. It rebuilds the key rows only when the
+  key frames, the "Just saved" key or the fps change, and restyles rows only when the frame changes.
+  The old "Camera" heading is hidden. Classic styles keep the old card exactly.
+- **Header card** (64 px): a 36 px neon-ring tile with the white camera icon and a violet glow,
+  "Movie camera" 15/600 and "What the movie will show" 12 `#B4BAC7` (`inspector_header()`, ready for
+  the Pose panel in step 8).
+- **Camera keys:** the heading shows "N keys". There is one 44 px row per key in `keys`, sorted by frame
+  (r8, padding 0 10 0 8, gap 10). Each row has a pink diamond, a 48x27 placeholder tile (`#121638`,
+  1 px `#363B48`, r4, camera icon; there are no renders), "Frame N" 13/500 and "S.SS s" 12 `#B4BAC7`,
+  with " · start" on the first key and " · end" on the last. The row for the key at the playhead is
+  `#171A21` with a 1 px `#2C303B` edge, a 600 white title and the diamond with a ring and glow
+  (`StudioTheme.key_glow()`). Clicking a row runs `stop()` and then `set_frame(frame)`.
+- **"Just saved":** `insert_key()` keeps a copy of the key it stored in `last_saved_key`. This is a
+  session-only UI note, never saved. The chip (h20, padding 0 7, r5, `rgba(255,95,174,.16)`, 1 px
+  `rgba(255,95,174,.45)`, 11/600 `#FFD6EA`) shows on the row whose key equals that copy. Undo
+  removes the key, so the chip goes with it; redo brings both back. Key storage, `put_key` and the
+  history entry are unchanged.
+- **Lens:** a Wide / Normal / Close segmented control. The group has padding 3, r10, `#0F1015` and a
+  1 px `#22252E` edge. The selected button is `#171A21` with a 1 px `#2C303B` edge, 13/600 white; the
+  others are 13/500 `#B4BAC7` as in the mock source. The presets are full-frame focal lengths, 24 /
+  35 / 60 mm. `lens_fov(mm)` inverts step 4's `lens_mm()` (36 mm-wide sensor, horizontal angle at the
+  project aspect, so the vertical `fov` of a 16:9 project is 46° / 32° / 19°). A preset is applied
+  with `fov.value = …`, through the existing `value_changed` path, which applies only in Camera mode;
+  the buttons are disabled when `fov` is not editable. The meta "NN mm" is `lens_mm()`, the same
+  number as the stage caption. A preset shows as selected only when `fov` holds its value, so Codex's
+  default 60° camera (18 mm) shows no selection.
+- **Field of view (Advanced):** "Field of view" with the `fov` SpinBox as a flat "32 °" value and a
+  neon slider bound to it (15-120, step 1, disabled when `fov` is not editable). Codex's "Editor
+  camera FOV" caption follows. It is Advanced-only like `fov` itself (ui_smoke: "Simple hides
+  technical controls").
+- **Framing guides:** a 44 px switch row (grid icon, "Framing guides" / "Thirds and safe area") that
+  calls `scene_view.set_guides(on, on)`, the same call and preference the view-row Frame / 3×3
+  switches use. It shows on only when both guides are on (`frame_enabled and grid_enabled`).
+  `scene_view.gd` is unchanged.
+- **Save camera key [K]** stays in the panel (Codex) as the 44 px PrimaryButton with the key icon
+  centred with the label (`style_primary()`, shared with New drawing; it re-centres if a shortcut
+  change renames the button). Codex's hint "Move freely, then save a key. / Draw returns to the
+  animated shot." follows in 12 `#B4BAC7`, then the Advanced-only "Delete key at this frame" (outline,
+  eraser icon).
+- **Help card:** "How camera keys work" / "Each key remembers a view. The camera glides between
+  them." in the shared `inspector_card()` (28 px neon-ring tile with the path icon), which the Draw
+  Next card now uses too.
+- **Camera details** (only when something in it is visible, i.e. Advanced): the mouse-controls text
+  (Advanced-only in neon now; Simple reads the same text in the "Mouse and keys" popover over the
+  picture), Numeric camera view…, the near / far fields and Camera interpolation.
+- Refactors with no visual change (the Draw inspector screenshot is pixel-identical): `neon_tile()`
+  (tool card and card tiles), `inspector_card()` (Next card) and `style_primary()` (New drawing).
+- The CRLF source made the two multi-line Codex labels render with blank lines between lines. In
+  neon their text is stripped of `\r` (display only; the popover already did this).
+
+Tests (Linux xvfb, step 7): ui, editor, pose, world_selection, recovery_write and recovery pass.
+  camera_transform_smoke 25/0 (run directly), workspace_controls 48/0, workspace_docking 18/0,
+  asset_package 22/0, brush_opacity 18/0, palette 23/0, layers 40/0, onion 37/0, animated_channels
+  35/0. color_sampler keeps its 3 baseline failures. camera_range, timeline_navigation and cel_timing
+  need the fixtures their verify_*.py scripts create and were not rerun with them (without fixtures
+  they fail on the missing audio file exactly as before this step).
+
+Deviations (step 7):
+- **Simple FOV slider:** the mock shows "Field of view 54°" with a slider in Simple. Codex keeps `fov`
+  out of Simple (ui_smoke), so the slider is Advanced-only. The lens presets give Simple users the
+  same control in three steps. Showing a Simple slider is an owner decision.
+- **Lens numbers:** the plan's sample presets (75 / 54 / 30°) and the 12 / tan(fov/2) formula assume a
+  24 mm sensor height. Step 4's stage caption already reads the mock's 54° as 35 mm (36 mm width,
+  horizontal angle), so the presets are defined in millimetres with that formula, and the caption,
+  the Lens meta and the presets always agree. "Close" is 60 mm because 85 mm needs a FOV below Codex's
+  15° minimum.
+- **Thumbnails:** the tiles are placeholders (camera icon on `#121638`); the mock's scene thumbnails
+  would need renders.
+- **Save key and hint in the panel:** the mock has no Save button in the panel. Codex keeps
+  "Save camera key [K]" and its hint visible there, so the help card sits below them and is a short
+  scroll away at 1440x900 (the mock pins it to the bottom of a taller panel).
+- **Dock header:** the 28 px "PROPERTIES" header (the drag handle) stays, as in step 5.
+- **"°" spacing:** SpinBox suffixes always get a space ("32 °"; the mock shows "54°").
+- **Toast wording:** `insert_key()` still posts Codex's "Camera key saved at frame N."; the mock's
+  "Key saved at frame 24. Next: …" is not copied.
+- **Contrast:** `#FFD6EA` on the chip over the current row (`#3C2538`) is 10.6:1, `#B4BAC7` on `#171A21`
+  8.9:1, `#B4BAC7` on `#0F1015` 9.8:1, disabled `#8C93A3` on `#0F1015` 6.2:1, white on `#171A21` 17.4:1.
