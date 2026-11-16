@@ -1,0 +1,51 @@
+{
+  "format": "has_native8_leaf_static_preparation_1",
+  "status": "SOURCE_ONLY_NATIVE_LEAF_UNPARSED_UNRUN",
+  "created_utc": "2026-11-16T00:18:03Z",
+  "Python_AST_checked": [
+    "prepare_profile.py"
+  ],
+  "source_only_guards": {
+    "leaf_adapter.gd": {
+      "sha256": "6945153a65741f65f15505a1b840ddbf530c483790824d8a98e90a4d53e539e8",
+      "plain_inheritance": "extends RefCounted",
+      "engine_parsed": false
+    },
+    "leaf_harness.gd": {
+      "sha256": "3419cebefb1a7249d591dfd98522ce639b2f9cf646bfea4adfb4a5b2f7997b0a",
+      "plain_inheritance": "extends SceneTree",
+      "engine_parsed": false
+    },
+    "weighted_capture.gd": {
+      "sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb",
+      "plain_inheritance": "extends RefCounted",
+      "engine_parsed": false
+    }
+  },
+  "actual_application_source_files_locked": 200,
+  "actual_leaf_engine_or_parser_launched": false,
+  "candidate_reference_sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3",
+  "numeric_gates_preregistered": {
+    "float32_world_basis_reconstruction_and_orientation": 2e-05,
+    "tip_and_origin_per_root_scale": 2e-05,
+    "meaningful_weighted_displacement_per_root_scale": 1e-05,
+    "Off_and_unaffected": "Exact private-byte/hash equality"
+  },
+  "authoritative_Godot_source": {
+    "commit": "89cea143987d564363e15d207438530651d943ac",
+    "path": "scene/3d/skeleton_3d.cpp",
+    "sha256": "a3f1c913ee48a9df1dc417ad3b8e2178a33214c9edb3f76947ab2f6a2cdf75dc",
+    "global_parent_local_lines": [
+      1106,
+      1122
+    ],
+    "reset_rest_lines": [
+      908,
+      913
+    ],
+    "read_in_memory_only_by_independent_agent": true
+  },
+  "native_geometry_or_coordinate_oracles_copied": false,
+  "originals_rawmetadata_installations_main_tests_HEAD_modified": false,
+  "future_root_gate": "Actual full/FK/math PASS + authoritative closure; root source review, separate fresh locked lease before any engine parse"
+}

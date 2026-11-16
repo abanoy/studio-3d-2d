@@ -1,0 +1,90 @@
+{
+  "format": "has_native_normal_boundary_diagnosis_1",
+  "checked_utc": "2026-11-15T22:59:04Z",
+  "source_HEAD": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "status": "DIAGNOSIS_COMPLETE_NATIVE_NORMAL_GATE_STILL_FAILED",
+  "normal_fidelity": "UNQUALIFIED; original 2e-5 gate is not relaxed or relabelled",
+  "input_hashes": {
+    "native_mdl": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "native_vvd": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0",
+    "standard_glb": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "parameters": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed"
+  },
+  "matcher_sha256": "f9afff684c82d601029f3a6a32d187a7df476d94b96bc39eff3abe2814c2723f",
+  "executed_read_only_prefix_sha256": "1339ccfc2e6ce7e698da7525bb5ebee2917bc341d16de3a1951da1c5782404ee",
+  "vertices_matched": 9661,
+  "attribute_equivalent_ambiguities": 4,
+  "native_vertex_identity": "Position/weight/UV-compatible multiset; nearest-normal tie break, not unique native vertex IDs",
+  "metrics": {
+    "raw_error": {
+      "min": 8.971687092477304e-08,
+      "max": 0.00121654672362075,
+      "mean": 4.544684541611846e-05,
+      "p50": 4.128163866724287e-05,
+      "p99": 0.00016039737377055674,
+      "above_2e_5": 8364
+    },
+    "unit_native_error": {
+      "min": 1.4901161193847655e-08,
+      "max": 0.0012165467677353891,
+      "mean": 4.5446569579871906e-05,
+      "p50": 4.128138118357163e-05,
+      "p99": 0.0001603973692982494,
+      "above_2e_5": 8364
+    },
+    "native_length_error": {
+      "min": 1.557078910252585e-10,
+      "max": 2.1082098933256077e-07,
+      "mean": 8.542063977297043e-08,
+      "p50": 8.507818372027742e-08,
+      "p99": 1.713768504885138e-07,
+      "above_2e_5": 0
+    },
+    "export_length_error": {
+      "min": 0.0,
+      "max": 1.0510732950663737e-07,
+      "mean": 3.1603769267481416e-08,
+      "p50": 2.842084567689085e-08,
+      "p99": 8.660323502773792e-08,
+      "above_2e_5": 0
+    },
+    "angular_error_degrees": {
+      "min": 8.537736462515939e-07,
+      "max": 0.06970299900763173,
+      "mean": 0.0026038948187053425,
+      "p50": 0.002365248566265402,
+      "p99": 0.009190092311628284,
+      "above_2e_5": 9655
+    },
+    "round4_normalize_prediction_error": {
+      "min": 0.0,
+      "max": 0.0012081099462259133,
+      "mean": 1.9280400391090547e-05,
+      "p50": 4.3420094748838977e-08,
+      "p99": 0.00017193000523660373,
+      "above_2e_5": 1691
+    }
+  },
+  "raw_failures_fixed_by_unit_normalization": 0,
+  "round4_normalize_prediction_within_2e_7": 7966,
+  "round4_normalize_prediction_within_2e_5": 7970,
+  "round4_only_unit_vector_distance_upper_bound": 0.00017320508075688773,
+  "findings": {
+    "native_float_normals_already_unit": "Confirmed within 2.1083e-7; raw normalization is not the cause",
+    "VVD_compressed_normal_hypothesis": "Refuted for this input's float32 normal records; no packed-normal decoder participates",
+    "exporter_rounding": "Installed exporter rounds corner normals to 4 decimals, normalizes, transforms and normalizes before Y-up conversion",
+    "rounding_sufficiency": "Round4+normalize closely predicts most rows but cannot explain the maximum discrepancy",
+    "remaining_boundary": "Blender custom-normal fan encoding/decoding or mesh evaluation is a candidate; exact causal reproduction remains UNRUN"
+  },
+  "scope": {
+    "stdlib_only": true,
+    "production_modules_imported": false,
+    "apps_or_native_runtime_launched": false,
+    "private_arrays_published": false,
+    "inputs_unchanged": true,
+    "production_files_changed": false,
+    "HAS_posed_or_runtime_normal_transport": "UNRUN",
+    "native_artist_fidelity": "NOT_CLAIMED"
+  },
+  "scratch_attempt_preserved": "Initial interactive instrumentation read the final candidate's normal rather than the chosen vi; its output is invalid and was not accepted. Current code selects source_vertices[vi] and asserts agreement with stored ne."
+}

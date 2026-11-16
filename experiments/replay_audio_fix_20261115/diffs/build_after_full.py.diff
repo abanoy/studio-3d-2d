@@ -1,0 +1,11 @@
+--- experiments/resume_full_20261115/builder/build_after_full.py
++++ builder/build_after_full.py
+@@ -183,7 +183,7 @@
+          args.canonical_host_proof.absolute() == QUALIFIED_FULL/"authoritative-host-termination.json",
+          "Only the reviewed f0dd57a revision and exact225514304 full run are admitted")
+     final = guarded(args.final, WORKSPACE)
+-    need(final.parent == WORKSPACE and final.name == "HAS-Review-20261115-SFM-Joints-"+args.revision[:7] and not final.exists(), "Exact NEW review target required")
++    need(final.parent == WORKSPACE and final.name == "HAS-Review-20261115-SFM-Joints-"+args.revision[:7]+"-replay2" and not final.exists(), "Exact NEW review target required")
+     need(final != OLD_REVIEW and OLD_REVIEW.is_dir(), "Preserve the existing12071fe review")
+     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+     need(revision == args.revision, "Current HEAD differs from requested source")

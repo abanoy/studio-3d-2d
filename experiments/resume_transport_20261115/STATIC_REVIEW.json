@@ -1,0 +1,85 @@
+{
+  "format": "has_native_transport_successor_source_review_1",
+  "observed_utc": "2026-11-15T23:02:42.684403+00:00",
+  "source_commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "qualified_full_revision_candidate": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "candidate_full_run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304",
+  "full_status_at_source_review": "running",
+  "source_only_verdict": "READY_FOR_INDEPENDENT_ROOT_REVIEW; NO_PARSE_OR_RUNTIME_AUTHORITY",
+  "python_sources_AST_parsed_only": 3,
+  "candidate_modules_imported_or_executed": false,
+  "Godot_parser_or_runtime": false,
+  "main_source_writes": false,
+  "new_private_oracle_or_input_lock_created": false,
+  "old_private_oracle": {
+    "bytes": 4932243,
+    "sha256": "4065a47ed7da9a53d18f42e326d668d82060028301cd691864b1e92ea9dcdfe4",
+    "copied_to_packet": false
+  },
+  "old_input_lock": {
+    "bytes": 47902,
+    "sha256": "d3043cd22d98d8b8dbb2fac9c0a11596ba8644bf19f3b82dcc8c6aaef98ff76b",
+    "pins": 211,
+    "source_context_obsolete_for_launch": true,
+    "copied_to_packet": false
+  },
+  "old_application_pins_join_current_full": 200,
+  "application_pin_mismatches": [],
+  "full_functional_catalog_count_observed": 1008,
+  "proposed": {
+    "pose_cases": 55,
+    "root_cases": 4,
+    "configurations": 220,
+    "world_bone_comparisons": 15180,
+    "global_rest_comparisons": 15180,
+    "native_local_Z_tip_comparisons": 10780,
+    "reset_checks": 440,
+    "baseline_checks": 8,
+    "total_checks": 41588,
+    "single_conversion_scale": 0.01905,
+    "model_root_uniform_scales": [
+      1.0,
+      2.0
+    ]
+  },
+  "assertion_preservation": {
+    "headless_transport_gd_byte_identical": true,
+    "oracle_math_py_byte_identical": true,
+    "runtime_phases_and_timeouts_unchanged": [
+      [
+        "parse",
+        30
+      ],
+      [
+        "run",
+        150
+      ]
+    ],
+    "error_leak_markers_unchanged": true,
+    "locked_expected_count_formula_unchanged": true,
+    "native_solver_added": false
+  },
+  "changed_scope": [
+    "Explicit exact checkout/public CODE roots replace ancestry assumptions",
+    "Current f0dd/full225514 identity context replaces ineligible f380/full040946",
+    "Private preparations/results constrained to direct children of ignored LOCAL output root",
+    "211 unique input pins and 200 exact application/full joins are now explicit gates",
+    "Current exact coordinator and Python birth identities required",
+    "Driver CRCRLF logical lines normalized to LF with raw origin hashes retained"
+  ],
+  "required_before_launch": [
+    "Root reviews source/diff and then permits a fresh CPU-only private preparation",
+    "Fresh private INPUT_LOCK binds current scripts, actual inputs and approved runtimes",
+    "Actual candidate full terminal PASS, suite_exit0, source unchanged and exact root-authoritative closure",
+    "Root grants headless-only/no-other-runtime lease bound to exact fresh INPUT_LOCK SHA",
+    "All current input/full/lease identities revalidate before even Godot --check-only"
+  ],
+  "unresolved": [
+    "Godot script remains unparsed; actual parser/API/numeric/leak behavior is unverified",
+    "New CPU preparer is AST-reviewed only; no new211-file lock or oracle hash exists",
+    "Full run remains an eligibility candidate until root establishes actual PASS and closure",
+    "211/200 source counts are fail-closed current-domain assumptions; drift requires a reviewed successor",
+    "Only native source conversion0.01905 is in scope; posed skin/render/world save/dynamics remain unmeasured",
+    "Exact checkout paths are intentional; a different checkout requires explicit context regeneration"
+  ]
+}

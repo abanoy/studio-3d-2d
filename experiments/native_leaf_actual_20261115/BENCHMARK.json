@@ -1,0 +1,116 @@
+{
+  "format": "has_actual_native8_leaf_readiness_benchmark_20261115_1",
+  "source_HEAD": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "FAILED_NATIVE8_READINESS",
+      "passed": false,
+      "checks": 2,
+      "failures": 1,
+      "dynamics_steps": 0,
+      "cases": 0,
+      "reason": "Unexpected parent/rest/modifier/final-pose context",
+      "verification_sha256": "ee27c2b95235b661f1c90b5acd7be149e07d3c9d88c66edaf81483a546063140",
+      "closure_sha256": "33ae9258da4985fe773b2c7ff887ec84f4f03b8a39230730dfc52435af9b0872",
+      "closure_utc": "2026-11-16T00:29:19.0862754Z"
+    },
+    {
+      "attempt": 2,
+      "status": "FAILED_NATIVE8_READINESS",
+      "passed": false,
+      "checks": 2,
+      "failures": 1,
+      "dynamics_steps": 0,
+      "cases": 0,
+      "reason": "Unexpected parent/rest/modifier/final-pose context; diagnostic={\"expected_native_parent_index\":7,\"final_pose_count\":0,\"first_failing_guard\":\"modifier_presence\",\"modifier_classes\":\"PhysicalBoneSimulator3D\",\"modifier_count\":1,\"modifier_details\":\"class=PhysicalBoneSimulator3D;internal=true;direct_parent=true;active=true;is_simulating_physics=false;PhysicalBone3D_descendants=0\",\"native_parent_index\":7,\"show_rest_only\":false}",
+      "verification_sha256": "f06f6672fdc804d55478a7e4601a73ecf011320809533fd26b82bc31634f9df3",
+      "closure_sha256": "1c666294769b96b34fe5b4ca9390ed79bfc6294cd634b9d47bf431287515981b",
+      "closure_utc": "2026-11-16T00:33:29.1859142Z"
+    },
+    {
+      "attempt": 3,
+      "status": "PASSED_NATIVE8_LEAF_READINESS_ONLY",
+      "passed": true,
+      "checks": 7289,
+      "failures": 0,
+      "dynamics_steps": 1440,
+      "cases": 12,
+      "reason": "",
+      "verification_sha256": "dcda15bbd1938b60cc7ce3bd8f8745a75bbedef2a28d90533bc5478f259e2261",
+      "closure_sha256": "6822755f42de414a14a8c9bedca04f1c83e3436c7165ed00f8b2edfe938fc000",
+      "closure_utc": "2026-11-16T00:38:38.5051883Z"
+    }
+  ],
+  "actual_success": {
+    "attempt": 3,
+    "checks": 7289,
+    "failures": 0,
+    "dynamics_steps": 1440,
+    "cases": 12,
+    "native_index": 8,
+    "native_parent_index": 7,
+    "native_name": "FrontHair1",
+    "native_yaw_pitch_stiffness": 100,
+    "source_conversion_scale": 0.01905,
+    "nominal_root_scales": [
+      1.0,
+      2.0
+    ],
+    "actual_bone_basis_norms": [
+      0.9999954235595804,
+      1.9999909457588816
+    ],
+    "vertices": 9661,
+    "weighted_to_leaf": 152,
+    "shared_with_other_bones": 144,
+    "zero_leaf_weight_region": 9509,
+    "all_unaffected_regions_exact": true,
+    "all_Off_weighted_points_exact": true,
+    "Off_style_frames": [
+      12,
+      24
+    ],
+    "repeat12_final_weighted_hashes_exact_per_root": true,
+    "weighted_vertices_moved_range": [
+      151,
+      152
+    ],
+    "weighted_displacement_range": [
+      0.0007361295283772051,
+      0.03188145160675049
+    ],
+    "maximum_basis_error": 5.068859995960295e-06,
+    "maximum_tip_error": 3.4960614812007407e-06,
+    "maximum_boundary_adapter_error": 4.934248870047675e-06,
+    "maximum_parent_local_closure_error": 1.1920928955078125e-07,
+    "angle_projection_steps_by_root": [
+      {
+        "control": 0,
+        "positive3": 0,
+        "negative3": 0,
+        "positive12": 0,
+        "positive50": 105,
+        "repeat12": 0
+      },
+      {
+        "control": 0,
+        "positive3": 0,
+        "negative3": 0,
+        "positive12": 0,
+        "positive50": 17,
+        "repeat12": 0
+      }
+    ],
+    "opposite_input_signal": "The preregistered harness opposite-tip projection check passed in both root contexts; raw private tips/axes are not published.",
+    "compatible_internal_simulator": "Measured direct/internal native node, no script or physical bodies, simulation false. Active may be true; private compatibility flag remains unmeasured."
+  },
+  "limits": [
+    "Actual external native8 leaf readiness only, using original retained rule100 and actual CPU weighted geometry.",
+    "Synthetic temporary world accelerations3/12/50 are not HAS fan-speed or Source wind units.",
+    "Direct live_pose clear/apply restoration is not the product Hair & clothes GUI toggle.",
+    "No GPU/render/native-SDK/artist parity, multiple procedural chains, body/fan coexistence, Record/Undo/HAS/movie integration is certified.",
+    "Original attempts1/2 remain pre-dynamics failures. Source flags/native metadata and original assets stay unchanged.",
+    "Nominal root1/2 is not two conversion scales or the new six-foot-at-scale1 standard."
+  ]
+}

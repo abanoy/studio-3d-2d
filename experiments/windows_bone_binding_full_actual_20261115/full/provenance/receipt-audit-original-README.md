@@ -1,0 +1,1 @@
+Terminal-only metadata audit. Receipt counts are observed for this exact run; no prior-run totals are reused. Raw receipts and report/source/host contexts are retained without native/media/runtime payloads. Release is supplied separately by root.

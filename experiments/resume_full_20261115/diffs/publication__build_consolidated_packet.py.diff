@@ -1,0 +1,11 @@
+--- C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\owner_pause_20261114\prepared-unrun\windows-canonical-bone-binding-retry-publication-prep-20261114\build_consolidated_packet.py
++++ publication/build_consolidated_packet.py
+@@ -101,7 +101,7 @@
+ assert identity['coordinator']['pid']==host['coordinator_pid']==release['coordinator_pid']==CONTEXT['coordinator_pid']
+ assert identity['coordinator']['creation_utc']==host['expected_creation_utc']==CONTEXT['coordinator_creation_utc']
+ assert python['parent_pid']==CONTEXT['coordinator_pid'] and python['creation_utc']==host['expected_python_creation_utc']==CONTEXT['python_creation_utc']
+-assert python['command']==CONTEXT['suite_python_command']
++assert python['command_line']==CONTEXT['suite_python_command']
+ assert release['released'] is True and release['all_private_jobs_closed'] is True and release['no_process_killed'] is True
+ assert release['canonical_state_sha256']==stamp(DEST/'canonical/state.json')['sha256'] and release['host_proof_sha256']==stamp(DEST/'closure/host-proof.json')['sha256'] and release['receipt_inventory_sha256']==sha(gzip.decompress((DEST/'closure/receipt-inventory.json.gz').read_bytes()))
+ 

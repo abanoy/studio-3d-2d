@@ -1,0 +1,57 @@
+{
+  "format": "has_source_0x31_scalar_damping_gravity_1",
+  "status": "PASSED_INDEPENDENT_SECOND_TICK_AND_WORLD_GRAVITY_CONTROLS",
+  "candidate_sha256": "dd472f2b4de64adebc83a03c2e812ac2e14805c752b220c26c53dd58bf99519c",
+  "expected_damped": [
+    -0.13542607121569422,
+    -0.18056809495425896,
+    -20.0
+  ],
+  "actual_damped": [
+    -0.13542607121569422,
+    -0.18056809495425896,
+    -20.0
+  ],
+  "expected_undamped": [
+    -0.01041739009496432,
+    -0.013889853459952427,
+    -20.0
+  ],
+  "actual_undamped": [
+    -0.01041739009496432,
+    -0.013889853459952427,
+    -20.0
+  ],
+  "damping_difference": [
+    -0.1250086811207299,
+    -0.16667824149430654,
+    0.0
+  ],
+  "rotated_goal_gravity": [
+    {
+      "goal_rotation_y": -0.7,
+      "acceleration": [
+        0.0,
+        0.0,
+        -20.0
+      ]
+    },
+    {
+      "goal_rotation_y": 0.0,
+      "acceleration": [
+        0.0,
+        0.0,
+        -20.0
+      ]
+    },
+    {
+      "goal_rotation_y": 0.7,
+      "acceleration": [
+        0.0,
+        0.0,
+        -20.0
+      ]
+    }
+  ],
+  "scope": "Synthetic scalar mathematics; no SDK/native client/app executed"
+}

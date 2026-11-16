@@ -1,0 +1,1 @@
+Exact coordinator 15824 birth 2026-11-15T22:55:14.3418333Z and Python 16040 birth 2026-11-15T22:55:28.0068371Z bind closure. The pinned live observation records source commit, both exact births, Python parent and command. It records no raw CIM timestamp or executable observation and no discovery-method note; none is invented. These recipes perform no process enumeration or kill.

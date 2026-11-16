@@ -1,0 +1,838 @@
+{
+  "format": "has_old_native_current_source_readiness_independent_1",
+  "checked_utc": "2026-11-16T00:35:46.046179+00:00",
+  "scope": "Source and compact metadata only. No engine/parser/test/process query/Git/network or deletion.",
+  "source_context": "f0dd57a2e568089d396fecba819ab987da658bf0; live HEAD not queried",
+  "literal_roots": [
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d"
+  ],
+  "files": 9307,
+  "bytes": 1442187088,
+  "historical_audit_source": {
+    "archive": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\FINAL_AUDIT.json.gz",
+    "raw_bytes": 10398,
+    "raw_sha256": "1002daf4b501843091f3abd4ba8918365951903c048e0ba5cd5ed9136707c7c1"
+  },
+  "historical_inventory_sources": [
+    {
+      "archive": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\core14-fresh-inventory.json.gz",
+      "raw_bytes": 1699274,
+      "raw_sha256": "846d0015644af0b8fca2eebed64c247dc6cee3a95c03240133ccd0c70fd9f20c"
+    },
+    {
+      "archive": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\wider11-fresh-inventory.json.gz",
+      "raw_bytes": 1659153,
+      "raw_sha256": "0d5fbd84a774958d53ac6d7f8f1065e319b0d6c8e1ab413a73febf31b73dee29"
+    }
+  ],
+  "retained_originals_source": {
+    "archive": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\retained-originals-fresh-proof.json.gz",
+    "raw_bytes": 121985,
+    "raw_sha256": "80de0389dc4c2220b2ac6a3751f525bf001259810d27a2e799d169cd759e7f1c"
+  },
+  "old_dependency_scan_source": {
+    "archive": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\executable-dependency-scan.json.gz",
+    "raw_bytes": 1502,
+    "raw_sha256": "bee893b54d35eb4f81d5f51affde7c0a5cbe372aa72f644b01b4748f27989699"
+  },
+  "historical_exact_owned_closure": [
+    {
+      "phase": "core14",
+      "root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967",
+      "coordinator_pid": 6924,
+      "coordinator_creation_utc": "2026-11-14T00:13:14.8293269Z",
+      "closed_observed_utc": "2026-11-14T00:17:17.8469651Z",
+      "original_verification_sha256": "d2a7a9acc9b39c0b3aacbe1d27822ff450b54ccf3d6d141f6af95899dae9c54b",
+      "private_jobs": [
+        {
+          "name": "reader01",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 23000,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "349636f6c0df452531afb32ed6ee4c4c001197f02d41331a7db3583063e06229"
+        },
+        {
+          "name": "reader02",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 11492,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "c49465ebb9da5d90a6c576e768315cad064bb1eb16e2ec83470d7f9bc88dd0a8"
+        },
+        {
+          "name": "reader03",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 17328,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "a11ffbcd4b5249243ea6d615a375e0b75d7d404df03d8cd134ca1197122c3a5a"
+        },
+        {
+          "name": "reader04",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 8144,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "7ac0c70524decee4220095cf83d49cec4ec27e41566e7512a5c129c333f621df"
+        },
+        {
+          "name": "reader05",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 22584,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "5bc2c525ba20a86d3d0a3ae312d5611994626176b19d9b2af7fc13ddb553ea25"
+        },
+        {
+          "name": "reader06",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 12784,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "9065eb61fbef952879b0c797c4b409319cd1e83b2289b41af81591b8ac96865e"
+        },
+        {
+          "name": "reader07",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 13296,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "673263296540f2168a9399d848c28f9da739ed1cb2431d53456f63db8d97825b"
+        },
+        {
+          "name": "reader08",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 26412,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "0f69a052da9e718bfcbd41fe761f682c837caa0ce44055f56a49970150fe39f6"
+        },
+        {
+          "name": "reader09",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 2324,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "21b1d885d45345b5ad5919c3df5ce6a5549e7ea824f972d082e7769344ea3e6e"
+        },
+        {
+          "name": "reader10",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 2988,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "95f57b2e20a8e30b80e621828191bcc0a21abf9c0039fdd5de1326c6caa43c5a"
+        },
+        {
+          "name": "reader11",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 22776,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "da55c5039cc496e50b5ae96abd03980f9aaeaaf4b9e5ce3997608c1eefbed8ae"
+        },
+        {
+          "name": "reader12",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 24964,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "50af3db3a7f67d6b9a56e5b59cb5166497e80342e01c1d9e5232ae2e6d2bb218"
+        },
+        {
+          "name": "writer",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 26076,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "1a4750f034e21a067fd8aba219d992e0a577fde262ed9ac1a423705b5d19c5b3"
+        }
+      ],
+      "exact_original_coordinator_and_owned_workers_closed": true,
+      "fresh_host_query_performed": false
+    },
+    {
+      "phase": "wider11",
+      "root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d",
+      "coordinator_pid": 27444,
+      "coordinator_creation_utc": "2026-11-14T00:17:18.0852224Z",
+      "closed_observed_utc": "2026-11-14T00:21:21.2703127Z",
+      "original_verification_sha256": "b423dbdd7e39c21f8d407a99dabe674c1513974ef3f00b01222158ca41667815",
+      "private_jobs": [
+        {
+          "name": "reader01",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 21864,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "3f689b474ace4772fe24c90d7a133f3ec4a865f5c96c020634170074d7e9c808"
+        },
+        {
+          "name": "reader02",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 18024,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "6685451d5a44104062992130bb8e784d598573a60ae1a042560ac109fed95720"
+        },
+        {
+          "name": "reader03",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 21396,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "679e4e808f198873bd16d44ef3e35256be537d040df499596520dc1e4837f68e"
+        },
+        {
+          "name": "reader04",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 16544,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "76a107289da90d6638625c99e91ca49d2b9894cfda1322005c7d14d7d3bff773"
+        },
+        {
+          "name": "reader05",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 7748,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "360e5802c220c2dcbcdc9e6a221038e1fa3d2fb204b2f6f8bac6f523a0c0fd80"
+        },
+        {
+          "name": "reader06",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 10996,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "5c21cce29ee9fff8936031916d687af016e4a347036b5f19a3264d394572f263"
+        },
+        {
+          "name": "reader07",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 26216,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "3f1562dfa255574ae245abeb8cea5b9178c93b89de3f4f15c29e41f507f5af7f"
+        },
+        {
+          "name": "reader08",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 2028,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "e9b3d3df87c13ba0e22ee2b6641e470d28172110eeabc1d333811b97ccdd6f1c"
+        },
+        {
+          "name": "reader09",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 27324,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "b78e7ae26bcdcc9f0f31c0ca22dea507c5658566ada9a97537df7597b9fb1495"
+        },
+        {
+          "name": "reader10",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 23848,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "dd841d12725ab7e44027f3989c4a61f1e1757c9ab8aa29fef313ef88d620dfde"
+        },
+        {
+          "name": "writer",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "strict_result_binding": true,
+          "child_pid": 25076,
+          "job_closed": true,
+          "desktop_closed": true,
+          "receipt_sha256": "2a487b1c4fb47083bb9cb3cdf25dfd940cd9298a3406988233ac515e92b959e0"
+        }
+      ],
+      "exact_original_coordinator_and_owned_workers_closed": true,
+      "fresh_host_query_performed": false
+    }
+  ],
+  "current_text_dependency_scans": [
+    {
+      "scope": "current checkout functional source",
+      "text_files": 997,
+      "bytes": 7255679,
+      "source_manifest_sha256": "26ef8fdaa61a8b7c1328bfbb0172ed6def03c2b88ea489eea9c43760d9af8e9a",
+      "literal_root_references": []
+    },
+    {
+      "scope": "current replay2 review functional source",
+      "text_files": 997,
+      "bytes": 7197049,
+      "source_manifest_sha256": "3fc58b8d0bf4e90d54e71e36b883eabe9f4ed7d3c1fbd1ec28448cc72b695759",
+      "literal_root_references": []
+    },
+    {
+      "scope": "approved current builder/replay/FK/native-leaf source and public locks",
+      "text_files": 45,
+      "bytes": 603204,
+      "source_manifest_sha256": "b6f5d7828048c6ba26f056c3c2a52278435097a8ab7530e8482613903bfaa5ae",
+      "literal_root_references": []
+    },
+    {
+      "scope": "review launch/configuration metadata",
+      "text_files": 8,
+      "bytes": 973877,
+      "source_manifest_sha256": "646bb7c809bd8a435ab6db6b1dd0a8a420243a208cf4c661a1fbf111313347e3",
+      "literal_root_references": []
+    }
+  ],
+  "current_packed_review_metadata": [
+    {
+      "file": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a-replay2\\Examples\\Keiki Tools.has",
+      "metadata_only": {
+        "has.json": {
+          "bytes": 1751,
+          "sha256": "988ebca12ac3c132268f71438b8db5f94a18961eecc8c740b121a8b48f5d6d31",
+          "literal_old_root_value_paths": []
+        },
+        "project.json": {
+          "bytes": 7821,
+          "sha256": "e5bf58ec8223b14b7e19e2965b2d528f3439d24f707570fb95f7d37106310efc",
+          "literal_old_root_value_paths": []
+        }
+      },
+      "asset_members_read": false,
+      "whole_package_build_sha256": "6974e8d72e21469255653fecb52a8c347706a9787bf3bfcce39cc634b250f238",
+      "whole_package_SHA_freshly_recomputed": false
+    },
+    {
+      "file": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a-replay2\\Examples\\Mima head expressions.has",
+      "metadata_only": {
+        "has.json": {
+          "bytes": 1754,
+          "sha256": "dbce7f579153c438506a757014cac8bc9a29b915dc916073eff4d73d563bd0b2",
+          "literal_old_root_value_paths": []
+        },
+        "project.json": {
+          "bytes": 31004,
+          "sha256": "dd3885939797dcf2f43b7040711d637f2843d807187c1f36ed8a1f203cd57e07",
+          "literal_old_root_value_paths": []
+        }
+      },
+      "asset_members_read": false,
+      "whole_package_build_sha256": "16835d5cacb1dbdbf8ff769a2f3ea28158a31e8ada86cc978deb118d3c5da117",
+      "whole_package_SHA_freshly_recomputed": false
+    },
+    {
+      "file": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a-replay2\\Examples\\Junko imported hair joints.has",
+      "metadata_only": {
+        "has.json": {
+          "bytes": 1754,
+          "sha256": "2c55d34449d0fd220ca03f327764d15349d96c8267019354826ffc6f199ffb79",
+          "literal_old_root_value_paths": []
+        },
+        "project.json": {
+          "bytes": 91561,
+          "sha256": "436cf08dad3931bcef020951770a73efa3aff0a7660c9ef96c28394d9097f589",
+          "literal_old_root_value_paths": []
+        }
+      },
+      "asset_members_read": false,
+      "whole_package_build_sha256": "4564e1f7d8e6a9708df64c93522806030bf34193510a34ab1c5b3dd8b138b242",
+      "whole_package_SHA_freshly_recomputed": false
+    },
+    {
+      "file": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a-replay2\\Examples\\Nitori source choices.has",
+      "metadata_only": {
+        "has.json": {
+          "bytes": 1751,
+          "sha256": "efdbeead63ae837160890bf43bdddb3ef1df6301fe5c8ea56781381b47001930",
+          "literal_old_root_value_paths": []
+        },
+        "project.json": {
+          "bytes": 8635,
+          "sha256": "4a9b9646745f352ae6774023460b71e076eb7ae9fa4105663d1d7887bba68f5d",
+          "literal_old_root_value_paths": []
+        }
+      },
+      "asset_members_read": false,
+      "whole_package_build_sha256": "628957b2abedfb8f7229b7035dad3751b4bca583fc47a47d9ad757076a38bab6",
+      "whole_package_SHA_freshly_recomputed": false
+    }
+  ],
+  "retained_original_family_path_readiness": [
+    {
+      "root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\multi_skin_glove\\Takane and Nitori",
+      "historical_files": 230,
+      "historical_bytes": 134276708,
+      "current_expected_files_exist": 230,
+      "root_and_ancestors_no_reparse": true,
+      "under_either_old_root": false,
+      "included_in_current_4family_review_lock": true,
+      "fresh_original_binary_hashes_read": false
+    },
+    {
+      "root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-next-cases-20261112\\stage\\keiki_tools_chisels\\keiki by tamo",
+      "historical_files": 66,
+      "historical_bytes": 47183776,
+      "current_expected_files_exist": 66,
+      "root_and_ancestors_no_reparse": true,
+      "under_either_old_root": false,
+      "included_in_current_4family_review_lock": true,
+      "fresh_original_binary_hashes_read": false
+    },
+    {
+      "root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\junko_v25",
+      "historical_files": 79,
+      "historical_bytes": 30135859,
+      "current_expected_files_exist": 79,
+      "root_and_ancestors_no_reparse": true,
+      "under_either_old_root": false,
+      "included_in_current_4family_review_lock": true,
+      "fresh_original_binary_hashes_read": false
+    },
+    {
+      "root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\mima\\mima",
+      "historical_files": 120,
+      "historical_bytes": 239670387,
+      "current_expected_files_exist": 120,
+      "root_and_ancestors_no_reparse": true,
+      "under_either_old_root": false,
+      "included_in_current_4family_review_lock": true,
+      "fresh_original_binary_hashes_read": false
+    },
+    {
+      "root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-broader-native-cases-20261113\\stage\\kanako",
+      "historical_files": 66,
+      "historical_bytes": 17863657,
+      "current_expected_files_exist": 66,
+      "root_and_ancestors_no_reparse": true,
+      "under_either_old_root": false,
+      "included_in_current_4family_review_lock": false,
+      "fresh_original_binary_hashes_read": false
+    }
+  ],
+  "known_historical_metadata_only_dependency": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\inert_metadata_shapes_main_20261114\\recipe\\check_sfm_extra_baselines.py",
+    "sha256": "35ace8dca6eecfb8721e57cbe09696c870eac3e56382add3c6b48cc499421313",
+    "old_roots_required_if_rerun_unmodified": true,
+    "reads": "cases/*/expected.json for catalogue lookup, 3 prior expected records and Nitori conversion-metadata/parameters.json",
+    "current_app_review_FK_native_leaf_source_dependency": false,
+    "remedy_before_historical_recipe_rerun": "Restore exact metadata from preserved recovery or explicitly redirect that historical recipe; do not call the old hardcoded recipe relocatable."
+  },
+  "probe_source_review": {
+    "prepared_and_preserved_exact": true,
+    "executed_by_this_audit": false,
+    "current_template_is_release": false,
+    "preflight": "Exact 2 inventories/counts/bytes/SHA, membership, file SHA/mtime/size, no reparse, regular single-link.",
+    "handle_scope": "Each file GENERIC_READ/share0/OPEN_EXISTING/FILE_FLAG_OPEN_REPARSE_POINT; exact file identity then immediate close; second inventory equal.",
+    "limits": "Sequential intervals only. Does not clear metadata-only handles, mapped views, directory handles, future reopening or reserve deletion access; does not identify the historical202 unobserved command lines.",
+    "cleanup_authorized": false
+  },
+  "current_gate_status": {
+    "exact_original_coordinator_worker_closure_established_from_preserved_records": true,
+    "current_app_review_FK_native_leaf_literal_dependency_found": false,
+    "protected_originals_outside_two_roots_with_all561_expected_files_present": true,
+    "fresh9307_file_content_and_membership_and_sharing_probe": "UNRUN by this audit",
+    "fresh561_original_binary_content_preservation": "Not established by this source-only audit; current review covers4families495files, historical Kanako66files requires separate freshness proof.",
+    "remote_verified_publication": "Not queried by this audit; root must bind actual later publication/retrieval proof.",
+    "current_global_nonuse": "NOT_ESTABLISHED; historical Restart Manager error29/202 unknown commandlines remain limitations.",
+    "root_probe_release": "False template only, not a valid current release.",
+    "literal_cleanup_decision": "Not made; retain both roots."
+  },
+  "cleanup_authorized": false,
+  "deletions": false,
+  "source_proofs": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a-replay2\\BUILD-VERIFICATION.json",
+      "bytes": 970537,
+      "sha256": "c42ff4a696330be9cf4922d49009e3f0ce48fb5899a90677c6e24e754c1c6200"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\owner_pause_20261114\\prepared-unrun\\old-native-exclusive-read-prep-20261114\\INDEX.json",
+      "bytes": 1815,
+      "sha256": "378f8b9da63fa52c056a65a8dca5d43dc1a70e3843ceba6ff14bad848db269a8"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\owner_pause_20261114\\prepared-unrun\\old-native-exclusive-read-prep-20261114\\README.md",
+      "bytes": 4603,
+      "sha256": "75adbed658ff18fe2312c009d378b4e36a27dfdb8fac4158a2b180aea6029c9b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\owner_pause_20261114\\prepared-unrun\\old-native-exclusive-read-prep-20261114\\probe_after_release.py",
+      "bytes": 14404,
+      "sha256": "d418a00ac8f722fccae905c3707c96599eadf68b254542b326012396fed63550"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\owner_pause_20261114\\prepared-unrun\\old-native-exclusive-read-prep-20261114\\root-release.template.json",
+      "bytes": 770,
+      "sha256": "ca8e29e84bb9731f25e4ec975fd51837ae76f0c43490a1ffd47ead5afe144612"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\replay_audio_fix_20261115\\builder\\input-lock.json",
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\FINAL_AUDIT.json.gz",
+      "bytes": 3516,
+      "sha256": "9fa3458aa5623b2ce649ed04d0bb29791e886f6e054a120e169bee1ffe5f4a8c"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\core14-fresh-inventory.json.gz",
+      "bytes": 275530,
+      "sha256": "01f35384459ff5e23b64537d6aa3e90ad3b1af97d1e420547e0475426046d672"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\executable-dependency-scan.json.gz",
+      "bytes": 550,
+      "sha256": "1e4b4d0eafeffe88baaf03ccfcdfad5dbe28270727e24ca8b488f6ac49e639b3"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\retained-originals-fresh-proof.json.gz",
+      "bytes": 24447,
+      "sha256": "f9dfbcde4184ee13d6aa7f9efcf77f48cefeae718c13fefff7741408c3db304c"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\wider11-fresh-inventory.json.gz",
+      "bytes": 270567,
+      "sha256": "8304f319f3c391c9875b418ad0832f7b4cffb9a727b9e78c76d383598a87f29d"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\inert_metadata_shapes_main_20261114\\recipe\\check_sfm_extra_baselines.py",
+      "bytes": 2240,
+      "sha256": "35ace8dca6eecfb8721e57cbe09696c870eac3e56382add3c6b48cc499421313"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader01\\process-verification.json",
+      "bytes": 2641,
+      "sha256": "6a13b895b76a0e4f9b2b4c759993276349c98d84abcb7b0359c770376b11a1d3"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader02\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "cb09d1dc84e223087de0a70fa24fa1cf9606b6bfeb259176d57cc684749d9404"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader03\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "0d6b4b793d7df88c83ed959b08dbc61a725b19ff35c73c6faa42bd1886662bda"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader04\\process-verification.json",
+      "bytes": 2465,
+      "sha256": "a163042c86668355a2c60ed32d55773952f82065473ca4a6a7c58d189ce51937"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader05\\process-verification.json",
+      "bytes": 2465,
+      "sha256": "4d7da1a4e7b328156723dc18aa0a45666dc7f877594d638d14cb75df991fef7b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader06\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "25c92ea870b310aecc043a819087bbba89938d6a05ff69c6573f666ea1e77210"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader07\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "7d1e9b8bb75792d47c0ada5fda575d02eb83afcaac753b6799715cd1e21ade4c"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader08\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "864f5941ac75af901199e8a75f916a98198951d9ffa24cf7a788db550e391940"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader09\\process-verification.json",
+      "bytes": 2465,
+      "sha256": "3d8cfdf9263c6d6944077fb403ed6e28e697e1a4fa1b5bb9239e184461b7fe4e"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader10\\process-verification.json",
+      "bytes": 2465,
+      "sha256": "639eaaed0efc5de85970a41d4c5c49bcba2bbaa77291271d0c8daaeed0114508"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader11\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "991132ccc9bbb3a8ea2a873a44f1ff1dcb88ecc16ec97783856ebd344592ebdb"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\reader12\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "13636fe9c5d64a10d42ff711d10f1e5a0419513c83e66a38d078554f5d1c276b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\jobs\\writer\\process-verification.json",
+      "bytes": 27342,
+      "sha256": "27776626732ceb7ebbc8fa64c1c06ab432f70ab93cb53ab42e37d75132dc3367"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\root-launch\\launch.json",
+      "bytes": 940,
+      "sha256": "25cf44470f9ad2392ec82aa0420cf4422b11bc1506945f5986dbc9e39fe2c13e"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\root\\graphics-lease-released.json",
+      "bytes": 603,
+      "sha256": "18ae1ea77ac1280acb32629cbe7e9beb7b589a621bf8524dc6da8c1410bfc4c0"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\core14\\actual\\root\\verification.json.gz",
+      "bytes": 210403,
+      "sha256": "431d5da18942054a08fe53be372200dc08ca05aa4c684b5df5aa7212b1535aee"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader01\\process-verification.json",
+      "bytes": 2642,
+      "sha256": "65cbcf45e81b56cbb95735ca3bf87b400fad458a9e54151be97b2db9f0ac485d"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader02\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "ea23e66a7a96bf85b90912b9efadc276b894d75341b1cdc548b93585229401d2"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader03\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "450fa4f17a810f4e1f3de0eb1554aab7e687cd6c94b44b89055e563b5556e6da"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader04\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "5ec1d539a3f9dd09ab5f5418bde2a3492a45a046cec7182854e401f37abb14c7"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader05\\process-verification.json",
+      "bytes": 2465,
+      "sha256": "b4558e331dc9a493f61ee83bb428072c315cb19c0d4152c088110aa8e2308ac8"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader06\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "537466368ca2123794f6abe211ac9286bbfa9bc27cfd8456086d88d10f525455"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader07\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "aeac69c0358c79ea75ea5598b8c19c617b066a28868529a0e02da36c564d1e5f"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader08\\process-verification.json",
+      "bytes": 2465,
+      "sha256": "15ba7175956b9789dd715f6d1d5f17f2ef9d7d8832ddfbf27a50e1b14de27397"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader09\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "b53d7d38d903809352c4fb1dc1dcef83b18422bf88266458992d7e17e6641b34"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\reader10\\process-verification.json",
+      "bytes": 2466,
+      "sha256": "d3162a62620683be8824e0c4dc4016b52f65bb1864eb47f0fe06adedfb08207b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\jobs\\writer\\process-verification.json",
+      "bytes": 32288,
+      "sha256": "ef61305efe072ce8eb3f062d8667bc55c444bde03994bb7b9d45e0a65b167454"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\root-launch\\launch.json",
+      "bytes": 944,
+      "sha256": "cba9630e93583cbade75967b3ac141dc8d1ee6c41932dd6e36702f1c54020949"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\root\\graphics-lease-released.json",
+      "bytes": 605,
+      "sha256": "1725ab124e60ca6f0a1bcbead6d594268fa889d3c6914653c330a11432330afd"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\wider11\\actual\\root\\verification.json.gz",
+      "bytes": 209550,
+      "sha256": "b6dc2486e5b280db853ef69156865fec4e80cdbaca6cef89592735dcdeef2065"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-exclusive-read-prep-20261114\\probe_after_release.py",
+      "bytes": 14404,
+      "sha256": "d418a00ac8f722fccae905c3707c96599eadf68b254542b326012396fed63550"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_031ddb1c0d2542ea9a46568e8d523243.json",
+      "bytes": 386,
+      "sha256": "5bc2c525ba20a86d3d0a3ae312d5611994626176b19d9b2af7fc13ddb553ea25"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_2edb175973e54c6fa8c9abcfd02dcc8c.json",
+      "bytes": 387,
+      "sha256": "349636f6c0df452531afb32ed6ee4c4c001197f02d41331a7db3583063e06229"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_634020193d8040518898070285f15d95.json",
+      "bytes": 388,
+      "sha256": "1a4750f034e21a067fd8aba219d992e0a577fde262ed9ac1a423705b5d19c5b3"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_86326af1a0f2442c85a564b92037c612.json",
+      "bytes": 386,
+      "sha256": "21b1d885d45345b5ad5919c3df5ce6a5549e7ea824f972d082e7769344ea3e6e"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_86c9cc83d8204b679beb3075135cec8a.json",
+      "bytes": 387,
+      "sha256": "da55c5039cc496e50b5ae96abd03980f9aaeaaf4b9e5ce3997608c1eefbed8ae"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_a3387fb19ea540a39e29c5b505d2d967.json",
+      "bytes": 387,
+      "sha256": "9065eb61fbef952879b0c797c4b409319cd1e83b2289b41af81591b8ac96865e"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_a350fc85022a4384b73f5fa9e3a28d40.json",
+      "bytes": 387,
+      "sha256": "673263296540f2168a9399d848c28f9da739ed1cb2431d53456f63db8d97825b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_ab1e8d1f215e42f0b0f6b10a818296aa.json",
+      "bytes": 387,
+      "sha256": "50af3db3a7f67d6b9a56e5b59cb5166497e80342e01c1d9e5232ae2e6d2bb218"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_bba18c6a5c164d0ca5b4f3629ffd3de9.json",
+      "bytes": 386,
+      "sha256": "95f57b2e20a8e30b80e621828191bcc0a21abf9c0039fdd5de1326c6caa43c5a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_c4c186e6b71f4e4fba271ca38b1e31a4.json",
+      "bytes": 387,
+      "sha256": "0f69a052da9e718bfcbd41fe761f682c837caa0ce44055f56a49970150fe39f6"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_c763c6047de74cffb355fbab53e6d2a5.json",
+      "bytes": 387,
+      "sha256": "a11ffbcd4b5249243ea6d615a375e0b75d7d404df03d8cd134ca1197122c3a5a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_f91fb363f9a0455fad883960c0f3f329.json",
+      "bytes": 387,
+      "sha256": "c49465ebb9da5d90a6c576e768315cad064bb1eb16e2ec83470d7f9bc88dd0a8"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\Studio\\output\\private-desktop\\source_choices_native_smoke_fe5e0ef4702b426386ae56fbbe949570.json",
+      "bytes": 386,
+      "sha256": "7ac0c70524decee4220095cf83d49cec4ec27e41566e7512a5c129c333f621df"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967\\verification.json",
+      "bytes": 978852,
+      "sha256": "d2a7a9acc9b39c0b3aacbe1d27822ff450b54ccf3d6d141f6af95899dae9c54b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_3324edd7bc2541fcae3525cdd5ee62a1.json",
+      "bytes": 387,
+      "sha256": "b78e7ae26bcdcc9f0f31c0ca22dea507c5658566ada9a97537df7597b9fb1495"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_3a85b247c78e41089456229583a68cbb.json",
+      "bytes": 388,
+      "sha256": "2a487b1c4fb47083bb9cb3cdf25dfd940cd9298a3406988233ac515e92b959e0"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_4b7c6eeba6494f83b5eae81576507465.json",
+      "bytes": 388,
+      "sha256": "3f689b474ace4772fe24c90d7a133f3ec4a865f5c96c020634170074d7e9c808"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_57edf5cd33634325bb972202f51b3656.json",
+      "bytes": 387,
+      "sha256": "5c21cce29ee9fff8936031916d687af016e4a347036b5f19a3264d394572f263"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_79b18a4ee6eb4eec9d8488a4eaebf44b.json",
+      "bytes": 387,
+      "sha256": "76a107289da90d6638625c99e91ca49d2b9894cfda1322005c7d14d7d3bff773"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_7c8c4cf3d30a4aca94f7fb86a0887710.json",
+      "bytes": 387,
+      "sha256": "679e4e808f198873bd16d44ef3e35256be537d040df499596520dc1e4837f68e"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_834b128e9baa4160b966cc6edd494485.json",
+      "bytes": 387,
+      "sha256": "6685451d5a44104062992130bb8e784d598573a60ae1a042560ac109fed95720"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_8588145481cb47b9abef96e8b5335f67.json",
+      "bytes": 387,
+      "sha256": "3f1562dfa255574ae245abeb8cea5b9178c93b89de3f4f15c29e41f507f5af7f"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_93ae232a25a94a209d94d0edfab69a35.json",
+      "bytes": 386,
+      "sha256": "360e5802c220c2dcbcdc9e6a221038e1fa3d2fb204b2f6f8bac6f523a0c0fd80"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_a59b21af9be74d43b3bedc5d394792a5.json",
+      "bytes": 386,
+      "sha256": "e9b3d3df87c13ba0e22ee2b6641e470d28172110eeabc1d333811b97ccdd6f1c"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\Studio\\output\\private-desktop\\source_choices_native_smoke_c74423466d0a42ea927e2c4febc12347.json",
+      "bytes": 387,
+      "sha256": "dd841d12725ab7e44027f3989c4a61f1e1757c9ab8aa29fef313ef88d620dfde"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d\\verification.json",
+      "bytes": 962903,
+      "sha256": "b423dbdd7e39c21f8d407a99dabe674c1513974ef3f00b01222158ca41667815"
+    }
+  ]
+}

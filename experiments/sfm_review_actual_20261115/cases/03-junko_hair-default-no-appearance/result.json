@@ -1,0 +1,437 @@
+{
+  "audio_cache_proofs": {
+    "after": {
+      "clips": [
+        {
+          "cache_confined": true,
+          "channels": 1,
+          "file_sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+          "frames": 24000,
+          "id": "538376416064905503",
+          "passed": true,
+          "pcm_bytes": 48000,
+          "pcm_sha256": "ac9d77efcea152df2090dacb61dcfd66c279587e90fba7700e5cb43c90f4ccaf",
+          "rate": 48000,
+          "source_fields_exact": true
+        }
+      ],
+      "expected_clips": 1,
+      "passed": true
+    },
+    "before": {
+      "clips": [
+        {
+          "cache_confined": true,
+          "channels": 1,
+          "file_sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+          "frames": 24000,
+          "id": "538376416064905503",
+          "passed": true,
+          "pcm_bytes": 48000,
+          "pcm_sha256": "ac9d77efcea152df2090dacb61dcfd66c279587e90fba7700e5cb43c90f4ccaf",
+          "rate": 48000,
+          "source_fields_exact": true
+        }
+      ],
+      "expected_clips": 1,
+      "passed": true
+    },
+    "extra": {
+      "clips": [
+        {
+          "cache_confined": true,
+          "channels": 1,
+          "file_sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+          "frames": 24000,
+          "id": "538376416064905503",
+          "passed": true,
+          "pcm_bytes": 48000,
+          "pcm_sha256": "ac9d77efcea152df2090dacb61dcfd66c279587e90fba7700e5cb43c90f4ccaf",
+          "rate": 48000,
+          "source_fields_exact": true
+        }
+      ],
+      "expected_clips": 1,
+      "passed": true
+    }
+  },
+  "camera_after": {
+    "basis": [
+      0.9438583850860596,
+      1.862645149230957e-09,
+      -0.33035042881965637,
+      -0.061278536915779114,
+      0.9826450943946838,
+      -0.1750815361738205,
+      0.3246172368526459,
+      0.18549557030200958,
+      0.9274777770042419
+    ],
+    "far": 2000.0,
+    "fov": 60.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      3.923577308654785,
+      0.6320586204528809,
+      5.713248252868652
+    ]
+  },
+  "camera_before": {
+    "basis": [
+      0.9438583850860596,
+      1.862645149230957e-09,
+      -0.33035042881965637,
+      -0.061278536915779114,
+      0.9826450943946838,
+      -0.1750815361738205,
+      0.3246172368526459,
+      0.18549557030200958,
+      0.9274777770042419
+    ],
+    "far": 2000.0,
+    "fov": 60.0,
+    "near": 0.05000000074505806,
+    "origin": [
+      3.923577308654785,
+      0.6320586204528809,
+      5.713248252868652
+    ]
+  },
+  "canvas_extent": [
+    928.0,
+    335.0
+  ],
+  "checks": [
+    {
+      "label": "replay uses ordinary scene startup without testing flags",
+      "ok": true
+    },
+    {
+      "label": "ordinary automatic recovery completes without restoring or cancelling the fresh scene",
+      "ok": true
+    },
+    {
+      "label": "fresh process starts empty at Home",
+      "ok": true
+    },
+    {
+      "label": "per-project recent/display paths start absent",
+      "ok": true
+    },
+    {
+      "label": "normal .has open started its Python worker",
+      "ok": true
+    },
+    {
+      "label": "normal open operation completed successfully",
+      "ok": true
+    },
+    {
+      "label": "worker and project loader finished before replay",
+      "ok": true
+    },
+    {
+      "label": "normal open retains packed package identity",
+      "ok": true
+    },
+    {
+      "label": "unpacked runtime assets stay in the fresh owned cache",
+      "ok": true
+    },
+    {
+      "label": "open installs an unedited project with empty Undo history",
+      "ok": true
+    },
+    {
+      "label": "audio.cache.before",
+      "ok": true
+    },
+    {
+      "label": "saved drawing pixels decode with their original checksum",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object Practice figure.glb",
+      "ok": true
+    },
+    {
+      "label": "runtime asset checksum matches saved object junko hair.mdl",
+      "ok": true
+    },
+    {
+      "label": "normal load starts in Scene / camera mode",
+      "ok": true
+    },
+    {
+      "label": "Setup uses the full available scene area",
+      "ok": true
+    },
+    {
+      "label": "Setup canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup captures and saves the actual native output size",
+      "ok": true
+    },
+    {
+      "label": "native saved camera capture contains nonuniform nonblack scene pixels",
+      "ok": true
+    },
+    {
+      "label": "Focus restores the output-shaped scene area",
+      "ok": true
+    },
+    {
+      "label": "Focus canvas evidence is nonempty and saved",
+      "ok": true
+    },
+    {
+      "label": "Setup and Focus preserve and save identical native render pixels",
+      "ok": true
+    },
+    {
+      "label": "audio.cache.after",
+      "ok": true
+    },
+    {
+      "label": "view toggles and captures preserve all project state and shot camera",
+      "ok": true
+    },
+    {
+      "label": "replay ends unedited with no retained readback",
+      "ok": true
+    },
+    {
+      "label": "extras.target_available",
+      "ok": true
+    },
+    {
+      "label": "render.frame_0",
+      "ok": true
+    },
+    {
+      "label": "render.frame_24",
+      "ok": true
+    },
+    {
+      "label": "source_binding.relocated.report_identity",
+      "ok": true
+    },
+    {
+      "label": "source_binding.relocated.runtime_bindings",
+      "ok": true
+    },
+    {
+      "label": "source_binding.relocated.no_mutation",
+      "ok": true
+    },
+    {
+      "label": "source_binding.relocated.no_simulation",
+      "ok": true
+    },
+    {
+      "label": "native_helper.available",
+      "ok": true
+    },
+    {
+      "label": "native_helper.native_current",
+      "ok": true
+    },
+    {
+      "label": "native_helper.suggested",
+      "ok": true
+    },
+    {
+      "label": "native_helper.existing_mode",
+      "ok": true
+    },
+    {
+      "label": "native_helper.weights_unchanged",
+      "ok": true
+    },
+    {
+      "label": "native_helper.cancelled",
+      "ok": true
+    },
+    {
+      "label": "native_helper.protected_state",
+      "ok": true
+    },
+    {
+      "label": "native_helper.no_simulation",
+      "ok": true
+    },
+    {
+      "label": "chooser.file_picker",
+      "ok": true
+    },
+    {
+      "label": "chooser.dialog",
+      "ok": true
+    },
+    {
+      "label": "chooser.metadata",
+      "ok": true
+    },
+    {
+      "label": "chooser.native_catalogue",
+      "ok": true
+    },
+    {
+      "label": "chooser.default_request",
+      "ok": true
+    },
+    {
+      "label": "chooser.cancel",
+      "ok": true
+    },
+    {
+      "label": "chooser.unchanged",
+      "ok": true
+    },
+    {
+      "label": "extras.unchanged",
+      "ok": true
+    },
+    {
+      "label": "audio.cache.extra",
+      "ok": true
+    }
+  ],
+  "configured_paths": {
+    "HAS_cache": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/has-cache",
+    "display": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/display.cfg",
+    "recent": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/recent.json",
+    "recovery": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/recovery",
+    "reference_cache": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/reference-cache",
+    "source_paths": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/source-paths.cfg",
+    "workspace": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/workspace-layout.json"
+  },
+  "extra_checks": {
+    "chooser.cancel": true,
+    "chooser.default_request": true,
+    "chooser.dialog": true,
+    "chooser.file_picker": true,
+    "chooser.metadata": true,
+    "chooser.native_catalogue": true,
+    "chooser.unchanged": true,
+    "extras.target_available": true,
+    "extras.unchanged": true,
+    "native_helper.available": true,
+    "native_helper.cancelled": true,
+    "native_helper.existing_mode": true,
+    "native_helper.native_current": true,
+    "native_helper.no_simulation": true,
+    "native_helper.protected_state": true,
+    "native_helper.suggested": true,
+    "native_helper.weights_unchanged": true,
+    "render.frame_0": true,
+    "render.frame_24": true,
+    "source_binding.relocated.no_mutation": true,
+    "source_binding.relocated.no_simulation": true,
+    "source_binding.relocated.report_identity": true,
+    "source_binding.relocated.runtime_bindings": true
+  },
+  "failures": 0,
+  "focus_image": {
+    "distinct_sampled_colors": 1394,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 13051,
+    "pixel_sha256": "a69773399ff69de7b5724332ed24d1b3e5f13febd3f4efe511f033042764b3ec",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/focus.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "format": "has_owner_review_replay_1",
+  "install_ms": 127.797,
+  "load_worker_ms": 59.887,
+  "native_focus": {
+    "distinct_sampled_colors": 1310,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 1715,
+    "pixel_sha256": "e792523456de755fb67ca7f601c63cc10ecd4fb129ba63a3b44d21a97776320c",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/native-focus.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "native_readbacks_at_finish": 0,
+  "native_setup": {
+    "distinct_sampled_colors": 1310,
+    "empty": false,
+    "height": 1080,
+    "nonblack_samples": 1715,
+    "pixel_sha256": "e792523456de755fb67ca7f601c63cc10ecd4fb129ba63a3b44d21a97776320c",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/native-setup.png",
+    "sampled_pixels": 19200,
+    "save_error": 0,
+    "width": 1920
+  },
+  "normal_startup": {
+    "empty": true,
+    "home_visible": true,
+    "result": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "signal_seen": true,
+    "simple": true
+  },
+  "normalized_cache_root": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/has-cache",
+  "normalized_project_folder": "c:/a/programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/has-cache/open_78132_2265842",
+  "open_ms": 391,
+  "package": "C:/a/Programming/cloudflare/HAS-Review-20261115-SFM-Joints-f0dd57a-replay2/Examples/Junko imported hair joints.has",
+  "process_id": 78132,
+  "profile": "C:/Users/noble/AppData/Roaming/HAS SFM Joints Review f0dd57a 1794787733085953600",
+  "project_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-joints-final-validation-f0dd57a-replay2-20261115\\03-junko_hair-default-no-appearance\\has-cache\\open_78132_2265842",
+  "project_root": "C:/a/Programming/cloudflare/HAS-Review-20261115-SFM-Joints-f0dd57a-replay2/Studio/",
+  "rasters": [
+    {
+      "id": "6712732810573258783",
+      "layer_id": "6541030619845814695",
+      "pixel_sha256": "2cf71f483fe4f2a80232ee60a1d864334914876f40cb083511413a7de238a333",
+      "readable": true
+    }
+  ],
+  "request_sha256": "efaec8a7293364c7ffc3436cca43b71c84a31ee972f8f595f202fe8617c1995a",
+  "runtime_objects": [
+    {
+      "asset_sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+      "bones": 17,
+      "id": "749146004319535999",
+      "name": "Practice figure.glb",
+      "stored_sha256": "99c546ceff5ada7f9eea90e0c18c5e92532add56b6f2916d558a9ec23957de23",
+      "visible": true
+    },
+    {
+      "asset_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+      "bones": 69,
+      "id": "955008594068543178",
+      "name": "junko hair.mdl",
+      "stored_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+      "visible": true
+    }
+  ],
+  "setup_extent": [
+    928.0,
+    335.0
+  ],
+  "setup_image": {
+    "distinct_sampled_colors": 1336,
+    "empty": false,
+    "height": 335,
+    "nonblack_samples": 1773,
+    "pixel_sha256": "de66398b641f535716e9ef36fe2a908a5a1924f36c421b4113f8b339538354e3",
+    "png": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-joints-final-validation-f0dd57a-replay2-20261115/03-junko_hair-default-no-appearance/setup.png",
+    "sampled_pixels": 31248,
+    "save_error": 0,
+    "width": 928
+  },
+  "source_manifest_sha256": "f72f239d4461f81744ea03f32ae995957f1746311bd3f72a12ef921f6cda9acc",
+  "worker_pid": 81608
+}

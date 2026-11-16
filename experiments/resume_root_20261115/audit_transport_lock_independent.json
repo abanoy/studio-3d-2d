@@ -1,0 +1,51 @@
+{
+  "format": "has_independent_private_transport_lock_audit_1",
+  "status": "PASSED_INPUT_REVIEW_ONLY_NO_RUNTIME_LEASE",
+  "HEAD": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "qualified_full_revision": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "qualified_full_run": "output/windows-canonical-bone-binding-20261115T225514304",
+  "private_preparation": "output/native-jiggle-headless-transport-prep-20261115/private-preparation-f0dd57a-post-full",
+  "input_lock_sha256": "47ed1b5a4772ca74040374180a22479b7892b351265a54bbee9ce7f1f1d4cfaa",
+  "private_oracle_sha256": "4065a47ed7da9a53d18f42e326d668d82060028301cd691864b1e92ea9dcdfe4",
+  "private_oracle_bytes": 4932243,
+  "old_private_oracle_byte_matches": 3,
+  "unique_input_pins_verified": 211,
+  "casefold_unique_pin_paths": 211,
+  "exact_app_full_source_joins": 200,
+  "nonapp_pins_verified": 11,
+  "source_profile": {
+    "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "GLB_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "source_conversion_scale": 0.01905,
+    "bindings": 69,
+    "rule_tip_lengths": 49,
+    "root_uniform_scales": [
+      1.0,
+      2.0
+    ]
+  },
+  "planned_domain": {
+    "pose_cases_per_root": 55,
+    "root_cases": 4,
+    "configurations": 220,
+    "pose_categories": {
+      "rotate": 30,
+      "move_parent": 12,
+      "combined": 12,
+      "rest": 1
+    },
+    "proposed_checks": 41588,
+    "runtime_result": "UNRUN"
+  },
+  "private_storage": {
+    "Git_index_version": 2,
+    "private_oracle_or_lock_entries_in_index": 0,
+    "private_files_in_public_candidate": 0,
+    "raw_arrays_copied_to_audit_receipt": false
+  },
+  "limits": [
+    "Input/hash/domain review only; no Godot parsing, engine, process query or lease grant.",
+    "Native FK/rest/tip runtime and posed skin/render/dynamics remain unmeasured by this audit.",
+    "Source conversion .01905 and root1/2 are distinct qualifications."
+  ]
+}

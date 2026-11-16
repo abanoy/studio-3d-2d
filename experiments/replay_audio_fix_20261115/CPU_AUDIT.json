@@ -1,0 +1,105 @@
+{
+  "format": "has_audio_replay_projection_cpu_audit_1",
+  "passed": true,
+  "package_sha256": "6974e8d72e21469255653fecb52a8c347706a9787bf3bfcce39cc634b250f238",
+  "observed_private_inputs": {
+    "observed-before.json": {
+      "bytes": 230992,
+      "sha256": "8c42429e107105b889cca27a7c80bab0aa8f9ac9c96020dd3022dc42348e6cf4"
+    },
+    "observed-after.json": {
+      "bytes": 230992,
+      "sha256": "8c42429e107105b889cca27a7c80bab0aa8f9ac9c96020dd3022dc42348e6cf4"
+    },
+    "observed-extra.json": {
+      "bytes": 230992,
+      "sha256": "8c42429e107105b889cca27a7c80bab0aa8f9ac9c96020dd3022dc42348e6cf4"
+    }
+  },
+  "independent_audio_references": [
+    {
+      "id": "42045315782960649",
+      "path": "assets/5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9.wav",
+      "sha256": "5c27ff5c04e1d5f4e8d3c065fbee41b210128f3deb518c7da12c940ffbf255b9",
+      "source_name": "tone.wav",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 24000,
+      "pcm_bytes": 48000,
+      "pcm_sha256": "ac9d77efcea152df2090dacb61dcfd66c279587e90fba7700e5cb43c90f4ccaf"
+    }
+  ],
+  "phases": [
+    {
+      "phase": "before",
+      "original_difference_exact": true,
+      "portable_projection_equal": true,
+      "independent_WAV_and_PCM_binding": true,
+      "negative_cache_controls": [
+        "sha256",
+        "channels",
+        "rate",
+        "frames",
+        "name",
+        "path",
+        "unknown_field",
+        "file_sha",
+        "PCM_bit_flip"
+      ],
+      "authored_change_refusals": [
+        "start_frame",
+        "gain_db",
+        "muted"
+      ]
+    },
+    {
+      "phase": "after",
+      "original_difference_exact": true,
+      "portable_projection_equal": true,
+      "independent_WAV_and_PCM_binding": true,
+      "negative_cache_controls": [
+        "sha256",
+        "channels",
+        "rate",
+        "frames",
+        "name",
+        "path",
+        "unknown_field",
+        "file_sha",
+        "PCM_bit_flip"
+      ],
+      "authored_change_refusals": [
+        "start_frame",
+        "gain_db",
+        "muted"
+      ]
+    },
+    {
+      "phase": "extra",
+      "original_difference_exact": true,
+      "portable_projection_equal": true,
+      "independent_WAV_and_PCM_binding": true,
+      "negative_cache_controls": [
+        "sha256",
+        "channels",
+        "rate",
+        "frames",
+        "name",
+        "path",
+        "unknown_field",
+        "file_sha",
+        "PCM_bit_flip"
+      ],
+      "authored_change_refusals": [
+        "start_frame",
+        "gain_db",
+        "muted"
+      ]
+    }
+  ],
+  "runtime_payloads_published": false,
+  "apps_or_engine_parser_run": false,
+  "comparison_tolerance": "Existing1e-12absolute; unchanged dictionaries/strings/order/booleans",
+  "GDScript_status": "UNPARSED_UNRUN",
+  "old_observed_states_modified": false
+}

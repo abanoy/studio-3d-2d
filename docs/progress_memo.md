@@ -14819,3 +14819,109 @@ save validation. Partial parts, props/maps and uncertain/nonstandard figures
 must not be blindly fitted; existing HAS scenes and authored contacts remain
 intact. No implementation, new tests, app runs or cleanup occurred. Goal remains
 paused; formal acceptance 55/62 and implementation 52/54 are unchanged.
+
+
+## 2026-11-15 — Resume, complete Windows default and qualify native hair foundations
+
+Owner explicitly resumed independent work; deferred manual exercises remain
+parked. Frozen main f0dd57a2e568089d396fecba819ab987da658bf0 and all1008functional
+source bytes stayed unchanged. No production/src/test implementation changed
+during this increment. The goal service still reports paused and refused its
+resume update for missing trusted source-turn context; owner authorization is
+unambiguous, and this service limitation did not stop work.
+
+Fresh complete default output/windows-canonical-bone-binding-20261115T225514304
+PASS:2956.8145699seconds,157named results/36core groups/21movie metadata groups,
+both decoded onsets1.0sec,192closed private jobs(191exit0,registered Krita cancel2).
+Actual root coordinator/Python identity, terminal status, unchanged source,
+normalized report,13inline raw result joins and all private receipts were
+independently reconciled. Root closure/release killed no process. EE/c4dFAILED
+and owner-cancelled f380INCOMPLETE remain unchanged. Exact compact468-payload
+evidence is in experiments/windows_bone_binding_full_actual_20261115.
+
+New separate review HAS-Review-20261115-SFM-Joints-f0dd57a-replay2 contains Keiki,
+Mima,JunkoHair,Nitori and passes180checks(44/46/49/41),4closed private jobs,
+9preservation gates,8native-reference frame matches and12strict state/audio
+phase comparisons. Original families/tools/120exporter/574SourceIO sources,
+oldreviews and installedStudio stay exact. First review replay FAILED because
+decoded PCM cache was compared with authored portable state. Preserve it and
+its first review. A source-reviewed successor removes only that cache from
+portable projection and independently verifies exact wave-derived cache content/
+binding across phases; unchanged pixel/state/named/receipt gates remain.
+Code and public evidence:experiments/replay_audio_fix_20261115 and
+experiments/sfm_review_actual_20261115. No private observed PCM states/media
+are published.
+
+Actual Model/SceneIO native pose/tip transport PASS41588checks/220configurations,
+69bones/49native-Ztips, moved roots/parents and root scales1/2 at one actual
+conversion0.01905. Exact authored/base/rest resets and source preservation pass.
+Private native oracle remains local; experiments/native_runtime_readiness_actual_20261115
+contains metadata/logs only. Standalone Godot scalar64 0x31 math parses and passes
+8994checks/1440synthetic ticks. Python candidate has322assertions/17280steps.
+Independent root review caught104/1000zero-cone failures; exactoriginal candidate
+and failures remain frozen. Explicit zero-angle treatment passes the same1000
+controls without relaxing gates. Native SDK/client execution, artist parity,
+posedskin/GUI/fan/body/Record/HAS/render integration are not implied.
+
+First actual native8 leaf adapter/harness parses but runtime refuses its
+modifier-presence guard before dynamics(2checks/1failure/0steps). Diagnostic
+successor confirms one native internal/direct PhysicalBoneSimulator3D,
+active=true but not simulating, no physicalbody descendants, parent7,
+rest-only=false/finalpose0. Both attempts reaped/closed, no kills/input changes.
+Pinned Godot source explains its default compatibility simulator; bounded guard
+successor remains unrun at this entry. Keep native normal-fidelityFAILED
+(max0.0012165467), artist observations and actual second-conversion qualification
+separate. The source-only intermediate-normal diagnostic remainsUNRUN.
+
+Old-test archive fills16missing historical source/metadata inputs,
+4122249rawbytes→756657stored, all decompression/source equality independently
+verified. Allsixpublic evidence packet indices/privacy joins pass separate
+review(630payloads,451JSON,82gzip,77source-alias roundtrips). No art/native arrays/
+PCM/media are copied. Remote publication is pending at this entry; no deletion.
+Twooldnative roots remain RETAIN_FOR_NOW1442187088bytes;46small duplicate copies
+also need current dependency/nonuse and remote gates. See resume_archive_20261115.
+
+Updated current pickup/master, Source runtime plan/readiness benchmark and stable
+ledger. Completion checker passes with all62IDs/statuses unchanged:55/62acceptance,
+52/54implementation. Six-foot normalization at user scale1, PMX physics/
+reconstruction and roughly200capability checks remain plans. Next:bounded actual
+leaf weighted deformation/Off, verified parent-child ordering, then ordinary
+fan/body/Record/HAS integration and literal cleanup only after verified backup.
+
+
+## 2026-11-15 — Actual native leaf weighted deformation and exact Off restoration
+
+Fresh isolated compatibility successor at
+experiments/source_0x31_native_leaf_compat_20261115 parses and passes7289checks,
+0failures,1440ticks/12cases through the actual f0dd Model/SceneIO/Skin pipeline.
+Native8 FrontHair1 uses its retained stiffness100/length20/tipMass20 rule at
+source conversion0.01905, under identity scale1 and moved/rotated scale2roots.
+Scalar64 desired-to-actual basis max5.06886e-6 and native-Ztip max3.49606e-6
+pass unchanged2e-5boundary gates. CPUweighted movement reaches0.03188145m;
+all152leaf-influenced vertices move under external-input profiles, with144shared
+influences disclosed. All9509zero-weight vertices and68other worldbones remain
+exact. Both authored/current-key24 and nonrest12 states and allweighted points
+restore exactly after direct live_pose clear/apply; cleared12input cycles repeat
+exactly. Synthetic opposite3/strength12/50inputs differ from gravitycontrol,
+remainfinite/constrained; this is not actual fan API input.
+
+First two guard failures are retained. Godot4.6 automatically creates a native
+internal PhysicalBoneSimulator3D which can be active=true but not simulating
+and have no physicalbodies. Primary-source/API audit plus actualdiagnostics
+support the narrow admission: at mostone exactnative script-free directinternal
+simulator, boolean simulationfalse and zeroPhysicalBone3D anywhere inactor.
+Othermodifiers/bodies, rest-only and finalpose contexts stillrefuse. No node
+was disabled/removed and alloriginal numeric/geometry/Off/check-count gates
+remain. Private compatibility flag is UNMEASURED; structure matchesengine default.
+
+Root closure2026-11-16T00:38:38.5051883Z records bothowned childrenreaped, noowned
+runtimes, nokill andallinputs preserved. VerificationSHA
+dcda15bbd1938b60cc7ce3bd8f8745a75bbedef2a28d90533bc5478f259e2261.
+Public aggregate evidence is experiments/native_leaf_actual_20261115.
+No nativegeometry arrays or leases are published. No Source coefficients or
+full-native-layout flags were enabled inproduction. SDK/client/artistparity,
+GPUappearance, actualGUI Hair&clothes toggle, body/fan coexistence, Record/Undo,
+coldHAS/movie andproceduralparentchains stillneedimplementation/qualification.
+Updatecurrentpickup/runtimeplan/readinessbenchmark accordingly; formal55/62and
+52/54stayunchanged. Next integrationwork:17→18/26→27parentordering and ordinary
+app controls, keeping thisoneleafproofnarrow.

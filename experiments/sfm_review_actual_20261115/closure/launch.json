@@ -1,0 +1,27 @@
+{
+  "validation_output": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-joints-final-validation-f0dd57a-replay2-20261115",
+  "source_commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "creation_utc": "2026-11-16T00:11:09.8789596Z",
+  "exclusive_private_graphics_lease": true,
+  "review": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a-replay2",
+  "launcher_sha256": "d35d553085cf08790894eff009630461b1baf021de89cc7702d7b599cfac0230",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\replay_audio_fix_20261115\\replay\\validate_after_full.py",
+    "--review",
+    "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a-replay2",
+    "--output",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-joints-final-validation-f0dd57a-replay2-20261115",
+    "--expected-revision",
+    "f0dd57a2e568089d396fecba819ab987da658bf0",
+    "--run-gpu",
+    "--lease-confirmed"
+  ],
+  "pid": 80412,
+  "launch_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-joints-final-replay-launch2-20261116T001109854",
+  "format": "has_root_final_review_replay_launch_1",
+  "actual_full_release_sha256": "bbd7ad041bf80b4cb2ded1f6cbb7e65d8a23c314fd87ce13a3112287da2de9b5",
+  "command_file_sha256": "6a84547fee141564b19e3bdcc7fe26aee3eccf69a9af6a34077928d5a8c25118",
+  "owned_workers_absent_before_launch": true
+}

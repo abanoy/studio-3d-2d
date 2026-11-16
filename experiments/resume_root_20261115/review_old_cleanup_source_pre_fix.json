@@ -1,0 +1,50 @@
+{
+  "format": "has_old_native_cleanup_independent_source_review_1",
+  "status": "SOURCE_CHANGES_REQUESTED_BEFORE_EXECUTION",
+  "checked_utc": "2026-11-16T00:52:07.822814+00:00",
+  "sources": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\remove_old_native_after_backup.ps1",
+      "bytes": 13062,
+      "sha256": "091e62b2a6b5ce045cc51d4dfd307dcc012e68944b351b600c910f8fb12977ff"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\observe_old_native_ownership.ps1",
+      "bytes": 2644,
+      "sha256": "5ee84163b06502620a47bbd01ece18d061464cf9092cc2ffc8914338eb4f578a"
+    }
+  ],
+  "source_only": true,
+  "scripts_or_Native_API_or_process_queries_executed": false,
+  "blocking_findings": [
+    {
+      "file": "remove_old_native_after_backup.ps1",
+      "line": 33,
+      "finding": "current_ownership booleans and age are consumed without format/literal_roots/BeforeRemoval phase binding.",
+      "required_fix": "Bind has_root_old_native_current_ownership_1, exact two literal roots, and phase BeforeRemoval."
+    },
+    {
+      "file": "remove_old_native_after_backup.ps1",
+      "line": 38,
+      "finding": "protected_review_tools accepts passed only, without proving fresh preservation completed after exact two remote readbacks.",
+      "required_fix": "Bind the new preservation helper schema/backup commit and successful completion timestamp after remote_increment.observed_utc and remote_recovery.finished_utc; root must choose actual fresh receipt."
+    },
+    {
+      "file": "remove_old_native_after_backup.ps1",
+      "line": 130,
+      "finding": "The ownership age is checked once before removal loop; a slow first removal can let the second begin after its10-minute validity.",
+      "required_fix": "Repeat0..10-minute check immediately before each Remove-Item; preserve partial-removal receipt if the second cannot proceed."
+    }
+  ],
+  "reviewed_correct_guards": [
+    "exact literal target roots, resolved absolute parent, no reparse ancestors/members",
+    "all decision evidence hash-pinned including fresh probe sibling inventory",
+    "literal probe roots and9307 successful exclusive closes; separate root decision required",
+    "current source catalogue1008 hashes; membership/bytes/SHA/mtime match before deletion",
+    "native FILE_READ_ATTRIBUTES only/shared7/OPEN_EXISTING/OPEN_REPARSE_POINT; GetInfo/Close, native single-link/fileindex check",
+    "both roots validated before native PowerShell literal recursive removal",
+    "failure stops next root; fully removed logical bytes separated from partial-unmeasured removal"
+  ],
+  "ownership_script_review": "Exact known coordinator PID/birth comparison; conservative rejection of any Godot/blender/ffmpeg/ffprobe process plus readable literal-root arguments; inaccessible commands and global-nonuse limits reported explicitly. No stop/kill operation.",
+  "cleanup_authorized": false
+}

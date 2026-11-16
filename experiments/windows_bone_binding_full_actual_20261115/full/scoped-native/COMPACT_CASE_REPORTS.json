@@ -1,0 +1,896 @@
+[
+  {
+    "name": "keiki_tools_chisels-groups-000",
+    "parameters_sha256": "49ec53934dc4bee791a04a5dd5f239b83dfdccbc340bc499078a8bdabebd16f6",
+    "parameters_bytes": 5882,
+    "original_source_sha256": "d8b32165bef2ec4f1c09acd19b3b136b3492b556fcfb9da98fb01826c5e279ff",
+    "GLB_sha256": "a279706ff438d8481a66c8e75770622c5456d50e137800b93fadd9ad0dd52403",
+    "native_bone_count": 31,
+    "jiggle_status": "none",
+    "jiggle_rules": 0,
+    "source_export_crosswalk": null
+  },
+  {
+    "name": "mima_head-ordinary-shape-ui",
+    "parameters_sha256": "8bb8cf16b17bf6f91ff205bc38f73b243104fb9e11d5d871593a34d0cbf72a95",
+    "parameters_bytes": 43883,
+    "original_source_sha256": "b0b128f994dd9939aa5e1978431fcc3afeec84d56ee1f14b0efec96999909224",
+    "GLB_sha256": "e9b21ab5f1171b21d0a7d3e3f83e5341f6b297516d09582e49c0283dfe10d8da",
+    "native_bone_count": 229,
+    "jiggle_status": "none",
+    "jiggle_rules": 0,
+    "source_export_crosswalk": null
+  },
+  {
+    "name": "junko_hair-default-no-appearance",
+    "parameters_sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed",
+    "parameters_bytes": 159684,
+    "original_source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "GLB_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "native_bone_count": 69,
+    "jiggle_status": "retained_inert",
+    "jiggle_rules": 49,
+    "source_export_crosswalk": {
+      "format": "studio_source_bone_crosswalk_1",
+      "status": "retained_inert",
+      "applied": false,
+      "runtime_binding": "unattempted",
+      "native_solver": "not_implemented",
+      "profile": "junko_hair_mdl49_fe242_blender51_1",
+      "sourceio_revision": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+      "sourceio_source_catalogue_sha256": "c0af616105081b79574eb863e81d982581cbb33477749c1d0103a4bd6570b4f3",
+      "exporter_source_catalogue_sha256": "c61e89711f16062247db3ab5c6806d1f0dd06c306083556c5d4841b2f195be3b",
+      "original_source_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "native_mdl_sha256": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+      "glb_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+      "native_bone_catalogue_sha256": "9dc5cf68221b64b0a170e7dd764e58c6856b60d71bbc79caa93b780fa226c4f2",
+      "jiggle_wire_sha256": "34230c89c7cda4417a0f142b375f26fbb5cf15a7faf4d98b5424acd0bec621c2",
+      "source_scale": 0.01905,
+      "native_bone_count": 69,
+      "bones": [
+        {
+          "native_index": 0,
+          "native_name": "ParentNode",
+          "native_parent_index": -1,
+          "gltf_node_index": 68,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 0
+            }
+          ]
+        },
+        {
+          "native_index": 1,
+          "native_name": "bip_pelvis",
+          "native_parent_index": 0,
+          "gltf_node_index": 67,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 1
+            }
+          ]
+        },
+        {
+          "native_index": 2,
+          "native_name": "bip_spine_0",
+          "native_parent_index": 1,
+          "gltf_node_index": 66,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 2
+            }
+          ]
+        },
+        {
+          "native_index": 3,
+          "native_name": "bip_spine_1",
+          "native_parent_index": 2,
+          "gltf_node_index": 65,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 3
+            }
+          ]
+        },
+        {
+          "native_index": 4,
+          "native_name": "bip_neck",
+          "native_parent_index": 3,
+          "gltf_node_index": 64,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 4
+            }
+          ]
+        },
+        {
+          "native_index": 5,
+          "native_name": "bip_head",
+          "native_parent_index": 4,
+          "gltf_node_index": 63,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 5
+            }
+          ]
+        },
+        {
+          "native_index": 6,
+          "native_name": "Head++(HairParent)",
+          "native_parent_index": 5,
+          "gltf_node_index": 62,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 6
+            }
+          ]
+        },
+        {
+          "native_index": 7,
+          "native_name": "HairParent",
+          "native_parent_index": 6,
+          "gltf_node_index": 50,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 7
+            }
+          ]
+        },
+        {
+          "native_index": 8,
+          "native_name": "FrontHair1",
+          "native_parent_index": 7,
+          "gltf_node_index": 0,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 8
+            }
+          ]
+        },
+        {
+          "native_index": 9,
+          "native_name": "FrontHair2",
+          "native_parent_index": 7,
+          "gltf_node_index": 1,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 9
+            }
+          ]
+        },
+        {
+          "native_index": 10,
+          "native_name": "FrontHair3",
+          "native_parent_index": 7,
+          "gltf_node_index": 2,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 10
+            }
+          ]
+        },
+        {
+          "native_index": 11,
+          "native_name": "FrontHair4",
+          "native_parent_index": 7,
+          "gltf_node_index": 3,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 11
+            }
+          ]
+        },
+        {
+          "native_index": 12,
+          "native_name": "FrontHair5",
+          "native_parent_index": 7,
+          "gltf_node_index": 4,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 12
+            }
+          ]
+        },
+        {
+          "native_index": 13,
+          "native_name": "FrontHair6",
+          "native_parent_index": 7,
+          "gltf_node_index": 5,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 13
+            }
+          ]
+        },
+        {
+          "native_index": 14,
+          "native_name": "FrontHair7",
+          "native_parent_index": 7,
+          "gltf_node_index": 6,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 14
+            }
+          ]
+        },
+        {
+          "native_index": 15,
+          "native_name": "FrontHair8",
+          "native_parent_index": 7,
+          "gltf_node_index": 7,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 15
+            }
+          ]
+        },
+        {
+          "native_index": 16,
+          "native_name": "FrontHair9",
+          "native_parent_index": 7,
+          "gltf_node_index": 8,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 16
+            }
+          ]
+        },
+        {
+          "native_index": 17,
+          "native_name": "Side1Steps-1_L",
+          "native_parent_index": 7,
+          "gltf_node_index": 10,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 17
+            }
+          ]
+        },
+        {
+          "native_index": 18,
+          "native_name": "Side2Steps-1_L",
+          "native_parent_index": 17,
+          "gltf_node_index": 9,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 18
+            }
+          ]
+        },
+        {
+          "native_index": 19,
+          "native_name": "Side1Steps-1_R",
+          "native_parent_index": 7,
+          "gltf_node_index": 12,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 19
+            }
+          ]
+        },
+        {
+          "native_index": 20,
+          "native_name": "Side2Steps-1_R",
+          "native_parent_index": 19,
+          "gltf_node_index": 11,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 20
+            }
+          ]
+        },
+        {
+          "native_index": 21,
+          "native_name": "Side1Steps-2_L",
+          "native_parent_index": 7,
+          "gltf_node_index": 13,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 21
+            }
+          ]
+        },
+        {
+          "native_index": 22,
+          "native_name": "Side1Steps-2_R",
+          "native_parent_index": 7,
+          "gltf_node_index": 14,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 22
+            }
+          ]
+        },
+        {
+          "native_index": 23,
+          "native_name": "Side1Steps-3_L",
+          "native_parent_index": 7,
+          "gltf_node_index": 15,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 23
+            }
+          ]
+        },
+        {
+          "native_index": 24,
+          "native_name": "Side1Steps-3_R",
+          "native_parent_index": 7,
+          "gltf_node_index": 16,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 24
+            }
+          ]
+        },
+        {
+          "native_index": 25,
+          "native_name": "1Steps-1_L",
+          "native_parent_index": 7,
+          "gltf_node_index": 19,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 25
+            }
+          ]
+        },
+        {
+          "native_index": 26,
+          "native_name": "2Steps-1_L",
+          "native_parent_index": 25,
+          "gltf_node_index": 18,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 26
+            }
+          ]
+        },
+        {
+          "native_index": 27,
+          "native_name": "3Steps-1_L",
+          "native_parent_index": 26,
+          "gltf_node_index": 17,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 27
+            }
+          ]
+        },
+        {
+          "native_index": 28,
+          "native_name": "1Steps-1_R",
+          "native_parent_index": 7,
+          "gltf_node_index": 22,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 28
+            }
+          ]
+        },
+        {
+          "native_index": 29,
+          "native_name": "2Steps-1_R",
+          "native_parent_index": 28,
+          "gltf_node_index": 21,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 29
+            }
+          ]
+        },
+        {
+          "native_index": 30,
+          "native_name": "3Steps-1_R",
+          "native_parent_index": 29,
+          "gltf_node_index": 20,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 30
+            }
+          ]
+        },
+        {
+          "native_index": 31,
+          "native_name": "MiddleCenter1Steps-2",
+          "native_parent_index": 7,
+          "gltf_node_index": 25,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 31
+            }
+          ]
+        },
+        {
+          "native_index": 32,
+          "native_name": "MiddleCenter2Steps-2",
+          "native_parent_index": 31,
+          "gltf_node_index": 24,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 32
+            }
+          ]
+        },
+        {
+          "native_index": 33,
+          "native_name": "MiddleCenter3Steps-2",
+          "native_parent_index": 32,
+          "gltf_node_index": 23,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 33
+            }
+          ]
+        },
+        {
+          "native_index": 34,
+          "native_name": "1Steps-3_L",
+          "native_parent_index": 7,
+          "gltf_node_index": 29,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 34
+            }
+          ]
+        },
+        {
+          "native_index": 35,
+          "native_name": "2Steps-3_L",
+          "native_parent_index": 34,
+          "gltf_node_index": 28,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 35
+            }
+          ]
+        },
+        {
+          "native_index": 36,
+          "native_name": "3Steps-3_L",
+          "native_parent_index": 35,
+          "gltf_node_index": 27,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 36
+            }
+          ]
+        },
+        {
+          "native_index": 37,
+          "native_name": "4Steps-3_L",
+          "native_parent_index": 36,
+          "gltf_node_index": 26,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 37
+            }
+          ]
+        },
+        {
+          "native_index": 38,
+          "native_name": "1Steps-3_R",
+          "native_parent_index": 7,
+          "gltf_node_index": 33,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 38
+            }
+          ]
+        },
+        {
+          "native_index": 39,
+          "native_name": "2Steps-3_R",
+          "native_parent_index": 38,
+          "gltf_node_index": 32,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 39
+            }
+          ]
+        },
+        {
+          "native_index": 40,
+          "native_name": "3Steps-3_R",
+          "native_parent_index": 39,
+          "gltf_node_index": 31,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 40
+            }
+          ]
+        },
+        {
+          "native_index": 41,
+          "native_name": "4Steps-3_R",
+          "native_parent_index": 40,
+          "gltf_node_index": 30,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 41
+            }
+          ]
+        },
+        {
+          "native_index": 42,
+          "native_name": "MiddleCenter1Steps-4",
+          "native_parent_index": 7,
+          "gltf_node_index": 37,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 42
+            }
+          ]
+        },
+        {
+          "native_index": 43,
+          "native_name": "MiddleCenter2Steps-4",
+          "native_parent_index": 42,
+          "gltf_node_index": 36,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 43
+            }
+          ]
+        },
+        {
+          "native_index": 44,
+          "native_name": "MiddleCenter3Steps-4",
+          "native_parent_index": 43,
+          "gltf_node_index": 35,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 44
+            }
+          ]
+        },
+        {
+          "native_index": 45,
+          "native_name": "MiddleCenter4Steps-4",
+          "native_parent_index": 44,
+          "gltf_node_index": 34,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 45
+            }
+          ]
+        },
+        {
+          "native_index": 46,
+          "native_name": "1Steps-5_L",
+          "native_parent_index": 7,
+          "gltf_node_index": 41,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 46
+            }
+          ]
+        },
+        {
+          "native_index": 47,
+          "native_name": "2Steps-5_L",
+          "native_parent_index": 46,
+          "gltf_node_index": 40,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 47
+            }
+          ]
+        },
+        {
+          "native_index": 48,
+          "native_name": "3Steps-5_L",
+          "native_parent_index": 47,
+          "gltf_node_index": 39,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 48
+            }
+          ]
+        },
+        {
+          "native_index": 49,
+          "native_name": "4Steps-5_L",
+          "native_parent_index": 48,
+          "gltf_node_index": 38,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 49
+            }
+          ]
+        },
+        {
+          "native_index": 50,
+          "native_name": "1Steps-5_R",
+          "native_parent_index": 7,
+          "gltf_node_index": 45,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 50
+            }
+          ]
+        },
+        {
+          "native_index": 51,
+          "native_name": "2Steps-5_R",
+          "native_parent_index": 50,
+          "gltf_node_index": 44,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 51
+            }
+          ]
+        },
+        {
+          "native_index": 52,
+          "native_name": "3Steps-5_R",
+          "native_parent_index": 51,
+          "gltf_node_index": 43,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 52
+            }
+          ]
+        },
+        {
+          "native_index": 53,
+          "native_name": "4Steps-5_R",
+          "native_parent_index": 52,
+          "gltf_node_index": 42,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 53
+            }
+          ]
+        },
+        {
+          "native_index": 54,
+          "native_name": "MiddleCenter1Steps-6",
+          "native_parent_index": 7,
+          "gltf_node_index": 49,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 54
+            }
+          ]
+        },
+        {
+          "native_index": 55,
+          "native_name": "MiddleCenter2Steps-6",
+          "native_parent_index": 54,
+          "gltf_node_index": 48,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 55
+            }
+          ]
+        },
+        {
+          "native_index": 56,
+          "native_name": "MiddleCenter3Steps-6",
+          "native_parent_index": 55,
+          "gltf_node_index": 47,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 56
+            }
+          ]
+        },
+        {
+          "native_index": 57,
+          "native_name": "MiddleCenter4Steps-6",
+          "native_parent_index": 56,
+          "gltf_node_index": 46,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 57
+            }
+          ]
+        },
+        {
+          "native_index": 58,
+          "native_name": "Hat",
+          "native_parent_index": 6,
+          "gltf_node_index": 61,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 58
+            }
+          ]
+        },
+        {
+          "native_index": 59,
+          "native_name": "bip_Gathering_L",
+          "native_parent_index": 58,
+          "gltf_node_index": 55,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 59
+            }
+          ]
+        },
+        {
+          "native_index": 60,
+          "native_name": "Gathering1_L",
+          "native_parent_index": 59,
+          "gltf_node_index": 54,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 60
+            }
+          ]
+        },
+        {
+          "native_index": 61,
+          "native_name": "Gathering2_L",
+          "native_parent_index": 60,
+          "gltf_node_index": 53,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 61
+            }
+          ]
+        },
+        {
+          "native_index": 62,
+          "native_name": "Gathering3_L",
+          "native_parent_index": 61,
+          "gltf_node_index": 52,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 62
+            }
+          ]
+        },
+        {
+          "native_index": 63,
+          "native_name": "Gathering4_L",
+          "native_parent_index": 62,
+          "gltf_node_index": 51,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 63
+            }
+          ]
+        },
+        {
+          "native_index": 64,
+          "native_name": "bip_Gathering_R",
+          "native_parent_index": 58,
+          "gltf_node_index": 60,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 64
+            }
+          ]
+        },
+        {
+          "native_index": 65,
+          "native_name": "Gathering1_R",
+          "native_parent_index": 64,
+          "gltf_node_index": 59,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 65
+            }
+          ]
+        },
+        {
+          "native_index": 66,
+          "native_name": "Gathering2_R",
+          "native_parent_index": 65,
+          "gltf_node_index": 58,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 66
+            }
+          ]
+        },
+        {
+          "native_index": 67,
+          "native_name": "Gathering3_R",
+          "native_parent_index": 66,
+          "gltf_node_index": 57,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 67
+            }
+          ]
+        },
+        {
+          "native_index": 68,
+          "native_name": "Gathering4_R",
+          "native_parent_index": 67,
+          "gltf_node_index": 56,
+          "skin_memberships": [
+            {
+              "skin_index": 0,
+              "joint_slot": 68
+            }
+          ]
+        }
+      ],
+      "max_rest_matrix_error": 5.668355022803162e-06,
+      "observed_proof_sha256": "fe2e230b13e571942bf0cf88e0702c42b271e083394957f1437f38e03c247054",
+      "proof_sha256": "f8ba0c579bc4ca193ddd7e35f8d5c712eb47980f150e33abce7d35bb2d3b9a12"
+    }
+  },
+  {
+    "name": "multi_skin_glove-default-no-appearance",
+    "parameters_sha256": "fdc76d4b0a576e083df09dceb554a2b97866f0d538ca90ec76c2ea74d536072c",
+    "parameters_bytes": 8275,
+    "original_source_sha256": "44cece1f44dfc3d7b32b91b5acfdae53ec9f6f90a0220a422ace92e323da7b32",
+    "GLB_sha256": "2c0036cf3986ce3e8d53b665108c482d1afa7862cbc14989c4f2f9eb15dc1c11",
+    "native_bone_count": 66,
+    "jiggle_status": "none",
+    "jiggle_rules": 0,
+    "source_export_crosswalk": null
+  }
+]

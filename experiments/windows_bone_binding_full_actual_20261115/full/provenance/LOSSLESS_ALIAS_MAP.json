@@ -1,0 +1,2781 @@
+{
+  "format": "has_canonical_sfm_lossless_metadata_aliases_1",
+  "original_indices": {
+    "summary": {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\actual-summary",
+      "sha256": "2b64fca141bf62b18b6bc12923ba6185151a059cd1b0b25a1644c52314c30911",
+      "retained_as": "provenance/summary-original-INDEX.json"
+    },
+    "receipt_audit": {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit",
+      "sha256": "d6e5574817b4c8ae948c08d8a1f0867f5810c4c781b8db392034b9da709c4867",
+      "retained_as": "provenance/receipt_audit-original-INDEX.json"
+    }
+  },
+  "receipt_audit_files": [
+    {
+      "original_relative_path": "audit_receipts.py",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\audit_receipts.py",
+      "raw_bytes": 13347,
+      "raw_sha256": "93f0e12555627a4d82ed7b64a912a585023232659511f441ea442fffb5a53056",
+      "consolidated_path": "recipe/audit_receipts.py",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 13347,
+        "sha256": "93f0e12555627a4d82ed7b64a912a585023232659511f441ea442fffb5a53056"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "authoritative-host-terminal.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\authoritative-host-terminal.json",
+      "raw_bytes": 896,
+      "raw_sha256": "0737252b2b29c95392fc39b0af6d89040c7ba9fc8151bc5a97c90bbdc0c422d6",
+      "consolidated_path": "closure/authoritative-host-terminal.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 896,
+        "sha256": "0737252b2b29c95392fc39b0af6d89040c7ba9fc8151bc5a97c90bbdc0c422d6"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "authoritative-host-termination.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\authoritative-host-termination.json",
+      "raw_bytes": 731,
+      "raw_sha256": "c2a0f1b9027baeb45d0648708da2e6c87a77c2a91841a84a0241b70830674dba",
+      "consolidated_path": "closure/host-proof.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 731,
+        "sha256": "c2a0f1b9027baeb45d0648708da2e6c87a77c2a91841a84a0241b70830674dba"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "coordinator-children-observed.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\coordinator-children-observed.json",
+      "raw_bytes": 623,
+      "raw_sha256": "bc9d1b6524809b85db2127ed7e8c19b037ff3a457d910e3928c97a487ecae96e",
+      "consolidated_path": "closure/coordinator-children-observed.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 623,
+        "sha256": "bc9d1b6524809b85db2127ed7e8c19b037ff3a457d910e3928c97a487ecae96e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "finalize_index.py",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\finalize_index.py",
+      "raw_bytes": 4434,
+      "raw_sha256": "3f4c6e585fa5568356a35c0ca10d0074884c6e86a8d4ca52001c7dbca9776f1f",
+      "consolidated_path": "recipe/finalize_receipt_index.py",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 4434,
+        "sha256": "3f4c6e585fa5568356a35c0ca10d0074884c6e86a8d4ca52001c7dbca9776f1f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "full-verification.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\full-verification.json",
+      "raw_bytes": 2311687,
+      "raw_sha256": "be5e8b012378b46812195182302e5f3ed17c2b9aa5d8540834d0b7e1089f6cc0",
+      "consolidated_path": "verification.json.gz",
+      "recover": "gzip_decode",
+      "consolidated_file": {
+        "bytes": 870733,
+        "sha256": "cf6eba5fb34dbebd29d5b4f423abdf9fa807ea30f92cc5cbbd76ac331b5f3a38"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "input-hashes.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\input-hashes.json",
+      "raw_bytes": 2426,
+      "raw_sha256": "0c8ddbb1c317c0f4aa27c5ec6d021c2c1bd0b6da982ae2a932245fe32f15e405",
+      "consolidated_path": "receipt-audit/input-hashes.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 2426,
+        "sha256": "0c8ddbb1c317c0f4aa27c5ec6d021c2c1bd0b6da982ae2a932245fe32f15e405"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/2dabc88d9ddc-private-desktop.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\2dabc88d9ddc-private-desktop.json",
+      "raw_bytes": 491,
+      "raw_sha256": "c325952b02b799db0ff9e4c16ab42885b9d9f80c3514ab18cf77eae187b0c9c2",
+      "consolidated_path": "closure/physical-receipts/nested/2dabc88d9ddc-private-desktop.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 491,
+        "sha256": "c325952b02b799db0ff9e4c16ab42885b9d9f80c3514ab18cf77eae187b0c9c2"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/309f101bd708-private-receipt.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\309f101bd708-private-receipt.json",
+      "raw_bytes": 385,
+      "raw_sha256": "0e74bffad24b693025b001a4c28e782a7d32707d8346536d50dd89724f69d13d",
+      "consolidated_path": "closure/physical-receipts/nested/309f101bd708-private-receipt.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 385,
+        "sha256": "0e74bffad24b693025b001a4c28e782a7d32707d8346536d50dd89724f69d13d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/327483f83f49-native_readback_lifecycle_smoke_f9fa9980435e4179a2a329c503f882e1.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\327483f83f49-native_readback_lifecycle_smoke_f9fa9980435e4179a2a329c503f882e1.json",
+      "raw_bytes": 388,
+      "raw_sha256": "90044490d130849f064e9828f84e85d50d08eeb732ef1dd0d6a0ce7c00d14217",
+      "consolidated_path": "closure/physical-receipts/nested/327483f83f49-native_readback_lifecycle_smoke_f9fa9980435e4179a2a329c503f882e1.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "90044490d130849f064e9828f84e85d50d08eeb732ef1dd0d6a0ce7c00d14217"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/51eb7d9afa09-private-receipt.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\51eb7d9afa09-private-receipt.json",
+      "raw_bytes": 387,
+      "raw_sha256": "b9e2a294c8722007032ba9ffe33ce1c873518f6a2e64bf2adc3adb1987940bfa",
+      "consolidated_path": "closure/physical-receipts/nested/51eb7d9afa09-private-receipt.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "b9e2a294c8722007032ba9ffe33ce1c873518f6a2e64bf2adc3adb1987940bfa"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/5aa7466d346b-private-receipt.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\5aa7466d346b-private-receipt.json",
+      "raw_bytes": 388,
+      "raw_sha256": "2861244db656a6896a2411b3854a621ef40904179379f2ca8e217397cb9da8e3",
+      "consolidated_path": "closure/physical-receipts/nested/5aa7466d346b-private-receipt.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "2861244db656a6896a2411b3854a621ef40904179379f2ca8e217397cb9da8e3"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/5ef3b7ba68dd-private-receipt.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\5ef3b7ba68dd-private-receipt.json",
+      "raw_bytes": 388,
+      "raw_sha256": "33bb4fcb6155c0ba3e2c32438fb02e1d5b434a0f9cc0448b60a5918a415ca33c",
+      "consolidated_path": "closure/physical-receipts/nested/5ef3b7ba68dd-private-receipt.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "33bb4fcb6155c0ba3e2c32438fb02e1d5b434a0f9cc0448b60a5918a415ca33c"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/6404c05e7746-private-receipt.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\6404c05e7746-private-receipt.json",
+      "raw_bytes": 387,
+      "raw_sha256": "8c74edd18164e299036095cb64c9ebefa917c80ae147f1cdb4daad0ed6f876ae",
+      "consolidated_path": "closure/physical-receipts/nested/6404c05e7746-private-receipt.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "8c74edd18164e299036095cb64c9ebefa917c80ae147f1cdb4daad0ed6f876ae"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/7557b6ae0445-private-receipt.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\7557b6ae0445-private-receipt.json",
+      "raw_bytes": 388,
+      "raw_sha256": "008f6735d47fb7d7805169d24652873bc369113c9f881475b1c46c83cd5959e8",
+      "consolidated_path": "closure/physical-receipts/nested/7557b6ae0445-private-receipt.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "008f6735d47fb7d7805169d24652873bc369113c9f881475b1c46c83cd5959e8"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/779692621617-private-desktop.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\779692621617-private-desktop.json",
+      "raw_bytes": 428,
+      "raw_sha256": "8f853f382d060ed351d2a33403af44fd49fc4d72f956599c95268310a21961fe",
+      "consolidated_path": "closure/physical-receipts/nested/779692621617-private-desktop.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 428,
+        "sha256": "8f853f382d060ed351d2a33403af44fd49fc4d72f956599c95268310a21961fe"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/783179dbbb45-studio_afafae3764a74d1db63a3c1c902a927c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\783179dbbb45-studio_afafae3764a74d1db63a3c1c902a927c.json",
+      "raw_bytes": 387,
+      "raw_sha256": "8df86cf659b6f5e03d818daeea93c21b844c3006eeede05e54ddb5bf4f1fc5d0",
+      "consolidated_path": "closure/physical-receipts/nested/783179dbbb45-studio_afafae3764a74d1db63a3c1c902a927c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "8df86cf659b6f5e03d818daeea93c21b844c3006eeede05e54ddb5bf4f1fc5d0"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/7f9ade6f7410-private-receipt.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\7f9ade6f7410-private-receipt.json",
+      "raw_bytes": 388,
+      "raw_sha256": "6cb2ceeef86b381594c49a6b952f61f1c6d15d8b490df0b77959c6c9a4ede90d",
+      "consolidated_path": "closure/physical-receipts/nested/7f9ade6f7410-private-receipt.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "6cb2ceeef86b381594c49a6b952f61f1c6d15d8b490df0b77959c6c9a4ede90d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/a565d042ff28-private-receipt.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\a565d042ff28-private-receipt.json",
+      "raw_bytes": 388,
+      "raw_sha256": "d0fca674d06ad981bfeac86a58328db73f43aa964bf759b0547b96324822d1d5",
+      "consolidated_path": "closure/physical-receipts/nested/a565d042ff28-private-receipt.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "d0fca674d06ad981bfeac86a58328db73f43aa964bf759b0547b96324822d1d5"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/afd601123702-studio_64d3103ba2c54c27980414c3eacc73ec.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\afd601123702-studio_64d3103ba2c54c27980414c3eacc73ec.json",
+      "raw_bytes": 387,
+      "raw_sha256": "21840dc237fdbc8bc4ef2be32aff03b0b739744f8db346d9da10aca43163e60f",
+      "consolidated_path": "closure/physical-receipts/nested/afd601123702-studio_64d3103ba2c54c27980414c3eacc73ec.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "21840dc237fdbc8bc4ef2be32aff03b0b739744f8db346d9da10aca43163e60f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/nested/c7edcb7f75c6-world_selection_teardown_1bf9e9c2ab9d422b95edde478edb49c8.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\nested\\c7edcb7f75c6-world_selection_teardown_1bf9e9c2ab9d422b95edde478edb49c8.json",
+      "raw_bytes": 387,
+      "raw_sha256": "1f354c7678b931903d77a671c6b01253835cf5183db5d20a4aaeb730fc985778",
+      "consolidated_path": "closure/physical-receipts/nested/c7edcb7f75c6-world_selection_teardown_1bf9e9c2ab9d422b95edde478edb49c8.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "1f354c7678b931903d77a671c6b01253835cf5183db5d20a4aaeb730fc985778"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/011a7eef499a-multi_audio_smoke_63b6a7ab4f4543f09682c9ffdc58131b.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\011a7eef499a-multi_audio_smoke_63b6a7ab4f4543f09682c9ffdc58131b.json",
+      "raw_bytes": 386,
+      "raw_sha256": "9a2ac648597270666dae7edf0a8ca51a71ee243af343db1fcd58327797a751f4",
+      "consolidated_path": "closure/physical-receipts/root/011a7eef499a-multi_audio_smoke_63b6a7ab4f4543f09682c9ffdc58131b.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 386,
+        "sha256": "9a2ac648597270666dae7edf0a8ca51a71ee243af343db1fcd58327797a751f4"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/0414fb8b21f1-mmd_groups_smoke_dbaf6233be4b4b9683492f11fb67a13d.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\0414fb8b21f1-mmd_groups_smoke_dbaf6233be4b4b9683492f11fb67a13d.json",
+      "raw_bytes": 387,
+      "raw_sha256": "8fb30e381ec14c6fd41a3b19a4121b2bb693a000226c476a7c62789863f14dc6",
+      "consolidated_path": "closure/physical-receipts/root/0414fb8b21f1-mmd_groups_smoke_dbaf6233be4b4b9683492f11fb67a13d.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "8fb30e381ec14c6fd41a3b19a4121b2bb693a000226c476a7c62789863f14dc6"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/04ba80c8156c-expression_presets_smoke_27d1a18d944e4f9c962b09636fa806fb.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\04ba80c8156c-expression_presets_smoke_27d1a18d944e4f9c962b09636fa806fb.json",
+      "raw_bytes": 388,
+      "raw_sha256": "207c8b069a3137c9e368b45548e05c8d6bfc7598a3445452c6d9d51db5472c1f",
+      "consolidated_path": "closure/physical-receipts/root/04ba80c8156c-expression_presets_smoke_27d1a18d944e4f9c962b09636fa806fb.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "207c8b069a3137c9e368b45548e05c8d6bfc7598a3445452c6d9d51db5472c1f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/0584e31f9776-audio_spike_4369c53601e1420492c073cf7a371c10.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\0584e31f9776-audio_spike_4369c53601e1420492c073cf7a371c10.json",
+      "raw_bytes": 387,
+      "raw_sha256": "e8fc47852dbc780298c28e16f9180585a290cffd7d26fd50159236faf9d5c750",
+      "consolidated_path": "closure/physical-receipts/root/0584e31f9776-audio_spike_4369c53601e1420492c073cf7a371c10.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "e8fc47852dbc780298c28e16f9180585a290cffd7d26fd50159236faf9d5c750"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/058eec504bbf-contact_binding_smoke_8e9666e52d554824b6f6d2ebee6964e0.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\058eec504bbf-contact_binding_smoke_8e9666e52d554824b6f6d2ebee6964e0.json",
+      "raw_bytes": 388,
+      "raw_sha256": "9f769419213a8d227edb531a9299c310e63f0647eb3134361fa4bef1c8e7ef69",
+      "consolidated_path": "closure/physical-receipts/root/058eec504bbf-contact_binding_smoke_8e9666e52d554824b6f6d2ebee6964e0.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "9f769419213a8d227edb531a9299c310e63f0647eb3134361fa4bef1c8e7ef69"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/071d55fea8cd-workspace_docking_smoke_cf5c43db733947f6afc6ddbd77135e17.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\071d55fea8cd-workspace_docking_smoke_cf5c43db733947f6afc6ddbd77135e17.json",
+      "raw_bytes": 388,
+      "raw_sha256": "9133fabb72c63feaa53e55c4be5518cb73f50a8586f9fc28b8110c2696258756",
+      "consolidated_path": "closure/physical-receipts/root/071d55fea8cd-workspace_docking_smoke_cf5c43db733947f6afc6ddbd77135e17.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "9133fabb72c63feaa53e55c4be5518cb73f50a8586f9fc28b8110c2696258756"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/0841e703728f-drawing_history_smoke_a2a5bc8eeaf24735982a4cb66a1c32fa.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\0841e703728f-drawing_history_smoke_a2a5bc8eeaf24735982a4cb66a1c32fa.json",
+      "raw_bytes": 387,
+      "raw_sha256": "c7c422f6493ac2463f26830352fde9c0c73b1869dfa44fc0b43297124dfbf0b0",
+      "consolidated_path": "closure/physical-receipts/root/0841e703728f-drawing_history_smoke_a2a5bc8eeaf24735982a4cb66a1c32fa.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "c7c422f6493ac2463f26830352fde9c0c73b1869dfa44fc0b43297124dfbf0b0"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/0b8b34a6c413-mmd_groups_smoke_396c5b79dfd046489c6bd7e3a3bf8f29.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\0b8b34a6c413-mmd_groups_smoke_396c5b79dfd046489c6bd7e3a3bf8f29.json",
+      "raw_bytes": 388,
+      "raw_sha256": "b518317195128022f4c5bb2c6372b46c32cb4bb7a9f573c3f4fd6f357f679440",
+      "consolidated_path": "closure/physical-receipts/root/0b8b34a6c413-mmd_groups_smoke_396c5b79dfd046489c6bd7e3a3bf8f29.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "b518317195128022f4c5bb2c6372b46c32cb4bb7a9f573c3f4fd6f357f679440"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/0c8faf9745a1-contact_physics_smoke_24a7eeda101c48188835ec0d6183ee0e.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\0c8faf9745a1-contact_physics_smoke_24a7eeda101c48188835ec0d6183ee0e.json",
+      "raw_bytes": 388,
+      "raw_sha256": "a9c53c75744ad8c254727a42123c85162c54f3c01829d0d316a86e577a9da58f",
+      "consolidated_path": "closure/physical-receipts/root/0c8faf9745a1-contact_physics_smoke_24a7eeda101c48188835ec0d6183ee0e.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "a9c53c75744ad8c254727a42123c85162c54f3c01829d0d316a86e577a9da58f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/100e3e00aa10-autokey_smoke_f061b8796d93488a97c84b94b51c2b3e.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\100e3e00aa10-autokey_smoke_f061b8796d93488a97c84b94b51c2b3e.json",
+      "raw_bytes": 388,
+      "raw_sha256": "bca16b84e0845fb225bc274aebdfdb86afb1c16f0eb1828d91eae980af44f4e1",
+      "consolidated_path": "closure/physical-receipts/root/100e3e00aa10-autokey_smoke_f061b8796d93488a97c84b94b51c2b3e.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "bca16b84e0845fb225bc274aebdfdb86afb1c16f0eb1828d91eae980af44f4e1"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/10eda9707d99-shortcut_editor_smoke_ece09819a2764a4d909db40db8071fd0.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\10eda9707d99-shortcut_editor_smoke_ece09819a2764a4d909db40db8071fd0.json",
+      "raw_bytes": 387,
+      "raw_sha256": "6e0f4a9d3833535daa0bd625ad8b6f7409511a6949d0439c82fe31d26a209bde",
+      "consolidated_path": "closure/physical-receipts/root/10eda9707d99-shortcut_editor_smoke_ece09819a2764a4d909db40db8071fd0.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "6e0f4a9d3833535daa0bd625ad8b6f7409511a6949d0439c82fe31d26a209bde"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/123c7cfb00f6-visibility_smoke_60389ea6438c43a49553c9fb11556a45.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\123c7cfb00f6-visibility_smoke_60389ea6438c43a49553c9fb11556a45.json",
+      "raw_bytes": 388,
+      "raw_sha256": "db160cf72805ac5a51601143c01b26699c9ce499c60df9034f1d19b9bb59a502",
+      "consolidated_path": "closure/physical-receipts/root/123c7cfb00f6-visibility_smoke_60389ea6438c43a49553c9fb11556a45.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "db160cf72805ac5a51601143c01b26699c9ce499c60df9034f1d19b9bb59a502"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/13425c642336-contact_selection_smoke_acce8bf5e80b4b9ba7fe8bbb8d28437f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\13425c642336-contact_selection_smoke_acce8bf5e80b4b9ba7fe8bbb8d28437f.json",
+      "raw_bytes": 388,
+      "raw_sha256": "9fc14ee8dc4e222c1f63d69468f98907c59c9b01a7796e4404ce4f8643f2781e",
+      "consolidated_path": "closure/physical-receipts/root/13425c642336-contact_selection_smoke_acce8bf5e80b4b9ba7fe8bbb8d28437f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "9fc14ee8dc4e222c1f63d69468f98907c59c9b01a7796e4404ce4f8643f2781e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/13bf0d2f423a-secondary_motion_smoke_a189e73543a5422ead6f7a26224cff74.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\13bf0d2f423a-secondary_motion_smoke_a189e73543a5422ead6f7a26224cff74.json",
+      "raw_bytes": 387,
+      "raw_sha256": "1233ed359924f24b7e68a22e62f092e9f88f166061b8424e0a54c5576c2e9e77",
+      "consolidated_path": "closure/physical-receipts/root/13bf0d2f423a-secondary_motion_smoke_a189e73543a5422ead6f7a26224cff74.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "1233ed359924f24b7e68a22e62f092e9f88f166061b8424e0a54c5576c2e9e77"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/13f108e37c13-fan_motion_smoke_56fa7707d82c444fa106c6b4da698b31.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\13f108e37c13-fan_motion_smoke_56fa7707d82c444fa106c6b4da698b31.json",
+      "raw_bytes": 387,
+      "raw_sha256": "c821d18b7577822ad3d62762af00b7536486cc953f96a0ac3c83ca6322a6d85e",
+      "consolidated_path": "closure/physical-receipts/root/13f108e37c13-fan_motion_smoke_56fa7707d82c444fa106c6b4da698b31.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "c821d18b7577822ad3d62762af00b7536486cc953f96a0ac3c83ca6322a6d85e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/14c998c1c349-palette_smoke_49413f318dfd4d04a40b9b145833bf2b.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\14c998c1c349-palette_smoke_49413f318dfd4d04a40b9b145833bf2b.json",
+      "raw_bytes": 387,
+      "raw_sha256": "a051805d7d5af4b74adb7bc0b41418a90090bfb849ae7ff1d412bc996e28df02",
+      "consolidated_path": "closure/physical-receipts/root/14c998c1c349-palette_smoke_49413f318dfd4d04a40b9b145833bf2b.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "a051805d7d5af4b74adb7bc0b41418a90090bfb849ae7ff1d412bc996e28df02"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/151ee1a4336f-project_duration_smoke_9e771ff2a50e4178964d9a7149f747a3.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\151ee1a4336f-project_duration_smoke_9e771ff2a50e4178964d9a7149f747a3.json",
+      "raw_bytes": 387,
+      "raw_sha256": "d5aedce2bbd388c1d12d49c52253a7eca7211b6efc003166ddb14c6cd9c92af2",
+      "consolidated_path": "closure/physical-receipts/root/151ee1a4336f-project_duration_smoke_9e771ff2a50e4178964d9a7149f747a3.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "d5aedce2bbd388c1d12d49c52253a7eca7211b6efc003166ddb14c6cd9c92af2"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/1560043445b6-contact_identity_smoke_61b7ed0df71e45cd8160154ef9bb7dfb.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\1560043445b6-contact_identity_smoke_61b7ed0df71e45cd8160154ef9bb7dfb.json",
+      "raw_bytes": 386,
+      "raw_sha256": "0ca750739656d49debd595a734e219c45970aad2d921d28f191ea205bc0c024c",
+      "consolidated_path": "closure/physical-receipts/root/1560043445b6-contact_identity_smoke_61b7ed0df71e45cd8160154ef9bb7dfb.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 386,
+        "sha256": "0ca750739656d49debd595a734e219c45970aad2d921d28f191ea205bc0c024c"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/160449e63646-camera_range_smoke_ec49ba59a250483f9465d442b0eeff37.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\160449e63646-camera_range_smoke_ec49ba59a250483f9465d442b0eeff37.json",
+      "raw_bytes": 388,
+      "raw_sha256": "ceafc61b0668119d1b7ee6275989e9ec5975ba11280887f4bf8db94c8bcf6d27",
+      "consolidated_path": "closure/physical-receipts/root/160449e63646-camera_range_smoke_ec49ba59a250483f9465d442b0eeff37.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "ceafc61b0668119d1b7ee6275989e9ec5975ba11280887f4bf8db94c8bcf6d27"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/1c2d13a12f70-recovery_history_smoke_25edc20aa78d4b02ac11cd77603bf42f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\1c2d13a12f70-recovery_history_smoke_25edc20aa78d4b02ac11cd77603bf42f.json",
+      "raw_bytes": 388,
+      "raw_sha256": "f900ca47a34958f89fd312b8f3bbb999b12ae9c42dee2c485c39462ec01f00c4",
+      "consolidated_path": "closure/physical-receipts/root/1c2d13a12f70-recovery_history_smoke_25edc20aa78d4b02ac11cd77603bf42f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "f900ca47a34958f89fd312b8f3bbb999b12ae9c42dee2c485c39462ec01f00c4"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/1ce60f1d630f-palette_smoke_ac444d5acbd647e0a2d6c457d402bd14.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\1ce60f1d630f-palette_smoke_ac444d5acbd647e0a2d6c457d402bd14.json",
+      "raw_bytes": 387,
+      "raw_sha256": "bd811bddec7dde9a0e1eb6c6325a9bbaf8b2d5b993ca41420048411709d0505b",
+      "consolidated_path": "closure/physical-receipts/root/1ce60f1d630f-palette_smoke_ac444d5acbd647e0a2d6c457d402bd14.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "bd811bddec7dde9a0e1eb6c6325a9bbaf8b2d5b993ca41420048411709d0505b"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/1f678aa2c7fd-drawing_history_smoke_d1c4f86ee5eb4357a1bb05b41d86542a.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\1f678aa2c7fd-drawing_history_smoke_d1c4f86ee5eb4357a1bb05b41d86542a.json",
+      "raw_bytes": 387,
+      "raw_sha256": "dd6cb421d8808a6603da707bf4483584039777aa71891fc951d2e00fdbb9dddc",
+      "consolidated_path": "closure/physical-receipts/root/1f678aa2c7fd-drawing_history_smoke_d1c4f86ee5eb4357a1bb05b41d86542a.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "dd6cb421d8808a6603da707bf4483584039777aa71891fc951d2e00fdbb9dddc"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/20235724c374-brush_pressure_smoke_1cda5abfeed44641842f3a800ed4088a.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\20235724c374-brush_pressure_smoke_1cda5abfeed44641842f3a800ed4088a.json",
+      "raw_bytes": 387,
+      "raw_sha256": "8f6d4dd165533451e099d4fe98beed1335708a9efc617efd006fdd56b71a575d",
+      "consolidated_path": "closure/physical-receipts/root/20235724c374-brush_pressure_smoke_1cda5abfeed44641842f3a800ed4088a.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "8f6d4dd165533451e099d4fe98beed1335708a9efc617efd006fdd56b71a575d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2029fa013535-brush_opacity_smoke_ad1d492ebced427aa1acb8c349730f45.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2029fa013535-brush_opacity_smoke_ad1d492ebced427aa1acb8c349730f45.json",
+      "raw_bytes": 388,
+      "raw_sha256": "96f7dec526a3ea86c4bbcd5178d876b264dc85b22f62cf6b12912648f054b5c3",
+      "consolidated_path": "closure/physical-receipts/root/2029fa013535-brush_opacity_smoke_ad1d492ebced427aa1acb8c349730f45.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "96f7dec526a3ea86c4bbcd5178d876b264dc85b22f62cf6b12912648f054b5c3"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/20d646d2f378-workspace_nested_smoke_84b2be49368849ce8bfd5e982da0d29c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\20d646d2f378-workspace_nested_smoke_84b2be49368849ce8bfd5e982da0d29c.json",
+      "raw_bytes": 388,
+      "raw_sha256": "c350b6d56d1986453feff3820aa391915553db0e30d1144780f174bd1463456f",
+      "consolidated_path": "closure/physical-receipts/root/20d646d2f378-workspace_nested_smoke_84b2be49368849ce8bfd5e982da0d29c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "c350b6d56d1986453feff3820aa391915553db0e30d1144780f174bd1463456f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/226290679998-map_calibration_smoke_fd3a9b67dcae4e1b8b1fd3e66a767c40.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\226290679998-map_calibration_smoke_fd3a9b67dcae4e1b8b1fd3e66a767c40.json",
+      "raw_bytes": 386,
+      "raw_sha256": "7fd6f3194af1fe063b4083adee487f3e199afb8913cd93a86ced8c7138ef16ab",
+      "consolidated_path": "closure/physical-receipts/root/226290679998-map_calibration_smoke_fd3a9b67dcae4e1b8b1fd3e66a767c40.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 386,
+        "sha256": "7fd6f3194af1fe063b4083adee487f3e199afb8913cd93a86ced8c7138ef16ab"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2418723a632d-workspace_docking_smoke_88b4e5135810476a86c2a964435a34ec.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2418723a632d-workspace_docking_smoke_88b4e5135810476a86c2a964435a34ec.json",
+      "raw_bytes": 389,
+      "raw_sha256": "9f84e2947a384d27174dfa66b077dcf65c72bf8ac9ea4d520575a9543de6e7ae",
+      "consolidated_path": "closure/physical-receipts/root/2418723a632d-workspace_docking_smoke_88b4e5135810476a86c2a964435a34ec.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 389,
+        "sha256": "9f84e2947a384d27174dfa66b077dcf65c72bf8ac9ea4d520575a9543de6e7ae"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/24231f4d7083-studio_71d5c8f3900243399be3ca6ae01eeb62.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\24231f4d7083-studio_71d5c8f3900243399be3ca6ae01eeb62.json",
+      "raw_bytes": 387,
+      "raw_sha256": "4f4cefbf1e7814bb0e9d47fd885ba3ab6435ab6f926eb37c4cb1d0e0b1208862",
+      "consolidated_path": "closure/physical-receipts/root/24231f4d7083-studio_71d5c8f3900243399be3ca6ae01eeb62.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "4f4cefbf1e7814bb0e9d47fd885ba3ab6435ab6f926eb37c4cb1d0e0b1208862"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/25677d56e951-shape_animation_smoke_d3fb4285954f4b8392690e755eb1ce17.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\25677d56e951-shape_animation_smoke_d3fb4285954f4b8392690e755eb1ce17.json",
+      "raw_bytes": 387,
+      "raw_sha256": "58fd452ffc82cb3212cd041bc7f594458eaf521249baab4f85950f8846ecf9a0",
+      "consolidated_path": "closure/physical-receipts/root/25677d56e951-shape_animation_smoke_d3fb4285954f4b8392690e755eb1ce17.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "58fd452ffc82cb3212cd041bc7f594458eaf521249baab4f85950f8846ecf9a0"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/25c950bf5189-studio_a2f3f93644cf48b495550c049e17fcef.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\25c950bf5189-studio_a2f3f93644cf48b495550c049e17fcef.json",
+      "raw_bytes": 388,
+      "raw_sha256": "ac65f872f3cdd3afd409a6a5d6a532b1928f2323e46e6120999a7bc08f999f24",
+      "consolidated_path": "closure/physical-receipts/root/25c950bf5189-studio_a2f3f93644cf48b495550c049e17fcef.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "ac65f872f3cdd3afd409a6a5d6a532b1928f2323e46e6120999a7bc08f999f24"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/25f6e7269359-shape_study_smoke_d85f7b2bf7874c40ae4928465b3de5e6.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\25f6e7269359-shape_study_smoke_d85f7b2bf7874c40ae4928465b3de5e6.json",
+      "raw_bytes": 388,
+      "raw_sha256": "3f8e23a7db5529f8fff719eba34141b09f1874e1db4c3c1a22ac7c008c28fb2e",
+      "consolidated_path": "closure/physical-receipts/root/25f6e7269359-shape_study_smoke_d85f7b2bf7874c40ae4928465b3de5e6.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "3f8e23a7db5529f8fff719eba34141b09f1874e1db4c3c1a22ac7c008c28fb2e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2626eaa963eb-multi_audio_smoke_6758272e959c4cd295ea13384952b8d5.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2626eaa963eb-multi_audio_smoke_6758272e959c4cd295ea13384952b8d5.json",
+      "raw_bytes": 388,
+      "raw_sha256": "efb79b8de6f0e459d0b77fbfe358b95e34163dc65e7f0eb5547f9b665c891b89",
+      "consolidated_path": "closure/physical-receipts/root/2626eaa963eb-multi_audio_smoke_6758272e959c4cd295ea13384952b8d5.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "efb79b8de6f0e459d0b77fbfe358b95e34163dc65e7f0eb5547f9b665c891b89"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/28c62f5b5898-live_appearance_smoke_7e06c140bc7d4846b11907e5741fc54c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\28c62f5b5898-live_appearance_smoke_7e06c140bc7d4846b11907e5741fc54c.json",
+      "raw_bytes": 388,
+      "raw_sha256": "175c2b878155fe8635958b3480f13cf813c66d4ba2f82b33881e4609b8c622c8",
+      "consolidated_path": "closure/physical-receipts/root/28c62f5b5898-live_appearance_smoke_7e06c140bc7d4846b11907e5741fc54c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "175c2b878155fe8635958b3480f13cf813c66d4ba2f82b33881e4609b8c622c8"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2a5716e28d00-spikes_968634b04c79499da7abf56eaeeced05.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2a5716e28d00-spikes_968634b04c79499da7abf56eaeeced05.json",
+      "raw_bytes": 387,
+      "raw_sha256": "db1793d8fdfef4181adb0086b02e7250997ea0a260283ca8c4d4611b3ecf8dd0",
+      "consolidated_path": "closure/physical-receipts/root/2a5716e28d00-spikes_968634b04c79499da7abf56eaeeced05.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "db1793d8fdfef4181adb0086b02e7250997ea0a260283ca8c4d4611b3ecf8dd0"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2a913bbdac74-helper_morphs_render_a7a889a21a9f4ce1b5dcf131d57cfc5d.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2a913bbdac74-helper_morphs_render_a7a889a21a9f4ce1b5dcf131d57cfc5d.json",
+      "raw_bytes": 387,
+      "raw_sha256": "c20074a0ac375b237e747cfb1ca4e5220d42971f5867ce814c14149f80c78119",
+      "consolidated_path": "closure/physical-receipts/root/2a913bbdac74-helper_morphs_render_a7a889a21a9f4ce1b5dcf131d57cfc5d.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "c20074a0ac375b237e747cfb1ca4e5220d42971f5867ce814c14149f80c78119"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2c18492646a4-studio_6a8958293697489bb2767a331a643087.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2c18492646a4-studio_6a8958293697489bb2767a331a643087.json",
+      "raw_bytes": 387,
+      "raw_sha256": "e652b37a283057df5813afd661c1ff3a14ab26f21f46dc9115846f1aa6e004a2",
+      "consolidated_path": "closure/physical-receipts/root/2c18492646a4-studio_6a8958293697489bb2767a331a643087.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "e652b37a283057df5813afd661c1ff3a14ab26f21f46dc9115846f1aa6e004a2"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2cb83f01331c-object_timing_smoke_40196509c4124640be432d89c3cb78c4.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2cb83f01331c-object_timing_smoke_40196509c4124640be432d89c3cb78c4.json",
+      "raw_bytes": 388,
+      "raw_sha256": "bb5e1e78902778385da2f41f2d32cb5569bcf592d7f88b6ece0bb383c3be3800",
+      "consolidated_path": "closure/physical-receipts/root/2cb83f01331c-object_timing_smoke_40196509c4124640be432d89c3cb78c4.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "bb5e1e78902778385da2f41f2d32cb5569bcf592d7f88b6ece0bb383c3be3800"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2d3202b3b0fa-shape_comparison_smoke_6a3d78ee690f49919478ccad7def0058.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2d3202b3b0fa-shape_comparison_smoke_6a3d78ee690f49919478ccad7def0058.json",
+      "raw_bytes": 387,
+      "raw_sha256": "ddc083f2f255f861409860990502cd4eeb37e0def0ae3990c99e6b8e30b8af2f",
+      "consolidated_path": "closure/physical-receipts/root/2d3202b3b0fa-shape_comparison_smoke_6a3d78ee690f49919478ccad7def0058.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "ddc083f2f255f861409860990502cd4eeb37e0def0ae3990c99e6b8e30b8af2f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/2f327eff4f48-palette_smoke_31ad91fb9a064f2b9512fae2a79cd8c7.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\2f327eff4f48-palette_smoke_31ad91fb9a064f2b9512fae2a79cd8c7.json",
+      "raw_bytes": 387,
+      "raw_sha256": "41b46f3cb2e777c9f874b1657f190372d4a5aeda0946b17bd8764642e13e142b",
+      "consolidated_path": "closure/physical-receipts/root/2f327eff4f48-palette_smoke_31ad91fb9a064f2b9512fae2a79cd8c7.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "41b46f3cb2e777c9f874b1657f190372d4a5aeda0946b17bd8764642e13e142b"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/34cd38c459dd-krita_import_smoke_f4487b4fef2e480abc8a44fe02bf5554.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\34cd38c459dd-krita_import_smoke_f4487b4fef2e480abc8a44fe02bf5554.json",
+      "raw_bytes": 387,
+      "raw_sha256": "4a943568a7d8e4cab014856552200e3b3b57a01d79ea9b003c69953b8136562d",
+      "consolidated_path": "closure/physical-receipts/root/34cd38c459dd-krita_import_smoke_f4487b4fef2e480abc8a44fe02bf5554.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "4a943568a7d8e4cab014856552200e3b3b57a01d79ea9b003c69953b8136562d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/3516a1fe7b53-studio_2619ee8390874264a958c80eec5f9e94.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\3516a1fe7b53-studio_2619ee8390874264a958c80eec5f9e94.json",
+      "raw_bytes": 387,
+      "raw_sha256": "64fac6775fa1984ae6d102b12100bf52de7f9449cfa2f67291edfc7f7a1bd77d",
+      "consolidated_path": "closure/physical-receipts/root/3516a1fe7b53-studio_2619ee8390874264a958c80eec5f9e94.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "64fac6775fa1984ae6d102b12100bf52de7f9449cfa2f67291edfc7f7a1bd77d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/369a4e2a72b7-shortcut_editor_smoke_8595be045e5d409fab7d11e7b3a8f5cf.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\369a4e2a72b7-shortcut_editor_smoke_8595be045e5d409fab7d11e7b3a8f5cf.json",
+      "raw_bytes": 387,
+      "raw_sha256": "f765d4a43cab1de04a45c52fbdb793de3d83c57a6a5cd3fc9def7a2b8595334d",
+      "consolidated_path": "closure/physical-receipts/root/369a4e2a72b7-shortcut_editor_smoke_8595be045e5d409fab7d11e7b3a8f5cf.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "f765d4a43cab1de04a45c52fbdb793de3d83c57a6a5cd3fc9def7a2b8595334d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/385afb284992-studio_b41e95687d6c4ab490a242d669ba4239.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\385afb284992-studio_b41e95687d6c4ab490a242d669ba4239.json",
+      "raw_bytes": 387,
+      "raw_sha256": "1c2eb0a78e0d4ca71f348306040a450626140273619ee08aea7ee9f72bfa9f50",
+      "consolidated_path": "closure/physical-receipts/root/385afb284992-studio_b41e95687d6c4ab490a242d669ba4239.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "1c2eb0a78e0d4ca71f348306040a450626140273619ee08aea7ee9f72bfa9f50"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/39d6cf253b22-first_movie_smoke_2255de7eabf24e0ab2831b28f267c622.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\39d6cf253b22-first_movie_smoke_2255de7eabf24e0ab2831b28f267c622.json",
+      "raw_bytes": 388,
+      "raw_sha256": "42886d0b51171975052a598fec8626890e6999a8d51765506504e8736db25404",
+      "consolidated_path": "closure/physical-receipts/root/39d6cf253b22-first_movie_smoke_2255de7eabf24e0ab2831b28f267c622.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "42886d0b51171975052a598fec8626890e6999a8d51765506504e8736db25404"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/3a46d23c2ad6-onion_smoke_dd5cb8f3582a4c62b927b26fe690dca4.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\3a46d23c2ad6-onion_smoke_dd5cb8f3582a4c62b927b26fe690dca4.json",
+      "raw_bytes": 388,
+      "raw_sha256": "3e36974e3f628855dcc628073420b2534a90c74722dd8cced855b35746804572",
+      "consolidated_path": "closure/physical-receipts/root/3a46d23c2ad6-onion_smoke_dd5cb8f3582a4c62b927b26fe690dca4.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "3e36974e3f628855dcc628073420b2534a90c74722dd8cced855b35746804572"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/3a5333422ecf-contact_viewport_read_c914bfd6c06249b7bcf2d03d99db9843.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\3a5333422ecf-contact_viewport_read_c914bfd6c06249b7bcf2d03d99db9843.json",
+      "raw_bytes": 387,
+      "raw_sha256": "20b876ad7ad47fee84e337a329877c60bab917a06093025410d94fbb6d8f1492",
+      "consolidated_path": "closure/physical-receipts/root/3a5333422ecf-contact_viewport_read_c914bfd6c06249b7bcf2d03d99db9843.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "20b876ad7ad47fee84e337a329877c60bab917a06093025410d94fbb6d8f1492"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/3ab32f9e0fcf-new_scene_smoke_fbe86b79276e4321b4b68e69fe16095c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\3ab32f9e0fcf-new_scene_smoke_fbe86b79276e4321b4b68e69fe16095c.json",
+      "raw_bytes": 387,
+      "raw_sha256": "c0a529c6f83ae4f202ac738c27c2e1fb711a1d45ad4be012dd9cac6d64f3ba99",
+      "consolidated_path": "closure/physical-receipts/root/3ab32f9e0fcf-new_scene_smoke_fbe86b79276e4321b4b68e69fe16095c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "c0a529c6f83ae4f202ac738c27c2e1fb711a1d45ad4be012dd9cac6d64f3ba99"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/3aec67ba6cc7-studio_1e7c4919b91342d4a6845fd600de3e2e.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\3aec67ba6cc7-studio_1e7c4919b91342d4a6845fd600de3e2e.json",
+      "raw_bytes": 387,
+      "raw_sha256": "568d8276548ac9379992bffce579d0c64b95a4be009c2407418010cfde04476f",
+      "consolidated_path": "closure/physical-receipts/root/3aec67ba6cc7-studio_1e7c4919b91342d4a6845fd600de3e2e.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "568d8276548ac9379992bffce579d0c64b95a4be009c2407418010cfde04476f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/3ece911ec48b-brush_opacity_smoke_554f4f6234b1436e97dc5fcdccdb523f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\3ece911ec48b-brush_opacity_smoke_554f4f6234b1436e97dc5fcdccdb523f.json",
+      "raw_bytes": 387,
+      "raw_sha256": "7cd3b278bc1205bd390f24d7afc1f1a34bba036fefbd50c83899174d74c48925",
+      "consolidated_path": "closure/physical-receipts/root/3ece911ec48b-brush_opacity_smoke_554f4f6234b1436e97dc5fcdccdb523f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "7cd3b278bc1205bd390f24d7afc1f1a34bba036fefbd50c83899174d74c48925"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/3fbc66df6d45-shortcut_editor_smoke_517823fc22ad488084224420ee51cea2.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\3fbc66df6d45-shortcut_editor_smoke_517823fc22ad488084224420ee51cea2.json",
+      "raw_bytes": 387,
+      "raw_sha256": "85e3408d9453406b622360faab26cbc6d59727a8920959736de03de00b1eca85",
+      "consolidated_path": "closure/physical-receipts/root/3fbc66df6d45-shortcut_editor_smoke_517823fc22ad488084224420ee51cea2.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "85e3408d9453406b622360faab26cbc6d59727a8920959736de03de00b1eca85"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/40c6723e2e9a-multi_audio_smoke_113989669c8044f090d354a4b27e1cba.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\40c6723e2e9a-multi_audio_smoke_113989669c8044f090d354a4b27e1cba.json",
+      "raw_bytes": 388,
+      "raw_sha256": "73ff4e9e36efefb5cb298d01b065e61fd149f18e046b9bbbc78ce85b085d0560",
+      "consolidated_path": "closure/physical-receipts/root/40c6723e2e9a-multi_audio_smoke_113989669c8044f090d354a4b27e1cba.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "73ff4e9e36efefb5cb298d01b065e61fd149f18e046b9bbbc78ce85b085d0560"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/44002c37db55-shape_comparison_smoke_d98374bfc9e640d09c2fb20b1b2b118f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\44002c37db55-shape_comparison_smoke_d98374bfc9e640d09c2fb20b1b2b118f.json",
+      "raw_bytes": 388,
+      "raw_sha256": "f0d1a5c173bc2efcde21e3ccacae4da73588e7f639857fefb2741b3c225b0d0e",
+      "consolidated_path": "closure/physical-receipts/root/44002c37db55-shape_comparison_smoke_d98374bfc9e640d09c2fb20b1b2b118f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "f0d1a5c173bc2efcde21e3ccacae4da73588e7f639857fefb2741b3c225b0d0e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/4412507ec181-foot_contacts_smoke_ad47ce1e44fc48e0a72bb6e3ea06a736.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\4412507ec181-foot_contacts_smoke_ad47ce1e44fc48e0a72bb6e3ea06a736.json",
+      "raw_bytes": 387,
+      "raw_sha256": "0331cf7ce66c1c58ab9b2a936ee3b8cf7a55346151083646d04def4d1300a208",
+      "consolidated_path": "closure/physical-receipts/root/4412507ec181-foot_contacts_smoke_ad47ce1e44fc48e0a72bb6e3ea06a736.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "0331cf7ce66c1c58ab9b2a936ee3b8cf7a55346151083646d04def4d1300a208"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/44ad4ffb009d-studio_4b5b2074b7c84d6ba1a58540a3c069e4.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\44ad4ffb009d-studio_4b5b2074b7c84d6ba1a58540a3c069e4.json",
+      "raw_bytes": 387,
+      "raw_sha256": "5910b4ee498faad3e82516a9a25cc53a1af47436fc2df25758ef247e4e11dbcb",
+      "consolidated_path": "closure/physical-receipts/root/44ad4ffb009d-studio_4b5b2074b7c84d6ba1a58540a3c069e4.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "5910b4ee498faad3e82516a9a25cc53a1af47436fc2df25758ef247e4e11dbcb"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/45c62530cfcd-source_choices_smoke_ab302ebe614748bfb979e750501aa467.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\45c62530cfcd-source_choices_smoke_ab302ebe614748bfb979e750501aa467.json",
+      "raw_bytes": 387,
+      "raw_sha256": "b58151137aa621c773e09c27417908a3536af43dd37ff09a6e2663248e0ad3f6",
+      "consolidated_path": "closure/physical-receipts/root/45c62530cfcd-source_choices_smoke_ab302ebe614748bfb979e750501aa467.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "b58151137aa621c773e09c27417908a3536af43dd37ff09a6e2663248e0ad3f6"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/4608816effc7-source_shapes_smoke_13703122a83f430c99a2c70a8344c2be.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\4608816effc7-source_shapes_smoke_13703122a83f430c99a2c70a8344c2be.json",
+      "raw_bytes": 388,
+      "raw_sha256": "f122a84c9e96e581e5d3922a40c3f20b730a1567e4ac2fc05ded9c58efcdec5f",
+      "consolidated_path": "closure/physical-receipts/root/4608816effc7-source_shapes_smoke_13703122a83f430c99a2c70a8344c2be.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "f122a84c9e96e581e5d3922a40c3f20b730a1567e4ac2fc05ded9c58efcdec5f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/469bdeffb754-studio_78005ed6448642ef9484950774704158.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\469bdeffb754-studio_78005ed6448642ef9484950774704158.json",
+      "raw_bytes": 387,
+      "raw_sha256": "efa9f10d8dc35754e57908389d531a888db3e5d2f3363baa3ad1a49141e64499",
+      "consolidated_path": "closure/physical-receipts/root/469bdeffb754-studio_78005ed6448642ef9484950774704158.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "efa9f10d8dc35754e57908389d531a888db3e5d2f3363baa3ad1a49141e64499"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/46a5bc9a419f-fan_flutter_smoke_7247ad2388754ad7a2df6680b14b8fc7.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\46a5bc9a419f-fan_flutter_smoke_7247ad2388754ad7a2df6680b14b8fc7.json",
+      "raw_bytes": 386,
+      "raw_sha256": "3844ed1703aaf317402e0b77abf937ee0a07886535446eec37a624c827a3275f",
+      "consolidated_path": "closure/physical-receipts/root/46a5bc9a419f-fan_flutter_smoke_7247ad2388754ad7a2df6680b14b8fc7.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 386,
+        "sha256": "3844ed1703aaf317402e0b77abf937ee0a07886535446eec37a624c827a3275f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/4aa15514cc30-fill_expand_smoke_ed9d374b9c81485b857242ef7faccc55.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\4aa15514cc30-fill_expand_smoke_ed9d374b9c81485b857242ef7faccc55.json",
+      "raw_bytes": 387,
+      "raw_sha256": "04228d1628dda3710d0cd794b7d91dad45dddb3d28447089f14e97253b8e84e5",
+      "consolidated_path": "closure/physical-receipts/root/4aa15514cc30-fill_expand_smoke_ed9d374b9c81485b857242ef7faccc55.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "04228d1628dda3710d0cd794b7d91dad45dddb3d28447089f14e97253b8e84e5"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/4b86ca97cd0b-secondary_helpers_smoke_2be35bd192854a2089fe9072101f58e6.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\4b86ca97cd0b-secondary_helpers_smoke_2be35bd192854a2089fe9072101f58e6.json",
+      "raw_bytes": 388,
+      "raw_sha256": "e17bafd7378fa5c8c1f61f14de74d5bf35a6841b32ac7aaf5051f2a7b11722cc",
+      "consolidated_path": "closure/physical-receipts/root/4b86ca97cd0b-secondary_helpers_smoke_2be35bd192854a2089fe9072101f58e6.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "e17bafd7378fa5c8c1f61f14de74d5bf35a6841b32ac7aaf5051f2a7b11722cc"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/4c0b0e137cf2-contact_identity_smoke_66cf88df46d94ba3b7927d41cd60a069.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\4c0b0e137cf2-contact_identity_smoke_66cf88df46d94ba3b7927d41cd60a069.json",
+      "raw_bytes": 387,
+      "raw_sha256": "6b373303ad92be608261a1c5d0ed743758fc1d6ad904f0eba058db2cf9d12202",
+      "consolidated_path": "closure/physical-receipts/root/4c0b0e137cf2-contact_identity_smoke_66cf88df46d94ba3b7927d41cd60a069.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "6b373303ad92be608261a1c5d0ed743758fc1d6ad904f0eba058db2cf9d12202"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/4c22ad88d7ba-studio_05952d1639f14a28a7626bb3e62aa4b4.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\4c22ad88d7ba-studio_05952d1639f14a28a7626bb3e62aa4b4.json",
+      "raw_bytes": 388,
+      "raw_sha256": "ebedc8c1cf3eb67a12e3fe04c64e07d458283216711f0f10311906758df90dfc",
+      "consolidated_path": "closure/physical-receipts/root/4c22ad88d7ba-studio_05952d1639f14a28a7626bb3e62aa4b4.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "ebedc8c1cf3eb67a12e3fe04c64e07d458283216711f0f10311906758df90dfc"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/4dde7027d680-shape_study_smoke_b3186752ab3a492fa3a7e89c31e6bdd2.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\4dde7027d680-shape_study_smoke_b3186752ab3a492fa3a7e89c31e6bdd2.json",
+      "raw_bytes": 387,
+      "raw_sha256": "1d7ce44bdf7efefbd1d7263ccb948615672b678475d3a7f313895fb0691f31df",
+      "consolidated_path": "closure/physical-receipts/root/4dde7027d680-shape_study_smoke_b3186752ab3a492fa3a7e89c31e6bdd2.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "1d7ce44bdf7efefbd1d7263ccb948615672b678475d3a7f313895fb0691f31df"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/4dfc19553e90-project_duration_smoke_52a5dedfad2845268bc13b5cfe06635f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\4dfc19553e90-project_duration_smoke_52a5dedfad2845268bc13b5cfe06635f.json",
+      "raw_bytes": 387,
+      "raw_sha256": "49428a6c418726f68654a0e9bafc247af85e3d12f587ed3b8dfd0f6ccdafa7d1",
+      "consolidated_path": "closure/physical-receipts/root/4dfc19553e90-project_duration_smoke_52a5dedfad2845268bc13b5cfe06635f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "49428a6c418726f68654a0e9bafc247af85e3d12f587ed3b8dfd0f6ccdafa7d1"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/555eabb56370-contact_persistence_smoke_12985b0989a34f46947b2ca08d527d3c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\555eabb56370-contact_persistence_smoke_12985b0989a34f46947b2ca08d527d3c.json",
+      "raw_bytes": 388,
+      "raw_sha256": "6fa5ddd27deb5de8f3af89f6702ebb8f32f16975ac6a34aed2f75dcbff9a060f",
+      "consolidated_path": "closure/physical-receipts/root/555eabb56370-contact_persistence_smoke_12985b0989a34f46947b2ca08d527d3c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "6fa5ddd27deb5de8f3af89f6702ebb8f32f16975ac6a34aed2f75dcbff9a060f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/5865500bdf88-contact_editor_smoke_6e94187ea15a410e9dd6049e06a63b35.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\5865500bdf88-contact_editor_smoke_6e94187ea15a410e9dd6049e06a63b35.json",
+      "raw_bytes": 388,
+      "raw_sha256": "5e69f244282eff38f9f1d572013c28a98c4f42ba943a947c1f15d8e6beb54eb6",
+      "consolidated_path": "closure/physical-receipts/root/5865500bdf88-contact_editor_smoke_6e94187ea15a410e9dd6049e06a63b35.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "5e69f244282eff38f9f1d572013c28a98c4f42ba943a947c1f15d8e6beb54eb6"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/590f158249b0-height_import_native_smoke_1912fbbebd9f4a3b90e9e124fe3e018b.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\590f158249b0-height_import_native_smoke_1912fbbebd9f4a3b90e9e124fe3e018b.json",
+      "raw_bytes": 387,
+      "raw_sha256": "5462339bbf8e4eba5aa8ce6e8ea710f01ba6b0f95a0c6fe1bcbc97e369509675",
+      "consolidated_path": "closure/physical-receipts/root/590f158249b0-height_import_native_smoke_1912fbbebd9f4a3b90e9e124fe3e018b.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "5462339bbf8e4eba5aa8ce6e8ea710f01ba6b0f95a0c6fe1bcbc97e369509675"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/592ccaa11ac7-studio_cb6bb19c702745dbaa1041f715a8b734.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\592ccaa11ac7-studio_cb6bb19c702745dbaa1041f715a8b734.json",
+      "raw_bytes": 387,
+      "raw_sha256": "bdf489e42b8a953765dbec2187a628e9300fe2237a0611248a44394b261be58c",
+      "consolidated_path": "closure/physical-receipts/root/592ccaa11ac7-studio_cb6bb19c702745dbaa1041f715a8b734.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "bdf489e42b8a953765dbec2187a628e9300fe2237a0611248a44394b261be58c"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/59fc0b1abdeb-home_smoke_6bd52446b29045f0bee574edf9c9d22c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\59fc0b1abdeb-home_smoke_6bd52446b29045f0bee574edf9c9d22c.json",
+      "raw_bytes": 387,
+      "raw_sha256": "6ba5661ecdb48c1b16077d4d2e8d3771c2f9517b8ac59205ba5b64b73dc3469e",
+      "consolidated_path": "closure/physical-receipts/root/59fc0b1abdeb-home_smoke_6bd52446b29045f0bee574edf9c9d22c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "6ba5661ecdb48c1b16077d4d2e8d3771c2f9517b8ac59205ba5b64b73dc3469e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/5a996c23e0ac-foot_hold_smoke_5220fa5d88dc4bc7b2f98020c58b51a9.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\5a996c23e0ac-foot_hold_smoke_5220fa5d88dc4bc7b2f98020c58b51a9.json",
+      "raw_bytes": 388,
+      "raw_sha256": "8bb1eb2a74c2f0fd0a880a8af684c780b3e9f439e21b9abe076f82bfb11a4a57",
+      "consolidated_path": "closure/physical-receipts/root/5a996c23e0ac-foot_hold_smoke_5220fa5d88dc4bc7b2f98020c58b51a9.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "8bb1eb2a74c2f0fd0a880a8af684c780b3e9f439e21b9abe076f82bfb11a4a57"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/5b17962563c8-fill_gaps_smoke_bdad324556874d89a2690f100b95e853.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\5b17962563c8-fill_gaps_smoke_bdad324556874d89a2690f100b95e853.json",
+      "raw_bytes": 387,
+      "raw_sha256": "19e1ed17f775e8252b14324e7225e410fedcf3dc9d628399c6cce4314a4acc11",
+      "consolidated_path": "closure/physical-receipts/root/5b17962563c8-fill_gaps_smoke_bdad324556874d89a2690f100b95e853.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "19e1ed17f775e8252b14324e7225e410fedcf3dc9d628399c6cce4314a4acc11"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/5b4f11120d8e-contact_correction_smoke_4cd32aabb5364d28a98348f0d97e6dff.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\5b4f11120d8e-contact_correction_smoke_4cd32aabb5364d28a98348f0d97e6dff.json",
+      "raw_bytes": 388,
+      "raw_sha256": "dc4c250b0e82a7a3a779d91f8a84af98f51867a4099e44fc164fa7d2379031ee",
+      "consolidated_path": "closure/physical-receipts/root/5b4f11120d8e-contact_correction_smoke_4cd32aabb5364d28a98348f0d97e6dff.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "dc4c250b0e82a7a3a779d91f8a84af98f51867a4099e44fc164fa7d2379031ee"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/5bea71f9bf0a-world_runtime_smoke_d86430d62f6a4c1cbd81faf65cf59ebc.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\5bea71f9bf0a-world_runtime_smoke_d86430d62f6a4c1cbd81faf65cf59ebc.json",
+      "raw_bytes": 388,
+      "raw_sha256": "a32a028d900356c5f45571845cad543c7887d411923a713e0614e5c3b399fe68",
+      "consolidated_path": "closure/physical-receipts/root/5bea71f9bf0a-world_runtime_smoke_d86430d62f6a4c1cbd81faf65cf59ebc.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "a32a028d900356c5f45571845cad543c7887d411923a713e0614e5c3b399fe68"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/5daee4f5a8ca-studio_cee68d598f9841558c16bcb80da02069.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\5daee4f5a8ca-studio_cee68d598f9841558c16bcb80da02069.json",
+      "raw_bytes": 388,
+      "raw_sha256": "1ddcc40e3c31f409523ad3d7004cafc94ae0f8beb5a2c17a7325caead74966b0",
+      "consolidated_path": "closure/physical-receipts/root/5daee4f5a8ca-studio_cee68d598f9841558c16bcb80da02069.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "1ddcc40e3c31f409523ad3d7004cafc94ae0f8beb5a2c17a7325caead74966b0"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/5ead3f12e7e5-studio_2cf9a0b3902847c5b7cbbcb6a242bafa.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\5ead3f12e7e5-studio_2cf9a0b3902847c5b7cbbcb6a242bafa.json",
+      "raw_bytes": 387,
+      "raw_sha256": "b001f85088b3b8ce45c8814c5e8c13d640c59f5bf0ec8a3e4b5e9fce0b3bfb1a",
+      "consolidated_path": "closure/physical-receipts/root/5ead3f12e7e5-studio_2cf9a0b3902847c5b7cbbcb6a242bafa.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "b001f85088b3b8ce45c8814c5e8c13d640c59f5bf0ec8a3e4b5e9fce0b3bfb1a"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/5faff1e132eb-drawing_transform_smoke_2df78532dbac404eab7e89e3ca42e2d5.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\5faff1e132eb-drawing_transform_smoke_2df78532dbac404eab7e89e3ca42e2d5.json",
+      "raw_bytes": 386,
+      "raw_sha256": "eebc6149e3282178cd703c8d994c97f6bde96dab53374b30e192ecc6822cdd17",
+      "consolidated_path": "closure/physical-receipts/root/5faff1e132eb-drawing_transform_smoke_2df78532dbac404eab7e89e3ca42e2d5.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 386,
+        "sha256": "eebc6149e3282178cd703c8d994c97f6bde96dab53374b30e192ecc6822cdd17"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/6108f5dfc7f6-color_sampler_smoke_c00c09d894bd480689b63cb4118c1218.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\6108f5dfc7f6-color_sampler_smoke_c00c09d894bd480689b63cb4118c1218.json",
+      "raw_bytes": 388,
+      "raw_sha256": "0e6acc6f83cf68191241e5a54e7c013199be0a7d45a99b48f2544b83e73156ab",
+      "consolidated_path": "closure/physical-receipts/root/6108f5dfc7f6-color_sampler_smoke_c00c09d894bd480689b63cb4118c1218.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "0e6acc6f83cf68191241e5a54e7c013199be0a7d45a99b48f2544b83e73156ab"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/61631958ec78-world_edit_smoke_d4d3403cfdce4b7e81e7074963f5fa64.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\61631958ec78-world_edit_smoke_d4d3403cfdce4b7e81e7074963f5fa64.json",
+      "raw_bytes": 388,
+      "raw_sha256": "0de8e16675b824de7556e445de14a209405d8556b8fac235c5d203eceda0cb9c",
+      "consolidated_path": "closure/physical-receipts/root/61631958ec78-world_edit_smoke_d4d3403cfdce4b7e81e7074963f5fa64.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "0de8e16675b824de7556e445de14a209405d8556b8fac235c5d203eceda0cb9c"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/616cd87e3846-rotation_gizmo_smoke_be80cc09cfc34499b704f16dc71ffc4c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\616cd87e3846-rotation_gizmo_smoke_be80cc09cfc34499b704f16dc71ffc4c.json",
+      "raw_bytes": 387,
+      "raw_sha256": "4e365b295d27bcf0475dcd41bcfa385d8c1b34ecec0e16485a98bc8137e6033d",
+      "consolidated_path": "closure/physical-receipts/root/616cd87e3846-rotation_gizmo_smoke_be80cc09cfc34499b704f16dc71ffc4c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "4e365b295d27bcf0475dcd41bcfa385d8c1b34ecec0e16485a98bc8137e6033d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/618183667116-contact_transform_smoke_031a59ab340f4477b3e6a061db15d48a.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\618183667116-contact_transform_smoke_031a59ab340f4477b3e6a061db15d48a.json",
+      "raw_bytes": 388,
+      "raw_sha256": "4e33909f01d19c78eb68084039736640938c8e80ea0b245f9c352598f1d2cc93",
+      "consolidated_path": "closure/physical-receipts/root/618183667116-contact_transform_smoke_031a59ab340f4477b3e6a061db15d48a.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "4e33909f01d19c78eb68084039736640938c8e80ea0b245f9c352598f1d2cc93"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/63b617228616-camera_transform_smoke_43cf58e99e544969b48242890c630ddb.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\63b617228616-camera_transform_smoke_43cf58e99e544969b48242890c630ddb.json",
+      "raw_bytes": 387,
+      "raw_sha256": "36094e136c4f31aa5c2389bacdeb309f9d7da597b0832c5331c8bfb8ac3a159e",
+      "consolidated_path": "closure/physical-receipts/root/63b617228616-camera_transform_smoke_43cf58e99e544969b48242890c630ddb.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "36094e136c4f31aa5c2389bacdeb309f9d7da597b0832c5331c8bfb8ac3a159e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/65f788d037d6-contact_clipboard_smoke_2c88517093b44ebaa6f9f2876124d9c4.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\65f788d037d6-contact_clipboard_smoke_2c88517093b44ebaa6f9f2876124d9c4.json",
+      "raw_bytes": 387,
+      "raw_sha256": "a9ce24778a6e684018f9a43005ad119df4453b1fe77c4399b6aced1a5abb03c1",
+      "consolidated_path": "closure/physical-receipts/root/65f788d037d6-contact_clipboard_smoke_2c88517093b44ebaa6f9f2876124d9c4.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "a9ce24778a6e684018f9a43005ad119df4453b1fe77c4399b6aced1a5abb03c1"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/667fc2c56639-motion_assist_native_03333825b7fc451f835d6ba2b734119c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\667fc2c56639-motion_assist_native_03333825b7fc451f835d6ba2b734119c.json",
+      "raw_bytes": 388,
+      "raw_sha256": "2203b2986e0d4fb55988cb09b14f172a8c6b5a4779eed74712919fe598b7b1b9",
+      "consolidated_path": "closure/physical-receipts/root/667fc2c56639-motion_assist_native_03333825b7fc451f835d6ba2b734119c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "2203b2986e0d4fb55988cb09b14f172a8c6b5a4779eed74712919fe598b7b1b9"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/6af95cf6cb41-multi_audio_smoke_e90be00274d04f71afe6168593fb84c2.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\6af95cf6cb41-multi_audio_smoke_e90be00274d04f71afe6168593fb84c2.json",
+      "raw_bytes": 387,
+      "raw_sha256": "a3a5ab13315358e3ab8d8f8d59f565d2c81e367f5aa58aeede372147b3ec8e03",
+      "consolidated_path": "closure/physical-receipts/root/6af95cf6cb41-multi_audio_smoke_e90be00274d04f71afe6168593fb84c2.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "a3a5ab13315358e3ab8d8f8d59f565d2c81e367f5aa58aeede372147b3ec8e03"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/711adf33b1c2-opacity_smoke_4c64008daa084f70bb9152abc98572d5.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\711adf33b1c2-opacity_smoke_4c64008daa084f70bb9152abc98572d5.json",
+      "raw_bytes": 387,
+      "raw_sha256": "d4222488b149aedd6d698a58c584db6e1cce7a7d14bebb7de3ea38fd67619a22",
+      "consolidated_path": "closure/physical-receipts/root/711adf33b1c2-opacity_smoke_4c64008daa084f70bb9152abc98572d5.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "d4222488b149aedd6d698a58c584db6e1cce7a7d14bebb7de3ea38fd67619a22"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/7432ead20147-base_shape_smoke_1c3ce0a5aee345c988f8de9cf72fa7ee.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\7432ead20147-base_shape_smoke_1c3ce0a5aee345c988f8de9cf72fa7ee.json",
+      "raw_bytes": 388,
+      "raw_sha256": "ad2a9cef301705da0adb520c114b8efe7d0ab714344e086fe40c25be0d8df9ee",
+      "consolidated_path": "closure/physical-receipts/root/7432ead20147-base_shape_smoke_1c3ce0a5aee345c988f8de9cf72fa7ee.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "ad2a9cef301705da0adb520c114b8efe7d0ab714344e086fe40c25be0d8df9ee"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/76955eabac04-drawing_selection_smoke_167291abf6604f4db04733c5a455823f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\76955eabac04-drawing_selection_smoke_167291abf6604f4db04733c5a455823f.json",
+      "raw_bytes": 387,
+      "raw_sha256": "3b1a73a91b1c3d82b1cf9f1047a675e5e1873f12ed2c22a185984fc8d056b38f",
+      "consolidated_path": "closure/physical-receipts/root/76955eabac04-drawing_selection_smoke_167291abf6604f4db04733c5a455823f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "3b1a73a91b1c3d82b1cf9f1047a675e5e1873f12ed2c22a185984fc8d056b38f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/775926879c03-expression_presets_smoke_8f891c90220248579745568127df4a9d.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\775926879c03-expression_presets_smoke_8f891c90220248579745568127df4a9d.json",
+      "raw_bytes": 387,
+      "raw_sha256": "5160cd603df0952d98512931e0da1f7219b48a9f7f1a8240351599f27f1cceed",
+      "consolidated_path": "closure/physical-receipts/root/775926879c03-expression_presets_smoke_8f891c90220248579745568127df4a9d.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "5160cd603df0952d98512931e0da1f7219b48a9f7f1a8240351599f27f1cceed"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/7810fab3a77e-workspace_controls_smoke_e5aa314a44d44d77bd56f1cb90ab463e.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\7810fab3a77e-workspace_controls_smoke_e5aa314a44d44d77bd56f1cb90ab463e.json",
+      "raw_bytes": 389,
+      "raw_sha256": "54f16a7fe9311ee25d66a69eb3bba3d4ae84c9fdf6db703319593edd5e59e02a",
+      "consolidated_path": "closure/physical-receipts/root/7810fab3a77e-workspace_controls_smoke_e5aa314a44d44d77bd56f1cb90ab463e.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 389,
+        "sha256": "54f16a7fe9311ee25d66a69eb3bba3d4ae84c9fdf6db703319593edd5e59e02a"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/78cb4fae9a35-drawing_selection_smoke_516f0a5c72c249f1ab48ea6b813f29bc.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\78cb4fae9a35-drawing_selection_smoke_516f0a5c72c249f1ab48ea6b813f29bc.json",
+      "raw_bytes": 388,
+      "raw_sha256": "90ee48df5589f6138b58e9ccf19630adcdd2875ce8e7f51a74c05f995f6364e7",
+      "consolidated_path": "closure/physical-receipts/root/78cb4fae9a35-drawing_selection_smoke_516f0a5c72c249f1ab48ea6b813f29bc.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "90ee48df5589f6138b58e9ccf19630adcdd2875ce8e7f51a74c05f995f6364e7"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/79c5cdd0fd6d-studio_2022535f01584f898383e389d235f32f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\79c5cdd0fd6d-studio_2022535f01584f898383e389d235f32f.json",
+      "raw_bytes": 388,
+      "raw_sha256": "86308e2f60cae7ee03aa4d2ecea6c71f7eebe868dda2cdd415c80996037853f2",
+      "consolidated_path": "closure/physical-receipts/root/79c5cdd0fd6d-studio_2022535f01584f898383e389d235f32f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "86308e2f60cae7ee03aa4d2ecea6c71f7eebe868dda2cdd415c80996037853f2"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/7a25968ec9a2-world_document_smoke_87a09c41f48c4fa4afef528ae07979c7.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\7a25968ec9a2-world_document_smoke_87a09c41f48c4fa4afef528ae07979c7.json",
+      "raw_bytes": 387,
+      "raw_sha256": "f924d80979284e4980d7b0b5b3dc370b1d2292de7e717a09dcb55560308c7761",
+      "consolidated_path": "closure/physical-receipts/root/7a25968ec9a2-world_document_smoke_87a09c41f48c4fa4afef528ae07979c7.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "f924d80979284e4980d7b0b5b3dc370b1d2292de7e717a09dcb55560308c7761"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/7aa20331d545-body_animation_smoke_cac3211f1f5342a3b491df34b790cc8e.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\7aa20331d545-body_animation_smoke_cac3211f1f5342a3b491df34b790cc8e.json",
+      "raw_bytes": 388,
+      "raw_sha256": "14d8c146de8059d0c52bfdf94bd18ae77c5b4157d5ecffbce8c769a988575696",
+      "consolidated_path": "closure/physical-receipts/root/7aa20331d545-body_animation_smoke_cac3211f1f5342a3b491df34b790cc8e.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "14d8c146de8059d0c52bfdf94bd18ae77c5b4157d5ecffbce8c769a988575696"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/7d4b67d43bf9-pose_library_smoke_b1b97b5084ac42e5ad43c357c6ac542f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\7d4b67d43bf9-pose_library_smoke_b1b97b5084ac42e5ad43c357c6ac542f.json",
+      "raw_bytes": 388,
+      "raw_sha256": "0bcdf605b11c1f05d434ea42d6084b65dfaae46f119371f26369aa647435b216",
+      "consolidated_path": "closure/physical-receipts/root/7d4b67d43bf9-pose_library_smoke_b1b97b5084ac42e5ad43c357c6ac542f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "0bcdf605b11c1f05d434ea42d6084b65dfaae46f119371f26369aa647435b216"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/7e2167c7ad9c-body_curves_smoke_e07eb6cb6be34849b4a48eb71a31fb0d.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\7e2167c7ad9c-body_curves_smoke_e07eb6cb6be34849b4a48eb71a31fb0d.json",
+      "raw_bytes": 388,
+      "raw_sha256": "31e2a7c3f8065ca52474f8bd94a9c40ffc760e590231bff8bea9015ba49aabbe",
+      "consolidated_path": "closure/physical-receipts/root/7e2167c7ad9c-body_curves_smoke_e07eb6cb6be34849b4a48eb71a31fb0d.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "31e2a7c3f8065ca52474f8bd94a9c40ffc760e590231bff8bea9015ba49aabbe"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/7e8ee3eccfc7-export_failures_f5fb50cd66084bc799c8a73b52e9129f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\7e8ee3eccfc7-export_failures_f5fb50cd66084bc799c8a73b52e9129f.json",
+      "raw_bytes": 385,
+      "raw_sha256": "8c9085fb6317a9cf552e2bcc1ab0c921ecc8c882bbc1218f5f812c0374433aab",
+      "consolidated_path": "closure/physical-receipts/root/7e8ee3eccfc7-export_failures_f5fb50cd66084bc799c8a73b52e9129f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 385,
+        "sha256": "8c9085fb6317a9cf552e2bcc1ab0c921ecc8c882bbc1218f5f812c0374433aab"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/7feaeb895248-recovery_preview_smoke_80721a15a2904c24887898f9907711e3.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\7feaeb895248-recovery_preview_smoke_80721a15a2904c24887898f9907711e3.json",
+      "raw_bytes": 387,
+      "raw_sha256": "9509048a40791acea4b081bfddbe9bd3d0aba9ee589b38e629684ced24490e34",
+      "consolidated_path": "closure/physical-receipts/root/7feaeb895248-recovery_preview_smoke_80721a15a2904c24887898f9907711e3.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "9509048a40791acea4b081bfddbe9bd3d0aba9ee589b38e629684ced24490e34"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/803be3c92b03-contact_physics_smoke_10340f00a04742888ad16ea4182b1dfe.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\803be3c92b03-contact_physics_smoke_10340f00a04742888ad16ea4182b1dfe.json",
+      "raw_bytes": 388,
+      "raw_sha256": "4ea743db533ad9deadefe11baa9e8ed8d138c198c0a4c65338167dbce70b7c9e",
+      "consolidated_path": "closure/physical-receipts/root/803be3c92b03-contact_physics_smoke_10340f00a04742888ad16ea4182b1dfe.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "4ea743db533ad9deadefe11baa9e8ed8d138c198c0a4c65338167dbce70b7c9e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/80fe1a271e51-import_placement_smoke_f33606436175434bb409b63caa30f587.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\80fe1a271e51-import_placement_smoke_f33606436175434bb409b63caa30f587.json",
+      "raw_bytes": 388,
+      "raw_sha256": "318fc89a34ac81adc2597090168bce4dd8017e2ba344dec592838d606d5c7ce5",
+      "consolidated_path": "closure/physical-receipts/root/80fe1a271e51-import_placement_smoke_f33606436175434bb409b63caa30f587.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "318fc89a34ac81adc2597090168bce4dd8017e2ba344dec592838d606d5c7ce5"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/82c7e63b4d11-studio_66c7bb2f5a51469fa27b14e752e0081d.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\82c7e63b4d11-studio_66c7bb2f5a51469fa27b14e752e0081d.json",
+      "raw_bytes": 387,
+      "raw_sha256": "d4c2c9f41c44e8a064ec240a5b709b327f7be853d7e7113ab520b9307b2634e0",
+      "consolidated_path": "closure/physical-receipts/root/82c7e63b4d11-studio_66c7bb2f5a51469fa27b14e752e0081d.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "d4c2c9f41c44e8a064ec240a5b709b327f7be853d7e7113ab520b9307b2634e0"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/82d994e212c4-palette_smoke_c921290573f147e0ae629990a2aec2ce.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\82d994e212c4-palette_smoke_c921290573f147e0ae629990a2aec2ce.json",
+      "raw_bytes": 387,
+      "raw_sha256": "326ab15db8d2f8589bb1f0cc87899a22710f2dfc4daa5525a382b27f5fd7c63b",
+      "consolidated_path": "closure/physical-receipts/root/82d994e212c4-palette_smoke_c921290573f147e0ae629990a2aec2ce.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "326ab15db8d2f8589bb1f0cc87899a22710f2dfc4daa5525a382b27f5fd7c63b"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/848052583012-multi_audio_smoke_06f5b7f1f47140c88baf9e3ab0f3b9e8.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\848052583012-multi_audio_smoke_06f5b7f1f47140c88baf9e3ab0f3b9e8.json",
+      "raw_bytes": 387,
+      "raw_sha256": "061b966bbe29a3a1a35fad9c7be4f371cc23387cf640599bb4d1d902661406aa",
+      "consolidated_path": "closure/physical-receipts/root/848052583012-multi_audio_smoke_06f5b7f1f47140c88baf9e3ab0f3b9e8.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "061b966bbe29a3a1a35fad9c7be4f371cc23387cf640599bb4d1d902661406aa"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/8509e5e5a660-studio_ef15e4a57bb44878a9ad314e227be9c5.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\8509e5e5a660-studio_ef15e4a57bb44878a9ad314e227be9c5.json",
+      "raw_bytes": 387,
+      "raw_sha256": "8dedcd12d4430459ed8ed135d08e1ba7120a7f2c7a53fd331fe63cffb88efe8f",
+      "consolidated_path": "closure/physical-receipts/root/8509e5e5a660-studio_ef15e4a57bb44878a9ad314e227be9c5.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "8dedcd12d4430459ed8ed135d08e1ba7120a7f2c7a53fd331fe63cffb88efe8f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/8687bee5aada-character_height_smoke_55d36bbc45f643688737437066716a78.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\8687bee5aada-character_height_smoke_55d36bbc45f643688737437066716a78.json",
+      "raw_bytes": 387,
+      "raw_sha256": "a6e652e1bcf72e313d4278d5675aaafa714a80af6852d10ab592cdf04344b2e7",
+      "consolidated_path": "closure/physical-receipts/root/8687bee5aada-character_height_smoke_55d36bbc45f643688737437066716a78.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "a6e652e1bcf72e313d4278d5675aaafa714a80af6852d10ab592cdf04344b2e7"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/87f693fbe10f-shape_catalog_smoke_a6a6871c820342d4997119e84ca9ccdc.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\87f693fbe10f-shape_catalog_smoke_a6a6871c820342d4997119e84ca9ccdc.json",
+      "raw_bytes": 388,
+      "raw_sha256": "2293df3011d3dbfa30bc440d1013aa152482e3c90a0f5ebaa5653324d3c82305",
+      "consolidated_path": "closure/physical-receipts/root/87f693fbe10f-shape_catalog_smoke_a6a6871c820342d4997119e84ca9ccdc.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "2293df3011d3dbfa30bc440d1013aa152482e3c90a0f5ebaa5653324d3c82305"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/8811789a0347-bone_labels_smoke_0975418709914dc0923b798022fd287a.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\8811789a0347-bone_labels_smoke_0975418709914dc0923b798022fd287a.json",
+      "raw_bytes": 387,
+      "raw_sha256": "aa07333d1f3ba225e938f533fb6cc33a699c2bf9ef95f76847574f6fc8225d58",
+      "consolidated_path": "closure/physical-receipts/root/8811789a0347-bone_labels_smoke_0975418709914dc0923b798022fd287a.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "aa07333d1f3ba225e938f533fb6cc33a699c2bf9ef95f76847574f6fc8225d58"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/8a63e4f9efc0-limb_ik_smoke_a356b552eeec46329d4854a70b604703.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\8a63e4f9efc0-limb_ik_smoke_a356b552eeec46329d4854a70b604703.json",
+      "raw_bytes": 388,
+      "raw_sha256": "92e3839c6f5decd325269b1559db2de9a9b5e27a5d06bfe8ca7eff70c1822841",
+      "consolidated_path": "closure/physical-receipts/root/8a63e4f9efc0-limb_ik_smoke_a356b552eeec46329d4854a70b604703.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "92e3839c6f5decd325269b1559db2de9a9b5e27a5d06bfe8ca7eff70c1822841"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/8b72c9fc53c2-secondary_batch_smoke_395f8b37437e433fbab503f872701d35.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\8b72c9fc53c2-secondary_batch_smoke_395f8b37437e433fbab503f872701d35.json",
+      "raw_bytes": 388,
+      "raw_sha256": "328641dd0b24ae93e861f4257c6d4108fe1c5042343e8ac4377cd284eee312c5",
+      "consolidated_path": "closure/physical-receipts/root/8b72c9fc53c2-secondary_batch_smoke_395f8b37437e433fbab503f872701d35.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "328641dd0b24ae93e861f4257c6d4108fe1c5042343e8ac4377cd284eee312c5"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/8c4a8f640b65-project_duration_smoke_62a9a9813a144583836d221708362196.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\8c4a8f640b65-project_duration_smoke_62a9a9813a144583836d221708362196.json",
+      "raw_bytes": 387,
+      "raw_sha256": "32f18a7e2349ce3bb08185dcf77af555d93c34114ba962a94e0bf7d2dbe2458d",
+      "consolidated_path": "closure/physical-receipts/root/8c4a8f640b65-project_duration_smoke_62a9a9813a144583836d221708362196.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "32f18a7e2349ce3bb08185dcf77af555d93c34114ba962a94e0bf7d2dbe2458d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/8c70cdd7c0e8-secondary_helpers_patch_91d36cd97ab741b0bf514020675a1380.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\8c70cdd7c0e8-secondary_helpers_patch_91d36cd97ab741b0bf514020675a1380.json",
+      "raw_bytes": 388,
+      "raw_sha256": "4ac03f51684937c9ed8973406f8eea42ac51dd82fc070655168e22b5bba5aa28",
+      "consolidated_path": "closure/physical-receipts/root/8c70cdd7c0e8-secondary_helpers_patch_91d36cd97ab741b0bf514020675a1380.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "4ac03f51684937c9ed8973406f8eea42ac51dd82fc070655168e22b5bba5aa28"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/8cfbe7e80a45-studio_6897e8863f5f4850977153d2c9ce169d.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\8cfbe7e80a45-studio_6897e8863f5f4850977153d2c9ce169d.json",
+      "raw_bytes": 386,
+      "raw_sha256": "fa0f4850e78a2c18655edd7ddd6caeae376090dffab062c89bbc6cf2fba34f2c",
+      "consolidated_path": "closure/physical-receipts/root/8cfbe7e80a45-studio_6897e8863f5f4850977153d2c9ce169d.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 386,
+        "sha256": "fa0f4850e78a2c18655edd7ddd6caeae376090dffab062c89bbc6cf2fba34f2c"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/9001c90cf9a3-krita_import_smoke_ff64d31a16ea47f7a0e32da173ca8cf2.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\9001c90cf9a3-krita_import_smoke_ff64d31a16ea47f7a0e32da173ca8cf2.json",
+      "raw_bytes": 388,
+      "raw_sha256": "7c99a2181aa7b86cf67c06629235cc5840dfc929052c412ca6f41d0bc1831eb3",
+      "consolidated_path": "closure/physical-receipts/root/9001c90cf9a3-krita_import_smoke_ff64d31a16ea47f7a0e32da173ca8cf2.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "7c99a2181aa7b86cf67c06629235cc5840dfc929052c412ca6f41d0bc1831eb3"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/92cd82b8d4f8-studio_831fe985eea940b7833224ca86897bdf.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\92cd82b8d4f8-studio_831fe985eea940b7833224ca86897bdf.json",
+      "raw_bytes": 387,
+      "raw_sha256": "239fd5b8804604df35b3459af66ffe4db4e4813e2a688cc387f7548d0e98b6ee",
+      "consolidated_path": "closure/physical-receipts/root/92cd82b8d4f8-studio_831fe985eea940b7833224ca86897bdf.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "239fd5b8804604df35b3459af66ffe4db4e4813e2a688cc387f7548d0e98b6ee"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/95729bf66d76-world_workflow_smoke_5675193141bf4542a14d2652f2f3399f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\95729bf66d76-world_workflow_smoke_5675193141bf4542a14d2652f2f3399f.json",
+      "raw_bytes": 388,
+      "raw_sha256": "edfecd5d4705de4a542e98bbef5988dbbeefed6b62a4296ba3d1fa4cbd3ee2c9",
+      "consolidated_path": "closure/physical-receipts/root/95729bf66d76-world_workflow_smoke_5675193141bf4542a14d2652f2f3399f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "edfecd5d4705de4a542e98bbef5988dbbeefed6b62a4296ba3d1fa4cbd3ee2c9"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/970b934a8f8b-shape_comparison_teardown_c743af06db07453e8c507eebfc78edd0.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\970b934a8f8b-shape_comparison_teardown_c743af06db07453e8c507eebfc78edd0.json",
+      "raw_bytes": 387,
+      "raw_sha256": "7bb174f7784cd21bdb13e19e6390b83411d3161e177e816fe6a527c8b1422e4e",
+      "consolidated_path": "closure/physical-receipts/root/970b934a8f8b-shape_comparison_teardown_c743af06db07453e8c507eebfc78edd0.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "7bb174f7784cd21bdb13e19e6390b83411d3161e177e816fe6a527c8b1422e4e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/974a790eccb7-studio_89040a58a5b848edb540d366c23476fa.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\974a790eccb7-studio_89040a58a5b848edb540d366c23476fa.json",
+      "raw_bytes": 387,
+      "raw_sha256": "6ab282dd95de051d935d26b9a736beabf22cac51eddb707f17372e69a8559d38",
+      "consolidated_path": "closure/physical-receipts/root/974a790eccb7-studio_89040a58a5b848edb540d366c23476fa.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "6ab282dd95de051d935d26b9a736beabf22cac51eddb707f17372e69a8559d38"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/97ef9a74fc26-world_selection_smoke_fa34a42113d7496aa48800d96b23c894.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\97ef9a74fc26-world_selection_smoke_fa34a42113d7496aa48800d96b23c894.json",
+      "raw_bytes": 388,
+      "raw_sha256": "5097f4f7ec914631ae7ea258e010c76abcbac264e9de47f4b209a9ab91d3d5c3",
+      "consolidated_path": "closure/physical-receipts/root/97ef9a74fc26-world_selection_smoke_fa34a42113d7496aa48800d96b23c894.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "5097f4f7ec914631ae7ea258e010c76abcbac264e9de47f4b209a9ab91d3d5c3"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/9fd860de7c77-contact_animation_smoke_63085a10db414020b826669de4c0f368.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\9fd860de7c77-contact_animation_smoke_63085a10db414020b826669de4c0f368.json",
+      "raw_bytes": 388,
+      "raw_sha256": "6e4bfbe38b4958f0a1327a7463f6e463edde676ebc6ee3f24b98f782e43b3025",
+      "consolidated_path": "closure/physical-receipts/root/9fd860de7c77-contact_animation_smoke_63085a10db414020b826669de4c0f368.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "6e4bfbe38b4958f0a1327a7463f6e463edde676ebc6ee3f24b98f782e43b3025"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/a03250e490ed-studio_5829041b05f04348ba2ef2f34deba889.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\a03250e490ed-studio_5829041b05f04348ba2ef2f34deba889.json",
+      "raw_bytes": 387,
+      "raw_sha256": "cb92a30d51449a415ba8209a276aa83fd687f9bdd183e99a60755bca5379dac8",
+      "consolidated_path": "closure/physical-receipts/root/a03250e490ed-studio_5829041b05f04348ba2ef2f34deba889.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "cb92a30d51449a415ba8209a276aa83fd687f9bdd183e99a60755bca5379dac8"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/a606a81a2c78-recovery_schedule_smoke_66e444329cca4a25abfdc0b7002aae4c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\a606a81a2c78-recovery_schedule_smoke_66e444329cca4a25abfdc0b7002aae4c.json",
+      "raw_bytes": 388,
+      "raw_sha256": "b3478a499971a99bf5b1408c3b5c7ac3ab9cec33aa1f6193d9a29443643de15a",
+      "consolidated_path": "closure/physical-receipts/root/a606a81a2c78-recovery_schedule_smoke_66e444329cca4a25abfdc0b7002aae4c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "b3478a499971a99bf5b1408c3b5c7ac3ab9cec33aa1f6193d9a29443643de15a"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/a6bf27bea86c-physics_recording_smoke_1adc156a9d094b43b0840c7d5f42d4f9.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\a6bf27bea86c-physics_recording_smoke_1adc156a9d094b43b0840c7d5f42d4f9.json",
+      "raw_bytes": 388,
+      "raw_sha256": "38ddc7027f8d0944bc17c802fffb605378186ea73c5f374d42c8738a617a7f8e",
+      "consolidated_path": "closure/physical-receipts/root/a6bf27bea86c-physics_recording_smoke_1adc156a9d094b43b0840c7d5f42d4f9.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "38ddc7027f8d0944bc17c802fffb605378186ea73c5f374d42c8738a617a7f8e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/a73dd73293d3-fill_gaps_smoke_6f23d3ec13274bddb247d376b044e814.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\a73dd73293d3-fill_gaps_smoke_6f23d3ec13274bddb247d376b044e814.json",
+      "raw_bytes": 388,
+      "raw_sha256": "af654dba76e5ded4bb373c2f535d1b041db3824273a9c6fe1408b86a97fdabfb",
+      "consolidated_path": "closure/physical-receipts/root/a73dd73293d3-fill_gaps_smoke_6f23d3ec13274bddb247d376b044e814.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "af654dba76e5ded4bb373c2f535d1b041db3824273a9c6fe1408b86a97fdabfb"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/a8207a88e876-brush_pressure_smoke_9a640a2c2e7e46dab324ed963d5ce3af.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\a8207a88e876-brush_pressure_smoke_9a640a2c2e7e46dab324ed963d5ce3af.json",
+      "raw_bytes": 387,
+      "raw_sha256": "f6cc474af8217dec8582aa472373c3e349f6bb154c2c8250f5c6ebd308c36fc3",
+      "consolidated_path": "closure/physical-receipts/root/a8207a88e876-brush_pressure_smoke_9a640a2c2e7e46dab324ed963d5ce3af.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "f6cc474af8217dec8582aa472373c3e349f6bb154c2c8250f5c6ebd308c36fc3"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/ac0f15de5d6d-studio_e04c15ea2dc3489aa1794df6a61a6dda.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\ac0f15de5d6d-studio_e04c15ea2dc3489aa1794df6a61a6dda.json",
+      "raw_bytes": 387,
+      "raw_sha256": "4599322d5975a5dfe9676895c8eb2b1764da3858a1ab51011da781a2e850e393",
+      "consolidated_path": "closure/physical-receipts/root/ac0f15de5d6d-studio_e04c15ea2dc3489aa1794df6a61a6dda.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "4599322d5975a5dfe9676895c8eb2b1764da3858a1ab51011da781a2e850e393"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/ac301cb1f7d0-shape_catalog_smoke_cc696d8af36041779c613eb9f40f9bf7.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\ac301cb1f7d0-shape_catalog_smoke_cc696d8af36041779c613eb9f40f9bf7.json",
+      "raw_bytes": 387,
+      "raw_sha256": "38c92401128df4376688866718624a6b3d8ecf4c55651dc0a77d9dd60ab3de32",
+      "consolidated_path": "closure/physical-receipts/root/ac301cb1f7d0-shape_catalog_smoke_cc696d8af36041779c613eb9f40f9bf7.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "38c92401128df4376688866718624a6b3d8ecf4c55651dc0a77d9dd60ab3de32"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/aca6a001db00-motion_animation_read_79c81102c8354969a32f628f02085da9.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\aca6a001db00-motion_animation_read_79c81102c8354969a32f628f02085da9.json",
+      "raw_bytes": 387,
+      "raw_sha256": "8cd71c91c3363cc7ae68b58c82dffa3659763c9e583ac3234dc39ec7c809872a",
+      "consolidated_path": "closure/physical-receipts/root/aca6a001db00-motion_animation_read_79c81102c8354969a32f628f02085da9.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "8cd71c91c3363cc7ae68b58c82dffa3659763c9e583ac3234dc39ec7c809872a"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/acaf00e0e494-pose_library_native_59bafefa7bef4e36a5923d9ac39f3477.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\acaf00e0e494-pose_library_native_59bafefa7bef4e36a5923d9ac39f3477.json",
+      "raw_bytes": 387,
+      "raw_sha256": "fcec78832a67ef7f40151c9577d48b58debd8770fa0d21473de54b078b15ac69",
+      "consolidated_path": "closure/physical-receipts/root/acaf00e0e494-pose_library_native_59bafefa7bef4e36a5923d9ac39f3477.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "fcec78832a67ef7f40151c9577d48b58debd8770fa0d21473de54b078b15ac69"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/adce3378401a-has_background_save_smoke_74b5e579b69245a998bd8c47a1289621.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\adce3378401a-has_background_save_smoke_74b5e579b69245a998bd8c47a1289621.json",
+      "raw_bytes": 387,
+      "raw_sha256": "2fa62eabd2544878fc8d79bb68e2cfc39421b1a8eb334ce267cb6d5e2cc7b821",
+      "consolidated_path": "closure/physical-receipts/root/adce3378401a-has_background_save_smoke_74b5e579b69245a998bd8c47a1289621.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "2fa62eabd2544878fc8d79bb68e2cfc39421b1a8eb334ce267cb6d5e2cc7b821"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/add5dcb109f6-studio_c34b2f3093ea4b6a85a51bd381459e4a.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\add5dcb109f6-studio_c34b2f3093ea4b6a85a51bd381459e4a.json",
+      "raw_bytes": 387,
+      "raw_sha256": "413cfe2062162f23916fed7b8f561fd46c2467747cdada0c121291663a983fdd",
+      "consolidated_path": "closure/physical-receipts/root/add5dcb109f6-studio_c34b2f3093ea4b6a85a51bd381459e4a.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "413cfe2062162f23916fed7b8f561fd46c2467747cdada0c121291663a983fdd"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/afe1c9c6b76b-lighting_smoke_00e0859291f44fb78f0080b68bf3ede8.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\afe1c9c6b76b-lighting_smoke_00e0859291f44fb78f0080b68bf3ede8.json",
+      "raw_bytes": 388,
+      "raw_sha256": "272468ede056d74d77eacd0e29b21510dd02cb21d7e8c15b348f9342a613aadf",
+      "consolidated_path": "closure/physical-receipts/root/afe1c9c6b76b-lighting_smoke_00e0859291f44fb78f0080b68bf3ede8.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "272468ede056d74d77eacd0e29b21510dd02cb21d7e8c15b348f9342a613aadf"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/b04916bb1d85-contact_clipboard_smoke_70190cf5e5194b8d8c141d7af811d04c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\b04916bb1d85-contact_clipboard_smoke_70190cf5e5194b8d8c141d7af811d04c.json",
+      "raw_bytes": 387,
+      "raw_sha256": "9a283f9de1b89ff62c2e8eb7f5a8dacfd5fff11b1c6089447d94b0adb645585e",
+      "consolidated_path": "closure/physical-receipts/root/b04916bb1d85-contact_clipboard_smoke_70190cf5e5194b8d8c141d7af811d04c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "9a283f9de1b89ff62c2e8eb7f5a8dacfd5fff11b1c6089447d94b0adb645585e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/b0bdb62da770-workspace_nested_smoke_52cf66e621694d46a3bbb41eb8d4ba68.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\b0bdb62da770-workspace_nested_smoke_52cf66e621694d46a3bbb41eb8d4ba68.json",
+      "raw_bytes": 388,
+      "raw_sha256": "914a58542a97968cd7a156a003d2c9260397db6031ed54c6a742d2585432000e",
+      "consolidated_path": "closure/physical-receipts/root/b0bdb62da770-workspace_nested_smoke_52cf66e621694d46a3bbb41eb8d4ba68.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "914a58542a97968cd7a156a003d2c9260397db6031ed54c6a742d2585432000e"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/b2e53116f446-studio_34c0f9ac2bca4e04ab5d6e9fddd5b2df.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\b2e53116f446-studio_34c0f9ac2bca4e04ab5d6e9fddd5b2df.json",
+      "raw_bytes": 387,
+      "raw_sha256": "d362ff79c82e23b4de25a8f037e1bfb4d7d66d292f2a4912b9ad99a3bf7e7b0f",
+      "consolidated_path": "closure/physical-receipts/root/b2e53116f446-studio_34c0f9ac2bca4e04ab5d6e9fddd5b2df.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "d362ff79c82e23b4de25a8f037e1bfb4d7d66d292f2a4912b9ad99a3bf7e7b0f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/b65a34a32480-rotation_gizmo_smoke_40139bd9adf34556a037c66b4b3971dd.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\b65a34a32480-rotation_gizmo_smoke_40139bd9adf34556a037c66b4b3971dd.json",
+      "raw_bytes": 387,
+      "raw_sha256": "b3938285004caeb610c01b2eee348bbda73e76d4f715e30efb13581b2f87cb6a",
+      "consolidated_path": "closure/physical-receipts/root/b65a34a32480-rotation_gizmo_smoke_40139bd9adf34556a037c66b4b3971dd.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "b3938285004caeb610c01b2eee348bbda73e76d4f715e30efb13581b2f87cb6a"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/b72e5068a648-import_physics_smoke_267d41460278431387f5e37cc7977a21.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\b72e5068a648-import_physics_smoke_267d41460278431387f5e37cc7977a21.json",
+      "raw_bytes": 388,
+      "raw_sha256": "686f460b9fe6586087ea25cb4e136c78526c08b387dcaa056dcc49979cfec017",
+      "consolidated_path": "closure/physical-receipts/root/b72e5068a648-import_physics_smoke_267d41460278431387f5e37cc7977a21.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "686f460b9fe6586087ea25cb4e136c78526c08b387dcaa056dcc49979cfec017"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/b931f3be898f-camera_transform_smoke_bc75545bf08549a782f6679d269f3fee.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\b931f3be898f-camera_transform_smoke_bc75545bf08549a782f6679d269f3fee.json",
+      "raw_bytes": 387,
+      "raw_sha256": "22b0878896cc1c50ad291cd2891fe89e47899c3fed163688c7a07ae3a8d6a4d7",
+      "consolidated_path": "closure/physical-receipts/root/b931f3be898f-camera_transform_smoke_bc75545bf08549a782f6679d269f3fee.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "22b0878896cc1c50ad291cd2891fe89e47899c3fed163688c7a07ae3a8d6a4d7"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/b9b56498ece2-studio_f981470eb7b8445593e35df092b16481.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\b9b56498ece2-studio_f981470eb7b8445593e35df092b16481.json",
+      "raw_bytes": 387,
+      "raw_sha256": "6dadab6abbff6fede0610d09d5e9b89b85a8c0bb382aca8c0adb58f96e1ffed6",
+      "consolidated_path": "closure/physical-receipts/root/b9b56498ece2-studio_f981470eb7b8445593e35df092b16481.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "6dadab6abbff6fede0610d09d5e9b89b85a8c0bb382aca8c0adb58f96e1ffed6"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/b9bd9d1d4ca4-first_movie_smoke_e059096254914ba9b39c4b4cb246bebd.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\b9bd9d1d4ca4-first_movie_smoke_e059096254914ba9b39c4b4cb246bebd.json",
+      "raw_bytes": 387,
+      "raw_sha256": "814c5be1d5a8946d90a7c165c05350a3773ed0c446cb94292511f162e4883796",
+      "consolidated_path": "closure/physical-receipts/root/b9bd9d1d4ca4-first_movie_smoke_e059096254914ba9b39c4b4cb246bebd.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "814c5be1d5a8946d90a7c165c05350a3773ed0c446cb94292511f162e4883796"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/bc90f310dd5a-pose_library_smoke_475f42fd9cdd41afbf4aad6000e5ce8f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\bc90f310dd5a-pose_library_smoke_475f42fd9cdd41afbf4aad6000e5ce8f.json",
+      "raw_bytes": 386,
+      "raw_sha256": "b4d8eb9313c462a556a1574aeff8a2a432f0a3b803e40e86cac9c4aeb8824ad4",
+      "consolidated_path": "closure/physical-receipts/root/bc90f310dd5a-pose_library_smoke_475f42fd9cdd41afbf4aad6000e5ce8f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 386,
+        "sha256": "b4d8eb9313c462a556a1574aeff8a2a432f0a3b803e40e86cac9c4aeb8824ad4"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/bc946c66da6e-animation_clips_smoke_5b6c5809033d45af8a94c4d23bd56241.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\bc946c66da6e-animation_clips_smoke_5b6c5809033d45af8a94c4d23bd56241.json",
+      "raw_bytes": 387,
+      "raw_sha256": "7e4ee59ed69bbfa877b2ea586825b9438a8c33b93f35e16a125ae93ba2914262",
+      "consolidated_path": "closure/physical-receipts/root/bc946c66da6e-animation_clips_smoke_5b6c5809033d45af8a94c4d23bd56241.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "7e4ee59ed69bbfa877b2ea586825b9438a8c33b93f35e16a125ae93ba2914262"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/c2605b9a4ffd-contact_parent_smoke_9b4ed52517354039b43f11103646107a.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\c2605b9a4ffd-contact_parent_smoke_9b4ed52517354039b43f11103646107a.json",
+      "raw_bytes": 387,
+      "raw_sha256": "dfd06f7a3ec7989ab7f8828a41a840e01047e7dc8c371cb3219375f6dd992795",
+      "consolidated_path": "closure/physical-receipts/root/c2605b9a4ffd-contact_parent_smoke_9b4ed52517354039b43f11103646107a.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "dfd06f7a3ec7989ab7f8828a41a840e01047e7dc8c371cb3219375f6dd992795"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/c34e4aa9bd8c-studio_e9cb01a21f41474a808838438cbad7f8.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\c34e4aa9bd8c-studio_e9cb01a21f41474a808838438cbad7f8.json",
+      "raw_bytes": 387,
+      "raw_sha256": "3e62dc26803d036f1694f43a9719a0346520e507a28cac600939c13d04365cbf",
+      "consolidated_path": "closure/physical-receipts/root/c34e4aa9bd8c-studio_e9cb01a21f41474a808838438cbad7f8.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "3e62dc26803d036f1694f43a9719a0346520e507a28cac600939c13d04365cbf"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/c4c3759ae0a8-character_height_smoke_4ece23cf25724bccbefc96214a8177eb.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\c4c3759ae0a8-character_height_smoke_4ece23cf25724bccbefc96214a8177eb.json",
+      "raw_bytes": 388,
+      "raw_sha256": "bf4d557bd0ce459ee50398a3abba2ebb3d992995ca4558d804a5fc772df4421b",
+      "consolidated_path": "closure/physical-receipts/root/c4c3759ae0a8-character_height_smoke_4ece23cf25724bccbefc96214a8177eb.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "bf4d557bd0ce459ee50398a3abba2ebb3d992995ca4558d804a5fc772df4421b"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/c4c4a7c0dd66-tutorial_smoke_b4e5ac71574f4d4db50f173695aa05d2.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\c4c4a7c0dd66-tutorial_smoke_b4e5ac71574f4d4db50f173695aa05d2.json",
+      "raw_bytes": 388,
+      "raw_sha256": "0d6627c89d162c751cba1caaca443cbf0d4e5563b5967dd663af672c66bfec3c",
+      "consolidated_path": "closure/physical-receipts/root/c4c4a7c0dd66-tutorial_smoke_b4e5ac71574f4d4db50f173695aa05d2.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "0d6627c89d162c751cba1caaca443cbf0d4e5563b5967dd663af672c66bfec3c"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/c722a47fbcd2-layers_smoke_4ec4a037893b4ee2bc2fb2a68ceeb553.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\c722a47fbcd2-layers_smoke_4ec4a037893b4ee2bc2fb2a68ceeb553.json",
+      "raw_bytes": 388,
+      "raw_sha256": "fe57eb533b1bdd6da16247a3687b40518541501ea1c22f3a08e8e8a4f57ac540",
+      "consolidated_path": "closure/physical-receipts/root/c722a47fbcd2-layers_smoke_4ec4a037893b4ee2bc2fb2a68ceeb553.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "fe57eb533b1bdd6da16247a3687b40518541501ea1c22f3a08e8e8a4f57ac540"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/caf1509f5ecc-shape_study_teardown_45d237a8d7ec41548cc30e9b5ad10fc8.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\caf1509f5ecc-shape_study_teardown_45d237a8d7ec41548cc30e9b5ad10fc8.json",
+      "raw_bytes": 387,
+      "raw_sha256": "9ee7ad8d0bfc7a0e195abe7dcdbcf92b9abbbe6372572b9ee37bc4ceaab9c0cc",
+      "consolidated_path": "closure/physical-receipts/root/caf1509f5ecc-shape_study_teardown_45d237a8d7ec41548cc30e9b5ad10fc8.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "9ee7ad8d0bfc7a0e195abe7dcdbcf92b9abbbe6372572b9ee37bc4ceaab9c0cc"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/cc4f1181f77c-recovery_startup_writer_65f9ba46f65f432ab6f467e86d3ec086.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\cc4f1181f77c-recovery_startup_writer_65f9ba46f65f432ab6f467e86d3ec086.json",
+      "raw_bytes": 388,
+      "raw_sha256": "60466e63cb6ed3e48377e45bbd8acadf48216180a7b68ff5bd681ebf8a741916",
+      "consolidated_path": "closure/physical-receipts/root/cc4f1181f77c-recovery_startup_writer_65f9ba46f65f432ab6f467e86d3ec086.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "60466e63cb6ed3e48377e45bbd8acadf48216180a7b68ff5bd681ebf8a741916"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/cca0fd04c6d0-studio_da5b6a3de69f4722a2f146088c489b53.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\cca0fd04c6d0-studio_da5b6a3de69f4722a2f146088c489b53.json",
+      "raw_bytes": 387,
+      "raw_sha256": "b49e987abc5c7e5d99219797c703fd39f5daebee7a4cbe68f6afd8a1132f718a",
+      "consolidated_path": "closure/physical-receipts/root/cca0fd04c6d0-studio_da5b6a3de69f4722a2f146088c489b53.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "b49e987abc5c7e5d99219797c703fd39f5daebee7a4cbe68f6afd8a1132f718a"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/ccb0072d4263-secondary_helpers_multi_0f2a5f3b181645e2b76de4cacff91e5c.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\ccb0072d4263-secondary_helpers_multi_0f2a5f3b181645e2b76de4cacff91e5c.json",
+      "raw_bytes": 385,
+      "raw_sha256": "9d82b102355ed59e6e712b9d68139575cb9675ab7e1d39f21ab82bf4f6800674",
+      "consolidated_path": "closure/physical-receipts/root/ccb0072d4263-secondary_helpers_multi_0f2a5f3b181645e2b76de4cacff91e5c.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 385,
+        "sha256": "9d82b102355ed59e6e712b9d68139575cb9675ab7e1d39f21ab82bf4f6800674"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/cd01e6302630-studio_db61c8e8d21e47ca91fed6d54c9c3c82.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\cd01e6302630-studio_db61c8e8d21e47ca91fed6d54c9c3c82.json",
+      "raw_bytes": 387,
+      "raw_sha256": "1f1c35ddd1615a48eefa0fc19dbe5b03f96507b40a34974a9bf5dadc719fbc6d",
+      "consolidated_path": "closure/physical-receipts/root/cd01e6302630-studio_db61c8e8d21e47ca91fed6d54c9c3c82.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "1f1c35ddd1615a48eefa0fc19dbe5b03f96507b40a34974a9bf5dadc719fbc6d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/cdbb4b9f8af7-fill_connections_smoke_5f9bc6196a41497c8d59507fb63c8358.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\cdbb4b9f8af7-fill_connections_smoke_5f9bc6196a41497c8d59507fb63c8358.json",
+      "raw_bytes": 387,
+      "raw_sha256": "fc2c6102fd217e8f08e8c01f11c53d24b05698b8f561f5f2b5a9353253bca865",
+      "consolidated_path": "closure/physical-receipts/root/cdbb4b9f8af7-fill_connections_smoke_5f9bc6196a41497c8d59507fb63c8358.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "fc2c6102fd217e8f08e8c01f11c53d24b05698b8f561f5f2b5a9353253bca865"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/d1126c889829-tutorial_smoke_64356f2742e043b6b69c4e768d0dab8e.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\d1126c889829-tutorial_smoke_64356f2742e043b6b69c4e768d0dab8e.json",
+      "raw_bytes": 387,
+      "raw_sha256": "8d1dbd8f3e8f148dcab68ea7678d30af6853b6837b5bd8ff2654b53e89284f86",
+      "consolidated_path": "closure/physical-receipts/root/d1126c889829-tutorial_smoke_64356f2742e043b6b69c4e768d0dab8e.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "8d1dbd8f3e8f148dcab68ea7678d30af6853b6837b5bd8ff2654b53e89284f86"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/d3737fb4f3ba-palette_smoke_52482ee7d0e0487e8c1dcdaa5bee7294.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\d3737fb4f3ba-palette_smoke_52482ee7d0e0487e8c1dcdaa5bee7294.json",
+      "raw_bytes": 387,
+      "raw_sha256": "55d757506b9a64354a9d991b959b6c747e878b2073baa6f14053a9721a9ee103",
+      "consolidated_path": "closure/physical-receipts/root/d3737fb4f3ba-palette_smoke_52482ee7d0e0487e8c1dcdaa5bee7294.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "55d757506b9a64354a9d991b959b6c747e878b2073baa6f14053a9721a9ee103"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/d7665e6e5762-studio_ac3b0b98ea8d416da35602fc9459bc1d.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\d7665e6e5762-studio_ac3b0b98ea8d416da35602fc9459bc1d.json",
+      "raw_bytes": 387,
+      "raw_sha256": "ee2399d5b80784b3667a51321bfd943b92add0a854d59c1af51ead1b54fc1da9",
+      "consolidated_path": "closure/physical-receipts/root/d7665e6e5762-studio_ac3b0b98ea8d416da35602fc9459bc1d.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "ee2399d5b80784b3667a51321bfd943b92add0a854d59c1af51ead1b54fc1da9"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/d919d8735558-secondary_pick_smoke_ddd28d543fe14c32a7f84da426035063.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\d919d8735558-secondary_pick_smoke_ddd28d543fe14c32a7f84da426035063.json",
+      "raw_bytes": 387,
+      "raw_sha256": "1199e412c3a060401f64ffa21a1f678341523937aebb868f88640db506b869ad",
+      "consolidated_path": "closure/physical-receipts/root/d919d8735558-secondary_pick_smoke_ddd28d543fe14c32a7f84da426035063.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "1199e412c3a060401f64ffa21a1f678341523937aebb868f88640db506b869ad"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/d94986cc64b9-physics_props_smoke_76a3424539764b39832b8beea218938e.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\d94986cc64b9-physics_props_smoke_76a3424539764b39832b8beea218938e.json",
+      "raw_bytes": 388,
+      "raw_sha256": "a328dbf4a093a47077add25b26d4871452c7f334258a2ff0b26f9303b85c868d",
+      "consolidated_path": "closure/physical-receipts/root/d94986cc64b9-physics_props_smoke_76a3424539764b39832b8beea218938e.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "a328dbf4a093a47077add25b26d4871452c7f334258a2ff0b26f9303b85c868d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/d9c19695694f-drawing_transform_smoke_25489bbad6b04ce897f24590315c3922.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\d9c19695694f-drawing_transform_smoke_25489bbad6b04ce897f24590315c3922.json",
+      "raw_bytes": 388,
+      "raw_sha256": "b36152be82ced5f54c8e276e08e60a0eb4ac625433d483a8ea943a06e5162e9d",
+      "consolidated_path": "closure/physical-receipts/root/d9c19695694f-drawing_transform_smoke_25489bbad6b04ce897f24590315c3922.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "b36152be82ced5f54c8e276e08e60a0eb4ac625433d483a8ea943a06e5162e9d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/dc7b96b17fb2-motion_animation_smoke_eca2f7ec0f0e481b8fda69ef09d23662.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\dc7b96b17fb2-motion_animation_smoke_eca2f7ec0f0e481b8fda69ef09d23662.json",
+      "raw_bytes": 388,
+      "raw_sha256": "5c4966bab6a6b7dbed1e081ee0d09064ddea08d7aaea014e39e7b89dd92117b5",
+      "consolidated_path": "closure/physical-receipts/root/dc7b96b17fb2-motion_animation_smoke_eca2f7ec0f0e481b8fda69ef09d23662.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "5c4966bab6a6b7dbed1e081ee0d09064ddea08d7aaea014e39e7b89dd92117b5"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/dd0ea7474243-secondary_helpers_native_7c0949d1a2604f6f984f45b09ff42984.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\dd0ea7474243-secondary_helpers_native_7c0949d1a2604f6f984f45b09ff42984.json",
+      "raw_bytes": 387,
+      "raw_sha256": "2f3a6ebb7c28dd1fecaccc7bd06c4eeb53e807eb4e0be19ef130779d06d5e125",
+      "consolidated_path": "closure/physical-receipts/root/dd0ea7474243-secondary_helpers_native_7c0949d1a2604f6f984f45b09ff42984.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "2f3a6ebb7c28dd1fecaccc7bd06c4eeb53e807eb4e0be19ef130779d06d5e125"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/dd3d64e405f3-project_duration_smoke_56f7d5ad43de4900bb2904adfea3a42a.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\dd3d64e405f3-project_duration_smoke_56f7d5ad43de4900bb2904adfea3a42a.json",
+      "raw_bytes": 387,
+      "raw_sha256": "4578e9c88d3dbadbed1f0c6cb6b0e9e54426304a5a24ed5c6aa90dc99a8bba50",
+      "consolidated_path": "closure/physical-receipts/root/dd3d64e405f3-project_duration_smoke_56f7d5ad43de4900bb2904adfea3a42a.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "4578e9c88d3dbadbed1f0c6cb6b0e9e54426304a5a24ed5c6aa90dc99a8bba50"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/de7df785df4b-fill_connections_smoke_607430af608e480b8912b5a8619df306.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\de7df785df4b-fill_connections_smoke_607430af608e480b8912b5a8619df306.json",
+      "raw_bytes": 388,
+      "raw_sha256": "103ecd24990fc375d1608421357508202303be443bd8bf3433338629636b1bf1",
+      "consolidated_path": "closure/physical-receipts/root/de7df785df4b-fill_connections_smoke_607430af608e480b8912b5a8619df306.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "103ecd24990fc375d1608421357508202303be443bd8bf3433338629636b1bf1"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/df455cca09a6-fill_smoke_09ade767e60744fda8297bc6ca62a1a5.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\df455cca09a6-fill_smoke_09ade767e60744fda8297bc6ca62a1a5.json",
+      "raw_bytes": 388,
+      "raw_sha256": "8be75ae6049e418d515fad8174176bed81cb4a45aeb9c6cbaa916e260e8b7b94",
+      "consolidated_path": "closure/physical-receipts/root/df455cca09a6-fill_smoke_09ade767e60744fda8297bc6ca62a1a5.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "8be75ae6049e418d515fad8174176bed81cb4a45aeb9c6cbaa916e260e8b7b94"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/e2af18c7db0b-workspace_resize_smoke_7f219c7c9a4f4bd295e6a9664e7f8536.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\e2af18c7db0b-workspace_resize_smoke_7f219c7c9a4f4bd295e6a9664e7f8536.json",
+      "raw_bytes": 387,
+      "raw_sha256": "aab70e38b41d0b4cf194f5b691e3b44c38442302aaf3ef193929135e9988d758",
+      "consolidated_path": "closure/physical-receipts/root/e2af18c7db0b-workspace_resize_smoke_7f219c7c9a4f4bd295e6a9664e7f8536.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "aab70e38b41d0b4cf194f5b691e3b44c38442302aaf3ef193929135e9988d758"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/e364d03d267e-physics_smoke_70d7d12ff7f54f30b39aa841bec3f403.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\e364d03d267e-physics_smoke_70d7d12ff7f54f30b39aa841bec3f403.json",
+      "raw_bytes": 388,
+      "raw_sha256": "3458b30f59debe8e121138345329c0692f3e37e5e941a570fe49f6a5e17b517a",
+      "consolidated_path": "closure/physical-receipts/root/e364d03d267e-physics_smoke_70d7d12ff7f54f30b39aa841bec3f403.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "3458b30f59debe8e121138345329c0692f3e37e5e941a570fe49f6a5e17b517a"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/e3fae95514c3-map_calibration_smoke_b39a85948b0f41dea151f3c598745648.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\e3fae95514c3-map_calibration_smoke_b39a85948b0f41dea151f3c598745648.json",
+      "raw_bytes": 388,
+      "raw_sha256": "052a888ee16c7429401562c8bac5f1e36cfdf2e9285d0d133184cf43d78b32c4",
+      "consolidated_path": "closure/physical-receipts/root/e3fae95514c3-map_calibration_smoke_b39a85948b0f41dea151f3c598745648.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "052a888ee16c7429401562c8bac5f1e36cfdf2e9285d0d133184cf43d78b32c4"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/e4392c3e608a-studio_8f2bfa1b01084e8c87e883accec28d02.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\e4392c3e608a-studio_8f2bfa1b01084e8c87e883accec28d02.json",
+      "raw_bytes": 387,
+      "raw_sha256": "6ce035c5ba5c2bb8f710289f7adff7bb0b7ef03207251a64ff2a73ed1645e6c6",
+      "consolidated_path": "closure/physical-receipts/root/e4392c3e608a-studio_8f2bfa1b01084e8c87e883accec28d02.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "6ce035c5ba5c2bb8f710289f7adff7bb0b7ef03207251a64ff2a73ed1645e6c6"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/ea1df5b9b098-contact_viewport_smoke_d4dbe06e74654e2abf2afdd3b6743f8f.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\ea1df5b9b098-contact_viewport_smoke_d4dbe06e74654e2abf2afdd3b6743f8f.json",
+      "raw_bytes": 387,
+      "raw_sha256": "7fa0b842ab9d469db33ffb64ed48b95855cc44c65eb358808f6d6da2f8db86b8",
+      "consolidated_path": "closure/physical-receipts/root/ea1df5b9b098-contact_viewport_smoke_d4dbe06e74654e2abf2afdd3b6743f8f.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "7fa0b842ab9d469db33ffb64ed48b95855cc44c65eb358808f6d6da2f8db86b8"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/ea809af811a7-project_duration_smoke_52da959da3bc44e59a6d1437c6813af8.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\ea809af811a7-project_duration_smoke_52da959da3bc44e59a6d1437c6813af8.json",
+      "raw_bytes": 387,
+      "raw_sha256": "65737098318b2480c3ec3b829a02980f1e5753b50ef6823063da57df414c9c91",
+      "consolidated_path": "closure/physical-receipts/root/ea809af811a7-project_duration_smoke_52da959da3bc44e59a6d1437c6813af8.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "65737098318b2480c3ec3b829a02980f1e5753b50ef6823063da57df414c9c91"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/ec1e64a27e15-palette_smoke_d352cb70029248a795f1ccdbb82a6a66.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\ec1e64a27e15-palette_smoke_d352cb70029248a795f1ccdbb82a6a66.json",
+      "raw_bytes": 388,
+      "raw_sha256": "1b4fe17c0c046ed4033c85d43109df91ddb8c455744aa27ed9b0d93a57020600",
+      "consolidated_path": "closure/physical-receipts/root/ec1e64a27e15-palette_smoke_d352cb70029248a795f1ccdbb82a6a66.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "1b4fe17c0c046ed4033c85d43109df91ddb8c455744aa27ed9b0d93a57020600"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/f09bafd89fa8-pose_bounds_smoke_5efc9baf3b1f4383a30af83bdcc55634.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\f09bafd89fa8-pose_bounds_smoke_5efc9baf3b1f4383a30af83bdcc55634.json",
+      "raw_bytes": 388,
+      "raw_sha256": "8402ee92e6ccf766e80e5330ade1d5e86706f96c62914e90600d77e4633a8afe",
+      "consolidated_path": "closure/physical-receipts/root/f09bafd89fa8-pose_bounds_smoke_5efc9baf3b1f4383a30af83bdcc55634.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "8402ee92e6ccf766e80e5330ade1d5e86706f96c62914e90600d77e4633a8afe"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/f12f4dc2d778-animated_channels_smoke_13239cc1a836438095c58691aa76122b.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\f12f4dc2d778-animated_channels_smoke_13239cc1a836438095c58691aa76122b.json",
+      "raw_bytes": 388,
+      "raw_sha256": "5d23a2e84ff8c0a1e4e2c2172c4541c7be8bab7ba87c86cb220ae24dc3cb05b9",
+      "consolidated_path": "closure/physical-receipts/root/f12f4dc2d778-animated_channels_smoke_13239cc1a836438095c58691aa76122b.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "5d23a2e84ff8c0a1e4e2c2172c4541c7be8bab7ba87c86cb220ae24dc3cb05b9"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/f5adaecd917e-studio_1981ad23bebe4f78bff520d066365ae7.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\f5adaecd917e-studio_1981ad23bebe4f78bff520d066365ae7.json",
+      "raw_bytes": 387,
+      "raw_sha256": "253af5008308a017c254cae94c8368de9c5c870b7e5b199cf087446961143c2d",
+      "consolidated_path": "closure/physical-receipts/root/f5adaecd917e-studio_1981ad23bebe4f78bff520d066365ae7.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "253af5008308a017c254cae94c8368de9c5c870b7e5b199cf087446961143c2d"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/f61c041236f8-fill_expand_smoke_a5e7c5067cc74923816bc66f0befe350.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\f61c041236f8-fill_expand_smoke_a5e7c5067cc74923816bc66f0befe350.json",
+      "raw_bytes": 387,
+      "raw_sha256": "79b9087ccd7761bae334a52b0298faf5ae1781c1c477006f1899144641c88621",
+      "consolidated_path": "closure/physical-receipts/root/f61c041236f8-fill_expand_smoke_a5e7c5067cc74923816bc66f0befe350.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "79b9087ccd7761bae334a52b0298faf5ae1781c1c477006f1899144641c88621"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/f972e91dd8ef-physics_contacts_smoke_8ebbb4ce471f4e73bf889ac160a2cf94.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\f972e91dd8ef-physics_contacts_smoke_8ebbb4ce471f4e73bf889ac160a2cf94.json",
+      "raw_bytes": 388,
+      "raw_sha256": "065c545aa5324e7848c8408a52bf4ec7ef49825f127d9eb0ba3b9dc3e153ce4b",
+      "consolidated_path": "closure/physical-receipts/root/f972e91dd8ef-physics_contacts_smoke_8ebbb4ce471f4e73bf889ac160a2cf94.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "065c545aa5324e7848c8408a52bf4ec7ef49825f127d9eb0ba3b9dc3e153ce4b"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/f9b2013ddd4e-scene_view_smoke_41f8d111447f43b8915d42e4b91db602.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\f9b2013ddd4e-scene_view_smoke_41f8d111447f43b8915d42e4b91db602.json",
+      "raw_bytes": 388,
+      "raw_sha256": "8230a5bf1d18e365646564d5088f53b58ab34b557a0a03ad17daa279bdc4d7f9",
+      "consolidated_path": "closure/physical-receipts/root/f9b2013ddd4e-scene_view_smoke_41f8d111447f43b8915d42e4b91db602.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 388,
+        "sha256": "8230a5bf1d18e365646564d5088f53b58ab34b557a0a03ad17daa279bdc4d7f9"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/f9f8b16654c4-has_background_save_smoke_631e1034ee764be580901d1b291dc145.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\f9f8b16654c4-has_background_save_smoke_631e1034ee764be580901d1b291dc145.json",
+      "raw_bytes": 387,
+      "raw_sha256": "e98547b8255153963a2220a0c382fca10f1d160e8dc9140fc79ad58d1275be69",
+      "consolidated_path": "closure/physical-receipts/root/f9f8b16654c4-has_background_save_smoke_631e1034ee764be580901d1b291dc145.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "e98547b8255153963a2220a0c382fca10f1d160e8dc9140fc79ad58d1275be69"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/fdcc155bbdba-studio_6b93e5e66b4746b295fc784b2c477996.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\fdcc155bbdba-studio_6b93e5e66b4746b295fc784b2c477996.json",
+      "raw_bytes": 387,
+      "raw_sha256": "644ffaa4a3dfb6fe9faa472e4a7f7c05577acd5203e55a7f534fc6dde97b6aea",
+      "consolidated_path": "closure/physical-receipts/root/fdcc155bbdba-studio_6b93e5e66b4746b295fc784b2c477996.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "644ffaa4a3dfb6fe9faa472e4a7f7c05577acd5203e55a7f534fc6dde97b6aea"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "physical-receipts/root/ff8ba1326f94-studio_bb2e3f9cf3564fe6a40fcb364c53d6a8.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\physical-receipts\\root\\ff8ba1326f94-studio_bb2e3f9cf3564fe6a40fcb364c53d6a8.json",
+      "raw_bytes": 387,
+      "raw_sha256": "cfed18a252691a2b5844a07187bba5cb3722763b9175ac0588a64272a565b9a5",
+      "consolidated_path": "closure/physical-receipts/root/ff8ba1326f94-studio_bb2e3f9cf3564fe6a40fcb364c53d6a8.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 387,
+        "sha256": "cfed18a252691a2b5844a07187bba5cb3722763b9175ac0588a64272a565b9a5"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "publication_gates.py",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\publication_gates.py",
+      "raw_bytes": 18761,
+      "raw_sha256": "c763ca66ace6c0b05a9f77164560d0bdd1d807c8103bd39d938349a1f1498b31",
+      "consolidated_path": "recipe/publication_gates.py",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 18761,
+        "sha256": "c763ca66ace6c0b05a9f77164560d0bdd1d807c8103bd39d938349a1f1498b31"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "README.md",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\README.md",
+      "raw_bytes": 248,
+      "raw_sha256": "c0e0d4bf138ca009ed9a9920e785d02f2391158b9b33e5df610190e765f10e4f",
+      "consolidated_path": "provenance/receipt-audit-original-README.md",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 248,
+        "sha256": "c0e0d4bf138ca009ed9a9920e785d02f2391158b9b33e5df610190e765f10e4f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "receipt-inventory.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\receipt-inventory.json",
+      "raw_bytes": 345984,
+      "raw_sha256": "018e06c890c61160153e80b2cb8555ad7cbca31628edfd6cc14d5743e7e15380",
+      "consolidated_path": "closure/receipt-inventory.json.gz",
+      "recover": "gzip_decode",
+      "consolidated_file": {
+        "bytes": 30285,
+        "sha256": "ad2e2c65279f32bee8689f00163b7ead4d463959e01978ed4f215ece5560be0f"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "receipt-ready-final.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\receipt-ready-final.json",
+      "raw_bytes": 2170,
+      "raw_sha256": "dee616f7dccd129bcd43a32b268c586957e418e41a96ed47fe1e666d876eb9d1",
+      "consolidated_path": "receipt-audit/receipt-ready-final.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 2170,
+        "sha256": "dee616f7dccd129bcd43a32b268c586957e418e41a96ed47fe1e666d876eb9d1"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "RESULT_REGISTRY.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\RESULT_REGISTRY.json",
+      "raw_bytes": 6092,
+      "raw_sha256": "e6c8b9dd0f5e69e6ca9b7a25ac29086082ccefab824be88a2a6cf49d483ee74c",
+      "consolidated_path": "recipe/RESULT_REGISTRY.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 6092,
+        "sha256": "e6c8b9dd0f5e69e6ca9b7a25ac29086082ccefab824be88a2a6cf49d483ee74c"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "root-graphics-lease-released.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\root-graphics-lease-released.json",
+      "raw_bytes": 823,
+      "raw_sha256": "bbd7ad041bf80b4cb2ded1f6cbb7e65d8a23c314fd87ce13a3112287da2de9b5",
+      "consolidated_path": "closure/graphics-lease-released.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 823,
+        "sha256": "bbd7ad041bf80b4cb2ded1f6cbb7e65d8a23c314fd87ce13a3112287da2de9b5"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "RUN_EXPECTATIONS.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\RUN_EXPECTATIONS.json",
+      "raw_bytes": 3650,
+      "raw_sha256": "56bb65ea5cc3989e144b5d4bf99716741d186987ceb026847686db34152fb0c4",
+      "consolidated_path": "recipe/RUN_EXPECTATIONS.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 3650,
+        "sha256": "56bb65ea5cc3989e144b5d4bf99716741d186987ceb026847686db34152fb0c4"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "source-after.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\source-after.json",
+      "raw_bytes": 105862,
+      "raw_sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a",
+      "consolidated_path": "canonical/source-after.json.gz",
+      "recover": "gzip_decode",
+      "consolidated_file": {
+        "bytes": 47503,
+        "sha256": "46575c2d36e26035aa83578bdec6fbc7c31f8ab43adc5d95a9377fcb7bc827e1"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "source-before.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\source-before.json",
+      "raw_bytes": 105862,
+      "raw_sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a",
+      "consolidated_path": "canonical/source-before.json.gz",
+      "recover": "gzip_decode",
+      "consolidated_file": {
+        "bytes": 47503,
+        "sha256": "46575c2d36e26035aa83578bdec6fbc7c31f8ab43adc5d95a9377fcb7bc827e1"
+      },
+      "raw_roundtrip_verified": true
+    },
+    {
+      "original_relative_path": "state.json",
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115\\receipt-audit\\state.json",
+      "raw_bytes": 828,
+      "raw_sha256": "952613d8c02c7e41a98631cd563c640e750eafc5c6d535fce2bf1f27bd8bbecb",
+      "consolidated_path": "canonical/state.json",
+      "recover": "identity",
+      "consolidated_file": {
+        "bytes": 828,
+        "sha256": "952613d8c02c7e41a98631cd563c640e750eafc5c6d535fce2bf1f27bd8bbecb"
+      },
+      "raw_roundtrip_verified": true
+    }
+  ],
+  "root_run_files": [
+    {
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304\\graphics-lease-released.json",
+      "consolidated_path": "closure/graphics-lease-released.json",
+      "bytes": 823,
+      "sha256": "bbd7ad041bf80b4cb2ded1f6cbb7e65d8a23c314fd87ce13a3112287da2de9b5",
+      "exact_raw_copy": true
+    },
+    {
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304\\coordinator-children-observed.json",
+      "consolidated_path": "closure/coordinator-children-observed.json",
+      "bytes": 623,
+      "sha256": "bc9d1b6524809b85db2127ed7e8c19b037ff3a457d910e3928c97a487ecae96e",
+      "exact_raw_copy": true
+    },
+    {
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304\\authoritative-host-terminal.json",
+      "consolidated_path": "closure/authoritative-host-terminal.json",
+      "bytes": 896,
+      "sha256": "0737252b2b29c95392fc39b0af6d89040c7ba9fc8151bc5a97c90bbdc0c422d6",
+      "exact_raw_copy": true
+    },
+    {
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304\\authoritative-host-termination.json",
+      "consolidated_path": "closure/host-proof.json",
+      "bytes": 731,
+      "sha256": "c2a0f1b9027baeb45d0648708da2e6c87a77c2a91841a84a0241b70830674dba",
+      "exact_raw_copy": true
+    },
+    {
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304\\state.json",
+      "consolidated_path": "canonical/state.json",
+      "bytes": 828,
+      "sha256": "952613d8c02c7e41a98631cd563c640e750eafc5c6d535fce2bf1f27bd8bbecb",
+      "exact_raw_copy": true
+    },
+    {
+      "original_file": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304\\launch.json",
+      "consolidated_path": "canonical/launch.json",
+      "bytes": 1099,
+      "sha256": "7a87fcb742da771d81c7e7400e41d6976e408c682c104a0cdd5b9309816c5f5c",
+      "exact_raw_copy": true
+    }
+  ],
+  "summary_payloads": "Retained at their original relative paths; original summary INDEX recovers every payload",
+  "all_audit_payloads_mapped": true,
+  "old_files_mutated_or_deleted": false
+}

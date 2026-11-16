@@ -1,0 +1,133 @@
+{
+  "format": "has_coordinate_boundary_provenance_1",
+  "checked_utc": "2026-11-15T23:05:56Z",
+  "source_HEAD": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "local_file_pins": {
+    "frozen_native_glTF_matcher": {
+      "bytes": 23659,
+      "sha256": "f9afff684c82d601029f3a6a32d187a7df476d94b96bc39eff3abe2814c2723f"
+    },
+    "SourceIO_MDL49": {
+      "bytes": 12880,
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b"
+    },
+    "SourceIO_VVD": {
+      "bytes": 3743,
+      "sha256": "2dc91e450ed1b32835c5b133360e8f56d923785d20aecce2c39a312b754a17ed"
+    },
+    "installed_exporter_extract": {
+      "bytes": 88128,
+      "sha256": "455a3566d833481b230141b457452b5bf4ff4a1661d4dd6765a568488e0a2769"
+    },
+    "installed_exporter_constants": {
+      "bytes": 4344,
+      "sha256": "be59f961a8f6d08068a7aaae4b91a72c5fadd832ca9b228276732b40f0f68a38"
+    },
+    "SDK_jigglebones_cpp": {
+      "bytes": 25162,
+      "sha256": "a3f319258a21498bfa6467bef641446d66ecd5497b9dc8a949b1f08b87d7027e"
+    },
+    "original_conversion_log": {
+      "bytes": 9510,
+      "sha256": "045635bd8a42ac1778c53681762dc528921010b992b3c8880140d8c8fabcbc38"
+    }
+  },
+  "official_primary_references": [
+    {
+      "label": "Blender5.1.2 mesh normals",
+      "commit": "ec6e62d40fa9e9d1bea33ad5d00148c99a4f0832",
+      "url": "https://github.com/blender/blender/blob/ec6e62d40fa9e9d1bea33ad5d00148c99a4f0832/source/blender/blenkernel/intern/mesh_normals.cc",
+      "sha256": "d09f1700e8cc277f8c84d2c5192c2d52a8b72bfeab93c9e5ebfbecea3ce61cc4",
+      "bytes": 69860,
+      "lines": {
+        "short2_encode_decode": [
+          645,
+          747
+        ],
+        "custom_setter": [
+          1524,
+          1578
+        ]
+      },
+      "stored_source": false
+    },
+    {
+      "label": "Blender glTF extractor",
+      "commit": "ec6e62d40fa9e9d1bea33ad5d00148c99a4f0832",
+      "url": "https://github.com/blender/blender/blob/ec6e62d40fa9e9d1bea33ad5d00148c99a4f0832/scripts/addons_core/io_scene_gltf2/blender/exp/primitive_extract.py",
+      "sha256": "7e202e20a9416bd900934a176030e4bb52356f10886278805fe3d29444b5850a",
+      "bytes": 86459,
+      "installed_raw_bytes_match": false,
+      "installed_EOL_normalized_match": true,
+      "lines": [
+        1435,
+        1483
+      ],
+      "stored_source": false
+    },
+    {
+      "label": "Blender glTF constants",
+      "commit": "ec6e62d40fa9e9d1bea33ad5d00148c99a4f0832",
+      "url": "https://github.com/blender/blender/blob/ec6e62d40fa9e9d1bea33ad5d00148c99a4f0832/scripts/addons_core/io_scene_gltf2/io/com/constants.py",
+      "sha256": "a812f552ef90409f5cdb0965e23ac6c4fe7ade5de39bcfffbd57e462ea9355e6",
+      "bytes": 4185,
+      "installed_raw_bytes_match": false,
+      "installed_EOL_normalized_match": true,
+      "lines": [
+        159,
+        159
+      ],
+      "stored_source": false
+    },
+    {
+      "label": "SourceIO MDL49",
+      "commit": "fe24260b97ac03b899d9b5d4f0fd7b34772f3647",
+      "url": "https://github.com/REDxEYE/SourceIO/blob/fe24260b97ac03b899d9b5d4f0fd7b34772f3647/blender_bindings/models/mdl49/import_mdl.py",
+      "sha256": "173a34ecae50e0b7a9d467908f238c02d5d7e19df3c7f52387534914d703233b",
+      "bytes": 12880,
+      "installed_raw_bytes_match": true,
+      "lines": [
+        77,
+        90
+      ],
+      "stored_source": false
+    },
+    {
+      "label": "Valve SDK jiggle reference",
+      "commit": "019e91ccd650a34745934c65cdbbe89ffcc44ede",
+      "url": "https://github.com/ValveSoftware/source-sdk-2013/blob/019e91ccd650a34745934c65cdbbe89ffcc44ede/src/public/jigglebones.cpp",
+      "sha256": "a3f319258a21498bfa6467bef641446d66ecd5497b9dc8a949b1f08b87d7027e",
+      "source_already_local_unexecuted": true,
+      "new_source_copy_published": false,
+      "lines": {
+        "native_Z_goal": [
+          61,
+          71
+        ],
+        "mass_and_springs": [
+          143,
+          184
+        ],
+        "Euler": [
+          189,
+          194
+        ],
+        "angle_length": [
+          412,
+          445
+        ]
+      }
+    }
+  ],
+  "remote_source_reads": "Parent-authorized memory-only reads; metadata/hashes retained, full source not written",
+  "log_build_join": "Original Junko conversion.log reports Blender5.1.2/ec6e62d40fa9; exact commit resolved read-only, not a binary rebuild claim",
+  "scratch_attempts": [
+    {
+      "id": "initial_interactive_normal_instrumentation",
+      "status": "INVALID_DIAGNOSTIC",
+      "reason": "Used stale last-candidate sn; not selected native vi. Corrected saved code asserts selected ne consistency."
+    }
+  ],
+  "new_apps_or_native_runtime_launched": false,
+  "production_or_installed_sources_modified": false
+}

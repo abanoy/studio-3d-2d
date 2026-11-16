@@ -1,0 +1,41 @@
+# REVIEW ONLY. This file has not been executed. It intentionally stops here.
+throw 'Pending: current canonical terminal PASS, saved/pushed/remote-verified publication, fresh exact inventory and current nonuse/delete-access clearance from root.'
+
+# After those real gates, root may prepare a separate execution copy. Preserve
+# this reviewed plan and all before/after receipts. Use PowerShell end-to-end.
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+$workspace = 'C:\a\Programming\cloudflare\has-acceptance-session-20261111'
+$expectedParent = Join-Path $workspace 'output\source-choices-native'
+$fixedTargets = @(
+    'C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\source-choices-native\1794615194930984000-ae0e0967',
+    'C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\source-choices-native\1794615438168999800-42f0686d'
+)
+foreach ($candidate in $fixedTargets) {
+    $resolved = (Resolve-Path -LiteralPath $candidate -ErrorAction Stop).ProviderPath
+    if ($resolved -cne $candidate) { throw 'Unexpected resolved candidate spelling/path.' }
+    if ([IO.Path]::GetDirectoryName($resolved) -cne $expectedParent) { throw 'Candidate escaped the exact owned parent.' }
+    $ancestor = Get-Item -LiteralPath $resolved -Force
+    while ($null -ne $ancestor -and $ancestor.FullName -cne $workspace) {
+        if (($ancestor.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0) { throw 'Candidate ancestor is a reparse point.' }
+        $ancestor = $ancestor.Parent
+    }
+    if ($null -eq $ancestor) { throw 'Workspace boundary was not reached.' }
+    $children = @(Get-ChildItem -LiteralPath $resolved -Force -Recurse -ErrorAction Stop)
+    if (@($children | Where-Object { ($_.Attributes -band [IO.FileAttributes]::ReparsePoint) -ne 0 }).Count -gt 0) { throw 'Candidate contains a reparse point.' }
+}
+
+# BEFORE the following commands, a fresh independent inventory must still match
+# all audited relative paths, bytes, nanosecond mtimes, SHA256 and directory
+# membership; every regular file must still have exactly one hardlink. Any
+# discrepancy, uninspectable record, open-use ambiguity or failed gate REFUSES
+# both removals. This review does not clear hidden process identities.
+# Never broaden these literal targets, remove their parent, or remove kept runs.
+Remove-Item -LiteralPath 'C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\source-choices-native\1794615194930984000-ae0e0967' -Recurse -Force -ErrorAction Stop
+Remove-Item -LiteralPath 'C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\source-choices-native\1794615438168999800-42f0686d' -Recurse -Force -ErrorAction Stop
+
+# Record exact removed counts/bytes and verify both exact roots absent. Verify
+# all retained originals, current four-case runs, runtimes/reviews/recovery stay.
+# Save and push the cleanup receipt; do not claim removed binary/media payloads
+# are recoverable from Git (only code, metadata and compact evidence are).
+

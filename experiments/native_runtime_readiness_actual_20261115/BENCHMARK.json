@@ -1,0 +1,41 @@
+{
+  "format": "has_actual_native_runtime_readiness_20261115_1",
+  "source_commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "FK": {
+    "passed": true,
+    "checks": 41588,
+    "configurations": 220,
+    "native_bones": 69,
+    "native_Z_tips": 49,
+    "source_conversion_scales": [
+      0.01905
+    ],
+    "model_root_uniform_scales": [
+      1.0,
+      2.0
+    ],
+    "bone_world_max_error": 1.0013580322265625e-05,
+    "rest_world_max_error": 1.0013580322265625e-05,
+    "native_Z_tip_max_error": 3.885747446474852e-06,
+    "authored_rest_reset_preserved": true,
+    "scope": "Actual SceneIO/Model FK, immutable rests, native-Z tips; posed skin, normals, rendered geometry, world parenting/save and dynamics remain outside this probe."
+  },
+  "standalone_math": {
+    "passed": true,
+    "checks": 8994,
+    "failures": 0,
+    "integration_steps": 1440,
+    "sample_output_sets": 48,
+    "candidate_sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3",
+    "harness_sha256": "284944cd8ba0b876e09bbab0f86bd359d9446c6ff0ec2969fc8ec0747b1011fa",
+    "public_synthetic_oracle_sha256": "d131028f688711c7bc669eeeac04255a87a763e55fcda7e76b3337763bf976df",
+    "scalar64_max_vector_error": 9.374856803373542e-13,
+    "zero_cone_max_rest_displacement": 1.0805156823142815e-14,
+    "scope": "Standalone synthetic Godot scalar64 math and Vector3/Basis boundary only. No native geometry/SDK execution or application integration."
+  },
+  "closures": "Both parse/run retained children reaped; exact authoritative metadata records released leases and no matching owned runtimes. No process was killed.",
+  "private_data": "Original private oracle, INPUT_LOCK, actual ROOTLEASE and native/media assets remain LOCAL. This packet contains only selected actual metadata and source/case hash references.",
+  "application_solver_integrated": false,
+  "native_artist_fidelity_claim": false,
+  "formal_acceptance_changed": false
+}

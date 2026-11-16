@@ -1,0 +1,70 @@
+{
+  "format": "has_root_source_math_zero_angle_boundary_1",
+  "source_sha256": "636a81bd7932e790c7a3d512d88ea71e09362e473c4f8bc3f84e4022fbbbce9f",
+  "cases": 1000,
+  "failures": 104,
+  "first_failures": [
+    {
+      "case": 1,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 5,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 15,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 16,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 17,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 21,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 24,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 30,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 42,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 44,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 45,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    },
+    {
+      "case": 47,
+      "type": "ValueError",
+      "error": "Degenerate direction outside candidate subset"
+    }
+  ],
+  "expected": "Zero acceleration at an unchanged goal with zero cone should preserve the seeded rest position",
+  "apps_run": false
+}

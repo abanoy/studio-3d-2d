@@ -1,12 +1,21 @@
-# Source jiggle: next runtime increment
+# Source jiggle: measured readiness and next runtime increment
 
 Current behavior includes exact inactive metadata retention and a qualified
 native→Blender→glTF→HAS identity bridge for the exact Junko hair/default profile.
 All69 bones/49 rule owners survive ordinary import, Undo/Redo and packed/linked
 cold reopening. Simple loose-part review prioritizes two verified existing hair
 chains and offers explicit Enable these existing joints without replacing
-weights. Source coefficients remain inactive; native dynamics is still next.
+weights. Source coefficients remain inactive in production. A bounded native8
+live-pose/deformation proof now passes; wider chains and product integration
+remain next.
 See the [current scoped results](benchmarks/sfm_source_bone_binding_main_2026-11-13.json).
+
+November 15 continuation at f0dd57a: actual Model/SceneIO FK transport and
+standalone Godot scalar64 dynamics mathematics now pass their separate bounded
+checks. Actual native8 leaf application then passed its separate one-rule probe.
+All were parsed, executed, reaped and authoritatively closed after a fresh complete
+default pass. None activates native Source physics in Studio.
+See [current readiness evidence](benchmarks/native_source_readiness_2026-11-15.json).
 
 ## 1. Prove the export and runtime binding
 
@@ -42,21 +51,32 @@ duplicate attributes prevent unique native vertex identity claims. The first
 2e-5normal-fidelity gate failed and remains unqualified (maximum0.0012165467).
 No native-normal/artist fidelity or changed generic-helper behavior is claimed.
 See [measurements](benchmarks/native_source_coordinates_2026-11-13.json).
-The actual HAS posed/world/two-scale checks below remain next; two root scales
-and two conversion scales are separate qualifications.
+The actual Model/SceneIO world/rest/FK probe now passes **41,588 checks over
+220 configurations**, joining all 69 bones and 49 native-Z tips. It includes
+signed XYZ rotations at native8/17/18/26/27, moved parent anchors and moved/rotated
+roots at uniform root scales1/2. Maximum bone/rest matrix error is
+1.0013580322265625e-5; native-Z tip distance is3.885747446474852e-6. Parse/run
+exit0, retained child reaping, unchanged locked inputs and root closure pass.
+
+That is actual skeleton transport at the single source conversion0.01905.
+It does not measure posed weighted skin, GPU/render appearance or native
+dynamics. A second actual conversion scale remains UNRUN; two root scales
+must not be relabelled as two source conversions.
 
 Record native local position/quaternion, Blender rest matrices, exported joint
 transforms/inverse-bind matrices and imported HAS base poses. Establish the
 actual transform between these domains and any per-bone rest-basis correction.
-Require neutral weighted-vertex agreement, parent/inverse-bind closure and
-finite positive uniform scale. Check small positive/negative rotations around
-all three axes under moved/rotated roots and moved parent anchors at two scales.
-Reject mirrored, nonuniform or degenerate transforms for the initial subset.
+Neutral weighted-vertex agreement and the scoped skeleton/world checks above
+have separate evidence. Preserve their parent/inverse-bind and positive-uniform
+guards. Next measure actual weighted deformation and restoration through live
+pose application; reject mirrored, nonuniform or degenerate transforms rather
+than inferring broader import support from this one profile.
 
 Junko's raw rule length is20. Derive endpoints using the actual conversion scale
 and verified native axis. The native reference uses goal-matrix column2; the
-current scratch runner's virtual tail uses localY or a next-joint direction.
-Measure that correspondence before constructing a terminal endpoint.
+current generic scratch runner's virtual tail uses localY or a next-joint
+direction. The new actual skeleton probe confirms native joint-local+Z.
+Use that native-specific endpoint without changing generic helper behavior.
 
 ## 3. Implement a bounded dynamics subset with an independent reference
 
@@ -79,11 +99,64 @@ length constraint is active. Its frame-rate fallback is not yet a HAS clock
 policy. This is a reference candidate, not proof of the artist's closed SFM/GMod
 client behavior. No production solver or full-layout flag is enabled.
 
+The new standalone GDScript mathematical candidate passes **8,994 checks and
+1,440 integration ticks** on Godot4.6-stable. Maximum scalar64 vector difference
+from the public synthetic Python oracle is9.374856803373542e-13. Independent
+rational force/Euler and damping controls, zero-cone cases, reset/instance/atomic
+refusals and explicit Vector3/Basis binary32 boundaries are included. Parse and
+run each exit0; both retained children are reaped, inputs stay unchanged and
+root authoritative closure releases the lease without killing processes.
+
+This is isolated scalar64 mathematics, not native-model application or an
+executed SDK/client trajectory comparison. Its clock explicitly seeds tick0
+and integrates at120Hz, without SDK first-call1ms/fallback history. Original
+104/1000 zero-cone failures remain frozen separately; the exact-zero analytic
+correction and independent root reproduction are retained. Synthetic converted
+coordinate cases do not qualify a second actual native import conversion.
+
+The actual native8 FrontHair1 leaf readiness probe now passes **7,289 checks,
+1,440 ticks and12 cases**: two root contexts at requested scales1/2, each with
+control, signed3 and positive12/50 temporary world accelerations and a repeated12
+cycle. Its retained stiffness is100, damping5, length20 and mass20. Actual loaded
+skin bindings confirm152 influenced vertices,144 shared and9,509 outside the
+leaf. Maximum desired/actual basis error is5.068859995960295e-6, native-Z tip error
+3.4960614812007407e-6 and adapter correction4.934248870047675e-6, within the
+unchanged2e-5 boundary. Measured weighted displacement reaches0.03188145160675049.
+
+The actual complete sampled live-pose overlay preserves authored leaf position
+and all68 other world bones exactly. The9,509 weight-zero region stays exact;
+direct live_pose=null/apply restores keyed frame24, nonrest frame12 and every
+weighted point exactly. Cleared-state12-input repeats produce identical hashes,
+and signed/input-strength cases differ from their gravity-only control. These
+are actual CPU mesh/skin queries, not GPU skinning or rendered appearance.
+
+Attempts1 and2 remain **FAILED**, each after2 checks/0 dynamics steps. Their
+blanket modifier guard encountered one engine-default-shaped internal, direct,
+script-free PhysicalBoneSimulator3D with active=true but simulation=false and no
+physical bodies. Attempt3 source review permits at most that exact empty built-in
+context, rejects all other modifiers/bodies, and rechecks it at each root's end.
+No node is disabled/removed and no numeric, geometry, Off or count gate changes.
+The private compatibility flag remains UNMEASURED. All three attempts retain
+their parsed/reaped/root-closed evidence; no process was killed and inputs remain
+unchanged. Compact execution evidence is at
+[native leaf actual packet](../experiments/native_leaf_actual_20261115).
+
+This is temporary one-leaf readiness, not regular Studio physics activation.
+Native SDK/artist parity, procedural-parent chains, actual GUI/body/fan/Record,
+saved HAS and GPU/render integration remain unqualified. Retained source flags
+stay inactive and the full-layout verification flag remains false. Next qualify
+parent17→18 and26→27 recomposition, then broader lifecycle/recording behavior.
+
 Reuse the scratch skeleton/FK contract in [secondary_spring.gd](../src/secondary_spring.gd)
 and transient authored/body overlays in [secondary_live.gd](../src/secondary_live.gd).
 Do not silently map unsupported flags or native controller behavior.
 
 ## 4. Check fan response and exact Off restoration
+
+The native8 probe above measures direct clear/apply restoration under synthetic
+world accelerations. It does not exercise the ordinary Hair & clothes button,
+actual fan field, live body coexistence or recorded playback. Keep those next
+checks separate instead of treating one-leaf readiness as their pass.
 
 Compare matched trajectories with identical authored baseline, gravity, clock
 and initialization. Native gravity can cause settling without a fan; measure
@@ -115,3 +188,8 @@ private. Save compact source/metadata/log evidence, preserve failures and retain
 native art/media locally. Run affected tests and the complete default Windows
 suite, then commit, push and verify remote contents. Artist/native-motion
 fidelity and the owner's deferred manual checks remain separate observations.
+
+The richer common HAS model contract, PMX physics/reconstruction assistant and
+six-foot human baseline at user scale1 remain planned requirements. These narrow
+Source readiness results do not implement those features or change existing
+projects, formal acceptance scores or the optional height-review behavior.

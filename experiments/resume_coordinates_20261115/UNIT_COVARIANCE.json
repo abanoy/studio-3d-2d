@@ -1,0 +1,29 @@
+{
+  "format": "has_source_jiggle_unit_covariance_1",
+  "status": "PASSED_SYNTHETIC_ALGEBRA_ONLY",
+  "cases": 120,
+  "maximum_errors": {
+    "tip": 1.1102230246251565e-16,
+    "acceleration": 1.1721597256030656e-14,
+    "velocity": 9.631230981140903e-17,
+    "position": 2.7194799110210365e-16,
+    "length_projection": 6.684427777288335e-16
+  },
+  "negative_controls": {
+    "local_Y_instead_of_Z_min": 0.5388153672641491,
+    "unscaled_mass_min": 18.476,
+    "rotating_world_gravity_with_model_max": 0.32497799375589465,
+    "double_length_conversion_min": 0.37374195
+  },
+  "source_sdk_sha256": "a3f319258a21498bfa6467bef641446d66ecd5497b9dc8a949b1f08b87d7027e",
+  "scope": {
+    "apps_or_native_runtime_launched": false,
+    "native_model_data_used": false,
+    "full_0x31_solver_implemented": false,
+    "SDK_compiled_or_executed": false,
+    "HAS_dynamics_or_clock_fidelity": "UNRUN",
+    "actual_two_conversion_scales": "UNRUN"
+  },
+  "interpretation": "Covariance of yaw/pitch acceleration, one Euler step and length projection; angle projection/history/basis construction and integration stability are not exercised. Synthetic scales are not actual import qualifications.",
+  "policy_boundary": "A similarity-preserving native gravity uses source_scale*root_scale*tipMass; fixed physical gravity is a different artistic policy. HAS airflow has no established native Source wind equivalence."
+}

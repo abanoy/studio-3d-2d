@@ -1,0 +1,80 @@
+{
+  "format": "has_root_native8_leaf_execution_1",
+  "passed": false,
+  "source_HEAD": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "packet": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_0x31_native_leaf_diagnostic_20261115",
+  "packet_index_sha256": "04d8ed7fff560e3bbc0b83ab78e4da6b42886e3fd2edfa1659b142a23ae8a88b",
+  "phases": [
+    {
+      "phase": "parse",
+      "pid": 85384,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "terminated_owned_child": false,
+      "killed_owned_child": false,
+      "error_markers": [],
+      "seconds": 0.8131263999985094,
+      "passed": true
+    },
+    {
+      "phase": "run",
+      "pid": 82836,
+      "exit": 1,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "terminated_owned_child": false,
+      "killed_owned_child": false,
+      "error_markers": [
+        "FAIL Native8 bounded readiness refusal",
+        "FAIL Native8 bounded readiness refusal"
+      ],
+      "seconds": 1.4590487000004941,
+      "passed": false
+    }
+  ],
+  "inputs_preserved": true,
+  "result": {
+    "cases": [],
+    "checks": 2,
+    "dynamics_steps": 0,
+    "failure_labels": [
+      "Native8 bounded readiness refusal"
+    ],
+    "failures": 1,
+    "format": "has_actual_native8_leaf_readiness_1",
+    "gates": {
+      "meaningful_geometry_displacement_per_root_scale": 1e-05,
+      "unaffected_and_Off": "Exact private-byte/hash equality",
+      "world_or_basis_boundary": 2e-05
+    },
+    "native_bones_retained": 69,
+    "native_index": 8,
+    "native_parent_index": 7,
+    "native_rules_retained": 49,
+    "parameters_sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed",
+    "reason": "Unexpected parent/rest/modifier/final-pose context; diagnostic={\"expected_native_parent_index\":7,\"final_pose_count\":0,\"first_failing_guard\":\"modifier_presence\",\"modifier_classes\":\"PhysicalBoneSimulator3D\",\"modifier_count\":1,\"modifier_details\":\"class=PhysicalBoneSimulator3D;internal=true;direct_parent=true;active=true;is_simulating_physics=false;PhysicalBone3D_descendants=0\",\"native_parent_index\":7,\"show_rest_only\":false}",
+    "scope": {
+      "GPU_render_fidelity": false,
+      "SDK_executed": false,
+      "actual_CPU_weighted_query_exercised": false,
+      "actual_Model_load_attempted": true,
+      "actual_live_pose_application_attempted": false,
+      "artist_native_motion_fidelity": "UNQUALIFIED",
+      "external_input": "Temporary synthetic world acceleration, not an actual fan or native Source wind API",
+      "full_GUI_body_fan_Record_HAS_export_integration": false,
+      "raw_arrays_published": false,
+      "source_metadata_activation_changed": false
+    },
+    "source_conversion_scale": 0.01905,
+    "source_glb_sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "status": "FAILED_NATIVE8_READINESS"
+  },
+  "preregistered_expected": {
+    "checks": 7289,
+    "dynamics_steps": 1440,
+    "cases": 12
+  },
+  "application_integration": false,
+  "observed_utc": "2026-11-16T00:33:25.366519+00:00"
+}

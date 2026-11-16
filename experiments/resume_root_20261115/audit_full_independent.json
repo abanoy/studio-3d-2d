@@ -1,0 +1,62 @@
+{
+  "format": "has_independent_resumed_full_packet_audit_1",
+  "status": "PASSED",
+  "source_commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "canonical_run": "output/windows-canonical-bone-binding-20261115T225514304",
+  "full_terminal_review": {
+    "functional_sources_before_after_and_current_verified": 1008,
+    "result_keys": 157,
+    "core_groups": 36,
+    "movie_metadata_groups": 21,
+    "canonical_PASS_markers": 125,
+    "exact_normalized_log_report_suffix": true,
+    "elapsed_seconds": 2956.8145699,
+    "private_desktops": 192,
+    "normal_exit0": 191,
+    "source_registered_Krita_cancel_exit2": 1,
+    "inline_receipts_exact_verified": 13,
+    "no_engine_or_process_query": true
+  },
+  "consolidated_packet": {
+    "path": "output/resume-full-publication-f0dd57a-20261115/review-ready",
+    "INDEX_sha256": "113c39f6e93c684c62f70ca1d38a5f7243c4582f370cf60205d1131d74ecefb2",
+    "payload_files": 468,
+    "payload_bytes": 5254786,
+    "all_members_and_casefold_names_exact": true,
+    "gzip_streams_verified": 70,
+    "JSON_documents_private_payload_scanned": 344,
+    "summary_original_files_verified": 59,
+    "summary_gzip_originals_verified": 30,
+    "receipt_original_aliases_verified": 209,
+    "root_original_aliases_verified": 6,
+    "nested_aliases_verified": {
+      "scoped-native": 169,
+      "reviewed-provenance-tests": 50
+    },
+    "all_original_and_alias_hashes_match": true
+  },
+  "execution_copy": {
+    "public_source_INDEX_sha256": "f4965594eb313b0ac07ac9d49041cba8cc9f520c99b099115fd5666ae05da873",
+    "copied_files_verified": 8,
+    "COPY_PROVENANCE_sha256": "140aaee7c35a5786eaab483f206745a64c6464dd33ba899465b5c25ccac4aaeb",
+    "copy_root": "output/resume-full-publication-f0dd57a-20261115"
+  },
+  "bindings": {
+    "source_before_sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a",
+    "source_after_sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a",
+    "verification_sha256": "be5e8b012378b46812195182302e5f3ed17c2b9aa5d8540834d0b7e1089f6cc0",
+    "canonical_log_sha256": "d029f2c5c2a43c7f0ba46f27e3f3d7666b65a8e008d88918f18df1a46b3632a6",
+    "state_sha256": "952613d8c02c7e41a98631cd563c640e750eafc5c6d535fce2bf1f27bd8bbecb",
+    "host_raw_sha256": "0737252b2b29c95392fc39b0af6d89040c7ba9fc8151bc5a97c90bbdc0c422d6",
+    "host_flat_sha256": "c2a0f1b9027baeb45d0648708da2e6c87a77c2a91841a84a0241b70830674dba",
+    "release_sha256": "bbd7ad041bf80b4cb2ded1f6cbb7e65d8a23c314fd87ce13a3112287da2de9b5",
+    "receipt_inventory_sha256": "018e06c890c61160153e80b2cb8555ad7cbca31628edfd6cc14d5743e7e15380"
+  },
+  "limits": [
+    "No app, converter, engine, media decode or process query executed by independent audit.",
+    "Private raw model/geometry/oracle arrays are excluded from this receipt.",
+    "Prior scoped native five jobs remain separate from canonical192.",
+    "Native Source solver and human/device/clean-install acceptance remain unimplemented or separate.",
+    "Original failed and owner-interrupted runs retain their historical outcomes."
+  ]
+}

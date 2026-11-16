@@ -1,0 +1,15 @@
+# Fresh full and SFM review successor preparations — November 15, 2026
+
+Prepared against the actual running full at `output/windows-canonical-bone-binding-20261115T225514304`, revision `f0dd57a2e568089d396fecba819ab987da658bf0`. No terminal PASS, source-after, final verification, raw canonical log, receipt audit, publication, builder or replay execution is claimed. The interrupted November 14 full stays USER_CANCELLED_INCOMPLETE; earlier failed fulls remain failed.
+
+`publication` preserves all preceding terminal/source/result/receipt/host/release gates. Its fresh context pins root-written launch, source-before and live child metadata. The root's live child record uses `command_line` and `checked_utc`; the successor checks those exact fields plus the canonical path. No raw record is rewritten. Four publication modules remain byte-identical; publication_gates.py and the consolidation assertion use the actual root raw proof's command_line field.
+
+`builder` pins only this revision and exact run. Its root derivation accounts for the deeper experiment folder. Final target is the new sibling `HAS-Review-20261115-SFM-Joints-f0dd57a`; old reviews/installations are preserved. Runtime, source-family, native verification, SourceIO, exporter, source-context, Git-byte/text-EOL and fresh-target gates remain unchanged. Current HEAD must still match the tested revision when it executes.
+
+`replay` uses that builder/final target, exact future passed full, unchanged replay.gd and reference-lock.json. Proposed counts remain 41/43/46/38 = 168; no runtime predicate changed. Runtime parsing/graphics and actual immutable input checks remain UNRUN. No controller shim or source edit is introduced.
+
+Root must review SOURCE_REVIEW.json and diffs, then supply exact terminal host hashes before preflight/audit/summary; supply a genuine graphics release before finalizing/consolidating evidence. Build only after actual PASS/closure and before advancing HEAD. Final-location replay needs its own new private graphics lease after the build. Commands in builder/command.json and replay/command.json are future actions, not permission granted by preparation.
+
+Publication order: preflight_terminal.py; audit_receipts.py; summarize_canonical.py into publication/actual-summary; root-written genuine graphics release; finalize_receipt_index.py; build_consolidated_packet.py. Every invocation needs its existing explicit CLI hashes/terminal flags. Retain generated outputs and failed attempts; do not run against running/failed/source-changed state. No original artwork/HAS/GLB/media/native coordinate oracle/runtime binary is included here.
+
+Root pre-execution review caught the remaining consolidation field read and the summary recipe's output-only acquisition boundary. The narrow amendment preserves prior bytes under amendment-history/pre-root-review. Publication must execute from the fresh byte-verified ROOT/output copy described in COMMANDS.md; do not run it directly from this experiments folder. summarize.acquire's boundary is unchanged. No recipe was imported/executed to discover or correct these issues.

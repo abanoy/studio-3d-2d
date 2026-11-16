@@ -1,0 +1,92 @@
+{
+  "format": "has_final_leaf_source_privacy_and_cleanup_source_audit_1",
+  "passed": true,
+  "observed_utc": "2026-11-16T00:52:59.814167+00:00",
+  "tested_application_source_commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "packet_byte_and_exact_membership_verification": [
+    {
+      "path": "experiments/source_0x31_native_leaf_20261115",
+      "index_sha256": "b0b87a57a961500f0e68f1612420a50a453566e8cbee5da0464688bd8325d84d",
+      "payload_files": 9,
+      "payload_bytes": 84656
+    },
+    {
+      "path": "experiments/source_0x31_native_leaf_diagnostic_20261115",
+      "index_sha256": "04d8ed7fff560e3bbc0b83ab78e4da6b42886e3fd2edfa1659b142a23ae8a88b",
+      "payload_files": 9,
+      "payload_bytes": 91725
+    },
+    {
+      "path": "experiments/source_0x31_native_leaf_compat_20261115",
+      "index_sha256": "9a54ab68350e41c1f98f7024af375f032964bd2dd594c2c3766f2b82d03c24a6",
+      "payload_files": 9,
+      "payload_bytes": 89550
+    },
+    {
+      "path": "experiments/native_leaf_actual_20261115",
+      "index_sha256": "247bb1ccb8f3cd64d645350c8e60a0b9691ac42e32696913f43b73184db584c0",
+      "payload_files": 52,
+      "payload_bytes": 223707
+    }
+  ],
+  "JSON_payloads_inspected": 44,
+  "numeric_coordinate_arrays_found": 0,
+  "non_public_payload_extension_count": 0,
+  "native_geometry_media_or_actual_root_leases_in_four_packets": false,
+  "public_root_lease_templates_are_unissued": true,
+  "unchanged_original_to_compat_source_sha256": {
+    "leaf_adapter.gd": "6945153a65741f65f15505a1b840ddbf530c483790824d8a98e90a4d53e539e8",
+    "weighted_capture.gd": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb",
+    "prepare_profile.py": "54c1406baa9c5d1684be16c1d3467f14397dcb4ffd32eee4eb5765ce655b2a05"
+  },
+  "compatibility_guard_review": "Exact stopped internal direct script-free native simulator with no physical bodies; active is observational, not required false; other modifier/parent/rest/final-pose refusals retained. Original two runtime failures remain distinct from actual third PASS.",
+  "runtime_benchmark_evidence_exact_byte_joins": 16,
+  "current_documents": [
+    {
+      "path": "docs/benchmarks/native_source_readiness_2026-11-15.json",
+      "bytes": 17575,
+      "sha256": "f499325b5bf5a676ea787de94ad88ab2a08105c0386318faa5281ac55e62cac6"
+    },
+    {
+      "path": "docs/NEXT_SESSION_PLAN_2026-11-15.md",
+      "bytes": 7788,
+      "sha256": "c81f1ad4cffcad2a9d7a0fa943c73badccd7d9df0d387a89a127d6b8de863279"
+    },
+    {
+      "path": "docs/RESUME_MASTER_PLAN.md",
+      "bytes": 101992,
+      "sha256": "eeaa49fc722e7d6117a7de1599a59ceb29c80139d7988b4094c87c82f3c054a6"
+    }
+  ],
+  "fresh_protection_helper": {
+    "path": "experiments/resume_root_20261115/audit_protected_inputs_before_cleanup.py",
+    "bytes": 9505,
+    "sha256": "5be1d34aa6aced8fc112bee3ecadd489be9b7f38ab710553385bfd77ca500d83",
+    "AST_only_passed": true,
+    "executed_by_this_agent": false,
+    "scope": {
+      "original_native_files": 561,
+      "review2_shipped_files": 5844,
+      "runtime_executables": 6,
+      "original_SourceIO_files": 574,
+      "installed_exporter_sources": 120,
+      "functional_source_files": 1008
+    },
+    "source_review_GO": true
+  },
+  "cleanup_source": {
+    "path": "experiments/resume_root_20261115/remove_old_native_after_backup.ps1",
+    "bytes": 13062,
+    "sha256": "091e62b2a6b5ce045cc51d4dfd307dcc012e68944b351b600c910f8fb12977ff",
+    "source_review_GO_with_limits": true,
+    "scope": "Exactly two literal historical roots;9307 files1537 descendant directories1442187088 logical bytes",
+    "required_actual_evidence": "Separate root decision after exact remote increment/recovery, fresh combined preservation report, exact ownership, exclusive-open proof and pinned inventory;1008 current source hashes and9307 native identities/membership rechecked.",
+    "executed_by_this_agent": false,
+    "cleanup_authorized_by_this_audit": false,
+    "limitations": "Point-in-time process/sharing observations are not universal nonuse guarantees. Native path validation is not an atomic filesystem reservation. Root must retain exact decision/actual receipts and separately checkpoint and read back any removal result."
+  },
+  "apps_parsers_process_queries_Git_network_or_deletion_by_this_final_audit": false,
+  "private_content_arrays_copied": false,
+  "root_folder_index_created": false,
+  "remote_upload_or_cleanup_asserted_completed": false
+}

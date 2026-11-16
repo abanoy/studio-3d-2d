@@ -1,0 +1,40 @@
+{
+  "format": "has_final_SFM_review_validation_1",
+  "source_commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "review": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a",
+  "passed": false,
+  "results": [],
+  "errors": [
+    {
+      "type": "RuntimeError",
+      "detail": "Final review case failed; retain C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-joints-final-validation-f0dd57a-20261115\\01-keiki_tools_chisels-groups-000"
+    }
+  ],
+  "preservation": {
+    "shipped_source_projects_dependencies_native_families": true,
+    "original_native_families": true,
+    "shared_runtime_executables": true,
+    "installed_exporter120sources": true,
+    "original_SourceIO574files": true,
+    "previous_reviews": true,
+    "harness": true,
+    "native_reference_metadata_and_private_frame_inputs": true,
+    "full_run_gate": true
+  },
+  "graphics_processes_requested": 1,
+  "runtime_generated_files_retained": {
+    "output": 1,
+    ".godot": 0
+  },
+  "runtime_generated_before_empty": true,
+  "automatic_cleanup": false,
+  "owner_changes_policy": "Retain every output if any shipped/owner change is detected; root reviews exact new generated paths before any later cleanup.",
+  "native_solver": "not_implemented",
+  "no_mock_or_controller_replacement": true,
+  "unchanged_production_and_native_harness_files": 1006,
+  "test_only_followup_files_admitted": [
+    "tests/helper_preview_port_files.json",
+    "tests/verify_helper_preview.py"
+  ],
+  "scope": "Exactly four newly copied examples: ordinary Home/Simple/Open/render, strict saved state, Junko69binding/helpercancel, Keiki/Mima shape availability, real four-MDL chooser metadata/cancel. No conversion or clean-install/artist claim."
+}

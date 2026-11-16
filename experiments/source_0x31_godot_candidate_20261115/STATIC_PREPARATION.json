@@ -1,0 +1,62 @@
+{
+  "format": "has_source0x31_godot_static_preparation_1",
+  "status": "SOURCE_PREPARED_GDSCRIPT_UNPARSED_ENGINE_UNRUN",
+  "created_utc": "2026-11-15T23:41:45Z",
+  "Python_AST_checked": [
+    "prepare_oracle.py"
+  ],
+  "GDScript_source_only_guards": {
+    "candidate.gd": {
+      "sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3",
+      "line_count": 197,
+      "no_global_class_or_tool": true,
+      "plain_inheritance": "extends RefCounted",
+      "Godot_parsed": false
+    },
+    "harness.gd": {
+      "sha256": "284944cd8ba0b876e09bbab0f86bd359d9446c6ff0ec2969fc8ec0747b1011fa",
+      "line_count": 306,
+      "no_global_class_or_tool": true,
+      "plain_inheritance": "extends SceneTree",
+      "Godot_parsed": false
+    }
+  },
+  "project_file_created_or_changed": false,
+  "engine_binary_read_for_sha256_only": {
+    "path": "C:\\a\\tools\\Godot\\Godot_v4.6-stable_win64.exe",
+    "sha256": "63913d01be2c2d1f929b4a626f5347117126b34e9c64cbf350ea9f35a9657ebf",
+    "invoked": false
+  },
+  "reference_sha256": "dd472f2b4de64adebc83a03c2e812ac2e14805c752b220c26c53dd58bf99519c",
+  "reference_index_sha256": "0e5daef5004ce0eea6ff3ffef008442cd937e3f7daa340a09597f35fb16d4435",
+  "known_trace_sha256": "60681be8b8e3e426d224018a9f8aaa94279a5978b90843bbe4884ed14607fd76",
+  "public_oracle": {
+    "bytes": 640441,
+    "sha256": "d131028f688711c7bc669eeeac04255a87a763e55fcda7e76b3337763bf976df",
+    "sequences": 6,
+    "input_ticks": 1080,
+    "zero_cone_cases": 1000,
+    "float32_vectors": 5,
+    "float32_bases": 4
+  },
+  "actual_preparation": "Python math generated oracle and exactly matched immutable prior two-rule trace sample outputs; no engine-language parser used",
+  "preregistered_gates": {
+    "declared_before_engine_parse": true,
+    "scalar64_trajectory_absolute": 1e-09,
+    "independent_rational_absolute": 1e-12,
+    "zero_cone_rest_displacement": 1e-10,
+    "float32_adapter": "Exact packed IEEE754 binary32 words; basis determinant bound derived per case",
+    "basis_validation": "Keep strict mathematical1e-9 domain; quantized engine basis is a separate boundary",
+    "qualification": "Engineering gates, not a formal accumulated-error proof; preserve any failure without posthoc relaxation"
+  },
+  "active_full_lease_preserved": true,
+  "private_native_arrays_copied": false,
+  "SourceIO_Blender_Godot_or_SDK_launched": false,
+  "production_test_HEAD_git_index_changed": false,
+  "native_physics_integrated_or_completed": false,
+  "future_gate": "New root-reviewed full/FK PASS plus actual authoritative closure and locked fresh runtime lease",
+  "source_only_amendment": {
+    "prior_harness_sha256": "d532e1467a4dadacd165610f4cbdad317c930b7ec0742d1ebeecd2c299a7a96a",
+    "change": "Explicit active-reset state/tick invariant before stop; engine still UNPARSED/UNRUN"
+  }
+}
