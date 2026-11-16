@@ -161,6 +161,10 @@ static func neon_line(width := 44) -> Texture2D:
 	# 2 px horizontal neon bar (active tab underline); stretch it to any width.
 	return svg_texture('<defs>%s</defs><rect width="%d" height="2" rx="1" fill="url(#neon)"/>' % [neon_defs(), width], width, 2, 2.0)
 
+static func neon_bar(height := 36) -> Texture2D:
+	# 2 px vertical neon bar, blue at the top to pink at the bottom (selected World rail tile).
+	return svg_texture('<defs>%s</defs><rect width="2" height="%d" rx="1" fill="url(#neonv)"/>' % [neon_defs("neonv", true), height], 2, height, 2.0)
+
 static func kbd_box() -> StyleBoxFlat:
 	# 18 px keycap chip (with the 11 px mono font): #13151B, 1 px #2C303B, radius 5.
 	return flat(KBD, LINE2, 5, 1, Vector4(5, 1, 5, 1))
@@ -301,7 +305,7 @@ static func make_neon_theme() -> Theme:
 	var tab_pad := Vector4(14, 7, 14, 7)
 	result.set_type_variation("TabButton", "Button")
 	_set_button_family(result, "TabButton", flat(Color.TRANSPARENT, Color.TRANSPARENT, 7, 0, tab_pad), flat(HOVER, Color.TRANSPARENT, 7, 0, tab_pad), flat(RAISE, LINE2, 7, 1, tab_pad), flat(Color.TRANSPARENT, Color.TRANSPARENT, 7, 0, tab_pad), focus, TEXT3, TEXT, Color.WHITE)
-	var tile_pad := Vector4(4, 6, 4, 6)
+	var tile_pad := Vector4(2, 6, 2, 5)
 	result.set_type_variation("RailTile", "Button")
 	_set_button_family(result, "RailTile", flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, tile_pad), flat(HOVER, Color.TRANSPARENT, 8, 0, tile_pad), flat(RAISE, LINE2, 8, 1, tile_pad), flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, tile_pad), focus, TEXT2, TEXT, Color.WHITE)
 	result.set_font_size("font_size", "RailTile", 11)
@@ -583,6 +587,9 @@ const LINE_ICONS := {
 	"scene": '<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/>',
 	"frame-target": '<path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3"/><circle cx="12" cy="12" r="3"/>',
 	"panel-unfold": '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M13 10l2 2-2 2"/>',
+	"panel-fold": '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 10l-2 2 2 2"/>',
+	"sparkle": '<path d="M12 3.5 13.9 9.1 19.5 11 13.9 12.9 12 18.5 10.1 12.9 4.5 11 10.1 9.1z"/><path d="M18.5 16.5v4M16.5 18.5h4"/>',
+	"ruler": '<path d="M3.5 16.5 16.5 3.5l4 4-13 13z"/><path d="m7.5 12.5 2 2M10.5 9.5l1.5 1.5M13.5 6.5l2 2"/>',
 	"eye": '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
 	"onion": '<circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6" stroke-dasharray="2.5 2.5"/>',
 	"layers": '<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>',
@@ -612,7 +619,7 @@ const LINE_ICONS := {
 	"wave": '<path d="M3 8c3 0 3-3 6-3s3 3 6 3 3-3 6-3M3 14c3 0 3-3 6-3s3 3 6 3 3-3 6-3M3 20c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/>',
 }
 # Aliases so callers can use the names the plan and mock use.
-const ICON_ALIASES := {"pen": "draw", "pose": "figure", "key-diamond": "diamond", "sparkle": "box"}
+const ICON_ALIASES := {"pen": "draw", "pose": "figure", "key-diamond": "diamond"}
 
 static func line_icon(kind: String, color := TEXT2, size := 16) -> Texture2D:
 	var key := "neon|%s|%s|%d" % [kind, color.to_html(), size]

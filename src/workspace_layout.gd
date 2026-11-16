@@ -25,6 +25,13 @@ var preview: Panel
 var preview_label: Label
 var last_window_geometry := {}
 var dock_tree: RefCounted
+# Neon Pro step 3: the World dock is a 64 px icon rail while it is narrow, and the full list
+# (Tree + buttons + help) once wider than RAIL_LIMIT, floating or tabbed elsewhere.
+const StudioTheme = preload("res://src/studio_theme.gd")
+const RAIL_LIMIT := 140.0
+const LIST_WIDTH := 232.0
+var world_rail := false
+var world_unfold: Button
 
 func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarchy: Control, inspector: Control, transport: Control, ruler: Control, tracks: Control) -> void:
 	app=owner_app
@@ -54,6 +61,7 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 	old_middle.queue_free()
 	for split in [vertical,top_split,horizontal,right_split]:
 		split.add_theme_constant_override("separation",10)
+		split.add_theme_constant_override("minimum_grab_thickness",8)
 		split.get_drag_area_control().tooltip_text="Drag to resize these panels. Drag a panel title to dock, tab or detach it."
 		split.dragged.connect(func(_offset):save_later())
 	preview=Panel.new();preview.mouse_filter=Control.MOUSE_FILTER_IGNORE;preview.z_index=100;preview.hide();app.add_child(preview)
@@ -61,6 +69,8 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 	preview_label=Label.new();preview_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;preview_label.position=Vector2(12,8);preview.add_child(preview_label)
 	timer=Timer.new();timer.one_shot=true;timer.wait_time=.35;timer.timeout.connect(save);add_child(timer)
 	refresh_slots()
+	panels.world.resized.connect(refresh_world_mode)
+	apply_style()
 	if not load_layout():call_deferred("apply_default_split")
 
 func apply_default_split() -> void:
@@ -73,6 +83,11 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 	var handle:=Button.new();handle.text="⋮⋮  "+title;handle.alignment=HORIZONTAL_ALIGNMENT_LEFT;handle.size_flags_horizontal=Control.SIZE_EXPAND_FILL;handle.mouse_default_cursor_shape=Control.CURSOR_DRAG;handle.tooltip_text="Drag near a panel edge to split beside it, into its center for tabs, or into open space for a window. Esc cancels.";header.add_child(handle)
 	handle.gui_input.connect(func(event):header_input(id,event))
 	var menu:=MenuButton.new();menu.text="▾";menu.tooltip_text="Dock, tab, detach or reset this panel";header.add_child(menu)
+	header.draw.connect(func():draw_header(id,header))
+	panel.draw.connect(func():draw_panel(id,panel))
+	if id=="world":
+		world_unfold=Button.new();world_unfold.name="WorldUnfold";world_unfold.focus_mode=Control.FOCUS_NONE;world_unfold.visible=false
+		world_unfold.pressed.connect(unfold_world);handle.add_child(world_unfold);handle.resized.connect(place_world_unfold)
 	var popup:=menu.get_popup()
 	for text in ["Dock left","Dock right","Dock below","Dock above","Float panel","Reset workspace","Tab with World","Tab with Properties","Tab with Timeline"]:popup.add_item(text)
 	popup.about_to_popup.connect(func():
@@ -86,7 +101,7 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 	var body: Control=panel
 	if id=="world" or id=="timeline":
 		var scroll:=ScrollContainer.new();scroll.name="WorldContentScroll" if id=="world" else "TimelineContentScroll";scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
-		scroll.custom_minimum_size=Vector2(120,120) if id=="world" else Vector2(0,96);scroll.follow_focus=true
+		scroll.custom_minimum_size=Vector2(64 if StudioTheme.is_neon() else 120,120) if id=="world" else Vector2(0,96);scroll.follow_focus=true
 		scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO
 		panel.add_child(scroll);body=scroll
 	if content.get_parent():content.reparent(body,false)
@@ -94,6 +109,125 @@ func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
 	if id=="properties":content.custom_minimum_size.y=maxf(content.custom_minimum_size.y,96)
 	content.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	content.size_flags_vertical=Control.SIZE_EXPAND_FILL
+
+func apply_style() -> void:
+	# Neon Pro step 3: flat 28 px #0C0D11 dock headers (11/600 uppercase #8C93A3 title, ghost chevron
+	# menu), flush panels; classic styles keep the "⋮⋮ Title ▾" button row. Node structure is kept:
+	# panels[id].get_child(0).get_child(0) is still the drag handle, child(1) the docking menu.
+	var neon:=StudioTheme.is_neon()
+	for split in [vertical,top_split,horizontal,right_split]:
+		# Left/right docks sit flush against the stage (the drag area keeps an 8 px grab band).
+		split.add_theme_constant_override("separation",0 if neon and split in [horizontal,right_split] else 10)
+	for id in panels:style_header(id)
+	refresh_world_mode(true)
+
+func ghost_boxes(control: Button,pad: Vector4,hover:=Color.TRANSPARENT) -> void:
+	var clear:=StudioTheme.flat(Color.TRANSPARENT,Color.TRANSPARENT,6,0,pad);var lit:=StudioTheme.flat(hover,Color.TRANSPARENT,6,0,pad)
+	for suffix in ["","_mirrored"]:
+		for state in ["normal","disabled"]:control.add_theme_stylebox_override(state+suffix,clear)
+		for state in ["hover","pressed","hover_pressed"]:control.add_theme_stylebox_override(state+suffix,lit)
+	control.add_theme_stylebox_override("focus",StyleBoxEmpty.new())
+
+func ghost_colors(control: Button,normal: Color,hover: Color) -> void:
+	for prefix in ["font_","icon_"]:
+		control.add_theme_color_override(prefix+("normal_color" if prefix=="icon_" else "color"),normal)
+		for state in ["focus_color","disabled_color"]:control.add_theme_color_override(prefix+state,normal)
+		for state in ["hover_color","pressed_color","hover_pressed_color"]:control.add_theme_color_override(prefix+state,hover)
+
+func clear_style(control: Control) -> void:
+	for suffix in ["","_mirrored"]:
+		for state in ["normal","disabled","hover","pressed","hover_pressed"]:control.remove_theme_stylebox_override(state+suffix)
+	control.remove_theme_stylebox_override("focus")
+	for prefix in ["font_","icon_"]:
+		for state in ["color","normal_color","focus_color","disabled_color","hover_color","pressed_color","hover_pressed_color"]:control.remove_theme_color_override(prefix+state)
+	control.remove_theme_font_override("font");control.remove_theme_font_size_override("font_size");control.remove_theme_constant_override("icon_max_width")
+
+func style_header(id: String) -> void:
+	var panel: Control=panels[id];var header: HBoxContainer=panel.get_child(0);var handle: Button=header.get_child(0);var menu: MenuButton=header.get_child(1)
+	var neon:=StudioTheme.is_neon()
+	header.queue_redraw();panel.queue_redraw()
+	if not neon:
+		for control in [handle,menu]:clear_style(control)
+		handle.text="⋮⋮  "+str(panel.name);handle.clip_text=false;handle.alignment=HORIZONTAL_ALIGNMENT_LEFT;menu.text="▾";menu.icon=null;menu.custom_minimum_size=Vector2.ZERO
+		header.custom_minimum_size.y=0;header.add_theme_constant_override("separation",2);panel.remove_theme_constant_override("separation")
+		return
+	handle.text=str(panel.name).to_upper();handle.clip_text=true
+	handle.add_theme_font_override("font",StudioTheme.label_variation());handle.add_theme_font_size_override("font_size",11)
+	ghost_colors(handle,StudioTheme.TEXT3,StudioTheme.TEXT)
+	menu.text="";menu.icon=StudioTheme.icon("chevron",Color.WHITE,12);menu.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	menu.add_theme_constant_override("icon_max_width",12);ghost_colors(menu,StudioTheme.TEXT3,StudioTheme.TEXT)
+	header.add_theme_constant_override("separation",0);panel.add_theme_constant_override("separation",0)
+	var rail:=id=="world" and world_rail
+	handle.alignment=HORIZONTAL_ALIGNMENT_CENTER if rail else HORIZONTAL_ALIGNMENT_LEFT
+	handle.size_flags_vertical=Control.SIZE_SHRINK_END if rail else Control.SIZE_FILL
+	menu.size_flags_vertical=Control.SIZE_SHRINK_BEGIN if rail else Control.SIZE_FILL
+	if rail:
+		# Rail: [unfold 40x40] above a centred "WORLD" (mock: padding-top 8, gap 6, label margin 2 0,
+		# gap 6). The docking menu becomes a 12 px chevron beside the unfold button: the header's
+		# negative separation lets the handle span the whole rail so the label stays centred.
+		header.custom_minimum_size.y=78;header.add_theme_constant_override("separation",-12)
+		ghost_boxes(handle,Vector4(0,8,0,8));ghost_boxes(menu,Vector4(0,8,0,0),StudioTheme.HOVER);menu.custom_minimum_size=Vector2(12,48)
+	else:
+		header.custom_minimum_size.y=28
+		ghost_boxes(handle,Vector4(12,0,4,0));ghost_boxes(menu,Vector4(6,0,6,0),StudioTheme.HOVER);menu.custom_minimum_size=Vector2(28,0)
+	if id=="world":style_world_unfold()
+
+func style_world_unfold() -> void:
+	if not world_unfold:return
+	var docked:=slot_of("world")=="left" and not floating.has("world")
+	world_unfold.visible=StudioTheme.is_neon() and docked
+	world_unfold.tooltip_text="Unfold World list" if world_rail else "Fold World into the icon rail"
+	world_unfold.icon=StudioTheme.icon("panel-unfold" if world_rail else "panel-fold",Color.WHITE,18 if world_rail else 16)
+	world_unfold.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER;world_unfold.add_theme_constant_override("icon_max_width",18 if world_rail else 16)
+	ghost_boxes(world_unfold,Vector4(0,0,0,0),StudioTheme.HOVER);ghost_colors(world_unfold,StudioTheme.TEXT3,StudioTheme.TEXT)
+	for suffix in ["","_mirrored"]:
+		for state in ["hover","pressed","hover_pressed"]:(world_unfold.get_theme_stylebox(state+suffix) as StyleBoxFlat).set_corner_radius_all(8)
+	place_world_unfold()
+
+func place_world_unfold() -> void:
+	# The unfold button is a child of the drag handle (outside the handle's own rect in rail mode), so
+	# the handle stays panels.world.get_child(0).get_child(0) and its centre stays a drag target.
+	if not world_unfold or not world_unfold.visible:return
+	var handle: Control=world_unfold.get_parent();var header: Control=handle.get_parent()
+	if world_rail:
+		world_unfold.size=Vector2(40,40);world_unfold.position=Vector2(minf(roundf((header.size.x-40)*.5),header.size.x-52)-handle.position.x,8-handle.position.y)
+	else:
+		world_unfold.size=Vector2(24,24);world_unfold.position=Vector2(handle.size.x-26,roundf((handle.size.y-24)*.5))
+
+func refresh_world_mode(force:=false) -> void:
+	if not panels.has("world") or not app or not app.world_selection:return
+	var rail: bool=StudioTheme.is_neon() and panels.world.size.x<RAIL_LIMIT and not floating.has("world")
+	if rail==world_rail and not force:
+		style_world_unfold();return
+	world_rail=rail
+	app.world_selection.set_rail(rail,force)
+	# List mode keeps 8 px between the dock edges and the Tree / buttons; the rail is edge to edge.
+	var scroll: ScrollContainer=panels.world.get_node_or_null("WorldContentScroll")
+	if scroll:
+		if StudioTheme.is_neon() and not rail:scroll.add_theme_stylebox_override("panel",StudioTheme.flat(Color.TRANSPARENT,Color.TRANSPARENT,0,0,Vector4(8,6,8,8)))
+		else:scroll.remove_theme_stylebox_override("panel")
+	style_header("world")
+
+func unfold_world() -> void:
+	# Widen the left dock to the World list (or back to the rail) like a divider drag, saved the same way.
+	if slot_of("world")!="left" or floating.has("world"):return
+	# Folding aims at the 64 px rail without clamping again: the list's own minimum can be a little
+	# wider than the rail's, and the dock settles at the rail width once it switches to the rail.
+	horizontal.clamp_split_offset()
+	horizontal.split_offset+=int(roundf((LIST_WIDTH if world_rail else 64.0)-slots.left.size.x))
+	if world_rail:horizontal.clamp_split_offset()
+	save_later()
+
+func draw_header(id: String,header: Control) -> void:
+	if not StudioTheme.is_neon():return
+	header.draw_rect(Rect2(Vector2.ZERO,header.size),StudioTheme.BAR)
+	if not (id=="world" and world_rail):header.draw_rect(Rect2(0,header.size.y-1,header.size.x,1),StudioTheme.LINE)
+
+func draw_panel(id: String,panel: Control) -> void:
+	# The World dock is a #0C0D11 column with a 1 px #22252E right edge (mock rail).
+	if not StudioTheme.is_neon() or id!="world":return
+	panel.draw_rect(Rect2(Vector2.ZERO,panel.size),StudioTheme.BAR)
+	if panel.get_window()==app.get_window():panel.draw_rect(Rect2(panel.size.x-1,0,1,panel.size.y),StudioTheme.LINE)
 
 func root_point(event: InputEventMouse,window: Window,in_gui:=false) -> Vector2:
 	var point:=event.global_position if in_gui else event.position

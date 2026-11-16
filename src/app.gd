@@ -332,6 +332,7 @@ func apply_theme_style(style_name: String) -> void:
 	apply_header_style()
 	if canvas: canvas.refresh_surround(); canvas.queue_redraw()
 	if timeline: timeline.queue_redraw()
+	if workspace_layout and workspace_layout.horizontal: workspace_layout.apply_style()
 	if empty_hint: (empty_hint.get_theme_stylebox("panel") as StyleBoxFlat).bg_color = StudioTheme.tone(Color(0.93, 0.96, 0.99, 0.92))
 	refresh_status_style()
 
@@ -1101,7 +1102,8 @@ func build_ui() -> void:
 	var margin := MarginContainer.new()
 	margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	for side in ["left", "right", "top", "bottom"]:
-		margin.add_theme_constant_override("margin_" + side, 10)
+		# Neon Pro step 3: the World rail sits flush against the window edge and the header bar.
+		margin.add_theme_constant_override("margin_" + side, 0 if StudioTheme.is_neon() and side in ["left", "top"] else 10)
 	shell.add_child(margin)
 	var column := VBoxContainer.new()
 	column.add_theme_constant_override("separation", 8)
@@ -1110,7 +1112,8 @@ func build_ui() -> void:
 	middle.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	column.add_child(middle)
 	var hierarchy := VBoxContainer.new()
-	hierarchy.custom_minimum_size.x = 156
+	# Neon Pro step 3: the World dock opens as the 64 px icon rail (classic keeps its 156 px list).
+	hierarchy.custom_minimum_size.x = 64 if StudioTheme.is_neon() else 156
 	middle.add_child(hierarchy)
 	world_selection.setup(hierarchy)
 	var center := VBoxContainer.new()

@@ -4853,3 +4853,18 @@ the groups and makes buttons icon-only, drops the chip and makes the tabs icon-o
 narrow window needs, so the bar fits 1200 px without horizontal scrolling. The window title, menu
 items, shortcut decoration and Advanced button set are unchanged. Linux xvfb results are in
 docs/REDESIGN-PORT.md. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 3: World rail and dock headers (Claude, claude/studio-redesign)
+
+The World dock now opens as the mock's 64 px icon rail: an unfold button, the WORLD drag handle, one
+labelled tile per World row and effect (building, runner, sparkle or box icon), a neon bar on the
+selected tile, and Frame / Save asset .has... / Size map… tiles at the bottom. The tiles mirror the
+Tree. Clicking one calls the same `select_entity()`, which now also syncs the rail, and building
+never selects anything. When the dock is wider than 140 px, floating or tabbed elsewhere, it shows
+the list: the restyled Tree, full-width buttons and the help text. The unfold/fold button changes
+the left split like a divider drag. All dock headers are flat 28 px bars with uppercase titles and a
+chevron menu, and the handle/menu node structure is unchanged. The left and right docks are flush
+with the stage. Classic styles keep the old list and headers. Details and deviations are in
+docs/REDESIGN-PORT.md. Linux xvfb: ui, editor, pose, world_selection, recovery_write and recovery
+pass, and workspace_docking, workspace_controls and asset_package_smoke pass. Windows verify.py was
+not run.

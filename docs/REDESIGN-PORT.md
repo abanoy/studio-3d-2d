@@ -176,3 +176,64 @@ Deviations (step 2):
   overrides chosen at start-up (icons and button colours) change after the next start, as for step 1.
 - **Contrast:** TEXT2 on the bar is 9.98:1 (8.36:1 on hover). Inactive tab text is 6.17:1 on
   `#0F1015`. `#07080B` on the neon fill is at least 5.9:1.
+
+### Step 3: World rail and dock headers (`src/world_selection.gd`, `src/workspace_layout.gd`, `src/app.gd`, `src/studio_theme.gd`)
+- The World dock opens as the mock's 64 px icon rail. It is `#0C0D11` with a 1 px `#22252E` right
+  edge, and the shell's left and top margins are 0 in neon, so it sits flush against the window edge
+  and the header. From the top it has a 40x40 ghost "Unfold World list" button, the "WORLD" label
+  (11/600, letter spacing 2, `#8C93A3`), one 52x56 tile per World row plus one per effect, a spacer,
+  a 28x1 `#2C303B` divider, then the Frame, Save asset .has... and Size map… tiles.
+- Tiles are built in `refresh()` from `entity_rows()` and the world's effects, next to the Tree
+  items, and building them never selects anything. Each tile has an 18 px icon over an 11/500 label:
+  building for an environment or map, runner for a model, sparkle for an effect, box otherwise.
+  Names are cut with an ellipsis and the full name is in the tooltip; `_process` keeps the tooltip
+  and label in step with renames and "(hidden)", like the Tree. Clicking a tile calls `select_entity(id)`
+  exactly like the Tree, and `select_entity()` ends with `sync_rail()`. The selected tile is `#171A21`
+  with a 1 px `#2C303B` border, a white 11/600 label, a white icon, and a 2 px blue-to-pink bar flush
+  with the rail edge (inset 10, pink glow). Selection, the outline mask, picking, the context menu and
+  the Tree metadata are unchanged; the Tree stays the source of truth and only hides in the rail.
+- The bottom three are the existing buttons, restyled. Frame selected shows "Frame" as a tile,
+  with its tooltip unchanged. Save asset .has... keeps its exact text, so it is still the only button
+  with that text: the tile caption wraps it as Save / asset / .has... Size map… keeps its text. Button
+  autowrap does not wrap correctly under a top icon. A tile's own text is clipped and drawn
+  transparent, and a child icon and caption Label (mouse ignored) draw the face instead. The caption
+  puts a zero-width space before ".has", because ICU never breaks before "." after a space. The help
+  text moves to the rail's tooltip.
+- Rail or list: `workspace_layout.refresh_world_mode()` runs when the World panel resizes. It shows
+  the rail while the panel is narrower than 140 px and not floating. A wider dock, a floating window
+  or a tab group elsewhere shows the list: the full-width Tree (BAR with no border, 28 px rows,
+  selected row RAISE with 1 px LINE2, interface font with Yu Gothic UI as the fallback for Japanese
+  names), full-width outline buttons with left icons, and the help label, all 8 px from the dock edges
+  (the WorldContentScroll panel's padding). The hierarchy's minimum width is 64 in neon (156 in classic)
+  and the World scroll's is 64. The Tree's minimum width is 0 in neon, and buttons and help wrap their
+  words. That keeps the list's minimum under 140 px, so a divider drag can always narrow the dock back
+  into the rail. Nothing is saved when the mode changes or at start-up.
+- Unfold: the rail's top button widens the left dock to 232 px. In list mode a 24 px fold button in
+  the header returns it to 64 px. Both change `horizontal.split_offset` and call `save_later()`, the
+  same as a divider drag. They only show while World is docked on the left.
+- Dock headers (World, Properties, Timeline): 28 px `#0C0D11` bars with a 1 px `#22252E` bottom line, an
+  uppercase 11/600 `#8C93A3` title and a ghost chevron menu (same items). The handle is still
+  `panels[id].get_child(0).get_child(0)` and the menu is still child 1. In the rail, the header is 78 px:
+  the unfold button is a child of the handle drawn above the handle's own rect, the handle spans the
+  rail (negative header separation) so "WORLD" stays centred, and the menu is a 12 px chevron beside
+  the unfold button. The handle's centre is a drag target in both modes. The left and right docks are
+  flush with the stage (`separation` 0 in neon, `minimum_grab_thickness` 8 keeps the divider
+  draggable).
+- `apply_theme_style()` calls `workspace_layout.apply_style()`, so switching the theme at run time
+  switches between rail and list headers too. Classic styles keep the "⋮⋮ Title ▾" rows and the
+  156 px list exactly as before.
+
+Deviations (step 3):
+- **Docking menu in the rail:** the mock has no docking menu. Codex's menu stays as a 12 px chevron
+  beside the unfold button.
+- **Icon size:** the plan says 20 px. The mock source draws 18 px icons, and those are used.
+- **Rail length:** the mock's rail runs down beside the timeline. Here the timeline dock spans the full
+  width, so the rail ends above it and the Frame tile sits at the bottom of the World dock. The grid
+  is not changed (dock logic is Codex's).
+- **Tree minimum width:** the plan keeps a 156 px Tree minimum in list mode. That would stop a drag
+  from ever narrowing the dock below 140 px back into the rail, so the Tree has no minimum width in
+  neon. List mode only exists from 140 px anyway.
+- **Small windows:** at 1200x760 the rail's bottom tiles need the dock to scroll, and the 6 px
+  scrollbar widens the rail a little (asset button still reachable, as workspace_controls checks).
+- **Contrast:** tile labels (TEXT2) are 9.98:1 on BAR, the WORLD label and icons (TEXT3) 6.3:1 on BAR
+  and 5.28:1 on hover, white on RAISE 17.6:1.

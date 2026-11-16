@@ -29,23 +29,212 @@ var picking := 0
 var pick_requests: Dictionary = {}
 var colors := {}
 var boundaries := {}
+# Neon Pro step 3: World icon rail (narrow dock) / list (wide dock). The rail mirrors the Tree rows;
+# the Tree stays the source of truth for selection and only hides while the rail shows.
+const StudioTheme = preload("res://src/studio_theme.gd")
+const HELP := "Click an object to select.\nRight-click empty space\nto deselect."
+var rail: VBoxContainer
+var rail_tiles := {}
+var rail_mode := false
+var actions: Array = []
+var help_label: Label
+var rail_divider: Control
+var rail_end: Control
 
 func setup(parent: Node) -> void:
 	app.label(parent,"World")
+	rail = VBoxContainer.new(); rail.name = "WorldRail"
+	rail.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	rail.add_theme_constant_override("separation",6)
+	rail.mouse_filter = Control.MOUSE_FILTER_PASS; rail.tooltip_text = HELP.replace("\n"," ")
+	rail.visible = false
+	parent.add_child(rail)
 	tree = Tree.new()
 	tree.custom_minimum_size = Vector2(156,150)
 	tree.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	tree.hide_root = false
-	var font := SystemFont.new();font.font_names=PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"])
-	tree.add_theme_font_override("font",font)
+	tree.add_theme_font_override("font",tree_font())
 	tree.item_selected.connect(func():
 		var item := tree.get_selected()
 		if not updating_tree and item and item.get_metadata(0) is String: select_entity(item.get_metadata(0)))
 	parent.add_child(tree)
-	app.button(parent,"Frame selected",frame_selected).tooltip_text = "Find the selected map or model without changing shot keys."
-	app.button(parent,"Save asset .has...",func():preload("res://src/asset_package.gd").export_dialog(app)).tooltip_text="Package the selected independent model or map with its editable controls and embedded dependencies."
-	app.button(parent,"Size map…",func():app.map_calibration.open()).tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
-	app.label(parent,"Click an object to select.\nRight-click empty space\nto deselect.").add_theme_font_size_override("font_size",12)
+	rail_divider = CenterContainer.new(); rail_divider.mouse_filter = Control.MOUSE_FILTER_IGNORE; rail_divider.visible = false
+	var line := ColorRect.new(); line.color = StudioTheme.LINE2; line.custom_minimum_size = Vector2(28,1); line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	rail_divider.add_child(line); parent.add_child(rail_divider)
+	var frame: Button = app.button(parent,"Frame selected",frame_selected); frame.tooltip_text = "Find the selected map or model without changing shot keys."
+	frame.set_meta("rail",["Frame","frame-target"])
+	var asset: Button = app.button(parent,"Save asset .has...",func():preload("res://src/asset_package.gd").export_dialog(app)); asset.tooltip_text="Package the selected independent model or map with its editable controls and embedded dependencies."
+	asset.set_meta("rail",["Save asset .has...","save"])
+	var size_map: Button = app.button(parent,"Size map…",func():app.map_calibration.open()); size_map.tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
+	size_map.set_meta("rail",["Size map…","ruler"])
+	actions = [frame,asset,size_map]
+	help_label = app.label(parent,HELP); help_label.add_theme_font_size_override("font_size",12)
+	rail_end = Control.new(); rail_end.custom_minimum_size.y = 4; rail_end.mouse_filter = Control.MOUSE_FILTER_IGNORE; rail_end.visible = false
+	parent.add_child(rail_end)
+	set_rail(StudioTheme.is_neon(), true)
+
+func tree_font() -> Font:
+	# Neon: the interface font, with Yu Gothic UI kept as the fallback for Japanese object names.
+	var japanese := SystemFont.new(); japanese.font_names = PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"])
+	if not StudioTheme.is_neon(): return japanese
+	var font := SystemFont.new(); font.font_names = PackedStringArray(StudioTheme.UI_FONTS); font.font_weight = 500
+	font.fallbacks = [japanese]
+	return font
+
+func style_tile(control: Button, kind: String, tile: bool) -> void:
+	# Rail tile: 52x56, r8, 18 px icon (#8C93A3) over an 11/500 #B4BAC7 label, hover #1D2029, selected
+	# #171A21 + 1 px #2C303B with a white icon and label. List mode: full-width outline button.
+	var neon := StudioTheme.is_neon()
+	control.theme_type_variation = "RailTile" if tile else ""
+	control.custom_minimum_size = Vector2(52,56) if tile else Vector2.ZERO
+	control.size_flags_horizontal = Control.SIZE_SHRINK_CENTER if tile else Control.SIZE_FILL
+	control.icon = StudioTheme.icon(kind,Color.WHITE,18 if tile else 16) if neon else null
+	control.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER if tile else HORIZONTAL_ALIGNMENT_LEFT
+	control.vertical_icon_alignment = VERTICAL_ALIGNMENT_TOP if tile else VERTICAL_ALIGNMENT_CENTER
+	control.alignment = HORIZONTAL_ALIGNMENT_CENTER if tile or not neon else HORIZONTAL_ALIGNMENT_LEFT
+	for name in ["font_hover_color","font_pressed_color","font_hover_pressed_color","font_focus_color","font_disabled_color"]: control.remove_theme_color_override(name)
+	if not neon:
+		for name in ["icon_max_width","h_separation"]: control.remove_theme_constant_override(name)
+		for name in ["font_color","icon_normal_color","icon_hover_color","icon_pressed_color","icon_hover_pressed_color","icon_focus_color"]: control.remove_theme_color_override(name)
+		control.remove_theme_font_override("font"); control.autowrap_mode = TextServer.AUTOWRAP_OFF
+		return
+	control.add_theme_constant_override("icon_max_width",18 if tile else 16)
+	control.add_theme_constant_override("h_separation",5 if tile else 8)
+	control.add_theme_font_override("font",StudioTheme.font(500))
+	# Words wrap so a long action label never widens the dock (list mode only exists from 140 px).
+	control.autowrap_mode = TextServer.AUTOWRAP_WORD
+	control.add_theme_color_override("font_color",StudioTheme.TEXT2 if tile else StudioTheme.TEXT)
+	control.add_theme_color_override("icon_normal_color",StudioTheme.TEXT3 if tile else StudioTheme.TEXT2)
+	control.add_theme_color_override("icon_focus_color",StudioTheme.TEXT3 if tile else StudioTheme.TEXT2)
+	control.add_theme_color_override("icon_hover_color",StudioTheme.TEXT)
+	control.add_theme_color_override("icon_pressed_color",Color.WHITE)
+	control.add_theme_color_override("icon_hover_pressed_color",Color.WHITE)
+
+func style_action(control: Button, kind: String, tile: bool) -> void:
+	# Frame / Save asset / Size map. As rail tiles their (exact) text wraps under the icon in a face
+	# drawn by child controls: Button autowrap does not wrap correctly under a top icon, so the
+	# button's own text is clipped and transparent there while staying the real control text.
+	style_tile(control,kind,tile)
+	var face: VBoxContainer = control.get_node_or_null("TileFace")
+	var neon := StudioTheme.is_neon()
+	control.clip_text = tile and neon
+	if face: face.visible = tile and neon
+	if not (tile and neon): return
+	control.icon = null
+	for name in ["font_color","font_hover_color","font_pressed_color","font_hover_pressed_color","font_focus_color","font_disabled_color"]:
+		control.add_theme_color_override(name,Color.TRANSPARENT)
+	if face == null:
+		face = VBoxContainer.new(); face.name = "TileFace"; face.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		face.alignment = BoxContainer.ALIGNMENT_CENTER; face.add_theme_constant_override("separation",5)
+		var picture := TextureRect.new(); picture.name = "Icon"; picture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		picture.size_flags_horizontal = Control.SIZE_SHRINK_CENTER; picture.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+		face.add_child(picture)
+		var caption := Label.new(); caption.name = "Caption"; caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER; caption.autowrap_mode = TextServer.AUTOWRAP_WORD
+		caption.add_theme_font_size_override("font_size",11); caption.add_theme_constant_override("line_spacing",0)
+		face.add_child(caption)
+		control.add_child(face); face.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); face.offset_top = 6; face.offset_bottom = -6; face.offset_left = 2; face.offset_right = -2
+		control.mouse_entered.connect(func(): tile_face_color(control,true))
+		control.mouse_exited.connect(func(): tile_face_color(control,false))
+	var caption: Label = face.get_node("Caption")
+	# ICU never breaks before "." even after a space (UAX #14 LB13): a zero-width space lets the
+	# caption wrap "Save asset .has..." as Save / asset / .has... like the other tile labels.
+	caption.text = control.text.replace(" .", " \u200b.")
+	caption.add_theme_font_override("font",StudioTheme.font(500))
+	var lines := StudioTheme.font(500).get_multiline_string_size(caption.text,HORIZONTAL_ALIGNMENT_CENTER,48,11,-1,TextServer.BREAK_MANDATORY|TextServer.BREAK_WORD_BOUND).y
+	control.custom_minimum_size.y = maxf(56,ceilf(12+18+5+lines))
+	tile_face_color(control,false)
+
+func tile_face_color(control: Button, hover: bool) -> void:
+	var face := control.get_node_or_null("TileFace")
+	if face == null: return
+	face.get_node("Caption").add_theme_color_override("font_color",StudioTheme.TEXT if hover else StudioTheme.TEXT2)
+	face.get_node("Icon").texture = StudioTheme.icon(str(control.get_meta("rail")[1]),StudioTheme.TEXT if hover else StudioTheme.TEXT3,18)
+
+func entity_tile(id: String, text: String, kind: String) -> Button:
+	var tile := Button.new(); tile.focus_mode = Control.FOCUS_NONE
+	tile.text = text; tile.tooltip_text = text; tile.set_meta("kind",kind)
+	style_tile(tile,kind,true)
+	tile.autowrap_mode = TextServer.AUTOWRAP_OFF; tile.clip_text = true
+	tile.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	if not id.begins_with("effect:"):
+		tile.toggle_mode = true
+		# 2 px vertical neon bar on the rail edge (6 px left of the tile), inset 10, pink glow.
+		var bar := Control.new(); bar.name = "SelectedBar"; bar.mouse_filter = Control.MOUSE_FILTER_IGNORE; bar.visible = false
+		tile.add_child(bar)
+		bar.anchor_top = 0; bar.anchor_bottom = 1; bar.offset_left = -6; bar.offset_right = -4; bar.offset_top = 10; bar.offset_bottom = -10
+		var glow := Panel.new(); glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		glow.add_theme_stylebox_override("panel",StudioTheme.flat(Color(1,0.239,0.604,0),Color.TRANSPARENT,1,0,Vector4(0,0,0,0),Color(1,0.239,0.604,0.6),4))
+		bar.add_child(glow); glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		var line := TextureRect.new(); line.texture = StudioTheme.neon_bar(); line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		line.expand_mode = TextureRect.EXPAND_IGNORE_SIZE; line.stretch_mode = TextureRect.STRETCH_SCALE
+		bar.add_child(line); line.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	tile.pressed.connect(func():
+		if id != selected: select_entity(id)
+		sync_rail())
+	rail.add_child(tile); rail_tiles[id] = tile
+	return tile
+
+func tile_kind(id: String) -> String:
+	if id.begins_with("effect:"): return "sparkle"
+	var kind := "environment" if id == "scene" else "model"
+	if app.renderer.world_runtime:
+		var instance: RefCounted = app.renderer.world_runtime.instance(id)
+		kind = str(instance.data.get("kind","")) if instance else ""
+	return {"environment":"building","model":"runner"}.get(kind,"box")
+
+func rebuild_rail(rows: Array) -> void:
+	# Built from the same rows as the Tree; never selects anything while building.
+	for tile in rail_tiles.values():
+		if is_instance_valid(tile): rail.remove_child(tile); tile.queue_free()
+	rail_tiles.clear()
+	for row in rows: entity_tile(row.id,str(row.name),tile_kind(row.id))
+	if app.renderer.world_runtime:
+		for effect in app.renderer.world_runtime.data.get("effects",[]):
+			entity_tile("effect:"+str(effect.id),str(effect.name),"sparkle").tooltip_text = str(effect.name)+": edit placement and timing"
+	sync_rail()
+
+func sync_rail() -> void:
+	for id in rail_tiles:
+		var tile: Button = rail_tiles[id]
+		if not tile.toggle_mode: continue
+		var on: bool = id == selected
+		if tile.button_pressed != on: tile.set_pressed_no_signal(on)
+		var bar := tile.get_node_or_null("SelectedBar")
+		if bar: bar.visible = on
+		tile.add_theme_font_override("font",StudioTheme.font(600 if on else 500))
+		tile.add_theme_color_override("font_color",Color.WHITE if on else StudioTheme.TEXT2)
+
+func set_rail(on: bool, force := false) -> void:
+	# Rail: tiles + spacer + divider + Frame / Save asset / Size map tiles, help text as the rail tooltip.
+	# List: full-width Tree, full-width buttons and the help label. Visibility and texts only.
+	if on == rail_mode and not force: return
+	rail_mode = on
+	var neon := StudioTheme.is_neon()
+	var holder: Control = tree.get_parent()
+	holder.custom_minimum_size.x = 64 if neon else 156
+	holder.add_theme_constant_override("separation",6 if on else 7)
+	tree.custom_minimum_size.x = 0 if neon else 156
+	tree.visible = not on
+	rail.visible = on; rail_divider.visible = on; rail_end.visible = on
+	help_label.visible = not on
+	help_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART if neon else TextServer.AUTOWRAP_OFF
+	if neon: help_label.add_theme_color_override("font_color",StudioTheme.TEXT2)
+	else: help_label.remove_theme_color_override("font_color")
+	if neon:
+		tree.add_theme_stylebox_override("panel",StudioTheme.flat(StudioTheme.BAR,Color.TRANSPARENT,0,0,Vector4(4,4,4,4)))
+		tree.add_theme_constant_override("v_separation",6)
+	else:
+		tree.remove_theme_stylebox_override("panel"); tree.remove_theme_constant_override("v_separation")
+	tree.add_theme_font_override("font",tree_font())
+	for control in actions:
+		var meta: Array = control.get_meta("rail")
+		control.text = meta[0] if on else str({"Frame":"Frame selected"}.get(meta[0],meta[0]))
+		style_action(control,meta[1],on)
+	if force:
+		for tile in rail_tiles.values():
+			style_tile(tile,str(tile.get_meta("kind")),true); tile.autowrap_mode = TextServer.AUTOWRAP_OFF
+		sync_rail()
 
 func initialize_mask() -> void:
 	copies_root = Node3D.new(); copies_root.name = "EditorOnlySelection"
@@ -134,6 +323,7 @@ func refresh() -> void:
 		var effects_item:=tree.create_item(root_item);effects_item.set_text(0,"Effects");effects_item.set_selectable(0,false)
 		for effect in app.renderer.world_runtime.data.effects:
 			var item:=tree.create_item(effects_item);item.set_text(0,effect.name);item.set_metadata(0,"effect:"+effect.id);item.set_tooltip_text(0,"Edit placement and timing")
+	rebuild_rail(rows)
 	if app.renderer.world_runtime:
 		app.renderer.select_instance("");app.pose_editor.rebuild_tree();app.pose_editor.update_gizmo();app.refresh_timeline()
 	elif app.mode.selected == 2 and model: select_entity("model",false)
@@ -218,9 +408,11 @@ func _process(_delta: float) -> void:
 			var instance: RefCounted=app.renderer.world_runtime.instance(id)
 			var name: String=instance.data.name+(" (hidden)" if not instance.root.is_visible_in_tree() else "")
 			if items[id].get_text(0)!=name:items[id].set_text(0,name)
+			if rail_tiles.has(id) and rail_tiles[id].tooltip_text!=name:rail_tiles[id].tooltip_text=name;rail_tiles[id].text=instance.data.name
 	elif items.has("model") and app.renderer.model:
 		var name: String = str(app.renderer.model.data.name) + (" (hidden)" if not app.renderer.model.data.visible else "")
 		if items.model.get_text(0)!=name: items.model.set_text(0,name)
+		if rail_tiles.has("model") and rail_tiles.model.tooltip_text!=name: rail_tiles.model.tooltip_text=name;rail_tiles.model.text=str(app.renderer.model.data.name)
 
 func select_entity(kind: String, change_workspace := true) -> void:
 	if kind.begins_with("effect:"):
@@ -237,6 +429,7 @@ func select_entity(kind: String, change_workspace := true) -> void:
 	if kind.is_empty(): tree.deselect_all()
 	elif tree.get_selected()!=items[kind]: items[kind].select(0)
 	updating_tree = false
+	sync_rail()
 	if change_workspace:
 		var view: Dictionary=app.renderer.view_state()
 		var next := 2 if kind=="model" or app.renderer.world_runtime and not kind.is_empty() else 1
