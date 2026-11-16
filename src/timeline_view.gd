@@ -109,7 +109,7 @@ var auto_key_chip:=false # Pose: the selected model lane shows an "Auto key" chi
 # frame_at() use the same origin and span, so hit tests stay the exact inverse; classic keeps 0.
 const CONTENT_PAD:=12.0
 const CAMERA_BAND:=[Color(1,0.373,0.682,0.16),Color(1,0.373,0.682,0.06),Color(1,0.373,0.682,0.25)]
-const CAMERA_TRACK:=[Color(1,0.373,0.682,0.10),Color(1,0.373,0.682,0.04),Color(1,0.373,0.682,0.25)]
+const CAMERA_TRACK:=[Color(1,0.373,0.682,0.07),Color(1,0.373,0.682,0.02),Color.TRANSPARENT]
 const MODEL_BAND:=[Color(0.663,0.545,1,0.14),Color(0.663,0.545,1,0.06),Color(0.663,0.545,1,0.22)]
 const MODEL_TRACK:=[Color(0.663,0.545,1,0.10),Color(0.663,0.545,1,0.04),Color(0.663,0.545,1,0.22)]
 var neon_boxes:={}
@@ -309,7 +309,7 @@ func visible_span() -> float:
 	return float(duration) if window_span<=0 else clampf(window_span,1,duration)
 func visible_start() -> float:return clampf(window_start,0,maxf(0,duration-visible_span()))
 func content_pad() -> float:return CONTENT_PAD if StudioTheme.is_neon() else 0.0
-func content_width() -> float:return maxf(1,size.x-LEFT-16-content_pad())
+func content_width() -> float:return maxf(1,size.x-LEFT-16-2.0*content_pad())  # neon pads both ends (mock: 12 px)
 func frame_at(point: Vector2) -> int:
 	return clampi(roundi(visible_start()+(point.x-LEFT-content_pad())/content_width()*visible_span()),0,duration)
 func x(f: float) -> float:
@@ -524,7 +524,7 @@ func neon_draw() -> void:
 	if not hide_header:
 		draw_rect(Rect2(0,0,LEFT,1),StudioTheme.LINE);draw_rect(Rect2(0,23,LEFT,1),StudioTheme.LINE)
 		var on_camera:=focus_lane=="camera"
-		neon_lane(24,28,"Camera",str(keys.size()),StudioTheme.CAMERA,on_camera,0,StudioTheme.TEXT,on_camera,CAMERA_BAND,Color("ffd6ea"),"bar_glow_camera")
+		neon_lane(24,28,"Camera","%d key%s" % [keys.size(),"" if keys.size()==1 else "s"] if on_camera else str(keys.size()),StudioTheme.CAMERA,on_camera,0,StudioTheme.TEXT,on_camera,CAMERA_BAND,Color("ffd6ea"),"bar_glow_camera")
 	if header_only:
 		draw_rect(Rect2(LEFT-1,0,1,size.y),StudioTheme.LINE)
 		if picture:picture.queue_redraw()

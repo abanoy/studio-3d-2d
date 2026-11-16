@@ -5033,3 +5033,21 @@ verify.py was not run.
 - Header save time resets per project; neon <-> classic theme switch applies after restart.
 - Details, declined items (8/18, 15, 17) and the kept simulation-row deviation: docs/REDESIGN-PORT.md
   "Review 2 fixes".
+
+## Neon Pro port: review 3 fixes (claude/studio-redesign)
+Implemented and checked on Linux xvfb (ui, editor, pose, world_selection, recovery_write and recovery
+pass; workspace_controls 48/0, workspace_docking 18/0, workspace_nested 13/0, workspace_resize 31/0,
+asset_package, brush_opacity, palette, layers and onion pass; color_sampler keeps its 3 baseline
+failures; timeline_navigation_unit/smoke and cel_timing_smoke give the same PASS/FAIL lines as before
+the change). Windows verify.py was not run.
+- Full-height World rail beside the timeline while World is docked alone on the left (neon nesting
+  switch in workspace_layout.apply_nesting; offsets and saved layout unchanged).
+- Inspector: single hairlines, thin scrollbar with right-pad compensation, 20 px headings, wider card
+  text column, trimmed switch labels (Pose inspector back to 288 px), aligned Advanced Brush sliders.
+- Stage footer: one-line Simple Camera toast, full lens caption, compact footer pill (Handles title).
+- Timeline: 12 px right pad, lane-boundary focus scroll, "N keys" Camera lane, fainter Camera band,
+  single scrollbar in Advanced. Scrollbar thumbs 3:1; softer tab underline glow.
+- Fixes: strip_input vs Home overlay, FOV slider sync, Fit view back in Simple, Turn model selects the
+  tree root, I/M arm path from the tool pill, live tool tooltips, cheaper camera key refresh, live
+  physics mirror tooltips.
+- Declined: LEFT 200 and asymmetric fit_inset. Details: docs/REDESIGN-PORT.md "Review 3 fixes".

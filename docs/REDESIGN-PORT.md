@@ -14,7 +14,7 @@ Status: implemented and tested on Linux (Godot 4.6, xvfb, llvmpipe) with the com
 
 | Step | What | Where (src/app.gd unless noted) |
 |---|---|---|
-| 1 Simple/Advanced shell | `simple_controls` list next to `advanced_controls`; `refresh_workspace()` hides Simple-only controls in Advanced, syncs the mode tabs, tool strip, Camera strip, icon-only Undo/Redo and the physics row (Advanced, or Pose in Simple). Simple top bar: New, Open, Save, **Add** menu (3D scene, Poseable model, Installed content, Audio), Export movie, **More** menu (Home screen, Recover, Project options, Interface size and fullscreen, Keyboard shortcuts, About). Advanced keeps every original button (Home, Recover, Save as, Open folder, Sample room, Add scene/model, Installed, Add audio, Options, About). Draw/Camera/Pose tabs drive the mode dropdown (still the source of truth, Advanced-only). Draw tool strip (Pen, Eraser, Fill, Pick color, Select area) drives the `tool` dropdown. Camera "Save key" strip. Fit view is Advanced-only. Nav and view toolbars are `HFlowContainer`s so they wrap. | vars after `advanced_controls`; `style_nav()`, `simple_only()`, `menu_button()`, `pick_mode()`, `pick_tool()`, `refresh_tool_strip()`, `pick_scene_file()`; `refresh_workspace()`; header + view toolbar in `build_ui()`; `_process()` re-syncs the strip |
+| 1 Simple/Advanced shell | `simple_controls` list next to `advanced_controls`; `refresh_workspace()` hides Simple-only controls in Advanced, syncs the mode tabs, tool strip, Camera strip, icon-only Undo/Redo and the physics row (Advanced, or Pose in Simple). Simple top bar: New, Open, Save, **Add** menu (3D scene, Poseable model, Installed content, Audio), Export movie, **More** menu (Home screen, Recover, Project options, Interface size and fullscreen, Keyboard shortcuts, About). Advanced keeps every original button (Home, Recover, Save as, Open folder, Sample room, Add scene/model, Installed, Add audio, Options, About). Draw/Camera/Pose tabs drive the mode dropdown (still the source of truth, Advanced-only). Draw tool strip (Pen, Eraser, Fill, Pick color, Select area) drives the `tool` dropdown. Camera "Save key" strip. Fit view stays in Simple as on main (classic always; neon Simple shows it icon-only while the canvas is zoomed or panned, `sync_fit_view()`). Nav and view toolbars are `HFlowContainer`s so they wrap. | vars after `advanced_controls`; `style_nav()`, `simple_only()`, `menu_button()`, `pick_mode()`, `pick_tool()`, `refresh_tool_strip()`, `pick_scene_file()`; `refresh_workspace()`; header + view toolbar in `build_ui()`; `_process()` re-syncs the strip |
 | 2 Icons | Original SVG icons: eraser, fill, picker, figure, add, pause, layers | src/studio_theme.gd `icon()` |
 | 3 Window fill | Main already had `window/stretch/aspect="expand"` and a saved interface scale (100–175 %) plus fullscreen in its Settings dialog, so only **F11** and a shared `toggle_fullscreen()` were added | `toggle_fullscreen()`, `_unhandled_key_input()`, `show_display_settings()` |
 | 4 Guidance | Simple empty-state hint over the canvas (empty world / empty Draw frame / no camera keys); Simple status toast (rounded, red for problems) that fades after 6 s; plain wording for mode messages in Simple (Advanced keeps the original text) | `refresh_empty_hint()`, `refresh_status_style()`, `is_problem_message()`, `schedule_status_fade()`, `message()`, `change_mode()`; hint built after the canvas in `build_ui()` |
@@ -273,7 +273,7 @@ Deviations (step 3):
     model" sets it to Move (same as the panel dropdown and middle-click: select, `item_selected`,
     `update_gizmo`), and "Mouse and keys" shows the canvas posing help in the popover. The strip syncs
     from `operation` every frame and only writes on a click.
-  - **Codex pill:** `mode` (Advanced), `lighting_choice`, Fit view (Advanced), Frame scene, Undo / Redo
+  - **Codex pill:** `mode` (Advanced), `lighting_choice`, Fit view (Advanced; neon Simple only while zoomed or panned), Frame scene, Undo / Redo
     (32 px icon ghosts in Simple, labelled in Advanced) and Scene setup / Frame / 3×3. They are h32
     outline chips, and the switches stay switches. The Pose physics row is a second chip pill, inside
     its own `PhysicsControlsScroll` as before.
@@ -867,3 +867,43 @@ scratchpad). Simple mode at 1440x900 now gives a camera frame of about 975x548 (
   fans / local wind, loose parts) is hidden in neon Simple unless a simulation or recording runs;
   Pose mirrors Physics / Hair & clothes. Recording, fans, wind and loose parts are reached in
   Advanced. Showing the row in Simple shrinks the frame and turns the tool pill icon-only.
+
+### Review 3 fixes (`src/app.gd`, `src/workspace_layout.gd`, `src/timeline_view.gd`, `src/studio_theme.gd`, `src/pose_editor.gd`)
+
+- **Full-height World rail (item 9, replaces the review 2 decline):** while World is docked alone on
+  the left (neon), the same four splits nest as `horizontal[left, vertical[top_split[top, right_split],
+  bottom]]`, so the 64 px rail runs from the header to the bottom and the timeline starts beside it
+  (mock grid). Classic styles, World floating or sharing / leaving the left dock use Codex's nesting.
+  The switch runs only on docking / theme changes (`apply_nesting()`, checked in `_process` while no
+  heading drag runs), never on a divider drag; split roles and `state()` / saved layouts are unchanged.
+- **Inspector:** New drawing's top hairline shows only under the Next card (one 1 px line). A thin
+  4 px inspector scrollbar; while it shows, every inspector section and card gives up its width on
+  the right (`fit_inspector_pad()`), keeping 16 px of visual padding. Colour keeps the 8 px block gap
+  and the Brush size heading is 20 px. Help / Next cards have 12 px side padding (the substitute UI
+  font is ~6% wider than Geist, so "How camera keys work" wraps to two lines as in the mock).
+  Switch rows trim long labels with an ellipsis (full text in the tooltip), so no control widens the
+  288 px column; Pose's switch reads "Reference only" with the sub-line "Hidden in the movie" (classic
+  keeps Codex's wording). Advanced Brush card: the three sliders share one column (lead / end slots),
+  the short bold labels are Simple-only (Codex's captions label them in Advanced).
+- **Stage footer:** neon Simple Camera toast "Move the view, then save a key. Press Save camera key
+  [K] to keep it." (one line, bold first sentence; classic and Advanced keep Codex's text); the caption
+  reserve is 210 px so "Camera view · 16:9 · 35 mm" is not cut. While Codex's pill sits in the footer
+  it drops the dropdown chevrons, uses 30 px chips and a 2 px gap (`set_codex_footer()`), so Pose keeps
+  the "Handles" legend title at 1440x900; fit decisions measure the pill in its normal look.
+- **Timeline:** content gets a 12 px right pad matching the left (`content_width()`), so the last
+  key is whole; the focus-lane scroll snaps to a lane boundary (no sliver of the row above); the
+  Camera lane reads "N keys" in Camera mode and its track band is the mock's faint 0.07 → 0.02 pink
+  with no edge; Advanced lanes minimum is 30 px so the docked 166 px timeline never engages the dock's
+  own scroll (one scrollbar).
+- **Theme:** neon scrollbar thumbs `#5C6272` (3.2:1 on `#0C0D11`), hover `#8C93A3`, pressed `#B4BAC7`.
+  The Draw/Camera/Pose underline glow is a soft violet (9 px) over faint blue (10 px).
+- **Behaviour fixes:** strip_input ignores the Home overlay and exports and tests the cheap strip
+  rects before the dialog walk (nested DockSplits only on a press); the Advanced FOV slider follows
+  `fov.set_value_no_signal`; Fit view is back in Simple (see above); Turn model selects the root row
+  of the Bones tree; the tool pill's Pick color / Select area take the I / M `arm()` path; tool pill
+  tooltips follow rebound shortcuts; the Camera key list rebuilds only when a cheap token changes;
+  Simple Physics mirrors copy Codex's live tooltips.
+- **Declined:** `TimelineView.LEFT = 200` (item 10): LEFT is test-visible API documented as 190,
+  `sequence_timeline.gd` hard-codes 190 and the change would also move the classic timeline.
+  Asymmetric `fit_inset` (item 18): the 3D view renders a centred perspective camera, so an off-centre
+  frame would misalign drawings with the scene (and scene_view's setup camera math).

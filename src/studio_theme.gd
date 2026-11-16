@@ -36,6 +36,7 @@ const KBD := Color("13151b")
 const TOOL_INNER := Color("171a22")
 const SWITCH_INNER := Color("0e1016")
 const TRACK := Color("272b35")
+const SCROLL_THUMB := Color("5c6272")  # scrollbar thumb: 3.2:1 on BAR (non-text contrast >= 3:1)
 # Semantic colours (same meaning everywhere: timeline lanes, onion skin, badges, status).
 const DRAWING := Color("4da3ff")  # drawings, onion "before"
 const CAMERA := Color("ff5fae")   # camera keys, onion "after"
@@ -546,9 +547,9 @@ static func make_neon_theme() -> Theme:
 		var track_pad := Vector4(3, 0, 3, 0) if v else Vector4(0, 3, 0, 3)
 		result.set_stylebox("scroll", type, flat(Color.TRANSPARENT, Color.TRANSPARENT, 3, 0, track_pad))
 		result.set_stylebox("scroll_focus", type, flat(Color.TRANSPARENT, Color.TRANSPARENT, 3, 0, track_pad))
-		result.set_stylebox("grabber", type, flat(LINE2, Color.TRANSPARENT, 3, 0, track_pad))
-		result.set_stylebox("grabber_highlight", type, flat(LINE3, Color.TRANSPARENT, 3, 0, track_pad))
-		result.set_stylebox("grabber_pressed", type, flat(TEXT3, Color.TRANSPARENT, 3, 0, track_pad))
+		result.set_stylebox("grabber", type, flat(SCROLL_THUMB, Color.TRANSPARENT, 3, 0, track_pad))
+		result.set_stylebox("grabber_highlight", type, flat(TEXT3, Color.TRANSPARENT, 3, 0, track_pad))
+		result.set_stylebox("grabber_pressed", type, flat(TEXT2, Color.TRANSPARENT, 3, 0, track_pad))
 	# Tabs: selected tab raised with a neon underline; others text-only.
 	var tab_selected := StyleBoxTexture.new()
 	tab_selected.texture = svg_texture('<defs>%s</defs><rect width="128" height="32" rx="7" fill="#171a21"/><rect x="14" y="30" width="100" height="2" rx="1" fill="url(#neon)"/>' % neon_defs(), 128, 32, 2.0)

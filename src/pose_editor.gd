@@ -1055,7 +1055,10 @@ func build_neon_inspector() -> void:
 	var shown := neon_block("Visibility")
 	neon_switch(shown, visible_toggle, "eye")
 	neon_outline(shown, remove_visibility_button, "eraser")
-	neon_switch(shown, reference_toggle, "camera")
+	# Short label plus a sub-line (mock pattern): the long Codex wording widened the 288 px column.
+	reference_toggle.text = "Reference only"
+	reference_toggle.tooltip_text = "Reference only (hide in movie): the model stays visible while you work but is left out of the rendered movie."
+	neon_switch(shown, reference_toggle, "camera", "Hidden in the movie")
 	app.move_to(reference_opacity_row, shown)
 	reference_opacity_row.add_theme_constant_override("separation", 8)
 	for control in reference_opacity_row.get_children():
@@ -1144,6 +1147,7 @@ func refresh_neon_inspector() -> void:
 		for pair in [[physics_mirror, physics.toggle], [hair_mirror, physics.hair_toggle]]:
 			if pair[0].button_pressed != pair[1].button_pressed: pair[0].set_pressed_no_signal(pair[1].button_pressed)
 			if pair[0].disabled != pair[1].disabled: pair[0].disabled = pair[1].disabled
+			if pair[0].tooltip_text != pair[1].tooltip_text: pair[0].tooltip_text = pair[1].tooltip_text  # PhysicsEditor.sync() explains why it is off
 	for bleed in neon.bleeds:
 		var shown: bool = bleed.get_child(0).visible
 		if bleed.visible != shown: bleed.visible = shown

@@ -37,6 +37,12 @@ const LIST_WIDTH := 232.0
 var world_rail := false
 var world_unfold: Button
 var strip_hot := "" # neon Simple: the panel whose overlaid grab strip is under the mouse
+# Neon: while World is docked alone on the left, the left dock spans the full height (mock grid:
+# the 64 px rail runs from the header to the bottom and the timeline starts beside it). The splits
+# are nested horizontal[left, vertical[top_split[top, right_split], bottom]] then; otherwise (classic,
+# World floating or sharing / leaving the left dock) Codex's vertical[top_split[top, horizontal[left,
+# right_split]], bottom]. The same four splits keep their roles and offsets (state() is unchanged).
+var full_left := false
 
 func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarchy: Control, inspector: Control, transport: Control, ruler: Control, tracks: Control) -> void:
 	app=owner_app
@@ -76,6 +82,26 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 	panels.world.resized.connect(refresh_world_mode)
 	apply_style()
 	if not load_layout():call_deferred("apply_default_split")
+	apply_nesting()
+
+func want_full_left() -> bool:
+	return StudioTheme.is_neon() and groups.left==["world"] and not floating.has("world")
+
+func apply_nesting() -> void:
+	# Only on docking or theme changes (checked in _process while no heading drag runs), never on a
+	# divider drag: the World rail/list switch by width does not change the nesting.
+	var want:=want_full_left()
+	if want==full_left:return
+	var root: Control=horizontal if full_left else vertical
+	var column: Node=root.get_parent();var index:=root.get_index()
+	full_left=want
+	if want:
+		horizontal.remove_child(right_split);top_split.remove_child(horizontal);top_split.add_child(right_split)
+		column.remove_child(vertical);column.add_child(horizontal);column.move_child(horizontal,index);horizontal.add_child(vertical)
+	else:
+		horizontal.remove_child(vertical);column.remove_child(horizontal);column.add_child(vertical);column.move_child(vertical,index)
+		top_split.remove_child(right_split);top_split.add_child(horizontal);horizontal.add_child(right_split)
+	right_split.size_flags_vertical=Control.SIZE_EXPAND_FILL;vertical.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 
 func apply_default_split() -> void:
 	vertical.split_offset=NEON_VERTICAL_OFFSET if StudioTheme.is_neon() else DEFAULT_VERTICAL_OFFSET
@@ -309,14 +335,21 @@ func strip_input(event: InputEventMouse) -> void:
 	# would get the mouse first. Hovering lights the strip; a left press there starts the same heading
 	# drag as header_input(). Nothing changes for Advanced, classic styles or floating panels.
 	var hot:=""
-	if app and not app.has_dialog(app):
+	# The Home screen is an overlay Control inside app (not a Window), so has_dialog() misses it.
+	var blocked: bool=not app or app.exporting or (app.home!=null and is_instance_valid(app.home) and app.home.visible)
+	if not blocked:
+		# Cheap rect tests first; the dialog check walks the whole app tree, so only on a hit.
 		for id in panels:
 			if not strip_header(id):continue
 			var handle: Control=panels[id].get_child(0).get_child(0)
 			if handle.is_visible_in_tree() and handle.get_global_rect().has_point(event.position):hot=id;break
+		if not hot.is_empty() and app.has_dialog(app):hot=""
 	# A splitter's drag area wins where it overlaps the strip (it reaches a few px into the panel).
+	# The nested dock splits are looked up only for a left press, not on every hover.
+	var press: bool=event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed
 	if not hot.is_empty():
-		var splits: Array=[vertical,top_split,horizontal,right_split]+vertical.find_children("DockSplit*","SplitContainer",true,false)
+		var splits: Array=[vertical,top_split,horizontal,right_split]
+		if press:splits+=vertical.find_children("DockSplit*","SplitContainer",true,false)
 		for split in splits:
 			if is_instance_valid(split) and split.is_visible_in_tree() and split.get_drag_area_control().get_global_rect().has_point(event.position):hot="";break
 	if hot!=strip_hot:
@@ -327,7 +360,7 @@ func strip_input(event: InputEventMouse) -> void:
 			lit.border_width_top=2 if id==hot else 0
 			for suffix in ["","_mirrored"]:(panels[id].get_child(0).get_child(0) as Button).add_theme_stylebox_override("normal"+suffix,lit)
 		strip_hot=hot
-	if not hot.is_empty() and event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed:
+	if not hot.is_empty() and press:
 		drag_id=hot;drag_start=event.position;dragged=false
 		get_viewport().set_input_as_handled()
 
@@ -436,6 +469,7 @@ func save_later() -> void:
 	if not loading and timer:timer.start()
 
 func _process(_delta: float) -> void:
+	if drag_id.is_empty() and horizontal and want_full_left()!=full_left:apply_nesting()
 	var geometry:={}
 	for id in floating:
 		var window: Window=floating[id];geometry[id]=[window.position,window.size]
