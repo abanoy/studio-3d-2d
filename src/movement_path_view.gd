@@ -1,5 +1,6 @@
 extends Control
 const PathData=preload("res://src/movement_path.gd")
+const StudioTheme=preload("res://src/studio_theme.gd")
 signal chosen(frame: int)
 signal moved(frame: int,position: Vector3)
 var points: Array=[]
@@ -24,13 +25,21 @@ func screen(position: Vector3) -> Vector2:
 	return size/2.+Vector2(p.x,-p.y)
 
 func _draw() -> void:
-	draw_style_box(preload("res://src/studio_theme.gd").surface("e8f2fb","c9d9e8"),Rect2(Vector2.ZERO,size))
-	var origin:=screen(Vector3.ZERO);draw_line(Vector2(0,origin.y),Vector2(size.x,origin.y),Color("9aaebe"));draw_line(Vector2(origin.x,0),Vector2(origin.x,size.y),Color("9aaebe"))
+	# Neon Pro step 9: neon plot is a #05060A stage card (1 px #2C303B, r8) with #363B48 axes, a
+	# #4DA3FF path, #A98BFF key dots (selected #FFC24B) and #F4F6FA mono frame numbers (18:1).
+	# Classic keeps the pale card, navy dots and navy numbers.
+	var neon:=StudioTheme.is_neon()
+	if neon:draw_style_box(StudioTheme.flat(StudioTheme.STAGE,StudioTheme.LINE2,8,1),Rect2(Vector2.ZERO,size))
+	else:draw_style_box(StudioTheme.surface("e8f2fb","c9d9e8"),Rect2(Vector2.ZERO,size))
+	var axis:=StudioTheme.LINE3 if neon else Color("9aaebe")
+	var origin:=screen(Vector3.ZERO);draw_line(Vector2(0,origin.y),Vector2(size.x,origin.y),axis);draw_line(Vector2(origin.x,0),Vector2(origin.x,size.y),axis)
 	for n in range(1,line.size()):
-		if line[n].join:draw_line(screen(line[n-1].position),screen(line[n].position),Color("257ac2"),2,true)
+		if line[n].join:draw_line(screen(line[n-1].position),screen(line[n].position),StudioTheme.DRAWING if neon else Color("257ac2"),2,true)
+	var ink:=StudioTheme.TEXT if neon else Color("172b3b")
+	var font: Font=StudioTheme.mono(500) if neon else ThemeDB.fallback_font
 	for point in points:
-		var p:=screen(point.position);draw_circle(p,8,Color("f5be4b")if point.frame==selected else Color("172b3b"));draw_circle(p,3,Color.WHITE)
-		var font:=ThemeDB.fallback_font;draw_string(font,p+Vector2(10,-7),str(point.frame),HORIZONTAL_ALIGNMENT_LEFT,-1,14,Color("172b3b"))
+		var p:=screen(point.position);draw_circle(p,8,(StudioTheme.WARNING if neon else Color("f5be4b")) if point.frame==selected else (StudioTheme.MODEL if neon else Color("172b3b")));draw_circle(p,3,StudioTheme.STAGE if neon else Color.WHITE)
+		draw_string(font,p+Vector2(10,-7),str(point.frame),HORIZONTAL_ALIGNMENT_LEFT,-1,13 if neon else 14,ink)
 
 func _gui_input(event: InputEvent) -> void:
 	if not enabled:return

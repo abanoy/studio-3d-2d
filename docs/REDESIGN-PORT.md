@@ -646,7 +646,9 @@ Deviations (step 7):
   labels `#B4BAC7` on `#0F1015` are 9.8:1, and selected white on `#171A21` is 17.4:1. White on the
   Reset button (`#1A1D25`) is 16.8:1, and `#F4F6FA` on the Frame model button (`#101218`) is 17.3:1.
 
-TESTS_PLACEHOLDER
+Tests (Linux xvfb, step 8, run by the coordinator): ui, editor, pose, world_selection, recovery_write
+  and recovery pass; workspace_controls 48/0, workspace_docking 18/0, asset_package 22/0. The step 8
+  log of the remaining smokes was cut short; step 9 re-ran all of them on top of step 8 (below).
 
 Deviations (step 8), owner decisions:
 - **Bend / Twist sliders:** not implemented. They would be new pose maths: a per-joint "bend" and
@@ -669,3 +671,86 @@ Deviations (step 8), owner decisions:
   Movement path…, MMD imports, bone search/tree and the visibility switches are visible in Simple
   today, so they stay (restyled) below the mock's cards.
 - **Dock header:** the 28 px "PROPERTIES" header (the drag handle) stays, as in steps 5 and 7.
+
+### Step 9: Advanced mode, secondary surfaces and final pass (`src/app.gd`, `src/dock_tree.gd`, `src/workspace_layout.gd`, `src/home_screen.gd`, `src/movement_path_view.gd`, `src/movement_path_editor.gd`, `src/sequence_timeline.gd`, `src/reference_sheet_view.gd`)
+Every change is neon-only (`StudioTheme.is_neon()`); "Classic light" and "Classic dark" draw exactly
+as before. Behaviour, control types, texts that tests look up and Simple visibility are unchanged.
+- **Already neon from steps 1-8 (checked, no change):** the Advanced header row (ghost icon+label
+  buttons that wrap, "Advanced workspace" 12 `#8C93A3`), the Settings, Project options, Credits,
+  Recover work, Keyboard shortcuts, Tutorials, Reference sheet, Scene effects, Installed Source
+  content, Editable sequences and Movement path windows (`AcceptDialog` / `Window` panels, tabs,
+  fields, lists and switches all come from the neon Theme on the root window), the Advanced
+  inspector sections (Audio, Movie encoder, Recovery and the rest use the step 5 section style) and
+  the Advanced plain status line (a theme Label: 13 px `#F4F6FA`, 16.8:1 on the stage). Panels that
+  still call `StudioTheme.surface()` with light colours (`has_project.gd` progress, `source_browser.gd`,
+  `source_import.gd`, `particle_editor.gd`, `tutorials.gd`) already get the flat `#0C0D11` neon surface
+  with a `#2C303B` edge from step 1's `surface()`.
+- **Footer** (`style_app_footer()`, `draw_app_footer()`, new `app_footer` reference): the Advanced
+  `debug_label` is mono 11 `#8C93A3` (6.3:1) on a `#0C0D11` band with a 1 px `#22252E` top hairline
+  and 12 px side padding. The band's expand margins cover the 8 px column gap and the 10 px right
+  margin. The footer row below it (`recovery_status`, Show movie folder, Show saved frames, Retry
+  MP4, Cancel export) draws `#0C0D11` to the window's right and bottom edges, with the hairline
+  itself when the debug line is hidden. It draws nothing while the row is empty, which is Simple's
+  usual state, so Simple stays pixel-identical. `recovery_status` keeps step 4's CaptionLabel
+  (12 `#B4BAC7`, 10:1), now vertically centred. `apply_theme_style()` restyles the footer too.
+- **Docked tabs** (`dock_tree.style_book()`): tab groups no longer copy the Button styleboxes and the
+  `#163854` text in neon. That text was dark-on-dark, about 1.4:1 on `#171A21`. They use the theme's
+  tabs instead: the selected tab is `#171A21` (RAISE) with a 2 px neon underline and white text, the
+  others `#8C93A3` text (5.7:1 or more), hover `#1D2029`. The tab strip is `#0C0D11` with a 1 px
+  `#22252E` bottom hairline. `workspace_layout.apply_style()` restyles every book and the theme of
+  every floating window when the theme changes.
+- **Drop preview** (`workspace_layout.style_preview()`): rgba(46,140,255,.18) fill, a 2 px `#2E8CFF`
+  border, r8, and a 600-weight `#F4F6FA` label ("Tab here", "Split left", "Dock right", "Detach as a
+  window"; 15.5:1 on the stage). Classic keeps its rgba(38,122,204) box.
+- **Floating panel windows:** they already took `app.theme`. Now a floating Properties panel also
+  draws the `#0C0D11` chrome (`draw_panel()`), as World and Timeline already did.
+- **Home screen:** the full-window backdrop is `#08090C` at 97 % instead of pale blue. The card was
+  already the neon surface.
+- **Movement path plot:** a `#05060A` stage card with a 1 px `#2C303B` border and r8. Axes are
+  `#363B48`, the path line is `#4DA3FF` and key dots are `#A98BFF` (selected `#FFC24B`) with a stage
+  centre. Frame numbers are mono 13 `#F4F6FA`. Before this, the classic navy dots and numbers were
+  drawn on the dark card. The help line reads "Violet dots are your keys" in neon ("Black dots…" in
+  classic).
+- **Sequence strip** (`sequence_timeline.gd`): rows alternate `#0C0D11` / `#111318` with `#22252E`
+  hairlines and `#B4BAC7` "Sequence N" labels. Clips are `#1D2029` with a `#363B48` edge; the selected
+  clip is `#1C2A44` with a `#2E8CFF` edge. Clip names are `#F4F6FA` (13:1 or more) and the playhead is
+  `#FF3D9A`. Geometry (rows of 26 px, `row_rect()`) is unchanged.
+- **Reference sheet viewer:** the backdrop is `#05060A` with a `#363B48` frame line. The transparency
+  checkerboard stays light, so the artwork's own colours read the same.
+- **Colour sweep:** a grep for `Color("`, `Color(0…` and `surface(` across `src/` found no other white
+  panel or dark text in neon. The remaining literals are 3D scene materials, renderer backgrounds,
+  transparency checkerboards, gizmo axis colours, swatches or classic-only branches.
+
+Tests (Linux xvfb, step 9): ui, editor, pose, world_selection, recovery_write and recovery pass.
+  Full extra.sh: workspace_controls 48/0, workspace_docking 18/0, asset_package 22/0, brush_opacity
+  18/0, palette 23/0, layers 40/0, onion 37/0 (baseline numbers). color_sampler keeps its 3 baseline
+  failures. Also run directly: sequence_editor_smoke 45/0, reference_sheet_smoke 30/0, home_smoke
+  34/0 and tutorial_catalog_smoke 17/0. movement_path_smoke fails the same way with and without this
+  step on this Linux box ("scale row exposes its numeric control", then a script error at line 103),
+  so the failure was there before step 9. Classic light check: screenshots of every surface above
+  with `[display] theme = light` match the pre-step-9 build pixel for pixel. The only difference is
+  the live "overlay N ms" timing in the Advanced debug line.
+
+### Remaining deviations from the mock after the final pass
+A final `shoot.sh` run at 1440x900 was compared with mock-draw.png, mock-camera.png and mock-pose.png.
+The deviations below remain. The per-step lists above give the details.
+- **Fonts:** the mock's Geist / Geist Mono are not bundled and fonts may not be downloaded, so system
+  fonts are used through `SystemFont` fallbacks (UI: Geist, Inter, Segoe UI Variable Text, Segoe UI,
+  Helvetica Neue, Arial, DejaVu Sans; mono: Geist Mono, JetBrains Mono, Cascadia Mono, Consolas,
+  DejaVu Sans Mono). The Linux test box renders Inter + JetBrains Mono; Windows will usually show
+  Segoe UI + Cascadia Mono or Consolas. Widths differ a little from the mock.
+- **Codex controls kept visible in Simple** (contract 9: a control that Simple shows today stays
+  visible): the lighting dropdown, Frame scene, Undo / Redo, Scene setup / Frame / 3×3 guides
+  (Camera, Pose), the Physics / Hair & clothes / local record row (Pose), "More drawing options" and
+  the extra Draw / Camera / Pose panel controls below the mock's cards. Because of these, the view
+  controls take a second line under the tool pill, and the inspector scrolls further than in the mock.
+- **Sample data not faked:** "Rooftop Chase" / "Saved 2 min ago" (the real project name and save
+  state are shown), the Rooftop / Sky / Pigeon / Props rail items (real World rows), the drawing
+  clip names and the "Landing · no drawing yet" slot, camera-key thumbnails (placeholder tiles),
+  "Scarf keeps swinging…", "Next: draw / pose the landing" (real next steps instead), the Bend / Twist
+  values and "Ctrl D" (only real shortcut labels are shown).
+- **Owner decisions:** the Bend / Twist joint sliders and the Physics follow-through switch (new pose
+  maths and new side effects; step 8), a Simple field-of-view slider (Codex keeps `fov` Advanced-only;
+  step 7) and Turn model in the Pose strip (no existing behaviour maps to it; step 4).
+- **Dock headers:** the 28 px "PROPERTIES" / "TIMELINE" headers stay. They are the drag handles that
+  docking relies on (contract 4).

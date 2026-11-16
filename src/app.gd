@@ -200,6 +200,7 @@ var autosave_action_controls: VBoxContainer
 var autosave_actions := 0
 var autosave_retry_due := 0
 var recovery_status: Label
+var app_footer: HBoxContainer # Neon Pro step 9: export / recovery row under the workspace
 var last_recovery_ms := 0.0
 var last_recovery_preview_ms := 0.0
 var last_recovery_preview_capture_ms := 0.0
@@ -391,6 +392,7 @@ func apply_theme_style(style_name: String) -> void:
 	style_empty_hint()
 	if stage_panel: stage_panel.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.STAGE if StudioTheme.is_neon() else Color.TRANSPARENT, Color.TRANSPARENT, 0, 0, Vector4(0, 0, 0, 0)))
 	refresh_status_style()
+	style_app_footer()
 
 func apply_keyboard_nav(on: bool) -> void:
 	# Redesign: buttons normally use FOCUS_NONE so Space drives playback; this opt-in makes them
@@ -3205,6 +3207,9 @@ Draw returns to the animated shot.")
 	advanced(debug_label)
 	var footer := HBoxContainer.new()
 	column.add_child(footer)
+	app_footer = footer
+	footer.draw.connect(draw_app_footer)
+	debug_label.visibility_changed.connect(footer.queue_redraw)
 	if toast:
 		# Neon Pro step 4: status lives in the stage toast (plain line in Advanced). This footer keeps
 		# the export/recovery buttons; recovery_status is Advanced-only (the header save line's
@@ -3232,6 +3237,7 @@ Draw returns to the animated shot.")
 		recovery_status.theme_type_variation = "CaptionLabel"
 	cancel_button = button(footer, "Cancel export", func(): cancel_export = true; if encoder: encoder.cancel())
 	cancel_button.visible = false
+	style_app_footer()
 	set_advanced(false)
 	workspace_layout=preload("res://src/workspace_layout.gd").new();add_child(workspace_layout)
 	workspace_layout.setup(self,column,middle,hierarchy,scroll,transport,ruler_holder,timeline_scroll)
@@ -3245,6 +3251,36 @@ Draw returns to the animated shot.")
 	resized.connect(fit_panels)
 	get_window().size_changed.connect(fit_panels)
 	fit_panels.call()
+
+func style_app_footer() -> void:
+	# Neon Pro step 9: Advanced debug line in mono 11 #8C93A3 (6.6:1 on #0C0D11) on a #0C0D11 band
+	# with a 1 px #22252E top hairline; the band also covers the 8 px column gap below it and the
+	# 10 px right margin, so it meets the footer and the window edge. Classic keeps the plain label.
+	if debug_label == null: return
+	if StudioTheme.is_neon():
+		var band := StudioTheme.flat(StudioTheme.BAR, StudioTheme.LINE, 0, 0, Vector4(12, 5, 12, 4))
+		band.border_width_top = 1
+		band.expand_margin_bottom = 8
+		band.expand_margin_right = 10
+		debug_label.add_theme_stylebox_override("normal", band)
+		debug_label.add_theme_font_override("font", StudioTheme.mono(400))
+		debug_label.add_theme_font_size_override("font_size", 11)
+		debug_label.add_theme_color_override("font_color", StudioTheme.TEXT3)
+	else:
+		debug_label.remove_theme_stylebox_override("normal")
+		debug_label.remove_theme_font_override("font")
+		debug_label.remove_theme_font_size_override("font_size")
+		debug_label.remove_theme_color_override("font_color")
+	if recovery_status and toast: recovery_status.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	if app_footer: app_footer.queue_redraw()
+
+func draw_app_footer() -> void:
+	# Neon footer: #0C0D11 to the window's right and bottom edges (the margins are 10 px), with a
+	# hairline on top unless the debug line above already draws it. Nothing while the row is empty.
+	if not StudioTheme.is_neon() or app_footer == null or app_footer.size.y <= 0.0: return
+	var top := 0.0 if debug_label and debug_label.visible else -8.0
+	app_footer.draw_rect(Rect2(0, top, app_footer.size.x + 10, app_footer.size.y - top + 10), StudioTheme.BAR)
+	if top < 0.0: app_footer.draw_rect(Rect2(0, top, app_footer.size.x + 10, 1), StudioTheme.LINE)
 
 func default_ffmpeg() -> String:
 	var setting := OS.get_environment("HYBRID_FFMPEG")

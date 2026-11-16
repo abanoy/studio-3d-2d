@@ -1,4 +1,5 @@
 extends Control
+const StudioTheme=preload("res://src/studio_theme.gd")
 signal color_picked(point: Vector2i)
 var picture: Texture2D
 var zoom:=1.
@@ -14,7 +15,10 @@ func picture_rect() -> Rect2:
 	var dimensions:=Vector2(picture.get_size());var extent:=dimensions*minf(size.x/dimensions.x,size.y/dimensions.y)*zoom
 	return Rect2((size-extent)/2+pan,extent)
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO,size),Color("c5cdd5"))
+	# Neon Pro step 9: neon backdrop is the #05060A stage with a #363B48 frame line; the
+	# transparency checkerboard stays light so the artwork's own colours read the same.
+	var neon:=StudioTheme.is_neon()
+	draw_rect(Rect2(Vector2.ZERO,size),StudioTheme.STAGE if neon else Color("c5cdd5"))
 	if not picture:return
 	var rect:=picture_rect()
 	# Limit the checkerboard to the visible control, even at maximum zoom.
@@ -23,7 +27,7 @@ func _draw() -> void:
 		for x in range(int(visible.position.x)/16,int(ceil(visible.end.x/16))):
 			var tile:=Rect2(Vector2(x,y)*16,Vector2(16,16)).intersection(visible)
 			draw_rect(tile,Color("f5f5f5") if (x+y)%2==0 else Color("dddddd"))
-	draw_texture_rect(picture,rect,false);draw_rect(rect,Color("71869a"),false,1)
+	draw_texture_rect(picture,rect,false);draw_rect(rect,StudioTheme.LINE3 if neon else Color("71869a"),false,1)
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_MIDDLE]:dragging=event.pressed;grab_focus();accept_event()

@@ -65,7 +65,6 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 		split.get_drag_area_control().tooltip_text="Drag to resize these panels. Drag a panel title to dock, tab or detach it."
 		split.dragged.connect(func(_offset):save_later())
 	preview=Panel.new();preview.mouse_filter=Control.MOUSE_FILTER_IGNORE;preview.z_index=100;preview.hide();app.add_child(preview)
-	var style:=StyleBoxFlat.new();style.bg_color=Color(.15,.48,.8,.18);style.border_color=Color(.15,.48,.8,.9);style.set_border_width_all(2);style.set_corner_radius_all(6);preview.add_theme_stylebox_override("panel",style)
 	preview_label=Label.new();preview_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;preview_label.position=Vector2(12,8);preview.add_child(preview_label)
 	timer=Timer.new();timer.one_shot=true;timer.wait_time=.35;timer.timeout.connect(save);add_child(timer)
 	refresh_slots()
@@ -120,6 +119,27 @@ func apply_style() -> void:
 		split.add_theme_constant_override("separation",0 if neon and split in [horizontal,right_split] else 10)
 	for id in panels:style_header(id)
 	refresh_world_mode(true)
+	style_preview()
+	# Neon Pro step 9: docked tab groups and floating panel windows follow a theme switch too.
+	if dock_tree:
+		for key in dock_tree.books:
+			if is_instance_valid(dock_tree.books[key]):dock_tree.style_book(dock_tree.books[key])
+	for id in floating:
+		if is_instance_valid(floating[id]):floating[id].theme=app.theme
+
+func style_preview() -> void:
+	# Drop preview: neon rgba(46,140,255,.18) fill, 2 px #2E8CFF border, r8, #F4F6FA label
+	# (16.6:1 on the stage); classic keeps its blue rgba(38,122,204) box with default text.
+	if not is_instance_valid(preview):return
+	var neon:=StudioTheme.is_neon()
+	var style:=StyleBoxFlat.new()
+	style.bg_color=Color(StudioTheme.BLUE,.18) if neon else Color(.15,.48,.8,.18)
+	style.border_color=StudioTheme.BLUE if neon else Color(.15,.48,.8,.9)
+	style.set_border_width_all(2);style.set_corner_radius_all(8 if neon else 6);preview.add_theme_stylebox_override("panel",style)
+	if neon:
+		preview_label.add_theme_color_override("font_color",StudioTheme.TEXT);preview_label.add_theme_font_override("font",StudioTheme.font(600))
+	else:
+		preview_label.remove_theme_color_override("font_color");preview_label.remove_theme_font_override("font")
 
 func ghost_boxes(control: Button,pad: Vector4,hover:=Color.TRANSPARENT) -> void:
 	var clear:=StudioTheme.flat(Color.TRANSPARENT,Color.TRANSPARENT,6,0,pad);var lit:=StudioTheme.flat(hover,Color.TRANSPARENT,6,0,pad)
@@ -227,7 +247,8 @@ func draw_header(id: String,header: Control) -> void:
 func draw_panel(id: String,panel: Control) -> void:
 	# The World dock is a #0C0D11 column with a 1 px #22252E right edge (mock rail).
 	# Neon Pro step 6: the Timeline panel is #0C0D11 too (its 1 px #2C303B top edge is in draw_header).
-	if not StudioTheme.is_neon() or not id in ["world","timeline"]:return
+	# Neon Pro step 9: a floating panel window gets the #0C0D11 chrome behind every panel.
+	if not StudioTheme.is_neon() or not (id in ["world","timeline"] or floating.has(id)):return
 	panel.draw_rect(Rect2(Vector2.ZERO,panel.size),StudioTheme.BAR)
 	if id=="timeline":return
 	if panel.get_window()==app.get_window():panel.draw_rect(Rect2(panel.size.x-1,0,1,panel.size.y),StudioTheme.LINE)

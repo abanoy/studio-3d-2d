@@ -4970,3 +4970,32 @@ stay Advanced-only). `refresh_neon_inspector()` runs from `_process` and writes 
 maths, gizmo, auto-key, IK, contacts and the sub-editor files are unchanged; classic styles keep the
 old card. The mock's Bend/Twist sliders and Physics follow-through switch are not implemented (owner
 decisions, see docs/REDESIGN-PORT.md, with the Linux xvfb results). Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 9: Advanced restyle, secondary surfaces, final pass (Claude, claude/studio-redesign)
+
+This is the last neon pass. Every change is neon-only, so Classic light and Classic dark draw exactly
+as before; a pixel comparison of every surface found no difference apart from the live overlay timing.
+The Advanced debug line is mono 11 `#8C93A3` on a `#0C0D11` band with a `#22252E` hairline
+(`style_app_footer()`). The footer row (recovery status, export buttons) draws the same band to the
+window edges (`draw_app_footer()`), and only when it has content, so Simple is unchanged. Docked tab
+groups (`dock_tree.style_book()`) use the theme's neon tabs: RAISE plus a neon underline, `#8C93A3`
+for the others, on a `#0C0D11` strip. The old `#163854` text, dark on dark, is gone. Theme switches
+restyle every book and floating window. The drop preview is rgba(46,140,255,.18) with a 2 px
+`#2E8CFF` border and a `#F4F6FA` label. A floating Properties window draws the `#0C0D11` chrome. Also
+neon now: the Home backdrop (`#08090C` at 97 %), the movement-path plot (stage card, violet key dots,
+light mono frame numbers; the help text says "Violet dots" in neon), the sequence strip (timeline-lane
+colours) and the reference-sheet backdrop. Dialogs, Advanced inspector sections, the Advanced header
+row and the plain status line were already neon from steps 1-8 and were checked. The colour sweep
+(`Color("`, `surface(`) found nothing else light in neon.
+Remaining deviations from the mock are recorded in docs/REDESIGN-PORT.md:
+- System fonts stand in for Geist / Geist Mono: Inter and JetBrains Mono on Linux, Segoe UI and
+  Cascadia / Consolas on Windows.
+- Codex controls stay visible in Simple: lighting, Frame scene, Undo/Redo, scene setup/guides, the
+  physics row and More drawing options.
+- Sample-data items in the mock are not faked.
+- Owner decisions: the Bend / Twist sliders (and Physics follow-through), a Simple FOV slider, and
+  Turn model.
+Linux xvfb: ui, editor, pose, world_selection, recovery_write and recovery pass. Full extra.sh is at
+baseline (color_sampler has its 3 known failures). sequence_editor, reference_sheet, home and
+tutorial_catalog smokes pass. movement_path_smoke fails the same way without this step. Windows
+verify.py was not run.

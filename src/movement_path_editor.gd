@@ -51,7 +51,7 @@ func open() -> void:
 	var layout:=VBoxContainer.new();panel.add_child(layout)
 	var scroll:=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;layout.add_child(scroll)
 	var box:=VBoxContainer.new();box.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(box)
-	app.label(box,"Add a point at a frame, then drag it. Change views to adjust depth.\nBlack dots are your keys; the line previews movement. Coordinates follow the model’s group.").autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	app.label(box,"Add a point at a frame, then drag it. Change views to adjust depth.\n%s dots are your keys; the line previews movement. Coordinates follow the model’s group." % ("Violet" if preload("res://src/studio_theme.gd").is_neon() else "Black")).autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	var row:=HBoxContainer.new();box.add_child(row)
 	var views:=OptionButton.new();views.add_item("Top · X / Z");views.add_item("Front · X / Y");views.add_item("Side · Z / Y");row.add_child(views)
 	views.item_selected.connect(func(index):plot.dragging=-1;plot.view=index;plot.fit())
