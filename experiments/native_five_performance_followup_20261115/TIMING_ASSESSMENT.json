@@ -1,0 +1,296 @@
+{
+  "format": "native_five_strict_timing_followup_1",
+  "source": "Aggregate scalars/hashes from root-owned completed runs; no new engine execution.",
+  "context": {
+    "original_gui": {
+      "relative_path": "output/native-five-stage-attempt1/Studio/output/native-five-gui-attempt1/writer/result.json",
+      "sha256": "63e2a9c2d5942bdba88906f40602c82cb47ae33485c1efc3c15d649b067b8f98",
+      "checks": 82,
+      "failures": 1,
+      "metrics": {
+        "disabled": {
+          "mean_usec": 12739.75,
+          "max_usec": 17723,
+          "samples": 180
+        },
+        "miss": {
+          "mean_usec": 12667.822222222223,
+          "max_usec": 18469,
+          "samples": 180
+        },
+        "opposite": {
+          "mean_usec": 11510.633333333333,
+          "max_usec": 14680,
+          "samples": 180
+        },
+        "speed12": {
+          "mean_usec": 11042.733333333334,
+          "max_usec": 16572,
+          "samples": 180
+        },
+        "speed3": {
+          "mean_usec": 11662.6,
+          "max_usec": 16072,
+          "samples": 180
+        },
+        "speed50": {
+          "mean_usec": 11366.805555555555,
+          "max_usec": 14759,
+          "samples": 180
+        },
+        "zero": {
+          "mean_usec": 13267.783333333333,
+          "max_usec": 17959,
+          "samples": 180
+        }
+      }
+    },
+    "strict_gui_diagnostic": {
+      "relative_path": "output/native-five-stage-attempt2/Studio/output/opposite-diagnostic-attempt1/result.json",
+      "sha256": "502f44841eabe53c0ea56719761b53080a9621698671964dc628f44a9fcb4299",
+      "checks": 57,
+      "failures": 2,
+      "metrics": {
+        "disabled": {
+          "mean_usec": 8893.355555555556,
+          "max_usec": 13283,
+          "samples": 180
+        },
+        "miss": {
+          "mean_usec": 8644.594444444445,
+          "max_usec": 13235,
+          "samples": 180
+        },
+        "opposite": {
+          "mean_usec": 8688.58888888889,
+          "max_usec": 12863,
+          "samples": 180
+        },
+        "speed12": {
+          "mean_usec": 8613.544444444444,
+          "max_usec": 12247,
+          "samples": 180
+        },
+        "speed3": {
+          "mean_usec": 8825.416666666666,
+          "max_usec": 12288,
+          "samples": 180
+        },
+        "speed50": {
+          "mean_usec": 8584.105555555556,
+          "max_usec": 10639,
+          "samples": 180
+        },
+        "zero": {
+          "mean_usec": 8693.033333333333,
+          "max_usec": 13162,
+          "samples": 180
+        }
+      }
+    },
+    "original_state": {
+      "relative_path": "output/native-five-stage-attempt1/Studio/output/source-native-five-state-20261116T032753090430/result.json",
+      "sha256": "3501aa51e1c01e6368869e61fa230a75e37059299e95def0f7e2fdcd09091821",
+      "checks": 266,
+      "failures": 0,
+      "metrics": {
+        "rotation_half": {
+          "mean_usec": 13982.791666666666,
+          "max_usec": 17843,
+          "samples": 120,
+          "advance_mean_usec": 16007.616666666667,
+          "advance_max_usec": 20606,
+          "advance_samples": 120
+        },
+        "rotation_one": {
+          "mean_usec": 14475.675,
+          "max_usec": 20808,
+          "samples": 120,
+          "advance_mean_usec": 16616.266666666666,
+          "advance_max_usec": 23033,
+          "advance_samples": 120
+        },
+        "rotation_two": {
+          "mean_usec": 13898.991666666667,
+          "max_usec": 18413,
+          "samples": 120,
+          "advance_mean_usec": 15877.441666666668,
+          "advance_max_usec": 21012,
+          "advance_samples": 120
+        }
+      }
+    },
+    "strict_state": {
+      "relative_path": "output/native-five-stage-attempt2/Studio/output/source-native-five-state-20261116T034910930092/result.json",
+      "sha256": "fe0eecb967e61dac14c8822d59ede1fbe78a161cbfc9d22c49ad4c5556a56008",
+      "checks": 266,
+      "failures": 0,
+      "metrics": {
+        "rotation_half": {
+          "mean_usec": 11074.008333333333,
+          "max_usec": 14507,
+          "samples": 120,
+          "advance_mean_usec": 13147.058333333332,
+          "advance_max_usec": 17148,
+          "advance_samples": 120
+        },
+        "rotation_one": {
+          "mean_usec": 11587.283333333333,
+          "max_usec": 15462,
+          "samples": 120,
+          "advance_mean_usec": 13660.125,
+          "advance_max_usec": 17659,
+          "advance_samples": 120
+        },
+        "rotation_two": {
+          "mean_usec": 11285.833333333334,
+          "max_usec": 14749,
+          "samples": 120,
+          "advance_mean_usec": 13345.941666666668,
+          "advance_max_usec": 16883,
+          "advance_samples": 120
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "gui": {
+      "profiles": {
+        "disabled": {
+          "old_mean_usec": 12739.75,
+          "strict_mean_usec": 8893.355555555556,
+          "observed_reduction_percent": 30.192071621848505,
+          "old_max_usec": 17723,
+          "strict_max_usec": 13283,
+          "samples_each": 180,
+          "captured_points_sha_equal": true
+        },
+        "miss": {
+          "old_mean_usec": 12667.822222222223,
+          "strict_mean_usec": 8644.594444444445,
+          "observed_reduction_percent": 31.759427210149248,
+          "old_max_usec": 18469,
+          "strict_max_usec": 13235,
+          "samples_each": 180,
+          "captured_points_sha_equal": true
+        },
+        "opposite": {
+          "old_mean_usec": 11510.633333333333,
+          "strict_mean_usec": 8688.58888888889,
+          "observed_reduction_percent": 24.51684770699941,
+          "old_max_usec": 14680,
+          "strict_max_usec": 12863,
+          "samples_each": 180,
+          "captured_points_sha_equal": true
+        },
+        "speed12": {
+          "old_mean_usec": 11042.733333333334,
+          "strict_mean_usec": 8613.544444444444,
+          "observed_reduction_percent": 21.998076160692914,
+          "old_max_usec": 16572,
+          "strict_max_usec": 12247,
+          "samples_each": 180,
+          "captured_points_sha_equal": true
+        },
+        "speed3": {
+          "old_mean_usec": 11662.6,
+          "strict_mean_usec": 8825.416666666666,
+          "observed_reduction_percent": 24.327194050497614,
+          "old_max_usec": 16072,
+          "strict_max_usec": 12288,
+          "samples_each": 180,
+          "captured_points_sha_equal": true
+        },
+        "speed50": {
+          "old_mean_usec": 11366.805555555555,
+          "strict_mean_usec": 8584.105555555556,
+          "observed_reduction_percent": 24.48093253992497,
+          "old_max_usec": 14759,
+          "strict_max_usec": 10639,
+          "samples_each": 180,
+          "captured_points_sha_equal": true
+        },
+        "zero": {
+          "old_mean_usec": 13267.783333333333,
+          "strict_mean_usec": 8693.033333333333,
+          "observed_reduction_percent": 34.480137978336,
+          "old_max_usec": 17959,
+          "strict_max_usec": 13162,
+          "samples_each": 180,
+          "captured_points_sha_equal": true
+        }
+      },
+      "equal_sample_weighted_old_mean_usec": 12036.875396825397,
+      "equal_sample_weighted_strict_mean_usec": 8706.09126984127,
+      "observed_reduction_percent": 27.67150125906086
+    },
+    "rotating_headless": {
+      "profiles": {
+        "rotation_half": {
+          "old_mean_usec": 13982.791666666666,
+          "strict_mean_usec": 11074.008333333333,
+          "observed_reduction_percent": 20.802593664236102,
+          "old_max_usec": 17843,
+          "strict_max_usec": 14507,
+          "samples_each": 120,
+          "old_advance_mean_usec": 16007.616666666667,
+          "strict_advance_mean_usec": 13147.058333333332
+        },
+        "rotation_one": {
+          "old_mean_usec": 14475.675,
+          "strict_mean_usec": 11587.283333333333,
+          "observed_reduction_percent": 19.95341610437279,
+          "old_max_usec": 20808,
+          "strict_max_usec": 15462,
+          "samples_each": 120,
+          "old_advance_mean_usec": 16616.266666666666,
+          "strict_advance_mean_usec": 13660.125
+        },
+        "rotation_two": {
+          "old_mean_usec": 13898.991666666667,
+          "strict_mean_usec": 11285.833333333334,
+          "observed_reduction_percent": 18.80106410596931,
+          "old_max_usec": 18413,
+          "strict_max_usec": 14749,
+          "samples_each": 120,
+          "old_advance_mean_usec": 15877.441666666668,
+          "strict_advance_mean_usec": 13345.941666666668
+        }
+      },
+      "equal_sample_weighted_old_mean_usec": 14119.152777777776,
+      "equal_sample_weighted_strict_mean_usec": 11315.708333333334,
+      "observed_reduction_percent": 19.85561377915537
+    }
+  },
+  "nominal120Hz_interval_usec": 8333.333333333334,
+  "FPS_pass_claimed": false,
+  "strict2_status": "UNPARSED_UNRUN_UNAPPLIED",
+  "strict_actual_stage_sha256": "064c211efbb19b829defb959b6f9d0c6aeef36aa6c2af76065fda9f2b17b21be",
+  "strict2_sha256": "3b2c29dc11b60e68306f858a32d03271e30a039b8451916df2ff9324e7da4f84",
+  "unchanged_functions": {
+    "offered": true,
+    "anchors": true,
+    "vector64": true,
+    "basis64": true,
+    "frame64": true,
+    "context_error": true,
+    "binding_stamp": true,
+    "airflow_error": true,
+    "configuration_stamp": true,
+    "state_error": true,
+    "step": true,
+    "active": true
+  },
+  "create_order_proof": {
+    "full69_guard_before_capture": true,
+    "capture_before_any_reset": true,
+    "capture_before_alive": true,
+    "capture_before_runner_return": true
+  },
+  "recommendation": "Try narrowly deduplicated strict2 next with existing266state/GUI/preservation/closure gates. Do not switch to hybrid or invent FPS admission requirement based on these nonrandomized measurements.",
+  "unresolved": [
+    "Strict2 speed/runtime behavior unmeasured.",
+    "Original GUI82/1 and diagnostic57/2 remain their recorded outcomes; no full writer qualification inferred.",
+    "Rotating whole-wrapper advance averages still13.1\u201313.7ms; Native.step alone is not total frame cost."
+  ]
+}

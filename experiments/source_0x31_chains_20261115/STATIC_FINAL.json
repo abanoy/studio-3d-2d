@@ -1,0 +1,67 @@
+{
+  "status": "SOURCE_PREPARED_CPU_SYNTHETIC_PASSED_NEW_GDSCRIPT_UNPARSED_UNRUN",
+  "root_declared_HEAD_context": "9de4e6c",
+  "new_GDScript": [
+    {
+      "path": "chain_capture.gd",
+      "sha256": "b1dc120815f9e56b79ca4406dd3a04ddd5b0978510c6e5ca8234b11ae88ff58b",
+      "engine_parsed": false,
+      "engine_run": false
+    },
+    {
+      "path": "chain_harness.gd",
+      "sha256": "d25e37499f8a4b076a65e61a1a97c7ad7fb0d27828f1bd7a2bc76e9f6b0a8b5f",
+      "engine_parsed": false,
+      "engine_run": false
+    },
+    {
+      "path": "chain_solver.gd",
+      "sha256": "01635f84e05abe0ecc998b71117eed9c7afc6f5b15d04e8743cdf1c22efa362f",
+      "engine_parsed": false,
+      "engine_run": false
+    },
+    {
+      "path": "math_checks.gd",
+      "sha256": "062b182c7b876658ec7b54132ec4d0125170b7506ad7bc469f92e2eb4cf61e32",
+      "engine_parsed": false,
+      "engine_run": false
+    },
+    {
+      "path": "model_adapter.gd",
+      "sha256": "38a226db7af1843c1f0df04318aaccc726dc88f7c61b9389f8aa029d52a4fe8c",
+      "engine_parsed": false,
+      "engine_run": false
+    }
+  ],
+  "python_AST_only": true,
+  "CPU_result": {
+    "file": "CPU_RESULT_two_pairs.json",
+    "sha256": "4501c1a27596d1257571411e732b049270a476b960263bcbd9cd708bba33684c",
+    "checks": 3681,
+    "failures": 0,
+    "completed_actor_steps": 1424,
+    "rule_evaluations": 3088
+  },
+  "source_read_drift_at_handoff": [
+    "src/secondary_live.gd"
+  ],
+  "full_source_snapshot_drift_at_handoff": [
+    "src/fan_editor.gd",
+    "src/physics_editor.gd",
+    "src/secondary_live.gd",
+    "src/source_secondary.gd"
+  ],
+  "concurrency_note": "Root/peer own production integration. Root must review/resnapshot any production drift before granting a fresh source-matched engine lease.",
+  "actual_engine_parser_process_inspection_or_Git_invoked": false,
+  "native_arrays_or_SDK_source_copied": false,
+  "production_source_modified_by_this_child": false,
+  "actual_native_two_pair_dynamics": "UNRUN_NOT_QUALIFIED",
+  "normal_fidelity_2e5_gate": "HISTORICAL_FAILED_UNCHANGED",
+  "known_limits": [
+    "Source caller goal-policy parity unavailable in local SDK packet",
+    "Native25 stays authored/unsimulated; not all49 native rules",
+    "Float32 adapter requires actual new-chain validation",
+    "No body/fan/Record/seek/HAS/GPU/artist acceptance"
+  ],
+  "root_next_step": "Source review; close existing runtime lease; review source drift; stage exact packet; fresh locked synthetic headless math attempt, then bounded actual pair attempt. Preserve every first failure."
+}

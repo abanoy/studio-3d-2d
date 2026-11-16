@@ -1,0 +1,96 @@
+{
+  "format": "has_windows_native_leaf_full_timeout_1",
+  "status": "FAILED_OUTER_180_SECOND_TIMEOUT",
+  "source_commit": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+  "state": {
+    "path": "output/windows-canonical-bone-binding-20261116T022132132/state.json",
+    "sha256": "946b9a718ced2f8efda3e09cddf103c6988c17198afc269d12786c576187841f"
+  },
+  "source_before": {
+    "path": "output/windows-canonical-bone-binding-20261116T022132132/source-before.json",
+    "sha256": "a9bd3f994cb815c961c2f337e23252738522917553bca06358a92f20c85add80"
+  },
+  "source_after": {
+    "path": "output/windows-canonical-bone-binding-20261116T022132132/source-after.json",
+    "sha256": "a9bd3f994cb815c961c2f337e23252738522917553bca06358a92f20c85add80"
+  },
+  "canonical_log": {
+    "path": "output/windows-canonical-bone-binding-20261116T022132132/canonical.log",
+    "sha256": "3a27246d7a8609fca8131c9d36681c0ef96f62202dd4a3ff7d9d1ddd79d47256"
+  },
+  "host_closure": {
+    "path": "output/windows-canonical-bone-binding-20261116T022132132/authoritative-host-termination.json",
+    "sha256": "4f007342d71ca0d2b21086c96635b05e98920f9fa30a3561cda2cc8d28d7dcaa"
+  },
+  "elapsed_seconds": 1346.822071,
+  "core_groups_passed": 36,
+  "current_complete_default_passed": false,
+  "functional_source_files": 1014,
+  "functional_source_and_HEAD_unchanged": true,
+  "failed_command": "tests/verify_world_selection_teardown.py",
+  "outer_timeout_seconds": 180,
+  "inner_startup_timeout_seconds": 60,
+  "inner_teardown_timeout_seconds": 110,
+  "actual_late_teardown_result": {
+    "path": "output/world-selection-teardown/1794796856711017300/result.json",
+    "sha256": "be36324b2a6887fd6817e6730d944d56f2ebf1694749a0a9ebfe97320e3f41ea"
+  },
+  "actual_late_checks": 28,
+  "actual_late_failures": 0,
+  "private_receipts": {
+    "normal-startup": {
+      "file": {
+        "path": "output/world-selection-teardown/1794796856711017300/shipped-source/output/private-desktop/studio_f428ae6691f54c65abb90c1b9f029ec3.json",
+        "sha256": "3fc85922d4de14f47a1c7c3603a538651158dfc50e351d7defee5fd862c3848a"
+      },
+      "seconds": 10.939,
+      "child_pid": 15912,
+      "job_closed": true,
+      "desktop_closed": true,
+      "exit": 0,
+      "mtime_utc": "2026-11-16T02:42:18.516214+00:00"
+    },
+    "process": {
+      "file": {
+        "path": "output/world-selection-teardown/1794796856711017300/shipped-source/output/private-desktop/world_selection_teardown_ebb23007e3b2472e9afd5edc185f3a53.json",
+        "sha256": "38604b83417f9ab2cdaa404e6d620addbf545502cde477e01a1aec3ad9c0c5c4"
+      },
+      "seconds": 11.324,
+      "child_pid": 71828,
+      "job_closed": true,
+      "desktop_closed": true,
+      "exit": 0,
+      "mtime_utc": "2026-11-16T02:44:07.207042+00:00"
+    }
+  },
+  "snapshot_domain": {
+    "files": 6023,
+    "experiment_files": 4551,
+    "docs_files": 436
+  },
+  "observed_timing": "About70 seconds freezing archive,11 seconds successful startup,97 seconds rehashing/provenance; outer deadline then killed wrapper about4 seconds into an11.324-second successful private teardown child.",
+  "failure_classification": "Snapshot/hash workload exhausts aggregate wrapper budget; no failing selection/teardown assertion or native-motion regression demonstrated.",
+  "process_termination_scope": {
+    "root_host_observation_helper_issued_no_termination": true,
+    "outer_subprocess_run_timeout_terminates_its_owned_wrapper": "Inferred from exact traceback and local stdlib implementation; wrapper PID not separately captured",
+    "late_private_Godot_child_completed_normally": true,
+    "global_no_process_termination_claimed": false
+  },
+  "graphics_lease_release": {
+    "status": "CLOSED_FAILED_PARTIAL_RUN",
+    "proof": {
+      "path": "output/windows-canonical-bone-binding-20261116T022132132/graphics-lease-closed-after-failure.json",
+      "sha256": "5067f3296b976104ef3a19cf25a575b86eda6f0f0f1a3b573e584983d4f47ccd"
+    },
+    "private_jobs": 46,
+    "all_closed": true
+  },
+  "next_fix": "Opt-in functional runtime snapshot only for automated teardown; preserve owner archive default, actual28 checks and timeouts. Then scoped retry and fresh complete default.",
+  "manual_hair_click_check": "OWNER_DEFERRED_BUSY_CONTINUE_INDEPENDENTLY_NO_RESULT",
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation": "52/54_UNCHANGED",
+  "scoped_repair": {
+    "path": "docs/benchmarks/world_selection_runtime_snapshot_2026-11-15.json",
+    "sha256": "29c647347a49681985b6b74aeb8b431b5d1440a01c55cadaa1854f2327faa499"
+  }
+}

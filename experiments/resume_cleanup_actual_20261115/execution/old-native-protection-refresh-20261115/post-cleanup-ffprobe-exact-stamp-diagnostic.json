@@ -1,0 +1,29 @@
+{
+  "format": "has_post_cleanup_exact_stamp_diagnostic_1",
+  "observed_utc": "2026-11-16T01:00:45.564842+00:00",
+  "passed": true,
+  "rows": [
+    {
+      "actual_helper_stamp_equal": true,
+      "sha256_equal": true
+    },
+    {
+      "actual_helper_stamp_equal": true,
+      "sha256_equal": true
+    },
+    {
+      "actual_helper_stamp_equal": true,
+      "sha256_equal": true
+    }
+  ],
+  "stamp_fields": [
+    "st_dev",
+    "st_ino",
+    "st_size",
+    "st_mtime_ns",
+    "st_nlink",
+    "st_file_attributes"
+  ],
+  "original_diagnostic_sha256": "28c6bc1f9099a4ee2630410bae4f12ebe61d20b5004c035d2b237adb1092c619",
+  "note": "The raw diagnostic additionally captured st_mode, which Windows path/handle calls may report differently. The actual unchanged helper stamp excludes that field. All three exact helper-domain stamps and approved hashes match now; first post-check refusal remains preserved with cause UNDETERMINED. This is not a waiver or a claim the first failure was explained."
+}

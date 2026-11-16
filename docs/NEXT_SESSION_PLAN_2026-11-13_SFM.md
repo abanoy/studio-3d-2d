@@ -1,7 +1,9 @@
 # SFM pickup after owner pause — November13,2026
 
-Work is paused by the owner. Do not run tests or request manual checks until
-they resume. The PC remains on; owned automated processes are stopped.
+The owner resumed work on November 15. See the
+[current continuation](NEXT_SESSION_PLAN_2026-11-15.md). This file retains the
+historical pause, prepared tasks and November 14 requirements; it must not be
+read as a renewed pause or permission to request deferred manual checks.
 
 **November 14 clarification:** the owner requested a read-only PMX capability
 review and these pickup additions. This authorizes documentation, not resuming

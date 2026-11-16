@@ -1,0 +1,53 @@
+{
+  "format": "has_source_0x31_zero_cone_fix_provenance_1",
+  "checked_utc": "2026-11-15T23:26:01Z",
+  "status": "CORRECTED_MATHEMATICAL_CANDIDATE_ONLY",
+  "original_packet": "attempt1-original",
+  "original_freeze_sha256": "f65b0cb87386749ddfa6b7633c00b6032ffe640a88de74fb8d011d7231253502",
+  "original_index_sha256": "0175ae69757084346955af72cc46e06e112b8fc261f2c548c5f9eecd8d29618a",
+  "root_failure_sha256": "63a6458fbcdda1eeeb3ab75970e5f3f168e117b1b5f028243399645c3493119e",
+  "original_source_sha256": "636a81bd7932e790c7a3d512d88ea71e09362e473c4f8bc3f84e4022fbbbce9f",
+  "corrected_source_sha256": "dd472f2b4de64adebc83a03c2e812ac2e14805c752b220c26c53dd58bf99519c",
+  "current_code": [
+    {
+      "path": "candidate.py",
+      "sha256": "dd472f2b4de64adebc83a03c2e812ac2e14805c752b220c26c53dd58bf99519c"
+    },
+    {
+      "path": "verify_candidate.py",
+      "sha256": "245cbb5b9dfc7d4954327cd2341d023d9fc922f931e5592e137f219c62c34148"
+    },
+    {
+      "path": "verify_closed_form.py",
+      "sha256": "7206048013d7cdbdf2d8fecf04c6f10c17a91e74de735f1c6ee7807ef7bd2a53"
+    },
+    {
+      "path": "verify_damping_and_gravity.py",
+      "sha256": "a746a41c808e1e8f2f09ca226a34c462c79e8a993d7a27d81b14341c2e68bb1d"
+    },
+    {
+      "path": "verify_zero_cone.py",
+      "sha256": "709aed88a196d247fc36bdc243604631035f41c12119d85bed6fb1ea69fb06e3"
+    }
+  ],
+  "current_results": [
+    "RESULT-zero-cone-fix.json",
+    "SYNTHETIC_TRACE-zero-cone-fix.json",
+    "CLOSED_FORM-zero-cone-fix.json",
+    "DAMPING_GRAVITY-zero-cone-fix.json",
+    "ZERO_CONE_CORRECTION.json"
+  ],
+  "original_failure_count": 104,
+  "original_cases": 1000,
+  "corrected_failures": 0,
+  "unchanged_rest_displacement_gate": 1e-10,
+  "corrected_rest_displacement_max": 7.944109290391274e-15,
+  "forced_zero_cone_cases": 500,
+  "forced_tip_error_max": 3.972054645195637e-15,
+  "original322_and_closed_form_preserved": true,
+  "positive_cone_domain_unchanged": true,
+  "angular_tolerance_waiver": false,
+  "apps_or_nativeSDK_executed": false,
+  "actual_runtime_or_native_parity": "UNQUALIFIED_NOT_INTEGRATED",
+  "production_and_git_mutations": false
+}

@@ -1,0 +1,41 @@
+{
+  "format": "has_source_native_five_state_verification_2",
+  "passed": true,
+  "phases": [
+    {
+      "phase": "parse",
+      "pid": 87736,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "owned_child_terminated": false,
+      "owned_child_forced_kill": false,
+      "seconds": 1.9408911999998963,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "phase": "state",
+      "pid": 16752,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "owned_child_terminated": false,
+      "owned_child_forced_kill": false,
+      "seconds": 18.54386230000091,
+      "error_markers": [],
+      "passed": true
+    }
+  ],
+  "actual_result_valid": true,
+  "checks_observed": 266,
+  "failures_observed": 0,
+  "preservation": {
+    "source": true,
+    "read_only_inputs": true,
+    "runtimes": true
+  },
+  "runtime_lease_released": true,
+  "test_result_sha256": "8d5a47add7c0dff9065a7fde951d786607fe0a2701082ce5085ef7e92da2645f",
+  "observed_utc": "2026-11-16T04:00:35.323894+00:00"
+}

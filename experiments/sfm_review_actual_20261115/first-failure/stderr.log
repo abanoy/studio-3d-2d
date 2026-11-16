@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\resume_full_20261115\replay\validate_after_full.py", line 313, in <module>
+    if __name__ == "__main__": main()
+                               ~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\resume_full_20261115\replay\validate_after_full.py", line 309, in main
+    need(result["passed"], "Final-location validation failed; retain "+str(output))
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\resume_full_20261115\replay\validate_after_full.py", line 28, in need
+    if not condition: raise RuntimeError(detail)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Final-location validation failed; retain C:\a\Programming\cloudflare\has-acceptance-session-20261111\output\sfm-joints-final-validation-f0dd57a-20261115

@@ -1,0 +1,1025 @@
+{
+  "source_HEAD": "9de4e6cbdf8b0369cbdf118a40c13f85860eaac0",
+  "files": [
+    {
+      "path": "src/airflow.gd",
+      "bytes": 6276,
+      "sha256": "d6bb934440095553f70300609da70eb198c7ca1d45aae0403f0a6e749ad2b7b7"
+    },
+    {
+      "path": "src/animated_channels.gd",
+      "bytes": 10184,
+      "sha256": "0ea45c03afcd0e8bb5d9f7f6b685ba11a0b7d8674494940ba6dec7f42996a6b0"
+    },
+    {
+      "path": "src/animation_clips.gd",
+      "bytes": 14638,
+      "sha256": "db3fa282fdfc9d8cd029d22a374701f5d8d7d2030b1e1bc2dfc6109dc5b9624f"
+    },
+    {
+      "path": "src/app.gd",
+      "bytes": 147447,
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac"
+    },
+    {
+      "path": "src/asset_package.gd",
+      "bytes": 3772,
+      "sha256": "5cbdfdbdfa7691717fb5ec2209a177fd51b010029cea8af3fcb1692b2ed9257c"
+    },
+    {
+      "path": "src/atomic_metadata.gd",
+      "bytes": 3980,
+      "sha256": "23105a4f14359b0decc387d338e8f843fcb984c361e1b5a63761e70d42fcf44c"
+    },
+    {
+      "path": "src/audio_fade_editor.gd",
+      "bytes": 2586,
+      "sha256": "8c3bd7ba584371cd339d45004237a6c999f0d4553abe0b841ac17f99006cd5b0"
+    },
+    {
+      "path": "src/audio_import.gd",
+      "bytes": 4355,
+      "sha256": "398dd2f7b0e6f8927dbc0f4aadce47710b03972afec99718c87bf15823804c65"
+    },
+    {
+      "path": "src/audio_track.gd",
+      "bytes": 16492,
+      "sha256": "afda6766566763bd888c1ddfc067256a17d12a928b314e6a2c28b4029b88bda7"
+    },
+    {
+      "path": "src/audio_trim_editor.gd",
+      "bytes": 4343,
+      "sha256": "57aaa9e9c04e5c5a82788408f6a94bdb0d428bfd320b3c6ab78e6235b2c572ca"
+    },
+    {
+      "path": "src/base_shape_editor.gd",
+      "bytes": 17076,
+      "sha256": "25d4659c574ac28c03850282d73596875741cb88dd29a34190f8929f0d29ed87"
+    },
+    {
+      "path": "src/body_animation.gd",
+      "bytes": 8824,
+      "sha256": "aae1891ae15f7e7d79c4a963aed967e73dfdcb56dcfd1431fa73e8755cdff763"
+    },
+    {
+      "path": "src/body_curve_runtime.gd",
+      "bytes": 4930,
+      "sha256": "ac0730e66bf716e8a6370cb4b55b7afbaf30d3626e310fa850c1e344002ea64f"
+    },
+    {
+      "path": "src/body_curves.gd",
+      "bytes": 18818,
+      "sha256": "e6e616d19e2e7d6b88dacbc5cbdc7f6869b2fb79f96599d5ea54886ba88304f1"
+    },
+    {
+      "path": "src/bone_labels.gd",
+      "bytes": 3426,
+      "sha256": "c2578be56876c26dcb7b9bbf373bd5c0d54c47b255c67ad2d125103f3afbf6c2"
+    },
+    {
+      "path": "src/brush_stroke.gd",
+      "bytes": 3195,
+      "sha256": "56048b717b04b9639fef9317cafa98e08cc887345049d312a1b77975c50c995a"
+    },
+    {
+      "path": "src/camera_transform_editor.gd",
+      "bytes": 5739,
+      "sha256": "ea39598fe27b6aa06113415ac8df6b48bf8b4c7d813ad53e9ed686d857b48791"
+    },
+    {
+      "path": "src/canvas_raster.gd",
+      "bytes": 282,
+      "sha256": "21dcb27b0c607fbb82897736a97a7969409fcb3ef10b22a987a271d5b41180bb"
+    },
+    {
+      "path": "src/canvas_size.gd",
+      "bytes": 882,
+      "sha256": "96cc48a6708df69c641ba878eca0f23dc90e1ffad9600c03819e056afc77da3c"
+    },
+    {
+      "path": "src/canvas_view.gd",
+      "bytes": 7935,
+      "sha256": "296aba09440ad481b18930296d217a3d092bccf7bb8b49b8a2592d8057a1d244"
+    },
+    {
+      "path": "src/cel_clipboard.gd",
+      "bytes": 8036,
+      "sha256": "9ff8698e472455d5ba1171c7f26c8cd9f042c5c5bf9f4f8cc6b6ecf5d401a6d1"
+    },
+    {
+      "path": "src/cel_patch.gd",
+      "bytes": 3307,
+      "sha256": "df853b653977b1dd26bd601e696d027d960287d23105c3c3cef6c8ece7cb8b55"
+    },
+    {
+      "path": "src/cel_pixel_history.gd",
+      "bytes": 2577,
+      "sha256": "c2e66544e53668fe1d3258b3178fa7cdac2b313b3824495d25b25c0ab2563275"
+    },
+    {
+      "path": "src/cel_png_verifier.gd",
+      "bytes": 1955,
+      "sha256": "e41dceea231e51d2ed5ec2e3c35a8c1b1b7db2bcccaa1b818687da534f075cdf"
+    },
+    {
+      "path": "src/cel_raster_budget.gd",
+      "bytes": 2776,
+      "sha256": "4ea88306b9b319bfef7d1eee537520cfc63d2c190aab36deda8d18714ea88906"
+    },
+    {
+      "path": "src/cel_raster_owner.gd",
+      "bytes": 5044,
+      "sha256": "be86e2e6d9a83c361018bee12728c773990bc6956c98084c8aad4f625885ddf9"
+    },
+    {
+      "path": "src/cel_raster_reader.gd",
+      "bytes": 5931,
+      "sha256": "a17463f4b3f4740f02316d47972149754258a40947b8d4daf4e93d6b49f26410"
+    },
+    {
+      "path": "src/cel_raster_snapshot.gd",
+      "bytes": 2619,
+      "sha256": "e1b44ea9f7c0eadd6562caae5f580398ad30cffbd969d036b8f5fef0a7617203"
+    },
+    {
+      "path": "src/cel_raster_snapshot_cache.gd",
+      "bytes": 3083,
+      "sha256": "027c13fe127c001e52037e96c4938bdda635b76de85bbd80c252339460354983"
+    },
+    {
+      "path": "src/cel_timing.gd",
+      "bytes": 1985,
+      "sha256": "a22a43ecac87d79eaf7ed98aaf80595f4b4b8c282107d3b088ddeced4f1647e1"
+    },
+    {
+      "path": "src/cel_timing_editor.gd",
+      "bytes": 5173,
+      "sha256": "24e67f48705f58fcb99a80a52ff08f90066630615491c27af861d46270b0fbd8"
+    },
+    {
+      "path": "src/character_height.gd",
+      "bytes": 5394,
+      "sha256": "be18fa34108a45a126f76a42e7b4c1a569c1ee8332855af40f2ef25a77725ce8"
+    },
+    {
+      "path": "src/clip_editor.gd",
+      "bytes": 11377,
+      "sha256": "6a91d85c19f7ab79be4a7ff89dc19705fc76195da3326abc403c625f2b39f01a"
+    },
+    {
+      "path": "src/color_palette.gd",
+      "bytes": 1222,
+      "sha256": "bcb24dd4b97dc1366b15eea9b419fb92ac223640d520b84ad6210f98636f6fb1"
+    },
+    {
+      "path": "src/color_sampler.gd",
+      "bytes": 7288,
+      "sha256": "31de1647101a8b1b51756330b2df2ed8d29319a707224084bbfa4b1787589070"
+    },
+    {
+      "path": "src/constraints_lesson.gd",
+      "bytes": 3885,
+      "sha256": "a0e7975ea8c1a33ec6acf63fa8fa69a156f3eabe31b34729607ea96143ca26b7"
+    },
+    {
+      "path": "src/contact_animation.gd",
+      "bytes": 3847,
+      "sha256": "d1433a5aca60258d64d1dbafa3fdf65796976661b7f3fb61ab329c362e297961"
+    },
+    {
+      "path": "src/contact_bend.gd",
+      "bytes": 1202,
+      "sha256": "5f10c4810a50ede195b40f014e4c547ce2ea9d0e6542ffc5105ed286d77a9721"
+    },
+    {
+      "path": "src/contact_clipboard.gd",
+      "bytes": 3421,
+      "sha256": "7ac4bb742816f3170ad04e5c4c8f17f9aaa0d78bd7ca21bad3c2ec6dc62832ad"
+    },
+    {
+      "path": "src/contact_correction.gd",
+      "bytes": 1799,
+      "sha256": "795c8aa312e9b988d976276f6c265c24bb7e6f2cb03e1aa173bdef934c785da0"
+    },
+    {
+      "path": "src/contact_editor.gd",
+      "bytes": 13703,
+      "sha256": "5706704bfc3a2d61f228c9ca1ae3216534fef0aa00855cbf3bfc5eb2dd59f124"
+    },
+    {
+      "path": "src/contact_ranges.gd",
+      "bytes": 4089,
+      "sha256": "2e936b1f09b4444d1b406a593c2735a96c91c45afc4a23f6578834d6186f70f9"
+    },
+    {
+      "path": "src/contact_viewport.gd",
+      "bytes": 11791,
+      "sha256": "5298f7160312382bf146dfc1103d43fc5d8f8459131b16c7527f03ae0cccbbfc"
+    },
+    {
+      "path": "src/dock_tree.gd",
+      "bytes": 10764,
+      "sha256": "354d850050b490d96bb18b8914d751e887bbb7a7091b7441bf086d70856d704d"
+    },
+    {
+      "path": "src/drawing.gd",
+      "bytes": 9334,
+      "sha256": "947914fad9f1b1bf005ffc43df8cfcee3b36bdf1e4829560400615b15686648d"
+    },
+    {
+      "path": "src/drawing_limits.gd",
+      "bytes": 918,
+      "sha256": "e10ab713256d01b6704cca1f2a1f7385cfadeb3485b2f07a7d0f57fcee3a27d3"
+    },
+    {
+      "path": "src/drawing_origin.gd",
+      "bytes": 5459,
+      "sha256": "b5cdf8bb61f41f8333e5f82e61456cddacde537a0b37a66b3d903acd2a154f51"
+    },
+    {
+      "path": "src/drawing_overlay_cache.gd",
+      "bytes": 1765,
+      "sha256": "585631e7d5e9cfb68f58ec99698b4cb5ec6aac0d67c4b580c8cc4ec2dbc66b75"
+    },
+    {
+      "path": "src/drawing_selection.gd",
+      "bytes": 1898,
+      "sha256": "23575c655ef1300860e233b9685f6f3024bd27d363d230d732fab4ad0414f41a"
+    },
+    {
+      "path": "src/drawing_selection_editor.gd",
+      "bytes": 10247,
+      "sha256": "a7b18b396999c03c84029579f948338ca7f61a73344ce82d0009bffef8e1e744"
+    },
+    {
+      "path": "src/drawing_transform.gd",
+      "bytes": 4212,
+      "sha256": "e17dff980afc8181a6cad469a40cdbaf56df26063dce598542363a0f3d77b36f"
+    },
+    {
+      "path": "src/drawing_transform_editor.gd",
+      "bytes": 8247,
+      "sha256": "d10e0702080a4dbc022912b4529d808323c546fb44ce1f5962fcda92a3f46f5a"
+    },
+    {
+      "path": "src/editor_grid.gdshader",
+      "bytes": 778,
+      "sha256": "e94c439ce52870df647fa5cbcd4695dde1718047f6e3a38042f6e54a70c6ef3f"
+    },
+    {
+      "path": "src/encoder.gd",
+      "bytes": 4398,
+      "sha256": "4627086173acb499f95f159cccfdde31e38267c9d6839667c640abf9024fba82"
+    },
+    {
+      "path": "src/expression_pose_editor.gd",
+      "bytes": 3899,
+      "sha256": "b13f31be2eefc16676d91ad11ef288ff5cfd3fb5021422dc2cd1f143f3f146b9"
+    },
+    {
+      "path": "src/expression_presets.gd",
+      "bytes": 11793,
+      "sha256": "c68207974ef4d90f69f163c935c30c18c44c050dfe660869c159b7bb70618d34"
+    },
+    {
+      "path": "src/extended_timing.gd",
+      "bytes": 3333,
+      "sha256": "7bce72af46d5dc8b2ef9fb0674b0e1dc39bf0be6f540c9c3915e1b81ec9b9858"
+    },
+    {
+      "path": "src/fan_editor.gd",
+      "bytes": 8028,
+      "sha256": "85a575881cc13b9acb3f266dcbe401266a80bf424667e2984a3ff3c093fcb614"
+    },
+    {
+      "path": "src/fill.gd",
+      "bytes": 5816,
+      "sha256": "da890abf8bc31fbac655c2d5e8a0cecce723ca58f11f7e21fbeb462a5c36d93a"
+    },
+    {
+      "path": "src/fill_editor.gd",
+      "bytes": 10701,
+      "sha256": "848ec51792054d6b387ff37a24f95c57c16a429e460e9933c98404da4d2f3de7"
+    },
+    {
+      "path": "src/fill_gaps.gd",
+      "bytes": 1595,
+      "sha256": "e7bf39af180fec533df8f8255be4c4c3e90293fa1b8ba37c1e2d0ccf9cee1167"
+    },
+    {
+      "path": "src/first_movie_lesson.gd",
+      "bytes": 7539,
+      "sha256": "3072102adf232cc9a6bdb6eeb0421f6c3be7661532eae92e3565c55df244eb54"
+    },
+    {
+      "path": "src/foot_contacts.gd",
+      "bytes": 9762,
+      "sha256": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607"
+    },
+    {
+      "path": "src/foot_hold.gd",
+      "bytes": 2743,
+      "sha256": "5096e4dbc16a0098cb22b8d305bf3386c590663bb9d81939ba4a4694b8caa081"
+    },
+    {
+      "path": "src/has_project.gd",
+      "bytes": 15268,
+      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032"
+    },
+    {
+      "path": "src/has_project_loader.gd",
+      "bytes": 1458,
+      "sha256": "cdb97409b2d7b202bd8ba7cb44c93d7c1198fe41901f3a080e40546b48e3c673"
+    },
+    {
+      "path": "src/has_snapshot_writer.gd",
+      "bytes": 5630,
+      "sha256": "61400dfcf743cf4bd1e0d99e3aec7e1c74f05d61108cfa64cf7afe3f7613111f"
+    },
+    {
+      "path": "src/home_screen.gd",
+      "bytes": 6732,
+      "sha256": "bbfb460aa73d153b5b4db7547bc5ba5577684ad65a9dc2ec03c2ba4895b354a5"
+    },
+    {
+      "path": "src/import_actions.gd",
+      "bytes": 3869,
+      "sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b"
+    },
+    {
+      "path": "src/import_height_review.gd",
+      "bytes": 6692,
+      "sha256": "393da8ee3a1f9e68f95f5b16e3d70e6777fb71a78d0a33dbfaa388b1306573a9"
+    },
+    {
+      "path": "src/import_placement.gd",
+      "bytes": 8534,
+      "sha256": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad"
+    },
+    {
+      "path": "src/interpolation_lesson.gd",
+      "bytes": 3326,
+      "sha256": "be5a8b7233ba3e5d41aed206c914c00aa19e1c0c1f6041be23c52dda8d941c89"
+    },
+    {
+      "path": "src/joint_constraints.gd",
+      "bytes": 10338,
+      "sha256": "b805fc708332ed44a98d4cc25e0ae18f5adec61f280c4915e29ac49d12146505"
+    },
+    {
+      "path": "src/krita_import.gd",
+      "bytes": 16380,
+      "sha256": "7174de89788e8ecaac2884a96a70ff9ee077036bcf1dee224f33e5a26c1653e4"
+    },
+    {
+      "path": "src/krita_preview.gd",
+      "bytes": 669,
+      "sha256": "a69624992181a4da46507ef40452ce62976008f80320dbeb90f5d8d117087b53"
+    },
+    {
+      "path": "src/layer_editor.gd",
+      "bytes": 9787,
+      "sha256": "411f9035ef230c7ef2c34a32ae0d6fc49a53499a1a58190f0cec5e2a15692c36"
+    },
+    {
+      "path": "src/lesson_store.gd",
+      "bytes": 8947,
+      "sha256": "b552b0617fd268619a5dee4b66eed17c48115a51924a900296d27a911cba53b4"
+    },
+    {
+      "path": "src/lighting.gd",
+      "bytes": 490,
+      "sha256": "23aa3450bedb3a26fdcec3fc8d032eeda9d4642c57172910daf442f0b306e6a6"
+    },
+    {
+      "path": "src/lighting_lesson.gd",
+      "bytes": 1601,
+      "sha256": "8c05d6266debf993feddc310659602c766de10d37ce462b454e21b5464d84f67"
+    },
+    {
+      "path": "src/limb_ik.gd",
+      "bytes": 9098,
+      "sha256": "3e3b2a399c86a7c1ca7ceff532446a393a8fed18135262f8f3687b0b053e2df2"
+    },
+    {
+      "path": "src/map_calibration.gd",
+      "bytes": 11361,
+      "sha256": "a20af8c8fea16ba1cdb5f068c581bcc521fa7837f367a062c3283c9025df70c6"
+    },
+    {
+      "path": "src/map_measure.gd",
+      "bytes": 4130,
+      "sha256": "4ddf34b2e3758edf4aecf866d96bc48bd9c0335d586eb569c21d4a5d204271ca"
+    },
+    {
+      "path": "src/mmd_motion_candidate.gd",
+      "bytes": 6218,
+      "sha256": "27a5b6c5433a5f6d2133dedb7d14f50b5138098433c66b9862c2bdc4c9b76455"
+    },
+    {
+      "path": "src/mmd_pose_candidate.gd",
+      "bytes": 4321,
+      "sha256": "3f9f89f9b98668ed1ff93b31571d55098089d27527389498edf6d366bcb2199f"
+    },
+    {
+      "path": "src/mmd_pose_import.gd",
+      "bytes": 15140,
+      "sha256": "86cff64c101ab9cd655497e5ff93f0f22814195230cee11a077cb8da47946118"
+    },
+    {
+      "path": "src/mmd_pose_shapes.gd",
+      "bytes": 2906,
+      "sha256": "8a72beec1ec8264ab03136dec435dc5a426890d122a7515350124324f584e3b5"
+    },
+    {
+      "path": "src/model.gd",
+      "bytes": 28593,
+      "sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678"
+    },
+    {
+      "path": "src/model_opacity.gd",
+      "bytes": 3145,
+      "sha256": "526a12fdcfc1390e2786738b555924bd1c54bc8381facc2ca2ca694ae3126900"
+    },
+    {
+      "path": "src/motion_animation.gd",
+      "bytes": 6546,
+      "sha256": "c0116a027a9828f799dcfd9b825cecf887730b58f01afc27be5b77ef716c64d3"
+    },
+    {
+      "path": "src/motion_assist.gd",
+      "bytes": 9051,
+      "sha256": "f1914135df075c100120dc0ea8636cecc13b2cad8f5c5ca34fb8a477ef18e84c"
+    },
+    {
+      "path": "src/motion_assist_preview.gd",
+      "bytes": 5992,
+      "sha256": "5e707edc1095203c45b0f4e01cd3bb7e92d5bfeb7d93325d0fc9d9930d5fd510"
+    },
+    {
+      "path": "src/motion_assist_tracks.gd",
+      "bytes": 11765,
+      "sha256": "fd9f3e530683d6e19df957decfa990987ab71a5a53cca47dcb3b1969dfbc72e0"
+    },
+    {
+      "path": "src/motion_editor.gd",
+      "bytes": 11316,
+      "sha256": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d"
+    },
+    {
+      "path": "src/movement_path.gd",
+      "bytes": 4754,
+      "sha256": "777123851803dfb2fda5c0a311c7c91d4e7e161593deda31cf7032d24ca63770"
+    },
+    {
+      "path": "src/movement_path_editor.gd",
+      "bytes": 14684,
+      "sha256": "783b0c4943df16a6f9fa8133bc1196302cff771bb90a68b14d5cb564caed36b7"
+    },
+    {
+      "path": "src/movement_path_preset.gd",
+      "bytes": 9565,
+      "sha256": "2c9a885fccf11776406ff05e85b92df83cf4a0d2c232fd474ce1cfaea8f8386d"
+    },
+    {
+      "path": "src/movement_path_view.gd",
+      "bytes": 2569,
+      "sha256": "705f629777ca48d022122cebaceab693f003778835491d988789ef989655669b"
+    },
+    {
+      "path": "src/object_timing.gd",
+      "bytes": 1742,
+      "sha256": "745d23917a586867f3c2e9634d9bab8a62a6663ae2bbd6891b8f3c6d163b6785"
+    },
+    {
+      "path": "src/onion.gdshader",
+      "bytes": 210,
+      "sha256": "06c80290ba88f0cb5e714ec60647e1044a1fea581bd3b625712ad9d2448d7e3e"
+    },
+    {
+      "path": "src/onion_editor.gd",
+      "bytes": 2918,
+      "sha256": "919719350cfd298c123a9af165c17ee3b09217ab2447f58a386cdf5f57de2b24"
+    },
+    {
+      "path": "src/orbit_navigation.gd",
+      "bytes": 1792,
+      "sha256": "40e5524ff032254f5ee753daefbc96cb9d98f09f14fea5f3022a6add14e31b54"
+    },
+    {
+      "path": "src/output_size.gd",
+      "bytes": 1243,
+      "sha256": "6442ff231c8ca63ae66953ecdf72b72c8bf05b93cfaa1fe9c7c2f523176065af"
+    },
+    {
+      "path": "src/palette_editor.gd",
+      "bytes": 5090,
+      "sha256": "d027847910ec32a13b083e01da096e017a11fa32486742a4a00a330f86db1c95"
+    },
+    {
+      "path": "src/particle_document.gd",
+      "bytes": 5282,
+      "sha256": "5531b6a26e537923802b346f1ac58764841411c9f29ff8531b7a46e6ea0b2d27"
+    },
+    {
+      "path": "src/particle_editor.gd",
+      "bytes": 18316,
+      "sha256": "74e33b917fc5857d96ff2860cb80871748041fccff46f18123456c7e5d852b34"
+    },
+    {
+      "path": "src/particle_sprite.gd",
+      "bytes": 6263,
+      "sha256": "0011929092f8038d63ce7848fff1eef09e4b31235e0aefec050028a55fc77426"
+    },
+    {
+      "path": "src/particle_sprite.gdshader",
+      "bytes": 674,
+      "sha256": "4ce661c46670943aa35ce2e518464ea7e0f207216359c2a3824a5951d93da5d7"
+    },
+    {
+      "path": "src/path_locomotion.gd",
+      "bytes": 19985,
+      "sha256": "0e47813a1db0e2257230429e39a848b2657fc06a9dc376a92e376739745d5d3a"
+    },
+    {
+      "path": "src/pending_helper_preview.gd",
+      "bytes": 17176,
+      "sha256": "f4ced1db5c123a7d7f6e8395ceba9dcb6aa65f6f19d27244d3cd3ea73694ac7e"
+    },
+    {
+      "path": "src/pending_helper_wind_player.gd",
+      "bytes": 8476,
+      "sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "bytes": 23497,
+      "sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a"
+    },
+    {
+      "path": "src/physics_lesson.gd",
+      "bytes": 3785,
+      "sha256": "684099dca78971004849529c2ea43352507b7599144f4c2eedc9ae87c14fc37f"
+    },
+    {
+      "path": "src/physics_prop.gd",
+      "bytes": 6843,
+      "sha256": "499ad7521da193346f928c4acf8cfed25da798770c3aa50b222db7bea92598df"
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "bytes": 19381,
+      "sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425"
+    },
+    {
+      "path": "src/physics_rig.gd",
+      "bytes": 16790,
+      "sha256": "a7b21ba736d3645469b16e72b0864caef8305127133be9fd38966b0876442e3e"
+    },
+    {
+      "path": "src/physics_self_collision.gd",
+      "bytes": 4336,
+      "sha256": "1f44c726ac809115f82d01fc4754fde8b90df5058617a2dfdfaa147f46121e84"
+    },
+    {
+      "path": "src/pose_bounds.gd",
+      "bytes": 6545,
+      "sha256": "1afcb676d25a5d4e6ac4662a9d9c414bdae33550994843cc5e6f72691d848f59"
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "bytes": 48374,
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321"
+    },
+    {
+      "path": "src/pose_library.gd",
+      "bytes": 4401,
+      "sha256": "e5feba00adbe2a6a1d41233dc9189a9a7e9837edbfddfc67704212594f00d153"
+    },
+    {
+      "path": "src/pose_library_editor.gd",
+      "bytes": 11704,
+      "sha256": "f45fa1cd612c0907f5490d406724e8f9973deb9142124032ecb4361516604f87"
+    },
+    {
+      "path": "src/pose_thumbnail.gd",
+      "bytes": 3353,
+      "sha256": "e6c40f3d50f06563148450eddf01851f36ef3ce1b2d191c8768048f52899cb28"
+    },
+    {
+      "path": "src/project_canvas.gd",
+      "bytes": 3514,
+      "sha256": "8fff72e4fe1d7b4335b0cc275993a692595aa041361d0b5f72cdac0e2cec8fe1"
+    },
+    {
+      "path": "src/project_payload_guard.gd",
+      "bytes": 3634,
+      "sha256": "c2ff02ff022a650b5f763cbba959f46059238f0e0cc0ec8f81a2e66bf691a46d"
+    },
+    {
+      "path": "src/project_raster_ownership.gd",
+      "bytes": 1889,
+      "sha256": "3e1d51c4c59ac96b96f136dd6c73c0664127e93a433fc9f2236646ffe258b267"
+    },
+    {
+      "path": "src/project_timing.gd",
+      "bytes": 6273,
+      "sha256": "929e3b4d3a6b869f69a2a63ba12e8e76c05d0f83581a3f1821d0bc2581f58db6"
+    },
+    {
+      "path": "src/raster_clip.gd",
+      "bytes": 3187,
+      "sha256": "2bb5d4fe7f66102d0294de3cb1d07e838c19170e665d27f3d7b6e1455d2e905e"
+    },
+    {
+      "path": "src/recent_projects.gd",
+      "bytes": 3505,
+      "sha256": "cd7d5ef607d64b38798010c8798bef10038fb63740d4b63b15c59318a5997cb9"
+    },
+    {
+      "path": "src/recovery.gd",
+      "bytes": 16516,
+      "sha256": "01168f2f624670323bdfccdcfc2e32e38ed90a3b2ae64927e4726cafb62235eb"
+    },
+    {
+      "path": "src/recovery_blob_retention.gd",
+      "bytes": 4800,
+      "sha256": "708a6110e1d798d7af006c46e448b160917f60ab148e17ff90e901a6c688bc91"
+    },
+    {
+      "path": "src/recovery_journal.gd",
+      "bytes": 8103,
+      "sha256": "3e5a3bb97212ed668be08b3480c58cfb06b7ec243be718cf89979a2e4cbd6a7e"
+    },
+    {
+      "path": "src/recovery_preview.gd",
+      "bytes": 2025,
+      "sha256": "ae1dda01b31233a0643839a9c940aefa8e5823b063bbffc9f8e87d890c787a70"
+    },
+    {
+      "path": "src/recovery_snapshot.gd",
+      "bytes": 3270,
+      "sha256": "4e96159b50d22cde4537794e4350f11dbd49bff04f3664455a98ad9c50a5e5ea"
+    },
+    {
+      "path": "src/recovery_writer.gd",
+      "bytes": 2423,
+      "sha256": "d6babe05548856f376cf8f6bd3868d1a688b2e0d487555461d27fe19d238501c"
+    },
+    {
+      "path": "src/reference_guide.gd",
+      "bytes": 275,
+      "sha256": "a28c0ce563fb2180b9079edc5a192bf9f7467a2a64df71876375af4d82c10f5f"
+    },
+    {
+      "path": "src/reference_sheet.gd",
+      "bytes": 14850,
+      "sha256": "595e8a9712c41f4b9fe81742dcf6b41df804c490b99246cb467c431df89830e7"
+    },
+    {
+      "path": "src/reference_sheet_data.gd",
+      "bytes": 4919,
+      "sha256": "222bf1f8b4e58e9b0facbd0112422825c9be2ef0341b078aab69fdee584d7ea2"
+    },
+    {
+      "path": "src/reference_sheet_view.gd",
+      "bytes": 2253,
+      "sha256": "0b5513ec131ffbd18915244697ad98cd739cc0e85d4a0871ffd02706b54b689d"
+    },
+    {
+      "path": "src/renderer.gd",
+      "bytes": 15232,
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3"
+    },
+    {
+      "path": "src/root_component_assistance.gd",
+      "bytes": 3027,
+      "sha256": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f"
+    },
+    {
+      "path": "src/root_component_clips.gd",
+      "bytes": 2634,
+      "sha256": "3853bb1626151743d10852ad6c7db1072286a8b84f5c2dd59e63f84f755f9776"
+    },
+    {
+      "path": "src/root_component_curves.gd",
+      "bytes": 2965,
+      "sha256": "a0b718daffcc1285d29e3ead559746305bd5cd7d813f95788015d527e2e0235d"
+    },
+    {
+      "path": "src/root_component_document.gd",
+      "bytes": 19847,
+      "sha256": "b1cdc6183738494271b4906f5ff436a8bd5b6e31990e58de0f8905fc3d169bfe"
+    },
+    {
+      "path": "src/root_component_motion.gd",
+      "bytes": 2507,
+      "sha256": "51dbf93cd637b1288cf6928a8585f16a29015cb0d31d31c123d33d106b4f53fb"
+    },
+    {
+      "path": "src/root_component_runtime.gd",
+      "bytes": 683,
+      "sha256": "99f3add43d8d5fc05801d19c3e8bd7d1d1f64dc90b376e8c51e992c2200560d6"
+    },
+    {
+      "path": "src/save_worker.gd",
+      "bytes": 1488,
+      "sha256": "281b48ae2961bd2f05134a0fdac45315bf7d5c478f9240558b9d9b84d97c3d29"
+    },
+    {
+      "path": "src/scene3d.gd",
+      "bytes": 11042,
+      "sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1"
+    },
+    {
+      "path": "src/scene_view.gd",
+      "bytes": 6154,
+      "sha256": "1a32b42ac5cad1ee816b50717e07f78071e266cbce3284b9e1418b143f56716a"
+    },
+    {
+      "path": "src/secondary_helper_editor.gd",
+      "bytes": 45029,
+      "sha256": "3d63e9ee8bf96c60b234a9cfb0c14bc73f90a34bc601f0fd3e7373d373ef5c63"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "bytes": 6443,
+      "sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be"
+    },
+    {
+      "path": "src/secondary_rig.gd",
+      "bytes": 12243,
+      "sha256": "7495b202ede057cf73cce43f839917f9f88d60d0d31b71317e2655b352be0d7c"
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "bytes": 9592,
+      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a"
+    },
+    {
+      "path": "src/selection_ghost.gdshader",
+      "bytes": 421,
+      "sha256": "44dd308b4984e7634243a2934234c61fe112f520c4802caae409b5cba09155fe"
+    },
+    {
+      "path": "src/selection_id.gdshader",
+      "bytes": 390,
+      "sha256": "56c7e056bac98894fac544302b84133f39fbd34150be60a6e10bb77c7598f571"
+    },
+    {
+      "path": "src/selection_outline.gdshader",
+      "bytes": 670,
+      "sha256": "5cd4d9e10c2058eb922d74161cd929e316ba1c731d70f0b85c25c1d00fb95275"
+    },
+    {
+      "path": "src/sequence_audio.gd",
+      "bytes": 4282,
+      "sha256": "8b43e3346e024474971775423107e937fe594e3938bde7bac80841959be47293"
+    },
+    {
+      "path": "src/sequence_editor.gd",
+      "bytes": 36926,
+      "sha256": "5d08627ad149a6dabe992a86579b98e245ab3ab83d9e67427d0018fb1ab912d4"
+    },
+    {
+      "path": "src/sequence_graph.gd",
+      "bytes": 9988,
+      "sha256": "9d3d091d62636131ac8911d743ab71c53870b64d8827293e6f2bd03ef645058f"
+    },
+    {
+      "path": "src/sequence_pixels.gd",
+      "bytes": 729,
+      "sha256": "eb04b00f696bd24b0b703b52258a35bbfdc79bdcb14c26b91b243f33eb3b1714"
+    },
+    {
+      "path": "src/sequence_runtime.gd",
+      "bytes": 8526,
+      "sha256": "07dcc4facfdbbc68038b85bac5434487c3de17379585107adb568b9189452b3d"
+    },
+    {
+      "path": "src/sequence_shadow.gdshader",
+      "bytes": 319,
+      "sha256": "5840179e33feac464e7b5edf28724de529fce2af7ca376b54792a2b85557ccf1"
+    },
+    {
+      "path": "src/sequence_timeline.gd",
+      "bytes": 4152,
+      "sha256": "9f669b1bdaac6ea63e29b8b33c4e590493f56560aaf167fc7dbdaced977f0672"
+    },
+    {
+      "path": "src/shape_animation.gd",
+      "bytes": 13857,
+      "sha256": "8f9d4d4bf4108e59298414d8b8e92a9fa6128c415a496b225a0e2685df06ca83"
+    },
+    {
+      "path": "src/shape_catalog.gd",
+      "bytes": 6221,
+      "sha256": "e73bd895934eaa239c432230e02a86cca60bfdf522314c125ff33dd9cc2233a6"
+    },
+    {
+      "path": "src/shape_comparison.gd",
+      "bytes": 11899,
+      "sha256": "17b35b93661b0452711379375c80421f30412159607d31d5565ab68679ee4889"
+    },
+    {
+      "path": "src/shape_comparison_bounds.gd",
+      "bytes": 3105,
+      "sha256": "005cefe39cd1f55b7afab127a24253793c58449096307dfb2eb1b77623eafd1b"
+    },
+    {
+      "path": "src/shape_labels.gd",
+      "bytes": 720,
+      "sha256": "4d4b58a2eef2519e086928996a0050337d8b55abb2494428ee4b2538baf45924"
+    },
+    {
+      "path": "src/shape_study.gd",
+      "bytes": 10008,
+      "sha256": "e8b824dffb4fc3e5af6e6e56f1f81c0a61bb3ba4ef386aca2eb034706b038aaf"
+    },
+    {
+      "path": "src/shortcut_bindings.gd",
+      "bytes": 2642,
+      "sha256": "895c13f385679f616581696847b58bf291f739aa4be678e62d38e91c17e72864"
+    },
+    {
+      "path": "src/shortcut_editor.gd",
+      "bytes": 6504,
+      "sha256": "1b1abf858d66fb9676b3419cf549aa98cd49f20a0771db6b77559b9cafb23934"
+    },
+    {
+      "path": "src/source_bone_bindings.gd",
+      "bytes": 24681,
+      "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54"
+    },
+    {
+      "path": "src/source_browser.gd",
+      "bytes": 13945,
+      "sha256": "9eff527d2bae12a0b0c51f1f6fd2b9b021bd76eb3cd9a457e554a542a1ad12f6"
+    },
+    {
+      "path": "src/source_choice_dialog.gd",
+      "bytes": 10435,
+      "sha256": "84bd816615fe0ac10c857606f21db89040544e0b52dd2cdda1089f177e9dda2d"
+    },
+    {
+      "path": "src/source_import.gd",
+      "bytes": 18620,
+      "sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d"
+    },
+    {
+      "path": "src/source_jiggle_math.gd",
+      "bytes": 10025,
+      "sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90"
+    },
+    {
+      "path": "src/source_secondary.gd",
+      "bytes": 15190,
+      "sha256": "d2c04165587ca3bb0f7b9f474b23dc81902cc78c1aa174d593534f0198f689c0"
+    },
+    {
+      "path": "src/source_shape.gd",
+      "bytes": 15601,
+      "sha256": "de6e040ecd2ad6d8b139cdd24b97b69c5922a5e4394508d0114dc71b9f979a47"
+    },
+    {
+      "path": "src/storage.gd",
+      "bytes": 35631,
+      "sha256": "f90769be7f736abae6dc7e44a378330c9eb4308358d29598a6da53e2e405578e"
+    },
+    {
+      "path": "src/stroke_stabilizer.gd",
+      "bytes": 690,
+      "sha256": "bd2c142876cb0ad7d2cdc09b1718060701aee202e4f928c855fd8624020c68c5"
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "bytes": 8280,
+      "sha256": "05a320f9bed21086884eb494451521f57db8216f83bbceb046666a80535eaeca"
+    },
+    {
+      "path": "src/timeline.gd",
+      "bytes": 2941,
+      "sha256": "894df4a3ed7f6053a3447adf4c48f9627c33ec30ab9df36ee4ee7302cb0ec16c"
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "bytes": 3514,
+      "sha256": "72cb3266abd8df5b3b58014ea6039b9e00de53f7f9e4a688f6587085756d179f"
+    },
+    {
+      "path": "src/timeline_picture.gd",
+      "bytes": 235,
+      "sha256": "8bc3353f2537524d10f47206404ccf1ce81ac0dab80a9afcf139f83d65fc29e1"
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "bytes": 32224,
+      "sha256": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c"
+    },
+    {
+      "path": "src/tutorial_assets.gd",
+      "bytes": 5245,
+      "sha256": "f9d3dc17670123e4d4cd7f486c31849cc371e994698a3494e657df6896a0f5fc"
+    },
+    {
+      "path": "src/tutorial_catalog.gd",
+      "bytes": 1280,
+      "sha256": "86eb6a7055e3e94a98d6f280df0f26bbaab393a656d942205f95ecc5c38c19b5"
+    },
+    {
+      "path": "src/tutorials.gd",
+      "bytes": 22897,
+      "sha256": "bffce8521bf9b6c9626800133cbc7c0041be82c18ee22a0e7a27f0e29ad5b369"
+    },
+    {
+      "path": "src/video_import.gd",
+      "bytes": 3644,
+      "sha256": "ca7f5392f3f739de7d672377142f100b08df020bb869da392886d55437c3c8e5"
+    },
+    {
+      "path": "src/video_timing.gd",
+      "bytes": 882,
+      "sha256": "614a4c6719449ae155f1d83a4392b4778effd52411fdeb0696ea0df801437e11"
+    },
+    {
+      "path": "src/visibility_track.gd",
+      "bytes": 2162,
+      "sha256": "39f42513c7ccb3359c7ba283aaae9cad7c05da0ad59a9d6e2e443b6686bb0fff"
+    },
+    {
+      "path": "src/walking_animation.gd",
+      "bytes": 4477,
+      "sha256": "159b72cc0271fe1b7e029f02f9d4bd7be0ef6982f717b663b5bfe4d58a67f273"
+    },
+    {
+      "path": "src/wind_helper_bridge.gd",
+      "bytes": 16539,
+      "sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7"
+    },
+    {
+      "path": "src/wind_helper_candidate.gd",
+      "bytes": 25396,
+      "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c"
+    },
+    {
+      "path": "src/wind_helper_runtime.gd",
+      "bytes": 2746,
+      "sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8"
+    },
+    {
+      "path": "src/wind_review.gd",
+      "bytes": 17923,
+      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e"
+    },
+    {
+      "path": "src/wind_review_groups.gd",
+      "bytes": 8617,
+      "sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7"
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "bytes": 17020,
+      "sha256": "b22da597ad6b396eddc7ed8ec25ba12ed3ef21a04099d958b5fb5ea99c94f397"
+    },
+    {
+      "path": "src/world_document.gd",
+      "bytes": 5704,
+      "sha256": "6d921495a0366f30724e5945abe79bcc678d193be40cc77d4dd198ee8c3455cf"
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "bytes": 8012,
+      "sha256": "d2c0bb7fece396066cc4bdae34e1f7172d9a90519dae05d3e33c2b87edb32d46"
+    },
+    {
+      "path": "src/world_selection.gd",
+      "bytes": 17823,
+      "sha256": "7c36ec46c6ba7a9e52eada2d08f5356c23e6312c47a05330cdb37ecbde3161c3"
+    },
+    {
+      "path": "data/bone_names.en.json",
+      "bytes": 12268,
+      "sha256": "def290b36766ae54f4e18c6fb70f46af0d47a0ce319264bbcea560f4c597e97b"
+    },
+    {
+      "path": "data/discovery_sources.json",
+      "bytes": 13934,
+      "sha256": "35815baff1d4f554c5d08929808201ed0e2ff8a4ae30c686223ce872bc94a9ee"
+    },
+    {
+      "path": "data/shape_names.en.json",
+      "bytes": 663,
+      "sha256": "c92b1c35c68383035549bf9ac2444da1f79e41abe982998cf762ad6c5cebcb8c"
+    },
+    {
+      "path": "project.godot",
+      "bytes": 1000,
+      "sha256": "4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30"
+    },
+    {
+      "path": "tests/source_native_state_unit.gd",
+      "bytes": 29984,
+      "sha256": "46436bab631d12efdbc40474012234d82b2427a1af51676f5c6deab34dc36140"
+    }
+  ]
+}

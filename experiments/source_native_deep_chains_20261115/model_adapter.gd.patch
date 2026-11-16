@@ -1,0 +1,68 @@
+--- qualified-pair/model_adapter.gd
++++ source-only-deep/model_adapter.gd
+@@ -1,13 +1,13 @@
+ extends RefCounted
+-# SOURCE ONLY UNPARSED/UNRUN. Exact69-bone Junko pair profile only.
++# SOURCE ONLY UNPARSED/UNRUN. Exact69-bone Junko seven-rule deep-chain profile only.
+ # Root stages qualified leaf_adapter.gd + leaf_candidate.gd unchanged.
+ const Boundary = preload("res://leaf_adapter.gd")
+ const Chains = preload("res://chain_solver.gd")
+ const Math = preload("res://leaf_candidate.gd")
+ const Model = preload("res://src/model.gd")
+ const Bindings = preload("res://src/source_bone_bindings.gd")
+-const SELECTED := [17,18,26,27]
+-const EXPECTED_PARENTS := {17:7,18:17,26:25,27:26}
++const SELECTED := [35,36,37,60,61,62,63]
++const EXPECTED_PARENTS := {35:34,36:35,37:36,60:59,61:60,62:61,63:62}
+ const EPS := 0.00002
+ 
+ static func frame_from_boundary(value: Transform3D) -> Dictionary:
+@@ -19,7 +19,7 @@
+ 	if resolution.status != "bound_inactive" or resolution.bindings.size() != 69 or resolution.rule_owner_ids.size() != 49 or not Bindings.current(actor,resolution): return {"error":"Exact current69/49 inactive Source profile required"}
+ 	var native: Dictionary = actor.data.metadata.native_parameters.native_parameters
+ 	if native.source_jiggle.applied != false or native.source_jiggle.full_native_rule_layout_verified != false or native.source_export_crosswalk.native_solver != "not_implemented" or float(native.source_jiggle.source_scale) != 0.01905: return {"error":"Retained source metadata must stay inactive and unchanged"}
+-	var skeleton: Skeleton3D = resolution.bindings[17].skeleton
++	var skeleton: Skeleton3D = resolution.bindings[35].skeleton
+ 	if skeleton.get_bone_count() != 69 or actor.bones.size() != 69: return {"error":"Only the exact single69-bone Skeleton profile is admitted"}
+ 	var bones := {}
+ 	var selected := {}
+@@ -35,16 +35,16 @@
+ 		var parent_index: int = binding.native_parent_index
+ 		bones[id] = {"parent":null if parent_index < 0 else resolution.by_native[parent_index],"base":base.frame}
+ 		if index in SELECTED:
+-			if parent_index != EXPECTED_PARENTS[index]: return {"error":"Exact measured native17/18 and26/27 pairs required"}
++			if parent_index != EXPECTED_PARENTS[index]: return {"error":"Exact measured three-rule and four-rule subtrees required"}
+ 			selected[index] = id
+-	# Refuse additional descendants: these selected parents have exactly one
+-	# direct child, and both selected child bones are leaves in the exact profile.
++	# Every selected non-leaf has exactly one selected child; both subtrees
++	# are descendant-closed, including all three/four rule owners.
+ 	for index in SELECTED:
+ 		var children: Array = []
+ 		for child in range(69):
+ 			if resolution.bindings[child].native_parent_index == index: children.append(child)
+-		var expected: Array = [18] if index == 17 else [27] if index == 26 else []
+-		if children != expected: return {"error":"Selected native subtree differs from bounded two-pair profile"}
++		var expected: Array = {35:[36],36:[37],37:[],60:[61],61:[62],62:[63],63:[]}[index]
++		if children != expected: return {"error":"Selected native subtree differs from bounded deep-chain profile"}
+ 	for rule in native.source_jiggle.rules:
+ 		var index := int(rule.native_bone_index)
+ 		if not SELECTED.has(index): continue
+@@ -57,7 +57,7 @@
+ 		var error := Math.parameter_error(p)
+ 		if not error.is_empty(): return {"error":error}
+ 		parameters[selected[index]] = p
+-	if parameters.size() != 4: return {"error":"All four exact retained0x31 rules required"}
++	if parameters.size() != 7: return {"error":"All seven exact retained0x31 rules required"}
+ 	return {"bones":bones,"parameters":parameters,"selected":selected,"skeleton":skeleton,"boundary_correction_max":correction}
+ 
+ static func capture_baseline(actor: RefCounted, profile: Dictionary) -> Dictionary:
+@@ -93,7 +93,7 @@
+ 	return {"locals":locals,"prefix":prefix.frame,"boundary_correction_max":correction,"parent_local_closure_max":closure}
+ 
+ static func overlay(actor: RefCounted, profile: Dictionary, authored: Dictionary, result: Dictionary) -> Dictionary:
+-	if result.has("error") or not result.has("delta_bases") or result.delta_bases.size() != profile.parameters.size(): return {"error":"Complete computed four-rule result required"}
++	if result.has("error") or not result.has("delta_bases") or result.delta_bases.size() != profile.parameters.size(): return {"error":"Complete computed seven-rule result required"}
+ 	var pose := authored.duplicate(true)
+ 	for id in profile.parameters:
+ 		if not result.delta_bases.has(id) or not actor.bones.has(id): return {"error":"Missing actual computed bone overlay"}

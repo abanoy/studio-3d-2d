@@ -1,0 +1,77 @@
+{
+  "format": "has_source_0x31_closed_form_1",
+  "status": "PASSED_INDEPENDENT_RATIONAL_FIRST_TICK_ORACLES",
+  "expected": {
+    "acceleration": [
+      3.0,
+      4.0,
+      -20.0
+    ],
+    "unconstrained_velocity": [
+      0.025,
+      0.03333333333333333,
+      -0.16666666666666666
+    ],
+    "unconstrained_tip": [
+      0.00020833333333333335,
+      0.0002777777777777778,
+      19.99861111111111
+    ],
+    "constrained_tip": [
+      0.0002083478018992864,
+      0.00027779706919904855,
+      19.999999996985498
+    ],
+    "constrained_velocity": [
+      0.025001736224145983,
+      0.033335648298861306,
+      -7.234801092659282e-07
+    ]
+  },
+  "measured": {
+    "acceleration": [
+      3.0,
+      4.0,
+      -20.0
+    ],
+    "unconstrained_velocity": [
+      0.025,
+      0.03333333333333333,
+      -0.16666666666666666
+    ],
+    "unconstrained_tip": [
+      0.00020833333333333335,
+      0.0002777777777777778,
+      19.99861111111111
+    ],
+    "constrained_tip": [
+      0.0002083478018992864,
+      0.00027779706919904855,
+      19.999999996985498
+    ],
+    "constrained_velocity": [
+      0.025001736224145983,
+      0.033335648298861306,
+      -7.234801092936838e-07
+    ]
+  },
+  "errors": {
+    "acceleration": 0.0,
+    "unconstrained_velocity": 0.0,
+    "unconstrained_tip": 0.0,
+    "constrained_tip": 0.0,
+    "constrained_velocity": 2.7755575615628914e-17
+  },
+  "moved_goal_expected_acceleration": [
+    10.0,
+    -20.0,
+    -20.0
+  ],
+  "moved_goal_measured_acceleration": [
+    10.0,
+    -20.0,
+    -20.0
+  ],
+  "candidate_sha256": "636a81bd7932e790c7a3d512d88ea71e09362e473c4f8bc3f84e4022fbbbce9f",
+  "scope": "Synthetic rational scalar derivation only; SDK and native app not executed, artist parity unqualified"
+}

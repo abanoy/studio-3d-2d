@@ -1,0 +1,54 @@
+{
+  "format": "has_old_native_cleanup_independent_source_review_2",
+  "status": "SOURCE_GO_ACTUAL_GATES_AND_CLEANUP_UNRUN",
+  "checked_utc": "2026-11-16T00:53:02.990509+00:00",
+  "sources": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\remove_old_native_after_backup.ps1",
+      "bytes": 13062,
+      "sha256": "091e62b2a6b5ce045cc51d4dfd307dcc012e68944b351b600c910f8fb12977ff"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\observe_old_native_ownership.ps1",
+      "bytes": 2644,
+      "sha256": "5ee84163b06502620a47bbd01ece18d061464cf9092cc2ffc8914338eb4f578a"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\audit_protected_inputs_before_cleanup.py",
+      "bytes": 9505,
+      "sha256": "5be1d34aa6aced8fc112bee3ecadd489be9b7f38ab710553385bfd77ca500d83"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\cleanup-native-helper-readonly-qualification.json",
+      "bytes": 371,
+      "sha256": "9751a3f0b1fa236d4693ba4bcbc6a8cffb5cc755c26a79987cc64f5ba0c9c7d5"
+    }
+  ],
+  "resolved_pre_fix_findings": 3,
+  "source_only": true,
+  "PowerShell_scripts_or_CSharp_or_process_queries_or_Git_executed": false,
+  "guard_truth_table_negative_cases_refused": 12,
+  "truth_table_scope": "Independent CPU mirror of inspected boolean/time guards; not execution, parsing or qualification of PowerShell scripts.",
+  "blocking_findings": [],
+  "native_helper_fragment_sha256": "e3214dc4ccfe103ae5f54592d6ace96e12c93c58c5c1c58f01b3e248af303033",
+  "native_helper_qualification": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\cleanup-native-helper-readonly-qualification.json",
+    "reported_one_file_readonly_API_pass": true,
+    "qualification_whole_script_sha256": "cb6e869d3900e7e3cec11bc791c84f439d7055506159f3e51fa983deb38ce673",
+    "current_whole_script_differs_due_to_guard_fixes": true,
+    "helper_access_review": "FILE_READ_ATTRIBUTES0x80/shared7/OPEN_EXISTING3/FILE_FLAG_OPEN_REPARSE_POINT0x00200000; GetFileInformationByHandle and CloseHandle in finally only, no write/delete/disposition calls.",
+    "current_whole_PowerShell_script_parse": "Root will refresh actual parse after edits; not performed by this child."
+  },
+  "inspected_correct_guards": [
+    "decision format/exact two literal roots/script SHA/scope9307files1537dirs1442187088bytes",
+    "all8 decision evidence objects SHA pinned; inventory-after exact pinned sibling of probe",
+    "actual matching publication A remote increment/recovery success; probe9307 exclusive closes and literal scope",
+    "ownership schema/BeforeRemoval/exact literals/absence flags; age0..10 at entry, after validation and immediately before each removal",
+    "fresh combined preservation aliases same path/hash; exact561/6/574/120/5844/1008 counts; successful interval starts after both readbacks and finishes before current UTC",
+    "functional source1008 hashes; exact membership/SHA/mtime/size; native single-link/fileindex; no reparse root/ancestors/members",
+    "both roots validated before first removal; native PowerShell -LiteralPath end-to-end; stop next root on error; partial removal unmeasured",
+    "ownership observer checks exact original PID/birth, conservative runtime names/readable literal arguments; reports inaccessible commandline/global-nonuse limits and never kills processes"
+  ],
+  "cleanup_authorized": false,
+  "pending_root_actual_actions": "Current script parser receipt, publication/retrieval, fresh combined preservation, ownership,9307sharing/inventory proof, concrete separately pinned root decision. This source GO is not execution or cleanup authorization."
+}

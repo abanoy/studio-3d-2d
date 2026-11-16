@@ -1,0 +1,149 @@
+{
+  "format": "has_isolated_native_five_initial_results_1",
+  "recorded_utc": "2026-11-16T03:46:38.590564+00:00",
+  "main_product_backend": "UNCHANGED_NATIVE8_ONLY",
+  "main_product_promoted": false,
+  "overlay_packet": {
+    "path": "experiments/source_native_five_port_candidate_v2_20261115/INDEX.json",
+    "sha256": "460b7719c1bab426aebcc1d04d97bf0d6932b0a6bcadb75db9000147fef6c657"
+  },
+  "stage_manifest": {
+    "path": "output/native-five-stage-attempt1/STAGE-MANIFEST.json",
+    "sha256": "5869b585d380432e82a89988d631f50d147c6f5e6d2d7e068dfd39fd6a7f15fb"
+  },
+  "original_root_preservation": {
+    "path": "output/native-five-stage-attempt1/ROOT-PRESERVATION-initial-runs.json",
+    "sha256": "06e5364fffdcb1d18cb79beefc5e2eb8c3fb8d7d3ed1f7e23f9498d08d68da76"
+  },
+  "state": {
+    "passed": true,
+    "checks": 266,
+    "failures": 0,
+    "verification": {
+      "path": "output/native-five-stage-attempt1/Studio/output/source-native-five-state-20261116T032753090430/verification.json",
+      "sha256": "02d00167986533479fa2ff3fe06468ef63ad8e9cf2be276a30ccc0401377a867"
+    },
+    "result": {
+      "path": "output/native-five-stage-attempt1/Studio/output/source-native-five-state-20261116T032753090430/result.json",
+      "sha256": "3501aa51e1c01e6368869e61fa230a75e37059299e95def0f7e2fdcd09091821"
+    },
+    "metrics": {
+      "actors_loaded": 3,
+      "completed_native_steps": 886,
+      "file_header": {
+        "attempts": 1,
+        "isolated": true,
+        "length_unchanged": true,
+        "mtime_unchanged": true
+      },
+      "file_length": {
+        "attempts": 1,
+        "isolated": true,
+        "length_unchanged": false,
+        "mtime_unchanged": true
+      },
+      "file_mtime": {
+        "attempts": 1,
+        "isolated": true,
+        "length_unchanged": true,
+        "mtime_unchanged": false
+      },
+      "negative_case_count": 32,
+      "planned_assertions": 266,
+      "rotation_half": {
+        "FPS_pass_claimed": false,
+        "advance_max_usec": 20606,
+        "advance_mean_usec": 16007.616666666667,
+        "advance_samples": 120,
+        "completed": true,
+        "logical_scale": 0.5,
+        "native_step_processing": {
+          "max_usec": 17843,
+          "mean_usec": 13982.791666666666,
+          "samples": 120,
+          "scope": "Successful full Native.step, measured only; no FPS criterion"
+        },
+        "prefix_scale_residual_max": 3.714853130665219e-08
+      },
+      "rotation_one": {
+        "FPS_pass_claimed": false,
+        "advance_max_usec": 23033,
+        "advance_mean_usec": 16616.266666666666,
+        "advance_samples": 120,
+        "completed": true,
+        "logical_scale": 1.0,
+        "native_step_processing": {
+          "max_usec": 20808,
+          "mean_usec": 14475.675,
+          "samples": 120,
+          "scope": "Successful full Native.step, measured only; no FPS criterion"
+        },
+        "prefix_scale_residual_max": 7.429706261330438e-08
+      },
+      "rotation_two": {
+        "FPS_pass_claimed": false,
+        "advance_max_usec": 21012,
+        "advance_mean_usec": 15877.441666666668,
+        "advance_samples": 120,
+        "completed": true,
+        "logical_scale": 2.0,
+        "native_step_processing": {
+          "max_usec": 18413,
+          "mean_usec": 13898.991666666667,
+          "samples": 120,
+          "scope": "Successful full Native.step, measured only; no FPS criterion"
+        },
+        "prefix_scale_residual_max": 1.4859412522660875e-07
+      }
+    },
+    "source_preservation": {
+      "source": true,
+      "read_only_inputs": true,
+      "runtimes": true
+    },
+    "lease_released": true
+  },
+  "GUI": {
+    "passed": false,
+    "writer_checks": 82,
+    "writer_failures": 1,
+    "readers": "UNRUN_AFTER_WRITER_FAILURE",
+    "failed_gate": "fan.opposite_tip_directions",
+    "verification": {
+      "path": "output/native-five-stage-attempt1/Studio/output/native-five-gui-attempt1/verification.json",
+      "sha256": "b2ed411e6be9ff7d731414fb4f2c5a724c849b0bdc15722d25cd4666eb834589"
+    },
+    "writer_result": {
+      "path": "output/native-five-stage-attempt1/Studio/output/native-five-gui-attempt1/writer/result.json",
+      "sha256": "63e2a9c2d5942bdba88906f40602c82cb47ae33485c1efc3c15d649b067b8f98"
+    },
+    "closure": {
+      "path": "output/native-five-stage-attempt1/Studio/output/native-five-gui-attempt1/authoritative-closure.json",
+      "sha256": "b724b6bc86038b752c4333ee74d217ec941cff48001f58e71c25fb735dc52c28"
+    },
+    "preservation": {
+      "current_functional_source": true,
+      "original_native_GLB_report_and_baseline": true,
+      "approved_Godot": true,
+      "frozen_functional_source": true
+    },
+    "lease_released": true,
+    "next": "Scalar-only direction diagnostic; preserve original native8 predicate and test linked-chain assumptions independently."
+  },
+  "performance": {
+    "native_step_mean_ms_observed": {
+      "disabled": 12.73975,
+      "speed3": 11.662600000000001,
+      "speed12": 11.042733333333334,
+      "speed50": 11.366805555555555,
+      "opposite": 11.510633333333333
+    },
+    "native_step_max_ms_observed": 18.469,
+    "fixed_clock_budget_ms": 8.333333333333334,
+    "measured_only_no_FPS_pass_claim": true,
+    "next": "Strict ancestor-closure calculation candidate; retain full69 guards and actual unaffected/restoration gates."
+  },
+  "scope": "Experimental five-rule overlay on one qualified Junko model. Not main, no Source SDK/client/artist fidelity, no same-actor active ragdoll qualification.",
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation": "52/54_UNCHANGED"
+}

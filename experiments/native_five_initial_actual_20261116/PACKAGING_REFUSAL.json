@@ -1,0 +1,12 @@
+{
+  "format": "has_native_five_initial_packet_refusal_1",
+  "status": "FIRST_PACKAGING_ATTEMPT_REFUSED",
+  "observed_exit": 1,
+  "refusal": "Privacy allowlist initially rejected /UI_driver_binding/proposed_writer_packed_linked_checks in an explicit stage manifest.",
+  "rejected_value": [82, 11, 8],
+  "classification": "Proposed assertion counts, not native vectors or model data.",
+  "partial_exact_metadata_copies_retained": true,
+  "correction": "Allow this exact metadata path/value alongside the five native IDs; resume only byte-identical existing partial copies.",
+  "model_test_or_product_behavior_changed": false,
+  "raw_stdout_or_process_identity_claimed": false
+}

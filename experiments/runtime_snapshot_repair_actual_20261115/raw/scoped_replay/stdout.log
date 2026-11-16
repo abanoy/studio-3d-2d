@@ -1,0 +1,94 @@
+{
+  "revision": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+  "source_mode": "working_tree",
+  "snapshot_scope": "runtime_dependency_closure",
+  "folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794798340646990000",
+  "profile": "HAS Pick Teardown 1794798341902043100",
+  "selected_cases": [
+    "controls-queue-free",
+    "focus-free",
+    "setup-free",
+    "focus-detach"
+  ],
+  "shared_test_sha256": "0b536c255e52cd335b5f5f609883b95a1e63b5dbad6faa14d0daf989f5d1afc0",
+  "driver_sha256": "137322921a83fcbb6cee558cb951ede5f3691c4c96e5b1ab7abdb735680f0bfb",
+  "override_sha256": "6ca62ab8d4a0bf313bbe64fd3fbab2a9ff5b355da1de92310d4c1524ae706516",
+  "normal-startup": {
+    "exit": 0,
+    "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794798340646990000\\shipped-source\\output\\private-desktop\\studio_272908dc744341e2b1400bf9d1bd9119.json",
+    "receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_dcc6e639fd7c4877bc6f89c80311aa77",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 82728,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 4.863
+    }
+  },
+  "unchanged_source": true,
+  "unchanged_override": true,
+  "startup_result": {
+    "empty": true,
+    "home_visible": true,
+    "profile": "C:/Users/noble/AppData/Roaming/HAS Pick Teardown 1794798341902043100",
+    "recovery": {
+      "attempts": [],
+      "cancelled": false,
+      "restored": false
+    },
+    "simple": true
+  },
+  "process": {
+    "exit": 0,
+    "receipt_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794798340646990000\\shipped-source\\output\\private-desktop\\world_selection_teardown_df6412f5e48443d1912b72cb94a8cbb4.json",
+    "receipt": {
+      "format": "studio_private_desktop_1",
+      "desktop": "HAS_Test_a74934a613924222959596f38afc08e2",
+      "desktop_switch_requested": false,
+      "private_window_seen": true,
+      "child_desktop_confirmed": true,
+      "maximum_owned_windows": 9,
+      "foreground_child_observed": false,
+      "exit": 0,
+      "child_pid": 89020,
+      "job_closed": true,
+      "desktop_closed": true,
+      "seconds": 5.989
+    }
+  },
+  "result": {
+    "cases": [
+      {
+        "case": "controls-queue-free",
+        "reentrant_pending_after_first_draw": 1,
+        "signal_connections": 0
+      },
+      {
+        "case": "focus-free",
+        "nodes": 1,
+        "orphans": 0,
+        "signal_connections": 0
+      },
+      {
+        "case": "setup-free",
+        "nodes": 1,
+        "orphans": 0,
+        "signal_connections": 0
+      },
+      {
+        "case": "focus-detach",
+        "nodes": 1,
+        "orphans": 0,
+        "signal_connections": 0
+      }
+    ],
+    "checks": 28,
+    "failures": 0
+  }
+}

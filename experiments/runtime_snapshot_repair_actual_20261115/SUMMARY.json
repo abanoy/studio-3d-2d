@@ -1,0 +1,76 @@
+{
+  "format": "has_runtime_snapshot_repair_actual_public_1",
+  "classification": "FAILED_FULL_THEN_PASSED_SCOPED_REPAIR_FULL_RETRY_REQUIRED",
+  "original_full_remains_failed": true,
+  "full_default_pass_claimed": false,
+  "source_commit": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+  "failed_full": {
+    "core_groups_passed": 36,
+    "functional_source_files": 1014,
+    "outer_timeout_seconds": 180,
+    "snapshot_files": 6023,
+    "experiment_files": 4551,
+    "docs_files": 436,
+    "late_child_pid": 71828,
+    "late_receipt_seconds_after_failed_finish": 7.8069579,
+    "assertions": 28,
+    "failures": 0,
+    "private_jobs_closed": 46,
+    "release_utc": "2026-11-16T02:55:49.6500273Z"
+  },
+  "termination": {
+    "root_manual_or_process_sweep_termination_performed": false,
+    "outer_wrapper_stdlib_termination": "SOURCE_TRACE_INFERENCE_WRAPPER_PID_NOT_CAPTURED",
+    "global_no_process_termination_claimed": false
+  },
+  "application_preflight": {
+    "first_attempt": "ROOT_REPORTED_INDEX_DICTIONARY_TREATED_AS_LIST_TYPEERROR_BEFORE_WRITES",
+    "basis": "Root report and dated LLM/progress record; no retained raw exception trace or PID supplied.",
+    "raw_trace_claimed": false
+  },
+  "actual_CPU": {
+    "checks": 27,
+    "real_Git_fixture_cases": 7,
+    "mocked_runtime_cases": 20,
+    "exit": 0,
+    "seconds": 4.146,
+    "basis": "ROOT_REPORTED_OBSERVATION_IN_ROOT_TOOL_TRACE_ONLY",
+    "raw_stdout_or_PID_claimed": false,
+    "note": "reviewed_v2/CPU_TESTS.log is earlier mock-only20 evidence, not raw stdout for actual27."
+  },
+  "actual_scoped_replay": {
+    "checks": 28,
+    "failures": 0,
+    "snapshot_files": 1024,
+    "functional_observation_entries": 1015,
+    "seconds": 21.763778000000457,
+    "wrapper_pid": 86500,
+    "wrapper_exit": 0,
+    "wrapper_reaped": true,
+    "timed_out": false,
+    "owned_wrapper_terminated": false,
+    "private_jobs_closed": 2,
+    "budgets": {
+      "outer": 180,
+      "startup": 60,
+      "teardown": 110
+    }
+  },
+  "source_catalogue_coverage_note": "Repaired observation adds dependencies.json coverage; this is not evidence the file was newly created. Only the reviewed3 overlapping source hashes change.",
+  "unchanged": {
+    "teardown_GDScript_assertions": true,
+    "budgets": true,
+    "Source1_native_backend": "unchanged_between_failed_and_scoped_source_catalogues"
+  },
+  "owner_manual_hair_check": "DEFERRED_BUSY_CONTINUE_INDEPENDENTLY_NO_OBSERVED_RESULT",
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation": "52/54_UNCHANGED",
+  "privacy": {
+    "payload_scope": "EXPLICIT_SOURCE_AND_SAFE_METADATA_ONLY",
+    "actual_stage_source_trees_copied": false,
+    "actual_media_copied": false,
+    "native_geometry_rest_arrays_or_PCM_copied": false,
+    "path_metadata": "Exact raw records deliberately retain checkout/tool/profile paths already in evidence. Catalogue asset names and SHA256 strings are metadata, not redistributed asset bytes."
+  },
+  "verification_scope": "Packet verifier is read-only stdlib CPU; source aliases, raw hashes, counts, cases, closure, budgets and privacy contract only. No engine/process/CIM/Git/upload action."
+}

@@ -1,0 +1,116 @@
+--- origin/prepare_private_oracle.py
++++ successor/prepare_private_oracle.py
+@@ -3,7 +3,10 @@
+ import argparse,ast,hashlib,json,math,os,stat,struct,subprocess,sys,time
+ sys.dont_write_bytecode=True
+ from oracle_math import I,require,mm,mv,trs
+-R=Path(__file__).resolve().parents[2];CODE=Path(__file__).resolve().parent
++R=Path(r'C:\a\Programming\cloudflare\has-acceptance-session-20261111');CODE=Path(__file__).resolve().parent
++LOCAL=R/'output/native-jiggle-headless-transport-prep-20261115'
++QUALIFIED='f0dd57a2e568089d396fecba819ab987da658bf0'
++FULL_RUN=R/'output/windows-canonical-bone-binding-20261115T225514304'
+ B=R/'output/sfm-bone-bindings-native-launch-20261114T033026205/run/Studio/output/compatibility/source-1794627119-888-34370685'
+ MDL='8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716';GLB='4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d';SCALE=.01905
+ sha=lambda b:hashlib.sha256(b).hexdigest()
+@@ -14,8 +17,15 @@
+ def save(p,v):
+  with p.open('x',encoding='utf-8',newline='\n')as f:json.dump(v,f,ensure_ascii=True,separators=(',',':'),allow_nan=False);f.write('\n')
+ def main():
++ require(CODE==R/'experiments/resume_transport_20261115','Exact public candidate location required')
+  for name in ['oracle_math.py','prepare_private_oracle.py','run_headless_transport.py']:ast.parse((CODE/name).read_text(encoding='utf-8-sig'),filename=name)
+- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--output',type=Path);opt=ap.parse_args();out=(opt.output or CODE/('private-preparation-'+time.strftime('%Y%m%dT%H%M%SZ',time.gmtime()))).resolve();require(out.is_relative_to(CODE)and not out.exists(),'fresh owned prep directory required');out.mkdir()
++ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--output',type=Path);opt=ap.parse_args();out=(opt.output or LOCAL/('private-preparation-'+time.strftime('%Y%m%dT%H%M%SZ',time.gmtime()))).absolute();require(out.parent==LOCAL and out.name.startswith('private-preparation-')and out.name!='private-preparation-'and out.resolve()==out and not out.exists(),'fresh direct LOCAL prep directory required');
++ for ancestor in [LOCAL.parent,*LOCAL.parent.parents]:
++  info=ancestor.lstat();require(not stat.S_ISLNK(info.st_mode)and not getattr(info,'st_file_attributes',0)&0x400,'Reparse output ancestor refused')
++ if LOCAL.exists():
++  info=LOCAL.lstat();require(LOCAL.is_dir()and not stat.S_ISLNK(info.st_mode)and not getattr(info,'st_file_attributes',0)&0x400,'Reparse/non-directory LOCAL refused')
++ else:LOCAL.mkdir()
++ out.mkdir()
+  params=json.loads((B/'parameters.json').read_bytes());req=json.loads((B/'conversion-request.json').read_bytes());native=Path(req['source']);raw=native.read_bytes();require(sha(raw)==MDL and sha((B/'scene.glb').read_bytes())==GLB,'fixture identity');count,start=struct.unpack_from('<II',raw,156);require(count==69,'69 bones only');parents=[];locals=[];lengths={}
+  for i in range(count):
+   at=start+216*i;parent=struct.unpack_from('<i',raw,at+4)[0];p=struct.unpack_from('<3f',raw,at+32);q=struct.unpack_from('<4f',raw,at+44);parents.append(parent);locals.append(trs([v*SCALE for v in p],q));kind,rel=struct.unpack_from('<II',raw,at+164)
+@@ -55,6 +65,7 @@
+    cases.append({'id':root['id']+'__'+pose['id'],'root':root,'pose':pose['rows'],'expected_world_bones':bones,'expected_native_Z_tips':tips,'root_scale':root['scale']})
+  fixture={'format':'has_private_native_transport_oracle_1','glb_path':str(B/'scene.glb'),'glb_sha256':GLB,'parameters_sha256':sha((B/'parameters.json').read_bytes()),'native_mdl_sha256':MDL,'source_conversion_scale':SCALE,'rest_by_root_id':{case['root']['id']:case['expected_world_bones'] for case in cases if case['id'].endswith('__rest')},'expected_bindings':69,'expected_rule_count':49,'cases':cases,'rule_lengths':[{'native_index':i,'length_scaled':length*SCALE}for i,length in sorted(lengths.items())]};save(out/'PRIVATE_ORACLE.json',fixture)
+  files=[p for p in(R/'src').rglob('*')if p.is_file()and p.suffix!='.pyc'and'__pycache__'not in p.parts]+[R/n for n in['run.py','project.godot','main.tscn']]+[CODE/n for n in['oracle_math.py','prepare_private_oracle.py','headless_transport.gd','run_headless_transport.py']]+[native,native.with_suffix('.vvd'),B/'scene.glb',B/'parameters.json',out/'PRIVATE_ORACLE.json',Path(r'C:\a\tools\Godot\Godot_v4.6-stable_win64.exe'),Path(sys.executable)]
+- lock={'format':'has_private_headless_transport_input_lock_1','status':'PREPARED_NOT_LAUNCHED','root':str(R),'qualified_full_revision':'f380729cb170682068017b0d4c29b5f8425cdd14','qualified_full_run':str(R/'output/windows-canonical-bone-binding-20261114T040946652'),'HEAD':subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip(),'created_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'private_oracle':str(out/'PRIVATE_ORACLE.json'),'source_conversion_scale':SCALE,'root_scales':[1.,2.],'files':[stamp(p)for p in sorted(set(files))]};save(out/'INPUT_LOCK.json',lock)
++ lock={'format':'has_private_headless_transport_input_lock_1','status':'PREPARED_NOT_LAUNCHED','root':str(R),'qualified_full_revision':QUALIFIED,'qualified_full_run':str(FULL_RUN),'HEAD':subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip(),'created_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'private_oracle':str(out/'PRIVATE_ORACLE.json'),'source_conversion_scale':SCALE,'root_scales':[1.,2.],'files':[stamp(p)for p in sorted(set(files))]};require(len(lock['files'])==211 and len({row['path']for row in lock['files']})==211,'Exact211 unique pins required');
++ full_before=json.loads((FULL_RUN/'source-before.json').read_bytes());require(full_before['commit']==QUALIFIED,'Wrong candidate full revision');app=[row for row in lock['files']if Path(row['path']).is_relative_to(R)and(Path(row['path']).relative_to(R).parts[0]=='src'or Path(row['path']).relative_to(R).as_posix()in['run.py','project.godot','main.tscn'])];require(len(app)==200 and all(full_before['source_sha256'].get(Path(row['path']).relative_to(R).as_posix())==row['sha256']for row in app),'Exact200 app hashes must match candidate full source-before');save(out/'INPUT_LOCK.json',lock)
+  public={'format':'has_headless_transport_preparation_1','status':'UNPARSED_UNRUN_WAITING_ROOT_LEASE','source_conversion_scales_qualified':[SCALE],'model_root_uniform_scales_to_measure':[1.,2.],'native_actuator_indices':[8,17,18,26,27],'parent_child_pairs':[[17,18],[26,27]],'signed_rotation_axes':['X','Y','Z'],'pose_cases':len(poses),'root_cases':len(roots),'configurations':len(cases),'expected_bone_world_comparisons':len(cases)*69,'expected_native_Z_tip_comparisons':len(cases)*49,'expected_skeleton_global_rest_comparisons':len(cases)*69,'expected_total_checks':8+len(cases)*(69+69+49+2),'parent_motion_semantics':'Skeleton bone-local offsets atnative17and26; attached world-object parenting is not measured','per_case_reset_required':True,'posed_vertex_render_or_skin_transport':'UNRUN_NOT_MEASURED_BY_THIS_SKELETON_PROBE','unmodified_actual_apis':['pose_editor.definition','scene3d.load_glb','model.inventory','model.check_bindings','source_bone_bindings.resolve','model.apply','model.bone_transform','Skeleton3D.get_bone_rest/get_bone_pose/get_bone_global_rest'],'private_fixture_sha256':sha((out/'PRIVATE_ORACLE.json').read_bytes()),'input_lock_sha256':sha((out/'INPUT_LOCK.json').read_bytes()),'main_changed':False,'apps_launched':False,'headless_runtime_launched':False,'dynamics_added':False,'root_lease_required_before_even_parse':True};save(out/'PUBLIC_PREPARATION.json',public);print(json.dumps({'folder':str(out),'public':public,'private_fixture_bytes':(out/'PRIVATE_ORACLE.json').stat().st_size}))
+ if __name__=='__main__':main()
+--- origin/run_headless_transport.py
++++ successor/run_headless_transport.py
+@@ -12,9 +12,13 @@
+ 
+ sys.dont_write_bytecode=True
+ 
+-CODE=Path(__file__).resolve().parent;ROOT=CODE.parents[1]
++CODE=Path(__file__).resolve().parent;ROOT=Path(r'C:\a\Programming\cloudflare\has-acceptance-session-20261111')
++LOCAL=ROOT/'output/native-jiggle-headless-transport-prep-20261115'
++FULL_RUN=ROOT/'output/windows-canonical-bone-binding-20261115T225514304'
++COORDINATOR_PID=15824;COORDINATOR_BIRTH='2026-11-15T22:55:14.3418333Z'
++PYTHON_PID=16040;PYTHON_BIRTH='2026-11-15T22:55:28.0068371Z'
+ 
+-QUALIFIED='f380729cb170682068017b0d4c29b5f8425cdd14'
++QUALIFIED='f0dd57a2e568089d396fecba819ab987da658bf0'
+ 
+ BAD=('ERROR:','WARNING:','SCRIPT ERROR','FAIL ','ObjectDB instances leaked','unclaimed string names','Pages in use exist at exit','resources still in use')
+ 
+@@ -52,7 +56,10 @@
+ 
+ def check_inputs(lock):
+ 
+- need(lock['format']=='has_private_headless_transport_input_lock_1'and Path(lock['root']).resolve()==ROOT,'Input-lock scope');need(lock['qualified_full_revision']==QUALIFIED,'Obsolete c4d or undeclared full context');need(head()==lock['HEAD'],'HEAD changed; regenerate the CPU-only oracle/input lock before launch')
++ need(CODE==ROOT/'experiments/resume_transport_20261115','Exact public candidate location required')
++ need(lock['format']=='has_private_headless_transport_input_lock_1'and Path(lock['root']).resolve()==ROOT,'Input-lock scope');need(lock['qualified_full_revision']==QUALIFIED,'Wrong qualified full revision');need(head()==lock['HEAD'],'HEAD changed; regenerate the CPU-only oracle/input lock before launch')
++ need(len(lock['files'])==211 and len({row['path']for row in lock['files']})==211,'Exact211 unique input pins required')
++ need(lock.get('source_conversion_scale')==.01905 and lock.get('root_scales')==[1.,2.],'Input-lock scale domain differs')
+ 
+  for row in lock['files']:need(identity(Path(row['path']))==row,'Pinned source/runtime/private input changed: '+row['path'])
+ 
+@@ -62,17 +69,19 @@
+ 
+  need(lease.get('source_commit')==lock['HEAD']and lease.get('qualified_full_revision')==QUALIFIED,'Lease source context differs')
+ 
+- full=Path(lock['qualified_full_run']).resolve(strict=True);need(full==ROOT/'output/windows-canonical-bone-binding-20261114T040946652'and Path(lease['canonical_run']).resolve()==full,'Wrong full run')
++ full=Path(lock['qualified_full_run']).resolve(strict=True);need(full==FULL_RUN and Path(lease['canonical_run']).resolve()==full,'Wrong full run')
+ 
+- state=load(full/'state.json');need(state.get('source_commit')==QUALIFIED and state.get('status')=='passed'and state.get('suite_exit')==0 and state.get('source_unchanged')is True,'Exact fresh f380 full must terminalPASS before any engine/parse launch')
++ state=load(full/'state.json');need(state.get('source_commit')==QUALIFIED and state.get('status')=='passed'and state.get('suite_exit')==0 and state.get('source_unchanged')is True and state.get('pid')==COORDINATOR_PID and state.get('process_started')==COORDINATOR_BIRTH,'Exact current canonical full must terminalPASS before any engine/parse launch')
+ 
+  host_path=Path(lease['canonical_host_proof']).resolve(strict=True);no_links(host_path);host=load(host_path);need(host_path.is_relative_to(full),'Host proof escaped full run')
+ 
+- need(host.get('format')=='has_canonical_authoritative_host_termination_1'and host.get('source_commit')==QUALIFIED and host.get('canonical_run')==full.name and host.get('coordinator_pid')==state['pid']and host.get('expected_creation_utc')==state['process_started'],'Exact full host identity required')
++ need(host.get('format')=='has_canonical_authoritative_host_termination_1'and host.get('source_commit')==QUALIFIED and host.get('canonical_run')==full.name and host.get('coordinator_pid')==state['pid']and host.get('expected_creation_utc')==state['process_started']and host.get('python_pid')==PYTHON_PID and host.get('expected_python_creation_utc')==PYTHON_BIRTH,'Exact full coordinator/Python host identities required')
+ 
+  need(all(host.get(k)is True for k in['coordinator_absent','python_absent','owned_runtime_command_matches_absent','no_process_killed'])and host.get('coordinator_matches')==[]and host.get('owned_runtime_matches')==[],'Full runtime lease has not closed')
+ 
+  raw=full/'authoritative-host-terminal.json';need(identity(raw)['sha256']==host['raw_observation_sha256'],'Host raw proof changed');before=load(full/'source-before.json');after=load(full/'source-after.json');need(before==after and before['commit']==QUALIFIED,'Full source freeze differs')
++
++ matched_app=0
+ 
+  for row in lock['files']:
+ 
+@@ -84,7 +93,9 @@
+ 
+   if n.split('/',1)[0]=='src'or n in['run.py','project.godot','main.tscn']:
+ 
+-   need(before['source_sha256'].get(n)==row['sha256'],'Probe app source differs from passed full')
++   need(before['source_sha256'].get(n)==row['sha256'],'Probe app source differs from passed full');matched_app+=1
++
++ need(matched_app==200,'Exact200 app pins must join the passed full catalogue')
+ 
+  return {str(p):identity(p)for p in[full/'state.json',host_path,raw,full/'source-before.json',full/'source-after.json']}
+ 
+@@ -134,9 +145,9 @@
+ 
+  lock_path=opt.input_lock.resolve(strict=True);lease_path=opt.root_lease.resolve(strict=True);no_links(lock_path);no_links(lease_path);lock=load(lock_path);lease=load(lease_path);check_inputs(lock);need(Path(sys.executable).resolve()==Path(r'C:\Program Files\Python313\python.exe').resolve(),'Use approved Python313 -B');need(lease.get('input_lock_sha256')==identity(lock_path)['sha256'],'Root lease is not bound to this exact reviewed input lock');full_gate=gate(lock,lease)
+ 
+- oracle=Path(lock['private_oracle']).resolve(strict=True);need(oracle.is_relative_to(CODE)and lock_path.parent==oracle.parent,'Private oracle/lock boundary');fixture=load(oracle);expected_configurations=len(fixture['cases']);expected_checks=8+expected_configurations*(69+69+49+2);need(fixture.get('format')=='has_private_native_transport_oracle_1'and fixture.get('expected_bindings')==69 and fixture.get('expected_rule_count')==49 and fixture.get('source_conversion_scale')==.01905 and expected_configurations==220,'Exact locked private oracle domain required')
++ oracle=Path(lock['private_oracle']).resolve(strict=True);need(oracle.parent.parent==LOCAL and oracle.name=='PRIVATE_ORACLE.json'and lock_path.parent==oracle.parent and lock_path.name=='INPUT_LOCK.json','Private oracle/lock must remain in a direct LOCAL preparation, outside Git');fixture=load(oracle);expected_configurations=len(fixture['cases']);expected_checks=8+expected_configurations*(69+69+49+2);need(fixture.get('format')=='has_private_native_transport_oracle_1'and fixture.get('expected_bindings')==69 and fixture.get('expected_rule_count')==49 and fixture.get('source_conversion_scale')==.01905 and expected_configurations==220,'Exact locked private oracle domain required')
+ 
+- folder=opt.output.absolute();no_links(folder);need(folder.resolve().is_relative_to(CODE)and folder.resolve()!=CODE and not folder.exists(),'Fresh owned probe output required');folder.mkdir(exist_ok=False);before={str(p):identity(p)for p in[lock_path,lease_path]};save(folder/'locked-launch-context.json',{'HEAD':lock['HEAD'],'qualified_full_revision':QUALIFIED,'private_oracle_sha256':identity(oracle)['sha256'],'input_lock_sha256':identity(lock_path)['sha256'],'actual_root_uniform_scales':[1.,2.],'source_conversion_scale':.01905,'headless_only':True})
++ folder=opt.output.absolute();no_links(folder);need(folder.parent==LOCAL and folder.name.startswith('runtime-post-full-')and folder.name!='runtime-post-full-'and folder.resolve()==folder and not folder.exists(),'Fresh direct LOCAL probe output required');folder.mkdir(exist_ok=False);before={str(p):identity(p)for p in[lock_path,lease_path]};save(folder/'locked-launch-context.json',{'HEAD':lock['HEAD'],'qualified_full_revision':QUALIFIED,'private_oracle_sha256':identity(oracle)['sha256'],'input_lock_sha256':identity(lock_path)['sha256'],'actual_root_uniform_scales':[1.,2.],'source_conversion_scale':.01905,'headless_only':True})
+ 
+  phases=[];errors=[];result={};preserved=False
+ 

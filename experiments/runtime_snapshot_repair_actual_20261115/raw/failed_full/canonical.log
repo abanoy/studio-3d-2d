@@ -1,0 +1,54 @@
+PASS unit: 0.611s
+PASS motion_parts: 1.342s
+PASS motion_helper_edits: 0.418s
+PASS opaque_order: 0.425s
+PASS required_extensions: 0.43s
+PASS contact_bend: 0.242s
+PASS spikes: 6.901s
+PASS editor: 13.642s
+PASS export_failures: 2.174s
+PASS audio_editor: 14.631s
+PASS audio_dummy: 6.486s
+PASS ui: 6.795s
+PASS recovery_write: 14.94s
+PASS recovery: 7.225s
+PASS pose: 26.956s
+PASS autokey: 18.588s
+PASS new_scene: 15.246s
+PASS world_selection: 16.21s
+PASS world_document: 9.787s
+PASS world_runtime: 18.169s
+PASS world_edit: 36.192s
+PASS world_workflow: 20.083s
+PASS object_timing: 25.272s
+PASS bone_labels: 7.058s
+PASS animation_clips_unit: 0.648s
+PASS animation_clips: 30.284s
+PASS visibility: 23.057s
+PASS animated_channels: 22.788s
+PASS limb_ik: 39.461s
+PASS secondary_motion: 15.05s
+PASS fan_motion: 25.426s
+PASS physics: 56.143s
+PASS physics_contacts: 103.343s
+PASS physics_props: 28.023s
+PASS physics_recording_unit: 1.695s
+PASS physics_recording: 59.859s
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify.py", line 609, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify.py", line 165, in main
+    pick_teardown_log = run([sys.executable, '-u', 'tests/verify_world_selection_teardown.py'], timeout=180)
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\tests\verify.py", line 21, in run
+    result = subprocess.run(args, cwd=ROOT, capture_output=True, text=True,
+                            encoding="utf-8", errors="replace", timeout=timeout, **kwargs)
+  File "C:\Program Files\Python313\Lib\subprocess.py", line 556, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\subprocess.py", line 1219, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\subprocess.py", line 1640, in _communicate
+    raise TimeoutExpired(self.args, orig_timeout)
+subprocess.TimeoutExpired: Command '['C:\\Program Files\\Python313\\python.exe', '-u', 'tests/verify_world_selection_teardown.py']' timed out after 180 seconds

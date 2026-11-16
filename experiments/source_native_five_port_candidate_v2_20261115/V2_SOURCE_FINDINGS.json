@@ -1,0 +1,36 @@
+{
+  "format": "has_five_v2_source_findings_1",
+  "status": "SOURCE_ONLY_SUPERSEDES_UNAPPLIED_V1",
+  "sealed_v1_index_sha256": "08a423f3c25f8670578b24bc53465388047078acc4d140d2534a5388b3ee272a",
+  "v1_material_finding": {
+    "basis": "Root source audit, no engine execution",
+    "issue": "New5 step ignored mutable public chains.ids, so old chain_id mutation would advance. Wrapper also collected wind from mutable source binding before backend validation."
+  },
+  "v2_corrections": [
+    "Exact ordered chains byte stamp captured at creation, cleared at disposal and checked again before backend state transfer.",
+    "Native.airflow_error plus paired native-only wrapper preflight before baseline/apply/descriptor lookup.",
+    "Five malformed wrapper cases require refusal, authoritative/latest/age/time/counter equality, exact visual noncommit and Off restoration."
+  ],
+  "unsealed_prior_v2_source_sha256": "18588e1930813bbd6dd86395773d7f03b8ebf4d1d507636ded285a1796fccd29",
+  "source_history_retained": true,
+  "qualified_math_only_preload_alias_changed": true,
+  "generic_wrapper_bytes_and_line_endings_preserved": true,
+  "source_generation_failures_only": [
+    {
+      "cause": "First generator text anchor matched two CREATE_REFUSALS sections; corrected before any generated observer write."
+    },
+    {
+      "cause": "Wrapper anchor initially assumed LF but frozen wrapper usesCRLF. In-memory generation refused; corrected to retain exact original line endings before any wrapper output write."
+    }
+  ],
+  "peer_source_review": {
+    "reviewer": "resume_coordinates",
+    "runtime_executed": false,
+    "no_blocker_in_preflight_or_malformed_case_logic": true,
+    "reviewed_source_contract": "Preflight before base/apply/collector; independent backend recheck; state/latest/visual/age/time/counter noncommit.",
+    "editorial_followup": "Legacy refusal text still says front-hair; future product text update belongs to reviewed application patch."
+  },
+  "timing": "Actual sample/count/mean/max values will be reported by future tests; no FPS or runtime pass is fabricated.",
+  "core_or_frozen_full_files_modified": false,
+  "engine_or_GDScript_parser_CIM_or_Git_used": false
+}

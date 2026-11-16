@@ -1,0 +1,787 @@
+{
+  "format": "has_native_chain_actual_copy_source_proof_1",
+  "actual_folder": "output/source-0x31-native-chains-20261115-attempt1",
+  "actual_verification_sha256": "d40cf9423a8de7f5cdf73621bcd9b63ca8a3d53062c4c2d80eec029ff88040fc",
+  "driver_sha256": "297d099ff4bdd2f958e436a7bf403af743dcc1f8e3749fa61b84f253de65b721",
+  "frozen_packet_INDEX_sha256": "5f204a52d82a61174da1dbb33da3c132f636b5d8bc5eba39f7679279599782c0",
+  "raw_copies": [
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/verification.json",
+      "stored": "actual/verification.json",
+      "bytes": 29428,
+      "sha256": "d40cf9423a8de7f5cdf73621bcd9b63ca8a3d53062c4c2d80eec029ff88040fc"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/result.json",
+      "stored": "actual/result.json",
+      "bytes": 18230,
+      "sha256": "dc39db4029ebe2dfdef5de3a57cf4545fa038414da71cc34ace218bdfbfd8ebf"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-result.json",
+      "stored": "actual/math-result.json",
+      "bytes": 299,
+      "sha256": "ac29c2655cf59cd12c3bc6df6edc5bc84d44a5a8c5e8345732bdd836d1c6beec"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-verification.json",
+      "stored": "actual/math-verification.json",
+      "bytes": 1555,
+      "sha256": "b5ea617688cadaa20e396884f815dc0a7f9823b71b8cc80d70393a1bcbc5c799"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/authoritative-closure.json",
+      "stored": "actual/authoritative-closure.json",
+      "bytes": 410,
+      "sha256": "4093838960dc04701a22d7f7b71cec00ed9ac5ca2055724fe366624f26d28c9b"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/COPY-PROVENANCE.json",
+      "stored": "actual/COPY-PROVENANCE.json",
+      "bytes": 6154,
+      "sha256": "3eaeb986ff1e5c690ccb840803a53303a8035969ee71ee11aea8ec88f276267d"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/CURRENT-SOURCE-LOCK.json",
+      "stored": "actual/CURRENT-SOURCE-LOCK.json",
+      "bytes": 32223,
+      "sha256": "0dae92f9e5b0b44d9afea6eb3785f4e2b9c13b955b824caf97435dc170d6506c"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/FROZEN-FUNCTIONAL-SOURCE.json",
+      "stored": "actual/FROZEN-FUNCTIONAL-SOURCE.json",
+      "bytes": 105491,
+      "sha256": "860352c612851a9cbc66be5b6e26237020b56efe03dafc814ac1f0c557468a32"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/PROVENANCE-DRIFT-ACKNOWLEDGMENT.json",
+      "stored": "actual/PROVENANCE-DRIFT-ACKNOWLEDGMENT.json",
+      "bytes": 2650,
+      "sha256": "1ac315d01a896da4ff0c4cd98a17a82c3cdd0e39063008aecdfd4c5a8aca8634"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-command.json",
+      "stored": "actual/math-parse-command.json",
+      "bytes": 622,
+      "sha256": "62eedf61b2a353c9c03ae9bef2478c78a1e8a531a5262a269a09c11e83c0fcc4"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-engine.log",
+      "stored": "actual/math-parse-engine.log",
+      "bytes": 71,
+      "sha256": "6504a17e192d1f914e316b4591ed573d854d9ec87ef66132172d3dd42797868d"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-owned-start.json",
+      "stored": "actual/math-parse-owned-start.json",
+      "bytes": 762,
+      "sha256": "887e46799dd47f27dc3b88659be53bf4b6301ff66dd8f4d8ee69614a35bb5ab7"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-process.json",
+      "stored": "actual/math-parse-process.json",
+      "bytes": 281,
+      "sha256": "3ca824abfbfa04f288f35b167b924816f7e155f7e17bf9a8fd90626f9a7ccef5"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-stderr.log",
+      "stored": "actual/math-parse-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-stdout.log",
+      "stored": "actual/math-parse-stdout.log",
+      "bytes": 73,
+      "sha256": "8851bbe6309477b42336a7a66906b18cf14a957f6c7c5475a6a376061710c7de"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-command.json",
+      "stored": "actual/math-run-command.json",
+      "bytes": 602,
+      "sha256": "107a862b880986f9c95544a96fa7933a9b9352335146d56c5e3bd1f76607a73a"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-engine.log",
+      "stored": "actual/math-run-engine.log",
+      "bytes": 112,
+      "sha256": "cf8713be25e299cafd4a77699a8eb1ac46d24e3139337a4d375f600373584541"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-owned-start.json",
+      "stored": "actual/math-run-owned-start.json",
+      "bytes": 740,
+      "sha256": "e55a6c8e609fb3ae1779d1c06b11162f866cb2cbe08ee3c98f617f7db01ea8f3"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-process.json",
+      "stored": "actual/math-run-process.json",
+      "bytes": 279,
+      "sha256": "dde2e5477404fa054ca3058921ba95fa2f37db0f428e3e2e372d2775319d4a1c"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-stderr.log",
+      "stored": "actual/math-run-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-stdout.log",
+      "stored": "actual/math-run-stdout.log",
+      "bytes": 115,
+      "sha256": "ebb07c35208523f659c3343c14752f82322470d54c6b985d7b6f5d8921dd319a"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-command.json",
+      "stored": "actual/native-parse-command.json",
+      "bytes": 758,
+      "sha256": "b3526627c0476f51e8a00656db5932eacacd0db16437b204d1bd639020fb7954"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-engine.log",
+      "stored": "actual/native-parse-engine.log",
+      "bytes": 71,
+      "sha256": "6504a17e192d1f914e316b4591ed573d854d9ec87ef66132172d3dd42797868d"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-owned-start.json",
+      "stored": "actual/native-parse-owned-start.json",
+      "bytes": 900,
+      "sha256": "3698f9b2a813fbcf3dc53ab9a2cf29b2ad7cde3ab8ab9fd01dafb89d59704061"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-process.json",
+      "stored": "actual/native-parse-process.json",
+      "bytes": 283,
+      "sha256": "2c893188462b142e910c21a5d771bcfef6432d8dca5c8c3c101c4a49b2093825"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-stderr.log",
+      "stored": "actual/native-parse-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-stdout.log",
+      "stored": "actual/native-parse-stdout.log",
+      "bytes": 73,
+      "sha256": "8851bbe6309477b42336a7a66906b18cf14a957f6c7c5475a6a376061710c7de"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-command.json",
+      "stored": "actual/native-run-command.json",
+      "bytes": 738,
+      "sha256": "6565cf04ea4b8fc127e4442ee6727da0993831782e74a626e7c06c20fd815751"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-engine.log",
+      "stored": "actual/native-run-engine.log",
+      "bytes": 177,
+      "sha256": "2f717a396b6cd20173a00e7376acfa8106277a51da3c5dc85ca960c37c0cb428"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-owned-start.json",
+      "stored": "actual/native-run-owned-start.json",
+      "bytes": 878,
+      "sha256": "610ba15880c51af269abb5c3a22996bb722eeee55c92a23b189d32bff38fc82e"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-process.json",
+      "stored": "actual/native-run-process.json",
+      "bytes": 281,
+      "sha256": "4e4b6f409adbc299c6e178c3060356a9a66198fc44de6c4f1486fe7d459d666c"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-stderr.log",
+      "stored": "actual/native-run-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-stdout.log",
+      "stored": "actual/native-run-stdout.log",
+      "bytes": 180,
+      "sha256": "22a26691aa21655e591f3e4974de44cd7fed222cfafc8760f6293f0e864865b2"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/before-inventory-process.json",
+      "stored": "actual/before-inventory-process.json",
+      "bytes": 139,
+      "sha256": "2c4aa3fe6f3534f5ca33787f4567852ff1e4762585b775c9887143b17ad132d4"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/before-inventory-stdout.log",
+      "stored": "actual/before-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "7160107312cffb51099960f49ddaec32cdad74019431bdfcbce4bd7a612e68a4"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/before-inventory-stderr.log",
+      "stored": "actual/before-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/before-runtime-closure.json",
+      "stored": "actual/before-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "df12b686ad0234c1664c3369399ac222eae714d13dd8a715b3b54f0e18ad3284"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-before-inventory-process.json",
+      "stored": "actual/math-parse-before-inventory-process.json",
+      "bytes": 139,
+      "sha256": "14106376b40e8a439038c30f47fa9f5935d2db0d59d9c51100c44366d2078ff9"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-before-inventory-stdout.log",
+      "stored": "actual/math-parse-before-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "6dc98bc401602b548232d9cb3c74be2f1889e847bb20270ef9179eebf6f114cd"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-before-inventory-stderr.log",
+      "stored": "actual/math-parse-before-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-before-runtime-closure.json",
+      "stored": "actual/math-parse-before-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "81b9ba2c9f3752ddae011f1365d7325837788c6985d26209fa15285ea4084bc1"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-after-inventory-process.json",
+      "stored": "actual/math-parse-after-inventory-process.json",
+      "bytes": 139,
+      "sha256": "7900048dd473d662d712237a397ad5fd3ee3049ced4aef6e80976da6331a445d"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-after-inventory-stdout.log",
+      "stored": "actual/math-parse-after-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "f458f9f6d3f70bcfd274a04fc16a920378df28cfdcfa0dff706db0d34390f60e"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-after-inventory-stderr.log",
+      "stored": "actual/math-parse-after-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-parse-after-runtime-closure.json",
+      "stored": "actual/math-parse-after-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "db8b1dbe28869ed4fd80b117258ee8305e88583276c3824e969843404bd2583c"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-before-inventory-process.json",
+      "stored": "actual/math-run-before-inventory-process.json",
+      "bytes": 139,
+      "sha256": "f74b113fecb0ab34bdeb62dd9e27ea4221cfa9cc4e109778430cd817aa15ae55"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-before-inventory-stdout.log",
+      "stored": "actual/math-run-before-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "1b310bd24a1388f3d7d061caf5c9606b73d62e5b875cdf44e4d4560a65800151"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-before-inventory-stderr.log",
+      "stored": "actual/math-run-before-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-before-runtime-closure.json",
+      "stored": "actual/math-run-before-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "0445b02d418989ccbb4059bbf69611bfbac7f005826e244860e685b18cc59da7"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-after-inventory-process.json",
+      "stored": "actual/math-run-after-inventory-process.json",
+      "bytes": 139,
+      "sha256": "1c23ebb1f6dd66d5f712abec864b75c25ea34da99122c92e4c6b78a7a04845ac"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-after-inventory-stdout.log",
+      "stored": "actual/math-run-after-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "abbf97ca63ad559dc57e61d31f106f302dbdc97d2a3963ff41b7703cd96c9704"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-after-inventory-stderr.log",
+      "stored": "actual/math-run-after-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/math-run-after-runtime-closure.json",
+      "stored": "actual/math-run-after-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "98aa153acbf000cdebe0415d14b2031716bc2394fcc290f94f5aaed0b80c5030"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/post-math-inventory-process.json",
+      "stored": "actual/post-math-inventory-process.json",
+      "bytes": 139,
+      "sha256": "b07567842cba9303af29a8be9b91580d8a0114d5e8f3cec3dbd762356fde884e"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/post-math-inventory-stdout.log",
+      "stored": "actual/post-math-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "7b03d2c5fb28acecb9eb63752e65372e427c3f7bfb8f3591a94853a245d562ba"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/post-math-inventory-stderr.log",
+      "stored": "actual/post-math-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/post-math-runtime-closure.json",
+      "stored": "actual/post-math-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "0307827e17de83be2a20585a2b4ba9a9d145daaabc703a682c11e2976f6875fe"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-before-inventory-process.json",
+      "stored": "actual/native-parse-before-inventory-process.json",
+      "bytes": 139,
+      "sha256": "f3b8154fe866ef4733d057d5628845325cba12a174ada6ab48534c690cada6e3"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-before-inventory-stdout.log",
+      "stored": "actual/native-parse-before-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "ea17259ce59823098e9f5860f1c575c2c8be9c3044764148ba9634dc129b7a1d"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-before-inventory-stderr.log",
+      "stored": "actual/native-parse-before-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-before-runtime-closure.json",
+      "stored": "actual/native-parse-before-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "d7df43e07a47780e8e98a740997acbf042c1be4372e5e6337088b9268bbe0ed6"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-after-inventory-process.json",
+      "stored": "actual/native-parse-after-inventory-process.json",
+      "bytes": 139,
+      "sha256": "72e6fbe403b20bb9d56345e641d0bb5cd299289f5c5d879061e9798c71346d42"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-after-inventory-stdout.log",
+      "stored": "actual/native-parse-after-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "976a9f7bbedfb159a200874786b9f37d124d9af5004cfee48591ddbd6de63d7e"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-after-inventory-stderr.log",
+      "stored": "actual/native-parse-after-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-parse-after-runtime-closure.json",
+      "stored": "actual/native-parse-after-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "50cec223eaea3416ab11965bc7bd5924bb97cfc89b2988f9a32edec643956a65"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-before-inventory-process.json",
+      "stored": "actual/native-run-before-inventory-process.json",
+      "bytes": 139,
+      "sha256": "d6eaf20bd5b9fb8c7214b103ceeacecb71adeda6946002a41309ae2bb2bde044"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-before-inventory-stdout.log",
+      "stored": "actual/native-run-before-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "80215b39a59c46a7ec86e300148eb4d111a20df9af1906b08afba8fdb4c99a88"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-before-inventory-stderr.log",
+      "stored": "actual/native-run-before-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-before-runtime-closure.json",
+      "stored": "actual/native-run-before-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "d359b8c08d3cb71851c7d54e0c711be2ffc9a2f614f894a52caf086b83383c71"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-after-inventory-process.json",
+      "stored": "actual/native-run-after-inventory-process.json",
+      "bytes": 139,
+      "sha256": "67f7642e884fe7b4edfafde70ab68e388d2e638136067008d07863880064c96e"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-after-inventory-stdout.log",
+      "stored": "actual/native-run-after-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "48f8f1c0a5005862ada7f17d66640c012a8843292f798288aa32fc9b3449ef08"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-after-inventory-stderr.log",
+      "stored": "actual/native-run-after-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/native-run-after-runtime-closure.json",
+      "stored": "actual/native-run-after-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "513162fd30991e558479288e2d209dd66ff986b97cedb698086d5743b7c725f4"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/after-inventory-process.json",
+      "stored": "actual/after-inventory-process.json",
+      "bytes": 139,
+      "sha256": "a53309df72e80bacd0266ac1b58f955a0c5df156008a4cd81624d6eee2b75a89"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/after-inventory-stdout.log",
+      "stored": "actual/after-inventory-stdout.log",
+      "bytes": 65,
+      "sha256": "1864780e3478275dffec3ff258d69754a26d1e63f4980f4ac0dddb67a218b36d"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/after-inventory-stderr.log",
+      "stored": "actual/after-inventory-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/after-runtime-closure.json",
+      "stored": "actual/after-runtime-closure.json",
+      "bytes": 73,
+      "sha256": "2b188027222610468151e11890dcbb8f297612da97fb7f20d08fc4fcf6ae2111"
+    },
+    {
+      "source": "output/windows-canonical-bone-binding-20261115T225514304/state.json",
+      "stored": "predecessors/full_receipt.json",
+      "bytes": 828,
+      "sha256": "952613d8c02c7e41a98631cd563c640e750eafc5c6d535fce2bf1f27bd8bbecb"
+    },
+    {
+      "source": "output/windows-canonical-bone-binding-20261115T225514304/source-before.json",
+      "stored": "predecessors/full_catalogue.json",
+      "bytes": 105862,
+      "sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a"
+    },
+    {
+      "source": "output/windows-canonical-bone-binding-20261115T225514304/authoritative-host-termination.json",
+      "stored": "predecessors/full_closure.json",
+      "bytes": 731,
+      "sha256": "c2a0f1b9027baeb45d0648708da2e6c87a77c2a91841a84a0241b70830674dba"
+    },
+    {
+      "source": "output/native-jiggle-headless-transport-prep-20261115/runtime-post-full-f0dd57a/verification.json",
+      "stored": "predecessors/FK_receipt.json",
+      "bytes": 79810,
+      "sha256": "57122759af2ad3c66687afab4c27b49ec09fba99bf4c5397e33e49125f650e64"
+    },
+    {
+      "source": "output/native-jiggle-headless-transport-prep-20261115/runtime-post-full-f0dd57a/authoritative-closure.json",
+      "stored": "predecessors/FK_closure.json",
+      "bytes": 734,
+      "sha256": "10215a0b33c048cd74493af310ca9a4b1adfc1ab2c1577e748f72be937779513"
+    },
+    {
+      "source": "output/source-0x31-godot-math-20261115-attempt1/verification.json",
+      "stored": "predecessors/math_receipt.json",
+      "bytes": 4416,
+      "sha256": "aed2991883ed196eb1f6f52cba0bc8c1609ea6a2e842e03f8f0d562490da996a"
+    },
+    {
+      "source": "output/source-0x31-godot-math-20261115-attempt1/authoritative-closure.json",
+      "stored": "predecessors/math_closure.json",
+      "bytes": 557,
+      "sha256": "e92e57e1f42a8c2834cca28618a9798910cda872b855bb70cb3ebc861bde3ff0"
+    },
+    {
+      "source": "output/source-0x31-native-leaf-20261115-attempt3/verification.json",
+      "stored": "predecessors/leaf_receipt.json",
+      "bytes": 21131,
+      "sha256": "dcda15bbd1938b60cc7ce3bd8f8745a75bbedef2a28d90533bc5478f259e2261"
+    },
+    {
+      "source": "output/source-0x31-native-leaf-20261115-attempt3/authoritative-closure.json",
+      "stored": "predecessors/leaf_closure.json",
+      "bytes": 519,
+      "sha256": "6822755f42de414a14a8c9bedca04f1c83e3436c7165ed00f8b2edfe938fc000"
+    },
+    {
+      "source": "output/source-native-state-20261116T020227823185/verification.json",
+      "stored": "predecessors/state_receipt.json",
+      "bytes": 1053,
+      "sha256": "31e08e4c15915f543b9df9ad8b01b4bfe472b7d47fde4558090cacc834d3097f"
+    },
+    {
+      "source": "output/source-native-state-20261116T020227823185/after-runtime-closure.json",
+      "stored": "predecessors/state_closure.json",
+      "bytes": 73,
+      "sha256": "9d1f091c21750928489c6764a61bca50b82083bbc3c8e1d2ea7031471d921f95"
+    },
+    {
+      "source": "output/source-native-state-20261116T020227823185/SOURCE.json",
+      "stored": "predecessors/state_source.json",
+      "bytes": 32194,
+      "sha256": "ac029880c8084961115e3e1233775585004c77dabd0fb867f55bd3238d642ce3"
+    },
+    {
+      "source": "output/source-native-state-20261116T020227823185/result.json",
+      "stored": "predecessors/state_result.json",
+      "bytes": 8740,
+      "sha256": "a42cc5de39e6cbaadc5adbdf3811739ef979bc0f37c56c72e369e1f159d3d1e6"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/leaf_candidate.gd",
+      "stored": "code/leaf_candidate.gd",
+      "bytes": 10013,
+      "sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/leaf_adapter.gd",
+      "stored": "code/leaf_adapter.gd",
+      "bytes": 6107,
+      "sha256": "6945153a65741f65f15505a1b840ddbf530c483790824d8a98e90a4d53e539e8"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/weighted_capture.gd",
+      "stored": "code/weighted_capture.gd",
+      "bytes": 5813,
+      "sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/leaf_harness.gd",
+      "stored": "code/leaf_harness.gd",
+      "bytes": 22445,
+      "sha256": "2abbb08831586323878cabb504e5400406144ad34e4b890791539b68633f722c"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/chain_solver.gd",
+      "stored": "code/chain_solver.gd",
+      "bytes": 8787,
+      "sha256": "01635f84e05abe0ecc998b71117eed9c7afc6f5b15d04e8743cdf1c22efa362f"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/model_adapter.gd",
+      "stored": "code/model_adapter.gd",
+      "bytes": 6819,
+      "sha256": "38a226db7af1843c1f0df04318aaccc726dc88f7c61b9389f8aa029d52a4fe8c"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/chain_capture.gd",
+      "stored": "code/chain_capture.gd",
+      "bytes": 6165,
+      "sha256": "b1dc120815f9e56b79ca4406dd3a04ddd5b0978510c6e5ca8234b11ae88ff58b"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/chain_harness.gd",
+      "stored": "code/chain_harness.gd",
+      "bytes": 17482,
+      "sha256": "d25e37499f8a4b076a65e61a1a97c7ad7fb0d27828f1bd7a2bc76e9f6b0a8b5f"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/math_checks.gd",
+      "stored": "code/math_checks.gd",
+      "bytes": 5633,
+      "sha256": "062b182c7b876658ec7b54132ec4d0125170b7506ad7bc469f92e2eb4cf61e32"
+    },
+    {
+      "source": "output/source-0x31-native-chains-20261115-attempt1/Studio/chain_math_entry.gd",
+      "stored": "code/chain_math_entry.gd",
+      "bytes": 1780,
+      "sha256": "ee5976876afe2dfbe6738fa47cb26e6bddd06e2182916ef1ffc34663af29ce50"
+    },
+    {
+      "source": "experiments/native_source_live_port_20261115/run_chain_owned.py",
+      "stored": "code/run_chain_owned.py",
+      "bytes": 31045,
+      "sha256": "297d099ff4bdd2f958e436a7bf403af743dcc1f8e3749fa61b84f253de65b721"
+    },
+    {
+      "source": "experiments/source_0x31_chains_20261115/SOURCE_LOCK.json",
+      "stored": "source/frozen-SOURCE-LOCK.json",
+      "bytes": 31858,
+      "sha256": "a373cea336a82f6b374625a5f5861fb736b3d04ca6ab1f3c83008ebe07aaa769"
+    },
+    {
+      "source": "experiments/source_0x31_chains_20261115/INDEX.json",
+      "stored": "source/frozen-packet-INDEX.json",
+      "bytes": 3749,
+      "sha256": "5f204a52d82a61174da1dbb33da3c132f636b5d8bc5eba39f7679279599782c0"
+    },
+    {
+      "source": "experiments/source_0x31_chains_20261115/COUNT_AUDIT_20261115.json",
+      "stored": "source/count-audit.json",
+      "bytes": 4243,
+      "sha256": "846c05acdda220b6b189f8ce4d3174a69d708de5760fbd9bb38b56b326db98ae"
+    },
+    {
+      "source": "experiments/source_0x31_chains_20261115/COUNT_AUDIT_20261115.md",
+      "stored": "source/count-audit.md",
+      "bytes": 4764,
+      "sha256": "fb1bf695b58f09c671abc66fded86904b33070f2d639930d4426e14a531b87a0"
+    },
+    {
+      "source": "experiments/source_0x31_chains_20261115/ERRATA.md",
+      "stored": "source/ERRATA.md",
+      "bytes": 1120,
+      "sha256": "c759cd01bff8a680b702818629f4318844725f66e3bed6483ff2299abf741946"
+    }
+  ],
+  "exact_actual_code_aliases": [
+    {
+      "alias": "candidate",
+      "stored": "code/leaf_candidate.gd",
+      "sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3",
+      "source": "experiments/source_0x31_godot_candidate_20261115/candidate.gd"
+    },
+    {
+      "alias": "adapter",
+      "stored": "code/leaf_adapter.gd",
+      "sha256": "6945153a65741f65f15505a1b840ddbf530c483790824d8a98e90a4d53e539e8",
+      "source": "experiments/source_0x31_native_leaf_compat_20261115/leaf_adapter.gd"
+    },
+    {
+      "alias": "capture",
+      "stored": "code/weighted_capture.gd",
+      "sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb",
+      "source": "experiments/source_0x31_native_leaf_compat_20261115/weighted_capture.gd"
+    },
+    {
+      "alias": "harness",
+      "stored": "code/leaf_harness.gd",
+      "sha256": "2abbb08831586323878cabb504e5400406144ad34e4b890791539b68633f722c",
+      "source": "experiments/source_0x31_native_leaf_compat_20261115/leaf_harness.gd"
+    },
+    {
+      "alias": "chain_solver",
+      "stored": "code/chain_solver.gd",
+      "sha256": "01635f84e05abe0ecc998b71117eed9c7afc6f5b15d04e8743cdf1c22efa362f",
+      "source": "experiments/source_0x31_chains_20261115/chain_solver.gd"
+    },
+    {
+      "alias": "model_adapter",
+      "stored": "code/model_adapter.gd",
+      "sha256": "38a226db7af1843c1f0df04318aaccc726dc88f7c61b9389f8aa029d52a4fe8c",
+      "source": "experiments/source_0x31_chains_20261115/model_adapter.gd"
+    },
+    {
+      "alias": "chain_capture",
+      "stored": "code/chain_capture.gd",
+      "sha256": "b1dc120815f9e56b79ca4406dd3a04ddd5b0978510c6e5ca8234b11ae88ff58b",
+      "source": "experiments/source_0x31_chains_20261115/chain_capture.gd"
+    },
+    {
+      "alias": "chain_harness",
+      "stored": "code/chain_harness.gd",
+      "sha256": "d25e37499f8a4b076a65e61a1a97c7ad7fb0d27828f1bd7a2bc76e9f6b0a8b5f",
+      "source": "experiments/source_0x31_chains_20261115/chain_harness.gd"
+    },
+    {
+      "alias": "math_checks",
+      "stored": "code/math_checks.gd",
+      "sha256": "062b182c7b876658ec7b54132ec4d0125170b7506ad7bc469f92e2eb4cf61e32",
+      "source": "experiments/source_0x31_chains_20261115/math_checks.gd"
+    },
+    {
+      "alias": "math_entry",
+      "stored": "code/chain_math_entry.gd",
+      "sha256": "ee5976876afe2dfbe6738fa47cb26e6bddd06e2182916ef1ffc34663af29ce50",
+      "source": "Generated from frozen driver MATH_ENTRY literal"
+    }
+  ],
+  "public_code_driver": "code/run_chain_owned.py",
+  "current_application_hash_joins": 204,
+  "older_packet_source_lock_entries": 202,
+  "current_functional_source_hashes": 1014,
+  "predecessors": [
+    {
+      "name": "full_receipt",
+      "source": "output/windows-canonical-bone-binding-20261115T225514304/state.json",
+      "sha256": "952613d8c02c7e41a98631cd563c640e750eafc5c6d535fce2bf1f27bd8bbecb"
+    },
+    {
+      "name": "full_catalogue",
+      "source": "output/windows-canonical-bone-binding-20261115T225514304/source-before.json",
+      "sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a"
+    },
+    {
+      "name": "full_closure",
+      "source": "output/windows-canonical-bone-binding-20261115T225514304/authoritative-host-termination.json",
+      "sha256": "c2a0f1b9027baeb45d0648708da2e6c87a77c2a91841a84a0241b70830674dba"
+    },
+    {
+      "name": "FK_receipt",
+      "source": "output/native-jiggle-headless-transport-prep-20261115/runtime-post-full-f0dd57a/verification.json",
+      "sha256": "57122759af2ad3c66687afab4c27b49ec09fba99bf4c5397e33e49125f650e64"
+    },
+    {
+      "name": "FK_closure",
+      "source": "output/native-jiggle-headless-transport-prep-20261115/runtime-post-full-f0dd57a/authoritative-closure.json",
+      "sha256": "10215a0b33c048cd74493af310ca9a4b1adfc1ab2c1577e748f72be937779513"
+    },
+    {
+      "name": "math_receipt",
+      "source": "output/source-0x31-godot-math-20261115-attempt1/verification.json",
+      "sha256": "aed2991883ed196eb1f6f52cba0bc8c1609ea6a2e842e03f8f0d562490da996a"
+    },
+    {
+      "name": "math_closure",
+      "source": "output/source-0x31-godot-math-20261115-attempt1/authoritative-closure.json",
+      "sha256": "e92e57e1f42a8c2834cca28618a9798910cda872b855bb70cb3ebc861bde3ff0"
+    },
+    {
+      "name": "leaf_receipt",
+      "source": "output/source-0x31-native-leaf-20261115-attempt3/verification.json",
+      "sha256": "dcda15bbd1938b60cc7ce3bd8f8745a75bbedef2a28d90533bc5478f259e2261"
+    },
+    {
+      "name": "leaf_closure",
+      "source": "output/source-0x31-native-leaf-20261115-attempt3/authoritative-closure.json",
+      "sha256": "6822755f42de414a14a8c9bedca04f1c83e3436c7165ed00f8b2edfe938fc000"
+    },
+    {
+      "name": "state_receipt",
+      "source": "output/source-native-state-20261116T020227823185/verification.json",
+      "sha256": "31e08e4c15915f543b9df9ad8b01b4bfe472b7d47fde4558090cacc834d3097f"
+    },
+    {
+      "name": "state_closure",
+      "source": "output/source-native-state-20261116T020227823185/after-runtime-closure.json",
+      "sha256": "9d1f091c21750928489c6764a61bca50b82083bbc3c8e1d2ea7031471d921f95"
+    },
+    {
+      "name": "state_source",
+      "source": "output/source-native-state-20261116T020227823185/SOURCE.json",
+      "sha256": "ac029880c8084961115e3e1233775585004c77dabd0fb867f55bd3238d642ce3"
+    },
+    {
+      "name": "state_result",
+      "source": "output/source-native-state-20261116T020227823185/result.json",
+      "sha256": "a42cc5de39e6cbaadc5adbdf3811739ef979bc0f37c56c72e369e1f159d3d1e6"
+    }
+  ],
+  "actual_lease_hashes_only": {
+    "ROOT-MATH-LEASE.json": "9f5c8265cf305b1b4625898d8e74905ee369f20b1a56f34086b31c16af392f69",
+    "ROOT-NATIVE-LEASE.json": "0b8de25b03d98e07ae31cd4c498c6406b68bbace1891f11b8de2ffa3c400c85f"
+  },
+  "actual_leases_copied": false,
+  "private_assets_media_geometry_rest_or_coordinate_oracles_copied": false,
+  "source_recovery": "Use the accompanying repository checkpoint/source hashes and exact code aliases; no private input fixture is distributed.",
+  "historical_full_scope": "f0dd full is retained historical proof only; current source drift is explicitly acknowledged, state180 is separately actual, and this chain experiment is not a new full product pass.",
+  "native25_erratum": "No retained rule belongs to25. It is an authored no-rule intermediate before26. Earlier frozenREADME sentence is wrong; exact code/profile need no change."
+}

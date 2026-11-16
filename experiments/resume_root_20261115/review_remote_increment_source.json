@@ -1,0 +1,1679 @@
+{
+  "format": "has_remote_increment_bounded_source_review_1",
+  "status": "SOURCE_GO_CPU_ONLY_REMOTE_UNRUN",
+  "checked_utc": "2026-11-16T00:40:05.693007+00:00",
+  "source": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\verify_remote_increment.py",
+    "bytes": 9567,
+    "sha256": "1b959847aff7e4257ec9fc7688d2bd17428e3bae48ba5842c491d8acb62b78a3"
+  },
+  "build_verification": {
+    "path": "C:\\a\\Programming\\cloudflare\\HAS-Review-20261115-SFM-Joints-f0dd57a-replay2\\BUILD-VERIFICATION.json",
+    "sha256": "c42ff4a696330be9cf4922d49009e3f0ce48fb5899a90677c6e24e754c1c6200"
+  },
+  "source_lock": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_0x31_native_leaf_20261115\\SOURCE_LOCK.json",
+    "sha256": "54ad84ae76d4e75e64c18f91b91a1c7ca403998478e5b2601997c116ead5a21b"
+  },
+  "canonical_source_catalogue": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\windows_bone_binding_full_actual_20261115\\full\\canonical\\source-before.json.gz",
+    "raw_sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a"
+  },
+  "local_git_blob_witness": "Exact builder-copy Studio files, each bound to BUILD-VERIFICATION.source_hashes; no Git command was executed.",
+  "extra_files": 203,
+  "reconstruction_counts": {
+    "exact": 40,
+    "LF_to_CRLF": 163
+  },
+  "negative_controls_refused": [
+    "NUL",
+    "CR",
+    "UTF8",
+    "wrongSHA",
+    "wrongBytes",
+    "unknownRecipe",
+    "wrongExact"
+  ],
+  "records": [
+    {
+      "path": "main.tscn",
+      "remote_git_sha256": "29917990b427f23d37cfba9f7f6d431a3bf9e940ad28b3a77350144be73a8043",
+      "remote_git_bytes": 254,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "10890897b6eff4c2aecd6991bd3109a11c2d6d9e7f2af48021693fdc20e369f6",
+      "tested_bytes": 264
+    },
+    {
+      "path": "project.godot",
+      "remote_git_sha256": "035837440da21e9a478b1edec8824410606e01666035aeb9e531531de482d372",
+      "remote_git_bytes": 970,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "4c7a9fc9751148851348511f7e9e4398c1a5d732014ff2490c1a15f27f7b6e30",
+      "tested_bytes": 1000
+    },
+    {
+      "path": "run.py",
+      "remote_git_sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1",
+      "remote_git_bytes": 8148,
+      "reconstruction": "exact",
+      "tested_sha256": "49e471fbb589880e2d0f303edc0d8ad83d068c2b1ef50210eec0891da17f49e1",
+      "tested_bytes": 8148
+    },
+    {
+      "path": "src/airflow.gd",
+      "remote_git_sha256": "e072ffeb4a5702a47ab413deb9be2305d35e46562887eb3464ca765654f9cfb4",
+      "remote_git_bytes": 6191,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "d6bb934440095553f70300609da70eb198c7ca1d45aae0403f0a6e749ad2b7b7",
+      "tested_bytes": 6276
+    },
+    {
+      "path": "src/animated_channels.gd",
+      "remote_git_sha256": "0ea45c03afcd0e8bb5d9f7f6b685ba11a0b7d8674494940ba6dec7f42996a6b0",
+      "remote_git_bytes": 10184,
+      "reconstruction": "exact",
+      "tested_sha256": "0ea45c03afcd0e8bb5d9f7f6b685ba11a0b7d8674494940ba6dec7f42996a6b0",
+      "tested_bytes": 10184
+    },
+    {
+      "path": "src/animation_clips.gd",
+      "remote_git_sha256": "5408c7b7cd4db347d461d5c4ba56f2aa2e8646bfea7f86967e2eec459a9503cf",
+      "remote_git_bytes": 14386,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "db3fa282fdfc9d8cd029d22a374701f5d8d7d2030b1e1bc2dfc6109dc5b9624f",
+      "tested_bytes": 14638
+    },
+    {
+      "path": "src/app.gd",
+      "remote_git_sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "remote_git_bytes": 147447,
+      "reconstruction": "exact",
+      "tested_sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "tested_bytes": 147447
+    },
+    {
+      "path": "src/asset_package.gd",
+      "remote_git_sha256": "643104a272691d3bc258cd75e080c99945c362c2d75769ff99530ba4518372ef",
+      "remote_git_bytes": 3735,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5cbdfdbdfa7691717fb5ec2209a177fd51b010029cea8af3fcb1692b2ed9257c",
+      "tested_bytes": 3772
+    },
+    {
+      "path": "src/atomic_metadata.gd",
+      "remote_git_sha256": "ab189890c14646241fce9019e40c0e162d1fbb82aabe760e145721c9f52f10b5",
+      "remote_git_bytes": 3930,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "23105a4f14359b0decc387d338e8f843fcb984c361e1b5a63761e70d42fcf44c",
+      "tested_bytes": 3980
+    },
+    {
+      "path": "src/audio_fade_editor.gd",
+      "remote_git_sha256": "27c2a3e76ad042de956b5521df127990a5274b83214b88912c730423ac5f539c",
+      "remote_git_bytes": 2539,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "8c3bd7ba584371cd339d45004237a6c999f0d4553abe0b841ac17f99006cd5b0",
+      "tested_bytes": 2586
+    },
+    {
+      "path": "src/audio_import.gd",
+      "remote_git_sha256": "c4fe87781f8a4532b7e353bdd35e69c8ca14f9fe3da62edf7e6c7ca0ddc28d74",
+      "remote_git_bytes": 4290,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "398dd2f7b0e6f8927dbc0f4aadce47710b03972afec99718c87bf15823804c65",
+      "tested_bytes": 4355
+    },
+    {
+      "path": "src/audio_track.gd",
+      "remote_git_sha256": "815bf76f204d86399d487295e183a2113a48383abd325cd166d6cb141544222a",
+      "remote_git_bytes": 16208,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "afda6766566763bd888c1ddfc067256a17d12a928b314e6a2c28b4029b88bda7",
+      "tested_bytes": 16492
+    },
+    {
+      "path": "src/audio_trim_editor.gd",
+      "remote_git_sha256": "b1d2cfbbb24acbb1a2d6ff4acbbf17e2ff262d16a4e2bf4d567ebe5efe5cb864",
+      "remote_git_bytes": 4263,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "57aaa9e9c04e5c5a82788408f6a94bdb0d428bfd320b3c6ab78e6235b2c572ca",
+      "tested_bytes": 4343
+    },
+    {
+      "path": "src/base_shape_editor.gd",
+      "remote_git_sha256": "4c581e51f429f968ddcc8396818fec02837b1e0a345b2a838383e1570f3e8fe0",
+      "remote_git_bytes": 16788,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "25d4659c574ac28c03850282d73596875741cb88dd29a34190f8929f0d29ed87",
+      "tested_bytes": 17076
+    },
+    {
+      "path": "src/body_animation.gd",
+      "remote_git_sha256": "aae1891ae15f7e7d79c4a963aed967e73dfdcb56dcfd1431fa73e8755cdff763",
+      "remote_git_bytes": 8824,
+      "reconstruction": "exact",
+      "tested_sha256": "aae1891ae15f7e7d79c4a963aed967e73dfdcb56dcfd1431fa73e8755cdff763",
+      "tested_bytes": 8824
+    },
+    {
+      "path": "src/body_curve_runtime.gd",
+      "remote_git_sha256": "2ab81a207b3afbb2f88ae1f4b10fdb9aae1b41f982bdef845a793ed47fa08db2",
+      "remote_git_bytes": 4840,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "ac0730e66bf716e8a6370cb4b55b7afbaf30d3626e310fa850c1e344002ea64f",
+      "tested_bytes": 4930
+    },
+    {
+      "path": "src/body_curves.gd",
+      "remote_git_sha256": "8c227a2093f117d66544ee597dade2163f6859f55fabaa72987f02abed280a62",
+      "remote_git_bytes": 18527,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e6e616d19e2e7d6b88dacbc5cbdc7f6869b2fb79f96599d5ea54886ba88304f1",
+      "tested_bytes": 18818
+    },
+    {
+      "path": "src/bone_labels.gd",
+      "remote_git_sha256": "c2578be56876c26dcb7b9bbf373bd5c0d54c47b255c67ad2d125103f3afbf6c2",
+      "remote_git_bytes": 3426,
+      "reconstruction": "exact",
+      "tested_sha256": "c2578be56876c26dcb7b9bbf373bd5c0d54c47b255c67ad2d125103f3afbf6c2",
+      "tested_bytes": 3426
+    },
+    {
+      "path": "src/brush_stroke.gd",
+      "remote_git_sha256": "2ed0fa4980f6171b725fc392edcb98b2e17ebacd604ad2c72486fa5cff0192e2",
+      "remote_git_bytes": 3131,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "56048b717b04b9639fef9317cafa98e08cc887345049d312a1b77975c50c995a",
+      "tested_bytes": 3195
+    },
+    {
+      "path": "src/camera_transform_editor.gd",
+      "remote_git_sha256": "bafa6dbf00ff4a9c17c2c2b4e94e0a255b9ce09cb3102a9dcb06f4d3b3f6374a",
+      "remote_git_bytes": 5635,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "ea39598fe27b6aa06113415ac8df6b48bf8b4c7d813ad53e9ed686d857b48791",
+      "tested_bytes": 5739
+    },
+    {
+      "path": "src/canvas_raster.gd",
+      "remote_git_sha256": "3d72e3676aa7a417e7a92f93faac88b9568f3b8d4e9952f7067803e242e37e0e",
+      "remote_git_bytes": 275,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "21dcb27b0c607fbb82897736a97a7969409fcb3ef10b22a987a271d5b41180bb",
+      "tested_bytes": 282
+    },
+    {
+      "path": "src/canvas_size.gd",
+      "remote_git_sha256": "336b82049f63458dbc5d149ee7edfaf215f251793b5620a4aa0dde75b009e62a",
+      "remote_git_bytes": 868,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "96cc48a6708df69c641ba878eca0f23dc90e1ffad9600c03819e056afc77da3c",
+      "tested_bytes": 882
+    },
+    {
+      "path": "src/canvas_view.gd",
+      "remote_git_sha256": "296aba09440ad481b18930296d217a3d092bccf7bb8b49b8a2592d8057a1d244",
+      "remote_git_bytes": 7935,
+      "reconstruction": "exact",
+      "tested_sha256": "296aba09440ad481b18930296d217a3d092bccf7bb8b49b8a2592d8057a1d244",
+      "tested_bytes": 7935
+    },
+    {
+      "path": "src/cel_clipboard.gd",
+      "remote_git_sha256": "ed3c41077855e4e6ff0507e8a90cf76b1b93681df57a57f43e825052705d9219",
+      "remote_git_bytes": 7915,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "9ff8698e472455d5ba1171c7f26c8cd9f042c5c5bf9f4f8cc6b6ecf5d401a6d1",
+      "tested_bytes": 8036
+    },
+    {
+      "path": "src/cel_patch.gd",
+      "remote_git_sha256": "f5633aba0739e477422f8953d2a93761558c708402195d69ddba54a4ccf5d2e9",
+      "remote_git_bytes": 3253,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "df853b653977b1dd26bd601e696d027d960287d23105c3c3cef6c8ece7cb8b55",
+      "tested_bytes": 3307
+    },
+    {
+      "path": "src/cel_pixel_history.gd",
+      "remote_git_sha256": "bbfc4b1464deecbdaa11a05bb39bcb2667b92cc3e145cfbbbe86397ab30b7d3b",
+      "remote_git_bytes": 2534,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "c2e66544e53668fe1d3258b3178fa7cdac2b313b3824495d25b25c0ab2563275",
+      "tested_bytes": 2577
+    },
+    {
+      "path": "src/cel_png_verifier.gd",
+      "remote_git_sha256": "bd81aa21005b6ff67f31883547a4be08a6f07fec93e3fa092c9394d18b2ad238",
+      "remote_git_bytes": 1919,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e41dceea231e51d2ed5ec2e3c35a8c1b1b7db2bcccaa1b818687da534f075cdf",
+      "tested_bytes": 1955
+    },
+    {
+      "path": "src/cel_raster_budget.gd",
+      "remote_git_sha256": "ae0273ad3aa07c0d64dafef95aa8c0b2bac811c5f2f546d5f2c52dc8a29b3414",
+      "remote_git_bytes": 2733,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "4ea88306b9b319bfef7d1eee537520cfc63d2c190aab36deda8d18714ea88906",
+      "tested_bytes": 2776
+    },
+    {
+      "path": "src/cel_raster_owner.gd",
+      "remote_git_sha256": "30b6601df440dcc9035e9104ac93049a0c74a0da7c3bd42df1f04c71247eb9df",
+      "remote_git_bytes": 4958,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "be86e2e6d9a83c361018bee12728c773990bc6956c98084c8aad4f625885ddf9",
+      "tested_bytes": 5044
+    },
+    {
+      "path": "src/cel_raster_reader.gd",
+      "remote_git_sha256": "1dd4acf082cdc5a88115b250cbead6fe7b0bcdd333805495e24872fd65250250",
+      "remote_git_bytes": 5847,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a17463f4b3f4740f02316d47972149754258a40947b8d4daf4e93d6b49f26410",
+      "tested_bytes": 5931
+    },
+    {
+      "path": "src/cel_raster_snapshot.gd",
+      "remote_git_sha256": "11ee91de8fc60123432ac54d6dadf29a022b518fa3dcb173c5d1a3924b6a8e32",
+      "remote_git_bytes": 2577,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e1b44ea9f7c0eadd6562caae5f580398ad30cffbd969d036b8f5fef0a7617203",
+      "tested_bytes": 2619
+    },
+    {
+      "path": "src/cel_raster_snapshot_cache.gd",
+      "remote_git_sha256": "b9554ab47f6655da46d2039bf16f3e51453117e7a98dffd6d515b209eb38d95f",
+      "remote_git_bytes": 3025,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "027c13fe127c001e52037e96c4938bdda635b76de85bbd80c252339460354983",
+      "tested_bytes": 3083
+    },
+    {
+      "path": "src/cel_timing.gd",
+      "remote_git_sha256": "0717469a7cfab94fc46e80cc2973ad68b8c5be1aac503109173414ba8719e1f0",
+      "remote_git_bytes": 1963,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a22a43ecac87d79eaf7ed98aaf80595f4b4b8c282107d3b088ddeced4f1647e1",
+      "tested_bytes": 1985
+    },
+    {
+      "path": "src/cel_timing_editor.gd",
+      "remote_git_sha256": "1ea0155d56f807dcd53417ab789301fc675cdc0bbf8ad611f6e029a118c36c3b",
+      "remote_git_bytes": 5102,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "24e67f48705f58fcb99a80a52ff08f90066630615491c27af861d46270b0fbd8",
+      "tested_bytes": 5173
+    },
+    {
+      "path": "src/character_height.gd",
+      "remote_git_sha256": "a67e7de2f4c53207cdf8b69422b67d140b067e72b3f1bb5bf3ecab3529690198",
+      "remote_git_bytes": 5312,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "be18fa34108a45a126f76a42e7b4c1a569c1ee8332855af40f2ef25a77725ce8",
+      "tested_bytes": 5394
+    },
+    {
+      "path": "src/clip_editor.gd",
+      "remote_git_sha256": "88ca46f1f4e0a9f174a42cdd0a4305ec80d3c32fbf59c9e055cc2aeb037434aa",
+      "remote_git_bytes": 11219,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "6a91d85c19f7ab79be4a7ff89dc19705fc76195da3326abc403c625f2b39f01a",
+      "tested_bytes": 11377
+    },
+    {
+      "path": "src/color_palette.gd",
+      "remote_git_sha256": "d8f7107a0a55998ba175aae1b28bd92f174190db8a7fe635372e8c3c3b36b369",
+      "remote_git_bytes": 1200,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "bcb24dd4b97dc1366b15eea9b419fb92ac223640d520b84ad6210f98636f6fb1",
+      "tested_bytes": 1222
+    },
+    {
+      "path": "src/color_sampler.gd",
+      "remote_git_sha256": "f375220ea48340bc5ce7e38d047ea160e51da47b9597a53026de58883c6d8a52",
+      "remote_git_bytes": 7170,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "31de1647101a8b1b51756330b2df2ed8d29319a707224084bbfa4b1787589070",
+      "tested_bytes": 7288
+    },
+    {
+      "path": "src/constraints_lesson.gd",
+      "remote_git_sha256": "0839da05a7253289fba7270377f0e9b86d70263a02ee9983204925d1fa519cd6",
+      "remote_git_bytes": 3833,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a0e7975ea8c1a33ec6acf63fa8fa69a156f3eabe31b34729607ea96143ca26b7",
+      "tested_bytes": 3885
+    },
+    {
+      "path": "src/contact_animation.gd",
+      "remote_git_sha256": "03d56343e67064c3994632d326fce8608caff6b190e340452253370f1d97d4ba",
+      "remote_git_bytes": 3782,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "d1433a5aca60258d64d1dbafa3fdf65796976661b7f3fb61ab329c362e297961",
+      "tested_bytes": 3847
+    },
+    {
+      "path": "src/contact_bend.gd",
+      "remote_git_sha256": "5f10c4810a50ede195b40f014e4c547ce2ea9d0e6542ffc5105ed286d77a9721",
+      "remote_git_bytes": 1202,
+      "reconstruction": "exact",
+      "tested_sha256": "5f10c4810a50ede195b40f014e4c547ce2ea9d0e6542ffc5105ed286d77a9721",
+      "tested_bytes": 1202
+    },
+    {
+      "path": "src/contact_clipboard.gd",
+      "remote_git_sha256": "0bf565300079be0342dd1a42920c26d5972cc6b89f4e8f0ef5171234115b0806",
+      "remote_git_bytes": 3365,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "7ac4bb742816f3170ad04e5c4c8f17f9aaa0d78bd7ca21bad3c2ec6dc62832ad",
+      "tested_bytes": 3421
+    },
+    {
+      "path": "src/contact_correction.gd",
+      "remote_git_sha256": "22d5b2463cfd330cbff20216dfb6b42f56f0cd6da680b4595dbc73c589b4617c",
+      "remote_git_bytes": 1772,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "795c8aa312e9b988d976276f6c265c24bb7e6f2cb03e1aa173bdef934c785da0",
+      "tested_bytes": 1799
+    },
+    {
+      "path": "src/contact_editor.gd",
+      "remote_git_sha256": "a5c18edbafaad3fc4e9c78d89121d30080a18ddf08507241ae08e1839f135504",
+      "remote_git_bytes": 13486,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5706704bfc3a2d61f228c9ca1ae3216534fef0aa00855cbf3bfc5eb2dd59f124",
+      "tested_bytes": 13703
+    },
+    {
+      "path": "src/contact_ranges.gd",
+      "remote_git_sha256": "92da7a71da1e77543a940b6cfcee0325fb7ed26cabf7653b26f7ff55e84c9a5b",
+      "remote_git_bytes": 4025,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "2e936b1f09b4444d1b406a593c2735a96c91c45afc4a23f6578834d6186f70f9",
+      "tested_bytes": 4089
+    },
+    {
+      "path": "src/contact_viewport.gd",
+      "remote_git_sha256": "48137108abe591ccd92401c02969579219ddc5dfbdee8e682f093693fe4af346",
+      "remote_git_bytes": 11616,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5298f7160312382bf146dfc1103d43fc5d8f8459131b16c7527f03ae0cccbbfc",
+      "tested_bytes": 11791
+    },
+    {
+      "path": "src/dock_tree.gd",
+      "remote_git_sha256": "9e730db5a1794cbf166084856238a7e19459ad0ab65a0ba70aef0a51b253984f",
+      "remote_git_bytes": 10599,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "354d850050b490d96bb18b8914d751e887bbb7a7091b7441bf086d70856d704d",
+      "tested_bytes": 10764
+    },
+    {
+      "path": "src/drawing.gd",
+      "remote_git_sha256": "775d88439a9d8b244e3564d34d3c998032bde5bacbd505028acba593921f6de0",
+      "remote_git_bytes": 9161,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "947914fad9f1b1bf005ffc43df8cfcee3b36bdf1e4829560400615b15686648d",
+      "tested_bytes": 9334
+    },
+    {
+      "path": "src/drawing_limits.gd",
+      "remote_git_sha256": "d62518750895cc368d7bc1b3826335d369dfc26344daf70f30037208c7499ffa",
+      "remote_git_bytes": 900,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e10ab713256d01b6704cca1f2a1f7385cfadeb3485b2f07a7d0f57fcee3a27d3",
+      "tested_bytes": 918
+    },
+    {
+      "path": "src/drawing_origin.gd",
+      "remote_git_sha256": "6aa6d775f105ee67f4f280db6adf0d3668566c8aa324a2e56286b6cde95ca64d",
+      "remote_git_bytes": 5393,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "b5cdf8bb61f41f8333e5f82e61456cddacde537a0b37a66b3d903acd2a154f51",
+      "tested_bytes": 5459
+    },
+    {
+      "path": "src/drawing_overlay_cache.gd",
+      "remote_git_sha256": "a3d20215d0c642bb9c906aab8d9a22a0a94caa9cab02acbf7fd4f4fe60fdeed4",
+      "remote_git_bytes": 1727,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "585631e7d5e9cfb68f58ec99698b4cb5ec6aac0d67c4b580c8cc4ec2dbc66b75",
+      "tested_bytes": 1765
+    },
+    {
+      "path": "src/drawing_selection.gd",
+      "remote_git_sha256": "24bfd1475afda5afc623eecea29447a6b5c3eeb9eb8bd84fca78321b0be5931a",
+      "remote_git_bytes": 1872,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "23575c655ef1300860e233b9685f6f3024bd27d363d230d732fab4ad0414f41a",
+      "tested_bytes": 1898
+    },
+    {
+      "path": "src/drawing_selection_editor.gd",
+      "remote_git_sha256": "bf63e7b586d79e37b3cc983854c08482dff341af252505c652ad1c15bcb35908",
+      "remote_git_bytes": 10084,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a7b18b396999c03c84029579f948338ca7f61a73344ce82d0009bffef8e1e744",
+      "tested_bytes": 10247
+    },
+    {
+      "path": "src/drawing_transform.gd",
+      "remote_git_sha256": "f14bfa944db0d37967b97dfff396addc7735e960fac41cb627595323ee391b1e",
+      "remote_git_bytes": 4156,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e17dff980afc8181a6cad469a40cdbaf56df26063dce598542363a0f3d77b36f",
+      "tested_bytes": 4212
+    },
+    {
+      "path": "src/drawing_transform_editor.gd",
+      "remote_git_sha256": "5ac0b2257ffa54587ecba5ff0aa36688f7fdaff7fdae6a7d575e79a3f08beec3",
+      "remote_git_bytes": 8114,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "d10e0702080a4dbc022912b4529d808323c546fb44ce1f5962fcda92a3f46f5a",
+      "tested_bytes": 8247
+    },
+    {
+      "path": "src/editor_grid.gdshader",
+      "remote_git_sha256": "cb40bb828a0844f641c6bd1d3a69c0a0ba7d4e446d1b0ad8bd450429143a730a",
+      "remote_git_bytes": 759,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e94c439ce52870df647fa5cbcd4695dde1718047f6e3a38042f6e54a70c6ef3f",
+      "tested_bytes": 778
+    },
+    {
+      "path": "src/encoder.gd",
+      "remote_git_sha256": "8851c3edf9ff07f9e6ddc4a49bd03a2d342791e5cb3f9fc0116d5bffaded75c9",
+      "remote_git_bytes": 4321,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "4627086173acb499f95f159cccfdde31e38267c9d6839667c640abf9024fba82",
+      "tested_bytes": 4398
+    },
+    {
+      "path": "src/expression_pose_editor.gd",
+      "remote_git_sha256": "e59b537659c67b47721343f7c7f7ef00d5b91859468743dbb5ee10df0ae53e5a",
+      "remote_git_bytes": 3837,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "b13f31be2eefc16676d91ad11ef288ff5cfd3fb5021422dc2cd1f143f3f146b9",
+      "tested_bytes": 3899
+    },
+    {
+      "path": "src/expression_presets.gd",
+      "remote_git_sha256": "d184a8c16c8e7947e9eedbe445e40c86cdbec6c0f497ce18720432a20c2698b6",
+      "remote_git_bytes": 11635,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "c68207974ef4d90f69f163c935c30c18c44c050dfe660869c159b7bb70618d34",
+      "tested_bytes": 11793
+    },
+    {
+      "path": "src/extended_timing.gd",
+      "remote_git_sha256": "3d9f398d86b8099dc4ac5c81251f620660bcdaac802cb42fcf2b42169e15e6f6",
+      "remote_git_bytes": 3275,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "7bce72af46d5dc8b2ef9fb0674b0e1dc39bf0be6f540c9c3915e1b81ec9b9858",
+      "tested_bytes": 3333
+    },
+    {
+      "path": "src/fan_editor.gd",
+      "remote_git_sha256": "e2b4800130369aa167a5dc4efd97eacf72c3f06f8f2a9bfdb23f56e428e7a7b3",
+      "remote_git_bytes": 7681,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "b6d13d58d71c2b846926260f844135210e711822e562a69dc19657df20f93297",
+      "tested_bytes": 7787
+    },
+    {
+      "path": "src/fill.gd",
+      "remote_git_sha256": "a420c1b6cbc024c86f45bcdf6068c8ba7e570a32e88eda3c49828e7ca9479413",
+      "remote_git_bytes": 5738,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "da890abf8bc31fbac655c2d5e8a0cecce723ca58f11f7e21fbeb462a5c36d93a",
+      "tested_bytes": 5816
+    },
+    {
+      "path": "src/fill_editor.gd",
+      "remote_git_sha256": "df6a8c91f1c23c775892a404114b2c70d4b852f66d05e390746c2f44c1e21cf4",
+      "remote_git_bytes": 10555,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "848ec51792054d6b387ff37a24f95c57c16a429e460e9933c98404da4d2f3de7",
+      "tested_bytes": 10701
+    },
+    {
+      "path": "src/fill_gaps.gd",
+      "remote_git_sha256": "198337bcf8dfd5e1f00730985b89fa9351147626b162d1705b471d9f77479b3e",
+      "remote_git_bytes": 1565,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e7bf39af180fec533df8f8255be4c4c3e90293fa1b8ba37c1e2d0ccf9cee1167",
+      "tested_bytes": 1595
+    },
+    {
+      "path": "src/first_movie_lesson.gd",
+      "remote_git_sha256": "c112931d65f720bbc3c1031a06c9354a66bf647b0c973d2522066316f8877201",
+      "remote_git_bytes": 7425,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "3072102adf232cc9a6bdb6eeb0421f6c3be7661532eae92e3565c55df244eb54",
+      "tested_bytes": 7539
+    },
+    {
+      "path": "src/foot_contacts.gd",
+      "remote_git_sha256": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607",
+      "remote_git_bytes": 9762,
+      "reconstruction": "exact",
+      "tested_sha256": "45158628ac1bf80b60446486c7aa1a6ecb104f9732eeb5b05a1da54643acd607",
+      "tested_bytes": 9762
+    },
+    {
+      "path": "src/foot_hold.gd",
+      "remote_git_sha256": "5fe8d8023e2d74aa99c92e402e90a6a1506fee396767d21e32a408fb398244ea",
+      "remote_git_bytes": 2687,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5096e4dbc16a0098cb22b8d305bf3386c590663bb9d81939ba4a4694b8caa081",
+      "tested_bytes": 2743
+    },
+    {
+      "path": "src/has_project.gd",
+      "remote_git_sha256": "eadbcf0c063f238bc3da694df60f7141512bd6251d03b9da466835261925c031",
+      "remote_git_bytes": 15014,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032",
+      "tested_bytes": 15268
+    },
+    {
+      "path": "src/has_project_loader.gd",
+      "remote_git_sha256": "6c9f5e0803eeffc9c0596777c5c1518295abccf9ebc16441e7ec3817c274adc1",
+      "remote_git_bytes": 1437,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "cdb97409b2d7b202bd8ba7cb44c93d7c1198fe41901f3a080e40546b48e3c673",
+      "tested_bytes": 1458
+    },
+    {
+      "path": "src/has_snapshot_writer.gd",
+      "remote_git_sha256": "acddf9b090d26f591e989ca217a870bddd85bd85713ffa0aec5701cf5ae8301a",
+      "remote_git_bytes": 5548,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "61400dfcf743cf4bd1e0d99e3aec7e1c74f05d61108cfa64cf7afe3f7613111f",
+      "tested_bytes": 5630
+    },
+    {
+      "path": "src/home_screen.gd",
+      "remote_git_sha256": "ea915a61ce25d834f317feb9f6233ad41d0a8aa76e00b798203d8678fe736c1e",
+      "remote_git_bytes": 6635,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "bbfb460aa73d153b5b4db7547bc5ba5577684ad65a9dc2ec03c2ba4895b354a5",
+      "tested_bytes": 6732
+    },
+    {
+      "path": "src/import_actions.gd",
+      "remote_git_sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b",
+      "remote_git_bytes": 3869,
+      "reconstruction": "exact",
+      "tested_sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b",
+      "tested_bytes": 3869
+    },
+    {
+      "path": "src/import_height_review.gd",
+      "remote_git_sha256": "2abba09412a488b16338605c8082546adad805b3ebe14527060553d4b916d791",
+      "remote_git_bytes": 6594,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "393da8ee3a1f9e68f95f5b16e3d70e6777fb71a78d0a33dbfaa388b1306573a9",
+      "tested_bytes": 6692
+    },
+    {
+      "path": "src/import_placement.gd",
+      "remote_git_sha256": "f464d7595e894d53cc64a5fbac1de7708b152ecbf8b5163b56df1c66976e49e0",
+      "remote_git_bytes": 8405,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad",
+      "tested_bytes": 8534
+    },
+    {
+      "path": "src/interpolation_lesson.gd",
+      "remote_git_sha256": "fb91ac7c3f6b0b319c5fb27ea08f8b777fcf584f98e66af97cc69f650197974a",
+      "remote_git_bytes": 3287,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "be5a8b7233ba3e5d41aed206c914c00aa19e1c0c1f6041be23c52dda8d941c89",
+      "tested_bytes": 3326
+    },
+    {
+      "path": "src/joint_constraints.gd",
+      "remote_git_sha256": "159b6ca53b1167bc646ebc01f599811c497664f20e87b69da3405dd3f0bd02f3",
+      "remote_git_bytes": 10183,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "b805fc708332ed44a98d4cc25e0ae18f5adec61f280c4915e29ac49d12146505",
+      "tested_bytes": 10338
+    },
+    {
+      "path": "src/krita_import.gd",
+      "remote_git_sha256": "af1dad5014af23fd05310a687638e7de3eaa7d41395352fc4feeb7e16453b5be",
+      "remote_git_bytes": 16152,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "7174de89788e8ecaac2884a96a70ff9ee077036bcf1dee224f33e5a26c1653e4",
+      "tested_bytes": 16380
+    },
+    {
+      "path": "src/krita_preview.gd",
+      "remote_git_sha256": "af9bcbb6bce378a43434fb06f0deb6cdc306ec10c05f136d2793424b23fc6c60",
+      "remote_git_bytes": 656,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a69624992181a4da46507ef40452ce62976008f80320dbeb90f5d8d117087b53",
+      "tested_bytes": 669
+    },
+    {
+      "path": "src/layer_editor.gd",
+      "remote_git_sha256": "6188e135d99aaa6a75047cc540ba8ecab3455ea7b4af928838f476623a6fa56d",
+      "remote_git_bytes": 9602,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "411f9035ef230c7ef2c34a32ae0d6fc49a53499a1a58190f0cec5e2a15692c36",
+      "tested_bytes": 9787
+    },
+    {
+      "path": "src/lesson_store.gd",
+      "remote_git_sha256": "e7fdef13d8f62826afd6f4125f2f4e7090ff615e61292247a204d6247a48c260",
+      "remote_git_bytes": 8824,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "b552b0617fd268619a5dee4b66eed17c48115a51924a900296d27a911cba53b4",
+      "tested_bytes": 8947
+    },
+    {
+      "path": "src/lighting.gd",
+      "remote_git_sha256": "a42c3b9584923e5e362b9a8674457f42ca6e327c927b46f4795d8dc30aa66c17",
+      "remote_git_bytes": 484,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "23aa3450bedb3a26fdcec3fc8d032eeda9d4642c57172910daf442f0b306e6a6",
+      "tested_bytes": 490
+    },
+    {
+      "path": "src/lighting_lesson.gd",
+      "remote_git_sha256": "674456f18dc97947dcb9033e2073f27b633681fb322bf1b529b2ac343e3759ec",
+      "remote_git_bytes": 1577,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "8c05d6266debf993feddc310659602c766de10d37ce462b454e21b5464d84f67",
+      "tested_bytes": 1601
+    },
+    {
+      "path": "src/limb_ik.gd",
+      "remote_git_sha256": "5aaf67f2329cc71e8ed16e038f77a1c17f4a48da8fd8c2489719074d6c26d870",
+      "remote_git_bytes": 8969,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "3e3b2a399c86a7c1ca7ceff532446a393a8fed18135262f8f3687b0b053e2df2",
+      "tested_bytes": 9098
+    },
+    {
+      "path": "src/map_calibration.gd",
+      "remote_git_sha256": "cc9d1150c8c84924cb685c973bd9ddeb5128232d9ea42688c9e3beacffd776e2",
+      "remote_git_bytes": 11199,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a20af8c8fea16ba1cdb5f068c581bcc521fa7837f367a062c3283c9025df70c6",
+      "tested_bytes": 11361
+    },
+    {
+      "path": "src/map_measure.gd",
+      "remote_git_sha256": "f15de2e25de6ffb71506483dbca0e4d123616b5b6c5fdbb318be22251000d853",
+      "remote_git_bytes": 4077,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "4ddf34b2e3758edf4aecf866d96bc48bd9c0335d586eb569c21d4a5d204271ca",
+      "tested_bytes": 4130
+    },
+    {
+      "path": "src/mmd_motion_candidate.gd",
+      "remote_git_sha256": "39780d352f8ee935571e99a68e19a26bb822750206851489783e1a0474cb391e",
+      "remote_git_bytes": 6131,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "27a5b6c5433a5f6d2133dedb7d14f50b5138098433c66b9862c2bdc4c9b76455",
+      "tested_bytes": 6218
+    },
+    {
+      "path": "src/mmd_pose_candidate.gd",
+      "remote_git_sha256": "3f9f89f9b98668ed1ff93b31571d55098089d27527389498edf6d366bcb2199f",
+      "remote_git_bytes": 4321,
+      "reconstruction": "exact",
+      "tested_sha256": "3f9f89f9b98668ed1ff93b31571d55098089d27527389498edf6d366bcb2199f",
+      "tested_bytes": 4321
+    },
+    {
+      "path": "src/mmd_pose_import.gd",
+      "remote_git_sha256": "86cff64c101ab9cd655497e5ff93f0f22814195230cee11a077cb8da47946118",
+      "remote_git_bytes": 15140,
+      "reconstruction": "exact",
+      "tested_sha256": "86cff64c101ab9cd655497e5ff93f0f22814195230cee11a077cb8da47946118",
+      "tested_bytes": 15140
+    },
+    {
+      "path": "src/mmd_pose_shapes.gd",
+      "remote_git_sha256": "3bfee8d1317c6a80837437ea5fd785c196a7771606e76420fae443e1ca3a256b",
+      "remote_git_bytes": 2856,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "8a72beec1ec8264ab03136dec435dc5a426890d122a7515350124324f584e3b5",
+      "tested_bytes": 2906
+    },
+    {
+      "path": "src/model.gd",
+      "remote_git_sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678",
+      "remote_git_bytes": 28593,
+      "reconstruction": "exact",
+      "tested_sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678",
+      "tested_bytes": 28593
+    },
+    {
+      "path": "src/model_opacity.gd",
+      "remote_git_sha256": "2408cda6f011132be1cffbfd1446c76a4b21631338e83957164c127241192dde",
+      "remote_git_bytes": 3076,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "526a12fdcfc1390e2786738b555924bd1c54bc8381facc2ca2ca694ae3126900",
+      "tested_bytes": 3145
+    },
+    {
+      "path": "src/motion_animation.gd",
+      "remote_git_sha256": "c0116a027a9828f799dcfd9b825cecf887730b58f01afc27be5b77ef716c64d3",
+      "remote_git_bytes": 6546,
+      "reconstruction": "exact",
+      "tested_sha256": "c0116a027a9828f799dcfd9b825cecf887730b58f01afc27be5b77ef716c64d3",
+      "tested_bytes": 6546
+    },
+    {
+      "path": "src/motion_assist.gd",
+      "remote_git_sha256": "8dc52ae7b61859ec6874e18a4119716594a4d7f8e4291c1b6fba81f74f5be953",
+      "remote_git_bytes": 8924,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "f1914135df075c100120dc0ea8636cecc13b2cad8f5c5ca34fb8a477ef18e84c",
+      "tested_bytes": 9051
+    },
+    {
+      "path": "src/motion_assist_preview.gd",
+      "remote_git_sha256": "f2f770402461959f87feed2c631d21a6de433a623005e25b02aeb78c602d0090",
+      "remote_git_bytes": 5902,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5e707edc1095203c45b0f4e01cd3bb7e92d5bfeb7d93325d0fc9d9930d5fd510",
+      "tested_bytes": 5992
+    },
+    {
+      "path": "src/motion_assist_tracks.gd",
+      "remote_git_sha256": "fd9f3e530683d6e19df957decfa990987ab71a5a53cca47dcb3b1969dfbc72e0",
+      "remote_git_bytes": 11765,
+      "reconstruction": "exact",
+      "tested_sha256": "fd9f3e530683d6e19df957decfa990987ab71a5a53cca47dcb3b1969dfbc72e0",
+      "tested_bytes": 11765
+    },
+    {
+      "path": "src/motion_editor.gd",
+      "remote_git_sha256": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d",
+      "remote_git_bytes": 11316,
+      "reconstruction": "exact",
+      "tested_sha256": "76202b1334410e0c2a149d24a706e924dfc907acb7a4a46f98c37d44bb22514d",
+      "tested_bytes": 11316
+    },
+    {
+      "path": "src/movement_path.gd",
+      "remote_git_sha256": "777123851803dfb2fda5c0a311c7c91d4e7e161593deda31cf7032d24ca63770",
+      "remote_git_bytes": 4754,
+      "reconstruction": "exact",
+      "tested_sha256": "777123851803dfb2fda5c0a311c7c91d4e7e161593deda31cf7032d24ca63770",
+      "tested_bytes": 4754
+    },
+    {
+      "path": "src/movement_path_editor.gd",
+      "remote_git_sha256": "3d05b4b5a3b9fc6d68e69523abbe3c3654aed88f0577949db177533a8c563cf3",
+      "remote_git_bytes": 14469,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "783b0c4943df16a6f9fa8133bc1196302cff771bb90a68b14d5cb564caed36b7",
+      "tested_bytes": 14684
+    },
+    {
+      "path": "src/movement_path_preset.gd",
+      "remote_git_sha256": "9b0fb240ae55e6a485623334e68e1a65d9e6a47181876a8fb983df288476cc81",
+      "remote_git_bytes": 9437,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "2c9a885fccf11776406ff05e85b92df83cf4a0d2c232fd474ce1cfaea8f8386d",
+      "tested_bytes": 9565
+    },
+    {
+      "path": "src/movement_path_view.gd",
+      "remote_git_sha256": "c66a06fcf7a263599390b54dd595970be4fc393c8a89758d7e5875197d842656",
+      "remote_git_bytes": 2522,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "705f629777ca48d022122cebaceab693f003778835491d988789ef989655669b",
+      "tested_bytes": 2569
+    },
+    {
+      "path": "src/object_timing.gd",
+      "remote_git_sha256": "745d23917a586867f3c2e9634d9bab8a62a6663ae2bbd6891b8f3c6d163b6785",
+      "remote_git_bytes": 1742,
+      "reconstruction": "exact",
+      "tested_sha256": "745d23917a586867f3c2e9634d9bab8a62a6663ae2bbd6891b8f3c6d163b6785",
+      "tested_bytes": 1742
+    },
+    {
+      "path": "src/onion.gdshader",
+      "remote_git_sha256": "d33b8120b5a2e2aa0d6323878ebd7a9fcefbb4148b6a601ce0169f93d14aca9b",
+      "remote_git_bytes": 204,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "06c80290ba88f0cb5e714ec60647e1044a1fea581bd3b625712ad9d2448d7e3e",
+      "tested_bytes": 210
+    },
+    {
+      "path": "src/onion_editor.gd",
+      "remote_git_sha256": "57807886afb36115cc33a31140550c041328d67e9629377ed7793c8a27efc147",
+      "remote_git_bytes": 2863,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "919719350cfd298c123a9af165c17ee3b09217ab2447f58a386cdf5f57de2b24",
+      "tested_bytes": 2918
+    },
+    {
+      "path": "src/orbit_navigation.gd",
+      "remote_git_sha256": "8076e1ab69c21030c984d6f4724b0a88d28ee1c917d5670daa0ddb4504feb716",
+      "remote_git_bytes": 1760,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "40e5524ff032254f5ee753daefbc96cb9d98f09f14fea5f3022a6add14e31b54",
+      "tested_bytes": 1792
+    },
+    {
+      "path": "src/output_size.gd",
+      "remote_git_sha256": "6af5a9e209fdc753fd24c4e2e6cfefcdb4bd94c484409edf80f6b9c2a256bc40",
+      "remote_git_bytes": 1224,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "6442ff231c8ca63ae66953ecdf72b72c8bf05b93cfaa1fe9c7c2f523176065af",
+      "tested_bytes": 1243
+    },
+    {
+      "path": "src/palette_editor.gd",
+      "remote_git_sha256": "d90cd4f1a32d56adc3f031d75bf8b4e10a1ba58a82c5864d1bd196f0e36e8c81",
+      "remote_git_bytes": 4993,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "d027847910ec32a13b083e01da096e017a11fa32486742a4a00a330f86db1c95",
+      "tested_bytes": 5090
+    },
+    {
+      "path": "src/particle_document.gd",
+      "remote_git_sha256": "1d6edf3fd8c9ded52323389bdcfab5e0462b5490eb0163d2d4b95ad21e303423",
+      "remote_git_bytes": 5210,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5531b6a26e537923802b346f1ac58764841411c9f29ff8531b7a46e6ea0b2d27",
+      "tested_bytes": 5282
+    },
+    {
+      "path": "src/particle_editor.gd",
+      "remote_git_sha256": "74e33b917fc5857d96ff2860cb80871748041fccff46f18123456c7e5d852b34",
+      "remote_git_bytes": 18316,
+      "reconstruction": "exact",
+      "tested_sha256": "74e33b917fc5857d96ff2860cb80871748041fccff46f18123456c7e5d852b34",
+      "tested_bytes": 18316
+    },
+    {
+      "path": "src/particle_sprite.gd",
+      "remote_git_sha256": "2d84a7253aac552f8fe99f142fc67346879a86671c518fd6cc3f04e717e07c81",
+      "remote_git_bytes": 6158,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "0011929092f8038d63ce7848fff1eef09e4b31235e0aefec050028a55fc77426",
+      "tested_bytes": 6263
+    },
+    {
+      "path": "src/particle_sprite.gdshader",
+      "remote_git_sha256": "704acb2c7a2903b4fbcc13ad2196f09dbc5767567ee3a570835fd03ed2bd8071",
+      "remote_git_bytes": 658,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "4ce661c46670943aa35ce2e518464ea7e0f207216359c2a3824a5951d93da5d7",
+      "tested_bytes": 674
+    },
+    {
+      "path": "src/path_locomotion.gd",
+      "remote_git_sha256": "e66da5a1ef421621be01ff5be230a098ebbb0464b5e1b25437ed539596859f31",
+      "remote_git_bytes": 19710,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "0e47813a1db0e2257230429e39a848b2657fc06a9dc376a92e376739745d5d3a",
+      "tested_bytes": 19985
+    },
+    {
+      "path": "src/pending_helper_preview.gd",
+      "remote_git_sha256": "f4ced1db5c123a7d7f6e8395ceba9dcb6aa65f6f19d27244d3cd3ea73694ac7e",
+      "remote_git_bytes": 17176,
+      "reconstruction": "exact",
+      "tested_sha256": "f4ced1db5c123a7d7f6e8395ceba9dcb6aa65f6f19d27244d3cd3ea73694ac7e",
+      "tested_bytes": 17176
+    },
+    {
+      "path": "src/pending_helper_wind_player.gd",
+      "remote_git_sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+      "remote_git_bytes": 8476,
+      "reconstruction": "exact",
+      "tested_sha256": "0df2850da2ea483d29d01a5bab2eee977af969bd4dbce5bb8a992622b99f2ac5",
+      "tested_bytes": 8476
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "remote_git_sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "remote_git_bytes": 22395,
+      "reconstruction": "exact",
+      "tested_sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "tested_bytes": 22395
+    },
+    {
+      "path": "src/physics_lesson.gd",
+      "remote_git_sha256": "3123f80755645d134cccf8aac1aee57103fe4ddba7ecf944eb8decb669bc5d3c",
+      "remote_git_bytes": 3735,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "684099dca78971004849529c2ea43352507b7599144f4c2eedc9ae87c14fc37f",
+      "tested_bytes": 3785
+    },
+    {
+      "path": "src/physics_prop.gd",
+      "remote_git_sha256": "7a9a0cf7e51e5b353fce3dcfe784ebab2c70b1b61dc989b6060159809c9d0bec",
+      "remote_git_bytes": 6726,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "499ad7521da193346f928c4acf8cfed25da798770c3aa50b222db7bea92598df",
+      "tested_bytes": 6843
+    },
+    {
+      "path": "src/physics_recording.gd",
+      "remote_git_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "remote_git_bytes": 19381,
+      "reconstruction": "exact",
+      "tested_sha256": "58ca47e1cf5bb416b2b66580bf7f3eea2c754ef646000fd104193a4c4ad76425",
+      "tested_bytes": 19381
+    },
+    {
+      "path": "src/physics_rig.gd",
+      "remote_git_sha256": "2132c60b1a808a3f68de303a14bb910b007556912e10511dd80d26f2ddea93ba",
+      "remote_git_bytes": 16490,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a7b21ba736d3645469b16e72b0864caef8305127133be9fd38966b0876442e3e",
+      "tested_bytes": 16790
+    },
+    {
+      "path": "src/physics_self_collision.gd",
+      "remote_git_sha256": "bd2244dd68c7310da7d1afdbff263f705d5fab206708e37006876f77ba0b5ef2",
+      "remote_git_bytes": 4248,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "1f44c726ac809115f82d01fc4754fde8b90df5058617a2dfdfaa147f46121e84",
+      "tested_bytes": 4336
+    },
+    {
+      "path": "src/pose_bounds.gd",
+      "remote_git_sha256": "ca501807f2956a9cec85eda6ba197b6525ca0b3c2b855104ea25e65a68ccd2cf",
+      "remote_git_bytes": 6430,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "1afcb676d25a5d4e6ac4662a9d9c414bdae33550994843cc5e6f72691d848f59",
+      "tested_bytes": 6545
+    },
+    {
+      "path": "src/pose_editor.gd",
+      "remote_git_sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "remote_git_bytes": 48374,
+      "reconstruction": "exact",
+      "tested_sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "tested_bytes": 48374
+    },
+    {
+      "path": "src/pose_library.gd",
+      "remote_git_sha256": "4b0afbe38f4c9392bb89927f43b3ea1b8f5827f020823b50169e7586a139d931",
+      "remote_git_bytes": 4338,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e5feba00adbe2a6a1d41233dc9189a9a7e9837edbfddfc67704212594f00d153",
+      "tested_bytes": 4401
+    },
+    {
+      "path": "src/pose_library_editor.gd",
+      "remote_git_sha256": "33719e98f6fa1ed9af4d83787d8706226b717fd2446b7feee2fa9943f63e236f",
+      "remote_git_bytes": 11537,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "f45fa1cd612c0907f5490d406724e8f9973deb9142124032ecb4361516604f87",
+      "tested_bytes": 11704
+    },
+    {
+      "path": "src/pose_thumbnail.gd",
+      "remote_git_sha256": "45dcce2d605d931b6253942d280ead2a9028ae2d03dfdca861f3efd5b7c90e5d",
+      "remote_git_bytes": 3319,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e6c40f3d50f06563148450eddf01851f36ef3ce1b2d191c8768048f52899cb28",
+      "tested_bytes": 3353
+    },
+    {
+      "path": "src/project_canvas.gd",
+      "remote_git_sha256": "fc83908dcbdee70204a8c7d7a47794e4b8f7289f5fa9a54b1dcc15a4c1c337b4",
+      "remote_git_bytes": 3456,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "8fff72e4fe1d7b4335b0cc275993a692595aa041361d0b5f72cdac0e2cec8fe1",
+      "tested_bytes": 3514
+    },
+    {
+      "path": "src/project_payload_guard.gd",
+      "remote_git_sha256": "6bd277060a2a9fbb4dc5a3f05d9626b895474155b7ba53288aa734159e27b642",
+      "remote_git_bytes": 3567,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "c2ff02ff022a650b5f763cbba959f46059238f0e0cc0ec8f81a2e66bf691a46d",
+      "tested_bytes": 3634
+    },
+    {
+      "path": "src/project_raster_ownership.gd",
+      "remote_git_sha256": "1194e6cbc364c092829ae6829312b69b8aa08db27bafe93d38c9f28f7ea176a6",
+      "remote_git_bytes": 1854,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "3e1d51c4c59ac96b96f136dd6c73c0664127e93a433fc9f2236646ffe258b267",
+      "tested_bytes": 1889
+    },
+    {
+      "path": "src/project_timing.gd",
+      "remote_git_sha256": "5a631dd628dbc8535ff16d775045e7973b968812012038779f42597b121f5f5a",
+      "remote_git_bytes": 6178,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "929e3b4d3a6b869f69a2a63ba12e8e76c05d0f83581a3f1821d0bc2581f58db6",
+      "tested_bytes": 6273
+    },
+    {
+      "path": "src/raster_clip.gd",
+      "remote_git_sha256": "1fb451f811d20e900f34d6efcd103657b0073969b1a0436b4c62ed1b3cd74475",
+      "remote_git_bytes": 3156,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "2bb5d4fe7f66102d0294de3cb1d07e838c19170e665d27f3d7b6e1455d2e905e",
+      "tested_bytes": 3187
+    },
+    {
+      "path": "src/recent_projects.gd",
+      "remote_git_sha256": "ab5682f43afc0fa665bff970ee99c21f154c7d5fcd5332a709d9cba4883bb149",
+      "remote_git_bytes": 3444,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "cd7d5ef607d64b38798010c8798bef10038fb63740d4b63b15c59318a5997cb9",
+      "tested_bytes": 3505
+    },
+    {
+      "path": "src/recovery.gd",
+      "remote_git_sha256": "f9efb9e0f925ab6e4720de90b82ba6a482b866681a85dad650187bd3966310f9",
+      "remote_git_bytes": 16254,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "01168f2f624670323bdfccdcfc2e32e38ed90a3b2ae64927e4726cafb62235eb",
+      "tested_bytes": 16516
+    },
+    {
+      "path": "src/recovery_blob_retention.gd",
+      "remote_git_sha256": "21f09c9629e893fba5591a16aa7490ebd6f7c0cbc14c251e3c5f1d8eafc1bba8",
+      "remote_git_bytes": 4718,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "708a6110e1d798d7af006c46e448b160917f60ab148e17ff90e901a6c688bc91",
+      "tested_bytes": 4800
+    },
+    {
+      "path": "src/recovery_journal.gd",
+      "remote_git_sha256": "b74c3c7c0e8ff3f0c309d9939c5fcc0d7290c6f092287f24a080e1b986f7cffa",
+      "remote_git_bytes": 7968,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "3e5a3bb97212ed668be08b3480c58cfb06b7ec243be718cf89979a2e4cbd6a7e",
+      "tested_bytes": 8103
+    },
+    {
+      "path": "src/recovery_preview.gd",
+      "remote_git_sha256": "250e6107ba54b6862b62194b23d48654632919e8b5bf19e8339b1ad89770b4fd",
+      "remote_git_bytes": 1982,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "ae1dda01b31233a0643839a9c940aefa8e5823b063bbffc9f8e87d890c787a70",
+      "tested_bytes": 2025
+    },
+    {
+      "path": "src/recovery_snapshot.gd",
+      "remote_git_sha256": "b6b45f09ab60a4abd020fc333691e243c9e14ddb2a94dc8dccadeb0d911d4233",
+      "remote_git_bytes": 3208,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "4e96159b50d22cde4537794e4350f11dbd49bff04f3664455a98ad9c50a5e5ea",
+      "tested_bytes": 3270
+    },
+    {
+      "path": "src/recovery_writer.gd",
+      "remote_git_sha256": "7a9f9fb29d19c319d042f813705e3315802ee449fd3e81822c0fba1660ef2e93",
+      "remote_git_bytes": 2392,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "d6babe05548856f376cf8f6bd3868d1a688b2e0d487555461d27fe19d238501c",
+      "tested_bytes": 2423
+    },
+    {
+      "path": "src/reference_guide.gd",
+      "remote_git_sha256": "4ea6ade60f00f7d65c2f271c7b45a85b2eec47c7bf16d25d020ee858a3371fcc",
+      "remote_git_bytes": 268,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a28c0ce563fb2180b9079edc5a192bf9f7467a2a64df71876375af4d82c10f5f",
+      "tested_bytes": 275
+    },
+    {
+      "path": "src/reference_sheet.gd",
+      "remote_git_sha256": "93088df5090ea0a94bfbd18f3d993843bb8c14537c45d3eb913656ced0a77fd3",
+      "remote_git_bytes": 14623,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "595e8a9712c41f4b9fe81742dcf6b41df804c490b99246cb467c431df89830e7",
+      "tested_bytes": 14850
+    },
+    {
+      "path": "src/reference_sheet_data.gd",
+      "remote_git_sha256": "fe594c456d6b31fc5c50948cdf2b64f7e60541461bdccb7ab134e0144807753d",
+      "remote_git_bytes": 4853,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "222bf1f8b4e58e9b0facbd0112422825c9be2ef0341b078aab69fdee584d7ea2",
+      "tested_bytes": 4919
+    },
+    {
+      "path": "src/reference_sheet_view.gd",
+      "remote_git_sha256": "94600005f5ea732ac29c33a5624c2886b0c47d7f957ae7c19e19265faf31b1b2",
+      "remote_git_bytes": 2214,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "0b5513ec131ffbd18915244697ad98cd739cc0e85d4a0871ffd02706b54b689d",
+      "tested_bytes": 2253
+    },
+    {
+      "path": "src/renderer.gd",
+      "remote_git_sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "remote_git_bytes": 15232,
+      "reconstruction": "exact",
+      "tested_sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "tested_bytes": 15232
+    },
+    {
+      "path": "src/root_component_assistance.gd",
+      "remote_git_sha256": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f",
+      "remote_git_bytes": 3027,
+      "reconstruction": "exact",
+      "tested_sha256": "bb5eae222104b2c2ae4034cdc5cd7fa06175510d92c0ff56e5df350dbcdbb43f",
+      "tested_bytes": 3027
+    },
+    {
+      "path": "src/root_component_clips.gd",
+      "remote_git_sha256": "c956b4b4014fbc2e6efbdd0f6afda49ce32230b8d0c1c845d74ac9709f280f64",
+      "remote_git_bytes": 2577,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "3853bb1626151743d10852ad6c7db1072286a8b84f5c2dd59e63f84f755f9776",
+      "tested_bytes": 2634
+    },
+    {
+      "path": "src/root_component_curves.gd",
+      "remote_git_sha256": "a0b718daffcc1285d29e3ead559746305bd5cd7d813f95788015d527e2e0235d",
+      "remote_git_bytes": 2965,
+      "reconstruction": "exact",
+      "tested_sha256": "a0b718daffcc1285d29e3ead559746305bd5cd7d813f95788015d527e2e0235d",
+      "tested_bytes": 2965
+    },
+    {
+      "path": "src/root_component_document.gd",
+      "remote_git_sha256": "98530f2cd95ec6a82bfc8f7d0362e429f264078cef62f3d529ff44a39d66128f",
+      "remote_git_bytes": 19509,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "b1cdc6183738494271b4906f5ff436a8bd5b6e31990e58de0f8905fc3d169bfe",
+      "tested_bytes": 19847
+    },
+    {
+      "path": "src/root_component_motion.gd",
+      "remote_git_sha256": "befef7ed4d7343ccba705e9e6676b9658566e37c3ad417ef67a9f50a007226b9",
+      "remote_git_bytes": 2454,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "51dbf93cd637b1288cf6928a8585f16a29015cb0d31d31c123d33d106b4f53fb",
+      "tested_bytes": 2507
+    },
+    {
+      "path": "src/root_component_runtime.gd",
+      "remote_git_sha256": "ace6b71ebdc931a05fe2468a4042dc797a90836b5bd4c99e082ea3202c5d51ff",
+      "remote_git_bytes": 667,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "99f3add43d8d5fc05801d19c3e8bd7d1d1f64dc90b376e8c51e992c2200560d6",
+      "tested_bytes": 683
+    },
+    {
+      "path": "src/save_worker.gd",
+      "remote_git_sha256": "038a5e769bb7ca72234f1c902127b7cbc6b14595dc559611ef7544b9cc2705e0",
+      "remote_git_bytes": 1467,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "281b48ae2961bd2f05134a0fdac45315bf7d5c478f9240558b9d9b84d97c3d29",
+      "tested_bytes": 1488
+    },
+    {
+      "path": "src/scene3d.gd",
+      "remote_git_sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1",
+      "remote_git_bytes": 11042,
+      "reconstruction": "exact",
+      "tested_sha256": "297d7e5ffac85c85aad862cc8d280a509fa181bafa5b41e3977462aff0e0b8e1",
+      "tested_bytes": 11042
+    },
+    {
+      "path": "src/scene_view.gd",
+      "remote_git_sha256": "1a32b42ac5cad1ee816b50717e07f78071e266cbce3284b9e1418b143f56716a",
+      "remote_git_bytes": 6154,
+      "reconstruction": "exact",
+      "tested_sha256": "1a32b42ac5cad1ee816b50717e07f78071e266cbce3284b9e1418b143f56716a",
+      "tested_bytes": 6154
+    },
+    {
+      "path": "src/secondary_helper_editor.gd",
+      "remote_git_sha256": "3d63e9ee8bf96c60b234a9cfb0c14bc73f90a34bc601f0fd3e7373d373ef5c63",
+      "remote_git_bytes": 45029,
+      "reconstruction": "exact",
+      "tested_sha256": "3d63e9ee8bf96c60b234a9cfb0c14bc73f90a34bc601f0fd3e7373d373ef5c63",
+      "tested_bytes": 45029
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "remote_git_sha256": "539628e983dd3d4cce9414df1db0012425ddefd665927564918c59bcbd0e647b",
+      "remote_git_bytes": 4868,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "a68115d26b62c6e0211aaef3bedc9ba2330742e23dd63092d303330eb944523e",
+      "tested_bytes": 4966
+    },
+    {
+      "path": "src/secondary_rig.gd",
+      "remote_git_sha256": "e781bd6949ed32cd3b3bf27d6a881ef105ce84d05dff41370861de6c39344ba1",
+      "remote_git_bytes": 12034,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "7495b202ede057cf73cce43f839917f9f88d60d0d31b71317e2655b352be0d7c",
+      "tested_bytes": 12243
+    },
+    {
+      "path": "src/secondary_spring.gd",
+      "remote_git_sha256": "ce5ba33da54252d6734b56f7d8a972467f17f39b49deee6b78891f3f6a87c3db",
+      "remote_git_bytes": 9449,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "tested_bytes": 9592
+    },
+    {
+      "path": "src/selection_ghost.gdshader",
+      "remote_git_sha256": "01123cff41bb14f8829d17961ff06343fa8eabd76ca185b65b51c5c8203b6b70",
+      "remote_git_bytes": 410,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "44dd308b4984e7634243a2934234c61fe112f520c4802caae409b5cba09155fe",
+      "tested_bytes": 421
+    },
+    {
+      "path": "src/selection_id.gdshader",
+      "remote_git_sha256": "42a7abf8061da1ca517d366de1683cc3e719532a856d2348f51299c26cdbde84",
+      "remote_git_bytes": 379,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "56c7e056bac98894fac544302b84133f39fbd34150be60a6e10bb77c7598f571",
+      "tested_bytes": 390
+    },
+    {
+      "path": "src/selection_outline.gdshader",
+      "remote_git_sha256": "10706cca00b0aadfb7b563f4c00ff8cce7846886f566b19eeade8769e5afd4f5",
+      "remote_git_bytes": 651,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5cd4d9e10c2058eb922d74161cd929e316ba1c731d70f0b85c25c1d00fb95275",
+      "tested_bytes": 670
+    },
+    {
+      "path": "src/sequence_audio.gd",
+      "remote_git_sha256": "0cd7f3019ee003f73b9b2accbbaf5d16bbad565e1d0d23796214f6c5077c1355",
+      "remote_git_bytes": 4211,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "8b43e3346e024474971775423107e937fe594e3938bde7bac80841959be47293",
+      "tested_bytes": 4282
+    },
+    {
+      "path": "src/sequence_editor.gd",
+      "remote_git_sha256": "6d42213dee30cc189e3bfbcdfad2e87039d2e72bec9c115ea85b887a9faecae7",
+      "remote_git_bytes": 36346,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5d08627ad149a6dabe992a86579b98e245ab3ab83d9e67427d0018fb1ab912d4",
+      "tested_bytes": 36926
+    },
+    {
+      "path": "src/sequence_graph.gd",
+      "remote_git_sha256": "0cdda55aa99c944023e6e12c3361b7a04cc71fc5d1e2b9de23cfcf987be44b4b",
+      "remote_git_bytes": 9862,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "9d3d091d62636131ac8911d743ab71c53870b64d8827293e6f2bd03ef645058f",
+      "tested_bytes": 9988
+    },
+    {
+      "path": "src/sequence_pixels.gd",
+      "remote_git_sha256": "4a17d48ba3035f5292b53e82ff4b72b4c68dc8d7a0727ad945c3fcae4a818cbb",
+      "remote_git_bytes": 713,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "eb04b00f696bd24b0b703b52258a35bbfdc79bdcb14c26b91b243f33eb3b1714",
+      "tested_bytes": 729
+    },
+    {
+      "path": "src/sequence_runtime.gd",
+      "remote_git_sha256": "a0bc649ec192a7eddcc54fe91eb765d67145d4974a37be390f8c5ba09a2111bc",
+      "remote_git_bytes": 8377,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "07dcc4facfdbbc68038b85bac5434487c3de17379585107adb568b9189452b3d",
+      "tested_bytes": 8526
+    },
+    {
+      "path": "src/sequence_shadow.gdshader",
+      "remote_git_sha256": "9d45ab2c6eefda2f1f875d14e110e5dc3d96acef0c6cf52328c37e6cc10ba2e3",
+      "remote_git_bytes": 311,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "5840179e33feac464e7b5edf28724de529fce2af7ca376b54792a2b85557ccf1",
+      "tested_bytes": 319
+    },
+    {
+      "path": "src/sequence_timeline.gd",
+      "remote_git_sha256": "dda570df19145a0837826f76e7758e2423eafca09354db268172ec61429b74fa",
+      "remote_git_bytes": 4083,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "9f669b1bdaac6ea63e29b8b33c4e590493f56560aaf167fc7dbdaced977f0672",
+      "tested_bytes": 4152
+    },
+    {
+      "path": "src/shape_animation.gd",
+      "remote_git_sha256": "0192db43abcef661aadfe897d827ddc47f1db44b9abd2c48f4b3c7efbab41148",
+      "remote_git_bytes": 13627,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "8f9d4d4bf4108e59298414d8b8e92a9fa6128c415a496b225a0e2685df06ca83",
+      "tested_bytes": 13857
+    },
+    {
+      "path": "src/shape_catalog.gd",
+      "remote_git_sha256": "1ec7737abe92141844921b0c261f43cdeb90513185669ec92971f31f9aa4babc",
+      "remote_git_bytes": 6132,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e73bd895934eaa239c432230e02a86cca60bfdf522314c125ff33dd9cc2233a6",
+      "tested_bytes": 6221
+    },
+    {
+      "path": "src/shape_comparison.gd",
+      "remote_git_sha256": "5e6ea5328150681e6b3335544e21aaef9dc8a2d9cecef141ade8823096b0de22",
+      "remote_git_bytes": 11709,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "17b35b93661b0452711379375c80421f30412159607d31d5565ab68679ee4889",
+      "tested_bytes": 11899
+    },
+    {
+      "path": "src/shape_comparison_bounds.gd",
+      "remote_git_sha256": "683ff6578f55a251686a8ec2832f69481c7430bc45c9ff212cfb983b617311f5",
+      "remote_git_bytes": 3059,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "005cefe39cd1f55b7afab127a24253793c58449096307dfb2eb1b77623eafd1b",
+      "tested_bytes": 3105
+    },
+    {
+      "path": "src/shape_labels.gd",
+      "remote_git_sha256": "6e86df1cbef9463ab41165db1964b92ee04881858da95b8a747e1c49103706d3",
+      "remote_git_bytes": 703,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "4d4b58a2eef2519e086928996a0050337d8b55abb2494428ee4b2538baf45924",
+      "tested_bytes": 720
+    },
+    {
+      "path": "src/shape_study.gd",
+      "remote_git_sha256": "7fe5fe5451cf9ed76fa42cd02534e78fb1f2a0d255dab33bf5273a2f89dc0ecf",
+      "remote_git_bytes": 9865,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "e8b824dffb4fc3e5af6e6e56f1f81c0a61bb3ba4ef386aca2eb034706b038aaf",
+      "tested_bytes": 10008
+    },
+    {
+      "path": "src/shortcut_bindings.gd",
+      "remote_git_sha256": "9cf14682af95399dafb96c6ee7cfb9d9dd47c90dd87054c1a8e2bff89cc34bdd",
+      "remote_git_bytes": 2603,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "895c13f385679f616581696847b58bf291f739aa4be678e62d38e91c17e72864",
+      "tested_bytes": 2642
+    },
+    {
+      "path": "src/shortcut_editor.gd",
+      "remote_git_sha256": "8b2455ee064f64b4df28917272545d9ee445f18afad12163722ada56b0dbf297",
+      "remote_git_bytes": 6388,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "1b1abf858d66fb9676b3419cf549aa98cd49f20a0771db6b77559b9cafb23934",
+      "tested_bytes": 6504
+    },
+    {
+      "path": "src/source_bone_bindings.gd",
+      "remote_git_sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54",
+      "remote_git_bytes": 24681,
+      "reconstruction": "exact",
+      "tested_sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54",
+      "tested_bytes": 24681
+    },
+    {
+      "path": "src/source_browser.gd",
+      "remote_git_sha256": "9eff527d2bae12a0b0c51f1f6fd2b9b021bd76eb3cd9a457e554a542a1ad12f6",
+      "remote_git_bytes": 13945,
+      "reconstruction": "exact",
+      "tested_sha256": "9eff527d2bae12a0b0c51f1f6fd2b9b021bd76eb3cd9a457e554a542a1ad12f6",
+      "tested_bytes": 13945
+    },
+    {
+      "path": "src/source_choice_dialog.gd",
+      "remote_git_sha256": "cca883ccb983bc77ae9a257bae6cefb436e81742864830801f93ba58447cef5e",
+      "remote_git_bytes": 10234,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "84bd816615fe0ac10c857606f21db89040544e0b52dd2cdda1089f177e9dda2d",
+      "tested_bytes": 10435
+    },
+    {
+      "path": "src/source_import.gd",
+      "remote_git_sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d",
+      "remote_git_bytes": 18620,
+      "reconstruction": "exact",
+      "tested_sha256": "2f017be9ef0ee24eef06b01664d6605d0480d61bf4d1f8a084a6d2a64dc69a5d",
+      "tested_bytes": 18620
+    },
+    {
+      "path": "src/source_shape.gd",
+      "remote_git_sha256": "ec653786838c5b1a16e1c4463e16a47904e3f1045755b095996f1df356af2c8c",
+      "remote_git_bytes": 15340,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "de6e040ecd2ad6d8b139cdd24b97b69c5922a5e4394508d0114dc71b9f979a47",
+      "tested_bytes": 15601
+    },
+    {
+      "path": "src/storage.gd",
+      "remote_git_sha256": "24f4c5b6869285261d46669a94d31e2a48e2dab763af115ec4e786f234cde365",
+      "remote_git_bytes": 35107,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "f90769be7f736abae6dc7e44a378330c9eb4308358d29598a6da53e2e405578e",
+      "tested_bytes": 35631
+    },
+    {
+      "path": "src/stroke_stabilizer.gd",
+      "remote_git_sha256": "55b760df8b28909c307c92ed2c89550a177802c8fc5bc9e767868703132144d8",
+      "remote_git_bytes": 672,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "bd2c142876cb0ad7d2cdc09b1718060701aee202e4f928c855fd8624020c68c5",
+      "tested_bytes": 690
+    },
+    {
+      "path": "src/studio_theme.gd",
+      "remote_git_sha256": "afdaa5a5834580f33ea98297f4e117b1877936e89c6ae2fc7de85a980e1b08f4",
+      "remote_git_bytes": 8175,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "05a320f9bed21086884eb494451521f57db8216f83bbceb046666a80535eaeca",
+      "tested_bytes": 8280
+    },
+    {
+      "path": "src/timeline.gd",
+      "remote_git_sha256": "2cd69b4ae0b2fe546064bd318301fc1c7cd6ac8f7c9cadf91730a473ee36f835",
+      "remote_git_bytes": 2878,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "894df4a3ed7f6053a3447adf4c48f9627c33ec30ab9df36ee4ee7302cb0ec16c",
+      "tested_bytes": 2941
+    },
+    {
+      "path": "src/timeline_navigation.gd",
+      "remote_git_sha256": "746569a34c0d3efa0ea391eae657637fb4e0abb85cab0f69eb565bbf2d691596",
+      "remote_git_bytes": 3445,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "72cb3266abd8df5b3b58014ea6039b9e00de53f7f9e4a688f6587085756d179f",
+      "tested_bytes": 3514
+    },
+    {
+      "path": "src/timeline_picture.gd",
+      "remote_git_sha256": "e6e0394deeae91997bb64ff8e1710215372841aa6cea72877cb43020a6bcdbc0",
+      "remote_git_bytes": 228,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "8bc3353f2537524d10f47206404ccf1ce81ac0dab80a9afcf139f83d65fc29e1",
+      "tested_bytes": 235
+    },
+    {
+      "path": "src/timeline_view.gd",
+      "remote_git_sha256": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c",
+      "remote_git_bytes": 32224,
+      "reconstruction": "exact",
+      "tested_sha256": "a7378a89eb203af691fc029f504aab4acb7d517429b52ba092e9034ffbef4e0c",
+      "tested_bytes": 32224
+    },
+    {
+      "path": "src/tutorial_assets.gd",
+      "remote_git_sha256": "b2fa1698ee112ab3f1b708f92731c88857d6851f91e54a24ff753f7bd891677e",
+      "remote_git_bytes": 5186,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "f9d3dc17670123e4d4cd7f486c31849cc371e994698a3494e657df6896a0f5fc",
+      "tested_bytes": 5245
+    },
+    {
+      "path": "src/tutorial_catalog.gd",
+      "remote_git_sha256": "2defdebdf4325884d2a56f52627982bc9bb3118a34ebc55c6de6fccb79fa87a7",
+      "remote_git_bytes": 1270,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "86eb6a7055e3e94a98d6f280df0f26bbaab393a656d942205f95ecc5c38c19b5",
+      "tested_bytes": 1280
+    },
+    {
+      "path": "src/tutorials.gd",
+      "remote_git_sha256": "4de73d70a5aee88c1862b56ff7299e914b0241f08b138425c00b56cfae2576e3",
+      "remote_git_bytes": 22544,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "bffce8521bf9b6c9626800133cbc7c0041be82c18ee22a0e7a27f0e29ad5b369",
+      "tested_bytes": 22897
+    },
+    {
+      "path": "src/video_import.gd",
+      "remote_git_sha256": "8307220b2c021924ad3eaaece5eababa9b617c967e9e47ee060fac6b1f10ebf2",
+      "remote_git_bytes": 3604,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "ca7f5392f3f739de7d672377142f100b08df020bb869da392886d55437c3c8e5",
+      "tested_bytes": 3644
+    },
+    {
+      "path": "src/video_timing.gd",
+      "remote_git_sha256": "27501e86b9330da16a340f46af2cb703749136e011a806e2cac828856f040c13",
+      "remote_git_bytes": 869,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "614a4c6719449ae155f1d83a4392b4778effd52411fdeb0696ea0df801437e11",
+      "tested_bytes": 882
+    },
+    {
+      "path": "src/visibility_track.gd",
+      "remote_git_sha256": "a79ae20e354d2b5f4436e6dc98186e69be41b72c71e9d3180917a586f6d37152",
+      "remote_git_bytes": 2124,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "39f42513c7ccb3359c7ba283aaae9cad7c05da0ad59a9d6e2e443b6686bb0fff",
+      "tested_bytes": 2162
+    },
+    {
+      "path": "src/walking_animation.gd",
+      "remote_git_sha256": "eb22f6b4f12ebc3d15874ab9980f6743d4be254ef035ab2e816a53ede22fcbbb",
+      "remote_git_bytes": 4417,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "159b72cc0271fe1b7e029f02f9d4bd7be0ef6982f717b663b5bfe4d58a67f273",
+      "tested_bytes": 4477
+    },
+    {
+      "path": "src/wind_helper_bridge.gd",
+      "remote_git_sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "remote_git_bytes": 16539,
+      "reconstruction": "exact",
+      "tested_sha256": "62c3bbcdb2ec1f8d2d2b10fa634a3ae9536d713166b06cfb816adfcf577b44b7",
+      "tested_bytes": 16539
+    },
+    {
+      "path": "src/wind_helper_candidate.gd",
+      "remote_git_sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+      "remote_git_bytes": 25396,
+      "reconstruction": "exact",
+      "tested_sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+      "tested_bytes": 25396
+    },
+    {
+      "path": "src/wind_helper_runtime.gd",
+      "remote_git_sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "remote_git_bytes": 2746,
+      "reconstruction": "exact",
+      "tested_sha256": "e1900604107220cc95dd983777febd20e3a033c81e11cf2aa20917a3928394a8",
+      "tested_bytes": 2746
+    },
+    {
+      "path": "src/wind_review.gd",
+      "remote_git_sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "remote_git_bytes": 17923,
+      "reconstruction": "exact",
+      "tested_sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "tested_bytes": 17923
+    },
+    {
+      "path": "src/wind_review_groups.gd",
+      "remote_git_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "remote_git_bytes": 8617,
+      "reconstruction": "exact",
+      "tested_sha256": "ef26bb698156dca19aba6a3e32218c8a52297685fed45d2f05744ef22f2b81f7",
+      "tested_bytes": 8617
+    },
+    {
+      "path": "src/workspace_layout.gd",
+      "remote_git_sha256": "3eab0ccdad322a6072537fd1b8eed1f4e1f14d4bee850e16779ea869f39fb334",
+      "remote_git_bytes": 16738,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "b22da597ad6b396eddc7ed8ec25ba12ed3ef21a04099d958b5fb5ea99c94f397",
+      "tested_bytes": 17020
+    },
+    {
+      "path": "src/world_document.gd",
+      "remote_git_sha256": "30dd8a9cd4ab48ec8e78c2e0be3c75c485c363b752d31cfcde1b225b0d2a7628",
+      "remote_git_bytes": 5590,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "6d921495a0366f30724e5945abe79bcc678d193be40cc77d4dd198ee8c3455cf",
+      "tested_bytes": 5704
+    },
+    {
+      "path": "src/world_runtime.gd",
+      "remote_git_sha256": "c392bfd3e723a906a951e6ad41a2cf60ff4627342eb0448dfe6ad9c4f99dfc7c",
+      "remote_git_bytes": 7865,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "d2c0bb7fece396066cc4bdae34e1f7172d9a90519dae05d3e33c2b87edb32d46",
+      "tested_bytes": 8012
+    },
+    {
+      "path": "src/world_selection.gd",
+      "remote_git_sha256": "7c36ec46c6ba7a9e52eada2d08f5356c23e6312c47a05330cdb37ecbde3161c3",
+      "remote_git_bytes": 17823,
+      "reconstruction": "exact",
+      "tested_sha256": "7c36ec46c6ba7a9e52eada2d08f5356c23e6312c47a05330cdb37ecbde3161c3",
+      "tested_bytes": 17823
+    },
+    {
+      "path": "data/bone_names.en.json",
+      "remote_git_sha256": "def290b36766ae54f4e18c6fb70f46af0d47a0ce319264bbcea560f4c597e97b",
+      "remote_git_bytes": 12268,
+      "reconstruction": "exact",
+      "tested_sha256": "def290b36766ae54f4e18c6fb70f46af0d47a0ce319264bbcea560f4c597e97b",
+      "tested_bytes": 12268
+    },
+    {
+      "path": "data/discovery_sources.json",
+      "remote_git_sha256": "9e0aa6439f8a02f6edc343d03b29e2a8b9dadb198e5698d453fa46d6c6685ece",
+      "remote_git_bytes": 13728,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "35815baff1d4f554c5d08929808201ed0e2ff8a4ae30c686223ce872bc94a9ee",
+      "tested_bytes": 13934
+    },
+    {
+      "path": "data/shape_names.en.json",
+      "remote_git_sha256": "e6c2418addf0280832a48b4b95ec787e908c61199ab300a29b3aa8efc7bf131e",
+      "remote_git_bytes": 636,
+      "reconstruction": "LF_to_CRLF",
+      "tested_sha256": "c92b1c35c68383035549bf9ac2444da1f79e41abe982998cf762ad6c5cebcb8c",
+      "tested_bytes": 663
+    }
+  ],
+  "actual_Git_or_network_executed": false,
+  "apps_or_engine_or_model_parsers_launched": false,
+  "remote_result": "UNRUN; root must execute and verify all exact rawGit SHA/bytes AND explicit remote reconstruction equality.",
+  "source_review": {
+    "changed_public_AM_names_retained": true,
+    "ART_filter_unchanged": true,
+    "203_extras_bound_to200_SOURCE_LOCK_and3canonical_catalogue_pins": true,
+    "no_lock_changed_names_requirement_on_later_commit": true,
+    "local_cat_file_batch_size_delimiter_and_exit_checked": true,
+    "per_blob_max_bytes": 8388608,
+    "remote_payload_read_bound": "expectedGitblob_bytes+1",
+    "maximum_names": 3000,
+    "remote_raw_bytes_always_equal_exact_git_blob": true,
+    "203_remote_reconstruction_equality_required_for_pass": true,
+    "privacy_precondition": "Only independently reviewed public increment plus exact203locked code/data sources; directory/suffix filters are not a general privacy audit."
+  }
+}

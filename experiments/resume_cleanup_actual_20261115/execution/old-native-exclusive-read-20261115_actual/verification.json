@@ -1,0 +1,41 @@
+{
+  "format": "has_old_native_exclusive_read_evidence_1",
+  "started_utc": "2026-11-16T00:56:47Z",
+  "finished_utc": "2026-11-16T00:57:51Z",
+  "passed": true,
+  "files_expected": 9307,
+  "files_attempted": 9307,
+  "files_exclusively_opened_closed_verified": 9307,
+  "literal_roots": [
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d"
+  ],
+  "inventories_before_after_identical": true,
+  "root_release_sha256": "2e946cf9cf0c1be4ffcff18aee905c51956f15519412e3c97121cf496a9decca",
+  "reference_inventories": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native-independent-cleanup-audit-20261114\\core14-fresh-inventory.json",
+      "bytes": 1699274,
+      "sha256": "846d0015644af0b8fca2eebed64c247dc6cee3a95c03240133ccd0c70fd9f20c"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native-independent-cleanup-audit-20261114\\wider11-fresh-inventory.json",
+      "bytes": 1659153,
+      "sha256": "0d5fbd84a774958d53ac6d7f8f1065e319b0d6c8e1ab413a73febf31b73dee29"
+    }
+  ],
+  "errors": [],
+  "windows_request": {
+    "desired_access": "GENERIC_READ(0x80000000)",
+    "share_mode": 0,
+    "disposition": "OPEN_EXISTING(3)",
+    "flags": "FILE_FLAG_OPEN_REPARSE_POINT(0x00200000)",
+    "security_attributes": null,
+    "template_handle": null
+  },
+  "candidate_writes_or_deletions": false,
+  "delete_or_write_access_requested": false,
+  "runtime_or_control_process_launched": false,
+  "cleanup_authorized": false,
+  "limitations": "Sequential immediate-close read-sharing observations only. No all-files simultaneous lock, later reservation, process identity census, metadata-only handle exclusion, mapped-view exclusion, directory open exclusion or deletion access proof. Root must retain prior closure/dependency/preservation evidence and decide any later literal removal separately."
+}

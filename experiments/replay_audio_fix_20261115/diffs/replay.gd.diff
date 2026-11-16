@@ -1,0 +1,80 @@
+--- experiments/resume_full_20261115/replay/replay.gd
++++ replay/replay.gd
+@@ -39,12 +39,52 @@
+ 	if stream:stream.store_string(JSON.stringify(value,"  ",true,true)+"\n");stream.close()
+ 	else:push_error("Could not write replay evidence: "+path)
+ 
++func audio_rows(audio: Dictionary) -> Array:
++	if audio.is_empty():return []
++	return audio.clips if audio.has("clips") and audio.clips is Array else [audio]
++
++func portable_audio() -> Dictionary:
++	# Authored clip fields remain exact; decoded bytes/paths are runtime-only.
++	var audio: Dictionary=app.audio_document().duplicate(true)
++	for clip in audio_rows(audio):clip.erase("source")
++	return audio
++
++func check_audio_cache(phase: String) -> void:
++	var audio: Dictionary=app.audio_document()
++	var clips: Array=audio_rows(audio)
++	var expected: Array=request.audio_sources
++	var valid: bool=clips.size()==expected.size()
++	var rows: Array=[]
++	for index in range(clips.size()):
++		if index>=expected.size():valid=false;continue
++		var clip: Dictionary=clips[index]
++		var reference: Dictionary=expected[index]
++		var source=clip.get("source")
++		if not source is Dictionary:
++			valid=false;rows.append({"id":clip.get("id",""),"passed":false,"reason":"Missing decoded source"});continue
++		var keys: Array=source.keys();keys.sort()
++		var fields_ok: bool=keys==["channels","frames","name","path","pcm","rate","sha256"]
++		var path: String=str(source.get("path",""))
++		var expected_path: String=app.project_folder.path_join(str(reference.path))
++		var confined: bool=normalized_path(path)==normalized_path(expected_path) and normalized_path(path).begins_with(normalized_path(app.project_folder)+"/")
++		var file_sha: String=FileAccess.get_sha256(path) if confined else ""
++		var pcm_ok: bool=source.get("pcm") is PackedByteArray
++		var pcm_sha: String=RasterReader.digest_bytes(source.pcm) if pcm_ok else ""
++		var pcm_bytes: int=source.pcm.size() if pcm_ok else -1
++		var samples_ok: bool=source.get("channels") is int and source.get("rate") is int and source.get("frames") is int and source.channels==int(reference.channels) and source.rate==int(reference.rate) and source.frames==int(reference.frames)
++		var passed: bool=fields_ok and confined and clip.get("id")==reference.id and clip.get("path")==reference.path and clip.get("sha256")==reference.sha256 and source.get("sha256")==reference.sha256 and source.get("name")==reference.source_name and file_sha==reference.sha256 and samples_ok and pcm_bytes==int(reference.pcm_bytes) and pcm_sha==reference.pcm_sha256
++		valid=valid and passed
++		rows.append({"id":clip.get("id",""),"passed":passed,"source_fields_exact":fields_ok,"cache_confined":confined,"file_sha256":file_sha,"pcm_sha256":pcm_sha,"pcm_bytes":pcm_bytes,"channels":source.get("channels",-1),"rate":source.get("rate",-1),"frames":source.get("frames",-1)})
++	if not report.has("audio_cache_proofs"):report["audio_cache_proofs"]={}
++	report.audio_cache_proofs[phase]={"passed":valid,"clips":rows,"expected_clips":expected.size()}
++	check(valid,"audio.cache."+phase)
++
+ func state() -> Dictionary:
+ 	var layers: Array=app.layers.duplicate(true)
+ 	for layer in layers:
+ 		for cel in layer.cels:
+ 			cel.erase("image");cel.erase("raster_owner")
+-	return {"schema_version":4,"world":World.portable(app.current_world()),"camera_keys":app.keys.duplicate(true),"video":app.video.duplicate(true),"editor":{"frame":app.frame},"layers":layers,"audio":app.audio_document().duplicate(true),"palette":app.palette.duplicate(true)}
++	return {"schema_version":4,"world":World.portable(app.current_world()),"camera_keys":app.keys.duplicate(true),"video":app.video.duplicate(true),"editor":{"frame":app.frame},"layers":layers,"audio":portable_audio(),"palette":app.palette.duplicate(true)}
+ 
+ func camera_state() -> Dictionary:
+ 	var camera: Camera3D=app.renderer.camera
+@@ -142,6 +182,7 @@
+ 	report["normalized_cache_root"]=expected_cache
+ 	check(actual_cache.begins_with(expected_cache+"/"),"unpacked runtime assets stay in the fresh owned cache")
+ 	check(not app.home.visible and not app.dirty and app.history.is_empty() and app.redo_history.is_empty(),"open installs an unedited project with empty Undo history")
++	check_audio_cache("before")
+ 	var before:=state();var camera_before:=camera_state()
+ 	write_json(request.folder.path_join("observed-before.json"),before)
+ 	var raster: Array=[]
+@@ -182,6 +223,7 @@
+ 	check(native_setup!=null and native_focus!=null and not native_setup.is_empty() and not native_focus.is_empty() and report.native_focus.get("save_error",-1)==OK and native_setup.get_data()==native_focus.get_data(),"Setup and Focus preserve and save identical native render pixels")
+ 	app.scene_view.set_setup(true,false)
+ 	await settled()
++	check_audio_cache("after")
+ 	var after:=state()
+ 	write_json(request.folder.path_join("observed-after.json"),after)
+ 	check(before==after and camera_before==camera_state(),"view toggles and captures preserve all project state and shot camera")
+@@ -245,6 +287,7 @@
+ 		extra_check(extra_snapshot()==shape_before,"shapes.unchanged")
+ 	await chooser_review()
+ 	extra_check(extra_snapshot()==before,"extras.unchanged")
++	check_audio_cache("extra")
+ 	write_json(request.folder.path_join("observed-extra.json"),state())
+ 
+ func chooser_review() -> void:

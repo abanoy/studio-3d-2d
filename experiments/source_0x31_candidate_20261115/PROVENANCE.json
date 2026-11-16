@@ -1,0 +1,142 @@
+{
+  "format": "has_source_0x31_math_candidate_provenance_1",
+  "created_utc": "2026-11-15T23:22:35Z",
+  "source_HEAD": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "runtime": {
+    "python_exe": "C:\\Program Files\\Python313\\python.exe",
+    "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9",
+    "bytecode_disabled": true
+  },
+  "official_source": {
+    "repository": "ValveSoftware/source-sdk-2013",
+    "commit": "019e91ccd650a34745934c65cdbbe89ffcc44ede",
+    "source_read_local_not_executed": true,
+    "file_sha256": {
+      "jigglebones.cpp": "a3f319258a21498bfa6467bef641446d66ecd5497b9dc8a949b1f08b87d7027e",
+      "jigglebones.h": "4e859d919b71f62bfee8fd9554e41b25c5b0ef8447d400c932f411340b296c1f",
+      "studio.h": "cf5ac8bb6bfe4c7dab15024e8424afaab02ff781965d48077c55341b3914fff2"
+    },
+    "full_SDK_source_copied_or_published": false,
+    "anchors": {
+      "studio.h": [
+        186,
+        237
+      ],
+      "jigglebones.cpp": {
+        "goal_and_clock": [
+          61,
+          137
+        ],
+        "flexible_force_and_Euler": [
+          143,
+          194
+        ],
+        "constraints_and_frame": [
+          400,
+          488
+        ]
+      }
+    }
+  },
+  "candidate_files_at_verification": {
+    "attempt1.stdout.log": {
+      "bytes": 288,
+      "sha256": "59cf8f8a25d3161b2a38040d86c1bdd51577779c8f9d560b0899c203a4241895"
+    },
+    "candidate.py": {
+      "bytes": 9118,
+      "sha256": "636a81bd7932e790c7a3d512d88ea71e09362e473c4f8bc3f84e4022fbbbce9f"
+    },
+    "CLOSED_FORM.json": {
+      "bytes": 1744,
+      "sha256": "9a7901bd687a7626a0dd6ae85c313fa03792cf41f8ddb3ebab68f3f52369d405"
+    },
+    "DAMPING_GRAVITY.json": {
+      "bytes": 1040,
+      "sha256": "93020171a0142e29b208bc6a99439ceea439a13e630012648e4ab44a05b13196"
+    },
+    "README.md": {
+      "bytes": 7525,
+      "sha256": "59ea906024dbe881a75e08db20dc4e359378f30d2199d15792fc345dc273f32e"
+    },
+    "RESULT.json": {
+      "bytes": 18829,
+      "sha256": "a3d0ced625ef7904bd79bdc8838abd1ac11ce48e18d6b884e63c6f780f84f168"
+    },
+    "SYNTHETIC_TRACE.json": {
+      "bytes": 13448,
+      "sha256": "60681be8b8e3e426d224018a9f8aaa94279a5978b90843bbe4884ed14607fd76"
+    },
+    "verify_candidate.py": {
+      "bytes": 16150,
+      "sha256": "ab07a2d64a8330a983bd247b5060019444b581ee3db0657d69ce93fabcc11397"
+    },
+    "verify_closed_form.py": {
+      "bytes": 3117,
+      "sha256": "9a785e6e45cfe10439c98d2a6134e6bcb8478f817bc3ef7dda310fb937f5dfb4"
+    },
+    "verify_damping_and_gravity.py": {
+      "bytes": 3077,
+      "sha256": "15c2f0ffbfc67dc105d8b3a295511320deeed1804b11d9211dd924245344cdf7"
+    }
+  },
+  "AST_parsed": [
+    "candidate.py",
+    "verify_candidate.py",
+    "verify_closed_form.py",
+    "verify_damping_and_gravity.py"
+  ],
+  "clock_policy": {
+    "fixed_hz": 120,
+    "seed_at_tick0": true,
+    "first_integration_tick": 1,
+    "tick_skips_and_reverse": "Refused; explicit reset/replay required",
+    "SDK_min_dt_fallback_history_parity": false
+  },
+  "semantics": {
+    "supported_flags": "0x31 only",
+    "native_forward": "joint local+Z",
+    "mass": "downward acceleration magnitude",
+    "along_stiffness_damping": "Retained/inactive under length constraint",
+    "angle_then_length": "SDK-reference goal-tip sphere correction, fixed-length projection, radial-velocity removal",
+    "coefficient_fixture_profiles": [
+      50,
+      100
+    ],
+    "external_airflow": "Declared acceleration extension; HAS fan-speed/physical units unqualified"
+  },
+  "scope": {
+    "metadata_originals_mutated": false,
+    "native_geometry_loaded_by_verifiers": false,
+    "production_or_test_changes": false,
+    "HEAD_or_git_index_changed": false,
+    "Godot_Blender_or_SDK_runtime_executed": false,
+    "full_layout_verification_or_activation_flags_changed": false,
+    "actual_HAS_world_body_parent_chain_Record_Off_portable_render": "UNRUN",
+    "artist_native_motion_fidelity": "UNQUALIFIED"
+  },
+  "attempts": [
+    {
+      "id": "candidate_verifier_first_run",
+      "status": "PASS_BOUNDED_SYNTHETIC_MATH_ONLY",
+      "assertions": 322,
+      "property_steps": 17280,
+      "source_log": "attempt1.stdout.log"
+    },
+    {
+      "id": "independent_rational_first_tick",
+      "status": "PASS_SCALAR_ORACLE_ONLY",
+      "maximum_error": 2.7755575615628914e-17
+    },
+    {
+      "id": "independent_damping_world_gravity",
+      "status": "PASS_SCALAR_ORACLE_ONLY",
+      "maximum_error": 0.0
+    },
+    {
+      "id": "prior_interactive_parameter_inspection",
+      "status": "INVALID_LOOKUP_BEFORE_NUMERICAL_VERIFICATION",
+      "reason": "Exploratory request used absent flags key; corrected read-only inspection to raw_rule_flags. No simulated result came from the failed lookup."
+    }
+  ]
+}

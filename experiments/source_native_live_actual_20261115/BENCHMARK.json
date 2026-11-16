@@ -1,0 +1,106 @@
+{
+  "format": "has_native8_first_product_actual_benchmark_1",
+  "passed": true,
+  "actual_run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2",
+  "root_closed_utc": "2026-11-16T01:48:47.8599896Z",
+  "checks": 96,
+  "writer_checks": 77,
+  "packed_reader_checks": 11,
+  "linked_reader_checks": 8,
+  "closed_private_jobs": 3,
+  "preservation_gates": {
+    "current_functional_source": true,
+    "original_native_GLB_report_and_baseline": true,
+    "approved_Godot": true,
+    "frozen_functional_source": true
+  },
+  "functional_source_files": 1013,
+  "native_rules_solved": 1,
+  "native_rules_retained": 49,
+  "profile": "Original qualified Junko FrontHair1 native8/parent7/0x31 only; no generic chains",
+  "actual_controlled_fan_profiles": 7,
+  "ticks_per_profile": 180,
+  "physics_Hz": 120,
+  "controlled_profile_ticks_total": 1260,
+  "weighted_vertices": 152,
+  "shared_weight_vertices": 144,
+  "unaffected_vertices_exact": 9509,
+  "total_vertices": 9661,
+  "other_world_bones_exact": 68,
+  "fan_metrics": {
+    "disabled": {
+      "relative_fan_speed": 12,
+      "weighted_displacement_vs_disabled_m": null,
+      "last_60_ticks_tip_span_m": 0.00026303227059543133,
+      "native_Z_tip_error_max_m": 1.758084408720606e-06
+    },
+    "miss": {
+      "relative_fan_speed": 12,
+      "weighted_displacement_vs_disabled_m": null,
+      "last_60_ticks_tip_span_m": 0.00026303227059543133,
+      "native_Z_tip_error_max_m": 1.758084408720606e-06
+    },
+    "opposite": {
+      "relative_fan_speed": 12,
+      "weighted_displacement_vs_disabled_m": 0.001541732344776392,
+      "last_60_ticks_tip_span_m": 0.06922711431980133,
+      "native_Z_tip_error_max_m": 1.7669190128799528e-06
+    },
+    "speed12": {
+      "relative_fan_speed": 12,
+      "weighted_displacement_vs_disabled_m": 0.010114077478647232,
+      "last_60_ticks_tip_span_m": 0.06701704114675522,
+      "native_Z_tip_error_max_m": 1.7203582274305518e-06
+    },
+    "speed3": {
+      "relative_fan_speed": 3,
+      "weighted_displacement_vs_disabled_m": 0.0004348361981101334,
+      "last_60_ticks_tip_span_m": 0.004464675672352314,
+      "native_Z_tip_error_max_m": 1.7341776583634783e-06
+    },
+    "speed50": {
+      "relative_fan_speed": 50,
+      "weighted_displacement_vs_disabled_m": 0.014946725219488144,
+      "last_60_ticks_tip_span_m": 0.13300445675849915,
+      "native_Z_tip_error_max_m": 1.7037573343259282e-06
+    },
+    "zero": {
+      "relative_fan_speed": 0,
+      "weighted_displacement_vs_disabled_m": null,
+      "last_60_ticks_tip_span_m": 0.00026303227059543133,
+      "native_Z_tip_error_max_m": 1.758084408720606e-06
+    }
+  },
+  "historical_metric_name_note": "Raw last_second_tip_span is the maximum displacement from the final tip among the last60 fixed ticks, i.e.0.5seconds at120Hz; the raw report is preserved unchanged.",
+  "ordinary_editor_acceptance": [
+    "actual Add fan/Aim/relative speeds0/3/12/50/disabled/missed/opposite fields",
+    "native desired-state versus actual native-Z tip and exact weighted Off at keyed12/24",
+    "seek and unrecorded Save restore authored data without a draft",
+    "partial-rig ragdoll refusal; existing independent fan rigid-body identity/RID preserved on native On/Off",
+    "connected Local Record Stop/Escape/Undo/Redo, ordinary FK, immutable49-rule metadata",
+    "packed+linked cold no-autoactivation, FK/final-frame0/24 agreement and packed PNG-export agreement",
+    "existing generic declared-chain backend and Off"
+  ],
+  "native_fan_policy": "Explicit HAS world acceleration: existing deterministic fan field divided by0.03, bounded by field cap. Relative fan speed is not SDK wind parity or a calibrated real fan.",
+  "same_actor_reverse_body_qualification": "UNQUALIFIED_PARTIAL_SOURCE_RIG",
+  "not_claimed": [
+    "all49 native rules simulated",
+    "full Source SDK/client parity",
+    "same-actor active ragdoll/native coexistence",
+    "native parent-chain product integration",
+    "a new native converter run",
+    "later header-guard followup changes qualified by this96-check run"
+  ],
+  "first_attempt": {
+    "passed": false,
+    "actual_writer_checks": 74,
+    "actual_failures": 2,
+    "old_aggregate_observed_checks_preserved": 0,
+    "reason": "Hair-only partial skeleton correctly rejects automatic ragdoll; two test expectations were invalid.",
+    "count_reporting_correction": "Old execute raised before returning phase proof. New driver appends each returned proof before its strict pass assertion; actual attempt2 records77+11+8.",
+    "original_failed_phase_exit": 1,
+    "original_private_job_closed": true
+  },
+  "source_context": "Exact frozen attempt2 working-functional snapshot, not the later edited checkout.",
+  "raw_native_points_PCM_artwork_in_packet": false
+}

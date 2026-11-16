@@ -1,0 +1,271 @@
+{
+  "actual_editor": true,
+  "checks": 83,
+  "complete_assertion_set": true,
+  "expected": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-five-stage-attempt3/Studio/output/native-five-gui-attempt1/writer/expected.json",
+  "failures": 0,
+  "format": "has_source_native_five_transverse_live_result_3",
+  "job_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio\\output\\native-five-gui-attempt1\\writer\\job.json",
+  "job_sha256": "392140eb447fc0c73c39320b011e383215c1a6155ba8d00d153a72b1078b55c0",
+  "metrics": {
+    "controlled_fixture": {
+      "admission_only_no_physics_tolerance_change": true,
+      "all5_both_mean_fields_hit": true,
+      "greatest_mean_field_normalized_dot": -0.9999999379067723,
+      "native8_goal_mean_axis_abs_dot_max": 2.8312206268310547e-07,
+      "root_geometry_frames0_24_exact": true,
+      "root_keys_equal": true
+    },
+    "disabled": {
+      "last60_tick_span": 0.000263040215941146,
+      "native_Z_tip_error_max": 1.728791630739579e-06,
+      "native_step_processing": {
+        "max_usec": 13289,
+        "mean_usec": 9054.094444444445,
+        "samples": 180,
+        "scope": "Successful full Native.step; measured only, no FPS criterion"
+      },
+      "per_rule_last60_tick_spans": {
+        "Junko hair_ARM/Skeleton3D::2Steps-1_L": 0.0007458238396793604,
+        "Junko hair_ARM/Skeleton3D::3Steps-1_L": 0.00272596743889153,
+        "Junko hair_ARM/Skeleton3D::FrontHair1": 0.000263040215941146,
+        "Junko hair_ARM/Skeleton3D::Side1Steps-1_L": 0.0007463054498657584,
+        "Junko hair_ARM/Skeleton3D::Side2Steps-1_L": 0.0027137945871800184
+      },
+      "points_sha256": "d1d9ac80d41cf02ac2bc30fc5d264a1e4cac93c882e3f2903aee4f72df6d5a38",
+      "span_duration_seconds": 0.5,
+      "tick_count": 180
+    },
+    "initial_UI_Aim": {
+      "anchor_count": 5,
+      "centroid_world_error": 4.4963496748096077e-07
+    },
+    "miss": {
+      "last60_tick_span": 0.000263040215941146,
+      "native_Z_tip_error_max": 1.728791630739579e-06,
+      "native_step_processing": {
+        "max_usec": 11505,
+        "mean_usec": 8192.122222222222,
+        "samples": 180,
+        "scope": "Successful full Native.step; measured only, no FPS criterion"
+      },
+      "per_rule_last60_tick_spans": {
+        "Junko hair_ARM/Skeleton3D::2Steps-1_L": 0.0007458238396793604,
+        "Junko hair_ARM/Skeleton3D::3Steps-1_L": 0.00272596743889153,
+        "Junko hair_ARM/Skeleton3D::FrontHair1": 0.000263040215941146,
+        "Junko hair_ARM/Skeleton3D::Side1Steps-1_L": 0.0007463054498657584,
+        "Junko hair_ARM/Skeleton3D::Side2Steps-1_L": 0.0027137945871800184
+      },
+      "points_sha256": "d1d9ac80d41cf02ac2bc30fc5d264a1e4cac93c882e3f2903aee4f72df6d5a38",
+      "span_duration_seconds": 0.5,
+      "tick_count": 180
+    },
+    "opposite": {
+      "affected_max_vs_disabled": 0.009021250531077385,
+      "last60_tick_span": 0.0922500491142273,
+      "native_Z_tip_error_max": 1.7011487898344058e-06,
+      "native_step_processing": {
+        "max_usec": 12579,
+        "mean_usec": 8117.688888888889,
+        "samples": 180,
+        "scope": "Successful full Native.step; measured only, no FPS criterion"
+      },
+      "per_rule_last60_tick_spans": {
+        "Junko hair_ARM/Skeleton3D::2Steps-1_L": 0.02325274981558323,
+        "Junko hair_ARM/Skeleton3D::3Steps-1_L": 0.07290726900100708,
+        "Junko hair_ARM/Skeleton3D::FrontHair1": 0.0922500491142273,
+        "Junko hair_ARM/Skeleton3D::Side1Steps-1_L": 0.02293083630502224,
+        "Junko hair_ARM/Skeleton3D::Side2Steps-1_L": 0.08929873257875443
+      },
+      "points_sha256": "ebf58836fc7a4da5949305ac9e7cdaa47dcb5a065be5633adf7c15c295a841a5",
+      "span_duration_seconds": 0.5,
+      "tick_count": 180,
+      "union_affected_max_vs_disabled": 0.16872012615203857
+    },
+    "record_root_rotation_fixture": {
+      "actual_root_geometry_changed": true,
+      "constant_scale": true,
+      "root_key_radians": 0.47
+    },
+    "speed12": {
+      "affected_max_vs_disabled": 0.013149837031960487,
+      "last60_tick_span": 0.08327977359294891,
+      "native_Z_tip_error_max": 1.71558008332795e-06,
+      "native_step_processing": {
+        "max_usec": 11527,
+        "mean_usec": 7521.488888888889,
+        "samples": 180,
+        "scope": "Successful full Native.step; measured only, no FPS criterion"
+      },
+      "per_rule_last60_tick_spans": {
+        "Junko hair_ARM/Skeleton3D::2Steps-1_L": 0.11014586687088013,
+        "Junko hair_ARM/Skeleton3D::3Steps-1_L": 0.08393686264753342,
+        "Junko hair_ARM/Skeleton3D::FrontHair1": 0.08327977359294891,
+        "Junko hair_ARM/Skeleton3D::Side1Steps-1_L": 0.08807376027107239,
+        "Junko hair_ARM/Skeleton3D::Side2Steps-1_L": 0.05481982231140137
+      },
+      "points_sha256": "a1f498fc19e0bbbc0bb7e9ad081116f4bf01b2f605f16c5d0ed52cb286dedb76",
+      "span_duration_seconds": 0.5,
+      "tick_count": 180,
+      "union_affected_max_vs_disabled": 0.10831707715988159
+    },
+    "speed3": {
+      "affected_max_vs_disabled": 0.0017991968197748065,
+      "last60_tick_span": 0.010877811349928379,
+      "native_Z_tip_error_max": 1.7115104355980293e-06,
+      "native_step_processing": {
+        "max_usec": 12605,
+        "mean_usec": 8054.4111111111115,
+        "samples": 180,
+        "scope": "Successful full Native.step; measured only, no FPS criterion"
+      },
+      "per_rule_last60_tick_spans": {
+        "Junko hair_ARM/Skeleton3D::2Steps-1_L": 0.009413457475602627,
+        "Junko hair_ARM/Skeleton3D::3Steps-1_L": 0.04402848333120346,
+        "Junko hair_ARM/Skeleton3D::FrontHair1": 0.010877811349928379,
+        "Junko hair_ARM/Skeleton3D::Side1Steps-1_L": 0.005255893804132938,
+        "Junko hair_ARM/Skeleton3D::Side2Steps-1_L": 0.008360969834029675
+      },
+      "points_sha256": "9962a64ff49701268c4fa232e132c327cb98b47912efc093caec670ed69e2725",
+      "span_duration_seconds": 0.5,
+      "tick_count": 180,
+      "union_affected_max_vs_disabled": 0.04495569318532944
+    },
+    "speed50": {
+      "affected_max_vs_disabled": 0.027475254610180855,
+      "last60_tick_span": 0.05565445125102997,
+      "native_Z_tip_error_max": 1.7330409036730998e-06,
+      "native_step_processing": {
+        "max_usec": 11885,
+        "mean_usec": 8625.633333333333,
+        "samples": 180,
+        "scope": "Successful full Native.step; measured only, no FPS criterion"
+      },
+      "per_rule_last60_tick_spans": {
+        "Junko hair_ARM/Skeleton3D::2Steps-1_L": 0.038611795753240585,
+        "Junko hair_ARM/Skeleton3D::3Steps-1_L": 0.12552055716514587,
+        "Junko hair_ARM/Skeleton3D::FrontHair1": 0.05565445125102997,
+        "Junko hair_ARM/Skeleton3D::Side1Steps-1_L": 0.040244150906801224,
+        "Junko hair_ARM/Skeleton3D::Side2Steps-1_L": 0.11865374445915222
+      },
+      "points_sha256": "9e59341ec72d62802e69cfd0e0606be970fe491b440522e4fccb290763827fcd",
+      "span_duration_seconds": 0.5,
+      "tick_count": 180,
+      "union_affected_max_vs_disabled": 0.16300515830516815
+    },
+    "zero": {
+      "last60_tick_span": 0.000263040215941146,
+      "native_Z_tip_error_max": 1.728791630739579e-06,
+      "native_step_processing": {
+        "max_usec": 10593,
+        "mean_usec": 7928.483333333334,
+        "samples": 180,
+        "scope": "Successful full Native.step; measured only, no FPS criterion"
+      },
+      "per_rule_last60_tick_spans": {
+        "Junko hair_ARM/Skeleton3D::2Steps-1_L": 0.0007458238396793604,
+        "Junko hair_ARM/Skeleton3D::3Steps-1_L": 0.00272596743889153,
+        "Junko hair_ARM/Skeleton3D::FrontHair1": 0.000263040215941146,
+        "Junko hair_ARM/Skeleton3D::Side1Steps-1_L": 0.0007463054498657584,
+        "Junko hair_ARM/Skeleton3D::Side2Steps-1_L": 0.0027137945871800184
+      },
+      "points_sha256": "d1d9ac80d41cf02ac2bc30fc5d264a1e4cac93c882e3f2903aee4f72df6d5a38",
+      "span_duration_seconds": 0.5,
+      "tick_count": 180
+    }
+  },
+  "mode": "writer",
+  "named_checks": {
+    "body.NativeHairOff_keepssameindependent_primary": true,
+    "body.NativeHairOn_keepssameindependent_primary": true,
+    "body.independent_primary_started": true,
+    "body.partial_refusal_preserves_model": true,
+    "body.partial_rig_refuses_ragdoll": true,
+    "body.refuse_allocation_while_native": true,
+    "body.test_authored_restore": true,
+    "disabled.authored_and_64_bones": true,
+    "disabled.fixed_ticks": true,
+    "disabled.off_restores_authored": true,
+    "disabled.on": true,
+    "disabled.weighted_profile": true,
+    "fan.actual_add": true,
+    "fan.actual_field_reaches_joint": true,
+    "fan.add_control": true,
+    "fan.controlled_transverse_fixture": true,
+    "fan.miss_equals_disabled": true,
+    "fan.native_target_and_aim": true,
+    "fan.opposite_tip_directions": true,
+    "fan.opposite_weighted_response": true,
+    "fan.speed12_weighted_response": true,
+    "fan.speed3_weighted_response": true,
+    "fan.speed50_weighted_response": true,
+    "fan.strong_response_and_wiggle": true,
+    "fan.zero_equals_disabled": true,
+    "generic.existing_backend": true,
+    "generic.off": true,
+    "import.exact_69_49_no_generic": true,
+    "import.fresh_native5_identity_fallback": true,
+    "import.fresh_native5_off_exact": true,
+    "import.fresh_native5_on": true,
+    "import.keyed_root_rotation_constant_scale": true,
+    "import.native8_identity": true,
+    "import.nonrest_keys_valid": true,
+    "import.normal_add_model": true,
+    "import.partial_native5_on_off": true,
+    "miss.authored_and_64_bones": true,
+    "miss.fixed_ticks": true,
+    "miss.off_restores_authored": true,
+    "miss.on": true,
+    "miss.weighted_profile": true,
+    "off.all_profiles_keep_authored": true,
+    "off.keyed12_weighted_exact": true,
+    "off.keyed24_weighted_exact": true,
+    "opposite.authored_and_64_bones": true,
+    "opposite.fixed_ticks": true,
+    "opposite.off_restores_authored": true,
+    "opposite.on": true,
+    "opposite.weighted_profile": true,
+    "record.arbitrary_seek": true,
+    "record.cancel_connected_local": true,
+    "record.escape_preserves_authored": true,
+    "record.frame_0": true,
+    "record.frame_24": true,
+    "record.redo_exact": true,
+    "record.same_actor_and_immutable_report": true,
+    "record.save_linked": true,
+    "record.save_packed": true,
+    "record.stop_connected_local": true,
+    "record.stop_ordinary_fk_take": true,
+    "record.undo_exact": true,
+    "save.restores_without_draft": true,
+    "seek.restores_without_draft": true,
+    "speed12.authored_and_64_bones": true,
+    "speed12.fixed_ticks": true,
+    "speed12.off_restores_authored": true,
+    "speed12.on": true,
+    "speed12.weighted_profile": true,
+    "speed3.authored_and_64_bones": true,
+    "speed3.fixed_ticks": true,
+    "speed3.off_restores_authored": true,
+    "speed3.on": true,
+    "speed3.weighted_profile": true,
+    "speed50.authored_and_64_bones": true,
+    "speed50.fixed_ticks": true,
+    "speed50.off_restores_authored": true,
+    "speed50.on": true,
+    "speed50.weighted_profile": true,
+    "zero.authored_and_64_bones": true,
+    "zero.fixed_ticks": true,
+    "zero.off_restores_authored": true,
+    "zero.on": true,
+    "zero.weighted_profile": true
+  },
+  "native_conversion_performed": false,
+  "native_rules_solved": 5,
+  "private_native_arrays_serialized": false,
+  "project_root": "C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/native-five-stage-attempt3/Studio/output/native-five-gui-attempt1/Studio/",
+  "retained_rules": 49,
+  "same_actor_reverse_body_qualification": "UNQUALIFIED_PARTIAL_SOURCE_RIG",
+  "source_manifest_sha256": "2905854ec0508f76cf2241e95229b52b338205e6a07103956e85b5b14496d059",
+  "storage": ""
+}

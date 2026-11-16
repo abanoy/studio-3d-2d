@@ -1,0 +1,43 @@
+{
+  "format": "has_dbf0bc1_full_terminal_helper_source_preparation_1",
+  "status": "UNEXECUTED_SOURCE_PREPARATION",
+  "observed_utc": "2026-11-16T02:31:55.581970+00:00",
+  "source_commit": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+  "run_name": "windows-canonical-bone-binding-20261116T022132132",
+  "exact_pins": {
+    "coordinator_pid": 87384,
+    "coordinator_creation_utc": "2026-11-16T02:21:32.1707585Z",
+    "python_pid": 86984,
+    "python_creation_utc": "2026-11-16T02:21:32.8684050Z",
+    "launch_sha256": "47412de501bd7de69e702a14e06d603d259feeff20e3a668eaca4228ced940fd",
+    "source_before_sha256": "a9bd3f994cb815c961c2f337e23252738522917553bca06358a92f20c85add80",
+    "root_birth_observation_sha256": "14c6a6703d300adc076c160c4a7ec9d0c013ecc7ea897369e45074ba4b2ea7cb"
+  },
+  "functional_sources_required": 1014,
+  "PowerShell_AST_syntax_only_passed": [
+    "context.ps1",
+    "close_full_owned.ps1",
+    "release_full_graphics.ps1"
+  ],
+  "helper_code_executed": false,
+  "terminal_process_queries_executed": false,
+  "full_terminal_or_graphics_release_claimed": false,
+  "current_private_job_count_claimed": false,
+  "historical_192_count_reused": false,
+  "observed_owner_sibling_review_modified": false,
+  "source_review_notes": [
+    "Read JSON DateKindString; terminal gate before process/final report observation.",
+    "Exact1014 before/after/current membership/hash andHEAD checks.",
+    "Exact measured coordinator/child births; PID reuse may be absent original, never killed.",
+    "Root-scoped worker absence only; independent owner review remains outside scope.",
+    "Release requires pinned actual receipt inventory+fresh normalized report,physical/retained/inline receipt joins and derives counts.",
+    "Fresh second absence check after metadata audit; no kill/force API.",
+    "Fresh external receipt completeness audit still required; no historical publication context reused."
+  ],
+  "source_sha256": {
+    "context.ps1": "cf0ce6feefdb6b482a0448452faffbada5284b271113fdc9b4abb2ac0a007891",
+    "close_full_owned.ps1": "867a201e36e9fbeeec78a83b7dc6708272cf2b8369723f9e72028e432b948cc5",
+    "release_full_graphics.ps1": "6295266940976fc0b566daf14e83a94d305773ec05df5a2431362c9570986a4d"
+  },
+  "engines_GPU_GUI_CIM_Git_or_functional_source_actions_by_preparer": false
+}

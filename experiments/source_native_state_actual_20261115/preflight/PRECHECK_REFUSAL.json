@@ -1,0 +1,12 @@
+{
+  "format": "has_native_state_preflight_refusal_1",
+  "recorded_utc": "2026-11-16T02:05:07.816848+00:00",
+  "status": "REFUSED_BEFORE_ENGINE_LAUNCH",
+  "reason": "Restricted context denied read-only CIM process inventory.",
+  "evidence_basis": "Root observed run_state_owned.py assertion at before-runtime inventory and separate native PowerShell Get-CimInstance access-denied diagnostic; this initial directory was empty.",
+  "raw_child_inventory_output_retained": false,
+  "engine_launched": false,
+  "successor": "output/source-native-state-20261116T020159138961",
+  "successor_status": "HEADLESS_PARSE_FAILED_TYPE_INFERENCE",
+  "not_an_automatic_approval_rejection": true
+}

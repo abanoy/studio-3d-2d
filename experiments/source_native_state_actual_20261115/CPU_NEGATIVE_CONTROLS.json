@@ -1,0 +1,16 @@
+{
+  "format": "has_native8_state_packet_cpu_negative_1",
+  "passed": true,
+  "checks": {
+    "numeric_vector": true,
+    "model_positions": true,
+    "decoded_pcm": true,
+    "encoded_media": true,
+    "native_transform": true,
+    "oversized_string": true,
+    "permitted_source_metadata": true,
+    "one_byte_change_fails_result_hash": true
+  },
+  "mutated_packet_files": false,
+  "model_asset_or_runtime_reads": false
+}

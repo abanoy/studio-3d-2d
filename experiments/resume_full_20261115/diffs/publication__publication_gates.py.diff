@@ -1,0 +1,13 @@
+--- experiments/owner_pause_20261114/prepared-unrun/windows-canonical-bone-binding-retry-publication-prep-20261114/publication_gates.py
++++ publication/publication_gates.py
+@@ -142,7 +142,9 @@
+             and value['coordinator']['creation_utc'] == context['coordinator_creation_utc']
+             and value['python']['pid'] == context['python_pid'] and value['python']['parent_pid'] == context['coordinator_pid']
+             and value['python']['creation_utc'] == context['python_creation_utc']
+-            and value['python']['command'] == context['suite_python_command'], 'Exact coordinator/Python observation differs')
++            and value['python']['command_line'] == context['suite_python_command']
++            and value['checked_utc'] == context['children_observation_checked_utc']
++            and Path(value['canonical_run']) == run, 'Exact coordinator/Python observation differs')
+ 
+ 
+ def validate_raw_host(run, context, state, flat):

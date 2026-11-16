@@ -1,0 +1,88 @@
+{
+  "format": "has_source_0x31_zero_cone_correction_1",
+  "status": "ORIGINAL_FAILURE_REPRODUCED_EXACT_ZERO_CONE_CORRECTION_PASSES",
+  "original_source_sha256": "636a81bd7932e790c7a3d512d88ea71e09362e473c4f8bc3f84e4022fbbbce9f",
+  "corrected_source_sha256": "dd472f2b4de64adebc83a03c2e812ac2e14805c752b220c26c53dd58bf99519c",
+  "root_reproduction": {
+    "original": {
+      "cases": 1000,
+      "failures": 104,
+      "first_failures": [
+        {
+          "case": 1,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 5,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 15,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 16,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 17,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 21,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 24,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 30,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 42,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 44,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 45,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        },
+        {
+          "case": 47,
+          "failure": "ValueError",
+          "message": "Degenerate direction outside candidate subset"
+        }
+      ],
+      "maximum_rest_displacement": 5.0242958677880805e-15,
+      "displacement_gate": 1e-10
+    },
+    "corrected": {
+      "cases": 1000,
+      "failures": 0,
+      "first_failures": [],
+      "maximum_rest_displacement": 7.944109290391274e-15,
+      "displacement_gate": 1e-10
+    }
+  },
+  "forced_moved_rotated_zero_cone_cases": 500,
+  "maximum_forced_tip_error": 3.972054645195637e-15,
+  "zero_cone_provisional_collapse_checked": true,
+  "correction": "Exact angle_limit==0 analytic direction before acos/normalizing target difference; no tolerance waiver",
+  "scope": "Mathematical candidate only; SDK/native apps not executed and native parity unqualified"
+}

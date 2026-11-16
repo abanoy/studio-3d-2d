@@ -1,0 +1,401 @@
+{
+  "format": "six_foot_plan_source_catalogue_1",
+  "source_only": true,
+  "files": {
+    "src/character_height.gd": {
+      "sha256": "be18fa34108a45a126f76a42e7b4c1a569c1ee8332855af40f2ef25a77725ce8",
+      "bytes": 5394,
+      "anchors": {
+        "static func query": [
+          33
+        ],
+        "const SIX_FEET": [
+          8
+        ]
+      }
+    },
+    "src/import_height_review.gd": {
+      "sha256": "393da8ee3a1f9e68f95f5b16e3d70e6777fb71a78d0a33dbfaa388b1306573a9",
+      "bytes": 6692,
+      "anchors": {
+        "func start": [
+          28
+        ],
+        "func prepare": [
+          47
+        ],
+        "func apply": [
+          63
+        ],
+        "func release_scratch": [
+          80
+        ]
+      }
+    },
+    "src/import_actions.gd": {
+      "sha256": "13f999df592caca092d98527ccb298f3ed0b6d236ad0fb699e58ba7d8e47879b",
+      "bytes": 3869,
+      "anchors": {
+        "var offer_height": [
+          4
+        ],
+        "func placement": [
+          15
+        ],
+        "func add": [
+          29
+        ]
+      }
+    },
+    "src/model.gd": {
+      "sha256": "7e191a62fc3eb0f1293467c1d5a661284f3f01f83316c85df09a4df02f733678",
+      "bytes": 28593,
+      "anchors": {
+        "static func definition": [
+          71
+        ],
+        "static func scale_valid": [
+          91
+        ],
+        "static func validate": [
+          94,
+          152
+        ],
+        "func apply(": [
+          444
+        ]
+      }
+    },
+    "src/renderer.gd": {
+      "sha256": "cbb5ab05f5f95bf5199387c4aebcfdeec13f2108453c7b6cb0b403bd5677ced3",
+      "bytes": 15232,
+      "anchors": {
+        "func prepare_model": [
+          203
+        ]
+      }
+    },
+    "src/world_runtime.gd": {
+      "sha256": "d2c0bb7fece396066cc4bdae34e1f7172d9a90519dae05d3e33c2b87edb32d46",
+      "bytes": 8012,
+      "anchors": {
+        "static func prepare": [
+          18
+        ],
+        "func restore_instances": [
+          121
+        ]
+      }
+    },
+    "src/import_placement.gd": {
+      "sha256": "3ba322c9e88c9cd9b154bbfb7083cae06841cb75b5b814a616089cd54076f0ad",
+      "bytes": 8534,
+      "anchors": {
+        "static func local_bounds": [
+          13
+        ],
+        "static func plan": [
+          36
+        ]
+      }
+    },
+    "src/app.gd": {
+      "sha256": "5e39bd8466193c7e6ec742a7c9ad17b5ad03d64eff45a041c184fe14e20ab3ac",
+      "bytes": 147447,
+      "anchors": {
+        "func append_object(": [
+          1744
+        ],
+        "func append_object_data": [
+          1755
+        ]
+      }
+    },
+    "src/pose_editor.gd": {
+      "sha256": "44c2b0187d378eb553afa1a9fac0e0fd23eaa23f05547eaaa155d6e027021321",
+      "bytes": 48374,
+      "anchors": {
+        "func add_model": [
+          194
+        ],
+        "func apply_scale": [
+          457
+        ]
+      }
+    },
+    "src/storage.gd": {
+      "sha256": "f90769be7f736abae6dc7e44a378330c9eb4308358d29598a6da53e2e405578e",
+      "bytes": 35631,
+      "anchors": {
+        "static func readable_manifest": [
+          57
+        ],
+        "static func save_project": [
+          107
+        ],
+        "static func decode_project": [
+          351
+        ]
+      }
+    },
+    "src/has_project.gd": {
+      "sha256": "7e916f812ac48c7a1792d2beab604bd9da01c0d86f357ec3a29c8676a4951032",
+      "bytes": 15268,
+      "anchors": {
+        "func save_asset": [
+          71
+        ],
+        "func import_asset": [
+          88
+        ],
+        "func _finish_open": [
+          239
+        ]
+      }
+    },
+    "src/asset_package.gd": {
+      "sha256": "5cbdfdbdfa7691717fb5ec2209a177fd51b010029cea8af3fcb1692b2ed9257c",
+      "bytes": 3772,
+      "anchors": {
+        "static func snapshot": [
+          6
+        ],
+        "static func import_into": [
+          16
+        ]
+      }
+    },
+    "tools/has_project.py": {
+      "sha256": "f1f86cba1e700943bbb83ee4e79939ff00e4d782de8516a27a10968eb8862073",
+      "bytes": 36736,
+      "anchors": {
+        "def members": [
+          84
+        ]
+      }
+    },
+    "src/sequence_graph.gd": {
+      "sha256": "9d3d091d62636131ac8911d743ab71c53870b64d8827293e6f2bd03ef645058f",
+      "bytes": 9988,
+      "anchors": {
+        "static func error": [
+          23
+        ]
+      }
+    },
+    "tools/sequence_graph.py": {
+      "sha256": "570ca46fe812c38315b5a5a1ecc18964cf589771daf00503078cd20ff888c019",
+      "bytes": 8868,
+      "anchors": {
+        "def error(": [
+          31
+        ]
+      }
+    },
+    "src/extended_timing.gd": {
+      "sha256": "7bce72af46d5dc8b2ef9fb0674b0e1dc39bf0be6f540c9c3915e1b81ec9b9858",
+      "bytes": 3333,
+      "anchors": {
+        "static func required": [
+          32
+        ],
+        "static func unwrap": [
+          46
+        ],
+        "static func child_schema": [
+          53
+        ]
+      }
+    },
+    "tools/extended_timing.py": {
+      "sha256": "dd8492d97820705889ab1dda7264e0fa536de7eac0cae5badb43047131367061",
+      "bytes": 2693,
+      "anchors": {
+        "def required": [
+          22
+        ],
+        "def unwrap": [
+          36
+        ],
+        "def child_schema": [
+          43
+        ]
+      }
+    },
+    "src/root_component_document.gd": {
+      "sha256": "b1cdc6183738494271b4906f5ff436a8bd5b6e31990e58de0f8905fc3d169bfe",
+      "bytes": 19847,
+      "anchors": {
+        "static func validate": [
+          250
+        ],
+        "static func promote": [
+          266
+        ]
+      }
+    },
+    "src/shape_comparison.gd": {
+      "sha256": "17b35b93661b0452711379375c80421f30412159607d31d5565ab68679ee4889",
+      "bytes": 11899,
+      "anchors": {
+        "func prepare": [
+          85
+        ]
+      }
+    },
+    "src/wind_helper_candidate.gd": {
+      "sha256": "01eea96d8d609899652cf10117971637aeb622ac69debf825b46cd4f3ea0fe8c",
+      "bytes": 25396,
+      "anchors": {
+        "static func import_actor": [
+          91
+        ]
+      }
+    },
+    "src/wind_review.gd": {
+      "sha256": "b5e55bf0426adcc04d2615373de6dadab41afe38f905706f41eaff4e9b38960e",
+      "bytes": 17923,
+      "anchors": {
+        "func begin_preview": [
+          169
+        ]
+      }
+    },
+    "src/secondary_helper_editor.gd": {
+      "sha256": "3d63e9ee8bf96c60b234a9cfb0c14bc73f90a34bc601f0fd3e7373d373ef5c63",
+      "bytes": 45029,
+      "anchors": {
+        "func install": [
+          628
+        ]
+      }
+    },
+    "src/pose_thumbnail.gd": {
+      "sha256": "e6c40f3d50f06563148450eddf01851f36ef3ce1b2d191c8768048f52899cb28",
+      "bytes": 3353,
+      "anchors": {
+        "static func": [
+          6
+        ]
+      }
+    },
+    "src/airflow.gd": {
+      "sha256": "d6bb934440095553f70300609da70eb198c7ca1d45aae0403f0a6e749ad2b7b7",
+      "bytes": 6276,
+      "anchors": {
+        "static func world_transform": [
+          25
+        ]
+      }
+    },
+    "src/physics_rig.gd": {
+      "sha256": "a7b21ba736d3645469b16e72b0864caef8305127133be9fd38966b0876442e3e",
+      "bytes": 16790,
+      "anchors": {
+        "static func create": [
+          141
+        ]
+      }
+    },
+    "src/physics_prop.gd": {
+      "sha256": "499ad7521da193346f928c4acf8cfed25da798770c3aa50b222db7bea92598df",
+      "bytes": 6843,
+      "anchors": {
+        "static func create": [
+          29
+        ]
+      }
+    },
+    "src/secondary_live.gd": {
+      "sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be",
+      "bytes": 6443,
+      "anchors": {
+        "static func create": [
+          25
+        ]
+      }
+    },
+    "src/secondary_spring.gd": {
+      "sha256": "e68b8df458b111f13bb0927012aff33cbf109407705b066f861c2aea02fe3c2a",
+      "bytes": 9592,
+      "anchors": {
+        "static func create": [
+          76
+        ]
+      }
+    },
+    "src/source_secondary.gd": {
+      "sha256": "d2c04165587ca3bb0f7b9f474b23dc81902cc78c1aa174d593534f0198f689c0",
+      "bytes": 15190,
+      "anchors": {
+        "const SOURCE_SCALE": [
+          11
+        ],
+        "static func create": [
+          120
+        ]
+      }
+    },
+    "src/source_bone_bindings.gd": {
+      "sha256": "c3402f110c84eab2c50a6685bf1b5c6957190555d96ee74cd7f3da4fb1678c54",
+      "bytes": 24681,
+      "anchors": {
+        "static func resolve": [
+          271
+        ]
+      }
+    },
+    "src/recovery.gd": {
+      "sha256": "01168f2f624670323bdfccdcfc2e32e38ed90a3b2ae64927e4726cafb62235eb",
+      "bytes": 16516,
+      "anchors": {
+        "static func checkpoint": [
+          159
+        ],
+        "static func persist_checkpoint": [
+          201
+        ]
+      }
+    },
+    "tests/character_height_smoke.gd": {
+      "sha256": "6610dc5e41ccb2e7396415b9fc365ff25f26b9838aa594cb7eca719c40cffcfd",
+      "bytes": 12102,
+      "anchors": {}
+    },
+    "tests/height_import_native_smoke.gd": {
+      "sha256": "b45ace4b30578879fdaeb62f9c4173564226f2a78038b34e2a8c5b761c774479",
+      "bytes": 4398,
+      "anchors": {}
+    },
+    "tests/height_fixture.gd": {
+      "sha256": "2cfd5ff0a5df52b0dd5093bd74dc8017ec393a9d074aca1f52012132d89c7271",
+      "bytes": 2250,
+      "anchors": {}
+    },
+    "tests/verify_character_height.py": {
+      "sha256": "8221ea1aad8ae02833d4dffacd938fa9da516162e6c343e5b1a85de02f4af77e",
+      "bytes": 5642,
+      "anchors": {}
+    },
+    "tests/test_has_project.py": {
+      "sha256": "78cc4fa5bf34ec8a8bcfae4289997392d27fb83bffa52ef3ae65412a6e0c9955",
+      "bytes": 23931,
+      "anchors": {}
+    },
+    "tests/test_asset_package.py": {
+      "sha256": "1438cbf918bd0defa48ec99c89bce86aabf51a2d6d12974e2ce6a0a4ae132d33",
+      "bytes": 4202,
+      "anchors": {}
+    },
+    "tests/test_extended_timing.py": {
+      "sha256": "a9ff1bb456387ad63b74e9a756cad5dd1928c177b3dccd878deb3fe0ec6549df",
+      "bytes": 4192,
+      "anchors": {}
+    },
+    "tests/test_sequence_graph.py": {
+      "sha256": "e3af41d25ae3331d12fb19a942cc26aa837d30ed72bd914d15a7148d62840c47",
+      "bytes": 7168,
+      "anchors": {}
+    }
+  }
+}

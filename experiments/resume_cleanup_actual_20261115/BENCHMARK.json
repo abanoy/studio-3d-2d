@@ -1,0 +1,45 @@
+{
+  "format": "has_actual_old_native_cleanup_benchmark_1",
+  "verified_backup_commit": "4da35573655c799c521f5f7460af76b2bd8de533",
+  "passed": true,
+  "cleanup_checked_utc": "2026-11-16T00:58:49.0190136Z",
+  "removed_roots": 2,
+  "removed_files": 9307,
+  "removed_directory_descendants": 1537,
+  "logical_removed_bytes": 1442187088,
+  "physical_allocated_disk_reclamation_measured": false,
+  "exclusive_open_closed_identity_verified_files": 9307,
+  "inventories_before_after_identical": true,
+  "no_process_killed": true,
+  "originals_tools_newer_reviews_recovery_removed": false,
+  "preservation_before_and_strict_post_attempt2": {
+    "original_files": 561,
+    "original_bytes": 469130387,
+    "review2_shipped_files": 5844,
+    "shared_runtime_executables": 6,
+    "original_SourceIO_files": 574,
+    "installed_exporter_noncache_sources": 120,
+    "functional_source_files": 1008
+  },
+  "post_attempt1": {
+    "status": "FAILED",
+    "exit": 1,
+    "reason": "Protected file changed during read: C:\\Program Files\\ffmpeg\\bin\\ffprobe.exe",
+    "cause": "UNDETERMINED"
+  },
+  "subsequent_ffprobe_diagnostic": {
+    "exact_helper_domain_stamp_and_approved_hash_checks": 3,
+    "all_passed": true,
+    "raw_st_mode_difference_explains_first_refusal": "NOT_ESTABLISHED",
+    "waiver_or_helper_change": false
+  },
+  "strict_post_attempt2": {
+    "status": "PASSED",
+    "started_utc": "2026-11-16T01:00:46.073380+00:00",
+    "finished_utc": "2026-11-16T01:01:03.666459+00:00",
+    "report_sha256": "d2acca7b9f820a8ca6733446162506aedfe747b6e1db1afa8826b22760507a75"
+  },
+  "discarded_generated_binary_bytes_exactly_backed_up": false,
+  "exact_regeneration_promised": false,
+  "limits": "Generated test GLB/HAS/frames/audio/movie/import-cache bytes were intentionally not archived as recoverable binaries. Original inputs, source/tool identities, public metadata and newer useful runs remain. Logical removed bytes include copied original inputs and source, not only generated binaries. Read-only ownership/sharing evidence is bounded and does not prove universal nonuse."
+}

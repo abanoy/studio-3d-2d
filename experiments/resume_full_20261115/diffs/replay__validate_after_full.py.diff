@@ -1,0 +1,24 @@
+--- experiments/owner_pause_20261114/prepared-unrun/sfm-joints-final-validator-amendment-20261114/validate_after_full.py
++++ replay/validate_after_full.py
+@@ -16,10 +16,10 @@
+ 
+ sys.dont_write_bytecode = True
+ HERE = Path(__file__).resolve().parent
+-ROOT = HERE.parents[1]
++ROOT = HERE.parents[2]  # experiments/resume_full_20261115/replay
+ WORKSPACE = ROOT.parent
+ NATIVE = ROOT/"output/sfm-bone-bindings-native-launch-20261114T033026205/run"
+-BUILDER = ROOT/"output/sfm-joints-review-builder-amendment-20261114"
++BUILDER = HERE.parent/"builder"
+ BAD = ("ERROR:", "WARNING:", "SCRIPT ERROR", "SHADER ERROR", "FAIL ", "ObjectDB instances leaked",
+        "unclaimed string names", "Pages in use exist at exit", "resources still in use", "_set_transient_exclusive_child")
+ 
+@@ -176,7 +176,7 @@
+     release_context = load(HERE/"release-context.json")
+     need(args.expected_revision == release_context["source_commit"], "Use the newly declared post-manifest-fix full revision")
+     review = args.review.resolve(strict=True); output = args.output.absolute(); no_links(review); no_links(output)
+-    need(review.parent == WORKSPACE and review.name == "HAS-Review-20261113-SFM-Joints-"+args.expected_revision[:7], "Exact new review boundary required")
++    need(review.parent == WORKSPACE and review.name == "HAS-Review-20261115-SFM-Joints-"+args.expected_revision[:7], "Exact new review boundary required")
+     need(output.resolve().is_relative_to((ROOT/"output").resolve()) and output != ROOT/"output" and not output.exists(), "New owned evidence boundary required")
+     studio = review/"Studio"; built = load(review/"BUILD-VERIFICATION.json"); lock = load(BUILDER/"input-lock.json")
+     need(built.get("passed") is True and built.get("source_commit") == args.expected_revision and built.get("native_sources_included") is True,

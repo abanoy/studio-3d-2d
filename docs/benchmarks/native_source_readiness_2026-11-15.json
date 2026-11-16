@@ -1,0 +1,478 @@
+{
+  "format": "has_native_source_readiness_1",
+  "owner_date": "2026-11-15",
+  "recorded_utc": "2026-11-16T00:40:41Z",
+  "status": "PASSED_ACTUAL_FK_STANDALONE_MATH_AND_NATIVE8_LEAF_ONLY",
+  "tested_source_revision": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "evidence": {
+    "FK_verification": {
+      "path": "output/native-jiggle-headless-transport-prep-20261115/runtime-post-full-f0dd57a/verification.json",
+      "sha256": "57122759af2ad3c66687afab4c27b49ec09fba99bf4c5397e33e49125f650e64"
+    },
+    "FK_result": {
+      "path": "output/native-jiggle-headless-transport-prep-20261115/runtime-post-full-f0dd57a/result.json",
+      "sha256": "cc8366b380bc38714e1e97f8ebdbc613be50cec55f0ead7ca1a5a1bd1cccfaeb"
+    },
+    "FK_closure": {
+      "path": "output/native-jiggle-headless-transport-prep-20261115/runtime-post-full-f0dd57a/authoritative-closure.json",
+      "sha256": "10215a0b33c048cd74493af310ca9a4b1adfc1ab2c1577e748f72be937779513"
+    },
+    "math_verification": {
+      "path": "output/source-0x31-godot-math-20261115-attempt1/verification.json",
+      "sha256": "aed2991883ed196eb1f6f52cba0bc8c1609ea6a2e842e03f8f0d562490da996a"
+    },
+    "math_result": {
+      "path": "output/source-0x31-godot-math-20261115-attempt1/result.json",
+      "sha256": "26923d1251f504bfd79835640ff1b8db49971659f433b059993e5ad8df97fcbc"
+    },
+    "math_closure": {
+      "path": "output/source-0x31-godot-math-20261115-attempt1/authoritative-closure.json",
+      "sha256": "e92e57e1f42a8c2834cca28618a9798910cda872b855bb70cb3ebc861bde3ff0"
+    },
+    "full_closure": {
+      "path": "output/windows-canonical-bone-binding-20261115T225514304/authoritative-host-termination.json",
+      "sha256": "c2a0f1b9027baeb45d0648708da2e6c87a77c2a91841a84a0241b70830674dba"
+    },
+    "native_leaf_attempt1_result": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt1/result.json",
+      "sha256": "910b3f48abce1457c12c8f1c95a8b0f52ea159a8edec6d2425e2254ad1a057fb"
+    },
+    "native_leaf_attempt1_verification": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt1/verification.json",
+      "sha256": "ee27c2b95235b661f1c90b5acd7be149e07d3c9d88c66edaf81483a546063140"
+    },
+    "native_leaf_attempt1_authoritative_closure": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt1/authoritative-closure.json",
+      "sha256": "33ae9258da4985fe773b2c7ff887ec84f4f03b8a39230730dfc52435af9b0872"
+    },
+    "native_leaf_attempt2_result": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt2/result.json",
+      "sha256": "4f25d4cee46d8c1ecd1b5daabaa866306123e35d29997a6e62071d9b6cdf0313"
+    },
+    "native_leaf_attempt2_verification": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt2/verification.json",
+      "sha256": "f06f6672fdc804d55478a7e4601a73ecf011320809533fd26b82bc31634f9df3"
+    },
+    "native_leaf_attempt2_authoritative_closure": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt2/authoritative-closure.json",
+      "sha256": "1c666294769b96b34fe5b4ca9390ed79bfc6294cd634b9d47bf431287515981b"
+    },
+    "native_leaf_attempt3_result": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt3/result.json",
+      "sha256": "df726432021f887ae864fc0a3c3e6d2f9e2a970bc4aaa3b71bcdeecf81c9457b"
+    },
+    "native_leaf_attempt3_verification": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt3/verification.json",
+      "sha256": "dcda15bbd1938b60cc7ce3bd8f8745a75bbedef2a28d90533bc5478f259e2261"
+    },
+    "native_leaf_attempt3_authoritative_closure": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt3/authoritative-closure.json",
+      "sha256": "6822755f42de414a14a8c9bedca04f1c83e3436c7165ed00f8b2edfe938fc000"
+    }
+  },
+  "actual_FK": {
+    "status": "PASSED",
+    "checks": 41588,
+    "failures": 0,
+    "configurations": 220,
+    "native_bones": 69,
+    "native_rule_tips": 49,
+    "source_conversion_scales": [
+      0.01905
+    ],
+    "model_root_uniform_scales": [
+      1.0,
+      2.0
+    ],
+    "signed_axes": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "posed_native_indices": [
+      8,
+      17,
+      18,
+      26,
+      27
+    ],
+    "moved_parent_native_indices": [
+      17,
+      26
+    ],
+    "root_contexts": "Identity or moved/rotated, each at root scales1/2",
+    "maximum_bone_matrix_error": 1.0013580322265625e-05,
+    "maximum_skeleton_global_rest_error": 1.0013580322265625e-05,
+    "maximum_native_Z_tip_distance": 3.885747446474852e-06,
+    "phases": [
+      {
+        "phase": "parse",
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "terminated_owned_child": false,
+        "seconds": 0.8310910000000149,
+        "passed": true
+      },
+      {
+        "phase": "run",
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "terminated_owned_child": false,
+        "seconds": 1.7526999000001524,
+        "passed": true
+      }
+    ],
+    "source_runtime_inputs_preserved": true,
+    "authored_source_reset_preserved": true,
+    "root_authoritative_closure": {
+      "checked_utc": "2026-11-15T23:58:47.2431842Z",
+      "both_retained_Popen_children_reaped": true,
+      "owned_runtime_commands_absent": true,
+      "runtime_lease_released": true,
+      "no_process_killed": true
+    },
+    "scope": {
+      "actual_SceneIO_loader_Model_inventory_apply_and_binding": true,
+      "actual_skeleton_rest_FK_and_world_tips": true,
+      "posed_weighted_vertex_or_GPU_render": "UNRUN_BY_THIS_PROBE",
+      "native_dynamics": false,
+      "full_Studio_GUI_or_saved_project": false,
+      "second_actual_source_conversion": "UNRUN"
+    }
+  },
+  "standalone_Godot_math": {
+    "status": "PASSED_SCALAR64_SYNTHETIC_ENGINE_MATH_ONLY",
+    "checks": 8994,
+    "failures": 0,
+    "integration_steps": 1440,
+    "sample_output_sets": 48,
+    "maximum_scalar64_vector_error": 9.374856803373542e-13,
+    "zero_cone_max_rest_displacement": 1.0805156823142815e-14,
+    "engine": {
+      "build": "official",
+      "hash": "89cea143987d564363e15d207438530651d943ac",
+      "hex": 263680,
+      "major": 4,
+      "minor": 6,
+      "patch": 0,
+      "status": "stable",
+      "string": "4.6-stable (official)",
+      "timestamp": 0
+    },
+    "candidate_sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3",
+    "harness_sha256": "284944cd8ba0b876e09bbab0f86bd359d9446c6ff0ec2969fc8ec0747b1011fa",
+    "public_synthetic_oracle_sha256": "d131028f688711c7bc669eeeac04255a87a763e55fcda7e76b3337763bf976df",
+    "source_preparation_index_sha256": "d20b7cf6dfec58344e95dcdb58e657fe0e484359925ab59d6cc978f1a3b87204",
+    "phases": [
+      {
+        "phase": "parse",
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "terminated_owned_child": false,
+        "seconds": 0.15971480000007432,
+        "passed": true
+      },
+      {
+        "phase": "run",
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "terminated_owned_child": false,
+        "seconds": 0.7128969999994297,
+        "passed": true
+      }
+    ],
+    "locked_inputs_preserved": true,
+    "root_authoritative_closure": {
+      "checked_utc": "2026-11-16T00:05:27.1904819Z",
+      "owned_headless_children_reaped": true,
+      "owned_runtime_commands_absent": true,
+      "runtime_lease_released": true,
+      "no_process_killed": true
+    },
+    "clock_policy": {
+      "fixed_hz": 120,
+      "seed_tick": 0,
+      "first_integration_tick": 1,
+      "SDK_minimum_first_dt_fallback_and_history_parity": false
+    },
+    "scope": {
+      "scalar64_synthetic_engine_math": true,
+      "actual_Vector3_Basis_binary32_boundary": true,
+      "native_geometry_loaded": false,
+      "SDK_or_closed_native_client_executed": false,
+      "application_integration": false,
+      "actual_parent_body_fan_Record_Off_portability": "UNRUN_NOT_INTEGRATED",
+      "artist_native_parity": "UNQUALIFIED"
+    }
+  },
+  "prior_failures_preserved": {
+    "native_normal_fidelity": {
+      "status": "FAILED_ORIGINAL_2e-5_GATE_UNQUALIFIED",
+      "maximum_distance": 0.00121654672362075,
+      "gate": 2e-05,
+      "qualifying_position_or_FK_pass_does_not_waive_it": true,
+      "diagnosis": "experiments/resume_coordinates_20261115/NORMAL_DIAGNOSIS.json"
+    },
+    "zero_cone_original": {
+      "status": "FAILED_104_OF_1000",
+      "original_packet": "experiments/source_0x31_candidate_20261115/attempt1-original",
+      "root_failure": "experiments/source_0x31_candidate_20261115/root-zero-cone-failure.json",
+      "corrected_root_reproduction": "experiments/resume_root_20261115/prototype-zero-angle-fixed-independent.json",
+      "correction_is_exact_zero_case_not_tolerance_waiver": true
+    },
+    "native_leaf_guard_attempts": [
+      {
+        "attempt": 1,
+        "status": "FAILED_NATIVE8_READINESS",
+        "checks": 2,
+        "failures": 1,
+        "dynamics_steps": 0,
+        "reason": "Unexpected parent/rest/modifier/final-pose context",
+        "phases": [
+          {
+            "phase": "parse",
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "passed": true
+          },
+          {
+            "phase": "run",
+            "exit": 1,
+            "retained_Popen_reaped": true,
+            "passed": false
+          }
+        ],
+        "inputs_preserved": true,
+        "root_closed_reaped_no_kill": true,
+        "closure_checked_utc": "2026-11-16T00:29:19.0862754Z",
+        "failure_not_relabelled": true
+      },
+      {
+        "attempt": 2,
+        "status": "FAILED_NATIVE8_READINESS",
+        "checks": 2,
+        "failures": 1,
+        "dynamics_steps": 0,
+        "reason": "Unexpected parent/rest/modifier/final-pose context; diagnostic={\"expected_native_parent_index\":7,\"final_pose_count\":0,\"first_failing_guard\":\"modifier_presence\",\"modifier_classes\":\"PhysicalBoneSimulator3D\",\"modifier_count\":1,\"modifier_details\":\"class=PhysicalBoneSimulator3D;internal=true;direct_parent=true;active=true;is_simulating_physics=false;PhysicalBone3D_descendants=0\",\"native_parent_index\":7,\"show_rest_only\":false}",
+        "phases": [
+          {
+            "phase": "parse",
+            "exit": 0,
+            "retained_Popen_reaped": true,
+            "passed": true
+          },
+          {
+            "phase": "run",
+            "exit": 1,
+            "retained_Popen_reaped": true,
+            "passed": false
+          }
+        ],
+        "inputs_preserved": true,
+        "root_closed_reaped_no_kill": true,
+        "closure_checked_utc": "2026-11-16T00:33:29.1859142Z",
+        "failure_not_relabelled": true,
+        "observed_import_context": {
+          "expected_native_parent_index": 7,
+          "final_pose_count": 0,
+          "first_failing_guard": "modifier_presence",
+          "modifier_classes": "PhysicalBoneSimulator3D",
+          "modifier_count": 1,
+          "modifier_details": "class=PhysicalBoneSimulator3D;internal=true;direct_parent=true;active=true;is_simulating_physics=false;PhysicalBone3D_descendants=0",
+          "native_parent_index": 7,
+          "show_rest_only": false
+        }
+      }
+    ]
+  },
+  "source_profile_hashes": {
+    "glb": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "parameters": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed",
+    "mdl": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "vvd": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0"
+  },
+  "important_scale_distinctions": {
+    "actual_import_source_scale": [
+      0.01905
+    ],
+    "actual_model_root_scales": [
+      1.0,
+      2.0
+    ],
+    "synthetic_math_other_unit_factors": "Mathematical cases only, not actual second source import",
+    "six_foot_scale1_standardization": "PLANNED_NOT_IMPLEMENTED"
+  },
+  "other_plans": {
+    "PMX_original_physics_adapter": "NOT_IMPLEMENTED",
+    "PMX_like_reconstruction_assistant": "PLANNED_UNTRAINED",
+    "richer_common_HAS_model_contract_and_roughly200_checks": "PLANNED",
+    "original_assets_rawmetadata_and_generic_helpers_preserved": true
+  },
+  "private_oracles_native_coordinates_geometry_media_published": false,
+  "production_native_source_solver_enabled": false,
+  "native_full_layout_verification_enabled": false,
+  "formal_acceptance_or_implementation_scores_changed_by_these_checks": false,
+  "actual_native_leaf": {
+    "status": "PASSED_NATIVE8_LEAF_READINESS_ONLY",
+    "successful_attempt": 3,
+    "checks": 7289,
+    "failures": 0,
+    "dynamics_steps": 1440,
+    "case_count": 12,
+    "ticks_per_case": 120,
+    "requested_root_contexts": [
+      {
+        "root_scale": 1,
+        "moved_rotated": false
+      },
+      {
+        "root_scale": 2,
+        "moved_rotated": true
+      }
+    ],
+    "measured_world_scale_range": [
+      0.9999954235595804,
+      1.9999909457588816
+    ],
+    "actual_source_conversion_scales": [
+      0.01905
+    ],
+    "input_profiles_per_root": [
+      "control",
+      "positive3",
+      "negative3",
+      "positive12",
+      "positive50",
+      "repeat12"
+    ],
+    "external_input": "Temporary synthetic transverse world acceleration, not an actual HAS fan or native Source wind API",
+    "native_index": 8,
+    "native_parent": 7,
+    "descendants": 0,
+    "retained_native_parameters": {
+      "yaw_stiffness": 100,
+      "pitch_stiffness": 100,
+      "damping": 5,
+      "length": 20,
+      "tip_mass": 20,
+      "angle_limit": 0.7853981852531433
+    },
+    "CPU_weighted_counts": {
+      "vertices": 9661,
+      "weighted_to_leaf": 152,
+      "shared_with_other_bones": 144,
+      "unaffected_weight_region": 9509
+    },
+    "maximum_basis_error": 5.068859995960295e-06,
+    "maximum_native_Z_tip_error": 3.4960614812007407e-06,
+    "maximum_float32_to_scalar64_adapter_correction": 4.934248870047675e-06,
+    "maximum_parent_local_closure_error": 1.1920928955078125e-07,
+    "maximum_weighted_displacement": 0.03188145160675049,
+    "weighted_vertices_moved_range": [
+      151,
+      152
+    ],
+    "all68_other_world_bones_exact": true,
+    "all9509_unaffected_weight_region_exact": true,
+    "Off_style_restoration": {
+      "method": "live_pose=null then actual Model.apply",
+      "current_keyed_frame24_exact": true,
+      "nonrest_frame12_exact": true,
+      "data_keys_rest_base_pose_exact": true,
+      "all_weighted_points_exact": true
+    },
+    "cleared_state_repeat12_weighted_hashes_exact": true,
+    "signed3_and_strength12_50_effects_differ_from_gravity_control": true,
+    "preregistered_gates_unchanged": {
+      "meaningful_geometry_displacement_per_root_scale": 1e-05,
+      "unaffected_and_Off": "Exact private-byte/hash equality",
+      "world_or_basis_boundary": 2e-05
+    },
+    "registered_success_count_7289_unchanged": true,
+    "bounded_import_context": {
+      "active": true,
+      "actor_PhysicalBone3D_count": 0,
+      "direct_internal_child": true,
+      "final_pose_count": 0,
+      "is_simulating_physics": false,
+      "matches_engine_default_structure": true,
+      "modifier_class": "PhysicalBoneSimulator3D",
+      "modifier_count": 1,
+      "native_parent_index": 7,
+      "private_compatibility_flag": "UNMEASURED",
+      "scan_complete": true,
+      "script_null": true,
+      "show_rest_only": false
+    },
+    "guard_policy": "At most one exact native script-free internal direct PhysicalBoneSimulator3D, simulation false, no PhysicalBone3D anywhere actor subtree; all other modifiers/bodies refused; same helper before/after each root, no disabling/removal",
+    "phases": [
+      {
+        "phase": "parse",
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "terminated_owned_child": false,
+        "killed_owned_child": false,
+        "seconds": 0.930999599999268,
+        "passed": true
+      },
+      {
+        "phase": "run",
+        "exit": 0,
+        "retained_Popen_reaped": true,
+        "timed_out": false,
+        "terminated_owned_child": false,
+        "killed_owned_child": false,
+        "seconds": 3.4364773999986937,
+        "passed": true
+      }
+    ],
+    "source_preparation_packet": "experiments/source_0x31_native_leaf_compat_20261115",
+    "source_preparation_index_sha256": "9a54ab68350e41c1f98f7024af375f032964bd2dd594c2c3766f2b82d03c24a6",
+    "compact_repo_evidence": "experiments/native_leaf_actual_20261115",
+    "root_authoritative_closure": {
+      "checked_utc": "2026-11-16T00:38:38.5051883Z",
+      "validation_passed": true,
+      "owned_headless_children_reaped": true,
+      "owned_runtime_commands_absent": true,
+      "runtime_lease_released": true,
+      "no_process_killed": true
+    },
+    "all_locked_inputs_preserved": true,
+    "source_metadata_activation_changed": false,
+    "native_full_layout_verification_enabled": false,
+    "scope": {
+      "actual_SceneIO_Model_Binding_and_live_pose": true,
+      "actual_CPU_weighted_mesh_queries": true,
+      "SDK_or_closed_native_client_executed": false,
+      "artist_native_motion": "UNQUALIFIED",
+      "GPU_skinning_or_render_fidelity": false,
+      "full_GUI_body_fan_Record_HAS_render_integration": false,
+      "procedural_parent_chain": "UNRUN",
+      "originals_or_native_arrays_published": false
+    }
+  },
+  "next_runtime_increment": {
+    "procedural_parent_pairs": [
+      [
+        17,
+        18
+      ],
+      [
+        26,
+        27
+      ]
+    ],
+    "all49_native_rule_lifecycle": "UNRUN",
+    "GUI_body_actual_fan_Record_Has_render": "UNRUN_NOT_INTEGRATED",
+    "native_artist_fidelity": "UNQUALIFIED"
+  },
+  "latest_product_increment": {
+    "path": "docs/benchmarks/native_source_live_2026-11-15.json",
+    "scope": "One rule product GUI96 then later state180; old experiments above remain scoped to their earlier source; fresh current full-default pending"
+  }
+}

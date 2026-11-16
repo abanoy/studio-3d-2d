@@ -1,7 +1,63 @@
 # HAS — consolidated master reference for resuming work
 
-**Paused November 13, 2026 at the owner's request. Do not resume implementation,
-tests or participation requests until the owner resumes.**
+**The owner resumed work on November 15, 2026.** Continue independent software
+work without requesting the deferred manual observations. The historical pause
+and November 14 documentation-only entries below remain evidence of their own
+scope. See [current continuation](NEXT_SESSION_PLAN_2026-11-15.md).
+
+**Current verification:** dbf0bc1 is pushed, but its new complete-default run
+FAILED on an outer test timeout caused by archive snapshot/hash overhead. All
+36core groups passed and the late actual shutdown child passed28checks; neither
+is a full PASS. The failed run's46private jobs are closed and its test slot is
+released. The opt-in runtime snapshot repair now passes27CPU and28actual checks
+in21.76seconds with unchanged timeouts/assertions; a fresh full retry is required.
+All205changed files in the prior dbf commit have exact remote readback. Owner's
+manual hair-click exercise is deferred; continue
+independently without further manual requests.
+
+**Latest working increment:** five native Source joints now run as three hair
+strands on the exact qualified Junko model. Isolated266state and102editor/
+cold-save/export checks pass; runtime-equivalent code is promoted. Main120CPU
+driver controls and41port rows pass. Fresh complete Windows verification is
+still required. See `docs/benchmarks/native_five_qualified_2026-11-15.json`.
+
+**Earlier one-rule increment:** the first native Source rule runs through
+ordinary Hair & clothes/fan/Record controls on the qualified Junko model.
+Actual private UI/cold-save/export checks pass96; subsequent headless lifecycle
+and stale-binding checks pass180 across three actual instances. This is **one
+of49 rules**, with same-actor active ragdoll still unqualified. The earlier
+f0dd57a review and full-default pass are separate snapshots. Parent chains,
+current full-default verification and an updated owner review remain next;
+the historical "not enabled" paragraphs below describe earlier checkpoints.
+Isolated five-rule successors pass266state checks, but the initial82-check GUI
+writer and subsequent57-check diagnostic retain their fan-direction failures.
+The controlled successor later passes and is promoted as described above. See
+the continuation and stable ledger for current
+evidence; the following old full/review pass remains historical.
+
+**Historical f0dd57a snapshot from November 15:** complete Windows default PASS
+(157 results,36core groups,21movie groups,192closed private jobs), and a new
+four-example SFM review PASS (180checks,nine preservation gates). The review
+is the separate `HAS-Review-20261115-SFM-Joints-f0dd57a-replay2` folder. Actual
+native pose/tip transport passes41,588checks; isolated scalar64 0x31 dynamics
+passes8,994checks. These experiments do not enable a native Source solver in
+Studio. The first review-comparison failure and old normal-fidelity failure
+remain preserved. See the current continuation for exact source/evidence and
+the next integration step. A bounded native8 successor now passes7,289checks
+with actual CPU weighted deformation, exact unrelated-region preservation and
+exact authored/weighted Off restoration. First two modifier-guard failures stay
+preserved; the successor admits only the verified empty, non-simulating native
+engine-default helper. App fan/body/Record/HAS/GPU integration remains next.
+The pause and old full-run paragraphs
+below are historical. That earlier pass does not qualify current source.
+
+**Verified backup and cleanup:** publication `4da35573655c799c521f5f7460af76b2bd8de533`
+was remotely read back, including exact historical source/metadata reconstruction.
+The two old Core14/Wider11 disposable roots are removed:9307files and
+1,442,187,088logical bytes. Fresh before/after original/tool/review/source
+preservation passes; no process killed. Their earlier RETAIN_FOR_NOW entries
+describe the old state. See current pickup and
+`experiments/resume_cleanup_actual_20261115` for actual evidence and limits.
 
 **November 14 documentation update:** the owner asks for PMX physics capability
 clarity, a future PMX-like reconstruction assistant during standardization and

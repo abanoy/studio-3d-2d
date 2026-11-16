@@ -1,6 +1,6 @@
 """Freeze an owner-operated review app away from automated test output/profile."""
 from pathlib import Path,PureWindowsPath
-import argparse,hashlib,importlib.util,json,os,subprocess,sys,time
+import argparse,hashlib,importlib.util,json,os,re,subprocess,sys,time
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -9,24 +9,89 @@ def included(name):
     return bool(parts) and parts[0] not in ['output','.git','.godot','__pycache__'] and '__pycache__' not in parts and not name.endswith('.pyc')
 
 
-def safe_destination(target,name):
+def validate_name(name):
     windows=PureWindowsPath(name);parts=name.split('/')
     reserved={'CON','PRN','AUX','NUL'}|{p+n for p in ['COM','LPT'] for n in '123456789\u00b9\u00b2\u00b3'}
     assert not windows.anchor and not windows.drive and not windows.root,f'Unsafe snapshot path: {name}'
     assert all(part and part not in ['.','..'] and part==part.rstrip(' .') and
                not any(ord(c)<32 or c in '\\:<>"|?*' for c in part) and
                part.split('.')[0].upper() not in reserved for part in parts),f'Unsafe snapshot path: {name}'
+    return parts
+
+
+def safe_destination(target,name):
+    parts=validate_name(name)
     destination=target.joinpath(*parts)
     assert destination.resolve().is_relative_to(target.resolve()),f'Unsafe snapshot path: {name}'
     return destination
 
 
-def freeze_source(root,target,revision=None):
+
+# Opt-in automated runtime snapshots exclude accumulated research evidence.
+# The interactive owner builder retains its original full-source default.
+RUNTIME_TREES = frozenset({'src','tests','tools','data','examples'})
+RUNTIME_ROOTS = frozenset({'main.tscn','project.godot','run.py','launch.pyw'})
+RUNTIME_NOTICES = frozenset({'THIRD_PARTY_NOTICES.md','docs/licenses.md'})
+RUNTIME_OPTIONAL_ROOTS = RUNTIME_NOTICES | {'dependencies.json'}
+RESOURCE_LITERAL = re.compile(rb"[\"']res://([^\"'\r\n\x00]*)[\"']")
+
+
+def _read_blob_batch(root, entries):
+    """Fetch only requested immutable blobs; never substitute working files."""
+    if not entries:return {}
+    batch=subprocess.check_output(['git','cat-file','--batch'],input=b''.join(oid+b'\n' for _,oid in entries),cwd=root)
+    result={};offset=0
+    for name,oid in entries:
+        line_end=batch.index(b'\n',offset);actual,kind,size=batch[offset:line_end].split()
+        assert actual==oid and kind==b'blob','Unexpected Git blob response'
+        start=line_end+1;end=start+int(size);data=batch[start:end]
+        assert len(data)==int(size) and batch[end:end+1]==b'\n','Truncated Git blob response'
+        offset=end+1;result[name]=data
+    assert offset==len(batch),'Unexpected trailing Git output'
+    return result
+
+
+def _runtime_entries(root, entries, revision):
+    """Retain five runtime trees, entrypoints and their literal resource closure.
+
+    Existing quoted res:// file references retain exact names and bytes; quoted
+    directory references retain all existing files below that directory. Empty
+    res://, missing/format-placeholder paths and excluded output/cache paths add
+    nothing. A reference cannot introduce any path absent from the original
+    validated Git candidate catalogue. Closure repeats for added resources.
+    Relative Python modules and dynamic runtime fixtures remain available through
+    the complete tools/tests/data/examples trees, rather than preload guessing.
+    """
+    by_name=dict(entries)
+    assert RUNTIME_ROOTS <= by_name.keys(),'Missing runtime application entry points'
+    selected={name for name in by_name if name.split('/',1)[0] in RUNTIME_TREES or name in RUNTIME_ROOTS or name in RUNTIME_OPTIONAL_ROOTS}
+    prefixes={}
+    for name in by_name:
+        parts=name.split('/')
+        for end in range(1,len(parts)):
+            prefixes.setdefault('/'.join(parts[:end]),set()).add(name)
+    cached={}
+    while selected-cached.keys():
+        pending=[(name,by_name[name]) for name in sorted(selected-cached.keys())]
+        data=({name:(root/name).read_bytes() for name,_ in pending} if revision is None else _read_blob_batch(root,pending))
+        cached.update(data)
+        for body in data.values():
+            for match in RESOURCE_LITERAL.finditer(body):
+                try:reference=match.group(1).decode('utf-8').rstrip('/')
+                except UnicodeDecodeError:continue
+                if not reference:continue
+                if reference in by_name:selected.add(reference)
+                selected.update(prefixes.get(reference,()))
+    return [(name,by_name[name]) for name in sorted(selected)],cached
+
+
+def freeze_source(root,target,revision=None,*,runtime_scope=False):
     """Copy exact Git blobs when a reviewed revision is requested.
 
     Working-file mode intentionally retains the original builder's behavior.
     Revision mode never reads staged, modified or untracked working files.
     """
+    assert type(runtime_scope) is bool,'runtime_scope must be an explicit bool'
     assert not target.exists(),'Studio must not exist'
     commit=subprocess.check_output(['git','rev-parse','--verify','--end-of-options',(revision or 'HEAD')+'^{commit}'],cwd=root,text=True).strip()
     if revision is None:
@@ -44,18 +109,25 @@ def freeze_source(root,target,revision=None):
             entries.append((name,oid))
     names={n for n,_ in entries}
     assert {'main.tscn','project.godot','run.py'}<=names,'Missing application entry points'
+    cached=None
+    if runtime_scope:
+        # Validate the whole candidate catalogue before reading any source.
+        for name,_ in entries:validate_name(name)
+        assert len({name.casefold() for name,_ in entries})==len(entries),'Case-colliding snapshot paths'
+        entries,cached=_runtime_entries(root,entries,revision)
     destinations={name:safe_destination(target,name) for name,_ in entries}
     assert len({name.casefold() for name in destinations})==len(destinations),'Case-colliding snapshot paths'
     # Validate the whole tree before creating anything. A batch reads blob IDs,
     # avoiding per-file processes and path/revision parsing ambiguity.
     batch=None
-    if revision is not None:
+    if revision is not None and cached is None:
         batch=subprocess.check_output(['git','cat-file','--batch'],input=b''.join(oid+b'\n' for _,oid in entries),cwd=root)
     # Atomic reservation also refuses a target created while Git was reading.
     target.mkdir(exist_ok=False)
     hashes={};offset=0
     for name,oid in entries:
-        if batch is None:data=(root/name).read_bytes()
+        if cached is not None:data=cached[name]
+        elif batch is None:data=(root/name).read_bytes()
         else:
             line_end=batch.index(b'\n',offset);actual,kind,size=batch[offset:line_end].split()
             assert actual==oid and kind==b'blob','Unexpected Git blob response'

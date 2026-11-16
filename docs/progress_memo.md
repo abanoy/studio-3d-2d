@@ -14819,3 +14819,417 @@ save validation. Partial parts, props/maps and uncertain/nonstandard figures
 must not be blindly fitted; existing HAS scenes and authored contacts remain
 intact. No implementation, new tests, app runs or cleanup occurred. Goal remains
 paused; formal acceptance 55/62 and implementation 52/54 are unchanged.
+
+
+## 2026-11-15 — Resume, complete Windows default and qualify native hair foundations
+
+Owner explicitly resumed independent work; deferred manual exercises remain
+parked. Frozen main f0dd57a2e568089d396fecba819ab987da658bf0 and all1008functional
+source bytes stayed unchanged. No production/src/test implementation changed
+during this increment. The goal service still reports paused and refused its
+resume update for missing trusted source-turn context; owner authorization is
+unambiguous, and this service limitation did not stop work.
+
+Fresh complete default output/windows-canonical-bone-binding-20261115T225514304
+PASS:2956.8145699seconds,157named results/36core groups/21movie metadata groups,
+both decoded onsets1.0sec,192closed private jobs(191exit0,registered Krita cancel2).
+Actual root coordinator/Python identity, terminal status, unchanged source,
+normalized report,13inline raw result joins and all private receipts were
+independently reconciled. Root closure/release killed no process. EE/c4dFAILED
+and owner-cancelled f380INCOMPLETE remain unchanged. Exact compact468-payload
+evidence is in experiments/windows_bone_binding_full_actual_20261115.
+
+New separate review HAS-Review-20261115-SFM-Joints-f0dd57a-replay2 contains Keiki,
+Mima,JunkoHair,Nitori and passes180checks(44/46/49/41),4closed private jobs,
+9preservation gates,8native-reference frame matches and12strict state/audio
+phase comparisons. Original families/tools/120exporter/574SourceIO sources,
+oldreviews and installedStudio stay exact. First review replay FAILED because
+decoded PCM cache was compared with authored portable state. Preserve it and
+its first review. A source-reviewed successor removes only that cache from
+portable projection and independently verifies exact wave-derived cache content/
+binding across phases; unchanged pixel/state/named/receipt gates remain.
+Code and public evidence:experiments/replay_audio_fix_20261115 and
+experiments/sfm_review_actual_20261115. No private observed PCM states/media
+are published.
+
+Actual Model/SceneIO native pose/tip transport PASS41588checks/220configurations,
+69bones/49native-Ztips, moved roots/parents and root scales1/2 at one actual
+conversion0.01905. Exact authored/base/rest resets and source preservation pass.
+Private native oracle remains local; experiments/native_runtime_readiness_actual_20261115
+contains metadata/logs only. Standalone Godot scalar64 0x31 math parses and passes
+8994checks/1440synthetic ticks. Python candidate has322assertions/17280steps.
+Independent root review caught104/1000zero-cone failures; exactoriginal candidate
+and failures remain frozen. Explicit zero-angle treatment passes the same1000
+controls without relaxing gates. Native SDK/client execution, artist parity,
+posedskin/GUI/fan/body/Record/HAS/render integration are not implied.
+
+First actual native8 leaf adapter/harness parses but runtime refuses its
+modifier-presence guard before dynamics(2checks/1failure/0steps). Diagnostic
+successor confirms one native internal/direct PhysicalBoneSimulator3D,
+active=true but not simulating, no physicalbody descendants, parent7,
+rest-only=false/finalpose0. Both attempts reaped/closed, no kills/input changes.
+Pinned Godot source explains its default compatibility simulator; bounded guard
+successor remains unrun at this entry. Keep native normal-fidelityFAILED
+(max0.0012165467), artist observations and actual second-conversion qualification
+separate. The source-only intermediate-normal diagnostic remainsUNRUN.
+
+Old-test archive fills16missing historical source/metadata inputs,
+4122249rawbytes→756657stored, all decompression/source equality independently
+verified. Allsixpublic evidence packet indices/privacy joins pass separate
+review(630payloads,451JSON,82gzip,77source-alias roundtrips). No art/native arrays/
+PCM/media are copied. Remote publication is pending at this entry; no deletion.
+Twooldnative roots remain RETAIN_FOR_NOW1442187088bytes;46small duplicate copies
+also need current dependency/nonuse and remote gates. See resume_archive_20261115.
+
+Updated current pickup/master, Source runtime plan/readiness benchmark and stable
+ledger. Completion checker passes with all62IDs/statuses unchanged:55/62acceptance,
+52/54implementation. Six-foot normalization at user scale1, PMX physics/
+reconstruction and roughly200capability checks remain plans. Next:bounded actual
+leaf weighted deformation/Off, verified parent-child ordering, then ordinary
+fan/body/Record/HAS integration and literal cleanup only after verified backup.
+
+
+## 2026-11-15 — Actual native leaf weighted deformation and exact Off restoration
+
+Fresh isolated compatibility successor at
+experiments/source_0x31_native_leaf_compat_20261115 parses and passes7289checks,
+0failures,1440ticks/12cases through the actual f0dd Model/SceneIO/Skin pipeline.
+Native8 FrontHair1 uses its retained stiffness100/length20/tipMass20 rule at
+source conversion0.01905, under identity scale1 and moved/rotated scale2roots.
+Scalar64 desired-to-actual basis max5.06886e-6 and native-Ztip max3.49606e-6
+pass unchanged2e-5boundary gates. CPUweighted movement reaches0.03188145m;
+all152leaf-influenced vertices move under external-input profiles, with144shared
+influences disclosed. All9509zero-weight vertices and68other worldbones remain
+exact. Both authored/current-key24 and nonrest12 states and allweighted points
+restore exactly after direct live_pose clear/apply; cleared12input cycles repeat
+exactly. Synthetic opposite3/strength12/50inputs differ from gravitycontrol,
+remainfinite/constrained; this is not actual fan API input.
+
+First two guard failures are retained. Godot4.6 automatically creates a native
+internal PhysicalBoneSimulator3D which can be active=true but not simulating
+and have no physicalbodies. Primary-source/API audit plus actualdiagnostics
+support the narrow admission: at mostone exactnative script-free directinternal
+simulator, boolean simulationfalse and zeroPhysicalBone3D anywhere inactor.
+Othermodifiers/bodies, rest-only and finalpose contexts stillrefuse. No node
+was disabled/removed and alloriginal numeric/geometry/Off/check-count gates
+remain. Private compatibility flag is UNMEASURED; structure matchesengine default.
+
+Root closure2026-11-16T00:38:38.5051883Z records bothowned childrenreaped, noowned
+runtimes, nokill andallinputs preserved. VerificationSHA
+dcda15bbd1938b60cc7ce3bd8f8745a75bbedef2a28d90533bc5478f259e2261.
+Public aggregate evidence is experiments/native_leaf_actual_20261115.
+No nativegeometry arrays or leases are published. No Source coefficients or
+full-native-layout flags were enabled inproduction. SDK/client/artistparity,
+GPUappearance, actualGUI Hair&clothes toggle, body/fan coexistence, Record/Undo,
+coldHAS/movie andproceduralparentchains stillneedimplementation/qualification.
+Updatecurrentpickup/runtimeplan/readinessbenchmark accordingly; formal55/62and
+52/54stayunchanged. Next integrationwork:17→18/26→27parentordering and ordinary
+app controls, keeping thisoneleafproofnarrow.
+
+
+## 2026-11-15 — Verified GitHub recovery and removed exact old native test roots
+
+Publication4da35573655c799c521f5f7460af76b2bd8de533 is pushed and remotely retrieved.
+Actual new-file readback passes1095files/15135622bytes, including203current source
+reconstructions(40exact/163strictLF→CRLF). Separate historical readback passes
+506packetpayloads+981Gitblobs from8d4fde001258f501602bd94bd80d925683062f15,
+reconstructing1962snapshotfiles and44metadatajoins exactly, including2selected-
+newline recipes and6existing public fixtures175666bytes. No supplied native
+art/model payload was uploaded. All public source/metadata backup gates pass;
+the independent audit lives in experiments/resume_cleanup_actual_20261115.
+
+Fresh combined preservation after both remote checks passes561original inputs,
+5844currentreviewfiles,6runtimes,574SourceIO,120exporter and1008functional sources.
+Exactoldcoordinator identities remainabsent,24historicalprivatejobsclosed,0current
+engineprocesses and0readableold-rootargumentprocesses. No current app/review/FK/
+leaf dependency exists; future historical baseline reruns need the mapped
+metadata restored/redirected. Global inaccessible commandlines/mappedviews are
+not claimed excluded; root combined source/dependency/ownedclosure proofs with
+fresh actual access observations rather than promoting a probe to authority.
+
+All9307oldfiles pass sequential GENERIC_READ/share0/nativeidentity/close checks;
+fullbeforeafterinventories match. Separate root decision authorizes only the two
+literal disposable roots. Reviewed nativePowerShell validates resolvedboundaries,
+allfilehashes/stamps/membership, current source and native singlelinks/fileIDs
+before either deletion. Actual00:58:49.0190136Zcleanup removes4707Core14files/
+387640663bytes and4600Wider11files/1054546425bytes,1537nested directories and2roots:
+1442187088logicalbytes. No processkilled. Both roots are independently absent.
+Physical allocated blocks are not measured. Exact generatedbinaryoutput bytes
+were not archived or promised exactregeneration; original inputs/tools/code and
+exactmetadata support reruns.
+
+Unchanged strict postcleanup preservation passes the same561/5844/6/574/120/1008
+groups, SHA d2acca7b9f820a8ca6733446162506aedfe747b6e1db1afa8826b22760507a75.
+The firstpostcheck refused a transient ffprobe.exe file-stamp comparison and is
+preserved asFAILED/causeUNDETERMINED. Three later exact helper-domain stamp/hash
+observations match approvedbytes, then the unchanged fullrepeat passes; no
+assertion was relaxed. An extra diagnostic st_mode discrepancy does not explain
+the original guard, which excludes thatfield.
+
+Originals/installedStudio/sharedtools/newerreferenceandnative runs/recovery/
+previousreviews/currentreview2 remain protected. The46smaller public-preparation
+duplicates remain retained pending their own current dependency review. Current
+pickup/master/ledger now point to actualbackupandcleanup evidence, superseding
+historical RETAIN_FOR_NOW for only those two roots. Formal55/62acceptance and
+52/54implementation remainunchanged. Next independent feature increment remains
+nativeSourceparent-chain ordering and normalfan/body/Off/Record/HAS integration,
+not another request for the owner's deferred manual observations.
+
+
+## 2026-11-15 — First bounded native joint integrated with ordinary controls
+
+Working source based on9de4e6c now adds scalar64 Source0x31 mathematics and a
+qualified native8 FrontHair1 backend, selected explicitly by Hair & clothes on
+the original exact Junko GLB. One of49 retained rules runs; metadata remains
+inert import provenance and full-layout flags are unchanged. Helper-derived
+assets and declared generic chains retain the existing generic backend.
+
+Actual private ordinary-control verification passes96checks(77writer/11packed/
+8linked), three closed jobs, four preservation gates. Seven actual fan profiles
+measure disabled/zero/miss/opposite and speeds3/12/50;152weighted vertices move,
+9509unaffected vertices and68other world bones remain exact. Off/seek/unrecorded
+Save restore authored state, actual Local Record/Stop/Escape/Undo/Redo works,
+packed+linked cold states/frames and packed PNG-export frames agree. A separate
+fan's actual rigid body/RID persists through native On/Off. The first74-check
+run retains two FAILED fixture expectations: this hair-only rig correctly lacks
+the arm/leg chains required for automatic ragdoll. Correction preserves all
+numeric gates and tests the real refusal plus independent body ownership.
+
+Subsequent header/binding-staleness changes pass180headless lifecycle checks,
+three actual Model instances,506completed native steps and23negative cases.
+Header/length/mtime mutations each meet their required isolated observation.
+All owned GLBs restore; passed inputs, authored69-bone state/keys/raw49 report,
+source and runtimes remain exact. Parse/state children exit0/reap, no engine
+errors or kills; after-runtime inventory owns0processes. First preflight was
+refused by unavailable CIM access before any engine launch. First actual parse
+failure is preserved; sole test fix annotates complete as bool, with unchanged
+180predicates. Continuous header/length/mtime checks do not promise to detect
+body-only edits preserving those fields; full source hashing is at create/reload.
+
+Evidence: experiments/source_native_live_actual_20261115 and
+output/source-native-state-20261116T020227823185; benchmark
+docs/benchmarks/native_source_live_2026-11-15.json. The96GUI run precedes the
+later header guard, separately covered by180state checks. Same-actor active
+ragdoll, other48rules, SDK/artist fidelity and current complete-default remain
+unqualified. Parent-chain proof and fresh full-default are next. The owner's
+volunteered click-selection test uses the earlier f0dd57a review, which does
+not contain this new native-motion backend. Formal55/62and52/54stay unchanged.
+Continue independent work; no checkpoint implies a new owner pause.
+
+
+## 2026-11-15 — Actual connected native joints and reviewed generic preflights
+
+The separately staged scalar64 parent-chain runner passes4012synthetic math
+checks(maxerror8.88e-16), then21087actual native checks/12cases/1440ticks/
+5760ruleevaluations for17→18 and26→27 at roots1/2. Actual Model/weighted CPU
+queries preserve9119unaffected points and65unselected bones exactly;542weighted
+vertices(340shared) respond distinctly to temporary signed/strong inputs. Off
+at authored12/24 and repeated12-input weighted results are exact. Maximum basis
+error1.00774e-6 and native-Z tip error7.63312e-7 stay inside unchanged2e-5 gates.
+All fourheadless childrenexit0/reap, ninepreservation groupspass, noengineerror
+or kill; authoritativeclosure02:13:54.990457Z releasesruntimelease. Native25
+has NO retained jiggle rule; its authored intermediate transform is preserved.
+An incorrect frozen README sentence is corrected in a separate erratum.
+
+Evidence: output/source-0x31-native-chains-20261115-attempt1 and
+docs/benchmarks/native_source_chains_2026-11-15.json. This remains experimental
+four-rule CPU orchestration, not product parent-chain/fan/body/Record/GPU/SDK
+qualification. Production still runs the separately qualified native8 only.
+Historicalfullf0dd receipt is explicitly acknowledged as an earlier source;
+current sources are independently frozen and current full-default is pending.
+
+Default preflight review found two old physics_editor hashes. Exact old wind/
+helper manifests and observed metadata refusals are preserved. Reviewed
+successors change only that row's raw/LF hashes plus a provenance pointer;
+16/25pathsets, otherrows and strict driver gates stay exact. Actual metadata
+functions accept41rows, existing helper-driver CPU suite passes120checks with
+zero subprocess/runtime attempts, and every other1014-file catalogue identity
+stays exact. Evidence: experiments/source_native_live_independent_review_20261115/
+manifest-successor-20261116. A clean committed functional source is required
+before the fresh full-default run; no allow-working or hash bypass is added.
+All broad acceptance statuses remain unchanged. Continue independent work.
+
+
+## 2026-11-15 — Full dbf retry failed on archive snapshot overhead
+
+Committed/pushed dbf0bc1145f74b5bbff814ec6a417ccd23ce0885 contains the bounded
+native8 increment and its separately scoped96UI/180state/21087experimental
+pair evidence. GitHub ownership and explicit goal upload authorization were
+verified after the first automatic review rejection; the same non-force push
+then succeeded. Remote commit205-file list and two critical blobs match; full
+205-file readback is still partial(42verified), so do not claim it complete or
+use it as blanket cleanup authority.
+
+Fresh complete default output/windows-canonical-bone-binding-20261116T022132132
+FAILED after1346.822071seconds on verify_world_selection_teardown.py's outer
+180second timeout. All36coregroups passed;1014functional hashes andHEAD remain
+exact. The actual private shutdown child subsequently passes28checks/all4cases,
+exit0, job/desktopclosed in11.324seconds. Its receipt is later than the failed
+full terminal timestamp and does not turn the full run into a PASS. Default
+output/verification.json remains old evidence and must not be substituted.
+
+Stage timing shows about70seconds copying6023snapshotfiles(4551experiments,
+436docs),11seconds normal startup, then97seconds rehashing/archive provenance.
+The outer deadline expired about4seconds into a healthy11-second test child.
+Root host observations at02:47:42.3887530Z confirm exact coordinator87384/
+Python86984 absent, no owned native commands, current1014source/HEADexact.
+The host observer issued no process termination; Python's outer timeout branch
+automatically terminates its owned wrapper by stdlib policy(source/trace
+inference), so no global "no process killed" claim is made. Preserve raw proofs.
+
+Next: close/audit all failed-run private helpers/receipts, then implement an
+opt-in functional-runtime snapshot for this automated teardown only. Keep the
+owner builder's archive default, old revision behavior, timeout and28assertions.
+Run a fresh scoped replay and complete default; do not weaken gates or relabel
+this failure. Benchmark: docs/benchmarks/windows_native_leaf_full_timeout_2026-11-15.json.
+
+Owner withdrew the volunteered hair-click exercise because busy and explicitly
+asked continued independent work. Record DEFERRED/no human result; ask no new
+manual questions. Existing f0dd57a review remains separate and unchanged.
+Native five-rule/deeper-chain and six-foot import work are experiment drafts,
+not current production or qualification. Formal55/62and52/54 remain unchanged.
+
+
+## 2026-11-15 — Bounded runtime snapshot fixes the shutdown-test timeout
+
+After actualfailed-runleaseclosure, applied the reviewed v2 opt-in snapshot
+change to tools/build_owner_review_snapshot.py and its teardown driver. Default
+owner archives and explicit old-revision byte behavior remain unchanged.
+All candidate Windows names/collisions are checked before any source read;
+only retained runtime destinations incur filesystem resolution. Runtime keeps
+the five functional trees/four entrypoints, optional dependencies/notices and
+exact catalogue-bound quoted-resource closure. Output/cache and their private
+fixtures, plus unreferenced research evidence, stay outside this automated snapshot.
+
+All27CPU tests pass(original7 real-Git cases plus20 mocked runtime cases).
+The intentional bad-revision diagnostic is expected; suiteexit0/OK in4.146s.
+Fresh actual scoped shutdown replay passes the SAME28checks/all4cases in
+21.763778seconds under the unchanged180second outer limit(60startup/110test).
+Snapshot contains1024files instead of6023. Both actual private jobs exit0,
+closejob/desktop, never foreground; source/runtime preservation and root fresh
+owned-command absence pass. No wrapper termination or timeout occurred.
+Source: output/runtime-snapshot-scope-20261116T030539570843. Benchmark:
+docs/benchmarks/world_selection_runtime_snapshot_2026-11-15.json.
+
+The first source-application helper refused before any write because it treated
+the packet's dictionary index as a list; corrected to its exact dictionary
+schema, then applied only the three reviewed bytes/hash targets. That setup
+error is separate from the earlier actual full timeout. Old source drafts and
+first mocked CRLF-preparation failures remain preserved. No runtime assertion,
+timeout, path guard or full verification scope is relaxed. The original dbf
+full remains FAILED; commit/retry a fresh complete default next. No human
+result or broad Source/artist acceptance is inferred;55/62and52/54stay unchanged.
+
+
+## 2026-11-15 — Isolated five-rule state pass; UI directional gate still fails
+
+Root staged sealed native5v2 only under output/native-five-stage-attempt1/Studio:
+three product/five observer-driver overlays,1023sourcefiles/two copied inputs,
+original main product still native8 only. Exact preparation5869b585... and
+after-run preservation06e5364f... bind originalRoot/input/baseline/packet equality.
+
+Actualheadless parse/state PASS266checks,zero failures,886successful native
+steps observed across three actual Models,32invalid contexts, fresh/null/partial
+baselines, constant-scale rotating roots and malformed-wrapper refusal. Both
+childrenexit0/reap,noerror/kill,source/input/toolpreservationtrue,leaseclosed.
+Run: .../Studio/output/source-native-five-state-20261116T032753090430.
+
+ActualprivateUIwriter executes82checks withONEfailure:
+fan.opposite_tip_directions. Other81includeweighted fan response, unaffected
+regions, Off/seek/Save/LocalRecord/Undo and packed/linked save commands. Cold
+readers/export remainUNRUN becausewriterfailed. Writerexit1/reaped/private
+job+desktopclosed in42.972s,allfourpreservationgatestrue. Root03:33:14.6905260Z
+closure confirms0ownednativecommands andnoRoottermination. Run:
+.../Studio/output/native-five-gui-attempt1. PreserveFAILED/no main promotion.
+
+The new all-five total3D-tip dot predicate and fanfixture symmetry are under
+independent scalar/analytic investigation; originalnative8gate stays. Do not
+waive a failure or infer actual failingjoint withouttheplanned diagnostic.
+Measured successful Native.step means11.04–12.74ms(max17.723ms) exceed the
+8.333ms120Hz step budget inthisdebug/test configuration. Prepare a strictly
+guarded ancestor-calculation optimization and measure; no inventedFPS pass.
+Benchmark: docs/benchmarks/native_five_initial_2026-11-15.json. Neither266state
+PASS nor81otherUIchecksqualifiescomplete native5behavior; currentmainremains
+one rule. Fullretry, SDK/artist, same-actorbody and broader49remain separate.
+Formal55/62and52/54unchanged; ownerbusy, continuewithoutmanualquestions.
+
+
+## 2026-11-15 — Strict five-rule state proof and direction-fixture diagnosis
+
+Owner deferred the volunteered manual hair-click exercise and explicitly asked
+continued independent work. Record DEFERRED / NO RESULT; request no further
+manual observations while independent work remains.
+
+The isolated strict performance backend separately passes all266 state checks
+with exact source/input/runtime preservation. Its actual GUI diagnostic completes
+57 checks with2 retained failures (the all-five direction gate and separate
+native8 gate), then exits1 normally with closed private desktop/job and no error
+markers. Main production still solves only native8; no five-rule qualification
+or cold-reader result is inferred. Exact initial observations are archived in
+experiments/native_five_initial_actual_20261116 (INDEX d9c9e28b7bf02e7e6d1651638330135ae7388f0f1ab785be46339ba3bc5548ec).
+Root independently verified its185 archive checks; these are not product tests.
+
+The actual failing ID is8, whose goal-forward/mean-wind absolute alignment is
+0.969883. Its positive and opposite bending-plane shifts have opposite signs,
+but a common gust cross-axis term makes the whole3D dot positive6.1057e-6.
+All four added owners' dots are negative and both fields hit180/180 samples.
+The two test fans also have different aim centers. Keep both old direction
+predicates/failures, add transverse center-symmetric fixture admission, retain
+gust wiggle, and measure animated-root behavior separately. No production
+coefficients or airflow are tuned to force a pass.
+
+Strict Native.step per-profile means measure8.584–8.893ms versus initial
+11.043–13.268ms; neither is a120Hz/FPS qualification. A second source-only
+strict deduplication retains all69 guards and is under independent review.
+Stage3 is prepared only; no stage3 runtime result exists at this entry.
+
+Connected GitHub raw readback is now complete for all205 changed files of
+dbf0bc1145f74b5bbff814ec6a417ccd23ce0885. Byte counts, Git SHA1 and SHA256
+match every immutable blob; all11 functional working byte recipes reconstruct.
+See experiments/native_source_live_port_20261115/remote_dbf0bc1/COMPLETE.json.
+This covers that old checkpoint, not later working changes. No new cleanup
+occurred. Root independently reverified the scoped-repair and pair packets.
+Formal55/62 and52/54 remain unchanged; fresh full-default retry remains required.
+
+Timing correction to the initial Source5 prose: across all seven writer profiles,
+Native.step means were11.043–13.268ms and the maximum was18.469ms. The earlier
+11.04–12.74/max17.723 sentence omitted zero/miss profiles. The retained raw
+result and benchmark maximum were correct; no speed qualification was claimed.
+
+
+## 2026-11-15 — Three imported hair strands qualified and promoted
+
+Actual isolated strict2 state verification passes266/0 across three instances;
+actual editor writer83, packed cold reader/export11 and linked cold reader8
+all pass(102total). The retained root wrapper exits0/reaped in62.4266seconds;
+three real private jobs/desktops close without foreground activation, timeout
+or termination. Original1014 functional sources, two native inputs, baseline
+and sealed candidate remain exact before promotion. Success packet:
+experiments/native_five_qualified_actual_20261116, INDEX429ea76d462a385cfa2d292ed9c2c12dd9fbf9e52193f63bfb0e7776324dd655.
+Root separately verifies173archive checks; these are not product checks.
+
+The new transverse fan fixture preserves the old direction predicates and all
+numeric tolerances, proves fixed root/actual five-anchor centroid/opposite
+fields, and keeps gust wiggle. Animated0.47radian root geometry remains tested
+in the actual Record/Undo/HAS/export pipeline. Earlier82/1 and57/2 failures
+remain failed and recoverable. Native.step means now7.521–9.054ms, peak13.289ms;
+the camera fixture differs, so no paired speedup or120Hz/FPS pass is claimed.
+
+Promoted exactly10 reviewed files: three product files, four exact qualified
+test/driver files, two UI strings in physics_editor, and two manifest hash
+successors. Two source headers change comments only; runtime code matches the
+qualified Stage3. Main now solves native8,17,18,26,27 (three strands,5of49),
+with all69 identity/rest/context/scale/pose guards and atomic per-instance
+state. User text names three supported strands. Remaining44 rules are inert;
+same-actor ragdoll, collision/SDK/client/artist parity and normals remain separate.
+Current120CPU driver controls and all41 reviewed helper/wind rows pass with
+explicit checkout-EOL reconstruction. Functional source count is now1019.
+
+The first strict2 application helper refused a dictionary/list index mismatch
+before any write; its correction then applied the exact reviewed source.
+The first120-control invocation refused a relative output path before tests;
+the required fresh absolute owned path then passes120/0. Neither is a runtime
+failure or a relaxed gate. Detailed benchmark:
+docs/benchmarks/native_five_qualified_2026-11-15.json. Commit/push/read back,
+then run fresh full Windows verification. The earlier dbf complete run remains
+FAILED; manual exercise DEFERRED/no result;55/62 and52/54 unchanged.

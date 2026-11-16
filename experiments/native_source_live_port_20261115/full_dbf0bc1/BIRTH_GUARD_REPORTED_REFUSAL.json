@@ -1,0 +1,23 @@
+{
+  "format": "has_root_reported_birth_guard_refusal_1",
+  "evidence_kind": "Root-reported diagnostic; the first raw refusal was not provided to this reviewer",
+  "source_commit": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+  "run_name": "windows-canonical-bone-binding-20261116T022132132",
+  "coordinator_pid": 87384,
+  "coordinator_creation_utc": "2026-11-16T02:21:32.1707585Z",
+  "python_pid": 86984,
+  "python_creation_utc": "2026-11-16T02:21:32.8684050Z",
+  "first_guard_outcome": "REPORTED_REFUSAL",
+  "reported_cause": "ConvertFrom-Json default DateKind auto-converted UTC strings to DateTime, causing a text-format comparison refusal",
+  "corrective_change": "Repeat the metadata guard with ConvertFrom-Json -DateKind String and the unchanged measured identity pins",
+  "repeat_actual_proof": {
+    "path": "output/windows-canonical-bone-binding-20261116T022132132/root-birth-observation.json",
+    "sha256": "14c6a6703d300adc076c160c4a7ec9d0c013ecc7ea897369e45074ba4b2ea7cb",
+    "observed_utc": "2026-11-16T02:22:34.2962952Z",
+    "process_terminated": false
+  },
+  "raw_first_command_error_or_timestamp_invented": false,
+  "runtime_failure_or_full_PASS_inferred": false,
+  "terminal_or_release_helpers_executed_by_reviewer": false,
+  "limits": "This preserves the root's reported guard history and the separately existing repeat proof. It is not an independent raw first-refusal observation or a terminal/closure claim."
+}

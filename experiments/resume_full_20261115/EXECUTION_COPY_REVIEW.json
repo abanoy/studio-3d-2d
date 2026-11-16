@@ -1,0 +1,12 @@
+{
+  "format": "has_publication_recipe_relocation_source_review_1",
+  "status": "SOURCE_ONLY_UNRUN",
+  "reviewed_recipe_INDEX_sha256": "f4965594eb313b0ac07ac9d49041cba8cc9f520c99b099115fd5666ae05da873",
+  "execution_target": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\resume-full-publication-f0dd57a-20261115",
+  "module_roots": "All six publication modules derive final ROOT from RUN_EXPECTATIONS.workspace_root; TASK/BASE derives from the copied __file__.",
+  "local_import": "publication_gates imports from the same copied directory; registry/context are local copies with exact pinned bytes.",
+  "output_boundaries": "Default receipt-audit, actual-summary and review-ready remain direct children of copied TASK/BASE under ROOT/output; acquire remains unchanged and accepts source recipe metadata there.",
+  "other_paths": "All actual run/scoped-native/reviewed-test-delta paths come from locked context. No publication module references the experiments folder as an execution location.",
+  "schema": "Both live-proof consumers now use command_line. Runner state command and launch arguments retain their own unchanged schema.",
+  "mutation": "Preparation only; no output execution copy, recipe import, final-report read, lease release or runtime occurred."
+}

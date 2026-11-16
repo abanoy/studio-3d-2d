@@ -1,0 +1,73 @@
+--- experiments/resume_full_20261115/replay/validate_after_full.py
++++ replay/validate_after_full.py
+@@ -13,6 +13,7 @@
+ import stat
+ import subprocess
+ import sys
++from audio_contract import audio_expectations
+ 
+ sys.dont_write_bytecode = True
+ HERE = Path(__file__).resolve().parent
+@@ -131,7 +132,7 @@
+     expected_extras = extra_names(request["native"])
+     checks = result.get("checks", []); ledger = result.get("extra_checks", {})
+     cels = sum(len(layer.get("cels", [])) for layer in expected["layers"])
+-    expected_checks = 20+len(expected["world"]["objects"])+cels+len(expected_extras)
++    expected_checks = 23+len(expected["world"]["objects"])+cels+len(expected_extras)
+     startup = result.get("normal_startup", {}); recovery = startup.get("result", {})
+     result_ok = (result.get("format") == "has_owner_review_replay_1" and result.get("failures") == 0 and
+                  type(result.get("native_readbacks_at_finish")) is int and result["native_readbacks_at_finish"] == 0 and
+@@ -143,6 +144,18 @@
+                  profile in result.get("profile", "") and startup.get("signal_seen") is True and
+                  startup.get("home_visible") is True and startup.get("empty") is True and startup.get("simple") is True and
+                  recovery.get("restored") is False and recovery.get("cancelled") is False)
++    audio_proofs = result.get("audio_cache_proofs", {})
++    result_ok = result_ok and set(audio_proofs) == {"before", "after", "extra"} and all(
++        proof.get("passed") is True and proof.get("expected_clips") == len(request["audio_sources"]) and
++        len(proof.get("clips", [])) == len(request["audio_sources"]) and all(row.get("passed") is True for row in proof["clips"])
++        for proof in audio_proofs.values())
++    result_ok = result_ok and all(
++        all(row.get("id") == reference["id"] and row.get("source_fields_exact") is True and
++            row.get("cache_confined") is True and row.get("file_sha256") == reference["sha256"] and
++            row.get("pcm_sha256") == reference["pcm_sha256"] and row.get("pcm_bytes") == reference["pcm_bytes"] and
++            all(row.get(key) == reference[key] for key in ("channels", "rate", "frames"))
++            for row, reference in zip(proof["clips"], request["audio_sources"]))
++        for proof in audio_proofs.values())
+     cache = Path(result.get("project_folder", "")).resolve()
+     result_ok = result_ok and cache != folder/"has-cache" and cache.is_relative_to((folder/"has-cache").resolve())
+     configured = result.get("configured_paths", {})
+@@ -152,7 +165,7 @@
+     for phase in ("before", "after", "extra"):
+         path = folder/("observed-"+phase+".json")
+         comparisons[phase] = pure.compare(expected, load(path)) if path.is_file() else [{"at": "$", "reason": "missing state"}]
+-    save(folder/"state-comparison.json", {"contract": "Existing owner-review exact data projection; finite numbers1e-12 absolute, no relative tolerance", "differences": comparisons})
++    save(folder/"state-comparison.json", {"contract": "Existing owner-review exact data projection; finite numbers1e-12 absolute, no relative tolerance; decoded clip.source omitted only by explicit portable projection and separately file/PCM/sample-bound in all3phases", "differences": comparisons})
+     receipt_ok = (receipt.get("format") == "studio_private_desktop_1" and receipt.get("exit") == 0 and
+                   all(receipt.get(key) is True for key in ("private_window_seen", "child_desktop_confirmed", "job_closed", "desktop_closed")) and
+                   all(receipt.get(key) is False for key in ("foreground_child_observed", "desktop_switch_requested")))
+@@ -176,7 +189,7 @@
+     release_context = load(HERE/"release-context.json")
+     need(args.expected_revision == release_context["source_commit"], "Use the newly declared post-manifest-fix full revision")
+     review = args.review.resolve(strict=True); output = args.output.absolute(); no_links(review); no_links(output)
+-    need(review.parent == WORKSPACE and review.name == "HAS-Review-20261115-SFM-Joints-"+args.expected_revision[:7], "Exact new review boundary required")
++    need(review.parent == WORKSPACE and review.name == "HAS-Review-20261115-SFM-Joints-"+args.expected_revision[:7]+"-replay2", "Exact new review boundary required")
+     need(output.resolve().is_relative_to((ROOT/"output").resolve()) and output != ROOT/"output" and not output.exists(), "New owned evidence boundary required")
+     studio = review/"Studio"; built = load(review/"BUILD-VERIFICATION.json"); lock = load(BUILDER/"input-lock.json")
+     need(built.get("passed") is True and built.get("source_commit") == args.expected_revision and built.get("native_sources_included") is True,
+@@ -233,7 +246,7 @@
+     original_sourceio = ROOT/"output/dependencies"/("sourceio-"+built["sourceio_revision"])
+     original_sourceio_before = tree(original_sourceio); need(original_sourceio_before == lock["sourceio_files"], "Original approved SourceIO differs")
+     old_reviews = {str(path): tree(path) for path in WORKSPACE.glob("HAS-Review-*") if path.is_dir() and path != review}
+-    harness_before = {str(path): identity(path) for path in (Path(__file__), HERE/"replay.gd", HERE/"release-context.json", HERE/"reference-lock.json", BUILDER/"input-lock.json")}
++    harness_before = {str(path): identity(path) for path in (Path(__file__), HERE/"replay.gd", HERE/"release-context.json", HERE/"reference-lock.json", HERE/"audio_contract.py", BUILDER/"input-lock.json")}
+     harness_before.update(preparation)
+     references = [NATIVE/"verification.json"]
+     for item in native_cases.values():
+@@ -272,6 +285,7 @@
+             request = {"format": "has_final_SFM_review_request_1", "package": str(package).replace("\\", "/"),
+                        "folder": str(case).replace("\\", "/"), "result": str(case/"result.json").replace("\\", "/"),
+                        "source_manifest_sha256": identity(output/"shipped-before.json")["sha256"], "native": details,
++                       "audio_sources": audio_expectations(package, expected["audio"]),
+                        "chooser": {"MDL": str(mdl).replace("\\", "/"), "sha256": identity(mdl)["sha256"], "catalogue": catalogue,
+                                    "mount_overrides": {provider["path"]: False for provider in load(Path(native_cases[project["name"]]["conversion_request"]))["mount_discovery"]["providers"]}}}
+             attempts += 1

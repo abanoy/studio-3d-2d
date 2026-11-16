@@ -1,0 +1,84 @@
+{
+  "format": "has_source_jiggle_cpu_1",
+  "passed": true,
+  "checks": 66,
+  "reports": {
+    "metadata": {
+      "checks": 25,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-foundation-20261114-attempt1\\jiggle-cpu\\metadata.log"
+    },
+    "capture": {
+      "checks": 18,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-foundation-20261114-attempt1\\jiggle-cpu\\capture.log"
+    },
+    "capture_review": {
+      "checks": 9,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-foundation-20261114-attempt1\\jiggle-cpu\\capture_review.log"
+    },
+    "bridge": {
+      "checks": 14,
+      "passed": true,
+      "log": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-foundation-20261114-attempt1\\jiggle-cpu\\bridge.log"
+    }
+  },
+  "source_unchanged": true,
+  "source_identity": {
+    "tools/blender_source_bridge.py": {
+      "bytes": 29255,
+      "mtime_ns": 1794625266994209600,
+      "sha256": "c794df555f7872e11d4c341b0ffed2507f371f892b67b715e185105d40026dea"
+    },
+    "tools/source_jiggle_values.py": {
+      "bytes": 7713,
+      "mtime_ns": 1794615421450684500,
+      "sha256": "3a6f690ad94498ae88803a6665c686cceb6d8f97c5f50b4d22a3ade65c69983e"
+    },
+    "tools/source_jiggle_metadata.py": {
+      "bytes": 16843,
+      "mtime_ns": 1794616485712749900,
+      "sha256": "574fbb47fc76556d98758ce149890ca97dc6202d307670bef95078146b48f056"
+    },
+    "tools/source_mdl_snapshot.py": {
+      "bytes": 5043,
+      "mtime_ns": 1794618093165047700,
+      "sha256": "ce5a7af22a25e461a079d9a45a22c24ca7f7795bd897b37400b8d244f21c42be"
+    },
+    "tests/source_jiggle_fixtures.py": {
+      "bytes": 2311,
+      "mtime_ns": 1794615421467526900,
+      "sha256": "fedfb332277fb33a8ad99799e74901bda9974b859e898793aeb40b7018836a8a"
+    },
+    "tests/verify_source_jiggle_cpu.py": {
+      "bytes": 3208,
+      "mtime_ns": 1794619813121855900,
+      "sha256": "6ee067795ef8159f6489243705543e434085fe814cdeeeef5b88710e0c3c92e7"
+    },
+    "tests/test_source_jiggle_metadata.py": {
+      "bytes": 14533,
+      "mtime_ns": 1794619697988460400,
+      "sha256": "74ec152e4901547db16b4c309533f6acb01b247d1f0fec7b9bbcbd5a918ef284"
+    },
+    "tests/test_source_mdl_snapshot.py": {
+      "bytes": 8716,
+      "mtime_ns": 1794619675079255000,
+      "sha256": "14dcb8cdddecb05abf8e792a48ebe69a11fa06da4945b1f20f745588431cf199"
+    },
+    "tests/test_source_mdl_snapshot_review.py": {
+      "bytes": 6081,
+      "mtime_ns": 1794619675079255000,
+      "sha256": "90ed4129eb4c61e85b1064f459d7827ba7b46c2fb97cb8f7ac06dff763b20ef9"
+    },
+    "tests/test_source_jiggle_bridge.py": {
+      "bytes": 13953,
+      "mtime_ns": 1794625267172977500,
+      "sha256": "d8f84cb2e402c0c64a40b84c87588482c8dd73db7d821c729a9b111d25f3bb44"
+    }
+  },
+  "native_conversion": false,
+  "graphics": false,
+  "scope": "Authored MDL bytes/files, exact final report bytes, CPU bridge seams and observed file races only",
+  "actual_Junko_full_report_adoption_persistence": "UNRUN_requires_fresh_native_and_app_verification"
+}

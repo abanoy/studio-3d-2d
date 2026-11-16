@@ -1,0 +1,59 @@
+{
+  "format": "has_audio_projection_successor_origins_1",
+  "sources": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_full_20261115\\builder\\input-lock.json",
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6",
+      "copied_byte_exact": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_full_20261115\\builder\\README.template.md",
+      "bytes": 3345,
+      "sha256": "d89ff18ddc0804b3c7a57cdc26991486c853ef809aed3bcffb17eb23fbfead21",
+      "copied_byte_exact": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_full_20261115\\replay\\reference-lock.json",
+      "bytes": 7704,
+      "sha256": "e5dbbbd1cc21d143fc9c6d56996b6aec97b1b0f9167f334c274a77d246ab9413",
+      "copied_byte_exact": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_full_20261115\\replay\\release-context.json",
+      "bytes": 994,
+      "sha256": "8c33b40107e3e9b2156aa4b9a76f084c0fcfa8e23d863878b81b413cf4e991c3",
+      "copied_byte_exact": true
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_full_20261115\\builder\\build_after_full.py",
+      "bytes": 19797,
+      "sha256": "183479a8666307800a7de60e880e0896be7800b96774e2d140293c6442a0d1b2",
+      "successor": "builder/build_after_full.py",
+      "successor_sha256": "99d9fdadd4b4d72d02c1de9b56a1ec52c7c716e3f8928c2a8aad91e62bf2c8bf"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_full_20261115\\replay\\validate_after_full.py",
+      "bytes": 23922,
+      "sha256": "03bae268c539c6b9635daf913a444bfce3e63bcf90691cd8b6a805fc00713e44",
+      "successor": "replay/validate_after_full.py",
+      "successor_sha256": "d29c83cea34dfb19cafb6b4d2261e6e55533ccb05e97127a2627f4fa68977398"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_full_20261115\\replay\\replay.gd",
+      "bytes": 18001,
+      "sha256": "5ece753368df789832a2886dd8abbe18b696951c1b1411475b61bf7d245ec697",
+      "successor": "replay/replay.gd",
+      "successor_sha256": "11d26d8ce00d0b4314ea18ef27b54c63d377929df6139a393b63e36c005ea271"
+    }
+  ],
+  "first_runtime_status": "FAILED_STATE_PROJECTION_ENGINE41OF41_EXIT0_PRIVATE_CLOSED",
+  "source_revision": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "private_observed_audio_payloads_copied": false,
+  "apps_or_parsers_run": false,
+  "old_review_or_output_modified": false,
+  "GDScript_status": "UNPARSED_UNRUN",
+  "proposed_assertion_total": 180,
+  "original_proposed_assertion_total": 168,
+  "delta": "Three independent audio source cache checks per each of four examples"
+}

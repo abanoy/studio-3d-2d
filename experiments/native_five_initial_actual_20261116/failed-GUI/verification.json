@@ -1,0 +1,54 @@
+{
+  "format": "has_source_native_live_actual_verification_1",
+  "passed": false,
+  "checks_expected": 101,
+  "checks_observed": 82,
+  "phase_expected": {
+    "writer": 82,
+    "reader-packed": 11,
+    "reader-linked": 8
+  },
+  "results": [
+    {
+      "passed": false,
+      "exit": 1,
+      "timed_out": false,
+      "retained_Popen_reaped": true,
+      "seconds": 43.03487779999705,
+      "execution_error": null,
+      "error_markers": [
+        "FAIL native_live.fan.opposite_tip_directions",
+        "FAIL native_live.fan.opposite_tip_directions"
+      ],
+      "metadata_errors": [],
+      "result_binding": true,
+      "domain_checks_passed": false,
+      "domain_failure_count": 1,
+      "private_receipt_passed": false,
+      "private_receipt": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt1\\Studio\\output\\native-five-gui-attempt1\\writer\\private-receipt.json",
+      "checks": 82,
+      "result_sha256": "63e2a9c2d5942bdba88906f40602c82cb47ae33485c1efc3c15d649b067b8f98"
+    }
+  ],
+  "error": {
+    "type": "AssertionError",
+    "message": "Native editor writer failed; retain C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt1\\Studio\\output\\native-five-gui-attempt1\\writer"
+  },
+  "preservation": {
+    "current_functional_source": true,
+    "original_native_GLB_report_and_baseline": true,
+    "approved_Godot": true,
+    "frozen_functional_source": true
+  },
+  "baseline_conversion": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\verification.json",
+    "bytes": 1358555,
+    "mtime_ns": 1794627169881387800,
+    "sha256": "10ee4a984c9e54b1acf37d79d5013a10780abe98416b8350f3edf3ee37277c4b"
+  },
+  "native_conversion_performed_by_this_driver": false,
+  "native8_editor_backend_tested": true,
+  "same_actor_reverse_body_qualification": "UNQUALIFIED_PARTIAL_SOURCE_RIG",
+  "private_arrays_in_public_result": false,
+  "output": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt1\\Studio\\output\\native-five-gui-attempt1"
+}

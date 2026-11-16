@@ -6,6 +6,7 @@ const Definition=preload("res://src/secondary_rig.gd")
 const Model=preload("res://src/model.gd")
 const Timeline=preload("res://src/timeline.gd")
 const Airflow=preload("res://src/airflow.gd")
+const SourceMotion=preload("res://src/source_secondary.gd")
 var rig: RefCounted
 var primary: RefCounted
 var runner: RefCounted
@@ -17,13 +18,21 @@ var dynamics: Dictionary={}
 var forces: Array=[]
 var age:=0.0
 var running:=false
+var native_backend:=false
+var initial_frame:=0
+var last_input_time:=0.0
 
 static func create(actor: RefCounted,body: RefCounted,frame: int,editing: bool) -> Dictionary:
 	var candidate=new();candidate.rig=actor;candidate.primary=body
+	candidate.native_backend=SourceMotion.offered(actor)
+	if candidate.native_backend and body:return {"error":"Imported front-hair motion currently needs body Physics off. The running body has been kept."}
+	candidate.initial_frame=frame;candidate.last_input_time=float(frame)
 	candidate.initial_pose=body.capture_pose() if body and body.has_method("capture_pose") else body.pose() if body else actor.sample(frame,editing)
 	candidate.latest=candidate.initial_pose.duplicate(true);candidate.initial_world=actor.root.global_transform
 	actor.live_pose=candidate.latest;actor.apply_current(frame,editing)
-	var result: Dictionary=await Spring.create(actor)
+	var result: Dictionary
+	if candidate.native_backend:result=SourceMotion.create(actor)
+	else:result=await Spring.create(actor)
 	if result.has("error"):
 		actor.live_pose=null if not body else candidate.initial_pose
 		return result
@@ -40,6 +49,13 @@ func start() -> void:
 
 func advance(delta: float,frame: int,time: float,recording: bool,fields: Array,runtime: RefCounted) -> String:
 	if not running:return ""
+	if native_backend:
+		var airflow_issue: String=runner.airflow_error()
+		if not airflow_issue.is_empty():return airflow_issue
+		if not recording and frame!=initial_frame:return "Imported hair preview stopped after seeking. The authored pose is restored."
+		var video: Dictionary=rig.motion_video
+		var frame_step: float=delta*float(video.fps_num)/float(video.fps_den)
+		if not is_finite(time) or time<last_input_time-0.000001 or recording and time-last_input_time>maxf(frame_step,0.000001)+0.000001:return "Imported hair preview stopped after a timeline discontinuity. The authored pose is restored."
 	var base: Dictionary
 	if primary:
 		base=primary.capture_pose() if primary.has_method("capture_pose") else primary.pose()
@@ -52,10 +68,21 @@ func advance(delta: float,frame: int,time: float,recording: bool,fields: Array,r
 	for i in range(runner.chains.size()):
 		var chain: Dictionary=runner.chains[i];var point:=Definition.binding_transform(rig,chain.source.joints[0].binding).origin
 		var wanted:=Airflow.unsteady_force(fields,point,age)
+		if native_backend:
+			# The native numerical backend consumes world acceleration. The
+			# generic spring modifier uses the existing .03-scaled input. Fan
+			# speed remains a relative HAS control, not native SDK wind units.
+			wind.append(wanted/0.03);continue
 		if forces.size()<=i:forces.append(Vector3.ZERO)
 		forces[i]=forces[i].lerp(wanted,1.0-exp(-delta/0.15));wind.append(forces[i])
 	var result: Dictionary=runner.step(delta,Vector3.ZERO,wind)
 	if result.has("error"):return result.error
+	if native_backend:
+		latest=base.duplicate(true)
+		for id in result.pose:latest[id]=result.pose[id].duplicate(true)
+		age+=delta;last_input_time=time
+		rig.live_pose=latest;rig.apply_current(frame)
+		return ""
 	age+=delta;var blend:=smoothstep(0.0,0.35,age);latest=base.duplicate(true)
 	for id in result.pose:
 		var authored: Dictionary=base.get(id,Model.identity());var q:=Timeline.quaternion(authored.rotation_xyzw)

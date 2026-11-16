@@ -1,0 +1,32 @@
+{
+  "state_after_fresh_exclusive_lease": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio\\experiments\\native_source_live_port_20261115\\run_five_state_owned.py"
+  ],
+  "GUI_after_state_terminal_closure_and_new_exclusive_lease": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio\\tests\\verify_source_native_five_live.py",
+    "--glb",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\scene.glb",
+    "--parameters",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\parameters.json",
+    "--baseline-verification",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\verification.json",
+    "--output",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio\\output\\native-five-gui-attempt1",
+    "--run-gpu",
+    "--lease-confirmed"
+  ],
+  "preservation_after_both_terminal_closures_before_main_promotion": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\native_source_live_port_20261115\\prepare_native_five_stage.py",
+    "--verify-preservation",
+    "--attempt",
+    "3",
+    "--verification-tag",
+    "after-runs"
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "format": "has_resumed_old_test_metadata_archive_1",
+  "observed_utc": "2026-11-15T22:56:07.036734+00:00",
+  "source_head": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "historical_audit_date": "2026-11-14",
+  "files": [
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/core14-fresh-inventory.json",
+      "path": "historical-cleanup-audit/core14-fresh-inventory.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 1699274,
+      "raw_sha256": "846d0015644af0b8fca2eebed64c247dc6cee3a95c03240133ccd0c70fd9f20c",
+      "stored_bytes": 275530,
+      "stored_sha256": "01f35384459ff5e23b64537d6aa3e90ad3b1af97d1e420547e0475426046d672",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        1699274,
+        1794627841784533700,
+        14290083805553457215,
+        2533274792288887,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "6d519b6c0f7893097eba9d9237c34c529ef4c3ed",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/wider11-fresh-inventory.json",
+      "path": "historical-cleanup-audit/wider11-fresh-inventory.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 1659153,
+      "raw_sha256": "0d5fbd84a774958d53ac6d7f8f1065e319b0d6c8e1ab413a73febf31b73dee29",
+      "stored_bytes": 270567,
+      "stored_sha256": "8304f319f3c391c9875b418ad0832f7b4cffb9a727b9e78c76d383598a87f29d",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        1659153,
+        1794627914342551200,
+        14290083805553457215,
+        4222124652553553,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "b6e4997ab6f83d5e2d655d8858e1bf1b74d19ebe",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/FINAL_AUDIT.json",
+      "path": "historical-cleanup-audit/FINAL_AUDIT.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 10398,
+      "raw_sha256": "1002daf4b501843091f3abd4ba8918365951903c048e0ba5cd5ed9136707c7c1",
+      "stored_bytes": 3516,
+      "stored_sha256": "9fa3458aa5623b2ce649ed04d0bb29791e886f6e054a120e169bee1ffe5f4a8c",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        10398,
+        1794628156174879000,
+        14290083805553457215,
+        15481123720980275,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "b6044d3a6c9cf5c4fa1b2dc059d2026f29d2db90",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/GIT_RECOVERY_BATCH_PROOF.json",
+      "path": "historical-cleanup-audit/GIT_RECOVERY_BATCH_PROOF.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 600636,
+      "raw_sha256": "0bce42ead2142ea1c49ce6655e0c9e0dcca5e3fc02133b6aadd538c93cf456bc",
+      "stored_bytes": 153253,
+      "stored_sha256": "773fb03216d21f09075cccea437d515ad08f148998b325479d8fc027b496b052",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        600636,
+        1794628036231848900,
+        14290083805553457215,
+        1970324838868422,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "624aaabfb3173c09b6e076776dec24bf0bcbc40f",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/retained-originals-fresh-proof.json",
+      "path": "historical-cleanup-audit/retained-originals-fresh-proof.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 121985,
+      "raw_sha256": "80de0389dc4c2220b2ac6a3751f525bf001259810d27a2e799d169cd759e7f1c",
+      "stored_bytes": 24447,
+      "stored_sha256": "f9dfbcde4184ee13d6aa7f9efcf77f48cefeae718c13fefff7741408c3db304c",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        121985,
+        1794627955122510000,
+        14290083805553457215,
+        1970324838868413,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "805309ed1b589cd2ce85abc00ec1548526eaa88a",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/executable-dependency-scan.json",
+      "path": "historical-cleanup-audit/executable-dependency-scan.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 1502,
+      "raw_sha256": "bee893b54d35eb4f81d5f51affde7c0a5cbe372aa72f644b01b4748f27989699",
+      "stored_bytes": 550,
+      "stored_sha256": "1e4b4d0eafeffe88baaf03ccfcdfad5dbe28270727e24ca8b488f6ac49e639b3",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        1502,
+        1794627852895755400,
+        14290083805553457215,
+        5348024559395647,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "c937483575bf40a4dbd063ae3763629be44d483b",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/delete-access-readonly-proof.json",
+      "path": "historical-cleanup-audit/delete-access-readonly-proof.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 562,
+      "raw_sha256": "55fda6fe83207abe1faa82b5e435951efde03afc57d1a423a34a3f4215c08bd9",
+      "stored_bytes": 389,
+      "stored_sha256": "3be148e85be47507bdcc2610cfb1d36353f1a94267166ebd695454c9f2f8fdfc",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        562,
+        1794628107639043900,
+        14290083805553457215,
+        5629499536107322,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "ecaf70900ffd6d7c10235e097a303a99ce641bff",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/restart-manager-proof.json",
+      "path": "historical-cleanup-audit/restart-manager-proof.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 347,
+      "raw_sha256": "2506ba3e42b061bbc1aaf8af21cc3d8f875773ea690e46a68835e87446125e1e",
+      "stored_bytes": 247,
+      "stored_sha256": "68fc7ea475209543537914429380046fc9dcfde058f50bed99c5996634b39ccd",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        347,
+        1794627955114003000,
+        14290083805553457215,
+        27303072742827451,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "9244d2cd9188646e9e2e06328b07ee1551719946",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/restart-manager-host-proof.json",
+      "path": "historical-cleanup-audit/restart-manager-host-proof.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 395,
+      "raw_sha256": "c25bc30143f190283f9aac2be9702846e9f353f56c00d31741755c7a9478d1a1",
+      "stored_bytes": 278,
+      "stored_sha256": "b148a9392e52ea736550d570e06ce3bdf4208a26447ec84c765522a877345019",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        395,
+        1794628060415756000,
+        14290083805553457215,
+        3096224745711155,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "4a1f2e1c1a7f198c6efd4b13b669f9930f3d8ebb",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/restart-manager-extended-host-proof.json",
+      "path": "historical-cleanup-audit/restart-manager-extended-host-proof.json.gz",
+      "encoding": "gzip",
+      "raw_bytes": 395,
+      "raw_sha256": "58901936bfef9b8b5ed8f4d57c6f7938b90395ce141cbf74976acbef584b1f29",
+      "stored_bytes": 278,
+      "stored_sha256": "83f747b55c192eb4390ac658a3ec7dbb20952644b243101df82c2e16ff90315f",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        395,
+        1794628089418127900,
+        14290083805553457215,
+        2533274792290002,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "5a06c59ae89f3fb30be24d8c367c31a18fbc639d",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/audit_readonly.py",
+      "path": "historical-cleanup-audit/audit_readonly.py",
+      "encoding": "identity",
+      "raw_bytes": 11258,
+      "raw_sha256": "6565e7e442b3c2ff1297a781f2b136d39427b7f45303d3757c65da8a1edc438f",
+      "stored_bytes": 11258,
+      "stored_sha256": "6565e7e442b3c2ff1297a781f2b136d39427b7f45303d3757c65da8a1edc438f",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        11258,
+        1794627809536210800,
+        14290083805553457215,
+        7036874419659074,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "570a63502723a44c742d7229130bd3b656d220de",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/git_recovery_batch_readonly.py",
+      "path": "historical-cleanup-audit/git_recovery_batch_readonly.py",
+      "encoding": "identity",
+      "raw_bytes": 5895,
+      "raw_sha256": "3f8795c477d5737fbe72a3c5d827f0e4b5bf4202813ef6c464fd8c23ce8a4f15",
+      "stored_bytes": 5895,
+      "stored_sha256": "3f8795c477d5737fbe72a3c5d827f0e4b5bf4202813ef6c464fd8c23ce8a4f15",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        5895,
+        1794628035131137100,
+        14290083805553457215,
+        2814749769000388,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "a72122c41f0e94b7afec92e8430634c4d7c199ee",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/delete_access_readonly.py",
+      "path": "historical-cleanup-audit/delete_access_readonly.py",
+      "encoding": "identity",
+      "raw_bytes": 1810,
+      "raw_sha256": "f1a13188aaa669daaafed6429cedb5bc19f0235a85e5e61cccd3e1772dc26ef3",
+      "stored_bytes": 1810,
+      "stored_sha256": "f1a13188aaa669daaafed6429cedb5bc19f0235a85e5e61cccd3e1772dc26ef3",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        1810,
+        1794628106547941000,
+        14290083805553457215,
+        6192449489528611,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "58d3d9d8c7e3bc44139628b4087008d07dcba3bf",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/restart_manager_readonly.py",
+      "path": "historical-cleanup-audit/restart_manager_readonly.py",
+      "encoding": "identity",
+      "raw_bytes": 2789,
+      "raw_sha256": "fb0acb65e193c7e16a21b7b5e2a644e2197f354f9c561e9cbcb7b45018469b9d",
+      "stored_bytes": 2789,
+      "stored_sha256": "fb0acb65e193c7e16a21b7b5e2a644e2197f354f9c561e9cbcb7b45018469b9d",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        2789,
+        1794628053348061000,
+        14290083805553457215,
+        1407374885447223,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "aa122380e296d9f925c7e36b0409120690404f18",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/restart_manager_extended_readonly.py",
+      "path": "historical-cleanup-audit/restart_manager_extended_readonly.py",
+      "encoding": "identity",
+      "raw_bytes": 2848,
+      "raw_sha256": "685236994ad08f24bfec13d90f201f16a2daf5bd9c264966ca78effc2e98eb4c",
+      "stored_bytes": 2848,
+      "stored_sha256": "685236994ad08f24bfec13d90f201f16a2daf5bd9c264966ca78effc2e98eb4c",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        2848,
+        1794628078927763100,
+        14290083805553457215,
+        1970324838868676,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "49ca4d09bd6a84923dc65238dd6d82872e03bfc2",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/REMOVAL_REVIEW_ONLY.ps1.txt",
+      "path": "historical-cleanup-audit/REMOVAL_REVIEW_ONLY.ps1.txt",
+      "encoding": "identity",
+      "raw_bytes": 3002,
+      "raw_sha256": "90ea64fdc13523b1a03ffb67d942317887080cd7e57b0349496ffb6608919bed",
+      "stored_bytes": 3002,
+      "stored_sha256": "90ea64fdc13523b1a03ffb67d942317887080cd7e57b0349496ffb6608919bed",
+      "source_stat_size_mtime_dev_ino_nlink_attrs": [
+        3002,
+        1794627937971107300,
+        14290083805553457215,
+        2251799815579050,
+        1,
+        32
+      ],
+      "exact_raw_git_blob_oid": "ac7f171e3d1096113bf7bb3aaec2be337900d128",
+      "preexisting_reachable_exact_raw_blob": null,
+      "decompression_exact": true
+    }
+  ],
+  "raw_bytes": 4122249,
+  "stored_bytes": 756657,
+  "exact_archived_payloads": 16,
+  "excluded_local_only": [
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/AUDIT.json",
+      "bytes": 85291,
+      "sha256": "c0aff6755b5fa2dd7769a73a5875f740683f06345b1132444b680222a5c2f8f8",
+      "reason": "Retained local; raw broader process/environment audit not needed for this compact packet"
+    },
+    {
+      "source": "output/source-choices-native-independent-cleanup-audit-20261114/process-reference-scan.json",
+      "bytes": 117265,
+      "sha256": "cb27f1c6e1ab991495ebab0ebb206c98d625bb0b8cdc8e5dd861c408567e2b86",
+      "reason": "Retained local; raw broader process/environment audit not needed for this compact packet"
+    }
+  ],
+  "new_nonuse_or_resource_probe": false,
+  "native_runtime_or_app_run": false,
+  "historical_two_root_verdict": "RETAIN_FOR_NOW; no new deletion clearance",
+  "old_two_roots": {
+    "files": 9307,
+    "bytes": 1442187088,
+    "full_qualification_and_final_review_remote_publication": "REQUIRED",
+    "exclusive_read_probe": "UNRUN"
+  },
+  "deletions": 0,
+  "reclaimed_bytes": 0,
+  "remote_upload_performed": false,
+  "private_asset_payloads": 0,
+  "restore": "Read the committed packet, decompress gzip members, verify raw_sha256, then have root choose an explicit destination. Never execute historical recipes automatically.",
+  "limitation": "Historical test/audit outcomes are preserved, not rerun or upgraded to current PASS."
+}

@@ -1,0 +1,67 @@
+--- qualified-stage/src/source_secondary.gd
++++ proposed/src/source_secondary.gd
+@@ -1,6 +1,6 @@
+ extends RefCounted
+ # Imported motion is a bounded HAS backend, separate from the unchanged raw
+-# source report. SOURCE-ONLY strict2 capture deduplication; UNPARSED/UNRUN.
++# source report. Qualified bounded five-joint backend; capture checks deduplicated.
+ const Math = preload("res://src/source_jiggle_math.gd")
+ const Chains = preload("res://src/source_chain_math.gd")
+ const Bindings = preload("res://src/source_bone_bindings.gd")
+--- qualified-stage/src/source_chain_math.gd
++++ proposed/src/source_chain_math.gd
+@@ -1,6 +1,6 @@
+ extends RefCounted
+-# SOURCE ONLY, UNPARSED/UNRUN. Parent-first HAS policy, not SDK client parity.
+-# Stage the unchanged qualified scalar solver as res://leaf_candidate.gd.
++# Qualified parent-first HAS policy for the admitted five-joint subset.
++# Uses the unchanged qualified scalar solver; SDK client parity is not claimed.
+ const Math = preload("res://src/source_jiggle_math.gd")
+ var _bones: Dictionary = {}
+ var _order: Array = []
+--- main-before/src/physics_editor.gd
++++ proposed/src/physics_editor.gd
+@@ -135,7 +135,7 @@
+ 	hair_toggle.disabled=app.exporting or rig==null or rig.data.get("kind","model")!="model" or not definition.get("error","").is_empty() or missing_chains and not imported and (not can_setup or reviewing) or imported and reviewing or pending.has(rig.data.id)
+ 	hair_toggle.set_pressed_no_signal(rig!=null and (pending.has(rig.data.id) or active(rig.data.id) and simulations[rig.data.id] is Secondary))
+ 	hair_toggle.tooltip_text="Simulate hair/clothing joints while posed or with Physics. Off restores their authored pose; body Physics keeps running. Record explicitly keeps motion."
+-	if imported:hair_toggle.tooltip_text="Use imported settings for the front-hair strand. This first supported subset moves1of49 imported joints. Other loose parts can use Set up loose parts. Body Physics must be off. Off restores the authored pose; Record keeps motion."
++	if imported:hair_toggle.tooltip_text="Use imported settings for three supported hair strands. Other loose parts can use Set up loose parts. Body Physics must be off. Off restores the authored pose; Record keeps motion."
+ 	elif missing_chains:hair_toggle.tooltip_text=definition.get("error","") if not definition.get("error","").is_empty() else "This model needs hair/clothing joints. Turn on to review a loose part and add weighted helpers; the original is kept." if can_setup else "Select a skinned model to review and add hair/clothing joints."
+ 	if fan_editor:fan_editor.sync()
+ 	if recording:recording.sync()
+@@ -239,7 +239,7 @@
+ 		return
+ 	if result.has("error"):app.pose_editor.apply_frame();sync();app.message(result.error);return
+ 	simulations[id]=result.physics;result.physics.start();sync()
+-	app.message("Imported front-hair motion on (1of49 imported joints). Move a fan or choose Aim at hair; Record keeps the motion. Other loose parts can use Set up loose parts." if result.physics.native_backend else "Hair & clothes on. The body stays posed unless Physics is on. Move a fan or adjust its blowing speed; Record keeps the motion.")
++	app.message("Imported motion on for three supported hair strands. Move a fan or choose Aim at hair; Record keeps the motion. Other loose parts can use Set up loose parts." if result.physics.native_backend else "Hair & clothes on. The body stays posed unless Physics is on. Move a fan or adjust its blowing speed; Record keeps the motion.")
+ 
+ func build_colliders() -> void:
+ 	clear_colliders();colliders=Node3D.new();colliders.name="StudioPhysicsColliders";app.renderer.world.add_child(colliders)
+--- main-before/tests/helper_preview_port_files.json
++++ proposed/tests/helper_preview_port_files.json
+@@ -18,8 +18,8 @@
+     },
+     {
+       "path": "src/physics_editor.gd",
+-      "sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+-      "lf_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
++      "sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
++      "lf_sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+       "category": "runtime"
+     },
+     {
+--- main-before/tests/wind_review_port_files.json
++++ proposed/tests/wind_review_port_files.json
+@@ -16,8 +16,8 @@
+     },
+     {
+       "path": "src/physics_editor.gd",
+-      "sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+-      "lf_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
++      "sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
++      "lf_sha256": "3a76f0c72ad72ef0d5c6762fe293f25b23bb61f8b19f72dfeaaf4cec95001801",
+       "category": "runtime"
+     },
+     {

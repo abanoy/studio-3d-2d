@@ -1,0 +1,41 @@
+{
+  "format": "has_source_native_admission_source_proof_1",
+  "observed_utc": "2026-11-16T01:14:47.498381+00:00",
+  "baseline_application_source_commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "baseline_full_source_catalogue_sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a",
+  "source_review_references": [
+    {
+      "path": "experiments/source_0x31_godot_candidate_20261115/candidate.gd",
+      "bytes": 10013,
+      "sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3"
+    },
+    {
+      "path": "experiments/source_0x31_native_leaf_compat_20261115/leaf_adapter.gd",
+      "bytes": 6107,
+      "sha256": "6945153a65741f65f15505a1b840ddbf530c483790824d8a98e90a4d53e539e8"
+    },
+    {
+      "path": "experiments/source_0x31_native_leaf_compat_20261115/leaf_harness.gd",
+      "bytes": 22445,
+      "sha256": "2abbb08831586323878cabb504e5400406144ad34e4b890791539b68633f722c"
+    },
+    {
+      "path": "experiments/source_0x31_native_leaf_compat_20261115/weighted_capture.gd",
+      "bytes": 5813,
+      "sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb"
+    },
+    {
+      "path": "experiments/source_0x31_native_leaf_compat_20261115/PUBLIC_PROFILE.json",
+      "bytes": 1280,
+      "sha256": "904807dd65bd0a5bb7e96c5a25d4f0551d60e03e22ad5f43525448d36a7b718e"
+    }
+  ],
+  "CPU_controls_passed": 186,
+  "CPU_controls_failed": 0,
+  "CPU_controls_result_sha256": "a8539da1a65ea3e391c5ff864adeb9607fd691af24f086cc2f13e5c985c771ed",
+  "production_port_source_reviewed_or_executed": false,
+  "actual_native_input_metadata_copied": false,
+  "raw_geometry_rest_coordinates_or_media_copied": false,
+  "engine_or_parser_or_process_queries_or_Git_or_network": false,
+  "limits": "Source/design and necessary CPU metadata admission only. Application source may evolve concurrently under root ownership. No GO for that evolving production port is implied. Body integration and49rule execution remain unqualified."
+}

@@ -1,0 +1,46 @@
+{
+  "format": "native_five_performance_actual_context_1",
+  "writer_result_sha256": "63e2a9c2d5942bdba88906f40602c82cb47ae33485c1efc3c15d649b067b8f98",
+  "checks": 82,
+  "failures": 1,
+  "actual_writer_label": "FAILED_REMAINS_FAILED",
+  "native_step_processing_by_profile": {
+    "disabled": {
+      "mean_usec": 12739.75,
+      "max_usec": 17723,
+      "samples": 180
+    },
+    "miss": {
+      "mean_usec": 12667.822222222223,
+      "max_usec": 18469,
+      "samples": 180
+    },
+    "opposite": {
+      "mean_usec": 11510.633333333333,
+      "max_usec": 14680,
+      "samples": 180
+    },
+    "speed12": {
+      "mean_usec": 11042.733333333334,
+      "max_usec": 16572,
+      "samples": 180
+    },
+    "speed3": {
+      "mean_usec": 11662.6,
+      "max_usec": 16072,
+      "samples": 180
+    },
+    "speed50": {
+      "mean_usec": 11366.805555555555,
+      "max_usec": 14759,
+      "samples": 180
+    },
+    "zero": {
+      "mean_usec": 13267.783333333333,
+      "max_usec": 17959,
+      "samples": 180
+    }
+  },
+  "120Hz_tick_budget_usec": 8333.333333333334,
+  "scope": "Prior unchanged sealedv2 actual timings only. These draft variants have not been parsed/executed/profiled. No FPS criterion is retroactively added or waived."
+}

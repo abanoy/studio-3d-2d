@@ -49,7 +49,7 @@ def main():
     folder = ROOT / "output/world-selection-teardown" / str(time.time_ns())
     folder.mkdir(parents=True)
     project = folder / "shipped-source"
-    commit, hashes = freeze_source(ROOT, project, revision)
+    commit, hashes = freeze_source(ROOT, project, revision, runtime_scope=True)
     if revision:
         assert commit == revision
     baseline = hashes.copy()
@@ -63,6 +63,7 @@ def main():
     target.write_bytes(test.read_bytes())
     hashes[target.relative_to(project).as_posix()] = digest(target)
     proof = {"revision": commit, "source_mode": "git_revision" if revision else "working_tree",
+             "snapshot_scope": "runtime_dependency_closure",
              "folder": str(folder), "profile": profile, "selected_cases": selected,
              "source_sha256": hashes, "baseline_source_sha256": baseline,
              "shared_test_sha256": digest(test), "driver_sha256": digest(Path(__file__)),

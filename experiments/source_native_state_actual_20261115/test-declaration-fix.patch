@@ -1,0 +1,11 @@
+--- parse-failure/source_native_state_unit.gd
++++ passed/source_native_state_unit.gd
+@@ -338,7 +338,7 @@
+ 		ticks_executed += 1
+ 	check(success and sims[0].runner._tick == TICKS and state_bytes(sims[1].runner) == seeds[1] and state_bytes(sims[2].runner) == seeds[2],"wrapper.A120_preserves_BC")
+ 	var authored: Dictionary = actors[0].sample(FRAME,false)
+-	var complete := sims[0].latest.size() == authored.size() and sims[0].latest.size() == 69
++	var complete: bool = sims[0].latest.size() == authored.size() and sims[0].latest.size() == 69
+ 	for id in authored:
+ 		if id != bindings[0].by_native[8]: complete = complete and sims[0].latest.get(id) == authored[id]
+ 	check(complete and sims[0].latest[bindings[0].by_native[8]].position == authored[bindings[0].by_native[8]].position,"wrapper.complete_authored_pose_preserved")

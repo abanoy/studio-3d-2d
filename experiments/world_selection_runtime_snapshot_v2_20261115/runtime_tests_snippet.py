@@ -1,0 +1,216 @@
+# These cases supplement SnapshotTests; Git is entirely mocked in this class.
+class RuntimeScopeTests(unittest.TestCase):
+    def setUp(self):
+        parent=ROOT/'output';parent.mkdir(exist_ok=True)
+        self.temporary=tempfile.TemporaryDirectory(prefix='runtime-snapshot-mock-',dir=parent)
+        self.root=Path(self.temporary.name)
+        self.assertTrue(self.root.resolve().is_relative_to(parent.resolve()))
+        self.files={
+            'main.tscn':b'[ext_resource path="res://src/main.gd"]\r\n',
+            'project.godot':b'config/icon="res://assets/icons/app.svg"\n',
+            'run.py':b'from tools.relative_module import main\n',
+            'launch.pyw':b'from run import main\n',
+            'src/main.gd':b'preload("res://shaders/surface.gdshader")\n',
+            'tests/world_selection_teardown.gd':b'OLD SHARED TEST\n',
+            'tests/negative.gd':b'"res://does-not-exist"\n"res://output/private.has"\n"res://"\n"res://catalogue/models/"\n"res://not-catalogued.gd"\n',
+            'tests/web.gd':b'preload("res://web/small.gd")\n',
+            'tools/relative_module.py':b'def main():return 0\n',
+            'data/definition.json':b'{"value":1}\n',
+            'examples/procedural.bin':b'\x00\x01synthetic fixture\r\n',
+            'shaders/surface.gdshader':b'"res://textures/palette.tres"\n',
+            'textures/palette.tres':b'[resource]\n',
+            'assets/icons/app.svg':b'<svg/>\n',
+            'catalogue/models/one.txt':b'one\n',
+            'catalogue/models/two.txt':b'two\n',
+            'web/small.gd':b'"res://web/palette.tres"\n',
+            'web/palette.tres':b'[resource]\n',
+            'THIRD_PARTY_NOTICES.md':b'notice\n',
+            'docs/licenses.md':b'licenses\n',
+            'docs/unrelated-audit.md':b'unrelated evidence\n',
+            'experiments/old-proof.json':b'{"unrelated":true}\n',
+            'output/private.has':b'never include\n',
+            '.godot/cache':b'never include\n',
+            'tools/__pycache__/old.pyc':b'never include\n',
+        }
+        for name,body in self.files.items():
+            path=self.root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(body)
+        (self.root/'not-catalogued.gd').write_bytes(b'not in Git candidate list\n')
+        self.commit='a'*40
+        self.calls=[];self.extra_rows=[];self.malformed_batch=None;self.concurrent=False
+
+    def tearDown(self):
+        # Only this checked disposable fixture tree is removed.
+        self.assertTrue(self.root.resolve().is_relative_to((ROOT/'output').resolve()))
+        self.temporary.cleanup()
+
+    @staticmethod
+    def oid(body):
+        return hashlib.sha1(b'blob '+str(len(body)).encode()+b'\0'+body).hexdigest().encode()
+
+    def fake_git(self,args,**kwargs):
+        self.calls.append((list(args),kwargs.get('input')))
+        self.assertEqual(Path(kwargs['cwd']),self.root)
+        verb=args[1]
+        if verb=='rev-parse':
+            if args[-1]=='missing^{commit}':raise subprocess.CalledProcessError(128,args)
+            return self.commit+'\n'
+        if verb=='ls-files':return ('\0'.join(sorted(self.files))+'\0').encode()
+        if verb=='ls-tree':
+            rows=[b'100644 blob '+self.oid(body)+b'\t'+name.encode()+b'\0' for name,body in sorted(self.files.items())]
+            return b''.join(rows+self.extra_rows)
+        if verb=='cat-file':
+            if self.concurrent:
+                (self.root/'snapshot').mkdir();(self.root/'snapshot/owner.txt').write_bytes(b'keep concurrent data')
+                self.concurrent=False
+            if self.malformed_batch is not None:return self.malformed_batch
+            bodies={self.oid(body):body for body in self.files.values()}
+            return b''.join(oid+b' blob '+str(len(bodies[oid])).encode()+b'\n'+bodies[oid]+b'\n' for oid in kwargs['input'].splitlines())
+        raise AssertionError('Unexpected process request: '+repr(args))
+
+    def freeze(self,revision=None,**kwargs):
+        with patch('tools.build_owner_review_snapshot.subprocess.check_output',side_effect=self.fake_git):
+            return freeze_source(self.root,self.root/'snapshot',revision,**kwargs)
+
+    def test_runtime_seeds_and_transitive_literal_dependency_closure(self):
+        commit,hashes=self.freeze(runtime_scope=True)
+        self.assertEqual(commit,self.commit)
+        expected=set(self.files)-{'docs/unrelated-audit.md','experiments/old-proof.json','output/private.has','.godot/cache','tools/__pycache__/old.pyc'}
+        self.assertEqual(set(hashes),expected)
+        for name in hashes:
+            self.assertEqual((self.root/'snapshot'/name).read_bytes(),self.files[name])
+            self.assertEqual(hashes[name],hashlib.sha256(self.files[name]).hexdigest())
+        self.assertFalse((self.root/'snapshot/not-catalogued.gd').exists())
+        self.assertEqual([call[0][1] for call in self.calls],['rev-parse','ls-files'])
+
+    def test_default_working_scope_retains_unrelated_source(self):
+        _,hashes=self.freeze()
+        self.assertIn('experiments/old-proof.json',hashes)
+        self.assertIn('docs/unrelated-audit.md',hashes)
+        self.assertNotIn('output/private.has',hashes)
+
+    def test_default_revision_scope_retains_unrelated_source(self):
+        _,hashes=self.freeze(self.commit)
+        self.assertIn('experiments/old-proof.json',hashes)
+        self.assertIn('docs/unrelated-audit.md',hashes)
+        self.assertEqual(sum(call[0][1]=='cat-file' for call in self.calls),1)
+
+    def test_runtime_revision_uses_old_blob_closure_ignoring_working_bytes(self):
+        (self.root/'main.tscn').write_bytes(b'"res://experiments/old-proof.json"\n')
+        (self.root/'project.godot').write_bytes(b'working changed\n')
+        (self.root/'shaders/surface.gdshader').unlink()
+        _,hashes=self.freeze(self.commit,runtime_scope=True)
+        self.assertEqual((self.root/'snapshot/main.tscn').read_bytes(),self.files['main.tscn'])
+        self.assertEqual((self.root/'snapshot/project.godot').read_bytes(),self.files['project.godot'])
+        self.assertIn('textures/palette.tres',hashes)
+        self.assertNotIn('experiments/old-proof.json',hashes)
+        fetched=b''.join(data for args,data in self.calls if args[1]=='cat-file')
+        self.assertNotIn(self.oid(self.files['experiments/old-proof.json'])+b'\n',fetched)
+        self.assertNotIn(self.oid(self.files['docs/unrelated-audit.md'])+b'\n',fetched)
+
+    def test_old_revision_baseline_and_current_shared_test_remain_separate(self):
+        name='tests/world_selection_teardown.gd';current=b'CURRENT SHARED TEST\n'
+        (self.root/name).write_bytes(current)
+        _,hashes=self.freeze(self.commit,runtime_scope=True);baseline=hashes.copy()
+        target=self.root/'snapshot'/name;target.write_bytes((self.root/name).read_bytes())
+        hashes[name]=hashlib.sha256(target.read_bytes()).hexdigest()
+        self.assertEqual(baseline[name],hashlib.sha256(self.files[name]).hexdigest())
+        self.assertEqual(hashes[name],hashlib.sha256(current).hexdigest())
+        self.assertNotEqual(hashes[name],baseline[name])
+
+    def test_existing_target_is_preserved(self):
+        target=self.root/'snapshot';target.mkdir();(target/'owner.txt').write_bytes(b'keep')
+        with self.assertRaisesRegex(AssertionError,'Studio must not exist'):self.freeze(runtime_scope=True)
+        self.assertEqual((target/'owner.txt').read_bytes(),b'keep')
+        self.assertEqual(self.calls,[])
+
+    def test_unsafe_catalogue_names_refused_before_copy_even_outside_scope(self):
+        for name in ['../escape.gd','src/../escape.gd','docs/con.py','src/a.gd:stream','src//a.gd','src/./a.gd','MAIN.TSCN']:
+            with self.subTest(name=name):
+                self.extra_rows=[b'100644 blob '+self.oid(b'bad')+b'\t'+name.encode()+b'\0']
+                with self.assertRaises(AssertionError):self.freeze(self.commit,runtime_scope=True)
+                self.assertFalse((self.root/'snapshot').exists())
+
+    def test_unsupported_revision_entry_still_refused_outside_scope(self):
+        self.extra_rows=[b'120000 blob '+self.oid(b'link')+b'\tdocs/link\0']
+        with self.assertRaisesRegex(AssertionError,'Unsupported snapshot entry'):self.freeze(self.commit,runtime_scope=True)
+        self.assertFalse((self.root/'snapshot').exists())
+
+    def test_runtime_requires_all_four_entrypoints(self):
+        del self.files['launch.pyw']
+        with self.assertRaisesRegex(AssertionError,'Missing runtime application entry points'):self.freeze(runtime_scope=True)
+        self.assertFalse((self.root/'snapshot').exists())
+
+    def test_runtime_scope_is_keyword_only_and_explicit_bool(self):
+        with self.assertRaises(TypeError):freeze_source(self.root,self.root/'snapshot',None,True)
+        with self.assertRaisesRegex(AssertionError,'explicit bool'):self.freeze(runtime_scope=1)
+        self.assertFalse((self.root/'snapshot').exists())
+
+    def test_malformed_git_batch_refused_before_copy(self):
+        self.malformed_batch=b'0'*40+b' blob 1\nx\n'
+        with self.assertRaisesRegex(AssertionError,'Unexpected Git blob response'):self.freeze(self.commit,runtime_scope=True)
+        self.assertFalse((self.root/'snapshot').exists())
+
+    def test_concurrent_destination_is_never_replaced(self):
+        self.concurrent=True
+        with self.assertRaises(FileExistsError):self.freeze(self.commit,runtime_scope=True)
+        self.assertEqual((self.root/'snapshot/owner.txt').read_bytes(),b'keep concurrent data')
+
+    def test_bad_revision_creates_nothing(self):
+        with self.assertRaises(subprocess.CalledProcessError):self.freeze('missing',runtime_scope=True)
+        self.assertFalse((self.root/'snapshot').exists())
+
+    def test_literal_resource_can_include_an_explicit_evidence_dependency(self):
+        # Scope excludes evidence by default, not resources actually referenced.
+        self.files['src/main.gd']=b'"res://experiments/old-proof.json"\n'
+        (self.root/'src/main.gd').write_bytes(self.files['src/main.gd'])
+        _,hashes=self.freeze(runtime_scope=True)
+        self.assertIn('experiments/old-proof.json',hashes)
+        self.assertNotIn('docs/unrelated-audit.md',hashes)
+
+    def test_optional_dependencies_config_is_retained_when_catalogued(self):
+        self.files['dependencies.json']=b'{"schema":1,"tools":{}}\r\n'
+        (self.root/'dependencies.json').write_bytes(self.files['dependencies.json'])
+        _,hashes=self.freeze(runtime_scope=True)
+        self.assertEqual((self.root/'snapshot/dependencies.json').read_bytes(),self.files['dependencies.json'])
+        self.assertEqual(hashes['dependencies.json'],hashlib.sha256(self.files['dependencies.json']).hexdigest())
+
+    def test_optional_dependencies_config_may_be_absent(self):
+        _,hashes=self.freeze(runtime_scope=True)
+        self.assertNotIn('dependencies.json',hashes)
+        self.assertFalse((self.root/'snapshot/dependencies.json').exists())
+
+    def test_old_revision_never_falls_back_to_working_dependencies_config(self):
+        (self.root/'dependencies.json').write_bytes(b'{"working":"unreviewed"}\n')
+        _,hashes=self.freeze(self.commit,runtime_scope=True)
+        self.assertNotIn('dependencies.json',hashes)
+        self.assertFalse((self.root/'snapshot/dependencies.json').exists())
+
+    def test_revision_dependencies_config_uses_exact_old_blob(self):
+        self.files['dependencies.json']=b'{"schema":1,"old":true}\n'
+        (self.root/'dependencies.json').write_bytes(b'{"working":"changed"}\n')
+        _,hashes=self.freeze(self.commit,runtime_scope=True)
+        self.assertEqual((self.root/'snapshot/dependencies.json').read_bytes(),self.files['dependencies.json'])
+        self.assertEqual(hashes['dependencies.json'],hashlib.sha256(self.files['dependencies.json']).hexdigest())
+
+    def test_only_retained_destinations_are_resolved_with_large_evidence_catalogue(self):
+        # Intentionally absent on disk: excluded files must not be read/resolved.
+        excluded={'experiments/evidence-%04d.json'%index for index in range(6023)}
+        self.files.update({name:b'not needed\n' for name in excluded})
+        real_destination=freeze_source.__globals__['safe_destination']
+        with patch('tools.build_owner_review_snapshot.safe_destination',wraps=real_destination) as destinations:
+            _,hashes=self.freeze(runtime_scope=True)
+        resolved=[call.args[1] for call in destinations.call_args_list]
+        self.assertEqual(set(resolved),set(hashes))
+        self.assertEqual(len(resolved),len(hashes))
+        self.assertTrue(excluded.isdisjoint(resolved))
+
+    def test_unsafe_excluded_names_and_collisions_refuse_before_any_source_read(self):
+        for name,message in [('docs/con.py','Unsafe snapshot path'),('../escape.gd','Unsafe snapshot path'),('MAIN.TSCN','Case-colliding snapshot paths')]:
+            with self.subTest(name=name):
+                self.calls.clear()
+                self.extra_rows=[b'100644 blob '+self.oid(b'bad')+b'\t'+name.encode()+b'\0']
+                with patch.object(Path,'read_bytes',side_effect=AssertionError('Unexpected source read')) as reads:
+                    with self.assertRaisesRegex(AssertionError,message):self.freeze(self.commit,runtime_scope=True)
+                reads.assert_not_called()
+                self.assertFalse(any(args[1]=='cat-file' for args,_ in self.calls))
+                self.assertFalse((self.root/'snapshot').exists())

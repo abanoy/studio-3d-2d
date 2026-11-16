@@ -1,0 +1,12 @@
+{
+  "status": "FAILED_FINAL_PUBLIC_INDEX_ORDER_CHECK",
+  "first_index_sha256": "6cd62a7aa2811ee140ba70c66b2ad0c3c702c3bddefaec69463bf12b7316d057",
+  "reason": "Assembler sorted Windows Path objects, which compare case-insensitively. The independent verifier required canonical case-sensitive relative-path ordering. Contents/hashes/counts matched; list order did not.",
+  "independent_privacy_content_alias_stage": "PASS_111_PAYLOADS_61_JSON_11_SOURCE_JOINS_5_REJECTION_CONTROLS",
+  "correction": "Sort the final assembler index by relative POSIX path strings, matching the independently specified verifier. Recompute only the assembly privacy manifest and final index.",
+  "actual_engine_results_or_raw_copied_evidence_changed": false,
+  "old_frozen_source_packet_or_INDEX_changed": false,
+  "runtime_CIM_Git_or_functional_source_action": false,
+  "preserved_files": ["assemble.py", "scan_packet.py", "INDEX.json", "PRIVACY_REPORT.json"],
+  "scope": "Source-only packaging failure, not a Godot/native test failure. Original first observation remains recoverable."
+}

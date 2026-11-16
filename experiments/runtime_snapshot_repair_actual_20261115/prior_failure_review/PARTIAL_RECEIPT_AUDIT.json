@@ -1,0 +1,1531 @@
+{
+  "format": "has_failed_dbf0bc1_partial_private_receipt_metadata_audit_1",
+  "passed_as_partial_receipt_audit": true,
+  "observed_utc": "2026-11-16T02:53:20.176362+00:00",
+  "run_directory": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132",
+  "source_commit": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+  "canonical_status": "failed",
+  "canonical_suite_exit": 1,
+  "functional_sources": 1014,
+  "state_finish_utc": "2026-11-16T02:43:59.4000841Z",
+  "observation_window_end_utc": "2026-11-16T02:47:42.3887530Z",
+  "observation_window_reason": "Actual failed-full host closure observed after the late child completion; this does not extend or upgrade the failed suite result.",
+  "physical_receipts": 46,
+  "unique_desktops": 46,
+  "exit_0": 46,
+  "registered_cancel_exit_2": 0,
+  "all_collected_jobs_desktops_closed_private": true,
+  "rows": [
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-readback-lifecycle\\1794796603153107800\\shipped-source\\output\\private-desktop\\native_readback_lifecycle_smoke_694362748f28426db01dceec703e3a08.json",
+      "source_bytes": 388,
+      "source_sha256": "7a422aae583b71eeae8a3b66f3ee7ffa5f1137503f74ae4b36032de58d354132",
+      "source_mtime_ns": 1794796852487694200,
+      "references": [
+        "completed_native_readback_receipt_path"
+      ],
+      "stored": "receipts/983035569ccb-native_readback_lifecycle_smoke_694362748f28426db01dceec703e3a08.json",
+      "desktop": "HAS_Test_3913edf6d0ff41c283d595943cdac05e",
+      "exit": 0,
+      "child_pid": 86160,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_3913edf6d0ff41c283d595943cdac05e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 86160,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 15.423
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-readback-lifecycle\\1794796603153107800\\shipped-source\\output\\private-desktop\\studio_9c5fb70a6ce5409bb4d6a73fb1efe8e4.json",
+      "source_bytes": 388,
+      "source_sha256": "1315dbc97d12b7e6e465ae237416cfaaf20ee609b8c44614a718ebab220d2352",
+      "source_mtime_ns": 1794796739712134500,
+      "references": [
+        "completed_native_readback_startup_receipt_path"
+      ],
+      "stored": "receipts/e13a04a3f85e-studio_9c5fb70a6ce5409bb4d6a73fb1efe8e4.json",
+      "desktop": "HAS_Test_161944f85475485f9ad73732fb60ad1c",
+      "exit": 0,
+      "child_pid": 69536,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_161944f85475485f9ad73732fb60ad1c",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 69536,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 13.275
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\animated_channels_smoke_5aafc8a5a54a41bf8fb73ea7f9004638.json",
+      "source_bytes": 388,
+      "source_sha256": "1c2ef925cb713a683c92798ec5f9339d54c3e16488cb6e6d7692c6b3b331b566",
+      "source_mtime_ns": 1794796142597921900,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/22e2361d7926-animated_channels_smoke_5aafc8a5a54a41bf8fb73ea7f9004638.json",
+      "desktop": "HAS_Test_693c62839af3412ea6a954dd4bc8d684",
+      "exit": 0,
+      "child_pid": 91116,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_693c62839af3412ea6a954dd4bc8d684",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 91116,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 22.543
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\animation_clips_smoke_28873db2ea204ff6a0417052431a96d6.json",
+      "source_bytes": 388,
+      "source_sha256": "0f777f5b0e138ff230f98067e5e8cc4b4b73ce44852940037dcbddd278525bb4",
+      "source_mtime_ns": 1794796096823789800,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/a98e87306d03-animation_clips_smoke_28873db2ea204ff6a0417052431a96d6.json",
+      "desktop": "HAS_Test_664a21e8819f4735ad29f96487014a38",
+      "exit": 0,
+      "child_pid": 78188,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_664a21e8819f4735ad29f96487014a38",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 78188,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 30.099
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\autokey_smoke_bed2a90f6515433aa07d8d01e62526e3.json",
+      "source_bytes": 388,
+      "source_sha256": "140237c9005be185883f359ea6c229a6aa02e3a96ee3ecaa0aa5b298910f23a7",
+      "source_mtime_ns": 1794795917794662600,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/99c762662904-autokey_smoke_bed2a90f6515433aa07d8d01e62526e3.json",
+      "desktop": "HAS_Test_cbbdbdfa4989445087c772c521ea73be",
+      "exit": 0,
+      "child_pid": 60588,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_cbbdbdfa4989445087c772c521ea73be",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 60588,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 18.252
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\bone_labels_smoke_e1daacd3d0f943aea4b673055b53cb25.json",
+      "source_bytes": 387,
+      "source_sha256": "6459206a29d53eb13e4fddc1d54c1ef51a5ef1d910f02b6c74dcdd1a0cb3c031",
+      "source_mtime_ns": 1794796065884106400,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/ed7df71060ef-bone_labels_smoke_e1daacd3d0f943aea4b673055b53cb25.json",
+      "desktop": "HAS_Test_3e255384894f4ff6b795aa6db409b128",
+      "exit": 0,
+      "child_pid": 89004,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_3e255384894f4ff6b795aa6db409b128",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 89004,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.838
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\export_failures_5a97a63cc9064097ad628391e6a65a9b.json",
+      "source_bytes": 387,
+      "source_sha256": "6501d6de53d7df125ff775e1850e7ea9877f51ed842a5c60051859dc6fa59581",
+      "source_mtime_ns": 1794795822239981000,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/94cb36d8ffd3-export_failures_5a97a63cc9064097ad628391e6a65a9b.json",
+      "desktop": "HAS_Test_0b766389b9914ce7bc2080375feab4c8",
+      "exit": 0,
+      "child_pid": 88572,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0b766389b9914ce7bc2080375feab4c8",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 88572,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 1.721
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\fan_motion_smoke_c265be360a7e4166a0546ad931a4e24f.json",
+      "source_bytes": 388,
+      "source_sha256": "fcc5d15f4c6668f1e0557dc8f9940caee7940cb2b008db4fe02c89eb0594897d",
+      "source_mtime_ns": 1794796222586876600,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/25c87655a4c3-fan_motion_smoke_c265be360a7e4166a0546ad931a4e24f.json",
+      "desktop": "HAS_Test_706f4a538b41452fab86d73ee66b5799",
+      "exit": 0,
+      "child_pid": 74412,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_706f4a538b41452fab86d73ee66b5799",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 74412,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 25.006
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\krita_import_smoke_c67a36c98fd145ccaff134a6fcd4e371.json",
+      "source_bytes": 388,
+      "source_sha256": "a88f698f3f33fa671d2b62a6e9113aeb2bfd9ae26eb96648fe1207a3c96ec892",
+      "source_mtime_ns": 1794795751177929800,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/2be9e97005df-krita_import_smoke_c67a36c98fd145ccaff134a6fcd4e371.json",
+      "desktop": "HAS_Test_4a4898a1e95a4d108a5909ffc4e03ee5",
+      "exit": 0,
+      "child_pid": 87368,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_4a4898a1e95a4d108a5909ffc4e03ee5",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 87368,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 46.406
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\krita_import_smoke_d662064562c949edacf6bbf629641202.json",
+      "source_bytes": 387,
+      "source_sha256": "01adb5020e2f55feb526adde55cd2185b809d7cf55f8510cfdf0dc5abe2edf0c",
+      "source_mtime_ns": 1794795759033299300,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/7112c7748c25-krita_import_smoke_d662064562c949edacf6bbf629641202.json",
+      "desktop": "HAS_Test_0eb554a2fd054c5f9d9723fccbdb0300",
+      "exit": 0,
+      "child_pid": 82916,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0eb554a2fd054c5f9d9723fccbdb0300",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 82916,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.685
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\limb_ik_smoke_49d9df278a0a4074ae887efd3e93ec94.json",
+      "source_bytes": 388,
+      "source_sha256": "65e73d2ee6441594660a9cb1bab1f5cbe68a5c80eefb1462f8c47793118ee04e",
+      "source_mtime_ns": 1794796182069012700,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/ac7b4a7c3784-limb_ik_smoke_49d9df278a0a4074ae887efd3e93ec94.json",
+      "desktop": "HAS_Test_08bd473e87b049459672e1f9b30146ad",
+      "exit": 0,
+      "child_pid": 15692,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_08bd473e87b049459672e1f9b30146ad",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 15692,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 38.832
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\new_scene_smoke_4376c3c6a1924a18ba1b2dc348e45970.json",
+      "source_bytes": 388,
+      "source_sha256": "6526aa4861d080f1370d4577625fadc9827b6e6979ba8f53a2f4a0d1ad88701c",
+      "source_mtime_ns": 1794795933076615000,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/396d938a8d57-new_scene_smoke_4376c3c6a1924a18ba1b2dc348e45970.json",
+      "desktop": "HAS_Test_465f7b034f4b4d1189e505c6d8c61ff1",
+      "exit": 0,
+      "child_pid": 16932,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_465f7b034f4b4d1189e505c6d8c61ff1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 16932,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.662
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\object_timing_smoke_0a9c0df5f472410591bd6dc502a2927e.json",
+      "source_bytes": 388,
+      "source_sha256": "fd45eff4add72efdf6b02b32928e43422c0f6a8691815d72d31f51411600e07c",
+      "source_mtime_ns": 1794796058820935800,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/73654803a8b3-object_timing_smoke_0a9c0df5f472410591bd6dc502a2927e.json",
+      "desktop": "HAS_Test_4d0c77249be64897962795d898ba8ae0",
+      "exit": 0,
+      "child_pid": 89964,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_4d0c77249be64897962795d898ba8ae0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 89964,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 25.061
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\physics_contacts_smoke_ffc8e02eb6f0475d858ae11f8b6419d9.json",
+      "source_bytes": 389,
+      "source_sha256": "26e9f050339fed7677fb3744dbfff3e85f030d49d2a148fcf51c527cc26e518e",
+      "source_mtime_ns": 1794796382039016300,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/e887255eebdd-physics_contacts_smoke_ffc8e02eb6f0475d858ae11f8b6419d9.json",
+      "desktop": "HAS_Test_9a9c9aa7016645f89060b6a200d16924",
+      "exit": 0,
+      "child_pid": 86908,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_9a9c9aa7016645f89060b6a200d16924",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 86908,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 103.108
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\physics_props_smoke_9c99ecbe4f7b4e5ebeb2e7ecc6bfa193.json",
+      "source_bytes": 388,
+      "source_sha256": "89ad47714f3574b182cb2b443c400f1607a440dc6c3f198e29c1cf5f6cfb3afc",
+      "source_mtime_ns": 1794796410079061400,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/6940d1fe5d8b-physics_props_smoke_9c99ecbe4f7b4e5ebeb2e7ecc6bfa193.json",
+      "desktop": "HAS_Test_0f434d92c86b409aa9197ec485acd0cc",
+      "exit": 0,
+      "child_pid": 90536,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0f434d92c86b409aa9197ec485acd0cc",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 90536,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 27.645
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\physics_recording_smoke_4562519ace564e6a8be9c1eddf0a7a22.json",
+      "source_bytes": 388,
+      "source_sha256": "a3f0efecb6ef49b442e44dc696a60ab6358bf4c0f687eac99185b65f50327200",
+      "source_mtime_ns": 1794796471654334800,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/f0bd502c4e7b-physics_recording_smoke_4562519ace564e6a8be9c1eddf0a7a22.json",
+      "desktop": "HAS_Test_414505057ed14b16af384703dcb9c8f5",
+      "exit": 0,
+      "child_pid": 89200,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_414505057ed14b16af384703dcb9c8f5",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 89200,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 59.508
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\physics_smoke_3645df22824146609189acf01f75633b.json",
+      "source_bytes": 388,
+      "source_sha256": "f88c11dea28e1f9ae0cd6175df94542f973cc12aa6b771be5da76c5bbeb3f9bb",
+      "source_mtime_ns": 1794796278747276800,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/40ee9995a681-physics_smoke_3645df22824146609189acf01f75633b.json",
+      "desktop": "HAS_Test_0cfb5ba29faa4322b856c2623e47b1fa",
+      "exit": 0,
+      "child_pid": 47080,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0cfb5ba29faa4322b856c2623e47b1fa",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 47080,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 55.765
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\pose_library_native_969fbc25a8e049fe8fd86d6f063121cc.json",
+      "source_bytes": 387,
+      "source_sha256": "088ca76656a1bd20c47bb82eb3960c7b65efbbfaa0c426c8871de570131090e3",
+      "source_mtime_ns": 1794795796002096600,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/e77c1b6d147c-pose_library_native_969fbc25a8e049fe8fd86d6f063121cc.json",
+      "desktop": "HAS_Test_2329a5a7af7543e2b0ca20d15a39b090",
+      "exit": 0,
+      "child_pid": 88744,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_2329a5a7af7543e2b0ca20d15a39b090",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 88744,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.75
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\pose_library_smoke_2fb0793f85be432a829cc8845bae7cbd.json",
+      "source_bytes": 387,
+      "source_sha256": "38816bafd63f4e079bbfa6570c4dbe1e870e91920e743a700d5da37e8578f580",
+      "source_mtime_ns": 1794795784522074500,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/a71de6ab3054-pose_library_smoke_2fb0793f85be432a829cc8845bae7cbd.json",
+      "desktop": "HAS_Test_dd4ff5d0a26440eb8843ec38621af85f",
+      "exit": 0,
+      "child_pid": 75732,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_dd4ff5d0a26440eb8843ec38621af85f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 75732,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 4.955
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\pose_library_smoke_5cedc3820bd6420d9f81592793f80358.json",
+      "source_bytes": 388,
+      "source_sha256": "b3b2d481cfb5e431c7d3765e065ee97ce060c3c9475d207c7e694d4f57b22dbb",
+      "source_mtime_ns": 1794795779363786700,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/23fac9144219-pose_library_smoke_5cedc3820bd6420d9f81592793f80358.json",
+      "desktop": "HAS_Test_187a64738aad4a2ab1b12871cc1272de",
+      "exit": 0,
+      "child_pid": 87420,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_187a64738aad4a2ab1b12871cc1272de",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 87420,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 18.286
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\rotation_gizmo_smoke_c7fd3f14c0454056a877c4b9c68bad47.json",
+      "source_bytes": 387,
+      "source_sha256": "b6706cedabe2ea04997a5c1a2d3593384875d2e2a4f206bc563df5a8ea1990aa",
+      "source_mtime_ns": 1794796575043726100,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/fbeb0a02cb66-rotation_gizmo_smoke_c7fd3f14c0454056a877c4b9c68bad47.json",
+      "desktop": "HAS_Test_f4f80769d62a498285887a593b214016",
+      "exit": 0,
+      "child_pid": 16316,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f4f80769d62a498285887a593b214016",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 16316,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.603
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\rotation_gizmo_smoke_f8c134d7430841e0a92ce4680557fd35.json",
+      "source_bytes": 387,
+      "source_sha256": "6c3ad00eeba009be793f0e150df9ccf8f455c27b2fc15b7088b10fe7959fd421",
+      "source_mtime_ns": 1794796583390083700,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/ac4d3fdd79a0-rotation_gizmo_smoke_f8c134d7430841e0a92ce4680557fd35.json",
+      "desktop": "HAS_Test_06f06fc628a148479f5e856feceb4df2",
+      "exit": 0,
+      "child_pid": 76404,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_06f06fc628a148479f5e856feceb4df2",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 76404,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.796
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\scene_view_smoke_0abd9cfe3fa34a8fb9d0964196cc941c.json",
+      "source_bytes": 388,
+      "source_sha256": "1ea18de04b77f079fe46bc5bd184f898d8ceb07c1075a7cba0989c87798b0e3e",
+      "source_mtime_ns": 1794796602774791800,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/3cc83a54065e-scene_view_smoke_0abd9cfe3fa34a8fb9d0964196cc941c.json",
+      "desktop": "HAS_Test_334904a9eb1e47c39a849df5a644fd18",
+      "exit": 0,
+      "child_pid": 89672,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_334904a9eb1e47c39a849df5a644fd18",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 89672,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 16.911
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\secondary_motion_smoke_4a4050b2e450456d8d2ed8dd3bc8f638.json",
+      "source_bytes": 388,
+      "source_sha256": "0bd46946bec0e0c22824cfd0478b5455ab1633570c0ce3a3f48c2041a525644e",
+      "source_mtime_ns": 1794796197135203600,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/4c48550fd0bb-secondary_motion_smoke_4a4050b2e450456d8d2ed8dd3bc8f638.json",
+      "desktop": "HAS_Test_dfa86051957842269a4b27fae8413959",
+      "exit": 0,
+      "child_pid": 89376,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_dfa86051957842269a4b27fae8413959",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 89376,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.743
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\spikes_5e6437bd9fbf4dfab0cd71a3ef87d34a.json",
+      "source_bytes": 387,
+      "source_sha256": "a90184d8c80c2639511ae316479738a503e6b73b5562e3cd4dc842a51a2e2931",
+      "source_mtime_ns": 1794795806435551600,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/9786ae48e745-spikes_5e6437bd9fbf4dfab0cd71a3ef87d34a.json",
+      "desktop": "HAS_Test_096624bad1684a19a60274e2e269e733",
+      "exit": 0,
+      "child_pid": 88516,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_096624bad1684a19a60274e2e269e733",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 88516,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.751
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_36ee1b6ee6b249b2940ed5364690ff17.json",
+      "source_bytes": 388,
+      "source_sha256": "ffea0fb370b9a1e8a29748c71035a1b26eca83ae947ca144ec66d577c28c7c3d",
+      "source_mtime_ns": 1794795836865008300,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/b45218b2278e-studio_36ee1b6ee6b249b2940ed5364690ff17.json",
+      "desktop": "HAS_Test_90df52746c264262a903300db66f173a",
+      "exit": 0,
+      "child_pid": 15576,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_90df52746c264262a903300db66f173a",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 15576,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.149
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_423ccc16ffb74b5981964ebdbc77868a.json",
+      "source_bytes": 388,
+      "source_sha256": "47c0797903349d37ceffb906cf38d5b1f7f026b904a094df78f168a2d8d30c9f",
+      "source_mtime_ns": 1794795865077390100,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/c3c792f76608-studio_423ccc16ffb74b5981964ebdbc77868a.json",
+      "desktop": "HAS_Test_12850201e0fc4e76929bf374bcc485c1",
+      "exit": 0,
+      "child_pid": 74552,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_12850201e0fc4e76929bf374bcc485c1",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 74552,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 14.587
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_aa6c68288b054e309d38b7599c564e5f.json",
+      "source_bytes": 387,
+      "source_sha256": "a133691532b8770bfadcfaf15c7300302ceda1947a00f960a61ca2fef59c5860",
+      "source_mtime_ns": 1794795850153568100,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/48af16fad848-studio_aa6c68288b054e309d38b7599c564e5f.json",
+      "desktop": "HAS_Test_0e1ab9ab6af3416db40115cc0b21e847",
+      "exit": 0,
+      "child_pid": 86432,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0e1ab9ab6af3416db40115cc0b21e847",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 86432,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.537
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_b784a6f1b74d4e0992aae5cbdd5e2a98.json",
+      "source_bytes": 387,
+      "source_sha256": "5a45a93c5a3025a109f85864c3a201b7343f1a4c64c3f9e034b2c35e553bd787",
+      "source_mtime_ns": 1794795843350057400,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/3612723bd28f-studio_b784a6f1b74d4e0992aae5cbdd5e2a98.json",
+      "desktop": "HAS_Test_fafd1348f88d44528f1dd4d1f280f4ea",
+      "exit": 0,
+      "child_pid": 88996,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_fafd1348f88d44528f1dd4d1f280f4ea",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 88996,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.186
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_da3668b7f73744cbbf7ef95eb68e3a4c.json",
+      "source_bytes": 388,
+      "source_sha256": "e49b0e97553bedd3934f63c0292bfe432e9c8e3b7877fbddf27cde8a0b82d7d5",
+      "source_mtime_ns": 1794795820050270200,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/4e04796a8d91-studio_da3668b7f73744cbbf7ef95eb68e3a4c.json",
+      "desktop": "HAS_Test_f2f179e4a7db4492b4b9d6f931731e9e",
+      "exit": 0,
+      "child_pid": 88020,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f2f179e4a7db4492b4b9d6f931731e9e",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 88020,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 13.439
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_eafd99b7399d4a209bf1728286e66711.json",
+      "source_bytes": 387,
+      "source_sha256": "f4ddd5c6665eec59695ab448d83c38da3b7011adddc7561127d7c4a05b8c79ff",
+      "source_mtime_ns": 1794795872318265700,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/ae15cf8418ef-studio_eafd99b7399d4a209bf1728286e66711.json",
+      "desktop": "HAS_Test_18a6fd52511e45868b0d414fb7a2b54b",
+      "exit": 0,
+      "child_pid": 71768,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_18a6fd52511e45868b0d414fb7a2b54b",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 71768,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 6.918
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\studio_f735387233784d7f8429dcb12c78d1f1.json",
+      "source_bytes": 388,
+      "source_sha256": "223c009d7798ee7037473b15b8c17e62ca5456a8834de7a912897bb0a386ff22",
+      "source_mtime_ns": 1794795899272042300,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/59988d642e16-studio_f735387233784d7f8429dcb12c78d1f1.json",
+      "desktop": "HAS_Test_1057c681101c447b9eeb9478a50839b0",
+      "exit": 0,
+      "child_pid": 87832,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_1057c681101c447b9eeb9478a50839b0",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 87832,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 26.714
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\visibility_smoke_3913d6bcdd954704a8374f3ec7025fee.json",
+      "source_bytes": 388,
+      "source_sha256": "7a480edca6f7656a3941a9c5ef3693836eee725d26a715ae045230eb866bd24b",
+      "source_mtime_ns": 1794796119865326300,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/92c268f9f92d-visibility_smoke_3913d6bcdd954704a8374f3ec7025fee.json",
+      "desktop": "HAS_Test_3754a101a43b4abca855db30106f9b91",
+      "exit": 0,
+      "child_pid": 71904,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_3754a101a43b4abca855db30106f9b91",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 71904,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 22.888
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_controls_smoke_82776ade1fd645f985652a9470493ddd.json",
+      "source_bytes": 389,
+      "source_sha256": "3bdebcae428230c7ebcaff72679393627492a7ef657c0723887a11160bfd6e9c",
+      "source_mtime_ns": 1794796492443597700,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/e9d6084314a6-workspace_controls_smoke_82776ade1fd645f985652a9470493ddd.json",
+      "desktop": "HAS_Test_e844b106edd9437bb843803b8169b875",
+      "exit": 0,
+      "child_pid": 87912,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e844b106edd9437bb843803b8169b875",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 10,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 87912,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 19.066
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_docking_smoke_66521a3c5bd94e1a91676a8becaa1c49.json",
+      "source_bytes": 388,
+      "source_sha256": "3ff89f19690ff5db36c55a26b35a001baacae070e160497b07d12b498e42a57d",
+      "source_mtime_ns": 1794796539710166300,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/f48deb98221b-workspace_docking_smoke_66521a3c5bd94e1a91676a8becaa1c49.json",
+      "desktop": "HAS_Test_34ffd1a7c9b0483b97ed8c5bd591a153",
+      "exit": 0,
+      "child_pid": 81048,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_34ffd1a7c9b0483b97ed8c5bd591a153",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 10,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 81048,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.257
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_docking_smoke_7eff754486a949f594cc32204e205257.json",
+      "source_bytes": 389,
+      "source_sha256": "440b11fedf412d874bfddc95a31d3fc89215184a5e5f68bd8845c58c364050a8",
+      "source_mtime_ns": 1794796532113355500,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/53506fab5ba6-workspace_docking_smoke_7eff754486a949f594cc32204e205257.json",
+      "desktop": "HAS_Test_0776bf86cf5c41939e0981ea7ae43807",
+      "exit": 0,
+      "child_pid": 76688,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_0776bf86cf5c41939e0981ea7ae43807",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 10,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 76688,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 18.687
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_nested_smoke_609922b037394452860439bb50ad9427.json",
+      "source_bytes": 388,
+      "source_sha256": "1542ddafcf85657344c0649b2dd6edd5851f213c98fc5fedce3f8f4fc6252bfe",
+      "source_mtime_ns": 1794796566396987500,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/7d94e0c84de9-workspace_nested_smoke_609922b037394452860439bb50ad9427.json",
+      "desktop": "HAS_Test_e0aad16c91b94d58bb3cd54d8d50b4f5",
+      "exit": 0,
+      "child_pid": 54652,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_e0aad16c91b94d58bb3cd54d8d50b4f5",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 10,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 54652,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 7.361
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_nested_smoke_ecefd6ab87a1450188c5a308ec03d26c.json",
+      "source_bytes": 389,
+      "source_sha256": "e5253ed1cbcb773a43e68417bfef7bfaf4eba0e9b7b2071276bd4bd270db123b",
+      "source_mtime_ns": 1794796558627439600,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/a2d691005f0a-workspace_nested_smoke_ecefd6ab87a1450188c5a308ec03d26c.json",
+      "desktop": "HAS_Test_dd4d665e0fed446daa7750862d5c613d",
+      "exit": 0,
+      "child_pid": 89480,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_dd4d665e0fed446daa7750862d5c613d",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 10,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 89480,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 17.464
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\workspace_resize_smoke_8ec3a50526284d7fa121d7aa081b7deb.json",
+      "source_bytes": 388,
+      "source_sha256": "5d850c1738b69e35a61d33ccffc2f93dc9c996802be9bfc67ef87ff3ad2fcca8",
+      "source_mtime_ns": 1794796511550782100,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/5ec9907ee536-workspace_resize_smoke_8ec3a50526284d7fa121d7aa081b7deb.json",
+      "desktop": "HAS_Test_50dcc8b3144c4de5aa1b4fa3703ec011",
+      "exit": 0,
+      "child_pid": 86296,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_50dcc8b3144c4de5aa1b4fa3703ec011",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 86296,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 17.174
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_document_smoke_dc4aee47ed924a5db3e32077da78596e.json",
+      "source_bytes": 387,
+      "source_sha256": "29d4ab676d5f39e9368d349afc00ae7af5f4b6e5c8e221eef474dc1ad5e583c0",
+      "source_mtime_ns": 1794795959084365400,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/314e83772b03-world_document_smoke_dc4aee47ed924a5db3e32077da78596e.json",
+      "desktop": "HAS_Test_493e09f09ca346729fa7695eab64ebbf",
+      "exit": 0,
+      "child_pid": 90076,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_493e09f09ca346729fa7695eab64ebbf",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 90076,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 9.433
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_edit_smoke_424d1ffbe051465888a57fb9bdc2f4f4.json",
+      "source_bytes": 388,
+      "source_sha256": "f82c64320975f0561ed28fdea0440e41242abfac1625dd32f865dcc8bab48f53",
+      "source_mtime_ns": 1794796013462746800,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/8da4c579a66a-world_edit_smoke_424d1ffbe051465888a57fb9bdc2f4f4.json",
+      "desktop": "HAS_Test_5eadfdb265364f72a7aaef16f1700620",
+      "exit": 0,
+      "child_pid": 71720,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_5eadfdb265364f72a7aaef16f1700620",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 71720,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 35.484
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_runtime_smoke_64628745a61f45b3bfad21c79aaaca85.json",
+      "source_bytes": 388,
+      "source_sha256": "aa67df7d0e5dea258254bf260cd8430a208e7360a0087c980be389705b17527c",
+      "source_mtime_ns": 1794795977192089700,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/eef494f6288b-world_runtime_smoke_64628745a61f45b3bfad21c79aaaca85.json",
+      "desktop": "HAS_Test_b997ac2c7b7847939005a844a9d68e64",
+      "exit": 0,
+      "child_pid": 89452,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_b997ac2c7b7847939005a844a9d68e64",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 89452,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 17.707
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_selection_smoke_5ef5e47c757c4cdc9a1e2522f9d90776.json",
+      "source_bytes": 388,
+      "source_sha256": "9e35bc72cac121f6ac733e71d34f0b09a247491335bad8552f9f5a4682d99cf1",
+      "source_mtime_ns": 1794795949243177300,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/8dd522eec0b8-world_selection_smoke_5ef5e47c757c4cdc9a1e2522f9d90776.json",
+      "desktop": "HAS_Test_fa77cb0dbfad44f2bdeb7496712ed19a",
+      "exit": 0,
+      "child_pid": 88232,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_fa77cb0dbfad44f2bdeb7496712ed19a",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 88232,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 15.686
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\private-desktop\\world_workflow_smoke_7216ee243d0b418896999d9ef3fc8f69.json",
+      "source_bytes": 386,
+      "source_sha256": "17b3160e802050e0ce336d301aacca8f1bb8820b3f6d518e2f34a92cdea51fc6",
+      "source_mtime_ns": 1794796033558412700,
+      "references": [
+        "fresh_direct_checkout_private_desktop"
+      ],
+      "stored": "receipts/ad5f44fcd0ce-world_workflow_smoke_7216ee243d0b418896999d9ef3fc8f69.json",
+      "desktop": "HAS_Test_33ca9480ea834f399dd8fe2494c97218",
+      "exit": 0,
+      "child_pid": 84564,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_33ca9480ea834f399dd8fe2494c97218",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 84564,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 19.8
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\shipped-source\\output\\private-desktop\\studio_f428ae6691f54c65abb90c1b9f029ec3.json",
+      "source_bytes": 388,
+      "source_sha256": "3fc85922d4de14f47a1c7c3603a538651158dfc50e351d7defee5fd862c3848a",
+      "source_mtime_ns": 1794796938516213900,
+      "references": [
+        "actual_failing_teardown_normal-startup-command.json"
+      ],
+      "stored": "receipts/c4c5f7e26703-studio_f428ae6691f54c65abb90c1b9f029ec3.json",
+      "desktop": "HAS_Test_f18b319208b245c5b8ec7b06acee0464",
+      "exit": 0,
+      "child_pid": 15912,
+      "closed_and_private": true,
+      "after_failed_state_finish": false,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_f18b319208b245c5b8ec7b06acee0464",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 15912,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 10.939
+      }
+    },
+    {
+      "source_path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\shipped-source\\output\\private-desktop\\world_selection_teardown_ebb23007e3b2472e9afd5edc185f3a53.json",
+      "source_bytes": 388,
+      "source_sha256": "38604b83417f9ab2cdaa404e6d620addbf545502cde477e01a1aec3ad9c0c5c4",
+      "source_mtime_ns": 1794797047207042000,
+      "references": [
+        "actual_failing_teardown_process-command.json"
+      ],
+      "stored": "receipts/8c6899204f94-world_selection_teardown_ebb23007e3b2472e9afd5edc185f3a53.json",
+      "desktop": "HAS_Test_d143627eaff144fba0160a280bdb470f",
+      "exit": 0,
+      "child_pid": 71828,
+      "closed_and_private": true,
+      "after_failed_state_finish": true,
+      "receipt": {
+        "format": "studio_private_desktop_1",
+        "desktop": "HAS_Test_d143627eaff144fba0160a280bdb470f",
+        "desktop_switch_requested": false,
+        "private_window_seen": true,
+        "child_desktop_confirmed": true,
+        "maximum_owned_windows": 9,
+        "foreground_child_observed": false,
+        "exit": 0,
+        "child_pid": 71828,
+        "job_closed": true,
+        "desktop_closed": true,
+        "seconds": 11.324
+      }
+    }
+  ],
+  "late_receipt_count": 1,
+  "late_child_pid": 71828,
+  "late_child_receipt_mtime_ns": 1794797047207042000,
+  "late_child_receipt_after_state_finish_seconds": 7.8069579,
+  "completed_core_groups": [
+    "unit",
+    "motion_parts",
+    "motion_helper_edits",
+    "opaque_order",
+    "required_extensions",
+    "contact_bend",
+    "spikes",
+    "editor",
+    "export_failures",
+    "audio_editor",
+    "audio_dummy",
+    "ui",
+    "recovery_write",
+    "recovery",
+    "pose",
+    "autokey",
+    "new_scene",
+    "world_selection",
+    "world_document",
+    "world_runtime",
+    "world_edit",
+    "world_workflow",
+    "object_timing",
+    "bone_labels",
+    "animation_clips_unit",
+    "animation_clips",
+    "visibility",
+    "animated_channels",
+    "limb_ik",
+    "secondary_motion",
+    "fan_motion",
+    "physics",
+    "physics_contacts",
+    "physics_props",
+    "physics_recording_unit",
+    "physics_recording"
+  ],
+  "late_teardown_result": {
+    "cases": [
+      {
+        "case": "controls-queue-free",
+        "reentrant_pending_after_first_draw": 1,
+        "signal_connections": 0
+      },
+      {
+        "case": "focus-free",
+        "nodes": 1,
+        "orphans": 0,
+        "signal_connections": 0
+      },
+      {
+        "case": "setup-free",
+        "nodes": 1,
+        "orphans": 0,
+        "signal_connections": 0
+      },
+      {
+        "case": "focus-detach",
+        "nodes": 1,
+        "orphans": 0,
+        "signal_connections": 0
+      }
+    ],
+    "checks": 28,
+    "failures": 0
+  },
+  "fresh_full157_report_used": false,
+  "source_metadata_context": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132\\state.json",
+      "bytes": 828,
+      "sha256": "946b9a718ced2f8efda3e09cddf103c6988c17198afc269d12786c576187841f",
+      "mtime_ns": 1794797039410623100
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132\\source-before.json",
+      "bytes": 106504,
+      "sha256": "a9bd3f994cb815c961c2f337e23252738522917553bca06358a92f20c85add80",
+      "mtime_ns": 1794795692851191800
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132\\source-after.json",
+      "bytes": 106504,
+      "sha256": "a9bd3f994cb815c961c2f337e23252738522917553bca06358a92f20c85add80",
+      "mtime_ns": 1794797039178192200
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132\\launch.json",
+      "bytes": 1099,
+      "sha256": "47412de501bd7de69e702a14e06d603d259feeff20e3a668eaca4228ced940fd",
+      "mtime_ns": 1794795692224079000
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132\\root-birth-observation.json",
+      "bytes": 617,
+      "sha256": "14c6a6703d300adc076c160c4a7ec9d0c013ecc7ea897369e45074ba4b2ea7cb",
+      "mtime_ns": 1794795754332575100
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132\\canonical.log",
+      "bytes": 2358,
+      "sha256": "3a27246d7a8609fca8131c9d36681c0ef96f62202dd4a3ff7d9d1ddd79d47256",
+      "mtime_ns": 1794797037764430800
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132\\authoritative-host-terminal.json",
+      "bytes": 1129,
+      "sha256": "ff12c0eeb37aa47eb6f031f41e2773cb3305aeb0b55cf2ffbb2d4783438abf61",
+      "mtime_ns": 1794797262448849700
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261116T022132132\\authoritative-host-termination.json",
+      "bytes": 860,
+      "sha256": "4f007342d71ca0d2b21086c96635b05e98920f9fa30a3561cda2cc8d28d7dcaa",
+      "mtime_ns": 1794797262466397700
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\normal-startup-command.json",
+      "bytes": 1072,
+      "sha256": "a5ad7d5cd3993e2995facea802f8cd19dc4f7c4a30b832cedc13416c8ef94098",
+      "mtime_ns": 1794796927320523000
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\normal-startup.json",
+      "bytes": 191,
+      "sha256": "30bd8f8658454913e4fc66d4a0f0fc50ea5ae0306f96b36367d6166ec2aa3603",
+      "mtime_ns": 1794796938076478800
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\normal-startup.log",
+      "bytes": 3248,
+      "sha256": "13ff9156c9c9c6117f60f9c98337279b5604cc951da99d12420366f33cb1ad91",
+      "mtime_ns": 1794796938534376600
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\process-command.json",
+      "bytes": 1326,
+      "sha256": "9417ac2a0dc29e766893459f51fc1ea684f332b912d4f2ab09c799bd6f3f6cd9",
+      "mtime_ns": 1794797035688967500
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\result.json",
+      "bytes": 332,
+      "sha256": "be36324b2a6887fd6817e6730d944d56f2ebf1694749a0a9ebfe97320e3f41ea",
+      "mtime_ns": 1794797046804437900
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\engine.log",
+      "bytes": 5792,
+      "sha256": "7627abfb9667421bc7666ed9aa80a0108cd6f1bebfebecee9a433a11a53687d0",
+      "mtime_ns": 1794797046857266200
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794796856711017300\\verification.json",
+      "bytes": 1971101,
+      "sha256": "14c8d337e0d74ebee33113453ff280c4bd2161c821b57b7988dab7db2b495d9c",
+      "mtime_ns": 1794797035425470700
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-readback-lifecycle-latest.json",
+      "bytes": 1972805,
+      "sha256": "f56741a730d9f9feabd15de9618afbfa070351fcc67d132e1d35ba8b7609a50c",
+      "mtime_ns": 1794796856529139000
+    }
+  ],
+  "receipt_selection": "Fresh direct checkout output/private-desktop files plus explicit command-derived2teardown and completed native-readback2receipts. No recursive harvest of copied historical experiment receipts.",
+  "root_host_no_process_killed_scope": "The observational helper/root issued no manual or sweep kill. The outer Python subprocess.run timeout may automatically terminate its direct verifier wrapper; source/trace inference, wrapper PID was not captured. The late private Godot child finished normally.",
+  "owner_manual_hair_selection": "DEFERRED_NO_OBSERVED_RESULT",
+  "new_runtime_process_queries_engines_Git_or_original_mutations_by_auditor": false,
+  "process_absence_recheck_still_required_by_root": true,
+  "full_suite_passed": false,
+  "graphics_lease_release_created": false
+}

@@ -1,0 +1,60 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+
+PASS fresh ordinary app starts at the required full-HD48-frame canvas
+PASS owned original native input and prepared converter bundle are offline for this fresh reader
+PASS packed reader cache is absent before ordinary Open
+PASS packed source HAS bytes match the writer
+PASS normal HAS unpack succeeds and drains snapshot/loader/packer state
+PASS packed cold Open restores both converted actor and pre-existing peer
+PASS packed cold Open restores exact native report, drawing pixels, audio PCM, keys and authored world
+PASS packed cold actor retains exact converter report and GLB bytes
+PASS packed fresh cache supplies runtime geometry without reconversion or history edits
+PASS named keiki_tools_chisels-groups-000/packed/source_binding.cold_open.report_identity
+PASS named keiki_tools_chisels-groups-000/packed/source_binding.cold_open.runtime_bindings
+PASS named keiki_tools_chisels-groups-000/packed/source_binding.cold_open.no_mutation
+PASS named keiki_tools_chisels-groups-000/packed/source_binding.cold_open.no_simulation
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS packed cold derived frame 0 exactly matches the writer reference
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS packed cold derived frame 24 exactly matches the writer reference
+PASS packed Open leaves the saved package unchanged
+PASS named keiki_tools_chisels-groups-000/packed/shape_ui.target_0.binding
+PASS named keiki_tools_chisels-groups-000/packed/shape_ui.target_0.middle
+PASS named keiki_tools_chisels-groups-000/packed/shape_ui.catalogue
+PASS named keiki_tools_chisels-groups-000/packed/shape_ui.authored_values
+PASS named keiki_tools_chisels-groups-000/packed/shape_ui.defaults_off
+PASS named keiki_tools_chisels-groups-000/packed/shape_ui.protected_state
+PASS named keiki_tools_chisels-groups-000/packed/shape_ui.middle_pixels
+PASS linked reader cache is absent before ordinary Open
+PASS linked source HAS bytes match the writer
+PASS normal HAS unpack succeeds and drains snapshot/loader/packer state
+PASS linked cold Open restores both converted actor and pre-existing peer
+PASS linked cold Open restores exact native report, drawing pixels, audio PCM, keys and authored world
+PASS linked cold actor retains exact converter report and GLB bytes
+PASS linked fresh cache supplies runtime geometry without reconversion or history edits
+PASS named keiki_tools_chisels-groups-000/linked/source_binding.cold_open.report_identity
+PASS named keiki_tools_chisels-groups-000/linked/source_binding.cold_open.runtime_bindings
+PASS named keiki_tools_chisels-groups-000/linked/source_binding.cold_open.no_mutation
+PASS named keiki_tools_chisels-groups-000/linked/source_binding.cold_open.no_simulation
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS linked cold derived frame 0 exactly matches the writer reference
+PASS derived reference capture has the authored full-HD dimensions
+PASS derived reference pixels are retained privately
+PASS linked cold derived frame 24 exactly matches the writer reference
+PASS linked Open leaves the saved package unchanged
+PASS named keiki_tools_chisels-groups-000/linked/shape_ui.target_0.binding
+PASS named keiki_tools_chisels-groups-000/linked/shape_ui.target_0.middle
+PASS named keiki_tools_chisels-groups-000/linked/shape_ui.catalogue
+PASS named keiki_tools_chisels-groups-000/linked/shape_ui.authored_values
+PASS named keiki_tools_chisels-groups-000/linked/shape_ui.defaults_off
+PASS named keiki_tools_chisels-groups-000/linked/shape_ui.protected_state
+PASS named keiki_tools_chisels-groups-000/linked/shape_ui.middle_pixels
+PASS cold movie uses explicit 1080p output and original 48-frame24fps project
+PASS cold source-offline project exports one fresh H264/AAC movie
+PASS cold movie PNG frame 0 matches the independent derived reference
+PASS cold movie PNG frame 24 matches the independent derived reference
+SOURCE_CHOICES_NATIVE {"actual_app":true,"actual_native_conversion":false,"actual_source_dialog":false,"cases":[],"checks":34,"derived_pixels_only":true,"failures":0,"format":"has_source_choices_native_app_result_1","job_path":"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\readers\\01\\job.json","job_sha256":"35b4233f19dced5702ae018ece79303d75aa2ef37d39c0c81e4c2e47a727b2a8","mode":"reader","movie":"C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\readers\\01/render_1794627140_6053385_0/movie.mp4","named_checks":{"keiki_tools_chisels-groups-000/linked/shape_ui.authored_values":true,"keiki_tools_chisels-groups-000/linked/shape_ui.catalogue":true,"keiki_tools_chisels-groups-000/linked/shape_ui.defaults_off":true,"keiki_tools_chisels-groups-000/linked/shape_ui.middle_pixels":true,"keiki_tools_chisels-groups-000/linked/shape_ui.protected_state":true,"keiki_tools_chisels-groups-000/linked/shape_ui.target_0.binding":true,"keiki_tools_chisels-groups-000/linked/shape_ui.target_0.middle":true,"keiki_tools_chisels-groups-000/linked/source_binding.cold_open.no_mutation":true,"keiki_tools_chisels-groups-000/linked/source_binding.cold_open.no_simulation":true,"keiki_tools_chisels-groups-000/linked/source_binding.cold_open.report_identity":true,"keiki_tools_chisels-groups-000/linked/source_binding.cold_open.runtime_bindings":true,"keiki_tools_chisels-groups-000/packed/shape_ui.authored_values":true,"keiki_tools_chisels-groups-000/packed/shape_ui.catalogue":true,"keiki_tools_chisels-groups-000/packed/shape_ui.defaults_off":true,"keiki_tools_chisels-groups-000/packed/shape_ui.middle_pixels":true,"keiki_tools_chisels-groups-000/packed/shape_ui.protected_state":true,"keiki_tools_chisels-groups-000/packed/shape_ui.target_0.binding":true,"keiki_tools_chisels-groups-000/packed/shape_ui.target_0.middle":true,"keiki_tools_chisels-groups-000/packed/source_binding.cold_open.no_mutation":true,"keiki_tools_chisels-groups-000/packed/source_binding.cold_open.no_simulation":true,"keiki_tools_chisels-groups-000/packed/source_binding.cold_open.report_identity":true,"keiki_tools_chisels-groups-000/packed/source_binding.cold_open.runtime_bindings":true},"native_simulation_claimed":false,"project_root":"C:/a/Programming/cloudflare/has-acceptance-session-20261111/output/sfm-bone-bindings-native-launch-20261114T033026205/run/Studio/","reader_modes":[{"checks":14,"failures":0,"frames":[0,24],"mode":"packed","passed":true,"project_sha256":"6974e8d72e21469255653fecb52a8c347706a9787bf3bfcce39cc634b250f238"},{"checks":14,"failures":0,"frames":[0,24],"mode":"linked","passed":true,"project_sha256":"ba4c801b38b961d2d7257edc927b8a60b736a2660ac2dfbdb583848051924e94"}],"scope":"Static Source import choices and ordinary actor/history/HAS/cold-render transport. No original Source shader, jiggle, assembly or artist fidelity claim.","source_manifest_sha256":"25e01367fd15fe42e884c1ad8ec91c0308ccd5ec35d06eec6bee6f34610d2d03","source_revision":"7477ed32dc5c43324783f76736164553bb4a79c5"}

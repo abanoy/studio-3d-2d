@@ -1,0 +1,860 @@
+{
+  "format": "has_canonical_bone_binding_benchmark_1",
+  "publication": {
+    "format": "has_windows_canonical_bone_binding_full_publication_1",
+    "source_commit": "f0dd57a2e568089d396fecba819ab987da658bf0",
+    "passed": true,
+    "elapsed_seconds": 2956.8145699,
+    "functional_source_entries": 1008,
+    "result_groups": 157,
+    "core_process_groups": 36,
+    "private_jobs": 192,
+    "exit_0": 191,
+    "expected_krita_cancel_exit_2": 1,
+    "raw_receipts_preserved": 192,
+    "lossless_audit_aliases": 209,
+    "original_summary_index_sha256": "2b64fca141bf62b18b6bc12923ba6185151a059cd1b0b25a1644c52314c30911",
+    "original_receipt_audit_index_sha256": "d6e5574817b4c8ae948c08d8a1f0867f5810c4c781b8db392034b9da709c4867",
+    "no_runtime_tests_or_source_mutation": true,
+    "separate_named_scopes": {
+      "foundation": 167,
+      "jiggle_cpu": 66,
+      "crosswalk_cpu": 77,
+      "bone_bindings_headless": 96,
+      "source_import_owner": 53
+    },
+    "audio_scope": {
+      "dedicated_default_driver": "WASAPI",
+      "real_bus_samples_observed": true,
+      "silent_contact_selection_driver": "Dummy",
+      "separate_dummy_fallback_core_present": true,
+      "hardware_claim": "Actual non-Dummy bus/clock capture"
+    },
+    "media": {
+      "root_movie_count": 21,
+      "root_movies": {
+        "silent_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "spike_silent_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "tone_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "editor_audio_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "autokey_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "new_scene_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "world_runtime_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "world_edit_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "world_workflow_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "object_timing_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "animation_clips_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "visibility_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "animated_channels_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "limb_ik_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "physics_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "secondary_motion_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "fan_motion_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "physics_props_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "physics_recording_video": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "posed_model_video_0": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        },
+        "posed_model_video_1": {
+          "frames": 48,
+          "fps": "24/1",
+          "duration": "2.000000"
+        }
+      },
+      "fresh_ffprobe_count": 19,
+      "fresh_ffprobe_metadata": {
+        "silent": {
+          "metadata_identity": {
+            "bytes": 2420,
+            "sha256": "da439f214aa666fdd25033adb32bf6f1cf1a5f724a7ae63524122dd262091ca2",
+            "mtime_ns": 1794786269186307700,
+            "device": 14290083805553457215,
+            "inode": 2533274790991380
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "spike_silent": {
+          "metadata_identity": {
+            "bytes": 2416,
+            "sha256": "56c569c324d4f5ae84f06ca42487f31b4df4394c3a8ebf93045601fbf8bd3e3a",
+            "mtime_ns": 1794786269291209500,
+            "device": 14290083805553457215,
+            "inode": 3096224744803049
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "tone": {
+          "metadata_identity": {
+            "bytes": 3834,
+            "sha256": "d0576722af3ded78e5c1fc0f7a22f80e7ebc309843ff7e4d58e5261eb9a25b93",
+            "mtime_ns": 1794786269389804500,
+            "device": 14290083805553457215,
+            "inode": 1688849860859453
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        },
+        "editor_audio": {
+          "metadata_identity": {
+            "bytes": 3834,
+            "sha256": "b025189044cde1676c9b010e35b7f94bc05fdf80016d9646bd80e8ee6b9bd5c9",
+            "mtime_ns": 1794786269502433500,
+            "device": 14290083805553457215,
+            "inode": 1407374884148124
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        },
+        "autokey": {
+          "metadata_identity": {
+            "bytes": 2426,
+            "sha256": "7fb5c7b6fa334364de54c7123d97722dfb44800c9243dcc47d9ae9c828e16ea7",
+            "mtime_ns": 1794786269592180400,
+            "device": 14290083805553457215,
+            "inode": 3377699721122581
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "new_scene": {
+          "metadata_identity": {
+            "bytes": 2425,
+            "sha256": "316f4ebde4d9dd5032bb9541eff85aa90628514a11376f0c690c07fc5f7e487e",
+            "mtime_ns": 1794786269668391300,
+            "device": 14290083805553457215,
+            "inode": 2533274790991060
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "world_runtime": {
+          "metadata_identity": {
+            "bytes": 2411,
+            "sha256": "2b597a6926a5c03e651aa8979a360d7da2d4f12e8e0dec61911d2d3bab6c7bc2",
+            "mtime_ns": 1794786269759486200,
+            "device": 14290083805553457215,
+            "inode": 3377699721123511
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "world_edit": {
+          "metadata_identity": {
+            "bytes": 2429,
+            "sha256": "3ce14a650e2c9b41a2f4f1d899e4c051cfb371b8378adc95c5bd8446c4acf350",
+            "mtime_ns": 1794786269849666600,
+            "device": 14290083805553457215,
+            "inode": 3377699721123508
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "world_workflow": {
+          "metadata_identity": {
+            "bytes": 3848,
+            "sha256": "ab61d8cbf682645978929f5e2648c62112810c65d111f8b9878c75ba1ba70edb",
+            "mtime_ns": 1794786269953873600,
+            "device": 14290083805553457215,
+            "inode": 3096224744412861
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        },
+        "object_timing": {
+          "metadata_identity": {
+            "bytes": 2432,
+            "sha256": "73afa333b818d5252b02c7c0a7e294dbf18a308e29cffd3782fff2ad102ad02c",
+            "mtime_ns": 1794786270039459500,
+            "device": 14290083805553457215,
+            "inode": 22799473114158302
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "animation_clips": {
+          "metadata_identity": {
+            "bytes": 3849,
+            "sha256": "4305d1f6e158c4775c60f1607152081f2d29eb52b58cd0c9f6303dd08584119f",
+            "mtime_ns": 1794786270132706100,
+            "device": 14290083805553457215,
+            "inode": 6755399441650442
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        },
+        "visibility": {
+          "metadata_identity": {
+            "bytes": 3842,
+            "sha256": "e1b54f2258e9cd2b188e59e2d9274e529c0d153d1d94b09ca379c72fabcf6742",
+            "mtime_ns": 1794786270216940400,
+            "device": 14290083805553457215,
+            "inode": 1970324837570171
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        },
+        "animated_channels": {
+          "metadata_identity": {
+            "bytes": 3850,
+            "sha256": "88cf87b0ec5e5e0530644874b33e61548919d0f1a49487de9ca7981ecd690188",
+            "mtime_ns": 1794786270296480000,
+            "device": 14290083805553457215,
+            "inode": 1688849860858628
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        },
+        "limb_ik": {
+          "metadata_identity": {
+            "bytes": 3840,
+            "sha256": "277e1e60970e12a30c71d1eeab5fee2168608c56df25c6a3be66c5bb9ad91ae8",
+            "mtime_ns": 1794786270378853100,
+            "device": 14290083805553457215,
+            "inode": 3096224744412336
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        },
+        "physics": {
+          "metadata_identity": {
+            "bytes": 2426,
+            "sha256": "7235d037bf47a727497d81dc5d1e4d9336e948348fd60c6009812f831b737504",
+            "mtime_ns": 1794786270457018000,
+            "device": 14290083805553457215,
+            "inode": 5348024558097723
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "secondary_motion": {
+          "metadata_identity": {
+            "bytes": 2435,
+            "sha256": "c6a59396f2fedfa0e3172456595672bd4377162c3d2a2bde1e915e483f3ab42e",
+            "mtime_ns": 1794786270541214600,
+            "device": 14290083805553457215,
+            "inode": 2533274790991358
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "fan_motion": {
+          "metadata_identity": {
+            "bytes": 2428,
+            "sha256": "9a4b284aee77b7bcccd059eb76a407f41582b3392c244aa5269b3d29a6f86c7e",
+            "mtime_ns": 1794786270626260200,
+            "device": 14290083805553457215,
+            "inode": 3940649674544045
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": []
+        },
+        "physics_props": {
+          "metadata_identity": {
+            "bytes": 3846,
+            "sha256": "5bad5a5c404bc1387ea5f1616797f2b32a89584ea02842ffd337e95142141688",
+            "mtime_ns": 1794786270708581300,
+            "device": 14290083805553457215,
+            "inode": 1407374884148562
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        },
+        "physics_recording": {
+          "metadata_identity": {
+            "bytes": 3852,
+            "sha256": "12b7b43ced52a5b5dc208e57014a73a85f3dd05edc3e72fd13456bd697fc6c78",
+            "mtime_ns": 1794786270798668100,
+            "device": 14290083805553457215,
+            "inode": 2533274790991194
+          },
+          "video_codec": "h264",
+          "width": 1920,
+          "height": 1080,
+          "audio_codecs": [
+            "aac"
+          ]
+        }
+      },
+      "aac_movie_count": 9,
+      "no_audio_movie_count": 10,
+      "tone_onset_seconds": 1.0,
+      "editor_audio": {
+        "onset_seconds": 1.0,
+        "rms_at_1_1s": 5658.299233592635,
+        "audio_driver": "WASAPI"
+      },
+      "distinct_silent_tone_paths": true,
+      "media_files_opened": false,
+      "posed_movie_limit": "Root canonical checks retained; no separate posed ffprobe JSON was published by the suite"
+    },
+    "scoped_native_packet": {
+      "INDEX_sha256": "f3cf7c165ded61e28e3dc909a66dce28f2d8b6f098bd9e2052614ca731038c3b",
+      "payload_files": 159,
+      "payload_bytes": 2257455,
+      "raw_aliases_verified": 169,
+      "functional_source_hashes_equal": 1006,
+      "reviewed_provenance_test_delta": {
+        "packet": "experiments/helper_preview_review_refresh_20261114",
+        "INDEX_sha256": "f9889c708461025a371068e7b8fe6acdf0345bb103a1ffdd8f3e4e4a4c42acb0",
+        "payload_files": 37,
+        "payload_bytes": 127758,
+        "raw_aliases_verified": 50,
+        "canonical_source_files": 1008,
+        "byte_equal_files": 1006,
+        "reviewed_differences": [
+          {
+            "path": "tests/helper_preview_port_files.json",
+            "failed_full_raw_sha256": "ce051baaef5ed7600a93269869f3075ecec88cbf922399abb08bb542e094bd3c",
+            "reviewed_retry_raw_sha256": "0446c44d503a6605155ed0553f70ba0462a0cb64a29b25dda7c39ca81717c0cf",
+            "changed": true
+          },
+          {
+            "path": "tests/verify_helper_preview.py",
+            "failed_full_raw_sha256": "70fb3195cf0915de7d041d00ebf9bad3aa4576ba20a3aa12d67e87517cba138b",
+            "reviewed_retry_raw_sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50",
+            "changed": true
+          }
+        ],
+        "production_source_differences": 0,
+        "scoped_source_revision": "7477ed32dc5c43324783f76736164553bb4a79c5",
+        "canonical_source_revision": "f0dd57a2e568089d396fecba819ab987da658bf0",
+        "scoped_native_checks_rerun_for_new_test_bytes": false,
+        "claim": "Exact app/runtime/harness bytes plus separately reviewed two-file provenance-test correction; distinct source contexts and runs retained."
+      },
+      "scoped_run_revision": "7477ed32dc5c43324783f76736164553bb4a79c5",
+      "canonical_revision": "f0dd57a2e568089d396fecba819ab987da658bf0",
+      "source_context": "Scoped native working matrix and fresh canonical are distinct runs. All1006 remaining functional files match exactly; only two independently reviewed default provenance-test files differ. No full native fidelity claim."
+    },
+    "prior_EE_canonical_status": "FAILED_permanent",
+    "prior_c4d_canonical_status": "FAILED_permanent",
+    "scoped_native_fidelity_claim": false,
+    "helper_provenance_evidence": {
+      "cpu": {
+        "snapshot_files": 1009,
+        "canonical_hashes_joined": 1008,
+        "additional_TOP": "dependencies.json",
+        "reviewed_rows": 25,
+        "source_context": "main_source_snapshot",
+        "committed_source": "f0dd57a2e568089d396fecba819ab987da658bf0",
+        "source_maps_equal": true,
+        "private_receipts_preserved_by_receipt_audit": false
+      },
+      "graphical": {
+        "snapshot_files": 1009,
+        "canonical_hashes_joined": 1008,
+        "additional_TOP": "dependencies.json",
+        "reviewed_rows": 25,
+        "source_context": "main_source_snapshot",
+        "committed_source": "f0dd57a2e568089d396fecba819ab987da658bf0",
+        "source_maps_equal": true,
+        "private_receipts_preserved_by_receipt_audit": true
+      }
+    }
+  },
+  "canonical_result_keys": [
+    "native_fixture_plans",
+    "owner_review_snapshot",
+    "private_metadata_windows",
+    "krita_inventory",
+    "krita_preparation",
+    "drawing_origin",
+    "krita_import",
+    "body_pose_library",
+    "body_pose_native",
+    "unit",
+    "motion_parts",
+    "motion_helper_edits",
+    "opaque_order",
+    "required_extensions",
+    "contact_bend",
+    "spikes",
+    "editor",
+    "export_failures",
+    "audio_editor",
+    "audio_dummy",
+    "ui",
+    "recovery_write",
+    "recovery",
+    "pose",
+    "autokey",
+    "new_scene",
+    "world_selection",
+    "world_document",
+    "world_runtime",
+    "world_edit",
+    "world_workflow",
+    "object_timing",
+    "bone_labels",
+    "animation_clips_unit",
+    "animation_clips",
+    "visibility",
+    "animated_channels",
+    "limb_ik",
+    "secondary_motion",
+    "fan_motion",
+    "physics",
+    "physics_contacts",
+    "physics_props",
+    "physics_recording_unit",
+    "physics_recording",
+    "workspace_controls",
+    "workspace_resize",
+    "workspace_docking",
+    "workspace_nested",
+    "rotation_gizmo",
+    "scene_view",
+    "native_readback_lifecycle",
+    "world_selection_teardown",
+    "fan_flutter",
+    "wind_review",
+    "helper_preview_driver",
+    "helper_preview_cpu",
+    "helper_preview_graphical",
+    "has_background_save",
+    "source_choice_foundation",
+    "source_import_owner",
+    "import_placement",
+    "shortcuts",
+    "numeric_camera",
+    "secondary_helpers",
+    "secondary_picking",
+    "secondary_batch",
+    "helper_morphs",
+    "source_shapes",
+    "base_shapes",
+    "shape_animation",
+    "shape_catalogue",
+    "shape_study",
+    "shape_comparison",
+    "expression_presets",
+    "mmd_groups",
+    "character_height",
+    "map_calibration",
+    "body_curves",
+    "body_animation",
+    "lighting",
+    "live_appearance",
+    "import_physics",
+    "pose_bounds",
+    "camera_range",
+    "color_sampler",
+    "foot_hold",
+    "foot_contacts_experiment",
+    "contact_animation",
+    "contact_editor",
+    "contact_clipboard",
+    "component_contact_clipboard",
+    "contact_physics",
+    "component_contact_physics",
+    "contact_parent",
+    "contact_correction",
+    "contact_persistence",
+    "contact_bindings",
+    "contact_identity",
+    "contact_selection",
+    "contact_transform",
+    "contact_viewport",
+    "multi_audio",
+    "project_duration",
+    "motion_assist",
+    "motion_tracks",
+    "motion_native_preview",
+    "motion_model",
+    "motion_editor",
+    "opacity",
+    "brush_opacity",
+    "brush_pressure",
+    "layers",
+    "onion",
+    "fill",
+    "fill_gaps",
+    "fill_expand",
+    "fill_connections",
+    "palette",
+    "drawing_history",
+    "drawing_selection",
+    "drawing_transform",
+    "recovery_identity",
+    "recovery_startup",
+    "recovery_history",
+    "recovery_schedule",
+    "recovery_preview",
+    "home",
+    "tutorials",
+    "first_movie",
+    "silent_video",
+    "spike_silent_video",
+    "tone_video",
+    "editor_audio_video",
+    "autokey_video",
+    "new_scene_video",
+    "world_runtime_video",
+    "world_edit_video",
+    "world_workflow_video",
+    "object_timing_video",
+    "animation_clips_video",
+    "visibility_video",
+    "animated_channels_video",
+    "limb_ik_video",
+    "physics_video",
+    "secondary_motion_video",
+    "fan_motion_video",
+    "physics_props_video",
+    "physics_recording_video",
+    "posed_model_video_0",
+    "posed_model_video_1",
+    "pose_checks",
+    "actual_mmd_tested",
+    "tone_onset_seconds",
+    "editor_audio",
+    "representative_png_sha256",
+    "spike_fixture"
+  ],
+  "core_process_groups": {
+    "unit": {
+      "exit": 0,
+      "seconds": 0.488
+    },
+    "motion_parts": {
+      "exit": 0,
+      "seconds": 1.031
+    },
+    "motion_helper_edits": {
+      "exit": 0,
+      "seconds": 0.289
+    },
+    "opaque_order": {
+      "exit": 0,
+      "seconds": 0.29
+    },
+    "required_extensions": {
+      "exit": 0,
+      "seconds": 0.29
+    },
+    "contact_bend": {
+      "exit": 0,
+      "seconds": 0.2
+    },
+    "spikes": {
+      "exit": 0,
+      "seconds": 5.613
+    },
+    "editor": {
+      "exit": 0,
+      "seconds": 8.943
+    },
+    "export_failures": {
+      "exit": 0,
+      "seconds": 0.906
+    },
+    "audio_editor": {
+      "exit": 0,
+      "seconds": 9.227
+    },
+    "audio_dummy": {
+      "exit": 0,
+      "seconds": 4.139
+    },
+    "ui": {
+      "exit": 0,
+      "seconds": 4.226
+    },
+    "recovery_write": {
+      "exit": 0,
+      "seconds": 7.15
+    },
+    "recovery": {
+      "exit": 0,
+      "seconds": 4.002
+    },
+    "pose": {
+      "exit": 0,
+      "seconds": 16.705
+    },
+    "autokey": {
+      "exit": 0,
+      "seconds": 11.463
+    },
+    "new_scene": {
+      "exit": 0,
+      "seconds": 8.532
+    },
+    "world_selection": {
+      "exit": 0,
+      "seconds": 10.161
+    },
+    "world_document": {
+      "exit": 0,
+      "seconds": 4.771
+    },
+    "world_runtime": {
+      "exit": 0,
+      "seconds": 11.117
+    },
+    "world_edit": {
+      "exit": 0,
+      "seconds": 23.618
+    },
+    "world_workflow": {
+      "exit": 0,
+      "seconds": 11.567
+    },
+    "object_timing": {
+      "exit": 0,
+      "seconds": 19.373
+    },
+    "bone_labels": {
+      "exit": 0,
+      "seconds": 4.837
+    },
+    "animation_clips_unit": {
+      "exit": 0,
+      "seconds": 0.498
+    },
+    "animation_clips": {
+      "exit": 0,
+      "seconds": 24.226
+    },
+    "visibility": {
+      "exit": 0,
+      "seconds": 20.266
+    },
+    "animated_channels": {
+      "exit": 0,
+      "seconds": 17.081
+    },
+    "limb_ik": {
+      "exit": 0,
+      "seconds": 24.745
+    },
+    "secondary_motion": {
+      "exit": 0,
+      "seconds": 8.98
+    },
+    "fan_motion": {
+      "exit": 0,
+      "seconds": 18.104
+    },
+    "physics": {
+      "exit": 0,
+      "seconds": 40.143
+    },
+    "physics_contacts": {
+      "exit": 0,
+      "seconds": 82.81
+    },
+    "physics_props": {
+      "exit": 0,
+      "seconds": 21.14
+    },
+    "physics_recording_unit": {
+      "exit": 0,
+      "seconds": 0.497
+    },
+    "physics_recording": {
+      "exit": 0,
+      "seconds": 40.104
+    }
+  },
+  "source_choice_foundation": {
+    "checks": 167,
+    "split": {
+      "catalogue": 53,
+      "appearance": 29,
+      "unit": 65,
+      "ui": 20
+    },
+    "resource_write_methods": {
+      "tests": 7,
+      "passed": 6,
+      "skipped": 1,
+      "long_path_proofs": [
+        {
+          "format": "has_source_resource_long_path_1",
+          "platform": "win32",
+          "logical_path_characters": 373,
+          "relative": "materials/touhou/keiki/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-3/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-4/native-material-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-5/haniyashin chisels texture \u2014 \u3042.vtf",
+          "normal_returned_path": true,
+          "exact_layout": true,
+          "payload": {
+            "bytes": 4379,
+            "mtime_ns": 1600000000333333300,
+            "sha256": "be2e53842cc481e0ad4ac5e5807c66a173ff68964d2fb4fc1d482d3053eddedc"
+          },
+          "exclusive_refusal_preserved": true
+        }
+      ],
+      "scope": "Filesystem resource cache writer; Windows symlink privilege may leave that single exercise explicitly skipped"
+    },
+    "bridge_bootstrap_methods": {
+      "tests": 2,
+      "passed": 2,
+      "scope": "Actual bridge prefix resolves appearance, inactive jiggle and capture modules in an isolated Python host plus negative control; Blender/SourceIO host APIs are stubbed, no conversion"
+    },
+    "separately_named_jiggle_cpu": {
+      "checks": 66,
+      "split": {
+        "metadata": 25,
+        "capture": 18,
+        "capture_review": 9,
+        "bridge": 14
+      },
+      "passed": true
+    },
+    "separately_named_crosswalk_cpu": {
+      "checks": 77,
+      "split": {
+        "collector": 47,
+        "metadata": 11,
+        "adapter": 19
+      },
+      "passed": true,
+      "native_conversion": false
+    },
+    "separately_named_bone_bindings_headless": {
+      "checks": 96,
+      "split": {
+        "bindings": 79,
+        "helper": 17
+      },
+      "passed": true,
+      "graphics": false,
+      "native_conversion": false
+    }
+  },
+  "receipt_semantics": "Counts observed for this exact interval; original GUI receipts preserved. Exactly one registered Krita cancellation exit2 is expected, not a successful normal run. Headless79+17 and scoped native5 private jobs remain separate scopes.",
+  "native_solver": "not_implemented",
+  "manual_owner_acceptance": "separate_unrun_gate"
+}

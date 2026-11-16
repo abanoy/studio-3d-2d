@@ -1,0 +1,69 @@
+{
+  "format": "has_world_selection_runtime_snapshot_repair_1",
+  "status": "PASSED_SCOPED_REPAIR_FULL_RETRY_REQUIRED",
+  "recorded_utc": "2026-11-16T03:09:36.787678+00:00",
+  "draft_index": {
+    "path": "experiments/world_selection_runtime_snapshot_v2_20261115/INDEX.json",
+    "sha256": "d7da7eb2c50457d839266eb72d62e277cf3df53b5efe06ce66a2e6d6830091cd"
+  },
+  "application": {
+    "path": "output/runtime-snapshot-v2-applied.json",
+    "sha256": "be59fd537492ad577a5b7cddc5a55b8f7aaa9394181426b3589bee3617a55214"
+  },
+  "actual_replay": {
+    "path": "output/runtime-snapshot-scope-20261116T030539570843/verification.json",
+    "sha256": "b9a5862fac85b4a84030eb9eea5a3d0e5961e7d75eef7bfa185f9fc95adcfbeb"
+  },
+  "actual_process": {
+    "path": "output/runtime-snapshot-scope-20261116T030539570843/process.json",
+    "sha256": "047e41c046e657000f1c7cbca7e0601334de6ea4c6c3ae4177cb248c5fd7abdd"
+  },
+  "source_before": {
+    "path": "output/runtime-snapshot-scope-20261116T030539570843/source-before.json",
+    "sha256": "98cdd29838b580222b5595ccbc4d30b669610587bdc4154ba0b73238ee5e2728"
+  },
+  "source_after": {
+    "path": "output/runtime-snapshot-scope-20261116T030539570843/source-after.json",
+    "sha256": "98cdd29838b580222b5595ccbc4d30b669610587bdc4154ba0b73238ee5e2728"
+  },
+  "actual_runtime_closure": {
+    "path": "output/runtime-snapshot-scope-20261116T030539570843/after-runtime-closure.json",
+    "sha256": "8320da5d2133cfaaf882e70de0336bad4756bc884f2836e1062b6a2ed803b738"
+  },
+  "failed_full_release": {
+    "path": "output/windows-canonical-bone-binding-20261116T022132132/graphics-lease-closed-after-failure.json",
+    "sha256": "5067f3296b976104ef3a19cf25a575b86eda6f0f0f1a3b573e584983d4f47ccd"
+  },
+  "CPU": {
+    "checks": 27,
+    "exit": 0,
+    "seconds": 4.146,
+    "evidence_basis": "Root exec_command completed tests/test_owner_review_snapshot.py; original7 real-Git fixtures plus20 runtime-scope mock cases.",
+    "expected_negative_diagnostic": "fatal: Needed a single revision is the intentional bad-revision case; suite ended OK.",
+    "test_source": {
+      "path": "tests/test_owner_review_snapshot.py",
+      "sha256": "d771929e26202724a0c70918be1a90320d156e724eaa1a3b2e8f63ca22f268b8"
+    },
+    "builder_source": {
+      "path": "tools/build_owner_review_snapshot.py",
+      "sha256": "48d6fc852ae16c946431addd39ec152e5db45c7f887bc1ddc941fc332911a0ce"
+    }
+  },
+  "actual_UI_checks": 28,
+  "actual_UI_failures": 0,
+  "actual_private_jobs": 2,
+  "closed_private_jobs": 2,
+  "elapsed_seconds": 21.763778000000457,
+  "outer_timeout_seconds": 180,
+  "startup_timeout_seconds": 60,
+  "teardown_timeout_seconds": 110,
+  "snapshot_files": 1024,
+  "original_failed_archive_snapshot_files": 6023,
+  "scope": "Opt-in exact runtime trees, entrypoints, optional dependency config/notices and catalogue-bound transitive quoted res resources. Validate all candidate names/collisions before reads; resolve only retained destinations.",
+  "default_owner_archive_and_exact_revision_behavior_preserved": true,
+  "teardown_GDScript_and_all28_assertions_unchanged": true,
+  "full_default_passed": false,
+  "manual_hair_check": "OWNER_DEFERRED_NO_RESULT",
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation": "52/54_UNCHANGED"
+}

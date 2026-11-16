@@ -1,0 +1,123 @@
+{
+  "format": "has_native8_leaf_diagnostic_static_preparation_1",
+  "status": "UNCHANGED_GUARD_DIAGNOSTIC_SOURCE_ONLY_UNPARSED_UNRUN",
+  "created_utc": "2026-11-16T00:18:03Z",
+  "Python_AST_checked": [
+    "prepare_profile.py"
+  ],
+  "source_only_guards": {
+    "leaf_adapter.gd": {
+      "sha256": "6945153a65741f65f15505a1b840ddbf530c483790824d8a98e90a4d53e539e8",
+      "plain_inheritance": "extends RefCounted",
+      "engine_parsed": false
+    },
+    "leaf_harness.gd": {
+      "sha256": "88d4319f34f8c168e6c1f66d6b2b20c579aca3ca6697002254d5ac1b9d7e13f8",
+      "plain_inheritance": "extends SceneTree",
+      "engine_parsed": false
+    },
+    "weighted_capture.gd": {
+      "sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb",
+      "plain_inheritance": "extends RefCounted",
+      "engine_parsed": false
+    }
+  },
+  "actual_application_source_files_locked": 200,
+  "actual_leaf_engine_or_parser_launched": false,
+  "candidate_reference_sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3",
+  "numeric_gates_preregistered": {
+    "float32_world_basis_reconstruction_and_orientation": 2e-05,
+    "tip_and_origin_per_root_scale": 2e-05,
+    "meaningful_weighted_displacement_per_root_scale": 1e-05,
+    "Off_and_unaffected": "Exact private-byte/hash equality"
+  },
+  "authoritative_Godot_source": {
+    "commit": "89cea143987d564363e15d207438530651d943ac",
+    "path": "scene/3d/skeleton_3d.cpp",
+    "sha256": "a3f1c913ee48a9df1dc417ad3b8e2178a33214c9edb3f76947ab2f6a2cdf75dc",
+    "global_parent_local_lines": [
+      1106,
+      1122
+    ],
+    "reset_rest_lines": [
+      908,
+      913
+    ],
+    "read_in_memory_only_by_independent_agent": true
+  },
+  "native_geometry_or_coordinate_oracles_copied": false,
+  "originals_rawmetadata_installations_main_tests_HEAD_modified": false,
+  "future_root_gate": "Actual full/FK/math PASS + authoritative closure; root source review, separate fresh locked lease before any engine parse",
+  "diagnostic_successor": {
+    "original_packet": "experiments/source_0x31_native_leaf_20261115",
+    "original_index_sha256": "b0b87a57a961500f0e68f1612420a50a453566e8cbee5da0464688bd8325d84d",
+    "original_harness_sha256": "3419cebefb1a7249d591dfd98522ce639b2f9cf646bfea4adfb4a5b2f7997b0a",
+    "actual_first_attempt": {
+      "path": "output/source-0x31-native-leaf-20261115-attempt1",
+      "status": "FAILED_NATIVE8_READINESS",
+      "checks": 2,
+      "failures": 1,
+      "dynamics_steps": 0,
+      "reason": "Unexpected parent/rest/modifier/final-pose context",
+      "phases": [
+        {
+          "phase": "parse",
+          "exit": 0,
+          "retained_Popen_reaped": true,
+          "passed": true
+        },
+        {
+          "phase": "run",
+          "exit": 1,
+          "retained_Popen_reaped": true,
+          "passed": false
+        }
+      ],
+      "closure": {
+        "runtime_lease_released": true,
+        "owned_headless_children_reaped": true,
+        "owned_runtime_commands_absent": true,
+        "no_process_killed": true,
+        "checked_utc": "2026-11-16T00:29:19.0862754Z"
+      }
+    },
+    "actual_first_attempt_file_hashes": {
+      "result.json": "910b3f48abce1457c12c8f1c95a8b0f52ea159a8edec6d2425e2254ad1a057fb",
+      "verification.json": "ee27c2b95235b661f1c90b5acd7be149e07d3c9d88c66edaf81483a546063140",
+      "authoritative-closure.json": "33ae9258da4985fe773b2c7ff887ec84f4f03b8a39230730dfc52435af9b0872"
+    },
+    "change": "Aggregate scalar diagnostic reason only; refusal logic/thresholds/counts/aliases/data unchanged",
+    "guard_removed_or_modifier_exempted": false,
+    "added_public_fields": [
+      "native_parent_index",
+      "expected_native_parent_index",
+      "show_rest_only",
+      "modifier_count",
+      "modifier_classes",
+      "modifier_details",
+      "final_pose_count",
+      "first_failing_guard"
+    ],
+    "modifier_details": [
+      "class",
+      "internal_child",
+      "direct_parent",
+      "active_when_exposed",
+      "is_simulating_physics_if_method_exists",
+      "PhysicalBone3D_descendant_count"
+    ],
+    "physical_body_count_uses_skeleton_bone_count": false,
+    "private_transform_or_pose_arrays_published": false,
+    "PhysicalBoneSimulator_context": "Root source audit suggests automatic compatibility child; actual failing context still UNRUN and no exemption introduced",
+    "preparation_attempts": [
+      {
+        "id": "initial_inline_builder",
+        "status": "Python syntax error before execution; no target/original file modified"
+      },
+      {
+        "id": "corrected_builder",
+        "status": "source copied and aggregate diagnostic prepared; engine unparsed/unrun"
+      }
+    ]
+  }
+}

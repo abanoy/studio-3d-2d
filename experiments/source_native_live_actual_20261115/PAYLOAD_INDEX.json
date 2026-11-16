@@ -1,0 +1,655 @@
+{
+  "format": "has_native8_actual_source_alias_index_1",
+  "sources": [
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\writer\\command.json",
+      "source_bytes": 1111,
+      "source_sha256": "a6318c8d9bf27f32143e0cdf3f17a99ef6f7e4ba9c5b06961dcdd6a3834804f3",
+      "stored": "actual2/writer/command.json",
+      "compression": "none",
+      "stored_bytes": 1111,
+      "stored_sha256": "a6318c8d9bf27f32143e0cdf3f17a99ef6f7e4ba9c5b06961dcdd6a3834804f3"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\writer\\engine.log",
+      "source_bytes": 3500,
+      "source_sha256": "633cd4143f6a35259c01b67ca29563c9270b5ae48239f64fae2d30bd9243db23",
+      "stored": "actual2/writer/engine.log",
+      "compression": "none",
+      "stored_bytes": 3500,
+      "stored_sha256": "633cd4143f6a35259c01b67ca29563c9270b5ae48239f64fae2d30bd9243db23"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\writer\\private-receipt.json",
+      "source_bytes": 388,
+      "source_sha256": "1bb9630879a924aaef60e13776f862d3163d22ff2849c42b49b324bff9a84281",
+      "stored": "actual2/writer/private-receipt.json",
+      "compression": "none",
+      "stored_bytes": 388,
+      "stored_sha256": "1bb9630879a924aaef60e13776f862d3163d22ff2849c42b49b324bff9a84281"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\writer\\process-verification.json",
+      "source_bytes": 584,
+      "source_sha256": "441ab623889a95c70d808013a6f2f96c2683da3d6f3388f409090a0f5cb0b21b",
+      "stored": "actual2/writer/process-verification.json",
+      "compression": "none",
+      "stored_bytes": 584,
+      "stored_sha256": "441ab623889a95c70d808013a6f2f96c2683da3d6f3388f409090a0f5cb0b21b"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\writer\\result.json",
+      "source_bytes": 5919,
+      "source_sha256": "0e0b9f29a8e41d01a0113709f4050f8edfb0545644c0c3bd410c12bd858d9e2f",
+      "stored": "actual2/writer/result.json",
+      "compression": "none",
+      "stored_bytes": 5919,
+      "stored_sha256": "0e0b9f29a8e41d01a0113709f4050f8edfb0545644c0c3bd410c12bd858d9e2f"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\writer\\stderr.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored": "actual2/writer/stderr.log",
+      "compression": "none",
+      "stored_bytes": 0,
+      "stored_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\writer\\stdout.log",
+      "source_bytes": 3581,
+      "source_sha256": "c7be978ac54095264033bfc18ba0fc9d84279a012eff9e2f03d388ec4e222fac",
+      "stored": "actual2/writer/stdout.log",
+      "compression": "none",
+      "stored_bytes": 3581,
+      "stored_sha256": "c7be978ac54095264033bfc18ba0fc9d84279a012eff9e2f03d388ec4e222fac"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-packed\\command.json",
+      "source_bytes": 1132,
+      "source_sha256": "7a7b1cf233c02fb9a77c07b8b542e36ba047fd7446bd17b73caec08961adf4aa",
+      "stored": "actual2/reader-packed/command.json",
+      "compression": "none",
+      "stored_bytes": 1132,
+      "stored_sha256": "7a7b1cf233c02fb9a77c07b8b542e36ba047fd7446bd17b73caec08961adf4aa"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-packed\\engine.log",
+      "source_bytes": 633,
+      "source_sha256": "cb40ef00c92e23219e20c2be826f1c0c620b5c84490a8a2edd80a54ec2f0c16d",
+      "stored": "actual2/reader-packed/engine.log",
+      "compression": "none",
+      "stored_bytes": 633,
+      "stored_sha256": "cb40ef00c92e23219e20c2be826f1c0c620b5c84490a8a2edd80a54ec2f0c16d"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-packed\\private-receipt.json",
+      "source_bytes": 387,
+      "source_sha256": "b84e3e5cb62c0d1001f56082a4a285ace66e364884bf4f9c9a0b806b35fd6bca",
+      "stored": "actual2/reader-packed/private-receipt.json",
+      "compression": "none",
+      "stored_bytes": 387,
+      "stored_sha256": "b84e3e5cb62c0d1001f56082a4a285ace66e364884bf4f9c9a0b806b35fd6bca"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-packed\\process-verification.json",
+      "source_bytes": 592,
+      "source_sha256": "5bd38b07589f44b053e37e7633447392bf8787e200775dfddbda48bead476827",
+      "stored": "actual2/reader-packed/process-verification.json",
+      "compression": "none",
+      "stored_bytes": 592,
+      "stored_sha256": "5bd38b07589f44b053e37e7633447392bf8787e200775dfddbda48bead476827"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-packed\\result.json",
+      "source_bytes": 1382,
+      "source_sha256": "07191afef07d18de3d146504ce671caf0778d2b602dba2658e9bf4c3c68f9c4d",
+      "stored": "actual2/reader-packed/result.json",
+      "compression": "none",
+      "stored_bytes": 1382,
+      "stored_sha256": "07191afef07d18de3d146504ce671caf0778d2b602dba2658e9bf4c3c68f9c4d"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-packed\\stderr.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored": "actual2/reader-packed/stderr.log",
+      "compression": "none",
+      "stored_bytes": 0,
+      "stored_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-packed\\stdout.log",
+      "source_bytes": 648,
+      "source_sha256": "a12f7dcc0394f521919175a19db6448b2e023c686a6956880c8805425e2b235a",
+      "stored": "actual2/reader-packed/stdout.log",
+      "compression": "none",
+      "stored_bytes": 648,
+      "stored_sha256": "a12f7dcc0394f521919175a19db6448b2e023c686a6956880c8805425e2b235a"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-linked\\command.json",
+      "source_bytes": 1132,
+      "source_sha256": "bdb540e92dbe0df86ab9d0b99cfa71e29149ee3531fa3929c97b399dc1c38d47",
+      "stored": "actual2/reader-linked/command.json",
+      "compression": "none",
+      "stored_bytes": 1132,
+      "stored_sha256": "bdb540e92dbe0df86ab9d0b99cfa71e29149ee3531fa3929c97b399dc1c38d47"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-linked\\engine.log",
+      "source_bytes": 528,
+      "source_sha256": "c100ea94fdff48e8273022d66a9636fd33a41debb015b422901fc7d1f8f9fbdb",
+      "stored": "actual2/reader-linked/engine.log",
+      "compression": "none",
+      "stored_bytes": 528,
+      "stored_sha256": "c100ea94fdff48e8273022d66a9636fd33a41debb015b422901fc7d1f8f9fbdb"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-linked\\private-receipt.json",
+      "source_bytes": 387,
+      "source_sha256": "f2854ef9c991d6b43a67b4886cd5eeb59022aa174e423ea79613a9c7c34bd0af",
+      "stored": "actual2/reader-linked/private-receipt.json",
+      "compression": "none",
+      "stored_bytes": 387,
+      "stored_sha256": "f2854ef9c991d6b43a67b4886cd5eeb59022aa174e423ea79613a9c7c34bd0af"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-linked\\process-verification.json",
+      "source_bytes": 590,
+      "source_sha256": "db2aef3aebdac36005501fd336282acc8c6d8a58c7e30261598eac40fab952d0",
+      "stored": "actual2/reader-linked/process-verification.json",
+      "compression": "none",
+      "stored_bytes": 590,
+      "stored_sha256": "db2aef3aebdac36005501fd336282acc8c6d8a58c7e30261598eac40fab952d0"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-linked\\result.json",
+      "source_bytes": 1289,
+      "source_sha256": "1ceb912ec712ddc45f4c65c2829d2861c6cbe1b9964f8fd858d7f28a69ffda93",
+      "stored": "actual2/reader-linked/result.json",
+      "compression": "none",
+      "stored_bytes": 1289,
+      "stored_sha256": "1ceb912ec712ddc45f4c65c2829d2861c6cbe1b9964f8fd858d7f28a69ffda93"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-linked\\stderr.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored": "actual2/reader-linked/stderr.log",
+      "compression": "none",
+      "stored_bytes": 0,
+      "stored_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\reader-linked\\stdout.log",
+      "source_bytes": 540,
+      "source_sha256": "5e722e6409e2aaa276e88cff059205b8e4c94f1c6476fe52346ef07d3b6f77b0",
+      "stored": "actual2/reader-linked/stdout.log",
+      "compression": "none",
+      "stored_bytes": 540,
+      "stored_sha256": "5e722e6409e2aaa276e88cff059205b8e4c94f1c6476fe52346ef07d3b6f77b0"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\source-before.json",
+      "source_bytes": 180454,
+      "source_sha256": "f2a32b8a4672f6a3d53418b5ae31871e368b8d1ea600936b7cf3f59a815a2e15",
+      "stored": "actual1/source-before-and-after.json.gz",
+      "compression": "gzip",
+      "stored_bytes": 57005,
+      "stored_sha256": "cefad6e13368bef2c2b1040162286b27190ef7112b0a1a1987fa72d9a30b3ec5"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\source-after.json",
+      "source_bytes": 180454,
+      "source_sha256": "f2a32b8a4672f6a3d53418b5ae31871e368b8d1ea600936b7cf3f59a815a2e15",
+      "stored": "actual1/source-before-and-after.json.gz",
+      "compression": "gzip",
+      "stored_bytes": 57005,
+      "stored_sha256": "cefad6e13368bef2c2b1040162286b27190ef7112b0a1a1987fa72d9a30b3ec5"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\verification.json",
+      "source_bytes": 1241,
+      "source_sha256": "b945b9bc3309ddab0e4c18677bfc03889442d97c6901664843a41b47fe2adb3e",
+      "stored": "actual1/verification.json",
+      "compression": "none",
+      "stored_bytes": 1241,
+      "stored_sha256": "b945b9bc3309ddab0e4c18677bfc03889442d97c6901664843a41b47fe2adb3e"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\authoritative-closure.json",
+      "source_bytes": 692,
+      "source_sha256": "dcf58b80023118344bcd38aeccbbe98d91356b4d288b8c2a08c9001d10ab6ba8",
+      "stored": "actual1/authoritative-closure.json",
+      "compression": "none",
+      "stored_bytes": 692,
+      "stored_sha256": "dcf58b80023118344bcd38aeccbbe98d91356b4d288b8c2a08c9001d10ab6ba8"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\source-before.json",
+      "source_bytes": 180454,
+      "source_sha256": "14628768efeddb2d9933f45fdeed9d70b4f33db089fad986de88a5c74706677b",
+      "stored": "actual2/source-before-and-after.json.gz",
+      "compression": "gzip",
+      "stored_bytes": 57007,
+      "stored_sha256": "1d7d0e6b564e7973037990d0356920a313fc7e08312bea068c9e923ef7af7ca5"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\source-after.json",
+      "source_bytes": 180454,
+      "source_sha256": "14628768efeddb2d9933f45fdeed9d70b4f33db089fad986de88a5c74706677b",
+      "stored": "actual2/source-before-and-after.json.gz",
+      "compression": "gzip",
+      "stored_bytes": 57007,
+      "stored_sha256": "1d7d0e6b564e7973037990d0356920a313fc7e08312bea068c9e923ef7af7ca5"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\verification.json",
+      "source_bytes": 3092,
+      "source_sha256": "cd74588000a7e826c5c8a64ccdcb178b7863a364d4ca7b7a842a98834b2be03a",
+      "stored": "actual2/verification.json",
+      "compression": "none",
+      "stored_bytes": 3092,
+      "stored_sha256": "cd74588000a7e826c5c8a64ccdcb178b7863a364d4ca7b7a842a98834b2be03a"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\authoritative-closure.json",
+      "source_bytes": 1280,
+      "source_sha256": "133764fd4c4307ab4712f1425fb31ab5c672e48990597b5298e8bdbabcc19d34",
+      "stored": "actual2/authoritative-closure.json",
+      "compression": "none",
+      "stored_bytes": 1280,
+      "stored_sha256": "133764fd4c4307ab4712f1425fb31ab5c672e48990597b5298e8bdbabcc19d34"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\offline-plan.json",
+      "source_bytes": 1255,
+      "source_sha256": "cb9f5c7bcca818fcf45d0578275dcd7633b33a185557c7d903bc8b4364c0aa51",
+      "stored": "actual2/offline-plan.json",
+      "compression": "none",
+      "stored_bytes": 1255,
+      "stored_sha256": "cb9f5c7bcca818fcf45d0578275dcd7633b33a185557c7d903bc8b4364c0aa51"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\Studio\\src\\source_secondary.gd",
+      "source_bytes": 14723,
+      "source_sha256": "330f181b14e33924930baf57e2ec450f444734ec40e9c06363df7e341427adb8",
+      "stored": "source/attempt2/src/source_secondary.gd",
+      "compression": "none",
+      "stored_bytes": 14723,
+      "stored_sha256": "330f181b14e33924930baf57e2ec450f444734ec40e9c06363df7e341427adb8"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\Studio\\src\\source_jiggle_math.gd",
+      "source_bytes": 10025,
+      "source_sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90",
+      "stored": "source/attempt2/src/source_jiggle_math.gd",
+      "compression": "none",
+      "stored_bytes": 10025,
+      "stored_sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\Studio\\src\\secondary_live.gd",
+      "source_bytes": 6443,
+      "source_sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be",
+      "stored": "source/attempt2/src/secondary_live.gd",
+      "compression": "none",
+      "stored_bytes": 6443,
+      "stored_sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\Studio\\src\\physics_editor.gd",
+      "source_bytes": 23497,
+      "source_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+      "stored": "source/attempt2/src/physics_editor.gd",
+      "compression": "none",
+      "stored_bytes": 23497,
+      "stored_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\Studio\\src\\fan_editor.gd",
+      "source_bytes": 8028,
+      "source_sha256": "85a575881cc13b9acb3f266dcbe401266a80bf424667e2984a3ff3c093fcb614",
+      "stored": "source/attempt2/src/fan_editor.gd",
+      "compression": "none",
+      "stored_bytes": 8028,
+      "stored_sha256": "85a575881cc13b9acb3f266dcbe401266a80bf424667e2984a3ff3c093fcb614"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\Studio\\tests\\source_native_live_ui.gd",
+      "source_bytes": 24736,
+      "source_sha256": "d5b10f2c06937296e597dae8fdac7e74cdff90c1d2b6b16d38865a80236663b7",
+      "stored": "source/attempt2/tests/source_native_live_ui.gd",
+      "compression": "none",
+      "stored_bytes": 24736,
+      "stored_sha256": "d5b10f2c06937296e597dae8fdac7e74cdff90c1d2b6b16d38865a80236663b7"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\Studio\\tests\\verify_source_native_live.py",
+      "source_bytes": 16965,
+      "source_sha256": "c4568f0d505a58125ceddd88aa1056cfea98fb0c70513d3a220d38ea1d0aaf6a",
+      "stored": "source/attempt2/tests/verify_source_native_live.py",
+      "compression": "none",
+      "stored_bytes": 16965,
+      "stored_sha256": "c4568f0d505a58125ceddd88aa1056cfea98fb0c70513d3a220d38ea1d0aaf6a"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt2\\Studio\\tests\\source_native_live_capture.gd",
+      "source_bytes": 5813,
+      "source_sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb",
+      "stored": "source/attempt2/tests/source_native_live_capture.gd",
+      "compression": "none",
+      "stored_bytes": 5813,
+      "stored_sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\Studio\\tests\\source_native_live_ui.gd",
+      "source_bytes": 23388,
+      "source_sha256": "9dd300d16f6010772597ac5e27755e9e9c6afe81954b6a815361f2a590bf26ef",
+      "stored": "source/attempt1/tests/source_native_live_ui.gd",
+      "compression": "none",
+      "stored_bytes": 23388,
+      "stored_sha256": "9dd300d16f6010772597ac5e27755e9e9c6afe81954b6a815361f2a590bf26ef"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\Studio\\tests\\verify_source_native_live.py",
+      "source_bytes": 15352,
+      "source_sha256": "4619962d15d1c7b039cbe06a23708553974c1ffd0990a9882c5c48e71298812f",
+      "stored": "source/attempt1/tests/verify_source_native_live.py",
+      "compression": "none",
+      "stored_bytes": 15352,
+      "stored_sha256": "4619962d15d1c7b039cbe06a23708553974c1ffd0990a9882c5c48e71298812f"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\command.json",
+      "source_bytes": 1111,
+      "source_sha256": "90f81e618b50abc5e467830919de2ce8ebf7750858b449139b01a94d1acc3017",
+      "stored": "actual1/writer/command.json",
+      "compression": "none",
+      "stored_bytes": 1111,
+      "stored_sha256": "90f81e618b50abc5e467830919de2ce8ebf7750858b449139b01a94d1acc3017"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\engine.log",
+      "source_bytes": 3317,
+      "source_sha256": "10d6f9f00ff2c1bc0e83030e33be554acbf3b03e28a4a9f46d45362eff01f76f",
+      "stored": "actual1/writer/engine.log",
+      "compression": "none",
+      "stored_bytes": 3317,
+      "stored_sha256": "10d6f9f00ff2c1bc0e83030e33be554acbf3b03e28a4a9f46d45362eff01f76f"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\private-receipt.json",
+      "source_bytes": 388,
+      "source_sha256": "6681f7134340bf55dc2022af8eb700320acc5a8230ec315f54d236edc970c4d5",
+      "stored": "actual1/writer/private-receipt.json",
+      "compression": "none",
+      "stored_bytes": 388,
+      "stored_sha256": "6681f7134340bf55dc2022af8eb700320acc5a8230ec315f54d236edc970c4d5"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\process-verification.json",
+      "source_bytes": 731,
+      "source_sha256": "7275510dff1302fa1c7a9646bc96d5733fb5615356fdf51f161941ec6db4259d",
+      "stored": "actual1/writer/process-verification.json",
+      "compression": "none",
+      "stored_bytes": 731,
+      "stored_sha256": "7275510dff1302fa1c7a9646bc96d5733fb5615356fdf51f161941ec6db4259d"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\result.json",
+      "source_bytes": 5673,
+      "source_sha256": "dba1a405844a67d62e72e1d68f4fb5f7a1296588110704908c1b817beba54c22",
+      "stored": "actual1/writer/result.json",
+      "compression": "none",
+      "stored_bytes": 5673,
+      "stored_sha256": "dba1a405844a67d62e72e1d68f4fb5f7a1296588110704908c1b817beba54c22"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\stderr.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored": "actual1/writer/stderr.log",
+      "compression": "none",
+      "stored_bytes": 0,
+      "stored_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\stdout.log",
+      "source_bytes": 3395,
+      "source_sha256": "eb92495c1eb23fb34fddcfd3733fbf46b14dee43722805d5263f6af3e51ae450",
+      "stored": "actual1/writer/stdout.log",
+      "compression": "none",
+      "stored_bytes": 3395,
+      "stored_sha256": "eb92495c1eb23fb34fddcfd3733fbf46b14dee43722805d5263f6af3e51ae450"
+    }
+  ],
+  "stored_payloads": [
+    {
+      "path": "actual2/writer/command.json",
+      "bytes": 1111,
+      "sha256": "a6318c8d9bf27f32143e0cdf3f17a99ef6f7e4ba9c5b06961dcdd6a3834804f3"
+    },
+    {
+      "path": "actual2/writer/engine.log",
+      "bytes": 3500,
+      "sha256": "633cd4143f6a35259c01b67ca29563c9270b5ae48239f64fae2d30bd9243db23"
+    },
+    {
+      "path": "actual2/writer/private-receipt.json",
+      "bytes": 388,
+      "sha256": "1bb9630879a924aaef60e13776f862d3163d22ff2849c42b49b324bff9a84281"
+    },
+    {
+      "path": "actual2/writer/process-verification.json",
+      "bytes": 584,
+      "sha256": "441ab623889a95c70d808013a6f2f96c2683da3d6f3388f409090a0f5cb0b21b"
+    },
+    {
+      "path": "actual2/writer/result.json",
+      "bytes": 5919,
+      "sha256": "0e0b9f29a8e41d01a0113709f4050f8edfb0545644c0c3bd410c12bd858d9e2f"
+    },
+    {
+      "path": "actual2/writer/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "actual2/writer/stdout.log",
+      "bytes": 3581,
+      "sha256": "c7be978ac54095264033bfc18ba0fc9d84279a012eff9e2f03d388ec4e222fac"
+    },
+    {
+      "path": "actual2/reader-packed/command.json",
+      "bytes": 1132,
+      "sha256": "7a7b1cf233c02fb9a77c07b8b542e36ba047fd7446bd17b73caec08961adf4aa"
+    },
+    {
+      "path": "actual2/reader-packed/engine.log",
+      "bytes": 633,
+      "sha256": "cb40ef00c92e23219e20c2be826f1c0c620b5c84490a8a2edd80a54ec2f0c16d"
+    },
+    {
+      "path": "actual2/reader-packed/private-receipt.json",
+      "bytes": 387,
+      "sha256": "b84e3e5cb62c0d1001f56082a4a285ace66e364884bf4f9c9a0b806b35fd6bca"
+    },
+    {
+      "path": "actual2/reader-packed/process-verification.json",
+      "bytes": 592,
+      "sha256": "5bd38b07589f44b053e37e7633447392bf8787e200775dfddbda48bead476827"
+    },
+    {
+      "path": "actual2/reader-packed/result.json",
+      "bytes": 1382,
+      "sha256": "07191afef07d18de3d146504ce671caf0778d2b602dba2658e9bf4c3c68f9c4d"
+    },
+    {
+      "path": "actual2/reader-packed/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "actual2/reader-packed/stdout.log",
+      "bytes": 648,
+      "sha256": "a12f7dcc0394f521919175a19db6448b2e023c686a6956880c8805425e2b235a"
+    },
+    {
+      "path": "actual2/reader-linked/command.json",
+      "bytes": 1132,
+      "sha256": "bdb540e92dbe0df86ab9d0b99cfa71e29149ee3531fa3929c97b399dc1c38d47"
+    },
+    {
+      "path": "actual2/reader-linked/engine.log",
+      "bytes": 528,
+      "sha256": "c100ea94fdff48e8273022d66a9636fd33a41debb015b422901fc7d1f8f9fbdb"
+    },
+    {
+      "path": "actual2/reader-linked/private-receipt.json",
+      "bytes": 387,
+      "sha256": "f2854ef9c991d6b43a67b4886cd5eeb59022aa174e423ea79613a9c7c34bd0af"
+    },
+    {
+      "path": "actual2/reader-linked/process-verification.json",
+      "bytes": 590,
+      "sha256": "db2aef3aebdac36005501fd336282acc8c6d8a58c7e30261598eac40fab952d0"
+    },
+    {
+      "path": "actual2/reader-linked/result.json",
+      "bytes": 1289,
+      "sha256": "1ceb912ec712ddc45f4c65c2829d2861c6cbe1b9964f8fd858d7f28a69ffda93"
+    },
+    {
+      "path": "actual2/reader-linked/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "actual2/reader-linked/stdout.log",
+      "bytes": 540,
+      "sha256": "5e722e6409e2aaa276e88cff059205b8e4c94f1c6476fe52346ef07d3b6f77b0"
+    },
+    {
+      "path": "actual1/source-before-and-after.json.gz",
+      "bytes": 57005,
+      "sha256": "cefad6e13368bef2c2b1040162286b27190ef7112b0a1a1987fa72d9a30b3ec5"
+    },
+    {
+      "path": "actual1/verification.json",
+      "bytes": 1241,
+      "sha256": "b945b9bc3309ddab0e4c18677bfc03889442d97c6901664843a41b47fe2adb3e"
+    },
+    {
+      "path": "actual1/authoritative-closure.json",
+      "bytes": 692,
+      "sha256": "dcf58b80023118344bcd38aeccbbe98d91356b4d288b8c2a08c9001d10ab6ba8"
+    },
+    {
+      "path": "actual2/source-before-and-after.json.gz",
+      "bytes": 57007,
+      "sha256": "1d7d0e6b564e7973037990d0356920a313fc7e08312bea068c9e923ef7af7ca5"
+    },
+    {
+      "path": "actual2/verification.json",
+      "bytes": 3092,
+      "sha256": "cd74588000a7e826c5c8a64ccdcb178b7863a364d4ca7b7a842a98834b2be03a"
+    },
+    {
+      "path": "actual2/authoritative-closure.json",
+      "bytes": 1280,
+      "sha256": "133764fd4c4307ab4712f1425fb31ab5c672e48990597b5298e8bdbabcc19d34"
+    },
+    {
+      "path": "actual2/offline-plan.json",
+      "bytes": 1255,
+      "sha256": "cb9f5c7bcca818fcf45d0578275dcd7633b33a185557c7d903bc8b4364c0aa51"
+    },
+    {
+      "path": "source/attempt2/src/source_secondary.gd",
+      "bytes": 14723,
+      "sha256": "330f181b14e33924930baf57e2ec450f444734ec40e9c06363df7e341427adb8"
+    },
+    {
+      "path": "source/attempt2/src/source_jiggle_math.gd",
+      "bytes": 10025,
+      "sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90"
+    },
+    {
+      "path": "source/attempt2/src/secondary_live.gd",
+      "bytes": 6443,
+      "sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be"
+    },
+    {
+      "path": "source/attempt2/src/physics_editor.gd",
+      "bytes": 23497,
+      "sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a"
+    },
+    {
+      "path": "source/attempt2/src/fan_editor.gd",
+      "bytes": 8028,
+      "sha256": "85a575881cc13b9acb3f266dcbe401266a80bf424667e2984a3ff3c093fcb614"
+    },
+    {
+      "path": "source/attempt2/tests/source_native_live_ui.gd",
+      "bytes": 24736,
+      "sha256": "d5b10f2c06937296e597dae8fdac7e74cdff90c1d2b6b16d38865a80236663b7"
+    },
+    {
+      "path": "source/attempt2/tests/verify_source_native_live.py",
+      "bytes": 16965,
+      "sha256": "c4568f0d505a58125ceddd88aa1056cfea98fb0c70513d3a220d38ea1d0aaf6a"
+    },
+    {
+      "path": "source/attempt2/tests/source_native_live_capture.gd",
+      "bytes": 5813,
+      "sha256": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb"
+    },
+    {
+      "path": "source/attempt1/tests/source_native_live_ui.gd",
+      "bytes": 23388,
+      "sha256": "9dd300d16f6010772597ac5e27755e9e9c6afe81954b6a815361f2a590bf26ef"
+    },
+    {
+      "path": "source/attempt1/tests/verify_source_native_live.py",
+      "bytes": 15352,
+      "sha256": "4619962d15d1c7b039cbe06a23708553974c1ffd0990a9882c5c48e71298812f"
+    },
+    {
+      "path": "actual1/writer/command.json",
+      "bytes": 1111,
+      "sha256": "90f81e618b50abc5e467830919de2ce8ebf7750858b449139b01a94d1acc3017"
+    },
+    {
+      "path": "actual1/writer/engine.log",
+      "bytes": 3317,
+      "sha256": "10d6f9f00ff2c1bc0e83030e33be554acbf3b03e28a4a9f46d45362eff01f76f"
+    },
+    {
+      "path": "actual1/writer/private-receipt.json",
+      "bytes": 388,
+      "sha256": "6681f7134340bf55dc2022af8eb700320acc5a8230ec315f54d236edc970c4d5"
+    },
+    {
+      "path": "actual1/writer/process-verification.json",
+      "bytes": 731,
+      "sha256": "7275510dff1302fa1c7a9646bc96d5733fb5615356fdf51f161941ec6db4259d"
+    },
+    {
+      "path": "actual1/writer/result.json",
+      "bytes": 5673,
+      "sha256": "dba1a405844a67d62e72e1d68f4fb5f7a1296588110704908c1b817beba54c22"
+    },
+    {
+      "path": "actual1/writer/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "actual1/writer/stdout.log",
+      "bytes": 3395,
+      "sha256": "eb92495c1eb23fb34fddcfd3733fbf46b14dee43722805d5263f6af3e51ae450"
+    }
+  ]
+}
