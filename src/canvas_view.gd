@@ -63,6 +63,9 @@ var review_pointer:=Callable()
 var review_box:=Rect2()
 var review_box_visible:=false
 var resolution := Vector2(1920, 1080)
+# Neon Pro: per-side inset (x left/right, y top/bottom) that keeps the fitted frame clear of the
+# stage overlays. Zero (classic styles, unit tests) keeps the original fit exactly.
+var fit_inset := Vector2.ZERO
 var surround_rect: ColorRect
 const StudioTheme = preload("res://src/studio_theme.gd")
 
@@ -80,12 +83,22 @@ func _ready() -> void:
 	frame_clip=Control.new();frame_clip.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.clip_contents=true;add_child(frame_clip)
 	frame_overlay=FrameOverlay.new();frame_overlay.canvas_view=self;frame_overlay.mouse_filter=Control.MOUSE_FILTER_IGNORE;frame_clip.add_child(frame_overlay)
 
+func fit_area(extent: Vector2) -> Vector2:
+	return (extent-fit_inset*2.).max(Vector2.ONE) if fit_inset!=Vector2.ZERO else extent
+
+func setup_frame_size() -> Vector2:
+	# Film frame inside the Setup scene area (the extended camera overscans by area/frame).
+	var area:=fit_area(Vector2(setup_size()))
+	return resolution*minf(area.x/resolution.x,area.y/resolution.y)
+
 func image_rect() -> Rect2:
 	if scene_setup:
 		var area:=scene_rect()
-		var factor:=minf(area.size.x/resolution.x,area.size.y/resolution.y)
+		var fit:=fit_area(area.size)
+		var factor:=minf(fit.x/resolution.x,fit.y/resolution.y)
 		return Rect2(area.position+(area.size-resolution*factor)/2.,resolution*factor)
-	var scale_factor := minf(size.x / resolution.x, size.y / resolution.y) * zoom
+	var fit_size:=fit_area(size)
+	var scale_factor := minf(fit_size.x / resolution.x, fit_size.y / resolution.y) * zoom
 	var extent := resolution * scale_factor
 	return Rect2((size - extent) / 2 + pan, extent)
 

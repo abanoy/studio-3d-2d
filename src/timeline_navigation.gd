@@ -39,7 +39,9 @@ func apply_neon_style() -> void:
 		control.add_theme_font_override("font",S.font(500));control.add_theme_font_size_override("font_size",12)
 	for pair in [[zoom_out,"minus"],[zoom_in,"add"]]:
 		var control: Button=pair[0]
-		control.text="";control.icon=S.icon(pair[1],Color.WHITE,14);control.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER;control.custom_minimum_size.x=28
+		# 16 px icons tinted #B4BAC7 when enabled; disabled stays a dim #8C93A3 so the states differ.
+		control.text="";control.icon=S.icon(pair[1],Color.WHITE,16);control.icon_alignment=HORIZONTAL_ALIGNMENT_CENTER;control.custom_minimum_size.x=28
+		control.add_theme_constant_override("icon_max_width",16);control.add_theme_color_override("icon_disabled_color",Color(S.TEXT3,0.45))
 	scrollbar.size_flags_vertical=Control.SIZE_SHRINK_CENTER
 	caption.custom_minimum_size.x=96;caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;caption.size_flags_vertical=Control.SIZE_SHRINK_CENTER
 	caption.add_theme_font_override("font",S.mono(400));caption.add_theme_font_size_override("font_size",11);caption.add_theme_color_override("font_color",S.TEXT3)

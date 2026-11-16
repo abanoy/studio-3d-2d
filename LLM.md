@@ -4999,3 +4999,21 @@ Linux xvfb: ui, editor, pose, world_selection, recovery_write and recovery pass.
 baseline (color_sampler has its 3 known failures). sequence_editor, reference_sheet, home and
 tutorial_catalog smokes pass. movement_path_smoke fails the same way without this step. Windows
 verify.py was not run.
+
+## Neon Pro port: review 1 fixes (claude/studio-redesign)
+Implemented and checked on Linux xvfb (ui, editor, pose, world_selection, recovery_write and recovery
+pass; workspace_controls, workspace_docking, asset_package, brush_opacity, onion, palette, layers,
+first_movie and scene_view_unit pass; color_sampler keeps its 3 baseline failures;
+timeline_navigation_smoke fails the same way on the previous commit). Windows verify.py was not run.
+- Neon stage: the canvas fills the stage and the pill rows, simulation row and footer float over it.
+  `CanvasView.fit_inset` keeps the frame clear (zero in classic and in unit tests), and
+  `scene_view.copy_camera(..., frame_size)` overscans vertically in Scene setup.
+- Neon Simple: Codex's view controls are compact (icon dropdowns, Guides menu) or move to the stage
+  footer, so there is one pill row. The simulation row shows only while a simulation or recording
+  runs, and Pose's Motion block mirrors Physics / Hair & clothes. Turn model = Rotate on the model root.
+- Timeline: about 166 px. Docked dock headers are 6 px grab strips in Simple (handle node kept). The
+  sequence toolbar and zoom bar are in the transport row. Content is padded 12 px (x/frame_at
+  inverse kept). Camera lane pink, posed model lane violet with an Auto key chip.
+- Fixes: toast re-show after fade, theme switch for early windows, classic icon aliases and the
+  Settings label, camera key row restyle and view-row refit only on change, keycaps after rebinding.
+- Details, declined items and remaining deviations: docs/REDESIGN-PORT.md "Review 1 fixes".

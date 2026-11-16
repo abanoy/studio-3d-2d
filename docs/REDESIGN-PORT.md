@@ -754,3 +754,59 @@ The deviations below remain. The per-step lists above give the details.
   step 7) and Turn model in the Pose strip (no existing behaviour maps to it; step 4).
 - **Dock headers:** the 28 px "PROPERTIES" / "TIMELINE" headers stay. They are the drag handles that
   docking relies on (contract 4).
+
+## Review 1 fixes (layout budget, overlays, timeline, Pose)
+Applied after the first review of the neon port (screenshots: neonport/review1-fixed/ in the session
+scratchpad). Simple mode at 1440x900 now gives a camera frame of about 975x548 (mock 992x558).
+- **Stage overlays:** the canvas fills the whole stage. The view rows, the simulation row and the stage
+  footer float over it (`StageOverlay`; only pills and buttons take the mouse). `CanvasView.fit_inset`
+  (neon only, zero elsewhere) keeps the fitted frame clear of them: symmetric, 48 px at the sides,
+  max(top rows, footer) + 10 px top and bottom. In Scene setup, `scene_view.copy_camera()` now also
+  overscans vertically (display height / frame height), so the dimmed scene shows on all four sides.
+  Picking still goes through `image_rect()`; scene_view_unit passes with its zero-inset canvas.
+  The tool pill and the caption start at the frame's left edge, and the badges end at its right edge.
+- **One pill row in Simple:** Codex's view controls stay available but are compact in neon Simple:
+  icon-only lighting and Scene setup dropdowns, an icon-only Frame scene, and Frame + 3×3 merged into
+  one "Guides" menu with two check items (`scene_view.guides_button`, calls `set_guides`). If the pill
+  still does not fit beside the tools and badges, it moves to the right end of the stage footer. The
+  footer legend hides first when the footer is short of space. A second row is only a fallback for
+  narrow windows. Advanced keeps every labelled control.
+- **Camera pill:** "Move the view with the mouse" is plain text after the pill. **Pose pill:** "Turn
+  model" = Rotate with the model root selected (no new semantics).
+- **Simulation row (neon Simple):** hidden unless a simulation or recording is running. While one is
+  running it stays visible in every mode, so its off switches never disappear (Codex behaviour). The
+  Pose inspector's Motion block mirrors Codex's Physics and Hair & clothes switches ("Physics" and
+  "Physics follow-through"). Classic Simple and Advanced show the row as before.
+- **Pose inspector:** the Rotate/Move group is Advanced-only (Simple uses the viewport pill).
+  Local/World moved next to Codex's space dropdown under "More pose options". Hold feet and Planted
+  feet… moved to "Keys and helpers" (same visibility and behaviour).
+- **Timeline:** the dock opens about 166 px tall. In neon Simple the docked PROPERTIES / TIMELINE
+  title bars are 6 px grab strips: `panels[id].get_child(0).get_child(0)` is still the drag handle,
+  and the full header returns in Advanced or when the panel floats. There are no split gaps and no
+  outer window margins. The Sequences… toolbar and the zoom bar sit inside the transport row: still
+  visible in Simple (timeline_navigation_smoke clicks them), and `editor.toolbar` is unchanged. The
+  lanes area is at least 56 px. The ruler holder stays 52 px because it also holds the Camera lane.
+  Codex's sequence strip opens under the transport row. Content starts 12 px inside the lane area
+  (`CONTENT_PAD`, neon only). `x()` and `frame_at()` share that origin and span. Lane colours:
+  Camera lane pink (band, glowing bar, "N keys"); posed model lane violet with an "Auto key" chip.
+  Draw and Pose scroll the lanes once to the lane being edited. The legend is Simple-only. Advanced
+  puts the debug line and recovery status on one footer row.
+- **Inspector:** the Opacity row is one line (label, slider, value). "Stroke smoothing" uses
+  CaptionLabel. SpinBox steppers are themed: 12 px chevrons, no default white arrows.
+- **Smaller fixes:** the toast says "Drag a joint to pose. Changes are keyed automatically." with the
+  hand glyph. Fixed: a faded status message came back on refresh, and a message posted in Advanced
+  never faded in Simple. Windows created earlier now follow a theme switch. Classic skins map neon
+  icon names to glossy icons, and Classic shows the Settings label. New home and package icons. Rail
+  tiles show the short captions "Save asset" and "Size map" (button texts are unchanged). The rail's
+  docking chevron only shows on hover. Camera key rows restyle only when they change. The view row is
+  refitted only when the badge width changes. Pill keycaps follow rebound shortcuts. The zoom
+  buttons use 16 px icons with a distinct disabled tint.
+- **Declined / partial:** the full-height World rail with the timeline beside it is a structural
+  change to the dock tree and to saved layouts, so it is left as a documented deviation. "Save
+  asset .has..." and "Size map…" stay labelled tiles in Simple (contract 3). The Frame field and the
+  single-frame step buttons stay in Simple, where Codex shows them. At 1440x900 Advanced, the default
+  split leaves the Timeline dock a little short (28 px header plus the footer row), so its outer
+  scrollbar can still show until the divider is dragged; the split is not changed on the Advanced
+  toggle, to keep saved layouts untouched. The Pose actions are not pinned to the bottom (blocks
+  follow them in Simple). In Pose at 1440 px the Codex pill sits in the footer, so the "Handles"
+  legend hides.

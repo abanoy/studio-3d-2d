@@ -203,12 +203,16 @@ static func selected_handle_icon(size := 14) -> Texture2D:
 	var h := size / 2.0
 	return _cached("handle|%d" % size, '<defs>%s</defs><circle cx="%s" cy="%s" r="%s" fill="%s" stroke="url(#neon)" stroke-width="2"/><circle cx="%s" cy="%s" r="2.2" fill="#ffffff"/>' % [neon_defs(), h, h, h - 1.0, hex(STAGE), h, h], size, size)
 
-static func toast_ring(problem := false) -> Texture2D:
+static func toast_ring(problem := false, kind := "check") -> Texture2D:
 	# 22 px toast badge: 1.5 px neon ring on the toast fill with a white 12 px check (stroke 3 in the
-	# 24-unit icon grid). Problem messages get a coral ring and an exclamation mark instead.
+	# 24-unit icon grid). Problem messages get a coral ring and an exclamation mark instead. kind
+	# "hand" (Pose hint, as in the mock) draws the line icon's hand at 13 px (stroke 2.1 in its 24-unit grid), centred.
 	var stroke := hex(PROBLEM) if problem else "url(#neon)"
 	var glyph := '<path d="M11 6.5v5.2" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/><circle cx="11" cy="15" r="1" fill="#ffffff"/>' if problem else '<path d="m7.5 11 2.5 2.5 4.5-5" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
-	return _cached("toast|%s" % problem, '<defs>%s</defs><circle cx="11" cy="11" r="10.25" fill="%s" stroke="%s" stroke-width="1.5"/>%s' % [neon_defs(), hex(POPUP), stroke, glyph], 22, 22)
+	if kind == "hand" and not problem:
+		var s := 13.0 / 24.0
+		glyph = '<g transform="translate(%s %s) scale(%s)" fill="none" stroke="#ffffff" stroke-width="%s" stroke-linecap="round" stroke-linejoin="round">%s</g>' % [11.0 - 6.5, 11.0 - 6.5, s, 2.1, LINE_ICONS.hand]
+	return _cached("toast|%s|%s" % [problem, kind], '<defs>%s</defs><circle cx="11" cy="11" r="10.25" fill="%s" stroke="%s" stroke-width="1.5"/>%s' % [neon_defs(), hex(POPUP), stroke, glyph], 22, 22)
 
 static func chip(color: Color, size := 14, radius := 4.0) -> Texture2D:
 	# Small filled rounded square (layer picker colour chip, 14 px r4).
@@ -418,6 +422,22 @@ static func make_neon_theme() -> Theme:
 		result.set_color("font_selected_color", type, Color("163854"))
 		result.set_color("clear_button_color", type, TEXT3)
 		result.set_color("clear_button_color_pressed", type, TEXT)
+	# SpinBox steppers: flat 12 px chevrons (#8C93A3, brighter on hover) on transparent backgrounds
+	# right of the field, instead of Godot's default white arrows (Frame field, Advanced numbers).
+	for pair in [["up", "chevron-up"], ["down", "chevron"]]:
+		result.set_icon(pair[0], "SpinBox", line_icon(pair[1], TEXT3, 12))
+		result.set_icon(pair[0] + "_hover", "SpinBox", line_icon(pair[1], TEXT, 12))
+		result.set_icon(pair[0] + "_pressed", "SpinBox", line_icon(pair[1], Color.WHITE, 12))
+		result.set_icon(pair[0] + "_disabled", "SpinBox", line_icon(pair[1], Color(TEXT3, 0.45), 12))
+		result.set_stylebox(pair[0] + "_background", "SpinBox", flat(Color.TRANSPARENT, Color.TRANSPARENT, 4, 0, Vector4(2, 0, 2, 0)))
+		result.set_stylebox(pair[0] + "_background_hovered", "SpinBox", flat(HOVER, Color.TRANSPARENT, 4, 0, Vector4(2, 0, 2, 0)))
+		result.set_stylebox(pair[0] + "_background_pressed", "SpinBox", flat(RAISE, Color.TRANSPARENT, 4, 0, Vector4(2, 0, 2, 0)))
+		result.set_stylebox(pair[0] + "_background_disabled", "SpinBox", flat(Color.TRANSPARENT, Color.TRANSPARENT, 4, 0, Vector4(2, 0, 2, 0)))
+	result.set_icon("updown", "SpinBox", line_icon("updown", TEXT3, 12))
+	for item in ["field_and_buttons_separator", "up_down_buttons_separator"]: result.set_stylebox(item, "SpinBox", StyleBoxEmpty.new())
+	result.set_constant("field_and_buttons_separation", "SpinBox", 2)
+	result.set_constant("buttons_vertical_separation", "SpinBox", 0)
+	result.set_constant("buttons_width", "SpinBox", 16)
 	for type in ["Label", "RichTextLabel"]:
 		result.set_color("font_color" if type == "Label" else "default_color", type, TEXT)
 	result.set_color("font_selected_color", "RichTextLabel", Color("163854"))
@@ -638,6 +658,8 @@ const LINE_ICONS := {
 	"save": '<path d="M5 4h11l3 3v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M8 4v5h7V4M8 20v-6h8v6"/>',
 	"add": '<path d="M12 5v14M5 12h14"/>',
 	"chevron": '<path d="m6 9 6 6 6-6"/>',
+	"chevron-up": '<path d="m6 15 6-6 6 6"/>',
+	"updown": '<path d="m7 9 5-5 5 5M7 15l5 5 5-5"/>',
 	"more": '<circle cx="5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="19" cy="12" r="1.3" fill="currentColor"/>',
 	"export": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9.5 4.5 2.5-4.5 2.5z" fill="currentColor"/>',
 	"draw": '<path d="M4 20l4-1 11-11a2.1 2.1 0 0 0-3-3L5 16z"/><path d="M14 7l3 3"/>',
@@ -686,6 +708,8 @@ const LINE_ICONS := {
 	"move": '<path d="M12 3v18M3 12h18M12 3 9.5 5.5M12 3l2.5 2.5M12 21l-2.5-2.5M12 21l2.5-2.5M3 12l2.5-2.5M3 12l2.5 2.5M21 12l-2.5-2.5M21 12l-2.5 2.5"/>',
 	"turn": '<path d="M20 12a8 8 0 0 1-14.6 4.5"/><path d="M4 12a8 8 0 0 1 14.6-4.5"/><path d="M19 3.5V8h-4.5M5 20.5V16h4.5"/>',
 	"hand": '<path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1-6 6h-1a6 6 0 0 1-4.8-2.4L3.6 14a1.5 1.5 0 0 1 2.3-1.9L9 15"/>',
+	"home": '<path d="M4 11 12 4l8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5h4v5"/>',
+	"package": '<path d="M4 8h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M5 4h14l1 4H4z"/><path d="M10 12h4"/>',
 	"wave": '<path d="M3 8c3 0 3-3 6-3s3 3 6 3 3-3 6-3M3 14c3 0 3-3 6-3s3 3 6 3 3-3 6-3M3 20c3 0 3-3 6-3s3 3 6 3 3-3 6-3"/>',
 }
 # Aliases so callers can use the names the plan and mock use.
@@ -711,7 +735,12 @@ static func app_icon() -> Image:
 	# The window/taskbar icon keeps the colourful glossy artwork in every style.
 	return classic_icon("scene").get_image()
 
+# Neon-only icon names the header and pills ask for, mapped to the closest glossy classic icon so
+# Classic light / dark keep distinct pictures instead of the "help" fallback.
+const CLASSIC_ALIASES := {"new": "scene", "open": "folder", "reset": "undo", "building": "scene", "grid": "scene", "settings": "scene", "more": "folder", "select": "cel", "diamond": "key", "minus": "add", "home": "scene", "package": "folder"}
+
 static func classic_icon(kind: String) -> Texture2D:
+	kind = CLASSIC_ALIASES.get(kind, kind)
 	if icons.has(kind): return icons[kind]
 	var shapes := {
 		"fan": '<circle cx="16" cy="13" r="11" fill="url(#blue)" stroke="#315f86"/><path d="M16 12C6 2 5 14 14 15c-10 9 3 13 3 2 10 6 13-7 1-5Z" fill="#f2f7fc" stroke="#668ba5"/><circle cx="16" cy="14" r="2" fill="#3878b6"/><path d="M16 24v5M9 30h14" stroke="#527b97" stroke-width="3"/>',

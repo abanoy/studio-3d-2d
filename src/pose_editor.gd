@@ -66,6 +66,8 @@ var remove_visibility_button: Button
 var alt_hint: Label
 var help_label: Label
 var neon := {}  # neon only: Pose panel cards and the values they last showed
+var physics_mirror: CheckButton # neon Simple: mirrors app.physics_editor.toggle (Motion block)
+var hair_mirror: CheckButton # neon Simple: mirrors app.physics_editor.hair_toggle (Motion block)
 
 func active_rig() -> RefCounted:
 	return app.renderer.active_model()
@@ -972,19 +974,33 @@ func build_neon_inspector() -> void:
 	app.overlay_label(chip, "Keyed", StudioTheme.TEXT2, 12)
 	chip.visible = false
 	neon.merge({"title": head[0], "subtitle": head[1], "keyed": chip})
-	# Pose tool: Rotate / Move and Local / World drive operation and space.
+	# Pose tool (Advanced): Rotate / Move drive operation. Simple uses the viewport's Pose pill, and
+	# Local / World sits under "More pose options" next to Codex's space dropdown.
 	var tool_box := neon_block("Pose tool")
 	tool_box.add_theme_constant_override("separation", 12)
 	var tool_row := HBoxContainer.new()
 	tool_row.add_theme_constant_override("separation", 8)
 	tool_box.add_child(tool_row)
 	neon["operations"] = neon_segmented(tool_row, NEON_OPERATIONS, operation.tooltip_text, pick_operation)
-	neon["spaces"] = neon_segmented(tool_row, NEON_SPACES, "Show the handles along the joint's own axes (Local) or the scene's axes (World).", pick_space)
-	# Motion: the whole-model posing helpers.
+	app.advanced(tool_row)
+	# Motion: the whole-model posing helpers, plus Simple mirrors of Codex's Physics and Hair & clothes
+	# switches (the real ones stay in the simulation strip, shown in Advanced and while one runs).
 	var motion_box := neon_block("Motion", "Whole model")
 	neon_switch(motion_box, limb_ik, "joint", "Hands and feet bend the limb")
-	neon_switch(motion_box, hold_feet, "runner", "Feet stay put as the body moves")
-	neon_outline(motion_box, contacts.control, "figure")
+	var physics = app.get("physics_editor")
+	if physics and physics.toggle and physics.hair_toggle:
+		physics_mirror = CheckButton.new()
+		physics_mirror.text = "Physics"
+		physics_mirror.tooltip_text = physics.toggle.tooltip_text
+		physics_mirror.toggled.connect(func(value: bool): if physics.toggle.button_pressed != value: physics.toggle.button_pressed = value)
+		app.simple_only(physics_mirror)
+		neon_switch(motion_box, physics_mirror, "fan", "Simulate the selected model")
+		hair_mirror = CheckButton.new()
+		hair_mirror.text = "Physics follow-through"
+		hair_mirror.tooltip_text = physics.hair_toggle.tooltip_text
+		hair_mirror.toggled.connect(func(value: bool): if physics.hair_toggle.button_pressed != value: physics.hair_toggle.button_pressed = value)
+		app.simple_only(hair_mirror)
+		neon_switch(motion_box, hair_mirror, "wave", "Hair and clothes keep swinging")
 	neon_outline(motion_box, flip_bend, "turn")
 	# Next card: same rules as the Simple next-step hints (next_step()).
 	var next: Dictionary = app.inspector_card(panel, "arrow-right")
@@ -1012,6 +1028,8 @@ func build_neon_inspector() -> void:
 	neon["reset_hint"] = hint
 	# Keys and helpers: recording, saved poses, motion helpers, shapes and MMD imports.
 	var keys_box := neon_block("Keys and helpers")
+	neon_switch(keys_box, hold_feet, "runner", "Feet stay put as the body moves")
+	neon_outline(keys_box, contacts.control, "figure")
 	neon_outline(keys_box, record_button, "key")
 	neon_switch(keys_box, auto_key, "key")
 	neon_outline(keys_box, pose_library.launch, "figure")
@@ -1052,6 +1070,8 @@ func build_neon_inspector() -> void:
 	var at: int = snap.get_index()
 	neon_switch(more, snap, "grid")
 	more.move_child(neon.bleeds[-1], at)  # keep Codex's place, just above the Local X/Y/Z fields
+	neon["spaces"] = neon_segmented(more, NEON_SPACES, "Show the handles along the joint's own axes (Local) or the scene's axes (World).", pick_space)
+	more.move_child(neon.spaces[0].get_parent().get_parent(), space.get_index())
 	for child in more.get_children():
 		if child is OptionButton: child.custom_minimum_size.y = 40
 		elif child is Button: app.style_outline(child)
@@ -1114,6 +1134,11 @@ func refresh_neon_inspector() -> void:
 			if neon.next_title.text != next[0]: neon.next_title.text = next[0]
 			if neon.next_body.text != next[1]: neon.next_body.text = next[1]
 			if not neon.next.visible: neon.next.visible = true
+	var physics = app.get("physics_editor")
+	if physics_mirror and physics:
+		for pair in [[physics_mirror, physics.toggle], [hair_mirror, physics.hair_toggle]]:
+			if pair[0].button_pressed != pair[1].button_pressed: pair[0].set_pressed_no_signal(pair[1].button_pressed)
+			if pair[0].disabled != pair[1].disabled: pair[0].disabled = pair[1].disabled
 	for bleed in neon.bleeds:
 		var shown: bool = bleed.get_child(0).visible
 		if bleed.visible != shown: bleed.visible = shown

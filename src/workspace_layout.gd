@@ -3,6 +3,10 @@ extends Node
 const FORMAT := "studio_workspace_3"
 const DEFAULT := {"left":"world","right":"properties","bottom":"timeline","top":""}
 const DEFAULT_VERTICAL_OFFSET := -234
+# Neon Pro: the Timeline dock opens about 166 px tall (6 px grab strip + 52 transport + 52 ruler and
+# Camera lane + 56 lanes), like the mock's 160 px timeline; classic keeps -234.
+const NEON_VERTICAL_OFFSET := -166
+const STRIP_HEIGHT := 6.0
 const EDGES := ["left","right","bottom","top"]
 var app
 var vertical: VSplitContainer
@@ -73,7 +77,7 @@ func setup(owner_app, column: VBoxContainer, old_middle: HBoxContainer, hierarch
 	if not load_layout():call_deferred("apply_default_split")
 
 func apply_default_split() -> void:
-	vertical.split_offset=DEFAULT_VERTICAL_OFFSET
+	vertical.split_offset=NEON_VERTICAL_OFFSET if StudioTheme.is_neon() else DEFAULT_VERTICAL_OFFSET
 	top_split.split_offset=180
 
 func wrap_panel(id: String,title: String,content: Control,slot: String) -> void:
@@ -116,7 +120,8 @@ func apply_style() -> void:
 	var neon:=StudioTheme.is_neon()
 	for split in [vertical,top_split,horizontal,right_split]:
 		# Left/right docks sit flush against the stage (the drag area keeps an 8 px grab band).
-		split.add_theme_constant_override("separation",0 if neon and split in [horizontal,right_split] else 10)
+		# Neon: the timeline's top hairline meets the stage and inspector directly too (mock).
+		split.add_theme_constant_override("separation",0 if neon else 10)
 	for id in panels:style_header(id)
 	refresh_world_mode(true)
 	style_preview()
@@ -169,6 +174,7 @@ func style_header(id: String) -> void:
 	if not neon:
 		for control in [handle,menu]:clear_style(control)
 		handle.text="⋮⋮  "+str(panel.name);handle.clip_text=false;handle.alignment=HORIZONTAL_ALIGNMENT_LEFT;menu.text="▾";menu.icon=null;menu.custom_minimum_size=Vector2.ZERO
+		menu.visible=true;menu.modulate.a=1.0;handle.custom_minimum_size.y=0
 		header.custom_minimum_size.y=0;header.add_theme_constant_override("separation",2);panel.remove_theme_constant_override("separation")
 		return
 	handle.text=str(panel.name).to_upper();handle.clip_text=true
@@ -187,10 +193,33 @@ func style_header(id: String) -> void:
 		# negative separation lets the handle span the whole rail so the label stays centred.
 		header.custom_minimum_size.y=78;header.add_theme_constant_override("separation",-12)
 		ghost_boxes(handle,Vector4(0,8,0,8));ghost_boxes(menu,Vector4(0,8,0,0),StudioTheme.HOVER);menu.custom_minimum_size=Vector2(12,48)
+	elif strip_header(id):
+		# Neon Simple, docked: no PROPERTIES / TIMELINE title bar (the mock has none). A 6 px grab strip
+		# keeps the drag handle (panels[id].get_child(0).get_child(0)) visible and clickable; its
+		# tooltip still explains docking, and Advanced / floating panels get the full header back.
+		handle.text="";handle.custom_minimum_size.y=STRIP_HEIGHT;handle.add_theme_font_size_override("font_size",1)
+		header.custom_minimum_size.y=STRIP_HEIGHT
+		ghost_boxes(handle,Vector4(0,0,0,0),StudioTheme.HOVER);ghost_boxes(menu,Vector4(0,0,0,0),StudioTheme.HOVER)
+		menu.visible=false
 	else:
 		header.custom_minimum_size.y=28
 		ghost_boxes(handle,Vector4(12,0,4,0));ghost_boxes(menu,Vector4(6,0,6,0),StudioTheme.HOVER);menu.custom_minimum_size=Vector2(28,0)
+	if not strip_header(id):
+		menu.visible=true;handle.custom_minimum_size.y=0
+		if not rail:handle.add_theme_font_size_override("font_size",11)
+	if rail:
+		# Mock: only the unfold button above WORLD; the docking chevron shows while the header is hovered.
+		menu.modulate.a=1.0 if header.get_global_rect().has_point(header.get_global_mouse_position()) else 0.0
+		if not header.has_meta("hover_hooked"):
+			header.set_meta("hover_hooked",true)
+			for control in [handle,menu]:
+				control.mouse_entered.connect(func():if id=="world" and world_rail:menu.modulate.a=1.0)
+				control.mouse_exited.connect(func():if id=="world" and world_rail and not header.get_global_rect().has_point(header.get_global_mouse_position()):menu.modulate.a=0.0)
+	else:menu.modulate.a=1.0
 	if id=="world":style_world_unfold()
+
+func strip_header(id: String) -> bool:
+	return StudioTheme.is_neon() and id!="world" and app and not app.advanced_mode and not floating.has(id)
 
 func style_world_unfold() -> void:
 	if not world_unfold:return
@@ -241,7 +270,7 @@ func unfold_world() -> void:
 func draw_header(id: String,header: Control) -> void:
 	if not StudioTheme.is_neon():return
 	header.draw_rect(Rect2(Vector2.ZERO,header.size),StudioTheme.BAR)
-	if not (id=="world" and world_rail):header.draw_rect(Rect2(0,header.size.y-1,header.size.x,1),StudioTheme.LINE)
+	if not (id=="world" and world_rail) and not strip_header(id):header.draw_rect(Rect2(0,header.size.y-1,header.size.x,1),StudioTheme.LINE)
 	if id=="timeline":header.draw_rect(Rect2(0,0,header.size.x,1),StudioTheme.LINE2) # Neon Pro step 6: mock top edge
 
 func draw_panel(id: String,panel: Control) -> void:
@@ -328,7 +357,7 @@ func refresh_slots() -> void:dock_tree.refresh()
 func restore_to_book(id: String,book: TabContainer) -> void:
 	if floating.has(id):
 		panels[id].set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
-		var window: Window=floating[id];floating.erase(id);panels[id].reparent(book,false);window.hide();window.queue_free()
+		var window: Window=floating[id];floating.erase(id);panels[id].reparent(book,false);window.hide();window.queue_free();style_header(id)
 	elif panels[id].get_parent()!=book:
 		panels[id].set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT);panels[id].reparent(book,false)
 func dock(id: String,slot: String) -> void:dock_tree.dock_edge(id,slot)
@@ -341,7 +370,7 @@ func float_panel(id: String,point:=Vector2i(-100000,-100000)) -> void:
 		if point.x!=-100000:floating[id].position=point
 		return
 	var window:=Window.new();window.visible=false;window.title=panels[id].name;window.theme=app.theme;window.exclusive=false;window.transient=true;window.force_native=not OS.has_feature("web");window.keep_title_visible=true;window.content_scale_factor=app.get_window().content_scale_factor
-	app.add_child(window);floating[id]=window;panels[id].reparent(window,false);panels[id].set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	app.add_child(window);floating[id]=window;panels[id].reparent(window,false);panels[id].set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);style_header(id)
 	window.min_size=Vector2i(panels[id].get_combined_minimum_size()).max(Vector2i(220,160))
 	window.close_requested.connect(func():dock(id,slot_of(id)))
 	window.size=Vector2i(900,380) if id=="timeline" else Vector2i(340,600)

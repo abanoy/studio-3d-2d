@@ -64,9 +64,9 @@ func setup(parent: Node) -> void:
 	var frame: Button = app.button(parent,"Frame selected",frame_selected); frame.tooltip_text = "Find the selected map or model without changing shot keys."
 	frame.set_meta("rail",["Frame","frame-target"])
 	var asset: Button = app.button(parent,"Save asset .has...",func():preload("res://src/asset_package.gd").export_dialog(app)); asset.tooltip_text="Package the selected independent model or map with its editable controls and embedded dependencies."
-	asset.set_meta("rail",["Save asset .has...","save"])
+	asset.set_meta("rail",["Save asset .has...","save","Save asset"])
 	var size_map: Button = app.button(parent,"Size map…",func():app.map_calibration.open()); size_map.tooltip_text="Use two map surfaces a known distance apart; review against a six-foot guide."
-	size_map.set_meta("rail",["Size map…","ruler"])
+	size_map.set_meta("rail",["Size map…","ruler","Size map"])
 	actions = [frame,asset,size_map]
 	help_label = app.label(parent,HELP); help_label.add_theme_font_size_override("font_size",12)
 	rail_end = Control.new(); rail_end.custom_minimum_size.y = 4; rail_end.mouse_filter = Control.MOUSE_FILTER_IGNORE; rail_end.visible = false
@@ -137,9 +137,12 @@ func style_action(control: Button, kind: String, tile: bool) -> void:
 		control.mouse_entered.connect(func(): tile_face_color(control,true))
 		control.mouse_exited.connect(func(): tile_face_color(control,false))
 	var caption: Label = face.get_node("Caption")
-	# ICU never breaks before "." even after a space (UAX #14 LB13): a zero-width space lets the
-	# caption wrap "Save asset .has..." as Save / asset / .has... like the other tile labels.
-	caption.text = control.text.replace(" .", " \u200b.")
+	# The visible tile caption is a short name (rail meta entry 3, e.g. "Save asset"), so it wraps to
+	# two lines like the other tiles; the button text stays Codex's exact "Save asset .has..." (tests
+	# find it by that text) and the full name is in the tooltip.
+	var rail: Array = control.get_meta("rail", [])
+	caption.text = str(rail[2]) if rail.size() > 2 else control.text
+	if rail.size() > 2 and not control.tooltip_text.begins_with(control.text): control.tooltip_text = control.text + "\n" + control.tooltip_text
 	caption.add_theme_font_override("font",StudioTheme.font(500))
 	var lines := StudioTheme.font(500).get_multiline_string_size(caption.text,HORIZONTAL_ALIGNMENT_CENTER,48,11,-1,TextServer.BREAK_MANDATORY|TextServer.BREAK_WORD_BOUND).y
 	control.custom_minimum_size.y = maxf(56,ceilf(12+18+5+lines))

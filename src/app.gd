@@ -171,6 +171,9 @@ var back_texture: TextureRect
 var keyboard_nav := false
 var keyboard_focusable: Array = []
 var status_serial := 0
+var status_faded := false
+var timeline_focus_key := "" # the Simple toast faded this message (status.text itself is kept)
+const POSE_HINT := "Drag a joint to pose. Changes are keyed automatically."
 var empty_hint: PanelContainer
 var empty_hint_label: Label
 var redo_button: Button
@@ -272,6 +275,10 @@ var camera_transform_editor: Node
 var scene_view: Node
 # Neon Pro step 4: viewport overlays (stage, tool pill, badges, viewfinder, stage footer, toast).
 var stage_panel: PanelContainer
+var stage_overlay: Control # neon: view rows, physics row and stage footer float over the canvas
+var stage_top: VBoxContainer
+var stage_inset_pending := false
+var stage_view_margin: MarginContainer
 var view_scroll: ScrollContainer
 var view_row: HBoxContainer
 var view_row2: HBoxContainer
@@ -284,6 +291,10 @@ var pose_pill: PanelContainer
 var codex_pill: PanelContainer
 var pose_strip: HBoxContainer
 var pose_buttons: Array[Button] = []
+var turn_button: Button # Simple Pose pill: Rotate with the model root selected
+var frame_scene_button: Button
+var codex_compact := false
+var footer_tools: HBoxContainer # neon Simple: the Codex view pill when it does not fit the view row
 var tool_compact := false
 var camera_hint: Control
 var camera_help_button: Button
@@ -382,8 +393,13 @@ func apply_theme_style(style_name: String) -> void:
 	# Neon Pro port: Settings (Advanced) "Interface theme". Rebuilds the theme, background, header,
 	# viewport surround, hint and toast; the drawing paper, renders and saved projects are unchanged.
 	StudioTheme.set_style(style_name)
+	var old_theme := theme
 	theme = StudioTheme.make_theme()
 	get_window().theme = theme
+	# Codex's windows copied `window.theme = app.theme` when they were made (some at start-up):
+	# re-point every one still holding the old Theme so dialogs follow the new style too.
+	for window in find_children("*", "Window", true, false):
+		if window.theme == old_theme: window.theme = theme
 	if back_texture: back_texture.texture = back_gradient()
 	apply_header_style()
 	if canvas: canvas.refresh_surround(); canvas.queue_redraw()
@@ -1068,12 +1084,60 @@ func refresh_view_row() -> void:
 	for pair in [[tool_pill, tool_strip.visible], [camera_pill, camera_strip.visible], [pose_pill, pose_on]]:
 		if pair[0].visible != pair[1]: pair[0].visible = pair[1]; changed = true
 	for i in tool_buttons.size(): sync_tool_look(tool_buttons[i])
+	if camera_hint:
+		var hint_on := camera_strip.visible and not tool_compact
+		if camera_hint.visible != hint_on: camera_hint.visible = hint_on; changed = true
 	if pose_editor and pose_editor.operation:
+		var turning: bool = turn_button != null and pose_editor.operation.selected == 0 and pose_editor.selected == "@root"
 		for i in pose_buttons.size():
-			var on: bool = pose_editor.operation.selected == i
+			var on: bool = pose_editor.operation.selected == i and not (i == 0 and turning)
 			if pose_buttons[i].button_pressed != on: pose_buttons[i].set_pressed_no_signal(on)
 			sync_tool_look(pose_buttons[i])
+		if turn_button:
+			if turn_button.button_pressed != turning: turn_button.set_pressed_no_signal(turning)
+			sync_tool_look(turn_button)
 	if changed: queue_view_fit()
+
+func pick_turn_model() -> void:
+	# "Turn model": select the model root and use Rotate, exactly as the Pose panel would.
+	if pose_editor.selected != "@root":
+		pose_editor.selected = "@root"
+		pose_editor.refresh_values()
+	pick_pose_operation(0)
+
+func compact_option(control: OptionButton, on: bool, kinds: Array) -> void:
+	# Icon + chevron only (text transparent and clipped; the full names stay in the popup and tooltip).
+	control.fit_to_longest_item = not on
+	control.clip_text = on
+	for i in control.item_count: control.set_item_icon(i, StudioTheme.icon(kinds[mini(i, kinds.size() - 1)], Color.WHITE, 16) if on else null)
+	control.add_theme_constant_override("icon_max_width", 16)
+	for state in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color", "font_hover_pressed_color"]:
+		if on: control.add_theme_color_override(state, Color.TRANSPARENT)
+		else: control.remove_theme_color_override(state)
+	for state in ["icon_normal_color", "icon_focus_color", "icon_pressed_color"]: control.add_theme_color_override(state, StudioTheme.TEXT2)
+	control.add_theme_color_override("icon_hover_color", StudioTheme.TEXT)
+
+func set_codex_compact(on: bool) -> void:
+	# Neon Simple: Codex's view controls stay available but icon-only (lighting, Frame scene, Scene
+	# setup) and Frame / 3×3 share one Guides menu, so the pill fits beside the tools on one line.
+	# Advanced keeps every labelled control.
+	if codex_compact == on or lighting_choice == null: return
+	codex_compact = on
+	compact_option(lighting_choice, on, ["sky"])
+	if frame_scene_button:
+		frame_scene_button.text = "" if on else "Frame scene"
+		frame_scene_button.icon = StudioTheme.icon("frame-target", Color.WHITE, 16) if on else null
+		frame_scene_button.add_theme_constant_override("icon_max_width", 16)
+		frame_scene_button.custom_minimum_size.x = 32 if on else 0
+		override_button_colors(frame_scene_button, StudioTheme.TEXT2, StudioTheme.TEXT, Color.WHITE)
+	if scene_view:
+		compact_option(scene_view.choice, on, ["scene", "camera"])
+		scene_view.compact = on
+		if scene_view.guides_button:
+			scene_view.guides_button.icon = StudioTheme.icon("grid", Color.WHITE, 16)
+			scene_view.guides_button.add_theme_constant_override("icon_max_width", 16)
+		scene_view.sync()
+	queue_view_fit()
 
 func sync_tool_look(control: Button) -> void:
 	# Active tool: 600 white label, glow and brighter keycap; written only when the state changes.
@@ -1088,10 +1152,10 @@ func set_tool_compact(on: bool) -> void:
 	# Narrow centre column (under ~1000 px): tools show icon + keycap, Camera / Pose help icon-only.
 	if tool_compact == on: return
 	tool_compact = on
-	for control in tool_buttons + pose_buttons: control.text = "" if on else control.get_meta("label")
+	for control in tool_buttons + pose_buttons + ([turn_button] if turn_button else []): control.text = "" if on else control.get_meta("label")
 	for control in [camera_help_button, pose_help_button]:
 		if control: control.text = "" if on else control.get_meta("label")
-	if camera_hint: camera_hint.visible = not on
+	if camera_hint: camera_hint.visible = not on and camera_strip.visible
 
 func queue_view_fit() -> void:
 	if view_row == null or view_fit_pending: return
@@ -1103,7 +1167,7 @@ func fit_view_row() -> void:
 	# badges, move to a second line. Badges stay right-aligned; nothing here changes behaviour.
 	view_fit_pending = false
 	if view_row == null: return
-	var avail: float = view_scroll.size.x - 24
+	var avail: float = view_scroll.size.x - (stage_view_margin.get_theme_constant("margin_left") + stage_view_margin.get_theme_constant("margin_right") if stage_view_margin else 24)
 	if avail <= 0: return
 	set_tool_compact(avail < 976)
 	for control in tool_buttons: set_tool_kbd(control)
@@ -1111,23 +1175,30 @@ func fit_view_row() -> void:
 	var leads := [tool_pill, camera_pill, pose_pill].filter(func(p): return p.visible)
 	var lead_w := 0.0
 	for p in leads: lead_w += p.get_combined_minimum_size().x + gap
+	if camera_hint and camera_hint.visible: lead_w += camera_hint.get_combined_minimum_size().x + gap
 	var codex_w: float = codex_pill.get_combined_minimum_size().x + gap
-	var badge_w: float = badges.get_combined_minimum_size().x
-	var codex_row := view_row
+	# + gap: the row's separation before the expanding spacer that pushes the badges right.
+	var badge_w: float = badges.get_combined_minimum_size().x + gap
+	var codex_row: Control = view_row
 	var badge_row := view_row
+	# Neon Simple: one floating row like the mock. When the Codex pill does not fit beside the tools
+	# and badges it moves into the stage footer (right side); the second line is only a fallback.
+	var footer_ok := footer_tools != null and not advanced_mode
 	if lead_w + codex_w + badge_w <= avail: pass
+	elif footer_ok and not leads.is_empty() and lead_w + badge_w <= avail: codex_row = footer_tools
 	elif not leads.is_empty() and lead_w + badge_w <= avail: codex_row = view_row2
 	elif leads.is_empty(): badge_row = view_row2
-	else: codex_row = view_row2; badge_row = view_row2
+	else: codex_row = footer_tools if footer_ok else view_row2; badge_row = view_row2
 	for item in [[codex_pill, codex_row], [badges, badge_row]]:
 		if item[0].get_parent() != item[1]: item[0].reparent(item[1], false)
 	view_row.move_child(view_spacer, view_row.get_child_count() - 1)
 	view_row2.move_child(view_spacer2, view_row2.get_child_count() - 1)
-	if codex_row == view_row: view_row.move_child(codex_pill, 3)
-	else: view_row2.move_child(codex_pill, 0)
+	if codex_row == view_row: view_row.move_child(codex_pill, pose_pill.get_index() + 1 if pose_pill else 3)
+	elif codex_row == view_row2: view_row2.move_child(codex_pill, 0)
 	badge_row.move_child(badges, badge_row.get_child_count() - 1)
 	var two_rows := codex_row == view_row2 or badge_row == view_row2
 	if view_row2.visible != two_rows: view_row2.visible = two_rows
+	fit_stage_footer()
 
 func badge_panel(parent: Node) -> HBoxContainer:
 	# h32, pad 0 12, r6, rgba(10,11,15,.86), 1 px rgba(255,255,255,.1); gap 8.
@@ -1223,8 +1294,13 @@ func refresh_badges() -> void:
 	# Badges, stage caption and legend: computed every frame, written only when their text changes.
 	if badges == null or mode == null: return
 	var seconds := float(frame) * float(video.fps_den) / maxf(1.0, float(video.fps_num))
-	var width_changed := set_label_text(frame_badge_frame, "Frame %d" % frame)
-	set_label_text(frame_badge_time, "%.2f s" % seconds)
+	# Mono badge: its width only changes with the number of digits, so the row is refitted only then.
+	var before := badges.get_combined_minimum_size().x
+	var width_changed := false
+	var frame_changed := set_label_text(frame_badge_frame, "Frame %d" % frame)
+	var time_changed := set_label_text(frame_badge_time, "%.2f s" % seconds)
+	if frame_changed or time_changed:
+		width_changed = badges.get_combined_minimum_size().x != before
 	var lead := ""
 	var marker := ""
 	var value := ""
@@ -1261,6 +1337,11 @@ func build_stage_footer(center: Control) -> void:
 	for side in [["left", 16], ["right", 16], ["top", 0], ["bottom", 8]]: margin.add_theme_constant_override("margin_" + side[0], side[1])
 	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	center.add_child(margin)
+	if center == stage_overlay:
+		# Floats over the bottom of the canvas and grows upwards with a wrapped toast.
+		margin.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
+		margin.grow_vertical = Control.GROW_DIRECTION_BEGIN
+		margin.resized.connect(queue_stage_inset)
 	stage_footer = Control.new()
 	stage_footer.custom_minimum_size.y = 40
 	stage_footer.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -1302,6 +1383,11 @@ func build_stage_footer(center: Control) -> void:
 		ring.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		item.add_child(ring)
 		legend_items.append([ring, overlay_label(item, "", StudioTheme.TEXT2, 12)])
+	footer_tools = HBoxContainer.new()
+	footer_tools.name = "StageFooterTools"
+	footer_tools.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	footer_tools.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	row.add_child(footer_tools)
 	toast = PanelContainer.new()
 	toast.name = "StatusToast"
 	toast.mouse_filter = Control.MOUSE_FILTER_PASS # tooltip only: shows the full message when it is cut
@@ -1324,6 +1410,38 @@ func build_stage_footer(center: Control) -> void:
 	toast_strip = StudioTheme.neon_line(128)
 	toast.draw.connect(draw_toast_strip)
 	stage_footer.resized.connect(fit_stage_footer)
+
+func queue_stage_inset() -> void:
+	if stage_overlay == null or stage_inset_pending: return
+	stage_inset_pending = true
+	fit_stage_inset.call_deferred()
+
+func fit_stage_inset() -> void:
+	# Mock: frame inset 48 px at the sides and about 63 px top and bottom, so the pills, badges, caption
+	# and toast float over the dimmed scene around the frame. The inset is symmetric (a centred
+	# perspective camera keeps its frame centred) and never smaller than the overlays above and below.
+	stage_inset_pending = false
+	if stage_overlay == null or canvas == null: return
+	var footer: Control = stage_footer.get_parent() if stage_footer else null
+	var top_h := stage_top.get_combined_minimum_size().y if stage_top else 0.0
+	var foot_h := footer.get_combined_minimum_size().y if footer else 0.0
+	var inset := Vector2(minf(48.0, canvas.size.x * 0.05), minf(maxf(top_h, foot_h) + 10.0, canvas.size.y * 0.3))
+	inset = inset.floor()
+	if empty_hint and empty_hint.position.y != inset.y + 8: empty_hint.position.y = inset.y + 8
+	if canvas.fit_inset != inset:
+		canvas.fit_inset = inset
+		canvas.queue_redraw()
+	# Mock: the tool pill starts at the frame's left edge and the badges end at its right edge; the
+	# stage caption and legend line up the same way (unzoomed frame; at least 12 px from the edge).
+	var fit: Vector2 = canvas.fit_area(canvas.size)
+	var frame_w: float = canvas.resolution.x * minf(fit.x / canvas.resolution.x, fit.y / canvas.resolution.y)
+	var side := 12.0 if advanced_mode else clampf(floorf((canvas.size.x - frame_w) / 2.0), 12.0, 160.0)
+	for holder in [stage_view_margin, footer]:
+		if holder == null: continue
+		for edge in ["margin_left", "margin_right"]:
+			if absf(holder.get_theme_constant(edge) - side) > 1.0:
+				holder.add_theme_constant_override(edge, int(side))
+				queue_view_fit()
 
 func refresh_stage_footer() -> void:
 	# Simple caption "Camera view · W:H" (+ lens in Camera); Advanced keeps Codex's scene_name text.
@@ -1375,11 +1493,12 @@ func fit_stage_footer() -> void:
 		w = maxf(0.0, width - x - legend_w - 12)
 	else:
 		var want := toast_natural_width()
-		var side := maxf(legend_w, minf(caption_w, 170.0))
+		var tools_w := footer_tools.get_combined_minimum_size().x if footer_tools and footer_tools.get_child_count() > 0 else 0.0
+		var side := maxf(legend_w + (tools_w + 12.0 if tools_w > 0 and legend_wanted else tools_w), minf(caption_w, 170.0))
 		if legend_wanted and width - side * 2 - 24 < minf(want, 260.0):
 			legend.visible = false
 			legend_w = 0.0
-			side = minf(caption_w, 170.0)
+			side = maxf(tools_w, minf(caption_w, 170.0))
 		w = clampf(want, 0.0, maxf(0.0, width - side * 2 - 24))
 		x = floorf((width - w) / 2.0)
 		caption_w = maxf(0.0, x - 12)
@@ -1419,9 +1538,9 @@ func refresh_toast() -> void:
 		toast_lead.text = parts[0]
 		toast_rest.text = parts[1]
 		toast_rest.visible = true
-		toast_icon.texture = StudioTheme.toast_ring(problem)
+		toast_icon.texture = StudioTheme.toast_ring(problem, "hand" if status.text == POSE_HINT else "check")
 		toast.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.POPUP, StudioTheme.PROBLEM if problem else StudioTheme.LINE2, 10, 1, Vector4(10, 0, 16, 0), Color(0, 0, 0, 0.8), 11, Vector2(0, 12)))
-		toast.modulate.a = 1.0 if not status.text.is_empty() else 0.0
+		toast.modulate.a = 0.0 if status.text.is_empty() or status_faded else 1.0
 	toast.tooltip_text = "" if advanced_mode else status.text
 	fit_stage_footer()
 
@@ -1784,18 +1903,23 @@ func build_brush_block(children: Array) -> void:
 	radius.value_changed.connect(func(_value): dot.queue_redraw())
 	brush_opacity.value_changed.connect(func(_value): dot.queue_redraw())
 	bound_slider(row, radius)
-	var opacity_head := HBoxContainer.new()
-	opacity_head.custom_minimum_size.y = 20
-	block.add_child(opacity_head)
-	overlay_label(opacity_head, "Opacity", StudioTheme.TEXT2, 12, 600).size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	# Opacity on one compact row (label, slider, value), so New drawing stays above the fold.
+	var opacity_row := HBoxContainer.new()
+	opacity_row.add_theme_constant_override("separation", 10)
+	block.add_child(opacity_row)
+	overlay_label(opacity_row, "Opacity", StudioTheme.TEXT2, 12, 600).custom_minimum_size.x = 52
 	var opacity_caption: Node = children[children.find(brush_opacity) - 1]
-	move_to(brush_opacity, opacity_head)
+	bound_slider(opacity_row, brush_opacity).custom_minimum_size.y = 32
+	move_to(brush_opacity, opacity_row)
 	style_value_field(brush_opacity, "%")
+	brush_opacity.custom_minimum_size.x = 56
 	if opacity_caption is Label:
 		advanced(move_to(opacity_caption, block))
 		opacity_caption.theme_type_variation = "CaptionLabel"
-	bound_slider(block, brush_opacity).custom_minimum_size.y = 32
 	move_to(brush_smoothing.get_parent(), block)  # Advanced-only row
+	# Its caption matches the other Advanced captions in the card (12 px #B4BAC7).
+	for child in brush_smoothing.get_parent().get_children():
+		if child is Label: child.theme_type_variation = "CaptionLabel"
 	draw_inspector["brush_dot"] = dot
 
 func style_layer_picker() -> void:
@@ -2315,8 +2439,11 @@ func refresh_camera_inspector() -> void:
 		c.keys_sig = signature
 		rebuild_camera_key_rows(frames, saved_frame)
 	if c.row_frame != frame:
+		# Restyle only the rows that change (all of them after a rebuild, which sets row_frame = -2).
+		var old: int = c.row_frame
 		c.row_frame = frame
-		for entry in c.rows: style_camera_key_row(entry, entry.frame == frame)
+		for entry in c.rows:
+			if old == -2 or entry.frame == old or entry.frame == frame: style_camera_key_row(entry, entry.frame == frame)
 	var editable: bool = fov.editable
 	var selected := -1
 	for i in range(LENS_PRESETS.size()):
@@ -2438,8 +2565,9 @@ func style_transport(transport: HFlowContainer, block: Control) -> void:
 	transport.add_child(end_pad)
 
 func compact_timeline_rows() -> void:
-	# Codex's sequence toolbar and the zoom/pan bar share one compact row under the transport, and
-	# the ruler sits right above the lanes (the 38 px gap the bar needed is gone). Nothing is hidden.
+	# Codex's sequence toolbar and the zoom/pan bar share one compact group, which joins the 52 px
+	# transport row (it wraps under it only when the dock is narrow), and the ruler sits right above
+	# the lanes. Nothing is hidden: Sequences…, the breadcrumb and − + Fit stay where Simple shows them.
 	var toolbar: HFlowContainer = sequence_editor.toolbar
 	var bar: HBoxContainer = timeline_navigation.bar
 	bar.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
@@ -2447,6 +2575,31 @@ func compact_timeline_rows() -> void:
 	bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	timeline_navigation.apply_neon_style()
+	var transport := frame_box.get_parent().get_parent() as HFlowContainer
+	if transport and toolbar.get_parent() != transport:
+		var frame_group: Control = frame_box.get_parent()
+		toolbar.reparent(transport, false)
+		transport.move_child(toolbar, frame_group.get_index() + 1)
+		toolbar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		toolbar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		# A 12 px left inset so the group never touches the window edge when it wraps to its own line
+		# (the toolbar node itself is unchanged: tests find "Sequences…" inside it).
+		var inset := MarginContainer.new()
+		inset.name = "SequenceToolbarInset"
+		inset.add_theme_constant_override("margin_left", 12)
+		inset.add_theme_constant_override("margin_right", 4)
+		inset.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		inset.size_flags_stretch_ratio = 20.0
+		inset.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		transport.add_child(inset)
+		transport.move_child(inset, toolbar.get_index())
+		toolbar.reparent(inset, false)
+		# The legend is a Simple aid (Advanced shows Codex's longer readout, so the row stays one line).
+		var legend := transport.get_node_or_null("TimelineLegend")
+		if legend: simple_only(legend)
+		# Codex's sequence strip followed the toolbar; it now opens right under the transport row.
+		var strip: Control = sequence_editor.strip_scroll
+		if strip and strip.get_parent() == timeline_ruler.get_parent().get_parent(): strip.get_parent().move_child(strip, transport.get_index() + 1)
 	toolbar.add_theme_constant_override("h_separation", 8)
 	toolbar.add_theme_constant_override("v_separation", 0)
 	for child in toolbar.get_children():
@@ -2505,13 +2658,32 @@ func refresh_play_button() -> void:
 		play_button.icon = StudioTheme.icon(kind, Color.WHITE, 16)
 
 func sync_timeline_focus() -> void:
-	# The lane being edited gets the blue highlight: the active layer in Draw, Camera in Camera.
+	# The lane being edited gets the highlight: the active layer in Draw (blue), Camera in Camera
+	# (pink) and the posed model in Pose (violet, with an "Auto key" chip while auto-key is on).
 	if transport_time == null or timeline == null: return
-	var lane := "layer" if mode.selected == 0 else "camera" if mode.selected == 1 else ""
-	if timeline.focus_lane != lane or timeline.active_layer != active_layer:
+	var lane := "layer" if mode.selected == 0 else "camera" if mode.selected == 1 else "model"
+	var chip: bool = pose_editor != null and pose_editor.auto_key != null and pose_editor.auto_key.button_pressed
+	if timeline.focus_lane != lane or timeline.active_layer != active_layer or timeline.auto_key_chip != chip:
 		timeline.focus_lane = lane
 		timeline.active_layer = active_layer
+		timeline.auto_key_chip = chip
 		timeline.queue_redraw()
+	# Bring the lane being edited (Draw: active layer, Pose: posed model) into the short lane area
+	# once, when it becomes the focus; the user's own scrolling is left alone afterwards.
+	var focus_key := "%s|%d|%s" % [lane, active_layer, timeline.selected_id]
+	var lanes := timeline.get_parent() as ScrollContainer
+	if focus_key != timeline_focus_key and lanes and lanes.is_visible_in_tree() and lanes.size.y >= 20.0:
+		timeline_focus_key = focus_key
+		var top := -1.0
+		var tall := 30.0
+		if lane == "layer" and active_layer >= 0 and active_layer < layers.size(): top = timeline.layer_y(active_layer) - 3
+		elif lane == "model":
+			for i in timeline.object_rows.size():
+				if timeline.object_rows[i].id == timeline.selected_id: top = timeline.row_y(i); tall = 26.0; break
+		if top >= 0.0 and (top < lanes.scroll_vertical or top + tall > lanes.scroll_vertical + lanes.size.y):
+			var target := int(maxf(0.0, top + tall - lanes.size.y))
+			# The lanes cull rows by scroll position when drawn, so redraw after scrolling.
+			(func(): lanes.scroll_vertical = target; timeline.queue_redraw()).call_deferred()
 	if timeline_ruler.focus_lane != lane:
 		timeline_ruler.focus_lane = lane
 		timeline_ruler.queue_redraw()
@@ -2524,7 +2696,12 @@ func set_advanced(enabled: bool) -> void:
 	if timeline:timeline.set_label_mode(enabled)
 	if timeline_ruler and timeline_ruler.ruler_seconds == enabled: timeline_ruler.ruler_seconds = not enabled; timeline_ruler.queue_redraw()
 	if transport_info: refresh_transport_text()
+	# Neon: docked panels show their title bar only in Advanced (a thin grab strip in Simple).
+	if workspace_layout and workspace_layout.horizontal:
+		for id in workspace_layout.panels: workspace_layout.style_header(id)
 	refresh_workspace()
+	# A message carried over from Advanced (where nothing fades) still fades in Simple.
+	if not enabled and not status_faded and status and not status.text.is_empty(): schedule_status_fade(status_serial)
 
 func refresh_workspace() -> void:
 	canvas.scene_navigation = mode.selected == 1
@@ -2535,7 +2712,9 @@ func refresh_workspace() -> void:
 	for control in advanced_controls: control.visible = advanced_mode
 	for control in simple_controls: control.visible = not advanced_mode
 	refresh_mode_tabs()
-	if physics_bar: physics_bar.visible = advanced_mode or mode.selected == 2
+	refresh_physics_bar()
+	if stage_overlay: set_codex_compact(not advanced_mode)
+	for control in tool_buttons: set_tool_kbd(control) # keycaps follow rebound shortcuts
 	refresh_tool_strip()
 	if camera_strip: camera_strip.visible = not advanced_mode and mode.selected == 1
 	refresh_status_style()
@@ -2550,7 +2729,20 @@ func refresh_workspace() -> void:
 	if scene_view:scene_view.sync()
 	refresh_view_row()
 	refresh_badges()
+	queue_view_fit()
+	queue_stage_inset()
 	fit_header()
+
+func physics_live() -> bool:
+	return physics_editor != null and (physics_editor.is_running() or (physics_editor.recording != null and physics_editor.recording.active))
+
+func refresh_physics_bar() -> void:
+	# Codex's simulation strip: always in Advanced (and in classic Simple, as before). Neon Simple shows
+	# it only while a simulation or recording runs, so the switches that stop it never disappear;
+	# otherwise Pose's inspector mirrors Physics / Hair & clothes and the stage keeps one pill row.
+	if physics_bar == null: return
+	var show: bool = advanced_mode or stage_overlay == null or physics_live()
+	if physics_bar.visible != show: physics_bar.visible = show
 
 func style_accent(control: Button) -> void:
 	# Redesign: Export movie gets a light pill on hover so the main action stands out.
@@ -2724,7 +2916,7 @@ func build_ui() -> void:
 		["Interface size and fullscreen…", func(): show_display_settings()],
 		["Keyboard shortcuts…", func(): keyboard_shortcuts.open()],
 		["About and credits", func(): show_notices()]], "Home screen, recovery, project options, shortcuts and credits"))
-	header_button(title_row, "", "settings", show_display_settings, "Settings: interface scale and fullscreen (F11). Advanced also offers orbit camera controls.").custom_minimum_size.x = 40
+	header_button(title_row, "" if StudioTheme.is_neon() else "Settings", "settings", show_display_settings, "Settings: interface scale and fullscreen (F11). Advanced also offers orbit camera controls.").custom_minimum_size.x = 40
 	header_divider(title_row)
 	export_button = icon_button(title_row, "Export movie", "export", export_dialog, "Export MP4 beside your saved HAS project, with a recoverable PNG frame sequence")
 	style_export(export_button)
@@ -2742,7 +2934,7 @@ func build_ui() -> void:
 	workspace_label.custom_minimum_size.y = 40
 	workspace_label.add_theme_font_size_override("font_size", 12)
 	apply_header_style()
-	header_button(toolbar,"Home","scene",func():home.open_home(),"New, Open and recent projects; your current scene stays intact")
+	header_button(toolbar,"Home","home",func():home.open_home(),"New, Open and recent projects; your current scene stays intact")
 	header_button(toolbar, "Recover", "reset", show_recovery, "Review retained recovery checkpoints")
 	header_button(toolbar, "Save as…", "save", save_as)
 	header_button(toolbar, "Open folder…", "folder", func():
@@ -2752,7 +2944,7 @@ func build_ui() -> void:
 	header_button(toolbar, "Sample room", "building", demo_dialog, "Open the original camera/drawing example as a new unsaved project")
 	header_button(toolbar, "Add scene", "scene", pick_scene_file, "Add a 3D environment: GLB, glTF, FBX, OBJ, MMD or an installed Source map")
 	header_button(toolbar, "Add model", "figure", pose_editor.import_dialog, "Add a poseable standard GLB model beside the environment")
-	header_button(toolbar, "Installed", "open", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts")
+	header_button(toolbar, "Installed", "package", func(): source_browser.open(), "Browse installed GMod models/maps, Workshop addons and dependency mounts")
 	header_button(toolbar, "Add audio", "audio", choose_audio_at_playhead, "Add a WAV, MP3 or Ogg sound starting at the playhead")
 	header_button(toolbar,"Options","grid",show_project_options,"Project settings, including visibility fades. Saved with this HAS project.")
 	header_button(toolbar, "About", "help", show_notices, "Credits and open source notices")
@@ -2774,11 +2966,12 @@ func build_ui() -> void:
 	var margin := MarginContainer.new()
 	margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	for side in ["left", "right", "top", "bottom"]:
-		# Neon Pro step 3: the World rail sits flush against the window edge and the header bar.
-		margin.add_theme_constant_override("margin_" + side, 0 if StudioTheme.is_neon() and side in ["left", "top"] else 10)
+		# Neon Pro step 3: the World rail sits flush against the window edge and the header bar; the
+		# inspector and the timeline reach the right and bottom edges too (mock grid, no outer margin).
+		margin.add_theme_constant_override("margin_" + side, 0 if StudioTheme.is_neon() else 10)
 	shell.add_child(margin)
 	var column := VBoxContainer.new()
-	column.add_theme_constant_override("separation", 8)
+	column.add_theme_constant_override("separation", 0 if StudioTheme.is_neon() else 8)
 	margin.add_child(column)
 	var middle := HBoxContainer.new()
 	middle.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -2814,6 +3007,7 @@ func build_ui() -> void:
 		view_margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		for side in [["left", 12], ["right", 12], ["top", 5], ["bottom", 3]]: view_margin.add_theme_constant_override("margin_" + side[0], side[1])
 		view_scroll = view_strip
+		stage_view_margin = view_margin
 		view_strip.resized.connect(queue_view_fit)
 		view_strip.add_child(view_margin)
 		var view_rows := VBoxContainer.new()
@@ -2824,6 +3018,8 @@ func build_ui() -> void:
 		view_rows.add_child(view_row)
 		view_row2 = HBoxContainer.new()
 		view_row2.add_theme_constant_override("separation", 8)
+		# The rows float over the canvas: only the pills and their buttons take the mouse.
+		for holder in [view_strip, view_margin, view_rows, view_row, view_row2]: holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		view_row2.visible = false
 		view_rows.add_child(view_row2)
 		codex_pill = view_pill(view_row)
@@ -2901,12 +3097,15 @@ func build_ui() -> void:
 		hint_margin.add_theme_constant_override("margin_right", 10)
 		hint_margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		hint_margin.add_child(hint)
-		camera_strip.add_child(hint_margin)
+		# Mock: plain text after the pill (14 px gap with the row's 8 px separation), not inside it.
+		hint_margin.add_theme_constant_override("margin_right", 0)
+		view_row.add_child(hint_margin)
+		view_row.move_child(hint_margin, camera_pill.get_index() + 1)
 		overlay_icon(hint, "mouse", StudioTheme.TEXT2, 14)
 		overlay_label(hint, "Move the view with the mouse", StudioTheme.TEXT2, 12)
 		camera_hint = hint_margin
 		# New Simple-only Pose strip: drives pose_editor.operation (Rotate / Move) and shows the
-		# canvas posing help. "Turn model" is left out: no existing behaviour maps to it.
+		# canvas posing help. "Turn model" = Rotate with the model root selected (no new semantics).
 		pose_strip = HBoxContainer.new()
 		pose_pill = view_pill(view_row)
 		pose_strip.add_theme_constant_override("separation", 2)
@@ -2920,6 +3119,10 @@ func build_ui() -> void:
 			pb.button_group = pose_group
 			style_tool_button(pb, entry[0], entry[1])
 			pose_buttons.append(pb)
+		turn_button = icon_button(pose_strip, "Turn model", "turn", pick_turn_model, "Turn the whole model with the colored rings")
+		turn_button.toggle_mode = true
+		turn_button.button_group = pose_group
+		style_tool_button(turn_button, "Turn model", "turn")
 		pill_divider(pose_strip)
 		pose_help_button = icon_button(pose_strip, "Mouse and keys", "help", func(): show_help_popover(pose_help_button, "Posing: mouse and keys", canvas.tooltip_text.replace(" • ", "\n")), "Show the posing mouse and keyboard controls")
 		style_ghost(pose_help_button, "help")
@@ -2929,7 +3132,8 @@ func build_ui() -> void:
 		icon_button(camera_strip, "Save key", "key", key_dialog, "Save camera key at this frame")
 	simple_only(camera_strip)
 	advanced(button(view_toolbar, "Fit view", func(): canvas.zoom = 1; canvas.pan = Vector2.ZERO; canvas.queue_redraw()))
-	button(view_toolbar, "Frame scene", frame_3d_scene).tooltip_text = "Fit the 3D asset in the temporary editor camera; shot keys stay unchanged."
+	frame_scene_button = button(view_toolbar, "Frame scene", frame_3d_scene)
+	frame_scene_button.tooltip_text = "Fit the 3D asset in the temporary editor camera; shot keys stay unchanged."
 	undo_button = keyboard_shortcuts.decorate(icon_button(view_toolbar, "Undo", "undo", undo),"undo","Undo") as Button
 	redo_button = keyboard_shortcuts.decorate(icon_button(view_toolbar, "Redo", "redo", redo),"redo","Redo") as Button
 	var physics_strip:=ScrollContainer.new();physics_strip.name="PhysicsControlsScroll";physics_strip.follow_focus=true
@@ -2942,6 +3146,7 @@ func build_ui() -> void:
 		for side in [["left", 12], ["right", 12], ["top", 3], ["bottom", 3]]: physics_margin.add_theme_constant_override("margin_" + side[0], side[1])
 		physics_strip.add_child(physics_margin)
 		var physics_row := HBoxContainer.new();physics_margin.add_child(physics_row)
+		for holder in [physics_strip, physics_margin, physics_row]: holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		view_pill(physics_row).add_child(physics_toolbar)
 		physics_toolbar.add_theme_constant_override("separation", 4)
 	else:physics_strip.add_child(physics_toolbar)
@@ -2956,12 +3161,14 @@ func build_ui() -> void:
 	canvas.middle_clicked=cycle_pose_operation
 	canvas.tooltip_text = "Wheel: zoom • Middle drag: pan • Space: play/pause"
 	if neon_stage:
-		# Neon Pro step 4: a 12 px stage margin gives the viewfinder corners room outside the frame.
-		# The corners are drawn by an overlay sibling above the canvas that ignores the mouse.
+		# Neon Pro: the canvas fills the whole stage, like the mock's 1088x684 viewport. The view rows,
+		# the physics row and the stage footer float over it (StageOverlay, mouse ignored except on the
+		# pills), and CanvasView.fit_inset keeps the camera frame clear of them (fit_stage_inset()).
+		# The viewfinder corners are drawn by an overlay sibling above the canvas that ignores the mouse.
 		var canvas_holder := MarginContainer.new()
 		canvas_holder.name = "StageCanvas"
 		canvas_holder.size_flags_vertical = Control.SIZE_EXPAND_FILL
-		for side in ["left", "right", "top", "bottom"]: canvas_holder.add_theme_constant_override("margin_" + side, 12)
+		for side in ["left", "right", "top", "bottom"]: canvas_holder.add_theme_constant_override("margin_" + side, 0)
 		center.add_child(canvas_holder)
 		canvas_holder.add_child(canvas)
 		viewfinder = Control.new()
@@ -2970,6 +3177,20 @@ func build_ui() -> void:
 		canvas_holder.add_child(viewfinder)
 		viewfinder.draw.connect(draw_viewfinder)
 		canvas.draw.connect(viewfinder.queue_redraw)
+		stage_overlay = Control.new()
+		stage_overlay.name = "StageOverlay"
+		stage_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		canvas_holder.add_child(stage_overlay)
+		stage_top = VBoxContainer.new()
+		stage_top.name = "StageTop"
+		stage_top.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		stage_top.add_theme_constant_override("separation", 0)
+		stage_overlay.add_child(stage_top)
+		stage_top.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
+		view_strip.reparent(stage_top, false)
+		physics_strip.reparent(stage_top, false)
+		stage_top.resized.connect(queue_stage_inset)
+		canvas.resized.connect(queue_stage_inset)
 	else:
 		center.add_child(canvas)
 	# Redesign: friendly next step on an empty world / frame (Simple only; a child of the canvas control, not the film).
@@ -2987,11 +3208,11 @@ func build_ui() -> void:
 	scene_view=preload("res://src/scene_view.gd").new();add_child(scene_view);scene_view.setup(self,view_toolbar)
 	if neon_stage:
 		build_view_badges()
-		style_view_chips([mode, lighting_choice, scene_view.choice, scene_view.frame_button, scene_view.grid_button])
+		style_view_chips([mode, lighting_choice, scene_view.choice, scene_view.frame_button, scene_view.grid_button, scene_view.guides_button])
 		for b in view_toolbar.get_children():
 			if b is Button and b.text in ["Fit view", "Frame scene"]: style_view_chips([b])
 		for b in [undo_button, redo_button]: style_ghost(b, "undo" if b == undo_button else "redo", 32)
-		build_stage_footer(center)
+		build_stage_footer(stage_overlay)
 	else:
 		scene_name = label(center, "")
 	scene_name.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
@@ -3208,6 +3429,14 @@ Draw returns to the animated shot.")
 	var footer := HBoxContainer.new()
 	column.add_child(footer)
 	app_footer = footer
+	if StudioTheme.is_neon():
+		# Neon: the Advanced debug line shares the footer row with the recovery status (one row instead
+		# of two), so the Timeline dock keeps its lanes at 1440x900 without an outer scrollbar.
+		move_to(debug_label, footer)
+		debug_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		debug_label.size_flags_stretch_ratio = 4.0
+		debug_label.clip_text = true
+		debug_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	footer.draw.connect(draw_app_footer)
 	debug_label.visibility_changed.connect(footer.queue_redraw)
 	if toast:
@@ -3245,7 +3474,8 @@ Draw returns to the animated shot.")
 		var usable_height:=minf(get_viewport_rect().size.y,float(get_window().size.y)/get_window().content_scale_factor)
 		var compact := usable_height < 800
 		world_selection.tree.custom_minimum_size.y = 80 if compact else 150
-		timeline_scroll.custom_minimum_size.y = 84 if compact or StudioTheme.is_neon() else 144
+		# Neon: 56 px (two 28 px lanes under the ruler's Camera lane) = the mock's 84 px lane area.
+		timeline_scroll.custom_minimum_size.y = 56 if StudioTheme.is_neon() else 84 if compact else 144
 		canvas.custom_minimum_size.y = 90 if compact else 180
 		if not toast:scene_name.visible=not compact
 	resized.connect(fit_panels)
@@ -3262,6 +3492,7 @@ func style_app_footer() -> void:
 		band.border_width_top = 1
 		band.expand_margin_bottom = 8
 		band.expand_margin_right = 10
+		if debug_label.get_parent() == app_footer: band = StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 0, 0, Vector4(12, 5, 12, 4))
 		debug_label.add_theme_stylebox_override("normal", band)
 		debug_label.add_theme_font_override("font", StudioTheme.mono(400))
 		debug_label.add_theme_font_size_override("font_size", 11)
@@ -3275,12 +3506,11 @@ func style_app_footer() -> void:
 	if app_footer: app_footer.queue_redraw()
 
 func draw_app_footer() -> void:
-	# Neon footer: #0C0D11 to the window's right and bottom edges (the margins are 10 px), with a
-	# hairline on top unless the debug line above already draws it. Nothing while the row is empty.
+	# Neon footer (debug line + recovery status in Advanced, export buttons): a #0C0D11 band to the
+	# window edges with a 1 px #22252E hairline on top. Nothing while the row is empty.
 	if not StudioTheme.is_neon() or app_footer == null or app_footer.size.y <= 0.0: return
-	var top := 0.0 if debug_label and debug_label.visible else -8.0
-	app_footer.draw_rect(Rect2(0, top, app_footer.size.x + 10, app_footer.size.y - top + 10), StudioTheme.BAR)
-	if top < 0.0: app_footer.draw_rect(Rect2(0, top, app_footer.size.x + 10, 1), StudioTheme.LINE)
+	app_footer.draw_rect(Rect2(Vector2.ZERO, app_footer.size), StudioTheme.BAR)
+	app_footer.draw_rect(Rect2(0, 0, app_footer.size.x, 1), StudioTheme.LINE)
 
 func default_ffmpeg() -> String:
 	var setting := OS.get_environment("HYBRID_FFMPEG")
@@ -3291,6 +3521,7 @@ func default_ffmpeg() -> String:
 func message(text: String) -> void:
 	status.text = text
 	status_serial += 1
+	status_faded = false
 	refresh_status_style()
 	schedule_status_fade(status_serial)
 	if home and home.visible and home.notice:home.feedback(text)
@@ -3306,6 +3537,7 @@ func schedule_status_fade(serial: int) -> void:
 		toast_tween.tween_method(set_toast_progress, 1.0, 0.0, 6.0)
 	get_tree().create_timer(6.0).timeout.connect(func():
 		if serial == status_serial and not advanced_mode and status:
+			status_faded = true
 			if toast: toast.modulate.a = 0.0
 			else: status.self_modulate.a = 0.0)
 
@@ -3328,7 +3560,7 @@ func refresh_status_style() -> void:
 	toast.content_margin_top = 6
 	toast.content_margin_bottom = 6
 	status.add_theme_stylebox_override("normal", toast)
-	status.self_modulate.a = 1.0 if not status.text.is_empty() else 0.0
+	status.self_modulate.a = 0.0 if status.text.is_empty() or status_faded else 1.0
 
 func is_problem_message(text: String) -> bool:
 	var lower := text.to_lower()
@@ -3567,7 +3799,7 @@ func change_mode(index: int) -> void:
 	# Redesign: plain wording in Simple; Advanced keeps the original messages.
 	if index == 1: message("Camera: move around freely, then press Save camera key [%s] to keep this view in the movie." % keyboard_shortcuts.label_for("camera") if not advanced_mode else "Editor camera is temporary. Insert a key explicitly; switching to Draw restores the shot.")
 	elif index == 2 and not advanced_mode and not pose_editor.active_rig(): message("Pose: no model yet. Press Add, then Poseable model…")
-	elif index == 2: message("Pose: click a joint and drag the colored handles. Your changes are keyed for you." if not advanced_mode else "Pose model: click a joint, then drag colored handles. Completed edits auto-key by default. Camera keys and drawing remain separate.")
+	elif index == 2: message(POSE_HINT if not advanced_mode else "Pose model: click a joint, then drag colored handles. Completed edits auto-key by default. Camera keys and drawing remain separate.")
 	else: message("Draw: this drawing stays on screen until the next one. Use New drawing to change it from this frame on." if not advanced_mode else "Drawing edits only the active cel. Held frames share this drawing; duplicate to make a variation.")
 
 func refresh_camera_controls() -> void:
@@ -3619,6 +3851,7 @@ func _process(delta: float) -> void:
 	refresh_empty_hint()
 	refresh_title()
 	refresh_tool_strip() # tool can change without a signal (shortcuts, color sampler)
+	refresh_physics_bar() # a simulation can start without a workspace refresh (imports, lessons)
 	refresh_badges()
 	refresh_draw_inspector()
 	refresh_camera_inspector()

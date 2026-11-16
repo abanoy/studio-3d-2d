@@ -104,6 +104,14 @@ var rate_fps:=24.0
 var focus_lane:="" # "layer" (Draw) or "camera" (Camera): that lane gets the active highlight
 var active_layer:=-1
 var row_keys:={} # object id -> authored key frames (app), for the row's summary diamonds and count
+var auto_key_chip:=false # Pose: the selected model lane shows an "Auto key" chip (app mirrors auto_key)
+# Neon: the 0 s tick and frame-0 diamonds sit 12 px inside the lane area (mock "left: 12px"). x() and
+# frame_at() use the same origin and span, so hit tests stay the exact inverse; classic keeps 0.
+const CONTENT_PAD:=12.0
+const CAMERA_BAND:=[Color(1,0.373,0.682,0.16),Color(1,0.373,0.682,0.06),Color(1,0.373,0.682,0.25)]
+const CAMERA_TRACK:=[Color(1,0.373,0.682,0.10),Color(1,0.373,0.682,0.04),Color(1,0.373,0.682,0.25)]
+const MODEL_BAND:=[Color(0.663,0.545,1,0.14),Color(0.663,0.545,1,0.06),Color(0.663,0.545,1,0.22)]
+const MODEL_TRACK:=[Color(0.663,0.545,1,0.10),Color(0.663,0.545,1,0.04),Color(0.663,0.545,1,0.22)]
 var neon_boxes:={}
 
 func set_label_mode(enabled: bool) -> void:
@@ -300,10 +308,12 @@ func layout_picture() -> void:
 func visible_span() -> float:
 	return float(duration) if window_span<=0 else clampf(window_span,1,duration)
 func visible_start() -> float:return clampf(window_start,0,maxf(0,duration-visible_span()))
+func content_pad() -> float:return CONTENT_PAD if StudioTheme.is_neon() else 0.0
+func content_width() -> float:return maxf(1,size.x-LEFT-16-content_pad())
 func frame_at(point: Vector2) -> int:
-	return clampi(roundi(visible_start()+(point.x-LEFT)/maxf(1,size.x-LEFT-16)*visible_span()),0,duration)
+	return clampi(roundi(visible_start()+(point.x-LEFT-content_pad())/content_width()*visible_span()),0,duration)
 func x(f: float) -> float:
-	return LEFT+(f-visible_start())/visible_span()*maxf(1,size.x-LEFT-16)
+	return LEFT+content_pad()+(f-visible_start())/visible_span()*content_width()
 
 func _draw() -> void:
 	if StudioTheme.is_neon():neon_draw();return
@@ -451,31 +461,45 @@ func neon_box(key: String) -> StyleBox:
 			"audio_muted_selected":neon_boxes[key]=StudioTheme.flat(Color(0.549,0.576,0.639,0.12),StudioTheme.TEXT3,4,1)
 			"audio_trim":neon_boxes[key]=StudioTheme.flat(Color(0.302,0.639,1,0.16),Color("6fb2ff"),4,1)
 			"bar_glow":neon_boxes[key]=StudioTheme.flat(StudioTheme.DRAWING,Color.TRANSPARENT,2,0,none,Color(0.302,0.639,1,0.6),4)
+			"bar_glow_camera":neon_boxes[key]=StudioTheme.flat(StudioTheme.CAMERA,Color.TRANSPARENT,2,0,none,Color(1,0.373,0.682,0.8),4)
+			"bar_glow_model":neon_boxes[key]=StudioTheme.flat(StudioTheme.MODEL,Color.TRANSPARENT,2,0,none,Color(0.663,0.545,1,0.7),4)
+			"auto_key":neon_boxes[key]=StudioTheme.flat(Color(0.663,0.545,1,0.14),Color.TRANSPARENT,5,0)
 			"tag":neon_boxes[key]=StudioTheme.neon_fill(6.0,false)
 	return neon_boxes[key]
 
 func text_y(font: Font,font_size: int,middle: float) -> float:
 	return middle+(font.get_ascent(font_size)-font.get_descent(font_size))/2.0
 
-func neon_band(canvas: CanvasItem,rect: Rect2,left: Color,right: Color,bottom_edge:=false) -> void:
+func neon_band(canvas: CanvasItem,rect: Rect2,left: Color,right: Color,bottom_edge:=false,edge:=LANE_EDGE) -> void:
 	canvas.draw_polygon(PackedVector2Array([rect.position,Vector2(rect.end.x,rect.position.y),rect.end,Vector2(rect.position.x,rect.end.y)]),PackedColorArray([left,right,right,left]))
-	canvas.draw_rect(Rect2(rect.position,Vector2(rect.size.x,1)),LANE_EDGE)
-	if bottom_edge:canvas.draw_rect(Rect2(rect.position.x,rect.end.y-1,rect.size.x,1),LANE_EDGE)
+	canvas.draw_rect(Rect2(rect.position,Vector2(rect.size.x,1)),edge)
+	if bottom_edge:canvas.draw_rect(Rect2(rect.position.x,rect.end.y-1,rect.size.x,1),edge)
 
-func neon_lane(y: float,height: float,title: String,count: String,bar: Color,active:=false,indent:=0.0,tone:=StudioTheme.TEXT,glow:=false) -> void:
-	if active:neon_band(self,Rect2(0,y,LEFT-1,height),LANE_A,LANE_B)
+func neon_lane(y: float,height: float,title: String,count: String,bar: Color,active:=false,indent:=0.0,tone:=StudioTheme.TEXT,glow:=false,band:=[],count_tone:=Color.TRANSPARENT,glow_key:="bar_glow",chip:="") -> void:
+	# band = [left, right, edge] colours of the active highlight (default blue); count_tone overrides
+	# the active count colour; glow_key picks the glowing bar; chip is drawn left of the count.
+	if active:neon_band(self,Rect2(0,y,LEFT-1,height),band[0] if band.size()==3 else LANE_A,band[1] if band.size()==3 else LANE_B,false,band[2] if band.size()==3 else LANE_EDGE)
 	draw_rect(Rect2(0,y+height-1,LEFT-1,1),StudioTheme.LINE)
 	var middle:=y+height/2.0
 	if bar.a>0:
 		var bar_rect:=Rect2(19+indent,middle-8,3,16)
-		if glow:draw_style_box(neon_box("bar_glow"),bar_rect)
+		if glow:draw_style_box(neon_box(glow_key),bar_rect)
 		else:draw_rect(bar_rect,bar)
 	var name_font:=StudioTheme.font(600 if active else 400)
 	var count_font:=StudioTheme.font(500 if active else 400)
 	var count_width:=count_font.get_string_size(count,HORIZONTAL_ALIGNMENT_LEFT,-1,12).x if not count.is_empty() else 0.0
 	var left:=31.0+indent
-	draw_string(name_font,Vector2(left,text_y(name_font,12,middle)),title,HORIZONTAL_ALIGNMENT_LEFT,maxf(1,LEFT-22-count_width-left),12,Color.WHITE if active else tone)
-	if not count.is_empty():draw_string(count_font,Vector2(LEFT-14-count_width,text_y(count_font,12,middle)),count,HORIZONTAL_ALIGNMENT_LEFT,-1,12,Color("d6e9ff") if active else StudioTheme.TEXT2)
+	var right:=LEFT-14-count_width
+	if not chip.is_empty():
+		var chip_font:=StudioTheme.font(600)
+		var chip_width:=chip_font.get_string_size(chip,HORIZONTAL_ALIGNMENT_LEFT,-1,11).x+12
+		var chip_rect:=Rect2(right-8-chip_width,middle-9,chip_width,18)
+		draw_style_box(neon_box("auto_key"),chip_rect)
+		draw_string(chip_font,Vector2(chip_rect.position.x+6,text_y(chip_font,11,middle)),chip,HORIZONTAL_ALIGNMENT_LEFT,-1,11,Color("c4b3ff"))
+		right=chip_rect.position.x
+	draw_string(name_font,Vector2(left,text_y(name_font,12,middle)),title,HORIZONTAL_ALIGNMENT_LEFT,maxf(1,right-8-left),12,Color.WHITE if active else tone)
+	var active_count:=count_tone if count_tone.a>0 else Color("d6e9ff")
+	if not count.is_empty():draw_string(count_font,Vector2(LEFT-14-count_width,text_y(count_font,12,middle)),count,HORIZONTAL_ALIGNMENT_LEFT,-1,12,active_count if active else StudioTheme.TEXT2)
 
 func neon_chevron(open: bool,middle: float) -> void:
 	var points:=PackedVector2Array([Vector2(6,middle-2),Vector2(10,middle+2),Vector2(14,middle-2)]) if open else PackedVector2Array([Vector2(8,middle-4),Vector2(12,middle),Vector2(8,middle+4)])
@@ -494,7 +518,8 @@ func neon_draw() -> void:
 	draw_rect(Rect2(Vector2.ZERO,size),StudioTheme.BAR)
 	if not hide_header:
 		draw_rect(Rect2(0,0,LEFT,1),StudioTheme.LINE);draw_rect(Rect2(0,23,LEFT,1),StudioTheme.LINE)
-		neon_lane(24,28,"Camera",str(keys.size()),StudioTheme.CAMERA,focus_lane=="camera")
+		var on_camera:=focus_lane=="camera"
+		neon_lane(24,28,"Camera","%d key%s" % [keys.size(),"" if keys.size()==1 else "s"],StudioTheme.CAMERA,on_camera,0,StudioTheme.TEXT,on_camera,CAMERA_BAND,Color("ffd6ea"),"bar_glow_camera")
 	if header_only:
 		draw_rect(Rect2(LEFT-1,0,1,size.y),StudioTheme.LINE)
 		if picture:picture.queue_redraw()
@@ -502,7 +527,9 @@ func neon_draw() -> void:
 	for i in range(object_rows.size()):
 		var data: Dictionary=object_rows[i];var y:=row_y(i)
 		if not row_in_view(y):continue
-		neon_lane(y,ROW_HEIGHT,str(data.name),str(object_key_count(data)),StudioTheme.MODEL,data.id==selected_id)
+		var posing: bool=focus_lane=="model" and data.id==selected_id
+		if posing:neon_lane(y,ROW_HEIGHT,str(data.name),str(object_key_count(data)),StudioTheme.MODEL,true,0,StudioTheme.TEXT,true,MODEL_BAND,StudioTheme.TEXT2,"bar_glow_model","Auto key" if auto_key_chip else "")
+		else:neon_lane(y,ROW_HEIGHT,str(data.name),str(object_key_count(data)),StudioTheme.MODEL,data.id==selected_id)
 		if Channels.has_data(data):neon_chevron(expanded.get(data.id,false),y+ROW_HEIGHT/2.0)
 	for i in range(visual_rows.size()):
 		var row: Dictionary=visual_rows[i];var y:=header_height()+i*ROW_HEIGHT
@@ -535,7 +562,7 @@ func neon_keys(painter: Control,frames: Array,y: float,color: Color,connector: C
 func neon_ticks(painter: Control) -> void:
 	# Simple: seconds ("0 s", "1 s"); Advanced: Codex's frame stride. Major #363B48 h14, half
 	# #2C303B h8, minor #22252E h4; mono 11 px #8C93A3 labels.
-	var pixels:=maxf(1,size.x-LEFT-16)/visible_span()
+	var pixels:=content_width()/visible_span()
 	var fps:=maxf(0.001,rate_fps)
 	var major:=float(maxi(1,ceili(visible_span()/12.0)))
 	var seconds:=1.0
@@ -580,7 +607,7 @@ func neon_content(painter: Control) -> void:
 	var model_line:=Color(0.663,0.545,1,0.3)
 	if not hide_header:
 		painter.draw_rect(Rect2(LEFT,0,end_x-LEFT,1),StudioTheme.LINE);painter.draw_rect(Rect2(LEFT,23,end_x-LEFT,1),StudioTheme.LINE)
-		if focus_lane=="camera":neon_band(painter,Rect2(LEFT,24,end_x-LEFT,28),TRACK_A,TRACK_B,true)
+		if focus_lane=="camera":neon_band(painter,Rect2(LEFT,24,end_x-LEFT,28),CAMERA_TRACK[0],CAMERA_TRACK[1],true,CAMERA_TRACK[2])
 		painter.draw_rect(Rect2(LEFT,51,end_x-LEFT,1),ROW_LINE)
 		neon_ticks(painter)
 		neon_keys(painter,keys.map(func(key):return float(key.frame)),38,StudioTheme.CAMERA,Color(1,0.373,0.682,0.3),6)
@@ -593,7 +620,8 @@ func neon_content(painter: Control) -> void:
 		var delta:=moving_delta if moving_id==data.id and moving_piece.is_empty() else 0
 		var y:=row_y(i);var selected: bool=data.id==selected_id
 		if not row_in_view(y):continue
-		if selected:neon_band(painter,Rect2(LEFT,y,end_x-LEFT,ROW_HEIGHT),TRACK_A,TRACK_B,true)
+		if selected and focus_lane=="model":neon_band(painter,Rect2(LEFT,y,end_x-LEFT,ROW_HEIGHT),MODEL_TRACK[0],MODEL_TRACK[1],true,MODEL_TRACK[2])
+		elif selected:neon_band(painter,Rect2(LEFT,y,end_x-LEFT,ROW_HEIGHT),TRACK_A,TRACK_B,true)
 		painter.draw_rect(Rect2(LEFT,y+ROW_HEIGHT-1,end_x-LEFT,1),ROW_LINE)
 		if not Clips.has_pieces(data) or not data.animation_clips.is_empty():painter.draw_rect(Rect2(x(int(data.start_frame)+delta),y+3,maxf(1,x(duration)-x(int(data.start_frame)+delta)),20),Color(0.663,0.545,1,0.06))
 		if Clips.has_pieces(data):
