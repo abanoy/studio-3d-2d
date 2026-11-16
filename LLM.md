@@ -5051,3 +5051,15 @@ the change). Windows verify.py was not run.
   tree root, I/M arm path from the tool pill, live tool tooltips, cheaper camera key refresh, live
   physics mirror tooltips.
 - Declined: LEFT 200 and asymmetric fit_inset. Details: docs/REDESIGN-PORT.md "Review 3 fixes".
+
+## Neon Pro port: finish-up (claude/studio-redesign)
+Docs and tooling only; no app code changed. Linux xvfb: ui, editor, pose, world_selection,
+recovery_write and recovery pass. Windows verify.py was not run.
+- `docs/redesign-mock/`: the approved mock images (`mock-draw.png` is the main reference,
+  `mock-camera.png`, `mock-pose.png`) and the matching app screenshots at 1440x900 (`app-draw.png`,
+  `app-camera.png`, `app-pose.png`, `app-advanced.png`).
+- `tools/linux/shoot.sh` + `tools/linux/shoot.gd`: the screenshot tool used for those images (xvfb,
+  opengl3, isolated `user://`, prefs and recovery under git-ignored `output/neon-shoot/`).
+- docs/REDESIGN-PORT.md "Neon pro theme": summary for Codex covering what changed, the file /
+  function map, theme tokens, Godot equivalents of the mock's CSS, known deviations, tests and the
+  screenshot tool.

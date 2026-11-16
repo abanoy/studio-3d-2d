@@ -907,3 +907,141 @@ scratchpad). Simple mode at 1440x900 now gives a camera frame of about 975x548 (
   `sequence_timeline.gd` hard-codes 190 and the change would also move the classic timeline.
   Asymmetric `fit_inset` (item 18): the 3D view renders a centred perspective camera, so an off-centre
   frame would misalign drawings with the scene (and scene_view's setup camera math).
+
+## Neon pro theme (summary for Codex, 2026-11-16)
+This section sums up the finished Neon Pro port. The step and review sections above have the details.
+The owner approved the "neon pro" mock: the Iridescent Pro layout with the Midnight Neon theme. Simple
+mode follows the mock ("Simplicity is key"). Advanced keeps every control, restyled with the same tokens.
+Project data, renders, saves and undo are unchanged; this is presentation only. Nothing under `tests/` was edited.
+
+### Screenshots: mock vs app (1440x900, Linux xvfb, opengl3)
+| | Mock (approved) | App on this branch |
+|---|---|---|
+| Simple Draw (the main reference) | `docs/redesign-mock/mock-draw.png` | `docs/redesign-mock/app-draw.png` |
+| Simple Camera | `docs/redesign-mock/mock-camera.png` | `docs/redesign-mock/app-camera.png` |
+| Simple Pose | `docs/redesign-mock/mock-pose.png` | `docs/redesign-mock/app-pose.png` |
+| Advanced Draw | (not in the mock) | `docs/redesign-mock/app-advanced.png` |
+
+The app shots show a 2-bone fixture model (`rig.glb`), the demo room, one painted stroke and a
+sample status message. The project name and save state are real ("Untitled", "Unsaved changes"),
+not the mock's sample data.
+
+### What changed
+- **Theme:** a new default `"neon"` style next to the classic `"light"` and `"dark"` skins. Settings
+  (Advanced part) has an "Interface theme" dropdown (Midnight Neon / Classic light / Classic dark),
+  saved as `[display] theme` in `user://display.cfg`. A switch to or from neon applies at the next start.
+- **Header:** one 56 px bar with the brand mark, project name and save line, New / Open / Save / Add,
+  centred Draw / Camera / Pose tabs with a neon underline, the Advanced switch, More, and the neon
+  Export movie button. Advanced adds a second row with every original button.
+- **World rail:** a 64 px rail of labelled icon tiles for the World rows, with the Frame, Save asset
+  and Size map tiles at the bottom. While World is docked alone on the left it runs full height,
+  and the timeline sits beside it.
+- **Stage:** the canvas fills the stage. The tool pill, view badges, viewfinder corners, the stage
+  footer (caption, toast with a progress strip, legend) and Codex's view controls float over it.
+- **Inspector:** card-based Draw (tool card, colour, brush, layer, next step, new drawing), Camera
+  (keys, lens, guides, save) and Pose (motion, next step, actions, keys and helpers) panels. Codex's
+  extra controls stay below the cards.
+- **Timeline:** a compact transport row (play ring, mono time, Frame field, Sequences…, zoom) and
+  neon lanes: blue drawings, pink camera keys, violet model keys, and a gradient playhead tag.
+- **Secondary surfaces:** home screen, dialogs, popups, dock tree, movement path editor, sequence
+  timeline and the reference sheet follow the tokens through `StudioTheme.tone()` and `surface()`.
+
+### File / function map
+| File | Neon work |
+|---|---|
+| `src/studio_theme.gd` (LF) | tokens, `set_style()`/`is_neon()`, `tone()`, `flat()`, `neon_ring()`, `neon_fill()`, `neon_line()`, `neon_bar()`, `brand_mark()`, `diamond()`, `key_glow()`, `toast_ring()`, `play_ring()`, `focus_box()`, `switch_icon()`, `check_icon()`, `slider_styles()`, `font()`/`mono()`, `make_neon_theme()` (type variations `GhostButton`, `PrimaryButton`, `NeonButton`, `TabButton`, `RailTile`, `ToolButton`, `RailLabel`, `CaptionLabel`, `MonoLabel`, `KbdLabel`), `LINE_ICONS` + `line_icon()`/`icon()`, `CLASSIC_ALIASES` |
+| `src/app.gd` (CRLF) | theme switch: `apply_theme_style()`, `back_gradient()`, `apply_header_style()`; header: `style_header()`, `style_tab()`, `refresh_mode_tabs()`, `style_export()`, `fit_header()`; stage: `view_pill()`, `refresh_tool_strip()`, `refresh_view_row()`, `fit_view_row()`, `set_codex_compact()`, `set_codex_footer()`, `build_view_badges()`, `refresh_badges()`, `draw_viewfinder()`, `build_stage_footer()`, `fit_stage_inset()`, `fit_stage_footer()`, `refresh_toast()`, `draw_toast_strip()`; inspector: `build_draw_inspector()`/`refresh_draw_inspector()`, `build_camera_inspector()`/`refresh_camera_inspector()`, `inspector_block()`, `inspector_card()`, `fit_inspector_pad()`; timeline: `transport_block()`, `style_transport()`, `compact_timeline_rows()`, `sync_timeline_focus()`; footer: `style_app_footer()`, `draw_app_footer()` |
+| `src/workspace_layout.gd` (LF) | dock headers and Simple grab strips (`style_header()`, `strip_header()`, `strip_input()`, `draw_header()`, `draw_panel()`), full-height rail nesting (`want_full_left()`, `apply_nesting()`) |
+| `src/world_selection.gd` (CRLF) | World rail tiles: `rebuild_rail()`, `sync_rail()`, `entity_tile()`, `style_tile()`, `style_action()` |
+| `src/timeline_view.gd` (CRLF) | neon lanes: `neon_draw()`, `neon_lane()`, `neon_band()`, `neon_keys()`, `neon_diamond()`, `neon_ticks()`, `neon_playhead()`, `neon_tag()`, `content_pad()`/`content_width()` (12 px pad; `x()` and `frame_at()` stay inverse) |
+| `src/pose_editor.gd` (LF) | Pose inspector: `build_neon_inspector()`, `refresh_neon_inspector()`, `neon_block()`, `neon_switch()`, `neon_segmented()`, `next_step()`, `model_keyed()` |
+| `src/canvas_view.gd` (CRLF) | `fit_inset` (neon only, zero in classic and unit tests), `fit_area()`, `setup_frame_size()`, `refresh_surround()` |
+| `src/scene_view.gd` | compact Guides menu (`guides_button`), `copy_camera(..., frame_size)` overscan for the inset frame |
+| `src/timeline_navigation.gd`, `src/dock_tree.gd`, `src/sequence_timeline.gd`, `src/sequence_editor.gd`, `src/movement_path_*.gd`, `src/reference_sheet_view.gd`, `src/home_screen.gd` | small restyles (`apply_neon_style()`, `style_book()`, tokens) |
+
+### Theme tokens (all in `src/studio_theme.gd`, constants at the top)
+| Token | Value | Use |
+|---|---|---|
+| `BG` / `STAGE` | `#08090C` / `#05060A` | app background / canvas surround |
+| `BAR` / `PANEL` / `RAISE` / `HOVER` | `#0C0D11` / `#111318` / `#171A21` / `#1D2029` | bars and docks / cards / raised rows / hover |
+| `LINE` / `LINE2` / `LINE3` | `#22252E` / `#2C303B` / `#363B48` | hairlines / outlines / hover outlines |
+| `TEXT` / `TEXT2` / `TEXT3` | `#F4F6FA` / `#B4BAC7` / `#8C93A3` | primary / secondary / muted text |
+| `BLUE` / `MID` / `PINK` / `FOCUS` | `#2E8CFF` / `#9C5CFF` / `#FF3D9A` / `#7B5CFF` | neon gradient ends and middle / focus ring |
+| `ON_NEON` | `#07080B` | text on the neon fill |
+| `FIELD`, `POPUP`, `KBD`, `TOOL_INNER`, `SWITCH_INNER`, `TRACK`, `SCROLL_THUMB` | see the file | field, popup, keycap, ring interiors, slider track, scrollbar thumb |
+| `DRAWING` / `CAMERA` / `MODEL` | `#4DA3FF` / `#FF5FAE` / `#A98BFF` | drawings and onion "before" / camera keys and onion "after" / model keys |
+| `SAVED` / `PROBLEM` / `WARNING` | `#3DDC97` / `#FF5A7A` / `#FFC24B` | save dot / problem toast / unsaved dot |
+| `NEON_STOPS` | `#2E8CFF 0, #8079FF .25, #B565F8 .5, #DF51D2 .75, #FF3D9A 1` | the mock's oklch gradient as sRGB stops |
+| `UI_FONTS` / `MONO_FONTS` | SystemFont fallback lists | see "Known deviations" |
+
+Contrast: TEXT3 is at least 4.97:1 on every surface it is used on, TEXT2 at least 7.9:1, TEXT at least
+14:1, and `ON_NEON` on the neon fill at least 5.8:1.
+
+### Godot equivalents of the mock's CSS
+| Mock CSS | Godot |
+|---|---|
+| `linear-gradient(in oklch …, #2E8CFF, #FF3D9A)` | SVG `linearGradient` with the five `NEON_STOPS` (`neon_defs()`). SVG cannot interpolate in oklch |
+| gradient border (`padding-box` fill + `border-box` gradient) | `neon_ring()`: `StyleBoxTexture` from an in-code SVG rect with a gradient stroke, rendered at 2x (`ImageTexture.set_size_override`), so 1.5 px rings stay crisp while margins stay logical |
+| full neon fill (Export, playhead tag, brand mark) | `neon_fill()`, `neon_tag()`, `brand_mark()`, with `ON_NEON` text |
+| `box-shadow` glow | `StyleBoxFlat.shadow_color/size/offset` (one colour per box). Two-colour glows use two stacked panels: Export movie has a pink 6 px shadow on a panel inset 6 px over a fainter blue one inset 8 px, and the Draw / Camera / Pose underline has a soft violet glow over a faint blue one. Negative spread becomes a smaller `shadow_size` |
+| radial glows (switch knob, key glow, toast ring) | radial gradients drawn inside the SVG icon (`switch_icon()`, `key_glow()`, `toast_ring()`) |
+| `inset 0 0 0 1px` | 1 px `StyleBoxFlat` border (`flat()`) |
+| focus ring | `focus_box()`: no fill, 2 px `FOCUS` border, `expand_margin` 2, pink shadow |
+| `position:absolute` overlays (tabs, tool pill, badges, footer) | full-rect overlay Controls with `MOUSE_FILTER_IGNORE`; only the pills and buttons take the mouse |
+| uppercase + `letter-spacing` | `FontVariation.spacing_glyph` (`RailLabel`, dock headers), text written in capitals |
+| `tabular-nums` | the mono SystemFont (`MonoLabel`) |
+| out-of-frame dim and viewfinder corners | `draw_rect` / `draw_polyline` in `_draw()` (`draw_viewfinder()`), editor-only, never rendered |
+| `rotate(45deg)` diamonds | `diamond()` SVG / `draw_colored_polygon` in the timeline |
+| toast progress bar | `draw_toast_strip()`, which follows the existing 6 s status fade (the status text is never cleared) |
+| hover transitions | instant hover styleboxes (no tweens) |
+
+### Known deviations from the mock
+- **Fonts:** Geist / Geist Mono are not bundled and fonts may not be downloaded. The `SystemFont`
+  lists fall back to Inter + JetBrains Mono on the Linux test box, and usually to Segoe UI + Cascadia
+  Mono or Consolas on Windows. Text is about 6% wider than in the mock.
+- **Codex controls kept visible in Simple:** the lighting dropdown, Frame scene, Undo / Redo, Scene
+  setup / Guides, Fit view, the Frame field, Sequences…, zoom, Save asset / Size map tiles, Keys and
+  helpers / Bones / Visibility in Pose, and "More drawing options". They are compacted (icon chips,
+  the footer pill) instead of hidden.
+- **Simulation row:** hidden in neon Simple unless a simulation or recording runs. Pose mirrors the
+  Physics and Hair & clothes switches. Recording, fans, wind and loose parts are reached in Advanced.
+- **Sample data not faked:** the project name, save time, rail items, clip names, camera key
+  thumbnails (placeholder tiles), "next step" text and shortcut labels come from the real project.
+- **Left for the owner to decide:** the Bend / Twist joint sliders, a Simple field-of-view slider, and
+  new pose behaviour behind "Physics follow-through" (it mirrors Codex's Hair & clothes switch).
+- **Dock headers:** in Simple they are 10 px grab strips, not hidden, because docking needs a drag handle.
+  Advanced and floating docks keep the 28 px headers.
+- **Declined:** `TimelineView.LEFT = 200` (test-visible API) and an off-centre `fit_inset` (it would
+  misalign drawings with the centred 3D camera). Each glow is limited to one shadow colour per box.
+- **Text selection colour:** pale blue `#B9D7FF`, because `workspace_controls_smoke` checks the
+  selected-text colour.
+
+### How to test (Linux)
+```
+GODOT=/path/to/Godot_v4.6-stable_linux.x86_64 tools/linux/run_test.sh . ui
+# also: editor, pose, world_selection, recovery_write, recovery (1-5 min each)
+git checkout -- tests tools/__pycache__   # the tests rewrite these committed files
+```
+The UI-sensitive Codex smokes that `run_test.sh` does not cover were run with the same
+xvfb/opengl3 command line: `godot --rendering-driver opengl3 --audio-driver Dummy --path . --script
+tests/<name>.gd -- output/extra-<name>` for `workspace_controls_smoke`, `workspace_docking_smoke`,
+`asset_package_smoke`, `brush_opacity_smoke`, `palette_smoke`, `layers_smoke`, `onion_smoke` and
+`color_sampler_smoke`, comparing the FAIL count with main. That wrapper is not committed because
+these smokes rewrite `tools/__pycache__`. `color_sampler_smoke` has 3 failures on main on this
+Linux box too. `camera_range_smoke` and `lighting_smoke` need fixtures from `tests/verify_*.py`.
+
+### Screenshot tool (`tools/linux/shoot.sh` + `tools/linux/shoot.gd`)
+```
+GODOT=/path/to/Godot_v4.6-stable_linux.x86_64 tools/linux/shoot.sh output/shots   # from the repo root
+```
+- It runs the app under `xvfb-run` with `--rendering-driver opengl3 --resolution 1440x900` and the
+  helper `shoot.gd` through an absolute `--script` path, with the user args
+  `--demo-room --shoot-out <dir>`.
+- The helper hides Home, adds a 2-bone fixture model (`SHOOT_MODEL=0` skips it), paints one stroke
+  and posts a sample status message. It saves `draw.png`, `camera.png`, `pose.png` (Simple) and
+  `advanced.png` (Advanced Draw), plus `shoot.log`. A run takes about 7 s.
+- It never touches prefs. `XDG_DATA_HOME`, `XDG_CONFIG_HOME` and `XDG_CACHE_HOME` point at a
+  `mktemp` directory that is deleted afterwards. `app.display_prefs_path` and `recovery_root` point
+  into `output/neon-shoot/` (git-ignored), and because `--script` is on the command line, the workspace
+  layout goes to `output/test-preferences/`. `git status` stays clean after a run.
+- To refresh the docs images: run it, then copy the four PNGs to `docs/redesign-mock/app-*.png`.
