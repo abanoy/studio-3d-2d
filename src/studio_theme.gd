@@ -198,6 +198,15 @@ static func toast_ring(problem := false) -> Texture2D:
 	var glyph := '<path d="M11 6.5v5.2" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/><circle cx="11" cy="15" r="1" fill="#ffffff"/>' if problem else '<path d="m7.5 11 2.5 2.5 4.5-5" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
 	return _cached("toast|%s" % problem, '<defs>%s</defs><circle cx="11" cy="11" r="10.25" fill="%s" stroke="%s" stroke-width="1.5"/>%s' % [neon_defs(), hex(POPUP), stroke, glyph], 22, 22)
 
+static func chip(color: Color, size := 14, radius := 4.0) -> Texture2D:
+	# Small filled rounded square (layer picker colour chip, 14 px r4).
+	return _cached("chip|%s|%d|%s" % [color.to_html(), size, radius], '<rect width="%d" height="%d" rx="%s" fill="%s" fill-opacity="%s"/>' % [size, size, radius, hex(color), color.a], size, size)
+
+static func dot(color: Color, size := 7) -> Texture2D:
+	# Small filled circle (onion "before" / "after" dots in the inspector sub-line).
+	var r := size / 2.0
+	return _cached("fdot|%s|%d" % [color.to_html(), size], '<circle cx="%s" cy="%s" r="%s" fill="%s"/>' % [r, r, r, hex(color)], size, size)
+
 static func kbd_box() -> StyleBoxFlat:
 	# 18 px keycap chip (with the 11 px mono font): #13151B, 1 px #2C303B, radius 5.
 	return flat(KBD, LINE2, 5, 1, Vector4(5, 1, 5, 1))

@@ -334,3 +334,79 @@ workspace_controls (48/0), workspace_docking, asset_package_smoke, brush_opacity
 layers_smoke, onion_smoke, first_movie_smoke, rotation_gizmo_smoke, scene_view_unit and
 lighting_lesson_smoke pass. color_sampler_smoke has the same 3 failures as before this step (same
 check names). Windows verify.py was not run.
+
+### Step 5: inspector Draw panel (`src/app.gd`, `src/studio_theme.gd`)
+- **Inspector:** in neon the Properties scroll is 288 px wide (was 276) on `#0C0D11` with a 1 px
+  `#22252E` line on its left. `section()` is flat in neon (`inspector_block()`): padding 18 16, a
+  bottom hairline, a 12/600 `#B4BAC7` heading with no icon and an optional 12/500 `#8C93A3` meta on the
+  right (`section_meta(box)` returns that Label). Camera, Model / pose, Audio, Movie encoder and
+  Recovery get the same flat look now; steps 7 and 8 do their content.
+- **How it is built:** `build_draw_inspector()` runs once at start-up, after every editor has added
+  its controls to `drawing_section`. It moves Codex's controls into cards and restyles them. Nothing
+  is replaced: `tool`, `color`, `radius`, `brush_opacity`, `brush_pressure`, `layer_choice`,
+  `layer_visibility`, `onion_editor.enabled`, `layer_editor.launch`, the palette, the tool panels and
+  every Advanced control keep their types, values, signals and Simple/Advanced visibility. A control
+  the build does not know about (a later Codex addition) lands in "More drawing options" in its
+  original order. `refresh_draw_inspector()` runs each frame from `_process` and writes only when a
+  shown value changes. The old "Drawing" heading is hidden.
+- **Tool card** (64 px): a 36 px neon-ring tile on `#171A22` with a violet glow and the white tool icon,
+  the title 15/600, the subtitle 12 `#B4BAC7` (Pen "Smooth freehand lines", Eraser "Clear ink from this
+  drawing", Fill "Fill a closed area", Pick color "Take a colour from the picture", Select area "Move or
+  cut part of the drawing") and a keycap from `keyboard_shortcuts`. It follows `tool.selected`.
+  Below it, the fill, colour sampler and selection panels share one padded block that only shows when
+  one of them is showing (sampler: tool 3, with `source` still Advanced-only).
+- **Colour:** five 40 px tiles, r8, gap 8. Tile 1 is the real `color` ColorPickerButton. It still opens
+  the picker, but its own square swatch is hidden (`self_modulate` alpha 0) and two mouse-ignoring
+  panels draw it rounded, with a 1 px `rgba(255,255,255,.14)` edge, a 2 px gap and a 2 px white ring.
+  Tiles 2-5 are recent colours: a per-session UI list, never project or palette data, seeded with
+  coral `#FF5A7A`, sun yellow `#FFC24B`, sky blue `#4DA3FF` and ink `#4B3F66`. When the brush colour
+  changes, the previous colour becomes tile 2 (not while the picker popup is open). Clicking a tile
+  uses the palette swatch's guards and sets `color.color`. The meta shows the palette swatch name, a
+  known name (Codex's default `#F4DFBD` is "Warm white") or the hex value. The default colour is
+  unchanged.
+- **Brush size:** the `radius` SpinBox stays visible (ui_smoke). It is now the flat right-aligned
+  "6 px" value in the heading row (suffix "px", arrows hidden, typing and the wheel still work). There
+  is a 40 px preview (`#0F1116`, 1 px `#22252E`, r8) whose dot shows the current colour and opacity,
+  with a diameter of 4 + radius (10 px at 6), and a neon HSlider 1-64 bound both ways to `radius`.
+  `brush_opacity` gets the same "Opacity" value and slider (brush_opacity_smoke). The sliders take no
+  focus, so the arrow keys keep stepping frames. Codex's captions ("Brush size (radius in pixels)",
+  "Brush opacity (%)") show in Advanced only. Stroke smoothing (Advanced) sits in this card.
+- **Layer:** the heading shows "N layers". `layer_choice` is a 40 px picker (`#101218`, 1 px `#2C303B`,
+  r8, 14 px `#4DA3FF` chip, 12 px `#8C93A3` chevron) next to `Layers…` (outline, layers icon). Below
+  are switch rows (h40, 16 px `#8C93A3` icon, 13 px text): "Show this layer" (eye) and "Onion skin"
+  (h44) with the sub-line "● 1 before ● 1 after" (`#4DA3FF` / `#FF5FAE`). The onion always shows the
+  one previous and the one next drawing, so the counts are true. Onion opacity (Advanced) follows.
+- **Next card:** margin 0 16 14, a `#111318` card with a 1 px `#2C303B` edge and r10, a 28 px neon-ring
+  arrow tile, a 13/600 title and a 12 `#B4BAC7` body. It uses the same conditions as
+  `refresh_empty_hint()` (Simple Draw, not playing or exporting): an empty world gives "Next: add a
+  scene or a model", and no drawing at the frame on the active layer gives "Next: draw on frame N". It
+  is hidden otherwise.
+- **New drawing:** a full-width 44 px PrimaryButton with the icon and label centred as one group.
+  `keyboard_shortcuts` has no copy-drawing binding, so there is no keycap hint row (no fake "Ctrl D").
+  The visible "Copy drawing here" outline button stays right under it. The exposure controls
+  (Advanced) follow.
+- **More drawing options** (still visible in Simple): the project colours (caption, grid, "Keep this
+  color" and the Advanced swatch editor), the "Tablet pressure size" switch row, the `tool` dropdown,
+  Import Krita artwork…, Import video artwork… and Reference sheet….
+- New StudioTheme helpers: `chip()` (rounded square) and `dot()` (filled circle), both cached.
+
+Deviations (step 5):
+- **Dock header:** the 28 px "PROPERTIES" dock header stays above the tool card. It is the drag handle
+  that workspace_docking / workspace_controls need.
+- **Tool dropdown:** the `tool` OptionButton was visible in Simple, so it stays visible under "More
+  drawing options" (contract: never hide a Simple control). The tool pill and the card already show the
+  tool, so hiding it in Simple is an owner decision.
+- **Opacity row:** the mock has no opacity. Codex shows it in Simple, so it is the second row of the
+  Brush card. Together with the taller Codex timeline, this means New drawing is below the fold at
+  1440x900 until step 6 shrinks the timeline.
+- **Texts kept:** "Show this layer" (mock "Show"), "Layers…" (mock "Layers") and the real layer names
+  (the mock's "Layer 2 · Ink" is sample data). The meta drops the mock's "· recent".
+- **Next card:** it only appears when there is a real next step. In the screenshot fixture the frame
+  has a drawing, so the card is hidden there (it is checked with an empty layer instead).
+- **Ring and glow:** the current-colour ring is 2 px (StyleBoxFlat border widths are whole pixels), not
+  1.5 px. The tool tile's glow is one violet shadow instead of blue plus pink.
+- **Start-up build:** like steps 2-4, the neon inspector is built at start-up. Switching the theme at
+  run time recolours it, and the classic card returns after a restart. Classic styles keep the old
+  "Drawing" card exactly.
+- **Contrast:** `#B4BAC7` on `#0C0D11` is 10.3:1 and `#8C93A3` 6.3:1. `#F4F6FA` on `#111318` is 17.2:1,
+  `#B4BAC7` on `#111318` 9.6:1, and white on `#1A1D25` 16.4:1.

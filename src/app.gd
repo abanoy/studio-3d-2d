@@ -173,6 +173,10 @@ var empty_hint: PanelContainer
 var empty_hint_label: Label
 var redo_button: Button
 var drawing_section: VBoxContainer
+var new_drawing_button: Button
+var copy_drawing_button: Button
+var exposure_button: Button
+var delete_cel_button: Button
 var camera_section: VBoxContainer
 var audio_section: VBoxContainer
 var workspace_label: Label
@@ -502,6 +506,7 @@ func _ready() -> void:
 	color_sampler=ColorSampler.new();color_sampler.app=self;add_child(color_sampler);color_sampler.setup(drawing_section)
 	palette_editor=preload("res://src/palette_editor.gd").new();palette_editor.app=self;add_child(palette_editor);palette_editor.setup(drawing_section)
 	drawing_selection_editor=preload("res://src/drawing_selection_editor.gd").new();drawing_selection_editor.app=self;add_child(drawing_selection_editor);drawing_selection_editor.setup(drawing_section)
+	if StudioTheme.is_neon(): build_draw_inspector()
 	camera_transform_editor=preload("res://src/camera_transform_editor.gd").new();add_child(camera_transform_editor);camera_transform_editor.setup(self)
 	sequence_editor=preload("res://src/sequence_editor.gd").new();add_child(sequence_editor);sequence_editor.setup(self)
 	keyboard_shortcuts.refresh_labels()
@@ -1456,6 +1461,8 @@ func advanced_spin(parent: Node, text: String, low: float, high: float, value: f
 	return spin(row, text, low, high, value)
 
 func section(parent: Node, title: String, kind: String) -> VBoxContainer:
+	# Neon Pro step 5: flat sections (padding 18 16, bottom hairline, 12/600 heading, no icon).
+	if StudioTheme.is_neon(): return inspector_block(parent, title)
 	var panel := PanelContainer.new()
 	parent.add_child(panel)
 	var box := VBoxContainer.new()
@@ -1470,6 +1477,525 @@ func section(parent: Node, title: String, kind: String) -> VBoxContainer:
 	heading.add_child(image)
 	label(heading, title).add_theme_font_size_override("font_size", 16)
 	return box
+
+# ---- Neon Pro step 5: right inspector, Draw panel -----------------------------------------
+# Built once at start-up in the neon style, after every editor has added its controls to
+# drawing_section. Codex's controls are moved and restyled, never replaced: tool, color, radius,
+# brush_opacity, brush_pressure, layer_choice, layer_visibility, the onion switch, Layers…, the
+# palette, the tool panels and every Advanced control keep their types, values, signals and
+# Simple/Advanced visibility. Classic styles keep the old single "Drawing" card.
+
+const TOOL_TITLES := ["Pen", "Eraser", "Fill", "Pick color", "Select area"]
+const TOOL_HINTS := ["Smooth freehand lines", "Clear ink from this drawing", "Fill a closed area", "Take a colour from the picture", "Move or cut part of the drawing"]
+const TOOL_ICONS := ["draw", "eraser", "fill", "picker", "select"]
+const TOOL_KEYS := ["pen", "eraser", "fill", "sample", "select"]
+const COLOUR_NAMES := {"f4dfbd": "Warm white", "ff5a7a": "Coral", "ffc24b": "Sun yellow", "4da3ff": "Sky blue", "4b3f66": "Ink"}
+var draw_inspector := {}  # neon only: inspector card nodes and the values they last showed
+# Recent colours are a per-session UI convenience (never project or palette data): the four colours
+# used before the current one, seeded with the mock's coral, sun yellow, sky blue and ink.
+var recent_colors: Array = [Color("ff5a7a"), Color("ffc24b"), Color("4da3ff"), Color("4b3f66")]
+var recent_base := Color()
+var color_popup_open := false
+
+func inspector_box(pad := Vector4(16, 18, 16, 18), top_line := false, bottom_line := true) -> StyleBoxFlat:
+	# Flat inspector section: #0C0D11 with a 1 px #22252E hairline below (or above).
+	var box := StudioTheme.flat(StudioTheme.BAR, StudioTheme.LINE, 0, 0, pad)
+	box.border_width_top = 1 if top_line else 0
+	box.border_width_bottom = 1 if bottom_line else 0
+	return box
+
+func inspector_block(parent: Node, title: String, meta := "") -> VBoxContainer:
+	# Padding 18 16, bottom hairline, heading 12/600 #B4BAC7 with an optional right meta 12/500
+	# #8C93A3 (section_meta() returns it so callers can fill it).
+	var panel := PanelContainer.new()
+	panel.add_theme_stylebox_override("panel", inspector_box())
+	parent.add_child(panel)
+	var box := VBoxContainer.new()
+	box.add_theme_constant_override("separation", 8)
+	panel.add_child(box)
+	if title.is_empty(): return box
+	var heading := HBoxContainer.new()
+	heading.custom_minimum_size.y = 20
+	heading.add_theme_constant_override("separation", 8)
+	box.add_child(heading)
+	var name_label := overlay_label(heading, title, StudioTheme.TEXT2, 12, 600)
+	name_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var meta_label := overlay_label(heading, meta, StudioTheme.TEXT3, 12, 500)
+	meta_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	box.set_meta("heading", heading)
+	box.set_meta("title", name_label)
+	box.set_meta("meta", meta_label)
+	return box
+
+func section_meta(box: Control) -> Label:
+	return box.get_meta("meta") if box.has_meta("meta") else null
+
+func move_to(control: Node, parent: Node) -> Node:
+	if control.get_parent(): control.get_parent().remove_child(control)
+	parent.add_child(control)
+	return control
+
+func style_value_field(field: SpinBox, suffix: String) -> void:
+	# The SpinBox stays (tests and keyboard entry use it) as a flat right-aligned 12/500 value with a
+	# unit, e.g. "6 px" (SpinBox adds the space before the suffix); the slider beside it does the
+	# dragging, so the arrows are hidden.
+	field.suffix = suffix
+	field.alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	field.custom_minimum_size = Vector2(68, 24)
+	field.size_flags_horizontal = Control.SIZE_SHRINK_END
+	field.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var none := ImageTexture.create_from_image(Image.create(1, 1, false, Image.FORMAT_RGBA8))
+	for state in ["updown", "up", "up_hover", "up_pressed", "up_disabled", "down", "down_hover", "down_pressed", "down_disabled"]: field.add_theme_icon_override(state, none)
+	for state in ["up_background", "up_background_hovered", "up_background_pressed", "up_background_disabled", "down_background", "down_background_hovered", "down_background_pressed", "down_background_disabled", "field_and_buttons_separator", "up_down_buttons_separator"]: field.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	for constant in ["buttons_width", "field_and_buttons_separation", "buttons_vertical_separation", "set_min_buttons_width_from_icons"]: field.add_theme_constant_override(constant, 0)
+	var edit := field.get_line_edit()
+	edit.add_theme_constant_override("minimum_character_width", 0)
+	edit.add_theme_font_override("font", StudioTheme.font(500))
+	edit.add_theme_font_size_override("font_size", 12)
+	edit.add_theme_color_override("font_color", StudioTheme.TEXT2)
+	edit.add_theme_stylebox_override("normal", StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 6, 0, Vector4(4, 2, 2, 2)))
+
+func bound_slider(parent: Node, field: SpinBox) -> HSlider:
+	# Neon slider two-way bound to an existing SpinBox (the SpinBox stays the source of truth).
+	var slider := HSlider.new()
+	slider.min_value = field.min_value
+	slider.max_value = field.max_value
+	slider.step = 1
+	slider.value = field.value
+	slider.focus_mode = Control.FOCUS_NONE  # arrow keys keep stepping frames
+	slider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	slider.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	slider.custom_minimum_size.y = 40
+	slider.tooltip_text = field.tooltip_text
+	slider.value_changed.connect(func(value):
+		if field.value != value: field.value = value)
+	field.value_changed.connect(func(value): slider.set_value_no_signal(value))
+	parent.add_child(slider)
+	return slider
+
+func style_switch_row(control: CheckButton, kind: String, height := 40, sub_line := false) -> Control:
+	# Switch row h40: 16 px #8C93A3 icon, 13 px #F4F6FA label, neon switch on the right. The row
+	# bleeds 8 px into the section padding (mock: padding 0 8, margin 0 -8) so the icon and switch
+	# line up with the other controls and the hover fill has room.
+	control.custom_minimum_size.y = height
+	control.add_theme_font_size_override("font_size", 13)
+	control.add_theme_font_override("font", StudioTheme.font(400))
+	var pad := Vector4(34, 3 if sub_line else 0, 8, 19 if sub_line else 0)
+	var clear := StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, pad)
+	var hover := StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 8, 0, pad)
+	override_button_boxes(control, clear, hover, clear, clear)
+	for suffix in ["", "_mirrored"]: control.add_theme_stylebox_override("hover_pressed" + suffix, hover)
+	var image := TextureRect.new()
+	image.texture = StudioTheme.icon(kind, StudioTheme.TEXT3, 16)
+	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	control.add_child(image)
+	image.set_anchors_preset(Control.PRESET_CENTER_LEFT)
+	image.offset_left = 8; image.offset_right = 24; image.offset_top = -8; image.offset_bottom = 8
+	var bleed := MarginContainer.new()
+	bleed.add_theme_constant_override("margin_left", -8)
+	bleed.add_theme_constant_override("margin_right", -8)
+	if control.get_parent(): control.get_parent().remove_child(control)
+	bleed.add_child(control)
+	return bleed
+
+func onion_sub_line(control: CheckButton) -> void:
+	# "● 1 before ● 1 after" under "Onion skin": the onion shows the previous drawing in blue and the
+	# next one in pink (OnionEditor), so the counts describe what the switch turns on.
+	var line := HBoxContainer.new()
+	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	line.add_theme_constant_override("separation", 5)
+	control.add_child(line)
+	line.position = Vector2(34, 24)
+	for part in [[StudioTheme.DRAWING, "1 before"], [StudioTheme.CAMERA, "1 after"]]:
+		if part[1] == "1 after":
+			var gap := Control.new(); gap.custom_minimum_size.x = 1; gap.mouse_filter = Control.MOUSE_FILTER_IGNORE; line.add_child(gap)
+		var dot := TextureRect.new()
+		dot.texture = StudioTheme.dot(part[0], 7)
+		dot.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+		dot.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		dot.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		line.add_child(dot)
+		overlay_label(line, part[1], StudioTheme.TEXT2, 12)
+
+func style_outline(control: Button, kind := "", height := 40) -> void:
+	# Outline button (theme default) at h40 with 13/500 #F4F6FA text and an optional #8C93A3 icon.
+	control.custom_minimum_size.y = height
+	control.add_theme_font_override("font", StudioTheme.font(500))
+	control.add_theme_font_size_override("font_size", 13)
+	for state in ["font_color", "font_focus_color", "font_hover_color", "font_pressed_color", "font_hover_pressed_color"]: control.add_theme_color_override(state, StudioTheme.TEXT)
+	if kind.is_empty(): return
+	control.icon = StudioTheme.icon(kind, Color.WHITE, 16)
+	control.add_theme_constant_override("icon_max_width", 16)
+	control.add_theme_constant_override("h_separation", 8)
+	for state in ["icon_normal_color", "icon_focus_color", "icon_pressed_color", "icon_hover_pressed_color"]: control.add_theme_color_override(state, StudioTheme.TEXT3)
+	control.add_theme_color_override("icon_hover_color", StudioTheme.TEXT2)
+
+func build_tool_card() -> void:
+	# 64 px card: 36 px neon-ring tile with the white tool icon and a violet glow, title 15/600,
+	# subtitle 12 #B4BAC7, keycap on the right. Driven by tool.selected (refresh_draw_inspector).
+	var card := PanelContainer.new()
+	card.add_theme_stylebox_override("panel", inspector_box(Vector4(16, 0, 16, 0)))
+	card.custom_minimum_size.y = 64
+	drawing_section.add_child(card)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 12)
+	card.add_child(row)
+	var glow := PanelContainer.new()
+	glow.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.TOOL_INNER, Color.TRANSPARENT, 8, 0, Vector4(0, 0, 0, 0), Color(0.482, 0.361, 1, 0.4), 7))
+	glow.custom_minimum_size = Vector2(36, 36)
+	glow.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(glow)
+	var tile := PanelContainer.new()
+	var ring := StudioTheme.neon_ring(8.0, 1.0, StudioTheme.TOOL_INNER, false)
+	ring.set_content_margin_all(0)
+	tile.add_theme_stylebox_override("panel", ring)
+	tile.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	glow.add_child(tile)
+	var image := TextureRect.new()
+	image.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	tile.add_child(image)
+	var text := VBoxContainer.new()
+	text.add_theme_constant_override("separation", 2)
+	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	text.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	text.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(text)
+	var title := overlay_label(text, "", StudioTheme.TEXT, 15, 600)
+	var hint := overlay_label(text, "", StudioTheme.TEXT2, 12)
+	var chip := Label.new()
+	chip.theme_type_variation = "KbdLabel"
+	chip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	chip.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	chip.custom_minimum_size = Vector2(18, 18)
+	chip.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(chip)
+	draw_inspector.merge({"tool_icon": image, "tool_title": title, "tool_hint": hint, "tool_kbd": chip, "tool_sig": ""})
+
+func build_colour_block() -> void:
+	# Five 40 px tiles, r8, gap 8. Tile 1 is the real ColorPickerButton (it still opens the picker)
+	# drawn as the current colour with a 2 px gap and a white ring; tiles 2-5 are recent colours.
+	var block := inspector_block(drawing_section, "Colour")
+	block.add_theme_constant_override("separation", 12)
+	var grid := GridContainer.new()
+	grid.columns = 5
+	grid.add_theme_constant_override("h_separation", 8)
+	grid.add_theme_constant_override("v_separation", 8)
+	block.add_child(grid)
+	move_to(color, grid)
+	color.custom_minimum_size = Vector2(0, 40)
+	color.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	color.self_modulate = Color(1, 1, 1, 0)  # the button's square swatch; the panels below draw it rounded
+	var swatch_style := StudioTheme.flat(color.color, Color(1, 1, 1, 0.14), 8, 1, Vector4(0, 0, 0, 0))
+	var swatch := Panel.new()
+	swatch.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	swatch.add_theme_stylebox_override("panel", swatch_style)
+	color.add_child(swatch)
+	swatch.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var ring_style := StudioTheme.flat(Color.TRANSPARENT, Color.WHITE, 12, 2, Vector4(0, 0, 0, 0))
+	ring_style.draw_center = false
+	ring_style.set_expand_margin_all(4)
+	var ring := Panel.new()
+	ring.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	ring.add_theme_stylebox_override("panel", ring_style)
+	color.add_child(ring)
+	ring.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	color.pressed.connect(func(): color_popup_open = true)
+	color.popup_closed.connect(func(): color_popup_open = false)
+	var tiles: Array = []
+	for i in range(4):
+		var tile := Button.new()
+		tile.focus_mode = Control.FOCUS_NONE
+		tile.custom_minimum_size = Vector2(0, 40)
+		tile.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		tile.pressed.connect(pick_recent_color.bind(i))
+		grid.add_child(tile)
+		tiles.append(tile)
+	recent_base = color.color
+	draw_inspector.merge({"colour_meta": section_meta(block), "swatch": swatch_style, "recent_tiles": tiles, "shown_color": Color(-1, -1, -1, -1)})
+	refresh_recent_tiles()
+
+func colour_name(value: Color) -> String:
+	var html := value.to_html()
+	for row in palette:
+		if row.rgba == html: return row.name
+	var rgb := value.to_html(false)
+	if value.a >= 1.0 and COLOUR_NAMES.has(rgb): return COLOUR_NAMES[rgb]
+	return "#" + rgb.to_upper() + ("" if value.a >= 1.0 else " · %d%%" % roundi(value.a * 100))
+
+func refresh_recent_tiles() -> void:
+	var tiles: Array = draw_inspector.get("recent_tiles", [])
+	for i in range(tiles.size()):
+		var value: Color = recent_colors[i]
+		var normal := StudioTheme.flat(value, Color(1, 1, 1, 0.14), 8, 1, Vector4(0, 0, 0, 0))
+		var hover := StudioTheme.flat(value, Color(1, 1, 1, 0.45), 8, 1, Vector4(0, 0, 0, 0))
+		override_button_boxes(tiles[i], normal, hover, hover, normal)
+		tiles[i].tooltip_text = "Recent colour: " + colour_name(value)
+
+func pick_recent_color(index: int) -> void:
+	# Same guards as a project palette swatch; only the brush colour changes.
+	if index >= recent_colors.size() or (palette_editor and not palette_editor.editable()): return
+	finish_stroke()
+	if color_sampler: color_sampler.cancel()
+	color.color = recent_colors[index]
+
+func track_recent_color() -> void:
+	# The colour in use before a new one becomes the first recent tile (not while the picker popup
+	# is open, so dragging in the picker does not fill the row with in-between colours).
+	var current := color.color
+	if current == recent_base or color_popup_open: return
+	var previous := recent_base
+	recent_base = current
+	var kept: Array = recent_colors.filter(func(c): return c != current and c != previous)
+	kept.push_front(previous)
+	recent_colors = kept.slice(0, 4)
+	refresh_recent_tiles()
+
+func build_brush_block(children: Array) -> void:
+	# "Brush size" + the radius SpinBox as a flat "6 px" value; 40 px preview dot + neon slider.
+	# brush_opacity gets the same value + slider row. Codex captions show in Advanced only.
+	var block := inspector_block(drawing_section, "Brush size")
+	var heading: HBoxContainer = block.get_meta("heading")
+	section_meta(block).visible = false
+	var radius_caption: Node = children[children.find(radius) - 1]
+	move_to(radius, heading)
+	style_value_field(radius, "px")
+	if radius_caption is Label:
+		advanced(move_to(radius_caption, block))
+		radius_caption.theme_type_variation = "CaptionLabel"
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 12)
+	block.add_child(row)
+	var preview := Panel.new()
+	preview.custom_minimum_size = Vector2(40, 40)
+	preview.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	preview.add_theme_stylebox_override("panel", StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1))
+	row.add_child(preview)
+	var dot := Control.new()
+	dot.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	preview.add_child(dot)
+	dot.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	dot.draw.connect(func():
+		# Diameter follows the radius (6 → 10 px as in the mock), capped to the 40 px box.
+		var diameter := clampf(4.0 + radius.value, 3.0, 32.0)
+		var ink := color.color
+		ink.a *= brush_opacity.value / 100.0
+		var centre := dot.size / 2.0
+		if ink.a < 0.3: dot.draw_arc(centre, diameter / 2.0, 0, TAU, 32, StudioTheme.TEXT3, 1.0, true)
+		dot.draw_circle(centre, diameter / 2.0, ink, true, -1.0, true))
+	radius.value_changed.connect(func(_value): dot.queue_redraw())
+	brush_opacity.value_changed.connect(func(_value): dot.queue_redraw())
+	bound_slider(row, radius)
+	var opacity_head := HBoxContainer.new()
+	opacity_head.custom_minimum_size.y = 20
+	block.add_child(opacity_head)
+	overlay_label(opacity_head, "Opacity", StudioTheme.TEXT2, 12, 600).size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var opacity_caption: Node = children[children.find(brush_opacity) - 1]
+	move_to(brush_opacity, opacity_head)
+	style_value_field(brush_opacity, "%")
+	if opacity_caption is Label:
+		advanced(move_to(opacity_caption, block))
+		opacity_caption.theme_type_variation = "CaptionLabel"
+	bound_slider(block, brush_opacity).custom_minimum_size.y = 32
+	move_to(brush_smoothing.get_parent(), block)  # Advanced-only row
+	draw_inspector["brush_dot"] = dot
+
+func style_layer_picker() -> void:
+	# layer_choice as the mock's picker: h40, #101218, 1 px #2C303B, r8, 14 px #4DA3FF chip,
+	# 12 px #8C93A3 chevron. It stays the same OptionButton (items, signal, selection).
+	layer_choice.custom_minimum_size = Vector2(0, 40)
+	layer_choice.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	layer_choice.fit_to_longest_item = false
+	layer_choice.clip_text = true
+	layer_choice.add_theme_font_override("font", StudioTheme.font(500))
+	layer_choice.add_theme_font_size_override("font_size", 13)
+	layer_choice.add_theme_icon_override("arrow", StudioTheme.icon("chevron", StudioTheme.TEXT3, 12))
+	var pad := Vector4(34, 0, 12, 0)
+	override_button_boxes(layer_choice, StudioTheme.flat(StudioTheme.FIELD, StudioTheme.LINE2, 8, 1, pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE2, 8, 1, pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, pad))
+	for state in ["font_color", "font_focus_color", "font_hover_color", "font_pressed_color", "font_hover_pressed_color"]: layer_choice.add_theme_color_override(state, StudioTheme.TEXT)
+	var chip := TextureRect.new()
+	chip.texture = StudioTheme.chip(StudioTheme.DRAWING, 14, 4.0)
+	chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	layer_choice.add_child(chip)
+	chip.set_anchors_preset(Control.PRESET_CENTER_LEFT)
+	chip.offset_left = 12; chip.offset_right = 26; chip.offset_top = -7; chip.offset_bottom = 7
+
+func build_layer_block() -> void:
+	# "Layer" + "N layers"; picker + Layers…; Show and Onion skin switch rows.
+	var block := inspector_block(drawing_section, "Layer")
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 8)
+	block.add_child(row)
+	move_to(layer_choice, row)
+	style_layer_picker()
+	move_to(layer_editor.launch, row)
+	style_outline(layer_editor.launch, "layers")
+	var rows := VBoxContainer.new()
+	rows.add_theme_constant_override("separation", 0)
+	block.add_child(rows)
+	rows.add_child(style_switch_row(layer_visibility, "eye"))
+	var onion: CheckButton = onion_editor.enabled
+	rows.add_child(style_switch_row(onion, "onion", 44, true))
+	onion_sub_line(onion)
+	move_to(onion_editor.opacity.get_parent(), block)  # Advanced-only row
+	draw_inspector["layer_meta"] = section_meta(block)
+	draw_inspector["layer_count"] = -1
+
+func build_next_card() -> void:
+	# margin 0 16 14, pad 12 14, r10, #111318, 1 px #2C303B: 28 px neon-ring arrow tile, title 13/600,
+	# body 12 #B4BAC7 (line height ~1.45). Same conditions as refresh_empty_hint(); hidden otherwise.
+	var holder := MarginContainer.new()
+	for side in ["left", "right"]: holder.add_theme_constant_override("margin_" + side, 16)
+	holder.add_theme_constant_override("margin_top", 14)
+	holder.add_theme_constant_override("margin_bottom", 14)
+	holder.visible = false
+	drawing_section.add_child(holder)
+	var card := PanelContainer.new()
+	card.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.PANEL, StudioTheme.LINE2, 10, 1, Vector4(14, 12, 14, 12)))
+	holder.add_child(card)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 12)
+	card.add_child(row)
+	var tile := PanelContainer.new()
+	var ring := StudioTheme.neon_ring(8.0, 1.5, StudioTheme.PANEL, false)
+	ring.set_content_margin_all(0)
+	tile.add_theme_stylebox_override("panel", ring)
+	tile.custom_minimum_size = Vector2(28, 28)
+	tile.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	row.add_child(tile)
+	var arrow := TextureRect.new()
+	arrow.texture = StudioTheme.icon("arrow-right", Color.WHITE, 14)
+	arrow.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	tile.add_child(arrow)
+	var text := VBoxContainer.new()
+	text.add_theme_constant_override("separation", 4)
+	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	row.add_child(text)
+	var title := overlay_label(text, "", StudioTheme.TEXT, 13, 600)
+	var body := overlay_label(text, "", StudioTheme.TEXT2, 12)
+	for l in [title, body]:
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		l.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+		l.custom_minimum_size.x = 120
+	body.add_theme_constant_override("line_spacing", 3)
+	draw_inspector.merge({"next": holder, "next_title": title, "next_body": body})
+
+func draw_next_step() -> Array:
+	# Mirrors refresh_empty_hint(): Simple Draw only, not while playing or exporting.
+	if advanced_mode or playing or exporting or mode.selected != 0: return []
+	var empty: bool = source.is_empty() and (renderer.world_runtime == null or renderer.world_runtime.instances.is_empty())
+	if empty: return ["Next: add a scene or a model", "Add a 3D scene or a model, move the camera and save a key, then draw on top."]
+	if active_layer < layers.size() and Drawing.cel_at(layers[active_layer], frame).is_empty():
+		return ["Next: draw on frame %d" % frame, "Frame %d has no drawing yet. Press New drawing, then draw on the picture." % frame]
+	return []
+
+func build_new_drawing_block() -> void:
+	# Full-width PrimaryButton h44 (14/600 white, + icon). No copy-drawing shortcut exists in
+	# keyboard_shortcuts, so instead of a keycap hint the visible "Copy drawing here" button stays.
+	var block := VBoxContainer.new()
+	block.add_theme_constant_override("separation", 10)
+	var panel := PanelContainer.new()
+	panel.add_theme_stylebox_override("panel", inspector_box(Vector4(16, 16, 16, 18), true, true))
+	drawing_section.add_child(panel)
+	panel.add_child(block)
+	move_to(new_drawing_button, block)
+	new_drawing_button.theme_type_variation = "PrimaryButton"
+	new_drawing_button.custom_minimum_size.y = 44
+	# Icon + label centred as one group (a Button icon would stick to the left edge): the label is
+	# shifted 12 px right by the padding and the icon sits 8 px before it.
+	new_drawing_button.icon = null
+	var pad := Vector4(36, 0, 12, 0)
+	override_button_boxes(new_drawing_button, StudioTheme.flat(Color("1a1d25"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, pad))
+	var plus := TextureRect.new()
+	plus.texture = StudioTheme.icon("cel", Color.WHITE, 16)
+	plus.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	new_drawing_button.add_child(plus)
+	var text_width := StudioTheme.font(600).get_string_size(new_drawing_button.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
+	plus.set_anchors_preset(Control.PRESET_CENTER)
+	plus.offset_left = -text_width / 2.0 - 12; plus.offset_right = plus.offset_left + 16; plus.offset_top = -8; plus.offset_bottom = 8
+	move_to(copy_drawing_button, block)
+	style_outline(copy_drawing_button)
+	for control in [exposure.get_parent(), exposure_button, delete_cel_button]: move_to(control, block)
+
+func build_draw_inspector() -> void:
+	# Re-arranges drawing_section into the mock's cards. Anything not placed explicitly (a control a
+	# later Codex change adds) lands in "More drawing options" in its original order.
+	var children: Array = drawing_section.get_children()
+	var heading: Node = children[0]
+	heading.visible = false
+	var outer: PanelContainer = drawing_section.get_parent()
+	outer.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.BAR, Color.TRANSPARENT, 0, 0, Vector4(0, 0, 0, 0)))
+	drawing_section.add_theme_constant_override("separation", 0)
+	build_tool_card()
+	var options := PanelContainer.new()
+	options.add_theme_stylebox_override("panel", inspector_box(Vector4(16, 14, 16, 14)))
+	drawing_section.add_child(options)
+	var option_box := VBoxContainer.new()
+	option_box.add_theme_constant_override("separation", 8)
+	options.add_child(option_box)
+	var tool_panels: Array = [fill_editor.panel, color_sampler.panel, drawing_selection_editor.panel]
+	for panel in tool_panels: move_to(panel, option_box)
+	color_sampler.hint.theme_type_variation = "CaptionLabel"
+	draw_inspector.merge({"tool_options": options, "tool_panels": tool_panels})
+	build_colour_block()
+	build_brush_block(children)
+	build_layer_block()
+	build_next_card()
+	build_new_drawing_block()
+	var more := inspector_block(drawing_section, "More drawing options")
+	palette_editor.hint.theme_type_variation = "CaptionLabel"
+	move_to(palette_editor.panel, more)
+	for b in palette_editor.panel.get_children():
+		if b is Button: style_outline(b)
+	more.add_child(style_switch_row(brush_pressure, "hand"))
+	move_to(tool, more)
+	tool.custom_minimum_size.y = 40
+	tool.tooltip_text = "Drawing tool (also in the tool bar over the picture)"
+	for launch in [raster_importer.launch, video_importer.launch, reference_sheet.launch]:
+		move_to(launch, more)
+		style_outline(launch)
+	for child in children:
+		if child != heading and is_instance_valid(child) and child.get_parent() == drawing_section: move_to(child, more)
+	draw_inspector["more"] = more
+	refresh_draw_inspector()
+
+func refresh_draw_inspector() -> void:
+	# Per frame, cheap: every write happens only when the shown value changes.
+	if draw_inspector.is_empty() or not drawing_section.is_visible_in_tree(): return
+	var d := draw_inspector
+	var index := clampi(tool.selected, 0, TOOL_TITLES.size() - 1)
+	var key: String = keyboard_shortcuts.label_for(TOOL_KEYS[index])
+	var signature := "%d|%s" % [index, key]
+	if d.tool_sig != signature:
+		d.tool_sig = signature
+		d.tool_icon.texture = StudioTheme.icon(TOOL_ICONS[index], Color.WHITE, 18)
+		d.tool_title.text = TOOL_TITLES[index]
+		d.tool_hint.text = TOOL_HINTS[index]
+		d.tool_kbd.text = key
+		d.tool_kbd.visible = not key.is_empty()
+	var any := false
+	for panel in d.tool_panels: any = any or panel.visible
+	if d.tool_options.visible != any: d.tool_options.visible = any
+	track_recent_color()
+	if color.color != d.shown_color:
+		d.shown_color = color.color
+		d.swatch.bg_color = color.color
+		d.colour_meta.text = colour_name(color.color)
+		d.brush_dot.queue_redraw()
+	if d.layer_count != layers.size():
+		d.layer_count = layers.size()
+		d.layer_meta.text = "%d layer%s" % [layers.size(), "" if layers.size() == 1 else "s"]
+	var next := draw_next_step()
+	if next.is_empty():
+		if d.next.visible: d.next.visible = false
+	else:
+		if d.next_title.text != next[0]: d.next_title.text = next[0]
+		if d.next_body.text != next[1]: d.next_body.text = next[1]
+		if not d.next.visible: d.next.visible = true
 
 func set_advanced(enabled: bool) -> void:
 	# Presentation only: never reset project values, shot/navigation, transport or undo.
@@ -1951,6 +2477,12 @@ func build_ui() -> void:
 	var scroll := ScrollContainer.new()
 	inspector_scroll = scroll
 	scroll.custom_minimum_size.x = 276
+	if StudioTheme.is_neon():
+		# Neon Pro step 5: 288 px inspector on #0C0D11 with a 1 px #22252E line on its left.
+		scroll.custom_minimum_size.x = 288
+		var inspector_bg := StudioTheme.flat(StudioTheme.BAR, StudioTheme.LINE, 0, 0, Vector4(1, 0, 0, 0))
+		inspector_bg.border_width_left = 1
+		scroll.add_theme_stylebox_override("panel", inspector_bg)
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	middle.add_child(scroll)
 	controls = VBoxContainer.new()
@@ -1995,11 +2527,12 @@ func build_ui() -> void:
 	drawing_section.add_child(brush_pressure)
 	brush_smoothing=advanced_spin(drawing_section,"Stroke smoothing (pixels)",0,32,0)
 	brush_smoothing.tooltip_text="0 keeps the original brush. Larger values reduce jitter by trailing the pointer in canvas pixels; the tail finishes on release. Mouse and tablet; pressure still controls size."
-	icon_button(drawing_section, "New drawing", "cel", func(): create_cel(false), "Start a blank cel at this frame; it holds until the next drawing.")
-	button(drawing_section, "Copy drawing here", func(): create_cel(true)).tooltip_text = "Make an independent copy of the held drawing at this frame."
+	new_drawing_button = icon_button(drawing_section, "New drawing", "cel", func(): create_cel(false), "Start a blank cel at this frame; it holds until the next drawing.")
+	copy_drawing_button = button(drawing_section, "Copy drawing here", func(): create_cel(true))
+	copy_drawing_button.tooltip_text = "Make an independent copy of the held drawing at this frame."
 	exposure = advanced_spin(drawing_section, "Exposure length (frames)", 1, preload("res://src/extended_timing.gd").MAX_FRAMES, 48)
-	advanced(button(drawing_section, "Set held cel exposure", set_exposure))
-	advanced(button(drawing_section, "Delete held cel", delete_cel))
+	exposure_button = advanced(button(drawing_section, "Set held cel exposure", set_exposure))
+	delete_cel_button = advanced(button(drawing_section, "Delete held cel", delete_cel))
 	camera_section = section(controls, "Camera", "camera")
 	camera_help_label = label(camera_section, "Ctrl + left: free camera / WASD
 Left drag: move sideways / up
@@ -2524,6 +3057,7 @@ func _process(delta: float) -> void:
 	refresh_title()
 	refresh_tool_strip() # tool can change without a signal (shortcuts, color sampler)
 	refresh_badges()
+	refresh_draw_inspector()
 	if playing:
 		var seconds := preview_seconds()
 		preview_sample_seconds=seconds

@@ -4887,3 +4887,24 @@ The footer under the timeline keeps its buttons and only takes space in Simple w
 controls and status semantics are unchanged. Classic styles keep the old view. Deviations (Codex
 pill on a second line at 1440, no Turn model, Frame guide line) are in docs/REDESIGN-PORT.md.
 Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 5: inspector Draw panel (Claude, claude/studio-redesign)
+
+The Properties inspector is 288 px on `#0C0D11` with a left hairline, and `section()` is flat in neon
+(padding 18 16, bottom hairline, 12/600 heading, optional meta via `section_meta()`). At start-up,
+`build_draw_inspector()` rearranges `drawing_section` into the mock's cards by moving Codex's
+controls. It does not replace any: a tool card (neon tile, title, hint, keycap; follows
+`tool.selected`) with the fill / sampler / selection panels under it. A Colour row: the real
+ColorPickerButton drawn as the ringed current swatch, plus four session-only recent colours seeded
+coral / sun yellow / sky blue / ink. Brush size: `radius` as a flat "6 px" value with a preview dot and
+a bound neon slider; `brush_opacity` gets the same row. Layer: the picker with a chip and chevron,
+Layers…, and Show / Onion switch rows with "● 1 before ● 1 after". A Next card that uses
+`refresh_empty_hint()`'s conditions and is hidden when there is nothing to do. A 44 px New drawing
+PrimaryButton with the visible "Copy drawing here" under it (there is no copy-drawing shortcut, so
+there is no keycap hint). Then "More drawing options": project colours, tablet pressure, the tool
+dropdown, the Krita and video imports and Reference sheet. Advanced controls stay in their cards and
+are visible in Advanced only. Unknown future children fall through to "More". Drawing logic, palette
+and layer data, defaults and control types are unchanged. Classic styles keep the old card.
+Deviations (dock header kept, tool dropdown still visible in Simple, extra opacity row, kept Codex
+texts, 2 px ring) are in docs/REDESIGN-PORT.md. Linux xvfb: ui, editor, pose, world_selection,
+recovery_write and recovery pass. Windows verify.py was not run.
