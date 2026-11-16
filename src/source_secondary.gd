@@ -1,7 +1,8 @@
 extends RefCounted
 # Imported motion is a bounded HAS backend, separate from the unchanged raw
-# source report. The first qualified profile drives FrontHair1 only.
+# source report. Qualified bounded five-joint backend; capture checks deduplicated.
 const Math = preload("res://src/source_jiggle_math.gd")
+const Chains = preload("res://src/source_chain_math.gd")
 const Bindings = preload("res://src/source_bone_bindings.gd")
 const Model = preload("res://src/model.gd")
 const Bounds = preload("res://src/pose_bounds.gd")
@@ -11,16 +12,34 @@ const PREFIX_SHA := "945d7fd433ddba7f7e8f90cb1cb2c2e7d4c1e26005684ac4a330b23a369
 const SOURCE_SCALE := 0.01905
 const EPS := 0.00002
 const SELECTED_NATIVE := 8
+const SELECTED_NATIVE_IDS := [8,17,18,26,27]
+const EXPECTED_PARENTS := {8:7,17:7,18:17,26:25,27:26}
+const CHAIN_PREFIX_SHA := "f2add968c86ab5b5d6de6cc60586f1d57ecbbdd61b86b93eb2a90bcfbe0e06ba"
 var actor: RefCounted
 var resolution: RefCounted
 var chains: Array = []
+var _chain_inventory_stamp := PackedByteArray()
 var _source_path := ""
 var _skeleton: Skeleton3D
 var _parameters: Dictionary = {}
-var _state: Dictionary = {}
-var _scale := 1.0
+var _bone_specs: Dictionary = {}
+var _solver_bone_specs: Dictionary = {}
+var _capture_configuration_stamp := PackedByteArray()
+var _baseline_guard: RefCounted
+var _baseline_guard_stamp := PackedByteArray()
+const EXPECTED_CAPTURE_NATIVE_IDS := [0, 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 25, 26, 27]
+var _base_scales: Dictionary = {}
+var _chain: RefCounted
+var _trial: RefCounted
+var _configuration_stamp := PackedByteArray()
+var _size_tokens: Dictionary = {}
+var _prefix_scale := 1.0
+var _authored_scale_token := 1.0
 var _tick := 0
 var _alive := false
+var processing_samples := 0
+var processing_total_usec := 0
+var processing_max_usec := 0
 var _binding_stamp := PackedByteArray()
 var _source_modified := 0
 var _source_length := 0
@@ -49,18 +68,25 @@ static func offered(rig: RefCounted) -> bool:
 
 static func anchors(rig: RefCounted) -> Array:
 	if not offered(rig): return []
-	# The importer supplies the numeric glTF-node/HAS identity; never infer it
-	# from a display label. This is only for aiming; create() authenticates it.
+	# Hint only; creation authenticates every numeric crosswalk and binding.
 	var report: Dictionary = rig.data.metadata.native_parameters.native_parameters.source_export_crosswalk
 	var mapping = rig.root.get_meta("has_source_bones",{})
 	if not mapping is Dictionary: return []
-	for row in report.bones:
-		if row is Dictionary and row.get("native_index") == SELECTED_NATIVE:
+	var result: Array = []
+	var seen := {}
+	for native_index in SELECTED_NATIVE_IDS:
+		var matched := false
+		for row in report.bones:
+			if not row is Dictionary or row.get("native_index") != native_index: continue
+			if matched: return []
+			matched = true
 			var node_index = row.get("gltf_node_index")
 			if not (node_index is int or node_index is float) or not is_finite(float(node_index)) or float(node_index) != floor(float(node_index)): return []
 			var id = mapping.get(int(node_index),"")
-			if id is String and rig.bones.has(id): return [{"kind":"bone","id":id}]
-	return []
+			if not id is String or not rig.bones.has(id) or seen.has(id): return []
+			seen[id] = true; result.append({"kind":"bone","id":id})
+		if not matched: return []
+	return result
 
 static func vector64(value: Vector3) -> Array:
 	return [float(value.x),float(value.y),float(value.z)]
@@ -121,49 +147,104 @@ static func create(rig: RefCounted) -> Dictionary:
 	if not offered(rig): return {"error":"Imported hair motion is not qualified for this model. Use the loose-part setup instead."}
 	var bound: RefCounted = Bindings.resolve(rig)
 	if bound.status != "bound_inactive" or bound.bindings.size() != 69 or bound.rule_owner_ids.size() != 49 or bound.source_sha256 != GLB_SHA or bound.jiggle_wire_sha256 != WIRE_SHA: return {"error":"The imported hair bindings changed. Reopen the original model or use loose-part setup."}
-	var binding: RefCounted = bound.bindings[SELECTED_NATIVE]
-	var sk: Skeleton3D = binding.skeleton
-	if binding.native_parent_index != 7 or not sk.is_bone_enabled(binding.skeleton_bone_index): return {"error":"The imported front-hair joint is unavailable."}
-	for index in range(sk.get_bone_count()):
-		if not sk.is_bone_enabled(index): return {"error":"Imported hair currently needs all source joints enabled."}
-		if sk.get_bone_parent(index) == binding.skeleton_bone_index: return {"error":"The imported front-hair joint no longer matches its leaf profile."}
+	var sk: Skeleton3D = bound.bindings[SELECTED_NATIVE].skeleton
 	var error := context_error(rig,sk)
 	if not error.is_empty(): return {"error":error}
-	var native: Dictionary = rig.data.metadata.native_parameters.native_parameters
-	var rule: Dictionary = {}
-	for entry in native.source_jiggle.rules:
-		if entry.native_bone_index == SELECTED_NATIVE: rule = entry
-	if rule.is_empty() or rule.raw_rule_flags != Math.FLAGS or rule.unknown_rule_flag_bits != 0 or rule.binary_provenance.prefix_sha256 != PREFIX_SHA: return {"error":"Imported front-hair coefficients do not match the supported profile."}
-	var mapped := frame64(rig.bone_transform(binding.has_id))
-	if mapped.has("error"): return mapped
-	var overrides := {}
-	for key in Math.defaults():
-		if key != "raw_rule_flags": overrides[key] = rule.parameters[key]
-	# GLB positions already contain source conversion. Scale native rule length
-	# and acceleration once; the transient HAS world input is already in metres.
-	var factor: float = SOURCE_SCALE*float(mapped.scale)
-	overrides.length = float(overrides.length)*factor
-	overrides.tip_mass = float(overrides.tip_mass)*factor
-	var parameters := Math.parameters(overrides)
-	if parameters.has("error"): return parameters
+	if rig.order.size() != 69 or rig.bones.size() != 69: return {"error":"The imported hair binding inventory is incomplete."}
+	var scale_token = rig.data.get("scale")
+	if not (scale_token is int or scale_token is float) or not is_finite(float(scale_token)) or float(scale_token) <= 0.0: return {"error":"Imported hair needs a positive authored scale."}
+	var prefix := frame64(sk.global_transform)
+	if prefix.has("error"): return prefix
 	var candidate = new()
-	candidate.actor = rig
-	candidate.resolution = bound
-	candidate._skeleton = sk
+	candidate.actor = rig; candidate.resolution = bound; candidate._skeleton = sk
 	candidate._source_path = str(rig.data.source)
-	candidate._parameters = parameters.parameters
-	candidate._scale = mapped.scale
-	candidate._state = {"tip":Math.tip(mapped.goal,parameters.parameters),"velocity":[0.0,0.0,0.0]}
-	candidate.chains = [{"ids":[binding.has_id],"source":{"joints":[{"binding":{"kind":"bone","id":binding.has_id}}]}}]
+	candidate._prefix_scale = prefix.scale; candidate._authored_scale_token = float(scale_token)
+	for index in range(69):
+		var binding: RefCounted = bound.bindings[index]
+		var id: String = binding.has_id
+		if binding.skeleton != sk or not rig.bones.has(id) or rig.bones[id].skeleton != sk or rig.bones[id].index != binding.skeleton_bone_index: candidate.dispose(); return {"error":"The imported hair skeleton bindings changed."}
+		var parent_index: int = binding.native_parent_index
+		var expected_parent: String = "@root" if parent_index < 0 else str(bound.by_native[parent_index])
+		if rig.parent_id(id) != expected_parent: candidate.dispose(); return {"error":"The imported hair parent mapping changed."}
+		var base := frame64(rig.bones[id].base)
+		if base.has("error"): candidate.dispose(); return base
+		candidate._base_scales[id] = float(base.scale)
+		candidate._bone_specs[id] = {"parent":null if parent_index < 0 else bound.by_native[parent_index],"base":{"origin":base.goal.base.duplicate(true),"basis":base.rotation.duplicate(true),"scale":float(base.scale)}}
+	for index in SELECTED_NATIVE_IDS:
+		var binding: RefCounted = bound.bindings[index]
+		if binding.native_parent_index != EXPECTED_PARENTS[index]: candidate.dispose(); return {"error":"The imported hair parent profile changed."}
+		var children: Array = []
+		for child in range(69):
+			if bound.bindings[child].native_parent_index == index: children.append(child)
+		var expected: Array = [18] if index == 17 else [27] if index == 26 else []
+		if children != expected: candidate.dispose(); return {"error":"The imported hair subtree no longer matches its bounded profile."}
+		var rule: Dictionary = {}
+		for entry in rig.data.metadata.native_parameters.native_parameters.source_jiggle.rules:
+			if entry.native_bone_index == index: rule = entry
+		var prefix_sha: String = PREFIX_SHA if index == SELECTED_NATIVE else CHAIN_PREFIX_SHA
+		if rule.is_empty() or rule.raw_rule_flags != Math.FLAGS or rule.unknown_rule_flag_bits != 0 or rule.binary_provenance.prefix_sha256 != prefix_sha or not rule.parameters is Dictionary: candidate.dispose(); return {"error":"Imported hair coefficients do not match the supported profile."}
+		var overrides := {}
+		for key in Math.defaults():
+			if key == "raw_rule_flags": continue
+			if not rule.parameters.has(key): candidate.dispose(); return {"error":"The imported hair coefficients are incomplete."}
+			overrides[key] = rule.parameters[key]
+		var parameters := Math.parameters(overrides)
+		if parameters.has("error"): candidate.dispose(); return parameters
+		candidate._parameters[binding.has_id] = parameters.parameters.duplicate(true)
+		candidate.chains.append({"ids":[binding.has_id],"source":{"joints":[{"binding":{"kind":"bone","id":binding.has_id}}]}})
+
+	# All69 imported bindings/base frames are still authenticated above. Only the
+	# exact complete ancestor closure enters the unchanged scalar step core.
+	var keep := {}
+	for native_index in SELECTED_NATIVE_IDS:
+		var current: Variant = bound.by_native[native_index]
+		var seen := {}
+		while current != null:
+			if seen.has(current) or not candidate._bone_specs.has(current): candidate.dispose(); return {"error":"The imported hair ancestor closure changed."}
+			seen[current] = true; keep[current] = true
+			current = candidate._bone_specs[current].parent
+	var observed_native := []
+	for native_index in range(69):
+		var id: String = bound.by_native[native_index]
+		if keep.has(id):
+			observed_native.append(native_index)
+			candidate._solver_bone_specs[id] = candidate._bone_specs[id].duplicate(true)
+	if observed_native != EXPECTED_CAPTURE_NATIVE_IDS: candidate.dispose(); return {"error":"The imported hair ancestor profile changed."}
+	candidate._capture_configuration_stamp = var_to_bytes([candidate._bone_specs,candidate._solver_bone_specs,candidate._base_scales])
+
+	# Both runners own independent configuration/state. Only the authoritative
+	# runner is committed; the trial absorbs all math/output failures.
+	var primary := Chains.create(candidate._solver_bone_specs,candidate._parameters,SOURCE_SCALE,[0.0,-1.0,0.0])
+	if primary.has("error"): candidate.dispose(); return primary
+	var trial := Chains.create(candidate._solver_bone_specs,candidate._parameters,SOURCE_SCALE,[0.0,-1.0,0.0])
+	if trial.has("error"): candidate.dispose(); return trial
+	candidate._chain = primary.actor; candidate._trial = trial.actor
+	var guard := Chains.create(candidate._bone_specs,candidate._parameters,SOURCE_SCALE,[0.0,-1.0,0.0])
+	if guard.has("error"): candidate.dispose(); return guard
+	candidate._baseline_guard = guard.actor
+	candidate._baseline_guard_stamp = candidate.configuration_stamp(candidate._baseline_guard)
+	var initial := candidate.capture_baseline()
+	if initial.has("error"): candidate.dispose(); return initial
+	var seeded: Dictionary = candidate._chain.reset(initial.locals,initial.prefix)
+	if seeded.has("error"): candidate.dispose(); return seeded
+	seeded = candidate._trial.reset(initial.locals,initial.prefix)
+	if seeded.has("error"): candidate.dispose(); return seeded
+	candidate._size_tokens = candidate._chain.snapshot().sizes.duplicate(true)
+	candidate._configuration_stamp = candidate.configuration_stamp(candidate._chain)
+	if candidate.configuration_stamp(candidate._trial) != candidate._configuration_stamp: candidate.dispose(); return {"error":"The imported hair trial configuration differs."}
 	var source := FileAccess.open(candidate._source_path,FileAccess.READ)
-	if source == null: return {"error":"The imported hair source is unavailable."}
+	if source == null: candidate.dispose(); return {"error":"The imported hair source is unavailable."}
 	candidate._source_length = source.get_length()
 	candidate._source_header = source.get_buffer(12)
 	source.close()
-	if candidate._source_header.size() != 12: return {"error":"The imported hair source header is unavailable."}
+	if candidate._source_header.size() != 12: candidate.dispose(); return {"error":"The imported hair source header is unavailable."}
 	candidate._source_modified = FileAccess.get_modified_time(candidate._source_path)
 	candidate._binding_stamp = candidate.binding_stamp()
-	if candidate._binding_stamp.is_empty(): return {"error":"The imported hair binding inventory is incomplete."}
+	if candidate._binding_stamp.is_empty(): candidate.dispose(); return {"error":"The imported hair binding inventory is incomplete."}
+	# The public chain/airflow inventory is mutable for legacy callers. Freeze
+	# exact order, ids and source.joints.binding as a separate admission stamp.
+	if candidate.chains.size() != SELECTED_NATIVE_IDS.size(): candidate.dispose(); return {"error":"The imported hair airflow inventory is incomplete."}
+	candidate._chain_inventory_stamp = var_to_bytes(candidate.chains)
 	candidate._alive = true
 	return {"runner":candidate}
 
@@ -183,7 +264,93 @@ func binding_stamp() -> PackedByteArray:
 		values.append([id,info.get("index"),info.get("name"),info.get("path"),info.get("base"),sk.get_instance_id() if is_instance_valid(sk) and sk is Skeleton3D else 0])
 	return var_to_bytes(values)
 
+func airflow_error() -> String:
+	# Shared internal ABI with SecondaryLive: call before reading public chains.
+	if not _alive or chains.size() != SELECTED_NATIVE_IDS.size() or var_to_bytes(chains) != _chain_inventory_stamp: return "The imported hair chain or airflow bindings changed; its preview was stopped."
+	return ""
+
+func configuration_stamp(value: RefCounted) -> PackedByteArray:
+	# Internal immutable configuration only, never solver states or authored data.
+	return var_to_bytes([value._bones,value._order,value._parameters,value._source_scale,value._gravity])
+
+func state_error(snapshot: Dictionary, expected_tick: int) -> String:
+	if typeof(snapshot.get("active")) != TYPE_BOOL or snapshot.active != true or typeof(snapshot.get("tick")) != TYPE_INT or snapshot.tick != expected_tick or not snapshot.get("states") is Dictionary or not snapshot.get("sizes") is Dictionary: return "The imported hair simulation inventory changed."
+	if snapshot.states.size() != 5 or var_to_bytes(snapshot.sizes) != var_to_bytes(_size_tokens): return "The imported hair simulation size inventory changed."
+	for id in _parameters:
+		var state = snapshot.states.get(id)
+		if not state is Dictionary or state.size() != 2 or not Math.vector_ok(state.get("tip")) or not Math.vector_ok(state.get("velocity")): return "The imported hair simulation state changed."
+	return ""
+
+func capture_baseline() -> Dictionary:
+	# Fresh synchronous same-call snapshot, never a previous-tick authored pose.
+	if var_to_bytes([_bone_specs,_solver_bone_specs,_base_scales]) != _capture_configuration_stamp: return {"error":"The imported hair capture configuration changed."}
+	if configuration_stamp(_baseline_guard) != _baseline_guard_stamp: return {"error":"The imported hair baseline guard configuration changed."}
+	var raw_prefix: Transform3D = _skeleton.global_transform
+	var observed_prefix := frame64(raw_prefix)
+	if observed_prefix.has("error"): return observed_prefix
+	if absf(float(observed_prefix.scale)-_prefix_scale) > EPS*_prefix_scale: return {"error":"Turn imported hair off before resizing the model or its parent."}
+	var prefix := {"origin":observed_prefix.goal.base.duplicate(true),"basis":observed_prefix.rotation.duplicate(true),"scale":_prefix_scale}
+	var locals := {}
+	var raw_locals := {}
+	var raw_worlds := {}
+	var mapped_worlds := {}
+	for id in _bone_specs:
+		var info: Dictionary = actor.bones[id]
+		var local: Transform3D = _skeleton.get_bone_pose(info.index)
+		var actual: Transform3D = actor.bone_transform(id)
+		var mapped: Dictionary = frame64(local)
+		if mapped.has("error"): return mapped
+		var actual_frame: Dictionary = frame64(actual)
+		if actual_frame.has("error"): return actual_frame
+		var stable: float = _base_scales[id]
+		if absf(float(mapped.scale)-stable) > EPS*stable: return {"error":"The imported hair local scale changed; turn its preview off."}
+		raw_locals[id] = local; raw_worlds[id] = actual; mapped_worlds[id] = actual_frame
+		if true:
+			locals[id] = {"origin":mapped.goal.base.duplicate(true),"basis":mapped.rotation.duplicate(true),"scale":stable}
+	# Retain actual Transform3D parent/local closure for every one of69 bones.
+	for id in _bone_specs:
+		var parent: Variant = _bone_specs[id].parent
+		var parent_world: Transform3D = raw_prefix if parent == null else raw_worlds[parent]
+		var actual: Transform3D = raw_worlds[id]
+		var composed: Transform3D = parent_world*raw_locals[id]
+		if not composed.origin.is_finite() or not composed.basis.is_finite(): return {"error":"The imported hair parent pose changed."}
+		var size: float = mapped_worlds[id].scale
+		var guard: float = EPS*maxf(1.0,size)
+		if composed.origin.distance_to(actual.origin) > EPS*size: return {"error":"The imported hair parent pose changed."}
+		for i in range(3):
+			for j in range(3):
+				if absf(composed.basis[i][j]-actual.basis[i][j]) > guard: return {"error":"The imported hair parent pose changed."}
+	# Every local was just validated by unchanged frame64/Math.goal above.
+	# Its scale is the stamped base token admitted by the full69 guard config.
+	# Keep the prefix check and every unchanged compose/result-frame check;
+	# skip only the second identical69-local input validation pass.
+	var prefix_error: String = Chains.frame_error(prefix)
+	if not prefix_error.is_empty(): return {"error":prefix_error}
+	var full_worlds := {}
+	for id in _baseline_guard._order:
+		var parent: Variant = _baseline_guard._bones[id].parent
+		var parent_world: Dictionary = prefix if parent == null else full_worlds[parent]
+		var made: Dictionary = Chains.compose(parent_world,locals[id])
+		if made.has("error"): return made
+		full_worlds[id] = made.frame
+	var worlds: Dictionary = {"worlds":full_worlds}
+	if worlds.has("error"): return worlds
+	for id in _bone_specs:
+		var actual: Dictionary = mapped_worlds[id]
+		var target: Dictionary = worlds.worlds[id]
+		if absf(float(actual.scale)-float(target.scale)) > EPS*float(target.scale): return {"error":"The imported hair world scale changed; turn its preview off."}
+		var wanted: Array = target.origin
+		var actual_raw: Transform3D = raw_worlds[id]
+		if actual_raw.origin.distance_to(Vector3(wanted[0],wanted[1],wanted[2])) > EPS*float(target.scale): return {"error":"The imported hair authored parent chain differs from its supported profile."}
+		for i in range(3):
+			for j in range(3):
+				if absf(float(actual.rotation[i][j])-float(target.basis[i][j])) > EPS: return {"error":"The imported hair authored orientation differs from its supported profile."}
+	var selected_locals := {}
+	for id in _solver_bone_specs: selected_locals[id] = locals[id]
+	return {"locals":selected_locals,"prefix":prefix}
+
 func step(delta: float,wind: Vector3,forces: Array = []) -> Dictionary:
+	var processing_started: int = Time.get_ticks_usec()
 	if not _alive or not is_instance_valid(actor.root) or not is_instance_valid(_skeleton) or not offered(actor) or actor.data.get("source") != _source_path: return {"error":"The imported hair source changed; its preview was stopped."}
 	if not is_finite(delta) or absf(delta-Math.DT) > 1e-9: return {"error":"Imported hair needs the fixed 120 Hz simulation clock."}
 	if not FileAccess.file_exists(_source_path) or FileAccess.get_modified_time(_source_path) != _source_modified or binding_stamp() != _binding_stamp: return {"error":"The imported source or joint setup changed; its hair preview was stopped."}
@@ -195,49 +362,68 @@ func step(delta: float,wind: Vector3,forces: Array = []) -> Dictionary:
 	if source_length != _source_length or source_header != _source_header: return {"error":"The imported hair source changed; its preview was stopped."}
 	var error := context_error(actor,_skeleton)
 	if not error.is_empty(): return {"error":error}
-	var id: String = chains[0].ids[0]
-	if not actor.bones.has(id) or actor.bones[id].skeleton != _skeleton or actor.bones[id].index != resolution.bindings[SELECTED_NATIVE].skeleton_bone_index or not _skeleton.is_bone_enabled(actor.bones[id].index) or actor.parent_id(id) != resolution.by_native[7]: return {"error":"The imported hair binding changed; its preview was stopped."}
-	var mapped := frame64(actor.bone_transform(id))
-	if mapped.has("error"): return mapped
-	if absf(float(mapped.scale)-_scale) > EPS*_scale: return {"error":"Turn imported hair off before resizing the model."}
-	var force: Vector3 = forces[0] if forces.size() == 1 else wind
-	if not force.is_finite() or force.length() > 1000000.0 or forces.size() > 1: return {"error":"Imported hair received an invalid airflow input."}
-	var solved := Math.solve_one(_parameters,mapped.goal,_state,vector64(force),[0.0,-1.0,0.0])
+	if chains.size() != SELECTED_NATIVE_IDS.size() or var_to_bytes(chains) != _chain_inventory_stamp: return {"error":"The imported hair chain or airflow bindings changed; its preview was stopped."}
+	var scale_token = actor.data.get("scale")
+	if not (scale_token is int or scale_token is float) or not is_finite(float(scale_token)) or float(scale_token) != _authored_scale_token: return {"error":"Turn imported hair off before resizing the model."}
+	if not forces.is_empty() and forces.size() != SELECTED_NATIVE_IDS.size(): return {"error":"Imported hair needs one airflow input per selected joint."}
+	var accelerations := {}
+	var authored_positions := {}
+	for i in range(SELECTED_NATIVE_IDS.size()):
+		var index: int = SELECTED_NATIVE_IDS[i]
+		var id: String = resolution.by_native[index]
+		var binding: RefCounted = resolution.bindings[index]
+		if not actor.bones.has(id) or actor.bones[id].skeleton != _skeleton or actor.bones[id].index != binding.skeleton_bone_index or not _skeleton.is_bone_enabled(binding.skeleton_bone_index) or actor.parent_id(id) != resolution.by_native[EXPECTED_PARENTS[index]]: return {"error":"The imported hair binding changed; its preview was stopped."}
+		var force = wind if forces.is_empty() else forces[i]
+		if not force is Vector3 or not force.is_finite() or force.length() > 1000000.0: return {"error":"Imported hair received an invalid airflow input."}
+		accelerations[id] = vector64(force)
+		if not actor.live_pose is Dictionary and _skeleton.get_bone_pose(binding.skeleton_bone_index).origin != actor.bones[id].base.origin: return {"error":"Imported hair needs a fresh authored pose baseline before stepping."}
+		var authored: Dictionary = actor.live_pose.get(id,Model.identity()) if actor.live_pose is Dictionary else Model.identity()
+		if not authored.get("position") is Array or authored.position.size() != 3: return {"error":"The imported hair authored translation is incomplete."}
+		for value in authored.position:
+			if not (value is int or value is float) or not is_finite(float(value)): return {"error":"The imported hair authored translation is invalid."}
+		authored_positions[id] = authored.position.duplicate(true)
+	# Snapshot copies include every rule state and exact size/tick/active status.
+	# The two configurations were constructed independently from immutable specs.
+	var committed: Dictionary = _chain.snapshot()
+	if configuration_stamp(_chain) != _configuration_stamp or configuration_stamp(_trial) != _configuration_stamp: return {"error":"The imported hair simulation configuration changed."}
+	var invalid := state_error(committed,_tick)
+	if not invalid.is_empty(): return {"error":invalid}
+	var baseline := capture_baseline()
+	if baseline.has("error"): return baseline
+	_trial._states = committed.states.duplicate(true)
+	_trial._sizes = committed.sizes.duplicate(true)
+	_trial._tick = int(committed.tick); _trial._active = true
+	var solved: Dictionary = _trial.step(_tick+1,baseline.locals,baseline.prefix,accelerations)
 	if solved.has("error"): return solved
-	var info: Dictionary = actor.bones[id]
-	var parent: String = actor.parent_id(id)
-	if parent == "@root": return {"error":"The imported hair parent changed."}
-	var parent_world: Transform3D = actor.bone_transform(parent)
-	var local: Transform3D = _skeleton.get_bone_pose(info.index)
-	var current: Transform3D = actor.bone_transform(id)
-	var closure: Transform3D = parent_world*local
-	if closure.origin.distance_to(current.origin) > EPS*_scale: return {"error":"The imported hair parent pose changed."}
-	for i in range(3):
-		for j in range(3):
-			if absf(closure.basis[i][j]-current.basis[i][j]) > EPS*maxf(1.0,_scale): return {"error":"The imported hair parent pose changed."}
-	var pf := frame64(parent_world)
-	var bf := frame64(info.base)
-	if pf.has("error"): return pf
-	if bf.has("error"): return bf
-	var desired := frame64(Transform3D(basis64(solved.basis),current.origin))
-	if desired.has("error"): return desired
-	var q: Quaternion = (basis64(bf.rotation).get_rotation_quaternion().normalized().inverse()*basis64(pf.rotation).get_rotation_quaternion().normalized().inverse()*basis64(desired.rotation).get_rotation_quaternion().normalized()).normalized()
-	var authored: Dictionary = actor.live_pose.get(id,Model.identity()) if actor.live_pose is Dictionary else Model.identity()
-	var pose := {id:{"position":authored.position.duplicate(true),"rotation_xyzw":[q.x,q.y,q.z,q.w]}}
-	_state = solved.state.duplicate(true)
-	_tick += 1
+	invalid = state_error(_trial.snapshot(),_tick+1)
+	if not invalid.is_empty(): return {"error":invalid}
+	if not solved.get("delta_bases") is Dictionary or solved.delta_bases.size() != 5: return {"error":"The imported hair solver returned an incomplete pose."}
+	var pose := {}
+	for index in SELECTED_NATIVE_IDS:
+		var id: String = resolution.by_native[index]
+		if not solved.delta_bases.has(id): return {"error":"The imported hair solver missed a selected joint."}
+		var check_goal := Math.goal([0.0,0.0,0.0],solved.delta_bases[id])
+		if check_goal.has("error"): return check_goal
+		var q: Quaternion = basis64(solved.delta_bases[id]).get_rotation_quaternion().normalized()
+		if not is_finite(q.x) or not is_finite(q.y) or not is_finite(q.z) or not is_finite(q.w): return {"error":"The imported hair solver returned an invalid rotation."}
+		pose[id] = {"position":authored_positions[id].duplicate(true),"rotation_xyzw":[q.x,q.y,q.z,q.w]}
+	# This swap is the only state commit. Failure above leaves authoritative
+	# states/sizes/tick/status, authored data and visual overlays untouched.
+	var previous: RefCounted = _chain
+	_chain = _trial; _trial = previous; _tick += 1
+	var processing_elapsed: int = maxi(0,Time.get_ticks_usec()-processing_started)
+	processing_samples += 1; processing_total_usec += processing_elapsed; processing_max_usec = maxi(processing_max_usec,processing_elapsed)
 	return {"pose":pose}
 
 func dispose() -> void:
 	_alive = false
-	_state.clear()
-	_parameters.clear()
-	_binding_stamp.clear()
-	_source_header.clear()
-	chains.clear()
-	resolution = null
-	actor = null
-	_skeleton = null
+	if _chain: _chain.stop(); _chain = null
+	if _trial: _trial.stop(); _trial = null
+	if _baseline_guard: _baseline_guard.stop(); _baseline_guard = null
+	_baseline_guard_stamp.clear(); _capture_configuration_stamp.clear(); _solver_bone_specs.clear()
+	_parameters.clear(); _bone_specs.clear(); _base_scales.clear(); _size_tokens.clear(); _configuration_stamp.clear()
+	_binding_stamp.clear(); _source_header.clear(); _chain_inventory_stamp.clear(); chains.clear()
+	_tick = 0; resolution = null; actor = null; _skeleton = null
 
 func active() -> bool:
 	return _alive

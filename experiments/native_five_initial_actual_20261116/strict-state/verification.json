@@ -1,0 +1,41 @@
+{
+  "format": "has_source_native_five_state_verification_2",
+  "passed": true,
+  "phases": [
+    {
+      "phase": "parse",
+      "pid": 83476,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "owned_child_terminated": false,
+      "owned_child_forced_kill": false,
+      "seconds": 1.8152674999982992,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "phase": "state",
+      "pid": 88964,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "owned_child_terminated": false,
+      "owned_child_forced_kill": false,
+      "seconds": 19.01191249999829,
+      "error_markers": [],
+      "passed": true
+    }
+  ],
+  "actual_result_valid": true,
+  "checks_observed": 266,
+  "failures_observed": 0,
+  "preservation": {
+    "source": true,
+    "read_only_inputs": true,
+    "runtimes": true
+  },
+  "runtime_lease_released": true,
+  "test_result_sha256": "fe0eecb967e61dac14c8822d59ede1fbe78a161cbfc9d22c49ad4c5556a56008",
+  "observed_utc": "2026-11-16T03:49:34.786232+00:00"
+}

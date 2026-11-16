@@ -1,0 +1,94 @@
+{
+  "format": "has_chain_preregistered_source_count_audit_1",
+  "status": "SOURCE_ONLY_COUNTS_NOT_ENGINE_RESULTS",
+  "frozen_index_sha256": "5f204a52d82a61174da1dbb33da3c132f636b5d8bc5eba39f7679279599782c0",
+  "frozen_index_entries_verified": 23,
+  "frozen_file_mismatches": [],
+  "math": {
+    "source_sha256": "062b182c7b876658ec7b54132ec4d0125170b7506ad7bc469f92e2eb4cf61e32",
+    "expected_checks": 4012,
+    "formula": "12 initial +1000 tilted cases *2bones *2vector_close calls",
+    "initial_vector_checks": 5,
+    "initial_direct_checks": 7,
+    "zero_cone_vector_checks": 4000,
+    "completed_actor_ticks": 1002,
+    "completed_rule_evaluations": 2004,
+    "created_actors": 1001,
+    "explicit_refused_step_calls": 3,
+    "early_error": "Any returned error or missing expected count is a failed attempt, never a smaller successful scope"
+  },
+  "native": {
+    "source_sha256": "d25e37499f8a4b076a65e61a1a97c7ad7fb0d27828f1bd7a2bc76e9f6b0a8b5f",
+    "inherited_harness_sha256": "2abbb08831586323878cabb504e5400406144ad34e4b890791539b68633f722c",
+    "per_profile_terms": {
+      "authored_baseline_bones": 69,
+      "fixed_ticks": 120,
+      "rule_checks_per_tick": 12,
+      "other_checks_per_tick": 2,
+      "unaffected_after_motion": 1,
+      "Off_and_binding_checks": 4,
+      "nonzero_pair_motion_checks": 2
+    },
+    "control_profile_checks": 1754,
+    "each_nonzero_profile_checks": 1756,
+    "profiles_per_root": 6,
+    "nonzero_profiles_per_root": 5,
+    "profile_checks_per_root": 10534,
+    "external_response_checks_per_root": 8,
+    "repeat_checks_per_root": 1,
+    "checks_per_root": 10543,
+    "root_cases": 2,
+    "finish_source_preservation_checks": 1,
+    "expected_checks": 21087,
+    "rows": 12,
+    "actor_ticks": 1440,
+    "rule_evaluations": 5760,
+    "capture_calls": 54,
+    "per_tick_expected_unchanged_world_bones": 65,
+    "inheritance": "Parent _initialize dispatches the child run; child overrides run/root_case/owned_pose/finish. Inherited check increments once per call. No old leaf simulation/root_case/finish body executes."
+  },
+  "staging": {
+    "synthetic_math_only": [
+      "leaf_candidate.gd",
+      "chain_solver.gd",
+      "math_checks.gd"
+    ],
+    "math_entry": "Root-owned SceneTree wrapper preloads math_checks.gd; new().run(). RefCounted math_checks.gd is not a direct --script MainLoop entry.",
+    "actual_native": [
+      "leaf_candidate.gd",
+      "leaf_adapter.gd",
+      "weighted_capture.gd",
+      "leaf_harness.gd",
+      "chain_solver.gd",
+      "model_adapter.gd",
+      "chain_capture.gd",
+      "chain_harness.gd"
+    ],
+    "native_entry": "chain_harness.gd",
+    "source_lock": "Create a NEW reviewed current source lock and new lease; the frozen packet source lock intentionally contains the earlier production snapshot. Do not overwrite frozen packet.",
+    "guards": [
+      "Full/FK/math/leaf PASS predecessor proofs and authoritative closure",
+      "Exact approved headless engine and fresh result path",
+      "Exact original4e6ac7... GLB and adjacentb807fc... parameters report",
+      "Model/SceneIO/Shape/Skin code from current reviewed staged product source",
+      "Original native MDL/VVD read-only; no coordinates in public result"
+    ]
+  },
+  "source_review": {
+    "overridden_signatures_match_parent": true,
+    "new_constants_or_member_collisions_observed": false,
+    "global_class_or_tool_registration_observed": false,
+    "obvious_preload_cycle_observed": false,
+    "Godot_parser_invoked": false,
+    "Godot_runtime_invoked": false,
+    "GPU_or_material_fidelity_tested": false,
+    "cautions": [
+      "Dictionary-derived inferred local types are unparsed; first real parse remains authoritative.",
+      "Strict1e-9 scalar basis validation is downstream of the qualified2e-5 float32 boundary adapter.",
+      "Accumulated69-bone scalar FK correction has not been measured on this new bridge; baseline gates may legitimately refuse.",
+      "Positive uniform scale and fixed Model base-scale contract only; native25 remains unsimulated/authored.",
+      "Skin/mesh arrays are measured in memory and hashed; this does not establish shader/material/normal/GPU fidelity.",
+      "Historical2e-5 normal-fidelity failure stays failed."
+    ]
+  }
+}

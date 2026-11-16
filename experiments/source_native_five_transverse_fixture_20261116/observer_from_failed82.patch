@@ -1,0 +1,131 @@
+--- retained-failed82/observer
++++ proposed-transverse83/observer
+@@ -150,8 +150,8 @@
+ 	if kind in ["aimed","disabled"]:editor.aim.pressed.emit()
+ 	else:
+ 		var fan: RefCounted=app.renderer.world_runtime.instance(fan_id)
+-		var center: Vector3=actor().bone_transform(binding.has_id).origin
+ 		var base: Dictionary=editor.aimed_world(actor(),1.0)
++		var center: Vector3=base.transform*Vector3(0,.85,1.5)
+ 		var direction: Vector3=base.transform.basis.z.normalized()
+ 		if kind=="opposite":direction=-direction
+ 		var origin: Vector3=center-direction*1.5-Vector3.UP*.85
+@@ -162,6 +162,59 @@
+ 		app.pose_editor.selected="@root";app.pose_editor.set_delta(local.origin,local.basis.get_rotation_quaternion());app.pose_editor.commit(before,true)
+ 	editor.update_status()
+ 	await settled()
++
++func transverse_camera_fixture() -> void:
++	# Establish a bending experiment instead of a nearly axial wind experiment.
++	# This changes only the observer's camera fixture, never product airflow.
++	var center:=Vector3.ZERO;var chosen: Array=selected_bindings()
++	for entry in chosen:center+=actor().bone_transform(entry.has_id).origin
++	center/=float(chosen.size())
++	var forward: Vector3=actor().bone_transform(binding.has_id).basis.z.normalized()
++	var direction: Vector3=forward.cross(Vector3.UP)
++	if direction.length_squared()<.000000000001:direction=Vector3.RIGHT
++	direction=direction.normalized()
++	var camera: Camera3D=app.renderer.camera
++	var distance: float=maxf(2.0,camera.global_position.distance_to(center))
++	var height: float=camera.global_position.y-center.y
++	camera.global_position=center-direction*distance+Vector3.UP*height;camera.look_at(center,Vector3.UP)
++
++func controlled_fixture_admission() -> void:
++	# Root keys and actual root geometry stay fixed during fan comparisons.
++	app.set_frame(0);await settled();var root0: Transform3D=actor().root.global_transform
++	app.set_frame(24);await settled();var root24: Transform3D=actor().root.global_transform
++	var root_keys_equal: bool=actor().sample_transform(0)==actor().sample_transform(24)
++	app.set_frame(12);await settled();await configure_fan(12.0,"aimed")
++	var fan: RefCounted=app.renderer.world_runtime.instance(fan_id)
++	var positive: Transform3D=fan.root.global_transform;var settings: Dictionary=fan.data.metadata.airflow.duplicate(true)
++	var means: Dictionary={};var all_hits:=true;var maximum_alignment:=0.0;var greatest_opposite_dot:=-INF
++	var forward: Vector3=actor().bone_transform(binding.has_id).basis.z.normalized()
++	maximum_alignment=absf(forward.dot(positive.basis.z.normalized()))
++	for entry in selected_bindings():
++		var force: Vector3=Airflow.field(positive,settings,actor().bone_transform(entry.has_id).origin)
++		means[entry.has_id]=force;all_hits=all_hits and force.length_squared()>0.0
++	await configure_fan(12.0,"opposite");fan=app.renderer.world_runtime.instance(fan_id)
++	maximum_alignment=maxf(maximum_alignment,absf(forward.dot(fan.root.global_basis.z.normalized())))
++	for entry in selected_bindings():
++		var force: Vector3=Airflow.field(fan.root.global_transform,fan.data.metadata.airflow,actor().bone_transform(entry.has_id).origin)
++		var previous: Vector3=means[entry.has_id]
++		all_hits=all_hits and force.length_squared()>0.0
++		var denominator: float=previous.length()*force.length()
++		greatest_opposite_dot=maxf(greatest_opposite_dot,previous.dot(force)/denominator if denominator>0.0 else 1.0)
++	metrics["controlled_fixture"]={"root_keys_equal":root_keys_equal,"root_geometry_frames0_24_exact":root0==root24,"native8_goal_mean_axis_abs_dot_max":maximum_alignment,"all5_both_mean_fields_hit":all_hits,"greatest_mean_field_normalized_dot":greatest_opposite_dot,"admission_only_no_physics_tolerance_change":true}
++	check(root_keys_equal and root0==root24 and all_hits and maximum_alignment<=.0001 and greatest_opposite_dot<=-.9999,"fan.controlled_transverse_fixture")
++
++func enable_record_root_rotation_fixture() -> void:
++	# The same0.47 root-key stress remains in the actual Record pipeline, after
++	# the fixed-root fan experiment. Observe actual geometry, not just key data.
++	var transform: Dictionary=actor().data.pose_keys[0].transform
++	var later: Dictionary=actor().data.pose_keys[1].transform
++	var root_q:=Quaternion(Vector3(0.3,0.7,-0.2).normalized(),0.47)
++	later.rotation_xyzw=[root_q.x,root_q.y,root_q.z,root_q.w]
++	app.set_frame(0);await settled();var root0: Transform3D=actor().root.global_transform
++	app.set_frame(24);await settled();var root24: Transform3D=actor().root.global_transform
++	check(transform.scale==later.scale and transform.rotation_xyzw!=later.rotation_xyzw and root0!=root24,"import.keyed_root_rotation_constant_scale")
++	metrics["record_root_rotation_fixture"]={"actual_root_geometry_changed":root0!=root24,"root_key_radians":0.47,"constant_scale":transform.scale==later.scale}
++	app.set_frame(12);await settled()
+ 
+ func sample_profile(name: String,speed: float,kind: String) -> Dictionary:
+ 	await off();app.set_frame(12);await configure_fan(speed,kind)
+@@ -260,12 +313,10 @@
+ 		q=Quaternion(Vector3.UP,-.08 if index==8 else .04)
+ 		b[id]={"position":[0.0,0.0,0.0],"rotation_xyzw":[q.x,q.y,q.z,q.w]}
+ 	actor().data.pose=a.duplicate(true);actor().data.draft_frame=0
+-	var later: Dictionary=transform.duplicate(true);var root_q:=Quaternion(Vector3(0.3,0.7,-0.2).normalized(),0.47)
+-	later.rotation_xyzw=[root_q.x,root_q.y,root_q.z,root_q.w]
++	var later: Dictionary=transform.duplicate(true)
+ 	actor().data.pose_keys=[{"frame":0,"pose":a,"transform":transform.duplicate(true),"interpolation":"linear"},{"frame":24,"pose":b,"transform":later,"interpolation":"linear"}]
+-	check(transform.scale==later.scale and transform.rotation_xyzw!=later.rotation_xyzw,"import.keyed_root_rotation_constant_scale")
+ 	check(Model.validate(actor().data,48).is_empty() and actor().check_bindings().is_empty(),"import.nonrest_keys_valid")
+-	app.set_frame(12);app.pose_editor.frame_model();app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
++	app.set_frame(12);app.pose_editor.frame_model();transverse_camera_fixture();app.keys=[Timeline.key(0,app.renderer.camera.position,app.renderer.camera.quaternion,app.renderer.camera.fov)]
+ 	var target_before: Dictionary=actor().data.duplicate(true)
+ 	var before12:=Capture.capture(actor(),selected_bindings())
+ 	var button:=find_button("Add fan")
+@@ -278,10 +329,17 @@
+ 	select(fan_id);var fan_editor=app.physics_editor.fan_editor
+ 	var aim_rig_before:=var_to_bytes(actor().root.get_meta("has_secondary_rig",{}))
+ 	fan_editor.aim.pressed.emit();await settled()
+-	check(fan_editor.target_model()==actor() and not fan_editor.aim.disabled and Native.offered(actor()) and var_to_bytes(actor().root.get_meta("has_secondary_rig",{}))==aim_rig_before,"fan.native_target_and_aim")
++	var aim_center:=Vector3.ZERO;var aim_bindings: Array=selected_bindings()
++	for entry in aim_bindings:aim_center+=actor().bone_transform(entry.has_id).origin
++	aim_center/=float(aim_bindings.size())
++	var aim_fan: RefCounted=app.renderer.world_runtime.instance(fan_id)
++	var aim_centroid_error: float=(aim_fan.root.global_transform*Vector3(0,.85,1.5)).distance_to(aim_center)
++	metrics["initial_UI_Aim"]={"anchor_count":aim_bindings.size(),"centroid_world_error":aim_centroid_error}
++	check(fan_editor.target_model()==actor() and not fan_editor.aim.disabled and Native.offered(actor()) and var_to_bytes(actor().root.get_meta("has_secondary_rig",{}))==aim_rig_before and aim_bindings.size()==5 and aim_centroid_error<=.00002,"fan.native_target_and_aim")
+ 	var anchor: Vector3=actor().bone_transform(binding.has_id).origin
+ 	var fan: RefCounted=app.renderer.world_runtime.instance(fan_id)
+ 	check(Airflow.field(fan.root.global_transform,fan.data.metadata.airflow,anchor).length()>0,"fan.actual_field_reaches_joint")
++	await controlled_fixture_admission()
+ 	var profile: Dictionary={}
+ 	for row in [{"name":"disabled","speed":12.0,"kind":"disabled"},{"name":"zero","speed":0.0,"kind":"aimed"},{"name":"miss","speed":12.0,"kind":"miss"},{"name":"speed3","speed":3.0,"kind":"aimed"},{"name":"speed12","speed":12.0,"kind":"aimed"},{"name":"speed50","speed":50.0,"kind":"aimed"},{"name":"opposite","speed":12.0,"kind":"opposite"}]:
+ 		profile[row.name]=await sample_profile(row.name,row.speed,row.kind)
+@@ -350,6 +408,7 @@
+ 	select(fan_id);app.physics_editor.toggle.button_pressed=false;await settled()
+ 	app.set_frame(12);await settled()
+ 	check(actor().data==target_before and not app.physics_editor.is_running(),"body.test_authored_restore")
++	await enable_record_root_rotation_fixture()
+ 	await configure_fan(12.0,"aimed");select(target_id)
+ 	var world_before: Dictionary=app.current_world();var history_before: int=app.history.size()
+ 	await on();var recording=app.physics_editor.recording
+@@ -434,7 +493,7 @@
+ 	var args:=OS.get_cmdline_user_args()
+ 	if args.size()!=1:push_error("One owned native-live job required");quit(2);return
+ 	job_path=args[0];var parsed=JSON.parse_string(FileAccess.get_file_as_string(job_path))
+-	if not parsed is Dictionary or parsed.get("format")!="has_source_native_five_live_job_2":push_error("Invalid native-live job");quit(2);return
++	if not parsed is Dictionary or parsed.get("format")!="has_source_native_five_transverse_live_job_3":push_error("Invalid native-live job");quit(2);return
+ 	job=parsed;create_timer(240).timeout.connect(func():push_error("Native live watchdog");quit(2))
+ 	app=load("res://main.tscn").instantiate();app.recovery_root=job.folder.path_join("recovery");app.recent_path=job.folder.path_join("recent.json");app.display_prefs_path=job.folder.path_join("display.cfg")
+ 	root.add_child(app);await settled();app.home.hide();app.autosave_enabled.button_pressed=false;app.has_project.cache_root=job.folder.path_join("has-cache")
+@@ -443,6 +502,6 @@
+ 	var names: Array=named.keys();names.sort();var planned: Array=job.expected_names.duplicate();planned.sort()
+ 	var complete: bool=names==planned
+ 	if not complete:failures+=1;print("FAIL native live assertion set differs")
+-	var result={"format":"has_source_native_five_live_result_2","mode":job.mode,"storage":job.get("storage",""),"checks":named.size(),"failures":failures,"named_checks":named,"complete_assertion_set":complete,"metrics":metrics,"actual_editor":true,"native_rules_solved":5,"retained_rules":49,"native_conversion_performed":false,"same_actor_reverse_body_qualification":"UNQUALIFIED_PARTIAL_SOURCE_RIG","job_path":job_path,"job_sha256":FileAccess.get_sha256(job_path),"project_root":ProjectSettings.globalize_path("res://"),"source_manifest_sha256":job.source_manifest_sha256,"expected":job.folder.path_join("expected.json") if job.mode=="writer" else job.expected,"private_native_arrays_serialized":false}
++	var result={"format":"has_source_native_five_transverse_live_result_3","mode":job.mode,"storage":job.get("storage",""),"checks":named.size(),"failures":failures,"named_checks":named,"complete_assertion_set":complete,"metrics":metrics,"actual_editor":true,"native_rules_solved":5,"retained_rules":49,"native_conversion_performed":false,"same_actor_reverse_body_qualification":"UNQUALIFIED_PARTIAL_SOURCE_RIG","job_path":job_path,"job_sha256":FileAccess.get_sha256(job_path),"project_root":ProjectSettings.globalize_path("res://"),"source_manifest_sha256":job.source_manifest_sha256,"expected":job.folder.path_join("expected.json") if job.mode=="writer" else job.expected,"private_native_arrays_serialized":false}
+ 	write_json(job.folder.path_join("result.json"),result);print("SOURCE_NATIVE_LIVE "+JSON.stringify({"checks":named.size(),"failures":failures,"complete_assertion_set":complete}))
+ 	app.free();await process_frame;quit(0 if failures==0 else 1)

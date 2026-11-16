@@ -1,0 +1,55 @@
+{
+  "format": "runtime_snapshot_draft_cpu_1",
+  "status": "PASS_SOURCE_ONLY_UNAPPLIED",
+  "mocked_tests": 20,
+  "failures": 0,
+  "errors": 0,
+  "original_source_unchanged": {
+    "tools/build_owner_review_snapshot.py": true,
+    "tests/verify_world_selection_teardown.py": true,
+    "tests/test_owner_review_snapshot.py": true,
+    "tests/world_selection_teardown.gd": true,
+    "tests/verify.py": true
+  },
+  "existing_failed_snapshot_catalogue_sha256": "78ed9384e6ae938491cbb28e23771b409330bb0605f5499665e308309863a95c",
+  "old_catalogue_files": 6023,
+  "runtime_files": 1024,
+  "runtime_bytes": 7574433,
+  "runtime_counts_by_top_level": {
+    "THIRD_PARTY_NOTICES.md": 1,
+    "data": 3,
+    "dependencies.json": 1,
+    "docs": 1,
+    "examples": 7,
+    "launch.pyw": 1,
+    "main.tscn": 1,
+    "project.godot": 1,
+    "run.py": 1,
+    "src": 199,
+    "tests": 715,
+    "tools": 86,
+    "web": 7
+  },
+  "external_literal_resource_dependency_names": [
+    "web/studio.svg",
+    "web/web_app.gd",
+    "web/web_fill_editor.gd",
+    "web/web_has_container.gd",
+    "web/web_has_project.gd",
+    "web/web_source_browser.gd",
+    "web/web_source_import.gd"
+  ],
+  "explicit_support_notices": [
+    "THIRD_PARTY_NOTICES.md",
+    "docs/licenses.md"
+  ],
+  "optional_dependencies_config_retained": true,
+  "excluded_unreferenced_experiment_files": 4551,
+  "excluded_unreferenced_document_files": 435,
+  "source_semantics": "Current old-snapshot candidate names; current unchanged working source bytes. This audit does not represent a fresh Git inventory or actual scoped runtime.",
+  "limitations": [
+    "No engine/parser execution; no new full or teardown PASS.",
+    "Shared old-revision test overlay remains current tests/world_selection_teardown.gd after baseline snapshot.",
+    "Dynamic resource paths outside the five retained trees require a quoted existing directory/file dependency or an explicit reviewed runtime support seed."
+  ]
+}

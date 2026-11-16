@@ -1,0 +1,77 @@
+--- predecessor/source_secondary_from_v1.patch
++++ unapplied-v2/source_secondary_from_v1.patch
+@@ -18,6 +18,7 @@
+ var actor: RefCounted
+ var resolution: RefCounted
+ var chains: Array = []
++var _chain_inventory_stamp := PackedByteArray()
+ var _source_path := ""
+ var _skeleton: Skeleton3D
+ var _parameters: Dictionary = {}
+@@ -31,6 +32,9 @@
+ var _authored_scale_token := 1.0
+ var _tick := 0
+ var _alive := false
++var processing_samples := 0
++var processing_total_usec := 0
++var processing_max_usec := 0
+ var _binding_stamp := PackedByteArray()
+ var _source_modified := 0
+ var _source_length := 0
+@@ -208,6 +212,10 @@
+ 	candidate._source_modified = FileAccess.get_modified_time(candidate._source_path)
+ 	candidate._binding_stamp = candidate.binding_stamp()
+ 	if candidate._binding_stamp.is_empty(): candidate.dispose(); return {"error":"The imported hair binding inventory is incomplete."}
++	# The public chain/airflow inventory is mutable for legacy callers. Freeze
++	# exact order, ids and source.joints.binding as a separate admission stamp.
++	if candidate.chains.size() != SELECTED_NATIVE_IDS.size(): candidate.dispose(); return {"error":"The imported hair airflow inventory is incomplete."}
++	candidate._chain_inventory_stamp = var_to_bytes(candidate.chains)
+ 	candidate._alive = true
+ 	return {"runner":candidate}
+ 
+@@ -226,6 +234,11 @@
+ 		var sk = info.get("skeleton")
+ 		values.append([id,info.get("index"),info.get("name"),info.get("path"),info.get("base"),sk.get_instance_id() if is_instance_valid(sk) and sk is Skeleton3D else 0])
+ 	return var_to_bytes(values)
++
++func airflow_error() -> String:
++	# Shared internal ABI with SecondaryLive: call before reading public chains.
++	if not _alive or chains.size() != SELECTED_NATIVE_IDS.size() or var_to_bytes(chains) != _chain_inventory_stamp: return "The imported hair chain or airflow bindings changed; its preview was stopped."
++	return ""
+ 
+ func configuration_stamp(value: RefCounted) -> PackedByteArray:
+ 	# Internal immutable configuration only, never solver states or authored data.
+@@ -286,6 +299,7 @@
+ 	return {"locals":locals,"prefix":prefix}
+ 
+ func step(delta: float,wind: Vector3,forces: Array = []) -> Dictionary:
++	var processing_started: int = Time.get_ticks_usec()
+ 	if not _alive or not is_instance_valid(actor.root) or not is_instance_valid(_skeleton) or not offered(actor) or actor.data.get("source") != _source_path: return {"error":"The imported hair source changed; its preview was stopped."}
+ 	if not is_finite(delta) or absf(delta-Math.DT) > 1e-9: return {"error":"Imported hair needs the fixed 120 Hz simulation clock."}
+ 	if not FileAccess.file_exists(_source_path) or FileAccess.get_modified_time(_source_path) != _source_modified or binding_stamp() != _binding_stamp: return {"error":"The imported source or joint setup changed; its hair preview was stopped."}
+@@ -297,6 +311,7 @@
+ 	if source_length != _source_length or source_header != _source_header: return {"error":"The imported hair source changed; its preview was stopped."}
+ 	var error := context_error(actor,_skeleton)
+ 	if not error.is_empty(): return {"error":error}
++	if chains.size() != SELECTED_NATIVE_IDS.size() or var_to_bytes(chains) != _chain_inventory_stamp: return {"error":"The imported hair chain or airflow bindings changed; its preview was stopped."}
+ 	var scale_token = actor.data.get("scale")
+ 	if not (scale_token is int or scale_token is float) or not is_finite(float(scale_token)) or float(scale_token) != _authored_scale_token: return {"error":"Turn imported hair off before resizing the model."}
+ 	if not forces.is_empty() and forces.size() != SELECTED_NATIVE_IDS.size(): return {"error":"Imported hair needs one airflow input per selected joint."}
+@@ -345,6 +360,8 @@
+ 	# states/sizes/tick/status, authored data and visual overlays untouched.
+ 	var previous: RefCounted = _chain
+ 	_chain = _trial; _trial = previous; _tick += 1
++	var processing_elapsed: int = maxi(0,Time.get_ticks_usec()-processing_started)
++	processing_samples += 1; processing_total_usec += processing_elapsed; processing_max_usec = maxi(processing_max_usec,processing_elapsed)
+ 	return {"pose":pose}
+ 
+ func dispose() -> void:
+@@ -352,7 +369,7 @@
+ 	if _chain: _chain.stop(); _chain = null
+ 	if _trial: _trial.stop(); _trial = null
+ 	_parameters.clear(); _bone_specs.clear(); _base_scales.clear(); _size_tokens.clear(); _configuration_stamp.clear()
+-	_binding_stamp.clear(); _source_header.clear(); chains.clear()
++	_binding_stamp.clear(); _source_header.clear(); _chain_inventory_stamp.clear(); chains.clear()
+ 	_tick = 0; resolution = null; actor = null; _skeleton = null
+ 
+ func active() -> bool:

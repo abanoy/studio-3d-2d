@@ -1,0 +1,98 @@
+{
+  "format": "native_five_projection_synthetic_cpu_1",
+  "checks": 117375,
+  "failures": 0,
+  "status": "SYNTHETIC_PYTHON_EXACT_EQUIVALENCE_NOT_GDSCRIPT_OR_RUNTIME_QUALIFICATION",
+  "source_sha256": {
+    "python_chain_core": "8d8f061c2c7603d2b1101c78f70588fef0a556b8878795187e95d60b3ae8abec",
+    "pinned_leaf_math": "dd472f2b4de64adebc83a03c2e812ac2e14805c752b220c26c53dd58bf99519c",
+    "public_topology": "9d2e4fe25ed17866281b60531bf3a4f294392214e83d0449de3ceb35a26b7863"
+  },
+  "selected_native": [
+    8,
+    17,
+    18,
+    26,
+    27
+  ],
+  "ancestor_closure_native": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    17,
+    18,
+    25,
+    26,
+    27
+  ],
+  "excluded": 55,
+  "unselected": 64,
+  "profiles": [
+    {
+      "synthetic_seed": 0,
+      "prefix_uniform_scale": 0.5,
+      "ticks": 120,
+      "selected_rule_evaluations": 600,
+      "exact_state_and_projection_equal": true
+    },
+    {
+      "synthetic_seed": 1,
+      "prefix_uniform_scale": 1.0,
+      "ticks": 120,
+      "selected_rule_evaluations": 600,
+      "exact_state_and_projection_equal": true
+    },
+    {
+      "synthetic_seed": 2,
+      "prefix_uniform_scale": 2.0,
+      "ticks": 120,
+      "selected_rule_evaluations": 600,
+      "exact_state_and_projection_equal": true
+    },
+    {
+      "synthetic_seed": 3,
+      "prefix_uniform_scale": 1.3,
+      "ticks": 120,
+      "selected_rule_evaluations": 600,
+      "exact_state_and_projection_equal": true
+    },
+    {
+      "synthetic_seed": 4,
+      "prefix_uniform_scale": 0.75,
+      "ticks": 120,
+      "selected_rule_evaluations": 600,
+      "exact_state_and_projection_equal": true
+    },
+    {
+      "synthetic_seed": 5,
+      "prefix_uniform_scale": 1.75,
+      "ticks": 120,
+      "selected_rule_evaluations": 600,
+      "exact_state_and_projection_equal": true
+    }
+  ],
+  "total_ticks": 720,
+  "total_selected_rule_evaluations": 3600,
+  "comparison": "Exact dataclass/tuple/double equality, no numerical tolerance substituted.",
+  "synthetic_trace_sha256": "8d80c2778657ba648b46858a932facfbdfcae49e9cbd05c20e77784f39f46970",
+  "negative_controls": {
+    "drop_authored25_changes_goal": true,
+    "raw_prefix_accepts_old_correction_refusal": {
+      "shear_dot_max": 1.7999999994168002e-05,
+      "old_correction": 2.5455844122715712e-05,
+      "EPS_unchanged": 2e-05
+    }
+  },
+  "unqualified": [
+    "Actual GDScript variants unparsed/unrun.",
+    "No actual Model/native geometry, skin or64world comparison performed here.",
+    "Hybrid intentionally omits old full scalar canonical origin/orientation/correction/goal checks for55 unrelated bones.",
+    "No measured runtime improvement; existing GUI82/1 remains failed."
+  ]
+}

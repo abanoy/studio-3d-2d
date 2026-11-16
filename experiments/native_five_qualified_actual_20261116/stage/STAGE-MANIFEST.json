@@ -1,0 +1,209 @@
+{
+  "format": "has_native_five_isolated_stage_1",
+  "phase": "PREPARED_ONLY_NOT_PARSED_OR_EXECUTED",
+  "started_utc": "2026-11-16T03:58:14.883376+00:00",
+  "finished_utc": "2026-11-16T03:58:40.133723+00:00",
+  "original_root": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111",
+  "studio": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio",
+  "base_HEAD_context_declared_not_checked_by_this_helper": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+  "source_is_overlay_not_equal_to_nearest_Git_HEAD": true,
+  "Git_CIM_engine_network_or_driver_executed": false,
+  "runtime_lease_not_checked_or_granted_by_preparation": true,
+  "sealed_packet_index_sha256": "460b7719c1bab426aebcc1d04d97bf0d6932b0a6bcadb75db9000147fef6c657",
+  "base_functional_files": 1017,
+  "staged_source_files": 1023,
+  "original_functional_before_after_exact": true,
+  "product_overlays": 3,
+  "test_driver_overlays": 5,
+  "overlays": [
+    {
+      "packet_source": "source_secondary.gd",
+      "staged": "src/source_secondary.gd",
+      "sha256": "dcf861f26ff7829ec25e2616e56416dd68fa4bb6a32d5340c969b9c946d84e47",
+      "bytes": 25739,
+      "preimage": {
+        "bytes": 15190,
+        "sha256": "d2c04165587ca3bb0f7b9f474b23dc81902cc78c1aa174d593534f0198f689c0",
+        "mtime_ns": 1794793728141258800,
+        "file_id": 6755399443157565
+      },
+      "identity": {
+        "bytes": 25739,
+        "sha256": "dcf861f26ff7829ec25e2616e56416dd68fa4bb6a32d5340c969b9c946d84e47",
+        "mtime_ns": 1794798055242986400,
+        "file_id": 6755399443157565
+      }
+    },
+    {
+      "packet_source": "source_chain_math.gd",
+      "staged": "src/source_chain_math.gd",
+      "sha256": "31491fbde49b635edadda5e661fa3eecabf0f7e3598f0dc448c0d944ffa6f844",
+      "bytes": 8795,
+      "preimage": null,
+      "identity": {
+        "bytes": 8795,
+        "sha256": "31491fbde49b635edadda5e661fa3eecabf0f7e3598f0dc448c0d944ffa6f844",
+        "mtime_ns": 1794798055242986400,
+        "file_id": 3940649676052448
+      }
+    },
+    {
+      "packet_source": "secondary_live.gd",
+      "staged": "src/secondary_live.gd",
+      "sha256": "2613b19ce53b3a50fd001fe4e5b39bca2814165148b036993549490aa96c33a9",
+      "bytes": 6551,
+      "preimage": {
+        "bytes": 6443,
+        "sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be",
+        "mtime_ns": 1794792336433977800,
+        "file_id": 6192449489736149
+      },
+      "identity": {
+        "bytes": 6551,
+        "sha256": "2613b19ce53b3a50fd001fe4e5b39bca2814165148b036993549490aa96c33a9",
+        "mtime_ns": 1794798055242986400,
+        "file_id": 6192449489736149
+      }
+    },
+    {
+      "packet_source": "test_drafts/source_native_five_state_unit.gd",
+      "staged": "tests/source_native_five_state_unit.gd",
+      "sha256": "ab40f406e7b2ececc719761f0f0246ecb347bf853d711c3901671c8b8d6d7174",
+      "bytes": 39231,
+      "preimage": null,
+      "identity": {
+        "bytes": 39231,
+        "sha256": "ab40f406e7b2ececc719761f0f0246ecb347bf853d711c3901671c8b8d6d7174",
+        "mtime_ns": 1794798156510906100,
+        "file_id": 5629499536316385
+      }
+    },
+    {
+      "packet_source": "test_drafts/source_native_five_live_ui.gd",
+      "staged": "tests/source_native_five_live_ui.gd",
+      "sha256": "ee14e069a6e9606edb1338aac1c91397d47fad9797148da09868babbc27c3a0a",
+      "bytes": 30352,
+      "preimage": null,
+      "identity": {
+        "bytes": 30352,
+        "sha256": "ee14e069a6e9606edb1338aac1c91397d47fad9797148da09868babbc27c3a0a",
+        "mtime_ns": 1794798156510906100,
+        "file_id": 3377699722631138
+      }
+    },
+    {
+      "packet_source": "test_drafts/source_native_five_capture.gd",
+      "staged": "tests/source_native_five_capture.gd",
+      "sha256": "b1dc120815f9e56b79ca4406dd3a04ddd5b0978510c6e5ca8234b11ae88ff58b",
+      "bytes": 6165,
+      "preimage": null,
+      "identity": {
+        "bytes": 6165,
+        "sha256": "b1dc120815f9e56b79ca4406dd3a04ddd5b0978510c6e5ca8234b11ae88ff58b",
+        "mtime_ns": 1794797479346960700,
+        "file_id": 5348024559605732
+      }
+    },
+    {
+      "packet_source": "test_drafts/verify_source_native_five_live.py",
+      "staged": "tests/verify_source_native_five_live.py",
+      "sha256": "07c3c2e7403af0096753c1c8c2b6e8516cb3bd3b74b46cfdc29bb00fca90d3e0",
+      "bytes": 17200,
+      "preimage": null,
+      "identity": {
+        "bytes": 17200,
+        "sha256": "07c3c2e7403af0096753c1c8c2b6e8516cb3bd3b74b46cfdc29bb00fca90d3e0",
+        "mtime_ns": 1794798156511914100,
+        "file_id": 3940649676052453
+      }
+    },
+    {
+      "packet_source": "test_drafts/run_five_state_owned.py",
+      "staged": "experiments/native_source_live_port_20261115/run_five_state_owned.py",
+      "sha256": "7c124269ae07e81e52c19901a61d941c1f977ab6a2691265bba5c63948b31cdc",
+      "bytes": 18933,
+      "preimage": null,
+      "identity": {
+        "bytes": 18933,
+        "sha256": "7c124269ae07e81e52c19901a61d941c1f977ab6a2691265bba5c63948b31cdc",
+        "mtime_ns": 1794798265441469800,
+        "file_id": 9288674233554936
+      }
+    }
+  ],
+  "protected_input_files_copied": 2,
+  "inputs": {
+    "scene.glb": {
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\scene.glb",
+      "staged": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\scene.glb",
+      "original_identity": {
+        "bytes": 2322644,
+        "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+        "mtime_ns": 1794627122302768200,
+        "file_id": 8444249303209097
+      },
+      "staged_identity": {
+        "bytes": 2322644,
+        "sha256": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+        "mtime_ns": 1794627122302768200,
+        "file_id": 3659174699341831
+      }
+    },
+    "parameters.json": {
+      "original": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\parameters.json",
+      "staged": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\Studio\\output\\compatibility\\source-1794627119-888-34370685\\parameters.json",
+      "original_identity": {
+        "bytes": 159684,
+        "sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed",
+        "mtime_ns": 1794627122401221900,
+        "file_id": 3096224745706636
+      },
+      "staged_identity": {
+        "bytes": 159684,
+        "sha256": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed",
+        "mtime_ns": 1794627122401221900,
+        "file_id": 3096224745920520
+      }
+    }
+  },
+  "UI_baseline_reference_only_not_copied": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\verification.json",
+    "identity": {
+      "bytes": 1358555,
+      "sha256": "10ee4a984c9e54b1acf37d79d5013a10780abe98416b8350f3edf3ee37277c4b",
+      "mtime_ns": 1794627169881387800,
+      "file_id": 3940649675839022
+    }
+  },
+  "state_driver_binding": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio\\experiments\\native_source_live_port_20261115\\run_five_state_owned.py",
+    "sha256": "7c124269ae07e81e52c19901a61d941c1f977ab6a2691265bba5c63948b31cdc",
+    "observer_sha256": "ab40f406e7b2ececc719761f0f0246ecb347bf853d711c3901671c8b8d6d7174",
+    "proposed_checks": 266
+  },
+  "UI_driver_binding": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\native-five-stage-attempt3\\Studio\\tests\\verify_source_native_five_live.py",
+    "sha256": "07c3c2e7403af0096753c1c8c2b6e8516cb3bd3b74b46cfdc29bb00fca90d3e0",
+    "observer_sha256": "ee14e069a6e9606edb1338aac1c91397d47fad9797148da09868babbc27c3a0a",
+    "capture_sha256": "b1dc120815f9e56b79ca4406dd3a04ddd5b0978510c6e5ca8234b11ae88ff58b",
+    "proposed_writer_packed_linked_checks": [
+      82,
+      11,
+      8
+    ]
+  },
+  "UI_label_scope": "Private experimental overlay still has original one-rule support text; semantic product text change is deferred until qualification.",
+  "preservation": {
+    "original_functional": true,
+    "original_two_inputs": true,
+    "baseline_verification": true,
+    "sealed_packet": true
+  },
+  "metadata_sha256": {
+    "ROOT-FUNCTIONAL-BEFORE.json": "b14fe44f60ee2b31e2d2ce4fe2599d1d8702364b7ae8182ec45430d28df77842",
+    "ROOT-FUNCTIONAL-AFTER.json": "b14fe44f60ee2b31e2d2ce4fe2599d1d8702364b7ae8182ec45430d28df77842",
+    "STUDIO-SOURCE-MAP.json": "4bdc6c29983082577f1acf46f4679ab744a42b6f25b19bd64086b9950bb7a8bf",
+    "ROOT-ONLY-COMMANDS.json": "4215ec68f7c3704ff64484a42d638c478b545b9ef3945eadb99ea85514a8dc92"
+  },
+  "retention": "Keep failed and successful stages/proofs; preparation never deletes or closes anything."
+}

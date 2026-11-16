@@ -1,0 +1,38 @@
+{
+  "format": "has_actual_runtime_snapshot_teardown_replay_1",
+  "passed": true,
+  "process": {
+    "pid": 86500,
+    "exit": 0,
+    "retained_Popen_reaped": true,
+    "timeout_seconds": 180,
+    "timed_out": false,
+    "owned_wrapper_terminated": false,
+    "seconds": 21.763778000000457
+  },
+  "checks_observed": 28,
+  "failures_observed": 0,
+  "snapshot_scope": "runtime_dependency_closure",
+  "snapshot_files": 1024,
+  "source_and_runtime_preserved": true,
+  "runtime_lease_released": true,
+  "receipts": [
+    {
+      "phase": "normal-startup",
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794798340646990000\\shipped-source\\output\\private-desktop\\studio_272908dc744341e2b1400bf9d1bd9119.json",
+      "sha256": "95f39d86b7b96518c8676a79570c0326ab3b836a7d891fa703b072b654f08369",
+      "passed": true,
+      "seconds": 4.863
+    },
+    {
+      "phase": "process",
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794798340646990000\\shipped-source\\output\\private-desktop\\world_selection_teardown_df6412f5e48443d1912b72cb94a8cbb4.json",
+      "sha256": "2e880831dcf5331ffa9b85192e7545dcbc6459804f32668c21fc57bf15aac4ee",
+      "passed": true,
+      "seconds": 5.989
+    }
+  ],
+  "actual_case_folder": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\world-selection-teardown\\1794798340646990000",
+  "full_default_pass_claimed": false,
+  "observed_utc": "2026-11-16T03:06:03.448266+00:00"
+}

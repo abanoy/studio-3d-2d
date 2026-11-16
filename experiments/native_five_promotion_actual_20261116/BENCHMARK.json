@@ -1,0 +1,120 @@
+{
+  "format": "has_native_five_qualified_main_increment_1",
+  "recorded_utc": "2026-11-16T04:09:44.606318+00:00",
+  "status": "QUALIFIED_BOUNDED_RUNTIME_PROMOTED_FRESH_FULL_REQUIRED",
+  "native_rule_indices_selected": [
+    8,
+    17,
+    18,
+    26,
+    27
+  ],
+  "solved_rules": 5,
+  "retained_rules": 49,
+  "supported_strands": 3,
+  "state": {
+    "checks": 266,
+    "failures": 0,
+    "verification": {
+      "path": "output/native-five-stage-attempt3/Studio/output/source-native-five-state-20261116T040011702334/verification.json",
+      "sha256": "c10c5f25678b10326388f93a54fbbf41a433b67e3dce56918aca87b055b068d9"
+    }
+  },
+  "GUI": {
+    "checks": 102,
+    "failures": 0,
+    "phases": {
+      "writer": 83,
+      "reader-packed": 11,
+      "reader-linked": 8
+    },
+    "verification": {
+      "path": "output/native-five-stage-attempt3/Studio/output/native-five-gui-attempt1/verification.json",
+      "sha256": "f8b908bc4638ac50e3ffe3fbeb197fa200d0896d398c3f94c81f42d53e09a619"
+    },
+    "authoritative_root_closure": {
+      "path": "output/native-five-stage-attempt3/TRANSVERSE-ROOT-EXECUTION/verification.json",
+      "sha256": "79b44ef86dedda9aaef6c948b7eb39fa176685838baba6a712053adeced6d457"
+    }
+  },
+  "actual_success_packet": {
+    "path": "experiments/native_five_qualified_actual_20261116/INDEX.json",
+    "sha256": "429ea76d462a385cfa2d292ed9c2c12dd9fbf9e52193f63bfb0e7776324dd655"
+  },
+  "original_source_and_native_input_preservation": {
+    "path": "output/native-five-stage-attempt3/ROOT-PRESERVATION-qualified-102.json",
+    "sha256": "6f0d28ad749dfef5d72dc4174e9f2f755124ce4e73bc0b7a928bf8fdf3f044f1"
+  },
+  "promotion": {
+    "path": "output/native-five-promotion-applied/verification.json",
+    "sha256": "04141fd34eb853363e1acd09d58f4d30652dd675d94b88b2ff8eeb0be266b5fa"
+  },
+  "promotion_source_review": {
+    "path": "experiments/source_native_five_promotion_review_20261116/INDEX.json",
+    "sha256": "0450b2d840b2a7ba91f95b5f1b97329d2eb7deeafcadb32f2000317b382d0e9f"
+  },
+  "CPU_driver_controls": {
+    "checks": 120,
+    "failures": 0,
+    "result": {
+      "path": "output/helper-preview-driver-domain/source-five-promotion-20261116/result.json",
+      "sha256": "687d7490f9c555bc1168acbe17d3d5617c750f12fb456a7d1259b8c0dee6fd4e"
+    }
+  },
+  "current_reviewed_ports": {
+    "path": "output/native-five-promotion-applied/current-port-validation.json",
+    "sha256": "7155236c18d64f1acb13ea5793d15006b3734b50b6951b511566a41dcbb85872"
+  },
+  "native_step_microseconds_by_profile": {
+    "disabled": {
+      "max_usec": 13289,
+      "mean_usec": 9054.094444444445,
+      "samples": 180,
+      "scope": "Successful full Native.step; measured only, no FPS criterion"
+    },
+    "miss": {
+      "max_usec": 11505,
+      "mean_usec": 8192.122222222222,
+      "samples": 180,
+      "scope": "Successful full Native.step; measured only, no FPS criterion"
+    },
+    "opposite": {
+      "max_usec": 12579,
+      "mean_usec": 8117.688888888889,
+      "samples": 180,
+      "scope": "Successful full Native.step; measured only, no FPS criterion"
+    },
+    "speed12": {
+      "max_usec": 11527,
+      "mean_usec": 7521.488888888889,
+      "samples": 180,
+      "scope": "Successful full Native.step; measured only, no FPS criterion"
+    },
+    "speed3": {
+      "max_usec": 12605,
+      "mean_usec": 8054.4111111111115,
+      "samples": 180,
+      "scope": "Successful full Native.step; measured only, no FPS criterion"
+    },
+    "speed50": {
+      "max_usec": 11885,
+      "mean_usec": 8625.633333333333,
+      "samples": 180,
+      "scope": "Successful full Native.step; measured only, no FPS criterion"
+    },
+    "zero": {
+      "max_usec": 10593,
+      "mean_usec": 7928.483333333334,
+      "samples": 180,
+      "scope": "Successful full Native.step; measured only, no FPS criterion"
+    }
+  },
+  "timing_scope": "Successful Native.step only; controlled fixture differs from earlier timing runs. No120Hz/FPS qualification.",
+  "earlier_failures_preserved": "Initial82/1 and diagnostic57/2 remain failed in native_five_initial_actual_20261116; direction predicates and all numerical tolerances unchanged.",
+  "main_promotion_runtime_delta": "Two source headers only differ from qualified runtime; wrapper and four test files are exact. Two user-facing physics strings and only their two manifest hash rows are updated.",
+  "scope": "Exact qualified Junko GLB only; three supported strands. Other44 native rules remain inactive, same-actor ragdoll/SDK/client/artist fidelity remain unqualified.",
+  "fresh_main_full_default_passed": false,
+  "manual_hair_check": "OWNER_DEFERRED_NO_RESULT",
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation": "52/54_UNCHANGED"
+}

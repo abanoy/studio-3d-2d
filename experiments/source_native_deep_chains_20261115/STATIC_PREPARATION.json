@@ -1,0 +1,21 @@
+{
+  "format": "has_deep_chain_static_preparation_1",
+  "status": "SOURCE_ONLY_GDSCRIPT_UNPARSED_UNRUN",
+  "qualified_pair_run_reference": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-0x31-native-chains-20261115-attempt1",
+  "qualified_pair_checks": 21087,
+  "qualified_pair_math_checks": 4012,
+  "budget": {
+    "root_placements": 2,
+    "profiles_per_placement": 6,
+    "ticks_per_profile": 120,
+    "selected_rule_count": 7,
+    "proposed_actor_ticks": 1440,
+    "proposed_rule_evaluations": 10080,
+    "proposed_assertions": 34047,
+    "actual_run": false,
+    "assertion_derivation": "Per profile69 baseline +120*(3*7+2) tick gates +1 unaffected +4 Off/binding; add2 branch gates for each of5 nonzero profiles; per root add8 external-response +1 repeat; two roots plus1 final source check."
+  },
+  "same_EPS_motion_Off_repeat_gates": true,
+  "no_production_edits_or_engines_or_Git": true,
+  "template_approval": "UNAPPROVED_MUST_REBASE_SOURCE_LOCK_TO_FRESH_FULL_BEFORE_ROOT_RUN"
+}

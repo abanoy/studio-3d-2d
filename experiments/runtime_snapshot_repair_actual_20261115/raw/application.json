@@ -1,0 +1,21 @@
+{
+  "format": "has_reviewed_runtime_snapshot_v2_application_1",
+  "packet_index_sha256": "d7da7eb2c50457d839266eb72d62e277cf3df53b5efe06ce66a2e6d6830091cd",
+  "before": {
+    "tools/build_owner_review_snapshot.py": "7c9487ad1d3c5a6c31f66df9f5b7b73effe9c4668e2a6601dff8196dd87a21f9",
+    "tests/verify_world_selection_teardown.py": "bcd1f87c18eff70af0e5d59b1f9ea1dac5e586911082d3d8a4f4fcef6123adbb",
+    "tests/test_owner_review_snapshot.py": "46ba929e1e3efc3891e091a383edb69fb86c7606c8016f19ca0103d5a0f3adcb"
+  },
+  "after": {
+    "tools/build_owner_review_snapshot.py": "48d6fc852ae16c946431addd39ec152e5db45c7f887bc1ddc941fc332911a0ce",
+    "tests/verify_world_selection_teardown.py": "137322921a83fcbb6cee558cb951ede5f3691c4c96e5b1ab7abdb735680f0bfb",
+    "tests/test_owner_review_snapshot.py": "d771929e26202724a0c70918be1a90320d156e724eaa1a3b2e8f63ca22f268b8"
+  },
+  "release_sha256": "5067f3296b976104ef3a19cf25a575b86eda6f0f0f1a3b573e584983d4f47ccd",
+  "unchanged_other_source_files": {
+    "tests/world_selection_teardown.gd": "0b536c255e52cd335b5f5f609883b95a1e63b5dbad6faa14d0daf989f5d1afc0",
+    "tests/verify.py": "459b90eeeae9d5523654c07fcbb3de27dad0e889943f46947333e8eb5a65437a"
+  },
+  "runtime_executed": false,
+  "timeouts_or_teardown_assertions_changed": false
+}

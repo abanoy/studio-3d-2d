@@ -1,0 +1,52 @@
+{
+  "format": "has_historical_full_scope_acknowledgment_1",
+  "root_acknowledged": true,
+  "historical_full_revision": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "historical_full_receipt_sha256": "952613d8c02c7e41a98631cd563c640e750eafc5c6d535fce2bf1f27bd8bbecb",
+  "current_HEAD_context": "9de4e6cbdf8b0369cbdf118a40c13f85860eaac0",
+  "current_snapshot_is_historical_full_snapshot": false,
+  "current_full_product_suite_claimed": false,
+  "current_state180_receipt_sha256": "31e08e4c15915f543b9df9ad8b01b4bfe472b7d47fde4558090cacc834d3097f",
+  "current_state_source_sha256": "ac029880c8084961115e3e1233775585004c77dabd0fb867f55bd3238d642ce3",
+  "scope": "Historical full/FK/single-rule math/native8 leaf are predecessors only. Current source is separately frozen and state180-qualified. New chain probes are experimental, not current full-product acceptance.",
+  "changed": [
+    {
+      "path": "src/fan_editor.gd",
+      "historical_full_sha256": "b6d13d58d71c2b846926260f844135210e711822e562a69dc19657df20f93297",
+      "current_sha256": "85a575881cc13b9acb3f266dcbe401266a80bf424667e2984a3ff3c093fcb614"
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "historical_full_sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+      "current_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a"
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "historical_full_sha256": "a68115d26b62c6e0211aaef3bedc9ba2330742e23dd63092d303330eb944523e",
+      "current_sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be"
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "historical_full_sha256": "0446c44d503a6605155ed0553f70ba0462a0cb64a29b25dda7c39ca81717c0cf",
+      "current_sha256": "ebc7ffc51ca71e848c054b737fd47c69483ba7c9c686f162a880944e527de578"
+    },
+    {
+      "path": "tests/wind_review_port_files.json",
+      "historical_full_sha256": "c9e8a9443b49617d53d3a70dc9c2ef286a81c1aedf4af850bf70eb5c4aeb6ca8",
+      "current_sha256": "23b870735c3f829bb442aad66cd42621450c038ff4ea39e1d5a4c29250f2df0b"
+    }
+  ],
+  "added": [
+    "src/source_jiggle_math.gd",
+    "src/source_secondary.gd",
+    "tests/source_native_live_capture.gd",
+    "tests/source_native_live_ui.gd",
+    "tests/source_native_state_unit.gd",
+    "tests/verify_source_native_live.py"
+  ],
+  "removed": [],
+  "old_packet_source_lock_preserved": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_0x31_chains_20261115\\SOURCE_LOCK.json",
+    "sha256": "a373cea336a82f6b374625a5f5861fb736b3d04ca6ab1f3c83008ebe07aaa769"
+  }
+}

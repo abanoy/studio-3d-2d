@@ -1,0 +1,132 @@
+{
+  "format": "has_root_source0x31_math_execution_1",
+  "passed": true,
+  "source_HEAD": "f0dd57a2e568089d396fecba819ab987da658bf0",
+  "packet": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_0x31_godot_candidate_20261115",
+  "packet_index_sha256": "d20b7cf6dfec58344e95dcdb58e657fe0e484359925ab59d6cc978f1a3b87204",
+  "phases": [
+    {
+      "phase": "parse",
+      "pid": 80104,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "terminated_owned_child": false,
+      "error_markers": [],
+      "seconds": 0.15971480000007432,
+      "passed": true
+    },
+    {
+      "phase": "run",
+      "pid": 73340,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "terminated_owned_child": false,
+      "error_markers": [],
+      "seconds": 0.7128969999994297,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "inputs_preserved": true,
+  "result": {
+    "adapter_rows": [
+      {
+        "actual_hex": "000000000000000000000000",
+        "expected_hex": "000000000000000000000000",
+        "kind": "Vector3"
+      },
+      {
+        "actual_hex": "bf0e9c3c1e16ea3f0000a041",
+        "expected_hex": "bf0e9c3c1e16ea3f0000a041",
+        "kind": "Vector3"
+      },
+      {
+        "actual_hex": "00004ac2000044415f294bbb",
+        "expected_hex": "00004ac2000044415f294bbb",
+        "kind": "Vector3"
+      },
+      {
+        "actual_hex": "0000803f0000803f0100803f",
+        "expected_hex": "0000803f0000803f0100803f",
+        "kind": "Vector3"
+      },
+      {
+        "actual_hex": "000080000100000001000080",
+        "expected_hex": "000080000100000001000080",
+        "kind": "Vector3"
+      },
+      {
+        "actual_determinant": 1.0,
+        "error_bound": 8.344657249642877e-07,
+        "kind": "Basis",
+        "scalar64_rounded_reference": 1.0,
+        "strict_math_goal_accepts": true
+      },
+      {
+        "actual_determinant": 0.9999999403953552,
+        "error_bound": 8.344656866119508e-07,
+        "kind": "Basis",
+        "scalar64_rounded_reference": 0.9999999540396496,
+        "strict_math_goal_accepts": false
+      },
+      {
+        "actual_determinant": 1.0,
+        "error_bound": 8.344657381963078e-07,
+        "kind": "Basis",
+        "scalar64_rounded_reference": 1.0000000158568767,
+        "strict_math_goal_accepts": false
+      },
+      {
+        "actual_determinant": 1.0,
+        "error_bound": 8.344657021504867e-07,
+        "kind": "Basis",
+        "scalar64_rounded_reference": 0.9999999726605896,
+        "strict_math_goal_accepts": false
+      }
+    ],
+    "candidate_sha256": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3",
+    "checks": 8994,
+    "engine": {
+      "build": "official",
+      "hash": "89cea143987d564363e15d207438530651d943ac",
+      "hex": 263680,
+      "major": 4,
+      "minor": 6,
+      "patch": 0,
+      "status": "stable",
+      "string": "4.6-stable (official)",
+      "timestamp": 0
+    },
+    "failure_labels": [],
+    "failures": 0,
+    "format": "has_source0x31_godot_scalar64_math_result_1",
+    "harness_sha256": "284944cd8ba0b876e09bbab0f86bd359d9446c6ff0ec2969fc8ec0747b1011fa",
+    "integration_steps": 1440,
+    "lease_context": {
+      "FK_receipt_sha256": "57122759af2ad3c66687afab4c27b49ec09fba99bf4c5397e33e49125f650e64",
+      "closure_sha256": "10215a0b33c048cd74493af310ca9a4b1adfc1ab2c1577e748f72be937779513",
+      "full_receipt_sha256": "952613d8c02c7e41a98631cd563c640e750eafc5c6d535fce2bf1f27bd8bbecb",
+      "source_HEAD": "f0dd57a2e568089d396fecba819ab987da658bf0"
+    },
+    "oracle_sha256": "d131028f688711c7bc669eeeac04255a87a763e55fcda7e76b3337763bf976df",
+    "sample_output_sets": 48,
+    "scalar64_max_vector_error": 9.374856803373542e-13,
+    "scope": {
+      "actual_Model_SceneIO_FK": false,
+      "actual_Vector3_Basis_boundary_measured": true,
+      "actual_parent_body_fan_Record_Off_portable_render": "UNRUN_NOT_INTEGRATED",
+      "artist_native_parity": "UNQUALIFIED",
+      "engine_harness_executed": true,
+      "native_SDK_executed": false,
+      "native_geometry_loaded": false,
+      "scalar64_math_attempted": true
+    },
+    "status": "PASSED_SCALAR64_SYNTHETIC_ENGINE_MATH_ONLY",
+    "zero_cone_max_rest_displacement": 1.0805156823142815e-14
+  },
+  "native_sdk_or_artist_fidelity": false,
+  "application_integration": false,
+  "observed_utc": "2026-11-16T00:00:53.148445+00:00"
+}

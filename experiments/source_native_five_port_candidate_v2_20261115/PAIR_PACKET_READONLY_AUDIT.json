@@ -1,0 +1,16 @@
+{
+  "format": "has_readonly_pair_packet_independent_audit_1",
+  "passed": true,
+  "source_reviewed_scanner_sha256": "bfc7fddff4f5dae0ebc9bcc194a299e29c7199bdbf32f5081a52eff16788d4dd",
+  "sealed_INDEX_sha256": "d3df29e4e06d64dc0f160a2f5c2dbf11d6a6bf09aee46b2e8b1d829aeacaf2e1",
+  "scanned_content_payloads": 111,
+  "INDEX_payload_rows": 112,
+  "recursive_JSON_scans": 61,
+  "qualified_code_joins": 11,
+  "privacy_negative_controls": 5,
+  "observed_actual_math_checks": 4012,
+  "observed_actual_native_checks": 21087,
+  "sealed_packet_modified": false,
+  "runtime_or_CIM_or_Git_run": false,
+  "scope": "Fixed strict whitelist and known hashes, exact phase/closure/preservation joins, source aliases/driver literal, raw metadata privacy and native25/full-revision errata."
+}

@@ -1,0 +1,27 @@
+{
+  "format": "has_qualified_five_main_promotion_1",
+  "passed": true,
+  "observed_utc": "2026-11-16T04:08:25.819520+00:00",
+  "packet_index_sha256": "0450b2d840b2a7ba91f95b5f1b97329d2eb7deeafcadb32f2000317b382d0e9f",
+  "promoted_paths": [
+    "src/physics_editor.gd",
+    "src/secondary_live.gd",
+    "src/source_chain_math.gd",
+    "src/source_secondary.gd",
+    "tests/helper_preview_port_files.json",
+    "tests/source_native_five_capture.gd",
+    "tests/source_native_five_live_ui.gd",
+    "tests/source_native_five_state_unit.gd",
+    "tests/verify_source_native_five_live.py",
+    "tests/wind_review_port_files.json"
+  ],
+  "functional_files_before": 1014,
+  "functional_files_after": 1019,
+  "runtime_equivalent_to_qualified_stage": true,
+  "qualified_state_checks": 266,
+  "qualified_GUI_checks": 102,
+  "main_UI_and_full_test_rerun_claimed": false,
+  "fresh_full_default_required": true,
+  "source_before_sha256": "2494780ec8fdeea7204c73ca766300e0eab618c2f41fc566b4d129c75922c490",
+  "source_after_sha256": "621dbb5aa7b588712cbcd95a1a117dec9e0ffebddd9fe76e0f8f16c81ba303d2"
+}

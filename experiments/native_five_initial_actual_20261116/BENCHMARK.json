@@ -1,0 +1,76 @@
+{
+  "format": "has_native_five_initial_actual_1",
+  "recorded_utc": "2026-11-16T03:56:17.188700+00:00",
+  "production_backend": "NATIVE8_ONLY_NOT_PROMOTED",
+  "manual_hair_check": "OWNER_BUSY_DEFERRED_NO_RESULT",
+  "complete_default": "DBF0BC1_FAILED_180S_TEARDOWN_TIMEOUT_FRESH_COMPLETE_REQUIRED",
+  "snapshot_repair": {
+    "CPU": 27,
+    "actual_UI": 28,
+    "failures": 0,
+    "scope": "SCOPED_ONLY_NOT_FULL"
+  },
+  "initial_state": {
+    "checks": 266,
+    "failures": 0,
+    "passed": true,
+    "completed_native_steps": 886,
+    "result_sha256": "3501aa51e1c01e6368869e61fa230a75e37059299e95def0f7e2fdcd09091821",
+    "private_GPU_UI": false,
+    "runtime_lease_released": true
+  },
+  "initial_GUI": {
+    "passed": false,
+    "checks": 82,
+    "failures": 1,
+    "failed_names": [
+      "fan.opposite_tip_directions"
+    ],
+    "readers": "UNRUN_AFTER_WRITER_FAILURE",
+    "runtime_lease_released": true
+  },
+  "strict_state": {
+    "checks": 266,
+    "failures": 0,
+    "passed": true,
+    "completed_native_steps": 886,
+    "result_sha256": "fe0eecb967e61dac14c8822d59ede1fbe78a161cbfc9d22c49ad4c5556a56008",
+    "private_GPU_UI": false,
+    "runtime_lease_released": true
+  },
+  "strict_diagnostic": {
+    "completed": true,
+    "qualification_pass": false,
+    "checks": 57,
+    "failures": 2,
+    "failed_names": [
+      "fan.opposite_tip_directions",
+      "fan.original_native8_opposite_tip_directions"
+    ],
+    "only_native8_world_delta_dot_positive": true,
+    "runtime_lease_released": true
+  },
+  "performance": {
+    "scope": "Successful Native.step only; no120Hz or displayed FPS pass",
+    "strict_diagnostic_mean_ms_by_profile": {
+      "disabled": 8.893355555555555,
+      "miss": 8.644594444444445,
+      "opposite": 8.688588888888889,
+      "speed12": 8.613544444444443,
+      "speed3": 8.825416666666666,
+      "speed50": 8.584105555555556,
+      "zero": 8.693033333333332
+    },
+    "fixed_clock_budget_ms": 8.333333333333334
+  },
+  "upstream_packet_indices": {
+    "experiments/runtime_snapshot_repair_actual_20261115/INDEX.json": "bb96fd44d526409bd9ed06e535ae94f5f8b76c106be43e543b0837b8bad06cf4",
+    "experiments/source_native_five_port_candidate_v2_20261115/INDEX.json": "460b7719c1bab426aebcc1d04d97bf0d6932b0a6bcadb75db9000147fef6c657",
+    "experiments/native_five_performance_candidate_20261115/INDEX.json": "80203837bd647fbad157d9ea7b1ee8e0c82014bbaa1329b0c5f2fac7e95bb441",
+    "experiments/source_native_five_opposite_diagnostic_20261116/INDEX.json": "50df7f894b04633568679ab9252727597e7f76d5abff83d52d646602e63bd3f5"
+  },
+  "private_arrays_serialized": false,
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation": "52/54_UNCHANGED",
+  "next": "Independently correct controlled fan fixture/invariant; retain failures; actual GUI cold/export qualification and fresh complete default before product promotion claims."
+}

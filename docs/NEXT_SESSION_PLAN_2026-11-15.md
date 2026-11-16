@@ -1,11 +1,88 @@
 # HAS continuation — November 15, 2026
 
 The owner explicitly resumed independent work. Continue implementation without
-making the parked manual exercises a prerequisite. The owner has now volunteered
-to test one item: click a Junko hair section in the existing review and report
-whether the orange highlight matches the intended section. That review remains
-the earlier f0dd57a build. November16 UTC observations below still fall on
-November15 locally.
+making the parked manual exercises a prerequisite. The owner deferred the
+volunteered Junko hair-click exercise because busy and explicitly asked continued
+independent work. Record no human result and ask no further manual questions.
+That available review remains the earlier f0dd57a build. November16 UTC
+observations below still fall on November15 locally.
+
+## Current source: five qualified joints promoted
+
+Main now supports three imported Junko hair strands (native8,17,18,26,27).
+Isolated qualification passes266 state checks and102 editor/cold-save/export
+checks (83writer,11packed,8linked). Exactly10 reviewed files were promoted:
+runtime-equivalent product code, four exact test files, two UI strings and two
+manifest hash successors. Main120CPU driver controls and41current port rows
+pass. See `docs/benchmarks/native_five_qualified_2026-11-15.json` and
+`experiments/native_five_qualified_actual_20261116`. Functional count1019.
+
+Commit/push/read back this increment, then run a fresh complete Windows default
+on that checkpoint. The latest dbf full remains FAILED; the scoped shutdown
+repair passes27CPU/28actual checks with unchanged timeouts. Other44 native
+rules, same-actor ragdoll, normals/SDK/client/artist fidelity remain unqualified.
+The original owner review remains f0dd57a; do not claim it includes this work.
+
+## Latest full-run refusal and immediate repair
+
+The native8 increment is committed and pushed as
+`dbf0bc1145f74b5bbff814ec6a417ccd23ce0885`. A fresh complete default at
+`output/windows-canonical-bone-binding-20261116T022132132` **FAILED** after
+1346.822071seconds on the outer180second world-selection-teardown timeout.
+All36core groups passed; all1014functional files/HEAD stay exact. The actual
+private teardown child subsequently passes28checks/all4cases in11.324seconds,
+exit0/job+desktopclosed. It finished after the full deadline; this is not a
+complete PASS. The final `output/verification.json` still belongs to an old run.
+
+The wrapper spent about70seconds freezing6023archive files and97seconds
+rehashing them after normal startup.4551experiment files and436docs dominated
+this unrelated workload. A bounded opt-in runtime snapshot is now applied
+for this automated test; preserve default owner-review archive behavior, exact
+old-revision blobs, path guards, timeouts and all28assertions.
+
+Actual root failure-lease closure at02:55:49.6500273Z verifies46private jobs,
+all46exit0/private/job+desktopclosed, including the late child71828. Exact
+coordinator/Python births and checkout-scoped helper/native commands are absent;
+no root manual termination occurred. Python's outer timeout termination of its
+owned wrapper is separately recorded as source/trace inference. The failed full
+remains failed. See `docs/benchmarks/windows_native_leaf_full_timeout_2026-11-15.json`
+and `graphics-lease-closed-after-failure.json` in that run.
+
+The reviewed snapshot successor is now applied. All27CPU checks and the same
+28actual shutdown checks pass; the scoped replay finishes in21.763778seconds
+under the unchanged180second limit. Both private jobs close and sources/tools
+stay exact. See `docs/benchmarks/world_selection_runtime_snapshot_2026-11-15.json`.
+Commit this repair and run a fresh complete default. Native5/deeper-chain and
+six-foot basis work remain isolated experiment drafts during this repair.
+Root completed exact GitHub readback of all205 changed files in the immutable
+dbf commit: raw bytes, Git SHA1 and SHA256 match, including reconstruction of
+all11 functional files with their explicit EOL recipes. See
+`experiments/native_source_live_port_20261115/remote_dbf0bc1/COMPLETE.json`.
+This does not back up subsequent working changes; no new cleanup occurred.
+Formal55/62and52/54 stay unchanged.
+
+## Isolated five-joint qualification in progress
+
+Before promotion, production solved only native8. Isolated five-rule candidates add the
+17→18 and26→27 parent-child strands. Original v2 passes266 state checks but
+its actual GUI writer fails1 of82; both cold readers remain unrun. The strict
+performance successor separately passes the same266 state checks. Its57-check
+fan diagnostic retains2 failures: the all-five predicate and its separate
+native8 predicate. Only native8 has a positive tip-delta dot. Its fan axis is
+nearly axial (absolute alignment0.969883); unequal aim centers and the shared
+unsteady cross-axis component invalidate the assumed symmetric comparison.
+All four added owners have negative dots; every field hits180/180samples.
+Do not alter production physics or waive either failed predicate. Prepare a
+transverse, center-symmetric direction fixture with its own admission check,
+keep gust-wiggle checks, and test animated-root movement separately.
+
+The strict successor reduces measured per-profile Native.step means from
+11.043–13.268ms to8.584–8.893ms. This is not a120Hz/FPS qualification. A further
+source-only deduplication is being reviewed; all69 source/pose guards remain
+required. Preserve the initial evidence at
+`experiments/native_five_initial_actual_20261116` and independently qualify
+fan/Off/Record/Undo/save/packed+linked cold replay/export before promotion.
+The owner is busy; the manual click exercise remains DEFERRED with no result.
 
 ## Current working increment: first native joint in ordinary controls
 

@@ -1,0 +1,83 @@
+--- actual_state266_strict/source_secondary.gd
++++ source_secondary_strict2.gd
+@@ -1,6 +1,6 @@
+ extends RefCounted
+ # Imported motion is a bounded HAS backend, separate from the unchanged raw
+-# source report. SOURCE-ONLY strict performance candidate; UNPARSED/UNRUN.
++# source report. SOURCE-ONLY strict2 capture deduplication; UNPARSED/UNRUN.
+ const Math = preload("res://src/source_jiggle_math.gd")
+ const Chains = preload("res://src/source_chain_math.gd")
+ const Bindings = preload("res://src/source_bone_bindings.gd")
+@@ -24,7 +24,6 @@
+ var _parameters: Dictionary = {}
+ var _bone_specs: Dictionary = {}
+ var _solver_bone_specs: Dictionary = {}
+-var _expected_world_scales: Dictionary = {}
+ var _capture_configuration_stamp := PackedByteArray()
+ var _baseline_guard: RefCounted
+ var _baseline_guard_stamp := PackedByteArray()
+@@ -211,14 +210,7 @@
+ 			observed_native.append(native_index)
+ 			candidate._solver_bone_specs[id] = candidate._bone_specs[id].duplicate(true)
+ 	if observed_native != EXPECTED_CAPTURE_NATIVE_IDS: candidate.dispose(); return {"error":"The imported hair ancestor profile changed."}
+-	var all_order := Chains.parent_order(candidate._bone_specs)
+-	if all_order.has("error"): candidate.dispose(); return all_order
+-	for id in all_order.order:
+-		var parent: Variant = candidate._bone_specs[id].parent
+-		var parent_size: float = candidate._prefix_scale if parent == null else candidate._expected_world_scales[parent]
+-		candidate._expected_world_scales[id] = parent_size*float(candidate._base_scales[id])
+-		if not is_finite(float(candidate._expected_world_scales[id])) or candidate._expected_world_scales[id] < 1e-8 or candidate._expected_world_scales[id] > 1e6: candidate.dispose(); return {"error":"The imported hair world scale is outside its supported profile."}
+-	candidate._capture_configuration_stamp = var_to_bytes([candidate._bone_specs,candidate._solver_bone_specs,candidate._base_scales,candidate._expected_world_scales])
++	candidate._capture_configuration_stamp = var_to_bytes([candidate._bone_specs,candidate._solver_bone_specs,candidate._base_scales])
+ 
+ 	# Both runners own independent configuration/state. Only the authoritative
+ 	# runner is committed; the trial absorbs all math/output failures.
+@@ -291,7 +283,7 @@
+ 
+ func capture_baseline() -> Dictionary:
+ 	# Fresh synchronous same-call snapshot, never a previous-tick authored pose.
+-	if var_to_bytes([_bone_specs,_solver_bone_specs,_base_scales,_expected_world_scales]) != _capture_configuration_stamp: return {"error":"The imported hair capture configuration changed."}
++	if var_to_bytes([_bone_specs,_solver_bone_specs,_base_scales]) != _capture_configuration_stamp: return {"error":"The imported hair capture configuration changed."}
+ 	if configuration_stamp(_baseline_guard) != _baseline_guard_stamp: return {"error":"The imported hair baseline guard configuration changed."}
+ 	var raw_prefix: Transform3D = _skeleton.global_transform
+ 	var observed_prefix := frame64(raw_prefix)
+@@ -312,8 +304,6 @@
+ 		if actual_frame.has("error"): return actual_frame
+ 		var stable: float = _base_scales[id]
+ 		if absf(float(mapped.scale)-stable) > EPS*stable: return {"error":"The imported hair local scale changed; turn its preview off."}
+-		var expected_size: float = _expected_world_scales[id]
+-		if absf(float(actual_frame.scale)-expected_size) > EPS*expected_size: return {"error":"The imported hair world scale changed; turn its preview off."}
+ 		raw_locals[id] = local; raw_worlds[id] = actual; mapped_worlds[id] = actual_frame
+ 		if true:
+ 			locals[id] = {"origin":mapped.goal.base.duplicate(true),"basis":mapped.rotation.duplicate(true),"scale":stable}
+@@ -330,7 +320,20 @@
+ 		for i in range(3):
+ 			for j in range(3):
+ 				if absf(composed.basis[i][j]-actual.basis[i][j]) > guard: return {"error":"The imported hair parent pose changed."}
+-	var worlds: Dictionary = _baseline_guard.baseline_worlds(locals,prefix)
++	# Every local was just validated by unchanged frame64/Math.goal above.
++	# Its scale is the stamped base token admitted by the full69 guard config.
++	# Keep the prefix check and every unchanged compose/result-frame check;
++	# skip only the second identical69-local input validation pass.
++	var prefix_error: String = Chains.frame_error(prefix)
++	if not prefix_error.is_empty(): return {"error":prefix_error}
++	var full_worlds := {}
++	for id in _baseline_guard._order:
++		var parent: Variant = _baseline_guard._bones[id].parent
++		var parent_world: Dictionary = prefix if parent == null else full_worlds[parent]
++		var made: Dictionary = Chains.compose(parent_world,locals[id])
++		if made.has("error"): return made
++		full_worlds[id] = made.frame
++	var worlds: Dictionary = {"worlds":full_worlds}
+ 	if worlds.has("error"): return worlds
+ 	for id in _bone_specs:
+ 		var actual: Dictionary = mapped_worlds[id]
+@@ -417,7 +420,7 @@
+ 	if _chain: _chain.stop(); _chain = null
+ 	if _trial: _trial.stop(); _trial = null
+ 	if _baseline_guard: _baseline_guard.stop(); _baseline_guard = null
+-	_baseline_guard_stamp.clear(); _capture_configuration_stamp.clear(); _solver_bone_specs.clear(); _expected_world_scales.clear()
++	_baseline_guard_stamp.clear(); _capture_configuration_stamp.clear(); _solver_bone_specs.clear()
+ 	_parameters.clear(); _bone_specs.clear(); _base_scales.clear(); _size_tokens.clear(); _configuration_stamp.clear()
+ 	_binding_stamp.clear(); _source_header.clear(); _chain_inventory_stamp.clear(); chains.clear()
+ 	_tick = 0; resolution = null; actor = null; _skeleton = null

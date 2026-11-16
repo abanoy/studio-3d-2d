@@ -1,0 +1,21 @@
+{
+  "format": "has_five_draft_peer_source_review_1",
+  "reviewer": "resume_coordinates",
+  "review_scope": "Source-only trial/config/state consistency and stable-scale contracts; no parser or runtime.",
+  "blocking_implementation_issue_found": false,
+  "findings": [
+    {
+      "topic": "Root scale token",
+      "result": "data.scale token does not represent sampled key/ancestor scale. Subthreshold2e-5 sampled drift remains explicit and does not rescale core."
+    },
+    {
+      "topic": "Null direct-call translation baseline",
+      "reviewer_observed_limit": "Original identity fallback could drop nonzero selected translations for unsupported null live_pose direct calls.",
+      "author_response": "Added a pre-solve refusal when live_pose is not a Dictionary and any selected actual local origin differs exactly from immutable base origin. Fresh rest/null and ordinary partial wrapper Dictionary baselines remain admitted.",
+      "parent_source_approval": "Root explicitly approved exact-zero-offset refusal before trial/state commit; rest/null and Dictionary baselines stay admitted."
+    }
+  ],
+  "trial_copy_and_swap_order_reviewed": true,
+  "configuration_and_scale_consistency_reviewed": true,
+  "actual_execution_claimed": false
+}

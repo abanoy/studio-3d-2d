@@ -1,0 +1,105 @@
+{
+  "format": "has_isolated_native_five_qualified_actual_1",
+  "recorded_utc": "2026-11-16T04:06:25.967694+00:00",
+  "execution_context": "ISOLATED_STAGE3_PRE_PROMOTION",
+  "main_promotion_performed_by_packet": false,
+  "base_Git_context_only": "dbf0bc1145f74b5bbff814ec6a417ccd23ce0885",
+  "state": {
+    "checks": 266,
+    "failures": 0,
+    "actors": 3,
+    "completed_native_steps": 886,
+    "negative_contexts": 32,
+    "passed": true
+  },
+  "GUI": {
+    "checks": 102,
+    "failures": 0,
+    "phase_counts": {
+      "writer": 83,
+      "reader-packed": 11,
+      "reader-linked": 8
+    },
+    "passed": true,
+    "closed_private_jobs": 3,
+    "all_receipts_exit0_no_foreground": true
+  },
+  "controlled_fixture": {
+    "admission_only_no_physics_tolerance_change": true,
+    "all5_both_mean_fields_hit": true,
+    "greatest_mean_field_normalized_dot": -0.9999999379067723,
+    "native8_goal_mean_axis_abs_dot_max": 2.8312206268310547e-07,
+    "root_geometry_frames0_24_exact": true,
+    "root_keys_equal": true
+  },
+  "record_root_rotation_fixture": {
+    "actual_root_geometry_changed": true,
+    "constant_scale": true,
+    "root_key_radians": 0.47
+  },
+  "protected_root_preservation": {
+    "format": "has_native_five_original_root_preservation_1",
+    "passed": true,
+    "observed_utc": "2026-11-16T04:03:37.463110+00:00",
+    "stage_manifest_sha256": "c1ef9e697183bba58d2fe877f9f5afeb17131d0d2a93950eab1556b46891c190",
+    "original_functional_files_exact": 1017,
+    "original_two_inputs_exact": true,
+    "baseline_verification_exact": true,
+    "sealed_packet_exact": true,
+    "no_runtime_or_lease_claim": "Read-only hashes only; root separately validates every terminal receipt/closure."
+  },
+  "root_wrapper": {
+    "pid": 81424,
+    "exit": 0,
+    "retained_Popen_reaped": true,
+    "timed_out": false,
+    "owned_wrapper_terminated": false,
+    "seconds": 62.42662420000124
+  },
+  "runtime_lease_released": true,
+  "qualified_product_source_sha256": {
+    "src/source_secondary.gd": "3b2c29dc11b60e68306f858a32d03271e30a039b8451916df2ff9324e7da4f84",
+    "src/secondary_live.gd": "2613b19ce53b3a50fd001fe4e5b39bca2814165148b036993549490aa96c33a9",
+    "src/source_chain_math.gd": "31491fbde49b635edadda5e661fa3eecabf0f7e3598f0dc448c0d944ffa6f844"
+  },
+  "performance": {
+    "GUI_native_step_means_ms": {
+      "disabled": 9.054094444444445,
+      "miss": 8.192122222222222,
+      "opposite": 8.117688888888889,
+      "speed12": 7.521488888888889,
+      "speed3": 8.054411111111111,
+      "speed50": 8.625633333333333,
+      "zero": 7.928483333333333
+    },
+    "headless_rotating_native_step_means_ms": {
+      "rotation_half": 10.223366666666667,
+      "rotation_one": 12.2135,
+      "rotation_two": 10.119533333333333
+    },
+    "120Hz_interval_ms": 8.333333333333334,
+    "FPS_or_realtime_guarantee": false
+  },
+  "scope": {
+    "rules": 5,
+    "retained_rules": 49,
+    "unselected_world_bones": 64,
+    "weighted_union_vertices": 694,
+    "unaffected_vertices": 8967,
+    "raw_source_report_inert_unchanged": true,
+    "same_actor_active_ragdoll": "UNQUALIFIED_PARTIAL_SOURCE_RIG",
+    "Source_SDK_artist_or_wider_model_fidelity": false,
+    "private_asset_or_expected_or_pose_arrays_in_packet": false,
+    "full_current_default_pass": false,
+    "prior_dbf_complete_default": "FAILED_UNCHANGED",
+    "manual_owner_check": "DEFERRED_NO_RESULT"
+  },
+  "upstream_packet_indices": {
+    "experiments/native_five_initial_actual_20261116/INDEX.json": "d9c9e28b7bf02e7e6d1651638330135ae7388f0f1ab785be46339ba3bc5548ec",
+    "experiments/native_five_performance_followup_20261115/INDEX.json": "cae9f2b9cb550446897ebdec0a567e5b2ffb505184effac307b17d3042d1abd5",
+    "experiments/source_native_five_transverse_fixture_20261116/INDEX.json": "0c066083e547aed8287d4ba4092e00d4853cf6d5ee8b8b4f5b25510ce85a9488"
+  },
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation": "52/54_UNCHANGED",
+  "next": "Promote exact qualified product subset separately; update UI labels/provenance, affected regressions and a fresh complete default. Preserve earlier failures."
+}

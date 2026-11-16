@@ -1,0 +1,60 @@
+{
+  "format": "native_five_performance_static_1",
+  "sealed_v2_inputs_unchanged": {
+    "source_secondary.gd": true,
+    "source_chain_math.gd": true,
+    "secondary_live.gd": true,
+    "INDEX.json": true
+  },
+  "sealed_v2_all32_payloads_hash_verified": 32,
+  "actual_failed_writer_stage_code_matches_sealed_v2": {
+    "source_secondary.gd": true,
+    "source_chain_math.gd": true,
+    "secondary_live.gd": true
+  },
+  "variants": {
+    "strict": {
+      "sha256": "064c211efbb19b829defb959b6f9d0c6aeef36aa6c2af76065fda9f2b17b21be",
+      "unchanged_functions": {
+        "offered": true,
+        "anchors": true,
+        "vector64": true,
+        "basis64": true,
+        "frame64": true,
+        "context_error": true,
+        "binding_stamp": true,
+        "airflow_error": true,
+        "configuration_stamp": true,
+        "state_error": true,
+        "step": true,
+        "active": true
+      },
+      "full_source_guards_and_step_byte_text_unchanged": true,
+      "unparsed_unrun": true
+    },
+    "closure": {
+      "sha256": "3754f5bde0068cd706a42116588520369183ba7b9775b6dc718700ce072b3ef6",
+      "unchanged_functions": {
+        "offered": true,
+        "anchors": true,
+        "vector64": true,
+        "basis64": true,
+        "frame64": true,
+        "context_error": true,
+        "binding_stamp": true,
+        "airflow_error": true,
+        "configuration_stamp": true,
+        "state_error": true,
+        "step": true,
+        "active": true
+      },
+      "full_source_guards_and_step_byte_text_unchanged": true,
+      "unparsed_unrun": true
+    }
+  },
+  "unchanged_scalar_core_sha256": "31491fbde49b635edadda5e661fa3eecabf0f7e3598f0dc448c0d944ffa6f844",
+  "raw_guard_is_exact_frame64_prefix": true,
+  "GDScript_parsed": false,
+  "engine_executed": false,
+  "Git_or_CIM_executed": false
+}

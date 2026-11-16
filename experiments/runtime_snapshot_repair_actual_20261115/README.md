@@ -1,0 +1,15 @@
+# Failed full and actual scoped snapshot repair
+
+The dbf0bc1 complete default remains **FAILED** on its outer 180-second teardown wrapper timeout. All36 core groups passed. Its separate late child passed28 unchanged checks/all4cases and closed normally; child71828's receipt was7.8069579seconds after the failed full finished. This cannot upgrade the failed full. Snapshot work covered6023files, including4551experiments and436docs, with about70seconds freezing and97seconds rehashing. These are observed approximate stage timings, not an OS-cause claim.
+
+Root closed the failed graphics lease at02:55:49Z using46 actual private receipts, all closed. Its host observer did not terminate processes. Automatic wrapper termination is an inference from the timeout trace and Python stdlib behavior; the failed wrapper PID was not separately captured. No global no-termination claim is made.
+
+Root applied the reviewed v2 three-file source packet, then observed27 actual CPU tests passing in4.146seconds (7 real-Git fixtures plus20 mocked runtime cases). That27-test observation is reported from the root tool trace; no raw stdout or PID is invented. The earlier v2 mock-only20 log is preserved with its own scope. The first application helper's dictionary/list TypeError was reported to refuse before writes; no raw trace was retained in this packet.
+
+The actual scoped replay independently passed28/0/all4cases in21.763778seconds with1024snapshotfiles, unchanged180/60/110budgets,2 closed private jobs and retained wrapper86500 exiting0/reaped. It recorded no timeout or termination, exact before/after functional sources and zero owned commands after completion. This is scoped repair evidence. A fresh complete default remains required. The existing Source1 native backend, manual deferral and55/62,52/54 acceptance states are unchanged.
+
+`SOURCE_MANIFEST.json` binds every exact copy to its original relative path, raw byte count and SHA256. Large catalogue/provenance JSON is deterministic gzip (mtime0); decompressing restores the exact original raw bytes/hash. `INDEX.json` binds all packet files except itself. Source aliases freeze only the explicit reviewed3 files, unchanged shared GDScript/full driver, and source-only observer/application helpers. Raw absolute tool, checkout and temporary profile paths are deliberately retained as evidence metadata.
+
+No PNG/GLB/HAS/MDL/VVD, arbitrary media, native geometry/rest arrays, PCM, or complete actual stage trees are included. Hash catalogue entries may name such assets but contain no asset bytes. The old failed teardown verification is startup-only and lacks a completed process/result field; its standalone late result and receipt have their own classification.
+
+Run the independent read-only CPU verifier with `python -B experiments/runtime_snapshot_repair_actual_20261115/verify_packet.py`. It does not import/run the frozen helpers or production tests, inspect processes, query Git, launch engines or upload anything. The builder copies only explicit safe metadata/source and is not a runtime replay.

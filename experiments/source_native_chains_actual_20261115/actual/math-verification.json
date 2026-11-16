@@ -1,0 +1,57 @@
+{
+  "format": "has_chain_synthetic_math_execution_1",
+  "passed": true,
+  "checks_expected": 4012,
+  "checks_observed": 4012,
+  "phases": [
+    {
+      "phase": "math-parse",
+      "pid": 76124,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "interrupted": false,
+      "owned_child_terminated": false,
+      "owned_child_forced_kill": false,
+      "seconds": 0.2730766999993648,
+      "error_markers": [],
+      "passed": true
+    },
+    {
+      "phase": "math-run",
+      "pid": 75528,
+      "exit": 0,
+      "retained_Popen_reaped": true,
+      "timed_out": false,
+      "interrupted": false,
+      "owned_child_terminated": false,
+      "owned_child_forced_kill": false,
+      "seconds": 1.0949502999992546,
+      "error_markers": [],
+      "passed": true
+    }
+  ],
+  "result": {
+    "SDK_executed": false,
+    "actual_native_chains_exercised": false,
+    "checks": 4012,
+    "failures": [],
+    "float32_Model_boundary_exercised": false,
+    "maximum_error": 8.881784197001252e-16,
+    "root_lease_sha256": "9f5c8265cf305b1b4625898d8e74905ee369f20b1a56f34086b31c16af392f69",
+    "status": "PASSED_SYNTHETIC_CHAIN_MATH_ONLY"
+  },
+  "preservation": {
+    "functional_source": true,
+    "staged_application": true,
+    "original_inputs": true,
+    "staged_inputs": true,
+    "aliases": true,
+    "proofs_and_locks": true,
+    "runtimes": true,
+    "driver": true,
+    "frozen_packet_index": true
+  },
+  "actual_native_geometry_loaded": false,
+  "source_HEAD_context": "9de4e6cbdf8b0369cbdf118a40c13f85860eaac0"
+}

@@ -50,6 +50,8 @@ func start() -> void:
 func advance(delta: float,frame: int,time: float,recording: bool,fields: Array,runtime: RefCounted) -> String:
 	if not running:return ""
 	if native_backend:
+		var airflow_issue: String=runner.airflow_error()
+		if not airflow_issue.is_empty():return airflow_issue
 		if not recording and frame!=initial_frame:return "Imported hair preview stopped after seeking. The authored pose is restored."
 		var video: Dictionary=rig.motion_video
 		var frame_step: float=delta*float(video.fps_num)/float(video.fps_den)

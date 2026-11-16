@@ -1,0 +1,20 @@
+{
+  "format": "has_five_draft_source_review_history_1",
+  "runtime_or_parser_executed": false,
+  "draft_applied_to_core": false,
+  "corrections": [
+    {
+      "reviewer": "root",
+      "issue": "Initial new69-bone closure used max(1,scale) for origin, relaxing admission below scale1.",
+      "correction": "Parent-local origin nowEPS*actual_frame.scale; scalarFK origin nowEPS*target.scale. Existing max(1,scale) retained only for basis closure.",
+      "before_runtime": true
+    },
+    {
+      "reviewer": "author",
+      "issue": "Dynamic _chain.baseline_worlds result needed an explicit Dictionary declaration; stale/config state must validate before use.",
+      "correction": "Explicit Dictionary result; configuration and snapshot validation moved before baseline traversal.",
+      "before_runtime": true
+    }
+  ],
+  "unchanged_original_blocks": "d2 original admission/boundary/context/69-binding/header/stat preamble retained exactly; newly added baseline gates separately reviewed."
+}

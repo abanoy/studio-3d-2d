@@ -135,7 +135,7 @@ func sync() -> void:
 	hair_toggle.disabled=app.exporting or rig==null or rig.data.get("kind","model")!="model" or not definition.get("error","").is_empty() or missing_chains and not imported and (not can_setup or reviewing) or imported and reviewing or pending.has(rig.data.id)
 	hair_toggle.set_pressed_no_signal(rig!=null and (pending.has(rig.data.id) or active(rig.data.id) and simulations[rig.data.id] is Secondary))
 	hair_toggle.tooltip_text="Simulate hair/clothing joints while posed or with Physics. Off restores their authored pose; body Physics keeps running. Record explicitly keeps motion."
-	if imported:hair_toggle.tooltip_text="Use imported settings for the front-hair strand. This first supported subset moves1of49 imported joints. Other loose parts can use Set up loose parts. Body Physics must be off. Off restores the authored pose; Record keeps motion."
+	if imported:hair_toggle.tooltip_text="Use imported settings for three supported hair strands. Other loose parts can use Set up loose parts. Body Physics must be off. Off restores the authored pose; Record keeps motion."
 	elif missing_chains:hair_toggle.tooltip_text=definition.get("error","") if not definition.get("error","").is_empty() else "This model needs hair/clothing joints. Turn on to review a loose part and add weighted helpers; the original is kept." if can_setup else "Select a skinned model to review and add hair/clothing joints."
 	if fan_editor:fan_editor.sync()
 	if recording:recording.sync()
@@ -239,7 +239,7 @@ func enable_hair(actor: RefCounted) -> void:
 		return
 	if result.has("error"):app.pose_editor.apply_frame();sync();app.message(result.error);return
 	simulations[id]=result.physics;result.physics.start();sync()
-	app.message("Imported front-hair motion on (1of49 imported joints). Move a fan or choose Aim at hair; Record keeps the motion. Other loose parts can use Set up loose parts." if result.physics.native_backend else "Hair & clothes on. The body stays posed unless Physics is on. Move a fan or adjust its blowing speed; Record keeps the motion.")
+	app.message("Imported motion on for three supported hair strands. Move a fan or choose Aim at hair; Record keeps the motion. Other loose parts can use Set up loose parts." if result.physics.native_backend else "Hair & clothes on. The body stays posed unless Physics is on. Move a fan or adjust its blowing speed; Record keeps the motion.")
 
 func build_colliders() -> void:
 	clear_colliders();colliders=Node3D.new();colliders.name="StudioPhysicsColliders";app.renderer.world.add_child(colliders)

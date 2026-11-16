@@ -1,0 +1,100 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Unrecognized output string "misc2" in mapping:
+030000000d0f00000202000000000000,Horipad O Nintendo Switch 2 Controller,a:b1,b:b0,back:b8,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b4,leftstick:b10,lefttrigger:b6,leftx:a0,lefty:a1,misc1:b13,misc2:b14,rightshoulder:b5,rightstick:b11,righttrigger:b7,rightx:a2,righty:a3,start:b9,x:b3,y:b2,platform:Windows,
+Unrecognized output string "misc2" in mapping:
+030000000d0f00009601000000000000,Horipad Steam,a:b0,b:b1,back:b10,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b12,leftshoulder:b6,leftstick:b13,lefttrigger:b8,leftx:a0,lefty:a1,misc2:b2,paddle1:b5,paddle2:b15,paddle3:b18,paddle4:b19,rightshoulder:b7,rightstick:b14,righttrigger:b9,rightx:a3,righty:a4,start:b11,x:b3,y:b4,platform:Windows,
+Unrecognized output string "misc2" in mapping:
+030000007e0500006920000000000000,Nintendo Switch 2 Pro Controller,a:b0,b:b1,back:b14,dpdown:b8,dpleft:b10,dpright:b9,dpup:b11,guide:b16,leftshoulder:b12,leftstick:b15,lefttrigger:b13,leftx:a0,lefty:a1~,misc1:b17,misc2:b20,paddle1:b18,paddle2:b19,rightshoulder:b4,rightstick:b7,righttrigger:b5,rightx:a2,righty:a3~,start:b6,x:b2,y:b3,platform:Windows,
+Native OpenGL API detected: 3.3: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+SDL: Init OK!
+Using "winink" pen tablet driver...
+OpenGL API 3.3.0 - Build 32.0.101.8626 - Compatibility - Using Device: Intel - Intel(R) Arc(TM) 140V GPU (8GB)
+WASAPI: Activated output_device using IAudioClient3 interface
+WASAPI: wFormatTag = 65534
+WASAPI: nChannels = 2
+WASAPI: nSamplesPerSec = 44100
+WASAPI: nAvgBytesPerSec = 352800
+WASAPI: nBlockAlign = 8
+WASAPI: wBitsPerSample = 32
+WASAPI: cbSize = 22
+WASAPI: mix_rate = 44100
+WASAPI: fundamental_period_frames = 441
+WASAPI: min_period_frames = 441
+WASAPI: max_period_frames = 441
+WASAPI: selected a period frame size of 441
+WASAPI: detected 2 channels
+WASAPI: audio buffer frames: 441 calculated latency: 10ms
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+CORE API HASH: 3663110324
+EDITOR API HASH: 835956462
+Loading resource: res://tests/world_selection_teardown.gd
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://main.tscn
+Loading resource: res://src/app.gd
+Loading resource: res://src/onion.gdshader
+Loading resource: res://src/editor_grid.gdshader
+Loading resource: res://src/particle_sprite.gdshader
+Loading resource: res://src/selection_outline.gdshader
+Loading resource: res://src/selection_id.gdshader
+Loading resource: res://src/selection_ghost.gdshader
+Loading resource: res://src/sequence_shadow.gdshader
+glTF: Serializing mesh: 0
+glTF: Mesh has targets
+glTF: Serializing mesh: 1
+glTF: Mesh has targets
+glTF: Total meshes: 2
+Total materials: 2
+Total images: 0
+glTF: Total accessors: 10
+glTF: Total buffer views: 10
+glTF: Total buffers: 1
+PASS control creates its own deterministic pose fixture
+glTF: Total buffers: 1
+glTF: Total buffer views: 10
+glTF: Total accessors: 10
+Total materials: 2
+glTF: Total skins: 2
+glTF: Parsing mesh: 0
+glTF: Parsing mesh: 1
+glTF: Total meshes: 2
+glTF: Converting spatial: OriginalPoseFixture
+glTF: Creating mesh for: Body
+glTF: Creating mesh for: Arm
+PASS control enters a genuine pending GPU pick before a draw
+PASS real draw selects the independently known fixture and releases its pending pick
+PASS completed pick preserves the camera and authored keys
+PASS multiple same-frame requests really remain pending
+PASS last same-frame request wins without retaining earlier requests
+PASS canceling a pending request preserves the previous selection
+PASS pick enqueued by an earlier draw listener waits beyond that same draw
+PASS reentrant request completes on the next draw and releases its frame wait
+PASS document replacement begins with an actual pending old-world pick
+PASS normal New replaces the old world while its pick is pending
+PASS obsolete pick cannot select old geometry or alter the new document
+PASS picking and document replacement leave original fixture bytes unchanged
+PASS queued close starts with multiple genuinely pending picks
+PASS queued close releases its application, selection viewport and all frame waits
+Loading resource: res://main.tscn
+PASS focus-free begins a real pending pick before any draw
+PASS focus-free immediately releases receiver and callback without another frame
+PASS focus-free releases selection, application and both scene views
+PASS focus-free leaves no frame connection, retained Node or orphan
+Loading resource: res://main.tscn
+PASS setup-free begins a real pending pick before any draw
+PASS setup-free immediately releases receiver and callback without another frame
+PASS setup-free releases selection, application and both scene views
+PASS setup-free leaves no frame connection, retained Node or orphan
+Loading resource: res://main.tscn
+PASS focus-detach begins a real pending pick before any draw
+PASS detaching a live owner immediately releases its pending pick and draw callback
+PASS detached owner cannot apply a stale pick on a later draw
+PASS focus-detach releases selection, application and both scene views
+PASS focus-detach leaves no frame connection, retained Node or orphan
+WORLD_SELECTION_TEARDOWN {"cases":[{"case":"controls-queue-free","reentrant_pending_after_first_draw":1,"signal_connections":0},{"case":"focus-free","nodes":1,"orphans":0,"signal_connections":0},{"case":"setup-free","nodes":1,"orphans":0,"signal_connections":0},{"case":"focus-detach","nodes":1,"orphans":0,"signal_connections":0}],"checks":28,"failures":0}
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"

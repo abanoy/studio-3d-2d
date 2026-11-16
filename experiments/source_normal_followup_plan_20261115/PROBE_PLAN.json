@@ -1,0 +1,93 @@
+{
+  "format": "has_source_normal_minimum_actual_probe_plan_1",
+  "status": "SOURCE_REVIEWED_PLAN_ONLY_RUNTIME_UNRUN",
+  "requirement": "IMPORT-03",
+  "older_native_normal_gate": "FAILED_UNQUALIFIED_UNCHANGED_2e-5",
+  "recorded_raw_max": 0.00121654672362075,
+  "recorded_above_gate": 8364,
+  "recorded_exported_vertices": 9661,
+  "recorded_ambiguities": 4,
+  "recorded_boundary": "native VVD float32 -> original raw GLB NORMAL accessor; no Godot",
+  "minimum_already_prepared_probe": {
+    "capture": "experiments/resume_coordinates_20261115/capture_blender_normals_UNRUN.py",
+    "compare": "experiments/resume_coordinates_20261115/compare_private_normals_UNRUN.py",
+    "fresh_native_conversion_required": false,
+    "GLB_export_required": false,
+    "Godot_required": false,
+    "new_install_required": false,
+    "outputs_private": [
+      "PRIVATE_NORMALS.json"
+    ],
+    "outputs_safe_aggregate": [
+      "PUBLIC_CAPTURE.json",
+      "BLENDER_BOUNDARY_COMPARISON_<fresh_run_id>.json"
+    ]
+  },
+  "future_runtime_preconditions": {
+    "existing_capture_lease_format": "has_blender_normal_probe_lease_1",
+    "existing_capture_phase": "ROOT_APPROVED_AFTER_FULL_PASS",
+    "fresh_complete_default_PASS_and_authoritative_closure_required_by_existing_code": true,
+    "scoped_shutdown_PASS_sufficient": false,
+    "lease_created_here": false,
+    "required_file_locks": [
+      "blend",
+      "mdl",
+      "vvd",
+      "glb",
+      "parameters",
+      "blender_exe",
+      "probe",
+      "exporter_extract",
+      "exporter_constants",
+      "sourceio_import",
+      "full_receipt",
+      "closure_receipt"
+    ],
+    "root_must_interpret_full_and_closure_receipts_independently": true,
+    "owned_copy_blend_SHA_must_equal_retained_original": "ead1f1913812593abd69e353fed375944a15f280738784886fcef7fda3ee65c6",
+    "private_desktop_and_disable_autoexec_before_load": true,
+    "retained_process_exit_reaping_closure_and_unchanged_inputs": true,
+    "planned_Blender_flags": [
+      "--background",
+      "--factory-startup",
+      "--offline-mode",
+      "--disable-autoexec",
+      "<owned-copy.blend>",
+      "--python-exit-code",
+      "1",
+      "--python",
+      "<existing-prepared-capture.py>",
+      "--",
+      "--lease",
+      "<root-lease.json>"
+    ],
+    "exit0_and_expected_public_capture_artifact_status_both_required": true
+  },
+  "expected_profile": {
+    "visible_exported_meshes": 2,
+    "original_GLB_primitives": 4,
+    "exported_vertex_witnesses": 9661,
+    "native_bones": 69,
+    "native_flex_names": 0,
+    "native_flex_controllers": 0
+  },
+  "coherence_before_cause": {
+    "unmatched_exported_vertices": 0,
+    "complete_witness_count": 9661,
+    "maximum_exporter_prediction_error_strictly_below": 2e-06,
+    "native_fidelity_distance_gate_unchanged": 2e-05,
+    "corner_count_is_not_exported_vertex_count": true
+  },
+  "interpretation": {
+    "native_to_stored_large_prediction_coherent": "Difference exists by saved Blender snapshot; setter/storage exact cause still unproven.",
+    "stored_to_emitted_large_prediction_coherent": "Inspect per-row round/normal-transform path and same maximum/ambiguity domain; rounding-alone bound cannot explain historical maximum.",
+    "prediction_or_matching_incoherent": "Preserve refusal and inspect saved-vs-exported mesh/settings/validation or matching, not infer importer cause.",
+    "nearest_prediction_candidate_limitation": "Compatible corner witnesses only, no unique attribution; all-candidate bounds/normal equivalence classes needed if ambiguity changes causal decision.",
+    "custom_normal_short2_storage": "HYPOTHESIS_ONLY_NOT_CAUSALLY_REPRODUCED",
+    "SDK_packed_normal_cause_for_this_float32_input": "REFUTED_BY_EXISTING_RECORDS",
+    "Godot_cause_of_recorded_raw_error": "EXCLUDED_BY_COMPARISON_DOMAIN"
+  },
+  "acceptance_changed": false,
+  "private_arrays_published": false,
+  "new_runtime_measurements": false
+}

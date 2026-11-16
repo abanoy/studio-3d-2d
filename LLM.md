@@ -5033,3 +5033,188 @@ stays exact. Evidence: experiments/source_native_live_independent_review_2026111
 manifest-successor-20261116. A clean committed functional source is required
 before the fresh full-default run; no allow-working or hash bypass is added.
 All broad acceptance statuses remain unchanged. Continue independent work.
+
+
+## 2026-11-15 — Full dbf retry failed on archive snapshot overhead
+
+Committed/pushed dbf0bc1145f74b5bbff814ec6a417ccd23ce0885 contains the bounded
+native8 increment and its separately scoped96UI/180state/21087experimental
+pair evidence. GitHub ownership and explicit goal upload authorization were
+verified after the first automatic review rejection; the same non-force push
+then succeeded. Remote commit205-file list and two critical blobs match; full
+205-file readback is still partial(42verified), so do not claim it complete or
+use it as blanket cleanup authority.
+
+Fresh complete default output/windows-canonical-bone-binding-20261116T022132132
+FAILED after1346.822071seconds on verify_world_selection_teardown.py's outer
+180second timeout. All36coregroups passed;1014functional hashes andHEAD remain
+exact. The actual private shutdown child subsequently passes28checks/all4cases,
+exit0, job/desktopclosed in11.324seconds. Its receipt is later than the failed
+full terminal timestamp and does not turn the full run into a PASS. Default
+output/verification.json remains old evidence and must not be substituted.
+
+Stage timing shows about70seconds copying6023snapshotfiles(4551experiments,
+436docs),11seconds normal startup, then97seconds rehashing/archive provenance.
+The outer deadline expired about4seconds into a healthy11-second test child.
+Root host observations at02:47:42.3887530Z confirm exact coordinator87384/
+Python86984 absent, no owned native commands, current1014source/HEADexact.
+The host observer issued no process termination; Python's outer timeout branch
+automatically terminates its owned wrapper by stdlib policy(source/trace
+inference), so no global "no process killed" claim is made. Preserve raw proofs.
+
+Next: close/audit all failed-run private helpers/receipts, then implement an
+opt-in functional-runtime snapshot for this automated teardown only. Keep the
+owner builder's archive default, old revision behavior, timeout and28assertions.
+Run a fresh scoped replay and complete default; do not weaken gates or relabel
+this failure. Benchmark: docs/benchmarks/windows_native_leaf_full_timeout_2026-11-15.json.
+
+Owner withdrew the volunteered hair-click exercise because busy and explicitly
+asked continued independent work. Record DEFERRED/no human result; ask no new
+manual questions. Existing f0dd57a review remains separate and unchanged.
+Native five-rule/deeper-chain and six-foot import work are experiment drafts,
+not current production or qualification. Formal55/62and52/54 remain unchanged.
+
+
+## 2026-11-15 — Bounded runtime snapshot fixes the shutdown-test timeout
+
+After actualfailed-runleaseclosure, applied the reviewed v2 opt-in snapshot
+change to tools/build_owner_review_snapshot.py and its teardown driver. Default
+owner archives and explicit old-revision byte behavior remain unchanged.
+All candidate Windows names/collisions are checked before any source read;
+only retained runtime destinations incur filesystem resolution. Runtime keeps
+the five functional trees/four entrypoints, optional dependencies/notices and
+exact catalogue-bound quoted-resource closure. Output/cache and their private
+fixtures, plus unreferenced research evidence, stay outside this automated snapshot.
+
+All27CPU tests pass(original7 real-Git cases plus20 mocked runtime cases).
+The intentional bad-revision diagnostic is expected; suiteexit0/OK in4.146s.
+Fresh actual scoped shutdown replay passes the SAME28checks/all4cases in
+21.763778seconds under the unchanged180second outer limit(60startup/110test).
+Snapshot contains1024files instead of6023. Both actual private jobs exit0,
+closejob/desktop, never foreground; source/runtime preservation and root fresh
+owned-command absence pass. No wrapper termination or timeout occurred.
+Source: output/runtime-snapshot-scope-20261116T030539570843. Benchmark:
+docs/benchmarks/world_selection_runtime_snapshot_2026-11-15.json.
+
+The first source-application helper refused before any write because it treated
+the packet's dictionary index as a list; corrected to its exact dictionary
+schema, then applied only the three reviewed bytes/hash targets. That setup
+error is separate from the earlier actual full timeout. Old source drafts and
+first mocked CRLF-preparation failures remain preserved. No runtime assertion,
+timeout, path guard or full verification scope is relaxed. The original dbf
+full remains FAILED; commit/retry a fresh complete default next. No human
+result or broad Source/artist acceptance is inferred;55/62and52/54stay unchanged.
+
+
+## 2026-11-15 — Isolated five-rule state pass; UI directional gate still fails
+
+Root staged sealed native5v2 only under output/native-five-stage-attempt1/Studio:
+three product/five observer-driver overlays,1023sourcefiles/two copied inputs,
+original main product still native8 only. Exact preparation5869b585... and
+after-run preservation06e5364f... bind originalRoot/input/baseline/packet equality.
+
+Actualheadless parse/state PASS266checks,zero failures,886successful native
+steps observed across three actual Models,32invalid contexts, fresh/null/partial
+baselines, constant-scale rotating roots and malformed-wrapper refusal. Both
+childrenexit0/reap,noerror/kill,source/input/toolpreservationtrue,leaseclosed.
+Run: .../Studio/output/source-native-five-state-20261116T032753090430.
+
+ActualprivateUIwriter executes82checks withONEfailure:
+fan.opposite_tip_directions. Other81includeweighted fan response, unaffected
+regions, Off/seek/Save/LocalRecord/Undo and packed/linked save commands. Cold
+readers/export remainUNRUN becausewriterfailed. Writerexit1/reaped/private
+job+desktopclosed in42.972s,allfourpreservationgatestrue. Root03:33:14.6905260Z
+closure confirms0ownednativecommands andnoRoottermination. Run:
+.../Studio/output/native-five-gui-attempt1. PreserveFAILED/no main promotion.
+
+The new all-five total3D-tip dot predicate and fanfixture symmetry are under
+independent scalar/analytic investigation; originalnative8gate stays. Do not
+waive a failure or infer actual failingjoint withouttheplanned diagnostic.
+Measured successful Native.step means11.04–12.74ms(max17.723ms) exceed the
+8.333ms120Hz step budget inthisdebug/test configuration. Prepare a strictly
+guarded ancestor-calculation optimization and measure; no inventedFPS pass.
+Benchmark: docs/benchmarks/native_five_initial_2026-11-15.json. Neither266state
+PASS nor81otherUIchecksqualifiescomplete native5behavior; currentmainremains
+one rule. Fullretry, SDK/artist, same-actorbody and broader49remain separate.
+Formal55/62and52/54unchanged; ownerbusy, continuewithoutmanualquestions.
+
+
+## 2026-11-15 — Strict five-rule state proof and direction-fixture diagnosis
+
+Owner deferred the volunteered manual hair-click exercise and explicitly asked
+continued independent work. Record DEFERRED / NO RESULT; request no further
+manual observations while independent work remains.
+
+The isolated strict performance backend separately passes all266 state checks
+with exact source/input/runtime preservation. Its actual GUI diagnostic completes
+57 checks with2 retained failures (the all-five direction gate and separate
+native8 gate), then exits1 normally with closed private desktop/job and no error
+markers. Main production still solves only native8; no five-rule qualification
+or cold-reader result is inferred. Exact initial observations are archived in
+experiments/native_five_initial_actual_20261116 (INDEX d9c9e28b7bf02e7e6d1651638330135ae7388f0f1ab785be46339ba3bc5548ec).
+Root independently verified its185 archive checks; these are not product tests.
+
+The actual failing ID is8, whose goal-forward/mean-wind absolute alignment is
+0.969883. Its positive and opposite bending-plane shifts have opposite signs,
+but a common gust cross-axis term makes the whole3D dot positive6.1057e-6.
+All four added owners' dots are negative and both fields hit180/180 samples.
+The two test fans also have different aim centers. Keep both old direction
+predicates/failures, add transverse center-symmetric fixture admission, retain
+gust wiggle, and measure animated-root behavior separately. No production
+coefficients or airflow are tuned to force a pass.
+
+Strict Native.step per-profile means measure8.584–8.893ms versus initial
+11.043–13.268ms; neither is a120Hz/FPS qualification. A second source-only
+strict deduplication retains all69 guards and is under independent review.
+Stage3 is prepared only; no stage3 runtime result exists at this entry.
+
+Connected GitHub raw readback is now complete for all205 changed files of
+dbf0bc1145f74b5bbff814ec6a417ccd23ce0885. Byte counts, Git SHA1 and SHA256
+match every immutable blob; all11 functional working byte recipes reconstruct.
+See experiments/native_source_live_port_20261115/remote_dbf0bc1/COMPLETE.json.
+This covers that old checkpoint, not later working changes. No new cleanup
+occurred. Root independently reverified the scoped-repair and pair packets.
+Formal55/62 and52/54 remain unchanged; fresh full-default retry remains required.
+
+Timing correction to the initial Source5 prose: across all seven writer profiles,
+Native.step means were11.043–13.268ms and the maximum was18.469ms. The earlier
+11.04–12.74/max17.723 sentence omitted zero/miss profiles. The retained raw
+result and benchmark maximum were correct; no speed qualification was claimed.
+
+
+## 2026-11-15 — Three imported hair strands qualified and promoted
+
+Actual isolated strict2 state verification passes266/0 across three instances;
+actual editor writer83, packed cold reader/export11 and linked cold reader8
+all pass(102total). The retained root wrapper exits0/reaped in62.4266seconds;
+three real private jobs/desktops close without foreground activation, timeout
+or termination. Original1014 functional sources, two native inputs, baseline
+and sealed candidate remain exact before promotion. Success packet:
+experiments/native_five_qualified_actual_20261116, INDEX429ea76d462a385cfa2d292ed9c2c12dd9fbf9e52193f63bfb0e7776324dd655.
+Root separately verifies173archive checks; these are not product checks.
+
+The new transverse fan fixture preserves the old direction predicates and all
+numeric tolerances, proves fixed root/actual five-anchor centroid/opposite
+fields, and keeps gust wiggle. Animated0.47radian root geometry remains tested
+in the actual Record/Undo/HAS/export pipeline. Earlier82/1 and57/2 failures
+remain failed and recoverable. Native.step means now7.521–9.054ms, peak13.289ms;
+the camera fixture differs, so no paired speedup or120Hz/FPS pass is claimed.
+
+Promoted exactly10 reviewed files: three product files, four exact qualified
+test/driver files, two UI strings in physics_editor, and two manifest hash
+successors. Two source headers change comments only; runtime code matches the
+qualified Stage3. Main now solves native8,17,18,26,27 (three strands,5of49),
+with all69 identity/rest/context/scale/pose guards and atomic per-instance
+state. User text names three supported strands. Remaining44 rules are inert;
+same-actor ragdoll, collision/SDK/client/artist parity and normals remain separate.
+Current120CPU driver controls and all41 reviewed helper/wind rows pass with
+explicit checkout-EOL reconstruction. Functional source count is now1019.
+
+The first strict2 application helper refused a dictionary/list index mismatch
+before any write; its correction then applied the exact reviewed source.
+The first120-control invocation refused a relative output path before tests;
+the required fresh absolute owned path then passes120/0. Neither is a runtime
+failure or a relaxed gate. Detailed benchmark:
+docs/benchmarks/native_five_qualified_2026-11-15.json. Commit/push/read back,
+then run fresh full Windows verification. The earlier dbf complete run remains
+FAILED; manual exercise DEFERRED/no result;55/62 and52/54 unchanged.

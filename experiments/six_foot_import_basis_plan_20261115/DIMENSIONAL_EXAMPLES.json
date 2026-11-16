@@ -1,0 +1,43 @@
+{
+  "format": "six_foot_basis_synthetic_dimensions_1",
+  "scope": "Exact rational dimensional examples plus one scalar float32 packing example; NOT importer/Godot/SDK/model qualification.",
+  "checks": 23,
+  "failures": 0,
+  "names": [
+    "six_feet_exact_18288_over_10000_metres",
+    "source_unit_exact_381_over_20000",
+    "example_source_height_100_converts_to_1_905_metres",
+    "basis_factor_is_0_96_without_user_scale_change",
+    "user_scale_one_reaches_target",
+    "user_scale_half_remains_artist_multiplier",
+    "user_scale_two_remains_artist_multiplier",
+    "source_conversion_is_not_rewritten",
+    "native_rule_length_converts_once_through_actual_basis",
+    "rewriting_source_scale_and_world_basis_would_double_apply_factor",
+    "different_input_unit_produces_same_reference_height",
+    "native_length_is_covariant_under_alternative_source_unit",
+    "raw_root_scale_1/2_is_counted_in_measurement_once",
+    "raw_root_scale_1/2_is_counted_in_rule_world_scale_once",
+    "raw_root_scale_2_is_counted_in_measurement_once",
+    "raw_root_scale_2_is_counted_in_rule_world_scale_once",
+    "raw_root_scale_3/2_is_counted_in_measurement_once",
+    "raw_root_scale_3/2_is_counted_in_rule_world_scale_once",
+    "parent_group_artist_scale_is_preserved",
+    "legacy_absent_basis_keeps_existing_three_point_two_height",
+    "old_optional_fit_metadata_stays_inert",
+    "reinterpreting_old_fit_metadata_as_active_basis_changes_appearance",
+    "example_scalar_float32_factor_respects_existing_2e_5_gate"
+  ],
+  "synthetic_example": {
+    "native_height": "100",
+    "source_scale": "0.01905",
+    "converted_height": "1.905",
+    "factor": "0.96",
+    "user_scale": "1",
+    "target_metres": "1.8288",
+    "native_rule_length": "20",
+    "normalized_rule_length_metres": "0.36576"
+  },
+  "scalar_float32_factor_height_error": 4.0876865448069566e-08,
+  "actual_engine_or_native_data_used": false
+}
