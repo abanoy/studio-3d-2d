@@ -494,6 +494,7 @@ func _ready() -> void:
 	particle_editor=preload("res://src/particle_editor.gd").new();particle_editor.app=self;add_child(particle_editor)
 	build_ui()
 	mmd_pose_importer=preload("res://src/mmd_pose_import.gd").new();add_child(mmd_pose_importer);mmd_pose_importer.setup(self)
+	if StudioTheme.is_neon(): pose_editor.build_neon_inspector()
 	audio_importer=preload("res://src/audio_import.gd").new();audio_importer.app=self;add_child(audio_importer)
 	audio_trim_editor=preload("res://src/audio_trim_editor.gd").new();audio_trim_editor.app=self;add_child(audio_trim_editor)
 	audio_fade_editor=preload("res://src/audio_fade_editor.gd").new();audio_fade_editor.app=self;add_child(audio_fade_editor)
@@ -3585,6 +3586,7 @@ func _process(delta: float) -> void:
 	refresh_badges()
 	refresh_draw_inspector()
 	refresh_camera_inspector()
+	pose_editor.refresh_neon_inspector()
 	if playing:
 		var seconds := preview_seconds()
 		preview_sample_seconds=seconds

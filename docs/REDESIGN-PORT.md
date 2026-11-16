@@ -579,3 +579,93 @@ Deviations (step 7):
   "Key saved at frame 24. Next: …" is not copied.
 - **Contrast:** `#FFD6EA` on the chip over the current row (`#3C2538`) is 10.6:1, `#B4BAC7` on `#171A21`
   8.9:1, `#B4BAC7` on `#0F1015` 9.8:1, disabled `#8C93A3` on `#0F1015` 6.2:1, white on `#171A21` 17.4:1.
+
+### Step 8: inspector Pose panel (`src/pose_editor.gd`, `src/app.gd`)
+- **How it is built:** `pose_editor.build_neon_inspector()` runs once at start-up in neon. `app.gd`
+  calls it after `mmd_pose_importer.setup()`, because that importer adds "Import MMD pose…" and
+  "Import MMD motion…" to the panel after `build_ui()`. It moves Codex's controls into the mock's cards
+  and restyles them with the step 5/7 helpers (`inspector_block`, `inspector_header`, `inspector_card`,
+  `style_switch_row`, `style_outline`, `style_primary`, `lens_button_boxes`). Nothing is replaced, and
+  every control keeps its type, value, signals and Simple/Advanced visibility. A control the build does
+  not place (a later Codex addition) lands in "More pose options" in its original order.
+  `pose_editor.refresh_neon_inspector()` runs each frame from `app._process`. It writes only when a
+  shown value changes, and does the key lookup only when the model, selection, frame,
+  `recovery_revision`, mode or auto-key changes. Sections with nothing
+  visible hide themselves, and so do switch rows whose switch is hidden. The old "Model / pose" heading
+  is hidden. Classic styles keep the old card exactly. `motion_editor.gd`, `contact_editor.gd`,
+  `movement_path_editor.gd` and `pose_library_editor.gd` needed no change: their inspector buttons are
+  restyled from `pose_editor.gd`, and their windows already use the app theme.
+- **Header card** (64 px, `inspector_header()`): a 36 px neon-ring tile with the joint icon. The title
+  is the selected bone's display name (`BoneLabels.display`, so Simple shows friendly names and
+  Advanced the original), or the model name for the root, or "No model yet". The subtitle is "Joint
+  on <model>" / "Whole model" / "Add a model to pose it", 12 `#B4BAC7`. On the right, "◆ Keyed" (a
+  10 px `#A98BFF` diamond, 12 `#B4BAC7`) shows when the active model has an authored pose key
+  (`authored_keys()`) at the current frame. That is the violet diamond under the playhead on its
+  timeline lane. Auto-key stores only the changed channels, so a per-joint "keyed" answer would need
+  new key semantics; the chip reports what the timeline shows.
+- **Pose tool:** two segmented groups on one row, Rotate | Move and Local | World, styled like the
+  Camera lens presets. Rotate/Move calls `app.pick_pose_operation()`, the same path as the Simple
+  Pose strip (select + `item_selected`). Local/World selects `space`, emits `item_selected` and
+  redraws the gizmo. Both re-sync from `operation.selected` / `space.selected` every frame, so tests
+  and the middle-click tool cycle that call `select()` directly are reflected. The OptionButtons stay
+  visible under "More pose options" (contract 9: a control visible in Simple stays visible).
+- **Motion** (meta "Whole model"): "Move limbs naturally" / "Hands and feet bend the limb" and "Hold
+  feet while posing" / "Feet stay put as the body moves" as 44 px switch rows with sub-lines (the
+  same `limb_ik` / `hold_feet` CheckButtons, tooltips and signals), then Planted feet… (outline), and
+  in Advanced, Reverse limb bend.
+- **Next card** (`inspector_card()`, arrow tile), Simple Pose only, not while playing or exporting,
+  like `draw_next_step()`: an empty project shows "Next: add a scene or a model"; no selected model
+  shows "Next: pick a model to pose"; a model with no pose keys shows "Next: pose frame N" / "Click a
+  joint, then drag a colored handle. Changes are keyed automatically." (or "Press Record pose key…"
+  when auto-key is off). It is hidden otherwise. The mock's "Next: pose the landing / Go to frame 60…"
+  is sample story data that the app cannot know.
+- **Reset selected / Frame model:** Reset selected is the 44 px PrimaryButton with the reset icon
+  (`style_primary()`). Frame model is a 40 px outline button (`#101218`, 1 px `#2C303B`, 13/500) with
+  the frame icon centred with its label. The hint follows in 12 `#B4BAC7`: "Reset returns this joint
+  to its rest pose." for a bone, and "Reset returns the model to its starting place." for the root
+  (`reset_selected()` zeroes the root's position and rotation). **Visibility change:** in neon, Reset
+  selected is taken off the Advanced list, so Simple shows it as in the mock. It is the same button,
+  calling the same `reset_selected()`; this adds a control and removes none. Classic keeps it
+  Advanced-only.
+- **Below the mock's content:** "Keys and helpers" holds Record pose key (key icon), Auto-key pose
+  edits (Advanced switch row), Body poses…, Motion feeling… / Try motion feeling…, Movement path…,
+  Shapes / expressions… (shown only when the model has shapes, as before) and the two MMD imports.
+  "Bones" holds Codex's model summary (`info`), the bone search (h36), the bone tree, "Hold Alt to
+  reveal bones." and the Alt/drag help text, all captions in 12 `#B4BAC7`. "Visibility" holds
+  Visible at this frame and Reference only (switch rows), Remove visibility key here, Reference
+  opacity (when reference-only) and, in Advanced, Use imported shape. "More pose options" holds the
+  Rotate/Move and Local/World dropdowns plus Advanced controls in Codex's order: Add model…, Snap
+  (switch row), Local X/Y/Z, Apply local values, the locks, uniform scale, Apply model scale,
+  interpolation, Delete selected part key, Save view as camera key, Remove object and the base-shape
+  editor (`base_shapes.panel`, still Advanced-only).
+- **Not changed:** pose maths, the gizmo, auto-key, IK, contacts, the sub-editors' logic and
+  `refresh_values()` / `rebuild_tree()`. `setup()` only keeps references to six existing controls
+  (`frame_button`, `record_button`, `reset_button`, `remove_visibility_button`, `alt_hint`,
+  `help_label`).
+- **Contrast:** `#B4BAC7` sub-lines, hints and captions on `#0C0D11` are 10.0:1. Unselected segment
+  labels `#B4BAC7` on `#0F1015` are 9.8:1, and selected white on `#171A21` is 17.4:1. White on the
+  Reset button (`#1A1D25`) is 16.8:1, and `#F4F6FA` on the Frame model button (`#101218`) is 17.3:1.
+
+TESTS_PLACEHOLDER
+
+Deviations (step 8), owner decisions:
+- **Bend / Twist sliders:** not implemented. They would be new pose maths: a per-joint "bend" and
+  "twist" decomposition, with limits ("Straight" to "Fully bent", "Inward" to "Outward"), on top of
+  the Advanced Local X/Y/Z rotation fields, and the rig has no joint-axis metadata to map them
+  reliably. Posing stays with the gizmo (and the Advanced numbers). Adding them is an owner decision.
+- **Physics follow-through switch:** not implemented. It would mirror the Physics / Hair & clothes
+  toggles in the Pose view row, which have side effects (freezing, previews, recording). Those
+  toggles stay where Codex put them. Adding the switch is an owner decision.
+- **Pose tool section:** not in the mock (Bend/Twist take its place there). Rotate/Move and
+  Local/World are kept as the task requires, so Reset selected / Frame model sit a short scroll lower
+  at 1440x900 than in the mock.
+- **Keyed chip semantics:** model-level (a key of this model at this frame), not per-joint (see
+  above). The diamond has no glow.
+- **Header text gap:** the shared `inspector_header()` uses a 2 px gap between title and subtitle
+  (the mock uses 4 px) so the Draw and Camera headers stay pixel-identical.
+- **Duplicate dropdowns:** the Rotate/Move and Local/World OptionButtons stay visible in Simple under
+  "More pose options", as the Draw panel keeps the tool dropdown.
+- **Extra Simple controls below the mock content:** Record pose key, Body poses…, Motion feeling…,
+  Movement path…, MMD imports, bone search/tree and the visibility switches are visible in Simple
+  today, so they stay (restyled) below the mock's cards.
+- **Dock header:** the 28 px "PROPERTIES" header (the drag handle) stays, as in steps 5 and 7.

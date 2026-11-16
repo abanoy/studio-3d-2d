@@ -4948,3 +4948,25 @@ out (the Draw panel is pixel-identical), plus `StudioTheme.key_glow()`. Key stor
 fov semantics and `scene_view.gd` are unchanged, and classic styles keep the old card. Deviations
 (Advanced-only FOV slider, mm-based presets, placeholder thumbnails, Save key and hint kept in the
 panel) and Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 8: inspector Pose panel (Claude, claude/studio-redesign)
+
+In neon, `pose_editor.build_neon_inspector()` rearranges the Pose panel at start-up (app.gd calls it
+after the MMD importer adds its two buttons) into the mock's cards by moving Codex's controls; none is
+replaced. A header card shows the selected joint's display name (or the model name, or "No model
+yet") with "Joint on <model>" / "Whole model", plus a violet "◆ Keyed" chip when the model has an
+authored pose key at the current frame (the diamond the timeline shows). "Pose tool" has Rotate/Move
+and Local/World segmented controls that only drive the existing `operation` / `space` OptionButtons
+(Rotate/Move through `app.pick_pose_operation`), which stay visible under "More pose options".
+"Motion · Whole model" holds `limb_ik` and `hold_feet` as switch rows with sub-lines, Planted feet…
+and the Advanced Reverse limb bend. A Next card ("Next: add a scene or a model" / "pick a model to
+pose" / "pose frame N"; Simple Pose only, hidden when the model has keys). Reset selected (a
+PrimaryButton, now also shown in Simple in neon, as in the mock) and Frame model (outline) have the
+hint "Reset returns this joint to its rest pose." (model wording when the root is selected). Below:
+"Keys and helpers" (Record pose key, Auto-key [Advanced], Body poses…, Motion feeling…, Movement
+path…, Shapes / expressions…, MMD imports), "Bones" (summary, search, tree, Codex's Alt/drag help),
+"Visibility" and "More pose options" (everything else in Codex's order, including base shapes, which
+stay Advanced-only). `refresh_neon_inspector()` runs from `_process` and writes only on change. Pose
+maths, gizmo, auto-key, IK, contacts and the sub-editor files are unchanged; classic styles keep the
+old card. The mock's Bend/Twist sliders and Physics follow-through switch are not implemented (owner
+decisions, see docs/REDESIGN-PORT.md, with the Linux xvfb results). Windows verify.py was not run.

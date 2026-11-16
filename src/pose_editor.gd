@@ -5,6 +5,7 @@ const Timeline = preload("res://src/timeline.gd")
 const LimbIK=preload("res://src/limb_ik.gd")
 const Joints=preload("res://src/joint_constraints.gd")
 const FootHold=preload("res://src/foot_hold.gd")
+const StudioTheme=preload("res://src/studio_theme.gd")
 var app
 var panel: VBoxContainer
 var tree: Tree
@@ -57,6 +58,14 @@ var contacts: Node
 var motion: Node
 var movement_path: Node
 var pose_library: Node
+# Neon Pro step 8: references the neon inspector re-arranges (same controls, kept in every style).
+var frame_button: Button
+var record_button: Button
+var reset_button: Button
+var remove_visibility_button: Button
+var alt_hint: Label
+var help_label: Label
+var neon := {}  # neon only: Pose panel cards and the values they last showed
 
 func active_rig() -> RefCounted:
 	return app.renderer.active_model()
@@ -66,10 +75,10 @@ func setup(owner_app, parent: Node) -> void:
 	panel = app.section(parent, "Model / pose", "scene")
 	import_control = app.button(panel, "Add model…", import_dialog)
 	app.advanced(import_control)
-	app.button(panel, "Frame model", frame_model)
+	frame_button=app.button(panel, "Frame model", frame_model)
 	shape_button=app.button(panel,"Shapes / expressions…",open_shapes)
-	app.label(panel,"Hold Alt to reveal bones.").add_theme_font_size_override("font_size",12)
-	app.button(panel, "Record pose key", record_dialog)
+	alt_hint=app.label(panel,"Hold Alt to reveal bones.");alt_hint.add_theme_font_size_override("font_size",12)
+	record_button=app.button(panel, "Record pose key", record_dialog)
 	pose_library=preload("res://src/pose_library_editor.gd").new();add_child(pose_library);pose_library.setup(self,panel)
 	auto_key = CheckButton.new()
 	auto_key.text = "Auto-key pose edits"
@@ -135,7 +144,7 @@ func setup(owner_app, parent: Node) -> void:
 	scale_field.step = 0.001
 	scale_apply = app.button(panel, "Apply model scale", apply_scale)
 	app.advanced(scale_apply)
-	app.advanced(app.button(panel, "Reset selected", reset_selected))
+	reset_button=app.button(panel, "Reset selected", reset_selected);app.advanced(reset_button)
 	interpolation = OptionButton.new()
 	for name in ["ease", "linear", "hold"]: interpolation.add_item(name)
 	panel.add_child(app.advanced(interpolation))
@@ -146,7 +155,7 @@ func setup(owner_app, parent: Node) -> void:
 	visible_toggle.tooltip_text="Records visibility here. It stays until the next visibility key, independently of animation pieces."
 	visible_toggle.toggled.connect(set_visibility_key)
 	panel.add_child(visible_toggle)
-	app.button(panel,"Remove visibility key here",remove_visibility_key).tooltip_text="Restore the preceding visibility state at this frame. Undo restores the key."
+	remove_visibility_button=app.button(panel,"Remove visibility key here",remove_visibility_key);remove_visibility_button.tooltip_text="Restore the preceding visibility state at this frame. Undo restores the key."
 	reference_toggle = CheckButton.new()
 	reference_toggle.text = "Reference only (hide in movie)"
 	reference_toggle.toggled.connect(func(value): set_flag("reference_only", value))
@@ -171,7 +180,7 @@ func setup(owner_app, parent: Node) -> void:
 	shape_close=app.button(shape_column,"Close",func():shape_window.hide())
 	app.renderer.assets_changed.connect(func():shape_window.hide())
 	app.advanced(app.button(panel, "Remove object", remove_dialog))
-	app.label(panel, "Hold Alt to reveal all bones.\nClick a joint, then drag a colored handle.\nPose edits create keys automatically.\nEsc cancels a pose drag.").autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	help_label=app.label(panel, "Hold Alt to reveal all bones.\nClick a joint, then drag a colored handle.\nPose edits create keys automatically.\nEsc cancels a pose drag.");help_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	rebuild_tree()
 
 func sync_enabled(node: Node = panel) -> void:
@@ -852,3 +861,265 @@ func contact_edit_error() -> String:
 	for foot in segment.get("feet",[]):
 		if selected in foot.ids:return "Release the feet in Planted feet before moving this leg. Plant them again to set new foot positions."
 	return ""
+
+# ---- Neon Pro step 8: right inspector, Pose panel ------------------------------------------
+# Built once at start-up in the neon style (app.gd, after the MMD importer adds its buttons).
+# Codex's controls are moved and restyled, never replaced: operation, space, limb_ik, hold_feet,
+# Planted feet…, Record pose key, Body poses…, Shapes / expressions…, the bone search and tree,
+# the visibility controls and every Advanced control keep their types, values, signals and
+# Simple/Advanced visibility. The Rotate/Move and Local/World segmented controls only drive the
+# existing OptionButtons (which stay visible under "More pose options"). The one visibility change:
+# Reset selected (Advanced-only before) is also shown in Simple, as in the mock. Pose maths, the
+# gizmo, auto-key, IK and contacts are untouched. Classic styles keep the old single card.
+
+const NEON_OPERATIONS := ["Rotate", "Move"]
+const NEON_SPACES := ["Local", "World"]
+
+func neon_block(title: String, meta := "") -> VBoxContainer:
+	var box: VBoxContainer = app.inspector_block(panel, title, meta)
+	neon.sections.append(box)
+	return box
+
+func neon_switch(parent: Node, control: CheckButton, kind: String, sub := "") -> void:
+	# Switch row (app.style_switch_row); h44 with a 12 px #B4BAC7 sub-line when sub is given. The bleed
+	# container follows the switch's own visibility (refresh_neon_inspector), so Advanced-only and
+	# conditional switches leave no gap.
+	var bleed: Control = app.style_switch_row(control, kind, 44 if not sub.is_empty() else 40, not sub.is_empty())
+	parent.add_child(bleed)
+	neon.bleeds.append(bleed)
+	if sub.is_empty(): return
+	var line: Label = app.overlay_label(control, sub, StudioTheme.TEXT2, 12)
+	line.position = Vector2(34, 23)
+
+func neon_outline(parent: Node, control: Button, kind := "") -> void:
+	app.move_to(control, parent)
+	app.style_outline(control, kind)
+
+func neon_centered_outline(control: Button, kind: String) -> void:
+	# Mock "Frame model": h40 outline (#101218, 1 px #2C303B), 13/500 #F4F6FA with the #8C93A3 icon and
+	# the label centred as one group (same trick as app.style_primary: 12 px label shift).
+	app.style_outline(control)
+	var pad := Vector4(36, 0, 12, 0)
+	app.override_button_boxes(control, StudioTheme.flat(StudioTheme.FIELD, StudioTheme.LINE2, 8, 1, pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE2, 8, 1, pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, pad))
+	var image := TextureRect.new()
+	image.texture = StudioTheme.icon(kind, StudioTheme.TEXT3, 16)
+	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	control.add_child(image)
+	image.set_anchors_preset(Control.PRESET_CENTER)
+	var width := StudioTheme.font(500).get_string_size(control.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x
+	image.offset_left = -width / 2.0 - 12; image.offset_right = image.offset_left + 16; image.offset_top = -8; image.offset_bottom = 8
+
+func neon_segmented(parent: Node, names: Array, tip: String, action: Callable) -> Array:
+	# Segmented group as the Camera lens presets: pad 3, r10, #0F1015, 1 px #22252E; selected
+	# #171A21 + 1 px #2C303B 13/600 white, others 13/500 #B4BAC7 (app.lens_button_boxes).
+	var group := PanelContainer.new()
+	group.add_theme_stylebox_override("panel", StudioTheme.flat(Color("0f1015"), StudioTheme.LINE, 10, 1, Vector4(3, 3, 3, 3)))
+	group.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	parent.add_child(group)
+	var row := HBoxContainer.new()
+	row.add_theme_constant_override("separation", 2)
+	group.add_child(row)
+	var buttons: Array = []
+	for i in range(names.size()):
+		var choice := Button.new()
+		choice.text = names[i]
+		choice.focus_mode = Control.FOCUS_NONE
+		choice.custom_minimum_size = Vector2(0, 36)
+		choice.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		choice.add_theme_font_size_override("font_size", 13)
+		choice.tooltip_text = tip
+		choice.pressed.connect(action.bind(i))
+		app.lens_button_boxes(choice, false)
+		row.add_child(choice)
+		buttons.append(choice)
+	return buttons
+
+func pick_operation(index: int) -> void:
+	# Same path as the Simple Pose strip (app.pick_pose_operation): select + item_selected.
+	app.pick_pose_operation(index)
+
+func pick_space(index: int) -> void:
+	if space.selected == index: return
+	space.select(index)
+	space.item_selected.emit(index)
+	update_gizmo()
+
+func build_neon_inspector() -> void:
+	var children: Array = panel.get_children()
+	var heading: Node = children[0]
+	heading.visible = false
+	var outer: PanelContainer = panel.get_parent()
+	outer.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.BAR, Color.TRANSPARENT, 0, 0, Vector4(0, 0, 0, 0)))
+	panel.add_theme_constant_override("separation", 0)
+	neon = {"sections": [], "bleeds": [], "sig": "", "tool_sig": "", "hint_sig": "", "keyed_sig": ""}
+	# Header card: joint tile, selection title, "Joint on <model>" / "Whole model", "◆ Keyed" chip.
+	var head: Array = app.inspector_header(panel, "joint", "No model yet", "")
+	var row: HBoxContainer = head[0].get_parent().get_parent()
+	head[0].clip_text = true
+	head[0].text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	head[0].get_parent().custom_minimum_size.x = 60
+	var chip := HBoxContainer.new()
+	chip.add_theme_constant_override("separation", 7)
+	chip.mouse_filter = Control.MOUSE_FILTER_PASS
+	chip.tooltip_text = "This model has a pose key at this frame (the violet diamond on its timeline lane)."
+	row.add_child(chip)
+	var diamond := TextureRect.new()
+	diamond.texture = StudioTheme.diamond(StudioTheme.MODEL, 10)
+	diamond.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	diamond.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	diamond.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	chip.add_child(diamond)
+	app.overlay_label(chip, "Keyed", StudioTheme.TEXT2, 12)
+	chip.visible = false
+	neon.merge({"title": head[0], "subtitle": head[1], "keyed": chip})
+	# Pose tool: Rotate / Move and Local / World drive operation and space.
+	var tool_box := neon_block("Pose tool")
+	tool_box.add_theme_constant_override("separation", 12)
+	var tool_row := HBoxContainer.new()
+	tool_row.add_theme_constant_override("separation", 8)
+	tool_box.add_child(tool_row)
+	neon["operations"] = neon_segmented(tool_row, NEON_OPERATIONS, operation.tooltip_text, pick_operation)
+	neon["spaces"] = neon_segmented(tool_row, NEON_SPACES, "Show the handles along the joint's own axes (Local) or the scene's axes (World).", pick_space)
+	# Motion: the whole-model posing helpers.
+	var motion_box := neon_block("Motion", "Whole model")
+	neon_switch(motion_box, limb_ik, "joint", "Hands and feet bend the limb")
+	neon_switch(motion_box, hold_feet, "runner", "Feet stay put as the body moves")
+	neon_outline(motion_box, contacts.control, "figure")
+	neon_outline(motion_box, flip_bend, "turn")
+	# Next card: same rules as the Simple next-step hints (next_step()).
+	var next: Dictionary = app.inspector_card(panel, "arrow-right")
+	next.holder.visible = false
+	neon.merge({"next": next.holder, "next_title": next.title, "next_body": next.body})
+	# Reset selected (PrimaryButton h44) and Frame model (outline h40), with the reset hint.
+	var actions_panel := PanelContainer.new()
+	actions_panel.add_theme_stylebox_override("panel", app.inspector_box(Vector4(16, 16, 16, 18), true, true))
+	panel.add_child(actions_panel)
+	var actions := VBoxContainer.new()
+	actions.add_theme_constant_override("separation", 8)
+	actions_panel.add_child(actions)
+	app.advanced_controls.erase(reset_button)
+	reset_button.visible = true
+	app.move_to(reset_button, actions)
+	app.style_primary(reset_button, "reset")
+	reset_button.tooltip_text = "Return the selected joint (or the whole model) to its rest pose. Undo restores it."
+	app.move_to(frame_button, actions)
+	neon_centered_outline(frame_button, "frame-target")
+	var hint: Label = app.overlay_label(actions, "", StudioTheme.TEXT2, 12)
+	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	hint.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+	hint.custom_minimum_size = Vector2(120, 22)
+	hint.vertical_alignment = VERTICAL_ALIGNMENT_BOTTOM
+	neon["reset_hint"] = hint
+	# Keys and helpers: recording, saved poses, motion helpers, shapes and MMD imports.
+	var keys_box := neon_block("Keys and helpers")
+	neon_outline(keys_box, record_button, "key")
+	neon_switch(keys_box, auto_key, "key")
+	neon_outline(keys_box, pose_library.launch, "figure")
+	neon_outline(keys_box, motion.button, "wave")
+	neon_outline(keys_box, movement_path.button, "path")
+	neon_outline(keys_box, shape_button, "sparkle")
+	var importer = app.get("mmd_pose_importer")
+	if importer:
+		for control in [importer.import_button, importer.motion_button]:
+			if control and control.get_parent() == panel: neon_outline(keys_box, control, "open")
+	# Bones: summary, search and tree, with Codex's Alt / drag help.
+	var bones := neon_block("Bones")
+	for l in [info, alt_hint, help_label]:
+		l.theme_type_variation = "CaptionLabel"
+		l.add_theme_font_size_override("font_size", 12)
+		l.add_theme_color_override("font_color", StudioTheme.TEXT2)
+		l.add_theme_constant_override("line_spacing", 3)
+		l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	for control in [info, search, tree, alt_hint, help_label]: app.move_to(control, bones)
+	search.custom_minimum_size.y = 36
+	# Visibility at this frame and reference-only.
+	var shown := neon_block("Visibility")
+	neon_switch(shown, visible_toggle, "eye")
+	neon_outline(shown, remove_visibility_button, "eraser")
+	neon_switch(shown, reference_toggle, "camera")
+	app.move_to(reference_opacity_row, shown)
+	reference_opacity_row.add_theme_constant_override("separation", 8)
+	for control in reference_opacity_row.get_children():
+		if control is Label: control.theme_type_variation = "CaptionLabel"; control.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		elif control is Button: app.style_outline(control)
+	neon_switch(shown, source_shape, "sparkle")
+	# Everything else in Codex's order: the Rotate/Move and Local/World dropdowns (visible), and the
+	# Advanced numbers, scale, interpolation, keys, base shapes, add/remove object.
+	var more := neon_block("More pose options")
+	for child in children:
+		if child == heading or not is_instance_valid(child) or child.get_parent() != panel: continue
+		app.move_to(child, more)
+	var at: int = snap.get_index()
+	neon_switch(more, snap, "grid")
+	more.move_child(neon.bleeds[-1], at)  # keep Codex's place, just above the Local X/Y/Z fields
+	for child in more.get_children():
+		if child is OptionButton: child.custom_minimum_size.y = 40
+		elif child is Button: app.style_outline(child)
+		elif child is VBoxContainer or child is HBoxContainer:
+			for inner in child.get_children():
+				if inner is Label and child != base_shapes.panel: inner.theme_type_variation = "CaptionLabel"
+	neon["more"] = more
+	refresh_neon_inspector()
+
+func next_step(rig) -> Array:
+	# Simple Pose only, not while playing or exporting (as app.draw_next_step / refresh_empty_hint).
+	if app.advanced_mode or app.playing or app.exporting or app.mode.selected != 2: return []
+	var empty: bool = app.source.is_empty() and (app.renderer.world_runtime == null or app.renderer.world_runtime.instances.is_empty())
+	if empty: return ["Next: add a scene or a model", "Add a 3D scene or a model, then pose it here."]
+	if rig == null: return ["Next: pick a model to pose", "Click a model in the picture or in World on the left."]
+	if rig.has_method("authored_keys") and rig.authored_keys().is_empty():
+		return ["Next: pose frame %d" % app.frame, "Click a joint, then drag a colored handle. " + ("Changes are keyed automatically." if auto_key.button_pressed else "Press Record pose key to keep the pose.")]
+	return []
+
+func model_keyed(rig) -> bool:
+	# True when this model has an authored pose key at the current frame: the violet diamond under
+	# the playhead on its timeline lane. (Auto-key stores only the changed channels, so a per-joint
+	# answer would need new key semantics; the chip reports what the timeline shows.)
+	if rig == null or not rig.has_method("authored_keys"): return false
+	for key in rig.authored_keys():
+		if int(key.get("frame", -1)) == app.frame: return true
+	return false
+
+func refresh_neon_inspector() -> void:
+	# Per frame from app._process, cheap: writes only when a shown value changes.
+	if neon.is_empty() or not panel.is_visible_in_tree(): return
+	var rig = active_rig()
+	var tool_signature := "%d|%d|%s" % [operation.selected, space.selected, rig != null]
+	if neon.tool_sig != tool_signature:
+		neon.tool_sig = tool_signature
+		for i in range(neon.operations.size()): app.lens_button_boxes(neon.operations[i], i == operation.selected)
+		for i in range(neon.spaces.size()): app.lens_button_boxes(neon.spaces[i], i == space.selected)
+	var signature := "%s|%s|%d|%d|%s|%s|%s|%s|%d|%s" % [rig.get_instance_id() if rig else 0, selected, app.frame, app.recovery_revision, app.advanced_mode, app.playing, app.exporting, auto_key.button_pressed, app.mode.selected, app.source.is_empty()]
+	if neon.sig != signature:
+		neon.sig = signature
+		var title := "No model yet"
+		var subtitle := "Add a model to pose it"
+		if rig:
+			title = str(rig.data.get("name", "Model"))
+			subtitle = "Whole model"
+			if selected != "@root" and rig.bones.has(selected):
+				var bone := str(rig.bones[selected].name)
+				subtitle = "Joint on " + title
+				title = BoneLabels.display(bone, app.advanced_mode, BoneLabels.role(rig.data, bone))
+		if neon.title.text != title: neon.title.text = title; neon.title.tooltip_text = title
+		if neon.subtitle.text != subtitle: neon.subtitle.text = subtitle
+		var keyed := model_keyed(rig)
+		if neon.keyed.visible != keyed: neon.keyed.visible = keyed
+		var hint := "Reset returns this joint to its rest pose." if rig and selected != "@root" else "Reset returns the model to its starting place." if rig else "Add a model, then pick a joint to pose."
+		if neon.reset_hint.text != hint: neon.reset_hint.text = hint
+		var next := next_step(rig)
+		if next.is_empty():
+			if neon.next.visible: neon.next.visible = false
+		else:
+			if neon.next_title.text != next[0]: neon.next_title.text = next[0]
+			if neon.next_body.text != next[1]: neon.next_body.text = next[1]
+			if not neon.next.visible: neon.next.visible = true
+	for bleed in neon.bleeds:
+		var shown: bool = bleed.get_child(0).visible
+		if bleed.visible != shown: bleed.visible = shown
+	for box in neon.sections:
+		var any := false
+		for child in box.get_children():
+			if child != box.get_meta("heading", null) and child.visible: any = true; break
+		var holder: Control = box.get_parent()
+		if holder.visible != any: holder.visible = any
