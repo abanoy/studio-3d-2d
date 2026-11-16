@@ -4908,3 +4908,23 @@ and layer data, defaults and control types are unchanged. Classic styles keep th
 Deviations (dock header kept, tool dropdown still visible in Simple, extra opacity row, kept Codex
 texts, 2 px ring) are in docs/REDESIGN-PORT.md. Linux xvfb: ui, editor, pose, world_selection,
 recovery_write and recovery pass. Windows verify.py was not run.
+
+## 2026-11-16 UTC — Neon Pro port step 6: timeline (Claude, claude/studio-redesign)
+
+The Timeline dock is `#0C0D11` with a `#2C303B` top edge and flush rows. Transport (52 px): a 190 px
+block over the lane labels with Codex's first / previous / next buttons as 40 px ghost icons around a
+40 px neon-ring Play (`StudioTheme.play_ring()`, icon swaps play/pause; `play_button` keeps its action
+and tooltip), a mono readout (`transport_time` "1.50" + `transport_info` "/ 4.00 s · 24 fps", which
+still holds the fps text; Advanced appends Codex's frame range, the full sentence is the tooltip), the
+Frame SpinBox as a compact mono field and the Drawings / Camera keys / Model keys legend. Codex's
+sequence toolbar and the zoom/pan bar share one compact row (`compact_timeline_rows()`,
+`timeline_navigation.apply_neon_style()`), so the ruler sits on the lanes. TimelineView draws neon in
+`neon_draw()` / `neon_content()`: a seconds ruler in Simple (frames in Advanced), the Camera lane in the
+ruler with pink diamonds, lane labels with colour bars and counts, the active-lane gradient (active
+layer in Draw, Camera in Camera, selected object), blue drawing blocks with the held one glowing,
+violet model diamonds (body rigs use the app's cached authored key frames, `timeline_row_keys()`),
+mint audio and a neon playhead with a frame tag. Geometry, hit tests, gestures, signals and
+`DEFAULT_VERTICAL_OFFSET` are unchanged; classic styles use Codex's drawing untouched (new Codex
+drawing needs mirroring in the neon pair). Deviations (lane order kept, extra toolbar row, dock header,
+four buttons + Frame field, frame 0 at the label edge, no fake clip names) are in
+docs/REDESIGN-PORT.md. Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.

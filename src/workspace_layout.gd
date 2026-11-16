@@ -222,11 +222,14 @@ func draw_header(id: String,header: Control) -> void:
 	if not StudioTheme.is_neon():return
 	header.draw_rect(Rect2(Vector2.ZERO,header.size),StudioTheme.BAR)
 	if not (id=="world" and world_rail):header.draw_rect(Rect2(0,header.size.y-1,header.size.x,1),StudioTheme.LINE)
+	if id=="timeline":header.draw_rect(Rect2(0,0,header.size.x,1),StudioTheme.LINE2) # Neon Pro step 6: mock top edge
 
 func draw_panel(id: String,panel: Control) -> void:
 	# The World dock is a #0C0D11 column with a 1 px #22252E right edge (mock rail).
-	if not StudioTheme.is_neon() or id!="world":return
+	# Neon Pro step 6: the Timeline panel is #0C0D11 too (its 1 px #2C303B top edge is in draw_header).
+	if not StudioTheme.is_neon() or not id in ["world","timeline"]:return
 	panel.draw_rect(Rect2(Vector2.ZERO,panel.size),StudioTheme.BAR)
+	if id=="timeline":return
 	if panel.get_window()==app.get_window():panel.draw_rect(Rect2(panel.size.x-1,0,1,panel.size.y),StudioTheme.LINE)
 
 func root_point(event: InputEventMouse,window: Window,in_gui:=false) -> Vector2:

@@ -116,6 +116,8 @@ var frame_box: SpinBox
 var status: Label
 var debug_label: Label
 var transport_info: Label
+var transport_time: Label # Neon Pro step 6: mono "S.SS" readout (neon style only)
+var timeline_key_cache := {}
 var encoder_path: LineEdit
 var encoder_quality: OptionButton
 var output_size: OptionButton
@@ -509,6 +511,7 @@ func _ready() -> void:
 	if StudioTheme.is_neon(): build_draw_inspector()
 	camera_transform_editor=preload("res://src/camera_transform_editor.gd").new();add_child(camera_transform_editor);camera_transform_editor.setup(self)
 	sequence_editor=preload("res://src/sequence_editor.gd").new();add_child(sequence_editor);sequence_editor.setup(self)
+	if StudioTheme.is_neon(): compact_timeline_rows()
 	keyboard_shortcuts.refresh_labels()
 	if keyboard_nav: apply_keyboard_nav(true)
 	renderer.view_changed.connect(refresh_camera_controls)
@@ -1997,12 +2000,191 @@ func refresh_draw_inspector() -> void:
 		if d.next_body.text != next[1]: d.next_body.text = next[1]
 		if not d.next.visible: d.next.visible = true
 
+# ---- Neon Pro step 6: timeline transport ---------------------------------------------------
+func transport_block(transport: HFlowContainer) -> HBoxContainer:
+	# 190 px block (TimelineView.LEFT) over the lane labels, with a 1 px #22252E right edge.
+	var block := HBoxContainer.new()
+	block.name = "TransportButtons"
+	block.custom_minimum_size = Vector2(TimelineView.LEFT, 52)
+	block.alignment = BoxContainer.ALIGNMENT_CENTER
+	block.add_theme_constant_override("separation", 4)
+	block.draw.connect(func(): block.draw_rect(Rect2(block.size.x - 1, 0, 1, block.size.y), StudioTheme.LINE))
+	transport.add_child(block)
+	return block
+
+func style_transport(transport: HFlowContainer, block: Control) -> void:
+	# 52 px row: |◀ ◀ ▶| as 40 px ghost icon buttons (#B4BAC7) around a 40 px neon-ring Play;
+	# mono readout "S.SS / D.DD s · N fps"; compact mono Frame field; legend on the right.
+	transport.add_theme_constant_override("h_separation", 16)
+	transport.add_theme_constant_override("v_separation", 0)
+	var kinds := ["skip-back", "step-back", "", "skip-forward"]
+	for i in range(block.get_child_count()):
+		var control: Button = block.get_child(i)
+		if control == play_button: continue
+		control.text = ""
+		style_ghost(control, kinds[i], 40)
+	play_button.text = ""
+	play_button.custom_minimum_size = Vector2(40, 40)
+	play_button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	play_button.icon = StudioTheme.icon("play", Color.WHITE, 16)
+	play_button.set_meta("kind", "play")
+	play_button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	play_button.add_theme_constant_override("icon_max_width", 16)
+	override_button_boxes(play_button, StudioTheme.play_ring(), StudioTheme.play_ring(true), StudioTheme.play_ring(true), StudioTheme.play_ring())
+	override_button_colors(play_button, Color.WHITE, Color.WHITE, Color.WHITE)
+	play_button.add_theme_stylebox_override("focus", StudioTheme.focus_box(22))
+	# Readout: the fps text stays in transport_info (tests read "23.976 fps" there).
+	var readout := HBoxContainer.new()
+	readout.add_theme_constant_override("separation", 8)
+	readout.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	transport.add_child(readout)
+	transport.move_child(readout, block.get_index() + 1)
+	transport_time = Label.new()
+	transport_time.text = "0.00"
+	transport_time.add_theme_font_override("font", StudioTheme.mono(600))
+	transport_time.add_theme_font_size_override("font_size", 18)
+	transport_time.add_theme_color_override("font_color", StudioTheme.TEXT)
+	transport_time.size_flags_vertical = Control.SIZE_SHRINK_END
+	readout.add_child(transport_time)
+	transport_info.reparent(readout, false)
+	transport_info.text_overrun_behavior = TextServer.OVERRUN_NO_TRIMMING
+	transport_info.size_flags_horizontal = Control.SIZE_FILL
+	transport_info.size_flags_vertical = Control.SIZE_SHRINK_END
+	transport_info.add_theme_font_override("font", StudioTheme.mono(400))
+	transport_info.add_theme_font_size_override("font_size", 13)
+	transport_info.add_theme_color_override("font_color", StudioTheme.TEXT2)
+	# Frame field: "Frame" caption + the SpinBox as a compact mono field.
+	var frame_group := HBoxContainer.new()
+	frame_group.add_theme_constant_override("separation", 8)
+	frame_group.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var frame_caption: Label = transport.get_child(frame_box.get_index() - 1)
+	transport.add_child(frame_group)
+	transport.move_child(frame_group, readout.get_index() + 1)
+	frame_caption.reparent(frame_group, false)
+	frame_box.reparent(frame_group, false)
+	frame_caption.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	frame_caption.add_theme_font_size_override("font_size", 12)
+	frame_caption.add_theme_color_override("font_color", StudioTheme.TEXT3)
+	frame_box.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	frame_box.custom_minimum_size = Vector2(84, 30)
+	var edit := frame_box.get_line_edit()
+	edit.add_theme_font_override("font", StudioTheme.mono(500))
+	edit.add_theme_font_size_override("font_size", 13)
+	edit.add_theme_color_override("font_color", StudioTheme.TEXT)
+	var spacer := Control.new()
+	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	transport.add_child(spacer)
+	# Legend, gap 18, 12 px #B4BAC7: 16x8 r2 drawing chip, 8 px camera / model diamonds.
+	var legend := HBoxContainer.new()
+	legend.name = "TimelineLegend"
+	legend.add_theme_constant_override("separation", 18)
+	legend.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	transport.add_child(legend)
+	var chip := StudioTheme.svg_texture('<rect width="16" height="8" rx="2" fill="%s"/>' % StudioTheme.hex(StudioTheme.DRAWING), 16, 8, 2.0)
+	for item in [[chip, "Drawings"], [StudioTheme.diamond(StudioTheme.CAMERA, 11), "Camera keys"], [StudioTheme.diamond(StudioTheme.MODEL, 11), "Model keys"]]:
+		var entry := HBoxContainer.new()
+		entry.add_theme_constant_override("separation", 7)
+		legend.add_child(entry)
+		var swatch := TextureRect.new()
+		swatch.texture = item[0]
+		swatch.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+		swatch.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		entry.add_child(swatch)
+		var caption := label(entry, item[1])
+		caption.add_theme_font_size_override("font_size", 12)
+		caption.add_theme_color_override("font_color", StudioTheme.TEXT2)
+	var end_pad := Control.new()
+	end_pad.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	transport.add_child(end_pad)
+
+func compact_timeline_rows() -> void:
+	# Codex's sequence toolbar and the zoom/pan bar share one compact row under the transport, and
+	# the ruler sits right above the lanes (the 38 px gap the bar needed is gone). Nothing is hidden.
+	var toolbar: HFlowContainer = sequence_editor.toolbar
+	var bar: HBoxContainer = timeline_navigation.bar
+	bar.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
+	bar.reparent(toolbar, false)
+	bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	timeline_navigation.apply_neon_style()
+	toolbar.add_theme_constant_override("h_separation", 8)
+	toolbar.add_theme_constant_override("v_separation", 0)
+	for child in toolbar.get_children():
+		if child is Button:
+			style_outline(child, "", 28)
+			child.add_theme_font_size_override("font_size", 12)
+			child.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		elif child is Label:
+			child.add_theme_font_size_override("font_size", 12)
+			child.add_theme_color_override("font_color", StudioTheme.TEXT3)
+			child.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var holder: Control = timeline_ruler.get_parent()
+	holder.custom_minimum_size.y = 52
+	timeline_ruler.position.y = 0
+	# Rows sit flush (transport, toolbar, ruler, lanes), like the mock's grid.
+	if holder.get_parent() is VBoxContainer: holder.get_parent().add_theme_constant_override("separation", 0)
+
+func timeline_row_keys() -> Dictionary:
+	# Neon timeline row summary: each object's authored key frames, recomputed only when that
+	# object's data changes (same identity check the model uses for its own cache).
+	var result := {}
+	if not renderer.world_runtime: return result
+	for row in renderer.world_runtime.data.objects:
+		var instance: RefCounted = renderer.world_runtime.instance(row.id)
+		if instance == null or not instance.has_method("authored_keys"): continue
+		var cached: Array = timeline_key_cache.get(row.id, [])
+		if cached.is_empty() or not is_same(cached[0], instance.data):
+			var frames: Array = []
+			for key in instance.authored_keys(): frames.append(int(key.frame))
+			cached = [instance.data, frames]
+			timeline_key_cache[row.id] = cached
+		result[row.id] = cached[1]
+	return result
+
+func refresh_transport_text() -> void:
+	var rate: String = preload("res://src/video_timing.gd").label(video.fps_num, video.fps_den)
+	var full := "%s fps  •  %.2f seconds  •  Frames 0–%d; key %d is the end boundary" % [rate, Timeline.seconds(video.duration_frames, video), video.duration_frames - 1, video.duration_frames]
+	if transport_time == null:
+		transport_info.text = full
+		return
+	# Neon: "S.SS" + "/ D.DD s · N fps"; Advanced adds Codex's frame range; the full sentence is the tooltip.
+	var time_text := "%.2f" % Timeline.seconds(frame, video)
+	if transport_time.text != time_text: transport_time.text = time_text
+	var info := "/ %.2f s · %s fps" % [Timeline.seconds(video.duration_frames, video), rate]
+	if advanced_mode: info += " · frames 0–%d, key %d is the end boundary" % [video.duration_frames - 1, video.duration_frames]
+	transport_info.text = info
+	transport_info.tooltip_text = full
+
+func refresh_play_button() -> void:
+	if transport_time == null:
+		play_button.text = "Pause" if playing else "Play"
+		return
+	var kind := "pause" if playing else "play"
+	if play_button.get_meta("kind", "") != kind:
+		play_button.set_meta("kind", kind)
+		play_button.icon = StudioTheme.icon(kind, Color.WHITE, 16)
+
+func sync_timeline_focus() -> void:
+	# The lane being edited gets the blue highlight: the active layer in Draw, Camera in Camera.
+	if transport_time == null or timeline == null: return
+	var lane := "layer" if mode.selected == 0 else "camera" if mode.selected == 1 else ""
+	if timeline.focus_lane != lane or timeline.active_layer != active_layer:
+		timeline.focus_lane = lane
+		timeline.active_layer = active_layer
+		timeline.queue_redraw()
+	if timeline_ruler.focus_lane != lane:
+		timeline_ruler.focus_lane = lane
+		timeline_ruler.queue_redraw()
+
 func set_advanced(enabled: bool) -> void:
 	# Presentation only: never reset project values, shot/navigation, transport or undo.
 	advanced_mode = enabled
 	advanced_toggle.set_pressed_no_signal(enabled)
 	if pose_editor:pose_editor.refresh_labels()
 	if timeline:timeline.set_label_mode(enabled)
+	if timeline_ruler and timeline_ruler.ruler_seconds == enabled: timeline_ruler.ruler_seconds = not enabled; timeline_ruler.queue_redraw()
+	if transport_info: refresh_transport_text()
 	refresh_workspace()
 
 func refresh_workspace() -> void:
@@ -2641,15 +2823,18 @@ Draw returns to the animated shot.")
 	button(recovery_section, "Open saved backup…", func(): choose_directory("Choose project whose previous save you want to restore", func(folder): request_recovery({"folder": folder, "manifest": "project.backup.json", "recovery": false})))
 	var transport := HFlowContainer.new()
 	column.add_child(transport)
-	button(transport, "|◀", func(): stop(); set_frame(0)).tooltip_text = "First frame • Home"
-	button(transport, "◀", func(): step(-1)).tooltip_text = "Previous frame • Left arrow"
-	play_button = icon_button(transport, "Play", "play", toggle_play, "Play / pause • Space")
-	button(transport, "▶|", func(): step(1)).tooltip_text = "Next frame • Right arrow"
+	# Neon Pro step 6: the four Codex transport buttons sit in a 190 px block above the lane labels.
+	var transport_buttons: Control = transport_block(transport) if StudioTheme.is_neon() else transport
+	button(transport_buttons, "|◀", func(): stop(); set_frame(0)).tooltip_text = "First frame • Home"
+	button(transport_buttons, "◀", func(): step(-1)).tooltip_text = "Previous frame • Left arrow"
+	play_button = icon_button(transport_buttons, "Play", "play", toggle_play, "Play / pause • Space")
+	button(transport_buttons, "▶|", func(): step(1)).tooltip_text = "Next frame • Right arrow"
 	frame_box = spin(transport, "Frame", 0, video.duration_frames, 0)
 	frame_box.value_changed.connect(func(value): stop(); set_frame(int(value)))
 	transport_info = label(transport, "")
 	transport_info.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 	transport_info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	if StudioTheme.is_neon(): style_transport(transport, transport_buttons)
 	timeline = TimelineView.new()
 	timeline.custom_minimum_size.y = 160
 	timeline.size_flags_horizontal=Control.SIZE_EXPAND_FILL
@@ -2669,12 +2854,15 @@ Draw returns to the animated shot.")
 	timeline_ruler.import_requested.connect(func(value,actor):import_actions.pick(value,actor))
 	var ruler_holder:=Control.new();ruler_holder.custom_minimum_size.y=90
 	column.add_child(ruler_holder);ruler_holder.add_child(timeline_ruler);timeline_ruler.position.y=38
+	if StudioTheme.is_neon(): timeline_ruler.rate_fps=float(video.fps_num)/video.fps_den
 	timeline_navigation=preload("res://src/timeline_navigation.gd").new();timeline_navigation.app=self;add_child(timeline_navigation);timeline_navigation.setup(ruler_holder,timeline,timeline_ruler)
 	timeline.resized.connect(func():timeline_ruler.size=Vector2(timeline.size.x,52);timeline_ruler.queue_redraw())
 	var timeline_scroll:=ScrollContainer.new()
 	timeline_scroll.name="TimelineScroll";timeline_scroll.custom_minimum_size.y=144
 	timeline_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	timeline_scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_RESERVE
+	# Neon: the lanes take whatever height the Timeline dock has left (drag the divider for more).
+	if StudioTheme.is_neon(): timeline_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	column.add_child(timeline_scroll);timeline_scroll.add_child(timeline)
 	debug_label = label(column, "")
 	advanced(debug_label)
@@ -2714,7 +2902,7 @@ Draw returns to the animated shot.")
 		var usable_height:=minf(get_viewport_rect().size.y,float(get_window().size.y)/get_window().content_scale_factor)
 		var compact := usable_height < 800
 		world_selection.tree.custom_minimum_size.y = 80 if compact else 150
-		timeline_scroll.custom_minimum_size.y = 84 if compact else 144
+		timeline_scroll.custom_minimum_size.y = 84 if compact or StudioTheme.is_neon() else 144
 		canvas.custom_minimum_size.y = 90 if compact else 180
 		if not toast:scene_name.visible=not compact
 	resized.connect(fit_panels)
@@ -2796,7 +2984,7 @@ func changed() -> void:
 	refresh_timeline()
 
 func refresh_timeline() -> void:
-	timeline_ruler.keys=keys;timeline_ruler.frame=frame;timeline_ruler.duration=video.duration_frames;timeline_ruler.queue_redraw()
+	timeline_ruler.keys=keys;timeline_ruler.frame=frame;timeline_ruler.duration=video.duration_frames;timeline_ruler.rate_fps=float(video.fps_num)/video.fps_den;timeline_ruler.queue_redraw()
 	timeline.keys = keys
 	timeline.layers = layers
 	timeline.frame = frame
@@ -2818,6 +3006,7 @@ func refresh_timeline() -> void:
 	var rows: Array=[]
 	if renderer.world_runtime:
 		for row in renderer.world_runtime.data.objects:rows.append(renderer.world_runtime.instance(row.id).data)
+	if transport_time: timeline.row_keys = timeline_row_keys()
 	timeline.set_objects(rows,renderer.world_runtime.get_instance_id() if renderer.world_runtime else 0,renderer.active_instance_id)
 	timeline.sync_bone(pose_editor.selected)
 	if timeline_navigation:timeline_navigation.sync()
@@ -2907,7 +3096,7 @@ func set_frame(value: int) -> void:
 	if lighting_choice:lighting_choice.select(Renderer.Lighting.MODES.find(Renderer.Lighting.mode(video)))
 	var frame_signals_blocked:=frame_box.is_blocking_signals()
 	frame_box.set_block_signals(true);frame_box.max_value=video.duration_frames;frame_box.set_value_no_signal(frame);frame_box.set_block_signals(frame_signals_blocked)
-	transport_info.text = "%s fps  •  %.2f seconds  •  Frames 0–%d; key %d is the end boundary" % [preload("res://src/video_timing.gd").label(video.fps_num,video.fps_den), Timeline.seconds(video.duration_frames, video), video.duration_frames - 1, video.duration_frames]
+	refresh_transport_text()
 	if project_timing:project_timing.sync()
 	if mode.selected != 1: renderer.evaluate(keys, frame)
 	pose_editor.apply_frame()
@@ -3052,7 +3241,8 @@ func _process(delta: float) -> void:
 	trim_idle_rasters()
 	poll_recovery_preview()
 	if recovery_checkpoint_requested and not recovery_writer.busy() and not recovery_preview.busy():autosave_tick(true)
-	play_button.text = "Pause" if playing else "Play"
+	refresh_play_button()
+	sync_timeline_focus()
 	refresh_empty_hint()
 	refresh_title()
 	refresh_tool_strip() # tool can change without a signal (shortcuts, color sampler)

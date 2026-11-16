@@ -207,6 +207,20 @@ static func dot(color: Color, size := 7) -> Texture2D:
 	var r := size / 2.0
 	return _cached("fdot|%s|%d" % [color.to_html(), size], '<circle cx="%s" cy="%s" r="%s" fill="%s"/>' % [r, r, r, hex(color)], size, size)
 
+static func play_ring(hover := false) -> StyleBoxTexture:
+	# Neon Pro step 6: 40 px round Play button: 2 px neon ring around #14161C (#1A1D25 on hover)
+	# with a 9 px rgba(123,92,255,.5) glow. The 58 px texture is drawn 9 px past the button
+	# on every side (expand margins), so the button itself stays exactly 40x40.
+	var key := "play_ring|%s" % hover
+	if not icons.has(key):
+		var body := '<defs>%s<radialGradient id="glow" cx="29" cy="29" r="29" gradientUnits="userSpaceOnUse"><stop offset="0.62" stop-color="#7b5cff" stop-opacity="0.5"/><stop offset="1" stop-color="#7b5cff" stop-opacity="0"/></radialGradient></defs><circle cx="29" cy="29" r="29" fill="url(#glow)"/><circle cx="29" cy="29" r="19" fill="%s" stroke="url(#neon)" stroke-width="2"/>' % [neon_defs(), "#1a1d25" if hover else "#14161c"]
+		var box := StyleBoxTexture.new()
+		box.texture = svg_texture(body, 58, 58, 2.0)
+		box.set_expand_margin_all(9)
+		box.set_content_margin_all(0)
+		icons[key] = box
+	return icons[key]
+
 static func kbd_box() -> StyleBoxFlat:
 	# 18 px keycap chip (with the 11 px mono font): #13151B, 1 px #2C303B, radius 5.
 	return flat(KBD, LINE2, 5, 1, Vector4(5, 1, 5, 1))
@@ -639,6 +653,8 @@ const LINE_ICONS := {
 	"pause": '<rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/>',
 	"skip-back": '<path d="M6 5v14M18 6l-8 6 8 6z"/>',
 	"skip-forward": '<path d="M18 5v14M6 6l8 6-8 6z"/>',
+	"step-back": '<path d="M16 6l-8 6 8 6z"/>',
+	"minus": '<path d="M5 12h14"/>',
 	"diamond": '<path d="M12 3.5 20.5 12 12 20.5 3.5 12z"/>',
 	"key": '<path d="M12 3.5 20.5 12 12 20.5 3.5 12z"/><path d="M12 9v6M9 12h6"/>',
 	"mouse": '<rect x="6.5" y="3" width="11" height="18" rx="5.5"/><path d="M12 7v3"/>',

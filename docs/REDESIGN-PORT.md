@@ -410,3 +410,87 @@ Deviations (step 5):
   "Drawing" card exactly.
 - **Contrast:** `#B4BAC7` on `#0C0D11` is 10.3:1 and `#8C93A3` 6.3:1. `#F4F6FA` on `#111318` is 17.2:1,
   `#B4BAC7` on `#111318` 9.6:1, and white on `#1A1D25` 16.4:1.
+
+### Step 6: timeline (`src/timeline_view.gd`, `src/timeline_navigation.gd`, `src/app.gd`, `src/workspace_layout.gd`, `src/studio_theme.gd`)
+- **Panel:** the Timeline dock is `#0C0D11` with a 1 px `#2C303B` top edge. Its rows sit flush
+  (separation 0): transport, one compact toolbar row, the ruler and the lanes. In neon the lanes'
+  ScrollContainer fills whatever height the dock has (`SIZE_EXPAND_FILL`) with an 84 px minimum, so
+  dragging the divider shows more lanes.
+- **Transport (52 px):** a 190 px block (`TimelineView.LEFT`) with a 1 px `#22252E` right edge holds
+  Codex's four buttons: |◀ first frame, ◀ previous frame and ▶| next frame as 40 px ghost icon buttons
+  (`#B4BAC7`, icons skip-back / step-back / skip-forward), and Play as a 40 px circle
+  (`StudioTheme.play_ring()`): a 2 px neon ring on `#14161C`, a white play/pause icon and a 9 px
+  `rgba(123,92,255,.5)` glow drawn past the button with expand margins. `play_button` is the same
+  Button with the same action and tooltip; in neon its text is empty and `refresh_play_button()`
+  swaps the icon instead of writing "Play"/"Pause". Next to it is the readout: `transport_time`
+  (new, mono 18/600 `#F4F6FA`, "1.50") and `transport_info` (mono 13 `#B4BAC7`, "/ 4.00 s · 24 fps").
+  `transport_info` still carries the fps text, so "23.976 fps" stays in it. Advanced appends Codex's
+  "frames 0–95, key 96 is the end boundary", and Codex's full sentence is the tooltip. Then the "Frame"
+  caption with `frame_box` (still the SpinBox) as an 84 px mono field, and the legend on the right
+  (gap 18, 12 px `#B4BAC7`): a 16x8 r2 `#4DA3FF` chip "Drawings", `#FF5FAE` "Camera keys" and
+  `#A98BFF` "Model keys" diamonds.
+- **Toolbar row:** Codex's sequence toolbar ("Sequences…", "Back to parent" when inside a sequence,
+  the breadcrumb) and the zoom/pan bar (− / + / Fit, scrollbar, "Frames a–b") share one row
+  (`compact_timeline_rows()` moves the bar into the toolbar). The bar is restyled in
+  `timeline_navigation.apply_neon_style()`: 28 px ghost buttons with − / + icons and a mono 11 px
+  `#8C93A3` caption. The ruler now sits directly on the lanes (the 38 px gap the bar used is gone).
+- **Ruler** (the header-only TimelineView, 52 px): the top 24 px are the time ruler with `#22252E`
+  borders and ticks (major `#363B48` h14, half `#2C303B` h8, minor `#22252E` h4) and mono 11 px
+  `#8C93A3` labels. Simple shows seconds ("0 s", "1 s", the step grows when zoomed out); Advanced shows
+  Codex's frame stride. The bottom 28 px are the Camera lane (it always lived in the ruler): a pink bar,
+  "Camera", the key count, and 12 px pink diamonds with a 2 px `#0C0D11` ring on a 2 px
+  `rgba(255,95,174,.3)` connector. The playhead is a 2 px neon line (blue to violet here, violet to pink
+  in the lanes) with a glow, under an r6 neon tag with the frame number (mono 11/600 `#07080B`).
+- **Lanes** (x < 190): `#0C0D11`, a `#22252E` right edge and row lines; a 3x16 colour bar (objects
+  `#A98BFF`, drawing layers `#4DA3FF` with a glow, hidden layers grey, audio `#3DDC97`), the name
+  12 px `#F4F6FA` and a right-aligned 12 px `#B4BAC7` count: keys for objects and channels,
+  "N drawings" for layers, "muted" for muted sounds. The lane being edited gets the blue gradient
+  `rgba(77,163,255,.16→.06)` with a `rgba(77,163,255,.25)` top line and white 600 text: the active
+  layer in Draw, Camera in Camera mode, and the selected object (and selected channel) as before.
+  `sync_timeline_focus()` sets this from `_process`. The expand arrow is a small chevron at the same
+  spot (x < 19 still expands).
+- **Content:** drawing blocks r4 `rgba(46,140,255,.16)` + 1 px `rgba(80,160,255,.55)` with the "a–b"
+  text 12/600 `#B9D7FF`; the block held at the playhead is `rgba(46,140,255,.28)` + 1 px `#6FB2FF` with
+  a glow; a dragged block gets a 2 px `#6FB2FF` (or `#FF5A7A` when refused) edge. Object clips/pieces are
+  faint blue blocks (`#6FB2FF` edge when selected, `#FF5A7A` when the drop is refused) over a faint violet
+  presence band, with violet model diamonds on a `rgba(169,139,255,.3)` connector. Body rigs keep their
+  keys per channel, not in `piece.keys`, so the app passes each object's authored key frames
+  (`timeline_row_keys()`, cached per object until its data changes) and the row draws them as its
+  summary, following drag previews. Visibility keys are `#3DDC97` / `#FF5A7A`. Audio is
+  `rgba(61,220,151,.12)` with a `#3DDC97` waveform (grey when muted, blue while trimming).
+- **Fonts:** `ThemeDB.fallback_font` is replaced by StudioTheme fonts in neon (Inter / Segoe UI for
+  names, JetBrains Mono / Cascadia Mono for numbers; Geist is not bundled).
+- **Unchanged:** `LEFT = 190`, `ROW_HEIGHT = 26`, 30 px layer rows, `x()`, `frame_at()`, `row_y()`,
+  `channel_y()`, `layer_y()`, `audio_y()`, `header_height()`, `cel_rect()`, `audio_rect()`, every hit
+  test, gesture and signal, `DEFAULT_VERTICAL_OFFSET`. The neon drawing is in `neon_draw()` /
+  `neon_content()`; classic styles return to Codex's `_draw()` / `draw_content()` untouched. When Codex
+  adds something to those, the neon pair needs the same addition.
+- New StudioTheme pieces: `play_ring()` and the `step-back` and `minus` line icons.
+- **Tests (Linux xvfb, step 6):** ui, editor, pose, world_selection, recovery_write and recovery pass.
+  workspace_controls 48/0, workspace_docking 18/0, asset_package 22/0, brush_opacity 18/0, palette 23/0,
+  layers 40/0, onion 37/0, animated_channels 35/0; timeline_navigation 35/0 and cel_timing 50/0 with the
+  tone.wav / room.glb fixtures their verify_*.py scripts create. color_sampler keeps its 3 baseline
+  failures on this box.
+
+Deviations (step 6):
+- **Lane order:** Codex's order is kept (Camera in the ruler, then objects, drawing layers, audio).
+  The mock puts Drawings first; row geometry is API, so it is not reordered. At the default 1440x900
+  layout the Camera lane and the first object rows show, and the drawing layers are a short scroll (or
+  a divider drag) away.
+- **Extra row:** the mock has no sequence toolbar or zoom bar. Both are Codex features visible in
+  Simple, so they stay, in one compact row between the transport and the ruler.
+- **Dock header:** the 28 px "TIMELINE" header (the drag handle) stays above the transport.
+- **Four buttons, Frame field:** the mock shows previous/next key around Play; Codex has first frame,
+  previous frame, Play, next frame, which all stay. The "Frame" SpinBox stays next to the readout.
+- **Frame 0 edge:** frame 0 maps to x = 190 (geometry is API), so a key at frame 0 is cut in half at
+  the label column (the frame tag is kept inside); the mock pads its content 12 px.
+- **Clip names:** blocks show Codex's "a–b" frame range; the mock's "Run-up" / "Leap · frames 24–42"
+  names and the dashed "Landing · no drawing yet" slot are sample data and are not faked.
+- **Glow and diamonds:** the playhead glow is two translucent quads, and the diamonds have sharp
+  corners (the mock rounds them by 2 px).
+- **Start-up build:** like steps 2-5, the transport block, readout, legend and the shared toolbar row
+  are built at start-up in neon. Switching the theme at run time switches the timeline drawing at once
+  (classic returns to Codex's drawing); the classic transport row returns after a restart.
+- **Contrast:** `#B9D7FF` on a drawing block is 10.9:1, `#DCEBFF` on the held block 10.9:1, `#BFF5DD`
+  on audio 13.1:1, `#8C93A3` ruler labels on `#0C0D11` 6.3:1, `#8C93A3` on a hidden layer's block
+  5.6:1, `#07080B` on the neon tag 5.9-6.0:1, white on the active lane 15.5:1.
