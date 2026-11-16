@@ -93,20 +93,43 @@ certify normals/artist fidelity; independent implementation can proceed.
 `experiments/resume_archive_20261115` fills16missing historical metadata/source
 inputs:4,122,249raw bytes stored in756,657bytes. Root independently verified
 all indexed/decompressed bytes. It includes the two exact9307-file inventories
-needed by the reviewed exclusive-read preparation. Remote verification is
-pending; actual reclaimed bytes remain0.
+needed by the reviewed exclusive-read preparation. Publication
+`4da35573655c799c521f5f7460af76b2bd8de533` is pushed and remotely read back:
+1095new/current-source files(15,135,622bytes), plus506historical packet payloads
+and981historical Git source blobs. All1962snapshot restorations and44metadata
+joins pass exact hashes, including explicit EOL recipes and six existing public
+built-in fixtures. No supplied native model/artwork was uploaded.
 
-Two old native roots remain **RETAIN_FOR_NOW,1,442,187,088bytes**:
+These exact old native roots are now **REMOVED**:
 
 - `output/source-choices-native/1794615194930984000-ae0e0967`
 - `output/source-choices-native/1794615438168999800-42f0686d`
 
-Publish code/compact evidence/history, push main and verify remote bytes before
-cleanup. Then establish current original/tool/review protection, exact dependency/
-nonuse and read/access evidence using the reviewed old-root recipe. The access
-probe never grants deletion by itself. Native art, newer useful runs, stages,
-recovery, reviews and shared tools remain protected. The46smaller duplicate
-public-preparation candidates also need current dependency/nonuse review.
+Actual cleanup at2026-11-16T00:58:49.0190136Z removed9307files/1537nested
+directories/2roots: **1,442,187,088logical bytes** (physical allocated blocks were
+not measured). Before removal, every file passed a fresh exclusive-read/close/
+native-identity check with identical before/after inventories; root independently
+bound closed owned processes, no current app/review dependency, remotely verified
+source/metadata recovery and protected inputs. The read probe itself never granted
+deletion. Native PowerShell rechecked literal boundaries, hashes, identities and
+single links before removal. No process was killed.
+
+Before and after cleanup, strict preservation checks pass561original inputs,
+5844current-review files,6shared runtimes,574SourceIO files,120exporter sources
+and1008functional source files. First post-check refused a transient file-stamp
+comparison on ffprobe.exe; preserve that failure. Three subsequent exact
+helper-domain stamp/hash observations match the approved file; an unchanged
+complete strict repeat passes. The first refusal's cause remains UNDETERMINED,
+and its gates were not relaxed. Evidence:
+`experiments/resume_cleanup_actual_20261115`.
+
+Original art, newer useful runs/reference inputs, stages, recovery, previous
+reviews, installed Studio and shared tools remain protected. Exact discarded
+generated binary outputs were not uploaded or promised byte-identical recovery;
+source/metadata reconstruction and preserved originals support rerunning them.
+The46smaller duplicate preparation files remain retained pending their own
+current dependency review. Future historical baseline-script reruns must restore
+the explicitly mapped metadata to a fresh location or redirect the recipe.
 
 ## Next implementation work
 

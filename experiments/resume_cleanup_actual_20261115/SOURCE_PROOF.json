@@ -1,0 +1,143 @@
+{
+  "format": "has_cleanup_execution_exact_source_proof_1",
+  "passed": true,
+  "checked_utc": "2026-11-16T01:04:06.574509+00:00",
+  "original_frozen_files_sha256": {
+    "AUDIT.json": "509f7b6edbfaf43443c7aef8d50783015e6b8f7332ba70100cabf9b0f3a71dff",
+    "audit_completed_backup_metadata.py": "e227092df4048fb6fb72d8c144b16615bb89ec2d62780e345f2b6a279feed151",
+    "increment.json.gz": "012cc5ebf67a69d099c1d442e1487ae1b23daa6211af3a75499448ac8d2b4157",
+    "INDEX.json": "858347c685d7ea3d53d9b8c850068da2e67e6d3e9d7e2fcda769d024bd2868c1",
+    "protection.json.gz": "d1a6cccf66b75455bb18b50232e240a76d596bb6d9133a712349a245d78bd811",
+    "README.md": "e72f4577b283340bef82d3c6512b4f047c555964c51770baec7127b2b917bd26",
+    "recovery.json.gz": "ac9ae6c1e3b47eb6e8ee3d8c2f9b44f2e468ff21bd05034537a5c65203953064"
+  },
+  "copies": [
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-root-release-20261115.json",
+      "source_bytes": 4163,
+      "source_sha256": "2e946cf9cf0c1be4ffcff18aee905c51956f15519412e3c97121cf496a9decca",
+      "stored": "execution/old-native-root-release-20261115.json",
+      "stored_bytes": 4163,
+      "stored_sha256": "2e946cf9cf0c1be4ffcff18aee905c51956f15519412e3c97121cf496a9decca",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-exclusive-read-20261115_actual\\verification.json",
+      "source_bytes": 2131,
+      "source_sha256": "bc46e5ef0cc7fdbefaf3f87f06fbf2be9106c289c0014fc9423cffa190985201",
+      "stored": "execution/old-native-exclusive-read-20261115_actual/verification.json",
+      "stored_bytes": 2131,
+      "stored_sha256": "bc46e5ef0cc7fdbefaf3f87f06fbf2be9106c289c0014fc9423cffa190985201",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-exclusive-read-20261115_actual\\inventory-before.json",
+      "source_bytes": 3643538,
+      "source_sha256": "ec379924e15380f48a39c9f4099d06436466839c3063c577d723809f38531e3e",
+      "stored": "execution/old-native-exclusive-read-20261115_actual/inventory-before.json.gz",
+      "stored_bytes": 564217,
+      "stored_sha256": "f02022d7d1b65034a1784311aaa2413a6a8553fc81ab43662888a567d7768d09",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-exclusive-read-20261115_actual\\inventory-after.json",
+      "source_bytes": 3643538,
+      "source_sha256": "ec379924e15380f48a39c9f4099d06436466839c3063c577d723809f38531e3e",
+      "stored": "execution/old-native-exclusive-read-20261115_actual/inventory-after.json.gz",
+      "stored_bytes": 564217,
+      "stored_sha256": "f02022d7d1b65034a1784311aaa2413a6a8553fc81ab43662888a567d7768d09",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-exclusive-read-20261115_actual\\exclusive-open-results.json",
+      "source_bytes": 4423348,
+      "source_sha256": "aae1dcd13d596308613e2b86d9e12ddf96f3e118c35ac96b3d06ac265b028e00",
+      "stored": "execution/old-native-exclusive-read-20261115_actual/exclusive-open-results.json.gz",
+      "stored_bytes": 301000,
+      "stored_sha256": "7d311182dead56dd442132d581f2b51637e3dfdf0ea3bfa13d450ff20ecd0177",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-exclusive-read-20261115_actual\\root-release.json",
+      "source_bytes": 4163,
+      "source_sha256": "2e946cf9cf0c1be4ffcff18aee905c51956f15519412e3c97121cf496a9decca",
+      "stored": "execution/old-native-exclusive-read-20261115_actual/root-release.json",
+      "stored_bytes": 4163,
+      "stored_sha256": "2e946cf9cf0c1be4ffcff18aee905c51956f15519412e3c97121cf496a9decca",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-owner-BeforeProbe-20261115.json",
+      "source_bytes": 1373,
+      "source_sha256": "5733c3e9a7c3ffeebde05b4bbefde3737ffa741c8821017b71268a595c928d5e",
+      "stored": "execution/old-native-owner-BeforeProbe-20261115.json",
+      "stored_bytes": 1373,
+      "stored_sha256": "5733c3e9a7c3ffeebde05b4bbefde3737ffa741c8821017b71268a595c928d5e",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-owner-BeforeRemoval-20261115.json",
+      "source_bytes": 1375,
+      "source_sha256": "ebf9c7d5be049eecc5881f004bc2da9547291e8a97fb28e5e84ea6fd4e2e729f",
+      "stored": "execution/old-native-owner-BeforeRemoval-20261115.json",
+      "stored_bytes": 1375,
+      "stored_sha256": "ebf9c7d5be049eecc5881f004bc2da9547291e8a97fb28e5e84ea6fd4e2e729f",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-cleanup-decision-20261115.json",
+      "source_bytes": 4487,
+      "source_sha256": "0ca5c3fd4c1b54d273a19570480c82dcd5a2c6a571ca32c4680c5b7287ac51c9",
+      "stored": "execution/old-native-cleanup-decision-20261115.json",
+      "stored_bytes": 4487,
+      "stored_sha256": "0ca5c3fd4c1b54d273a19570480c82dcd5a2c6a571ca32c4680c5b7287ac51c9",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-cleanup-actual-20261115.json",
+      "source_bytes": 1890,
+      "source_sha256": "d0dfb62b46d786390159951dfbea9e1b22ad10ebcf9701dc8a5958c57c8d64b8",
+      "stored": "execution/old-native-cleanup-actual-20261115.json",
+      "stored_bytes": 1890,
+      "stored_sha256": "d0dfb62b46d786390159951dfbea9e1b22ad10ebcf9701dc8a5958c57c8d64b8",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-protection-refresh-20261115\\post-cleanup-attempt1-and-ffprobe-diagnostic.json",
+      "source_bytes": 4047,
+      "source_sha256": "28c6bc1f9099a4ee2630410bae4f12ebe61d20b5004c035d2b237adb1092c619",
+      "stored": "execution/old-native-protection-refresh-20261115/post-cleanup-attempt1-and-ffprobe-diagnostic.json",
+      "stored_bytes": 4047,
+      "stored_sha256": "28c6bc1f9099a4ee2630410bae4f12ebe61d20b5004c035d2b237adb1092c619",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-protection-refresh-20261115\\post-cleanup-ffprobe-exact-stamp-diagnostic.json",
+      "source_bytes": 994,
+      "source_sha256": "2141edd62118541c7a81d502d5c0123f7188ed39b08db095ca0e1890326c7fd7",
+      "stored": "execution/old-native-protection-refresh-20261115/post-cleanup-ffprobe-exact-stamp-diagnostic.json",
+      "stored_bytes": 994,
+      "stored_sha256": "2141edd62118541c7a81d502d5c0123f7188ed39b08db095ca0e1890326c7fd7",
+      "raw_roundtrip_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-protection-refresh-20261115\\protected-inputs-post-cleanup-attempt2.json",
+      "source_bytes": 3322,
+      "source_sha256": "d2acca7b9f820a8ca6733446162506aedfe747b6e1db1afa8826b22760507a75",
+      "stored": "execution/old-native-protection-refresh-20261115/protected-inputs-post-cleanup-attempt2.json",
+      "stored_bytes": 3322,
+      "stored_sha256": "d2acca7b9f820a8ca6733446162506aedfe747b6e1db1afa8826b22760507a75",
+      "raw_roundtrip_exact": true
+    }
+  ],
+  "inventory_before_after_exact": true,
+  "exclusive_open_records_joined_to_inventory": 9307,
+  "root_release_exact_copies_and_probe_join": true,
+  "decision_evidence_hashes_verified": 10,
+  "strict_post_attempt2_passed": true,
+  "first_post_attempt_failed_cause": "UNDETERMINED",
+  "metadata_only": true,
+  "native_geometry_media_or_payload_bytes_copied": false,
+  "removed_candidate_roots_read": false,
+  "apps_processes_CIM_Git_network_or_deletion_by_exporter": false
+}

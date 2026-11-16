@@ -1,0 +1,176 @@
+{
+  "format": "has_completed_backup_protection_independent_metadata_audit_1",
+  "passed": true,
+  "checked_utc": "2026-11-16T00:59:53.123212+00:00",
+  "publication_commit": "4da35573655c799c521f5f7460af76b2bd8de533",
+  "scope": "Completed remote increment/recovery/protection report metadata only. Candidate old roots were never opened.",
+  "increment": {
+    "files": 1095,
+    "raw_bytes": 15135622,
+    "seconds": 18.054077300001154,
+    "extras": 203,
+    "source_reconstruction_recipes": {
+      "LF_to_CRLF": 163,
+      "exact": 40
+    },
+    "finished_utc": "2026-11-16T00:54:48.007118+00:00"
+  },
+  "recovery": {
+    "jobs": 1487,
+    "prerequisites": 5,
+    "public_packet_payload_files": 506,
+    "historical_unique_source_files": 981,
+    "snapshot_restorations": 1962,
+    "metadata_joins": 44,
+    "reconstruction_recipes": {
+      "exact_git_blob": 196,
+      "git_blob_LF_to_CRLF": 783,
+      "git_blob_selected_LF_to_CRLF": 2
+    },
+    "public_builtin_fixture_files": 6,
+    "public_builtin_fixture_bytes": 175666,
+    "payload_bytes": 14225344,
+    "started_utc": "2026-11-16T00:54:28.742021+00:00",
+    "finished_utc": "2026-11-16T00:55:10.760461+00:00",
+    "seconds": 42.01846609999848
+  },
+  "preservation": {
+    "original_files": 561,
+    "original_bytes": 469130387,
+    "review_shipped_files": 5844,
+    "shared_runtime_executables": 6,
+    "SourceIO_files": 574,
+    "exporter_sources": 120,
+    "functional_source_files": 1008,
+    "started_utc": "2026-11-16T00:55:12.424730+00:00",
+    "finished_utc": "2026-11-16T00:55:41.558012+00:00",
+    "started_after_both_remote_readbacks": true
+  },
+  "all_per_file_and_metadata_join_claims_match_pinned_plans_and_source_predicates": true,
+  "checker_source_sha256": {
+    "verify_remote_increment.py": "1b959847aff7e4257ec9fc7688d2bd17428e3bae48ba5842c491d8acb62b78a3",
+    "verify_old_recovery_remote.py": "1c9097f9c03e1c8bc13d288ccf3bf0b8f9d33ca831e7b8040ac77958ef744743",
+    "audit_protected_inputs_before_cleanup.py": "5be1d34aa6aced8fc112bee3ecadd489be9b7f38ab710553385bfd77ca500d83"
+  },
+  "copies": [
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remote-new-increment-20261115.json",
+      "source_bytes": 440978,
+      "source_sha256": "12e501328ac942569a0f8d0695ae81155f856f3bfab00d4c0bb87f1ea57a8015",
+      "stored": "increment.json.gz",
+      "stored_bytes": 99837,
+      "stored_sha256": "012cc5ebf67a69d099c1d442e1487ae1b23daa6211af3a75499448ac8d2b4157",
+      "decompressed_bytes_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remote-old-recovery-20261115.json",
+      "source_bytes": 994548,
+      "source_sha256": "63c28c322dfd4bf4618772449ffb07cba81c18ea613e573f5280863427e2213f",
+      "stored": "recovery.json.gz",
+      "stored_bytes": 157163,
+      "stored_sha256": "ac9ae6c1e3b47eb6e8ee3d8c2f9b44f2e468ff21bd05034537a5c65203953064",
+      "decompressed_bytes_exact": true
+    },
+    {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-protection-refresh-20261115\\protected-inputs-fresh.json",
+      "source_bytes": 3322,
+      "source_sha256": "bbbea6d34e32593d60e4aee483d37b4fbc6207837c638370b63b0fb4b9ea7f6b",
+      "stored": "protection.json.gz",
+      "stored_bytes": 1469,
+      "stored_sha256": "d1a6cccf66b75455bb18b50232e240a76d596bb6d9133a712349a245d78bd811",
+      "decompressed_bytes_exact": true
+    }
+  ],
+  "source_metadata_proofs": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\replay_audio_fix_20261115\\builder\\input-lock.json",
+      "bytes": 263448,
+      "sha256": "3bb7c2ce75f55dcb53143aab0df5ab8b39c68180617092664a579126fb09cfb6"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\GIT_RECOVERY_BATCH_PROOF.json.gz",
+      "bytes": 153253,
+      "sha256": "773fb03216d21f09075cccea437d515ad08f148998b325479d8fc027b496b052"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\core14-fresh-inventory.json.gz",
+      "bytes": 275530,
+      "sha256": "01f35384459ff5e23b64537d6aa3e90ad3b1af97d1e420547e0475426046d672"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\retained-originals-fresh-proof.json.gz",
+      "bytes": 24447,
+      "sha256": "f9dfbcde4184ee13d6aa7f9efcf77f48cefeae718c13fefff7741408c3db304c"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_archive_20261115\\historical-cleanup-audit\\wider11-fresh-inventory.json.gz",
+      "bytes": 270567,
+      "sha256": "8304f319f3c391c9875b418ad0832f7b4cffb9a727b9e78c76d383598a87f29d"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\audit_protected_inputs_before_cleanup.py",
+      "bytes": 9505,
+      "sha256": "5be1d34aa6aced8fc112bee3ecadd489be9b7f38ab710553385bfd77ca500d83"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\old_native_recovery_plan.json",
+      "bytes": 543321,
+      "sha256": "194ccde44c5d78f20832c7837b5d61ac4de8557524c69c9c3d87a2c24e9b29c5"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\verify_old_recovery_remote.py",
+      "bytes": 21746,
+      "sha256": "1c9097f9c03e1c8bc13d288ccf3bf0b8f9d33ca831e7b8040ac77958ef744743"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\verify_remote_increment.py",
+      "bytes": 9567,
+      "sha256": "1b959847aff7e4257ec9fc7688d2bd17428e3bae48ba5842c491d8acb62b78a3"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\sfm_review_actual_20261115\\replay\\shipped-before.json.gz",
+      "bytes": 329293,
+      "sha256": "36835f9a75926c3a8e53493661700ebab9024cb05f6bb78291cd3bcb572814c9"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_0x31_native_leaf_20261115\\SOURCE_LOCK.json",
+      "bytes": 31571,
+      "sha256": "54ad84ae76d4e75e64c18f91b91a1c7ca403998478e5b2601997c116ead5a21b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\source_appearance\\main_native_app_actual_20261113\\INDEX.json",
+      "bytes": 103769,
+      "sha256": "4be9c24cbd516bd18c161b6450034244f02fddbccdcb31e516132118e452444b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\windows_bone_binding_full_actual_20261115\\full\\canonical\\source-before.json.gz",
+      "bytes": 47503,
+      "sha256": "46575c2d36e26035aa83578bdec6fbc7c31f8ab43adc5d95a9377fcb7bc827e1"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-protection-refresh-20261115\\protected-inputs-fresh.json",
+      "bytes": 3322,
+      "sha256": "bbbea6d34e32593d60e4aee483d37b4fbc6207837c638370b63b0fb4b9ea7f6b"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remote-new-increment-20261115.json",
+      "bytes": 440978,
+      "sha256": "12e501328ac942569a0f8d0695ae81155f856f3bfab00d4c0bb87f1ea57a8015"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remote-old-recovery-20261115.json",
+      "bytes": 994548,
+      "sha256": "63c28c322dfd4bf4618772449ffb07cba81c18ea613e573f5280863427e2213f"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304\\source-before.json",
+      "bytes": 105862,
+      "sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a"
+    }
+  ],
+  "new_network_or_Git_or_process_queries_or_runtime_launched": false,
+  "candidate_root_file_reads_or_hashes_or_opens": false,
+  "cleanup_authorized": false,
+  "cleanup_or_current_probe_result_claimed": false,
+  "limits": "This checks completed reports and their exact source/map bindings. It does not repeat remote retrieval, asset hashing, candidate sharing, ownership observation or cleanup. Root decides after actual probe/BeforeRemoval ownership evidence."
+}

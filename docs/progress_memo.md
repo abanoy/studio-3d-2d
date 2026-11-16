@@ -14925,3 +14925,52 @@ coldHAS/movie andproceduralparentchains stillneedimplementation/qualification.
 Updatecurrentpickup/runtimeplan/readinessbenchmark accordingly; formal55/62and
 52/54stayunchanged. Next integrationwork:17→18/26→27parentordering and ordinary
 app controls, keeping thisoneleafproofnarrow.
+
+
+## 2026-11-15 — Verified GitHub recovery and removed exact old native test roots
+
+Publication4da35573655c799c521f5f7460af76b2bd8de533 is pushed and remotely retrieved.
+Actual new-file readback passes1095files/15135622bytes, including203current source
+reconstructions(40exact/163strictLF→CRLF). Separate historical readback passes
+506packetpayloads+981Gitblobs from8d4fde001258f501602bd94bd80d925683062f15,
+reconstructing1962snapshotfiles and44metadatajoins exactly, including2selected-
+newline recipes and6existing public fixtures175666bytes. No supplied native
+art/model payload was uploaded. All public source/metadata backup gates pass;
+the independent audit lives in experiments/resume_cleanup_actual_20261115.
+
+Fresh combined preservation after both remote checks passes561original inputs,
+5844currentreviewfiles,6runtimes,574SourceIO,120exporter and1008functional sources.
+Exactoldcoordinator identities remainabsent,24historicalprivatejobsclosed,0current
+engineprocesses and0readableold-rootargumentprocesses. No current app/review/FK/
+leaf dependency exists; future historical baseline reruns need the mapped
+metadata restored/redirected. Global inaccessible commandlines/mappedviews are
+not claimed excluded; root combined source/dependency/ownedclosure proofs with
+fresh actual access observations rather than promoting a probe to authority.
+
+All9307oldfiles pass sequential GENERIC_READ/share0/nativeidentity/close checks;
+fullbeforeafterinventories match. Separate root decision authorizes only the two
+literal disposable roots. Reviewed nativePowerShell validates resolvedboundaries,
+allfilehashes/stamps/membership, current source and native singlelinks/fileIDs
+before either deletion. Actual00:58:49.0190136Zcleanup removes4707Core14files/
+387640663bytes and4600Wider11files/1054546425bytes,1537nested directories and2roots:
+1442187088logicalbytes. No processkilled. Both roots are independently absent.
+Physical allocated blocks are not measured. Exact generatedbinaryoutput bytes
+were not archived or promised exactregeneration; original inputs/tools/code and
+exactmetadata support reruns.
+
+Unchanged strict postcleanup preservation passes the same561/5844/6/574/120/1008
+groups, SHA d2acca7b9f820a8ca6733446162506aedfe747b6e1db1afa8826b22760507a75.
+The firstpostcheck refused a transient ffprobe.exe file-stamp comparison and is
+preserved asFAILED/causeUNDETERMINED. Three later exact helper-domain stamp/hash
+observations match approvedbytes, then the unchanged fullrepeat passes; no
+assertion was relaxed. An extra diagnostic st_mode discrepancy does not explain
+the original guard, which excludes thatfield.
+
+Originals/installedStudio/sharedtools/newerreferenceandnative runs/recovery/
+previousreviews/currentreview2 remain protected. The46smaller public-preparation
+duplicates remain retained pending their own current dependency review. Current
+pickup/master/ledger now point to actualbackupandcleanup evidence, superseding
+historical RETAIN_FOR_NOW for only those two roots. Formal55/62acceptance and
+52/54implementation remainunchanged. Next independent feature increment remains
+nativeSourceparent-chain ordering and normalfan/body/Off/Record/HAS integration,
+not another request for the owner's deferred manual observations.

@@ -1,0 +1,33 @@
+{
+  "format": "has_root_old_native_current_ownership_1",
+  "old_root_argument_processes": 0,
+  "no_process_killed": true,
+  "phase": "BeforeProbe",
+  "literal_roots": [
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d"
+  ],
+  "limitations": "Process-name and readable-argument checks plus exact known coordinator identities. This is combined with source/dependency proof and fresh file-sharing evidence; inaccessible command lines and mapped views are not independently excluded.",
+  "checked_utc": "2026-11-16T00:56:06.4674084Z",
+  "owned_runtime_commands_absent": true,
+  "exact_old_coordinators_absent": true,
+  "engine_processes_any_path": 0,
+  "all_global_nonuse_proven": false,
+  "unreadable_command_lines": 196,
+  "old_coordinators": [
+    {
+      "pid": 6924,
+      "pid_reused": false,
+      "original_absent": true,
+      "observed_creation_utc": null,
+      "expected_creation_utc": "2026-11-14T00:13:14.8293269Z"
+    },
+    {
+      "pid": 27444,
+      "pid_reused": false,
+      "original_absent": true,
+      "observed_creation_utc": null,
+      "expected_creation_utc": "2026-11-14T00:17:18.0852224Z"
+    }
+  ]
+}

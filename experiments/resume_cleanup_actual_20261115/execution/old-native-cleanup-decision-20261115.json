@@ -1,0 +1,65 @@
+{
+  "format": "has_root_old_native_cleanup_decision_1",
+  "decision": "REMOVE_EXACT_TWO_DISPOSABLE_ROOTS",
+  "verified_backup_commit": "4da35573655c799c521f5f7460af76b2bd8de533",
+  "checked_utc": "2026-11-16T00:58:34.117588+00:00",
+  "literal_roots": [
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615194930984000-ae0e0967",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-choices-native\\1794615438168999800-42f0686d"
+  ],
+  "expected_files": 9307,
+  "expected_directories": 1537,
+  "expected_bytes": 1442187088,
+  "cleanup_script_sha256": "091e62b2a6b5ce045cc51d4dfd307dcc012e68944b351b600c910f8fb12977ff",
+  "evidence": {
+    "remote_increment": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remote-new-increment-20261115.json",
+      "sha256": "12e501328ac942569a0f8d0695ae81155f856f3bfab00d4c0bb87f1ea57a8015"
+    },
+    "remote_recovery": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remote-old-recovery-20261115.json",
+      "sha256": "63c28c322dfd4bf4618772449ffb07cba81c18ea613e573f5280863427e2213f"
+    },
+    "exclusive_probe": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-exclusive-read-20261115_actual\\verification.json",
+      "sha256": "bc46e5ef0cc7fdbefaf3f87f06fbf2be9106c289c0014fc9423cffa190985201"
+    },
+    "inventory_after": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-exclusive-read-20261115_actual\\inventory-after.json",
+      "sha256": "ec379924e15380f48a39c9f4099d06436466839c3063c577d723809f38531e3e"
+    },
+    "current_ownership": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-owner-BeforeRemoval-20261115.json",
+      "sha256": "ebf9c7d5be049eecc5881f004bc2da9547291e8a97fb28e5e84ea6fd4e2e729f"
+    },
+    "preserved_originals": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-protection-refresh-20261115\\protected-inputs-fresh.json",
+      "sha256": "bbbea6d34e32593d60e4aee483d37b4fbc6207837c638370b63b0fb4b9ea7f6b"
+    },
+    "protected_review_tools": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-protection-refresh-20261115\\protected-inputs-fresh.json",
+      "sha256": "bbbea6d34e32593d60e4aee483d37b4fbc6207837c638370b63b0fb4b9ea7f6b"
+    },
+    "source_catalogue": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\windows-canonical-bone-binding-20261115T225514304\\source-before.json",
+      "sha256": "8d9e7d94c745081e0ca084bc64e7498bc7ccb218c44209e1354bcd53f3c50a2a"
+    },
+    "root_readonly_release": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\old-native-root-release-20261115.json",
+      "sha256": "2e946cf9cf0c1be4ffcff18aee905c51956f15519412e3c97121cf496a9decca"
+    },
+    "recovery_plan": {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\resume_root_20261115\\old_native_recovery_plan.json",
+      "sha256": "194ccde44c5d78f20832c7837b5d61ac4de8557524c69c9c3d87a2c24e9b29c5"
+    }
+  },
+  "grounds": [
+    "Botholdnativecoordinators24privatejobsclosed; currentengine/processname/knownidentitiesclosed.",
+    "No currentapp/review/FK/leafdependency; historicalmetadata-baselinerecipeexplicitlyrestorablefromremote506packet44joins.",
+    "All1962sourcefilesexactlyreconstructfromverified981Gitblobs andrecordedEOLrecipes; sixpublicfixturesonly.",
+    "All561originalnativeinputs,5844currentreviewfiles,6sharedruntimes,574SourceIO,120exporter,current1008functionalfilesfreshandexactafterremoteverification.",
+    "Fresh9307-filemembership/hash/nativeidentity/share0read/closechecksPASSwithbeforeafterequal.",
+    "Targetsaredisposablegeneratedtestcopies; no irreplaceableownerinputidentified; current/previousreviews,neweractualnative/reference/runtimes/recoverykept."
+  ],
+  "limits": "Rootcombinesboundedindependentproofs; sharingprobealoneisnotauthority. Inaccessiblecommandlines,metadatahandles,mappedviewsandlateropensarenotuniversallyexcluded. NativeRemove-ItemcurrentWindowsrulesstillapply. Discardedgeneratedbinaryoutputbytesarenotbackeduporpromisedexactregeneration; exactsource/metadataevidenceandoriginalsarebackedup/preserved."
+}

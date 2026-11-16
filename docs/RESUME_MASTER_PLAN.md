@@ -21,6 +21,14 @@ engine-default helper. App fan/body/Record/HAS/GPU integration remains next.
 The pause and old full-run paragraphs
 below are historical; the fresh run establishes current default verification.
 
+**Verified backup and cleanup:** publication `4da35573655c799c521f5f7460af76b2bd8de533`
+was remotely read back, including exact historical source/metadata reconstruction.
+The two old Core14/Wider11 disposable roots are removed:9307files and
+1,442,187,088logical bytes. Fresh before/after original/tool/review/source
+preservation passes; no process killed. Their earlier RETAIN_FOR_NOW entries
+describe the old state. See current pickup and
+`experiments/resume_cleanup_actual_20261115` for actual evidence and limits.
+
 **November 14 documentation update:** the owner asks for PMX physics capability
 clarity, a future PMX-like reconstruction assistant during standardization and
 old-test GitHub archiving for disk saving. The goal remains paused. See section 14
