@@ -263,6 +263,52 @@ var export_chip: Label
 var keyboard_shortcuts: Node
 var camera_transform_editor: Node
 var scene_view: Node
+# Neon Pro step 4: viewport overlays (stage, tool pill, badges, viewfinder, stage footer, toast).
+var stage_panel: PanelContainer
+var view_scroll: ScrollContainer
+var view_row: HBoxContainer
+var view_row2: HBoxContainer
+var view_spacer: Control
+var view_spacer2: Control
+var view_fit_pending := false
+var tool_pill: PanelContainer
+var camera_pill: PanelContainer
+var pose_pill: PanelContainer
+var codex_pill: PanelContainer
+var pose_strip: HBoxContainer
+var pose_buttons: Array[Button] = []
+var tool_compact := false
+var camera_hint: Control
+var camera_help_button: Button
+var pose_help_button: Button
+var camera_help_label: Label
+var help_popup: PopupPanel
+var help_popup_title: Label
+var help_popup_body: Label
+var badges: HBoxContainer
+var frame_badge_frame: Label
+var frame_badge_time: Label
+var mode_badge_lead: Label
+var mode_badge_chip: Panel
+var mode_badge_diamond: TextureRect
+var mode_badge_value: Label
+var mode_badge_key := ""
+var viewfinder: Control
+var stage_footer: Control
+var footer_left: HBoxContainer
+var view_caption: Label
+var toast: PanelContainer
+var toast_icon: TextureRect
+var toast_lead: Label
+var toast_rest: Label
+var toast_progress := 0.0
+var toast_tween: Tween
+var toast_strip: Texture2D
+var legend: HBoxContainer
+var legend_title: Label
+var legend_items: Array = []
+var legend_key := ""
+var legend_wanted := false
 
 func initialize_display() -> void:
 	var prefs := ConfigFile.new()
@@ -333,7 +379,8 @@ func apply_theme_style(style_name: String) -> void:
 	if canvas: canvas.refresh_surround(); canvas.queue_redraw()
 	if timeline: timeline.queue_redraw()
 	if workspace_layout and workspace_layout.horizontal: workspace_layout.apply_style()
-	if empty_hint: (empty_hint.get_theme_stylebox("panel") as StyleBoxFlat).bg_color = StudioTheme.tone(Color(0.93, 0.96, 0.99, 0.92))
+	style_empty_hint()
+	if stage_panel: stage_panel.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.STAGE if StudioTheme.is_neon() else Color.TRANSPARENT, Color.TRANSPARENT, 0, 0, Vector4(0, 0, 0, 0)))
 	refresh_status_style()
 
 func apply_keyboard_nav(on: bool) -> void:
@@ -825,6 +872,582 @@ func refresh_tool_strip() -> void:
 	if tool_strip.visible != show_strip: tool_strip.visible = show_strip
 	for i in tool_buttons.size():
 		if tool_buttons[i].button_pressed != (tool.selected == i): tool_buttons[i].set_pressed_no_signal(tool.selected == i)
+	refresh_view_row()
+
+# ---- Neon Pro step 4: viewport overlays ---------------------------------------------------
+# The stage, tool pill, badges, viewfinder corners and stage footer only exist in the neon style
+# (built at start-up); classic styles keep the old view toolbar, scene line and footer toast.
+
+func view_pill(parent: Node) -> PanelContainer:
+	# Floating pill on the stage: rgba(12,13,17,.94), 1 px #2C303B, r10, pad 3, soft drop shadow.
+	var pill := PanelContainer.new()
+	pill.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	pill.add_theme_stylebox_override("panel", StudioTheme.flat(Color(12 / 255.0, 13 / 255.0, 17 / 255.0, 0.94), StudioTheme.LINE2, 10, 1, Vector4(3, 3, 3, 3), Color(0, 0, 0, 0.8), 11, Vector2(0, 12)))
+	parent.add_child(pill)
+	return pill
+
+func pill_divider(parent: Node) -> void:
+	# 1x24 #2C303B divider with 3 px on each side.
+	var holder := MarginContainer.new()
+	holder.add_theme_constant_override("margin_left", 3)
+	holder.add_theme_constant_override("margin_right", 3)
+	holder.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var line := ColorRect.new()
+	line.color = StudioTheme.LINE2
+	line.custom_minimum_size = Vector2(1, 24)
+	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	holder.add_child(line)
+	parent.add_child(holder)
+
+func overlay_icon(parent: Node, kind: String, color: Color, size := 16) -> TextureRect:
+	var image := TextureRect.new()
+	image.texture = StudioTheme.icon(kind, color, size)
+	image.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	image.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	parent.add_child(image)
+	return image
+
+func overlay_label(parent: Node, text: String, color: Color, size := 12, weight := 400, mono := false) -> Label:
+	var l := label(parent, text)
+	l.add_theme_color_override("font_color", color)
+	l.add_theme_font_size_override("font_size", size)
+	l.add_theme_font_override("font", StudioTheme.mono(weight) if mono else StudioTheme.font(weight))
+	l.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	l.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return l
+
+func style_tool_button(control: Button, text: String, kind: String, shortcut := "") -> void:
+	# Labelled pill tool: h40, pad 0 8 0 10, gap 8, 13/500 #B4BAC7 with a 16 px #8C93A3 icon and an
+	# 18 px keycap on the right (letter from keyboard_shortcuts). Active: neon ring on #171A22 with a
+	# violet glow, 600 white label and white icon (refresh_view_row switches the weight).
+	control.theme_type_variation = "ToolButton"
+	control.set_meta("label", text)
+	control.text = text
+	control.custom_minimum_size = Vector2(0, 40)
+	control.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	control.icon = StudioTheme.icon(kind, Color.WHITE, 16)
+	control.add_theme_constant_override("icon_max_width", 16)
+	control.add_theme_constant_override("h_separation", 8)
+	control.add_theme_font_size_override("font_size", 13)
+	control.add_theme_font_override("font", StudioTheme.font(500))
+	for state in ["icon_normal_color", "icon_focus_color", "icon_disabled_color"]: control.add_theme_color_override(state, StudioTheme.TEXT3)
+	control.add_theme_color_override("icon_hover_color", StudioTheme.TEXT2)
+	for state in ["icon_pressed_color", "icon_hover_pressed_color"]: control.add_theme_color_override(state, Color.WHITE)
+	var glow := Panel.new()
+	glow.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	glow.show_behind_parent = true
+	glow.visible = false
+	glow.add_theme_stylebox_override("panel", StudioTheme.flat(Color(0.482, 0.361, 1, 0), Color.TRANSPARENT, 8, 0, Vector4(0, 0, 0, 0), Color(0.482, 0.361, 1, 0.4), 7))
+	control.add_child(glow)
+	glow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	control.set_meta("glow", glow)
+	if not shortcut.is_empty():
+		var chip := Label.new()
+		chip.theme_type_variation = "KbdLabel"
+		chip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		chip.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		control.add_child(chip)
+		control.set_meta("kbd", chip)
+		control.set_meta("shortcut", shortcut)
+	set_tool_kbd(control)
+
+func set_tool_kbd(control: Button) -> void:
+	# Keycap text follows keyboard_shortcuts; the button's right padding makes room for the chip.
+	var right := 12.0
+	if control.has_meta("kbd"):
+		var chip: Label = control.get_meta("kbd")
+		var text: String = keyboard_shortcuts.label_for(control.get_meta("shortcut"))
+		if chip.text != text: chip.text = text
+		var width := maxf(18.0, chip.get_combined_minimum_size().x)
+		chip.set_anchors_preset(Control.PRESET_CENTER_RIGHT)
+		chip.offset_left = -8 - width; chip.offset_right = -8; chip.offset_top = -9; chip.offset_bottom = 9
+		right = 8 + width + 8
+	if control.has_meta("right") and control.get_meta("right") == right: return
+	control.set_meta("right", right)
+	var pad := Vector4(10, 0, right, 0)
+	var clear := StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, pad)
+	var on := StudioTheme.neon_ring(8.0, 1.5, StudioTheme.TOOL_INNER)
+	on.content_margin_left = pad.x; on.content_margin_top = 0; on.content_margin_right = pad.z; on.content_margin_bottom = 0
+	override_button_boxes(control, clear, StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 8, 0, pad), on, clear)
+
+func style_save_key(control: Button) -> void:
+	# Camera strip's main action: PrimaryButton h40, pad 0 16 0 12, 14/600, pink diamond icon.
+	control.theme_type_variation = "PrimaryButton"
+	control.custom_minimum_size = Vector2(0, 40)
+	control.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	control.icon = StudioTheme.icon("diamond", StudioTheme.CAMERA, 16)
+	control.add_theme_constant_override("icon_max_width", 16)
+	control.add_theme_constant_override("h_separation", 8)
+	var pad := Vector4(12, 0, 16, 0)
+	override_button_boxes(control, StudioTheme.flat(Color("1a1d25"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, pad))
+
+func style_ghost(control: Button, kind: String, height := 40) -> void:
+	# Ghost button: transparent, hover #1D2029; 13/500 #B4BAC7 text and icon, #F4F6FA on hover.
+	control.set_meta("label", control.text)
+	control.custom_minimum_size = Vector2(height if control.text.is_empty() else 0, height)
+	control.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	control.icon = StudioTheme.icon(kind, Color.WHITE, 16)
+	control.add_theme_constant_override("icon_max_width", 16)
+	control.add_theme_constant_override("h_separation", 8)
+	control.add_theme_font_override("font", StudioTheme.font(500))
+	control.add_theme_font_size_override("font_size", 13)
+	var pad := Vector4(8 if height < 40 else 10, 0, 8 if height < 40 else 12, 0)
+	var clear := StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, pad)
+	override_button_boxes(control, clear, StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 8, 0, pad), StudioTheme.flat(StudioTheme.RAISE, Color.TRANSPARENT, 8, 0, pad), clear)
+	override_button_colors(control, StudioTheme.TEXT2, StudioTheme.TEXT, Color.WHITE)
+
+func style_view_chips(controls_to_style: Array) -> void:
+	# Codex's view controls stay visible in Simple (lighting, Frame scene, Scene setup / Frame / 3×3)
+	# as compact h32 outline chips in the second pill: a deliberate deviation from the mock.
+	var pad := Vector4(10, 0, 10, 0)
+	for control in controls_to_style:
+		if not (control is Button): continue
+		control.custom_minimum_size.y = 32
+		control.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		control.add_theme_font_size_override("font_size", 12)
+		if control is CheckButton:
+			var row := StudioTheme.flat(Color.TRANSPARENT, Color.TRANSPARENT, 8, 0, Vector4(8, 0, 6, 0))
+			override_button_boxes(control, row, StudioTheme.flat(StudioTheme.HOVER, Color.TRANSPARENT, 8, 0, Vector4(8, 0, 6, 0)), row, row)
+			continue
+		override_button_boxes(control, StudioTheme.flat(StudioTheme.FIELD, StudioTheme.LINE2, 8, 1, pad), StudioTheme.flat(Color("21252f"), StudioTheme.LINE3, 8, 1, pad), StudioTheme.flat(StudioTheme.RAISE, StudioTheme.LINE2, 8, 1, pad), StudioTheme.flat(Color("0f1116"), StudioTheme.LINE, 8, 1, pad))
+
+func pick_pose_operation(index: int) -> void:
+	# Simple Pose strip drives the same Rotate / Move dropdown as the Pose panel (pose_smoke uses it).
+	if pose_editor.operation.selected != index:
+		pose_editor.operation.select(index)
+		pose_editor.operation.item_selected.emit(index)
+		pose_editor.update_gizmo()
+	refresh_view_row()
+
+func show_help_popover(anchor: Control, title: String, text: String) -> void:
+	# "Mouse and keys": the existing help text in a small popover under its button.
+	if anchor == null: return
+	if help_popup == null:
+		help_popup = PopupPanel.new()
+		add_child(help_popup)
+		var pad := MarginContainer.new()
+		for side in ["left", "right", "top", "bottom"]: pad.add_theme_constant_override("margin_" + side, 8)
+		help_popup.add_child(pad)
+		var box := VBoxContainer.new()
+		box.add_theme_constant_override("separation", 6)
+		pad.add_child(box)
+		help_popup_title = overlay_label(box, "", StudioTheme.TEXT, 13, 600)
+		help_popup_body = overlay_label(box, "", StudioTheme.TEXT2, 12)
+	help_popup_title.text = title
+	help_popup_body.text = text.replace("\r", "").strip_edges()
+	var scale := anchor.get_global_transform_with_canvas().get_scale()
+	var at := anchor.get_screen_position() + Vector2(0, (anchor.size.y + 6) * scale.y)
+	help_popup.reset_size()
+	help_popup.position = Vector2i(at)
+	help_popup.popup()
+
+func refresh_view_row() -> void:
+	# Pills follow the strips they hold; the Pose strip mirrors pose_editor.operation without writing.
+	if view_row == null or tool_pill == null or tool == null or mode == null: return
+	var changed := false
+	var pose_on := not advanced_mode and mode.selected == 2
+	for pair in [[tool_pill, tool_strip.visible], [camera_pill, camera_strip.visible], [pose_pill, pose_on]]:
+		if pair[0].visible != pair[1]: pair[0].visible = pair[1]; changed = true
+	for i in tool_buttons.size(): sync_tool_look(tool_buttons[i])
+	if pose_editor and pose_editor.operation:
+		for i in pose_buttons.size():
+			var on: bool = pose_editor.operation.selected == i
+			if pose_buttons[i].button_pressed != on: pose_buttons[i].set_pressed_no_signal(on)
+			sync_tool_look(pose_buttons[i])
+	if changed: queue_view_fit()
+
+func sync_tool_look(control: Button) -> void:
+	# Active tool: 600 white label, glow and brighter keycap; written only when the state changes.
+	var on := control.button_pressed
+	if control.has_meta("on") and control.get_meta("on") == on: return
+	control.set_meta("on", on)
+	control.add_theme_font_override("font", StudioTheme.font(600 if on else 500))
+	(control.get_meta("glow") as Control).visible = on
+	if control.has_meta("kbd"): (control.get_meta("kbd") as Label).add_theme_color_override("font_color", Color("c9ceda") if on else StudioTheme.TEXT2)
+
+func set_tool_compact(on: bool) -> void:
+	# Narrow centre column (under ~1000 px): tools show icon + keycap, Camera / Pose help icon-only.
+	if tool_compact == on: return
+	tool_compact = on
+	for control in tool_buttons + pose_buttons: control.text = "" if on else control.get_meta("label")
+	for control in [camera_help_button, pose_help_button]:
+		if control: control.text = "" if on else control.get_meta("label")
+	if camera_hint: camera_hint.visible = not on
+
+func queue_view_fit() -> void:
+	if view_row == null or view_fit_pending: return
+	view_fit_pending = true
+	fit_view_row.call_deferred()
+
+func fit_view_row() -> void:
+	# One line when everything fits (leads, Codex pill, badges); otherwise the Codex pill, then the
+	# badges, move to a second line. Badges stay right-aligned; nothing here changes behaviour.
+	view_fit_pending = false
+	if view_row == null: return
+	var avail: float = view_scroll.size.x - 24
+	if avail <= 0: return
+	set_tool_compact(avail < 976)
+	for control in tool_buttons: set_tool_kbd(control)
+	var gap := 8.0
+	var leads := [tool_pill, camera_pill, pose_pill].filter(func(p): return p.visible)
+	var lead_w := 0.0
+	for p in leads: lead_w += p.get_combined_minimum_size().x + gap
+	var codex_w: float = codex_pill.get_combined_minimum_size().x + gap
+	var badge_w: float = badges.get_combined_minimum_size().x
+	var codex_row := view_row
+	var badge_row := view_row
+	if lead_w + codex_w + badge_w <= avail: pass
+	elif not leads.is_empty() and lead_w + badge_w <= avail: codex_row = view_row2
+	elif leads.is_empty(): badge_row = view_row2
+	else: codex_row = view_row2; badge_row = view_row2
+	for item in [[codex_pill, codex_row], [badges, badge_row]]:
+		if item[0].get_parent() != item[1]: item[0].reparent(item[1], false)
+	view_row.move_child(view_spacer, view_row.get_child_count() - 1)
+	view_row2.move_child(view_spacer2, view_row2.get_child_count() - 1)
+	if codex_row == view_row: view_row.move_child(codex_pill, 3)
+	else: view_row2.move_child(codex_pill, 0)
+	badge_row.move_child(badges, badge_row.get_child_count() - 1)
+	var two_rows := codex_row == view_row2 or badge_row == view_row2
+	if view_row2.visible != two_rows: view_row2.visible = two_rows
+
+func badge_panel(parent: Node) -> HBoxContainer:
+	# h32, pad 0 12, r6, rgba(10,11,15,.86), 1 px rgba(255,255,255,.1); gap 8.
+	var panel := PanelContainer.new()
+	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	panel.custom_minimum_size.y = 32
+	panel.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	panel.add_theme_stylebox_override("panel", StudioTheme.flat(Color(10 / 255.0, 11 / 255.0, 15 / 255.0, 0.86), Color(1, 1, 1, 0.1), 6, 1, Vector4(12, 0, 12, 0)))
+	parent.add_child(panel)
+	var row := HBoxContainer.new()
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_theme_constant_override("separation", 8)
+	panel.add_child(row)
+	return row
+
+func build_view_badges() -> void:
+	# Right end of the view row (mouse ignored): "● Frame N · S.SS s" and the mode badge.
+	view_spacer = Control.new()
+	view_spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	view_spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	view_row.add_child(view_spacer)
+	view_spacer2 = Control.new()
+	view_spacer2.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	view_spacer2.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	view_row2.add_child(view_spacer2)
+	badges = HBoxContainer.new()
+	badges.name = "ViewBadges"
+	badges.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	badges.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	badges.add_theme_constant_override("separation", 8)
+	view_row.add_child(badges)
+	var frame_row := badge_panel(badges)
+	var dot := TextureRect.new()
+	dot.texture = StudioTheme.neon_dot(7)
+	dot.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	dot.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	dot.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	frame_row.add_child(dot)
+	frame_badge_frame = overlay_label(frame_row, "Frame 0", StudioTheme.TEXT, 12, 500, true)
+	overlay_label(frame_row, "·", StudioTheme.TEXT2, 12, 500, true)
+	frame_badge_time = overlay_label(frame_row, "0.00 s", StudioTheme.TEXT, 12, 500, true)
+	var mode_row := badge_panel(badges)
+	mode_badge_lead = overlay_label(mode_row, "", StudioTheme.TEXT2, 12, 500)
+	mode_badge_chip = Panel.new()
+	mode_badge_chip.custom_minimum_size = Vector2(10, 10)
+	mode_badge_chip.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	mode_badge_chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mode_badge_chip.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.DRAWING, Color.TRANSPARENT, 3, 0))
+	mode_row.add_child(mode_badge_chip)
+	mode_badge_diamond = TextureRect.new()
+	mode_badge_diamond.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	mode_badge_diamond.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	mode_badge_diamond.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mode_row.add_child(mode_badge_diamond)
+	mode_badge_value = overlay_label(mode_row, "", StudioTheme.TEXT, 12, 500)
+
+func set_label_text(target: Label, text: String) -> bool:
+	if target.text == text: return false
+	target.text = text
+	return true
+
+func pose_badge_text() -> String:
+	var rig = pose_editor.active_rig()
+	if rig == null: return "No model"
+	var model := str(rig.data.get("name", "Model"))
+	var bone: String = pose_editor.selected
+	if bone == "@root" or not pose_editor.tree_items.has(bone) or not is_instance_valid(pose_editor.tree_items[bone]): return model
+	return model + " · " + pose_editor.tree_items[bone].get_text(0)
+
+func aspect_text() -> String:
+	var w := int(video.width)
+	var h := int(video.height)
+	if w <= 0 or h <= 0: return "?"
+	var a := w
+	var b := h
+	while b != 0:
+		var t := b
+		b = a % b
+		a = t
+	if w / a <= 32 and h / a <= 32: return "%d:%d" % [w / a, h / a]
+	return "%.2f:1" % (float(w) / h)
+
+func lens_mm() -> float:
+	# Display only: lens length for a 36 mm-wide full-frame sensor from the horizontal angle of view
+	# (the mock's 54° horizontal reads 35 mm). The camera keeps its FOV; nothing is stored.
+	var cam: Camera3D = renderer.camera
+	var aspect := float(video.width) / maxf(1.0, float(video.height))
+	var half := tan(deg_to_rad(cam.fov) / 2.0)
+	var horizontal := half if cam.keep_aspect == Camera3D.KEEP_WIDTH else half * aspect
+	return 18.0 / maxf(horizontal, 0.0001)
+
+func refresh_badges() -> void:
+	# Badges, stage caption and legend: computed every frame, written only when their text changes.
+	if badges == null or mode == null: return
+	var seconds := float(frame) * float(video.fps_den) / maxf(1.0, float(video.fps_num))
+	var width_changed := set_label_text(frame_badge_frame, "Frame %d" % frame)
+	set_label_text(frame_badge_time, "%.2f s" % seconds)
+	var lead := ""
+	var marker := ""
+	var value := ""
+	match mode.selected:
+		0:
+			lead = "Drawing on"; marker = "chip"
+			value = str(layers[active_layer].name) if active_layer >= 0 and active_layer < layers.size() else "No layer"
+		1:
+			var keyed := keys.any(func(k): return int(k.frame) == frame)
+			marker = "camera" if keyed else ""
+			value = "Camera key on this frame" if keyed else "No camera key here"
+		_:
+			lead = "Posing"; marker = "model"; value = pose_badge_text()
+	var key := "%s|%s|%s" % [lead, marker, value]
+	if key != mode_badge_key:
+		mode_badge_key = key
+		mode_badge_lead.text = lead
+		mode_badge_lead.visible = not lead.is_empty()
+		mode_badge_chip.visible = marker == "chip"
+		mode_badge_diamond.visible = marker in ["camera", "model"]
+		if mode_badge_diamond.visible: mode_badge_diamond.texture = StudioTheme.diamond(StudioTheme.CAMERA if marker == "camera" else StudioTheme.MODEL, 10)
+		mode_badge_value.text = value
+		mode_badge_value.add_theme_color_override("font_color", StudioTheme.TEXT2 if mode.selected == 1 and marker.is_empty() else StudioTheme.TEXT)
+		width_changed = true
+	if width_changed: queue_view_fit()
+	refresh_stage_footer()
+
+func build_stage_footer(center: Control) -> void:
+	# Stage footer row (h40, under the canvas): camera caption left, status toast centred, legend right.
+	# The toast is placed by fit_stage_footer() inside a plain Control, so a long message never adds to
+	# the window's minimum width.
+	var margin := MarginContainer.new()
+	margin.name = "StageFooter"
+	for side in [["left", 16], ["right", 16], ["top", 0], ["bottom", 8]]: margin.add_theme_constant_override("margin_" + side[0], side[1])
+	margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	center.add_child(margin)
+	stage_footer = Control.new()
+	stage_footer.custom_minimum_size.y = 40
+	stage_footer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	margin.add_child(stage_footer)
+	var row := HBoxContainer.new()
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_theme_constant_override("separation", 12)
+	stage_footer.add_child(row)
+	row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	footer_left = HBoxContainer.new()
+	footer_left.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	footer_left.add_theme_constant_override("separation", 8)
+	footer_left.clip_contents = true
+	row.add_child(footer_left)
+	overlay_icon(footer_left, "camera", StudioTheme.TEXT2, 14)
+	scene_name = overlay_label(footer_left, "", StudioTheme.TEXT2, 12)
+	scene_name.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	view_caption = overlay_label(footer_left, "", StudioTheme.TEXT2, 12)
+	view_caption.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	view_caption.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	var gap := Control.new()
+	gap.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	gap.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(gap)
+	legend = HBoxContainer.new()
+	legend.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	legend.add_theme_constant_override("separation", 14)
+	legend.visible = false
+	row.add_child(legend)
+	legend_title = overlay_label(legend, "", StudioTheme.TEXT2, 12)
+	for i in 2:
+		var item := HBoxContainer.new()
+		item.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		item.add_theme_constant_override("separation", 6)
+		legend.add_child(item)
+		var ring := TextureRect.new()
+		ring.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+		ring.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		ring.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		item.add_child(ring)
+		legend_items.append([ring, overlay_label(item, "", StudioTheme.TEXT2, 12)])
+	toast = PanelContainer.new()
+	toast.name = "StatusToast"
+	toast.mouse_filter = Control.MOUSE_FILTER_PASS # tooltip only: shows the full message when it is cut
+	stage_footer.add_child(toast)
+	var toast_row := HBoxContainer.new()
+	toast_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	toast_row.add_theme_constant_override("separation", 10)
+	toast.add_child(toast_row)
+	toast_icon = TextureRect.new()
+	toast_icon.texture = StudioTheme.toast_ring(false)
+	toast_icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
+	toast_icon.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	toast_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	toast_row.add_child(toast_icon)
+	toast_lead = overlay_label(toast_row, "", StudioTheme.TEXT, 13, 600)
+	toast_lead.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	toast_rest = overlay_label(toast_row, "", StudioTheme.TEXT2, 13)
+	toast_rest.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	toast_rest.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	toast_strip = StudioTheme.neon_line(128)
+	toast.draw.connect(draw_toast_strip)
+	stage_footer.resized.connect(fit_stage_footer)
+
+func refresh_stage_footer() -> void:
+	# Simple caption "Camera view · W:H" (+ lens in Camera); Advanced keeps Codex's scene_name text.
+	if stage_footer == null: return
+	var caption := "Camera view · " + aspect_text()
+	if mode.selected == 1: caption += " · %d mm" % roundi(lens_mm())
+	var changed := set_label_text(view_caption, caption)
+	if scene_name.visible != advanced_mode: scene_name.visible = advanced_mode; changed = true
+	if view_caption.visible == advanced_mode: view_caption.visible = not advanced_mode; changed = true
+	var kind := ""
+	if mode.selected == 0 and onion_editor and onion_editor.enabled and onion_editor.enabled.button_pressed: kind = "onion"
+	elif mode.selected == 2: kind = "pose"
+	if kind != legend_key:
+		legend_key = kind
+		legend_wanted = not kind.is_empty()
+		if kind == "onion":
+			legend_title.text = "Onion skin"
+			legend_items[0][0].texture = StudioTheme.ring_icon(StudioTheme.DRAWING, 10); legend_items[0][1].text = "Before"
+			legend_items[1][0].texture = StudioTheme.ring_icon(StudioTheme.CAMERA, 10); legend_items[1][1].text = "After"
+		elif kind == "pose":
+			legend_title.text = "Handles"
+			legend_items[0][0].texture = StudioTheme.ring_icon(Color.WHITE, 10); legend_items[0][1].text = "Joint"
+			legend_items[1][0].texture = StudioTheme.selected_handle_icon(14); legend_items[1][1].text = "Selected"
+		changed = true
+	if changed: fit_stage_footer()
+
+func toast_natural_width() -> float:
+	var lead_w := StudioTheme.font(600).get_string_size(toast_lead.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x
+	var rest_w := StudioTheme.font(400).get_string_size(toast_rest.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x
+	return 10 + 22 + 10 + ceilf(lead_w) + (10 + ceilf(rest_w) if not toast_rest.text.is_empty() else 0.0) + 16 + 2
+
+func fit_stage_footer() -> void:
+	# Simple: the toast is centred under the frame at its natural width, clamped so it never covers
+	# the legend; the legend hides first when the stage is too narrow. Advanced: status is a plain
+	# line between Codex's scene caption and the legend.
+	if stage_footer == null or toast == null: return
+	var width := stage_footer.size.x
+	if width <= 0: return
+	var caption: Label = scene_name if advanced_mode else view_caption
+	var caption_w := StudioTheme.font(400).get_string_size(caption.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 12).x + 24
+	var legend_w := 0.0
+	legend.visible = legend_wanted
+	if legend_wanted: legend_w = legend.get_combined_minimum_size().x
+	var x := 0.0
+	var w := 0.0
+	if advanced_mode:
+		caption_w = minf(caption_w, width * 0.35)
+		x = caption_w + 12
+		w = maxf(0.0, width - x - legend_w - 12)
+	else:
+		var want := toast_natural_width()
+		var side := maxf(legend_w, minf(caption_w, 170.0))
+		if legend_wanted and width - side * 2 - 24 < minf(want, 260.0):
+			legend.visible = false
+			legend_w = 0.0
+			side = minf(caption_w, 170.0)
+		w = clampf(want, 0.0, maxf(0.0, width - side * 2 - 24))
+		x = floorf((width - w) / 2.0)
+		caption_w = maxf(0.0, x - 12)
+		var lead_w := ceilf(StudioTheme.font(600).get_string_size(toast_lead.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 13).x)
+		toast_lead.custom_minimum_size.x = clampf(lead_w, 0.0, maxf(0.0, w - 60))
+	footer_left.custom_minimum_size.x = caption_w
+	toast.position = Vector2(x, 0)
+	toast.size = Vector2(w, 40)
+	var height := maxf(40.0, toast.get_combined_minimum_size().y)
+	if toast.size.y != height: toast.size.y = height
+	if stage_footer.custom_minimum_size.y != height: stage_footer.custom_minimum_size.y = height
+
+func split_status(text: String) -> PackedStringArray:
+	# First sentence (or the part before the first ": ") in bold, the rest in grey.
+	var cut := -1
+	for mark in [". ", "! ", "? ", ": "]:
+		var at := text.find(mark)
+		if at > 0 and (cut < 0 or at < cut): cut = at
+	if cut < 0: return PackedStringArray([text, ""])
+	return PackedStringArray([text.substr(0, cut + 1), text.substr(cut + 2).strip_edges()])
+
+func refresh_toast() -> void:
+	# status.text stays the source of truth and is never cleared. Simple: neon toast (coral ring and
+	# #FF5A7A border for problems) mirroring it; Advanced: status itself as a plain line.
+	var problem := is_problem_message(status.text)
+	status.visible = advanced_mode
+	toast_icon.visible = not advanced_mode
+	toast_lead.visible = not advanced_mode
+	if advanced_mode:
+		toast_rest.visible = false
+		toast.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
+		toast.modulate.a = 1.0
+		if toast_tween: toast_tween.kill()
+		set_toast_progress(0.0)
+	else:
+		var parts := split_status(status.text)
+		toast_lead.text = parts[0]
+		toast_rest.text = parts[1]
+		toast_rest.visible = true
+		toast_icon.texture = StudioTheme.toast_ring(problem)
+		toast.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.POPUP, StudioTheme.PROBLEM if problem else StudioTheme.LINE2, 10, 1, Vector4(10, 0, 16, 0), Color(0, 0, 0, 0.8), 11, Vector2(0, 12)))
+		toast.modulate.a = 1.0 if not status.text.is_empty() else 0.0
+	toast.tooltip_text = "" if advanced_mode else status.text
+	fit_stage_footer()
+
+func set_toast_progress(value: float) -> void:
+	toast_progress = value
+	if toast: toast.queue_redraw()
+
+func draw_toast_strip() -> void:
+	# 2 px neon strip along the toast's bottom edge (inset past the rounded corners).
+	if toast_progress <= 0.0 or advanced_mode or toast_strip == null: return
+	var width := (toast.size.x - 12.0) * toast_progress
+	if width > 0.5: toast.draw_texture_rect(toast_strip, Rect2(6, toast.size.y - 3, width, 2), false)
+
+func draw_viewfinder() -> void:
+	# Gradient viewfinder corners 7 px outside the visible camera frame: 22 px arms, 2.5 px, round
+	# caps. TL #2E8CFF, TR / BL #9C5CFF, BR #FF3D9A (mock: M41 81V59H63 for a frame at 48,66).
+	if viewfinder == null or canvas == null: return
+	var frame_rect: Rect2 = canvas.image_rect().intersection(Rect2(Vector2.ZERO, canvas.size))
+	if frame_rect.size.x < 8 or frame_rect.size.y < 8: return
+	frame_rect = frame_rect.grow(7)
+	var arm := 22.0
+	var corners := [[frame_rect.position, Vector2(0, 1), Vector2(1, 0), StudioTheme.BLUE], [Vector2(frame_rect.end.x, frame_rect.position.y), Vector2(-1, 0), Vector2(0, 1), StudioTheme.MID], [Vector2(frame_rect.position.x, frame_rect.end.y), Vector2(0, -1), Vector2(1, 0), StudioTheme.MID], [frame_rect.end, Vector2(-1, 0), Vector2(0, -1), StudioTheme.PINK]]
+	for corner in corners:
+		var p: Vector2 = corner[0]
+		var points := PackedVector2Array([p + corner[1] * arm, p, p + corner[2] * arm])
+		viewfinder.draw_polyline(points, corner[3], 2.5, true)
+		for q in points: viewfinder.draw_circle(q, 1.25, corner[3])
+
+func style_empty_hint() -> void:
+	# Neon: #111318 card, 1 px #2C303B, r10, #F4F6FA text. Classic: the old pale rounded card.
+	if empty_hint == null: return
+	if StudioTheme.is_neon():
+		empty_hint.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.PANEL, StudioTheme.LINE2, 10, 1, Vector4(14, 14, 14, 14)))
+		if empty_hint_label: empty_hint_label.add_theme_color_override("font_color", StudioTheme.TEXT)
+		return
+	var hint_style := StyleBoxFlat.new()
+	hint_style.bg_color = StudioTheme.tone(Color(0.93, 0.96, 0.99, 0.92))
+	hint_style.set_corner_radius_all(10)
+	hint_style.set_content_margin_all(14)
+	empty_hint.add_theme_stylebox_override("panel", hint_style)
+	if empty_hint_label: empty_hint_label.remove_theme_color_override("font_color")
 
 func advanced_spin(parent: Node, text: String, low: float, high: float, value: float) -> SpinBox:
 	var row := VBoxContainer.new()
@@ -878,6 +1501,8 @@ func refresh_workspace() -> void:
 	inspector_scroll.scroll_vertical = 0
 	if pose_editor:pose_editor.refresh_values()
 	if scene_view:scene_view.sync()
+	refresh_view_row()
+	refresh_badges()
 	fit_header()
 
 func style_accent(control: Button) -> void:
@@ -1118,12 +1743,47 @@ func build_ui() -> void:
 	world_selection.setup(hierarchy)
 	var center := VBoxContainer.new()
 	center.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	middle.add_child(center)
+	# Neon Pro step 4: the centre column is the #05060A stage (view row, canvas, stage footer).
+	# The stage panel takes the centre's place, so workspace_layout still moves middle's child 1.
+	var neon_stage := StudioTheme.is_neon()
+	if neon_stage:
+		stage_panel = PanelContainer.new()
+		stage_panel.name = "Stage"
+		stage_panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		stage_panel.add_theme_stylebox_override("panel", StudioTheme.flat(StudioTheme.STAGE, Color.TRANSPARENT, 0, 0, Vector4(0, 0, 0, 0)))
+		middle.add_child(stage_panel)
+		center.add_theme_constant_override("separation", 0)
+		stage_panel.add_child(center)
+	else:
+		middle.add_child(center)
 	var view_strip:=ScrollContainer.new();view_strip.name="ViewControlsScroll";view_strip.follow_focus=true
 	view_strip.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO;view_strip.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	center.add_child(view_strip)
 	var view_toolbar := HBoxContainer.new()
-	view_strip.add_child(view_toolbar)
+	if neon_stage:
+		# View row: the tool pill (or the Camera / Pose strip) on the left, badges on the right, and
+		# Codex's view controls in a second small pill that drops to a second line when space is short.
+		var view_margin := MarginContainer.new()
+		view_margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		for side in [["left", 12], ["right", 12], ["top", 5], ["bottom", 3]]: view_margin.add_theme_constant_override("margin_" + side[0], side[1])
+		view_scroll = view_strip
+		view_strip.resized.connect(queue_view_fit)
+		view_strip.add_child(view_margin)
+		var view_rows := VBoxContainer.new()
+		view_rows.add_theme_constant_override("separation", 6)
+		view_margin.add_child(view_rows)
+		view_row = HBoxContainer.new()
+		view_row.add_theme_constant_override("separation", 8)
+		view_rows.add_child(view_row)
+		view_row2 = HBoxContainer.new()
+		view_row2.add_theme_constant_override("separation", 8)
+		view_row2.visible = false
+		view_rows.add_child(view_row2)
+		codex_pill = view_pill(view_row)
+		view_toolbar.add_theme_constant_override("separation", 4)
+		codex_pill.add_child(view_toolbar)
+	else:
+		view_strip.add_child(view_toolbar)
 	mode = OptionButton.new()
 	mode.add_icon_item(StudioTheme.icon("draw"), "Draw")
 	mode.add_icon_item(StudioTheme.icon("camera"), "Scene / camera")
@@ -1151,20 +1811,75 @@ func build_ui() -> void:
 	view_toolbar.add_child(lighting_choice)
 	# Redesign: Simple Draw tool strip; drives the tool dropdown (Advanced Drawing panel).
 	tool_strip = HBoxContainer.new()
-	view_toolbar.add_child(tool_strip)
-	tool_strip.add_child(VSeparator.new())
+	if neon_stage:
+		# Neon Pro step 4: labelled tools with keycaps in the floating pill (divider before Select area).
+		tool_pill = view_pill(view_row)
+		tool_strip.add_theme_constant_override("separation", 2)
+		tool_pill.add_child(tool_strip)
+		view_row.move_child(tool_pill, 0)
+	else:
+		view_toolbar.add_child(tool_strip)
+		tool_strip.add_child(VSeparator.new())
 	var tool_group := ButtonGroup.new()
+	var tool_shortcuts := ["pen", "eraser", "fill", "sample", ""]
 	for entry in [["Pen", "draw", "B"], ["Eraser", "eraser", "E"], ["Fill", "fill", "F"], ["Pick color", "picker", "I"], ["Select area", "cel", "M"]]:
 		var tool_index := tool_buttons.size()
+		if neon_stage and tool_index == 4: pill_divider(tool_strip)
 		var tb := icon_button(tool_strip, "", entry[1], func(): pick_tool(tool_index), "%s [%s]" % [entry[0], entry[2]])
 		tb.toggle_mode = true
 		tb.button_group = tool_group
 		tb.custom_minimum_size = Vector2(40, 36)
+		if neon_stage: style_tool_button(tb, entry[0], "select" if tool_index == 4 else entry[1], tool_shortcuts[tool_index])
 		tool_buttons.append(tb)
 	# Redesign: Simple Camera mode has its main action beside the tabs.
-	camera_strip = HBoxContainer.new(); view_toolbar.add_child(camera_strip)
-	camera_strip.add_child(VSeparator.new())
-	icon_button(camera_strip, "Save key", "key", key_dialog, "Save camera key at this frame")
+	camera_strip = HBoxContainer.new()
+	if neon_stage:
+		# Neon Pro step 4: Save key, then a "Mouse and keys" popover with the camera help and a hint.
+		camera_pill = view_pill(view_row)
+		camera_strip.add_theme_constant_override("separation", 2)
+		camera_pill.add_child(camera_strip)
+		view_row.move_child(camera_pill, 1)
+		var save_key := icon_button(camera_strip, "Save key", "key", key_dialog, "Save camera key at this frame")
+		style_save_key(save_key)
+		keyboard_shortcuts.decorate(save_key, "camera", "Save camera key at this frame")
+		pill_divider(camera_strip)
+		camera_help_button = icon_button(camera_strip, "Mouse and keys", "help", func(): show_help_popover(camera_help_button, "Camera: mouse and keys", camera_help_label.text if camera_help_label else ""), "Show the camera mouse and keyboard controls")
+		style_ghost(camera_help_button, "help")
+		var hint := HBoxContainer.new()
+		hint.add_theme_constant_override("separation", 6)
+		hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		hint.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+		var hint_margin := MarginContainer.new()
+		hint_margin.add_theme_constant_override("margin_left", 6)
+		hint_margin.add_theme_constant_override("margin_right", 10)
+		hint_margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		hint_margin.add_child(hint)
+		camera_strip.add_child(hint_margin)
+		overlay_icon(hint, "mouse", StudioTheme.TEXT2, 14)
+		overlay_label(hint, "Move the view with the mouse", StudioTheme.TEXT2, 12)
+		camera_hint = hint_margin
+		# New Simple-only Pose strip: drives pose_editor.operation (Rotate / Move) and shows the
+		# canvas posing help. "Turn model" is left out: no existing behaviour maps to it.
+		pose_strip = HBoxContainer.new()
+		pose_pill = view_pill(view_row)
+		pose_strip.add_theme_constant_override("separation", 2)
+		pose_pill.add_child(pose_strip)
+		view_row.move_child(pose_pill, 2)
+		var pose_group := ButtonGroup.new()
+		for entry in [["Pose joints", "joint", "Rotate the selected joint or model with the colored rings"], ["Move model", "move", "Move the selected model or joint"]]:
+			var operation_index := pose_buttons.size()
+			var pb := icon_button(pose_strip, entry[0], entry[1], func(): pick_pose_operation(operation_index), entry[2])
+			pb.toggle_mode = true
+			pb.button_group = pose_group
+			style_tool_button(pb, entry[0], entry[1])
+			pose_buttons.append(pb)
+		pill_divider(pose_strip)
+		pose_help_button = icon_button(pose_strip, "Mouse and keys", "help", func(): show_help_popover(pose_help_button, "Posing: mouse and keys", canvas.tooltip_text.replace(" • ", "\n")), "Show the posing mouse and keyboard controls")
+		style_ghost(pose_help_button, "help")
+	else:
+		view_toolbar.add_child(camera_strip)
+		camera_strip.add_child(VSeparator.new())
+		icon_button(camera_strip, "Save key", "key", key_dialog, "Save camera key at this frame")
 	simple_only(camera_strip)
 	advanced(button(view_toolbar, "Fit view", func(): canvas.zoom = 1; canvas.pan = Vector2.ZERO; canvas.queue_redraw()))
 	button(view_toolbar, "Frame scene", frame_3d_scene).tooltip_text = "Fit the 3D asset in the temporary editor camera; shot keys stay unchanged."
@@ -1173,8 +1888,18 @@ func build_ui() -> void:
 	var physics_strip:=ScrollContainer.new();physics_strip.name="PhysicsControlsScroll";physics_strip.follow_focus=true
 	physics_strip.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_AUTO;physics_strip.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	center.add_child(physics_strip);physics_bar=physics_strip
-	var physics_toolbar:=HBoxContainer.new();physics_strip.add_child(physics_toolbar)
+	var physics_toolbar:=HBoxContainer.new()
+	if neon_stage:
+		var physics_margin := MarginContainer.new()
+		physics_margin.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		for side in [["left", 12], ["right", 12], ["top", 3], ["bottom", 3]]: physics_margin.add_theme_constant_override("margin_" + side[0], side[1])
+		physics_strip.add_child(physics_margin)
+		var physics_row := HBoxContainer.new();physics_margin.add_child(physics_row)
+		view_pill(physics_row).add_child(physics_toolbar)
+		physics_toolbar.add_theme_constant_override("separation", 4)
+	else:physics_strip.add_child(physics_toolbar)
 	physics_editor.setup(physics_toolbar)
+	if neon_stage:style_view_chips(physics_toolbar.get_children())
 	canvas = CanvasView.new()
 	canvas.custom_minimum_size = Vector2(400, 180)
 	canvas.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -1183,16 +1908,28 @@ func build_ui() -> void:
 	canvas.middle_target=middle_pose_target
 	canvas.middle_clicked=cycle_pose_operation
 	canvas.tooltip_text = "Wheel: zoom • Middle drag: pan • Space: play/pause"
-	center.add_child(canvas)
+	if neon_stage:
+		# Neon Pro step 4: a 12 px stage margin gives the viewfinder corners room outside the frame.
+		# The corners are drawn by an overlay sibling above the canvas that ignores the mouse.
+		var canvas_holder := MarginContainer.new()
+		canvas_holder.name = "StageCanvas"
+		canvas_holder.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		for side in ["left", "right", "top", "bottom"]: canvas_holder.add_theme_constant_override("margin_" + side, 12)
+		center.add_child(canvas_holder)
+		canvas_holder.add_child(canvas)
+		viewfinder = Control.new()
+		viewfinder.name = "Viewfinder"
+		viewfinder.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		canvas_holder.add_child(viewfinder)
+		viewfinder.draw.connect(draw_viewfinder)
+		canvas.draw.connect(viewfinder.queue_redraw)
+	else:
+		center.add_child(canvas)
 	# Redesign: friendly next step on an empty world / frame (Simple only; a child of the canvas control, not the film).
 	empty_hint = PanelContainer.new()
 	empty_hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var hint_style := StyleBoxFlat.new()
-	hint_style.bg_color = StudioTheme.tone(Color(0.93, 0.96, 0.99, 0.92))
-	hint_style.set_corner_radius_all(10)
-	hint_style.set_content_margin_all(14)
-	empty_hint.add_theme_stylebox_override("panel", hint_style)
 	empty_hint_label = label(empty_hint, "")
+	style_empty_hint()
 	empty_hint_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	empty_hint_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	empty_hint.visible = false
@@ -1201,7 +1938,15 @@ func build_ui() -> void:
 	empty_hint.position.y = 24
 	empty_hint.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	scene_view=preload("res://src/scene_view.gd").new();add_child(scene_view);scene_view.setup(self,view_toolbar)
-	scene_name = label(center, "")
+	if neon_stage:
+		build_view_badges()
+		style_view_chips([mode, lighting_choice, scene_view.choice, scene_view.frame_button, scene_view.grid_button])
+		for b in view_toolbar.get_children():
+			if b is Button and b.text in ["Fit view", "Frame scene"]: style_view_chips([b])
+		for b in [undo_button, redo_button]: style_ghost(b, "undo" if b == undo_button else "redo", 32)
+		build_stage_footer(center)
+	else:
+		scene_name = label(center, "")
 	scene_name.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	var scroll := ScrollContainer.new()
 	inspector_scroll = scroll
@@ -1256,7 +2001,7 @@ func build_ui() -> void:
 	advanced(button(drawing_section, "Set held cel exposure", set_exposure))
 	advanced(button(drawing_section, "Delete held cel", delete_cel))
 	camera_section = section(controls, "Camera", "camera")
-	label(camera_section, "Ctrl + left: free camera / WASD
+	camera_help_label = label(camera_section, "Ctrl + left: free camera / WASD
 Left drag: move sideways / up
 Right drag: adjust view direction
 Middle drag: move forward / back
@@ -1402,8 +2147,17 @@ Draw returns to the animated shot.")
 	advanced(debug_label)
 	var footer := HBoxContainer.new()
 	column.add_child(footer)
-	status = label(footer, "")
+	if toast:
+		# Neon Pro step 4: status lives in the stage toast (plain line in Advanced). This footer keeps
+		# the export/recovery buttons; recovery_status is Advanced-only (the header save line's
+		# tooltip carries it in Simple), so in Simple the row only takes space while a button shows.
+		var footer_spacer := Control.new()
+		footer_spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		footer_spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		footer.add_child(footer_spacer)
+	status = label(toast.get_child(0) if toast else footer, "")
 	status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	if toast:status.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	status.custom_minimum_size.y = 36
 	status.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	movie_folder_button=button(footer,"Show movie folder",show_movie_folder)
@@ -1415,6 +2169,9 @@ Draw returns to the animated shot.")
 	retry_encode_button.hide()
 	recovery_status = label(footer, "Recovery on • every 1 min")
 	recovery_status.tooltip_text = "Separate from manual Save. Waits until gestures, playback, export and dialogs finish."
+	if toast:
+		advanced(recovery_status)
+		recovery_status.theme_type_variation = "CaptionLabel"
 	cancel_button = button(footer, "Cancel export", func(): cancel_export = true; if encoder: encoder.cancel())
 	cancel_button.visible = false
 	set_advanced(false)
@@ -1426,7 +2183,7 @@ Draw returns to the animated shot.")
 		world_selection.tree.custom_minimum_size.y = 80 if compact else 150
 		timeline_scroll.custom_minimum_size.y = 84 if compact else 144
 		canvas.custom_minimum_size.y = 90 if compact else 180
-		scene_name.visible=not compact
+		if not toast:scene_name.visible=not compact
 	resized.connect(fit_panels)
 	get_window().size_changed.connect(fit_panels)
 	fit_panels.call()
@@ -1448,12 +2205,20 @@ func schedule_status_fade(serial: int) -> void:
 	# Redesign: the Simple toast fades after 6 s. Only the look changes; status.text is kept,
 	# because Codex's code and tests read it back as the latest result.
 	if advanced_mode or not is_inside_tree(): return
+	if toast:
+		# Neon Pro step 4: a 2 px neon strip under the toast shrinks over the same 6 s.
+		if toast_tween: toast_tween.kill()
+		toast_tween = create_tween()
+		toast_tween.tween_method(set_toast_progress, 1.0, 0.0, 6.0)
 	get_tree().create_timer(6.0).timeout.connect(func():
-		if serial == status_serial and not advanced_mode and status: status.self_modulate.a = 0.0)
+		if serial == status_serial and not advanced_mode and status:
+			if toast: toast.modulate.a = 0.0
+			else: status.self_modulate.a = 0.0)
 
 func refresh_status_style() -> void:
 	# Redesign: Simple shows status as a rounded toast (red for problems); Advanced keeps the plain line.
 	if status == null: return
+	if toast: refresh_toast(); return
 	if advanced_mode:
 		status.remove_theme_stylebox_override("normal")
 		status.self_modulate.a = 1
@@ -1758,6 +2523,7 @@ func _process(delta: float) -> void:
 	refresh_empty_hint()
 	refresh_title()
 	refresh_tool_strip() # tool can change without a signal (shortcuts, color sampler)
+	refresh_badges()
 	if playing:
 		var seconds := preview_seconds()
 		preview_sample_seconds=seconds

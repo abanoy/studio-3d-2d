@@ -165,6 +165,39 @@ static func neon_bar(height := 36) -> Texture2D:
 	# 2 px vertical neon bar, blue at the top to pink at the bottom (selected World rail tile).
 	return svg_texture('<defs>%s</defs><rect width="2" height="%d" rx="1" fill="url(#neonv)"/>' % [neon_defs("neonv", true), height], 2, height, 2.0)
 
+# ---- Neon Pro step 4: viewport overlay glyphs (cached; neon style only) -------------------
+
+static func _cached(key: String, body: String, width: int, height: int) -> Texture2D:
+	if not icons.has(key): icons[key] = svg_texture(body, width, height, 2.0)
+	return icons[key]
+
+static func neon_dot(size := 7) -> Texture2D:
+	# Frame badge dot: a small circle filled with the blue → pink ramp.
+	var r := size / 2.0
+	return _cached("dot|%d" % size, '<defs>%s</defs><circle cx="%s" cy="%s" r="%s" fill="url(#neon)"/>' % [neon_defs(), r, r, r], size, size)
+
+static func diamond(color: Color, size := 10) -> Texture2D:
+	# Filled key diamond (camera keys pink, model keys violet). CSS rotate(45deg) radius 2 → plain diamond.
+	var h := size / 2.0
+	return _cached("diamond|%s|%d" % [color.to_html(), size], '<path d="M%s 0.6 %s %s %s %s 0.6 %sz" fill="%s" fill-opacity="%s"/>' % [h, size - 0.6, h, h, size - 0.6, h, hex(color), color.a], size, size)
+
+static func ring_icon(color: Color, size := 10, width := 2.0) -> Texture2D:
+	# Hollow legend ring (onion Before/After, pose Joint): 2 px border, box-sizing border-box.
+	var h := size / 2.0
+	return _cached("ring|%s|%d|%s" % [color.to_html(), size, width], '<circle cx="%s" cy="%s" r="%s" fill="none" stroke="%s" stroke-width="%s"/>' % [h, h, h - width / 2.0, hex(color), width], size, size)
+
+static func selected_handle_icon(size := 14) -> Texture2D:
+	# Pose legend "Selected": neon ring on the stage colour around a white centre dot.
+	var h := size / 2.0
+	return _cached("handle|%d" % size, '<defs>%s</defs><circle cx="%s" cy="%s" r="%s" fill="%s" stroke="url(#neon)" stroke-width="2"/><circle cx="%s" cy="%s" r="2.2" fill="#ffffff"/>' % [neon_defs(), h, h, h - 1.0, hex(STAGE), h, h], size, size)
+
+static func toast_ring(problem := false) -> Texture2D:
+	# 22 px toast badge: 1.5 px neon ring on the toast fill with a white 12 px check (stroke 3 in the
+	# 24-unit icon grid). Problem messages get a coral ring and an exclamation mark instead.
+	var stroke := hex(PROBLEM) if problem else "url(#neon)"
+	var glyph := '<path d="M11 6.5v5.2" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/><circle cx="11" cy="15" r="1" fill="#ffffff"/>' if problem else '<path d="m7.5 11 2.5 2.5 4.5-5" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
+	return _cached("toast|%s" % problem, '<defs>%s</defs><circle cx="11" cy="11" r="10.25" fill="%s" stroke="%s" stroke-width="1.5"/>%s' % [neon_defs(), hex(POPUP), stroke, glyph], 22, 22)
+
 static func kbd_box() -> StyleBoxFlat:
 	# 18 px keycap chip (with the 11 px mono font): #13151B, 1 px #2C303B, radius 5.
 	return flat(KBD, LINE2, 5, 1, Vector4(5, 1, 5, 1))

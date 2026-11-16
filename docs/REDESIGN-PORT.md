@@ -237,3 +237,100 @@ Deviations (step 3):
   scrollbar widens the rail a little (asset button still reachable, as workspace_controls checks).
 - **Contrast:** tile labels (TEXT2) are 9.98:1 on BAR, the WORLD label and icons (TEXT3) 6.3:1 on BAR
   and 5.28:1 on hover, white on RAISE 17.6:1.
+
+### Step 4: viewport overlays (`src/app.gd`, `src/canvas_view.gd`, `src/studio_theme.gd`)
+- **Stage:** in neon, the centre column is a `#05060A` "Stage" PanelContainer that takes the old
+  centre's place, so `workspace_layout` still moves `middle`'s child 1. It holds the view row, the
+  canvas in a 12 px margin ("StageCanvas") and the stage footer. `image_rect()`, `scene_rect()`, the
+  input routing and the canvas maths are unchanged.
+- **Viewfinder corners:** a "Viewfinder" Control (mouse ignored) sits above the canvas in the same
+  margin. It draws four 22 px corners, 2.5 px wide with round ends, 7 px outside the visible camera
+  frame: TL `#2E8CFF`, TR and BL `#9C5CFF`, BR `#FF3D9A`. When the user zooms past the canvas, the
+  corners mark the canvas edge. They redraw whenever the canvas redraws.
+- **Canvas (editor only, never rendered):** the frame line is `rgba(255,255,255,.08)`. When Scene setup
+  fills the view (Camera and Pose), four `rgba(4,5,8,.62)` bands dim everything outside
+  `image_rect()`, as in the mock. Pose joints are white 2 px rings on the stage colour (radius 4), and
+  selected joints are `#FF5FAE` rings (radius 5.5). The 3D gizmo and the review lines are unchanged.
+- **View row** (`ViewControlsScroll`, transparent, margins 12 / 5 / 12 / 3): a left lead pill, then
+  Codex's view controls in a second small pill, then the badges on the right. `fit_view_row()` keeps
+  all of them on one line when they fit. Otherwise the Codex pill moves to a second line, and then the
+  badges do. It runs on resize and when the visible pills or the badge text width change.
+  - **Tool pill** (Simple Draw): the existing `tool_strip` and `tool_buttons` in a pill,
+    `rgba(12,13,17,.94)`, 1 px `#2C303B`, r10, pad 3, gap 2, shadow `rgba(0,0,0,.8)` size 11 at (0,12).
+    Each button is a `ToolButton` h40 with pad 0 8 0 10, gap 8, 13/500 `#B4BAC7` text, a 16 px `#8C93A3`
+    icon and an 18 px keycap. The keycap is a `KbdLabel` whose letter comes from `keyboard_shortcuts`
+    (pen, eraser, fill, sample). The active tool gets the neon ring on `#171A22`, a violet glow
+    (`rgba(123,92,255,.4)` size 7), a 600 white label and icon, and a `#C9CEDA` keycap. A divider
+    sits before Select area, which has no keycap ([M] stays in its tooltip). Below about 1000 px of
+    centre width, the tools show only the icon and keycap. `pick_tool()`, `tool` and
+    `refresh_tool_strip()` are unchanged.
+  - **Camera strip** (Simple Camera): "Save key" PrimaryButton (h40, pad 0 16 0 12, 14/600, pink
+    diamond icon, same `key_dialog`, shortcut in the tooltip), a divider, a ghost "Mouse and keys"
+    button and the hint "Move the view with the mouse" (12 px, mouse icon). The button opens a popover
+    with the existing camera help text, which stays in the Camera panel too. When narrow, the help
+    button is icon-only and the hint hides.
+  - **Pose strip** (new, Simple Pose): "Pose joints" sets `pose_editor.operation` to Rotate, "Move
+    model" sets it to Move (same as the panel dropdown and middle-click: select, `item_selected`,
+    `update_gizmo`), and "Mouse and keys" shows the canvas posing help in the popover. The strip syncs
+    from `operation` every frame and only writes on a click.
+  - **Codex pill:** `mode` (Advanced), `lighting_choice`, Fit view (Advanced), Frame scene, Undo / Redo
+    (32 px icon ghosts in Simple, labelled in Advanced) and Scene setup / Frame / 3×3. They are h32
+    outline chips, and the switches stay switches. The Pose physics row is a second chip pill, inside
+    its own `PhysicsControlsScroll` as before.
+  - **Badges** (mouse ignored): "● Frame N · S.SS s" (h32, pad 0 12, r6, `rgba(10,11,15,.86)`, 1 px
+    `rgba(255,255,255,.1)`, mono 12/500, a 7 px neon dot and a `#B4BAC7` middle dot). The mode badge
+    shows: Draw "Drawing on ■ <layer>" (10 px r3 `#4DA3FF` chip); Camera "◆ Camera key on this frame"
+    in pink when a key is at the playhead, otherwise "No camera key here" in `#B4BAC7`; Pose
+    "Posing ◆ <model> · <bone>" in violet (just the model when the root is selected). It is
+    recomputed every frame and written only when the text changes.
+- **Stage footer** (h40 under the canvas): left, a camera icon and the caption. Simple shows
+  "Camera view · W:H" (+ " · NN mm" in Camera). `lens_mm()` uses a 36 mm-wide full-frame sensor and the
+  horizontal angle of view (18 / tan(hfov/2)), which matches the mock's 54° = 35 mm. Advanced shows
+  Codex's `scene_name` text, unchanged. Centre: the toast. Right: the legend, "Onion skin ○ Before ○
+  After" (2 px `#4DA3FF` / `#FF5FAE` rings) in Draw when onion skin is on, and "Handles ○ Joint ◉
+  Selected" in Pose.
+- **Toast:** `status` is now created inside the toast. `status.text` is still set only by `message()`
+  and never cleared. In Simple, `status` is hidden and the toast mirrors it: a 22 px neon check ring
+  (coral ring with "!" and a `#FF5A7A` border when `is_problem_message()`), the first sentence (or
+  the part before the first ": ") in 13/600 white, and the rest in `#B4BAC7`. The toast is `#101217`,
+  1 px `#2C303B`, r10, pad 0 16 0 10, with a shadow. A 2 px neon strip shrinks over the existing 6 s
+  fade, and then the toast fades as before. Two ellipsizing Labels are used instead of a
+  RichTextLabel, so a long message is cut, not widened. The full text is in the toast's tooltip. The
+  toast is placed by `fit_stage_footer()` inside a plain Control: it is centred and clamped so it
+  never covers the legend (the legend hides first), and a long message never adds to the window's
+  minimum width. In Advanced the toast has no box, and `status` is the plain wrapping line between
+  the caption and the legend.
+- **Footer under the timeline:** it keeps Show movie folder, Show saved frames, Retry MP4, Cancel export
+  and `recovery_status`. `recovery_status` is Advanced-only in neon, and the header save line's
+  tooltip carries it in Simple. So in Simple the row has no height unless one of the buttons is
+  showing, and it appears as soon as one is.
+- `empty_hint`: a `#111318` card, 1 px `#2C303B`, r10, `#F4F6FA` text, mouse ignored as before.
+- New StudioTheme glyphs (cached SVG): `neon_dot`, `diamond`, `ring_icon`, `selected_handle_icon`,
+  `toast_ring`.
+
+Deviations (step 4):
+- **Codex controls in Simple:** the mock's view row has only the tools and the badges. The lighting
+  menu (lighting_smoke and the lighting lesson need it visible), Frame scene, Undo / Redo, Scene setup /
+  Frame / 3×3 and the Pose physics row stay visible as h32 chip pills. At 1440x900 the Codex pill does
+  not fit beside the full tool pill and the badges, so it takes a second 38 px line (and the physics
+  pill a third in Pose). With a centre column of about 1250 px or more, everything is on one line.
+- **Floating vs. row:** the mock floats the pill and badges over the picture. Here they sit in a row
+  above the canvas, so no control ever covers canvas points (tests click film pixels, including
+  1440,270). For the same reason the stage footer is a row under the canvas.
+- **Turn model:** left out of the Pose strip (no existing behaviour maps to it; owner decision).
+- **Frame guide:** the mock always shows the 8 % frame line. Codex's Frame toggle now draws a clearer
+  45 % line in Camera / Pose, so the toggle still does something visible. The dim bands are always on in
+  Scene setup.
+- **Glow:** the mock's active-tool glow is blue and pink. Here it is one violet shadow.
+- **Layout choice at start-up:** like steps 2 and 3, the stage layout is chosen when the app starts.
+  Switching the interface theme at run time recolours the stage, and the classic layout returns
+  after a restart. Classic styles keep the old view toolbar, scene line and footer toast exactly.
+- **Contrast:** `#B4BAC7` is 9.6:1 on `#101217` (toast), 10.2:1 on the badge fill, 10.4:1 on the stage
+  and 9.4:1 on a keycap. White on `#171A22` is 17.4:1, and `#F4F6FA` on the hint card is 17.2:1.
+  `#8C93A3` icons are 6.35:1 on the pill.
+
+Tests (step 4, Linux xvfb): ui, editor, pose, world_selection, recovery_write and recovery pass.
+workspace_controls (48/0), workspace_docking, asset_package_smoke, brush_opacity_smoke, palette_smoke,
+layers_smoke, onion_smoke, first_movie_smoke, rotation_gizmo_smoke, scene_view_unit and
+lighting_lesson_smoke pass. color_sampler_smoke has the same 3 failures as before this step (same
+check names). Windows verify.py was not run.

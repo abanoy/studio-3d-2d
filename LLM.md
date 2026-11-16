@@ -4868,3 +4868,22 @@ with the stage. Classic styles keep the old list and headers. Details and deviat
 docs/REDESIGN-PORT.md. Linux xvfb: ui, editor, pose, world_selection, recovery_write and recovery
 pass, and workspace_docking, workspace_controls and asset_package_smoke pass. Windows verify.py was
 not run.
+
+## 2026-11-16 UTC — Neon Pro port step 4: viewport overlays (Claude, claude/studio-redesign)
+
+The centre column is now the mock's `#05060A` stage. Above the canvas, the view row has the
+labelled tool pill with keycaps (Simple Draw), a Save key / Mouse and keys / hint strip (Simple
+Camera) or a new Pose joints / Move model / Mouse and keys strip (Simple Pose, driving
+`pose_editor.operation`). Codex's view controls sit in a second chip pill. On the right are the
+"Frame N · S.SS s" badge and a mode badge (layer, camera key at the playhead, or model and bone). The
+canvas sits in a 12 px margin with gradient viewfinder corners drawn by a mouse-ignoring overlay.
+In Scene setup, the area outside the frame is dimmed (editor only). Pose joints are white rings,
+and selected ones pink. Under the canvas, the stage footer shows "Camera view · 16:9" (+ lens in
+Camera), the status toast and the onion / handle legend. The toast has a neon check ring (coral for
+problems), a bold first sentence, a grey rest and a 6 s neon strip. `status` moved into the toast:
+it is still the source of truth and is never cleared, hidden in Simple and a plain line in Advanced.
+The footer under the timeline keeps its buttons and only takes space in Simple when one shows
+(`recovery_status` is Advanced-only in neon). Canvas maths, input routing, visibility of Codex
+controls and status semantics are unchanged. Classic styles keep the old view. Deviations (Codex
+pill on a second line at 1440, no Turn model, Frame guide line) are in docs/REDESIGN-PORT.md.
+Linux xvfb results are in docs/REDESIGN-PORT.md. Windows verify.py was not run.
