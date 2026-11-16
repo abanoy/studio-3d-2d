@@ -1,0 +1,134 @@
+{
+  "format": "has_source_native_live_independent_source_fixture_review_1",
+  "passed_as_source_review": true,
+  "observed_utc": "2026-11-16T01:40:15.849176+00:00",
+  "production_source_pins": [
+    {
+      "path": "src/source_jiggle_math.gd",
+      "bytes": 10025,
+      "sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90",
+      "exact_attempt1_before_and_after": true
+    },
+    {
+      "path": "src/source_secondary.gd",
+      "bytes": 14723,
+      "sha256": "330f181b14e33924930baf57e2ec450f444734ec40e9c06363df7e341427adb8",
+      "exact_attempt1_before_and_after": true
+    },
+    {
+      "path": "src/secondary_live.gd",
+      "bytes": 6443,
+      "sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be",
+      "exact_attempt1_before_and_after": true
+    },
+    {
+      "path": "src/physics_editor.gd",
+      "bytes": 23497,
+      "sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+      "exact_attempt1_before_and_after": true
+    },
+    {
+      "path": "src/fan_editor.gd",
+      "bytes": 8028,
+      "sha256": "85a575881cc13b9acb3f266dcbe401266a80bf424667e2984a3ff3c093fcb614",
+      "exact_attempt1_before_and_after": true
+    }
+  ],
+  "source_guard_review": {
+    "immutable69rest_name_parent_info_base_skeleton_identity_order_importmap_native_report_snapshot": true,
+    "authored_pose_world_placement_solver_state_excluded_from_stamp": true,
+    "live_source_exists_mtime_length_guard": true,
+    "continuous_source_content_SHA256_claimed": false,
+    "all69enabled_native8_leaf_and_exact_empty_internal_simulator_context": true,
+    "generic_spring_branch_preserved": true,
+    "native_direct_absolute_FK_without_generic_fade_or_slew": true,
+    "native_seek_save_error_freeze_routes_discard_transients": true,
+    "source_native_provenance_or_full_layout_flags_mutated": false,
+    "fixed_math_body_identical_except_comments_to_14053_candidate": true,
+    "fan_aim_alias_mutation_fixed_by_local_deep_copy": true,
+    "limits": [
+      "Source-only review is not a production runtime PASS.",
+      "Sourcefile during preview is guarded by existence/mtime/length; full cryptographic binding is at setup.",
+      "A malformed internal actor returning an empty initial binding stamp should be rejected defensively; ordinary imported69-bone Model invariants cover the observed path."
+    ]
+  },
+  "first_actual_run": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1",
+    "status": "FAILED",
+    "writer_checks": 74,
+    "writer_failed": 2,
+    "writer_passed": 72,
+    "failed_named_checks": [
+      "body.actual_primary_started",
+      "body.native_refusal_preserves_primary"
+    ],
+    "writer_result_sha256": "dba1a405844a67d62e72e1d68f4fb5f7a1296588110704908c1b817beba54c22",
+    "wrapper_verification_sha256": "b945b9bc3309ddab0e4c18677bfc03889442d97c6901664843a41b47fe2adb3e",
+    "source_before_after_exact": true,
+    "source_catalogue_files": 1013,
+    "readers_executed": false,
+    "full_or_replay_PASS_inferred": false,
+    "partial_native_metrics": {
+      "disabled": {
+        "last_second_tip_span": 0.00026303227059543133,
+        "native_Z_tip_error_max": 1.758084408720606e-06,
+        "points_sha256": "5968ed79e8e15e68ff64cd95c12a7478a98035e1ae9064f9956e916d49c98d51",
+        "tick_count": 180
+      },
+      "miss": {
+        "last_second_tip_span": 0.00026303227059543133,
+        "native_Z_tip_error_max": 1.758084408720606e-06,
+        "points_sha256": "5968ed79e8e15e68ff64cd95c12a7478a98035e1ae9064f9956e916d49c98d51",
+        "tick_count": 180
+      },
+      "opposite": {
+        "affected_max_vs_disabled": 0.001541732344776392,
+        "last_second_tip_span": 0.06922711431980133,
+        "native_Z_tip_error_max": 1.7669190128799528e-06,
+        "points_sha256": "4521dbfbaf02f14ce71e87c76a7f256f4767f2ad1ebffed05c269a53f9aeecc6",
+        "tick_count": 180
+      },
+      "speed12": {
+        "affected_max_vs_disabled": 0.010114077478647232,
+        "last_second_tip_span": 0.06701704114675522,
+        "native_Z_tip_error_max": 1.7203582274305518e-06,
+        "points_sha256": "5ce83c821e9093f11451da2b4e3e79ff308c43042218446a23154dffa4891791",
+        "tick_count": 180
+      },
+      "speed3": {
+        "affected_max_vs_disabled": 0.0004348361981101334,
+        "last_second_tip_span": 0.004464675672352314,
+        "native_Z_tip_error_max": 1.7341776583634783e-06,
+        "points_sha256": "1ee8d4a8cdc52f2761862ff5ac2f51ca127888f00a3832cf31b36ff522ec65f1",
+        "tick_count": 180
+      },
+      "speed50": {
+        "affected_max_vs_disabled": 0.014946725219488144,
+        "last_second_tip_span": 0.13300445675849915,
+        "native_Z_tip_error_max": 1.7037573343259282e-06,
+        "points_sha256": "1563a0017e96b2ef6985ae64f57bba0ffc304fe6fbd53e7dfe3db26ce5b269e7",
+        "tick_count": 180
+      },
+      "zero": {
+        "last_second_tip_span": 0.00026303227059543133,
+        "native_Z_tip_error_max": 1.758084408720606e-06,
+        "points_sha256": "5968ed79e8e15e68ff64cd95c12a7478a98035e1ae9064f9956e916d49c98d51",
+        "tick_count": 180
+      }
+    }
+  },
+  "fixture_correction_review": {
+    "verdict": "VALID_TEST_FIXTURE_CORRECTION_WITH_UNCHANGED_NATIVE_NUMERIC_GATES",
+    "source_reason": "PhysicsRig.create requires at least one validated arm/leg chain; retained Junko69 catalogue consists of root/pelvis/spine/neck/head and hair/hat/gathering, so automatic ragdoll construction is unsupported.",
+    "expected_successful_ragdoll_setup_for_this_hair_only_asset_was_invalid": true,
+    "same_actor_native_plus_body_coexistence_qualified": false,
+    "reverse_same_actor_live_body_refusal_qualified": false,
+    "correct_successor_assertions": "Assert actual unsupported-rig diagnostic and unchanged actor/no unintended body allocation. Add actual Physics-on prop as independent actor and verify native Hair on/off does not stop or replace that other body.",
+    "three_additional_independent_prop_body_checks_proposed": true,
+    "corrected_successor_executed_or_passed_by_this_audit": false,
+    "original_failed_run_preserved": true,
+    "numeric_tolerances_weakened_by_this_review": false
+  },
+  "apps_parsers_process_CIM_Git_network_or_source_mutations_by_this_audit": false,
+  "raw_native_geometry_rest_coordinate_or_media_payloads_copied": false
+}

@@ -1,0 +1,32 @@
+{
+  "format": "has_source_native_live_actual_verification_1",
+  "passed": false,
+  "checks_expected": 93,
+  "checks_observed": 0,
+  "phase_expected": {
+    "writer": 74,
+    "reader-packed": 11,
+    "reader-linked": 8
+  },
+  "results": [],
+  "error": {
+    "type": "AssertionError",
+    "message": "Native editor phase failed; retain C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer"
+  },
+  "preservation": {
+    "current_functional_source": true,
+    "original_native_GLB_report_and_baseline": true,
+    "approved_Godot": true,
+    "frozen_functional_source": true
+  },
+  "baseline_conversion": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\sfm-bone-bindings-native-launch-20261114T033026205\\run\\verification.json",
+    "bytes": 1358555,
+    "mtime_ns": 1794627169881387800,
+    "sha256": "10ee4a984c9e54b1acf37d79d5013a10780abe98416b8350f3edf3ee37277c4b"
+  },
+  "native_conversion_performed_by_this_driver": false,
+  "native8_editor_backend_tested": true,
+  "private_arrays_in_public_result": false,
+  "output": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1"
+}

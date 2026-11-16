@@ -1,0 +1,22 @@
+{
+  "format": "has_reviewed_manifest_metadata_preflight_1",
+  "phase": "before",
+  "observed_utc": "2026-11-16T02:10:15.030212+00:00",
+  "expected_refusals_observed": true,
+  "rows": [
+    {
+      "name": "wind",
+      "outcome": "REFUSED",
+      "type": "RuntimeError",
+      "message": "Unreviewed main port bytes: src/physics_editor.gd"
+    },
+    {
+      "name": "helper",
+      "outcome": "REFUSED",
+      "type": "RuntimeError",
+      "message": "Unreviewed helper main bytes: src/physics_editor.gd"
+    }
+  ],
+  "subprocess_attempts": 0,
+  "runtime_qualification": false
+}

@@ -1,0 +1,155 @@
+{
+  "format": "has_native8_product_increment_1",
+  "owner_date": "2026-11-15",
+  "recorded_utc": "2026-11-16T02:05:07.816848+00:00",
+  "source_base_HEAD": "9de4e6cbdf8b0369cbdf118a40c13f85860eaac0",
+  "status": "PASSED_SCOPED_GUI_96_AND_LATER_HEADLESS_STATE_180",
+  "current_complete_Windows_default": "PENDING_AFTER_PRODUCT_CHANGES",
+  "native_rules_active": 1,
+  "native_rules_retained": 49,
+  "native_rule_index": 8,
+  "native_parent_index": 7,
+  "qualified_profile": "Exact original Junko hair GLB; Source0x31 at conversion0.01905, no generic chains, same-actor body physics off",
+  "raw_source_report_activation_changed": false,
+  "current_review": "Earlier f0dd57a review; new backend not packaged there",
+  "gui": {
+    "benchmark": {
+      "path": "experiments/source_native_live_actual_20261115/BENCHMARK.json",
+      "sha256": "096fb6d6306548e10ba73b3396462e953cb0173862a2cad91d70851aa860b470"
+    },
+    "packet_index": {
+      "path": "experiments/source_native_live_actual_20261115/INDEX.json",
+      "sha256": "0363158eb1ad94daac33258ff50808da95028ce7ee94d1b207701309c2dd235d"
+    },
+    "checks": 96,
+    "writer": 77,
+    "packed": 11,
+    "linked": 8,
+    "closed_private_jobs": 3,
+    "coverage": [
+      "actual Add fan/Aim/relative speeds0/3/12/50/disabled/missed/opposite fields",
+      "native desired-state versus actual native-Z tip and exact weighted Off at keyed12/24",
+      "seek and unrecorded Save restore authored data without a draft",
+      "partial-rig ragdoll refusal; existing independent fan rigid-body identity/RID preserved on native On/Off",
+      "connected Local Record Stop/Escape/Undo/Redo, ordinary FK, immutable49-rule metadata",
+      "packed+linked cold no-autoactivation, FK/final-frame0/24 agreement and packed PNG-export agreement",
+      "existing generic declared-chain backend and Off"
+    ],
+    "native_fan_policy": "Explicit HAS world acceleration: existing deterministic fan field divided by0.03, bounded by field cap. Relative fan speed is not SDK wind parity or a calibrated real fan.",
+    "later_header_guard_covered_by_this_GUI_run": false,
+    "first_attempt": "FAILED_74_CHECKS_TWO_FALSE_RAGDOLL_EXPECTATIONS_RETAINED"
+  },
+  "state": {
+    "public_packet_index": {
+      "path": "experiments/source_native_state_actual_20261115/INDEX.json",
+      "sha256": "24587520cc0949ce00f6d64ac4f4de49a47c5281fe65266f146ba3030a99d384"
+    },
+    "public_benchmark": {
+      "path": "experiments/source_native_state_actual_20261115/BENCHMARK.json",
+      "sha256": "44b55300b0657364bd1e53c03e11b7d5ca87f591f1b4ee83c0afaa1a6a722c77"
+    },
+    "verification": {
+      "path": "output/source-native-state-20261116T020227823185/verification.json",
+      "sha256": "31e08e4c15915f543b9df9ad8b01b4bfe472b7d47fde4558090cacc834d3097f"
+    },
+    "result": {
+      "path": "output/source-native-state-20261116T020227823185/result.json",
+      "sha256": "a42cc5de39e6cbaadc5adbdf3811739ef979bc0f37c56c72e369e1f159d3d1e6"
+    },
+    "source": {
+      "path": "output/source-native-state-20261116T020227823185/SOURCE.json",
+      "sha256": "ac029880c8084961115e3e1233775585004c77dabd0fb867f55bd3238d642ce3"
+    },
+    "closure": {
+      "path": "output/source-native-state-20261116T020227823185/after-runtime-closure.json",
+      "sha256": "9d1f091c21750928489c6764a61bca50b82083bbc3c8e1d2ea7031471d921f95"
+    },
+    "checks": 180,
+    "metrics": {
+      "actors_loaded": 3,
+      "completed_native_steps": 506,
+      "file_header": {
+        "attempts": 1,
+        "isolated": true,
+        "length_unchanged": true,
+        "mtime_unchanged": true
+      },
+      "file_length": {
+        "attempts": 1,
+        "isolated": true,
+        "length_unchanged": false,
+        "mtime_unchanged": true
+      },
+      "file_mtime": {
+        "attempts": 1,
+        "isolated": true,
+        "length_unchanged": true,
+        "mtime_unchanged": false
+      },
+      "negative_case_count": 23,
+      "planned_assertions": 180
+    },
+    "scope": {
+      "GPU_or_GUI": false,
+      "actual_Model_instances_loaded": 3,
+      "actual_Native_backend_attempted": true,
+      "actual_Secondary_wrapper_attempted": true,
+      "actual_single_physical_body_only_adversarial_refusal": true,
+      "continuous_file_guard": "Captured GLB header, statmtime, length and cached complete69-bone binding/report stamp; full source authentication on create/reload",
+      "fake_primary_or_physics_emulation": false,
+      "mutable_original_inputs": false,
+      "native_conversion_performed": false,
+      "native_rule_index_selected": 8,
+      "private_arrays_serialized": false,
+      "retained_rules": 49,
+      "same_actor_complete_ragdoll_or_borrowed_primary": "UNQUALIFIED_PARTIAL_SOURCE_RIG",
+      "unchanged_header_size_mtime_body_edit_detection": "OUTSIDE_CONTINUOUS_CRYPTOGRAPHIC_GUARANTEE_NOT_TESTED_OR_CLAIMED"
+    },
+    "cleanup": {
+      "owned_copy_hashes_restored": true,
+      "passed_input_hashes_preserved": true,
+      "retained_private_artifacts": "Three script-created owned GLBs and adjacent reports only; root removes after verified evidence backup"
+    },
+    "production_source": [
+      {
+        "path": "src/fan_editor.gd",
+        "bytes": 8028,
+        "sha256": "85a575881cc13b9acb3f266dcbe401266a80bf424667e2984a3ff3c093fcb614"
+      },
+      {
+        "path": "src/physics_editor.gd",
+        "bytes": 23497,
+        "sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a"
+      },
+      {
+        "path": "src/secondary_live.gd",
+        "bytes": 6443,
+        "sha256": "dc7aa47b462edaaa977fa3f2b110df02d3034ecea2462f7bc47bf1c40a3287be"
+      },
+      {
+        "path": "src/source_jiggle_math.gd",
+        "bytes": 10025,
+        "sha256": "20e3a8a5167e53bcdafc4bca7f43023dada5e3131250b314fadca8ad95568d90"
+      },
+      {
+        "path": "src/source_secondary.gd",
+        "bytes": 15190,
+        "sha256": "d2c04165587ca3bb0f7b9f474b23dc81902cc78c1aa174d593534f0198f689c0"
+      }
+    ],
+    "first_parse_failure": {
+      "path": "output/source-native-state-20261116T020159138961/verification.json",
+      "sha256": "4039fc3bac04f2c2b1926d1fc8c42dc21465240ebbe66f7f9bbf52b51844a6b9"
+    },
+    "parse_fix": "Only annotate test complete as bool; predicates unchanged"
+  },
+  "unqualified": [
+    "Other48 native rules",
+    "Same-actor active ragdoll/native coexistence",
+    "Full Source SDK/client or artist fidelity",
+    "Current complete Windows default",
+    "Current owner review of native motion"
+  ],
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation_coverage": "52/54_UNCHANGED"
+}

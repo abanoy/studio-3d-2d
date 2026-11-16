@@ -4959,3 +4959,77 @@ historical RETAIN_FOR_NOW for only those two roots. Formal55/62acceptance and
 52/54implementation remainunchanged. Next independent feature increment remains
 nativeSourceparent-chain ordering and normalfan/body/Off/Record/HAS integration,
 not another request for the owner's deferred manual observations.
+
+
+## 2026-11-15 — First bounded native joint integrated with ordinary controls
+
+Working source based on9de4e6c now adds scalar64 Source0x31 mathematics and a
+qualified native8 FrontHair1 backend, selected explicitly by Hair & clothes on
+the original exact Junko GLB. One of49 retained rules runs; metadata remains
+inert import provenance and full-layout flags are unchanged. Helper-derived
+assets and declared generic chains retain the existing generic backend.
+
+Actual private ordinary-control verification passes96checks(77writer/11packed/
+8linked), three closed jobs, four preservation gates. Seven actual fan profiles
+measure disabled/zero/miss/opposite and speeds3/12/50;152weighted vertices move,
+9509unaffected vertices and68other world bones remain exact. Off/seek/unrecorded
+Save restore authored state, actual Local Record/Stop/Escape/Undo/Redo works,
+packed+linked cold states/frames and packed PNG-export frames agree. A separate
+fan's actual rigid body/RID persists through native On/Off. The first74-check
+run retains two FAILED fixture expectations: this hair-only rig correctly lacks
+the arm/leg chains required for automatic ragdoll. Correction preserves all
+numeric gates and tests the real refusal plus independent body ownership.
+
+Subsequent header/binding-staleness changes pass180headless lifecycle checks,
+three actual Model instances,506completed native steps and23negative cases.
+Header/length/mtime mutations each meet their required isolated observation.
+All owned GLBs restore; passed inputs, authored69-bone state/keys/raw49 report,
+source and runtimes remain exact. Parse/state children exit0/reap, no engine
+errors or kills; after-runtime inventory owns0processes. First preflight was
+refused by unavailable CIM access before any engine launch. First actual parse
+failure is preserved; sole test fix annotates complete as bool, with unchanged
+180predicates. Continuous header/length/mtime checks do not promise to detect
+body-only edits preserving those fields; full source hashing is at create/reload.
+
+Evidence: experiments/source_native_live_actual_20261115 and
+output/source-native-state-20261116T020227823185; benchmark
+docs/benchmarks/native_source_live_2026-11-15.json. The96GUI run precedes the
+later header guard, separately covered by180state checks. Same-actor active
+ragdoll, other48rules, SDK/artist fidelity and current complete-default remain
+unqualified. Parent-chain proof and fresh full-default are next. The owner's
+volunteered click-selection test uses the earlier f0dd57a review, which does
+not contain this new native-motion backend. Formal55/62and52/54stay unchanged.
+Continue independent work; no checkpoint implies a new owner pause.
+
+
+## 2026-11-15 — Actual connected native joints and reviewed generic preflights
+
+The separately staged scalar64 parent-chain runner passes4012synthetic math
+checks(maxerror8.88e-16), then21087actual native checks/12cases/1440ticks/
+5760ruleevaluations for17→18 and26→27 at roots1/2. Actual Model/weighted CPU
+queries preserve9119unaffected points and65unselected bones exactly;542weighted
+vertices(340shared) respond distinctly to temporary signed/strong inputs. Off
+at authored12/24 and repeated12-input weighted results are exact. Maximum basis
+error1.00774e-6 and native-Z tip error7.63312e-7 stay inside unchanged2e-5 gates.
+All fourheadless childrenexit0/reap, ninepreservation groupspass, noengineerror
+or kill; authoritativeclosure02:13:54.990457Z releasesruntimelease. Native25
+has NO retained jiggle rule; its authored intermediate transform is preserved.
+An incorrect frozen README sentence is corrected in a separate erratum.
+
+Evidence: output/source-0x31-native-chains-20261115-attempt1 and
+docs/benchmarks/native_source_chains_2026-11-15.json. This remains experimental
+four-rule CPU orchestration, not product parent-chain/fan/body/Record/GPU/SDK
+qualification. Production still runs the separately qualified native8 only.
+Historicalfullf0dd receipt is explicitly acknowledged as an earlier source;
+current sources are independently frozen and current full-default is pending.
+
+Default preflight review found two old physics_editor hashes. Exact old wind/
+helper manifests and observed metadata refusals are preserved. Reviewed
+successors change only that row's raw/LF hashes plus a provenance pointer;
+16/25pathsets, otherrows and strict driver gates stay exact. Actual metadata
+functions accept41rows, existing helper-driver CPU suite passes120checks with
+zero subprocess/runtime attempts, and every other1014-file catalogue identity
+stays exact. Evidence: experiments/source_native_live_independent_review_20261115/
+manifest-successor-20261116. A clean committed functional source is required
+before the fresh full-default run; no allow-working or hash bypass is added.
+All broad acceptance statuses remain unchanged. Continue independent work.

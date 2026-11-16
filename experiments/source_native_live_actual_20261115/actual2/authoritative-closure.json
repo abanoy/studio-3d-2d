@@ -1,0 +1,42 @@
+{
+  "runtime_lease_released": true,
+  "actual_phases": [
+    {
+      "desktop_closed": true,
+      "job_closed": true,
+      "exit": 0,
+      "checks": 77,
+      "failures": 0,
+      "result_sha256": "0e0b9f29a8e41d01a0113709f4050f8edfb0545644c0c3bd410c12bd858d9e2f",
+      "retained_Popen_reaped": true,
+      "name": "writer"
+    },
+    {
+      "desktop_closed": true,
+      "job_closed": true,
+      "exit": 0,
+      "checks": 11,
+      "failures": 0,
+      "result_sha256": "07191afef07d18de3d146504ce671caf0778d2b602dba2658e9bf4c3c68f9c4d",
+      "retained_Popen_reaped": true,
+      "name": "reader-packed"
+    },
+    {
+      "desktop_closed": true,
+      "job_closed": true,
+      "exit": 0,
+      "checks": 8,
+      "failures": 0,
+      "result_sha256": "1ceb912ec712ddc45f4c65c2829d2861c6cbe1b9964f8fd858d7f28a69ffda93",
+      "retained_Popen_reaped": true,
+      "name": "reader-linked"
+    }
+  ],
+  "validation_passed": true,
+  "format": "has_native_source_live_root_closure_1",
+  "observed_utc": "2026-11-16T01:48:47.8599896Z",
+  "owned_runtime_commands_absent": true,
+  "no_process_killed": true,
+  "verification_sha256": "cd74588000a7e826c5c8a64ccdcb178b7863a364d4ca7b7a842a98834b2be03a",
+  "owned_private_jobs_closed": 3
+}

@@ -1,0 +1,44 @@
+{
+  "format": "has_native8_first_product_attempt_failure_preserved_1",
+  "checked_utc": "2026-11-16T01:39:13.421146+00:00",
+  "run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1",
+  "passed": false,
+  "actual_writer_checks": 74,
+  "actual_writer_failures": 2,
+  "failed_names": [
+    "body.actual_primary_started",
+    "body.native_refusal_preserves_primary"
+  ],
+  "old_aggregate_checks_observed": 0,
+  "aggregate_underreporting_reason": "Old execute raised before returning the failed phase proof; replacement driver will append returned proof before deciding failure. Original aggregate is preserved unchanged.",
+  "failed_test_assumption": "Exact native hair source has69 head/torso/hair bones but no validated arms/legs; PhysicsRig correctly refuses an automatic ragdoll.",
+  "same_actor_reverse_body_qualification": "UNQUALIFIED; no synthetic bones added",
+  "source_and_results": [
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\Studio\\tests\\source_native_live_ui.gd",
+      "bytes": 23388,
+      "sha256": "9dd300d16f6010772597ac5e27755e9e9c6afe81954b6a815361f2a590bf26ef"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\Studio\\tests\\verify_source_native_live.py",
+      "bytes": 15352,
+      "sha256": "4619962d15d1c7b039cbe06a23708553974c1ffd0990a9882c5c48e71298812f"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\result.json",
+      "bytes": 5673,
+      "sha256": "dba1a405844a67d62e72e1d68f4fb5f7a1296588110704908c1b817beba54c22"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\writer\\process-verification.json",
+      "bytes": 731,
+      "sha256": "7275510dff1302fa1c7a9646bc96d5733fb5615356fdf51f161941ec6db4259d"
+    },
+    {
+      "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-live-20261115-attempt1\\verification.json",
+      "bytes": 1241,
+      "sha256": "b945b9bc3309ddab0e4c18677bfc03889442d97c6901664843a41b47fe2adb3e"
+    }
+  ],
+  "files_mutated_or_deleted_in_failed_run": false
+}

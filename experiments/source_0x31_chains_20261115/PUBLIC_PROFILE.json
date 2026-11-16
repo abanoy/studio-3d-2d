@@ -1,0 +1,122 @@
+{
+  "status": "CPU_METADATA_AND_WEIGHT_COUNTS_ONLY_ACTUAL_CHAIN_ENGINE_UNPARSED_UNRUN",
+  "source_context_declared_by_root": "9de4e6c",
+  "bones": 69,
+  "rules": 49,
+  "source_scale": 0.01905,
+  "selected": [
+    {
+      "native_index": 17,
+      "name": "Side1Steps-1_L",
+      "parent": 7,
+      "children": [
+        18
+      ],
+      "raw_flags": 49,
+      "active_and_along_parameters": {
+        "length": 20.0,
+        "tip_mass": 20.0,
+        "yaw_stiffness": 50.0,
+        "yaw_damping": 5.0,
+        "pitch_stiffness": 50.0,
+        "pitch_damping": 5.0,
+        "angle_limit": 0.7853981852531433,
+        "along_stiffness": 100.0,
+        "along_damping": 0.0
+      },
+      "native_prefix_sha256": "f2add968c86ab5b5d6de6cc60586f1d57ecbbdd61b86b93eb2a90bcfbe0e06ba"
+    },
+    {
+      "native_index": 18,
+      "name": "Side2Steps-1_L",
+      "parent": 17,
+      "children": [],
+      "raw_flags": 49,
+      "active_and_along_parameters": {
+        "length": 20.0,
+        "tip_mass": 20.0,
+        "yaw_stiffness": 50.0,
+        "yaw_damping": 5.0,
+        "pitch_stiffness": 50.0,
+        "pitch_damping": 5.0,
+        "angle_limit": 0.7853981852531433,
+        "along_stiffness": 100.0,
+        "along_damping": 0.0
+      },
+      "native_prefix_sha256": "f2add968c86ab5b5d6de6cc60586f1d57ecbbdd61b86b93eb2a90bcfbe0e06ba"
+    },
+    {
+      "native_index": 26,
+      "name": "2Steps-1_L",
+      "parent": 25,
+      "children": [
+        27
+      ],
+      "raw_flags": 49,
+      "active_and_along_parameters": {
+        "length": 20.0,
+        "tip_mass": 20.0,
+        "yaw_stiffness": 50.0,
+        "yaw_damping": 5.0,
+        "pitch_stiffness": 50.0,
+        "pitch_damping": 5.0,
+        "angle_limit": 0.7853981852531433,
+        "along_stiffness": 100.0,
+        "along_damping": 0.0
+      },
+      "native_prefix_sha256": "f2add968c86ab5b5d6de6cc60586f1d57ecbbdd61b86b93eb2a90bcfbe0e06ba"
+    },
+    {
+      "native_index": 27,
+      "name": "3Steps-1_L",
+      "parent": 26,
+      "children": [],
+      "raw_flags": 49,
+      "active_and_along_parameters": {
+        "length": 20.0,
+        "tip_mass": 20.0,
+        "yaw_stiffness": 50.0,
+        "yaw_damping": 5.0,
+        "pitch_stiffness": 50.0,
+        "pitch_damping": 5.0,
+        "angle_limit": 0.7853981852531433,
+        "along_stiffness": 100.0,
+        "along_damping": 0.0
+      },
+      "native_prefix_sha256": "f2add968c86ab5b5d6de6cc60586f1d57ecbbdd61b86b93eb2a90bcfbe0e06ba"
+    }
+  ],
+  "surfaces": 4,
+  "influence_counts": {
+    "union": {
+      "vertices": 9661,
+      "weighted_to_selected": 542,
+      "shared_with_other_bones": 340,
+      "unaffected": 9119
+    },
+    "pair17_18": {
+      "vertices": 9661,
+      "weighted_to_selected": 184,
+      "shared_with_other_bones": 118,
+      "unaffected": 9477
+    },
+    "pair26_27": {
+      "vertices": 9661,
+      "weighted_to_selected": 358,
+      "shared_with_other_bones": 222,
+      "unaffected": 9303
+    }
+  },
+  "native_arrays_published": false,
+  "native_metadata_activation_changed": false,
+  "pins": {
+    "candidate": "14053abf4b00c50909468d41372ce77c826bf0ec0b895bec19418a5961b4fae3",
+    "adapter": "6945153a65741f65f15505a1b840ddbf530c483790824d8a98e90a4d53e539e8",
+    "capture": "1ffecc00666a7e9e6957b7354fd0b862eac07b0f16b79200345370348e91aacb",
+    "harness": "2abbb08831586323878cabb504e5400406144ad34e4b890791539b68633f722c",
+    "glb": "4e6ac7c2a7a84dea4b46b0bcb5724af68781243f57737e555b4cc82f2628b90d",
+    "parameters": "b807fc82ac1b1d1658b659b41250001e3bdecde99c3d32764122c2add6b51eed",
+    "mdl": "8da09c905227ddc8eef73a3f83594a4eb1c3a6d5304ee41ba5471bef834bc716",
+    "vvd": "2bfa2a363eea586d06d4fd0e28c7751c10276da5cc0c46c310ffa9dedbb159e0"
+  }
+}

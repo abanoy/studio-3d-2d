@@ -11,6 +11,7 @@ const FanEditor=preload("res://src/fan_editor.gd")
 const HelperEditor=preload("res://src/secondary_helper_editor.gd")
 const WindReview=preload("res://src/wind_review.gd")
 const ContactRanges=preload("res://src/contact_ranges.gd")
+const SourceMotion=preload("res://src/source_secondary.gd")
 var recording
 var app
 var toggle: CheckButton
@@ -104,7 +105,10 @@ func _physics_process(delta: float) -> void:
 			var simulation: RefCounted=simulations[id]
 			if not simulation is Secondary:continue
 			var error: String=simulation.advance(delta,app.frame,time,recording.active,fields,app.renderer.world_runtime)
-			if not error.is_empty():freeze(id);app.message(error);break
+			if not error.is_empty():
+				if simulation.native_backend:disable_hair(id)
+				else:freeze(id)
+				app.message(error);break
 	if fan_editor:fan_editor.update_status()
 	if not grabbing():return
 	if not is_instance_valid(grab_anchor):release_grab();return
@@ -125,12 +129,14 @@ func sync() -> void:
 	toggle.set_pressed_no_signal(rig!=null and body_active(rig.data.id))
 	var definition: Dictionary=rig.root.get_meta("has_secondary_rig",{}) if rig else {}
 	var missing_chains: bool=definition.get("chains",[]).is_empty()
+	var imported: bool=rig!=null and SourceMotion.offered(rig)
 	var can_setup: bool=rig!=null and rig.data.get("kind","model")=="model" and not rig.order.is_empty() and helper_editor!=null and definition.get("error","").is_empty()
 	var reviewing: bool=helper_editor!=null and is_instance_valid(helper_editor.window)
-	hair_toggle.disabled=app.exporting or rig==null or rig.data.get("kind","model")!="model" or not definition.get("error","").is_empty() or missing_chains and (not can_setup or reviewing) or pending.has(rig.data.id)
+	hair_toggle.disabled=app.exporting or rig==null or rig.data.get("kind","model")!="model" or not definition.get("error","").is_empty() or missing_chains and not imported and (not can_setup or reviewing) or imported and reviewing or pending.has(rig.data.id)
 	hair_toggle.set_pressed_no_signal(rig!=null and (pending.has(rig.data.id) or active(rig.data.id) and simulations[rig.data.id] is Secondary))
 	hair_toggle.tooltip_text="Simulate hair/clothing joints while posed or with Physics. Off restores their authored pose; body Physics keeps running. Record explicitly keeps motion."
-	if missing_chains:hair_toggle.tooltip_text=definition.get("error","") if not definition.get("error","").is_empty() else "This model needs hair/clothing joints. Turn on to review a loose part and add weighted helpers; the original is kept." if can_setup else "Select a skinned model to review and add hair/clothing joints."
+	if imported:hair_toggle.tooltip_text="Use imported settings for the front-hair strand. This first supported subset moves1of49 imported joints. Other loose parts can use Set up loose parts. Body Physics must be off. Off restores the authored pose; Record keeps motion."
+	elif missing_chains:hair_toggle.tooltip_text=definition.get("error","") if not definition.get("error","").is_empty() else "This model needs hair/clothing joints. Turn on to review a loose part and add weighted helpers; the original is kept." if can_setup else "Select a skinned model to review and add hair/clothing joints."
 	if fan_editor:fan_editor.sync()
 	if recording:recording.sync()
 
@@ -152,6 +158,7 @@ func enable_body(actor: RefCounted) -> void:
 	helper_editor.stop_pending_for_actor(actor.data.id)
 	if pending.has(actor.data.id):sync();app.message("Hair/clothing setup is finishing. Try the body toggle when it is ready.");return
 	if body_active(actor.data.id):sync();return
+	if active(actor.data.id) and simulations[actor.data.id] is Secondary and simulations[actor.data.id].native_backend:sync();app.message("Turn imported Hair & clothes off before starting body Physics. Its unrecorded preview will return to the authored pose.");return
 	if recording and recording.active:sync();app.message("Stop recording before enabling another physics object.");return
 	if actor.data.get("kind","model")!="model":sync();app.message("Maps remain collision surfaces. Enable Physics on a model or prop.");return
 	if not actor.root.is_visible_in_tree():sync();app.message("Show this model at the current frame before enabling Physics.");return
@@ -204,7 +211,7 @@ func enable_hair(actor: RefCounted) -> void:
 	if recording.active:sync();app.message("Stop recording before enabling another simulation.");return
 	if actor.data.get("kind","model")!="model" or not actor.root.is_visible_in_tree():sync();app.message("Select a visible model with declared hair/clothing joints.");return
 	var definition: Dictionary=actor.root.get_meta("has_secondary_rig",{})
-	if definition.get("chains",[]).is_empty():
+	if definition.get("chains",[]).is_empty() and not SourceMotion.offered(actor):
 		hair_toggle.set_pressed_no_signal(false)
 		if definition.get("error","").is_empty() and not actor.order.is_empty() and helper_editor:
 			helper_editor.open(true)
@@ -232,7 +239,7 @@ func enable_hair(actor: RefCounted) -> void:
 		return
 	if result.has("error"):app.pose_editor.apply_frame();sync();app.message(result.error);return
 	simulations[id]=result.physics;result.physics.start();sync()
-	app.message("Hair & clothes on. The body stays posed unless Physics is on. Move a fan or adjust its blowing speed; Record keeps the motion.")
+	app.message("Imported front-hair motion on (1of49 imported joints). Move a fan or choose Aim at hair; Record keeps the motion. Other loose parts can use Set up loose parts." if result.physics.native_backend else "Hair & clothes on. The body stays posed unless Physics is on. Move a fan or adjust its blowing speed; Record keeps the motion.")
 
 func build_colliders() -> void:
 	clear_colliders();colliders=Node3D.new();colliders.name="StudioPhysicsColliders";app.renderer.world.add_child(colliders)
@@ -262,6 +269,9 @@ func build_colliders() -> void:
 func freeze(id: String, history:=true) -> bool:
 	if recording and recording.active:return recording.finish("physics off")
 	if not simulations.has(id):return true
+	if simulations[id] is Secondary and simulations[id].native_backend:
+		disable_hair(id)
+		return true
 	var simulation: RefCounted=simulations[id];var actor: RefCounted=simulation.rig
 	var before: Dictionary=actor.data.duplicate(true)
 	var candidate: Dictionary=before.duplicate(true)

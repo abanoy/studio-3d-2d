@@ -5,6 +5,15 @@ work without requesting the deferred manual observations. The historical pause
 and November 14 documentation-only entries below remain evidence of their own
 scope. See [current continuation](NEXT_SESSION_PLAN_2026-11-15.md).
 
+**Latest working increment:** the first native Source rule now runs through
+ordinary Hair & clothes/fan/Record controls on the qualified Junko model.
+Actual private UI/cold-save/export checks pass96; subsequent headless lifecycle
+and stale-binding checks pass180 across three actual instances. This is **one
+of49 rules**, with same-actor active ragdoll still unqualified. The earlier
+f0dd57a review and full-default pass are separate snapshots. Parent chains,
+current full-default verification and an updated owner review remain next;
+the historical "not enabled" paragraphs below describe earlier checkpoints.
+
 **Current November 15 results:** fresh complete Windows default PASS
 (157 results,36core groups,21movie groups,192closed private jobs), and a new
 four-example SFM review PASS (180checks,nine preservation gates). The review

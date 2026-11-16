@@ -1,0 +1,90 @@
+{
+  "format": "has_source_native_manifest_successor_provenance_1",
+  "status": "METADATA_PREFLIGHT_PASSED_RUNTIME_UNRUN_BY_THIS_SUCCESSOR",
+  "observed_utc": "2026-11-16T02:10:15.656746+00:00",
+  "authorized_scope": "Exactly two current test-manifest runtime SHA/LF row successors plus explicit provenance pointer; no app/test driver code or runtime gates changed.",
+  "reviewed_runtime": {
+    "path": "src/physics_editor.gd",
+    "sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+    "lf_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a"
+  },
+  "historical_runtime_sha256": "5be5e4ec2b44320abc86997f3994bbc57fa3b4a7047b3565a5686f4b14913471",
+  "manifests": [
+    {
+      "path": "tests/wind_review_port_files.json",
+      "before_bytes": 5889,
+      "before_sha256": "c9e8a9443b49617d53d3a70dc9c2ef286a81c1aedf4af850bf70eb5c4aeb6ca8",
+      "after_bytes": 6041,
+      "after_sha256": "23b870735c3f829bb442aad66cd42621450c038ff4ea39e1d5a4c29250f2df0b",
+      "row_count": 16,
+      "only_changed_runtime_row": "src/physics_editor.gd",
+      "other_rows_and_all_nonpointer_metadata_byte_preserved": true
+    },
+    {
+      "path": "tests/helper_preview_port_files.json",
+      "before_bytes": 8371,
+      "before_sha256": "0446c44d503a6605155ed0553f70ba0462a0cb64a29b25dda7c39ca81717c0cf",
+      "after_bytes": 8522,
+      "after_sha256": "ebc7ffc51ca71e848c054b737fd47c69483ba7c9c686f162a880944e527de578",
+      "row_count": 25,
+      "only_changed_runtime_row": "src/physics_editor.gd",
+      "other_rows_and_all_nonpointer_metadata_byte_preserved": true
+    }
+  ],
+  "original_manifests_preserved_exactly": true,
+  "pathsets_rowcounts_otherrows_drivercode_guards_unchanged": true,
+  "functional_files": 1014,
+  "only_functional_changes": [
+    "tests/helper_preview_port_files.json",
+    "tests/wind_review_port_files.json"
+  ],
+  "independent_source_reviews": [
+    {
+      "path": "experiments/source_native_live_independent_review_20261115/REVIEW.json",
+      "bytes": 6380,
+      "sha256": "f2d8faaac9e124515d378b52d6bcd8469802826059639a0f5b8cb66adf3ea5af"
+    },
+    {
+      "path": "experiments/source_native_live_independent_review_20261115/GENERIC_INTEGRATION_REVIEW.md",
+      "bytes": 7275,
+      "sha256": "260f95a468ab7253da67abb82633c9642aafe46e291155fd6c35645a4ab6004a"
+    }
+  ],
+  "drivers": [
+    {
+      "path": "tests/verify_wind_review.py",
+      "sha256": "75d935c4b63fd7400f927ed7393b86323390cc946dd4e54c34c170ec77e4ee4c"
+    },
+    {
+      "path": "tests/verify_helper_preview.py",
+      "sha256": "118a2fb1b32fb24835ff23ebc0e4a09346f321b59c52cbad43a2b1752565bf50"
+    },
+    {
+      "path": "tests/test_helper_preview_driver.py",
+      "sha256": "6b0b6a9a5a7bc7f0e48f7b3a020d2b36128c50ec76b45bb108b59686ab8245a7"
+    }
+  ],
+  "preflight_functions": [
+    "verify_wind_review.runtime_hashes(ALLOW_EOL=True)",
+    "verify_helper_preview.validate_port(ROOT,allow_eol=True)"
+  ],
+  "preflight_old_actual_refusals": 2,
+  "preflight_successor_accepted_rows": [
+    16,
+    25
+  ],
+  "subprocess_attempts": 0,
+  "engines_GPU_CIM_Git_or_native_inputs_accessed": false,
+  "historical_evidence_packets_modified": false,
+  "helper_domain_tests": {
+    "passed": true,
+    "checks": 120,
+    "failed": 0,
+    "result": "CPU_DOMAIN.json",
+    "raw_result": "helper-driver-domain-result.json",
+    "raw_result_sha256": "253539c245c25061f059c1e956618bb1582bcf48b7a52166eb4715d62e3cc314",
+    "engine_or_Git_subprocesses": 0
+  },
+  "scope_limit": "Port-provenance metadata admission only; no wind/helper CPU-engine or graphical regression PASS is inferred. These unchanged suites must still execute on the new frozen committed functional source revision. Default helper driver still requires main_source_snapshot rather than uncommitted functional bytes.",
+  "finalized_utc": "2026-11-16T02:11:40.153571+00:00"
+}

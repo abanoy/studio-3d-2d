@@ -1,0 +1,15 @@
+{
+  "attempt1": {
+    "status": "FAILED_CPU_METADATA_PREFLIGHT",
+    "frozen_source": "prepare_packet_attempt1.py",
+    "reason": "Exact metadata assertion caught incorrect draft assumption native26.parent=7; actual native26.parent=25.",
+    "effects": "Only correctly derived chain_capture.gd had been written; no profile/result/source lock emitted and no engine or parser launched. No originals or production files changed."
+  },
+  "corrected_policy": "native17(parent7)->18; native26(parent25)->27. Parent25 stays authored/unsimulated in this four-rule subset. The unchanged compat3 import-context guard is called via native17 for the common Skeleton context; each actual selected parent is separately checked by model_adapter.gd.",
+  "first_CPU_check_result": {
+    "frozen_source": "check_chains_attempt1.py",
+    "result": "CPU_RESULT.json",
+    "status": "PASS_2601_SYNTHETIC_CHECKS",
+    "counter_correction": "The first result dynamic_ticks=820 was an inaccurate manually entered summary counter. Final rerun retains all checks, adds480 independent cone assertions, and reports1064 completed actor steps/2128 rule evaluations from the actual test loops."
+  }
+}

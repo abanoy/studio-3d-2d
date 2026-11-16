@@ -1,0 +1,87 @@
+{
+  "format": "has_native_source_two_pair_actual_1",
+  "recorded_utc": "2026-11-16T02:15:57.879475+00:00",
+  "status": "PASSED_EXPERIMENTAL_TWO_PAIR_READINESS_ONLY",
+  "verification": {
+    "path": "output/source-0x31-native-chains-20261115-attempt1/verification.json",
+    "sha256": "d40cf9423a8de7f5cdf73621bcd9b63ca8a3d53062c4c2d80eec029ff88040fc"
+  },
+  "result": {
+    "path": "output/source-0x31-native-chains-20261115-attempt1/result.json",
+    "sha256": "dc39db4029ebe2dfdef5de3a57cf4545fa038414da71cc34ace218bdfbfd8ebf"
+  },
+  "closure": {
+    "path": "output/source-0x31-native-chains-20261115-attempt1/authoritative-closure.json",
+    "sha256": "4093838960dc04701a22d7f7b71cec00ed9ac5ca2055724fe366624f26d28c9b"
+  },
+  "math_result": {
+    "path": "output/source-0x31-native-chains-20261115-attempt1/math-result.json",
+    "sha256": "ac29c2655cf59cd12c3bc6df6edc5bc84d44a5a8c5e8345732bdd836d1c6beec"
+  },
+  "source_lock": {
+    "path": "output/source-0x31-native-chains-20261115-attempt1/CURRENT-SOURCE-LOCK.json",
+    "sha256": "0dae92f9e5b0b44d9afea6eb3785f4e2b9c13b955b824caf97435dc170d6506c"
+  },
+  "provenance_drift_acknowledgment": {
+    "path": "output/source-0x31-native-chains-20261115-attempt1/PROVENANCE-DRIFT-ACKNOWLEDGMENT.json",
+    "sha256": "1ac315d01a896da4ff0c4cd98a17a82c3cdd0e39063008aecdfd4c5a8aca8634"
+  },
+  "math_checks": 4012,
+  "native_checks": 21087,
+  "native_pairs": [
+    [
+      17,
+      18
+    ],
+    [
+      26,
+      27
+    ]
+  ],
+  "native25_has_retained_rule": false,
+  "native25_policy": "Authored unsimulated ancestor of26; no invented rule",
+  "cases": 12,
+  "ticks": 1440,
+  "rule_evaluations": 5760,
+  "root_uniform_scales": [
+    1,
+    2
+  ],
+  "weighted_vertices": 542,
+  "shared_with_other_bones": 340,
+  "unaffected_vertices_exact": 9119,
+  "unselected_world_bones_exact": 65,
+  "maximum_basis_error": 1.0077394126950523e-06,
+  "maximum_native_Z_tip_error": 7.633119025740598e-07,
+  "same_tick_parent_policy": "Fresh authored absolute-local poses recomposed under same-tick solved parents, including authored unsimulated intermediates",
+  "Off_and_repeated_weighted_result": "EXACT",
+  "source_and_original_and_runtime_preservation": {
+    "functional_source": true,
+    "staged_application": true,
+    "original_inputs": true,
+    "staged_inputs": true,
+    "aliases": true,
+    "proofs_and_locks": true,
+    "runtimes": true,
+    "driver": true,
+    "frozen_packet_index": true
+  },
+  "scope": {
+    "GPU_render": false,
+    "GUI_body_fan_Record_HAS_export_integration": false,
+    "SDK_client_parent_policy_proved": false,
+    "SDK_executed": false,
+    "actual_CPU_weighted_query_attempted": true,
+    "actual_Model_load_attempted": true,
+    "actual_live_pose_attempted": true,
+    "artist_motion_fidelity": "UNQUALIFIED",
+    "external_input": "Temporary synthetic world acceleration, not actual fan/native wind",
+    "goal_policy": "Fresh authored absolute-local poses recomposed under same-tick solved parents; unsimulated intermediates preserved",
+    "native_metadata_activation_changed": false,
+    "private_geometry_or_rest_arrays_published": false
+  },
+  "current_product_native_rules": 1,
+  "current_complete_default": "PENDING_AFTER_COMMIT",
+  "formal_acceptance": "55/62_UNCHANGED",
+  "implementation": "52/54_UNCHANGED"
+}

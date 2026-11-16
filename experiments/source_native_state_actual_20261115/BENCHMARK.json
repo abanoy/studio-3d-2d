@@ -1,0 +1,91 @@
+{
+  "format": "has_native8_state_actual_benchmark_1",
+  "passed": true,
+  "actual_run": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-state-20261116T020227823185",
+  "source_HEAD": "9de4e6cbdf8b0369cbdf118a40c13f85860eaac0",
+  "checks": 180,
+  "failures": 0,
+  "actual_Model_actors": 3,
+  "source_files": 204,
+  "completed_native_steps": 506,
+  "count_derivation": "240 independent-runner steps +23 negative seeds +3 file-isolation seeds +240 wrapper/replay steps",
+  "assertion_categories": {
+    "load": 15,
+    "instances": 7,
+    "negative": 125,
+    "file": 17,
+    "wrapper": 12,
+    "cleanup": 4
+  },
+  "negative_cases": 23,
+  "file_isolation": {
+    "file_header": {
+      "attempts": 1,
+      "isolated": true,
+      "length_unchanged": true,
+      "mtime_unchanged": true
+    },
+    "file_length": {
+      "attempts": 1,
+      "isolated": true,
+      "length_unchanged": false,
+      "mtime_unchanged": true
+    },
+    "file_mtime": {
+      "attempts": 1,
+      "isolated": true,
+      "length_unchanged": true,
+      "mtime_unchanged": false
+    }
+  },
+  "wrapper_scope": [
+    "independent actor state, exact reset/replay",
+    "complete69-channel authored poses/keys/raw reports unchanged",
+    "68 unselected world bones exact",
+    "invalid dt, seek, reverse and skipped Record time refuse before state commit",
+    "Off/disposal restores all three actual models exactly"
+  ],
+  "continuous_guard": "Cached complete69-bone binding/report stamp plus source existence,12-byte GLB header, statmtime and length. Full source cryptographic authentication on create/reload.",
+  "excluded_same_header_size_mtime_body_edits": "OUTSIDE_CONTINUOUS_CRYPTOGRAPHIC_GUARANTEE_NOT_TESTED_OR_CLAIMED",
+  "physical_body_scope": "One actual simulating PhysicalBone3D only as an adversarial create/step refusal context; not a complete ragdoll or borrowed primary.",
+  "same_actor_complete_ragdoll_or_borrowed_primary": "UNQUALIFIED_PARTIAL_SOURCE_RIG",
+  "native_rules_solved": 1,
+  "native_rules_retained": 49,
+  "native_conversion_GPU_GUI": false,
+  "preservation": {
+    "source": true,
+    "read_only_inputs": true,
+    "runtimes": true
+  },
+  "runtime_lease_released": true,
+  "closed_observed_utc": "2026-11-16T02:02:38.110414+00:00",
+  "parse_then_state_seconds": [
+    1.4551224999995611,
+    6.547945500000424
+  ],
+  "retained_parse_failure": {
+    "passed": false,
+    "script_sha256": "46436bab631d12efdbc40474012234d82b2427a1af51676f5c6deab34dc36140",
+    "checks_executed": 0,
+    "error": "Cannot infer type of complete; fixed only by explicit bool declaration.",
+    "state_phase_launched": false,
+    "runtime_lease_released": true
+  },
+  "earlier_preflight": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-state-20261116T020126056307",
+    "observed_utc": "2026-11-16T02:09:55.194914+00:00",
+    "exists": true,
+    "entries_observed": [
+      "PRECHECK_REFUSAL.json"
+    ],
+    "parent_reported_initial_cause": "Before-engine read-only CIM inventory access denied; no engine launched.",
+    "independent_scope": "Only current directory membership and the exact subsequent root-authored cause receipt inspected. Raw initial child inventory output was not retained and is not reconstructed.",
+    "authoritative_cause_metadata": {
+      "source": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\source-native-state-20261116T020126056307\\PRECHECK_REFUSAL.json",
+      "stored": "preflight/PRECHECK_REFUSAL.json",
+      "bytes": 680,
+      "sha256": "8d753bd1248ec61cb92f97891387113eb1aca9d8f6aff9dc0910471ce4ff302a"
+    }
+  },
+  "raw_native_assets_or_buffers_in_public_packet": false
+}

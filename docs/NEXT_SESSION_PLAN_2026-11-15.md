@@ -1,13 +1,59 @@
 # HAS continuation — November 15, 2026
 
-The owner explicitly resumed independent work. Do not request the parked manual
-exercises again. Results below use frozen main
-`f0dd57a2e568089d396fecba819ab987da658bf0`; original/tool/source preservation
-is measured. November16 UTC observations still fall on November15 locally.
+The owner explicitly resumed independent work. Continue implementation without
+making the parked manual exercises a prerequisite. The owner has now volunteered
+to test one item: click a Junko hair section in the existing review and report
+whether the orange highlight matches the intended section. That review remains
+the earlier f0dd57a build. November16 UTC observations below still fall on
+November15 locally.
+
+## Current working increment: first native joint in ordinary controls
+
+Production now has a bounded native Source backend for **native8 FrontHair1,
+one of49 retained rules**, on the exact qualified original Junko GLB. Hair &
+clothes explicitly starts it; helper-derived assets keep the generic backend.
+No persistent source metadata or full-layout support flag is rewritten. This
+increment is based on9de4e6c and is not covered by the older full-default pass.
+
+The actual ordinary-control run passes **96checks (77writer/11packed/8linked)**
+in three closed private jobs. It measures real fan disabled/zero/miss/opposite/
+3/12/50 controls,152weighted vertices,9509unaffected vertices and68other bones,
+exact Off/seek/unrecorded-Save restoration, Local Record/Stop/Escape/Undo/Redo,
+packed/linked cold FK and frame agreement, and PNG-export frame agreement.
+An independent fan rigid body retains its actual body/RID during native On/Off.
+The partial hair-only rig correctly refuses automatic ragdoll; same-actor active
+ragdoll coexistence remains unqualified. First run's74checks/two false fixture
+expectations remain FAILED, with the correction separately documented.
+Evidence: `experiments/source_native_live_actual_20261115`.
+
+A subsequent header/binding-staleness guard is separately executed in the
+headless lifecycle test: **180checks, three actual Model instances,506completed
+native steps and23negative cases**, all passing. Header, length and timestamp
+tests each achieved their required isolated observation. All three disposable
+copies restore, passed inputs remain read-only, and the authored69-bone state,
+keys and49-rule report remain exact. The first parser failure is retained;
+annotating a test's boolean type changes no predicates. Evidence:
+`experiments/source_native_state_actual_20261115` (original run:
+`output/source-native-state-20261116T020227823185`). Continuous file guards inspect
+header/length/mtime, with full hashing at create/reload; unchanged-header body
+edits preserving length and mtime are outside the continuous guarantee.
+
+The separately staged17→18/26→27 parent-chain probe now passes4012synthetic
+math checks and21087actual CPU deformation checks over12cases/1440ticks. It
+preserves9119unaffected points and65other bones exactly, restores authored12/24
+and repeats exactly. Native25 has no retained rule and remains authored. These
+four rules are experimental; ordinary controls still run native8 only. See
+`docs/benchmarks/native_source_chains_2026-11-15.json` and the separate erratum.
+
+**Next:** integrate only the qualified parent-chain subset. Run affected generic regressions
+and a fresh complete Windows default before claiming current full verification.
+The owner's current review does not contain this new native backend. Original
+assets, earlier reviews and installed Studio remain untouched. Formal acceptance
+stays55/62 and implementation52/54.
 
 ## Complete Windows default and runnable review
 
-The fresh complete default at
+The earlier frozen-f0dd57a complete default at
 `output/windows-canonical-bone-binding-20261115T225514304` **passed** in
 2956.8145699seconds:157named results,36core groups and21movie metadata groups.
 Both decoded audio onsets are1.0seconds. All1008functional files/HEAD remain
@@ -133,13 +179,13 @@ the explicitly mapped metadata to a fresh location or redirect the recipe.
 
 ## Next implementation work
 
-1. Preserve/publish the bounded native8 PASS and its first two guard failures;
-   keep its weighted CPU proof separate from product/SDK/render qualification.
-2. Extend to verified parent-child cases17→18 and26→27, explicitly resolving
-   procedural-parent ordering and per-instance state.
-3. Integrate only the verified native subset with transient body/pose overlays;
-   test actual fan miss/hit/opposite/strength controls and GUI Off, then Record/
-   Undo/cold HAS/export. Keep unsupported rules explicit and inactive.
+1. Preserve/publish the native8 product96-check and lifecycle180-check results
+   with their earlier failures; complete fresh full-default verification.
+2. Integrate the experimentally verified parent-child cases17→18 and26→27,
+   keeping the measured same-tick authored-parent policy and per-instance state.
+3. Keep the newly tested one-rule fan/Off/Record/HAS/export integration bounded;
+   test those controls again when qualifying parent chains. Keep unsupported
+   rules explicit and inactive; same-actor active ragdoll is still unqualified.
 4. Implement six-foot normalization as a preserved import basis/derived asset,
    separate from user scale/native conversion. Today's opt-in height fit changes
    root scale; it does not deliver six feet at user scale1.

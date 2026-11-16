@@ -3,6 +3,7 @@ const Airflow=preload("res://src/airflow.gd")
 const Model=preload("res://src/model.gd")
 const Definition=preload("res://src/secondary_rig.gd")
 const Secondary=preload("res://src/secondary_live.gd")
+const SourceMotion=preload("res://src/source_secondary.gd")
 var app
 var panel: HBoxContainer
 var enabled: CheckButton
@@ -36,14 +37,17 @@ func target_model() -> RefCounted:
 	var candidates:=[]
 	for id in runtime.order:
 		var actor: RefCounted=runtime.instance(id);var definition: Dictionary=actor.root.get_meta("has_secondary_rig",{})
-		if not Airflow.is_fan(actor.data) and actor.root.is_visible_in_tree() and definition.get("error","").is_empty() and not definition.get("chains",[]).is_empty():
+		if not Airflow.is_fan(actor.data) and actor.root.is_visible_in_tree() and definition.get("error","").is_empty() and (not definition.get("chains",[]).is_empty() or SourceMotion.offered(actor)):
 			if id==last_target_id:return actor
 			candidates.append(actor)
 	return candidates[0] if candidates.size()==1 else null
 func aimed_world(target: RefCounted,world_scale:=1.0) -> Dictionary:
 	if not target:return {}
-	var definition: Dictionary=target.root.get_meta("has_secondary_rig",{});var chains: Array=definition.get("chains",[])
-	if not definition.get("error","").is_empty() or chains.is_empty():return {}
+	var definition: Dictionary=target.root.get_meta("has_secondary_rig",{});var chains: Array=definition.get("chains",[]).duplicate(true)
+	if not definition.get("error","").is_empty():return {}
+	if chains.is_empty():
+		for binding in SourceMotion.anchors(target):chains.append({"joints":[{"binding":binding}]})
+	if chains.is_empty():return {}
 	var center:=Vector3.ZERO
 	for chain in chains:center+=Definition.binding_transform(target,chain.joints[0].binding).origin
 	center/=chains.size()

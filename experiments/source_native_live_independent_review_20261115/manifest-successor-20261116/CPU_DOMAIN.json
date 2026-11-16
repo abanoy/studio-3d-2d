@@ -1,0 +1,26 @@
+{
+  "format": "has_manifest_successor_helper_driver_domain_actual_1",
+  "passed": true,
+  "observed_utc": "2026-11-16T02:11:40.150373+00:00",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "tests/test_helper_preview_driver.py",
+    "--output",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\helper-preview-driver-domain\\source-native-manifest-successor-20261116"
+  ],
+  "shell_exit": 0,
+  "checks": 120,
+  "failed": 0,
+  "source_preserved": true,
+  "subprocess_attempts": [],
+  "runtime_or_Git_processes": 0,
+  "input_native_assets": false,
+  "source_result": {
+    "path": "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\helper-preview-driver-domain\\source-native-manifest-successor-20261116\\result.json",
+    "bytes": 16279,
+    "sha256": "253539c245c25061f059c1e956618bb1582bcf48b7a52166eb4715d62e3cc314"
+  },
+  "stored_exact_alias": "helper-driver-domain-result.json",
+  "intentional_counterfactual": "An internal fake-project fixture-preparation drift verification records passed=false and verifies refusal before every runtime launch. This is a passing negative control, not a wind/helper runtime acceptance."
+}

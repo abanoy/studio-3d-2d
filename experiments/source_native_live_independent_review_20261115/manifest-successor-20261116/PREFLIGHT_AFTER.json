@@ -1,0 +1,30 @@
+{
+  "format": "has_reviewed_manifest_metadata_preflight_1",
+  "phase": "after",
+  "observed_utc": "2026-11-16T02:10:15.102447+00:00",
+  "passed": true,
+  "rows": [
+    {
+      "name": "wind",
+      "outcome": "PASSED_METADATA_ONLY",
+      "rows": 16,
+      "physics_editor": {
+        "sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+        "reviewed_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+        "reconstruction": "exact bytes"
+      }
+    },
+    {
+      "name": "helper",
+      "outcome": "PASSED_METADATA_ONLY",
+      "rows": 25,
+      "physics_editor": {
+        "actual_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+        "reviewed_sha256": "e351c0f5e2be18c33793a0ae6234b049095c923b35ca8ec1c6c7aaeb36bb8b6a",
+        "reconstruction": "exact bytes"
+      }
+    }
+  ],
+  "subprocess_attempts": 0,
+  "runtime_qualification": false
+}

@@ -1,5 +1,16 @@
 # Source jiggle: measured readiness and next runtime increment
 
+Latest working-source update (November15 local): native8 FrontHair1 now has a
+bounded production backend on the exact qualified original Junko GLB. Actual
+ordinary fan/Off/Record/Undo/packed/linked/export integration passes96checks;
+the later header and complete-binding guard separately passes180headless
+lifecycle checks on three actual instances. Raw49-rule import metadata stays
+inert provenance; runtime selection is separate. Other48rules, same-actor
+active ragdoll and current complete-default qualification remain pending.
+The earlier statements below describe the predecessor experiments and should
+not be promoted to current full verification. See the
+[current continuation](NEXT_SESSION_PLAN_2026-11-15.md) for exact scope/failures.
+
 Current behavior includes exact inactive metadata retention and a qualified
 native→Blender→glTF→HAS identity bridge for the exact Junko hair/default profile.
 All69 bones/49 rule owners survive ordinary import, Undo/Redo and packed/linked
