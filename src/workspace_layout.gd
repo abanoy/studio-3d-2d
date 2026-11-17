@@ -35,6 +35,7 @@ const StudioTheme = preload("res://src/studio_theme.gd")
 const RAIL_LIMIT := 140.0
 const LIST_WIDTH := 232.0
 var world_rail := false
+var world_mode_active := false
 var world_unfold: Button
 var strip_hot := "" # neon Simple: the panel whose overlaid grab strip is under the mouse
 # Neon: while World is docked alone on the left, the left dock spans the full height (mock grid:
@@ -280,13 +281,15 @@ func place_world_unfold() -> void:
 		world_unfold.size=Vector2(24,24);world_unfold.position=Vector2(handle.size.x-26,roundf((handle.size.y-24)*.5))
 
 func refresh_world_mode(force:=false) -> void:
-	if not panels.has("world") or not app or not app.world_selection:return
+	# Sibling controls can still emit resized while their application is being dismantled.
+	if not world_mode_active or not is_inside_tree() or is_queued_for_deletion() or not is_instance_valid(app) or not app.is_inside_tree() or app.is_queued_for_deletion():return
+	if not panels.has("world") or not is_instance_valid(panels.world) or not panels.world.is_inside_tree() or panels.world.is_queued_for_deletion() or not is_instance_valid(app.world_selection) or not app.world_selection.is_inside_tree() or app.world_selection.is_queued_for_deletion():return
 	# The fold/unfold action resizes the solitary left dock, so other placements keep the list.
 	var rail: bool=want_full_left() and panels.world.size.x<RAIL_LIMIT
-	if rail==world_rail and not force:
+	if rail==world_rail and app.world_selection.rail_mode==rail and not force:
 		style_world_unfold();return
+	if not app.world_selection.set_rail(rail,force):return
 	world_rail=rail
-	app.world_selection.set_rail(rail,force)
 	# List mode keeps 8 px between the dock edges and the Tree / buttons; the rail is edge to edge.
 	var scroll: ScrollContainer=panels.world.get_node_or_null("WorldContentScroll")
 	if scroll:
@@ -453,6 +456,7 @@ func float_panel(id: String,point:=Vector2i(-100000,-100000)) -> void:
 		if not drag_id.is_empty():route_drag(event,window)
 		elif event is InputEventKey and not (window.gui_get_focus_owner() is LineEdit or window.gui_get_focus_owner() is TextEdit):app._input(event))
 	refresh_slots();save_later()
+	if id=="world":call_deferred("refresh_world_mode",true)
 
 func reset() -> void:
 	loading=true;cancel_drag();dock_tree.replace(dock_tree.defaults())
@@ -538,5 +542,14 @@ func load_layout() -> bool:
 func _notification(what: int) -> void:
 	if what==NOTIFICATION_APPLICATION_FOCUS_OUT:cancel_drag()
 
+func _enter_tree() -> void:
+	world_mode_active = true
+	# Reparenting a live application/layout restores its presentation signal exactly once.
+	if panels.has("world") and is_instance_valid(panels.world) and not panels.world.is_queued_for_deletion() and not panels.world.resized.is_connected(refresh_world_mode):panels.world.resized.connect(refresh_world_mode)
+	if panels.has("world"):call_deferred("refresh_world_mode",true)
+
 func _exit_tree() -> void:
+	world_mode_active = false
+	# Disconnect before save() or later sibling removal can resize the old World panel.
+	if panels.has("world") and is_instance_valid(panels.world) and panels.world.resized.is_connected(refresh_world_mode):panels.world.resized.disconnect(refresh_world_mode)
 	if timer and not timer.is_stopped():save()

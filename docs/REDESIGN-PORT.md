@@ -1116,3 +1116,28 @@ no tolerance/count was widened, and production colors/layout did not change.
 
 These focused results do not replace a complete default. The next frozen commit
 must run all158groups before merge; manual owner review remains deferred.
+
+
+## Windows review follow-up — 2026-11-17
+
+The strict Windows workspace checks exposed a live Tree font replacement error.
+Retaining the original Neon/classic SystemFont profiles in StudioTheme.fonts
+fixes it without changing font family, weight or Japanese fallback. Lifecycle
+guards reject styling detached/queued controls and reconnect World resize once
+on reentry. A separate mode-acceptance fix commits the layout cache only after
+the World presentation applies; one deferred refresh finishes World detachment.
+This preserves full lists in floating/right/nested/tabbed World arrangements.
+
+Actual private Windows verification now passes workspace controls48, integrated
+Neon12504 (inset12384, behavior32, compact14, rail45, lifecycle29), resize, docking
+and nested layouts. Source1029 is unchanged within the run; physical desktops
+close and root scope observations are empty. The new lifecycle fixture preserves
+all29 predicates; six explicit WeakRef types resolve parser warnings. Inset and
+Compact reuse the same full-precision JSON string for file and log, preserving
+all numeric checks and strict equality. Original failures and the incorrect
+concat-stream teardown attribution are retained and corrected in main evidence.
+
+The complete Windows default still needs a fresh successful run before merge.
+Prior f387 full passed36 core groups then failed strict workspace diagnostics.
+No owner observation, native-normal repair, PMX solver or new scale basis follows
+from these UI checks. All earlier owner reviews and installed Studio are preserved.

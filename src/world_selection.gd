@@ -40,6 +40,10 @@ var actions: Array = []
 var help_label: Label
 var rail_divider: Control
 var rail_end: Control
+var rail_ui_active := false
+
+func _enter_tree() -> void:
+	rail_ui_active = true
 
 func setup(parent: Node) -> void:
 	app.label(parent,"World")
@@ -75,10 +79,17 @@ func setup(parent: Node) -> void:
 
 func tree_font() -> Font:
 	# Neon: the interface font, with Yu Gothic UI kept as the fallback for Japanese object names.
+	# Retain both original profiles so docking reuses the same Font resources.
+	var neon := StudioTheme.is_neon()
+	var key := "world_tree_neon" if neon else "world_tree_classic"
+	if StudioTheme.fonts.has(key): return StudioTheme.fonts[key]
 	var japanese := SystemFont.new(); japanese.font_names = PackedStringArray(["Yu Gothic UI","Segoe UI","Arial"])
-	if not StudioTheme.is_neon(): return japanese
+	if not neon:
+		StudioTheme.fonts[key] = japanese
+		return japanese
 	var font := SystemFont.new(); font.font_names = PackedStringArray(StudioTheme.UI_FONTS); font.font_weight = 500
 	font.fallbacks = [japanese]
+	StudioTheme.fonts[key] = font
 	return font
 
 func style_tile(control: Button, kind: String, tile: bool) -> void:
@@ -219,13 +230,18 @@ func sync_rail() -> void:
 		tile.add_theme_font_override("font",StudioTheme.font(600 if on else 500))
 		tile.add_theme_color_override("font_color",Color.WHITE if on else StudioTheme.TEXT2)
 
-func set_rail(on: bool, force := false) -> void:
+func set_rail(on: bool, force := false) -> bool:
+	# A dock resize may be delivered while its owner or Tree is leaving the scene.
+	if not rail_ui_active or not is_inside_tree() or is_queued_for_deletion() or not is_instance_valid(app) or not app.is_inside_tree() or app.is_queued_for_deletion(): return false
+	if not is_instance_valid(tree) or not tree.is_inside_tree() or tree.is_queued_for_deletion(): return false
+	var holder: Control = tree.get_parent()
+	for control in [holder,rail,rail_divider,rail_end,help_label] + actions:
+		if not is_instance_valid(control) or not control.is_inside_tree() or control.is_queued_for_deletion(): return false
 	# Rail: tiles + spacer + divider + Frame / Save asset / Size map tiles, help text as the rail tooltip.
 	# List: full-width Tree, full-width buttons and the help label. Visibility and texts only.
-	if on == rail_mode and not force: return
+	if on == rail_mode and not force: return true
 	rail_mode = on
 	var neon := StudioTheme.is_neon()
-	var holder: Control = tree.get_parent()
 	holder.custom_minimum_size.x = 64 if neon else 156
 	holder.add_theme_constant_override("separation",6 if on else 7)
 	tree.custom_minimum_size.x = 0 if neon else 156
@@ -249,6 +265,7 @@ func set_rail(on: bool, force := false) -> void:
 		for tile in rail_tiles.values():
 			style_tile(tile,str(tile.get_meta("kind")),true); tile.autowrap_mode = TextServer.AUTOWRAP_OFF
 		sync_rail()
+	return true
 
 func initialize_mask() -> void:
 	copies_root = Node3D.new(); copies_root.name = "EditorOnlySelection"
@@ -527,6 +544,7 @@ func complete_pick(pending: RefCounted) -> void:
 		menu.popup()
 
 func _exit_tree() -> void:
+	rail_ui_active = false
 	serial+=1
 	for pending in pick_requests.values():
 		if RenderingServer.frame_post_draw.is_connected(pending.complete):RenderingServer.frame_post_draw.disconnect(pending.complete)
