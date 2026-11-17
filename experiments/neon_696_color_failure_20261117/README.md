@@ -1,0 +1,1 @@
+The camera regression passed in the full run. A later native color-picker conjunction failed for one of three retained cases. The cause remains undiagnosed. This packet contains selected scalar metadata only; raw reports and logs remain private.

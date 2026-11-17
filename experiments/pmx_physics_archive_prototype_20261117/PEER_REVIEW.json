@@ -1,0 +1,18 @@
+{
+  "format": "has_pmx_archive_independent_source_peer_review_1",
+  "reviewer_task": "/root/source_checkpoint_peer",
+  "result": "SOURCE_GO_NO_BLOCKING_FINDINGS",
+  "reviewed_source_sha256": {
+    "pmx_archive.py": "ac226df5fe56d4781cfa952170fe6d75f9054c6c5cb834aa307e7cb2807e8e50",
+    "test_archive.py": "4ae81086d4c96d3352e353252540ba2ef74bca52329d2e908b60cdcaf51e29bd"
+  },
+  "review_scope": [
+    "assemble/extract and exact retained provenance",
+    "strict JSON/GLB parser and capacity edges",
+    "raw words/nonfinite classification and collision/unsupported refusals",
+    "all16 archive test methods and README limitations"
+  ],
+  "peer_ran_native_or_actual_asset_checks": false,
+  "peer_source_caveat": "Reader hashes are source bindings, not runtime module-admission or independent native-oracle proof; README says this explicitly.",
+  "final49_methods_ran_by": "prototype author, not peer"
+}

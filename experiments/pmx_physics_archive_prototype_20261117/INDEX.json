@@ -1,0 +1,100 @@
+{
+  "format": "has_source_experiment_index_1",
+  "packet": "pmx_physics_archive_prototype_20261117",
+  "status": "SEALED_WORKING_SYNTHETIC_CPU_ARCHIVE_PROTOTYPE_NO_NATIVE_OR_PRODUCTION_ADOPTION",
+  "files": [
+    {
+      "path": "CPU_TOOL_OUTPUT.json",
+      "bytes": 7874,
+      "sha256": "51e19b91cf0289bc59c864feadbf052b2b8572b72bc0039173174d01d5fbe439"
+    },
+    {
+      "path": "CPU_VALIDATION.json",
+      "bytes": 1404,
+      "sha256": "b5667f219dfd95f8f153c1c5195b14ad4868f8ff310949e5782303ab474d9f44"
+    },
+    {
+      "path": "MANUAL_FIXTURE_EXPECTATIONS.json",
+      "bytes": 3444,
+      "sha256": "323129acee5355b6cc6d99b3068e07253e17d87cd01cbcbc572f3a25eed45b59"
+    },
+    {
+      "path": "PEER_REVIEW.json",
+      "bytes": 905,
+      "sha256": "814a2bfb32635b8601577677fbf413867ae7d0217bacfff0bededeb0e006cab7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5092,
+      "sha256": "f7a9f7d2fcc44d1e6653503c89828f48154c62e6713bc0b3c2b35f40a3de8288"
+    },
+    {
+      "path": "SOURCE_BINDINGS.json",
+      "bytes": 2347,
+      "sha256": "584be2f7693e1aea0fd6c3bdee0f2475f942894a158a4ebb02b06ce7ebfb9aac"
+    },
+    {
+      "path": "SYNTHETIC_RESULT.json",
+      "bytes": 1578,
+      "sha256": "58e7a4ecf533cccbb7eaec020d27628fc23660585e59763002d94272f9a058f1"
+    },
+    {
+      "path": "history/attempt1/RECEIPT.json",
+      "bytes": 758,
+      "sha256": "e01349f018c523b4dad95bc95cc3a54c463ad7e7c4c31a53b8516be81f51e293"
+    },
+    {
+      "path": "history/attempt1/TOOL_OUTPUT.json",
+      "bytes": 8558,
+      "sha256": "2e7176ac2fb92959811120e84b214c3c8087e4848245f764b4f6aa878d10d742"
+    },
+    {
+      "path": "history/attempt1/pmx_archive.py",
+      "bytes": 12479,
+      "sha256": "d5089534ff6c322e43acad7a2af88b14698ddd15fc70ab1d14f4952daf4b6799"
+    },
+    {
+      "path": "history/attempt1/test_archive.py",
+      "bytes": 13779,
+      "sha256": "0980613a12d273878b68184dba2a1914fa42a5dc52e12d129024c0707ffc4331"
+    },
+    {
+      "path": "pmx_archive.py",
+      "bytes": 12791,
+      "sha256": "ac226df5fe56d4781cfa952170fe6d75f9054c6c5cb834aa307e7cb2807e8e50"
+    },
+    {
+      "path": "pmx_native_physics.py",
+      "bytes": 16124,
+      "sha256": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426"
+    },
+    {
+      "path": "synthetic_pmx.py",
+      "bytes": 16301,
+      "sha256": "4700bbf8c167680af292b5ea427eebb84425819d24ac4c0e4eb8aad222913414"
+    },
+    {
+      "path": "test_archive.py",
+      "bytes": 14903,
+      "sha256": "4ae81086d4c96d3352e353252540ba2ef74bca52329d2e908b60cdcaf51e29bd"
+    },
+    {
+      "path": "test_full_prefix.py",
+      "bytes": 9085,
+      "sha256": "855f82084a5e4fa90c40ec2685fd48f3edc59ee42c767b793c1cc31bebd77128"
+    },
+    {
+      "path": "test_native_reader.py",
+      "bytes": 6817,
+      "sha256": "c27be381a3001d62e5edafa0df6837961d888be3a4d67a46ed8933dcd768cdc2"
+    }
+  ],
+  "tests": 49,
+  "new_archive_tests": 16,
+  "unchanged_reader_tests": 33,
+  "failures": 0,
+  "source_peer_review": "GO",
+  "native_inputs_or_engines_or_current_full_reads": false,
+  "production_Review_or_existing_sealed_files_changed": false,
+  "qualification": "UNQUALIFIED_SOURCE_CPU_ONLY"
+}

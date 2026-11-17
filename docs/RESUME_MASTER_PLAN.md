@@ -1571,11 +1571,14 @@ oracle, bounded runner and actual input-specific evidence.
 
 The concrete next integration map is
 [PMX preservation map](../experiments/pmx_import_metadata_integration_map_20261117/IMPLEMENTATION_MAP.md).
-Its first runnable increment is a synthetic assembler/extractor for an inert,
-versioned archive in the GLB asset, with a small status descriptor in the import
-report. This would preserve declarations without turning them into simulated
-HAS bodies. Native qualification must precede production adoption. Portability,
-older-reader behavior and resource capacity still require actual tests.
+The synthetic assembler/extractor is now implemented separately in
+[the PMX archive prototype](../experiments/pmx_physics_archive_prototype_20261117/README.md).
+Its 49 synthetic methods pass: 16 archive methods and 33 retained reader methods.
+It round-trips an inert, versioned GLB archive with a small import-report
+descriptor, preserving declarations without creating simulated HAS bodies.
+Integrity, provenance, unsupported-profile and capacity failures are explicit.
+Native artist input qualification must precede production adoption. Actual
+import/save portability, older-reader behavior and runtime capacity remain unrun.
 
 Keep the 2 MiB capsule, 256 KiB import report, 1 MiB project metadata, 128 MiB GLB
 and secondary-helper 16 MiB whole-JSON budgets separate. The helper boundary is

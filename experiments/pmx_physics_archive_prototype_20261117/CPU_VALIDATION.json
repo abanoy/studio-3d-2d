@@ -1,0 +1,26 @@
+{
+  "format": "has_pmx_archive_final_synthetic_CPU_validation_1",
+  "observed_utc": "2026-11-17T17:42:51.283551+00:00",
+  "command": "python -B -m unittest -v test_archive test_native_reader test_full_prefix",
+  "methods": 49,
+  "new_archive_methods": 16,
+  "unchanged_reader_methods": 33,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 0.602,
+  "tool_chunk": "7d45fe",
+  "source_sha256": {
+    "pmx_archive.py": "ac226df5fe56d4781cfa952170fe6d75f9054c6c5cb834aa307e7cb2807e8e50",
+    "test_archive.py": "4ae81086d4c96d3352e353252540ba2ef74bca52329d2e908b60cdcaf51e29bd",
+    "pmx_native_physics.py": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426",
+    "synthetic_pmx.py": "4700bbf8c167680af292b5ea427eebb84425819d24ac4c0e4eb8aad222913414",
+    "test_native_reader.py": "c27be381a3001d62e5edafa0df6837961d888be3a4d67a46ed8933dcd768cdc2",
+    "test_full_prefix.py": "855f82084a5e4fa90c40ec2685fd48f3edc59ee42c767b793c1cc31bebd77128",
+    "MANUAL_FIXTURE_EXPECTATIONS.json": "323129acee5355b6cc6d99b3068e07253e17d87cd01cbcbc572f3a25eed45b59"
+  },
+  "tool_display_output_path": "CPU_TOOL_OUTPUT.json",
+  "raw_Python_stdout_separately_captured": false,
+  "first_failed_authored_test_retained": "history/attempt1/RECEIPT.json",
+  "native_artist_file_engine_process_query_current_full_Git_or_network_access": false,
+  "production_Review_or_existing_sealed_packet_mutations": false
+}

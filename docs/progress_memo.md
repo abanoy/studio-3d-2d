@@ -15866,3 +15866,38 @@ without invoking callbacks/openingB/collecting model resources. Its wrapper is
 not a resource/private-placement PASS; after-scope0 and tool/input preservation
 were observed. No further B native run precedes the UI/full work. All originals
 and prior reviews remain protected; Source normal error/2e-5 threshold unchanged.
+
+### November 17, 2026 — camera checkpoint recovered from GitHub
+
+Main `4fd0052f52a594e86ca77df0e50e12e8d026a874` is pushed. All 174 selected
+public files were independently retrieved: 4,075,007 exact Git bytes, with four
+EOL recipes preserving 4,096,323 working bytes. Readback proof `65cff50f` and the
+outside-selection privacy review `dab5b50b` are retained for the next checkpoint.
+This preserves the 696 camera fix/reconstruction and focused results, plus source
+and scalar-only diagnostic findings. Raw native/full reports/logs remain private.
+No additional cleanup, functional-main merge or new owner copy occurred.
+Main's 1019 functional files remain at 52f while the separate 696 full run uses
+1029 frozen files. Its 38 source changes are root reviewed in packet `fb1e7553`;
+107 EOL-only differences remain separate. That review supplies no full result.
+
+### November 17, 2026 — camera passed; native color-picker failure closed
+
+The frozen 696 full run passed the original camera check (60/0, five native
+fixtures), then failed at color sampling (44/1). One retained Miku fixture failed
+the conjunction covering capture, exact color and view/world/source preservation;
+the two Source fixtures passed. The failing condition is not yet identified.
+No assertion or tolerance has been changed. Root will split the diagnostic before
+proposing a fix. The run finished at 17:41:03.6301734Z with source 1029 unchanged.
+
+Root's strict audit closed 93 private jobs: 91 exit 0, one registered Krita cancel
+and one failed color test. All 11 inline receipts match; 66 phase documents are
+retained privately. Release was observed at 17:42:05.1961829Z, inventory c11d074a.
+The native lane is free and root-owned. No full PASS, merge, owner copy or cold187
+is claimed. Acceptance remains 55/62 and implementation 52/54; human review stays
+deferred. Raw full/phase/native reports and logs remain private.
+
+The separate PMX archive prototype now passes 49 synthetic methods (16 archive
+and 33 retained reader methods), with source-peer review. It preserves an inert,
+versioned physics-declaration capsule and small descriptor through a GLB in RAM,
+with integrity, provenance, unsupported-profile and capacity checks. It has not
+qualified native artist PMX input, changed importing, or enabled PMX simulation.

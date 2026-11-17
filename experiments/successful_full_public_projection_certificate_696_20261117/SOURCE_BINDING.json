@@ -1,0 +1,54 @@
+{
+  "format": "has_public_scalar_projection_certificate_696_source_binding_1",
+  "predecessor_packet": "experiments/successful_full_public_projection_certificate_20261117",
+  "predecessor_INDEX_sha256": "27161464607fb420e772b2780985264800bb14f1bc225466e0205e8cf04e906e",
+  "source_commit": "696ca7f1491a43b1a2267a53f8ca0f62b7c211a9",
+  "actual_public_registry": {
+    "path": "experiments/neon_696_terminal_20261117/RESULT_REGISTRY.json",
+    "bytes": 5955,
+    "sha256": "722e2847821f4aad33ec6581765c8308510ecac7443647f894b74b39ee170b2e",
+    "terminal_INDEX_sha256": "eecfb76051db35ffe062a174802de1a13613f7f5e5a2e15abee8b6e45d723079"
+  },
+  "previous_public_registry": {
+    "path": "experiments/neon_00bf_terminal_20261117/RESULT_REGISTRY.json",
+    "bytes": 5955,
+    "sha256": "b03dc3bf06baf6044a034d17b0c9a430f2cfb364bac762f399fcc53c6a9013eb"
+  },
+  "registry_raw_inverse": "Replace exactly one source_commit value696 with00bf; bytes equal exact old registry.",
+  "registry_JSON_only_changed_key": "source_commit",
+  "source_registry_raw_inverse": "Exactly SOURCE_COMMIT and RESULT_REGISTRY_SHA256 literals; all other bytes equal624b7384 predecessor.",
+  "source_registry_before_sha256": "624b73844ef7189c8976457c595fff94338352e0348dcb15e6d195689cb8dc5a",
+  "source_registry_after_sha256": "5bf6c19ba5cb8110a3e03673ffcd5bf0de185c2f77f3a2506d6f8d0752f64166",
+  "unchanged_code_and_authored_test_files": {
+    "projection_core.py": {
+      "bytes": 9696,
+      "sha256": "df0aab115e3b47e95902fefc1ae84a427dd3890fde297467a4dd8d7de4150ff4"
+    },
+    "certificate_projection.py": {
+      "bytes": 1782,
+      "sha256": "2cbba9d4ff432fcf7cd247fa8cae5fb087922f71443c1a9a77b3b88b6a2457df"
+    },
+    "test_projection.py": {
+      "bytes": 9228,
+      "sha256": "625fec58cafc311f255ea70ae286abd4977ba513031c81746be2199ab0ffee7c"
+    },
+    "test_certificate_projection.py": {
+      "bytes": 3871,
+      "sha256": "1577bc69946c1a0bd4e27dbee6001d05cf1793e8d3a6a9e67a6ff49c119f96aa"
+    }
+  },
+  "behavior_source_sha256_unchanged": "cc4318240c311b6d63d98123a7fc8d60387244b8a5ed844bc41039afa1f58a43",
+  "behavior_names_unchanged": 32,
+  "frozen_result_names": 158,
+  "frozen_core_names": 36,
+  "frozen_movie_names": 21,
+  "neon_checks": 12504,
+  "inherited_source_profile_binding_sha256": "b234bf0d8cc870968f9c266f4335c445a42ebc15553409e2c445bdc16f104b28",
+  "inherited_expected_REVIEW_source_pins_are_not_new_active_Review_readback": true,
+  "actual_run_report_or_certificate_read": false,
+  "archive_activation_available": false,
+  "actual_full_PASS_merge_or_private_evidence_qualification": false,
+  "own_code_tests_and_two_public_registries_unchanged_across_CPU_tests": true,
+  "predecessor_all_nine_members_rechecked_unchanged": true,
+  "actual_current_Review_source_reobserved": false
+}

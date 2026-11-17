@@ -1,5 +1,26 @@
 # HAS continuation — November 17, 2026
 
+CURRENT at 2026-11-17 17:42 UTC: candidate 696 full FAILED at color sampler
+44/1 after the original camera check passed 60/0 with five native fixtures.
+One Miku native-pick conjunction failed; the other two Source cases passed.
+Cause is undiagnosed. Split the five conditions and measure the intended/mapped
+pixel before proposing a fix. Preserve every original assertion and tolerance.
+Strict root audit closed 93 private jobs (91 normal, Krita cancellation, failed
+color job), with 11 inline matches and 66 phase documents. Source 1029 unchanged;
+release 17:42:05.1961829Z, inventory c11d074a. Raw evidence remains private under
+the exact 696 run. Do not rerun its terminal helper. The native lane is free and
+root-owned. No full PASS, merge, new owner copy or cold187 result is claimed.
+
+PMX archive prototype INDEX 97e7c5a6 passes 49 synthetic methods and source-peer
+review. It has no native-artist qualification, production import integration or
+PMX solver. Main source/scalar checkpoint 4fd0052 is independently retrieved:
+174 exact files, 4,075,007 Git bytes and four working-EOL recipes. New readiness,
+source review, remote proof and PMX records must be backed up in the next public
+checkpoint. Human checks remain deferred; do not interrupt the owner for them.
+
+All running/unrun paragraphs below are historical observations superseded by the
+dated failed-result record above.
+
 CURRENT dated 2026-11-17T17:09:51.651308+00:00: candidate696ca7f fullRUNNING, notPASS.
 Run output/windows-neon-696ca7f-20261117T170720480423; coordinator12740 birth
 2026-11-17T17:07:54.3896834Z; Python5384 GetProcessbirth17:07:54.8423868Z,parent

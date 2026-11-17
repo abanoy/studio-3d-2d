@@ -1,0 +1,60 @@
+{
+  "format": "has_pmx_physics_archive_source_bindings_1",
+  "sealed_dependencies": [
+    {
+      "folder": "pmx_physics_native_reader_prototype_20261117",
+      "INDEX_sha256": "9946bf2bccbe5e289fea013ec702c97775b33b9a64dc3bce7979d21d08e92487",
+      "payloads_verified": 14
+    },
+    {
+      "folder": "pmx_native_read_qualification_protocol_20261117",
+      "INDEX_sha256": "c36c29928185bd9ce8cf521caf43bb873a0ca171bff847e0a9c5f6772cd099a8",
+      "payloads_verified": 10
+    },
+    {
+      "folder": "pmx_import_metadata_integration_map_20261117",
+      "INDEX_sha256": "474b6bc933c41d869bb32f1cdbf101800f81c5634e886822aff9ba72005c9470",
+      "payloads_verified": 4
+    },
+    {
+      "folder": "pmx_import_metadata_helper_boundary_20261117",
+      "INDEX_sha256": "49ffc77ff5a39f80ae187918f845a4734877fc075212de80c03827c1a9d1c3ae",
+      "payloads_verified": 2
+    }
+  ],
+  "exact_source_copies": [
+    {
+      "path": "pmx_native_physics.py",
+      "bytes": 16124,
+      "sha256": "e356894782e02389c215e2bdf335ebd102b98ad0b286e9728434201d21cf0426",
+      "source_path": "experiments/pmx_physics_native_reader_prototype_20261117/pmx_native_physics.py"
+    },
+    {
+      "path": "synthetic_pmx.py",
+      "bytes": 16301,
+      "sha256": "4700bbf8c167680af292b5ea427eebb84425819d24ac4c0e4eb8aad222913414",
+      "source_path": "experiments/pmx_physics_native_reader_prototype_20261117/synthetic_pmx.py"
+    },
+    {
+      "path": "test_native_reader.py",
+      "bytes": 6817,
+      "sha256": "c27be381a3001d62e5edafa0df6837961d888be3a4d67a46ed8933dcd768cdc2",
+      "source_path": "experiments/pmx_physics_native_reader_prototype_20261117/test_native_reader.py"
+    },
+    {
+      "path": "test_full_prefix.py",
+      "bytes": 9085,
+      "sha256": "855f82084a5e4fa90c40ec2685fd48f3edc59ee42c767b793c1cc31bebd77128",
+      "source_path": "experiments/pmx_physics_native_reader_prototype_20261117/test_full_prefix.py"
+    },
+    {
+      "path": "MANUAL_FIXTURE_EXPECTATIONS.json",
+      "bytes": 3444,
+      "sha256": "323129acee5355b6cc6d99b3068e07253e17d87cd01cbcbc572f3a25eed45b59",
+      "source_path": "experiments/pmx_physics_native_reader_prototype_20261117/MANUAL_FIXTURE_EXPECTATIONS.json"
+    }
+  ],
+  "scope": "SOURCE_AND_AUTHORED_SYNTHETIC_CPU_ONLY",
+  "native_assets_read": false,
+  "production_or_Review_files_mutated": false
+}

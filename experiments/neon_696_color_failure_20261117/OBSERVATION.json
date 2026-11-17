@@ -1,0 +1,49 @@
+{
+  "observed_utc": "2026-11-17T17:44:09.339540+00:00",
+  "state": {
+    "format": "has_owned_canonical_run_1",
+    "pid": 12740,
+    "process_started": "2026-11-17T17:07:54.3896834Z",
+    "started_utc": "2026-11-17T17:07:54.6575974Z",
+    "status": "failed",
+    "checkout": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff",
+    "run_folder": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\windows-neon-696ca7f-20261117T170720480423",
+    "source_commit": "696ca7f1491a43b1a2267a53f8ca0f62b7c211a9",
+    "python": "C:\\Program Files\\Python313\\python.exe",
+    "command": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-u",
+      "tests/verify.py"
+    ],
+    "script_sha256": "8a1c2195db1c06cf91910778a48182c825a4ad0ad3a7b3acde9f940ca68e3dc4",
+    "suite_exit": 1,
+    "source_unchanged": true,
+    "finished_utc": "2026-11-17T17:41:03.6301734Z"
+  },
+  "result": "FAILED_NATIVE_COLOR_SAMPLER_CONJUNCTION",
+  "camera": {
+    "checks": 60,
+    "failures": 0,
+    "native_fixtures": 5
+  },
+  "color_sampler": {
+    "checks": 44,
+    "failures": 1,
+    "native_fixtures": 3
+  },
+  "failure_label": "native color excludes selection helpers while preserving rig/source/view: pose-smoke/miku-project",
+  "cause": "NOT_YET_DIAGNOSED",
+  "physical_jobs": 93,
+  "normal_exit0": 91,
+  "registered_Krita_cancel_exit2": 1,
+  "failed_partial_nonzero": 1,
+  "inline_exact_matches": 11,
+  "phase_documents": 66,
+  "functional_sources_unchanged": 1029,
+  "released_utc": "2026-11-17T17:42:05.1961829Z",
+  "inventory_sha256": "c11d074afa51f2144cce34eb4605280aea39f789904cf327e4fc30cbcfa96e97",
+  "raw_report_logs_phase_native_arrays_included": false,
+  "full_pass_claimed": false,
+  "product_merged": false,
+  "actual_cold187_started": false
+}

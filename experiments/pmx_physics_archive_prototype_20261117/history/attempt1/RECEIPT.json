@@ -1,0 +1,22 @@
+{
+  "format": "has_pmx_archive_first_CPU_failure_1",
+  "tool_chunk": "05a28e",
+  "methods": 48,
+  "failures": 1,
+  "errors": 0,
+  "reported_seconds": 1.048,
+  "failure": "Archive test expected65535 while the independently authored default fixture contains32769. Implementation and33 retained reader tests passed; fix the test fixture expectation and explicitly exercise65535 separately.",
+  "source_snapshots": [
+    {
+      "path": "pmx_archive.py",
+      "bytes": 12479,
+      "sha256": "d5089534ff6c322e43acad7a2af88b14698ddd15fc70ab1d14f4952daf4b6799"
+    },
+    {
+      "path": "test_archive.py",
+      "bytes": 13779,
+      "sha256": "0980613a12d273878b68184dba2a1914fa42a5dc52e12d129024c0707ffc4331"
+    }
+  ],
+  "native_or_engine_execution": false
+}
