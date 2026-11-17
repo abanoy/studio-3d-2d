@@ -2950,6 +2950,7 @@ func refresh_workspace() -> void:
 	inspector_scroll.scroll_vertical = 0
 	if pose_editor:pose_editor.refresh_values()
 	if scene_view:scene_view.sync()
+	refresh_camera_inspector()
 	refresh_view_row()
 	refresh_badges()
 	queue_view_fit()

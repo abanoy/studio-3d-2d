@@ -1195,3 +1195,16 @@ matches its own retained descriptor and exact priorMain52 catalogue plan; this
 does not recover or substitute the different oldb577bundle. Actual focused checks
 and another complete default are required. Product code/look and merge status
 remain unchanged; no full PASS or artist fidelity is inferred.
+
+## Windows immediate Camera details visibility — November 17, 2026
+
+The unchanged00bf replay2 full failed camera_range60/1 because Advanced near/far
+controls were checked before the next process frame. Its parent Camera details
+visibility was only refreshed per-frame. One call to the existing guarded
+refresh_camera_inspector in refresh_workspace now synchronizes it with Advanced
+and mode changes. Values, signals, controls and original test predicates remain
+unchanged; classic's empty-inspector guard stays exact. The two reviewed app hash
+rows are refreshed in the existing wind/helper manifests; all other rows and
+memberships remain exact. Root closed92private jobs/source1029 unchanged before
+this patch. Focused graphics and a new complete frozen verifier are still UNRUN.
+No full PASS or product merge is claimed.
