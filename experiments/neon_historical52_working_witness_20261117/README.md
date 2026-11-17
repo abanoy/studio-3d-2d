@@ -1,0 +1,13 @@
+# Recoverable historical52 tested-source witness
+
+Root explicitly authorized reading current Main's1019 functional files and the named closed52 source-before manifest, plus read-only Git52 objects. Main's metadata history had advanced, while these functional bytes remained the exact52f tested raw snapshot. No current full/REVIEW outputs, native assets, engine, CIM, source writes or Git mutations were used.
+
+The capture verified all1019 current raw hashes before/after against exact manifestSHA4b1eb25e…, totaling7,677,865B. It retained only the manifest, source/tool identity metadata and explicit Git/EOL recipes; it did not duplicate1019 raw files.230 files match their Git blobs exactly,787 need explicit canonical-LF→CRLF, and2 need an explicit per-newline CRLF bitmask. The first uniform-only recipe attempt refused before witness output; exact source/raw refusal remain under history/attempt1. The bitmask changes only newline choice, requires identical canonical content, checks extent/padding and reconstructs the exact known rawSHA; Main is never normalized.
+
+An independently implemented decoder fetched immutable Git52 blobs and reconstructed every raw file in memory, checking all1019 exact raw hashes/lengths and canonical hashes. RECOVERABILITY.json retains that result. Current Main source files are not needed for later recovery, so a future merged Main does not destroy this witness. The actual Git executable identity was checked before/after; readonly commands disabled optional locks and fsmonitor.
+
+Historical raw-map digest:68b2a616d20fbae291f453de83d0cfc1411e5147a10e95761023109dfdcd7879. Historical canonical-map digest:00557a55f3434d60a07f988a2d4ba3fdb6b60c28761a93d55269e9968f382252. These are actual source-witness map identities, not native model metadata.
+
+REPRODUCTION_SOURCE_PINS.json preserves the current exact EOL/proxy function source and independent decoder/capture hashes. The future qualification adapter later received unrelated path-guard hardening; a contemporaneous whole-module SHA was not recorded during capture, so none is fabricated. The independent decoder's exact source and closed-manifest/Git/raw-hash joins establish the retained recoverability result. No future fullPASS, merged-main, copy, owner or portable qualification is claimed.
+
+Use the sealed HISTORICAL52_MANIFEST.json and HISTORICAL52_WORKING_RECIPE.json as reviewed historical inputs to the future executor. Its actual candidate/full/root release/merged-main activation remains unready. verify_recoverable.py is read-only Git reconstruction and writes a fresh result; it was run here before seal. Do not rerun it over an existing result. verify_packet.py only validates this sealed packet and performs no Git or source reads.

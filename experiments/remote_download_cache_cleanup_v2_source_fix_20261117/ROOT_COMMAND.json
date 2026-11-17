@@ -1,0 +1,35 @@
+{
+  "format": "has_root_only_exact_public_cache_cleanup_command_1",
+  "status": "PREPARED_UNRUN_REQUIRES_ROOT_READONLY_PROBE_PASS",
+  "executable": "pwsh",
+  "arguments": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-File",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\remote_download_cache_cleanup_v2_source_fix_20261117\\execute_public_cache_cleanup.ps1",
+    "-Execute",
+    "-ExpectedPlanSha256",
+    "4e07e5a6b939af7bfc7c5ac0f42a3adc5f3f883800711f35d6e55be57e59c35f",
+    "-ExpectedScriptSha256",
+    "d5d827d020eeb785c3495204dd5d9f863a6984e8a16c7b0a4c0e2182bd3f3db3",
+    "-ReportDirectory",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remote-cache-cleanup-1ce-09fb-20261117-attempt2"
+  ],
+  "script_sha256": "d5d827d020eeb785c3495204dd5d9f863a6984e8a16c7b0a4c0e2182bd3f3db3",
+  "PLAN_sha256": "4e07e5a6b939af7bfc7c5ac0f42a3adc5f3f883800711f35d6e55be57e59c35f",
+  "actual_receipts_separate_from_preparation": true,
+  "cleanup_entry_invoked": false,
+  "root_alone_may_execute": true,
+  "prerequisite_probe": {
+    "executable": "pwsh",
+    "arguments": [
+      "-NoProfile",
+      "-NonInteractive",
+      "-File",
+      "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\remote_download_cache_cleanup_v2_source_fix_20261117\\probe_readonly_git_bytes.ps1"
+    ],
+    "probe_sha256": "a5ea79d8331fdd69978bf306225b34ba243aea22141a1c559ec9d7fada57142e",
+    "root_executes_and_retains_actual_result": true,
+    "actual_probe_pass_observed_by_preparation": false
+  }
+}

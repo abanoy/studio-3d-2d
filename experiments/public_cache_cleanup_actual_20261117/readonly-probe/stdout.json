@@ -1,0 +1,31 @@
+{
+  "format": "has_root_readonly_git_byte_return_probe_1",
+  "deletion_invoked": false,
+  "PLAN_sha256": "4e07e5a6b939af7bfc7c5ac0f42a3adc5f3f883800711f35d6e55be57e59c35f",
+  "native_or_CIM_or_Git_mutation_or_active_full_reads": false,
+  "cache_file_contents_read": false,
+  "cleanup_entry_invoked": false,
+  "passed": true,
+  "candidate_source_sha256": "d5d827d020eeb785c3495204dd5d9f863a6984e8a16c7b0a4c0e2182bd3f3db3",
+  "checks": [
+    {
+      "sha256": "c23fab04f6e461f69b6554d0cb78be1da8cbd24bc8e2810c7e829123c2c6e67e",
+      "actual_type": "System.Byte[]",
+      "case": "HEAD",
+      "bytes": 41
+    },
+    {
+      "sha256": "5a46fd420b208954375a217ec93f40fa2e0ac3b11a3dc3ffdbff210c92478dda",
+      "actual_type": "System.Byte[]",
+      "case": "published_proof_blob",
+      "bytes": 781680
+    },
+    {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_type": "System.Byte[]",
+      "case": "empty_untracked71",
+      "bytes": 0
+    }
+  ],
+  "observed_utc": "2026-11-17T04:14:55.3926115Z"
+}

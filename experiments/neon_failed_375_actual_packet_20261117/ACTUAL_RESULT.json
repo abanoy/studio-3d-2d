@@ -1,0 +1,60 @@
+{
+  "format": "has_neon_375_closed_failed_full_1",
+  "candidate": "375ec05e925159850ff3b0abf2e8f98f9d2ce129",
+  "full_suite_passed": false,
+  "main_merged": false,
+  "functional_sources_unchanged": 1029,
+  "core_groups_passed": 36,
+  "integrated_neon_checks_passed": 12504,
+  "scene_smoke_checks_passed": 106,
+  "scene_unit_checks_passed": 12830,
+  "helper_cpu_checks_passed": 208,
+  "helper_graphical_checks_passed": 266,
+  "source_choice_foundation_whole_pass": false,
+  "failure": "Authored source bone fixture golden base64 decode fails with CR left after LF-only stripping",
+  "failing_headless_process": {
+    "headless": true,
+    "graphics": false,
+    "native_conversion": false,
+    "pid": 26908,
+    "exit": 1,
+    "timeout_seconds": 25,
+    "timed_out": false,
+    "owned_headless_terminated_on_timeout": false,
+    "started_ns": 1794887418409562700,
+    "finished_ns": 1794887418761144700,
+    "console": {
+      "sha256": "c6bde173397314c36cdd732378f56b4e6d0d6c078678253de66d341a12979569",
+      "bytes": 3660,
+      "mtime_ns": 1794887418760070200
+    },
+    "engine_log": {
+      "sha256": "f19d4d5b77f5197b68c31fca5265096acad031d102966cc1db8ff982298e36a2",
+      "bytes": 3609,
+      "mtime_ns": 1794887418664949700
+    }
+  },
+  "failing_fixture_actual": {
+    "checks": 40,
+    "failures": 40,
+    "fixture_glb_sha256": "39637fa34e53c81708329ab963659e8100a285a92e25a22a92ab5e708c0154c1",
+    "format": "has_source_bone_bindings_authored_controls_1",
+    "golden_jiggle_wire_sha256": "ffe01c326a8ba54a57974f8257f716cffe1ea6c6f6e36cb73da0780e1ddc30c4",
+    "golden_proof_sha256": "3f7f4ab5c1ec58f6c987de24ebb907ae5e8e0427fa8f7e109418fcae5fd6307b",
+    "native_conversion": false,
+    "native_simulation": false,
+    "source_profile_claim_is_authored_fixture_only": true
+  },
+  "expected_binding_checks": 79,
+  "subsequent_helper17": "UNRUN_IN_THIS_FAILED_WRAPPER",
+  "fixture_successor": "UNRUN_NOT_QUALIFIED_BY_ARCHIVE",
+  "physical_jobs": 51,
+  "normal_exit0": 50,
+  "Krita_cancel_exit2": 1,
+  "failed_private_graphical_jobs": 0,
+  "headless_failure_not_invented_as_private_job": true,
+  "all_private_jobs_desktops_closed": true,
+  "released_utc": "2026-11-17T03:51:37.9325174Z",
+  "stale_final_report_used": false,
+  "private_art_models_media_or_native_arrays_copied": false
+}

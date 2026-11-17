@@ -1,0 +1,73 @@
+{
+  "format": "has_00bf_public_text_reconstruction_peer_audit_1",
+  "observed_utc": "2026-11-17T04:48:05.891384+00:00",
+  "status": "PASS_LOCAL_TEXT_RECONSTRUCTION",
+  "packet_index_sha256": "e6837fe45e7a5ce112078e84b8f2bbd52c1271a33f52f6be903819dd4d25cb52",
+  "candidate_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "sole_parent_commit": "fe9aace86f7a349c90a951ff26d76f746d1e4701",
+  "candidate_tree": "ebf8b50a1b67da424da6a50498d56f3ca0636283",
+  "payload_files": 8,
+  "payload_bytes": 246858,
+  "changed_public_text_files": 4,
+  "four_blobs_and_exact_commit_match_local_Git": true,
+  "parent_plus_four_replacements_exact_tree": true,
+  "unified_patch_in_RAM_exact": true,
+  "working_EOL_recipes_exact": true,
+  "parent_recovery_chain": {
+    "main_checkpoint": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a",
+    "retained_main_readback_sha256": "efb5fb94aee5e143deb0cb4dff17141ba1d35c29079694fdc830f92ac5a6157c",
+    "published375_packet_files_verified": 8,
+    "375_packet_INDEX_sha256": "ef5b48263fbeec32fc7c5197fdd59508a3a2b258397470de9930b17cf0cb332f",
+    "ultimate_base_commit": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+    "375_rebuilt_root_tree": "3dcc80fa95c6e385f455b04614cbc2c59eda4737",
+    "fe9_rebuilt_root_tree": "f94e9045e77e1a5594eecf17b9104755251bf27c",
+    "both_recovery_steps_in_RAM": true,
+    "Git_objects_written": false,
+    "wording_limit": "Fe9 scope string says known remote parent; its direct375 parent is instead recovered through the explicit e8-published packet. README and parent_reconstruction correctly describe that chain."
+  },
+  "text_files": [
+    {
+      "path": "LLM.md",
+      "blob_sha256": "60e61fe2dbf76035ecbe882624783e06b886b14f320dc2bcf43a4ec7880debe9",
+      "blob_bytes": 509180,
+      "git_blob": "fe7c24452c1125a5c49563e127b967bc769b7f01",
+      "working_sha256": "4567e665fbb0ac9df5e0c6eb3a37723660095866f53b080d2dfee2eeb3c34150",
+      "working_bytes": 514658,
+      "selected_CRLF_lines": 5478
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "blob_sha256": "1ab1d37ed757e2f8206d0db003ad62d432aa475ffbd6bf10667bf55ca5efa7cc",
+      "blob_bytes": 103952,
+      "git_blob": "7e5b3e1f72852896723ce1e12ae6827891da4001",
+      "working_sha256": "72c9de936a39b6add72321da2147ad4807bb62a49dcdf11b09845ac2d9489767",
+      "working_bytes": 104999,
+      "selected_CRLF_lines": 1047
+    },
+    {
+      "path": "tests/verify_character_height.py",
+      "blob_sha256": "f9b8041a304f8cf9d2b27daf8c58df537fec3ef3482903e6d96f2c6e01f824dd",
+      "blob_bytes": 5647,
+      "git_blob": "f7d086ca58b4a5bd0b85c04083efb24ab131fd37",
+      "working_sha256": "cccfb7d472b5d552cbd3cfc07dc9058c1789b9c1947f6a1a548c924dd38a3f79",
+      "working_bytes": 5695,
+      "selected_CRLF_lines": 48
+    },
+    {
+      "path": "tests/verify_shape_catalog.py",
+      "blob_sha256": "a549b9e60e72e1c379a1cb957053bde3ec454f73417520bd6fc6cbda3eeedbed",
+      "blob_bytes": 3811,
+      "git_blob": "4da7c460af4d59096f51d3eba06aa0a1489a59bd",
+      "working_sha256": "54431c2c486bce9828ec47ebe046da9f413b3854e8c0290829c24183fe72e057",
+      "working_bytes": 3851,
+      "selected_CRLF_lines": 40
+    }
+  ],
+  "packet_immutable": true,
+  "source_reference_sha256": "0dc428d3562609a217af556ce679357e84542c649af7733e36c03cf75b71a6c4",
+  "approved_readonly_Git_sha256": "544548de8c9bed98eb90531729a2955f554e7009338788b68777258ea61867e4",
+  "Git_operations": "Local typed cat-file commit/tree/blob reads only; no writes or remote calls",
+  "current_working_source_native_CIM_engine_or_active_full_reads": false,
+  "wording_correction": "The immutable metadata scope string says three files; actual diff/blob list contains four. The direct fe9 parent is reconstructed through its packet pending the same checkpoint;375 is recovered through the verified e8-main packet, and4ed is the ultimate remote base. No direct fe9/00bf review branch publication is claimed.",
+  "qualification_limits": "Text recovery only; no complete full-suite PASS, merge, native fidelity or successor behavior claim."
+}

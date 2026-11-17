@@ -1,0 +1,54 @@
+{
+  "scope": "Source pattern scan across all candidate tests .gd/.py; only exact GDScript multiline-base64-constant/newline-removal pattern is classified. No general dataflow or runtime proof.",
+  "Godot_raw_decode_calls": [
+    {
+      "path": "tests/reference_project_smoke.gd",
+      "line": 18,
+      "call_prefix": "expected.audio),\"cold nested source preserves exact synchronized PCM\")",
+      "source_sha256": "a149c58f592084b4353177048dbf21c264b5537d5b20662afc6a2c3f816776fa"
+    },
+    {
+      "path": "tests/reference_project_startup.gd",
+      "line": 23,
+      "call_prefix": "expected.audio),\"recovered enclosing scene retains exact picture and PCM with reference excluded\")",
+      "source_sha256": "b454a057b5f08b1f3f0758a8ab8604ae673ccae4c95872db2fd826b1809732d1"
+    },
+    {
+      "path": "tests/sequence_masks_smoke.gd",
+      "line": 41,
+      "call_prefix": "expected.audio),\"cold reopen retains full editable source artwork and exact child sound\")",
+      "source_sha256": "e7cae18a2ba5ae7c62ff0a4d1aa100283af81e2010f5f3de9bc5722c21dac9cc"
+    },
+    {
+      "path": "tests/sequence_masks_smoke.gd",
+      "line": 43,
+      "call_prefix": "expected.audio),\"recovery keeps cropped appearance and synchronized editable audio\")",
+      "source_sha256": "e7cae18a2ba5ae7c62ff0a4d1aa100283af81e2010f5f3de9bc5722c21dac9cc"
+    },
+    {
+      "path": "tests/source_bone_bindings_unit.gd",
+      "line": 223,
+      "call_prefix": "GOLDEN_GLB.replace(\"\\n\", \"\"))",
+      "source_sha256": "a77d759d512f3bed34599bacccddb00be0ffb94806222261a827bf1cf25ed10d"
+    }
+  ],
+  "multiline_base64_literal_candidates": [
+    {
+      "path": "tests/source_bone_bindings_unit.gd",
+      "symbol": "GOLDEN_GLB",
+      "literal_source_bytes": 12686,
+      "CR": 103,
+      "LF": 103
+    }
+  ],
+  "same_embedded_newline_sensitive_constructs": [
+    {
+      "path": "tests/source_bone_bindings_unit.gd",
+      "line": 223,
+      "call_prefix": "GOLDEN_GLB.replace(\"\\n\", \"\"))",
+      "source_sha256": "a77d759d512f3bed34599bacccddb00be0ffb94806222261a827bf1cf25ed10d"
+    }
+  ],
+  "other_decode_sites": "Four Godot call sites consume expected.audio loaded/generated metadata, not a physical multiline constant. Python b64decode sites consume runtime JSON/object values; Python literal newline semantics are separate.",
+  "other_files_modified": false
+}

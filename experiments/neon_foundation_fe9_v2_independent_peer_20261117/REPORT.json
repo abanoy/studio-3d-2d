@@ -1,0 +1,58 @@
+{
+  "format": "has_foundation_v2_independent_artifact_source_peer_1",
+  "status": "SOURCE_CPU_GO_SCOPED_CONSTITUENT_PARITY",
+  "source_hashes": {
+    "archive_checks.py": "36ebc65b97b1e568cf41841f918086a7a5a8ab60c9e8aab8e4ec38d63451f0ee",
+    "build_packet.py": "b932ec90ac34ec54b578e38eade56a82130c1ab5490982f31a369633068699da",
+    "verify_packet.py": "866c508c2c00f164d7abb9f7b44fcb60bc32fd526854e6010b1a3fcc6215427c",
+    "verify_packet_v2.py": "8284cb3cee54ebe3f24f25ca9065d82840b63f6a795edb34452145824ff7666a",
+    "test_verifier_v2.py": "51f9a0db98eecda385d62794b207bc7cddb350d85c028c61c05f2adb755f4cba",
+    "INPUTS.json": "d1f896070f114f78d72ede167d3056b3e22f0e81d8def63e80c07c2f1f27f2f6"
+  },
+  "archive_INDEX_sha256": "7679403431be50d5a84197bda8c027a78b770e0b7404cac62246d03d4743fc31",
+  "added_function": "verify_constituents",
+  "old_other_function_AST_exact": true,
+  "historical_verifier_and_artifact_INDEX_match_original_pins": true,
+  "tests": {
+    "command": [
+      "C:\\Program Files\\Python313\\python.exe",
+      "-B",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "-v",
+      "test_verifier_v2"
+    ],
+    "methods": 8,
+    "failures": 0,
+    "errors": 0,
+    "observed_seconds": 0.068
+  },
+  "independently_run_artifact_only_verifier": {
+    "passed": true,
+    "original_bindings": 77,
+    "unique_objects": 69,
+    "foundation_checks": 167,
+    "separate_crosswalk": 77,
+    "separate_bindings": 96,
+    "real_private_jobs": 1,
+    "headless_parse_run_records": 4,
+    "functional_source_entries": 1029
+  },
+  "reviewed_guards": [
+    "exact nine constituent membership",
+    "strict CPU counts/pass/failure/error/source predicates",
+    "recorded CPU log path to raw result join",
+    "strict authored-only catalogue flags",
+    "headless unit65 raw result and nonnative graphics flags",
+    "UI20 raw result joins and source/original preservation flags"
+  ],
+  "limitations": [
+    "V2 is constituent parity plus original artifact verification, not a clone of every source-admission predicate.",
+    "Frozen INPUTS binds exact77 original data; no original paths were opened by this peer.",
+    "No native fidelity, full-suite, owner acceptance, or solver qualification is claimed."
+  ],
+  "native_Git_CIM_engine_or_builder_execution": false,
+  "original_or_active_full_output_reads": false
+}

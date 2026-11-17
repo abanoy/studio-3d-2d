@@ -1,0 +1,22 @@
+{
+  "format": "has_cache_v2_probe_preparation_parser_refusal_1",
+  "prior_source_packet": "experiments/remote_download_cache_cleanup_v2_20261117",
+  "prior_INDEX_sha256": "241010b3fc61adb5ee9b4b786acc15f0a0fd97d70d8ee9992033c37de2deae26",
+  "prior_probe_sha256": "3ad88779bdb8bda28f5df117fd1070ce8183f4e80ccb40828dfe9ed385077392",
+  "first_parse_errors": [
+    {
+      "line": 35,
+      "message": "Missing closing ')' in expression."
+    },
+    {
+      "line": 36,
+      "message": "Unexpected token ')' in expression or statement."
+    }
+  ],
+  "fix": "Join a continued boolean expression onto one line in the root-only read-only probe; cleanup source is unchanged",
+  "new_probe_sha256": "a5ea79d8331fdd69978bf306225b34ba243aea22141a1c559ec9d7fada57142e",
+  "cleanup_source_sha256": "d5d827d020eeb785c3495204dd5d9f863a6984e8a16c7b0a4c0e2182bd3f3db3",
+  "entry_or_probe_invoked": false,
+  "prior_packet_modified": false,
+  "source_of_failure_record": "Actual source parser result; no cleanup or native execution"
+}

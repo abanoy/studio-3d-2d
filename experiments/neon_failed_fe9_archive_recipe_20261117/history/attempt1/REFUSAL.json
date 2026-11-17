@@ -1,0 +1,8 @@
+{
+  "failure": "Retain exact failing stale-bundle traceback",
+  "phase": "source-only capture admission before INPUTS or archive creation",
+  "cause": "Python FileNotFoundError renders Windows path with doubled backslashes; first matcher expected one.",
+  "resolution": "Require the complete exact repr of the recorded stale path, retaining raw canonical bytes untouched.",
+  "archive_created": false,
+  "native_or_runtime_execution": false
+}

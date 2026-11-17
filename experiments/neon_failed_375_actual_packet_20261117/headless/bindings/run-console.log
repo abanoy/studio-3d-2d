@@ -1,0 +1,51 @@
+Godot Engine v4.6.stable.official.89cea1439 - https://godotengine.org
+
+FAIL independent golden authored GLB bytes
+FAIL independent malformed chunk golden bytes
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+FAIL authored69-joint GLB loads: Not a valid binary glTF file.
+SOURCE_BONE_BINDINGS {"checks":40,"failures":40,"fixture_glb_sha256":"39637fa34e53c81708329ab963659e8100a285a92e25a22a92ab5e708c0154c1","format":"has_source_bone_bindings_authored_controls_1","golden_jiggle_wire_sha256":"ffe01c326a8ba54a57974f8257f716cffe1ea6c6f6e36cb73da0780e1ddc30c4","golden_proof_sha256":"3f7f4ab5c1ec58f6c987de24ebb907ae5e8e0427fa8f7e109418fcae5fd6307b","native_conversion":false,"native_simulation":false,"source_profile_claim_is_authored_fixture_only":true}
+ERROR: Condition "CryptoCore::b64_decode(&w[0], buf.size(), &arr_len, (unsigned char *)cstr.get_data(), strlen) != OK" is true. Returning: Vector<uint8_t>()
+   at: base64_to_raw (core/core_bind.cpp:1357)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/source_bone_bindings_unit.gd:223)
+ERROR: Condition "p_offset < 0 || p_offset > int64_t(size) - 4" is true.
+   at: func_PackedByteArray_encode_u32 (core/variant/variant_call.cpp:1099)
+   GDScript backtrace (most recent call first):
+       [0] run (res://tests/source_bone_bindings_unit.gd:229)

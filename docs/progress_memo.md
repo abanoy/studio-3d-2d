@@ -15633,3 +15633,82 @@ goal main source/evidence checkpoint will carry a reconstructable text-only375
 packet without product merge. No full PASS or cleanup claimed. Native normals,
 PMX solver and six-foot activation remain unqualified/inactive. ManualDEFERRED,
 55/62 and52/54 unchanged; current pickup records exact active lane.
+
+### November17 2026 —375 full closed at authored CRLF golden fixture
+
+Frozen375 full stopped03:50:19.3986079Z after core36/Neon12504/scene106+12830/
+helper208+266 and snapshot/editing stages passed. SourceChoice authored bone unit
+fails40/40 because its LF-only base64 strip leaves CR in the CRLF source literal.
+Main52/GitLF body is identical; independent CR+LF decode yields original9360-byte
+goldenSHA39637fa3. Minimal fixture-only successor is being prepared; all79+17,
+constants, wrappers and strict error policy must remain. No native model failure
+or full PASS is inferred. Root audited51physical jobs(50exit0+Krita cancel2), exact
+inline/source1029/birth/scopes and closed desktops, released03:51:37.9325174Z.
+Inventory0bd04488ed3f67cb8cdfdac4952736c3c5008e3defe15bbbd531412f67b7f1bd;
+separate failing headlessPID26908 exit1/no timeout, not an invented private job.
+Main e8cf93c public checkpoint is independently exact534files/5,857,844Gitbytes;
+375 reconstruction is recoverable there while redesign remains unmerged. Branch
+upload rejection was not retried; explicitly authorized main route succeeded.
+No cleanup yet. Native normals/PMX/scale still scoped/inactive; manualDEFERRED,
+55/62 and52/54 unchanged. Current pickup supersedes dated active observations.
+
+### November17 2026 —fe9 focused Source pass and active full
+
+At 2026-11-17T04:11:38.396754+00:00, fe9aace full is RUNNING from04:04:17.6888552Z; root native lane
+exclusive, source1029 and HEAD frozen. Coordinator19668 birth04:04:17.2421226Z,
+Python28396 birth04:04:18.1277602Z,parent19668 (GetProcess100ns; CIMrounded notID).
+The fixture-only CR+LF fix passes actual Foundation167/separate77+96 in12.0645659s,
+golden9360bytes/79+17 and wrappers unchanged, sources same/scopes zero. New fe9
+text reconstruction is prepared; parent375 is backed by verified mainE8. Review
+branchfe9 was not uploaded after prior rejection, product remains unmerged.
+Firststrictffprobe preparation refusal had unknown changedfield; later stamps/
+SHA exact and exactstrictretry all6+694+36 passes. No guard relaxed. Cleanup
+attempt1 refusedbefore0deletions due asyncGit byte-return contamination; immutable
+failedresult retained, sourceV2+readonlyprobe pending. ManualDEFERRED;55/62 and
+52/54 unchanged. Full expected158/36/21 counts are not successful results.
+
+### November17 2026 —exact71 public cache cleanup completed
+
+After verified publication/readback of1ce/09fb/E8 source and proofs, root removed
+only71untracked oldpublic GitHub download caches totaling14,151,060logicalbytes.
+The first attempt stopped in preflight with0remove calls and no uncertain effect;
+its immutable source/result remain. A one-expression async return suppression
+passes actual readonlyGit41byteHEAD/781680byteproof/emptyuntracked Byte[] probes.
+The second execution rechecked1402decoded records/proofchain, journaled each file
+before/after literal nonrecursive deletion, and observed all71absent. Root then
+independently joined every journal/hash/path/absence.27currentE8caches and external
+1cefallback remain. No source/private/native/model/review/tool/media paths were
+authorized. Actual artifactINDEXf97cd275 and RESULTSHA d3ea618c2438c66554d176a7b164cc84d59999d71625b18d7e8a4ecfbe18cd6d
+are retained. No measured disk-free-space gain or whole-PC fresh inventory claim.
+Source/application/goal qualifications unchanged; fe9 full continues independently.
+
+### November17 2026 —fe9 full closed at stale SFM descriptor path
+
+The fe9 default stopped04:27:26.4771603Z with1029source unchanged, after Source
+foundation/shapes/base/animation and all preceding reviewed stages passed.
+verify_shape_catalog.py uses fixture_output() for VRM inputs but still reads its
+Mima face descriptor fromlocaloutput, selecting a stale old-worktree path. Root
+has the retained current Mima preparation used by the prior52 route; a minimal
+fixture-root source correction and broader bypass scan are being prepared. No
+native geometry/file replacement or full PASS is inferred. Root audited68private
+jobs(67exit0+Krita cancel2), exact inline/source/birth/scopes and closed desktops,
+released04:29:31.8232736Z; inventory90a3c1b10a5fc4fed2196be7c720e26ff899b41b0b47b0a12248dddfe7729cb6.
+No failed private job is invented for the missing-file exception before catalogue
+unit/GPU launch. Previous CRLF fixture success remains167/separate77+96. MainE8
+backup/readback and exact71publiccachecleanup remain recorded. Product unmerged;
+manualDEFERRED,55/62 and52/54 unchanged. Current pickup gives the concrete next task.
+
+### November17 2026 —00bf native catalogue/height passes and active full
+
+At 2026-11-17T04:44:03.096097+00:00, frozen00bf0f9 full is RUNNING from04:42:33Z. Coordinator21216
+birth04:42:33.4387679Z; Python16808 birth04:42:33.9446445Z,parent21216(GetProcess;
+CIMrounded notID). Source1029 unchanged/root native lane exclusive. Only two
+test fixture selectors differ fromfe9, no product or assertions change. Actual
+catalogue130+unit34/all7plans includingMima, comparison94/6native, height105/6native
+andrawVRM9 pass with sources same/scopesclosed. CurrentMima identity matches its
+retaineddescriptor and prior52plan, not a historicalb577 substitution. Fresh
+6runtimes+694support+36fixtures and additionaldescriptor/Mima/rawVRM identities
+pass.00bf reconstructionpacket is prepared for main publication; no review-branch
+push attempted, full expected158/36/21 not success. Installed/oldreviews/assets
+preserved, no merge. Cleanup71complete; source witness/copyexecutor remain scoped
+and inactive. ManualDEFERRED;55/62 and52/54 unchanged.

@@ -1,0 +1,27 @@
+{
+  "scope": "Only authored text/ZIP primitives in verified owned temporary folders; no Q/main/build invocation, native inputs, application, Git, CIM or active output reads",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_owner_review_executor_20261117",
+    "-p",
+    "test_copy_executor.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "test_methods": 20,
+  "source_hashes": {
+    "copy_executor.py": "5301ee0c4a391452748c260dd510c121057dc9c37604ff9f9bd3cb3d83c425e5",
+    "test_copy_executor.py": "c4fb8a92be02aaa95eff3f20d2363a914ea4d6abd594e1381cf0e96dd73cc504",
+    "reference_builder.py": "a09361bf71593cc7ddc38af31e096abe97338a0437077b1cbff2e6558eca6f1e",
+    "README.template.md": "e704c4f9f69c10953bf3097eb107cdada1a7a33e79629978c9c14d5407f5b2a8"
+  },
+  "raw_log_sha256": "0231d807112b11f78850d33bb5e45a73b36e6c6564be981f3c68a3ff90408907",
+  "copy_executor_build_or_Q_activation_executed": false
+}

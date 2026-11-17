@@ -1,0 +1,16 @@
+{
+  "format": "has_foundation_recipe_cpu_admission_1",
+  "tests": 16,
+  "failures": 0,
+  "errors": 0,
+  "stdout": "test_changed_headless_ordered_log_refused (test_admission.Admission.test_changed_headless_ordered_log_refused) ... ok\ntest_coherent_authored_golden_digest_tamper_refused (test_admission.Admission.test_coherent_authored_golden_digest_tamper_refused) ... ok\ntest_coherent_cancel_exit_not_fabricated (test_admission.Admission.test_coherent_cancel_exit_not_fabricated) ... ok\ntest_coherent_foundation_count_change_refused (test_admission.Admission.test_coherent_foundation_count_change_refused) ... ok\ntest_coherent_headless_graphics_claim_refused (test_admission.Admission.test_coherent_headless_graphics_claim_refused) ... ok\ntest_coherent_physical_foreground_violation_refused (test_admission.Admission.test_coherent_physical_foreground_violation_refused) ... ok\ntest_coherent_root_timeout_refused (test_admission.Admission.test_coherent_root_timeout_refused) ... ok\ntest_duplicate_JSON_and_container_type_aliases_refused (test_admission.Admission.test_duplicate_JSON_and_container_type_aliases_refused) ... ok\ntest_exact_closed77_input_corpus_admitted (test_admission.Admission.test_exact_closed77_input_corpus_admitted) ... ok\ntest_headless_command_cannot_claim_private_graphics (test_admission.Admission.test_headless_command_cannot_claim_private_graphics) ... ok\ntest_recorded_nonzero_scope_refused (test_admission.Admission.test_recorded_nonzero_scope_refused) ... ok\ntest_resource_skip_cannot_be_relabelled_pass (test_admission.Admission.test_resource_skip_cannot_be_relabelled_pass) ... ok\ntest_root_false_result_refused (test_admission.Admission.test_root_false_result_refused) ... ok\ntest_separate_count_not_folded_or_waived (test_admission.Admission.test_separate_count_not_folded_or_waived) ... ok\ntest_source_after_mutation_refused (test_admission.Admission.test_source_after_mutation_refused) ... ok\ntest_stale_saved_private_receipt_path_refused (test_admission.Admission.test_stale_saved_private_receipt_path_refused) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.055s\n\nOK\n",
+  "closed_frozen_inputs_read": 77,
+  "native_engine_CIM_Git_or_upcoming_full_reads": false,
+  "source_hashes": {
+    "archive_checks.py": "36ebc65b97b1e568cf41841f918086a7a5a8ab60c9e8aab8e4ec38d63451f0ee",
+    "build_packet.py": "b932ec90ac34ec54b578e38eade56a82130c1ab5490982f31a369633068699da",
+    "verify_packet.py": "866c508c2c00f164d7abb9f7b44fcb60bc32fd526854e6010b1a3fcc6215427c",
+    "capture_inputs.py": "538effa1d541b59490c0474fdf62440868adf86c4fdf91afa09958742f260183",
+    "test_admission.py": "5dc55820aea01887fb70bc4c618b5b4ecdfefb9836a01d46fdc8604322b43988"
+  }
+}

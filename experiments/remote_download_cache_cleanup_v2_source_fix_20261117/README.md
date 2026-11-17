@@ -1,0 +1,9 @@
+# Minimal cache-cleanup V2 — preparation, not execution
+
+The actual first attempt stopped in preflight before any removal. Its saved result records zero Remove-Item returns, no attempted path and zero confirmed deletions. Get-GitRaw's awaited CopyToAsync task returned a PowerShell-visible VoidTaskResult before its byte array. The19 pure helper tests did not execute this Git reader. The old sealed51594... preparation,06f5... source,4e07... plan and actual attempt1 reports remain unchanged.
+
+V2 changes exactly one expression: assign the awaited CopyToAsync result to `$null` while still awaiting it and propagating errors. SOURCE_PROOF.json verifies the byte-exact inverse to the old source. Every scope/proof/HEAD/untracked/reparse/identity/journal/partial-failure/deletion gate is unchanged. The script intentionally still reads the original fixed PLAN.json with SHA4e07...; the structured root command chooses a fresh attempt2 report directory.
+
+Root must independently review the source and first-attempt zero-effect proof, run the separately prepared probe_readonly_git_bytes.ps1, and retain its actual PASS before retrying. That probe extracts only four named helper definitions, runs local read-only Git HEAD/blob/empty-untracked checks, and demands a single System.Byte[] output in all three cases. It checks the exact committed781680-byte proof blob and all71 target paths. It never invokes/dot-sources the cleanup entry, loads a deletion helper, reads cache bodies, writes a file or inspects native/current-full outputs. Root captures the probe JSON separately.
+
+Neither the V2 cleanup entry nor the read-only Git probe was invoked by preparation. Parser/source/inverse checks alone are not an actual Git reader PASS. Actual probe and cleanup results must stay in new root-owned output locations, separate from this source packet and all prior immutable evidence.

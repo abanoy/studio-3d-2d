@@ -1,0 +1,66 @@
+{
+  "format": "has_foundation_fe9_compact_actual_summary_1",
+  "qualification": "SCOPED_AUTHORED_FOUNDATION_NO_COMPLETE_FULL_OR_NATIVE_FIDELITY",
+  "revision": "fe9aace86f7a349c90a951ff26d76f746d1e4701",
+  "root_seconds": 12.0645659,
+  "foundation_checks": 167,
+  "foundation_members": {
+    "catalogue": 53,
+    "appearance": 29,
+    "headless_unit": 65,
+    "private_UI": 20
+  },
+  "separate_checks": {
+    "crosswalk_cpu": 77,
+    "bone_bindings_headless": 96
+  },
+  "authored_bindings": 79,
+  "authored_helper": 17,
+  "jiggle_cpu": 66,
+  "resource_write": {
+    "attempted": 7,
+    "passed": 6,
+    "explicitly_skipped": 1
+  },
+  "bridge_bootstrap": 2,
+  "functional_source_entries_unchanged": 1029,
+  "real_private_desktop_jobs": 1,
+  "recorded_headless_parse_run_processes": [
+    {
+      "case": "bindings",
+      "stage": "parse",
+      "pid": 26880,
+      "exit": 0
+    },
+    {
+      "case": "bindings",
+      "stage": "run",
+      "pid": 4412,
+      "exit": 0
+    },
+    {
+      "case": "helper",
+      "stage": "parse",
+      "pid": 25720,
+      "exit": 0
+    },
+    {
+      "case": "helper",
+      "stage": "run",
+      "pid": 5384,
+      "exit": 0
+    }
+  ],
+  "headless_private_receipts_fabricated": false,
+  "private_receipt_path": "output/private-desktop/source_choices_smoke_b57c838fe75442eb8f81abcf20c10a0f.json",
+  "recorded_main_review_zero_scope_observations": [
+    "before",
+    "foundation-after",
+    "after"
+  ],
+  "metadata_child_scope": "Original success/cancel/refusal scalar records preserved; cancel has no exit field. No new per-worker physical completion receipt is invented.",
+  "full_suite_pass_claimed": false,
+  "native_fidelity_or_solver_or_adoption_claimed": false,
+  "decoded_golden_model_art_media_or_native_arrays_included": false,
+  "upcoming_full_output_read": false
+}

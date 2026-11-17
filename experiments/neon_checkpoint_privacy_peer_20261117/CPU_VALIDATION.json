@@ -1,0 +1,13 @@
+{
+  "format": "has_checkpoint_catalogue_helper_cpu_checks_1",
+  "observed_utc": "2026-11-17T03:45:05.727529+00:00",
+  "tests": 4,
+  "failures": 0,
+  "errors": 0,
+  "stdout": "test_array_scan_reports_location_count_without_publishing_values (test_catalogue_helpers.CatalogueHelperTests.test_array_scan_reports_location_count_without_publishing_values) ... ok\ntest_literal_lists_extracted_without_executing_preparer (test_catalogue_helpers.CatalogueHelperTests.test_literal_lists_extracted_without_executing_preparer) ... ok\ntest_packet_roles_and_duplicate_payload_rejections (test_catalogue_helpers.CatalogueHelperTests.test_packet_roles_and_duplicate_payload_rejections) ... ok\ntest_selection_rejects_dynamic_or_missing_roles (test_catalogue_helpers.CatalogueHelperTests.test_selection_rejects_dynamic_or_missing_roles) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+  "manifest_native_or_Git_reads": false,
+  "sources": {
+    "audit_catalogue_source.py": "72cf02eaaaf59cbcea95900703c07880dcf0604beb09d745308af757b3b329d3",
+    "test_catalogue_helpers.py": "da09c1f94ec41b9d41c676388eb83f8bfdc5731f0b7bde57d11253465d49000a"
+  }
+}

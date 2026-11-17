@@ -1,0 +1,78 @@
+PASS unit: 0.605s
+PASS motion_parts: 1.156s
+PASS motion_helper_edits: 0.312s
+PASS opaque_order: 0.414s
+PASS required_extensions: 0.432s
+PASS contact_bend: 0.258s
+PASS spikes: 5.918s
+PASS editor: 9.961s
+PASS export_failures: 1.002s
+PASS audio_editor: 9.774s
+PASS audio_dummy: 4.607s
+PASS ui: 4.745s
+PASS recovery_write: 7.491s
+PASS recovery: 4.537s
+PASS pose: 9.797s
+PASS autokey: 13.712s
+PASS new_scene: 10.792s
+PASS world_selection: 10.968s
+PASS world_document: 4.713s
+PASS world_runtime: 10.751s
+PASS world_edit: 24.918s
+PASS world_workflow: 11.616s
+PASS object_timing: 18.541s
+PASS bone_labels: 4.855s
+PASS animation_clips_unit: 0.4s
+PASS animation_clips: 22.666s
+PASS visibility: 18.488s
+PASS animated_channels: 17.842s
+PASS limb_ik: 27.149s
+PASS secondary_motion: 10.495s
+PASS fan_motion: 19.287s
+PASS physics: 43.849s
+PASS physics_contacts: 92.686s
+PASS physics_props: 24.499s
+PASS physics_recording_unit: 0.497s
+PASS physics_recording: 41.433s
+PASS neon workspace: inset rays, compact row input, rail arrangements and live behavior
+PASS pending helper wind before Apply, temporary group checks, popup Escape and exact source restoration
+PASS captured snapshot launch order, live save frames, failed thread startup, cancellation and offline cold reads
+PASS middle-click tools, non-blocking editing panels, movable/resizable workspace and readable selection text
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify.py", line 619, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify.py", line 239, in main
+    source_choice_log = run([sys.executable, '-B', 'tests/verify_source_choice_foundation.py', '--output', str(source_choice_folder)], timeout=350)
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify.py", line 24, in run
+    raise RuntimeError(f"Exit {result.returncode}: {args}\n{result.stdout}\n{result.stderr}")
+RuntimeError: Exit 1: ['C:\\Program Files\\Python313\\python.exe', '-B', 'tests/verify_source_choice_foundation.py', '--output', 'C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\canonical-spikes\\1794886264394629400\\source-choices']
+
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_choice_foundation.py", line 39, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_choice_foundation.py", line 32, in main
+    run([sys.executable,'-B','tests/verify_source_bone_bindings.py','--output',str(folder/'bindings-headless')],folder,'bindings-headless',150)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_choice_foundation.py", line 9, in run
+    p=subprocess.run(args,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8',errors='replace',timeout=timeout);text=p.stdout+p.stderr;(folder/(label+'.log')).write_text(text,encoding='utf-8');assert p.returncode==0 and not any(x in text for x in BAD),str(folder)+'\n'+text[-5000:];return text
+                                                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\output\canonical-spikes\1794886264394629400\source-choices
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_bone_bindings.py", line 187, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_bone_bindings.py", line 138, in main
+    console, engine, run = run_phase(script, target, 'run', fixture, runtime)
+                           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_bone_bindings.py", line 106, in run_phase
+    require(not timed_out and process.returncode == 0 and engine_log.is_file(),
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            script + '/' + phase + ' failed or timed out; raw evidence retained')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_bone_bindings.py", line 26, in require
+    raise ValueError(message)
+ValueError: tests/source_bone_bindings_unit.gd/run failed or timed out; raw evidence retained
+
+

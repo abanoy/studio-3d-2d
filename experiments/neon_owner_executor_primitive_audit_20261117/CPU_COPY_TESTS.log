@@ -1,0 +1,26 @@
+test_Q_mapping_API_installs_proxy_in_exact_Git_function_globals (test_copy_executor.CopyPrimitives.test_Q_mapping_API_installs_proxy_in_exact_Git_function_globals) ... ok
+test_archive_inventory_budget_refuses_before_any_payload_read (test_copy_executor.CopyPrimitives.test_archive_inventory_budget_refuses_before_any_payload_read) ... ok
+test_bad_payload_SHA_and_extra_archive_member_refuse (test_copy_executor.CopyPrimitives.test_bad_payload_SHA_and_extra_archive_member_refuse) ... ok
+test_changed_source_refuses_before_destination_creation (test_copy_executor.CopyPrimitives.test_changed_source_refuses_before_destination_creation) ... ok
+test_copy_exclusive_creation_defeats_destination_race (test_copy_executor.CopyPrimitives.test_copy_exclusive_creation_defeats_destination_race) ... ok
+test_copy_path_escape_and_equal_boundary_refuse (test_copy_executor.CopyPrimitives.test_copy_path_escape_and_equal_boundary_refuse) ... ok
+test_corrupt_payload_CRC_refuses (test_copy_executor.CopyPrimitives.test_corrupt_payload_CRC_refuses) ... ok
+test_exact_copy_preserves_raw_bytes_stamps_and_original (test_copy_executor.CopyPrimitives.test_exact_copy_preserves_raw_bytes_stamps_and_original) ... ok
+test_exact_reference_and_only_requested_helper_ASTs_load (test_copy_executor.CopyPrimitives.test_exact_reference_and_only_requested_helper_ASTs_load) ... ok
+test_existing_copy_is_never_overwritten (test_copy_executor.CopyPrimitives.test_existing_copy_is_never_overwritten) ... ok
+test_exporter_noncache_catalogue_scope (test_copy_executor.CopyPrimitives.test_exporter_noncache_catalogue_scope) ... ok
+test_packed_schema4_inventory_SHA_CRC_readback (test_copy_executor.CopyPrimitives.test_packed_schema4_inventory_SHA_CRC_readback) ... ok
+test_postcopy_source_mutation_refuses_and_retains_partial_copy (test_copy_executor.CopyPrimitives.test_postcopy_source_mutation_refuses_and_retains_partial_copy) ... ok
+test_relative_source_names_reject_traversal_aliases_and_ADS (test_copy_executor.CopyPrimitives.test_relative_source_names_reject_traversal_aliases_and_ADS) ... ok
+test_reparse_attribute_refuses_without_creating_a_link (test_copy_executor.CopyPrimitives.test_reparse_attribute_refuses_without_creating_a_link) ... ok
+test_source_map_has_exact_functional_scope_excluding_caches (test_copy_executor.CopyPrimitives.test_source_map_has_exact_functional_scope_excluding_caches) ... ok
+test_support_Git_blob_keeps_exact_CRLF_without_normalization (test_copy_executor.CopyPrimitives.test_support_Git_blob_keeps_exact_CRLF_without_normalization) ... ok
+test_support_bad_hash_and_existing_target_refuse (test_copy_executor.CopyPrimitives.test_support_bad_hash_and_existing_target_refuse) ... ok
+test_unsafe_archive_member_and_duplicate_members_refuse (test_copy_executor.CopyPrimitives.test_unsafe_archive_member_and_duplicate_members_refuse) ... ok
+test_unsupported_archive_compression_refuses (test_copy_executor.CopyPrimitives.test_unsupported_archive_compression_refuses) ... ok
+test_write_new_JSON_is_exclusive (test_copy_executor.CopyPrimitives.test_write_new_JSON_is_exclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.509s
+
+OK

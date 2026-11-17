@@ -1,0 +1,58 @@
+{
+  "scope": "Own pinned source imports and authored synthetic metadata/text/ZIP/fakeGit only; no actual Git, Q admission/build/native/engine/CIM/active outputs",
+  "source_hashes": {
+    "copy_executor.py": "0d966a3c229fe21aed6a27c425ca1c6704cdb28d57e52a39c00098f88332bcf2",
+    "test_copy_executor.py": "19de5733c5acd328fbb0410cfc0436c0440db0d88479f6aed9295aa92b6090ec",
+    "qualified_inputs.py": "7969139311f77874bbcd361df3aefc7855076fa33893c401ab37b5552a6c1720",
+    "test_qualified_inputs.py": "ef4c570898c3872fae770830dfe5d51b334d7819b10d45f1b829065b03f681b2",
+    "reference_builder.py": "a09361bf71593cc7ddc38af31e096abe97338a0437077b1cbff2e6558eca6f1e",
+    "README.template.md": "e704c4f9f69c10953bf3097eb107cdada1a7a33e79629978c9c14d5407f5b2a8"
+  },
+  "results": [
+    {
+      "pattern": "test_copy_executor.py",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_owner_review_executor_20261117",
+        "-p",
+        "test_copy_executor.py",
+        "-v"
+      ],
+      "methods": 21,
+      "exit_code": 0,
+      "raw_log": "CPU_COPY_TESTS.log",
+      "raw_log_sha256": "e7db69c5b8b9b3326d8cd2475dc3a5b1629c66af9f157db7eb78268321ae6236"
+    },
+    {
+      "pattern": "test_qualified_inputs.py",
+      "command": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_owner_review_executor_20261117",
+        "-p",
+        "test_qualified_inputs.py",
+        "-v"
+      ],
+      "methods": 12,
+      "exit_code": 0,
+      "raw_log": "CPU_Q_TESTS.log",
+      "raw_log_sha256": "bbcd7cf7ceae8acfce1b24238c1211202fd9120916dfd9b13c89157f02d48178"
+    }
+  ],
+  "all_passed": true,
+  "H_mapping_proxy_updates_exact_function_globals_regression": true,
+  "actual_Q_activation_or_build_executed": false
+}

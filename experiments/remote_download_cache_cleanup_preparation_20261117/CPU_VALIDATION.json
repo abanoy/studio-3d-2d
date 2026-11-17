@@ -1,0 +1,31 @@
+{
+  "cache_files_read_by_this_test": false,
+  "checks": 19,
+  "Git_native_process_or_delete_invoked": false,
+  "cases": [
+    "Independent Python-pinned base64/SHA256/Git blob positive",
+    "Wrong ordered path refused",
+    "Malformed base64 refused",
+    "Changed cached Git blob refused",
+    "Changed published SHA256 refused",
+    "Boolean byte count refused",
+    "Numeric remote-exact flag refused",
+    "Unproven remote method refused",
+    "Non-English inline UTF8 fallback exact bytes",
+    "Empty inline fallback retains published fallback method",
+    "External1ce UTF8 fallback exact bytes",
+    "Wrong auxiliary Git blob refused",
+    "Literal scope-generator source found",
+    "Exactly71 unique explicit generated cache paths",
+    "29plus42 exact endpoints and grouping",
+    "Auxiliary/newer/native/tool/review paths excluded from deletion scope",
+    "One literal-only PowerShell file deletion statement",
+    "No recursive deletion switch",
+    "Entry disabled before helper definitions or filesystem actions"
+  ],
+  "failures": 0,
+  "cleanup_entry_invoked": false,
+  "cleanup_source_sha256": "06f5a8804b5859ccab60d5770eb301714570555ed3a84ee489c0f142087ca975",
+  "parsed_remove_statements": 1,
+  "format": "has_cache_cleanup_extracted_pure_helper_cpu_1"
+}

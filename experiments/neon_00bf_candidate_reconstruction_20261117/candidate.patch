@@ -1,0 +1,79 @@
+diff --git a/LLM.md b/LLM.md
+index efb5895..fe7c244 100644
+--- a/LLM.md
++++ b/LLM.md
+@@ -5611,3 +5611,18 @@ changes; all79+17predicates/wrapper/timeouts/error policy remain. Source10CPU me
+ and independent10 pass; actual Foundation167/separate77+96 and full successor are
+ still required. Root closed51private jobs50exit0+Krita2 and separate headless exit1,
+ source1029 unchanged, released03:51:37Z. No product change/fullPASS/merge is claimed.
++
++## Windows native fixture-root selectors — 2026-11-17
++
++Thefe9 full passed all earlier corrected stages, then shape catalogue selected a
++stale local Mima descriptor instead of the configured fixture root. Root closed
++68private jobs(67exit0+Krita2), source1029unchanged, released04:29:31Z. Catalogue
++now uses its existing fixture_output helper for that descriptor. Character-height,
++another registered later consumer, imports the same helper for its raw VRM manifest
++instead of silently missing that native case. Both default paths remain identical
++without override; all original native cases/assertions/movie thresholds remain.
++Two independent11-method source/AST CPU runs pass. Root currentMima hash/size
++matches its own retained descriptor and exact priorMain52 catalogue plan; this
++does not recover or substitute the different oldb577bundle. Actual focused checks
++and another complete default are required. Product code/look and merge status
++remain unchanged; no full PASS or artist fidelity is inferred.
+diff --git a/docs/REDESIGN-PORT.md b/docs/REDESIGN-PORT.md
+index 6246fd7..7e5b3e1 100644
+--- a/docs/REDESIGN-PORT.md
++++ b/docs/REDESIGN-PORT.md
+@@ -1180,3 +1180,18 @@ changes; all79+17predicates/wrapper/timeouts/error policy remain. Source10CPU me
+ and independent10 pass; actual Foundation167/separate77+96 and full successor are
+ still required. Root closed51private jobs50exit0+Krita2 and separate headless exit1,
+ source1029 unchanged, released03:51:37Z. No product change/fullPASS/merge is claimed.
++
++## Windows native fixture-root selectors — 2026-11-17
++
++Thefe9 full passed all earlier corrected stages, then shape catalogue selected a
++stale local Mima descriptor instead of the configured fixture root. Root closed
++68private jobs(67exit0+Krita2), source1029unchanged, released04:29:31Z. Catalogue
++now uses its existing fixture_output helper for that descriptor. Character-height,
++another registered later consumer, imports the same helper for its raw VRM manifest
++instead of silently missing that native case. Both default paths remain identical
++without override; all original native cases/assertions/movie thresholds remain.
++Two independent11-method source/AST CPU runs pass. Root currentMima hash/size
++matches its own retained descriptor and exact priorMain52 catalogue plan; this
++does not recover or substitute the different oldb577bundle. Actual focused checks
++and another complete default are required. Product code/look and merge status
++remain unchanged; no full PASS or artist fidelity is inferred.
+diff --git a/tests/verify_character_height.py b/tests/verify_character_height.py
+index b9f23ba..f7d086c 100644
+--- a/tests/verify_character_height.py
++++ b/tests/verify_character_height.py
+@@ -1,5 +1,6 @@
+ """Optional neutral character-size review, source integrity and standard placement."""
+ from pathlib import Path
++from native_fixture_root import fixture_output
+ import hashlib,json,subprocess,sys,time
+ ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT));from run import command
+ from native_fixture_plans import catalogue_native_plans
+@@ -8,7 +9,7 @@ def main():
+     plans=[{'label':'Authored figure','source':str(ROOT/'examples/tutorials/Practice figure.glb'),'metadata':{},'rotation':[0,0,0,1]}]
+     native=catalogue_native_plans()
+     originals={}
+-    raw_plan={};native_manifest=ROOT/'output/native-import-verification.json'
++    raw_plan={};native_manifest=fixture_output()/'native-import-verification.json'
+     if native_manifest.is_file():
+         for name in json.loads(native_manifest.read_text(encoding='utf-8')).get('bundles',[]):
+             bundle=Path(name);report_path=bundle/'parameters.json'
+diff --git a/tests/verify_shape_catalog.py b/tests/verify_shape_catalog.py
+index 3f3ec33..4da7c46 100644
+--- a/tests/verify_shape_catalog.py
++++ b/tests/verify_shape_catalog.py
+@@ -21,7 +21,7 @@ def main():
+         for name in json.loads(native.read_text(encoding='utf-8')).get('bundles',[]):
+             bundle=Path(name);report=json.loads((bundle/'parameters.json').read_text(encoding='utf-8'))
+             if report.get('kind')=='vrm_preparation':plans.append({'label':'VRM'+report['vrm_version'],'source':str(bundle/'scene.glb')})
+-    face=ROOT/'output/sfm-face-pilot.json'
++    face=fixture_output()/'sfm-face-pilot.json'
+     if face.is_file():
+         report=json.loads(face.read_text(encoding='utf-8'))
+         if report.get('preparation_complete'):plans.append({'label':'Supplied Mima','source':str(Path(report['bundle'])/'scene.glb')})

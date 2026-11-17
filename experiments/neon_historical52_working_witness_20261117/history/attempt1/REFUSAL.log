@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\neon_historical52_working_witness_20261117\capture_witness.py", line 50, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "C:\a\Programming\cloudflare\has-acceptance-session-20261111\experiments\neon_historical52_working_witness_20261117\capture_witness.py", line 38, in main
+    else:raise ValueError('historical52 raw EOL recipe unsupported: '+name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: historical52 raw EOL recipe unsupported: tests/source_choices_smoke.gd

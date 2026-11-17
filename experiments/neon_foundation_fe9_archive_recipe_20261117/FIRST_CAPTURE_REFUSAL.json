@@ -1,0 +1,10 @@
+{
+  "format": "has_foundation_first_capture_source_refusal_1",
+  "stage": "Before frozenINPUTS or archive creation",
+  "error": "KeyError: tests\\verify_source_choice_foundation.py",
+  "cause": "Original scoped verification uses Windows str(Path) spelling; root1029 map uses as_posix. Raw report must remain unchanged; compare separator-only normalized path identities explicitly.",
+  "checker_sha256": "bf4b5653b927b41b838204ff8bd92f7bd6890ef98167a6d7349a838a7d2d2c39",
+  "capture_sha256": "538effa1d541b59490c0474fdf62440868adf86c4fdf91afa09958742f260183",
+  "native_or_engine_or_CIM_or_Git_invocation": false,
+  "archive_created": false
+}

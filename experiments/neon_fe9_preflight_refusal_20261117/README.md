@@ -1,0 +1,3 @@
+The first fe9 full preparation refused before reservation or native launch: the unchanged protected-input reader reported that ffprobe.exe changed during its read. The failing field was not captured, so the cause is UNKNOWN. No identity guard was changed.
+
+A subsequent four-point lstat/fstat/fstat/lstat observation shows identical device, inode, size, mtime, link count and file attributes, with the original approved SHA256, size and mtime. FFPROBE_STAMP_OBSERVATION.json records that later observation, not the missing first stamps. The exact strict preparation will be retried after this check; this note asserts no successful preparation or full result.

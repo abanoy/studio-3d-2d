@@ -1,0 +1,34 @@
+{
+  "status": "SOURCE_CPU_GO_INACTIVE_QUALIFIED_INPUTS_ADAPTER",
+  "source_hashes": {
+    "qualified_inputs.py": "537af302a56d434dbf531f93ab6cdf5fae60bebcff23c5739631ad8a4db884cb",
+    "test_qualified_inputs.py": "c7aea352b410c295c1415c93c68c619207f86f748897ab58e1e657058e75a76d",
+    "copy_executor.py": "0d966a3c229fe21aed6a27c425ca1c6704cdb28d57e52a39c00098f88332bcf2",
+    "admission_core.py": "cdad5359f6fe6bf63d93bd95845680dec7f6eb2d041b265d05b05efe3ce1096f"
+  },
+  "methods": 13,
+  "failures": 0,
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_owner_review_executor_20261117",
+    "-p",
+    "test_qualified_inputs.py",
+    "-v"
+  ],
+  "raw_log_sha256": "ca7876c12894001a4d9f94d6a6116142621565f9547ad2f754e3f53717bc3ec2",
+  "independent_manual_newline_masks_tested": 3,
+  "manual_mask_cases": "3:05,8:81 and preserved lone-CR interior; all1019 authored entries reconstruct exactly",
+  "actual_activation_None": true,
+  "source_only_guarded_predecessor_lock_delta_and_unused_reparse_checks_reviewed": true,
+  "actual_historical_or_current_candidate_or_native_source_bytes_read_by_peer": false,
+  "actual_Git_engine_CIM_or_build_executed": false,
+  "active_output_reads": false,
+  "positive_actual_qualified_build_path": "UNRUN_REQUIRES_FUTURE_ACTUAL_FULL_AND_MERGE_ACTIVATION"
+}

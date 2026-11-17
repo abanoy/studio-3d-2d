@@ -1,0 +1,41 @@
+{
+  "format": "has_shape_catalog_fixture_root_source_successor_1",
+  "originals": [
+    {
+      "path": "tests/verify_shape_catalog.py",
+      "bytes": 3846,
+      "sha256": "9792946c73c594e7ff93a8504f842a045f6823d20b789a7b88b9a550deb589fe"
+    },
+    {
+      "path": "tests/native_fixture_root.py",
+      "bytes": 468,
+      "sha256": "dc921a82efc7d238f3bb219a15d7477ab6520407f33d14ab412cc80e6a3b581d"
+    },
+    {
+      "path": "tests/verify_character_height.py",
+      "bytes": 5642,
+      "sha256": "8221ea1aad8ae02833d4dffacd938fa9da516162e6c343e5b1a85de02f4af77e"
+    }
+  ],
+  "shape_successor": {
+    "path": "verify_shape_catalog.proposed.py",
+    "bytes": 3851,
+    "sha256": "54431c2c486bce9828ec47ebe046da9f413b3854e8c0290829c24183fe72e057",
+    "old_expression": "face=ROOT/'output/sfm-face-pilot.json'",
+    "new_expression": "face=fixture_output()/'sfm-face-pilot.json'",
+    "exact_one_expression_inverse": true,
+    "all_original_other_bytes_predicates_native_cases_movie_and_preservation_checks_retained": true
+  },
+  "height_separate_proposal": {
+    "path": "verify_character_height.proposed.py",
+    "bytes": 5695,
+    "sha256": "cccfb7d472b5d552cbd3cfc07dc9058c1789b9c1947f6a1a548c924dd38a3f79",
+    "change": "Import existing fixture_output and use it only for native manifest selector",
+    "exact_import_and_expression_inverse": true,
+    "registered_default_consumer": true,
+    "applied": false
+  },
+  "review_or_main_functional_files_edited": false,
+  "native_file_content_or_engines_CIM_Git_read_or_run": false,
+  "root_owns_native_input_identity_and_focused_execution": true
+}

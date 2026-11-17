@@ -1,0 +1,36 @@
+{
+  "format": "has_authored_GLB_fixture_EOL_source_proposal_1",
+  "main52_sha256": "b7d7ade31c25f03c7d2d4228a75ed76626712c234c68cc715660bfb57d5aa7f3",
+  "candidate375_working_sha256": "a77d759d512f3bed34599bacccddb00be0ffb94806222261a827bf1cf25ed10d",
+  "working_sources_LF_bytes_exact": true,
+  "candidate_working_CRLF_lines": 319,
+  "proposed_sha256": "80764dea7982a11f1d42a9bcbfb36b74c44edb6e620ddb585fa37dc1c8ab1e09",
+  "exact_one_expression_byte_inverse": true,
+  "original_expression": "GOLDEN_GLB.replace(\"\\n\", \"\")",
+  "proposed_expression": "GOLDEN_GLB.replace(\"\\r\", \"\").replace(\"\\n\", \"\")",
+  "unchanged_sources": {
+    "tests/source_native_helper_choice_unit.gd": "457783b00e667c7dddebff8bac990a9a6dc816b4abdefd4ffd3d11c3d8643d0a",
+    "tests/verify_source_bone_bindings.py": "b5e5cd384b5fc3cece282cd6abd198f510c65438e530edc08364a456b362a5e7"
+  },
+  "expected_original_checks": {
+    "bindings": 79,
+    "helper": 17
+  },
+  "GLB_SHA_unchanged": "39637fa34e53c81708329ab963659e8100a285a92e25a22a92ab5e708c0154c1",
+  "BAD_CHUNKS_SHA_unchanged": "95e0c8785860cfce8ad34a60ff58feef6c65d22ea6a6d318d9523ddfdd0ff934",
+  "closed_failure_log": {
+    "original": "C:\\a\\Programming\\cloudflare\\has-neon-review-20261116-c2d52ff\\output\\canonical-spikes\\1794886264394629400\\source-choices\\bindings-headless\\bindings\\run-engine.log",
+    "sha256": "f19d4d5b77f5197b68c31fca5265096acad031d102966cc1db8ff982298e36a2"
+  },
+  "literal_Git_blob_comparison": {
+    "path": "original-candidate-git-blob.gd",
+    "bytes": 27810,
+    "sha256": "b7d7ade31c25f03c7d2d4228a75ed76626712c234c68cc715660bfb57d5aa7f3",
+    "git_blob_oid_independently_recomputed": "66f6af2b9236aefcab46ba29c4e7b63b01e7e144",
+    "main52_and_candidate375_Git_body_bytes_exact": true,
+    "origin": "Root supplied immutable Gitshow375 blob; this source task did not run Git."
+  },
+  "Godot_parse_or_execution": "UNRUN_ROOT_OWNED",
+  "product_code_or_predicate_or_threshold_changed": false,
+  "native_input_files_or_engines_CIM_Git_read_or_run_by_preparation": false
+}

@@ -1,0 +1,52 @@
+{
+  "format": "has_neon_owner_admission_independent_source_CPU_peer_1",
+  "sealed_utc": "2026-11-17T03:49:31.884624+00:00",
+  "qualification": "SOURCE_GO_INACTIVE_BOUNDED_PROPOSAL_ONLY",
+  "files": [
+    {
+      "path": "admission_core.before_peer_fix.py",
+      "bytes": 15052,
+      "sha256": "4b5b2e55be7734995be15cc01636acf90fb69248e03e49d9869f32e766e69f4b"
+    },
+    {
+      "path": "FINAL_CPU_TESTS.log",
+      "bytes": 4453,
+      "sha256": "5248dcfd65a961227c031aded5ea1c9ef86ab84ef3b6b364c1278293873cf611"
+    },
+    {
+      "path": "FINAL_REPORT.json",
+      "bytes": 2343,
+      "sha256": "ab9eab80229beb56f417f958e5db85365c149d46ff67d16a2cb004bb26f39b53"
+    },
+    {
+      "path": "PRELIMINARY_GAP.json",
+      "bytes": 746,
+      "sha256": "90db0a20c5e707fd1928a2ceb99394b649984b4320280d38e3cf2448ec2cb79b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1941,
+      "sha256": "d52c4234b4165336177038cd843f2e9f9a43b3d95bf3a5e01e0a2ec979875472"
+    },
+    {
+      "path": "REGISTRY_GAP.json",
+      "bytes": 389,
+      "sha256": "33d2ed0b074f545ef0fc675c61940c99dc11ed1be3a3df518e80f1290df753ad"
+    },
+    {
+      "path": "test_admission_core.before_peer_fix.py",
+      "bytes": 14786,
+      "sha256": "4cb5a0cb50b0812be207ad9f75359fdd5814c640d9a53300c66c6db2579b3b67"
+    }
+  ],
+  "file_count": 7,
+  "reviewed_core_sha256": "cdad5359f6fe6bf63d93bd95845680dec7f6eb2d041b265d05b05efe3ce1096f",
+  "reviewed_tests_sha256": "799431e4acb958034f8101fb608f24fadca19f518a56e68a4dad54334799b191",
+  "CPU_methods": 27,
+  "failures": 0,
+  "two_initial_coherent_acceptances_preserved_and_now_refused": true,
+  "actual_historical52_byte_witness_missing_disclosed": true,
+  "actual_activation_still_UNREADY": true,
+  "copy_executor_unimplemented_at_review": true,
+  "no_native_engines_CIM_Git_or_active_output_reads": true
+}

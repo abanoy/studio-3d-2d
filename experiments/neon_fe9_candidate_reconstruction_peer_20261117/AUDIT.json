@@ -1,0 +1,75 @@
+{
+  "format": "has_fe9_public_text_reconstruction_peer_audit_1",
+  "observed_utc": "2026-11-17T04:27:38.455019+00:00",
+  "status": "PASS_LOCAL_TEXT_RECONSTRUCTION",
+  "packet_index_sha256": "156772da327880b276cea24dfa7ec22d6742943e781304f32ae2608253f913b5",
+  "payload_files": 7,
+  "payload_bytes": 248455,
+  "builder_sha256": "ccca45bd262edd23ff9b576591890d43278d900311174b3810677e90482ebecd",
+  "candidate_commit": "fe9aace86f7a349c90a951ff26d76f746d1e4701",
+  "sole_parent_commit": "375ec05e925159850ff3b0abf2e8f98f9d2ce129",
+  "candidate_tree": "f94e9045e77e1a5594eecf17b9104755251bf27c",
+  "parent_tree": "3dcc80fa95c6e385f455b04614cbc2c59eda4737",
+  "three_blobs_match_local_Git_objects": true,
+  "independent_parent_plus_three_blob_tree_reconstruction": true,
+  "changed_tree_objects": 3,
+  "patch_applied_in_RAM_exactly": true,
+  "working_EOL_recipes_reconstruct_exactly": true,
+  "fixture_changes_only_one_expression": true,
+  "parent_recovery_chain": {
+    "main_checkpoint": "e8cf93ce25811cbc967b1024a6d2c87ffd9cfb9a",
+    "retained_main_readback_sha256": "efb5fb94aee5e143deb0cb4dff17141ba1d35c29079694fdc830f92ac5a6157c",
+    "published375_packet_files_verified": 8,
+    "375_packet_INDEX_sha256": "ef5b48263fbeec32fc7c5197fdd59508a3a2b258397470de9930b17cf0cb332f",
+    "ultimate_base_commit": "4ed3a63b716f696daa1699a76443d6f1abb9b096",
+    "375_rebuilt_root_tree": "3dcc80fa95c6e385f455b04614cbc2c59eda4737",
+    "fe9_rebuilt_root_tree": "f94e9045e77e1a5594eecf17b9104755251bf27c",
+    "both_recovery_steps_in_RAM": true,
+    "Git_objects_written": false,
+    "wording_limit": "Fe9 scope string says known remote parent; its direct375 parent is instead recovered through the explicit e8-published packet. README and parent_reconstruction correctly describe that chain."
+  },
+  "text_files": [
+    {
+      "path": "LLM.md",
+      "git_blob": "efb589500369b87d7e0db1fbbbab951666d13360",
+      "blob_bytes": 508170,
+      "blob_sha256": "c4b1c4a54ebe74a0099026fbdef96ba88cdc7f6d66fb61dee682d6fac3d807db",
+      "working_bytes": 513648,
+      "working_sha256": "4d8ee914c4372e3192bcca497239187153ca3ce413b9857ef3b2e563ed2431c4",
+      "selected_CRLF_lines": 5478,
+      "current_readonly_working_bytes_match_retained_recipe": true
+    },
+    {
+      "path": "docs/REDESIGN-PORT.md",
+      "git_blob": "6246fd70a311c39bb3ce1a08f3a961846062e98c",
+      "blob_bytes": 102942,
+      "blob_sha256": "9679e6321a9cba9eed2074a39e134ccb4f1268ded810a9e036b4450be0f00e2c",
+      "working_bytes": 103989,
+      "working_sha256": "057b362ea998d3cca82d58943529b93beeeb73f7b0b017b41d1dcae7ca118123",
+      "selected_CRLF_lines": 1047,
+      "current_readonly_working_bytes_match_retained_recipe": true
+    },
+    {
+      "path": "tests/source_bone_bindings_unit.gd",
+      "git_blob": "c3ca9db4c3b134bb6b4ab7b5be15a80da6f95291",
+      "blob_bytes": 27828,
+      "blob_sha256": "4343017deff05f4bfaf4a26f96bb99ae2230adb5af9947c893c02f77652c8847",
+      "working_bytes": 28147,
+      "working_sha256": "80764dea7982a11f1d42a9bcbfb36b74c44edb6e620ddb585fa37dc1c8ab1e09",
+      "selected_CRLF_lines": 319,
+      "current_readonly_working_bytes_match_retained_recipe": true
+    }
+  ],
+  "packet_immutable": true,
+  "Git_operations": "Local cat-file commit/tree/blob reads only",
+  "remote_access_or_push_or_Git_mutation": false,
+  "checkout_or_native_process_or_CIM_mutation": false,
+  "media_private_native_array_or_original_asset_payloads_included": false,
+  "limits": [
+    "The direct375 parent is recovered through its e8-published packet;4ed is the ultimate base. No current remote availability observation.",
+    "This is a delta reconstruction from the specified parent, not a standalone full repository backup.",
+    "Working EOL recipes are separate from Git blob bytes; reproducing a working-byte hash requires applying the recipe after reconstructing the Git tree.",
+    "Publication authorization and automatic approval rejection are not overridden or tested by this audit.",
+    "No native/full test, feature correctness, merge or redesign adoption qualification follows from text reconstruction."
+  ]
+}

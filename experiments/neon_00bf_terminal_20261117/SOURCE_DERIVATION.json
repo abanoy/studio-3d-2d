@@ -1,0 +1,85 @@
+{
+  "format": "has_00bf_context_only_terminal_source_derivation_1",
+  "source_commit": "00bf0f916a549f5e858cb39dd91a149071fd5181",
+  "parent_index_sha256": "a35f9ac209f15e0eafcc20b50a53047e855ac77de899ad6c545a4e9c20c58d26",
+  "helper_legacy_terminal17tests_entire_files_exact": true,
+  "binder_literals_only_raw_byte_inverse": true,
+  "binding_and_API_tests_timestamp_literals_only_raw_inverse": true,
+  "registry_sole_source_commit_raw_byte_inverse_no_EOL_change": true,
+  "expected_sources": 1029,
+  "expected_groups": 158,
+  "expected_core": 36,
+  "expected_movies": 21,
+  "Neon_checks": 12504,
+  "lifecycle_checks": 29,
+  "CPU_methods_expected": 29,
+  "physical_job_count": "DERIVE_ACTUAL_NO_ASSUMPTION",
+  "binder_changes": [
+    [
+      "fe9aace86f7a349c90a951ff26d76f746d1e4701",
+      "00bf0f916a549f5e858cb39dd91a149071fd5181",
+      1
+    ],
+    [
+      "windows-neon-fe9aace-20261117T040348",
+      "windows-neon-00bf0f9-20261117T044200",
+      1
+    ],
+    [
+      "19668",
+      "21216",
+      2
+    ],
+    [
+      "28396",
+      "16808",
+      1
+    ],
+    [
+      "2026-11-17T04:04:17.2421226Z",
+      "2026-11-17T04:42:33.4387679Z",
+      1
+    ],
+    [
+      "2026-11-17T04:04:18.1277602Z",
+      "2026-11-17T04:42:33.9446445Z",
+      1
+    ],
+    [
+      "Exact fe91029",
+      "Exact 00bf1029",
+      1
+    ],
+    [
+      "has_neon_fe9_terminal_source_context_1",
+      "has_neon_00bf_terminal_source_context_1",
+      1
+    ]
+  ],
+  "bind_test_changes": [
+    [
+      "2026-11-17T04:04:18.1277601Z",
+      "2026-11-17T04:42:33.9446444Z",
+      2
+    ],
+    [
+      "2026-11-17T04:04:17.2421210Z",
+      "2026-11-17T04:42:33.4387669Z",
+      1
+    ]
+  ],
+  "api_test_changes": [
+    [
+      "2026-11-17T04:04:18.1277600Z",
+      "2026-11-17T04:42:33.9446440Z",
+      2
+    ]
+  ],
+  "expected_GetProcess_birth": "2026-11-17T04:42:33.9446445Z",
+  "expected_actual_CIM_metadata": "2026-11-17T04:42:33.9446440Z",
+  "synthetic_negative_CIM_timestamp": "2026-11-17T04:42:33.9446444Z",
+  "helper_output_format_labels_inherited_ffcf_unchanged": true,
+  "active_state_report_log_source_after_or_process_query_read": false,
+  "engines_CIM_Git_executed": false,
+  "strict_sevenfield_API_adapter_entire_function_and_main_call_exact": true
+}

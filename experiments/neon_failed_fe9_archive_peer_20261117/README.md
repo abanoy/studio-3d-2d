@@ -1,0 +1,1 @@
+Independent source and CPU peer of the closed failed fe9 archive recipe. Twelve methods passed. The artifact-only verifier has the bounded scope stated by the recipe; this report does not turn the failed full into a pass or qualify a successor. The test observation is recorded from tool chunk90e188; no raw stdout file was captured by this peer.

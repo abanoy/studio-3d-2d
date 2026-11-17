@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_bone_bindings.py", line 187, in <module>
+    main()
+    ~~~~^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_bone_bindings.py", line 138, in main
+    console, engine, run = run_phase(script, target, 'run', fixture, runtime)
+                           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_bone_bindings.py", line 106, in run_phase
+    require(not timed_out and process.returncode == 0 and engine_log.is_file(),
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            script + '/' + phase + ' failed or timed out; raw evidence retained')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\a\Programming\cloudflare\has-neon-review-20261116-c2d52ff\tests\verify_source_bone_bindings.py", line 26, in require
+    raise ValueError(message)
+ValueError: tests/source_bone_bindings_unit.gd/run failed or timed out; raw evidence retained

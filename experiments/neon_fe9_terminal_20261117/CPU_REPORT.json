@@ -1,0 +1,32 @@
+{
+  "scope": "Synthetic binding/terminal/receipt data only; no observer, engines, CIM, Git or active state/report/log/source-after reads",
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_fe9_terminal_20261117",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "methods": 29,
+  "failures": 0,
+  "tested_files": {
+    "bind_context.py": "30bd12a790ec313ba86e6847f20bc094c585ae6391c19ef3e848ec3df8b87085",
+    "close_terminal.py": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+    "legacy_result_gates.py": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460",
+    "RESULT_REGISTRY.json": "f13eb79648e362633f2ae319ef919bd6c7859d983998659360b943d48c3c3079",
+    "CONTEXT.json": "bad177241d9b7ce7c774139e399054a0e0e2acd5d08a8e1e519256d9018f95f2",
+    "test_bind_context.py": "c4ebcc9851c99de92767994e24b8845931470a6d2137620845370b6e4a314cad",
+    "test_terminal.py": "861ded03ac673fa2cf8ab2f0a88192ee42c8d7571fd279d2036ea9479ac8377c",
+    "test_api_detail.py": "39b313846a21f8f7cc5046a9926d256234aed50ce4b1200832d4d45c8fe53b2b"
+  },
+  "raw_log_sha256": "d7e6915804fa6289b788ccfe77a94c6bfbf25d425be93691422afc9199eed0da",
+  "actual_terminal_helper_executed": false
+}

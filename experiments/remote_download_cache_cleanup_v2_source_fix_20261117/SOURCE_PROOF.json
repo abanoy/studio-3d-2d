@@ -1,0 +1,15 @@
+{
+  "format": "has_cache_cleanup_v2_exact_source_inverse_1",
+  "old_packet_INDEX_sha256": "51594c60ab1f10502c58acc0731423f44a543a80afb966422f811cf7654528d3",
+  "old_script_sha256": "06f5a8804b5859ccab60d5770eb301714570555ed3a84ee489c0f142087ca975",
+  "new_script_sha256": "d5d827d020eeb785c3495204dd5d9f863a6984e8a16c7b0a4c0e2182bd3f3db3",
+  "old_bytes": 21502,
+  "new_bytes": 21510,
+  "exact_single_expression_inverse": true,
+  "old_expression": "$copy.GetAwaiter().GetResult(); $stderr =",
+  "new_expression": "$null = $copy.GetAwaiter().GetResult(); $stderr =",
+  "old_PLAN_path": "experiments/remote_download_cache_cleanup_preparation_20261117/PLAN.json",
+  "old_PLAN_sha256": "4e07e5a6b939af7bfc7c5ac0f42a3adc5f3f883800711f35d6e55be57e59c35f",
+  "target_or_proof_or_journal_or_deletion_gates_changed": false,
+  "cleanup_entry_or_readonly_Git_probe_invoked_by_preparation": false
+}

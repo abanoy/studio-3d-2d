@@ -1,0 +1,10 @@
+{
+  "format": "has_foundation_artifact_verifier_peer_gap_1",
+  "archive_INDEX_sha256": "7679403431be50d5a84197bda8c027a78b770e0b7404cac62246d03d4743fc31",
+  "original_verifier_sha256": "866c508c2c00f164d7abb9f7b44fcb60bc32fd526854e6010b1a3fcc6215427c",
+  "original_artifact_verification_passed": true,
+  "scope_of_gap": "Original artifact verifier checks four constituent counts but omits passed/failure/source flags and some direct raw result joins; source admission checker already enforces those on actual originals.",
+  "actual_original_content_mismatch_observed": false,
+  "resolution": "Separate V2 independent artifact verifier with constituent parity and coherent RAM negatives; original verifier/artifact/source pins retained unchanged",
+  "native_or_upcoming_full_action": false
+}

@@ -1,0 +1,17 @@
+{
+  "format": "has_shape_descriptor_selector_source_CPU_1",
+  "observed_utc": "2026-11-17T04:38:34.105446+00:00",
+  "tests": 11,
+  "failures": 0,
+  "errors": 0,
+  "stdout": "test_absent_selected_descriptor_does_not_fall_back_to_present_stale_one (test_selection.Selection.test_absent_selected_descriptor_does_not_fall_back_to_present_stale_one) ... ok\ntest_default_lookup_is_exact_existing_checkout_output (test_selection.Selection.test_default_lookup_is_exact_existing_checkout_output) ... ok\ntest_empty_override_preserves_existing_helper_default_policy (test_selection.Selection.test_empty_override_preserves_existing_helper_default_policy) ... ok\ntest_file_override_refuses_even_when_checkout_descriptor_exists (test_selection.Selection.test_file_override_refuses_even_when_checkout_descriptor_exists) ... ok\ntest_height_separate_selector_default_override_and_exact_inverse (test_selection.Selection.test_height_separate_selector_default_override_and_exact_inverse) ... ok\ntest_missing_default_output_raises_original_helper_error (test_selection.Selection.test_missing_default_output_raises_original_helper_error) ... ok\ntest_missing_override_refuses_instead_of_falling_back (test_selection.Selection.test_missing_override_refuses_instead_of_falling_back) ... ok\ntest_override_selects_current_fixture_root_not_stale_checkout (test_selection.Selection.test_override_selects_current_fixture_root_not_stale_checkout) ... ok\ntest_relative_and_home_override_keep_actual_helper_resolution_steps (test_selection.Selection.test_relative_and_home_override_keep_actual_helper_resolution_steps) ... ok\ntest_shape_VRM_and_face_descriptors_share_selected_root (test_selection.Selection.test_shape_VRM_and_face_descriptors_share_selected_root) ... ok\ntest_shape_exact_byte_inverse_preserves_every_original_check_and_native_case (test_selection.Selection.test_shape_exact_byte_inverse_preserves_every_original_check_and_native_case) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.026s\n\nOK\n",
+  "actual_native_or_descriptor_file_content_read": false,
+  "virtual_paths_only": true,
+  "engine_CIM_Git_or_agent_functional_edit": false,
+  "sources": {
+    "test_selection.py": "dcbfb1f27dcf61dac76251cf3fd471aa31cda6a3b0644703970cb4001652868d",
+    "verify_shape_catalog.proposed.py": "54431c2c486bce9828ec47ebe046da9f413b3854e8c0290829c24183fe72e057",
+    "verify_character_height.proposed.py": "cccfb7d472b5d552cbd3cfc07dc9058c1789b9c1947f6a1a548c924dd38a3f79",
+    "original-native_fixture_root.py": "dc921a82efc7d238f3bb219a15d7477ab6520407f33d14ab412cc80e6a3b581d"
+  }
+}

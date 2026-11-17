@@ -1,0 +1,13 @@
+{
+  "wait_for_exit_argument_lists": [
+    "30000",
+    "5000"
+  ],
+  "parse_errors": 0,
+  "removal_statement": "Remove-Item -LiteralPath $identity.absolute_path -ErrorAction Stop",
+  "cleanup_entry_invoked": false,
+  "recursive_switches": 0,
+  "source_sha256": "06f5a8804b5859ccab60d5770eb301714570555ed3a84ee489c0f142087ca975",
+  "format": "has_cleanup_source_static_parse_1",
+  "remove_item_calls": 1
+}

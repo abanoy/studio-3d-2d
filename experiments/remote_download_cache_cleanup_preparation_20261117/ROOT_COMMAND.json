@@ -1,0 +1,23 @@
+{
+  "format": "has_root_only_exact_public_cache_cleanup_command_1",
+  "status": "PREPARED_UNRUN_REQUIRES_ROOT_REVIEW",
+  "executable": "pwsh",
+  "arguments": [
+    "-NoProfile",
+    "-NonInteractive",
+    "-File",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\remote_download_cache_cleanup_preparation_20261117\\execute_public_cache_cleanup.ps1",
+    "-Execute",
+    "-ExpectedPlanSha256",
+    "4e07e5a6b939af7bfc7c5ac0f42a3adc5f3f883800711f35d6e55be57e59c35f",
+    "-ExpectedScriptSha256",
+    "06f5a8804b5859ccab60d5770eb301714570555ed3a84ee489c0f142087ca975",
+    "-ReportDirectory",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\output\\remote-cache-cleanup-1ce-09fb-20261117-attempt1"
+  ],
+  "script_sha256": "06f5a8804b5859ccab60d5770eb301714570555ed3a84ee489c0f142087ca975",
+  "PLAN_sha256": "4e07e5a6b939af7bfc7c5ac0f42a3adc5f3f883800711f35d6e55be57e59c35f",
+  "actual_receipts_separate_from_preparation": true,
+  "cleanup_entry_invoked": false,
+  "root_alone_may_execute": true
+}

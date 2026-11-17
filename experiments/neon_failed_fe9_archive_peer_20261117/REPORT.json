@@ -1,0 +1,46 @@
+{
+  "format": "has_closed_fe9_failure_archive_source_CPU_peer_1",
+  "status": "SCOPED_SOURCE_CPU_GO",
+  "source_hashes": {
+    "archive_checks.py": "ffabf013b2d93f11d9848e86ef0cf4e5367d5b94a81710d19fb6d093bbacd4c6",
+    "build_packet.py": "8d25f3b9fcc0f8eb922d8741e61a0c59f92dd32c55f08d09d0b11421770a6268",
+    "verify_packet.py": "a7a3c96e8d7305793d139b0d67b734e248bf39c217be0eb4079d2eedb386e0cf",
+    "test_admission.py": "81de15f6c28f18fa24835bbbcc01eaeec8fd59e1295404b8243dcf36a6bfd80c",
+    "INPUTS.json": "a0b2ecdcd8db87363384188a927eb1f58f071250ca6bba34e952e8a40d07f230"
+  },
+  "independently_observed_CPU_methods": 12,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 0.062,
+  "tool_chunk_id": "90e188",
+  "test_command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "experiments\\neon_failed_fe9_archive_recipe_20261117",
+    "-p",
+    "test_admission.py",
+    "-v"
+  ],
+  "reviewed_scope": [
+    "frozen85 original bounded text aliases; no native/face descriptor/media payload",
+    "exact source1029 and failing public wrapper source join",
+    "failed terminal state and no stale final report claim",
+    "68 unique physical jobs67exit0 and registered Krita cancellation2",
+    "typed raw/inline receipt joins and strict physical private placement/closure",
+    "two root retained host observations with exact GetProcess identities",
+    "ordered stale-path failure retained before catalogue execute",
+    "exclusive new target only and bounded gzip exact-byte archive",
+    "artifact verifier independently reconstructs all bytes/bindings and narrow closure/failure scope"
+  ],
+  "limits": [
+    "Artifact verifier intentionally does not clone every source-admission predicate; frozen INPUTS pins the exact approved inputs.",
+    "This peer ran pure checks against only whitelisted completed public metadata. No native input, active full output, engine, CIM, Git or builder execution occurred.",
+    "Actual archive copy/build and artifact verification are performed separately by the authorized recipe owner."
+  ]
+}

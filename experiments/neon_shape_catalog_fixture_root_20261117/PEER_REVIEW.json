@@ -1,0 +1,16 @@
+{
+  "format": "has_shape_descriptor_selector_received_peer_transcription_1",
+  "reviewer": "/root/review_build_audit/admission_gate_review",
+  "source_hashes": {
+    "verify_shape_catalog.proposed.py": "54431c2c486bce9828ec47ebe046da9f413b3854e8c0290829c24183fe72e057",
+    "verify_character_height.proposed.py": "cccfb7d472b5d552cbd3cfc07dc9058c1789b9c1947f6a1a548c924dd38a3f79"
+  },
+  "independent_methods": 11,
+  "failures": 0,
+  "errors": 0,
+  "reported_seconds": 0.018,
+  "source_GO": true,
+  "scope": "Exact byte inverses, unchanged predicates/native cases/movie thresholds, existing helper policy, invalid override refusal and absent selected descriptor without stale fallback",
+  "peer_native_fixture_file_engine_CIM_or_Git_reads": false,
+  "kind": "Received source/CPU observation, not raw peer stdout"
+}

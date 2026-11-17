@@ -1,0 +1,44 @@
+{
+  "status": "SOURCE_CPU_GO_INACTIVE_BOUNDED_PROPOSAL_ONLY",
+  "reviewed_sources": {
+    "admission_core.py": "cdad5359f6fe6bf63d93bd95845680dec7f6eb2d041b265d05b05efe3ce1096f",
+    "test_admission_core.py": "799431e4acb958034f8101fb608f24fadca19f518a56e68a4dad54334799b191",
+    "build_after_qualified_merge.py": "0a567bb2668c5e76bac88ae661e9c6dfe83cf0581378c55004added6b088ae2c",
+    "reference_close_terminal.py": "c39e3751621bc4428166d64b7c6f6120bd7ef39251ccf9bbbf8a46dca390ce21",
+    "reference_registry.json": "07f25193d138d58516b9a1f50f4abe791a56cbaef5769d22ff91e670a8178352",
+    "legacy_result_gates.py": "0e5041bba2dd135c7580d32c46bbe3c02b3032fb072e0b64c9a3b918a6e11460"
+  },
+  "methods": 27,
+  "failures": 0,
+  "command": [
+    "C:\\Program Files\\Python313\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "C:\\a\\Programming\\cloudflare\\has-acceptance-session-20261111\\experiments\\neon_owner_review_after_qualified_merge_20261117",
+    "-p",
+    "test_admission_core.py",
+    "-v"
+  ],
+  "raw_log_sha256": "5248dcfd65a961227c031aded5ea1c9ef86ab84ef3b6b364c1278293873cf611",
+  "registry_attack_now_refuses": "unreviewed registry membership/schema/verifier or raw context pin",
+  "unrelated_valid_delta_now_refuses": "delta new side not joined to exact qualified candidate/merged content",
+  "missing_actual52_byte_witness_now_refuses": "delta old side not joined to actual historical52 source/byte witness",
+  "actual_activation_refuses": "UNREADY: actual qualified candidate/full/root release/merge activation is missing",
+  "source_bridge_raw_and_content_digests_cross_joined": true,
+  "old20_row_bridge_immutable": true,
+  "actual_full_or_merge_or_52_byte_witness_supplied": false,
+  "remaining_gates": [
+    "Actual future qualified fullPASS+root closure/release activation binding",
+    "Filesystem/Git committed clean source and source identity adapter",
+    "Exact historical52 fullsource byte witnesses for second bridge oldside",
+    "Current runtime/SourceIO/exporter/native family/archive/old-review input-lock preservation",
+    "Copy executor with exclusive fresh destination and all inherited postchecks",
+    "Final187 copied-location replay, owner/manual and portable qualification"
+  ],
+  "no_native_files_or_engines_CIM_Git_or_active_output_reads": true
+}
