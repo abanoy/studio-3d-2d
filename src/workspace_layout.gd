@@ -102,6 +102,8 @@ func apply_nesting() -> void:
 		horizontal.remove_child(vertical);column.remove_child(horizontal);column.add_child(vertical);column.move_child(vertical,index)
 		top_split.remove_child(right_split);top_split.add_child(horizontal);horizontal.add_child(right_split)
 	right_split.size_flags_vertical=Control.SIZE_EXPAND_FILL;vertical.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	# A same-width dock move must update the rail even when no resized signal fires.
+	refresh_world_mode()
 
 func apply_default_split() -> void:
 	vertical.split_offset=NEON_VERTICAL_OFFSET if StudioTheme.is_neon() else DEFAULT_VERTICAL_OFFSET
@@ -257,7 +259,7 @@ func strip_header(id: String) -> bool:
 
 func style_world_unfold() -> void:
 	if not world_unfold:return
-	var docked:=slot_of("world")=="left" and not floating.has("world")
+	var docked:=want_full_left()
 	world_unfold.visible=StudioTheme.is_neon() and docked
 	world_unfold.tooltip_text="Unfold World list" if world_rail else "Fold World into the icon rail"
 	world_unfold.icon=StudioTheme.icon("panel-unfold" if world_rail else "panel-fold",Color.WHITE,18 if world_rail else 16)
@@ -279,7 +281,8 @@ func place_world_unfold() -> void:
 
 func refresh_world_mode(force:=false) -> void:
 	if not panels.has("world") or not app or not app.world_selection:return
-	var rail: bool=StudioTheme.is_neon() and panels.world.size.x<RAIL_LIMIT and not floating.has("world")
+	# The fold/unfold action resizes the solitary left dock, so other placements keep the list.
+	var rail: bool=want_full_left() and panels.world.size.x<RAIL_LIMIT
 	if rail==world_rail and not force:
 		style_world_unfold();return
 	world_rail=rail
@@ -293,7 +296,7 @@ func refresh_world_mode(force:=false) -> void:
 
 func unfold_world() -> void:
 	# Widen the left dock to the World list (or back to the rail) like a divider drag, saved the same way.
-	if slot_of("world")!="left" or floating.has("world"):return
+	if not want_full_left():return
 	# Folding aims at the 64 px rail without clamping again: the list's own minimum can be a little
 	# wider than the rail's, and the dock settles at the rail width once it switches to the rail.
 	horizontal.clamp_split_offset()

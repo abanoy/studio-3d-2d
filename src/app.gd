@@ -1632,6 +1632,8 @@ func refresh_toast() -> void:
 	# #FF5A7A border for problems) mirroring it; Advanced: status itself as a plain line.
 	var problem := is_problem_message(status.text)
 	status.visible = advanced_mode
+	# Alpha does not remove a Control from hit testing. Only a displayed Simple toast needs a tooltip.
+	toast.mouse_filter = Control.MOUSE_FILTER_PASS if not advanced_mode and not status.text.is_empty() and not status_faded else Control.MOUSE_FILTER_IGNORE
 	toast_icon.visible = not advanced_mode
 	toast_lead.visible = not advanced_mode
 	if advanced_mode:
@@ -2808,7 +2810,9 @@ func timeline_row_keys() -> Dictionary:
 	# Neon timeline row summary: each object's authored key frames, recomputed only when that
 	# object's data changes (same identity check the model uses for its own cache).
 	var result := {}
-	if not renderer.world_runtime: return result
+	if not renderer.world_runtime:
+		timeline_key_cache.clear()
+		return result
 	for row in renderer.world_runtime.data.objects:
 		var instance: RefCounted = renderer.world_runtime.instance(row.id)
 		if instance == null or not instance.has_method("authored_keys"): continue
@@ -2819,6 +2823,9 @@ func timeline_row_keys() -> Dictionary:
 			cached = [instance.data, frames]
 			timeline_key_cache[row.id] = cached
 		result[row.id] = cached[1]
+	# Removed objects and old projects must not retain their complete data dictionaries here.
+	for id in timeline_key_cache.keys():
+		if not result.has(id): timeline_key_cache.erase(id)
 	return result
 
 func refresh_transport_text() -> void:
@@ -2953,14 +2960,9 @@ func physics_live() -> bool:
 	return physics_editor != null and (physics_editor.is_running() or (physics_editor.recording != null and physics_editor.recording.active))
 
 func refresh_physics_bar() -> void:
-	# Codex's simulation strip: always in Advanced (and in classic Simple, as before). Neon Simple shows
-	# it only while a simulation or recording runs, so the switches that stop it never disappear;
-	# otherwise Pose's inspector mirrors Physics / Hair & clothes and the stage keeps one pill row.
-	# The strip's recording, fans / wind and loose-parts controls are Advanced-only in neon Simple
-	# (documented in docs/REDESIGN-PORT.md; showing the row shrinks the frame and the tool pill).
-	if physics_bar == null: return
-	var show: bool = advanced_mode or stage_overlay == null or physics_live()
-	if physics_bar.visible != show: physics_bar.visible = show
+	# Preserve the existing Simple simulation entry points even while idle.
+	# The neon stage inset already reserves space when this strip is visible.
+	if physics_bar != null and not physics_bar.visible: physics_bar.visible = true
 
 func style_accent(control: Button) -> void:
 	# Redesign: Export movie gets a light pill on hover so the main action stands out.
@@ -3780,7 +3782,9 @@ func schedule_status_fade(serial: int) -> void:
 	get_tree().create_timer(6.0).timeout.connect(func():
 		if serial == status_serial and not advanced_mode and status:
 			status_faded = true
-			if toast: toast.modulate.a = 0.0
+			if toast:
+				toast.modulate.a = 0.0
+				toast.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			else: status.self_modulate.a = 0.0)
 
 func refresh_status_style() -> void:
@@ -4634,7 +4638,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	var focus := get_viewport().gui_get_focus_owner()
 	if focus is LineEdit or focus is TextEdit: return
 	if has_dialog(self): return
-	if event.keycode == KEY_F11 and not event.ctrl_pressed and not event.alt_pressed and not event.shift_pressed:
+	if event.keycode == KEY_F11 and not event.ctrl_pressed and not event.alt_pressed and not event.shift_pressed and not event.meta_pressed and preload("res://src/shortcut_bindings.gd").action(keyboard_shortcuts.bindings,event).is_empty():
 		toggle_fullscreen();get_viewport().set_input_as_handled();return
 	match preload("res://src/shortcut_bindings.gd").action(keyboard_shortcuts.bindings,event):
 		"save": save()
